@@ -398,7 +398,7 @@ namespace PAWSStarterKit
 			this.btnCancel.Location = new System.Drawing.Point(392, 344);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(96, 24);
-			this.btnCancel.TabIndex = 10;
+			this.btnCancel.TabIndex = 11;
 			this.btnCancel.Text = "Cancel";
 			//
 			// btnOK
@@ -406,7 +406,7 @@ namespace PAWSStarterKit
 			this.btnOK.Location = new System.Drawing.Point(280, 344);
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(96, 24);
-			this.btnOK.TabIndex = 9;
+			this.btnOK.TabIndex = 10;
 			this.btnOK.Text = "OK";
 			this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
 			//
@@ -428,7 +428,7 @@ namespace PAWSStarterKit
 			this.groupBox1.Location = new System.Drawing.Point(8, 160);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(488, 176);
-			this.groupBox1.TabIndex = 23;
+			this.groupBox1.TabIndex = 9;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "PAWS File Locatons";
 			//
@@ -437,7 +437,7 @@ namespace PAWSStarterKit
 			this.btnAnswerFile.Location = new System.Drawing.Point(416, 24);
 			this.btnAnswerFile.Name = "btnAnswerFile";
 			this.btnAnswerFile.Size = new System.Drawing.Size(64, 24);
-			this.btnAnswerFile.TabIndex = 32;
+			this.btnAnswerFile.TabIndex = 2;
 			this.btnAnswerFile.Text = "&Change";
 			this.btnAnswerFile.Click += new System.EventHandler(this.btnAnswerFile_Click);
 			//
@@ -447,7 +447,8 @@ namespace PAWSStarterKit
 			this.tbAnswerFile.Name = "tbAnswerFile";
 			this.tbAnswerFile.ReadOnly = true;
 			this.tbAnswerFile.Size = new System.Drawing.Size(312, 20);
-			this.tbAnswerFile.TabIndex = 31;
+			this.tbAnswerFile.TabIndex = 1;
+			this.tbAnswerFile.TabStop = false;
 			this.tbAnswerFile.Text = "Answer File directory/filename shown at runtime";
 			//
 			// lblAnswerFile
@@ -455,7 +456,7 @@ namespace PAWSStarterKit
 			this.lblAnswerFile.Location = new System.Drawing.Point(8, 24);
 			this.lblAnswerFile.Name = "lblAnswerFile";
 			this.lblAnswerFile.Size = new System.Drawing.Size(72, 16);
-			this.lblAnswerFile.TabIndex = 30;
+			this.lblAnswerFile.TabIndex = 0;
 			this.lblAnswerFile.Text = "Answer File:";
 			//
 			// btnGrammarFile
@@ -463,7 +464,7 @@ namespace PAWSStarterKit
 			this.btnGrammarFile.Location = new System.Drawing.Point(416, 64);
 			this.btnGrammarFile.Name = "btnGrammarFile";
 			this.btnGrammarFile.Size = new System.Drawing.Size(64, 24);
-			this.btnGrammarFile.TabIndex = 29;
+			this.btnGrammarFile.TabIndex = 5;
 			this.btnGrammarFile.Text = "Chan&ge";
 			this.btnGrammarFile.Click += new System.EventHandler(this.btnGrammarFile_Click);
 			//
@@ -473,7 +474,8 @@ namespace PAWSStarterKit
 			this.tbGrammarFile.Name = "tbGrammarFile";
 			this.tbGrammarFile.ReadOnly = true;
 			this.tbGrammarFile.Size = new System.Drawing.Size(312, 20);
-			this.tbGrammarFile.TabIndex = 28;
+			this.tbGrammarFile.TabIndex = 4;
+			this.tbGrammarFile.TabStop = false;
 			this.tbGrammarFile.Text = "Grammar File directory/filename shown at runtime";
 			//
 			// lblGrammarFile
@@ -481,7 +483,7 @@ namespace PAWSStarterKit
 			this.lblGrammarFile.Location = new System.Drawing.Point(8, 64);
 			this.lblGrammarFile.Name = "lblGrammarFile";
 			this.lblGrammarFile.Size = new System.Drawing.Size(80, 16);
-			this.lblGrammarFile.TabIndex = 27;
+			this.lblGrammarFile.TabIndex = 3;
 			this.lblGrammarFile.Text = "Grammar File:";
 			//
 			// btnWriterFile
@@ -489,7 +491,7 @@ namespace PAWSStarterKit
 			this.btnWriterFile.Location = new System.Drawing.Point(416, 104);
 			this.btnWriterFile.Name = "btnWriterFile";
 			this.btnWriterFile.Size = new System.Drawing.Size(64, 24);
-			this.btnWriterFile.TabIndex = 26;
+			this.btnWriterFile.TabIndex = 8;
 			this.btnWriterFile.Text = "C&hange";
 			this.btnWriterFile.Click += new System.EventHandler(this.btnWriterFile_Click);
 			//
@@ -499,7 +501,8 @@ namespace PAWSStarterKit
 			this.tbWriterFile.Name = "tbWriterFile";
 			this.tbWriterFile.ReadOnly = true;
 			this.tbWriterFile.Size = new System.Drawing.Size(312, 20);
-			this.tbWriterFile.TabIndex = 25;
+			this.tbWriterFile.TabIndex = 7;
+			this.tbWriterFile.TabStop = false;
 			this.tbWriterFile.Text = "Writer File directory/filename shown at runtime";
 			//
 			// btnExampleFiles
@@ -507,7 +510,7 @@ namespace PAWSStarterKit
 			this.btnExampleFiles.Location = new System.Drawing.Point(416, 144);
 			this.btnExampleFiles.Name = "btnExampleFiles";
 			this.btnExampleFiles.Size = new System.Drawing.Size(64, 24);
-			this.btnExampleFiles.TabIndex = 23;
+			this.btnExampleFiles.TabIndex = 11;
 			this.btnExampleFiles.Text = "Chang&e";
 			this.btnExampleFiles.Click += new System.EventHandler(this.btnExampleFiles_Click);
 			//
@@ -517,7 +520,8 @@ namespace PAWSStarterKit
 			this.tbExampleFiles.Name = "tbExampleFiles";
 			this.tbExampleFiles.ReadOnly = true;
 			this.tbExampleFiles.Size = new System.Drawing.Size(312, 20);
-			this.tbExampleFiles.TabIndex = 22;
+			this.tbExampleFiles.TabIndex = 10;
+			this.tbExampleFiles.TabStop = false;
 			this.tbExampleFiles.Text = "Example Files directory shown at runtime";
 			//
 			// lblExampleFiles
@@ -525,7 +529,7 @@ namespace PAWSStarterKit
 			this.lblExampleFiles.Location = new System.Drawing.Point(8, 136);
 			this.lblExampleFiles.Name = "lblExampleFiles";
 			this.lblExampleFiles.Size = new System.Drawing.Size(80, 32);
-			this.lblExampleFiles.TabIndex = 21;
+			this.lblExampleFiles.TabIndex = 9;
 			this.lblExampleFiles.Text = "Example Files Directory:";
 			//
 			// lblWriterFile
@@ -533,7 +537,7 @@ namespace PAWSStarterKit
 			this.lblWriterFile.Location = new System.Drawing.Point(8, 104);
 			this.lblWriterFile.Name = "lblWriterFile";
 			this.lblWriterFile.Size = new System.Drawing.Size(64, 16);
-			this.lblWriterFile.TabIndex = 24;
+			this.lblWriterFile.TabIndex = 6;
 			this.lblWriterFile.Text = "Writer File:";
 			//
 			// DlgLanguageProperties
