@@ -1573,8 +1573,21 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 		pConstraint ;
 		pConstraint = pConstraint->pNext )
 	{
+#ifndef hab138
+	  /* only check constraints that are for the mother node;
+	  *  these are the only ones where the feature may have changed
+	  *  and therefore are the only ones that need to be
+	  *  double checked */
+	if (pEdge_in->pszLabel && pConstraint->pPath &&
+		streq(pEdge_in->pszLabel, pConstraint->pPath->pszString))
+		{
+		if (!applyPATRConstraint(pDag_in, pConstraint, pData_in->pPATR))
+		  return FALSE;
+		}
+#else  /* hab138 */
 	if (!applyPATRConstraint(pDag_in, pConstraint, pData_in->pPATR))
 		return FALSE;
+#endif /* hab138 */
 	}
 	for ( pel = pEdge_in->u.r.pChildren ; pel ; pel = pel->pNext )
 	{

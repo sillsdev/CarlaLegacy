@@ -4,12 +4,16 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
-#define PATCHLEVEL 7		/* bug fix or other minor change */
-#define DATE "October 25, 2002"	/* date of release version */
+#define PATCHLEVEL 8		/* bug fix or other minor change */
+#define DATE "December 11, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 11-Dec-2002  hab  - fix bug in doublecheck_constraints(): only need to double
+ * [1.3.8]              check logical constraints for mother nodes within a
+ *                      production;  these are the only ones where the feature
+ *                      might change
  * 25-Oct-2002	SRMc - portability fix in cmd library
  * [1.3.7]
  * 17-Oct-2002  hab  - add init change for change in ample data struct
