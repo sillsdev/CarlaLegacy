@@ -1,5 +1,5 @@
 TonePars Yacc Grammar
-Mon Jan 11 11:47:25 1999
+Wed Dec 12 11:37:41 2001
 
 ------------------------------------------------------------
 
@@ -426,7 +426,11 @@ Condition_Body
 	: Factor
 	| Condition_Body logop Factor
 	| 'IF' Factor 'THEN' Factor
+		| ForLeft Factor
+		| ForRight Factor
 	;
+ForLeft
+ForRight
 Factor
 	: 'NOT' Factor
 			/* A condition can be negated. */
@@ -520,7 +524,7 @@ Tone_expr
 			/* tone.  If position is right, the tone is the */
 			/* immediately following tone.  For cyclic rules, */
 			/* this condition only makes sense if 'position' is */
-			/* initial or final. */
+			/* not current. */
 	| position tone_status 'tone' 'is' Tone_none
 			/* This scans the tones in the position for a tone */
 			/* with the indicated status.  If this tone matches */
@@ -552,7 +556,9 @@ Tone_expr
 			/* position has the indicated tone pattern.  If */
 			/* position is left, the tone is the immediately */
 			/* preceding tone.  If position is right, the tone */
-			/* is the immediately following tone. */
+			/* is the immediately following tone.  For cyclic */
+			/* rules, this only makes sense if 'position' is */
+			/* not 'current'. */
 	| position 'morpheme' 'tone' 'pattern' 'is' Tone_Pattern
 			/* This checks to see if the morpheme indicated by */
 			/* position has the indicated tone pattern. */
@@ -631,6 +637,12 @@ position
 	| 'righttwo'
 			/* The item two morphemes to the right of the item */
 			/* being scanned. */
+		| 'LEFT'
+			/* The item found in a FOR_SOME_LEFT or FOR_ALL_LEFT */
+			/* scan. */
+		| 'RIGHT'
+			/* The item found in a FOR_SOME_RIGHT or */
+			/*  FOR_ALL_RIGHT scan. */
 	| 'INITIAL'
 			/* The first item in the word. */
 	| 'initial'
@@ -687,3 +699,19 @@ Note that the following equivalencies also hold for the given lexical items:
 'noniteratively'     can also be 'non-iteratively'
 
 'right-to-left'      can also be 'leftward'
+
+'FOR_SOME_RIGHT'     can also be 'FORSOMERIGHT'
+
+'FOR_SOME_RIGHT'     can also be 'FOR-SOME-RIGHT'
+
+'FOR_SOME_LEFT'      can also be 'FORSOMELEFT'
+
+'FOR_SOME_LEFT'      can also be 'FOR-SOME-LEFT'
+
+'FOR_ALL_RIGHT'      can also be 'FORALLRIGHT'
+
+'FOR_ALL_RIGHT'      can also be 'FOR-ALL-RIGHT'
+
+'FOR_ALL_LEFT'       can also be 'FORALLLEFT'
+
+'FOR_ALL_LEFT'       can also be 'FOR-ALL-LEFT'
