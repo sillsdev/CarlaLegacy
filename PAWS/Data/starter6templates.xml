@@ -1917,143 +1917,147 @@ Let makeV               be      &lt;cat&gt; = V
 </specializedTemplates>
 	</generalizedTemplates>
 	<showWhen id="nominativedefault">
-		<whenValue element="np/caseDefault" value="nominative"/>
+		<whenValue element="np" attr="caseDefault" value="nominative"/>
 <and/>
-		<whenValue element="np/case" value="ergative" negateValue="yes"/>
+		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="singulardefault">
-		<whenValue element="np/agreeNumber" value="yes"/>
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
 	</showWhen>
 	<showWhen id="masculinedefault">
-		<whenValue element="np/agreeOther" value="yesGender"/>
+		<whenValue element="np" attr="agreeOther" value="yesGender"/>
 	</showWhen>
 	<showWhen id="possesseddefault">
-		<whenValue element="np/possAlienable" value="yes"/>
+		<whenValue element="np" attr="possAlienable" value="yes"/>
 	</showWhen>
 	<showWhen id="DPFinaldefault">
-		<whenValue element="np/qpeitherRestrictedNumPos" value="after"/>
+		<whenValue element="np" attr="qpeitherRestrictedNumPos" value="after"/>
 	</showWhen>
 	<showWhen id="DPInitialdefault">
-		<whenValue element="np/qpeitherRestrictedNumPos" value="before"/>
+		<whenValue element="np" attr="qpeitherRestrictedNumPos" value="before"/>
 	</showWhen>
 	<showWhen id="CPSpecifierInitialdefault">
-<whenValue element="typology/wirdOrder" value="VSO"/>
+<whenValue element="typology" attr="wordOrder" value="VSO"/>
 <and/>
-	   <whenValue element="q/mainContVSOBeforeWh" value="yes"/>
+	   <whenValue element="q" attr="mainContVSOBeforeWh" value="yes"/>
 <or/>
-<whenValue element="typology/wirdOrder" value="VSO"/>
+<whenValue element="typology" attr="wordOrder" value="VSO"/>
 <and/>
-		<whenValue element="q/mainContVSOBeforeWh" value="some"/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="some"/>
 <or/>
-<whenValue element="typology/wirdOrder" value="VSO"/>
+<whenValue element="typology" attr="wordOrder" value="VSO"/>
 <and/>
-		<whenValue element="q/embContVSOBeforeWh" value="yes"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="yes"/>
 <or/>
-<whenValue element="typology/wirdOrder" value="VSO"/>
+<whenValue element="typology" attr="wordOrder" value="VSO"/>
 <and/>
-		<whenValue element="q/embContVSOBeforeWh" value="some"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="some"/>
 	</showWhen>
 	<showWhen id="whQcliticdefault">
-		<whenValue element="q/mainContWord" value="no"/>
+		<whenValue element="q" attr="mainContWord" value="no"/>
 <and/>
-		<whenValue element="q/mainContCliticAttaches" value="head" negateValue="yes"/>
+		<whenValue element="q" attr="mainContCliticAttaches" value="head" negateValue="yes"/>
 <or/>
-		<whenValue element="q/embContWord" value="no"/>
+		<whenValue element="q" attr="embContWord" value="no"/>
 <and/>
-		<whenValue element="q/embContCliticAttaches" value="head" negateValue="yes"/>
+		<whenValue element="q" attr="embContCliticAttaches" value="head" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="whQheadcliticdefault">
-		<whenValue element="q/mainContWord" value="no"/>
+		<whenValue element="q" attr="mainContWord" value="no"/>
 <and/>
-		<whenValue element="q/mainContCliticAttaches" value="head"/>
+		<whenValue element="q" attr="mainContCliticAttaches" value="head"/>
 <or/>
-		<whenValue element="q/embContWord" value="no"/>
+		<whenValue element="q" attr="embContWord" value="no"/>
 <and/>
-		<whenValue element="q/embContCliticAttaches" value="head"/>
+		<whenValue element="q" attr="embContCliticAttaches" value="head"/>
 	</showWhen>
 	<showWhen id="YNQcliticdefault">
-		<whenValue element="q/mainYNWord" value="no"/>
+		<whenValue element="q" attr="mainYNWord" value="no"/>
 <and/>
-		<whenValue element="q/mainYNCliticAttaches" value="edge"/>
+		<whenValue element="q" attr="mainYNCliticAttaches" value="edge"/>
 <or/>
-		<whenValue element="q/embYNWord" value="no"/>
+		<whenValue element="q" attr="embYNWord" value="no"/>
 <and/>
-		<whenValue element="q/embYNCliticAttaches" value="edge"/>
+		<whenValue element="q" attr="embYNCliticAttaches" value="edge"/>
 	</showWhen>
 	<showWhen id="YNQheadcliticdefault">
-		<whenValue element="q/mainYNWord" value="no"/>
+		<whenValue element="q" attr="mainYNWord" value="no"/>
 <and/>
-		<whenValue element="q/mainYNCliticAttaches" value="head"/>
+		<whenValue element="q" attr="mainYNCliticAttaches" value="head"/>
 <or/>
-		<whenValue element="q/embYNWord" value="no"/>
+		<whenValue element="q" attr="embYNWord" value="no"/>
 <and/>
-		<whenValue element="q/embYNCliticAttaches" value="head"/>
+		<whenValue element="q" attr="embYNCliticAttaches" value="head"/>
 	</showWhen>
 	<showWhen id="PPcliticdefault">
-		<whenValue element="pp/pType" value="word" negateValue="yes"/>
+		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
 <and/>
-		<whenValue element="pp/attaches" value="edge"/>
+		<whenValue element="pp" attr="attaches" value="edge"/>
 	</showWhen>
 	<showWhen id="PPheadcliticdefault">
-		<whenValue element="pp/pType" value="word" negateValue="yes"/>
+		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
 <and/>
-		<whenValue element="pp/attaches" value="head"/>
+		<whenValue element="pp" attr="attaches" value="head"/>
 	</showWhen>
 	<showWhen id="relativecliticdefault">
-		<whenValue element="relcl/pType" value="word" negateValue="yes"/>
+		<whenValue element="relcl" attr="pType" value="word" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="relativeheadcliticdefault">
-		<whenValue element="relcl/type" value="IP"/>
+		<whenValue element="relcl" attr="type" value="IP"/>
 	</showWhen>
 	<showWhen id="compcliticdefault">
-		<whenValue element="comp/compWord" value="no"/>
+		<whenValue element="comp" attr="compWord" value="no"/>
 <and/>
-		<whenValue element="comp/compCliticAttaches" value="edge"/>
+		<whenValue element="comp" attr="compCliticAttaches" value="edge"/>
 	</showWhen>
 	<showWhen id="compheadcliticdefault">
-		<whenValue element="comp/compWord" value="no"/>
+		<whenValue element="comp" attr="compWord" value="no"/>
 <and/>
-		<whenValue element="comp/compCliticAttaches" value="head"/>
+		<whenValue element="comp" attr="compCliticAttaches" value="head"/>
 	</showWhen>
 <showWhen id="copularcliticdefault">
-		<whenValue element="ip/copularAffix" value="yes"/>
+		<whenValue element="ip" attr="copularAffix" value="yes"/>
 </showWhen>
 <showWhen id="absolutivecliticdefault">
-		<whenValue element="np/possCaseErg" value="absolutive"/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 <and/>
-		<whenValue element="np/adjpCaseAffix" value="yes"/>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes"/>
 <and/>
-		<whenValue element="np/case" value="ergative"/>
+		<whenValue element="np" attr="case" value="ergative"/>
 </showWhen>
 <showWhen id="ergativecliticdefault">
-		<whenValue element="np/possCaseErg" value="ergative"/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 <and/>
-		<whenValue element="np/adjpCaseAffix" value="yes"/>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes"/>
 <and/>
-		<whenValue element="np/case" value="ergative"/>
+		<whenValue element="np" attr="case" value="ergative"/>
 </showWhen>
 <showWhen id="genitivecliticdefault">
-		<whenValue element="np/possCaseErg" value="genitive"/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 <and/>
-		<whenValue element="np/adjpCaseAffix" value="yes"/>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes"/>
 <and/>
-		<whenValue element="np/case" value="ergative"/>
+		<whenValue element="np" attr="case" value="ergative"/>
 <or/>
-		<whenValue element="np/case" value="ergative" negateValue="yes"/>
+		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
 <and/>
-		<whenValue element="np/case" value="none" negateValue="yes"/>
+		<whenValue element="np" attr="case" value="none" negateValue="yes"/>
 <and/>
-		<whenValue element="np/adjpCaseAffix" value="yes"/>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes"/>
 </showWhen>
 <showWhen id="posscliticdefault">
-		<whenValue element="np/possMarked" value="yesClitic"/>
+		<whenValue element="np" attr="possMarked" value="yesClitic"/>
 <and/>
-		<whenValue element="np/possCliticWord" value="no"/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
 </showWhen>
 	<!-- |***Category Mapper templates for starter kit**** -->
 	<catMapper show="cardinalNumberCat">Num</catMapper>
 	<showWhen id="cardinalNumberCat">
 		<whenValue element="qp/cardinalNumberCategory" value="" negateValue="yes"/>
+	</showWhen>
+	<catMapper show="conjunctionCat">Conj</catMapper>
+	<showWhen id="conjunctionCat">
+		<whenValue element="qp/conjunctionCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="adverbCat">Adv</catMapper>
 	<showWhen id="adverbCat">

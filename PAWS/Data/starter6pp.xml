@@ -2394,13 +2394,13 @@ P' = P PP
 		<and/>
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
-		<whenValue element="pp" attr="PPComp" value="yes"/>
+		<whenValue element="pp" attr="ppComp" value="yes"/>
 		<or/>
 		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
 		<and/>
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
-		<whenValue element="pp" attr="PPComp" value="yes"/>
+		<whenValue element="pp" attr="ppComp" value="yes"/>
 	</showWhen>
 	<rule show="PBaroption3b">
 rule {PBar option 3b - postpositions, locative PP complement}
@@ -2418,13 +2418,13 @@ P' = PP P
 		<and/>
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
-		<whenValue element="pp" attr="PPComp" value="yes"/>
+		<whenValue element="pp" attr="ppComp" value="yes"/>
 		<or/>
 		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
 		<and/>
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
-		<whenValue element="pp" attr="PPComp" value="yes"/>
+		<whenValue element="pp" attr="ppComp" value="yes"/>
 	</showWhen>
 	<rule show="PBaroption4a">
 rule {PBar option 4a - prepositions, IP complement }
@@ -2444,13 +2444,13 @@ P' = P IP
 		<and/>
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
-		<whenValue element="pp" attr="IPComp" value="yes"/>
+		<whenValue element="pp" attr="sentComp" value="yes"/>
 		<or/>
 		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
 		<and/>
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
-		<whenValue element="pp" attr="IPComp" value="yes"/>
+		<whenValue element="pp" attr="sentComp" value="yes"/>
 	</showWhen>
 	<rule show="PBaroption4b">
 rule {PBar option 4b - postpositions, IP complement}
@@ -2470,13 +2470,13 @@ P' = IP P
 		<and/>
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
-		<whenValue element="pp" attr="IPComp" value="yes"/>
+		<whenValue element="pp" attr="sentComp" value="yes"/>
 		<or/>
 		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
 		<and/>
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
-		<whenValue element="pp" attr="IPComp" value="yes"/>
+		<whenValue element="pp" attr="sentComp" value="yes"/>
 	</showWhen>
 	<rule show="PBaroption5">
 rule {PBar option 5 - prepositions or postpositions with no complement}

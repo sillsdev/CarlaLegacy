@@ -8,9 +8,7 @@
 <xsl:template match="/">\id PAWS Starter Kit <xsl:value-of select="$prmIdTitle"/> Examples
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:choose>
 	<xsl:when test="$prmIdTitle='QP'">
-		<xsl:value-of select="//qp/degreeExample"/><xsl:text>&#xa;</xsl:text>
-<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//qp/ordinalExample"/><xsl:text>&#xa;</xsl:text>
-<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//qp/cardinalCompoundExample"/><xsl:text>&#xa;</xsl:text>
+		<xsl:value-of select="//qp/cardinalCompoundExample"/><xsl:text>&#xa;</xsl:text>
 		</xsl:when>
 	<xsl:when test="$prmIdTitle='AdvP'">
 		<xsl:value-of select="//advp/temporalExample"/><xsl:text>&#xa;</xsl:text>
@@ -22,6 +20,8 @@
 		</xsl:when>
 	<xsl:when test="$prmIdTitle='NP'">
 		<xsl:value-of select="//qp/example"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//qp/degreeExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//qp/ordinalExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//np/example"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//np/embeddedExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//np/qpExample"/><xsl:text>&#xa;</xsl:text>

@@ -19,13 +19,13 @@ AdjP = Deg Adj
 </rule>
 <showWhen id="AdjPoption1d">
 <whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="before"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="before"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="either"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="either"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="eitherOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="eitherOrBoth"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="beforeOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="beforeOrBoth"></whenValue>
 </showWhen>
 
 <rule show="AdjPoption1m">
@@ -42,13 +42,13 @@ AdjP = {Deg / AdvP} Adj
 </rule>
 <showWhen id="AdjPoption1m">
 <whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="before"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="before"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="either"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="either"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="eitherOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="eitherOrBoth"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="beforeOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="beforeOrBoth"></whenValue>
 </showWhen>
 
 <rule show="AdjPoption2d">
@@ -62,13 +62,13 @@ AdjP = Adj Deg
 </rule>
 <showWhen id="AdjPoption2d">
 <whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="after"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="after"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="either"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="either"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="eitherOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="eitherOrBoth"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="afterOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="afterOrBoth"></whenValue>
 </showWhen>
 
 <rule show="AdjPoption2m">
@@ -85,11 +85,11 @@ AdjP = Adj {Deg / AdvP}
 </rule>
 <showWhen id="AdjPoption2m">
 <whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="after"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="after"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="either"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="either"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="eitherOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="eitherOrBoth"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
 <and/> <whenValue element="advp" attr="mannerPos" value="afterOrBoth"></whenValue>
 </showWhen>
@@ -108,13 +108,13 @@ AdjP = Deg_1 Adj Deg_2
 </rule>
 <showWhen id="AdjPoption3d">
 <whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="both"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="both"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="beforeOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="beforeOrBoth"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="eitherOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="eitherOrBoth"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesDegree" negateValue="no"/>
-<and/> <whenValue element="advp" attr="degreePos" value="afterOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="degreePos" value="afterOrBoth"></whenValue>
 </showWhen>
 
 <rule show="AdjPoption3m">
@@ -135,12 +135,12 @@ AdjP = {Deg_1 / AdvP_1} Adj {Deg_2 / AdvP_2}
 </rule>
 <showWhen id="AdjPoption3m">
 <whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="both"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="both"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="afterOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="afterOrBoth"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="eitherOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="eitherOrBoth"></whenValue>
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/> <whenValue element="advp" attr="mannerPos" value="beforeOrBoth"></whenValue>
+<and/> <whenValue element="adjp" attr="mannerPos" value="beforeOrBoth"></whenValue>
 </showWhen>
 </masterGrammar>

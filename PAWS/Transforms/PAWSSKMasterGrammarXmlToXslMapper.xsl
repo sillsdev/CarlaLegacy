@@ -55,7 +55,7 @@ catMapper template
 	  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
 Let <xsl:for-each select="id(@show)/whenValue">
 		<xsl:element name="xsl:value-of">
-		  <xsl:attribute name="select"><xsl:value-of select="./@element"/></xsl:attribute>
+		  <xsl:attribute name="select"><xsl:text>//</xsl:text><xsl:value-of select="./@element"/></xsl:attribute>
 		</xsl:element>
 	  </xsl:for-each> be [<xsl:value-of select="."/>]</xsl:element>
 	<xsl:text/>
@@ -164,6 +164,7 @@ BuildCondition
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+23-Jul-2002    Andy Black  in catMapper, have it select teh tlement using "//"
 17-Jul-2002    Andy Black  Allow specializedTemplates within generalizedTemplates
 02-Jul-2002    Andy Black  Added prmType; handled cases where there is no @show or it is empty; renamed it
 25-Apr-2002      Andy Black  Began working on Initial Draft

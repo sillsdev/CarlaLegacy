@@ -107,28 +107,12 @@ QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5)))))
 </rule>
 	<showWhen id="QPoptionNum1i">
 <whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="before"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="either"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="before"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="either"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
 	</showWhen>
 
@@ -144,28 +128,12 @@ QP = Adj (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num
 </rule>
 	<showWhen id="QPoptionNum1f">
 <whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="before"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="either"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="before"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="either"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
 	</showWhen>
 
@@ -181,28 +149,12 @@ QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5))))) Adj
 </rule>
 	<showWhen id="QPoptionNum2i">
 <whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="after"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="afterOrBoth"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="either"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="after"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="afterOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="either"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
 	</showWhen>
 
@@ -217,28 +169,12 @@ QP = (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num Adj
 	&lt;QP option&gt; = Num2f
 </rule>
 	<showWhen id="QPoptionNum2f"><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="after"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="afterOrBoth"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="either"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="after"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="afterOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="either"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
 	</showWhen>
 
@@ -256,28 +192,12 @@ QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5))))) Adj_1
 </rule>
 	<showWhen id="QPoptionNum3i">
 <whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="both"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="afterOrBoth"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="both"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="afterOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="before"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
 	</showWhen>
 
@@ -296,28 +216,12 @@ QP = Adj (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num Adj_1
 </rule>
 	<showWhen id="QPoptionNum3f">
   <whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="both"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="afterOrBoth"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"></whenValue>
 <or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="both"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="afterOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
-<and/> <whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"></whenValue>
-<or/><whenValue element="qp" attr="cardinalHeadPos" value="after"></whenValue>
-<and/> <whenValue element="qp" attr="lastNextFormation" value="independent"></whenValue>
 <and/> <whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"></whenValue>
 	</showWhen>
 

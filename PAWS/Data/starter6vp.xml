@@ -705,7 +705,7 @@ VP = V DP {PP / AdjP / DP_1}
 	}
 		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PP
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 4e
 </rule>
 	<showWhen id="VPoption4e">
@@ -3088,274 +3088,6 @@ VP = PP DP V
 		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-	</showWhen>
-	<rule show="VPoption6aq">
-rule {VP option 6aq - V initial, ditransitive with PP (accusative object questioned)}
-VP = V PP
-	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;V head object&gt; = &lt;VP head fronted&gt;
-	&lt;VP head fronted cat&gt; = DP
-	&lt;VP head fronted case&gt; = accusative
-	&lt;V head type ditransitive&gt; = +
-	&lt;V head type transitive&gt; = +
-	&lt;V head type copular&gt; = -
-	&lt;VP head type question&gt; = +
-	&lt;PP head type sentential&gt; = -
-		&lt;PP head type suffix poss&gt; = -         | only in possessor position
-		&lt;PP head type prefix poss&gt; = -
-	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-	&lt;VP option&gt; = 6aq
-</rule>
-	<showWhen id="VPoption6aq">
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-	</showWhen>
-	<rule show="VPoption6bq">
-rule {VP option 6bq - V initial, ditransitive with PP (absolutive object questioned)}
-VP = V PP
-	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;V head object&gt; = &lt;VP head fronted&gt;
-	&lt;VP head fronted cat&gt; = DP
-	&lt;VP head fronted case&gt; = absolutive
-	&lt;V head type ditransitive&gt; = +
-	&lt;V head type transitive&gt; = +
-	&lt;V head type copular&gt; = -
-	&lt;VP head type question&gt; = +
-	&lt;PP head type sentential&gt; = -
-		&lt;PP head type suffix poss&gt; = -         | only in possessor position
-		&lt;PP head type prefix poss&gt; = -
-	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-	&lt;VP option&gt; = 6bq
-</rule>
-	<showWhen id="VPoption6bq">
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-	</showWhen>
-	<rule show="VPoption6cq">
-rule {VP option 6cq - V final, ditransitive with PP (accusative object questioned)}
-VP = PP V
-	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;V head object&gt; = &lt;VP head fronted&gt;
-	&lt;VP head fronted cat&gt; = DP
-	&lt;VP head fronted case&gt; = accusative
-	&lt;V head type ditransitive&gt; = +
-	&lt;V head type transitive&gt; = +
-	&lt;V head type copular&gt; = -
-	&lt;VP head type question&gt; = +
-	&lt;PP head type sentential&gt; = -
-		&lt;PP head type suffix poss&gt; = -         | only in possessor position
-		&lt;PP head type prefix poss&gt; = -
-	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-	&lt;VP option&gt; = 6cq
-</rule>
-	<showWhen id="VPoption6cq">
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-	</showWhen>
-	<rule show="VPoption6dq">
-rule {VP option 6dq - V final, ditransitive with PP (absolutive object questioned)}
-VP = PP V
-	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;V head object&gt; = &lt;VP head fronted&gt;
-	&lt;VP head fronted cat&gt; = DP
-	&lt;VP head fronted case&gt; = absolutive
-	&lt;V head type ditransitive&gt; = +
-	&lt;V head type transitive&gt; = +
-	&lt;V head type copular&gt; = -
-	&lt;VP head type question&gt; = +
-	&lt;PP head type sentential&gt; = -
-		&lt;PP head type suffix poss&gt; = -         | only in possessor position
-		&lt;PP head type prefix poss&gt; = -
-	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-	&lt;VP option&gt; = 6dq
-</rule>
-	<showWhen id="VPoption6dq">
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="pp"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before"/>
 		<and/>
 		<whenValue element="ip" attr="diCat" value="both"/>
 	</showWhen>
@@ -7331,282 +7063,6 @@ VP = DP_2 DP_1 V
 		<and/>
 		<whenValue element="ip" attr="diCat" value="both"/>
 	</showWhen>
-	<rule show="VPoption7iq">
-rule {VP option 7iq - V initial, ditransitive with DP, accusative object questioned}
-VP = V DP
-	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;V head object&gt; = &lt;VP head fronted&gt;
-	&lt;V head type ditransitive&gt; = +
-	&lt;V head type transitive&gt; = +
-	&lt;V head type copular&gt; = -
-	&lt;VP head fronted cat&gt; = DP
-	&lt;VP head fronted head agr case&gt; = accusative
-	&lt;DP head agr case&gt; = accusative
-	&lt;DP head type suffix poss&gt; = -         | only in possessor position
-		&lt;DP head type prefix poss&gt; = -
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-	&lt;VP head type passive&gt; = -
-	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
-	&lt;VP option&gt; = 7iq
-</rule>
-	<showWhen id="VPoption7iq">
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-	</showWhen>
-	<rule show="VPoption7jq">
-rule {VP option 7jq - V initial, ditransitive with DP, absolutive object questioned}
-VP = V DP
-	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;V head object&gt; = &lt;VP head fronted&gt;
-	&lt;V head type ditransitive&gt; = +
-	&lt;V head type transitive&gt; = +
-	&lt;V head type copular&gt; = -
-	&lt;VP head fronted cat&gt; = DP
-	&lt;VP head fronted head agr case&gt; = absolutive
-	&lt;DP head agr case&gt; = absolutive
-	&lt;DP head type suffix poss&gt; = -         | only in possessor position
-		&lt;DP head type prefix poss&gt; = -
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-	&lt;VP head type passive&gt; = -
-	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
-	&lt;VP option&gt; = 7jq
-</rule>
-	<showWhen id="VPoption7jq">
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-	</showWhen>
-	<rule show="VPoption7kq">
-rule {VP option 7kq - V final, ditransitive with DP, accusative object questioned}
-VP = DP V
-	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;V head object&gt; = &lt;VP head fronted&gt;
-	&lt;V head type ditransitive&gt; = +
-	&lt;V head type transitive&gt; = +
-	&lt;V head type copular&gt; = -
-	&lt;VP head fronted cat&gt; = DP
-	&lt;VP head fronted head agr case&gt; = accusative
-	&lt;DP head agr case&gt; = accusative
-		&lt;DP head type suffix poss&gt; = -         | only in possessor position
-		&lt;DP head type prefix poss&gt; = -
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-	&lt;VP head type passive&gt; = -
-	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
-	&lt;VP option&gt; = 7kq
-</rule>
-	<showWhen id="VPoption7kq">
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-	</showWhen>
-	<rule show="VPoption7lq">
-rule {VP option 7lq - V final, ditransitive with DP, absolutive object questioned}
-VP = DP V
-	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;V head object&gt; = &lt;VP head fronted&gt;
-	&lt;V head type ditransitive&gt; = +
-	&lt;V head type transitive&gt; = +
-	&lt;V head type copular&gt; = -
-	&lt;VP head fronted cat&gt; = DP
-	&lt;VP head fronted head agr case&gt; = absolutive
-	&lt;DP head agr case&gt; = absolutive
-	&lt;DP head type suffix poss&gt; = -         | only in possessor position
-		&lt;DP head type prefix poss&gt; = -
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-	&lt;VP head type passive&gt; = -
-	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
-	&lt;VP option&gt; = 7lq
-</rule>
-	<showWhen id="VPoption7lq">
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="dp" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="ip" attr="diCat" value="both" negateValue="no"/>
-	</showWhen>
 	<rule show="VPoption7i">
 rule {VP option 7i - VSO order, ditransitive with DP (acc object), subj questioned}
 VP = V DP DP_1
@@ -9067,6 +8523,9 @@ VP = V {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9089,6 +8548,9 @@ VP = {CP / IP} V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9113,6 +8575,9 @@ VP = V DP {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9141,6 +8606,9 @@ VP = V DP {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9177,6 +8645,9 @@ VP = {CP / IP} DP V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9205,6 +8676,9 @@ VP = {CP / IP} DP V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9240,6 +8714,9 @@ VP = V DP {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9275,6 +8752,9 @@ VP = V {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9301,6 +8781,9 @@ VP = V {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9339,6 +8822,9 @@ VP = V DP DP_1 {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9380,6 +8866,9 @@ VP = V DP_1 {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9412,6 +8901,9 @@ VP = V DP_1 {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9454,6 +8946,9 @@ VP = {CP / IP} DP V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9489,6 +8984,9 @@ VP = {CP / IP} V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9515,6 +9013,9 @@ VP = {CP / IP} V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9553,6 +9054,9 @@ VP = {CP / IP} DP_1 DP V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9594,6 +9098,9 @@ VP = {CP / IP} DP_1 V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9626,6 +9133,9 @@ VP = {CP / IP} DP_1 V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9668,6 +9178,9 @@ VP = V DP {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9707,6 +9220,9 @@ VP = V {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9740,6 +9256,9 @@ VP = V {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9790,6 +9309,9 @@ VP = V DP DP_1 {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9835,6 +9357,9 @@ VP = V DP_1 {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9873,6 +9398,9 @@ VP = V DP_1 {CP / IP}
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9927,6 +9455,9 @@ VP = {CP / IP} DP V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9966,6 +9497,9 @@ VP = {CP / IP} V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -9998,6 +9532,9 @@ VP = {CP / IP}  V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -10048,6 +9585,9 @@ VP = {CP / IP} DP DP_1 V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -10093,6 +9633,9 @@ VP = {CP / IP} DP_1 V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
@@ -10131,6 +9674,9 @@ VP = {CP / IP} DP_1 V
 	&lt;CP head type root&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
