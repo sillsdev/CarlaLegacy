@@ -201,8 +201,8 @@ option.
 @item -t
 causes analyses to be traced.  This produces a huge amount of output.
 Repeating the @code{-t} option causes SGML style trace output to be
-produced.  Repeating the @code(-t) option three times
-(i.e. as @code(-ttt)) causes XML style trace output to be
+produced.  Repeating the @code{-t} option three times
+(i.e. as @code{-ttt}) causes XML style trace output to be
 produced.
 
 @item -u
