@@ -300,16 +300,16 @@ Package=<4>
 	Project_Dep_Name cmdlib
 	End Project Dependency
 	Begin Project Dependency
-	Project_Dep_Name cportlib
-	End Project Dependency
-	Begin Project Dependency
 	Project_Dep_Name kimmolib
 	End Project Dependency
 	Begin Project Dependency
-	Project_Dep_Name opaclib
+	Project_Dep_Name patrlib
 	End Project Dependency
 	Begin Project Dependency
-	Project_Dep_Name patrlib
+	Project_Dep_Name cportlib
+	End Project Dependency
+	Begin Project Dependency
+	Project_Dep_Name opaclib
 	End Project Dependency
 }}}
 

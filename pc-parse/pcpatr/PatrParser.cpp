@@ -142,8 +142,13 @@ STDMETHODIMP PatrParser::InterfaceSupportsErrorInfo(REFIID riid)
 
 	for (int i=0;i<sizeof(arr)/sizeof(arr[0]);i++)
 	{
-		if (::InlineIsEqualGUID(*arr[i],riid))
-			return S_OK;
+#ifndef hab2110
+	  if (::IsEqualGUID(*arr[i],riid))  // don't have the inline version anymore?
+		return S_OK;
+#else
+	  if (::InLineIsEqualGUID(*arr[i],riid))
+		return S_OK;
+#endif // hab2110
 	}
 	return S_FALSE;
 }

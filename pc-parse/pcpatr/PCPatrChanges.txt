@@ -1,7 +1,12 @@
 PC-PATR CHANGE HISTORY
 
-1.2.9 (15-June-2001
--------------------
+1.2.10 (08-Aug-2001)
+--------------------
+1. Fixed a bug which would not report number of edges in Ample ANA file
+   output in \failure line.
+
+1.2.9 (15-June-2001)
+--------------------
 1. Fixed a bug that would sometimes not show glosses in trees when using
    file disambiguate mode and also using show failures.
 2. Put sentence statistics in log file not in ANA file when doing a file

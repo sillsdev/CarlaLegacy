@@ -767,8 +767,20 @@ if (pOutputFP_in != NULL)
 	 */
 	if (iStage != 0)
 		{
+#ifndef hab1210
+		if (pszMessage && (iStage == 5 || iStage == 6))
+			{
+		char szBuff[100];
+		sprintf(szBuff, "\\failure %s", pszMessage);
+		fprintf(pOutputFP_in, szBuff, pPATR_in->uiEdgesAdded);
+		}
+		else
+			fprintf(pOutputFP_in, "\\failure %s",
+			pszMessage ? pszMessage : "");
+#else
 		fprintf(pOutputFP_in, "\\failure %s",
 			pszMessage ? pszMessage : "");
+#endif /* hab1210 */
 		}
 	fprintf(pOutputFP_in, "\\parse\n");
 	writePATRParses(parse, pOutputFP_in, pPATR_in);

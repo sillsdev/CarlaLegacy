@@ -4,12 +4,14 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 9		/* bug fix or other minor change */
-#define DATE "June 15, 2001"	/* date of release version */
+#define PATCHLEVEL 10		/* bug fix or other minor change */
+#define DATE "August 8, 2001"	/* date of release version */
 #define YEAR "2001"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 08-Aug-2001  hab  - fix bug which would not report number of edges in Ample
+ * [1.2.10]             ANA file output in \failure line.
  * 15-Jun-2001  hab  - fix bug which would not always show gloss lines in
  * [1.2.9]              trees in ana files when failures were on.
  *              hab  - Put sentence statistics in log file not in ANA file
