@@ -30,7 +30,9 @@ static Morph *firstmp;      /* First morph struct */
 extern int myisspace( char c );
 
 static char *strnonwhite( char *str );
+#ifdef hab210
 static char *strpunc( char *str, SenTransData *pSenTransData );
+#endif /* hab210 */
 Word *newitem( char *str, unsigned int type );
 static Word *loadword( FILE *infile, SenTransData *pSenTransData );
 static Word *newbound( void );
@@ -48,6 +50,11 @@ static void BuildMorphPropertyList(Mem** ppMorphList, char* pszLstProp);
 #ifndef hab221
 static void GetMorphCategories(char* pszCats, Morph* pMorphs);
 #endif /* hab221 */
+#ifndef hab210
+static char *GetFirstPunc( SenTransData *pSenTransData_in, char *pszContent_in, int *iLen_out );
+static int IsPuncAtEnd( StringList *pStrList_in, char *pszEnd_in, char *pszStart_in );
+extern int PuncLengthAtBegSL(StringList *pStrList_in, char *pszStart_in);
+#endif /* hab210 */
 #define MAXSENT 100
 
 /**************************************************************
@@ -119,7 +126,11 @@ while ( (wd = loadword( infile, pSenTransData )) != NULL )   /* While next word 
 	do  {
 		if ( twd->type & WDPUNC &&    /* 1.2a BJY */
 		 twd->type & FROMN  &&    /* 1.2zc hab */
+#ifndef hab210
+			 PuncLengthAtBegSL(pSenTransData->sent_punc, twd->ambigs->morphs->name) )  /* If sent end punc */
+#else  /* hab210 */
 			 strchr( pSenTransData->sent_punc, twd->ambigs->morphs->name[0] ) )  /* If sent end punc */
+#endif /* hab210 */
 			goto sentbound;     /* Break out of load loop */
 		} while ( twd != wd && ( twd = twd->next ) );
 
@@ -158,8 +169,18 @@ char *tstr;                 /* temp storage for \f and \n fields 1.2a BJY */
 char *pszTmp;
 char *s, *p;
 int gotline = FALSE;        /* flag to skip fgets() call for one round 1.2a BJY */
+#ifndef hab210
+int i;
+int iLen;
+char *cp;
+char *cp2;
+#define MAXPUNCSIZE 50
+char szPuncBuffer[MAXPUNCSIZE];
+memset(szPuncBuffer, 0, MAXPUNCSIZE);
+#else  /* hab210 */
 char charray[2];            /* for making a string of 1 letter */
 charray[1] = '\0';
+#endif /* hab210 */
 
 if ( first_call )                   /* If first call */
 	{
@@ -305,7 +326,13 @@ while ( !eofseen )                    /* Terminates on next \a or eof */
 		s = tstr + strlen( tstr ) - 2;      /* start backwards from end of string (and skip \n) */
 		*(s+1) = '\0';                      /* kill terminating \n */
 
+#ifndef hab210
+		for ( p = s;
+		  p >= tstr && IsPuncAtEnd( pSenTransData->begin_punc, p, tstr );
+		  p-- )    /* any begin punctuation? */
+#else  /* hab210 */
 		for ( p = s; p >= tstr && strchr( pSenTransData->begin_punc, *p ); p-- )    /* any begin punctuation? */
+#endif /* hab210 */
 			{
 			firstwd = newitem( p, FROMF | WDPUNC );  /* new structure for the punc mark just found */
 			firstwd->next = wd;
@@ -350,6 +377,35 @@ while ( !eofseen )                    /* Terminates on next \a or eof */
 			}
 		s = tstr;
 		*( s+strlen( s ) -1 ) = '\0';       /* kill terminating \n */
+#ifndef hab210
+		iLen = 0;
+		if ( (p = GetFirstPunc( pSenTransData, s, &iLen )) != NULL )             /* does \n contain punctuation? */
+			{
+			while ( p )
+				{
+		  /* copy punctuation to buffer */
+		cp = &szPuncBuffer[0];
+		cp2 = p;
+		for (i = 0; i < iLen; i++)
+		  *cp++ = *cp2++;
+		*cp = '\0';
+				if ( p > s )                /* something before punc mark */
+					{
+					*p = '\0';              /* null terminate it */
+					wprev = wd;
+					wd = newitem( s, FROMN ); /* new structure for non-punctuation in \n field */
+					wprev->next = wd;
+					wd->prev = wprev;       /* link the new one to previous word */
+					}
+				wprev = wd;
+				wd = newitem( szPuncBuffer, FROMN | WDPUNC );  /* now link in the punctuation mark */
+				wprev->next = wd;
+				wd->prev = wprev;           /* link the new one to previous word */
+				s = p+strlen(szPuncBuffer); /* skip past punctuation just processed */
+				p = GetFirstPunc(pSenTransData, s, &iLen ); /* any more punctuation in \n field? */
+				}
+			}
+#else  /* hab210 */
 		if ( (p = strpunc( s, pSenTransData )) != NULL )             /* does \n contain punctuation? */
 			{
 			while ( p )
@@ -371,6 +427,7 @@ while ( !eofseen )                    /* Terminates on next \a or eof */
 				p = strpunc( s, pSenTransData );           /* any more punctuation in \n field? */
 				}
 			}
+#endif /* hab210 */
 
 		if ( *s )                           /* no punctuation or something left after punctuation */
 			{
@@ -538,13 +595,77 @@ void BuildMorphPropertyList(Mem** ppMorphList, char* pszLstProp)
 	}
 }
 
+#ifndef hab210
+/********************************************************************
+ * NAME
+ *      GetFirstPunc
+ * ARGS
+ *      pSenTransData_in - SenTrans Data
+ *      pszContent_in    - string to scan
+ *      iLen_out         - length of matched string (to return to caller)
+ * DESC
+ *      search pszContent_in for first occurrence of punctuation
+ * RETN
+ *      pointer to first punctuation mark or NULL if none found
+ *
+ */
+char *GetFirstPunc( SenTransData *pSenTransData_in, char *pszContent_in, int *iLen_out )
+{
+char *pszOtherPunc = NULL;
+char *pszSentPunc = NULL;
+char *pszTemp;
+StringList *psl;
+int iSentPuncLen = 0;
+int iOtherPuncLen = 0;
+
+for ( psl = pSenTransData_in->sent_punc; psl; psl = psl->pNext )
+  {				/* look for sentence punctuation */
+	if ((pszTemp = strstr(pszContent_in, psl->pszString)) != NULL)
+	  {    /* find first punctuation in pszContent_in */
+	if ( (pszSentPunc == NULL) ||
+		 (pszTemp < pszSentPunc) )
+	  {
+		pszSentPunc = pszTemp;
+		iSentPuncLen = strlen(psl->pszString);
+	  }
+	  }
+  }
+
+for ( psl = pSenTransData_in->other_punc; psl; psl = psl->pNext )
+  {				/* look for other punctuation */
+	if ((pszTemp = strstr(pszContent_in, psl->pszString)) != NULL)
+	  {    /* find first punctuation in pszContent_in */
+	if ( (pszOtherPunc == NULL) ||
+		 (pszTemp < pszOtherPunc) )
+	  {
+		pszOtherPunc = pszTemp;
+		iOtherPuncLen = strlen(psl->pszString);
+	  }
+	  }
+  }
+/* return whichever occurs first or whichever was found (or NULL);
+   also set the outbound length */
+if ( (pszOtherPunc != NULL) &&
+	 ( (pszSentPunc == NULL) ||
+	   (pszOtherPunc < pszSentPunc)) )
+  {
+	*iLen_out = iOtherPuncLen;
+	return(pszOtherPunc);
+  }
+else
+  {
+	*iLen_out = iSentPuncLen;
+	return(pszSentPunc);
+  }
+}
+#else  /* hab210 */
 /********************************************************************
  * NAME
  *      strpunc
  * ARGS
  *      str - string to scan
  * DESC
- *      search str for first occurance of punctuation
+ *      search str for first occurrence of punctuation
  * RETN
  *      pointer to first punctuation mark or NULL if none found
  *
@@ -570,6 +691,7 @@ if ( punc && spunc )
 else
 	return( punc ? punc : spunc );      /* return whichever was found (or NULL) */
 }
+#endif /* hab210 */
 
 /********************************************************************
  * NAME
@@ -1204,6 +1326,44 @@ for ( wd = sent->next; wd->next; wd = wd->next ) /* For each word in sent */
 	fputc( '\n', outfile );             /* Output blank line */
 	}
 }
+
+#ifndef hab210
+/**************************************************************
+ * NAME
+ *      IsPuncAtEnd
+ * ARGS
+ *      pStrList_in - pointer to begin punctuation StringList
+ *      pszEnd_in   - pointer to rightmost part of content to search in
+ *      pszStart_in - pointer to leftmost part of content to search in
+ * DESC
+ *      Search string list for a match that ends at pszEnd_in, but does not
+ *      begin before pszStart_in.
+ *      I.e. want to look for a begin punctuation string that is at the
+ *      rightmost edge of the content.
+ * RETN
+ *      TRUE if there is a match.
+ *      FALSE otherwise.
+ */
+static int IsPuncAtEnd( StringList *pStrList_in, char *pszEnd_in, char *pszStart_in )
+{
+char *cp;
+
+for ( ; pStrList_in ; pStrList_in = pStrList_in->pNext )
+  {				/* for each string in string list */
+	/* determine where in the content the string would begin */
+	cp = pszEnd_in - strlen(pStrList_in->pszString) + 1;
+	if (cp >= pszStart_in)
+	  {				/* it is within the content */
+	if (strstr(cp, pStrList_in->pszString) == cp)
+	  {			/* it matches at the right edge */
+		return TRUE;
+	  }
+	  }
+  }
+return FALSE;
+}
+
+#endif /* hab210 */
 
 /*------------------------------------------------------------
 * Change history:

@@ -3,7 +3,8 @@
 # H. Andrew Black, 26-Jul-2000
 
 CC      = gcc -g -O2 -Wall -Dalloca=__builtin_alloca
-CFLAGS  = -DDJGPP -DHAVE_CONFIG_H -I. -I.. -I../include
+#CFLAGS  = -DDJGPP -DHAVE_CONFIG_H -I. -I.. -I../include
+CFLAGS  = -DDJGPP -DHAVE_CONFIG_H -I. -I.. -I../include -I../../pc-parse -I../../pc-parse/include
 RANLIB  = ranlib
 INSTALL = copy
 

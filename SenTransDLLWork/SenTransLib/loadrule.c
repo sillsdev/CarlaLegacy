@@ -23,8 +23,16 @@ static void dispmatch( Match *mt, SenTransData *pSenTransData );
 static Class *loadclass( FILE *infile, SenTransData *pSenTransData );
 static void loadcats( FILE *infile, SenTransData *pSenTransData );
 static void loadprops( FILE *infile, SenTransData *pSenTransData );
+#ifndef hab210
+static StringList *loadpunc( FILE *infile, SenTransData *pSenTransData );
+#else
 static char *loadpunc( FILE *infile, SenTransData *pSenTransData );
+#endif /* hab210 */
 static char *pszGetReplaceText( Match *rep );
+#ifndef hab210
+static int PuncLengthAtBeginning(SenTransData *pSenTransData_in, char *pszStart_in);
+int PuncLengthAtBegSL(StringList *pStrList_in, char *pszStart_in);
+#endif /* hab210 */
 #ifdef EXTRA_SPACE
 static void loadspc( FILE *infile, SenTransData *pSenTransData );
 extern char *myspaces;  /* this is defined by AMPLE in ANALDA.C */
@@ -48,7 +56,6 @@ Mem *lastprop = NULL;		/* Last property in list */
 Rule *lastrule = NULL;          /* Previous rule */
 
 char tagchar = '^';	/* 1.2g RNE tag character, defaults to hat '^' */
-
 
 	/*
 	* The following establishes a base so that the ellipse count
@@ -398,20 +405,26 @@ while ( TRUE )                          /* While line (tested below) */
 	else if ( !strncmp( "\\sentpunc ", pSenTransData->line, 10 ) ) /* If sent punc */
 		{
 		rest = skipwhite( pSenTransData->line + 10 );  /* Start after marker */
-
+#ifndef hab210
+	freeStringList(pSenTransData->sent_punc);
+#endif /* hab210 */
 		pSenTransData->sent_punc = loadpunc( infile, pSenTransData ); /* Load punc from line */
 		}
 	else if ( !strncmp( "\\punc ", pSenTransData->line, 6 ) ) /* If other punc */
 		{
 		rest = skipwhite( pSenTransData->line + 6 );  /* Start after marker */
-
+#ifndef hab210
+	freeStringList(pSenTransData->other_punc);
+#endif /* hab210 */
 		pSenTransData->other_punc = loadpunc( infile, pSenTransData );	/* Load punc from line */
 		}
 #ifndef hab207
 	else if ( !strncmp( "\\bpunc ", pSenTransData->line, 7 ) ) /* If begin punc */
 		{
 		rest = skipwhite( pSenTransData->line + 7 );  /* Start after marker */
-
+#ifndef hab210
+	freeStringList(pSenTransData->begin_punc);
+#endif /* hab210 */
 		pSenTransData->begin_punc = loadpunc( infile, pSenTransData );	/* Load punc from line */
 		}
 #else  /* hab207 */
@@ -544,6 +557,9 @@ char *s;            /* Temp char pointer */
 int bracketseen = 0;    /* Class bracket [] flag */
 Pat *pat;           /* Temp pattern */
 char *tagstr;       /* for tags on match elements (^xxx) */
+#ifndef hab210
+int iLen;			/* length of a matching punctuation string */
+#endif /* hab210 */
 
 mt = NULL;
 firstmt = mprev = NULL;                 /* Init firstmt */
@@ -624,6 +640,21 @@ while ( TRUE )                          /* While elements found */
 	if ( *rest == '#' && myisspace( *(rest+1) ) )
 		mt->type |= BOUND;
 
+#ifndef hab210
+	if ( ((iLen = PuncLengthAtBeginning(pSenTransData, rest)) > 0) &&
+	 myisspace(*(rest + iLen))) /* is punctuation with whitespace after it */
+		{
+		mt->type |= PUNC;
+		en = rest + iLen;                  /* Note end */
+		*en = '\0';                     /* Terminate string */
+		mt->string = mystrdup( rest );  /* Set string */
+		*en = ' ';                      /* Restore removed char */
+		rest = skipwhite( rest + 1 );   /* Move past punc */
+		if ( rmat )
+			linkrepl( rmat, mt, pSenTransData );
+		continue;                       /* Continue with next char */
+		}
+#else  /* hab210 */
 	if ( myisspace( *(rest + 1) )             /* If single char */
 			&& (   strchr( pSenTransData->sent_punc, *rest )    /* And punc */
 				|| strchr( pSenTransData->other_punc, *rest )
@@ -639,6 +670,7 @@ while ( TRUE )                          /* While elements found */
 			linkrepl( rmat, mt, pSenTransData );
 		continue;                       /* Continue with next char */
 		}
+#endif /* hab210 */
 
 	if ( *rest == '~' )                 /* If NOT */
 		{
@@ -1199,7 +1231,11 @@ if ( !(rep->type & REF ) )              /* If not reference */
 		}
 	type = WORD;
 	if ( rep->type & PUNC )             /* allow insertion of punctuation 1.2a BJY */
+#ifndef hab210
+		if ( PuncLengthAtBegSL(pSenTransData->begin_punc, rep->string) )
+#else  /* hab210 */
 		if ( strchr( pSenTransData->begin_punc, rep->string[0] ) )
+#endif /* habd210 */
 			type = WDPUNC | FROMF;      /* decide which field it should go in: \f or \n */
 		else
 			type = WDPUNC | FROMN;
@@ -1421,6 +1457,45 @@ if ( !fgets ( pSenTransData->line, MAXLINE, infile ) ) /* Get another line */
 }
 #endif
 
+#ifndef hab210
+/**************************************************************
+ * NAME
+ *      loadpunc
+ * ARGS
+ *      infile - file to use to get next line
+ *      pSenTransData - SenTrans Data
+ * GLOB
+ *      rest - rest of line to process
+ * DESCR
+ *      Load punctuation marks from a punc or sentpunc line.
+ * RETRN
+ *      Pointer to newly created string list.
+ */
+static StringList *loadpunc( FILE *infile, SenTransData *pSenTransData)
+{
+StringList *pStrList = NULL;
+char *pszBeg;
+char *cp;
+
+for (pszBeg = cp = rest; *cp; cp++)
+  {
+	if (myisspace(*cp))
+	  {
+	*cp = '\0';
+	if (*pszBeg != '\0' && *pszBeg != '\\')
+	  pStrList = addToStringList(pStrList, pszBeg);
+	pszBeg = skipwhite(cp + 1);
+	  }
+  }
+ if (*pszBeg != '\0' && *pszBeg != '\\')
+   pStrList = addToStringList(pStrList, pszBeg);
+
+if ( !fgets ( pSenTransData->line, MAXLINE, infile ) ) /* Get another line */
+	rule_eofseen = TRUE;            /* If no more, remember */
+
+return(pStrList);
+}
+#else  /* hab210 */
 /**************************************************************
  * NAME
  *      loadpunc
@@ -1455,6 +1530,7 @@ if ( !fgets ( pSenTransData->line, MAXLINE, infile ) ) /* Get another line */
 
 return( s );                        /* Return punc marks */
 }
+#endif /* hab210 */
 
 /**************************************************************
  * NAME
@@ -2068,6 +2144,58 @@ static char *pszGetReplaceText( Match *rep )
 	s = rep->string;
   return(s);
 }
+
+#ifndef hab210
+/**************************************************************  1.2zb hab
+ * NAME
+ *      PuncLengthAtBeginning
+ * ARGS
+ *      pSenTransData_in - SenTrans Data
+ *      pszStart_in      - pointer to character beginning search space
+ * DESCR
+ *      Determine if some punctuation string matches at pszStart_in
+ * RTRN
+ *      The length of the punctuation that matched.
+ *      0 otherwise.
+ */
+static int PuncLengthAtBeginning(SenTransData *pSenTransData_in, char *pszStart_in)
+{
+int iLen = 0;
+
+ if ( (iLen = PuncLengthAtBegSL(pSenTransData_in->sent_punc, pszStart_in))
+	  == 0)
+   if ((iLen = PuncLengthAtBegSL(pSenTransData_in->other_punc, pszStart_in))
+	   == 0)
+	 iLen = PuncLengthAtBegSL(pSenTransData_in->begin_punc, pszStart_in);
+
+return iLen;
+}
+
+/**************************************************************  1.2zb hab
+ * NAME
+ *      PuncLengthAtBegSL
+ * ARGS
+ *      pStrList_in - a string list to search
+ *      pszStart_in - pointer to character beginning search space
+ * DESCR
+ *      Determine if a string begins one of the members of the string list
+ * RTRN
+ *      The length of the matching string.
+ *      0 if no match.
+ */
+int PuncLengthAtBegSL(StringList *pStrList_in, char *pszStart_in)
+{
+for ( ; pStrList_in ; pStrList_in = pStrList_in->pNext )
+  {				/* for each string in string list */
+	if (strstr(pszStart_in, pStrList_in->pszString) == pszStart_in)
+	  {			/* it matches at the left edge */
+	return strlen(pStrList_in->pszString);
+	  }
+  }
+
+return 0;
+}
+#endif /* hab210 */
 
 /*------------------------------------------------------------
 * Change history:

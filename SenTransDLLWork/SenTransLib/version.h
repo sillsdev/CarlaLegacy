@@ -3,13 +3,15 @@
  * Copyright 2000 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
-#define REVISION 0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 7		/* bug fix or other minor change */
-#define DATE "April 22, 2002"	/* date of release version */
+#define REVISION 1		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0		/* bug fix or other minor change */
+#define DATE "July 1, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 01-Jul-2002  hab  - Rework punctuation to use strings (in order to handle
+ * [2.1.0]               UTF-8 Unicode).  Means change to documentation.
  * 22-Apr-2002  hab  - Fix bug: a begin punctuation would not match in some
  * [2.0.7]               disambiguation rules.
  * 18-Jul-2001  hab  - Fix bug: if \a field of ANA has any extra spaces, then

@@ -2,7 +2,7 @@
 		  Sentence Transfer Program Reference Manual
 						Alan Buseman
 					  21 Nov 91 (1.0a)
-
+		 01 Jul 2002 (2.1.0) (by H. Andrew Black)
 
 
 					 Table of Contents
@@ -640,7 +640,7 @@ You can  change  the  list of sentence punctuation by including a
 punctuation marker  is  followed  by  a  list of characters to be
 treated as sentence punctuation, as in the following example:
 
-	\sentpunc .?!
+	\sentpunc . ? !
 
 The  above   line  says  that  only  period,  question  mark  and
 exclamation mark  are to be considered sentence punctuation.  You
@@ -653,6 +653,8 @@ causes the  sentence  boundary  marker  to  also  apply to phrase
 boundaries marked  by  commas.   Many rules apply equally well at
 both places.
 
+Beginning  with  version 2.1.0,  one  *must* separate punctuation
+characters with spaces.
 
 Sentence Transfer Program                                  Page 12
 
@@ -664,6 +666,9 @@ rules.  To do that the program needs a list of punctuation marks.
 This is given using a "\punc" field marker, followed by a list of
 punctuation marks.   The  program knows the sentence ending marks
 are punctuation, so you do not need to include those.
+
+Beginning  with  version 2.1.0,  one  *must* separate punctuation
+characters with spaces.
 
 The following example says that comma is punctuation:
 

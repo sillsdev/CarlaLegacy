@@ -47,9 +47,13 @@ extern char *	optarg;
 extern int	optind;
 extern int	opterr;
 extern int	optopt;
+
 #ifdef __cplusplus
 }
 #endif
+#ifndef hab210
+static char *GetWordType(t_Wflag type);
+#endif /* hab210 */
 
 
 /*****************************************************************************
@@ -107,9 +111,15 @@ static SenTransData	sSenTransData_m = {
 	NULL,			/* First category */
 	NULL,			/* First property */
 	NULL,			/* General rule list */
+#ifndef hab210
+	NULL,			/* Sentence terminators */
+	NULL,			/* Other punctuation */
+	NULL,			/* Begin punctuation */
+#else  /* hab210 */
 	".?!:;",			/* Sentence terminators */
 	"-,'/\"",			/* Other punctuation */
 	"'\"",			/* Begin punctuation */
+#endif /* hab210 */
 #ifndef hab221
 	FALSE,		/* all morphs have cat info in \cat field */
 #endif /* hab221 */
@@ -141,6 +151,10 @@ void *short_term_bot;       /* Short term allocation bottom */
 int tot_apps;               /* Total number of rules applied to a sent */
 int apps;                   /* Number of rules applied this round */
 
+#ifndef hab210
+ Word *wp;
+#endif
+
 #ifdef THINK_C
 argc = ccommand(&argv);
 #endif
@@ -168,6 +182,25 @@ if (sSenTransData_m.pLogFP != NULL)
 	}
 
 sSenTransData_m.line = (char *)myalloc( MAXLINE );
+#ifndef hab210
+/* initialize punctuation string lists */
+			/* Sentence terminators */
+ sSenTransData_m.sent_punc = addToStringList(sSenTransData_m.sent_punc, ".");
+ sSenTransData_m.sent_punc = addToStringList(sSenTransData_m.sent_punc, "?");
+ sSenTransData_m.sent_punc = addToStringList(sSenTransData_m.sent_punc, "!");
+ sSenTransData_m.sent_punc = addToStringList(sSenTransData_m.sent_punc, ":");
+ sSenTransData_m.sent_punc = addToStringList(sSenTransData_m.sent_punc, ";");
+			/* Other punctuation */
+ sSenTransData_m.other_punc = addToStringList(sSenTransData_m.other_punc, "-");
+ sSenTransData_m.other_punc = addToStringList(sSenTransData_m.other_punc, ",");
+ sSenTransData_m.other_punc = addToStringList(sSenTransData_m.other_punc, "'");
+ sSenTransData_m.other_punc = addToStringList(sSenTransData_m.other_punc, "/");
+ sSenTransData_m.other_punc = addToStringList(sSenTransData_m.other_punc, "\"");
+			/* Begin punctuation */
+ sSenTransData_m.begin_punc = addToStringList(sSenTransData_m.begin_punc, "'");
+ sSenTransData_m.begin_punc = addToStringList(sSenTransData_m.begin_punc, "\"");
+
+#endif /* hab210 */
 
 #if defined( MacCADA )
 do_monitor = m;
@@ -277,6 +310,17 @@ while (1)
 	if ( !(sent = loadsent(infile, &sSenTransData_m) ) )
 		break;
 #endif
+#ifndef hab210
+	if (sSenTransData_m.do_debug > 1)
+	  {
+	for (wp = sent; wp; wp=wp->next)
+	  {
+		fprintf(stdout, "\nWord struct:\tname = %s\n\
+\t\ttype = %s\n\
+\t\tambi = %d", wp->name, GetWordType(wp->type), wp->numamb);
+	  }
+	  }
+#endif /* hab210 */
 	tot_apps = 0;
 	apps = applyrules( sSenTransData_m.rules, sent,
 			   &sSenTransData_m );      /* Apply  rules */
@@ -514,3 +558,33 @@ report output can be redirected by > outfile\n" );
 }
 
 #endif  /* end of stuff not needed in MacCADA */
+
+#ifndef hab210
+static char *GetWordType(t_Wflag type)
+{
+#define MAXBUF 200
+char szAnswer[MAXBUF];
+char *cp;
+memset(szAnswer, 0, MAXBUF);
+cp = &szAnswer[0];
+
+if (type & WORD)
+  strcat(cp, "Word ");
+if (type & WDPUNC)
+  strcat(cp, "WordPunc ");
+if (type & FROMF)
+  strcat(cp, "FromF ");
+if (type & FROMN)
+  strcat(cp, "FromN ");
+if (type & WHSPC)
+  strcat(cp, "Whitespace ");
+if (type & HASPROP)
+  strcat(cp, "HasProperty ");
+if (type & BOUND)
+  strcat(cp, "Boundary ");
+if (strlen(cp) == 0)
+  return "Unknown!";
+else
+  return cp;
+}
+#endif /* hab210 */

@@ -39,6 +39,12 @@ typedef struct sentrans_data		SenTransData;
 
 #include "myallo.h"             /* Include myallo prototypes */
 
+#ifndef hab210
+#define P(args) args
+#include "strlist.h"
+#undef P
+#endif
+
 #ifdef MacCADA
 #include "ConsoleOutput.h"
 #endif
@@ -300,9 +306,15 @@ struct sentrans_data {
 	Mem *firstcat;		/* First category */
 	Mem *firstprop;             /* First property */
 	Rule *rules;		/* General rule list */
+#ifndef hab210
+	StringList *sent_punc;	/* Sentence terminators */
+	StringList *other_punc;	/* Other punctuation */
+	StringList *begin_punc;	/* Begin punctuation */
+#else  /* hab210 */
 	char *sent_punc;		/* Sentence terminators */
 	char *other_punc;		/* Other punctuation */
 	char *begin_punc;		/* Begin punctuation */
+#endif /* hab210 */
 	short bMorphsHaveCats;	/* all morphs have cat info in \cat field */
 	};
 

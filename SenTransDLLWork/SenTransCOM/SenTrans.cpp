@@ -52,9 +52,15 @@ CSenTrans::CSenTrans()
   m_SenTransData.firstcat        = NULL;  // First category
   m_SenTransData.firstprop       = NULL;  // First property
   m_SenTransData.rules           = NULL;  // General rule list
+#ifndef hab210
+  m_SenTransData.sent_punc    = NULL;  // Sentence terminators
+  m_SenTransData.other_punc   = NULL; // Other punctuation
+  m_SenTransData.begin_punc   = NULL;	  // Begin punctuation
+#else  // hab210
   m_SenTransData.sent_punc    = ".?!:;";  // Sentence terminators
   m_SenTransData.other_punc   = "-,'/\""; // Other punctuation
   m_SenTransData.begin_punc   = "'\"";	  // Begin punctuation
+#endif // hab210
 #ifndef hab221
   m_SenTransData.bMorphsHaveCats = FALSE; // all morphs have cats in \cat field
 #endif // hab221
@@ -362,6 +368,25 @@ STDMETHODIMP CSenTrans::ApplyRulesToFile(BSTR bstrRules, BSTR bstrInput, BSTR bs
   m_SenTransData.tot_words_out       = 0;
   m_SenTransData.tot_ambig_words_out = 0;
   m_SenTransData.tot_ambigs_out      = 0;
+#ifndef hab210
+// initialize punctuation string lists
+			/* Sentence terminators */
+  m_SenTransData.sent_punc = addToStringList(m_SenTransData.sent_punc, ".");
+  m_SenTransData.sent_punc = addToStringList(m_SenTransData.sent_punc, "?");
+  m_SenTransData.sent_punc = addToStringList(m_SenTransData.sent_punc, "!");
+  m_SenTransData.sent_punc = addToStringList(m_SenTransData.sent_punc, ":");
+  m_SenTransData.sent_punc = addToStringList(m_SenTransData.sent_punc, ";");
+			/* Other punctuation */
+  m_SenTransData.other_punc = addToStringList(m_SenTransData.other_punc, "-");
+  m_SenTransData.other_punc = addToStringList(m_SenTransData.other_punc, ",");
+  m_SenTransData.other_punc = addToStringList(m_SenTransData.other_punc, "'");
+  m_SenTransData.other_punc = addToStringList(m_SenTransData.other_punc, "/");
+  m_SenTransData.other_punc = addToStringList(m_SenTransData.other_punc, "\"");
+			/* Begin punctuation */
+  m_SenTransData.begin_punc = addToStringList(m_SenTransData.begin_punc, "'");
+  m_SenTransData.begin_punc = addToStringList(m_SenTransData.begin_punc, "\"");
+
+#endif // hab210
 #ifndef hab221
   m_SenTransData.bMorphsHaveCats     = FALSE;
 #endif // hab221
@@ -538,9 +563,66 @@ HRESULT CSenTrans::OpenSenTransFiles(BSTR bstrRules, BSTR bstrInput, BSTR bstrOu
   return S_OK;
 }
 
+#ifndef hab210
+static char *convertStringListIntoString( StringList *pSLInput_in )
+{
+#define MAXBUFSIZE 2000
+int iLen;
+int iNew;
+int iSize = MAXBUFSIZE;
+char szBuffer[MAXBUFSIZE];
+StringList *pStrList;
+char *cp;
+
+ memset(szBuffer, 0, MAXBUFSIZE);
+ cp = &szBuffer[0];
+for (pStrList = pSLInput_in; pStrList != NULL; pStrList = pStrList->pNext)
+  {
+	iLen = strlen(cp);
+	if ((iNew = iLen+strlen(pStrList->pszString)) >= iSize)
+	  {
+	cp = (char *)realloc((void *)cp, iNew+10);
+	  }
+	cp = strcat(cp, pStrList->pszString);
+	cp = strcat(cp, " ");
+  }
+
+return(cp);
+}
+
+static StringList *parsePuncStringIntoStringList( char *pszInput_in )
+{
+StringList *pStrList = NULL;
+char *pszBeg;
+char *cp;
+
+for (pszBeg = cp = pszInput_in; *cp; cp++)
+  {
+	if (isspace(*cp))
+	  {
+	*cp = '\0';
+	if (*pszBeg != '\0' && *pszBeg != '\\')
+	  pStrList = addToStringList(pStrList, pszBeg);
+	pszBeg = skipwhite(cp + 1);
+	  }
+  }
+ if (*pszBeg != '\0' && *pszBeg != '\\')
+   pStrList = addToStringList(pStrList, pszBeg);
+
+return(pStrList);
+}
+#endif // hab210
+
 STDMETHODIMP CSenTrans::get_SentenceTerminators(BSTR *pVal)
 {
+#ifndef hab210
+  char *cp;
+  // convert stringlist to somestring with spaces between members
+  cp = convertStringListIntoString(m_SenTransData.sent_punc);
+  HRESULT hr = ConvertStringToBstr(cp, CP_ACP, pVal);
+#else  // hab210
   HRESULT hr = ConvertStringToBstr(m_SenTransData.sent_punc, CP_ACP, pVal);
+#endif // hab210
   if (FAILED(hr))
 	return hr;
 
@@ -559,14 +641,25 @@ STDMETHODIMP CSenTrans::put_SentenceTerminators(BSTR newVal)
 	{
 	  return hr;
 	}
+#ifndef hab210
+  m_SenTransData.sent_punc = parsePuncStringIntoStringList(pszTemp);
+#else  // hab210
   m_SenTransData.sent_punc = mystrdup(pszTemp);
+#endif // hab210
   free(pszTemp);
   return S_OK;
 }
 
 STDMETHODIMP CSenTrans::get_BeginningPunctuation(BSTR *pVal)
 {
+#ifndef hab210
+  char *cp;
+  // convert stringlist to somestring with spaces between members
+  cp = convertStringListIntoString(m_SenTransData.begin_punc);
+  HRESULT hr = ConvertStringToBstr(cp, CP_ACP, pVal);
+#else  // hab210
   HRESULT hr = ConvertStringToBstr(m_SenTransData.begin_punc, CP_ACP, pVal);
+#endif // hab210
   if (FAILED(hr))
 	return hr;
 
@@ -585,14 +678,25 @@ STDMETHODIMP CSenTrans::put_BeginningPunctuation(BSTR newVal)
 	{
 	  return hr;
 	}
+#ifndef hab210
+  m_SenTransData.begin_punc = parsePuncStringIntoStringList(pszTemp);
+#else  // hab210
   m_SenTransData.begin_punc = mystrdup(pszTemp);
+#endif // hab210
   free(pszTemp);
   return S_OK;
 }
 
 STDMETHODIMP CSenTrans::get_OtherPunctuation(BSTR *pVal)
 {
+#ifndef hab210
+  char *cp;
+  // convert stringlist to somestring with spaces between members
+  cp = convertStringListIntoString(m_SenTransData.other_punc);
+  HRESULT hr = ConvertStringToBstr(cp, CP_ACP, pVal);
+#else  // hab210
   HRESULT hr = ConvertStringToBstr(m_SenTransData.other_punc, CP_ACP, pVal);
+#endif // hab210
   if (FAILED(hr))
 	return hr;
 
@@ -611,7 +715,11 @@ STDMETHODIMP CSenTrans::put_OtherPunctuation(BSTR newVal)
 	{
 	  return hr;
 	}
+#ifndef hab210
+  m_SenTransData.other_punc = parsePuncStringIntoStringList(pszTemp);
+#else  // hab210
   m_SenTransData.other_punc = mystrdup(pszTemp);
+#endif // hab210
   free(pszTemp);
   return S_OK;
 }

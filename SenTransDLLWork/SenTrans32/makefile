@@ -9,7 +9,8 @@ LIBDIR=..\SenTransLib
 LIBSRCDIR=..\SenTransLib
 
 CC      = gcc -g -O2 -Wall -Dalloca=__builtin_alloca
-CFLAGS  = -DDJGPP -DHAVE_CONFIG_H -I. -I.. -I../../pc-parse/include -I../SenTransLib
+#CFLAGS  = -DDJGPP -DHAVE_CONFIG_H -I. -I.. -I../../pc-parse/include -I../SenTransLib
+CFLAGS  = -DDJGPP -DHAVE_CONFIG_H -I. -I.. -I../../pc-parse -I../../pc-parse/include -I../SenTransLib
 RANLIB  = ranlib
 INSTALL = copy
 # either GNU bison or Berkeley yacc work okay: need the -d and -p options
@@ -69,7 +70,7 @@ sentra_p.exe: $(SENTOBJP)
 	@ren a.out sentra_p. >nul
 
 sentrans.o sentrans.op: SenTrans32.cpp
-	copy SenTrans32.cpp sentrans.c
+#	copy SenTrans32.cpp sentrans.c
 	$(CC) -ansi -pedantic $(CFLAGS) -c sentrans.c -o sentrans.o
 
 #############################################################################
