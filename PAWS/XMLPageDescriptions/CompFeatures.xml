@@ -33,7 +33,7 @@ Add the features <feature>sentential embedded_finite</feature> to the lexical en
 		<instruction>Add the features <feature>sentential embedded_-question</feature> to the lexical entries for the main verbs in the examples.</instruction>
 		<br/>
 		<EnglishExample>
-			<exItem>Now consider verbs which take a direct object as well as either a finite ot nonfinite complement, like:</exItem>
+			<exItem>Now consider verbs which take a direct object as well as either a finite or nonfinite complement, like:</exItem>
 			<exItem label="1.">I will persuade Joe that he should come to the party.</exItem>
 			<exItem label="2.">I will persuade Joe to come to the party.</exItem>
 		</EnglishExample>
@@ -75,13 +75,13 @@ Add the features <feature>sentential embedded_finite</feature> to the lexical en
 		<textBox id="CompNonfiniteCPOrProDropExample" dataItem="nonfiniteCPOrProDropExample" cols="50"/>
 		<br/>
 		<br/>
-	  <instruction>In the lexicon, add the features <feature>makeC -finite</feature> to any complementizer(s) like 'for' so it will show up in the correct position in the tree structure and be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.)
+		<instruction>In the lexicon, add the features <feature>makeC -finite</feature> to any complementizer(s) like 'for' so it will show up in the correct position in the tree structure and be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.)
 <br/>
 			<br/>
 		Add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature> to the lexical entries for the main verbs in the examples.</instruction>
 		<br/>
 		<prompt>
-  Your language may also have other restrictions on embbeded clauses, such as the embbeded verb being in the subjunctive mood or in the perfective aspect.  Key any of those examples here:</prompt>
+  Your language may also have other restrictions on embedded clauses, such as the embedded verb being in the subjunctive mood or in the perfective aspect.  Key any of those examples here:</prompt>
 		<textBox id="CompOtherExample" dataItem="otherExample" cols="50"/>
 		<br/>
 		<br/>

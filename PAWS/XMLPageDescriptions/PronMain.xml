@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PronMain">
 	<title>Pronouns</title>
-	<introduction>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals,  and indefinites.  These pronouns normally stand alone in the place of a nominal phrase, but thay can also be modified by a partitive phrase and in some languages may be modified by determiners and quantifiers.  Each of these types and issues will be looked at in turn.
+	<introduction>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals,  and indefinites.  These pronouns normally stand alone in the place of a nominal phrase, but they can also be modified by a partitive phrase and in some languages may be modified by determiners and quantifiers.  Each of these types and issues will be looked at in turn.
 <br/>
 		<br/>
 The main task for pronouns is to add all the relevant features in the lexicon for case and agreement and pronoun type.  Personal pronouns normally have either more than or the same number of case and agreement features as nouns have.  </introduction>
@@ -54,7 +54,15 @@ Key the personal pronouns in the text box, with each pronoun followed by a perio
 <ul>
 				<li>Add the feature <feature>ergative</feature> to all the pronouns that occur in subject position for transitive verbs.</li>
 				<li>Add the feature <feature>absolutive</feature> to all the pronouns that occur in direct object position and in subject position for intransitive verbs.</li>
-				<li>Add the feature <span id="PronPossGen" show="swNPPossCaseGenitive"><feature>genitive</feature></span><span id="PronPossErg" show="swNPPossCaseErgative"><feature>ergative</feature></span><span id="PronPossAbs" show="swNPPossCaseAbsolutive"><feature>absolutive</feature></span> to all the pronouns that occur in possessor position.</li>
+				<li>Add the feature <span id="PronPossGen" show="swNPPossCaseGenitive">
+						<feature>genitive</feature>
+					</span>
+					<span id="PronPossErg" show="swNPPossCaseErgative">
+						<feature>ergative</feature>
+					</span>
+					<span id="PronPossAbs" show="swNPPossCaseAbsolutive">
+						<feature>absolutive</feature>
+					</span> to all the pronouns that occur in possessor position.</li>
 				<li>If a particular pronoun can show up in any position, do not add any feature.</li>
 			</ul>
 		</instruction>

@@ -12,7 +12,23 @@ adjectives in modifying nouns directly, they will need to have the
 syntactic category of adjectives plus a feature to distinguish them.
 </introduction>
 	<form section="qp">
-		<prompt>Key your examples containing ordinal numbers here, including ordinal numbers with a noun, ordinal numbers modifying a cardinal number with a noun, and examples meaning the last or next something:</prompt>
+		 <prompt>Key the first ten cardinal numbers, each on a separate line and followed by a period, in order from one to ten here:</prompt>
+		<textBox id="QPCardinalNumbers1to10" dataItem="cardinalNumbers1to10"/>
+		<br/>
+		<br/>
+		 <prompt>Key the cardinal numbers for 11 through 20 here:</prompt>
+		<textBox id="QPCardinalNumbers11to20" dataItem="cardinalNumbers11to20"/>
+		<br/>
+		<br/>
+		 <prompt>Key the cardinal numbers by tens for 30 through 100 here:</prompt>
+		<textBox id="QPCardinalNumbers30to100" dataItem="cardinalNumbers30to100"/>
+		<br/>
+		<br/>
+	   <prompt>Key the first ten ordinal numbers, each on a separate line and followed by a period, in order from first to tenth here:</prompt>
+		<textBox id="QPOrdinalNumbers" dataItem="ordinalNumbers"/>
+		<br/>
+		<br/>
+		<prompt>Key your examples of nominal phrases containing ordinal numbers here, including ordinal numbers with a noun, ordinal numbers modifying a cardinal number with a noun, and examples meaning the last or next something:</prompt>
 		<textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
 		<br/>
 		<br/>

@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronPoss">
 	<title level="2">Pronouns - Possessives</title>
-	<introduction>Many languages also have possessive pronouns which can stand alone, such as <example>yours</example>, <example>mine</example>, <example>theirs</example>, <example>hers</example> in English.  These are distinct from those pronouns which can occur in possessor position, such as <example>your</example>, <example>my</example>, <example>their</example>, <example>her</example>, which were handled on the previous page.</introduction>
+	<introduction>Many languages also have possessive pronouns which can stand alone, such as <example>yours</example>, <example>mine</example>, <example>theirs</example> or <example>hers</example> in English.  These are distinct from those pronouns which can occur in possessor position, such as <example>your</example>, <example>my</example>, <example>their</example> or <example>her</example>, which were handled on the previous page.</introduction>
 	<form section="pron">
 		<radioGroup>
 			<groupName dataItem="poss" default="no">RPronPoss</groupName>

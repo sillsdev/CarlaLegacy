@@ -36,7 +36,7 @@
 		<instruction id="PPTypeCliticHeadInstruction" show="swPPTypeCliticOrBothHead">In the lexicon, mark the clitics with the feature <feature>PP</feature>.</instruction>
 		<br/>
 		<buttons>
-			<button id="PPCompBack" value="Back" goto="PPModifiers.htm"/>
+			<button id="PPCompBack" value="Back" goto="PPMain.htm"/>
 			<button id="PPCompNext" value="Next" goto="PPOther.htm"/>
 		</buttons>
 	</form>

@@ -36,42 +36,54 @@ like <example>only</example> and <example>just</example>.
 			<u>only</u> Sue's three children.</exItem>
 	</EnglishExample>
 	<form section="qp">
-		 <radioGroup>
+		<prompt>Key the way your language expresses "all", with each word followed by a period and on a separate line, here:</prompt>
+		<textBox id="QPAllExample" dataItem="all" rows="3"/>
+		<br/>
+		<br/>
+		<prompt>Key the way your language expresses "only" here:</prompt>
+		<textBox id="QPOnlyExample" dataItem="only" rows="2"/>
+		<br/>
+		<br/>
+		<prompt>Key the way your language expresses "just" here:</prompt>
+		<textBox id="QPJustExample" dataItem="just" rows="2"/>
+		<br/>
+		<br/>
+		<radioGroup>
 			<groupName dataItem="npDegree" default="no">RNPDegree</groupName>
-			<prompt>Does your language have these special words which modify the whole nominal phrase?</prompt>
+			<prompt>Does your language express any of these concepts as separate words which modify the whole nominal phrase?</prompt>
 			<radio id="QPNPDegreeNo" checked="yes" dataValue="no">No</radio>
 			<radio id="QPNPDegreeYes" checked="yes" dataValue="yes">Yes</radio>
-</radioGroup>
-	   <prompt id="QPNPDegreePrompt" show="swQPNPDegreeYes">Key your examples here:</prompt>
+		</radioGroup>
+		<prompt id="QPNPDegreePrompt" show="swQPNPDegreeYes">Key your examples in full nominal phrases here:</prompt>
 		<textBox id="QPExample" dataItem="example" show="swQPNPDegreeYes"/>
-<br/>
-<br/>
-<radioGroup id="QPNPDegreeYesTable" show="swQPNPDegreeYes">
-				<groupName dataItem="npDegreePos" default="unknown" position="yesSpec">RQPNPDegreePos</groupName>
-				<prompt>Where do these special degree words occur with respect to the rest of the nominal phrase?</prompt>
-				<radio id="QPNPDegreeBefore" checked="yes" dataValue="before">Before it</radio>
-				<radio id="QPNPDegreeAfter" checked="yes" dataValue="after">After it</radio>
-				<radio id="QPNPDegreeEitherSide" checked="yes" dataValue="either">On either side, but not both sides at the same time</radio>
-				<radio id="QPNPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrboth">On either side, or both sides at the same time</radio>
-				<radio id="QPNPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
-				<radio id="QPNPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
-				<radio id="QPNPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-				<radioGroup id="QPNPDegreeEitherSideTable" show="swQPNPDegreeEitherorBoth">
-					<groupName dataItem="npDegreeEither" default="unrestricted">RQPNPDegreeEitherSide</groupName>
-					<prompt>Can all the degree words appear on either side of the rest of the nominal phrase?</prompt>
-					<radio id="QPNPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
-					<radio id="QPNPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
-				</radioGroup>
+		<br/>
+		<br/>
+		<radioGroup id="QPNPDegreeYesTable" show="swQPNPDegreeYes">
+			<groupName dataItem="npDegreePos" default="unknown" position="yesSpec">RQPNPDegreePos</groupName>
+			<prompt>Where do these special degree words occur with respect to the rest of the nominal phrase?</prompt>
+			<radio id="QPNPDegreeBefore" checked="yes" dataValue="before">Before it</radio>
+			<radio id="QPNPDegreeAfter" checked="yes" dataValue="after">After it</radio>
+			<radio id="QPNPDegreeEitherSide" checked="yes" dataValue="either">On either side, but not both sides at the same time</radio>
+			<radio id="QPNPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrboth">On either side, or both sides at the same time</radio>
+			<radio id="QPNPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
+			<radio id="QPNPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
+			<radio id="QPNPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+			<radioGroup id="QPNPDegreeEitherSideTable" show="swQPNPDegreeEitherorBoth">
+				<groupName dataItem="npDegreeEither" default="unrestricted">RQPNPDegreeEitherSide</groupName>
+				<prompt>Can all the degree words appear on either side of the rest of the nominal phrase?</prompt>
+				<radio id="QPNPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
+				<radio id="QPNPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
+		</radioGroup>
 		<instruction id="QPNPDegreeYesInstruction" show="swQPNPDegreeYes">In the lexicon, mark the words like <example>all</example>, <example>only</example>, and <example>just</example> with the features <feature>Deg modifies_NP</feature>.  Note that this is two separate features with a space between
 them.  The first will change their syntactic category to <category>Deg</category>
 and the second adds the feature to distinguish them as the type that modifies NPs.  <br/>
 			<br/>
 Also, mark the word or words meaning <example>all</example> with the features
 <feature>plural quantifier</feature>.</instruction>
-				<instruction id="QPNPDegreeEitherRestrictedInstruction" show="swQPNPDegreeEitherRestricted">In the lexicon, mark those which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>
-<br/>
-<br/>
+		<instruction id="QPNPDegreeEitherRestrictedInstruction" show="swQPNPDegreeEitherRestricted">In the lexicon, mark those which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>
+		<br/>
+		<br/>
 		<buttons>
 			<button id="QPExamplesBack" value="Back" goto="Contents.htm"/>
 			<button id="QPExamplesNext" value="Next" goto="QPDegree.htm"/>

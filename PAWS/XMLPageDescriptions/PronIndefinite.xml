@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronIndefinite">
 	<title level="2">Pronouns - Indefinites</title>
-	<introduction>A final type of pronouns is indefinites.  In English, these include <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>something</example>, etc.  Also, <example>nobody</example>, <example>nothing</example>, <example>none</example> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier or negative plus an indefinite generic noun, and some languages may not merge them into a single word, as in <example>no one</example> for English.</introduction>
+	<introduction>A final type of pronouns is indefinites.  In English, these include <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>something</example>, etc.  Also, <example>nobody</example>, <example>nothing</example>, <example>none</example> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier (positive or negative) plus an indefinite generic noun, and some languages may not merge them into a single word, as in <example>no one</example> for English.</introduction>
 	<form section="pron">
 		<radioGroup id="PronIndefGroup">
 			<groupName dataItem="indef" default="no">RPronIndef</groupName>
@@ -12,11 +12,17 @@
 			<radio id="PronIndefYes" dataValue="yes">Yes, like English, at least some of them are merged into indefinite pronouns</radio>
 		</radioGroup>
 		<prompt id="PronIndefExamples" show="swPronIndefYes">
-		Key some examples of indefinite pronouns here:</prompt>
+		Key some examples of the positive indefinite pronouns here:</prompt>
 		<textBox id="PronIndefExample" dataItem="indefExample" show="swPronIndefYes"/>
+		<prompt id="PronNegIndefExamples" show="swPronIndefYes">
+		Key some examples of the negative indefinite pronouns here:</prompt>
+		<textBox id="PronNegIndefExample" dataItem="negIndefExample" show="swPronIndefYes"/>
 		<prompt id="PronIndefNPExamples">
-		  Key some examples of indefinite noun phrases <span id="PronIndefYesSpan" show="swPronIndefYes">(if any) </span>in your language:</prompt>
+		  Key some examples of positive indefinite noun phrases <span id="PronIndefYesSpan" show="swPronIndefYes">(if any) </span>in your language here:</prompt>
 		<textBox id="PronIndefNPExample" dataItem="indefNPExample"/>
+		<prompt id="PronNegIndefNPExamples">
+		  Key some examples of negative indefinite noun phrases <span id="PronIndefYesSpan1" show="swPronIndefYes">(if any) </span>in your language here:</prompt>
+		<textBox id="PronNegIndefNPExample" dataItem="negIndefNPExample"/>
 		<instruction id="PronIndefYesInstruction" show="swPronIndefYes">
 			Add the feature <feature>negative</feature> to any versions of the indefinite pronouns which are negative.  Also add this feature to any negative quantifiers that can be used in a noun phrase.  We will leave <feature>indefinite</feature> as unspecified.</instruction>
 		<instruction id="PronIndefNoInstruction" show="swPronIndefNo">

@@ -17,15 +17,18 @@ We will deal with each type in turn.
 			<radio id="NPPossAlienableNo" dataValue="no">No</radio>
 			<radio id="NPPossAlienableYes" dataValue="yes">Yes</radio>
 		</radioGroup>
-		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
+<prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Enter the affix(es) which are used to mark alienably possessed nouns when they have a possessor in the box (each on a separate line if more than one).  Use a hyphen after the alphabetic characters to indicate a prefix, a hyphen before to indicate a suffix, and hyphens on both sides to indicate an infix.</prompt>
+<textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
+<br/>
+		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
 		<radioGroup id="NPPossAgrTable">
 			<groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
-			<prompt>Are nouns marked with an affix with agrees with the possessor (or possibly expreses the possessor by itself)?</prompt>
+			<prompt>Are nouns marked with an affix which agrees with the possessor (or possibly expreses the possessor by itself)?</prompt>
 			<radio id="NPPossAgrNo" dataValue="no">No</radio>
 			<radio id="NPPossAgrYes" dataValue="yes">Yes</radio>
 		</radioGroup>
 		<instruction id="NPPossAgrYesInstruction" show="swNPPossAgrYes">Look through the features in the chart below and check any that your language uses.  In the lexicon, add one or more features from the following list as appropriate to the affix entries. <br/>
-<featureChart types="no">
+			<featureChart types="no">
 				<featureRow>
 					<featureType/>
 					<featureItem dataValue="npPossAgrPossFirst" name="NPPossAgrPossFirst">poss_first</featureItem>

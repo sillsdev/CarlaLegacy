@@ -91,14 +91,14 @@ The word meaning 'whose' needs to have two entries, both with the category which
 		<radioGroup id="QContWhDegAdjPosTable" show="swDegAdjPosEither">
 			<groupName dataItem="whDegAdjPos" default="unknown" position="yesSpec">RQContWhDegAdjPos</groupName>
 			<prompt>Your language allows degree words on either side of the adjective.  Where does the word meaning 'how' (or any other interrogative words which can modify adjectives) occur?</prompt>
-			<radio id="QContWhDedAdjPosBefore" dataValue="before">Always before the adjective, even if another degree word occurs after the adjective</radio>
+			<radio id="QContWhDegAdjPosBefore" dataValue="before">Always before the adjective, even if another degree word occurs after the adjective</radio>
 			<radio id="QContWhDegAdjPosAfter" dataValue="after">Always after the adjective, even if another degree word occurs before the adjective</radio>
 			<radio id="QContWhDegAdjPosAgree" dataValue="agree">On either side, but when there is a degree word on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be)</radio>
 		</radioGroup>
 		<radioGroup id="QContWhDegQPosTable" show="swDegQPosEither">
 			<groupName dataItem="whDegQPos" default="unknown" position="yesSpec">RQContWhDegQPos</groupName>
 			<prompt>Your language allows degree words on either side of the quantifier.  Where does the word meaning 'how' (or any other interrogative words which can modify quantifiers) occur?</prompt>
-			<radio id="QContWhDedQPosBefore" dataValue="before">Always before the quantifier, even if another degree word occurs after the quantifier</radio>
+			<radio id="QContWhDegQPosBefore" dataValue="before">Always before the quantifier, even if another degree word occurs after the quantifier</radio>
 			<radio id="QContWhDegQPosAfter" dataValue="after">Always after the quantifier, even if another degree word occurs before the quantifier</radio>
 			<radio id="QContWhDegQPosAgree" dataValue="agree">On either side, but when there is a degree word on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be)</radio>
 		</radioGroup>
@@ -178,7 +178,7 @@ The word meaning 'whose' needs to have two entries, both with the category which
 		<closeParen/>
 	</showWhen>
 	<showWhen id="swArtOnlyPosEither">
-		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<openParen/>
 		<whenValue element="np" attr="artPos" value="either"/>
