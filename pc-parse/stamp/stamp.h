@@ -453,6 +453,11 @@ typedef struct stamp_analysis {
 	struct tbu       *pTBUEnd;		/* last  tbu       in morpheme */
 	struct tone      *pToneBeg;		/* first tone      in morpheme */
 	struct tone      *pToneEnd;		/* last  tone      in morpheme */
+#ifndef hab104
+#ifndef TONEGEN
+	PropertySet_t     uAlloPropertySet;	/* allomorph properties from ANA file*/
+#endif /* TONEGEN */
+#endif /* hab104 */
 #endif /* TONEPARS */
 	} StampAnalysis;
 

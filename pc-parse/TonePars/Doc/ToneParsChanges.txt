@@ -1,5 +1,12 @@
 TonePars CHANGE HISTORY
 
+ * 21-Nov-2001  hab -
+
+1.0.4 (21-Nove-2001)
+-------------------
+1. Made TonePars use properties from ANA file, not from dictionary in
+tone rule conditions (but only if the ANA files has properties).
+
 1.0.3 (27-Dec-2000)
 -------------------
 1. Fixed a bug in which it failed to read the \dsc field, so it would not

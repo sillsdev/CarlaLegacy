@@ -4,12 +4,14 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 3		/* bug fix or other internal improvement */
-#define DATE       "December 27, 2000"	/* date of release version */
-#define YEAR       "2000"	/* used for release date and copyright */
+#define PATCHLEVEL 4		/* bug fix or other internal improvement */
+#define DATE       "November 21, 2001"	/* date of release version */
+#define YEAR       "2001"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 21-Nov-2001  hab - use properties from ANA file, not from dictionary in
+ * [1.0.4]             tone rule conditions
  * 27-Dec-2000  hab - fixed so will read \dsc field
  * [1.0.3]            Created DJGPP version
  * 19-Dec-2000  hab - fix bug in delete plural processing

@@ -255,6 +255,28 @@ extern long decapitalizeWord P((WordTemplate *       pWord_io,
 
 /********************* TONEANAL INTERNAL FUNCTIONS *********************/
 
+#ifndef hab104
+static void apply_rule P((struct tone_rule     *trp,
+			  StampAnalysis      *ap_orig,
+			  WordTemplate *word,
+			  struct pword         *pwp,
+			  struct domain        *dp,
+			  int                   tbu_type,
+			  long                 *edge_conds,
+			  int                   do_trace,
+			  WordAnalysis         *pWordAnal_in,
+			  StampData            *pStamp_in));
+static void apply_tone_rules P((StampAnalysis *ap_head,
+				WordTemplate *word,
+				struct pword    *pwp,
+				struct domain   *dp,
+				int              tbu_type,
+				long            *edge_conds,
+				int              which_rules,
+				int              do_trace,
+				WordAnalysis    *pWordAnal_in,
+				StampData       *pStamp_in));
+#else /* hab104 */
 static void apply_rule P((struct tone_rule     *trp,
 			  StampAnalysis      *ap_orig,
 			  WordTemplate *word,
@@ -273,6 +295,7 @@ static void apply_tone_rules P((StampAnalysis *ap_head,
 				int              which_rules,
 				int              do_trace,
 				StampData       *pStamp_in));
+#endif /* hab104 */
 static void             assign_lexical_tone_to_tbus P((StampAnalysis *ap,
 						 struct tone     *tp,
 						 int tbu_type,
@@ -285,6 +308,17 @@ static void build_tone_tier P((struct pword    *pwp,
 				   StampAnalysis *ap_head,
 				   int do_trace,
 				   StampData *pStamp_in));
+#ifndef hab104
+static long calculate_edge_conds P((StampAnalysis      *ap,
+				   struct pword         *pword,
+				   struct domain        *dp,
+				   WordTemplate *word,
+				   long                  old_edge_conds,
+				   int                   tbu_type,
+				   int                   do_trace,
+				   WordAnalysis         *pWordAnal_in,
+				   StampData            *pStamp_in));
+#else /* hab104 */
 static long calculate_edge_conds P((StampAnalysis      *ap,
 				   struct pword         *pword,
 				   struct domain        *dp,
@@ -293,6 +327,7 @@ static long calculate_edge_conds P((StampAnalysis      *ap,
 				   int                   tbu_type,
 				   int                   do_trace,
 				   StampData            *pStamp_in));
+#endif /* hab104 */
 static int compare P((long *a, long *b));
 	   void              copy_morpheme_info P((StampAnalysis *ap,
 						   StampMorpheme *mp));
@@ -300,6 +335,21 @@ static int do_existing_tone_action P((struct tone     *trb,
 					  struct action   *acp,
 					  StampAnalysis *ap,
 					  struct pword    *pwp));
+#ifndef hab104
+static void do_rules P((struct tone_rule     *trb,
+			struct tone_rule     *tre,
+			StampAnalysis      *ap,
+			WordTemplate *word,
+			struct pword         *pwp,
+			struct domain        *dp,
+			int                   tbu_type,
+			long                 *edge_conds,
+			int                   rule_type,
+			int                   which_rules,
+			int                   do_trace,
+			WordAnalysis         *pWordAnal_in,
+			StampData            *pStamp_in));
+#else /* hab104 */
 static void do_rules P((struct tone_rule     *trb,
 			struct tone_rule     *tre,
 			StampAnalysis      *ap,
@@ -312,6 +362,7 @@ static void do_rules P((struct tone_rule     *trb,
 			int                   which_rules,
 			int                   do_trace,
 			StampData            *pStamp_in));
+#endif /* hab104 */
 	   void do_tone_anal P((StampUnit *pUnit_in,
 				int do_trace,
 				StampData *pStamp_in));
@@ -351,6 +402,17 @@ static WordTemplate *remove_bad_anal P((WordTemplate *word,
 static StampAnalysisList *remove_bad_tranal P((StampAnalysisList *list,
 						   StampAnalysisList *tranp));
 static char *reconstruct_word P((char *decomp, StampData *pStamp_in));
+#ifndef hab104
+static int rule_condition_met P((struct tone_rule *trp,
+				 StampAnalysis  *ap,
+				 struct pword     *pwp,
+				 struct domain    *dp,
+				 int               tbu_type,
+				 long              edge_conds,
+				 struct tone      *tp,
+				 WordAnalysis     *pWordAnal_in,
+				 StampData *pOutputFP_in));
+#else /* hab104 */
 static int rule_condition_met P((struct tone_rule *trp,
 				 StampAnalysis  *ap,
 				 struct pword     *pwp,
@@ -359,7 +421,19 @@ static int rule_condition_met P((struct tone_rule *trp,
 				 long              edge_conds,
 				 struct tone      *tp,
 				 StampData *pOutputFP_in));
+#endif /* hab104 */
 static void show_edge_conds P((FILE *pOutputFP_in, long conds));
+#ifndef hab104
+static int tone_anal P((StampAnalysis *anal_head,
+			WordTemplate *word,
+			WordAnalysis         *WordAnal_in,
+			long                  edge_conds,
+			long                 *new_edge_conds,
+			int                   which_rules,
+			int                   do_trace,
+			StampUnit            *pUnit_in,
+			StampData            *pStamp_in));
+#else /* hab104 */
 static int tone_anal P((StampAnalysis *anal_head,
 			WordTemplate *word,
 			char                 *decompstring,
@@ -369,10 +443,23 @@ static int tone_anal P((StampAnalysis *anal_head,
 			int                   do_trace,
 			StampUnit            *pUnit_in,
 			StampData            *pStamp_in));
+#endif /* hab104 */
 static void trace_msg P((FILE *pOutputFP_in, char *msg));
+#ifndef hab104
+static int  utest P((struct cond_node *cond,
+			 WordAnalysis     *pWordAnal_in,
+			 StampData *pOutputFP_in));
+#else /* hab104 */
 static int  utest P((struct cond_node *cond,
 			 StampData *pOutputFP_in));
+#endif /* hab104 */
 #undef P
+
+#ifndef hab104
+static void addANAProperties(char *pszANAProps,
+				 StampAnalysis *pMorphs,
+				 StampData *pStamp_in);
+#endif /* hab104 */
 
 /********************* TONEANAL EXTERN VARIABLES *********************/
 
@@ -406,7 +493,10 @@ static struct pword    *t_pwp;		/* rule_condition_met(... pwp ...) */
 static struct domain   *t_dp;		/* rule_condition_met(... dp ...) */
 static long             t_edgeconds;	/* rule_condition_met( edgeconds ) */
 static int              t_tbutype;      /* rule_condition_met( tbu_type ) */
-static struct tone     *t_tone;   	/* rule_condition_met(... tp) */
+static struct tone     *t_tone;   	/* rule_condition_met(... tp...) */
+#ifndef hab104
+static WordAnalysis    *t_wordanal;	/* rule_condition_met(...pWordAnal_in) */
+#endif /* hab104 */
 
 static char *tsterrhead = "\nTONE_TEST: "; /* header for test error messages */
 
@@ -435,13 +525,19 @@ static int try_optional_rules;    /* whether or not to try right edge rules */
  *                   (i.e. if the structural descriptions of rules are met by
  *                    the preceding context)
  *    do_trace     - tracing flag
+ *    pWordAnal_in - pointer to Word analysis struct
  * DESCRIPTION
  *    apply the indicated rules to the morpheme or morphemes
  * RETURN VALUE
  *    NONE
  */
+#ifndef hab104
+static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
+			 do_trace, pWordAnal_in, pStamp_in)
+#else /* hab104 */
 static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 			 do_trace, pStamp_in)
+#endif /* hab104 */
 	 struct tone_rule     *trp;
 	 StampAnalysis      *ap_orig;
 	 WordTemplate *word;
@@ -450,6 +546,9 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 	 int                   tbu_type;
 	 long                 *edge_conds;
 	 int                   do_trace;
+#ifndef hab104
+	 WordAnalysis         *pWordAnal_in;
+#endif /* hab104 */
 	 StampData            *pStamp_in;
 {
   struct action    *acp;
@@ -473,9 +572,15 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 
   trp->tr_tried++;		/* keep statistics */
 
+#ifndef hab104
+  if (ap_orig != (StampAnalysis *)NULL &&
+	  !rule_condition_met(trp, ap_orig, pwp, dp, tbu_type, *edge_conds,
+				 (struct tone *)NULL, pWordAnal_in, pStamp_in))
+#else /* hab104 */
   if (ap_orig != (StampAnalysis *)NULL &&
 	  !rule_condition_met(trp, ap_orig, pwp, dp, tbu_type, *edge_conds,
 				 (struct tone *)NULL, pStamp_in))
+#endif /* hab104 */
 	return;
 
   did_action = FALSE;	/* assume the action will not do anything */
@@ -539,8 +644,13 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		  tbu_head = HEAD;
 		}
 				/* check conditions */
+#ifndef hab104
+		  if (!rule_condition_met(trp, ap, pwp, dp, tbu_type, *edge_conds,
+					  last_tp, pWordAnal_in, pStamp_in))
+#else /* hab104 */
 		  if (!rule_condition_met(trp, ap, pwp, dp, tbu_type, *edge_conds,
 					  last_tp, pStamp_in))
+#endif /* hab104 */
 		return;
 		}
 	  else			/* is cyclic */
@@ -706,8 +816,14 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		   )
 		{
 		  last_tp = tp->tone_right;
+#ifndef hab104
+		  if (rule_condition_met(trp, ap, pwp, dp, tbu_type,
+					 *edge_conds, tp, pWordAnal_in,
+					 pStamp_in))
+#else /* hab104 */
 		  if (rule_condition_met(trp, ap, pwp, dp, tbu_type,
 					 *edge_conds, tp, pStamp_in))
+#endif /* hab104 */
 			did_action += do_existing_tone_action(tp, acp, ap, pwp);
 		  tp = last_tp;
 		}
@@ -919,14 +1035,20 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
  *                    the preceding context)
  *    which_rules  - which rules to apply flag (all or all but right_edge)
  *    do_trace     - tracing flag
+ *    pWordAnal_in - pointer to word analysis struct
  * DESCRIPTION
  *    Apply tone rules
  * RETURN VALUE
  *    pointer to primary tone tier (pointer to register tone tier is also
  *		updated as a side effect)
  */
+#ifndef hab104
+static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
+				 which_rules, do_trace, pWordAnal_in, pStamp_in)
+#else /* hab104 */
 static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
 				 which_rules, do_trace, pStamp_in)
+#endif /* hab104 */
 	 StampAnalysis  *ap_head;
 	 WordTemplate *word;
 	 struct pword     *pwp;
@@ -935,6 +1057,9 @@ static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
 	 long             *edge_conds;
 	 int               which_rules;
 	 int               do_trace;
+#ifndef hab104
+	 WordAnalysis     *pWordAnal_in;
+#endif /* hab104 */
 	 StampData        *pStamp_in;
 {
   StampAnalysis  *ap;
@@ -945,8 +1070,13 @@ static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
   if (cycle == (struct cycle *)NULL)
 	{				/* there are no cyclic rules */
 				/* go do them all once */
+#ifndef hab104
+	  do_rules(trh, trt, ap_head, word, pwp, dp, tbu_type, edge_conds,
+		   ALL, which_rules, do_trace, pWordAnal_in, pStamp_in);
+#else /* hab104 */
 	  do_rules(trh, trt, ap_head, word, pwp, dp, tbu_type, edge_conds,
 		   ALL, which_rules, do_trace, pStamp_in);
+#endif /* hab104 */
 	}
   else
 	{				/* there are cyclic rules */
@@ -954,9 +1084,15 @@ static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
 	  {			/* apply any initial non-cyclic rules */
 		if (trcybeg != (struct tone_rule *)NULL &&
 		trcybeg != trh)
+#ifndef hab104
+		  do_rules(trh, trcybeg->tr_left, ap_head, word, pwp, dp, tbu_type,
+			   edge_conds, NONCYCLIC, which_rules, do_trace,
+			   pWordAnal_in, pStamp_in);
+#else /* hab104 */
 		  do_rules(trh, trcybeg->tr_left, ap_head, word, pwp, dp, tbu_type,
 			   edge_conds, NONCYCLIC, which_rules, do_trace,
 			   pStamp_in);
+#endif /* hab104 */
 
 		if (cycle->cy_dir == RIGHTWARD)
 				/* apply the cyclic rules left-to-right */
@@ -967,9 +1103,15 @@ static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
 		  if ((do_trace & TRACE_TONE_TIER)  && pStamp_in->pLogFP)
 			fprintf(pStamp_in->pLogFP,
 				"\n      Morpheme: %s", ap->m.pszMorphname);
+#ifndef hab104
+		  do_rules(trcybeg, trcyend, ap, word, pwp, dp, tbu_type,
+			   edge_conds, CYCLIC, which_rules, do_trace,
+			   pWordAnal_in, pStamp_in);
+#else /* hab104 */
 		  do_rules(trcybeg, trcyend, ap, word, pwp, dp, tbu_type,
 			   edge_conds, CYCLIC, which_rules, do_trace,
 			   pStamp_in);
+#endif /* hab104 */
 		}
 		else if (cycle->cy_dir == LEFTWARD)
 				/* apply the cyclic rules right-to-left */
@@ -988,9 +1130,15 @@ static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
 			if ((do_trace & TRACE_TONE_TIER)  && pStamp_in->pLogFP)
 			  fprintf(pStamp_in->pLogFP,
 				  "\n      Morpheme: %s", ap->m.pszMorphname);
+#ifndef hab104
+			do_rules(trcybeg, trcyend, ap, word, pwp, dp, tbu_type,
+				 edge_conds, CYCLIC, which_rules, do_trace,
+				 pWordAnal_in, pStamp_in);
+#else /* hab104 */
 			do_rules(trcybeg, trcyend, ap, word, pwp, dp, tbu_type,
 				 edge_conds, CYCLIC, which_rules, do_trace,
 				 pStamp_in);
+#endif /* hab104 */
 		  }
 		  }
 		else
@@ -1001,9 +1149,15 @@ static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
 				/* apply any final non-cyclic rules */
 		if (trcyend != (struct tone_rule *)NULL &&
 		trcyend->tr_right != (struct tone_rule *)NULL)
+#ifndef hab104
+		  do_rules(trcyend->tr_right, trt, ap_head, word, pwp, dp,
+			   tbu_type, edge_conds, NONCYCLIC, which_rules, do_trace,
+			   pWordAnal_in, pStamp_in);
+#else /* hab104 */
 		  do_rules(trcyend->tr_right, trt, ap_head, word, pwp, dp,
 			   tbu_type, edge_conds, NONCYCLIC, which_rules, do_trace,
 			   pStamp_in);
+#endif /* hab104 */
 	  }
 	  else
 	{
@@ -1339,8 +1493,13 @@ static void build_tone_tier(pwp, ap_head, do_trace, pStamp_in)
  * RETURN VALUE
  *    edge conditions flag
  */
+#ifndef hab104
+static long calculate_edge_conds(ap, pwp, dp, word, old_edge_conds, tbu_type,
+				 do_trace, pWordAnal_in, pStamp_in)
+#else /* hab104 */
 static long calculate_edge_conds(ap, pwp, dp, word, old_edge_conds, tbu_type,
 				 do_trace, pStamp_in)
+#endif /* hab104 */
 	 StampAnalysis      *ap;
 	 struct pword         *pwp;
 	 struct domain        *dp;
@@ -1348,6 +1507,9 @@ static long calculate_edge_conds(ap, pwp, dp, word, old_edge_conds, tbu_type,
 	 long                  old_edge_conds;
 	 int                   tbu_type;
 	 int                   do_trace;
+#ifndef hab104
+	 WordAnalysis         *pWordAnal_in;
+#endif /* hab104 */
 	 StampData            *pStamp_in;
 {
   struct tone_rule *trp;
@@ -1374,8 +1536,14 @@ static long calculate_edge_conds(ap, pwp, dp, word, old_edge_conds, tbu_type,
 	   acp != (struct action *)NULL;
 	   acp = acp->ac_next)
 	{			/* see if the conditions are met */
+#ifndef hab104
+	  if (rule_condition_met(trp, ap, pwp, dp, tbu_type,
+				 old_edge_conds,
+				 (struct tone *)NULL, pWordAnal_in, pStamp_in))
+#else /* hab104 */
 	  if (rule_condition_met(trp, ap, pwp, dp, tbu_type, old_edge_conds,
 				 (struct tone *)NULL, pStamp_in))
+#endif /* hab104 */
 		{
 		  edge_conds |= acp->ac_econds;	/* set the edge condition */
 		  trp->tr_applied++;		/* keep statistics */
@@ -1613,13 +1781,19 @@ static int do_existing_tone_action(tp, acp, ap, pwp)
  *    rule_type    - CYCLIC, NONCYCLIC or ALL
  *    which_rules  - which rules to apply flag (all or all but right_edge)
  *    do_trace     - tracing flag
+ *    pWordAnal_in - pointer to Word analysis struct
  * DESCRIPTION
  *    apply the indicated rules to the morpheme or morphemes
  * RETURN VALUE
  *    NONE
  */
+#ifndef hab104
+static void do_rules(trb, tre, ap, word, pwp, dp, tbu_type, edge_conds,
+			 rule_type, which_rules, do_trace, pWordAnal_in, pStamp_in)
+#else /* hab104 */
 static void do_rules(trb, tre, ap, word, pwp, dp, tbu_type, edge_conds,
 			 rule_type, which_rules, do_trace, pStamp_in)
+#endif /* hab104 */
 	 struct tone_rule     *trb;
 	 struct tone_rule     *tre;
 	 StampAnalysis      *ap;
@@ -1631,6 +1805,9 @@ static void do_rules(trb, tre, ap, word, pwp, dp, tbu_type, edge_conds,
 	 int                   rule_type;
 	 int                   which_rules;
 	 int                   do_trace;
+#ifndef hab104
+	 WordAnalysis         *pWordAnal_in;
+#endif /* hab104 */
 	 StampData            *pStamp_in;
 {
   struct tone_rule *trp;
@@ -1658,20 +1835,37 @@ static void do_rules(trb, tre, ap, word, pwp, dp, tbu_type, edge_conds,
 		  (cycle->cy_dir == LEFTWARD &&
 		   ap->pRightLink != (StampAnalysis *)NULL)))
 		continue;
+#ifndef hab104
+	  apply_rule(trp, ap, word, pwp, dp, tbu_type, edge_conds, do_trace,
+			 pWordAnal_in, pStamp_in);
+#else /* hab104 */
 	  apply_rule(trp, ap, word, pwp, dp, tbu_type, edge_conds, do_trace,
 			 pStamp_in);
+#endif /* hab104 */
 	}
 	  else if (rule_type == NONCYCLIC)
 	{
+#ifndef hab104
+	  apply_rule(trp, (StampAnalysis *)NULL, word, pwp,
+			 (struct domain *)NULL, tbu_type, edge_conds, do_trace,
+			 pWordAnal_in, pStamp_in);
+#else /* hab104 */
 	  apply_rule(trp, (StampAnalysis *)NULL, word, pwp,
 			 (struct domain *)NULL, tbu_type, edge_conds, do_trace,
 			 pStamp_in);
+#endif /* hab104 */
 	}
 	  else			/* is same as noncyclic */
 	{
+#ifndef hab104
+	  apply_rule(trp, (StampAnalysis *)NULL, word, pwp,
+			 (struct domain *)NULL, tbu_type, edge_conds, do_trace,
+			 pWordAnal_in, pStamp_in);
+#else /* hab104 */
 	  apply_rule(trp, (StampAnalysis *)NULL, word, pwp,
 			 (struct domain *)NULL, tbu_type, edge_conds, do_trace,
 			 pStamp_in);
+#endif /* hab104 */
 	}
 	}
 }	/* end do_rules */
@@ -1766,10 +1960,17 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 		}
 #ifdef TONEGEN
 				/* apply all obligatory tone rules */
+#ifndef hab104
+		  if (tone_anal(trp->pAnal, word, anp,
+				edge_conds[i],
+				&new_edge_conds[j], RIGHT_RULES, do_trace,
+				pUnit_in, pStamp_in))
+#else /* hab104 */
 		  if (tone_anal(trp->pAnal, word, anp->pszDecomposition,
 				edge_conds[i],
 				&new_edge_conds[j], RIGHT_RULES, do_trace,
 				pUnit_in, pStamp_in))
+#endif /* hab104 */
 		{
 				/* remember that it is a good analysis */
 		  found_good_anal = is_good_analysis[anal_count] = TRUE;
@@ -1780,10 +1981,31 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 
 		}
 #else  /* TONEGEN */
+#ifndef hab104
+		 /* add properties from ANA file to analysis list */
+		  addANAProperties(anp->pszProperties, trp->pAnal, pStamp_in);
+#endif /* hab104 */
 				/* apply all obligatory tone rules except the
 				   right_edge ones; if that does not work,
 				   then try all obligatory tone rules; if
 				   that does not work, try all rules */
+#ifndef hab104
+		  if (tone_anal(trp->pAnal, word, anp,
+				edge_conds[i],
+				&new_edge_conds[j], NON_RIGHT, do_trace,
+				pUnit_in, pStamp_in)                      ||
+		  (pStamp_in->iTryRightEdgeRules &&
+		   !is_phrase_final(word, pStamp_in) &&
+		   tone_anal(trp->pAnal, word,  anp,
+				 edge_conds[i],
+				 &new_edge_conds[j], RIGHT_RULES, do_trace,
+				 pUnit_in, pStamp_in))                     ||
+		  (try_optional_rules &&
+		   tone_anal(trp->pAnal, word,  anp,
+				 edge_conds[i],
+				 &new_edge_conds[j], ALL_RULES, do_trace,
+				 pUnit_in, pStamp_in)))
+#else /* hab104 */
 		  if (tone_anal(trp->pAnal, word, anp->pszDecomposition,
 				edge_conds[i],
 				&new_edge_conds[j], NON_RIGHT, do_trace,
@@ -1799,6 +2021,7 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 				 edge_conds[i],
 				 &new_edge_conds[j], ALL_RULES, do_trace,
 				 pUnit_in, pStamp_in)))
+#endif /* hab104 */
 		{
 				/* remember that it is a good analysis */
 		  found_good_anal = is_good_analysis[anal_count] = TRUE;
@@ -2834,15 +3057,23 @@ static StampAnalysisList *remove_bad_tranal(list, tranp)
  * RETURN VALUE
  *    NONE
  */
+#ifndef hab104
+static int rule_condition_met(trp, ap, pwp, dp, tbu_type, edge_conds,
+				 tp, pWordAnal_in, pStamp_in)
+#else /* hab104 */
 static int rule_condition_met(trp, ap, pwp, dp, tbu_type, edge_conds,
 				 tp, pStamp_in)
+#endif /* hab104 */
 	 struct tone_rule *trp;
-	 StampAnalysis  *ap;
+	 StampAnalysis    *ap;
 	 struct pword     *pwp;
 	 struct domain    *dp;
 	 int               tbu_type;
 	 long              edge_conds;
 	 struct tone      *tp;
+#ifndef hab104
+	 WordAnalysis     *pWordAnal_in;
+#endif /* hab104 */
 	 StampData        *pStamp_in;
 {
 
@@ -2853,8 +3084,13 @@ static int rule_condition_met(trp, ap, pwp, dp, tbu_type, edge_conds,
   t_edgeconds    = edge_conds;
   t_tbutype      = tbu_type;
   t_tone         = tp;
+#ifndef hab104
+  t_wordanal     = pWordAnal_in;
 
+  return( utest( trp->tr_cond, pWordAnal_in, pStamp_in ) );
+#else /* hab104 */
   return( utest( trp->tr_cond, pStamp_in ) );
+#endif /* hab104 */
 
 }	/* end rule_condition_met */
 
@@ -2907,7 +3143,11 @@ static void show_edge_conds(pOutputFP_in, conds)
  *    tone_anal
  * ARGUMENTS
  *    analstring     - NUL-terminated character string of morph names
+ ifndef hab104
+ *    pWordAnal_in   - pointer to Word analysis struct
+ else * hab104 *
  *    decompstring   - NUL-terminated character string of decomposition
+ endif * hab104 *
  *    word           - pointer to template of current word
  *    syl_algorithm  - algorithm to use in syllabification (s/b in next var.)
  *    syl_flags      - syllabification flags
@@ -2924,12 +3164,22 @@ static void show_edge_conds(pOutputFP_in, conds)
  *    TRUE if pointer to the created list of analysis morphemes;
  *    new_edge_conds is also set as a side effect
  */
+#ifndef hab104
+static int tone_anal(anal_head, word, pWordAnal_in,
+			 edge_conds, new_edge_conds, which_rules, do_trace,
+			 pUnit_in, pStamp_in)
+#else /* hab104 */
 static int tone_anal(anal_head, word, decompstring,
 			 edge_conds, new_edge_conds, which_rules, do_trace,
 			 pUnit_in, pStamp_in)
+#endif /* hab104 */
 	 StampAnalysis *anal_head;
 	 WordTemplate *word;
+#ifndef hab104
+	 WordAnalysis *pWordAnal_in;
+#else /* hab104 */
 	 char *decompstring;
+#endif /* hab104 */
 	 int    which_rules, do_trace;
 	 long   edge_conds, *new_edge_conds;
 	 StampUnit *pUnit_in;
@@ -2943,6 +3193,9 @@ static int tone_anal(anal_head, word, decompstring,
   struct pword PWord;
   struct domain *dp;
   int               form_is_good;
+#ifndef hab104
+  char *decompstring = pWordAnal_in->pszDecomposition;
+#endif /* hab104 */
 
 				/* save locations of initial and final
 				   morphemes for rule processing */
@@ -3054,8 +3307,13 @@ static int tone_anal(anal_head, word, decompstring,
   dp = build_domains(anal_head, pszWordForRootNode, do_trace);
 
 				/* apply tone rules */
+#ifndef hab104
+  apply_tone_rules(anal_head, word, &PWord, dp, pStamp_in->iTbuType,
+		   &edge_conds, which_rules, do_trace, pWordAnal_in,pStamp_in);
+#else /* hab104 */
   apply_tone_rules(anal_head, word, &PWord, dp, pStamp_in->iTbuType,
 		   &edge_conds, which_rules, do_trace, pStamp_in);
+#endif /* hab104 */
 
 				/* create word with tone marked */
   cp = build_word_with_tone_marked(PWord.wd_rn, pStamp_in->iTbuType,
@@ -3072,9 +3330,15 @@ static int tone_anal(anal_head, word, decompstring,
 	}
   word->pNewWords = addToStringList(word->pNewWords, cp);
 				/* remember right edge state of tone tiers */
+#ifndef hab104
+  *new_edge_conds = calculate_edge_conds(anal_head, &PWord, dp, word,
+					 edge_conds, pStamp_in->iTbuType,
+					 do_trace, pWordAnal_in, pStamp_in);
+#else /* hab104 */
   *new_edge_conds = calculate_edge_conds(anal_head, &PWord, dp, word,
 					 edge_conds, pStamp_in->iTbuType,
 					 do_trace, pStamp_in);
+#endif /* hab104 */
   if (do_trace && pStamp_in->pLogFP)
 	putc('\n', pStamp_in->pLogFP);
 #else
@@ -3090,9 +3354,15 @@ static int tone_anal(anal_head, word, decompstring,
 				/* assume that form is good */
 	  form_is_good = TRUE;
 				/* remember right edge state of tone tiers */
+#ifndef hab104
+	  *new_edge_conds = calculate_edge_conds(anal_head, &PWord, dp, word,
+						 edge_conds, pStamp_in->iTbuType,
+						 do_trace, pWordAnal_in,pStamp_in);
+#else /* hab104 */
 	  *new_edge_conds = calculate_edge_conds(anal_head, &PWord, dp, word,
 						 edge_conds, pStamp_in->iTbuType,
 						 do_trace, pStamp_in);
+#endif /* hab104 */
 	}
   else
 	{
@@ -3159,9 +3429,16 @@ static void trace_msg( pOutputFP_in, msg )
  * RETURN VALUE
  *    TRUE if the test succeeds, FALSE if it fails
  */
+#ifndef hab104
+static int utest( cond, pWordAnal_in, pStamp_in )
+	 struct cond_node *cond;
+	 WordAnalysis *pWordAnal_in;
+	 StampData *pStamp_in;
+#else /* hab104 */
 static int utest( cond, pStamp_in )
 	 struct cond_node *cond;
 	 StampData *pStamp_in;
+#endif /* hab104 */
 {
   register StampAnalysis *ap, *ap2;
   int val, rval, lval;
@@ -3176,6 +3453,9 @@ static int utest( cond, pStamp_in )
   struct tone_list *tlp;
   struct tone      *tp, *tp_last;
   struct tone_pattern *tpp;
+#ifndef hab104
+  PropertySet_t uAlloPropertySet;
+#endif /* hab104 */
 
   if (cond == (struct cond_node *)NULL)
 	return( TRUE );			/* no test => TRUE */
@@ -3193,30 +3473,55 @@ static int utest( cond, pStamp_in )
 				 *  these nodes have subtrees
 				 */
 	case LOGAND:		/* 'AND' */
+#ifndef hab104
+	  val = (utest( left.l_son,  pWordAnal_in, pStamp_in ) &&
+		 utest( right.r_son, pWordAnal_in, pStamp_in ));
+#else /* hab104 */
 	  val = (utest( left.l_son, pStamp_in ) &&
 		 utest( right.r_son, pStamp_in ));
+#endif /* hab104 */
 	  break;
 
 	case LOGOR:			/* 'OR' */
+#ifndef hab104
+	  val = (utest( left.l_son,  pWordAnal_in, pStamp_in ) ||
+		 utest( right.r_son, pWordAnal_in, pStamp_in ));
+#else /* hab104 */
 	  val = (utest( left.l_son, pStamp_in ) ||
 		 utest( right.r_son, pStamp_in ));
+#endif /* hab104 */
 	  break;
 
 	case LOGXOR:		/* 'XOR' */
+#ifndef hab104
+	  lval = utest( left.l_son,  pWordAnal_in, pStamp_in );
+	  rval = utest( right.r_son, pWordAnal_in, pStamp_in );
+#else /* hab104 */
 	  lval = utest( left.l_son, pStamp_in );
 	  rval = utest( right.r_son, pStamp_in );
+#endif /* hab104 */
 	  val = ((!lval && rval) || (lval && !rval));
 	  break;
 
 	case LOGIFF:		/* 'IFF' */
+#ifndef hab104
+	  lval = utest( left.l_son,  pWordAnal_in, pStamp_in );
+	  rval = utest( right.r_son, pWordAnal_in, pStamp_in );
+#else /* hab104 */
 	  lval = utest( left.l_son, pStamp_in );
 	  rval = utest( right.r_son, pStamp_in );
+#endif /* hab104 */
 	  val = ((lval && rval) || (!lval && !rval));
 	  break;
 
 	case LOGIF:			/* 'IF' ... 'THEN' */
+#ifndef hab104
+	val = ( !utest(left.l_son,  pWordAnal_in, pStamp_in) ||
+		 utest(right.r_son, pWordAnal_in, pStamp_in) );
+#else /* hab104 */
 	val = ( !utest(left.l_son, pStamp_in) ||
 		utest(right.r_son, pStamp_in) );
+#endif /* hab104 */
 	break;
 
 				/*
@@ -3244,12 +3549,32 @@ static int utest( cond, pStamp_in )
 	case PROP_IS:       /* 'property' 'is' IDENTIFIER */
 	  if (    ((ap = get_morph_pos(left.l_pos, pStamp_in)) !=
 												  (StampAnalysis *)NULL) &&
-	  (right.r_prop != (unsigned short *)NULL) )
+		  (right.r_prop != (unsigned short *)NULL) )
 	{
 	  fcode = *(right.r_prop);		 /* Check property */
+#ifndef hab104
+#ifndef TONEGEN
+	  if ((t_wordanal->pszProperties == (char *)NULL) &&
+		  ap->m.pAllomorphs != (StampAllomorphList *)NULL)
+		{			/* use dictionary info */
+		  uAlloPropertySet = ap->m.pAllomorphs->a.uAlloPropertySet;
+		}
+	  else
+		{			/* use properties from ANA file */
+		  uAlloPropertySet = ap->uAlloPropertySet;
+		}
+	  if ( hasAmpleProperty( uAlloPropertySet,
+				 fcode, &pStamp_in->sProperties ) )
+#else /* TONEGEN */
 	  if ( ap->m.pAllomorphs != (StampAllomorphList *)NULL &&
-		  hasAmpleProperty( ap->m.pAllomorphs->a.uAlloPropertySet,
-				fcode, &pStamp_in->sProperties ) )
+		   hasAmpleProperty( ap->m.pAllomorphs->a.uAlloPropertySet,
+				 fcode, &pStamp_in->sProperties ) )
+#endif /* TONEGEN */
+#else /* hab104 */
+	  if ( ap->m.pAllomorphs != (StampAllomorphList *)NULL &&
+		   hasAmpleProperty( ap->m.pAllomorphs->a.uAlloPropertySet,
+				 fcode, &pStamp_in->sProperties ) )
+#endif /* hab104 */
 		val = TRUE;
 	  else
 		val = FALSE;
@@ -3778,3 +4103,55 @@ static int utest( cond, pStamp_in )
   return((cond->cn_opcode & OP_NOT) ? !val : val);
 
 } /* end utest() */
+
+#ifndef hab104
+/***************************************************************************
+ * NAME
+ *    addANAProperties
+ * DESCRIPTION
+ *    Add any properties found in ANA file to Stamp Analysis
+ * RETURN VALUE
+ *    none
+ */
+static void addANAProperties(char *pszANAProps,
+				 StampAnalysis *pMorphs,
+				 StampData *pStamp_in)
+{
+  StampAnalysis *pCurrentMorph;
+  char *pszBeg;
+  char *pszEnd;
+  char *cp;
+  char *pszOrig;
+
+		 /* initialize */
+		 /* make a copy of the original props string because
+			we'll probably change it */
+  pszOrig = pszBeg = duplicateString(pszANAProps);
+  pCurrentMorph = pMorphs;
+
+  while ((pCurrentMorph != NULL) &&
+	 (pszBeg != NULL))
+	{		 /* find next occurrence of '=' */
+	  if ((pszEnd = strchr(pszBeg, '=')) != NULL)
+	*pszEnd = '\0';
+		 /* set the property information */
+	  pCurrentMorph->uAlloPropertySet.pProperties = NULL;
+	  cp = parseAmplePropertySet(pszBeg,
+			   &pCurrentMorph->uAlloPropertySet,
+			   AMPLE_ALLO_PROP,
+			   0, "ANA File",
+			   "ANA File property parsing",
+			   &pStamp_in->sProperties,
+			   &pStamp_in->pPropertyList,
+			   pStamp_in->pLogFP);
+		 /* set up for next one */
+	  pCurrentMorph = pCurrentMorph->pRightLink;
+	  if (pszEnd == NULL)
+	pszBeg = NULL;
+	  else	 /* skip past last '=' */
+	pszBeg = pszEnd + 1;
+	}
+		 /* free the copy */
+  freeMemory(pszOrig);
+}
+#endif /* hab104 */

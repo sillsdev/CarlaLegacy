@@ -937,6 +937,8 @@ do  {
 	if (sWords_m.pCurrentWord != NULL)
 	{
 	sprintf(szOutOfMemoryMarker_g, "input word number %ld", uiWordCount_m);
+				/* following fills in StampAnalysis struct
+				   as a side effect */
 	sWords_m.pCurrentWord = performStampTransfer( &sWords_m, &sStamp_m );
 	}
 	sWords_m.bStringLookahead = FALSE;
@@ -960,6 +962,8 @@ do  {
 		sTemp.bStringLookahead = sWords_m.bStringLookahead;
 		sTemp.bLookaheadDone   = sWords_m.bLookaheadDone;
 		sTemp.bMultiDependency = sWords_m.bMultiDependency;
+				/* following fills in StampAnalysis struct
+				   as a side effect */
 		sWords_m.pNextWord        = performStampTransfer( &sTemp,
 								  &sStamp_m );
 		sWords_m.bStringLookahead = sTemp.bStringLookahead;
