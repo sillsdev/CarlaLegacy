@@ -4,12 +4,15 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL -8		/* bug fix or other minor change */
-#define DATE "July 24, 2001"	/* date of release version */
+#define PATCHLEVEL -9		/* bug fix or other minor change */
+#define DATE "September 20, 2001"	/* date of release version */
 #define YEAR "2001"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 20-Sep-2001  hab  - Synthesis trace was silent when no infix location
+ * [2.1.9]               condition could be found.  It also had some extra
+ *                       output when trying infixes.
  * 24-Jul-2001  hab  - Fix bug: empty environment constraint messages did not
  * [2.1.b8]              include any information about which entry they were
  *                       for.  (fixed in envpar.c)

@@ -781,6 +781,9 @@ AmpleEnvConstraint *cnd;
 AmpleEnvConstraint cond_tmp;
 char *pos;
 int inf_len, front_len;
+#ifndef hab219
+int bConditionMatched = FALSE;
+#endif /* hab219 */
 
 /*
  * if we've run out of infixes, apply all of the tests
@@ -825,7 +828,13 @@ for ( cnd = inf->ptr->m.u.pInfixEnv ; cnd ; cnd = cnd->pNext)
 		   /*
 			* Look for environment everywhere in next allomorph
 			*/
+#ifdef hab219
+				/* analysis uses remaining word string;
+				   do so for synthesis, too */
+	for ( pos = next->pszAlloStart ; *pos ; pos++ )
+#else  /* but I think the original behavior is actually right... */
 	for ( pos = next->pszAlloStart ; pos <= next->pszAlloEnd ; pos++ )
+#endif /* hab219 */
 	  {
 		front_len = pos - next->pszAlloStart;
 			/*
@@ -834,6 +843,10 @@ for ( cnd = inf->ptr->m.u.pInfixEnv ; cnd ; cnd = cnd->pNext)
 		if ( checkStampStringEnvironment( next->pszAlloStart, front_len, pos,
 					  &cond_tmp, pUnit_in, pStamp_in ) )
 			{           /* is a valid environment */
+#ifndef hab219
+		  bConditionMatched = TRUE;
+#else /* hab219 */
+				/* Not showing so much detail now... */
 			if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 				{
 				fprintf(pStamp_in->pLogFP,
@@ -841,6 +854,7 @@ for ( cnd = inf->ptr->m.u.pInfixEnv ; cnd ; cnd = cnd->pNext)
 						  inf->ptr->m.pszMorphname);
 				writeAmpleEnvConstraint(pStamp_in->pLogFP, &cond_tmp, FALSE);
 				}
+#endif /* hab219 */
 				   /*
 					* Insert the infix.
 					*/
@@ -891,6 +905,15 @@ for ( cnd = inf->ptr->m.u.pInfixEnv ; cnd ; cnd = cnd->pNext)
 		}  /* for each segment position loop */
 	}      /* for each condition loop */
 
+#ifndef hab219
+ if (!bConditionMatched && pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
+   {
+	 t_indent(level+1, pStamp_in->pLogFP);
+	 fprintf(pStamp_in->pLogFP,
+		 "Could not find an infix location for %s\n",
+			inf->ptr->m.pszMorphname);
+   }
+#endif /* hab219 */
 /*
  * nothing worked
  */
