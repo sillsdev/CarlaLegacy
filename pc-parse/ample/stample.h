@@ -270,6 +270,11 @@ typedef struct ample_env_item {
 #define E_GROUP		 020	/* member of open-ended group, not string */
 #define E_MORPHEME	0200	/* morpheme environment, not string envir. */
 #define E_PUNCT		0100	/* punctuation environment 3.3.0 hab */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+#define E_ALLOID	0040	/* allomorph never co-occurence constraint */
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 
 /*****************************************************************************
  * NAME
@@ -302,6 +307,11 @@ typedef struct ample_env_cond {
 #define AMPLE_STRING_ENVIR 0
 #define AMPLE_MORPH_ENVIR  1
 #define AMPLE_PUNCT_ENVIR  2	/* 3.3.0 hab */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+#define AMPLE_ALLOID_ENVIR 3
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 
 /*****************************************************************************
  * NAME
@@ -549,6 +559,19 @@ extern AmpleEnvConstraint *	parseAmpleMorphEnvConstraint P((
 				const AmpleMorphClass *    pMorphClasses_in,
 				FILE *                     pLogFP_in,
 				StringList **              ppStringList_io));
+#ifdef EXPERIMENTAL
+#ifndef hab350
+extern AmpleEnvConstraint *	parseAmpleNeverEnvConstraint P((
+				char *                     line,
+				const char *               pszRecordType_in,
+				const StringList *         pCategories_in,
+				const AmpleProperties *    pProperties_in,
+				const AmpleCategoryClass * pCategClasses_in,
+				const AmpleMorphClass *    pMorphClasses_in,
+				FILE *                     pLogFP_in,
+				StringList **              ppStringList_io));
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 
 /*****************************************************************************
  *  some generally useful macros

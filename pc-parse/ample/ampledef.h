@@ -170,6 +170,11 @@ struct ample_fnlist {
 #define AMPLE_MCC_FT	5
 #define AMPLE_SP_TEST	6
 #define AMPLE_PEC_ST    7	/* 3.3.0 hab */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+#define AMPLE_ANCC_FT	8
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 
 /*****************************************************************************
  * NAME
@@ -252,6 +257,28 @@ struct ample_morph_constraint {
 	struct ample_morph_constraint * pNext;	/* link to next node */
 	};
 
+#ifdef EXPERIMENTAL
+#ifndef hab350
+/*****************************************************************************
+ * NAME
+ *    AmpleNeverConstraint (struct ample_never_constraint)
+ * DESCRIPTION
+ *    structure for allomorph never co-occurrence constraints
+ *
+ *    All of the constraints are stored in a single linked list.
+ *    Each node of this list has a pointer to a linked list of allomoprh IDs,
+ *    a pointer to an environment list, and a pointer to
+ *    the next node in the list.
+ */
+struct ample_never_constraint {
+	char *			pszLabel;	/* optional identifier label */
+	StringList *		pAlloIDs;	/* allomorph IDs */
+	AmpleEnvConstraint *	pEnvironment;	/* environment constraints */
+	struct ample_never_constraint * pNext;	/* link to next node */
+	};
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
+
 /*****************************************************************************
  *
  *  miscellaneous constant definitions
@@ -325,6 +352,25 @@ extern char *		stringifyAmpleMorphConstraint P((
 					size_t *               puiStringSize_io,
 					AmpleMorphConstraint * pMorphConstraint_in,
 					int                    bSGML_in));
+#ifdef EXPERIMENTAL
+#ifndef hab350
+extern AmpleNeverConstraint *		parseAmpleNeverConstraint P((
+						   char *      line,
+						   AmpleData * pAmple_in));
+extern void		writeAmpleNeverConstraint P((
+					AmpleNeverConstraint * pNeverConstraint_in,
+					FILE *                 pOutputFP_in,
+					int                    bSGML_in));
+extern void		writeAmpleNeverConstraints P((
+						   FILE *      pOutputFP_in,
+						   AmpleData * pAmple_in));
+extern char *		stringifyAmpleNeverConstraint P((
+					char *                 pszString_io,
+					size_t *               puiStringSize_io,
+					AmpleNeverConstraint * pNeverConstraint_in,
+					int                    bSGML_in));
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 
 /* envchk.c */
 extern int	checkAmpleStringEnviron P((char *leftstring, int leftsize,
@@ -339,6 +385,16 @@ extern int	checkAmpleMorphEnviron P((AmpleHeadList *left,
 					  AmpleWord * pPreviousWord_in,
 					  AmpleWord * pNextWord_in,
 					  AmpleData * pAmple_in));
+#ifdef EXPERIMENTAL
+#ifndef hab350
+extern int	checkAmpleNeverEnviron P((AmpleHeadList *left,
+					  AmpleHeadList *right,
+					  AmpleEnvConstraint *menv,
+					  AmpleWord * pPreviousWord_in,
+					  AmpleWord * pNextWord_in,
+					  AmpleData * pAmple_in));
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 				/* 3.3.0 hab */
 extern int	checkAmplePunctEnviron P((char *leftstring, int leftsize,
 					  char *rightstring,

@@ -159,6 +159,11 @@ static void			resetLocalGlobals P((void));
 #define ENV_LCURL       13      /* '{' */
 #define ENV_RCURL       14      /* '}' */
 #define ENV_PUNCT       15      /* './' 3.3.0 hab */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+#define ENV_ALLOID      16      /* '~/' */
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 /*
  *  maximum length of an item in an environment
  */
@@ -182,6 +187,11 @@ static char *	pszEnvParseType_m = NULL;
 #define EL_HLD1 2       /* finished with one, holding a '/' */
 #define EL_HLD2 3       /* finished with one, holding a '+/' */
 #define EL_HLD3 4       /* finished with one, holding a './' 3.3.0 hab */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+#define EL_HLD4 5       /* finished with one, holding a '~/' */
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 #define EL_EOF  -1      /* at end of input string */
 /*
  *  state of the lexical analyzer
@@ -243,6 +253,7 @@ pszEnvLexLine_m = line;       /* 1.9z BJY */
  *    iType - AMPLE_STRING_ENVIR if string environment,             3.3.0 hab
  *            AMPLE_MORPH_ENVIR  if morpheme environment,
  *            AMPLE_PUNCT_ENVIR  if punctuation environment.
+ *            AMPLE_ALLOID_ENVIR  if allomorph never co-occurrence. 3.5.0 hab
  * DESCRIPTION
  *    Get the next lexical token, storing a string if needed.
  * RETURN VALUE
@@ -271,6 +282,11 @@ switch (eEnvLexState_m)
 		case ENV_MORPH:     eEnvLexState_m = EL_HLD2;   return( ENV_END );
 				/* 3.3.0 hab */
 		case ENV_PUNCT:     eEnvLexState_m = EL_HLD3;   return( ENV_END );
+#ifdef EXPERIMENTAL
+#ifndef hab350
+		case ENV_ALLOID:    eEnvLexState_m = EL_HLD4;   return( ENV_END );
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 		default:                                    return( type );
 		}
 
@@ -287,6 +303,14 @@ switch (eEnvLexState_m)
 	eEnvLexState_m = EL_WORK;
 	return( ENV_PUNCT );
 
+#ifdef EXPERIMENTAL
+#ifndef hab350
+	case EL_HLD4:               /* saw a '~/' previously */
+	eEnvLexState_m = EL_WORK;
+	return( ENV_ALLOID );
+
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 	default:                    /* assume EL_EOF state */
 	pszEnvLex_m = (char *)NULL;
 	return( EOF );
@@ -300,6 +324,7 @@ switch (eEnvLexState_m)
  *    iType - AMPLE_STRING_ENVIR if string environment,             3.3.0 hab
  *            AMPLE_MORPH_ENVIR  if morpheme environment,
  *            AMPLE_PUNCT_ENVIR  if punctuation environment.
+ *            AMPLE_ALLOID_ENVIR if allomorph never co-occurrence.  3.5.0 hab
  * DESCRIPTION
  *    Load the next lexical token into szEnvLexToken_m.
  *    This is the only lexical function which modifies pszEnvLex_m.
@@ -346,7 +371,21 @@ else if ( (strchr("/_#[]()", ch) != (char *)NULL)
 	default:        return( EOF );                  /* "can't happen" */
 	}
 	}
+#ifdef EXPERIMENTAL
+#ifndef hab350
+else if ((ch == '~') && (*pszEnvLex_m == '/'))
+	{
+	szEnvLexToken_m[0] = ch;        /* special two character token */
+	szEnvLexToken_m[1] = *pszEnvLex_m++;
+	szEnvLexToken_m[2] = NUL;
+	return( ENV_ALLOID );
+	}
+else if ((ch == '~') &&                 /* if tilde and not ANCC */
+	 (iType != AMPLE_ALLOID_ENVIR))
+#endif /* hab350 */
+#else /* EXPERIMENTAL */
 else if (ch == '~')                 /* if tilde */
+#endif /* EXPERIMENTAL */
 	{                               /* if underline next */
 	if (*pszEnvLex_m == '_')
 	{
@@ -408,12 +447,27 @@ else
 	if ((ch == '}') && got_lcurl)
 		{
 		if (pLogFP_m != NULL)
+#ifdef EXPERIMENTAL
+#ifndef hab350
+		  if (iType != AMPLE_ALLOID_ENVIR)
 		fprintf(pLogFP_m, /* 3.3.0 hab */
 			  "WARNING: {} invalid in %s environment; entry: %s\n",
 			(iType == AMPLE_STRING_ENVIR) ? "string" :
 											"punctuation",
 			getAmpleRecordIDTag(szRecordKey_m,
 						uiRecordNumber_m));
+		  else
+		fprintf(pLogFP_m,
+			 "WARNING: {} invalid in allomorph never co-occurrence environment\n");
+#endif /* hab350 */
+#else /* EXPERIMENTAL */
+		fprintf(pLogFP_m, /* 3.3.0 hab */
+			  "WARNING: {} invalid in %s environment; entry: %s\n",
+			(iType == AMPLE_STRING_ENVIR) ? "string" :
+											"punctuation",
+			getAmpleRecordIDTag(szRecordKey_m,
+						uiRecordNumber_m));
+#endif /* EXPERIMENTAL */
 		got_lcurl = FALSE;
 		}
 	if (p < (szEnvLexToken_m + MAXLEXSIZE))     /* store the character */
@@ -624,6 +678,7 @@ fprintf(pLogFP_m, "\n");
  *    iType   - AMPLE_STRING_ENVIR if string environment,        3.3.0 hab
  *              AMPLE_MORPH_ENVIR  if morpheme environment,
  *              AMPLE_PUNCT_ENVIR  if punctuation environment.
+ *              AMPLE_ALLOID_ENVIR if allo never co-occur.	 3.5.0 hab
  *    isright - nonzero if right side, zero if left side
  *    flags   - pointer to ec_flags field for env_cond structure
  * DESCRIPTION
@@ -749,11 +804,29 @@ bad_bound:          epar_error("Invalid '#'", "");
 		break;
 
 	case ENV_LBRACK:
+#ifdef EXPERIMENTAL
+#ifndef hab350
+		if (iType == AMPLE_ALLOID_ENVIR)
+			{
+			epar_error("Classes not allowed", "");
+		break;
+		}
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 		need_bracklit = TRUE;            /* need a class name following */
 		myflags |= E_CLASS;
 		break;
 
 	case ENV_LCURL:
+#ifdef EXPERIMENTAL
+#ifndef hab350
+		if (iType == AMPLE_ALLOID_ENVIR)
+			{
+			epar_error("Braces not allowed", "");
+		break;
+		}
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 		need_curlit = TRUE;     /* need a literal following */
 		myflags |= E_GROUP;
 		break;
@@ -935,8 +1008,16 @@ new_item:
 		}
 		else                /* literal string or morphname */
 		{
+#ifdef EXPERIMENTAL
+#ifndef hab350
+		if (iType == AMPLE_MORPH_ENVIR || /* 3.3.0 hab */
+			iType == AMPLE_PUNCT_ENVIR ||
+			iType == AMPLE_ALLOID_ENVIR)
+#endif /* hab350 */
+#else /* EXPERIMENTAL */
 		if (iType == AMPLE_MORPH_ENVIR || /* 3.3.0 hab */
 			iType == AMPLE_PUNCT_ENVIR)
+#endif /* EXPERIMENTAL */
 			pe->u.pszString = add_string(szEnvLexToken_m);
 		else
 			{
@@ -961,6 +1042,12 @@ new_item:
 		pe->iFlags |= E_MORPHEME;
 		else if (iType == AMPLE_PUNCT_ENVIR)
 		pe->iFlags |= E_PUNCT;
+#ifdef EXPERIMENTAL
+#ifndef hab350
+		else if (iType == AMPLE_ALLOID_ENVIR)
+		pe->iFlags |= E_ALLOID;
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 		myflags = 0;          /* reset for the next item */
 
 		if (isright)
@@ -1089,6 +1176,7 @@ return FALSE;
  *    iType - AMPLE_STRING_ENVIR if string environment,             3.3.0 hab
  *            AMPLE_MORPH_ENVIR  if morpheme environment,
  *            AMPLE_PUNCT_ENVIR  if punctuation environment.
+ *            AMPLE_ALLOID_ENVIR if allo never co-occur.            3.5.0 hab
  * DESCRIPTION
  *    Parse a single environment constraint, building the structure for the
  *    interpreter to run over later.
@@ -1101,8 +1189,16 @@ int		iType;		/* 3.3.0 hab */
 AmpleEnvConstraint *	ec;
 int			token;
 				/* 3.3.0 hab */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+pszEnvParseType_m = (iType == AMPLE_MORPH_ENVIR) ? "morpheme" :
+					(iType == AMPLE_STRING_ENVIR) ? "string" :
+					(iType == AMPLE_PUNCT_ENVIR) ? "punctuation" : "never";
+#endif /* hab350 */
+#else /* EXPERIMENTAL */
 pszEnvParseType_m = (iType == AMPLE_MORPH_ENVIR) ? "morpheme" :
 					(iType == AMPLE_STRING_ENVIR) ? "string" : "punctuation";
+#endif /* EXPERIMENTAL */
 ec = (AmpleEnvConstraint *)allocMemory(sizeof(AmpleEnvConstraint));
 				/* 3.3.0 hab */
 ec->eType = iType;
@@ -2389,6 +2485,111 @@ ppAlloEnvList_m      = NULL;
 
 return( head );
 }
+
+#ifdef EXPERIMENTAL
+#ifndef hab350
+/*************************************************************************
+ * NAME
+ *    parseAmpleNeverEnvConstraint
+ * ARGUMENTS
+ *    str - pointer to a string defining an allo never co-occurence constraint
+ * DESCRIPTION
+ *    Parse an allomorph never co-occurrence constraint, build the
+ *    env_cond structure for it.
+ * RETURN VALUE
+ *    pointer to the list built, or NULL if an error occurred.
+ */
+AmpleEnvConstraint * parseAmpleNeverEnvConstraint(str, pszRecordKey_in,
+						  pCategories_in,
+						  pProperties_in,
+						  pCategClasses_in,
+						  pMorphClasses_in, pLogFP_in,
+						  ppStringList_io)
+char *				str;
+const char *			pszRecordKey_in;
+const StringList *		pCategories_in;
+const AmpleProperties *		pProperties_in;
+const AmpleCategoryClass *	pCategClasses_in;
+const AmpleMorphClass *		pMorphClasses_in;
+FILE *				pLogFP_in;
+StringList **			ppStringList_io;
+{
+int			token;
+AmpleEnvConstraint *	e_cond;
+AmpleEnvConstraint *	head;
+int			parserror;
+/*
+ *  first, check for an empty environment
+ */
+resetLocalGlobals();
+if (str == NULL)
+	return NULL;	/* no environment */
+str += strspn(str, szWhitespace_m);
+if (*str == NUL)
+	return NULL;	/* no environment */
+
+uiRecordNumber_m     = 0;
+if ((pszRecordKey_in != NULL) && (*pszRecordKey_in != NUL))
+	strncpy(szRecordKey_m, pszRecordKey_in, 64);
+else
+	strcpy(szRecordKey_m, "unknown");
+pEnvirOrthoChanges_m = NULL;
+pCategories_m        = pCategories_in;
+pProperties_m        = pProperties_in;
+pCategClasses_m      = pCategClasses_in;
+pMorphClasses_m      = pMorphClasses_in;
+pStringClasses_m     = NULL;
+pszValidCharacters_m = NULL;
+pLogFP_m             = pLogFP_in;
+ppStringList_m       = ppStringList_io;
+ppAlloEnvList_m      = NULL;
+
+pszEnvErrHead_m = "\nNEVER ENVIRONMENT: ";
+pszEnvErrTail_m = NULL;
+initEnvLex(str);		/* initialize the lexical scan */
+parserror = FALSE;		/* no errors yet */
+head      = NULL;
+
+while ( (token = getEnvLex(0)) != EOF )
+	{
+	if (token == ENV_STRENV ||
+	token == ENV_MORPH  ||
+	token == ENV_PUNCT)
+		token = ENV_ALLOID;      /* only allo never co-occurs, so why not? */
+	if ( (token == ENV_ALLOID) &&
+		 ((e_cond = env_parse(AMPLE_ALLOID_ENVIR)) != NULL))
+		{
+		e_cond->pNext = head; /* link into the list */
+		head = e_cond;
+		}
+	else
+		{
+		parserror = TRUE;       /* nothing else if valid here */
+		break;
+		}
+	}
+if (parserror)
+	show_badenv(str);                   /* show the bad environment */
+/*
+ *  reset the temporary globals
+ */
+uiRecordNumber_m     = 0;
+memset(szRecordKey_m, 0, MAXLEXSIZE+1);
+pEnvirOrthoChanges_m = NULL;
+pCategories_m        = NULL;
+pProperties_m        = NULL;
+pCategClasses_m      = NULL;
+pMorphClasses_m      = NULL;
+pStringClasses_m     = NULL;
+pszValidCharacters_m = NULL;
+pLogFP_m             = NULL;
+ppStringList_m       = NULL;
+ppAlloEnvList_m      = NULL;
+
+return( head );
+}
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 
 /*****************************************************************************
  * NAME

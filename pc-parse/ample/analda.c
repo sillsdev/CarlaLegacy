@@ -61,6 +61,46 @@ static void		process_patr_setting P((char * pszRec_in,
  *	\patr added by SRMc for version 3.3.4 (#ifdef EXPERIMENTAL)
  */
 #ifndef hab340
+#ifdef EXPERIMENTAL
+#ifndef hab350
+static const CodeTable sAnalysisCodeTable_m = { "\
+\\pt\0A\0\
+\\rt\0B\0\
+\\st\0C\0\
+\\it\0D\0\
+\\ft\0E\0\
+\\tc\0F\0\
+\\cat\0G\0\
+\\catcr\0g\0\
+\\ca\0H\0\
+\\ccl\0I\0\
+\\rd\0J\0\
+\\strcheck\0K\0\
+\\maxnull\0L\0\
+\\scl\0M\0\
+\\iah\0N\0\
+\\pah\0O\0\
+\\rah\0P\0\
+\\sah\0Q\0\
+\\cr\0R\0\
+\\mcl\0S\0\
+\\ap\0T\0\
+\\mp\0U\0\
+\\maxp\0V\0\
+\\maxi\0W\0\
+\\maxr\0X\0\
+\\maxs\0Y\0\
+\\mcc\0Z\0\
+\\dicdecap\0a\0\
+\\maxprops\0b\0\
+\\pcl\0c\0\
+\\patr\0p\0\
+\\ancc\0n\0",
+	32,
+	NULL
+	};
+#endif /* hab350 */
+#else /* EXPERIMENTAL */
 static const CodeTable sAnalysisCodeTable_m = { "\
 \\pt\0A\0\
 \\rt\0B\0\
@@ -96,6 +136,7 @@ static const CodeTable sAnalysisCodeTable_m = { "\
 	31,
 	NULL
 	};
+#endif /* EXPERIMENTAL */
 #else /* hab340 */
 static const CodeTable sAnalysisCodeTable_m = { "\
 \\pt\0A\0\
@@ -173,6 +214,11 @@ static const int iSuffixTestTableSize_m =
 static const AmpleFunctionTable asFinalTestTable_m[] = {
 	{"MEC_FT",   AMPLE_MEC_FT},
 	{"MCC_FT",   AMPLE_MCC_FT},
+#ifdef EXPERIMENTAL
+#ifndef hab350
+	{"ANCC_FT",   AMPLE_ANCC_FT},
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 	{"SP_TEST",  AMPLE_SP_TEST}
 	};
 static const int iFinalTestTableSize_m =
@@ -698,6 +744,11 @@ char *			rp;
 char *			pszNextField;
 char *			p2;
 AmpleMorphConstraint *	mr;
+#ifdef EXPERIMENTAL
+#ifndef hab350
+AmpleNeverConstraint *	pNecList;
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 static const char	errhead[] = "SETUP ANALYSIS: ";
 unsigned char *		old_pairs;
 unsigned long		uiTemp;
@@ -1016,11 +1067,33 @@ while (*rp != NUL)
 		break;
 
 #ifdef EXPERIMENTAL
+#ifndef hab350
+	case 'n':		/* XAmple Never Environment Constraint */
+		if (pAmple_io->bEnableAllomorphIDs)
+			{
+		  szRecordKey_g[0] = NUL; /* not using dict entries */
+		  pNecList = parseAmpleNeverConstraint( rp, pAmple_io );
+		  if (pNecList != (AmpleNeverConstraint *)NULL)
+			  {
+			  pNecList->pNext = pAmple_io->pNeverConstraints;
+			  pAmple_io->pNeverConstraints = pNecList;
+			  }
+		}
+		else
+			{
+		if (pAmple_io->pLogFP != NULL)
+			fprintf(pAmple_io->pLogFP,
+			"%sANCCs require the -b switch to be set (enable allomorph IDs).\n\t\tIt is not set, so all ANCCs will be ignored.\n",
+				errhead);
+		  }
+		break;
+#endif /* hab350 */
 				/* 3.3.4 SRMc */
 	case 'p':		/* PCPATR word parser control setting */
 		process_patr_setting(rp, pAmple_io);
 		break;
-#endif
+
+#endif /* EXPERIMENTAL */
 
 	default:
 		break;

@@ -226,6 +226,11 @@ static AmpleData	sAmpleData_m = {
 	1,			/* \\maxr */
 	100,		/* \\maxs */
 	NULL,		/* \\mcc */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+	NULL,		/* \\ancc */
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 	10,			/* \\maxnull */
 	NULL,		/* \\strcheck */
 	FALSE,		/* \\dicdecap */
@@ -277,6 +282,9 @@ static AmpleData	sAmpleData_m = {
 	TRUE,					/* sPATR.bShowWarnings */
 	TRUE,					/* sPATR.bPromoteDefAtoms */
 	TRUE,					/* sPATR.bPropIsFeature */
+#ifndef hab350
+	PATR_ROOT_GLOSS_NO_FEATURE,             /* sPATR.eRootGlossFeature */
+#endif /* hab350 */
 	0,					/* sPATR.iMaxProcTime */
 	NULL,					/* sPATR.pLogFP */
 	NULL,					/* sPATR.pFinalPunc */
@@ -284,6 +292,9 @@ static AmpleData	sAmpleData_m = {
 	NULL,					/* sPATR.pGrammar */
 	0,
 	NULL, NULL, NULL, NULL, NULL, NULL,	/* (lexicon markers) */
+#ifndef hab350
+	NULL,                                   /* (root gloss marker) */
+#endif /* hab350 */
 	0, 0, 					/* (processing variables) */
 	&sAmplePATRMemory_m,
 	0, 0, NULL,

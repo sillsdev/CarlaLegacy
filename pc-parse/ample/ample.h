@@ -52,6 +52,11 @@ typedef struct ample_allomorph AmpleAllomorph;
 typedef struct ample_fnlist		AmpleTestList;
 typedef struct ample_pairlist		AmplePairList;
 typedef struct ample_morph_constraint	AmpleMorphConstraint;
+#ifdef EXPERIMENTAL
+#ifndef hab350
+typedef struct ample_never_constraint	AmpleNeverConstraint;
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 typedef struct ample_hlalist		AmpleHeadlistList;
 typedef struct ample_morpheme		AmpleMorpheme;
 typedef struct ample_data		AmpleData;
@@ -157,6 +162,11 @@ struct ample_data {
 	int			   iMaxRootCount;	/* \\maxr */
 	int			   iMaxSuffixCount;	/* \\maxs */
 	AmpleMorphConstraint * pMorphConstraints;	/* \\mcc */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+	AmpleNeverConstraint * pNeverConstraints;	/* \\ancc */
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 	int			   iMaxNullCount;	/* \\maxnull */
 	char *		   pszValidChars;	/* \\strcheck */
 	int			   bDictionaryCapitals;	/* \\dicdecap */

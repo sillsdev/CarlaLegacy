@@ -64,6 +64,16 @@ static int	menv_left	P((AmpleHeadList * left,
 static int	menv_right	P((AmpleHeadList * right,
 				   AmpleEnvItem *  env,
 				   AmpleData *     pAmpleData_in));
+#ifdef EXPERIMENTAL
+#ifndef hab350
+static int	nenv_left	P((AmpleHeadList * left,
+				   AmpleEnvItem *  env,
+				   AmpleData *     pAmpleData_in));
+static int	nenv_right	P((AmpleHeadList * right,
+				   AmpleEnvItem *  env,
+				   AmpleData *     pAmpleData_in));
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 
 static AmpleWord *	pPreviousWord_m = NULL;
 static AmpleWord *	pNextWord_m     = NULL;
@@ -1385,3 +1395,289 @@ for ( ; menv != (AmpleEnvConstraint *)NULL ; menv = menv->pNext )
 	}
 return( FALSE );                        /* nothing succeeded */
 } /* end of checkAmpleMorphEnviron() */
+
+#ifdef EXPERIMENTAL
+#ifndef hab350
+/*************************************************************************
+ * NAME
+ *    nenv_left
+ * ARGUMENTS
+ *    left - pointer to list of left-hand side headlist's
+ *    env  - pointer to list of left-hand side env_item's
+ * DESCRIPTION
+ *    Check whether the headlist's match the env_item's okay.
+ *    This is very recursive.
+ * RETURN VALUE
+ *    nonzero if successful, zero if unsuccessful
+ */
+static int nenv_left(left, env, pAmpleData_in)
+AmpleHeadList *	left;
+AmpleEnvItem *	env;
+AmpleData *	pAmpleData_in;
+{
+register int		val;
+AmpleHeadlistList *	hl_ambp;
+AmpleHeadList *		nextleft;
+
+if (env == (AmpleEnvItem *)NULL)
+	return( TRUE );         /* no more environment to check */
+
+for (;; left = left->pLeft )
+	{
+	/*
+	 *  handle hitting the beginning of the headlist
+	 */
+	if (left == (AmpleHeadList *)NULL)
+	{
+	if (env->u.pszString!=(char *)NULL)
+		{
+		if (    (env->iFlags & E_OPTIONAL) &&
+			nenv_left(left,env->pNext, pAmpleData_in) )
+		return( TRUE );
+		if (    (env->iFlags & E_NOT) &&
+			(env->pNext==(AmpleEnvItem *)NULL) )
+		return( TRUE );         /* boundary is "NOT something" */
+		else
+		return( FALSE );        /* had to match something more */
+		}
+	else
+		{
+		if (env->iFlags & E_NOT)
+		return( FALSE );    /* didn't want this boundary */
+		else
+		{
+		/* Check for end of environment */
+		if (env->pNext == (AmpleEnvItem *)NULL)
+			return( TRUE );     /* wanted this boundary */
+		/* If we are already in lookahead mode, then we have a
+		   multiple dependency */
+		if (pNextWord_m == NULL)
+			{
+			pAmpleData_in->bMultiDependency = TRUE;
+			return(FALSE);
+			}
+		if (pPreviousWord_m->pTemplate == NULL)
+			return(env->pNext == NULL);
+		/* at least one ambiguity of previous word must match */
+		for (	hl_ambp = pPreviousWord_m->pHeadlists ;
+			hl_ambp ;
+			hl_ambp = hl_ambp->pNext )
+			{
+			/* first, find rightmost morpheme */
+			for (nextleft = hl_ambp->pHeadList;
+			 nextleft->pRight;
+			 nextleft = nextleft->pRight)
+			; /* do nothing other than keep looking */
+			/* now, continue checking for environment match */
+			if (nenv_left(nextleft, env->pNext, pAmpleData_in))
+			return(TRUE);
+			}
+		return(FALSE);
+		}
+		}
+	}
+	/*
+	 *  check the current headlist element
+	 */
+	else if (env->u.pszString != (char *)NULL)
+	{                               /* check against a given morpheme */
+	val = (strcmp(left->pAllomorph->pszAllomorphID, env->u.pszString) == 0);
+	}
+	else
+	{                               /* check against the word boundary */
+	if (env->iFlags & E_NOT)
+		return( left != (AmpleHeadList *)NULL );
+	else
+		val = FALSE;        /* 1.9v BJY */
+	}
+	/*
+	 *  now figure out what to do based on val, E_NOT, E_OPTIONAL, and
+	 *  E_ELLIPSIS
+	 */
+	if (    (val && !(env->iFlags & E_NOT)) ||
+	(!val && (env->iFlags & E_NOT)) )
+	{
+	if (nenv_left( left->pLeft, env->pNext, pAmpleData_in))
+		return( TRUE );
+	}
+	else
+	{
+	if (env->iFlags & E_OPTIONAL)
+		{
+		if (nenv_left( left, env->pNext, pAmpleData_in))
+		return( TRUE );
+		}
+	}
+
+	if (!(env->iFlags & E_ELLIPSIS))
+	return( FALSE );                /* had to match here */
+	/* if we reach here, we try again further out (due to '...') */
+	}
+} /* end of nenv_left() */
+
+/*************************************************************************
+ * NAME
+ *    nenv_right
+ * ARGUMENTS
+ *    right - pointer to list of right-hand side headlist's
+ *    env   - pointer to list of right-hand side env_item's
+ * DESCRIPTION
+ *    Check whether the headlist's match the env_item's okay.
+ *    This is very recursive.
+ * RETURN VALUE
+ *    nonzero if successful, zero if unsuccessful
+ */
+static int nenv_right(right,env, pAmpleData_in)
+AmpleHeadList *	right;
+AmpleEnvItem *	env;
+AmpleData *	pAmpleData_in;
+{
+register int		val;
+AmpleHeadlistList *	hl_ambp;
+
+if (env == (AmpleEnvItem *)NULL)
+	return( TRUE );         /* no more environment to check */
+
+for (;; right = right->pRight )
+	{
+	/*
+	 *  handle hitting the end of the headlist
+	 */
+	if (right == (AmpleHeadList *)NULL)
+	{
+	if ((env->iFlags&E_CLASS) || (env->u.pszString!=(char *)NULL))
+		{
+		if (    (env->iFlags&E_OPTIONAL) &&
+			nenv_right(right,env->pNext, pAmpleData_in) )
+		return( TRUE );
+		if (    (env->iFlags & E_NOT) &&
+		(env->pNext==(AmpleEnvItem *)NULL) )
+		return( TRUE );     /* boundary is "NOT something" */
+		else
+		return( FALSE );    /* had to match something more */
+		}
+	else
+		{
+		if (env->iFlags & E_NOT)
+		return( FALSE );    /* didn't want this boundary */
+		else
+		{
+		/* Check for end of environment */
+		if ( env->pNext == (AmpleEnvItem *)NULL )
+			return( TRUE );
+		/* Can't check next word unless lookahead is done */
+		if ( pAmpleData_in->bLookaheadDone )
+			{
+			if (    (pNextWord_m == NULL) ||
+				(pNextWord_m->pTemplate == NULL))
+			return( env->pNext == NULL );
+			/* at least one ambiguity of next word must match */
+			for (   hl_ambp = pNextWord_m->pHeadlists;
+				hl_ambp;
+				hl_ambp = hl_ambp->pNext)
+			{
+			if (nenv_right(hl_ambp->pHeadList, env->pNext,
+					   pAmpleData_in))
+				return(TRUE);
+			}
+			return(FALSE);
+			}
+		/* If we are already in lookahead mode, then we have a
+		   multiple dependency */
+		if (pNextWord_m == NULL)
+			{
+			pAmpleData_in->bMultiDependency = TRUE;
+			return( FALSE );
+			}
+		/* If we get to this point, then we need to tell anproc()
+		   to look ahead */
+		pAmpleData_in->bMorphemeLookahead = TRUE;
+		return( FALSE );
+		}
+		}
+	}
+	/*
+	 *  check the current headlist element
+	 */
+	else if (env->u.pszString != (char *)NULL)
+	{                               /* check against a given morpheme */
+	val = (strcmp(right->pAllomorph->pszAllomorphID, env->u.pszString) == 0);
+	}
+	else
+	{                               /* check against the word boundary */
+	if (env->iFlags & E_NOT)
+		return( right != (AmpleHeadList *)NULL );
+	else
+		val = FALSE;        /* 1.9v BJY */
+	}
+	/*
+	 *  now figure out what to do based on val, E_NOT, E_OPTIONAL, and
+	 *  E_ELLIPSIS
+	 */
+	if (    (val && !(env->iFlags & E_NOT)) ||
+	(!val && (env->iFlags & E_NOT)) )
+	{
+	if (nenv_right( right->pRight, env->pNext, pAmpleData_in))
+		return( TRUE );
+	}
+	else
+	{
+	if (env->iFlags & E_OPTIONAL)
+		{
+		if (nenv_right( right, env->pNext, pAmpleData_in))
+		return( TRUE );
+		}
+	}
+
+	if (!(env->iFlags & E_ELLIPSIS))
+	return( FALSE );        /* had to match here */
+	/* if we reach here, we try again further out (due to '...') */
+	}
+} /* end of nenv_right() */
+
+/*************************************************************************
+ * NAME
+ *    checkAmpleNeverEnviron
+ * ARGUMENTS
+ *    left  - pointer to leftward headlist structure
+ *    right - pointer to rightward headlist structure
+ *    nenv  - pointer to the allomorph never co-occurrence list
+ * DESCRIPTION
+ *    Check if we meet the given allomorph never co-occurrence environment.
+ * RETURN VALUE
+ *    nonzero if okay, zero if the environment is wrong
+ */
+int checkAmpleNeverEnviron(left, right, nenv, pPreviousWord_in, pNextWord_in,
+			   pAmpleData_in)
+AmpleHeadList *		left;
+AmpleHeadList *		right;
+AmpleEnvConstraint *	nenv;
+AmpleWord *		pPreviousWord_in;
+AmpleWord *		pNextWord_in;
+AmpleData *		pAmpleData_in;
+{
+register int val;
+
+if (nenv == (AmpleEnvConstraint *)NULL)
+	return( TRUE );                     /* nothing to check */
+
+pPreviousWord_m = pPreviousWord_in;
+pNextWord_m     = pNextWord_in;
+/*
+ *  go through the list of allomorph never co-occurrence conditions, quitting
+ *  at the first one that succeeds
+ */
+for ( ; nenv != (AmpleEnvConstraint *)NULL ; nenv = nenv->pNext )
+	{
+	val = nenv_left(left,   nenv->pLeftEnv,  pAmpleData_in) &&
+	  nenv_right(right, nenv->pRightEnv, pAmpleData_in);
+	/* check for negative environment */
+	if (!nenv->bNot)
+	val = !val;		/* norm is to negate */
+	if (val)
+	return( TRUE );
+	}
+return( FALSE );                        /* nothing succeeded */
+} /* end of checkAmpleNeverEnviron() */
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */

@@ -144,6 +144,20 @@ static int	checkAmpleMorphConstraint P((
 					AmpleHeadList *	   pCurrent_in,
 					AmpleHeadList *	   pLeft_in,
 					AmpleData *            pAmple_in));
+#ifdef EXPERIMENTAL
+#ifndef hab350
+static int	testAmpleNeverEnvirons	P((AmpleHeadList * left,
+					   AmpleHeadList * current,
+					   char *          strp,
+					   int             len,
+					   AmpleData *     pAmple_in));
+static int	checkAmpleNeverConstraint P((
+					AmpleNeverConstraint * pNeverConstraint_in,
+					AmpleHeadList *	   pCurrent_in,
+					AmpleHeadList *	   pLeft_in,
+					AmpleData *            pAmple_in));
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 static int	testAmpleMorphsCo_occur	P((AmpleHeadList * left,
 					   AmpleHeadList * current,
 					   char *          strp,
@@ -3273,6 +3287,250 @@ for (	mp = current->pAllomorph->pMorpheme->pMorphConstraints ;
 return TRUE;
 } /* end of testAmpleMorphsCo_occur() */
 
+#ifdef EXPERIMENTAL
+#ifndef hab350
+/***************************************************************************
+ * NAME
+ *    testAmpleNeverEnvirons
+ * ARGUMENTS
+ *    left    - unused
+ *    current - pointer to current morpheme in the headlist
+ *    strp    - unused
+ *    len     - unused
+ * DESCRIPTION
+ *    check whether the current morpheme fails any applicable
+ *    allomorph never co-occurence constraints
+ * RETURN VALUE
+ *    nonzero if okay, zero if the test fails
+ */
+static int testAmpleNeverEnvirons( left, current, strp, len, pAmple_in)
+AmpleHeadList *	left;
+AmpleHeadList *	current;
+char *		strp;
+int		len;
+AmpleData *	pAmple_in;
+{
+AmpleNeverConstraint *	mp;
+/*
+ *  check every constraint for each morpheme
+ */
+for ( mp = pAmple_in->pNeverConstraints ; mp != NULL ; mp = mp->pNext )
+	{
+	if (!checkAmpleNeverConstraint(mp, current, left, pAmple_in))
+	return FALSE;
+	}
+return TRUE;
+} /* end of testAmpleNeverEnvirons() */
+
+/*****************************************************************************
+ * NAME
+ *    checkAmpleNeverConstraint
+ * DESCRIPTION
+ *    check whether this allomorph never co-occurence constraint applies to the
+ *    allomorph of this morpheme,
+ *    and if so, check whether the allomorph fails the constraint
+ * RETURN VALUE
+ *    TRUE if the current morpheme's allomorph fails to meet an applicable
+ *    allomorph never constraint, FALSE if it meets one
+ */
+static int checkAmpleNeverConstraint(pNeverConstraint_in, pCurrent_in,
+					 pLeft_in, pAmple_in)
+AmpleNeverConstraint *	pNeverConstraint_in;
+AmpleHeadList *		pCurrent_in;
+AmpleHeadList *		pLeft_in;
+AmpleData *		pAmple_in;
+{
+StringList *	tp;
+AmpleHeadList *		hp;
+AmpleHeadList *		pHead;
+int			bUsesPrev;
+int			bUsesNext;
+AmpleEnvConstraint *	pEC;
+
+for ( tp = pNeverConstraint_in->pAlloIDs, hp = pCurrent_in ; hp ; )
+	{
+	/*
+	 *  check the allomorph of this morpheme
+	 */
+	if (strcmp(hp->pAllomorph->pszAllomorphID, tp->pszString) != 0)
+	break;		/* ANCC doesn't apply */
+	/*
+	 *  this one matched, step to next
+	 */
+	hp = hp->pRight;
+	tp = tp->pNext;
+	/*
+	 *  if match completed, this constraint applies, so check it
+	 */
+	if (tp == (StringList *)NULL)
+	{
+	bUsesPrev = FALSE;
+	bUsesNext = FALSE;
+	for (	pEC = pNeverConstraint_in->pEnvironment ;
+		pEC ;
+		pEC = pEC->pNext )
+		{
+		if (pEC->bUsesPrevWord)
+		bUsesPrev = TRUE;
+		if (pEC->bUsesNextWord)
+		bUsesNext = TRUE;
+		}
+	if (bUsesPrev)
+		bUsesPrevWord_m = TRUE;
+	if (bUsesNext)
+		bUsesNextWord_m = TRUE;
+	if (bUseSurroundingWords_m)
+		{
+		if (bUsesPrev || bUsesNext)
+		{
+		if (checkAmpleNeverEnviron( pLeft_in, hp,
+						pNeverConstraint_in->pEnvironment,
+						pPreviousWord_m, pNextWord_m,
+						pAmple_in))
+			return TRUE;		/* ANCC satisfied okay */
+		}
+		else
+		return TRUE;		/* already processed */
+		}
+	else
+		{
+		if (bUsesPrev || bUsesNext)
+		return TRUE;
+		if (checkAmpleNeverEnviron( pLeft_in, hp,
+					pNeverConstraint_in->pEnvironment,
+					pPreviousWord_m, pNextWord_m,
+					pAmple_in))
+		return TRUE;		/* ANCC satisfied okay */
+		}
+
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
+		{
+		store_AMPLE_trace(pAmple_in,
+		  "        Never Environment Constraint Failed for %s:\n",
+				  pCurrent_in->pAllomorph->pszAllomorphID);
+		store_AMPLE_trace(pAmple_in, "                ", NULL);
+		if (pAmple_in->pszTrace != NULL)
+		{
+		pAmple_in->pszTrace = stringifyAmpleNeverConstraint(
+			pAmple_in->pszTrace,
+			&pAmple_in->uiTraceSize,
+			pNeverConstraint_in,
+			FALSE);
+		}
+		else if (pAmple_in->pLogFP != NULL)
+		{
+		writeAmpleNeverConstraint(pNeverConstraint_in,
+					  pAmple_in->pLogFP,
+					  FALSE);
+		}
+		store_AMPLE_trace(pAmple_in, "\n", NULL);
+		}
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+		{
+		char *		pszStr;
+		size_t		uiSize;
+		size_t		uiMaxSize;
+		AmpleHeadList *	pBegin = NULL;
+
+		uiMaxSize = 2 * iTracingDepth_m;
+		if (pNeverConstraint_in->pszLabel != NULL)
+		{
+		uiSize = lengthAmpleCDATA(pNeverConstraint_in->pszLabel,
+					  FALSE);
+		if (uiMaxSize < uiSize)
+			uiMaxSize = uiSize;
+		}
+		else
+		{
+		for ( pHead = pLeft_in ;
+			  pHead && (pHead->pLeft) ;
+			  pHead = pHead->pLeft )
+			;
+		pBegin = pHead;
+		for (   ;
+			pHead && (pHead != pCurrent_in) ;
+			pHead = pHead->pRight )
+			{
+			uiSize = lengthAmpleCDATA(
+			pHead->pAllomorph->pszAllomorphID,
+			FALSE);
+			if (uiMaxSize < uiSize)
+			uiMaxSize = uiSize;
+			}
+		for ( pHead = pCurrent_in ; pHead ; pHead = pHead->pRight )
+			{
+			uiSize = lengthAmpleCDATA(
+			pHead->pAllomorph->pszAllomorphID,
+			FALSE);
+			if (uiMaxSize < uiSize)
+			uiMaxSize = uiSize;
+			}
+		}
+#ifdef HAVE_ALLOCA
+		pszStr    = (char *)alloca(uiMaxSize + 1);
+#else
+		pszStr    = (char *)allocMemory(uiMaxSize + 1);
+#endif
+		sprintf(pszStr, "%*s", 2*iTracingDepth_m, "");
+		store_AMPLE_trace(pAmple_in, "\n    %s<failure test=\"ANCC_FT:",
+				  pszStr);
+		if (pNeverConstraint_in->pszLabel != NULL)
+		{
+		storeAmpleCDATA(pszStr,
+				pNeverConstraint_in->pszLabel, FALSE);
+		store_AMPLE_trace(pAmple_in, " %s", pszStr);
+		}
+		else
+		{
+		for (   pHead = pBegin ;
+			pHead && (pHead != pCurrent_in) ;
+			pHead = pHead->pRight )
+			{
+			storeAmpleCDATA(pszStr,
+					pHead->pAllomorph->pszAllomorphID, FALSE);
+			store_AMPLE_trace(pAmple_in, " %s", pszStr);
+			}
+		storeAmpleCDATA(pszStr,
+				pCurrent_in->pAllomorph->pszAllomorphID,
+				FALSE);
+		store_AMPLE_trace(pAmple_in, " _%s_", pszStr);
+
+		for (   pHead = pCurrent_in->pRight ;
+			pHead ;
+			pHead = pHead->pRight )
+			{
+			storeAmpleCDATA(pszStr,
+					pHead->pAllomorph->pszAllomorphID, FALSE);
+			store_AMPLE_trace(pAmple_in, " %s", pszStr);
+			}
+		store_AMPLE_trace(pAmple_in, " :: ", NULL);
+		if (pAmple_in->pszTrace != NULL)
+			{
+			pAmple_in->pszTrace = stringifyAmpleNeverConstraint(
+			pAmple_in->pszTrace,
+			&pAmple_in->uiTraceSize,
+			pNeverConstraint_in,
+			TRUE);
+			}
+		else if (pAmple_in->pLogFP != NULL)
+			{
+			writeAmpleNeverConstraint(pNeverConstraint_in,
+						  pAmple_in->pLogFP, TRUE);
+			}
+		}
+		store_AMPLE_trace(pAmple_in, "\">", NULL);
+#ifndef HAVE_ALLOCA
+		freeMemory(pszStr);
+#endif
+		}
+	return( FALSE );	/* it only takes one failure! */
+	}
+	}
+return( TRUE );		/* ANCC succeeded (maybe it didn't apply) */
+}
+
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 /*==========================================================================*/
 /*====									====*/
 /*====			END OF BUILTIN TESTS				====*/
@@ -3703,6 +3961,15 @@ for (	flp = pAmple_in->pFinalTests,
 							 ph->uiAllomorphLength,
 							 pAmple_in);
 		break;
+#ifdef EXPERIMENTAL
+#ifndef hab350
+		case AMPLE_ANCC_FT:
+		bTestValue = testAmpleNeverEnvirons(ph->pLeft, ph, surface,
+							ph->uiAllomorphLength,
+							pAmple_in);
+		break;
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 		case AMPLE_SP_TEST:
 		if (flp->bUsesPrevWord)
 			bUsesPrevWord_m = TRUE;
