@@ -476,26 +476,6 @@
 #define IDC_CHECKToneParseMorphnames    3050
 #define IDC_CHECKCreateFinalCatTestModifyTests 3051
 #define IDC_CHECKDisableFinalCatModifyTests 3052
-#define IDC_CHECKCheckTestSyntax        3053
-#define IDC_STATICTestItemVariety       3054
-#define IDC_TREETestKeywrdExpl          3055
-#define IDC_STATICTestSample            3056
-#define IDC_RICHEDITTestContent         3057
-#define IDC_STATICTestSetForSelectedItem 3058
-#define IDC_STATICTestFontAndColor      3059
-#define IDC_BUTTONTestColorFont         3060
-#define IDC_CHECKTestBold               3061
-#define IDC_CHECKTestUnderline          3062
-#define IDC_CHECKTestItalic             3063
-#define IDC_CHECKTestStrikeout          3064
-#define IDC_STATICTestSetAllItems       3065
-#define IDC_CHECKTestWordwrap           3066
-#define IDC_COMBOTestFontSize           3067
-#define IDC_CHECKTestUseBckgroundColr   3068
-#define IDC_STATICTestBckgroundColr     3069
-#define IDC_BUTTONTestBckgroundColr     3070
-#define IDC_BUTTONTestResetToDefault    3071
-#define IDD_EditSetColor                3072
 #define IDLangSetup                     32771
 #define ID_FILE                         32772
 #define IDProjectSetup                  32773
@@ -551,7 +531,6 @@
 #define ID_RunTrace                     32828
 #define ID_EDIT_Insert_TestData         32829
 #define ID_QUICKPARSE_RefreshRequest    32830
-#define ID_CustomizeUserTestDisplay     32831
 
 // Next default values for new objects
 //
@@ -559,8 +538,8 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        261
-#define _APS_NEXT_COMMAND_VALUE         32832
-#define _APS_NEXT_CONTROL_VALUE         3073
+#define _APS_NEXT_COMMAND_VALUE         32831
+#define _APS_NEXT_CONTROL_VALUE         3053
 #define _APS_NEXT_SYMED_VALUE           148
 #endif
 #endif
