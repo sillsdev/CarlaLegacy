@@ -42,7 +42,7 @@ Key the personal pronouns in the text box, with each pronoun followed by a perio
 		</prompt>
 		<textBox id="PronPersonalErgSubjectTransExample" dataItem="personalErgSubjectTransExample" show="swNPCaseErg"/>
 		<prompt id="PronCaseErgPrompt1" show="swNPCaseErg">
-			 <br/>Key the personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			<br/>Key the personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalErgSubjectIntransExample" dataItem="personalErgSubjectIntransExample" show="swNPCaseErg"/>
 		<prompt id="PronCaseErgPrompt2" show="swNPCaseErg">
@@ -54,15 +54,7 @@ Key the personal pronouns in the text box, with each pronoun followed by a perio
 <ul>
 				<li>Add the feature <feature>ergative</feature> to all the pronouns that occur in subject position for transitive verbs.</li>
 				<li>Add the feature <feature>absolutive</feature> to all the pronouns that occur in direct object position and in subject position for intransitive verbs.</li>
-				<li>Add the feature <span id="PronPossGen" show="swNPPossCaseGenitive">
-						<feature>genitive</feature>
-					</span>
-					<span id="PronPossErg" show="swNPPossCaseErgative">
-						<feature>ergative</feature>
-					</span>
-					<span id="PronPossAbs" show="swNPPossCaseAbsolutive">
-						<feature>absolutive</feature>
-					</span> to all the pronouns that occur in possessor position.</li>
+				<li>Add the feature <span id="PronPossGen" show="swNPPossCaseGenitive"><feature>genitive</feature></span><span id="PronPossErg" show="swNPPossCaseErgative"><feature>ergative</feature></span><span id="PronPossAbs" show="swNPPossCaseAbsolutive"><feature>absolutive</feature></span> to all the pronouns that occur in possessor position.</li>
 				<li>If a particular pronoun can show up in any position, do not add any feature.</li>
 			</ul>
 		</instruction>
@@ -71,19 +63,19 @@ Key the personal pronouns in the text box, with each pronoun followed by a perio
 		</prompt>
 		<textBox id="PronPersonalSplitSubjectExample" dataItem="personalSplitSubjectExample" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt1" show="swNPCaseSplit">
-				<br/>Key the personal pronouns which normally appear in object position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			<br/>Key the personal pronouns which normally appear in object position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalSplitObjectExample" dataItem="personalSplitObjectExample" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt2" show="swNPCaseSplit">
-			 <br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			<br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalSplitPossessorExample" dataItem="personalSplitPossessorExample" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt3" show="swNPCaseSplit">
-			  <br/>Key the personal pronouns which appear as subjects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			<br/>Key the personal pronouns which appear as subjects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalSplitErgExample" dataItem="personalSplitErgExample" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt4" show="swNPCaseSplit">
-			  <br/>Key the personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			<br/>Key the personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalSplitAbsExample" dataItem="personalSplitAbsExample" show="swNPCaseSplit"/>
 		<instruction id="PronCaseTypeSplitInstruction" show="swNPCaseSplit">
@@ -99,7 +91,7 @@ Key the personal pronouns in the text box, with each pronoun followed by a perio
 				<li>If a particular pronoun can show up in any position, do not add any feature.</li>
 			</ul>
 		</instruction>
-		<instruction>Add the relevant agreement features to each pronoun in the lexicon, as shown in the chart.  If a pronoun is not specified for a particular type of agreement feature, do not add any feature of that type.<br/>
+		<instruction>In the chart below, check any agreement features used in your language.  Add the relevant agreement features to each pronoun in the lexicon.  If a pronoun is not specified for a particular type of agreement feature, do not add any feature of that type.<br/>
 			<br/>
 			<featureChart>
 				<featureRow>

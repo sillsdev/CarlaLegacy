@@ -7,39 +7,39 @@
 degree words like the quantifiers can, though they occur in the same
 position.  Note, however, that cardinal numbers can be modified by
 ordinal numbers and by <example>next</example> and <example>last</example>, as in <example>the first twenty boys</example> or
-<example>the next one hundred years</example>.  Ordinal numbers <example>next</example> and <example>last</example>and can also modify nouns directly, as in <example>the third girl</example> and <example>the last boy</example>.  Since these modifiers also act as regular
+<example>the next one hundred years</example>.  Ordinal numbers and <example>next</example> and <example>last</example> can also modify nouns directly, as in <example>the third girl</example> and <example>the last boy</example>.  Since these modifiers also act as regular
 adjectives in modifying nouns directly, they will need to have the
 syntactic category of adjectives plus a feature to distinguish them.
 </introduction>
 	<form section="qp">
 		<prompt>Key your examples containing ordinal numbers here, including ordinal numbers with a noun, ordinal numbers modifying a cardinal number with a noun, and examples meaning the last or next something:</prompt>
 		<textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
-<br/>
-<br/>
+		<br/>
+		<br/>
 		<radioGroup>
 			<groupName dataItem="ordinalFormation" default="independent">ROrdinalFormation</groupName>
 			<prompt>How are ordinal numbers formed in your language?</prompt>
 			<radio id="QPOrdinalAffix" checked="yes" dataValue="affix">An affix is added to the cardinal number</radio>
 			<radio id="QPOrdinalIndependent" checked="yes" dataValue="independent">They are all independent syntactic words</radio>
 			<radio id="QPOrdinalBoth" checked="yes" dataValue="both">Some are formed by adding an affix to the cardinal number but some are independent syntactic words</radio>
-</radioGroup>
-			<radioGroup>
-				<groupName dataItem="ordinalPos" default="unknown" position="yesSpec">ROrdinalPosition</groupName>
-				<prompt>Where do ordinal numbers and the words for 'last' and 'next' occur with respect to the cardinal number in a phrase like 'the first twenty boys'?</prompt>
-				<radio id="QPOrdinalBefore" checked="yes" dataValue="before">Before the cardinal number</radio>
-				<radio id="QPOrdinalAfter" checked="yes" dataValue="after">After the cardinal number</radio>
-				<radio id="QPOrdinalEitherSide" checked="yes" dataValue="either">On either side of the cardinal number, but not both at the same time</radio>
-				<radio id="QPOrdinalEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the cardinal number, or both sides at the same time</radio>
-				<radio id="QPOrdinalBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the cardinal number, or both sides at the same time</radio>
-				<radio id="QPOrdnialAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the cardinal nimber, or both sides at the same time</radio>
-				<radio id="QPOrdinalBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-				<radioGroup id="QPOrdinalEitherSideTable" show="swQPOrdinalEitherorBoth">
-					<groupName dataItem="ordinalEither" default="yes">ROrdinalEitherSide</groupName>
-					<prompt>Can all the ordinal numbers and/or the words for 'last' and 'next' appear on either side of the cardinal number?</prompt>
-					<radio id="QPOrdinalEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
-					<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
-				</radioGroup>
+		</radioGroup>
+		<radioGroup>
+			<groupName dataItem="ordinalPos" default="unknown" position="yesSpec">ROrdinalPosition</groupName>
+			<prompt>Where do ordinal numbers and the words for 'last' and 'next' occur with respect to the cardinal number in a phrase like 'the first twenty boys'?</prompt>
+			<radio id="QPOrdinalBefore" checked="yes" dataValue="before">Before the cardinal number</radio>
+			<radio id="QPOrdinalAfter" checked="yes" dataValue="after">After the cardinal number</radio>
+			<radio id="QPOrdinalEitherSide" checked="yes" dataValue="either">On either side of the cardinal number, but not both at the same time</radio>
+			<radio id="QPOrdinalEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the cardinal number, or both sides at the same time</radio>
+			<radio id="QPOrdinalBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the cardinal number, or both sides at the same time</radio>
+			<radio id="QPOrdnialAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the cardinal nimber, or both sides at the same time</radio>
+			<radio id="QPOrdinalBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+			<radioGroup id="QPOrdinalEitherSideTable" show="swQPOrdinalEitherorBoth">
+				<groupName dataItem="ordinalEither" default="yes">ROrdinalEitherSide</groupName>
+				<prompt>Can all the ordinal numbers and/or the words for 'last' and 'next' appear on either side of the cardinal number?</prompt>
+				<radio id="QPOrdinalEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
+				<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
+		</radioGroup>
 		<instruction>
 			<span id="QPOrdinalAffixInstruction" show="swQPOrdinalAffix">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
 			<span id="QPOrdinalIndependentInstruction" show="swQPOrdinalIndependent">In the lexicon, mark each ordinal word with the feature <feature>ordinal</feature>. Also, mark the words meaning <example>next</example> and <example>last</example> with this feature.</span>

@@ -61,9 +61,7 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 		<introduction id="NPPossCooccurIntroduction" show="swNPArtAndOrDem">We also need to know whether possessors and articles or demonstratives can co-occur in the same nominal phrase.  In English, these elements do not co-occur, unless the possessor is expressed in a prepositional phrase.  For example, we can't say <example>those [the boy's] books</example>; instead we use <example>those books [of his]</example> to express the same thought.  Some other languages allow both possessors and articles or demonstratives to occur in the same phrase, so the first example above would be grammatical.</introduction>
 		<radioGroup id="NPPossCooccurTable" show="swNPArtAndOrDem">
 			<groupName dataItem="possCooccur" default="yes"/>
-			<prompt>Can possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span>
-				<span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span>
-				<span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> in your language?</prompt>
+			<prompt>Can possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> in your language?</prompt>
 			<radio id="NPPossCooccurYes" dataValue="yes">Yes, they may co-occur</radio>
 			<radio id="NPPossCooccurNo" dataValue="no">No, it is the same as English in this regard</radio>
 		</radioGroup>
@@ -75,6 +73,14 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 			<radio id="NPPossCaseAbsolutive" dataValue="absolutive">Absolutive, the same marking as the subjects of intransitive verbs and the objects of transitive verbs</radio>
 			<radio id="NPPossCaseGenitive" dataValue="genitive">Genitive, a distinct marking for possessors</radio>
 		</radioGroup>
+		<instruction id="NPPossMarkedYesAffixErgInstruction" show="swNPPossMarkedYesAffixErg">In the lexicon, mark the possessive affix with the feature <feature>ergative</feature>.</instruction>
+		<instruction id="NPPossMarkedYesAffixAbsInstruction" show="swNPPossMarkedYesAffixAbs">In the lexicon, mark the possessive affix with the feature <feature>absolutive</feature>.</instruction>
+		<instruction id="NPPossMarkedYesAffixGenInstruction" show="swNPPossMarkedYesAffixGen">In the lexicon, mark the possessive affix with the feature <feature>genitive</feature>.</instruction>
+		<instruction id="NPPossMarkedYesCliticWordNoInstruction" show="swNPPossMarkedYesCliticWordNo">In the lexicon, add  the feature <span id="NPPossCliticPrefix" show="swNPPossMarkedYesCliticPrefix"><feature>poss_prefix</feature></span><span id="NPPossCliticSuffix" show="swNPPossMarkedYesCliticSuffix"><feature>poss_suffix</feature></span> to the possessive clitic.   <span id="NPPossMarkedYesCliticWordNoGen" show="swNPPossMarkedYesCliticWordNoGen">Also add the feature <feature>genitive</feature> for the case marking.</span><span id="NPPossMarkedYesCliticWordNoErg" show="swNPPossMarkedYesCliticWordNoErg">Also add the feature <feature>ergative</feature> for the case marking.</span><span id="NPPossMarkedYesCliticWordNoAbs" show="swNPPossMarkedYesCliticWordNoAbs">Also add the feature <feature>absolutive</feature> for the case marking.</span>
+		</instruction>
+		<instruction id="NPPossMarkedYesCliticWordYesGenInstruction" show="swNPPossMarkedYesCliticWordYesGen">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
+		<instruction id="NPPossMarkedYesCliticWordYesErgInstruction" show="swNPPossMarkedYesCliticWordYesErg">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss_ergative</feature>, which will change the category and add the ergative case.</instruction>
+		<instruction id="NPPossMarkedYesCliticWordYesAbsInstruction" show="swNPPossMarkedYesCliticWordYesAbs">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss_absolutive</feature>, which will change the category and add the absolutive case.</instruction>
 		<introduction id="NPPossNounCaseChangeIntroduction" show="swNPCaseYes">In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system. </introduction>
 		<radioGroup id="NPPossNounCaseChange" show="swNPCaseYes">
 			<groupName dataItem="possNounCaseChange" default="no">RNPPossNounCaseChange</groupName>
@@ -83,21 +89,6 @@ Does the presence of a possessor change the case marking on the head noun to mat
 			<radio id="NPPossNounCaseChangeNo" dataValue="no">No, the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor</radio>
 			<radio id="NPPossNounCaseChangeYes" dataValue="yes">Yes, the case of the head noun matches the case of the possessor, when a possessor is present</radio>
 		</radioGroup>
-		<instruction id="NPPossMarkedYesAffixErgInstruction" show="swNPPossMarkedYesAffixErg">In the lexicon, mark the possessive affix with the feature <feature>ergative</feature>.</instruction>
-		<instruction id="NPPossMarkedYesAffixAbsInstruction" show="swNPPossMarkedYesAffixAbs">In the lexicon, mark the possessive affix with the feature <feature>absolutive</feature>.</instruction>
-		<instruction id="NPPossMarkedYesAffixGenInstruction" show="swNPPossMarkedYesAffixGen">In the lexicon, mark the possessive affix with the feature <feature>genitive</feature>.</instruction>
-		<instruction id="NPPossMarkedYesCliticWordNoInstruction" show="swNPPossMarkedYesCliticWordNo">In the lexicon, add  the feature <span id="NPPossCliticPrefix" show="swNPPossMarkedYesCliticPrefix">
-				<feature>poss_prefix</feature>
-			</span>
-			<span id="NPPossCliticSuffix" show="swNPPossMarkedYesCliticSuffix">
-				<feature>poss_suffix</feature>
-			</span> to the possessive clitic.   <span id="NPPossMarkedYesCliticWordNoGen" show="swNPPossMarkedYesCliticWordNoGen">Also add the feature <feature>genitive</feature> for the case marking.</span>
-			<span id="NPPossMarkedYesCliticWordNoErg" show="swNPPossMarkedYesCliticWordNoErg">Also add the feature <feature>ergative</feature> for the case marking.</span>
-			<span id="NPPossMarkedYesCliticWordNoAbs" show="swNPPossMarkedYesCliticWordNoAbs">Also add the feature <feature>absolutive</feature> for the case marking.</span>
-		</instruction>
-		<instruction id="NPPossMarkedYesCliticWordYesGenInstruction" show="swNPPossMarkedYesCliticWordYesGen">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
-		<instruction id="NPPossMarkedYesCliticWordYesErgInstruction" show="swNPPossMarkedYesCliticWordYesErg">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss_ergative</feature>, which will change the category and add the ergative case.</instruction>
-		<instruction id="NPPossMarkedYesCliticWordYesAbsInstruction" show="swNPPossMarkedYesCliticWordYesAbs">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss_absolutive</feature>, which will change the category and add the absolutive case.</instruction>
 		<br/>
 		<buttons>
 			<button id="NPPossBack" value="Back" goto="NPContents.htm"/>

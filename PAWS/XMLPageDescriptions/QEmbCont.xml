@@ -7,8 +7,8 @@
 		<EnglishExample>
 			<exItem>Examples of English embedded content questions, with required fronting, include:</exItem>
 			<exItem label="1.">I know who hit the ball.</exItem>
-			<exItem label="2.">I know when she will come.</exItem>
-			<exItem label="3.">I know what the boy hit.</exItem>
+			<exItem label="2.">I wonder when she will come.</exItem>
+			<exItem label="3.">I will ask what the boy hit.</exItem>
 		</EnglishExample>
 		<prompt>Key similar examples from your language, whether or not fronting is required, here:</prompt>
 		<textBox id="QEmbContentExample" dataItem="embContentExample" cols="50"/>
@@ -78,7 +78,7 @@
 				<radio id="QEmbContRequiredNo" dataValue="no">No, some embedded content questions do not use/need the question marker</radio>
 			</radioGroup>
 			<radio id="QEmbContNoAux" dataValue="noAux">No, but an auxiliary is fronted</radio>
-			 <radioGroup id="QEmbContAuxPosTable" show="swQEmbContNoAux">
+			<radioGroup id="QEmbContAuxPosTable" show="swQEmbContNoAux">
 				<groupName dataItem="embContAuxPos" default="unknown" position="yesHead">RQEmbContAuxPos</groupName>
 				<prompt>Where does the auxiliary occur with respect to the rest of the question?</prompt>
 				<radio id="QEmbContAuxPosBefore" dataValue="before">Before</radio>
@@ -92,9 +92,7 @@
 			</radioGroup>
 			<radio id="QEmbContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
 		</radioGroup>
-		<instruction id="QEmbContHeadCliticPrefixInstruction" show="swQEmbContHeadCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix_V</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QEmbContHeadCliticSuffixInstruction" show="swQEmbContHeadCliticSuffix">In the lexicon, add the feature <feature>whQ_suffix_V</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QEmbContHeadCliticBothInstruction" show="swQEmbContHeadCliticBoth">In the lexicon, add the feature <feature>whQ_prefix_V</feature> to the pro-clitics and add <feature>whQ_suffix_V</feature> to the post-clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbContHeadCliticInstruction" show="swQEmbContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbContEdgeCliticPrefixInstruction" show="swQEmbContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbContEdgeCliticSuffixInstruction" show="swQEmbContEdgeCliticSuffix">In the lexicon, add the feature <feature>whQ_suffix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbContEdgeCliticBothInstruction" show="swQEmbContEdgeCliticBoth">In the lexicon, add the feature <feature>whQ_prefix</feature> to the pro-clitics and add <feature>whQ_suffix</feature> to the post-clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
@@ -221,32 +219,12 @@
 		<and/>
 		<whenRadio button="QEmbContYes"/>
 	</showWhen>
-	<showWhen id="swQEmbContHeadCliticPrefix">
-		<whenRadio button="QEmbContWordNo"/>
-		<and/>
-		<whenRadio button="QEmbContYes"/>
-		<and/>
-		<whenRadio button="QEmbContCliticPosBefore"/>
-		<and/>
-		<whenRadio button="QEmbContCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swQEmbContHeadCliticSuffix">
-		<whenRadio button="QEmbContWordNo"/>
-		<and/>
-		<whenRadio button="QEmbContYes"/>
-		<and/>
-		<whenRadio button="QEmbContCliticPosAfter"/>
-		<and/>
-		<whenRadio button="QEmbContCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swQEmbContHeadCliticBoth">
+	<showWhen id="swQEmbContHeadClitic">
 		<whenRadio button="QEmbContWordNo"/>
 		<and/>
 		<whenRadio button="QEmbContYes"/>
 		<and/>
 		<whenRadio button="QEmbContCliticAttachesHead"/>
-		<and/>
-		<whenRadio button="QEmbContCliticPosBoth"/>
 	</showWhen>
 	<showWhen id="swQEmbContEdgeCliticPrefix">
 		<whenRadio button="QEmbContWordNo"/>

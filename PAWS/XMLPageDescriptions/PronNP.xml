@@ -21,7 +21,7 @@
 			<exItem label="2.">only these two that I saw.</exItem>
 		</EnglishExample>
 		<br/>
-		<prompt>Key your examples here:</prompt>
+		<prompt>Key your examples with relative clauses, included in simple sentences, here:</prompt>
 		<textBox id="PronNPRelCl" dataItem="pronRelClExample"/>
 		<br/>
 		<introduction>Finally, these categories can also be modified by a partitive phrase (or other PP), as in:</introduction>
@@ -36,30 +36,31 @@
 		<prompt>Key your examples here:</prompt>
 		<textBox id="PronNPPartitiveExample" dataItem="partitiveExample"/>
 		<br/>
-<introduction>This distribution discussed for English can be accounted for if we allow pronouns, demonstratives, quantifiers, and numbers to be NPs (rather than DPs) in the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>.  However, some languages allow pronouns to be modified by possessors and adjectives as well, so the correct category in that case is N.  A few languages may require pronouns to stand alone without any modification at all, making them DPs.</introduction><br/>
-<radioGroup>
-	<groupName dataItem="pronounCat" default="NP">RPronNPCat</groupName>
-	<prompt>Which category or level in the tree structure is correct for pronouns (and other elements which can occur without a head noun) in your language?
+		<introduction>This distribution discussed for English can be accounted for if we allow pronouns, demonstratives, quantifiers, and numbers to be NPs (rather than DPs) in the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>.  However, some languages allow pronouns to be modified by possessors and adjectives as well, so the correct category in that case is N.  A few languages may require pronouns to stand alone without any modification at all, making them DPs.</introduction>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="pronounCat" default="NP">RPronNPCat</groupName>
+			<prompt>Which category or level in the tree structure is correct for pronouns (and other elements which can occur without a head noun) in your language?
 </prompt>
-	<radio id="PronNPCatNP" dataValue="NP">NP, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives</radio>
-   <radio id="PronNPCatN" dataValue="N">N, because they can be modified by all the same categories as nouns can</radio>
-<radio id="PronNPCatDP" dataValue="DP">DP, because they must stand alone in the place of a whole nominal phrase</radio>
-		<radioGroup id="PronNPPartitiveTable" show="swPronNPCatNPorN">
-			<groupName dataItem="partitive" default="unknown" position="yesHeadDiff">RPronNPPartitive</groupName>
-			<prompt>Where does the optional PP occur with respect to the pronoun, demonstrative, quantifier or number?</prompt>
-			<radio id="PronNPPartBefore" dataValue="before">Before</radio>
-			<radio id="PronNPPartAfter" dataValue="after">After</radio>
+			<radio id="PronNPCatNP" dataValue="NP">NP, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives</radio>
+			<radio id="PronNPCatN" dataValue="N">N, because they can be modified by all the same categories as nouns can</radio>
+			<radio id="PronNPCatDP" dataValue="DP">DP, because they must stand alone in the place of a whole nominal phrase</radio>
+			<radioGroup id="PronNPPartitiveTable" show="swPronNPCatNPorN">
+				<groupName dataItem="partitive" default="unknown" position="yesHeadDiff">RPronNPPartitive</groupName>
+				<prompt>Where does the optional PP occur with respect to the pronoun, demonstrative, quantifier or number?</prompt>
+				<radio id="PronNPPartBefore" dataValue="before">Before</radio>
+				<radio id="PronNPPartAfter" dataValue="after">After</radio>
+			</radioGroup>
 		</radioGroup>
- </radioGroup>
-	   <instruction id="PronNPPartitiveInstruction" show="swPronNPCatNPorN">The partitive PP is usually headed by a specific preposition or postposition.  Mark this pre/post-position with the feature <feature>partitive</feature> in the lexicon.</instruction>
 		<br/>
 		<buttons>
 			<button id="PronNPBack" value="Back" goto="PronIndefinite.htm"/>
 			<button id="PronNPNext" value="Next" goto="PronTesting.htm"/>
 		</buttons>
 	</form>
-<showWhen id="swPronNPCatNPorN">
-	<whenRadio button="PronNPCatNP"></whenRadio>
-<or/>  <whenRadio button="PronNPCatN"></whenRadio>
-</showWhen>
+	<showWhen id="swPronNPCatNPorN">
+		<whenRadio button="PronNPCatNP"/>
+		<or/>
+		<whenRadio button="PronNPCatN"/>
+	</showWhen>
 </page>

@@ -6,7 +6,7 @@
 	<introduction>The answers given to these questions will be used to set the default values for the remaining questions on phrase structure.  If at any point, you do not know the answer to a particular question, you can accept the default value expected for the basic word order of your language.  Then test the phrase structures with your data and go back and amend your answers as needed.</introduction>
 	<instruction>Think of one or more basic transitive sentences in your language.
   These should be in the normal word order with no special characteristics, such as focus,
-topic, passive, imperative, or interrogative.  Further, choose sentences with proper names
+topic, passive, imperative, interrogative, or negation.  Further, choose sentences with proper names
 or simple noun phrases in the subject and direct object positions, rather than pronouns.
 (Do not key in the brackets and subscripts like the example has - these are for your information only.)</instruction>
 	<EnglishExample>
@@ -26,7 +26,7 @@ or simple noun phrases in the subject and direct object positions, rather than p
 			<radio id="OTOVS" dataValue="OVS">Object-Verb-Subject</radio>
 			<radio id="OTOSV" dataValue="OSV">Object-Subject-Verb</radio>
 		</radioGroup>
-<br/>
+		<br/>
 		<buttons>
 			<button id="OTBack" value="Back" goto="Contents.htm"/>
 			<button id="OTNext" value="Next" goto="Contents.htm"/>

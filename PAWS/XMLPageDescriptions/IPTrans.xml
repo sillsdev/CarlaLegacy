@@ -5,10 +5,10 @@
 	<title level="2">Basic, Single-Clause Sentences - Transitive and Ditransitive Sentences</title>
 	<introduction>Some examples of English transitive single-clause sentences are:</introduction>
 	<EnglishExample>
-		<exItem label="1.">The boy hit the ball.</exItem>
-		<exItem label="2.">The boy will hit the ball.</exItem>
-		<exItem label="3.">The boy might have hit the ball.</exItem>
-		<exItem label="4.">The boy might have been hitting the ball.</exItem>
+		<exItem label="1.">The batter will hit the ball.</exItem>
+		<exItem label="2.">The baby wants that toy.</exItem>
+		<exItem label="3.">The dog might have buried his bone.</exItem>
+		<exItem label="4.">My daughter bought the gift.</exItem>
 	</EnglishExample>
 	<form section="ip">
 		<prompt>Think of similar examples from your language and key them here:</prompt>
