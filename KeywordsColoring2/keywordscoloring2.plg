@@ -1,0 +1,105 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: keywordscoloring2 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/keywordscoloring2.res" /d "_DEBUG" /d "_AFXDLL" "C:\carla\KeywordsColoring2\keywordscoloring2.rc""
+Creating temporary file "C:\DOCUME~1\ruben\LOCALS~1\Temp\RSP7F.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/keywordscoloring2.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c
+"C:\carla\KeywordsColoring2\ChildFrm.cpp"
+"C:\carla\KeywordsColoring2\colorbtn.cpp"
+"C:\carla\KeywordsColoring2\DlgEditTestColor.cpp"
+"C:\carla\KeywordsColoring2\DlgEditText.cpp"
+"C:\carla\KeywordsColoring2\DlgKeywordsList.cpp"
+"C:\carla\KeywordsColoring2\FlatButton.cpp"
+"C:\carla\KeywordsColoring2\keywordscoloring2.cpp"
+"C:\carla\KeywordsColoring2\keywordscoloring2Doc.cpp"
+"C:\carla\KeywordsColoring2\keywordscoloring2View.cpp"
+"C:\carla\KeywordsColoring2\KeywordsColoringDoc.cpp"
+"C:\carla\KeywordsColoring2\ListViewEssai.cpp"
+"C:\carla\KeywordsColoring2\MainFrm.cpp"
+"C:\carla\KeywordsColoring2\Splitter.cpp"
+"C:\carla\KeywordsColoring2\TestEdit.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ruben\LOCALS~1\Temp\RSP7F.tmp"
+Creating temporary file "C:\DOCUME~1\ruben\LOCALS~1\Temp\RSP80.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/keywordscoloring2.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c
+"C:\carla\KeywordsColoring2\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ruben\LOCALS~1\Temp\RSP80.tmp"
+Creating temporary file "C:\DOCUME~1\ruben\LOCALS~1\Temp\RSP81.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/keywordscoloring2.pdb" /debug /machine:I386 /out:"Debug/keywordscoloring2.exe" /pdbtype:sept
+.\Debug\ChildFrm.obj
+.\Debug\colorbtn.obj
+.\Debug\DlgEditTestColor.obj
+.\Debug\DlgEditText.obj
+.\Debug\DlgKeywordsList.obj
+.\Debug\FlatButton.obj
+.\Debug\keywordscoloring2.obj
+.\Debug\keywordscoloring2Doc.obj
+.\Debug\keywordscoloring2View.obj
+.\Debug\KeywordsColoringDoc.obj
+.\Debug\ListViewEssai.obj
+.\Debug\MainFrm.obj
+.\Debug\Splitter.obj
+.\Debug\StdAfx.obj
+.\Debug\TestEdit.obj
+.\Debug\keywordscoloring2.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ruben\LOCALS~1\Temp\RSP81.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ChildFrm.cpp
+colorbtn.cpp
+DlgEditTestColor.cpp
+DlgEditText.cpp
+DlgKeywordsList.cpp
+FlatButton.cpp
+keywordscoloring2.cpp
+keywordscoloring2Doc.cpp
+keywordscoloring2View.cpp
+KeywordsColoringDoc.cpp
+ListViewEssai.cpp
+MainFrm.cpp
+Splitter.cpp
+TestEdit.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\DOCUME~1\ruben\LOCALS~1\Temp\RSP83.tmp" with contents
+[
+/nologo /o"Debug/keywordscoloring2.bsc"
+.\Debug\StdAfx.sbr
+.\Debug\ChildFrm.sbr
+.\Debug\colorbtn.sbr
+.\Debug\DlgEditTestColor.sbr
+.\Debug\DlgEditText.sbr
+.\Debug\DlgKeywordsList.sbr
+.\Debug\FlatButton.sbr
+.\Debug\keywordscoloring2.sbr
+.\Debug\keywordscoloring2Doc.sbr
+.\Debug\keywordscoloring2View.sbr
+.\Debug\KeywordsColoringDoc.sbr
+.\Debug\ListViewEssai.sbr
+.\Debug\MainFrm.sbr
+.\Debug\Splitter.sbr
+.\Debug\TestEdit.sbr]
+Creating command line "bscmake.exe @C:\DOCUME~1\ruben\LOCALS~1\Temp\RSP83.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+keywordscoloring2.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
