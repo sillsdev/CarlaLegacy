@@ -7,7 +7,7 @@ PC-PATR CHANGE HISTORY
    AMPLE word analysis.  This root gloss can be most useful and convenient for
    handling syntactic constructions such as verb reduplication.
 2. Added indexed variables to logical constraints.  See new documentation under
-   logical constraints, especially the part after the BNF discription.
+   logical constraints, especially the part after the BNF description.
 3. For the DLL version, the program header information now displays in the log
    file when performing a file disambguate.
 
