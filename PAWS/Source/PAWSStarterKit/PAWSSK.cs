@@ -318,23 +318,13 @@ namespace PAWSStarterKit
 			ToolBarButton tbbPaste;
 			ToolBarButton tbbSeparator;
 
-			//Bitmap bmNew2 = new Bitmap(GetType(), "PAWSSK.New.bmp");
-			const string strAppSourcePath = @"C:\carla\Dev\PAWS\Source\PAWSStarterKit\";
-			Bitmap bmNew = new Bitmap(strAppSourcePath + "New.bmp");
-			Bitmap bmOpen = new Bitmap(strAppSourcePath + "Open.bmp");
-			Bitmap bmSave = new Bitmap(strAppSourcePath + "Save.bmp");
-			Bitmap bmCut = new Bitmap(strAppSourcePath + "Cut.bmp");
-			Bitmap bmCopy = new Bitmap(strAppSourcePath + "Copy.bmp");
-			Bitmap bmPaste = new Bitmap(strAppSourcePath + "Paste.bmp");
-
 			ImageList imglst = new ImageList();
-
-			imglst.Images.Add(bmNew);
-			imglst.Images.Add(bmOpen);
-			imglst.Images.Add(bmSave);
-			imglst.Images.Add(bmCut);
-			imglst.Images.Add(bmCopy);
-			imglst.Images.Add(bmPaste);
+			imglst.Images.Add(new Bitmap(GetType(), "New.bmp"));
+			imglst.Images.Add(new Bitmap(GetType(), "Open.bmp"));
+			imglst.Images.Add(new Bitmap(GetType(), "Save.bmp"));
+			imglst.Images.Add(new Bitmap(GetType(), "Cut.bmp"));
+			imglst.Images.Add(new Bitmap(GetType(), "Copy.bmp"));
+			imglst.Images.Add(new Bitmap(GetType(), "Paste.bmp"));
 
 			tbar = new ToolBar();
 			tbar.Parent = this;
