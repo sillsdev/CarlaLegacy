@@ -5,6 +5,9 @@ analyze them. JOINCOMP is documented in the file JOINCOMP.DOC.
 
 Change history:
 
+0.2t Mar 2005 fixed bug: Unicode punctuation before a word could cause
+cause it to not find a compound.
+
 0.2s Sep 2001 Internal change, not visible to the user.
 
 0.2r Jul 2001 Allow final line to not have a newline.

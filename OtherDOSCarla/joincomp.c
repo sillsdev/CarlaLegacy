@@ -53,12 +53,14 @@
 * 0.2q 27-Dec-2000 hab define myfree as freeMemory for non-DLL versions
 * 0.2r 24-Jul-2001 hab allow final line to not have a newline
 * 0.2s 20-Sep-2001 hab close intx control file after checking for its existance
+* 0.2t 29-Mar-2005 hab when skipping word initial non-word formation characters,
+*                        check for multibyte charaters, too
 *-----------------------------------------------------------*/
 
 #ifdef DJGPP
-#define VERSION "Join Compounds 0.2s (386) September 2001 Copyright SIL International\n"
+#define VERSION "Join Compounds 0.2t (386) March 2005 Copyright SIL International\n"
 #else
-#define VERSION "Join Compounds 0.2s September 2001 Copyright SIL International\n"
+#define VERSION "Join Compounds 0.2t March 2005 Copyright SIL International\n"
 #endif
 
 #include <stdio.h>              /* Include standard lib prototypes */
@@ -753,8 +755,15 @@ int succ;
 char tc;
 
 				/* Move past any non-wfc at beginning */
+#ifndef hab02t
+ while ( *word &&
+	 *word != cBridge &&
+	 !matchAlphaChar(word, &sTextControl_m ) )
+   word++;
+#else
 while ( *word && *word != cBridge && !strchr( wfc, *word ) )
 	word++;
+#endif
 
 succ = FALSE; /* Prevent compiler warnings */
 s = t = NULL;
