@@ -326,6 +326,9 @@ Package=<4>
 	Begin Project Dependency
 	Project_Dep_Name stamplib
 	End Project Dependency
+	Begin Project Dependency
+	Project_Dep_Name amplelib
+	End Project Dependency
 }}}
 
 ###############################################################################
@@ -338,15 +341,6 @@ Package=<5>
 
 Package=<4>
 {{{
-	Begin Project Dependency
-	Project_Dep_Name amplelib
-	End Project Dependency
-	Begin Project Dependency
-	Project_Dep_Name cportlib
-	End Project Dependency
-	Begin Project Dependency
-	Project_Dep_Name opaclib
-	End Project Dependency
 }}}
 
 ###############################################################################
