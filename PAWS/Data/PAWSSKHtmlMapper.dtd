@@ -71,7 +71,9 @@ transparent = 'yes' means do not show yellow background, let the grey background
 >
 <!ELEMENT introduction (%embedded; | codeInfo | ruleInfo)*>
 <!ATTLIST introduction
- transparent (yes | no) "yes"
+	transparent (yes | no) "yes"
+	id ID #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT li (%embedded;)*>
 <!ATTLIST li

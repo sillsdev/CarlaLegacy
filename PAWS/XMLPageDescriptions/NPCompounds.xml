@@ -2,31 +2,45 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPCompounds">
-	<title level="2">Nominal Phrase - Noun Modifiers</title>
-<introduction>Many languages are like English, in that they have noun modifiers. Normally, we simply think that all nouns can also be used as adjectives, but a closer look reveals that true adjectives come before the noun modifier, as in <example>large, round syrup bottle</example> but not <example>*round, syrup large bottle</example>.  Therefore, we will treat noun modifiers as compound nouns which are written as separate words.<br/><br/>In the English examples above, <example>bottle</example> is clearly the head noun.  This is true of all compound nouns and noun modifier constructions in English: the head is the right-most noun in the series.</introduction>
+	<title level="2">Nominal Phrase - Noun Compounds and Complements</title>
+	<introduction>Many languages are like English, in that they have noun modifiers. Normally, we simply think that all nouns can also be used as adjectives, but a closer look reveals that true adjectives come before the noun modifier, as in <example>large, round [syrup bottle]</example> but not <example>*round, syrup large bottle</example>.  Therefore, we will treat noun modifiers as compound nouns which are written as separate words.<br/>
+		<br/>In the English examples above, <example>bottle</example> is clearly the head noun rather than <example>syrup</example>, because "syrup" is restricting the type of "bottle", not the other way around.  In all compound nouns and noun modifier constructions in English, the head is the right-most noun in the series.</introduction>
 	<form section="np">
-<prompt>Key one of more examples with noun modifiers or compound nouns written as separate words here:</prompt>
-<textBox id="NPCompExample" dataItem="compExample"/>
-<introduction>Now consider pre/post-positional phrase (PP) modifiers (or complements), such as in <example>the large, round bottle of syrup</example> or <example>the boy’s letter to that girl</example>.</introduction>
-<prompt>Key your examples of pre/post-positional phrases modifying nouns here:</prompt>
-<textBox id="NPCompPPExample" dataItem="compPPExample"/>
-<introduction>Refer to both of the above sets of data for the following questions.</introduction>
+		<prompt>Key one or more examples with noun modifiers or compound nouns written as separate words in the box.  If you write all noun compounds as single words, key a few of those examples used in a phrase here:</prompt>
+		<textBox id="NPCompExample" dataItem="compExample"/><br/>
+<br/>
+		<introduction>Now consider pre/post-positional phrase (PP) modifiers (or complements), such as in <example>the large, round bottle [of syrup]</example> or <example>the boy’s letter [to that girl]</example>.  Also include examples of genitive pre/post-positional phrases that take the place of the possessor, such as <example>those dogs [of his]</example> or <example>the tablecloth [of my mother's]</example></introduction> <br/>
+<br/>
+		<prompt>Key your examples of pre/post-positional phrases modifying nouns here (without the brackets):</prompt>
+		<textBox id="NPCompPPExample" dataItem="compPPExample"/><br/>
+<br/>
+		<introduction>Refer to both of the above sets of data for the following questions.  It may be the case that your language does not have any compound nouns or noun modifiers that are written as separate words, depending on orthographic issues.</introduction>
 <radioGroup>
-	<groupName dataItem="compHead" default="right">RNPCompHead</groupName>
-	<prompt>In a compound or noun modifier construction, which noun is the head in your language?</prompt>
-	<radio id="NPCompHeadLeft" dataValue="">Left-most</radio>
-	<radio id="NPCompHeadRight" dataValue="">Right-most</radio>
-<radioGroup>
-	<groupName dataItem="compHeadPPPos" default="unknown" position="yesHeadDiff">RNPCompHeadPos</groupName>
-	<prompt>Where does the PP occur with respect to the head noun?</prompt>
-	<radio id="NPCompHeadPosBefore" dataValue="before">Before</radio>
-	<radio id="NPCompHeadPosAfter" dataValue="after">After</radio>
-	<radio id="NPCompHeadPosEither" dataValue="either">Either</radio>
+	<groupName dataItem="comp" default="no">RNPCompounds</groupName>
+	<prompt>Does your language have any noun compounds or noun modifiers that are written as separate words?</prompt>
+	<radio id="NPCompNo" dataValue="no">No, they are all written as a single word with the head noun</radio>
+	<radio id="NPCompYes" dataValue="yes">Yes, some are written as separate words</radio>
+		<radioGroup id="NPCompHeadTable" show="swNPCompYes">
+			<groupName dataItem="compHead" default="right">RNPCompHead</groupName>
+			<prompt>In a compound or noun modifier construction, which noun is the head in your language?</prompt>
+			<radio id="NPCompHeadLeft" dataValue="left">Left-most</radio>
+			<radio id="NPCompHeadRight" dataValue="right">Right-most</radio>
 </radioGroup>
-</radioGroup>
+			</radioGroup>
+			<radioGroup>
+				<groupName dataItem="compHeadPPPos" default="unknown" position="yesHeadDiff">RNPCompHeadPos</groupName>
+				<prompt>Where does the PP occur with respect to the head noun?</prompt>
+				<radio id="NPCompHeadPosBefore" dataValue="before">Before</radio>
+				<radio id="NPCompHeadPosAfter" dataValue="after">After</radio>
+				<radio id="NPCompHeadPosEither" dataValue="either">Either side</radio>
+		</radioGroup>
+<br/>
 		<buttons>
 			<button id="NPCompBack" value="Back" goto="NPContents.htm"/>
-			<button id="NPCompNext" value="Next" goto="NPTesting.htm"/>
+			<button id="NPCompNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
+<showWhen id="swNPCompYes">
+	<whenRadio button="NPCompYes"></whenRadio>
+</showWhen>
 </page>

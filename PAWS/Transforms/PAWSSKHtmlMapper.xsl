@@ -478,6 +478,9 @@ Refresh();
 		<br/>
 	  </xsl:if>
 	  <div class="introduction">
+	  <xsl:if test="@id">
+		<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+	  </xsl:if>
 		<p>
 		  <xsl:apply-templates/>
 		</p>

@@ -20,7 +20,7 @@
 		<instruction id="NPCaseTypeErgInstruction">In the lexicon, mark the affix(es) that label ergative case with the feature <feature>ergative</feature>, along with any other agreement features they also mark.  Add the feature <feature>absolutive</feature> to the affixes that mark absolutive case.</instruction>
 		<buttons>
 			<button id="NPCaseBack" value="Back" goto="NPContents.htm"/>
-			<button id="NPCaseNext" value="Next" goto="NPNounModifiers.htm"/>
+			<button id="NPCaseNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
 </page>

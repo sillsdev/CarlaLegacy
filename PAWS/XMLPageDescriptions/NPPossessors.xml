@@ -48,22 +48,31 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 			<radio id="NPPossAfter" checked="yes" dataValue="after">After the noun</radio>
 			<radio id="NPPossEitherSide" checked="yes" dataValue="either">On either side of the noun</radio>
 		</radioGroup>
-		<introduction>We also need to know whether possessors and articles or demonstratives can co-occur in the same nominal phrase.  In English, these elements do not co-occur, unless the possessor is expressed in a prepositional phrase.  For example, we can't say <example>those [the boy's] books</example>; instead we use <example>those books [of his]</example> to express the same thought.  Some other languages allow both possessors and articles or demonstratives to occur in the same phrase, so the first example above would be grammatical.</introduction>
-		<radioGroup>
+		<introduction id="NPPossCooccurIntroduction" show="swNPArtAndOrDem">We also need to know whether possessors and articles or demonstratives can co-occur in the same nominal phrase.  In English, these elements do not co-occur, unless the possessor is expressed in a prepositional phrase.  For example, we can't say <example>those [the boy's] books</example>; instead we use <example>those books [of his]</example> to express the same thought.  Some other languages allow both possessors and articles or demonstratives to occur in the same phrase, so the first example above would be grammatical.</introduction>
+			  <radioGroup id="NPPossCooccurTable" show="swNPArtAndOrDem">
 			<groupName dataItem="possCooccur" default="yes"/>
 			<prompt>Can possessors co-occur with<span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt"> articles</span>
 				<span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span>
-				<span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBothOrNeither">articles and demonstratives </span> in your language?</prompt>
-			<radio id="NPPossCooccurYes" dataValue="yes">Yes, they may co-occur (or the language does not have articles or demonstratives)</radio>
+				<span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives </span> in your language?</prompt>
+			<radio id="NPPossCooccurYes" dataValue="yes">Yes, they may co-occur</radio>
 			<radio id="NPPossCooccurNo" dataValue="no">No, it is the same as English in this regard</radio>
 		</radioGroup>
-		<radioGroup id="NPPossCaseErg" show="swNPCaseErg">
+<br/>
+  <radioGroup id="NPPossCaseErg" show="swNPCaseErg">
 			<groupName dataItem="possCaseErg" default="genitive">RNPPossCaseErg</groupName>
 			<prompt>Which case is used to mark the possessors in your language?</prompt>
 			<radio id="NPPossCaseErgative" dataValue="ergative">Ergative, the same marking as the subjects of transitive verbs</radio>
 			<radio id="NPPossCaseAbsolutive" dataValue="absolutive">Absolutive, the same marking as the subjects of intransitive verbs and the objects of transitive verbs</radio>
 			<radio id="NPPossCaseGenitive" dataValue="genitive">Genitive, a distinct marking for possessors</radio>
 		</radioGroup>
+<introduction id="NPPossNounCaseChangeIntroduction" show="swNPCaseYes">In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system. </introduction>
+<radioGroup id="NPPossNounCaseChange" show="swNPCaseYes">
+	<groupName dataItem="possNounCaseChange" default="no">RNPPossNounCaseChange</groupName>
+	<prompt>
+Does the presence of a possessor change the case marking on the head noun to match the case of the possessor?</prompt>
+	<radio id="NPPossNounCaseChangeNo" dataValue="no">No, the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor</radio>
+   <radio id="NPPossNounCaseChangeYes" dataValue="yes">Yes, the case of the head noun matches the case of the possessor, when a possessor is present</radio>
+</radioGroup>
 		<instruction id="NPPossMarkedYesAffixErgInstruction" show="swNPPossMarkedYesAffixErg">In the lexicon, mark the affix with the feature <feature>ergative</feature>.</instruction>
 		<instruction id="NPPossMarkedYesAffixAbsInstruction" show="swNPPossMarkedYesAffixAbs">In the lexicon, mark the affix with the feature <feature>absolutive</feature>.</instruction>
 		<instruction id="NPPossMarkedYesAffixGenInstruction" show="swNPPossMarkedYesAffixGen">In the lexicon, mark the affix with the feature <feature>genitive</feature>.</instruction>
@@ -86,9 +95,11 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 	<showWhen id="swNPArtAndDemDem">
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 	</showWhen>
-	<showWhen id="swNPArtAndDemBothOrNeither">
+	<showWhen id="swNPArtAndDemBoth">
 		<whenValue element="np" attr="artAndDem" value="both"/>
-<or/>
+	</showWhen>
+	<showWhen id="swNPArtAndOrDem">
+		<not/>
 		<whenValue element="np" attr="artAndDem" value="no"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesClitic">
@@ -104,6 +115,9 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 		<or/>
 		<whenValue element="np" attr="case" value="split"/>
 	</showWhen>
+<showWhen id="swNPCaseYes">
+<not/>        <whenValue element="np" attr="case" value="none"/>
+</showWhen>
 	<showWhen id="swNPPossMarkedYesAffixErg">
 		<whenRadio button="NPPossMarkedYesAffix"/>
 		<and/>
@@ -117,9 +131,11 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 	<showWhen id="swNPPossMarkedYesAffixGen">
 		<whenRadio button="NPPossMarkedYesAffix"/>
 		<and/>
-	   <openParen/> <whenRadio button="NPPossCaseGenitive"/>
+		<openParen/>
+		<whenRadio button="NPPossCaseGenitive"/>
 		<or/>
-		<whenValue element="np" attr="case" value="nominative"/> <closeParen/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNo">
 		<whenRadio button="NPPossMarkedYesClitic"/>
@@ -129,9 +145,11 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 	<showWhen id="swNPPossMarkedYesCliticWordNoGen">
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
 		<and/>
-   <openParen/> <whenRadio button="NPPossCaseGenitive"/>
+		<openParen/>
+		<whenRadio button="NPPossCaseGenitive"/>
 		<or/>
-		<whenValue element="np" attr="case" value="nominative"/> <closeParen/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoErg">
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
@@ -146,9 +164,11 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 	<showWhen id="swNPPossMarkedYesCliticWordYesGen">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
 		<and/>
-   <openParen/> <whenRadio button="NPPossCaseGenitive"/>
+		<openParen/>
+		<whenRadio button="NPPossCaseGenitive"/>
 		<or/>
-		<whenValue element="np" attr="case" value="nominative"/> <closeParen/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesErg">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
