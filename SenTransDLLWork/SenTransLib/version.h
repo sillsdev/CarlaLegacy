@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for SenTrans
  ***************************************************************************
- * Copyright 2000 by SIL International.  All rights reserved.
+ * Copyright 2000-2004 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
-#define REVISION 1		/* enhancement requiring adding to book */
+#define REVISION 2		/* enhancement requiring adding to book */
 #define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "July 1, 2002"	/* date of release version */
-#define YEAR "2002"		/* used for copyright notice in banner */
+#define DATE "Nov 24, 2004"	/* date of release version */
+#define YEAR "2004"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 24-Nov-2004  md   - Feature addition; %-sign before category now makes
+ * [2.2.0]             SenTrans refer to root category
  * 01-Jul-2002  hab  - Rework punctuation to use strings (in order to handle
  * [2.1.0]               UTF-8 Unicode).  Means change to documentation.
  * 22-Apr-2002  hab  - Fix bug: a begin punctuation would not match in some

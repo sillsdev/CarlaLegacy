@@ -485,11 +485,11 @@ for ( mat = match; mat; mat = mat->next ) /* For each match element */
 		last_wd = NULL;
 		while (twd)
 			{
-			if ( !trymatch(twd, mat) )  /* try to match repeated element */
-				if ( mat->next )
+			if ( !trymatch(twd, mat) ) { /* try to match repeated element */
+				if ( mat->next ) {
 					return FALSE;       /* if failed, and something follows, return failure */
-				else
-					{
+				} else
+				{
 					if ( last_wd != NULL )      /* if repeat succeeded at least once */
 						{
 						mat->begwd = wd;        /* point repeatable elem at stuff it matched */
@@ -498,7 +498,8 @@ for ( mat = match; mat; mat = mat->next ) /* For each match element */
 						}
 					else                        /* else fail unless optional */
 						return (mat->type & OPT) ? TRUE : FALSE ;
-					}
+				}
+			}
 			if ( mat->endwd )
 				twd = mat->endwd;
 			last_wd = twd;              /* remember last successful match of repeat */
@@ -946,15 +947,33 @@ for ( amb = wd->ambigs; amb; amb = amb->next ) /* For each ambig */
 			|| (  !match_env && !amb->matched ) ) )
 		continue;                       /* Let it stay rejected */
 
-	if ( mat->type & CAT )              /* If match has cat */
-		if ( mat->type & CCL )      /* If cat class */
-			{
-			if ( !findclmem( (Class*)mat->cat, amb->cat) )
-				goto done;                  /* If not found in class, failed */
-			}
+	if ( mat->type & CAT ) {            /* If match has cat */
+	  char *szCat = NULL;
+
+	  if ((mat->type & MORPHCAT) == MORPHCAT) {
+		/* input category to match - now we have to find the root category */
+		for ( mp = amb->morphs; mp; mp = mp->next ) /* For each morph */
+		  if ( mp->type & RT ) {        /* If root */
+			szCat = mp->cat;            /* Set ambig category */
+			break;                      /* Break to only do first cat */
+		  }
+		if (szCat == NULL) {
+		  goto done;                    /* no category, no match */
+		}
+	  }
+	  else {
+		szCat = amb->cat;
+	  }
+
+	  if ( mat->type & CCL )            /* If cat class */
+		  {
+		  if ( !findclmem( (Class*)mat->cat, szCat) )
+				goto done;              /* If not found in class, failed */
+		  }
 		else
-			if ( !streq( mat->cat, amb->cat ) )
-				goto done;               /* else if cats don't match, failed */
+			if ( !streq( mat->cat, szCat ) )
+				goto done;              /* else if cats don't match, failed */
+	}
 
 	if ( mat->type & PROP )
 		{

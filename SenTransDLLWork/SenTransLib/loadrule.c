@@ -55,7 +55,8 @@ Mem *lastcat = NULL;            /* Last category in list */
 Mem *lastprop = NULL;		/* Last property in list */
 Rule *lastrule = NULL;          /* Previous rule */
 
-char tagchar = '^';	/* 1.2g RNE tag character, defaults to hat '^' */
+char tagchar = '^';	 /* 1.2g RNE tag character, defaults to hat '^' */
+char inputcatchar = '%'; /* MD input character, defaults to '%' */
 
 	/*
 	* The following establishes a base so that the ellipse count
@@ -555,6 +556,7 @@ int equalnext;      /* Note equal coming next */
 int crnext;         /* Flag for compound root coming next */
 char *s;            /* Temp char pointer */
 int bracketseen = 0;    /* Class bracket [] flag */
+int fInputCatChar = FALSE; /* input category character seen or no */
 Pat *pat;           /* Temp pattern */
 char *tagstr;       /* for tags on match elements (^xxx) */
 #ifndef hab210
@@ -713,6 +715,12 @@ while ( TRUE )                          /* While elements found */
 		mt->type |= SFX;                /* Set suffix */
 		mt->type ^= RT;                 /* Clear root */
 		rest = skipwhite( rest + 1 );   /* Move past hyphen */
+		}
+
+	if ( *rest == inputcatchar )        /* If input category */
+		{
+		fInputCatChar = TRUE;           /* Remember input category */
+		rest = skipwhite( rest + 1 );   /* Move past bracket */
 		}
 
 	if ( (*rest == '[' )                 /* If class bracket */
@@ -874,12 +882,22 @@ while ( TRUE )                          /* While elements found */
 			&& (   findcat( mt->string,
 				pSenTransData ) /* If found in cat list */
 				 )                 /* 1.2g AB removed Or equal sign is next */
-	   )
-		{
+	   ) {
 		mt->type |= CAT;                /* Set cat flag */
 		mt->cat = mt->string;           /* Set cat string */
 		mt->string = NULL;              /* Clear morph name */
+		if (fInputCatChar) {
+		  mt->type |= MORPHCAT;           /* if referring to the input category rather than the word category */
+		  if ( pSenTransData->do_debug ) {
+			fprintf(pSenTransData->pLogFP, "put in a rule with input cc %s\n", mt->cat);
+		  }
 		}
+	}
+	else if (fInputCatChar) {
+		 error_msg( "Input category marker found without subsequent valid category", "",
+			   pSenTransData );
+	}
+	fInputCatChar = FALSE;
 
 	if ( ( *rest == ']' )   /* If close bracket */
 			&& bracketseen ) /* 1.2w AB Don't treat as close unless open was present */
@@ -1957,7 +1975,7 @@ if ( mt->type & CAT )
 	fprintf( pSenTransData->pLogFP, "CCL %s", tcl->name );
 		}
 	else
-	fprintf( pSenTransData->pLogFP, "CAT %s", mt->cat );
+	fprintf( pSenTransData->pLogFP, "CAT %s%s", (mt->type&MORPHCAT)?"%":"",mt->cat );
 	if ( mt->string )
 	fprintf( pSenTransData->pLogFP, "=" );
 	}

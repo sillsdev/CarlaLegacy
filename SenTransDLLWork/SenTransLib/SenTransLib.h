@@ -226,6 +226,7 @@ Mem {                   /* List of category names and class members */
 #define PAT     0x00004000
 #define BOUND   0x00008000
 #define PROP	0x00010000	/* Note that this pushes us into using DWORDs*/
+#define MORPHCAT 0x00020000  /* to match morpheme categories rather than computed categories */
 
 #define AFX     ( PFX | SFX | CR )
 #define MORPHTYPE ( PFX | SFX | RT | CR )

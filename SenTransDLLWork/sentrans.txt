@@ -6,6 +6,11 @@ file SENTRANS.DOC.
 
 Change History:
 
+2.2.0 Nov 2004 Allow user to mark a category in a rule as being a root
+category (as opposed to being the default of word category).
+One prepends a percent sign (%) before the category to indicate that the
+rule should match the root category.
+
 2.1.0 Jul 2002 Rework punctuation to use strings (in order to handle
 UTF-8 Unicode).  The user must now separate punctuation characters
 by spaces.

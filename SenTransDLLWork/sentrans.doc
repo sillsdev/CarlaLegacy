@@ -3,6 +3,7 @@
 						Alan Buseman
 					  21 Nov 91 (1.0a)
 		 01 Jul 2002 (2.1.0) (by H. Andrew Black)
+		 24 Nov 2004 (2.2.0) (by Marius Doornenbal & H. Andrew Black)
 
 
 					 Table of Contents
@@ -32,6 +33,7 @@
 	1.22 Compound Roots ................................... 10
 	1.23 Sentence Punctuation ............................. 11
 	1.24 Punctuation Marks in Rules ....................... 12
+	1.24a Notes on Categories in Rules .................... 12
 	1.25 More Examples .................................... 12
 	1.26 Other Uses of Sentence Transfer .................. 13
 	1.27 Running the Program .............................. 14
@@ -698,6 +700,22 @@ it.  But for now that is best done by running a consistent change
 table on  the  output  text.   CC  is  also  the  best  way to do
 capitalization adjustments, which cannot be done with SENTRANS.
 
+1.24a Notes on Categories in Rules
+
+SenTrans normally uses the content of the \cat field (in the input ANA file)
+as the category for a word.  If you invoke SenTrans with the -x option, then
+it will ignore this field and use the category of the root.
+
+Beginning with version 2.2.0, one can tell SenTrans to use the category of the
+root in a given rule even though it would normally use the category of the word.
+You do this by prepending a percent sign (%) before the category.  For example,
+the rejection rule shown below will use the category of the root (vt) even though
+the category of the word might be something else (say, v).
+
+\rej %vt=speak
+
+This rule means to reject words with the root category 'vt' - irrespective of the
+computed, final category.
 
 1.25 More Examples
 
