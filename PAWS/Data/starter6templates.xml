@@ -21,9 +21,21 @@ Let AdvP-final		be	&lt;head type AdvP-final&gt;		= +
 Let AdvP-initial	be	&lt;head type AdvP-initial&gt;	= +
 				&lt;head type AdvP-final&gt;		= -
 Let animate		be	&lt;head agr animate&gt;		= +
+Let animate_absolutive	be	{ [head:[object:[head:[agr:[animate:+]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[animate:+]]]
+															type:[transitive:-]]] }
+Let animate_ergative	be	&lt;head subject head agr animate&gt; = +
+											   &lt;head type transitive&gt; = +
 Let animate_object	be	&lt;head object head agr animate&gt; = +
 Let animate_subject	be	&lt;head subject head agr animate&gt; = +
 Let -animate		be	&lt;head agr animate&gt;		= -
+Let -animate_absolutive	be	{ [head:[object:[head:[agr:[animate:-]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[animate:-]]]
+															type:[transitive:-]]] }
+Let -animate_ergative	be	&lt;head subject head agr animate&gt; = -
+											   &lt;head type transitive&gt; = +
 Let -animate_object	be	&lt;head object head agr animate&gt;	= -
 Let -animate_subject	be	&lt;head subject head agr animate&gt; = -
 Let class_1		be	&lt;head agr class&gt;		= 1
@@ -46,7 +58,196 @@ Let class_17		be	&lt;head agr class&gt;		= 17
 Let class_18		be	&lt;head agr class&gt;		= 18
 Let class_19		be	&lt;head agr class&gt;		= 19
 Let class_20		be	&lt;head agr class&gt;		= 20
-Let class_1_object	be	&lt;head object head agr class&gt;	= 1
+Let class_21		be	&lt;head agr class&gt;		= 21
+Let class_22		be	&lt;head agr class&gt;		= 22
+Let class_23		be	&lt;head agr class&gt;		= 23
+Let class_24		be	&lt;head agr class&gt;		= 24
+Let class_25		be	&lt;head agr class&gt;		= 25
+Let class_26		be	&lt;head agr class&gt;		= 26
+Let class_27		be	&lt;head agr class&gt;		= 27
+Let class_28		be	&lt;head agr class&gt;		= 28
+Let class_29		be	&lt;head agr class&gt;		= 29
+Let class_30		be	&lt;head agr class&gt;		= 30
+Let class_1_absolutive	be	{ [head:[object:[head:[agr:[class:1]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:1]]]
+															type:[transitive:-]]] }
+Let class_2_absolutive	be	{ [head:[object:[head:[agr:[class:2]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:2]]]
+															type:[transitive:-]]] }
+Let class_3_absolutive	be	{ [head:[object:[head:[agr:[class:3]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:3]]]
+															type:[transitive:-]]] }
+Let class_4_absolutive	be	{ [head:[object:[head:[agr:[class:4]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:4]]]
+															type:[transitive:-]]] }
+Let class_5_absolutive	be	{ [head:[object:[head:[agr:[class:5]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:5]]]
+															type:[transitive:-]]] }
+Let class_6_absolutive	be	{ [head:[object:[head:[agr:[class:6]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:6]]]
+															type:[transitive:-]]] }
+Let class_7_absolutive	be	{ [head:[object:[head:[agr:[class:7]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:7]]]
+															type:[transitive:-]]] }
+Let class_8_absolutive	be	{ [head:[object:[head:[agr:[class:8]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:8]]]
+															type:[transitive:-]]] }
+Let class_9_absolutive	be	{ [head:[object:[head:[agr:[class:9]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:9]]]
+															type:[transitive:-]]] }
+Let class_10_absolutive	be	{ [head:[object:[head:[agr:[class:10]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:10]]]
+															type:[transitive:-]]] }
+Let class_11_absolutive	be	{ [head:[object:[head:[agr:[class:11]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:11]]]
+															type:[transitive:-]]] }
+Let class_12_absolutive	be	{ [head:[object:[head:[agr:[class:12]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:12]]]
+															type:[transitive:-]]] }
+Let class_13_absolutive	be	{ [head:[object:[head:[agr:[class:13]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:13]]]
+															type:[transitive:-]]] }
+Let class_14_absolutive	be	{ [head:[object:[head:[agr:[class:14]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:14]]]
+															type:[transitive:-]]] }
+Let class_15_absolutive	be	{ [head:[object:[head:[agr:[class:15]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:15]]]
+															type:[transitive:-]]] }
+Let class_16_absolutive	be	{ [head:[object:[head:[agr:[class:16]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:16]]]
+															type:[transitive:-]]] }
+Let class_17_absolutive	be	{ [head:[object:[head:[agr:[class:17]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:17]]]
+															type:[transitive:-]]] }
+Let class_18_absolutive	be	{ [head:[object:[head:[agr:[class:18]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:18]]]
+															type:[transitive:-]]] }
+Let class_19_absolutive	be	{ [head:[object:[head:[agr:[class:19]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:19]]]
+															type:[transitive:-]]] }
+Let class_20_absolutive	be	{ [head:[object:[head:[agr:[class:20]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:20]]]
+															type:[transitive:-]]] }
+Let class_21_absolutive	be	{ [head:[object:[head:[agr:[class:21]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:21]]]
+															type:[transitive:-]]] }
+Let class_22_absolutive	be	{ [head:[object:[head:[agr:[class:22]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:22]]]
+															type:[transitive:-]]] }
+Let class_23_absolutive	be	{ [head:[object:[head:[agr:[class:23]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:23]]]
+															type:[transitive:-]]] }
+Let class_24_absolutive	be	{ [head:[object:[head:[agr:[class:24]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:24]]]
+															type:[transitive:-]]] }
+Let class_25_absolutive	be	{ [head:[object:[head:[agr:[class:25]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:25]]]
+															type:[transitive:-]]] }
+Let class_26_absolutive	be	{ [head:[object:[head:[agr:[class:26]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:26]]]
+															type:[transitive:-]]] }
+Let class_27_absolutive	be	{ [head:[object:[head:[agr:[class:27]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:27]]]
+															type:[transitive:-]]] }
+Let class_28_absolutive	be	{ [head:[object:[head:[agr:[class:28]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:28]]]
+															type:[transitive:-]]] }
+Let class_29_absolutive	be	{ [head:[object:[head:[agr:[class:29]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:29]]]
+															type:[transitive:-]]] }
+Let class_30_absolutive	be	{ [head:[object:[head:[agr:[class:30]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[class:30]]]
+															type:[transitive:-]]] }
+Let class_1_ergative	be	&lt;head subject head agr class&gt; = 1
+											   &lt;head type transitive&gt; = +
+Let class_2_ergative	be	&lt;head subject head agr class&gt; = 2
+											   &lt;head type transitive&gt; = +
+Let class_3_ergative	be	&lt;head subject head agr class&gt; = 3
+											   &lt;head type transitive&gt; = +
+Let class_4_ergative	be	&lt;head subject head agr class&gt; = 4
+											   &lt;head type transitive&gt; = +
+Let class_5_ergative	be	&lt;head subject head agr class&gt; = 5
+											   &lt;head type transitive&gt; = +
+Let class_6_ergative	be	&lt;head subject head agr class&gt; = 6
+											   &lt;head type transitive&gt; = +
+Let class_7_ergative	be	&lt;head subject head agr class&gt; = 7
+											   &lt;head type transitive&gt; = +
+Let class_8_ergative	be	&lt;head subject head agr class&gt; = 8
+											   &lt;head type transitive&gt; = +
+Let class_9_ergative	be	&lt;head subject head agr class&gt; = 9
+											   &lt;head type transitive&gt; = +
+Let class_10_ergative	be	&lt;head subject head agr class&gt; = 10
+											   &lt;head type transitive&gt; = +
+Let class_11_ergative	be	&lt;head subject head agr class&gt; = 11
+											   &lt;head type transitive&gt; = +
+Let class_12_ergative	be	&lt;head subject head agr class&gt; = 12
+											   &lt;head type transitive&gt; = +
+Let class_13_ergative	be	&lt;head subject head agr class&gt; = 13
+											   &lt;head type transitive&gt; = +
+Let class_14_ergative	be	&lt;head subject head agr class&gt; = 14
+											   &lt;head type transitive&gt; = +
+Let class_15_ergative	be	&lt;head subject head agr class&gt; = 15
+											   &lt;head type transitive&gt; = +
+Let class_16_ergative	be	&lt;head subject head agr class&gt; = 16
+											   &lt;head type transitive&gt; = +
+Let class_17_ergative	be	&lt;head subject head agr class&gt; = 17
+											   &lt;head type transitive&gt; = +
+Let class_18_ergative	be	&lt;head subject head agr class&gt; = 18
+											   &lt;head type transitive&gt; = +
+Let class_19_ergative	be	&lt;head subject head agr class&gt; = 19
+											   &lt;head type transitive&gt; = +
+Let class_20_ergative	be	&lt;head subject head agr class&gt; = 20
+											   &lt;head type transitive&gt; = +
+Let class_21_ergative	be	&lt;head subject head agr class&gt; = 21
+											   &lt;head type transitive&gt; = +
+Let class_22_ergative	be	&lt;head subject head agr class&gt; = 22
+											   &lt;head type transitive&gt; = +
+Let class_23_ergative	be	&lt;head subject head agr class&gt; = 23
+											   &lt;head type transitive&gt; = +
+Let class_24_ergative	be	&lt;head subject head agr class&gt; = 24
+											   &lt;head type transitive&gt; = +
+Let class_25_ergative	be	&lt;head subject head agr class&gt; = 25
+											   &lt;head type transitive&gt; = +
+Let class_26_ergative	be	&lt;head subject head agr class&gt; = 26
+											   &lt;head type transitive&gt; = +
+Let class_27_ergative	be	&lt;head subject head agr class&gt; = 27
+											   &lt;head type transitive&gt; = +
+Let class_28_ergative	be	&lt;head subject head agr class&gt; = 28
+											   &lt;head type transitive&gt; = +
+Let class_29_ergative	be	&lt;head subject head agr class&gt; = 29
+											   &lt;head type transitive&gt; = +
+Let class_30_ergative	be	&lt;head subject head agr class&gt; = 30
+											   &lt;head type transitive&gt; = +Let class_1_object	be	&lt;head object head agr class&gt;	= 1
 Let class_2_object	be	&lt;head object head agr class&gt;	= 2
 Let class_3_object	be	&lt;head object head agr class&gt;	= 3
 Let class_4_object	be	&lt;head object head agr class&gt;	= 4
@@ -66,6 +267,16 @@ Let class_17_object	be	&lt;head object head agr class&gt;	= 17
 Let class_18_object	be	&lt;head object head agr class&gt;	= 18
 Let class_19_object	be	&lt;head object head agr class&gt;	= 19
 Let class_20_object	be	&lt;head object head agr class&gt;	= 20
+Let class_21_object	be	&lt;head object head agr class&gt;	= 21
+Let class_22_object	be	&lt;head object head agr class&gt;	= 22
+Let class_23_object	be	&lt;head object head agr class&gt;	= 23
+Let class_24_object	be	&lt;head object head agr class&gt;	= 24
+Let class_25_object	be	&lt;head object head agr class&gt;	= 25
+Let class_26_object	be	&lt;head object head agr class&gt;	= 26
+Let class_27_object	be	&lt;head object head agr class&gt;	= 27
+Let class_28_object	be	&lt;head object head agr class&gt;	= 28
+Let class_29_object	be	&lt;head object head agr class&gt;	= 29
+Let class_30_object	be	&lt;head object head agr class&gt;	= 30
 Let class_1_subject	be	&lt;head subject head agr class&gt;	= 1
 Let class_2_subject	be	&lt;head subject head agr class&gt;	= 2
 Let class_3_subject	be	&lt;head subject head agr class&gt;	= 3
@@ -86,6 +297,16 @@ Let class_17_subject	be	&lt;head subject head agr class&gt;	= 17
 Let class_18_subject	be	&lt;head subject head agr class&gt;	= 18
 Let class_19_subject	be	&lt;head subject head agr class&gt;	= 19
 Let class_20_subject	be	&lt;head subject head agr class&gt;	= 20
+Let class_21_subject	be	&lt;head subject head agr class&gt;	= 21
+Let class_22_subject	be	&lt;head subject head agr class&gt;	= 22
+Let class_23_subject	be	&lt;head subject head agr class&gt;	= 23
+Let class_24_subject	be	&lt;head subject head agr class&gt;	= 24
+Let class_25_subject	be	&lt;head subject head agr class&gt;	= 25
+Let class_26_subject	be	&lt;head subject head agr class&gt;	= 26
+Let class_27_subject	be	&lt;head subject head agr class&gt;	= 27
+Let class_28_subject	be	&lt;head subject head agr class&gt;	= 28
+Let class_29_subject	be	&lt;head subject head agr class&gt;	= 29
+Let class_30_subject	be	&lt;head subject head agr class&gt;	= 30
 Let completive		be	&lt;head infl aspect&gt; =  completive
 Let compound            be      &lt;head type compound&gt;            = +
 Let -compound           be      &lt;head type compound&gt;            = -
@@ -113,8 +334,14 @@ Let -DP-final           be      &lt;head type DP-final&gt;            = -
 Let DP-initial          be      &lt;head type DP-initial&gt;          = +
 Let -DP-initial         be      &lt;head type DP-initial&gt;          = -
 Let dual		be	&lt;head agr number&gt; = dual
+Let dual_absolutive	be	{ [head:[object:[head:[agr:[number:dual]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[number:dual]]]
+															type:[transitive:-]]] }
+Let dual_ergative	be	&lt;head subject head agr number&gt; = dual
+											   &lt;head type transitive&gt; = +
 Let dual_object		be	&lt;head object head agr number&gt; = dual
-Let dual_subject	be	&lt;head subject head agr number&gt; = dual
+Let dual_subject 	be	&lt;head subject head agr number&gt; = dual
 Let embedded_CP         be      &lt;embedded cat&gt; = CP
 Let embedded_IP         be      &lt;embedded cat&gt; = IP
 Let embedded_IPpro-dropOrCP be  {&lt;embedded cat&gt; = IP
@@ -140,17 +367,41 @@ Let ergative_suffix     be      &lt;head type suffix ergative&gt;     = +
 Let -ergative		be	[]
 Let exclusive		be	&lt;head agr person&gt; = first_exclusive
 Let feminine		be	&lt;head agr gender&gt; = feminine
+Let feminine_absolutive	be	{ [head:[object:[head:[agr:[gender:feminine]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[agr:[gender:feminine]]]
+															type:[transitive:-]]] }
+Let feminine_ergative	be	&lt;head subject head agr gender&gt; = feminine
+											   &lt;head type transitive&gt; = +
 Let feminine_object	be	&lt;head object head agr gender&gt; = feminine
 Let feminine_subject	be	&lt;head subject head agr gender&gt; = feminine
 Let finite              be      &lt;head infl finite&gt;               = +
 Let -finite             be      &lt;head infl finite&gt;               = -
 Let first		be	&lt;head agr person&gt; = first
 Let first_exclusive     be      &lt;head agr person&gt; = first_exclusive
-Let first_inclusive     be      &lt;head agr person&gt; = first_inclusive
+Let first_exclusive_absolutive	be	{ [head:[object:[head:[agr:[person:first_exclusive]]]
+																		 type:[transitive:+]]]
+															  [head:[subject:[head:[agr:[person:first_exclusive]]]
+																		type:[transitive:-]]] }
+Let first_exclusive_ergative	be	&lt;head subject head agr person&gt; = first_exclusive
+													 &lt;head type transitive&gt; = +
 Let first_exclusive_subject be  &lt;head subject head agr person&gt; = first_exclusive
 Let first_exclusive_object  be  &lt;head object head agr person&gt; = first_exclusive
+Let first_inclusive     be      &lt;head agr person&gt; = first_inclusive
+Let first_inclusive_absolutive	be	{ [head:[object:[head:[agr:[person:first_inclusive]]]
+																		 type:[transitive:+]]]
+															  [head:[subject:[head:[agr:[person:first_inclusive]]]
+																		type:[transitive:-]]] }
+Let first_inclusive_ergative	be	&lt;head subject head agr person&gt; = first_inclusive
+													 &lt;head type transitive&gt; = +
 Let first_inclusive_subject be  &lt;head subject head agr person&gt; = first_inclusive
 Let first_inclusive_object be   &lt;head object head agr person&gt; = first_inclusive
+Let first_absolutive	be	{ [head:[object:[head:[agr:[person:first]]]
+													  type:[transitive:+]]]
+													 [head:[subject:[head:[agr:[person:first]]]
+																type:[transitive:-]]] }
+Let first_ergative	be	&lt;head subject head agr person&gt; = first
+											&lt;head type transitive&gt; = +
 Let first_object	be	&lt;head object head agr person&gt; = first
 Let first_subject	be	&lt;head subject head agr person&gt; = first
 Let future		be	&lt;head infl tense&gt; = future
@@ -180,6 +431,12 @@ Let irrealis		be	&lt;head infl mood realis&gt;         = -
 Let locative		be	&lt;head type locative&gt;		= +
 Let manner		be	&lt;head type manner&gt;		= +
 Let masculine		be	&lt;head agr gender&gt; = masculine
+Let masculine_absolutive	be	{ [head:[object:[head:[agr:[gender:masculine]]]
+													  type:[transitive:+]]]
+													 [head:[subject:[head:[agr:[gender:masculine]]]
+																type:[transitive:-]]] }
+Let masculine_ergative	be	&lt;head subject head agr gender&gt; = masculine
+											&lt;head type transitive&gt; = +
 Let masculine_object	be	&lt;head object head agr gender&gt; = masculine
 Let masculine_subject	be	&lt;head subject head agr gender&gt; = masculine
 Let mass                be      &lt;head type mass&gt;                = +
@@ -202,6 +459,12 @@ Let modifies_temporal	be	&lt;head type modifies_Adv temporal&gt; = +
 Let motion		be	&lt;head type motion&gt;		= +
 Let negative		be	&lt;head infl polarity&gt;            = -
 Let neuter		be	&lt;head agr gender&gt; = neuter
+Let neuter_absolutive	be	{ [head:[object:[head:[agr:[gender:neuter]]]
+													  type:[transitive:+]]]
+													 [head:[subject:[head:[agr:[gender:neuter]]]
+																type:[transitive:-]]] }
+Let neuter_ergative	be	&lt;head subject head agr gender&gt; = neuter
+											&lt;head type transitive&gt; = +
 Let neuter_object	be	&lt;head object head agr gender&gt; = neuter
 Let neuter_subject	be	&lt;head subject head agr gender&gt; = neuter
 Let nominative		be	&lt;head agr case&gt; = nominative
@@ -216,7 +479,13 @@ Let passive.optional	be	&lt;head type passive&gt;		= {+ -}
 Let past		be	&lt;head infl tense past&gt;          = +
 Let perfective		be	&lt;head infl aspect perfective&gt;   = +
 Let plural		be	&lt;head agr number&gt; = plural
-Let plural_object	be	&lt;head object head agr number&gt; = plural
+Let plural_absolutive	be	{ [head:[object:[head:[agr:[number:plural]]]
+													  type:[transitive:+]]]
+													 [head:[subject:[head:[agr:[number:plural]]]
+																type:[transitive:-]]] }
+Let plural_ergative	be	&lt;head subject head agr number&gt; = plural
+											&lt;head type transitive&gt; = +
+Let plural_object	 be	&lt;head object head agr number&gt; = plural
 Let plural_subject	be	&lt;head subject head agr number&gt; = plural
 Let poss_dual		be	&lt;head possessor agr number&gt; = dual
 Let poss_exclusive	be	&lt;head possessor agr person&gt; = first_exclusive
@@ -255,11 +524,23 @@ Let relative		be	&lt;head type relative&gt;		= +
 Let +root		be	&lt;head type root&gt;		= +
 Let -root		be	&lt;head type root&gt;		= -
 Let second		be	&lt;head agr person&gt; = second
+Let second_absolutive	be	{ [head:[object:[head:[agr:[person:second]]]
+													  type:[transitive:+]]]
+													 [head:[subject:[head:[agr:[person:second]]]
+																type:[transitive:-]]] }
+Let second_ergative	be	&lt;head subject head agr person&gt; = second
+											&lt;head type transitive&gt; = +
 Let second_object	be	&lt;head object head agr person&gt; = second
 Let second_subject	be	&lt;head subject head agr person&gt; = second
 Let sentential		be	&lt;head type sentential&gt;		= +
 Let sentential_with_object be   &lt;head type sentential_with_object&gt; = +  <!-- |default- -->
 Let singular		be	&lt;head agr number&gt; = singular
+Let singular_absolutive	be	{ [head:[object:[head:[agr:[number:singular]]]
+													  type:[transitive:+]]]
+													 [head:[subject:[head:[agr:[number:singular]]]
+																type:[transitive:-]]] }
+Let singular_ergative	be	&lt;head subject head agr number&gt; = singular
+											&lt;head type transitive&gt; = +
 Let singular_object	be	&lt;head object head agr number&gt; = singular
 Let singular_subject	be	&lt;head subject head agr number&gt; = singular
 <!-- |Let stand-alone         be      &lt;head type stand-alone&gt;         = + -->
@@ -269,6 +550,12 @@ Let takes_Adv           be      &lt;head type takes_Adv&gt;           = +
 Let takes_DP            be      &lt;head type takes_DP&gt;            = +
 Let temporal		be	&lt;head type temporal&gt;		= +
 Let third		be	&lt;head agr person&gt; = third
+Let third_absolutive	be	{ [head:[object:[head:[agr:[person:third]]]
+													  type:[transitive:+]]]
+													 [head:[subject:[head:[agr:[person:third]]]
+																type:[transitive:-]]] }
+Let third_ergative	be	&lt;head subject head agr person&gt; = third
+											&lt;head type transitive&gt; = +
 Let third_object	be	&lt;head object head agr person&gt; = third
 Let third_subject	be	&lt;head subject head agr person&gt; = third
 Let transitive		be	&lt;head type transitive&gt;		= +
@@ -308,6 +595,7 @@ Let Aux			be	&lt;cat&gt; = !Aux
 
 Let C			be	&lt;cat&gt; = !C
 				&lt;head type question&gt;		= !-
+				&lt;head type relative&gt;		= !-
 
 Let Conj                be      &lt;cat&gt; = !Conj
 
@@ -444,6 +732,7 @@ Let makeAux		be	&lt;cat&gt; = Aux
 
 Let makeC		be	&lt;cat&gt; = C
 				&lt;head type question&gt;		= !-
+				&lt;head type relative&gt;		= !-
 
 Let makeConj            be      &lt;cat&gt; = Conj
 
