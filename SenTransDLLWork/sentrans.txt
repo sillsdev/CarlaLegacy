@@ -6,7 +6,7 @@ file SENTRANS.DOC.
 
 Change History:
 
-2.1.0 Rework punctuation to use strings (in order to handle
+2.1.0 Jul 2002 Rework punctuation to use strings (in order to handle
 UTF-8 Unicode).  The user must now separate punctuation characters
 by spaces.
 
