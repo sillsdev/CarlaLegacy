@@ -1,8 +1,20 @@
 TonePars CHANGE HISTORY
 
- * 21-Nov-2001  hab -
+1.0.6 (28-Nov-2001)
+-------------------
+1. When linking a left-floating tone leftward or linking a
+right-floating tone rightward, need to ensure that the morpheme owning
+the linked-to tbu is listed as owning the tone (rather than always
+using the original morpheme which had the floating tone).
 
-1.0.4 (21-Nove-2001)
+2.Only show the "Assign_lexical_tone_to_tbus: : tbu N not found for
+morpheme X" message in trace mode.
+
+1.0.5 (26-Nov-2001)
+-------------------
+1. Add FOR_SOME and FOR_ALL factors to user test grammar.
+
+1.0.4 (21-Nov-2001)
 -------------------
 1. Made TonePars use properties from ANA file, not from dictionary in
 tone rule conditions (but only if the ANA files has properties).
