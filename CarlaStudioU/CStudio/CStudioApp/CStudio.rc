@@ -565,7 +565,7 @@ CAPTION "About CARLA Studio"
 FONT 8, "MS Sans Serif"
 BEGIN
 	ICON            IDR_MAINFRAME,IDC_STATIC,12,9,20,20
-	LTEXT           "CARLA Studio Version 2.7.2 Unicode Beta",IDC_STATIC,40,
+	LTEXT           "CARLA Studio Version 2.7.3 Unicode Beta",IDC_STATIC,40,
 					10,145,8,SS_NOPREFIX
 	LTEXT           "Copyright SIL International © 1999-2002",IDC_STATIC,40,
 					20,158,8
