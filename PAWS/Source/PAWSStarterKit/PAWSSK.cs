@@ -954,6 +954,7 @@ namespace PAWSStarterKit
 			createExampleFile("AdjP");
 			createExampleFile("NP");
 			createExampleFile("PP");
+			createExampleFile("Prop");
 			createExampleFile("Pron");
 			createExampleFile("IP");
 			createExampleFile("Q");

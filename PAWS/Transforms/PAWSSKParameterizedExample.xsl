@@ -44,13 +44,22 @@
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pp/ppExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pp/locExample"/><xsl:text>&#xa;</xsl:text>
 		</xsl:when>
+		<xsl:when test="$prmIdTitle='Prop'">
+		<xsl:value-of select="//prop/example"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//prop/ppExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//prop/relClExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//prop/propAnimateCategory"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//prop/propInanimateCategory"/><xsl:text>&#xa;</xsl:text>
+		</xsl:when>
 	<xsl:when test="$prmIdTitle='Pron'">
-		<xsl:value-of select="//pron/example"/><xsl:text>&#xa;</xsl:text>
-<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/reflExample"/><xsl:text>&#xa;</xsl:text>
+			<xsl:value-of select="//pron/reflExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/recipExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/possExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/indefNPExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/indefExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/standAloneNPExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/partitiveExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/pronRelClExample"/><xsl:text>&#xa;</xsl:text>
 		</xsl:when>
 	<xsl:when test="$prmIdTitle='IP'">
 		<xsl:value-of select="//ip/example"/><xsl:text>&#xa;</xsl:text>
