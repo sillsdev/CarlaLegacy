@@ -459,6 +459,11 @@ typedef struct stamp_analysis {
 #endif /* TONEGEN */
 #endif /* hab104 */
 #endif /* TONEPARS */
+#ifndef hab2111
+#ifdef TONEGEN
+	int                bDidSynthWordSave; /* note when saved synthesized form */
+#endif /* TONEGEN */
+#endif /* hab2111 */
 	} StampAnalysis;
 
 /*****************************************************************************
@@ -913,6 +918,13 @@ extern int	loadStampDictionary P((const char * pszFilename_in,
 					   StampData *  pStamp_in));
 extern void	writeStampDictionary P((FILE *      pOutputFP_in,
 					StampData *  pStamp_in));
+
+#ifndef hab2111
+#ifdef TONEGEN
+extern void     writeStampDecomposition P((StampAnalysis * analp,
+						 StampData *     pStamp_in));
+#endif /* TONEGEN */
+#endif /* hab2111 */
 
 /* dtbio.c */
 extern StampWord *	readStampWord P((FILE *        pInputFP_in,

@@ -4,12 +4,14 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL -9		/* bug fix or other internal improvement */
-#define DATE       "December 10, 2001"	/* date of release version */
-#define YEAR       "2001"	/* used for release date and copyright */
+#define PATCHLEVEL -10		/* bug fix or other internal improvement */
+#define DATE       "August 15, 2002"	/* date of release version */
+#define YEAR       "2002"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 15-Aug-2002  hab - Not showing synthesized forms in tone part of trace.
+ * [1.0.10]           Would only output one correct form.
  * 10-Dec-2001  hab - 'tonestatus' 'tone' 'is' TONE clause in rules needs to
  * [1.0.9]              use first morpheme to left/right that has a tbu.
  *                    position in rule action needs to refer to first morpheme

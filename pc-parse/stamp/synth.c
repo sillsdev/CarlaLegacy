@@ -70,6 +70,11 @@ StampUnit *	pUnit_in;
 StampData *	pStamp_in;
 {
 StampAnalysisList *cur_ambp, *next_ambp;
+#ifndef hab2111
+#ifndef TONEGEN
+StringList *pSynthResults;
+#endif /* TONEGEN */
+#endif /* hab2111 */
 
 if (	(pUnit_in               == NULL) ||
 	(pUnit_in->pCurrentWord == NULL) ||
@@ -97,10 +102,25 @@ else
 	for ( cur_ambp = pUnit_in->pCurrentWord->pTrAnalyses ;
 		  cur_ambp && !pUnit_in->bStringLookahead ;
 		  cur_ambp = cur_ambp->pNext )
+#ifndef hab2111
+#ifndef TONEGEN
+	  {
+		pSynthResults = synthesis( cur_ambp->pAnal, cur_ambp,
+				   pUnit_in, pStamp_in );
+		pUnit_in->pCurrentWord->pTemplate->pNewWords = mergeTwoStringLists(
+				 pUnit_in->pCurrentWord->pTemplate->pNewWords,
+					 pSynthResults );
+	if (pSynthResults != NULL)
+				/* just use first result */
+	  cur_ambp->pszSynthResult = duplicateString(pSynthResults->pszString);
+	  }
+#else  /* TONEGEN */
 		pUnit_in->pCurrentWord->pTemplate->pNewWords = mergeTwoStringLists(
 				 pUnit_in->pCurrentWord->pTemplate->pNewWords,
 					 synthesis( cur_ambp->pAnal, cur_ambp,
 						pUnit_in, pStamp_in ) );
+#endif /* TONEGEN */
+#endif /* hab2111 */
 	/*
 	 * If we have to look ahead to the string environment of the next word...
 	 */
@@ -136,11 +156,27 @@ else
 			next_ambp ;
 			next_ambp = next_ambp->pNext )
 				{
+#ifndef hab2111
+#ifndef TONEGEN
+		pSynthResults = synthesis(next_ambp->pAnal,
+					  next_ambp,
+					  &sTemp,
+					  pStamp_in);
+		pNewWords = mergeTwoStringLists(pNewWords,
+						pSynthResults );
+		if (pSynthResults != NULL)
+		  {			/* just use first result */
+			next_ambp->pszSynthResult =
+			  duplicateString(pSynthResults->pszString);
+		  }
+#else  /* TONEGEN */
 		pNewWords = mergeTwoStringLists(pNewWords,
 						synthesis(next_ambp->pAnal,
 							  next_ambp,
 							  &sTemp,
 							  pStamp_in));
+#endif /* TONEGEN */
+#endif /* hab2111 */
 		}
 		pUnit_in->pNextWord->pTemplate->pNewWords = pNewWords;
 
@@ -164,11 +200,27 @@ else
 			  cur_ambp ;
 			  cur_ambp = cur_ambp->pNext )
 			{
+#ifndef hab2111
+#ifndef TONEGEN
+		pSynthResults = synthesis( cur_ambp->pAnal, cur_ambp,
+					   pUnit_in, pStamp_in );
+		pUnit_in->pCurrentWord->pTemplate->pNewWords =
+				mergeTwoStringLists(
+				 pUnit_in->pCurrentWord->pTemplate->pNewWords,
+					 pSynthResults );
+		if (pSynthResults != NULL)
+		  {			/* just use first result */
+		cur_ambp->pszSynthResult =
+		  duplicateString(pSynthResults->pszString);
+		  }
+#else  /* TONEGEN */
 		pUnit_in->pCurrentWord->pTemplate->pNewWords =
 			mergeTwoStringLists(
 				 pUnit_in->pCurrentWord->pTemplate->pNewWords,
 				 synthesis(cur_ambp->pAnal, cur_ambp,
 					   pUnit_in, pStamp_in ) );
+#endif /* TONEGEN */
+#endif /* hab2111 */
 		}
 		}
 	}
@@ -546,6 +598,23 @@ if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 		szSynWord_m);
 #endif /* hab217 */
 pSynList_m = mergeIntoStringList( pSynList_m, szSynWord_m );
+#ifndef hab2111
+#ifdef TONEGEN
+/*
+ * remember locations of all allomorphs for use in tone work
+ */
+ if (pHead_m != NULL)
+   {
+	 loc = duplicateString(szSynWord_m);
+	 for ( mp = pHead_m ; mp ; mp = mp->pRightLink )
+	   {
+	 mp->pszAlloStart = loc + (mp->pszAlloStart - szSynWord_m);
+	 mp->pszAlloEnd = loc + (mp->pszAlloEnd - szSynWord_m);
+	 mp->bDidSynthWordSave = TRUE;
+	   }
+   }
+#endif /* TONEGEN */
+#endif /* hab2111 */
 return( TRUE );
 }
 

@@ -344,6 +344,11 @@ ap->pLeftLink            = NULL;
 ap->pRightLink           = NULL;
 ap->m.u.pRootCategories  = NULL;       /* (don't use in processing) */
 ap->m.pAllomorphs        = NULL;
+#ifndef hab2111
+#ifdef TONEGEN
+ap->bDidSynthWordSave    = FALSE;
+#endif /* TONEGEN */
+#endif /* hab2111 */
 /*
  *  fill in what we know about the morpheme
  */
@@ -394,6 +399,16 @@ StampAnalysis *	analp;
 {
 StampAnalysis *	ap;
 
+#ifndef hab2111
+#ifdef TONEGEN
+	/*
+	 * For tone work, we needed to keep the succesfully synthesized word.
+	 * All we need to free is the first pszAlloStart.
+	 */
+	if (analp && analp->bDidSynthWordSave)
+		freeMemory(analp->pszAlloStart);
+#endif /* TONEGEN */
+#endif /* hab2111 */
 for ( ap = analp ; ap ; ap = analp )
 	{
 	/*
@@ -533,6 +548,42 @@ for ( state = PFX ; analp ; analp = analp->pRightLink )
 		fprintf(pOutputFP_in, " %c",pStamp_in->cEndRoot);
 	}
 }
+
+#ifndef hab2111
+#ifdef TONEGEN
+/*************************************************************************
+ * NAME
+ *    writeStampDecomposition
+ * ARGUMENTS
+ *    analp    - pointer to a list of analysis struct's
+ * DESCRIPTION
+ *    Display the allomorph information stored in a list of analysis struct's.
+ *      The display starts with one space, but no <CR>.
+ *
+ * RETURN VALUE
+ *    none
+ */
+void writeStampDecomposition(analp, pStamp_in)
+StampAnalysis *	analp;
+StampData *	pStamp_in;
+{
+
+if (pStamp_in == NULL ||
+	 pStamp_in->pLogFP == NULL)
+   return;
+
+fputc(' ', pStamp_in->pLogFP);
+for ( ; analp ; analp = analp->pRightLink )
+	{
+	  fprintf(pStamp_in->pLogFP, "%s",
+		  (analp->pCurrentAllo != NULL) ? analp->pCurrentAllo->pszAllomorph
+										: "??");
+	if (analp->pRightLink != NULL)
+		fputc(pStamp_in->sTextCtl.cDecomp, pStamp_in->pLogFP);
+	}
+}
+#endif /* TONEGEN */
+#endif /* hab2111 */
 
 /*************************************************************************
  * NAME

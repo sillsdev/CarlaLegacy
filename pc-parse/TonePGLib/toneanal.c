@@ -1955,11 +1955,21 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 	   word->pszOrigWord &&
 	   strlen(word->pszOrigWord) > 0)
 	{
+#ifndef hab1010
+#ifdef TONEGEN
+	  if (do_trace && pStamp_in->pLogFP)
+	fprintf(pStamp_in->pLogFP, "\n\nNext word is being traced.");
+#ifdef DEBUG
+	  fprintf(stderr,"\nNext word is being traced.");
+#endif
+#else  /* TONEGEN */
 	  if (do_trace && pStamp_in->pLogFP)
 	fprintf(pStamp_in->pLogFP, "\n\n%s is being traced.", word->pszOrigWord);
 #ifdef DEBUG
 	  fprintf(stderr,"\n%s is being traced.", word->pszOrigWord);
 #endif
+#endif /* TONEGEN */
+#endif /* hab1010 */
 				/* initialize */
 	  j = 0;			/* init new_edge_conds index */
 	  found_good_anal = FALSE;
@@ -2004,10 +2014,20 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 					   the next word */
 		  if (do_trace && pStamp_in->pLogFP)
 		{
+#ifndef hab1010
+#ifdef TONEGEN
+		  fprintf(pStamp_in->pLogFP, "\n  Working on: ");
+		  writeStampBriefAnalysis(trp->pAnal, (StampAnalysis *)NULL,
+					  pStamp_in->pLogFP, pStamp_in);
+		  fprintf(pStamp_in->pLogFP, "\n              ");
+		  writeStampDecomposition(trp->pAnal, pStamp_in);
+#else  /* TONEGEN */
 		  fprintf(pStamp_in->pLogFP, "\n  Working on: %s",
 			  anp->pszAnalysis);
 		  fprintf(pStamp_in->pLogFP, "\n              %s",
 			  anp->pszDecomposition);
+#endif /* TONEGEN */
+#endif /* hab1010 */
 		  show_edge_conds(pStamp_in->pLogFP, edge_conds[i]);
 		}
 #ifdef TONEGEN
@@ -3383,11 +3403,14 @@ static int tone_anal(anal_head, word, decompstring,
 #ifdef TONEGEN
 				/* assume that form is good */
   form_is_good = TRUE;
+#ifdef hab1010
+  /* don't do this here!  It wipes out previous successful syntheses! */
   if (word->pNewWords)
 	{
 	  freeStringList(word->pNewWords);
 	  word->pNewWords = NULL;
 	}
+#endif /* hab1010 */
   word->pNewWords = addToStringList(word->pNewWords, cp);
 				/* remember right edge state of tone tiers */
 #ifndef hab104

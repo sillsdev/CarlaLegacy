@@ -4,12 +4,14 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL -10		/* bug fix or other minor change */
-#define DATE "April 12, 2002"	/* date of release version */
+#define PATCHLEVEL -11		/* bug fix or other minor change */
+#define DATE "August 15, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 15-Aug-2002  hab  - Internal changes for ToneGen.
+ * [2.1.11]
  * 12-Apr-2002  hab  - Add allomorph and morpheme properties to affix line
  * [2.1.10]              in synthesis trace.
  * 20-Sep-2001  hab  - Synthesis trace was silent when no infix location

@@ -984,8 +984,22 @@ do  {
 				/* synthesize */
 	performStampSynthesis(&sWords_m, &sStamp_m);
 				/* apply tonal analysis to it */
+#ifndef hab1010
+	if (sWords_m.pCurrentWord->pTemplate->pNewWords)
+	  {
+		/*
+		 * Clear list of successful syntheses.
+		 * We'll rebuild it after checking tone rules.
+		 */
+		freeStringList(sWords_m.pCurrentWord->pTemplate->pNewWords);
+		sWords_m.pCurrentWord->pTemplate->pNewWords = NULL;
+		/* now apply tone rules */
+		do_tone_anal(&sWords_m, do_trace, &sStamp_m );
+	  }
+#else  /* hab1010 */
 	if (sWords_m.pCurrentWord->pTemplate->pNewWords)
 	  do_tone_anal(&sWords_m, do_trace, &sStamp_m );
+#endif /* hab1010 */
 
 	pWord = sWords_m.pCurrentWord->pTemplate;
 
