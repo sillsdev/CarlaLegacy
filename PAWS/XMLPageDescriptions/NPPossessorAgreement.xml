@@ -17,9 +17,9 @@ We will deal with each type in turn.
 			<radio id="NPPossAlienableNo" dataValue="no">No</radio>
 			<radio id="NPPossAlienableYes" dataValue="yes">Yes</radio>
 		</radioGroup>
-<prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Enter the affix(es) which are used to mark alienably possessed nouns when they have a possessor in the box (each on a separate line if more than one).  Use a hyphen after the alphabetic characters to indicate a prefix, a hyphen before to indicate a suffix, and hyphens on both sides to indicate an infix.</prompt>
-<textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
-<br/>
+		<prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Enter the affix(es) which are used to mark alienably possessed nouns when they have a possessor in the box (each on a separate line if more than one).  Use a hyphen after the alphabetic characters to indicate a prefix, a hyphen before to indicate a suffix, and hyphens on both sides to indicate an infix.</prompt>
+		<textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
+		<br/>
 		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
 		<radioGroup id="NPPossAgrTable">
 			<groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
@@ -28,9 +28,9 @@ We will deal with each type in turn.
 			<radio id="NPPossAgrYes" dataValue="yes">Yes</radio>
 		</radioGroup>
 		<instruction id="NPPossAgrYesInstruction" show="swNPPossAgrYes">Look through the features in the chart below and check any that your language uses.  In the lexicon, add one or more features from the following list as appropriate to the affix entries. <br/>
-			<featureChart types="no">
+			<featureChart>
 				<featureRow>
-					<featureType/>
+				<featureType>person</featureType>
 					<featureItem dataValue="npPossAgrPossFirst" name="NPPossAgrPossFirst">poss_first</featureItem>
 					<featureExplanation>the possessor must be first person</featureExplanation>
 				</featureRow>
@@ -55,7 +55,7 @@ We will deal with each type in turn.
 					<featureExplanation>the possessor must be third person</featureExplanation>
 				</featureRow>
 				<featureRow>
-					<featureType/>
+				<featureType>number</featureType>
 					<featureItem dataValue="npPossAgrPossSingular" name="NPPossAgrPossSingular">poss_singular</featureItem>
 					<featureExplanation>the possessor must be singular in number</featureExplanation>
 				</featureRow>
@@ -70,7 +70,7 @@ We will deal with each type in turn.
 					<featureExplanation>the possessor must be dual in number</featureExplanation>
 				</featureRow>
 				<featureRow>
-					<featureType/>
+				<featureType>gender</featureType>
 					<featureItem dataValue="npPossAgrPossMasculine" name="NPPossAgrPossMasculine">poss_masculine</featureItem>
 					<featureExplanation>the possessor must be masculine in gender</featureExplanation>
 				</featureRow>
@@ -83,6 +83,31 @@ We will deal with each type in turn.
 					<featureType/>
 					<featureItem dataValue="npPossAgrPossNeuter" name="NPPossAgrPossNeuter">poss_neuter</featureItem>
 					<featureExplanation>the possessor must be neuter in gender</featureExplanation>
+				</featureRow>
+				<featureRow>
+				<featureType>animacy</featureType>
+					<featureItem dataValue="npPossAgrPossAnimate" name="NPPossAgrPossAnimate">poss_animate</featureItem>
+					<featureExplanation>the possessor must be animate</featureExplanation>
+				</featureRow>
+				<featureRow>
+					<featureType/>
+					<featureItem dataValue="npPossAgrPossInanimate" name="NPPossAgrPossInanimate">poss_inanimate</featureItem>
+					<featureExplanation>the possessor must be inanimate</featureExplanation>
+				</featureRow>
+				<featureRow>
+					<featureType/>
+					<featureItem dataValue="npPossAgrPossHuman" name="NPPossAgrPossHuman">poss_human</featureItem>
+					<featureExplanation>the possessor must be human</featureExplanation>
+				</featureRow>
+				<featureRow>
+					<featureType/>
+					<featureItem dataValue="npPossAgrPossNonHuman" name="NPPossAgrPossNonHuman">poss_nonhuman</featureItem>
+					<featureExplanation>the possessor must be nonhuman</featureExplanation>
+				</featureRow>
+				<featureRow>
+				<featureType>class</featureType>
+					<featureItem dataValue="npPossAgrPossClassClassNumber" name="NPPossAgrPossClassClassNumber">poss_class_##</featureItem>
+					<featureExplanation>the possessor must be class ## (replace ## with the class number up to 30)</featureExplanation>
 				</featureRow>
 			</featureChart>
 		</instruction>
@@ -110,7 +135,7 @@ To handle the number agreement, we will assume that all nouns are singular by de
 				</ul>
 			</span>
 			<span id="NPPossNounAgrAnimacyInstruction" show="swNPArtAgreementAnimacyYes">
-To handle animacy agreement, we will assume that all (common) nouns are inanimate by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  (Proper names will be dealt with in <section number="6">Pronouns and Proper Names</section> and will be assumed to be animate by default.)
+To handle animacy agreement, we will assume that all (common) nouns are inanimate and nonhuman by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  Also add the feature <feature>human</feature> as appropriate if your language makes the further distinction between human and nonhuman nouns.  (Proper names will be dealt with in <section number="6">Pronouns and Proper Names</section>.)
 </span>
 			<span id="NPPossNounAgrGenderInstruction" show="swNPArtAgreementGenderYes">
 To handle gender agreement, we will assume that all nouns are masculine by default.  Therefore, only the feminine and neuter nouns need to be marked.  In the lexicon:

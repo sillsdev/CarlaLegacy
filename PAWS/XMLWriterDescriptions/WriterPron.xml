@@ -124,6 +124,22 @@
 							<content>inanimate</content>
 						</col>
 					</row>
+					<row show="swPronAgrFeatHuman">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>human</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatMinusHuman">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>nonhuman</content>
+						</col>
+					</row>
 					<row show="swPronAgrFeatClassNumber">
 						<col>
 							<content>class</content>
@@ -329,7 +345,7 @@
 				<langData>themselves</langData>
 				<content> and </content>
 				<langData>myself</langData>
-				<content>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning ‘self’) that is possessed by the pronoun that refers back to the subject, and some languages do not distinguish between reflexive and regular pronouns.</content>
+				<content>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning ‘self’) that is possessed by the pronoun that refers back to the subject, some languages have a verbal affix which indicates reflexive action, and some languages do not distinguish reflexive constructions at all.</content>
 			</p>
 			<p>
 				<content/>
@@ -337,6 +353,7 @@
 				<content/>
 				<case element="pron" attr="refl">
 					<caseText value="no"> does not have any type of reflexives.</caseText>
+					<caseText value="yesVerbal"> has a verbal affix to indicate reflexive action. </caseText>
 					<caseText value="yes"> has reflexives</caseText>
 				</case>
 				<content/>
@@ -349,9 +366,9 @@
 					</case>
 					<content>  The forms used for reflexives are given here, beginning with first person, then second person, then third person:</content>
 				</text>
-				<content/>
+			 <text show="swPronReflYesVerbal"><content> Examples of reflexives in </content><langName/><content> are:</content></text>
 			</p>
-			<example show="swPronReflYes">
+			<example show="swPronReflNotNo">
 				<table border="1">
 					<row>
 						<col exampleLoc="pron/reflExample"/>
@@ -596,6 +613,12 @@
 	<showWhen id="swPronAgrFeatMinusAnimate">
 		<whenValue element="pron/pronAgrFeatMinusAnimate" attr="checked" value="yes"/>
 	</showWhen>
+	<showWhen id="swPronAgrFeatHuman">
+		<whenValue element="pron/pronAgrFeatHuman" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatMinusHuman">
+		<whenValue element="pron/pronAgrFeatMinusHuman" attr="checked" value="yes"/>
+	</showWhen>
 	<showWhen id="swPronAgrFeatClassNumber">
 		<whenValue element="pron/pronAgrFeatClassNumber" attr="checked" value="yes"/>
 	</showWhen>
@@ -616,6 +639,12 @@
 	</showWhen>
 	<showWhen id="swPronReflYes">
 		<whenValue element="pron" attr="refl" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronReflYesVerbal">
+		<whenValue element="pron" attr="refl" value="yesVerbal"/>
+	</showWhen>
+	<showWhen id="swPronReflNotNo">
+		<whenValue element="pron" attr="refl" value="no" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swPronRecipYesOrVerbal">
 		<whenValue element="pron" attr="recip" value="no" negateValue="yes"/>

@@ -415,7 +415,23 @@ Let genitive_suffix     be      &lt;head type suffix genitive&gt;     = +
 Let -genitive		be	[]
 Let habitual		be	&lt;head infl aspect habitual&gt;     = +
 Let human               be      &lt;head type human&gt;               = +
+Let human_absolutive	be	{ [head:[object:[head:[type:[human:+]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[type:[human:+]]]
+															type:[transitive:-]]] }
+Let human_ergative	be	&lt;head subject head type human&gt; = +
+											   &lt;head type transitive&gt; = +
+Let human_object	be	&lt;head object head type human&gt; = +
+Let human_subject	be	&lt;head subject head type human&gt; = +
 Let -human              be      &lt;head type human&gt;               = -
+Let -human_absolutive	be	{ [head:[object:[head:[type:[human:-]]]
+															type:[transitive:+]]]
+												 [head:[subject:[head:[type:[human:-]]]
+															type:[transitive:-]]] }
+Let -human_ergative	be	&lt;head subject head type human&gt; = -
+											   &lt;head type transitive&gt; = +
+Let -human_object	be	&lt;head object head type human&gt;	= -
+Let -human_subject	be	&lt;head subject head type human&gt; = -
 Let imperative		be	&lt;head infl mood imperative&gt;     = +
 Let imperfective	be	&lt;head infl aspect imperfective&gt; = +
 Let inclusive		be	&lt;head agr person&gt; = first_inclusive
@@ -489,13 +505,47 @@ Let plural_ergative	be	&lt;head subject head agr number&gt; = plural
 											&lt;head type transitive&gt; = +
 Let plural_object	 be	&lt;head object head agr number&gt; = plural
 Let plural_subject	be	&lt;head subject head agr number&gt; = plural
+Let poss_class_1        be	&lt;head possessor agr class&gt; = 1
+Let poss_class_2        be	&lt;head possessor agr class&gt; = 2
+Let poss_class_3        be	&lt;head possessor agr class&gt; = 3
+Let poss_class_4        be	&lt;head possessor agr class&gt; = 4
+Let poss_class_5        be	&lt;head possessor agr class&gt; = 5
+Let poss_class_6        be	&lt;head possessor agr class&gt; = 6
+Let poss_class_7        be	&lt;head possessor agr class&gt; = 7
+Let poss_class_8        be	&lt;head possessor agr class&gt; = 8
+Let poss_class_9        be	&lt;head possessor agr class&gt; = 9
+Let poss_class_10       be	&lt;head possessor agr class&gt; = 10
+Let poss_class_11       be	&lt;head possessor agr class&gt; = 11
+Let poss_class_12       be	&lt;head possessor agr class&gt; = 12
+Let poss_class_13       be	&lt;head possessor agr class&gt; = 13
+Let poss_class_14       be	&lt;head possessor agr class&gt; = 14
+Let poss_class_15       be	&lt;head possessor agr class&gt; = 15
+Let poss_class_16       be	&lt;head possessor agr class&gt; = 16
+Let poss_class_17       be	&lt;head possessor agr class&gt; = 17
+Let poss_class_18       be	&lt;head possessor agr class&gt; = 18
+Let poss_class_19       be	&lt;head possessor agr class&gt; = 19
+Let poss_class_20       be	&lt;head possessor agr class&gt; = 20
+Let poss_class_21       be	&lt;head possessor agr class&gt; = 21
+Let poss_class_22       be	&lt;head possessor agr class&gt; = 22
+Let poss_class_23       be	&lt;head possessor agr class&gt; = 23
+Let poss_class_24       be	&lt;head possessor agr class&gt; = 24
+Let poss_class_25       be	&lt;head possessor agr class&gt; = 25
+Let poss_class_26       be	&lt;head possessor agr class&gt; = 26
+Let poss_class_27       be	&lt;head possessor agr class&gt; = 27
+Let poss_class_28       be	&lt;head possessor agr class&gt; = 28
+Let poss_class_29       be	&lt;head possessor agr class&gt; = 29
+Let poss_class_30       be	&lt;head possessor agr class&gt; = 30
+Let poss_animate        be	&lt;head possessor agr animate&gt; = +
 Let poss_dual		be	&lt;head possessor agr number&gt; = dual
 Let poss_exclusive	be	&lt;head possessor agr person&gt; = first_exclusive
 Let poss_feminine	be	&lt;head possessor agr gender&gt; = feminine
 Let poss_first		be	&lt;head possessor agr person&gt; = first
+Let poss_human          be	&lt;head possessor type human&gt; = +
+Let poss_inanimate      be	&lt;head possessor agr animate&gt; = -
 Let poss_inclusive	be	&lt;head possessor agr person&gt; = first_inclusive
 Let poss_masculine	be	&lt;head possessor agr gender&gt; = masculine
 Let poss_neuter  	be	&lt;head possessor agr gender&gt; = neuter
+Let poss_nonhuman       be	&lt;head possessor type human&gt; = -
 Let poss_plural		be	&lt;head possessor agr number&gt; = plural
 Let poss_second		be	&lt;head possessor agr person&gt; = second
 Let poss_singular	be	&lt;head possessor agr number&gt; = singular

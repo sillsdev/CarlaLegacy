@@ -16,15 +16,15 @@
 		<br/>
 		<radioGroup>
 			<groupName dataItem="mainYN" default="no">RQMainYN</groupName>
-			<prompt>For main clause Yes/No questions, does your language have one or more Yes/No question markers or complementizers?</prompt>
+			<prompt>For main clause Yes/No questions, does your language have one or more Yes/No question markers or complementizers (include affixes or clitics in answering this question)?</prompt>
 			<radio id="QMainYNYes" dataValue="yes">Yes</radio>
 			<radioGroup id="QMainYNWordTable" show="swQMainYNYes">
 				<groupName dataItem="mainYNWord" default="yes">RQMainYNWord</groupName>
 				<prompt>Is it written as a separate word?</prompt>
-				<radio id="QMainYNWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
+				<radio id="QMainYNWordNo" dataValue="no">No, it is an affix or clitic which attaches to another word</radio>
 				<radioGroup id="QMainYNCliticPosTable" show="swQMainYNWordNo">
 					<groupName dataItem="mainYNCliticPos" default="unknown" position="yesHead">RQMainYNCliticPos</groupName>
-					<prompt>Is the clitic a proclitic or an enclitic?</prompt>
+					<prompt>Is the clitic a proclitic (prefix) or an enclitic (suffix)?</prompt>
 					<radio id="QMainYNCliticPosBefore" dataValue="before">A proclitic or prefix</radio>
 					<radio id="QMainYNCliticPosAfter" dataValue="after">An enclitic or suffix</radio>
 					<radio id="QMainYNCliticPosBoth" dataValue="both">Some of each type</radio>

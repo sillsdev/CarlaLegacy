@@ -16,15 +16,15 @@
 		<instruction>If any main verbs used in these examples were not marked with the feature <feature>sentential</feature> above, go to the lexicon and add the feature <feature>sentential</feature> to the appropriate entries now.</instruction>
 		<radioGroup>
 			<groupName dataItem="embCont" default="no">RQEmbCont</groupName>
-			<prompt>In embedded clause content questions, are there one or more special question marker particles or complementizers that may occur in addition to the interrogative phrases?</prompt>
+			<prompt>In embedded clause content questions, are there one or more special question marker particles or complementizers that may occur in addition to the interrogative phrases (include affixes or clitics in answering this question)?</prompt>
 			<radio id="QEmbContYes" dataValue="yes">Yes</radio>
 			<radioGroup id="QEmbContWordTable" show="swQEmbContYes">
 				<groupName dataItem="embContWord" default="yes">RQEmbContWord</groupName>
 				<prompt>Is it written as a separate word?</prompt>
-				<radio id="QEmbContWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
+				<radio id="QEmbContWordNo" dataValue="no">No, it is an affix or clitic which attaches to another word</radio>
 				<radioGroup id="QEmbContCliticPosTable" show="swQEmbContWordNo">
 					<groupName dataItem="embContCliticPos" default="unknown" position="yesHead">RQEmbContCliticPos</groupName>
-					<prompt>Is the clitic a proclitic or an enclitic?</prompt>
+					<prompt>Is the clitic a proclitic (prefix) or an enclitic (suffix)?</prompt>
 					<radio id="QEmbContCliticPosBefore" dataValue="before">A proclitic or prefix</radio>
 					<radio id="QEmbContCliticPosAfter" dataValue="after">An enclitic or suffix</radio>
 					<radio id="QEmbContCliticPosBoth" dataValue="both">Some of each type</radio>
@@ -33,7 +33,8 @@
 					<groupName dataItem="embContCliticAttaches" default="edge">RQEmbYNCliticAttaches</groupName>
 					<prompt>Where does the clitic attach to the embedded question?</prompt>
 					<radio id="QEmbContCliticAttachesEdge" dataValue="edge">At the edge</radio>
-					<radio id="QEmbContCliticAttachesBetween" dataValue="between" show="swQContFrontYes"><span id="QEmbContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
+					<radio id="QEmbContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">
+						<span id="QEmbContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
 					</radio>
 					<radio id="QEmbContCliticAttachesHead" dataValue="head">To the verb</radio>
 				</radioGroup>
@@ -89,7 +90,7 @@
 				<radio id="QEmbContAuxRequiredYes" dataValue="yes">Yes</radio>
 				<radio id="QEmbContAuxRequiredNo" dataValue="no">No, some embedded content questions do not require a fronted auxiliary</radio>
 			</radioGroup>
-			<radio id="QEmbContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
+			<radio id="QEmbContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span><span id="QEmbContNoFrontOptionalSpan" show="swQContFrontOptional">optional movement of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
 		</radioGroup>
 		<instruction id="QEmbContHeadCliticInstruction" show="swQEmbContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbContEdgeCliticPrefixInstruction" show="swQEmbContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
@@ -121,6 +122,9 @@
 	</showWhen>
 	<showWhen id="swQContFrontYes">
 		<whenValue element="q" attr="contFront" value="before"/>
+	</showWhen>
+	<showWhen id="swQContFrontOptional">
+		<whenValue element="q" attr="contFront" value="after"/>
 	</showWhen>
 	<showWhen id="swVSOWordFrontYes">
 		<whenRadio button="QEmbContWordYes"/>

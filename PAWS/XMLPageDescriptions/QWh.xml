@@ -3,45 +3,43 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QWh">
 	<title level="2">Questions - Interrogative Phrases in Content Questions</title>
-	<introduction>Content questions differ from Yes/No questions in that they contain an interrogative word or phrase, known as <i>wh</i>-phrases in English because they almost all begin with <example>wh</example> (<example>who(m)</example>, <example>what</example>, <example>why</example>, <example>where</example>, <example>when</example>, <example>how</example>, <example>which</example>, <example>whose</example>).</introduction>
+	<introduction>Content questions differ from Yes/No questions in that they contain an interrogative word or phrase, known as <i>wh</i>-phrases in English because they almost all begin with <example>wh</example> (<example>who(m)</example>, <example>what</example>, <example>why</example>, <example>where</example>, <example>when</example>, <example>how</example>, <example>which</example>, <example>whose</example>).  In some languages, some or all of these interrogative words are expressed as affixes.</introduction>
 	<form section="q">
-		<prompt>Key the interrogative words or phrases in your language used for 'who' or 'whom' here:</prompt>
+<instruction>For all of the following text boxes, if your language expresses that interrogative via an affix, enter it in the box with a hyphen on the appropriate side to indicate whether it is a prefix or a suffix.  Each word, phrase or affix ahould be entered on a separate line.</instruction>
+		<prompt>Key the interrogative words or phrases or affixes your language uses for 'who' or 'whom' here:</prompt>
 		<textBox id="QWho" dataItem="who" rows="3"/>
 		<br/>
-		<prompt>Key the interrogative words or phrases in your language used for 'what' here:</prompt>
+		<prompt>Key the interrogative words or phrases or affixes your language uses for 'what' here:</prompt>
 		<textBox id="QWhat" dataItem="what" rows="3"/>
 		<br/>
-		<prompt>Key the interrogative words or phrases in your language used for 'why' here:</prompt>
+		<prompt>Key the interrogative words or phrases or affixes your language uses for 'why' here:</prompt>
 		<textBox id="QWhy" dataItem="why" rows="3"/>
 		<br/>
-		<prompt>Key the interrogative words or phrases in your language used for 'where' here:</prompt>
+		<prompt>Key the interrogative words or phrases or affixes your language uses for 'where' here:</prompt>
 		<textBox id="QWhere" dataItem="where" rows="3"/>
 		<br/>
-		<prompt>Key the interrogative words or phrases in your language used for 'when' here:</prompt>
+		<prompt>Key the interrogative words or phrases or affixes your language uses for 'when' here:</prompt>
 		<textBox id="QWhen" dataItem="when" rows="3"/>
 		<br/>
-		<prompt>Key the interrogative words or phrases in your language used for 'how' here:</prompt>
+		<prompt>Key the interrogative words or phrases or affixes your language uses for 'how' here:</prompt>
 		<textBox id="QHow" dataItem="how" rows="3"/>
 		<br/>
-		<prompt>Key the interrogative words or phrases in your language used for 'which' here:</prompt>
+		<prompt>Key the interrogative words or phrases or affixes your language uses for 'which' here:</prompt>
 		<textBox id="QWhich" dataItem="which" rows="3"/>
 		<br/>
-		<prompt>Key the interrogative words or phrases in your language used for 'whose' here:</prompt>
+		<prompt>Key the interrogative words or phrases or affixes your language uses for 'whose' here:</prompt>
 		<textBox id="QWhose" dataItem="whose" rows="3"/>
 		<br/>
+		<prompt>Key any additional interrogative words or phrases or affixes your language uses here:</prompt>
+		<textBox id="QOther" dataItem="other" rows="3"/>
+		<br/>
 		<introduction>Of the examples of interrogative words above, most simply stand alone as pronouns or adverbs, but <example>how</example> can either be a manner adverb by itself or a degree word modifying an adjective, as in <example>how big</example> or a degree word modifying a quantifier, as in <example>how many children</example>; <example>what</example> can either be a pronoun by itself or a demonstrative modifying a noun, as in <example>what books</example>; <example>which</example> never stands alone but always modifies a noun as a demonstrative, as in <example>which boy</example>; and <example>whose</example> can be either a stand alone possessive pronoun, or it can fill the possessor position in a nominal phrase, as in <example>whose toys</example>.</introduction>
-		<instruction>In the lexicon, mark all of the interrogative words with the feature <feature>wh</feature>.
+		<instruction>In the lexicon, mark all of the interrogative words or affixes with the feature <feature>wh</feature>.
 <br/>
 			<br/>
 			<span id="QContWhichDemInstruction" show="swDemPresent">In addition, make sure that your word meaning 'which' either already has the category <category>Dem</category> or add the <feature>makeDem</feature> to the entry.</span>
 			<span id="QContWhichArtInstruction" show="swArtOnlyPresent">In addition, since your language does not have any demonstratives, make sure that your word meaning 'which' either already has the category <category>Art</category> or add the feature <feature>makeArt</feature> to the entry.</span>
-			<span id="QContWhichNoDetInstruction" show="swNoDetPresent">In addition, since your language does not have any demonstratives or articles, if you have a word meaning 'which', it will have to be treated as a possessor.  As such, it simply acts as a pronoun like the majority of the interrogative words, and the category mapping will be handled on the testing page at the end of this section.  Add the case feature <span id="QContGenCaseSpan" show="swPossCaseGen">
-					<feature>genitive</feature> to the entry to restrict its appearance to possessor position.</span>
-				<span id="QContAbsCaseSpan" show="swPossCaseAbs">
-					<feature>absolutive</feature> to the entry to restrict the positions where it may appear.</span>
-				<span id="QContErgCaseSpan" show="swPossCaseErg">
-					<feature>ergative</feature> to the entry to restrict the positions where it may appear.</span>
-			</span>
+			<span id="QContWhichNoDetInstruction" show="swNoDetPresent">In addition, since your language does not have any demonstratives or articles, if you have a word meaning 'which', it will have to be treated as a possessor.  As such, it simply acts as a pronoun like the majority of the interrogative words, and the category mapping will be handled on the testing page at the end of this section.  Add the case feature <span id="QContGenCaseSpan" show="swPossCaseGen"><feature>genitive</feature> to the entry to restrict its appearance to possessor position.</span><span id="QContAbsCaseSpan" show="swPossCaseAbs"><feature>absolutive</feature> to the entry to restrict the positions where it may appear.</span><span id="QContErgCaseSpan" show="swPossCaseErg"><feature>ergative</feature> to the entry to restrict the positions where it may appear.</span></span>
 			<br/>
 			<br/>
 The word meaning 'why' needs to have the category <category>Adv</category> (or your morphological category for adverbs that you are mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>reason</feature>. <br/>
@@ -67,12 +65,7 @@ The normal pronoun use of the word meaning 'what' and the remainder of the inter
 			<span id="QContWhatNoDetInstruction" show="swNoDetPresent">Since your language does not have any demonstratives or articles, the word meaning 'what' only needs one entry, since it simply acts as a pronoun like the majority of the interrogative words, and the category mapping to the category <category>Pron</category> will be handled on the testing page at the end of this section.  Do not add any case features to the entry, so it will be allowed in possessor position as well as taking the place of a full nominal phrase.</span>
 			<br/>
 			<br/>
-The word meaning 'whose' needs to have two entries, both with the category which will be mapped to the category <category>Pron</category> at the end of the section (and both with the feature <feature>wh</feature>).  One entry needs the feature <feature>possessive</feature> for the stand alone case and the other entry needs the case feature <span id="QContGenCaseSpan1" show="swPossCaseGen">
-				<feature>genitive</feature> to restrict its appearance to possessor position.</span>
-			<span id="QContAbsCaseSpan1" show="swPossCaseAbs">
-				<feature>absolutive</feature> to restrict the positions where it may appear.</span>
-			<span id="QContErgCaseSpan1" show="swPossCaseErg">
-				<feature>ergative</feature> to restrict the positions where it may appear.</span>
+The word meaning 'whose' needs to have two entries, both with the category which will be mapped to the category <category>Pron</category> at the end of the section (and both with the feature <feature>wh</feature>).  One entry needs the feature <feature>possessive</feature> for the stand alone case and the other entry needs the case feature <span id="QContGenCaseSpan1" show="swPossCaseGen"><feature>genitive</feature> to restrict its appearance to possessor position.</span><span id="QContAbsCaseSpan1" show="swPossCaseAbs"><feature>absolutive</feature> to restrict the positions where it may appear.</span><span id="QContErgCaseSpan1" show="swPossCaseErg"><feature>ergative</feature> to restrict the positions where it may appear.</span>
 		</instruction>
 		<radioGroup id="QContWhDemPosTable" show="swDemPosEither">
 			<groupName dataItem="whDemPos" default="unknown" position="yesSpec">RQContWhDemPos</groupName>

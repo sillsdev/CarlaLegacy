@@ -24,11 +24,17 @@
 		<prompt>Key your examples here:</prompt>
 		<textBox id="IPExamplesDiExamples" dataItem="diExample" cols="50"/>
 		<radioGroup>
-			<groupName dataItem="diCat" default="dp">RIPTransDiCat</groupName>
+			<groupName dataItem="diCat" default="pp">RIPTransDiCat</groupName>
 			<prompt>What syntactic category is the second object in a ditransitive in your language?</prompt>
 			<radio id="IPTransDiCatPP" dataValue="pp">PP only</radio>
 			<radio id="IPTransDiCatDP" dataValue="dp">DP only</radio>
 			<radio id="IPTransDiCatBoth" dataValue="both">Either a DP or a PP (as in English)</radio>
+<radioGroup id="IPTransDiOrderTable" show="swIPTransDiCatNotPP">
+	<groupName dataItem="diOrder" default="DO">RIPTransDiOrder</groupName>
+	<prompt>When both objects are nominal phrases (DPs), which object appears closest to the verb?</prompt>
+	<radio id="IPTransDiOrderDO" dataValue="direct">The direct object is next to the verb</radio>
+	<radio id="IPTransDiOrderIO" dataValue="indirect">The indirect object is next to the verb</radio>
+</radioGroup>
 		</radioGroup>
 		<instruction>Any verbs which require the second object to always be present should be marked with the feature <feature>ditransitive</feature>.  Those which allow the second object, but it is optional, can be marked <feature>transitive</feature>.</instruction>
 		<buttons>
@@ -36,4 +42,7 @@
 			<button id="IPTransNext" value="Next" goto="IPContents.htm"/>
 		</buttons>
 	</form>
+<showWhen id="swIPTransDiCatNotPP">
+	<not/><whenRadio button="IPTransDiCatPP"></whenRadio>
+</showWhen>
 </page>

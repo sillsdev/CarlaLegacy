@@ -631,6 +631,70 @@
 							<content>inanimate absolutive argument</content>
 						</col>
 					</row>
+					<row show="swIPAgrFeatHumanSubject">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>human subject</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatHumanObject">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>human object</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatHumanErgative">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>human ergative argument</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatHumanAbsolutive">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>human absolutive argument</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusHumanSubject">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>nonhuman subject</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusHumanObject">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>nonhuman object</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusHumanErgative">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>nonhuman ergative argument</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusHumanAbsolutive">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>nonhuman absolutive argument</content>
+						</col>
+					</row>
 					<row show="swIPAgrFeatClassClassNumberSubject">
 						<col>
 							<content>class</content>
@@ -856,11 +920,13 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<content> copular sentences, </content>
 				<case element="ip" attr="copular">
 					<caseText value="yes">an overt copular verb is required.</caseText>
-					<caseText value="noAux">a copular verb is not necessary, but an auxiliary is required.</caseText>
-					<caseText value="noNeither">neither an overt copular verb nor an auxiliary is required.</caseText>
+					<caseText value="yesOptional">a copular verb is optional, and no auxiliary is required either.</caseText>
+					<caseText value="yesAux">a copular verb is optional, but an auxiliary is required if the copular verb is not present.</caseText>
+					<caseText value="noAux">there is no copular verb, but an auxiliary is required.</caseText>
+					<caseText value="noNeither">neither an overt copular verb nor an auxiliary is used.</caseText>
 				</case>
 				<content/>
-				<text show="swIPCopVerbNoNeither">
+				<text show="swIPCopVerbNoNeitherOrOptional">
 					<content>  There is </content>
 					<case element="ip" attr="copularAffix">
 						<caseText value="no">not any copular affix on the predicate nominal or predicate adjective either.</caseText>
@@ -911,9 +977,12 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<content>, the second object in a ditransitive </content>
 				<case element="ip" attr="diCat">
 					<caseText value="pp">is always a PP.</caseText>
-					<caseText value="dp">is always a nominal phrase.</caseText>
-					<caseText value="both">can be either a PP or a nominal phrase.</caseText>
-				</case>
+					<caseText value="dp">is always a nominal phrase.  The </caseText>
+					<caseText value="both">can be either a PP or a nominal phrase.  When both objects are nominal phrases, the </caseText>
+				</case><text show="swIPDiCatNotPP"><case element="ip" attr="diOrder">
+<caseText value="direct">direct object</caseText>
+<caseText value="indirect">indirect object</caseText>
+</case><content> appears closest to the verb.</content></text>
 				<content>  Examples of ditransitive sentences in </content>
 				<langName/>
 				<content> include:</content>
@@ -1200,6 +1269,30 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPAgrFeatMinusAnimateAbsolutive">
 		<whenValue element="ip/ipAgrFeatMinusAnimateAbsolutive" attr="checked" value="yes"/>
 	</showWhen>
+	<showWhen id="swIPAgrFeatHumanSubject">
+		<whenValue element="ip/ipAgrFeatHumanSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanObject">
+		<whenValue element="ip/ipAgrFeatHumanObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanErgative">
+		<whenValue element="ip/ipAgrFeatHumanErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanAbsolutive">
+		<whenValue element="ip/ipAgrFeatHumanAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanSubject">
+		<whenValue element="ip/ipAgrFeatMinusHumanSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanObject">
+		<whenValue element="ip/ipAgrFeatMinusHumanObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanErgative">
+		<whenValue element="ip/ipAgrFeatMinusHumanErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanAbsolutive">
+		<whenValue element="ip/ipAgrFeatMinusHumanAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
 	<showWhen id="swIPAgrFeatClassClassNumberSubject">
 		<whenValue element="ip/ipAgrFeatClassClassNumberSubject" attr="checked" value="yes"/>
 	</showWhen>
@@ -1247,9 +1340,14 @@ Some languages are not really pro-drop languages, but at least some of the prono
 		<or/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 	</showWhen>
-	<showWhen id="swIPCopVerbNoNeither">
+	<showWhen id="swIPCopVerbNoNeitherOrOptional">
 		<whenValue element="ip" attr="copular" value="noNeither"/>
+<or/>
+		<whenValue element="ip" attr="copular" value="yesOptional"/>
 	</showWhen>
+<showWhen id="swIPDiCatNotPP">
+	<whenValue element="ip" attr="diCat" value="pp" negateValue="yes"></whenValue>
+</showWhen>
 	<showWhen id="swIPPassiveYes">
 		<whenValue element="ip" attr="passive" value="yes"/>
 	</showWhen>

@@ -12,30 +12,32 @@
 			<radio id="PronPossYes" dataValue="yes">Yes</radio>
 		</radioGroup>
 		<prompt id="PronPossYesExamples" show="swPronPossYes">
-			<br/>Key your the possessive pronouns here, with each on a new line and followed by a period, beginning with first person, then second person, then third person:
+			<br/>Key your possessive pronouns here, with each on a new line and followed by a period, beginning with first person, then second person, then third person:
 		</prompt>
 		<textBox id="PronPossExample" dataItem="possExample" show="swPronPossYes"/>
 		<radioGroup id="PronPossAffix" show="swPronPossYes">
 			<groupName dataItem="possAffix" default="no">RPronPossAffix</groupName>
 			<prompt>
-				<br/>Are the stand alone possessive pronouns built by adding an affix to other pronouns?</prompt>
+				<br/>Are the stand alone possessive pronouns built by adding one or more affixes to other pronouns (or to another word)?</prompt>
 			<radio id="PronPossAffixNo" dataValue="no">No, they are distinct, stand alone words</radio>
-			<radio id="PronPossAffixYes" dataValue="yes">Yes, one or more affixes are used to make another pronoun possessive</radio>
-			<radio id="PronPossAffixBoth" dataValue="both">Yes, one or more affixes are used to make another pronoun possessive, but some forms are distinct, stand alone words</radio>
+			<radio id="PronPossAffixYes" dataValue="yes">Yes, one or more affixes are used to make another pronoun (or another word) into a possessive</radio>
+			<radio id="PronPossAffixBoth" dataValue="both">Yes, one or more affixes are used to make another pronoun (or another word) into a possessive in some cases, but some forms are distinct, stand alone words</radio>
 		</radioGroup>
-		<instruction id="PronPossAffixNoInstruction" show="swPronPossAffixNo">In the lexicon, mark each possessive pronoun with the feature <feature>possessive</feature> and also
+		<instruction id="PronPossAffixNoInstruction" show="swPronPossAffixNo">In the lexicon, mark each possessive pronoun with the feature <feature>possessive</feature> and also all the relevant
 <ul>
-				<li>all the relevant person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
-				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), and</li>
-				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
+				<li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
+				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), </li>
+				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) and </li>
+				<li>animacy (<feature>animate</feature>, <feature>-animate</feature>, <feature>human</feature>, <feature>-human</feature>), features.</li>
 			</ul>
 		</instruction>
 		<instruction id="PronPossAffixYesInstruction" show="swPronPossAffixYes">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.</instruction>
-		<instruction id="PronPossAffixBothInstruction" show="swPronPossAffixBoth">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.  In addition, mark each stand alone possessive pronoun with the feature <feature>possessive</feature> and also
+		<instruction id="PronPossAffixBothInstruction" show="swPronPossAffixBoth">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.  In addition, mark each stand alone possessive pronoun with the feature <feature>possessive</feature> and also all the relevant
 <ul>
-				<li>all the relevant person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
-				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), and</li>
-				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
+				<li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
+				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), </li>
+				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) and </li>
+				<li>animacy (<feature>animate</feature>, <feature>-animate</feature>, <feature>human</feature>, <feature>-human</feature>), features.</li>
 			</ul>
 		</instruction>
 		<br/>

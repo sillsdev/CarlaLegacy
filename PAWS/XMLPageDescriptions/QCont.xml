@@ -3,22 +3,25 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QCont">
 	<title level="2">Questions - Phrase Structure of Content Questions</title>
-		   <introduction>Depending on the basic word order of your language, content questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.<br/>
- <br/>In languages like English, the interrogative word or phrase must be fronted.  In the trees, this fronting will be to the specifier of CP.  Sample trees for main clause and embedded content questions in English are shown here:
+	<introduction>Depending on the basic word order of your language, content questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.<br/>
+		<br/>In languages like English, the interrogative word or phrase must be fronted.  In the trees, this fronting will be to the specifier of CP.  Sample trees for main clause and embedded content questions in English are shown here:
 <tree img="../TreeDescriptions/PawsMainContentQues.png"/>
-			<br/>
-			<tree img="../TreeDescriptions/PawsEmbContentQues.png"/>
-			<br/>
-			<help href="../Help/Cbgbtext.doc#ContentQuestions">Click here for more information about the CP phrase structure of content questions.</help>
-			<br/>
-<br/>
+		<br/>
+		<tree img="../TreeDescriptions/PawsEmbContentQues.png"/>
+		<br/>
+		<help href="../Help/Cbgbtext.doc#ContentQuestions">Click here for more information about the CP phrase structure of content questions.</help>
+		<br/>
+		<br/>
 In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the head of CP position or just the same as a normal sentence (IP).  In either case, the interrogative phrase appears in its normal argument positon.
+<br/>
+<br/>
+Many SOV languages optionally allow movement of an interrogative phrase to the position immediately before the verb, which will be within the VP in the tree structures used here.
 		</introduction>
-	 <form section="q" transparent="yes">
-	   <br/>
+	<form section="q" transparent="yes">
+		<br/>
 		<buttons>
 			<button id="QContBack" value="Back" goto="QWh.htm"/>
 			<button id="QContNext" value="Next" goto="QMainCont.htm"/>
 		</buttons>
-</form>
+	</form>
 </page>

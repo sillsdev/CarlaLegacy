@@ -187,7 +187,7 @@
 			<p>
 				<content>Content questions differ from Yes/No questions in that they contain an interrogative word or phrase, known as wh-phrases in English because they almost all begin with </content>
 				<langData>wh</langData>
-				<content>.  The corresponding interrogative words or phrases in </content>
+				<content>.  The corresponding interrogative words or phrases or affixes in </content>
 				<langName/>
 				<content> are shown in the following chart.</content>
 			</p>
@@ -246,6 +246,12 @@
 							<content>whose</content>
 						</col>
 						<col exampleLoc="q/whose"/>
+					</row>
+					<row>
+						<col>
+							<content>other interrogatives</content>
+						</col>
+						<col exampleLoc="q/other"/>
 					</row>
 				</table>
 			</example>
@@ -326,14 +332,16 @@
 				<content>&#x20;</content>
 			</p>
 			<p>
-				<content>Depending on the basic word order of the language, content questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.  In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the complementizer position or just the same as a normal sentence.  In either case, the interrogative phrase appears in its normal argument positon.</content>
+				<content>Depending on the basic word order of the language, content questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.  In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the complementizer position or just the same as a normal sentence.  In either case, the interrogative phrase appears in its normal argument positon.  Many SOV languages optionally allow movement of an interrogative phrase to the position immediately before the verb.
+</content>
 			</p>
 			<p>
 				<content>In both main clause and embedded content questions in </content>
 				<langName/>
 				<content>, an interrogative phrase </content>
 				<case element="q" attr="contFront">
-					<caseText value="after">does not front; it simply remains in place.</caseText>
+					<caseText value="no">does not front; it simply remains in place.</caseText>
+					<caseText value="after">may remain in place or it may move to the position immediately before the verb.</caseText>
 					<caseText value="before">moves to the front of the clause.</caseText>
 				</case>
 				<content>&#x20;</content>
@@ -366,7 +374,8 @@
 					<text show="swQMainContNo">
 						<content> just </content>
 						<case element="q" attr="contFront">
-							<caseText value="after">a difference in</caseText>
+							<caseText value="no">a difference in</caseText>
+							<caseText value="after">optional movement of an interrogative phrase and possibly a difference in</caseText>
 							<caseText value="before">fronting of an interrogative phrase and possibly a difference in</caseText>
 						</case>
 						<content> intonation or tone or other non-syntactic marking.</content>
@@ -384,6 +393,7 @@
 							<caseText value="yes">required</caseText>
 						</case>
 						<case element="q" attr="contFront">
+							<caseText value="no">.</caseText>
 							<caseText value="after">.</caseText>
 							<caseText value="before"> in addition to the fronting of an interrogative phrase.</caseText>
 						</case>
@@ -496,7 +506,8 @@
 					<text show="swQEmbContNo">
 						<content> just </content>
 						<case element="q" attr="contFront">
-							<caseText value="after">a difference in</caseText>
+							<caseText value="no">a difference in</caseText>
+							<caseText value="after">optional movement of an interrogative phrase and possibly a difference in</caseText>
 							<caseText value="before">fronting of an interrogative phrase and possibly a difference in</caseText>
 						</case>
 						<content> intonation or tone or other non-syntactic marking.</content>
@@ -514,6 +525,7 @@
 							<caseText value="yes">required</caseText>
 						</case>
 						<case element="q" attr="contFront">
+							<caseText value="no">.</caseText>
 							<caseText value="after">.</caseText>
 							<caseText value="before"> in addition to the fronting of an interrogative phrase.</caseText>
 						</case>
@@ -640,7 +652,7 @@
 	</showWhen>
 	<showWhen id="swQEmbYNWordYes">
 		<whenValue element="q" attr="embYNWord" value="yes"/>
-<and/>
+		<and/>
 		<whenValue element="q" attr="embYN" value="yes"/>
 	</showWhen>
 	<showWhen id="swQEmbYNEitherRestricted">
@@ -649,7 +661,7 @@
 		<whenValue element="q" attr="embYNPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="q" attr="embYNPos" value="after" negateValue="yes"/>
-<and/>
+		<and/>
 		<whenValue element="q" attr="embYN" value="yes"/>
 	</showWhen>
 	<showWhen id="swQEmbYNEitherUnrestricted">
@@ -658,7 +670,7 @@
 		<whenValue element="q" attr="embYNPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="q" attr="embYNPos" value="after" negateValue="yes"/>
-<and/>
+		<and/>
 		<whenValue element="q" attr="embYN" value="yes"/>
 	</showWhen>
 	<showWhen id="swQEmbYNNoAux">

@@ -265,6 +265,20 @@ IP = I'
 		<and/>
 		<whenValue element="q" attr="contFront" value="before"/>
 	</showWhen>
+	<rule show="IPoption4aSOV">
+rule {IP option 4aSOV - subject questioned, not passive, SOV}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;IP head type question&gt; = +
+		&lt;IP head type pro-drop&gt; = -
+	&lt;IP head type passive&gt; = -
+	&lt;IP option&gt; = 4aSOV
+</rule>
+	<showWhen id="IPoption4aSOV">
+		<whenValue element="typology" attr="wordOrder" value="SOV"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="after"/>
+	</showWhen>
 	<rule show="IPoption4b">
 rule {IP option 4b - subject questioned, passive}
 IP = I'
@@ -275,7 +289,6 @@ IP = I'
 	&lt;IP head fronted cat&gt; = DP
 	&lt;IP head fronted head type wh&gt; = +
 	&lt;IP head fronted&gt; = &lt;I' head object&gt;
-	&lt;IP rule&gt; = 4b
 	&lt;IP head fronted head&gt; == ~[case:accusative]
 	&lt;IP option&gt; = 4b
 </rule>
@@ -285,6 +298,22 @@ IP = I'
 		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
 		<and/>
 		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+	</showWhen>
+	<rule show="IPoption4bSOV">
+rule {IP option 4bSOV - subject questioned, passive, SOV}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;IP head type question&gt; = +
+		&lt;IP head type pro-drop&gt; = -
+	&lt;IP head type passive&gt; = +
+	&lt;IP option&gt; = 4bSOV
+</rule>
+	<showWhen id="IPoption4bSOV">
+		<whenValue element="typology" attr="wordOrder" value="SOV"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="after"/>
 		<and/>
 		<whenValue element="ip" attr="passive" value="yes"/>
 	</showWhen>

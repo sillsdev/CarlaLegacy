@@ -268,6 +268,46 @@
 				<featureExplanation>the subject of an intransitive verb or the object of a transitive verb must be inanimate</featureExplanation>
 			</featureRow>
 			<featureRow>
+				<featureType/>
+				<featureItem dataValue="ipAgrFeatHumanSubject" name="IPFeatAgrHumanSubject">human_subject</featureItem>
+				<featureExplanation>the subject must be human</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem dataValue="ipAgrFeatHumanObject" name="IPFeatAgrHumanObject">human_object</featureItem>
+				<featureExplanation>the object must be human</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem dataValue="ipAgrFeatHumanErgative" name="IPFeatAgrHumanErgative">human_ergative</featureItem>
+				<featureExplanation>the subject of a transitive verb must be human</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem dataValue="ipAgrFeatHumanAbsolutive" name="IPFeatAgrHumanAbsolutive">human_absolutive</featureItem>
+				<featureExplanation>the subject of an intransitive verb or the object of a transitive verb must be hman</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem dataValue="ipAgrFeatMinusHumanSubject" name="IPFeatAgrMinusHumanSubject">-human_subject</featureItem>
+				<featureExplanation>the subject must be nonhuman</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem dataValue="ipAgrFeatMinusHumanObject" name="IPFeatAgrMinusHumanObject">-human_object</featureItem>
+				<featureExplanation>the object must be nonhuman</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem dataValue="ipAgrFeatMinusHumanErgative" name="IPFeatAgrMinusHumanErgative">-human_ergative</featureItem>
+				<featureExplanation>the subject of a transitive verb must be nonhuman</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem dataValue="ipAgrFeatMinusHumanAbsolutive" name="IPFeatAgrMinusHumanAbsolutive">-human_absolutive</featureItem>
+				<featureExplanation>the subject of an intransitive verb or the object of a transitive verb must be nonhuman</featureExplanation>
+			</featureRow>
+			<featureRow>
 				<featureType>class</featureType>
 				<featureItem dataValue="ipAgrFeatClassClassNumberSubject" name="IPFeatAgrClassClassNumberSubject">class_##_subject</featureItem>
 				<featureExplanation>the subject must be class ## (replace ## with the class number up to 30)</featureExplanation>

@@ -21,19 +21,20 @@
 			<groupName dataItem="contFront" default="unknown" position="yesHead">RQContFront</groupName>
 			<prompt>Is an interrogative phrase required to be fronted in content questions in your language?</prompt>
 			<radio id="QContFrontYes" dataValue="before">Yes, like English</radio>
-			<radio id="QContFrontNo" dataValue="after">No, it simply remains in place</radio>
+			<radio id="QContFrontOptional" dataValue="after">No, it may remain in place or it may move to the position directly before the verb</radio>
+			<radio id="QContFrontNo" dataValue="no">No, it simply remains in place</radio>
 		</radioGroup>
 		<radioGroup>
 			<groupName dataItem="mainCont" default="no">RQMainCont</groupName>
-			<prompt>In main clause content questions, are there one or more special question marker particles or complementizers that may occur in addition to the interrogative phrases?</prompt>
+			<prompt>In main clause content questions, are there one or more special question marker particles or complementizers that may occur in addition to the interrogative phrases (include affixes or clitics in answering this question)?</prompt>
 			<radio id="QMainContYes" dataValue="yes">Yes</radio>
 			<radioGroup id="QMainContWordTable" show="swQMainContYes">
 				<groupName dataItem="mainContWord" default="yes">RQMainContWord</groupName>
 				<prompt>Is it written as a separate word?</prompt>
-				<radio id="QMainContWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
+				<radio id="QMainContWordNo" dataValue="no">No, it is an affix or clitic which attaches to another word</radio>
 				<radioGroup id="QMainContCliticPosTable" show="swQMainContWordNo">
 					<groupName dataItem="mainContCliticPos" default="unknown" position="yesHead">RQMainContCliticPos</groupName>
-					<prompt>Is the clitic a proclitic or an enclitic?</prompt>
+					<prompt>Is the clitic a proclitic (prefix) or an enclitic (suffix)?</prompt>
 					<radio id="QMainContCliticPosBefore" dataValue="before">A proclitic or prefix</radio>
 					<radio id="QMainContCliticPosAfter" dataValue="after">An enclitic or suffix</radio>
 					<radio id="QMainContCliticPosBoth" dataValue="both">Some of each type</radio>
@@ -42,7 +43,8 @@
 					<groupName dataItem="mainContCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
 					<prompt>Where does the clitic attach to the question?</prompt>
 					<radio id="QMainContCliticAttachesEdge" dataValue="edge">At the edge</radio>
-					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes"><span id="QMainContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
+					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">
+						<span id="QMainContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
 					</radio>
 					<radio id="QMainContCliticAttachesHead" dataValue="head">To the verb</radio>
 				</radioGroup>
@@ -98,7 +100,7 @@
 				<radio id="QMainContAuxRequiredYes" dataValue="yes">Yes</radio>
 				<radio id="QMainContAuxRequiredNo" dataValue="no">No, some content questions do not require a fronted auxiliary, such as content questions which question the subject in English</radio>
 			</radioGroup>
-			<radio id="QMainContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QMainContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
+			<radio id="QMainContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QMainContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span><span id="QMainContNoFrontOptionalSpan" show="swQContFrontOptional">optional movement of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
 		</radioGroup>
 		<instruction id="QMainContHeadCliticInstruction" show="swQMainContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QMainContEdgeCliticPrefixInstruction" show="swQMainContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
@@ -130,6 +132,9 @@
 	</showWhen>
 	<showWhen id="swQContFrontYes">
 		<whenRadio button="QContFrontYes"/>
+	</showWhen>
+	<showWhen id="swQContFrontOptional">
+		<whenRadio button="QContFrontOptional"/>
 	</showWhen>
 	<showWhen id="swVSOWordFrontYes">
 		<whenRadio button="QMainContWordYes"/>

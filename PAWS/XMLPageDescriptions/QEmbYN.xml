@@ -17,15 +17,15 @@
 		</instruction>
 		<radioGroup>
 			<groupName dataItem="embYN" default="no">RQEmbYN</groupName>
-			<prompt>For embedded clause Yes/No questions, does your language have one or more Yes/No question marker particles, words or complementizers?</prompt>
+			<prompt>For embedded clause Yes/No questions, does your language have one or more Yes/No question marker particles, words or complementizers (include affixes or clitics in answering this question)?</prompt>
 			<radio id="QEmbYNYes" dataValue="yes">Yes, like <example>whether</example> and <example>if</example> in English</radio>
 			<radioGroup id="QEmbYNWordTable" show="swQEmbYNYes">
 				<groupName dataItem="embYNWord" default="yes">RQEmbYNWord</groupName>
 				<prompt>Is it written as a separate word?</prompt>
-				<radio id="QEmbYNWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
+				<radio id="QEmbYNWordNo" dataValue="no">No, it is an affix or clitic which attaches to another word</radio>
 				<radioGroup id="QEmbYNCliticPosTable" show="swQEmbYNWordNo">
 					<groupName dataItem="embYNCliticPos" default="unknown" position="yesHead">RQEmbYNCliticPos</groupName>
-					<prompt>Is the clitic a proclitic or an enclitic?</prompt>
+					<prompt>Is the clitic a proclitic (prefix) or an enclitic (suffix)?</prompt>
 					<radio id="QEmbYNCliticPosBefore" dataValue="before">A proclitic or prefix</radio>
 					<radio id="QEmbYNCliticPosAfter" dataValue="after">An enclitic or suffix</radio>
 					<radio id="QEmbYNCliticPosBoth" dataValue="both">Some of each type</radio>

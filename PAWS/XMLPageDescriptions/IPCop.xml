@@ -12,11 +12,12 @@
 	<form section="ip">
 		<prompt>Key your intransitive examples here:</prompt>
 		<textBox id="IPExamplesIntranExample" dataItem="intransExample" cols="50"/>
-<br/>
-<br/>
+		<br/>
+		<br/>
 		<prompt>Key your examples with motion verbs here:</prompt>
 		<textBox id="IPExamplesMotionExample" dataItem="motionExample" cols="50"/>
-		<instruction>Partial subcategorization can be done as follows, without entering a feature on every verb: if a particular verb is intransitive and can never have anything but a subject, mark it with the feature <feature>intransitive</feature>.  (Don't consider temporal elements.)  If it is an intransitive motion verb that can have a locative PP or AdvP <span id="IPCopFollow" show="swHeadInitial">following</span><span id="IPCopPrecede" show="swHeadFinal">preceding</span> it, add the feature <feature>motion</feature> to its lexical entry.</instruction>
+		<instruction>Partial subcategorization can be done as follows, without entering a feature on every verb: if a particular verb is intransitive and can never have anything but a subject, mark it with the feature <feature>intransitive</feature>.  (Don't consider temporal elements.)  If it is an intransitive motion verb that can have a locative PP or AdvP <span id="IPCopFollow" show="swHeadInitial">following</span>
+			<span id="IPCopPrecede" show="swHeadFinal">preceding</span> it, add the feature <feature>motion</feature> to its lexical entry.</instruction>
 		<introduction>Copular sentences can have an adjective, PP, or nominal phrase following the copular verb.  Some languages do not require a copular verb or auxiliary to be present.  English examples include:</introduction>
 		<EnglishExample>
 			<exItem label="1.">The girl is pretty.</exItem>
@@ -29,11 +30,13 @@
 		<instruction>Add the feature <feature>copular</feature> to the verbs that take AdjP, PP or predicate nominative complements. Since the motion and copular verbs are a small, closed set, these features must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-motion</feature> and <feature>-copular</feature>.</instruction>
 		<radioGroup>
 			<groupName dataItem="copular" default="yes">RIPCopVerb</groupName>
-			<prompt>Do copular type sentences require an overt verb in your language?</prompt>
-			<radio id="IPCopVerbYes" dataValue="yes">Yes</radio>
-			<radio id="IPCopVerbNoNeither" dataValue="noNeither">No, neither a verb nor an auxiliary is required</radio>
-			<radio id="IPCopVerbNoAux" dataValue="noAux">No, but an auxiliary is required</radio>
-			<radioGroup id="IPCopVerbNoNeitherTable" show="swIPCopVerbNoNeither">
+			<prompt>Does your language have an overt verb used in copular type sentences?</prompt>
+			<radio id="IPCopVerbYes" dataValue="yes">Yes, and the copular verb is required</radio>
+			<radio id="IPCopVerbYesOptional" dataValue="yesOptional">Yes, the language has a copular verb, but it is optional in at least some cases and no auxiliary is required then</radio>
+			<radio id="IPCopVerbYesAux" dataValue="yesAux">Yes, the language has a copular verb, but it is optional when an auxiliary is present</radio>
+			<radio id="IPCopVerbNoAux" dataValue="noAux">No, there is no copular verb but an auxiliary is required</radio>
+			<radio id="IPCopVerbNoNeither" dataValue="noNeither">No, neither a verb nor an auxiliary is used in copular type sentences</radio>
+			<radioGroup id="IPCopVerbNoNeitherTable" show="swIPCopVerbNoNeitherOrOptional">
 				<groupName dataItem="copularAffix" default="no">RIPCopAiifx</groupName>
 				<prompt>Is there an affix which occurs on the predicate nominal or predicate adjective in copular sentences?</prompt>
 				<radio id="IPCopAffixNo" dataValue="no">No</radio>
@@ -61,11 +64,14 @@
 		<or/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 	</showWhen>
-	<showWhen id="swIPCopVerbNoNeither">
+	<showWhen id="swIPCopVerbNoNeitherOrOptional">
 		<whenRadio button="IPCopVerbNoNeither"/>
+<or/>        <whenRadio button="IPCopVerbYesOptional"/>
 	</showWhen>
 	<showWhen id="swIPCopAffixYes">
-		<whenRadio button="IPCopVerbNoNeither"/>
+ <openParen/>       <whenRadio button="IPCopVerbNoNeither"/>
+<or/>        <whenRadio button="IPCopVerbYesOptional"/>
+<closeParen/>
 		<and/>
 		<whenRadio button="IPCopAffixYes"/>
 	</showWhen>
