@@ -37,6 +37,7 @@ if exist cmdlib\cmd.h copy cmdlib\cmd.h include\cmd.h >nul
 if exist cportlib\cportlib.h copy cportlib\cportlib.h include\cportlib.h >nul
 if exist opaclib\allocmem.h copy opaclib\allocmem.h include\allocmem.h >nul
 if exist opaclib\change.h copy opaclib\change.h include\change.h >nul
+if exist opaclib\dynstr.h copy opaclib\dynstr.h include\dynstr.h >nul
 if exist opaclib\opaclib.h copy opaclib\opaclib.h include\opaclib.h >nul
 if exist opaclib\record.h copy opaclib\record.h include\record.h >nul
 if exist opaclib\rpterror.h copy opaclib\rpterror.h include\rpterror.h >nul

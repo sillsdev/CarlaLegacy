@@ -12,7 +12,7 @@
  *			      possible edges that can be derived up to that
  *			      point have been computed as a side-effect.
  ******************************************************************************
- * Copyright 1990, 2000 by SIL International.  All rights reserved.
+ * Copyright 1990, 2001 by SIL International.  All rights reserved.
  */
 #include "patr.h"
 #include "patrdef.h"
@@ -100,6 +100,8 @@ static void		show_vertex P((PATRVertex *  pVertex,
 static int		mark_parse_certainty  P((PATREdgeList * pEdgeList_io,
 						 PATRData * pThis));
 static int		count_parse_failures P((PATREdgeList * pList_in));
+static int		doublecheck_constraints P((PATREdge * pEdge_in, PATRFeature * pDag_in,
+						   PATRParseData * pData));
 static PATREdgeList * parse_with_PATR P((PATRWord * pSentence_in,
 					 PATRParseData * pData));
 static void		parse_too_big P((size_t uiRequest_in));
@@ -1538,6 +1540,53 @@ return( fail );
 
 /*****************************************************************************
  * NAME
+ *    doublecheck_constraints
+ * DESCRIPTION
+ *    Recursively run down the parse tree, checking all logical constraints at
+ *    each edge.
+ * RETURN VALUE
+ *    true if all constraints are always satisfied, otherwise false.
+ */
+static int doublecheck_constraints(pEdge_in, pDag_in, pData_in)
+PATREdge * pEdge_in;
+PATRFeature * pDag_in;
+PATRParseData * pData_in;
+{
+if (pEdge_in->eType == PATR_RULE_EDGE)
+	{
+	PATREdgeList * pel;
+	PATRConstraint * pConstraint;
+
+	if (pData_in->pPATR->iDebugLevel >= 2)
+	{
+	fprintf(stdout, "DEBUG: doublecheck_constraints(pEdge, pData)\n");
+	fprintf(stdout, "pEdge->pszLabel = \"%s\"\n",
+		pEdge_in->pszLabel ? pEdge_in->pszLabel : "{NULL}");
+	fprintf(stdout, "pEdge_in->pFeature = ");
+	writePATRFeature(pEdge_in->pFeature, stdout, 12, pData_in->pPATR);
+	fprintf(stdout, "\npDag_in = ");
+	writePATRFeature(pDag_in, stdout, 12, pData_in->pPATR);
+	fprintf(stdout, "\n");
+	}
+
+	for (   pConstraint = pEdge_in->u.r.pRule->pConstraints ;
+		pConstraint ;
+		pConstraint = pConstraint->pNext )
+	{
+	if (!applyPATRConstraint(pDag_in, pConstraint, pData_in->pPATR))
+		return FALSE;
+	}
+	for ( pel = pEdge_in->u.r.pChildren ; pel ; pel = pel->pNext )
+	{
+	if (!doublecheck_constraints(pel->pEdge, pEdge_in->pFeature, pData_in))
+		return FALSE;
+	}
+	}
+return TRUE;
+}
+
+/*****************************************************************************
+ * NAME
  *    parse_with_PATR
  * DESCRIPTION
  *    Main left-corner parsing routine.  Adds all senses of WORDS one at
@@ -1618,6 +1667,20 @@ if (pData->pPATR->iDebugLevel)
 pParseList = build_parse_list(pData->pPATR->pGrammar, pData);
 if (pParseList != NULL)
 	{
+	PATREdgeList * pel;
+	PATREdgeList * pelPrev = NULL;
+	for ( pel = pParseList ; pel ; pel = pel->pNext )
+	{
+	int ok = doublecheck_constraints(pel->pEdge, pel->pEdge->pFeature, pData);
+	if (!ok)
+		{
+		if (pelPrev)
+		pelPrev->pNext = pel->pNext;
+		else
+		pParseList = pel->pNext;
+		}
+	pelPrev = pel;
+	}
 	if (    pData->pPATR->bUnification && !pData->pPATR->bFailure &&
 		count_parse_failures(pParseList) )
 	{

@@ -1,15 +1,19 @@
 /* VERSION.H - version number and date information for PC-PATR
 *******************************************************************************
- * Copyright 1994, 2000 by SIL International.  All rights reserved.
+ * Copyright 1994, 2001 by SIL International.  All rights reserved.
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 11		/* bug fix or other minor change */
-#define DATE "September 20, 2001"	/* date of release version */
+#define PATCHLEVEL 12		/* bug fix or other minor change */
+#define DATE "September 27, 2001"	/* date of release version */
 #define YEAR "2001"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 27-Sep-2001	SRMc - add doublecheck_constraints() function to perform a
+ *			final pass through a parse tree to verify that all
+ *			logical constraints are still satisfied in the final
+ *			result.
  * 20-Sep-2001  hab  - change failure message from "Cannot parse" to
  * [1.2.11]             "Not able to parse" so will not erroneously give a
  *                      warning in CarlaStudio.  Yes, this is a hack...
