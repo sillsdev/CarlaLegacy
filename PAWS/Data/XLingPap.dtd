@@ -4,8 +4,8 @@
 	 (Revision history is at the end.)
   -->
 <!-- Entity definitions -->
-<!ENTITY % embedded "langData | gloss | exampleRef | sectionRef | citation | comment | object | br | endnote | endnoteRef | q | img">
-<!ENTITY % chunk "p | example | table | chart | tree | blockquote | ol | ul | dl">
+<!ENTITY % embedded "langData | gloss | exampleRef | sectionRef | appendixRef | citation | comment | object | br | endnote | endnoteRef | q | img">
+<!ENTITY % chunk "p | pc | example | table | chart | tree | blockquote | ol | ul | dl">
 <!-- A paper contains various language information, optional frontmatter,
 	 either parts, chapters, or sections (at the top level), and optional
 	 backmatter.
@@ -13,7 +13,7 @@
 	 The CSS attribute allows one to specify a particular cascading style
 	 sheet file.  The default is given in the XSLT template.
   -->
-<!ELEMENT lingPaper (language*, frontMatter?, (part* | chapter* | section1*), backMatter?, comment?)>
+<!ELEMENT lingPaper (language*, frontMatter?, ((chapter?, part*) | chapter* | section1*), backMatter?, comment?)>
 <!ATTLIST lingPaper
   css CDATA #IMPLIED
 >
@@ -25,16 +25,25 @@
   ethnCode CDATA #IMPLIED
 >
 <!-- Front matter -->
-<!ELEMENT frontMatter (title, (author, affiliation?)+, date?, version?, contents?, abstract?)>
+<!ELEMENT frontMatter (title, (author, affiliation*)+, presentedAt?, date?, version?, contents?, acknowledgements?, abstract?)>
 <!ELEMENT title (#PCDATA | %embedded;)*>
 <!ELEMENT author (#PCDATA)>
 <!ELEMENT affiliation (#PCDATA)>
+<!ELEMENT presentedAt (#PCDATA | %embedded;)*>
 <!ELEMENT date (#PCDATA)>
 <!ELEMENT version (#PCDATA)>
+<!ELEMENT acknowledgements (%chunk;)+>
+<!ATTLIST acknowledgements
+  label CDATA #IMPLIED
+>
 <!ELEMENT abstract (%chunk;)+>
+<!ATTLIST abstract
+  label CDATA #IMPLIED
+>
 <!ELEMENT contents EMPTY>
 <!ATTLIST contents
   showLevel (1 | 2 | 3 | 4 | 5 | 6) "3"
+  label CDATA #IMPLIED
 >
 <!-- Main content -->
 <!ELEMENT part (secTitle, (%chunk; | chapter)*)>
@@ -75,8 +84,14 @@
 <!ATTLIST sectionRef
   sec IDREF #REQUIRED
 >
+<!ELEMENT appendixRef EMPTY>
+<!ATTLIST appendixRef
+  app IDREF #REQUIRED
+>
 <!-- paragraph -->
 <!ELEMENT p (#PCDATA | %embedded;)*>
+<!-- paragraph continuation -->
+<!ELEMENT pc (#PCDATA | %embedded;)*>
 <!-- blockquote -->
 <!ELEMENT blockquote (#PCDATA | %embedded; | %chunk;)*>
 <!ATTLIST blockquote
@@ -104,7 +119,7 @@
 <!-- object is a generic way to tag a special kind of object.  One can
 	 use the CSS stylesheet to format these objects by referring to the
 	 class attribute.  -->
-<!ELEMENT object (#PCDATA)>
+<!ELEMENT object (#PCDATA | object)*>
 <!ATTLIST object
   class CDATA #REQUIRED
 >
@@ -135,8 +150,7 @@
 							  "John saw the snake."
 	 tree, chart, and table
 
-	 If one include the num attribute, then the example will be automatically
-	 numbered.
+	 If one includes the num attribute, then one can reference the example by number.
 -->
 <!ELEMENT example (word | listWord+ | single | listSingle+ | interlinear | listInterlinear+ | tree | chart | table)>
 <!ATTLIST example
@@ -152,8 +166,9 @@
 <!ATTLIST listSingle
   letter ID #REQUIRED
 >
-<!ELEMENT interlinear (line | free | conflatedLine)+>
-<!ELEMENT line (wrd+ | (langData | gloss)+)>
+<!ELEMENT interlinear (lineGroup | free | interlinear)+>
+<!ELEMENT lineGroup (line | conflatedLine)+>
+<!ELEMENT line ((langData | gloss)+ | wrd+)>
 <!ELEMENT wrd (#PCDATA | %embedded;)*>
 <!ATTLIST wrd
   lang IDREF #REQUIRED
@@ -165,38 +180,53 @@
 >
 <!ELEMENT lineSetRow (wrd+)>
 <!ELEMENT conflation (lineSet+)>
-<!ELEMENT free (gloss)>
-<!ELEMENT listInterlinear (line | free)+>
+<!ELEMENT free (#PCDATA | %embedded;)*>
+<!ELEMENT listInterlinear (lineGroup | free | interlinear)+>
 <!ATTLIST listInterlinear
   letter ID #REQUIRED
 >
-<!ELEMENT table (caption?, headerRow?, row+)>
+<!ELEMENT table (caption?, headerRow?, row+, caption?)>
 <!ATTLIST table
   border CDATA #IMPLIED
   class CDATA #IMPLIED
 >
-<!ELEMENT caption (langData | gloss)+>
+<!ELEMENT caption (#PCDATA | %embedded;)*>
+<!ATTLIST caption
+  align (left | center | right | justify) "left"
+  class CDATA #IMPLIED
+  colspan CDATA #IMPLIED
+  rowspan CDATA #IMPLIED
+  valign (top | middle | bottom | baseline) "top"
+>
 <!ELEMENT headerRow (headerCol+)>
 <!ATTLIST headerRow
   class CDATA #IMPLIED
 >
-<!ELEMENT headerCol (#PCDATA | langData | gloss)*>
+<!ELEMENT headerCol (#PCDATA | %embedded; | table)*>
 <!ATTLIST headerCol
+  align (left | center | right | justify) "left"
   class CDATA #IMPLIED
+  colspan CDATA #IMPLIED
+  rowspan CDATA #IMPLIED
+  valign (top | middle | bottom | baseline) "top"
 >
 <!ELEMENT row (col+)>
 <!ATTLIST row
   class CDATA #IMPLIED
 >
-<!ELEMENT col (#PCDATA | langData | gloss | table)*>
+<!ELEMENT col (#PCDATA | %embedded; | table)*>
 <!ATTLIST col
+  align (left | center | right | justify) "left"
   class CDATA #IMPLIED
+  colspan CDATA #IMPLIED
+  rowspan CDATA #IMPLIED
+  valign (top | middle | bottom | baseline) "top"
 >
-<!ELEMENT chart (#PCDATA)>
+<!ELEMENT chart (#PCDATA | img)*>
 <!ATTLIST chart
   class CDATA #IMPLIED
 >
-<!ELEMENT tree (#PCDATA | img)*>
+<!ELEMENT tree (#PCDATA | p | img)*>
 <!ATTLIST tree
   class CDATA #IMPLIED
 >
@@ -271,7 +301,7 @@
 <!ELEMENT refDate (#PCDATA)>
 <!ELEMENT refTitle (#PCDATA | %embedded;)*>
 <!-- journal article -->
-<!ELEMENT article (jTitle, jVol, jPages)>
+<!ELEMENT article (jTitle, jVol, jPages, publisher?, location?)>
 <!ELEMENT jTitle (#PCDATA)>
 <!ELEMENT jVol (#PCDATA)>
 <!ELEMENT jPages (#PCDATA)>
@@ -281,7 +311,7 @@
 <!ELEMENT publisher (#PCDATA)>
 <!ELEMENT location (#PCDATA)>
 <!-- paper from a collection volume -->
-<!ELEMENT collection (collEd, collTitle, (collVol, collPage?)?, publisher, location?)>
+<!ELEMENT collection (collEd, collTitle, collVol?, collPage?, publisher, location?)>
 <!ELEMENT collEd (#PCDATA)>
 <!ATTLIST collEd
   plural (no | yes) "yes"
@@ -300,7 +330,7 @@
 <!ELEMENT paper (conference, location?)>
 <!ELEMENT conference (#PCDATA)>
 <!-- proceedings paper from a conference -->
-<!ELEMENT proceedings (procEd, procTitle, (procVol, procPage?)?, publisher, location?)>
+<!ELEMENT proceedings (procEd, procTitle, procVol?, procPage?, publisher, location?)>
 <!ELEMENT procEd (#PCDATA)>
 <!ATTLIST procEd
   plural (no | yes) "yes"
@@ -1100,6 +1130,8 @@
 <!ENTITY euro "&#8364;">
 <!-- euro sign, U+20AC NEW -->
 <!-- REVISION HISTORY
+1.4.1    07-Oct-2002 Andy Black Added items as needed for ZapNum paper
+1.2.1 16-Sep-2002 Andy Black  Allow a single chapter before any parts
 1.2  03-Jul-2002  Andy Black  Added HTML 4.0 entities
 												 Added wrd, conflatedLine, lineSet, conflation, and lineSetRow
 1.0 21-Jun-2001 Andy Black  Initial draft.

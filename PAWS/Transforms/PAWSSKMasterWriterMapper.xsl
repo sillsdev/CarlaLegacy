@@ -90,22 +90,31 @@ Include other templates
   <xsl:include href="WriterExcl.xsl"/>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-DoGlossAndFree
-	routine to create empty gloss and free lines for interlinear
+DoFree
+	routine to create empty free line for interlinear
 		Parameters: none
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
-  <xsl:template name="DoGlossAndFree">
-	<line>
-	  <gloss lang="lGloss">
-		<object class="comment">ENTER GLOSS HERE</object>
-	  </gloss>
-	</line>
+  <xsl:template name="DoFree">
 	<free>
 	  <gloss lang="lGloss">
 		<object class="comment">ENTER FREE TRANSLATION HERE.</object>
 	  </gloss>
 	</free>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoGloss
+	routine to create empty gloss line for interlinear
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoGloss">
+	<line>
+	  <gloss lang="lGloss">
+		<object class="comment">ENTER GLOSS HERE</object>
+	  </gloss>
+	</line>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -180,13 +189,16 @@ OutputInterlinearExamples
 	  </xsl:variable>
 	  <listInterlinear>
 		<xsl:attribute name="letter"><xsl:value-of select="$sExNumber"/><xsl:value-of select="$sFirstLetter"/></xsl:attribute>
-		<line>
-		  <langData>
-			<xsl:attribute name="lang"><xsl:text>l</xsl:text><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
-			<xsl:value-of select="$sLine"/>
-		  </langData>
-		</line>
-		<xsl:call-template name="DoGlossAndFree"/>
+		<lineGroup>
+		  <line>
+			<langData>
+			  <xsl:attribute name="lang"><xsl:text>l</xsl:text><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
+			  <xsl:value-of select="$sLine"/>
+			</langData>
+		  </line>
+		  <xsl:call-template name="DoGloss"/>
+		</lineGroup>
+		<xsl:call-template name="DoFree"/>
 	  </listInterlinear>
 	  <!-- now recurse -->
 	  <xsl:call-template name="OutputInterlinearExamples">
@@ -210,6 +222,7 @@ OutputInterlinearExamples
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+08-Oct-2002  Andy Black  Make changes for XLingPap version 1.4.1
 02-Aug-2002  Andy Black  Add rest of the sections; add column output;
 											rework interlinear output to create unique example ids
 26-Jul-2002    Andy Black  Initial version

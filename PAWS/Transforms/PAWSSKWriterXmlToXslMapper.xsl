@@ -259,7 +259,7 @@ img template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//img">
-	  <xsl:copy>
+	<xsl:copy>
 	  <xsl:for-each select="@*">
 		<xsl:copy/>
 	  </xsl:for-each>
@@ -610,20 +610,25 @@ DoInterlinear
 				<xsl:value-of select="position()"/>
 			  </xsl:element>
 			</xsl:element>
-			<line>
-			  <langData>
-				<xsl:element name="xsl:attribute">
-				  <xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
-				  <xsl:text>l</xsl:text>
-				  <xsl:element name="xsl:value-of">
-					<xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
+			<lineGroup>
+			  <line>
+				<langData>
+				  <xsl:element name="xsl:attribute">
+					<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
+					<xsl:text>l</xsl:text>
+					<xsl:element name="xsl:value-of">
+					  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
+					</xsl:element>
 				  </xsl:element>
-				</xsl:element>
-				<object class="comment">ENTER AN EXAMPLE HERE.</object>
-			  </langData>
-			</line>
+				  <object class="comment">ENTER AN EXAMPLE HERE.</object>
+				</langData>
+			  </line>
+			  <xsl:element name="xsl:call-template">
+				<xsl:attribute name="name"><xsl:text>DoGloss</xsl:text></xsl:attribute>
+			  </xsl:element>
+			</lineGroup>
 			<xsl:element name="xsl:call-template">
-			  <xsl:attribute name="name"><xsl:text>DoGlossAndFree</xsl:text></xsl:attribute>
+			  <xsl:attribute name="name"><xsl:text>DoFree</xsl:text></xsl:attribute>
 			</xsl:element>
 		  </listInterlinear>
 		</xsl:element>
@@ -737,6 +742,7 @@ DoUL
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+08-Oct-2002  Andy Black  Make changes for XLingPap version 1.4.1
 02-Aug-2002  Andy Black  Add img; rework example ids to be unique
 31-Jul-2002    Andy Black  Many refinements.
 26-Jul-2002    Andy Black  Began working on Initial Draft

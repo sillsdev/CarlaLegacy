@@ -4,7 +4,7 @@
   <!-- ===========================================================
 	  Version of this stylesheet
 	  =========================================================== -->
-  <xsl:variable name="sVersion">1.0</xsl:variable>
+  <xsl:variable name="sVersion">1.4.1</xsl:variable>
   <!-- ===========================================================
 	  MAIN BODY
 	  =========================================================== -->
@@ -36,7 +36,7 @@
 		<big>
 		  <big>
 			<big>
-			  <xsl:apply-templates/>
+			  <xsl:value-of select="."/>
 			</big>
 		  </big>
 		</big>
@@ -68,12 +68,12 @@
 	</center>
   </xsl:template>
   <!--
-	  date
+	  date or presentedAt
 	  -->
-  <xsl:template match="date">&#xa;<br/>
+  <xsl:template match="date | presentedAt">&#xa;<br/>
 	<center>
 	  <small>
-		<xsl:value-of select="."/>
+	  <xsl:apply-templates/>
 	  </small>
 	</center>
   </xsl:template>
@@ -95,7 +95,12 @@
 	  <center>
 		<big>
 		  <big>
-			<b>Table of Contents</b>
+			<b>
+			  <xsl:call-template name="OutputLabel">
+				<xsl:with-param name="sDefault">Table of Contents</xsl:with-param>
+				<xsl:with-param name="pLabel" select="@label"/>
+			  </xsl:call-template>
+			</b>
 		  </big>
 		</big>
 	  </center>
@@ -103,13 +108,31 @@
 		<xsl:value-of select="number(@showLevel)"/>
 	  </xsl:variable>
 	  <ul>
+		<xsl:if test="//acknowledgements">
+		  <li>
+			<a href="#rXLingPapAcknowledgements">
+			  <xsl:call-template name="OutputAcknowledgementsLabel"/>
+			</a>
+		  </li>
+		</xsl:if>
 		<xsl:if test="//abstract">
 		  <li>
-			<a href="#rXLingPapAbstract">Abstract</a>
+			<a href="#rXLingPapAbstract">
+			  <xsl:call-template name="OutputAbstractLabel"/>
+			</a>
 		  </li>
 		</xsl:if>
 		<xsl:if test="//part">
 		  <xsl:for-each select="//part">
+			<xsl:if test="position()=1">
+			  <xsl:for-each select="preceding-sibling::*[name()='chapter']">
+				<xsl:call-template name="OutputAllChapterTOC">
+				  <xsl:with-param name="nLevel">
+					<xsl:value-of select="$nLevel"/>
+				  </xsl:with-param>
+				</xsl:call-template>
+			  </xsl:for-each>
+			</xsl:if>
 			<li>
 			  <xsl:element name="a">
 				<xsl:attribute name="href">#<xsl:value-of select="@id"/></xsl:attribute>
@@ -118,20 +141,11 @@
 			</li>
 			<ul>
 			  <xsl:for-each select="chapter">
-				<li>
-				  <xsl:element name="a">
-					<xsl:attribute name="href">#<xsl:value-of select="@id"/></xsl:attribute>
-					<xsl:apply-templates select="." mode="numberChapter"/>&#xa0;<xsl:apply-templates select="secTitle"/>
-				  </xsl:element>
-				  <ul>
-					<xsl:call-template name="OutputAllSectionTOC">
-					  <xsl:with-param name="nLevel">
-						<xsl:value-of select="$nLevel"/>
-					  </xsl:with-param>
-					  <xsl:with-param name="nodesSection1" select="section1"/>
-					</xsl:call-template>
-				  </ul>
-				</li>
+				<xsl:call-template name="OutputAllChapterTOC">
+				  <xsl:with-param name="nLevel">
+					<xsl:value-of select="$nLevel"/>
+				  </xsl:with-param>
+				</xsl:call-template>
 			  </xsl:for-each>
 			</ul>
 		  </xsl:for-each>
@@ -192,22 +206,30 @@
 		</xsl:if>
 	  </ul>
 	</div>
-	<xsl:if test="//abstract">
-	  <hr/>
-	</xsl:if>
   </xsl:template>
   <!--
-	  abstract
+	  abstract and acknowledgements
 	  -->
-  <xsl:template match="abstract">&#xa;<br/>
-	<xsl:if test="not(//contents)">
+  <xsl:template match="abstract | acknowledgements">&#xa;<br/>
+	<xsl:if test="not(name(preceding-sibling::*) = 'contents')">
 	  <hr/>
 	</xsl:if>
 	<center>
 	  <b>
 		<big>
 		  <big>
-			<a name="rXLingPapAbstract">Abstract</a>
+			<xsl:choose>
+			  <xsl:when test="name(.)='abstract'">
+				<a name="rXLingPapAbstract">
+				  <xsl:call-template name="OutputAbstractLabel"/>
+				</a>
+			  </xsl:when>
+			  <xsl:otherwise>
+				<a name="rXLingPapAcknowledgements">
+				  <xsl:call-template name="OutputAcknowledgementsLabel"/>
+				</a>
+			  </xsl:otherwise>
+			</xsl:choose>
 		  </big>
 		</big>
 	  </b>
@@ -318,10 +340,19 @@
 	  <xsl:apply-templates select="id(@sec)" mode="number"/>
 	</xsl:element>
   </xsl:template>
+  <!--
+	  appendixRef
+	  -->
+  <xsl:template match="appendixRef">
+	<xsl:element name="a">
+	  <xsl:attribute name="href">#<xsl:value-of select="@app"/></xsl:attribute>
+	  <xsl:apply-templates select="id(@app)" mode="numberAppendix"/>
+	</xsl:element>
+  </xsl:template>
   <!-- ===========================================================
 	  PARAGRAPH
 	  =========================================================== -->
-  <xsl:template match="p">
+  <xsl:template match="p | pc">
 	<xsl:if test="parent::endnote and not(position()=1)">
 	  <tr>
 		<td/>
@@ -334,6 +365,9 @@
 	</xsl:if>
 	<xsl:if test="not(parent::endnote) or position()=1">
 	  <p>
+	  <xsl:if test="name(.)='pc'">
+	  <xsl:attribute name="class">pc</xsl:attribute>
+	  </xsl:if>
 		<xsl:apply-templates/>
 	  </p>
 	</xsl:if>
@@ -387,113 +421,131 @@
   <!-- ===========================================================
 	  EXAMPLES
 	  =========================================================== -->
-  <xsl:template match="example">&#xa;<div style="margin-left: 0.25in; margin-right: 0.25in">&#xa;<table>
-		<xsl:apply-templates/>&#xa;</table>&#xa;</div>
+  <xsl:template match="example">
+	<xsl:text>&#xa;</xsl:text>
+	<div style="margin-left: 0.25in; margin-right: 0.25in">
+	  <xsl:text>&#xa;</xsl:text>
+	  <table>
+		<tr>
+		  <td valign="top">
+			<xsl:element name="a">
+			  <xsl:attribute name="name"><xsl:value-of select="@num"/></xsl:attribute>
+			  <xsl:call-template name="exampleNumber"/>
+			</xsl:element>
+		  </td>
+		  <td>
+			<xsl:apply-templates/>
+		  </td>
+		</tr>
+		<xsl:text>&#xa;</xsl:text>
+	  </table>
+	  <xsl:text>&#xa;</xsl:text>
+	</div>
   </xsl:template>
   <!--
 	  word
 	  -->
   <xsl:template match="word">
-	<tr>
-	  <td valign="top">
-		<xsl:element name="a">
-		  <xsl:attribute name="name"><xsl:value-of select="../@num"/></xsl:attribute>
-		  <xsl:call-template name="exampleNumber"/>
-		</xsl:element>
-	  </td>
-	  <xsl:for-each select="(langData | gloss)">
-		<td>
-		  <xsl:apply-templates select="."/>
-		</td>
-	  </xsl:for-each>
-	</tr>
+	<table>
+	  <tr>
+		<xsl:for-each select="(langData | gloss)">
+		  <td>
+			<xsl:apply-templates select="."/>
+		  </td>
+		</xsl:for-each>
+	  </tr>
+	</table>
   </xsl:template>
   <!--
 	  listWord
 	  -->
-  <xsl:template match="listWord">&#xa;<tr>
-	  <td>
-		<xsl:if test="position()=1">
-		  <xsl:element name="a">
-			<xsl:attribute name="name"><xsl:value-of select="../@num"/></xsl:attribute>
-			<xsl:call-template name="exampleNumber"/>
-		  </xsl:element>
-		</xsl:if>
-	  </td>
-	  <td>
-		<xsl:element name="a">
-		  <xsl:attribute name="name"><xsl:value-of select="@letter"/></xsl:attribute>
-		  <xsl:apply-templates select="." mode="letter"/>.</xsl:element>
-	  </td>
-	  <xsl:for-each select="(langData | gloss)">
+  <xsl:template match="listWord">
+	<xsl:text>&#xa;</xsl:text>
+	<table>
+	  <tr>
 		<td>
-		  <xsl:apply-templates select="."/>
+		  <xsl:element name="a">
+			<xsl:attribute name="name"><xsl:value-of select="@letter"/></xsl:attribute>
+			<xsl:apply-templates select="." mode="letter"/>.</xsl:element>
 		</td>
-	  </xsl:for-each>
-	</tr>
+		<xsl:for-each select="(langData | gloss)">
+		  <td>
+			<xsl:apply-templates select="."/>
+		  </td>
+		</xsl:for-each>
+	  </tr>
+	</table>
   </xsl:template>
   <!--
 	  single
 	  -->
   <xsl:template match="single">
-	<xsl:element name="a">
-	  <xsl:attribute name="name"><xsl:value-of select="../@num"/></xsl:attribute>
-	  <xsl:call-template name="exampleNumber"/>
-	</xsl:element>&#xa0;<xsl:apply-templates/>
+	<table>
+	  <tr>
+		<td>
+		  <xsl:apply-templates/>
+		</td>
+	  </tr>
+	</table>
   </xsl:template>
   <!--
 	  listSingle
 	  -->
-  <xsl:template match="listSingle">&#xa;<tr>
-	  <td>
-		<xsl:if test="position()=1">
+  <xsl:template match="listSingle">
+	<xsl:text>&#xa;</xsl:text>
+	<table>
+	  <tr>
+		<td>
 		  <xsl:element name="a">
-			<xsl:attribute name="name"><xsl:value-of select="../@num"/></xsl:attribute>
-			<xsl:call-template name="exampleNumber"/>
-		  </xsl:element>
-		</xsl:if>
-	  </td>
-	  <td>
-		<xsl:element name="a">
-		  <xsl:attribute name="name"><xsl:value-of select="@letter"/></xsl:attribute>
-		  <xsl:apply-templates select="." mode="letter"/>.</xsl:element>
-	  </td>
-	  <td>
-		<xsl:apply-templates/>
-	  </td>
-	</tr>
+			<xsl:attribute name="name"><xsl:value-of select="@letter"/></xsl:attribute>
+			<xsl:apply-templates select="." mode="letter"/>.</xsl:element>
+		</td>
+		<td>
+		  <xsl:apply-templates/>
+		</td>
+	  </tr>
+	</table>
   </xsl:template>
   <!--
 	  interlinear
 	  -->
   <xsl:template match="interlinear">
-&#xa;<table>
-	  <xsl:choose>
-		<xsl:when test="lineSet">
-		  <xsl:for-each select="lineSet | conflation">
-			<xsl:apply-templates/>
-		  </xsl:for-each>
-		</xsl:when>
-		<xsl:otherwise>
+	<xsl:text>&#xa;</xsl:text>
+	<xsl:choose>
+	  <xsl:when test="lineSet">
+		<xsl:for-each select="lineSet | conflation">
 		  <xsl:apply-templates/>
-		</xsl:otherwise>
-	  </xsl:choose>
-	  &#xa;</table>
+		</xsl:for-each>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:apply-templates/>
+	  </xsl:otherwise>
+	</xsl:choose>
+	<xsl:text>&#xa;</xsl:text>
+  </xsl:template>
+  <!--
+	  lineGroup
+	  -->
+  <xsl:template match="lineGroup">
+	<table>
+	  <xsl:if test="name(../..)='interlinear' or name(../..)='listInterlinear'">
+		<xsl:attribute name="style"><xsl:text>margin-left: 0.1in</xsl:text></xsl:attribute>
+	  </xsl:if>
+	  <xsl:apply-templates/>
+	</table>
   </xsl:template>
   <!--
 	  line
 	  -->
-  <xsl:template match="line">&#xa;<tr style="line-height:87.5%">
-	  <td>
-		<xsl:if test="name(..)='interlinear' and position()=1">
-		  <xsl:call-template name="OutputExampleNumber"/>
-		</xsl:if>
-	  </td>
+  <xsl:template match="line">
+	<xsl:text>&#xa;</xsl:text>
+<!--    <tr style="line-height:87.5%"> -->
+	<tr>
 	  <xsl:choose>
 		<xsl:when test="wrd">
 		  <xsl:for-each select="wrd">
 			<xsl:element name="td">
-			  <xsl:attribute name="class"><xsl:value-of select="@lang"/></xsl:attribute>
+			  <xsl:attribute name="class"><xsl:value-of select="id(@lang)"/></xsl:attribute>
 			  <xsl:apply-templates/>
 			</xsl:element>
 		  </xsl:for-each>
@@ -597,125 +649,128 @@
   <!--
 	  free
 	  -->
-  <xsl:template match="free">&#xa;<tr style="line-height:150%">
-	  <td>
-		<xsl:if test="position()=1">
-		  <xsl:call-template name="OutputExampleNumber"/>
-		</xsl:if>
-	  </td>
-	  <xsl:element name="td">
-		<xsl:attribute name="colspan">30</xsl:attribute>
-		<xsl:attribute name="class"><xsl:value-of select="id(gloss/@lang)"/></xsl:attribute>
-		<xsl:value-of select="."/>
-	  </xsl:element>
-	</tr>
+  <xsl:template match="free">
+	<xsl:text>&#xa;</xsl:text>
+	<table>
+	<xsl:variable name="sGrandParent"><xsl:value-of select="name(../..)"/></xsl:variable>
+	  <xsl:if test="preceding-sibling::free[position()=1] or $sGrandParent='interlinear' or $sGrandParent='listInterlinear'">
+		<xsl:attribute name="style"><xsl:text>margin-left: 0.1in</xsl:text></xsl:attribute>
+	  </xsl:if>
+<!-- ### -->
+	  <tr style="line-height:125%">
+		<xsl:element name="td">
+		  <xsl:attribute name="colspan">30</xsl:attribute>
+		  <xsl:attribute name="class"><xsl:value-of select="id(gloss/@lang)"/></xsl:attribute>
+		  <xsl:apply-templates/>
+		</xsl:element>
+	  </tr>
+	</table>
   </xsl:template>
   <!--
 	  listInterlinear
 	  -->
-  <xsl:template match="listInterlinear">&#xa;<tr>
-	  <td valign="top">
-		<xsl:if test="position()=1">
+  <xsl:template match="listInterlinear">
+	<table>
+	  <tr>
+		<td valign="top">
 		  <xsl:element name="a">
-			<xsl:attribute name="name"><xsl:value-of select="../@num"/></xsl:attribute>
-			<xsl:call-template name="exampleNumber"/>
-		  </xsl:element>
-		</xsl:if>
-	  </td>
-	  <td valign="top">
-		<xsl:element name="a">
-		  <xsl:attribute name="name"><xsl:value-of select="@letter"/></xsl:attribute>
-		  <xsl:apply-templates select="." mode="letter"/>.</xsl:element>
-	  </td>
-	  <td>
-&#xa;<table>
-		  <xsl:apply-templates/>&#xa;</table>
-	  </td>
-	</tr>
+			<xsl:attribute name="name"><xsl:value-of select="@letter"/></xsl:attribute>
+			<xsl:apply-templates select="." mode="letter"/>.</xsl:element>
+		</td>
+		<td>
+		  <xsl:apply-templates/>
+		</td>
+	  </tr>
+	</table>
   </xsl:template>
   <!--
 	  chart
 	  -->
   <xsl:template match="chart">
-	<tr>
-	  <xsl:if test="name(..)='example'">
-		<td valign="top">
-		  <xsl:element name="a">
-			<xsl:attribute name="name"><xsl:value-of select="../@num"/></xsl:attribute>
-			<xsl:call-template name="exampleNumber"/>
-		  </xsl:element>
-		</td>
-		<xsl:if test="@class">
+	<table>
+	  <tr>
+		<xsl:if test="name(..)='example'">
 		  <td>
-			<xsl:element name="div">
-			  <xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
-			  <xsl:value-of select="." disable-output-escaping="yes"/>
-			</xsl:element>
+			<xsl:choose>
+			  <xsl:when test="@class">
+				<xsl:element name="div">
+				  <xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
+				  <xsl:value-of select="." disable-output-escaping="yes"/>
+				</xsl:element>
+			  </xsl:when>
+			  <xsl:otherwise>
+			  <xsl:apply-templates/>
+<!--                <xsl:value-of select="." disable-output-escaping="yes"/> -->
+			  </xsl:otherwise>
+			</xsl:choose>
 		  </td>
 		</xsl:if>
-		<xsl:if test="not(@class)">
-		  <td>
-			<xsl:value-of select="." disable-output-escaping="yes"/>
-		  </td>
+		<xsl:if test="name(..)!='example'">
+		  <xsl:if test="parent::endnote and not(position()=1)">
+			<tr>
+			  <td/>
+			  <td>
+				<div>
+				  <xsl:value-of select="." disable-output-escaping="yes"/>
+				</div>
+			  </td>
+			</tr>
+		  </xsl:if>
+		  <xsl:if test="not(parent::endnote) or position()=1">
+			<div>
+			  <xsl:apply-templates/>
+			</div>
+		  </xsl:if>
 		</xsl:if>
-	  </xsl:if>
-	  <xsl:if test="name(..)!='example'">
-		<xsl:if test="parent::endnote and not(position()=1)">
-		  <tr>
-			<td/>
-			<td>
-			  <div>
-				<xsl:value-of select="." disable-output-escaping="yes"/>
-			  </div>
-			</td>
-		  </tr>
-		</xsl:if>
-		<xsl:if test="not(parent::endnote) or position()=1">
-		  <div>
-			<xsl:value-of select="." disable-output-escaping="yes"/>
-		  </div>
-		</xsl:if>
-	  </xsl:if>
-	</tr>
+	  </tr>
+	</table>
   </xsl:template>
   <!--
 	  tree
 	  -->
   <xsl:template match="tree">
-	<xsl:if test="name(..)='example'">
-	  <xsl:element name="a">
-		<xsl:attribute name="name"><xsl:value-of select="../@num"/></xsl:attribute>
-		<xsl:call-template name="exampleNumber"/>
-	  </xsl:element>&#xa0;<xsl:value-of select="." disable-output-escaping="yes"/>
-	</xsl:if>
-	<xsl:if test="name(..)!='example'">
-	  <div>
-		<xsl:value-of select="." disable-output-escaping="yes"/>
-	  </div>
-	</xsl:if>
+	<xsl:choose>
+	  <xsl:when test="img">
+		<xsl:choose>
+		  <xsl:when test="name(..)='example'">
+			<table>
+			  <tr>
+				<td valign="top">
+				  <xsl:apply-templates/>
+				</td>
+			  </tr>
+			</table>
+		  </xsl:when>
+		  <xsl:otherwise>
+			<p style="margin-left: 0.25in">
+			  <xsl:apply-templates/>
+			</p>
+		  </xsl:otherwise>
+		</xsl:choose>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<div>
+		  <xsl:value-of select="." disable-output-escaping="yes"/>
+		</div>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 	  table
 	  -->
   <xsl:template match="table">
-	<xsl:if test="name(..)='example'">
-	  <tr>
-		<td valign="top">
-		  <xsl:element name="a">
-			<xsl:attribute name="name"><xsl:value-of select="../@num"/></xsl:attribute>
-			<xsl:call-template name="exampleNumber"/>
-		  </xsl:element>
-		</td>
+	<xsl:choose>
+	  <xsl:when test="name(..)='example'">
 		<td>
 		  <xsl:call-template name="OutputTable"/>
 		</td>
-	  </tr>
-	</xsl:if>
-	<xsl:if test="name(..)!='example'">
-	  <div>
-		<xsl:call-template name="OutputTable"/>
-	  </div>
-	</xsl:if>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<div>
+		  <xsl:call-template name="OutputTable"/>
+		</div>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 		  headerRow for a table
@@ -741,8 +796,13 @@
 	  <xsl:if test="@class">
 		<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
 	  </xsl:if>
-	  <xsl:attribute name="align">left</xsl:attribute>
-	  <xsl:attribute name="valign">top</xsl:attribute>
+	  <xsl:call-template name="DoCellAttributes"/>
+	  <xsl:if test="not(@align)">
+		<xsl:attribute name="align">left</xsl:attribute>
+	  </xsl:if>
+	  <xsl:if test="not(@valign)">
+		<xsl:attribute name="valign">top</xsl:attribute>
+	  </xsl:if>
 	  <xsl:apply-templates/>
 	</xsl:element>
   </xsl:template>
@@ -770,8 +830,7 @@
 	  <xsl:if test="@class">
 		<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
 	  </xsl:if>
-	  <xsl:attribute name="align">left</xsl:attribute>
-	  <xsl:attribute name="valign">top</xsl:attribute>
+	  <xsl:call-template name="DoCellAttributes"/>
 	  <xsl:apply-templates/>
 	</xsl:element>
   </xsl:template>
@@ -779,21 +838,18 @@
 		  caption for a table
 	  -->
   <xsl:template match="caption">
-	<xsl:if test="@class">
-	  <xsl:element name="tr">
+	<xsl:element name="tr">
+	  <xsl:if test="@class">
 		<xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
-		<td colspan="30">
+	  </xsl:if>
+	  <td colspan="30">
+		<xsl:call-template name="DoCellAttributes"/>
+		<b>
+		  <!-- default is bold -->
 		  <xsl:apply-templates/>
-		</td>
-	  </xsl:element>
-	</xsl:if>
-	<xsl:if test="not(@class)">
-	  <tr>
-		<td colspan="30">
-		  <xsl:apply-templates/>
-		</td>
-	  </tr>
-	</xsl:if>
+		</b>
+	  </td>
+	</xsl:element>
   </xsl:template>
   <!--
 	  exampleRef
@@ -1063,7 +1119,7 @@
   <xsl:template match="object">
 	<xsl:element name="span">
 	  <xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
-	  <xsl:value-of select="."/>
+	  <xsl:apply-templates/>
 	</xsl:element>
   </xsl:template>
   <!-- ===========================================================
@@ -1132,9 +1188,44 @@
 	  NAMED TEMPLATES
 	  =========================================================== -->
   <!--
+				  DoCellAttributes
+				  -->
+  <xsl:template name="DoCellAttributes">
+	<xsl:if test="@align">
+	  <xsl:attribute name="align"><xsl:value-of select="@align"/></xsl:attribute>
+	</xsl:if>
+	<xsl:if test="@colspan">
+	  <xsl:attribute name="colspan"><xsl:value-of select="@colspan"/></xsl:attribute>
+	</xsl:if>
+	<xsl:if test="@rowspan">
+	  <xsl:attribute name="rowspan"><xsl:value-of select="@rowspan"/></xsl:attribute>
+	</xsl:if>
+	<xsl:if test="@valign">
+	  <xsl:attribute name="valign"><xsl:value-of select="@valign"/></xsl:attribute>
+	</xsl:if>
+  </xsl:template>
+  <!--
 				  exampleNumber
 -->
   <xsl:template name="exampleNumber">(<xsl:apply-templates select="." mode="example"/>)</xsl:template>
+  <!--
+				   OutputAbstractLabel
+-->
+  <xsl:template name="OutputAbstractLabel">
+	<xsl:call-template name="OutputLabel">
+	  <xsl:with-param name="sDefault">Abstract</xsl:with-param>
+	  <xsl:with-param name="pLabel" select="//abstract/@label"/>
+	</xsl:call-template>
+  </xsl:template>
+  <!--
+				   OutputAcknowledgementsLabel
+-->
+  <xsl:template name="OutputAcknowledgementsLabel">
+	<xsl:call-template name="OutputLabel">
+	  <xsl:with-param name="sDefault">Acknowledgements</xsl:with-param>
+	  <xsl:with-param name="pLabel" select="//acknowledgements/@label"/>
+	</xsl:call-template>
+  </xsl:template>
   <!--
 				  OutputChapTitle
 -->
@@ -1165,6 +1256,21 @@
 	</xsl:element>
   </xsl:template>
   <!--
+				  OutputLabel
+-->
+  <xsl:template name="OutputLabel">
+	<xsl:param name="sDefault"/>
+	<xsl:param name="pLabel"/>
+	<xsl:choose>
+	  <xsl:when test="$pLabel">
+		<xsl:value-of select="$pLabel"/>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:value-of select="$sDefault"/>
+	  </xsl:otherwise>
+	</xsl:choose>
+  </xsl:template>
+  <!--
 				  OutputSection
 -->
   <xsl:template name="OutputSection">
@@ -1188,6 +1294,26 @@
 	<xsl:if test="not($bAppendix='Y')">
 	  <xsl:apply-templates select="." mode="number"/>
 	</xsl:if>&#xa0;<xsl:apply-templates select="secTitle"/>
+  </xsl:template>
+  <!--
+				  OutputAllSectionTOC
+-->
+  <xsl:template name="OutputAllChapterTOC">
+	<xsl:param name="nLevel" select="3"/>
+	<li>
+	  <xsl:element name="a">
+		<xsl:attribute name="href">#<xsl:value-of select="@id"/></xsl:attribute>
+		<xsl:apply-templates select="." mode="numberChapter"/>&#xa0;<xsl:apply-templates select="secTitle"/>
+	  </xsl:element>
+	  <ul>
+		<xsl:call-template name="OutputAllSectionTOC">
+		  <xsl:with-param name="nLevel">
+			<xsl:value-of select="$nLevel"/>
+		  </xsl:with-param>
+		  <xsl:with-param name="nodesSection1" select="section1"/>
+		</xsl:call-template>
+	  </ul>
+	</li>
   </xsl:template>
   <!--
 				  OutputAllSectionTOC
@@ -1288,7 +1414,10 @@
 <!-- ===========================================================
 	  REVISION HISTORY
 	  ===========================================================
-1.3  Andy Black  31-Jul-2002    Made <title> use apply-templates
+1.4.1 Andy Black 07-Oct-2002 Added appendixRef; made p and pc work with css
+1.4  Andy Black  04-Oct-2002  Remove unwanted gaps in examples by adding lineGroup around lines.
+1.3  Andy Black  03-Oct-2002  Many changes per Cheri's needs;  Includes
+													Allow <tree><p>stuff</p><img src="" alt=""/></ing></tree>
 1.2  Andy Black  03-Jul-2002    Added <wrd/> and conflated lines (first pass)
 1.1  Andy Black  08-May-2002  Changed some spaces to non-breaking spaces so there would be a space between
 													section numbers and section titles.
