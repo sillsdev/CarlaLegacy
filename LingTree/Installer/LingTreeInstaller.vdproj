@@ -422,7 +422,7 @@
 		{
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_05A044945C0B48829E56DC7882278F57"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SubscriptExample.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SubscriptExample.png"
 			"TargetName" = "8:SubscriptExample.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -442,7 +442,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_0928287450F6468D9B61F4651CB92ABC"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SuperscriptExample.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SuperscriptExample.png"
 			"TargetName" = "8:SuperscriptExample.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -462,7 +462,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_0ABA6C2F2BB04E9387B503CAF150B3D0"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JuanDuerme.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JuanDuerme.png"
 			"TargetName" = "8:JuanDuerme.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -482,7 +482,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_0F98AA4B08A44D5B8C6CAED4674EDBD8"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\TepikSyllableLines.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\TepikSyllableLines.png"
 			"TargetName" = "8:TepikSyllableLines.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -502,7 +502,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_128B70C0B2724E6FAEFF9EE710D87D66"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JuanDuerme.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JuanDuerme.tre"
 			"TargetName" = "8:JuanDuerme.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -522,7 +522,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_162F3D839F304804AAFF9C2D925F35FF"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\NJuanKitaNKowatlFlat.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\NJuanKitaNKowatlFlat.tre"
 			"TargetName" = "8:NJuanKitaNKowatlFlat.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -542,7 +542,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_2469E13493B24640B3A9F133646FD4E4"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\NJuanKitaNKowatlFlat.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\NJuanKitaNKowatlFlat.png"
 			"TargetName" = "8:NJuanKitaNKowatlFlat.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -562,7 +562,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_2BBC474854C9419AB742CB562D72DAB8"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JohnSleepsRedBlue.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JohnSleepsRedBlue.tre"
 			"TargetName" = "8:JohnSleepsRedBlue.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -582,7 +582,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_2D1ADD88B72B4090928AF2F398877992"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\NJuanKitaNKowatl.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\NJuanKitaNKowatl.png"
 			"TargetName" = "8:NJuanKitaNKowatl.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -602,7 +602,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_2D498ECD31ED4BB3A598A4711D4B88BC"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SuperscriptExample.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SuperscriptExample.tre"
 			"TargetName" = "8:SuperscriptExample.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -622,7 +622,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_2EF586C056A3493B9BE5F69E2400DCE7"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JohnSleepsRed.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JohnSleepsRed.tre"
 			"TargetName" = "8:JohnSleepsRed.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -642,7 +642,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_3237484A4C9A44DB9543C6E85AE4D5E4"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\AllTheKingsMenTriangle.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\AllTheKingsMenTriangle.tre"
 			"TargetName" = "8:AllTheKingsMenTriangle.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -662,7 +662,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_3267380F8A0746D5B3B357C856DB0947"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\NJuanKitaNKowatlSmoothEnhance.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\NJuanKitaNKowatlSmoothEnhance.png"
 			"TargetName" = "8:NJuanKitaNKowatlSmoothEnhance.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -713,7 +713,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_3BC9E5E7CD924AE2AD1EAF5ECBE52B74"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JohnSleeps.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JohnSleeps.tre"
 			"TargetName" = "8:JohnSleeps.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -733,7 +733,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_3D62A9B8B9CA4C90A53F0C8BF1BBCC4F"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\AllTheKingsMen.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\AllTheKingsMen.png"
 			"TargetName" = "8:AllTheKingsMen.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -753,7 +753,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_44CC78F4619D4FACA3B94D036C57D95A"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\TreeParameters.bmp"
+			"SourcePath" = "8:..\\Source\\HelpSource\\TreeParameters.bmp"
 			"TargetName" = "8:TreeParameters.bmp"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -773,7 +773,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_50DB2BDD3BC941A6BB661919A7510E70"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SubscriptExampleNo.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SubscriptExampleNo.tre"
 			"TargetName" = "8:SubscriptExampleNo.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -793,7 +793,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_5500948455784896A86C1E0E7ECAECF0"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\LeeGetsTheIdea.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\LeeGetsTheIdea.tre"
 			"TargetName" = "8:LeeGetsTheIdea.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -813,7 +813,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_5CC4ADC9AF9D457DA8EDA5D353A13FFD"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\sNpVp.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\sNpVp.tre"
 			"TargetName" = "8:sNpVp.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -833,7 +833,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_5F187097E7A34070B66B3F1029E1B84C"
 			{
-			"SourcePath" = "8:..\\LingTree\\LingTree.ico"
+			"SourcePath" = "8:..\\Source\\LingTree.ico"
 			"TargetName" = "8:LingTree.ico"
 			"Tag" = "8:"
 			"Folder" = "8:_AE61FE95B6F445EABFB1F4DCEDCCECB2"
@@ -853,7 +853,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_72CB0488DF3142D7A5BE38FBE69FC8BB"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JohnSleepsRed.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JohnSleepsRed.png"
 			"TargetName" = "8:JohnSleepsRed.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -873,7 +873,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_73A73FB4421840ADA6EBF02831A28E61"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\NJuanKitaNKowatlSmooth.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\NJuanKitaNKowatlSmooth.png"
 			"TargetName" = "8:NJuanKitaNKowatlSmooth.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -893,7 +893,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_755E891E27C5424EBD70CD15FD7D71F9"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SubscriptExampleNo.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SubscriptExampleNo.png"
 			"TargetName" = "8:SubscriptExampleNo.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -944,7 +944,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_80743CD9E84A44EAB7F78176FADFFD27"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\TepikSyllableLines.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\TepikSyllableLines.tre"
 			"TargetName" = "8:TepikSyllableLines.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -964,7 +964,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_83A679CA4C6D4F618C791544DED2770B"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\NJuanKitaNKowatlSmoothEnhance.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\NJuanKitaNKowatlSmoothEnhance.tre"
 			"TargetName" = "8:NJuanKitaNKowatlSmoothEnhance.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -984,7 +984,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_842AFADA31F3434489E44DFDA5E42F3B"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\HelpTopics.htm"
+			"SourcePath" = "8:..\\Source\\HelpSource\\HelpTopics.htm"
 			"TargetName" = "8:HelpTopics.htm"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1004,7 +1004,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_854BA654EBB64033884ADDA70F47E888"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\AllTheKingsMenTriangle.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\AllTheKingsMenTriangle.png"
 			"TargetName" = "8:AllTheKingsMenTriangle.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1024,7 +1024,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_86F56DF8E8A4474AAC9EE6CF2A3C9382"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SubscriptExample.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SubscriptExample.tre"
 			"TargetName" = "8:SubscriptExample.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -1044,7 +1044,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_8B2DB22516F54E9EB996F4B4246CDD31"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SetSaveFormats.bmp"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SetSaveFormats.bmp"
 			"TargetName" = "8:SetSaveFormats.bmp"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1084,7 +1084,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_9A6A204C0E1B47CBBCE20B5A51AB4585"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SuperscriptExampleNo.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SuperscriptExampleNo.tre"
 			"TargetName" = "8:SuperscriptExampleNo.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -1104,7 +1104,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_A3E73261D0374F6F884C39CE0F8B5BD2"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\sNpVp.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\sNpVp.png"
 			"TargetName" = "8:sNpVp.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1124,7 +1124,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_A56034C1BF73452A9685761277FED9FD"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JuanDuermeRedBlue.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JuanDuermeRedBlue.png"
 			"TargetName" = "8:JuanDuermeRedBlue.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1144,7 +1144,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_A741FAE5920147D781CE5F364FFD49BB"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\Paul(TheBear).tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\Paul(TheBear).tre"
 			"TargetName" = "8:Paul(TheBear).tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -1164,7 +1164,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_AFC71F6091A84E8F9503E4419CD8DD5B"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\LingTree.bmp"
+			"SourcePath" = "8:..\\Source\\HelpSource\\LingTree.bmp"
 			"TargetName" = "8:LingTree.bmp"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1184,7 +1184,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_B63DCAE5AD8C43869A842DF76E153C2A"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JuanDuermeRedBlue.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JuanDuermeRedBlue.tre"
 			"TargetName" = "8:JuanDuermeRedBlue.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -1204,7 +1204,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_BA74DD6FAAF342C7AA8456CD0BCBF379"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\AllTheKingsMen.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\AllTheKingsMen.tre"
 			"TargetName" = "8:AllTheKingsMen.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -1224,7 +1224,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_BB85D104BF274F1996D62DE450C4A45A"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JohnSleepsRedBlue.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JohnSleepsRedBlue.png"
 			"TargetName" = "8:JohnSleepsRedBlue.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1244,7 +1244,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_BDA1CA4DC49946A89C07588AA7332C97"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\SuperscriptExampleNo.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\SuperscriptExampleNo.png"
 			"TargetName" = "8:SuperscriptExampleNo.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1264,7 +1264,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_C056AE9670B648F5A451C318A9490274"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\NJuanKitaNKowatl.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\NJuanKitaNKowatl.tre"
 			"TargetName" = "8:NJuanKitaNKowatl.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -1284,7 +1284,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_C083E228B1414D789B7C6BF41E02FBB7"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\PaulTheBear.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\PaulTheBear.tre"
 			"TargetName" = "8:PaulTheBear.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -1304,7 +1304,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_C636CCBC43F041E19729AD460AC79B62"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\QuickReferenceGuide.htm"
+			"SourcePath" = "8:..\\Source\\HelpSource\\QuickReferenceGuide.htm"
 			"TargetName" = "8:QuickReferenceGuide.htm"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1324,7 +1324,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_C9954F87AD4140DFBB248ED1D8E7DD4D"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\Paul(TheBear).png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\Paul(TheBear).png"
 			"TargetName" = "8:Paul(TheBear).png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1344,7 +1344,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_CEE065A2D19748E8BD95594F2F0F5479"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\TepikSyllable.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\TepikSyllable.png"
 			"TargetName" = "8:TepikSyllable.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1364,7 +1364,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_DCA65E4284FC4A8E8AAB64C086D66F52"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\JohnSleeps.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\JohnSleeps.png"
 			"TargetName" = "8:JohnSleeps.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1384,7 +1384,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_DCB4FC78C73A45EEB98472254707E627"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\ProcessDescription.bmp"
+			"SourcePath" = "8:..\\Source\\HelpSource\\ProcessDescription.bmp"
 			"TargetName" = "8:ProcessDescription.bmp"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1404,7 +1404,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_E17B2A27C0904CD5826AE08158032EA2"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\PaulTheBear.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\PaulTheBear.png"
 			"TargetName" = "8:PaulTheBear.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1424,7 +1424,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_E1E32952E4F047EDB5EC44816F7FDD56"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\TepikSyllable.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\TepikSyllable.tre"
 			"TargetName" = "8:TepikSyllable.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -1444,7 +1444,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_EFCBE12B089741A9BAE6C3B570010679"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\LeeGetsTheIdea.png"
+			"SourcePath" = "8:..\\Source\\HelpSource\\LeeGetsTheIdea.png"
 			"TargetName" = "8:LeeGetsTheIdea.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
@@ -1464,7 +1464,7 @@
 			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_F21E44427FDB4090952A53CDDCACB4C2"
 			{
-			"SourcePath" = "8:..\\LingTree\\HelpSource\\NJuanKitaNKowatlSmooth.tre"
+			"SourcePath" = "8:..\\Source\\HelpSource\\NJuanKitaNKowatlSmooth.tre"
 			"TargetName" = "8:NJuanKitaNKowatlSmooth.tre"
 			"Tag" = "8:"
 			"Folder" = "8:_6B48958590F043D1BA13D2D5A138DE2E"
@@ -2391,7 +2391,7 @@
 		{
 			"{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_546ED84FF6D44167954738086B62A773"
 			{
-			"SourcePath" = "8:..\\LingTree\\obj\\Release\\LingTree.exe"
+			"SourcePath" = "8:..\\Source\\obj\\Release\\LingTree.exe"
 			"TargetName" = "8:"
 			"Tag" = "8:"
 			"Folder" = "8:_AE61FE95B6F445EABFB1F4DCEDCCECB2"
