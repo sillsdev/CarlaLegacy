@@ -456,9 +456,11 @@ static int  utest P((struct cond_node *cond,
 #undef P
 
 #ifndef hab104
+#ifndef TONEGEN
 static void addANAProperties(char *pszANAProps,
 				 StampAnalysis *pMorphs,
 				 StampData *pStamp_in);
+#endif /* TONEGEN */
 #endif /* hab104 */
 
 /********************* TONEANAL EXTERN VARIABLES *********************/
@@ -3454,7 +3456,9 @@ static int utest( cond, pStamp_in )
   struct tone      *tp, *tp_last;
   struct tone_pattern *tpp;
 #ifndef hab104
+#ifndef TONEGEN
   PropertySet_t uAlloPropertySet;
+#endif /* TONEGEN */
 #endif /* hab104 */
 
   if (cond == (struct cond_node *)NULL)
@@ -4105,6 +4109,7 @@ static int utest( cond, pStamp_in )
 } /* end utest() */
 
 #ifndef hab104
+#ifndef TONEGEN
 /***************************************************************************
  * NAME
  *    addANAProperties
@@ -4154,4 +4159,5 @@ static void addANAProperties(char *pszANAProps,
 		 /* free the copy */
   freeMemory(pszOrig);
 }
+#endif /* TONEGEN */
 #endif /* hab104 */
