@@ -2163,6 +2163,7 @@ if (*tail == NUL)
 		{
 		/* can now report success for XAMPLE */
 		sgml_trace_success(pAmple_in);
+
 #endif /* EXPERIMENTAL */
 		++uiAmbigCount_m;
 		pNewAnal = (WordAnalysis *)allocMemory(sizeof(WordAnalysis));
@@ -2257,7 +2258,7 @@ if (*tail == NUL)
 	else
 	{		/* free space created by form_anal if tests failed */
 free_unneeded:
-	freeMemory( astr );
+		freeMemory( astr );
 	if (pAmple_in->iOutputFlags & WANT_DECOMPOSITION)
 		freeMemory( pszDecomposition_m );
 	if (pAmple_in->eWriteCategory != AMPLE_NO_CATEGORY)
@@ -6187,11 +6188,11 @@ if (bSuccess)
 	*ppWordParse_out = pWordParse;
 else
   {
-	if (pAmple_in->eTraceAnalysis = AMPLE_TRACE_SGML ||
-	pAmple_in->eTraceAnalysis = AMPLE_TRACE_XML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	  {
-	store_AMPLE_trace(pAmple_in, "\n  ", NULL);
 	char *	pszIndent;
+	store_AMPLE_trace(pAmple_in, "\n  ", NULL);
 #ifdef HAVE_ALLOCA
 	pszIndent = (char *)alloca((2*iTracingDepth_m)*sizeof(char));
 #else
@@ -6206,13 +6207,12 @@ else
 	  store_AMPLE_trace(pAmple_in, "  <failure test=\"%s\"/>\n", pszTestName);
 	else
 	  store_AMPLE_trace(pAmple_in, "  <failure test=\"%s\">\n", pszTestName);
-	char *	pszIndent;
 #ifdef HAVE_ALLOCA
 	pszIndent = (char *)alloca((2*iTracingDepth_m+1)*sizeof(char));
 #else
 	pszIndent = (char *)allocMemory((2*iTracingDepth_m+1)*sizeof(char));
 #endif
-	sprintf(pszIndent, "%*s", 2*iTracingDepth_m, "");
+	sprintf(pszIndent, "%*s", 2*iTracingDepth_m+1, "");
 	store_AMPLE_trace(pAmple_in, "%s</parseNode>\n", pszIndent);
 #ifndef HAVE_ALLOCA
 	freeMemory(pszIndent);

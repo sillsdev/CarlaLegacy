@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 7		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "June 12, 2003"	/* date of release version */
+#define PATCHLEVEL 1		/* bug fix or other minor change */
+#define DATE "June 17, 2003"	/* date of release version */
 #define YEAR "2003"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 17-Jun-2003  hab  - add SGML/XML trace output for PC-PATR grammar call
+ * [3.7.1]
  * 12-Jun-2003  hab  - added XML trace mode
  * [3.7.0]
  * 17-Oct-2002  hab  - added MaxAnalysesToReturn parameter to xample.dll
