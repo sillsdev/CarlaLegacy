@@ -47,6 +47,7 @@ Main template
 	  <xsl:apply-templates select="/" mode="advp"/>
 	  <xsl:apply-templates select="/" mode="adjp"/>
 	  <xsl:apply-templates select="/" mode="np"/>
+	  <xsl:apply-templates select="/" mode="prop"/>
 	  <backMatter>
 		<endnotes/>
 		<references/>
@@ -63,6 +64,7 @@ Include other templates
   <xsl:include href="WriterAdvP.xsl"/>
   <xsl:include href="WriterAdjP.xsl"/>
   <xsl:include href="WriterNP.xsl"/>
+  <xsl:include href="WriterProp.xsl"/>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 DoGlossAndFree
