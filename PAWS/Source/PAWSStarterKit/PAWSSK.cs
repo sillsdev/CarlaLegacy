@@ -113,7 +113,7 @@ namespace PAWSStarterKit
 			{
 				string strTransformsPath = Path.Combine(m_strAppPath, @"Transforms");
 				m_XslGrammarTransform.Load(Path.Combine(strTransformsPath, "PAWSSKMasterGrammarMapper.xsl"));
-				m_XslWriterTransform.Load(Path.Combine(strTransformsPath, "PAWSSKWriterMapper.xsl"));
+				m_XslWriterTransform.Load(Path.Combine(strTransformsPath, "PAWSSKMasterWriterMapper.xsl"));
 				m_XslExampleTransform.Load(Path.Combine(strTransformsPath, "PAWSSKParameterizedExample.xsl"));
 			}
 			catch (Exception exc)
