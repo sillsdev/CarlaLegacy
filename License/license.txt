@@ -1,6 +1,6 @@
 SIL Open Source Licensing
 
-FieldWorks, Version 1.0 Copyright 2001, SIL International, Inc.
+CARLALegacy, Version 1.0 Copyright 2001, SIL International, Inc.
 All rights reserved. This software is free;you can redistribute it and/or
 modify it under the terms of either:
 	a) the GNU "General Public License version 2" as published by the Free
