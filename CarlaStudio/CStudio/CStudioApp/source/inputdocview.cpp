@@ -5,6 +5,7 @@
 // hab 11-Jun-2001 above change in CInputDocView::saveBaseStream failed to check if the file existed or not
 // rbr 14-Jul-2001 Revise Andy's 241 attempt to scroll windows after reprocessing a file. It now works.
 // hab 07-Aug-2001 Fine tune Randy's 253; one has to adjust for the current position and also one has to call some routines to get others to take effect, apparently.
+// jdh 11-Sept-2001 a hack to get a horizontal scrollbar for pc-patr
 
 #include "stdafx.h"
 #include "CARLAStudioApp.h"
@@ -15,6 +16,8 @@
 #include "processoutput.h"
 #include "processStatus.h"
 #include "safestream.h"
+#include "TextDisplayInfo.h"
+
 //#include "PanelRichEditCtrl.h"
 #include "DlgFind.h"
 
@@ -113,8 +116,18 @@ void CInputDocView::addPanel(CResultStream* pStream, int id)
 //	CEdit* pEC = new CEdit;
 	m_pEditCtrls.Add(pEC);
 
-	pEC->Create(ECO_SAVESEL | ES_AUTOVSCROLL | ES_MULTILINE |
-				ES_NOHIDESEL   | WS_BORDER | WS_VSCROLL | WS_CHILD | WS_VISIBLE | ES_WANTRETURN,
+
+
+	DWORD dwFlags = ECO_SAVESEL | ES_AUTOVSCROLL | ES_MULTILINE |
+				ES_NOHIDESEL   | WS_BORDER | WS_VSCROLL | WS_CHILD | WS_VISIBLE | ES_WANTRETURN;
+
+	// a hack to get a scrollbar for pc-patr.  This could be generalized or put in the user's
+	// control, but not without work that seems unjustified if it's just for pcpatr.
+
+	if (pStream->getDescriptor()->getTabLabel() == "PATR-Disamb ANA")
+		dwFlags |= WS_HSCROLL;
+
+	pEC->Create(dwFlags,
 				(RECT&)r,
 				&m_tabCtrl,
 				id);
