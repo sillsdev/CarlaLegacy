@@ -1,5 +1,12 @@
 PC-PATR CHANGE HISTORY
 
+1.3.0 (15-Feb-2002)
+--------------------
+1. Added capability to use a root gloss feature: the gloss can come from either
+   the lexicon (via default field code \r), from an AMPLE ANA file, or from an
+   AMPLE word analysis.  This root gloss can be most useful and convenient for
+   handling syntactic constructions such as verb reduplication.
+
 1.2.12 (27-Sep-2001)
 --------------------
 1. Fixed a bug to verify that all logical constraints are still satisfied in
