@@ -20,4 +20,6 @@ In a document window, if you let the mouse cursor hover over a tab, the path to 
 You can press Ctrl-\ to process a document.
 If there is only one document open, Ctrl-\ will process it even if the document isn't the front-most window.
 CarlaStudio automatically saves all your files every time you process a document.
+There is a Quick Reference Guide for writing Ample/Stamp dictionary entries and transfer rules.  Go to Help / Help Topics / Tips and Troubleshooting / Quick Reference Guide.
+There is a Suggested Processing and Troubleshooting Steps reference document.  Go to Help / Help Topics / Tips and Troubleshooting / Suggested CarlaStudio Processing and Troubleshooting Steps.
 That's all the tips.  The tips will now rewind so that you see them all again.
