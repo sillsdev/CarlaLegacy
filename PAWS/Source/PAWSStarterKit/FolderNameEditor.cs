@@ -34,8 +34,7 @@ internal class DirectoryBrowser : System.Windows.Forms.Design.FolderNameEditor
 	{
 		folderBrowser.Description = m_strDescription;
 		folderBrowser.StartLocation = FolderBrowserFolder.MyComputer;
-		folderBrowser.Style = FolderBrowserStyles.ShowTextBox
-			| FolderBrowserStyles.BrowseForComputer;
+		folderBrowser.Style = FolderBrowserStyles.ShowTextBox;
 	}
 	/// <summary>
 	/// Displays the dialog.
