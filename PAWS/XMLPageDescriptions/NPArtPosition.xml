@@ -12,10 +12,9 @@
 			<prompt>Where does the article occur with respect to the noun?</prompt>
 			<radio id="NPArtAndDemArtPosBefore" dataValue="before">Before</radio>
 			<radio id="NPArtAndDemArtPosAfter" dataValue="after">After</radio>
-			<radio id="NPArtAndDemArtPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
-			<radio id="NPArtAndDemArtPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
-			<radioGroup id="NPArtAndDemArtPosEitherorBothTable" show="swNPArtAndDemArtPosEitherorBoth">
-				<groupName dataItem="artEither" default="unrestricted">RNPArtAndDemArtPosEitherorBoth</groupName>
+			<radio id="NPArtAndDemArtPosEitherSide" dataValue="either">Either side</radio>
+			<radioGroup id="NPArtAndDemArtPosEitherTable" show="swNPArtAndDemArtPosEither">
+				<groupName dataItem="artEither" default="unrestricted">RNPArtAndDemArtPosEither</groupName>
 				<prompt>Can all the articles appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemArtPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 				<radio id="NPArtAndDemArtPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
@@ -41,10 +40,9 @@
 			<prompt>Where does the demonstrative occur with respect to the noun?</prompt>
 			<radio id="NPArtAndDemDemPosBefore" dataValue="before">Before</radio>
 			<radio id="NPArtAndDemDemPosAfter" dataValue="after">After</radio>
-			<radio id="NPArtAndDemDemPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
-			<radio id="NPArtAndDemDemPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
-			<radioGroup id="NPArtAndDemDemPosEitherorBothTable" show="swNPArtAndDemDemPosEitherorBoth">
-				<groupName dataItem="demEither" default="unrestricted">RNPArtAndDemDemPosEitherorBoth</groupName>
+			<radio id="NPArtAndDemDemPosEitherSide" dataValue="either">Either side</radio>
+			   <radioGroup id="NPArtAndDemDemPosEitherTable" show="swNPArtAndDemDemPosEither">
+				<groupName dataItem="demEither" default="unrestricted">RNPArtAndDemDemPosEither</groupName>
 				<prompt>Can all the demonstratives appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemDemPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 				<radio id="NPArtAndDemDemPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
@@ -74,11 +72,10 @@
 				<prompt>Where does the demonstrative or article occur with respect to the noun?</prompt>
 				<radio id="NPArtAndDemBothCooccurNoPosBefore" dataValue="before">Before</radio>
 				<radio id="NPArtAndDemBothCooccurNoPosAfter" dataValue="after">After</radio>
-				<radio id="NPArtAndDemBothCooccurNoPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
-				<radio id="NPArtAndDemBothCooccurNoPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
+				<radio id="NPArtAndDemBothCooccurNoPosEitherSide" dataValue="either">Either side</radio>
 			</radioGroup>
-			<radioGroup id="NPArtAndDemBothCooccurNoPosEitherorBothTable" show="swNPArtAndDemBothCooccurNoPosEitherorBoth">
-				<groupName dataItem="demOrArtEither" default="unrestricted">RNPArtAndDemBothCooccurNoPosEitherorBoth</groupName>
+			<radioGroup id="NPArtAndDemBothCooccurNoPosEitherTable" show="swNPArtAndDemBothCooccurNoPosEither">
+				<groupName dataItem="demOrArtEither" default="unrestricted">RNPArtAndDemBothCooccurNoPosEither</groupName>
 				<prompt>Can all the demonstratives and articles appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemBothCooccurNoPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 				<radio id="NPArtAndDemBothCooccurNoPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
@@ -104,10 +101,9 @@
 				<prompt>Where does the demonstrative occur with respect to the noun?</prompt>
 				<radio id="NPArtAndDemBothCooccurYesDemPosBefore" dataValue="before">Before</radio>
 				<radio id="NPArtAndDemBothCooccurYesDemPosAfter" dataValue="after">After</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
+				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSide" dataValue="either">Either side</radio>
 			</radioGroup>
-			<radioGroup id="NPArtAndDemBothCooccurYesDemPosEitherorBothTable" show="swNPArtAndDemBothCooccurYesDemPosEitherorBoth">
+			<radioGroup id="NPArtAndDemBothCooccurYesDemPosEitherTable" show="swNPArtAndDemBothCooccurYesDemPosEither">
 				<groupName dataItem="demAndArtDemEither" default="unrestricted">RNPArtAndDemBothCooccurYesDemPosEitherorBoth</groupName>
 				<prompt>Can all the demonstratives appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
@@ -133,10 +129,9 @@
 				<prompt>Where does the article occur with respect to the noun?</prompt>
 				<radio id="NPArtAndDemBothCooccurYesArtPosBefore" dataValue="before">Before</radio>
 				<radio id="NPArtAndDemBothCooccurYesArtPosAfter" dataValue="after">After</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
+				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSide" dataValue="either">Either side</radio>
 			</radioGroup>
-			<radioGroup id="NPArtAndDemBothCooccurYesArtPosEitherorBothTable" show="swNPArtAndDemBothCooccurYesArtPosEitherorBoth">
+			<radioGroup id="NPArtAndDemBothCooccurYesArtPosEitherTable" show="swNPArtAndDemBothCooccurYesArtPosEither">
 				<groupName dataItem="demAndArtArtEither" default="unrestricted">RNPArtAndDemBothCooccurYesArtPosEitherorBoth</groupName>
 				<prompt>Can all the articles appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
@@ -239,19 +234,15 @@ To handle class marking and agreement:
 	<showWhen id="swNPArtAndDemArt">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 	</showWhen>
-	<showWhen id="swNPArtAndDemArtPosEitherorBoth">
+	<showWhen id="swNPArtAndDemArtPosEither">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
-		<openParen/>
-		<whenRadio button="NPArtAndDemArtPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPArtAndDemArtPosBothSides"/>
-		<closeParen/>
-	</showWhen>
+		  <whenRadio button="NPArtAndDemArtPosEitherSide"/>
+	  </showWhen>
 	<showWhen id="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
-		<whenRadio button="NPArtAndDemArtPosBothSides"/>
+		<whenRadio button="NPArtAndDemArtPosEitherSide"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemArtRequiredMass"/>
@@ -262,26 +253,22 @@ To handle class marking and agreement:
 	<showWhen id="swNPArtAndDemArtPosBothRequiredMass">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
-		<whenRadio button="NPArtAndDemArtPosBothSides"/>
+		<whenRadio button="NPArtAndDemArtPosEitherSide"/>
 		<and/>
 		<whenRadio button="NPArtAndDemArtRequiredMass"/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemDem">
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 	</showWhen>
-	<showWhen id="swNPArtAndDemDemPosEitherorBoth">
+	<showWhen id="swNPArtAndDemDemPosEither">
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
-		<openParen/>
 		<whenRadio button="NPArtAndDemDemPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPArtAndDemDemPosBothSides"/>
-		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemDemPosBothSidesRequiredMassorYes">
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
-		<whenRadio button="NPArtAndDemDemPosBothSides"/>
+		<whenRadio button="NPArtAndDemDemPosEitherSide"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemDemRequiredMass"/>
@@ -292,7 +279,7 @@ To handle class marking and agreement:
 	<showWhen id="swNPArtAndDemDemPosBothRequiredMass">
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
-		<whenRadio button="NPArtAndDemDemPosBothSides"/>
+		<whenRadio button="NPArtAndDemDemPosEitherSide"/>
 		<and/>
 		<whenRadio button="NPArtAndDemDemRequiredMass"/>
 	</showWhen>
@@ -304,19 +291,15 @@ To handle class marking and agreement:
 		<and/>
 		<whenRadio button="NPArtAndDemBothCooccurNo"/>
 	</showWhen>
-	<showWhen id="swNPArtAndDemBothCooccurNoPosEitherorBoth">
+	<showWhen id="swNPArtAndDemBothCooccurNoPosEither">
 		<whenRadio button="NPArtAndDemBothCooccurNo"/>
 		<and/>
-		<openParen/>
-		<whenRadio button="NPArtAndDemBothCooccurNoPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"/>
-		<closeParen/>
-	</showWhen>
+		 <whenRadio button="NPArtAndDemBothCooccurNoPosEitherSide"/>
+	   </showWhen>
 	<showWhen id="swNPArtAndDemBothCooccurNoPosBothSidesRequiredMassorYes">
 		<whenRadio button="NPArtAndDemBothCooccurNo"/>
 		<and/>
-		<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"/>
+		<whenRadio button="NPArtAndDemBothCooccurNoPosEitherSide"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
@@ -327,7 +310,7 @@ To handle class marking and agreement:
 	<showWhen id="swNPArtAndDemBothCooccurNoPosBothRequiredMass">
 		<whenRadio button="NPArtAndDemBothCooccurNo"/>
 		<and/>
-		<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"/>
+		<whenRadio button="NPArtAndDemBothCooccurNoPosEitherSide"/>
 		<and/>
 		<whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
 	</showWhen>
@@ -336,19 +319,15 @@ To handle class marking and agreement:
 		<and/>
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
 	</showWhen>
-	<showWhen id="swNPArtAndDemBothCooccurYesDemPosEitherorBoth">
+	<showWhen id="swNPArtAndDemBothCooccurYesDemPosEither">
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
 		<and/>
-		<openParen/>
 		<whenRadio button="NPArtAndDemBothCooccurYesDemPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"/>
-		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMassorYes">
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
 		<and/>
-		<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemPosEitherSide"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"/>
@@ -359,23 +338,19 @@ To handle class marking and agreement:
 	<showWhen id="swNPArtAndDemBothCooccurYesDemPosBothRequiredMass">
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
 		<and/>
-		<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemPosEitherSide"/>
 		<and/>
 		<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"/>
 	</showWhen>
-	<showWhen id="swNPArtAndDemBothCooccurYesArtPosEitherorBoth">
+	<showWhen id="swNPArtAndDemBothCooccurYesArtPosEither">
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
 		<and/>
-		<openParen/>
 		<whenRadio button="NPArtAndDemBothCooccurYesArtPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"/>
-		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMassorYes">
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
 		<and/>
-		<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtPosEitherSide"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
@@ -386,7 +361,7 @@ To handle class marking and agreement:
 	<showWhen id="swNPArtAndDemBothCooccurYesArtPosBothRequiredMass">
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
 		<and/>
-		<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtPosEitherSide"/>
 		<and/>
 		<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
 	</showWhen>

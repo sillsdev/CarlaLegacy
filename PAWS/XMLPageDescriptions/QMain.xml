@@ -18,8 +18,8 @@ As discussed in <section number="10">Complement Clauses</section>, X-bar theory 
 	<form section="q" transparent="yes">
 		<br/>
 		<buttons>
-			<button id="QBack" value="Back" goto="Contents.htm"/>
-			<button id="QNext" value="Next" goto="QMainYN.htm"/>
+			<button id="QMainBack" value="Back" goto="Contents.htm"/>
+			<button id="QMainNext" value="Next" goto="QMainYN.htm"/>
 		</buttons>
 	</form>
 </page>

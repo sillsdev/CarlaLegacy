@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvClMain">
+	<title>Adverbial Clauses</title>
+	<introduction>This section considers the complements that can follow temporal and reason adverbs.  Temporal adverbs with complements are used here to illustrate the constructions, then both types will be dealt with for your language on the next screen. </introduction>
+	<EnglishExample>
+		<exItem>English examples of temporal adverbs with complements used in full sentences include:</exItem>
+		<exItem label="1.">[Since then], John has been moody.</exItem>
+		<exItem label="2.">John has been home [since last week].</exItem>
+		<exItem label="3.">[Since John has been home from the hospital] he is doing better.</exItem>
+		<exItem label="4.">John is feeling fine [now that he is home from the hospital].</exItem>
+		<exItem label="5.">The dog followed Sue everywhere [when she returned from college].</exItem>
+		<exItem label="6."> [When she returned from college], the dog followed Sue everywhere.</exItem>
+	</EnglishExample>
+	<introduction>These examples show that particular temporal adverbs subcategorize for certain types of complements.  In example 1 <example>since</example> is followed by another temporal adverb, in example 2 by a temporal nominal phrase, and in example 3 it has a sentential complement.  Examples 5 and 6 show that <example>when</example> also takes a sentential complement, whereas <example>now</example> in example 4 has a CP complement.
+<br/>
+		<br/>
+All of these adverbial clauses (or phrases) act the same as simple temporal adverbs, so they will be temporal AdvPs with the appropriate type of complement.  Note also that adverbs of this type normally may occur either sentence-initial or sentence-final.  The tree structures for the first four examples are given here, beginning with the adverb complement (example 1):
+<tree img="../TreeDescriptions/PawsAdvClAdv.png"/>
+		<br/>
+The structure with a nominal phrase complement (example 2) is:
+		<tree img="../TreeDescriptions/PawsAdvClDP.png"/>
+		<br/>
+The structure with an IP complement (example 3) is:
+		<tree img="../TreeDescriptions/PawsAdvClIP.png"/>
+		<br/>
+The structure with an CP complement (example 4) is:
+		<tree img="../TreeDescriptions/PawsAdvClCP.png"/>
+	</introduction>
+	<form section="advcl">
+		<br/>
+		<buttons>
+			<button id="AdvClMainBack" value="Back" goto="Contents.htm"/>
+			<button id="AdvClMainNext" value="Next" goto="AdvClFeatures.htm"/>
+		</buttons>
+	</form>
+</page>

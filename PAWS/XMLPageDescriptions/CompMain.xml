@@ -4,31 +4,40 @@
 <page id="CompMain">
 	<title>Complement Clauses</title>
 	<introduction>This section considers various types of embedded clauses which are complements of main verbs, such as the following examples from English.  (Embedded questions will be handled in <section number="11">Questions</section>.) </introduction>
-<EnglishExample>
-   <exItem label="1.">I believe that Jill is my friend.</exItem>
-	<exItem label="2.">Jill insists that she is my friend.</exItem>
-   <exItem label="3.">I expect that Joe will come to the party.</exItem>
-  <exItem label="4.">I expect Joe to come to the party.</exItem>
-   <exItem label="5.">I will persuade Joe to come to the party.</exItem>
-   <exItem label="6.">Joe would hate for Sue to be at the party.</exItem>
-   <exItem label="7.">Joe tried to come to the party.</exItem>
-</EnglishExample>
-<introduction>The examples illustrate that main verb selects one or more particular types of complement clauses which can occur gramatically.  For example, <example>try</example> cannot have a complement clause beginning with <example>that</example> and the subject of the embedded clause must be coreferent to the main clause subject and pro-dropped.  Further, <example>believe, insist</example> and <example>persuade</example> cannot have a complement clause beginning with <example>for</example> and none of the verbs above can have an embedded question complement.
-<br/><br/>
+	<EnglishExample>
+		<exItem label="1.">I believe that Jill is my friend.</exItem>
+		<exItem label="2.">Jill insists that she is my friend.</exItem>
+		<exItem label="3.">I expect that Joe will come to the party.</exItem>
+		<exItem label="4.">I expect Joe to come to the party.</exItem>
+		<exItem label="5.">I will persuade Joe that he should come to the party.</exItem>
+		<exItem label="6.">I will persuade Joe to come to the party.</exItem>
+		<exItem label="7.">Joe would hate for Sue to be at the party.</exItem>
+		<exItem label="8.">Joe tried to come to the party.</exItem>
+	</EnglishExample>
+	<introduction>The examples illustrate that the main verb selects one or more particular types of complement clauses which can occur gramatically.  For example, <example>try</example> cannot have a complement clause beginning with <example>that</example> and the subject of the embedded clause must be coreferent to the main clause subject and pro-dropped.  Further, <example>believe, insist</example> and <example>persuade</example> cannot have a complement clause beginning with <example>for</example> and none of the verbs above can have an embedded question complement.
+<br/>
+		<br/>
 A second point the examples illustrate is that the presence of a particular complementizer determines the finiteness of the embedded verb which follows it.  This evidence of subcategorization by the main verb for the complementizer and by the complementizer for the embedded verb form leads to the conclusion that the complementizer is the head of the embedded clause.  Therefore, within X-Bar Theory, embedded clauses which have complementizers are CPs, which sit on top of the IP.
-<br/> <br/>A sample trees for example 1 is shown here: CHANGE FILE
-<tree img="../TreeDescriptions/PawsMainYNQues.png"/>
+<br/>
+		<br/>A sample tree for example 1 is shown here:
+<tree img="../TreeDescriptions/PawsCompCP.png"/>
 		<br/>
-When there is no complementizer present, as in examples 4, 5 and 7 above, the complement clause is simply an IP.  A sample tree for example 4 is shown here: CHANGE FILE
-<tree img="../TreeDescriptions/PawsMainYNQues.png"/>
+When there is no complementizer present, as in examples 4, 6 and 8 above, the complement clause is simply an IP.  A sample tree for example 4 with a nonfinite complement is shown here:
+<tree img="../TreeDescriptions/PawsCompIPnonfinite.png"/>
+<br/>
+There is an important difference between <example>expect</example> (in examples 3 and 4) and <example>persuade</example> (in examples 5 and 6): <example>expect</example> can have either a finite CP or a nonfinite IP for its complement while <example>persuade</example> has a direct object as well as either of those complement clauses.  A tree for example 5 is shown here:
+<tree img="../TreeDescriptions/PawsCompDPCP.png"/>
+<br/>
+Finally, a tree for example 8 with a nonfinite IP complement and required pro-drop is shown here:
+<tree img="../TreeDescriptions/PawsCompIPprodrop.png"/>
 		<br/>
-		<help href="../Help/Cbgbtext.doc#CPYesNoQuestions">Click here for more information about the CP phrase structure of embedded clauses.CHANGE REF</help>
+		<help href="../Help/Cbgbtext.doc#ClausalComplements">Click here for more information about the CP phrase structure of embedded clauses.</help>
 	</introduction>
 	<form section="q" transparent="yes">
 		<br/>
 		<buttons>
 			<button id="QBack" value="Back" goto="Contents.htm"/>
-			<button id="QNext" value="Next" goto="CompTesting.htm"/>
+			<button id="QNext" value="Next" goto="CompFeatures.htm"/>
 		</buttons>
 	</form>
 </page>

@@ -9,7 +9,7 @@
 			<li> time,</li>
 			<li> location,</li>
 			<li>manner, and</li>
-			<li>reason.</li>
+			<li>reason or purpose.</li>
 		</ul>
 These types have different characteristics as to
 which positions they may occupy and how they may be modified, so they
@@ -30,9 +30,8 @@ adverbial clauses <example>while you are working</example>, <example>when Sue ar
 		<exItem label="2.">much later.</exItem>
 		<exItem label="3.">only now.</exItem>
 	</EnglishExample>
-	<instruction>Think of examples of temporal adverbs and include any degree words which can modify them.</instruction>
 	<form section="advp">
-		<prompt>Key your examples here:</prompt>
+		<prompt>Key your examples of temporal adverbs and any degree words which can modify them here:</prompt>
 		<textBox id="AdvPExample" dataItem="temporalExample"/>
 		<instruction>In the lexicon, key the feature <feature>temporal</feature> on all adverbs that express
 time.  You can also add this feature to nouns such as <example>night</example>, <example>year</example>,

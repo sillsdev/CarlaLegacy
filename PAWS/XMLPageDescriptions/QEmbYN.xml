@@ -13,7 +13,7 @@
 		<prompt>Key similar examples of embedded Yes/No questions in your language here:</prompt>
 		<textBox id="QEmbYNExample" dataItem="embYNExample" cols="50"/>
 		<br/>
-		<instruction>Only certain verbs can take a question or sentential complement. In the lexicon, mark the verbs from your examples and any others that come to mind with the feature <feature>sentential</feature>
+		<instruction>Only certain verbs can take a question complement. In the lexicon, mark the verbs from your examples and any others that come to mind with the features <feature>sentential embedded_question</feature> if they can only take an embedded question complement (like 'wonder'), but use the features <feature>sentential embedded_question_allowed</feature> if they can take an embedded question as well as a non-question complement (like 'know').
 		</instruction>
 		<radioGroup>
 			<groupName dataItem="embYN" default="no">RQEmbYN</groupName>

@@ -42,12 +42,10 @@ Key the personal pronouns in the text box, with each pronoun followed by a perio
 		</prompt>
 		<textBox id="PronPersonalErgSubjectTransExample" dataItem="personalErgSubjectTransExample" show="swNPCaseErg"/>
 		<prompt id="PronCaseErgPrompt1" show="swNPCaseErg">
-			<br/>
-			<br/>Key the personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			 <br/>Key the personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalErgSubjectIntransExample" dataItem="personalErgSubjectIntransExample" show="swNPCaseErg"/>
 		<prompt id="PronCaseErgPrompt2" show="swNPCaseErg">
-			<br/>
 			<br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalErgPossessorExample" dataItem="personalErgPossessorExample" show="swNPCaseErg"/>
@@ -73,23 +71,19 @@ Key the personal pronouns in the text box, with each pronoun followed by a perio
 		</prompt>
 		<textBox id="PronPersonalSplitSubjectExample" dataItem="personalSplitSubjectExample" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt1" show="swNPCaseSplit">
-			<br/>
-			<br/>Key the personal pronouns which normally appear in object position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+				<br/>Key the personal pronouns which normally appear in object position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalSplitObjectExample" dataItem="personalSplitObjectExample" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt2" show="swNPCaseSplit">
-			<br/>
-			<br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			 <br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalSplitPossessorExample" dataItem="personalSplitPossessorExample" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt3" show="swNPCaseSplit">
-			<br/>
-			<br/>Key the personal pronouns which appear as subjects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			  <br/>Key the personal pronouns which appear as subjects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalSplitErgExample" dataItem="personalSplitErgExample" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt4" show="swNPCaseSplit">
-			<br/>
-			<br/>Key the personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+			  <br/>Key the personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
 		</prompt>
 		<textBox id="PronPersonalSplitAbsExample" dataItem="personalSplitAbsExample" show="swNPCaseSplit"/>
 		<instruction id="PronCaseTypeSplitInstruction" show="swNPCaseSplit">

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="CompTesting">
-	<title level="2">Complement Clauses - Testing</title>
-	<form section="comp">
+<page id="RelClTesting">
+	<title level="2">Relative Clauses - Testing</title>
+	<form section="relcl">
 		<instruction>
-Run the file comptest.txt through your morphological parser and then
+Run the file relcltest.txt through your morphological parser and then
 run the syntactic parser on the output.  Check the log for the
 results and note any changes you need to make to the lexicon or to
 answers about the order of elements in the phrase structure
@@ -13,12 +13,12 @@ rules. Make the changes as needed and rerun.<br/>
 			<br/>
 
 Please check off this section now in 'Contents' and then proceed to
-<section number="11">Questions</section> when you are ready.
+<section number="13">Adverbial Clauses</section> when you are ready.
 </instruction>
 		<br/>
 		<buttons>
-			<button id="CompTestingBack" value="Back" goto="CompFeatures.htm"/>
-			<button id="CompTestingNext" value="Next" goto="Contents.htm"/>
+			<button id="RelClTestingBack" value="Back" goto="RelClMain.htm"/>
+			<button id="RelClTestingNext" value="Next" goto="Contents.htm"/>
 		</buttons>
 	</form>
 </page>

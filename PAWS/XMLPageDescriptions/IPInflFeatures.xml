@@ -5,7 +5,7 @@
 	<title level="2">Basic, Single-Clause Sentences - Inflection Features</title>
 	<introduction>Sentences normally include some kind of inflection on the verbs and possibly agreement between the subject, object and verb.</introduction>
 	<instruction>Verbs and auxiliaries usually carry inflection features, such as tense, aspect, and/or mood.  In most cases, these features are added by affixes.  Add the appropriate features from the following chart to the relevant affixes and also to any auxiliaries or irregular verb forms: <br/>
-	<featureChart explanations="no">
+		<featureChart explanations="no">
 			<featureRow>
 				<featureType>tense</featureType>
 				<featureItem>present</featureItem>
@@ -91,10 +91,20 @@
 				<featureItem>realis</featureItem>
 				<featureExplanation/>
 			</featureRow>
+			<featureRow>
+				<featureType>other</featureType>
+				<featureItem>finite</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>-finite</featureItem>
+				<featureExplanation/>
+			</featureRow>
 		</featureChart>
 	</instruction>
 	<form section="ip" transparent="yes">
-<br/>
+		<br/>
 		<buttons>
 			<button id="IPInflFeaturesBack" value="Back" goto="IPContents.htm"/>
 			<button id="IPInflFeaturesNext" value="Next" goto="IPAgrFeatures.htm"/>

@@ -35,9 +35,9 @@
 				<radio id="AdjPDegreeAfter" checked="yes" dataValue="after">After the adjective</radio>
 				<radio id="AdjPDegreeEitherSide" checked="yes" dataValue="either">On either side of the adjective, but not both sides at the same time</radio>
 				<radio id="AdjPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrboth">On either side of the adjective, or both sides at the same time</radio>
-			<radio id="AdjPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adjective, or both sides at the same time</radio>
-			<radio id="AdjPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adjective, or both sides at the same time</radio>
-			<radio id="AdjPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+				<radio id="AdjPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adjective, or both sides at the same time</radio>
+				<radio id="AdjPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adjective, or both sides at the same time</radio>
+				<radio id="AdjPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
 				<radioGroup id="AdjPDegreeEitherSideTable" show="swAdjPDegreeEitherorBoth">
 					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
 					<prompt>Can all the degree words appear on either side of the adjective?</prompt>
@@ -53,9 +53,9 @@
 				<radio id="AdjPMannerAfter" checked="yes" dataValue="after">After the adjective</radio>
 				<radio id="AdjPMannerEitherSide" checked="yes" dataValue="either">On either side of the adjective, but not both sides at the same time</radio>
 				<radio id="AdjPMannerEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the adjective, or both sides at the same time</radio>
-			<radio id="AdjPMannerBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adjective, or both sides at the same time</radio>
-			<radio id="AdjPMannerAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adjective, or both sides at the same time</radio>
-			<radio id="AdjPMannerBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+				<radio id="AdjPMannerBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adjective, or both sides at the same time</radio>
+				<radio id="AdjPMannerAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adjective, or both sides at the same time</radio>
+				<radio id="AdjPMannerBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
 				<radioGroup id="AdjPMannerEitherSideTable" show="swAdjPMannerEitherorBoth">
 					<groupName dataItem="degreeEither" default="unrestricted">RMannerEitherSide</groupName>
 					<prompt>Can all the modifiers appear on either side of the adjective?</prompt>
@@ -72,7 +72,7 @@
 			<br/>
 			<span id="AdjPDegreeEitherRestrictedInstruction" show="swAdjPDegreeEitherRestricted">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</span>
 			<br/>
-			<span id="AdjPMannerEitherRestrictedInstruction" show="swAdjPMannerEitherRestricted">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</span>
+			<span id="AdjPMannerEitherRestrictedInstruction" show="swAdjPMannerEitherRestricted">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words or manner adverbs which can occur on either side.</span>
 		</instruction>
 		<br/>
 		<buttons>
@@ -84,17 +84,25 @@
 		<whenRadio button="AdjPModifiersYesDegree"/>
 	</showWhen>
 	<showWhen id="swAdjPDegreeEitherorBoth">
-		 <whenRadio button="AdjPModifiersYesDegree"/>
-<and/> <not/> <whenRadio button="AdjPDegreeBefore"/>
- <and/> <not/>  <whenRadio button="AdjPDegreeAfter"/>
+		<whenRadio button="AdjPModifiersYesDegree"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdjPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdjPDegreeAfter"/>
 	</showWhen>
 	<showWhen id="swAdjPModifiersYesManner">
 		<whenRadio button="AdjPModifiersYesManner"/>
 	</showWhen>
 	<showWhen id="swAdjPMannerEitherorBoth">
 		<whenRadio button="AdjPModifiersYesManner"/>
-<and/> <not/>        <whenRadio button="AdjPMannerBefore"/>
-<and/> <not/>         <whenRadio button="AdjPMannerAfter"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdjPMannerBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdjPMannerAfter"/>
 	</showWhen>
 	<showWhen id="swAdjPModifiersYesDegreeorManner">
 		<whenRadio button="AdjPModifiersYesDegree"/>
@@ -105,14 +113,22 @@
 		<whenRadio button="AdjPModifiersYesDegree"/>
 		<and/>
 		<whenRadio button="AdjPDegreeEitherRestricted"/>
-<and/> <not/> <whenRadio button="AdjPDegreeBefore"/>
- <and/> <not/>  <whenRadio button="AdjPDegreeAfter"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdjPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdjPDegreeAfter"/>
 	</showWhen>
 	<showWhen id="swAdjPMannerEitherRestricted">
 		<whenRadio button="AdjPModifiersYesManner"/>
 		<and/>
 		<whenRadio button="AdjPMannerEitherRestricted"/>
-  <and/> <not/>        <whenRadio button="AdjPMannerBefore"/>
-<and/> <not/>         <whenRadio button="AdjPMannerAfter"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdjPMannerBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdjPMannerAfter"/>
 	</showWhen>
 </page>

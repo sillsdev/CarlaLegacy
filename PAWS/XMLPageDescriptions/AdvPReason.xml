@@ -2,18 +2,17 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPReason">
-	<title level="2">Adverbs and AdvP - Reason Adverbs</title>
-	<introduction>Reason adverbs include <example>therefore</example> and
-<example>so</example>.  Reason can also be expressed by a
-prepositional phrase <example>for this reason</example> and
-by an adverbial clause beginning with <example>because</example>.  Reason adverbs do not allow modifiers
-(at least in English).
+	<title level="2">Adverbs and AdvP - Reason or Purpose Adverbs</title>
+	<introduction>Reason or purpose adverbs include <example>therefore</example> and
+<example>so</example>.  Reason or purpose can also be expressed by a
+prepositional phrase, such as <example>for this reason</example> or <example>on purpose</example>, and
+by an adverbial clause beginning with <example>because</example> or <example>since</example> or <example>in order</example>.  Reason or purpose adverbs do not allow modifiers (at least in English).  The structure of these adverbial clauses will be addressed in <section number="13">Adverbial Clauses</section>.
 </introduction>
 	<form section="advp">
-		<prompt>Key your examples here:</prompt>
+		<prompt>Key your examples of reason or purpose adverbs here, including them in full sentences:</prompt>
 		<textBox id="AdvPReasonExample" dataItem="reasonExample"/>
-		 <instruction>In the lexicon, key the feature <feature>reason</feature> on
-all adverbs that express reason, and also on the nouns like <example>reason</example> and <example>purpose</example>.
+		<instruction>In the lexicon, key the feature <feature>reason</feature> on
+all adverbs that express reason or purpose, and also on the nouns like <example>reason</example> and <example>purpose</example>.  Any multi-word forms, like <example>in order</example> are best handled as a single entry using <tool>Join Compound</tool>.
 </instruction>
 		<buttons>
 			<button id="AdvPReasonExamplesBack" value="Back" goto="AdvPManner.htm"/>

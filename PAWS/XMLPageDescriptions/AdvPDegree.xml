@@ -17,7 +17,7 @@
 		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
 		<br/>
 		<br/>
-		<prompt>Reason examples:</prompt>
+		<prompt>Reason or purpose examples:</prompt>
 		<textBox id="AdvPReasonExample" dataItem="reasonExample"/>
 		<br/>
 		<br/>
@@ -33,10 +33,10 @@
 				<radio id="AdvPDegreeAfter" checked="yes" dataValue="after">After the adverb</radio>
 				<radio id="AdvPDegreeEitherSide" checked="yes" dataValue="either">On either side of the adverb, but not both sides at the same time</radio>
 				<radio id="AdvPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the adverb, or both sides at the same time</radio>
-			 <radio id="AdvPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adverb, or both sides at the same time</radio>
-			<radio id="AdvPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adverb, or both sides at the same time</radio>
-			<radio id="AdvPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-			   <radioGroup id="AdvPDegreeEitherSideTable" show="swAdvPDegreeEitherorBoth">
+				<radio id="AdvPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adverb, or both sides at the same time</radio>
+				<radio id="AdvPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adverb, or both sides at the same time</radio>
+				<radio id="AdvPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+				<radioGroup id="AdvPDegreeEitherSideTable" show="swAdvPDegreeEitherorBoth">
 					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
 					<prompt>Can all the degree words appear on either side of the adverb?</prompt>
 					<radio id="AdvPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
@@ -47,8 +47,8 @@
 				<groupName dataItem="degreeSet" default="unrestricted">RSet</groupName>
 				<prompt>Are the degree words which can modify adverbs all the same ones?</prompt>
 				<radio id="AdvPSetUnrestricted" checked="yes" dataValue="unrestricted">Yes, the same set can modify any type of adverb</radio>
-				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Almost; the same set can modify temporals, locatives, and manner adverbs, but reason adverbs are not modified</radio>
-				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, there are distinct sets of degree words for each type of adverb (Note that some overlap is OK and no degree words for reason adverbs is also OK)
+				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Almost; the same set can modify temporals, locatives, and manner adverbs, but reason or purpose adverbs are not modified</radio>
+				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, there are distinct sets of degree words for each type of adverb (Note that some overlap is OK and no degree words for reason or purpose adverbs is also OK)
 </radio>
 			</radioGroup>
 		</radioGroup>
@@ -65,9 +65,9 @@
 					<li>
 						<feature>Deg modifies_manner</feature> for manner modifiers, and</li>
 					<li>
-						<feature>Deg modifies_reason</feature> for reason modifiers</li>
+						<feature>Deg modifies_reason</feature> for reason or purpose modifiers</li>
 				</ul>
- If you have overlapping in the sets, just add more than one <feature>modifies...</feature> feature after a space.  If there are no degree words which modify reason adverbs, just don't mark any words with this feature.</span>
+ If you have overlapping in the sets, just add more than one <feature>modifies...</feature> feature after a space.  If there are no degree words which modify reason or purpose adverbs, just don't mark any words with this feature.</span>
 			<br/>
 			<br/>
 			<span id="AdvPDegreeEitherRestrictedInstruction" show="swAdvPDegreeEitherRestricted">
@@ -89,15 +89,23 @@ either side.</span>
 	</showWhen>
 	<showWhen id="swAdvPDegreeEitherorBoth">
 		<whenRadio button="AdvPDegreeYes"/>
-		<and/> <not/>   <whenRadio button="AdvPDegreeBefore"/>
-  <and/> <not/>        <whenRadio button="AdvPDegreeAfter"/>
-		</showWhen>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeAfter"/>
+	</showWhen>
 	<showWhen id="swAdvPDegreeEitherRestricted">
 		<whenRadio button="AdvPDegreeYes"/>
 		<and/>
 		<whenRadio button="AdvPDegreeEitherRestricted"/>
-	  <and/> <not/>   <whenRadio button="AdvPDegreeBefore"/>
-  <and/> <not/>        <whenRadio button="AdvPDegreeAfter"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeAfter"/>
 	</showWhen>
 	<showWhen id="swAdvPSetUnrestricted">
 		<whenRadio button="AdvPDegreeYes"/>

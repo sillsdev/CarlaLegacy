@@ -12,7 +12,17 @@
 	</EnglishExample>
 	<form section="ip">
 		<prompt>Think of any similar examples from your language and key them here:</prompt>
-		<textBox id="IPAuxExample" dataItem="auxExample" cols="50"/>
+		<textBox id="IPAuxExample" dataItem="auxExample" cols="50"/><br/>
+<br/>
+<introduction>The nonfinite word <example>to</example> used in English embedded clauses also acts as an auxiliary in that it fills the same position and can occur before other auxiliaries:</introduction>
+	<EnglishExample>
+		<exItem label="1.">The boy wanted to hit the ball.</exItem>
+		<exItem label="2.">The boy would like to have hit the ball.</exItem>
+		<exItem label="3.">The boy would like to have been running the bases.</exItem>
+	</EnglishExample>
+		<prompt>Think of any nonfinite examples from your language and key them here:</prompt>
+		<textBox id="IPAuxNonfiniteExample" dataItem="auxNonfiniteExample" cols="50"/><br/>
+<br/>
 		<radioGroup>
 			<groupName dataItem="aux" default="no">RIPAux</groupName>
 			<prompt>Does your language have any auxiliary elements that are separate words?</prompt>
@@ -44,7 +54,8 @@
 				</radio>
 			</radioGroup>
 		</radioGroup>
-<br/>
+<instruction id="IPAuxNonfiniteInstruction" show="swAuxYes">If your language has a nonfinte marker that is written as a separate word like <example>to</example> in English, add the feature <feature>-finite</feature> to the entry and make sure that it is included in the category mapping to <category>Aux</category> in the <section number="9.8">Basic, Single-Clause Sentences - Testing</section> (or add the feature <feature>makeAux</feature> now to be sure).</instruction>
+		<br/>
 		<buttons>
 			<button id="IPAuxBack" value="Back" goto="IPContents.htm"/>
 			<button id="IPAuxNext" value="Next" goto="IPContents.htm"/>

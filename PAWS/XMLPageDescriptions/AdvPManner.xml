@@ -6,7 +6,7 @@
 	<title level="2">Adverbs and AdvP - Manner Adverbs</title>
 	<introduction>Manner adverbs directly modify the verb and usually end in <example>-ly</example> in English.  They do not seem to have clear
 counterparts of other phrase types, except possibly some comparatives,
-such as <example>as fast as he could</example>.  In English,
+such as <example>as fast as he could</example>.  (Comparatives will be dealt with in <section number="15">Coordination Constructions</section>.)  In English,
 manner adverbs can be modified by <example>very</example>
 and <example>so</example>, as in:
 </introduction>
@@ -16,14 +16,25 @@ and <example>so</example>, as in:
 		<exItem label="3.">very well.</exItem>
 	</EnglishExample>
 	<form section="advp">
-		<prompt>Key your examples here:</prompt>
+		<prompt>Key examples of how your language expresses manner here:</prompt>
 		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
-			 <instruction>In the lexicon, key the feature <feature>manner</feature>
+<br/> <br/>
+<radioGroup>
+	<groupName dataItem="mannerType" default="word">RAdvPMannerType</groupName>
+	<prompt>Some languages do not have separate words, but rather use affixes to express manner.  Does your language have any manner adverbs which are separate words?</prompt>
+	<radio id="AdvPMannerTypeWord" dataValue="word">Yes</radio>
+	<radio id="AdvPMannerTypeAffix" dataValue="affix">No, they are all written as part of the verb</radio>
+</radioGroup>
+		<instruction id="AdvPMannerTypeWordInstruction" show="swAdvPMannerTypeWord">In the lexicon, key the feature <feature>manner</feature>
 on all adverbs that express manner.
 </instruction>
+<br/>
 		<buttons>
 			<button id="AdvPMannerExamplesBack" value="Back" goto="AdvPLocative.htm"/>
 			<button id="AdvPMannerExamplesNext" value="Next" goto="AdvPReason.htm"/>
 		</buttons>
 	</form>
+<showWhen id="swAdvPMannerTypeWord">
+	<whenRadio button="AdvPMannerTypeWord"></whenRadio>
+</showWhen>
 </page>
