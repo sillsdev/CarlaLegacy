@@ -1,5 +1,9 @@
 AMPLE CHANGE HISTORY
 
+3.7.2 (22-Jul-2003)
+-------------------
+1.  Fixed bug which could cause SGML/XML trace output to be lost
+
 3.7.1 (17-Jun-2003)
 -------------------
 1. Added SGML/XML trace output for PC-PATR grammar call
