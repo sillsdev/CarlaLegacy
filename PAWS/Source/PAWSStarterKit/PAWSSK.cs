@@ -33,12 +33,21 @@ namespace PAWSStarterKit
 		const string m_strPurposeHtm = "Purpose.htm";
 		const string m_strUnderConstructionHtm = "UnderConstruction.htm";
 		const string m_strEditCaption = "Edit Items";
-		string m_strAppPath = Path.GetDirectoryName(Application.ExecutablePath);
+		string m_strAppPath;
+		string m_strXLingPapDtd;
+		string m_strXLingPapCss;
+		string m_strXLingPapXsl;
 		string m_strPAWSErrorMsg = Application.ProductName + ": ";
 		string m_strHelpPath;
 		string m_strHtmsPath;
 		string m_strStylesPath;
 		string m_strTreeDescriptionsPath;
+		string m_strBlack1997;
+		string m_strBlack1999;
+		string m_strMcConnel2002;
+		string m_strXLingPapDoc;
+		string[] m_astrIgnorePages = new string[4];
+
 		MenuItem miFileNew;
 		MenuItem miFileOpen;
 		MenuItem miFileClose;
@@ -56,7 +65,7 @@ namespace PAWSStarterKit
 		MenuItem miViewRefresh;
 		MenuItem miHelpAbout;
 		MenuItem miHelpBlack1997Doc;
-		MenuItem miHelpBlack1998Doc;
+		MenuItem miHelpBlack1999Doc;
 		MenuItem miHelpMcConnel2002Doc;
 		MenuItem miHelpXLingPapDoc;
 
@@ -72,7 +81,7 @@ namespace PAWSStarterKit
 		private bool m_bIsDirty;
 		private const string m_strProgName = "PAWS Starter Kit";
 		private const string m_strInitHtm = "PawsSKInit.htm";
-		private const string m_strNewAnswerFileRelative = @"..\Data\PAWSStarterKitNew.paw";
+		private const string m_strNewAnswerFileRelative = @"Data\PAWSStarterKitNew.paw";
 		private string m_strNewAnswerFile;
 		private const string m_strAnswerFileFilter = "PAWS Starter Kit (*.paw)|*.paw|" +
 			"All Files (*.*)|*.*";
@@ -95,10 +104,14 @@ namespace PAWSStarterKit
 
 		public PAWSSKForm()
 		{
+			// set value of application path
+			m_strAppPath = Path.GetDirectoryName(Application.ExecutablePath);
+			m_strAppPath = m_strAppPath.Remove(m_strAppPath.Length-4, 4);
+
 			// load grammar, writer and examples transforms
 			try
 			{
-				string strTransformsPath = Path.Combine(m_strAppPath, @"..\Transforms");
+				string strTransformsPath = Path.Combine(m_strAppPath, @"Transforms");
 				m_XslGrammarTransform.Load(Path.Combine(strTransformsPath, "PAWSSKMasterGrammarMapper.xsl"));
 				m_XslWriterTransform.Load(Path.Combine(strTransformsPath, "PAWSSKWriterMapper.xsl"));
 				m_XslExampleTransform.Load(Path.Combine(strTransformsPath, "PAWSSKParameterizedExample.xsl"));
@@ -136,6 +149,18 @@ namespace PAWSStarterKit
 
 			// Initialize some values
 			m_strNewAnswerFile = Path.Combine(m_strAppPath, m_strNewAnswerFileRelative);
+			m_strXLingPapDtd = Path.Combine(m_strAppPath, @"Data\XLingPap.dtd");
+			m_strXLingPapCss = Path.Combine(m_strAppPath, @"Styles\XLingPap1.css");
+			m_strXLingPapXsl = Path.Combine(m_strAppPath, @"Transforms\XLingPap1.xsl");
+			m_strBlack1997 = Path.Combine(m_strAppPath, @"Help\Black1997.htm");
+			m_strBlack1999 = Path.Combine(m_strAppPath, @"Help\CBGBTEXT.DOC");
+			m_strMcConnel2002 = Path.Combine(m_strAppPath, @"Help\pcpatr.htm");
+			m_strXLingPapDoc = Path.Combine(m_strAppPath, @"Help\XLingPapUserDoc.htm");
+			m_astrIgnorePages[0] = m_strBlack1997;
+			m_astrIgnorePages[1] = m_strBlack1999;
+			m_astrIgnorePages[2] = m_strMcConnel2002;
+			m_astrIgnorePages[3] = m_strXLingPapDoc;
+			Array.Sort(m_astrIgnorePages, Comparer.Default);
 
 			if (m_strUserAnswerFile != null)
 			{
@@ -342,10 +367,10 @@ namespace PAWSStarterKit
 			miHelpBlack1997Doc.Click += new EventHandler(MenuHelpBlack1997OnClick);
 			mMenu.MenuItems[index].MenuItems.Add(miHelpBlack1997Doc);
 
-			// Help Black1998 Documentation
-			miHelpBlack1998Doc = new MenuItem("&GB Intro (Black 1998)");
-			miHelpBlack1998Doc.Click += new EventHandler(MenuHelpBlack1998OnClick);
-			mMenu.MenuItems[index].MenuItems.Add(miHelpBlack1998Doc);
+			// Help Black1999 Documentation
+			miHelpBlack1999Doc = new MenuItem("&GB Intro (Black 1999)");
+			miHelpBlack1999Doc.Click += new EventHandler(MenuHelpBlack1999OnClick);
+			mMenu.MenuItems[index].MenuItems.Add(miHelpBlack1999Doc);
 
 			// Help McConnel2002 Documentation
 			miHelpMcConnel2002Doc = new MenuItem("&PC-PATR documentation (McConnel 2002)");
@@ -689,7 +714,7 @@ namespace PAWSStarterKit
 			{
 				saveUserDataStoreToUserAnswerFile();
 				saveGrammarFile();
-				saveWriterFile();
+				saveWriterFiles();
 				saveExampleFiles();
 				m_bIsDirty = false;
 				setTitle();
@@ -808,19 +833,19 @@ namespace PAWSStarterKit
 		}
 		void MenuHelpBlack1997OnClick(object obj, EventArgs ea)
 		{
-			showPage(Path.Combine(m_strAppPath, @"..\Help\Black1997.htm"));
+			showPage(m_strBlack1997);
 		}
-		void MenuHelpBlack1998OnClick(object obj, EventArgs ea)
+		void MenuHelpBlack1999OnClick(object obj, EventArgs ea)
 		{
-			showPage(Path.Combine(m_strAppPath, @"..\Help\CBGBTEXT.DOC"));
+			showPage(m_strBlack1999);
 		}
 		void MenuHelpMcConnel2002OnClick(object obj, EventArgs ea)
 		{
-			showPage(Path.Combine(m_strAppPath, @"..\Help\pcpatr.htm"));
+			showPage(m_strMcConnel2002);
 		}
 		void MenuHelpXLingPapDocOnClick(object obj, EventArgs ea)
 		{
-			showPage(Path.Combine(m_strAppPath, @"..\Help\XLingPapUserDoc.htm"));
+			showPage(m_strXLingPapDoc);
 		}
 		void MenuHelpAboutOnClick(object obj, EventArgs ea)
 		{
@@ -845,8 +870,9 @@ namespace PAWSStarterKit
 		void WebBrowserOnDocumentComplete(object obj, AxSHDocVw.DWebBrowserEvents2_DocumentCompleteEvent ev)
 		{
 			string strPage = ev.uRL.ToString();
-			if (Path.GetFileName(strPage) != m_strInitHtm)
-			{
+			if ((Path.GetFileName(strPage) != m_strInitHtm) &&
+				0 > Array.BinarySearch(m_astrIgnorePages, strPage, Comparer.Default))
+			{ // it's not one of the "ignore" pages
 				saveUserDataStoreToUserAnswerFile();
 				if (m_bInitializing)
 				{
@@ -1115,15 +1141,32 @@ namespace PAWSStarterKit
 				MessageBox.Show(this.m_strPAWSErrorMsg + "saveGrammarFile: " + exc);
 			}
 		}
-		void saveWriterFile()
+		void saveWriterFiles()
 		{
 			try
 			{
 				m_XslWriterTransform.Transform(m_strUserAnswerFile, m_strUserWriterFile);
+				string strUserWriterDir = Path.GetDirectoryName(m_strUserWriterFile);
+				string strUserWriterDtd = Path.Combine(strUserWriterDir, "XLingPap.dtd");
+				if (!File.Exists(strUserWriterDtd))
+				{
+					File.Copy(m_strXLingPapDtd, strUserWriterDtd, true);
+				}
+				string strUserWriterCss = Path.Combine(strUserWriterDir,
+					m_strLanguageAbbreviation + "WriteUp.css");
+				if (!File.Exists(strUserWriterCss))
+				{
+					File.Copy(m_strXLingPapCss, strUserWriterCss, true);
+				}
+				string strUserWriterXsl = Path.Combine(strUserWriterDir, "XLingPap1.xsl");
+				if (!File.Exists(strUserWriterXsl))
+				{
+					File.Copy(m_strXLingPapXsl, strUserWriterXsl, true);
+				}
 			}
 			catch (Exception exc)
 			{
-				MessageBox.Show(this.m_strPAWSErrorMsg + "saveWriterFile: " + exc);
+				MessageBox.Show(this.m_strPAWSErrorMsg + "saveWriterFiles: " + exc);
 			}
 		}
 		void saveExampleFiles()
@@ -1295,11 +1338,11 @@ namespace PAWSStarterKit
 
 				dlg.Text = "Initializing Language " + this.m_strLanguageName + ".  Please Wait...";
 
-				astrXmlFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\XMLPageDescriptions"), "*.xml");
-				astrContentsFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\HTMs"), "*Contents.htm");
-				astrGifFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\HTMs"), "*.gif");
-				astrPngFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\TreeDescriptions"), "*.png");
-				astrDocFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\Help"), "*.doc");
+				astrXmlFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"XMLPageDescriptions"), "*.xml");
+				astrContentsFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"HTMs"), "*Contents.htm");
+				astrGifFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"HTMs"), "*.gif");
+				astrPngFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"TreeDescriptions"), "*.png");
+				astrDocFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"Help"), "*.doc");
 				dlg.progressBar.Minimum = 1;
 				// Max is all the files plus the UnderConstruction.htm and Purpose.htm
 				dlg.progressBar.Maximum = astrXmlFiles.Length +
@@ -1315,7 +1358,7 @@ namespace PAWSStarterKit
 					XslTransform xslt = new XslTransform();
 					XsltArgumentList xslArg = new XsltArgumentList();
 					xslt.Load(Path.Combine(
-						Path.Combine(m_strAppPath,@"..\Transforms"), "PAWSSKHtmlMapper.xsl"));
+						Path.Combine(m_strAppPath,@"Transforms"), "PAWSSKHtmlMapper.xsl"));
 					xslArg.AddParam("prmLangAbbr", "", m_strLanguageAbbreviation);
 					foreach (string strFile in astrXmlFiles)
 					{
@@ -1339,9 +1382,9 @@ namespace PAWSStarterKit
 						updateHTM(strFile);
 					}
 					updateHTM(Path.Combine(m_strAppPath,
-						Path.Combine(@"..\HTMs", m_strPurposeHtm)));
+						Path.Combine(@"HTMs", m_strPurposeHtm)));
 					updateHTM(Path.Combine(m_strAppPath,
-						Path.Combine(@"..\HTMs", m_strUnderConstructionHtm)));
+						Path.Combine(@"HTMs", m_strUnderConstructionHtm)));
 				}
 				// Copy the *.gif files
 				copyFileSets(astrGifFiles, m_strHtmsPath, dlg);
@@ -1471,7 +1514,7 @@ namespace PAWSStarterKit
 		}
 		void createStyleSheet()
 		{
-			const string strStyles = @"..\Styles\";
+			const string strStyles = @"Styles\";
 			const string strMasterCss = "PAWSStarterKitMaster.css";
 			try
 			{

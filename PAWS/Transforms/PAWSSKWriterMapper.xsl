@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="c:\fw\ww\XLingPap\XLingPap.dtd"/>
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="XLingPap.dtd"/>
   <!--
 ================================================================
 Convert PAWS answer xml file to an XLingPap xml file
@@ -22,7 +22,7 @@ Main template
 -->
   <xsl:template match="/">
   <xsl:processing-instruction name="xml-stylesheet">
-  <xsl:text>type="text/xsl" href="c:\fw\ww\XLingPap\XLingPap1.xsl"</xsl:text>
+  <xsl:text>type="text/xsl" href="XLingPap1.xsl"</xsl:text>
   </xsl:processing-instruction>
 <lingPaper>
 <xsl:attribute name="css"><xsl:value-of select="//language/langAbbr"/>WriteUp.css</xsl:attribute>
