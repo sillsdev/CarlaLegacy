@@ -600,9 +600,15 @@ namespace PAWSStarterKit
 						@"..\UserData");
 					if (!Directory.Exists(strUserDataStoreDir))
 					{
-						MessageBox.Show("Cannot find UserData store directory!\nGiving up.", "Cannot locate UserData store",
-							MessageBoxButtons.OK, MessageBoxIcon.Error);
-						sayGoodBye();
+						strUserDataStoreDir = Path.Combine(
+							Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+							@"..\UserData");
+						if (!Directory.Exists(strUserDataStoreDir))
+						{
+							MessageBox.Show("Cannot find UserData store directory!\nGiving up.", "Cannot locate UserData store",
+								MessageBoxButtons.OK, MessageBoxIcon.Error);
+							sayGoodBye();
+						}
 					}
 				}
 				string strUserDataStoreFile = m_strLanguageAbbreviation + "PawsSK*.xml";
