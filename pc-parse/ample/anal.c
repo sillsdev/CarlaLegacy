@@ -2295,8 +2295,8 @@ else			/* Else (not at end of word) */
 	 *  if nothing more matches, give trace message
 	 */
 	if (	!bAllomorphsTried &&
-		(pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
-		(pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) )
+		((pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+		 (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) ))
 		{
 		char * pszIndent;
 #ifdef HAVE_ALLOCA
