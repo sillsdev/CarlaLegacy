@@ -1,5 +1,6 @@
 // SheetModifyTests.cpp : implementation file
 //
+// 2.6.1 14-Sep-2001 hab Add final cat test page
 
 #include "stdafx.h"
 #include "..\resource.h"
@@ -28,11 +29,17 @@ CSheetModifyTests::CSheetModifyTests(CWnd* pParentWnd, UINT iSelectPage)
 	:CPropertySheet("Modify Tests", pParentWnd, iSelectPage),
 	// we have to change the captions here from what they are in the wizard
 	m_affixesPage(CPageAffixes::IDD , IDS_ModifyTestsAffixPage),
+#ifndef hab261
+	m_finalCatPage(CPageCatFinalModifyTest::IDD , IDS_ModifyTestsFinalCatTests),
+#endif // hab261
 	m_categoryPropogationPage(CPageCategoryProp::IDD , IDS_ModifyTestsCatPropPage)
 {
 	//m_psh.dwFlags |=  PSH_WIZARD | PSH_WIZARDHASFINISH;
 	AddPage(&m_affixesPage);
 	AddPage(&m_categoryPropogationPage);
+#ifndef hab261
+	AddPage(&m_finalCatPage);
+#endif // hab261
 	AddPage(&m_finishPage);
 
 	SetWizardMode();

@@ -23,6 +23,9 @@
 // 2.6.1 11-Sep-2001 jdh Cntrl file output now uses SafeStream to generate .bak file.
 // 2.6.1 11-Sep-2001 hab Added Infix orderclass test.
 //                       Ensured two RSP tests and one RPS test were deleted when changing method
+// 2.6.1 17-Sep-2001 hab Added new final cat page to modify tests wizard so can
+//                       correctly process any final cat tests
+// 2.6.1 17-Sep-2001 hab Plug memory leak when removing tests.
 
 #include "CWModel.h"
 #include "CWAmpleModels.h"
@@ -34,6 +37,9 @@
 #include "PageAffixes.h"
 #include "PageCategoryProp.h"
 #include "PageFinalCatTest.h"
+#ifndef hab261
+#include "PageCatFinalModifyTests.h"
+#endif // hab261
 #include "ListComment.h"
 #include "SheetModifyTests.h"
 #ifndef hab17a1
@@ -704,7 +710,14 @@ void CWAnalysisModel::removeTest(UINT id, char cType)
 
 	// if so, remove it
 	if(pTest)
+#ifndef hab261
+	  {
 		pTL->removeItem(pTest);
+		delete pTest;	// plug memory leak
+	  }
+#else // hab261
+		pTL->removeItem(pTest);
+#endif // hab261
 }
 
 
@@ -712,6 +725,9 @@ void CWAnalysisModel::removeTest(UINT id, char cType)
 void CWAnalysisModel::doModifyTestsDialog()
 {
 	CSheetModifyTests sheet;
+#ifndef hab261
+	CPageFinalCatTest finalCatTest;
+#endif // hab261
 
 	// load in the current settings
 	sheet.m_affixesPage.m_bInfixes = (maxInfixes > 0);
@@ -724,9 +740,20 @@ void CWAnalysisModel::doModifyTestsDialog()
 	if(sheet.DoModal() == IDCANCEL)
 		return;
 
+#ifndef hab261
+				// copy answers from final cat page to the
+				// page used by the new language wizard
+	finalCatTest.m_bCreateFinalCatTest = sheet.m_finalCatPage.m_bCreateFinalCatTests;
+	finalCatTest.m_bDisableFinalCatTest = sheet.m_finalCatPage.m_bDisableFinalCatTest;
+#endif // hab261
+
 	processTestPropertyPages(&sheet.m_affixesPage,
-							&sheet.m_categoryPropogationPage,
+				 &sheet.m_categoryPropogationPage,
+#ifndef hab261
+				 &finalCatTest);
+#else // hab261
 							NULL); // don't currently give user access to this page except during initial wizard
+#endif // hab261
 }
 
 // this is called 1) after a new-from-scratch new language wizard

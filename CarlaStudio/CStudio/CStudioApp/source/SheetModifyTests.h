@@ -6,9 +6,13 @@
 #endif // _MSC_VER > 1000
 // SheetModifyTests.h : header file
 //
+// 2.6.1 14-Sep-2001 hab Added final cat test page
 
 #include "PageAffixes.h"
 #include "PageCategoryProp.h"
+#ifndef hab261
+#include "PageCatFinalModifyTests.h"
+#endif // hab261
 
 /////////////////////////////////////////////////////////////////////////////
 // CSheetModifyTests
@@ -33,6 +37,9 @@ public:
 public:
 	CPageAffixes m_affixesPage;
 	CPageCategoryProp m_categoryPropogationPage;
+#ifndef hab261
+	CPageCatFinalModifyTest m_finalCatPage;
+#endif // hab261
 	CPageModifyTestFinish m_finishPage;
 // Operations
 public:

@@ -1545,9 +1545,9 @@ BEGIN
 					WS_TABSTOP,13,76,186,10
 	LTEXT           "This wizard can create an empty category class for you that you can fill in later.  It will also create a ""Final Test"" to make sure words end with a category in that class.",
 					IDC_STATIC,12,41,241,27
-	CONTROL         "&Initially disable the final category test.  I'll turn in on later when I'm ready.",
+	CONTROL         "&Initially disable the final category test.  I'll turn it on later when I'm ready.",
 					IDC_CHECKDisableFinalCat,"Button",BS_AUTOCHECKBOX |
-					WS_TABSTOP,13,95,240,10
+					WS_TABSTOP,13,95,238,10
 END
 
 IDD_PageDictAffix DIALOG DISCARDABLE  0, 0, 289, 111
@@ -1865,11 +1865,11 @@ BEGIN
 	CONTROL         "&Create any finalcategory tests.",
 					IDC_CHECKCreateFinalCatTestModifyTests,"Button",
 					BS_AUTOCHECKBOX | WS_TABSTOP,13,76,111,10
-	LTEXT           "This wizard can create an empty category class for you that you can fill in later.  It will also create a ""Final Test"" to make sure words end with a category in that class.",
+	LTEXT           "This wizard can create any ""Final Tests"" to make sure words end with a category in that class.",
 					IDC_STATIC,12,41,241,27
-	CONTROL         "&Initially disable the final category test.  I'll turn in on later when I'm ready.",
+	CONTROL         "&Initially disable the final category test.  I'll turn it on later when I'm ready.",
 					IDC_CHECKDisableFinalCatModifyTests,"Button",
-					BS_AUTOCHECKBOX | WS_TABSTOP,13,95,240,10
+					BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,95,238,10
 END
 
 
@@ -2649,7 +2649,7 @@ STRINGTABLE DISCARDABLE
 BEGIN
 	IDS_MSGCancelMeansDefault
 							"If you want to reset this the default value, click ""Cancel""  in the following dialog."
-	IDS_WizCatProp_RPS_RT   "RightmostPfxCatCheck|The root category must match the fromcategory of the  nearest prefix (if any):Inserted by CarlaStudio Wizard\nIF   (   (left type is prefix)\n     OR (left type is infix)\n    )\nTHEN (current tocategory is left fromcategory)\n"
+	IDS_WizCatProp_RPS_RT   "RightmostPfxCatCheck|RPS Cat propagation, inserted by CarlaStudio Wizard.  The root category must match the fromcategory of the  nearest prefix (if any):\nIF   (   (left type is prefix)\n     OR (left type is infix)\n    )\nTHEN (current tocategory is left fromcategory)\n"
 	IDS_ModifyTestsAffixPage "Affixes"
 	IDS_ModifyTestsCatPropPage "Category Propogation"
 	IDS_WizCatProp_RS_ST    "SuffixCategoryCheck\n|RS Cat propagation, inserted by CarlaStudio wizard\n      left tocategory is current fromcategory\n"
