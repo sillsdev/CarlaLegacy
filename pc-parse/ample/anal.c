@@ -4228,6 +4228,11 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
 	case AMPLE_PEC_ST:
 	case AMPLE_MEC_FT:
 	case AMPLE_MCC_FT:
+#ifdef EXPERIMENTAL
+#ifndef hab350
+	case AMPLE_ANCC_FT:
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 		break;		/* these have been handled already */
 	default:
 		uiMaxSize = 2 * iTracingDepth_m;

@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 7		/* enhancement requiring adding to book */
-#define PATCHLEVEL 3		/* bug fix or other minor change */
-#define DATE "July 24, 2003"	/* date of release version */
+#define PATCHLEVEL 4		/* bug fix or other minor change */
+#define DATE "October 2, 2003"	/* date of release version */
 #define YEAR "2003"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 02-Oct-2003  hab  - p_trace() in anal.c needs to skip Allomorphs Never
+ * [3.7.4]               Co-occurence Constraints
  * 24-Jul-2003  hab  - Xml form of trace used wrong dtd file name
  * [3.7.3]
  * 23-Jul-2003  hab  - Fixed bug which could cause SGML/XML trace output to
