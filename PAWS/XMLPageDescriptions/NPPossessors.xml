@@ -140,11 +140,15 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossMarkedYesAffix"/>
 		<and/>
 		<whenRadio button="NPPossCaseErgative"/>
+<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesAffixAbs">
 		<whenRadio button="NPPossMarkedYesAffix"/>
 		<and/>
 		<whenRadio button="NPPossCaseAbsolutive"/>
+<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesAffixGen">
 		<whenRadio button="NPPossMarkedYesAffix"/>
@@ -153,6 +157,8 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossCaseGenitive"/>
 		<or/>
 		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="case" value="split"/>
 		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNo">
@@ -167,17 +173,23 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossCaseGenitive"/>
 		<or/>
 		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="case" value="split"/>
 		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoErg">
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
 		<and/>
 		<whenRadio button="NPPossCaseErgative"/>
+<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoAbs">
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
 		<and/>
 		<whenRadio button="NPPossCaseAbsolutive"/>
+<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesGen">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
@@ -186,16 +198,22 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossCaseGenitive"/>
 		<or/>
 		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="case" value="split"/>
 		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesErg">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
 		<and/>
 		<whenRadio button="NPPossCaseErgative"/>
+<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesAbs">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
 		<and/>
 		<whenRadio button="NPPossCaseAbsolutive"/>
+<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 </page>

@@ -59,7 +59,8 @@ Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" 
 			<radio id="NPAdjPAgreeYes" dataValue="yes">Yes</radio>
 		</radioGroup>
 		<instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen"><feature>genitive_prefix</feature></span><span id="NPAdjPCaseAffixErgPrefixSpan" show="swNPPossCaseErg"><feature>ergative_prefix</feature></span><span id="NPAdjPCaseAffixAbsPrefixSpan" show="swNPPossCaseAbs"><feature>absolutive_prefix</feature></span> on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenPrefixSpan1" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgPrefixSpan1" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsPrefixSpan1" show="swNPPossCaseAbs">absolutive</span> case.</instruction>
-		<instruction id="NPAdjPCaseAffixYesSuffixInstruction" show="swNPAdjPCaseAffixYesSuffix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenSuffixSpan" show="swNPPossCaseGen"><feature>genitive_suffix</feature></span><span id="NPAdjPCaseAffixErgSuffixSpan" show="swNPPossCaseErg"><feature>ergative_suffix</feature></span><span id="NPAdjPCaseAffixAbsSuffixSpan" show="swNPPossCaseAbs"><feature>absolutive_suffix</feature></span> on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive</span> case.</instruction>
+		<instruction id="NPAdjPCaseAffixYesSuffixInstruction" show="swNPAdjPCaseAffixYesSuffix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenSuffixSpan" show="swNPPossCaseGen">
+				<feature>genitive_suffix</feature></span><span id="NPAdjPCaseAffixErgSuffixSpan" show="swNPPossCaseErg"><feature>ergative_suffix</feature></span><span id="NPAdjPCaseAffixAbsSuffixSpan" show="swNPPossCaseAbs"><feature>absolutive_suffix</feature></span> on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive</span> case.</instruction>
 		<instruction id="NPAdjPPosEitherSideEitherRestrictedInstruction" show="swNPAdjPPosEitherSideEitherRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
 		<br/>
 		<instruction id="NPAdjPNoAgreementInstruction" show="swNPAgreementNone">You said your language does not mark any agreement in <section number="5.1">Overview Plus Agreement and Case</section>, so it is unclear what agreement marking adjectives may have.  Return to <section number="5.1">Overview Plus Agreement and Case</section> and change your answer appropriately if you do have agreement marking.  If not, change your answer here to "no".</instruction>
@@ -121,13 +122,22 @@ To handle class marking and agreement, in the lexicon:
 		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPPossCaseGen">
-		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+<openParen/>        <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/>
+<whenValue element="np" attr="case" value="ergative"/> <closeParen/>
+<or/>
+<not/>
+<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossCaseErg">
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/>
+<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossCaseAbs">
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/>
+<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPAdjPPosEitherSide">
 		<whenRadio button="NPAdjPPosEitherSide"/>

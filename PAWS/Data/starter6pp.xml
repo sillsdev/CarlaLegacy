@@ -12,6 +12,7 @@ rule {PP option 1a - degree word before}
 PP = Deg P'
 	&lt;PP head&gt; = &lt;P' head&gt;
 	&lt;Deg head type modifies_PP&gt; = +
+	&lt;Deg head type PP-initial&gt; = +
 	&lt;PP option&gt; = 1a
 </rule>
 	<showWhen id="PPoption1a">
@@ -116,6 +117,7 @@ rule {PP option 1b - degree word after}
 PP = P' Deg
 	&lt;PP head&gt; = &lt;P' head&gt;
 	&lt;Deg head type modifies_PP&gt; = +
+	&lt;Deg head type PP-final&gt; = +
 	&lt;PP option&gt; = 1b
 </rule>
 	<showWhen id="PPoption1b">
@@ -327,6 +329,7 @@ rule {PP option 2a - adverbial before}
 PP = AdvP P'
 	&lt;PP head&gt; = &lt;P' head&gt;
 	&lt;AdvP head type manner&gt; = +
+	&lt;AdvP head type PP-initial&gt; = +
 	&lt;PP option&gt; = 2a
 </rule>
 	<showWhen id="PPoption2a">
@@ -431,6 +434,7 @@ rule {PP option 2b - adverbial after}
 PP = P' AdvP
 	&lt;PP head&gt; = &lt;P' head&gt;
 	&lt;AdvP head type manner&gt; = +
+	&lt;AdvP head type PP-final&gt; = +
 	&lt;PP option&gt; = 2b
 </rule>
 	<showWhen id="PPoption2b">
@@ -535,7 +539,9 @@ rule {PP option 2c - adverbial both sides}
 PP = AdvP_1 P' AdvP_2
 	&lt;PP head&gt; = &lt;P' head&gt;
 	&lt;AdvP_1 head type manner&gt; = +
+	&lt;AdvP_1 head type PP-initial&gt; = +
 	&lt;AdvP_2 head type manner&gt; = +
+	&lt;AdvP_2 head type PP-final&gt; = +
 	&lt;PP option&gt; = 2c
 </rule>
 	<showWhen id="PPoption2c">
@@ -640,6 +646,7 @@ rule {PP option 3a - ordinal before}
 PP = AdjP P'
 	&lt;PP head&gt; = &lt;P' head&gt;
 	&lt;AdjP head type ordinal&gt; = +
+	&lt;AdjP head type PP-initial&gt; = +
 	&lt;PP option&gt; = 3a
 </rule>
 	<showWhen id="PPoption3a">
@@ -744,6 +751,7 @@ rule {PP option 3b - ordinal after}
 PP = P' AdjP
 	&lt;PP head&gt; = &lt;P' head&gt;
 	&lt;AdjP head type ordinal&gt; = +
+	&lt;AdjP head type PP-final&gt; = +
 	&lt;PP option&gt; = 3b
 </rule>
 	<showWhen id="PPoption3b">
@@ -959,9 +967,9 @@ PP = {Deg_1 / AdvP_1} P' {Deg_2 / AdvP_2}
 	&lt;AdvP_1 head type manner&gt; = +
 	&lt;AdvP_1 head type PP-initial&gt; = +
 	&lt;Deg_2 head type modifies_PP&gt; = +
-	&lt;Deg_2 head type PP-initial&gt; = +
+	&lt;Deg_2 head type PP-final&gt; = +
 	&lt;AdvP_2 head type manner&gt; = +
-	&lt;AdvP_2 head type PP-initial&gt; = +
+	&lt;AdvP_2 head type PP-final&gt; = +
 	&lt;PP option&gt; = 4a
 </rule>
 	<showWhen id="PPoption4a">
@@ -1102,9 +1110,9 @@ PP = {Deg_1 / AdjP_1} P' {Deg_2 / AdjP_2}
 	&lt;AdjP_1 head type ordinal&gt; = +
 	&lt;AdjP_1 head type PP-initial&gt; = +
 	&lt;Deg_2 head type modifies_PP&gt; = +
-	&lt;Deg_2 head type PP-initial&gt; = +
+	&lt;Deg_2 head type PP-final&gt; = +
 	&lt;AdjP_2 head type ordinal&gt; = +
-	&lt;AdjP_2 head type PP-initial&gt; = +
+	&lt;AdjP_2 head type PP-final&gt; = +
 	&lt;PP option&gt; = 4b
 </rule>
 	<showWhen id="PPoption4b">
@@ -1245,9 +1253,9 @@ PP = {AdjP_1 / AdvP_1} P' {AdjP_2 / AdvP_2}
 	&lt;AdvP_1 head type manner&gt; = +
 	&lt;AdvP_1 head type PP-initial&gt; = +
 	&lt;AdjP_2 head type ordinal&gt; = +
-	&lt;AdjP_2 head type PP-initial&gt; = +
+	&lt;AdjP_2 head type PP-final&gt; = +
 	&lt;AdvP_2 head type manner&gt; = +
-	&lt;AdvP_2 head type PP-initial&gt; = +
+	&lt;AdvP_2 head type PP-final&gt; = +
 	&lt;PP option&gt; = 4c
 </rule>
 	<showWhen id="PPoption4c">
@@ -1390,11 +1398,11 @@ PP = {Deg_1 / AdjP_2 / AdvP_1} P' {Deg_2 / AdjP_2 / AdvP_2}
 	&lt;AdvP_1 head type manner&gt; = +
 	&lt;AdvP_1 head type PP-initial&gt; = +
 	&lt;Deg_2 head type modifies_PP&gt; = +
-	&lt;Deg_2 head type PP-initial&gt; = +
+	&lt;Deg_2 head type PP-final&gt; = +
 	&lt;AdjP_2 head type ordinal&gt; = +
-	&lt;AdjP_2 head type PP-initial&gt; = +
+	&lt;AdjP_2 head type PP-final&gt; = +
 	&lt;AdvP_2 head type manner&gt; = +
-	&lt;AdvP_2 head type PP-initial&gt; = +
+	&lt;AdvP_2 head type PP-final&gt; = +
 	&lt;PP option&gt; = 4d
 </rule>
 	<showWhen id="PPoption4d">
@@ -2511,38 +2519,18 @@ P' = DP
 		<whenValue element="pp" attr="attaches" value="edge"/>
 	</showWhen>
 	<rule show="PBaroption5aN">
-rule {PBar option 5aN - P_prefix on N}
+rule {PBar option 5aN - PP affix on N}
 P' = DP
 		&lt;P' head&gt; = &lt;DP head&gt;
-		&lt;DP head type P_prefix_N&gt; = +
+		&lt;DP head type PP&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' option&gt; = 5aN
 </rule>
 	<showWhen id="PBaroption5aN">
-		<whenValue element="pp" attr="pPos" value="after" negateValue="yes"/>
-		<and/>
 		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
 		<and/>
 		<whenValue element="pp" attr="attaches" value="head"/>
 	</showWhen>
-	<rule show="PBaroption5bN">
-rule {PBar option 5bN - P_suffix on N}
-P' = DP
-		&lt;P' head&gt; = &lt;DP head&gt;
-		&lt;DP head type P_suffix_N&gt; = +
-	&lt;P' head type stranded&gt; = -
-	&lt;P' option&gt; = 5bN
-</rule>
-	<showWhen id="PBaroption5bN">
-		<whenValue element="pp" attr="pPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="attaches" value="head"/>
-	</showWhen>
-	<!--
-|make sure that prefix/suffix P info passed up from subject and/or V
-|done on subject rules and head should be OK, Aux? w/in VP? -->
 	<rule show="PBaroption6a">
 rule {PBar option 6a - P_prefix, IP complement}
 P' = IP

@@ -2460,6 +2460,7 @@ rule {NBarBar option 1 - QPs initial}
 N'' = QP N'
 	&lt;N'' head&gt; = &lt;N' head&gt;
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
+	&lt;QP head type DP-initial&gt; = +
 		&lt;N'' head type prefix&gt; &lt;= &lt;QP head type prefix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;N'' option&gt; = 1
@@ -2478,6 +2479,7 @@ rule {NBarBar option 2 - QPs final}
 N'' = N' QP
 	&lt;N'' head&gt; = &lt;N' head&gt;
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
+	&lt;QP head type DP-final&gt; = +
 		&lt;N'' head type suffix&gt; &lt;= &lt;QP head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;N'' option&gt; = 2

@@ -154,16 +154,10 @@
 		<instruction id="NPArtAgreementNumberInstruction" show="swNPArtAgreementNumberYes">
 To handle the number agreement, in the lexicon:
 <ul>
-				<li>Mark the<span id="NPArtOnlySingularSpan" show="swNPArtAndDemArt"> articles</span>
-					<span id="NPDemOnlySingularSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemSingularSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with singular nouns with the feature <feature>singular</feature>.</li>
-				<li>Mark the<span id="NPArtOnlyPluralSpan" show="swNPArtAndDemArt"> articles</span>
-					<span id="NPDemOnlyPluralSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemPluralSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with plural nouns with the feature <feature>plural</feature>.</li>
+				<li>Mark the <span id="NPArtOnlySingularSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlySingularSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemSingularSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with singular nouns with the feature <feature>singular</feature>.</li>
+				<li>Mark the <span id="NPArtOnlyPluralSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyPluralSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemPluralSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with plural nouns with the feature <feature>plural</feature>.</li>
 				<li>Do not add any feature for number agreement to ones like <example>the</example> in English which can go with either singular or plural nouns.</li>
-				<li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate<span id="NPArtOnlyDualSpan" show="swNPArtAndDemArt"> articles.</span>
-					<span id="NPDemOnlyDualSpan" show="swNPArtAndDemDem">demonstratives.</span>
-					<span id="NPArtAndDemDualSpan" show="swNPArtAndDemBoth">articles and demonstratives.</span>
+				<li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate <span id="NPArtOnlyDualSpan" show="swNPArtAndDemArt">articles.</span><span id="NPDemOnlyDualSpan" show="swNPArtAndDemDem">demonstratives.</span><span id="NPArtAndDemDualSpan" show="swNPArtAndDemBoth">articles and demonstratives.</span>
 				</li>
 			</ul>
 We will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
@@ -171,36 +165,26 @@ We will assume that all nouns are singular by default.  Therefore, only the plur
 				<li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
 				<li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don't take an affix.</li>
 				<li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
-				<li id="NPArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature> so that<span id="NPArtOnlyMassSpan" show="swNPArtAndDemArt"> an article</span>
-					<span id="NPDemOnlyMassSpan" show="swNPArtAndDemDem">a demonstrative</span>
-					<span id="NPArtAndDemMassSpan" show="swNPArtAndDemBoth">an article or demonstrative </span>will not be required.</li>
+				<li id="NPArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature> so that <span id="NPArtOnlyMassSpan" show="swNPArtAndDemArt">an article</span><span id="NPDemOnlyMassSpan" show="swNPArtAndDemDem">a demonstrative</span><span id="NPArtAndDemMassSpan" show="swNPArtAndDemBoth">an article or demonstrative</span> will not be required.</li>
 			</ul>
 		</instruction>
 		<instruction id="NPArtAgreementAnimacyInstruction" show="swNPArtAgreementAnimacyYes">
 To handle animacy agreement:
 <ul>
-				<li>Mark the<span id="NPArtOnlyAnimateSpan" show="swNPArtAndDemArt"> articles</span>
-					<span id="NPDemOnlyAnimateSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemAnimateSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with animate nouns with the feature <feature>animate</feature>.</li>
-				<li>Mark the<span id="NPArtOnlyInanimateSpan" show="swNPArtAndDemArt"> articles</span>
-					<span id="NPDemOnlyInanimateSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemInanimateSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+				<li>Mark the <span id="NPArtOnlyAnimateSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyAnimateSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemAnimateSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+				<li>Mark the <span id="NPArtOnlyInanimateSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyInanimateSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemInanimateSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
 				<li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
 			</ul>
 We will assume that all (common) nouns are inanimate by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  (Proper names will be dealt with in <section number="6">Proper Names</section> and will be assumed to be animate by default.)
 </instruction>
 		<instruction id="NPArtAgreementGenderInstruction" show="swNPArtAgreementGenderYes">
-Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any<span id="NPArtOnlyGenderSpan" show="swNPArtAndDemArt"> articles</span>
-			<span id="NPDemOnlyGenderSpan" show="swNPArtAndDemDem">demonstratives</span>
-			<span id="NPArtAndDemGenderSpan" show="swNPArtAndDemBoth">articles or demonstratives </span>that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.<br/>
+Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any <span id="NPArtOnlyGenderSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyGenderSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemGenderSpan" show="swNPArtAndDemBoth">articles or demonstratives</span> that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.<br/>
 			<br/>
 We will assume that all nouns are masculine by default.  Therefore, only the feminine and neuter nouns need to be marked.  In the lexicon:
 <ul>
 				<li>Add the feature <feature>feminine</feature> to any affixes which can be added to a noun to make it feminine.  Add the feature <feature>neuter</feature> to any affixes which can be added to a noun to make it neuter.</li>
 				<li>Also, add the feature <feature>feminine</feature> to any nouns which are inherently feminine, or exceptionally don't take an affix.  Similarly, add the feature <feature>neuter</feature> to any nouns which are inherently neuter, or exceptionally don't take an affix.</li>
-				<li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of the<span id="NPArtOnlyGender2Span" show="swNPArtAndDemArt"> articles</span>
-					<span id="NPDemOnlyGender2Span" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemGender2Span" show="swNPArtAndDemBoth">articles and demonstratives </span>based on gender need to have two entries in the lexicon, one marked with the feature <feature>feminine</feature> and the other for masculine (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+				<li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of the <span id="NPArtOnlyGender2Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyGender2Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemGender2Span" show="swNPArtAndDemBoth">articles and demonstratives</span> based on gender need to have two entries in the lexicon, one marked with the feature <feature>feminine</feature> and the other for masculine (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
 			</ul>
 		</instruction>
 		<instruction id="NPArtAgreementClassInstruction" show="swNPArtAgreementClassYes">
