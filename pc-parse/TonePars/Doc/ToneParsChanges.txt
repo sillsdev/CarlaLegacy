@@ -1,5 +1,11 @@
 TonePars CHANGE HISTORY
 
+1.0.15 (27-Jun-2003)
+--------------------
+1. Fix a bug: Changes 1.0.6, 1.0.7, and 1.0.9 modified the lexical tone
+   info in the lexical entries.  Needed to restore the lexical tone info
+   after each round.
+
 1.0.14 (20-May-2003)
 --------------------
 1. Fix bug which sometimes failed to pay attention to the root category of

@@ -239,7 +239,12 @@ parse_command(argc, argv, pszTime);
  *  set the log file pointer
  */
 if (!isatty(fileno(stdout)))
+#if _DEBUG
+  /* compilers seem to be doing odd things here... */
+sStamp_m.pLogFP = NULL;
+#else
 	sStamp_m.pLogFP = stdout;
+#endif _DEBUG
 else
   sStamp_m.pLogFP = NULL;
 /*

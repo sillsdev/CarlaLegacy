@@ -1461,7 +1461,9 @@ static void build_tone_tier(pwp, ap_head, do_trace, pStamp_in)
   StampAnalysis *ap;
   struct tone_list *t_tier_headp, *tlp, *ttp;
   struct tone *tp;
-
+#ifndef hab1015
+  StampMorpheme *dp;
+#endif /* hab1015 */
   t_tier_headp = (struct tone_list *)NULL;
 
 				/* run through the list of analysis structs */
@@ -1472,9 +1474,23 @@ static void build_tone_tier(pwp, ap_head, do_trace, pStamp_in)
 	{				/* place a copy of each tone in the */
 				/* lexical entry into the tone tier */
 	  ap->pToneBeg = ap->pToneEnd = (struct tone *)NULL;
+#ifndef hab1015
+	  /* find the actual entry in the dictionary */
+	  dp = searchStampDictionary( ap->m.iMorphType,
+				  ap->m.pszMorphname,
+				  0, TRUE, pStamp_in);
+	  /* insure the working copy also has null tones */
+	  if (dp->pTones == (struct tone_list *)NULL)
+	ap->m.pTones = NULL;
+	  /* now use lexical entry's tones */
+	  for (tlp = dp->pTones;
+	   tlp != (struct tone_list *)NULL;
+	   tlp = tlp->tonl_right)
+#else  /* hab1015 */
 	  for (tlp = ap->m.pTones;
 	   tlp != (struct tone_list *)NULL;
 	   tlp = tlp->tonl_right)
+#endif /* hab1015 */
 	{
 				/* add an element to the tone tier */
 	  t_tier_headp = add_tone_list(t_tier_headp, TAIL, tlp->tonl_tone);
