@@ -31,12 +31,16 @@ public:
 		BOOL bStrikeout;
 	};
 
+	BOOL m_bIsAmple;
+
 
 	SymbolColor m_colorDefault,m_colorOPErators,m_colorForOPErators,
 		m_colorLOCations,m_colorKEYWords,m_colorCONNectors,
 		m_colorTYPes,m_colorNBR,m_colorIdentifiers,m_colorError,
 		m_colorCOMments;
 
+	CString m_strOPE,m_strFOROPE,m_strLOC,m_strCONN,
+			m_strTYP,m_strNBRE,m_strKEYW;
 
 	CString m_strOPErators,m_strFOROPerators,m_strLOCations,m_strKEYWords,
 			m_strKEYWords_Act,m_strCONNectors,m_strTYPes,m_strNBR;
@@ -45,13 +49,26 @@ public:
 			m_strKEYWordsLower,m_strKEYWords_ActLower,m_strCONNectorsLower,
 			m_strTYPesLower,m_strNBRLower;
 
-#ifndef mr270
-	CTestEditModel *m_pTestEditModel;
-#endif // mr270
 
-// Operations
+	CTestEditModel *m_pTestEditModel;
+
+	CStringArray *m_pTYPEList,*m_pLOGOPList,*m_pPOSITIONList,*m_pNEIGHBORList,
+					*m_pRELOPList,*m_pAllKeywords,*m_pConstant,*m_pKeyword_property,
+					*m_pKeyword_morphname,*m_pKeyword_is,*m_pIdentifier,*m_pKeyword_member,
+					*m_pKeyword_position,*m_pKeyword_allomorph,*m_pKeyword_matches,
+					*m_pKeyword_surface,*m_pKeyword_word,*m_pKeyword_neighbor,
+					*m_pKeyword_fromtocategory,*m_pKeyword_capitalized,*m_pKeyword_orderclass,
+					*m_pKeyword_relop,*m_pConst,*m_pType,*m_pKeyword_type,*m_pKeyword_logop,
+					*m_pKeyword_for,*m_pKeyword_insert,*m_pKeyword_posStamp,*m_pKeyword_report,
+					*m_pKeyword_afterbefore;
+
+
+	// Operations
 public:
-	void Initialize();
+	void Initialize(BOOL bIsAmple,TCHAR szComment,
+						   CString strFontFaceName,
+						   CTestEditModel *pTestEditModel,
+						   BOOL bReadOnly );
 	void FormatAll();
 	void SetFontSize( LPCTSTR lpzFontSize);
 	void SetChangeCase(BOOL bChange);
@@ -93,7 +110,6 @@ public:
 public:
 
 
-	//BOOL m_bOpenQuote;
 	BOOL m_bUseBackgroundSystemColor;
 
 
@@ -105,22 +121,27 @@ public:
 	void FormatTextRange(int nStart, int nEnd);
 	void FormatTextLines(int nStart, int nEnd);
 	void ChangeCase(int nStart, int nEnd, LPCTSTR lpszStr);
-
+	int checkNextWord(CStringArray *pstrAuthorized,
+						CStringArray *pstrAall,
+						CString &pstrLastKeyWord,
+						BOOL bIdentifierAuthorized,
+						BOOL bIsIdentifier=FALSE);
+	BOOL checkConstant(CStringArray *pstrConstant,
+							 CString &pstrLastKeyWord );
 
 
 	enum ChangeType {ctUndo, ctUnknown, ctReplSel, ctDelete, ctBack, ctCut, ctPaste, ctMove, ctSpace};
 
-	COLORREF clrDefaultColor,m_clrBackgoundColor;
+	COLORREF m_clrDefaultColor,m_clrBackgoundColor;
 
 	BOOL m_bInForcedChange,m_bChangeCase;
 
 	TCHAR m_chComment;
 
-	CString m_strLastKeyWord,m_lpzFontSize,m_strPOSition,
+	CString m_lpzFontSize,m_strPOSition,
 		m_strTYPe,m_strTRM,m_strACTions,m_strComment,
 		m_strStringQuotes,m_strPOSitionLower,m_strTYPeLower,
 		m_strTRMLower;
-
 
 	ChangeType m_changeType;
 	CHARRANGE m_crOldSel;

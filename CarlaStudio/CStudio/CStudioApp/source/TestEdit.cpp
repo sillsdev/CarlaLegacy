@@ -1,4 +1,3 @@
-// Last revison: 4/19/2002 11:47:50 AM [mr]
 // TestEdit.cpp : implementation file
 //
 
@@ -19,27 +18,27 @@ static const TCHAR szSection [] = _T("Settings\\TestsColor");
 #endif // mr270
 
 
+static const TCHAR szIdentif [] = _T("<identifier>");
+
+
 /////////////////////////////////////////////////////////////////////////////
 // CTestEdit
 
 CTestEdit::CTestEdit()
 {
-	m_chComment = 1;
-	//m_bCaseSensitive = FALSE;
-	m_bChangeCase = TRUE;
-
-
-	m_bInForcedChange = FALSE;
-	m_changeType = ctUndo;
-	m_crOldSel.cpMin = m_crOldSel.cpMax = 0;
-	//m_bOpenQuote=FALSE;
-	m_lpzFontSize="10";
-
 }
 
 CTestEdit::~CTestEdit()
 {
-
+	delete m_pTYPEList,m_pLOGOPList,m_pPOSITIONList,
+			m_pNEIGHBORList,m_pRELOPList,m_pConstant,
+			m_pKeyword_property,m_pKeyword_morphname,
+			m_pKeyword_is,m_pIdentifier,m_pKeyword_member,
+			m_pKeyword_position,m_pKeyword_allomorph,m_pKeyword_matches,
+			m_pKeyword_surface,m_pKeyword_word,m_pKeyword_neighbor,
+			m_pKeyword_fromtocategory,m_pKeyword_capitalized,m_pKeyword_orderclass,
+			m_pKeyword_relop,m_pConst,m_pType,m_pKeyword_type,m_pKeyword_logop,
+			m_pKeyword_for,m_pAllKeywords;
 }
 #ifndef mr270
 void CTestEdit::readTestEditModel()
@@ -155,7 +154,7 @@ void CTestEdit::readRegistry( LPCTSTR lpzSection )
 
 	CWinApp* pApp = AfxGetApp ();
 
-	clrDefaultColor=pApp->GetProfileInt( lpzSection,"DefaultColor",RGB(0,0,0));
+	m_clrDefaultColor=pApp->GetProfileInt( lpzSection,"DefaultColor",RGB(0,0,0));
 
 	// background color
 	m_bUseBackgroundSystemColor=pApp->GetProfileInt( lpzSection, "UseSystemColorBackground", TRUE);
@@ -260,14 +259,352 @@ void CTestEdit::SetFontSize( LPCTSTR lpzFontSize)
 {
 	m_lpzFontSize=lpzFontSize;
 }
-
-void CTestEdit::Initialize()
+void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
+						   CString strFontFaceName,CTestEditModel *pTestEditModel,
+						   BOOL bReadOnly )
 {
+
 #ifndef mr270
+
+	SetReadOnly(bReadOnly);
+
+	// TRUE=Ample  FALSE=Stamp
+	m_bIsAmple=bIsAmple;
+
+	setTestEditModel(pTestEditModel);
+
+	setFontFaceName(strFontFaceName); // user's font OR courier new
+	m_lpzFontSize="10"; // size by default
+
+	// comment char
+	SetSLComment(szComment); // user's comment char
+	SetSLComment(_T('|'));
+	SetSLComment(_T("\\co"));
+	m_chComment = 1;
+
+	// quotes
+	SetStringQuotes(_T("\""));
+	//SetStringQuotes(_T("\'"));
+	//SetStringQuotes(_T("."));
+
+	m_bChangeCase = TRUE;
+	m_changeType = ctUndo;
+	m_crOldSel.cpMin = m_crOldSel.cpMax = 0;
+
+
+	m_strOPE = " AND IF IFF NOT OR THEN XOR ";
+	m_strFOROPE = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
+	m_strLOC = " current last left next right FINAL INITIAL LEFT RIGHT ";
+	m_strCONN = " is matches member = > >= <= < ~= ";
+	m_strTYP = " prefix infix root suffix initial final ";
+	m_strNBRE = " 0 1 2 3 4 5 6 7 8 9 ";
+	m_strKEYW = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word orderclassmin orderclassmax";
+
+	// IF Syntehis test, THEN
+	// those keywords need to be added to the Keyword list.
+	if( !bIsAmple )
+	{
+		m_strKEYW += " insert before after report ";
+	}
+
+
+	// <type>
+	m_pTYPEList = new CStringArray();
+	m_pTYPEList->SetSize(0,1);
+	m_pTYPEList->Add("prefix");
+	m_pTYPEList->Add("infix");
+	m_pTYPEList->Add("root");
+	m_pTYPEList->Add("suffix");
+	m_pTYPEList->Add("initial");
+	m_pTYPEList->Add("final");
+
+	// <logop>
+	m_pLOGOPList = new CStringArray();
+	m_pLOGOPList->SetSize(0,1);
+	m_pLOGOPList->Add("AND");
+	m_pLOGOPList->Add("OR");
+	m_pLOGOPList->Add("XOR");
+	m_pLOGOPList->Add("IFF");
+	m_pLOGOPList->Add("IF");
+	m_pLOGOPList->Add("THEN");
+
+	// <position>
+	m_pPOSITIONList = new CStringArray();
+	m_pPOSITIONList->SetSize(0,1);
+	m_pPOSITIONList->Add("left");
+	m_pPOSITIONList->Add("right");
+	m_pPOSITIONList->Add("current");
+	m_pPOSITIONList->Add("LEFT");
+	m_pPOSITIONList->Add("RIGHT");
+	m_pPOSITIONList->Add("initial");
+	m_pPOSITIONList->Add("final");
+	m_pPOSITIONList->Add("INITIAL");
+	m_pPOSITIONList->Add("FINAL");
+
+	// IF Syntehis test, THEN
+	// those keywords need to be added to the Keyword list.
+	if( !bIsAmple )
+	{
+		m_pPOSITIONList->Add("insert");
+		m_pPOSITIONList->Add("before");
+		m_pPOSITIONList->Add("after");
+		m_pPOSITIONList->Add("report");
+	}
+
+	// <neighbor>
+	m_pNEIGHBORList = new CStringArray();
+	m_pNEIGHBORList->SetSize(0,1);
+	m_pNEIGHBORList->Add("last");
+	m_pNEIGHBORList->Add("next");
+
+	// <relop>
+	m_pRELOPList = new CStringArray();
+	m_pRELOPList->SetSize(0,1);
+	m_pRELOPList->Add("=");
+	m_pRELOPList->Add(">");
+	m_pRELOPList->Add(">=");
+	m_pRELOPList->Add("<=");
+	m_pRELOPList->Add("<");
+	m_pRELOPList->Add("~=");
+
+	// <constant>
+	m_pConstant = new CStringArray();
+	m_pConstant->SetSize(0,1);
+	m_pConstant->Add("-");
+	m_pConstant->Add("0");
+	m_pConstant->Add("1");
+	m_pConstant->Add("2");
+	m_pConstant->Add("3");
+	m_pConstant->Add("4");
+	m_pConstant->Add("5");
+	m_pConstant->Add("6");
+	m_pConstant->Add("7");
+	m_pConstant->Add("8");
+	m_pConstant->Add("9");
+
+	////////////////////////////////////////////////////
+
+	// 'property' may be followed by...
+	m_pKeyword_property = new CStringArray();
+	m_pKeyword_property->SetSize(0,1);
+	m_pKeyword_property->Add("is");
+
+	// 'morphname' may be followed by...
+	m_pKeyword_morphname = new CStringArray();
+	m_pKeyword_morphname->SetSize(0,1);
+	m_pKeyword_morphname->Add("is");
+	m_pKeyword_morphname->Append(*m_pLOGOPList);
+	m_pKeyword_morphname->Append(*m_pPOSITIONList);
+	m_pKeyword_morphname->Append(*m_pNEIGHBORList);
+
+	// 'is' may be followed by...
+	m_pKeyword_is = new CStringArray();
+	m_pKeyword_is->SetSize(0,1);
+	m_pKeyword_is->Append(*m_pPOSITIONList);
+	m_pKeyword_is->Append(*m_pTYPEList);
+	m_pKeyword_is->Add("member");
+	m_pKeyword_is->Add("capitalized");
+	m_pKeyword_is->Add(szIdentif);
+
+	// <identifier> may be followed by...
+	m_pIdentifier = new CStringArray();
+	m_pIdentifier->SetSize(0,1);
+	m_pIdentifier->Append(*m_pLOGOPList);
+	m_pIdentifier->Append(*m_pPOSITIONList);
+	m_pIdentifier->Append(*m_pNEIGHBORList);
+
+	// member may be followed by...
+	m_pKeyword_member = new CStringArray();
+	m_pKeyword_member->SetSize(0,1);
+	m_pKeyword_member->Add(szIdentif);
+
+	// <position> may be followed by...
+	m_pKeyword_position = new CStringArray();
+	m_pKeyword_position->SetSize(0,1);
+	m_pKeyword_position->Add("property");
+	m_pKeyword_position->Add("morphname");
+	m_pKeyword_position->Add("allomorph");
+	m_pKeyword_position->Add("surface");
+	m_pKeyword_position->Add("string");
+	m_pKeyword_position->Add("type");
+	m_pKeyword_position->Add("fromcategory");
+	m_pKeyword_position->Add("tocategory");
+	m_pKeyword_position->Add("orderclass");
+
+	// 'allomorph' may be followed by...
+	m_pKeyword_allomorph = new CStringArray();
+	m_pKeyword_allomorph->SetSize(0,1);
+	m_pKeyword_allomorph->Add("is");
+	m_pKeyword_allomorph->Add("matches");
+	m_pKeyword_allomorph->Append(*m_pLOGOPList);
+	m_pKeyword_allomorph->Append(*m_pPOSITIONList);
+	m_pKeyword_allomorph->Append(*m_pNEIGHBORList);
+
+	// 'matches' may be followed by...
+	m_pKeyword_matches = new CStringArray();
+	m_pKeyword_matches->SetSize(0,1);
+	m_pKeyword_matches->Add("member");
+	m_pKeyword_matches->Append(*m_pPOSITIONList);
+	m_pKeyword_matches->Add(szIdentif);
+
+	// 'surface/string' may be followed by...
+	m_pKeyword_surface = new CStringArray();
+	m_pKeyword_surface->SetSize(0,1);
+	m_pKeyword_surface->Add("matches");
+	m_pKeyword_surface->Add("is");
+
+	// 'word' may be followed by...
+	m_pKeyword_word = new CStringArray();
+	m_pKeyword_word->SetSize(0,1);
+	m_pKeyword_word->Add("is");
+	m_pKeyword_word->Add("matches");
+
+	// <neighbor> may be followed by...
+	m_pKeyword_neighbor = new CStringArray();
+	m_pKeyword_neighbor->SetSize(0,1);
+	m_pKeyword_neighbor->Add("word");
+
+	// '(from/to)category' may be followed by...
+	m_pKeyword_fromtocategory = new CStringArray();
+	m_pKeyword_fromtocategory->SetSize(0,1);
+	m_pKeyword_fromtocategory->Add("is");
+	m_pKeyword_fromtocategory->Append(*m_pLOGOPList);
+	m_pKeyword_fromtocategory->Append(*m_pPOSITIONList);
+	m_pKeyword_fromtocategory->Append(*m_pNEIGHBORList);
+
+	// 'capitalized' may be followed by...
+	m_pKeyword_capitalized = new CStringArray();
+	m_pKeyword_capitalized->SetSize(0,1);
+	m_pKeyword_capitalized->Append(*m_pLOGOPList);
+	m_pKeyword_capitalized->Append(*m_pPOSITIONList);
+	m_pKeyword_capitalized->Append(*m_pNEIGHBORList);
+
+	// 'orderclass' may be followed by...
+	m_pKeyword_orderclass = new CStringArray();
+	m_pKeyword_orderclass->SetSize(0,1);
+	m_pKeyword_orderclass->Append(*m_pRELOPList);
+	m_pKeyword_orderclass->Append(*m_pLOGOPList);
+	m_pKeyword_orderclass->Append(*m_pPOSITIONList);
+	m_pKeyword_orderclass->Append(*m_pNEIGHBORList);
+
+	// <relop> may be followed by...
+	m_pKeyword_relop = new CStringArray();
+	m_pKeyword_relop->SetSize(0,1);
+	//m_pKeyword_relop->Append(*m_pConstant);
+	m_pKeyword_relop->Append(*m_pPOSITIONList);
+
+	// <constant> may be followed by...
+	m_pConst = new CStringArray();
+	m_pConst->SetSize(0,1);
+	m_pConst->Append(*m_pLOGOPList);
+	m_pConst->Append(*m_pPOSITIONList);
+	m_pConst->Append(*m_pNEIGHBORList);
+
+	// <type> may be followed by...
+	m_pType = new CStringArray();
+	m_pType->SetSize(0,1);
+	m_pType->Append(*m_pLOGOPList);
+	m_pType->Append(*m_pPOSITIONList);
+	m_pType->Append(*m_pNEIGHBORList);
+
+	// 'type' may be followed by...
+	m_pKeyword_type = new CStringArray();
+	m_pKeyword_type->SetSize(0,1);
+	m_pKeyword_type->Add("is");
+
+	// <logop> may be followed by....
+	m_pKeyword_logop = new CStringArray();
+	m_pKeyword_logop->SetSize(0,1);
+	m_pKeyword_logop->Append(*m_pPOSITIONList);
+	m_pKeyword_logop->Append(*m_pNEIGHBORList);
+
+	// <forleft/forright> may be followed by...
+	m_pKeyword_for = new CStringArray();
+	m_pKeyword_for->SetSize(0,1);
+	m_pKeyword_for->Append(*m_pLOGOPList);
+	m_pKeyword_for->Append(*m_pPOSITIONList);
+	m_pKeyword_for->Append(*m_pNEIGHBORList);
+
+	// 'insert' may be followed by...
+	m_pKeyword_insert = new CStringArray();
+	m_pKeyword_insert->SetSize(0,1);
+	m_pKeyword_insert->Add(szIdentif);
+
+	// 'report' may be followed by...
+	m_pKeyword_report = new CStringArray();
+	m_pKeyword_report->SetSize(0,1);
+	m_pKeyword_report->Add(szIdentif);
+
+
+	// all
+	m_pAllKeywords = new CStringArray();
+	m_pAllKeywords->SetSize(0,1);
+	m_pAllKeywords->Add("property");
+	m_pAllKeywords->Add("is");
+	m_pAllKeywords->Add("morphname");
+	m_pAllKeywords->Add("member");
+	m_pAllKeywords->Add("allomorph");
+	m_pAllKeywords->Add("matches");
+	m_pAllKeywords->Add("surface");
+	m_pAllKeywords->Add("string");
+	m_pAllKeywords->Add("word");
+	m_pAllKeywords->Add("type");
+	m_pAllKeywords->Add("fromcategory");
+	m_pAllKeywords->Add("tocategory");
+	m_pAllKeywords->Add("capitalized");
+	m_pAllKeywords->Add("orderclass");
+	m_pAllKeywords->Add("AND");
+	m_pAllKeywords->Add("OR");
+	m_pAllKeywords->Add("XOR");
+	m_pAllKeywords->Add("IFF");
+	m_pAllKeywords->Add("IF");
+	m_pAllKeywords->Add("FOR_ALL_LEFT");
+	m_pAllKeywords->Add("FOR-ALL-LEFT");
+	m_pAllKeywords->Add("FORALLLEFT");
+	m_pAllKeywords->Add("FOR_SOME_LEFT");
+	m_pAllKeywords->Add("FOR-SOME-LEFT");
+	m_pAllKeywords->Add("FORSOMELEFT");
+	m_pAllKeywords->Add("FOR_ALL_RIGHT");
+	m_pAllKeywords->Add("FOR-ALL-RIGHT");
+	m_pAllKeywords->Add("FORALLRIGHT");
+	m_pAllKeywords->Add("FOR_SOME_RIGHT");
+	m_pAllKeywords->Add("FOR-SOME-RIGHT");
+	m_pAllKeywords->Add("FORSOMERIGHT");
+	m_pAllKeywords->Add("last");
+	m_pAllKeywords->Add("next");
+	m_pAllKeywords->Add("prefix");
+	m_pAllKeywords->Add("infix");
+	m_pAllKeywords->Add("root");
+	m_pAllKeywords->Add("suffix");
+	m_pAllKeywords->Add("initial");
+	m_pAllKeywords->Add("final");
+	m_pAllKeywords->Add(">");
+	m_pAllKeywords->Add(">=");
+	m_pAllKeywords->Add("<=");
+	m_pAllKeywords->Add("<");
+	m_pAllKeywords->Add("~=");
+	m_pAllKeywords->Add("left");
+	m_pAllKeywords->Add("right");
+	m_pAllKeywords->Add("current");
+	m_pAllKeywords->Add("LEFT");
+	m_pAllKeywords->Add("RIGHT");
+	m_pAllKeywords->Add("initial");
+	m_pAllKeywords->Add("final");
+
 	readTestEditModel();
+
 #else // mr270
 	readRegistry(szSection);
 #endif // mr270
+
+
+	AddKeywords(m_strOPE,m_strOPErators,m_strOPEratorsLower);
+	AddKeywords(m_strFOROPE,m_strFOROPerators,m_strFOROPeratorsLower);
+	AddKeywords(m_strLOC,m_strLOCations,m_strLOCationsLower);
+	AddKeywords(m_strKEYW,m_strKEYWords,m_strKEYWordsLower);
+	AddKeywords(m_strCONN,m_strCONNectors,m_strCONNectorsLower);
+	AddKeywords(m_strTYP,m_strTYPes,m_strTYPesLower);
+	AddKeywords(m_strNBRE,m_strNBR,m_strNBRLower);
 
 
 	// tab
@@ -295,10 +632,8 @@ void CTestEdit::setDefaultCharFormat( )
 	cfDefault.cbSize = sizeof(cfDefault);
 	cfDefault.dwEffects = CFE_PROTECTED|CFE_AUTOCOLOR ;
 	cfDefault.dwMask = CFM_BOLD | CFM_FACE | CFM_SIZE | CFM_CHARSET | CFM_PROTECTED;
-	//int nV = atoi (m_lpzFontSize);
 
 	cfDefault.yHeight = 20*atoi (m_lpzFontSize);
-	//cfDefault.bCharSet = 0xEE;
 	cfDefault.crTextColor = RGB(0,0,0);
 
 #ifndef mr270
@@ -403,7 +738,31 @@ void CTestEdit::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 int CTestEdit::searching( LPCTSTR lpszSymbol,CString &strGroup )
 {
-	CString strSymbol; strSymbol.Format(" %s ", lpszSymbol);
+	CString strSymbol;
+/*
+	CString temp;
+	BOOL bCorrection=FALSE;
+	if( lpszSymbol[0]=='(' )
+	{
+		bCorrection=TRUE;
+		int l = strlen(lpszSymbol);
+		for(int i=0;i < l ;i++)
+		{
+			TCHAR c = lpszSymbol[i];
+
+			if( c != '(')
+			{
+				temp += c;
+			}
+		}
+
+	}
+
+	if(bCorrection)
+		lpszSymbol=temp;
+
+*/
+	strSymbol.Format(" %s ", lpszSymbol);
 	strSymbol.MakeLower();
 
 	return strGroup.Find(strSymbol);
@@ -484,15 +843,25 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 	if (nStart >= nEnd)
 		return;
 
-	m_bInForcedChange = TRUE;
+	CString strLastKeyWord;
+	int n_propertyFollowBy=0,n_morphnameFollowBy=0,n_isFollowBy=0,
+		n_identifierFollowBy=0,n_memberFollowBy=0,n_position_exprFollowBy=0,
+		n_allomorphFollowBy=0,n_matchesFollowBy=0,n_surfaceFollowBy=0,
+		n_wordFollowBy=0,n_neighbor_exprFollowBy=0,n_fromtocategoryFollowBy=0,
+		n_capitalizedFollowBy=0,n_orderclassFollowBy=0,n_relopFollowBy=0,
+		n_constantFollowBy=0,n_Type_exprFollowBy=0,n_typeFollowBy=0,n_logopFollowBy=0,
+		n_for_exprFollowBy=0,n_insertFollowBy=0,n_after_beforeFollowBy=0,
+		n_reportFollowBy=0;
+
+	BOOL bIdentifier=FALSE,bPosition_expr=FALSE,bNeighbor_expr=FALSE,bFromtocategory=FALSE,
+		bRelop=FALSE,bConstant=FALSE,bTypeExpr=FALSE,bLogop=FALSE,bFor_expr=FALSE;
+
+
 	BOOL bCommentMarker = FALSE;
 	BOOL bFound=FALSE;
 
-	BOOL bIsMemberMatches = FALSE;
-	//BOOL bQuote = FALSE;
 
 	CHARRANGE crOldSel;
-
 	GetSel(crOldSel);
 	LockWindowUpdate();
 	HideSelection(TRUE, FALSE);
@@ -510,19 +879,59 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 		TCHAR *pStart, *pPtr;
 		pStart = pPtr = pBuffer;
 
-		TCHAR* pSymbolStart = NULL;
-		SymbolColor ic = m_colorCOMments;
+		TCHAR *pSymbolStart = NULL;
+		SymbolColor ic = m_colorDefault;
 
 		while (*pPtr != 0)
 		{
 			TCHAR ch = *pPtr;
 
-
-			// allow identifier with multiple periods
-			if(bIsMemberMatches)
-			{
-				ic = m_colorIdentifiers;
-			}
+			if( strLastKeyWord=="is" )
+				n_isFollowBy=2;
+			if( strLastKeyWord=="member" )
+				n_memberFollowBy=2;
+			if( strLastKeyWord=="matches" )
+				n_matchesFollowBy=2;
+			if( strLastKeyWord=="morphname" )
+				n_morphnameFollowBy=2;
+			if( strLastKeyWord=="allomorph" )
+				n_allomorphFollowBy=2;
+			if( strLastKeyWord=="surface" || strLastKeyWord=="string" )
+				n_surfaceFollowBy=2;
+			if( strLastKeyWord=="word" )
+				n_wordFollowBy=2;
+			if( strLastKeyWord=="type" )
+				n_typeFollowBy=2;
+			if( strLastKeyWord=="property" )
+				n_propertyFollowBy=2;
+			if(bPosition_expr)
+				n_position_exprFollowBy=2;
+			if(bNeighbor_expr)
+				n_neighbor_exprFollowBy=2;
+			if(bFor_expr)
+				n_for_exprFollowBy=2;
+			if(bIdentifier)
+				n_identifierFollowBy=2;
+			if(bFromtocategory)
+				n_fromtocategoryFollowBy=2;
+			if(strLastKeyWord=="capitalized")
+				n_capitalizedFollowBy=2;
+			if(strLastKeyWord=="orderclass")
+				n_orderclassFollowBy=2;
+			if(bRelop)
+				n_relopFollowBy=2;
+			if(bConstant)
+				n_constantFollowBy=2;
+			if(bTypeExpr)
+				n_Type_exprFollowBy=2;
+			if(bLogop)
+				n_logopFollowBy=2;
+			if(strLastKeyWord=="insert")
+				n_insertFollowBy=2;
+			if(strLastKeyWord=="after" || strLastKeyWord=="before")
+				n_after_beforeFollowBy=2;
+			if(strLastKeyWord=="report")
+				n_reportFollowBy=2;
 
 			// //////////////////
 			// Process comment |
@@ -534,107 +943,117 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 				{
 					ch = *(++pPtr);
 				}	while (ch != 0 && ch != '\r');
-				ic = m_colorCOMments;}
+				ic = m_colorCOMments;
+			}
 
-
-			// ////////////////////////////////
-			// Process strings with quotes
-			// ////////////////////////////////
-/*
-			else if ( IsStringQuote(ch) )// && (!bIsMemberMatches))
+			// only for Stamp keyword report "<string>"
+			//else if ( IsStringQuote(ch) && !m_bIsAmple && n_reportFollowBy==2 )
+			else if( !m_bIsAmple && n_reportFollowBy==2 )
 			{
-
-
-				// search for a space before " or ' or .
-				TCHAR *essai = pStart;
-				TCHAR charac;
-				for(int i=0;i<=0;i++)
-				{
-					charac = *essai;
-					essai++;
-				}
-
-				if(( charac==32 ) && (  m_strLastKeyWord=="is"
-									|| m_strLastKeyWord=="member"
-									|| m_strLastKeyWord=="matches" ))
-				{
-					bQuote=TRUE;
-				}
-				else
-				{
-					bQuote=FALSE;
-
-				}
-
-
+				int nCountQuoteMarks=2;
+				BOOL bOK=FALSE;
 				pSymbolStart = pPtr;
-				TCHAR ch1 = ch;
+
 				do
 				{
-					ch = *(++pPtr);
-				}	while (ch != 0 && ch != ch1 && ch != '\r');
+					ch = *(pPtr++);
 
-				if (ch == ch1)
-				{
-					pPtr++;
-				}
-				m_bOpenQuote = TRUE;
+					if(ch=='\"')
+					{
+						nCountQuoteMarks--;
+						if(nCountQuoteMarks==0)
+						{
+							bOK=TRUE;
+							break;
+						}
+					}
+				}	while ( !iscntrl(ch) );
 
-//if( !bQuote	)
-//ic = m_colorError;
-//else ic = m_colorIdentifiers;
+			if(bOK)
+				ic = m_colorIdentifiers;
+			else
+				ic = m_colorError;
 
-
-				m_strLastKeyWord.Empty();
+			n_reportFollowBy=0;
+			strLastKeyWord.Empty();
 			}
 
-*/
-
-
-			// ///////////////////////
-			// Process numbers
-			// ///////////////////////
-			else if ( _istdigit(ch) )
-			{
-				pSymbolStart = pPtr;
-				_tcstod(pSymbolStart, &pPtr);
-				ic = m_colorNBR;
-				m_strLastKeyWord.Empty();
-			}
 
 			// //////////////////////////////////////////////////////////
 			// Process keywords: OPErators POSitions TYPes TRM NBR ACT
 			// //////////////////////////////////////////////////////////
-			else if ( _istalpha(ch ) || ch == '_'
-									 || ch == '='
-									 || ch == '>'
-									 || ch == '<'
-									 || ch == '-'
-									 || ch == '~'
-									 || ch == '\\'
-									 || ch == '.'		// added by mr 6/20/2002 to solve bug is"identif"
-									 || ch == '\"'
-									 || ch == '\'' )
 
-
+			else if ( isalnum (ch )
+									|| ch == '_'
+									|| ch == '!'
+									|| ch == '@'
+									|| ch == '#'
+									|| ch == '$'
+									|| ch == '%'
+									|| ch == '^'
+									|| ch == '*'
+								//	|| ch == '('
+								//	|| ch == ')'
+									|| ch == '{'
+									|| ch == '}'
+									|| ch == '['
+									|| ch == ']'
+									|| ch == '+'
+									|| ch == ':'
+									|| ch == ','
+									|| ch == '/'
+									|| ch == '?'
+									|| ch == '`'
+									|| ch == '|'
+									|| ch == '='
+									|| ch == '>'
+									|| ch == '<'
+									|| ch == '-'
+									|| ch == '~'
+									|| ch == '\\'
+									|| ch == '.'
+									|| ch == '\"'
+									|| ch == '\'' )
 			{
+
+
 
 				pSymbolStart = pPtr;
 				do {
-
 					ch = *(++pPtr);
-				} while (_istalnum(ch) || ch == '_'
+				} while (isalnum(ch) || ch == '_'
 									 || ch == '='
-									 || ch == '>'
-									 || ch == '<'
-									 || ch == '~'
-									 || ch == '-'
-									 || ch == '\\'
-									 || ch == '.'		// added by mr 6/20/2002
-									 || ch == '\"'
-									 || ch == '\'' );
 
+									|| ch == '!'
+									|| ch == '@'
+									|| ch == '#'
+									|| ch == '$'
+									|| ch == '%'
+									|| ch == '^'
+									|| ch == '*'
 
+								//	|| ch == '('
+								//	|| ch == ')'
+
+									|| ch == '{'
+									|| ch == '}'
+									|| ch == '['
+									|| ch == ']'
+									|| ch == '+'
+									|| ch == ':'
+									|| ch == ','
+									|| ch == '/'
+									|| ch == '?'
+									|| ch == '`'
+									|| ch == '|'
+									|| ch == '>'
+									|| ch == '<'
+									|| ch == '~'
+									|| ch == '-'
+									|| ch == '\\'
+									|| ch == '.'
+									|| ch == '\"'
+									|| ch == '\'' );
 
 
 					// ///////////////////
@@ -649,7 +1068,18 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									m_strOPErators.Mid(nPos+1, pPtr - pSymbolStart));
 						ic = m_colorOPErators;
 						bFound = TRUE;
-						m_strLastKeyWord = pSymbolStart;
+						strLastKeyWord = pSymbolStart;
+
+						if( strLastKeyWord=="AND" ||
+							strLastKeyWord=="OR" ||
+							strLastKeyWord=="XOR" ||
+							strLastKeyWord=="IFF")
+						{
+							bLogop=TRUE;
+						}
+
+
+
 					}
 
 					// ///////////////////
@@ -664,7 +1094,8 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									m_strFOROPerators.Mid(nPos+1, pPtr - pSymbolStart));
 						ic = m_colorForOPErators;
 						bFound = TRUE;
-						m_strLastKeyWord = pSymbolStart;
+						strLastKeyWord = pSymbolStart;
+						bFor_expr=TRUE;
 					}
 
 					// ///////////////////
@@ -679,7 +1110,23 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									m_strLOCations.Mid(nPos+1, pPtr - pSymbolStart));
 						ic = m_colorLOCations;
 						bFound = TRUE;
-						m_strLastKeyWord = pSymbolStart;
+						strLastKeyWord = pSymbolStart;
+
+						if(strLastKeyWord=="left" ||
+							strLastKeyWord=="right" ||
+							strLastKeyWord=="current" ||
+							strLastKeyWord=="LEFT" ||
+							strLastKeyWord=="RIGHT" ||
+							strLastKeyWord=="INITIAL" ||
+							strLastKeyWord=="FINAL" ||
+							strLastKeyWord=="initial" ||
+							strLastKeyWord=="final")
+						{
+							bPosition_expr=TRUE;
+						}
+
+						if(strLastKeyWord=="last" || strLastKeyWord=="next" )
+							bNeighbor_expr=TRUE;
 					}
 
 					// ///////////////////
@@ -694,7 +1141,10 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									m_strKEYWords.Mid(nPos+1, pPtr - pSymbolStart));
 						ic = m_colorKEYWords;
 						bFound = TRUE;
-						m_strLastKeyWord = pSymbolStart;
+						strLastKeyWord = pSymbolStart;
+
+						if(strLastKeyWord=="fromcategory" || strLastKeyWord=="tocategory")
+							bFromtocategory=TRUE;
 					}
 
 					// ///////////////////
@@ -709,7 +1159,24 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									m_strCONNectors.Mid(nPos+1, pPtr - pSymbolStart));
 						ic = m_colorCONNectors;
 						bFound = TRUE;
-						m_strLastKeyWord = pSymbolStart;
+
+						strLastKeyWord=pSymbolStart;
+
+
+						for(int i=0;i<m_pRELOPList->GetSize();i++)
+						{
+							if(strLastKeyWord.Compare(m_pRELOPList->GetAt(i))==0)
+							{
+								bRelop=TRUE;
+								break;
+							}
+						}
+
+
+
+
+
+						strLastKeyWord = pSymbolStart;
 					}
 
 
@@ -724,55 +1191,412 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 										m_strTYPes.Mid(nPos+1, pPtr - pSymbolStart));
 						ic = m_colorTYPes;
 						bFound = TRUE;
-						m_strLastKeyWord = pSymbolStart;
+						strLastKeyWord = pSymbolStart;
+						bTypeExpr=TRUE;
 					}
 
 
-					// /////////
-					// OTHER
-					// /////////
+					if(!bFound) {
+						bIdentifier=TRUE;
+						strLastKeyWord=pSymbolStart;
+					}
 
-					//if (!bFound ) // ajouter <pos> ?????
-					if( !bFound && !bIsMemberMatches )
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+					BOOL bFlag=FALSE;
+
+					if(n_isFollowBy==2)
 					{
-						if((( m_strLastKeyWord == "is" )	||
-						  ( m_strLastKeyWord == "member" )	||
-						  ( m_strLastKeyWord == "matches" ) ||
-						  ( m_strLastKeyWord == "left" )	||
-						  ( m_strLastKeyWord == "right" )	||
-						  ( m_strLastKeyWord == "current" ) ||
-						  ( m_strLastKeyWord == "LEFT" )	||
-						  ( m_strLastKeyWord == "RIGHT" )	||
-						  ( m_strLastKeyWord == "initial" ) ||
-						  ( m_strLastKeyWord == "final" ) ))
-
-
-
-
+						int n = checkNextWord(m_pKeyword_is,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
+						switch(n)
 						{
-							bIsMemberMatches=TRUE;
-							m_strLastKeyWord.Empty();
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
 							ic = m_colorIdentifiers;
+							break;
+						}
+
+						n_isFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_memberFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_member,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_memberFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_matchesFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_matches,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_matchesFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_morphnameFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_morphname,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_morphnameFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_allomorphFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_allomorph,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_allomorphFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_surfaceFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_surface,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_surfaceFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_wordFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_word,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_wordFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_typeFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_type,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_typeFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_position_exprFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_position,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_position_exprFollowBy=0;
+						bPosition_expr=FALSE;
+						bFlag=TRUE;
+					}
+
+					if(n_neighbor_exprFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_neighbor,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_neighbor_exprFollowBy=0;
+						bNeighbor_expr=FALSE;
+						bFlag=TRUE;
+					}
+
+					if(n_for_exprFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_for,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_for_exprFollowBy=0;
+						bFor_expr=FALSE;
+						bFlag=TRUE;
+					}
+
+
+					if(n_identifierFollowBy==2)
+					{
+						int n = checkNextWord(m_pIdentifier,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_identifierFollowBy=0;
+						bIdentifier=FALSE;
+						bFlag=TRUE;
+					}
+
+					if(n_propertyFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_property,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_propertyFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_fromtocategoryFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_fromtocategory,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_fromtocategoryFollowBy=0;
+						bFromtocategory=FALSE;
+						bFlag=TRUE;
+					}
+
+					if(n_capitalizedFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_capitalized,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_capitalizedFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_orderclassFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_orderclass,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_orderclassFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(n_relopFollowBy==2)
+					{
+						if(bFound) // <relop> is followed by a kewyword; check if it belongs to the <position> group
+							int n = checkNextWord(m_pKeyword_relop,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						else // <relop> is followed by a non-keyword; let's check if it is a valid number.
+						{
+
+						if(checkConstant(m_pConstant,strLastKeyWord))
+						{
+							ic = m_colorIdentifiers;
+							bConstant=TRUE;
 						}
 						else
-						{
 							ic = m_colorError;
 						}
 
-						bFound = TRUE;
-
-
-
-
-
+						n_relopFollowBy=0;
+						bRelop=FALSE;
+						bFlag=TRUE;
 					}
 
+					if(n_constantFollowBy==2)
+					{
+						int n = checkNextWord(m_pConst,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_constantFollowBy=0;
+						bConstant=FALSE;
+						bFlag=TRUE;
+					}
+
+					if(n_Type_exprFollowBy==2)
+					{
+						int n = checkNextWord(m_pType,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_Type_exprFollowBy=0;
+						bTypeExpr=FALSE;
+						bFlag=TRUE;
+					}
+
+					if(n_logopFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_logop,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_logopFollowBy=0;
+						bLogop=FALSE;
+						bFlag=TRUE;
+					}
+
+					if(n_insertFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_insert,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_insertFollowBy=0;
+						bFlag=TRUE;
+					}
+
+					if(!bFound && !bFlag){
+						ic = m_colorError;}
 
 					// does the line begin with the marker \co ?
 					if( strspn( pSymbolStart, "\\co" ) == 3 )
 					{
 						bCommentMarker=TRUE;
 					}
+
+					if(n_after_beforeFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_afterbefore,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_after_beforeFollowBy=0;
+						bFlag=TRUE;
+					}
+/*
+					if(n_reportFollowBy==2)
+					{
+						int n = checkNextWord(m_pKeyword_report,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_reportFollowBy=0;
+						bFlag=TRUE;
+					}
+*/
 
 
 				bFound=FALSE;
@@ -787,7 +1611,11 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 			if (pSymbolStart != NULL)
 			{
 				ASSERT(pSymbolStart < pPtr);
-				SetFormatRange(nStart + pStart - pBuffer, nStart + pSymbolStart - pBuffer, FALSE, FALSE, FALSE, FALSE, clrDefaultColor);
+
+				SetFormatRange(nStart + pStart - pBuffer,
+					nStart + pSymbolStart - pBuffer,
+					FALSE, FALSE, FALSE, FALSE,
+					m_colorDefault.clrColor);
 
 				// line begins with the marker \co
 				if( bCommentMarker )
@@ -795,13 +1623,21 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 					ic = m_colorCOMments;
 				}
 
-				SetFormatRange(nStart + pSymbolStart - pBuffer, nStart + pPtr - pBuffer, ic.bBold,ic.bItalic,ic.bUnderline,ic.bStrikeout, ic.clrColor);
+				SetFormatRange(nStart + pSymbolStart - pBuffer,
+					nStart + pPtr - pBuffer,
+					ic.bBold,ic.bItalic,ic.bUnderline,ic.bStrikeout,
+					ic.clrColor);
+
+
 				pStart = pPtr;
 				pSymbolStart = 0;
 			}
 			else if (*pPtr == 0)
 			{
-				SetFormatRange(nStart + pStart - pBuffer, nStart + pPtr - pBuffer, FALSE,FALSE,FALSE,FALSE,clrDefaultColor);
+				SetFormatRange(nStart + pStart - pBuffer,
+					nStart + pPtr - pBuffer,
+					FALSE,FALSE,FALSE,FALSE,
+					m_colorDefault.clrColor);
 			}
 		}
 
@@ -817,7 +1653,6 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 	HideSelection(FALSE, FALSE);
 	UnlockWindowUpdate();
 
-	m_bInForcedChange = FALSE;
 }
 
 
@@ -845,10 +1680,6 @@ LRESULT CTestEdit::OnSetText(WPARAM wParam, LPARAM lParam)
 
 void CTestEdit::OnChange()
 {
-	if (m_bInForcedChange)
-		return;
-
-
 	CHARRANGE crCurSel;
 	GetSel(crCurSel);
 
@@ -878,7 +1709,7 @@ void CTestEdit::OnChange()
 			FormatTextLines(m_crOldSel.cpMax, m_crOldSel.cpMax);
 		break;
 	default:
-		FormatAll();
+		//FormatAll();
 		break;
 	}
 
@@ -959,3 +1790,131 @@ void CTestEdit::setFontFaceName(CString lpstrFontName)
 	m_strFontFaceName=lpstrFontName;
 }
 #endif // mr270
+
+int CTestEdit::checkNextWord(CStringArray *pstrAuthorized,
+							 CStringArray *pstrAall,
+							 CString &pstrLastKeyWord,
+							 BOOL bIdentifierAuthorized,
+							 BOOL bIsIdentifier )
+{
+
+	CString temp;
+	BOOL bFound=FALSE;
+	BOOL nReturn=2; // 0=authorized  1=non-authorized 2=identifier
+
+	if(bIdentifierAuthorized && bIsIdentifier )
+	{
+		return nReturn;
+	}
+
+	for(int i=0;i<pstrAuthorized->GetSize();i++)
+	{
+		temp=pstrAuthorized->GetAt(i);
+		// Found
+		if(temp.Collate(pstrLastKeyWord)==0)
+		{
+			bFound=TRUE;
+			nReturn=0;
+			break;
+		}
+	}
+	// pas trouve, cherche si est un autre keyword sinon est un <identifier>
+	if(!bFound)
+	{
+		nReturn=2; // force identifier
+
+		for(int i=0;i<pstrAall->GetSize();i++)
+		{
+			temp=pstrAall->GetAt(i);
+			if(temp.Collate(pstrLastKeyWord)==0)
+			{
+				nReturn=1;
+				break;
+			}
+		}
+
+
+	}
+
+
+	if(!bIdentifierAuthorized && nReturn==2)
+		nReturn=1;
+
+
+	return nReturn;
+}
+
+BOOL CTestEdit::checkConstant(CStringArray *pstrConstant,
+							 CString &pstrLastKeyWord )
+{
+	BOOL bResult=TRUE;
+
+		for(int ii=0;ii<pstrLastKeyWord.GetLength();ii++)
+		{
+			BOOL bFound=FALSE;
+			for(int i=0;i<pstrConstant->GetSize();i++)
+			{
+				if(pstrLastKeyWord.GetAt(ii)==pstrConstant->GetAt(i))
+				{
+					bFound=TRUE;
+					break;
+				}
+			}
+			if(!bFound)
+			{
+				bResult=FALSE;
+				break;
+			}
+		}
+
+
+	// test limit number
+	if(bResult)
+	{
+		int nV = atoi (pstrLastKeyWord);
+		if(nV>32767 || nV<-32767)
+			bResult=FALSE;
+	}
+
+
+	if(!bResult)
+	{
+		return bResult;
+	}
+
+	// test if minus is present
+	else if(bResult)
+	{
+		// search for minus and test its place
+		BOOL bMinusPresent=FALSE;
+		int nCountMinus=0;
+		for(ii=0;ii<pstrLastKeyWord.GetLength();ii++)
+		{
+			if(pstrLastKeyWord.GetAt(ii)=='-')
+			{
+				if(ii==0)
+				{
+					bMinusPresent=TRUE;
+					nCountMinus++;
+				}
+				else
+					nCountMinus++;
+			}
+		}
+
+
+		// --9999 is not allowed
+		if(bMinusPresent && nCountMinus >1)
+			bResult=FALSE;
+
+		// 9-999 is not allowed
+		if(!bMinusPresent && nCountMinus >0)
+			bResult=FALSE;
+
+		// -0 is not allowed
+		if(pstrLastKeyWord=="-0")
+			bResult=FALSE;
+		}
+
+	return bResult;
+}

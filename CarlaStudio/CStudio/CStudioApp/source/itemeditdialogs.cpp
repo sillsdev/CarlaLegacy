@@ -100,24 +100,6 @@ BOOL CDlgEditTest::OnInitDialog()
 	CDialog::OnInitDialog();
 
 
-	// CTestEdit	->
-	TCHAR szOPE [] = " AND IF IFF NOT OR THEN XOR ";
-	TCHAR szFOROPE [] = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
-	TCHAR szLOC [] = " current last left next right FINAL INITIAL LEFT RIGHT ";
-	TCHAR szCONN [] = " is matches member = > >= <= < ~= ";
-	TCHAR szTYP [] = " prefix infix root suffix initial final ";
-	TCHAR szNBR [] = " 0 1 2 3 4 5 6 7 8 9 ";
-	TCHAR szKEYW [] = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word ";
-	// <- CTestEdit
-
-	// IF Syntehis test, THEN
-	// those keywords need to be added to the Keyword list.
-	if( !m_bIsAmpleTest ) // added by mr 5/24/2002
-	{
-		lstrcat(szKEYW," insert before after report ");
-	}
-
-
 	CWnd* pWnd=NULL;
 	pWnd = GetDlgItem( IDC_EDITLabel );
 	pWnd->SetWindowText( m_sLabel );
@@ -136,47 +118,21 @@ BOOL CDlgEditTest::OnInitDialog()
 #ifndef mr270
 	// get Font Face Name for CRichEditCtrl
 	LOGFONT logfont;
+	CString strFontFaceName="Courier New";
 	if (m_pTDI->m_bShowUserTestsInLangFont)
 	{
 		CFont *pF =m_pTDI->getFont();
 		pF->GetLogFont(&logfont);
-		m_richTestEdit.setFontFaceName(logfont.lfFaceName);
-	}
-	else {
-		m_richTestEdit.setFontFaceName("Courier New");
+		strFontFaceName=logfont.lfFaceName;
 	}
 #endif // mr270
 
-#ifndef mr270
-	m_richTestEdit.setTestEditModel(m_pTestEditModel);
-#endif // mr270
-
-
-	m_richTestEdit.Initialize();
-
-	m_richTestEdit.SetStringQuotes(_T("\""));
-	m_richTestEdit.SetStringQuotes(_T("\'"));
-	m_richTestEdit.SetStringQuotes(_T("."));
-
-#ifndef mr270
-	m_richTestEdit.SetSLComment(m_cCommentChar);
-#else // mr270
-	m_richTestEdit.SetSLComment(_T('|'));
-#endif // mr270
-
-	m_richTestEdit.SetSLComment(_T("\\co"));
-
-	m_richTestEdit.AddKeywords(szOPE,m_richTestEdit.m_strOPErators,m_richTestEdit.m_strOPEratorsLower);
-	m_richTestEdit.AddKeywords(szFOROPE,m_richTestEdit.m_strFOROPerators,m_richTestEdit.m_strFOROPeratorsLower);
-	m_richTestEdit.AddKeywords(szLOC,m_richTestEdit.m_strLOCations,m_richTestEdit.m_strLOCationsLower);
-
-	m_richTestEdit.AddKeywords(szKEYW,m_richTestEdit.m_strKEYWords,m_richTestEdit.m_strKEYWordsLower);
-	m_richTestEdit.AddKeywords(szCONN,m_richTestEdit.m_strCONNectors,m_richTestEdit.m_strCONNectorsLower);
-	m_richTestEdit.AddKeywords(szTYP,m_richTestEdit.m_strTYPes,m_richTestEdit.m_strTYPesLower);
-	m_richTestEdit.AddKeywords(szNBR,m_richTestEdit.m_strNBR,m_richTestEdit.m_strNBRLower);
-
+	m_richTestEdit.Initialize(m_bIsAmpleTest /*TRUE=Ample FALSE=Stamp*/,
+								m_cCommentChar /*User's comment char*/,
+								strFontFaceName /*User's font or default font*/,
+								m_pTestEditModel /*color model for tests*/,
+								FALSE /*control is read-only*/ );
 	m_richTestEdit.FormatAll();
-	// <- CTestEdit
 
 
 	if( m_sLabel.IsEmpty() )

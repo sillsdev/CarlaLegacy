@@ -181,12 +181,17 @@ BOOL CCarlaLanguage::save(LPCTSTR lpszProjectDirectory)
 	// test word wrap
 	fout << "\\TestWordWrap " << m_pTestEditModel->m_bWordWrap << "\n";
 
+#ifndef mr270	// do not save the default color because the user can't modify it.
+
+#else // mr270
 	// test default: color, bold, italic, undernline, strikeout
 	fout << "\\TestDefaultCol " << m_pTestEditModel->m_DefaultColor << "\n";
 		fout << "\\TestDefaultBold " << m_pTestEditModel->m_bDefaultBold << "\n";
 		fout << "\\TestDefaultItalic " << m_pTestEditModel->m_bDefaultItalic << "\n";
 		fout << "\\TestDefaultUnderline " << m_pTestEditModel->m_bDefaultUnderline << "\n";
 		fout << "\\TestDefaultStrikeout " << m_pTestEditModel->m_bDefaultStrikeout << "\n";
+#endif // mr270
+
 
 	// test operators: color, bold, italic, undernline, strikeout
 	fout << "\\TestOPECol " << m_pTestEditModel->m_OPEColor << "\n";
@@ -504,6 +509,9 @@ BOOL CCarlaLanguage::open(LPCTSTR lpszPathName)
 			m_pTestEditModel->m_bWordWrap=atoi(sField);
 		}
 
+#ifndef mr270	// default color is not saved because the user can't modify it.
+
+#else // mr270
 		// default color
 		if( sMarker=="TestDefaultCol" ) {
 			m_pTestEditModel->m_DefaultColor=atoi(sField);}
@@ -519,6 +527,7 @@ BOOL CCarlaLanguage::open(LPCTSTR lpszPathName)
 
 			if( sMarker=="TestDefaultStrikeout" ) {
 				m_pTestEditModel->m_bDefaultStrikeout=atoi(sField);}
+#endif // mr270
 
 		// operators color
 		if( sMarker=="TestOPECol" ) {
