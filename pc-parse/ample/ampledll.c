@@ -4108,7 +4108,7 @@ pLogFP_m      = pSetup_io->sData.pLogFP;
 memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
 strncpy(szOutputBuffer_g, "<AlloResult>\r\n", sizeof(szOutputBuffer_g)-1);
 				/* get list of matching allomorphs */
-pszRest = pszRestOfWord_in;
+pszRest = (char *)pszRestOfWord_in;
 if (strcmp(pszState_in, "BOW") == 0)
   iState = AMPLE_STATE_BOW;
 else if (strcmp(pszState_in, "PFX") == 0)
@@ -4173,7 +4173,7 @@ DllExport const char * AmpleApplyInputChangesToWord(
 {
 const char *	pszResult = szOutputBuffer_g;
 char * pszWord;
-char * pszChangedWord;
+const char * pszChangedWord;
 WordTemplate *pTemplate;
 /*
  *  verify a valid AMPLE setup
@@ -4195,7 +4195,7 @@ pLogFP_m      = pSetup_io->sData.pLogFP;
 
 memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
 				/* run input word through input changes */
-pszWord = pszWord_in;
+pszWord = (char *)pszWord_in;
 pTemplate = readTemplateFromTextString(&pszWord,
 					   &pSetup_io->sData.sTextCtl);
 pszChangedWord = pszWord_in;	/* in case text changes fail... */
