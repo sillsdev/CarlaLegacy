@@ -9,7 +9,7 @@ PC-PATR CHANGE HISTORY
 2. Added indexed variables to logical constraints.  See new documentation under
    logical constraints, especially the part after the BNF description.
 3. For the DLL version, the program header information now displays in the log
-   file when performing a file disambguate.
+   file when performing a file disambiguate.
 
 1.2.12 (27-Sep-2001)
 --------------------
