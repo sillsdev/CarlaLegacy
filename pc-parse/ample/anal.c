@@ -222,6 +222,7 @@ static char *		get_property_name P((int               iProp_in,
 static void		sgml_trace	P((AmpleData * pAmple_in,
 					   char *      pszString_in,
 					   int         bIndent_in));
+static void             sgml_trace_success P((AmpleData * pAmple_in));
 static void		store_AMPLE_trace P((AmpleData *  pAmple_in,
 						 const char * pszFmt,
 						 const char * pszArg));
@@ -2144,11 +2145,10 @@ if (*tail == NUL)
 	bOldUsesNext = bUsesNextWord_m;
 	if (performAmpleFinalTests(head, pAmple_in))
 	{				/* analysis successfully completed */
-	  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
-		sgml_trace(pAmple_in, "<success/>\n", FALSE);
-	  else
-		sgml_trace(pAmple_in, "<success>\n", FALSE);
-	sgml_trace(pAmple_in, "  </parseNode>\n", TRUE);
+#ifndef EXPERIMENTAL
+	/* can now report success for regular AMPLE; XAMPLE has to wait */
+	sgml_trace_success(pAmple_in);
+#endif /* EXPERIMENTAL */
 
 	if (!find_result(pCurrentWord_m->pTemplate,
 			 astr, pszDecomposition_m, pszCategory_m,
@@ -2161,6 +2161,8 @@ if (*tail == NUL)
 		 */
 		if (perform_word_parse(head, pAmple_in, &pWordParse))
 		{
+		/* can now report success for XAMPLE */
+		sgml_trace_success(pAmple_in);
 #endif /* EXPERIMENTAL */
 		++uiAmbigCount_m;
 		pNewAnal = (WordAnalysis *)allocMemory(sizeof(WordAnalysis));
@@ -2246,6 +2248,8 @@ if (*tail == NUL)
 #ifdef EXPERIMENTAL
 		if (pAmple_in->sPATR.pGrammar != NULL)
 		pAmple_in->uiPATRSkipCount++;
+		/* can now report success for XAMPLE */
+		sgml_trace_success(pAmple_in);
 #endif /* EXPERIMENTAL */
 		goto free_unneeded;
 		}
@@ -6004,6 +6008,7 @@ char *			pszToCat;
 char *			pszProps;
 char *			pszFeatures;
 int			bSuccess = FALSE;
+char *                  pszTestName = "PC-PATR word parse";
 /*
  *  check for valid input, and for a loaded grammar
  */
@@ -6180,6 +6185,40 @@ else
 collectPATRParseGarbage(&pAmple_in->sPATR);
 if (bSuccess)
 	*ppWordParse_out = pWordParse;
+else
+  {
+	if (pAmple_in->eTraceAnalysis = AMPLE_TRACE_SGML ||
+	pAmple_in->eTraceAnalysis = AMPLE_TRACE_XML)
+	  {
+	store_AMPLE_trace(pAmple_in, "\n  ", NULL);
+	char *	pszIndent;
+#ifdef HAVE_ALLOCA
+	pszIndent = (char *)alloca((2*iTracingDepth_m)*sizeof(char));
+#else
+	pszIndent = (char *)allocMemory((2*iTracingDepth_m)*sizeof(char));
+#endif
+	sprintf(pszIndent, "%*s", 2*iTracingDepth_m, "");
+	store_AMPLE_trace(pAmple_in, pszIndent, NULL);
+#ifndef HAVE_ALLOCA
+	freeMemory(pszIndent);
+#endif
+	if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+	  store_AMPLE_trace(pAmple_in, "  <failure test=\"%s\"/>\n", pszTestName);
+	else
+	  store_AMPLE_trace(pAmple_in, "  <failure test=\"%s\">\n", pszTestName);
+	char *	pszIndent;
+#ifdef HAVE_ALLOCA
+	pszIndent = (char *)alloca((2*iTracingDepth_m+1)*sizeof(char));
+#else
+	pszIndent = (char *)allocMemory((2*iTracingDepth_m+1)*sizeof(char));
+#endif
+	sprintf(pszIndent, "%*s", 2*iTracingDepth_m, "");
+	store_AMPLE_trace(pAmple_in, "%s</parseNode>\n", pszIndent);
+#ifndef HAVE_ALLOCA
+	freeMemory(pszIndent);
+#endif
+	  }
+  }
 return bSuccess;
 }
 
@@ -6414,3 +6453,20 @@ switch(iState_in)
 return pResultList;
 }
 #endif /* hab3312 */
+
+/*****************************************************************************
+ * NAME
+ *    sgml_trace_success
+ * DESCRIPTION
+ *    report success for SGML/XML tracing
+ * RETURN VALUE
+ *    none
+ */
+static void sgml_trace_success(AmpleData * pAmple_in)
+{
+  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	sgml_trace(pAmple_in, "<success/>\n", FALSE);
+  else
+	sgml_trace(pAmple_in, "<success>\n", FALSE);
+  sgml_trace(pAmple_in, "  </parseNode>\n", TRUE);
+}
