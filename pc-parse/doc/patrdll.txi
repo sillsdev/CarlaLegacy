@@ -1,0 +1,3218 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename patrdll.info
+@settitle PATR100 DLL Reference Manual
+@c %**end of header
+
+@set TITLE PATR100 DLL Reference Manual
+@set SUBTITLE COM Interface for unification based parsing
+@set VERSION based on PATR functions version 1.2.2
+@set DATE April 2000
+@set AUTHOR by Stephen McConnel
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@node    Top,       Introduction,  (dir),    (dir)
+@comment node-name, next,          previous, up
+@menu
+* Introduction::
+
+* COM Interface::
+
+* Error messages::
+@end menu
+@c ----------------------------------------------------------------------------
+@node    Introduction, COM Interface, Top,      Top
+@comment node-name,    next,      previous, up
+@chapter Introduction to the AMPLE DLL
+
+PC-PATR is an implementation for personal computers of the PATR-II
+computational linguistic formalism.  The PATR-II formalism can be
+viewed as a computer language for encoding linguistic information.  It
+does not presuppose any particular theory of syntax.  It was originally
+developed by Stuart M. Shieber at Stanford University in the early
+1980's.  A PATR-II grammar consists of a set of rules and a lexicon.
+Each rule consists of a context-free @emph{phrase structure rule} and a
+set of @emph{feature constraints}, that is, @emph{unifications} on the
+@emph{feature structures} associated with the constituents of the
+phrase structure rules.  The lexicon provides the items that can
+replace the terminal symbols of the phrase structure rules, that is,
+the words of the language together with their relevant features.
+
+The PATR100 DLL is built with the processing functions used by PC-PATR
+and related programs.  It has been developed with the goal of making
+it easier to use PATR-II style parsing as a component in Windows
+programs written in different programming languages such as C++ or
+Visual Basic.
+
+PC-PATR (and thus this COM DLL) is still under development.
+The author would appreciate feedback directed to the following address:
+
+@example
+Stephen McConnel                 (972)708-7361 (office)
+Language Software Development    (972)708-7561 (fax)
+SIL International
+7500 W. Camp Wisdom Road
+Dallas, TX 75236                 steve@@acadcomp.sil.org
+U.S.A.                        or Stephen_McConnel@@sil.org
+@end example
+
+@c ----------------------------------------------------------------------------
+@node COM Interface, Error messages, Introduction, Top
+@chapter The PatrParser Interface
+
+In order to facilitate using the PC-PATR functions from programming
+languages such as Visual Basic, a COM interface named @code{IPatrParser}
+has been written to encapsulate the essential PC-PATR functionality.
+This interface has the properties and methods described below.
+
+@menu
+* AmplePropertyIsFeature::   property
+* CheckCycles::              property
+* Clear::                    method
+* CloseLog::                 method
+* CodePage::                 property
+* CommentChar::              property
+* DebuggingLevel::           property
+* DisambiguateAnaFile::      method
+* DisplayFeatures::          property
+* Failures::                 property
+* FlatFeatureDisplay::       property
+* Gloss::                    property
+* GrammarFile::              property (read only)
+* LexCategoryMarker::        property
+* LexFeaturesMarker::        property
+* LexGlossMarker::           property
+* LexiconFile::              property (read only)
+* LexiconFileCount::         property (read only)
+* LexRecordMarker::          property
+* LexWordMarker::            property
+* LoadAnaFile::              method
+* LoadGrammarFile::          method
+* LoadLexiconFile::          method
+* LogFile::                  property (read only)
+* MaxAmbiguity::             property
+* OpenLog::                  method
+* ParseFile::                method
+* ParseString::              method
+* PromoteDefaultAtoms::      property
+* ReloadLexicon::            method
+* SentenceFinalPunctuation:: property
+* TimeLimit::                property
+* TopDownFilter::            property
+* TopFeatureOnly::           property
+* TreeDisplay::              property
+* TrimEmptyFeatures::        property
+* Unification::              property
+* WriteAmpleParses::         property
+@end menu
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmplePropertyIsFeature, CheckCycles, COM Interface, COM Interface
+@section The AmplePropertyIsFeature property
+@subheading Interface description
+@example
+[propget] HRESULT AmplePropertyIsFeature([out, retval] BOOL * pVal);
+[propput] HRESULT AmplePropertyIsFeature([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_AmplePropertyIsFeature(BOOL * pVal);
+HRESULT put_AmplePropertyIsFeature(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether or not the values in the AMPLE
+analysis @code{\p} (property) field are to be interpreted as feature
+template names, the same as the values in the AMPLE analysis @code{\fd}
+(feature descriptor) field.
+If it is @code{true}, then the values in the AMPLE analysis @code{\p}
+field are interpreted as feature template names.
+If it is @code{false}, then the AMPLE analysis @code{\p} field is ignored
+except for adding it verbatim to the lexicon feature structure as an
+atomic feature value with the label @code{"properties"}.
+
+The @code{AmplePropertyIsFeature} property corresponds to the
+@code{set property-is-feature} command in the PCPATR program.
+
+@subheading Default Value
+@code{false}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox AmplePropertyIsFeature
+	  Caption         =   "Interpret AMPLE Properties as Features"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	AmplePropertyIsFeature.Value = m_patr.AmplePropertyIsFeature
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.AmplePropertyIsFeature = AmplePropertyIsFeature.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node CheckCycles, Clear, AmplePropertyIsFeature, COM Interface
+@section The CheckCycles property
+@subheading Interface description
+@example
+[propget] HRESULT CheckCycles([out, retval] BOOL * pVal);
+[propput] HRESULT CheckCycles([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_CheckCycles(BOOL * pVal);
+HRESULT put_CheckCycles(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether or not feature structures are
+checked for cycles following unification.  If it is @code{true}, then
+feature structures are checked.  If it is @code{false}, then no check is
+performed.
+
+It is a bad idea to set this property to @code{false} unless the grammer
+is known to @emph{never} create cycles during parsing, even for failed
+parses.
+
+The @code{CheckCycles} property corresponds to the
+@code{set check-cycles} command in the PCPATR program.
+
+@subheading Default Value
+@code{true}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox CheckCycles
+	  Caption         =   "Check Features for Cycles"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	CheckCycles.Value = m_patr.CheckCycles
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.CheckCycles = CheckCycles.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node Clear, CloseLog, CheckCycles, COM Interface
+@section The Clear method
+@subheading Interface description
+@example
+HRESULT Clear();
+@end example
+@subheading C++ prototypes
+@example
+HRESULT Clear();
+@end example
+@subheading Description
+This method frees all of the allocated memory, erasing any lexicon or
+grammar file that has been loaded.
+
+The @code{Clear} method corresponds to the @code{clear} command in the
+PCPATR program.
+
+@subheading Return Value
+@code{S_OK}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  ...
+	  Begin VB.Menu ClearCmd
+		 Caption         =   "Clear"
+	  End
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub ClearCmd_Click()
+	On Error GoTo Failed
+	m_patr.Clear
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Clear Failed"
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node CloseLog, CodePage, Clear, COM Interface
+@section The CloseLog method
+@subheading Interface description
+@example
+HRESULT CloseLog();
+@end example
+@subheading C++ prototypes
+@example
+HRESULT CloseLog();
+@end example
+@subheading Description
+This method closes the open log file.
+
+The @code{CloseLog} method corresponds to the @code{close} command in the
+PCPATR program.
+
+@subheading Return Value
+@code{S_OK}, or E_UNEXPECTED if a log file was not open
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  ...
+	  Begin VB.Menu CloseLogCmd
+		 Caption         =   "&Close Log"
+	  End
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub CloseLogCmd_Click()
+	On Error GoTo Failed
+	m_patr.CloseLog
+	LogFile.Text = ""
+	Exit Sub
+Failed:
+	MsgBox "Closing Log File Failed"
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node CodePage, CommentChar, CloseLog, COM Interface
+@section The CodePage property
+@subheading Interface description
+@example
+[propget] HRESULT CodePage([out, retval] long * pVal);
+[propput] HRESULT CodePage([in] long newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_CodePage(long * pVal);
+HRESULT put_CodePage(long newVal);
+@end example
+@subheading Description
+This integer property selects the code page used for converting between
+the 16-bit Unicode characters used in BSTRs (and XML) and the 8-bit
+multibyte characters used by the PCPATR functions and the grammar and
+lexicon files.
+
+@c NOTE: should this be added to the PCPATR program?
+The @code{CodePage} property has no corresponding command in the PCPATR
+program.  It is useful primarily for converting from the 8-bit characters
+used by the PCPATR functions and files into the 16-bit Unicode characters
+used by the BSTRs used by COM interface methods.  It is also useful for
+designating the encoding in XML files produced by the PCPATR output
+functions.
+
+@subheading Default Value
+@code{CP_ACP} (the ANSI code page)
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox CodePage
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	Select Case m_patr.CodePage
+		Case 0
+			CodePage.Text = "ANSI"
+		Case 1
+			CodePage.Text = "OEM"
+		Case 2
+			CodePage.Text = "MAC"
+		Case 42
+			CodePage.Text = "SYMBOL"
+		Case 65000
+			CodePage.Text = "UTF7"
+		Case 65001
+			CodePage.Text = "UTF8"
+		Case Else
+			CodePage.Text = m_patr.CodePage
+	End Select
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	If CodePage.Text = "ANSI" Then
+		m_patr.CodePage = 0
+	ElseIf CodePage.Text = "OEM" Then
+		m_patr.CodePage = 1
+	ElseIf CodePage.Text = "MAC" Then
+		m_patr.CodePage = 2
+	ElseIf CodePage.Text = "SYMBOL" Then
+		m_patr.CodePage = 42
+	ElseIf CodePage.Text = "UTF7" Then
+		m_patr.CodePage = 65000
+	ElseIf CodePage.Text = "UTF8" Then
+		m_patr.CodePage = 65001
+	Else
+		m_patr.CodePage = CodePage.Text
+	End If
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node CommentChar, DebuggingLevel, CodePage, COM Interface
+@section The CommentChar property
+@subheading Interface description
+@example
+[propget] HRESULT CommentChar([out, retval] long * pVal);
+[propput] HRESULT CommentChar([in] long newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_CommentChar(long * pVal);
+HRESULT put_CommentChar(long newVal);
+@end example
+@subheading Description
+This integer property selects the 8-bit character used to mark the
+beginning of comments in the grammar and lexicon files.  If @code{newVal}
+is 0, then no comments are allowed in the grammar and lexicon files.
+
+The @code{CommentChar} property corresponds to the @code{set comment}
+command in the PCPATR program.
+
+@subheading Default Value
+the semicolon character (@code{;})
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_INVALIDARG} if @code{newVal} is out of range (less than 0 or
+greater than 255)
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox CommentChar
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	CommentChar.Text = Chr(m_patr.CommentChar)
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.CommentChar = Asc(CommentChar.Text)
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node DebuggingLevel, DisambiguateAnaFile, CommentChar, COM Interface
+@section The DebuggingLevel property
+@subheading Interface description
+@example
+[propget] HRESULT DebuggingLevel([out, retval] long * pVal);
+[propput] HRESULT DebuggingLevel([in] long newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_DebuggingLevel(long * pVal);
+HRESULT put_DebuggingLevel(long newVal);
+@end example
+@subheading Description
+This integer property selects the level of debugging output written to
+the log file.
+
+This property is of use primarily to the programmer maintaining PCPATR.
+It corresponds to the virtually undocumented @code{-/} command line
+option.
+
+@subheading Default Value
+@code{0}
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_INVALIDARG} if @code{newVal} is out of range (less than 0)
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox DebugLevel
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	DebugLevel.Text = m_patr.DebuggingLevel
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.DebuggingLevel = DebugLevel.Text
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node DisambiguateAnaFile, DisplayFeatures, DebuggingLevel, COM Interface
+@section The DisambiguateAnaFile method
+@subheading Interface description
+@example
+HRESULT DisambiguateAnaFile([in] BSTR bstrInput, [in] BSTR bstrOutput);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT DisambiguateAnaFile(BSTR bstrInput, BSTR bstrOutput);
+@end example
+@subheading Description
+This method disambiguates word analyses in an AMPLE analysis file by
+applying a syntactice parse to the sentences in the analysis file.  It
+reads the file given by @code{bstrInput}, and writes a new AMPLE analysis
+file given by @code{bstrOutput}.
+@subheading Return Value
+@code{S_OK}, @code{E_INVALIDARG}, @code{E_FAIL}, or another appropriate
+COM error code
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin MSComDlg.CommonDialog AnaDlg
+	  ...
+   End
+   Begin MSComDlg.CommonDialog AnbDlg
+	  ...
+   End
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  ...
+	  Begin VB.Menu DisambigFileCmd
+		 Caption         =   "&Disambiguate File..."
+	  End
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	AnaDlg.Filter = "AMPLE ANA files|*.ana"
+	AnaDlg.CancelError = True
+	AnbDlg.Filter = "Disam ANA files|*.anb"
+	AnbDlg.CancelError = True
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub DisambigFileCmd_Click()
+	If Not IsReadyToParse Then
+		Exit Sub
+	End If
+	If Not DoSettings Then
+		Exit Sub
+	End If
+	On Error GoTo Cancelled
+	AnaDlg.ShowOpen
+	AnbDlg.ShowOpen
+	On Error GoTo Failed
+	m_patr.SentenceFinalPunctuation
+	m_patr.DisambiguateAnaFile AnaDlg.FileName, AnbDlg.FileName
+	MsgBox "Done parsing " & AnaDlg.FileName
+	Exit Sub
+Failed:
+	MsgBox "Parsing " & AnaDlg.FileName & " into " &
+		AnbDlg.FileName & " Failed"
+	Exit Sub
+Cancelled:
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node DisplayFeatures, Failures, DisambiguateAnaFile, COM Interface
+@section The DisplayFeatures property
+@subheading Interface description
+@example
+[propget] HRESULT DisplayFeatures([out, retval] BOOL * pVal);
+[propput] HRESULT DisplayFeatures([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_DisplayFeatures(BOOL * pVal);
+HRESULT put_DisplayFeatures(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether or not any feature structures are
+displayed in the parse output.  If it is @code{true}, then one or more
+features structures are displayed, with the exact details controlled by
+the @code{FlatFeatureDisplay}, @code{TopFeatureOnly}, and
+@code{TrimEmptyFeatures} properties.  If @code{DisplayFeatures} is
+@code{false}, then no features are displayed in parse output.
+
+The @code{DisplayFeatures} property corresponds to the @code{set features
+on} and @code{set features off} commands in the PCPATR program.
+
+@subheading Default Value
+@code{true}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.Frame Frame1
+	  ...
+	  Begin VB.OptionButton FeaturesOn
+		 Caption         =   "On"
+		 ...
+	  End
+	  Begin VB.OptionButton FeaturesOff
+		 Caption         =   "Off"
+		 ...
+	  End
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	If m_patr.DisplayFeatures Then
+		FeaturesOn.Value = True
+		...
+	Else
+		FeaturesOff.Value = True
+		...
+	End If
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.DisplayFeatures = FeaturesOn.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node Failures, FlatFeatureDisplay, DisplayFeatures, COM Interface
+@section The Failures property
+@subheading Interface description
+@example
+[propget] HRESULT Failures([out, retval] BOOL * pVal);
+[propput] HRESULT Failures([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_Failures(BOOL * pVal);
+HRESULT put_Failures(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls how the PCPATR parse functions deal with
+sentences that fail to parse.  If it is @code{true}, then an attempt is
+made to produce partial results in a three stage process:
+@enumerate
+@item
+If unification is on, turn it off, try again to parse the sentence, and
+turn unification back on.
+@item
+If the preceding step does not produce any results, and top-down
+filtering is on, turn off top-down filtering, try again to parse the
+sentence, and turn top-down filtering back on.
+@item
+If the preceding steps have not produced any results, call a special
+function to link the partial results stored in the parse chart together
+for display as a set of (possibly intersecting) parse ``bushes''.
+@end enumerate
+If any sort of partial result is obtained by these steps, then that
+partial result will be returned by the parse method, along with a parse
+failure indication.
+
+The @code{Failures} property corresponds to the @code{set failures}
+command in the PCPATR program.
+
+@subheading Default Value
+@code{false}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox PartialResults
+	  Caption         =   "Partial Results for Failures"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	PartialResults.Value = m_patr.Failures
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.Failures = PartialResults.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node FlatFeatureDisplay, Gloss, Failures, COM Interface
+@section The FlatFeatureDisplay property
+@subheading Interface description
+@example
+[propget] HRESULT FlatFeatureDisplay([out, retval] BOOL * pVal);
+[propput] HRESULT FlatFeatureDisplay([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_FlatFeatureDisplay(BOOL * pVal);
+HRESULT put_FlatFeatureDisplay(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls how feature structures are displayed (if
+@code{DisplayFeatures} is @code{true}).  If it is @code{true}, then each
+parse node feature is written as a flat bracketed string, with open and
+close brackets marking the boundaries of complex features.  This format
+requires the least amount of space on the screen or in a file.  If
+@code{FlatFeaturesDisplay} is @code{false}, then each parse node feature
+is written as a bracketed string, with open and close brackets marking
+the boundaries of complex features, and with newlines and spaces used to
+line up the labels of internal features in a column for embedded
+features.  This works best for short labels and fixed width fonts.
+
+Note that while the @code{DisplayFeatures} property is @code{false}, this
+property has no effect on the parse output.
+
+The @code{FlatFeatureDisplay} property corresponds to the @code{set
+features flat} and @code{set features full} commands in the PCPATR
+program.
+
+@subheading Default Value
+@code{false}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox FlatFeatures
+	  Caption         =   "Flat Feature Format"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	FlatFeatures.Value = m_patr.FlatFeatureDisplay
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.FlatFeatureDisplay = FlatFeatures.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node Gloss, GrammarFile, FlatFeatureDisplay, COM Interface
+@section The Gloss property
+@subheading Interface description
+@example
+[propget] HRESULT Gloss([out, retval] BOOL * pVal);
+[propput] HRESULT Gloss([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_Gloss(BOOL * pVal);
+HRESULT put_Gloss(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether glosses are displayed in the parse
+tree output in addition to the lexical forms for the leaf nodes of the
+parse tree.  If the lexicon does not contain any glosses, this property
+has no effect.  If @code{Gloss} is @code{true}, then glosses are
+displayed in parse trees (if the lexicon contains glosses).  If
+@code{Gloss} is @code{false}, then glosses are not displayed in parse
+trees even if they exist in the lexicon.  Note that feature structures
+associated with leaf nodes in the parse tree will contain any glosses
+found in the lexicon regardless of the value of this property.
+
+The @code{Gloss} property corresponds to the @code{set gloss} command in
+the PCPATR program.
+
+@subheading Default Value
+@code{true}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox EnableGlosses
+	  Caption         =   "Enable Display of Glosses"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	EnableGlosses.Value = m_patr.Gloss
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.Gloss = EnableGlosses.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node GrammarFile, LexCategoryMarker, Gloss, COM Interface
+@section The GrammarFile property
+@subheading Interface description
+@example
+[propget] HRESULT GrammarFile([out, retval] BSTR * pVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_GrammarFile(BSTR * pVal);
+@end example
+@subheading Description
+This string property contains the name of the grammar file most recently
+loaded by a @code{LoadGrammarFile} method.  If @code{LoadGrammarFile} has
+never been called, or if @code{Clear} has been called since
+@code{LoadGrammarFile}, then this property is set to @code{NULL}.
+
+The @code{GrammarFile} property corresponds to part of the @code{status}
+command in the PCPATR program.
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory for the output @code{BSTR} fails
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox GrammarFile
+	  Enabled         =   0   'False
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	GrammarFile.Text = m_patr.GrammarFile
+	...
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LexCategoryMarker, LexFeaturesMarker, GrammarFile, COM Interface
+@section The LexCategoryMarker property
+@subheading Interface description
+@example
+[propget] HRESULT LexCategoryMarker([out, retval] BSTR * pVal);
+[propput] HRESULT LexCategoryMarker([in] BSTR newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_LexCategoryMarker(BSTR * pVal);
+HRESULT put_LexCategoryMarker(BSTR newVal);
+@end example
+@subheading Description
+This string property contains the standard format marker used to indicate
+the syntactic category field of lexicon entries.  The ``category'' is
+what connect the lexicon entry to the grammar rules.  It is copied to the
+word's lexical feature structure as the embedded @code{cat} feature.
+
+The @code{LexCategoryMarker} property corresponds to the @code{set marker
+category} command in the PCPATR program.
+
+@subheading Default Value
+@code{\c} (C string would be @code{"\\c"})
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails for either the output
+@code{BSTR} or the internal 8-bit character string
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox CategoryMarker
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	CategoryMarker.Text = m_patr.LexCategoryMarker
+	...
+End Sub
+...
+Private Function SetLexMarkers() As Boolean
+	SetLexMarkers = False
+	On Error GoTo Failed
+	...
+	If (CategoryMarker.Text = "") Or (CategoryMarker.Text = "\") Then
+		MsgBox "The Category marker must be set before loading the lexicon"
+		Exit Function
+	End If
+	...
+	m_patr.LexCategoryMarker = CategoryMarker.Text
+	...
+	SetLexMarkers = True
+	Exit Function
+Failed:
+	Exit Function
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LexFeaturesMarker, LexGlossMarker, LexCategoryMarker, COM Interface
+@section The LexFeaturesMarker property
+@subheading Interface description
+@example
+[propget] HRESULT LexFeaturesMarker([out, retval] BSTR * pVal);
+[propput] HRESULT LexFeaturesMarker([in] BSTR newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_LexFeaturesMarker(BSTR * pVal);
+HRESULT put_LexFeaturesMarker(BSTR newVal);
+@end example
+@subheading Description
+This string property contains the standard format marker used to indicate
+the features field of lexicon entries.  The content of this field is
+usually a set of names of feature templates (or lexical rules) defined in
+the grammar file.
+
+The @code{LexFeaturesMarker} property corresponds to the @code{set marker
+features} command in the PCPATR program.
+
+@subheading Default Value
+@code{\f} (C string would be @code{"\\f"})
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails for either the output
+@code{BSTR} or the internal 8-bit character string
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox FeatureMarker
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	FeatureMarker.Text = m_patr.LexFeaturesMarker
+	...
+End Sub
+...
+Private Function SetLexMarkers() As Boolean
+	SetLexMarkers = False
+	On Error GoTo Failed
+	...
+	If (FeatureMarker.Text = "") Or (FeatureMarker.Text = "\") Then
+		MsgBox "The Feature marker must be set before loading the lexicon"
+		Exit Function
+	End If
+	...
+	m_patr.LexFeaturesMarker = FeatureMarker.Text
+	...
+	SetLexMarkers = True
+	Exit Function
+Failed:
+	Exit Function
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LexGlossMarker, LexiconFile, LexFeaturesMarker, COM Interface
+@section The LexGlossMarker property
+@subheading Interface description
+@example
+[propget] HRESULT LexGlossMarker([out, retval] BSTR * pVal);
+[propput] HRESULT LexGlossMarker([in] BSTR newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_LexGlossMarker(BSTR * pVal);
+HRESULT put_LexGlossMarker(BSTR newVal);
+@end example
+@subheading Description
+This string property contains the standard format marker used to indicate
+the gloss field of lexicon entries.  The content of this field is copied
+to the word's lexical feature structure as the embedded @code{gloss}
+feature.
+
+The @code{LexGlossMarker} property corresponds to the @code{set marker
+gloss} command in the PCPATR program.
+
+@subheading Default Value
+@code{\g} (C string would be @code{"\\g"})
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails for either the output
+@code{BSTR} or the internal 8-bit character string
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox GlossMarker
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	GlossMarker.Text = m_patr.LexGlossMarker
+	...
+End Sub
+...
+Private Function SetLexMarkers() As Boolean
+	SetLexMarkers = False
+	On Error GoTo Failed
+	...
+	If (GlossMarker.Text = "") Or (GlossMarker.Text = "\") Then
+		MsgBox "The Gloss marker must be set before loading the lexicon"
+		Exit Function
+	End If
+	...
+	m_patr.LexGlossMarker = GlossMarker.Text
+	...
+	SetLexMarkers = True
+	Exit Function
+Failed:
+	Exit Function
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LexiconFile, LexiconFileCount, LexGlossMarker, COM Interface
+@section The LexiconFile property
+@subheading Interface description
+@example
+[propget] HRESULT LexiconFile([in] long iFile, [out, retval] BSTR * pVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_LexiconFile(long iFile, BSTR * pVal);
+@end example
+@subheading Description
+This string property contains the name of one of the lexicon files most
+recently loaded by a @code{LoadLexiconFile} method.  If
+@code{LoadLexiconFile} has never been called, or if @code{Clear} has been
+called since @code{LoadLexiconFile}, then this property is set to
+@code{NULL}.  This property is also set to @code{NULL} if @code{iFile} is
+outside the range (@code{0}, @code{LexiconFileCount - 1}).
+
+The @code{LexiconFile} property corresponds to part of the @code{status}
+command in the PCPATR program.
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory for the output @code{BSTR} fails
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+' TODO: write an example retrieving multiple lexicon filenames.
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox LexiconFile
+	  Enabled         =   0   'False
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	LexiconFile.Text = m_patr.LexiconFile(0)
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LexiconFileCount, LexRecordMarker, LexiconFile, COM Interface
+@section The LexiconFileCount property
+@subheading Interface description
+@example
+[propget] HRESULT LexiconFileCount([out, retval] long * pVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_LexiconFileCount(long * pVal);
+@end example
+@subheading Description
+This integer property contains the number of lexicon files that are
+currently loaded.  It is always greater than or equal to zero.
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.Label LexFileCnt
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	LexFileCnt.Caption = m_patr.LexiconFileCount & "Lexicon Files"
+	...
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LexRecordMarker, LexWordMarker, LexiconFileCount, COM Interface
+@section The LexRecordMarker property
+@subheading Interface description
+@example
+[propget] HRESULT LexRecordMarker([out, retval] BSTR * pVal);
+[propput] HRESULT LexRecordMarker([in] BSTR newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_LexRecordMarker(BSTR * pVal);
+HRESULT put_LexRecordMarker(BSTR newVal);
+@end example
+@subheading Description
+This string property contains the standard format marker used to indicate
+the beginning of each entry in the lexicon file.  It may be the same as
+one of the other lexicon marker properties.
+
+The @code{LexRecordMarker} property corresponds to the @code{set marker
+record} command in the PCPATR program.
+
+@subheading Default Value
+@code{\w} (C string would be @code{"\\w"})
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails for either the output
+@code{BSTR} or the internal 8-bit character string
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox RecordMarker
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	RecordMarker.Text = m_patr.LexRecordMarker
+	...
+End Sub
+...
+Private Function SetLexMarkers() As Boolean
+	SetLexMarkers = False
+	On Error GoTo Failed
+	...
+	If (RecordMarker.Text = "") Or (RecordMarker.Text = "\") Then
+		MsgBox "The Record marker must be set before loading the lexicon"
+		Exit Function
+	End If
+	...
+	m_patr.LexRecordMarker = RecordMarker.Text
+	...
+	SetLexMarkers = True
+	Exit Function
+Failed:
+	Exit Function
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LexWordMarker, LoadAnaFile, LexRecordMarker, COM Interface
+@section The LexWordMarker property
+@subheading Interface description
+@example
+[propget] HRESULT LexWordMarker([out, retval] BSTR * pVal);
+[propput] HRESULT LexWordMarker([in] BSTR newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_LexWordMarker(BSTR * pVal);
+HRESULT put_LexWordMarker(BSTR newVal);
+@end example
+@subheading Description
+This string property contains the standard format marker used to indicate
+the word field of lexicon entries.  The content of this field is copied
+to the word's lexical feature structure as the embedded @code{lex}
+feature.
+
+The @code{LexWordMarker} property corresponds to the @code{set marker
+word} command in the PCPATR program.
+
+@subheading Default Value
+@code{\w} (C string would be @code{"\\w"})
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails for either the output
+@code{BSTR} or the internal 8-bit character string
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox WordMarker
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	WordMarker.Text = m_patr.LexWordMarker
+	...
+End Sub
+...
+Private Function SetLexMarkers() As Boolean
+	SetLexMarkers = False
+	On Error GoTo Failed
+	...
+	If (WordMarker.Text = "") Or (WordMarker.Text = "\") Then
+		MsgBox "The Word marker must be set before loading the lexicon"
+		Exit Function
+	End If
+	...
+	m_patr.LexWordMarker = WordMarker.Text
+	...
+	SetLexMarkers = True
+	Exit Function
+Failed:
+	Exit Function
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LoadAnaFile, LoadGrammarFile, LexWordMarker, COM Interface
+@section The LoadAnaFile method
+@subheading Interface description
+@example
+HRESULT LoadAnaFile([in] BSTR bstrAnaFile, [in] BOOL fAdd);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT LoadAnaFile(BSTR bstrAnaFile, BOOL fAdd);
+@end example
+@subheading Description
+This method loads an AMPLE analysis file as a lexicon file.
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_INVALIDARG} if @code{bstrAnaFile} is @code{NULL}, or if that file
+has already been loaded as a lexicon file
+@item
+@code{E_FAIL} if an error occurs during the load process
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails for any reason.  In this
+case, the in-memory lexicon may or may not contain any entries.
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin MSComDlg.CommonDialog AnaDlg
+	  ...
+   End
+   ...
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  ...
+	  Begin VB.Menu LoadLexiconCmd
+		 Caption         =   "Load &Ana file..."
+	  End
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	...
+	AnaDlg.Filter = "AMPLE Analysis Files|*.ana"
+	AnaDlg.CancelError = True
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub LoadLexiconCmd_Click()
+	If Not SetLexMarkers Then
+		Exit Sub
+	End If
+	If Not DoSettings Then
+		Exit Sub
+	End If
+	On Error GoTo Cancelled
+	AnaDlg.ShowOpen
+	On Error GoTo Failed
+	m_patr.LoadAnaFile AnaDlg.FileName, False
+	LexiconFile.Text = AnaDlg.FileName
+	Exit Sub
+Failed:
+	MsgBox "Loading " & AnaDlg.FileName & " Failed"
+	Exit Sub
+Cancelled:
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LoadGrammarFile, LoadLexiconFile, LoadAnaFile, COM Interface
+@section The LoadGrammarFile method
+@subheading Interface description
+@example
+HRESULT LoadGrammarFile([in] BSTR bstrGrammarFile);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT LoadGrammarFile(BSTR bstrGrammarFile);
+@end example
+@subheading Description
+This method loads a PCPATR grammar file into memory, first erasing any
+grammar that had been previously loaded.
+
+The @code{LoadGrammarFile} method corresponds to the @code{load grammar}
+command in the PCPATR program.
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_INVALIDARG} if @code{bstrGrammarFile} is @code{NULL}
+@item
+@code{E_FAIL} if an error occurs during the load process
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails converting
+@code{bstrGrammarFile} to an 8-bit character string
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin MSComDlg.CommonDialog GrmDlg
+	  ...
+   End
+   ...
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  Begin VB.Menu LoadGrammarCmd
+		 Caption         =   "Load &Grammar..."
+	  End
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	...
+	GrmDlg.Filter = "PC-PATR Grammar Files|*.grm"
+	GrmDlg.CancelError = True
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub LoadGrammarCmd_Click()
+	If Not DoSettings Then
+		Exit Sub
+	End If
+	On Error GoTo Cancelled
+	GrmDlg.ShowOpen
+	On Error GoTo Failed
+	m_patr.LoadGrammarFile GrmDlg.FileName
+	GrammarFile.Text = GrmDlg.FileName
+	Exit Sub
+Failed:
+	MsgBox "Loading " & GrmDlg.FileName & " Failed"
+	Exit Sub
+Cancelled:
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LoadLexiconFile, LogFile, LoadGrammarFile, COM Interface
+@section The LoadLexiconFile method
+@subheading Interface description
+@example
+HRESULT LoadLexiconFile([in] BSTR bstrLexiconFile, [in] BOOL fAdd);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT LoadLexiconFile(BSTR bstrLexiconFile, BOOL fAdd);
+@end example
+@subheading Description
+This method loads a PCPATR lexicon file into memory, first erasing any
+lexicon that had been previously loaded unless @code{fAdd} is
+@code{True}.  If @code{fAdd} is @code{True}, then @code{bstrLexiconFile}
+must not have already been loaded.
+
+The @code{LoadLexiconFile} method corresponds to the @code{load lexicon}
+command in the PCPATR program.
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_INVALIDARG} if @code{bstrLexiconFile} is @code{NULL}, or if that
+file has already been loaded as a lexicon file
+@item
+@code{E_FAIL} if an error occurs during the load process
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails converting
+@code{bstrLexiconFile} to an 8-bit character string, or storing the
+filename.  In the latter case, the entire lexicon is unloaded from
+memory.
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin MSComDlg.CommonDialog LexDlg
+	  ...
+   End
+   ...
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  ...
+	  Begin VB.Menu LoadLexiconCmd
+		 Caption         =   "Load &Lexicon..."
+	  End
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	...
+	LexDlg.Filter = "PC-PATR Lexicon Files|*.lex"
+	LexDlg.CancelError = True
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub LoadLexiconCmd_Click()
+	If Not SetLexMarkers Then
+		Exit Sub
+	End If
+	If Not DoSettings Then
+		Exit Sub
+	End If
+	On Error GoTo Cancelled
+	LexDlg.ShowOpen
+	On Error GoTo Failed
+	m_patr.LoadLexiconFile LexDlg.FileName, False
+	LexiconFile.Text = LexDlg.FileName
+	Exit Sub
+Failed:
+	MsgBox "Loading " & LexDlg.FileName & " Failed"
+	Exit Sub
+Cancelled:
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node LogFile, MaxAmbiguity, LoadLexiconFile, COM Interface
+@section The LogFile property
+@subheading Interface description
+@example
+[propget] HRESULT LogFile([out, retval] BSTR * pVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_LogFile(BSTR * pVal);
+@end example
+@subheading Description
+This string property contains the name of the currently open log file, if
+there is one.  If no log file is currently open, then this property is
+set to @code{NULL}.
+
+The @code{LogFile} property corresponds to part of the @code{status}
+command in the PCPATR program.
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory for the output @code{BSTR} fails
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox LogFile
+	  Enabled         =   0   'False
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	LogFile.Text = m_patr.LogFile
+	...
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node MaxAmbiguity, OpenLog, LogFile, COM Interface
+@section The MaxAmbiguity property
+@subheading Interface description
+@example
+[propget] HRESULT MaxAmbiguity([out, retval] long * pVal);
+[propput] HRESULT MaxAmbiguity([in] long newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_MaxAmbiguity(long * pVal);
+HRESULT put_MaxAmbiguity(long newVal);
+@end example
+@subheading Description
+This integer property specifies the maximum number of parses displayed
+for an ambiguous parse.  This can be critical because the number of
+parses for long sentences can run into the thousands, especially in the
+early stages of developing a grammar.
+
+The @code{MaxAmbiguity} property corresponds to the @code{set
+ambiguities} command in the PCPATR program.
+
+@subheading Default Value
+@code{10}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox MaxAmbiguity
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	MaxAmbiguity.Text = m_patr.MaxAmbiguity
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.MaxAmbiguity = MaxAmbiguity.Text
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node OpenLog, ParseFile, MaxAmbiguity, COM Interface
+@section The OpenLog method
+@subheading Interface description
+@example
+HRESULT OpenLog([in] BSTR bstrLogFile);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT OpenLog(BSTR bstrLogFile);
+@end example
+@subheading Description
+This method opens a log file after first closing any previously opened
+log file.  The log file receives various error messages and other
+information produced by the load and parse methods which would otherwise
+go unreported.  If a file of the same name already exists, it is replaced
+by the new log file.
+
+The @code{OpenLog} method corresponds to the @code{log} command in the
+PCPATR program.
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_INVALIDARG} if @code{bstrLogFile} is @code{NULL}
+@item
+@code{E_FAIL} if the log file cannot be opened
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails converting
+@code{bstrLogFile} to an 8-bit character string
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin MSComDlg.CommonDialog LogDlg
+	  ...
+   End
+   ...
+   Begin VB.TextBox LogFile
+	  Enabled         =   0   'False
+	  ...
+   End
+   ...
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  ...
+	  Begin VB.Menu OpenLogCmd
+		 Caption         =   "&Open Log"
+	  End
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	...
+	LogDlg.Filter = "PC-PATR Log Files|*.log"
+	LogDlg.CancelError = True
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub OpenLogCmd_Click()
+	On Error GoTo Cancelled
+	LogDlg.ShowOpen
+	On Error GoTo Failed
+	m_patr.OpenLog LogDlg.FileName
+	LogFile.Text = LogDlg.FileName
+	Exit Sub
+Failed:
+	MsgBox "Opening Log File " & LogDlg.FileName & " Failed"
+	Exit Sub
+Cancelled:
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node ParseFile, ParseString, OpenLog, COM Interface
+@section The ParseFile method
+@subheading Interface description
+@example
+HRESULT ParseFile([in] BSTR bstrInput, [in] BSTR bstrOutput);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT ParseFile(BSTR bstrInput, BSTR bstrOutput);
+@end example
+@subheading Description
+This method reads sentences from a file and writes the resulting parses
+to another file.  Each line of the input file represents a separate
+``sentence'', and punctuation and sentence capitalization should not be
+used.  Proper names should be capitalized the same way they are in the
+lexicon.
+
+Actually, punctuation can be used if three conditions are met:
+@enumerate
+@item
+Punctuation ``categories'' are used in the grammar rules.
+@item
+Punctuation characters and their ``categories'' are listed in the lexicon.
+@item
+Punctuation characters are separated by spaces from words and from each
+other in the input sentences.
+@end enumerate
+Constructs which use a specific punctuation character such as an
+apostrophe (English possessives and contractions) must be handled
+differently, possibly by a preprocessor step that splits contractions
+into multiple words as needed.
+
+[NOTE: PCPATR can handle having a phrase as a single entry (category) in
+the lexicon.  Can it also handle a contraction representing two or more
+consecutive syntactic categories?  Should it?]
+
+The @code{ParseFile} method corresponds to the @code{file parse} command
+in the PCPATR program.
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_INVALIDARG} if either @code{bstrInput} or @code{bstrOutput} is
+@code{NULL}
+@item
+@code{E_FAIL} if either the input file or the output file cannot be
+opened
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails converting either
+@code{bstrInput} or @code{bstrOutput} to an 8-bit character string
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+Note that the return value does not depend on whether or not any of the
+sentences successfully parses.
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin MSComDlg.CommonDialog SenDlg
+	  ...
+   End
+   Begin MSComDlg.CommonDialog ParDlg
+	  ...
+   End
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  ...
+	  Begin VB.Menu ParseFileCmd
+		 Caption         =   "&Parse File..."
+	  End
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	SenDlg.Filter = "Sentence files|*.sen"
+	SenDlg.CancelError = True
+	ParDlg.Filter = "Parse output files|*.par"
+	ParDlg.CancelError = True
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub ParseFileCmd_Click()
+	If Not IsReadyToParse Then
+		Exit Sub
+	End If
+	If Not DoSettings Then
+		Exit Sub
+	End If
+	On Error GoTo Cancelled
+	SenDlg.ShowOpen
+	ParDlg.ShowOpen
+	On Error GoTo Failed
+	m_patr.ParseFile SenDlg.FileName, ParDlg.FileName
+	MsgBox "Done parsing " & SenDlg.FileName
+	Exit Sub
+Failed:
+	MsgBox "Parsing " & SenDlg.FileName & " into " &
+		ParDlg.FileName & " Failed"
+	Exit Sub
+Cancelled:
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node ParseString, PromoteDefaultAtoms, ParseFile, COM Interface
+@section The ParseString method
+@subheading Interface description
+@example
+HRESULT ParseString(
+	[in] BSTR bstrSentence,
+	[out, retval] BSTR * pbstrParse);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT ParseString(BSTR bstrSentence, BSTR * pbstrParse);
+@end example
+@subheading Description
+This method parses the input sentence and produces a string containing
+the parse results.  Punctuation and sentence capitalization should not be
+used in the input sentence.  Proper names should be capitalized the same
+way they are in the lexicon.
+
+Actually, punctuation can be used if three conditions are met:
+@enumerate
+@item
+Punctuation ``categories'' are used in the grammar rules.
+@item
+Punctuation characters and their ``categories'' are listed in the lexicon.
+@item
+Punctuation characters are separated by spaces from words and from each
+other in the input sentence.
+@end enumerate
+Constructs which use a specific punctuation character such as an
+apostrophe (English possessives and contractions) must be handled
+differently, possibly by a preprocessor step that splits contractions
+into multiple words as needed.
+
+[NOTE: PCPATR can handle having a phrase as a single entry (category) in
+the lexicon.  Can it also handle a contraction representing two or more
+consecutive syntactic categories?  Should it?]
+
+The @code{ParseString} method corresponds to the @code{parse} command in
+the PCPATR program.
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_INVALIDARG} if @code{bstrSentence} is @code{NULL},
+@item
+@code{E_POINTER} if @code{pbstrParse} is @code{NULL},
+@item
+@code{E_UNEXPECTED} if either the grammar or the lexicon has not yet been
+loaded (or possibly in some other, very bizarre, circumstances),
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails during the parse setup,
+or in converting the internal parse result to the output @code{BSTR},
+@item
+@code{E_FAIL} if any of the words in the sentence cannot be found in the
+lexicon,
+@item
+@code{S_FALSE} if the parse fails.  (Partial results may be available for
+display depending on the value of the @code{Failures}.)
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CommandButton ParseButton
+	  Caption         =   "Parse"
+	  ...
+   End
+   Begin VB.TextBox Sentence
+	  ...
+   End
+   Begin RichTextLib.RichTextBox SentenceParse
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	Sentence.Text = ""
+	SentenceParse.Text = ""
+	...
+End Sub
+...
+Private Sub ParseButton_Click()
+	If Not IsReadyToParse Then
+		Exit Sub
+	End If
+	If Not DoSettings Then
+		Exit Sub
+	End If
+	If Sentence.Text = "" Then
+		MsgBox "Must enter sentence before parsing it!"
+		Exit Sub
+	End If
+	On Error GoTo Failed
+	SentenceParse.Text = m_patr.ParseString(Sentence.Text)
+	Exit Sub
+Failed:
+	MsgBox "Parsing sentence failed"
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node PromoteDefaultAtoms, ReloadLexicon, ParseString, COM Interface
+@section The PromoteDefaultAtoms property
+@subheading Interface description
+@example
+[propget] HRESULT PromoteDefaultAtoms([out, retval] BOOL * pVal);
+[propput] HRESULT PromoteDefaultAtoms([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_PromoteDefaultAtoms(BOOL * pVal);
+HRESULT put_PromoteDefaultAtoms(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether default atomic feature values
+loaded from the lexicon are ``promoted'' to ordinary atomic feature
+values before parsing.  If this property is @code{true}, then default
+atomic values are changed to atomic values before parsing; otherwise,
+they remain marked as default atomic values.  (This can affect feature
+unification since a conflicting default value does not cause a failure:
+the default value merely disappears.)
+
+The @code{PromoteDefaultAtoms} property corresponds to the
+@code{set promote-defaults} command in the PCPATR program.
+
+@subheading Default Value
+@code{true}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+' TODO: write an example
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node ReloadLexicon, SentenceFinalPunctuation, PromoteDefaultAtoms, COM Interface
+@section The ReloadLexicon method
+@subheading Interface description
+@example
+HRESULT ReloadLexicon();
+@end example
+@subheading C++ prototypes
+@example
+HRESULT ReloadLexicon();
+@end example
+@subheading Description
+This method clears the lexicon from memory, and reloads the current set
+of lexicon files.  If any of the files fails to load, it is removed from
+the list of loaded files.  Only if none of the files loads successfully
+is an error returned.  If no lexicon files are currently loaded, the
+function returns immediately, reporting success.
+@subheading Return Value
+@code{S_OK}, or an appropriate COM error code
+@subheading Visual Basic Example
+@smallexample
+// TODO: write an example
+@end smallexample
+@subheading C++ Example
+@smallexample
+#include "PatrParser.h"
+...
+PatrParser * patr;
+...
+HRESULT hr = patr->ReloadLexicon();
+if (FAILED(hr))
+@{
+	...
+@}
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node SentenceFinalPunctuation, TimeLimit, ReloadLexicon, COM Interface
+@section The SentenceFinalPunctuation property
+@subheading Interface description
+@example
+[propget] HRESULT SentenceFinalPunctuation([out, retval] BSTR * pVal);
+[propput] HRESULT SentenceFinalPunctuation([in] BSTR newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_SentenceFinalPunctuation(BSTR * pVal);
+HRESULT put_SentenceFinalPunctuation(BSTR newVal);
+@end example
+@subheading Description
+This string property specifies the set of (possibly muligraph) characters
+that can terminate a sentence in the @code{\n} fields of input AMPLE
+analysis files.  It affects only the @code{DisambiguateAnaFile} method.
+
+The @code{SentenceFinalPunctuation} property corresponds to the @code{set
+final-punctuation} command in the PCPATR program.
+
+@subheading Default Value
+@code{. ? ! : ;} (standard English punctuation for marking clauses)
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL}
+@item
+@code{E_OUTOFMEMORY} if allocating memory fails for either the output
+@code{BSTR} or the internal list of 8-bit character strings
+@item
+@code{E_UNEXPECTED} in very bizarre circumstances
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox SentencePunc
+	  ...
+   End
+   ...
+   Begin MSComDlg.CommonDialog AnaDlg
+	  ...
+   End
+   Begin MSComDlg.CommonDialog AnbDlg
+	  ...
+   End
+   Begin VB.Menu FileMenu
+	  Caption         =   "&File"
+	  ...
+	  Begin VB.Menu DisambigFileCmd
+		 Caption         =   "&Disambiguate File..."
+	  End
+	  ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	SentencePunc.Text = m_patr.SentenceFinalPunctuation
+	...
+End Sub
+...
+Private Sub DisambigFileCmd_Click()
+	If Not IsReadyToParse Then
+		Exit Sub
+	End If
+	If Not DoSettings Then
+		Exit Sub
+	End If
+	On Error GoTo Cancelled
+	AnaDlg.ShowOpen
+	AnbDlg.ShowOpen
+	On Error GoTo Failed
+	m_patr.SentenceFinalPunctuation = SentencePunc.Text
+	m_patr.DisambiguateAnaFile AnaDlg.FileName, AnbDlg.FileName
+	MsgBox "Done parsing " & AnaDlg.FileName
+	Exit Sub
+Failed:
+	MsgBox "Parsing " & AnaDlg.FileName & " into " &
+		AnbDlg.FileName & " Failed"
+	Exit Sub
+Cancelled:
+	Exit Sub
+End Sub
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node TimeLimit, TopDownFilter, SentenceFinalPunctuation, COM Interface
+@section The TimeLimit property
+@subheading Interface description
+@example
+[propget] HRESULT TimeLimit([out, retval] long * pVal);
+[propput] HRESULT TimeLimit([in] long newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_TimeLimit(long * pVal);
+HRESULT put_TimeLimit(long newVal);
+@end example
+@subheading Description
+This integer property specifies the maximum number of seconds that a
+parse is allowed to take.  A value of @code{0} means that no time limit
+is imposed.
+
+NOTE: this is still experimental.  The program @emph{may} crash some time
+after terminating a parse due to exceeding the time limit.  (Don't say I
+didn't warn you!)
+
+The @code{TimeLimit} property corresponds to the @code{set limit} command
+in the PCPATR program.
+
+@subheading Default Value
+@code{0} (no limit)
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.TextBox TimeLimit
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	Dim limit As Integer
+	limit = m_patr.TimeLimit
+	If limit = 0 Then
+		TimeLimit.Text = "(no limit)"
+	Else
+		TimeLimit.Text = limit
+	End If
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	If TimeLimit.Text = "(no limit)" Then
+		m_patr.TimeLimit = 0
+	Else
+		m_patr.TimeLimit = TimeLimit.Text
+	End If
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node TopDownFilter, TopFeatureOnly, TimeLimit, COM Interface
+@section The TopDownFilter property
+@subheading Interface description
+@example
+[propget] HRESULT TopDownFilter([out, retval] BOOL * pVal);
+[propput] HRESULT TopDownFilter([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_TopDownFilter(BOOL * pVal);
+HRESULT put_TopDownFilter(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether top-down filtering is imposed on
+the chart parser.  If this property is @code{true}, then top-down
+filtering is used; otherwise, top-down filtering is not used.
+
+Top-down filtering speeds up parsing by ruling out obviously invalid
+parses earlier in the process.  However, it may possibly rule out valid
+parses as well in rare cases.  This is not a problem for most grammars.
+
+The @code{TopDOwnFilter} property corresponds to the @code{set
+top-down-filter} command in the PCPATR program.
+
+@subheading Default Value
+@code{true}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox TopDownFilter
+	  Caption         =   "Enable Top Down Filtering"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	TopDownFilter.Value = m_patr.TopDownFilter
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.TopDownFilter = TopDownFilter.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node TopFeatureOnly, TreeDisplay, TopDownFilter, COM Interface
+@section The TopFeatureOnly property
+@subheading Interface description
+@example
+[propget] HRESULT TopFeatureOnly([out, retval] BOOL * pVal);
+[propput] HRESULT TopFeatureOnly([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_TopFeatureOnly(BOOL * pVal);
+HRESULT put_TopFeatureOnly(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether features structures are displayed
+for all nodes of a parse tree, or only for the top node.  If it is
+@code{true}, then only the feature structure for the top node in the
+parse tree is displayed.  If it is @code{false}, then the feature
+structures for all nodes in the parse tree are displayed.
+
+Note that while the @code{DisplayFeatures} property is @code{false}, this
+property has no effect on the parse output.
+
+The @code{TopFeatureOnly} property corresponds to the @code{set features
+top} and @code{set features all} commands in the PCPATR program.
+
+@subheading Default Value
+@code{true}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox TopFeatureOnly
+	  Caption         =   "Top Feature Only"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	TopFeatureOnly.Value = m_patr.TopFeatureOnly
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.TopFeatureOnly = TopFeatureOnly.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node TreeDisplay, TrimEmptyFeatures, TopFeatureOnly, COM Interface
+@section The TreeDisplay property
+@subheading Interface description
+@example
+[propget] HRESULT TreeDisplay([out, retval] long * pVal);
+[propput] HRESULT TreeDisplay([in] long newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_TreeDisplay(long * pVal);
+HRESULT put_TreeDisplay(long newVal);
+@end example
+@subheading Description
+This integer property controls the format of the parse trees displayed in
+the parse output.  It can take one of these values:
+@table @code
+@item 0
+No parse tree is displayed.
+@item 1
+The parse tree is displayed as a parenthesized list, similar to how LISP
+would represent a tree.
+@item 2
+The parse tree is displayed as a tree using ASCII characters to draw the
+branches, and depending on using a fixed width font to look reasonable.
+@item 3
+The parse tree is displayed as an indented list with each node on a
+separate line, similar to an outline.
+@item 4
+The parse tree is displayed in XML format, with the feature structure for
+each node included with the node rather than being displayed separately.
+This is the least readable form for humans, but the most tractable for
+computer programs to parse for displaying results graphically.
+(This setting overrides any properties that control the display of
+feature structures.)
+@end table
+
+The @code{TreeDisplay} property corresponds to the @code{set tree}
+command in the PCPATR program.
+
+@subheading Default Value
+@code{2} (full ASCII tree)
+
+@subheading Return Value
+@code{S_OK}, or one of these COM error codes:
+@itemize @bullet
+@item
+@code{E_POINTER} if @code{pVal} is @code{NULL},
+@item
+@code{E_INVALIDARG} if @code{NewVal} is out of range (less than @code{0}
+or greater than @code{4})
+@end itemize
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.Frame Frame2
+	  ...
+	  Begin VB.OptionButton ParseTreeXML
+		 Caption         =   "XML"
+		 ...
+	  End
+	  Begin VB.OptionButton ParseTreeIndented
+		 Caption         =   "Indented"
+		 ...
+	  End
+	  Begin VB.OptionButton ParseTreeFlat
+		 Caption         =   "Flat"
+		 ...
+	  End
+	  Begin VB.OptionButton ParseTreeFull
+		 Caption         =   "Full"
+		 ...
+	  End
+	  Begin VB.OptionButton ParseDisplayOff
+		 Caption         =   "Off"
+		 ...
+	  End
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	Select Case m_patr.TreeDisplay
+		Case 0
+			ParseDisplayOff.Value = True
+		Case 1
+			ParseTreeFlat.Value = True
+		Case 2
+			ParseTreeFull.Value = True
+		Case 3
+			ParseTreeIndented.Value = True
+		Case 4
+			ParseTreeXML.Value = True
+		Case Else
+			' actually an error, but ...
+			ParseTreeFull.Value = True
+			m_patr.TreeDisplay = 2
+	End Select
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	If ParseDisplayOff.Value Then
+		m_patr.TreeDisplay = 0
+	ElseIf ParseTreeFlat.Value Then
+		m_patr.TreeDisplay = 1
+	ElseIf ParseTreeFull.Value Then
+		m_patr.TreeDisplay = 2
+	ElseIf ParseTreeIndented.Value Then
+		m_patr.TreeDisplay = 3
+	ElseIf ParseTreeXML.Value Then
+		m_patr.TreeDisplay = 4
+	Else
+		' should never happen
+		m_patr.TreeDisplay = 2
+	End If
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node TrimEmptyFeatures, Unification, TreeDisplay, COM Interface
+@section The TrimEmptyFeatures property
+@subheading Interface description
+@example
+[propget] HRESULT TrimEmptyFeatures([out, retval] BOOL * pVal);
+[propput] HRESULT TrimEmptyFeatures([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_TrimEmptyFeatures(BOOL * pVal);
+HRESULT put_TrimEmptyFeatures(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether feature structures with null
+values are displayed.  If it is @code{true}, then feature structures that
+are null are not displayed, and if they have a label as part of a complex
+feature structure, their label is not displayed either.  If it is
+@code{false}, then null feature structures are displayed as @code{[]} in
+the parse output.
+
+Note that while the @code{DisplayFeatures} property is @code{false}, this
+property has no effect on the parse output.
+
+The @code{TrimEmptyFeatures} property corresponds to the @code{set
+trim-empty-features} command in the PCPATR program.
+
+@subheading Default Value
+@code{true}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox TrimEmptyFeatures
+	  Caption         =   "Trim Empty Features"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	TrimEmptyFeatures.Value = m_patr.TrimEmptyFeatures
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.TrimEmptyFeatures = TrimEmptyFeatures.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node Unification, WriteAmpleParses, TrimEmptyFeatures, COM Interface
+@section The Unification property
+@subheading Interface description
+@example
+[propget] HRESULT Unification([out, retval] BOOL * pVal);
+[propput] HRESULT Unification([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_Unification(BOOL * pVal);
+HRESULT put_Unification(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether feature unification failures
+affect the parse process.  If it is @code{true}, then a unification
+failure causes a parse failure.  If it is @code{false}, then a
+unification failure is noted, but does not otherwise affect the parse.
+
+Note that this property does @emph{not} control whether feature
+unification is performed: it controls only whether the result of the
+unification affects the parse process.
+
+The @code{Unification} property corresponds to the @code{set unification}
+command in the PCPATR program.
+
+@subheading Default Value
+@code{true}
+
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox EnableUnification
+	  Caption         =   "Enable Unification"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	EnableUnification.Value = m_patr.Unification
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.Unification = EnableUnification.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@page
+@node WriteAmpleParses, , Unification, COM Interface
+@section The WriteAmpleParses property
+@subheading Interface description
+@example
+HRESULT WriteAmpleParses([out, retval] BOOL * pVal);
+HRESULT WriteAmpleParses([in] BOOL newVal);
+@end example
+@subheading C++ prototypes
+@example
+HRESULT get_WriteAmpleParses(BOOL * pVal);
+HRESULT put_WriteAmpleParses(BOOL newVal);
+@end example
+@subheading Description
+This Boolean property controls whether syntactic parse trees are written
+to the disambiguated AMPLE analysis file created by a call to the
+@code{DisambiguateAnaFile} method.
+@subheading Return Value
+@code{S_OK}, or @code{E_POINTER} if @code{pVal} is @code{NULL}
+@subheading Visual Basic Example
+@smallexample
+Begin VB.Form Form1
+   ...
+   Begin VB.CheckBox WriteParses
+	  Caption         =   "Write Parses of AMPLE Sentences"
+	  ...
+   End
+   ...
+End
+...
+Dim m_patr As PatrParser
+Private Sub Form_Load()
+	On Error GoTo Failed
+	If m_patr Is Nothing Then
+		Set m_patr = New PatrParser
+	End If
+	Call resetdialogbox
+	...
+	Exit Sub
+Failed:
+	MsgBox "Unexpected error while initializing"
+	Exit Sub
+End Sub
+...
+Private Sub resetdialogbox()
+	...
+	WriteParses.Value = m_patr.WriteAmpleParses
+	...
+End Sub
+...
+Private Function DoSettings() As Boolean
+	...
+	m_patr.WriteAmpleParses = WriteParses.Value
+	...
+End Function
+@end smallexample
+@subheading C++ Example
+@smallexample
+// TODO: write an example
+@end smallexample
+
+@c ----------------------------------------------------------------------------
+@node Error messages, , COM Interface, Top
+@chapter Error Message Strings
+
+THIS HAS YET TO BE WRITTEN.
+
+@c ----------------------------------------------------------------------------
+@contents
+@bye

@@ -1,0 +1,2435 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename amplelib.info
+@settitle AMPLE Function Library Reference Manual
+@c %**end of header
+
+@syncodeindex vr fn
+
+@set TITLE AMPLE Function Library Reference Manual
+@set SUBTITLE functions for morphological parsing
+@set VERSION version 3.2.1
+@set DATE October 1998
+@set AUTHOR by Stephen McConnel
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+NOTE: THIS IS SOMEWHAT OUT OF DATE AS OF October 24, 1998.  CHANGES SINCE
+AT LEAST July 1998 HAVE NOT YET BEEN RECORDED.
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@node    Top,       Introduction,  (dir),    (dir)
+@comment node-name, next,          previous, up
+@menu
+* Introduction::
+
+* Naming Conventions::
+
+* Data Structures::
+
+* Global Variables::
+
+* Functions::
+
+* Bibliography::
+
+* Index::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node    Introduction, Naming Conventions, Top,      Top
+@comment node-name,    next,               previous, up
+@chapter Introduction to the AMPLE function library
+
+Since it was released in 1988, the AMPLE program has been used for
+morphological analysis in many different languages.  It has always
+functioned as a batch processing program, which is useful for
+production work such as analyzing an entire book, but is less useful
+during the early stages of developing a morphological description.  The
+AMPLE function library has therefore been developed with the goal of
+making it easier to cast AMPLE style morphological parsing into
+different frameworks.  This has already borne fruit: the PC-PATR
+syntactic parser now has an embedded AMPLE morphological parser, and a
+Microsoft Windows DLL incorporating the AMPLE functions has been
+written.
+
+@c ----------------------------------------------------------------------------
+@node Naming Conventions, Data Structures, Introduction, Top
+@set library-name AMPLE
+@set library-tag @code{Ample}
+@include naming.txi
+
+@c ----------------------------------------------------------------------------
+@node Data Structures, Global Variables, Naming Conventions, Top
+@chapter AMPLE data structures
+
+The AMPLE functions generally operate on two basic data structures:
+@code{AmpleData} stores the lexicon and other linguistic information
+necessary for morphological parsing, and @code{AmpleWord} stores the
+information for a single word that is being parsed.  Each of these data
+structures is a collection of other data structures.  Several of these
+are described in
+@ifset txt
+@cite{OPAC Function Library Reference Manual},
+@end ifset
+@ifclear txt
+@ref{Data Structures, , The OPAC function library data structures,
+	 opaclib.info, OPAC Function Library Reference Manual},
+@end ifclear
+and the other data structures are usually not important for using the
+AMPLE function library.
+
+@menu
+* AmpleData::
+* AmpleWord::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node AmpleData, AmpleWord, Data Structures, Data Structures
+@page
+@section AmpleData
+@subheading Definition
+@example
+#include <stdio.h>
+#include "opaclib.h"
+
+typedef struct ample_allo_env           AmpleAlloEnv;
+typedef struct ample_cat_class          AmpleCategoryClass;
+typedef struct ample_fnlist             AmpleTestList;
+typedef struct ample_hlalist            AmpleHeadlistList;
+typedef struct ample_morph_class        AmpleMorphClass;
+typedef struct ample_morph_constraint   AmpleMorphConstraint;
+typedef struct ample_morpheme           AmpleMorpheme;
+typedef struct ample_pairlist           AmplePairList;
+typedef struct ample_prop               AmpleProperty;
+
+typedef struct @{
+	/*
+	 *  information provided directly by the user
+	 */
+	unsigned char          bDebugAllomorphConds; /* -a */
+	unsigned char          bEnableAllomorphIDs;  /* -b */
+	unsigned char          cBeginComment;        /* -c */
+	unsigned char          bRootGlosses;         /* -g */
+	int                    iMaxTrieDepth;        /* -d */
+	int                    iMaxMorphnameLength;  /* -n */
+	int                    eTraceAnalysis;       /* -t */
+	int                    iOutputFlags;         /* -w -x, \\cat ... */
+	int                    iDebugLevel;          /* -/ */
+	FILE *                 pLogFP;
+	/*
+	 *  information loaded from the selective analysis file
+	 */
+	char *                 pszSelectiveAnalFile;
+	StringList *           pSelectiveAnalMorphs;
+	/*
+	 *  information loaded from the text input control file
+	 */
+	TextControl            sTextCtl;
+	/*
+	 *  information loaded from the "analysis data" (control) file
+	 */
+	char *                 pszAnalysisDataFile;
+	AmpleTestList *        pPrefixSuccTests;    /* \\pt */
+	AmpleTestList *        pRootSuccTests;      /* \\rt */
+	AmpleTestList *        pSuffixSuccTests;    /* \\st */
+	AmpleTestList *        pInfixSuccTests;     /* \\it */
+	AmpleTestList *        pFinalTests;         /* \\ft */
+	int                    eWriteCategory;      /* \\cat */
+	int                    bWriteMorphCats;
+	StringList *           pCategories;         /* \\ca */
+	AmpleCategoryClass *   pCategoryClasses;    /* \\ccl */
+	char                   cBeginRoot;          /* \\rd */
+	char                   cEndRoot;
+	StringClass *          pStringClasses;      /* \\scl (all files) */
+	AmplePairList *        pInfixAdhocPairs;    /* \\iah */
+	AmplePairList *        pPrefixAdhocPairs;   /* \\pah */
+	AmplePairList *        pRootAdhocPairs;     /* \\rah */
+	AmplePairList *        pSuffixAdhocPairs;   /* \\sah */
+	unsigned char *        pCompoundRootPairs;  /* \\cr */
+	AmpleMorphClass *      pMorphClasses;       /* \\mcl */
+	AmpleProperty *        pProperties;         /* \\ap, \\mp */
+	StringList *           pPropertySets;
+	int                    iMaxPrefixCount;     /* \\maxp */
+	int                    iMaxInfixCount;      /* \\maxi */
+	int                    iMaxRootCount;       /* \\maxr */
+	int                    iMaxSuffixCount;     /* \\maxs */
+	AmpleMorphConstraint * pMorphConstraints;   /* \\mcc */
+	int                    iMaxNullCount;       /* \\maxnull */
+	char *                 pszValidChars;       /* \\strcheck */
+	int                    bDictionaryCapitals; /* \\dicdecap */
+	/*
+	 *  information loaded from the dictionary codes file
+	 */
+	char *                 pszDictionaryCodesFile;
+	CodeTable *            pPrefixTable;
+	CodeTable *            pInfixTable;
+	CodeTable *            pSuffixTable;
+	CodeTable *            pRootTable;
+	CodeTable *            pDictTable;
+	/*
+	 *  information loaded from the AMPLE dictionaries
+	 */
+	StringList *           pDictionaryFiles;
+	Trie *                 pDictionary;
+	AmpleMorpheme *        pAmpleMorphemes;
+	AmpleAlloEnv *         pAllomorphEnvs;
+	unsigned char          iInfixLocations;     /* AMPLE_PFX, AMPLE_SFX,
+												   and/or AMPLE_ROOT */
+	/*
+	 *  information loaded from the dictionary orthography change file
+	 */
+	char *                 pszDictOrthoChangeFile;
+	Change *               pDictOrthoChanges;
+	/*
+	 *  parsing variables
+	 */
+	short                  bMorphemeLookahead;
+	short                  bLookaheadDone;
+	short                  bMultiDependency;
+	@} AmpleData;
+@end example
+@subheading Description
+@code{AmpleData} groups all of the information loaded from AMPLE's
+multitudinous control files.  This simplifies the parameter lists for
+many of the AMPLE library functions, while minimizing the need for
+global variables.
+
+The fields of the @code{AmpleData} data structure are as follows:
+@table @code
+@item bDebugAllomorphConds
+causes debugging output for allomorph constraints if @code{TRUE}
+(nonzero).
+@c -a
+
+@item bEnableAllomorphIDs
+allows the allomorph identifiers to be stored in memory if @code{TRUE}
+(nonzero).  This was added to support LinguaLinks.
+@c -b
+
+@item cBeginComment
+is the character that begins comments in the input control files
+(including the dictionaries).
+@c -c
+
+@item bRootGlosses
+causes root glosses to be output in the analysis file, and enables the
+internal code @code{G} in the dictionary code table.
+@c -g
+
+@item iMaxTrieDepth
+is the maximum depth of the dictionary trie.  A value of @code{2} or
+@code{3} is reasonable.
+@c -d
+
+@item iMaxMorphnameLength
+is the maximum allowable length for morphnames.  This must be no
+greater than @code{64}.  Smaller values save memory.
+@c -n
+
+@item eTraceAnalysis
+specifies the type of analysis trace (debugging) output desired.  It
+should be one of these three values:
+@table @code
+@item AMPLE_TRACE_OFF
+means that no analysis trace output is wanted.
+@item AMPLE_TRACE_ON
+means that the traditional style of indented trace output is written to
+the log file.
+@item AMPLE_TRACE_SGML
+means that SGML output that follows the ampletrc.dtd document type
+definition is written to the log file.  This was added to support
+LinguaLinks.
+@end table
+@c -t
+
+@item iOutputFlags
+is a bit vector that encodes several independent Boolean values:
+@table @code
+@item WANT_DECOMPOSITION
+@itemx WANT_CATEGORY
+@itemx WANT_PROPERTIES
+@itemx WANT_FEATURES
+@itemx WANT_UNDERLYING
+@itemx WANT_ORIGINAL
+@end table
+@noindent
+For more details, see
+@ifset txt
+section @code{WordTemplate} in
+@cite{OPAC Function Library Reference Manual}.
+@end ifset
+@ifclear txt
+@ref{WordTemplate, , WordTemplate, opaclib.info,
+	 OPAC Function Library Reference Manual}.
+@end ifclear
+@c -w, -x, -f/interactive
+
+@item iDebugLevel
+is the program debugging level.  A larger number implies a larger
+amount of debugging output.
+@c -/
+
+@item pLogFP
+is an output @code{FILE} pointer opened for logging information, or is
+@code{NULL}.
+@c >
+
+@item pszSelectiveAnalFile
+points to the name of the file containing selective analysis
+information.
+@c -s
+
+@item pSelectiveAnalMorphs
+points to a list of morphnames or allomorphs used for selective
+analysis.  If it is not @code{NULL}, only those dictionary entries that
+match a member of the list are used in analysis.
+@c -s
+
+@item sTextCtl
+stores the information loaded from, and the name of, the text input control
+file.  For more details, see
+@ifset txt
+section @code{TextControl} in
+@cite{OPAC Function Library Reference Manual}.
+@end ifset
+@ifclear txt
+@ref{TextControl, , TextControl, opaclib.info,
+	 OPAC Function Library Reference Manual}.
+@end ifclear
+
+@item pszAnalysisDataFile
+points to the name of the primary AMPLE control file (the ``analysis
+data file'').
+@c -f/interactive
+
+@item pPrefixSuccTests
+points to the ordered list of ``prefix successor tests'' loaded from the
+analysis data file, or is @code{NULL}.
+@c \pt
+
+@item pRootSuccTests
+points to the ordered list of ``root successor tests'' loaded from the
+analysis data file, or is @code{NULL}.
+@c \rt
+
+@item pSuffixSuccTests
+points to the ordered list of ``suffix successor tests'' loaded from the
+analysis data file, or is @code{NULL}.
+@c \st
+
+@item pInfixSuccTests
+points to the ordered list of ``infix successor tests'' loaded from the
+analysis data file, or is @code{NULL}.
+@c \it
+
+@item pFinalTests
+points to the ordered list of ``final tests'' loaded from the analysis
+data file, or is @code{NULL}.
+@c \ft
+
+@item eWriteCategory
+determines what kind of category information is written to the output
+analysis file.
+@table @code
+@item AMPLE_NO_CATEGORY
+means that no category information is written.  This implies that
+@w{@code{iOutputFlags & WANT_CATEGORY}} is @code{FALSE}.
+@item AMPLE_SUFFIX_CATEGORY
+means that the last suffix probably carries the word category.  This
+implies that @w{@code{iOutputFlags & WANT_CATEGORY}} is @code{TRUE}.
+@item AMPLE_PREFIX_CATEGORY
+means that the first prefix probably carries the word category.  This
+implies that @w{@code{iOutputFlags & WANT_CATEGORY}} is @code{TRUE}.
+@end table
+@c \cat
+
+@item bWriteMorphCats
+causes all of the morpheme category information to be written to the
+output analysis file if @code{TRUE}, and if @code{eWriteCategory} is
+not set to @code{AMPLE_NO_CATEGORY}.
+@c \cat
+
+@item pCategories
+points to the ordered list of category names defined in the analysis
+data file.
+@c \ca
+
+@item pCategoryClasses
+points to the list of category classes defined in the analysis data
+file, or is @code{NULL}.
+@c \ccl
+
+@item cBeginRoot
+is the character used to mark the beginning of the root morpheme
+field in the analysis string.
+@c \rd
+
+@item cEndRoot
+is the character used to mark the end of the root morpheme
+field in the analysis string.
+@c \rd
+
+@item pStringClasses
+points to the list of string classes defined in the analysis data file,
+the text input control file, and the dictionary orthography changes
+file, or is @code{NULL}.
+@c \scl
+
+@item pInfixAdhocPairs
+points to the list of ``infix ad hoc pairs'' defined in the analysis
+data file, or is @code{NULL}.
+@c \iah
+
+@item pPrefixAdhocPairs
+points to the list of ``prefix ad hoc pairs'' defined in the analysis
+data file, or is @code{NULL}.
+@c \pah
+
+@item pRootAdhocPairs
+points to the list of ``root ad hoc pairs'' defined in the analysis
+data file, or is @code{NULL}.
+@c \rah
+
+@item pSuffixAdhocPairs
+points to the list of ``suffix ad hoc pairs'' defined in the analysis
+data file, or is @code{NULL}.
+@c \sah
+
+@item pCompoundRootPairs
+points to the list of ``compound root category pairs'' defined in the
+analysis data file, or is @code{NULL}.
+@c \cr
+
+@item pMorphClasses
+@c \mcl
+points to the list of ``morpheme classes'' defined in the analysis data
+file, or is @code{NULL}.
+
+@item pProperties
+points to the list of properties (either allomorph or morpheme) defined
+in the analysis data file, or is @code{NULL}.
+@c \ap, \mp
+
+@item pPropertySets
+points to a list of sets of properties used in the loaded dictionaries.
+This is used to conserve memory, by storing each distinct set of
+properties only once.
+
+@item iMaxPrefixCount
+is the maximum number of prefixes allowed in a word, as defined in the
+analysis data file.  If zero, then no prefixes are allowed.
+@c \maxp
+
+@item iMaxInfixCount
+is the maximum number of infixes allowed in a word, as defined in the
+analysis data file.  If zero, then no infixes are allowed.
+@c \maxi
+
+@item iMaxRootCount
+is the maximum number of roots allowed in a word, as defined in the
+analysis data file.  If one, then compound roots are not allowed.
+@c \maxr
+
+@item iMaxSuffixCount
+is the maximum number of suffixes allowed in a word, as defined in the
+analysis data file.  If zero, then no suffixes are allowed.
+@c \maxs
+
+@item pMorphConstraints
+points to the list of morpheme co-occurrence constraints defined in the
+analysis data file.
+@c \mcc
+
+@item iMaxNullCount
+is the maximum number of null allomorphs allowed in a word, as defined
+in the analysis data file.
+@c \maxnull
+
+@item pszValidChars
+points to the set of valid alphabetic characters allowed in string
+environment constraints, as defined in the analysis data file, or is
+@code{NULL}.
+@c \strcheck
+
+@item bDictionaryCapitals
+enables decapitalization of allomorphs in the dictionary files if set
+@code{TRUE} by the analysis data file.
+@c \dicdecap
+
+@item pszDictionaryCodesFile
+points to the name of the dictionary codes file.
+
+@item pPrefixTable
+points to the @code{CodeTable} data structure for the prefix dictionary
+file, or is @code{NULL}.  For
+more details, see
+@ifset txt
+section @code{CodeTable} in
+@cite{OPAC Function Library Reference Manual}.
+@end ifset
+@ifclear txt
+@ref{CodeTable, , CodeTable, opaclib.info,
+	 OPAC Function Library Reference Manual}.
+@end ifclear
+@c \prefix
+
+@item pInfixTable
+points to the @code{CodeTable} data structure for the infix dictionary
+file, or is @code{NULL}.  For
+more details, see
+@ifset txt
+section @code{CodeTable} in
+@cite{OPAC Function Library Reference Manual}.
+@end ifset
+@ifclear txt
+@ref{CodeTable, , CodeTable, opaclib.info,
+	 OPAC Function Library Reference Manual}.
+@end ifclear
+@c \infix
+
+@item pSuffixTable
+points to the @code{CodeTable} data structure for the suffix dictionary
+file, or is @code{NULL}.  For
+more details, see
+@ifset txt
+section @code{CodeTable} in
+@cite{OPAC Function Library Reference Manual}.
+@end ifset
+@ifclear txt
+@ref{CodeTable, , CodeTable, opaclib.info,
+	 OPAC Function Library Reference Manual}.
+@end ifclear
+@c \suffix
+
+@item pRootTable
+points to the @code{CodeTable} data structure for root dictionary
+files, or is @code{NULL}.  For
+more details, see
+@ifset txt
+section @code{CodeTable} in
+@cite{OPAC Function Library Reference Manual}.
+@end ifset
+@ifclear txt
+@ref{CodeTable, , CodeTable, opaclib.info,
+	 OPAC Function Library Reference Manual}.
+@end ifclear
+@c \root
+
+@item pDictTable
+points to the @code{CodeTable} data structure for unified dictionary
+files, or is @code{NULL}.  For
+more details, see
+@ifset txt
+section @code{CodeTable} in
+@cite{OPAC Function Library Reference Manual}.
+@end ifset
+@ifclear txt
+@ref{CodeTable, , CodeTable, opaclib.info,
+	 OPAC Function Library Reference Manual}.
+@end ifclear
+@c \unified
+
+@item pDictionaryFiles
+points to a list of dictionary filenames.
+
+@item pDictionary
+points to the lexicon information loaded from the dictionary files,
+indexed by allomorph.
+
+@item pAmpleMorphemes
+points to the complete list of morphemes loaded from the dictionary
+files.  This is needed to allow morphemes to be removed from the
+dictionary, or to erase the entire dictionary in memory.  (This
+logically, but not physically, duplicates the information pointed to by
+@code{pDictionary}.)
+
+@item pAllomorphEnvs
+points to the set of allomorph environment constraints used by all of
+the allomorphs in the dictionary.  This is an optimization to save
+memory, since most allomorph environment constraints are used by
+allomorphs in different morphemes.
+@item iInfixLocations
+
+@item pszDictOrthoChangeFile
+points to the name of the dictionary orthography change file, or is
+@code{NULL}.
+
+@item pDictOrthoChanges
+points to the ordered list of orthography changes to apply to the
+allomorphs loaded from the dictionary files, or is @code{NULL}.
+@c \ch
+
+@item bMorphemeLookahead
+@itemx bLookaheadDone
+@itemx bMultiDependency
+These Boolean variables are used internally while parsing.  They are
+all involved with the need to look at morphemes in adjacent words (a
+buggy hack that should not be used and should not have been implemented
+in my opinion).
+@end table
+@subheading Source File
+@file{ample.h}
+
+@menu
+* addAmpleSelectiveAnalItem::
+* checkAmpleMorphs::
+* findAmplePropertyName::
+* findAmplePropertyNumber::
+* freeAmpleDictionary::
+* freeAmpleSelectiveAnalInfo::
+* isAmpleAllomorphProperty::
+* isAmpleMorphemeProperty::
+* loadAmpleControlFile::
+* loadAmpleDictCodeTables::
+* loadAmpleDictionary::
+* loadAmpleDictOrthoChanges::
+* loadAmpleSelectiveAnalFile::
+* performAmpleAnalysis::
+* removeFromAmpleDictionary::
+* resetAmpleData::
+* updateAmpleDictEntry::
+* writeAmpleDictionary::
+* writeAmpleTests::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node AmpleWord, , AmpleData, Data Structures
+@page
+@section AmpleWord
+@subheading Definition
+@example
+#include "template.h"
+
+typedef struct ample_hlalist AmpleHeadlistList;
+typedef struct @{
+	WordTemplate *      pTemplate;
+	AmpleHeadlistList * pHeadlists;
+	char *              pszRemaining;
+	unsigned            uiAmbigCount;
+	int                 bFoundRoot;
+	@} AmpleWord;
+@end example
+@subheading Description
+@code{AmpleWord} groups the information for a single word processed by
+AMPLE.  This simplifies the parameter lists for many of the AMPLE
+library functions, while minimizing the need for global variables.
+
+The fields of the @code{AmpleWord} data structure are as follows:
+@table @code
+@item pTemplate
+points to a @code{WordTemplate} data structure that stores a word and
+its analyses.  For more details, see
+@ifset txt
+section @code{WordTemplate} in
+@cite{OPAC Function Library Reference Manual}.
+@end ifset
+@ifclear txt
+@ref{WordTemplate, , WordTemplate, opaclib.info,
+	 OPAC Function Library Reference Manual}.
+@end ifclear
+
+@item pHeadlists
+is used internally by the AMPLE processing functions.  It points to a
+list of lists of morphemes, each list of morphemes representing one
+analysis of the word.
+
+@item pszRemaining
+is used internally by the AMPLE processing functions.  It points to the
+remainder of the word that has yet to be analyzed.
+
+@item uiAmbigCount
+is the number of analyses for this word.  (This is used internally by
+the AMPLE processing functions.)
+
+@item bFoundRoot
+is used internally by the AMPLE processing functions.  It is
+@code{TRUE} if a root has been found, and @code{FALSE} if only prefixes
+and infixes have been found in the analysis process.
+@end table
+@subheading Source File
+@file{ample.h}
+
+@menu
+* performAmpleAnalysis::
+* eraseAmpleWord::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node Global Variables, Functions, Data Structures, Top
+@chapter AMPLE global variables
+
+This chapter gives the proper usage information about each of the
+global variables found in the AMPLE function library.  For each global
+variable that the library provides, this information includes which
+header files to include in your source to obtain the extern declaration
+for that variable.
+
+Note that all of the global variables in the AMPLE function library
+provide information about the current version.
+
+@menu
+* cAmplePatchSep_g::
+* iAmplePatchlevel_g::
+* iAmpleRevision_g::
+* iAmpleVersion_g::
+* pszAmpleCompileDate_g::
+* pszAmpleCompileFormat_g::
+* pszAmpleCompileTime_g::
+* pszAmpleDate_g::
+* pszAmpleTestVersion_g::
+* pszAmpleYear_g::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node  cAmplePatchSep_g, iAmplePatchlevel_g, Global Variables, Global Variables
+@page
+@section cAmplePatchSep_g
+@vindex cAmplePatchSep_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+extern const char       cAmplePatchSep_g;
+@end example
+@subheading Description
+@code{cAmplePatchSep_g} is the character used to separate the
+revision level number and the patch level number.  It has one of the
+following three values:
+@table @code
+@item a
+for alpha test versions
+@item b
+for beta test versions
+@item .
+for release versions
+@end table
+
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} below.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  iAmplePatchlevel_g, iAmpleRevision_g, cAmplePatchSep_g, Global Variables
+@page
+@section iAmplePatchlevel_g
+@vindex iAmplePatchlevel_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+extern const int        iAmplePatchlevel_g;
+@end example
+@subheading Description
+@code{iAmplePatchlevel_g} is the current @dfn{patch level} of the
+AMPLE function library and program.  This is the third level version
+number, reflecting bug fixes or internal improvements that should be
+functionally invisible to users.
+
+The patch level can go as high as needed.  It is not limited to single
+(or double) digit numbers.
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} below.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  iAmpleRevision_g, iAmpleVersion_g, iAmplePatchlevel_g, Global Variables
+@page
+@section iAmpleRevision_g
+@vindex iAmpleRevision_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+extern const int        iAmpleRevision_g;
+@end example
+@subheading Description
+@code{iAmpleRevision_g} is the current @dfn{revision level} of the
+AMPLE program and function library.  This is the second level version
+number, reflecting changes to program behavior that require changes to
+the @cite{AMPLE Reference Manual}.
+
+The revision level can go as high as needed.  It is not limited to
+single (or double) digit numbers.
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} below.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  iAmpleVersion_g, pszAmpleCompileDate_g, iAmpleRevision_g, Global Variables
+@page
+@section iAmpleVersion_g
+@vindex iAmpleVersion_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+extern const int        iAmpleVersion_g;
+@end example
+@subheading Description
+@code{iAmpleVersion_g} is the current @dfn{version} number of the
+AMPLE program and function library.  This is the top level version
+number, reflecting a major rewrite of the program or major changes that
+make it incompatible with earlier versions of the program.
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "ample.h"
+...
+printf("AMPLE functions version %d.%d%c%d (%s), ",
+		iAmpleVersion_g, iAmpleRevision_g, cAmplePatchSep_g,
+		iAmplePatchlevel_g, pszAmpleDate_g);
+printf("Copyright %s SIL, Inc.\n", pszAmpleYear_g);
+#ifdef __DATE__
+printf(pszAmpleCompileFormat_g,
+		pszAmpleCompileDate_g, pszAmpleCompileTime_g);
+#else
+if (pszAmpleTestVersion_g != NULL)
+	fputs(pszAmpleTestVersion_g, stdout);
+#endif
+@end smallexample
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  pszAmpleCompileDate_g, pszAmpleCompileFormat_g, iAmpleVersion_g, Global Variables
+@page
+@section pszAmpleCompileDate_g
+@vindex pszAmpleCompileDate_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+#ifdef __DATE__
+extern const char *     pszAmpleCompileDate_g;
+#endif
+@end example
+@subheading Description
+If the compiler predefines the @code{__DATE__} constant,
+@code{pszAmpleCompileDate_g} is a string containing the date that
+the AMPLE function library and program was compiled.
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} above.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  pszAmpleCompileFormat_g, pszAmpleCompileTime_g, pszAmpleCompileDate_g, Global Variables
+@page
+@section pszAmpleCompileFormat_g
+@vindex pszAmpleCompileFormat_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+#ifdef __DATE__
+extern const char *     pszAmpleCompileFormat_g;
+#endif
+@end example
+@subheading Description
+If the compiler predefines the @code{__DATE__} constant,
+@code{pszAmpleCompileFormat_g} is a @code{printf} format string
+suitable for displaying the date and time that the AMPLE function
+library and program was compiled.
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} above.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  pszAmpleCompileTime_g, pszAmpleDate_g, pszAmpleCompileFormat_g, Global Variables
+@page
+@section pszAmpleCompileTime_g
+@vindex pszAmpleCompileTime_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+#ifdef __DATE__
+extern const char *     pszAmpleCompileTime_g;
+#endif
+@end example
+@subheading Description
+If the compiler predefines the @code{__DATE__} constant,
+@code{pszAmpleCompileTime_g} is a string containing the time that
+the AMPLE function library and program was compiled.
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} above.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  pszAmpleDate_g, pszAmpleTestVersion_g, pszAmpleCompileTime_g, Global Variables
+@page
+@section pszAmpleDate_g
+@vindex pszAmpleDate_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+extern const char *     pszAmpleDate_g;
+@end example
+@subheading Description
+@code{pszAmpleDate_g} is a string containing the date that the
+AMPLE function library and program was last modified.
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} above.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  pszAmpleTestVersion_g, pszAmpleYear_g, pszAmpleDate_g, Global Variables
+@page
+@section pszAmpleTestVersion_g
+@vindex pszAmpleTestVersion_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+#ifndef __DATE__
+extern const char *     pszAmpleTestVersion_g;
+#endif
+@end example
+@subheading Description
+If the compiler does not predefine the @code{__DATE__} constant,
+@code{pszAmpleCompileDate_g} is a string describing what kind of
+test version it is (alpha or beta).  If it is not a test version, then
+the string pointer is @code{NULL}.
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} above.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node  pszAmpleYear_g, , pszAmpleTestVersion_g, Global Variables
+@page
+@section pszAmpleYear_g
+@vindex pszAmpleYear_g
+@subheading Syntax
+@example
+#include "ample.h"
+
+extern const char *     pszAmpleYear_g;
+@end example
+@subheading Description
+@code{pszAmpleYear_g} is a string containing the year that the
+AMPLE function library and program was last copyrighted.
+@subheading Example
+@ifset txt
+See the example for @code{iAmpleVersion_g} above.
+@end ifset
+@ifclear txt
+@xref{iAmpleVersion_g, , Example}.
+@end ifclear
+@subheading Source File
+@file{version.c}
+
+@c ----------------------------------------------------------------------------
+@node Functions, Bibliography, Global Variables, Top
+@chapter AMPLE functions
+
+This document gives the proper usage information about each of the
+functions found in the AMPLE function library.  The prototypes and type
+definitions relevent to the use of these functions are all found in the
+@file{ample.h} header file.
+
+@menu
+* addAmpleSelectiveAnalItem::
+* checkAmpleMorphs::
+* eraseAmpleWord::
+* findAmplePropertyName::
+* findAmplePropertyNumber::
+* freeAmpleDictionary::
+* freeAmpleSelectiveAnalInfo::
+* hasAmpleProperty::
+* initAmpleMorphChecking::
+* initiateAmpleTrace::
+* isAmpleAllomorphProperty::
+* isAmpleMorphemeProperty::
+* loadAmpleControlFile::
+* loadAmpleDictCodeTables::
+* loadAmpleDictionary::
+* loadAmpleDictOrthoChanges::
+* loadAmpleSelectiveAnalFile::
+* performAmpleAnalysis::
+* removeFromAmpleDictionary::
+* reportAmpleDictCodeTable::
+* resetAmpleData::
+* terminateAmpleTrace::
+* updateAmpleDictEntry::
+* writeAmpleDictionary::
+* writeAmpleTests::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node addAmpleSelectiveAnalItem, checkAmpleMorphs, Functions, Functions
+@page
+@section addAmpleSelectiveAnalItem
+@findex addAmpleSelectiveAnalItem
+@subheading Syntax
+@example
+#include "ample.h"
+
+void addAmpleSelectiveAnalItem(const char * pszMorphs_in,
+							   AmpleData *  pAmple_io);
+@end example
+@subheading Description
+@code{addAmpleSelectiveAnalItem} adds the morpheme and allomorph
+information to the list of morphemes and allomorphs that are used in
+selective analysis.
+
+The arguments to @code{addAmpleSelectiveAnalItem} are as follows:
+@table @code
+@item pszMorphs_in
+points to a @code{NUL}-terminated character string that encodes
+morphname or allomorph information.  (Currently, this is just a list of
+morphnames or allomorphs.)
+
+@item pAmple_io
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+AmpleData       sAmpleData_g;
+...
+addAmpleSelectiveAnalItem("morph allomorph", &sAmpleData_g);
+...
+addAmpleSelectiveAnalItem("allomorph2 morph2", &sAmpleData_g);
+...
+@end smallexample
+@subheading Source File
+@file{setsd.c}
+
+@c ----------------------------------------------------------------------------
+@node checkAmpleMorphs, eraseAmpleWord, addAmpleSelectiveAnalItem, Functions
+@page
+@section checkAmpleMorphs
+@findex checkAmpleMorphs
+@subheading Syntax
+@example
+#include "ample.h"
+
+void checkAmpleMorphs(int         bCheckMorphs_in,
+					  AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{checkAmpleMorphs} checks that all referenced morphnames are
+defined in the dictionaries.  This requires that
+@code{initAmpleMorphChecking} be called before loading the analysis
+data file or any of the dictionaries.
+
+Morphname references are checked in:
+@enumerate
+@item allomorph environment constraints,
+@item morpheme co-occurrence constraints,
+@item user-defined tests,
+@item morpheme classes, and
+@item adhoc-pairs.
+@end enumerate
+An error message is displayed for each unrecognized morphname.
+Duplicate morphnames in the dictionaries are also detected.
+
+The arguments to @code{checkAmpleMorphs} are as follows:
+@table @code
+@item bCheckMorphs_in
+causes the morphname check to take place if @code{TRUE}, or prevents it
+if @code{FALSE}.
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+initAmpleMorphChecking(TRUE);
+...
+checkAmpleMorphs(TRUE);
+@end smallexample
+@subheading Source File
+@file{setsd.c}
+
+@c ----------------------------------------------------------------------------
+@node eraseAmpleWord, findAmplePropertyName, checkAmpleMorphs, Functions
+@page
+@section eraseAmpleWord
+@findex eraseAmpleWord
+@subheading Syntax
+@example
+#include "ample.h"
+
+void eraseAmpleWord(AmpleWord * pWord_in);
+@end example
+@subheading Description
+@code{eraseAmpleWord} frees the memory allocated for an AMPLE word data
+structure.  This includes the WordTemplate data structure and other
+fields used internally.  The AMPLE word data structure itself is not
+freed, so it can be a static or auto variable.
+
+@code{eraseAmpleWord} has only one argument:
+@table @code
+@item pWord_in
+points to an @code{AmpleWord} data structure that contains information
+that is no longer needed.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+...
+AmpleWord       sThisWord;
+WordTemplate *  pWord;
+FILE *          pInputFP;
+FILE *          pOutputFP;
+char *          pszOutFilename;
+...
+initiateAmpleTrace( &sAmpleData_m );
+while ((pWord = readTemplateFromText(pInputFP,
+									 &sAmpleData_m.sTextCtl)) != NULL)
+	@{
+	sThisWord.pTemplate    = pWord;
+	sThisWord.pHeadlists   = NULL;
+	sThisWord.pszRemaining = NULL;
+	sThisWord.uiAmbigCount = 0;
+	sThisWord.bFoundRoot   = FALSE;
+	if (sThisWord.pTemplate->paWord != NULL)
+		performAmpleAnalysis(&sThisWord, NULL, NULL, &sAmpleData_m);
+	writeTemplate( pOutputFP, pszOutFilename,
+				   sThisWord_m.pTemplate, &sAmpleData_m.sTextCtl);
+	eraseAmpleWord( &sThisWord );
+	@}
+terminateAmpleTrace( &sAmpleData_m );
+...
+@end smallexample
+@subheading Source File
+@file{anal.c}
+
+@c ----------------------------------------------------------------------------
+@node findAmplePropertyName, findAmplePropertyNumber, eraseAmpleWord, Functions
+@page
+@section findAmplePropertyName
+@findex findAmplePropertyName
+@subheading Syntax
+@example
+#include "ample.h"
+
+char * findAmplePropertyName(unsigned          uiPropNumber_in,
+							 const AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{findAmplePropertyName} searches for the name of a property given
+by number.
+
+The arguments to @code{findAmplePropertyName} are as follows:
+@table @code
+@item uiPropNumber_in
+is a number assigned to an AMPLE (allomorph or morpheme) property.
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+a pointer to the property name, or @code{NULL} if not found
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+...
+char *          pszProperty;
+unsigned        uiProperty;
+...
+for ( uiProperty = 1 ; uiProperty < 256 ; ++uiProperty )
+	@{
+	pszProperty = findAmplePropertyName(uiProperty, &sAmpleData_m);
+	if (pszProperty != NULL)
+		printf("Property %3u is \"%s\"\n", uiProperty, pszProperty);
+	@}
+@end smallexample
+@subheading Source File
+@file{proper.c}
+
+@c ----------------------------------------------------------------------------
+@node findAmplePropertyNumber, freeAmpleDictionary, findAmplePropertyName, Functions
+@page
+@section findAmplePropertyNumber
+@findex findAmplePropertyNumber
+@subheading Syntax
+@example
+#include "ample.h"
+
+unsigned char findAmplePropertyNumber(const char *      pszName_in,
+									  const AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{findAmplePropertyNumber} searches for a property given by name.
+
+The arguments to @code{findAmplePropertyNumber} are as follows:
+@table @code
+@item pszName_in
+points to an AMPLE (allomorph or morpheme) property name.
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+the integer value of the property, or zero if not found
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+...
+unsigned        uiProperty;
+char *          pszProperty;
+...
+uiProperty  = findAmplePropertyNumber(pszProperty, &sAmpleData_m);
+if (uiProperty == 0)
+	printf("%s is not a valid property name.\n", pszProperty);
+else
+	printf("%s is property number %u.\n", pszProperty, uiProperty);
+@end smallexample
+@subheading Source File
+@file{proper.c}
+
+@c ----------------------------------------------------------------------------
+@node freeAmpleDictionary, freeAmpleSelectiveAnalInfo, findAmplePropertyNumber, Functions
+@page
+@section freeAmpleDictionary
+@findex freeAmpleDictionary
+@subheading Syntax
+@example
+#include "ample.h"
+
+void freeAmpleDictionary(AmpleData * pAmple_io);
+@end example
+@subheading Description
+@code{freeAmpleDictionary} frees the memory allocated to store an AMPLE
+dictionary.  This is called by @code{resetAmpleData}, which is the
+safest way to use it since the data from the dictionary files are
+somewhat intermingled with data from other files.
+
+@code{freeAmpleDictionary} has only one argument:
+@table @code
+@item pAmple_io
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szCodesFilename_g[100];
+char szDictFilename_g[100];
+...
+loadAmpleDictCodeTables(szCodesFilename_g, &sAmpleData_g, TRUE);
+...
+loadAmpleDictionary(szDictFilename_g, AMPLE_UNIFIED, &sAmpleData_g);
+...
+freeAmpleDictionary( &sAmpleData_g );
+@end smallexample
+@subheading Source File
+@file{setsd.c}
+
+@c ----------------------------------------------------------------------------
+@node freeAmpleSelectiveAnalInfo, hasAmpleProperty, freeAmpleDictionary, Functions
+@page
+@section freeAmpleSelectiveAnalInfo
+@findex freeAmpleSelectiveAnalInfo
+@subheading Syntax
+@example
+#include "ample.h"
+
+void freeAmpleSelectiveAnalInfo(AmpleData * pAmple_io);
+@end example
+@subheading Description
+@code{freeAmpleSelectiveAnalInfo} frees the memory allocated to store
+the selective analysis information.  This also marks all of the current
+dictionary entries (in memory) to enable them to be used in future
+analysis efforts.
+
+@code{freeAmpleSelectiveAnalInfo} has only one argument:
+@table @code
+@item pAmple_io
+points to the data structure that contains the current AMPLE language
+data, including the selective analysis information.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szSelectiveAnalFile_g[100];
+...
+loadAmpleSelectiveAnalFile(szSelectiveAnalFile_g, &sAmpleData_g);
+...
+freeAmpleSelectiveAnalInfo( &sAmpleData_g );
+...
+@end smallexample
+@subheading Source File
+@file{select.c}
+
+@c ----------------------------------------------------------------------------
+@node hasAmpleProperty, initAmpleMorphChecking, freeAmpleSelectiveAnalInfo, Functions
+@page
+@section hasAmpleProperty
+@findex hasAmpleProperty
+@subheading Syntax
+@example
+#include "ample.h"
+
+int hasAmpleProperty(const unsigned char * pProperties_in,
+					 unsigned              uiPropNumber_in);
+@end example
+@subheading Description
+@code{hasAmpleProperty} checks whether @code{pProperties_in} contains a
+specific property value.  @code{pProperties_in} is normally the
+combined set of allomorph and morpheme properties from a dictionary
+entry.  This is the same as
+@w{@code{(strchr(pProperties_in, uiPropNumber_in) != NULL)}}, except
+for using unsigned characters.
+
+The arguments to @code{hasAmpleProperty} are as follows:
+@table @code
+@item pProperties_in
+points to a @code{NUL}-terminated array of AMPLE (allomorph or
+morpheme) property numbers.
+
+@item uiPropNumber_in
+is a number assigned to an AMPLE (allomorph or morpheme) property.
+@end table
+@subheading Return Value
+@code{TRUE} if the property set contains the property value,
+otherwise @code{FALSE}
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "ample.h"
+#include "ampledef.h"   /* example uses internal data structures */
+...
+static AmpleData        sAmpleData_m;
+...
+AmpleAllomorph * pAllomorph
+unsigned         uiProperty;
+char *           pszPropName;
+...
+pszPropName = findAmplePropertyName(uiProperty,
+									sAmpleData_m.pProperties);
+if (hasAmpleProperty(pAllomorph->pProperties, uiProperty))
+	@{
+	printf("allomorph %s of %s has property %s.\n",
+		   pAllomorph->pszAllomorph,
+		   pAllomorph->pMorpheme->pszMorphName,
+		   pszPropName);
+	@}
+else
+	@{
+	printf("allomorph %s of %s does not have property %s.\n",
+		   pAllomorph->pszAllomorph,
+		   pAllomorph->pMorpheme->pszMorphName,
+		   pszPropName ? pszPropName : "(invalid property)");
+	@}
+@end smallexample
+@subheading Source File
+@file{proper.c}
+
+@c ----------------------------------------------------------------------------
+@node initAmpleMorphChecking, initiateAmpleTrace, hasAmpleProperty, Functions
+@page
+@section initAmpleMorphChecking
+@findex initAmpleMorphChecking
+@subheading Syntax
+@example
+#include "ample.h"
+
+void initAmpleMorphChecking(int bCheckMorphs_in);
+@end example
+@subheading Description
+@code{initAmpleMorphChecking} initializes the internal arrays for
+morphname checking.  If @code{bCheckMorphs_in} is @code{FALSE}, then no
+memory is allocated and no checking can be performed.
+
+@code{initAmpleMorphChecking} has only one argument:
+@table @code
+@item bCheckMorphs_in
+allows the morphname check to take place if @code{TRUE}, or prevents it
+if @code{FALSE}.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+initAmpleMorphChecking(TRUE);
+...
+checkAmpleMorphs(TRUE);
+@end smallexample
+@subheading Source File
+@file{setsd.c}
+
+@c ----------------------------------------------------------------------------
+@node initiateAmpleTrace, isAmpleAllomorphProperty, initAmpleMorphChecking, Functions
+@page
+@section initiateAmpleTrace
+@findex initiateAmpleTrace
+@subheading Syntax
+@example
+#include "ample.h"
+
+void initiateAmpleTrace(const AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{initiateAmpleTrace} writes the AMPLE trace header to the log
+file.  If @code{pAmple_in->pLogFP} is @code{NULL}, then nothing happens.
+If tracing output is wanted, then this function should be called before
+any words are analyzed, and after all control files and dictionaries
+have been loaded.
+
+@code{initiateAmpleTrace} has only one argument:
+@table @code
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+...
+AmpleWord       sThisWord;
+WordTemplate *  pWord;
+FILE *          pInputFP;
+FILE *          pOutputFP;
+char *          pszOutFilename;
+...
+initiateAmpleTrace( &sAmpleData_m );
+while ((pWord = readTemplateFromText(pInputFP,
+									 &sAmpleData_m.sTextCtl)) != NULL)
+	@{
+	sThisWord.pTemplate    = pWord;
+	sThisWord.pHeadlists   = NULL;
+	sThisWord.pszRemaining = NULL;
+	sThisWord.uiAmbigCount = 0;
+	sThisWord.bFoundRoot   = FALSE;
+	if (sThisWord.pTemplate->paWord != NULL)
+		performAmpleAnalysis(&sThisWord, NULL, NULL, &sAmpleData_m);
+	writeTemplate( pOutputFP, pszOutFilename,
+				   sThisWord_m.pTemplate, &sAmpleData_m.sTextCtl);
+	eraseAmpleWord( &sThisWord );
+	@}
+terminateAmpleTrace( &sAmpleData_m );
+...
+@end smallexample
+@subheading Source File
+@file{anal.c}
+
+@c ----------------------------------------------------------------------------
+@node isAmpleAllomorphProperty, isAmpleMorphemeProperty, initiateAmpleTrace, Functions
+@page
+@section isAmpleAllomorphProperty
+@findex isAmpleAllomorphProperty
+@subheading Syntax
+@example
+#include "ample.h"
+
+int isAmpleAllomorphProperty(unsigned          uiPropNumber_in,
+							 const AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{isAmpleAllomorphProperty} tests whether or not the property
+(given by number) is an allomorph property.
+
+The arguments to @code{isAmpleAllomorphProperty} are as follows:
+@table @code
+@item uiPropNumber_in
+is a number assigned to an AMPLE (allomorph or morpheme) property.
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+@code{TRUE} if it is an allomorph property, otherwise @code{FALSE}
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "ample.h"
+#include "ampledef.h"   /* example uses internal data structures */
+...
+static AmpleData        sAmpleData_m;
+...
+AmpleAllomorph *        pAllomorph;
+unsigned char *         pProp;
+...
+printf("Allomorph %s of %s has these properties:",
+	   pAllomorph->pszAllomorph,
+	   pAllomorph->pMorpheme->pszMorphName);
+for ( pProp = pAllomorph->pProperties ; pProp && *pProp ; ++pProp )
+	@{
+	if (isAmpleAllomorphProperty(*pProp, &sAmpleData_m))
+		printf(" %s", findAmplePropertyName(*pProp, &sAmpleData_m));
+	@}
+printf("\n");
+@end smallexample
+@subheading Source File
+@file{proper.c}
+
+@c ----------------------------------------------------------------------------
+@node isAmpleMorphemeProperty, loadAmpleControlFile, isAmpleAllomorphProperty, Functions
+@page
+@section isAmpleMorphemeProperty
+@findex isAmpleMorphemeProperty
+@subheading Syntax
+@example
+#include "ample.h"
+
+int isAmpleMorphemeProperty(unsigned          uiPropNumber_in,
+							const AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{isAmpleMorphemeProperty} tests whether or not the property
+(given by number) is a morpheme property.
+
+The arguments to @code{isAmpleMorphemeProperty} are as follows:
+@table @code
+@item uiPropNumber_in
+is a number assigned to an AMPLE (allomorph or morpheme) property.
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+@code{TRUE} if it is a morpheme property, otherwise @code{FALSE}
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "ample.h"
+#include "ampledef.h"   /* example uses internal data structures */
+...
+static AmpleData        sAmpleData_m;
+...
+AmpleMorpheme * pMorpheme;
+unsigned char * pProp;
+...
+printf("Morpheme %s has these properties:", pMorpheme->pszMorphName);
+for (   pProp = pMorpheme->pAllomorphs->pProperties ;
+		pProp && *pProp ;
+		++pProp )
+	@{
+	if (isAmpleMorphemeProperty(*pProp, &sAmpleData_m))
+		printf(" %s", findAmplePropertyName(*pProp, &sAmpleData_m));
+	@}
+printf("\n");
+@end smallexample
+@subheading Source File
+@file{proper.c}
+
+@c ----------------------------------------------------------------------------
+@node loadAmpleControlFile, loadAmpleDictCodeTables, isAmpleMorphemeProperty, Functions
+@page
+@section loadAmpleControlFile
+@findex loadAmpleControlFile
+@subheading Syntax
+@example
+#include "ample.h"
+
+int loadAmpleControlFile(const char * pszInputFile_in,
+						 AmpleData *  pAmple_io);
+@end example
+@subheading Description
+@code{loadAmpleControlFile} reads the main AMPLE control file, commonly
+called the ``analysis data file''.
+
+The arguments to @code{loadAmpleControlFile} are as follows:
+@table @code
+@item pszInputFile_in
+points to the name of an analysis data file.
+
+@item pAmple_io
+points to the data structure that is filled in with the language
+information from the analysis data file.
+@end table
+@subheading Return Value
+zero if the file is successfully read into memory, otherwise nonzero
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szControlFilename_g[100];
+...
+if (loadAmpleControlFile(szControlFilename,
+						 sAmpleData_g.cBeginComment) != 0)
+	@{
+	/* error message? */
+	@}
+@end smallexample
+@subheading Source File
+@file{analda.c}
+
+@c ----------------------------------------------------------------------------
+@node loadAmpleDictCodeTables, loadAmpleDictionary, loadAmpleControlFile, Functions
+@page
+@section loadAmpleDictCodeTables
+@findex loadAmpleDictCodeTables
+@subheading Syntax
+@example
+#include "ample.h"
+
+int loadAmpleDictCodeTables(const char * pszCodesFile_in,
+							AmpleData *  pAmple_io,
+							int          bUnified_in);
+@end example
+@subheading Description
+@code{loadAmpleDictCodeTables} reads an AMPLE dictionary code change
+tables file.
+
+The arguments to @code{loadAmpleDictCodeTables} are as follows:
+@table @code
+@item pszCodesFile_in
+points to the name of a AMPLE dictionary code change tables file.
+
+@item pAmple_io
+points to the data structure that is filled in with the dictionary
+code change tables from the file.
+
+@item bUnified_in
+signals that the dictionary is in ``unified'' (combined affix and root)
+form if @code{TRUE}, or that the dictionary is split into separate
+prefix, infix, suffix, and root dictionary files if @code{FALSE}.
+@end table
+@subheading Return Value
+zero if the file is successfully read into memory, otherwise nonzero
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szCodesFilename_g[100];
+...
+if (loadAmpleDictCodeTables(szCodesFilename_g,
+							&sAmpleData_g, FALSE) != 0)
+	@{
+	/* error message? */
+	@}
+@end smallexample
+@subheading Source File
+@file{loadtb.c}
+
+@c ----------------------------------------------------------------------------
+@node loadAmpleDictionary, loadAmpleDictOrthoChanges, loadAmpleDictCodeTables, Functions
+@page
+@section loadAmpleDictionary
+@findex loadAmpleDictionary
+@subheading Syntax
+@example
+#include "ample.h"
+
+int loadAmpleDictionary(const char * pszDictFile_in,
+						int          eDictType_in,
+						AmpleData *  pAmple_io);
+@end example
+@subheading Description
+@code{loadAmpleDictionary} reads an AMPLE dictionary file.
+
+The arguments to @code{loadAmpleDictionary} are as follows:
+@table @code
+@item pszDictFile_in
+points to the name of an AMPLE dictionary file.
+
+@item eDictType_in
+is one of the following values:
+@table @code
+@item AMPLE_PFX
+signals a prefix dictionary.
+@item AMPLE_IFX
+signals an infix dictionary.
+@item AMPLE_SFX
+signals a suffix dictionary.
+@item AMPLE_ROOT
+signals a root dictionary.
+@item AMPLE_UNIFIED
+signals a unified (combined affix and root) dictionary.  (This is the
+same as @w{@code{AMPLE_PFX | AMPLE_IFX | AMPLE_SFX | AMPLE_ROOT}}.)
+@end table
+
+@item pAmple_io
+points to the data structure that is filled in with the lexicon
+information from the dictionary file.
+@end table
+@subheading Return Value
+zero if the file is successfully read into memory, otherwise nonzero
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szCodesFilename_g[100];
+char szDictFilename_g[100];
+...
+loadAmpleDictCodeTables(szCodesFilename_g, &sAmpleData_g, FALSE);
+...
+if (loadAmpleDictionary(szDictFilename_g,
+						AMPLE_PFX, &sAmpleData_g) != 0)
+	@{
+	/* error message? */
+	@}
+@end smallexample
+@subheading Source File
+@file{setsd.c}
+
+@c ----------------------------------------------------------------------------
+@node loadAmpleDictOrthoChanges, loadAmpleSelectiveAnalFile, loadAmpleDictionary, Functions
+@page
+@section loadAmpleDictOrthoChanges
+@findex loadAmpleDictOrthoChanges
+@subheading Syntax
+@example
+#include "ample.h"
+
+int loadAmpleDictOrthoChanges(const char * pszDictOrthoFile_in,
+							  AmpleData *  pAmple_io);
+@end example
+@subheading Description
+@code{loadAmpleDictOrthoChanges} loads an ordered list of AMPLE
+dictionary orthography changes from a file.  These changes are applied
+to the allomorphs loaded from the file before storing them in memory.
+
+The arguments to @code{loadAmpleDictOrthoChanges} are as follows:
+@table @code
+@item pszDictOrthoFile_in
+points to the name of the AMPLE dictionary orthography changes file.
+
+@item pAmple_io
+points to the data structure that is filled in with the dictionary
+orthography changes loaded from the file.
+@end table
+@subheading Return Value
+zero if the file is successfully read into memory, otherwise nonzero
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szDictOrthoFilename_g[100];
+...
+if (szDictOrthoFilename_g[0])
+	@{
+	if (loadAmpleDictOrthoChanges(szDictOrthoFilename_g,
+								  &sAmpleData_g) != 0)
+		@{
+		/* error message? */
+		@}
+	@}
+else
+	sAmpleData_g.pDictOrthoChanges = (Change *)NULL;
+@end smallexample
+@subheading Source File
+@file{loadcc.c}
+
+@c ----------------------------------------------------------------------------
+@node loadAmpleSelectiveAnalFile, performAmpleAnalysis, loadAmpleDictOrthoChanges, Functions
+@page
+@section loadAmpleSelectiveAnalFile
+@findex loadAmpleSelectiveAnalFile
+@subheading Syntax
+@example
+#include "ample.h"
+
+int loadAmpleSelectiveAnalFile(const char * pszFilename_in,
+							   AmpleData *  pAmple_io);
+@end example
+@subheading Description
+@code{loadAmpleSelectiveAnalFile} loads an set of morphnames and
+allomorphs from a file.  If @code{loadAmpleSelectiveAnalFile} is called
+before @code{loadAmpleDictionary}, then only the selected morphemes and
+allomorphs are stored in memory.  If @code{loadAmpleSelectiveAnalFile}
+is called after @code{loadAmpleDictionary}, then the current dictionary
+entries are marked for selective analysis.
+
+The arguments to @code{loadAmpleSelectiveAnalFile} are as follows:
+@table @code
+@item pszDictOrthoFile_in
+points to the name of the AMPLE selective analysis file.
+
+@item pAmple_io
+points to the data structure that contains the current AMPLE language
+information, including the selective analysis information.
+@end table
+@subheading Return Value
+zero if the file is successfully read into memory, otherwise nonzero
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szSelectiveAnalFilename_g[100];
+...
+if (szSelectiveAnalFilename_g[0])
+	@{
+	if (loadAmpleSelectiveAnalFile(szSelectiveAnalFilename_g,
+								   &sAmpleData_g) != 0)
+		@{
+		/* error message? */
+		@}
+	@}
+else
+	sAmpleData_g.pSelectiveAnalMorphs = NULL;
+@end smallexample
+@subheading Source File
+@file{select.c}
+
+@c ----------------------------------------------------------------------------
+@node performAmpleAnalysis, removeFromAmpleDictionary, loadAmpleSelectiveAnalFile, Functions
+@page
+@section performAmpleAnalysis
+@findex performAmpleAnalysis
+@subheading Syntax
+@example
+#include "ample.h"
+
+unsigned performAmpleAnalysis(AmpleWord * pThisWord_io,
+							  AmpleWord * pPreviousWord_in,
+							  AmpleWord * pNextWord_in,
+							  AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{performAmpleAnalysis} tries to analyze the wordform(s) pointed to
+by @code{pThisWord_io->pTemplate->paWord[0..n]}.  (Please forgive the
+mixture of C and pseudoPascal in the last sentence.)  The wordforms are
+usually set by @code{readTemplateFromText} or an equivalent function.
+@ifset txt
+(See section @code{readTemplateFromText} in
+@cite{OPAC Function Library Reference Manual}.)
+@end ifset
+@ifclear txt
+(@pxref{readTemplateFromText, , readTemplateFromText, opaclib.info,
+	 OPAC Function Library Reference Manual}.)
+@end ifclear
+There is usually only one wordform, stored as
+@code{pThisWord_io->pTemplate->paWord[0]}.  Since the process of
+decapitalization may be ambiguous, a NULL-terminated array of character
+strings is used for the wordform to parse instead of simply using a
+single character string.
+
+The resulting analyses are stored in
+@code{pThisWord_io->pTemplate->pAnalyses}.  The original morpheme
+dictionary information for each analysis is stored in
+@code{pThisWord_io->pHeadlists}.  The number of analyses is stored in
+@code{pThisWord_io->uiAmbigCount} as well as being returned as the
+function value.
+
+The arguments to @code{performAmpleAnalysis} are as follows:
+@table @code
+@item pThisWord_io
+points to a data structure that contains the current wordform(s), and
+that will store the analyses of the current word.
+
+@item pPreviousWord_in
+points to a data structure that contains the wordform(s) and analyses
+of the preceding word.
+
+@item pNextWord_in
+points to a data structure that contains the wordform(s) and analyses
+of the following word.  (Knowing the analyses is inherently impossible,
+but @dots{} .)
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+the number of analyses produced (zero if analysis failed)
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+...
+AmpleWord       sThisWord;
+WordTemplate *  pWord;
+FILE *          pInputFP;
+FILE *          pOutputFP;
+char *          pszOutFilename;
+...
+initiateAmpleTrace( &sAmpleData_m );
+while ((pWord = readTemplateFromText(pInputFP,
+									 &sAmpleData_m.sTextCtl)) != NULL)
+	@{
+	sThisWord.pTemplate    = pWord;
+	sThisWord.pHeadlists   = NULL;
+	sThisWord.pszRemaining = NULL;
+	sThisWord.uiAmbigCount = 0;
+	sThisWord.bFoundRoot   = FALSE;
+	if (sThisWord.pTemplate->paWord != NULL)
+		performAmpleAnalysis(&sThisWord, NULL, NULL, &sAmpleData_m);
+	writeTemplate( pOutputFP, pszOutFilename,
+				   sThisWord_m.pTemplate, &sAmpleData_m.sTextCtl);
+	eraseAmpleWord( &sThisWord );
+	@}
+terminateAmpleTrace( &sAmpleData_m );
+...
+@end smallexample
+@subheading Source File
+@file{anal.c}
+
+@c ----------------------------------------------------------------------------
+@node removeFromAmpleDictionary, reportAmpleDictCodeTable, performAmpleAnalysis, Functions
+@page
+@section removeFromAmpleDictionary
+@findex removeFromAmpleDictionary
+@subheading Syntax
+@example
+#include "ample.h"
+
+int removeFromAmpleDictionary(char *      pszMorphName_in,
+							  unsigned    eType_in,
+							  AmpleData * pAmple_io);
+@end example
+@subheading Description
+@code{removeFromAmpleDictionary} frees the memory allocated to store a
+morpheme in the AMPLE dictionary.  This removes both the morpheme data
+structure and all associated allomorphs from the dictionary.  The
+morpheme is identified by a combination of its morphname and its
+morpheme type value.
+
+The arguments to @code{removeFromAmpleDictionary} are as follows:
+@table @code
+@item pszMorphName_in
+points to a morphname string.
+
+@item eType_in
+is one of the following values:
+@table @code
+@item AMPLE_PFX
+signals a prefix.
+@item AMPLE_IFX
+signals an infix.
+@item AMPLE_SFX
+signals a suffix.
+@item AMPLE_ROOT
+signals a root.
+@end table
+
+@item pAmple_io
+points to the data structure that contains the current AMPLE language
+information, including the dictionary.
+@end table
+@subheading Return Value
+0 if successful, 1 if an error occurs.
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szCodesFilename_g[100];
+char szDictFilename_g[100];
+...
+loadAmpleDictCodeTables(szCodesFilename_g, &sAmpleData_g, TRUE);
+...
+loadAmpleDictionary(szDictFilename_g, AMPLE_UNIFIED, &sAmpleData_g);
+...
+removeFromAmpleDictionary( "NOT", AMPLE_PFX, &sAmpleData_g );
+@end smallexample
+@subheading Source File
+@file{setsd.c}
+
+@c ----------------------------------------------------------------------------
+@node reportAmpleDictCodeTable, resetAmpleData, removeFromAmpleDictionary, Functions
+@page
+@section reportAmpleDictCodeTable
+@findex reportAmpleDictCodeTable
+@subheading Syntax
+@example
+#include "ample.h"
+
+void reportAmpleDictCodeTable(int         eType_in,
+							  AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{reportAmpleDictCodeTable} displays the size and type of the given
+AMPLE dictionary code table.
+
+The arguments to @code{reportAmpleDictCodeTable} are as follows:
+@table @code
+@item eType_in
+is one of the following values:
+@table @code
+@item AMPLE_PFX
+signals a prefix dictionary code table.
+@item AMPLE_IFX
+signals an infix dictionary code table.
+@item AMPLE_SFX
+signals a suffix dictionary code table.
+@item AMPLE_ROOT
+signals a root dictionary code table.
+@item AMPLE_UNIFIED
+signals a unified dictionary code table.  (This is the
+same as @w{@code{AMPLE_PFX | AMPLE_IFX | AMPLE_SFX | AMPLE_ROOT}}.)
+@end table
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information, including the dictionary code tables.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+
+AmpleData sAmpleData_g;
+char szCodesFilename_g[100];
+char szDictFilename_g[100];
+...
+loadAmpleDictCodeTables(szCodesFilename_g, &sAmpleData_g, FALSE);
+...
+reportAmpleDictCodeTable(AMPLE_PFX, &sAmpleData_g);
+loadAmpleDictionary(szDictFilename_g, AMPLE_PFX, &sAmpleData_g);
+@end smallexample
+@subheading Source File
+@file{loadtb.c}
+
+@c ----------------------------------------------------------------------------
+@node resetAmpleData, terminateAmpleTrace, reportAmpleDictCodeTable, Functions
+@page
+@section resetAmpleData
+@findex resetAmpleData
+@subheading Syntax
+@example
+#include "ample.h"
+
+void resetAmpleData(AmpleData * pAmple_io);
+@end example
+@subheading Description
+@code{resetAmpleData} frees the memory allocated for the AMPLE control
+data and reestablish the default values.  The data structure pointed to
+by @code{pAmple_io} is not itself freed, but any memory pointed to
+by one of its elements is freed and the pointer set to NULL.
+
+@code{resetAmpleData} has only one argument:
+@table @code
+@item pAmple_io
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+typedef char FileNameBuffer[200];
+AmpleData      sAmpleData_m;
+FileNameBuffer szAmpleControlFile_m;
+FileNameBuffer szDictCodeFile_m;
+FileNameBuffer szDictOrthoChgFile_m;
+FileNameBuffer szPrefixFile_m;
+FileNameBuffer szInfixFile_m;
+FileNameBuffer szSuffixFile_m;
+FileNameBuffer aszRootFiles_m[20];
+FileNameBuffer szTextCtlFile_m;
+int            iRootFilesCount_m;
+...
+int            i;
+...
+if (loadAmpleControlFile(szAmpleControlFile_m, &sAmpleData_m) != 0)
+	exit(1);
+if (loadAmpleDictCodeTables(szDictCodeFile_m,
+							&sAmpleData_m, FALSE) != 0)
+	exit(1);
+if (    szDictOrthoChgFile_m[0] &&
+		(loadAmpleDictOrthoChanges(szDictOrthoChgFile_m,
+								   &sAmpleData_m) != 0))
+	exit(1);
+if (    sAmpleData_m.iMaxPrefixCount &&
+		(loadAmpleDictionary(szPrefixFile_m,
+							 AMPLE_PFX, &sAmpleData_m) != 0))
+	exit(1);
+if (    sAmpleData_m.iMaxInfixCount &&
+		(loadAmpleDictionary(szInfixFile_m,
+							 AMPLE_IFX, &sAmpleData_m) != 0))
+	exit(1);
+if (    sAmpleData_m.iMaxSuffixCount &&
+		(loadAmpleDictionary(szSuffixFile_m,
+							 AMPLE_SFX, &sAmpleData_m) != 0))
+	exit(1);
+for ( i = 0 ; i < iRootFilesCount_m ; ++i )
+	@{
+	if (loadAmpleDictionary(aszRootFiles_m[i],
+							AMPLE_ROOT, &sAmpleData_m) != 0)
+		exit(1);
+	@}
+if (loadIntxCtlFile(szTextCtlFile_m, sAmpleData_m.cBeginComment,
+					&sAmpleData_m.sTextCtl) != 0)
+	exit(1);
+...
+/* process the data */
+...
+resetAmpleData( &sAmpleData_m );
+@end smallexample
+@subheading Source File
+@file{analda.c}
+
+@c ----------------------------------------------------------------------------
+@node terminateAmpleTrace, updateAmpleDictEntry, resetAmpleData, Functions
+@page
+@section terminateAmpleTrace
+@findex terminateAmpleTrace
+@subheading Syntax
+@example
+#include "ample.h"
+
+void terminateAmpleTrace(const AmpleData * pAmple_in);
+@end example
+@subheading Description
+@code{terminateAmpleTrace} writes the AMPLE trace end marker to the log
+file.  If @code{pAmple_in->pLogFP} is @code{NULL}, then nothing happens.
+If tracing output is wanted, then this function should be called after
+all of the words have been analyzed.
+
+@code{terminateAmpleTrace} has only one argument:
+@table @code
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+...
+AmpleWord       sThisWord;
+WordTemplate *  pWord;
+FILE *          pInputFP;
+FILE *          pOutputFP;
+char *          pszOutFilename;
+...
+initiateAmpleTrace( &sAmpleData_m );
+while ((pWord = readTemplateFromText(pInputFP,
+									 &sAmpleData_m.sTextCtl)) != NULL)
+	@{
+	sThisWord.pTemplate    = pWord;
+	sThisWord.pHeadlists   = NULL;
+	sThisWord.pszRemaining = NULL;
+	sThisWord.uiAmbigCount = 0;
+	sThisWord.bFoundRoot   = FALSE;
+	if (sThisWord.pTemplate->paWord != NULL)
+		performAmpleAnalysis(&sThisWord, NULL, NULL, &sAmpleData_m);
+	writeTemplate( pOutputFP, pszOutFilename,
+				   sThisWord_m.pTemplate, &sAmpleData_m.sTextCtl);
+	eraseAmpleWord( &sThisWord );
+	@}
+terminateAmpleTrace( &sAmpleData_m );
+...
+@end smallexample
+@subheading Source File
+@file{anal.c}
+
+@c ----------------------------------------------------------------------------
+@node updateAmpleDictEntry, writeAmpleDictionary, terminateAmpleTrace, Functions
+@page
+@section updateAmpleDictEntry
+@findex updateAmpleDictEntry
+@subheading Syntax
+@example
+#include "ample.h"
+
+int updateAmpleDictEntry(const char * pszEntry_in,
+						 AmpleData *  pAmple_io);
+@end example
+@subheading Description
+@code{updateAmpleDictEntry} adds this entry to the internal AMPLE
+dictionary, first deleting any existing entry with the same morphname
+and type.  If the dictionary codes for a unified dictionary do not
+exist, the entry is assumed to use @dfn{AmpleLinks Canonical Format}
+standard format markers.  These markers would look like this in an
+AMPLE dictionary codes table file:
+@example
+\unified  \lx
+\ch "\\a"         "A"       | allomorph
+\ch "\\c"         "C"       | category
+\ch "\\e"         "E"       | "elsewhere" allomorph
+\ch "\\fd"        "F"       | feature descriptors
+\ch "\\g"         "G"       | gloss (used in analysis output)
+\ch "\\loc"       "L"       | infix location
+\ch "\\mn"        "M"       | morphname
+\ch "\\o"         "O"       | order class
+\ch "\\mp"        "P"       | morpheme properties
+\ch "\\entryType" "T"       | dictionary entry type
+\ch "\\uf"        "U"       | underlying form
+\ch "\\mcc"       "Z"       | morpheme co-occurrence constraint
+\ch "\\no"        "!"       | don't load
+\ch "\\lx"        "#"       | lexicon entry number (not stored)
+@end example
+
+The arguments to @code{updateAmpleDictEntry} are as follows:
+@table @code
+@item pszEntry_in
+points to a dictionary entry encoded as a @code{NUL}-terminated
+standard format record character string.
+
+@item pAmple_io
+points to the data structure that contains the current AMPLE language
+information, including the dictionary.
+@end table
+@subheading Return Value
+0 if an error occurs, 1 if an existing morpheme is replaced, or 2 if
+this is a new entry
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+static char szEntry_m[512];
+...
+int iStatus;
+...
+strncpy(szEntry_m, "\\lx update\n",      512);
+strncat(szEntry_m, "\\entryType root\n", 512);
+strncat(szEntry_m, "\\mn morph\n",       512);
+strncat(szEntry_m, "\\a  morph\n",       512);
+strncat(szEntry_m, "\\c  N\n",           512);
+strncat(szEntry_m, "\\uf morph\n",       512);
+iStatus = updateAmpleDictEntry(szEntry_m, &sAmpleData_m);
+if (iStatus == 0)
+	printf("Error while trying to update this entry:\n%s\n",
+		   szEntry_m);
+@end smallexample
+@subheading Source File
+@file{setsd.c}
+
+@c ----------------------------------------------------------------------------
+@node writeAmpleDictionary, writeAmpleTests, updateAmpleDictEntry, Functions
+@page
+@section writeAmpleDictionary
+@findex writeAmpleDictionary
+@subheading Syntax
+@example
+#include "ample.h"
+
+void writeAmpleDictionary(const char * pszFilename_in,
+						  AmpleData *  pAmple_in);
+@end example
+@subheading Description
+@code{writeAmpleDictionary} writes the dictionary stored in memory to
+the given file using the @dfn{AmpleLinks Canonical Format} standard
+format markers.  These markers would look like this in an AMPLE
+dictionary codes table file:
+@example
+\unified  \lx
+\ch "\\a"         "A"       | allomorph
+\ch "\\c"         "C"       | category
+\ch "\\e"         "E"       | "elsewhere" allomorph
+\ch "\\fd"        "F"       | feature descriptors
+\ch "\\g"         "G"       | gloss (used in analysis output)
+\ch "\\loc"       "L"       | infix location
+\ch "\\mn"        "M"       | morphname
+\ch "\\o"         "O"       | order class
+\ch "\\mp"        "P"       | morpheme properties
+\ch "\\entryType" "T"       | dictionary entry type
+\ch "\\uf"        "U"       | underlying form
+\ch "\\mcc"       "Z"       | morpheme co-occurrence constraint
+\ch "\\no"        "!"       | don't load
+\ch "\\lx"        "#"       | lexicon entry number
+@end example
+
+The arguments to @code{writeAmpleDictionary} are as follows:
+@table @code
+@item pszFilename_in
+points to an output dictionary filename.
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information, including the dictionary.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+...
+if (sAmpleData_m.iDebugLevel != 0)
+	writeAmpleDictionary("test.dic", &sAmpleData_m);
+@end smallexample
+@subheading Source File
+@file{putsd.c}
+
+@c ----------------------------------------------------------------------------
+@node writeAmpleTests, , writeAmpleDictionary, Functions
+@page
+@section writeAmpleTests
+@findex writeAmpleTests
+@subheading Syntax
+@example
+#include "ample.h"
+
+void writeAmpleTests(const char * pszType_in,
+					 AmpleData *  pAmple_in);
+@end example
+@subheading Description
+@code{writeAmpleTests} writes a list of tests to the log file in the
+order that they will be applied.  User defined tests are expanded to
+show the internal parse trees; built-in tests are given by name.
+
+The arguments to @code{writeAmpleTests} are as follows:
+@table @code
+@item pszType_in
+points to a string describing the type of tests to write to the log
+file.  It must be one of the following:
+@itemize @bullet
+@item @code{"Prefix"}
+@item @code{"Infix"}
+@item @code{"Root"}
+@item @code{"Suffix"}
+@item @code{"Final"}
+@end itemize
+
+@item pAmple_in
+points to the data structure that contains the current AMPLE language
+information, including the tests.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "ample.h"
+...
+static AmpleData        sAmpleData_m;
+static int              bVerify_m;
+...
+char *  pszFilename;
+...
+if (loadAmpleControlFile(pszFilename, &sAmpleData_m) != 0)
+	@{
+	...
+	exit(1);
+	@}
+if (bVerify_m)
+	@{
+	writeAmpleTests("Prefix", &sAmpleData_m);
+	writeAmpleTests("Infix",  &sAmpleData_m);
+	writeAmpleTests("Root",   &sAmpleData_m);
+	writeAmpleTests("Suffix", &sAmpleData_m);
+	writeAmpleTests("Final",  &sAmpleData_m);
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{writests.c}
+
+@c ----------------------------------------------------------------------------
+@node Bibliography, Index, Functions, Top
+@unnumbered Bibliography
+
+@enumerate
+
+@item
+McConnel, Stephen. 2000.
+@cite{AMPLE Reference Manual}.
+SIL International.
+
+@item
+McConnel, Stephen. 2000.
+@cite{OPAC Function Library Reference Manual}.
+SIL International.
+
+@item
+Weber, David J., H. Andrew Black, and Stephen R. McConnel. 1988.
+@cite{AMPLE: a tool for exploring morphology}.
+Occasional Publications in Academic Computing No.@: 12.
+Dallas, TX: Summer Institute of Linguistics.
+
+@item
+Weber, David J., H. Andrew Black, Stephen R. McConnel, and Alan Buseman. 1990.
+@cite{STAMP: a tool for dialect adaptation}.
+Occasional Publications in Academic Computing No.@: 15.
+Dallas, TX: Summer Institute of Linguistics.
+
+@end enumerate
+
+@c ----------------------------------------------------------------------------
+@node Index, , Bibliography, Top
+@unnumbered Index
+
+@printindex fn
+
+@c ----------------------------------------------------------------------------
+@contents
+@bye

@@ -1,0 +1,145 @@
+# Master Unix makefile for the KTEXT program
+# Steve McConnel, 24-Apr-2000
+
+@SET_MAKE@
+srcdir      = @srcdir@
+VPATH       = @srcdir@
+CC          = @CC@
+CFLAGS      = @ANSIFLAGS@ @CFLAGS@ @DEFS@ -I. -I.. -I../include
+RANLIB      = @RANLIB@
+INSTALL     = @INSTALL@
+COPY        = @COPYPROG@
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+
+.SUFFIXES: .op
+.c.op:
+	$(CC) $(CFLAGS) -pg -c -o $@ $<
+
+@make_shell@ = /bin/sh
+BINDIR = $(exec_prefix)/bin
+
+SOURCES = ktext.c version.h
+DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
+			Ktext.dsp
+TESTFILES = check.bat
+ENGFILES = eng.ctl eng.txt eng.aaa enga.lll eng.sss engs.lll engintx.ctl \
+		   test.bat mac-eng.ctl
+#
+#  KTEXT program
+#
+OBJ =ktext.o
+LIBS=../lib/libkimmo.a ../lib/libpatr.a ../lib/libcmd.a \
+	 ../lib/libopac.a ../lib/libcport.a
+
+ktext: $(OBJ) $(LIBS)
+	$(CC) -o ktext $(OBJ) $(LIBS) @LIBS@
+#
+#  KTEXT program compiled for profiling
+#
+OBJP =ktext.op
+LIBSP=../lib/libkimmo_p.a ../lib/libpatr_p.a ../lib/libcmd_p.a \
+	  ../lib/libopac_p.a ../lib/libcport_p.a
+
+ktext_p: $(OBJP) $(LIBSP)
+	$(CC) -pg -o ktext_p $(OBJP) $(LIBSP) @LIBS@
+#
+#  sources unique to KTEXT
+#
+ktext.o   ktext.op  : ktext.c version.h ../include/kimmo.h ../include/patr.h
+
+#############################################################################
+
+libs profile_libs: installdirs
+
+installdirs:
+	@if [ ! -d $(BINDIR) ];  then mkdir $(BINDIR);  fi
+	@if [ ! -d ../lib ];     then mkdir ../lib;     fi
+	@if [ ! -d ../include ]; then mkdir ../include; fi
+
+all: libs ktext
+
+profile: profile_libs ktext_p
+
+install: all
+	$(INSTALL) -s ktext $(BINDIR)
+
+uninstall:
+	rm -f $(BINDIR)/ktext
+
+check: ktext
+	@(Prev=none; \
+	cd test/eng; rm -f eng.dif; \
+	../../ktext -x eng.ctl -i eng.txt -o eng.ana -l enga.log 2>/dev/null; \
+	if (cmp eng.ana eng.aaa); then \
+		rm -f eng.ana enga.log; \
+		if [ "$$Prev"  = "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n ktext passed test/eng; fi; \
+		Prev=good; \
+	else \
+		diff -c eng.aaa eng.ana >>eng.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' ktext failed test/eng; fi; \
+		Prev=bad; \
+	fi; \
+	echo -n ' 'analysis; \
+	../../ktext -s -x eng.ctl -i eng.aaa -o eng.syn -l engs.log 2>/dev/null; \
+	if (cmp eng.syn eng.sss); then \
+		rm -f eng.syn enga.log; \
+		if [ "$$Prev"  = "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n ktext passed test/eng; fi; \
+		Prev=good; \
+	else \
+		diff -c eng.sss eng.syn >>eng.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' ktext failed test/eng; fi; \
+		Prev=bad; \
+	fi; \
+	echo -n ' 'synthesis; \
+	if [ "$Prev" != "none" ]; then echo ; fi; \
+	Prev=none; \
+	cd ../..; \
+	)
+
+mostlyclean:
+	rm -f *.o *.op *~
+
+clean: mostlyclean
+
+distclean: clean
+	rm -f ktext ktext_p Makefile TAGS
+
+maintainer-clean: distclean
+
+TAGS: $(SOURCES)
+	etags $(SOURCES)
+
+doc dvi html info:
+	(cd ../doc; $(MAKE) ktext$@)
+
+dist: $(DISTFILES)
+	for file in $(DISTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+
+testdist:
+	mkdir $(distdir)/test
+	for file in $(TESTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+	mkdir $(distdir)/test/eng
+	for f in $(ENGFILES); do \
+		if [ -f test/eng/$$f ]; then \
+		ln test/eng/$$f $(distdir)/test/eng || \
+		  { echo copying test/eng/$$f instead; \
+			$(COPY) test/eng/$$f $(distdir)/test/eng; }; \
+		fi; \
+	done
+
+############################################################################
+
+.PHONY: all check clean dist distclean doc dvi html info install \
+		libs maintainer-clean mostlyclean profile profile_libs testdist \
+		uninstall installdirs

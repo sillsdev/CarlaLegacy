@@ -1,0 +1,134 @@
+@c this file should be @include d by another -*- texinfo -*- file
+@c following a node `Dictionary files' and a chapter title.
+@c
+@c This material is adapted from section 10.2 of
+@c     Weber, David J., H. Andrew Black, and Stephen R. McConnel.
+@c     AMPLE: a tool for exploring morphology.
+@c     Occasional Publications in Academic Computing No. 12.
+@c     Dallas, TX: Summer Institute of Linguistics. 1988.
+@c and section 7.1 of
+@c     Weber, David J., H. Andrew Black, Stephen R. McConnel, and Alan Buseman.
+@c     STAMP: a tool for dialect adaptation.
+@c     Occasional Publications in Academic Computing No. 15.
+@c     Dallas, TX: Summer Institute of Linguistics. 1990.
+@c
+@c this file is conditionalized by
+@c	@set ample
+@c	@set stamp
+@c
+@set dictochg
+@ifclear endash
+@iftex
+@ifset html
+@set endash -
+@end ifset
+@ifclear html
+@set endash --
+@end ifclear
+@end iftex
+@ifinfo
+@set endash -
+@end ifinfo
+@end ifclear
+@c
+@ifclear commentchar
+@ifset ample
+@set commentchar |
+@set ProgName AMPLE
+@end ifset
+@ifset stamp
+@set commentchar |
+@set ProgName STAMP
+@end ifset
+@end ifclear
+@ifclear commentchar
+@set commentchar ;
+@end ifclear
+@ifclear ProgName
+@set ProgName UNKNOWN_PROGRAM
+@end ifclear
+@cindex dictionary orthography change table
+
+The
+@ifset ample
+third
+@end ifset
+@ifset stamp
+fifth
+@end ifset
+control file read by @value{ProgName}, and the
+@ifset ample
+first
+@end ifset
+@ifset stamp
+third
+@end ifset
+optional one,
+contains the dictionary orthography change table.  This table maps the
+allomorph strings in the dictionary files into the internal
+orthographic representation.  When the text and internal orthographies
+differ, it may be desirable to have the allomorphs in the dictionaries
+stored in the same orthography as the texts, or it may be desirable to
+have them in the internal form, or it might even be desirable to have
+them in a third form.  @value{ProgName} allows for any of these choices.
+
+The dictionary orthography change table is defined by a special
+standard format file.  This file contains a single record with two
+types of fields, either of which may appear any number of times.  The
+rest of this chapter describes these fields, focusing on the syntax of
+the orthography changes.
+
+@menu
+* \ch (xxORDC.TAB)::        Dictionary orthography change
+* \scl (xxORDC.TAB)::       String class
+@end menu
+
+@node \ch (xxORDC.TAB), \scl (xxORDC.TAB), Dictionary orthography change table file, Dictionary orthography change table file
+@section Dictionary Orthography Change: \ch
+@findex \ch
+
+An orthography change is defined by the @code{\ch} field code followed
+by the actual orthography change.  Any number of orthography changes
+may be defined in the dictionary orthography change table.  The output
+of each change serves as the input the following change.  That is, each
+change is applied as many times as necessary to a dictionary allomorph
+before the next change from the dictionary orthography change table is
+applied.
+@ifset txt
+See `Text Orthography Change: \ch' below
+@end ifset
+@ifclear txt
+@xref{\ch},
+@end ifclear
+for the syntax of orthography changes.
+
+@node \scl (xxORDC.TAB), , \ch (xxORDC.TAB), Dictionary orthography change table file
+@section String class: \scl
+@findex \scl
+
+A string class is defined by the @code{\scl} field code followed by the
+class name, which is followed in turn by one or more contiguous
+character strings or (previously defined) string class names.  A string
+class name used as part of the class definition must be enclosed in
+square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The actual character strings have no such
+restrictions.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each @code{\scl} field defines a single string class.  Any number of
+@code{\scl} fields may appear in the file.  The only restriction is
+that a string class must be defined before it is used.
+
+If no @code{\scl} fields appear in the dictionary orthography changes
+file, then @value{ProgName} does not allow any string classes in dictionary
+orthography change environment constraints unless they are defined in
+@ifset ample
+the analysis data file.
+@end ifset
+@ifset stamp
+the STAMP declarations file, the transfer control file, or the synthesis
+control file.
+@end ifset

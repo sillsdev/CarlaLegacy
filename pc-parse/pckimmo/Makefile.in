@@ -1,0 +1,214 @@
+# Master Unix makefile for the PC-KIMMO library and programs
+# Steve McConnel, 24-Apr-2000
+
+@SET_MAKE@
+srcdir      = @srcdir@
+VPATH       = @srcdir@
+CC          = @CC@
+CFLAGS      = @ANSIFLAGS@ @CFLAGS@ @DEFS@ -I. -I.. -I../include
+RANLIB      = @RANLIB@
+INSTALL     = @INSTALL@
+COPY        = @COPYPROG@
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+
+.SUFFIXES: .op
+.c.op:
+	$(CC) $(CFLAGS) -pg -c -o $@ $<
+
+@make_shell@ = /bin/sh
+BINDIR = $(exec_prefix)/bin
+
+SOURCES = convlex.c  generate.c lexicon.c  pckfuncs.c pckimmo.c  pckimmo2.c \
+		  pckimmo3.c recogniz.c rules.c    synthesi.c kimmdata.c \
+		  kimmo.h    kimmodef.h version.h  pckimmo.h
+
+DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
+			g.c r.c s.c Kimmolib.dsp Pckimmo.dsp
+TESTFILES = check.bat
+ENGFILES = README abbrev.lex adjectiv.lex adverb.lex affix.lex eng.ggg \
+		   eng.rrr eng.sss eng.tak englex.tak english.fg english.fr \
+		   english.fs english.gen english.grm english.lex english.pai \
+		   english.rec english.rul english.syn english2.grm english2.lex \
+		   foreign.lex minor.lex natural.lex noun.lex proper.lex \
+		   technica.lex test.bat verb.lex
+#
+#  PC-Kimmo program and function library
+#
+OBJ  = pckimmo.o  pckimmo2.o pckimmo3.o
+LIBO = lexicon.o  rules.o    generate.o recogniz.o synthesi.o pckfuncs.o \
+	   kimmdata.o
+LIBS = libkimmo.a ../lib/libpatr.a ../lib/libcmd.a \
+	   ../lib/libopac.a ../lib/libcport.a
+
+pckimmo: $(OBJ) $(LIBS)
+	$(CC) -o pckimmo $(OBJ) $(LIBS) @LIBS@
+
+libkimmo.a: $(LIBO)
+	rm -f libkimmo.a
+	ar rc libkimmo.a $(LIBO)
+	$(RANLIB) libkimmo.a
+#
+#  PC-Kimmo program and function library compiled for profiling
+#
+OBJP =pckimmo.op  pckimmo2.op pckimmo3.op
+LIBOP=lexicon.op  rules.op    generate.op recogniz.op synthesi.op pckfuncs.op \
+	  kimmdata.op
+LIBSP=libkimmo_p.a ../lib/libpatr_p.a ../lib/libcmd_p.a \
+	  ../lib/libopac_p.a ../lib/libcport_p.a
+
+pckimmo_p: $(OBJP) $(LIBSP)
+	$(CC) -pg -o pckimmo_p $(OBJP) $(LIBSP) @LIBS@
+
+libkimmo_p.a: $(LIBOP)
+	rm -f libkimmo_p.a
+	ar rc libkimmo_p.a $(LIBOP)
+	$(RANLIB) libkimmo_p.a
+#
+# sources unique to PC-KIMMO (user interface code)
+#
+pckimmo.o  pckimmo.op : pckimmo.c  kimmo.h ../include/patr.h pckimmo.h
+pckimmo2.o pckimmo2.op: pckimmo2.c kimmo.h ../include/patr.h pckimmo.h
+pckimmo3.o pckimmo3.op: pckimmo3.c kimmo.h ../include/patr.h pckimmo.h
+#
+# sources shared as a library
+#
+generate.o generate.op: generate.c kimmo.h kimmodef.h
+lexicon.o  lexicon.op : lexicon.c  kimmo.h kimmodef.h ../include/patr.h
+pckfuncs.o pckfuncs.op: pckfuncs.c kimmo.h kimmodef.h ../include/patr.h
+recogniz.o recogniz.op: recogniz.c kimmo.h kimmodef.h ../include/patr.h
+rules.o    rules.op   : rules.c    kimmo.h kimmodef.h ../include/patr.h
+synthesi.o synthesi.op: synthesi.c kimmo.h kimmodef.h ../include/patr.h
+kimmdata.o kimmdata.op: kimmdata.c $(SOURCES)
+#
+#  ConvLex program
+#
+convlex: convlex.o
+	$(CC) -o convlex convlex.o
+#
+#  ConvLex program for profiling
+#
+convlex_p: convlex.op
+	$(CC) -pg -o convlex_p convlex.op
+#
+# sources unique to ConvLex
+#
+convlex.o  convlex.op : convlex.c
+
+#############################################################################
+
+libs: installdirs ../lib/libkimmo.a ../include/kimmo.h
+
+profile_libs: installdirs ../lib/libkimmo_p.a ../include/kimmo.h
+
+installdirs:
+	@if [ ! -d $(BINDIR) ];  then mkdir $(BINDIR);  fi
+	@if [ ! -d ../lib ];     then mkdir ../lib;     fi
+	@if [ ! -d ../include ]; then mkdir ../include; fi
+
+../lib/libkimmo.a: libkimmo.a
+	$(INSTALL) -m 644 -c libkimmo.a ../lib
+	$(RANLIB) ../lib/libkimmo.a
+../lib/libkimmo_p.a: libkimmo_p.a
+	$(INSTALL) -m 644 -c libkimmo_p.a ../lib
+	$(RANLIB) ../lib/libkimmo_p.a
+../include/kimmo.h: kimmo.h
+	$(COPY) kimmo.h ../include
+
+all: libs pckimmo convlex
+
+profile: profile_libs pckimmo_p convlex_p
+
+install: all
+	$(INSTALL) -s pckimmo convlex $(BINDIR)
+
+uninstall:
+	rm -f $(BINDIR)/pckimmo $(BINDIR)/convlex
+
+check: pckimmo
+	@(Prev=none; \
+	cd test/eng; rm -f eng.dif; \
+	../../pckimmo -t eng.tak 2>/dev/null; \
+	if cmp eng.rec eng.rrr; then \
+		rm -f eng.rec; \
+		if [ "$$Prev" =  "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n PC-Kimmo passed test/eng; fi; \
+		Prev=good; \
+	else \
+		diff -c eng.rec eng.rrr >>eng.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' PC-Kimmo failed test/eng; fi; \
+		Prev=bad; \
+	fi; \
+	echo -n ' 'recognize; \
+	if cmp eng.gen eng.ggg; then \
+		rm -f eng.gen; \
+		if [ "$$Prev" =  "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n PC-Kimmo passed test/eng; fi; \
+		Prev=good; \
+	else \
+		diff -c eng.gen eng.ggg >>eng.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' PC-Kimmo failed test/eng; fi; \
+		Prev=bad; \
+	fi; \
+	echo -n ' 'generate; \
+	if cmp eng.syn eng.sss; then \
+		rm -f eng.syn; \
+		if [ "$$Prev" =  "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n PC-Kimmo passed test/eng; fi; \
+		Prev=good; \
+	else \
+		diff -c eng.syn eng.sss >>eng.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' PC-Kimmo failed test/eng; fi; \
+		Prev=bad; \
+	fi; \
+	echo -n ' 'synthesize; \
+	if [ "$Prev" != "none" ]; then echo ; fi; \
+	Prev=none; \
+	cd ../..; \
+	)
+
+mostlyclean:
+	rm -f *.o *.op *~
+
+clean: mostlyclean
+	rm -f lib*.a
+
+distclean: clean
+	rm -f pckimmo convlex pckimmo_p convlex_p Makefile TAGS
+	rm -f ../lib/libkimmo.a ../lib/libkimmo_p.a ../include/kimmo.h
+
+maintainer-clean: distclean
+
+TAGS: $(SOURCES)
+	etags $(SOURCES)
+
+doc dvi html info:
+	(cd ../doc; $(MAKE) kimmo$@)
+
+dist: $(DISTFILES)
+	for file in $(DISTFILES); do \
+		ln $$file $(distdir) || \
+		{ echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+
+testdist:
+	mkdir $(distdir)/test
+	for file in $(TESTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+	mkdir $(distdir)/test/eng
+	for f in $(ENGFILES); do \
+		ln test/eng/$$f $(distdir)/test/eng || \
+		{ echo copying test/eng/$$f instead; \
+		  $(COPY) test/eng/$$f $(distdir)/test/eng; }; \
+	done
+
+############################################################################
+
+.PHONY: all check clean dist distclean doc dvi html info install \
+		libs maintainer-clean mostlyclean profile profile_libs testdist \
+		uninstall installdirs

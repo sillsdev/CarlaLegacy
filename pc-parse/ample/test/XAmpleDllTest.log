@@ -1,0 +1,2330 @@
+AMPLE Message:
+	SUFFIX DICTIONARY: Loading test/hg/hgsf01.dic
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loaded 116 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/hg/hgrt01.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 43 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/hg/hgrtbn.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 7 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/hg/hgrtnr.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 28 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/hg/hgrtsp.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 8 records
+
+XAMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+	AMPLE with experimental enhancement: PC-PATR word grammar
+Experimental version compiled Apr 11 2001 14:02:52
+
+Analysis Performed Wed Apr 11 14:18:04 2001
+
+Input  file: test/hg/hgtest.txt
+Output file: test/hg/hgtest.ana
+AMPLE Message:
+
+INPUT: 78 words processed.
+
+
+ANALYSIS STATISTICS:   78 words processed.
+   Ambiguity Levels:
+					   70 words with  1 analysis.
+						6 words with  2 analyses.
+						2 words with  3 analyses.
+   Root Tests:
+				  SEC_ST called   170 times, rejected 0.
+				  PEC_ST called   170 times, rejected 0.
+   Suffix Tests:
+			 CATEGORY_ST called  2356 times, rejected 1504.
+				ORDER_ST called   852 times, rejected 120.
+		  FORESHORTEN_ST called   732 times, rejected 0.
+			  MLOWERS_ST called   732 times, rejected 0.
+				  SEC_ST called   732 times, rejected 10.
+				  PEC_ST called   722 times, rejected 0.
+				ADHOC_ST called   722 times, rejected 24.
+   Final Tests:
+			 CATEGORY_FT called   278 times, rejected 36.
+			 MLOWERED_FT called   242 times, rejected 36.
+				ORDER_FT called   206 times, rejected 0.
+				  MEC_FT called   206 times, rejected 0.
+				  MCC_FT called   206 times, rejected 10.
+
+
+AmpleParseText()
+Input =
+allchakaachimanqa
+Output =
+<AResult>
+
+<parse id=allchakaachimanqa>
+
+<analysis cat="?">
+
+<morph id=*allcha allo=#allcha# type="r">
+
+<morph id=PASS allo=#ka:# type="s">
+
+<morph id=CAUS allo=#chi# type="s">
+
+<morph id=1O allo=#ma# type="s">
+
+<morph id=3FUT allo=#nqa# type="s">
+
+</analysis>
+
+</parse>
+
+</AResult>
+
+
+End of AmpleParseText()
+AMPLE Message:
+	PREFIX DICTIONARY: Loading test/tepehua/Ttpf.dic
+
+AMPLE Message:
+	PREFIX DICTIONARY: Loaded 48 records
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loading test/tepehua/Ttsf.dic
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loaded 37 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/tepehua/Ttrt.dic
+
+ROOT DICTIONARY: Morphname  otro.mucho.tiempo too long in entry: †amaqan
+ROOT DICTIONARY: Morphname  tener.relaciones too long in entry: †aq©†apa
+ROOT DICTIONARY: Morphname  cubrir.en.tierra too long in entry: †aqputama
+ROOT DICTIONARY: Morphname  perder.paciencia too long in entry: †aqšahu
+ROOT DICTIONARY: Morphname  hacer.perder.paciencia too long in entry: †aqšaway
+ROOT DICTIONARY: Morphname  seguir.creciendo too long in entry: †ayn†an
+ROOT DICTIONARY: Morphname  quitar.trochando too long in entry: ©aqšp†uš
+ROOT DICTIONARY: Morphname  beber.a.lenguetadas too long in entry: ©u©†u†i
+ROOT DICTIONARY: Morphname  entrecerrando.ojos too long in entry: ©uy
+ROOT DICTIONARY: Morphname  tocar.para.hacer too long in entry: ©†a†ini
+ROOT DICTIONARY: Morphname  quitarle.palabras too long in entry: kiklaha
+ROOT DICTIONARY: Morphname  lleno.completamente too long in entry: k†alan
+ROOT DICTIONARY: Morphname  gastarse.superficie too long in entry: lakapu†an
+ROOT DICTIONARY: Morphname  comer.picoteando too long in entry: lakasakwahin
+ROOT DICTIONARY: Morphname  da.de.comer.masticando too long in entry: lakcak†awa
+ROOT DICTIONARY: Morphname  echar.para.afuera too long in entry: lakškawštu
+ROOT DICTIONARY: Morphname  ver.por.abertura too long in entry: lakštu
+ROOT DICTIONARY: Morphname  lodo.para.embarrar too long in entry: la£t†aman
+ROOT DICTIONARY: Morphname  lugar.de.muertos too long in entry: laqnin
+ROOT DICTIONARY: Morphname  afectar.de.adentro too long in entry: laqtanu
+ROOT DICTIONARY: Morphname  ejemplo,tomar.como too long in entry: laqc†i†i
+ROOT DICTIONARY: Morphname  ordenar.que.venga too long in entry: £hihunta†i
+ROOT DICTIONARY: Morphname  musical.instrumento too long in entry: £isan
+ROOT DICTIONARY: Morphname  vivir.en.circunstancias.de too long in entry: £i†ukšuntaya
+ROOT DICTIONARY: Morphname  señalar.con.mano too long in entry: mahkun
+ROOT DICTIONARY: Morphname  sentir.en.espalda too long in entry: makatawk†a
+ROOT DICTIONARY: Morphname  consolar.por.pérdida too long in entry: malawahu
+ROOT DICTIONARY: Morphname  hacer.avergonzar too long in entry: mamašani
+ROOT DICTIONARY: Morphname  poner.dentro.fuera too long in entry: mapulaqštu†ula
+ROOT DICTIONARY: Morphname  calentarse.en.sol too long in entry: maqc†ansqonoqnun
+ROOT DICTIONARY: Morphname  olor.de.carne.roja too long in entry: moq
+ROOT DICTIONARY: Morphname  olvidado.acostado too long in entry: mukuma£
+ROOT DICTIONARY: Morphname  olvidado.sentado too long in entry: mukuwi£
+ROOT DICTIONARY: Morphname  cargar.con.mecapal too long in entry: musla
+ROOT DICTIONARY: Morphname  corretear.con.vara too long in entry: naqyahu
+ROOT DICTIONARY: Morphname  chupar.por.popote too long in entry: nunoq†i
+ROOT DICTIONARY: Morphname  levantar.pararse too long in entry: †ostaya
+ROOT DICTIONARY: Morphname  apachurrar.encima too long in entry: paseqayma
+ROOT DICTIONARY: Morphname  acostado.en.lado too long in entry: pato†ama
+ROOT DICTIONARY: Morphname  parado.lado.a.lado too long in entry: pato†aya
+ROOT DICTIONARY: Morphname  encontrar.difícil too long in entry: paštoqtaya
+ROOT DICTIONARY: Morphname  caer.por.todos.lados too long in entry: putawk†atama
+ROOT DICTIONARY: Morphname  separar.en.grupos too long in entry: putili
+ROOT DICTIONARY: Morphname  quitar.de.arriba too long in entry: p†uš
+ROOT DICTIONARY: Morphname  lleno.a.reventar too long in entry: qasah
+ROOT DICTIONARY: Morphname  tullido.en.peirna too long in entry: qayn£k†awi£
+ROOT DICTIONARY: Morphname  empujar.a.lumbre too long in entry: sap†u
+ROOT DICTIONARY: Morphname  arrastrar.soplando too long in entry: sumah†an
+ROOT DICTIONARY: Morphname  estar.adentro.vert too long in entry: tahun
+ROOT DICTIONARY: Morphname  salir.por.arriba too long in entry: tak†ut
+ROOT DICTIONARY: Morphname  acostar.extendida too long in entry: talaka£nuh
+ROOT DICTIONARY: Morphname  caerse.boca.abajo too long in entry: talakaputa
+ROOT DICTIONARY: Morphname  hacerse.chiquito too long in entry: talakat†uni
+ROOT DICTIONARY: Morphname  entumecido.de.piernas too long in entry: talaknin
+ROOT DICTIONARY: Morphname  cicatriz.en.mano too long in entry: tamaq£†elili
+ROOT DICTIONARY: Morphname  primavera.merulín too long in entry: tantoqtoq
+ROOT DICTIONARY: Morphname  estar.adentro.horiz too long in entry: tanun
+ROOT DICTIONARY: Morphname  ponerse.al.revés too long in entry: tapulaqštu
+ROOT DICTIONARY: Morphname  cargar.en.espalda too long in entry: tik†uk†a
+ROOT DICTIONARY: Morphname  CONT.portarse.EST too long in entry: ti†ukšunya£
+ROOT DICTIONARY: Morphname  parado.de.puntillas too long in entry: toqstaya£
+ROOT DICTIONARY: Morphname  acostarse.en.medio too long in entry: t†a†anhma£
+ROOT DICTIONARY: Morphname  pararse.en.medio too long in entry: t†a†anhya£
+ROOT DICTIONARY: Morphname  escribir.en.algo.parado too long in entry: coqmuk†a
+ROOT DICTIONARY: Morphname  poner.en.superficie too long in entry: †ukšmuk†a
+ROOT DICTIONARY: Morphname  friccionar.superficie too long in entry: †ukšpušapa
+ROOT DICTIONARY: Morphname  su.hermano.mayor too long in entry: xahaya
+ROOT DICTIONARY: Morphname  bañarse.en.temescal too long in entry: šaqan
+ROOT DICTIONARY: Morphname  con.manos.extendidas.arriba too long in entry: šaqaqaq
+ROOT DICTIONARY: Morphname  sacar.arrastrando too long in entry: šaqaštu
+ROOT DICTIONARY: Morphname  llevar.perseguir too long in entry: škaw£a†an
+ROOT DICTIONARY: Morphname  enrollar.adentro too long in entry: šmi£nu
+ROOT DICTIONARY: Morphname  moviendo.un.lado.a.otro too long in entry: šnek†at
+ROOT DICTIONARY: Morphname  sonido.de.desliz too long in entry: špupun
+ROOT DICTIONARY: Morphname  colgar.con.clavo too long in entry: štukmuk†a
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 1874 records
+
+XAMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+	AMPLE with experimental enhancement: PC-PATR word grammar
+Experimental version compiled Apr 11 2001 14:02:52
+
+Analysis Performed Wed Apr 11 14:18:04 2001
+
+Input  file: test/tepehua/Ephtst.txt
+Output file: test/tepehua/Ephtst.ana
+AMPLE Message:
+
+INPUT: 32 words processed.
+
+
+ANALYSIS STATISTICS:   32 words processed.
+   Ambiguity Levels:
+					   28 words with  1 analysis.
+						3 words with  2 analyses.
+						1 word  with  3 analyses.
+   Prefix Tests:
+	  PREFIX_CATEGORY_ST called   461 times, rejected 243.
+		 PREFIX_ORDER_ST called   218 times, rejected 85.
+			Q_HARMONY_ST called   133 times, rejected 0.
+				  SEC_ST called   254 times, rejected 11.
+				  PEC_ST called   243 times, rejected 0.
+   Root Tests:
+		   Q_DELETION_ST called   673 times, rejected 12.
+				  SEC_ST called   692 times, rejected 0.
+				  PEC_ST called   692 times, rejected 0.
+				ROOTS_ST called   661 times, rejected 250.
+   Suffix Tests:
+		  N_DELETEION_ST called 21809 times, rejected 4138.
+		 SUFFIX_ORDER_ST called 17671 times, rejected 7246.
+		   Q_DELETION_ST called 10425 times, rejected 185.
+		  NULL_2SGSUB_ST called 10240 times, rejected 1292.
+	  SUFFIX_CATEGORY_ST called  8948 times, rejected 4552.
+		  GLOTTALIZED_ST called  4396 times, rejected 1235.
+	  NULL_INFINITIVE_ST called  3161 times, rejected 398.
+				  SEC_ST called  2763 times, rejected 1180.
+				  PEC_ST called  1583 times, rejected 0.
+   Final Tests:
+		COMPOUND_ROOT_FT called   548 times, rejected 0.
+		   INCH_CHECK_FT called   548 times, rejected 71.
+		  N_DELETEION_FT called   477 times, rejected 186.
+		  PREFIX_ROOT_FT called   291 times, rejected 86.
+		  GLOTTALIZED_FT called   205 times, rejected 20.
+				  MEC_FT called   185 times, rejected 95.
+				  MCC_FT called    90 times, rejected 30.
+
+	  PC-PATR word parse called    57 times, rejected 20 (skipped 3).
+
+
+AmpleParseText()
+Input =
+klamastak'ayau
+Output =
+<AResult>
+
+<parse id=klamastak'ayau>
+
+<analysis cat="?">
+
+<morph id=1SUB allo=#k# type="p">
+
+<morph id=REC allo=#la# type="p">
+
+<morph id=saludar allo=#mastak†a# type="r">
+
+<morph id=IMPF allo=#ya# type="s">
+
+<morph id=1PL allo=#w# type="s">
+
+<Analysis count="3">
+<Parse>
+<Node cat="Word" id="_1:_1">
+<Fs></Fs>
+<Node cat="Infl" id="_1:_2">
+<Fs></Fs>
+<Node cat="Infl" id="_1:_3">
+<Fs></Fs>
+<Leaf cat="1st" id="_1:_4" all="true" gloss="1SUB">
+<Fs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k</Str>
+</Leaf>
+<Node cat="Infl" id="_1:_5">
+<Fs></Fs>
+<Leaf cat="Rec" id="_1:_6" all="true" gloss="REC">
+<Fs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>la</Str>
+</Leaf>
+<Node cat="Infl" id="_1:_7" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_1:_8" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_1:_9" all="true" gloss="saludar">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>mastak†a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Asp" id="_1:_10" all="true" gloss="IMPF">
+<Fs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>ya</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+<Leaf cat="Pers" id="_1:_11" all="true" gloss="1PL">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>w</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_2:_12">
+<Fs></Fs>
+<Node cat="Infl" id="_2:_13">
+<Fs></Fs>
+<Leaf cat="1st" id="_2:_4" all="true" gloss="1SUB">
+<Fs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k</Str>
+</Leaf>
+<Node cat="Infl" id="_2:_14">
+<Fs></Fs>
+<Node cat="Infl" id="_2:_5">
+<Fs></Fs>
+<Leaf cat="Rec" id="_2:_6" all="true" gloss="REC">
+<Fs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>la</Str>
+</Leaf>
+<Node cat="Infl" id="_2:_7" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_2:_8" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_2:_9" all="true" gloss="saludar">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>mastak†a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Asp" id="_2:_10" all="true" gloss="IMPF">
+<Fs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>ya</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="Pers" id="_2:_11" all="true" gloss="1PL">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>w</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_3:_15">
+<Fs></Fs>
+<Node cat="Infl" id="_3:_16">
+<Fs></Fs>
+<Leaf cat="1st" id="_3:_4" all="true" gloss="1SUB">
+<Fs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k</Str>
+</Leaf>
+<Node cat="Infl" id="_3:_17">
+<Fs></Fs>
+<Leaf cat="Rec" id="_3:_6" all="true" gloss="REC">
+<Fs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>la</Str>
+</Leaf>
+<Node cat="Infl" id="_3:_18">
+<Fs></Fs>
+<Node cat="Infl" id="_3:_7" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_3:_8" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_3:_9" all="true" gloss="saludar">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>mastak†a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Asp" id="_3:_10" all="true" gloss="IMPF">
+<Fs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>ya</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_3:_11" all="true" gloss="1PL">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>w</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+</Node>
+</Parse>
+</Analysis>
+</analysis>
+
+</parse>
+
+</AResult>
+
+
+End of AmpleParseText()
+SUFFIX TEST: IMPERATIVE_ST contains more than one leftward iteration
+FINAL TEST: GROUP_2_PN_FT contains more than one leftward iteration
+AMPLE Message:
+	PREFIX DICTIONARY: Loading test/yalalag/Yalpf.dic
+
+AMPLE Message:
+	PREFIX DICTIONARY: Loaded 25 records
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loading test/yalalag/Yalsf.dic
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loaded 59 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/yalalag/Yalrt.dic
+
+ROOT DICTIONARY: Morphname  tener.posesión.de too long in entry: ban
+ROOT DICTIONARY: Morphname  despertar.corazón too long in entry: banra'll
+ROOT DICTIONARY: Morphname  al.dia.siguiente too long in entry: bateyo
+ROOT DICTIONARY: Morphname  hoy.en.la.ma¤ana too long in entry: be'e
+ROOT DICTIONARY: Morphname  hermano.(de.hombre).de too long in entry: bibi'ch
+ROOT DICTIONARY: Morphname  hermana.(de.mujer).de too long in entry: bir
+ROOT DICTIONARY: Morphname  caer.de.cierta.altura too long in entry: bix
+ROOT DICTIONARY: Morphname  sombra/reflexión too long in entry: bxen
+ROOT DICTIONARY: Morphname  levantar.persona too long in entry: chas
+ROOT DICTIONARY: Morphname  agradar.(-le.a.uno).1 too long in entry: chazra'll
+ROOT DICTIONARY: Morphname  si.(conrtary.to.fact) too long in entry: chenak
+ROOT DICTIONARY: Morphname  cerrar.(para.impedir.paso) too long in entry: cheyj
+ROOT DICTIONARY: Morphname  acostar.(en.el.suelo) too long in entry: chixj
+ROOT DICTIONARY: Morphname  ataque.epiléptico too long in entry: chon
+ROOT DICTIONARY: Morphname  agradar.(-le.a.uno).2 too long in entry: cho'ra'll
+ROOT DICTIONARY: Morphname  golpear.(ser.golpeado) too long in entry: din
+ROOT DICTIONARY: Morphname  morder.ser.mordido too long in entry: di'n
+ROOT DICTIONARY: Morphname  mostrar.paciencia too long in entry: gakxhen
+ROOT DICTIONARY: Morphname  colgar/arder/ser.hora.de too long in entry: ga'l
+ROOT DICTIONARY: Morphname  chupar.(absorber) too long in entry: ga'll
+ROOT DICTIONARY: Morphname  aguantar.(sentimiento) too long in entry: gaora'll
+ROOT DICTIONARY: Morphname  venir.a.la.imaginación too long in entry: garjla'll
+ROOT DICTIONARY: Morphname  acostar.en.el.suelo.vi too long in entry: ga't
+ROOT DICTIONARY: Morphname  ninguna.parte.hasta too long in entry: gatga
+ROOT DICTIONARY: Morphname  pagar.(ser.pagado) too long in entry: gaxhj
+ROOT DICTIONARY: Morphname  dar.un.manotazo/tortear too long in entry: kap
+ROOT DICTIONARY: Morphname  blanco.como.queso too long in entry: kes
+ROOT DICTIONARY: Morphname  hablar.en.sue¤os too long in entry: kwabanlÄllej
+ROOT DICTIONARY: Morphname  planta.de.frijol too long in entry: kwan
+ROOT DICTIONARY: Morphname  hacer.a.un.lado.s.Imp too long in entry: kwas
+ROOT DICTIONARY: Morphname  amontonar.(personas/animales) too long in entry: kwedi'
+ROOT DICTIONARY: Morphname  adelantar/progresar too long in entry: kwejrao
+ROOT DICTIONARY: Morphname  olvidar.(voluntariamente) too long in entry: kwejyichj
+ROOT DICTIONARY: Morphname  asentar.(en.el.suelo) too long in entry: kwek
+ROOT DICTIONARY: Morphname  llorar.con.sentimiento too long in entry: kwellra'll
+ROOT DICTIONARY: Morphname  padecer/vivir.en.rancho too long in entry: kwen
+ROOT DICTIONARY: Morphname  pintar.(ser.pintado) too long in entry: kwen
+ROOT DICTIONARY: Morphname  cargar.con.las.manos too long in entry: len
+ROOT DICTIONARY: Morphname  apedrear.(ser.apedreado) too long in entry: llekw
+ROOT DICTIONARY: Morphname  llegar.a.otro.lugar too long in entry: llin
+ROOT DICTIONARY: Morphname  cortar.(fruta/cabello) too long in entry: llip
+ROOT DICTIONARY: Morphname  meter.(en.medio.de).vi too long in entry: ne's
+ROOT DICTIONARY: Morphname  hallarse/acostumbrarse too long in entry: reb
+ROOT DICTIONARY: Morphname  ir/salir/caminar too long in entry: sa'
+ROOT DICTIONARY: Morphname  castigar.(ser.castigado) too long in entry: sa'kzi'
+ROOT DICTIONARY: Morphname  regresar.corazón too long in entry: wabi'ra'll
+ROOT DICTIONARY: Morphname  acabar.algo.entero too long in entry: wado
+ROOT DICTIONARY: Morphname  hacer.para.(personas) too long in entry: wasolla'
+ROOT DICTIONARY: Morphname  acabar.actividad too long in entry: wayoll
+ROOT DICTIONARY: Morphname  caer.(para.atrás) too long in entry: waza
+ROOT DICTIONARY: Morphname  sacar.(a.un.grupo) too long in entry: wchach
+ROOT DICTIONARY: Morphname  llevar.de.compa¤ero too long in entry: wche'
+ROOT DICTIONARY: Morphname  retacar/rellenar.vt too long in entry: wchi
+ROOT DICTIONARY: Morphname  apretar/presionar/hacer.hundir too long in entry: wchi'ch
+ROOT DICTIONARY: Morphname  encegar/oscurecer too long in entry: wchol
+ROOT DICTIONARY: Morphname  decidir/arriesgar too long in entry: wchoyra'll
+ROOT DICTIONARY: Morphname  aplastar/caerle.encima too long in entry: wdekw
+ROOT DICTIONARY: Morphname  embrocar/poner.una.máscara too long in entry: wdo's
+ROOT DICTIONARY: Morphname  poner(-le).a.trabajar too long in entry: wgon
+ROOT DICTIONARY: Morphname  graznar.(el.guajolote) too long in entry: wkolj
+ROOT DICTIONARY: Morphname  descansar.cabeza too long in entry: wkoy
+ROOT DICTIONARY: Morphname  esconder.de.vista too long in entry: wkwa'chrao
+ROOT DICTIONARY: Morphname  sonar.(soplando) too long in entry: wkwell
+ROOT DICTIONARY: Morphname  reducir.de.grosor too long in entry: wlas
+ROOT DICTIONARY: Morphname  levantar.(cosas) too long in entry: wlis
+ROOT DICTIONARY: Morphname  estar.en.grupo.tr too long in entry: wlla'
+ROOT DICTIONARY: Morphname  salir.(un.grupo) too long in entry: wllach
+ROOT DICTIONARY: Morphname  juntar/encontrar too long in entry: wllay
+ROOT DICTIONARY: Morphname  frotar.(con.algo) too long in entry: wllir
+ROOT DICTIONARY: Morphname  hacer.caer.de.cierta.altura/medir too long in entry: wllix
+ROOT DICTIONARY: Morphname  meter.(en.medio.de).vt too long in entry: wne's
+ROOT DICTIONARY: Morphname  poner.en.el.suelo.(varias.cosas) too long in entry: wni't
+ROOT DICTIONARY: Morphname  cerrar.(para.impedir.el.paso) too long in entry: wsej
+ROOT DICTIONARY: Morphname  hacerse.el.tonto too long in entry: wtonnt
+ROOT DICTIONARY: Morphname  llevar.(y.dejar) too long in entry: wwa'
+ROOT DICTIONARY: Morphname  disminuir/hacer.caer too long in entry: wxhexj
+ROOT DICTIONARY: Morphname  cortar/desprender.vt too long in entry: wxo'p
+ROOT DICTIONARY: Morphname  agarrar.con.violencia too long in entry: wzap
+ROOT DICTIONARY: Morphname  poner.parado.cosas too long in entry: wzoa
+ROOT DICTIONARY: Morphname  amontonar.(cosas) too long in entry: wzoya'
+ROOT DICTIONARY: Morphname  comenzar.(fundar) too long in entry: xen
+ROOT DICTIONARY: Morphname  ahijado.(de.bautismo).de too long in entry: xhi'nis
+ROOT DICTIONARY: Morphname  padrina.(de.bautismo).de too long in entry: xhna'nis
+ROOT DICTIONARY: Morphname  temblar.la.tierra too long in entry: xo'
+ROOT DICTIONARY: Morphname  acostar.(en.alto) too long in entry: xoa
+ROOT DICTIONARY: Morphname  cortar/desprender.vi too long in entry: xo'p
+ROOT DICTIONARY: Morphname  padrino.(de.bautismo).de too long in entry: xoznis
+ROOT DICTIONARY: Morphname  abrir.para.dejar.pasar too long in entry: yarj
+ROOT DICTIONARY: Morphname  apurar.(estar.de.prisa) too long in entry: yen
+ROOT DICTIONARY: Morphname  retacar/rellenar.vi too long in entry: yi
+ROOT DICTIONARY: Morphname  piedra.de.molino too long in entry: yich
+ROOT DICTIONARY: Morphname  apretar/presionar/hundir too long in entry: yi'ch
+ROOT DICTIONARY: Morphname  cabeza.corazón.de too long in entry: yichjra'llda'o
+ROOT DICTIONARY: Morphname  apurar.(ser.rápido) too long in entry: yob
+ROOT DICTIONARY: Morphname  podar.(ser.podado) too long in entry: yo'y
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 1208 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/yalalag/Yalrtbn.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 560 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/yalalag/Yalloans.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 150 records
+
+XAMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+	AMPLE with experimental enhancement: PC-PATR word grammar
+Experimental version compiled Apr 11 2001 14:02:52
+
+Analysis Performed Wed Apr 11 14:18:05 2001
+
+Input  file: test/yalalag/Marktest.txt
+Output file: test/yalalag/Marktest.ana
+AF: xhneze  [ | xnese ]
+AF: dachen  [ ta:chen | ]
+
+WARNING 512:
+	Feature "dirección.de" not defined by Let or Define in grammar
+AF: ka'kze  [ :ka':kse | ]
+AF: dachen  [ ta:chen | ]
+AMPLE Message:
+
+INPUT: 148 words processed.
+
+
+ANALYSIS STATISTICS:  148 words processed.
+   Ambiguity Levels:
+						4 words with  0 analyses.
+					   78 words with  1 analysis.
+					   29 words with  2 analyses.
+					   27 words with  3 analyses.
+						4 words with  4 analyses.
+						2 words with  5 analyses.
+						4 words with  6 analyses.
+   Prefix Tests:
+	  PREFIX_CATEGORY_ST called 19956 times, rejected 10827.
+				  SEC_ST called 11041 times, rejected 3803.
+		 PREFIX_ORDER_ST called  5805 times, rejected 4779.
+		  CLASS1_VERB_ST called  1026 times, rejected 0.
+		  CLASS2_VERB_ST called  1026 times, rejected 138.
+		 NULL_STATIVE_ST called   888 times, rejected 260.
+	   NULL_POTENTIAL_ST called   628 times, rejected 256.
+		NULL_HABITUAL_ST called   372 times, rejected 259.
+			  UNDER_O_ST called   113 times, rejected 0.
+NO_REPEATING_PREFIXES_ST called   113 times, rejected 0.
+				  PEC_ST called  1546 times, rejected 0.
+   Root Tests:
+		ROOT_CATEGORY_ST called 10586 times, rejected 6172.
+		 NULL_STATIVE_ST called  4414 times, rejected 446.
+	   NULL_POTENTIAL_ST called  3968 times, rejected 508.
+		NULL_HABITUAL_ST called  3460 times, rejected 543.
+		  CLASS1_VERB_ST called  2917 times, rejected 21.
+		  CLASS2_VERB_ST called  2896 times, rejected 451.
+			  UNDER_O_ST called  2445 times, rejected 19.
+			TAKES_p_C_ST called  2426 times, rejected 0.
+		   TAKES_kw_C_ST called  2426 times, rejected 35.
+		TAKES_:x_POSS_ST called  2391 times, rejected 0.
+			CAUSATIVE_ST called  2391 times, rejected 645.
+				  SEC_ST called  2726 times, rejected 1754.
+				  PEC_ST called   972 times, rejected 0.
+   Suffix Tests:
+	  SUFFIX_CATEGORY_ST called 25995 times, rejected 20336.
+		 SUFFIX_ORDER_ST called  5659 times, rejected 1392.
+			 UNDER_ao_ST called  4267 times, rejected 8.
+		   GROUP_2_PN_ST called  4259 times, rejected 842.
+		   IMPERATIVE_ST called  3417 times, rejected 56.
+		LARYNGEALIZES_ST called  3361 times, rejected 1123.
+				  SEC_ST called  2238 times, rejected 1211.
+				  PEC_ST called  1027 times, rejected 0.
+   Final Tests:
+	   FINAL_CATEGORY_FT called   799 times, rejected 0.
+		 TRANSITIVITY_FT called   799 times, rejected 27.
+		   GROUP_2_PN_FT called   772 times, rejected 20.
+NUMBERS_WITH_PRONOUNS_FT called   752 times, rejected 0.
+Root_takes_kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
+	 kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
+				  MEC_FT called   752 times, rejected 356.
+				  MCC_FT called   396 times, rejected 56.
+
+	  PC-PATR word parse called   340 times, rejected 73 (skipped 0).
+
+
+AmpleParseText()
+Input =
+bzorao
+Output =
+<AResult>
+
+<parse id=bzorao>
+
+<analysis cat="V">
+
+<morph id=C allo=#p# type="p">
+
+<morph id=empezar allo=#solao# type="r">
+
+<Analysis count="1">
+<Parse>
+<Node cat="Word" id="_1:_1">
+<Fs></Fs>
+<Leaf cat="Aspect" id="_1:_2" gloss="C">
+<Fs>
+<F name="cat"><Str>Aspect</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>C</Str></F>
+<F name="lex"><Str>p</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>completive</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Aspect</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>C</Str></F>
+<F name="lex"><Str>p</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>completive</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p</Str>
+</Leaf>
+<Node cat="Stem" id="_1:_3">
+<Fs></Fs>
+<Leaf cat="Root" id="_1:_4" gloss="empezar">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>empezar</Str></F>
+<F name="lex"><Str>solao</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+<F name="pluralWord"><Str>-</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>empezar</Str></F>
+<F name="lex"><Str>solao</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+<F name="pluralWord"><Str>-</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>solao</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+</Analysis>
+</analysis>
+
+</parse>
+
+</AResult>
+
+
+End of AmpleParseText()
+SUFFIX TEST: IMPERATIVE_ST contains more than one leftward iteration
+FINAL TEST: GROUP_2_PN_FT contains more than one leftward iteration
+AMPLE Message:
+	SUFFIX DICTIONARY: Loading test/hg/hgsf01.dic
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loaded 116 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/hg/hgrt01.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 43 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/hg/hgrtbn.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 7 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/hg/hgrtnr.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 28 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/hg/hgrtsp.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 8 records
+
+AMPLE Message:
+	PREFIX DICTIONARY: Loading test/tepehua/Ttpf.dic
+
+AMPLE Message:
+	PREFIX DICTIONARY: Loaded 48 records
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loading test/tepehua/Ttsf.dic
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loaded 37 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/tepehua/Ttrt.dic
+
+ROOT DICTIONARY: Morphname  otro.mucho.tiempo too long in entry: †amaqan
+ROOT DICTIONARY: Morphname  tener.relaciones too long in entry: †aq©†apa
+ROOT DICTIONARY: Morphname  cubrir.en.tierra too long in entry: †aqputama
+ROOT DICTIONARY: Morphname  perder.paciencia too long in entry: †aqšahu
+ROOT DICTIONARY: Morphname  hacer.perder.paciencia too long in entry: †aqšaway
+ROOT DICTIONARY: Morphname  seguir.creciendo too long in entry: †ayn†an
+ROOT DICTIONARY: Morphname  quitar.trochando too long in entry: ©aqšp†uš
+ROOT DICTIONARY: Morphname  beber.a.lenguetadas too long in entry: ©u©†u†i
+ROOT DICTIONARY: Morphname  entrecerrando.ojos too long in entry: ©uy
+ROOT DICTIONARY: Morphname  tocar.para.hacer too long in entry: ©†a†ini
+ROOT DICTIONARY: Morphname  quitarle.palabras too long in entry: kiklaha
+ROOT DICTIONARY: Morphname  lleno.completamente too long in entry: k†alan
+ROOT DICTIONARY: Morphname  gastarse.superficie too long in entry: lakapu†an
+ROOT DICTIONARY: Morphname  comer.picoteando too long in entry: lakasakwahin
+ROOT DICTIONARY: Morphname  da.de.comer.masticando too long in entry: lakcak†awa
+ROOT DICTIONARY: Morphname  echar.para.afuera too long in entry: lakškawštu
+ROOT DICTIONARY: Morphname  ver.por.abertura too long in entry: lakštu
+ROOT DICTIONARY: Morphname  lodo.para.embarrar too long in entry: la£t†aman
+ROOT DICTIONARY: Morphname  lugar.de.muertos too long in entry: laqnin
+ROOT DICTIONARY: Morphname  afectar.de.adentro too long in entry: laqtanu
+ROOT DICTIONARY: Morphname  ejemplo,tomar.como too long in entry: laqc†i†i
+ROOT DICTIONARY: Morphname  ordenar.que.venga too long in entry: £hihunta†i
+ROOT DICTIONARY: Morphname  musical.instrumento too long in entry: £isan
+ROOT DICTIONARY: Morphname  vivir.en.circunstancias.de too long in entry: £i†ukšuntaya
+ROOT DICTIONARY: Morphname  señalar.con.mano too long in entry: mahkun
+ROOT DICTIONARY: Morphname  sentir.en.espalda too long in entry: makatawk†a
+ROOT DICTIONARY: Morphname  consolar.por.pérdida too long in entry: malawahu
+ROOT DICTIONARY: Morphname  hacer.avergonzar too long in entry: mamašani
+ROOT DICTIONARY: Morphname  poner.dentro.fuera too long in entry: mapulaqštu†ula
+ROOT DICTIONARY: Morphname  calentarse.en.sol too long in entry: maqc†ansqonoqnun
+ROOT DICTIONARY: Morphname  olor.de.carne.roja too long in entry: moq
+ROOT DICTIONARY: Morphname  olvidado.acostado too long in entry: mukuma£
+ROOT DICTIONARY: Morphname  olvidado.sentado too long in entry: mukuwi£
+ROOT DICTIONARY: Morphname  cargar.con.mecapal too long in entry: musla
+ROOT DICTIONARY: Morphname  corretear.con.vara too long in entry: naqyahu
+ROOT DICTIONARY: Morphname  chupar.por.popote too long in entry: nunoq†i
+ROOT DICTIONARY: Morphname  levantar.pararse too long in entry: †ostaya
+ROOT DICTIONARY: Morphname  apachurrar.encima too long in entry: paseqayma
+ROOT DICTIONARY: Morphname  acostado.en.lado too long in entry: pato†ama
+ROOT DICTIONARY: Morphname  parado.lado.a.lado too long in entry: pato†aya
+ROOT DICTIONARY: Morphname  encontrar.difícil too long in entry: paštoqtaya
+ROOT DICTIONARY: Morphname  caer.por.todos.lados too long in entry: putawk†atama
+ROOT DICTIONARY: Morphname  separar.en.grupos too long in entry: putili
+ROOT DICTIONARY: Morphname  quitar.de.arriba too long in entry: p†uš
+ROOT DICTIONARY: Morphname  lleno.a.reventar too long in entry: qasah
+ROOT DICTIONARY: Morphname  tullido.en.peirna too long in entry: qayn£k†awi£
+ROOT DICTIONARY: Morphname  empujar.a.lumbre too long in entry: sap†u
+ROOT DICTIONARY: Morphname  arrastrar.soplando too long in entry: sumah†an
+ROOT DICTIONARY: Morphname  estar.adentro.vert too long in entry: tahun
+ROOT DICTIONARY: Morphname  salir.por.arriba too long in entry: tak†ut
+ROOT DICTIONARY: Morphname  acostar.extendida too long in entry: talaka£nuh
+ROOT DICTIONARY: Morphname  caerse.boca.abajo too long in entry: talakaputa
+ROOT DICTIONARY: Morphname  hacerse.chiquito too long in entry: talakat†uni
+ROOT DICTIONARY: Morphname  entumecido.de.piernas too long in entry: talaknin
+ROOT DICTIONARY: Morphname  cicatriz.en.mano too long in entry: tamaq£†elili
+ROOT DICTIONARY: Morphname  primavera.merulín too long in entry: tantoqtoq
+ROOT DICTIONARY: Morphname  estar.adentro.horiz too long in entry: tanun
+ROOT DICTIONARY: Morphname  ponerse.al.revés too long in entry: tapulaqštu
+ROOT DICTIONARY: Morphname  cargar.en.espalda too long in entry: tik†uk†a
+ROOT DICTIONARY: Morphname  CONT.portarse.EST too long in entry: ti†ukšunya£
+ROOT DICTIONARY: Morphname  parado.de.puntillas too long in entry: toqstaya£
+ROOT DICTIONARY: Morphname  acostarse.en.medio too long in entry: t†a†anhma£
+ROOT DICTIONARY: Morphname  pararse.en.medio too long in entry: t†a†anhya£
+ROOT DICTIONARY: Morphname  escribir.en.algo.parado too long in entry: coqmuk†a
+ROOT DICTIONARY: Morphname  poner.en.superficie too long in entry: †ukšmuk†a
+ROOT DICTIONARY: Morphname  friccionar.superficie too long in entry: †ukšpušapa
+ROOT DICTIONARY: Morphname  su.hermano.mayor too long in entry: xahaya
+ROOT DICTIONARY: Morphname  bañarse.en.temescal too long in entry: šaqan
+ROOT DICTIONARY: Morphname  con.manos.extendidas.arriba too long in entry: šaqaqaq
+ROOT DICTIONARY: Morphname  sacar.arrastrando too long in entry: šaqaštu
+ROOT DICTIONARY: Morphname  llevar.perseguir too long in entry: škaw£a†an
+ROOT DICTIONARY: Morphname  enrollar.adentro too long in entry: šmi£nu
+ROOT DICTIONARY: Morphname  moviendo.un.lado.a.otro too long in entry: šnek†at
+ROOT DICTIONARY: Morphname  sonido.de.desliz too long in entry: špupun
+ROOT DICTIONARY: Morphname  colgar.con.clavo too long in entry: štukmuk†a
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 1874 records
+
+AMPLE Message:
+	PREFIX DICTIONARY: Loading test/yalalag/Yalpf.dic
+
+AMPLE Message:
+	PREFIX DICTIONARY: Loaded 25 records
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loading test/yalalag/Yalsf.dic
+
+AMPLE Message:
+	SUFFIX DICTIONARY: Loaded 59 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/yalalag/Yalrt.dic
+
+ROOT DICTIONARY: Morphname  tener.posesión.de too long in entry: ban
+ROOT DICTIONARY: Morphname  despertar.corazón too long in entry: banra'll
+ROOT DICTIONARY: Morphname  al.dia.siguiente too long in entry: bateyo
+ROOT DICTIONARY: Morphname  hoy.en.la.ma¤ana too long in entry: be'e
+ROOT DICTIONARY: Morphname  hermano.(de.hombre).de too long in entry: bibi'ch
+ROOT DICTIONARY: Morphname  hermana.(de.mujer).de too long in entry: bir
+ROOT DICTIONARY: Morphname  caer.de.cierta.altura too long in entry: bix
+ROOT DICTIONARY: Morphname  sombra/reflexión too long in entry: bxen
+ROOT DICTIONARY: Morphname  levantar.persona too long in entry: chas
+ROOT DICTIONARY: Morphname  agradar.(-le.a.uno).1 too long in entry: chazra'll
+ROOT DICTIONARY: Morphname  si.(conrtary.to.fact) too long in entry: chenak
+ROOT DICTIONARY: Morphname  cerrar.(para.impedir.paso) too long in entry: cheyj
+ROOT DICTIONARY: Morphname  acostar.(en.el.suelo) too long in entry: chixj
+ROOT DICTIONARY: Morphname  ataque.epiléptico too long in entry: chon
+ROOT DICTIONARY: Morphname  agradar.(-le.a.uno).2 too long in entry: cho'ra'll
+ROOT DICTIONARY: Morphname  golpear.(ser.golpeado) too long in entry: din
+ROOT DICTIONARY: Morphname  morder.ser.mordido too long in entry: di'n
+ROOT DICTIONARY: Morphname  mostrar.paciencia too long in entry: gakxhen
+ROOT DICTIONARY: Morphname  colgar/arder/ser.hora.de too long in entry: ga'l
+ROOT DICTIONARY: Morphname  chupar.(absorber) too long in entry: ga'll
+ROOT DICTIONARY: Morphname  aguantar.(sentimiento) too long in entry: gaora'll
+ROOT DICTIONARY: Morphname  venir.a.la.imaginación too long in entry: garjla'll
+ROOT DICTIONARY: Morphname  acostar.en.el.suelo.vi too long in entry: ga't
+ROOT DICTIONARY: Morphname  ninguna.parte.hasta too long in entry: gatga
+ROOT DICTIONARY: Morphname  pagar.(ser.pagado) too long in entry: gaxhj
+ROOT DICTIONARY: Morphname  dar.un.manotazo/tortear too long in entry: kap
+ROOT DICTIONARY: Morphname  blanco.como.queso too long in entry: kes
+ROOT DICTIONARY: Morphname  hablar.en.sue¤os too long in entry: kwabanlÄllej
+ROOT DICTIONARY: Morphname  planta.de.frijol too long in entry: kwan
+ROOT DICTIONARY: Morphname  hacer.a.un.lado.s.Imp too long in entry: kwas
+ROOT DICTIONARY: Morphname  amontonar.(personas/animales) too long in entry: kwedi'
+ROOT DICTIONARY: Morphname  adelantar/progresar too long in entry: kwejrao
+ROOT DICTIONARY: Morphname  olvidar.(voluntariamente) too long in entry: kwejyichj
+ROOT DICTIONARY: Morphname  asentar.(en.el.suelo) too long in entry: kwek
+ROOT DICTIONARY: Morphname  llorar.con.sentimiento too long in entry: kwellra'll
+ROOT DICTIONARY: Morphname  padecer/vivir.en.rancho too long in entry: kwen
+ROOT DICTIONARY: Morphname  pintar.(ser.pintado) too long in entry: kwen
+ROOT DICTIONARY: Morphname  cargar.con.las.manos too long in entry: len
+ROOT DICTIONARY: Morphname  apedrear.(ser.apedreado) too long in entry: llekw
+ROOT DICTIONARY: Morphname  llegar.a.otro.lugar too long in entry: llin
+ROOT DICTIONARY: Morphname  cortar.(fruta/cabello) too long in entry: llip
+ROOT DICTIONARY: Morphname  meter.(en.medio.de).vi too long in entry: ne's
+ROOT DICTIONARY: Morphname  hallarse/acostumbrarse too long in entry: reb
+ROOT DICTIONARY: Morphname  ir/salir/caminar too long in entry: sa'
+ROOT DICTIONARY: Morphname  castigar.(ser.castigado) too long in entry: sa'kzi'
+ROOT DICTIONARY: Morphname  regresar.corazón too long in entry: wabi'ra'll
+ROOT DICTIONARY: Morphname  acabar.algo.entero too long in entry: wado
+ROOT DICTIONARY: Morphname  hacer.para.(personas) too long in entry: wasolla'
+ROOT DICTIONARY: Morphname  acabar.actividad too long in entry: wayoll
+ROOT DICTIONARY: Morphname  caer.(para.atrás) too long in entry: waza
+ROOT DICTIONARY: Morphname  sacar.(a.un.grupo) too long in entry: wchach
+ROOT DICTIONARY: Morphname  llevar.de.compa¤ero too long in entry: wche'
+ROOT DICTIONARY: Morphname  retacar/rellenar.vt too long in entry: wchi
+ROOT DICTIONARY: Morphname  apretar/presionar/hacer.hundir too long in entry: wchi'ch
+ROOT DICTIONARY: Morphname  encegar/oscurecer too long in entry: wchol
+ROOT DICTIONARY: Morphname  decidir/arriesgar too long in entry: wchoyra'll
+ROOT DICTIONARY: Morphname  aplastar/caerle.encima too long in entry: wdekw
+ROOT DICTIONARY: Morphname  embrocar/poner.una.máscara too long in entry: wdo's
+ROOT DICTIONARY: Morphname  poner(-le).a.trabajar too long in entry: wgon
+ROOT DICTIONARY: Morphname  graznar.(el.guajolote) too long in entry: wkolj
+ROOT DICTIONARY: Morphname  descansar.cabeza too long in entry: wkoy
+ROOT DICTIONARY: Morphname  esconder.de.vista too long in entry: wkwa'chrao
+ROOT DICTIONARY: Morphname  sonar.(soplando) too long in entry: wkwell
+ROOT DICTIONARY: Morphname  reducir.de.grosor too long in entry: wlas
+ROOT DICTIONARY: Morphname  levantar.(cosas) too long in entry: wlis
+ROOT DICTIONARY: Morphname  estar.en.grupo.tr too long in entry: wlla'
+ROOT DICTIONARY: Morphname  salir.(un.grupo) too long in entry: wllach
+ROOT DICTIONARY: Morphname  juntar/encontrar too long in entry: wllay
+ROOT DICTIONARY: Morphname  frotar.(con.algo) too long in entry: wllir
+ROOT DICTIONARY: Morphname  hacer.caer.de.cierta.altura/medir too long in entry: wllix
+ROOT DICTIONARY: Morphname  meter.(en.medio.de).vt too long in entry: wne's
+ROOT DICTIONARY: Morphname  poner.en.el.suelo.(varias.cosas) too long in entry: wni't
+ROOT DICTIONARY: Morphname  cerrar.(para.impedir.el.paso) too long in entry: wsej
+ROOT DICTIONARY: Morphname  hacerse.el.tonto too long in entry: wtonnt
+ROOT DICTIONARY: Morphname  llevar.(y.dejar) too long in entry: wwa'
+ROOT DICTIONARY: Morphname  disminuir/hacer.caer too long in entry: wxhexj
+ROOT DICTIONARY: Morphname  cortar/desprender.vt too long in entry: wxo'p
+ROOT DICTIONARY: Morphname  agarrar.con.violencia too long in entry: wzap
+ROOT DICTIONARY: Morphname  poner.parado.cosas too long in entry: wzoa
+ROOT DICTIONARY: Morphname  amontonar.(cosas) too long in entry: wzoya'
+ROOT DICTIONARY: Morphname  comenzar.(fundar) too long in entry: xen
+ROOT DICTIONARY: Morphname  ahijado.(de.bautismo).de too long in entry: xhi'nis
+ROOT DICTIONARY: Morphname  padrina.(de.bautismo).de too long in entry: xhna'nis
+ROOT DICTIONARY: Morphname  temblar.la.tierra too long in entry: xo'
+ROOT DICTIONARY: Morphname  acostar.(en.alto) too long in entry: xoa
+ROOT DICTIONARY: Morphname  cortar/desprender.vi too long in entry: xo'p
+ROOT DICTIONARY: Morphname  padrino.(de.bautismo).de too long in entry: xoznis
+ROOT DICTIONARY: Morphname  abrir.para.dejar.pasar too long in entry: yarj
+ROOT DICTIONARY: Morphname  apurar.(estar.de.prisa) too long in entry: yen
+ROOT DICTIONARY: Morphname  retacar/rellenar.vi too long in entry: yi
+ROOT DICTIONARY: Morphname  piedra.de.molino too long in entry: yich
+ROOT DICTIONARY: Morphname  apretar/presionar/hundir too long in entry: yi'ch
+ROOT DICTIONARY: Morphname  cabeza.corazón.de too long in entry: yichjra'llda'o
+ROOT DICTIONARY: Morphname  apurar.(ser.rápido) too long in entry: yob
+ROOT DICTIONARY: Morphname  podar.(ser.podado) too long in entry: yo'y
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 1208 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/yalalag/Yalrtbn.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 560 records
+
+AMPLE Message:
+	ROOT DICTIONARY: Loading test/yalalag/Yalloans.dic
+
+AMPLE Message:
+	ROOT DICTIONARY: Loaded 150 records
+
+XAMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+	AMPLE with experimental enhancement: PC-PATR word grammar
+Experimental version compiled Apr 11 2001 14:02:52
+
+Analysis Performed Wed Apr 11 14:18:06 2001
+
+Input  file: test/hg/hgtest.txt
+Output file: test/hg/hgtest.ana
+AMPLE Message:
+
+INPUT: 78 words processed.
+
+
+ANALYSIS STATISTICS:   78 words processed.
+   Ambiguity Levels:
+					   70 words with  1 analysis.
+						6 words with  2 analyses.
+						2 words with  3 analyses.
+   Root Tests:
+				  SEC_ST called   170 times, rejected 0.
+				  PEC_ST called   170 times, rejected 0.
+   Suffix Tests:
+			 CATEGORY_ST called  2356 times, rejected 1504.
+				ORDER_ST called   852 times, rejected 120.
+		  FORESHORTEN_ST called   732 times, rejected 0.
+			  MLOWERS_ST called   732 times, rejected 0.
+				  SEC_ST called   732 times, rejected 10.
+				  PEC_ST called   722 times, rejected 0.
+				ADHOC_ST called   722 times, rejected 24.
+   Final Tests:
+			 CATEGORY_FT called   278 times, rejected 36.
+			 MLOWERED_FT called   242 times, rejected 36.
+				ORDER_FT called   206 times, rejected 0.
+				  MEC_FT called   206 times, rejected 0.
+				  MCC_FT called   206 times, rejected 10.
+
+XAMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+	AMPLE with experimental enhancement: PC-PATR word grammar
+Experimental version compiled Apr 11 2001 14:02:52
+
+Analysis Performed Wed Apr 11 14:18:06 2001
+
+Input  file: test/tepehua/Ephtst.txt
+Output file: test/tepehua/Ephtst.ana
+AMPLE Message:
+
+INPUT: 32 words processed.
+
+
+ANALYSIS STATISTICS:   32 words processed.
+   Ambiguity Levels:
+					   28 words with  1 analysis.
+						3 words with  2 analyses.
+						1 word  with  3 analyses.
+   Prefix Tests:
+	  PREFIX_CATEGORY_ST called   461 times, rejected 243.
+		 PREFIX_ORDER_ST called   218 times, rejected 85.
+			Q_HARMONY_ST called   133 times, rejected 0.
+				  SEC_ST called   254 times, rejected 11.
+				  PEC_ST called   243 times, rejected 0.
+   Root Tests:
+		   Q_DELETION_ST called   673 times, rejected 12.
+				  SEC_ST called   692 times, rejected 0.
+				  PEC_ST called   692 times, rejected 0.
+				ROOTS_ST called   661 times, rejected 250.
+   Suffix Tests:
+		  N_DELETEION_ST called 21809 times, rejected 4138.
+		 SUFFIX_ORDER_ST called 17671 times, rejected 7246.
+		   Q_DELETION_ST called 10425 times, rejected 185.
+		  NULL_2SGSUB_ST called 10240 times, rejected 1292.
+	  SUFFIX_CATEGORY_ST called  8948 times, rejected 4552.
+		  GLOTTALIZED_ST called  4396 times, rejected 1235.
+	  NULL_INFINITIVE_ST called  3161 times, rejected 398.
+				  SEC_ST called  2763 times, rejected 1180.
+				  PEC_ST called  1583 times, rejected 0.
+   Final Tests:
+		COMPOUND_ROOT_FT called   548 times, rejected 0.
+		   INCH_CHECK_FT called   548 times, rejected 71.
+		  N_DELETEION_FT called   477 times, rejected 186.
+		  PREFIX_ROOT_FT called   291 times, rejected 86.
+		  GLOTTALIZED_FT called   205 times, rejected 20.
+				  MEC_FT called   185 times, rejected 95.
+				  MCC_FT called    90 times, rejected 30.
+
+	  PC-PATR word parse called    57 times, rejected 20 (skipped 3).
+
+XAMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+	AMPLE with experimental enhancement: PC-PATR word grammar
+Experimental version compiled Apr 11 2001 14:02:52
+
+Analysis Performed Wed Apr 11 14:18:07 2001
+
+Input  file: test/yalalag/Marktest.txt
+Output file: test/yalalag/Marktest.ana
+AF: xhneze  [ | xnese ]
+AF: dachen  [ ta:chen | ]
+
+WARNING 512:
+	Feature "dirección.de" not defined by Let or Define in grammar
+AF: ka'kze  [ :ka':kse | ]
+AF: dachen  [ ta:chen | ]
+AMPLE Message:
+
+INPUT: 148 words processed.
+
+
+ANALYSIS STATISTICS:  148 words processed.
+   Ambiguity Levels:
+						4 words with  0 analyses.
+					   78 words with  1 analysis.
+					   29 words with  2 analyses.
+					   27 words with  3 analyses.
+						4 words with  4 analyses.
+						2 words with  5 analyses.
+						4 words with  6 analyses.
+   Prefix Tests:
+	  PREFIX_CATEGORY_ST called 19956 times, rejected 10827.
+				  SEC_ST called 11041 times, rejected 3803.
+		 PREFIX_ORDER_ST called  5805 times, rejected 4779.
+		  CLASS1_VERB_ST called  1026 times, rejected 0.
+		  CLASS2_VERB_ST called  1026 times, rejected 138.
+		 NULL_STATIVE_ST called   888 times, rejected 260.
+	   NULL_POTENTIAL_ST called   628 times, rejected 256.
+		NULL_HABITUAL_ST called   372 times, rejected 259.
+			  UNDER_O_ST called   113 times, rejected 0.
+NO_REPEATING_PREFIXES_ST called   113 times, rejected 0.
+				  PEC_ST called  1546 times, rejected 0.
+   Root Tests:
+		ROOT_CATEGORY_ST called 10586 times, rejected 6172.
+		 NULL_STATIVE_ST called  4414 times, rejected 446.
+	   NULL_POTENTIAL_ST called  3968 times, rejected 508.
+		NULL_HABITUAL_ST called  3460 times, rejected 543.
+		  CLASS1_VERB_ST called  2917 times, rejected 21.
+		  CLASS2_VERB_ST called  2896 times, rejected 451.
+			  UNDER_O_ST called  2445 times, rejected 19.
+			TAKES_p_C_ST called  2426 times, rejected 0.
+		   TAKES_kw_C_ST called  2426 times, rejected 35.
+		TAKES_:x_POSS_ST called  2391 times, rejected 0.
+			CAUSATIVE_ST called  2391 times, rejected 645.
+				  SEC_ST called  2726 times, rejected 1754.
+				  PEC_ST called   972 times, rejected 0.
+   Suffix Tests:
+	  SUFFIX_CATEGORY_ST called 25995 times, rejected 20336.
+		 SUFFIX_ORDER_ST called  5659 times, rejected 1392.
+			 UNDER_ao_ST called  4267 times, rejected 8.
+		   GROUP_2_PN_ST called  4259 times, rejected 842.
+		   IMPERATIVE_ST called  3417 times, rejected 56.
+		LARYNGEALIZES_ST called  3361 times, rejected 1123.
+				  SEC_ST called  2238 times, rejected 1211.
+				  PEC_ST called  1027 times, rejected 0.
+   Final Tests:
+	   FINAL_CATEGORY_FT called   799 times, rejected 0.
+		 TRANSITIVITY_FT called   799 times, rejected 27.
+		   GROUP_2_PN_FT called   772 times, rejected 20.
+NUMBERS_WITH_PRONOUNS_FT called   752 times, rejected 0.
+Root_takes_kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
+	 kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
+				  MEC_FT called   752 times, rejected 356.
+				  MCC_FT called   396 times, rejected 56.
+
+	  PC-PATR word parse called   340 times, rejected 73 (skipped 0).
+
+
+AmpleParseText()
+Input =
+allchakaachimanqa
+Output =
+<AResult>
+
+<parse id=allchakaachimanqa>
+
+<analysis cat="?">
+
+<morph id=*allcha allo=#allcha# type="r">
+
+<morph id=PASS allo=#ka:# type="s">
+
+<morph id=CAUS allo=#chi# type="s">
+
+<morph id=1O allo=#ma# type="s">
+
+<morph id=3FUT allo=#nqa# type="s">
+
+</analysis>
+
+</parse>
+
+</AResult>
+
+
+End of AmpleParseText()
+
+AmpleParseText()
+Input =
+klamastak'ayau
+Output =
+<AResult>
+
+<parse id=klamastak'ayau>
+
+<analysis cat="?">
+
+<morph id=1SUB allo=#k# type="p">
+
+<morph id=REC allo=#la# type="p">
+
+<morph id=saludar allo=#mastak†a# type="r">
+
+<morph id=IMPF allo=#ya# type="s">
+
+<morph id=1PL allo=#w# type="s">
+
+<Analysis count="3">
+<Parse>
+<Node cat="Word" id="_1:_1">
+<Fs></Fs>
+<Node cat="Infl" id="_1:_2">
+<Fs></Fs>
+<Node cat="Infl" id="_1:_3">
+<Fs></Fs>
+<Leaf cat="1st" id="_1:_4" all="true" gloss="1SUB">
+<Fs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k</Str>
+</Leaf>
+<Node cat="Infl" id="_1:_5">
+<Fs></Fs>
+<Leaf cat="Rec" id="_1:_6" all="true" gloss="REC">
+<Fs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>la</Str>
+</Leaf>
+<Node cat="Infl" id="_1:_7" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_1:_8" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_1:_9" all="true" gloss="saludar">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>mastak†a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Asp" id="_1:_10" all="true" gloss="IMPF">
+<Fs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>ya</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+<Leaf cat="Pers" id="_1:_11" all="true" gloss="1PL">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>w</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_2:_12">
+<Fs></Fs>
+<Node cat="Infl" id="_2:_13">
+<Fs></Fs>
+<Leaf cat="1st" id="_2:_4" all="true" gloss="1SUB">
+<Fs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k</Str>
+</Leaf>
+<Node cat="Infl" id="_2:_14">
+<Fs></Fs>
+<Node cat="Infl" id="_2:_5">
+<Fs></Fs>
+<Leaf cat="Rec" id="_2:_6" all="true" gloss="REC">
+<Fs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>la</Str>
+</Leaf>
+<Node cat="Infl" id="_2:_7" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_2:_8" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_2:_9" all="true" gloss="saludar">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>mastak†a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Asp" id="_2:_10" all="true" gloss="IMPF">
+<Fs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>ya</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="Pers" id="_2:_11" all="true" gloss="1PL">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>w</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_3:_15">
+<Fs></Fs>
+<Node cat="Infl" id="_3:_16">
+<Fs></Fs>
+<Leaf cat="1st" id="_3:_4" all="true" gloss="1SUB">
+<Fs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>1st</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1SUB</Str></F>
+<F name="lex"><Str>k</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k</Str>
+</Leaf>
+<Node cat="Infl" id="_3:_17">
+<Fs></Fs>
+<Leaf cat="Rec" id="_3:_6" all="true" gloss="REC">
+<Fs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Rec</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>REC</Str></F>
+<F name="lex"><Str>la</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="reciprocal"><Str>+</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>la</Str>
+</Leaf>
+<Node cat="Infl" id="_3:_18">
+<Fs></Fs>
+<Node cat="Infl" id="_3:_7" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_3:_8" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_3:_9" all="true" gloss="saludar">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>saludar</Str></F>
+<F name="lex"><Str>mastak†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>mastak†a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Asp" id="_3:_10" all="true" gloss="IMPF">
+<Fs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Asp</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IMPF</Str></F>
+<F name="lex"><Str>ya</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>imperfective</Str></F>
+<F name="mood"><Str>realis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>ya</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_3:_11" all="true" gloss="1PL">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>1PL</Str></F>
+<F name="lex"><Str>w</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>+</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>w</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+</Node>
+</Parse>
+</Analysis>
+</analysis>
+
+</parse>
+
+</AResult>
+
+
+End of AmpleParseText()
+
+AmpleParseText()
+Input =
+bzorao
+Output =
+<AResult>
+
+<parse id=bzorao>
+
+<analysis cat="V">
+
+<morph id=C allo=#p# type="p">
+
+<morph id=empezar allo=#solao# type="r">
+
+<Analysis count="1">
+<Parse>
+<Node cat="Word" id="_1:_1">
+<Fs></Fs>
+<Leaf cat="Aspect" id="_1:_2" gloss="C">
+<Fs>
+<F name="cat"><Str>Aspect</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>C</Str></F>
+<F name="lex"><Str>p</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>completive</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Aspect</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>C</Str></F>
+<F name="lex"><Str>p</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>completive</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p</Str>
+</Leaf>
+<Node cat="Stem" id="_1:_3">
+<Fs></Fs>
+<Leaf cat="Root" id="_1:_4" gloss="empezar">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>empezar</Str></F>
+<F name="lex"><Str>solao</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+<F name="pluralWord"><Str>-</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>empezar</Str></F>
+<F name="lex"><Str>solao</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+<F name="pluralWord"><Str>-</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>solao</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+</Analysis>
+</analysis>
+
+</parse>
+
+</AResult>
+
+
+End of AmpleParseText()

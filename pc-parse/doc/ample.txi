@@ -1,0 +1,1648 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename ample.info
+@settitle AMPLE Reference Manual
+@c %**end of header
+
+@syncodeindex fn cp
+@set ample
+
+@set TITLE AMPLE Reference Manual
+@set SUBTITLE A Morphological Parser for Linguistic Exploration
+@set VERSION version 3.3
+@set DATE April 2000
+@set AUTHOR by Stephen McConnel and H. Andrew Black
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@node    Top,       Introduction,  (dir),    (dir)
+@comment node-name, next,          previous, up
+
+@ifinfo
+@ifclear txt
+This is the reference manual for the AMPLE program.
+@end ifclear
+@end ifinfo
+
+@menu
+* Introduction::
+* Running AMPLE::
+* Standard format::
+* Analysis data file::
+* Dictionary code table file::
+* Dictionary orthography change table file::
+* Dictionary files::
+* Text input control file::
+* Analysis files::
+* Bibliography::
+* Index::
+@end menu
+@c ----------------------------------------------------------------------------
+@node    Introduction, Running AMPLE, Top,      Top
+@comment node-name,    next,            previous, up
+@chapter Introduction to the AMPLE program
+
+Since it was released in 1988, the AMPLE program has been used for
+morphological analysis in many different languages.  It is a complex
+program designed to tackle a complex problem.  This manual is intended
+for reference purposes, to clarify fine points of input and behavior.
+It is not designed as a tutorial or as a ``cookbook'' of how to use
+AMPLE.
+
+AMPLE uses a plethora of input files to control its behavior.  These
+include two mandatory control files (the analysis data file and
+dictionary code table file), two optional control files (the dictionary
+orthography change table file and text control file), and a set of
+dictionary files.  The format of each of these files is described in
+this manual.
+
+@subsubheading New features
+@table @asis
+
+@item 1. Version 3.1 (July 1998) introduced enhanced multibyte character
+handling, especially with regard to capitalization.
+
+@item 2. Version 3.2 (October 1998) introduced reduplication patterns in
+the allomorph fields of the dictionary files.
+
+@c Added by hab 14-May-1999
+@item 3. Version 3.3 (May 1999) introduced punctuation environment
+constraints in the allomorph fields of the dictionary files.
+These are handled by a new built-in test called PEC_ST.
+This version also added two punctuation-oriented clauses to user-written tests.
+
+@c Added by SRMc 21-Aug-1999 for XAMPLE
+@item 4. Version 3.3.4 (November 1999) added XAMPLE compilation to the
+standard distribution, and added the @code{\patr} field to the analysis
+data file for use by XAMPLE in controlling the PCPATR word parser.
+
+@c Added by SRMc 27-Jan-2000 for XAMPLE
+@item 5. Version 3.3.7 (January 2000) added the @code{PromoteDefAtoms}
+value to the @code{\patr} field in the analysis data file for use by
+XAMPLE in controlling the PCPATR word parser.
+
+@c Added by SRMc 24-Apr-2000 for XAMPLE
+@item 5. Version 3.3.10 (April 2000) added the @code{PropertyIsFeature}
+value to the @code{\patr} field in the analysis data file for use by
+XAMPLE in controlling the PCPATR word parser.
+@end table
+
+@c ----------------------------------------------------------------------------
+@node Running AMPLE, Standard format, Introduction, Top
+@chapter Running AMPLE
+
+AMPLE is a batch process oriented program.  It reads a number of
+control files, and then processes one or more input text files to
+produce an equal number of output analysis files.
+
+@menu
+* Command options::
+* Interaction::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node Command options, Interaction, Running AMPLE, Running AMPLE
+@section AMPLE Command Options
+
+The AMPLE program uses an old-fashioned command line interface
+following the convention of options starting with a dash character
+(@samp{-}).  The available options are listed below in alphabetical
+order.  Those options which require an argument have the argument type
+following the option letter.
+
+@ftable @code
+@item -a
+causes debugging output for allomorph conditions.
+
+@item -b
+allows the allomorph identifiers to be stored in memory.  (This feature
+was added to support LinguaLinks.)
+
+@item -c character
+selects the control file comment character.  The default is the vertical
+bar (@code{|}).
+
+@item -d number
+selects the maximum dictionary trie depth.  The default is 2, which
+favors reduced memory needs over speed.
+
+@item -e filename
+selects the PCPATR grammar file for XAMPLE to use.  (XAMPLE is a version
+of AMPLE that adds a PCPATR style word parser to AMPLE.)  This option is
+not recognized by AMPLE.
+
+@item -f filename
+opens a command file containing the names of the control and data
+files.  The default is to read those names from the standard input
+(keyboard); see
+@ifset txt
+`Program Interaction' below.
+@end ifset
+@ifclear txt
+@ref{Interaction}.
+@end ifclear
+
+@item -g
+causes root glosses to be output in the analysis file, and enables the
+internal code @code{G} in the dictionary code table.
+
+@item -i filename
+selects a single input text file.
+
+@item -m
+monitors progress of an analysis: @code{*} means an analysis failure,
+@code{.} means a single analysis, @code{2}@value{endash}@code{9} means
+2@value{endash}9 ambiguities, and @code{>} means 10 or more ambiguities.
+This is not compatible with the @samp{-q} option.
+
+@item -n number
+sets the maximum recommended morphname length.  Any morphnames longer
+than @code{number} characters are truncated (with a warning message).
+
+@item -o filename
+selects a single output analysis file.
+
+@item -q
+causes AMPLE to operate ``quietly'' with minimal screen output.  This
+is not compatible with the @samp{-m} option.
+
+@item -p
+causes ambiguous word percentages to be reported.
+
+@item -r
+checks references to morphnames in all tests.
+
+@item -s filename
+opens a file contains morphnames (or allomorphs) for a selective
+analysis.  This is usually used together with the @samp{-t} (trace)
+option.
+
+@item -t
+causes analyses to be traced.  This produces a huge amount of output.
+Repeating the @code{-t} option causes SGML style trace output to be
+produced.
+
+@item -u
+signals that dictionaries are unified, not split into prefix, infix,
+suffix, and root files.
+
+@need 2000
+@item -w fields
+selects one or more of these optional output fields for writing to the
+analysis file:
+
+@noindent
+@code{d} enables writing the @code{\d} (morpheme decomposition) field@*
+@code{p} enables writing the @code{\p} (properties) field@*
+@code{w} enables writing the @code{\w} (original word) field
+
+@noindent
+The default is to ask interactively about the @code{\d} and @code{\w}
+fields, and to write the @code{\p} field without asking.  All three
+fields can be selected for output by @w{@samp{-w dpw}} or by
+@w{@samp{-w d -w p -w w}}.
+
+@item -x fields
+prevents one or more of these optional output fields from being written
+to the analysis file:
+
+@noindent
+@code{d} disables writing the @code{\d} (morpheme decomposition) field@*
+@code{p} disables writing the @code{\p} (properties) field@*
+@code{w} disables writing the @code{\w} (original word) field
+
+@noindent
+The default is to ask interactively about the @code{\d} and @code{\w}
+fields, and to write the @code{\p} field without asking.  All three
+fields can be excluded from output by @w{@samp{-x dpw}} or by
+@w{@samp{-x d -x p -x w}}.
+
+@item -v
+verifies tests by pretty printing the parse trees.
+@end ftable
+
+The following options exist only in beta-test versions of the program,
+since they are used only for debugging.
+
+@ftable @code
+@item -/
+increments the debugging level.  The default is zero (no debugging output).
+
+@item -z filename
+opens a file for recording a memory allocation log.
+
+@item -Z address,count
+traps the program at the point where @code{address} is allocated or
+freed for the @code{count}'th time.
+@end ftable
+
+@c ----------------------------------------------------------------------------
+@node Interaction, , Command options, Running AMPLE
+@section Program Interaction
+
+If the @samp{-f}, @samp{-i}, and @samp{-o} command options are not
+used, AMPLE prompts for a number of file names, reading the standard
+input for the desired values.  The interactive dialog goes like this:
+@example
+
+@group
+C> ample
+AMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.0b9 (April 4, 1997), Copyright 1997 SIL, Inc.
+Beta test version compiled Apr  4 1997 12:18:27
+				Analysis Performed Wed Apr  4 14:41:02 1997
+Analysis data file (xxAD01.CTL): hgad01.ctl
+Dictionary code table (xxANCD.TAB or xxGyCD.TAB): hgancd.tab
+Dictionary orthography change table (xxORDC.TAB) [none]:
+
+Suffix dictionary file (xxSF01.DIC): hgsf01.dic
+		8 changes loaded from suffix dictionary code table.
+		SUFFIX DICTIONARY: Loaded 116 records
+
+Root dictionary file (xxRTnn.DIC): hgrt01.dic
+		7 changes loaded from root dictionary code table.
+		ROOT DICTIONARY: Loaded 43 records
+Next Root dictionary file (xxRTnn.DIC) [no more]:
+Text Control File (xxINTX.CTL) [none]: hgintx.ctl
+Include the original word in the output (Y or N) [n]? y
+Include the morpheme decomposition in the output (Y or N) [n]? y
+
+First Input file: hgtest.txt
+Output file: hgtest.ana
+
+INPUT: 78 words processed.
+
+Next Input file [no more]:
+C>
+@end group
+
+@end example
+@noindent
+Note that each prompt contains a reminder of the expected form of the
+answer in parentheses and ends with a colon.  Several of the prompts
+also contain the default answer in brackets.
+
+Using the command options does not change the appearance of the program
+screen output significantly, but the program displays the answers to
+each of its prompts without waiting for input.  Assume that the file
+@file{hgtest.cmd} contains the following, which is the same as the
+answers given above:
+@example
+
+@group
+hgad01.ctl
+hgancd.tab
+
+hgsf01.dic
+hgrt01.dic
+
+hgintx.ctl
+y
+y
+@end group
+
+@end example
+@noindent
+Then running AMPLE with the command options produces screen output like
+the following:
+@example
+
+@group
+C> ample -f hgtest.cmd -i hgtest.txt -o hgtest.ana
+AMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.0b9 (April 4, 1997), Copyright 1997 SIL, Inc.
+Beta test version compiled Apr  4 1997 12:18:27
+				Analysis Performed Wed Apr  4 14:41:32 1997
+Analysis data file (xxAD01.CTL): hgad01.ctl
+Dictionary code table (xxANCD.TAB or xxGyCD.TAB): hgancd.tab
+Dictionary orthography change table (xxORDC.TAB) [none]:
+
+Suffix dictionary file (xxSF01.DIC): hgsf01.dic
+		8 changes loaded from suffix dictionary code table.
+		SUFFIX DICTIONARY: Loaded 116 records
+
+Root dictionary file (xxRTnn.DIC): hgrt01.dic
+		7 changes loaded from root dictionary code table.
+		ROOT DICTIONARY: Loaded 43 records
+Next Root dictionary file (xxRTnn.DIC) [no more]:
+Text Control File (xxINTX.CTL) [none]: hgintx.ctl
+Include the original word in the output (Y or N) [n]? y
+Include the morpheme decomposition in the output (Y or N) [n]? y
+
+INPUT: 78 words processed.
+C>
+@end group
+
+@end example
+@noindent
+The only difference in the screen output is that the prompts for the
+input text file and the output analysis file are not displayed.
+
+@c ----------------------------------------------------------------------------
+@node Standard format, Analysis data file, Running AMPLE, Top
+@chapter Standard format
+@include stdfmt.txi
+
+@c ----------------------------------------------------------------------------
+@node Analysis data file, Dictionary code table file, Standard format, Top
+@chapter Analysis Data File
+@cindex analysis data file
+
+The primary control file for the AMPLE program is called the
+@dfn{analysis data file}.  It is a standard format file containing a
+single data record.
+
+@menu
+* Analysis data file fields::
+* Test syntax::
+* MCC syntax::
+@end menu
+
+@node Analysis data file fields, Test syntax, Analysis data file, Analysis data file
+@section Analysis Data File Fields
+
+The fields that AMPLE recognizes for the analysis data file are
+described below.  Fields that start with any other backslash codes are
+ignored by AMPLE.
+
+@c \maxprops and \pcl added by hab 14-May-1999
+@c \patr added by SRMc 21-Aug-1999 for XAMPLE
+@menu
+* \ap::                Allomorph properties
+* \ca::                Categories
+* \cat (xxAD01.CTL)::  Category output control
+* \ccl::               Category class
+* \cr::                Compound root category pair
+* \dicdecap::          Dictionary decapitalization control
+* \ft::                Final test
+* \iah::               Infix ad hoc pair
+* \it::                Infix successor test
+* \maxi::              Maximum number of infixes
+* \maxnull::           Maximum number of null allomorphs
+* \maxp::              Maximum number of prefixes
+* \maxprops::          Maximum number of properties
+* \maxr::              Maximum number of roots
+* \maxs::              Maximum number of suffixes
+* \mcc::               Morpheme co-occurrence constraint
+* \mcl::               Morpheme class
+* \mp::                Morpheme properties
+* \pah::               Prefix ad hoc pair
+* \patr::              PCPATR word parser control setting
+* \pcl::               Punctuation class
+* \pt::                Prefix successor test
+* \rah::               Root ad hoc pair
+* \rd::                Root delimiter characters
+* \rt::                Root successor test
+* \sah::               Suffix ad hoc pair
+* \scl (xxAD01.CTL)::  String class
+* \st::                Suffix successor test
+* \strcheck::          Valid allomorph and string environment characters
+@end menu
+
+@node \ap, \ca, Analysis data file fields, Analysis data file fields
+@subsection Allomorph properties: \ap
+@findex \ap
+
+Allomorph properties are defined by the field code @code{\ap} followed
+by one or more allomorph property names.  An allomorph property name
+must be a single, contiguous sequence of printing characters.
+Characters and words which have special meanings in tests should not be
+used.
+
+A maximum of 255 properties (including both allomorph and morpheme
+properties) may be defined.  Any number of @code{\ap} fields may be
+used so long as the number of property names does not exceed 255.
+
+If no @code{\ap} fields appear in the analysis data file, then AMPLE
+does not allow allomorph properties to be used in the dictionary files
+or in the tests.
+
+@node \ca, \cat (xxAD01.CTL), \ap, Analysis data file fields
+@subsection Categories: \ca
+@findex \ca
+
+Categories are defined by the field code @code{\ca} followed by one or
+more category names.  A category name must be a single, contiguous
+sequence of printing characters.  Characters and words which have
+special meanings in tests should not be used.
+
+A maximum of 255 categories may be defined.  Any number of @code{\ca}
+fields may be used so long as the number of category names does not
+exceed 255.
+
+If no @code{\ca} fields appear in the analysis data file, then AMPLE
+does not allow categories to be used in the dictionary entries or in
+the tests.  This is inconceivable for AMPLE's model of morphology.
+
+@node \cat (xxAD01.CTL), \ccl, \ca, Analysis data file fields
+@subsection Category output control: \cat
+@findex \cat
+
+The category information to write to the analysis output file is
+defined by the field code @code{\cat} followed by one or two words.
+The first word must be either @code{prefix} or @code{suffix} (or an
+abbreviation of one of those words), either capitalized or lowercase.
+The second word, if present, must be @code{morpheme} (or an
+abbreviation thereof), either capitalized or lowercase.
+
+The @code{\cat} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\cat} fields appear in the analysis data file, then AMPLE
+does not write any category information to the output file.
+
+@node \ccl, \cr, \cat (xxAD01.CTL), Analysis data file fields
+@subsection Category class: \ccl
+@findex \ccl
+
+A category class is defined by the field code @code{\ccl} followed by
+the class name, which is followed in turn by one or more category names
+or (previously defined) category class names.  A category class name
+used as part of the class definition must be enclosed in square
+brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The category names must have been defined by an
+earlier @code{\ca} field.
+
+Each @code{\ccl} field defines a single category class.  Any number of
+@code{\ccl} fields may appear in the file.
+
+If no @code{\ccl} fields appear in the analysis data file, then AMPLE
+does not allow any category classes to be used in tests or morpheme
+environment constraints.
+
+@node \cr, \dicdecap, \ccl, Analysis data file fields
+@subsection Compound root category pair: \cr
+@findex \cr
+
+An allowable compound root category pair is defined by the @code{\cr}
+field code followed by two category names previously defined in a
+@code{\ca} field.  The order of the category names is significant.
+
+Any number of compound root category pairs may be declared.  If
+compound roots are not allowed by a @code{\maxr} field, then the
+compound root category pairs are ignored.
+
+If no @code{\cr} fields appear in the analysis data file, then AMPLE
+does not allow any compound roots.  This is, of course, immaterial if
+the maximum number of roots is one (1).
+
+@node \dicdecap, \ft, \cr, Analysis data file fields
+@subsection Dictionary decapitalization control: \dicdecap
+@findex \dicdecap
+
+The @code{\dicdecap} field indicates that allomorph strings in
+dictionary entries should be decapitalized.  Only the field code is
+significant; anything else in the field is ignored.
+
+The @code{\dicdecap} field may appear any number of times, but once is
+enough.
+
+If no @code{\dicdecap} fields appear in the analysis data file, then
+AMPLE stores dictionary entries verbatim without decapitalizing
+allomorph strings.
+
+@node \ft, \iah, \dicdecap, Analysis data file fields
+@subsection Final test: \ft
+@findex \ft
+
+A final test is defined by the @code{\ft} field code followed by the
+test name and possibly a test body.  The test body is not needed if the
+test name is that of a built-in test (either MEC_FT or MCC_FT), or a
+previously defined successor test that is to be used as a final test.
+
+Any number of final tests may be defined in the file.
+For details about the syntax of final tests, see
+@ifset txt
+`Test Syntax' below.
+@end ifset
+@ifclear txt
+@ref{Test syntax}.
+@end ifclear
+
+If no @code{\ft} fields appear in the analysis data file, AMPLE still
+applies the built-in final tests MEC_FT and MCC_FT.
+
+@node \iah, \it, \ft, Analysis data file fields
+@subsection Infix ad hoc pair: \iah
+@findex \iah
+
+An infix ad hoc pair is defined by the @code{\iah} field code followed
+by two morpheme identifiers.  The first morphname may belong to a
+prefix, root, or suffix depending on what is allowed by the infix
+dictionary entries.  The second must belong to an infix.
+
+Any number of infix ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no @code{\iah} fields appear in the analysis data file, then AMPLE
+never eliminates any analyses via the infix @code{ADHOC_ST} test.
+
+@node \it, \maxi, \iah, Analysis data file fields
+@subsection Infix successor test: \it
+@findex \it
+
+@c Added PEC_ST hab 14-May-1999
+An infix successor test is defined by the @code{\it} field code
+followed by the test name and possibly a test body.  The test body is
+not needed if the test name is that of a built-in test (either SEC_ST
+ADHOC_ST, or PEC_ST), or a previously defined prefix test that is to
+be used as an infix test.
+
+Infix tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, and PEC_ST are
+applied after all the user-defined infix tests.
+
+Any number of infix successor tests may be defined in the file.  For
+the syntax of successor tests, see
+@ifset txt
+`Test Syntax' below.
+@end ifset
+@ifclear txt
+@ref{Test syntax}.
+@end ifclear
+
+If no @code{\it} fields appear in the analysis data file, AMPLE still
+applies the built-in infix tests SEC_ST, ADHOC_ST and PEC_ST.
+
+@node \maxi, \maxnull, \it, Analysis data file fields
+@subsection Maximum number of infixes: \maxi
+@findex \maxi
+
+The maximum number of infixes that may appear in a word is defined by
+the @code{\maxi} field code followed by a number greater than or equal
+to zero.
+
+The @code{\maxi} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\maxi} fields appear in the analysis data file, then AMPLE
+assumes that the language does not have infixes.
+
+@node \maxnull, \maxp, \maxi, Analysis data file fields
+@subsection Maximum number of null allomorphs: \maxnull
+@findex \maxnull
+
+The maximum number of null allomorphs that may appear in a word is
+defined by the @code{\maxnull} field code followed by a number greater
+than or equal to zero.
+
+The @code{\maxnull} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\maxnull} fields appear in the analysis data file, then
+AMPLE limits the number of null allomorphs in a word to ten (10).
+
+@node \maxp, \maxprops, \maxnull, Analysis data file fields
+@subsection Maximum number of prefixes: \maxp
+@findex \maxp
+
+The maximum number of prefixes that may appear in a word is defined by
+the @code{\maxp} field code followed by a number greater than or equal
+to zero.
+
+The @code{\maxp} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\maxp} fields appear in the analysis data file, then AMPLE
+assumes that the language does not have prefixes.
+
+@c Following added by hab 14-May-1999
+@node \maxprops, \maxr, \maxp, Analysis data file fields
+@subsection Maximum number of properties: \maxprops
+@findex \maxprops
+
+The maximum number of properties that can be defined can be increased
+from the default of 255 by giving the @code{\maxprops} field code
+followed by a number greater than or equal to 255 but less than 65536.
+
+The @code{\maxprops} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the one containing the
+largest valid value is the one that is used.
+
+The @code{\maxprops} must be used before any properties are defined.
+This is the case for both morpheme and allomorph properties.
+
+If no @code{\maxprops} fields appear in the analysis data file, then
+AMPLE limits the number of properties which can be defined to 255.
+
+@node \maxr, \maxs, \maxprops, Analysis data file fields
+@subsection Maximum number of roots: \maxr
+@findex \maxr
+
+The maximum number of roots that may appear in a word is defined by
+the @code{\maxr} field code followed by a number greater than or equal
+to one.
+
+The @code{\maxr} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\maxr} fields appear in the analysis data file, then AMPLE
+assumes that only a single root can appear in a word.
+
+@node \maxs, \mcc, \maxr, Analysis data file fields
+@subsection Maximum number of suffixes: \maxs
+@findex \maxs
+
+The maximum number of suffixes that may appear in a word is defined by
+the @code{\maxs} field code followed by a number greater than or equal
+to zero.
+
+The @code{\maxs} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\maxs} fields appear in the analysis data file, then AMPLE
+assumes that up to 100 suffixes can occur in a word.
+
+@node \mcc, \mcl, \maxs, Analysis data file fields
+@subsection Morpheme Co-occurrence Constraint: \mcc
+@findex \mcc
+
+A morpheme co-occurrence constraint is defined by the @code{\mcc} field
+code followed by one or more morpheme names or morpheme class names, and
+finally a morpheme environment constraint.  Each morpheme class name
+must be enclosed in square brackets, and must have been defined by a
+prior @code{\mcl} field.
+
+For the syntax of morpheme co-occurrence constraints, see
+@ifset txt
+`Morpheme Co-occurrence Constraint Syntax' below.
+@end ifset
+@ifclear txt
+@ref{MCC syntax}.
+@end ifclear
+
+If no @code{\mcc} fields appear in the analysis data file, then AMPLE
+does not eliminate any analyses by the @code{MCC_FT} test.
+
+@node \mcl, \mp, \mcc, Analysis data file fields
+@subsection Morpheme class: \mcl
+@findex \mcl
+
+A morpheme class is defined by the @code{\mcl} field code followed by the
+class name, which is followed in turn by one or more morpheme names
+or (previously defined) morpheme class names.  A morpheme class name
+used as part of the class definition must be enclosed in square
+brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The morpheme names should be defined by an entry
+in one of the dictionary files.
+
+Each @code{\mcl} field defines a single morpheme class.  Any number of
+@code{\mcl} fields may appear in the file.
+
+If no @code{\mcl} fields appear in the analysis data file, then AMPLE
+does not allow any morpheme classes in morpheme environment constraints
+or tests.
+
+@node \mp, \pah, \mcl, Analysis data file fields
+@subsection Morpheme properties: \mp
+@findex \mp
+
+Morpheme properties are defined by the field code @code{\mp} followed
+by one or more morpheme property names.  An morpheme property name
+must be a single, contiguous sequence of printing characters.
+Characters and words which have special meanings in tests should not be
+used.
+
+A maximum of 255 properties (including both allomorph and morpheme
+properties) may be defined.  Any number of @code{\mp} fields may be
+used so long as the number of property names does not exceed 255.
+
+If no @code{\mp} fields appear in the analysis data file, then AMPLE
+does not allow any morpheme properties in dictionary files or tests.
+
+@node \pah, \patr, \mp, Analysis data file fields
+@subsection Prefix ad hoc pair: \pah
+@findex \pah
+
+A prefix ad hoc pair is defined by the @code{\pah} field code followed
+by two morpheme identifiers.  The first morphname may belong to either
+a prefix or an infix (if infixes exist and can mingle with prefixes).
+The second must belong to an prefix.
+
+Any number of prefix ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no @code{\pah} fields appear in the analysis data file, then AMPLE
+never eliminates any analyses via the prefix @code{ADHOC_ST} test.
+
+@c Following added by SRMc 21-Aug-1999 for XAMPLE
+@node \patr, \pcl, \pah, Analysis data file fields
+@subsection Word parser parameter settings: \patr
+@findex \patr
+
+The @code{\patr} field is recognized only by XAMPLE, not by AMPLE, and
+has effect only if a grammar file is selected by the @code{-e} command
+line option.  Each instance of this field sets one of the PCPATR control
+parameters.  Several instances of the field can occur in the analysis
+data file in order to set several different parameters.  Each field
+contains a parameter name followed by an argument giving its value.
+These parameters and allowable arguments are discussed below.
+
+Note that the parameter names and arguments following the @code{\patr}
+field code are not case sensitive: @code{ON} is the same as @code{On},
+which is the same as @code{on}.  Also, the parameter names and arguments
+may be abbreviated to the shortest unique value: @code{off} could be
+written @code{of}, since that is sufficient to distinguish it from
+@code{on}.
+
+@table @code
+@item CheckCycles
+This parameter controls a check against introducing cycles into the parse
+chart.  This makes the parse safer, but slows it down.  Legal grammars
+should not introduce cycles, but it can happen while developing grammars.
+@code{\patr CheckCycles ON} enables this check, and @code{\patr
+CheckCycles OFF} disables it.  The default is @code{ON}.
+
+@item DebuggingLevel
+This parameter specifies the amount of PCPATR debugging information which
+will be written to the log file.  Its argument is a number greater than
+or equal to zero.  If zero, then no extra debugging information will be
+written to the log file.  The default value is @code{0}.
+
+NOTE: this parameter is most useful for the programmer.  It can produce
+@emph{huge} amounts of cryptic output.
+
+@item FeatureStyle
+This parameter controls the way that feature structures are written to
+either the output analysis file or the log file, but not whether they are
+written.  @code{\patr FeatureStyle Full} causes features to be displayed
+in an indented format that makes obvious the embedded structure of each
+feature.  @code{\patr FeatureStyle Flat} causes features to be displayed
+in a flat, linear string that uses less space.  The default style is
+@code{Flat}.
+
+@item MaxAmbiguity
+This parameter controls the maximum number of different parses for a
+particular AMPLE word analysis that will be written to either the output
+analysis file or the log file.  Its argument is a number greater than or
+equal to one.  The default maximum is 10.
+
+@item PromoteDefAtoms
+This parameter controls whether default atomic feature values loaded from
+the lexicon are ``promoted'' to ordinary atomic feature values before
+parsing begins.  @code{\patr PromoteDefAtoms On} causes default atomic
+values to be promoted.  @code{\patr PromoteDefAtoms Off} causes parsing
+to use default atomic values still marked as default.  (This can affect
+feature unification since a conflicting default value does not cause a
+failure: the default value merely disappears.)  The default value is
+@code{On}.
+
+@item PropertyIsFeature
+This parameter controls whether the values in the AMPLE analysis
+@code{\p} (property) field are to be interpreted as feature template
+names, the same as the values in the AMPLE analysis @code{\fd} (feature
+descriptor) field.  @w{@code{\patr PropertyIsFeature On}} turns on this
+behavior, and @w{@code{\patr PropertyIsFeature Off}} turns it off.  The
+default value is @code{On}.
+
+@item ShowAllFeatures
+This parameter controls whether the feature structures for all nodes in
+the parse tree are written to the output files, or just the feature
+structure for the top node in the parse tree. @code{\patr ShowAllFeatures
+On} causes features for all nodes to be written.  @code{\patr
+ShowAllFeatures Off} causes only the feature structure for the top node
+of the parse to be written.  The default value is @code{On}.
+
+@item ShowFailures
+This parameter controls how the parser handles parse failures.  An AMPLE
+analysis may fail to parse either by failing the feature constraints or
+by failing the phrase structure rules.  @code{\patr ShowFailures On}
+causes partial results indicating the cause of parse failures to be
+written to the log file.  @code{\patr ShowFailures Off} prevents any
+extra output to the log file.  The default value is @code{Off}.
+
+NOTE: since the purpose of using the PCPATR word parser in XAMPLE is to
+weed out incorrect AMPLE analyses, a large number of parse failures are
+to be expected, which can cause @emph{huge} log files.  This parameter is
+best used in conjunction with the @code{-t} command line option when
+tracing the analysis of a single word, or a small number of words.
+
+@item ShowFeatures
+This parameter controls whether or not any feature structures are written
+to the output analysis file or the log file.  It does not affect any of
+the other parameters related to how feature structures are written.
+@code{\patr ShowFeatures On} enables writing feature structures to the
+output files.  @code{\patr ShowFeatures Off} disables writing feature
+structures.  The default value is @code{On}.
+
+@item ShowGlosses
+This parameter controls whether morpheme glosses are displayed in the
+parse tree output.  @code{\patr ShowGlosses On} enables writing glosses
+in the parse tree output.  @code{\patr ShowGlosses Off} disables writing
+glosses.  If no morpheme glosses exist in the dictionary, then this
+parameter is ignored.  The default value is @code{On}.
+
+@item TimeLimit
+This parameter limits the amount of time that parsing an AMPLE analysis
+can take.  Its argument is a number greater than or equal to zero, which
+is the maximum number of seconds than a parse is allowed before being
+cancelled.  The default value is @code{0}, which has the special meaning
+that no limit is imposed.
+
+NOTE: this feature is new and still somewhat experimental.  It may not be
+fully debugged, and may cause unforeseen side effects such as program
+crashes some time after one or more parses are cancelled due to exceeding
+the set time limit.
+
+@item TopDownFilter
+This parameter controls whether simple top-down filtering based on the
+grammar categories is applied to the parse process.  @code{\patr
+TopDownFilter On} enables this top-down filtering.  @code{\patr
+TopDownFilter Off} disables the top-down filtering, slowing down the
+parse but possibly finding more solutions.  The default value is
+@code{On}.
+
+@item TreeStyle
+This parameter controls how parse trees are written to either the analyis
+output file or the log file.
+
+@code{\patr TreeStyle Full} causes parses to be written in a somewhat
+graphic tree display format, using ASCII characters to draw the branches
+of the tree.
+
+@code{\patr TreeStyle Flat} causes parses to be written as parenthesized
+strings, similar to the way that LISP represents trees.  This is the
+default value: it may be cryptic, but it requires the least space.
+
+@code{\patr TreeStyle Indented} causes parses to be written in an
+indented format sometimes called a @emph{northwest tree}.
+
+@code{\patr TreeStyle XML} causes parses to be written in an XML format,
+with each node containing the feature structure associated with that node
+of the parse tree.  This setting causes the @code{FeatureStyle} parameter
+to be ignored.
+
+@code{\patr TreeStyle Off} prevents parses from being written.  This
+allows PCPATR word grammars to be used for filtering invalid AMPLE
+analyses without cluttering up the output analysis files.
+
+@item TrimEmptyFeatures
+This parameter controls whether empty feature structures are written to
+the output files.  @code{\patr TrimEmptyFeatures On} disables the display
+of empty feature values. @code{\patr TrimEmptyFeatures Off} enables the
+display of empty features.  The default value is @code{Off}.
+
+@item Unification
+This parameter controls whether the parsing process allows unification
+failures to block successful parsing.  @code{\patr Unification On} causes
+the constituent structure rules to constrain the parse.  @code{\patr
+Unification Off} causes feature unification failures to be ignored while
+parsing.  (Most likely, this would be useful only while debugging the
+word grammar.) The default value is @code{On}.
+
+@end table
+
+@c Following added by hab 14-May-1999
+@node \pcl, \pt, \patr, Analysis data file fields
+@subsection Punctuation class: \pcl
+@findex \pcl
+
+A punctuation class is defined by the field code @code{\pcl} followed
+by the class name, which is followed in turn by one or more
+punctuation characters or (previously defined) punctuation class
+names.  A punctuation class name used as part of the class definition
+must be enclosed in square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each @code{\pcl} field defines a single punctuation class.  Any number of
+@code{\pcl} fields may appear in the file.
+
+If no @code{\pcl} fields appear in the analysis data file, then AMPLE
+does not allow any punctuation classes in tests, and does not allow any
+punctuation classes in punctuation environment constraints.
+
+@node \pt, \rah, \pcl, Analysis data file fields
+@subsection Prefix successor test: \pt
+@findex \pt
+
+@c Added PEC_ST hab 14-May-1999
+A prefix successor test is defined by the @code{\pt} field code
+followed by the test name and possibly a test body.  The test body is
+not needed if the test name is that of a built-in test (either SEC_ST,
+ADHOC_ST, or PEC_ST).
+
+Prefix tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, and PEC_ST are
+applied after all the user-defined prefix tests.
+
+Any number of prefix successor tests may be defined in the file.  For
+the syntax of successor tests, see
+@ifset txt
+`Test Syntax' below.
+@end ifset
+@ifclear txt
+@ref{Test syntax}.
+@end ifclear
+
+If no @code{\pt} fields appear in the analysis data file, AMPLE still
+applies the built-in prefix tests SEC_ST, ADHOC_ST, and PEC_ST.
+
+@node \rah, \rd, \pt, Analysis data file fields
+@subsection Root ad hoc pair: \rah
+@findex \rah
+
+A root ad hoc pair is defined by the @code{\rah} field code followed by
+two morpheme identifiers.  The first identifier may belong to a prefix,
+an infix (if infixes exist and can mingle with prefixes or roots), or a
+root (if compound roots are allowed).  The second morpheme identifier
+must belong to a root.
+
+A prefix or infix identifier in a root ad hoc pair must be the affix's
+morphname.  A root identifier in a root ad hoc pair must be given exactly
+as it occurs in the analysis (an etymology or a gloss, depending on the
+assignment to the @code{M} field in the root section of the dictionary
+code table).
+
+Any number of root ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no @code{\rah} fields appear in the analysis data file, then AMPLE
+never eliminates any analyses via the root @code{ADHOC_ST} test.
+
+@node \rd, \rt, \rah, Analysis data file fields
+@subsection Root Delimiter Characters: \rd
+@findex \rd
+
+The root delimiter characters used in the output analysis file are
+defined by the @code{\rd} field code followed by two characters,
+possibly separated by spaces.  The first character is used to mark the
+beginning of a root analysis and the second is used to mark its end.
+
+The @code{\rd} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\rd} fields appear in the analysis data file, then AMPLE
+uses the delimiter characters @code{<} and @code{>}.
+
+@node \rt, \sah, \rd, Analysis data file fields
+@subsection Root successor test: \rt
+@findex \rt
+
+@c Added PEC_ST, changed prefix to root hab 14-May-1999
+A root successor test is defined by the @code{\rt} field code followed
+by the test name and possibly a test body.  The test body is not
+needed if the test name is that of a built-in test (SEC_ST, ADHOC_ST,
+ROOTS_ST, or PEC_ST), or a previously defined prefix or infix test
+that is to be used as a root test.
+
+Root tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, ROOT_ST, and PEC_ST
+are applied after all the user-defined root tests.
+
+Any number of root successor tests may be defined in the file.  For the
+syntax of successor tests, see
+@ifset txt
+`Test Syntax' below.
+@end ifset
+@ifclear txt
+@ref{Test syntax}.
+@end ifclear
+
+If no @code{\rt} fields appear in the analysis data file, AMPLE still
+applies the built-in root tests SEC_ST, ADHOC_ST, ROOTS_ST, and PEC_ST.
+
+@node \sah, \scl (xxAD01.CTL), \rt, Analysis data file fields
+@subsection Suffix ad hoc pair: \sah
+@findex \sah
+
+A suffix ad hoc pair is defined by the @code{\sah} field code followed
+by two morpheme identifiers.  The first identifier may belong to a
+root, an infix (if infixes exist and can mingle with roots or
+suffixes), or a suffix.  The second morpheme identifier must belong to
+a suffix.
+
+A suffix or infix identifier in a suffix ad hoc pair must be the affix's
+morphname.  A root identifier in a suffix ad hoc pair must be given exactly
+as it occurs in the analysis (an etymology or a gloss, depending on the
+assignment to the @code{M} field in the root section of the dictionary
+code table).
+
+Any number of suffix ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no @code{\sah} fields appear in the analysis data file, then AMPLE
+never eliminates any analyses via the suffix @code{ADHOC_ST} test.
+
+@node \scl (xxAD01.CTL), \st, \sah, Analysis data file fields
+@subsection String class: \scl
+@findex \scl
+
+A string class is defined by the @code{\scl} field code followed by the
+class name, which is followed in turn by one or more contiguous
+character strings or (previously defined) string class names.  A string
+class name used as part of the class definition must be enclosed in
+square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The actual character strings have no such
+restrictions.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each @code{\scl} field defines a single string class.  Any number of
+@code{\scl} fields may appear in the file.
+
+If no @code{\scl} fields appear in the analysis data file, then AMPLE
+does not allow any string classes in tests, and does not allow any
+string classes in string environment constraints unless they are
+defined in the text input control file or the dictionary orthography
+changes file.
+
+@node \st, \strcheck, \scl (xxAD01.CTL), Analysis data file fields
+@subsection Suffix successor test: \st
+@findex \st
+
+@c Added PEC_ST hab 14-May-1999
+A suffix successor test is defined by the @code{\st} field code
+followed by the test name and possibly a test body.  The test body is
+not needed if the test name is that of a built-in test (either SEC_ST,
+ADHOC_ST, or PEC_ST), or a previously defined prefix, infix, or root
+test that is to be used as a suffix test.
+
+Suffix tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, and PEC_ST are
+applied after all the user-defined suffix tests.
+
+Any number of suffix successor tests may be defined in the file.  For
+the syntax of successor tests, see
+@ifset txt
+`Test Syntax' below.
+@end ifset
+@ifclear txt
+@ref{Test syntax}.
+@end ifclear
+
+If no @code{\st} fields appear in the analysis data file, AMPLE still
+applies the built-in suffix tests SEC_ST, ADHOC_ST, and PEC_ST.
+
+@node \strcheck, , \st, Analysis data file fields
+@subsection Valid allomorph and string environment characters: \strcheck
+@findex \strcheck
+
+The characters considered to be valid for allomorph strings and string
+environment constraints are defined by a @code{\strcheck} field code
+followed by the list of characters.  Spaces are not significant in this
+list.
+
+The @code{\strcheck} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\strcheck} fields appear in the analysis data file, then
+AMPLE does not check allomorph strings and string environment
+constraints for containing only valid characters.
+
+@c ----------------------------------------------------------------------------
+@node Test syntax, MCC syntax, Analysis data file fields, Analysis data file
+@section Test Syntax
+
+The remainder of this chapter presents grammatical descriptions of the
+syntax of tests and morpheme co-occurrence constraints in BNF notation.
+The following comments explain how to read the syntax rules given
+below:
+@enumerate
+
+@item
+Names shown inside wedges (@code{<>}) are nonterminal symbols.  These
+must eventually be expanded into terminal symbols.
+
+@item
+The symbol @code{::=} means ``is replaced by.''
+
+@item
+Items on the righthand side of the rule (following the @code{::=}) that
+are not enclosed in wedges are terminal symbols, and appear in the rule
+exactly as they must appear in an AMPLE control file.  Whitespace is
+largely optional; it is required only to separate identifiers and
+keywords.  (Keywords are the alphabetic terminal symbols shown in the
+rules below.)
+
+@item
+Alternative ways of replacing a nonterminal symbol are listed on
+separate lines.
+@end enumerate
+
+@example
+
+@group
+ 1.  <test>          ::= <identifier> <body>
+
+ 2a. <body>          ::= <body> <logop> <factor>
+ 2b.                     IF <factor> THEN <factor>
+ 2c.                     <forleft> <factor>
+ 2d.                     <forright> <factor>
+ 2e.                     <factor>
+@end group
+
+@group
+ 3a. <factor>        ::= NOT <factor>
+ 3b.                     ( <body> )
+ 3c.                     <property_expr>
+ 3d.                     <string_expr>
+ 3e.                     <type_expr>
+ 3f.                     <category_expr>
+ 3g.                     <order_expr>
+ 3h.                     <cap_expr>
+@c Added by hab 14-May-1999
+ 3i.                     <punct_expr>
+@end group
+
+ 4.  <property_expr> ::= <position> property is <identifier>
+
+@group
+ 5a. <string_expr>   ::= <position> morphname is <identifier>
+ 5b.                     <position> morphname is member <identifier>
+ 5c.                     <position> morphname is <position> morphname
+ 5d.                     <position> allomorph is <identifier>
+ 5e.                     <position> allomorph is member <identifier>
+ 5f.                     <position> allomorph is <position> allomorph
+ 5g.                     <position> allomorph matches <identifier>
+ 5h.                     <position> allomorph matches member <identifier>
+ 5i.                     <position> allomorph matches <position> allomorph
+ 5j.                     <position> surface is <identifier>
+ 5k.                     <position> surface is member <identifier>
+ 5l.                     <position> surface is <position> allomorph
+ 5m.                     <position> surface matches <identifier>
+ 5n.                     <position> surface matches member <identifier>
+ 5o.                     <position> surface matches <position> allomorph
+ 5p.                     <neighbor> word is <identifier>
+ 5q.                     <neighbor> word is member <identifier>
+ 5r.                     <neighbor> word matches <identifier>
+ 5s.                     <neighbor> word matches member <identifier>
+@end group
+
+ 6.  <type_expr>     ::= <position> type is <type>
+
+@group
+ 7a. <category_expr> ::= <position> fromcategory is <position> fromcategory
+ 7b.                     <position> fromcategory is <position> tocategory
+ 7c.                     <position> tocategory is <position> fromcategory
+ 7d.                     <position> tocategory is <position> tocategory
+ 7e.                     <position> fromcategory is member <identifier>
+ 7f.                     <position> tocategory is member <identifier>
+ 7g.                     <position> fromcategory is <identifier>
+ 7h.                     <position> tocategory is <identifier>
+@end group
+
+@group
+ 8a. <cap_expr>      ::= <position> allomorph is capitalized
+ 8b.                     word is capitalized
+@end group
+
+@group
+ 9a. <order_expr>    ::= <position> orderclass <relop> <position> orderclass
+ 9b.                     <position> orderclass <relop> <constant>
+@end group
+
+@c Added by hab 14-May-1999
+@group
+10a. <punct_expr>    ::= <neighbor> punctuation is <identifier>
+10b.                     <neighbor> punctuation is member <identifier>
+@end group
+
+@c following renumbered by hab 14-May-1999
+@group
+11.  <logop>         ::= AND
+						 OR
+						 XOR
+						 IFF
+@end group
+
+@group
+12.  <forleft>       ::= FOR_ALL_LEFT
+						 FOR-ALL-LEFT
+						 FORALLLEFT
+						 FOR_SOME_LEFT
+						 FOR-SOME-LEFT
+						 FORSOMELEFT
+@end group
+
+@group
+13.  <forright>      ::= FOR_ALL_RIGHT
+						 FOR-ALL-RIGHT
+						 FORALLRIGHT
+						 FOR_SOME_RIGHT
+						 FOR-SOME-RIGHT
+						 FORSOMERIGHT
+@end group
+
+@group
+14.  <neighbor>      ::= last
+						 next
+@end group
+
+@group
+15.  <type>          ::= prefix
+						 infix
+						 root
+						 suffix
+						 initial
+						 final
+@end group
+
+@group
+16.  <relop>        ::= =
+						>
+						>=
+						<=
+						<
+						~=
+@end group
+
+@group
+17.  <position>     ::= left
+						right
+						current
+						LEFT
+						RIGHT
+						initial
+						final
+@end group
+
+@group
+18a. <identifier>   ::= "<word>"
+18b.                    '<word>'
+18c.                    .<word>.
+18d.                    [<word>]
+18e.                    <word>
+@end group
+
+@group
+19.  <word>         ::= <wchar>
+						<wchar><word>
+@end group
+
+@group
+20.  <wchar>        ::= one of the following characters:
+							!"#$%&'*+,-./0123456789:;?
+							@@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_
+							`abcdefghijklmnopqrstuvwxyz@{@}
+							\200-\376 (character codes 128@value{endash}254)
+@end group
+
+@group
+21.  <constant>     ::= <number>
+						-<number>
+@end group
+
+@group
+22.  <number>       ::= <digit>
+						<digit><number>
+
+23.  <digit>        ::= one of the following characters:  0123456789
+@end group
+
+@end example
+
+@subsubheading Comments on selected BNF rules
+@table @asis
+
+@item  1.
+A test consists of an identifier followed by the body of the test.  The
+identifier is the name by which a test is known.  The body consists of
+the expressions which are interpreted to evaluate the test.
+
+@item  4.
+The identifier in a property expression must be a property name defined
+with @code{\mp} or @code{\ap} in the analysis data file.
+
+@item  5a.
+In a string expression involving morphnames, an identifier must be equal to
+some morphname; for example, @code{left morphname is "PAST"} indicates that
+the name of the morpheme to the left is PAST.
+
+@item 5b.
+A member identifier in such expressions must be the name of a class of
+morphnames defined with @code{\mcl} in the analysis data file.
+
+@item 5dgjmpr.
+In a string expression involving allomorphs, surface strings, or
+adjacent words, an identifier must be equal to some portion of a word after
+any orthography change has been applied.  For example, @code{left allomorph
+is "abadaba"} indicates that the allomorph of the morpheme to the left
+is abadaba.
+
+@item 5ehknqs.
+A member identifier in such expressions must be the name of a
+class of strings defined with @code{\scl} in the analysis data file.
+
+@item 5d-i.
+If reference is made to left, LEFT or INITIAL, the allomorph is tested
+to see if it ends with the string; for example, @code{left allomorph
+matches "ba"} indicates that the allomorph of the morpheme to the left
+ends in ba.  If reference is made to current, right, RIGHT, or FINAL,
+the allomorph is tested to see if it begins with the string.
+
+@item 5j-o.
+If reference is made to left, LEFT or INITIAL, the surface string is
+tested to see if it ends with the given value.  If reference is made to
+current, right, RIGHT, or FINAL, the surface string is tested to see if
+it begins with the given value.
+
+@item 5p-s.
+If reference is made to last, the word is tested to see if it ends with
+the string.  If reference is made to next, the word is tested to see if
+it begins with the string.  (These should be avoided, and other means
+used to prune analyses based on adjacent words.)
+
+@item 6.
+The type must be a keyword indicating whether the morpheme referred to
+is a prefix, an infix, a root, and so on
+
+@item 7ef.
+The identifier must be the name of a class of categories defined with
+@code{\ccl} in the analysis data file.
+
+@item 7gh.
+The identifier must be a category defined with @code{\ca} in the
+analysis data file.
+
+@item 9b.
+A constant is an integer between -32767 and (positive) 32767.  The
+relational operator (relop) must be among those listed in rule 16.
+
+@c Added by hab 14-May-1999
+@item 10.
+Punctuation expressions always refer to punctuation either immediately
+before or after the current word.  A @code{<neighbor>} value of
+@code{last} refers to immediately before the current word and
+a @code{<neighbor>} value of @code{next} refers to
+immediately after the current word.
+
+@item 18a-d.
+The quoted forms of an identifier are needed only if the identifier is
+the same as one of the AMPLE test keywords.  It is recommended that the
+quoted identifier not contain the closing quote character.
+@end table
+
+@c ----------------------------------------------------------------------------
+@node MCC syntax, , Test syntax, Analysis data file
+@section Morpheme Co-occurrence Constraint Syntax
+
+This section presents a grammatical description of the syntax of
+morpheme co-occurrence constraints in BNF notation.  These constraints
+are found either in the analysis data file
+@ifset txt
+(see `Morpheme Co-occurrence Constraint: \mcc' above)
+@end ifset
+@ifclear txt
+(@pxref{\mcc})
+@end ifclear
+or in a dictionary file
+@ifset txt
+(see `Morpheme Co-occurrence Constraint (internal code Z)' below).
+@end ifset
+@ifclear txt
+(@pxref{Morpheme co-occurrence constraint}).
+@end ifclear
+
+@example
+
+ 1a. <constraint>   ::= <morphnames> <environments>
+ 1b.                    @{ <literal> @} <morphnames> <environments>
+
+@group
+ 2a. <morphnames>   ::= <literal>
+ 2b.                    <literal> <morphnames>
+ 2c.                    [ <literal> ]
+ 2d.                    [ <literal> ] <morphnames>
+@end group
+
+@group
+ 3a. <environments> ::= <environment>
+ 3b.                    <environment> <environments>
+@end group
+
+@group
+ 4a. <environment>  ::= <marker> <leftside> <envbar> <rightside>
+ 4b.                    <marker> <leftside> <envbar>
+ 4c.                    <marker> <envbar> <rightside>
+@end group
+
+@group
+ 5a. <leftside>     ::= <side>
+ 5b.                    <boundary>
+ 5c.                    <boundary> <side>
+ 5d.                    <side> # <side>
+ 5e.                    <boundary> <side> # <side>
+@end group
+
+@group
+ 6a. <rightside>  ::= <side>
+ 6b.                  <boundary>
+ 6c.                  <side> <boundary>
+ 6d.                  <side> # <side>
+ 6e.                  <side> # <side> <boundary>
+@end group
+
+@group
+ 7a. <side>       ::= <item>
+ 7b.                  <item> <side>
+ 7c.                  <item> ... <side>
+@end group
+
+@group
+ 8a. <item>       ::= <piece>
+ 8b.                  ( <piece> )
+@end group
+
+@group
+ 9a. <piece>      ::= ~ <piece>
+ 9b.                  <literal>
+ 9c.                  [ <literal> ]
+ 9d.                  @{ <literal> @}
+@end group
+
+@group
+10.  <marker>     ::= /
+					  +/
+@end group
+
+@group
+11.  <envbar>     ::= _
+					  ~_
+@end group
+
+@group
+12.  <boundary>   ::= #
+					  ~#
+
+13.  <literal>    ::= one or more contiguous characters
+@end group
+
+@end example
+
+@subsubheading Comments on selected BNF rules
+@table @asis
+
+@item 1b.
+A literal enclosed in braces is an arbitary identifier for this
+morpheme co-occurrence constraint.  (This feature was added to support
+LinguaLinks.)
+
+@item 2ab.
+A literal is a morphname from one of the dictionary files.
+
+@item 2cd.
+A literal enclosed in square brackets must be the name of a morpheme
+class defined by a @code{\mcl} field in the analysis data file.
+
+@item 5-6.
+Note that what can appear to the left of the environment bar is a
+mirror image of what can appear to the right.
+
+@item 5de.
+@itemx 6de.
+These should be avoided, and other means used to prune analyses based
+on adjacent words.
+
+@item 7c.
+An ellipsis (@code{...}) indicates a possible break in contiguity.
+
+@item 8b.
+Something enclosed in parentheses is optional.
+
+@item 9a.
+A tilde (@code{~}) reverses the desirability of an element, causing the
+constraint to fail if it is found rather than fail if it is not found.
+
+@item 9b.
+A literal is a morphname from one of the dictionary files.
+
+@item 9c.
+A literal enclosed in square brackets must be the name of a morpheme
+class defined by a @code{\mcl} field in the analysis data file.
+
+@item 9d.
+A literal enclosed in curly braces must be one of the following
+(checked in this order):
+@enumerate
+@item
+one of the keywords @code{root}, @code{prefix}, @code{infix}, or
+@code{suffix}
+@item
+a property name defined by an @code{\ap} or @code{\mp} field in the
+analyis data file
+@item
+a category name defined by a @code{\ca} field in the analysis data file
+@item
+a category class name defined by a @code{\ccl} field in the analysis
+data file
+@item
+a morpheme class name defined by a @code{\mcl} field in the analysis
+data file
+@end enumerate
+
+@item 10.
+A @code{/} is usually used for string environment constraints, but may
+used for morpheme environment constraints in @code{\mcc} fields in the
+analysis data file.
+
+@item 11.
+A tilde (@code{~}) attached to the environment bar inverts the sense of
+the constraint as a whole.
+
+@item 12b.
+The boundary marker preceded by a tilde (@code{~#}) indicates that it
+must not be a word boundary.
+
+@need 1000
+@item 13.
+The special characters used by environment constraints can be included
+in a literal only if they are immediately preceded by a backslash:
+@example
+
+\+  \/  \#  \~  \[  \]  \(  \)  \@{  \@}  \.  \_  \\
+
+@end example
+@end table
+
+@c ----------------------------------------------------------------------------
+@node Dictionary code table file, Dictionary orthography change table file, Analysis data file, Top
+@chapter Dictionary Code Table File
+@include dictcode.txi
+
+@c ----------------------------------------------------------------------------
+@node Dictionary orthography change table file, Dictionary files, Dictionary code table file, Top
+@chapter Dictionary Orthography Change Table File
+@include dictochg.txi
+
+@c ----------------------------------------------------------------------------
+@node Dictionary files, Text input control file, Dictionary orthography change table file, Top
+@chapter Dictionary Files
+@ifset txt
+@set ampletxt
+@end ifset
+@ifclear txt
+@set amplentxt
+@end ifclear
+@include dictfile.txi
+
+@c ----------------------------------------------------------------------------
+@node Text input control file, Analysis files, Dictionary files, Top
+@chapter Text Input Control File
+@cindex text input control
+@ifset txt
+@set textintxt
+@end ifset
+@ifclear txt
+@set textinntxt
+@end ifclear
+@include textin.txi
+@set textin-title Text Input Control File
+
+@c ----------------------------------------------------------------------------
+@node Analysis files, Bibliography, Text input control file, Top
+@chapter Output Analysis Files
+@cindex output analysis file
+@cindex analysis output file
+@include anafiles.txi
+
+@c ----------------------------------------------------------------------------
+@node Bibliography, Index, Analysis files, Top
+@unnumbered Bibliography
+
+@enumerate
+
+@item
+Weber, David J., H. Andrew Black, and Stephen R. McConnel. 1988.
+@cite{AMPLE: a tool for exploring morphology}.
+Occasional Publications in Academic Computing No.@: 12.
+Dallas, TX: Summer Institute of Linguistics.
+
+@item
+Weber, David J., H. Andrew Black, Stephen R. McConnel, and Alan Buseman. 1990.
+@cite{STAMP: a tool for dialect adaptation}.
+Occasional Publications in Academic Computing No.@: 15.
+Dallas, TX: Summer Institute of Linguistics.
+
+@end enumerate
+
+@c ----------------------------------------------------------------------------
+@node Index, , Bibliography, Top
+@chapter Index
+
+@printindex cp
+
+@c ----------------------------------------------------------------------------
+@contents
+@bye

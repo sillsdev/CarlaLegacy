@@ -1,0 +1,489 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename intergen.info
+@settitle INTERGEN Reference Manual
+@c %**end of header
+
+@set intergen
+
+@set TITLE INTERGEN Reference Manual
+@set SUBTITLE producing simple interlinear text
+@set VERSION version 2.1b3
+@set DATE May 11, 1998
+@set AUTHOR by H. Andrew Black
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@node    Top,       Introduction,  (dir),    (dir)
+@comment node-name, next,          previous, up
+
+@ifinfo
+@ifclear txt
+This is the reference manual for the INTERGEN program.
+@end ifclear
+@end ifinfo
+
+@menu
+* Introduction::                Why INTERGEN was written
+* Running INTERGEN::            How to use INTERGEN
+* Analysis files::              Description of input to INTERGEN
+* Text output control file::    Description of control file
+@end menu
+@c ----------------------------------------------------------------------------
+@node    Introduction, Running INTERGEN, Top,      Top
+@comment node-name,    next,            previous, up
+@chapter Introduction to the INTERGEN program
+
+AMPLE outputs its result as a database in which there is one record per
+word, with capitalization, white space, format marking, and punctuation
+represented in other fields.  INTERGEN converts text from this format
+into something much more like an interlinear text.  It restores the
+capitalization, format markers, and white space of the text.  By default
+it produces one line for the decomposition and another line for the
+analysis.  In the analysis line, the root categories are discarded and
+hyphens are inserted between morphnames.
+
+INTERGEN v. 1.0 was designed to be a preprocessor for the INTER.PTP
+program (which was used with the ManuScripter program).  Since INTER.PTP
+expected no more than one space between words, the individual words in
+the decomposition and analysis lines were not aligned with each other.
+
+Beginning with version 1.0d, an @code{-a} command line option caused the
+words to be aligned.  Version 1.2g allowed the underlying form field to
+also be shown whenever it was present in the database.  Version 2.0 adds
+an option to selectively show any or all of the available content fields
+from the database.  They may be shown in any order and may be repeated.
+
+@c ----------------------------------------------------------------------------
+@node Running INTERGEN, Analysis files, Introduction, Top
+@chapter Running INTERGEN
+
+@subheading Command line options
+
+The INTERGEN program uses an old-fashioned command line interface
+following the convention of options starting with a dash character
+(@samp{-}).  The available options are listed below in alphabetical
+order.  Those options which require an argument have the argument type
+following the option letter.
+
+@table @code
+@item -a
+each word is aligned with its associated gloss in the following line.
+There is also a blank line after each gloss line.  Failures are give a
+gloss of @samp{%0%}.  Ambiguous analyses are shown one after the other
+with a percent sign @samp{%} separating each one.
+
+@item -n
+to be used in conjunction with the @samp{-a} option.  For ambiguous
+analyses, rather than
+showing every analysis, it shows the number of ambiguities and one analysis.
+
+@item -e
+to be used in conjunction with the @samp{-a} option.  For ambiguous
+analyses, rather than showing just one decomposition ambiguity,  it
+shows all of them.  The @samp{-e} option is only effective if
+the @samp{-n} option is not present.
+
+@item -f
+to be used with the @samp{-a} option.  Each line of output
+is prepended with a standard format field code.  The default
+field codes are:
+@noindent
+@code{\\wrd} for the @code{\w} (original word) field@*
+@code{\\dec} for the @code{\d} (morpheme decomposition) field@*
+@code{\\ana} for the @code{\a} (analysis) field@*
+@code{\\und} for the @code{\u} (underlying form) field@*
+@code{\\prp} for the @code{\p} (properties) field@*
+@code{\\cat} for the @code{\c} (category) field@*
+@code{\\fea} for the @code{\fd} (feature descriptor) field
+@noindent
+The @samp{-g} option may be used to change the defaults.
+
+@item -g code
+to be used in conjunction with the @samp{-f} option.  This
+allows the user to select the standard format field code to
+be prepended for each output line.  @code{code} consists of
+the single character code of the field as listed under the
+@samp{-s} option followed immediately by the standard format
+field (without the backslash) to be used for the field.
+E.g. @samp{-g agls} will prepend @code{\\gls} to the
+analysis line.  More than one field may be designated
+by separating each instance by a forward slash @code{/}
+character.  E.g. @samp{-g ww/dd/ag} will prepend the
+following standard format field codes to the indicated
+lines:
+@noindent
+@code{\\w} for the original word line@*
+@code{\\d} for the morpheme decomposition line@*
+@code{\\g} for the analysis line@*
+@noindent
+The other lines (if output) will use the default standard
+format field codes.  See @samp{-f}.
+Instead of using the forward slash convention, one may also
+use multiple instances of the @samp{-g} switch.  Thus,
+@samp{-g ww/dd/ag} is equivalent to @samp{-g ww -g dd -g ag}.
+
+@item -m
+monitors the progress of the interlinear conversion by displaying a code
+on stderr (usually the screen) for each word.  @code{*} means an
+analysis failure, @code{.} means a single analysis,
+@code{2}@value{endash}@code{9} means 2@value{endash}9 ambiguities, and
+@code{>} means 10 or more ambiguities.  This is not compatible with the
+@samp{-q} option.
+
+@item -c character
+selects the control file comment character.  The default is the vertical
+bar (@code{|}).
+
+@item -d character
+selects the decomposition separation character (the one used to separate
+morphnames in the analysis).  The default is a hyphen (@code{-}).
+
+@item -i filename
+selects a single input AMPLE analysis database file.
+
+@item -o filename
+selects a single output interlinear text file.
+
+@item -q
+tells INTERGEN to operate @emph{quietly} with minimal screen output.
+This is not compatible with the @samp{-m} option.
+
+@need 2000
+@item -s codes
+tells INTERGEN which fields to output and in what order.  The fields are
+indicated by the characters in @code{codes}.  The possible characters
+within @code{codes} along with their meanings are:
+
+@noindent
+@code{w} means show the @code{\w} (original word) field@*
+@code{d} means show the @code{\d} (morpheme decomposition) field@*
+@code{a} means show the @code{\a} (analysis) field@*
+@code{u} means show the @code{\u} (underlying form) field@*
+@code{p} means show the @code{\p} (properties) field@*
+@code{c} means show the @code{\c} (category) field@*
+@code{f} means show the @code{\fd} (feature descriptor) field
+@noindent
+The characters may be repeated more than once.  The default is
+@w{@samp{-sdua}}.  If more than one instance of @code{-s} appears, only
+the last one will take effect.
+
+@item -t filename
+selects a single text output control file
+@ifset txt
+(see `Text Output Control File' below).
+@end ifset
+@ifclear txt
+(@pxref{Text output control file}).
+@end ifclear
+
+@item -w number
+sets the maximum line width to @code{number}.  No output line will be
+longer than @code{number}.  The default is 77.
+
+@item -/
+increments the debugging level.  The default is zero (no debugging output).
+
+@end table
+
+The following options exist only in beta-test versions of the program,
+since they are used only for debugging.
+
+@ftable @code
+@item -z filename
+opens a file for recording a memory allocation log.
+
+@item -Z address,count
+traps the program at the point where @code{address} is allocated or
+freed for the @code{count}'th time.
+@end ftable
+
+@subheading Examples
+
+If the @samp{-i} command option is not used, INTERGEN prompts for a
+number of file names, reading the standard input for the desired values.
+The interactive dialog goes like this:
+@example
+
+@group
+C> intergen
+INTERGEN: Generate interlinear text from AMPLE output
+Version 2.1b3 (May 11, 1998), Copyright 1998 SIL, Inc.
+Beta test version compiled May 11 1998 16:21:42
+For 386 CPU (or better) under MS-DOS [compiled with DJGPP 2.1/GNU C 2.7]
+				Conversion Performed Mon May 11 16:36:53 1998
+Text Control File (xxOUTX.CTL) [none]:
+Input File in Database Format (xxxxxx.CED):
+Output file: [aetest.it]
+	47 words read from aetest.aaa
+
+Next Input File: [no more]:
+C>
+@end group
+
+@end example
+Note that each prompt contains a reminder of the expected form of the
+answer in parentheses and ends with a colon.  Several of the prompts
+also contain the default answer in brackets.
+
+Using the command options for input and output filenames changes the
+appearance of the program screen output only in that no file names are
+requested.  For example,
+@example
+
+@group
+C> intergen -i aetest.aaa -o aetest.it
+INTERGEN: Generate interlinear text from AMPLE output
+Version 2.1b3 (May 11, 1998), Copyright 1998 SIL, Inc.
+Beta test version compiled May 11 1998 16:21:42
+For 386 CPU (or better) under MS-DOS [compiled with DJGPP 2.1/GNU C 2.7]
+				Conversion Performed Mon May 11 16:38:22 1998
+	47 words read from aetest.aaa
+C>
+@end group
+
+@end example
+
+The format of the output file depends on the command line options
+chosen.
+
+The default might look like:
+@example
+
+@group
+\p
+A-kem-ako-veNt-i-ri pairani apaani maini
+1I-*kem-DAT-BEN-NF-3MO%1I-*kem-DAT-BEN-NF-REL *pairani aparoni *maini
+h-ay-i-ro kooya. Te-ma osyeki
+3MNF-*ag-NF-3FO *kooya *te-CNJT *osyeki
+hi-nyaaNpoiri-t-apiiNt-a-ve-t-ak-a-ri
+3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-3MO%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-REL%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-NFR-CAUTION
+ovaa-Ntsi-poosyi-ki, i-tsoNk-at-ii-ro i-tso-t-i-ro tivana.
+*ovaa-ABS-BAJADA-LOC 3M-*tsoNk-PROG-NF-3FO 3M-*tso-&-NF-3FO *tivana
+O-pony-aasyi-t-ak-a
+3F-*pony-PURP-&-PERF-NFR%3F-*pony-PURP-&-NFR-INDEF%3F-*pony-&-hoja-&-PERF-NFR%3F-*pony-&-hoja-&-NFR-INDEF
+ironyaaka i-kaNt-a-ve-t-ak-a-ro 0-iri kooya-ka:
+*ironyaaka 3M-*kaNt-&-FRUS-&-PERF-NFR-3FO 3FPOS-*iri *kooya-PROX
+\p
+--
+N-isyiNtyo-', atake pi-pipiya-t-ak-a
+1POS-*isyiNtyo-VOC *atake 2-pipiya-&-PERF-NFR%2-pipiya-&-NFR-INDEF
+ovaa-Ntsi-poosyi-ki, h-ay-i-mi-kari maini.
+*ovaa-ABS-BAJADA-LOC 3MNF-*ag-NF-2O-CAUTION *maini
+...
+@end group
+
+@end example
+
+Using @code{-a}, the output would look like:
+@example
+
+@group
+\p
+A-kem-ako-veNt-i-ri                           pairani  apaani  maini
+1I-*kem-DAT-BEN-NF-3MO%1I-*kem-DAT-BEN-NF-REL *pairani aparoni *maini
+
+h-ay-i-ro       kooya. Te-ma    osyeki
+3MNF-*ag-NF-3FO *kooya *te-CNJT *osyeki
+
+hi-nyaaNpoiri-t-apiiNt-a-ve-t-ak-a-ri
+3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-3MO%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-REL%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-NFR-CAUTION
+
+ovaa-Ntsi-poosyi-ki, i-tsoNk-at-ii-ro      i-tso-t-i-ro     tivana.
+*ovaa-ABS-BAJADA-LOC 3M-*tsoNk-PROG-NF-3FO 3M-*tso-&-NF-3FO *tivana
+
+O-pony-aasyi-t-ak-a
+3F-*pony-PURP-&-PERF-NFR%3F-*pony-PURP-&-NFR-INDEF%3F-*pony-&-hoja-&-PERF-NFR%3F-*pony-&-hoja-&-NFR-INDEF
+
+ironyaaka  i-kaNt-a-ve-t-ak-a-ro          0-iri      kooya-ka:
+*ironyaaka 3M-*kaNt-&-FRUS-&-PERF-NFR-3FO 3FPOS-*iri *kooya-PROX
+
+\p
+--
+N-isyiNtyo-',      atake  pi-pipiya-t-ak-a
+1POS-*isyiNtyo-VOC *atake 2-pipiya-&-PERF-NFR%2-pipiya-&-NFR-INDEF
+
+ovaa-Ntsi-poosyi-ki, h-ay-i-mi-kari         maini.
+*ovaa-ABS-BAJADA-LOC 3MNF-*ag-NF-2O-CAUTION *maini
+
+...
+@end group
+
+@end example
+
+Using @code{-a -n} the output would look like:
+@example
+
+@group
+\p
+   A-kem-ako-veNt-i-ri    pairani  apaani  maini  h-ay-i-ro       kooya.
+%2 1I-*kem-DAT-BEN-NF-3MO *pairani aparoni *maini 3MNF-*ag-NF-3FO *kooya
+
+Te-ma    osyeki     hi-nyaaNpoiri-t-apiiNt-a-ve-t-ak-a-ri
+*te-CNJT *osyeki %3 3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-3MO
+
+ovaa-Ntsi-poosyi-ki, i-tsoNk-at-ii-ro      i-tso-t-i-ro     tivana.
+*ovaa-ABS-BAJADA-LOC 3M-*tsoNk-PROG-NF-3FO 3M-*tso-&-NF-3FO *tivana
+
+   O-pony-aasyi-t-ak-a      ironyaaka  i-kaNt-a-ve-t-ak-a-ro
+%4 3F-*pony-PURP-&-PERF-NFR *ironyaaka 3M-*kaNt-&-FRUS-&-PERF-NFR-3FO
+
+0-iri      kooya-ka:
+3FPOS-*iri *kooya-PROX
+
+\p
+--
+N-isyiNtyo-',      atake     pi-pipiya-t-ak-a    ovaa-Ntsi-poosyi-ki,
+1POS-*isyiNtyo-VOC *atake %2 2-pipiya-&-PERF-NFR *ovaa-ABS-BAJADA-LOC
+
+h-ay-i-mi-kari         maini.
+3MNF-*ag-NF-2O-CAUTION *maini
+
+
+...
+@end group
+
+@end example
+
+Using @code{-a -e} the output would look like:
+@example
+
+@group
+\p
+A-kem-ako-veNt-i-ri%a-kem-ako-veNt-i-ri       pairani  apaani  maini
+1I-*kem-DAT-BEN-NF-3MO%1I-*kem-DAT-BEN-NF-REL *pairani aparoni *maini
+
+h-ay-i-ro       kooya. Te-ma    osyeki
+3MNF-*ag-NF-3FO *kooya *te-CNJT *osyeki
+
+hi-nyaaNpoiri-t-apiiNt-a-ve-t-ak-a-ri%hi-nyaaNpoiri-t-apiiNt-a-ve-t-ak-a-ri%hi-nyaaNpoiri-t-apiiNt-a-ve-t-a-kari
+3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-3MO%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-REL%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-NFR-CAUTION
+
+ovaa-Ntsi-poosyi-ki, i-tsoNk-at-ii-ro      i-tso-t-i-ro     tivana.
+*ovaa-ABS-BAJADA-LOC 3M-*tsoNk-PROG-NF-3FO 3M-*tso-&-NF-3FO *tivana
+
+O-pony-aasyi-t-ak-a%o-pony-aasyi-t-a-ka%o-pony-aa-syi-t-ak-a%o-pony-aa-syi-t-a-ka
+3F-*pony-PURP-&-PERF-NFR%3F-*pony-PURP-&-NFR-INDEF%3F-*pony-&-hoja-&-PERF-NFR%3F-*pony-&-hoja-&-NFR-INDEF
+
+ironyaaka  i-kaNt-a-ve-t-ak-a-ro          0-iri      kooya-ka:
+*ironyaaka 3M-*kaNt-&-FRUS-&-PERF-NFR-3FO 3FPOS-*iri *kooya-PROX
+
+\p
+--
+N-isyiNtyo-',      atake  pi-pipiya-t-ak-a%pi-pipiya-t-a-ka
+1POS-*isyiNtyo-VOC *atake 2-pipiya-&-PERF-NFR%2-pipiya-&-NFR-INDEF
+
+ovaa-Ntsi-poosyi-ki, h-ay-i-mi-kari         maini.
+*ovaa-ABS-BAJADA-LOC 3MNF-*ag-NF-2O-CAUTION *maini
+
+...
+@end group
+
+@end example
+
+Using the @code{-a -swda} options would look like:
+@example
+
+@group
+\p
+Aquemacoventziri                              pairani  apaani  maini
+a-kem-ako-veNt-i-ri                           pairani  apaani  maini
+1I-*kem-DAT-BEN-NF-3MO%1I-*kem-DAT-BEN-NF-REL *pairani aparoni *maini
+
+jayiro          cooya. Tema     oshequi
+h-ay-i-ro       kooya  te-ma    osyeki
+3MNF-*ag-NF-3FO *kooya *te-CNJT *osyeki
+
+jin~aampoiritapiintavetacari
+hi-nyaaNpoiri-t-apiiNt-a-ve-t-ak-a-ri
+3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-3MO%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-REL%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-NFR-CAUTION
+
+ovaantsipooshiqui,   ithoncatziiro         ithotziro        tzivana.
+ovaa-Ntsi-poosyi-ki  i-tsoNk-at-ii-ro      i-tso-t-i-ro     tivana
+*ovaa-ABS-BAJADA-LOC 3M-*tsoNk-PROG-NF-3FO 3M-*tso-&-NF-3FO *tivana
+
+Opon~aashitaca
+o-pony-aasyi-t-ak-a
+3F-*pony-PURP-&-PERF-NFR%3F-*pony-PURP-&-NFR-INDEF%3F-*pony-&-hoja-&-PERF-NFR%3F-*pony-&-hoja-&-NFR-INDEF
+
+iron~aaca  icantavetacaro                 iri        cooyaca:
+ironyaaka  i-kaNt-a-ve-t-ak-a-ro          0-iri      kooya-ka
+*ironyaaka 3M-*kaNt-&-FRUS-&-PERF-NFR-3FO 3FPOS-*iri *kooya-PROX
+
+\p
+--
+Nishintyo',        ataque pipipiyataca
+n-isyiNtyo-'       atake  pi-pipiya-t-ak-a
+1POS-*isyiNtyo-VOC *atake 2-pipiya-&-PERF-NFR%2-pipiya-&-NFR-INDEF
+
+ovaantsipooshiqui,   jayimicari             maini.
+ovaa-Ntsi-poosyi-ki  h-ay-i-mi-kari         maini
+*ovaa-ABS-BAJADA-LOC 3MNF-*ag-NF-2O-CAUTION *maini
+
+...
+@end group
+
+@end example
+
+
+As a final example, using the @code{-a -swda} options along
+with @code{-f -g wword/ddecomp/agls} would look like:
+@example
+
+@group
+\p
+\word Aquemacoventziri                             pairani  apaani  maini
+\decomp a-kem-ako-veNt-i-ri                        pairani  apaani  maini
+\gls 1I-*kem-DAT-BEN-NF-3MO%1I-*kem-DAT-BEN-NF-REL *pairani aparoni *maini
+
+\word jayiro         cooya. Tema     oshequi
+\decomp h-ay-i-ro    kooya  te-ma    osyeki
+\gls 3MNF-*ag-NF-3FO *kooya *te-CNJT *osyeki
+
+\word jin~aampoiritapiintavetacari
+\decomp hi-nyaaNpoiri-t-apiiNt-a-ve-t-ak-a-ri
+\gls 3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-3MO%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-PERF-NFR-REL%3MNF-nyaaNpoiri-&-HAB-&-FRUS-&-NFR-CAUTION
+
+\word ovaantsipooshiqui,    ithoncatziiro         ithotziro        tzivana.
+\decomp ovaa-Ntsi-poosyi-ki i-tsoNk-at-ii-ro      i-tso-t-i-ro     tivana
+\gls *ovaa-ABS-BAJADA-LOC   3M-*tsoNk-PROG-NF-3FO 3M-*tso-&-NF-3FO *tivana
+
+\word Opon~aashitaca
+\decomp o-pony-aasyi-t-ak-a
+\gls 3F-*pony-PURP-&-PERF-NFR%3F-*pony-PURP-&-NFR-INDEF%3F-*pony-&-hoja-&-PERF-NFR%3F-*pony-&-hoja-&-NFR-INDEF
+
+\word iron~aaca   icantavetacaro                 iri        cooyaca:
+\decomp ironyaaka i-kaNt-a-ve-t-ak-a-ro          0-iri      kooya-ka
+\gls *ironyaaka   3M-*kaNt-&-FRUS-&-PERF-NFR-3FO 3FPOS-*iri *kooya-PROX
+
+\p
+--
+\word Nishintyo',       ataque pipipiyataca
+\decomp n-isyiNtyo-'    atake  pi-pipiya-t-ak-a
+\gls 1POS-*isyiNtyo-VOC *atake 2-pipiya-&-PERF-NFR%2-pipiya-&-NFR-INDEF
+
+\word ovaantsipooshiqui,    jayimicari             maini.
+\decomp ovaa-Ntsi-poosyi-ki h-ay-i-mi-kari         maini
+\gls *ovaa-ABS-BAJADA-LOC   3MNF-*ag-NF-2O-CAUTION *maini
+
+...
+@end group
+
+@end example
+
+@c ----------------------------------------------------------------------------
+@node Analysis files, Text output control file, Running INTERGEN, Top
+@chapter Input Analysis Files
+@include anafiles.txi
+
+@c ----------------------------------------------------------------------------
+@node Text output control file, , Analysis files, Top
+@chapter Text Output Control File
+@include textout.txi
+
+@c ----------------------------------------------------------------------------
+@contents
+@bye

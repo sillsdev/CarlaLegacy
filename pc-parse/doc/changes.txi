@@ -1,0 +1,601 @@
+@c this file should be @include d by another -*- texinfo -*- file
+@c following a node `\ch' and a section heading.
+@c
+@c This material is adapted from chapters 7, 8, and 9 of
+@c    David J. Weber, H. Andrew Black, and Stephen R. McConnel,
+@c    AMPLE: A Tool for Exploring Morphology,
+@c    Occasional Publications in Academic Computing Number 12,
+@c    Summer Institute of Linguistics, Dallas, TX, 1988.
+@c
+@c FIX FOR @ifset textin TO ALLOW USE BY textout.txi !!!!!!!!!!!!!!!!!!!!!!!!
+@c
+@c this file is conditionalized by
+@c	@set ample
+@c	@set ktext
+@c	@set textin
+@c
+@set changes
+@ifclear endash
+@iftex
+@ifset html
+@set endash -
+@end ifset
+@ifclear html
+@set endash --
+@end ifclear
+@end iftex
+@ifinfo
+@set endash -
+@end ifinfo
+@end ifclear
+@c
+@ifclear commentchar
+@ifset ample
+@set commentchar |
+@end ifset
+@end ifclear
+@ifclear commentchar
+@set commentchar ;
+@end ifclear
+@ifset textin
+@set filedesc text input control file
+@end ifset
+@ifclear textin
+@set filedesc text output control file
+@end ifclear
+
+An orthography change is defined by the @code{\ch} field code followed
+by the actual orthography change.  Any number of orthography changes
+may be defined in the @value{filedesc}.  The output of each
+change serves as the input the following change.  That is, each change
+is applied as many times as necessary to an input word before the next
+change from the @value{filedesc} is applied.
+
+@menu
+* Basic changes::
+* Environmentally constrained changes::
+* Using text orthography changes::
+* Where orthography changes apply::
+* A sample orthography change table::
+* Syntax of Orthography Changes::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node Basic changes, Environmentally constrained changes, \ch, \ch
+@subsection Basic changes
+
+To substitute one string of characters for another, these must be made
+known to the program in a change.  (The technical term for this sort of
+change is a production, but we will simply call them changes.)  In the
+simplest case, a change is given in three parts: (1) the field code
+@code{\ch} must be given at the extreme left margin to indicate that
+this line contains a change; (2) the match string is the string for
+which the program must search; and (3) the substitution string is the
+replacement for the match string, wherever it is found.
+
+The beginning and end of the match and substitution strings must be
+marked.  The first printing character following @code{\ch} (with at
+least one space or tab between) is used as the delimiter for that line.
+The match string is taken as whatever lies between the first and second
+occurrences of the delimiter on the line and the substitution string is
+whatever lies between the third and fourth occurrences.  For example,
+the following lines indicate the change of hi to bye, where the
+delimiters are the double quote mark (@code{"}), the single quote mark
+(@code{'}), the period (@code{.}), and the at sign (@code{@@}).
+@example
+@group
+\ch "hi" "bye"
+\ch 'hi' 'bye'
+\ch .hi. .bye.
+\ch @@hi@@ @@bye@@
+@end group
+@end example
+@noindent
+Throughout this document, we use the double quote mark as the delimiter
+unless there is some reason to do otherwise.
+
+Change tables follow these conventions:
+@enumerate
+@item
+Any characters (other than the delimiter) may be placed between the
+match and substitution strings.  This allows various notations to
+symbolize the change.  For example, the following are equivalent:
+@example
+@group
+\ch "thou" "you"
+\ch "thou" to "you"
+\ch "thou" > "you"
+\ch "thou" --> "you"
+\ch "thou" becomes "you"
+@end group
+@end example
+@item
+Comments included after the substitution string are initiated by a
+@ifset ample
+vertical bar (@code{|}), or whatever is indicated as the comment character
+by means of the @code{-c} option when AMPLE is started.
+@end ifset
+@ifset ktext
+semicolon (@code{;}), or whatever is indicated as the comment character
+by means of the @code{-c} option when KTEXT is started.
+@end ifset
+@ifclear ample
+@ifclear ktext
+designated character such as a semicolon (@code{;}).
+@end ifclear
+@end ifclear
+The following lines illustrate the use of comments:
+@example
+@group
+\ch "qeki" "qiki" @value{commentchar} for cases like wawqeki
+\ch "thou" "you"  @value{commentchar} for modern English
+@end group
+@end example
+@item
+A change can be ignored temporarily by turning it into a comment field.
+This is done either by placing an unrecognized field code in front of
+the normal @code{\ch}, or by placing the comment character
+(@code{@value{commentchar}}) in front of it.  For example, only the
+first of the following three lines would effect a change:
+@example
+@group
+\ch "nb" "mp"
+\no \ch "np" "np"
+@value{commentchar}\ch "mb" "nb"
+@end group
+@end example
+@end enumerate
+
+@noindent
+The changes in the @value{filedesc} are applied as an ordered
+set of changes.  The first change is applied to the entire word by
+searching from left to right for any matching strings and, upon finding
+any, replacing them with the substitution string.  After the first
+change has been applied to the entire word, then the next change is
+applied, and so on.  Thus, each change applies to the result of all
+prior changes.  When all the changes have been applied, the resulting
+word is returned.  For example, suppose we have the following changes:
+@example
+@group
+\ch "aib" > "ayb"
+\ch "yb"  > "yp"
+@end group
+@end example
+@noindent
+Consider the effect these have on the word @i{paiba}.  The first
+changes @i{i} to @i{y}, yielding @i{payba}; the second changes
+@i{b} to @i{p}, to yield @i{paypa}.  (This would be better than the
+single change of @i{aib} to @i{ayp} if there were sources of @i{yb}
+other than the output of the first rule.)
+
+The way in which change tables are applied allows certain
+tricks.  For example, suppose that for Quechua, we wish to change
+@i{hw} to @i{f}, so that @i{hwista} becomes @i{fista} and @i{hwis}
+becomes @i{fis}.  However, we do not wish to change the sequence
+@i{shw} or @i{chw} to @i{sf} or @i{cf} (respectively).  This could
+be done by the following sequence of changes. (Note, @code{@@} and
+@code{$} are not otherwise used in the orthography.)
+@example
+@group
+\ch "shw" > "@@"     @value{commentchar} (1)
+\ch "chw" > "$"      @value{commentchar} (2)
+\ch "hw"  > "f"      @value{commentchar} (3)
+\ch "@@"   > "shw"   @value{commentchar} (4)
+\ch "$"   > "chw"    @value{commentchar} (5)
+@end group
+@end example
+@noindent
+Lines (1) and (2) protect the @i{sh} and @i{ch} by changing them to
+distinguished symbols.  This clears the way for the change of @i{hw} to
+@i{f} in (3).  Then lines (4) and (5) restore @code{@@} and @code{$} to
+@i{sh} and @i{ch}, respectively. (An alternative, simpler way to do
+this is discussed in the next section.)
+
+@c ----------------------------------------------------------------------------
+@node Environmentally constrained changes, Using text orthography changes, Basic changes, \ch
+@subsection Environmentally constrained changes
+
+It is possible to impose string environment constraints (SECs) on
+changes in the orthography change tables.  The syntax of SECs is
+described in detail in section @value{words.vs.format}.
+
+For example, suppose we wish to change the mid vowels (@i{e} and
+@i{o}) to high vowels (@i{i} and @i{u} respectively) immediately
+before and after @i{q}.  This could be done with the following
+changes:
+@example
+@group
+\ch "o" "u"  / _ q  / q _
+\ch "e" "i"  / _ q  / q _
+@end group
+@end example
+@noindent
+This is not entirely a hypothetical example; some Quechua practical
+orthographies write the mid vowels @i{e} and @i{o}.  However, in the
+environment of @i{/q/} these could be considered phonemically high
+vowels @i{/i/} and @i{/u/}.  Changing the mid vowels to high upon
+loading texts has the advantage that@value{emdash}for cases like @i{upun} ``he
+drinks'' and @i{upoq} ``the one who drinks''@value{emdash}the root needs to be
+represented internally only as @i{upu} ``drink''.  But note, because
+of Spanish loans, it is not possible to change all cases of @i{e} to
+@i{i} and @i{o} to @i{u}.  The changes must be conditioned.
+
+In reality, the regressive vowel-lowering effect of @i{/q/} can pass
+over various intervening consonants, including @i{/y/}, @i{/w/},
+@i{/l/}, @i{/ll/}, @i{/r/}, @i{/m/}, @i{/n/}, and @i{/n/}.  For
+example, @i{/ullq/} becomes @i{ollq}, @i{/irq/} becomes @i{erq},
+and so on.  Rather than list each of these cases as a separate constraint, it
+is convenient to define a class (which we label @code{+resonant}) and
+use this class to simplify the SEC.  Note that the string class
+must be defined (with the @code{\scl} field code) before it is used in a
+constraint.
+@example
+@group
+\scl +resonant y w l ll r m n n~
+\ch "o" "u" / q _ / _ ([+resonant]) q
+\ch "e" "i" / q _ / _ ([+resonant]) q
+@end group
+@end example
+@noindent
+This says that the mid vowels become high vowels after @i{/q/} and
+before @i{/q/}, possibly with an intervening @i{/y/}, @i{/w/},
+@i{/l/}, @i{/ll/}, @i{/r/}, @i{/m/}, @i{/n/}, or @i{/n/}.
+
+Consider the problem posed for Quechua in the previous section, that of
+changing @i{hw} to @i{f}.  An alternative is to condition the change
+so that it does not apply adjacent to a member of the string class
+@code{Affric} which contains @i{s} and @i{c}.
+@example
+@group
+\scl Affric c s
+\ch "hw" "f" / [Affric] ~_
+@end group
+@end example
+@noindent
+It is sometimes convenient to make certain changes only at word
+boundaries, that is, to change a sequence of characters only if they
+initiate or terminate the word.  This conditioning is easily expressed,
+as shown in the following examples.
+@example
+@group
+\ch "this" "that"           @value{commentchar} anywhere in the word
+\ch "this" "that"  / # _    @value{commentchar} only if word initial
+\ch "this" "that"  /   _ #  @value{commentchar} only if word final
+\ch "this" "that"  / # _ #  @value{commentchar} only if entire word
+@end group
+@end example
+@noindent
+
+@c ----------------------------------------------------------------------------
+@node Using text orthography changes, Where orthography changes apply, Environmentally constrained changes, \ch
+@subsection Using text orthography changes
+
+The purpose of orthography change is to convert text from an external
+orthography to an internal representation more suitable for
+morphological analysis.  In many cases this is unnecessary, the
+practical orthography being completely adequate as the internal
+representation.  In other cases, the practical orthography is an
+inconvenience that can be circumvented by converting to a more phonemic
+representation.
+
+Let us take a simple example from Latin.  In the Latin orthography, the
+nominative singular masculine of the word ``king'' is @i{rex}.
+However, phonemically, this is really @i{/reks/}; @i{/rek/} is the
+root meaning king and the @i{/s/} is an inflectional suffix.  If
+the program is to recover such an analysis, then it is necessary to
+convert the @i{x} of the external, practical orthography into @i{ks}
+internally.  This can be done by including the following orthography
+change in the @value{filedesc}:
+@example
+@group
+\ch  "x"  "ks"
+@end group
+@end example
+@noindent
+In this, @i{x} is the match string and @i{ks} is the substitution
+string, as discussed in section @value{output.file}.  Whenever @i{x} is
+found, @i{ks} is substituted for it.
+
+Let us consider next an example from Huallaga Quechua.  The practical
+orthography currently represents long vowels by doubling the vowel.
+For example, what is written as @i{kaa} is @i{/ka:/} ``I am'', where
+the length (represented by a colon) is the morpheme meaning ``first
+person subject''.  Other examples, such as @i{upoo} @i{/upu:/} ``I
+drink'' and @i{upichee} @i{/upi-chi-:/} ``I extinguish'', motivate us
+to convert all long vowels into a vowel followed by a colon.  The
+following changes do this:
+@example
+@group
+\ch  "aa"  "a:"
+\ch  "ee"  "i:"
+\ch  "ii"  "i:"
+\ch  "oo"  "u:"
+\ch  "uu"  "u:"
+@end group
+@end example
+@noindent
+Note that the long high vowels (@i{i} and @i{u}) have become mid vowels
+(@i{e} and @i{o} respectively); consequently, the vowel in the
+substitution string is not necessarily the same as that of the match
+string.  What is the utility of these changes?  In the lexicon, the
+morphemes can be represented in their phonemic forms; they do not have to
+be represented in all their orthographic variants.  For example, the
+first person subject morpheme can be represented simply as a colon
+(@i{-:}), rather than as @i{-a} in cases like @i{kaa}, as @i{-o} in
+cases like @i{qoo}, and as @i{-e} as in cases like @i{upichee}.
+Further, the verb ``drink'' can be represented as @i{upu} and the
+causative suffix (in @i{upichee}) can be represented as @i{-chi}; these
+are the forms these morphemes have in other (nonlowered) environments.
+As the next example, let us suppose that we are analyzing Spanish, and
+that we wish to work internally with @i{k} rather than @i{c} (before
+@i{a}, @i{o}, and @i{u}) and @i{qu} (before @i{i} and @i{e}). (Of
+course, this is probably not the only change we would want to make.)
+Consider the following changes:
+@example
+@group
+\ch  "ca"  "ka"
+\ch  "co"  "ko"
+\ch  "cu"  "ku"
+\ch  "qu"  "k"
+@end group
+@end example
+@noindent
+The first three handle @i{c} and the last handles @i{qu}.  By virtue of
+including the vowel after @i{c}, we avoid changing @i{ch} to @i{kh}.
+There are other ways to achieve the same effect.  One way exploits the
+fact that each change is applied to the output of all previous changes.
+Thus, we could first protect @i{ch} by changing it to some distinguished
+character (say @code{@@}), then changing @i{c} to @i{k}, and then
+restoring @code{@@} to @i{ch}:
+@example
+@group
+\ch  "ch"  "@@"
+\ch  "c"  "k"
+\ch  "@@"  "ch"
+\ch  "qu"  "k"
+@end group
+@end example
+@noindent
+Another approach conditions the change by the adjacent characters.  The
+changes could be rewritten as
+@example
+@group
+\ch  "c"  "k"  / _a  / _o  / _u  @value{commentchar} only before a, o, or u
+\ch  "qu"  "k"                   @value{commentchar} in all cases
+@end group
+@end example
+@noindent
+The first change says, ``change @i{c} to @i{k} when followed by @i{a},
+@i{o}, or @i{u}.''  (This would, for example, change @i{como} to
+@i{komo}, but would not affect @i{chal}.)  The syntax of such conditions
+is exactly that used in string environment constraints; see
+section @value{words.vs.format}.
+
+@c ----------------------------------------------------------------------------
+@node Where orthography changes apply, A sample orthography change table, Using text orthography changes, \ch
+@subsection Where orthography changes apply
+
+Input orthography changes are made when the text being processed may be
+written in a practical orthography.  Rather than requiring that it be
+converted as a prerequisite to running the program, it is possible to
+have the program convert the orthography as it loads and before it
+processes each word.
+
+The changes loaded from the @value{filedesc} are applied after all the
+text is converted to lower case (and the information about upper and
+lower case, along with information about format marking, punctuation
+and white space, has been put to one side.)  Consequently, the match
+strings of these orthography changes should be all lower case; any
+change that has an uppercase character in the match string will never
+apply.
+
+@c ----------------------------------------------------------------------------
+@node A sample orthography change table, Syntax of Orthography Changes, Where orthography changes apply, \ch
+@subsection A sample orthography change table
+
+We include here the entire orthography input change table for Caquinte
+(a language of Peru).  There are basically four changes that need to be
+made: (1) nasals, which in the practical orthography reflect their
+assimilation to the point of articulation of a following noncontinuant,
+must be changed into an unspecified nasal, represented by @i{N}; (2)
+@i{c} and @i{qu} are changed to @i{k}; (3) @i{j} is changed to @i{h};
+and (4) @i{gu} is changed to @i{g} before @i{i} and @i{e}.
+
+@example
+@group
+\ch  "mp"  "Np"     @value{commentchar} for unspecified nasals
+\ch  "nch" "Nch"
+\ch  "nc"  "Nk"
+\ch  "nqu" "Nk"
+\ch  "nt"  "Nt"
+
+\ch  "ch"  "@@"     @value{commentchar} to protect ch
+\ch  "c"   "k"      @value{commentchar} other c's to k
+\ch  "@@"   "ch"    @value{commentchar} to restore ch
+\ch  "qu"  "k"
+
+\ch  "j"   "h"
+
+\ch  "gue" "ge"
+\ch  "gui" "gi"
+@end group
+@end example
+@noindent
+This change table can be simplified by the judicious use of string
+environment constraints:
+
+@example
+@group
+\ch  "m"  >  "N"  / _p
+\ch  "n"  >  "N"  / _c  / _t  / _qu
+
+\ch  "c"  >  "k"  / _~h
+\ch  "qu" >  "k"
+
+\ch  "j"  >  "h"
+
+\ch  "gu" >  "g"  / _e  /_i
+@end group
+@end example
+
+As suggested by the preceding examples, the text orthography change
+table is composed of all the @code{\ch} fields found in the
+@value{filedesc}.  These may appear anywhere in the file relative to
+the other fields.  It is recommended that all the orthography changes
+be placed together in one section of the @value{filedesc}, rather than
+being mixed in with other fields.
+
+@c ----------------------------------------------------------------------------
+@node Syntax of Orthography Changes, , A sample orthography change table, \ch
+@subsection Syntax of Orthography Changes
+
+This section presents a grammatical description of the syntax of
+orthography changes in BNF notation.
+@ifset ample
+These changes are found either in
+the dictionary orthography change table file or in the @value{filedesc}
+@ifclear txt
+(@pxref{\ch (xxORDC.TAB)}).
+@end ifclear
+@ifset txt
+(see `Dictionary Orthography Change: \ch' above).
+@end ifset
+@end ifset
+
+@example
+
+@group
+ 1a. <orthochange>  ::= <basic_change>
+ 1b.                    <basic_change> <constraints>
+@end group
+
+@group
+ 2a. <basic_change> ::= <quote><quote> <quote><string><quote>
+ 2b.                    <quote><string><quote> <quote><quote>
+ 2c.                    <quote><string><quote> <quote><string><quote>
+@end group
+
+@group
+ 3.  <quote>        ::= any printing character not used in either
+						the ``from'' string or the ``to'' string
+@end group
+
+@group
+ 4.  <string>       ::= one or more characters other than the quote
+						character used by this orthography change
+@end group
+
+@group
+ 5a. <constraints>  ::= <change_envir>
+ 5b.                    <change_envir> <constraints>
+@end group
+
+@group
+ 6a. <change_envir> ::= <marker> <leftside> <envbar> <rightside>
+ 6b.                    <marker> <leftside> <envbar>
+ 6c.                    <marker> <envbar> <rightside>
+@end group
+
+@group
+ 7a. <leftside>   ::= <side>
+ 7b.                  <boundary>
+ 7c.                  <boundary> <side>
+@end group
+
+@group
+ 8a. <rightside>  ::= <side>
+ 8b.                  <boundary>
+ 8c.                  <side> <boundary>
+@end group
+
+@group
+ 9a. <side>       ::= <item>
+ 9b.                  <item> <side>
+ 9c.                  <item> ... <side>
+@end group
+
+@group
+10a. <item>       ::= <piece>
+10b.                  ( <piece> )
+@end group
+
+@group
+11a. <piece>      ::= ~ <piece>
+11b.                  <literal>
+11c.                  [ <literal> ]
+@end group
+
+@group
+12.  <marker>     ::= /
+					  +/
+@end group
+
+@group
+13.  <envbar>     ::= _
+					  ~_
+@end group
+
+@group
+14.  <boundary>   ::= #
+					  ~#
+
+15.  <literal>    ::= one or more contiguous characters
+@end group
+
+@end example
+
+@subsubheading Comments on selected BNF rules
+@table @asis
+
+@item 2.
+The same @code{<quote>} character must be used at both the beginning
+and the end of both the ``from'' string and the ``to'' string.
+
+@item 3.
+The double quote (@code{"}) and single quote (@code{'}) characters are
+most often used.
+
+@item 7@value{endash}8.
+Note that what can appear to the left of the environment bar is a
+mirror image of what can appear to the right.
+
+@item 9c.
+An ellipsis (@code{...}) indicates a possible break in contiguity.
+
+@item 10b.
+Something enclosed in parentheses is optional.
+
+@item 11a.
+A tilde (@code{~}) reverses the desirability of an element, causing the
+constraint to fail if it is found rather than fail if it is not found.
+
+@item 11c.
+A literal enclosed in square brackets must be the name of a string
+class defined by a @code{\scl} field in the analysis data file, or
+earlier in the dictionary orthography change file.
+
+@item 12.
+A @code{+/} is usually used for morpheme environment constraints, but may
+used for change environment constraints in @code{\ch} fields in the
+dictionary orthography change table file.
+
+@item 13.
+A tilde attached to the environment bar (@code{~_}) inverts the sense of
+the constraint as a whole.
+
+@item 14b.
+The boundary marker preceded by a tilde (@code{~#}) indicates that it
+must not be a word boundary.
+
+@need 1000
+@item 15.
+The special characters used by environment constraints can be included
+in a literal only if they are immediately preceded by a backslash:
+@example
+
+\+  \/  \#  \~  \[  \]  \(  \)  \.  \_  \\
+
+@end example
+@end table
+@c
+@clear filedesc

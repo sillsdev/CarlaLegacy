@@ -1,0 +1,24 @@
+ToneGen CHANGE HISTORY
+
+1.0.3 (27-Dec-2000)
+-------------------
+1. Various internal changes not visible to the user.
+
+1.0.2 (19-Dec-2000)
+-------------------
+1. Fixed a bug in delete multiple tone processing.
+
+1.0.1 (01-Nov-2000)
+-------------------
+1. Added more tracing options to the command line.
+
+1.0.0 (28-Sep-2000)
+-------------------
+1. Have it read the tone control file as a separate file from the analysis
+data control file.
+
+2. Many internal changes not visible to the user.
+
+0.0.0 (01-May-1997)
+-------------------
+1. Initial version.

@@ -1,0 +1,812 @@
+@c this file should be @include d by another -*- texinfo -*- file
+@c following a node `Text input control file' and a chapter heading.
+@c
+@c This material is adapted from chapters 7, 8, and 9 of
+@c    Weber, David J., H. Andrew Black, and Stephen R. McConnel.
+@c    AMPLE: a tool for exploring morphology.
+@c    Occasional Publications in Academic Computing No. 12.
+@c    Dallas, TX: Summer Institute of Linguistics. 1988.
+@c
+@c this file is conditionalized by
+@c	@set ample
+@c	@set ktext
+@c
+@set textin
+@ifclear endash
+@iftex
+@ifset html
+@set endash -
+@end ifset
+@ifclear html
+@set endash --
+@end ifclear
+@end iftex
+@ifinfo
+@set endash -
+@end ifinfo
+@end ifclear
+@c
+@ifset ample
+@set ProgName AMPLE
+@set commentchar |
+@set commentcharname vertical bar (@code{|})
+@end ifset
+@ifset ktext
+@set ProgName KTEXT
+@set commentchar ;
+@set commentcharname semicolon (@code{;})
+@end ifset
+@ifclear ProgName
+@set ProgName UNKNOWN-PROGRAM
+@end ifclear
+@ifclear commentchar
+@set commentchar ;
+@end ifclear
+@ifclear commentcharname
+@set commentcharname semicolon (@code{;})
+@end ifclear
+@c
+@c handle "bug" in makeinfo program
+@set BackSlash \
+
+This chapter describes the expected characteristics of an input text
+file, and the options offered for describing these characteristics by a
+@dfn{text input control file}.@footnote{This chapter is adapted from
+chapters 7, 8, and 9 of Weber (1988).}
+
+@menu
+* Input text files::  Expected characteristics of text files
+* \ambig::            Ambiguity or failure marker character
+* \barchar::          Bar code format marker character
+* \barcodes::         Bar code format code characters
+* \ch::               Text orthography change
+* \dsc::              Decomposition separation character
+* \excl::             Fields to exclude
+* \format::           Primary  format marker character
+* \incl::             Fields to include
+* \luwfc::            Lowercase/uppercase word formation character pairs
+* \luwfcs::           Multibyte lower/uppercase word formation character pairs
+* \maxdecap::         Maximum number of alternative decapitalizations
+* \nocap::            Prevent any decapitalization
+* \noincap::          Prevent decapitalization of individual characters
+* \scl::              String class
+* \wfc::              Caseless word formation characters
+* \wfcs::             Multibyte caseless word formation characters
+* Sample text input control file::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node Input text files, \ambig, Text input control file, Text input control file
+@section Input text files
+
+Text input control files define a simple model of input text files.
+They are plain text files with two types of embedded format markers.
+@enumerate
+
+@item
+A primary format marker consists of one or more contiguous characters
+beginning with a special flag character.  The default character
+initiating format markers is the backslash (@code{@value{BackSlash}}).  Thus, each of
+the following would be recognized as a format marker and would not be
+processed by the program:
+@example
+
+@group
+\
+\p
+\sp
+\begin@{enumerate@}
+\very-long.and;muddled/format*marker,to#be$sure
+@end group
+
+@end example
+
+Note that format markers cannot have a space or tab embedded in them;
+the first space or tab encountered terminates the format marker.
+
+One final note: the format character under discussion here applies only
+to the input text files which are to be processed.  It has absolutely
+nothing to do with the use of backslash (@code{@value{BackSlash}}) to
+flag field codes in control files such as the text input control file.
+
+@item
+A secondary type of marker consists of a flag character followed by a
+single character from a list of known values.  This secondary flag
+character must be different than the primary flag character.  Its
+default value is the vertical bar (@code{|}), causing this type of
+format marker to be frequently called a bar code.  The following could
+be valid (secondary) format markers and would not be processed by
+the program:
+@example
+
+@group
+|b
+|i
+|r
+@end group
+
+@end example
+@end enumerate
+
+Consider the following two lines of input text:
+@example
+
+@group
+\bgoodbye\r
+|bgoodbye|r
+@end group
+
+@end example
+
+Using the default definitions of format markers, the first line is
+considered to be a single format marker, and provides nothing which the
+program should try to parse.  The second line, however contains two
+format markers, @code{|b} and @code{|r}, and the word @code{goodbye}
+which would be processed by the program.
+
+The primary format markers serve to divide the text into fields.  See
+@ifset txt
+`Fields to Exclude: \excl'
+@end ifset
+@ifclear txt
+@ref{\excl}
+@end ifclear
+and
+@ifset txt
+`Fields to Include: \incl' below
+@end ifset
+@ifclear txt
+@ref{\incl}
+@end ifclear
+for details on how these fields are used.  There is no requirement that
+the format markers be at the beginning of a line as with the field codes
+used in @value{ProgName} control files.
+
+@c ----------------------------------------------------------------------------
+@node \ambig, \barchar, Input text files, Text input control file
+@section Ambiguity Marker Character: \ambig
+@findex \ambig
+
+The @code{\ambig} field defines the character used to mark ambiguities
+and failures in the analysis output file.  For example, to use the hash
+mark (@code{#}), the text input control file would include:
+@example
+
+\ambig  #
+
+@end example
+@noindent
+This would cause an ambiguous analysis to be output as follows:
+@example
+
+\a #3#< N0 kay >#< V1 ka > IMP#< V1 ka > INF#
+
+@end example
+
+It makes sense to use the @code{\ambig} field only once in the text
+input control file.  If multiple @code{\ambig} fields do occur in the
+file, the value given in the first one is used.  If the text input
+control file does not have an @code{\ambig} field, the percent sign
+(@code{%}) is used.
+
+The first printing character following the @code{\ambig} field code is
+used as the ambiguity marker.  The character currently being used to mark
+comments cannot be assigned to also mark ambiguities in the output file.
+Thus, the @value{commentcharname} cannot normally be used as the
+ambiguity marker.  Logically, this field should be in the
+@ifset ample
+analysis data
+@end ifset
+@ifset ktext
+KTEXT control
+@end ifset
+file rather than the text @emph{input} control file since it affects
+output instead of input.  Nevertheless, compatibility demands that it
+stays this way.
+
+@c ----------------------------------------------------------------------------
+@node \barchar, \barcodes, \ambig, Text input control file
+@section Bar code format marker character: \barchar
+@findex \barchar
+
+The @code{\barchar} defines the character that begins a two-character
+secondary format marker.  For example, if this type of format marker
+begins with the dollar sign (@code{$}), the following would be placed
+in the text input control file:
+@example
+
+\barchar  $
+
+@end example
+
+An empty @code{\barchar} field in the text input control file prevents
+any bar code format markers from being recognized.  Thus, the following
+field effectively turns off special treatment of this style of format
+marking (assuming the @code{@value{commentchar}} is marking comments):
+@example
+
+\barchar       @value{commentchar} no bar character
+
+@end example
+
+It makes sense to use the @code{\barchar} field only once in the text
+input control file.  If multiple @code{\barchar} fields do occur in the
+file, the value given in the first one is used.
+
+The first printing character following the @code{\barchar} field code
+is used as the bar code format marker.  The character currently being
+used to mark comments cannot be assigned to also flag format markers in
+input text files.
+@ifset ample
+Thus, the default value (@code{|}) cannot normally be explicitly
+defined (since @w{@code{\barchar |}} is treated as @code{\barchar}
+followed only by a comment), so it must be taken as given.
+@end ifset
+@ifset ktext
+That is, @w{@code{\barchar ;}} is treated as @code{\barchar} followed
+only by a comment, which effectively removes the concept of bar codes
+since no marker character is defined.
+@end ifset
+
+@c ----------------------------------------------------------------------------
+@node \barcodes, \ch, \barchar, Text input control file
+@section Bar Code Format Code Characters: \barcodes
+@findex \barcodes
+
+In conjunction with the special format marking character discussed in
+the previous section, the @code{\barcodes} field defines the individual
+characters used with in bar codes.  These characters may be separated by
+spaces or lumped together.  Thus, the following two fields are
+equivalent:
+@example
+
+@group
+\barcodes    abcdefg         @value{commentchar} lumped together
+\barcodes    a b c d e f g   @value{commentchar} separated
+@end group
+
+@end example
+
+If provided more than one @code{\barcodes} field in the text input
+control file, the combination of all characters defined in all such
+fields is used.  No check is made for repeated characters: the previous
+example would be accepted without complaint despite the redundancy of
+the second line.
+
+@ifset ample
+The default value for the bar codes is @code{bdefhijmrsuvyz}.
+Therefore, if the text input control file contains neither a
+@code{\barchar} nor a @code{\barcodes} field, the following bar codes
+are considered to be formatting information by AMPLE: @code{|b},
+@code{|d}, @code{|e}, @code{|f}, @code{|h}, @code{|i}, @code{|j},
+@code{|m}, @code{|r}, @code{|s}, @code{|u}, @code{|v}, @code{|y}, and
+@code{|z}.  These are exactly the codes recognized by the SIL
+Manuscripter program that was in vogue when the concept of a text input
+control file was originally developed.
+@end ifset
+@ifset ktext
+The default value for the bar codes is the set of lowercase alphabetic
+letters @code{a}@value{endash}@code{z}.  Therefore, if the text input
+control file contains neither a @code{\barchar} nor a @code{\barcodes}
+field, the following bar codes are considered to be formatting
+information by KTEXT: @code{|a}, @code{|b}, @code{|c}, @dots{},
+@code{|x}, @code{|y}, and @code{|z}.
+@end ifset
+
+@c ----------------------------------------------------------------------------
+@node \ch, \dsc, \barcodes, Text input control file
+@section Text Orthography Change: \ch
+@findex \ch
+@include changes.txi
+
+@c ----------------------------------------------------------------------------
+@node \dsc, \excl, \ch, Text input control file
+@section Decomposition Separation Character: \dsc
+@findex \dsc
+
+The @code{\dsc} field defines the character used to separate the
+morphemes in the decomposition field of the output analysis file.  For
+example, to use the equal sign (@code{=}), the text input control file
+would include:
+@example
+
+\dsc  =
+
+@end example
+@noindent
+This would cause a decomposition field to be output as follows:
+@example
+
+\d %3%kay%ka=y%ka=y%
+
+@end example
+
+It makes sense to use the @code{\dsc} field only once in the text input
+control file.  If multiple @code{\dsc} fields do occur in the file, the
+value given in the first one is used.  If the text input control file
+does not have an @code{\dsc} field, a dash (@code{-}) is used.
+
+The first printing character following the @code{\dsc} field code is used
+as the morpheme decomposition separator character.  The same character
+cannot be used both for separating decomposed morphemes in the analysis
+output file and for marking comments in the input control files.  Thus,
+one normally cannot use the @value{commentcharname} as the decomposition
+separation character.
+
+Logically, this field should be in the
+@ifset ample
+analysis data
+@end ifset
+@ifset ktext
+KTEXT control
+@end ifset
+file rather than the text @emph{input} control file since it affects
+output instead of input.  Nevertheless, compatibility demands that it
+stays this way.
+
+@c ----------------------------------------------------------------------------
+@node \excl, \format, \dsc, Text input control file
+@section Fields to Exclude: \excl
+@findex \excl
+
+The @code{\excl} field excludes one or more fields from processing.
+For example, to have the program ignore everything in @code{\co} and
+@code{\id} fields, the following line is included in the text input
+control file:
+@example
+
+\excl  \co  \id      @value{commentchar} ignore these fields
+
+@end example
+
+If more than one @code{\excl} field is found in the text input control
+file, the contents of each field is added to the overall list of text
+fields to exclude.  This list is initially empty, and stays empty
+unless the text input control file contains an @code{\excl} field.
+Thus, no text fields are excluded from processing by default.
+
+If the text input control file contains @code{\excl} fields, then only
+those text fields are not processed.  Every word in every text field
+not mentioned explicitly in an @code{\excl} field will be processed.
+
+Note that every text field in the input text files is processed
+unless the text input control file contains either an @code{\excl} or
+an @code{\incl} field.  One or the other is used to limit processing,
+but never both.
+
+@c ----------------------------------------------------------------------------
+@node \format, \incl, \excl, Text input control file
+@section Primary format marker character: \format
+@findex \format
+
+The @code{\format} field designates a single character to flag the
+beginning of a primary format marker.  For example, if the format
+markers in the text files begin with the at sign (@code{@@}), the
+following would be placed in the text input control file:
+@example
+
+\format  @@
+
+@end example
+@noindent
+This would be used, for example, if the text contained format markers
+like the following:
+@example
+
+@group
+@@
+@@p
+@@sp
+@@make(Article)
+@@very-long.and;muddled/format*marker,to#be$sure
+@end group
+
+@end example
+
+If a @code{\format} field occurs in the text input control file without
+a following character to serve for flagging format markers, then the
+program will not recognize any format markers and will try to parse
+everything other than punctuation characters.
+
+It makes sense to use the @code{\format} field only once in the text
+input control file.  If multiple @code{\format} fields do occur in the
+file, the value given in the first one is used.
+
+The first printing character following the @code{\format} field code is
+used to flag format markers.  The character currently used to mark
+comments cannot be assigned to also flag format markers.  Thus, the
+@value{commentcharname} cannot normally be used to flag format markers.
+
+@c ----------------------------------------------------------------------------
+@node \incl, \luwfc, \format, Text input control file
+@section Fields to Include: \incl
+@findex \incl
+
+The @code{\incl} field explicitly includes one or more text fields for
+processing, excluding all other fields.  For instance, to process
+everything in @code{\txt} and @code{\qt} fields, but ignore everything
+else, the following line is placed in the text input control file:
+@example
+
+\incl  \txt  \qt      @value{commentchar} process these fields
+
+@end example
+
+@noindent
+If more than one @code{\incl} field is found in the text input control
+file, the contents of each field is added to the overall list of text
+fields to process.  This list is initially empty, and stays empty
+unless the text input control file contains an @code{\incl} field.
+
+If the text input control file contains @code{\incl} fields, then only
+those text fields are processed.  Every word in every text field not
+mentioned explicitly in an @code{\incl} field will not be processed.
+
+Note that every text field in the input text files is processed unless
+the text input control file contains either an @code{\excl} or an
+@code{\incl} field.  One or the other is used to limit processing, but
+never both.
+
+@c ----------------------------------------------------------------------------
+@node \luwfc, \luwfcs, \incl, Text input control file
+@section Lowercase/uppercase character pairs: \luwfc
+@findex \luwfc
+
+To break a text into words, the program needs to know which characters
+are used to form words.  It always assumes that the letters @code{A}
+through @code{Z} and @code{a} through @code{z} are used as word
+formation characters.  If the orthography of the language the user is
+working in uses any other characters that have lowercase and uppercase
+forms, these must given in a @code{\luwfc} field in the text input
+control file.
+
+The @code{\luwfc} field defines pairs of characters; the first member
+of each pair is a lowercase character and the second is the
+corresponding uppercase character.  Several such pairs may be placed in
+the field or they may be placed on separate fields.  Whitespace may be
+interspersed freely.  For example, the following three examples are
+equivalent:
+@example
+
+\luwfc  éÉ ñÑ
+
+@end example
+or
+@example
+
+@group
+\luwfc  éÉ      @value{commentchar} e with acute accent
+\luwfc  ñÑ      @value{commentchar} enyee
+@end group
+
+@end example
+or
+@example
+
+\luwfc  é É  ñ Ñ
+
+@end example
+@noindent
+Note that comments can be used as well (just as they can in any
+@value{ProgName} control file).  This means that the comment character
+cannot be designated as a word formation character.  If the orthography
+includes the @value{commentcharname}, then a different comment character
+must be defined with the @samp{-c} command line option when
+@value{ProgName} is initiated; see
+@ifset txt
+@ifset ample
+`AMPLE Command Options' above.
+@end ifset
+@ifset ktext
+`Running KTEXT' above.
+@end ifset
+@end ifset
+@ifclear txt
+@ifset ample
+@ref{Command options}.
+@end ifset
+@ifset ktext
+@ref{Running KTEXT}.
+@end ifset
+@end ifclear
+
+The @code{\luwfc} field can be entered anywhere in the text input control file,
+although a natural place would be before the @code{\wfc} (word formation
+character) field.
+
+Any standard alphabetic character (that is @code{a} through @code{z} or
+@code{A} through @code{Z}) in the @code{\luwfc} field will override the
+standard lower- upper case pairing.  For example, the following will
+treat @code{X} as the upper case equivalent of @code{z}:
+@example
+
+\luwfc z X
+
+@end example
+@noindent
+Note that @code{Z} will still have @code{z} as its lower-case
+equivalent in this case.
+
+The @code{\luwfc} field is allowed to map multiple lower case characters to
+the same upper case character, and vice versa.  This is needed for
+languages that do not mark tone on upper case letters.
+
+@c ----------------------------------------------------------------------------
+@node \luwfcs, \maxdecap, \luwfc, Text input control file
+@section Multibyte lowercase/uppercase character pairs: \luwfcs
+@findex \luwfcs
+
+The @code{\luwfcs} field extends the character pair definitions of the
+@code{\luwfc} field to multibyte character sequences.  Like the
+@code{\luwfc} field, the @code{\luwfcs} field defines pairs of
+characters; the first member of each pair is a multibyte lowercase
+character and the second is the corresponding multibyte uppercase
+character.  Several such pairs may be placed in the field or they may be
+placed on separate fields.  Whitespace separates the members of each
+pair, and the pairs from each other.  For example, the following three
+examples are equivalent:
+@example
+
+\luwfcs  e' E` n~ N^ ç C&
+
+@end example
+or
+@example
+
+@group
+\luwfcs  e' E`      @value{commentchar} e with acute accent
+\luwfcs  n~ N^      @value{commentchar} enyee
+\luwfcs  ç  C&      @value{commentchar} c cedilla
+@end group
+
+@end example
+or
+@example
+
+@group
+\luwfcs  e' E`
+		 n~ N^
+		 ç  C&
+@end group
+
+@end example
+@noindent
+Note that comments can be used as well (just as they can in any
+@value{ProgName} control file).  This means that the comment character
+cannot be designated as a word formation character.  If the orthography
+includes the @value{commentcharname}, then a different comment character
+must be defined with the @samp{-c} command line option when
+@value{ProgName} is initiated; see
+@ifset txt
+@ifset ample
+`AMPLE Command Options'
+@end ifset
+@ifset ktext
+`Running KTEXT'
+@end ifset
+above.
+@end ifset
+@ifclear txt
+@ifset ample
+@ref{Command options}.
+@end ifset
+@ifset ktext
+@ref{Running KTEXT}.
+@end ifset
+@end ifclear
+
+Also note that there is no requirement that the lowercase form be the
+same length (number of bytes) as the uppercase form.  The examples shown
+above are only one or two bytes (character codes) in length, but there is
+no limit placed on the length of a multibyte character.
+
+The @code{\luwfcs} field can be entered anywhere in the text input
+control file.  @code{\luwfcs} fields may be mixed with @code{\luwfc}
+fields in the same file.
+
+Any standard alphabetic character (that is @code{a} through @code{z} or
+@code{A} through @code{Z}) in the @code{\luwfcs} field will override the
+standard lower- upper case pairing.  For example, the following will
+treat @code{X} as the upper case equivalent of @code{z}:
+@example
+
+\luwfcs z X
+
+@end example
+@noindent
+Note that @code{Z} will still have @code{z} as its lowercase
+equivalent in this case.
+
+The @code{\luwfcs} field is allowed to map multiple multibyte lowercase
+characters to the same multibyte uppercase character, and vice versa.
+This may be useful in some situations, but it introduces an element of
+ambiguity into the decapitalization and recapitalization processes.  If
+ambiguous capitalization is supported, then for the previous example,
+@code{z} will have both @code{X} and @code{Z} as uppercase equivalents,
+and @code{X} will have both @code{x} and @code{Z} as lowercase
+equivalents.
+
+@c ----------------------------------------------------------------------------
+@node \maxdecap, \nocap, \luwfcs, Text input control file
+@section Maximum number of decapitalizations: \maxdecap
+@findex \maxdecap
+
+The @code{\maxdecap} field sets the maximum number of different
+decapitalizations allowed.  Since the @code{\luwfc} field can map
+several lowercase characters onto a single uppercase character, a word
+with uppercase characters can (logically) generate a number of
+alternatives when decapitalized.  This is especially true of words that
+are entirely capitalized to begin with.  The default limit is 100.
+
+@c ----------------------------------------------------------------------------
+@node \nocap, \noincap, \maxdecap, Text input control file
+@section Prevent Any Decapitalization: \nocap
+@findex \nocap
+
+The usual behavior is to normalize input words to lowercase.  The
+program remembers the case of the word as one of four possibilities:
+@enumerate
+@item
+all uppercase
+@item
+all lowercase
+@item
+only the first letter uppercase
+@item
+mixed uppercase and lowercase
+@end enumerate
+However, not all orthographies use the concept of capitalization.  To
+help deal with these, the field code @code{\nocap} disables all case
+normalization if it appears anywhere in the text input control file.
+
+@c ----------------------------------------------------------------------------
+@node \noincap, \scl, \nocap, Text input control file
+@section Prevent Decapitalization of Individual Characters: \noincap
+@findex \noincap
+
+The handling of mixed uppercase and lowercase is limited in utility,
+and sometimes causes more problems than it solves.  For this reason,
+the @code{\noincap} field code turns off mixed case decapitalization.
+The program would still decapitalize words that are entirely
+capitalized and words that begin with a capital letter.
+
+@c ----------------------------------------------------------------------------
+@node \scl, \wfc, \noincap, Text input control file
+@section String class: \scl
+@findex \scl
+
+A string class is defined by the @code{\scl} field code followed by the
+class name, which is followed in turn by one or more contiguous
+character strings or (previously defined) string class names.  A string
+class name used as part of the class definition must be enclosed in
+square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The actual character strings have no such
+restrictions.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each @code{\scl} field defines a single string class.  Any number of
+@code{\scl} fields may appear in the file.  The only restriction is
+that a string class must be defined before it is used.
+
+String classes must be defined before being used.  For example, the first
+two lines of the simpler Caquinte example above could be given as follows:
+@example
+@group
+\scl  -bilabial  c t qu
+\ch  "m"  >  "N"  / _ p
+\ch  "n"  >  "N"  / _ [-bilabial]
+@end group
+@end example
+@noindent
+The string class definition could be in another control file: string
+classes defined elsewhere can be used in the text input control file as
+well.
+
+If no @code{\scl} fields appear in the text input control file, then
+@value{ProgName} does not allow any string classes in text input orthography
+change environment constraints unless they are defined in the
+@ifset ample
+analysis data file or the dictionary orthography changes
+@end ifset
+@ifset ktext
+KTEXT control
+@end ifset
+file.
+
+@c ----------------------------------------------------------------------------
+@node \wfc, \wfcs, \scl, Text input control file
+@section Caseless word formation characters: \wfc
+@findex \wfc
+
+To break a text into words, the program needs to know which characters
+are used to form words.  It always assumes that the letters @code{A}
+through @code{Z} and @code{a} through @code{z} are used as word
+formation characters.  If the orthography of the language the user is
+working in uses any characters that do not have different lowercase and
+uppercase forms, these must given in a @code{\wfc} field in the text
+input control file.
+
+For example, English uses an apostrophe character (@code{'}) that could
+be considered a word formation character.  This information is provided
+by the following example:
+@example
+
+\wfc  '    @value{commentchar} needed for words like don't
+
+@end example
+
+Notice that the characters in the @code{\wfc} field may be separated by
+spaces, although it is not required to do so.  If more than one
+@code{\wfc} field occurs in the text input control file, the program
+uses the combination of all characters defined in all such fields as
+word formation characters.
+
+The comment character cannot be designated as a word formation character.
+If the orthography includes the @value{commentcharname}, then a different
+comment character must be defined with the @samp{-c} command line option
+when @value{ProgName} is initiated; see
+@ifset txt
+@ifset ample
+`AMPLE Command Options'
+@end ifset
+@ifset ktext
+`Running KTEXT'
+@end ifset
+above.
+@end ifset
+@ifclear txt
+@ifset ample
+@ref{Command options}.
+@end ifset
+@ifset ktext
+@ref{Running KTEXT}.
+@end ifset
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \wfcs, Sample text input control file, \wfc, Text input control file
+@section Multibyte caseless word formation characters: \wfcs
+@findex \wfcs
+
+The @code{\wfcs} field allows multibyte characters to be defined as
+``caseless'' word formation characters.  It has the same relationship to
+@code{\wfc} that @code{\luwfcs} has to @code{\luwfc}.  The multibyte word
+formation characters are separated from each other by whitespace.
+
+@c ----------------------------------------------------------------------------
+@node Sample text input control file, , \wfcs, Text input control file
+@section A sample text input control file
+
+The following is the complete text input control file for Huallaga
+Quechua (a language of Peru):
+@example
+@group
+\id HGTEXT.CTL - for Huallaga Quechua, 25-May-88
+
+\co         WORD FORMATION CHARACTERS
+
+\wfc  ' ~
+
+\co         FIELDS TO EXCLUDE
+
+\excl  \id            @value{commentchar} identification fields
+
+\co         ORTHOGRAPHY CHANGES
+
+\ch  "aa" > "a:"      @value{commentchar} for long vowels
+\ch  "ee" > "i:"
+\ch  "ii" > "i:"
+\ch  "oo" > "u:"
+\ch  "uu" > "u:"
+\ch  "qeki" > "qiki"  @value{commentchar} for cases like wawqeki
+\ch  "~n" > "n~"      @value{commentchar} for typos
+@value{commentchar} for Spanish loans like hwista
+\scl sib s c          @value{commentchar} sibilants
+\ch  "hw" > "f"  / ~[sib]_
+@end group
+@end example
+@c
+@clear BackSlash

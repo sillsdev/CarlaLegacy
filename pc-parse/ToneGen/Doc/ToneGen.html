@@ -1,0 +1,3277 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+
+<HTML><HEAD>
+
+<LINK  REL="StyleSheet" HREF="silewp.css">
+
+<META NAME="Description" CONTENT="ToneGen: A Computational Tool for Exploring Autosegmental Tonology, by H. Andrew. Black">
+
+<META NAME="ObjectType" CONTENT="Document">
+
+<META NAME="Copyright" CONTENT="2000 H. Andrew. Black and SIL International. All rights reserved.">
+
+<!--Dublic Core Tags-->
+
+<META NAME="Title" CONTENT="ToneGen: A Computational Tool for Exploring Autosegmental Tonology">
+
+<META NAME="Subject" CONTENT="phonology">
+
+<META NAME="Author" CONTENT="H. Andrew Black">
+
+<META NAME="Publisher" CONTENT="SIL International">
+
+<META NAME="Form" CONTENT="HTML3.2">
+
+<META NAME="Identifier" CONTENT="ToneGen">
+
+<META NAME="HTTP.Language" CONTENT="English">
+
+<META NAME="Date.HTTP" CONTENT="Wed, 20 Dec 2000 00:00:00 GMT">
+
+</HEAD><BODY BGCOLOR="#FFFFFF">
+
+<P>Copyright &copy; 2000 H. Andrew Black and SIL International.<BR>
+
+All rights reserved. </P>
+
+<HR>
+
+<H1 ALIGN="CENTER">ToneGen: A Computational Tool for Exploring Autosegmental Tonology </H1>
+
+<P ALIGN="CENTER"><STRONG><A HREF="#H_Andrew_Black">H.Andrew Black</A></STRONG></P>
+
+<HR>
+
+<DL><DT><STRONG>Contents:</STRONG></DT>
+
+<DD><DL>
+
+<DT><BR><A HREF="#abstract">Abstract</A></DT>
+
+<DT><A HREF="#SECTION100">1 Introduction</A>
+
+<DT><A HREF="#SECTION200">2 Phonological Concepts</A>
+
+<DT><A HREF="#SECTION300">3 Implementation Issues</A>
+
+<DD><DL>
+
+<DT><A HREF="#SECTION310">3.1 Syllabification and TBUs</A>
+
+<DT><A HREF="#SECTION320">3.2 Lexical Representation</A>
+
+<DT><A HREF="#SECTION330">3.3 Tone Rules</A>
+
+<DD><DL>
+
+<DT><A HREF="#SECTION331">3.3.1 Operations</A>
+
+<DT><A HREF="#SECTION332">3.3.2 Operation Parameters</A>
+
+<DT><A HREF="#SECTION333">3.3.3 Rule Application</A>
+
+<DT><A HREF="#SECTION334">3.3.4 Edge Rules</A>
+
+<DT><A HREF="#SECTION335">3.3.5 Conditions on Rules</A>
+
+<DT><A HREF="#SECTION336">3.3.6 Example</A>
+
+</DL></DD>
+
+<DT><A HREF="#SECTION340">3.4 Orthographic Output</A>
+
+</DL></DD>
+
+<DT><A HREF="#SECTION400">4 Using <TT>ToneGen</TT></A>
+
+<DT><A HREF="#SECTION500">5 Conclusion</A>
+
+<DT><A HREF="#SECTION600">Appendix: List of Field Codes</A>
+
+<DT><A HREF="#Endnotes">Endnotes</A>
+
+<DT><A HREF="#References">References</A>
+
+</DL></DD></DL>
+
+<HR>
+
+<BLOCKQUOTE>Note: This is a slightly revised version of the author's paper "TonePars: A Computational Tool for Exploring Autosegmental Tonology" published in the SIL International's electronic publications series (see the URL http://www.sil.org/silewp/1997/007/).  The earlier paper focused on the parsing issues, while this one is on the generation issues.
+</BLOCKQUOTE>
+
+<HR>
+
+<H2><A NAME="abstract">Abstract</A></H2>
+
+<BLOCKQUOTE>The <TT>ToneGen</TT> program incorporates the <TT>STAMP</TT>
+
+morphological generation program to allow for modeling an
+
+autosegmental approach to tone.  This paper describes both
+
+the linguistic and implementation issues involved.</BLOCKQUOTE>
+
+<HR>
+
+<H2><A NAME="SECTION100">1 Introduction</A> </H2>
+
+<P>Whereas the <TT>TonePars</TT> program augments the morphological parsing program <TT>AMPLE</TT> (<A
+
+HREF="#WeberBlackMcConnel1988">Weber, Black &amp; McConnel 1988</A>) to allow for modeling an autosegmental approach to tone, so <TT>ToneGen</TT> aguments the morphological generation program <TT>STAMP</TT> (<A
+HREF="#WeberMcConnelBlackBuseman1990">Weber, McConnel, Black &amp; Buseman 1990</A>).
+While <TT>STAMP</TT> is able to do a fine job when synthesizing for an orthography that
+only represents lexical or underlying tone, it can run into great challenges when
+
+attempting to represent surface tone. This is especially so for languages with
+
+complex tone systems. The <TT>ToneGen</TT> program has been developed to help
+
+deal with this situation. <TT>ToneGen</TT> models an autosegmental approach to
+
+tone. The current implementation was written in C and has been applied
+
+successfully to a corpus of over 2,000 words in Tlapanec (see <A
+
+HREF="#WeathersCarrasco1988">Weathers & Carrasco 1988</A>) and to Pe&ntilde;oles Mixtec (see <A
+HREF="#Daly1993">Daly 1993</A>). </P>
+
+<P>The <TT>ToneGen</TT> program actually includes the <TT>STAMP</TT> generation (also called synthesis) code.  That is, it does everything that <TT>STAMP</TT> synthesis does with the addition of also applying a set of autosegmental tone rules to the result.  These rules then mark the synthesized word with its (hopefully) correct tones.</P>
+
+<P>The <TT>ToneGen</TT> program reads the <TT>AMPLE</TT> analysis output file, augmented
+
+<TT>STAMP</TT> dictionary files, and a special, tone-oriented control file (which is a superset of the
+
+<TT>STAMP</TT> declarations file). For each analysis posited by the output of <TT>AMPLE</TT>, it synthesizes the analysis (just like <TT>STAMP</TT> would) and builds
+
+a model of the phonological word (segments, moras, syllables, and tone tiers). It
+
+posits the underlying tones based on the appropriate dictionary entries and
+
+applies the user-defined tone rules to the tones. After all the rules have
+
+applied, it creates a tone-marked form (e.g. it might be
+
+<I>nd&agrave;&aacute;</I>). This tone-marked form is then passed on to <TT>STAMP</TT>'s "TextOut" module which applies any orthographic changes, takes care of dealing with capitalization, and puts the word back into its textual framework (i.e. it places the word back in the text including any punctuation, whitespace, or format markers). </P>
+<P>The paper is organized as follows. The <A
+
+HREF="#SECTION200">first section</A> sketches the key phonological concepts
+
+modeled by <TT>ToneGen</TT>. The <A HREF="#SECTION300">next section</A>
+
+delineates the implementation details, describing and illustrating how
+
+<TT>ToneGen</TT> proceeds. The <A HREF="#SECTION400">final section</A> discusses
+
+how effective <TT>ToneGen</TT> has been. There is also an <A
+
+HREF="#SECTION600">appendix</A> containing an annotated listing of all of the
+
+field codes <TT>ToneGen</TT> has available in its control file. </P>
+
+<H2><A NAME="SECTION200">2 Phonological Concepts</A> </H2>
+
+<P>This section contains a brief introduction to the key concepts that
+
+<TT>ToneGen</TT> models. A much more thorough explanation can be found in <A
+
+HREF="#Kenstowicz1994">Kenstowicz (1994)</A>, especially chapters 6 and 7. </P>
+
+<P>We begin by considering how one might model a tone linguistically. Are tones
+
+segmental features like voicing or labial or sonorancy? If so, why do they rarely
+
+ever show up on consonants and then only when the consonant is a syllabic nasal
+
+(or other syllabic sonorant)? Tones, therefore, are not features of the segment,
+
+but are rather autosegments (i.e. "self-segments") that live on a distinct tier
+
+from the rest of the segments (<A HREF="#Goldsmith1976">Goldsmith 1976</A>).
+
+These autosegments do not attach to segments, but rather to what are called Tone
+
+Bearing Units (TBUs). A TBU may be considered to be a vowel or a syllable or a
+
+sub-constituent of the syllable called a mora. That is, the tone attaches to a
+
+TBU which is a constituent of the phonological word. </P>
+
+<P>A basic picture of a phonological word is shown in (1). </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="6%" VALIGN="TOP">
+
+<P><A NAME="x01">(1)</A></TD>
+
+<TD WIDTH="94%" VALIGN="TOP">
+
+<P><IMG SRC="tp01.gif" WIDTH=204 HEIGHT=110></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>A phonological word consists of a sequence of syllables. Every syllable
+
+(indicated by <SPAN CLASS="SYMBOL">s</SPAN>) has at least one mora (indicated by
+
+<SPAN CLASS="SYMBOL">m</SPAN>). A mora is a unit of syllable weight; light
+
+syllables have one mora while heavy syllables have two (see <A
+
+HREF="#Hayes1989">Hayes 1989</A> for one account of moraic theory). Some
+
+languages make distinctions between heavy and light syllables for stress and
+
+reduplication. </P>
+
+<P>How are syllables constructed? A view that has been around for long time is
+
+the Sonority Sequencing Principle: A syllable has a segment with a sonority peak
+
+that is preceded and/or followed by segments of decreasing sonority (see <A
+
+HREF="#Kenstowicz1994">Kenstowicz 1994</A>:254-255 for a discussion).
+
+Phonologists agree on the relative sonority scale given in <A
+
+HREF="#x02">(2)</A>, where obstruents are the least sonorous and vowels are the
+
+most sonorous. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP" HEIGHT=28>
+
+<P><A NAME="x02">(2)</A></TD>
+
+<TD WIDTH="93%" VALIGN="TOP" HEIGHT=28>
+
+<P>obstruent <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20> nasal <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20> liquid <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20> glide <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20> vowel</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>In order to properly determine syllables, several pieces of additional
+
+information may be needed. This includes such things as whether codas are allowed
+
+or not; if syllables are monomoraic or not; how a VCCV sequence is to be split;
+
+etc. </P>
+
+<P>For example, given that codas are allowed and that syllables may be bimoraic,
+
+the forms in <A HREF="#x03">(3)</A> will be syllabified as shown. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P><A NAME="x03">(3)</A></TD>
+
+<TD WIDTH="90%" VALIGN="TOP">
+
+<P><IMG SRC="tp03a.gif" WIDTH=71 HEIGHT=90></TD>
+
+</TR>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="90%" VALIGN="TOP">
+
+<P><IMG SRC="tp03b.gif" WIDTH=87 HEIGHT=95></TD>
+
+</TR>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="90%" VALIGN="TOP">
+
+<P>&nbsp;<IMG SRC="tp03c.gif" WIDTH=242 HEIGHT=95></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>In <A HREF="#x03">(3a)</A>, the sonority hierarchy determines that the
+
+syllable boundary is between the <I>a</I> and the <I>p</I>. It follows the
+
+assumed universal that in a VCV sequence, the C will become an onset and not a
+
+coda. In <A HREF="#x03">(3b)</A>, there is a sequence of two consonants word
+
+medially. Since the sonority is decreasing between them, the syllables are split
+
+between the two consonants. Note that this, too, assumes that a pre-vocalic
+
+consonant will be an onset. </P>
+
+<P>Example <A HREF="#x03">(3c)</A> also has the same two consonants but in the
+
+reverse order. In this case, the sonority is increasing going from the <I>p</I>
+
+to the <I>r</I>. Now there are two possibilities allowed by the Sonority
+
+Sequencing Principle. In <A HREF="#x03">(3ci)</A>, the <I>p</I> is incorporated
+
+into the onset while in <A HREF="#x03">(3cii)</A>, it is treated as a coda of the
+
+preceding syllable. Clearly sonority alone is not enough to determine which of
+
+these two options to use. As I understand it, a particular language will
+
+consistently choose one option or the other. </P>
+
+<P>As mentioned above, the syllables and moras and segments are on one plane
+
+while the tones are on an independent one. That is, tones reside on a tone tier.
+
+This view, originally argued for by <A HREF="#Goldsmith1976">Goldsmith
+
+(1976)</A>, makes quite good sense because tones really do seem to act
+
+independently of segments. </P>
+
+<P>There is more than one view of what the tone tier looks like. The simplest
+
+picture of a tone tier is as follows. In the diagrams, the o's represent TBUs; H
+
+and L represent a high and a low tone, respectively. The lines show how the tones
+
+are associated to the TBUs. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="17%" VALIGN="TOP">
+
+<P><A NAME="x04">(4)</A></TD>
+
+<TD WIDTH="83%" VALIGN="TOP">
+
+<P><IMG SRC="tp04.gif" WIDTH=167 HEIGHT=56></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>This would be a H H L H L L tone pattern. One can view tone spreading very
+
+nicely this way: </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="14%" VALIGN="TOP">
+
+<P><A NAME="x05">(5)</A></TD>
+
+<TD WIDTH="86%" VALIGN="TOP">
+
+<P>&nbsp;<IMG SRC="tp05.gif" WIDTH=232 HEIGHT=56></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>That is, the one linked H tone spreads onto the following two TBUs that do not
+
+have any tone associated with them. Notice that by associating these tones to
+
+TBUs rather than to segments (such as vowels), the spreading is all very local:
+
+there is no need to worry about whether the next segment is a consonant or a
+
+vowel, for example. </P>
+
+<P>Another view of what the tone tier is like has been articulated by some
+
+theorists such as in <A HREF="#Snider1988">Snider (1988</A>, <A
+
+HREF="#Snider1990">1990</A>). They find it advantageous to posit internal
+
+structure for tone. Rather than just being a single unit (such as H or L), a tone
+
+consists of several parts. These parts can act somewhat independently of each
+
+other. The two most important are two distinct tiers of tone: a primary and a
+
+register tier. The primary tier provides the basic pitch of the tone and the
+
+register tier provides a modification of that pitch. </P>
+
+<P>All of this means that the following kinds of tone diagrams can be
+
+represented: </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x06">(6)</A></TD>
+
+<TD WIDTH="93%" VALIGN="TOP">
+
+<P><IMG SRC="tp06.gif" WIDTH=471 HEIGHT=190></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The <I>e</I> of <I>te</I> has a primary low only. The <I><SPAN
+
+CLASS="IPA">a&#244;</SPAN></I> in <I>d<SPAN
+
+CLASS="IPA">a&#244;</SPAN>tn&ugrave;n&iacute;</I> has a register h, primary L
+
+combination as well as a primary H tone. The <I>&ugrave;</I> of <I>d<SPAN
+
+CLASS="IPA">a&#244;</SPAN>tn&ugrave;n&iacute;</I> has a register h, primary L
+
+combination. The final <I>&iacute;</I> of <I>d<SPAN
+
+CLASS="IPA">a&#244;</SPAN>tn&ugrave;n&iacute;</I> has just a primary H tone.
+
+Finally, the <I>ni`</I> has a floating register h. Floating tones are ones that
+
+are a part of the representation of a particular morpheme, but are not associated
+
+with or linked to any of the TBUs of that morpheme. They float to the side of the
+
+morpheme and may become associated or linked to a surrounding morpheme. </P>
+
+<P>Underspecification of one tone may also prove to be beneficial. In
+
+Pe&ntilde;oles Mixtec, for example, the low tones almost never need to be
+
+explicitly entered. They can fall out by default. </P>
+
+<H2><A NAME="SECTION300">3 Implementation Issues</A> </H2>
+
+<P>Having introduced the key phonological concepts modeled by <TT>ToneGen</TT>,
+
+we now address how they actually work within the tool. We first address
+
+syllabification, then the augmented <TT>STAMP</TT> lexical entries, followed by the tone
+
+rules, and end with a discussion of the orthographic output. </P>
+
+<H3><A NAME="SECTION310">3.1 Syllabification and TBUs</A> </H3>
+
+<P>In order to properly determine syllables, several pieces of information are
+
+needed. </P>
+
+<P>First, <TT>ToneGen</TT> must know what the segments are. <TT>ToneGen</TT>
+
+works on the internal orthographic representation of the segments (that is, the
+
+representation of the syntehsized word that results from <TT>STAMP</TT>'s synthesis process). The <TT>\segment</TT> field in the control file provides the name of a
+
+file that contains a full definition of each such segment. The conventional file
+
+extension for this file is <TT>.seg</TT>. Example <A HREF="#x07">(7)</A> shows
+
+two entries from the Pe&ntilde;oles Mixtec file; the first is for a vowel, the
+
+second for a consonant. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="14%" VALIGN="TOP">
+
+<P><A NAME="x07">(7)</A></TD>
+
+<TD WIDTH="86%" VALIGN="TOP">
+
+<PRE>\s a
+
+\mb
+
+\son +
+
+\cons -
+
+\toneseg H     = &aacute;
+
+\toneseg h     = &agrave;
+
+\toneseg L h   = &agrave;
+
+\toneseg h H   = <SPAN CLASS="IPATT">a&#244;</SPAN>
+
+\toneseg L h H = <SPAN CLASS="IPATT">a&#244;</SPAN>
+
+
+
+\s p
+
+\son -
+
+\cont -</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The <TT>\s</TT> record marker field contains the segment symbol itself. </P>
+
+<P>The <TT>\mb</TT> field indicates that the segment is mora bearing (i.e. has a
+
+mora). Under the moraic theory, long vowels can be viewed as a single segment
+
+with two moras. Such long vowels are indicated by using <TT>\mb 2</TT> to tell
+
+<TT>ToneGen</TT> that such a segment has two moras. </P>
+
+<P>The <TT>\son</TT>, <TT>\cons</TT>, and <TT>\cont</TT> fields are to define the
+
+sonority, consonantal and continuant features for these segments. (By default,
+
+<TT>\cons</TT> is <TT>+</TT> and <TT>\cont</TT> is <TT>+</TT>). These three
+
+features are used to determine the relative sonority of the segments by the
+
+syllable building routine. The ranking in increasing sonority is: </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x08">(8)</A></TD>
+
+<TD WIDTH="93%" VALIGN="TOP" NOWRAP>
+
+<P><TT>-cont</TT> <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20>
+
+<TT>+cont</TT> <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20>
+
+<TT>+cons</TT> <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20>
+
+<TT>-cons</TT> <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20>
+
+<TT>-son</TT> <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20>
+
+<TT>+son</TT> <IMG SRC="prec.gif" WIDTH=20 HEIGHT=20>
+
+<TT>mora-bearing</TT></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The user is expected to label each segment with its appropriate features in
+
+order to get the correct sonority ranking. </P>
+
+<P>The <TT>\toneseg</TT> fields give the mapping between the tones linked to a
+
+TBU and their internal orthographic representations. See Section <A
+
+HREF="#orthographic_output">3.4</A> below for discussion and exemplification.
+
+</P>
+
+<P>Given the segment definitions, <TT>ToneGen</TT> is able to parse the input
+
+word form into its respective segments. It assumes that the longest segment that
+
+matches is correct. Note that this could be erroneous in certain ambiguous cases.
+
+For example, consider an orthography that includes the four segments <TT>t</TT>,
+
+<TT>tl</TT>, <TT>l</TT>, and <TT>ll</TT>. A sequence of <TT>tll</TT> will always
+
+be interpreted by <TT>ToneGen</TT> as <TT>tl</TT> followed by <TT>l</TT> and
+
+never as <TT>t</TT> followed by <TT>ll</TT>. If the latter is correct,
+
+<TT>ToneGen</TT> will be in error.<A HREF="#fn1"><SUP>1</SUP></A> </P>
+
+<P>Having parsed the word into its segments, <TT>ToneGen</TT> can use the
+
+sonority feature information of the segments to begin syllabifying the word. As
+
+noted above, more information than sonority alone may be needed.
+
+<TT>ToneGen</TT> uses several field codes in the control file to provide such
+
+information, as described in the following paragraphs. </P>
+
+<P>Some languages allow codas (consonants at the end of a syllable) and some do
+
+not. If the language under study does not, the <TT>\nocodas</TT> field should be
+
+included in the control file. </P>
+
+<P>Some languages never have more than one segment in a syllable nucleus (that
+
+segment is usually a vowel although it could also be a syllabic sonorant). That
+
+is, in such languages every syllable is monomoraic. The field
+
+<TT>\monomoraic</TT> can be used to tell <TT>ToneGen</TT> to limit syllables to
+
+containing only one mora. </P>
+
+<P>As discussed above, a sequence of VCCV (vowel consonant consonant vowel) can
+
+be ambiguous as to how it should be syllabified. If the first C is less sonorous
+
+than the second C and syllables can have codas, it is not clear whether the first
+
+C should be a coda of the first syllable or whether it should be the first member
+
+of a complex onset of the second syllable. The <TT>\v.ccv</TT> and
+
+<TT>\vc.cv</TT> fields can be used to tell <TT>ToneGen</TT> which approach to
+
+use. If the first C should be an onset, then use the <TT>\v.ccv</TT> field. If
+
+the first C should be a coda, use the <TT>\vc.cv</TT> field. </P>
+
+<P><A HREF="#Hayes1989">Hayes (1989)</A> proposes that codas can become
+
+mora-bearers under a process called "Weight by Position". The <TT>\wtbypos</TT>
+
+field allows this to happen. </P>
+
+<P>In addition, <TT>ToneGen</TT> has a debug option whereby it shows the results
+
+of syllabification. It assumes that the syllable symbol will be a dollar sign
+
+(<TT>$</TT>), the mora symbol will be a lower case <TT>m</TT>, and that syllable
+
+boundaries are to be indicated by a period. The user can tell <TT>ToneGen</TT>
+
+to use other symbols via the <TT>\sylstr</TT>, <TT>\morastr</TT>, and
+
+<TT>\sylsep</TT> fields. The string that appears after these fields will be used
+
+for the syllable symbol, the mora symbol, and the syllable separation character,
+
+respectively. </P>
+
+<P>Once <TT>ToneGen</TT> has determined the syllable structure, it can assign
+
+tone bearing units (TBUs) to the prosodic structure. Only moras are treated as
+
+TBUs by the current version. Later versions will allow the user to specify (via a
+
+field in the control file) whether TBUs should be assigned to moras, vowels, or
+
+syllables. </P>
+
+<H3><A NAME="SECTION320">3.2 Lexical Representation</A> </H3>
+
+<P>After assigning the appropriate TBUs, the next step is to determine how to
+
+assign the underlying tones to their appropriate TBUs. In order to do this,
+
+<TT>ToneGen</TT> must first determine which sequences of segments correspond to
+
+which morphemes. It deduces this by parsing the decomposition field (<TT>\d</TT>)
+
+from the analysis file in conjunction with the analysis field (<TT>\a</TT>). This
+
+segment-to-morpheme correspondence tells <TT>ToneGen</TT> where a morpheme
+
+begins and ends segmentally. By referring to the syllable structure built upon
+
+these segments, it can determine what TBUs (if any) are contained by the
+
+morpheme. </P>
+
+<P>ToneGen uses the morphname from the analysis field to lookup the dictionary
+
+entry for each morpheme. The tone information is keyed via a separate field in
+
+the <TT>STAMP</TT> dictionary file. Consider the entries listed in <A HREF="#x09">(9)</A>.
+
+</P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="6%" VALIGN="TOP">
+
+<P><A NAME="x09">(9)</A></TD>
+
+<TD WIDTH="5%" VALIGN="TOP">
+
+<P>a.</TD>
+
+<TD WIDTH="89%" VALIGN="TOP">
+
+<PRE>\r ch<SPAN CLASS="IPATT">&#246;&#246;</SPAN>
+
+\a ch<SPAN CLASS="IPATT">&#246;&#246;</SPAN>
+
+\c N
+
+\g hilltop
+
+\u ch<SPAN CLASS="IPATT">&#246;&#246;</SPAN>
+
+</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="6%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="5%" VALIGN="TOP">
+
+<P>&nbsp;b.</TD>
+
+<TD WIDTH="89%" VALIGN="TOP">
+
+<PRE>\r &agrave;di
+
+\a adi
+
+\c Prt                   | CNJ
+
+\g or
+
+\u &agrave;di
+
+\mp h_association_exception    | conjunctions are exceptions
+
+\tone linked h @ tbu 1
+
+</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="6%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="5%" VALIGN="TOP">
+
+<P>c.</TD>
+
+<TD WIDTH="89%" VALIGN="TOP">
+
+<PRE>\r ag&ograve;st&oacute;
+
+\a akosto
+
+\c N
+
+\g August
+
+\u ak&ograve;st&oacute;
+
+\tone linked h @ tbu 2
+
+\tone linked H @ tbu 3
+
+</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="6%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="5%" VALIGN="TOP">
+
+<P>d.</TD>
+
+<TD WIDTH="89%" VALIGN="TOP">
+
+<PRE>\r ch&iacute;l&eacute;h&eacute;
+
+\a chilehe
+
+\c N
+
+\g armpit
+
+\u ch&iacute;l&eacute;h&eacute;
+
+\tone linked H @ tbu 1 2 3
+
+</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="6%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="5%" VALIGN="TOP">
+
+<P>e.</TD>
+
+<TD WIDTH="89%" VALIGN="TOP">
+
+<PRE>\r chindee`
+
+\a chindee
+
+\c V
+
+\g help
+
+\u chindee`
+
+\tone right-floating h @ tbu 3
+
+</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="6%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="5%" VALIGN="TOP">
+
+<P>f.</TD>
+
+<TD WIDTH="89%" VALIGN="TOP">
+
+<PRE>\r d<SPAN CLASS="IPATT">a&#244;</SPAN>tn&ugrave;n&iacute;
+
+\a datnuni
+
+\c Adv
+
+\g then
+
+\u d<SPAN CLASS="IPATT">a&#244;</SPAN>tn&ugrave;n&iacute;
+
+\tone linked h @ tbu 1   | this is two morphemes; hence
+
+\tone linked H @ tbu 1   | the tones are not shared
+
+\tone linked h @ tbu 2
+
+\tone linked H @ tbu 3
+
+</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="6%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="5%" VALIGN="TOP">
+
+<P>g.</TD>
+
+<TD WIDTH="89%" VALIGN="TOP">
+
+<PRE>\r esp&iacute;rit&uacute;`
+
+\a espiritu
+
+\c N
+
+\g Holy.Spirit | must be followed by Y<SPAN CLASS="IPATT">a&#244;</SPAN> Ndi<SPAN CLASS="IPATT">o&#244;</SPAN>x&iacute;
+
+\u esp&iacute;rit&uacute;`
+
+\mp h_association_exception
+
+\tone linked H @ tbu 2
+
+\tone linked H @ tbu 4
+
+\tone right-floating h</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>These are normal <TT>STAMP</TT> root dictionary records, where <TT>\r</TT> is the
+
+record marker, <TT>\a</TT> is the allomorph entry, <TT>\c</TT> is the category,
+
+<TT>\mp</TT> is morpheme property and <TT>\g</TT> is the (English) gloss. The
+
+<TT>\u</TT> is for the underlying or base form of the word (including tone
+
+information).   While this information is not used by either <TT>STAMP</TT> or <TT>ToneGen</TT>, it can be useful in producing interlinear text showing the underlying form (via <TT>AMPLE</TT> and other tools).  Notice that the morpheme properties can be
+
+used to control the action of the tone parser. </P>
+
+<P>The new field is <TT>\tone</TT>. This field, of course, is for the lexical
+
+tone information. There is one <TT>\tone</TT> field for each type of tone. The
+
+syntax for this field is given in <A HREF="#x10">(10)</A> (parentheses indicate
+
+optional elements). </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x10">(10)</A></TD>
+
+<TD WIDTH="93%" VALIGN="TOP">
+
+<P><A NAME="x10"><TT>\tone &lt;type&gt; &lt;value&gt;
+
+(&lt;marker&gt; &lt;domain_location&gt;)</TT></A> </P></TD>
+
+</TR></TABLE>
+
+<P>The possible values for <TT>&lt;type&gt;</TT> are listed in <A HREF="#x11">(11)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x11">(11)</A></TD>
+
+<TD WIDTH="16%" VALIGN="TOP">
+
+<P>linked</TD>
+
+<TD WIDTH="77%" VALIGN="TOP">
+
+<P>the tone is linked underlyingly</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="16%" VALIGN="TOP">
+
+<P>left-floating</TD>
+
+<TD WIDTH="77%" VALIGN="TOP">
+
+<P>the tone is floating to the left of the morpheme</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="16%" VALIGN="TOP">
+
+<P>right-floating</TD>
+
+<TD WIDTH="77%" VALIGN="TOP">
+
+<P>the tone is floating to the right of the morpheme</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="16%" VALIGN="TOP">
+
+<P>boundary</TD>
+
+<TD WIDTH="77%" VALIGN="TOP">
+
+<P>the tone is associated to the edges of a morphological domain</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="16%" VALIGN="TOP">
+
+<P>floating</TD>
+
+<TD WIDTH="77%" VALIGN="TOP">
+
+<P>the tone is floating without specifying where it is relative to the morpheme</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="16%" VALIGN="TOP">
+
+<P>delinked</TD>
+
+<TD WIDTH="77%" VALIGN="TOP">
+
+<P>the tone has been delinked</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>Only the first four would normally be found in lexical entries. </P>
+
+<P>The tone values (<TT>&lt;value&gt;</TT>) are under user control. These values
+
+also tell <TT>ToneGen</TT> whether to use both primary and register tiers or
+
+just a primary tier. The user specifies the values via fields in the control
+
+file. The <TT>\tonevalue</TT> field gives the primary tone values and the
+
+<TT>\tone_reg_value</TT> field gives the register tone values. If there is no
+
+<TT>\tone_reg_value</TT> field, then <TT>ToneGen</TT> assumes that there is only
+
+a primary tier. For the example data above, there are the four listed in <A
+
+HREF="#x12">(12)</A> which are to be interpreted as in <A HREF="#x13">(13)</A>.
+
+</P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P><A NAME="x12">(12)</A></TD>
+
+<TD WIDTH="90%" VALIGN="TOP">
+
+<P>\tonevalue H </P>
+
+<P>\tonevalue L </P>
+
+<P>\tone_reg_value h </P>
+
+<P>\tone_reg_value l</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>&nbsp; </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P><A NAME="x13">(13)</A></TD>
+
+<TD WIDTH="10%" VALIGN="TOP">
+
+<P>H</TD>
+
+<TD WIDTH="80%" VALIGN="TOP">
+
+<P>primary high</TD>
+
+</TR>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="10%" VALIGN="TOP">
+
+<P>L</TD>
+
+<TD WIDTH="80%" VALIGN="TOP">
+
+<P>primary low</TD>
+
+</TR>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="10%" VALIGN="TOP">
+
+<P>h</TD>
+
+<TD WIDTH="80%" VALIGN="TOP">
+
+<P>register high</TD>
+
+</TR>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="10%" VALIGN="TOP">
+
+<P>l</TD>
+
+<TD WIDTH="80%" VALIGN="TOP">
+
+<P>register low</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The type and value of the tone field tell <TT>ToneGen</TT> the underlying
+
+status of the tone (linked, left-floating, etc.) and the value (primary high,
+
+register h, etc.), but not to which TBU in the morpheme the tone belongs. By
+
+default, the first TBU will be assumed for a linked tone. A right-floating tone
+
+is aligned with the last TBU in the morpheme by default. A left-floating tone is
+
+aligned with the initial TBU in the morpheme by default. </P>
+
+<P>One can specify which TBU a tone should be aligned with by using the marker
+
+symbol (an <TT>@</TT> sign), the key word <TT>tbu</TT> and a number as in the
+
+examples above.<A HREF="#fn2"><SUP>2</SUP></A></P>
+
+<P>&nbsp;The relative order of the <TT>\tone</TT> fields can be crucial. If an
+
+entry has a TBU with two distinct tones, then the first indicated tone will be
+
+aligned first, followed by the second tone. </P>
+
+<H3><A NAME="SECTION330">3.3 Tone Rules</A> </H3>
+
+<P>Once the underlying tones are assigned to their respective TBUs,
+
+<TT>ToneGen</TT> applies the ordered tone rules. Such rules associate, spread,
+
+delink, delete, or insert tones. They can be cyclic or non-cyclic. </P>
+
+<P>The user writes the rules via a <TT>\tone_rule</TT> field in the control file.
+
+Each rule begins with a name and is followed by one or more commands. Thus, one
+
+can bundle several commands under one name. A rule may also be optionally
+
+conditioned to apply only when the specified conditions are met. The rules are
+
+applied in the order specified in the control file. </P>
+
+<P>The tone rules in <TT>ToneGen</TT> are conceptually modeled after <A
+
+HREF="#ArchangeliPulleyblank1993">Archangeli &amp; Pulleyblank (1993)</A> and <A
+
+HREF="#Hyman1990">Hyman (1990)</A> (which is based on early work of Archangeli
+
+and Pulleyblank) and are based on discussions in <A
+
+HREF="#Pulleyblank1986">Pulleyblank (1986)</A> and <A
+
+HREF="#Kenstowicz1994">Kenstowicz (1994)</A>. In order for the tool to be as
+
+general as possible, the rules have been highly parameterized. The following
+
+sections delineate these parameters and briefly illustrate them.<A
+
+HREF="#fn3"><SUP>3</SUP></A> </P>
+
+<H4><A NAME="SECTION331">3.3.1 Operations </A></H4>
+
+<P>Every command begins with an operation that is to be performed on some tone.
+
+The possible operations are listed in <A HREF="#x14">(14)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x14">(14)</A></TD>
+
+<TD WIDTH="18%" VALIGN="TOP">
+
+<P>Associate</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Associate the indicated tone: this means to insert the tone into the tone tier
+
+and to link that tone to its appropriate TBU.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="18%" VALIGN="TOP">
+
+<P>Delete</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Delete the indicated tone. The tone is removed from the tone tier and all of
+
+its association lines (i.e. links) are also erased.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="18%" VALIGN="TOP">
+
+<P>Delink</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Delink the indicated tone: i.e. erase all of its association lines. The tone
+
+is <I>not</I> removed from the tone tier.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="18%" VALIGN="TOP">
+
+<P>Insert</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Insert the indicated tone into the tone tier. No association lines are drawn.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="18%" VALIGN="TOP">
+
+<P>Link</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Link the indicated tone to its appropriate TBU. The tone is assumed to already
+
+be in the tone tier. Linking inserts an association line (or lines).</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="18%" VALIGN="TOP">
+
+<P>Spread</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Spread the indicated tone by drawing in the appropriate association lines
+
+(i.e. make the appropriate links). The direction, iteration, etc. of the
+
+spreading operation depends on the setting of the appropriate rule operation
+
+parameters (see section <A HREF="#SECTION332">3.3.2</A>). Spreading assumes that
+
+the indicated tone is linked.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="18%" VALIGN="TOP">
+
+<P>Copy</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Copy a tone or tone pattern (as in reduplication). This has not been implemented yet.</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>Some examples are given in <A HREF="#x15">(15)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P><A NAME="x15">(15)</A></TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>\tone_rule clitic_register_h_TR
+
+	   Associate a h tone.</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>\tone_rule verbal_H_delinking_TR
+
+	   Delink a current linked H tone,
+
+	   Delete a current right-floating h tone.</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>\tone_rule L_clitic_h_association_TR
+
+	   Delete a left floating h tone,
+
+	   Insert a right-floating h tone.</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>\tone_rule h_association_TR
+
+	   Link a left floating h tone.</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>\tone_rule H_spread_TR
+
+	   Associate a H tone,
+
+	   Spread a linked H tone.</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>Each of these assumes the default settings for the various operation parameters. </P>
+
+<H4><A NAME="SECTION332">3.3.2 Operation Parameters</A> </H4>
+
+<P>The operations are further qualified via direction, iteration, mode and OCP
+
+(Obligatory Contour Principle) settings. </P>
+
+<P>Direction is either towards the left (right-to-left) or towards the right
+
+(left-to-right). The direction parameter is especially appropriate for the
+
+spreading operation. The user may specify the direction using any of the values
+
+listed in <A HREF="#x16">(16)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x16">(16)</A></TD>
+
+<TD WIDTH="17%" VALIGN="MIDDLE">
+
+<P>left-to-right</TD>
+
+<TD WIDTH="76%" VALIGN="MIDDLE">
+
+<P>The operation applies towards the right.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="17%" VALIGN="MIDDLE">
+
+<P>leftward</TD>
+
+<TD WIDTH="76%" VALIGN="MIDDLE">
+
+<P>The operation applies towards the left.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="17%" VALIGN="MIDDLE">
+
+<P>right-to-left</TD>
+
+<TD WIDTH="76%" VALIGN="MIDDLE">
+
+<P>The operation applies towards the left.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="17%" VALIGN="MIDDLE">
+
+<P>rightward</TD>
+
+<TD WIDTH="76%" VALIGN="MIDDLE">
+
+<P>The operation applies towards the right.</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>Iteration deals with how many times and in what fashion the operation is to be
+
+applied.<A HREF="#fn4"><SUP>4</SUP></A> The possibilities are delineated in <A
+
+HREF="#x17">(17)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x17">(17)</A></TD>
+
+<TD WIDTH="17%" VALIGN="TOP" COLSPAN=2>
+
+<P>noniteratively</TD>
+
+<TD WIDTH="76%" VALIGN="MIDDLE">
+
+<P>The action is to apply non-iteratively; i.e. it applies once and only once.&nbsp;</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="17%" VALIGN="TOP">
+
+<P>iteratively</TD>
+
+<TD WIDTH="76%" VALIGN="TOP" COLSPAN=2>
+
+<P>The action is to apply iteratively; i.e. it applies to as many TBUs as
+
+possible. For example, if the action is to spread a H tone to the right
+
+non-cyclically, then the action attempts to spread the H tone to all the TBUs in
+
+the word to the right. If such an action were cyclic within morphemes, then the
+
+spreading would be to all TBUs within the morpheme.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="17%" VALIGN="TOP">
+
+<P>edge-in</TD>
+
+<TD WIDTH="76%" VALIGN="TOP" COLSPAN=2>
+
+<P>The action is to apply the tones in an edge-in fashion. See <A
+
+HREF="#Yip1988">Yip (1988)</A> and <A HREF="#HewittPrince1989">Hewitt &amp;
+
+Prince (1989)</A>. Example <A HREF="#x18">(18)</A> illustrates the two
+
+possibilities. If the direction is to the left, then (i) associate the rightmost
+
+tone to the right edge of the domain; (ii) associate the leftmost tone to the
+
+left edge of the domain (if possible); and (iii) associate all remaining
+
+unassociated tones right-to-left beginning to the immediate left of the first
+
+tone <A HREF="#x18">(18a)</A>. If the direction is to the right, then (i)
+
+associate the leftmost tone to the left edge of the domain; (ii) associate the
+
+rightmost tone to the right edge of the domain (if possible); and (iii) associate
+
+all remaining unassociated tones left-to-right beginning to the immediate right
+
+of the first tone <A HREF="#x18">(18b)</A>. This has not been implemented yet.<A
+
+HREF="#fn5"><SUP>5</SUP></A></TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="17%" VALIGN="TOP">
+
+<P>one-to-one</TD>
+
+<TD WIDTH="76%" VALIGN="TOP" COLSPAN=2>
+
+<P>There is a one-to-one matching between tones in the list of tones and TBUs.
+
+This has not been implemented yet.</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>&nbsp; </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P><A NAME="x18">(18)</A></TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<P><IMG SRC="tp18.gif" WIDTH=488 HEIGHT=75></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>Mode deals with various ways of associating the tone to a TBU.<A
+
+HREF="#fn6"><SUP>6</SUP></A> The possible values are listed in <A
+
+HREF="#x19">(19)</A> and are illustrated in <A
+
+HREF="#x20">(20)</A>. Each of the forms in <A HREF="#x20">(20a-c)</A>
+
+should be considered as beginning with the initial form in <A HREF="#x20">(20)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x19">(19)</A></TD>
+
+<TD WIDTH="19%" VALIGN="TOP">
+
+<P>feature-adding</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Feature-adding mode causes the tone of the action to be appended to the TBU.
+
+That is, if there is already a tone linked to the TBU, the new tone will also be
+
+linked to it <A HREF="#x20">(20a)</A>.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="19%" VALIGN="TOP">
+
+<P>feature-changing</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Feature-changing mode causes any existing tones on the indicated TBU to be
+
+replaced by the new tone <A HREF="#x20">(20b)</A>.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="19%" VALIGN="TOP">
+
+<P>feature-filling</TD>
+
+<TD WIDTH="74%" VALIGN="TOP">
+
+<P>Feature-filling mode causes the new tone to <I>not</I> be linked if there are
+
+existing tones already on the TBU <A HREF="#x20">(20c)</A>.</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>&nbsp; </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P><A NAME="x20">(20)</A></TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<P><IMG SRC="tp20.gif" WIDTH=547 HEIGHT=62></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The <I>OCP</I> or Obligatory Contour Principle, originally due to <A
+
+HREF="#Leben1973">Leben (1973)</A>, basically bans adjacent identical tones from
+
+a representation. The validity and precise definition of the OCP has been debated
+
+(see <A HREF="#McCarthy1986">McCarthy (1986)</A> and <A
+
+HREF="#Goldsmith1990">Goldsmith (1990)</A> for some discussions). The OCP is also
+
+not overtly represented in the graphic form of autosegmental rules. The handling
+
+of the OCP within <TT>ToneGen</TT> has not been totally implemented yet. The
+
+possible values are listed in <A HREF="#x21">(21)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x21">(21)</A></TD>
+
+<TD WIDTH="27%" VALIGN="MIDDLE">
+
+<P>optional OCP-blockage</TD>
+
+<TD WIDTH="66%" VALIGN="MIDDLE">
+
+<P>An OCP violation will optionally block the action from applying.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="27%" VALIGN="MIDDLE">
+
+<P>OCP-blockage</TD>
+
+<TD WIDTH="66%" VALIGN="MIDDLE">
+
+<P>An OCP violation will block the action from applying.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="27%" VALIGN="MIDDLE">
+
+<P>OCP-ignored</TD>
+
+<TD WIDTH="66%" VALIGN="MIDDLE">
+
+<P>The OCP is ignored (does not apply at all). (This is the effect currently.)</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="27%" VALIGN="MIDDLE">
+
+<P>OCP-merger</TD>
+
+<TD WIDTH="66%" VALIGN="MIDDLE">
+
+<P>When the application of an action will result in an OCP violation, merge the
+
+two offending tones into one.</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The <I>default</I> settings for these operation parameters are as indicated in
+
+<A HREF="#x22">(22)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="15%" VALIGN="TOP">
+
+<P><A NAME="x22">(22)</A></TD>
+
+<TD WIDTH="27%" VALIGN="TOP">
+
+<P>direction</TD>
+
+<TD WIDTH="58%" VALIGN="TOP">
+
+<P>rightward (left-to-right)</TD>
+
+</TR>
+
+<TR><TD WIDTH="15%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="27%" VALIGN="TOP">
+
+<P>iteration</TD>
+
+<TD WIDTH="58%" VALIGN="TOP">
+
+<P>non-iteratively</TD>
+
+</TR>
+
+<TR><TD WIDTH="15%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="27%" VALIGN="TOP">
+
+<P>mode</TD>
+
+<TD WIDTH="58%" VALIGN="TOP">
+
+<P>feature-filling</TD>
+
+</TR>
+
+<TR><TD WIDTH="15%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="27%" VALIGN="TOP">
+
+<P>OCP</TD>
+
+<TD WIDTH="58%" VALIGN="TOP">
+
+<P>OCP-ignored</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The user can override the defaults in two ways. The global default can be altered by including a <TT>\default</TT> field in the control file containing the name of the operation, a colon, and the new default in the control file. Alternatively, the user can explicitly state any of the operations in the rule itself. See the examples in <A HREF="#x23">(23)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P><A NAME="x23">(23)</A></TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>\tone_rule clitic_register_h_TR
+
+	   Associate a h tone rightward non-iteratively.</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>\tone_rule verbal_H_delinking_TR
+
+	   Delink a current linked H tone non-iteratively,
+
+	   Delete a current right-floating h tone.</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>\tone_rule H_spread_TR
+
+	   Associate a H tone,
+
+	   Spread a linked H tone rightward iteratively
+
+		  using feature-filling mode with OCP-merger.</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<H4><A NAME="SECTION333">3.3.3 Rule Application</A> </H4>
+
+<P>Rules can apply pre-cyclically, cyclically or post-cyclically (pre-cyclic is
+
+potentially the case of the Universal Association Convention of <A
+
+HREF="#Goldsmith1976">Goldsmith 1976</A> and <A
+
+HREF="#Pulleyblank1986">Pulleyblank 1986</A>). Strict left-to-right or
+
+right-to-left cyclicity currently can be handled. </P>
+
+<P>Rule application is controlled via a <TT>\default</TT> field in the control
+
+file or as an default override on a rule. The possible values for the
+
+<TT>\default CYCLE:</TT> field are listed in <A HREF="#x24">(24)</A> with
+
+comments explaining their meaning. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="MIDDLE">
+
+<P><A NAME="x24">(24)</A></TD>
+
+<TD WIDTH="14%" VALIGN="MIDDLE">
+
+<P>none</TD>
+
+<TD WIDTH="79%" VALIGN="MIDDLE">
+
+<P>Indicates that there are no cyclic rules.</TD>
+
+</TR>
+
+<TR><TD VALIGN="MIDDLE" ROWSPAN=2>
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="14%" VALIGN="TOP">
+
+<P>domain</TD>
+
+<TD WIDTH="79%" VALIGN="MIDDLE">
+
+<P>Indicates that all "lexical" rules should be applied within the domain(s)
+
+specified by each rule. If the rules do not specify any domains, apply the rules
+
+from the innermost morphological domain node outward (presumably this will be
+
+root-out). This has not been implemented yet.</TD>
+
+</TR>
+
+<TR><TD WIDTH="14%" VALIGN="MIDDLE">
+
+<P>left-to-right<BR>
+
+leftward<BR>
+
+right-to-left<BR>
+
+rightward</TD>
+
+<TD WIDTH="79%" VALIGN="TOP">
+
+<P>Apply "lexical" rules in the specified direction across the morphemes; ignore
+
+any morphological domain structure.</TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The domain notion is with respect to morphological domains. The idea is that
+
+the user will specify phrase structure rules to indicate the domain or
+
+morphological structure of a word. Tone rules in turn may refer to these domains.
+
+</P>
+
+<P>For example, a language which builds suffixes first, then prefixes could end
+
+up with the following domain structure: <A NAME="x25"><!-- --></A></P>
+
+<P><IMG SRC="tp25.gif" WIDTH=308 HEIGHT=276></P>
+
+<P><A HREF="#BlackCheryl1995">C. Black (1995)</A> (building on work of <A
+
+HREF="#BarrettKeach1986">Barrett-Keach 1986</A>, <A HREF="#Myers1987">Myers
+
+1987</A>, and <A HREF="#Mutaka1990">Mutaka 1990</A>) has argued for the following
+
+word structure for (at least some) Bantu verbs: <A NAME="x26"><!-- --></A></P>
+
+<P><IMG SRC="tp26.gif" WIDTH=500 HEIGHT=331></P>
+
+<P>Many of the complex verb tone patterns in Kinande can be captured quite nicely
+
+by making use of the Infl, MacroStem and Stem domains. </P>
+
+<P>We can also use these domains to model the phonological cycle of Lexical
+
+Phonology where needed. The cyclic tone rules are bracketed by <TT>\begcycle</TT>
+
+and <TT>\endcycle.</TT> Each rule delimits which morphological domains it applies
+
+to (think of these as modeling levels or strata). We do not have any way to
+
+restrict a rule to apply to only contiguous domains (the Continuous Domain
+
+Hypothesis of <A HREF="#Mohanan1986">Mohanan 1986</A>). This is because at load
+
+time we will not know whether particular domains are contiguous or not. We can,
+
+however, follow the spirit of the Continuous Domain Hypothesis and say that once
+
+a rule is turned off, it can never be turned on again. This is much like the
+
+Strong Domain Hypothesis of <A HREF="#Kiparsky1985">Kiparsky (1985)</A> (that
+
+says that every rule is turned on at the beginning of the derivation and rules
+
+may only be turned off), except that we do not require all rules to be "on"
+
+initially. </P>
+
+<P>What do we do when a domain is nested (such as Stem in the examples above)?
+
+Cyclic rules will be applied within a domain by finding the innermost morpheme of
+
+the domain and then successively moving upwards through the domain (I assume that
+
+in such a case all domains will have binary branching.) </P>
+
+<P>In contrast, boundary tone rules will apply to the highest level of a domain.
+
+(Boundary tones are tones which are associated to an outermost edge of a domain.)
+
+</P>
+
+<H4><A NAME="SECTION334">3.3.4 Edge Rules</A></H4>
+
+<P>In some languages, a tone from one word can spread or link to an immediately
+
+neighboring word. For example, a final high tone may spread onto a following
+
+word. </P>
+
+<P>In order to model this, <TT>ToneGen</TT> has two special types of tone rules
+
+called edge rules. An edge rule carries over a condition from a preceding or
+
+following word. This is an attempt to allow tone rules to apply across word
+
+boundaries. </P>
+
+<P>Edge rules follow the same syntax as tone rules; they just use a different
+
+field code. The codes and their interpretation are listed in <A
+
+HREF="#x27">(27)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x27">(27)</A></TD>
+
+<TD WIDTH="26%" VALIGN="TOP">
+
+<P><TT>edge_rule</TT> </TD>
+
+<TD WIDTH="67%" VALIGN="TOP">
+
+<P>Apply the rule from the left (i.e. carry over any tonal conditions from the
+
+previous word). </TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="26%" VALIGN="TOP">
+
+<P><TT>right_edge_rule</TT> </TD>
+
+<TD WIDTH="67%" VALIGN="TOP">
+
+<P>Apply the rule from the right (i.e. carry over any tonal conditions from the
+
+following word). </TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>Since <TT>ToneGen</TT> processes words from left to right, carrying a
+
+condition from a word to a following word is straightforward: When
+
+<TT>ToneGen</TT> determines that an analysis for the current word succeeds, it
+
+checks to see if any edge condition flags need to be set. (These flags are
+
+defined by the user via <TT>\ec</TT> fields in the control file. They are set by
+
+<TT>\edge_cond</TT> fields, which are similar to tone rules. Rather than
+
+modifying any tones, <TT>\edge_cond</TT> fields set edge condition flags.) When
+
+the next word is analyzed, its edge rules can check to see if the appropriate
+
+edge condition was set by the preceding word. </P>
+
+<P>Consider the example of an edge condition in <A HREF="#x28">(28)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P><A NAME="x28">(28)</A></TD>
+
+<TD WIDTH="90%" VALIGN="TOP">
+
+<PRE>\edge_cond H_spread_EC
+
+		 Set edge condition to H_spread.
+
+
+
+		 CONDITION:
+
+			(   (final tbu has a linked H tone)
+
+			 OR (final tbu has a delinked H tone)
+
+			)</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The <TT>H_spread</TT> edge condition is set whenever the final TBU has either
+
+a linked or a delinked H tone. </P>
+
+<P>While dealing with edge conditions coming from a preceding word is
+
+straightforward, it is much more challenging when the current word being
+
+processed depends on a tone or a property of a following word. Such dependencies
+
+are encoded in right edge rules. These rules are attempted only when the other
+
+tone rules fail for a particular analysis of the word. When the other rules fail
+
+to produce a correct tone-marked form, <TT>ToneGen</TT> includes all right edge
+
+rules in the ordered list of rules and tries again. </P>
+
+<P>Presumably, any right edge rule will also set an edge condition, thus implying
+
+that the following word should meet the appropriate condition that would make the
+
+right edge rule licit. </P>
+
+<P>Consider the example in <A HREF="#x29">(29)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="10%" VALIGN="TOP">
+
+<P><A NAME="x29">(29)</A></TD>
+
+<TD WIDTH="90%" VALIGN="TOP">
+
+<PRE>\right_edge_rule H_shifted_right_RER
+
+  Delete a linked H tone,
+
+  Set edge condition to H_spread,
+
+  Set edge condition to is_H_initial.
+
+
+
+  CONDITION:
+
+	 (    (current property is H_can_shift_right)
+
+	  AND (   (word tone pattern is a linked h tone
+
+									a linked H tone)
+
+		   OR (word tone pattern is a linked h tone
+
+									a linked H tone
+
+									a right-floating h tone)
+
+		  )
+
+	 )</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>This rule seeks to address some cases where a (primary) H tone ends up on a
+
+preceding word instead of the original word as usual. When this rule applies, it
+
+also sets two edge conditions. The first is to guarantee that the usual rightward
+
+spreading of a (primary) H tone will still apply and the second requires that the
+
+following word have an initial H tone (which is the one that would have shifted
+
+to the left). The special conditions on the rule are discussed in the next
+
+section. </P>
+
+<H4><A NAME="SECTION335">3.3.5 Conditions on Rules</A></H4>
+
+<P>Rules can be conditioned to apply based on surrounding contexts. The context
+
+can be segmental, tonal, prosodic, or morphological. Tone conditions can also be
+
+carried over from either preceding or following words. Conditions follow a rich
+
+syntax to allow precision and flexibility. They are similar in style to the test
+
+conditions of <TT>AMPLE</TT> (<A HREF="#WeberBlackMcConnel1988">Weber, Black &amp;
+
+McConnel 1988</A>) and <TT>STAMP</TT> (<A
+HREF="#WeberMcConnelBlackBuseman1990">Weber, McConnel, Black &amp; Buseman 1990</A>). </P>
+
+
+
+<P>Several examples taken from the implementation for Pe&ntilde;oles Mixtec
+
+are given in <A HREF="#x30">(30)</A>-<A HREF="#x34">(34)</A> below (see <A
+
+HREF="#Daly1993">Daly 1993</A> for the facts and an analysis of this
+
+complex tonal system). We use a left-to-right cyclic approach; that is, the
+
+rules are applied for each morpheme in turn moving from the initial to the
+
+final morpheme. </P>
+
+
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="9%" VALIGN="TOP">
+
+<P><A NAME="x30">(30)</A></TD>
+
+<TD WIDTH="91%" VALIGN="TOP">
+
+<PRE>\tone_rule h_association_TR
+
+   Link a left floating h tone rightward non-iteratively
+
+		   using feature-adding mode.
+
+
+
+   CONDITION:
+
+	  (     NOT (current property is h_association_exception)
+
+		AND NOT (current morpheme tbu 1 has a linked h tone)
+
+	  )</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>In <A HREF="#x30">(30)</A> a left floating (register) h tone (i.e. one that is
+
+floating to the left of the morpheme) is linked to the current morpheme whenever
+
+the current morpheme fails to be an exception or fails to already have an initial
+
+linked (register) h tone. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="11%" VALIGN="TOP">
+
+<P><A NAME="x31">(31)</A></TD>
+
+<TD WIDTH="89%" VALIGN="TOP">
+
+<PRE>\edge_rule is_H_initial_ER
+
+   Associate a H tone.
+
+
+
+   CONDITION:
+
+	  (        (edge condition is is_H_initial)
+
+	   AND NOT (initial tone is a linked H tone)
+
+	  )</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>In <A HREF="#x31">(31)</A> a (primary) H tone is associated to the first TBU
+
+of the word whenever the <TT>is_H_initial</TT> edge condition is set and as long
+
+as the initial tone does not already have a linked H tone. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="9%" VALIGN="TOP">
+
+<P><A NAME="x32">(32)</A></TD>
+
+<TD WIDTH="91%" VALIGN="TOP">
+
+<PRE>\right_edge_rule h_shifted_left_RER
+
+   Link a final floating h tone leftward,
+
+   Set edge condition to next_is_h_shifted_left.
+
+
+
+   CONDITION:
+
+	  (    (current property is can_receive_shifted_h)
+
+	   AND (word tone pattern is a right-floating h tone)
+
+	  )</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>In <A HREF="#x32">(32)</A> any word final floating (register) h tone is linked
+
+to the left whenever the current morpheme is marked as being a potential
+
+recipient of such a h tone and when the tone pattern of the word consists solely
+
+of such a floating h tone. In addition, an edge condition is set. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="9%" VALIGN="TOP">
+
+<P><A NAME="x33">(33)</A></TD>
+
+<TD WIDTH="91%" VALIGN="TOP">
+
+<PRE>\edge_rule clitic_register_h_ER
+
+   Associate a h tone rightward non-iteratively.
+
+
+
+   CONDITION:
+
+	  (    (edge condition is h_insertion)
+
+	   AND     (current morpheme underlying tbu 1 has a
+
+										   linked H tone)
+
+	   AND NOT (current property is h_association_exception)
+
+	   AND NOT (current category is V)
+
+	  )</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The edge rule in <A HREF="#x33">(33)</A> is applied only when the
+
+<TT>h_insertion</TT> condition has been set (by a previous word in this case) and
+
+when the current morpheme's first tone is an underlyingly linked (primary) H. In
+
+addition, the morpheme cannot be an exception to the rule and its category must
+
+not be a verb. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="9%" VALIGN="TOP">
+
+<P><A NAME="x34">(34)</A></TD>
+
+<TD WIDTH="91%" VALIGN="TOP">
+
+<PRE>\right_edge_rule H_shifted_right_RER
+
+   Delete a linked H tone,
+
+   Set edge condition to H_spread,
+
+   Set edge condition to is_H_initial.
+
+
+
+   CONDITION:
+
+	  (    (current property is H_can_shift_right)
+
+	   AND (   (word tone pattern is a linked h tone
+
+									 a linked H tone)
+
+			OR (word tone pattern is a linked h tone
+
+									 a linked H tone
+
+									 a right-floating h tone)
+
+		   )
+
+	  )</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The rule in <A HREF="#x34">(34)</A> requires the current morpheme to have the
+
+specified property and, in addition, the word must have one of the two indicated
+
+tone patterns. </P>
+
+<H4><A NAME="SECTION336">3.3.6 Example</A></H4>
+
+<P>We now consider more fully an example from Pe&ntilde;oles Mixtec. In this
+
+language a linked register h tone is deleted when the immediately preceding
+
+linked tone is also a register h tone. This effect can occur across word
+
+boundaries and even long distance across many words as in <A
+
+HREF="#x35">(35)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P><A NAME="x35">(35)</A></TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<P><IMG SRC="tp35.gif" WIDTH=479 HEIGHT=378></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The following three fields from the control file address this situation. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="9%" VALIGN="TOP">
+
+<P><A NAME="x36">(36)</A></TD>
+
+<TD WIDTH="91%" VALIGN="TOP">
+
+<PRE>\ec h_deletion</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="9%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="91%" VALIGN="TOP">
+
+<PRE>\edge_cond h_deletion_EC
+
+			Set edge condition to h_deletion.
+
+
+
+			CONDITION:
+
+				 (   (final linked tone is a linked h tone)
+
+				  OR (    (edge condition is h_deletion)
+
+					  AND (word tone pattern is none)
+
+					 )
+
+				 )</PRE></TD>
+
+</TR>
+
+<TR><TD WIDTH="9%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="91%" VALIGN="TOP">
+
+<PRE>\tone_rule h_deletion_TR
+
+			Delete a linked h tone.
+
+
+
+			CONDITION:
+
+				(   (left tone is a linked h tone)
+
+				 OR (    (edge condition is h_deletion)
+
+					 AND (left tone is none)
+
+					)
+
+				)</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The <TT>\ec</TT> field defines the edge condition <TT>h_deletion</TT>. The
+
+<TT>\edge_cond</TT> field defines a rule which sets (or turns on) the
+
+<TT>h_deletion</TT> edge condition whenever the final linked tone of the word is
+
+a linked register h tone or whenever the preceding word had the
+
+<TT>h_deletion</TT> edge condition set and the current word does not have any
+
+tones. The <TT>\tone_rule</TT> rule deletes a linked register h tone whenever the
+
+immediately preceding tone is a linked h tone or whenever the <TT>h_deletion</TT>
+
+condition has been set and there are not any tones to the left of the linked
+
+register h tone in question. </P>
+
+<P>The above rule in Pe&ntilde;oles Mixtec only applies within a phonological
+
+phrase. The user can specify which punctuation characters are to be treated as
+
+indicators of a phrase boundary. The <TT>\phrasefinalchars</TT> field in the
+
+control file is used for this. (The default characters are <TT>.,;:!?-</TT> and
+
+<TT>&iquest;</TT> and <TT>&iexcl;</TT>). All edge conditions are reset (i.e.
+
+turned off) at a phrase boundary.</P>
+
+<H3><A NAME="SECTION340">3.4 Orthographic Output</A></H3>
+
+<P>After all of the tone rules have applied, <TT>ToneGen</TT> attempts to
+
+determine the orthographic representation of the tone-marked word. </P>
+
+<P>To determine the tone representation for the output of the tone rules,
+
+<TT>ToneGen</TT> scans the segments looking for TBUs. For each TBU, it
+
+determines what tones are linked to it and finds the corresponding orthographic
+
+representation based on the <TT>\toneseg</TT> fields in the segment definition
+
+file. </P>
+
+<P>For example, consider the segment definition record in <A HREF="#x37">(37)</A>
+
+repeated from <A HREF="#x07">(7)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="14%" VALIGN="TOP">
+
+<P><A NAME="x37">(37)</A></TD>
+
+<TD WIDTH="86%" VALIGN="TOP">
+
+<PRE>\s a
+
+\mb
+
+\son +
+
+\cons -
+
+\toneseg H     = &aacute;
+
+\toneseg h     = &agrave;
+
+\toneseg L h   = &agrave;
+
+\toneseg h H   = <SPAN CLASS="IPATT">a&#244;</SPAN>
+
+\toneseg L h H = <SPAN CLASS="IPATT">a&#244;</SPAN> </PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The first <TT>\toneseg</TT> line says that if the TBU has just a linked
+
+primary H tone, then it is to be represented as <TT>&aacute;</TT> (an a with an
+
+acute accent). The second says that if it has just a register h tone, then it
+
+should be rendered as <TT>&agrave;</TT> (an a with a grave accent). The third
+
+line indicates that if the TBU has a primary L tone with a register h tone, it,
+
+too, should be rendered as <TT>&agrave;</TT>. The fourth line says that when the
+
+TBU has a register h tone followed by a primary H, it should be shown as <SPAN
+
+CLASS="IPA">a&#244;</SPAN> (an a with a wedge). The final line indicates that
+
+when the TBU has a primary L, register h tone followed by a primary H tone, it
+
+also is to be rendered as <SPAN CLASS="IPA">a&#244;</SPAN>. </P>
+
+<P>If none of the indicated tone patterns are found, <TT>ToneGen</TT> renders
+
+the segment as it appears in the <TT>\s</TT> field (as <TT>a</TT> in our
+
+example). Note that this means a toneless segment is actually ambiguous between
+
+"no tone" and "unrecognized tone". A future version of <TT>ToneGen</TT> should
+
+mark the "unrecognized tone" in some unique way. </P>
+
+<P>The order of the tone values in the <TT>\segment</TT> fields is crucial. For
+
+example, there is a distinction between the order of the tones illustrated in <A
+
+HREF="#x38">(38)</A>. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="14%" VALIGN="TOP">
+
+<P><A NAME="x38">(38)</A></TD>
+
+<TD VALIGN="MIDDLE">
+
+<P>a. </TD>
+
+<TD VALIGN="MIDDLE">
+
+<P><TT>\toneseg L H = </TT><SPAN CLASS="IPATT">a&#244;</SPAN></TD>
+
+</TR>
+
+<TR><TD WIDTH="14%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD VALIGN="MIDDLE">
+
+<P>b. </TD>
+
+<TD VALIGN="MIDDLE">
+
+<P><TT>\toneseg H L = </TT><TT>&acirc; </TT></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The field in <A HREF="#x38">(38a)</A> indicates a Low tone followed by a High
+
+tone (i.e. a rising tone) while the one in <A HREF="#x38">(38b)</A> indicates a
+
+High tone followed by a Low tone (i.e. a falling tone). </P>
+
+<P>In <A HREF="#x37">(37)</A> above, only linked tones were considered in
+
+determining the orthographic representation of a tone-marked word. Floating tones
+
+may also be used in determining the orthographic representation as can be done
+
+for those languages which have downstepped tones and which represent such tones
+
+via a floating-linked tone combination (see <A
+
+HREF="#Pulleyblank1986">Pulleyblank 1986</A>). </P>
+
+<P>In addition, while viewing a trace of a derivation, one might wish to
+
+orthographically represent floating and delinked tones. To tell <TT>ToneGen</TT>
+
+which tone types to use in derivations and which to use in orthographic
+
+representations, the <TT>\tonetype</TT> field in the control file is used.
+
+Consider these fields in (39). </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="8%" VALIGN="TOP">
+
+<P><A NAME="x39">(39)</A></TD>
+
+<TD WIDTH="92%" VALIGN="TOP">
+
+<PRE>       | Tone "types" or "status"; a "D" means that the
+
+	   | status is used in showing Derivations; an "O"
+
+	   | means that the status is used in showing Orthographic
+
+	   | forms.
+
+\tonetype linked         D O
+
+\tonetype floating       D
+
+\tonetype left-floating  D
+
+\tonetype right-floating D
+
+\tonetype boundary
+
+\tonetype delinked</PRE></TD>
+
+</TR>
+
+</TABLE>
+
+
+
+<P>The D's after "linked", "floating", "left-floating", and "right-floating"
+
+indicate that any tone with these types are to be orthographically represented
+
+during a derivation (trace). The O after "linked" indicates that only linked
+
+tones are to be used when determining the orthographic representation of the
+
+(final) tone-marked form. If one wishes to include floating tones while
+
+determining the orthographic representation, one would include an O in that
+
+field. </P>
+
+<P>Once <TT>ToneGen</TT> has determined the tone-marking for the analysis under
+
+consideration, it compares the results to the original word. If the two are
+
+identical, the analysis is declared to be "good" and is passed on to the output.
+
+If the two differ in any way, the analysis is assumed to be incorrect and is
+
+thrown away. </P>
+
+<H2><A NAME="SECTION400">4 Using <TT>ToneGen</TT></A></H2>
+
+<P>Having discussed the key phonological issues and sketched the basic
+
+implementation details, we now address how effective <TT>ToneGen</TT> can be.
+
+</P>
+
+<P>While <TT>ToneGen</TT> is still work in progress, it has successfully been
+
+applied to the complexities of Pe&ntilde;oles Mixtec (<A HREF="#Daly1993">Daly
+
+1993</A>) and to Tlapanec <A HREF="#WeathersCarrasco1988">Weathers & Carrasco 1988</A>).  Both of these languages involve challenging tone issues (as one can see from the Pe&ntilde;oles Mixtec tone rules described above).
+
+<H2><A NAME="SECTION500">5 Conclusion</A></H2>
+
+<P>The <TT>ToneGen</TT> program in conjunction with AMPLE provides a way to
+
+model autosegmental tone. While <TT>ToneGen</TT> is still under development, it
+
+has already proven quite useful in two language programs. </P>
+
+<H2><A NAME="SECTION600">Appendix: List of Field Codes</A></H2>
+
+<P>The following is an annotated alphabetical listing of the field codes in the
+
+control file which are especially significant to <TT>ToneGen</TT>. Note that
+
+this control file can include all the information from the analysis data control
+
+file used for AMPLE. </P>
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=10>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P><A NAME="x40">(40)</A></TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><B>Field code</B> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P><B>Description</B> </TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\begcycle</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Indicates the beginning of cyclic rules.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\dch</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>These are string changes that map the original word from its orthographic to
+
+its internal representation. These are crucial for getting the tone parser to
+
+know when a tone-marked form matches the original word (if orthographic changes
+
+were made in the AMPLE pass).<A HREF="#fn7"><SUP>9</SUP></A></TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\default</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Changes a default tone rule parameter.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\ec</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Edge condition definition.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\edge_cond</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>A rule that sets an edge condition.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\edge_rule</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>A tone rule that applies only on the left edge of a word.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\endcycle</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Indicates the ending of cyclic rules.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\monomoraic</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>This tells the syllable building routine that every syllable is mono-moraic
+
+(i.e. the nucleus has at most one segment, usually a vowel).</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\morastr</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>The symbol to use for displaying a mora.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\nocodas</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Codas are not allowed in syllables.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\phrasefinalchars</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>This indicates which punctuation characters constitute the end of a phrase.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\right_edge_rule</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>A tone rule that applies only on the right edge of a word.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP" NOWRAP>
+
+<P><TT>\segments filename.seg</TT> </TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>This gives the file name of a file which defines the following: what the
+
+segments are, their sonority-oriented features, mora bearing information, and how
+
+they are to be represented orthographically when they have particular tones (for
+
+those segments that can bear tone markings).</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\sylsep</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>The symbol to use to indicate syllable boundaries.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\sylstr</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>The symbol to use for displaying a syllable.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\tbutype</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Indicates what the tone bearing unit is: either mora, syllable, or vowel.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\tonedomain</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>(not implemented yet; to be used for defining domains)</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\tone_rule</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>A tone rule definition.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\tonetype</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Provides an indication of whether the indicated tone type (or status) is to be
+
+used in constructing orthographic representations of tone.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\tonevalue</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Indicates the value of a primary tone.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\tone_reg_value</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Indicates the value of a register tone.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\v.ccv</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Syllabify a sequence of VCCV as V.CCV.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\vc.cv</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Syllabify a sequence of VCCV as VC.CV.</TD>
+
+</TR>
+
+<TR><TD WIDTH="7%" VALIGN="TOP">
+
+<P>&nbsp;</TD>
+
+<TD WIDTH="31%" VALIGN="TOP">
+
+<P><TT>\wtbypos</TT></TD>
+
+<TD WIDTH="62%" VALIGN="TOP">
+
+<P>Use "Weight by Position" in syllabification.</TD>
+
+</TR>
+
+</TABLE>
+
+<H2><A NAME="Endnotes">Endnotes</A> </H2>
+
+<P><A NAME="fn1"><STRONG>1</STRONG></A> One could add a simple string environment constraint for these segments and augment the longest match algorithm appropriately to remove such errors. </P>
+
+<P><A NAME="fn2"><STRONG>2</STRONG></A> The astute reader will have probably already wondered why we cannot just use the \<TT>r</TT> field or the \<TT>u</TT> field where the tone is marked and automatically build the tone information. There are two reasons why this has not been implemented. First, boundary tones cannot always be indicated in this fashion. Where they align may be totally outside of the morpheme in question. Second, tones need to be mapped to TBUs, not to vowel symbols. Some kind of special parser would need to be built that would be able to read in the appropriate field, figure out which symbols were going to become TBUs and which were not and then assign the correct tone type and value for the given symbol. </P>
+
+<P><A NAME="fn3"><STRONG>3</STRONG></A> The user documentation contains an annotated syntax for the tone rules much as <TT>AMPLE</TT> and <TT>STAMP</TT>'s documentation contains an appendix on the syntax of tests; see <A HREF="#WeberBlackMcConnel1988">Weber, Black &amp; McConnel (1988:233-236)</A> and <A HREF="#WeberMcConnelBlackBuseman1990">Weber, McConnel, Black &amp; Buseman (1990:196-200</A>). As in both <TT>AMPLE</TT> and <TT>STAMP</TT>, the user-written tone rules (including the conditions) are implemented via the LALR(1) grammar writing tools yacc and lex; see <A HREF="#Johnson1978">Johnson (1978)</A>, <A HREF="#LeskSchmidt1978">Lesk &amp; Schmidt (1978)</A>, <A HREF="#SchreinerFriedman1985">Schreiner &amp; Friedman (1985)</A>. </P>
+
+<P><A NAME="fn4"><STRONG>4</STRONG></A> Note that iteration is not overtly represented in the usual graphic form of autosegmental rules (as noted by <A HREF="#ArchangeliPulleyblank1993">Archangeli &amp; Pulleyblank 1993</A> ). </P>
+
+<P><A NAME="fn5"><STRONG>5</STRONG></A> While the edge-in iteration has not yet been implemented in <TT>ToneGen</TT>, it has been successfully tested in a proto-type version of the program that was hard-coded to specifically deal with the edge-in analysis for Kinande tone described in <A HREF="#BlackCheryl1995">C. Black (1995)</A>. </P>
+
+<P><A NAME="fn6"><STRONG>6</STRONG></A> Note that mode is also not overtly represented in the usual graphic form of autosegmental rules. </P>
+
+<P><A NAME="fn7"><STRONG>7</STRONG></A> The name <TT>\dch</TT> is a misnomer and should be changed.</P>
+
+<H2><A NAME="References">References</A> </H2>
+
+<P CLASS="HIN"><A NAME="ArchangeliPulleyblank1993"></A>Archangeli, Diana and Douglas Pulleyblank. 1993. <I>Grounded phonology</I>. MIT Press, Cambridge, Mass. </P>
+
+<P CLASS="HIN"><A NAME="BarrettKeach1986"></A>Barrett-Keach, Camillia N. 1986. "Word-internal evidence from Swahili for AUX/INFL." <I>Linguistic Inquiry</I>, 17.559-564. </P>
+
+<P CLASS="HIN"><A NAME="BlackCheryl1995"></A>Black, Cheryl A. 1995. "Boundary tones on word-internal domains in Kinande." <I>Phonology</I>, 12.1-38. </P>
+
+<P CLASS="HIN"><A NAME="Daly1993"></A>Daly, John. 1993. "Tone in Pe&ntilde;oles Mixtec." Summer Institute of Linguistics, ms. </P>
+<P CLASS="HIN"><A NAME="Goldsmith1976"></A>Goldsmith, John. 1976. <I>Autosegmental Phonology</I>. MIT PhD dissertation. Published by Garland Press, New York, 1979. </P>
+
+<P CLASS="HIN"><A NAME="Goldsmith1990"></A>Goldsmith, John. 1990. <I>Autosegmental and Metrical Phonology</I>. Basil Blackwell, Cambridge, Mass. </P>
+
+<P CLASS="HIN"><A NAME="Hayes1989"></A>Hayes, Bruce. 1989. "Compensatory lengthening in moraic phonology." <I>Linguistic Inquiry</I>, 20.253-306. </P>
+
+<P CLASS="HIN"><A NAME="HewittPrince1989"></A>Hewitt, Mark and Alan Prince. 1989. "OCP, Locality, and Linking: the N.&nbsp;Karanga Verb." In <I>Proceedings of the West Coast Conference on Formal Linguistics 8</I>, pages 176-191, Stanford Linguistics Association, Stanford University, Stanford, Calif. </P>
+
+<P CLASS="HIN"><A NAME="Hyman1990"></A>Hyman, Larry&nbsp;M. 1990. "Boundary tonology and the prosodic hierarchy." In Sharon Inkelas and Draga Zec, editors, <I>The Phonology-Syntax Connection</I>, pages 109-125, University of Chicago Press, Chicago, Illinois. </P>
+
+<P CLASS="HIN"><A NAME="Johnson1978"></A>Johnson, S.&nbsp;C. 1978. "Yacc: yet another compiler compiler." In B.&nbsp;W. Kernighan and M. D. McIlroy, <I>UNIX Programmer's Manual</I>, Bell Laboratories. </P>
+
+<P CLASS="HIN"><A NAME="Kenstowicz1994"></A>Kenstowicz, Michael. 1994. <I>Phonology in Generative Grammar</I>. Basil Blackwell, Cambridge, Mass. </P>
+
+<P CLASS="HIN"><A NAME="Kiparsky1985"></A>Kiparsky, Paul. 1985. "Some consequences of lexical phonology." <I>Phonology Yearbook</I>, 2.83-138. </P>
+
+<P CLASS="HIN"><A NAME="Leben1973"></A>Leben, William. 1973. <I>Suprasegmental Phonology</I>. MIT PhD dissertation, Cambridge, Mass. </P>
+
+<P CLASS="HIN"><A NAME="LeskSchmidt1978"></A>Lesk, M.&nbsp;E. and E.&nbsp;Schmidt. 1978. "Lex: a lexical analyzer generator." In B.&nbsp;W. Kernighan and M. D. McIlroy, <I>UNIX Programmer's Manual</I>, Bell Laboratories. </P>
+
+<P CLASS="HIN"><A NAME="McCarthy1986"></A>McCarthy, John J. 1986. "OCP effects: gemination and antigemination." <I>Linguistic Inquiry</I>, 17:207-263. </P>
+
+<P CLASS="HIN"><A NAME="Mohanan1986"></A>Mohanan, K.P. 1986. <I>The Theory of Lexical Phonology.</I> Dordrecht: Reidel. </P>
+
+<P CLASS="HIN"><A NAME="Mutaka1990"></A>Mutaka, Ngessimo Mathe. 1990. <I>The Lexical Tonology of Kinande.</I> University of Southern California PhD dissertation, Los Angeles. </P>
+
+<P CLASS="HIN"><A NAME="Myers1987"></A>Myers, Scott P. 1987. <I>Tone and the Structure of Words in Shona.</I> University of Massachusetts PhD dissertation, Amherst. Published by Garland Press, New York, 1990. </P>
+
+<P CLASS="HIN"><A NAME="Pulleyblank1986"></A>Pulleyblank, Douglas. 1986. <I>Tone in Lexical Phonology</I>. Reidel, Dordrecht. </P>
+
+<P CLASS="HIN"><A NAME="SchreinerFriedman1985"></A>Schreiner, Alex&nbsp;T. and H.&nbsp;George Friedman, Jr. 1985. <I>Introduction to Compiler Construction with Unix</I>. Prentice-Hall, Inc., Englewood Cliffs. </P>
+
+<P CLASS="HIN"><A NAME="Snider1988"></A>Snider, Keith&nbsp;L. 1988. "Towards the representation of tone: a three-dimensional approach." In Harry van der Hulst and Norval Smith, <I>Features, Segmental Structure and Harmony Processes</I>, Foris, Dordrecht. </P>
+
+<P CLASS="HIN"><A NAME="Snider1990"></A>Snider, Keith&nbsp;L. 1990. "Tonal upstep in Krachi: evidence for a register tier." <I>Language</I>, 66.453-474. </P>
+
+<P CLASS="HIN"><A NAME="WeathersCarrasco1988"></A>Weathers, Marcos and Abad Carrasco.  1988. <I>X&Oacute;&nbsp; <SPAN CLASS="IPA">#</SPAN> NITH&Aacute;&Aacute;N ME<SPAN CLASS="IPA">=</SPAN>'PHA<SPAN CLASS="IPA">=</SPAN>A<SPAN CLASS="IPA">=</SPAN> C&oacute;mo se escribe el tlapaneco.</I> Asociaci&oacute;n para la promoci&oacute;n de lecto-escritura tlapaneca, Malinaltepec, Guerrero, Mexico. </P>
+<P CLASS="HIN"><A NAME="WeberBlackMcConnel1988"></A>Weber, David&nbsp;J., H.&nbsp;Andrew Black and Stephen&nbsp;R. McConnel. 1988. <I>AMPLE: A Tool for Exploring Morphology</I>. Occasional Publications in Academic Computing No. 12. Summer Institute of Linguistics, Dallas, Texas. </P>
+
+<P CLASS="HIN"><A NAME="WeberMcConnelBlackBuseman1990"></A>Weber, David&nbsp;J., Stephen&nbsp;R. McConnel, H.&nbsp;Andrew Black and Alan Buseman. 1990. <I>STAMP: A Tool for Dialect Adaptation</I>. Occasional Publications in Academic Computing No. 15. Summer Institute of Linguistics, Dallas, Texas. </P>
+<P CLASS="HIN"><A NAME="Yip1988"></A>Yip, Moira. 1988. "Template morphology and the direction of association." <I>Natural Language and Linguistic Theory</I>, 6.551-77. </P>
+
+<HR>
+
+<P><STRONG>Date created:</STRONG> <EM>20-DEC-2000</EM><BR>
+
+<STRONG>Questions/Comments:</STRONG> <EM><A HREF="MAILTO:andy_black@SIL.ORG">Andy_Black@sil.org</A></EM></P>
+
+<HR>
+
+<DL>
+  <DT><BR><B><A name=H_Andrew_Black>Black, H. Andrew</A></B>
+  <DD>
+  <DL>
+	<DT><BR><EM>Affiliation:</EM> SIL International
+	<DT><BR><EM>Postal address:</EM>
+	<DD>SIL<BR>P.O. Box 8987<BR>Catalina, AZ
+	85738-0987<BR>U.S.A.
+	<DT><BR><EM><A href="mailto:andy_black@sil.org">E-mail:</A></EM>
+	andy_black@sil.org </DT></DL>
+</BODY></HTML>

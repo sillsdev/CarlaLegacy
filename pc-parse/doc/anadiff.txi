@@ -1,0 +1,210 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename anadiff.info
+@settitle ANADIFF Reference Manual
+@c %**end of header
+
+@set TITLE ANADIFF Reference Manual
+@set SUBTITLE comparing analysis files
+@set VERSION version 1.0b6
+@set DATE October 1997
+@set AUTHOR by Stephen McConnel
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@node    Top,       Introduction,  (dir),    (dir)
+@comment node-name, next,          previous, up
+
+@ifinfo
+@ifclear txt
+This is the reference manual for the ANADIFF program.
+@end ifclear
+@end ifinfo
+
+@menu
+* Introduction::                Why ANADIFF was written
+* Running ANADIFF::             How to use ANADIFF
+* Analysis files::              Description of input to ANADIFF
+@end menu
+@c ----------------------------------------------------------------------------
+@node    Introduction, Running ANADIFF, Top,      Top
+@comment node-name,    next,            previous, up
+@chapter Introduction to the ANADIFF program
+
+Comparing the output from two different runs of programs like AMPLE or
+KTEXT can be quite difficult.  The analysis files can differ only in
+the order of ambiguous analyses, or in the number of analyses.  Either
+situation is difficult to analyze with simple file comparison utilities
+like @code{fc.exe} or @code{diff}.  That is why ANADIFF was written.
+
+@c ----------------------------------------------------------------------------
+@node Running ANADIFF, Analysis files, Introduction, Top
+@chapter Running ANADIFF
+
+@subheading Command line options
+
+The ANADIFF program uses an old-fashioned command line interface
+following the convention of options starting with a dash character
+(@samp{-}).  The available options are listed below in alphabetical
+order.  Those options which require an argument have the argument type
+following the option letter.
+
+@table @code
+@item -a character
+selects the character that marks ambiguities and failures in the
+analysis files.  (The default is @code{%}.)
+@item -q
+tells ANADIFF to operate @emph{quietly} without the normal output
+showing the differences.
+
+@item -v
+tells ANADIFF to operate @emph{verbosely} with extra output to the
+screen.
+@end table
+@noindent
+ANADIFF expects the names of two analysis files following any
+options on the command line.  The examples below illustrate this.
+
+@subheading Examples
+
+ANADIFF normally writes a summary when it has finished comparing the
+two analysis files.  For example, comparing two identical analysis
+files would look like this:
+@example
+
+@group
+C> anadiff a.aaa a.ana
+a.aaa and a.ana are the same (78 of 78 are identical)
+@end group
+
+@end example
+@noindent
+Comparing two analysis files that are logically, but not literally,
+identical produces similar output:
+@example
+
+@group
+C> anadiff b.aaa b.ana
+b.aaa and b.ana are the same (70 of 78 are identical)
+@end group
+
+@end example
+@noindent
+As would be expected, more output is generated when the two analysis
+files actually are different.  The following example illustrates four
+types of differences:
+
+@enumerate
+@item
+Different morph names in a single analysis
+@item
+Different property names in a single analysis
+@item
+A double versus a single analysis
+@item
+Different morph names in the second of two analyses
+@end enumerate
+@noindent
+Note that ANADIFF displays analyses somewhat differently than they
+appear in the analysis files.
+@example
+
+@group
+C> anadiff c.aaa c.ana
+1. diff:  \a   < N0 *hirka > LOC
+			   < N0 *hirka > LOCATIVE
+		  \d   hirka-chaw
+		  \p   =
+		  \w   HIRKACHAW
+		  \f   \\id HGMT05.SFM, 14-feb-84 D. Weber, Huallaga Quechua\n
+				   \\c 5\n\n
+				   \\s
+		  \c   2
+
+2.        \a   < V2 *yatra > CAUS 3
+		  \d   yacha-chi-n
+   diff:  \p   =Mlowers=foreshortens
+			   =Morphlowers=foreshortens
+		  \w   YACHACHIN
+		  \c   2
+		  \n   \n
+
+3.        \a   < N0 *runa > PLUR
+		  \d   runa-kuna
+		  \p   =
+   diff:  \a   < N0 *runa > plural
+			   [missing in c.ana]
+   diff:  \d   runa-kuna
+			   [missing in c.ana]
+   diff:  \p   =
+			   [missing in c.ana]
+		  \w   runakuna
+
+4.        \a   < V1 *n~awpa > 3 COND
+		  \d   n~awpa-n-man
+		  \p   =foreshortens=
+   diff:  \a   < N0 *n~awpa > 3P GOAL
+			   < N0 *n~awpa > 3P GOALIE
+		  \d   n~awpa-n-man
+		  \p   ==
+		  \w   n~awpanman
+
+   c.aaa and c.ana differ 4 times (63 of 78 are identical)
+@end group
+
+@end example
+
+@subheading Batch file example
+
+ANADIFF returns the number of actual differences that it found when it
+exits.  This allows it to be used in batch files for regression tests.
+For example, consider the following MS-DOS batch file for testing
+different versions of AMPLE on a specific set of data:
+@example
+
+@group
+if "%1" == "" goto done
+%1 -m -f aetest.cmd -i aetest.txt -o aetest.ana >aetest.log
+anadiff aetest.aaa aetest.ana >aetest.dif
+if errorlevel 1 goto done
+del aetest.dif
+del aetest.ana
+del aetest.log
+:done
+@end group
+
+@end example
+@noindent
+(The @code{%1} is an MS-DOS batch variable corresponding to the first
+command line argument following the name of the batch file in the
+command.)  This batch file runs the given version of AMPLE on a
+specific set of data, and then compares the output file
+(@code{aetest.ana} to the output from a previous run
+(@code{aetest.aaa}).  If the output is the same, except possibly for
+the order of ambiguous analyses, then the new output and log files are
+deleted.  The same is accomplished by the following Unix shell script.
+@example
+
+@group
+#! /bin/sh
+if [ $# -gt 0 ]; then
+	$1 -m -f aetest.cmd -i aetest.txt -o aetest.ana >aetest.log
+	if (anadiff aetest.aaa aetest.ana >aetest.dif) then
+		rm aetest.dif aetest.ana aetest.log
+		fi
+	fi
+@end group
+
+@end example
+
+@c ----------------------------------------------------------------------------
+@node Analysis files, , Running ANADIFF, Top
+@chapter Input Analysis Files
+@include anafiles.txi
+
+@c ----------------------------------------------------------------------------
+@contents
+@bye

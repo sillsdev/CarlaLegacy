@@ -1,0 +1,49 @@
+README.1st - MS-DOS Release notes for AMPLE 3.1 (July 21, 1998)
+
+AMPLE.EXE does morphological parsing.  It inputs a text file and outputs an
+analysis file showing a morphological analysis of each word.  AMPLE is
+documented in these books:
+
+	AMPLE: A Tool for Exploring Morphology
+	Supplement to AMPLE: A Tool for Exploring Morphology (February 1992)
+	CARLA Tutorial
+	CARLA User's Guide
+
+There is also an online AMPLE Reference Manual, distributed both as a plain
+MS-DOS text file and as a Windows HTML (Web browser) document.
+
+AMPLE.EXE    - MS-DOS protected mode (386) program
+AMPLE86.EXE  - MS-DOS real mode (8086) program
+AMPLE.HTML   - AMPLE Reference Manual (Windows HTML file)
+AMPLE.TXT    - AMPLE Reference Manual (MS-DOS plain text file)
+
+CHANGES.TXT  - reverse chronological list of changes to AMPLE
+CWSDPMI.EXE  - DPMI server for MS-DOS protected mode programs
+CWSDPMI.DOC  - CWSDPMI documentation (MS-DOS plain text file)
+EMU387.DXE   - floating point emulator for MS-DOS protected mode programs
+README.1ST   - this file
+
+For version 3, AMPLE.EXE is a 386 (protected mode) executable.  It
+requires a DPMI server such as MS Windows.  For those running MS-DOS
+proper, a free DPMI server (CWSDPMI.EXE) is provided.  Place it in the same
+directory as AMPLE.EXE and all should be well.  Also place the floating
+point emulator (which may not be needed for AMPLE) EMU386.DXE in that
+directory if you do not have a 486DX or Pentium processor.  AMPLE.EXE can
+use as many megabytes as you have on your system, but it does require at
+least a 386 processor.
+
+AMPLE86.EXE is a 8086 (real mode) executable suitable for running on
+anything from the original 8088-based IBM PC to today's Pentium Pro
+systems.  It uses only the available memory below 640K, which severely
+limits the size of the dictionaries it can load.
+
+
+Changes since version 2.0c have been made by Steve McConnel.  Changes
+prior to that were made by the programming staff at JAARS.
+Correspondence about bugs and other issues should be sent to
+
+	Stephen McConnel                  email: steve@acadcomp.sil.org
+	Academic Computing Department        or  steve.mcconnel@sil.org
+	Summer Institute of Linguistics
+	7500 W. Camp Wisdom Road          phone: (972)708-7361
+	Dallas, TX 75236  U.S.A.          fax:   (972)708-7363

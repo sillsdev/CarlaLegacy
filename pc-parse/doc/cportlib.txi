@@ -1,0 +1,2520 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename cportlib.info
+@settitle C Portability function library reference
+@c %**end of header
+
+@set TITLE C Portability Function Library Reference Manual
+@set SUBTITLE functions to supplement vendor libraries
+@set DATE October 1997
+@set AUTHOR by Stephen McConnel
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@comment node-name, next,          previous, up
+@node    Top,       Introduction,  (dir),    (dir)
+
+@menu
+* Introduction::
+
+* Functions::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node    Introduction, Functions, Top,      Top
+@comment node-name,    next,      previous, up
+@chapter Introduction to the C Portability function library
+
+This document gives the proper usage information about each of the
+functions found in the C Portability function library.  For each
+function that the library provides, this includes information on which
+header files to include in your source to obtain prototypes and type
+definitions relevent to the use of that function.
+
+@c ----------------------------------------------------------------------------
+@page
+@node Functions, , Introduction, Top
+@chapter C Portability functions
+
+@ifset usesmenu
+The specifications for these function have come from a variety of
+places.  Those that are known are listed following the name of the
+function in the menu below.
+@end ifset
+
+@menu
+* abs::                 SVID 3, POSIX, BSD 4.3, ISO 9899
+* bcmp::                BSD 4.3
+* bcopy::               BSD 4.3
+* bsearch::             SVID 3, BSD 4.3, ISO 9899
+* bzero::               BSD 4.3
+* ccommand::            Think C, Metrowerks C
+* concat::              DECUS C
+* cpystr::              DECUS C
+* ctermid::             POSIX.1
+* ffs::                 BSD 4.3
+* fgetss::              DECUS C
+* fputss::              DECUS C
+* fsize::               (SIL International)
+* getopt::              POSIX.1
+* index::               BSD 4.3
+* iscntrl::             ANSI C, BSD 4.3
+* isgraph::             ANSI C, BSD 4.3
+* isodigit::            Harbison and Steele
+* ispunct::             ANSI C, BSD 4.3
+* itoa::                DECUS C
+* itoa8::               DECUS C
+* itoax::               DECUS C
+* labs::                SVID 3, BSD 4.3, ISO 9899
+* memccpy::             SVID 3, BSD 4.3
+* memchr::              SVID 3, BSD 4.3, ISO 9899
+* memcmp::              SVID 3, BSD 4.3, ISO 9899
+* memcpy::              SVID 3, BSD 4.3, ISO 9899
+* memmove::             SVID 3, BSD 4.3, ISO 9899
+* memset::              SVID 3, BSD 4.3, ISO 9899
+* rand::                SVID 3, BSD 4.3, ISO 9899
+* rindex::              BSD 4.3
+* strcasecmp::          BSD 4.3
+* strchr::              SVID 3, POSIX, BSD 4.3, ISO 9899
+* strcspn::             SVID 3, POSIX, BSD 4.3, ISO 9899
+* streq::               DECUS C
+* stricmp::             Microsoft C
+* strlwr::              Microsoft C
+* strpbrk::             SVID 3, POSIX, BSD 4.3, ISO 9899
+* strpos::              Harbison and Steele
+* strrchr::             SVID 3, POSIX, BSD 4.3, ISO 9899
+* strrpbrk::            Harbison and Steele
+* strrpos::             Harbison and Steele
+* strspn::              SVID 3, POSIX, BSD 4.3, ISO 9899
+* strstr::              ANSI C
+* strtok::              SVID 3, POSIX, BSD 4.3, ISO 9899
+* strtol::              SVID 3, BSD 4.3, ISO 9899
+* strtoul::             SVID 3, BSD 4.3, ISO 9899
+* strupr::              Microsoft C
+* swapmem::             Aztec C
+* toint::               Harbison and Steele
+* tolower::             ANSI C, BSD 4.3
+* toupper::             ANSI C, BSD 4.3
+* zapnl::               (SIL International)
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node abs, bcmp, Functions, Functions
+@page
+@section abs
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int abs(int x);
+@end example
+@subheading Description
+@code{abs} computes the absolute value of the integer @code{x}.
+
+@code{abs} has one argument:
+@table @code
+@item x
+is an integer.
+@end table
+@subheading Return Value
+the absolute value of the input integer
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <stdlib.h>
+#endif
+#ifndef HAVE_ABS
+#include "cportlib.h"
+#endif
+...
+int i, j;
+...
+j = abs(i);     /* set j to the absolute value of i */
+@end smallexample
+@subheading Source File
+@file{abs.c}
+@subheading Standards
+SVID 3, POSIX, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node bcmp, bcopy, abs, Functions
+@page
+@section bcmp
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int bcmp(char * buffer1,
+		 char * buffer2,
+		 int    size);
+@end example
+@subheading Description
+@code{bcmp} compares the first @code{size} bytes of @code{buffer1} to
+the first @code{size} bytes of @code{buffer2}.
+
+The arguments to @code{bcmp} are as follows:
+@table @code
+@item buffer1
+points to a block of memory.
+
+@item buffer2
+points to another block of memory.
+
+@item size
+is the size (in bytes) of the blocks of memory.
+@end table
+@subheading Return Value
+zero if the byte arrays are identical, otherwise nonzero
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <string.h>     /* at least on Linux */
+#endif
+#ifndef HAVE_BCMP
+#include "cportlib.h"
+#endif
+...
+char buffer1[100], buffer2[100];
+...
+if (bcmp(buffer1, buffer2, 100) == 0)    /* compare the byte arrays */
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{bcmp.c}
+@subheading Standards
+BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node bcopy, bsearch, bcmp, Functions
+@page
+@section bcopy
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * bcopy(char * src,
+			 char * dest,
+			 int    size);
+@end example
+@subheading Description
+@code{bcopy} copies @code{size} bytes from @code{src} to @code{dest}.
+Note that overlapping moves are not guaranteed to work properly.
+
+The arguments to @code{bcopy} are as follows:
+@table @code
+@item src
+points to a block of memory.
+
+@item dest
+points to another block of memory.
+
+@item size
+is the size (in bytes) of the blocks of memory.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <string.h>     /* at least on Linux */
+#endif
+#ifndef HAVE_BCOPY
+#include "cportlib.h"
+#endif
+...
+int buffer1[100], buffer2[100];
+...
+bcopy(buffer1, buffer2, 100 * sizeof(int));
+@end smallexample
+@subheading Source File
+@file{bcopy.c}
+@subheading Standards
+BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node bsearch, bzero, bcopy, Functions
+@page
+@section bsearch
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+void * bsearch(const void * key,
+			   const void * table,
+			   size_t       count,
+			   size_t       size,
+			   int (*       compar)(const void * key,
+									const void * element));
+@end example
+@subheading Description
+@code{bsearch} is a generalized binary search function, analagous to
+@code{qsort} for sorting.  @code{bsearch} looks for @code{key} in
+@code{table}, an array of @code{count} elements, each @code{size} bytes
+long.
+
+The @code{table} must be sorted in ascending order as defined by the
+@code{compar} function.
+
+If there are multiple equal items in the @code{table} that match the
+@code{key}, the return value may point to any one of them.
+
+The arguments to @code{bsearch} are as follows:
+@table @code
+@item key
+points to something to search for, which may a character string, a
+number, or an arbitrary data structure.
+
+@item table
+points to an array of arbitrary items, which presumably provide data
+that can be meaningfully compared to the key.
+
+@item count
+is the number of elements in the input array (@code{table}).
+
+@item size
+is the size (in bytes) of each element in the input array.
+
+@item compar
+points to a function for comparing two elements of the input array.  It
+must return an integer less than, equal to, or greater than zero
+depending on whether its first argument (the key) is considered less
+than, equal to, or greater than the second argument (an array element).
+@table @code
+@item key
+points to the key originally passed to @code{bsearch}.
+@item element
+points to an element in the input array passed to @code{bsearch}.
+@end table
+@end table
+@subheading Return Value
+address of the item found, or NULL if the @code{key} is not in the
+@code{table}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <stdlib.h>
+#endif
+#ifndef HAVE_BSEARCH
+#include "cportlib.h"
+#endif
+...
+int cmpStrings(const void * a, const void * b)
+@{
+return strcmp(*(const char **)a, *(const char **)b);
+@}
+...
+char * table[100];
+char * p;
+...
+p = bsearch("Steve", table, 100, sizeof(char *), cmpStrings);
+@end smallexample
+@subheading Source File
+@file{bsearch.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node bzero, ccommand, bsearch, Functions
+@page
+@section bzero
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+void bzero(char *   buffer,
+		   unsigned size);
+@end example
+@subheading Description
+@code{bzero} sets all @code{size} bytes in @code{buffer} to zero.
+
+The arguments to @code{bzero} are as follows:
+@table @code
+@item buffer
+points to a block of memory.
+
+@item size
+is the size (in bytes) of the block of memory.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <string.h>     /* at least on Linux */
+#endif
+#ifndef HAVE_BZERO
+#include "cportlib.h"
+#endif
+...
+char buffer[100];
+...
+bzero(buffer, 100);
+@end smallexample
+@subheading Source File
+@file{bzero.c}
+@subheading Standards
+BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node ccommand, concat, bzero, Functions
+@page
+@section ccommand
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int ccommand(char ***argvp);
+@end example
+@subheading Description
+@code{ccommand} reads a command line from the keyboard and parses it
+into a dynamically allocated array of arguments.  This is useful for
+systems that do not support a native command line interface (Microsoft
+Windows and Apple Macintosh).
+
+@code{ccommand} has one argument:
+@table @code
+@item argvp
+is the address of a pointer to an array of character strings.  This
+array is dynamically allocated by @code{ccommand}.
+@end table
+@subheading Return Value
+the number of command line arguments
+@subheading Example
+#include "cportlib.h"
+...
+int     argc;
+char ** argv;
+...
+argc = ccommand(&argv);
+@example
+@end example
+@subheading Source File
+@file{ccommand.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node concat, cpystr, ccommand, Functions
+@page
+@section concat
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * concat(char * buffer,
+			  ...);
+@end example
+@subheading Description
+@code{concat} concatenates a number of strings, storing the result in
+@code{buffer}.  The last input argument must be @code{NULL}.
+
+The arguments to @code{concat} are as follows:
+@table @code
+@item buffer
+points to a block of memory for storing the concatenated strings.
+
+@item @dots{}
+is an arbitrary number of character strings (pointers), ending with a
+@code{NULL}.
+@end table
+@subheading Return Value
+the address of the output @code{buffer}
+@subheading Example
+@smallexample
+#include "cportlib.h"
+...
+char buffer[100];
+...
+concat(buffer, "This", " ", "is", " ", "a", " ", "test", ".", NULL);
+@end smallexample
+@subheading Source File
+@file{concat.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node cpystr, ctermid, concat, Functions
+@page
+@section cpystr
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * cpystr(char * dest,
+			  char * src);
+@end example
+@subheading Description
+@code{cpystr} copies @code{src} to @code{dest}.  It is identical to
+@code{strcpy} except for the return value.
+
+The arguments to @code{cpystr} are as follows:
+@table @code
+@item dest
+points to a block of memory for storing a character string.
+
+@item src
+points to a character string.
+@end table
+@subheading Return Value
+the address of the @key{NUL} byte which terminates @code{dest}
+@subheading Example
+@smallexample
+#include "cportlib.h"
+...
+char buffer[100];
+...
+buffer[0] = NUL;
+cpystr(cpystr(cpystr(buffer, "This "), "is a "), "test.");
+@end smallexample
+@subheading Source File
+@file{cpystr.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node ctermid, ffs, cpystr, Functions
+@page
+@section ctermid
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * ctermid(char * buffer);
+@end example
+@subheading Description
+@code{ctermid} fills a buffer with the pathname of the controlling
+terminal.  If @code{buffer} is @code{NULL}, an internal static array is
+used.  @code{buffer} must be at least @code{L_ctermid} characters long.
+
+@code{ctermid} has one argument:
+@table @code
+@item buffer
+points to a block of memory for storing the terminal (screen /
+keyboard) pathname, or is @code{NULL}.
+@end table
+@subheading Return Value
+the address of the pathname of the controlling terminal@value{emdash}either
+@code{buffer} or an internal static array
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <stdio.h>
+#endif
+#ifndef HAVE_CTERMID
+#include "cportlib.h"
+#endif
+...
+char   name[L_ctermid];
+...
+ctermid(name);
+@end smallexample
+@subheading Source File
+@file{ctermid.c}
+@subheading Standards
+POSIX.1
+
+@c ----------------------------------------------------------------------------
+@node ffs, fgetss, ctermid, Functions
+@page
+@section ffs
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int ffs(int x);
+@end example
+@subheading Description
+@code{ffs} finds the first bit set in the integer @code{x}, starting
+with the least significant bit.  The least significant bit has an index
+value of zero.
+
+@code{ffs} has one argument:
+@table @code
+@item x
+is an integer.
+@end table
+@subheading Return Value
+the index of first bit in @code{x} which is set to 1; -1 if @code{i} is
+zero
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <string.h>     /* at least on Linux */
+#endif
+#ifndef HAVE_FFS
+#include "cportlib.h"
+#endif
+...
+int i, j;
+...
+j = ffs(i);
+@end smallexample
+@subheading Source File
+@file{ffs.c}
+@subheading Standards
+BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node fgetss, fputss, ffs, Functions
+@page
+@section fgetss
+@subheading Syntax
+@example
+#include <stdio.h>
+#include "cportlib.h"
+
+char * fgetss(char * buffer,
+			  int    n,
+			  FILE * fp);
+@end example
+@subheading Description
+@code{fgetss} reads a line from the file opened for @code{fp}, storing
+up to @code{n} bytes in @code{buffer}.  The trailing newline is removed.
+@code{fgetss} is identical to @code{fgets}, except that treats newlines
+the same as @code{gets}.
+
+The arguments to @code{fgetss} are as follows:
+@table @code
+@item buffer
+points to a block of memory.
+
+@item n
+is the size (in bytes) of the block of memory.
+
+@item fp
+is an input @code{FILE} pointer.
+@end table
+@subheading Return Value
+the address of the input buffer; or @code{NULL} if an error occurs or
+the end of the file has been reached already
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "cportlib.h"
+...
+FILE * fp;
+char   buffer[100];
+...
+while (fgetss(buffer, 100, fp) != NULL)
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{fgetss.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node fputss, fsize, fgetss, Functions
+@page
+@section fputss
+@subheading Syntax
+@example
+#include <stdio.h>
+#include "cportlib.h"
+
+void fputss(char * string,
+			FILE * fp);
+@end example
+@subheading Description
+@code{fputss} writes @code{string} to the file @code{fp}.
+It works like @code{fputs}, but appends a newline like @code{puts}.
+
+The arguments to @code{fputss} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item fp
+is an output @code{FILE} pointer.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "cportlib.h"
+...
+char   buffer[100];
+FILE * fp;
+...
+fputss(buffer, fp);
+@end smallexample
+@subheading Source File
+@file{fputss.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node fsize, getopt, fputss, Functions
+@page
+@section fsize
+@subheading Syntax
+@example
+#include <stdio.h>
+#include "cportlib.h"
+
+long fsize(FILE * fp);
+@end example
+@subheading Description
+If @code{fp} is an input file, @code{fsize} returns its size in bytes.
+Otherwise, @code{fsize} returns the amount of available space on the
+disk.  For Unix, this is the soft limit on file size, which may not
+mean much.  For MSDOS, this is the amount of space available on the
+current default disk, which may not even be where the file is located.
+
+@code{fsize} has one argument:
+@table @code
+@item fp
+is an open @code{FILE} pointer.
+@end table
+@subheading Return Value
+the input file size, or possibly the available space for an output file
+@subheading Example
+@smallexample
+#include <stdio.h>
+#include "cportlib.h"
+...
+FILE * fp;
+long   size;
+...
+size = fsize(fp);
+@end smallexample
+@subheading Source File
+@file{fsize.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node getopt, index, fsize, Functions
+@page
+@section getopt
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int getopt(int          argc,
+		   char * const argv[],
+		   const char * opts);
+extern char *  optarg;
+extern int     optind;
+extern int     opterr;
+extern int     optopt;
+@end example
+@subheading Description
+@code{getopt} parses a command argument array like those passed to
+@code{main}.
+
+@code{getopt} has a number of associated global variables.
+@vtable @code
+@item optarg
+points to the option argument, if there is one.
+
+@item optind
+is the current argument array index.
+
+@item opterr
+flags whether to print error messages for illegal options.  (The
+default is @code{TRUE}.)
+
+@item optopt
+is the currently matched option character.
+@end vtable
+
+The arguments to @code{getopt} are as follows:
+@table @code
+@item argc
+is the number of command line arguments.
+
+@item argv
+points to the array of command line arguments (character strings).
+
+@item opts
+points to a string encoding the defined options.  The string contains
+all of the characters (usually letters) used for command line options.
+Each option that takes an argument has a colon (@code{:}) following its
+character in the string.
+@end table
+@subheading Return Value
+the option letter, a question mark (@code{?}) if the option is not
+recognized, or @code{EOF} if there are no more options
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>     /* this may not work for gcc -ansi */
+#endif
+#ifndef HAVE_GETOPT
+#include "cportlib.h"
+#endif
+...
+char * opt_a = NULL;
+int    opt_b = 0;       /* 1 or 0 */
+char * opt_c = NULL;
+int    opt_d = 0;       /* count */
+...
+int main(int argc, char * argv[])
+@{
+...
+while (getopt(argc, argv, "ab:cd:") != EOF)
+	@{
+	switch (optopt)
+		@{
+		case 'a':       opt_a = 1;      break;
+		case 'b':       opt_b = optarg; break;
+		case 'c':       ++opt_c;        break;
+		case 'd':       opt_d = optarg; break;
+		default:        ...             break;
+		@}
+	@}
+@end smallexample
+@subheading Source File
+@file{getopt.c}
+@subheading Standards
+POSIX.1
+
+@c ----------------------------------------------------------------------------
+@node index, iscntrl, getopt, Functions
+@page
+@section index
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * index(char * string,
+			 int    c);
+@end example
+@subheading Description
+@code{index} searches for the first occurrence of the character
+@code{c} in @code{string}.
+This is identical to @code{strchr}.
+
+The arguments to @code{index} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item c
+is the character to search for in the string.
+@end table
+@subheading Return Value
+the address of the first occurrence of @code{c} in @code{string}, or
+@code{NULL} if @code{c} does not occur in @code{string}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <string.h>     /* at least on Linux */
+#endif
+#ifndef HAVE_INDEX
+#include "cportlib.h"
+#endif
+...
+char * p;
+char   buffer [100];
+...
+p = index(buffer, 'i');
+@end smallexample
+@subheading Source File
+@file{index.c}
+@subheading Standards
+BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node iscntrl, isgraph, index, Functions
+@page
+@section iscntrl
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int iscntrl(int c);
+@end example
+@subheading Description
+@code{iscntrl} tests whether the character @code{c} is an ASCII control
+character (value < 040 or > 0176).
+
+@code{iscntrl} has one argument:
+@table @code
+@item c
+is a character to test.
+@end table
+@subheading Return Value
+zero if @code{c} is not a control character,
+otherwise nonzero if it is an ASCII character
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <ctype.h>      /* at least on Linux */
+#endif
+#ifndef HAVE_ISCNTRL
+#include "cportlib.h"
+#endif
+...
+int c;
+...
+if (iscntrl(c))
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{iscntrl.c}
+@subheading Standards
+ANSI C, BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node isgraph, isodigit, iscntrl, Functions
+@page
+@section isgraph
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int isgraph(int c);
+@end example
+@subheading Description
+@code{isgraph} tests whether the character @code{c} is a printing ASCII
+character which deposits ink.
+
+@code{isgraph} has one argument:
+@table @code
+@item c
+is a character to test.
+@end table
+@subheading Return Value
+zero if @code{c} is an ASCII control character or the space character,
+otherwise nonzero if it is an ASCII character
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <ctype.h>      /* at least on Linux */
+#endif
+#ifndef HAVE_ISGRAPH
+#include "cportlib.h"
+#endif
+...
+int c;
+...
+if (isgraph(c))
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{isgraph.c}
+@subheading Standards
+ANSI C, BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node isodigit, ispunct, isgraph, Functions
+@page
+@section isodigit
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int isodigit(char c);
+@end example
+@subheading Description
+@code{isodigit} tests whether the character @code{c} is an ASCII octal
+digit.
+
+@code{isodigit} has one argument:
+@table @code
+@item c
+is a character to test.
+@end table
+@subheading Return Value
+nonzero if @code{c} is in "01234567", otherwise zero
+@subheading Example
+@smallexample
+#include "cportlib.h"
+...
+int c;
+...
+if (isodigit(c))
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{isodigit.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node ispunct, itoa, isodigit, Functions
+@page
+@section ispunct
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int ispunct(int c);
+@end example
+@subheading Description
+@code{ispunct} tests whether the character @code{c} is an ASCII
+punctuation character (neither control, nor alphanumeric, nor space).
+
+@code{ispunct} has one argument:
+@table @code
+@item c
+is a character to test.
+@end table
+@subheading Return Value
+nonzero if @code{c} is an ASCII punctuation character, otherwise zero
+if it is an ASCII character
+@subheading Example
+@smallexample
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <ctype.h>      /* at least on Linux */
+#endif
+#ifndef HAVE_ISPUNCT
+#include "cportlib.h"
+#endif
+...
+int c;
+...
+if (ispunct(c))
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{ispunct.c}
+@subheading Standards
+ANSI C, BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node itoa, itoa8, ispunct, Functions
+@page
+@section itoa
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * itoa(int    value,
+			char * buffer);
+@end example
+@subheading Description
+@code{itoa} converts the integer @code{value} to a signed decimal
+character (digit) string stored in @code{buffer}.
+
+The arguments to @code{itoa} are as follows:
+@table @code
+@item value
+is an integer.
+
+@item buffer
+points to a block of memory used to store the signed decimal character
+string representation of @code{value}.
+@end table
+@subheading Return Value
+the address of NUL byte which terminates the string
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_ITOA
+#include "cportlib.h"
+#endif
+...
+int  i;
+char buffer[100];
+...
+itoa(i, buffer);
+@end smallexample
+@subheading Source File
+@file{itoa.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node itoa8, itoax, itoa, Functions
+@page
+@section itoa8
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * itoa8(int    value,
+			 char * buffer);
+@end example
+@subheading Description
+@code{itoa8} converts the integer @code{value} to an unsigned octal
+character (digit) string stored in @code{buffer}.
+
+The arguments to @code{itoa8} are as follows:
+@table @code
+@item value
+is an integer.
+
+@item buffer
+points to a block of memory used to store the unsigned octal character
+string representation of @code{value}.
+@end table
+@subheading Return Value
+the address of NUL byte which terminates the string
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_ITOA8
+#include "cportlib.h"
+#endif
+...
+int  i;
+char buffer[100];
+...
+itoa8(i, buffer);
+@end smallexample
+@subheading Source File
+@file{itoa8.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node itoax, labs, itoa8, Functions
+@page
+@section itoax
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * itoax(int    value,
+			 char * buffer);
+@end example
+@subheading Description
+@code{itoax} converts the integer @code{value} to an unsigned
+hexadecimal character (digit) string stored in @code{buffer}.
+
+The arguments to @code{itoax} are as follows:
+@table @code
+@item value
+is an integer.
+
+@item buffer
+points to a block of memory used to store the unsigned hexadecimal
+character string representation of @code{value}.
+@end table
+@subheading Return Value
+the address of NUL byte which terminates the string
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_ITOAX
+#include "cportlib.h"
+#endif
+...
+int  i;
+char buffer[100];
+...
+itoax(i, buffer);
+@end smallexample
+@subheading Source File
+@file{itoax.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node labs, memccpy, itoax, Functions
+@page
+@section labs
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+long labs(long x);
+@end example
+@subheading Description
+
+@code{labs} has one argument:
+@table @code
+@item x
+is a long integer.
+@end table
+@subheading Return Value
+@code{abs} computes the absolute value of the long integer @code{x}.
+@subheading Example
+the absolute value of the input integer
+@example
+#include "config.h"
+#ifdef STDC_HEADERS
+#include <stdlib.h>
+#endif
+#ifndef HAVE_LABS
+#include "cportlib.h"
+#endif
+...
+long i, j;
+...
+j = labs(i);     /* set j to the absolute value of i */
+@end example
+@subheading Source File
+@file{labs.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node memccpy, memchr, labs, Functions
+@page
+@section memccpy
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+void * memccpy(void *       dest,
+			   const void * src,
+			   int          c,
+			   size_t       n);
+@end example
+@subheading Description
+@code{memccpy} copies characters from @code{src} to @code{dest},
+stopping after @code{n} characters have been transferred, or after the
+first occurrence of the character @code{c} has been copied, whichever
+comes first.  Note that overlapping moves are unpredictable.
+@w{@code{memccpy(d, s, '\0', n)}} is the same as
+@w{@code{strncpy(d, s, n)}}.
+
+The arguments to @code{memccpy} are as follows:
+@table @code
+@item dest
+points to a block of memory.
+
+@item src
+points to another block of memory, one that holds some data to copy.
+
+@item c
+is the byte value that flags the end of the data to copy.
+
+@item n
+is the maximum size (in bytes) of the data to copy.
+@end table
+@subheading Return Value
+the address of the character after the copy of @code{c} in @code{dest},
+or NULL if @code{c} is not found in the first @code{n} characters of
+@code{src}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_MEMCCPY
+#include "cportlib.h"
+#endif
+...
+char buffer[100], buffer2[100];
+...
+if (memccpy(buffer, buffer2, '\0', 99) == NULL)
+	@{
+	buffer[99] = '\0';
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{memccpy.c}
+@subheading Standards
+SVID 3, BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node memchr, memcmp, memccpy, Functions
+@page
+@section memchr
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+void * memchr(const void * buffer,
+			  int          c,
+			  size_t       n);
+@end example
+@subheading Description
+@code{memchr} searches for the first occurrence of the character
+@code{c} in the first @code{n} characters of @code{buffer}.
+
+The arguments to @code{memchr} are as follows:
+@table @code
+@item buffer
+points to a block of memory.
+
+@item c
+is a byte value to search for in the block of memory.
+
+@item n
+is the size (in bytes) of the block of memory.
+@end table
+@subheading Return Value
+the address of the first occurrence of @code{c} in @code{buffer}, or
+@code{NULL} if @code{c} does not occur in @code{buffer}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_MEMCHR
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+char * p;
+...
+p = memchr(buffer, 'z', 100);
+@end smallexample
+@subheading Source File
+@file{memchr.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node memcmp, memcpy, memchr, Functions
+@page
+@section memcmp
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int memcmp(const void * buffer1,
+		   const void * buffer2,
+		   size_t       n);
+@end example
+@subheading Description
+@code{memcmp} compares the first @code{n} characters of @code{buffer1}
+to the first @code{n} characters of @code{buffer2}.
+
+The arguments to @code{memcmp} are as follows:
+@table @code
+@item buffer1
+points to a block of memory.
+
+@item buffer2
+points to another block of memory.
+
+@item n
+is the size (in bytes) of the blocks of memory.
+@end table
+@subheading Return Value
+an integer less than, equal to, or greater than zero, indicating that
+@code{buffer1} is lexicographically less than, equal to, or greater
+than @code{buffer2}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_MEMCMP
+#include "cportlib.h"
+#endif
+...
+char buffer1[100], buffer2[100];
+...
+if (memcmp(buffer1, buffer2, 100) == 0)
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{memcmp.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node memcpy, memmove, memcmp, Functions
+@page
+@section memcpy
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+void * memcpy(void *       dest,
+			  const void * src,
+			  size_t       n);
+@end example
+@subheading Description
+@code{memcpy} copies @code{n} characters from @code{src} to
+@code{dest}.  Note that overlapping moves are unpredictable.
+
+The arguments to @code{memcpy} are as follows:
+@table @code
+@item dest
+points to a block of memory.
+
+@item src
+points to another block of memory, one that holds some data to copy.
+
+@item n
+is the size (in bytes) of the blocks of memory.
+@end table
+@subheading Return Value
+@code{dest} (the address of the output buffer)
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_MEMCPY
+#include "cportlib.h"
+#endif
+...
+char buffer1[100], buffer2[100];
+...
+memcpy(buffer1, buffer2, 100);
+@end smallexample
+@subheading Source File
+@file{memcpy.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node memmove, memset, memcpy, Functions
+@page
+@section memmove
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+void * memmove(void *       dest,
+			   const void * src,
+			   size_t       n);
+@end example
+@subheading Description
+@code{memmove} copies @code{n} characters from @code{src} to
+@code{dest}, handling overlaps properly (characters get copied before
+they get overwritten).
+
+The arguments to @code{memmove} are as follows:
+@table @code
+@item dest
+points to a block of memory.
+
+@item src
+points to another block of memory, one that holds some data to copy.
+
+@item n
+is the size (in bytes) of the blocks of memory.
+@end table
+@subheading Return Value
+@code{dest} (the address of the output buffer)
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_MEMMOVE
+#include "cportlib.h"
+#endif
+...
+char buffer[100];
+...
+memmove(buffer, buffer + 20, 60);
+@end smallexample
+@subheading Source File
+@file{memmove.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node memset, rand, memmove, Functions
+@page
+@section memset
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+void * memset(void * dest,
+			  int    c,
+			  size_t n);
+@end example
+@subheading Description
+@code{memset} sets the first @code{n} characters of @code{dest} to the
+value of the character @code{c}.
+
+The arguments to @code{memset} are as follows:
+@table @code
+@item dest
+points to a block of memory.
+
+@item c
+is a byte value.
+
+@item n
+is the size (in bytes) of the block of memory.
+@end table
+@subheading Return Value
+@code{dest} (the address of the output buffer)
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_MEMSET
+#include "cportlib.h"
+#endif
+...
+char buffer[100];
+...
+memset(buffer, '\0', 100);
+@end smallexample
+@subheading Source File
+@file{memset.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node rand, rindex, memset, Functions
+@page
+@section rand
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int rand(void);
+void srand(unsigned seed);
+@end example
+@subheading Description
+@code{rand} computes the next pseudo-random integer from the sequence
+defined by
+@example
+next = next * 1103515245L + 12345L;
+@end example
+The top 16 bits of the number are returned with the top bit cleared.
+
+@code{srand} sets a ``seed'' value for @code{rand}.
+
+@code{rand} does not have any arguments.  @code{srand} has one
+argument:
+@table @code
+@item seed
+is an initial value for the pseudo-random sequence generated by
+@code{rand}.
+@end table
+@subheading Return Value
+a pseudo-random integer in the range of 0@value{endash}32767
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_RAND
+#include "cportlib.h"
+#endif
+@end smallexample
+@subheading Source File
+@file{rand.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node rindex, strcasecmp, rand, Functions
+@page
+@section rindex
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * rindex(char * string,
+			  int    c);
+@end example
+@subheading Description
+@code{rindex} searches for the last occurrence of the character
+@code{c} in @code{string}.  It is identical to @code{strrchr}.
+
+The arguments to @code{rindex} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item c
+is a character to search for in the string.
+@end table
+@subheading Return Value
+the address of the last occurrence of @code{c} in @code{string}, or
+NULL if @code{c} does not occur in @code{string}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_RINDEX
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+char * p;
+...
+p = rindex(buffer, 'x');
+@end smallexample
+@subheading Source File
+@file{rindex.c}
+@subheading Standards
+BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node strcasecmp, strchr, rindex, Functions
+@page
+@section strcasecmp
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int strcasecmp(const char * string1,
+			   const char * string2);
+@end example
+@subheading Description
+@code{strcasecmp} compares two strings like @code{strcmp}, but in a
+case independent fashion (for example, 'A' == 'a').  It is identical to
+@code{stricmp}.
+
+The arguments to @code{strcasecmp} are as follows:
+@table @code
+@item string1
+points to a @code{NUL}-terminated character string.
+
+@item string2
+points to another @code{NUL}-terminated character string.
+@end table
+@subheading Return Value
+an integer less than, equal to, or greater than zero, indicating that
+@code{string1} is lexicographically less than, equal to, or greater
+than @code{string2}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRCASECMP
+#include "cportlib.h"
+#endif
+...
+char buffer1[100], buffer2[100];
+...
+if (strcasecmp(buffer1, buffer2) == 0)
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{strcasec.c}
+@subheading Standards
+BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node strchr, strcspn, strcasecmp, Functions
+@page
+@section strchr
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * strchr(const char * string,
+			  int          c);
+@end example
+@subheading Description
+@code{strchr} searches for the first occurrence of the character
+@code{c} in @code{string}.  It is identical to @code{index}.
+
+The arguments to @code{strchr} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item c
+is a character to search for in the string.
+@end table
+@subheading Return Value
+the address of the first occurrence of @code{c} in @code{string}, or
+@code{NULL} if @code{c} does not occur in @code{string}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRCHR
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+char * p;
+...
+p = strchr(buffer);
+@end smallexample
+@subheading Source File
+@file{strchr.c}
+@subheading Standards
+SVID 3, POSIX, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node strcspn, streq, strchr, Functions
+@page
+@section strcspn
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+size_t strcspn(const char * string,
+			   const char * reject);
+@end example
+@subheading Description
+@code{strcspn} counts the number of characters at the beginning of
+@code{string} which are not found in @code{reject}.  If none of the
+characters in @code{string} are found in @code{reject}, then
+@code{strcspn} returns the length of @code{string}.
+
+The arguments to @code{strcspn} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item reject
+points to a @code{NUL}-terminated set of characters (that is, a string).
+@end table
+@subheading Return Value
+the length of the initial segment of @code{string} which consists
+entirely of characters not from @code{reject}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRCSPN
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+size_t len;
+...
+len = strcspn(buffer, "aeiou");
+@end smallexample
+@subheading Source File
+@file{strcspn.c}
+@subheading Standards
+SVID 3, POSIX, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node streq, stricmp, strcspn, Functions
+@page
+@section streq
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int streq(const char * string1,
+		  const char * string2);
+@end example
+@subheading Description
+@code{streq} compares two strings for equality.
+
+The arguments to @code{streq} are as follows:
+@table @code
+@item string1
+points to a @code{NUL}-terminated character string.
+
+@item string2
+points to another @code{NUL}-terminated character string.
+@end table
+@subheading Return Value
+nonzero if the two strings are identical, zero otherwise
+@subheading Example
+@smallexample
+#include "cportlib.h"
+...
+char buffer1[100], buffer2[100];
+...
+if (streq(buffer1, buffer2))
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{streq.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node stricmp, strlwr, streq, Functions
+@page
+@section stricmp
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int stricmp(const char * string1,
+			const char * string2);
+@end example
+@subheading Description
+@code{stricmp} compares two strings like @code{strcmp}, but in a
+case independent fashion (for example, 'A' == 'a').  It is identical to
+@code{strcasecmp}.
+
+The arguments to @code{stricmp} are as follows:
+@table @code
+@item string1
+points to a @code{NUL}-terminated character string.
+
+@item string2
+points to another @code{NUL}-terminated character string.
+@end table
+@subheading Return Value
+an integer less than, equal to, or greater than zero, indicating that
+@code{string1} is lexicographically less than, equal to, or greater
+than @code{string2}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRICMP
+#include "cportlib.h"
+#endif
+...
+char buffer1[100], buffer2[100];
+...
+if (stricmp(buffer1, buffer2) == 0)
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{stricmp.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node strlwr, strpbrk, stricmp, Functions
+@page
+@section strlwr
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * strlwr(char * string);
+@end example
+@subheading Description
+Convert all upper case ASCII letters in @code{string} to lower case.
+
+@code{strlwr} has one argument:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+@end table
+@subheading Return Value
+@code{string} (the address of the input/output buffer)
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRLWR
+#include "cportlib.h"
+#endif
+...
+char buffer[100];
+...
+strlwr(buffer);
+@end smallexample
+@subheading Source File
+@file{strlwr.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node strpbrk, strpos, strlwr, Functions
+@page
+@section strpbrk
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * strpbrk(const char * string,
+			   const char * accept);
+@end example
+@subheading Description
+@code{strpbrk} searches for the first occurrence in @code{string} of
+any character from @code{accept}.
+
+The arguments to @code{strpbrk} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item accept
+points to a @code{NUL}-terminated set of characters (that is, a string).
+@end table
+@subheading Return Value
+the address of the first occurrence in @code{string} of any character
+from @code{accept}, or @code{NULL} if no character from @code{accept}
+occurs in @code{string}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRPBRK
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+char * p;
+...
+p = strpbrk(buffer, "aeiou");
+@end smallexample
+@subheading Source File
+@file{strpbrk.c}
+@subheading Standards
+SVID 3, POSIX, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node strpos, strrchr, strpbrk, Functions
+@page
+@section strpos
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int strpos(const char * string,
+		   int          c);
+@end example
+@subheading Description
+@code{strpos} searches for the first occurrence of the character
+@code{c} in @code{string}.  If the character @code{c} is found in
+@code{string}, the position of its first occurrence is returned.
+(The first character of @code{string} is considered to be at position
+0).  The terminating @key{NUL} character is considered to be part of
+@code{string} for the purposes of the search, so searching for
+@key{NUL} returns the position of the terminating @key{NUL} (which is
+equal to the length of @code{string}).
+@code{strpos(s,'\0')} is therefore equivalent to @code{strlen(s)}.
+
+The arguments to @code{strpos} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item c
+is a character to search for in the string.
+@end table
+@subheading Return Value
+the position of the first occurrence of @code{c} in @code{string}, or
+-1 if @code{c} does not occur in @code{string}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRPOS
+#include "cportlib.h"
+#endif
+...
+char buffer[100];
+int  pos;
+...
+pos = strpos(buffer, 'a');
+@end smallexample
+@subheading Source File
+@file{strpos.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node strrchr, strrpbrk, strpos, Functions
+@page
+@section strrchr
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * strrchr(const char * string,
+			   int          c);
+@end example
+@subheading Description
+@code{strrchr} searches for the last occurrence of the character
+@code{c} in @code{string}.  It is identical to @code{rindex}.
+
+The arguments to @code{strrchr} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item c
+is a character to search for in the string.
+@end table
+@subheading Return Value
+the address of the last occurrence of @code{c} in @code{s}, or
+@code{NULL} if @code{c} does not occur in @code{string}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRRCHR
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+char * p;
+...
+p = strrchr(buffer, 'x');
+@end smallexample
+@subheading Source File
+@file{strrchr.c}
+@subheading Standards
+SVID 3, POSIX, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node strrpbrk, strrpos, strrchr, Functions
+@page
+@section strrpbrk
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * strrpbrk(char * string,
+				char * accept);
+@end example
+@subheading Description
+@code{strrpbrk} searches @code{string} for occurrences of characters
+from @code{accept}.  The second argument is regarded as a set of
+characters; the order of the characters or duplications does not
+matter.  If any characters from @code{accept} is found in
+@code{string}, then a pointer to the last such character is returned.
+See also @code{strpbrk}, which searches for the first character in
+@code{string} that is also in @code{accept}.
+
+The arguments to @code{strrpbrk} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item accept
+points to a @code{NUL}-terminated set of characters (that is, a string).
+@end table
+@subheading Return Value
+the address of the last occurrence in @code{string} of any character
+from @code{accept}, or @code{NULL} if no character from @code{accept}
+occurs in @code{string}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRRPBRK
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+char * p;
+...
+p = strrpbrk(buffer, "aeiou");
+@end smallexample
+@subheading Source File
+@file{strrpbrk.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node strrpos, strspn, strrpbrk, Functions
+@page
+@section strrpos
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int strrpos(char * string,
+			int    c);
+@end example
+@subheading Description
+@code{strrpos} searches @code{string} for the last occurrence of the
+character @code{c}.  If the character @code{c} is found in
+@code{string}, the position of its last occurrence is returned.  (The
+first character of @code{string} is considered to be at position 0).
+The terminating @code{NUL} character is considered to be part of
+@code{string} for the purposes of the search, so searching for
+@code{NUL} returns the position of the terminating @code{NUL} (which is
+equal to the length of @code{string}).  @code{strrpos(s,'\0')} is
+therefore the same as @code{strpos(s,'\0')}, and equivalent to
+@code{strlen(s)}.
+
+The arguments to @code{strrpos} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item c
+is a character to search for in the string.
+@end table
+@subheading Return Value
+the position of the last occurrence of @code{c} in @code{string}, or -1
+if @code{c} does not occur in @code{string}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRRPOS
+#include "cportlib.h"
+#endif
+...
+char buffer[100];
+int  pos;
+...
+pos = strrpos(buffer, 'a');
+@end smallexample
+@subheading Source File
+@file{strrpos.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node strspn, strstr, strrpos, Functions
+@page
+@section strspn
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+size_t strspn(const char * string,
+			  const char * accept);
+@end example
+@subheading Description
+@code{strspn} counts the number of characters at the beginning of
+@code{string} which are found in @code{accept}.
+
+The arguments to @code{strspn} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item accept
+points to a @code{NUL}-terminated set of characters (that is, a string).
+@end table
+@subheading Return Value
+the length of the initial segment of @code{string} which consists
+entirely of characters from @code{accept}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRSPN
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+size_t len;
+...
+len = strspn(buffer, "aeiou");
+@end smallexample
+@subheading Source File
+@file{strspn.c}
+@subheading Standards
+SVID 3, POSIX, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node strstr, strtok, strspn, Functions
+@page
+@section strstr
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * strstr(const char * string1,
+			  const char * string2);
+@end example
+@subheading Description
+@code{strstr} searches for the position of the second string in the first.
+
+The arguments to @code{strstr} are as follows:
+@table @code
+@item string1
+points to a @code{NUL}-terminated character string.
+
+@item string2
+points to a @code{NUL}-terminated character string to search for in the
+first string.
+@end table
+@subheading Return Value
+the address of the first location of @code{string2} within
+@code{string1}, or @code{NULL} if the @code{string2} is not a substring
+of @code{string1}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRSTR
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+char * p;
+...
+p = strstr(buffer, "xyzzy");
+@end smallexample
+@subheading Source File
+@file{strstr.c}
+@subheading Standards
+ANSI C
+
+@c ----------------------------------------------------------------------------
+@node strtok, strtol, strstr, Functions
+@page
+@section strtok
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * strtok(char *       string,
+			  const char * delim);
+@end example
+@subheading Description
+@code{strtok} splits @code{string} into a sequence of zero or more text
+tokens separated by spans of one or more characters from @code{delim}.
+Only the initial call to @code{strtok} provides a value for
+@code{string}; successive calls must use @code{NULL} for the first
+argument.  The first separating character following the token in
+@code{string} is replaced by @code{NUL}.  Subsequent calls to
+@code{strtok} work through @code{string} sequentially.  Note that
+@code{delim} may change from one call to the next.
+
+The arguments to @code{strtok} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item delim
+points to a @code{NUL}-terminated set of characters (that is, a string).
+@end table
+@subheading Return Value
+the address of the next token from @code{string}, or @code{NULL} if no
+more tokens exist
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRTOK
+#include "cportlib.h"
+#endif
+...
+char   buffer[100];
+char * p;
+...
+for (   p = strtok(buffer, " \t\r\n\f");
+		p != NULL ;
+		p = strtok(NULL, " \t\r\n\f") )
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{strtok.c}
+@subheading Standards
+SVID 3, POSIX, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node strtol, strtoul, strtok, Functions
+@page
+@section strtol
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+long strtol(const char * string,
+			char **      endptr,
+			int          base);
+@end example
+@subheading Description
+@code{strtol} converts the value represented by @code{string} to a long
+integer in the given @code{base}.  Leading whitespace is ignored, and
+an optional sign (@code{+} or @code{-}) character is allowed.  If
+@code{base} is between 2 and 36, it is used as the number base for the
+conversion.  If @code{base} is zero, the number string itself is used
+to determine the base according to the normal C conventions.  (Leading
+@code{0x} means hexadecimal, and leading @code{0} means octal.)  If
+@code{endptr} is not @code{NULL}, the address of the character
+terminating the scan is stored in the location pointed to by
+@code{endptr}.  Note that overflow conditions are ignored.  In this
+implementation, invalid values for @code{base} cause @code{0L} to be
+returned, with no adjustment to *@code{endptr}.
+
+The arguments to @code{strtol} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item endptr
+is the address of a pointer for storing the end of the number, or
+@code{NULL}.
+
+@item base
+is the number base for the conversion, or zero to interpret as a C
+literal number.
+@end table
+@subheading Return Value
+the long integer equivalent of the ASCII number string
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRTOL
+#include "cportlib.h"
+#endif
+...
+long   val;
+char   buffer[100];
+char * p;
+...
+val = strtol(buffer, &p, 10);
+@end smallexample
+@subheading Source File
+@file{strtol.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node strtoul, strupr, strtol, Functions
+@page
+@section strtoul
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+unsigned long strtoul(const char * string,
+					  char **      endptr,
+					  int          base);
+@end example
+@subheading Description
+@code{strtoul} converts the value represented by @code{string} to an
+unsigned long integer in the given @code{base}.  Leading whitespace is
+ignored. If @code{base} is between 2 and 36, it is used as the number
+base for the conversion.  If @code{base} is zero, the number string
+itself is used to determine the base according to the normal C
+conventions.  (Leading @code{0x} means hexadecimal, and leading
+@code{0} means octal.)  If @code{endptr} is not @code{NULL}, the
+address of the character terminating the scan is stored in the location
+pointed to by @code{endptr}.  Note that overflow conditions are
+ignored.  In this implementation, invalid values for @code{base} cause
+@code{0L} to be returned, with no adjustment to *@code{endptr}.
+
+The arguments to @code{strtoul} are as follows:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+
+@item endptr
+is the address of a pointer for storing the end of the number, or
+@code{NULL}.
+
+@item base
+is the number base for the conversion, or zero to interpret as a C
+literal number.
+@end table
+@subheading Return Value
+the unsigned long integer equivalent of the ASCII number string
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRTOUL
+#include "cportlib.h"
+#endif
+...
+long   val;
+char   buffer[100];
+char * p;
+...
+val = strtoul(buffer, &p, 10);
+@end smallexample
+@subheading Source File
+@file{strtoul.c}
+@subheading Standards
+SVID 3, BSD 4.3, ISO 9899
+
+@c ----------------------------------------------------------------------------
+@node strupr, swapmem, strtoul, Functions
+@page
+@section strupr
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * strupr(char * string);
+@end example
+@subheading Description
+Convert all lower case ASCII letters in @code{string} to upper case.
+
+@code{strupr} has one argument:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+@end table
+@subheading Return Value
+@code{string} (the address of the input/output buffer)
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_STRUPR
+#include "cportlib.h"
+#endif
+...
+char buffer[100];
+...
+strupr(buffer);
+@end smallexample
+@subheading Source File
+@file{strupr.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node swapmem, toint, strupr, Functions
+@page
+@section swapmem
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+void swapmem(char * src,
+			 char * dest,
+			 int    n);
+@end example
+@subheading Description
+@code{swapmem} swaps the @code{n} characters at @code{src} and
+@code{dest}.  No provision is made for overlapping swaps.  (Note that
+both @code{src} and @code{dest} serve as both the source and
+destination for data in this function.)
+
+The arguments to @code{swapmem} are as follows:
+@table @code
+@item src
+points to a block of memory.
+
+@item dest
+points to another block of memory.
+
+@item n
+is the size (in bytes) of the blocks of memory.
+@end table
+@subheading Return Value
+none
+@subheading Example
+@smallexample
+#include "cportlib.h"
+...
+char buffer1[100], buffer2[100];
+...
+swapmem(buffer1, buffer2, 100);
+@end smallexample
+@subheading Source File
+@file{swapmem.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node toint, tolower, swapmem, Functions
+@page
+@section toint
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int toint(int c);
+@end example
+@subheading Description
+@code{toint} returns the ``weight'' of a hexadecimal digit: 0 for
+@code{'0'}, 1 for @code{'1'}, ..., 9 for @code{'9'}, 10 for either
+@code{'A'} or @code{'a'}, ..., and 15 for either @code{'F'} or
+@code{'f'}.  @code{toint} returns -1 if @code{c} is not a hexadecimal
+digit character.
+
+@code{toint} has one argument:
+@table @code
+@item c
+is a character, presumably a hexadecimal digit character.
+@end table
+@subheading Return Value
+the integer value of an ASCII hexadecimal character, or -1 if invalid
+@subheading Example
+@smallexample
+#include "cportlib.h"
+...
+int  h;
+char buffer[100];
+...
+h = toint(buffer[0]);
+if (h == -1)
+	@{
+	...
+	@}
+@end smallexample
+@subheading Source File
+@file{toint.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@node tolower, toupper, toint, Functions
+@page
+@section tolower
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int tolower(int c);
+@end example
+@subheading Description
+If @code{c} is an uppercase ASCII character, @code{tolower} produces
+the lowercase equivalent.
+
+@code{tolower} has one argument:
+@table @code
+@item c
+is a character.
+@end table
+@subheading Return Value
+either the lowercase equivalent or the original value of @code{c}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_TOLOWER
+#include "cportlib.h"
+#endif
+...
+int  c;
+char buffer[100];
+...
+c = tolower(buffer[0]);
+@end smallexample
+@subheading Source File
+@file{tolower.c}
+@subheading Standards
+ANSI C, BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node toupper, zapnl, tolower, Functions
+@page
+@section toupper
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+int toupper(char c);
+@end example
+@subheading Description
+If @code{c} is an lowercase ASCII character, @code{toupper} produces
+the uppercase equivalent.
+
+@code{toupper} has one argument:
+@table @code
+@item c
+is a character.
+@end table
+@subheading Return Value
+either the uppercase equivalent or the original value of @code{c}
+@subheading Example
+@smallexample
+#include "config.h"
+#ifndef HAVE_TOUPPER
+#include "cportlib.h"
+#endif
+...
+int  c;
+char buffer[100];
+...
+c = toupper(buffer[0]);
+@end smallexample
+@subheading Source File
+@file{toupper.c}
+@subheading Standards
+ANSI C, BSD 4.3
+
+@c ----------------------------------------------------------------------------
+@node zapnl, , toupper, Functions
+@page
+@section zapnl
+@subheading Syntax
+@example
+#include "cportlib.h"
+
+char * zapnl(char * string);
+@end example
+@subheading Description
+@code{zapnl} removes any trailing newlines from @code{string}.
+
+@code{zapnl} has one argument:
+@table @code
+@item string
+points to a @code{NUL}-terminated character string.
+@end table
+@subheading Return Value
+@code{string} (the address of the input/output buffer)
+@subheading Example
+@smallexample
+#include "cportlib.h"
+...
+char buffer[100];
+...
+zapnl(buffer);
+@end smallexample
+@subheading Source File
+@file{zapnl.c}
+@subheading Standards
+
+@c ----------------------------------------------------------------------------
+@c @node Index,,,Top
+@c @printindex cp
+@c @xref{Alphabetical List}
+
+@contents
+@bye

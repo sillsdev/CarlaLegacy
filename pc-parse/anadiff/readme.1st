@@ -1,0 +1,37 @@
+README.1st - MS-DOS Release notes for ANADIFF 1.0 (December 23, 1997)
+
+ANADIFF.EXE compares two analysis files (such as those produced by AMPLE),
+ignoring the order of ambigous analyses, but displaying all other
+differences.  There is an online ANADIFF Reference Manual, distributed both
+as a plain MS-DOS text file and as a Windows HTML (Web browser) document.
+
+ANADIFF.EXE  - MS-DOS protected mode (386) program
+ANADIF86.EXE - MS-DOS real mode (8086) program
+ANADIFF.HTML - ANADIFF Reference Manual (Windows HTML file)
+ANADIFF.TXT  - ANADIFF Reference Manual (MS-DOS plain text file)
+
+CWSDPMI.EXE  - DPMI server for MS-DOS protected mode programs
+CWSDPMI.DOC  - CWSDPMI documentation (MS-DOS plain text file)
+EMU387.DXE   - floating point emulator for MS-DOS protected mode programs
+README.1ST   - this file
+
+ANADIFF.EXE is a 386 (protected mode) executable.  It requires a DPMI server
+such as MS Windows.  For those running MS-DOS proper, a free DPMI server
+(CWSDPMI.EXE) is provided.  Place it in the same directory as ANADIFF.EXE
+and all should be well.  Also place the floating point emulator (which may
+not be needed for ANADIFF) EMU386.DXE in that directory if you do not have a
+486DX or Pentium processor.  ANADIFF.EXE can use as many megabytes as you
+have on your system, but it does require at least a 386 processor.
+
+ANADIF86.EXE is a 8086 (real mode) executable suitable for running on
+anything from the original 8088-based IBM PC to today's Pentium Pro systems.
+It uses only the available memory below 640K.
+
+
+Correspondence about bugs and other issues should be sent to
+
+	Stephen McConnel                  email: steve@acadcomp.sil.org
+	Academic Computing Department        or  steve.mcconnel@sil.org
+	Summer Institute of Linguistics
+	7500 W. Camp Wisdom Road          phone: (972)708-7361
+	Dallas, TX 75236  U.S.A.          fax:   (972)708-7363

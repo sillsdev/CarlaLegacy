@@ -1,0 +1,343 @@
+# Master Unix makefile for the AMPLE library and program
+# Steve McConnel,  1-May-2000
+
+@SET_MAKE@
+srcdir      = @srcdir@
+VPATH       = @srcdir@
+CC          = @CC@
+YACC        = @YACC@
+LEX         = @LEX@
+CFLAGS      = @ANSIFLAGS@ @CFLAGS@ @DEFS@ -I. -I.. -I../include
+RANLIB      = @RANLIB@
+INSTALL     = @INSTALL@
+COPY        = @COPYPROG@
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+
+.SUFFIXES: .op .ox .oxp
+.c.op:
+	$(CC) $(CFLAGS) -pg -c -o xx-$*.o $<
+	mv xx-$*.o $@
+.c.ox:
+	$(CC) $(CFLAGS) -DEXPERIMENTAL -c -o xx-$*.o $<
+	mv xx-$*.o $@
+.c.oxp:
+	$(CC) $(CFLAGS) -pg -DEXPERIMENTAL -c -o xx-$*.o $<
+	mv xx-$*.o $@
+
+@make_shell@ = /bin/sh
+BINDIR = $(exec_prefix)/bin
+
+SOURCES=ample.c    anal.c     analda.c   atest.y    categ.c    envchk.c   \
+		envpar.c   loadcc.c   loadtb.c   mktest.c   morcla.c   proper.c   \
+		putsd.c    select.c   setsd.c    spreds.l   version.c  writests.c \
+		cmdutil.c  mccpar.c   validch.c  puncla.c   dynstr.c   \
+		ample.h    ampledef.h stample.h  punclass.h version.h  \
+		fixflex.sed fixyacc.sed
+
+DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
+			atest.c atest.h spreds.c aresult.dtd ampletrc.dtd readme.1st \
+			AmpleChanges.txt Ample.dsp Amplelib.dsp Xample.dsp ample.rc \
+			Llample.dsp llample.c Ampledll.dsp ampledll.h ampledll.c \
+			ampledll.rc Wllample.dsp wllample.c wllample.h wllample.rc \
+			resource.h Testdll.dsp testdll.cpp
+TESTFILES = check.bat xcheck.bat
+TESTS     = ae cq hg sb
+TESTBASES = ad01.ctl ancd.tab intx.ctl if01.dic pf01.dic rt01.dic sf01.dic \
+			test.aaa test.cmd test.lla test.txt
+DLLTESTFILES = hgad01.ctl hgcode.tab hgintx.ctl hgmorph.dic hgtest.txt
+XTESTS = tt yal
+XTESTBASES = adx.ctl ancd.tab intx.ctl if.dic pf.dic rt.dic sf.dic patr.grm \
+			 test.aaa test.cmd test.lla test.txt
+#
+# AMPLE program and function library
+#
+LIBS = libample.a ../lib/libopac.a ../lib/libcport.a
+OBJ  = ample.o
+LIBO = anal.o     analda.o   atest.o    categ.o    envchk.o   envpar.o  \
+	   loadcc.o   loadtb.o   mktest.o   morcla.o   proper.o   select.o  \
+	   setsd.o    spreds.o   version.o  putsd.o    writests.o cmdutil.o \
+	   mccpar.o   validch.o  puncla.o   dynstr.o
+
+ample: $(OBJ) $(LIBS)
+	$(CC) -o ample $(OBJ) $(LIBS) @LIBS@
+
+libample.a: $(LIBO)
+	rm -f libample.a
+	ar rc libample.a $(LIBO)
+	$(RANLIB) libample.a
+#
+# AMPLE program and function library compiled for profiling
+#
+LIBSP = libample_p.a ../lib/libopac_p.a ../lib/libcport_p.a
+OBJP  = ample.op
+LIBOP = anal.op     analda.op   atest.op    categ.op   envchk.op   envpar.op \
+		loadcc.op   loadtb.op   mktest.op   morcla.op  proper.op   select.op \
+		setsd.op    spreds.op   version.op  putsd.op   writests.op cmdutil.op \
+		mccpar.op   validch.op  puncla.op   dynstr.op
+
+ample_p: $(OBJP) $(LIBSP)
+	$(CC) -pg -o ample_p $(OBJP) $(LIBSP) @LIBS@
+
+libample_p.a: $(LIBOP)
+	rm -f libample_p.a
+	ar rc libample_p.a $(LIBOP)
+	$(RANLIB) libample_p.a
+#
+# AMPLE program and function library compiled with experimental features
+#
+LIBSX = libxample.a ../lib/libpatr.a ../lib/libcmd.a ../lib/libopac.a \
+		../lib/libcport.a
+OBJX  = ample.ox
+LIBOX = anal.ox   analda.ox  atest.ox   categ.ox  envchk.ox   envpar.ox  \
+		loadcc.ox loadtb.ox  mktest.ox  morcla.ox proper.ox   select.ox  \
+		setsd.ox  spreds.ox  version.ox putsd.ox  writests.ox cmdutil.ox \
+		mccpar.ox validch.ox puncla.ox  dynstr.ox
+
+xample: $(OBJX) $(LIBSX)
+	$(CC) -o xample $(OBJX) $(LIBSX) @LIBS@
+
+libxample.a: $(LIBOX)
+	rm -f libxample.a
+	ar rc libxample.a $(LIBOX)
+	$(RANLIB) libxample.a
+#
+# AMPLE program and function library compiled for profiling with experimental
+# features
+#
+LIBSXP=libxample_p.a ../lib/libpatr_p.a ../lib/libopac_p.a ../lib/libcmd_p.a \
+	   ../lib/libcport_p.a
+OBJXP =ample.oxp
+LIBOXP=anal.oxp   analda.oxp  atest.oxp   categ.oxp  envchk.oxp   envpar.oxp  \
+	   loadcc.oxp loadtb.oxp  mktest.oxp  morcla.oxp proper.oxp   select.oxp  \
+	   setsd.oxp  spreds.oxp  version.oxp putsd.oxp  writests.oxp cmdutil.oxp \
+	   mccpar.oxp validch.oxp puncla.oxp  dynstr.oxp
+
+xample_p: $(OBJXP) $(LIBSXP)
+	$(CC) -pg -o xample_p $(OBJXP) $(LIBSXP) @LIBS@
+
+libxample_p.a: $(LIBOXP)
+	-@rm -f libxample_p.a
+	ar rc libxample_p.a $(LIBOXP)
+	$(RANLIB) libxample_p.a
+
+HEADERS=stample.h ample.h ampledef.h punclass.h
+#
+# sources unique to AMPLE (user interface code)
+#
+ample.o  ample.op  ample.ox  ample.oxp:  ample.c  $(HEADERS) version.h
+#
+# sources specific to AMPLE alone, but shared as a library
+#
+atest.h atest.c: atest.y fixyacc.sed
+	$(YACC) -d -pampyy atest.y
+	rm -f atest.h
+	mv y.tab.h atest.h
+	sed -f fixyacc.sed y.tab.c >atest.c
+	rm -f y.tab.c
+spreds.c: spreds.l fixflex.sed
+	flex -8 -ospreds.c -Pampyy spreds.l
+	rm -f spredsl.c
+	mv spreds.c spredsl.c
+	sed -f fixflex.sed spredsl.c >spreds.c
+	rm -f spredsl.c
+anal.o     anal.op     anal.ox     anal.oxp:     anal.c     $(HEADERS)
+analda.o   analda.op   analda.ox   analda.oxp:   analda.c   $(HEADERS)
+atest.o    atest.op    atest.ox    atest.oxp:    atest.c    $(HEADERS)
+envchk.o   envchk.op   envchk.ox   envchk.oxp:   envchk.c   $(HEADERS)
+loadcc.o   loadcc.op   loadcc.ox   loadcc.oxp:   loadcc.c   $(HEADERS)
+loadtb.o   loadtb.op   loadtb.ox   loadtb.oxp:   loadtb.c   $(HEADERS)
+mccpar.o   mccpar.op   mccpar.ox   mccpar.oxp:   mccpar.c   $(HEADERS)
+putsd.o    putsd.op    putsd.ox    putsd.oxp:    putsd.c    $(HEADERS)
+select.o   select.op   select.ox   select.oxp:   select.c   $(HEADERS)
+setsd.o    setsd.op    setsd.ox    setsd.oxp:    setsd.c    $(HEADERS)
+spreds.o   spreds.op   spreds.ox   spreds.oxp:   spreds.c   $(HEADERS) atest.h
+version.o  version.op  version.ox  version.oxp:  version.c  $(SOURCES)
+writests.o writests.op writests.ox writests.oxp: writests.c $(HEADERS)
+dynstr.o   dynstr.op   dynstr.ox   dynstr.oxp:   dynstr.c   $(HEADERS)
+#
+#  shared by AMPLE and STAMP
+#
+categ.o   categ.op   categ.ox   categ.oxp:   categ.c   stample.h punclass.h
+cmdutil.o cmdutil.op cmdutil.ox cmdutil.oxp: cmdutil.c stample.h punclass.h
+envpar.o  envpar.op  envpar.ox  envpar.oxp:  envpar.c  stample.h punclass.h
+mktest.o  mktest.op  mktest.ox  mktest.oxp:  mktest.c  stample.h punclass.h
+morcla.o  morcla.op  morcla.ox  morcla.oxp:  morcla.c  stample.h punclass.h
+proper.o  proper.op  proper.ox  proper.oxp:  proper.c  stample.h punclass.h
+puncla.o  puncla.op  puncla.ox  puncla.oxp:  puncla.c  punclass.h
+validch.o validch.op validch.ox validch.oxp: validch.c stample.h punclass.h
+
+ample.ox ample.oxp anal.ox anal.oxp analda.ox analda.oxp: ../include/patr.h
+setsd.ox setsd.oxp version.ox version.oxp: ../include/patr.h
+
+#############################################################################
+
+libs: installdirs ../lib/libample.a ../lib/libxample.a \
+	  ../include/ample.h ../include/stample.h ../include/punclass.h
+
+profile_libs: installdirs ../lib/libample_p.a ../lib/libxample_p.a \
+			  ../include/ample.h ../include/stample.h ../include/punclass.h
+
+installdirs:
+	@if [ ! -d $(BINDIR) ];  then mkdir $(BINDIR);  fi
+	@if [ ! -d ../lib ];     then mkdir ../lib;     fi
+	@if [ ! -d ../include ]; then mkdir ../include; fi
+
+../lib/libample.a: libample.a
+	$(INSTALL) -m 644 -c libample.a ../lib
+	$(RANLIB) ../lib/libample.a
+
+../lib/libample_p.a: libample_p.a
+	$(INSTALL) -m 644 -c libample_p.a ../lib
+	$(RANLIB) ../lib/libample_p.a
+
+../lib/libxample.a: libxample.a
+	$(INSTALL) -m 644 -c libxample.a ../lib
+	$(RANLIB) ../lib/libxample.a
+
+../lib/libxample_p.a: libxample_p.a
+	$(INSTALL) -m 644 -c libxample_p.a ../lib
+	$(RANLIB) ../lib/libxample_p.a
+
+../include/ample.h: ample.h
+	$(COPY) ample.h ../include
+../include/stample.h: stample.h
+	$(COPY) stample.h ../include
+../include/punclass.h: punclass.h
+	$(COPY) punclass.h ../include
+
+all: libs ample xample
+
+profile: profile_libs ample_p xample_p
+
+install: all
+	$(INSTALL) -s ample $(BINDIR)
+	$(INSTALL) -s xample $(BINDIR)
+
+uninstall:
+	rm -f $(BINDIR)/ample $(BINDIR)/xample
+
+check: ample xample
+	-@(Prev=none; cd test; \
+	for t in $(TESTS); do \
+		cd $$t; rm -f $${t}test.dif; \
+		../../ample -q -f $${t}test.cmd -i $${t}test.txt -o $${t}test.ana >$${t}test.log; \
+		if (cmp $${t}test.aaa $${t}test.ana) then \
+		rm -f $${t}test.ana; \
+		if [ "$$Prev"  = "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n AMPLE passed test; fi;\
+		Prev=good; \
+		else \
+		diff -c $${t}test.aaa $${t}test.ana >$${t}test.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' AMPLE failed test; fi; \
+		Prev=bad; \
+		fi; \
+		echo -n ' '$$t; \
+		cd ..; \
+	done; \
+	if [ "$Prev" != "none" ]; then echo ; fi; \
+	)
+	-@(Prev=none; cd xtest; \
+	for t in $(XTESTS); do \
+		cd $$t; rm -f $${t}test.dif; \
+		../../xample -qr -n63 -wdw -xp -e $${t}patr.grm -f $${t}test.cmd -i $${t}test.txt -o $${t}test.ana >$${t}test.log; \
+		if (cmp $${t}test.aaa $${t}test.ana) then \
+		rm -f $${t}test.ana; \
+		if [ "$$Prev"  = "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n XAMPLE passed test; fi;\
+		Prev=good; \
+		else \
+		diff -c $${t}test.aaa $${t}test.ana >$${t}test.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' XAMPLE failed test; fi; \
+		Prev=bad; \
+		fi; \
+		echo -n ' '$$t; \
+		cd ..; \
+	done; \
+	if [ "$Prev" != "none" ]; then echo ; fi; \
+	)
+
+mostlyclean:
+	rm -f *.o *.op *.ox *.oxp *~
+
+clean: mostlyclean
+	rm -f lib*.a
+
+distclean: clean
+	rm -f ample ample_p xample xample_p Makefile TAGS
+	rm -f ../lib/libample.a ../lib/libample_p.a
+	rm -f ../lib/libxample.a ../lib/libxample_p.a
+	rm -f ../include/ample.h ../include/stample.h ../include/punclass.h
+
+maintainer-clean: distclean
+	rm -f atest.h atest.c spreds.c
+
+TAGS: $(SOURCES)
+	etags $(SOURCES)
+
+doc dvi html info:
+	(cd ../doc ; $(MAKE) ample$@)
+
+dist: $(DISTFILES)
+	for file in $(DISTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+
+testdist:
+	mkdir $(distdir)/test
+	for file in $(TESTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+	for dir in $(TESTS); do \
+		mkdir $(distdir)/test/$$dir; \
+		for f in $(TESTBASES); do \
+		if [ -f test/$$dir/$$dir$$f ]; then \
+			ln test/$$dir/$$dir$$f $(distdir)/test/$$dir || \
+			  { echo copying test/$$dir/$$dir$$f instead; \
+			$(COPY) test/$$dir/$$dir$$f $(distdir)/test/$$dir;}; \
+		fi; \
+		done; \
+		for f in test.bat; do \
+		if [ -f test/$$dir/$$f ]; then \
+			ln test/$$dir/$$f $(distdir)/test/$$dir || \
+			  { echo copying test/$$dir/$$f instead; \
+			$(COPY) test/$$dir/$$f $(distdir)/test/$$dir;}; \
+		fi; \
+		done; \
+	done
+	mkdir $(distdir)/test/wll
+	for f in $(DLLTESTFILES); do \
+		if [ -f test/wll/$$f ]; then \
+		ln  test/wll/$$f $(distdir)/test/wll || \
+		{ echo copying test/wll/$$f instead; \
+		  $(COPY) test/wll/$$f $(distdir)/test/wll;}; \
+		fi; \
+	done
+	mkdir $(distdir)/xtest
+	for dir in $(XTESTS); do \
+		mkdir $(distdir)/xtest/$$dir; \
+		for f in $(XTESTBASES); do \
+		if [ -f xtest/$$dir/$$dir$$f ]; then \
+			ln xtest/$$dir/$$dir$$f $(distdir)/xtest/$$dir || \
+			  { echo copying xtest/$$dir/$$dir$$f instead; \
+			   $(COPY) xtest/$$dir/$$dir$$f $(distdir)/xtest/$$dir;}; \
+		fi; \
+		done; \
+		for f in test.bat; do \
+		if [ -f xtest/$$dir/$$f ]; then \
+			ln xtest/$$dir/$$f $(distdir)/xtest/$$dir || \
+			  { echo copying xtest/$$dir/$$f instead; \
+			$(COPY) xtest/$$dir/$$f $(distdir)/xtest/$$dir;}; \
+		fi; \
+		done; \
+	done
+
+############################################################################
+
+.PHONY: all check clean dist distclean doc dvi html info install \
+		libs maintainer-clean mostlyclean profile profile_libs testdist \
+		uninstall installdirs

@@ -1,0 +1,60 @@
+						May 11, 2000
+
+This file describes how to compile and install the pc-parse programs
+on MS-DOS or MS Windows.  This requires the DJGPP port of the GNU C
+compiler.  The Cygwin 1.1.0 port of the GNU C compiler also works, but
+the standard Unix instructions can be followed for that development
+environment.  The DJGPP compiler is suitable for either Windows 3.1 or
+Windows 9X.  You must use the Cygwin32 compiler (or Microsoft Visual
+C/C++) for Windows NT executables.
+
+An archive containing precompiled executables and documentation for
+these programs should be available from the same place as where you
+got the sources.
+
+These are the steps for compiling the pc-parse programs for MS-DOS:
+
+  1. Unzip the sources.  (You probably had to do this to look at this
+	 file.)  Go to the directory containing the sources.  This will be
+	 one of the following commands, depending on whether you have
+	 ``long file name'' support (introduced by Windows 95):
+
+	C:\>cd pc-parse
+	 or
+	C:\>cd pc-parse-19990902
+
+  2. Type this command to configure for your compiler:
+
+	C:\pc-parse>configure.bat
+
+	 This configures the files for the DJGPP port of the GNU C compiler
+	 and make utility.  This also sets up the configuration for the
+	 Microsoft Visual Studio (C/C++ compiler) development environment,
+	 but you're on your own for any further steps in producing the .EXE
+	 files.
+
+  3. Compile the package with one of the following command:
+
+	C:\pc-parse>make
+
+	 This step takes several minutes on a 150MHz Pentium system.
+
+  4. If you want to test the programs (and you unzipped the test
+	 archive in step 1 above), type one of these commands:
+
+	C:\pc-parse>make check
+
+	 This step takes a few minutes on a 150MHz Pentium system.
+
+  5. There are several other `make' commands that may be useful:
+
+	C:\pc-parse>make clean
+
+	 This command removes all object files from the source directory
+	 and subdirectories.
+
+	C:\pc-parse>make distclean
+
+	 This command removes all compiled executables from the source
+	 directory and subdirectories.  It also removes the files created
+	 by the `configure' command in step 2 above.

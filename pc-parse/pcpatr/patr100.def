@@ -1,0 +1,10 @@
+; patr100.def: Declares the module parameters.
+;  Copyright 1999 by SIL International.  All rights reserved.
+
+LIBRARY "patr100.DLL"
+
+EXPORTS
+	DllCanUnloadNow     @1 PRIVATE
+	DllGetClassObject   @2 PRIVATE
+	DllRegisterServer   @3 PRIVATE
+	DllUnregisterServer @4 PRIVATE

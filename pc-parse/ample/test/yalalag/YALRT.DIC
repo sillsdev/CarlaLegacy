@@ -1,0 +1,12249 @@
+\_sh v3.0  400  yaldict
+
+\r a
+\_no 00001
+\u  a
+\a  a          +/ S  _ 1s
+\a  á  / #:let _ #  +/ Imp.Pl C _  |  for ledá
+\a  a  / t _ # +/ C  _  | da is the imperative form
+\a  a'         +/ S  _
+\c V | VA
+\g venir.a'
+\m 39
+\mp vi
+\mp class1
+\mp laryngealizes
+
+\r achj
+\_no 00002
+\u a:chj
+\a a:chj
+\c N | NP
+\g mitad
+\wf possessed
+
+\r ak
+\_no 00003
+\u a:k
+\a a:k
+\c Q | Q
+\g ¨cómo?
+
+\r ak
+\_no 00004
+\u a:k
+|\a ka:k /     # _  | for some speakers
+\a a:k | / [C] # _
+\c N V | N V | PPrt might be more consistent with ka'/ki?
+\g Plural
+\wf plural pluralWord
+\mp can.take.group.2.pns
+
+\r a'k
+\_no 00005
+\u a':k
+\a a':k
+\c V | VA
+\g venir.PL     |special form; with Stative only
+\mcc venir.PL +/ S (Rep) _
+
+\r an
+\_no 00006
+\u an
+\a an
+\c Q | Q
+\g dónde2
+
+\r ark
+\_no 00007
+\u al:k
+\a al:k
+\c Q | Q
+\g cuanto2
+
+\r arte
+\_no 00008
+\u al:t
+\a al:t
+\c Q | Q
+\g Cuanto
+
+\r awa'
+\_no 00009
+\u akwa'
+\a akwa'
+\c Prt | Prt
+\g sí
+
+\r awllo
+\_no 00010
+\u akwcho
+\a akwcho
+\c Adv | Adv
+\g cerca
+
+\r ba
+\_no 00011
+\u pa
+\a pa
+\c N | N
+\g tiempo.calor
+
+\r ba
+\_no 00012
+\u pa
+\a pa
+\c N | N
+\g tumba
+
+\r ba
+\_no 00013
+\u pa
+\a pa
+\c Adv | Adv
+\g ya
+
+\r ba
+\_no 00014
+\u pa
+\a pa
+\c Prn | Prn
+\g 3a.Rel.Pn      |third animate relative pronoun
+
+\r ba'
+\_no 00015
+\u pa'
+\a p    / _ a'  +/ _ 1s
+\a pe'  / _ e'  +/ _ 3r
+\a pa'
+\c V | VA
+\g emparejar
+\m 32
+\mp vi
+\mp class2
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r bab
+\_no 00016
+\u pap
+\a  ap  / l _  +/ Caus _
+\a pap
+\c V | VA
+\g contar
+\m 32
+\mp vi
+\mp class2
+\mp takes.null.P
+\mp takes.l.Caus
+
+\r bal
+\_no 00017
+\u pa:l
+\a pa:l
+\c Q | Q
+\g cuantos
+
+\r bal
+\_no 00018
+\u pa:l
+\a pa:l
+\c Adv | Adv
+\g madrugada
+
+\r bal
+\_no 00019
+\u pa:l
+\a pa:l
+\c Prt | PPrt
+\g algunos
+
+\r ba'l
+\_no 00020
+\u pa':l
+\a pa':l
+\c Adj | Adj
+\g tibio   | da gok la na' ba baya'len; Apoc 3:16
+
+\r ban
+\_no 00021
+\u pan
+\a pan
+\c V | VA
+\g tener.posesión.de
+\mp vt
+\mp class2
+\mp takes.kw.C
+\mp takes.null.P
+\mp | Does not occur in Habitual
+\mp takes.group.2.pns
+
+\r ban
+\_no 00022
+\u pan
+\a pan
+\c V | VA
+\g despertar
+\m 1
+\mp vi
+\mp class1
+\mp takes.colons.Caus
+\mcc despertar +/ Rep (Caus) _
+
+\r ban
+\_no 00023
+\u pan
+\a pan
+\c V | VA
+\g vivir
+\m 32
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.kw.C
+\mcc vivir +/ Pl.pfx ~_
+
+\r banez
+\_no 00024
+\u panes
+\a panes
+\c N | N
+\g felicidad
+
+\r banra'll
+\_no 00025
+\u panla'ch
+\a panla'ch
+\c V | VA
+\g despertar.corazón
+\m 1
+\mp vi
+\mp class1
+\mcc despertar.corazón +/ Rep _
+
+\r bara'nn
+\_no 00026
+\u pala':n
+\a pala':n
+\c N | N
+\g honor
+
+\r barj
+\_no 00027
+\u palj
+\a palj
+\c N | N
+\g azufre  |?  yi' barje  lk 17:29
+
+\r bat
+\_no 00028
+\u pa:t
+\a pa:t
+\c Q | Q
+\g cuando.Inter
+
+\r bateyo
+\_no 00029
+\u pa:teyo
+\a pa:teyo
+\c Adv | Adv
+\g al.dia.siguiente
+
+\r batna'
+\_no 00030
+\u pa:tna'
+\a pa:tna'
+\c Adv | Adv
+\g hace.tiempo
+
+\r bay
+\_no 00031
+\u pay
+\a pay
+\c N | N
+\g pa¤uelo
+
+\r ba'y
+\_no 00032
+\u pa'y
+\a  a'y  / kw  _ +/ C  _
+\a pa'y  / kw ~_ +/ C ~_
+\c V | VA
+\g deber
+\m 34
+\mp vt
+\mp class1
+\mp takes.null.P
+\mp takes.null.S
+
+\r bayi'x
+\_no 00033
+\u payi':x
+\a payi':x
+\c N | N
+\g animal
+
+\r bcheko
+\_no 00034
+\u p:che:ko
+\a p:che:ko
+\c N | N
+\g tronco
+
+\r bda'o
+\_no 00035
+\u pta'o
+\a pta'o
+\c N | N
+\g bebé
+
+\r bdinnj
+\_no 00036
+\u pti:nj
+\a pti:nj
+\c N | N
+\g precipicio
+
+\r be
+\_no 00037
+\u pe
+\a pe
+\c N | N
+\g espíritu.zap
+
+\r be'
+\_no 00038
+\u pe'
+\a pe'
+\c N | N
+\g aire
+
+\r beb
+\_no 00039
+\u pep
+\a pep
+\g basura
+\c N | N
+
+\r bech
+\_no 00040
+\u pe:ch
+\a pe:ch
+\c Adv | Adv
+\g hace.rato
+
+\r bechj
+\_no 00041
+\u pe:chj
+\a pe:chj
+\c N | N
+\g cuervo
+
+\r be'e
+\_no 00042
+\u pe'e
+\a pe'e
+\c Adv | Adv
+\g hoy.en.la.ma¤ana
+
+\r bej
+\_no 00043
+\u pej
+\a pej
+\c N | N
+\g nube
+
+\r be'kw
+\_no 00044
+\u pe':kw
+\a  i':kw  / x _  +/ Poss _
+\a pe':kw  / # _
+\g perro
+\c N | N
+
+\r bel
+\_no 00045
+\u pe:l
+\a pe:l
+\c N | N
+\g culebra
+
+\r bel
+\_no 00046
+\u pe:l
+\a pe:l
+\c N | N
+\g pez
+
+\r bell
+\_no 00047
+\u pech
+\a pech
+\g buey
+\c N | N
+
+\r belya'
+\_no 00048
+\u pe:lya'
+\a pe:lya'
+\c N | N
+\g pescado.fresco
+
+\r be'n
+\_no 00049
+\u pe'n
+\a pe'n
+\c N | N
+\g abono
+
+\r beni'
+\_no 00050
+\u peni'
+\a peni'
+\c N | N
+\g luz
+
+\r be'nn
+\_no 00051
+\u pe':n
+\a pe':n
+\g persona
+\c N    | NP    |be'nnksllo  Lk 20:6
+\wf possessed
+
+\r be'nnach
+\_no 00052
+\u pe':na:ch
+\a pe':na:ch
+\c N | N
+\g ser.humano
+
+\r beo
+\_no 00053
+\u peo
+\a peo
+\g máscara
+\c N | N
+
+\r be'o
+\_no 00054
+\u pe'o
+\a pe'o
+\c N | N
+\g luna/mes
+
+\r be'r
+\_no 00055
+\u pe'l
+\a pe'l
+\g carne
+\c N | N
+
+\r berj
+\_no 00056
+\u pelj
+\a pelj
+\c N | N
+\g estrella
+
+\r beser
+\_no 00057
+\u pe:sel
+\a pe:sel
+\c N | N
+\g abeja
+
+\r bexjni
+\_no 00058
+\u pe:xjni
+\a pe:xjni
+\c N | N
+\g alacrán
+
+\r bey
+\_no 00059
+\u pey
+\a pey
+\c N | N
+\g nieve
+
+\r be'z
+\_no 00060
+\u pe's
+\a pe's
+\c N | N
+\g zorro
+
+\r bi
+\_no 00061
+\u pi
+\a pi
+\c N | N
+\g persona2
+
+\r bi
+\_no 00062
+\u pi
+\a pi
+\c Q | Q
+\g qué
+
+\r bi
+\_no 00063
+\u pi
+\a pi
+\c Adv | Adv
+\g neg
+
+\r bia'
+\_no 00064
+\u pia'
+\a pia'
+\c N | N
+\g mandamiento
+
+\r bibi
+\_no 00065
+\u pipi
+\a pipi
+\c Prt | Prt
+\g nada
+
+\r bibi'ch
+\_no 00066
+\u pipi':ch
+\a pipi':ch
+\g hermano.(de.hombre).de
+\c N | NP
+\wf possessed
+
+\r bi'ch
+\_no 00067
+\u pi':ch
+\a pi':ch
+\c N | NP
+\wf possessed
+\g hermano.de
+
+\r bichgal
+\_no 00068
+\u pi:chka:l
+\a pi:chka:l
+\c N | N
+\g sue¤o
+
+\r bichj
+\_no 00069
+\u pi:chj
+\a pi:chj
+\c Adj | Adj
+\g agrio
+
+\r bichsoa
+\_no 00070
+\u pi:ch:soa
+\a pi:ch:soa
+\c N | N
+\g chapulín
+
+\r bichte
+\_no 00071
+\u pi:ch:te
+\a pi:ch:te
+\c N | N
+\g polvo
+
+\r bida'o
+\_no 00072
+\u pita'o
+\a pita'o
+\c N | N
+\g ni¤o/a
+
+\r bien
+\_no 00073
+\u pien
+\a pien
+\c N | N
+\g obligación
+
+\r biksbi
+\_no 00074
+\u pi:k:spi
+\a pi:k:spi
+\c Prt | Prt
+\g nada.de.veras
+
+\r bil
+\_no 00075
+\u pi:l
+\a  i:l  / kw  _ +/ C  _
+\a pi:l  / kw ~_ +/ C ~_
+\c V | VA
+\g tener.sed
+\m 34
+\mp vi
+\mp class1
+\mp takes.kw.C
+\mp takes.null.P
+\mp takes.null.S
+\mp takes.group.2.pns
+
+\r bill
+\_no 00076
+\u pich
+\a pich
+\c Adj | Adj
+\g seco2
+
+\r billbi
+\_no 00077
+\u pichpi
+\a pichpi
+\c Prt | Prt
+\g nada.Int
+
+\r bin
+\_no 00078
+\u pin
+\a  in   / kw  _ +/ C  _
+\a pin   / kw ~_ +/ C ~_
+\c V | VA
+\g cubrir
+\m 33
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r binn
+\_no 00079
+\u pi:n
+\a pi:n
+\c N | N
+\g semilla2  | also kwa binn Lk 13:19
+
+\r bir
+\_no 00080
+\u pil
+\a pil
+\g hermana.(de.mujer).de
+\c N | NP
+\wf possessed
+
+\r bis
+\_no 00081
+\u pi:s
+\a  i:s  / kw  _ +/ C  _
+\a pi:s  / kw ~_ +/ C ~_
+\c V | VA
+\g mojar
+\m 33
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colons.Caus
+
+\r bitbi
+\_no 00082
+\u pi:tpi
+\a pi:tpi
+\c Prt | Prt
+\g nada.hasta
+
+\r bitkra
+\_no 00083
+\u pi:t:kla
+\a pi:t:kla
+\c Adv | Adv
+\g confuso  | will investigate
+
+\r bix
+\_no 00084
+\u pi:x
+\a  i:x  / kw  _ +/ [C-or-Inf]  _
+\a pi:x  / kw ~_ +/ [C-or-Inf] ~_
+\c V | VA
+\g caer.de.cierta.altura
+\m 33
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.kw.C
+\mp can.take.kw.C.with.Pl.pfx
+
+\r bixchen
+\_no 00085
+\u pi:x:chen
+\a pi:x:chen
+\c Prt | Prt
+\g porqué
+
+\r bixha
+\_no 00086
+\u pixa
+\a pixa
+\c Conj | Conj
+\g pero2
+
+\r bixhj
+\_no 00087
+\u pixj
+\a pixj
+\c N | N
+\g algo.peque¤o
+
+\r bi'y
+\_no 00088
+\u pi'y
+\a  kwi'y  / kw  _ +/ C  _   |Luke 4:3
+\a pi'y  / kw ~_ +/ C ~_
+\c V | VA
+\g acercar
+\m 33
+\mp vi
+\mp class1
+\mp takes.null.P
+|\mp takes.kw.C
+
+\r bizan
+\_no 00089
+\u san
+\a san
+\g hermano/a
+\c N | NP
+\wf possessed
+
+\r bizga'
+\_no 00090
+\u piska'
+\a piska'
+\c N | N
+\g zarzamora
+
+\r bkoy
+\_no 00091
+\u p:koy
+\a p:koy
+\c N | N
+\g altar
+
+\r bla'a
+\_no 00092
+\u p:la'a
+\a p:la'a
+\c N | N
+\g migaja
+
+\r bllej
+\_no 00093
+\u pchej
+\a pchej
+\c N | N
+\g flauta
+
+\r blli'n
+\_no 00094
+\u pchi'n
+\a pchi'n
+\c N | N
+\g espuma
+
+\r blli'nda'o
+\_no 00095
+\u pchi'nta'o
+\a pchi'nta'o
+\c N | N
+\g miel
+
+\r bllob
+\_no 00096
+\u pchop
+\a pchop
+\c N | N
+\g bote
+
+\r blloj
+\_no 00097
+\u pchoj
+\a pchoj
+\c N | N
+\g mudo
+
+\r blloy
+\_no 00098
+\u pchoy
+\a pchoy
+\c N | N
+\g bote.de.piel
+
+\r bni'y
+\_no 00099
+\u pni'y
+\a pni'y
+\c Adj | Adj
+\g difícil
+
+\r brao
+\_no 00100
+\u plao
+\a plao
+\c Adj | Adj
+\g importante
+
+\r bray
+\_no 00101
+\u play
+\a play
+\c N | N
+\g tabla
+
+\r broj
+\_no 00102
+\u ploj
+\a ploj
+\c N | N
+\g cueva
+
+\r bxen
+\_no 00103
+\u p:xen
+\a p:xen
+\c N | N
+\g sombra/reflexión
+
+\r bxoz
+\_no 00104
+\u p:xos
+\a p:xos
+\c N | N
+\g sacerdote
+
+\r byinn
+\_no 00105
+\u pyi:n
+\a pyi:n
+\c N | N
+\g pájaro
+
+\r byio
+\_no 00106
+\u pyio
+\a  yio  / x _             +/ Poss _
+\a   yi  / x _ 'o          +/ Poss _ 2s
+\a yikw  / x _ [V-hi+cg]   +/ Poss _ [1s-or-3r]
+\a pyio  / # _
+\g hombre
+\c N | N
+
+\r bzi'o
+\_no 00107
+\u psi'o
+\a psi'o
+\c N | N
+\g relampago
+
+\r bzod
+\_no 00108
+\u psot
+\a psot
+\c N | N
+\g bolsa
+
+\r cha'
+\_no 00109
+\u :cha'
+\a :cha'
+\a :chat
+\c Prt | Prt
+\g si
+
+\r cha'a
+\_no 00110
+\u cha'
+\a cha' /~_ #
+\a cha'a / _ #
+\c V | VA
+\g estar.en.grupo
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r chak
+\_no 00111
+\u :cha:k
+\a :cha:k
+\c Adv | Adv
+\g mientras
+
+\r chall
+\_no 00112
+\u chach
+\a chach          +/ [P,H-or-Modal]  _
+\a  yach          +/ [P,H-or-Modal] ~_
+\c V | VA
+\g limpiar/asear                | take group 2 pns??
+\m 29
+\mp vi
+\mp class2
+\mp takes.null.H
+
+\r chan
+\_no 00113
+\u chan
+\a chan          +/ [P,H-or-Modal]  _
+\a  yan          +/ [P,H-or-Modal] ~_
+\c V | VA
+\g aumentar
+\m 29
+\mp vi
+\mp class2
+\mp takes.null.H
+
+\r cha'o
+\_no 00114
+\u :cha'o
+\a :cha'o
+\c Adj | Adj
+\g fino
+
+\r chaokse
+\_no 00115
+\u :chao:k:se
+\a :chao:k:se
+\c Prt | PPrt
+\g a.propósito
+
+\r cha'ra'll
+\_no 00116
+\u cha'la'ch
+\a cha'la'ch
+\c V | VA
+\g engordar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r chas
+\_no 00117
+\u ya:s
+\a cha:s          +/ [P,H-or-Modal]  _
+\a  ya:s          +/ [P,H-or-Modal] ~_
+\c V | VA
+\g levantar.persona
+\m 29
+\mp vi
+\mp class2
+\mp takes.null.H
+
+\r chas xhi'xllo
+\_no 00118
+\u :cha:s xi':xcho
+\a :cha:s xi':xcho
+\c V | VA
+\g tener hipo
+\m 29
+\mp vi
+\mp class2
+\mp takes.null.H
+\noload  what do here??
+
+\r cha'we
+\_no 00119
+\u :cha'kwe
+\a :cha'kwe
+\c Adj | Adj
+\g derecha
+
+\r chaz
+\_no 00120
+\u chas
+\a chas          +/ [P,H-or-Modal]  _
+\a  yas          +/ [P,H-or-Modal] ~_
+\c V | VA
+\g penetrar
+\m 29
+\mp vi
+\mp class2
+\mp takes.null.H
+
+\r chazra'll
+\_no 00121
+\u chasla'ch
+\a chasla'ch          +/ [P,H-or-Modal]  _
+\a  yasla'ch          +/ [P,H-or-Modal] ~_
+\c V | VA
+\g agradar.(-le.a.uno).1
+\m 29
+\mp vt
+\mp class2
+\mp takes.null.H
+
+\r chda'
+\_no 00122
+\u chta'
+\a chta'
+\c Num | NumA
+\g catorce
+\mp class2
+\mp takes.kw.C
+\mp takes.null.S
+
+\r chde'j
+\_no 00123
+\u :chte'j
+\a :chte'j
+\c Adv | Adv
+\g poco.profundo  |tierra; may also be figurative (kere do lo ra'lle)
+
+\r che
+\_no 00124
+\u che
+\a chi / _ a'   +/           P  _ 1s
+\a che          +/           P  _
+\a  ti / _ a'   +/ [C-or-Modal] _ 1s +/ [Modal] Rep _ 1s
+\a  te          +/ [C-or-Modal] _    +/ [Modal] Rep _
+\a  yi / _ a'   +/ [H,S-or-Rep] _ 1s
+\a  ye          +/ [H,S-or-Rep] _
+\c V | VA
+\g acarrear
+\m 21
+\mp vi
+\mp class2
+
+\r cheb
+\_no 00125
+\u :chep
+\a :chep
+\c N | N
+\g susto
+
+\r cheb
+\_no 00126
+\u chep
+\a tep          +/ [C-or-Modal]    _
+\a chep  / : _  +/             P   _
+\a ep           +/ [P,C-or-Modal] ~_
+\c V | VA
+\g tragar
+\m 27
+\mp vt
+\mp class2
+
+\r cheb
+\_no 00127
+\u chep
+\a chep  +/           P  _
+\a  tep  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yep  +/ [H,S-or-Rep] _
+\c V | VA
+\g frotar
+\m 21
+\mp vt
+\mp class2
+
+\r chechj
+\_no 00128
+\u che:chj
+\a che:chj          +/ [P-or-Modal]  _
+\a  ye:chj          +/ C _
+\a   e:chj
+\c V | VA
+\g ser.rodeado.vi
+\m 31
+\mp vi
+\mp class2
+
+\r chechj
+\_no 00129
+\u che:chj
+\a che:chj          +/ [P-or-Modal]  _
+\a  ye:chj          +/ [P-or-Modal] ~_
+\c V | VA
+\g dar.vuelta.vi
+\m 31
+\mp vi
+\mp class2
+
+\r chej
+\_no 00130
+\u :chej
+\a :cha   / _ 'a  +/ P _ 1s
+\a :chej          +/ P _     +/ [Modal] _
+\a    a   / _ 'a  +/ [H-or-Rep] _ 1s
+\a    a'          +/ [H-or-Rep] _ ... 1s
+\a    ej          +/ [H,S-or-Rep] _
+\a   ya   / _ 'a  +/ C _ 1s  +/ Int.C   _ 1s |will chk C form a' or a'a? (6-97)
+\a   y    / _ a'(n)  +/ S _ 1s
+\a   yej          +/ C _     +/ Int.C   _
+\c V | VA
+\g ir
+\m 37
+\mp vi
+\mp class1
+\mp takes.null.P
+|\mp laryngealizes  Stative doesn't
+
+\r chejle'
+\_no 00131
+\u chej:le'
+\a chej:li   / _ a'  +/           P  _ 1s
+\a chej:le'          +/           P  _
+\a  yej:li   / _ a'  +/ [C-or-Modal] _ 1s  +/ [Modal] Rep _ 1s
+\a  yej:le'          +/ [C-or-Modal] _     +/ [Modal] Rep _
+\a  ej:li   / _ a'  +/ [H,S-or-Rep] _ 1s
+\a  ej:le'          +/ [H,S-or-Rep] _
+\c V | VA
+\g creer
+\m 29
+\mp vt
+\mp class2
+
+\r chejnie'
+\_no 00132
+\u chejnie'
+\a chejnie'          +/ [P,H-or-Modal]  _
+\a  yejnie'          +/ [P,H-or-Modal] ~_
+\c V | VA
+\g entender
+\m 29
+\mp vt
+\mp class2
+\mp takes.null.H
+\mp takes.group.2.pns
+
+\r chek
+\_no 00133
+\u :che:k
+\a :che:k
+\c Adv | Adv
+\g acaso
+
+\r chel
+\_no 00134
+\u che:l
+\a che:l
+\c V | VA
+\g enrollar             | take group 2 pns??
+\m 9
+\mp vi
+\mp class2
+\mp takes.null.S
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r che'l
+\_no 00135
+\u che':l
+\a che':l  +/           P  _
+\a  te':l  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  ye':l  +/ [H,S-or-Rep] _
+\c V | VA
+\g abrazar
+\m 21
+\mp vt
+\mp class2
+
+\r chenak
+\_no 00136
+\u :chena:k
+\a :chena:k
+\a :che'r   | Mk 5:23
+\c Conj | Conj
+\g si.(conrtary.to.fact)
+
+\r cheni'
+\_no 00137
+\u cheni'
+\a cheni  / _ [V-hi+cg]    +/ [P-or-Modal]      _ [1s-or-3r]
+\a cheni'                  +/ [P-or-Modal]      _
+\a   eni  / _ [V-hi+cg]    +/ [H-or-S]          _ [1s-or-3r]
+\a   eni'                  +/ [H-or-S]          _
+\a  yeni  / _ [V-hi+cg]    +/ ~[P,H,S-or-Modal] _ [1s-or-3r]
+\a  yeni'                  +/ ~[P,H,S-or-Modal] _
+\c V | VA
+\g amanecer
+\m 31
+\mp vi
+\mp class2
+
+\r chep
+\_no 00138
+\u che:p
+\a che:p    +/ [P-or-Modal] _
+\a  ye:p    +/ [C-or-Inf]   _
+\a   a:p    +/ Pl.pfx       _
+\a   e:p
+\c V | VA
+\g subir
+\m 31
+\mp vi
+\mp class2
+\mp takes.p.C
+\mp takes.colonl.Caus
+
+\r chet
+\_no 00139
+\u :che:t
+\a :che:t
+\c Prt | Prt
+\g si2
+
+\r chetj
+\_no 00140
+\u e:tj
+\a che:tj       +/ [P-or-Modal]  _
+\a   e:tj       +/ [P-or-Modal] ~_
+\c V | VA
+\g bajar
+\m 38
+\mp vi
+\mp class2
+\mp takes.p.C
+\mp takes.colonl.Caus
+
+\r chewliz
+\_no 00141
+\u :chekw:lis
+\a :chekw:lis
+\c Adj |? or N? | Adj |? or N?
+\g de.un.pieza   | Juan 19:23
+
+\r chey
+\_no 00142
+\u chey
+\a chey    +/ [P-or-Modal]      _
+\a  yey    +/ C                 _
+\a   ey
+\c V | VA
+\g quemar
+\m 31
+\mp vi
+\mp class2
+\mp takes.s.Caus
+
+\r cheyj
+\_no 00143
+\u cheyj
+\a cheyj    +/ [P-or-Modal]      _
+\a   eyj    +/ [H-or-S]          _
+\a  yeyj    +/ [P,H,S-or-Modal] ~_
+\c V | VA
+\g cerrar.(para.impedir.paso)           | take group 2 pns??
+\m 31
+\mp vi
+\mp class2
+
+\r che'z
+\_no 00144
+\u che's
+\a che's    +/ [P-or-Modal]      _
+\a   e's    +/ [H-or-S]          _
+\a  che's    +/ [P,H,S-or-Modal] ~_
+\c V | VA
+\g romper
+\m 9
+\mp vi
+\mp class2
+\mp takes.colon.Caus
+
+\r chi
+\_no 00145
+\u :chi
+\a :chi
+\c Prt | PPrt
+\g diez
+
+\r chia
+\_no 00146
+\u chia
+\a chi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a chia
+\c V | VA
+\g coser.vt
+\m 9
+\mp vt
+\mp class2
+
+\r chib
+\_no 00147
+\u yip
+\a chip  +/           P  _
+\a  tip  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yip  +/ [H,S-or-Rep] _
+\c V | VA
+\g lavar
+\m 21
+\mp vt
+\mp class2
+
+\r chichj
+\_no 00148
+\u chi:chj
+\a chi:chj  +/           P  _
+\a  ti:chj  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yi:chj  +/ [H,S-or-Rep] _
+\c V | VA
+\g quebrar
+\m 21
+\mp vt
+\mp class2
+\mp takes.null.H
+\co chichje' bie' "maldecir"; chichje' xti'lle' "desobedecer"
+
+\r chidj
+\_no 00149
+\u chitj
+\a chitj  +/           P  _
+\a  titj  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yitj  +/ [H,S-or-Rep] _
+\c V | VA
+\g agujerear.vt
+\m 21
+\mp vt
+\mp class2
+
+\r chi'i
+\_no 00150
+\u :chi'i
+\a :chi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :chi'i / _ #
+\a :chi'  / ~_ #
+\c N | NP
+\wf possessed
+\g voz
+
+\r chi'i
+\_no 00151
+\u :chi'i
+\a :chi'i
+\c N | N
+\g tanto
+
+\r chill
+\_no 00152
+\u :chich
+\a  chich  +/           P  _
+\a   tich  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a   yich  +/ [H,S-or-Rep] _
+\c V | VA
+\g pellizcar
+\m 21
+\mp vt
+\mp class2
+
+\r chilloa
+\_no 00153
+\u :chichoa
+\a :chichoa
+\c Prt | PPrt
+\g treinta
+
+\r chiltez
+\_no 00154
+\u :chi:l:tes
+\a :chi:l:tes
+\c Adv | Adv
+\g temporal
+
+\r chin
+\_no 00155
+\u yin
+\a  tin         +/  [C-or-Modal] _  +/ [Modal] Rep _
+\a chin / :  _  +/  [C-or-Modal] ~_
+\a  yin / : ~_  +/  [C-or-Modal] ~_
+\c V | VA
+\g golpear
+\m 22
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r chin
+\_no 00156
+\u yin
+\a  tin         +/  [C-or-Modal] _  +/ [Modal] Rep _
+\a chin / :  _  +/  [C-or-Modal] ~_
+\a  yin / : ~_  +/  [C-or-Modal] ~_
+\c V | VA
+\g entrar.tierra  | with roe "root"
+\m 21
+\mp vt
+\mp class2
+
+\r chi'nn
+\_no 00157
+\u :chi':n
+\a :chi':n
+\c Prt | PPrt
+\g trece
+
+\r chi'nn
+\_no 00158
+\u :chi':n
+\a  chi':n  +/           P  _
+\a   ti':n  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a   yi':n  +/ [H,S,Rep-or-Pl.pfx] _
+			+/ Inf _
+\c V | VA
+\g morder
+\m 21
+\mp vt
+\mp class2
+
+\r chi'no
+\_no 00159
+\u :chi'no
+\a :chi'no
+\a :chi'n  | where followed by another number chi'n chope
+\c Prt | PPrt
+\g quince
+
+\r chinyichj
+\_no 00160
+\u chinyi:chj
+\a chinyi:chj  / : _  +/ P _
+\a  tinyi:chj         +/ [C-or-Modal] _
+\a  yinyi:chj         +/ [H,S-or-Rep] _
+\c V | VA
+\g peinar
+\m 22
+\mp vt
+\mp class2
+
+\r chi'o
+\_no 00161
+\u chi'o
+\a chi'  / _ o'  +/ _ 2s
+\a chi'kw / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a chi'o
+\c V | VA
+\g crecer
+\m 9
+\mp vi
+\mp class2
+\mp takes.colons.Caus
+
+\r chir
+\_no 00162
+\u chil
+\a chil  +/           P  _
+\a  til  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yil  +/ [H,S-or-Rep] _
+\c V | VA
+\g regar.(agua)
+\m 21
+\mp vt
+\mp class2
+
+\r chirj
+\_no 00163
+\u chilj
+\a chilj  / : _  +/ P _
+\a  tilj         +/ [C-or-Modal] _ | used to have "..."
+				 +/ [Modal] Rep _
+\a  yilj         +/ [H,S-or-Rep] _
+				 +/ Inf _
+\c V | VA
+\g buscar
+\m 22
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r chirjla'll
+\_no 00164
+\u chilj:la'ch
+\a chilj:la'ch  / : _  +/ P _
+\a  tilj:la'ch         +/ [C-or-Modal] ... _
+\a  yilj:la'ch         +/ [H,S-or-Rep] _
+\c V | VA
+\g inventar
+\m 22
+\mp vt
+\mp class2
+| llyirjla'lle' di'll ke to be'nne
+| Rep for has to do with figuring out how to do some job
+
+\r chis
+\_no 00165
+\u chi:s
+\a chi:s  +/           P  _
+\a  ti:s  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yi:s  +/ [H,S-or-Rep] _
+\c V | VA
+\g repartir
+\m 21
+\mp vt
+\mp class2
+
+\r chislas
+\_no 00166
+\u chi:s:la:s
+\a chi:s:la:s  +/           P  _
+\a  ti:s:la:s  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yi:s:la:s  +/ [H,S-or-Rep] _
+\c V | VA
+\g dispersar.vt
+\m 21
+\mp vt
+\mp class2
+
+\r chitj
+\_no 00167
+\u chi:tj
+\a chi:tj  / : _  +/ P _
+\a  ti:tj         +/ [C-or-Modal] _
+\a  yi:tj         +/ [H,S,Rep-or-Pl.pfx] _
+\a   i:tj         +/ Inf _
+\c V | VA
+\g jugar
+\m 22
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r chix
+\_no 00168
+\u :chi:x
+\a :chi:x
+\c V | VA
+\g mezclar.vi           | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r chi'xh
+\_no 00169
+\u :chi'x
+\a :chi'x
+\c N | N
+\g panal
+
+\r chixhj
+\_no 00170
+\u chixj
+\a chixj  +/           P  _
+\a  tixj  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yixj  +/ [H,S-or-Rep] _
+\a  yixj
+\c V | VA
+\g pagar
+\m 21
+\mp vt
+\mp class2
+|\mp takes.colon.Caus
+
+\r chixj
+\_no 00171
+\u chi:xj
+\a chi:xj  +/           P  _
+\a  ti:xj  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  yi:xj  +/ [H,S-or-Rep] _
+\c V | VA
+\g acostar.(en.el.suelo)
+\m 21
+\mp vt
+\mp class2
+
+\r chixjkwe'
+\_no 00172
+\u chi:xjkwe'
+\a chi:xjkwe'           +/           P  _
+\a  ti:xjkwe'           +/ [C-or-Modal] _    +/ [Modal] Rep _
+\a  yi:xjkwe'           +/ [H,S-or-Rep] _
+\c V | VA
+\g avisar.2
+\m 21
+\mp vt
+\mp class2
+\mp takes.group.2.pns
+
+\r chiyon
+\_no 00173
+\u :chiyon
+\a :chiyon
+\c Prt | PPrt
+\g cincuenta
+
+\r chka
+\_no 00174
+\u :ch:ka
+\a :ch:ka
+\c Adv | Adv
+\g no.possible   |ka'n lle'nra' chka
+
+\r chkwe'
+\_no 00175
+\u :ch:kwe'
+\a :ch:kwe'
+\c N | N
+\g un.grupo/par  |LK:14:19
+| llkwe' yer  -par de huaraches
+| llwe' yellrio  -un lote de terreno
+
+\r chkwe'
+\_no 00176
+\u :ch:kwe'
+\a :ch:kwe'
+\a :kwe'   |Lk 14:19
+\c N | N
+\g par
+
+\r chkwia
+\_no 00177
+\u :ch:kwia
+\a :ch:kwia
+\c Adj | Adj
+\g encima
+
+\r chla'
+\_no 00178
+\u :ch:la'
+\a :ch:la'
+\c N | N
+\g un.lado  |also enfrente- chla' ke yoda'o "enfrente de la iglesia"
+
+\r chllinn
+\_no 00179
+\u :chchi:n
+\a :chchi:n
+\c Prt | PPrt
+\g doce
+
+\r chnar
+\_no 00180
+\u :chnal
+\a :chnal
+\c Adv | Adv
+\g para.siempre2   | occurs following ke
+
+\r chnej
+\_no 00181
+\u :chnej
+\a :chnej
+\c Prt | PPrt
+\g once
+
+\r cho
+\_no 00182
+\u :cho
+\a :ch  / _ o'  +/ _ 2s
+\a :cho
+\c V | VA
+\g desviar              | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r cho'
+\_no 00183
+\u cho'
+\a cho        / _ [V-hi+cg]  +/  [P,H-or-Modal] _ [1s-or-3r]
+					  +/  [Modal] Rep    _
+\a ch         / _ o'  +/  [P,H-or-Modal] _ 2s
+					  +/  [Modal] Rep    _ 2s
+\a cho'               +/  [P,H-or-Modal] _
+					  +/  [Modal] Rep    _
+\a   o'                      +/ Pl.pfx   _
+\a  yo        / _ [V-hi+cg]  +/ ~[P,H-or-Modal] _ [1s-or-3r]
+\a  y         / _ o'  +/ ~[P,H-or-Modal] _ 2s
+\a  yo'               +/ ~[P,H-or-Modal] _
+\c V | VA
+\g entrar
+\m 30
+\mp vi
+\mp class2
+\mp takes.null.H
+\mp takes.null.S
+
+\r cho'
+\_no 00184
+\u cho'
+\a ch   / _ o'        +/ _ 2s
+\a cho  / _ [V-hi+cg] +/ _ [1s-or-3r]
+\a cho'
+\c V | VA
+\g toser
+\m 9
+\mp vi
+\mp class2
+
+\r choa
+\_no 00185
+\u :choa
+\a :choa
+\c Adj | Adj
+\g medio.dia   | must occur with will
+
+\r choa
+\_no 00186
+\u choa
+\a cho   / _ a' / _ e'  +/ _ [1s-or-3r]
+\a choa
+\c V | VA
+\g bautizar
+\m 9
+\mp vi
+\mp class2
+\mp takes.colon.Caus
+\co lloa only occurs with nis 'water' - rn
+
+\r choa
+\_no 00187
+\u :choa
+\a :choa
+\a choa   |in combination with other numbers e.g., chi lloa  (30)
+\c Prt | PPrt
+\g cuarenta
+
+\r cho'ba
+\_no 00188
+\u cho'pa
+\a cho'p  / _ a'     +/  [P,H-or-Modal] _ 1s
+\a cho'pe / _  'e    +/  [P,H-or-Modal] _ 3r
+\a cho'pa            +/  [P,H-or-Modal] _
+\a  yo'p  / _ a'     +/ ~[P,H-or-Modal] _ 1s
+\a  yo'pe / _  'e    +/ ~[P,H-or-Modal] _ 3r
+\a  yo'pa            +/ ~[P,H-or-Modal] _
+\c V | VA
+\g marear
+\m 30
+\mp vi
+\mp class2
+\mp takes.null.H
+\mp takes.null.S
+\mp laryngealizes
+
+\r cho'cha'o
+\_no 00189
+\u cho':cha'o
+\a cho':cha'  / _ o           +/  [P,H-or-Modal] _ 2s
+\a cho':cha'kw / _ [V-hi+cg]   +/  [P,H-or-Modal] _ [1s-or-3r]
+\a cho':cha'o                 +/  [P,H-or-Modal] _
+\a  yo':cha'  / _ o           +/ ~[P,H-or-Modal] _ 2s
+\a  yo':cha'kw / _ [V-hi+cg]   +/ ~[P,H-or-Modal] _ [1s-or-3r]
+\a  yo':cha'o                 +/ ~[P,H-or-Modal] _
+\c V | VA
+\g guardar.vi
+\m 30
+\mp vi
+\mp class2
+\mp takes.null.H
+\mp takes.null.S
+
+\r chod
+\_no 00190
+\u :chot
+\a :chot
+\c N | N
+\g zopilote
+
+\r cholj
+\_no 00191
+\u :cho:lj
+\a :cho:lj
+\c Adj | Adj
+\g no.firme
+
+\r choljra'll
+\_no 00192
+\u cho:ljla'ch
+\a cho:ljla'ch            +/  [P,H-or-Modal] _
+\a  yo:ljla'ch            +/ ~[P,H-or-Modal] _
+\c V | VA
+\g asfixiar
+\m 30
+\mp vi
+\mp class2
+\mp takes.null.H
+\mp takes.null.S
+
+\r choll
+\_no 00193
+\u och
+\a choch      +/  [P,H-or-Modal] _
+\a  yoch      +/ ~[P,H-or-Modal] _
+\c V | VA
+\g entrar.agua
+\m 30
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.null.H
+
+\r choll
+\_no 00194
+\u :choch
+\a :choch
+\c Adv | Adv
+\g poco.tiempo
+
+\r chon
+\_no 00195
+\u :chon
+\a :chon
+\c N | N
+\g ataque.epiléptico
+
+\r chonn
+\_no 00196
+\u yo:n
+\a cho:n  / : _  +/ P _
+\a yo:n   / : ~_ +/ P ~_
+\c Num | NumA
+\g tres
+\mp class2
+\mp takes.kw.C
+\mp takes.null.S
+
+\r cho'nn
+\_no 00197
+\u cho':n
+\a   o':n  / ch  _ +/ H  _
+\a cho':n  / ch ~_ +/ H ~_
+\c V | VA
+\g tirar
+\m 28
+\mp vt
+\mp class2
+
+\r cho'o
+\_no 00198
+\u :cho'o
+\a po'o / ye _ +/ Rep _
+\a :cho'o
+\c V | VA
+\g vayamos
+\m 2?
+\mp takes.null.P
+\mp class1
+
+\r chop
+\_no 00199
+\u cho:p
+\a cho:p
+\c Num | NumA
+\g dos
+\mp class2
+\mp takes.kw.C
+\mp takes.null.S
+
+\r cho'ra'll
+\_no 00200
+\u cho'la'ch
+\a cho'la'ch       +/  [P,H-or-Modal] _
+\a  yo'la'ch       +/ ~[P,H-or-Modal] _
+\c V | VA
+\g agradar.(-le.a.uno).2
+\m 30
+\mp vt
+\mp class2
+\mp takes.null.H
+\mp takes.null.S
+
+\r cho'rao
+\_no 00201
+\u cho'lao
+\a cho'la  under.ao  / _ o'         +/  [P,H-or-Modal] _ 2s
+\a cho'lakw           / _ [V-hi+cg]  +/  [P,H-or-Modal] _ [1s-or-3r]
+\a cho'lao                          +/  [P,H-or-Modal] _
+\a  yo'la  under.ao  / _ o'         +/ ~[P,H-or-Modal] _ 2s
+\a  yo'lakw           / _ [V-hi+cg]  +/ ~[P,H-or-Modal] _ [1s-or-3r]
+\a  yo'lao                          +/ ~[P,H-or-Modal] _
+\c V | VA
+\g acostumbrar.vi
+\m 30
+\mp vi
+\mp class2
+\mp takes.null.H
+\mp takes.null.S
+
+\r cho'xhi'n
+\_no 00202
+\u cho'xi'n
+\a cho'xi'n            +/  [P,H-or-Modal] _
+\a  yo'xi'n            +/ ~[P,H-or-Modal] _
+\c V | VA
+\g oler
+\m 30
+\mp vt
+\mp class2
+\mp takes.null.H
+\mp takes.null.S
+
+\r choy | choyen, wchoyllo  ?? is this one that can take group2 or group 1 affixes?
+\_no 00203
+\u :choy
+\a :choy
+\c V | VA
+\g cortar
+\m 2 vi
+\mp vt
+\mp class1
+
+\r chraoze
+\_no 00204
+\u :chlaose
+\a :chlaose
+\c Adv | Adv
+\g unicamente
+
+\r chras
+\_no 00205
+\u :chla:s
+\a :chla:s
+\c Adv | Adv
+\g para.siempre
+
+\r da
+\_no 00206
+\u ta
+\a ta
+\c Prn | Prn
+\g 3i.Rel.Pn      |third inanimate relative pronoun
+\wf 3i
+
+\r da'
+\_no 00207
+\u ta'
+\a t    / _ a'  +/ _ 1s
+\a te'  / _ e  +/ _ 3r
+\a ta'
+\c N | N
+\g petate
+
+\r dach
+\_no 00208
+\u ta:ch
+\a ta:ch
+\c Adj | Adj
+\g vacio
+
+\r dao
+\_no 00209
+\u tao
+\a tao
+\c N | N
+\g espiga
+
+\r da'o
+\_no 00210
+\u ta'o
+\a ta'o
+\c Adj | Adj
+\g peque¤o
+
+\r daxhix
+\_no 00211
+\u taxi:x
+\a taxi:x
+\c N | N
+\g fruta/dulce
+
+\r daxi'o
+\_no 00212
+\u ta:xi'o
+\a ta:xi'o
+\c N | N
+\g demonio
+
+\r de
+\_no 00213
+\u te
+\a te
+\c Prt | PPrt
+\g tener.mucho
+\mp takes.group.2.pns
+\co te is Stative of ga't, but ga't does not take group 2 pronouns
+
+\r de
+\_no 00214
+\u te
+\a te
+\c N | N
+\g ceniza
+
+\r de
+\_no 00215
+\u te
+\a ti  / _ a'  +/ _ 1s
+\a te
+\c V | VA
+\g picar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r deksde
+\_no 00216
+\u te:k:ste
+\a te:k:ste
+\c Prt | PPrt
+\g es.necesario
+
+\r de'n
+\_no 00217
+\u te'n
+\a te'n
+\c N | N
+\g maldición  | Mk 11:21
+
+\r dex
+\_no 00218
+\u te:x
+\a te:x
+\c N | N
+\g teja
+
+\r dia
+\_no 00219
+\u tia
+\a ti  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a tia
+\c V | VA
+\g coser.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r dialla
+\_no 00220
+\u tiacha
+\a tiach  / _  a' +/ _ 1s
+\a tiache / _ 'e  +/ _ 3r
+\a tiacha
+\c N | N
+\g familia.de   | xhi'nn dialla has same meaning
+
+\r din
+\_no 00221
+\u tin
+\a tin
+\c V | VA
+\g deslizar             | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r din
+\_no 00222
+\u tin
+\a tin
+\c V | VA
+\g golpear.(ser.golpeado)
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r di'n
+\_no 00223
+\u ti'n
+\a ti'n
+\c V | VA
+\g morder.ser.mordido
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r do
+\_no 00224
+\u to
+\a t  / _ o' +/ _ 2s
+\a to
+\g mecate
+\c N | N
+
+\r do
+\_no 00225
+\u to
+\a to
+\c Prt | Prt
+\g por
+
+\r dob
+\_no 00226
+\u top
+\a top
+\c V | VA
+\g arrollar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r do'b
+\_no 00227
+\u to'p
+\a to'p
+\g pluma
+\c N | N
+
+\r dogarj
+\_no 00228
+\u tokalj
+\a tokalj
+\c Adv | Adv
+\g genuino
+
+\r do'l
+\_no 00229
+\u to':l
+\a to':l
+\c N | N
+\g culpa
+
+\r do'le
+\_no 00230
+\u to':l
+\a to':l
+|\a ato':l  / kw _  +/ P _
+|\a eto':l  /  y _  +/ P _
+\a to':l
+\c V | VA
+\g alcanzar
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+\mp takes.group.2.pns
+
+\r dolj
+\_no 00231
+\u to:lj
+\a to:lj
+\c V | VA
+\g zafar                | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r dop
+\_no 00232
+\u to:p
+\a to:p
+\c V | VA
+\g juntar.grupo
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r doxhen
+\_no 00233
+\u toxen
+\a toxen
+\c Prt    | formerly Qnt | PPrt    | formerly Qnt
+\g todo
+
+\r ga
+\_no 00234
+\u ka
+\a ka
+\c Num | NumA
+\g nueve
+\mp takes.kw.C
+\mp takes.null.P
+
+\r ga
+\_no 00235
+\u ka
+\a ka
+\c Q | Q
+\g a.donde
+
+\r ga'
+\_no 00236
+\u ka'
+\a ka'
+\c Adj | Adj
+\g verde1
+
+\r ga'
+\_no 00237
+\u ka'
+\a k    / _ a'  +/ _ 1s
+\a ke'  / _ e'  +/ _ 3r
+\a ka'a / _ #
+\a ka'  / ~_ #
+\c V | VA
+\g estirar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+\mp laryngealizes
+
+\r ga'a
+\_no 00238
+\u ka'a
+\a ka'a
+\g canasta
+\c N | N
+
+\r gab
+\_no 00239
+\u ap
+\a op  +/ [C-or-Inf] _
+\a ep  +/ [Modal]  _
+\a ap  +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g tejer  |must occur with yere following; no other meaning by itself
+\m 23
+\mp vt
+\mp class2
+
+\r gabil
+\_no 00240
+\u kapi:l
+\a kapi:l
+\c N | N
+\g hades
+
+\r ga'ch
+\_no 00241
+\u ka':ch
+\a ka':ch
+\c V | VA
+\g enterrar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r ga'ch
+\_no 00242
+\u a':ch
+\a o':ch          +/ [C-or-Inf] _
+\a e':ch          +/ [Modal]  _
+\a a':ch          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g sacar.agua
+\m 23
+\mp vt
+\mp class2
+
+\r gachj
+\_no 00243
+\u a:chj
+\a o:chj          +/ [C-or-Inf] _
+\a e:chj          +/ [Modal]  _
+\a a:chj          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g reventar             | take group 2 pns??
+\m 23
+\mp vi
+\mp class2
+
+\r ga'd
+\_no 00244
+\u a't
+\a o't          +/ [C-or-Inf] _
+\a e't          +/ [Modal]  _
+\a a't          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g punzar
+\m 23
+\mp vt
+\mp class2
+
+\r gadj
+\_no 00245
+\u atj
+\a otj          +/ [C-or-Inf] _
+\a etj          +/ [Modal]  _
+\a atj          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g agujerear.vi                 | take group 2 pns??
+\m 23
+\mp vi
+\mp class2
+
+\r ga'dyi'
+\_no 00246
+\u a'tyi'
+\a o'tyi  / _ [V-hi+cg]  +/ [C-or-Inf]  _ [1s-or-3r]
+		  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a o'tyi'                +/ [C-or-Inf]  _
+\a e'tyi  / _ [V-hi+cg]  +/ [Modal]  _ [1s-or-3r]
+		  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a e'tyi'                +/ [Modal]  _
+\a a'tyi  / _ [V-hi+cg]  +/ ~[C,Inf-or-Modal] _ [1s-or-3r]
+		  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a a'tyi'                +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g provocar
+\m 23
+\mp vt
+\mp class2
+
+\r gaga
+\_no 00247
+\u kaka
+\a kaka
+\c Prt | Prt
+\g ninguna.parte
+
+\r gak
+\_no 00248
+\u a:k
+\a o:k          +/ C  _
+\a a:k          +/ C ~_
+\c V | VA
+\g poder | ser in Stative
+\m 23
+\mp vi
+\mp class2
+
+\r gak
+\_no 00249
+\u a:k
+\a o:k          +/ C _
+\a a:k          +/ C ~_
+\c V | VA
+\g sentir
+\m 23
+\mp vi
+\mp class2
+\mp takes.group.2.pns
+
+\r gakbe'
+\_no 00250
+\u a:kpe'
+\a o:kpi  / _ a'   +/ [C-or-Inf]  _ 1s
+\a o:kpe'          +/ [C-or-Inf]  _
+\a e:kpi  / _ a'   +/ [Modal]  _ 1s
+\a e:kpe'          +/ [Modal]  _
+\a a:kpi  / _ a'   +/ ~[C,Inf-or-Modal] _ 1s
+\a a:kpe'          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g darse.cuenta
+\m 23
+\mp vi
+\mp class2
+\mp takes.group.2.pns
+
+\r gakbe'y
+\_no 00251
+\u a:kpe'y
+\a o:kpe'y          +/ C  _
+\a a:kpe'y          +/ C ~_
+\c V | VA
+\g ser.molestado
+\m 23
+\mp vt
+\mp class2
+\mp takes.group.2.pns
+
+\r gakbie'
+\_no 00252
+\u a:kpie'
+\a o:kpie'          +/ [C-or-Inf] _
+\a e:kpie'          +/ [Modal]  _
+\a a:kpie'          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g ser.obvio
+\m 23
+\mp vi
+\mp class2
+
+\r gakchix
+\_no 00253
+\u a:k:chi:x
+\a o:k:chi:x          +/ [C-or-Inf] _
+\a e:k:chi:x          +/ [Modal]  _
+\a a:k:chi:x          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g equivocar
+\m 23
+\mp vi
+\mp class2
+\mp can.take.group.2.pns
+
+\r gakdil
+\_no 00254
+\u a:kti:l
+\a o:kti:l          +/ [C-or-Inf] _
+\a e:kti:l          +/ [Modal]  _
+\a a:kti:l          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g pelear2
+\m 23
+\mp vi
+\mp class2
+
+\r gakditj
+\_no 00255
+\u a:kti:tj
+\a o:kti:tj          +/ [C-or-Inf] _
+\a e:kti:tj          +/ [Modal]  _
+\a a:kti:tj          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g malgastar.vi                 | take group 2 pns??
+\m 23
+\mp vi
+\mp class2
+
+\r gakgan
+\_no 00256
+\u a:kkan
+\a o:kkan          +/ [C-or-Inf] _
+\a e:kkan          +/ [Modal]  _
+\a a:kkan          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g dudar                | take group 2 pns??
+\m 23
+\mp vi
+\mp class2
+\mp takes.group.2.pns
+
+\r gaklla'
+\_no 00257
+\u ka:kcha'
+\a o:kch    / _ a'      +/ [C-or-Inf] _ 1s
+\a o:kche'  / _ e       +/ [C-or-Inf] _ 3r
+\a o:kcha'a / _ #       +/ [C-or-Inf] _
+\a o:kcha'  / ~_ #      +/ [C-or-Inf] _
+\a e:kch   / _ a'       +/ [Modal]  _ 1s
+\a e:kche' / _ e        +/ [Modal]  _ 3r
+\a e:kcha'a / _ #       +/ [Modal]  _
+\a e:kcha'  / ~_ #      +/ [Modal]  _
+\a a:kch   / _ a'       +/ ~[C,Inf-or-Modal] _ 1s
+\a a:kche' / _ e        +/ ~[C,Inf-or-Modal] _ 3r
+\a a:kcha'a / _ #        +/ [C,Inf-or-Modal] ~_
+\a a:kcha'  / ~_ #       +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g enojar2
+\m 23
+\mp vi
+\mp class2
+
+\r gakllejla'll
+\_no 00258
+\u a:kchej:la'ch
+\a o:kchej:la'ch          +/ [C-or-Inf] _
+\a e:kchej:la'ch          +/ [Modal]  _
+\a a:kchej:la'ch          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g desesperar
+\m 23
+\mp vi
+\mp class2
+
+\r gakra'll
+\_no 00259
+\u a:kla'ch
+\a o:kla'ch   +/ [C-or-Inf] _
+\a e:kla'ch   +/ [Modal] _
+\a a:kla'ch   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g querer2
+\m 23
+\mp vt
+\mp class2
+
+\r gakren
+\_no 00260
+\u a:klen
+\a o:klen          +/ [C-or-Inf] _
+\a e:klen          +/ [Modal]  _
+\a a:klen          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g ayudar
+\m 23
+\mp vt
+\mp class2
+\noload
+
+\r gaktit
+\_no 00261
+\u a:k:ti:t
+\a o:k:ti:t          +/ [C-or-Inf] _
+\a e:k:ti:t          +/ [Modal]  _
+\a a:k:ti:t          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g brillar
+\m 23
+\mp vi
+\mp class2
+
+\r gakw
+\_no 00262
+\u a:kw
+\a o:k      /  _ o'     +/ [C-or-Inf] _ 2s
+\a o:kw     / ~_ o'     +/ [C-or-Inf] _
+\a e:k      /  _ o'     +/ [Modal]    _ 2s
+\a e:kw     / ~_ o'     +/ [Modal]    _
+\a a:k      /  _ o'     +/ ~[C,Inf-or-Modal] _ 2s
+\a a:kw     / ~_ o'     +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g vestir.vi
+\m 23
+\mp vi
+\mp class2
+
+\r gakxhe'
+\_no 00263
+\u a:kxe'
+\a o:kxe'          +/ [C-or-Inf]  _
+\a e:kxe'          +/ [Modal]  _
+\a a:kxe'          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g envidiar
+\m 23
+\mp vt
+\mp class2
+\mp takes.group.2.pns
+
+\r gakxhen
+\_no 00264
+\u a:kxen
+\a o:kxen          +/ C  _
+\a a:kxen          +/ C ~_
+\c V | VA
+\g mostrar.paciencia
+\m 23
+\mp vt
+\mp class2
+\mp takes.group.2.pns
+
+\r gakxhenra'll
+\_no 00265
+\u a:kxenla'ch
+\a o:kxenla'ch          +/ C  _
+\a a:kxenla'ch          +/ C ~_
+\c V | VA
+\g conformar   |Rev. 2:3
+\m 23
+\mp vi
+\mp class2
+
+\r gakya'ch
+\_no 00266
+\u a:kya':ch
+\a o:kya':ch          +/ [C-or-Inf] _
+\a e:kya':ch          +/ [Modal]  _
+\a a:kya':ch          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g sentir.triste
+\m 23
+\mp vi
+\mp class2
+\mp takes.group.2.pns
+
+\r gakyoll
+\_no 00267
+\u a:kyoch
+\a o:kyoch          +/ [C-or-Inf] _
+\a e:kyoch          +/ [Modal]  _
+\a a:kyoch          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g discutir/pelear
+\m 23
+\mp vi
+\mp class2
+
+\r gal
+\_no 00268
+\u ka:l
+\a ka:l
+\c Adv | Adv
+\g desnudo   | gar yidze'; gar xhanze';  gar yichje'; gar niaze'
+
+\r gal
+\_no 00269
+\u a:l
+\a o:l          +/ [C-or-Inf] _
+\a e:l          +/ [Modal]  _
+\a a:l          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g anochecer
+\m 23
+\mp vi
+\mp class2
+\mp takes.group.2.pns
+
+\r ga'l
+\_no 00270
+\u a':l
+\a o':l          +/ [C-or-Inf] _
+\a e':l          +/ [Modal]  _
+\a a':l          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g colgar/arder/ser.hora.de
+\m 23
+\mp vi
+\mp class2
+\mp takes.kw.Caus
+
+\r gala'll
+\_no 00271
+\u a:lla'ch
+\a o:lla'ch          +/ [C-or-Inf] _
+\a e:lla'ch          +/ [Modal]  _
+\a a:lla'ch          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g olvidar
+\m 23
+\mp vt
+\mp class2
+
+\r galj
+\_no 00272
+\u ka:lj
+\a ka:lj
+\c Prt | PPrt
+\g veinte
+
+\r galj
+\_no 00273
+\u a:lj
+\a o:lj          +/ [C-or-Inf] _
+\a e:lj          +/ [Modal]  _
+\a a:lj          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g desvestir
+\m 23
+\mp vt
+\mp class2
+
+\r gall
+\_no 00274
+\u kach
+\a kach
+\c Num | NumA
+\g siete
+\mp takes.kw.C
+\mp takes.null.P
+
+\r ga'll
+\_no 00275
+\u a'ch
+\a o'ch          +/ [C-or-Inf] _
+\a e'ch          +/ [Modal]  _
+\a a'ch          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g chupar.(absorber)
+\m 23
+\mp vt
+\mp class2
+
+\r galni'n
+\_no 00276
+\u a:lni'n
+\a o:lni'n          +/ [C-or-Inf] _
+\a e:lni'n          +/ [Modal]  _
+\a a:lni'n          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g arder                | take group 2 pns??
+\m 23
+\mp vi
+\mp class2
+
+\r ga'n
+\_no 00277
+\u a'n
+\a o'n          +/ [C-or-Inf] _
+\a e'n          +/ [Modal]  _
+\a a'n          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g arar.vi
+\m 23
+\mp vi
+\mp class2
+
+\r gann
+\_no 00278
+\u ka:n
+\a ka:n
+\c Q | Q
+\g donde
+
+\r ga'nn
+\_no 00279
+\u ka':n
+\a ka':n
+\a ko':n   |alternate spelling?
+\c V | VA
+\g quedar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r ganna'
+\_no 00280
+\u ka:na'
+\a ka:na'
+\c Adv | Adv
+\g allí
+
+\r ganne
+\_no 00281
+\u ka:ne
+\a ka:ne
+\a :ka:ne
+\c Adv | Adv
+\g apenas
+
+\r ganni
+\_no 00282
+\u ka:ni
+\a ka:ni
+\c Adv | Adv
+\g aquí
+
+\r gao
+\_no 00283
+\u ao
+\a ta  under.ao / _ o'        +/  [C-or-Modal] _  2s
+\a takw         / _ [V-hi+cg] +/  [C-or-Modal] _ [1s-or-3r]
+				/ _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a tao                        +/  [C-or-Modal] _
+\a a'   under.ao / _ o'        +/ Pl.pfx _  2s
+\a a'kw          / _ [V-hi+cg] +/ Pl.pfx _ [1s-or-3r]
+				/ _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a a'o                         +/ Pl.pfx  _
+\a a   under.ao / _ o'        +/ ~[C-or-Modal] _  2s
+\a akw          / _ [V-hi+cg] +/ ~[C-or-Modal] _ [1s-or-3r]
+				/ _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a ao                         +/ ~[C-or-Modal] _
+\c V | VA
+\g comer
+\m 26
+\mp vt
+\mp class2
+\mp takes.kw.C.with.Pl.pfx
+
+\r ga'o
+\_no 00284
+\u a'o
+\a e'kw  / _ [V-hi+cg]   +/  [C-or-Modal] _ [1s-or-3r]
+		 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a e'    / _  o          +/  [C-or-Modal] _  2s
+\a e'o                   +/  [C,Inf-or-Modal] _
+\a a'kw  / _ [V-hi+cg]   +/ ~[C-or-Modal] _ [1s-or-3r]
+		 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a a'    / _  o          +/ ~[C-or-Modal] _  2s
+\a a'o                   +/ ~[C-or-Modal] _
+\c V | VA
+\g comprar
+\m 25
+\mp vt
+\mp class2
+
+\r gaora'll
+\_no 00285
+\u aola'ch
+\a taola'ch   +/ [C-or-Modal]  _
+\a  aola'ch   +/ [C-or-Modal] ~_
+\c V | VA
+\g aguantar.(sentimiento)
+\m 26
+\mp vi
+\mp class2
+
+\r gap
+\_no 00286
+\u a:p
+\a ta:p   +/ [C-or-Modal]  _
+\a  o:p   +/         Inf   _
+\a  a:p   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g cuidar
+\m 26
+\mp vt
+\mp class2
+
+\r gapra'll
+\_no 00287
+\u a:pla'ch
+\a o:pla'ch  +/ [C-or-Inf] _
+\a e:pla'ch  +/ [Modal]  _
+\a a:pla'ch  +/ [C-or-Modal] ~_
+\c V | VA
+\g tener.paciencia  |apoc. 12:11
+\m 23
+\mp vi
+\mp class2
+
+\r gar
+\_no 00288
+\u al
+\a ol  +/ [C-or-Inf] _
+\a el  +/ [Modal]  _
+\a al  +/ [C-or-Modal] ~_
+\c V | VA
+\g ser.fuerte
+\m 23
+\mp vi
+\mp class2
+
+\r gar
+\_no 00289
+\u al
+\a ol          +/ [C-or-Inf] _
+\a el          +/ [Modal]  _
+\a al          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g manar.(agua).vi              | take group 2 pns??
+\m 23
+\mp vi
+\mp class2
+|hab's \mp takes.group.2.pns
+
+\r garj
+\_no 00290
+\u alj
+\a olj          +/ [C-or-Inf] _
+\a elj          +/ [Modal]  _
+\a alj          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g nacer
+\m 23
+\mp vi
+\mp class2
+
+\r garjla'll
+\_no 00291
+\u alj:la'ch
+\a olj:la'ch          +/ [C-or-Inf] _
+\a elj:la'ch          +/ [Modal]  _
+\a alj:la'ch          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g venir.a.la.imaginación
+\m 23
+\mp vi
+\mp class2
+
+\r ga's
+\_no 00292
+\u a':s
+\a o':s          +/ [C-or-Inf] _
+\a e':s          +/ [Modal]  _
+\a a':s          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g masticar
+\m 23
+\mp vt
+\mp class2
+
+\r gasj
+\_no 00293
+\u ka:sj
+\a ka:sj
+\c Adj | Adj
+\g negro
+
+\r gaslas
+\_no 00294
+\u a:s:la:s
+\a o:s:la:s          +/ [C-or-Inf] _
+\a e:s:la:s          +/ [Modal]  _
+\a a:s:la:s          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g dispersar
+\m 23
+\mp vi
+\mp class2
+
+\r gat
+\_no 00295
+\u a:t
+\a o:t  +/ [C-or-Inf] _
+\a e:t  +/ [Modal]  _
+\a a':t +/ Pl.pfx _
+\a a:t  +/ [C-or-Modal] ~_
+\c V | VA
+\g morir
+\m 23
+\mp vi
+\mp class2
+\mp takes.kw.C.with.Pl.pfx
+\co Inf either got or wat
+
+\r ga't
+\_no 00296
+\u a':t
+\a  o':t  / k _  +/ C _
+\a te            +/ S _
+\a  e':t         +/ [Modal]  _
+\a  a':t         +/ C ~_
+\c V | VA
+\g acostar.en.el.suelo.vi
+\m 41
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r ga'tbia'
+\_no 00297
+\u a':tpia'
+\a o':tpi  / _ a' / _ e'  +/ [C-or-Inf]    _ [1s-or-3r]
+\a e':tpi  / _ a' / _ e'  +/ [Modal]       _ [1s-or-3r]
+\a a':tpi  / _ a' / _ e'  +/ ~[C-or-Modal] _ [1s-or-3r]
+\a o':tpia'  +/ [C-or-Inf] _ ~[1s-or-3r]
+\a e':tpia'  +/ [Modal]    _ ~[1s-or-3r]
+\a a':tpia'  +/ [C-or-Modal] ~_[1s-or-3r]
+\c V | VA
+\g ser.obvio2  | see also gakbie'
+\m 23
+\mp vi
+\mp class2
+
+\r gatga
+\_no 00298
+\u ka:tka
+\a ka:tka
+\c Prt | Prt
+\g ninguna.parte.hasta
+
+\r gatra'll
+\_no 00299
+\u a:tla'ch
+\a o:tla'ch          +/ [C-or-Inf] _
+\a e:tla'ch          +/ [Modal]  _
+\a a:tla'ch          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g ser.perezoso
+\m 23
+\mp vi
+\mp class2
+
+\r ga'tyoe
+\_no 00300
+\u a':tyoe
+|\a o':tyo  / _ e'   +/ [C-or-Inf]  _ 3r |not needed with takes.group.2 ?
+\a o':tyoe          +/ [C-or-Inf] _
+|\a e':tyo  / _ e'   +/ [Modal]  _ 3r
+\a e':tyoe          +/ [Modal]  _
+|\a a':tyo  / _ e'   +/ ~[C,Inf-or-Modal] _ 3r
+\a a':tyoe          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g rogar
+\m 23
+\mp vt
+\mp class2
+\mp takes.group.2.pns
+
+\r gatzi
+\_no 00301
+\u a:tsi
+\a o:tsi  +/ [C-or-Inf] _
+\a e:tsi  +/ [Modal]  _
+\a a:tsi  +/ [C-or-Modal] ~_
+\c V  | VA
+\g desmayar
+\m 23
+\mp vi
+\mp class2
+
+\r gaxh
+\_no 00302
+\u ax
+\a ox          +/ [C-or-Inf] _
+\a ex          +/ [Modal]  _
+\a ax          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g llamar2
+\m 23
+\mp vt
+\mp class2
+
+\r gaxhj
+\_no 00303
+\u axj
+\a oxj          +/ [C-or-Inf] _
+\a exj          +/ [Modal]  _
+\a axj          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g pagar.(ser.pagado)
+\m 23
+\mp vi
+\mp class2
+
+\r gaxt
+\_no 00304
+\u ka:x:t
+\a ka:x:t
+\c N | N
+\g gasto
+
+\r ga'y
+\_no 00305
+\u ka'y
+\a ka'y
+\c Num | NumA
+\g cinco
+\mp takes.kw.C
+\mp takes.null.P
+
+\r ga'y
+\_no 00306
+\u a'y
+\a o'y          +/ [C-or-Inf] _
+\a e'y          +/ [Modal]  _
+\a a'y          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g permanecer
+\m 23
+\mp vi
+\mp class2
+\mp takes.s.Caus
+
+\r gayoa
+\_no 00307
+\u kayoa
+\a kayoa
+\c Prt | PPrt
+\g cien
+
+\r gaz
+\_no 00308
+\u kas
+\a kas
+\c Adv | Adv
+\g siguiera
+
+\r gaz
+\_no 00309
+\u as
+\a os  +/ [C-or-Inf] _
+\a es  +/ [Modal]  _
+\a as  +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g sembrar
+\m 23
+\mp vt
+\mp class2
+\mp takes.kw.C.with.Pl.pfx
+
+\r gazj
+\_no 00310
+\u asj
+\a osj +/ [C-or-Inf] _
+\a esj +/ [Modal]  _
+\a asj +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g ba¤ar
+\m 23
+\mp vi
+\mp class2
+\mp takes.kw.Caus
+
+\r gden
+\_no 00311
+\u kten
+\a kten
+\c N | N
+\g cadena
+
+\r go'ch
+\_no 00312
+\u o':ch
+\a e':ch   +/ [C,Inf-or-Modal]  _
+\a o':ch   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g lavar.el.pelo
+\m 5
+\mp vi
+\mp class1
+\mp takes.k.Caus
+
+\r go'd
+\_no 00313
+\u ko't
+\a ko't
+\c V | VA
+\g ayuntar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r gol
+\_no 00314
+\u ko:l
+\a ko:l
+\c V | VA
+\g ablandar     | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r gol
+\_no 00315
+\u o:l
+\a e:l     +/ [C,Inf-or-Modal]  _
+\a o:l     +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g cantar
+\m 5
+\mp vi
+\mp class1
+
+\r go'll
+\_no 00316
+\u ko'ch
+\a ko'ch
+\c V | VA
+\g podrir       | takes group 2 pns??
+\m 11
+\mp vi
+\mp class2
+
+\r go'll
+\_no 00317
+\u o'ch
+\a e'ch    +/ [C,Inf-or-Modal]  _
+\a o'ch    +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g orinar
+\m 5
+\mp vi
+\mp class1
+
+\r gollj
+\_no 00318
+\u ochj
+\a ochj / k  _
+\a achj / k ~_
+\c V | VA
+\g endurecer
+\m 24
+\mp vi
+\mp class2
+
+\r gombia'
+\_no 00319
+\u o:mpia'
+\a e:mpi   / _ [V-hi+cg]    +/  [C,Inf-or-Modal] _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a e:mpia'                  +/  [C,Inf-or-Modal] _
+\a o:mpi   / _ [V-hi+cg]    +/ ~[C,Inf-or-Modal] _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a o:mpia'                  +/ ~[C,Inf-or-Modal] _
+\c V | VA
+\g conocer
+\m 5
+\mp vt
+\mp class1
+\mp can.take.group.2.pns
+
+\r gon
+\_no 00320
+\u on
+\a en   +/ [C,Inf-or-Modal]  _
+		+/ [Modal] Rep       _
+\a o'n  +/ Pl.pfx            _
+\a on   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g hacer
+\m 5
+\mp vt
+\mp class1
+\mp can.take.group.2.pns
+
+\r gonbe'y
+\_no 00321
+\u onpe'y
+\a enpe'y          +/ [C,Inf-or-Modal]  _
+\a onpe'y          +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g estorbar
+\m 5
+\mp vi
+\mp class1
+
+\r goncha'o
+\_no 00322
+\u on:cha'o
+\a on:cha'kw  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+			  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a on:cha'   / _ o           +/ _  2s
+\a on:cha'o
+\c V | VA
+\g arreglar/componer
+\m 1
+\mp vt
+\mp class1
+\noload
+
+\r gonchi'
+\_no 00323
+\u on:chi'
+\a en:chi  / _ [V-hi+cg]  +/ [C,Inf-or-Modal]  _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a en:chi'i  /  _ #        +/ [C,Inf-or-Modal]  _
+\a en:chi'   / ~_ #        +/ [C,Inf-or-Modal]  _
+\a on:chi  / _ [V-hi+cg]   +/ ~[C,Inf-or-Modal] _ [1s-or-3r]
+		   / _ [V-hi-cg]p   | where 1s or 3r is followed by 3f or 3a
+\a on:chi'i / _ #          +/ ~[C,Inf-or-Modal] _
+\a on:chi'  / ~_ #         +/ ~[C,Inf-or-Modal] _
+\c V | VA
+\g atender
+\m 5
+\mp vt
+\mp class1
+
+\r gondipra'll
+\_no 00324
+\u onti:pla'ch
+\a enti:pla'ch   +/ [C,Inf-or-Modal]  _
+				 +/ [Modal] Rep       _
+\a onti:pla'ch   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g animar2   | see also tipra'll
+\m 5
+\mp vt
+\mp class1
+
+\r gonditj
+\_no 00325
+\u onti:tje
+\a enti:tje         +/ [C,Inf-or-Modal]  _
+\a onti:tje         +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g malgastar.vt
+\m 5
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r gonla'y
+\_no 00326
+\u on:la'y
+\a en:la'y   +/ [C,Inf-or-Modal]  _
+\a on:la'y   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g bendecir
+\m 5
+\mp vt
+\mp class1
+
+\r gonlira'll
+\_no 00327
+\u on:lila'ch
+\a en:lila'ch   +/ [C,Inf-or-Modal]  _
+\a on:lila'ch   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g creer2
+\m 5
+\mp vt
+\mp class1
+
+\r gonn
+\_no 00328
+\u o:n
+\a e:n   +/ [C,Inf-or-Modal]  _
+\a o:n   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g dar.(a.1.o.2)
+\m 5
+\mp vbt
+\mp class1
+
+\r gonra'll
+\_no 00329
+\u onla'ch
+\a enla'ch         +/ [C,Inf-or-Modal]  _
+\a onla'ch         +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g mentir
+\m 5
+\mp vi
+\mp class1
+
+\r gonre'
+\_no 00330
+\u onle'
+\a enle'          +/  [C,Inf-or-Modal] _
+				  +/ [Modal] Rep       _
+\a onle'          +/ ~[C,Inf-or-Modal] _
+\c V | VA
+\g vacilar
+\m 5
+\mp vt
+\mp class1
+\mp takes.group.2.pns  |Lk 22:31
+
+\r gonreb
+\_no 00331
+\u onlep
+\a enlep           +/ [C,Inf-or-Modal]  _
+\a onlep           +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g comparar
+\m 5
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r gonxhen
+\_no 00332
+\u onxen
+\a enxen   +/ [C,Inf-or-Modal]  _
+		   +/ [Modal] Rep       _
+\a onxen   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g alabar2
+\m 5
+\mp vt
+\mp class1
+
+\r gonxi'o
+\_no 00333
+\u on:xi'o
+\a en:xi'   / _ o'         +/ [C,Inf-or-Modal]  _ 2s
+\a en:xi'kw / _ [V-hi+cg]  +/ [C,Inf-or-Modal] _ [1s-or-3r]
+\a en:xi'o                 +/ [C,Inf-or-Modal]  _
+\a on:xi'   / _ o'         +/ ~[C,Inf-or-Modal] _ 2s
+\a on:xi'kw / _ [V-hi+cg]  +/ ~[C,Inf-or-Modal] _ [1s-or-3r]
+\a on:xi'o                 +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g hacer.maldad
+\m 5
+\mp vi
+\mp class1
+
+\r go'p
+\_no 00334
+\u ko':p
+\a ko':p
+\c N | N
+\g humedad
+
+\r gor
+\_no 00335
+\u kol
+\a kol
+\c Adj | Adj
+\g viejo/mucho
+
+\r gos
+\_no 00336
+\u o:s
+\a e:s     +/ [C,Inf-or-Modal]  _
+\a o:s     +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g esparcir
+\m 5
+\mp vt
+\mp class1
+
+\r gosia'
+\_no 00337
+\u o:sia'
+\a e:si    / _ [V-hi+cg]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+						   +/ [C,Inf-or-Modal]  _ [1s-or-3r]
+						   +/ [Modal] Rep       _ [1s-or-3r]
+\a o:si    / _ [V-hi+cg]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+						   +/ [C,Inf-or-Modal] ~_ [1s-or-3r]
+\a e:sia'   +/ [C,Inf-or-Modal]  _
+			+/ [Modal] Rep       _
+\a o:sia'   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g hacer.gritar
+\m 5
+\mp vt
+\mp class1
+
+\r gosia'
+\_no 00338
+\u o:sia'
+\a e:si     / _ [V-hi+cg]  +/  [C,Inf-or-Modal] _ [1s-or-3r]
+\a e:sia'                  +/  [C,Inf-or-Modal] _
+\a o:si    / _ [V-hi+cg]   +/ ~[C,Inf-or-Modal] _ [1s-or-3r]
+\a o:sia'                  +/ ~[C,Inf-or-Modal] _
+\c V | VA
+\g gritar
+\m 5
+\mp vi
+\mp class1
+
+\r got
+\_no 00339
+\u o:t
+\a e:t   +/ [C,Inf-or-Modal]  _
+\a o':t  +/ Pl.pfx _
+\a o:t   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g moler/matar
+\m 5
+\mp vt
+\mp class1
+
+\r go't
+\_no 00340
+\u o':t
+\a e':t   +/ [C,Inf-or-Modal]  _
+		  +/ [Modal] Rep       _
+\a o':t   +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g vender
+\m 5
+\mp vt
+\mp class1
+
+\r go'x
+\_no 00341
+\u o':x
+\a e':x    +/ [C,Inf-or-Modal]  _
+\a o':x    +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g agarrar
+\m 5
+\mp vt
+\mp class1
+
+\r goxhj
+\_no 00342
+\u oxj
+\a oxj
+\c V | VA
+\g despedazar
+\m 11
+\mp vi
+\mp class2
+\mp takes.x.Caus
+
+\r goxhjkwi'
+\_no 00343
+\u koxjkwi'
+\a koxjkwi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a koxjkwi'
+\c V | VA
+\g estrellar
+\m 11
+\mp vi
+\mp class2
+
+\r gsj
+\_no 00344
+\u k:sj
+\a k:sj
+\c V | VA
+\g ennegrecer.vi                | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r iz
+\_no 00345
+\u is
+\a is
+\c N | N
+\g a¤o
+
+\r jeze
+\_no 00346
+\u jese
+\a jese
+\c Adv | Adv
+\g siquiera
+
+\r ka
+\_no 00347
+\u :ka
+\a :ka
+\c Adv | Adv
+\g como
+
+\r ka
+\_no 00348
+\u :ka
+\a :ka
+\a :ka:t       |could be analyzed as ka-HASTA but having difficulty with this
+\c Adv | Adv
+\g cuando
+
+\r ka'
+\_no 00349
+\u :ka'
+\a :ka'
+\c Det | Det
+\g Pl.Def.nbs
+
+\r ka'
+\_no 00350
+\u :ka'
+\a :ka'
+\c Adv | Adv
+\g así
+
+\r ka'
+\_no 00351
+\u :ka'
+\a t      / _ a'     +/  [C-or-Modal] _ 1s
+\a te'    / _ e      +/  [C-or-Modal] _ 3r
+\a ta'a   / _ #      +/  [C-or-Modal] _
+\a ta'               +/  [C-or-Modal] _
+\a k      / _ a'     +/ ~[C-or-Modal] _ 1s
+\a ke'    / _ e      +/ ~[C-or-Modal] _ 3r
+\a ka'    / _ #      +/ ~[C-or-Modal] _
+\a ka'    / ~_ #     +/ ~[C-or-Modal] _
+\c V | VA
+\g echar.líquido
+\m 18
+\mp vt
+\mp class2
+\mp laryngealizes
+
+\r ka'a
+\_no 00352
+\u :ka'a
+\a :ka'a
+\c Prt | Prt
+\g no
+
+\r kan
+\_no 00353
+\u kan
+\a tan          +/ [C-or-Modal]  _  +/ [Modal] Rep _
+\a kan          +/ [C-or-Modal] ~_
+\c V | VA
+\g tentar/tocar
+\m 18
+\mp vt
+\mp class2
+
+\r kana'
+\_no 00354
+\u :kana'
+\a :kana'
+\c Adv | Adv
+\g antes/entonces
+
+\r kap
+\_no 00355
+\u ka:p
+\a ta:p          +/ [C-or-Modal]  _  +/ [Modal] Rep _
+\a  a:p          +/ Inf           _
+\a ka:p          +/ [C-or-Modal] ~_
+\c V | VA
+\g dar.un.manotazo/tortear
+\m 18
+\mp vt
+\mp class2
+
+\r kbat
+\_no 00356
+\u :kpa:t
+\a :kpa:t
+\c Adv | Adv
+\g nunca
+
+\r ke
+\_no 00357
+\u :ke
+\a :ke
+\c Prt | Prt
+\g neg3
+
+\r ke
+\_no 00358
+\u :ke
+\a :ko   / _ 'o +/ _ 2s
+\a :ko'         +/ _ [Adv] ([Adv]) 2s  |ko'kso', ko'je'o
+\a :kia'        +/ _ [Adv] ([Adv]) 1s  |kia'ksa', kia'je'a
+\a :ki   / _ a' +/ _ 1s
+\a :ke
+\g Gen
+\c N | NP
+\wf possessed
+										| following to prevent more than one
+										| pronoun with the genitive
+\mcc Gen +/ ~_ [Pronoun] [Pronoun]
+
+\r ker
+\_no 00359
+\u :kel
+\a :kel
+\c Adv | Adv
+\g neg2
+
+\r kerke
+\_no 00360
+\u :kel:ke
+\a :kel:ke
+\c Prt | Prt
+\g COMP  |comparison
+
+\r kes
+\_no 00361
+\u :ke:s
+\a :ke:s
+\c Adj | Adj
+\g blanco.como.queso   |could also be loan; collocates with yej (piedra) _
+
+\r ki
+\_no 00362
+\u :ki
+\a :ki
+\c Det | Det
+\g Pl.Def.base
+
+\r ki
+\_no 00363
+\u :ki
+\a :ki
+\c Adv | Adv
+\g de.esta.manera
+
+\r klle'llo
+\_no 00364
+\u :kche'cho
+\a :kche'cho
+\c Adv | Adv
+\g a.fondo
+
+\r kllol
+\_no 00365
+\u :kcho:l
+\a :kcho:l
+\c Prt | PPrt
+\g en.medio
+
+\r ko'
+\_no 00366
+\u ko'
+\a l    /   _ o'          +/ [C-or-Modal] _ 2s
+\a lo   /   _ [V-hi+cg]   +/ [C-or-Modal] _ [1s-or-3r]
+		/   _ [V-hi+cg]   +/ [Modal] Rep _ [1s-or-3r]
+\a lo'                    +/ [C-or-Modal] _
+						  +/ [Modal] Rep _
+\a kw   / [V-hi-cg] _ [V] +/         Rep  _ [1s,2s-or-3r]
+|\a kw   / : _  a'         +/           P  _ 1s
+|\a kwe  / : _ 'e          +/           P  _ 3r
+\a k    / : _ o'          +/           P  _ 2s
+\a ko   /   _ [V-hi+cg]   +/ [H,S,Rep-or-Pl.pfx] _ [1s-or-3r] +/ P  _ [1s-or-3r]
+\a ko'                    +/ [H,S,Rep-or-Pl.pfx] _            +/ P _
+\c V | VA
+\g meter
+\m 19
+\mp vt
+\mp class2
+
+\r kob
+\_no 00367
+\u :kop
+\a :kop
+\c Adj | Adj
+\g nuevo
+
+\r ko'cha'o
+\_no 00368
+\u ko':cha'o
+\a lo':cha'  / _ o          +/ [C-or-Modal] _ 2s
+\a lo':cha'kw / _ [V-hi+cg]  +/ [C-or-Modal] _ [1s-or-3r]
+\a lo':cha'o                +/ [C-or-Modal] _
+\a ko':cha'  / _ o          +/ [H,S-or-Rep] _ 2s         +/ P _ 2s
+\a ko':cha'kw / _ [V-hi+cg]  +/ [H,S-or-Rep] _ [1s-or-3r] +/ P _ [1s-or-3r]
+			  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a ko':cha'o                +/ [H,S-or-Rep] _            +/ P _
+\c V | VA
+\g guardar.vt
+\m 19
+\mp vt
+\mp class2
+\noload
+
+\r ko'll
+\_no 00369
+\u :ko'ch
+\a :ko'ch
+\g espalda.de
+\c N | NP
+\wf possessed
+
+\r kon
+\_no 00370
+\u :kon
+\a :kon
+\c Adv | Adv
+\g solo
+
+\r koxchis
+\_no 00371
+\u :ko:x:chi:s
+\a :ko:x:chi:s
+\c N | N
+\g autoridad
+
+\r ko'yib
+\_no 00372
+\u :ko'yip
+\a :ko'yip
+\c V | VA
+\g esforzarse
+\m 19
+\mp vi
+\mp class2
+
+\r krere
+\_no 00373
+\u :klele
+\a :klele
+\c Adv | Adv
+\g contrario
+
+\r kwa
+\_no 00374
+\u a
+\a e    +/ C _
+\a a    +/ C ~_
+|\a ka  possible Potential form
+\c V | VA
+\g madurar      | may be that this only occurs with 3i singular
+\m 36           | and the root is actually just a/e, not an as hab thought
+\mp vi
+\mp class1
+\mp takes.kw.C
+\mp takes.s.Caus
+\mcc madurar +/ ~_ ... [Non-3i-pronouns]
+
+\r kwa
+\_no 00375
+\u :kwa
+\a :kw   / _ a'   +/ _ 1s
+\a :kwa
+\g masa
+\c N | N
+
+\r kwa'
+\_no 00376
+\u :kwa'
+\a :kw    / _ a'  +/ _ 1s
+\a :kwe'  / _ e'  +/ _ 3r
+\a :kwa'a  / _ #
+\a :kwa'   / ~_ #
+\c V | VA
+\g estibar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r kwabanlÄllej
+\_no 00377
+\u apan:lchej
+\a apan:lchej
+\c V | VA
+\g hablar.en.sue¤os
+\m 1
+\mp vi
+\mp class1
+
+\r kwa'll
+\_no 00378
+\u kwa'ch
+\a kwa'ch / : _  +/           P  _
+\a la'ch         +/ [C-or-Modal] _
+\a pa'ch         +/ [H,S-or-Rep] _
+\c V | VA
+\g dar.un.pu¤etazo
+\m 13
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r kwan
+\_no 00379
+\u kwan
+\a kwan  / : _    +/           P  _
+\a  lan           +/ [C-or-Modal] _
+\a  pan           +/ [H,S,Rep-or-Pl.pfx] _
+\a   an           +/          Inf _
+\c V | VA
+\g robar
+\m 13
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r kwan
+\_no 00380
+\u :kwan
+\a :kwan
+\g planta.de.frijol
+\c N | N
+
+\r kwa'o
+\_no 00381
+\u kwa'o
+\a kwa'    / : _ o'           +/           P  _  2s
+\a kwa'kw  / : _  [V-hi+cg]   +/           P  _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a kwa'o   / : _              +/           P  _
+\a  la'    /   _ o'           +/ [C-or-Modal] _  2s
+\a  la'kw  /   _ [V-hi+cg]    +/ [C-or-Modal] _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  la'o                     +/ [C-or-Modal] _
+\a  pa'    /   _ o'           +/ [H,S-or-Rep] _  2s
+\a  pa'kw  /   _ [V-hi+cg]    +/ [H,S-or-Rep] _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  pa'o                     +/ [H,S-or-Rep] _
+\c V | VA
+\g picotear
+\m 13
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r kwas
+\_no 00382
+\u :kwa:s
+\a :kwa:s
+\c V | V
+\g hacer.a.un.lado.s.Imp  |quitarse de un lugar
+\m 1
+\mp vi
+\mp class1
+\co Singular imperative form of wkwas. Seems to have null prefix instead of
+ regular b-
+
+\r kwasro
+\_no 00383
+\u :kwa:slo
+\a :kwa:slo
+\c Adv | Adv
+\g bien
+
+\r kwe
+\_no 00384
+\u kwe
+\a kwi  / : _ a' +/           P  _ 1s
+\a kwe  / : _    +/           P  _
+\a chi  /   _ a' +/ [C-or-Modal] _ 1s
+\a che           +/ [C-or-Modal] _
+\a  pi  /   _ a' +/ [H,S-or-Rep] _ 1s
+\a  pe  /  ~_ #  +/ [H,S-or-Rep] _
+\a  pé  /   _ #  +/ [H,S-or-Rep] _
+\c V | VA
+\g escoger
+\m 14
+\mp vt
+\mp class2
+
+\r kwe'
+\_no 00385
+\u :kwe'
+\a :kwe'
+\c N | N
+\g grupo/par  |llkwe' waya'  un grupo de dazantes
+
+\r kwe'
+\_no 00386
+\u :kwe'
+\a   kwi  / [labial] _ [V-hi]  +/ Int.P _
+\a   kwe' / [labial] _         +/ Int.P _
+\a :kwi  /          _ a       +/ P _
+\a :kwe'                      +/ P _
+\a  chi  /          _ [V-hi]  +/ S _      +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a  che'                                  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a   pi  /          _ a                   +/  [P] Rep _
+\a   pi  /          _ [V-hi]  +/ H _      +/ ~[P] Rep _
+\a   pe'                      +/ H _      +/ Rep _           +/ Int.C _
+							  +/ Pl.pfx _
+\a  chi'                      +/ S _
+\c V | VA
+\g sentar
+\m 40
+\mp vi
+\mp class2
+\mp takes.null.P
+\mp takes.null.S
+\mp takes.kw.C.with.Pl.pfx
+
+\r kwedi'
+\_no 00387
+\u kweti'
+\a kweti  / _ [V-hi+cg]    +/ P               _ [1s-or-3r]
+\a kweti'                  +/ P               _
+\a  peti  / _ [V-hi+cg]    +/ [H-or-Rep]      _ [1s-or-3r]
+\a  peti'                  +/ [H-or-Rep]      _
+\a cheti  / _ [V-hi+cg]    +/ [C,S-or-Modal]  _ [1s-or-3r]
+\a cheti'                  +/ [C,S-or-Modal]  _
+\c V | VA
+\g amontonar.(personas/animales)
+\m 17
+\mp vi
+\mp class2
+
+\r kwej
+\_no 00388
+\u :k wej
+\a  kwej  / : _      +/           P  _
+\a   lej             +/ [C-or-Modal] _
+					 +/ [Modal] Rep _
+\a   pej             +/ [H,S,Rep-or-Pl.pfx] _
+\a    ej             +/ Inf _
+\c V | VA
+\g sacar
+\m 12
+\mp vt
+\mp class2
+
+\r kwejbia'
+\_no 00389
+\u kwejpia'
+\a kwejpi    / : _ [V-hi+cg]   +/           P  _ [1s-or-3r]
+			 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a kwejpia'  / : _             +/           P  _
+\a  lejpi    /   _ [V-hi+cg]   +/ [C-or-Modal] _ [1s-or-3r]
+			 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  lejpia'                    +/ [C-or-Modal] _
+\a  pejpi    /   _ [V-hi+cg]   +/ [H,S-or-Rep] _ [1s-or-3r]
+			 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  pejpia'                    +/ [H,S-or-Rep] _
+\c V | VA
+\g calcular
+\m 12
+\mp vt
+\mp class2
+
+\r kwejrao
+\_no 00390
+\u kwejlao
+\a kwejla   under.ao  / : _ o'          +/           P  _ 2s
+\a kwejlakw            / : _ [V-hi+cg]   +/           P  _ [1s-or-3r]
+				 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a kwejlao            / : _             +/           P  _
+\a  lejla   under.ao  /   _ o'          +/ [C-or-Modal] _ 2s
+\a  lejlakw            /   _  [V-hi+cg]  +/ [C-or-Modal] _ [1s-or-3r]
+				 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  lejlao                              +/ [C-or-Modal] _
+\a  pejla   under.ao  /   _ o'          +/ [H,S-or-Rep] _ 2s
+\a  pejlakw            /   _  [V-hi+cg]  +/ [H,S-or-Rep] _ [1s-or-3r]
+				 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  pejlao                              +/ [H,S-or-Rep] _
+\c V | VA
+\g adelantar/progresar
+\m 12
+\mp vt
+\mp class2
+
+\r kwejyichj
+\_no 00391
+\u kwejyi:chj
+\a kwejyi:chj
+\a kwejyi:chj  / : _    +/           P  _
+\a  lejyi:chj           +/ [C-or-Modal] _
+\a  pejyi:chj           +/ [H,S-or-Rep] _
+\c V | VA
+\g olvidar.(voluntariamente)
+\m 12
+\mp vt
+\mp class2
+\nolaod  | write separately - kwej yichj
+
+\r kwek
+\_no 00392
+\u kwe:k
+\a kwe:k  / : _    +/           P  _
+\a  le:k           +/ [C-or-Modal] _
+\a  pe:k           +/ [H,S-or-Rep] _
+\c V | VA
+\g asentar.(en.el.suelo)
+\m 13
+\mp vt
+\mp class2
+\mp takes.null.S
+\co e:kw etc OK but we'll use without final w in NT (Lk 6:48)
+
+\r kweklli
+\_no 00393
+\u kwe:kchi
+\a kwe:kchi  / : _    +/           P  _
+\a  le:kchi           +/ [C-or-Modal] _
+\a  pe:kchi           +/ [H,S-or-Rep] _
+\c V | VA
+\g callar.vt
+\m 12
+\mp vt
+\mp class2
+
+\r kwekyichj
+\_no 00394
+\u kwe:kyi:chj
+\a kwe:kyi:chj  / : _    +/           P  _
+\a  le:kyi:chj           +/ [C-or-Modal] _
+\a  pe:kyi:chj           +/ [H,S-or-Rep] _
+\c V | VA
+\g tener presente
+\m 12
+\mp vi
+\mp class2
+\noload
+
+\r kwell
+\_no 00395
+\u :kwech
+\a :kwech
+\a n:kwech
+\c N | N
+\g sordo
+
+\r kwell
+\_no 00396
+\u kwech
+\a kwech  /  : _   +/ P                   _
+\a   ech           +/ Inf                 _
+\a  pech           +/ [H,S,Rep-or-Pl.pfx] _
+\a chech           +/ [C-or-Modal]        _  +/ [Modal] Rep _
+\c V | VA
+\g llorar
+\m 15
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r kwe'lle'o
+\_no 00397
+\u kwe'che'o
+\a kwe'che'kw / : _ [V-hi+cg]  +/           P  _ [1s-or-3r]
+			  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a kwe'che'   / : _  o         +/           P  _  2s
+\a kwe'che'o                  +/           P  _
+\a chi'che'kw /   _ [V-hi+cg]  +/ [C-or-Modal] _ [1s-or-3r]
+			  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a chi'che'   /   _  o         +/ [C-or-Modal] _  2s
+\a chi'che'o                  +/ [C-or-Modal] _
+\a  pe'che'kw /   _ [V-hi+cg]  +/ [H,S,Rep-or-Pl.pfx] _ [1s-or-3r]
+			  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  pe'che'   /   _  o         +/ [H,S,Rep-or-Pl.pfx] _  2s
+\a  pe'che'o                  +/ [H,S,Rep-or-Pl.pfx] _
+\a   e'che'o                  +/ Inf _
+\c V | VA
+\g jalar
+\m 16
+\mp vt
+\mp class2
+
+\r kwe'lli
+\_no 00398
+\u :kwe'chi
+\a   kwe'chi / [labial] _         +/ Int.P _
+\a :kwe'chi                      +/ P _
+\a  che'chi                                  +/ [C-or-Modal] _  +/ [Modal] Rep _
+\a   pe'chi                      +/ H _      +/ Rep _           +/ Int.C _
+							  +/ Pl.pfx _
+\a  chi'chi                      +/ S _
+\c V | VA
+\g callar.vi
+\m 40
+\mp vi
+\mp class2
+\mp takes.null.P
+\mp takes.null.S
+\mp takes.kw.C.with.Pl.pfx
+
+\r kwellra'll
+\_no 00399
+\u kwechla'ch
+\a kwechla'ch  /  : _   +/           P  _
+\a   echla'ch           +/         Inf  _
+\a  pechla'ch           +/           H  _  +/ S _
+\a chechla'ch           +/ [C-or-Modal] _
+\c V | VA
+\g llorar.con.sentimiento
+\m 15
+\mp vi
+\mp class2
+
+\r kwen
+\_no 00400
+\u :kwen
+\a :kwen
+\c Prt | Prt
+\g parte
+
+\r kwen
+\_no 00401
+\u kwen
+\a kwen / : _ +/            P _
+\a en         +/          Inf _ +/ H _
+\a chen       +/ [C-or-Modal] _
+\c V | VA
+\g padecer/vivir.en.rancho
+\m 15 | But Habitual lacks b
+\mp vt
+\mp class2
+
+\r kwen
+\_no 00402
+\u :kwen
+\a    en / ch _ +/ Caus _
+\a  kwen / : _  +/   P  _
+\a   pen        +/   P ~_
+\c V | VA
+\g pintar.(ser.pintado)
+\m 9
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.ch.Caus
+
+\r kwe'nao
+\_no 00403
+\u :kwe'nao
+\a :kwe'na  under.ao / _ o'         +/ P            _ 2s
+\a :kwe'nakw          / _ [V-hi+cg]  +/ P            _ [1s-or-3r]
+				   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a :kwe'nao                         +/ P            _
+\a  che'na  under.ao / _ o'         +/ [C-or-Modal] _ 2s
+									+/ [Modal] Rep  _ 2s
+\a  che'nakw         / _ [V-hi+cg]  +/ [C-or-Modal] _ [1s-or-3r]
+				   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+									+/ [Modal] Rep  _ [1s-or-3r]
+\a  che'nao                         +/ [C-or-Modal] _
+									+/ [Modal] Rep  _
+\a   pe'na  under.ao / _ o'         +/ [H-or-Rep]   _ 2s
+									+/ Int.C        _ 2s
+\a   pe'nakw          / _ [V-hi+cg]  +/ [H-or-Rep]   _ [1s-or-3r]
+					 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+									+/ Int.C        _ [1s-or-3r]
+\a   pe'nao                         +/ [H-or-Rep]   _
+									+/ Int.C        _
+\a  chi'na  under.ao / _ o'         +/ S            _ 2s
+\a  chi'nakw         / _ [V-hi+cg]  +/ S            _ [1s-or-3r]
+					 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  chi'nao                         +/ S            _
+\c V | VA
+\g espiar
+\m 40
+\mp vt
+\mp class2
+\mp takes.null.P
+\mp takes.null.S
+
+\r kwexh
+\_no 00404
+\u kwex
+\a kwex  / : _    +/           P  _
+\a  lex           +/ [C-or-Modal] _
+\a  pex           +/ [H,S-or-Rep] _
+\a kwes  / : _    +/           P  _        |alternate form
+\a  les           +/ [C-or-Modal] _        |    "      "
+\a  pes           +/ [H,S-or-Rep] _        |    "      "
+\c V | VA
+\g esperar
+\m 12
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r kweyi'
+\_no 00405
+\u kweyi'
+\a kweyi  / _ [V-hi+cg]    +/ P               _ [1s-or-3r]
+\a kweyi'                  +/ P               _
+\a  peyi  / _ [V-hi+cg]    +/ [H,S-or-Rep]      _ [1s-or-3r]
+\a  peyi'                  +/ [H,S-or-Rep]      _
+\a cheyi  / _ [V-hi+cg]    +/ [C-or-Modal]  _ [1s-or-3r]
+\a cheyi'                  +/ [C-or-Modal]  _
+
+\a kwiayi  / _ [V-hi+cg]    +/ P               _ [1s-or-3r]
+\a kwiayi'                  +/ P               _
+\a  piayi  / _ [V-hi+cg]    +/ [H-or-Rep]      _ [1s-or-3r]
+\a  piayi'                  +/ [H-or-Rep]      _
+\a chiayi  / _ [V-hi+cg]    +/ [C,S-or-Modal]  _ [1s-or-3r]
+\a chiayi'                  +/ [C,S-or-Modal]  _
+\c V | VA
+\g destruir.vi
+\m 14
+\mp vi
+\mp class2
+\co either root (e or ia) OK
+
+\r kwe'yi'll
+\_no 00406
+\u :kwe'yi'ch
+\a  kwe'yi'ch / : _   +/           P  _
+\a  che'yi'ch         +/ [C-or-Modal] _
+\a   pe'yi'ch         +/ [H,S-or-Rep] _
+\a    e'yi'ch         +/ Inf _
+\c V | VA
+\g ceder.el.paso
+\m 14
+\mp vi
+\mp class2
+
+\r kwia
+\_no 00407
+\u kwia
+\a   i   / ch _ [V-hi+cg]   +/ Caus            _ [1s-or-3r]
+\a   ia  / ch _             +/ Caus            _
+\a   ia  / kw _             +/ Inf             _
+\a kwi   /    _ [V-hi+cg]   +/ P               _ [1s-or-3r]
+\a kwia                     +/ P               _
+\a pi    /    _ [V-hi+cg]   +/ H               _ [1s-or-3r] +/ Rep _ [1s-or-3r]
+\a pia                      +/ H               _            +/ Rep _
+\a chi   /    _ [V-hi+cg]   +/ [C,S-or-Modal]  _ [1s-or-3r]
+\a chia                     +/ [C,S-or-Modal]  _
+\c V | VA
+\g sentar.en.alto
+\m 17
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.ch.Caus
+
+\r kwiacha'
+\_no 00408
+\u kwia:cha'
+\a kwia:ch   / _ a'           +/ P               _ 1s
+\a kwia:che' / _ e            +/ P               _ 3r
+\a kwia:cha' / _ #            +/ P               _
+\a kwia:cha' / ~_ #           +/ P               _
+\a  pia:ch   / _ a'           +/ [H-or-Rep]      _ 1s
+\a  pia:che' / _ e            +/ [H-or-Rep]      _ 3r
+\a  pia:cha' / _ #            +/ [H-or-Rep]      _
+\a  pia:cha' / ~_ #           +/ [H-or-Rep]      _
+\a chia:ch   / _ a'           +/ [C,S-or-Modal]  _ 1s
+\a chia:che' / _ e            +/ [C,S-or-Modal]  _ 3r
+\a chia:cha' / _ #            +/ [C,S-or-Modal]  _
+\a chia:cha' / ~_ #           +/ [C,S-or-Modal]  _
+\c V | VA
+\g sobrecargar
+\m 17
+\mp vi
+\mp class2
+\mp laryngealizes
+\mp takes.null.S
+
+\r kwiarao
+\_no 00409
+\u kwialao
+\a kwiala  under.ao / _ o'         +/ P               _ 2s
+\a kwialakw          / _ [V-hi+cg]  +/ P               _ [1s-or-3r]
+\a kwialao                         +/ P               _
+\a  piala  under.ao / _ o'         +/ [H-or-Rep]      _ 2s
+\a  pialakw          / _ [V-hi+cg]  +/ [H-or-Rep]      _ [1s-or-3r]
+\a  pialao                         +/ [H-or-Rep]      _
+\a chiala  under.ao / _ o'         +/ [C,S-or-Modal]  _ 2s
+\a chialakw          / _ [V-hi+cg]  +/ [C,S-or-Modal]  _ [1s-or-3r]
+\a chialao                         +/ [C,S-or-Modal]  _
+\c V | VA
+\g adelantar
+\m 17
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r kwib
+\_no 00410
+\u kwip
+\a kwip / : _   +/ P _
+\a chip         +/ S _ +/ [C-or-Modal] _
+\a pip          +/ H _ +/ Rep _
+\c V | VA
+\g sacudir/picar
+\m 17
+\mp vt
+\mp class2
+
+\r kwin
+\_no 00411
+\u :kwin
+\a :kwin
+\c N | NP
+\wf possessed
+\g uno.mismo
+
+\r kwir
+\_no 00412
+\u kwil
+\a kwil / : _  +/           P  _
+\a  pil        +/           H  _   +/ Rep _
+\a chil        +/ [C-or-Modal] _   +/   S _
+\c V | VA
+\g resbalar
+\m 17
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r kwis
+\_no 00413
+\u :kwi:s
+\a :kwi:s
+\c Adv | Adv
+\g mucho
+
+\r kwit
+\_no 00414
+\u :kwi:t
+\a :kwi:t
+\c Prt | PPrt
+\g al.lado
+
+\r kwreo
+\_no 00415
+\u :kwleo
+\a :kwleo
+\g tenate
+\c N | N
+
+\r la
+\_no 00416
+\u :la
+\a :la
+\c Adj | Adj
+\g calor
+
+\r la
+\_no 00417
+\u :la
+\a :la
+\c Adv | Adv
+\g luego
+
+\r la'
+\_no 00418
+\u :la'
+\a :la'
+\c V | VA
+\g oler.a
+\m 1  | or 10 Filemon gives w- for Completive)
+\mp vi
+\vp class1
+\mp takes.null.S
+\mp takes.null.P
+
+\r la'
+\_no 00419
+\u :la'
+\a :l    / _ a'  +/ _ 1s
+\a :le'  / _ e'  +/ _ 3r
+\a :la'
+\c V | VA
+\g aflojar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r la'
+\_no 00420
+\u la'
+\a l    / _ a'  +/ _ 1s
+\a le'  / _ e  +/ _ 3r
+\a la'a / _ #
+\a la'  / ~_ #
+\c V | VA
+\g partir
+\m 9
+\mp vi
+\mp class2
+\mp takes.colon.Caus
+
+\r lab
+\_no 00421
+\u :lap
+\a :lap
+\c N | N
+\g planta.de.pie
+
+\r labj
+\_no 00422
+\u lapj
+\a lapj
+\c V | VA
+\g susmergir    | group 2 pns??
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+|hab's \mp takes.group.2.pns
+
+\r la'kse
+\_no 00423
+\u :la':k:se
+\a :la':k:se
+\c Conj | Conj
+\g aunque
+
+\r la'll
+\_no 00424
+\u la'ch
+\a la'ch
+\c V | VA
+\g vagar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r lallibe
+\_no 00425
+\u :lachip
+\a :lachip
+\c Adv | Adv
+\g lo.único  | Mk 12:44
+
+\r lao
+\_no 00426
+\u :lao
+\a :lao
+\c Prep | Prep
+\g en2  | occurs with ya'a "plaza", ba "calor"
+
+\r la'o
+\_no 00427
+\u :la'o
+\a :la'   / _ o'  +/ _ 2s
+\a :la'kw  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :la'o
+\c V | VA
+\g descompletar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r lap
+\_no 00428
+\u la:p
+\a la:p
+\c V | VA
+\g pizcar
+\m 10
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r latj
+\_no 00429
+\u :la:tj
+\a :la:tj
+\c N | NP
+\wf possessed
+\g lugar
+
+\r laxhj
+\_no 00430
+\u :laxj
+\a :laxj
+\c N | NP
+\wf possessed
+\g sueldo1
+
+\r lay
+\_no 00431
+\u :lay
+\a :lay
+\c N | NP
+\wf possessed
+\g diente
+
+\r la'y
+\_no 00432
+\u :la'y
+\a :la'y
+\c V | VA
+\g atravesar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r la'y
+\_no 00433
+\u :la'y
+\a :la'y
+\c N | N
+\g hoja
+
+\r la'y
+\_no 00434
+\u :la'y
+\a :la'y
+\c Adj | Adj
+\g bendito
+
+\r la'y
+\_no 00435
+\u la'y
+\a la'y
+\c V | VA
+\g anchar               | take group 2 pns??
+\m 9
+\mp vi
+\mp class2
+\mp takes.colons.Caus
+
+\r lba
+\_no 00436
+\u :lpa
+\a :lpa
+\c N | N
+\g bejuco
+
+\r lben
+\_no 00437
+\u :lpen
+\a :lpen
+\c Adj | Adj
+\g llano
+
+\r lcho'
+\_no 00438
+\u :l:cho'
+\a :l:ch   / _ o'  +/ _ 2s
+\a :l:cho  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :l:cho'
+\c N | NP
+\wf possessed
+\g pecho
+
+\r lchol
+\_no 00439
+\u :l:cho:l
+\a :l:cho:l
+\c N | N
+\g ciego
+
+\r le
+\_no 00440
+\u :le
+\a :le
+\c Prn | Prn
+\g 3free
+\mcc 3free +/ _             [3pronouns]
+		   +/ _  [Adv]  (&) [3pronouns]
+
+\r le
+\_no 00441
+\u :le
+\a :le
+\c Adv | Adv
+\g muy/mucho
+
+\r le
+\_no 00442
+\u :le
+\a :le
+\c Conj | Conj
+\g porque
+
+\r le'
+\_no 00443
+ \u :le'
+\a :li / _ a' +/ _ 1s
+\a :le'
+\g estomago.de
+\c N | NP
+\wf possessed
+
+\r leak
+\_no 00444
+\u :lea:k
+\a :lea:k
+\c Prn | Prn
+\g 3pfree
+\mcc 3pfree +/ _         (&) [3pronouns]
+			+/ _  [Adv]  (&) [3pronouns]
+
+\r leakba'
+\_no 00445
+\u :lea:kpa'
+\a :lea:kpa'
+\c Prn | Prn
+\g 3a.pl.pn
+
+\r leakbe'
+\_no 00446
+\u :lea:kpe'
+\a :lea:kpe'
+\c Prn | Prn
+\g 3f.pl.pn
+\noload  |see le
+
+\r leake'
+\_no 00447
+\u :lea:ke'
+\a :lea:ke'
+\c Prn | Prn
+\g 3r.pl.pn
+\noload  |see le
+
+\r leaken
+\_no 00448
+\u :lea:ken
+\a :lea:ken
+\c Prn | Prn
+\g 3i.pl.pn
+\noload  |see le
+
+\r leb
+\_no 00449
+\u :lep
+\a :lep
+\c V | VA
+\g hervir.vi            | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r leba'
+\_no 00450
+\u :lepa'
+\a :lepa'
+\c Prn | Prn
+\g 3a.pn
+\noload  |see le
+
+\r lebe'
+\_no 00451
+\u :lepe'
+\a :lepe'
+\c Prn | Prn
+\g 3f.pn
+\noload   |see le
+
+\r le'e
+\_no 00452
+\u :le'e
+\a :le'e
+\c Prn | Prn
+\g 3r.Pn
+\noload  |see le
+
+\r lekse
+\_no 00453
+\u :le:k:se
+\a :le:k:se
+\c Prt | Prt
+\g también2
+
+\r lekw
+\_no 00454
+\u :le:kw
+\a :le:kw
+\g gallo
+\c N | N
+
+\r len
+\_no 00455
+\u :len
+\a :len
+\c V | VA
+\g cargar.con.las.manos
+\m 1
+\mp vt
+\mp class1
+
+\r len
+\_no 00456
+\u :len
+\a :len
+\c Prn | Prn
+\g 3i.pn
+\noload  |see le
+
+\r len
+\_no 00457
+\u len
+\a len
+\c V | VA
+\g asociar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r leo
+\_no 00458
+\u :leo
+\a :leo
+\g jarro
+\c N | N
+
+\r leska'
+\_no 00459
+\u :le:s:ka'
+\a :le:s
+\a :le:s:ka'
+\c Adv | Adv
+\g también
+
+\r lete
+\_no 00460
+\u :le:te
+\a :le:te
+\c Prt | Prt
+\g excepto
+
+\r letek
+\_no 00461
+\u :le:te:k
+\a :le:te:k
+\c Adv | Adv
+\g mas.tarde
+
+\r letj
+\_no 00462
+\u :le:tj
+\a :le:tj
+\c N | N
+\g bajada
+
+\r leze
+\_no 00463
+\u :lese
+\a :lese
+\c Prt | Prt
+\g también3
+
+\r li
+\_no 00464
+\u :li
+\a :li
+\a :licha   |Lk 13:11
+\c Adj | Adj
+\g recto
+
+\r lia'
+\_no 00465
+\u :lia'
+\a :lia'
+\c N | N
+\g patio
+
+\r line
+\_no 00466
+\u :line
+\a :line
+\c Adj | Adj
+\g de.lluvia
+
+\r lixhej
+\_no 00467
+\u :lixej
+\a :lixej
+\c Adv | Adv
+\g derecho
+
+\r lkan
+\_no 00468
+\u :l:kan
+\a :l:kan
+\c Adj | Adj
+\g plano
+
+\r lla
+\_no 00469
+\u cha
+\a cha
+\c Prt | Prt
+\g andale
+
+\r lla
+\_no 00470
+\u cha
+\a cha
+\c N | N
+\g día
+
+\r lla'
+\_no 00471
+\u cha'
+\a ch   / _ a'  +/ _ 1s
+\a che'  / _ e'  +/ _ 3r
+\a cha'a  / _ #
+\a cha'   / ~_ #
+\c V | VA
+\g enojar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r llaban
+\_no 00472
+\u chapan
+\a chapan
+\c Adj | Adj
+\g joven2
+
+\r llakia
+\_no 00473
+\u cha:kia
+\a cha:kia
+\c N | N
+\g ruido
+
+\r llayrao
+\_no 00474
+\u chaylao
+\a chayla  under.ao  / _ o'  +/ _ 2s
+\a chaylakw           / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a chaylao
+\c V | VA
+\g sufrir
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r lle'
+\_no 00475
+\u che'
+\a che'
+\c V | VA
+\g atardecer
+\m 2
+\mp vi
+\mp class2
+\mp takes.null.P
+\mp takes.kw.C
+\mcc atardecer +/ ~_ ... [Pronoun]
+
+\r lle'
+\_no 00476
+\u che'
+\a che'
+\c N | N
+\g tarde
+
+\r lleb
+\_no 00477
+\u chep
+\a chep
+\c V | VA
+\g tener.miedo
+\m 4
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.null.S
+\mcc tener.miedo +/ [Modal] ... ~_
+
+\r llebraz
+\_no 00478
+\u cheplas
+\a cheplas
+\c Adv | Adv
+\g mucho2  | hasta ser peligroso
+
+\r llej
+\_no 00479
+\u chej
+\a chej
+\c V | VA
+\g amarrar              | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r lle'k
+\_no 00480
+\u che':k
+\a che':k
+\c V | VA
+\g doblar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r llekw
+\_no 00481
+\u che:kw
+\a che:kw
+\c V | VA
+\g apedrear.(ser.apedreado)
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r llel
+\_no 00482
+\u che:l
+\a che:l
+\c V | VA
+\g encontrar.vi
+\m 1
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+\mp takes.null.P
+
+\r lle'l
+\_no 00483
+\u che':l
+\a che':l
+\c Adv | Adv
+\g abajo
+
+\r llelÄllib
+\_no 00484
+\u che:lchip
+\a che:lchip
+\c Adj | Adj
+\g liso    | Rev. 2:18
+
+\r llen
+\_no 00485
+\u chen
+\a chen
+\g sangre
+\c N | N
+
+\r lle'n
+\_no 00486
+\u che'n
+\a che'n
+\c Adj | Adj
+\g tierno
+
+\r lle'nn
+\_no 00487
+\u che':n
+\a che':n
+\c V | VA
+\g excavar              | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r llere
+\_no 00488
+\u chele
+\a chele
+\c Adv | Adv
+\g medianoche
+
+\r lli
+\_no 00489
+\u chi
+\a chi
+\c Adv | Adv
+\g callado
+
+\r llich
+\_no 00490
+\u chi:ch
+\a chi:ch
+\c Adj | Adj
+\g blanco
+
+\r llie'
+\_no 00491
+\u chie'
+\a chie'
+\c V | VA
+\g amar
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+\mp can.take.group.2.pns   | for nllie'zre  S-amar-nada.mas-2p, but may
+| cause other problems
+
+\r llilli
+\_no 00492
+\u chichi
+\a chichi
+\c Adv | Adv
+\g en.secreto
+
+\r llin
+\_no 00493
+\u chin
+\a chin
+\c V | VA
+\g llegar.a.otro.lugar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r llin
+\_no 00494
+\u chin
+\a chin
+\g trabajo
+\c N | N
+
+\r lli'o
+\_no 00495
+\u chi'o
+\a chi'o
+\c Prn | Prn
+\g 1pi.pn
+\mcc 1pi.pn +/ ~_ [Pronoun]
+
+\r lliox
+\_no 00496
+\u chio:x
+\a chio:x
+\c N | N
+\g saludo
+
+\r llioxken
+\_no 00497
+\u chio:x:ken
+\a chio:x:ken
+\c Prt | PPrt
+\g gracias
+
+\r llip
+\_no 00498
+\u chi:p
+\a chi:p
+\a chip
+\c V | VA
+\g cortar.(fruta/cabello)       | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r llir
+\_no 00499
+\u chil
+\a chil
+\g comal
+\c N | N
+
+\r llirj
+\_no 00500
+\u chilj
+\a chilj
+\c V | VA
+\g extender             | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r llit
+\_no 00501
+\u chi:t
+\a chi:t
+\g hueso/huevo
+\c N | N
+
+\r lljadi'
+\_no 00502
+\u ti'  | ?only with Modal?
+\a ti'
+\c V | VA
+\g ir.encontrar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+\mcc ir.encontrar +/ [Modal] _
+
+\r lljadinra'll
+\_no 00503
+\u tinla'ch
+\a tinla'ch
+\c V | VA
+\g recordar
+\m 1
+\mp vt
+\mp class1
+\mcc recordar +/ [Go.NB] _
+
+\r l-llejra'll
+\_no 00504
+\u :l-chejla'ch
+\a :l-chejla'ch
+\c N | NP
+\wf possessed
+\g encantado
+
+\r llo'
+\_no 00505
+\u cho'
+\a cho'
+\g toz
+\c N | N
+
+\r lloa'
+\_no 00506
+\u choa'
+\a cho    /   _ [V-hi+cg] +/ _ [1s-or-3r]
+\a choa'
+\g boca.de
+\c N | NP
+\wf possessed
+
+\r lloa'rao
+\_no 00507
+\u choa'lao
+\a choa'la  under.ao  / _ o'         +/ _ 2s
+\a choa'lakw           / _ [V-hi+cg]  +/ _ [1s-or-3r]
+\a choa'lao
+\g cara.de
+\c N | NP
+\wf possessed
+
+\r lloj
+\_no 00508
+\u choj
+\a choj
+\c V | VA
+\g salir.de
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r llok
+\_no 00509
+\u cho:k
+\a cho:k
+\c V | VA
+\g torcer
+\m 2
+\mp vi
+\mp class1
+\mp takes.colon.Caus
+\mp can.take.group.2.pns
+
+\r llom
+\_no 00510
+\u cho:m
+\a cho:m
+\g canasta.2
+\c N | N
+
+\r llox
+\_no 00511
+\u cho:x
+\a cho:x
+\c V | VA
+\g pelar                | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r llra
+\_no 00512
+\u chla
+\a chla
+\c N | N
+\g dolor
+
+\r llyo'
+\_no 00513
+\u chyo'
+\a chyo'
+\c N | N
+\g corredor
+
+\r lmet
+\_no 00514
+\u :l:me:t
+\a :l:me:t
+\c N | N
+\g botella
+
+\r lnni
+\_no 00515
+\u :l:ni
+\a :l:ni
+\c N | N
+\g fiesta
+
+\r lo
+\_no 00516
+\u :lo
+\a :lo
+\c Prt | PPrt
+\g en
+
+\r lotj
+\_no 00517
+\u :lo:tj
+\a :lo:tj
+\c N | N
+\g bache
+
+\r loxhga
+\_no 00518
+\u :loxka
+\a :loxk  / _  a' +/ _ 1s
+\a :loxke / _ 'e  +/ _ 3r
+\a :loxka
+\c N | NP
+\wf possessed
+\g frente
+
+\r lsens
+\_no 00519
+\u :l:sen:s
+\a :l:sen:s
+\c N | N
+\g permiso
+
+\r lwa'
+\_no 00520
+\u :lkwa'
+\a :lkwa'
+\c N | N
+\g imagen
+
+\r lwellj
+\_no 00521
+\u :lkwechj
+\a :lkwechj
+\c N | NP
+\wf possessed
+\g Recip
+
+\r lwit
+\_no 00522
+\u :lkwi:t
+\a :lkwi:t
+\c N | NP
+\wf possessed
+\g costado
+
+\r lyell
+\_no 00523
+\u :lyech
+\a :lyech
+\c Adv | Adv
+\g en.el.pueblo
+
+\r lyi'xe
+\_no 00524
+\u :lyi':xe
+\a :lyi':xe
+\c Adv | Adv
+\g en.el.campo
+
+\r mell
+\_no 00525
+\u :mech
+\a :mech
+\g dinero
+\c N | N
+
+\r mellian
+\_no 00526
+\u :mechian
+\a :mechian
+\c Adj | Adj
+\g sin.valor
+
+\r na'
+\_no 00527
+\u na'
+\a na'
+\c Det | Det
+\g Def.nbs
+
+\r na'
+\_no 00528
+\u na'
+\a na'
+\c Conj | Conj
+\g y
+
+\r na'
+\_no 00529
+\u na'
+\a n    / _ a'  +/ _ 1s
+\a ne'  / _ e  +/ _ 3r
+\a na'a / _ #
+\a na'  / ~_ #
+\g mano/brazo.de
+\c N | NP
+\wf possessed
+
+\r na'ch
+\_no 00530
+\u na':ch
+\a na':ch
+\c Adj | Adj
+\g peque¤o2
+
+\r nad
+\_no 00531
+\u nat
+\a nat
+\c Prn | Prn
+\g 1sfree
+\mcc 1sfree +/ _ ([Adv]) 1s
+
+\r na'll
+\_no 00532
+\u na'ch
+\a na'ch
+\c Conj | Conj
+\g entonces
+
+\r nay
+\_no 00533
+\u nay
+\a nay
+\g oreja.de
+\c N | NP
+\wf possessed
+
+\r nba'nn
+\_no 00534
+\u npa':n
+\a npa':n
+\c Adj | Adj
+\g respetado
+
+\r nbaraz
+\_no 00535
+\u npalas
+\a npalas
+\c Adj | Adj
+\g bonito
+
+\r nbaz
+\_no 00536
+\u npas
+\a npas
+\c N | N
+\g semilla
+
+\r nche'e
+\_no 00537
+\u n:che'e
+\a n:che'e
+\c Adv | Adv
+\g anoche
+
+\r nech
+\_no 00538
+\u ne:ch
+\a ne:ch
+\c Conj | Conj
+\g para.que
+
+\r nell
+\_no 00539
+\u nech
+\a nech
+\c N | N
+\g resina
+
+\r nell
+\_no 00540
+\u nech
+\a nech
+\c Adj | Adj
+\g primero.(adj)
+
+\r nen
+\_no 00541
+\u nen
+\a nen
+\c Prt | Prt
+\g tener.ganas   |expression e.g., bi nen kia';
+| bi nen btas (kia')  bi nen byej;  bi nen bdao (kia')
+
+\r ne's
+\_no 00542
+\u ne':s
+\a ne':s
+\c V | VA
+\g meter.(en.medio.de).vi               | take group 2 pns??
+\m 4
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.null.S
+
+\r neto'
+\_no 00543
+\u ne:to'
+\a ne:t +/ _ [Adv] 1pe
+	  | +/ _ (&) [Adv] 1pe   - this would allow for neteksto'
+\a ne   +/ _ 1pe
+\c Prn | Prn
+\g 1pe.free
+
+\r nez
+\_no 00544
+\u nes
+\a nes
+\g camino
+\c N | N
+
+\r ni
+\_no 00545
+\u ni
+\a ni
+\a nka
+\c Det | Det
+\g Def.base
+
+\r nia'
+\_no 00546
+\u nia'
+\a ni   / _ a' / _ e'  +/ _ [1s-or-3r]
+\a nia'
+\g pie.de
+\c N | NP
+\wf possessed
+
+\r nia'na'
+\_no 00547
+\u nia'na'
+\a nia'n    / _ a'  +/ _ 1s
+\a nia'ne'  / _ e  +/ _ 3r
+\a nia'na'
+\c N | NP
+\wf possessed
+\g pie.mano
+
+\r nis
+\_no 00548
+\u ni:s
+\a  i:s  takes.colonx.Poss  +/ Poss _
+\a ni:s  / # _
+\g agua
+\c N | N
+
+\r nisda'o
+\_no 00549
+\u ni:sta'o
+\a ni:sta'o
+\c N  | N
+\g mar
+
+\r nit
+\_no 00550
+\u ni:t
+\a ni:t
+\c V | VA
+\g perder.vi
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r nna
+\_no 00551
+\u :na
+\a :na
+|\a :ne  |some speakers; but will use nna in NT
+\c Prt | Prt
+\g todavía
+
+\r nna'
+\_no 00552
+\u :na'
+\a :na'
+\c Adv | Adv
+\g hoy
+
+\r nnab
+\_no 00553
+\u :nap
+\a :nap
+\a :náp    | for non-penultimate stress; will not catch mistakes
+\c V | VA
+\g preguntar
+\m 4   |previously 9
+\mp vt
+\mp class1
+\mp takes.null.P
+\mp takes.null.S
+\mp can.take.group.2.pns
+| wnnab (POT) also attested
+
+\r nnabyoll
+\_no 00554
+\u :napyoch
+\a :napyoch
+\c V | VA
+\g indagar
+\m 9
+\mp vt
+\mp class2
+\mp takes.null.P
+\mp takes.null.S
+\mp can.take.group.2.pns
+\noload |see suffix -yoll
+
+\r nnao
+\_no 00555
+\u nao
+\a na  under.ao / _ o'        +/ _ 2s
+\a nakw         / _ [V-hi+cg] +/ _ [1s-or-3r]
+				/ _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a nao
+\c V | VA
+\g seguir
+\m 10
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r nnas
+\_no 00556
+\u :na:s
+\a :na:s
+\c Adv | Adv
+\g antier
+
+\r nnaxte
+\_no 00557
+\u :na:x:te
+\a :na:x:te
+\c Adv | Adv
+\g al.amanecer  | just after bale
+
+\r nne
+\_no 00558
+\u ne
+\a ni / _ a' +/ _ 1s
+\a né / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+			+/ Pl.pfx ... _
+\a ne / # ([C]) _  #
+	   /       _ ~#
+\c V | VA
+\g decir2
+\m 10
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r nne
+\_no 00559
+\u :ne
+\a :ni / _ a' +/ _ 1s
+\a :né / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+			+/ Pl.pfx ... _
+\a :ne / # ([C]) _  #
+	   /       _ ~#
+\c V | VA
+\g hablar
+\m 4   | Has also been analyzed as 9
+\mp vt
+\mp class1 | class2 if analyzed as 9
+\mp takes.null.P
+
+\r nnebia'
+\_no 00560
+\u nepia'
+\a nepi   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+		  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a nepia'
+\c V | VA
+\g gobernar
+\m 10
+\mp vt
+\mp class2
+
+\r nnez
+\_no 00561
+\u :nes
+\a :nes
+\a :nés     | for non-penultimate stress. this will not catch mistakes
+\c V | VA
+\g saber
+\m 4
+\mp vt
+\mp class1  | can also be analyzed as class2
+\mp takes.null.P
+\mp takes.null.S
+\mp takes.group.2.pns
+
+\r nnil
+\_no 00562
+\u :ni:l
+\a   i:l takes.colonx.Poss  +/ Poss _
+\a :ni:l   / # _
+\g nixtamal
+\c N | N
+
+\r nni't
+\_no 00563
+\u ni':t
+\a ni':t
+\c V | VA
+\g estar.regado | take group 2 pns?
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+|hab's \mp takes.group.2.pns
+
+\r nnitrao
+\_no 00564
+\u ni:tlao
+\a ni:tla    under.ao  / _ o'          +/ _ 2s
+\a ni:tlakw            / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a ni:tlao
+\c V | VA
+\g borrar.vi
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r no
+\_no 00565
+\u no
+\a no
+\c Q | Q
+\g quien
+
+\r nollno
+\_no 00566
+\u nochno
+\a nochno
+\c Prt | Prt
+\g nadie.Int
+
+\r nono
+\_no 00567
+\u nono
+\a nono
+\c Prt | Prt
+\g nadie
+
+\r nor
+\_no 00568
+\u nol
+\a nol
+\c Prt | PPrt
+\g quién2
+
+\r no'r
+\_no 00569
+\u no'l
+\a o'l      / x _  +/ Poss _
+\a no'l     / # _
+\g mujer
+\c N | N
+
+\r notno
+\_no 00570
+\u no:tno
+\a no:tno
+\c Prt | Prt
+\g nadie.hasta
+
+\r nxholl
+\_no 00571
+\u nxoch
+\a nxoch
+\c N | N
+\g peligro
+
+\r nya'chraz
+\_no 00572
+\u nya':chlas
+\a nya':chlas
+\c Adv | Adv
+\g triste2
+
+\r okré
+\_no 00573
+\u o:klé
+\a o:klé
+\c N | N
+\g ayuda
+
+\r pa'd
+\_no 00574
+\u pa't
+\a pa't
+\g mecapal
+\c N | N
+
+\r padiox
+\_no 00575
+\u :patio:x
+\a :patio:x
+\c Prt | Prt
+\g saludos
+
+\r pak
+\_no 00576
+\u :pa:k
+\a :pa:k
+\g faja
+\c N | N
+
+\r pep
+\_no 00577
+\u :pe:p
+\a :pe:p
+\c N | N
+\g espuma2   |see also blli'n
+
+\r ra
+\_no 00578
+\u la
+\a le / _ 'e  +/ _ 3r
+\a la
+\c N | NP
+\wf possessed
+\g nombre
+\mp laryngealizes
+
+\r ra
+\_no 00579
+\u la
+\a l  / _ a'  +/ _ 1s
+\a le  / _ e'  +/ _ 3r
+\a la
+\c V | VA
+\g afilar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+\mp laryngealizes
+
+\r ra'
+\_no 00580
+\u la'
+\a l   / _ a' +/ _ 1s
+\a le'  / _ e  +/ _ 3r
+\a la'
+\c V | VA
+\g llegar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r ra'ch
+\_no 00581
+\u la':ch
+\a la':ch
+\c Adj | Adj
+\g llano2
+
+\r radj
+\_no 00582
+\u latj
+\a latj
+\c Prt | PPrt
+\g entre
+
+\r ra'le
+\_no 00583
+\u la':le
+\a la':li  / _ a'  +/ _ 1s
+\a la':le
+\c V | VA
+\g tener.asco
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.group.2.pns
+
+\r rall
+\_no 00584
+\u lach
+\a lach
+\g lugar/pueblo.de
+\c N | NP
+\wf possessed
+
+\r ra'll
+\_no 00585
+\u la'ch
+\a la'ch
+\c N | NP
+\wf possessed
+\g corazón.de2
+
+\r ra'll
+\_no 00586
+\u la'ch
+\a la'ch
+\c N | N
+\g ropa
+
+\r ra'll
+\_no 00587
+\u la'ch
+\a la'ch
+\c V | VA
+\g arrancar     | takes group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r ra'll
+\_no 00588
+\u la'ch
+\a la'ch
+\c V | VA
+\g envolver.vi          | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r ra'llda'o
+\_no 00589
+\u la'chta'o
+\a la'chta'  / _ o'  +/ _ 2s
+\a la'chta'kw / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a la'chta'o
+\c N | NP
+\wf possessed
+\g corazón.de
+
+\r rallna'
+\_no 00590
+\u lachna'
+\a lachn    / _ a'  +/ _ 1s
+\a lachne'  / _ e  +/ _ 3r
+\a lachna'a / _ #
+\a lachna'  / ~_ #
+\c N | NP
+\wf possessed
+\g en.manos.de
+
+\r ra'llÄlloy
+\_no 00591
+\u la'chchoy
+\a la'chchoy
+\c N | N
+\g decidido
+
+\r ran
+\_no 00592
+\u lan
+\a lan
+\c N | NP
+\wf possessed
+\g cimiento
+
+\r ra'n
+\_no 00593
+\u la'n
+\a la'n  / _ a'  +/ _ 1s
+\a :la'n / ~_a'  +/ ~_ 1s
+\c N | NP
+\wf possessed
+\g pantalón
+
+\r rao
+\_no 00594
+\u lao
+\a la  under.ao  / _ o'         +/ _ 2s
+\a lakw           / _ [V-hi+cg]  +/ _ [1s-or-3r]
+				  / _ en         +/ _ & 3i
+\a lao
+\g ojo.de
+\c N | NP
+\wf possessed
+
+\r ra'p
+\_no 00595
+\u la':p
+\a la':p
+\g sombrero
+\c N | N
+
+\r rarj | see wrarj for vt (does not take fortis)
+\_no 00596
+\u lalj
+\a lalj
+\c V | VA
+\g derramar
+\m 9   | or 2
+\mp vi
+\mp class1    |previously anaylyzed as 2, but Potential not fortis
+\mp takes.null.P
+
+\r ras
+\_no 00597
+\u la:s
+\a la:s
+\c N | N
+\g vez
+
+\r ras
+\_no 00598
+\u la:s
+\a la:s
+\c V | VA
+\g adelglazlar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r ra't
+\_no 00599
+\u la':t
+\a la':t
+\c Prt   | formerly Qnt | PPrt   | formerly Qnt
+\g poco
+
+\r rawe
+\_no 00600
+\u lakwe
+\a lakwe
+\c Conj | Conj
+\g mientras2   | also "before" w/o speciying person or thing. Related to rao?
+
+\r raxhj
+\_no 00601
+\u laxj
+\a laxj
+\c N | NP
+\wf possessed
+\g sueldo2
+
+\r ra'y
+\_no 00602
+\u la'y
+\a la'y
+\c Adj | Adj
+\g ancho
+
+\r raz
+\_no 00603
+\u las
+\a las
+\c N | NP
+\wf possessed
+\g lugar.de
+\noload   |see roroz
+
+\r rbes
+\_no 00604
+\u lpe:s
+\a lpe:s
+\c Prt | PPrt
+\g a.la.izquierda
+
+\r re
+\_no 00605
+\u le
+\a le
+\c N | N
+\g óxido
+
+\r re
+\_no 00606
+\u le
+\a le
+\c V | VA
+\g nombrar.iv
+\m 3
+\mp vi
+\mp class1
+\mp takes.null.S
+\mcc nombrar.iv +/ S _   |only takes Stative
+
+\r re'
+\_no 00607
+\u le'
+\a le'
+\c Prn | Prn
+\g 2p.pn
+
+\r re'
+\_no 00608
+\u le'
+\a li  / _ a'  +/ _ 1s
+\a le'
+\c V | VA
+\g estar.rabioso
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp laryngealizes
+
+\r reb
+\_no 00609
+\u lep
+\a lep
+\c Adj | Adj
+\g lo.mismo
+
+\r reb
+\_no 00610
+\u lep
+\a lep
+\c V | VA
+\g hallarse/acostumbrarse
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r rebes
+\_no 00611
+\u lepe:s
+\a lepe:s
+\c Adj | Adj
+\g izquierda
+
+\r re'da'o
+\_no 00612
+\u le'ta'o
+\a le'ta'  / _ o'  +/ _ 2s
+\a le'ta'kw / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a le'ta'o
+\c V | VA
+\g alucinar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.group.2.pns
+
+\r re'e
+\_no 00613
+\u le'
+\a le'e / _ #
+\a le'  / ~_ #
+\c V | VA
+\g ver
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+\mp takes.group.2.pns
+
+\r re'j
+\_no 00614
+\u le'j
+\a le'j
+\c N | N
+\g corral
+
+\r ren
+\_no 00615
+\u len
+\a len
+\c Prt | PPrt
+\g con
+
+\r rencha'
+\_no 00616
+\u len:cha'
+\a len:cha'
+\c Conj | Conj
+\g en.realidad
+
+\r renn
+\_no 00617
+\u le:n
+\a le:n
+\c Prt | PPrt
+\g correcto
+\mp takes.group.2.pns
+
+\r res
+\_no 00618
+\u le:s
+\a le:s
+\c Adv | Adv
+\g extremamente
+
+\r rez
+\_no 00619
+\u les
+\a les
+\c Adv | Adv
+\g cerca/pronto   |zollo rez = bexhllo
+
+\r ria
+\_no 00620
+\u lia
+\a lia
+\c Adj     |will check if works like verb also | Adj     |will check if works like verb also
+\g flojo
+
+\r rill
+\_no 00621
+\u lich
+\a lich
+\g casa.1.de
+\c N | NP
+\wf possessed
+
+\r riz
+\_no 00622
+\u lis
+\a lis
+\c N | N
+\g peque¤o3  : also da'o, na'ch
+
+\r rmell
+\_no 00623
+\u l:mech
+\a l:mech
+\c N | N
+\g medicina
+
+\r roe
+\_no 00624
+\u loe
+\a loe
+\c N | N
+\g raíz
+
+\r roe'
+\_no 00625
+\u loe'
+\a loe'
+\c N | N
+\g prohibir.crecer  | Mk 4:7
+
+\r roll
+\_no 00626
+\u loch
+\a loch
+\c N | NP
+\wf possessed
+\g lengua
+
+\r roraz
+\_no 00627
+\u lolas
+\a lolas
+\c N | NP
+\wf possessed
+\g en.lugar.de
+
+\r rwe'
+\_no 00628
+\u lkwe'
+\a lkwe'
+\c Prn | Prn
+\g 2s.pn
+\mcc 2s.pn +/ ~_ ... [Non-2s-pronouns]
+\mcc 2s.pn +/ ~_ 2s
+
+\r sa'
+\_no 00629
+\u sa'
+\a s   / _ a'  +/ _ 1s
+\a se' / _ [V-hi-cg]   +/ _ [1s-or-3r]
+\a sa'a / _ #
+\a sa'  / ~_ #
+\c V | VA
+\g ir/salir/caminar   | caminar formerly separate record
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp laryngealizes
+
+\r sa'k
+\_no 00630
+\u sa':k
+\a xa':k    +/ [C,Inf-or-Modal]  _
+\a sa':k    +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g poder2 |also means tener valor (value); with group 2 pns connotation of
+trying
+\m 20
+\mp vt
+\mp class2
+\mp can.take.group.2.pns
+\mp takes.null.S
+
+\r sa'kzi'
+\_no 00631
+\u sa':ksi'
+\a xa':ksi  / _ [V-hi+cg] +/  [C-or-Modal] _ [1s-or-3r]
+\a xa':ksi'               +/  [C-or-Modal] _
+\a sa':ksi  / _ [V-hi+cg] +/ ~[C-or-Modal] _ [1s-or-3r]
+\a sa':ksi'               +/ ~[C-or-Modal] _
+\c V | VA
+\g castigar.(ser.castigado)
+\m 20
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r san
+\_no 00632
+\u san
+\a xan    +/ [C,Inf-or-Modal]  _
+\a san    +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g dar.a.luz
+\m 20
+\mp vt
+\mp class2
+
+\r sa'ra'll
+\_no 00633
+\u sa'la'ch
+\a sa'la'ch
+\c V | VA
+\g sospechar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\co see also recordar2 wasa'ra'll
+
+\r scha
+\_no 00634
+\u :s:cha
+\a :s:cha
+\c Adv | Adv
+\g largo.tiempo
+
+\r se
+\_no 00635
+\u se
+\a si / _ a' +/ _ 1s
+\a sé / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+			+/ Plural.S ... _
+\a se / # ([C]) _  #
+	  /         _ ~#
+\c V | VA
+\g parar.vi1
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r sella
+\_no 00636
+\u secha
+\a sech   / _ a'  +/ _ 1s
+\a seche   / _ e'  +/ _ 3r
+\a secha
+\c V | VA
+\g parar.vi2 | Is -cha really part of root or is it an Adv?
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r sella'
+\_no 00637
+\u secha'
+\a sech    / _ a'  +/ _ 1s
+\a seche'  / _ e'  +/ _ 3r
+\a secha'a / _ #
+\a secha'  / ~_ #
+\c V | VA
+\g parar.vi3  |see also se, sella
+\m 1
+\mp vi
+\mp class1
+
+\r sen
+\_no 00638
+\u sen
+\a xen    +/ [C,Inf-or-Modal]  _
+\a sen    +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g cazar
+\m 20
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r sera'll
+\_no 00639
+\u sela'ch
+\a sela'ch
+\c V | VA
+\g desear
+\m 10
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r sete
+\_no 00640
+\u :se:te
+\a :se:te
+\c Adv | Adv
+\g rápido
+
+\r si'
+\_no 00641
+\u si'
+\a xi  / _ [V-hi+cg] +/  [C-or-Modal] _ [1s-or-3r]
+					 +/  [Modal] Rep _
+\a xi'i / _ #        +/  [C-or-Modal] _
+					 +/  [Modal] Rep _
+\a xi'  / ~_ #       +/  [C-or-Modal] _
+					 +/  [Modal] Rep _
+\a si  / _ [V-hi+cg] +/ ~[C-or-Modal] _ [1s-or-3r]
+\a si'i / _ #        +/ ~[C-or-Modal] _
+\a si'  / ~_ #       +/ ~[C-or-Modal] _
+\c V | VA
+\g coger
+\m 20
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r si'
+\_no 00642
+\u si'
+\a xi  / _ [V-hi+cg] +/  [C-or-Modal] _ [1s-or-3r]
+					 +/  [Modal] Rep _
+\a xi'i / _ #        +/  [C-or-Modal] _
+					 +/  [Modal] Rep _
+\a xi'  / ~_ #       +/  [C-or-Modal] _
+					 +/  [Modal] Rep _
+\a si  / _ [V-hi+cg] +/ ~[C-or-Modal] _ [1s-or-3r]
+\a si'i / _ #        +/ ~[C-or-Modal] _
+\a si'  / ~_ #       +/ ~[C-or-Modal] _
+\c V | VA
+\g poner.nombre.vi
+\m 20
+\mp vi
+\mp class2
+\mp takes.colon.Caus
+
+\r sia
+\_no 00643
+\u :sia
+\a :sia
+\c Adj | Adj
+\g sabroso
+
+\r sib
+\_no 00644
+\u :sip
+\a :sip
+\c Adv | Adv
+\g en.alto
+
+\r sibia
+\_no 00645
+\u sipia
+\a xipi  / _ [V-hi+cg] +/  [C-or-Modal] _ [1s-or-3r]
+\a xipia               +/  [C-or-Modal] _
+\a sipi  / _ [V-hi+cg] +/ ~[C-or-Modal] _ [1s-or-3r]
+\a sipia               +/ ~[C-or-Modal] _
+\c V | VA
+\g durar
+\m 20
+\mp vi
+\mp class2
+
+\r si'chi'll
+\_no 00646
+\u si':chi'ch
+\a si':chi'ch
+\c V | VA
+\g insultar
+\m 20
+\mp vt
+\mp class2
+\mp takes.null.S
+\co zechi'll, bxhiachi'll NOT correct (Filemon 2-97), Lk 21:12 should be
+|   si'chi'll
+
+\r sill
+\_no 00647
+\u sich
+\a sich
+\c V | VA
+\g sonar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r si'n
+\_no 00648
+\u :si'n
+\a :si'n
+\c Adj | Adj
+\g sabio
+
+\r sinnj
+\_no 00649
+\u si:nj
+\a xi:nj    +/ [C,Inf-or-Modal]  _
+\a si:nj    +/ [C,Inf-or-Modal] ~_
+\c V | VA
+\g desmoronar
+\m 20
+\mp vt
+\mp class2
+\mp takes.null.H
+
+\r si'xhen
+\_no 00650
+\u si'xen
+\a xi'xen               +/  [C-or-Modal] _
+\a si'xen               +/ ~[C-or-Modal] _
+\c V | VA
+\g perdonar
+\m 20
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r siye'
+\_no 00651
+\u siye'
+\a xiyi   / _ a'        +/  [C-or-Modal] _ 1s
+\a xiye'                +/  [C,Inf-or-Modal] _
+\a siyi   / _ a'        +/ ~[C,Inf-or-Modal] _ 1s
+\a siye'                +/ ~[C,Inf-or-Modal] _
+\a siye'
+\c V | VA
+\g enga¤ar
+\m 20
+\mp vt
+\mp takes.null.S
+\mp class2
+
+\r slloa'
+\_no 00652
+\u :schoa'
+\a :schoa'
+\c Adv | Adv
+\g boca.abajo
+
+\r so
+\_no 00653
+\u so
+\a s  / _ o' +/ _ 2s
+\a só / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+			+/ Pl.pfx ... _
+			+/ Plural.S ... _
+\a so / # ([C]) _  #
+	  /       _ ~#
+\c V | VA
+\g estar.parado
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r so
+\_no 00654
+\u so
+\a s  / _ o'  +/ _ 2s
+\a só / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+			+/ Pl.pfx ... _
+\a so / # ([C]) _  #
+	  /         _ ~#
+\c V | VA
+\g volar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r sobe'
+\_no 00655
+\u sope'
+\a sopi  / _ a'  +/ _ 1s
+\a sope'
+\c V | VA
+\g resistir.1
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r soe
+\_no 00656
+\u soe
+\a soe
+\c V | VA
+\g aguantar
+\m 9  |  formerly analyzed as m 1
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.group.2.pns
+
+\r soll
+\_no 00657
+\u soch
+\a soch
+\c V | VA
+\g emborrachar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r solla'
+\_no 00658
+\u socha'
+\a soch   / _ a'   +/ _ 1s
+\a soche' / _ e    +/ _ 3r
+\a socha'a / _ #
+\a socha'  / ~_ #
+\c V | VA
+\g parar.vi4
+\m 10
+\mp class2
+\mp takes.null.S
+\co see also se, sella, sella' so, chas, wazolla'
+
+\r sorao
+\_no 00659
+\u solao
+\a sola   under.ao  / _ o'  +/ _ 2s
+\a solakw           / _ [V-hi+cg]   +/ _ [1s-or-3r]
+					/ _ en          +/ _ & 3i
+\a solao
+\c V | VA
+\g empezar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r soya'n
+\_no 00660
+\u soya'n
+\a soya'n
+\c V | VA
+\g amontonar (cosas)
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r soyib
+\_no 00661
+\u soyip
+\a soyip
+\c V | VA
+\g resistir.2
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r ta
+\_no 00662
+\u ta
+\a t  / _  a' +/ _ 1s
+\a te / _ 'e  +/ _ 3r
+\a tá / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+			+/ Pl.pfx ... _
+\a ta / # ([C]) _  #
+	  /       _ ~#
+\c V | VA
+\g andar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp laryngealizes
+
+\r ta'a
+\_no 00663
+\u ta'
+\a t    / _ a' +/ _ 1s
+\a te   / _ 'e  +/ _ 3r
+\a ta'a / _ #
+\a ta'  / ~_ #
+\c V | VA
+\g pegar.vi   | (previously: amarrar.(un.animal), see wda' for Caus.
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r ta'ba'y
+\_no 00664
+\u ta'pa'y
+\a ta'pa'y
+\c V | VA
+\g atrever |? Lk 11:46
+\m 10
+\mp vi
+\mp class2
+
+\r tach
+\_no 00665
+\u ta:ch
+\a ta:ch
+\c V | VA
+\g vaciar
+\m 9
+\mp vi
+\mp class2
+\mp takes.colon.Caus
+\mp can.take.group.2.pns
+
+\r ta'k
+\_no 00666
+\u :ta':k
+\a :ta':k
+\g mano.de
+\c N | NP
+\wf possessed
+
+\r ta'o
+\_no 00667
+\u ta'o
+\a ta'kw  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+			/ _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a ta'   / _ o           +/ _  2s
+\a ta'o
+\c V | VA
+\g ser.vendido
+\m 9
+\mp vi
+\mp class2
+
+\r tap
+\_no 00668
+\u ta:p
+\a ta:p
+\c Num | NumA
+\g cuatro
+\mp class2
+\mp takes.kw.C
+\mp takes.null.S
+
+\r tapralj
+\_no 00669
+\u :ta:pla:lj
+\a :ta:pla:lj
+\c Prt | PPrt
+\g ochenta
+
+\r tas
+\_no 00670
+\u :ta:s
+\a :ta:s
+\c V | VA
+\g dormir
+\m 4
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.null.S
+
+\r tawxhi'nn
+\_no 00671
+\u :takwxi':n
+\a :takwxi':n
+\c N | NP
+\wf possessed
+\g nuera
+
+\r tbas
+\_no 00672
+\u :tpa:s
+\a :tpa:s
+\c N | N
+\g un.vaso
+
+\r tde'j
+\_no 00673
+\u :tte'j
+\a :tte'j
+\c Adv | Adv
+\g poco.profundo.2  | e.g., shirt without undershirt
+
+\r te
+\_no 00674
+\u te
+\a ti  / _ [V-hi+cg] +/ _ [1s-or-3r]
+\a te
+\c V | VA
+\g pasar.vi
+\m 10
+\mp vt
+\mp class2
+\mp takes.null.S
+
+\r tegar
+\_no 00675
+\u :tekal
+\a :tekal
+\c Adj | Adj
+\g pretencioso   |Lk 16:15
+
+\r ti'
+\_no 00676
+\u :ti'
+\a :ti'
+\c V | VA
+\g encontrar.Modal
+\m 1
+\mp vt
+\mp class1
+\mp can.take.group.2.pns
+\mcc encontrar.Modal +/ [Go.NB] _
+
+\r ti'ch
+\_no 00677
+\u :ti':ch
+\a :ti':ch
+\c Adj | Adj
+\g unico
+
+\r til
+\_no 00678
+\u ti:l
+\a ti:l
+\c V | VA
+\g pelear
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r ti'l
+\_no 00679
+\u :ti':l
+\a :ti':l
+\c N | N
+\g azucena   |tipo de flor
+
+\r ti'll
+\_no 00680
+\u ti'ch
+\a ti'ch
+\g palabra
+\c N | N
+
+\r tipra'll
+\_no 00681
+\u ti:pla'ch
+\a ti:pla'ch
+\c V | VA
+\g animar
+\m 9
+\mp vt
+\mp class2
+
+\r tit
+\_no 00682
+\u ti:t
+\a ti:t
+\c V | VA
+\g dar.comezón
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r tlla
+\_no 00683
+\u :tcha
+\a :tcha
+\c Adv | Adv
+\g un.dia
+
+\r tlle'l
+\_no 00684
+\u :tche':l
+\a :tche':l
+\c Adv | Adv
+\g de.noche  | por la tarde
+
+\r tnez
+\_no 00685
+\u :tnes
+\a :tnes
+\c Adv | Adv
+\g en.el.camino
+
+\r to
+\_no 00686
+\u :to
+\a :to
+\c Prt | PPrt
+\g uno
+
+\r tol
+\_no 00687
+\u to:l
+\a to:l
+\c V | VA
+\g rodar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r ton
+\_no 00688
+\u :ton
+\a :ton
+\c Adj | Adj
+\g largo
+
+\r ton
+\_no 00689
+\u ton
+\a ton
+\c V | VA
+\g alargar
+\m 9
+\mp vi
+\mp class2
+\mp takes.colons.Caus
+
+\r ton
+\_no 00690
+\u ton
+\a ton
+\c V | VA
+\g tener.hambre
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r top
+\_no 00691
+\u to:p
+\a to:p
+\c V | VA
+\g embarrar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r tore
+\_no 00692
+\u :tole
+\a :tole
+\c Adv | Adv
+\g atarantado | occurse as phrase gakello tore
+
+\r to'se
+\_no 00693
+\u to':se
+\a to':si  / _ a'  +/ _ 1s
+\a to':se
+\c V | VA
+\g embrocar     | does this take group 2 pns??
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r toto
+\_no 00694
+\u :to:to
+\a :to:to
+\c Prt | PPrt
+\g cada
+
+\r twarj
+\_no 00695
+\u :tkwalj
+\a :tkwalj
+\c Prt | PPrt
+\g diecinueve
+
+\r twej
+\_no 00696
+\u :tkwej
+\a :tkwej
+\c Adv | Adv
+\g uno.por.uno
+
+\r twiz
+\_no 00697
+\u :tkwis
+\a :tkwis
+\c Adv | Adv
+\g un.a¤o
+
+\r txhen
+\_no 00698
+\u :txen
+\a :txen
+\c N | N
+\g unión
+
+\r txhi'y
+\_no 00699
+\u :txi'y
+\a :txi'y
+\c N | N
+\g una.jícara
+
+\r txhonnj
+\_no 00700
+\u :txo:nj
+\a :txo:nj
+\c N | N
+\g grupo
+
+\r Tzir
+\_no 00701
+\u :tsil
+\a :tsil
+\c Adv | Adv
+\g en.la.ma¤ana
+
+\r wa
+\_no 00702
+\u kwa
+\a kwa
+\c Adv | Adv
+\g muy/mucho2
+
+\r wa'
+\_no 00703
+\u oa'
+\a a    / kw _ '         +/ P            _ [1s-or-3r]
+\a o    / k _ '          +/ P            _ 2s
+\a e    / kw _ 'e        +/ P            _ 3r
+\a a'a  /   _ #          +/ P            _
+\a a'   /   _ [C]        +/ P            _
+\a kw    /   _ a'        +/ [Modal]      _ 1s
+\a kwe'  /   _ e         +/ [Modal]      _ 3r
+\a kwa'a /   _ #         +/ [Modal]      _
+\a kwa'  /  ~_ #         +/ [Modal]      _
+\a i    /   _ [V-hi+cg]  +/ C            _ [1s-or-3r]
+\a ia'                   +/ C            _
+\a o    /   _ [V-hi+cg]  +/ [H,S-or-Rep] _ [1s-or-3r]
+\a oa'                   +/ [H,S-or-Rep] _
+\c V | VA
+\g cargar
+\m 7
+\mp vt
+\mp class1
+\mp under.o
+\mp laryngealizes
+
+\r wa'a
+\_no 00704
+\u kwa'a
+\a kwa'a
+\c N | N
+\g flujo.de.sangre
+
+\r wabe'
+\_no 00705
+\u pe'
+\a pe'
+\c V | VA
+\g encoger
+\m 1
+\mp vi
+\mp class1
+\mcc encoger +/ Rep _
+
+\r wabi'
+\_no 00706
+\u api'
+\a api  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a api'
+\c V | VA
+\g regresar.vi
+\m 1
+\mp vi
+\mp class1
+
+\r wabill
+\_no 00707
+\u pich
+\a pich
+\c V | VA
+\g acabar.líquido
+\m 1
+\mp vi
+\mp class1
+\mp takes.colons.Caus
+\mcc acabar.líquido +/ Rep _
+
+\r wabi'ra'll
+\_no 00708
+\u api'la'ch
+\a api'la'ch   / kw _  +/ P _
+\a epi'la'ch   / y  _  +/ P _
+\a api'la'ch
+\c V | VA
+\g regresar.corazón
+\m 1
+\mp vi
+\mp class1
+
+\r wacha'
+\_no 00709
+\u a:cha'
+\a a:ch    / _ a'  +/ _ 1s
+\a a:che'  / _ e   +/ _ 3r
+\a a:cha'a /  _ #
+\a a:cha'  / ~_ #
+\c V | VA
+\g calentar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wachix
+\_no 00710
+\u a:chi:x
+\a a:chi:x
+\c V | VA
+\g revolver
+\m 1
+\mp vt
+\mp class1
+
+\r wado
+\_no 00711
+\u to
+\a tó  / _ #    +/ [Modal] ... _
+				+/ Rep ...     _
+				+/ [Imperatives] ... _
+\a to / # [C] _  #
+	  /       _ ~#
+\c V | VA
+\g acabar.algo.entero
+\m 1
+\mp vi
+\mp class1
+\mp takes.colons.Caus
+\mcc acabar.algo.entero +/ Rep _  +/ Rep Caus _
+
+\r wadora'll
+\_no 00712
+\u atola'ch
+\a atola'ch
+\c V | VA
+\g cansar
+\m 1
+\mp vi
+\mp class1
+
+\r waka'
+\_no 00713
+\u :ka'
+\a :k    / _ a'  +/ _ 1s
+\a :ke'  / _ e   +/ _ 3r
+\a :ka'
+\c V | VA
+\g quitar.vt
+\m 1
+\mp vt
+\mp class1
+\mp laryngealizes
+\noload |see wga'
+
+\r wakob
+\_no 00714
+\u :kop
+\a :kop
+\c V | VA
+\g renovar
+\m 1
+\mp vt
+\mp class1
+\mcc renovar +/ Rep _
+
+\r wakse
+\_no 00715
+\u kwa:k:se
+\a kwa:k:se
+\c Prt | Prt
+\g se.puede
+
+\r wakw
+\_no 00716
+\u kwa:kw
+\a kwa:kw
+\c V | VA
+\g vestir.vt
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+
+\r walan
+\_no 00717
+\u a:lan
+\a a:lan
+\c V | VA
+\g desaparecer.vt       | is this rep + Caus + desparecer.vi??
+\m 1
+\mp vt
+\mp class1
+
+\r wala'o
+\_no 00718
+\u kwa:la'o
+\a ksa:la'o
+\c N | N
+\g gusano
+
+\r walechj
+\_no 00719
+\u a:le:chj
+\a a:le:chj
+\c V | VA
+\g sacar/desatorar
+\m 1
+\mp vt
+\mp class1
+
+\r walje
+\_no 00720
+\u a:lje
+\a a:lje   / kw _  +/ P _
+\c V | VA
+\g olvidar2   |disregard
+\m 1
+\mp vt
+\mp class1
+
+\r wa'll
+\_no 00721
+\u kwa'ch
+\a kwa'ch
+\c V | VA
+\g mamar
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+
+\r walla'
+\_no 00722
+\u cha'       | normally (always?) in Repetitive form
+\a ch    / _ a'  +/ _ 1s
+\a che'  / _ e   +/ _ 3r
+\a cha'a / _ #
+\a cha'  / ~_ #
+\c V | VA
+\g cambiar
+\m 1
+\mp vi
+\mp class1
+\mp takes.colon.Caus
+\mp laryngealizes
+
+\r walla'
+\_no 00723
+\u acha'
+\a ach   / _ a'  +/ _ 1s
+\a ache'  / _ e'  +/ _ 3r
+\a acha'
+\c V | VA
+\g llenar.vi    | what is the relation between this and llenar.vt??
+\m 1
+\mp vi
+\mp class1
+
+\r walla'a
+\_no 00724
+\u kwacha'a
+\a kwacha'a
+\c N | N
+\g brujo  | normally occurs with be'nn _
+
+\r wallalljo
+\_no 00725
+\u kwachajcho
+\a kwachajcho
+\a wchajcho
+\c Adj | Adj
+\g hermoso
+
+\r walli'
+\_no 00726
+\u chi'
+\a chi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+		/ _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a chi'i / _ #
+\a chi'  / ~_ #
+\c V | VA
+\g contestar
+\m 1
+\mp vt
+\mp class1
+\mcc contestar +/ Rep _
+
+\r wallix
+\_no 00727
+\u achi:x
+\a achi:x
+\c V | VA
+\g poner.al.revés
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r walwill
+\_no 00728
+\u a:lkwich
+\a e:lkwich   / y  _  +/ P _
+\a a:lkwich
+\c V | VA
+\g llamar
+\m 1
+\mp vt
+\mp class1
+
+\r wa'nn
+\_no 00729
+\u kwa':n
+\a kwa':n
+\c V | VA
+\g arar.vt
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+
+\r wao
+\_no 00730
+\u kwao
+\a kwa  under.ao  / _ o'  +/ _ 2s
+\a kwakw          / _ [V-hi+cg]   +/ _ [1s-or-3r]
+				  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a kwao
+\c V | VA
+\g dar.de.comer
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+
+\r wap
+\_no 00731
+\u kwa:p
+\a kwa:p
+\c V | VA
+\g saludar   | occurs with lliox
+\m 1  |but no Stative form
+\mp vt
+\mp class1
+\mp takes.null.P
+
+\r war
+\_no 00732
+\u kwal
+\a kwal
+\c Adj | Adj
+\g poderoso
+
+\r wara
+\_no 00733
+\u la
+\a l   / _  a'  +/  _ 1s
+\a le  / _ 'e   +/  _ 3r
+\a lá  / _ #    +/ [Modal] ... _
+				+/ Rep ...     _
+				+/ [Imperatives] ... _
+\a la / # [C] _  #
+	  /       _ ~#
+\c V | VA
+\g salvar
+\m 1
+\mp vi
+\mp class1
+\mp laryngealizes
+\mp takes.colons.Caus
+\mcc salvar +/ Rep _  +/ Caus _
+
+\r wara'
+\_no 00734
+\u ala'
+\a al    / _ a'  +/ _ 1s
+\a ale'  / _ e   +/ _ 3r
+\a ala'
+\c V | VA
+\g calentar.vi
+\m 1
+\mp vi
+\mp class1
+
+\r waral
+\_no 00735
+\u la:l
+\a la:l
+\c V | VA
+\g ser.activo
+\m 1
+\mp vi
+\mp class2
+\mp can.take.group.2.pns
+\mcc ser.activo +/ Rep _
+
+\r waran
+\_no 00736
+\u lan
+\a lan
+\c V | VA
+\g desaparecer.vi
+\m 1
+\mp vi
+\mp class1
+\mcc desaparecer.vi +/ Rep _
+
+\r was
+\_no 00737
+\u kwa:s
+\a kwa:s
+\c N | N
+\g ayuno
+
+\r wasa'ra'll
+\_no 00738
+\u :sa'la'ch
+\a :sa'la'ch
+\c V | VA
+\g recordar2
+\m 1
+\mp vt
+\mp class1
+\co normally occurs with Rep or Modal (Go.NB), see also sospechar sa'ra'll
+
+\r wasbi'
+\_no 00739
+\u a:spi'
+\a a:spi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+		  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a a:sbi'i / _ #
+\a a:spi'  / ~_#
+\c V | VA
+\g regresar.vt  | relation of this to regresar.vi??
+\m 1
+\mp vt
+\mp class1
+
+\r wasgor
+\_no 00740
+\u a:skol
+\a a:skol
+\c V | VA
+\g criar
+\m 1
+\mp vt
+\mp class1
+
+\r waslla'
+\_no 00741
+\u a:scha'
+\a a:sch    / _ a'  +/ _ 1s
+\a a:sche'  / _ e'  +/ _ 3r
+\a a:scha'
+\c V | VA
+\g llenar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wasolla'
+\_no 00742
+\u :socha'
+\a :soch    / _ a'  +/ _ 1s
+\a :soche'  / _ e  +/ _ 3r
+\a :socha'
+\c V | VA
+\g hacer.para.(personas)
+\m 1
+\mp vt
+\mp class1
+
+\r waso'n
+\_no 00743
+\u a:so'n
+\a a:so'n
+\c V | VA
+\g disolver
+\m 1
+\mp vt
+\mp class1
+
+\r wasor
+\_no 00744
+\u a:sol
+\a a:sol
+\c V | VA
+\g apagar
+\m 1
+\mp vt
+\mp class1
+
+\r wat
+\_no 00745
+\u kwa:t
+\a kwa:t
+\c V | VA
+\g embarrar.2
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+
+\r wawe
+\_no 00746
+\u akwe
+\a akwe   / kw _ ~#  +/ P _
+\a ekwe   / y  _ ~#  +/ P _
+\a akwé   / kw _  #  +/ P _
+\a ekwé   / y  _  #  +/ P _
+\a akwe   /    _ ~#
+\a akwé   /    _  #
+\c V | VA
+\g alegrar
+\m 1
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+
+\r wawill
+\_no 00747
+\u kwakwich
+\a kwakwich
+\c Adv | Adv
+\g a.medio.dia
+
+\r waxhna
+\_no 00748
+\u xna
+\a xn    / _ a'  +/ _ 1s
+\a xne   / _ e'  +/ _ 3r
+\a xná   / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+\a xna   / # ([C]) _  #
+		 /       _ ~#
+\c V | VA
+\g enrojecer
+\m 1
+\mp vi
+\mp class1
+\mcc enrojecer +/ Rep _
+
+\r way
+\_no 00749
+\u kway
+\a kway
+\g le¤a
+\c N | N
+
+\r waya
+\_no 00750
+\u ya
+\a y   / _  a'  +/  _ 1s
+\a ye  / _ 'e   +/  _ 3r
+\a yá  / _ #    +/ [Modal] ... _
+				+/ Rep ...     _
+				+/ [Imperatives] ... _
+\a ya / # [C] _  #
+	  /       _ ~#
+\c V | VA
+\g acabar.varios
+\m 1
+\mp vi
+\mp class1
+\mp takes.colons.Caus
+\mp laryngealizes
+\mcc acabar.varios  +/ Rep _  +/ Rep Caus _
+
+\r waya'chra'll
+\_no 00751
+\u ya':chla'ch
+\a ya':chla'ch
+\c V | VA
+\g tener.compasión
+\m 1
+\mp vt
+\mp class1
+\mcc tener.compasión +/ Rep _
+
+\r wayak
+\_no 00752
+\u aya:k
+\a aya:k
+\c V | VA
+\g componer
+\m 1
+\mp vi
+\mp class1
+\noload
+
+\r waya'l
+\_no 00753
+\u aya':l
+\a aya':l
+\c V | VA
+\g enfriar.vi   | does this take group 2 pns??
+\m 1
+\mp vi
+\mp class1
+|hab's \mp takes.group.2.pns
+
+\r waya'l
+\_no 00754
+\u aya':l
+\a aya':l
+\c V | VA
+\g llegar.su.turno
+\m 1
+\mp vi
+\mp class1
+
+\r waya'n
+\_no 00755
+\u aya'n
+\a aya'n
+\c V | VA
+\g estar.sobrio
+\m 1
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+
+\r wayat
+\_no 00756
+\u aya:t
+\a aya:t
+\c V | VA
+\g arrepentirse
+\m 1
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+
+\r wayaxhj
+\_no 00757
+\u ayaxj
+\a ayaxj
+\c V | VA
+\g arriesgar
+\m 1
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+
+\r wayay
+\_no 00758
+\u ayay
+\a ayay
+\c V | VA
+\g sentir.frío
+\m 1
+\mp vi
+\mp class1
+
+\r waye'
+\_no 00759
+\u aye'
+\a aye'
+\c V | VA
+\g avergonzar
+\m 1
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+
+\r wayell
+\_no 00760
+\u ayech
+\a ayech
+\c V | VA
+\g desatar.vi
+\m 1
+\mp vi
+\mp class1
+|hab's \mp takes.group.2.pns
+
+\r wayo
+\_no 00761
+\u ayo
+\a ay  / _ o' +/ _ 2s
+\a ayo
+\c V | VA
+\g desgastar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wayoe'xhen
+\_no 00762
+\u ayoe'xen
+\a ayoe'xen
+\a ye'xen                   +/ [C-or-Modal] _
+\c V | VA
+\g pedir.perdon
+\m 1
+\mp vt
+\mp class1
+
+\r wayo'j
+\_no 00763
+\u ayo'j
+\a ayo'j
+\c V | VA
+\g secar.(agua).vi      | does this take group 2 pns??
+\m 1
+\mp vi
+\mp class1
+
+\r wayoll
+\_no 00764
+\u yoch  | may occur only with Repetitive
+\a yoch
+\c V | VA
+\g acabar.actividad
+\m 1
+\mp vi
+\mp class1
+\mp takes.colons.Caus
+\mcc acabar.actividad +/ Rep _  +/ Rep Caus _
+
+\r wayonbia'
+\_no 00765
+\u ayonpia'
+\a ayonpi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a ayonpia'
+\c V | VA
+\g reconcer
+\m 1
+\mp vt
+\mp class1
+
+\r wayo'nen
+\_no 00766
+\u ayo'n
+\a ayo'n
+\c V | VA
+\g deshacer     | does this take group 2 pronouns??
+\m 1
+\mp vi
+\mp class1
+
+\r wayor
+\_no 00767
+\u ayol
+\a ayol
+\c V | VA
+\g apagar.vi
+\m 1
+\mp vi
+\mp class1
+
+\r waza
+\_no 00768
+\u asa
+\a as  / _ a'  +/ _ 1s
+\a ase / _ 'e  +/ _ 3r
+\a asa
+\c V | VA
+\g caer.(para.atrás)
+\m 1
+\mp vi
+\mp class1
+
+\r waza'kra'll
+\_no 00769
+\u sa':kla'ch
+\a sa':kla'ch
+\c V | VA
+\g amar.2
+\m 1
+\mp vt
+\mp class1
+
+\r waza'l
+\_no 00770
+\u asa':l
+\a asa':l
+\c V | VA
+\g enfriar.vt   | what is the relation here to enfriar.vi??
+\m 1
+\mp vt
+\mp class1
+
+\r waza'ra'll
+\_no 00771
+\u asa'la'ch
+\a asa'la'ch
+\c V | VA
+\g ser.generoso
+\m 1
+\mp vt
+\mp class1
+
+\r wazeb
+\_no 00772
+\u kwasep
+\a kwasep
+\c Adj | Adj
+\g viuda/huerfano
+
+\r wazi'ra'll
+\_no 00773
+\u si'la'ch
+\a si'la'ch
+\c V | VA
+\g descansar
+\m 1
+\mp vi
+\mp class1
+\mcc descansar +/ Rep _
+
+\r wazolla'
+\_no 00774
+\u asocha'
+\a asoch    / _ a'  +/ _ 1s
+\a asoche'  / _ e'  +/ _ 3r
+\a asocha'a / _ #
+\a asocha'  / ~_ #
+\c V | VA
+\g parar.vt
+\m 1
+\mp vi
+\mp class1
+
+\r wchab
+\_no 00775
+\u :chap
+\a :chap
+\c V | VA
+\g ofrecer
+\m 1
+\mp vt
+\mp class1
+
+\r wchach
+\_no 00776
+\u :cha:ch
+\a :cha:ch
+\c V | VA
+\g sacar.(a.un.grupo)
+\m 1
+\mp vt
+\mp class1
+
+\r wchachren
+\_no 00777
+\u :cha:chlen
+\a :cha:chlen
+\c V | VA
+\g rega¤ar
+\m 3
+\mp vt
+\mp class1
+\mp takes.null.S
+
+\r wchayna'
+\_no 00778
+\u :chayna'
+\a :chayn     / _ a'  +/ _ 1s
+\a :chayne'   / _ e   +/ _ 3r
+\a :chayna'a  / _ #
+\a :chayna'   / ~_ #
+\c V | VA
+\g casar
+\m 1
+\mp vi
+\mp class1
+
+\r wche
+\_no 00779
+\u :che
+\a :chi  / _ a'  +/ _ 1s
+\a :che
+\c V | VA
+\g hacer.acarrear
+\m 1
+\mp vt
+\mp class1
+
+\r wche'
+\_no 00780
+\u :che'
+\a :chi / _ a' +/ _ 1s
+\a :che'e / _ #
+\a :che'  / ~_ #
+\c V | VA
+\g llevar.de.compa¤ero
+\m 1
+\mp vt
+\mp class1
+
+\r wcheb
+\_no 00781
+\u :chep
+\a :chep
+\c V | VA
+\g asustar
+\m 1
+\mp vt
+\mp class1
+
+\r wcheb
+\_no 00782
+\u :chep
+\a :chep
+\c V | VA
+\g prometer
+\m 1
+\mp vt
+\mp class1
+
+\r wchech
+\_no 00783
+\u :che:ch
+\a :che:ch
+\c V | VA
+\g secar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wchekw
+\_no 00784
+\u :che:kw
+\a :che:kw
+\c V | VA
+\g apedrear
+\m 1
+\mp vt
+\mp class1
+
+\r wchen
+\_no 00785
+\u :chen
+\a :chen
+\c V | VA
+\g hacer.apurar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wche'o
+\_no 00786
+\u :che'o
+\a :che'   / _ o'   +/ _ 2s
+\a :che'kw / _ [V-hi+cg]   +/ _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a :che'o
+\c V | VA
+\g dar.putapié
+\m 1
+\mp vt
+\mp class1
+
+\r wcher
+\_no 00787
+\u :chel
+\a :chel
+\c V | VA
+\g hacer.demorar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wchi
+\_no 00788
+\u :chi
+\a :chi
+\c V | VA
+\g retacar/rellenar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wchi
+\_no 00789
+\u :chi
+\a :chi
+\c V | VA
+\g ser.chocante
+\m 1
+\mp vi
+\mp class1
+
+\r wchi'ch
+\_no 00790
+\u :chi':ch
+\a :chi':ch
+\c V | VA
+\g apretar/presionar/hacer.hundir
+\m 1
+\mp vt
+\mp class1
+
+\r wchi'd
+\_no 00791
+\u :chi't
+\a :chi't
+\c V | VA
+\g apretar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wchie'
+\_no 00792
+\u :chie'
+\a :chie'
+\a :chie'
+\c V | VA
+\g insistir
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wchinnj
+\_no 00793
+\u :chi:nj
+\a :chi:nj
+\c V | VA
+\g desbaratar
+\m 1
+\mp vt
+\mp class1
+
+\r wchix
+\_no 00794
+\u :chi:x
+\a :chi:x
+\c V | VA
+\g mezclar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wchixhj
+\_no 00795
+\u :chixj
+\a :chixj
+\c V | VA
+\g cobrar
+\m 1
+\mp vt
+\mp class1
+
+\r wcho'
+\_no 00796
+\u :cho'
+\a :ch   / _ o'  +/ _ 2s
+\a :cho  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :cho'
+\c V | VA
+\g hacer.toser
+\m 1
+\mp vt
+\mp class1
+
+\r wchod
+\_no 00797
+\u :chot
+\a :chot
+\c V | VA
+\g cerrar
+\m 1
+\mp vt
+\mp class1
+
+\r wchoe
+\_no 00798
+\u :choe
+\a :cho   / _ e'  +/ _ 3r
+\a :choe
+\c V | VA
+\g falsear.vt   | does this take group 2 pns??
+\m 1
+\mp vt
+\mp class1
+
+\r wchoe
+\_no 00799
+\u :choe
+\a :cho   / _ e'  +/ _ 3r
+\a :choe
+\c V | VA
+\g falsear.vi   | what's the relation between this and falsear.vt??
+\m 1
+\mp vi
+\mp class1
+
+\r wchol
+\_no 00800
+\u :cho:l
+\a :cho:l
+\c V | VA
+\g cegar
+\m 1
+\mp vt
+\mp class1
+
+\r wchol
+\_no 00801
+\u :cho:l
+\a :cho:l
+\c V | VA
+\g encegar/oscurecer
+\m 1
+\mp vi
+\mp class1
+
+\r wcho'p
+\_no 00802
+\u :cho':p
+\a :cho':p
+\c V | VA
+\g ser.angosto
+\m 1  |all 4 aspects
+\mp vi
+\mp class1
+
+\r wchora'll
+\_no 00803
+\u :chola'ch
+\a :chola'ch
+\c V | VA
+\g dsmayar
+\m 1
+\mp vi
+\mp class1
+
+\r wchox
+\_no 00804
+\u :cho:x
+\a :cho:x
+\c V | VA
+\g pelar/deshojar
+\m 1
+\mp vt
+\mp class1
+
+\r wchoybia'
+\_no 00805
+\u :choypia'
+\a :choypi   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+			 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a :choypia'
+\c V | VA
+\g sentenciar
+\m 1
+\mp vt
+\mp class1
+
+\r wchoyra'll
+\_no 00806
+\u :choyla'ch
+\a :choyla'ch
+\c V | VA
+\g decidir/arriesgar
+\m 1
+\mp vi
+\mp class1
+\co can take null P
+
+\r wchoyrao
+\_no 00807
+\u :choylao
+\a :choyla   under.ao / _ o'        +/ _ 2s
+\a :choylakw          / _ [V-hi+cg] +/ _ [1s-or-3r]
+					 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a :choylao
+\c V | VA
+\g juzgar
+\m 1
+\mp vt
+\mp class1
+\mp takes.null.P
+
+\r wda'a
+\_no 00808
+\u ta'
+\a t    / _ a'  +/ _ 1s
+\a te'  / _ e  +/ _ 3r
+\a ta'a / _ #
+\a ta'  / ~_ #
+\c V | VA
+\g pegar  | see ta' for non-Caus.
+\m 1
+\mp vt
+\mp class1
+
+\r wde
+\_no 00809
+\u te
+\a ti  / _ [V-hi+cg] +/ _ [1s-or-3r]
+\a té / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+\a te / # ([C]) _  #
+	  /         _ ~#
+\c V | VA
+\g pasar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wde'
+\_no 00810
+\u te'
+\a te'
+\c V | VA
+\g poner.pretexto
+\m 1
+\mp vi
+\mp class1
+\mp takes.group.2.pns  |Lk 14:18
+
+\r wdeb
+\_no 00811
+\u tep
+\a tep
+\c V | VA
+\g extra¤ar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wdekw
+\_no 00812
+\u te:kw
+\a te:kw
+\c V | VA
+\g aplastar/caerle.encima
+\m 1
+\mp vi
+\mp class1
+\mp takes.colon.Caus
+
+\r wdil
+\_no 00813
+\u ti:l
+\a ti:l
+\c V | VA
+\g juntar   |encontrar.con, also chocar (coches)
+\m 1
+\mp vi
+\mp class1
+\mp takes.colon.Caus
+
+\r wdo's
+\_no 00814
+\u to':s
+\a to':s
+\c V | VA
+\g embrocar/poner.una.máscara
+\m 1
+\mp vt
+\mp class1
+
+\r we'
+\_no 00815
+\u oe'
+\a a    / kw _ '        +/ P            _ 1s
+\a o    / k _ 'o        +/ P            _ 2s
+\a e'   / kw _          +/ P            _
+\a i    / p  _          +/ C            _ 1s
+\a e'e  / _ #           +/ [C-or-Modal] _
+						+/ [Modal] Rep  _
+\a e'   / ~_ #          +/ [C-or-Modal] _
+						+/ [Modal] Rep  _
+\a o    / _ [V-hi+cg]   +/ [H,S,Rep-or-Pl.pfx] _ [1s-or-3r]
+\a oe'                  +/ [H,S,Rep-or-Pl.pfx] _
+\c V | VA
+\g dar.a.3
+\m 6
+\mp vbt
+\mp class1
+\mp under.o
+\mp laryngealizes
+
+\r wed
+\_no 00816
+\u kwet
+\a kwet
+\c V | VA
+\g tener.flojera
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r we'e
+\_no 00817
+\u kwe'e
+\a kwe'e
+\c N | N
+\g herida
+
+\r wej
+\_no 00818
+\u kwej
+\a kwej
+\c N | NP
+\wf possessed
+\g cada.uno
+
+\r we'j
+\_no 00819
+\u kwe'j
+\a kwe'j
+\c V | VA
+\g dar.de.tomar
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+\noload  | ye'j beber should handle this
+
+\r we'la'll
+\_no 00820
+\u oe':la'ch
+\a e':la'ch      / kw _       +/ P            _
+\a e':la'ch                   +/ [C-or-Modal] _
+\a oe':la'ch                  +/ [H,S-or-Rep] _
+\c V | VA
+\g preocupar
+\m 6
+\mp vi
+\mp class1
+\mp under.o
+
+\r weltse
+\_no 00821
+\u kwe:l:t:se
+\a kwe:l:t:se
+\c Adv | Adv
+\g seguido
+
+\r wen
+\_no 00822
+\u kwen
+\a kwen
+\c Adj | Adj
+\g bueno
+
+\r wenra'll
+\_no 00823
+\u kwenla'ch
+\a kwnela'ch
+\c Adj | Adj
+\g mentiroso
+
+\r we'o
+\_no 00824
+\u kwe'o
+\a kwe'o
+\c N | N
+\g joven
+
+\r we'rao
+\_no 00825
+\u e'lao
+\a  e'la     / kw _ o'         +/ P            _ 2s
+\a  e'lakw   / kw _ [V-hi+cg]  +/ P            _ [1s-or-3r]
+			 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  e'lao    / kw _            +/ P            _
+\a  e'la     /   _ o'          +/ [C-or-Modal] _ 2s
+\a  e'lakw   /   _ [V-hi+cg]  +/ [C-or-Modal] _ [1s-or-3r]
+			 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  e'lao                     +/ [C-or-Modal] _
+\a oe'la     /   _ o'          +/ [H,S-or-Rep] _ 2s
+\a oe'lakw   /   _ [V-hi+cg]  +/ [H,S-or-Rep] _ [1s-or-3r]
+			 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a oe'lao                    +/ [H,S-or-Rep] _
+\c V | VA
+\g alabar | "consolar" with Repetitive
+\m 6
+\mp vt
+\mp class1
+\mp under.o
+\mp under.ao
+\co check with we'ra'o for original rules
+
+\r we'ra'o
+\_no 00826
+\u e'la'o
+\a  e'la'    / kw _ o          +/ P            _ 2s
+\a  e'la'kw   / kw _ [V-hi+cg]  +/ P            _ [1s-or-3r]
+			  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  e'la'o   / kw _            +/ P            _
+\a  e'la'    /   _ o          +/ [C-or-Modal] _ 2s
+\a  e'la'kw  /   _ [V-hi+cg]  +/ [C-or-Modal] _ [1s-or-3r]
+			 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a  e'la'o                    +/ [C-or-Modal] _
+\a oe'la'    /   _ o          +/ [H,S-or-Rep] _ 2s
+\a oe'la'kw  /   _ [V-hi+cg]  +/ [H,S-or-Rep] _ [1s-or-3r]
+			 /   _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a oe'la'o                    +/ [H,S-or-Rep] _
+\a kwe'la'ocho
+\c V | VA
+\g alabar
+\m 6
+\mp vt
+\mp class1
+\a la  under.ao  / _ o'         +/ _ 2s
+\a lakw           / _ [V-hi+cg]  +/ _ [1s-or-3r]
+\a lao
+\noload  |we'rao  correct
+
+\r we'xhen
+\_no 00827
+\u oe'xen
+\a e'xen   / kw _          +/ P            _
+\a oe'xen                  +/ [H,S,Rep-or-Pl.pfx] _
+\a e'xen                   +/ [C-or-Modal] _
+\c V | VA
+\g alabar3  | see we'rao and gonxhen
+\m 6
+\mp vt
+\mp class1
+\mp under.o
+
+\r we'y
+\_no 00828
+\u e'y
+\a e'y
+\c V | VA
+\g cocer.vi             | take group 2 pns??
+\m 35
+\mp vi
+\mp class1
+\mp takes.kw.C
+
+\r wga'
+\_no 00829
+\u ka'
+\a k   / _ a'  +/ _ 1s
+\a ke'  / _ e  +/ _ 3r
+\a ka'a / _ #
+\a ka'  / ~_ #
+\c V | VA
+\g quitar.vi
+\m 1
+\mp vi
+\mp class1
+\mp takes.colon.Caus
+\mp laryngealizes
+
+\r wga'
+\_no 00830
+\u ka'
+\a k   / _ a'  +/ _ 1s
+\a ke'  / _ e  +/ _ 3r
+\a ka'a / _ #
+\a ka'  / ~_ #
+\c V | VA
+\g reto¤ar
+\m 1
+\mp vi
+\mp class1
+\mp laryngealizes
+\mcc reto¤ar +/ Rep _
+\co see Lk 8:8
+
+\r wgol
+\_no 00831
+\u ko:l
+\a ko:l
+\c V | VA
+\g hacer.cantar
+\m 1
+\mp vt
+\mp class1
+
+\r wgon
+\_no 00832
+\u kon
+\a kon
+\c V | VA
+\g poner(-le).a.trabajar
+\m 1
+\mp vt
+\mp class1
+
+\r wgo'nn
+\_no 00833
+\u ko':n
+\a ko':n
+\c V | VA
+\g quedar2  | see ga'nn
+\m 1
+\mp vi
+\mp class1
+
+\r wgor
+\_no 00834
+\u kol
+\a kor
+\c V | VA
+\g envejecer
+\m 1
+\mp vi
+\mp class1
+
+\r wgo'x
+\_no 00835
+\u ko':x
+\a ko':x
+\c V | VA
+\g dar.en.la.mano
+\m 1
+\mp vbt
+\mp class1
+
+\r wia
+\_no 00836
+\u kwia
+\a kwi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a kwiá / _ # +/ [Modal] ... _
+			  +/ Rep ...     _
+			  +/ [Imperatives] ... _
+\a kwia / # ([C]) _  #
+		/       _ ~#
+\a   ia +/ Inf _
+\a kwia
+\c V | VA
+\g mirar
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+
+\r wie
+\_no 00837
+\u kwie
+\a kwie
+\c V | VA
+\g odiar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+\mp takes.null.P
+
+\r will
+\_no 00838
+\u kwich
+\a kwich
+\c Adj | Adj
+\g estéril
+
+\r will
+\_no 00839
+\u kwich
+\a kwich
+\c N | N
+\g sol
+
+\r willj
+\_no 00840
+\u kwichj
+\a kwichj
+\c Adv | Adv
+\g pasado.ma¤ana
+
+\r win
+\_no 00841
+\u kwin
+\a kwin
+\c N | N
+\g escasez
+
+\r wka'
+\_no 00842
+\u :ka'
+\a :k    / _ a'  +/ _ 1s
+\a :ke'  / _ e   +/ _ 3r
+\a :ka'a  / _ #
+\a :ka'   / ~_ #
+\c V | VA
+\g llevar/cargar  |armas, bebe
+\m 1
+\mp vt
+\mp class1
+
+\r wka'
+\_no 00843
+\u :ka'
+\a :ka'
+\c V | VA
+\g ce¤ir
+\m 1
+\mp vt
+\mp class1
+
+\r wkadi'
+\_no 00844
+\u :kati'
+\u :kati'
+\a :kati  / _ [V-hi+cg]  +/ _ [1s-or-3r]
+\a :kati'
+\c V | VA
+\g imitar
+\m 1
+\mp vt
+\mp class1
+
+\r wke'nia'
+\_no 00845
+\u :ke'nia'
+\a :ke'ni   / _ [V-hi+cg]   +/  _ [1s-or-3r]
+\a :ke'nia'
+\c V | VA
+\g cojear
+\m 1
+\mp vi
+\mp class1
+
+\r wko'd
+\_no 00846
+\u :ko't
+\a :ko't
+\c V | VA
+\g juntar/ahorrar
+\m 1
+\mp vt
+\mp class1
+
+\r wkol
+\_no 00847
+\u :ko:l
+\a :ko:l
+\c V | VA
+\g humedecer   |Lk 16:24
+
+\r wkolj
+\_no 00848
+\u :ko:lj
+\a :ko:lj
+\c V | VA
+\g graznar.(el.guajolote)
+\m 1
+\mp vi
+\mp class1
+
+\r wko'rao
+\_no 00849
+\u :ko'lao
+\a :ko'la  under.ao  / _ o'       +/ _ 2s
+\a :ko'lakw           / _ [V-hi+cg]  +/ _ [1s-or-3r]
+					 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a :ko'lao
+\c V | VA
+\g acostumbrar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wkosen xhi'xllo
+\_no 00850
+\u kwkosen xhi'xllo
+\c V | VA
+\g Causar hipo
+\m 1
+\mp vt
+\noload ??
+
+\r wkoy
+\_no 00851
+\u :koy
+\a :koy
+\c V | VA
+\g descansar.cabeza  | occurs with lmad Mk 4:38
+\m 1
+\mp vt
+\mp class1
+
+\r wko'yel
+\_no 00852
+\u :ko'ye:l
+\a :ko'ye:l
+\c V | VA
+\g incitar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wkwa'
+\_no 00853
+\u :kwa'
+\a :kw   / _ a'  +/ _ 1s
+\a :kwe'  / _ e'  +/ _ 3r
+\a :kwa'a  / _ #
+\a :kwa'   / ~_ #
+\c V | VA
+\g estibar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wkwa'ch
+\_no 00854
+\u :kwa':ch
+\a :kwa':ch
+\c V | VA
+\g esconder
+\m 1
+\mp vt
+\mp class1
+| kwa'ch POT also acceptable  Mk 7:24
+
+\r wkwa'chrao
+\_no 00855
+\u :kwa':chlao
+\a :kwa':chla  under.ao  / _ o'         +/ _ 2s
+\a :kwa':chlakw           / _ [V-hi+cg]  +/ _ [1s-or-3r]
+				  / _ en         +/ _ & 3i
+\a :kwa':chlao
+\c V | VA
+\g esconder.de.vista
+\m 1
+\mp vt
+\mp class1
+
+\r wkwad
+\_no 00856
+\u :kwat
+\a :kwat
+\c V | VA
+\g marchitar
+\m 1
+\mp vi
+\mp class1
+|hab's \mp takes.group.2.pns
+
+\r wkwa'nn
+\_no 00857
+\u :kwa':n
+\a :kwa':n
+\c V | VA
+\g dejar
+\m 1
+\mp vt
+\mp class1
+\co can take null P
+
+\r wkwas
+\_no 00858
+\u :kwa:s
+\a :kwa:s
+\c V | VA
+\g hacer.a.un.lado  |quitarse de un lugar
+\m 1
+\mp vt
+\mp class1
+\co see kwas for singular imperative (exceptional form)
+
+\r wkwasj
+\_no 00859
+\u :kwa:sj
+\a :kwa:sj
+\c V | VA
+\g ennegrecer.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wkwej
+\_no 00860
+\u :kwej
+\a :kwej
+\c V | VA
+\g explotar
+\m 1
+\mp vt
+\mp class1
+
+\r wkwe'j
+\_no 00861
+\u :kwe'j
+\a :kwe'j
+\c V | VA
+\g tapar
+\m 1
+\mp vt
+\mp class1
+
+\r wkwell
+\_no 00862
+\u :kwech
+\a :kwech
+\c V | VA
+\g sonar.(soplando)
+\m 1
+\mp vt
+\mp class1
+
+\r wkwiarao
+\_no 00863
+\u :kwialao
+\a :kwiala  under.ao / _ o'  +/ _ 2s
+\a :kwialakw         / _ [V-hi+cg]   +/ _ [1s-or-3r]
+					 / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a :kwialao
+\c V | VA
+\g mandar.adelante
+\m 1
+\mp vt
+\mp class1
+
+\r wla'
+\_no 00864
+\u :la'
+\a :l   / _ a'  +/ _ 1s
+\a :le' / _ e   +/ _ 3r
+\a :la'
+\c V | VA
+\g aflojar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wlabj
+\_no 00865
+\u :lapj
+\a :lapj
+\c V | VA
+\g sumergir
+\m 1
+\mp vt
+\mp class1
+
+\r wlan
+\_no 00866
+\u :lan
+\a :lan
+\c V | VA
+\g adue¤arse
+\m 1
+\mp vt
+\mp class1
+
+\r wla'o
+\_no 00867
+\u :la'o
+\a :la'    / _ o'   +/ _ 2s
+\a :la'kw  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+		   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a :la'o
+\c V | VA
+\g descompletar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wlas
+\_no 00868
+\u :la:s
+\a :la:s
+\c V | VA
+\g reducir.de.grosor
+\m 1
+\mp vt
+\mp class1
+
+\r wla'y
+\_no 00869
+\u :la'y
+\a :la'y
+\c V | VA
+\g hacer.atravesar
+\m 1
+\mp vt
+\mp class1
+\co can take null P
+
+\r wle'
+\_no 00870
+\u :le'
+\a :li  / _ a'  +/ _ 1s
+\a :le'
+\c V | VA
+\g lamer
+\m 1
+\mp vt
+\mp class1
+
+\r wleb
+\_no 00871
+\u :lep
+\a :lep
+\c V | VA
+\g hervir.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wlep
+\_no 00872
+\u :le:p
+\a :le:p
+\c V | VA
+\g subir.2
+\m 1
+\mp vt
+\mp class1
+\noload
+
+\r wli
+\_no 00873
+\u :li
+\a :li
+\a :lí / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+\a li / # ([C]) _  #
+	  /         _ ~#
+\c V | VA
+\g enderezar
+\m 1
+\mp vt
+\mp class1
+
+\r wlis
+\_no 00874
+\u :li:s
+\a :li:s
+\c V | VA
+\g levantar.(cosas)
+\m 1
+\mp vt
+\mp class1
+
+\r wliz
+\_no 00875
+\u :lis
+\a :lis
+\a :chis
+\c V | VA
+\g meter/insertar
+\m 1
+\mp vt
+\mp class1
+
+\r wlla'
+\_no 00876
+\u cha'
+\a ch    / _ a'  +/ _ 1s
+\a che'  / _ e  +/ _ 3r
+\a cha' / ~_ #
+\a cha'a / _ #
+\c V | VA
+\g estar.en.grupo.tr
+\m 1
+\mp vt
+\mp class1
+
+\r wlla'
+\_no 00877
+\u cha'
+\a ch   / _ a'  +/ _ 1s
+\a che'  / _ e'  +/ _ 3r
+\a cha'
+\c V | VA
+\g echar.dentro
+\m 1
+\mp vt
+\mp class1
+\noload   | same as estar.en.grupo.tr
+
+\r wllach
+\_no 00878
+\u cha:ch
+\a cha:ch
+\c V | VA
+\g salir.(un.grupo)
+\m 1
+\mp vi
+\mp class1
+|can take null P
+
+\r wllay
+\_no 00879
+\u chay
+\a chay
+\c V | VA
+\g juntar/encontrar
+\m 1
+\mp vt
+\mp class1
+\mp can.take.group.2.pns
+\mp takes.null.S      |Mat. 22:41
+
+\r wlle
+\_no 00880
+\u che
+\a che
+\c V | VA
+\g dilatar
+\m 35
+\mp vi
+\mp class1
+|\mp takes.kw.C      | not so sure about this
+\mp takes.group.2.pns
+
+\r wllel
+\_no 00881
+\u che:l
+\a che:l
+\c V | VA
+\g encontrar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wllen
+\_no 00882
+\u chen
+\a chen
+\c V | VA
+\g pintar
+\m 1
+\mp vt
+\mp class1
+
+\r wlleyi'
+\_no 00883
+\u cheyi'
+\a cheyi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a cheyi'
+\c V | VA
+\g destruir.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wlli'
+\_no 00884
+\u chi'
+\a chi   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a chi'
+\c V | VA
+\g lanzar.agua
+\m 1
+\mp vt
+\mp class1
+
+\r wlliayi'll
+\_no 00885
+\u chiayi'ch
+\a chiayi'ch
+\c V | VA
+\g calumniar
+\m 1
+\mp vt
+\mp class1
+
+\r wllib
+\_no 00886
+\u chip
+\a chip
+\c V | VA
+\g sacudir.vi
+\m 1
+\mp vi
+\mp class1
+\mcc sacudir.vi +/ Rep _
+\co see Lk 9:5
+
+\r wllir
+\_no 00887
+\u chil
+\a chil
+\c V | VA
+\g frotar.(con.algo)
+\m 1
+\mp vt
+\mp class1
+
+\r wllix
+\_no 00888
+\u chi:x
+\a chi:x
+\c V | VA
+\g hacer.caer.de.cierta.altura/medir
+\m 1
+\mp vt
+\mp class1
+
+\r wlli'y
+\_no 00889
+\u chi'y
+\a chi'y
+\c V | VA
+\g empujar
+\m 1
+\mp vt
+\mp class1
+
+\r wlloallo nis
+\_no 00890
+\c V | VA
+\g bautizar
+\m 1
+\mp vi
+\noload see previous entry (bautizar) see lloa
+
+\r wllochj
+\_no 00891
+\u cho:chj
+\a cho:chj
+\c V | VA
+\g ser.apachurrado
+\m 1
+\mp vi
+\mp class1
+\mp takes.colon.Caus
+
+\r wllon
+\_no 00892
+\u chon
+\a chon
+\c V | VA
+\g echar.líq.2
+\m 1
+\mp vt
+\mp class1
+\co Lk 10:34; 22:44
+
+\r wllon
+\_no 00893
+\u chon
+\a chon
+\c V | VA
+\g prohibir
+\m 1
+\mp vt
+\mp class1
+
+\r wloa  | loan, wloallo ?? is there a Caus relation here? vi is model 2
+\_no 00894
+\u :loa
+\a :lo  / _ a' / _ e'  +/ _ [1s-or-3r]
+\a :loa
+\c V | VA
+\g barrer
+\m 1
+\mp vt
+\mp class1
+
+\r wlol
+\_no 00895
+\u :lo:l
+\a :lo:l
+\c V | VA
+\g menear.cabeza   |Mk 15:29
+\m 1
+\mp vt
+\mp class1
+
+\r wna'
+\_no 00896
+\u na'
+\a n   / _ a'  +/ _ 1s
+\a ne'  / _ e  +/ _ 3r
+\a na'a / _ #
+\a na'  / ~_ #
+\c V | VA
+\g lavar.las.manos
+\m 1
+\mp vi
+\mp class1
+\mp laryngealizes
+
+\r wne's
+\_no 00897
+\u ne':s
+\a ne':s
+\c V | VA
+\g meter.(en.medio.de).vt
+\m 1
+\mp vt
+\mp class1
+
+\r wnia'
+\_no 00898
+\u kwnia'
+\a kwnia'
+\c Adj | Adj
+\g rico
+
+\r wnit
+\_no 00899
+\u ni:t
+\a ni:t
+\c V | VA
+\g perder.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wni't
+\_no 00900
+\u ni':t
+\a ni':t
+\c V | VA
+\g poner.en.el.suelo.(varias.cosas)
+\m 1
+\mp vt
+\mp class1
+
+\r wnitrao
+\_no 00901
+\u ni:tlao
+\a ni:tla    under.ao  / _ o'          +/ _ 2s
+\a ni:tlakw            / _ [V-hi+cg]   +/ _ [1s-or-3r]
+					  / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a ni:tlao
+\c V | VA
+\g borrar.vt
+\m 3
+\mp vt
+\mp class1
+\mp takes.null.S
+
+\r wnix
+\_no 00902
+\u ni:x
+\a ni:x
+\c V | VA
+\g saborear/probar
+\m 1
+\mp vt
+\mp class1
+
+\r wniz
+\_no 00903
+\u nis
+\a nis
+\c V | VA
+\g rasgu¤ar
+\m 1
+\mp vt
+\mp class1
+
+\r wnna' | ... will
+\_no 00904
+\u :na'
+\a :n    / _ a'  +/ _ 1s
+\a :ne'  / _ e  +/ _ 3r
+\a :na'
+\c V | VA
+\g hacer.sol   |must occur preceding will "sol"
+\m 1
+\mp vi
+\mp class1
+
+\r wnna' | ... yere
+\_no 00905
+\u :na'
+\a :n    / _ a'  +/ _ 1s
+\a :ne'  / _ e  +/ _ 3r
+\a :na'
+\c V | VA
+\g velar   |must occur preceding yere "noche"
+\m 1
+\mp vi
+\mp class1
+\mp can.take.group.2.pns  | Mat. 27:19
+
+\r wnne'
+\_no 00906
+\u :ne'
+\a :ni  / _ a'  +/ _ 1s
+\a :ne'e / _ #
+\a :ne'  / ~_ #
+\c V | VA
+\g cornear      | is this w initial ??
+\m 1   | however Filemon gave with w for Completive
+\mp vt
+\mp class1
+|\mp takes.null.S
+\mcc cornear +/ S ~_
+
+\r wnneya'
+\_no 00907
+\u :neya'
+\a :ney    / _ a'  +/ _ 1s
+\a :neye'  / _ e'  +/ _ 3r
+\a :neya'
+\c V | VA
+\g adivinar
+\m 35
+\mp vi
+\mp class1
+|\mp takes.kw.C  Mat.26:68  bnneya'chek
+
+\r wnni'
+\_no 00908
+\u :ni'
+\a :ni  / _ [V-hi+cg]  +/ _ [1s-or-3r]
+\a :ni'
+\c V | VA
+\g meter.la.mano
+\m 35
+\mp vi
+\mp class1
+\mp takes.kw.C
+\mcc meter.la.mano +/ S ~_
+
+\r wnnib
+\_no 00909
+\u :nip
+\a :nip
+\c V | VA
+\g sacudir
+\m 1
+\mp vt
+\mp class1
+
+\r wno'p
+\_no 00910
+\u no':p
+\a no':p
+\c V | VA
+\g besar
+\m 1
+\mp vt
+\mp class1
+
+\r wpe
+\_no 00911
+\u :pe
+\a :pe
+\c V | VA
+\g animar3
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wpil
+\_no 00912
+\u :pi:l
+\a :pi:l
+\c V | VA
+\g Causar sed
+\m 1
+\mp vt
+\mp class1
+
+\r wra'
+\_no 00913
+\u la'
+\a l   / _ a'  +/ _ 1s
+\a le    / _ e'  +/ _ 3r
+\a la'
+\c V | VA
+\g echar.aire
+\m 1
+\mp vt
+\mp class1
+
+\r wrall
+\_no 00914
+\u kwlach
+\a kwlach
+\c Adj | Adj
+\g del.lugar
+
+\r wra'll
+\_no 00915
+\u la'ch
+\a la'ch
+\c V | VA
+\g envolver.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wra'nn
+\_no 00916
+\u la':n
+\a la':n
+\c V | VA
+\g asomar/visitar
+\m 1
+\mp vi
+\mp class1
+
+\r wrarj | see rarj for vi
+\_no 00917
+\u lalj
+\a lalj
+\c V | VA
+\g derramar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wray
+\_no 00918
+\u lay
+\a lay
+\c V | VA
+\g corretear
+\m 1
+\mp vt
+\mp class1
+
+\r wraz
+\_no 00919
+\u kwlas
+\a kwlas
+\c Prt | PPrt
+\g a.solas  |to wraz
+
+\r wreb
+\_no 00920
+\u lep
+\a lep
+\c V | VA
+\g acoger
+\m 1
+\mp vt
+\mp class1
+
+\r wrej
+\_no 00921
+\u lej
+\a lej
+\c V | VA
+\g pisar
+\m 1
+\mp vt
+\mp class1
+
+\r wria
+\_no 00922
+\u lia
+\a li   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a lia
+\c V | VA
+\g flojo.v
+\m 1
+\mp vi
+\mp class1
+
+\r wrill
+\_no 00923
+\u kwlich
+\a kwlich
+\c Adj | Adj
+\g vecino
+
+\r wrob
+\_no 00924
+\u lop
+\a lop
+\c V | VA
+\g soplar
+\m 1
+\mp vt
+\mp class1
+
+\r wroe'
+\_no 00925
+\u loe'
+|\a lkwi  / _ a'  +/ _ 1s
+\a loe'
+\c V | VA
+\g demostrar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wroe'rao
+\_no 00926
+\u loe'lao
+\a loe'lao  under.ao  / _ o'         +/ _ 2s
+\a loe'lakw           / _ [V-hi+cg]  +/ _ [1s-or-3r]
+\a loe'lakw           +/ _ &#
+\a loe'lao
+\c V | VA
+\g revelar
+\m 1
+\mp vi
+\mp class1
+
+\r wsa'
+\_no 00927
+\u :sa'
+\a :s    / _ a'  +/ _ 1s
+\a :se'  / _ e  +/ _ 3r
+\a :sa'a / _ #
+\a :sa'  / ~_ #
+\c V | VA
+\g llevar/conducir
+\m 1
+\mp vt
+\mp class1
+\mp laryngealizes
+
+\r wsa'kreb
+\_no 00928
+\u :sa':klep
+\a :sa':klep
+\c V | VA
+\g comparar2
+\m 1
+\mp vt
+\mp class1
+\mp can.take.group.2.pns
+
+\r wsa'kzi'
+\_no 00929
+\u :sa':ksi'
+\a :sa':ksi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :sa':ksi'
+\c V | VA
+\g hacer.sufrir
+\m 1
+\mp vt
+\mp class1
+
+\r wsan
+\_no 00930
+\u :san
+\a :san
+\c V | VA
+\g soltar
+\m 1
+\mp vt
+\mp class1
+
+\r wsanra'll
+\_no 00931
+\u :sanla'ch
+\a :sanla'ch
+\c V | VA
+\g abandonar
+\m 1
+\mp vt
+\mp class1
+
+\r wsed
+\_no 00932
+\u :set
+\a :set
+\c V | VA
+\g ense¤ar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wsed
+\_no 00933
+\u :set
+\a :set
+\c V | VA
+\g estudiar | ense¤ar with group 2 pns
+\m 1
+\mp vt
+\mp class1
+
+\r wsej
+\_no 00934
+\u :sej
+\a :sej
+\c V | VA
+\g cerrar.(para.impedir.el.paso)
+\m 1
+\mp vt
+\mp class1
+
+\r wse'kw
+\_no 00935
+\u :se':kw
+\a :se':kw
+\c V | VA
+\g dar.pescozón
+\m 1
+\mp vt
+\mp class1
+
+\r wse'l
+\_no 00936
+\u :se':l
+\a :se':l
+\c V | VA
+\g mandar
+\m 1
+\mp vt
+\mp class1
+
+\r wsell
+\_no 00937
+\u :sech
+\a :sech
+\c V | VA
+\g desatar
+\m 1
+\mp vt
+\mp class1
+
+\r wseni'
+\_no 00938
+\u :seni'
+\a :seni  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :seni'
+\c V | VA
+\g iluminar
+\m 1
+\mp vt
+\mp class1
+
+\r wsi
+\_no 00939
+\u :si
+\a :si
+\c V | VA
+\g orde¤ar
+\m 1
+\mp vt
+\mp class1
+
+\r wsi'
+\_no 00940
+\u :si'
+\a :si   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :si'i / _ #
+\a :si'  / ~_ #
+\c V | VA
+\g poner.nombre
+\m 1
+\mp vt
+\mp class1
+\noload   |  derived from si' (poner.nombre.vi)
+
+\r wsinia'
+\_no 00941
+\u :sinia'
+\a :sini   / _ a' / _ e'  +/ _ [1s-or-3r]
+\a :sinia'
+\c V | VA
+\g preparar
+\m 1
+\mp vt
+\mp class1
+
+\r wta
+\_no 00942
+\u :ta
+\a :t    / _ a'  +/ _ 1s
+\a :te  / _ e'  +/ _ 3r
+\a :ta
+\c V | VA
+\g mover
+\m 1
+\mp vt
+\mp class1
+\mp laryngealizes
+
+\r wtas
+\_no 00943
+\u :ta:s
+\a :ta:s
+\c V | VA
+\g adormecer
+\m 1
+\mp vt
+\mp class1
+
+\r wte
+\_no 00944
+\u :te
+\a :ti  / _ a'  +/ _ 1s
+\a :te
+\c V | VA
+\g picar.(cosas)
+\m 1
+\mp vt
+\mp class1
+
+\r wtil
+\_no 00945
+\u :ti:l
+\a :ti:l
+\c V | VA
+\g juntar.(dos.o.más)
+\m 1
+\mp vt
+\mp class1
+\noload  | derive from wdil
+
+\r wtin
+\_no 00946
+\u :tin
+\a :tin
+\c V | VA
+\g hacer.deslizar
+\m 1
+\mp vt
+\mp class1
+
+\r wtitj
+\_no 00947
+\u :ti:tj
+\a :ti:tj
+\c V | VA
+\g burlar
+\m 1
+\mp vt
+\mp class1
+|hab's \mp takes.group.2.pns
+
+\r wti'x
+\_no 00948
+\u :ti':x
+\a :ti':x
+\c V | VA
+\g remendar
+\m 1
+\mp vt
+\mp class1
+
+\r wtobe
+\_no 00949
+\u :top
+\a :top
+\c V | VA
+\g culpar
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wtonllo
+\_no 00950
+\u :ton
+\a :ton
+\c V | VA
+\g Causar.hambre
+\m 1
+\mp vt
+\mp class1
+
+\r wtonnt
+\_no 00951
+\u :to:n:t
+\a :to:n:t
+\c V | VA
+\g enloquecer
+\m 1
+\mp vt
+\mp class1
+
+\r wtonnt
+\_no 00952
+\u :to:n:t
+\a :to:n:t
+\c V | VA
+\g hacerse.el.tonto
+\m 1
+\mp vi
+\mp class1
+
+\r wwa'
+\_no 00953
+\u kwa'
+\a kw    / _ a'  +/ _ 1s
+\a kwe'  / _ e  +/ _ 3r
+\a kwa'a / _ #
+\a kwa'  / ~_ #
+\c V | VA
+\g llevar.(y.dejar)
+\m 1
+\mp vt
+\mp class1
+\mp laryngealizes
+
+\r wwe'y
+\_no 00954
+\u kwe'y
+\a kwe'y
+\c V | VA
+\g cocer.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wxe
+\_no 00955
+\u kw:xe
+\a kw:xe
+\c Adv | Adv
+\g ma¤ana
+
+\r wxe
+\_no 00956
+\u :xe
+\a :xi  / _ a'  +/ _ 1s
+\a :xe
+\c V | VA
+\g mellar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wxej
+\_no 00957
+\u :xej
+\a :xej
+\c V | VA
+\g machucar.1
+\m 1
+\mp vt
+\mp class1
+
+\r wxenra'll
+\_no 00958
+\u :xenla'ch
+\a :xenla'ch
+\c V | VA
+\g confiar
+\m 1
+\mp vt
+\mp class1
+
+\r wxexjra'll
+\_no 00959
+\u :xe:xjla'ch
+\a :xe:xjla'ch
+\c V | VA
+\g humillar
+\m 1
+\mp vi
+\mp class1
+\noload think this is wxhexhjra'll, will check
+
+\r wxhej
+\_no 00960
+\u xej
+\a xej
+\c V | VA
+\g escupir    | occurs with xhe'n only
+\m 1
+\mp vt
+\mp class1
+
+\r wxhen
+\_no 00961
+\u xen
+\a xen
+\c V | VA
+\g prender.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wxhenra'll
+\_no 00962
+\u xenla'ch
+\a xenla'ch
+\c V | VA
+\g consolar
+\m 1
+\mp vt
+\mp class1
+
+\r wxhexj
+\_no 00963
+\u xe:xj
+\a xe:xj
+\c V | VA
+\g disminuir/hacer.caer
+\m 1
+\mp vt
+\mp class1
+
+\r wxhexjra'll
+\_no 00964
+\u xe:xjla'ch
+\a xe:xjla'ch
+\c V | VA
+\g humillar
+\m 1
+\mp vi
+\mp class1
+
+\r wxhi
+\_no 00965
+\u xi
+\a xi
+\c V | VA
+\g limpiar.vt
+\m 1
+\mp vt
+\mp class1
+| infinitive waxhi - be'nn waxhi yay Mk 6:3  (according to Fil. 2-97)
+
+\r wxhill
+\_no 00966
+\u xich
+\a xich
+\c V | VA
+\g hacer.reír
+\m 1
+\mp vt
+\mp class1
+
+\r wxhill
+\_no 00967
+\u xich
+\a xich
+\c V | VA
+\g reír
+\m 1
+\mp vi
+\mp class1
+
+\r wxhonnj
+\_no 00968
+\u xo:nj
+\a xo:nj
+\c V | VA
+\g huir
+\m 1
+\mp vi
+\mp class1
+
+\r wxhoxhjwi'
+\_no 00969
+\u xoxjkwi'
+\a xoxjkwi  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a xoxjkwi'
+\c V | VA
+\g machucar.2
+\m 1
+\mp vt
+\mp class1
+
+\r wxis
+\_no 00970
+\u :xi:s
+\a :xi:s
+\c V | VA
+\g enjugar
+\m 1
+\mp vt
+\mp class1
+
+\r wxi't
+\_no 00971
+\u :xi':t
+\a :xi':t
+\c V | VA
+\g salpicar
+\m 1
+\mp vt
+\mp class1
+
+\r wxiz
+\_no 00972
+\u :xis
+\a :xis
+\c V | VA
+\g hacer.temblar
+\m 1
+\mp vt
+\mp class1
+
+\r wxoarap
+\_no 00973
+\u :xoala:p
+\a :xoala:p
+\c V | VA
+\g confesar
+\m 1
+\mp vt
+\mp |may also take null Potential
+\mp class1
+
+\r wxonnj
+\_no 00974
+\u :xo:nj
+\a :xo:nj
+\c V | VA
+\g arrugar.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wxo'p
+\_no 00975
+\u :xo':p
+\a :xo':p
+\c V | VA
+\g cortar/desprender.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wxos
+\_no 00976
+\u :xo:s
+\a :xo:s
+\c V | VA
+\g sobresaltar
+\m 1
+\mp vi
+\mp class1
+
+\r wya'
+\_no 00977
+\u ya'
+\a y   / _  a' +/ _ 1s
+\a ye  / _ 'e  +/ _ 3r
+\a ya'a  / _ #
+\a ya'   / ~_ #
+\c V | VA
+\g bailar
+\m 1
+\mp vi
+\mp class1
+
+\r wya'nnj
+\_no 00978
+\u ya':nj
+\a  a':nj  / s _ +/ Caus _
+\a ya':nj
+\c V | VA
+\g magullar
+\m 1
+\mp vi
+\mp class1
+\mp takes.s.Caus
+\mp takes.group.2.pns
+
+\r wyon
+\_no 00979
+\u kwyon
+\a kwyon
+\c Prt | PPrt
+\g sesenta
+
+\r wyonn
+\_no 00980
+\u kwyonn
+\a kwyonn
+\c Adj | Adj
+\g tercero
+
+\r wza'ch
+\_no 00981
+\u sa':ch
+\a sa':ch
+\c V | VA
+\g disminuir  |hacer mas corto/menos; see Matt. 24:22
+\m 1
+\mp vt
+\mp class1
+
+\r wzal
+\_no 00982
+\u sa:l
+\a sa:l
+\c V | VA
+\g tumbar
+\m 1
+\mp vt
+\mp class1
+
+\r wza'l
+\_no 00983
+\u sa':l
+\a sa':l
+\c V | VA
+\g tirar/botar
+\m 1
+\mp vt
+\mp class1
+
+\r wza'll
+\_no 00984
+\u sa'ch
+\a sa'ch
+\c V | VA
+\g empapar
+\m 1
+\mp vt
+\mp class1
+
+\r wzap
+\_no 00985
+\u sa:p
+\a sa:p
+\c V | VA
+\g agarrar.con.violencia
+\m 1
+\mp vt
+\mp class1
+
+\r wzar
+\_no 00986
+\u sal
+\a sal
+\c V | VA
+\g manar.(agua).vt
+\m 1
+\mp vt
+\mp class1
+
+\r wza'y
+\_no 00987
+\u sa'y
+\a sa'y
+\c V | VA
+\g detener
+\m 1
+\mp vt
+\mp class1
+
+\r wze
+\_no 00988
+\u se
+\a si / _ a' +/ _ 1s
+\a sé / _ # +/ [Modal] ... _
+			+/ Rep ...     _
+			+/ [Imperatives] ... _
+\a se / # ([C]) _  #
+	  /         _ ~#
+\c V | VA
+\g parar.vt1
+\m 1
+\mp vt
+\mp class1
+
+\r wzeb
+\_no 00989
+\u sep
+\a sep
+\c V | VA
+\g meter.dedo   |Mk 7:33
+\m 1
+\mp vt
+\mp class1
+
+\r wzechj
+\_no 00990
+\u se:chj
+\a se:chj
+\c V | VA
+\g dar.vuelta.vt
+\m 1
+\mp vt
+\mp class1
+
+\r wzej
+\_no 00991
+\u sej
+\a sej
+\c V | VA
+\g rociar
+\m 1
+\mp vt
+\mp class1
+
+\r wzejnie'
+\_no 00992
+\u sejnie'
+\a sejnie'
+\c V | VA
+\g instruir
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wzen
+\_no 00993
+\u sen
+\a sen
+\c V | VA
+\g avisar.1
+\m 1
+\mp vt
+\mp class1
+\mp takes.group.2.pns
+
+\r wzenay
+\_no 00994
+\u senay
+\a senay
+\c V | VA
+\g escuchar
+\m 1
+\mp vt
+\mp class1
+
+\r wzenia'na'
+\_no 00995
+\u senia'na'
+\a senia'n    / _ a'  +/ _ 1s
+\a senia'ne'  / _ e  +/ _ 3r
+\a senia'na'a / _ #
+\a senia'na'  / ~_ #
+\c V | VA
+\g servir
+\m 1
+\mp vt
+\mp class1
+
+\r wzerj
+\_no 00996
+\u selj
+\a selj
+\c V | VA
+\g eructar
+\m 1
+\mp vi
+\mp class1
+
+\r wzetj
+\_no 00997
+\u se:tj
+\a se:tj
+\c V | VA
+\g darle.sabor
+\m 1
+\mp vt
+\mp class1
+
+\r wzey
+\_no 00998
+\u sey
+\a sey
+\c V | VA
+\g quemar
+\m 1
+\mp vt
+\mp class1
+\noload  |?should be handled by chey?
+
+\r wzoa
+\_no 00999
+\u soa
+\a so |  / _ [V-hi+cg]   +/ _ [1s-or-3r]  omit for wzokera'
+\a soa
+\c V | VA
+\g poner.parado.cosas
+\m 1
+\mp vt
+\mp class1
+
+\r wzoalli
+\_no 01000
+\u soachi
+\a soachi
+\c V | VA
+\g callar2    |see kweklli
+\m 1
+\mp vt
+\mp class1
+
+\r wzo'j
+\_no 01001
+\u so'j
+\a so'j
+\c V | VA
+\g secar.(agua).vt
+\m 1
+\mp vt
+\mp class1
+
+\r wzo'll
+\_no 01002
+\u so'ch
+\a so'ch
+\c V | VA
+\g curtir
+\m 1
+\mp vt
+\mp class1
+
+\r wzon
+\_no 01003
+\u kwson
+\a kwson
+\c N | N
+\g devolución
+| wayo'(te) wzon   (intrans) Lk 14:12
+| wago'(te) wzon   (trans)
+| sie' wzon        (receive repayment)
+| yezie' wzon      (desquitar)
+
+\r wzoya'
+\_no 01004
+\u soya'
+\a soy   / _ a'   +/ _ 1s
+\a soye' / _ e    +/ _ 3r
+\a soya'a / _ #
+\a soya'  / ~_ #
+\c V | VA
+\g amontonar.(cosas)
+\m 1
+\mp vt
+\mp class1
+
+\r xa
+\_no 01005
+\u :xa
+\a :x    / _ a'   +/ _ 1s
+\a :xe'  / _ e  +/ _ 3r
+\a :xa
+\g padre.de
+\c N | NP
+\wf possessed
+
+\r xagor
+\_no 01006
+\u :xakol
+\a :xakol
+\g abuelo.de
+\c N | NP
+\wf possessed
+
+\r xa'kra'll
+\_no 01007
+\u :xa':kla'ch
+\a :xa':kla'ch
+\c V | VA
+\g cansar2
+\m 1
+\mp vi
+\mp class1
+\mcc cansar2 +/ Go.NB.PH _ +/ Go.NB.C _
+
+\r xan
+\_no 01008
+\u :xan
+\a :xan
+\c N | N
+\g patrón
+
+\r xa'o
+\_no 01009
+\u :xa'o
+\a :xa'   / _ o   +/ _ 2s
+\a :xa'kw  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :xa'o
+\c V | VA
+\g chiflar
+\m 4
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.null.S
+
+\r xat
+\_no 01010
+\u :xa:t
+\a :xa:t
+\c N | N
+\g humilde
+
+\r xaxhna'
+\_no 01011
+\u :xaxna'
+\a :xaxn    / _ a'  +/ _ 1s
+\a :xaxne'  / _ e  +/ _ 3r
+\a :xaxna'
+\c N | NP
+\wf possessed
+\g padres
+
+\r xa'y
+\_no 01012
+\u :xa'y
+\a :xa'y
+\c N | N
+\g topil
+
+\r xa'y
+\_no 01013
+\u :xa'y
+\a :xa'y
+\g mejilla.de
+\c N | NP
+\wf possessed
+
+\r xazi
+\_no 01014
+\u :xasi
+\a :xasi
+\g padrastro.de
+\c N | NP
+\wf possessed
+
+\r xchan
+\_no 01015
+\u :x:chan
+\a :x:chan
+\c N | N
+\g sábana
+
+\r xche'
+\_no 01016
+\u :x:che'
+\a :x:che'
+\c N | N
+\g cena
+
+\r xchinraz
+\_no 01017
+\u :x:chinlas
+\a :x:chinlas
+\c N | NP
+\wf possessed
+\g trastes/equipo
+
+\r xchol
+\_no 01018
+\u :x:cho:l
+\a :x:cho:l
+\c N | N
+\g oscuridad
+
+\r xe
+\_no 01019
+\u xe
+\a xe
+\a xi   / _ e'   +/ _ 3r
+\c V | VA
+\g fundar
+\m 9
+\mp vi
+\mp class2
+\mp takes.colon.Caus
+
+\r xe'
+\_no 01020
+\u :xe'
+\a :xi  / _ a'  +/ _ 1s
+\a :xe'
+\c V | VA
+\g mellar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r xen
+\_no 01021
+\u xen
+\a xen
+\c V | VA
+\g comenzar.(fundar)
+\m 9
+\mp vi
+\mp class2
+
+\r xha
+\_no 01022
+\u xa
+\a x   / _ a'   +/ _ 1s
+\a xe'  / _ e  +/ _ 3r
+\a xa
+\g camisa.de
+\c N | NP
+\wf possessed
+
+\r xha'
+\_no 01023
+\u xa'
+\a x   / _ a'  +/ _ 1s
+\a xe'  / _ e'  +/ _ 3r
+\a xa'
+\c V | VA
+\g abrir
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r xhadon
+\_no 01024
+\u xaton
+\a xaton
+\c N | N
+\g garment
+
+\r xhan
+\_no 01025
+\u xan
+\a xan
+\c N | NP
+\wf possessed
+\g nalgas/abajo
+
+\r xhara'n
+\_no 01026
+\u xala'n
+\a xala'n
+\g clothing.de
+\c N | NP
+\wf possessed
+
+\r xhbab
+\_no 01027
+\u xpap
+\a xpap
+\c N | N
+\g pensamiento
+
+\r xhban
+\_no 01028
+\u xpan
+\a xpan
+\g cola.de
+\c N | NP
+\wf possessed
+
+\r xhba'y
+\_no 01029
+\u xpa'y
+\a xpa'y
+\c N | NP
+\wf possessed
+\g deuda.de
+
+\r xhben
+\_no 01030
+\u xpen
+\a xpen
+\g dedo.de
+\c N | NP
+\wf possessed
+
+\r xhe'
+\_no 01031
+\u xe'
+\a xe'
+\c N | N
+\g envidia
+
+\r xhej
+\_no 01032
+\u xej
+\a xej
+\c V | VA
+\g machucar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r xhen
+\_no 01033
+\u xen
+\a xen
+\c Adj | Adj
+\g grande
+
+\r xhen
+\_no 01034
+\u xen
+\a xen
+\c V | VA
+\g prender.vi           | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r xhe'n
+\_no 01035
+\u xe'n
+\a xe'n
+\c N | N
+\g saliva
+
+\r xher
+\_no 01036
+\u xel
+\a xel
+\g huarache.de
+\c N | NP
+\wf possessed
+
+\r xherk
+\_no 01037
+\u xel:k
+\a xel:k
+\c N | N
+\g serape
+
+\r xhga
+\_no 01038
+\u xka
+\a xk   / _ a'   +/ _ 1s
+\a xka
+\g necklace.de
+\c N | NP
+\wf possessed
+
+\r xhgot
+\_no 01039
+\u xko:t
+\a xko:t
+\c N | N
+\g epilepsia  | Lk 9:37
+
+\r xhi
+\_no 01040
+\u xi
+\a xi
+\c V | VA
+\g limpiar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r xhia
+\_no 01041
+\u xia
+\a xia
+\c N | N
+\g da¤o
+
+\r xhib
+\_no 01042
+\u xip
+\a xip
+\g rodilla.de
+\c N | NP
+\wf possessed
+
+\r xhi'bada'o
+\_no 01043
+\u xi'pata'o
+\a xi'pata'    / _ o           +/ _  2s
+\a xi'pata'kw   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a xi'pata'o
+\g ahijado.de
+\c N | NP
+\wf possessed
+
+\r xhi'ch
+\_no 01044
+\u xi':ch
+\a xi':ch
+\g codo.de
+\c N | NP
+\wf possessed
+
+\r xhichj
+\_no 01045
+\u xi:chj
+\a xi:chj
+\g hombro/brazo.de
+\c N | NP
+\wf possessed
+
+\r xhi'n
+\_no 01046
+\u xi'n
+\a xi'n
+\g nariz.de
+\c N | NP
+\wf possessed
+
+\r xhi'nis
+\_no 01047
+\u xi'ni:s
+\a xi'ni:s
+\g ahijado.(de.bautismo).de
+\c N | NP
+\wf possessed
+
+\r xhi'nn
+\_no 01048
+\u xi':n
+\a xi':n
+\g hijo.de
+\c N | NP
+\wf possessed
+
+\r xhinnj
+\_no 01049
+\u xi:nj
+\a xi:nj
+\c Adj | Adj
+\g defectuoso
+
+\r xhi'nnzi
+\_no 01050
+\u xi':nsi
+\a xi':nsi
+\g stepchild.de
+\c N | NP
+\wf possessed
+
+\r xhi'r
+\_no 01051
+\u xi'l
+\a xi'l
+\c N | N
+\g borrego
+
+\r xhis
+\_no 01052
+\u xi:s
+\a xi:s
+\c N | N
+\g varra
+
+\r xhix
+\_no 01053
+\u xi:x
+\a xi:x
+\c Adj | Adj
+\g dulce
+
+\r xhi'y
+\_no 01054
+\u xi'y
+\a xi'y
+\g jícara
+\c N | N
+
+\r xhiya
+\_no 01055
+\u xiya
+\a xiya
+\c N | N
+\g llave
+
+\r xhjes
+\_no 01056
+\u xje:s
+\a xje:s
+\g ri¤on.de
+\c N | NP
+\wf possessed
+
+\r xhjochj
+\_no 01057
+\u xjo:chj
+\a xjo:chj
+\g pierna.de
+\c N | NP
+\wf possessed
+
+\r xhlatj
+\_no 01058
+\u x:la:tj
+\a x:la:tj
+\c N | NP
+\wf possessed
+\g lugar.de
+
+\r xhman
+\_no 01059
+\u x:man
+\a x:man
+\c N | N
+\g semana
+
+\r xhna
+\_no 01060
+\u xna
+\a xna
+\c Adj | Adj
+\g rojo
+
+\r xhna'
+\_no 01061
+\u xna'
+\a xn    / _ a'  +/ _ 1s
+\a xne'  / _ e  +/ _ 3r
+\a xna'
+\g madre.de
+\c N | NP
+\wf possessed
+
+\r xhna'bada'o
+\_no 01062
+\u xna'pata'o
+\a xna'pata'    / _ o           +/ _  2s
+\a xna'pata'kw   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a xna'pata'o
+\g padrina.de
+\c N | NP
+\wf possessed
+
+\r xhna'gor
+\_no 01063
+\u xna'kol
+\a xna'kol
+\g abuela.de
+\c N | NP
+\wf possessed
+
+\r xhna'nis
+\_no 01064
+\u xna'ni:s
+\a xna'ni:s
+\g padrina.(de.bautismo).de
+\c N | NP
+\wf possessed
+
+\r xhna'zi
+\_no 01065
+\u xna'si
+\a xna'si
+\g madrastro.de
+\c N | NP
+\wf possessed
+
+\r xhnia'
+\_no 01066
+\u xnia'
+\a xni   / _ a' / _ e'  +/ _ [1s-or-3r]
+\a xnia'
+\c N | NP
+\wf possessed
+\g a.los.pies.de
+
+\r xhnid
+\_no 01067
+\u xnit
+\a xnit
+\c N | N
+\g preparación
+
+\r xhnne
+\_no 01068
+\u x:ne
+\a x:ne
+\c N | N
+\g sonido.de.voz
+
+\r xhoa'
+\_no 01069
+\u xoa'
+\a xoa'
+\c N | N
+\g maíz
+
+\r xho'b
+\_no 01070
+\u xo'p
+\a xo'p
+\c V | VA
+\g desgranar.vi                 | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r xhoe'
+\_no 01071
+\u xoe'
+\a xo     / _ e'  +/ _ 3r
+\a xoe    / _ a'  +/ _ 1s
+\a xoe'
+\c V | VA
+\g lograr.crecer  |bi nxhoe'n rao Dios -no "sirve" delante de Dios
+\m 2
+\mp vt
+\mp class1
+\mp takes.null.P
+\mp takes.group.2.pns
+
+\r xho'll
+\_no 01072
+\u xo'ch
+\a xo'ch
+\g yerno.de
+\c N | NP
+\wf possessed
+
+\r xhorill
+\_no 01073
+\u xolich
+\a xolich
+\c N | NP
+\wf possessed
+\g suegra
+
+\r xho'rilla'
+\_no 01074
+\u xo'licha'
+\a xo'lich    / _ a'  +/ _ 1s
+\a xo'liche'  / _ e   +/ _ 3r
+\a xo'licha'
+\g nuera.de
+\c N | NP
+\wf possessed
+
+\r xhoso
+\_no 01075
+\u xo:so
+\a xo:s  / _ o' +/ _ 2s
+\a xo:so
+\g nieto.de
+\c N | NP
+\wf possessed
+
+\r xho'z
+\_no 01076
+\u xo's
+\a xo's
+\c N | N
+\g rama
+
+\r xhro
+\_no 01077
+\u xlo
+\a xl  / _ o' +/ _ 2s
+\a xlo
+\g intestino.de
+\c N | NP
+\wf possessed
+
+\r xhwe
+\_no 01078
+\u xkwe
+\a xkwe
+\c N | N
+\g comida
+
+\r xichj
+\_no 01079
+\u xhi:chj
+\a xhi:chj
+\c N | NP
+\wf possessed
+\g hombro.de
+
+\r xi'd
+\_no 01080
+\u :xi't
+\a :xi't
+\c V | VA
+\g enredar              | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r xillj
+\_no 01081
+\u :xichj
+\a  ichj  / x _  +/ Poss _
+\a pechj  / # _
+\g pollo
+\c N | N
+
+\r xinnj
+\_no 01082
+\u xi:nj
+\a xi:nj
+\c V | VA
+\g echar.a.perder               | take group 2 pns??
+\m 9
+\mp vi
+\mp class2
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r xinnjra'll
+\_no 01083
+\u xi:njla'ch
+\a xi:njla'ch
+\c V | VA
+\g hacer.mal
+\m 9
+\mp vi
+\mp class2
+
+\r xir
+\_no 01084
+\u :xil
+\a :xil
+\g ala.de
+\c N | NP
+\wf possessed
+
+\r xi't
+\_no 01085
+\u xi':t
+\a xi':t
+\c V | VA
+\g brincar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r xiz
+\_no 01086
+\u xis
+\a xis
+\c V | VA
+\g temblar/vibrar
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+
+\r xkid
+\_no 01087
+\u :x:kit
+\a :x:kit
+\g ombliguo.de
+\c N | NP
+\wf possessed
+
+\r xkoy
+\_no 01088
+\u :x:koy
+\a :x:koy
+\g cuello.de
+\c N | NP
+\wf possessed
+
+\r xkwi'd
+\_no 01089
+\u :x:kwi't
+\a :x:kwi't
+\c N | N
+\g ni¤o/a2
+
+\r xo'
+\_no 01090
+\u xo'
+\a x   / _ o'  +/ _ 2s
+\a xo  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a xo'
+\c V | VA
+\g temblar.la.tierra
+\m 9
+\mp vi
+\mp class2
+\mcc temblar.la.tierra / ~ _ ... [Pronoun]
+
+\r xoa
+\_no 01091
+\u xoa
+\a xo  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+	   / _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a xoa
+\c V | VA
+\g acostar.(en.alto)
+\m 10
+\mp vi
+\mp class2
+\mp takes.null.S
+\mp takes.colon.Caus
+
+\r xoayay
+\_no 01092
+\u xoayay
+\a xoayay
+\c V | VA
+\g convencer
+\m 9
+\mp vi
+\mp class2
+\mp takes.colon.Caus
+
+\r xob
+\_no 01093
+\u xop
+\a xop
+\c V | VA
+\g arrastrar
+\m 9
+\mp vt
+\mp class2
+
+\r xo'b
+\_no 01094
+\u xo'p
+\a xo'p
+\c V | VA
+\g desgranar.vt
+\m 9
+\mp vt
+\mp class2
+
+\r xo'n
+\_no 01095
+\u xo'n
+\a xo'n
+\c Num | NumA
+\g ocho
+\mp class2
+\mp takes.kw.C
+
+\r xo'nn
+\_no 01096
+\u :xo':n
+\a :xo':n
+\g nido.de
+\c N | NP
+\wf possessed
+
+\r xonnj
+\_no 01097
+\u :xo:nj
+\a :xo:nj
+\c V | VA
+\g arrugar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r xop
+\_no 01098
+\u xo:p
+\a xo:p
+\c Num | NumA
+\g seis
+\mp class2
+\mp takes.kw.C
+
+\r xo'p
+\_no 01099
+\u :xo':p
+\a :xo':p
+\c V | VA
+\g cortar/desprender.vi         | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r xo'p
+\_no 01100
+\u xo':p
+\a xo':p
+\c V | VA
+\g chupar
+\m 9
+\mp vi
+\mp class2
+
+\r xo'y
+\_no 01101
+\u :xo'y
+\a :xo'y
+\g u¤a.de
+\c N | NP
+\wf possessed
+
+\r xozbada'o
+\_no 01102
+\u :xospata'o
+\a :xospata'    / _ o           +/ _  2s
+\a :xospata'kw   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :xospata'o
+\g padrino.de
+\c N | NP
+\wf possessed
+
+\r xoznis
+\_no 01103
+\u :xosni:s
+\a :xosni:s
+\g padrino.(de.bautismo).de
+\c N | NP
+\wf possessed
+
+\r xozxta'o
+\_no 01104
+\u :xos:x:ta'o
+\a :xos:x:ta'    / _ o           +/ _  2s
+\a :xos:x:ta'kw   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a :xos:x:ta'o
+\g antepasado.de
+\c N | NP
+\wf possessed
+
+\r xte
+\_no 01105
+\u :x:te
+\a :x:te
+\c Prt | Prt
+\g hasta
+
+\r xtir
+\_no 01106
+\u :x:til
+\a :x:til
+\c Adj | Adj
+\g castellano
+
+\r xto
+\_no 01107
+\u :x:to
+\a :x:t  / _ o' +/ _ 2s
+\a :x:to
+\c N | NP
+\wf possessed
+\g amante
+
+\r ya
+\_no 01108
+\u ya
+\a ya
+\c N | N
+\g fierro
+
+\r ya'
+\_no 01109
+\u ya'
+\a ya'
+\c Adj | Adj
+\g verde2  | also ga'
+
+\r ya'
+\_no 01110
+\u ya'
+\a ya'
+\c N | N
+\g enojo  | yel ya'
+
+\r ya'
+\_no 01111
+\u ya'
+\a ya'
+\c N | N
+\g cerro
+
+\r ya'a
+\_no 01112
+\u ya'a
+\a ya'a
+\c N | N
+\g plaza
+
+\r ya'ch
+\_no 01113
+\u ya':ch
+\a ya':ch
+\c Adj | Adj
+\g pobre
+
+\r yal
+\_no 01114
+\u ya:l
+\a ya:l
+\c V | VA
+\g tumbar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r yall
+\_no 01115
+\u yach
+\a yach
+\c Adj | Adj
+\g limpio
+
+\r yallj
+\_no 01116
+\u yachj
+\a yachj
+\c V | VA
+\g nesecitar
+\m 4
+\mp vt
+\mp takes.null.P
+\mp takes.null.S
+\mp takes.group.2.pns
+
+\r ya'nn
+\_no 01117
+\u ya':n
+\a ya':n
+\c Adv | Adv
+\g YA'NN.Adv
+
+\r yar
+\_no 01118
+\u yal
+\a yal
+\c N | N
+\g copal
+
+\r ya'ra'll
+\_no 01119
+\u ya'la'ch
+\a ya'la'ch
+\c N | N
+\g orgullo
+
+\r yarj
+\_no 01120
+\u yalj
+\a  alj  / :s _  +/ Caus _
+\a yalj
+\c V | VA
+\g abrir.para.dejar.pasar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colons.Caus
+
+\r yay
+\_no 01121
+\u yay
+\a yay
+\c N | N
+\g árbol
+
+\r ye
+\_no 01122
+\u ye
+\a ye
+\c Adj | Adj
+\g otro
+
+\r ye
+\_no 01123
+\u e
+\a e:p  /     _ [V-hi+cg] +/       P  _ [1s-or-3r]  +/ H _ [1s-or-3r]
+		/ _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+		/ _ # a:k         +/       P _ # Plural [1s-or-3r]
+						  +/       H _ # Plural [1s-or-3r]
+\a i    /     _ a'    +/       S  _ 1s
+\a och  / k   _       +/       C  _
+\a é    / # :ley _ #  +/       Imp.Pl P _
+\a e    / # :ley ~_ # +/       P  _     +/ H _   | +/ [Modal] _  ?
+\a ech                +/       [Modal] ... _
+\c V | VA
+\g decir.vt
+\m 42
+\mp vt
+\mp class2
+
+\r yeban
+\_no 01124
+\u pan
+\a  an   +/ Inf _
+\a pan   +/ Rep _   |must occur with Rep
+\c V | VA
+\g maravillar
+\m 1
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+
+\r yebá
+\_no 01125
+\u yepá
+\a yepá
+\c N | N
+\g cielo
+
+\r yech
+\_no 01126
+\u ye:ch
+\a ye:ch
+\c Adj | Adj
+\g seco1
+
+\r yech
+\_no 01127
+\u ye:ch
+\a ye:ch
+\c V | VA
+\g secar.vi             | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r ye'ch
+\_no 01128
+\u ye':ch
+\a ye':ch
+\c N | N
+\g espino
+
+\r ye'chich
+\_no 01129
+\u ye':chi:ch
+\a ye':chi:ch
+\c N | N
+\g aguja
+
+\r yed
+\_no 01130
+\u yet
+\a  et         +/ S ~_
+\c V | VA
+\g venir
+\m 39
+\mp vi
+\mp class1
+\co see "a" entry for Stative and Imperative
+\co no 3rd plural prefix for venir
+
+\r yej
+\_no 01131
+\u yej
+\a yej
+\c N | N
+\g flor
+
+\r yej
+\_no 01132
+\u yej
+\a yej
+\c N | N
+\g piedra
+
+\r ye'j
+\_no 01133
+\u e'j
+\a e'         +/ [Modal] _
+\a e'e        +/ Inf     _
+\a e'j
+\c V | VA
+\g beber
+\m 44
+\mp vt
+\mp class2
+\mp takes.kw.Caus
+\mp takes.kw.C
+
+\r yejrao
+\_no 01134
+\u yejlao
+\a yejla  under.ao  / _ o'         +/ _ 2s
+\a yejlakw           / _ [V-hi+cg]  +/ _ [1s-or-3r]
+				  / _ en         +/ _ & 3i
+\a yejlao
+\c N | NP
+\wf possessed
+\g ojo2
+
+\r yejsi'o
+\_no 01135
+\u yej:si'o
+\a yej:si'o
+\c N | N
+\g aguacero
+
+\r yejw
+\_no 01136
+\u yejkw
+\a yejkw
+\c N | N
+\g lluvia
+
+\r yel
+\_no 01137
+\u ye:l
+\a ye:l
+\c Prt | Prt
+\g sustantivizador
+
+\r ye'l
+\_no 01138
+\u ye':l
+\a  e':l  / x _  +/ Poss _
+\a ye':l  / # _
+\g platano
+\c N | N
+
+\r yela'
+\_no 01139
+\u ye:la'
+\a ye:la'
+\c Adj | Adj
+\g demás
+
+\r yell
+\_no 01140
+\u yech
+\a yech
+\c N | N
+\g pueblo
+
+\r ye'll
+\_no 01141
+\u ye'ch
+\a ye'ch
+\c N | N
+\g granos
+
+\r yellrio
+\_no 01142
+\u yechlio
+\a yechlio
+\c N | N
+\g mundo
+
+\r yen
+\_no 01143
+\u yen
+\a yen
+\c N | NP
+\wf possessed
+\g cuello.de2
+
+\r yen
+\_no 01144
+\u en
+\a en
+\c V | VA
+\g oír
+\m 8
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+\mcc oír +/ Pl.pfx ~_
+
+\r yen
+\_no 01145
+\u en
+\a en
+\c V | VA
+\g poner.el.sol
+\m 8 | no stative form
+\mp vi
+\mp class1
+\mcc poner.el.sol / ~ _ ...[Pronoun]
+
+\r yen
+\_no 01146
+\u yen
+\a yen
+\c V | VA
+\g apurar.(estar.de.prisa)
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.group.2.pns
+
+\r ye'n
+\_no 01147
+\u ye'n
+\a ye'n         +/ P _
+\a che'n        +/ H _
+\a   o'n        +/ C _
+\c V | VA
+\g querer
+\m 43
+\mp vt
+\mp class2
+\mp takes.null.H
+\mp takes.null.P
+\mp takes.group.2.pns
+
+\r ye'nn
+\_no 01148
+\u ye':n
+\a ye':n
+\c N | N
+\g plato.hondo
+
+\r yeo
+\_no 01149
+\u yeo
+\a yeo
+\a yo'y
+\c Adj | Adj
+\g todos2
+
+\r yeo
+\_no 01150
+\u yeo
+\a yeo
+\c N | N
+\g rio
+
+\r yeolol
+\_no 01151
+\u yeo:lo:l
+\a yeo:lo:l
+|\a yeklo      alternate spelling but not to be used in NT
+\c Prt | PPrt
+\g todos
+
+\r yer
+\_no 01152
+\u yel
+\a yel
+\c N | N
+\g milpa
+
+\r yer
+\_no 01153
+\u yel
+\a yel
+\c N | N
+\g noche
+
+\r yerj
+\_no 01154
+\u elj
+\a elj
+\c V | VA
+\g satisfacer
+\m 8
+\mp vi
+\mp class1
+\mp takes.group.2.pns
+
+\r yes
+\_no 01155
+\u ye:s
+\a ye:s
+\c N | N
+\g relámpago   | with chep
+
+\r ye's
+\_no 01156
+\u ye':s
+\a :le':s  / x _  +/ Poss _
+\a  ye':s  / # _
+\g olla
+\c N | N
+
+\r yet
+\_no 01157
+\u ye:t
+\a ye:t
+\c N | N
+\g tortilla
+
+\r yet
+\_no 01158
+\u ye:t
+\a ye:t
+\c V | VA
+\g moler                | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+
+\r yetj
+\_no 01159
+\u e:tj
+\a e:tj
+\c V | VA
+\g tener.sabor          | take group 2 pns??
+\m 8
+\mp vi
+\mp class1
+|hab's \mp takes.group.2.pns
+
+\r yexh
+\_no 01160
+\u yex
+\a yex
+\c N | N
+\g invitación
+
+\r yexj
+\_no 01161
+\u e:xj
+\a e:xj
+\c V | VA
+\g disminuir/caer               | take group 2 pns??
+\m 8
+\mp vi
+\mp class1
+|hab's \mp takes.group.2.pns
+
+\r yexjra'll
+\_no 01162
+\u e:xjla'ch
+\a e:xjla'ch
+\c V | VA
+\g ser.humilde
+\m 8
+\mp vi
+\mp class1
+
+\r yez
+\_no 01163
+\u yes
+\a  es  / x _  +/ Poss _
+\a yes  / # _
+\g mazorca
+\c N | N
+
+\r yezikre
+\_no 01164
+\u yesi:kle
+\a yesi:kle
+\c Adj | Adj
+\g varios
+
+\r yezj
+\_no 01165
+\u yesj
+\a yesj
+\c N | N
+\g harina
+
+\r yi
+\_no 01166
+\u yi
+\a yi
+\c N | N
+\g hinchazón
+
+\r yi
+\_no 01167
+\u yi
+\a yi
+\c V | VA
+\g retacar/rellenar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r yi'
+\_no 01168
+\u yi'
+\a yi'
+\c N | N
+\g fuego
+
+\r yia
+\_no 01169
+\u yia
+\a yia
+\c N | N
+\g carrizo
+
+\r yich
+\_no 01170
+\u yi:ch
+\a yi:ch
+\c N | N
+\g piedra.de.molino
+
+\r yich
+\_no 01171
+\u yi:ch
+\a :li:ch  / x _  +/ Poss _
+\a  yi:ch  / # _
+\g pelo/papel
+\c N | N
+
+\r yi'ch
+\_no 01172
+\u yi':ch
+\a yi':ch
+\c V | VA
+\g apretar/presionar/hundir     | take group 2 pns??
+\m 4
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.null.S  | Lk 5:7
+|hab's \mp takes.group.2.pns
+
+\r yichj
+\_no 01173
+\u yi:chj
+\a yi:chj
+\c V | VA
+\g agriar               | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.s.Caus
+
+\r yichj
+\_no 01174
+\u yi:chj
+\a yi:chj
+\g cabeza.de
+\c N | NP
+\wf possessed
+
+\r yichjo
+\_no 01175
+\u yi:chjo
+\a yi:chjo
+\c N | N
+\g techo
+
+\r yichjra'llda'o
+\_no 01176
+\u yi:chjla'chta'o
+\a yi:chjla'chta'  / _ o  +/ _ 2s
+\a yi:chjla'chta'kw / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a yi:chjla'chta'o
+\c N | NP
+\wf possessed
+\g cabeza.corazón.de
+
+\r yichjrao
+\_no 01177
+\u yi:chjlao
+\a yi:chjla  under.ao  / _ o'         +/ _ 2s
+\a yi:chjlakw           / _ [V-hi+cg]  +/ _ [1s-or-3r]
+\a yi:chjlao
+\c N | NP
+\wf possessed
+\g cabeza.cara
+
+\r yid
+\_no 01178
+\u yit
+\a yit
+\c N | N
+\g piel
+
+\r yi'd
+\_no 01179
+\u yi't
+\a yi't
+\c V | VA
+\g apretar.vi
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r yillwe'
+\_no 01180
+\u yichkwe'
+\a yichkwe'
+\c N | N
+\g enfermedad
+
+\r yi'nn
+\_no 01181
+\u yi':n
+\a :li':n  / x _  +/ Poss _
+\a  yi':n  / # _
+\g ataud
+\c N | N
+
+\r yinnj
+\_no 01182
+\u yi:nj
+\a yi:nj
+\c V | VA
+\g derrumbar
+\m 8
+\mp vi
+\mp class1
+\mp takes.null.P
+
+\r yi'o
+\_no 01183
+\u yi'o
+\a yi'o
+\c N | N
+\g cal
+
+\r yi'wzi'o
+\_no 01184
+\u yi'kwsi'o
+\a yi'kwsi'o
+\c N | N
+\g rayo
+
+\r yix
+\_no 01185
+\u yi:x
+\a yi:x
+\c N | N
+\g aguacate
+
+\r yi'x
+\_no 01186
+\u yi':x
+\a yi':x
+\c N | N
+\g planta
+
+\r yixh
+\_no 01187
+\u yix
+\a yix
+\c N | N
+\g zacate | dry
+
+\r yixj
+\_no 01188
+\u yi:xj
+\a yi:xj
+\c N | N
+\g red
+
+\r yo
+\_no 01189
+\u yo
+\a yo
+|\a chyo  |according to preference but let's stick to yo
+\c N | N
+\g tierra
+
+\r yo'
+\_no 01190
+\u yo'
+\a y    / _ o'          +/ _ 2s
+\a yo   / _ [V-hi+cg]   +/ _ [1s-or-3r]
+\a yo'
+\g casa.2
+\c N | N
+
+\r yoa'
+\_no 01191
+\u yoa'
+\a yoa'
+\c N | N
+\g carga
+
+\r yob
+\_no 01192
+\u yop
+\a yop
+\c Adj | Adj
+\g diferente
+
+\r yob
+\_no 01193
+\u yop
+\a yop
+\c V | VA
+\g apurar.(ser.rápido)
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.group.2.pns
+
+\r yoda'o
+\_no 01194
+\u yota'o
+\a yota'o
+\c N | N
+\g iglesia
+
+\r yoj
+\_no 01195
+\u yoj
+\a  oj  / s _ +/ Caus _
+\a yoj
+\c V | VA
+\g escribir
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.s.Caus
+
+\r yola'o
+\_no 01196
+\u yo:la'o
+\a yo:la'o
+\c N | N
+\g ayuntamiento
+
+\r yoran
+\_no 01197
+\u yolan
+\a yolan
+\c N | N
+\g pólvora   | black stuff in fireworks?
+
+\r yoxh
+\_no 01198
+\u yox
+\a yox
+\c N | N
+\g arena
+
+\r yo'y
+\_no 01199
+\u yo'y
+\a yo'y
+\c V | VA
+\g podar.(ser.podado)           | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.s.Caus
+
+\r za
+\_no 01200
+\u sa
+\a sa
+\c N | N
+\g frijol
+
+\r za
+\_no 01201
+\u sa
+\a sa
+\c Adv | Adv
+\g antes/acaba.de
+
+\r za'
+\_no 01202
+\u sa'
+\a sa'
+\c N | N
+\g elote
+
+\r za'
+\_no 01203
+\u sa'
+\a s   / _ a'  +/ _ 1s
+\a se'  / _ e'  +/ _ 3r
+\a sa'a / _ #
+\a sa'  / ~_ #
+\c V | VA
+\g completar
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+\mp laryngealizes
+
+\r zan
+\_no 01204
+\u san
+\a san
+\c V | VA
+\g rendir
+\m 4
+\mp vt
+\mp class1
+\mp takes.null.S
+\mp takes.null.P
+\mp can.take.group.2.pns
+
+\r zan
+\_no 01205
+\u san
+\a san
+\c Conj | Conj
+\g pero3
+
+\r zan
+\_no 01206
+\u san
+\a san
+\c Adj | Adj
+\g muchos
+
+\r zay
+\_no 01207
+\u say
+\a say
+\c Adj | Adj
+\g frio
+
+\r zban
+\_no 01208
+\u span
+\a span
+\c Adj | Adj
+\g feo
+
+\r zdo'
+\_no 01209
+\u sto'
+\a sto'
+\c N | N
+\g verguenza
+
+\r ze'ch
+\_no 01210
+\u se':ch
+\a se':ch
+\c Adj | Adj
+\g áspero
+
+\r zed
+\_no 01211
+\u set
+\a set
+\c Adj | Adj
+\g problema
+
+\r ze'd
+\_no 01212
+\u se't
+\a se't
+\c N | N
+\g sal
+
+\r ze'e
+\_no 01213
+\u se'e
+\a se'e
+\c N | N
+\g pared
+
+\r zejlikane
+\_no 01214
+\u sej:li:kane
+\a sej:li:kane
+\c Adj | Adj
+\g eterna
+
+\r zerao
+\_no 01215
+\u selao
+\a selao
+\a selakw  / _ e#
+\c Adv | Adv
+\g lo.mas
+
+\r ze's
+\_no 01216
+\u se':s
+\a se':s
+\c V | VA
+\g registrar            | take group 2 pns??
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+|hab's \mp takes.group.2.pns
+\mp takes.colon.Caus
+
+\r ze'y
+\_no 01217
+\u se'y
+\a se'y
+\c Adj | Adj
+\g calor2
+
+\r zga'tek
+\_no 01218
+\u ska':te:k
+\a ska':te:k
+\c Adv | Adv
+\g primero
+
+\r zi
+\_no 01219
+\u si
+\a si
+\c Adv | Adv
+\g parecido
+
+\r zi
+\_no 01220
+\u si
+\a si
+\c V | VA
+\g exprimir
+\m 2
+\mp vi
+\mp class1
+\mp takes.null.P
+\mp takes.colon.Caus
+
+\r zi'
+\_no 01221
+\u si'
+\a si'
+\c N | N
+\g tormento/pesado  | ?also extreme in general e.g., zi'tere -Lk 5:19?
+
+\r zich
+\_no 01222
+\u si:ch
+\a si:ch
+\c Adj | Adj
+\g salado2
+
+\r zid
+\_no 01223
+\u sit
+\a sit
+\c Adj | Adj
+\g resistente  | Mk 9:19. collocates with yid, yel wao, yichj, be'nn, llin
+
+\r zi'd
+\_no 01224
+\u si't
+\a si't
+\c Adj | Adj
+\g terco  :further exploring needed for primary meaning
+| or is this zid .
+
+\r zillj
+\_no 01225
+\u sichj
+\a sichj
+\c Adv | Adv
+\g macizo
+
+\r zir
+\_no 01226
+\u sil
+\a sil
+\c N | N
+\g la.ma¤ana
+
+\r zi't
+\_no 01227
+\u si':t
+\a si':t
+\c Adv | Adv
+\g lejos
+
+\r zitj
+\_no 01228
+\u si:tj
+\a si:tj
+\c Adv | Adv
+\g profundo
+
+\r zjaren
+\_no 01229
+\u sjalen
+\a sjelen
+\c Prt | Prt
+\g Plural.con
+
+\r zla'
+\_no 01230
+\u s:la'
+\a s:la'
+\c Adj | Adj
+\g amargo
+
+\r zna'
+\_no 01231
+\u sna'
+\a sna'
+\c Adj | Adj
+\g salado
+
+\r znia
+\_no 01232
+\u snia
+\a snia
+\c Adj | Adj
+\g bravo
+
+\r zo
+\_no 01233
+\u so
+\a so
+\c N | N
+\g tepache
+
+\r zre
+\_no 01234
+\u sle
+\a sle
+\c Adv | Adv
+\g solo2

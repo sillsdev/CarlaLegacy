@@ -1,0 +1,232 @@
+STAMP CHANGE HISTORY
+
+2.1b6 (26-Oct-2000)
+-------------------
+1. Fix a bug which complained about multiple category fields in dictionary
+   entries (when it should not).
+
+2.1b5 (11-May-2000)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+2.1b4 (24-Apr-2000)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+2.1b3 (2-Sep-1999)
+------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+2.1b2 (16-July-1999)
+--------------------
+1. Fix fallacious error report of missing dictionary type when field
+   was final field in record.
+
+
+2.1b1 (14-May-1999)
+-------------------
+1. Add punctuation environment constraint capability.  For example,
+   Hanga indicates phonological pause orthographically by punctuation.
+   Some allomorphs are conditioned at such phonological pauses.  To make
+   this happen, one can add
+
+	\pcl pausepunc . ? ! ; :
+
+   in the AD.CTL file and then condition allomorphs something like this
+   in the dictionary file:
+
+	\s
+	\a a           ./  _ [pausepunc]
+	\a e    / e _  ./ ~_ [pausepunc]
+	\a i    / i _  ./ ~_ [pausepunc]
+	\a o    / o _  ./ ~_ [pausepunc]
+	\a u    / u _  ./ ~_ [pausepunc]
+	\g NCMPT
+	\c Noun
+
+   This means that the "a" allomorph occurs before a pausepunc
+   character; the "e" allomorph must follow an "e" and cannot occur
+   before a pausepunc character; etc.
+
+   There is a new built-in test called PEC_ST which handles these
+   punctuation environment constraints.
+
+   The user can also write a user-written test with a clause such as
+	next punctuation is "."
+   or
+	next punctuation is member [pausepunc]
+
+2.0b5 (04-May-1999)
+-------------------
+1. User-written tests will now allow use of codes 127 and 255.  They
+   used to produce error messages.
+
+
+2.0b4 (20-Apr-1999)
+-------------------
+1. Some minor internal code changes (nothing visible to the user).
+
+
+2.0b3 (13-Nov-1998)
+-------------------
+1. Fix error messages to end with a newline rather than begin with a newline.
+
+2. Some minor internal code changes (nothing visible to the user).
+
+
+2.0b2 (16-Oct-1998)
+-------------------
+1. For each "unknown root category", add it to the set of categories
+   when doing transfer only.  This preserves the category information
+   for synthesis later.
+
+2. Remove direct uses of stdout.
+
+3. Fix for new (run-time optional) larger properties.
+
+4. Report synthesis failures more accurately in the log file and in
+   the monitoring display.
+
+
+2.0b1 (21-Jul-98)
+-----------------
+1. Add \luwfcs, \wfc, and \wfcs fields to the text output control file for
+   multibyte character handling in recapitalization.
+
+
+1.99b2 (19-Feb-98)
+------------------
+1. renamed the -u (unfound morpheme) option to the -r
+	(report unfound morpheme) option
+2. implemented the -q (work quietly) option
+3. implemented the -u (unified dictionary) option
+4. Massive internal code reorganization.
+
+
+1.99b1 (24-Oct-97)
+-----------------
+1. minor internal code changes (nothing visible to the user)
+
+=============================================================================
+
+1.5e 15-Dec-95 - Have STAMP pass \p information through
+
+1.5d 12-Jun-95 - Get rid of half implemented code for 'word' tests
+
+1.5c 06-Jun-95 - Put in HAB fixes for better yacc/bison error reporting
+
+1.5b 02-May-95 - Added \strcheck field to control file and code to do
+				 validation checks on allomorphs, SEC's and string classes
+
+1.5a 28-Apr-95 - Add command line option -n for optionally disabling root
+				 category checks.
+
+1.5  27-Apr-95 - Output record number in error messages if record key is
+				 empty.
+			   - Allow curly braces in substitution rules
+			   - Modified behaviour of curly braces and square brackets in
+				 all morpheme environments to the following:
+				 Curly braces: Look first for category or property but accept
+							   morpheme class.
+				 Brackets: Look first for morpheme class but also accept a
+						   category or property.
+
+1.4z 21-Apr-95 - Fix problem introduced in 1.4w
+1.4y  7-Mar-95 - Resync STAMP and AMPLE and share some files in SourceSafe
+			   - Incorporate some bug fixes from AMPLE code as well.
+
+1.4x  6-Mar-95 - Fix bug of not recognizing category class specified in
+				 morpheme environment
+
+1.4v 10-Feb-95 - Port to Windows EXE and _WINDLL.  Also fixed null pointer
+				 bugs and memory corruption problem.
+
+1.4w  3-Mar-95 - Fix bug of root category being changed falsely by
+				 dictionary lookup
+
+1.4u 26-Jan-95 - Fix Bill Mann urgent bug from 1.4m of root categories always
+				 having to match.  Now cats only have to match during
+				 insertion rule lookups.  Still needs command line option
+				 for category match.
+
+1.4t  3-Nov-94 - Put better label on synthesis trace output
+			   - Remove a section of debug printout
+
+1.4s 18-Oct-94 - Fix bug of uninit fail of property check in \sr envir
+
+1.4r  6-Oct-94 - Convert STAMP to MSC version 8
+
+1.4q 16-Sep-94 - Make STAMP acceptable to the DJG compiler
+
+1.4p  2-Sep-94 - Have STAMP pass \fd information through
+
+1.4n 30-Aug-94 - Correct misalignment among analyses, decomps, and cats
+
+1.4m 11-May-94 - Require root categories to match when necessary (bug fix)
+
+1.4k  3-May-94 - Remove copy rule hang bug introduced in 1.4g
+
+	 22-Mar-94 - make DJGPP compiler happy: remove its warning msgs
+			   - changed BIGRECSIZE to make MSC_VER 8.00 happy
+			   - made mystrdup check for null pointer
+
+1.4j  9-Mar-94 - Correct failure to use ... in SEC with [].
+
+1.4i 22-Feb-94 - Compile changes made since 1.4h to remove warning messages
+
+1.4h  7-Feb-94 - Have show_word_template print "capital =", rather than
+				 "non_alpha =", when introducing capital.
+
+1.4g 26-Jan-94 - Have STAMP pass \cat information through
+
+1.4f 16-Dec-93 - Revise warning message for missing dictionary entries;
+				 remove the total
+
+1.4e 10-Dec-93 - Collapse identical allomorph environments for roots
+
+1.4d  9-Dec-93 - Make a version which incorporates the following changes
+	  9-Dec-93 - Tweek pre-allocated buffer sizes to work with Codeview
+
+1.4c  3-Dec-93 - Collapse prop_list and cat_list types into strlist
+			   - Move morph check and record size #defines from DEFS.H
+				 to MYALLO.H
+			   - Move record size #defines from DEFS.H to MYALLO.H
+			   - Put double quotes in messages where appropriate
+			   - Save dictionary space by consolidating category strings
+
+	  1-Dec-93 - #ifdef permanent heap code
+			   - #include DEFS.H
+			   - #include DEFS.H in MKTEST.C and TRIE.C
+			   - Declare alloca() only for DJG compiler
+			   - Declare alloca() only for DJG compiler - SYTEST.Y
+			   - Exit if record is too big
+
+1.4b 22-Sep-93 - Add 'void' to prototypes where appropriate
+
+1.4a 18-Aug-93 - port to the DJGPP 32-bit compiler for MS-DOS
+			   - generalize the Mac THINK C port
+			   - check for NUL character where appropriate
+			   - replace zero() with memset()
+			   - allow for virtual memory
+			   - fix calls to strchr() to handle unsigned char values
+				 when char is signed by default
+			   - ensure that structs are defined before being used
+				 in function prototypes
+			   - add related function prototypes to header files
+			   - fix logic for preventing count of %0%%
+			   - regularize some #ifdefs
+			   - use unsigned char for properties instead of char
+			   - check for NULL morpheme.u.rootcats in add_root()
+			   - check for NULL propval string in has_prop()!!!!
+			   - initialize aprops with NULL instead of 0L
+			   - check for NULL node pointer in finalize_node()
+			   - use empty string instead of NULL in recursive calls
+				 to chk_senv_left()
+			   - double check for prev_word and next_word being NULL
+			   - declare show_mcl() as void
+			   - declared show_scl() and bad_sc() as void
+
+1.4  17-May-93 - Port to Mac
+			   - Ignore {, } in SEC; warn if matching pair; make SEC
+				 check work in surrounding words
+			   - Warn if crossing # in morph env in AMPLE

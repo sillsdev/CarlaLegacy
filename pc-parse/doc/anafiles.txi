@@ -1,0 +1,565 @@
+@c this file should be @include d by another -*- texinfo -*- file
+@c following a node `Analysis file' and a chapter heading.
+@c
+@c thie file is conditionalized by
+@c	@set ample
+@c	@set ktext
+@c	@set textin
+@c
+@ifclear endash
+@iftex
+@ifset html
+@set endash -
+@end ifset
+@ifclear html
+@set endash --
+@end ifclear
+@end iftex
+@ifinfo
+@set endash -
+@end ifinfo
+@end ifclear
+
+Analysis files are @dfn{record oriented standard format files}.
+This means that the files are divided into records, each representing a
+single word in the original input text file, and records are divided
+into fields.  An analysis file contains at least one record, and may
+contain a large number of records.  Each record contains one or more
+fields.  Each field occupies at least one line, and is marked by a
+@dfn{field code} at the beginning of the line.  A field code begins
+with a backslash character (@code{\}), and contains 1 or more letters
+in addition.
+
+@menu
+* Analysis file fields::            Description of each type of field
+* Ambiguous analyses::              How ambiguous analyses are marked
+* Analysis failures::               How analysis failures are marked
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node Analysis file fields, Ambiguous analyses, Analysis files, Analysis files
+@section Analysis file fields
+
+This section describes the possible fields in an analysis file.  The
+only field that is guaranteed to exist is the analysis (@code{\a})
+field.  All other fields are either data dependent or optional.
+
+@ifclear ktext
+@menu
+* \a::          Analysis
+* \d::          Decomposition (surface forms)
+* \cat::        Category (possible word, morpheme)
+* \p::          Properties
+* \fd::         Feature Descriptors
+* \u::          Underlying forms (decomposition)
+* \w::          Word (before decapitalization and orthography changes)
+* \f::          Formatting (junk before the word)
+* \c::          Capitalization flag
+* \n::          Nonalphabetic (junk after the word)
+@end menu
+@end ifclear
+@ifset ktext
+@menu
+* \a::          Analysis
+* \d::          Decomposition (surface forms)
+* \cat::        Category (possible word, morpheme)
+* \fd::         Feature Descriptors
+* \w::          Word (before decapitalization and orthography changes)
+* \f::          Formatting (junk before the word)
+* \c::          Capitalization flag
+* \n::          Nonalphabetic (junk after the word)
+@end menu
+@end ifset
+
+@c ----------------------------------------------------------------------------
+@node \a, \d, Analysis file fields, Analysis file fields
+@subsection Analysis field: \a
+@findex \a
+
+The analysis field (@code{\a}) starts each record of an analysis file.
+It has the following form:
+@example
+
+\a PFX IFX PFX < CAT root CAT root > SFX IFX SFX
+
+@end example
+@noindent
+where @code{PFX} is a prefix morphname, @code{IFX} is an infix
+morphname, @code{SFX} is a suffix morphname, @code{CAT} is a root
+category, and @code{root} is a root gloss or etymology.  In the
+simplest case, an analysis field would look like this:
+@example
+
+\a < CAT root >
+
+@end example
+@noindent
+where @code{CAT} is a root category and @code{root} is a root gloss or
+etymology.
+
+@ifset ample
+The @code{\rd} field in the analysis data file can replace the
+characters used to bracket the root category and gloss/etymology; see
+@end ifset
+@ifset ampletxt
+`Root Delimiter Characters: \rd' above.
+@end ifset
+@ifset amplentxt
+@ref{\rd}.
+@end ifset
+@ifset ample
+The dictionary field code mapped to @code{M} in the dictionary codes
+file controls the affix and default root morphnames; see
+@end ifset
+@ifset ampletxt
+`Morphname (internal code M)'.
+@end ifset
+@ifset amplentxt
+@ref{Morphname}.
+@end ifset
+@ifset ample
+If the @samp{-g} command line option is given, the output analysis file
+contains glosses from the root dictionary marked by the field code
+mapped to @code{G} in the dictionary codes file; see
+@end ifset
+@ifset ampletxt
+`AMPLE Command Options' and `Root Gloss (internal code G)' above.
+@end ifset
+@ifset amplentxt
+@ref{Command options} and @ref{Root gloss}.
+@end ifset
+
+@c ----------------------------------------------------------------------------
+@node \d, \cat, \a, Analysis file fields
+@subsection Decomposition field: \d
+@findex \d
+
+The morpheme decomposition field (@code{\d}) follows the analysis
+field.  It has the following form:
+@example
+
+\d anti-dis-establish-ment-arian-ism-s
+
+@end example
+@noindent
+where the hyphens separate the individual morphemes in the surface form
+of the word.
+
+@ifset textin
+The @code{\dsc} field in the text input control file can replace the
+hyphen with another character for separating the morphemes; see
+@ifclear txt
+@ref{\dsc}.
+@end ifclear
+@ifset txt
+`Decomposition Separation Character: \dsc' above.
+@end ifset
+@end ifset
+
+@ifset ample
+The morpheme decomposition field is optional.  It is enabled either by
+a @w{@samp{-w d}} command line option
+@end ifset
+@ifset ampletxt
+(see `AMPLE Command Options' above),
+@end ifset
+@ifset amplentxt
+(@pxref{Command options}),
+@end ifset
+@ifset ample
+or by an interactive query.
+@end ifset
+
+@c ----------------------------------------------------------------------------
+@ifclear ktext
+@node \cat, \p, \d, Analysis file fields
+@end ifclear
+@ifset ktext
+@node \cat, \fd, \d, Analysis file fields
+@end ifset
+@subsection Category field: \cat
+@findex \cat
+
+The category field (@code{\cat}) provides rudimentary category
+information.  This may be useful for sentence level parsing.  It has
+the following form:
+@example
+
+\cat CAT
+
+@end example
+@noindent
+where @code{CAT} is the word category.
+@ifset ample
+A more complex example
+is
+@example
+
+\cat C0 C1/C0=C2=C2/C1=C1/C1
+
+@end example
+@noindent
+where @code{C0} is the proposed word category, @code{C1/C0} is a prefix
+category pair, @code{C2} is a root category, and @code{C2/C1} and
+@code{C1/C1} are suffix category pairs.  The equal signs (@code{=})
+serve to separate the category information of the individual morphemes.
+
+The @code{\cat} field of the analysis data file controls whether the
+category field is written to the output analysis file; see
+@ifset txt
+`Category output control: \cat' above.
+@end ifset
+@ifclear txt
+@ref{\cat}.
+@end ifclear
+@end ifset
+
+@ifset ktext
+To request KTEXT to output the final category, include the field
+@code{\cat} in the KTEXT control file.  This field specifies the
+feature path in the word level feature structure that contains the
+grammatical category (part of speech).  Note that this requires a word
+grammar to be loaded.
+@end ifset
+
+If there are multiple analyses, there will be multiple categories in
+the output, separated by ambiguity markers.
+
+@ifclear ktext
+@c ----------------------------------------------------------------------------
+@node \p, \fd, \cat, Analysis file fields
+@subsection Properties field: \p
+@findex \p
+
+The properties field (@code{\p}) contains the names of any allomorph or
+morpheme properties found in the analysis of the word.  It has the
+form:
+@example
+
+\p ==prop1 prop2=prop3=
+
+@end example
+@noindent
+where @code{prop1}, @code{prop2}, and @code{prop3} are property names.
+The equal signs (@code{=}) serve to separate the property information
+of the individual morphemes.  Note that morphemes may have more than
+one property, with the names separated by spaces, or no properties at
+all.
+
+@ifset ample
+By default, the properties field is written to the output analysis
+file.  The @w{@samp{-w 0}} command option, or any @samp{-w} option that
+does not include @samp{p} in its argument disables the properties field.
+@end ifset
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@ifclear ktext
+@node \fd, \u, \p, Analysis file fields
+@end ifclear
+@ifset ktext
+@node \fd, \w, \cat, Analysis file fields
+@end ifset
+@subsection Feature Descriptors field: \fd
+@findex \fd
+
+The feature descriptor field (@code{\fd}) contains the feature names
+associated with each morpheme in the analysis.  It has the following
+form:
+@example
+
+\fd ==feat1 feat2=feat3=
+
+@end example
+@noindent
+where @code{feat1}, @code{feat2}, and @code{feat3} are feature
+descriptors.  The equal signs (@code{=}) serve to separate the feature
+descriptors of the individual morphemes.  Note that morphemes may have
+more than one feature descriptor, with the names separated by spaces,
+or no feature descriptors at all.
+
+@ifset ample
+The dictionary field code mapped to @code{F} in the dictionary code
+table file controls whether feature descriptors are written to the
+output analysis file; if this mapping is not defined, then the
+@code{\fd} field is not written.
+@end ifset
+@ifset ampletxt
+See `Feature Descriptor (internal code F)' above.
+@end ifset
+@ifset amplentxt
+@xref{Feature descriptor}.
+@end ifset
+@ifset ktext
+The feature descriptor field requires a word grammar and one or more
+@code{\feat} fields in the KTEXT control file.
+@end ifset
+
+If there are multiple analyses, there will be multiple feature sets in
+the output, separated by ambiguity markers.
+
+@ifclear ktext
+@c ----------------------------------------------------------------------------
+@node \u, \w, \fd, Analysis file fields
+@subsection Underlying form field: \u
+@findex \u
+
+The underlying form field (@code{\u}) is similar to the decomposition
+field except that it shows underlying forms instead of surface forms.
+It looks like this:
+@example
+
+\u a-para-a-i-ri-me
+
+@end example
+@noindent
+where the hyphens separate the individual morphemes.
+
+@ifset textin
+The @code{\dsc} field in the text input control file can replace the
+hyphen with another character for separating the morphemes; see
+@ifclear txt
+@ref{\dsc}.
+@end ifclear
+@ifset txt
+`Decomposition Separation Character: \dsc' above.
+@end ifset
+@end ifset
+
+@ifset ample
+The dictionary field code mapped to @code{U} in the dictionary code
+table file controls whether underlying forms are written to the output
+analysis file; if this mapping is not defined, then the @code{\u} field
+is not written.
+@end ifset
+@ifset ampletxt
+See `Underlying Form (internal code U)' above.
+@end ifset
+@ifset amplentxt
+@xref{Underlying form}.
+@end ifset
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@ifclear ktext
+@node \w, \f, \u, Analysis file fields
+@end ifclear
+@ifset ktext
+@node \w, \f, \fd, Analysis file fields
+@end ifset
+@subsection Word field: \w
+@findex \w
+
+The original word field (@code{\w}) contains the original input word as
+it looks before decapitalization and orthography changes.  It looks
+like this:
+@example
+
+\w The
+
+@end example
+@noindent
+Note that this is a gratuitous change from earlier versions of AMPLE
+and KTEXT, which wrote the decapitalized form.
+
+@ifset ample
+The original word field is optional.  It is enabled either by
+a @w{@samp{-w w}} command line option
+@end ifset
+@ifset ampletxt
+(see `AMPLE Command Options' above),
+@end ifset
+@ifset amplentxt
+(@pxref{Command options}),
+@end ifset
+@ifset ample
+or by an interactive query.
+@end ifset
+
+@c ----------------------------------------------------------------------------
+@node \f, \c, \w, Analysis file fields
+@subsection Formatting field: \f
+@findex \f
+
+The format information field (@code{\f}) records any formatting codes
+or punctuation that appeared in the input text file before the word.
+It looks like this:
+@example
+
+@group
+\f \\id MAT 5 HGMT05.SFM, 14-feb-84 D. Weber, Huallaga Quechua\n
+		\\c 5\n\n
+		\\s
+@end group
+
+@end example
+@noindent
+where backslashes (@code{\}) in the input text are doubled, newlines
+are represented by @code{\n}, and additional lines in the field start
+with a tab character.
+
+The format information field is written to the output analysis file
+whenever it is needed, that is, whenever formatting codes or
+punctuation exist before words.
+
+@c ----------------------------------------------------------------------------
+@node \c, \n, \f, Analysis file fields
+@subsection Capitalization field: \c
+@findex \c
+
+The capitalization field (@code{\c}) records any capitalization of the
+input word.  It looks like this:
+@example
+
+\c 1
+
+@end example
+@noindent
+where the number following the field code has one of these values:
+@table @code
+@item 1
+the first (or only) letter of the word is capitalized
+
+@item 2
+all letters of the word are capitalized
+
+@item 4@value{endash}32767
+some letters of the word are capitalized and some are not
+@end table
+@noindent
+Note that the third form is of limited utility, but still exists
+because of words like the author's last name.
+
+The capitalization field is written to the output analysis file
+whenever any of the letters in the word are
+@ifset textin
+capitalized; see
+@end ifset
+@ifset textintxt
+`Prevent Any Decapitalization: \nocap' and
+`Prevent Decapitalization of Individual Characters: \noincap' above.
+@end ifset
+@ifset textinntxt
+@ref{\nocap} and @ref{\noincap}.
+@end ifset
+@ifclear textin
+capitalized.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \n, , \c, Analysis file fields
+@subsection Nonalphabetic field: \n
+@findex \n
+
+The nonalphabetic field (@code{\n}) records any trailing punctuation,
+@ifset textin
+bar code
+@end ifset
+@ifset textintxt
+(see `Bar Code Format Code Characters: \barcodes' above),
+@end ifset
+@ifset textinntxt
+(@pxref{\barcodes}),
+@end ifset
+@ifclear textin
+bar codes,
+@end ifclear
+or whitespace characters.  It looks like this:
+@example
+
+\n |r.\n
+
+@end example
+@noindent
+where newlines are represented by @code{\n}.  The nonalphabetic field
+ends with the last whitespace character immediately following the word.
+
+The nonalphabetic field is written to the output analysis file whenever
+the word is followed by anything other than a single space character.
+This includes the case when a word ends a file with nothing following
+it.
+
+@c ----------------------------------------------------------------------------
+@node Ambiguous analyses, Analysis failures, Analysis file fields, Analysis files
+@section Ambiguous analyses
+
+The previous section assumed that only one analysis is produced for
+each word.  This is not always possible since words in isolation are
+frequently ambiguous.  Multiple analyses are handled by writing each
+analysis field in parallel, with the number of analyses at the
+beginning of each output field.  For example,
+@example
+
+@group
+\a %2%< A0 imaika > CNJT AUG%< A0 imaika > ADVS%
+\d %2%imaika-Npa-ni%imaika-Npani%
+\cat %2%A0 A0=A0/A0=A0/A0%A0 A0=A0/A0%
+\p %2%==%=%
+\fd %2%==%=%
+\u %2%imaika-Npa-ni%imaika-Npani%
+\w Imaicampani
+\f \\v124
+\c 1
+\n \n
+@end group
+
+@end example
+@noindent
+where the percent sign (@code{%}) separates the different analyses in
+each field.  Note that only those fields which contain analysis
+information are marked for ambiguity.  The other fields (@code{\w},
+@code{\f}, @code{\c}, and @code{\n}) are the same regardless of the
+number of analyses.
+
+@ifset textin
+The @code{\ambig} field in the text input control file can replace the
+percent sign with another character for separating the analyses; see
+@ifclear txt
+@ref{\ambig}.
+@end ifclear
+@ifset txt
+`Ambiguity Marker Character: \ambig' above.
+@end ifset
+@end ifset
+
+@c ----------------------------------------------------------------------------
+@node Analysis failures, , Ambiguous analyses, Analysis files
+@section Analysis failures
+
+The previous sections assumed that words are successfully analyzed.
+This does not always happen.  Analysis failures are marked the same way
+as multiple analyses, but with zero (@code{0}) for the ambiguity count.
+For example,
+@example
+
+@group
+\a %0%ta%
+\d %0%ta%
+\cat %0%%
+\p %0%%
+\fd %0%%
+\u %0%%
+\w TA
+\f \\v 12 |b
+\c 2
+\n |r\n
+@end group
+
+@end example
+@noindent
+Note that only the @code{\a} and @code{\d} fields contain any
+information, and those both have the original word as a place
+holder.  The other analysis fields (@code{\cat}, @code{\p}, @code{\fd},
+and @code{\u}) are marked for failure, but otherwise left empty.
+
+@ifset textin
+The @code{\ambig} field in the text input control file can replace the
+percent sign with another character for marking analysis failures and
+ambiguities; see
+@ifclear txt
+@ref{\ambig}.
+@end ifclear
+@ifset txt
+`Ambiguity Marker Character: \ambig' above.
+@end ifset
+@end ifset

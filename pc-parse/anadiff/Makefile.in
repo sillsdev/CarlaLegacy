@@ -1,0 +1,146 @@
+# Master Unix makefile for the ANADIFF program
+# Steve McConnel,  1-May-2000
+
+@SET_MAKE@
+srcdir      = @srcdir@
+VPATH       = @srcdir@
+CC          = @CC@
+YACC        = @YACC@
+LEX         = @LEX@
+CFLAGS      = @ANSIFLAGS@ @CFLAGS@ @DEFS@ -I. -I.. -I../include
+RANLIB      = @RANLIB@
+INSTALL     = @INSTALL@
+COPY        = @COPYPROG@
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+
+.SUFFIXES: .op
+.c.op:
+	$(CC) $(CFLAGS) -pg -c -o $@ $<
+
+@make_shell@ = /bin/sh
+BINDIR = $(exec_prefix)/bin
+
+SOURCES=anadiff.c version.h
+
+DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
+			readme.1st Anadiff.dsp
+TESTFILES = check.bat
+TESTS = a b c
+TESTEXTS = .aaa .ana .lll
+#
+#  ANADIFF program
+#
+LIBS = ../lib/libopac.a ../lib/libcport.a
+OBJ  = anadiff.o
+
+anadiff: $(OBJ) $(LIBS)
+	$(CC) -o anadiff $(OBJ) $(LIBS) @LIBS@
+#
+#  ANADIFF program compiled for profiling
+#
+LIBSP = ../lib/libopac_p.a ../lib/libcport_p.a
+OBJP  = anadiff.op
+
+anadiff_p: $(OBJP) $(LIBSP)
+	$(CC) -pg -o anadiff_p $(OBJP) $(LIBSP) @LIBS@
+#
+#  sources unique to ANADIFF
+#
+anadiff.o  anadiff.op:  anadiff.c version.h
+
+#############################################################################
+
+libs profile_libs: installdirs
+
+installdirs:
+	@if [ ! -d $(BINDIR) ];  then mkdir $(BINDIR);  fi
+	@if [ ! -d ../lib ];     then mkdir ../lib;     fi
+	@if [ ! -d ../include ]; then mkdir ../include; fi
+
+all: libs anadiff
+
+profile: profile_libs anadiff_p
+
+install: all
+	$(INSTALL) -s anadiff $(BINDIR)
+
+uninstall:
+	rm -f $(BINDIR)/anadiff
+
+check: anadiff
+	-@(Prev=none; cd test; \
+	for t in $(TESTS); do \
+		cd $$t; rm -f $$t.dif; \
+		../../anadiff -qq $$t.aaa $$t.ana >$$t.log; \
+		../../anadiff -qq $$t.ana $$t.aaa >>$$t.log; \
+		if (cmp $$t.lll $$t.log); then \
+		rm -f $${t}.log; \
+		if [ "$$Prev" =  "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n anadiff passed test; fi; \
+		Prev=good; \
+		else \
+		diff -c $$t.lll $$t.log >>$$t.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' anadiff failed test; fi; \
+		Prev=bad; \
+		fi; \
+		echo -n ' '$$t; \
+		cd ..; \
+	done; \
+	if [ "$Prev" != "none" ]; then echo ; fi; \
+	)
+
+mostlyclean:
+	rm -f *.o *.op *~
+
+clean: mostlyclean
+	rm -f *.aux *.log *.toc
+	rm -f *.cp *.cps *.fn *.fns *.ky *.kys *.pg *.pgs *.tp *.tps *.vr *.vrs
+
+distclean: clean
+	rm -f anadiff anadiff_p Makefile TAGS *.dvi
+
+maintainer-clean: distclean
+
+TAGS: $(SOURCES)
+	etags $(SOURCES)
+
+doc dvi html info:
+	(cd ../doc; $(MAKE) anadiff$@)
+
+dist: $(DISTFILES)
+	for file in $(DISTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+
+testdist:
+	mkdir $(distdir)/test
+	for file in $(TESTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+	for dir in $(TESTS); do \
+		mkdir $(distdir)/test/$$dir; \
+		for f in $(TESTEXTS); do \
+		if [ -f test/$$dir/$$dir$$f ]; then \
+			ln test/$$dir/$$dir$$f $(distdir)/test/$$dir || \
+			  { echo copying test/$$dir/$$dir$$f instead; \
+			$(COPY) test/$$dir/$$dir$$f $(distdir)/test/$$dir;}; \
+		fi; \
+		done; \
+		for f in test.bat; do \
+		if [ -f test/$$dir/$$f ]; then \
+			ln test/$$dir/$$f $(distdir)/test/$$dir || \
+			  { echo copying test/$$dir/$$f instead; \
+			$(COPY) test/$$dir/$$f $(distdir)/test/$$dir;}; \
+		fi; \
+		done; \
+	done
+
+############################################################################
+
+.PHONY: all check clean dist distclean doc dvi html info install \
+		libs maintainer-clean mostlyclean profile profile_libs testdist \
+		uninstall installdirs

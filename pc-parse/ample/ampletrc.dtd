@@ -1,0 +1,111 @@
+<!--                                                              -->
+<!-- *******************     AmpleTrc.DTD     ******************* -->
+<!--                                                              -->
+<!-- A formal specification of the conceptual model of an AMPLE   -->
+<!-- trace results data set.                                      -->
+<!--                                                              -->
+<!-- This file is maintained by Andy Black.   Send comments or    -->
+<!-- suggested refinements by email to: andy.black@sil.org, or 	  -->
+<!-- by post to: P.O.Box 8987, Catalina, AZ 85738-0987, USA       -->
+<!--                                                              -->
+<!-- *******************   REVISION HISTORY   ******************* -->
+<!--                                                              -->
+<!-- Version 6, August 13, 1997                                   -->
+<!--     Per feedback by Gary Simons:                             -->
+<!--      Revised <parseNode> element to remove match and replace -->
+<!--        entities, and removed <nothing> element               -->
+<!-- Version 5, August 08, 1997                                   -->
+<!--     Per feedback by Steve McConnel:                          -->
+<!--      Added <nothing> element to match entity.                -->
+<!-- Version 4, August 05, 1997                                   -->
+<!--     Per feedback on Version 3 by Gary Simons:                -->
+<!--      Refined comment of <trace> element.                     -->
+<!--      Added <continuation> element as a part of %result;      -->
+<!-- Version 3, July 31, 1997                                     -->
+<!--     Changed name to AmpleTrc.DTD (from AmpleTrace.DTD) to    -->
+<!--       conform to 8.3 convention (per Randy Regnier).         -->
+<!--     Per feedback on Version 2 by Gary Simons:                -->
+<!--      Changed <noMore> to <leftover> and gave it content.     -->
+<!--      Changed <positedMorpheme> to <morph>.                   -->
+<!--      Added <wordTrace>.                                      -->
+<!--      Changed <word> to <form>.                               -->
+<!--      Reworked <parseNode>, <result>, and <endOfWord> to      -->
+<!--        <trace>, <parseNode>, %match; and %result; in order   -->
+<!--        simplify and clarify them.                            -->
+<!-- Version 2, July 15, 1997                                     -->
+<!--     Based on feedback on Version 1 by John Hatton.           -->
+<!--	  Removed references to Cellar IDs                        -->
+<!--	  Removed parseNode level attribute.                      -->
+<!-- Version 1, June 26, 1997                                     -->
+<!--     Based on John Hatton's informal description.             -->
+<!--                                                              -->
+
+<!--                                                              -->
+<!-- ****************  AMPLE TRACE RESULTS DATA SET  ************ -->
+<!--                                                              -->
+
+<!ELEMENT AmpleTrace     - - (selectedMorphs?, wordTrace+)          >
+<!-- The top-level element is named "AmpleTrace" for the results
+	 data set of an AMPLE trace.  It consists of an optional set
+	 of selected morphemes and one or more instances of a word
+	 and its trace.
+	 If selectedMorphs is present, then the trace only includes
+	 the morphemes indicated by selectedMorphs.  If selectedMorphs
+	 is not present, then all morphemes are included in the trace.-->
+
+<!ELEMENT selectedMorphs - - (morphID+)                             >
+<!-- The set of selected morphemes consists of a sequence of
+	 morpheme identifications.                                    -->
+
+<!ELEMENT  morphID       - - (#PCDATA)                              >
+<!-- A morphID is the identifying string of either a morpheme or
+	 one of its allomorphs.                                       -->
+
+<!ELEMENT wordTrace      - - (form, trace)                          >
+<!-- A word trace consists of the wordform and its trace.         -->
+
+<!ELEMENT form           - - (#PCDATA)                              >
+<!-- The form is the wordform in the internal orthography.        -->
+
+<!ELEMENT trace          - - (parseNode+)                           >
+<!-- A trace consists of a set of parse nodes.  Each parseNode in -->
+<!-- in the set represents an alternative parse.                  -->
+
+<!ELEMENT parseNode      - - ( (morph, (continuation | failure)) |
+							   (endOfWord,  (success | failure)) |
+							   leftover )                           >
+<!-- A parseNode consists of pairs of a matched item and the
+	 result of positing that match at this level of the parse.    -->
+
+<!ELEMENT morph          - O  EMPTY                                 >
+<!ATTLIST morph           type   (pfx | ifx | sfx | root) #REQUIRED
+						  alloid   CDATA                  #REQUIRED
+						  category CDATA                  #REQUIRED >
+<!-- This is a morpheme which is being tried at this point in
+	 the parse.
+	 The TYPE indicates which kind of affix or root it is.
+	 The ALLOID is the identifying string for the allomorph being
+		tried.
+	 The CATEGORY is the category or category pair being tried.   -->
+
+<!ELEMENT endOfWord      - O  EMPTY                                 >
+<!-- The parse has reached the end of the input word form.        -->
+
+<!ELEMENT failure        - O  EMPTY                                 >
+<!ATTLIST failure  test CDATA #REQUIRED >
+<!-- A failure provides the name or identifying string of the test
+	 that failed.  Note that for MCCs and MECs, it must be the
+	 identifying string of the particular MCC or MEC that failed. -->
+
+<!ELEMENT leftover       - - (#PCDATA)                              >
+<!-- Leftover indicates that no other morphemes could be
+	 discovered at this point in the parse; the content is the
+	 string of leftover segments.                                 -->
+
+<!ELEMENT success        - O  EMPTY                                 >
+<!-- Indicates a successful parse.                                -->
+
+<!ELEMENT continuation   - - (parseNode+)                           >
+<!-- A continuation of a parse path consists of a set of parse    -->
+<!-- nodes.  Each parseNode in the set represents an alternative  -->
+<!-- parse path.                                                  -->

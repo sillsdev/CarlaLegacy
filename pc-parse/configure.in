@@ -1,0 +1,72 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(ample/ample.c)
+AC_CONFIG_HEADER(config.h:config.hin)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_LEX
+opAC_PROG_YACC
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PROG_RANLIB
+opAC_PROG_COPY
+
+dnl check for Windows NT (affects SHELL setting in Makefiles)
+AC_EGREP_CPP(yes,
+[#ifdef __WINNT__
+ yes
+#endif
+], make_shell=NOSHELL, make_shell=SHELL)
+AC_SUBST(make_shell)
+
+dnl Checks for libraries.
+
+dnl Checks for header files.
+AC_HEADER_DIRENT
+AC_HEADER_STDC
+AC_CHECK_HEADERS(fcntl.h limits.h sgtty.h stdarg.h)
+AC_CHECK_HEADERS(sys/fcntl.h sys/file.h sys/ioctl.h sys/resource.h sys/time.h)
+AC_CHECK_HEADERS(sys/times.h sys/types.h termio.h unistd.h)
+AC_CHECK_HEADERS(readline/readline.h)
+AC_CHECK_HEADERS(readline/history.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_C_INLINE
+AC_TYPE_SIZE_T
+AC_HEADER_TIME
+AC_STRUCT_TM
+opAC_C_VOID
+opAC_C_PROTOTYPES
+AC_SUBST(ANSIFLAGS)
+opAC_C_WARNINGS
+
+dnl Checks for library functions.
+AC_FUNC_ALLOCA
+AC_TYPE_GETGROUPS
+AC_FUNC_GETPGRP
+AC_PROG_GCC_TRADITIONAL
+AC_FUNC_MEMCMP
+AC_FUNC_SETPGRP
+AC_FUNC_SETVBUF_REVERSED
+AC_TYPE_SIGNAL
+AC_FUNC_UTIME_NULL
+AC_FUNC_VFORK
+AC_FUNC_VPRINTF
+AC_CHECK_FUNCS(ftime getcwd gethostname getrusage gettimeofday getwd mkdir)
+AC_CHECK_FUNCS(putenv rmdir signal socket stime strdup strtod times strerror)
+AC_CHECK_FUNCS(sys_errlist)
+AC_REPLACE_FUNCS(abs bcmp bcopy bsearch bzero ctermid ffs getopt)
+AC_REPLACE_FUNCS(index iscntrl isgraph ispunct)
+AC_REPLACE_FUNCS(itoa itoa8 itoax labs memccpy memchr memcmp memcpy memmove)
+AC_REPLACE_FUNCS(memset rand rindex strcasecmp strchr strcspn)
+AC_REPLACE_FUNCS(stricmp strlwr strpbrk strpos strrchr strrpbrk strrpos strspn)
+AC_REPLACE_FUNCS(strstr strtok strtol strtoul strupr tolower toupper)
+
+AC_CHECK_LIB(readline, readline)
+AC_CHECK_FUNCS(readline)
+AC_CHECK_FUNCS(add_history)
+
+AC_OUTPUT(Makefile cportlib/Makefile opaclib/Makefile cmdlib/Makefile ample/Makefile stamp/Makefile pckimmo/Makefile pcpatr/Makefile ktext/Makefile ktagger/Makefile anadiff/Makefile intergen/Makefile doc/Makefile,
+[echo > stamp-h])dnl

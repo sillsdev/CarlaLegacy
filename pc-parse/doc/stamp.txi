@@ -1,0 +1,1581 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename stamp.info
+@settitle STAMP Reference Manual
+@c %**end of header
+
+@syncodeindex fn cp
+@set stamp
+
+@set TITLE STAMP Reference Manual
+@set SUBTITLE Synthesizing after Transferring AMPLE Analyses
+@set VERSION version 2.1b1
+@set DATE May 1999
+@set AUTHOR by Stephen McConnel (and H. Andrew Black for v. 2.1b1)
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@node    Top,       Introduction,  (dir),    (dir)
+@comment node-name, next,          previous, up
+
+@ifinfo
+@ifclear txt
+This is the reference manual for the STAMP program.
+@end ifclear
+@end ifinfo
+
+@menu
+* Introduction::
+* Running STAMP::
+* Standard format::
+* STAMP declarations file::
+* Transfer file::
+* Synthesis file::
+* Dictionary code table file::
+* Dictionary orthography change table file::
+* Dictionary files::
+* Text output control file::
+* Analysis files::
+* Bibliography::
+* Index::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node    Introduction, Running STAMP, Top,      Top
+@comment node-name,    next,            previous, up
+@chapter Introduction to the STAMP program
+
+This manual describes STAMP, a computer program for adapting text in
+conjunction with the AMPLE program.  This combination falls under the
+Analysis Transfer Synthesis (ATS) paradigm.  It involves the following
+steps:
+
+(1) AMPLE is a morphological parser that is applied to source language
+	text to analyze each word into morphemes.
+
+(2) STAMP is applied to these analyses to make changes that will produce
+	the corresponding target language word.
+
+(3) An interactive editor is applied to STAMP output to correct the
+	words that AMPLE failed to analyze and for which AMPLE and STAMP
+	produced multiple possibilities.  The result is a word-for-word draft
+	of the source language text in the target language.
+
+(4) After eliminating analysis failures and ambiguities, the text must be
+	checked and corrected by a competent speaker of the target language.
+
+STAMP incorporates no language-specific facts; the user makes linguistic
+facts known to STAMP entirely through external files.  STAMP is
+sufficiently general to serve over a wide range of language families.
+(However, AMPLE and STAMP do not adequately handle highly isolating
+languages, that is, languages which have virtually no morphology.)
+
+The name STAMP is derived by taking AMP from AMPLE, and T and S from
+STAMP's main modules, TRANSFER and SYNTHESIS, which are applied in
+succession to the output of AMPLE.  Thus one can think of STAMP as
+S(T(AMP)), or more explicitly as:
+@example
+
+@r{adapted text = Synthesis[Transfer[AMPLE[source text]]]}
+
+@end example
+
+Note: much of this reference manual is based almost verbatim on the book
+published in 1990 (Weber, Black, McConnel, and Buseman), without explicit
+permission from the coauthors.
+
+@c Following added by hab 14-May-1999
+@subsubheading New features
+@table @asis
+
+@item 1. Version 2.1 (May 1999) introduced punctuation environment constraints in the allomorph fields of the dictionary files.  These are handled by a new built-in test called PEC_ST.  This version also added two punctuation-oriented clauses to user-written tests.
+
+@end table
+
+@c ----------------------------------------------------------------------------
+@node Running STAMP, Standard format, Introduction, Top
+@chapter Running STAMP
+
+STAMP is a batch process oriented program.  It reads a number of control
+files, and then processes one or more input analysis files to produce an
+equal number of output files.
+
+@menu
+* Command options::
+* Interaction::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node Command options, Interaction, Running STAMP, Running STAMP
+@section STAMP Command Options
+
+The STAMP program uses an old-fashioned command line interface
+following the convention of options starting with a dash character
+(@samp{-}).  The available options are listed below in alphabetical
+order.  Those options which require an argument have the argument type
+following the option letter.
+
+@ftable @code
+@item -a
+causes all possible syntheses to be generated.
+
+@item -c character
+selects the control file comment character.  The default is the vertical
+bar (@code{|}).
+
+@item -d number
+selects the maximum dictionary trie depth.  The default is 2, which
+favors reduced memory needs over speed.
+
+@item -f filename
+opens a command file containing the names of the control and data
+files.  The default is to read those names from the standard input
+(keyboard); see
+@ifset txt
+`Program Interaction' below.
+@end ifset
+@ifclear txt
+@ref{Interaction}.
+@end ifclear
+
+@item -i filename
+selects a single input analysis file.
+
+@item -m
+monitors progress of an analysis: @code{*} means an analysis failure,
+@code{.} means a single analysis, @code{2}@value{endash}@code{9} means
+2@value{endash}9 ambiguities, and @code{>} means 10 or more ambiguities.
+This is not compatible with the @samp{-q} option.
+
+@item -n
+prevents root categories from being checked.
+
+@item -o filename
+selects a single output text (or analysis if the @samp{-x} option is also
+selected) file.
+
+@item -q
+causes AMPLE to operate ``quietly'' with minimal screen output.  This
+is not compatible with the @samp{-m} option.
+
+@item -r
+causes morphnames that are not found in the dictionary to be reported.
+
+@item -t
+causes the transfer and synthesis processes to be traced.  This produces
+a huge amount of output.
+@c Repeating the @code{-t} option causes SGML style trace output to be
+@c produced.
+
+@item -u
+signals that dictionaries are unified, not split into prefix, infix,
+suffix, and root files.
+
+@item -v
+verifies tests by pretty printing the parse trees.
+
+@item -x
+restricts STAMP to only the transfer process.
+@end ftable
+
+The following options exist only in beta-test versions of the program,
+since they are used only for debugging.
+
+@ftable @code
+@item -/
+increments the debugging level.  The default is zero (no debugging output).
+
+@item -z filename
+opens a file for recording a memory allocation log.
+
+@item -Z address,count
+traps the program at the point where @code{address} is allocated or
+freed for the @code{count}'th time.
+@end ftable
+
+@c ----------------------------------------------------------------------------
+@node Interaction, , Command options, Running STAMP
+@section Program Interaction
+
+If the @samp{-f}, @samp{-i}, and @samp{-o} command options are not
+used, STAMP prompts for a number of file names, reading the standard
+input for the desired values.  The interactive dialog goes like this:
+@example
+
+@group
+C> stamp
+STAMP: Synthesis(Transfer(AMPle(text))) = adapted text
+Version 2.0b1 (July 21, 1998), Copyright 1998 SIL, Inc.
+Beta test version compiled Jul 27 1998 16:04:11
+	   Transfer/Synthesis Performed Tue Jul 28 14:54:04 1998
+STAMP declarations file (zzSTAMP.DEC): pnstamp.dec
+Transfer file (xxzzTR.CHG) [none]: hgpntr.chg
+Synthesis file (zzSYNT.CHG) [none]: pnsynt.chg
+Dictionary code table (zzSYCD.TAB): pnsycd.tab
+Dictionary orthography change table (zzORDC.TAB) [none]: pnordc.tab
+	10 changes loaded from suffix dictionary code table.
+Suffix dictionary file (zzSF01.DIC): pnsf01.dic
+		SUFFIX DICTIONARY: Loaded 137 records
+	10 changes loaded from root dictionary code table.
+Root dictionary file (xxRTnn.DIC): pnsyrt.dic
+		ROOT DICTIONARY: Loaded 176 records
+Next Root dictionary file (xxRTnn.DIC) [no more]:
+Output text control file (zzOUTTX.CTL) [none]: pnoutx.ctl
+10 output orthography changes were loaded from pnoutx.ctl
+
+First Input file: pntest.ana
+Output file: pntest.syn
+
+Next Input file (or RETURN if no more):
+C>
+@end group
+
+@end example
+@noindent
+Note that each prompt contains a reminder of the expected form of the
+answer in parentheses and ends with a colon.  Several of the prompts
+also contain the default answer in brackets.
+
+Using the command options does not change the appearance of the program
+screen output significantly, but the program displays the answers to
+each of its prompts without waiting for input.  Assume that the file
+@file{pntest.cmd} contains the following, which is the same as the
+answers given above:
+@example
+
+@group
+pnstamp.dec
+hgpntr.chg
+pnsynt.chg
+pnsycd.tab
+pnordc.tab
+pnsf01.dic
+pnsyrt.dic
+
+pnoutx.ctl
+@end group
+
+@end example
+@noindent
+Then running STAMP with the command options produces screen output like
+the following:
+@example
+
+@group
+C> stamp -f pntest.cmd -i pntest.ana -o pntest.syn
+STAMP: Synthesis(Transfer(AMPle(text))) = adapted text
+Version 2.0b1 (July 21, 1998), Copyright 1998 SIL, Inc.
+Beta test version compiled Jul 27 1998 16:04:11
+	   Transfer/Synthesis Performed Tue Jul 28 14:59:34 1998
+STAMP declarations file (zzSTAMP.DEC): pnstamp.dec
+Transfer file (xxzzTR.CHG) [none]: hgpntr.chg
+Synthesis file (zzSYNT.CHG) [none]: pnsynt.chg
+Dictionary code table (zzSYCD.TAB): pnsycd.tab
+Dictionary orthography change table (zzORDC.TAB) [none]: pnordc.tab
+	10 changes loaded from suffix dictionary code table.
+Suffix dictionary file (zzSF01.DIC): pnsf01.dic
+		SUFFIX DICTIONARY: Loaded 137 records
+	10 changes loaded from root dictionary code table.
+Root dictionary file (xxRTnn.DIC): pnsyrt.dic
+		ROOT DICTIONARY: Loaded 176 records
+Next Root dictionary file (xxRTnn.DIC) [no more]:
+Output text control file (zzOUTTX.CTL) [none]: pnoutx.ctl
+10 output orthography changes were loaded from pnoutx.ctl
+
+C>
+@end group
+
+@end example
+@noindent
+The only difference in the screen output is that the prompts for the
+input text file and the output analysis file are not displayed.
+
+@c ----------------------------------------------------------------------------
+@node Standard format, STAMP declarations file, Running STAMP, Top
+@chapter Standard format
+@include stdfmt.txi
+
+@c ----------------------------------------------------------------------------
+@node STAMP declarations file, Transfer file, Standard format, Top
+@chapter STAMP Declarations File
+
+The fields that STAMP recognizes in its "declarations file" are described
+below.  Fields that start with any other backslash codes are ignored by
+STAMP.
+
+@c \maxprops and \pcl added by hab 14-May-1999
+@menu
+* \ambig (zzSTAMP.DEC)::  Analytic ambiguity delimiter
+* \ap::                   Allomorph property declaration
+* \ca::                   Category declarations
+* \cat (zzSTAMP.DEC)::    Category output control
+* \ccl::                  Category class declaration
+* \maxprops::             Maximum number of properties
+* \mcl::                  Morpheme class declaration
+* \mp::                   Morpheme property declaration
+* \pcl::                  Punctuation class
+* \rd::                   Root delimiter
+* \scl (zzSTAMP.DEC)::    String class declaration
+* \strcheck::             Valid allomorph and string environment characters
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node \ambig (zzSTAMP.DEC), \ap, STAMP declarations file, STAMP declarations file
+@section Analytic ambiguity delimiter: \ambig
+@findex \ambig
+
+When AMPLE produces more than one analysis, each analysis is set off by a
+unique character.  Likewise, when AMPLE fails to analyze a source
+language word, it flags this word with the same character, the default
+for which is a percent sign (@code{%}).  However, a user may override
+AMPLE's default.
+
+Like AMPLE, STAMP assumes this delimiter to be a percent sign.  If an
+analyzed text does not use this character, STAMP must be informed as to
+what character was used.  To do this, use the \ambig field to define the
+desired character.  For example, the following would change the analytic
+ambiguity delimiter to @code{@@}:
+@example
+
+\ambig @@
+
+@end example
+
+@c ----------------------------------------------------------------------------
+@c Edited slightly by hab 14-May-1999 to reflect \maxprops
+@node \ap, \ca, \ambig (zzSTAMP.DEC), STAMP declarations file
+@section Allomorph property declaration: \ap
+@findex \ap
+
+Allomorph properties are defined by the field code @code{\ap} followed
+by one or more allomorph property names.  An allomorph property name
+must be a single, contiguous sequence of printing characters.
+Characters and words which have special meanings in tests should not be
+used.  For example, the following would declare the allomorph properties
+@code{deletedK}, @code{deletedG}, and @code{underlyingV}:
+
+@example
+
+@group
+\ap deletedK deletedG  | elided morpheme final velars
+\ap underlyingV        | underlying long vowel
+@end group
+
+@end example
+
+A maximum of 255 properties (including both allomorph and morpheme
+properties) may be defined unless the @code{\maxprops} field is used to
+define a larger number.  Any number of @code{\ap} fields may be
+used so long as the number of property names does not exceed 255 (or the
+number defined by the @code{\maxprops} field).  Note that any
+@code{\maxprops} field must occur before any @code{\ap} or @code{\mp}
+fields.
+
+@c ----------------------------------------------------------------------------
+@node \ca, \cat (zzSTAMP.DEC), \ap, STAMP declarations file
+@section Category declarations: \ca
+@findex \ca
+
+Categories are defined by the field code @code{\ca} followed by one or
+more category names.  A category name must be a single, contiguous
+sequence of printing characters.  Characters and words which have
+special meanings in tests should not be used.
+
+A maximum of 255 categories may be defined.  Any number of @code{\ca}
+fields may be used so long as the number of category names does not
+exceed 255.
+
+@c ----------------------------------------------------------------------------
+@node \cat (zzSTAMP.DEC), \ccl, \ca, STAMP declarations file
+@section Category output control: \cat
+@findex \cat
+
+The category information to write to the analysis output file is
+defined by the field code @code{\cat} followed by one or two words.
+The first word must be either @code{prefix} or @code{suffix} (or an
+abbreviation of one of those words), either capitalized or lowercase.
+
+The @code{\cat} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+NOTE: at present, this does not do anything in the code.  Is this a
+feature that has never been used?  When was it introduced?  I'd be quite
+willing to rip it out of the code.
+
+@c ----------------------------------------------------------------------------
+@node \ccl, \maxprops, \cat (zzSTAMP.DEC), STAMP declarations file
+@section Category class declaration: \ccl
+@findex \ccl
+
+A category class declaration has three parts: the field code @code{\ccl},
+the name of the class, and the list of categories in the class (separated
+by spaces).  For example, the following defines the class @code{IVERB}
+containing the categories @code{V1X} and @code{V1Y}:
+@example
+
+\ccl IVERB V1X V1Y
+
+@end example
+@noindent
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The category names must have been defined by an
+earlier @code{\ca} field; see
+@ifset txt
+`Category declarations' above.
+@end ifset
+@ifclear txt
+@ref{\ca}.
+@end ifclear
+
+In transfer, category classes can only be used in the match strings of
+lexical changes; see
+@ifset txt
+`Lexical change' below.
+@end ifset
+@ifclear txt
+@ref{\lc}.
+@end ifclear
+
+Each @code{\ccl} field defines a single category class.  Any number of
+@code{\ccl} fields may appear in the file.
+
+@c ----------------------------------------------------------------------------
+@c Following added by hab 14-May-1999
+@node \maxprops, \mcl, \ccl, STAMP declarations file
+@section Maximum number of properties: \maxprops
+@findex \maxprops
+
+The maximum number of properties that can be defined can be increased
+from the default of 255 by giving the @code{\maxprops} field code
+followed by a number greater than or equal to 255 but less than 65536.
+
+The @code{\maxprops} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the one containing the
+largest valid value is the one that is used.
+
+The @code{\maxprops} must be used before any properties are defined.
+This is the case for both morpheme and allomorph properties.
+
+If no @code{\maxprops} fields appear in the declarations file, then
+STAMP limits the number of properties which can be defined to 255.
+
+@c ----------------------------------------------------------------------------
+@node \mcl, \mp, \maxprops, STAMP declarations file
+@section Morpheme class declaration: \mcl
+@findex \mcl
+
+A morpheme class declaration has three parts: the field code @code{\mcl},
+the name of the class, and the list of morphnames in the class (separated
+by spaces).  For example, a morpheme class @code{DIRECTION} could be
+defined as follows:
+@example
+
+\mcl DIRECTION UP DOWN IN OUT
+
+@end example
+@noindent
+Such a class could be used in conditioning environments for lexical
+changes, insertion rules, or substitution rules.  For example, the
+following environment would limit the rule to apply only preceding one
+of the directional morphemes:
+@example
+
+/ _ [DIRECTION]
+
+@end example
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The morpheme names should be defined by an entry
+in one of the dictionary files.
+
+Each @code{\mcl} field defines a single morpheme class.  Any number of
+@code{\mcl} fields may appear in the file.
+
+@c ----------------------------------------------------------------------------
+@c Edited slightly by hab 14-May-1999 to reflect \maxprops
+@node \mp, \pcl, \mcl, STAMP declarations file
+@section Morpheme property declaration: \mp
+@findex \mp
+
+Morpheme properties are defined by the field code @code{\mp} followed by
+one or more morpheme property names.  A morpheme property name must be a
+single, contiguous sequence of printing characters.  Characters and words
+which have special meanings in tests should not be used.  For example,
+the following would declare the morpheme properties @code{XYZ},
+@code{ABC}, and @code{DEF}:
+@example
+
+@group
+\mp XYZ
+\mp ABC DEF
+@end group
+
+@end example
+
+A maximum of 255 properties (including both allomorph and morpheme
+properties) may be defined unless the @code{\maxprops} field is used to
+define a larger number.  Any number of @code{\mp} fields may be
+used so long as the number of property names does not exceed 255 (or the
+number defined by the @code{\maxprops} field).  Note that any
+@code{\maxprops} field must occur before any @code{\mp} or @code{\ap}
+fields.
+
+@c ----------------------------------------------------------------------------
+@c Following added by hab 14-May-1999
+@node \pcl, \rd, \mp, STAMP declarations file
+@section Punctuation class: \pcl
+@findex \pcl
+
+A punctuation class is defined by the field code @code{\pcl} followed
+by the class name, which is followed in turn by one or more
+punctuation characters or (previously defined) punctuation class
+names.  A punctuation class name used as part of the class definition
+must be enclosed in square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each @code{\pcl} field defines a single punctuation class.  Any number of
+@code{\pcl} fields may appear in the file.
+
+If no @code{\pcl} fields appear in the declarations file, then STAMP
+does not allow any punctuation classes in tests, and does not allow any
+punctuation classes in punctuation environment constraints.
+
+@c ----------------------------------------------------------------------------
+@node \rd, \scl (zzSTAMP.DEC), \pcl, STAMP declarations file
+@section Root delimiter: \rd
+@findex \rd
+
+For each analysis, the root (or roots), and the category of the first
+root, are delimited by a pair of reserved characters.  By default, AMPLE
+uses wedges (@code{<} and @code{>}).  If some characters other than
+wedges are used for this purpose, they must be declared using the
+@code{\rd} field.  (@code{\rd} is mnemonic for "root delimiter".)  For
+example, the following line might be included in the input control file:
+@example
+
+\rd ( )
+
+@end example
+@noindent
+Two characters are expected after the field code, optionally separated by
+white space.  The first is taken to be the opening (that is, left)
+delimiter and the second is taken to be the closing (that is, right)
+delimiter.  Different characters must be used for the opening and
+closing delimiters.
+
+The delimiters used to set off the root should not be used for any other
+purpose in the analysis field.  The following may not be used for a
+delimiter: the backslash (@code{\}), whatever character is used to
+indicate analytic failures and ambiguities, or any orthographic
+character.
+
+The @code{\rd} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\rd} fields appear in the declarations file, then STAMP uses
+the delimiter characters @code{<} and @code{>}.
+
+@c ----------------------------------------------------------------------------
+@node \scl (zzSTAMP.DEC), \strcheck, \rd, STAMP declarations file
+@section String class declaration: \scl
+@findex \scl
+
+A string class declaration has three parts: the field code @code{\scl},
+the name of the class, and the list of strings in the class (separated by
+spaces).  String classes are used in synthesis in specifying string
+environment constraints on regular sound changes and on allomorph entries
+in the dictionaries.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The actual character strings have no such
+restrictions.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each @code{\scl} field defines a single string class.  Any number of
+@code{\scl} fields may appear in the file.
+
+@c ----------------------------------------------------------------------------
+@node \strcheck, , \scl (zzSTAMP.DEC), STAMP declarations file
+@section Valid allomorph and string environment characters: \strcheck
+@findex \strcheck
+
+The characters considered to be valid for allomorph strings and string
+environment constraints are defined by a @code{\strcheck} field code
+followed by the list of characters.  Spaces are not significant in this
+list.
+
+The @code{\strcheck} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\strcheck} fields appear in the analysis data file, then
+STAMP does not check allomorph strings and string environment
+constraints for containing only valid characters.
+
+@c ----------------------------------------------------------------------------
+@node Transfer file, Synthesis file, STAMP declarations file, Top
+@chapter Transfer Control File
+
+The transfer control file for the STAMP program is a standard format file
+containing a single data record.
+
+@menu
+* Transfer file fields::
+* Syntax of transfer rules::
+* Syntax of lexical changes::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node Transfer file fields, Syntax of transfer rules, Transfer file, Transfer file
+@section Transfer file fields
+
+@c \maxprops and \pcl added by hab 14-May-1999
+@menu
+* \ambig (xxzzTR.CHG)::     Analytic ambiguity delimiter *
+* \ap (xxzzTR.CHG)::        Allomorph property declaration *
+* \ca (xxzzTR.CHG)::        Category declarations *
+* \ccl (xxzzTR.CHG)::       Category class declaration *
+* \cr::                     Copy rule
+* \fl::                     Flag rule
+* \ir::                     Insertion rule
+* \lc::                     Lexical change
+* \maxprops (xxzzTR.CHG)::  Maximum number of properties *
+* \mcl (xxzzTR.CHG)::       Morpheme class declaration *
+* \mp (xxzzTR.CHG)::        Morpheme property declaration *
+* \pcl (xxzzTR.CHG)::       Punctuation class *
+* \rd (xxzzTR.CHG)::        Root delimiter *
+* \scl (xxzzTR.CHG)::       String class declaration *
+* \sr::                     Substitution rule
+@end menu
+
+@ifinfo
+@ifclear txt
+The fields marked with an asterisk above can appear in the STAMP
+declarations file or the synthesis control file instead.
+@end ifclear
+@end ifinfo
+
+@node \ambig (xxzzTR.CHG), \ap (xxzzTR.CHG), Transfer file fields, Transfer file fields
+@subsection Analytic ambiguity delimiter: \ambig
+@findex \ambig
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis control file instead; see
+@ifset txt
+`Analytic ambiguity delimiter' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\ambig (zzSTAMP.DEC)}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \ap (xxzzTR.CHG), \ca (xxzzTR.CHG), \ambig (xxzzTR.CHG), Transfer file fields
+@subsection Allomorph property declaration: \ap
+@findex \ap
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis control file instead; see
+@ifset txt
+`Allomorph property declaration' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\ap}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \ca (xxzzTR.CHG), \ccl (xxzzTR.CHG), \ap (xxzzTR.CHG), Transfer file fields
+@subsection Category declarations: \ca
+@findex \ca
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis control file instead; see
+@ifset txt
+`Category declarations' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\ca}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \ccl (xxzzTR.CHG), \cr, \ca (xxzzTR.CHG), Transfer file fields
+@subsection Category class declaration: \ccl
+@findex \ccl
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis control file instead; see
+@ifset txt
+`Category class declaration' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\ccl}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \cr, \fl, \ccl (xxzzTR.CHG), Transfer file fields
+@subsection Copy rule: \cr
+@findex \cr
+
+Suppose that a single source language morpheme corresponds to either of
+two target language morphemes, where the choice between them is not
+determined by any contextual factor within the word.  For example,
+Huallaga Quechua -ra `PAST' (simple past) corresponds to two suffixes in
+Pasco Quechua, in some cases to -rqU `RECPST' (recent past) and in other
+cases to -rqa `REMPST' (remote past).  Whether the recent or remote past
+tense is appropriate is a semantic matter, not determinable by any
+structural factor, morphological or syntactic.
+
+The best one can do in such a case is to create ambiguous output for
+every instance of the past tense morpheme and leave the choice between
+them to the person who edits the computer-adapted text.  Thus, for every
+Huallaga Quechua word containing -ra `PAST' (as in 1 below) the program
+should produce two Pasco Quechua words (as in 2), one with -rqU `RECPST'
+and the other with -rqa `SIMPST':
+@example
+
+@group
+1. aywaran
+2. %2%aywarqun%aywarqan%
+@end group
+
+@end example
+@noindent
+This can be accomplished by means of a copying rule.  A copying rule
+produces two output analyses.  It produces a copy of the input and then
+the result of applying the rule as though it were a substitution rule;
+see
+@ifset txt
+`Substitution rule' below.
+@end ifset
+@ifclear txt
+@ref{\sr}.
+@end ifclear
+The only syntactic difference between a copying rule and a substitution
+rule is that the former begins with the field code @code{\cr} and the
+latter begins with a @code{\sr}.  See
+@ifset txt
+`Syntax of transfer rules' below
+@end ifset
+@ifclear txt
+@ref{Syntax of transfer rules}
+@end ifclear
+For a description of the syntax for these rules.
+
+Returning to the Quechua example, the copying rule in 3 would apply to
+the analysis in 4 to produce the two analyses in 5:
+@example
+
+@group
+3. \cr "PAST" "REMPST"
+4. < V1 *aywa > PAST 3
+5. %2%< V1 *aywa > PAST 3%< V1 *aywa > REMPST 3%
+@end group
+
+@end example
+
+Copying rules apply to the output of previous rules in the transfer file,
+and subsequent rules apply to each of the outputs.  Because subsequent
+rules apply to each of the outputs of a copying rule, it is possible for
+copying rules to feed copying rules.  For example, consider the two
+hypothetical copying rules in a below.  If these are applied to a single
+analysis containing A and Q (as schematized in 7 below), they would
+produce the four analyses shown in 9.
+@example
+
+@group
+6. \cr "A" "B"
+   \cr "Q" "R"
+7. ...A...Q...
+8. %2%...A...Q...%...B...Q...%
+9. %4%...A...Q...%...A...R...%...B...Q...%...B...R...%
+@end group
+
+@end example
+@noindent
+That is, the first rule of a produces the two analyses in 8.  Then the
+the second rule of a applies to each of these outputs, producing two
+outputs for each as in 9.
+
+Note that if the original analysis had been ambiguous (with two analyses
+each containing A and Q), the two copying rules would have produced an
+eight-way ambiguity.  The moral: if copying rules are used too liberally,
+there might be a dramatic increase in the levels of ambiguity produced.
+Let the user beware!
+
+@c ----------------------------------------------------------------------------
+@node \fl, \ir, \cr, Transfer file fields
+@subsection Flag rule: \fl
+@findex \fl
+
+Flags are a mechanism for temporarily remembering some information about
+an analysis.  A rule conditioned by one or more flags affects an analysis
+only if all the conditions implied by those flags are true for that
+analysis.  Flags make it possible to "insulate" source language phenomena
+from target language phenomena.
+
+The definition of a flag has three obligatory parts: (1) the field code
+@code{\fl}, (2) the name of the flag, and (3) the list of morphnames
+which trigger the raising of that flag.  For example, consider the
+following definition:
+@example
+
+\fl PLURAL PLIMPF PLDIR PLSTAT
+
+@end example
+@noindent
+The name of the flag is @code{PLURAL}.  The morphnames whose presence
+causes the flag to be raised are @code{PLIMPF}, @code{PLDIR}, and
+@code{PLSTAT}.
+
+Flag definitions are a type of rule.  Recall that rules are applied in
+the order in which they are given in the transfer file.  (This excludes
+lexical changes, which are applied before all rules.)  Thus, a flag is
+raised only if one of the morphnames in its definition is present in the
+analysis resulting from all previous rules (in the order they are given
+in the transfer file).  For example, the plural flag defined above would
+be raised only if @code{PLIMPF}, @code{PLDIR}, or @code{PLSTAT} were
+present in an analysis at the point where the rule is defined in the
+transfer file.
+
+Suppose there are two rules.  The first deletes @code{PLIMPF}.  The next
+one is a flag definition which raises the @code{PLURAL} flag whenever
+@code{PLIMPF} is present in an analysis.  This flag-raising rule only
+sees the result of all previous rules.  Thus it would never raise the
+@code{PLURAL} flag in this case, since @code{PLIMPF} would always have
+been deleted by the preceding rule.  To get the proper effect, the flag
+definition rule should be ordered before the rule which deletes the
+morphname that causes the flag to be raised.
+
+Flags cannot be used in a rule until they have been defined with a
+@code{\fl} field.  Sometimes it is conceptually simpler to define all the
+flags at the beginning of the transfer file; in other cases it is
+advantageous to define each of them close to---but preceding---the rules
+which use them.
+
+Flags may be tested in copy and substitution rules following the match
+and substitution strings, or in insertion rules following the string to
+be inserted.  The flag names must always precede any conditioning
+environments.  A flag name can be preceded by tilde to complement the
+sense of the flag; that is, a rule so modified applies only if the named
+flag is not raised.
+
+When a particular analysis has undergone all the rules of the transfer
+file, all the flags are automatically lowered before another analysis is
+considered.  To put it another way, flags do not stay raised from one
+word to another.  Many flags are raised and never lowered until the next
+word, but in some cases it is desirable to have the flags lowered before
+some subsequent rule.
+
+Whenever an analysis changes as the result of a rule that tests a flag
+(or flags), then that rule's flags are automatically lowered.  The user
+does not have to do anything because TRANSFER is designed to
+automatically lower flags under this condition.  This avoids the
+application of subsequent rules on the basis of the same flag.  For
+example, consider the following rules.  (Insertion rules are discussed in
+the next section.)
+@example
+
+@group
+\fl XFLG M1 M2       |raise flag when M1 or M2 present
+\ir "X1" XFLG / M1 _ |insert X1 after M1 when XFLG up
+\ir "X2" XFLG / _ M2 |insert X2 before M2 when XFLG up
+@end group
+
+@end example
+@noindent
+Given an analysis with the sequence @code{M1 M2}, the result of these
+changes is @code{M1 X1 M2}.  It would not be @code{M1 X1 X2 M2} because,
+when the first insertion rule applies, it lowers @code{XFLG}.
+Consequently, the second insertion rule does not apply.
+
+Suppose one wished to drop a flag (say @code{PFLG}) whenever a particular
+morpheme (say @code{XY}) is present in an analysis.  The following rule
+would do it.  (Substitution rules are discussed below.)
+@example
+
+\sr "XY" "XY" PFLG |substitute XY for XY when PFLG up
+
+@end example
+@noindent
+When this rule applies, it produces no net change in the analysis, but it
+has the important side effect of dropping the @code{PFLG} flag.
+
+Consider the following substitution rule, where the @code{FLG} flag is
+followed by three environments:
+@example
+
+\sr "XX" "YY" FLG / M1 _ / M2 _ / M3 _
+
+@end example
+@noindent
+This is equivalent to the following sequence of rules:
+@example
+
+@group
+\sr "XX" "YY" FLG / M1 _
+\sr "XX" "YY" FLG / M2 _
+\sr "XX" "YY" FLG / M3 _
+@end group
+
+@end example
+@noindent
+Note that if the first applies, @code{FLG} is lowered so the second and
+third could not apply.  Likewise, if the second applies, the third could
+not apply.  Only one rule could possibly apply; transfer's behavior is
+the same even when multiple environments are included in a single rule or
+spread across several rules.
+
+It is possible to limit a rule by a complemented flag, in which case the
+rule applies only if the flag is not raised.  For example, definition 1
+would raise the flag @code{KUFLAG} when @code{REFL}, @code{INTNS}, or
+@code{CMPLT} were present, and rule 2 would insert @code{KU} when
+@code{KUFLAG} is not raised and @code{INSERTKUFLAG} is raised:
+@example
+
+@group
+1. \fl KUFLAG REFL INTNS CMPLT
+2. \ir "KU" ~KUFLAG INSERTKUFLAG
+@end group
+
+@end example
+@noindent
+Note that the constraint imposed by each of these flags must be
+simultaneously met for the rule to apply.
+
+In general, a flag automatically lowers whenever a rule constrained by
+that flag applies.  Note, however, that the converse is not true for a
+complemented flag that constrains a rule that applies.  If rule 2 above
+were to apply, then @code{INSERTKUFLAG} would be lowered but
+@code{KUFLAG} would not be affected, that is, it would remain lowered.
+
+Flags and morpheme classes have some interesting similarities and
+differences.  Both are defined in the same way (but with different field
+codes), and both are used as conditions on rules.  They differ, however,
+in where they are used in rules: morpheme classes occur in environments,
+whereas flags occur between the rule's main part and before any
+conditioning environments.  Perhaps the most important difference is one
+of persistence.  Once defined, a morpheme class persists until STAMP
+finishes; there is simply no way to "undefine" a class.  But flags are
+volatile: they are raised when certain morphemes are present in an
+analysis and lowered when a rule having the flag applies effectively.
+
+@c ----------------------------------------------------------------------------
+@node \ir, \lc, \fl, Transfer file fields
+@subsection Insertion rule: \ir
+@findex \ir
+
+Insertion rules insert morphnames into an analysis.  An insertion rule
+may have (in order): (1) the field code \ir, (2) the morphname to be
+inserted, (3) optionally one or more flags, (4) optionally one or more
+environments into which the morphname should be inserted, and (5) a
+comment.  The insertion string is delimited by some printing character.
+The morphname is inserted into an analysis if all the rule's flags are
+raised (or, for complemented flags, not raised) and at least one of its
+environments is satisfied (if any are specified).
+
+Of the five parts listed above, only the first two are obligatory.
+However, an insertion rule comprised only of a field code and the
+morphname (without any conditioning flags or environments) would insert
+the morphname into every analysis.  The following example has the first
+three parts; it would insert @code{PL} whenever the @code{PLFLG} flag is
+up:
+@example
+
+\ir "PL" PLFLG
+
+@end example
+@noindent
+(How transfer determines where to insert @code{PL} is discussed
+below.)  The following inserts @code{PXT} immediately after @code{BDJ}:
+@example
+
+\ir "PXT" / BDJ _
+
+@end example
+@noindent
+The following inserts @code{PLDIR} whenever both the @code{PLURAL} flag
+is up and a directional suffix (that is, a member of the class
+@code{DIR}) is present.  @code{PLDIR} is inserted immediately following
+the directional morpheme.
+@example
+
+\ir "PLDIR" PLURAL / [DIR] _
+
+@end example
+
+When an insertion rule has multiple environments, it applies only for the
+first environment satisfied by a given analysis.  For example, consider
+the following:
+@example
+
+\ir "PXT" / BDJ _  / QMR _
+
+@end example
+@noindent
+This rule is applied in the following way.  Potential insertion sites in
+the current analysis are considered in order from left to right.  At the
+first one, if @code{BDJ} occurs to the left, @code{PXT} is inserted, and
+nothing more is done by this rule.  If @code{BDJ} does not occur there
+but @code{QMR} does, @code{PXT} is inserted and nothing more is done by
+this rule.  Failing to find either @code{BDJ} or @code{QMR} to the left,
+the potential insertion site is shifted one place to the right and the
+process is repeated.  In this way, all potential insertion sites in the
+analysis are evaluated until either an insertion is made or there are no
+more potential insertion sites in the analysis.  When one of these
+conditions is met, the next rule in the transfer file is applied.
+
+Each insertion rule may affect an analysis only once.  This prevents
+multiple insertions in cases where more than one environment is
+satisfied.  For example, consider the following rule:
+@example
+
+\ir "X" / _ Y / Z _
+
+@end example
+@noindent
+Consider how this affects an analysis with the sequence @code{Z Y}.  Both
+environments are satisfied, so if multiple insertions were permitted by a
+single rule, the result would be @code{Z X X Y}.  However, the desired
+result is more likely to be @code{Z X Y}, which is what the program will
+produce.  Note, it is possible to get the former result by using two
+rules:
+@example
+
+@group
+\ir "X" / _ Y
+\ir "X" / Z _
+@end group
+
+@end example
+@noindent
+Since there are two rules, both would apply to @code{Z Y}, the first
+producing @code{Z X Y}, the second applying to @code{Z X Y} to produce
+@code{Z X X Y}.
+
+Insertion rules are frequently conditioned by flags; thus some comments
+about them are in order.  First, recall the discussion above:
+the application of a rule automatically results in the lowering of any
+flags in that rule.
+
+Second, flags may be complemented by prefixing a tilde (@code{~}).  The
+following set of rules illustrates the use of a complemented flag.  It is
+motivated by a situation in Quechua, where pluralization with -pakU
+occurs only in the absence of other morphemes which have kU.
+@example
+
+@group
+\fl KUFLG REFL CMPL INTNS |flag for suffixes with kU
+\fl PLFLG PL1 PL2         |flag for pluralizers
+\sr "PL1" ""              |remove PL1
+\sr "PL2" ""              |remove PL2
+\ir "PLKU" PLFLG ~KUFLG   |insert if plural and no kU
+@end group
+
+@end example
+@noindent
+The first line defines a flag for suffixes containing kU; the second
+defines a flag for pluralizers.  The third and fourth lines delete the
+pluralizers.  The last line is a rule that inserts @code{PLKU} if the
+@code{PLFLG} is up and the @code{KUFLG} is down, that is, the original
+analysis had a pluralizer and no suffix with kU is now present in the
+analysis.  If @code{PLKU} is ever inserted by this rule, @code{PLFLG}
+will be lowered.
+
+@unnumberedsubsec Determining the site for insertion
+
+If an insertion rule has an environment with a simple environment bar,
+then the position of the bar defines the site for insertion.  But when
+the rule has no environment, or when the environment bar has ellipsis
+marking, then the insertion site is not explicitly defined.  TRANSFER has
+mechanisms for treating these cases.
+
+Generally, the items to be inserted are either prefixes or suffixes.  In
+the absence of an explicit environment statement, prefixes are inserted
+somewhere before the leftmost root and suffixes are inserted somewhere
+after the rightmost root.  TRANSFER determines whether the morpheme to be
+inserted is a prefix or a suffix by determining which dictionary it
+occurs in.  (For this reason each affix should have a unique morphname.)
+Then it uses the orderclass of the morpheme, as defined in the dictionary
+entry, to determine exactly where to insert the morpheme.
+
+Consider an insertion rule with no environment, such as the following one
+which inserts @code{ABC} whenever @code{XYZFLAG} is raised:
+@example
+
+\ir "ABC" XYZFLAG
+
+@end example
+@noindent
+TRANSFER determines the orderclass of @code{ABC} from the affix
+dictionaries of the target language.  Given an analysis, if the
+@code{XYZFLAG} is up at the point this insertion rule is applied,
+TRANSFER searches for an acceptable place to put @code{ABC}, attempting
+to place it as far right as possible without violating orderclass, that
+is, without placing it after an affix with a greater orderclass.  To
+illustrate, consider an analysis like the following (with the
+orderclasses given below each morphname):
+@example
+
+@group
+< C1 root > M1 M2 M3 M4 M5
+			10 20 30 40 50
+@end group
+
+@end example
+@noindent
+Assuming that the orderclass of @code{ABC} is 40, the result of the
+insertion rule would be the following:
+@example
+
+< C1 root > M1 M2 M3 M4 ABC M5
+
+@end example
+
+If it is necessary to insert a sequence of morphnames, they can be
+inserted by a sequence of insertion rules.  For example, the following
+three rules inserts @code{ABC DEF GHI} when @code{XYZFLAG} is up:
+@example
+
+@group
+\ir "ABC" XYZFLAG
+\ir "DEF" / ABC _
+\ir "GHI" / DEF _
+@end group
+
+@end example
+@noindent
+(A slightly more complicated solution would be needed if there were
+analyses containing @code{ABC} or @code{DEF} into which these rules would
+incorrectly insert @code{DEF} or @code{GHI}.)  Applied to the previous
+example, the result would be:
+@example
+
+< C1 root > M1 M2 M3 M4 ABC DEF GHI M5
+
+@end example
+
+Whenever the insertion site is not precisely defined by the environment
+bar, insertion will be based on orderclass.  Therefore, ellipsis marking
+can be used to constrain an insertion by the presence of one or more
+morphnames and yet have the insertion based on orderclass.  For example,
+either of the following rules inserts @code{PQR} as far right as possible
+without violating orderclass whenever @code{M4} occurs in an analysis:
+@example
+
+@group
+\ir "PQR" / _... M4
+\ir "PQR" / M4 ..._
+@end group
+
+@end example
+
+@c ----------------------------------------------------------------------------
+@node \lc, \maxprops (xxzzTR.CHG), \ir, Transfer file fields
+@subsection Lexical change: \lc
+@findex \lc
+
+FIX ME!
+
+@c ----------------------------------------------------------------------------
+@c Added by hab 14-May-1999
+@node \maxprops (xxzzTR.CHG), \mcl (xxzzTR.CHG), \lc, Transfer file fields
+@subsection Maximum number of properties: \maxprops
+@findex \maxprops
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis file instead; see
+@ifset txt
+`Maximum number of properties' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\maxprops}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \mcl (xxzzTR.CHG), \mp (xxzzTR.CHG), \maxprops (xxzzTR.CHG), Transfer file fields
+@subsection Morpheme class declaration: \mcl
+@findex \mcl
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis control file instead; see
+@ifset txt
+`Morpheme class declaration' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\mcl}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \mp (xxzzTR.CHG), \pcl (xxzzTR.CHG), \mcl (xxzzTR.CHG), Transfer file fields
+@subsection Morpheme property declaration: \mp
+@findex \mp
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis control file instead; see
+@ifset txt
+`Morpheme property declaration' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\mp}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@c Added by hab 14-May-1999
+@node \pcl (xxzzTR.CHG), \rd (xxzzTR.CHG), \mp (xxzzTR.CHG), Transfer file fields
+@subsection Punctuation class: \pcl
+@findex \pcl
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis file instead; see
+@ifset txt
+`Punctuation class' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\pcl}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \rd (xxzzTR.CHG), \scl (xxzzTR.CHG), \pcl (xxzzTR.CHG), Transfer file fields
+@subsection Root delimiter: \rd
+@findex \rd
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis control file instead; see
+@ifset txt
+`Root delimiter' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\rd}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \scl (xxzzTR.CHG), \sr, \rd (xxzzTR.CHG), Transfer file fields
+@subsection String class declaration: \scl
+@findex \scl
+
+This field can also occur in the STAMP declarations file or the STAMP
+synthesis control file instead; see
+@ifset txt
+`String class declaration' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\scl (zzSTAMP.DEC)}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \sr, , \scl (xxzzTR.CHG), Transfer file fields
+@subsection Substitution rule: \sr
+@findex \sr
+
+FIX ME!
+
+@c ----------------------------------------------------------------------------
+@node Syntax of transfer rules, Syntax of lexical changes, Transfer file fields, Transfer file
+@section Syntax of transfer rules
+
+FIX ME!
+
+@node Syntax of lexical changes, , Syntax of transfer rules, Transfer file
+@section Syntax of lexical changes
+
+FIX ME!
+
+@c ----------------------------------------------------------------------------
+@node Synthesis file, Dictionary code table file, Transfer file, Top
+@chapter Synthesis Control File
+
+@c \maxprops and \pcl added by hab 14-May-1999
+@menu
+* \ambig (zzSYNT.CHG)::     Analytic ambiguity delimiter
+* \ap (zzSYNT.CHG)::        Allomorph property declaration
+* \ca (zzSYNT.CHG)::        Category declarations
+* \ccl (zzSYNT.CHG)::       Category class declaration
+* \lc (zzSYNT.CHG)::        Lexical change
+* \maxprops (zzSYNT.CHG)::  Maximum number of properties
+* \mcl (zzSYNT.CHG)::       Morpheme class declaration
+* \mp (zzSYNT.CHG)::        Morpheme property declaration
+* \pcl (zzSYNT.CHG)::       Punctuation class
+* \rd (zzSYNT.CHG)::        Root delimiter
+* \rsc::                    Regular sound change
+* \rscid::                  Regular sound change markers
+* \scl (zzSYNT.CHG)::       String class declaration
+* \test::                   Synthesis test
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node \ambig (zzSYNT.CHG), \ap (zzSYNT.CHG), Synthesis file, Synthesis file
+@section Analytic ambiguity delimiter: \ambig
+@findex \ambig
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Analytic ambiguity delimiter' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\ambig (zzSTAMP.DEC)}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \ap (zzSYNT.CHG), \ca (zzSYNT.CHG), \ambig (zzSYNT.CHG), Synthesis file
+@section Allomorph property declaration: \ap
+@findex \ap
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Allomorph property declaration' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\ap}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \ca (zzSYNT.CHG), \ccl (zzSYNT.CHG), \ap (zzSYNT.CHG), Synthesis file
+@section Category declarations: \ca
+@findex \ca
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Category declarations' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\ca}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \ccl (zzSYNT.CHG), \lc (zzSYNT.CHG), \ca (zzSYNT.CHG), Synthesis file
+@section Category class declaration: \ccl
+@findex \ccl
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Category class declaration' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\ccl}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \lc (zzSYNT.CHG), \maxprops (zzSYNT.CHG), \ccl (zzSYNT.CHG), Synthesis file
+@section Lexical change: \lc
+@findex \lc
+
+FIX ME!
+
+@c ----------------------------------------------------------------------------
+@c Added by hab 14-May-1999
+@node \maxprops (zzSYNT.CHG), \mcl (zzSYNT.CHG), \lc (zzSYNT.CHG), Synthesis file
+@section Maximum number of properties: \maxprops
+@findex \maxprops
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Maximum number of properties' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\maxprops}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \mcl (zzSYNT.CHG), \mp (zzSYNT.CHG), \maxprops (zzSYNT.CHG), Synthesis file
+@section Morpheme class declaration: \mcl
+@findex \mcl
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Morpheme class declaration' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\mcl}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \mp (zzSYNT.CHG), \pcl (zzSYNT.CHG), \mcl (zzSYNT.CHG), Synthesis file
+@section Morpheme property declaration: \mp
+@findex \mp
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Morpheme property declaration' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\mp}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@c Added by hab 14-May-1999
+@node \pcl (zzSYNT.CHG), \rd (zzSYNT.CHG), \mp (zzSYNT.CHG), Synthesis file
+@section Punctuation class: \pcl
+@findex \pcl
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Punctuation class' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\pcl}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \rd (zzSYNT.CHG), \rsc, \pcl (zzSYNT.CHG), Synthesis file
+@section Root delimiter: \rd
+@findex \rd
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`Root delimiter' in the chapter `STAMP declarations file' above.
+@end ifset
+@ifclear txt
+@ref{\rd}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \rsc, \rscid, \rd (zzSYNT.CHG), Synthesis file
+@section Regular sound change: \rsc
+@findex \rsc
+
+FIX ME!
+
+@c ----------------------------------------------------------------------------
+@node \rscid, \scl (zzSYNT.CHG), \rsc, Synthesis file
+@section Regular sound change markers: \rscid
+@findex \rscid
+
+FIX ME!
+
+@c ----------------------------------------------------------------------------
+@node \scl (zzSYNT.CHG), \test, \rscid, Synthesis file
+@section String class declaration: \scl
+@findex \scl
+
+This field can also occur in the STAMP declarations file or the STAMP
+transfer control file instead; see
+@ifset txt
+`String class declaration' in the chapter `STAMP declarations file'
+above.
+@end ifset
+@ifclear txt
+@ref{\scl (zzSTAMP.DEC)}.
+@end ifclear
+
+@c ----------------------------------------------------------------------------
+@node \test, , \scl (zzSYNT.CHG), Synthesis file
+@section Synthesis test: \test
+@findex \test
+
+FIX ME!
+
+@c hab 14-May-1999 need to also add <punc_expr> to <factor>, add
+@c <neighbor>, and insert <punc_expr> itself.
+
+@c ----------------------------------------------------------------------------
+@node Dictionary code table file, Dictionary orthography change table file, Synthesis file, Top
+@chapter Dictionary Code Table File
+@include dictcode.txi
+
+@c ----------------------------------------------------------------------------
+@node Dictionary orthography change table file, Dictionary files, Dictionary code table file, Top
+@chapter Dictionary Orthography Change Table File
+@include dictochg.txi
+
+@c ----------------------------------------------------------------------------
+@node Dictionary files, Text output control file, Dictionary orthography change table file, Top
+@chapter Dictionary Files
+@clear ample
+@clear ampletxt
+@clear amplentext
+@include dictfile.txi
+
+@c ----------------------------------------------------------------------------
+@node Text output control file, Analysis files, Dictionary files, Top
+@chapter Text Output Control File
+@include textout.txi
+@set textout-title Text Output Control File
+
+@c ----------------------------------------------------------------------------
+@node Analysis files, Bibliography, Text output control file, Top
+@chapter Input Analysis Files
+@cindex input analysis file
+@cindex analysis input file
+@include anafiles.txi
+
+@c ----------------------------------------------------------------------------
+@node Bibliography, Index, Analysis files, Top
+@unnumbered Bibliography
+
+@enumerate
+
+@item
+Weber, David J., H. Andrew Black, and Stephen R. McConnel. 1988.
+@cite{AMPLE: a tool for exploring morphology}.
+Occasional Publications in Academic Computing No.@: 12.
+Dallas, TX: Summer Institute of Linguistics.
+
+@item
+Weber, David J., H. Andrew Black, Stephen R. McConnel, and Alan Buseman. 1990.
+@cite{STAMP: a tool for dialect adaptation}.
+Occasional Publications in Academic Computing No.@: 15.
+Dallas, TX: Summer Institute of Linguistics.
+
+@end enumerate
+
+@c ----------------------------------------------------------------------------
+@node Index, , Bibliography, Top
+@chapter Index
+
+@printindex cp
+
+@c ----------------------------------------------------------------------------
+@contents
+@bye
+
+@c field       dec   tra   syn   description
+@c -----       ---   ---   ---   -----------
+@c \ambig      yes   yes   yes   Ambiguity Marker
+@c \ap         yes   yes   yes   Allomorph Property
+@c \ca         yes   yes   yes   Category
+@c \cat        yes   no    no    Prefix- or Suffix- Driven
+@c \ccl        yes   yes   yes   Category Class
+@c \cr         no    yes   no    Copy Rule
+@c \fl         no    yes   no    Flag Rule
+@c \ir         no    yes   no    Insertion Rule
+@c \lc         no    yes   yes   Lexical Change
+@c \maxprops   yes   yes   yes   Maximum number of properties
+@c \mcl        yes   yes   yes   Morpheme Class
+@c \mp         yes   yes   yes   Morpheme Property
+@c \pcl        yes   yes   yes   Punctuation Class
+@c \rd         yes   yes   yes   Root Delimiters
+@c \rsc        no    no    yes   Regular Sound Change
+@c \rscid      no    no    yes   Regular Sound Change Markers
+@c \scl        yes   yes   yes   String Class
+@c \sr         no    yes   no    Substitution Rule
+@c \strcheck   yes   no    no    Character list for string checks
+@c \test       no    no    yes   Synthesis Test

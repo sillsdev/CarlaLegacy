@@ -1,0 +1,192 @@
+# MS-DOS Makefile for the PC-PATR library and programs
+# GNU C / GNU make (DJGPP 2.01)
+# Steve McConnel,  7-Oct-1998
+
+# directory where executable programs are stored
+# (this is the only line that you should need to customize)
+BINDIR=c:\sil
+
+CC      = gcc -g -O2 -Wall -Dalloca=__builtin_alloca
+CFLAGS  = -DHAVE_CONFIG_H -I. -I.. -I../include
+RANLIB  = ranlib
+INSTALL = copy
+
+.SUFFIXES:
+.SUFFIXES: .c .o .op
+.c.o:
+	$(CC) -ansi -pedantic $(CFLAGS) -c $<
+.c.op:
+	$(CC) -ansi $(CFLAGS) -pg -c -o$@ $<
+
+############################################################################
+
+SOURCES=patr.h patrdef.h pcpatr.h version.h grammar.c lcparse.c copyfeat.c \
+		patrampl.c patrkimm.c patrlexi.c patalloc.c patrdata.c patrfunc.c \
+		patrstrg.c pcpatr.c pcpatr2.c pcpatr3.c unify.c userpatr.c wrtstyle.c \
+		cvtkp2wa.c parsepwk.c subsume.c amplpatr.c priunion.c constrai.c
+
+DOCFILES = patrlib.info patrlib.html patrlib.txt patrlib.dos patrlib.mac \
+		   pcpatr.info  pcpatr.html  pcpatr.txt  pcpatr.dos  pcpatr.mac
+TESTS =a bears eng-ela eng-ela2 eng-gfs gazdar shieber1 shieber2 shieber3\
+ shieber4 tomita woody
+#
+#  386 mode PC-PATR program and function library
+#
+LIBS=../lib/libkimmo.a libpatr.a ../lib/libample.a ../lib/libcmd.a \
+	 ../lib/libopac.a ../lib/libcport.a
+OBJ =pcpatr.o pcpatr2.o pcpatr3.o
+LIBO=lcparse.o  grammar.o  patrfunc.o patrdata.o patalloc.o patrstrg.o \
+	 patrampl.o patrkimm.o patrlexi.o userpatr.o unify.o    wrtstyle.o \
+	 cvtkp2wa.o parsepwk.o copyfeat.o subsume.o amplpatr.o  priunion.o \
+	 constrai.o
+
+pcpatr.exe: $(OBJ) $(LIBS)
+	$(CC) -o pcpatr $(OBJ) libpatr.a $(LIBS)
+	@copy pcpatr a.out >nul
+	strip pcpatr
+	stubify pcpatr
+	@del pcpatr. >nul
+	@ren a.out pcpatr >nul
+
+libpatr.a: $(LIBO)
+	-@if exist libpatr.a del libpatr.a >nul
+	ar rc libpatr.a $(LIBO)
+	$(RANLIB) libpatr.a
+#
+#  386 mode PC-PATR program and function library compiled for profiling
+#
+LIBSP=../lib/libkim_p.a libpat_p.a ../lib/libamp_p.a ../lib/libcmd_p.a \
+	  ../lib/libopa_p.a ../lib/libcpo_p.a
+OBJP =pcpatr.op pcpatr2.op pcpatr3.op
+LIBOP=lcparse.op  grammar.op  patrfunc.op patrdata.op patalloc.op patrstrg.op \
+	  patrampl.op patrkimm.op patrlexi.op userpatr.op unify.op    wrtstyle.op \
+	  cvtkp2wa.op parsepwk.op copyfeat.op subsume.op amplpatr.op  priunion.op \
+	  constrai.op
+
+pcpatrp.exe: $(OBJP) $(LIBSP)
+	$(CC) -pg -o pcpatrp $(OBJ) libpat_p.a $(LIBSP)
+	@copy pcpatrp a.out >nul
+	strip pcpatrp
+	stubify pcpatrp
+	@del pcpatrp. >nul
+	@ren a.out pcpatrp >nul
+
+libpat_p.a: $(LIBOP)
+	-@if exist libpat_p.a del libpat_p.a >nul
+	ar rc libpat_p.a $(LIBOP)
+	ranlib libpat_p.a
+#
+# sources unique to PC-PATR (user interface code)
+#
+pcpatr.o   pcpatr.op:   pcpatr.c   patr.h pcpatr.h ../include/kimmo.h
+pcpatr2.o  pcpatr2.op:  pcpatr2.c  patr.h pcpatr.h ../include/kimmo.h
+pcpatr3.o  pcpatr3.op:  pcpatr3.c  patr.h pcpatr.h ../include/kimmo.h
+#
+# modules placed into a library for sharing with other programs
+#
+lcparse.o  lcparse.op : lcparse.c  patr.h patrdef.h
+grammar.o  grammar.op : grammar.c  patr.h patrdef.h
+patrfunc.o patrfunc.op: patrfunc.c patr.h patrdef.h
+copyfeat.o copyfeat.op: copyfeat.c patr.h patrdef.h
+patrdata.o patrdata.op: $(SOURCES)
+patalloc.o patalloc.op: patalloc.c patr.h patrdef.h
+patrampl.o patrampl.op: patrampl.c patr.h patrdef.h ../include/ample.h
+patrkimm.o patrkimm.op: patrkimm.c patr.h patrdef.h ../include/kimmo.h
+patrlexi.o patrlexi.op: patrlexi.c patr.h patrdef.h
+patrstrg.o patrstrg.op: patrstrg.c patr.h patrdef.h
+userpatr.o userpatr.op: userpatr.c patr.h patrdef.h
+unify.o    unify.op   : unify.c    patr.h patrdef.h
+subsume.o  subsume.op : subsume.c  patr.h patrdef.h
+wrtstyle.o wrtstyle.op: wrtstyle.c patr.h patrdef.h
+cvtkp2wa.o cvtkp2wa.op: cvtkp2wa.c patr.h patrdef.h ../include/kimmo.h
+parsepwk.o parsepwk.op: parsepwk.c patr.h patrdef.h ../include/kimmo.h
+amplpatr.o amplpatr.op: amplpatr.c patr.h patrdef.h
+priunion.o priunion.op: priunion.c patr.h patrdef.h
+constrai.o constrai.op: constrai.c patr.h patrdef.h
+
+#############################################################################
+
+libs: installdirs ../include/patr.h ../lib/libpatr.a
+
+profile_libs: installdirs ../include/patr.h ../lib/libpat_p.a
+
+installdirs:
+	-@if not exist ..\include\*.* md ..\include >nul
+	-@if not exist ..\lib\*.*     md ..\lib >nul
+	-@if not exist $(BINDIR)\*.*  md $(BINDIR) >nul
+
+../include/patr.h: patr.h
+	$(INSTALL) patr.h ..\include\patr.h >nul
+
+../lib/libpatr.a: libpatr.a
+	$(INSTALL) libpatr.a ..\lib\libpatr.a >nul
+../lib/libpat_p.a: libpat_p.a
+	$(INSTALL) libpat_p.a ..\lib\libpat_p.a >nul
+
+all: libs pcpatr.exe
+
+profile: profile_libs pcpatrp.exe
+
+install: all
+	@$(INSTALL) pcpatr.exe $(BINDIR)\pcpatr.exe >nul
+
+uninstall:
+	if exist $(BINDIR)\pcpatr.exe del $(BINDIR)\pcpatr.exe >nul
+
+check: pcpatr.exe
+	-@check $(TESTS)
+
+mostlyclean:
+	-if exist *.o* del *.o* >nul
+	-@if exist *.c~ del *.c~ >nul
+	-@if exist *.h~ del *.h~ >nul
+
+clean: mostlyclean
+	-if exist lib*.a del lib*.a >nul
+	-@if exist *.aux del *.aux >nul
+	-@if exist *.log del *.log >nul
+	-@if exist *.toc del *.toc >nul
+	-@if exist *.cp* del *.cp* >nul
+	-@if exist *.fn* del *.fn* >nul
+	-@if exist *.ky* del *.ky* >nul
+	-@if exist *.pg* del *.pg* >nul
+	-@if exist *.tp* del *.tp* >nul
+	-@if exist *.vr* del *.vr* >nul
+
+distclean: clean
+	-if exist *.exe del *.exe >nul
+	-if exist makefile. del makefile. >nul
+	-@if exist TAGS. del TAGS. >nul
+	-@if exist *.dvi del *.dvi >nul
+	-@if exist pcpatr. del pcpatr. >nul
+	-@if exist pcpatrp. del pcpatrp. >nul
+
+maintainer-clean: distclean
+	-@if exist patrlib.info del patrlib.info >nul
+	-@if exist patrlib.html del patrlib.html >nul
+	-@if exist patrlib.txt del patrlib.txt >nul
+	-@if exist patrlib.dos del patrlib.dos >nul
+	-@if exist patrlib.mac del patrlib.mac >nul
+	-@if exist pcpatr.info del pcpatr.info >nul
+	-@if exist pcpatr.html del pcpatr.html >nul
+	-@if exist pcpatr.txt del pcpatr.txt >nul
+	-@if exist pcpatr.dos del pcpatr.dos >nul
+	-@if exist pcpatr.mac del pcpatr.mac >nul
+
+TAGS: $(SOURCES)
+	etags $(SOURCES)
+
+doc dvi html info:
+	@if exist ..\doc\pcpatr.txi  cd ..\doc
+	@if exist pcpatr.txi         @$(MAKE) patr$@
+	@if exist pcpatr.txi         cd ..\pcpatr
+
+dist testdist:
+	@echo this target does not work on MS-DOS
+	@echo you need some variant of Unix (SunOS, Linux, ...) to "make $@"
+
+############################################################################
+
+.PHONY: all check clean dist distclean doc dvi html info install \
+		libs maintainer-clean mostlyclean profile profile_libs testdist \
+		uninstall installdirs

@@ -1,0 +1,594 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename ktagger.info
+@settitle KTagger Reference Manual
+@c %**end of header
+
+@set TITLE KTagger Reference Manual
+@set SUBTITLE tagging words using PC-Kimmo parsing
+@set VERSION version 1.0b13
+@set DATE October 1997
+@set AUTHOR by Evan Antworth and Stephen McConnel
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@node    Top,       Introduction,  (dir),    (dir)
+@comment node-name, next,          previous, up
+
+@ifinfo
+@ifclear txt
+This is the reference manual for the KTagger program.
+@end ifclear
+@end ifinfo
+
+@menu
+* Introduction::
+* Running KTagger::
+* Control file::
+* Examples::
+* Copying::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node    Introduction, Running KTagger, Top,      Top
+@comment node-name,    next,            previous, up
+@chapter Introduction to the KTagger program
+
+KTagger is a stand-alone application built with PC-Kimmo's basic
+parsing functions.  It accepts as input a word list file, consisting of
+one word per line, and produces as output a structured text file
+containing the morphological parse(s) of each word.  The content and
+format of the output file is determined by a ``control'' file
+constructed by the user.  KTagger can be used to do part-of-speech
+tagging, or to produce a word lexicon or any other kind of structured
+output.
+
+To use KTagger, you need a PC-KIMMO language description such as
+Englex.  The description must include a word grammar file.  You do not
+need PC-Kimmo itself to use KTagger.
+
+KTagger runs on these systems: MS-DOS, Windows, Macintosh, and Unix.
+
+@c ----------------------------------------------------------------------------
+@node Running KTagger, Control file, Introduction, Top
+@chapter Running KTagger
+
+KTagger is a batch process oriented program.  It reads a control file,
+and then processes an input text file to produce an output analysis
+file.
+
+KTagger uses an old-fashioned command line interface following the
+convention of options starting with a dash character (@samp{-}).  The
+available options are listed below in alphabetical order.  Those
+options which require an argument have the argument type following the
+option letter.
+
+@ftable @code
+@item -h
+displays a helpful (?) message describing these command line options.
+@item -i filename
+selects the input text file.
+@item -l filename
+selects the output log file.
+@item -o filename
+selects the output file of tagged text.
+@item -q
+causes KTagger to work quietly, with minimum output to the screen.
+@item -x filename
+selects the control file.
+@end ftable
+
+The following options exist only in beta-test versions of the program,
+since they are used only for debugging.
+
+@ftable @code
+@item -/
+increments the debugging level.  The default is zero (no debugging output).
+
+@item -z filename
+opens a file for recording a memory allocation log.
+
+@item -Z address,count
+traps the program at the point where @code{address} is allocated or
+freed for the @code{count}'th time.
+@end ftable
+
+@c ----------------------------------------------------------------------------
+@node Control file, Examples, Running KTagger, Top
+@chapter The KTagger Control File
+
+@table @code
+@item \rules
+@itemx \lexicon
+@itemx \grammar
+These specify the PC-Kimmo language description files.  Each of these
+declarations must occur exactly once in the control file.  If one of
+them is missing, the program aborts with an error message.
+
+@item \header
+@itemx \footer
+These specify what appears at the beginning (before any word records)
+and end (after all word records) of the output file.  Each of these
+declarations may occur only once in the control file.  If one of them
+is missing, then an empty string is used for that declaration.
+
+The content of the @code{\header} or @code{\footer} declarations is a
+string that is delimited by double-quote characters (an empty string is
+indicated by @code{""}).  A string can contain these special
+characters:
+@table @code
+@item \n
+newline
+@item \t
+tab
+@item \f
+formfeed
+@item \"
+double quote
+@item \\
+backslash
+@end table
+
+@item \recordstarttag
+@itemx \recordendtag
+These specify what begins and ends each record in the output file.
+(Each word in the input file is represented by a record in the output
+file.)  Each of these declarations may occur only once in the control
+file.  If one of them is missing, then an empty string is used for that
+declaration.
+
+@item \field
+@itemx \starttag
+@itemx \endtag
+@itemx \path
+These define an output field as a group.  The @code{\field} declaration
+has no content; it merely indicates the start of a field definition.
+The @code{\starttag} declaration contains a string (possibly empty)
+inserted before each instance of that field in the output file.  The
+@code{\endtag} declaration containss a string (possibly empty) inserted
+after each instance of that field in the output file.  The @code{\path}
+declaration contains a feature path specification that refers to the
+parse result of a word.  There are five reserved path specifications:
+@table @code
+@item <WORD>
+the input word
+@item <LEX>
+the lexical form
+@item <GLOSS>
+the gloss
+@item <TREE>
+the parse tree
+@item <FEAT>
+top node features
+@end table
+@noindent
+In addition, the @code{\path} declaration may specify any feature path
+found in the top node features.  Using Englex, a path declaration of
+<head> would return all head features, while <head pos> would return
+just the value of the pos feature.  Thus it is possible to output any
+feature value made available by the grammar of the language
+description.
+
+@item \rem
+marks a comment (``remark'') in the control file.  Any number of these
+fields may appear in the control file.  They have no effect on the
+processing.
+
+@end table
+
+@c ----------------------------------------------------------------------------
+@node Examples, Copying, Control file, Top
+@chapter Examples
+
+This chapter illustrates how to use KTagger by giving three sample
+control files used in conjunction with the Englex PC-Kimmo description
+of English and the following list of words:
+@example
+be
+began
+but
+by
+child
+children
+compute
+computer
+computerize
+could
+@end example
+
+@menu
+* TDF::         Tab-delimited Format Output
+* SFM::         Standard Format Output
+* SGML::        SGML Output
+@end menu
+
+@c ----------------------------------------------------------------------------
+@node TDF, SFM, Examples, Examples
+@section Tab-delimited Format Output
+
+Consider the following control file:
+@example
+\rem TDF.CTL - control file for KTagger
+\rem Produces output file in tab-delimited format
+\rem Uses Englex (English description for PC-KIMMO)
+
+\rules   ../../../pckimmo/test/eng/english.rul
+\lexicon ../../../pckimmo/test/eng/english.lex
+\grammar ../../../pckimmo/test/eng/english.grm
+
+\header ""
+\footer ""
+
+\recordstarttag ""
+\recordendtag "\n"
+
+\field
+\starttag ""
+\endtag "\t"
+\path <WORD>
+
+\field
+\starttag ""
+\endtag "\t"
+\path <LEX>
+
+\field
+\starttag ""
+\endtag "\t"
+\path <head pos>
+
+\field
+\starttag ""
+\endtag ""
+\path <head>
+
+@end example
+@noindent
+For the given set of input words, the following output is created:
+@example
+be      be      V       [ pos:V vform:BASE ]
+be      be      AUX     [ neg:- pos:AUX ]
+began   be`gan  V       [ finite:+ pos:V tense:PAST vform:ED ]
+but     but     CJ      [ pos:CJ ]
+but     but     PP      [ pos:PP ]
+by      by      PP      [ pos:PP ]
+by      by      AV      [ pos:AV ]
+child   `child  N
+		[ agr:[ 3sg:+ ] number:SG pos:N proper:- verbal:- ]
+children        `children       N
+		[ agr:[ 3sg:- ] number:PL pos:N proper:- verbal:- ]
+compute com`pute        V       [ pos:V vform:BASE ]
+computer        com`pute+er     N
+		[ agr:[ 3sg:+ ] number:SG pos:N ]
+computerize     com`pute+er+ize V
+		[ finite:- pos:V vform:BASE ]
+could   could   AUX     [ modal:+ neg:- pos:AUX ]
+@end example
+@noindent
+(Lines that are too long have been split, with the
+@code{<head>} feature shown on the second line indented one tab stop.)
+
+@c ----------------------------------------------------------------------------
+@node SFM, SGML, TDF, Examples
+@section Standard Format Output
+
+Consider the following control file:
+@example
+\rem SFM.CTL - control file for KTagger
+\rem Produces output file in standard format
+\rem Uses Englex (English description for PC-KIMMO)
+
+\rules   ../../../pckimmo/test/eng/english.rul
+\lexicon ../../../pckimmo/test/eng/english.lex
+\grammar ../../../pckimmo/test/eng/english.grm
+
+\header ""
+\footer ""
+
+\recordstarttag ""
+\recordendtag "\n"
+
+\field
+\starttag "\\w "
+\endtag "\n"
+\path <WORD>
+
+\field
+\starttag "\\lx "
+\endtag "\n"
+\path <LEX>
+
+\field
+\starttag "\\pos "
+\endtag "\n"
+\path <head pos>
+
+\field
+\starttag "\\lemma "
+\endtag "\n"
+\path <root>
+
+\field
+\starttag "\\lempos "
+\endtag "\n"
+\path <root_pos>
+@end example
+@noindent
+For the given set of input words, the following output is created:
+@example
+\w be
+\lx be
+\pos V
+\lemma be
+\lempos V
+
+\w be
+\lx be
+\pos AUX
+\lemma be
+\lempos AUX
+
+\w began
+\lx be`gan
+\pos V
+\lemma be`gin
+\lempos V
+
+\w but
+\lx but
+\pos CJ
+\lemma but
+\lempos CJ
+
+\w but
+\lx but
+\pos PP
+\lemma but
+\lempos PP
+
+\w by
+\lx by
+\pos PP
+\lemma by
+\lempos PP
+
+\w by
+\lx by
+\pos AV
+\lemma by
+\lempos AV
+
+\w child
+\lx `child
+\pos N
+\lemma `child
+\lempos N
+
+\w children
+\lx `children
+\pos N
+\lemma `child
+\lempos N
+
+\w compute
+\lx com`pute
+\pos V
+\lemma com`pute
+\lempos V
+
+\w computer
+\lx com`pute+er
+\pos N
+\lemma com`pute
+\lempos V
+
+\w computerize
+\lx com`pute+er+ize
+\pos V
+\lemma com`pute
+\lempos V
+
+\w could
+\lx could
+\pos AUX
+\lemma could
+\lempos AUX
+
+@end example
+
+@c ----------------------------------------------------------------------------
+@node SGML, , SFM, Examples
+
+@section SGML Output
+Consider the following control file:
+@example
+\rem SGML.CTL - control file for KTagger
+\rem Produces output file in SGML LEXICON format
+\rem Uses Englex (English description for PC-KIMMO)
+
+\rules   ../../../pckimmo/test/eng/english.rul
+\lexicon ../../../pckimmo/test/eng/english.lex
+\grammar ../../../pckimmo/test/eng/english.grm
+
+\header "<!DOCTYPE LEXICON [\n
+<!ELEMENT LEXICON  - - (LE+)>\n
+<!ELEMENT LE       - - ( W, LX, POS, LEMMA, LEMPOS )>\n
+<!ELEMENT W        - - (#PCDATA)>\n
+<!ELEMENT LX       - - (#PCDATA)>\n
+<!ELEMENT POS      - - (#PCDATA)>\n
+<!ELEMENT LEMMA    - - (#PCDATA)>\n
+<!ELEMENT LEMPOS   - - (#PCDATA)>\n
+]>\n\n
+<lexicon>\n"
+\footer "</lexicon>\n"
+
+\recordstarttag "<le>\n"
+\recordendtag "</le>\n"
+
+\field
+\starttag "<w>"
+\endtag "</w>\n"
+\path <WORD>
+
+\field
+\starttag "<lx>"
+\endtag "</lx>\n"
+\path <LEX>
+
+\field
+\starttag "<pos>"
+\endtag "</pos>\n"
+\path <head pos>
+
+\field
+\starttag "<lemma>"
+\endtag "</lemma>\n"
+\path <root>
+
+\field
+\starttag "<lempos>"
+\endtag "</lempos>\n"
+\path <root_pos>
+@end example
+@noindent
+For the given set of input words, the following output is created:
+@example
+<!DOCTYPE LEXICON [
+<!ELEMENT LEXICON  - - (LE+)>
+<!ELEMENT LE       - - ( W, LX, POS, LEMMA, LEMPOS )>
+<!ELEMENT W        - - (#PCDATA)>
+<!ELEMENT LX       - - (#PCDATA)>
+<!ELEMENT POS      - - (#PCDATA)>
+<!ELEMENT LEMMA    - - (#PCDATA)>
+<!ELEMENT LEMPOS   - - (#PCDATA)>
+]>
+
+<lexicon>
+<le>
+<w>be</w>
+<lx>be</lx>
+<pos>V</pos>
+<lemma>be</lemma>
+<lempos>V</lempos>
+</le>
+<le>
+<w>be</w>
+<lx>be</lx>
+<pos>AUX</pos>
+<lemma>be</lemma>
+<lempos>AUX</lempos>
+</le>
+<le>
+<w>began</w>
+<lx>be`gan</lx>
+<pos>V</pos>
+<lemma>be`gin</lemma>
+<lempos>V</lempos>
+</le>
+<le>
+<w>but</w>
+<lx>but</lx>
+<pos>CJ</pos>
+<lemma>but</lemma>
+<lempos>CJ</lempos>
+</le>
+<le>
+<w>but</w>
+<lx>but</lx>
+<pos>PP</pos>
+<lemma>but</lemma>
+<lempos>PP</lempos>
+</le>
+<le>
+<w>by</w>
+<lx>by</lx>
+<pos>PP</pos>
+<lemma>by</lemma>
+<lempos>PP</lempos>
+</le>
+<le>
+<w>by</w>
+<lx>by</lx>
+<pos>AV</pos>
+<lemma>by</lemma>
+<lempos>AV</lempos>
+</le>
+<le>
+<w>child</w>
+<lx>`child</lx>
+<pos>N</pos>
+<lemma>`child</lemma>
+<lempos>N</lempos>
+</le>
+<le>
+<w>children</w>
+<lx>`children</lx>
+<pos>N</pos>
+<lemma>`child</lemma>
+<lempos>N</lempos>
+</le>
+<le>
+<w>compute</w>
+<lx>com`pute</lx>
+<pos>V</pos>
+<lemma>com`pute</lemma>
+<lempos>V</lempos>
+</le>
+<le>
+<w>computer</w>
+<lx>com`pute+er</lx>
+<pos>N</pos>
+<lemma>com`pute</lemma>
+<lempos>V</lempos>
+</le>
+<le>
+<w>computerize</w>
+<lx>com`pute+er+ize</lx>
+<pos>V</pos>
+<lemma>com`pute</lemma>
+<lempos>V</lempos>
+</le>
+<le>
+<w>could</w>
+<lx>could</lx>
+<pos>AUX</pos>
+<lemma>could</lemma>
+<lempos>AUX</lempos>
+</le>
+</lexicon>
+@end example
+@noindent
+Note that this output contains exactly the same information as the
+previous example, except for being packaged as SGML rather than as a
+standard format file.
+
+@c ----------------------------------------------------------------------------
+@node Copying, , Examples, Top
+@chapter Copyright and fair use policy
+
+All of the files in this release of KTagger (source code, executables,
+examples, documentation) are copyrighted by SIL International (Language
+Software Development, 7500 W. Camp Wisdom Road, Dallas, TX 75236,
+U.S.A.).  Permission is hereby granted to the user to copy, use, and
+distribute the KTagger files under the following conditions:
+@enumerate
+@item
+if you distribute this original release of Englex, you must include
+all files in unmodified form;
+
+@item
+you may not charge money for distributing KTagger, in original or
+modified form, beyond minimal media cost without permission of
+SIL International; and
+
+@item
+KTagger may not be used in any commercial product without permission of
+SIL International.
+@end enumerate
+
+@c ----------------------------------------------------------------------------
+@contents
+@bye

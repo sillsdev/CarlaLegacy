@@ -1,0 +1,240 @@
+# Master Unix makefile for the STAMP library and program
+# Steve McConnel, 24-Apr-2000
+
+@SET_MAKE@
+srcdir      = @srcdir@
+VPATH       = @srcdir@
+CC          = @CC@
+YACC        = @YACC@
+LEX         = @LEX@
+CFLAGS      = @ANSIFLAGS@ @CFLAGS@ @DEFS@ -I. -I.. -I../include
+RANLIB      = @RANLIB@
+INSTALL     = @INSTALL@
+COPY        = @COPYPROG@
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+
+.SUFFIXES: .op
+.c.op:
+	$(CC) $(CFLAGS) -pg -c -o $@ $<
+
+@make_shell@ = /bin/sh
+BINDIR = $(exec_prefix)/bin
+
+SOURCES=stamp.c    dtbio.c    lexchg.c   menvck.c   synrsc.c   synth.c    \
+		syntst.c   sytest.l   sytest.y   tmatch.c   transfer.c treplace.c \
+		trules.c   tsdict.c   tsinit.c   tsutil.c   envchk.c   version.c  \
+		sample.c   trample.c  stamp.h    version.h  \
+		fixflex.sed fixyacc.sed
+DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
+			sytest_l.c sytest_y.c sytest_y.h readme.1st StampChanges.txt \
+			Stamp.dsp Stamplib.dsp
+TESTS     = ckea ckno cksw cz
+TESTFILES = check.bat
+TESTBASES = outx.ctl pf01.dic rt01.dic sf01.dic sytr.dec sycd.tab sy.chg \
+			test.aaa test.cmd test.lll test.sss trans.chg
+#
+# STAMP program and function library
+#
+LIBS = ../lib/libample.a ../lib/libopac.a ../lib/libcport.a
+OBJ=stamp.o
+LIBO=tsinit.o   sytest_l.o sytest_y.o tsdict.o   tsutil.o   transfer.o \
+	 synth.o    syntst.o   synrsc.o   lexchg.o   trules.o   tmatch.o   \
+	 treplace.o dtbio.o    menvck.o   envchk.o   version.o
+
+stamp: $(OBJ) libstamp.a $(LIBS)
+	$(CC) -o stamp $(OBJ) libstamp.a $(LIBS) @LIBS@
+libstamp.a: $(LIBO)
+	rm -f libstamp.a
+	ar rc libstamp.a $(LIBO)
+	$(RANLIB) libstamp.a
+#
+# STAMP program and function library compiled for profiling
+#
+LIBSP = ../lib/libample_p.a ../lib/libopac_p.a ../lib/libcport_p.a
+OBJP  = stamp.op
+LIBOP = tsinit.op   sytest_l.op sytest_y.op tsdict.op  tsutil.op  transfer.op \
+		synth.op    syntst.op   synrsc.op   lexchg.op  trules.op  tmatch.op   \
+		treplace.op dtbio.op    menvck.op   envchk.op  version.op
+
+stamp_p: $(OBJP) libstamp_p.a $(LIBSP)
+	$(CC) -pg -o ample_p $(OBJP) libstamp_p.a $(LIBSP) @LIBS@
+
+libstamp_p.a: $(LIBOP)
+	rm -f libstamp_p.a
+	ar rc libstamp_p.a $(LIBOP)
+	$(RANLIB) libstamp_p.a
+#
+# sources unique to STAMP (user interface code)
+#
+stamp.o    stamp.op:    stamp.c    stamp.h ../ample/stample.h
+#
+# sources shared as a library
+#
+sytest_y.c sytest_y.h: sytest.y fixyacc.sed
+	$(YACC) -d -pstampyy sytest.y
+	rm -f sytest_y.h
+	mv y.tab.h sytest_y.h
+	sed -f fixyacc.sed y.tab.c >sytest_y.c
+	rm -f y.tab.c
+
+sytest_l.c: sytest.l fixflex.sed
+	$(LEX) -8 -t -Pstampyy sytest.l >sytestl.c
+	sed -f fixflex.sed sytestl.c >sytest_l.c
+	rm -f sytestl.c
+
+dtbio.o    dtbio.op:    dtbio.c    stamp.h ../ample/stample.h
+envchk.o   envchk.op:   envchk.c   stamp.h ../ample/stample.h
+lexchg.o   lexchg.op:   lexchg.c   stamp.h ../ample/stample.h
+menvck.o   menvck.op:   menvck.c   stamp.h ../ample/stample.h
+synrsc.o   synrsc.op:   synrsc.c   stamp.h ../ample/stample.h
+synth.o    synth.op:    synth.c    stamp.h ../ample/stample.h
+syntst.o   syntst.op:   syntst.c   stamp.h ../ample/stample.h
+sytest_l.o sytest_l.op: sytest_l.c stamp.h ../ample/stample.h sytest_y.h
+sytest_y.o sytest_y.op: sytest_y.c stamp.h ../ample/stample.h
+tmatch.o   tmatch.op:   tmatch.c   stamp.h ../ample/stample.h
+transfer.o transfer.op: transfer.c stamp.h ../ample/stample.h
+treplace.o treplace.op: treplace.c stamp.h ../ample/stample.h
+trules.o   trules.op:   trules.c   stamp.h ../ample/stample.h
+tsdict.o   tsdict.op:   tsdict.c   stamp.h ../ample/stample.h
+tsinit.o   tsinit.op:   tsinit.c   stamp.h ../ample/stample.h
+tsutil.o   tsutil.op:   tsutil.c   stamp.h ../ample/stample.h
+version.o  version.op:  version.c  $(SOURCES)
+#
+# TRAMPLE program
+#
+TROBJ = trample.o
+trample: $(TROBJ) $(LIBS)
+	$(CC) -o trample $(TROBJ) $(LIBS) @LIBS@
+#
+# TRAMPLE program compiled for profiling
+#
+TROBJP = trample.op
+trample_p: $(TROBJP) $(LIBSP)
+	$(CC) -pg -o trample_p $(TROBJP) $(LIBSP) @LIBS@
+#
+# SAMPLE program
+#
+SOBJ = sample.o
+sample: $(SOBJ) $(LIBS)
+	$(CC) -o sample $(SOBJ) $(LIBS) @LIBS@
+#
+# SAMPLE program compiled for profiling
+#
+SOBJP = sample.op
+sample_p: $(SOBJP) $(LIBSP)
+	$(CC) -pg -o sample_p $(SOBJP) $(LIBSP) @LIBS@
+#
+# sources unique to SAMPLE or TRAMPLE (user interface code)
+#
+sample.o   sample.op:   sample.c   stamp.h ../ample/stample.h
+trample.o  trample.op:  trample.c  stamp.h ../ample/stample.h
+
+#############################################################################
+
+libs: installdirs ../lib/libstamp.a ../include/stamp.h
+
+profile_libs: installdirs ../lib/libstamp_p.a ../include/stamp.h
+
+installdirs:
+	@if [ ! -d $(BINDIR) ];  then mkdir $(BINDIR);  fi
+	@if [ ! -d ../lib ];     then mkdir ../lib;     fi
+	@if [ ! -d ../include ]; then mkdir ../include; fi
+
+../lib/libstamp.a: libstamp.a
+	$(INSTALL) -m 644 -c libstamp.a ../lib
+	$(RANLIB) ../lib/libstamp.a
+
+../lib/libstamp_p.a: libstamp_p.a
+	$(INSTALL) -m 644 -c libstamp_p.a ../lib
+	$(RANLIB) ../lib/libstamp_p.a
+
+../include/stamp.h: stamp.h
+	$(COPY) stamp.h ../include
+
+all: libs stamp
+
+profile: profile_libs stamp_p
+
+install: all
+	$(INSTALL) -s stamp $(BINDIR)
+
+uninstall:
+	rm -f $(BINDIR)/stamp
+
+check: stamp
+	@(Prev=none; cd test; \
+	for t in $(TESTS); do \
+		cd $$t; rm -f $${t}test.dif; \
+		../../stamp -q -f $${t}test.cmd -i $${t}test.aaa -o $${t}test.syn >$${t}test.log; \
+		if (cmp $${t}test.sss $${t}test.syn) then \
+		rm -f $${t}test.syn; \
+		if [ "$$Prev"  = "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n STAMP passed test; fi;\
+		Prev=good; \
+		else \
+		diff -c $${t}test.sss $${t}test.syn >$${t}test.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' STAMP failed test; fi; \
+		Prev=bad; \
+		fi; \
+		echo -n ' '$$t; \
+		cd ..; \
+	done; \
+	if [ "$Prev" != "none" ]; then echo ; fi; \
+	)
+
+mostlyclean:
+	rm -f *.o *.op *~
+
+clean: mostlyclean
+	rm -f lib*.a
+
+distclean: clean
+	rm -f stamp stamp_p Makefile TAGS
+	rm -f ../lib/libstamp.a ../lib/libstamp_p.a ../include/stamp.h
+
+maintainer-clean: distclean
+	rm -f sytest_y.h sytest_y.c sytest_l.c
+
+TAGS: $(SOURCES)
+	etags $(SOURCES)
+
+doc dvi html info:
+	(cd ../doc ; $(MAKE) stamp$@)
+
+dist: $(DISTFILES)
+	for file in $(DISTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+
+testdist:
+	mkdir $(distdir)/test
+	for file in $(TESTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+	for dir in $(TESTS); do \
+		mkdir $(distdir)/test/$$dir; \
+		for f in $(TESTBASES); do \
+		if [ -f test/$$dir/$$dir$$f ]; then \
+			ln test/$$dir/$$dir$$f $(distdir)/test/$$dir || \
+			  { echo copying test/$$dir/$$dir$$f instead; \
+			$(COPY) test/$$dir/$$dir$$f $(distdir)/test/$$dir;}; \
+		fi; \
+		done; \
+		for f in test.bat; do \
+		if [ -f test/$$dir/$$f ]; then \
+			ln test/$$dir/$$f $(distdir)/test/$$dir || \
+			  { echo copying test/$$dir/$$f instead; \
+			$(COPY) test/$$dir/$$f $(distdir)/test/$$dir;}; \
+		fi; \
+		done; \
+	done
+
+#############################################################################
+
+.PHONY: all check clean dist distclean doc dvi html info install \
+		libs maintainer-clean mostlyclean profile profile_libs testdist \
+		uninstall installdirs

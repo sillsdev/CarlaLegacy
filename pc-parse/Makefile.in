@@ -1,0 +1,183 @@
+# Master Makefile for the OPAC/PC-PARSE programs and libraries.
+# Steve McConnel, 11-May-2000
+
+datestamp=20000511
+
+@SET_MAKE@
+# the next line requires GNU make ...
+MAKEFLAGS=#--no-print-directory
+srcdir = @srcdir@
+VPATH  = @srcdir@
+COPY   = @COPYPROG@
+
+SHELL = /bin/sh
+
+# subdirectories for making selected libraries
+LIBDIRS = cportlib opaclib cmdlib ample stamp pckimmo pcpatr
+
+# subdirectories for making selected programs (which may use libraries)
+PROGS = ample stamp anadiff intergen pckimmo pcpatr ktagger ktext
+
+# combined list of program and library subdirectories
+SUBDIRS = $(LIBDIRS) anadiff intergen ktext ktagger
+
+# directory and archive basename for distribution
+distbase = pc-parse
+distdir  = $(distbase)-$(datestamp)
+
+# files to include in the distribution
+DISTFILES = Makefile.in acconfig.h aclocal.m4 config.hin configure.in \
+			stamp-h.in configure install-sh \
+			LICENSE README INSTALL INSTALL.DOS INSTALL.Mac \
+			Makefile.dj config.DOS configure.bat \
+			config.Mac Projects.hqx Pcparse.dsw Pcparse.opt
+TESTDISTFILES = winchk.bat
+
+.SUFFIXES:
+
+all: libs
+	@for subdir in $(PROGS); do \
+	  echo making program in $$subdir; \
+	  (cd $$subdir && $(MAKE) all) || true; \
+	done
+
+libs: config.h Makefile
+	@if [ ! -d include ]; then mkdir include; fi
+	-@$(COPY) pcpatr/patr.h include
+	-@$(COPY) pckimmo/kimmo.h include
+	@if [ ! -d lib ]; then mkdir lib; fi
+	@for subdir in $(LIBDIRS); do \
+	  echo making library in $$subdir; \
+	  (cd $$subdir && $(MAKE) libs) || true; \
+	done
+
+profile: profile_libs
+	@for subdir in $(PROGS); do \
+	  echo making profiling program in $$subdir; \
+	  (cd $$subdir && $(MAKE) profile) || true; \
+	done
+
+profile_libs: config.h Makefile
+	@if [ ! -d include ]; then mkdir include; fi
+	-@$(COPY) pckimmo/kimmo.h include
+	-@$(COPY) pcpatr/patr.h include
+	-@$(COPY) ample/ample.h include
+	@if [ ! -d lib ]; then mkdir lib; fi
+	@for subdir in $(LIBDIRS); do \
+	  echo making profiling library in $$subdir; \
+	  (cd $$subdir && $(MAKE) profile_libs) || true; \
+	done
+
+$(PROGS): all
+install: all
+	@for subdir in $(PROGS); do \
+	  (cd $$subdir && $(MAKE) -s install) || true; \
+	done
+
+check: all
+	@echo checking compiled programs
+	@for subdir in $(PROGS); do \
+	  (cd $$subdir && $(MAKE) -s check) || true; \
+	done
+
+dist: $(DISTFILES)
+	-@rm -f $(distbase)-src-$(datestamp).zip
+	-@rm -f $(distbase)-doc-$(datestamp).zip
+	-@rm -f $(distbase)-tst-$(datestamp).zip
+	@(rm -rf $(distdir); mkdir $(distdir); \
+	for file in $(DISTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done; \
+	for subdir in $(SUBDIRS) doc; do \
+	  mkdir $(distdir)/$$subdir || true; \
+	  (cd $$subdir && $(MAKE) -s $@ "distdir=../$(distdir)/$$subdir") || \
+			true; \
+	done; \
+	tar czvf $(distbase)-src-$(datestamp).tgz $(distdir); \
+	zip -9ro $(distbase)-src-$(datestamp).zip $(distdir)/* ; \
+	rm -rf $(distdir); mkdir $(distdir); \
+	mkdir $(distdir)/doc || true; \
+	(cd doc && $(MAKE) -s docdist "distdir=../$(distdir)/doc") || true; \
+	tar czvf $(distbase)-doc-$(datestamp).tgz $(distdir); \
+	zip -9ro $(distbase)-doc-$(datestamp).zip $(distdir)/* ; \
+	rm -rf $(distdir); mkdir $(distdir); \
+	for file in $(TESTDISTFILES); do \
+	  ln $$file $(distdir) \
+		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done; \
+	for subdir in $(SUBDIRS); do \
+	  mkdir $(distdir)/$$subdir || true; \
+	  (cd $$subdir && \
+		$(MAKE) -s testdist "distdir=../$(distdir)/$$subdir") || \
+			true; \
+	done; \
+	tar czvf $(distbase)-tst-$(datestamp).tgz $(distdir); \
+	zip -9ro $(distbase)-tst-$(datestamp).zip $(distdir)/* ; \
+	rm -rf $(distdir) )
+
+TAGS:
+	@for subdir in $(SUBDIRS); do \
+	  echo making $@ in $$subdir; (cd $$subdir && $(MAKE) $@) || true; \
+	done
+
+doc dvi html info:
+	@echo making $@ in doc; (cd doc && $(MAKE) $@) || true
+
+mostlyclean:      mostlyclean-recursive      mostlyclean-local
+clean:            clean-recursive            clean-local
+distclean:        distclean-recursive        distclean-local
+maintainer-clean: maintainer-clean-recursive maintainer-clean-local
+
+mostlyclean-recursive clean-recursive distclean-recursive \
+	maintainer-clean-recursive:
+	@for subdir in $(SUBDIRS) doc; do \
+	  target=`echo $@|sed 's/-recursive//'`; \
+	  echo making $$target in $$subdir; \
+	  (cd $$subdir && $(MAKE) $$target) || true; \
+	done
+
+mostlyclean-local:
+	@rm -f *~
+
+clean-local: mostlyclean-local
+
+distclean-local: clean-local
+	@rm -f Makefile config.cache config.h config.log config.status stamp-h
+	@rm -rf include lib $(distdir)
+
+maintainer-clean-local: distclean-local
+	@rm -f $(distdir).*
+
+# For the justification of the following Makefile rules, see node
+# `Automatic Remaking' in GNU Autoconf documentation.
+
+Makefile: config.status Makefile.in
+	CONFIG_FILES=$@ CONFIG_HEADERS= ./config.status
+
+config.h: stamp-h
+stamp-h: config.status $(srcdir)/config.hin
+	CONFIG_FILES= CONFIG_HEADERS=config.h ./config.status
+
+config.status: configure
+	./config.status --recheck
+configure: configure.in aclocal.m4
+	cd $(srcdir) && autoconf
+config.hin: stamp-h.in
+stamp-h.in: configure.in aclocal.m4 acconfig.h
+	cd $(srcdir) && autoheader
+# Use echo instead of date to avoid spurious conflicts for
+# people who use CVS, since stamp-h.in is distributed.
+	echo $(datestamp) > $(srcdir)/$@
+
+#############################################################################
+
+.PHONY: all check clean clean-local clean-recursive dist distclean \
+	distclean-local distclean-recursive doc dvi html info install \
+	install-data install-exec installcheck mostlyclean mostlyclean-local \
+	mostlyclean-recursive maintainer-clean maintainer-clean-local \
+	maintainer-clean-recursive uninstall
+
+# Tell versions [3.59,3.63) of GNU make not to export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

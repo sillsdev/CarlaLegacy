@@ -1,0 +1,678 @@
+\_sh v3.0  400  sufdict
+
+\s a'
+\_no 00001
+\u a'
+\a 0 takes.laryngealizes / pi _ e'  +/ dar.a.3 _ 3r   | a class including most
+											  | trans. verbs could be created
+											  |(but takes.lar. may foul it up
+\a a'
+\a anta'
+\a  'a takes.laryngealizes / a  _
+\a a'a takes.laryngealizes / a ~_
+\a a    +/ _ 3a  +/ _ 3f
+\c V/V N/N Prt/N Prn/Prn | V/V NP/N PPrt/N Prn/Prn
+\wc PronominalClitic
+\wf 1sg
+\g 1s           | 1st singular dependent pronoun
+\o 40
+
+\s ba'
+\_no 00002
+\u pa'
+\a pa'
+\c V/V N/N Prt/N Num/Num Prn/Prn | V/V NP/N PPrt/N Num/Num Prn/Prn
+\wc PronominalClitic
+\wf 3a
+\g 3a           | 3rd animate dependent pronoun
+\o 70
+
+\s be'
+\_no 00003
+\u pe'
+\a pe'
+\a pe  +/ _ 3a
+\c V/V N/N Prt/N Num/Num Prn/Prn | V/V NP/N PPrt/N Num/Num Prn/Prn
+\wc PronominalClitic
+\wf 3f
+\g 3f           | 3rd familiar dependent pronoun
+\o 60
+
+\s chach
+\_no 00004
+\u :cha:ch
+\a :cha:ch
+\c V/V | V/V
+\wc Derv
+\wf repeatedly
+\g Repd         | Repeatedly
+\o 10
+
+\s cha'o
+\_no 00005
+\u :cha'o
+\a :cha'kw  / _ [V-hi+cg]   +/ _ [1s-or-3r]
+			/ _ [V-hi-cg]p  | where 1s or 3r is followed by 3f or 3a
+\a :cha'   / _ o           +/ _  2s
+\a :cha'o
+\c V/V | V/V
+\wc Derv
+\wf bien
+\g BIEN
+\o 5
+
+\s chaz
+\_no 00006
+\u :chas
+\a :chas
+\c V/V | V/V
+\wc Derv
+\wf chaz
+\g CHAZ
+\o 10
+
+\s chekw
+\_no 00007
+\u :che:kw
+\a :che:kw
+\c V/V | V/V
+\wc Derv
+\wf aplastando
+\g APLASTANDO
+\o 10
+
+\s chga
+\_no 00008
+\u :chka
+\a :chka
+\a :chk  |for yechgo'- Lk 14:19
+\a :chku / _ e'   +/ _ 3r
+\c V/V | V/V
+\wc Derv
+\wf chga
+\g CHGA
+\o 15    |gakrenchgo' Lk 22:32; ka'n gakchga  -amen
+
+\s chich
+\_no 00009
+\u :chi:ch
+\a :chi:ch
+\c V/V | V/V
+\wc Derv
+\wf chich
+\g CHICH   | like TIP
+\o 10
+
+\s chix
+\_no 00010
+\u :chi:x
+\a :chi:x
+\c V/V | V/V
+\wc Derv
+\wf chix
+\g CHIX
+\o 10
+\mp can.take.group.2.pns
+\co gonchixello
+
+\s chk
+\_no 00011
+\u :ch:k
+\a :ch:k
+\a :che:k    | wza'lchekto'n Lk 5:5
+\c V/V Q/Q  | V/V Q/Q  | Q/Q anchk
+\wc Derv
+\wf chk
+\g CHK
+\o 10
+
+\s chka
+\_no 00012
+\u :ch:ka
+\a :ch:ka
+\c V/V | V/V
+\wc Derv
+\wf chka
+\g CHKA    |ka'n gakchka -that should be but is impossible
+\o 10
+
+\s choch
+\_no 00013
+\u :cho:ch
+\a :cho:ch
+\c V/V | V/V
+\wc Derv
+\wf firmamente
+\g firmamente
+\o 10
+
+\s do
+\_no 00014
+\u to
+\a to
+\c V/V | V/V
+\wc Derv
+\wf rapidly
+\g Rap          | Rapidly
+\o 10
+
+\s e
+\_no 00015
+\u e
+\a e  | / e' _ #  | removed 3-jun-97 thinking this is no longer needed
+	  / e' _ n # / [C] _ [C] # / [C] _ #
+\a e  +/ de.veras _ pna  | for bre'ksero', nnezksere'
+	  +/ en _ (dirección.de) #     | loe
+\c Det/Det N/N Q/Q Adj/Adj Adv/Adv V/V Qnt/Qnt Prt/Prt Conj/Conj   | Det/Det NP/NP NP/N Q/Q Adj/Adj Adv/Adv V/V N/N Qnt/Qnt PPrt/PPrt Conj/Conj
+  Num/Num Prn/Prn
+| PPrt/N removed RN
+| Conj/Conj for na'ze  but is na' here really something else (Det Det.NB)?
+\wc Derv
+\wf
+\g &            | epenthetic vowel
+\o 37
+\mcc & +/ HASTA ~_
+
+\s e' | resolve issue of 1s3r meaning
+\_no 00016
+\u e'
+\a 'e   / e  _
+\a  e   / e' _
+\a  e'  / e ~_
+\a  e   +/ _ 3a +/ _ 3f
+\c V/V N/N Prt/N Num/Num Prn/Prn | V/V NP/N PPrt/N Num/Num Prn/Prn
+\wc PronominalClitic
+\wf 3r
+\g 3r           | 3rd respect dependent pronoun; can also mean 1s Subject/3r
+Object
+\o 50
+
+\s en'
+\_no 00017
+\u en'
+\a  n   / [V] ' _
+\a  n   / [V] ' [V] _
+\a  n'  / [V] _  / :kw _  / u _
+\a en'  / [C] _
+\c Prt/Prt Conj/Conj Det/Det Q/Q V/V N/N Adv/Adv Adj/Adj Prn/Prn | PPrt/PPrt Conj/Conj Det/Det Q/Q V/V N/N NP/N Adv/Adv Adj/Adj Prn/Prn
+\wc Clitic
+\wf definite
+\g Def          | definite article (?)
+\o 90
+
+\s ga
+\_no 00018
+\u ka
+\a ka
+\c Prt/Prt Adj/Adj  | PPrt/PPrt Adj/Adj
+\wc Derv
+\wf ga
+\g GA    |ti'chga,  toga
+\o 10
+
+\s gak
+\_no 00019
+\u ka:k
+\a ka:k
+\a a:k  / [C] _         | for some speakers
+\c V/V | V/V
+\wc
+\wf
+\g PL           | Plural
+\o 20
+\noload As of February 1996, will treat the plural as a root
+
+\s j
+\_no 00020
+\u je       | 4-97 changed from j.  e added to handle data related to
+|pronouns  e.g. lejebe', rwe'je'o
+\a j  / _ [V-hi]  +/ ~_ &
+\a je
+\c V/V Adv/Adv Adj/Adj Num/Num Prn/Prn N/N | V/V Adv/Adv Adj/Adj Num/Num Prn/Prn NP/NP
+\wc Derv
+\wf dubitative
+\g Dub          | Dubitative
+\o 30
+
+\s k
+\_no 00021
+\u :k
+\a :k
+\c Adv/Adv V/V | Adv/Adv V/V
+\wc Derv
+\wf k
+\g K
+\o 10
+\mp can.take.group.2.pns  |is this still needed? Have added KERO' Adv
+\mcc K  +/ mezclar.vt _
+
+\s kaz
+\_no 00022
+\u :kas
+\a :kas
+\c V/V | V/V
+\wc Derv
+\wf kaz
+\g KAZ
+\o 31  | blleyi'tekaz  (mat. 7:27)
+
+\s ke
+\_no 00023
+\u :ke
+\a :ke
+\c V/V | V/V
+\wc Derv
+\wf ke
+\g KE
+\o 10
+\mp can.take.group.2.pns
+\mcc KE +/ ir _ +/ beber _ +/ mirar _ +/ sacar _ +/ poner.parado.cosas _
++/ esperar _ +/ excavar _  +/ sentar _ +/ preparar _
+\co so far all take group 2
+
+\s kero'
+\_no 00024
+\u :kelo'
+\a :kelo'
+\c V/V | V/V
+\wc Derv
+\wf kero
+\g KERO'  |Mat. 21:5
+\o 10
+
+\s ks
+\_no 00025
+\u :k:s
+\a :k:s
+\c N/N Q/Q Adj/Adj Adv/Adv V/V Prt/Prt Conj/Conj Num/Num Prn/Prn | N/N NP/NP Q/Q Adj/Adj Adv/Adv V/V PPrt/PPrt Conj/Conj Num/Num Prn/Prn
+\wc Clitic
+\wf de.veras
+\g de.veras
+\o 32    | for ll-ks sequence
+\co Conj/Conj for nechkse;
+
+\s le
+\_no 00026
+\u :le
+\a :l
+\c Adv/Adv Det/Det | Adv/Adv Det/Det
+\wc Clitic
+\wf dirección.de2
+\g dirección.de2   | occurs with ka', ki, ni, na'
+\o 10
+\co ka'le;  kile;  nile;  na'le
+
+\s ll
+\_no 00027
+\u ch
+\a ch
+\c Q/Q Adj/Adj Adv/Adv V/V Conj/Conj | Q/Q Adj/Adj Adv/Adv V/V Conj/Conj
+\wc Clitic
+\wf intensive
+\g Int          | Intensive
+\o 31   | na'tell, zejzell
+
+\s llo
+\_no 00028
+\u cho
+\a cho
+\c V/V N/N Prt/N Num/Num Prn/Prn | V/V NP/N PPrt/N Num/Num Prn/Prn
+\wc PronominalClitic
+\wf 1pi
+\g 1pi          | 1st plural inclusive dependent pronoun
+\o 40
+
+\s lolj
+\_no 00029
+\u :lo:lj
+\a :lo:lj
+\c V/V | V/V
+\wc Derv
+\wf lolj
+\g LOLJ
+\o 10
+
+\s n
+\_no 00030
+\u n
+\a n
+\a len / a:k ... _ +/ Plural ... _
+\c V/V N/N Prt/N Num/Num Prn/Prn | V/V NP/N PPrt/N Num/Num Prn/Prn
+\wc PronominalClitic
+\wf 3i
+\g 3i           | 3rd inanimate dependent pronoun
+\o 80
+
+\s nninn
+\_no 00031
+\u :ni:n
+\a :ni:n
+\c V/V | V/V
+\wc Derv
+\wf nninn
+\g NNINN
+\o 10
+
+\s nyaz
+\_no 00032
+\u nyas
+\a nyas
+\c V/V | V/V
+\wc Derv
+\wf nyaz  |Matt. 11:18
+\g NYAZ  |Matt. 11:18
+\o 10
+
+\s o'
+\_no 00033
+\u o'
+\a   '                / ko _                 +/ cargar _  | exceptional form
+\a  o' takes.under.ao /         a _
+\a  o                 / [V-rd+cg] _  / _ e'
+\a  o                +/ _ 3a  +/ _ 3f  +/ _ 3r
+\a 'o                 / [V-rd-cg] _  / o _
+\a  o'                / [C]       _
+\c V/V N/N Prt/Prt Prn/Prn | V/V NP/N PPrt/PPrt Prn/Prn | PPrt/N
+\wc PronominalClitic
+\wf 2sg
+\g 2s           | 2nd singular dependent pronoun
+\o 40
+
+\s r
+\_no 00034
+\u l
+\a l /  _ [V]  +/ _ [1s,2s-or-3r]
+\a e /  _ [C]  +/ ~_[1s,2s-or-3r]
+\a 0 /  e _    +/ ~_[1s,2s-or-3r]
+	 / e' _
+	 / :chka _  | yere'chgare
+\c V/V Prt/Prt | V/V PPrt/PPrt
+\wc Clitic
+\wf
+\g pna          | pronominal augment (forms group II of subject pronouns)
+\o 39           | 12-96 RN
+\mcc pna / _ ... [Pronoun]
+| akre' (lla'a akre', Mk 6:33 -emphasis on their being
+| there first.
+| VERB-pna Subject or VERB-(no pna) Subject - both correct
+
+\s re
+\_no 00035
+\u le
+\a le
+\c Adv/Adv   | Adv/Adv     |V/V  e.g., ka za garjtere'; nlla're differentwise
+\wc Clitic
+\wf re
+\g RE  | see LK 9:27 for use with Adv
+\o 10
+| work on this, cuases lots of ambiguity where attached to verb stems
+| maybe only in conjunction with -te on verb?
+
+\s re
+\_no 00036
+\u le
+\a le
+\c N/N Q/Q Prt/Prt Adj/Adj Adv/Adv Conj/Conj | N/N Q/Q PPrt/Prt Adj/Adj Adv/Adv NP/NP Conj/Conj
+\wc Clitic
+\wf dirección.de
+\g dirección.de
+\o 38       | to serve bi-ll-re, loere
+\mcc dirección.de / Plural ~_
+\co yichjore;  ko'llre;  xhanre;  kwitre; zi'tre
+| bire see Lk 9:27
+
+\s re
+\_no 00037
+\u le
+\a l  / _ e' +/ _ 3r
+\a lé / ke _
+\a le +/ Plural ~_
+\c Q/Q V/V N/N Prt/Prt Num/Num | Q/Q V/V NP/N PPrt/PPrt Num/Num
+\wc PronominalClitic
+\wf 2pl
+\g 2p           | 2nd plural dependent pronoun
+\o 40
+
+\s ren
+\_no 00038
+\u len
+\a len
+\c V/V | V/V
+\wc Derv
+\wf con
+\g CON
+\o 10
+\mp vt  | for zorenoe'
+
+\s riz
+\_no 00039
+\u lis
+\a lis
+\c V/V | V/V
+\wc Derv
+\wf riz
+\g RIZ
+\o 10
+
+\s stek
+\_no 00040
+\u :s:te:k
+\a :s:te:k
+\c Adv/Adv | Adv/Adv
+\wc Clitic
+\wf stek
+\g STEK
+\o 10
+
+\s tat
+\_no 00041
+\u :ta:t
+\a :ta:t
+\c V/V | V/V
+\wc Derv
+\wf tat
+\g TAT
+\o 10
+
+\s te
+\_no 00042
+\u :te
+\a :ti / _ a
+\a :t  / _ e
+\a :te
+\c Q/Q Adv/Adv V/V N/N Prt/Prt Adj/Adj Conj/Conj Num/Num | Q/Q Adv/Adv V/V NP/NP N/N PPrt/PPrt Adj/Adj Conj/Conj Num/Num
+\wc Clitic
+\wf hasta
+\g HASTA
+\o 30
+\mcc HASTA +/ Inf ... ~ _
+
+\s tega
+\_no 00043
+\u :teka
+\a :tek  / _  a' +/ _ 1s
+\a :tegue / _ 'e  +/ _ 3r
+\a :teka
+\c V/V | V/V
+\wc Derv
+\wf tega
+\g TEGA
+\o 10
+
+\s tek
+\_no 00044
+\u :te:k
+\a :te:k
+\a :t:k
+\c V/V Adv/Adv Q/Q | V/V Adv/Adv Q/Q
+\wc Clitic
+\wf tek
+\g TEK   | gatrentekza'  Lk 22:33
+\o 15
+
+\s ter
+\_no 00045
+\u :tel
+\a :tel
+\c V/V | V/V
+\wc Derv
+\wf tel
+\g TEL  | as in ka za gatTERe'
+\o 10
+
+\s tez
+\_no 00046
+\u :tes
+\a :tes
+\c V/V Adv/Adv | V/V Adv/Adv
+\wc Clitic
+\wf tez
+\g TEZ   |see also -ttez for Q/Q, Adv/Adv, but bat needs to take tez
+\o 15   | legonrenteze  lk 16:9
+
+\s tin
+\_no 00047
+\u :tin
+\a :tin
+\c V/V | V/V
+\wc Derv
+\wf tin
+\g TIN   | grieta
+\o 10
+\mcc  TIN +/ reventar _  +/ despedazar _
+
+\s tip
+\_no 00048
+\u :ti:p
+\a :ti:p
+\c V/V | V/V
+\wc Derv
+\wf tip
+\g TIP    |Apoc. 3:11  be alert, inquisitive?
+\o 10
+
+\s tit
+\_no 00049
+\u :ti:t
+\a :ti:t
+\c V/V | V/V
+\wc Derv
+\wf tit
+\g TIT
+\o 10
+
+\s to'
+\_no 00050
+\u :to'
+\a :to  /  _ [V]
+\a :to' / ~_ [V]
+\a :to  +/ _ 3a +/ _ 3f
+\c V/V N/N Prt/N Num/Num Prn/Prn | V/V NP/N PPrt/N Num/Num Prn/Prn
+\wc PronominalClitic
+\wf 1pe
+\g 1pe          | 1st plural exclusive dependent pronoun
+\o 40
+
+\s tol
+\_no 00051
+\u :to:l
+\a :to:l
+\c V/V | V/V
+\wc Derv
+\wf rodar
+\g rodar.(Adv)   | bllixtolen
+\o 10
+
+\s ttez
+\_no 00052
+\u :t:tes
+\a :t:tes
+\c Q/Q Adv/Adv | Q/Q Adv/Adv
+\wc Clitic
+\wf sin.impedimento
+\g sin.impedimento
+\o 10
+
+\s xen
+\_no 00053
+\u :xen
+\a :xen
+\c V/V | V/V
+\wc Derv
+\wf en.exceso
+\g en.exceso
+\o 10
+
+\s xexj
+\_no 00054
+\u :xe:xj
+\a :xe:xj
+\c V/V | V/V
+\wc Derv
+\wf xexj
+\g XEXJ   | xobxexj Lk 21:12
+\o
+
+\s xha
+\_no 00055
+\u xa
+\a xa
+\c Q/Q | Q/Q  | Goes with question words
+\wc Clitic
+\wf respect
+\g Resp  | respect
+\o 10
+
+\s xoxj
+\_no 00056
+\u :xo:xj
+\a :xo:xj
+\c V/V | V/V
+\wc Derv
+\wf xoxj
+\g XOXJ
+\o 10
+
+\s ya'ch
+\_no 00057
+\u ya':ch
+\a ya':ch
+\c V/V | V/V
+\wc Derv
+\wf pobre
+\g POBRE
+\o 10
+
+\s ya'nn
+\_no 00058
+\u ya':n
+\a ya':n
+\c V/V Q/Q | V/V Q/Q
+\wc Clitic
+\wf yann
+\g YA'NN
+\o 10
+
+\s yoll
+\_no 00059
+\u yoch
+\a yoch
+\c V/V | V/V
+\wc Derv
+\wf yoll
+\g YOLL
+\o 10
+\mp can.take.group.2.pns
+
+\s z
+\_no 00060
+\u s
+\a s
+\a se  +/ _ Int   |zejzell
+\c Det/Det Conj/Conj V/V Adj/Adj Adv/Adv Prt/Prt N/N Num/Num | NP/NP Det/Det Conj/Conj V/V Adj/Adj Adv/Adv PPrt/PPrt N/N Num/Num | removed PPrt/Adv RN
+   Prn/Prn
+\wc Clitic
+\wf nada.mas
+\g nada.mas
+\o 30
+\mp can.take.group.2.pns  | try this for a while

@@ -1,0 +1,78 @@
+% eng.its: AMPITF 1.1.0 style file output -- Tue Jun 10 16:00:47 1997
+% AMPLE analysis file: eng.aaa
+% AMPITF primary TeX output file: eng.tex
+%
+\input itf.tex        % ITF macros
+\input itfchars.tex   % ITF special character macros
+%
+%%%%%%%%%%%%%%%% field declarations %%%%%%%%%%%%%%%%
+%
+\aligning{w}{cmr10}{scaled 1200}{}{}{}
+\aligning{cat}{cmr10}{scaled 1000}{}{}{}
+\aligning{d}{cmr10}{scaled 1000}{}{}{}
+\aligning{a}{cmr10}{scaled 1000}{}{}{}
+%
+%%%%%%%%%%%%%%%% styled font declarations %%%%%%%%%%%%%%%%
+%
+\styledfont{large}{w}{cmr10}{scaled 1440}{}
+\styledfont{large}{cat}{cmr10}{scaled 1200}{}
+\styledfont{large}{d}{cmr10}{scaled 1200}{}
+\styledfont{large}{a}{cmr10}{scaled 1200}{}
+\styledfont{bold}{w}{cmbx10}{scaled 1200}{15pt}
+\styledfont{bold}{cat}{cmbx10}{scaled 1000}{12pt}
+\styledfont{bold}{d}{cmbx10}{scaled 1000}{12pt}
+\styledfont{bold}{a}{cmbx10}{scaled 1000}{12pt}
+%
+%%%%%%%%%%%%%%%% page layout (default settings of ITF.TeX) %%%%%%%%%%%%%%%%
+%
+% \hsize=6.5in
+% \vsize=8.9in
+% \hoffset=0pt
+% \voffset=0pt
+%
+% \intpercent=70
+% \catenateunits{no}
+% \switchfree{no}
+% \oddeven{no}
+% \rulecentered{no}
+% \showemptyfootnote{yes}
+% \interwordskip=6.66666pt plus 3.33333pt minus 2.22222pt
+% \intlineskip=8pt plus 0pt minus 0pt
+% \intparskip=12pt plus 0pt minus 0pt
+% \intparindent=20pt
+% \freeparskip=2pt plus 0pt minus 0pt
+% \freeparindent=20pt
+% \freeBparskip=2pt plus 0pt minus 0pt
+% \freeBparindent=20pt
+% \vgap=1pc
+% \vrulewidth=0.4pt
+% \hgap=1pc
+% \hrulewidth=0.4pt
+% \hrulelength=0pt
+% \hfrulewidth=0pt
+% \hfrulelength=0pt
+% \headergap=22.5pt
+% \footergap=24.0pt
+%
+% \pagelayout{} must follow all style settings
+%
+\pagelayout{OneColumn}
+%
+%%%%%%%%%%% Extraneous fields %%%%%%%%%%%%
+%   First, define the fonts we will use
+%   Then, declare the extraneous fields to look for
+%   Finally, define what to do for each
+%
+\def\extrp{p}   % paragraph
+\def\extr#1#2{
+	\def\extrmark{#1}
+	\ifx\extrmark\extrp \message{P}
+		\endparagraph
+		\parstyle={\def\itfontstyle{}\raggedright}
+		\newpartrue
+		\newparagraph
+	\fi
+	\ignorespaces
+}
+\def\bold{\def\itfontstyle{bold}}
+\nopagenumbers

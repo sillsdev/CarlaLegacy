@@ -1,0 +1,92 @@
+XAMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+	AMPLE with experimental enhancement: PC-PATR word grammar
+Experimental version compiled Mar 29 2001 09:00:44
+				Analysis Performed Thu Mar 29 09:09:20 2001
+
+Control files, dictionary files, and responses
+	  from file yalpatr.cmd:
+yalad.ctl
+SUFFIX TEST: IMPERATIVE_ST contains more than one leftward iteration
+FINAL TEST: GROUP_2_PN_FT contains more than one leftward iteration
+yalcd.tab
+
+yalpf.dic
+yalsf.dic
+yalrt.dic
+yalrtbn.dic
+yalloans.dic
+
+yalintx.ctl
+	Using the following as word-formation characters:
+	 Caseless alphabetic characters =
+		' Ä é á í ó ú
+	 Lower/uppercase alphabetic characters (lowercase above, uppercase below) =
+		a b c d e f g h i j k l m n o p q r s t u v w x y z
+		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+Input  file: Marktest.txt
+Output file: Marktest.and
+AF: xhneze  [ | xnese ]
+AF: dachen  [ ta:chen | ]
+
+WARNING 512:
+	Feature "dirección.de" not defined by Let or Define in grammar
+Feature "dirección.de" not defined by Let or Define in grammarAF: ka'kze  [ :ka':kse | ]
+AF: dachen  [ ta:chen | ]
+
+ANALYSIS STATISTICS:  148 words processed.
+   Ambiguity Levels:
+						4 words with  0 analyses.
+					   78 words with  1 analysis.
+					   29 words with  2 analyses.
+					   27 words with  3 analyses.
+						4 words with  4 analyses.
+						2 words with  5 analyses.
+						4 words with  6 analyses.
+   Prefix Tests:
+	  PREFIX_CATEGORY_ST called 19956 times, rejected 10827.
+				  SEC_ST called 11041 times, rejected 3803.
+		 PREFIX_ORDER_ST called  5805 times, rejected 4779.
+		  CLASS1_VERB_ST called  1026 times, rejected 0.
+		  CLASS2_VERB_ST called  1026 times, rejected 138.
+		 NULL_STATIVE_ST called   888 times, rejected 260.
+	   NULL_POTENTIAL_ST called   628 times, rejected 256.
+		NULL_HABITUAL_ST called   372 times, rejected 259.
+			  UNDER_O_ST called   113 times, rejected 0.
+NO_REPEATING_PREFIXES_ST called   113 times, rejected 0.
+				  PEC_ST called  1546 times, rejected 0.
+   Root Tests:
+		ROOT_CATEGORY_ST called 10586 times, rejected 6172.
+		 NULL_STATIVE_ST called  4414 times, rejected 446.
+	   NULL_POTENTIAL_ST called  3968 times, rejected 508.
+		NULL_HABITUAL_ST called  3460 times, rejected 543.
+		  CLASS1_VERB_ST called  2917 times, rejected 21.
+		  CLASS2_VERB_ST called  2896 times, rejected 451.
+			  UNDER_O_ST called  2445 times, rejected 19.
+			TAKES_p_C_ST called  2426 times, rejected 0.
+		   TAKES_kw_C_ST called  2426 times, rejected 35.
+		TAKES_:x_POSS_ST called  2391 times, rejected 0.
+			CAUSATIVE_ST called  2391 times, rejected 645.
+				  SEC_ST called  2726 times, rejected 1754.
+				  PEC_ST called   972 times, rejected 0.
+   Suffix Tests:
+	  SUFFIX_CATEGORY_ST called 25995 times, rejected 20336.
+		 SUFFIX_ORDER_ST called  5659 times, rejected 1392.
+			 UNDER_ao_ST called  4267 times, rejected 8.
+		   GROUP_2_PN_ST called  4259 times, rejected 842.
+		   IMPERATIVE_ST called  3417 times, rejected 56.
+		LARYNGEALIZES_ST called  3361 times, rejected 1123.
+				  SEC_ST called  2238 times, rejected 1211.
+				  PEC_ST called  1027 times, rejected 0.
+   Final Tests:
+	   FINAL_CATEGORY_FT called   799 times, rejected 0.
+		 TRANSITIVITY_FT called   799 times, rejected 27.
+		   GROUP_2_PN_FT called   772 times, rejected 20.
+NUMBERS_WITH_PRONOUNS_FT called   752 times, rejected 0.
+Root_takes_kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
+	 kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
+				  MEC_FT called   752 times, rejected 356.
+				  MCC_FT called   396 times, rejected 56.
+
+	  PC-PATR word parse called   340 times, rejected 73 (skipped 0).

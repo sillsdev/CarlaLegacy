@@ -1,0 +1,36 @@
+\id yalcd.tab   Dictionary Code Table
+
+\prefix \p
+\ch "\a" "A"
+\ch "\c" "C"
+\ch "\g" "M"
+\ch "\mp" "P"
+\ch "\o" "O"
+\ch "\mcc" "Z"
+\ch "\f" "F"
+\ch "\noload" "!"
+\ch     "\wc"     "c"   | word building category
+\ch     "\wf"     "F"   | word building feature structure
+
+\suffix \s
+\ch "\a" "A"
+\ch "\c" "C"
+\ch "\g" "M"
+\ch "\mp" "P"
+\ch "\o" "O"
+\ch "\mcc" "Z"
+\ch "\f" "F"
+\ch "\noload" "!"
+\ch     "\wc"     "c"   | word building category
+\ch     "\wf"     "F"   | word building feature structure
+
+\root \r
+\ch "\a" "A"
+\ch "\c" "C"
+\ch "\g" "M"
+\ch "\mp" "P"
+\ch "\mcc" "Z"
+\ch "\f" "F"
+\ch "\noload" "!"
+\ch     "\wc"     "c"   | word building category
+\ch     "\wf"     "F"   | word building feature structure

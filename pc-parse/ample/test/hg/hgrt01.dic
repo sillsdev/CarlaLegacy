@@ -1,0 +1,233 @@
+\id HGRT01.DIC, Huallaga Quechua roots, merging
+	HGRTNR.DIC, Huallaga Quechua roots, David Weber, 9-APR-85
+	modified for AMPLE 1.0 by S. McConnel, 2-Nov-88
+	HGRTSP.DIC, Spanish loans (Huallaga Quechua)
+	modified for AMPLE 1.0 by S. McConnel, 2-Nov-88
+	HGRTBN.DIC, Biblical names (Huallaga Quechua)
+	modified for AMPLE 1.0 by S. McConnel, 2-Nov-88
+	(removed most entries not used in sample data file)
+
+\r	| root allomorph (primary)
+\a	| root allomorph (alternate)
+\e	| etymology
+\ge	| English gloss
+\c	| category
+\mp	| morpheme property
+\mcc	| morpheme co-occurrence constraint
+\noload	| don't load
+
+\r alli
+\c N0
+\e *alli
+\ge good
+
+\r allcha
+\c V2
+\e *allcha | < *alli+cha-
+\ge fix
+
+\r allpa
+\c N0
+\e *allpa
+\ge earth
+
+\r aypalla
+\a aypa:lla
+\c N0
+\e *aypalla
+\ge many
+
+\r chay
+\c N0
+\e *chay
+\ge
+
+\r hama
+\c V1
+\e *hama | < *PQ sama
+\ge
+
+\r hirka
+\c N0
+\e *hirka
+\ge
+
+\r ka
+\c V1
+\e *ka
+\ge
+
+\r kay
+\c N0
+\e *kay
+\ge
+
+\r kushi
+\c V1
+\e *kushi
+\ge
+
+\r kuya
+\c V2
+\e *kuya
+\ge
+
+\r llaki
+\c V1
+\e *llaki
+\ge
+
+\r ni
+\c V2
+\e *ni
+\ge
+
+\r n~awpa
+\c N0 V1
+\e *
+\ge
+
+\r n~iti
+\c V2
+\e *
+\ge
+
+\r rika
+\c V2
+\e *
+\ge see
+
+\r runa
+\c N0
+\e *runa
+\ge
+
+\r rura
+\c V2
+\e *rura
+\ge
+
+\r shunta
+\c V2
+\e *
+\ge
+
+\r shuntaka:
+\a shuntaka foreshortened
+\mp underlong
+\c V1
+\e *shuntaka:
+\ge
+
+\r shoqo
+\a shoqu
+\c V1
+\e *shuqu
+\ge suck
+
+\r wicha:
+\a wicha foreshortened
+\mp underlong
+\c V1
+\e *wicha:
+\ge climb
+
+\r yacha
+\c V2
+\e *yatra
+\ge
+
+\r yana
+\c N0
+\e *
+\ge
+
+\r yanapa:
+\a yanapa foreshortened
+\mp underlong
+\c V2
+\e *yanapa:
+\ge
+
+\r yarpa:
+\a yarpa foreshortened
+\mp underlong
+\c V2
+\e *yarpa:
+\ge
+
+\r yarqa:
+\a yarqa foreshortened
+\mp underlong
+\c V1
+\e *yarqa:
+\ge
+
+\r yayku
+\a yayka
+\c V1
+\e *yaykU
+\ge
+
+\r duyn~u
+\c N0
+\e | <S
+
+\r dyus
+\a dios
+\c N0
+\e dyus | <S
+
+\r inti:ru
+\a enti:ru
+\c N0
+\e inti:ru | <S entero
+
+\r inu:til
+\c N0
+\e inu*til | <S inutil
+
+\r lu:ma
+\c N0
+\e | <S
+
+\r mundu
+\c N0
+\e | <S
+
+\r pasaypa
+\c R0
+\e | <S
+
+\r risi:pulu
+\c N0
+\e disi*pulu | <S discipulo
+
+\r abraham
+\c N0
+\e | <B
+
+\r jesucristo
+\c N0
+\e | <B
+
+\r jesucristu
+\c N0
+\e | <B
+
+\r jesus
+\c N0
+\e | <B
+
+\r mateo
+\a mateu
+\c N0
+\e | <B
+
+\r nazarenu
+\c N0
+\e | <B
+
+\r zion
+\c N0
+\e | <B

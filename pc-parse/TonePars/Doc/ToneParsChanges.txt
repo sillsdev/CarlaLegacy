@@ -1,0 +1,63 @@
+TonePars CHANGE HISTORY
+
+1.0.3 (27-Dec-2000)
+-------------------
+1. Fixed a bug in which it failed to read the \dsc field, so it would not
+process a non-hyphen morpheme decomposition separation character.
+
+2. Various internal changes not visible to the user.
+
+1.0.2 (19-Dec-2000)
+-------------------
+1. Fixed a bug in delete multiple tone processing.
+
+1.0.1 (01-Nov-2000)
+-------------------
+1. Added more tracing options to the command line.
+
+1.0.0 (28-Sep-2000)
+-------------------
+1. Have it read the tone control file as a separate file from the analysis
+data control file.
+
+2. Many internal changes not visible to the user.
+
+
+0.6.1 (15-Sep-2000)
+-------------------
+1. Fixed a typo in the unified dictionary warning message.
+
+0.6.0 (07-Apr-2000)
+-------------------
+1. Allow unified dictionaries.
+
+0.5.5 (17-Feb-2000)
+-------------------
+1. Fixed a bug of adding edge conditions when they should have been logially
+ORd.
+
+0.5.4 (09-Feb-2000)
+-------------------
+1. Correct usage() message to to show all possibilities.
+
+2. Added the command line option of -> to show usage() message.
+
+
+0.5.3 (22-Jun-1999)
+-------------------
+1. Fixed a bug where DELETE did not reset an allomorph's tone_end properly.
+
+0.5.2 (19-May-1999)
+-------------------
+1. Pass categories on from input ANA to output and fix bug of not removing
+properties of failed analyses.
+
+0.5.1 (18-May-1999)
+-------------------
+1. Pass properties on from input ANA to output.
+
+0.5.0 (08-Jan-1999)
+-------------------
+1. Allow \w field to be capitalized.
+
+2. Allow right/left edge of word in association and insertion operations.

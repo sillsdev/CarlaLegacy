@@ -1,0 +1,422 @@
+\_sh v3.0  400  prefdict
+
+\p a
+\a †a
+\ge other
+\c NUM/NUM
+\wc Derv
+\o -20
+
+\p aq
+\a †aq
+\ge veces
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p aq
+\a †aq
+\ge cabeza
+\c N/N V/V | V/V VO/VO N/N
+\wc Derv
+\o -10
+
+\p aqa
+\a †aqa
+\ge extended
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p aqx
+\a †aqš
+\ge flat
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p ch'aa
+\a ©†a
+\ge stack
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p ix
+\a †i   	/ _ [alvcont]
+\a †is	/ _ c
+\a †iš
+\ge 3POS
+\c N/N NUM/NUM
+\wc Derv
+\o -80
+
+\p ix
+\a ša 		+/ _ 1SUB
+\a †i   	/ _ [alvcont]
+\a †is	/ _ c
+\a †iš
+\ge PT
+\c V/V | V/V VO/VO
+\wc Past
+\wf past
+\o -120
+\co 1998.03.06 handling via past template \mcc PT / ~_...FUT
+
+\p ja
+\a a 		+/ IRR _ 3PLOBJ
+\a a    kh.metathesis    / k _ +/ 1SUB _
+\a ha
+\ge HA
+\o -70
+\c V/V | V/V VO/V N/N
+\wc Ha
+
+\p k
+\a †ih  / # _ [+back]
+\a †ihk / # _
+\a h  /[V] _ [+back]
+\a hk /[V] _
+\a †ik / # _ [-back ]
+\a k / [V] ~_ [-oral]  +/~_ HA
+\a hk   / [V] _ [V]
+	   / _ kh.metathesis
+\ge 1SUB
+\co  \mcc 1SUB  / # ~_ HA    |to avoid unnec. ambiguity with analysis of /ka-/; but too restrictive, handled above with k allomorph
+\o -110
+\c N/N V/V | V/V VO/VO N/N
+\wc 1st
+\wf 1Sub
+\co 1998.03.06 handled by patr grm \mcc 1SUB    +/~_...[2SUB]
+\mcc 1SUB    +/~_ ... INF
+
+\p ka
+\co  \a 0 	/_k	+/_1SUB  |in Scripture we will always use the full ka- allomorph
+\a ka glottalized |1997.11.13 on hold for checking   /  _ [-cont,+cg]
+\a k†a glottalized |1997.11.13 on hold for checking  /~_ [-cont,+cg]
+\a ka
+\ge IRR
+\c V/V | V/V VO/VO
+\wc Mood	| irrealis mood
+\wf irrealis
+\o -120
+\mp Pglottalized
+\mcc IRR 		/~_1OBJ | when both features are present, only 				     | the form for 1OBJ appears
+\co 1998.03.06 handling via imperfective template \mcc IRR 		/~_...IMPF |irrealis never occurs with imperfect
+
+\p kanka
+\a kanka
+\ge pointed
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p k™
+\a ke
+\ge 1POS.PL2
+\c N/N
+\wc Derv
+\o -80
+
+\p ki
+\a k†i glottalized
+\a ki
+\ge RET
+\o -40
+\c V/V | V/V VO/VO VT/VT
+\wc Derv
+\mp Pglottalized
+\mcc RET  +/_ ... [Perfective]
+
+\p kil
+\a qa£ +/_ ... {q.harmony}
+\a ki£  +/~_ ... {q.harmony}
+\a k†ik  glottalized /_ alvcont
+\a kik                   /_ alvcont
+\a k†i£ glottalized
+\a ki£
+\ge boca
+\o -10
+\c NUM/NUM N/N ADJ/ADJ V/V | VOA/VOA VO/VO VA/VA V/V
+\wc Derv
+\mp Pglottalized
+\d la boca
+
+\p kin
+\a ki                    /_ [+cont]
+					   /_ [son]
+\a kin                  /_ t  /_ k  /_ q
+\a kim                 /_ p
+\ge 1POS
+\c N/N
+\wc Derv
+\o -80
+
+\p kin
+\a k†in glottalized     /_ t  /_k  /_q
+\a kin                      /_ t  /_k  /_q
+\a k†im glottalized    /_ p
+\a k†i glottalized
+\a kim                     /_ p
+\a ki
+\ge 1OBJ
+\o -110
+\c V/V | VO/V V/V
+\wc 1st
+\wf 1Obj
+\mp Pglottalized
+\mcc 1OBJ  +/ ~ IRR_ | when both features are present, only 				   | the form for 1OBJ appears
+\mcc 1OBJ  +/~_ ... {vi}... PASS
+
+\p la
+\a la
+\ge REC
+\o -80
+\c V/V | VO/V VO/VO
+\wc Rec
+\wf reciprocal
+
+\p lak
+\a lah +/_ {q.initial}
+\a lah    / _k
+\a laq +/_ ... {q.harmony}
+\a lak +/~_ ... {q.harmony}
+\ge 3PLOBJ
+\o -60
+\c N/N V/V | VO/V
+\wc 3OPl
+\wf 3PlObj
+
+\p laka
+\a lak†a glottalized
+\a laka
+\ge cuerpo
+\c V/V | VO/VO V/V VO/V
+\wc Derv
+\o -10
+\mp Pglottalized
+
+\p lak˜
+\a laqa q.harmony
+\a laka
+\ge LOC
+\c N/N ADJ/ADJ
+\wc Derv
+\o -70
+
+\p laq
+\a laq
+\a lah  /_ k  /_ q  /_ †
+\ge PLAJ
+\c ADJ/ADJ
+\wc Derv
+\o -20
+
+\p laqa
+\a la†a +/_ ... {glottalized.num}
+\a laqa
+\ge GEN
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p lhi
+\a £i
+\ge DIR
+\o -10
+\c V/V ADV/N PART/N ADJ/N N/N | V/VO VO/VO VT/V ADV/N PART/N ADJ/N N/N | noun mapping for nominalized verbs
+\wc Derv
+\wf dir
+
+\p ma
+\a mah    +/_ despetarse
+\a ma
+\ge CAUS
+\o -10
+\c V/V N/N | V/VO VO/VO VT/V VT/V N/N |noun mapping for nominalized verbs
+\wc Derv
+\wf caus
+
+\p maq
+\a maq
+\ge mano
+\c V/V | VOA/VA VO/V VOA/VOA VA/VA
+\wc Derv
+\o
+
+\p maqa
+\a ma†a  /_[-cont,+cg]
+\a maqa /~_[-cont,+cg]
+\ge largo
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p maqa
+\a maqa
+\ge brazo
+\c ADJ/ADJ
+\wc Derv
+\o -10
+
+\p m™
+\a me
+\ge 2POS.PL2
+\c N/N
+\wc Derv
+\o -80
+
+\p min
+\a mi   /_[+cont]
+	   /_[son]
+\a min            /_ t  /_ k  /_ q
+\a mim           /_ p
+\ge 2POS
+\c N/N
+\wc Derv
+\o -80
+
+\p oqxlaq
+\a †oqšlaq
+\ge grupo
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p pa
+\a p†a glottalized
+\a pa
+\ge IVIA
+\o -10
+\c V/V N/N | V/V V/VO VT/V N/N |noun mapping for nominalized verbs
+\wc Derv
+\mp Pglottalized
+\mcc IVIA  +/~_ estar.parado    |to give correct reading for (ja)payan "fathers"
+
+\p paka
+\a paka
+\ge wing
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p pas
+\a pas
+\ge bundle
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p pi'ix
+\a pi†iš
+\ge row
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p pu
+\a p†u glottalized
+\a pu
+\ge VIA
+\o -10
+\c V/V N/N | V/VO VO/VO VT/V N/N | noun mapping for nominalized verbs
+\wc Derv
+\mp Pglottalized
+
+\p pu
+\a pu
+\ge tipos
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p puma
+\a puma
+\ge person
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p qal
+\a qa£
+\ge corn.plant
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p qen
+\a qayn
+\ge cylind
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p ta
+\a ta
+\ge 3SUB,PL
+\co handling via patr grammar \mcc 3SUB,PL  +/~_ ... [2SUB]
+\o -90
+\c V/V | V/V VO/VO
+\wc 3SPl
+\wf 3Sub,Pl
+
+\p ta
+\a t†a glottalized
+\a ta
+\ge INCH
+\o -10
+\c V/V ADJ/V | ADJ/V V/V
+\wc Derv
+\mp Pglottalized
+\mcc INCH +/              ~_ CAUS
+\mcc INCH +/  CAUS ~ _
+
+\p talaq
+\a talaq
+\ge layer
+\c NUM/NUM
+\wc Derv
+\o -10
+
+\p tam
+\a t†am
+\a tam
+\ge pecho
+\c N/N NUM/NUM V/V | VO/VO V/V
+\wc Derv
+\o -10
+
+\p tampa
+\a t†amp†a glottalized
+\a tampa
+\ge cintura
+\c N/N V/V | VO/VO V/V
+\wc Derv
+\o -10
+
+\p ti
+\a te 		+/ _ ir
+\a t†i glottalized
+\a ti
+\ge IMM
+\o -100
+\c V/V | V/V VO/VO
+\wc Imm
+\wf immanent
+\mp Pglottalized
+
+\p t'a
+\a t†a
+\ge COM
+\o -50
+\c V/V N/N | V/VO VO/VO VT/V N/N
+\wc Derv
+\mcc COM  +/ # ~_ {N}
+
+\p xa
+\a ša
+\a sa    /_ [strid]
+\ge 3POS.HA
+\c N/N  ADV/ADV ADJ/ADJ
+\wc Derv
+\o -80

@@ -1,0 +1,996 @@
+\input pcparse % common TeX setup  @c -*-texinfo-*-
+\input texinfo
+@c %**start of header
+@setfilename llample.info
+@settitle LinguaLinks AMPLE DLL Reference Manual
+@c %**end of header
+
+@set TITLE LinguaLinks AMPLE DLL Reference Manual
+@set SUBTITLE functions for morphological parsing in LinguaLinks
+@set VERSION based on AMPLE functions version 3.2.1
+@set DATE October 1998
+@set AUTHOR by Stephen McConnel
+@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+
+@include front.txi
+
+@c ----------------------------------------------------------------------------
+@node    Top,       Introduction,  (dir),    (dir)
+@comment node-name, next,          previous, up
+@menu
+* Introduction::
+
+* Functions::
+
+* Error messages::
+@end menu
+@c ----------------------------------------------------------------------------
+@node    Introduction, Functions, Top,      Top
+@comment node-name,    next,      previous, up
+@chapter Introduction to the LinguaLinks AMPLE DLL
+
+Since it was released in 1988, the AMPLE program has been used for
+morphological analysis in many different languages.  It has always
+functioned as a batch processing program, which is useful for
+production work such as analyzing an entire book, but is less useful
+during the early stages of developing a morphological description.  The
+LinguaLinks AMPLE DLL has therefore been developed with the goal of
+making it possible to embed AMPLE style morphological parsing into
+LinguaLinks.
+
+The LinguaLinks AMPLE DLL is built with the AMPLE function library.
+@ifclear txt
+@xref{Top, , Introduction, amplelib.info, AMPLE Function Library Reference Manual}.
+@end ifclear
+For maximum usefulness, it is a Win32 DLL, not a Win16 (Microsoft
+Windows 3.x) DLL.  It is compiled for an 80386 or better CPU, and is
+compatible with Microsoft Windows NT, Windows 95, and @file{WIN32S.DLL}
+for Windows 3.x.
+
+This manual, and the DLL it documents, are still being revised.
+
+@c ----------------------------------------------------------------------------
+@node Functions, Error messages, Introduction, Top
+@chapter LinguaLinks AMPLE DLL functions
+
+The LinguaLinks AMPLE DLL functions all return a character string.
+This string contains either a value dependent on the function or an
+error message.  The arguments to these functions, which vary in number
+from zero to four, are also all character strings.
+
+(This is, of course, subject to negotiation and change.)
+
+@menu
+* AmpleAddSelectiveAnalysisMorphs::
+* AmpleGetParameter::
+* AmpleLoadControlFiles::
+* AmpleLoadDictionary::
+* AmpleParseFile::
+* AmpleParseText::
+* AmpleRemoveSelectiveAnalysisMorphs::
+* AmpleReset::
+* AmpleSetParameter::
+* AmpleUpdateEntry::
+* AmpleWriteDictionary::
+@end menu
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleAddSelectiveAnalysisMorphs, AmpleGetParameter, , Functions
+@unnumberedsec AmpleAddSelectiveAnalysisMorphs
+@subheading Syntax
+@example
+DllExport char * AmpleAddSelectiveAnalysisMorphs(
+						const char * pszMorphs_in)
+@end example
+@subheading Description
+@code{AmpleAddSelectiveAnalysisMorphs} adds one or more morphnames to
+the existing list of morphnames for selective analysis.  It may be
+called once or more than once to build up the list of morphnames.
+
+@code{AmpleAddSelectiveAnalysisMorphs} is an alternative to
+@code{AmpleSetParameter(}@code{"SelectiveAnalysisFile",}
+@code{filename)}.  It erases any filename stored for the
+@code{SelectiveAnalysisFile} parameter, but does not erase any
+morphnames already in the list for selective analysis.
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC1)(const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC1	pfAmpleAddSelectiveAnalysisMorphs;
+char *		pszResult;
+...
+char            szNewEntry[] = "\
+\\m mateo\n\
+\\t root\n\
+\\c N0\n\
+\\a mateo @{Matthew_1@}\n\
+\\a mateu @{Matthew_2@}\n\
+\\a matei @{Matthew_3@}\n\
+";
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleAddSelectiveAnalysisMorphs =
+				(AMPLEFUNC1)GetProcAddress(hAmpleLib,
+								"AmpleAddSelectiveAnalysisMorphs");
+	if (pfAmpleAddSelectiveAnalysisMorphs == NULL)
+		@{
+		MessageBox(0,
+	"Cannot find AmpleAddSelectiveAnalysisMorphs in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleAddSelectiveAnalysisMorphs != NULL)
+	@{
+	pszResult = (*pfAmpleAddSelectiveAnalysisMorphs)(szNewEntry);
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib          = 0;
+	pfAmpleAddSelectiveAnalysisMorphs = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleGetParameter, AmpleLoadControlFiles, AmpleAddSelectiveAnalysisMorphs, Functions
+@unnumberedsec AmpleGetParameter
+@subheading Syntax
+@example
+DllExport char * AmpleGetParameter(
+						const char * pszName_in)
+@end example
+
+@subheading Description
+@code{AmpleGetParameter} retrieves the value of a LinguaLinks AMPLE DLL
+parameter (global variable).  The following parameter names are
+recognized.
+
+@table @code
+
+@item AppendLogFile
+determines whether a new log file is created, or an old log file is
+added to.
+
+@item BeginComment
+corresponds to the AMPLE program's @samp{-c} command line option.
+
+@item DebugAllomorphConds
+corresponds to the AMPLE program's @samp{-a} command line option.
+
+@item DebugLevel
+corresponds to the AMPLE program's @samp{-/} command line option.
+
+@item LogFile
+corresponds to redirecting the standard output from the AMPLE program.
+(This retrieves the file name.)
+
+@item MaxMorphnameLength
+corresponds to the AMPLE program's @samp{-n} command line option.
+
+@item MaxTrieDepth
+corresponds to the AMPLE program's @samp{-d} command line option.
+
+@item OutputStyle
+determines the style of output produced by @code{AmpleParseFile}.  The
+possible values are @code{Ana} (for the normal standard output analysis
+file), @code{AResult} (for SGML output similar to that produced by
+@code{AmpleParseText}), and @code{Ptext} (for SGML output according to
+the @file{ptext.dtd} document type definition).  (@code{Ptext} is not
+yet implemented.)
+The default style is @code{Ana}.
+
+@item RootGlosses
+corresponds to the AMPLE program's @samp{-g} command line option.
+
+@item SelectiveAnalysisFile
+corresponds to the AMPLE program's @samp{-s} command line option.
+(This retrieves the file name.)
+
+@item TraceAnalysis
+corresponds to the AMPLE program's @samp{-t} command line option.
+
+@end table
+@noindent
+Note that the parameter names are not case sensitive, even though they
+are shown here in a mixture of uppercase and lowercase.
+
+@subheading Return Value
+a string indicating the parameter value, or an error message
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC1)(const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC1	pfAmpleGetParameter;
+char *		pszResult;
+...
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleGetParameter = (AMPLEFUNC1)GetProcAddress(hAmpleLib,
+												"AmpleGetParameter");
+	if (pfAmpleGetParameter == NULL)
+		@{
+		MessageBox(0, "Cannot find AmpleGetParameter in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleGetParameter != NULL)
+	@{
+	pszResult = (*pfAmpleGetParameter)("MaxTrieDepth");
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib           = 0;
+	pfAmpleGetParameter = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleLoadControlFiles, AmpleLoadDictionary, AmpleGetParameter, Functions
+@unnumberedsec AmpleLoadControlFiles
+@subheading Syntax
+@example
+DllExport char * AmpleLoadControlFiles(
+						const char * pszAnalysisDataFile_in,
+						const char * pszDictCodeTable_in,
+						const char * pszDictOrthoChangeTable_in,
+						const char * pszTextInputControlFile_in)
+@end example
+@subheading Description
+@code{AmpleLoadControlFiles} loads the indicated control files into
+memory.
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC4)(const char *,
+									   const char *,
+									   const char *,
+									   const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC4	pfAmpleLoadControlFiles;
+char *		pszResult;
+...
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleLoadControlFiles = (AMPLEFUNC4)GetProcAddress(hAmpleLib,
+											"AmpleLoadControlFiles");
+	if (pfAmpleLoadControlFiles == NULL)
+		@{
+		MessageBox(0,
+				   "Cannot find AmpleLoadControlFiles in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleLoadControlFiles != NULL)
+	@{
+	pszResult = (*pfAmpleLoadControlFiles)("D:/HG/HGAD01.CTL",
+										   "D:/HG/HGANCD.TAB",
+										   NULL,
+										   "D:/HG/HGINTX.CTL");
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib               = 0;
+	pfAmpleLoadControlFiles = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleLoadDictionary, AmpleParseFile, AmpleLoadControlFiles, Functions
+@unnumberedsec AmpleLoadDictionary
+@subheading Syntax
+@example
+DllExport char * AmpleLoadDictionary(
+						const char * pszFilePath_in)
+@end example
+@subheading Description
+@code{AmpleLoadDictionary} loads the indicated (unified) AMPLE
+dictionary file into memory.
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC1)(const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC1	pfAmpleLoadDictionary;
+char *		pszResult;
+...
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleLoadDictionary = (AMPLEFUNC1)GetProcAddress(
+									hAmpleLib,
+									"AmpleLoadDictionary");
+	if (pfAmpleLoadDictionary == NULL)
+		@{
+		MessageBox(0,
+				   "Cannot find AmpleLoadDictionary in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleLoadDictionary != NULL)
+	@{
+	pszResult = (*pfAmpleLoadDictionary)("D:/HG/HGMORPH.DIC");
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib             = 0;
+	pfAmpleLoadDictionary = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleParseFile, AmpleParseText, AmpleLoadDictionary, Functions
+@unnumberedsec AmpleParseFile
+@subheading Syntax
+@example
+DllExport char * AmpleParseFile(
+						const char * pszInFilePath_in,
+						const char * pszOutFilePath_in)
+@end example
+@subheading Description
+@code{AmpleParseFile} parses an input text file, producing an output
+analysis file.
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC2)(const char *,
+									   const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC2	pfAmpleParseFile;
+char *		pszResult;
+...
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleParseFile = (AMPLEFUNC2)GetProcAddress(hAmpleLib,
+												  "AmpleParseFile");
+	if (pfAmpleParseFile == NULL)
+		@{
+		MessageBox(0, "Cannot find AmpleParseFile in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleParseFile != NULL)
+	@{
+	pszResult = (*pfAmpleParseFile)("D:/HG/HGMT05.TXT",
+									"D:/HG/HGMT05.SGM");
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib        = 0;
+	pfAmpleParseFile = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleParseText, AmpleRemoveSelectiveAnalysisMorphs, AmpleParseFile, Functions
+@unnumberedsec AmpleParseText
+@subheading Syntax
+@example
+DllExport char * AmpleParseText(
+						const char * pszInputText_in)
+@end example
+@subheading Description
+@code{AmpleParseText} parses the words in the input string.  If the
+string contains only one word, then that word is parsed, obviating the
+need for a separate @code{AmpleParseWord} function.
+
+The parse output follows the simple SGML style format given by the
+following @dfn{document type definition}.  (The parse output is not
+quite SGML because it does not begin with a DOCTYPE declaration and it
+does not quote attribute values even when needed.)
+@example
+
+<!ELEMENT AResult - - ((error | parse)*) >
+
+<!ELEMENT error - - (#PCDATA) >
+<!ATTLIST error code (analysisFailure | rootFailure) #REQUIRED >
+
+<!ELEMENT parse - - (analysis*) >
+<!ATTLIST parse id CDATA #REQUIRED >
+
+<!ELEMENT analysis - - (morph*) >
+<!ATTLIST analysis cat CDATA #REQUIRED >
+
+<!ELEMENT morph - O EMPTY >
+<!ATTLIST morph id   CDATA #REQUIRED
+				allo CDATA #REQUIRED >
+
+@end example
+
+@subheading Return Value
+a string containing either the parse output or an error message
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC1)(const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC1	pfAmpleParseText;
+char *		pszResult;
+...
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleParseText = (AMPLEFUNC1)GetProcAddress(hAmpleLib,
+												  "AmpleParseText");
+	if (pfAmpleParseText == NULL)
+		@{
+		MessageBox(0, "Cannot find AmpleParseText in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleParseText != NULL)
+	@{
+	pszResult = (*pfAmpleParseText)(
+		"Chayta rikar loomaman wicharkur hamakuykuran yachachinanpaq.");
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib        = 0;
+	pfAmpleParseText = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleRemoveSelectiveAnalysisMorphs, AmpleReset, AmpleParseText, Functions
+@unnumberedsec AmpleRemoveSelectiveAnalysisMorphs
+@subheading Syntax
+@example
+DllExport char * AmpleRemoveSelectiveAnalysisMorphs()
+@end example
+@subheading Description
+@code{AmpleRemoveSelectiveAnalysisMorphs} erases any existing list of
+morphnames for selective analysis.  It also erases any filename stored
+for the @code{SelectiveAnalysisFile} parameter.
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC0)(void);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC0	pfAmpleRemoveSelectiveAnalysisMorphs;
+char *		pszResult;
+...
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleRemoveSelectiveAnalysisMorphs =
+				(AMPLEFUNC0)GetProcAddress(hAmpleLib,
+							  "AmpleRemoveSelectiveAnalysisMorphs");
+	if (pfAmpleRemoveSelectiveAnalysisMorphs == NULL)
+		@{
+		MessageBox(0,
+	"Cannot find AmpleRemoveSelectiveAnalysisMorphs in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleRemoveSelectiveAnalysisMorphs != NULL)
+	@{
+	pszResult = (*pfAmpleRemoveSelectiveAnalysisMorphs)();
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib    = 0;
+	pfAmpleRemoveSelectiveAnalysisMorphs = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleReset, AmpleSetParameter, AmpleRemoveSelectiveAnalysisMorphs, Functions
+@unnumberedsec AmpleReset
+@subheading Syntax
+@example
+DllExport char * AmpleReset()
+@end example
+@subheading Description
+@code{AmpleReset} removes all control and dictionary information from
+memory, and restores all internal settings to their default values.
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC0)(void);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC0	pfAmpleReset;
+char *		pszResult;
+...
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleReset = (AMPLEFUNC0)GetProcAddress(hAmpleLib,
+											  "AmpleReset");
+	if (pfAmpleReset == NULL)
+		@{
+		MessageBox(0, "Cannot find AmpleReset in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleReset != NULL)
+	@{
+	pszResult = (*pfAmpleReset)();
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib    = 0;
+	pfAmpleReset = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleSetParameter, AmpleUpdateEntry, AmpleReset, Functions
+@unnumberedsec AmpleSetParameter
+@subheading Syntax
+@example
+DllExport char * AmpleSetParameter(
+						const char * pszName_in,
+						const char * pszValue_in)
+@end example
+@subheading Description
+@code{AmpleSetParameter} sets the value of a LinguaLinks AMPLE DLL
+parameter (global variable).  The following parameter names are
+recognized.  If @code{pszValue_in} is @code{NULL}, the parameter is set
+to its default value.
+
+@table @code
+
+@item AppendLogFile
+determines whether a new log file is created, or an old log file is
+added to.  Possible values are @code{"TRUE"} (or @code{"T"}) and
+@code{"FALSE"} (or @code{"F"}).  The default value is @code{"FALSE"}.
+
+@item BeginComment
+corresponds to the AMPLE program's @samp{-c} command line option.
+The first nonspace character in the value string is used for the new
+comment character.  The default value is @code{"|"}.  If the value
+string does not contain any nonspace characters, then nothing can mark
+comments in the input files.
+
+@item DebugAllomorphConds
+corresponds to the AMPLE program's @samp{-a} command line option.
+Possible values are @code{"TRUE"} (or @code{"T"}) and @code{"FALSE"}
+(or @code{"F"}).  The default value is @code{"FALSE"}.
+
+@item DebugLevel
+corresponds to the AMPLE program's @samp{-/} command line option.
+Possible values are positive integers (encoded as ASCII digit strings).
+The default value is @code{"0"}.
+
+@item LogFile
+corresponds to redirecting the standard output from the AMPLE program.
+The value string is the name of the output log file.  The default is
+not to have a log file.
+
+@item MaxMorphnameLength
+corresponds to the AMPLE program's @samp{-n} command line option.
+Possible values are positive integers greater than zero (encoded as
+ASCII digit strings).  The default value is @code{"15"}.
+
+@item MaxTrieDepth
+corresponds to the AMPLE program's @samp{-d} command line option.
+Possible values are positive integers greater than zero (encoded as
+ASCII digit strings).  The default value is @code{"2"}.
+
+@item OutputStyle
+determines the style of output produced by @code{AmpleParseFile}.  The
+possible values are @code{"Ana"} (for the normal standard output
+analysis file), @code{"AResult"} (for SGML output similar to that
+produced by @code{AmpleParseText}), and @code{"Ptext"} for SGML output
+according to the @file{ptext.dtd} document type definition).
+The default value is @code{"Ana"}.
+
+@item RootGlosses
+corresponds to the AMPLE program's @samp{-g} command line option.
+Possible values are @code{"TRUE"} (or @code{"T"}) and @code{"FALSE"}
+(or @code{"F"}).  The default value is @code{"FALSE"}.
+
+@item SelectiveAnalysisFile
+corresponds to the AMPLE program's @samp{-s} command line option.
+The value string is the name of a file containing the morphnames (or
+allomorphs) that are used for subsequent analyses.  The default is not
+to use selective analysis, but to use every allomorph of every morpheme
+loaded from the dictionary file(s).
+
+@item TraceAnalysis
+corresponds to the AMPLE program's @samp{-t} command line option.
+Possible values are @code{"OFF"}, @code{"ON"} (for normal AMPLE
+tracing), and @code{"SGML"} (for @code{<AmpleTrace>} tracing).  The
+default value is @code{"OFF"}.  Note that the trace output is written
+to the log file, and may be mixed with other log output.
+
+@end table
+@noindent
+Note that the parameter names are not case sensitive, even though they
+are shown here in a mixture of uppercase and lowercase.
+
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC2)(const char *,
+									   const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC2	pfAmpleSetParameter;
+char *		pszResult;
+...
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleSetParameter = (AMPLEFUNC2)GetProcAddress(hAmpleLib,
+												"AmpleSetParameter");
+	if (pfAmpleSetParameter == NULL)
+		@{
+		MessageBox(0, "Cannot find AmpleSetParameter in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleSetParameter != NULL)
+	@{
+	pszResult = (*pfAmpleSetParameter)("MaxTrieDepth", "3");
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib           = 0;
+	pfAmpleSetParameter = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleUpdateEntry, AmpleWriteDictionary, AmpleSetParameter, Functions
+@unnumberedsec AmpleUpdateEntry
+@subheading Syntax
+@example
+DllExport char * AmpleUpdateEntry(
+						const char * pszNewEntry_in)
+@end example
+@subheading Description
+@code{AmpleUpdateEntry} updates an entry in the dictionary.
+The input string looks like an entry from the standard format
+dictionary file.  The default values for the standard format markers
+are the lowercase characters for the internal codes described in the
+AMPLE reference manual.
+@ifclear txt
+@xref{Dictionary files, , Dictionary Files, ample.info, AMPLE Reference Manual}.
+@end ifclear
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC1)(const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC1	pfAmpleUpdateEntry;
+char *		pszResult;
+...
+char            szNewEntry[] = "\
+\\m mateo\n\
+\\t root\n\
+\\c N0\n\
+\\a mateo @{Matthew_1@}\n\
+\\a mateu @{Matthew_2@}\n\
+\\a matei @{Matthew_3@}\n\
+";
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleUpdateEntry = (AMPLEFUNC1)GetProcAddress(hAmpleLib,
+												"AmpleUpdateEntry");
+	if (pfAmpleUpdateEntry == NULL)
+		@{
+		MessageBox(0, "Cannot find AmpleUpdateEntry in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleUpdateEntry != NULL)
+	@{
+	pszResult = (*pfAmpleUpdateEntry)(szNewEntry);
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib          = 0;
+	pfAmpleUpdateEntry = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@page
+@node AmpleWriteDictionary, , AmpleUpdateEntry, Functions
+@unnumberedsec AmpleWriteDictionary
+@subheading Syntax
+@example
+DllExport char * AmpleWriteDictionary(
+						const char * pszOutputDictionary_in)
+@end example
+@subheading Description
+@code{AmpleWriteDictionary} writes the dictionary to a standard format
+file.  The standard format markers are based on the lowercase letters
+of the internal codes described in the AMPLE reference manual.
+@ifclear txt
+@ifset html
+See section <A HREF="ample.html">Dictionary files</A> in @cite{AMPLE Reference
+Manual}.
+@end ifset
+@ifclear html
+@xref{Dictionary files, , Dictionary Files, ample.info, AMPLE Reference Manual}.
+@end ifclear
+@end ifclear
+@subheading Return Value
+a string indicating success or failure
+@subheading Example
+@smallexample
+#include <windows.h>
+typedef char * (CALLBACK * AMPLEFUNC1)(const char *);
+...
+HANDLE		hAmpleLib;
+AMPLEFUNC1	pfAmpleWriteDictionary;
+char *		pszResult;
+...
+char            szOutputDictionary[] = "updated.dic";
+hAmpleLib = LoadLibrary("LLAMPLE.DLL");
+if ((unsigned long)hAmpleLib < 32)
+	@{
+	MessageBox(0, "Error loading LLAMPLE.DLL", "App Name",
+		   MB_OK | MB_ICONEXCLAMATION);
+	hAmpleLib = 0;
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	pfAmpleWriteDictionary = (AMPLEFUNC1)GetProcAddress(hAmpleLib,
+												"AmpleWriteDictionary");
+	if (pfAmpleWriteDictionary == NULL)
+		@{
+		MessageBox(0, "Cannot find AmpleWriteDictionary in LLAMPLE.DLL",
+				   "App Name", MB_OK | MB_ICONEXCLAMATION);
+		@}
+	@}
+...
+if (pfAmpleWriteDictionary != NULL)
+	@{
+	pszResult = (*pfAmpleWriteDictionary)(szOutputDictionary);
+	...
+	@}
+...
+if (hAmpleLib != 0)
+	@{
+	FreeLibrary(hAmpleLib);
+	hAmpleLib          = 0;
+	pfAmpleWriteDictionary = NULL;
+	...
+	@}
+...
+@end smallexample
+@subheading Source File
+@file{llample.c}
+
+@c ----------------------------------------------------------------------------
+@node Error messages, , Functions, Top
+@chapter Error Message Strings
+
+The following error message strings may be returned by the LinguaLinks
+AMPLE DLL functions.  Most of these messages should be self explanatory.
+
+@table @code
+
+@item <error code=badAnalysisDataFile>Error reading the analysis data file</error>
+
+@item <error code=badDictCodeTableFile>Error reading the dictionary code table file</error>
+
+@item <error code=badDictEntry>Error updating the dictionary</error>
+
+@item <error code=badDictOrthoChangesFile>Error reading the dictionary orthography changes table file</error>
+
+@item <error code=badDictionaryFile>Error reading the dictionary file</error>
+
+@item <error code=badTextInputControlFile>Error reading the text input control file</error>
+
+@item <error code=fatalCrash>AMPLE DLL has crashed badly!</error>
+This indicates an extremely serious problem that would cause the AMPLE
+program to exit prematurely.  Running out of memory would be a possible
+cause of this message.
+
+@item <error code=invalidInputFilename>Cannot open file for input</error>
+
+@item <error code=invalidOutputFilename>Cannot open file for output</error>
+
+@item <error code=invalidParameterName>Parameter name not recognized</error>
+This indicates an invalid argument to @code{AmpleGetParameter} or
+@code{AmpleSetParameter}.
+
+@item <error code=invalidParameterValue>Bad parameter value string</error>
+This indicates an invalid argument to @code{AmpleSetParameter}.
+
+@item <error code=missingArgument>Required argument is empty</error>
+
+@item <error code=none>Success</error>
+This is not really an @emph{error} message, but rather an indication
+that the function worked flawlessly.
+
+@end table
+
+@c ----------------------------------------------------------------------------
+@contents
+@bye

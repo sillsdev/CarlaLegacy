@@ -1,0 +1,1061 @@
+\_sh v3.0  400  yaldict
+
+\r adulterio
+\_no 00001
+\u atu:l:telio
+\a atu:l:telio
+\c N
+\g adulterio
+
+\r angl
+\_no 00002
+\u ank:l
+\a ank:l
+\c N
+\g ·ngel
+
+\r anillo
+\_no 00003
+\u anicho
+\a anicho
+\c N
+\g anillo
+
+\r anis
+\_no 00004
+\u ani:s
+\a ani:s
+\c N
+\g anis
+
+\r banch
+\_no 00005
+\u pan:ch
+\a pan:ch
+\c N
+\g hacha
+
+\r banco
+\_no 00006
+\u panco
+\a panco
+\c N
+\g banco
+
+\r barco
+\_no 00007
+\u palco
+\a palco
+\c N
+\g barco
+
+\r bnok
+\_no 00008
+\u pno:k
+\a pno:k
+\c N
+\g manojo
+
+\r bols
+\_no 00009
+\u po:l:s
+\a po:l:s
+\g bolsa.(loan)
+\c N
+
+\r burr
+\_no 00010
+\u pull
+\a pull
+\c N
+\g burro
+
+\r camello
+\_no 00011
+\u ca:mecho
+\a ca:mecho
+\c N
+\g camello
+
+\r ceit
+\_no 00012
+\u cei:t
+\a cei:t
+\c N
+\g aceite
+
+\r chiv
+\_no 00013
+\u :chiv
+\a :chiv
+\c N
+\g chivo
+
+\r ciud·
+\_no 00014
+\u ciut·
+\a ciut·
+\c N
+\g ciudad
+
+\r de
+\_no 00015
+\u te
+\a te
+\c Prt
+\g de
+
+\r denario
+\_no 00016
+\u tenalio
+\a tenalio
+\c N
+\g denario
+
+\r derpent
+\_no 00017
+\u tel:pen:t
+\a tel:pen:t
+\c Adv
+\g de.repente
+
+\r desde
+\_no 00018
+\u te:ste
+\a te:ste
+\c Adv
+\g desde
+
+\r dmio
+\_no 00019
+\u t:mio
+\a t:mio
+\c N
+\g domingo
+
+\r Eloi
+\_no 00020
+\u e:loi
+\a e:loi
+\c N
+\g Eloi
+
+\r fuerz
+\_no 00021
+\u fuel:s
+\a fuel:s
+\c N
+\g fuerza
+
+\r gan
+\_no 00022
+\u kan
+\a kan
+\c N
+\g ganar.(loan)
+
+\r garrot
+\_no 00023
+\u kallo:t
+\a kallo:t
+\c N
+\g garrote
+
+\r gobernador
+\_no 00024
+\u kopelnatol
+\a kopelnatol
+\c N
+\g gobernador
+
+\r golp
+\_no 00025
+\u ko:l:p
+\a ko:l:p
+\c N
+\g golpe
+
+\r griego
+\_no 00026
+\u klieko
+\a klieko
+\c N
+\g griego
+
+\r hasta
+\_no 00027
+\u ha:s:ta
+\a ha:s:ta
+\c Prt
+\g hasta.loan   | Lk 11:50
+
+\r higo
+\_no 00028
+\u hiko
+\a hiko
+\c N
+\g higo
+
+\r hor
+\_no 00029
+\u hol
+\a hol
+\c N
+\g hora
+
+\r horn
+\_no 00030
+\u holn
+\a holn
+\c N
+\g horno
+
+\r jempl
+\_no 00031
+\u je:m:p:l
+\a je:m:p:l
+\c N
+\g ejemplo
+
+\r juez
+\_no 00032
+\u jues
+\a jues
+\c N
+\g juez
+
+\r juicio
+\_no 00033
+\u juicio
+\a juicio
+\c N
+\g juicio
+
+\r kabay
+\_no 00034
+\u :kapay
+\a :kapab
+\c N
+\g caballo
+
+\r kaj
+\_no 00035
+\u :kaj
+\a :kaj
+\c N
+\g caja
+
+\r kam
+\_no 00036
+\u :ka:m
+\a :ka:m
+\c N
+\g cama
+
+\r kamplar
+\_no 00037
+\u :ka:m:p:lal
+\a :ka:m:p:lal
+\c N
+\g campanario
+
+\r kapsant
+\_no 00038
+\u :ka:p:san:t
+\a :ka:p:san:t
+\c N
+\g cementerio
+
+\r kard·
+\_no 00039
+\u :kalt·
+\a :kalt·
+\c N
+\g caridad
+
+\r kastigo
+\_no 00040
+\u :k:s:tiko
+\a :ka:s:tiko
+\c N
+\g castigo
+
+\r ke
+\_no 00041
+\u :ke
+\a :ke
+\c Prt
+\g que
+
+\r kobr
+\_no 00042
+\u :kopl
+\a :kopl
+\c N
+\g cobre
+
+\r kochiy
+\_no 00043
+\u :ko:chiy
+\a :ko:chiy
+\c N
+\g cuchillo
+
+\r kompa
+\_no 00044
+\u :ko:m:pa
+\a :ko:m:pa
+\c N
+\g compadre   | Lk 12:19
+
+\r kompner
+\_no 00045
+\u :ko:m:pnel
+\a :ko:m:pnel
+\c N
+\g compa§ero
+
+\r komÌn
+\_no 00046
+\u :ko:mÌn
+\a :ko:mÌn
+\c N
+\g comino
+
+\r kontr
+\_no 00047
+\u :kon:tl
+\a :kon:tl
+\c N
+\g enemigo  | Lk 11:23 for possessed form
+
+\r koron
+\_no 00048
+\u :kolon
+\a :kolon
+\c N
+\g corona
+
+\r kosech
+\_no 00049
+\u :ko:se:ch
+\a :ko:se:ch
+\c N
+\g cosecha
+
+\r kostumbr
+\_no 00050
+\u :ko:s:tu:mpl
+\a :ko:s:tu:mpl
+\c N
+\g costumbre
+
+\r kruz
+\_no 00051
+\u clus
+\a clus
+\c N
+\g cruz
+
+\r kuch
+\_no 00052
+\u :ku:ch
+\a :ku:ch
+\c N
+\g puerco
+
+\r kwent
+\_no 00053
+\u :kwen:t
+\a :kwen:t
+\c N
+\g cuenta
+
+\r kwerp
+\_no 00054
+\u :kwel:p
+\a :kwel:p
+\c N
+\g cuerpo
+
+\r kwidad
+\_no 00055
+\u :kwitat
+\a :kwitat
+\c N
+\g cuidad
+
+\r lama
+\_no 00056
+\u :la:ma
+\a :la:ma
+\c N
+\g lama
+
+\r legr
+\_no 00057
+\u :lekl
+\a :lekl
+\c Adv
+\g alegre    |Lk 12:19
+
+\r lepra
+\_no 00058
+\u :le:pla
+\a :le:pla
+\c N
+\g lepra
+
+\r letr
+\_no 00059
+\u :le:tl
+\a :le:tl
+\c N
+\g letra
+
+\r levadura
+\_no 00060
+\u :levatula
+\a :levatula
+\c N
+\g levadura
+
+\r levita
+\_no 00061
+\u :levi:ta
+\a :levi:ta
+\c N
+\g levita
+
+\r ley
+\_no 00062
+\u :ley
+\a :ley
+\c N
+\g ley
+
+\r libr
+\_no 00063
+\u :lipl
+\a :lipl
+\c N
+\g libro
+
+\r lintern
+\_no 00064
+\u :lin:teln
+\a :lin:teln
+\c N
+\g linterna
+
+\r lmad
+\_no 00065
+\u :l:mat
+\a :l:mat
+\c N
+\g almohada
+
+\r lmoxh
+\_no 00066
+\u :l:mox
+\a :l:mox
+\c N
+\g limosna
+
+\r l·mpara
+\_no 00067
+\u :l·:m:pala
+\a :l·:m:pala
+\c N
+\g l·mpara
+
+\r maestro
+\_no 00068
+\u :mae:s:tlo
+\a :mae:s:tlo
+\c N
+\g maestro
+
+\r magos
+\_no 00069
+\u :mako:s
+\a :mako:s
+\c N
+\g magos
+
+\r mandad
+\_no 00070
+\u :mantat
+\a :mantat
+\c N
+\g mandado
+
+\r mar
+\_no 00071
+\u :mal
+\a :mal
+\c Adj
+\g mal
+
+\r maxh
+\_no 00072
+\u :max
+\a :max
+\c Adj
+\g manso
+
+\r menta
+\_no 00073
+\u :men:ta
+\a :men:ta
+\c N
+\g menta
+
+\r mer
+\_no 00074
+\u :mel
+\a :mel
+\c Adv
+\g mero
+
+\r mes
+\_no 00075
+\u :me:s
+\a :me:s
+\c N
+\g mesa
+
+\r metr
+\_no 00076
+\u :me:tl
+\a :me:tl
+\c N
+\g metro  |Lk 12:25
+
+\r migo
+\_no 00077
+\u :miko
+\a :miko
+\c N
+\g amigo
+
+\r mir
+\_no 00078
+\u :mil
+\a :mil
+\c PPrt
+\g mil
+
+\r mirra
+\_no 00079
+\u :milla
+\a :milla
+\c N
+\g mirra
+
+\r morad
+\_no 00080
+\u :molat
+\a :molat
+\c Adj
+\g morado
+
+\r mos
+\_no 00081
+\u :mo:s
+\a :mo:s
+\c N
+\g mozo
+
+\r mostaz
+\_no 00082
+\u :mo:s:tas
+\a :mo:s:tas
+\c N
+\g mostaza
+
+\r naciÛn
+\_no 00083
+\u naciÛn
+\a naciÛn
+\c N
+\g naciÛn
+
+\r nardo
+\_no 00084
+\u nalto
+\a nalto
+\c N
+\g nardo
+
+\r ni
+\_no 00085
+\u ni
+\a ni
+\c Prt
+\g ni
+
+\r o
+\_no 00086
+\u o
+\a o
+\c Prt
+\g o
+
+\r oro
+\_no 00087
+\u olo
+\a olo
+\c N
+\g oro
+
+\r pan
+\_no 00088
+\u :pan
+\a :pan
+\c N
+\g pan
+
+\r para
+\_no 00089
+\u :pala
+\a :pala
+\c Conj
+\g para
+
+\r parak
+\_no 00090
+\u :pala:k
+\a :pala:k
+\c N
+\g paraje.lugar
+
+\r part
+\_no 00091
+\u :pal:t
+\a :pal:t
+\c N
+\g parte.loan
+
+\r partid
+\_no 00092
+\u :pal:tit
+\a :pal:tit
+\c N
+\g partido
+
+\r pasens
+\_no 00093
+\u :pa:sen:s
+\a :pa:sen:s
+\c N
+\g pasencia
+
+\r pedaz
+\_no 00094
+\u :petas
+\a :petas
+\c N
+\g pedazo
+
+\r pensar
+\_no 00095
+\u :pen:sal
+\a :pen:sal
+\c N
+\g pensar
+
+\r pero
+\_no 00096
+\u :pelo
+\a :pelo
+\c Conj
+\g pero
+
+\r plat
+\_no 00097
+\u :p:la:t
+\a :p:la:t
+\c N
+\g plato
+
+\r plom
+\_no 00098
+\u :p:lo:m
+\a :p:lo:m
+\c N
+\g paloma
+
+\r policÌa
+\_no 00099
+\u :po:licÌa
+\a :po:licÌa
+\c N
+\g plicÌa
+
+\r por
+\_no 00100
+\u :pol
+\a :pol
+\c Prt
+\g por.loan
+
+\r posad
+\_no 00101
+\u :po:sat
+\a :po:sat
+\c N
+\g posada
+
+\r postl
+\_no 00102
+\u :po:s:t:l
+\a :po:s:t:l
+\c N
+\g Apostol
+
+\r prob
+\_no 00103
+\u :plop
+\a :plop
+\c N
+\g pobre.N
+
+\r prueb
+\_no 00104
+\u :pluep
+\a :pluep
+\c N
+\g prueba
+
+\r puert
+\_no 00105
+\u :puel:t
+\a :puel:t
+\c N
+\g puerta
+
+\r pues
+\_no 00106
+\u :pue:s
+\a :pue:s
+\c Conj
+\g pues
+
+\r pur
+\_no 00107
+\u :pul
+\a :pul
+\c Adv
+\g puro
+
+\r rad
+\_no 00108
+\u lat
+\a lat
+\c N
+\g arado
+
+\r ranch
+\_no 00109
+\u lan:ch
+\a lan:ch
+\c N
+\g rancho
+
+\r regl
+\_no 00110
+\u lek:l
+\a lek:l
+\c N
+\g arreglo  | regla
+
+\r rob
+\_no 00111
+\u lop
+\a lop
+\c N
+\g arroba
+
+\r rson
+\_no 00112
+\u l:son
+\a l:son
+\c N
+\g razÛn
+
+\r sab
+\_no 00113
+\u :sap
+\a :sap
+\c N
+\g rebozo  | s·bana
+
+\r sabactani
+\_no 00114
+\u :sapac:tani
+\a :sapac:tani
+\c N
+\g sabactani
+
+\r sabd
+\_no 00115
+\u :sapt
+\a :sapt
+\c N
+\g s·bado
+
+\r saguan
+\_no 00116
+\u :sakuan
+\a :sakuan
+\c N
+\g saguan
+
+\r segor
+\_no 00117
+\u :sekol
+\a :sekol
+\c Adj
+\g seguro
+
+\r segun
+\_no 00118
+\u :sekun
+\a :sekun
+\c Adv
+\g seg˙n
+
+\r sen
+\_no 00119
+\u :sen
+\a :sen
+\c N
+\g se§a
+
+\r sensill
+\_no 00120
+\u :sen:sich
+\a :sen:sich
+\c Adj
+\g sencillo  |Lk 12:26
+
+\r sey
+\_no 00121
+\u :sey
+\a :sey
+\c N
+\g sello
+
+\r si
+\_no 00122
+\u :sÌ
+\a :sÌ
+\c Prt
+\g sÌ.loan
+
+\r sikier
+\_no 00123
+\u :si:kiel
+\a :si:kiel
+\c Prt
+\g siquiera   | Lk 11:46
+\noload   don't want in NT  , see jeze
+
+\r sin
+\_no 00124
+\u :sin
+\a :sin
+\c Conj
+\g sin
+
+\r sino
+\_no 00125
+\u :sino
+\a :sino
+\c Conj
+\g sino
+
+\r siy
+\_no 00126
+\u :siy
+\a :siy
+\c N
+\g silla
+
+\r skin
+\_no 00127
+\u :s:kin
+\a :s:kin
+\c N
+\g esquin
+
+\r sot
+\_no 00128
+\u :so:t
+\a :so:t
+\c N
+\g azote
+
+\r spad
+\_no 00129
+\u :s:pat
+\a :s:pat
+\c N
+\g espada
+
+\r spÌritu
+\_no 00130
+\u :s:pÌli:tu
+\a :s:pÌli:tu
+\c N
+\g espÌritu
+
+\r talento
+\_no 00131
+\u :ta:len:to
+\a :ta:len:to
+\c N
+\g talento
+
+\r tant
+\_no 00132
+\u :tan:t
+\a :tan:t
+\c Adv
+\g tanto.loan
+
+\r tas
+\_no 00133
+\u :ta:s
+\a :ta:s
+\c N
+\g taza
+
+\r testigo
+\_no 00134
+\u :te:s:tiko
+\a :te:s:tiko
+\c N
+\g testigo
+
+\r tgor
+\_no 00135
+\u :tkol
+\a :tkol
+\c N
+\g una.hora
+
+\r tiemp
+\_no 00136
+\u :tie:m:p
+\a :tie:m:p
+\c N
+\g tiempo
+
+\r tier
+\_no 00137
+\u :tiel
+\a :tiel
+\c N
+\g tira
+
+\r tont
+\_no 00138
+\u :ton:t
+\a :ton:t
+\c Adv
+\g tonto
+
+\r tramp
+\_no 00139
+\u :tla:m:p
+\a :tla:m:p
+\c N
+\g trampa
+
+\r tras
+\_no 00140
+\u :tla:s
+\a :tla:s
+\c Adv
+\g ˙ltimo
+
+\r trigo
+\_no 00141
+\u :tliko
+\a :tliko
+\c N
+\g trigo
+
+\r trist
+\_no 00142
+\u :tli:s:t
+\a :tli:s:t
+\c Adj
+\g triste
+
+\r trob
+\_no 00143
+\u :tlop
+\a :tlop
+\c N
+\g un.arroba
+
+\r trompet
+\_no 00144
+\u :tlo:m:pe:t
+\a :tlo:m:pe:t
+\c N
+\g trompeta
+
+\r uva
+\_no 00145
+\u uva:s
+\a uva:s
+\a uva  | either uva or uvas may occur
+\c N
+\g uva
+
+\r vinagr
+\_no 00146
+\u vinakl
+\a vinakl
+\c N
+\g vinagre  | may find a zapotec substitute for this
+
+\r vino
+\_no 00147
+\u vino
+\a vino
+\c N
+\g vino
+
+\r vispr
+\_no 00148
+\u vi:s:pl
+\a vi:s:pl
+\c N
+\g vÌspera
+
+\r wenre
+\_no 00149
+\u kwenle
+\a kwenle
+\a kwen:kle
+\c Adv
+\g mejor
+
+\r went
+\_no 00150
+\u kwen:t
+\a kwen:t
+\c N
+\g ungÅento
+
+\r yerb
+\_no 00151
+\u yelp
+\a yelp
+\c N
+\g veneno

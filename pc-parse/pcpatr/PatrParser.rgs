@@ -1,0 +1,24 @@
+HKCR
+{
+	SIL.CARLA.PatrParser.1 = s 'PatrParser Class'
+	{
+		CLSID = s '{32787A00-5405-11D3-8FD4-00400541F6D3}'
+	}
+	SIL.CARLA.PatrParser = s 'PatrParser Class'
+	{
+		CLSID = s '{32787A00-5405-11D3-8FD4-00400541F6D3}'
+		CurVer = s 'SIL.CARLA.PatrParser.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {32787A00-5405-11D3-8FD4-00400541F6D3} = s 'PatrParser Class'
+		{
+			ProgID = s 'SIL.CARLA.PatrParser.1'
+			VersionIndependentProgID = s 'SIL.CARLA.PatrParser'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+		}
+	}
+}

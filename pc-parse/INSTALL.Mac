@@ -1,0 +1,46 @@
+						October 21, 1997
+
+This file describes how to compile and install the pc-parse programs
+on an Apple Macintosh.  This requires the Metrowerks CodeWarrior C
+compiler.  Other C compilers may work, but have not been tested.  An
+archive containing precompiled executables and documentation for these
+programs should be available from the same place as where you got the
+sources.
+
+These are the steps for compiling the pc-parse programs for the Apple
+Macintosh:
+
+  1. Unpack the sources.  (You probably had to do this to look at this
+	 file.)  This involves obtaining the `binhex'ed self-extracting
+	 archive(s), removing the binhex encoding, and excuting the archive
+	 file(s).
+
+  2. Open the newly created folder containing the sources.  It should
+	 be named something like pc-parse-19971021.
+
+  3. Unpack the `binhex'ed self-extracting project archive
+	 (Project.hqx).
+
+  4. Open the newly created project folder.  It should be named
+	 something like ``Project f'' (but with a cursive looking f).
+
+  5. Open each of the library projects in turn, and make the library.
+	 (Aren't you glad that the Mac has such a user friendly interface?)
+	 If you are interested in only 680x0 or only PowerPC executables,
+	 then you can skip half of the projects.
+
+  6. Open each of the program projects in turn, and make the program.
+	 If you are interested in only 680x0 or only PowerPC executables,
+	 then you can skip half of the projects.  If you want ``fat''
+	 executables, then use the `.fat' program projects instead of the
+	 `.PPC' program projects.  Remember, build the `.68k' program
+	 projects before the `.fat' program projects.
+
+  7. If you want to test the programs (and you unpacked the test
+	 archive in step 1 above), go ahead.  (Aren't you even happier
+	 about user friendly Mac interface?)
+
+It should be noted that after you have gone to all this trouble, you
+end up with a set of programs that are functional but make no pretence
+of having a graphical user interface.  Volunteers for developing such
+interfaces are gratefully accepted!

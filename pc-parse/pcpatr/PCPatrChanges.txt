@@ -1,0 +1,37 @@
+PC-PATR CHANGE HISTORY
+
+1.2.9 (15-June-2001
+-------------------
+1. Fixed a bug that would sometimes not show glosses in trees when using
+   file disambiguate mode and also using show failures.
+2. Put sentence statistics in log file not in ANA file when doing a file
+   disambiguate via the Patr100.dll.
+
+1.2.8 (22-May-2001)
+-------------------
+1. Fixed a bug that kept a priority union operation from working if the input
+   feature did not have the feature path it was supposed to union with.
+
+2. Some minor internal code changes (nothing visible to the user).
+
+1.2.7 (21-May-2001)
+-------------------
+1. Fixed a bug that would stop reading an ANA file as soon as it encountered
+   an ANA failure.
+
+1.2.6 (30-Apr-2001)
+-------------------
+1. Fixed a bug that did not always increment sentence count.
+
+1.2.5 (17-Apr-2001)
+-------------------
+1. Fixed a bug that had "</f>" instead of "</F>" in XML tree option.
+
+2. Change colons in ids (in XML tree option) to periods.  Some XML validators
+   do not accept colon in ids.
+
+1.2.4 (11-Apr-2001)
+-------------------
+1. Change XML output to not include header, to use initial upper case element
+   names (e.g. "Parse" instead of "parse" and "Analysis" instead of
+   "analysis").

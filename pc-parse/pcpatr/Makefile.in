@@ -1,0 +1,214 @@
+# Master Unix makefile for the PC-PATR library and program
+# Steve McConnel, 24-Apr-2000
+
+@SET_MAKE@
+srcdir      = @srcdir@
+VPATH       = @srcdir@
+CC          = @CC@
+CFLAGS      = @ANSIFLAGS@ @CFLAGS@ @DEFS@ -I. -I.. -I../include
+RANLIB      = @RANLIB@
+INSTALL     = @INSTALL@
+COPY        = @COPYPROG@
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+
+.SUFFIXES: .op
+.c.op:
+	$(CC) $(CFLAGS) -pg -c -o $@ $<
+
+@make_shell@ = /bin/sh
+BINDIR = $(exec_prefix)/bin
+
+SOURCES=patr.h patrdef.h pcpatr.h version.h grammar.c lcparse.c copyfeat.c \
+		patrampl.c patrkimm.c patrlexi.c patalloc.c patrdata.c patrfunc.c \
+		patrstrg.c pcpatr.c pcpatr2.c pcpatr3.c unify.c userpatr.c wrtstyle.c \
+		cvtkp2wa.c parsepwk.c subsume.c amplpatr.c priunion.c constrai.c
+DLLFILES = Patr100.dsp patr100.idl PatrParser.cpp PatrParser.h PatrParser.rgs \
+		   StdAfx.cpp StdAfx.h patr100.cpp patr100.rc patr100.def resource.h \
+		   patr100ps.def patr100ps.mk
+DISTFILES = $(SOURCES) $(DLLFILES) Makefile.in Makefile.dj \
+			Patrlib.dsp Pcpatr.dsp
+
+
+TESTFILES = check.bat test/mac-test.tak
+TESTS=a bears eng-ela eng-ela2 eng-gfs gazdar shieber1 shieber2 shieber3 \
+	  shieber4 tomita woody
+TESTEXTS = .grm .lex .ana .sen .tak .lll
+DLLTESTFILES = WinPatrTest.frm WinPatrTest.frx WinPatrTest.vbp WinPatrTest.vbw
+#
+#  PC-PATR program and function library
+#
+OBJ =pcpatr.o pcpatr2.o pcpatr3.o
+LIBO=lcparse.o  grammar.o  patrfunc.o patrdata.o patalloc.o patrstrg.o \
+	 patrampl.o patrkimm.o patrlexi.o userpatr.o unify.o    wrtstyle.o \
+	 cvtkp2wa.o parsepwk.o copyfeat.o subsume.o  amplpatr.o priunion.o \
+	 constrai.o
+LIBS=../lib/libkimmo.a libpatr.a ../lib/libample.a ../lib/libcmd.a \
+	 ../lib/libopac.a ../lib/libcport.a
+
+pcpatr: $(OBJ) $(LIBS)
+	$(CC) -o pcpatr $(OBJ) libpatr.a $(LIBS) @LIBS@
+
+libpatr.a: $(LIBO)
+	rm -f libpatr.a
+	ar rc libpatr.a $(LIBO)
+	$(RANLIB) libpatr.a
+#
+#  PC-PATR program and function library compiled for profiling
+#
+OBJP =pcpatr.op   pcpatr2.op  pcpatr3.op
+LIBOP=lcparse.op  grammar.op  patrfunc.op patrdata.op patalloc.op patrstrg.op \
+	  patrampl.op patrkimm.op patrlexi.op userpatr.op unify.op    wrtstyle.op \
+	  cvtkp2wa.op parsepwk.op copyfeat.op subsume.op amplpatr.op  priunion.op \
+	  constrai.op
+LIBSP=../lib/libkimmo_p.a libpatr_p.a ../lib/libample_p.a ../lib/libcmd_p.a \
+	  ../lib/libopac_p.a ../lib/libcport_p.a
+
+pcpatr_p: $(OBJP) $(LIBSP)
+	$(CC) -pg -o pcpatr_p $(OBJP) libpatr_p.a $(LIBSP) @LIBS@
+
+libpatr_p.a: $(LIBOP)
+	rm -f libpatr_p.a
+	ar rc libpatr_p.a $(LIBOP)
+	$(RANLIB) libpatr_p.a
+#
+# sources unique to PC-PATR (user interface code)
+#
+pcpatr.o   pcpatr.op  : pcpatr.c   patr.h pcpatr.h
+pcpatr2.o  pcpatr2.op : pcpatr2.c  patr.h pcpatr.h
+pcpatr3.o  pcpatr3.op : pcpatr3.c  patr.h pcpatr.h
+#
+# sources shared as a library
+#
+lcparse.o  lcparse.op : lcparse.c  patr.h patrdef.h
+grammar.o  grammar.op : grammar.c  patr.h patrdef.h
+patrfunc.o patrfunc.op: patrfunc.c patr.h patrdef.h
+copyfeat.o copyfeat.op: copyfeat.c patr.h patrdef.h
+patrdata.o patrdata.op: $(SOURCES)
+patalloc.o patalloc.op: patalloc.c patr.h patrdef.h
+patrampl.o patrampl.op: patrampl.c patr.h patrdef.h ../ample/ample.h
+patrkimm.o patrkimm.op: patrkimm.c patr.h patrdef.h ../pckimmo/kimmo.h
+patrlexi.o patrlexi.op: patrlexi.c patr.h patrdef.h
+userpatr.o userpatr.op: userpatr.c patr.h patrdef.h
+unify.o    unify.op   : unify.c    patr.h patrdef.h
+subsume.o  subsume.op : subsume.c  patr.h patrdef.h
+wrtstyle.o wrtstyle.op: wrtstyle.c patr.h patrdef.h
+cvtkp2wa.o cvtkp2wa.op: cvtkp2wa.c patr.h patrdef.h ../pckimmo/kimmo.h
+parsepwk.o parsepwk.op: parsepwk.c patr.h patrdef.h ../pckimmo/kimmo.h
+amplpatr.o amplpatr.op: amplpatr.c patr.h patrdef.h
+priunion.o priunion.op: priunion.c patr.h patrdef.h
+constrai.o constrai.op: constrai.c patr.h patrdef.h
+patrstrg.o patrstrg.op: patrstrg.c patr.h patrdef.h
+
+#############################################################################
+
+libs: installdirs ../lib/libpatr.a ../include/patr.h
+
+profile_libs: installdirs ../lib/libpatr_p.a ../include/patr.h
+
+installdirs:
+	@if [ ! -d $(BINDIR) ];  then mkdir $(BINDIR);  fi
+	@if [ ! -d ../lib ];     then mkdir ../lib;     fi
+	@if [ ! -d ../include ]; then mkdir ../include; fi
+
+../lib/libpatr.a: libpatr.a
+	$(INSTALL) -m 644 -c libpatr.a ../lib
+	$(RANLIB) ../lib/libpatr.a
+../lib/libpatr_p.a: libpatr_p.a
+	$(INSTALL) -m 644 -c libpatr_p.a ../lib
+	$(RANLIB) ../lib/libpatr_p.a
+../include/patr.h: patr.h
+	$(COPY) patr.h ../include
+
+all: libs pcpatr
+
+profile: profile_libs pcpatr_p
+
+install: all
+	$(INSTALL) -s pcpatr $(BINDIR)
+
+uninstall:
+	rm -f $(BINDIR)/pcpatr
+
+check: pcpatr
+	@(Prev=none; cd test; \
+	for t in $(TESTS); do \
+		cd $$t; rm -f $$t.dif; \
+		../../pcpatr -t $$t.tak 2>/dev/null; \
+		if cmp $$t.log $$t.lll; then \
+		rm -f $$t.log; \
+		if [ "$$Prev"  = "bad"  ]; then echo ; fi; \
+		if [ "$$Prev" != "good" ]; then echo -n PC-PATR passed test; fi; \
+		Prev=good; \
+		else \
+		diff -c $$t.log $$t.lll >>$$t.dif; \
+		if [ "$$Prev" = "good" ]; then echo ; fi; \
+		if [ "$$Prev" != "bad" ]; then echo -n ':-(' PC-PATR failed test; fi; \
+		Prev=bad; \
+		fi; \
+		echo -n ' '$$t; \
+		cd ..; \
+	done; \
+	if [ "$Prev" != "none" ]; then echo ; fi; \
+	)
+
+mostlyclean:
+	rm -f *.o *.op *~
+
+clean: mostlyclean
+	rm -f lib*.a
+
+distclean: clean
+	rm -f pcpatr pcpatr_p Makefile TAGS
+	rm -f ../lib/libpatr.a ../lib/libpatr_p.a ../include/patr.h
+
+maintainer-clean: distclean
+
+TAGS: $(SOURCES)
+	etags $(SOURCES)
+
+doc dvi html info:
+	(cd ../doc; $(MAKE) patr$@)
+
+dist: $(DISTFILES)
+	for file in $(DISTFILES); do \
+		ln $$file $(distdir) || \
+		{ echo copying $$file instead; $(COPY) $$file $(distdir);}; \
+	done
+
+testdist:
+	mkdir $(distdir)/test
+	for file in $(TESTFILES); do \
+	  ln $$file $(distdir)/$$file \
+		|| { echo copying $$file instead; \
+			 $(COPY) $$file $(distdir)/$$file; }; \
+	done
+	for dir in $(TESTS); do \
+		mkdir $(distdir)/test/$$dir; \
+		for f in $(TESTEXTS); do \
+		if [ -f test/$$dir/$$dir$$f ]; then \
+			ln test/$$dir/$$dir$$f $(distdir)/test/$$dir || \
+			  { echo copying test/$$dir/$$dir$$f instead; \
+			$(COPY) test/$$dir/$$dir$$f $(distdir)/test/$$dir;}; \
+		fi; \
+		done; \
+		for f in test.bat; do \
+		if [ -f test/$$dir/$$f ]; then \
+			ln test/$$dir/$$f $(distdir)/test/$$dir || \
+			  { echo copying test/$$dir/$$f instead; \
+			$(COPY) test/$$dir/$$f $(distdir)/test/$$dir;}; \
+		fi; \
+		done; \
+	done
+	mkdir $(distdir)/dlltest
+	for file in $(DLLTESTFILES); do \
+	  ln dlltest/$$file $(distdir)/dlltest \
+		|| { echo copying $$file instead; \
+		 $(COPY) dlltest/$$file $(distdir)/dlltest; }; \
+	done
+
+############################################################################
+
+.PHONY: all check clean dist distclean doc dvi html info install \
+		libs maintainer-clean mostlyclean profile profile_libs testdist \
+		uninstall installdirs

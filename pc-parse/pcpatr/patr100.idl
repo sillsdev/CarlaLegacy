@@ -1,0 +1,171 @@
+// patr100.idl: IDL source for IPatrParser COM interface (patr100.dll)
+// Copyright 1999, 2000 by SIL International.  All rights reserved.
+
+// MIDL processes this file to produce the type library (patr100.tlb) and
+// marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(327879FF-5405-11D3-8FD4-00400541F6D3),
+		dual,
+		helpstring("IPatrParser Interface"),
+		pointer_default(unique)
+	]
+	interface IPatrParser : IDispatch
+	{
+		[id(1), helpstring("Parse a single sentence stored in a String")]
+			HRESULT ParseString(
+				[in] BSTR bstrSentence,
+				[out, retval] BSTR * pbstrParse);
+		[id(2), helpstring("Parse one or more sentences stored in a File")]
+			HRESULT ParseFile(
+				[in] BSTR bstrInput,
+				[in] BSTR bstrOutput);
+		[id(3), helpstring("Load a Grammar File into memory.")]
+			HRESULT LoadGrammarFile([in] BSTR bstrGrammarFile);
+		[id(4), helpstring("Load a Lexicon File into memory.")]
+			HRESULT LoadLexiconFile([in] BSTR bstrLexiconFile, [in] BOOL fAdd);
+		[id(5), helpstring("Clear both grammar and lexicon from memory")]
+			HRESULT Clear();
+		[id(6), helpstring("Open a log file")]
+			HRESULT OpenLog([in] BSTR bstrLogFile);
+		[id(7), helpstring("Close the log file")]
+			HRESULT CloseLog();
+		[propget, id(8), helpstring("name of the Grammar File")]
+			HRESULT GrammarFile([out, retval] BSTR * pVal);
+		[propget, id(9), helpstring("name of the Lexicon File")]
+			HRESULT LexiconFile([in] long iFile, [out, retval] BSTR * pVal);
+		[propget, id(10), helpstring("name of the Log File")]
+			HRESULT LogFile([out, retval] BSTR * pVal);
+		[propget, id(11), helpstring("enable Unification")]
+			HRESULT Unification([out, retval] BOOL * pVal);
+		[propput, id(11), helpstring("enable Unification")]
+			HRESULT Unification([in] BOOL newVal);
+		[propget, id(12), helpstring("Tree Display style")]
+			HRESULT TreeDisplay([out, retval] long * pVal);
+		[propput, id(12), helpstring("Tree Display style")]
+			HRESULT TreeDisplay([in] long newVal);
+		[propget, id(13), helpstring("enable parse tree display of Gloss information")]
+			HRESULT Gloss([out, retval] BOOL * pVal);
+		[propput, id(13), helpstring("enable parse tree display of Gloss information")]
+			HRESULT Gloss([in] BOOL newVal);
+		[propget, id(14), helpstring("the Maximum number of Ambiguous parses to display")]
+			HRESULT MaxAmbiguity([out, retval] long * pVal);
+		[propput, id(14), helpstring("the Maximum number of Ambiguous parses to display")]
+			HRESULT MaxAmbiguity([in] long newVal);
+		[propget, id(15), helpstring("enable Check for Cycles in feature structures")]
+			HRESULT CheckCycles([out, retval] BOOL * pVal);
+		[propput, id(15), helpstring("enable Check for Cycles in feature structures")]
+			HRESULT CheckCycles([in] BOOL newVal);
+		[propget, id(16), helpstring("the Comment Character")]
+			HRESULT CommentChar([out, retval] long * pVal);
+		[propput, id(16), helpstring("the Comment Character")]
+			HRESULT CommentChar([in] long newVal);
+		[propget, id(17), helpstring("the Time Limit for parses")]
+			HRESULT TimeLimit([out, retval] long * pVal);
+		[propput, id(17), helpstring("the Time Limit for parses")]
+			HRESULT TimeLimit([in] long newVal);
+		[propget, id(18), helpstring("enable Top Down Filtering")]
+			HRESULT TopDownFilter([out, retval] BOOL * pVal);
+		[propput, id(18), helpstring("enable Top Down Filtering")]
+			HRESULT TopDownFilter([in] BOOL newVal);
+		[propget, id(19), helpstring("Trim Empty Features in display")]
+			HRESULT TrimEmptyFeatures([out, retval] BOOL * pVal);
+		[propput, id(19), helpstring("Trim Empty Features in display")]
+			HRESULT TrimEmptyFeatures([in] BOOL newVal);
+		[propget, id(20), helpstring("Debugging Level for log output")]
+			HRESULT DebuggingLevel([out, retval] long * pVal);
+		[propput, id(20), helpstring("Debugging Level for log output")]
+			HRESULT DebuggingLevel([in] long newVal);
+		[propget, id(21), helpstring("the Lexicon Record Marker")]
+			HRESULT LexRecordMarker([out, retval] BSTR * pVal);
+		[propput, id(21), helpstring("the Lexicon Record Marker")]
+			HRESULT LexRecordMarker([in] BSTR newVal);
+		[propget, id(22), helpstring("the Lexicon Word Marker")]
+			HRESULT LexWordMarker([out, retval] BSTR * pVal);
+		[propput, id(22), helpstring("the Lexicon Word Marker")]
+			HRESULT LexWordMarker([in] BSTR newVal);
+		[propget, id(23), helpstring("the Lexicon Category Marker")]
+			HRESULT LexCategoryMarker([out, retval] BSTR * pVal);
+		[propput, id(23), helpstring("the Lexicon Category Marker")]
+			HRESULT LexCategoryMarker([in] BSTR newVal);
+		[propget, id(24), helpstring("the Lexicon Features Marker")]
+			HRESULT LexFeaturesMarker([out, retval] BSTR * pVal);
+		[propput, id(24), helpstring("the Lexicon Features Marker")]
+			HRESULT LexFeaturesMarker([in] BSTR newVal);
+		[propget, id(25), helpstring("the Lexicon Gloss Marker")]
+			HRESULT LexGlossMarker([out, retval] BSTR * pVal);
+		[propput, id(25), helpstring("the Lexicon Gloss Marker")]
+			HRESULT LexGlossMarker([in] BSTR newVal);
+		[propget, id(26), helpstring("display Only the Top Feature")]
+			HRESULT TopFeatureOnly([out, retval] BOOL * pVal);
+		[propput, id(26), helpstring("display Only the Top Feature")]
+			HRESULT TopFeatureOnly([in] BOOL newVal);
+		[propget, id(27), helpstring("enable Displaying Features")]
+			HRESULT DisplayFeatures([out, retval] BOOL * pVal);
+		[propput, id(27), helpstring("enable Displaying Features")]
+			HRESULT DisplayFeatures([in] BOOL newVal);
+		[propget, id(28), helpstring("display Features in a Flat format")]
+			HRESULT FlatFeatureDisplay([out, retval] BOOL * pVal);
+		[propput, id(28), helpstring("display Features in a Flat format")]
+			HRESULT FlatFeatureDisplay([in] BOOL newVal);
+		[propget, id(29), helpstring("enable partial results from Failures")]
+			HRESULT Failures([out, retval] BOOL * pVal);
+		[propput, id(29), helpstring("enable partial results from Failures")]
+			HRESULT Failures([in] BOOL newVal);
+		[propget, id(30), helpstring("CodePage for Unicode conversion")]
+			HRESULT CodePage([out, retval] long * pVal);
+		[propput, id(30), helpstring("CodePage for Unicode conversion")]
+			HRESULT CodePage([in] long newVal);
+		[id(31), helpstring("Disambiguate word analyses in an AMPLE Analysis file")]
+			HRESULT DisambiguateAnaFile([in] BSTR bstrInput, [in] BSTR bstrOutput);
+		[propget, id(32), helpstring("Write syntactic parse trees to the disambiguated Analysis file")]
+			HRESULT WriteAmpleParses([out, retval] BOOL * pVal);
+		[propput, id(32), helpstring("Write syntactic parse trees to the disambiguated Analysis file")]
+			HRESULT WriteAmpleParses([in] BOOL newVal);
+		[id(33), helpstring("Load an AMPLE ANA file as a lexicon into memory.")]
+			HRESULT LoadAnaFile([in] BSTR bstrAnaFile, [in] BOOL fAdd);
+		[id(34), helpstring("Clear the lexicon from memory and reload the same files.")]
+			HRESULT ReloadLexicon();
+		[propget, id(35), helpstring("Get the number of lexicon files currently loaded.")]
+			HRESULT LexiconFileCount([out, retval] long * pVal);
+		[propget, id(36), helpstring("promote default atoms before parsing")]
+			HRESULT PromoteDefaultAtoms([out, retval] BOOL * pVal);
+		[propput, id(36), helpstring("promote default atoms before parsing")]
+			HRESULT PromoteDefaultAtoms([in] BOOL newVal);
+		[propget, id(37), helpstring("sentence final punctuation characters")]
+			HRESULT SentenceFinalPunctuation([out, retval] BSTR * pVal);
+		[propput, id(37), helpstring("sentence final punctuation characters")]
+			HRESULT SentenceFinalPunctuation([in] BSTR newVal);
+		[propget, id(38), helpstring("interpret AMPLE properties as features")]
+			HRESULT AmplePropertyIsFeature([out, retval] BOOL * pVal);
+		[propput, id(38), helpstring("interpret AMPLE properties as features")]
+			HRESULT AmplePropertyIsFeature([in] BOOL newVal);
+	};
+
+[
+	uuid(327879F1-5405-11D3-8FD4-00400541F6D3),
+	version(1.0),
+	helpstring("patr100 1.0 Type Library")
+]
+library PATR100Lib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(32787A00-5405-11D3-8FD4-00400541F6D3),
+		helpstring("PatrParser Class")
+	]
+	coclass PatrParser
+	{
+		[default] interface IPatrParser;
+	};
+};
+
+// Local Variables:
+// tab-width:4
+// End:

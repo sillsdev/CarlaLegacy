@@ -1,0 +1,55 @@
+XAMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+	AMPLE with experimental enhancement: PC-PATR word grammar
+Experimental version compiled Mar 29 2001 09:00:44
+				Analysis Performed Thu Mar 29 09:05:51 2001
+
+Control files, dictionary files, and responses
+	  from file hgtest.cmd:
+hgad01.ctl
+hgancd.tab
+
+hgsf01.dic
+hgrt01.dic
+
+MORPH_CHECK: Unknown morphname "*sha" in co-occurrence constraint
+		*sha   +/ _ ... AFAR
+MORPH_CHECK: Unknown morphname "CND" in co-occurrence constraint
+		CND   +/ 3 ... _  +/ 2 ... _  +/ 1 ... _
+MORPH_CHECK: Unknown morphname "1PRS2" in co-occurrence constraint
+		PST   +/ _ ... 1PRS2  +/ _ ... 12  +/ _ ... 1  +/ _ ... 3
+MORPH_CHECK: Unknown morphname "1PRS2" in suffix adhoc pair
+MORPH_CHECK: Unknown morphname "DIS" in suffix adhoc pair
+hgintx.ctl
+	Using the following as word-formation characters:
+	 Caseless alphabetic characters =
+		' ~
+	 Lower/uppercase alphabetic characters (lowercase above, uppercase below) =
+		a b c d e f g h i j k l m n o p q r s t u v w x y z
+		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+Input  file: hgtest.txt
+Output file: hgtest.and
+
+ANALYSIS STATISTICS:   78 words processed.
+   Ambiguity Levels:
+					   70 words with  1 analysis.
+						6 words with  2 analyses.
+						2 words with  3 analyses.
+   Root Tests:
+				  SEC_ST called    85 times, rejected 0.
+				  PEC_ST called    85 times, rejected 0.
+   Suffix Tests:
+			 CATEGORY_ST called  1178 times, rejected 752.
+				ORDER_ST called   426 times, rejected 60.
+		  FORESHORTEN_ST called   366 times, rejected 0.
+			  MLOWERS_ST called   366 times, rejected 0.
+				  SEC_ST called   366 times, rejected 5.
+				  PEC_ST called   361 times, rejected 0.
+				ADHOC_ST called   361 times, rejected 12.
+   Final Tests:
+			 CATEGORY_FT called   139 times, rejected 18.
+			 MLOWERED_FT called   121 times, rejected 18.
+				ORDER_FT called   103 times, rejected 0.
+				  MEC_FT called   103 times, rejected 0.
+				  MCC_FT called   103 times, rejected 5.
