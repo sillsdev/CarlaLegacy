@@ -19,7 +19,7 @@
 			ATLMinimizesCRunTimeLibraryUsage="FALSE">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\include,..\pcpatr"
+				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\pcpatr,..\pckimmo"
 				PreprocessorDefinitions="NDEBUG;_WINDOWS;HAVE_CONFIG_H;WIN32;EXPERIMENTAL"
 				RuntimeLibrary="0"
 				PrecompiledHeaderFile=".\Release-dll/XAmpledll.pch"
@@ -75,7 +75,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\include,..\pcpatr"
+				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\pcpatr,..\pckimmo"
 				PreprocessorDefinitions="_WINDOWS;HAVE_CONFIG_H;_DEBUG;WIN32;EXPERIMENTAL"
 				RuntimeLibrary="1"
 				PrecompiledHeaderFile=".\Debug-dll/XAmpledll.pch"

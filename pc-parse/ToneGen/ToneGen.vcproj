@@ -21,7 +21,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,../include,..\TonePGLib"
+				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,..\TonePGLib,..\stamp"
 				PreprocessorDefinitions="_CONSOLE,HAVE_CONFIG_H,_DEBUG,WIN32,TONEPARS,HAVE_ITOA"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="5"
@@ -77,7 +77,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,../include,..\TonePGLib"
+				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,..\TonePGLib,..\stamp"
 				PreprocessorDefinitions="WIN32,NDEBUG,_CONSOLE,HAVE_CONFIG_H,TONEPARS,TONEGEN,HAVE_ITOA"
 				StringPooling="TRUE"
 				RuntimeLibrary="4"

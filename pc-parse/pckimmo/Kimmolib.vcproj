@@ -45,7 +45,9 @@
 			<Tool
 				Name="VCPostBuildEventTool"/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				Description="Configuring for Visual C/C++"
+				CommandLine="$(SolutionDir)\winconfig.bat $(SolutionDir)\"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -65,7 +67,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				ImproveFloatingPointConsistency="TRUE"
-				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\pcpatr,..\ample,../include"
+				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\pcpatr,..\ample"
 				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,WIN32"
 				RuntimeLibrary="5"
 				DisableLanguageExtensions="TRUE"
@@ -82,14 +84,16 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile=".\..\lib\Debug\Kimmolib.lib"
+				OutputFile="..\lib\Debug\Kimmolib.lib"
 				SuppressStartupBanner="TRUE"/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				Description="Configuring for Visual C/C++"
+				CommandLine="$(SolutionDir)\winconfig.bat $(SolutionDir)\"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -134,7 +138,9 @@
 			<Tool
 				Name="VCPostBuildEventTool"/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				Description="Configuring for Visual C/C++"
+				CommandLine="$(SolutionDir)\winconfig.bat $(SolutionDir)\"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool

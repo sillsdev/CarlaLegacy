@@ -75,7 +75,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,../include"
+				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib"
 				PreprocessorDefinitions="_WINDOWS;HAVE_CONFIG_H;_DEBUG;WIN32"
 				RuntimeLibrary="1"
 				PrecompiledHeaderFile=".\Debug-dll/Ampledll.pch"
@@ -91,7 +91,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="amplelib.lib opaclib.lib cportlib.lib libcd.lib odbc32.lib odbccp32.lib oldnames.lib"
+				AdditionalDependencies="patrlib.lib amplelib.lib opaclib.lib cportlib.lib libcd.lib odbc32.lib odbccp32.lib oldnames.lib"
 				OutputFile="Debug-dll/ample322.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"

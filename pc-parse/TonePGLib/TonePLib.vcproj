@@ -21,7 +21,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,../include"
+				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,..\stamp"
 				PreprocessorDefinitions="WIN32,NDEBUG,_LIB,HAVE_CONFIG_H,TONEPARS,HAVE_ITOA"
 				StringPooling="TRUE"
 				RuntimeLibrary="4"
@@ -45,7 +45,9 @@
 			<Tool
 				Name="VCPostBuildEventTool"/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				Description="Configuring for Visual C/C++"
+				CommandLine="$(SolutionDir)\winconfig.bat $(SolutionDir)\"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -65,7 +67,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,../include"
+				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,..\stamp"
 				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,WIN32,TONEPARS"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="5"
@@ -89,7 +91,9 @@
 			<Tool
 				Name="VCPostBuildEventTool"/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				Description="Configuring for Visual C/C++"
+				CommandLine="$(SolutionDir)\winconfig.bat $(SolutionDir)\"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool

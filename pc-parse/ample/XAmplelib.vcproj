@@ -21,7 +21,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				ImproveFloatingPointConsistency="TRUE"
-				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\include,..\pcpatr"
+				AdditionalIncludeDirectories="..;..\cmdlib;..\cportlib;..\opaclib;..\pcpatr;..\pckimmo"
 				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,WIN32,EXPERIMENTAL"
 				RuntimeLibrary="5"
 				DisableLanguageExtensions="TRUE"
@@ -45,7 +45,9 @@
 			<Tool
 				Name="VCPostBuildEventTool"/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				Description="Configuring for Visual C/C++"
+				CommandLine="$(SolutionDir)\winconfig.bat $(SolutionDir)\"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -65,7 +67,7 @@
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
 				ImproveFloatingPointConsistency="TRUE"
-				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\include,..\pcpatr"
+				AdditionalIncludeDirectories="..;..\cmdlib;..\cportlib;..\opaclib;..\pcpatr;..\pckimmo"
 				PreprocessorDefinitions="NDEBUG,_WINDOWS,HAVE_CONFIG_H,WIN32,EXPERIMENTAL"
 				StringPooling="TRUE"
 				RuntimeLibrary="4"
@@ -90,7 +92,9 @@
 			<Tool
 				Name="VCPostBuildEventTool"/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				Description="Configuring for Visual C/C++"
+				CommandLine="$(SolutionDir)\winconfig.bat $(SolutionDir)\"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -110,7 +114,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				ImproveFloatingPointConsistency="TRUE"
-				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,../include"
+				AdditionalIncludeDirectories="..;..\cmdlib;..\cportlib;..\opaclib;..\pcpatr;..\pckimmo"
 				PreprocessorDefinitions="_DEBUG,_WINDOWS,HAVE_CONFIG_H,WIN32"
 				RuntimeLibrary="5"
 				DisableLanguageExtensions="TRUE"
@@ -134,7 +138,9 @@
 			<Tool
 				Name="VCPostBuildEventTool"/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCPreBuildEventTool"
+				Description="Configuring for Visual C/C++"
+				CommandLine="$(SolutionDir)\winconfig.bat $(SolutionDir)\"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
