@@ -54,6 +54,17 @@
 		<npContents6 checkedOff="no"/>
 		<npContents7 checkedOff="no"/>
 		<npContents8 checkedOff="no"/>
+	<npPossAgrPossFirst checked="no"/>
+	<npPossAgrPossExclusive checked="no"/>
+	<npPossAgrPossInclusive checked="no"/>
+	<npPossAgrPossSecond checked="no"/>
+	<npPossAgrPossThird checked="no"/>
+	<npPossAgrPossSingular checked="no"/>
+	<npPossAgrPossPlural checked="no"/>
+	<npPossAgrPossDual checked="no"/>
+	<npPossAgrPossMasculine checked="no"/>
+	<npPossAgrPossFeminine checked="no"/>
+	<npPossAgrPossNeuter checked="no"/>
 	</np>
 	<prop checkedOff="no">
 		<example/>
@@ -86,7 +97,7 @@
 		<partitiveExample/>
 		<pronounCategory/>
 	</pron>
-	<pp checkedOff="no" modifiers="no" modifierType="degree" degreePos="unknown" degreeRestricted="unrestricted" ordinalPos="unknown" ordinalRestricted="unrestricted" mannerPos="unknown" mannerRestricted="unrestricted" pPos="unknown" pType="word" attaches="edge" alone="no" locative="yes" ppComp="no" sentComp="no">
+	<pp checkedOff="no" modifiers="no" modifierType="degree" degreePos="unknown" degreeRestricted="unrestricted" ordinalPos="unknown" ordinalRestricted="unrestricted" mannerPos="unknown" mannerRestricted="unrestricted" pPos="unknown" pType="word" attaches="edge" alone="yes" locative="yes" ppComp="no" sentComp="no">
 		<example/>
 		<ppExample/>
 		<aloneExample/>
@@ -95,7 +106,7 @@
 		<sentExample/>
 		<pCategory/>
 	</pp>
-	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="dp" passive="yes" passiveAgent="no" passiveAux="no" passiveAgentCat="dp">
+	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="dp" passive="yes" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
 		<example/>
 		<auxExample/>
 		<auxNonfiniteExample/>
@@ -115,6 +126,53 @@
 		<ipContents7 checkedOff="no"/>
 		<ipContents8 checkedOff="no"/>
 		<ipContents9 checkedOff="no"/>
+<ipAgrFeatFirstSubject checked="no"/>
+<ipAgrFeatFirstObject checked="no"/>
+<ipAgrFeatFirstExclusiveSubject checked="no"/>
+<ipAgrFeatFirstExclusiveObject checked="no"/>
+<ipAgrFeatFirstInclusiveSubject checked="no"/>
+<ipAgrFeatFirstInclusiveObject checked="no"/>
+<ipAgrFeatSecondSubject checked="no"/>
+<ipAgrFeatSecondObject checked="no"/>
+<ipAgrFeatThirdSubject checked="no"/>
+<ipAgrFeatThirdObject checked="no"/>
+<ipAgrFeatSingularSubject checked="no"/>
+<ipAgrFeatSingularObject checked="no"/>
+<ipAgrFeatDualSubject checked="no"/>
+<ipAgrFeatDualObject checked="no"/>
+<ipAgrFeatPluralSubject checked="no"/>
+<ipAgrFeatPluralObject checked="no"/>
+<ipAgrFeatMasculineSubject checked="no"/>
+<ipAgrFeatMasculineObject checked="no"/>
+<ipAgrFeatFeminineSubject checked="no"/>
+<ipAgrFeatFeminineObject checked="no"/>
+<ipAgrFeatNeuterSubject checked="no"/>
+<ipAgrFeatNeuterObject checked="no"/>
+<ipAgrFeatAnimateSubject checked="no"/>
+<ipAgrFeatAnimateObject checked="no"/>
+<ipAgrFeatMinusAnimateSubject checked="no"/>
+<ipAgrFeatMinusAnimateObject checked="no"/>
+<ipAgrFeatClassClassNumberSubject checked="no"/>
+<ipAgrFeatClassClassNumberObject checked="no"/>
+<ipInflFeatPresent checked="no"/>
+<ipInflFeatPast checked="no"/>
+<ipInflFeatFuture checked="no"/>
+<ipInflFeatCompletive checked="no"/>
+<ipInflFeatContinuative checked="no"/>
+<ipInflFeatHabitual checked="no"/>
+<ipInflFeatImperfective checked="no"/>
+<ipInflFeatIncompletive checked="no"/>
+<ipInflFeatPerfective checked="no"/>
+<ipInflFeatPotential checked="no"/>
+<ipInflFeatProgressive checked="no"/>
+<ipInflFeatStative checked="no"/>
+<ipInflFeatDeclarative checked="no"/>
+<ipInflFeatImperative checked="no"/>
+<ipInflFeatInterrogative checked="no"/>
+<ipInflFeatIrrealis checked="no"/>
+<ipInflFeatRealis checked="no"/>
+<ipInflFeatFinite checked="no"/>
+<ipInflFeatMinusFinite checked="no"/>
 	</ip>
 	<comp checkedOff="no">
 		<finiteExample/>

@@ -38,6 +38,10 @@
 >
 <!ELEMENT featureExplanation (#PCDATA)>
 <!ELEMENT featureItem (#PCDATA)>
+<!ATTLIST featureItem
+  dataValue CDATA #REQUIRED
+  name CDATA #REQUIRED
+>
 <!ELEMENT featureRow (featureType, featureItem, featureExplanation)+>
 <!ELEMENT featureType (#PCDATA)>
 <!ELEMENT file (#PCDATA)>

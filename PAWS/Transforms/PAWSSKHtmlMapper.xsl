@@ -78,7 +78,7 @@ var SpecPosUnknown = 4;
    PawsSKAnswers = new ActiveXObject("MicroSoft.XMLDOM");
    PawsSKAnswers.async = false;
    PawsSKAnswers = div.XMLDocument;
-<xsl:apply-templates select="//textBox | //groupName | //catMap" mode="load"/>
+<xsl:apply-templates select="//textBox | //groupName | //catMap | //featureItem" mode="load"/>
 example = PawsSKAnswers.selectSingleNode("//leftOffAt");
 example.text = "<xsl:value-of select="//page/@id"/>.htm";
 
@@ -153,7 +153,7 @@ function GetPositionBasedOnHead(sAttr, bSame)
 function saveData()
 {
 var sTemp;
-<xsl:apply-templates select="//textBox | //groupName | //catMap" mode="save"/>
+<xsl:apply-templates select="//textBox | //groupName | //catMap | //featureItem" mode="save"/>
   div.save(strUserDataStore);
 }
 function ButtonNext()
@@ -255,6 +255,33 @@ else
 example = PawsSKAnswers.selectSingleNode("//<xsl:value-of select="$Section"/>/<xsl:value-of select="./@dataItem"/>");
 //TODO: figure what to do if any of these are missing!
 example.text = <xsl:value-of select="@id"/>.value;
+</xsl:template>
+  <!--
+  - - - - - - - -
+  featureItem load
+   - - - - - - - -
+  -->
+  <xsl:template match="//featureItem" mode="load">
+	elem = PawsSKAnswers.selectSingleNode("//<xsl:value-of select="$Section"/>/<xsl:value-of select="@dataValue"/>");
+	attr = elem.getAttribute("checked")
+	if (attr == "yes")
+		  <xsl:value-of select="@name"/>.checked = true;
+	else
+			  <xsl:value-of select="@name"/>.checked = false;
+  </xsl:template>
+  <!--
+  - - - - - - - -
+  featureItem save
+   - - - - - - - -
+  -->
+  <xsl:template match="//featureItem" mode="save">
+	elem = PawsSKAnswers.selectSingleNode("//<xsl:value-of select="$Section"/>/<xsl:value-of select="./@dataValue"/>");
+	attr = elem.getAttribute("checked");
+	//TODO: figure what to do if any of these are missing!
+	sTemp = "no" // use default if all else fails...
+	if (<xsl:value-of select="@name"/>.checked)
+	  sTemp = "yes";
+	elem.setAttribute("checked", sTemp);
 </xsl:template>
   <!--
   - - - - - - - -
@@ -443,9 +470,13 @@ Refresh();
   <!-- featureItem -->
   <xsl:template match="//featureItem">
 	<td valign="top">
-	  <span class="feature">
-		<xsl:value-of select="."/>
-	  </span>
+	  <input type="checkbox">
+		<xsl:attribute name="name"><xsl:value-of select="@name"/></xsl:attribute>
+		  <xsl:attribute name="value"><xsl:value-of select="@dataValue"/></xsl:attribute>
+		<span class="feature">
+		  <xsl:value-of select="."/>
+		</span>
+	  </input>
 	</td>
   </xsl:template>
   <!-- featureRow -->
@@ -781,6 +812,7 @@ Refresh();
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+09-Jul-2002   Andy Black  Add checkbox within featureItem element
 28-Jun-2002  Andy Black  Allow section attribute for textbox element
 26-Jun-2002  Andy Black  Change radio prompt name to end with RPrompt
 10-Jun-2002  Andy Black  Added indent to default prompt

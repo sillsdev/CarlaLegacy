@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPAgrFeatures">
 	<title level="2">Basic, Single-Clause Sentences - Agreement Features</title>
 	<instruction>Verbs and auxiliaries may also carry agreement features that force agreement with the subject, and sometimes also with the direct object.  Key the appropriate features on the relevant affixes, including pronominal clitics that may attach to the verb.
@@ -8,142 +8,142 @@
 		<featureChart>
 			<featureRow>
 				<featureType>person</featureType>
-				<featureItem>first_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatFirstSubject" name="IPFeatAgrFirstSubject">first_subject</featureItem>
 				<featureExplanation>the subject must be first person</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>first_object</featureItem>
+				<featureItem dataValue="ipAgrFeatFirstObject" name="IPFeatAgrFirstObject">first_object</featureItem>
 				<featureExplanation>the object must be first person</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>first_exclusive_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatFirstExclusiveSubject" name="IPFeatAgrFirstExclusiveSubject">first_exclusive_subject</featureItem>
 				<featureExplanation>the subject must be first person exclusive</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>first_exclusive_object</featureItem>
+				<featureItem dataValue="ipAgrFeatFirstExclusiveObject" name="IPFeatAgrFirstExclusiveObject">first_exclusive_object</featureItem>
 				<featureExplanation>the object must be first person exclusive</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>first_inclusive_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatFirstInclusiveSubject" name="IPFeatAgrFirstInclusiveSubject">first_inclusive_subject</featureItem>
 				<featureExplanation>the subject must be first person inclusive</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>first_inclusive_object</featureItem>
+				<featureItem dataValue="ipAgrFeatFirstInclusiveObject" name="IPFeatAgrFirstInclusiveObject">first_inclusive_object</featureItem>
 				<featureExplanation>the object must be first person inclusive</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>second_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatSecondSubject" name="IPFeatAgrSecondSubject">second_subject</featureItem>
 				<featureExplanation>the subject must be second person</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>second_object</featureItem>
+				<featureItem dataValue="ipAgrFeatSecondObject" name="IPFeatAgrSecondObject">second_object</featureItem>
 				<featureExplanation>the object must be second person</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>third_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatThirdSubject" name="IPFeatAgrThirdSubject">third_subject</featureItem>
 				<featureExplanation>the subject must be third person</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>third_object</featureItem>
+				<featureItem dataValue="ipAgrFeatThirdObject" name="IPFeatAgrThirdObject">third_object</featureItem>
 				<featureExplanation>the object must be third person</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType>number</featureType>
-				<featureItem>singular_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatSingularSubject" name="IPFeatAgrSingularSubject">singular_subject</featureItem>
 				<featureExplanation>the subject must be singular</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>singular_object</featureItem>
+				<featureItem dataValue="ipAgrFeatSingularObject" name="IPFeatAgrSingularObject">singular_object</featureItem>
 				<featureExplanation>the object must be singular</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>dual_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatDualSubject" name="IPFeatAgrDualSubject">dual_subject</featureItem>
 				<featureExplanation>the subject must be dual</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>dual_object</featureItem>
+				<featureItem dataValue="ipAgrFeatDualObject" name="IPFeatAgrDualObject">dual_object</featureItem>
 				<featureExplanation>the object must be dual</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>plural_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatPluralSubject" name="IPFeatAgrPluralSubject">plural_subject</featureItem>
 				<featureExplanation>the subject must be plural</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>plural_object</featureItem>
+				<featureItem dataValue="ipAgrFeatPluralObject" name="IPFeatAgrPluralObject">plural_object</featureItem>
 				<featureExplanation>the object must be plural</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType>gender</featureType>
-				<featureItem>masculine_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatMasculineSubject" name="IPFeatAgrMasculineSubject">masculine_subject</featureItem>
 				<featureExplanation>the subject must be masculine</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>masculine_object</featureItem>
+				<featureItem dataValue="ipAgrFeatMasculineObject" name="IPFeatAgrMasculineObject">masculine_object</featureItem>
 				<featureExplanation>the object must be masculine</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>feminine_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatFeminineSubject" name="IPFeatAgrFeminineSubject">feminine_subject</featureItem>
 				<featureExplanation>the subject must be feminine</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>feminine_object</featureItem>
+				<featureItem dataValue="ipAgrFeatFeminineObject" name="IPFeatAgrFeminineObject">feminine_object</featureItem>
 				<featureExplanation>the object must be feminine</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>neuter_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatNeuterSubject" name="IPFeatAgrNeuterSubject">neuter_subject</featureItem>
 				<featureExplanation>the subject must be neuter</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>neuter_object</featureItem>
+				<featureItem dataValue="ipAgrFeatNeuterObject" name="IPFeatAgrNeuterObject">neuter_object</featureItem>
 				<featureExplanation>the object must be neuter</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType>animacy</featureType>
-				<featureItem>animate_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatAnimateSubject" name="IPFeatAgrAnimateSubject">animate_subject</featureItem>
 				<featureExplanation>the subject must be animate</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>animate_object</featureItem>
+				<featureItem dataValue="ipAgrFeatAnimateObject" name="IPFeatAgrAnimateObject">animate_object</featureItem>
 				<featureExplanation>the object must be animate</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>-animate_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatMinusAnimateSubject" name="IPFeatAgrMinusAnimateSubject">-animate_subject</featureItem>
 				<featureExplanation>the subject must be inanimate</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>-animate_object</featureItem>
+				<featureItem dataValue="ipAgrFeatMinusAnimateObject" name="IPFeatAgrMinusAnimateObject">-animate_object</featureItem>
 				<featureExplanation>the object must be inanimate</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType>class</featureType>
-				<featureItem>class_##_subject</featureItem>
+				<featureItem dataValue="ipAgrFeatClassClassNumberSubject" name="IPFeatAgrClassClassNumberSubject">class_##_subject</featureItem>
 				<featureExplanation>(replace ## with the class number up to 99)</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>class_##_object</featureItem>
+				<featureItem dataValue="ipAgrFeatClassClassNumberObject" name="IPFeatAgrClassClassNumberObject">class_##_object</featureItem>
 				<featureExplanation>(replace ## with the class number up to 99)</featureExplanation>
 			</featureRow>
 		</featureChart>

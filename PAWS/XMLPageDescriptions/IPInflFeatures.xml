@@ -8,97 +8,97 @@
 		<featureChart explanations="no">
 			<featureRow>
 				<featureType>tense</featureType>
-				<featureItem>present</featureItem>
+				<featureItem dataValue="ipInflFeatPresent" name="IPInflFeatPresent">present</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>past</featureItem>
+				<featureItem dataValue="ipInflFeatPast" name="IPInflFeatPast">past</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>future</featureItem>
+				<featureItem dataValue="ipInflFeatFuture" name="IPInflFeatFuture">future</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType>aspect</featureType>
-				<featureItem>completive</featureItem>
+				<featureItem dataValue="ipInflFeatCompletive" name="IPInflFeatCompletive">completive</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>continuative</featureItem>
+				<featureItem dataValue="ipInflFeatContinuative" name="IPInflFeatContinuative">continuative</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>habitual</featureItem>
+				<featureItem dataValue="ipInflFeatHabitual" name="IPInflFeatHabitual">habitual</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>imperfective</featureItem>
+				<featureItem dataValue="ipInflFeatImperfective" name="IPInflFeatImperfective">imperfective</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>incompletive</featureItem>
+				<featureItem dataValue="ipInflFeatIncompletive" name="IPInflFeatIncompletive">incompletive</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>perfective</featureItem>
+				<featureItem dataValue="ipInflFeatPerfective" name="IPInflFeatPerfective">perfective</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>potential</featureItem>
+				<featureItem dataValue="ipInflFeatPotential" name="IPInflFeatPotential">potential</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>progressive</featureItem>
+				<featureItem dataValue="ipInflFeatProgressive" name="IPInflFeatProgressive">progressive</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>stative</featureItem>
+				<featureItem dataValue="ipInflFeatStative" name="IPInflFeatStative">stative</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType>mood</featureType>
-				<featureItem>declarative</featureItem>
+				<featureItem dataValue="ipInflFeatDeclarative" name="IPInflFeatDeclarative">declarative</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>imperative</featureItem>
+				<featureItem dataValue="ipInflFeatImperative" name="IPInflFeatImperative">imperative</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>interrogative</featureItem>
+				<featureItem dataValue="ipInflFeatInterrogative" name="IPInflFeatInterrogative">interrogative</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>irrealis</featureItem>
+				<featureItem dataValue="ipInflFeatIrrealis" name="IPInflFeatIrrealis">irrealis</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>realis</featureItem>
+				<featureItem dataValue="ipInflFeatRealis" name="IPInflFeatRealis">realis</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType>other</featureType>
-				<featureItem>finite</featureItem>
+				<featureItem dataValue="ipInflFeatFinite" name="IPInflFeatFinite">finite</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
 				<featureType/>
-				<featureItem>-finite</featureItem>
+				<featureItem dataValue="ipInflFeatMinusFinite" name="IPInflFeatMinusFinite">-finite</featureItem>
 				<featureExplanation/>
 			</featureRow>
 		</featureChart>

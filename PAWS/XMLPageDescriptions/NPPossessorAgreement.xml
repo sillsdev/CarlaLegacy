@@ -28,57 +28,57 @@ We will deal with each type in turn.
 <featureChart types="no">
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_first</featureItem>
+					<featureItem dataValue="npPossAgrPossFirst" name="NPPossAgrPossFirst">poss_first</featureItem>
 					<featureExplanation>the possessor must be first person</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_exclusive</featureItem>
+					<featureItem dataValue="npPossAgrPossExclusive" name="NPPossAgrPossExclusive">poss_exclusive</featureItem>
 					<featureExplanation>the possessor must be first person exclusive</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_inclusive</featureItem>
+					<featureItem dataValue="npPossAgrPossInclusive" name="NPPossAgrPossInclusive">poss_inclusive</featureItem>
 					<featureExplanation>the possessor must be first person inclusive</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_second</featureItem>
+					<featureItem dataValue="npPossAgrPossSecond" name="NPPossAgrPossSecond">poss_second</featureItem>
 					<featureExplanation>the possessor must be second person</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_third</featureItem>
+					<featureItem dataValue="npPossAgrPossThird" name="NPPossAgrPossThird">poss_third</featureItem>
 					<featureExplanation>the possessor must be third person</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_singular</featureItem>
+					<featureItem dataValue="npPossAgrPossSingular" name="NPPossAgrPossSingular">poss_singular</featureItem>
 					<featureExplanation>the possessor must be singular in number</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_plural</featureItem>
+					<featureItem dataValue="npPossAgrPossPlural" name="NPPossAgrPossPlural">poss_plural</featureItem>
 					<featureExplanation>the possessor must be plural in number</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_dual</featureItem>
+					<featureItem dataValue="npPossAgrPossDual" name="NPPossAgrPossDual">poss_dual</featureItem>
 					<featureExplanation>the possessor must be dual in number</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_masculine</featureItem>
+					<featureItem dataValue="npPossAgrPossMasculine" name="NPPossAgrPossMasculine">poss_masculine</featureItem>
 					<featureExplanation>the possessor must be masculine in gender</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_feminine</featureItem>
+					<featureItem dataValue="npPossAgrPossFeminine" name="NPPossAgrPossFeminine">poss_feminine</featureItem>
 					<featureExplanation>the possessor must be feminine in gender</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
-					<featureItem>poss_neuter</featureItem>
+					<featureItem dataValue="npPossAgrPossNeuter" name="NPPossAgrPossNeuter">poss_neuter</featureItem>
 					<featureExplanation>the possessor must be neuter in gender</featureExplanation>
 				</featureRow>
 			</featureChart>
