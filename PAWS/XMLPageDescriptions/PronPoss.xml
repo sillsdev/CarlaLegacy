@@ -21,6 +21,7 @@
 				<br/>Are the stand alone possessive pronouns built by adding an affix to other pronouns?</prompt>
 			<radio id="PronPossAffixNo" dataValue="no">No, they are distinct, stand alone words</radio>
 			<radio id="PronPossAffixYes" dataValue="yes">Yes, one or more affixes are used to make another pronoun possessive</radio>
+			<radio id="PronPossAffixBoth" dataValue="both">Yes, one or more affixes are used to make another pronoun possessive, but some forms are distinct, stand alone words</radio>
 		</radioGroup>
 		<instruction id="PronPossAffixNoInstruction" show="swPronPossAffixNo">In the lexicon, mark each possessive pronoun with the feature <feature>possessive</feature> and also
 <ul>
@@ -30,6 +31,13 @@
 			</ul>
 		</instruction>
 		<instruction id="PronPossAffixYesInstruction" show="swPronPossAffixYes">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.</instruction>
+		<instruction id="PronPossAffixBothInstruction" show="swPronPossAffixBoth">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.  In addition, mark each stand alone possessive pronoun with the feature <feature>possessive</feature> and also
+<ul>
+				<li>all the relevant person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
+				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), and</li>
+				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
+			</ul>
+		</instruction>
 		<br/>
 		<buttons>
 			<button id="PronPossBack" value="Back" goto="PronMain.htm"/>
@@ -48,5 +56,10 @@
 		<whenRadio button="PronPossYes"/>
 		<and/>
 		<whenRadio button="PronPossAffixYes"/>
+	</showWhen>
+	<showWhen id="swPronPossAffixBoth">
+		<whenRadio button="PronPossYes"/>
+		<and/>
+		<whenRadio button="PronPossAffixBoth"/>
 	</showWhen>
 </page>

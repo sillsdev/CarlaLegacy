@@ -21,7 +21,7 @@
 		</prompt>
 		<textBox id="PronRecipSentExample" dataItem="recipSentExample" show="swPronRecipYesOrVerbal"/>
 		<radioGroup id="PronRecipYesTable" show="swPronRecipYes">
-			<groupName dataItem="recipAffix" default="no">RPronRecipAffix</groupName>
+			<groupName dataItem="recipAffix" default="yes">RPronRecipAffix</groupName>
 			<prompt>
 				<br/>Are the reciprocals built by adding an affix to other pronouns?</prompt>
 			<radio id="PronRecipAffixYes" dataValue="yes">Yes, one or more affixes are chosen among to make another pronoun reciprocal</radio>

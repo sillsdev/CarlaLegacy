@@ -258,7 +258,8 @@
 		<whose/>
 		<whPronCategory/>
 	</q>
-	<relcl checkedOff="no" type="none" compCP="no" whAndComp="no" relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
+	<relcl checkedOff="no" type="none" compCP="no" whAndComp="no" relWord="yes" relCliticPos="unknown"
+relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
 		<example/>
 		<sentExample/>
 		<headlessExample/>

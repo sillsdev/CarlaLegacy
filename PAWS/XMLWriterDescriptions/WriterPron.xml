@@ -1,630 +1,632 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
-  <section1 id="sPron">
-	<secTitle>Pronouns</secTitle>
-	<p>
-	  <content>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals, and indefinites.  These pronouns normally stand alone in the place of a nominal phrase, but they can also be modified by a partitive phrase and in some languages may be modified by determiners and quantifiers.  Each of these types and issues will be looked at in turn, after covering the agreement features on all types of pronouns.
+	<section1 id="sPron">
+		<secTitle>Pronouns</secTitle>
+		<p>
+			<content>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals, and indefinites.  These pronouns normally stand alone in the place of a nominal phrase, but they can also be modified by a partitive phrase and in some languages may be modified by determiners and quantifiers.  Each of these types and issues will be looked at in turn, after covering the agreement features on all types of pronouns.
 </content>
-	</p>
-	<section2 id="sPronAgreement">
-	  <secTitle>Agreement Features on Pronouns</secTitle>
-	  <p>
-		<content>Pronouns normally have either more than or the same number of agreement features as nouns have.  The following chart shows the agreement features used for pronouns in </content>
-		<langName/>
-		<content>.</content>
-	  </p>
-	  <example>
-		<table border="1">
-		  <headerRow>
-			<headerCol>Type of feature</headerCol>
-			<headerCol>Feature</headerCol>
-		  </headerRow>
-		  <row show="swPronAgrFeatFirst">
-			<col>
-			  <content>person</content>
-			</col>
-			<col>
-			  <content>first</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatFirstExclusive">
-			<col>
-			  <content>person</content>
-			</col>
-			<col>
-			  <content>first exclusive</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatFirstInclusive">
-			<col>
-			  <content>person</content>
-			</col>
-			<col>
-			  <content>first inclusive</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatSecond">
-			<col>
-			  <content>person</content>
-			</col>
-			<col>
-			  <content>second</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatThird">
-			<col>
-			  <content>person</content>
-			</col>
-			<col>
-			  <content>third</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatSingular">
-			<col>
-			  <content>number</content>
-			</col>
-			<col>
-			  <content>singular</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatDual">
-			<col>
-			  <content>number</content>
-			</col>
-			<col>
-			  <content>dual</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatPlural">
-			<col>
-			  <content>number</content>
-			</col>
-			<col>
-			  <content>plural</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatMasculine">
-			<col>
-			  <content>gender</content>
-			</col>
-			<col>
-			  <content>masculine</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatFeminine">
-			<col>
-			  <content>gender</content>
-			</col>
-			<col>
-			  <content>feminine</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatNeuter">
-			<col>
-			  <content>gender</content>
-			</col>
-			<col>
-			  <content>neuter</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatAnimate">
-			<col>
-			  <content>animacy</content>
-			</col>
-			<col>
-			  <content>animate</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatMinusAnimate">
-			<col>
-			  <content>animacy</content>
-			</col>
-			<col>
-			  <content>inanimate</content>
-			</col>
-		  </row>
-		  <row show="swPronAgrFeatClassNumber">
-			<col>
-			  <content>class</content>
-			</col>
-			<col>
-			  <content>class_number</content>
-			</col>
-		  </row>
-		</table>
-	  </example>
-	</section2>
-	<section2 id="sPnPersonal">
-	  <secTitle>Personal Pronouns</secTitle>
-	  <p>
-		<content>Personal pronouns normally have either more than or the same number of case features as nouns have.</content>
-	  </p>
-	  <p show="swNPCaseNone">
-		<content> </content>
-		<langName/>
-		<content> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here, beginning with first person, then second person, then the third person pronouns.</content>
-	  </p>
-	  <example show="swNPCaseNone">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalNoCaseExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseNom">
-		<content> </content>
-		<langName/>
-		<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The personal pronouns which can appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </content>
-	  </p>
-	  <example show="swNPCaseNom">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalNomSubjectExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseNom">
-		<content>The personal pronouns which can appear in object position are:</content>
-	  </p>
-	  <example show="swNPCaseNom">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalNomObjectExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseNom">
-		<content>The personal pronouns which can appear in possessor position are:</content>
-	  </p>
-	  <example show="swNPCaseNom">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalNomPossessorExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseErg">
-		<content> </content>
-		<langName/>
-		<content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The personal pronouns which can appear in subject position of transitive verbs are shown here, beginning with first person, then second person, then the third person pronouns. </content>
-	  </p>
-	  <example show="swNPCaseErg">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalErgSubjectTransExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseNom">
-		<content>The personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</content>
-	  </p>
-	  <example show="swNPCaseErg">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalErgSubjectIntransExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseErg">
-		<content>The personal pronouns which can appear in possessor position are:</content>
-	  </p>
-	  <example show="swNPCaseNom">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalErgPossessorExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseSplit">
-		<content> </content>
-		<langName/>
-		<content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The personal pronouns which normally appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </content>
-	  </p>
-	  <example show="swNPCaseSplit">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalSplitSubjectExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseSplit">
-		<content>The personal pronouns which normally appear in object position are:</content>
-	  </p>
-	  <example show="swNPCaseSplit">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalSplitObjectExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseSplit">
-		<content>The personal pronouns which normally appear in possessor position are:</content>
-	  </p>
-	  <example show="swNPCaseSplit">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalSplitPossessorExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseSplit">
-		<content>The personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</content>
-	  </p>
-	  <example show="swNPCaseSplit">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalSplitErgExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swNPCaseSplit">
-		<content>The personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</content>
-	  </p>
-	  <example show="swNPCaseErg">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/personalSplitAbsExample"/>
-		  </row>
-		</table>
-	  </example>
-	</section2>
-	<section2 id="sPronPoss">
-	  <secTitle>Possessive Pronouns</secTitle>
-	  <p>
-		<content>Many languages also have possessive pronouns which can stand alone, such as </content>
-		<langData>yours</langData>
-		<content>, </content>
-		<langData>mine</langData>
-		<content>, </content>
-		<langData>theirs</langData>
-		<content> and </content>
-		<langData>hers</langData>
-		<content> in English.  These are distinct from those pronouns which can occur in possessor position, such as </content>
-		<langData>your</langData>
-		<content>, </content>
-		<langData>my</langData>
-		<content>, </content>
-		<langData>their</langData>
-		<content> and </content>
-		<langData>her</langData>
-		<content>, which were exemplified under personal pronouns above.</content>
-	  </p>
-	  <p>
-		<content> </content>
-		<langName/>
-		<content> </content>
-		<case element="pron" attr="poss">
-		  <caseText value="no">does not have any</caseText>
-		  <caseText value="yes">has</caseText>
-		</case>
-		<content> possessive pronouns that stand alone as a nominal phrase.  </content>
-		<text show="swPronPossYes">
-		  <content>These possessive pronouns are </content>
-		  <case element="pron" attr="possAffix">
-			<caseText value="no">not built by adding an affix to the personal pronouns.  They are a distinct set.</caseText>
-			<caseText value="yes">built by adding an affix to the personal pronouns.</caseText>
-		  </case>
-		  <content>  The possessive pronouns are given here, beginning with first person, then second person, then third person:</content>
-		</text>
-		<content> </content>
-	  </p>
-	  <example show="swPronPossYes">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/possExample"/>
-		  </row>
-		</table>
-	  </example>
-	</section2>
-	<section2 id="sPronRefl">
-	  <secTitle>Reflexives</secTitle>
-	  <p>
-		<content>Reflexives are another type of pronouns that most languages have.  They occur only in the same case as direct objects and normally must agree with the subject in person, gender, and number features.  Examples in English are: </content>
-		<langData>herself</langData>
-		<content>, </content>
-		<langData>himself</langData>
-		<content>, </content>
-		<langData>themselves</langData>
-		<content> and </content>
-		<langData>myself</langData>
-		<content>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning ‘self’) that is possessed by the pronoun that refers back to the subject, and some languages do not distinguish between reflexive and regular pronouns.</content>
-	  </p>
-	  <p>
-		<content> </content>
-		<langName/>
-		<content> </content>
-		<case element="pron" attr="refl">
-		  <caseText value="no">does not have any type of reflexives.</caseText>
-		  <caseText value="yes">has reflexives</caseText>
-		</case>
-		<content> </content>
-		<text show="swPronReflYes">
-		  <content> which </content>
-		  <case element="pron" attr="reflAffix">
-			<caseText value="yes">are built by adding an affix to another pronoun.</caseText>
-			<caseText value="noWord">are a distinct set of pronouns.</caseText>
-			<caseText value="noNoun">are phrases consisting of a certain noun with a pronoun as the possessor.</caseText>
-		  </case>
-		  <content>  The forms used for reflexives are given here, beginning with first person, then second person, then third person:</content>
-		</text>
-		<content> </content>
-	  </p>
-	  <example show="swPronReflYes">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/reflExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swPronReflYes">
-		<content>Some examples with a reflexive used in object position of a simple sentence are:</content>
-	  </p>
-	  <example show="swPronReflYes">
-		<interlinear exampleLoc="pron/reflSentExample"/>
-	  </example>
-	</section2>
-	<section2 id="sPronRecip">
-	  <secTitle>Reciprocals</secTitle>
-	  <p>
-		<content>Reciprocals are similar to reflexives except that  they only occur with plural subjects.  They may be formed in the same way reflexives are, or they may be distinct.  For example, in English, the reciprocal forms are phrases: </content>
-		<langData>each other</langData>
-		<content> and </content>
-		<langData>one another</langData>
-		<content>.  Some languages use only a verbal affix to indicate reciprocal action of the plural subject, others have separate pronouns, others use a possessed noun phrase or a quantified noun phrase (as in English), and some do not mark reciprocal action at all.</content>
-	  </p>
-	  <p>
-		<content> </content>
-		<langName/>
-		<content> </content>
-		<case element="pron" attr="recip">
-		  <caseText value="no">does not have any type of reciprocals.</caseText>
-		  <caseText value="verbal">uses a verbal affix to indicate reciprocal action.</caseText>
-		  <caseText value="yes">has reciprocals</caseText>
-		</case>
-		<content> </content>
-		<text show="swPronRecipYes">
-		  <content> which </content>
-		  <case element="pron" attr="recipAffix">
-			<caseText value="yes">are built by adding an affix to another pronoun.</caseText>
-			<caseText value="noWord">are a distinct set of pronouns.</caseText>
-			<caseText value="noNoun">are phrases consisting of a certain noun with a pronoun as the possessor.</caseText>
-		  </case>
-		  <content> </content>
-		  <text show="swPronRecipYesOrVerbal">
-			<content> Some examples of reciprocals are:</content>
-		  </text>
-		  <content> </content>
-		</text>
-		<content> </content>
-	  </p>
-	  <example show="swPronRecipYesOrVerbal">
-		<interlinear exampleLoc="pron/recipExample"/>
-	  </example>
-	  <p show="swPronRecipYesOrVerbal">
-		<content>Some examples of reciprocals in sentences are:</content>
-	  </p>
-	  <example show="swPronRecipYesOrVerbal">
-		<interlinear exampleLoc="pron/recipSentExample"/>
-	  </example>
-	</section2>
-	<section2 id="sPronIndef">
-	  <secTitle>Indefinites</secTitle>
-	  <p>
-		<content>In English, indefinites include </content>
-		<langData>everybody</langData>
-		<content>, </content>
-		<langData>everything</langData>
-		<content>, </content>
-		<langData>everyone</langData>
-		<content>, </content>
-		<langData>anybody</langData>
-		<content>, </content>
-		<langData>something</langData>
-		<content>, etc.  Also, </content>
-		<langData>nobody</langData>
-		<content>, </content>
-		<langData>nothing</langData>
-		<content>, </content>
-		<langData>none</langData>
-		<content> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier (positive or negative) plus an indefinite generic noun. Some languages may not merge them into a single word, as in </content>
-		<langData>no one</langData>
-		<content> for English.</content>
-	  </p>
-	  <p>
-		<content>In </content>
-		<langName/>
-		<content>, </content>
-		<case element="pron" attr="indef">
-		  <caseText value="no">all of the indefinites are noun phrases, rather than being single-word pronouns.</caseText>
-		  <caseText value="yes">some or all of the indefinites are merged into single-word pronouns.  Examples of the positive indefinite pronouns include:</caseText>
-		</case>
-		<content> </content>
-	  </p>
-	  <example show="swPronIndefYes">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/indefExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p show="swPronIndefYes">
-		<content>Examples of the negative indefinite pronouns include:</content>
-	  </p>
-	  <example show="swPronIndefYes">
-		<table border="1">
-		  <row>
-			<col exampleLoc="pron/negIndefExample"/>
-		  </row>
-		</table>
-	  </example>
-	  <p>
-		<content>Examples of positive indefinite noun phrases </content>
-		<text show="swPronIndefYes">
-		  <content>(if any) </content>
-		</text>
-		<content>include:</content>
-	  </p>
-	  <example>
-		<interlinear exampleLoc="pron/indefNPExample"/>
-	  </example>
-	  <p>
-		<content>Examples of negative indefinite noun phrases </content>
-		<text show="swPronIndefYes">
-		  <content>(if any) </content>
-		</text>
-		<content>include:</content>
-	  </p>
-	  <example>
-		<interlinear exampleLoc="pron/negIndefNPExample"/>
-	  </example>
-	</section2>
-	<section2 id="sPronNP">
-	  <secTitle>Pronouns as the Head of a Nominal Phrase</secTitle>
-	  <p>
-		<content>Though pronouns and also demonstratives, quantifiers, and numbers can stand alone as a nominal phrase in the right context, sometimes modifiers are also allowed.  In most languages, these elements cannot be modified by possessors, adjectives, or other quantifiers, although they can be modified by a degree word, an article and/or a demonstrative. English examples of this type include the following: </content>
-		<langData>all twelve</langData>
-		<content>, </content>
-		<langData>only he</langData>
-		<content>, </content>
-		<langData>just two</langData>
-		<content> and </content>
-		<langData>just those few</langData>
-		<content>.</content>
-	  </p>
-	  <p>
-		<content>Examples of this type in </content>
-		<langName/>
-		<content> include:</content>
-	  </p>
-	  <example>
-		<interlinear exampleLoc="pron/standAloneNPExample"/>
-	  </example>
-	  <p>
-		<content>In addition, it is possible to have a pronoun, demonstrative, or quantifier modified by a relative clause, as in </content>
-		<langData>all those who are going with us</langData>
-		<content> and </content>
-		<langData>only these two that I saw</langData>
-		<content>.  Examples of this type in </content>
-		<langName/>
-		<content>, included in full sentences are:</content>
-	  </p>
-	  <example>
-		<interlinear exampleLoc="pron/pronRelClExample"/>
-	  </example>
-	  <p>
-		<content>Finally, these categories can also be modified by a partitive phrase (or other PP), as in </content>
-		<langData>only a few of you</langData>
-		<content>, </content>
-		<langData>just that many of those</langData>
-		<content>, </content>
-		<langData>only those in there</langData>
-		<content>, </content>
-		<langData>all of us</langData>
-		<content> and </content>
-		<langData>all by himself</langData>
-		<content>.   Examples of this type in </content>
-		<langName/>
-		<content> include:</content>
-	  </p>
-	  <example>
-		<interlinear exampleLoc="pron/partitiveExample"/>
-	  </example>
-	  <p>
-		<content>This distribution discussed for English can be accounted for if we allow pronouns, demonstratives, quantifiers, and numbers to be NPs (rather than DPs) in the expanded DP tree structure for nominal phrases.  However, some languages allow pronouns to be modified by possessors and adjectives as well, so the correct category in that case is N.  A few languages may require pronouns to stand alone without any modification at all, making them only DPs.  (Possessive, reflexive, and reciprocal pronouns are always DPs, since they must stand alone.)</content>
-	  </p>
-	  <p>
-		<content>For </content>
-		<langName/>
-		<content>, the correct category or level in the tree structure for personal pronouns and other elements which can occur without a head noun is </content>
-		<case element="pron" attr="pronounCat">
-		  <caseText value="NP">NP, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives.</caseText>
-		  <caseText value="N">N, because they can be modified by all the same categories as nouns can, including adjectives and possessors.</caseText>
-		  <caseText value="DP">DP, because they must stand alone in the place of a whole nominal phrase, with no modifiers allowed.</caseText>
-		</case>
-		<content> </content>
-		<text show="swPronNPCatNPorN">
-		  <content>The optional PP occurs </content>
-		  <case element="pron" attr="partitivePos">
-			<caseText value="before">before</caseText>
-			<caseText value="after">after</caseText>
-		  </case>
-		  <content> the element acting as the head of the nominal phrase.</content>
-		</text>
-		<content> </content>
-	  </p>
-	</section2>
-  </section1>
-  <showWhen id="swPronAgrFeatFirst">
-	<whenValue element="pron/pronAgrFeatFirst" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatFirstExclusive">
-	<whenValue element="pron/pronAgrFeatFirstExclusive" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatFirstInclusive">
-	<whenValue element="pron/pronAgrFeatFirstInclusive" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatSecond">
-	<whenValue element="pron/pronAgrFeatSecond" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatThird">
-	<whenValue element="pron/pronAgrFeatThird" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatSingular">
-	<whenValue element="pron/pronAgrFeatSingular" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatDual">
-	<whenValue element="pron/pronAgrFeatDual" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatPlural">
-	<whenValue element="pron/pronAgrFeatPlural" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatMasculine">
-	<whenValue element="pron/pronAgrFeatMasculine" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatFeminine">
-	<whenValue element="pron/pronAgrFeatFeminine" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatNeuter">
-	<whenValue element="pron/pronAgrFeatNeuter" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatAnimate">
-	<whenValue element="pron/pronAgrFeatAnimate" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatMinusAnimate">
-	<whenValue element="pron/pronAgrFeatMinusAnimate" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronAgrFeatClassNumber">
-	<whenValue element="pron/pronAgrFeatClassNumber" attr="checked" value="yes"/>
-  </showWhen>
-  <showWhen id="swNPCaseNone">
-	<whenValue element="np" attr="case" value="none"/>
-  </showWhen>
-  <showWhen id="swNPCaseNom">
-	<whenValue element="np" attr="case" value="nominative"/>
-  </showWhen>
-  <showWhen id="swNPCaseErg">
-	<whenValue element="np" attr="case" value="ergative"/>
-  </showWhen>
-  <showWhen id="swNPCaseSplit">
-	<whenValue element="np" attr="case" value="split"/>
-  </showWhen>
-  <showWhen id="swPronPossYes">
-	<whenValue element="pron" attr="poss" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronReflYes">
-	<whenValue element="pron" attr="refl" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronRecipYesOrVerbal">
-	<whenValue element="pron" attr="recip" value="no" negateValue="yes"/>
-  </showWhen>
-  <showWhen id="swPronRecipYes">
-	<whenValue element="pron" attr="recip" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronIndefYes">
-	<whenValue element="pron" attr="indef" value="yes"/>
-  </showWhen>
-  <showWhen id="swPronNPCatNPorN">
-	<whenValue element="pron" attr="pronounCat" value="DP" negateValue="yes"/>
-  </showWhen>
+		</p>
+		<section2 id="sPronAgreement">
+			<secTitle>Agreement Features on Pronouns</secTitle>
+			<p>
+				<content>Pronouns normally have either more than or the same number of agreement features as nouns have.  The following chart shows the agreement features used for pronouns in </content>
+				<langName/>
+				<content>.</content>
+			</p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>Type of feature</headerCol>
+						<headerCol>Feature</headerCol>
+					</headerRow>
+					<row show="swPronAgrFeatFirst">
+						<col>
+							<content>person</content>
+						</col>
+						<col>
+							<content>first</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatFirstExclusive">
+						<col>
+							<content>person</content>
+						</col>
+						<col>
+							<content>first exclusive</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatFirstInclusive">
+						<col>
+							<content>person</content>
+						</col>
+						<col>
+							<content>first inclusive</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatSecond">
+						<col>
+							<content>person</content>
+						</col>
+						<col>
+							<content>second</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatThird">
+						<col>
+							<content>person</content>
+						</col>
+						<col>
+							<content>third</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatSingular">
+						<col>
+							<content>number</content>
+						</col>
+						<col>
+							<content>singular</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatDual">
+						<col>
+							<content>number</content>
+						</col>
+						<col>
+							<content>dual</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatPlural">
+						<col>
+							<content>number</content>
+						</col>
+						<col>
+							<content>plural</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatMasculine">
+						<col>
+							<content>gender</content>
+						</col>
+						<col>
+							<content>masculine</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatFeminine">
+						<col>
+							<content>gender</content>
+						</col>
+						<col>
+							<content>feminine</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatNeuter">
+						<col>
+							<content>gender</content>
+						</col>
+						<col>
+							<content>neuter</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatAnimate">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>animate</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatMinusAnimate">
+						<col>
+							<content>animacy</content>
+						</col>
+						<col>
+							<content>inanimate</content>
+						</col>
+					</row>
+					<row show="swPronAgrFeatClassNumber">
+						<col>
+							<content>class</content>
+						</col>
+						<col>
+							<content>class_number</content>
+						</col>
+					</row>
+				</table>
+			</example>
+		</section2>
+		<section2 id="sPnPersonal">
+			<secTitle>Personal Pronouns</secTitle>
+			<p>
+				<content>Personal pronouns normally have either more than or the same number of case features as nouns have.</content>
+			</p>
+			<p show="swNPCaseNone">
+				<content/>
+				<langName/>
+				<content> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here, beginning with first person, then second person, then the third person pronouns.</content>
+			</p>
+			<example show="swNPCaseNone">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalNoCaseExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseNom">
+				<content/>
+				<langName/>
+				<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The personal pronouns which can appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </content>
+			</p>
+			<example show="swNPCaseNom">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalNomSubjectExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseNom">
+				<content>The personal pronouns which can appear in object position are:</content>
+			</p>
+			<example show="swNPCaseNom">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalNomObjectExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseNom">
+				<content>The personal pronouns which can appear in possessor position are:</content>
+			</p>
+			<example show="swNPCaseNom">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalNomPossessorExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseErg">
+				<content/>
+				<langName/>
+				<content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The personal pronouns which can appear in subject position of transitive verbs are shown here, beginning with first person, then second person, then the third person pronouns. </content>
+			</p>
+			<example show="swNPCaseErg">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalErgSubjectTransExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseErg">
+				<content>The personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</content>
+			</p>
+			<example show="swNPCaseErg">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalErgSubjectIntransExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseErg">
+				<content>The personal pronouns which can appear in possessor position are:</content>
+			</p>
+			<example show="swNPCaseErg">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalErgPossessorExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplit">
+				<content/>
+				<langName/>
+				<content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The personal pronouns which normally appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </content>
+			</p>
+			<example show="swNPCaseSplit">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalSplitSubjectExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplit">
+				<content>The personal pronouns which normally appear in object position are:</content>
+			</p>
+			<example show="swNPCaseSplit">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalSplitObjectExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplit">
+				<content>The personal pronouns which normally appear in possessor position are:</content>
+			</p>
+			<example show="swNPCaseSplit">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalSplitPossessorExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplit">
+				<content>The personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</content>
+			</p>
+			<example show="swNPCaseSplit">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalSplitErgExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplit">
+				<content>The personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</content>
+			</p>
+			<example show="swNPCaseErg">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/personalSplitAbsExample"/>
+					</row>
+				</table>
+			</example>
+		</section2>
+		<section2 id="sPronPoss">
+			<secTitle>Possessive Pronouns</secTitle>
+			<p>
+				<content>Many languages also have possessive pronouns which can stand alone, such as </content>
+				<langData>yours</langData>
+				<content>, </content>
+				<langData>mine</langData>
+				<content>, </content>
+				<langData>theirs</langData>
+				<content> and </content>
+				<langData>hers</langData>
+				<content> in English.  These are distinct from those pronouns which can occur in possessor position, such as </content>
+				<langData>your</langData>
+				<content>, </content>
+				<langData>my</langData>
+				<content>, </content>
+				<langData>their</langData>
+				<content> and </content>
+				<langData>her</langData>
+				<content>, which were exemplified under personal pronouns above.</content>
+			</p>
+			<p>
+				<content/>
+				<langName/>
+				<content/>
+				<case element="pron" attr="poss">
+					<caseText value="no"> does not have any</caseText>
+					<caseText value="yes"> has</caseText>
+				</case>
+				<content> possessive pronouns that stand alone as a nominal phrase.  </content>
+				<text show="swPronPossYes">
+					<content>These possessive pronouns are </content>
+					<case element="pron" attr="possAffix">
+						<caseText value="no">not built by adding an affix to the personal pronouns.  They are a distinct set.</caseText>
+						<caseText value="yes">built by adding an affix to the personal pronouns.</caseText>
+						<caseText value="both">built by adding an affix to the personal pronouns, though some forms are distinct, stand alone pronouns.</caseText>
+					</case>
+					<content>  The possessive pronouns are given here, beginning with first person, then second person, then third person:</content>
+				</text>
+				<content/>
+			</p>
+			<example show="swPronPossYes">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/possExample"/>
+					</row>
+				</table>
+			</example>
+		</section2>
+		<section2 id="sPronRefl">
+			<secTitle>Reflexives</secTitle>
+			<p>
+				<content>Reflexives are another type of pronouns that most languages have.  They occur only in the same case as direct objects and normally must agree with the subject in person, gender, and number features.  Examples in English are: </content>
+				<langData>herself</langData>
+				<content>, </content>
+				<langData>himself</langData>
+				<content>, </content>
+				<langData>themselves</langData>
+				<content> and </content>
+				<langData>myself</langData>
+				<content>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning ‘self’) that is possessed by the pronoun that refers back to the subject, and some languages do not distinguish between reflexive and regular pronouns.</content>
+			</p>
+			<p>
+				<content/>
+				<langName/>
+				<content/>
+				<case element="pron" attr="refl">
+					<caseText value="no"> does not have any type of reflexives.</caseText>
+					<caseText value="yes"> has reflexives</caseText>
+				</case>
+				<content/>
+				<text show="swPronReflYes">
+					<content> which </content>
+					<case element="pron" attr="reflAffix">
+						<caseText value="yes">are built by adding an affix to another pronoun.</caseText>
+						<caseText value="noWord">are a distinct set of pronouns.</caseText>
+						<caseText value="noNoun">are phrases consisting of a certain noun with a pronoun as the possessor.</caseText>
+					</case>
+					<content>  The forms used for reflexives are given here, beginning with first person, then second person, then third person:</content>
+				</text>
+				<content/>
+			</p>
+			<example show="swPronReflYes">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/reflExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swPronReflYes">
+				<content>Some examples with a reflexive used in object position of a simple sentence are:</content>
+			</p>
+			<example show="swPronReflYes">
+				<interlinear exampleLoc="pron/reflSentExample"/>
+			</example>
+		</section2>
+		<section2 id="sPronRecip">
+			<secTitle>Reciprocals</secTitle>
+			<p>
+				<content>Reciprocals are similar to reflexives except that  they only occur with plural subjects.  They may be formed in the same way reflexives are, or they may be distinct.  For example, in English, the reciprocal forms are phrases: </content>
+				<langData>each other</langData>
+				<content> and </content>
+				<langData>one another</langData>
+				<content>.  Some languages use only a verbal affix to indicate reciprocal action of the plural subject, others have separate pronouns, others use a possessed noun phrase or a quantified noun phrase (as in English), and some do not mark reciprocal action at all.</content>
+			</p>
+			<p>
+				<content/>
+				<langName/>
+				<content/>
+				<case element="pron" attr="recip">
+					<caseText value="no"> does not have any type of reciprocals.</caseText>
+					<caseText value="verbal"> uses a verbal affix to indicate reciprocal action.</caseText>
+					<caseText value="yes"> has reciprocals</caseText>
+				</case>
+				<content/>
+				<text show="swPronRecipYes">
+					<content> which </content>
+					<case element="pron" attr="recipAffix">
+						<caseText value="yes">are built by adding an affix to another pronoun.</caseText>
+						<caseText value="noWord">are a distinct set of pronouns.</caseText>
+						<caseText value="noNoun">are phrases consisting of a certain noun with a pronoun as the possessor.</caseText>
+						<caseText value="noQP">are special quantified noun phrases.</caseText>
+					</case>
+					<content/>
+					<text show="swPronRecipYesOrVerbal">
+						<content> Some examples of reciprocals are:</content>
+					</text>
+					<content/>
+				</text>
+				<content/>
+			</p>
+			<example show="swPronRecipYesOrVerbal">
+				<interlinear exampleLoc="pron/recipExample"/>
+			</example>
+			<p show="swPronRecipYesOrVerbal">
+				<content>Some examples of reciprocals in sentences are:</content>
+			</p>
+			<example show="swPronRecipYesOrVerbal">
+				<interlinear exampleLoc="pron/recipSentExample"/>
+			</example>
+		</section2>
+		<section2 id="sPronIndef">
+			<secTitle>Indefinites</secTitle>
+			<p>
+				<content>In English, indefinites include </content>
+				<langData>everybody</langData>
+				<content>, </content>
+				<langData>everything</langData>
+				<content>, </content>
+				<langData>everyone</langData>
+				<content>, </content>
+				<langData>anybody</langData>
+				<content>, </content>
+				<langData>something</langData>
+				<content>, etc.  Also, </content>
+				<langData>nobody</langData>
+				<content>, </content>
+				<langData>nothing</langData>
+				<content>, </content>
+				<langData>none</langData>
+				<content> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier (positive or negative) plus an indefinite generic noun. Some languages may not merge them into a single word, as in </content>
+				<langData>no one</langData>
+				<content> for English.</content>
+			</p>
+			<p>
+				<content>In </content>
+				<langName/>
+				<content>, </content>
+				<case element="pron" attr="indef">
+					<caseText value="no">all of the indefinites are noun phrases, rather than being single-word pronouns.</caseText>
+					<caseText value="yes">some or all of the indefinites are merged into single-word pronouns.  Examples of the positive indefinite pronouns include:</caseText>
+				</case>
+				<content/>
+			</p>
+			<example show="swPronIndefYes">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/indefExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swPronIndefYes">
+				<content>Examples of the negative indefinite pronouns include:</content>
+			</p>
+			<example show="swPronIndefYes">
+				<table border="1">
+					<row>
+						<col exampleLoc="pron/negIndefExample"/>
+					</row>
+				</table>
+			</example>
+			<p>
+				<content>Examples of positive indefinite noun phrases </content>
+				<text show="swPronIndefYes">
+					<content>(if any) </content>
+				</text>
+				<content>include:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="pron/indefNPExample"/>
+			</example>
+			<p>
+				<content>Examples of negative indefinite noun phrases </content>
+				<text show="swPronIndefYes">
+					<content>(if any) </content>
+				</text>
+				<content>include:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="pron/negIndefNPExample"/>
+			</example>
+		</section2>
+		<section2 id="sPronNP">
+			<secTitle>Pronouns as the Head of a Nominal Phrase</secTitle>
+			<p>
+				<content>Though pronouns and also demonstratives, quantifiers, and numbers can stand alone as a nominal phrase in the right context, sometimes modifiers are also allowed.  In most languages, these elements cannot be modified by possessors, adjectives, or other quantifiers, although they can be modified by a degree word, an article and/or a demonstrative. English examples of this type include the following: </content>
+				<langData>all twelve</langData>
+				<content>, </content>
+				<langData>only he</langData>
+				<content>, </content>
+				<langData>just two</langData>
+				<content> and </content>
+				<langData>just those few</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<content>Examples of this type in </content>
+				<langName/>
+				<content> include:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="pron/standAloneNPExample"/>
+			</example>
+			<p>
+				<content>In addition, it is possible to have a pronoun, demonstrative, or quantifier modified by a relative clause, as in </content>
+				<langData>all those who are going with us</langData>
+				<content> and </content>
+				<langData>only these two that I saw</langData>
+				<content>.  Examples of this type in </content>
+				<langName/>
+				<content>, included in full sentences are:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="pron/pronRelClExample"/>
+			</example>
+			<p>
+				<content>Finally, these categories can also be modified by a partitive phrase (or other PP), as in </content>
+				<langData>only a few of you</langData>
+				<content>, </content>
+				<langData>just that many of those</langData>
+				<content>, </content>
+				<langData>only those in there</langData>
+				<content>, </content>
+				<langData>all of us</langData>
+				<content> and </content>
+				<langData>all by himself</langData>
+				<content>.   Examples of this type in </content>
+				<langName/>
+				<content> include:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="pron/partitiveExample"/>
+			</example>
+			<p>
+				<content>This distribution discussed for English can be accounted for by classifying allow pronouns, demonstratives, quantifiers, and numbers as NPs (rather than DPs) in the expanded DP tree structure for nominal phrases.  However, some languages allow pronouns to be modified by possessors and adjectives as well, so the correct category in that case is N.  A few languages may require pronouns to stand alone without any modification at all, making them only DPs.  (Possessive, reflexive, and reciprocal pronouns are always DPs, since they must stand alone.)</content>
+			</p>
+			<p>
+				<content>For </content>
+				<langName/>
+				<content>, the correct category or level in the tree structure for personal pronouns and other elements which can occur without a head noun is </content>
+				<case element="pron" attr="pronounCat">
+					<caseText value="NP">NP, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives.</caseText>
+					<caseText value="N">N, because they can be modified by all the same categories as nouns can, including adjectives and possessors.</caseText>
+					<caseText value="DP">DP, because they must stand alone in the place of a whole nominal phrase, with no modifiers allowed.</caseText>
+				</case>
+				<content/>
+				<text show="swPronNPCatNPorN">
+					<content> The optional PP occurs </content>
+					<case element="pron" attr="partitivePos">
+						<caseText value="before">before</caseText>
+						<caseText value="after">after</caseText>
+					</case>
+					<content> the element acting as the head of the nominal phrase.</content>
+				</text>
+				<content/>
+			</p>
+		</section2>
+	</section1>
+	<showWhen id="swPronAgrFeatFirst">
+		<whenValue element="pron/pronAgrFeatFirst" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatFirstExclusive">
+		<whenValue element="pron/pronAgrFeatFirstExclusive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatFirstInclusive">
+		<whenValue element="pron/pronAgrFeatFirstInclusive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatSecond">
+		<whenValue element="pron/pronAgrFeatSecond" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatThird">
+		<whenValue element="pron/pronAgrFeatThird" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatSingular">
+		<whenValue element="pron/pronAgrFeatSingular" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatDual">
+		<whenValue element="pron/pronAgrFeatDual" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatPlural">
+		<whenValue element="pron/pronAgrFeatPlural" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatMasculine">
+		<whenValue element="pron/pronAgrFeatMasculine" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatFeminine">
+		<whenValue element="pron/pronAgrFeatFeminine" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatNeuter">
+		<whenValue element="pron/pronAgrFeatNeuter" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatAnimate">
+		<whenValue element="pron/pronAgrFeatAnimate" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatMinusAnimate">
+		<whenValue element="pron/pronAgrFeatMinusAnimate" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronAgrFeatClassNumber">
+		<whenValue element="pron/pronAgrFeatClassNumber" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPCaseNone">
+		<whenValue element="np" attr="case" value="none"/>
+	</showWhen>
+	<showWhen id="swNPCaseNom">
+		<whenValue element="np" attr="case" value="nominative"/>
+	</showWhen>
+	<showWhen id="swNPCaseErg">
+		<whenValue element="np" attr="case" value="ergative"/>
+	</showWhen>
+	<showWhen id="swNPCaseSplit">
+		<whenValue element="np" attr="case" value="split"/>
+	</showWhen>
+	<showWhen id="swPronPossYes">
+		<whenValue element="pron" attr="poss" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronReflYes">
+		<whenValue element="pron" attr="refl" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronRecipYesOrVerbal">
+		<whenValue element="pron" attr="recip" value="no" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swPronRecipYes">
+		<whenValue element="pron" attr="recip" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronIndefYes">
+		<whenValue element="pron" attr="indef" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronNPCatNPorN">
+		<whenValue element="pron" attr="pronounCat" value="DP" negateValue="yes"/>
+	</showWhen>
 </portion>

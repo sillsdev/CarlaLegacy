@@ -12,13 +12,13 @@
 			<radio id="PronReflYes" dataValue="yes">Yes</radio>
 		</radioGroup>
 		<prompt id="PronReflExamples" show="swPronReflYes">
-				<br/>Key your reflexive examples here, with each on a separate line and followed by a period, beginning with first person, then second person, then third person:</prompt>
+			<br/>Key your reflexive examples here, with each on a separate line and followed by a period, beginning with first person, then second person, then third person:</prompt>
 		<textBox id="PronReflExample" dataItem="reflExample" show="swPronReflYes"/>
 		<prompt id="PronReflSentExamples" show="swPronReflYes">
-				<br/>Now key several example with a reflexive used in object position of a simple sentence, so that agreement between the reflexive and the subject can be tested later:</prompt>
+			<br/>Now key several example with a reflexive used in object position of a simple sentence, so that agreement between the reflexive and the subject can be tested later:</prompt>
 		<textBox id="PronReflSentExample" dataItem="reflSentExample" show="swPronReflYes"/>
 		<radioGroup id="PronReflYesTable" show="swPronReflYes">
-			<groupName dataItem="reflAffix" default="no">RPronReflAffix</groupName>
+			<groupName dataItem="reflAffix" default="yes">RPronReflAffix</groupName>
 			<prompt>
 				<br/>Are the reflexive pronouns built by adding an affix to other pronouns, as in English?</prompt>
 			<radio id="PronReflAffixYes" dataValue="yes">Yes, one or more affixes are chosen among to make another pronoun reflexive</radio>

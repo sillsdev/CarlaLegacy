@@ -342,7 +342,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ATTLIST pron
 	checkedOff (yes | no) "no"
 	poss (no | yes) "no"
-	possAffix (no | yes) "no"
+	possAffix (no | yes | both) "no"
 	refl (yes | no) "no"
 	reflAffix (noWord | noNoun | yes) "yes"
 	recip (no | verbal | yes) "no"
@@ -997,6 +997,8 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	type (CP | IP | none) "none"
 	compCP (yes | yesBoth | no) "no"
 	whAndComp (no | yes | optional) "no"
+	relWord (no | yes) "yes"
+	relCliticPos (before | after | both | unknown) "unknown"
 	relCompSame (yes | no) "no"
 	relCompPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	relCompEitherRestricted (unrestricted | restricted) "unrestricted"
