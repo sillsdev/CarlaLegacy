@@ -80,18 +80,28 @@ col template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//col">
-	<col>
-	  <xsl:choose>
-		<xsl:when test="@exampleLoc">
+	<xsl:choose>
+	  <xsl:when test="@exampleLoc">
+		<col>
 		  <xsl:element name="xsl:value-of">
 			<xsl:attribute name="select"><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:attribute>
 		  </xsl:element>
-		</xsl:when>
-		<xsl:otherwise>
+		</col>
+	  </xsl:when>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <col>
+			<xsl:apply-templates/>
+		  </col>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<col>
 		  <xsl:apply-templates/>
-		</xsl:otherwise>
-	  </xsl:choose>
-	</col>
+		</col>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -124,21 +134,11 @@ example template
 	  <xsl:when test="@show">
 		<xsl:element name="xsl:if">
 		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
-		  <xsl:element name="example">
-			<xsl:if test="@num">
-			  <xsl:attribute name="num"><xsl:value-of select="@num"/></xsl:attribute>
-			</xsl:if>
-			<xsl:apply-templates/>
-		  </xsl:element>
+		  <xsl:call-template name="DoExample"/>
 		</xsl:element>
 	  </xsl:when>
 	  <xsl:otherwise>
-		<xsl:element name="example">
-		  <xsl:if test="@num">
-			<xsl:attribute name="num"><xsl:value-of select="@num"/></xsl:attribute>
-		  </xsl:if>
-		  <xsl:apply-templates/>
-		</xsl:element>
+		<xsl:call-template name="DoExample"/>
 	  </xsl:otherwise>
 	</xsl:choose>
   </xsl:template>
@@ -171,7 +171,7 @@ headerCol template
 -->
   <xsl:template match="//headerCol">
 	<headerCol>
-		  <xsl:apply-templates/>
+	  <xsl:apply-templates/>
 	</headerCol>
   </xsl:template>
   <!--
@@ -181,7 +181,7 @@ headerRowl template
 -->
   <xsl:template match="//headerRow">
 	<headerRow>
-		  <xsl:apply-templates/>
+	  <xsl:apply-templates/>
 	</headerRow>
   </xsl:template>
   <!--
@@ -295,15 +295,11 @@ p template
 	  <xsl:when test="@show">
 		<xsl:element name="xsl:if">
 		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
-		  <p>
-			<xsl:apply-templates select="*"/>
-		  </p>
+		  <xsl:call-template name="DoP"/>
 		</xsl:element>
 	  </xsl:when>
 	  <xsl:otherwise>
-		<p>
-		  <xsl:apply-templates select="*"/>
-		</p>
+		<xsl:call-template name="DoP"/>
 	  </xsl:otherwise>
 	</xsl:choose>
   </xsl:template>
@@ -329,69 +325,21 @@ secTitle template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-section1 template
+section1/2/3/4/5/6 template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
-  <xsl:template match="//section1">
-	<xsl:element name="section1">
-	  <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
-	  <xsl:apply-templates/>
-	</xsl:element>
-  </xsl:template>
-  <!--
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-section2 template
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
--->
-  <xsl:template match="//section2">
-	<xsl:element name="section2">
-	  <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
-	  <xsl:apply-templates/>
-	</xsl:element>
-  </xsl:template>
-  <!--
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-section3 template
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
--->
-  <xsl:template match="//section3">
-	<xsl:element name="section3">
-	  <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
-	  <xsl:apply-templates/>
-	</xsl:element>
-  </xsl:template>
-  <!--
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-section4 template
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
--->
-  <xsl:template match="//section4">
-	<xsl:element name="section4">
-	  <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
-	  <xsl:apply-templates/>
-	</xsl:element>
-  </xsl:template>
-  <!--
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-section5 template
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
--->
-  <xsl:template match="//section5">
-	<xsl:element name="section5">
-	  <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
-	  <xsl:apply-templates/>
-	</xsl:element>
-  </xsl:template>
-  <!--
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-section6 template
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
--->
-  <xsl:template match="//section6">
-	<xsl:element name="section6">
-	  <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
-	  <xsl:apply-templates/>
-	</xsl:element>
+  <xsl:template match="//section1 | //section2 | //section3 | //section4 | //section5 | //section6">
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:call-template name="DoSection"/>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:call-template name="DoSection"/>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -472,6 +420,46 @@ BuildCondition
 		</xsl:choose>
 	  </xsl:for-each>
 	</xsl:for-each>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoExample
+	routine to create an example element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoExample">
+	<xsl:element name="example">
+	  <xsl:if test="@num">
+		<xsl:attribute name="num"><xsl:value-of select="@num"/></xsl:attribute>
+	  </xsl:if>
+	  <xsl:apply-templates/>
+	</xsl:element>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoP
+	routine to create a p element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoP">
+	<p>
+	  <xsl:apply-templates select="*"/>
+	</p>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoSection
+	routine to create a section element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoSection">
+	<xsl:element name="{name()}">
+	  <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+	  <xsl:apply-templates/>
+	</xsl:element>
   </xsl:template>
 </xsl:stylesheet>
 <!--

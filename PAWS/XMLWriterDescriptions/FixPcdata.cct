@@ -19,7 +19,7 @@ group(Main)
 "</case>"	> dup out(Content)
 
 "<col>"	> dup out(Content)
-c "<col "	> dup use(EndOfElement)
+"<col "	> dup use(EndOfElement)
 
 
 "</col>"	> out(EndContent) dup

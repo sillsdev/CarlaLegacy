@@ -34,12 +34,14 @@ Main template
 	  <xsl:apply-templates select="/" mode="qp"/>
 	  <xsl:apply-templates select="/" mode="advp"/>
 	  <xsl:apply-templates select="/" mode="adjp"/>
+	  <xsl:apply-templates select="/" mode="np"/>
 	</lingPaper>
   </xsl:template>
   <xsl:include href="IntroAndTypology.xsl"/>
   <xsl:include href="QP.xsl"/>
   <xsl:include href="AdvP.xsl"/>
   <xsl:include href="AdjP.xsl"/>
+  <xsl:include href="NP.xsl"/>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 DoGlossAndFree
