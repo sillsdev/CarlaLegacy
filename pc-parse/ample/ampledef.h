@@ -145,6 +145,7 @@ struct ample_allomorph {
 #define iMORPHTYPE	pMorpheme->iMorphType
 #define pMORPHFD	pMorpheme->pszMorphFd
 #define pUNDERFORM	pMorpheme->pszUnderForm
+#define pPATRCAT 	pMorpheme->pszPATRCat
 #define pAFFIX		pMorpheme->u.pAffix
 #define pINFIX		pMorpheme->u.pInfix
 #define pROOTCATS	pMorpheme->u.pRootCategories

@@ -1,5 +1,14 @@
 AMPLE CHANGE HISTORY
 
+3.9.2 (03-Feb-2005)
+-------------------
+1. Add XML output for maximums reached and special case of <leftover> when
+   there are null suffixes.
+
+3.9.1 (12-Dec-2004)
+-------------------
+1. Add more XML output (for use in FieldWorks XAmple).
+
 3.9.0 (07-Dec-2004)
 -------------------
 1.  Enhancement: Added abilty to have "interfixes" (affixes which may also

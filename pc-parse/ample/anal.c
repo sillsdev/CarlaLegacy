@@ -115,19 +115,6 @@ static int		get_suffix	P((AmpleHeadList * head,
 					   int             ifxs_found,
 					   int             nulls_have,
 					   AmpleData *     pAmple_in));
-#ifdef hab360
-static void		a_trace		P((int            dtype,
-					   char *         tail,
-					   int            tlen,
-					   char *         m_name,
-					   unsigned       fcat,
-					   unsigned       tcat,
-					   PropertySet_t  props,
-					   int            ordercl,
-					   char *         pszAllomorphID_in,
-					   AmpleAlloEnv * ac_ptr,
-					   AmpleData *    pAmple_in));
-#else  /* hab360 */
 static void		a_trace		P((int            dtype,
 					   char *         tail,
 					   int            tlen,
@@ -138,9 +125,9 @@ static void		a_trace		P((int            dtype,
 					   int            ordercl,
 					   int            orderclMax,
 					   char *         pszAllomorphID_in,
+					   char *         pszPATRCat_in,
 					   AmpleAlloEnv * ac_ptr,
 					   AmpleData *    pAmple_in));
-#endif /* hab360 */
 static int	testAmpleStringEnvirons	P((AmpleHeadList * left,
 					   AmpleHeadList * current,
 					   char *          strp,
@@ -245,6 +232,7 @@ static void		store_AMPLE_trace P((AmpleData *  pAmple_in,
 						 const char * pszArg));
 static void		resetLocalGlobals P((void));
 static void	free_headlist_list P((AmpleHeadlistList * pHeadlists_io));
+static void xml_maximum_reached P((AmpleData * pAmple_in, char * pszType_in));
 
 #ifdef EXPERIMENTAL
 static char *	build_feature_string	P((char * pszFeat_in,
@@ -1056,6 +1044,10 @@ if (pfxs_found >= pAmple_in->iMaxPrefixCount)
 			  "%sMaximum prefixes found.\n",
 			  szTraceTab_m);
 	}
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	  {
+	xml_maximum_reached(pAmple_in, "prefixes");
+	  }
 	/*    return FALSE; */
 	}
 else
@@ -1093,16 +1085,27 @@ else
 	for ( i = 0 ; (ap->pAFFIX->pFromCategories)[i] ; ++i )
 		{
 		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
+#ifdef EXPERIMENTAL
 		a_trace(AMPLE_PFX, tail, pfxp->alen, ap->pMORPHNAME,
 			(ap->pAFFIX->pFromCategories)[i],
 			(ap->pAFFIX->pToCategories)[i],
 			ap->sPropertySet,
 			ap->pAFFIX->iOrderClass,
-#ifndef hab360
 			ap->pAFFIX->iOrderClassMax,
-#endif
 			ap->pszAllomorphID,
+			ap->pPATRCAT,
 			ap->pEnvironment, pAmple_in);
+#else
+		a_trace(AMPLE_PFX, tail, pfxp->alen, ap->pMORPHNAME,
+			(ap->pAFFIX->pFromCategories)[i],
+			(ap->pAFFIX->pToCategories)[i],
+			ap->sPropertySet,
+			ap->pAFFIX->iOrderClass,
+			ap->pAFFIX->iOrderClassMax,
+			ap->pszAllomorphID,
+			NULL,
+			ap->pEnvironment, pAmple_in);
+#endif
 		/*
 		 *	build a tentative morpheme (headlist) structure
 		 */
@@ -1346,6 +1349,10 @@ if (ifxs_found >= pAmple_in->iMaxInfixCount)
 			  "%sMaximum infixes found.\n",
 			  szTraceTab_m);
 	}
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	  {
+	xml_maximum_reached(pAmple_in, "infixes");
+	  }
 	return FALSE;
 	}
 /*
@@ -1400,6 +1407,7 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 	for ( i = 0 ; (ap->pINFIX->pFromCategories)[i] ; ++i )
 		{
 		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
+#ifdef EXPERIMENTAL
 		a_trace((what == AMPLE_NFX) ? AMPLE_NFX : AMPLE_IFX,
 			ifxtail, ifxp->alen, ap->pMORPHNAME,
 			(ap->pINFIX->pFromCategories)[i],
@@ -1408,7 +1416,20 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 			ap->pINFIX->iOrderClass,
 			ap->pINFIX->iOrderClassMax,
 			ap->pszAllomorphID,
+			ap->pPATRCAT,
 			ap->pEnvironment, pAmple_in);
+#else
+		a_trace((what == AMPLE_NFX) ? AMPLE_NFX : AMPLE_IFX,
+			ifxtail, ifxp->alen, ap->pMORPHNAME,
+			(ap->pINFIX->pFromCategories)[i],
+			(ap->pINFIX->pToCategories)[i],
+			ap->sPropertySet,
+			ap->pINFIX->iOrderClass,
+			ap->pINFIX->iOrderClassMax,
+			ap->pszAllomorphID,
+			NULL,
+			ap->pEnvironment, pAmple_in);
+#endif
 
 		newhead.iFromCategory = (ap->pINFIX->pFromCategories)[i];
 		newhead.iToCategory	  = (ap->pINFIX->pToCategories)[i];
@@ -1629,6 +1650,10 @@ if (roots_found >= pAmple_in->iMaxRootCount)
 			  "%sMaximum roots found.\n",
 			  szTraceTab_m);
 	}
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	  {
+	xml_maximum_reached(pAmple_in, "roots");
+	  }
 	}
 else
 	{
@@ -1665,13 +1690,19 @@ else
 	for ( i = 0 ; make_root_head(&newhead, ap, i, pAmple_in) ; ++i )
 		{
 		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
+#ifdef EXPERIMENTAL
 		a_trace(AMPLE_ROOT, tail, rootp->alen, ap->pMORPHNAME,
 			newhead.iROOTCATEG, NUL, ap->sPropertySet, 0,
-#ifndef hab360
 			0,
-#endif
-			ap->pszAllomorphID,
+			ap->pszAllomorphID, ap->pPATRCAT,
 			ap->pEnvironment, pAmple_in);
+#else
+		a_trace(AMPLE_ROOT, tail, rootp->alen, ap->pMORPHNAME,
+			newhead.iROOTCATEG, NUL, ap->sPropertySet, 0,
+			0,
+			ap->pszAllomorphID, NULL,
+			ap->pEnvironment, pAmple_in);
+#endif
 		/*
 		 *	finish filling out the tentative morpheme (headlist) structure
 		 */
@@ -1869,6 +1900,10 @@ if (nfxs_found > pAmple_in->iMaxInterfixCount)
 			  "%sMaximum interfixes found.\n",
 			  szTraceTab_m);
 	}
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	  {
+	xml_maximum_reached(pAmple_in, "interfixes");
+	  }
 	return FALSE;
 	}
 else
@@ -1906,6 +1941,7 @@ else
 	for ( i = 0 ; (ap->pAFFIX->pFromCategories)[i] ; ++i )
 		{
 		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
+#ifdef EXPERIMENTAL
 		a_trace(AMPLE_NFX, tail, nfxp->alen, ap->pMORPHNAME,
 			(ap->pAFFIX->pFromCategories)[i],
 			(ap->pAFFIX->pToCategories)[i],
@@ -1913,7 +1949,19 @@ else
 			ap->pAFFIX->iOrderClass,
 			ap->pAFFIX->iOrderClassMax,
 			ap->pszAllomorphID,
+			ap->pPATRCAT,
 			ap->pEnvironment, pAmple_in);
+#else
+		a_trace(AMPLE_NFX, tail, nfxp->alen, ap->pMORPHNAME,
+			(ap->pAFFIX->pFromCategories)[i],
+			(ap->pAFFIX->pToCategories)[i],
+			ap->sPropertySet,
+			ap->pAFFIX->iOrderClass,
+			ap->pAFFIX->iOrderClassMax,
+			ap->pszAllomorphID,
+			NULL,
+			ap->pEnvironment, pAmple_in);
+#endif
 		/*
 		 *	build a tentative morpheme (headlist) structure
 		 */
@@ -2191,6 +2239,8 @@ AmpleParseList *	pNewParse;
 #endif /* EXPERIMENTAL */
 int		bOldUsesPrev;
 int		bOldUsesNext;
+int             bAllAllosAreNull = FALSE;
+
 /*
  *  check for going too far
  */
@@ -2247,16 +2297,27 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 	for ( i = 0 ; (ap->pAFFIX->pFromCategories)[i] ; ++i )
 		{
 		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
+#ifdef EXPERIMENTAL
 		a_trace(AMPLE_SFX, tail, sfxp->alen, ap->pMORPHNAME,
 			(ap->pAFFIX->pFromCategories)[i],
 			(ap->pAFFIX->pToCategories)[i],
 			ap->sPropertySet,
 			ap->pAFFIX->iOrderClass,
-#ifndef hab360
 			ap->pAFFIX->iOrderClassMax,
-#endif
 			ap->pszAllomorphID,
+			ap->pPATRCAT,
 			ap->pEnvironment, pAmple_in);
+#else
+		a_trace(AMPLE_SFX, tail, sfxp->alen, ap->pMORPHNAME,
+			(ap->pAFFIX->pFromCategories)[i],
+			(ap->pAFFIX->pToCategories)[i],
+			ap->sPropertySet,
+			ap->pAFFIX->iOrderClass,
+			ap->pAFFIX->iOrderClassMax,
+			ap->pszAllomorphID,
+			NULL,
+			ap->pEnvironment, pAmple_in);
+#endif
 		/*
 		 *	build a tentative morpheme (headlist) structure
 		 */
@@ -2297,6 +2358,7 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 						pAmple_in);
 
 		if (    !bContinuation &&
+			sfxs_found+1 < pAmple_in->iMaxSuffixCount &&
 			( (pAmple_in->eTraceAnalysis==AMPLE_TRACE_SGML) ||
 			  (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML) ))
 			{
@@ -2348,9 +2410,13 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 	} /* end of each allomorph loop */
 	/*
 	 *	suffix list exhausted, so release any allocated space
+	 * Also check for special case of all nulls
 	 */
+	bAllAllosAreNull = TRUE; /* be optimistic */
 	for ( sfxp = sfxlist ; sfxp != (AmpleAmlist *)NULL ; sfxp = np )
 	{
+	if (strlen(sfxp->amp->pszAllomorph) != 0)
+	  bAllAllosAreNull = FALSE;
 	np = sfxp->amlink;
 	freeMemory( (char *)sfxp );
 	}
@@ -2593,17 +2659,24 @@ else			/* Else (not at end of word) */
 	/*
 	 *  If we exceeded max suffixes, give trace message
 	 */
-	if (	(sfxs_found == pAmple_in->iMaxSuffixCount) &&
-		(pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON) )
+		if (sfxs_found == pAmple_in->iMaxSuffixCount)
 		{
+
+		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
+		  {
 		store_AMPLE_trace(pAmple_in,
 				  "%sMaximum suffixes found, word not used up.\n",
 				  szTraceTab_m);
+		  }
+		else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		  {
+		xml_maximum_reached(pAmple_in, "suffixes");
+		  }
 		}
 	/*
 	 *  if nothing more matches, give trace message
 	 */
-	if (	!bAllomorphsTried &&
+	else if (	(!bAllomorphsTried || bAllAllosAreNull) &&
 		((pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
 		 (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) ))
 		{
@@ -2662,7 +2735,8 @@ return bAllomorphsTried;
  *    none
  */
 static void a_trace( dtype, tail, tlen, m_name, fcat, tcat, props, ordercl,
-			 orderclMax, pszAllomorphID_in, ac_ptr, pAmple_in)
+			 orderclMax, pszAllomorphID_in, pszPATRCat_in,
+			 ac_ptr, pAmple_in)
 int		dtype;		/* type of dictionary entry (pfx, root, sfx) */
 char *		tail;		/* remainder of word string to be parsed */
 int		tlen;		/* length of tail */
@@ -2673,6 +2747,7 @@ PropertySet_t	props;		/* allomorph and morpheme properties */
 int		ordercl;	/* orderclass */
 int		orderclMax;	/* orderclassMax */
 char *		pszAllomorphID_in;	/* allomorph indentifier */
+char *          pszPATRCat_in;	/* PATR grammar category */
 AmpleAlloEnv *	ac_ptr;		/* allomorph environment conditions pointer */
 AmpleData *	pAmple_in;
 {
@@ -2837,7 +2912,13 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
 	store_AMPLE_trace(pAmple_in, "%s<parseNode>\n", pszIndent);
 	store_AMPLE_trace(pAmple_in, "  %s<morph",      pszIndent);
 	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
-	  store_AMPLE_trace(pAmple_in, " type='%s'",        pszType);
+	  {
+	store_AMPLE_trace(pAmple_in, " type='%s'",        pszType);
+#ifdef EXPERIMENTAL
+	store_AMPLE_trace(pAmple_in, " wordType='%s'", pszPATRCat_in);
+	store_AMPLE_trace(pAmple_in, " morphname='%s'", m_name);
+#endif
+	  }
 	else
 	  store_AMPLE_trace(pAmple_in, " type=%s",        pszType);
 	storeAmpleCDATA(pszStr, pszAllomorphID_in ? pszAllomorphID_in : szAllo,
@@ -6991,4 +7072,26 @@ static void sgml_trace_success(AmpleData * pAmple_in)
   else
 	sgml_trace(pAmple_in, "<success>\n", FALSE);
   sgml_trace(pAmple_in, "  </parseNode>\n", TRUE);
+}
+/*****************************************************************************
+ * NAME
+ *    xml_maxaffix_reached
+ * DESCRIPTION
+ *    report reached maximum affix or root (XML only)
+ * RETURN VALUE
+ *    none
+ */
+static void xml_maximum_reached(AmpleData * pAmple_in, char * pszType_in)
+{
+  char * pszIndent;
+#ifdef HAVE_ALLOCA
+  pszIndent = (char *)alloca((2*iTracingDepth_m+1)*sizeof(char));
+#else
+  pszIndent = (char *)allocMemory((2*iTracingDepth_m+1)*sizeof(char));
+#endif
+  sprintf(pszIndent, "%*s", 2*iTracingDepth_m, "");
+  store_AMPLE_trace(pAmple_in, "  %s<parseNode>\n", pszIndent);
+  store_AMPLE_trace(pAmple_in, "  %s<maxReached>", pszIndent);
+  store_AMPLE_trace(pAmple_in, "%s</maxReached>\n", pszType_in);
+  store_AMPLE_trace(pAmple_in, "  %s</parseNode>\n", pszIndent);
 }

@@ -4,12 +4,16 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 9		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "December 7, 2004"	/* date of release version */
-#define YEAR "2004"		/* used for copyright notice in banner */
+#define PATCHLEVEL 2		/* bug fix or other minor change */
+#define DATE "February 3, 2005"	/* date of release version */
+#define YEAR "2005"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 03-Feb-2005  hab  - Add XML output for maximums reached and special case
+ * [3.9.2]               of <leftover> when there are null suffixes.
+ * 12-Dec-2004  hab  - Add more XML output for use in FieldWorks XAmple
+ * [3.9.1]               Word Grammar Debugger
  * 07-Dec-2004  hab  - Enhancement: add interfixes (affixes which appear
  * [3.9.0]               between roots)
  * 07-Jan-2004  hab  - Enhancement: add negative SECs (~/)
