@@ -486,7 +486,7 @@ regardless of the setting of the @code{\catcr} field.  That
 is, the @code{\catcr} field has no effect whatsoever unless
 the @code{\cat} field is also present.
 
-@node \ccl, \cr, \catcr (xxAD01.CTL), Analysis data file fields
+@node \ccl, \cr, \catcr, Analysis data file fields
 @subsection Category class: \ccl
 @findex \ccl
 
