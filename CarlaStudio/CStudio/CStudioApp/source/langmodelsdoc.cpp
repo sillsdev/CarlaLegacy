@@ -711,7 +711,9 @@ void CLangModelsDoc::OnCustomizeUserTestDisplay()
 	CDlgEditTestColor dlg;
 	dlg.m_cCommentChar=cCommentChar;
 	dlg.m_pFont=pFont;
-	dlg.DoModal( );
+	dlg.m_pTestEditModel=m_pLang->m_pTestEditModel;
+	if(dlg.DoModal( )==IDOK) {
+		SetModifiedFlag(TRUE);}
 
 #else // mr270
 	CDlgEditTestColor dlg;

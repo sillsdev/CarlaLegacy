@@ -14,6 +14,10 @@
 #include "TextDisplayInfo.h"
 #include "CodeTable.h"
 
+#ifndef mr270
+#include "TestEditModel.h"
+#endif // mr270
+
 class CWizNewFromFiles;
 //class CProcessSequence;
 class CAnalysisProcessSequence;
@@ -119,6 +123,9 @@ public:
 	CWizNewFromFiles* m_pFilesWiz;
 	CProjectDoc* getProject();
 	DWORD m_wDisplayFlags; // jdh 11/9/99
+#ifndef mr270
+	CTestEditModel *m_pTestEditModel;
+#endif // mr270
 
 protected:
 	CAmpleDLLWrapper* m_pAmpleDLLWrapper;
@@ -129,6 +136,8 @@ protected:
 	void copyFile(CString& sFromDir, CString& sToDir,
 					CString& sFileName, LPCTSTR lpszToFileName=NULL);
 	void copyFile(CString& sFromPath, CString& sToDir);
+
+
 	CString m_sName;
 	CWCommonModel m_commonModel;
 	CWTextInModel m_textInModel;
