@@ -19,8 +19,16 @@
 		<example/>
 	</typology>
 	<qp checkedOff="no" npDegree="no" npDegreePos="unknown" npDegreeEither="unrestricted" degree="no" degreePos="unknown" degreeEither="unrestricted" ordinalFormation="affix" ordinalPos="unknown" ordinalEither="unrestricted" cardinalHeadPos="after">
+		<all/>
+		<only/>
+		<just/>
 		<example/>
+		<quantifierExample/>
 		<degreeExample/>
+		<cardinalNumbers1to10/>
+		<cardinalNumbers11to20/>
+		<cardinalNumbers30to100/>
+		<ordinalNumbers/>
 		<ordinalExample/>
 		<cardinalCompoundExample/>
 		<cardinalNumberCategory/>
@@ -37,11 +45,12 @@
 		<example/>
 		<adjectiveCategory/>
 	</adjp>
-	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" caseDefault="no" artAndDem="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="no" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown" possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpCaseAffixType="suffix" adjpAgree="no" comp="no" compHead="right" compHeadPPPos="unknown">
+	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" caseDefault="no" artAndDem="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="no" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown" possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpCaseAffixType="suffix" adjpAgree="no" comp="no" compHead="right" ppPos="unknown">
 		<example/>
 		<embeddedExample/>
 		<ppExample/>
 		<relClExample/>
+	 <possAlienableAffixExample/>
 		<qpExample/>
 		<adjpExample/>
 		<compExample/>

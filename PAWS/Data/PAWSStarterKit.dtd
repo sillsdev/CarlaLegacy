@@ -171,7 +171,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	 Noun-noun compounds may or may not occur (comp).  If yes, they have a head (compHead)
 	and any PP occurs in a position with respect to that head (compHeadPPPos).
 -->
-<!ELEMENT np (example, embeddedExample, ppExample, relClExample, qpExample, adjpExample, compExample, compPPExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter)>
+<!ELEMENT np (example, embeddedExample, ppExample, relClExample, possAlienableAffixExample, qpExample, adjpExample, compExample, compPPExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter)>
 <!ATTLIST np
 	checkedOff (yes | no) "no"
 	agreeNumber (no | yes) "no"
@@ -225,11 +225,12 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	adjpAgree (no | yes) "no"
 	comp (no | yes) "no"
 	compHead (left | right) "right"
-	compHeadPPPos (before | after | either | unknown) "unknown"
+	ppPos (before | after | either | unknown) "unknown"
 >
 <!ELEMENT embeddedExample (#PCDATA)>
 <!ELEMENT ppExample (#PCDATA)>
 <!ELEMENT relClExample (#PCDATA)>
+<!ELEMENT possAlienableAffixExample (#PCDATA)>
 <!ELEMENT qpExample (#PCDATA)>
 <!ELEMENT adjpExample (#PCDATA)>
 <!ELEMENT compExample (#PCDATA)>
