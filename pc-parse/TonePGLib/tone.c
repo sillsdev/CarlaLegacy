@@ -3441,6 +3441,26 @@ void show_tone(FILE *pOutputFP_in, struct tone *tp)
 		fprintf(pOutputFP_in, " @ %s", tone_domain_name(tp->tone_domain));
 	}
 	}
+
+  if (!tp->tone_status[PRIMARY] && !tp->tone_status[REGISTER])
+	{
+	  fprintf(pOutputFP_in, "\n\tTone of unknown status!!");
+	  fprintf(pOutputFP_in, "\n\t\tul_type[PRIMARY] = %s; ul_type[REGISTER] = %s",
+		  (tp->tone_ul_type[PRIMARY]) ? tone_type_name(tp->tone_ul_type[PRIMARY]) : "0",
+		  (tp->tone_ul_type[REGISTER]) ? tone_type_name(tp->tone_ul_type[REGISTER]) : "0" );
+	  fprintf(pOutputFP_in, "\n\t\tvalue[PRIMARY] = %s; value[REGISTER] = %s",
+		  (tp->tone_value[PRIMARY]) ? tone_value_name(tp->tone_value[PRIMARY]) : "0",
+		  (tp->tone_value[REGISTER]) ? tone_value_name(tp->tone_value[REGISTER]) : "0");
+	  if ((tloc = get_next_loc(tp->tone_ul_loc, (int)NULL)))
+		{
+		  fprintf(pOutputFP_in, " @ tbu");	/* show all locations */
+		  for (;
+		   tloc > 0;
+		   tloc = get_next_loc(tp->tone_ul_loc, tloc))
+		fprintf(pOutputFP_in, " %d", tloc);
+		}
+	}
+
 }	/* end show_tone */
 
 /****************************************************************************

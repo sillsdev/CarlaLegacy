@@ -4,12 +4,15 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 15		/* bug fix or other internal improvement */
-#define DATE       "June 27, 2003"	/* date of release version */
+#define PATCHLEVEL 16		/* bug fix or other internal improvement */
+#define DATE       "November 4, 2003"	/* date of release version */
 #define YEAR       "2003"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 04-Nov-2003  hab  - Fix a bug where associate and insert rule actions would
+ * [1.0.16]             leave a phantom tone if applied in feature-filling mode
+ *                      and a tone was already present.
  * 27-Jun-2003  hab  - Changes 1.0.6, 1.0.7, and 1.0.9 modified the lexical tone
  * [1.0.15]             info in the lexical entries.  Need to restore the
  *                      lexical tone info in build_tone_tier.

@@ -587,6 +587,10 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 #ifndef B4_0_4_4
   int               inserted_at;
 #endif /* B4_0_4_4 */
+#ifndef hab1016
+  int               did_actionB4;
+  struct tone      *apToneTemp;
+#endif /* hab1016 */
 
   trp->tr_tried++;		/* keep statistics */
 
@@ -796,12 +800,20 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		{
 		  if (inserted_at == LEFT)
 		{
+#ifndef hab1016
+		  /* remember in case need to restore */
+		  apToneTemp = ap->pToneBeg;
+#endif /* hab1016 */
 		  ap->pToneBeg = tp;
 		  if (ap->pToneEnd == (struct tone *)NULL)
 			ap->pToneEnd = tp;
 		}
 		  else if (inserted_at == RIGHT)
 		{
+#ifndef hab1016
+		  /* remember in case need to restore */
+		  apToneTemp = ap->pToneEnd;
+#endif /* hab1016 */
 		  ap->pToneEnd = tp;
 		  if (ap->pToneBeg == (struct tone *)NULL)
 			ap->pToneBeg = tp;
@@ -811,6 +823,9 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 				/* insert it in tier */
 	  pwp->wd_tier[tier] = insert_tone_list(pwp->wd_tier[tier],
 							tier, tp);
+#ifndef hab1016
+	  did_actionB4 = did_action;
+#endif /* hab1016 */
 	  if (acp->ac_op == ASSOCIATE)
 				/* link tp to tbu */
 		did_action += link_tone_to_tbu(tp, tier, params, tbp, tbu_head,
@@ -819,6 +834,28 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 				/* line up tp to tbu */
 		did_action += link_tone_to_tbu(tp, tier, params, tbp, tbu_head,
 									  ap, tp->tone_status[tier]);
+#ifndef hab1016
+	  if (did_action == did_actionB4)
+		{			/* action failed; need to undo adding of tone */
+	  if (ap != (StampAnalysis *)NULL)
+				/* update morpheme's tone pointers */
+		{
+		  if (inserted_at == LEFT)
+		{
+		  ap->pToneBeg = apToneTemp;
+		  if (ap->pToneEnd == tp)
+			ap->pToneEnd = (struct tone *)NULL;
+		}
+		  else if (inserted_at == RIGHT)
+		{
+		  ap->pToneEnd = apToneTemp;
+		  if (ap->pToneBeg == tp)
+			ap->pToneBeg = (struct tone *)NULL;
+		}
+		}
+		  delete_tone(tp, pwp);
+		}
+#endif hab1016
 	  break;
 
 	case DELETE:		/* these all do the same thing at this point */
