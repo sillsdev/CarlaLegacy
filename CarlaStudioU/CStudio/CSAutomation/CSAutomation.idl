@@ -1,0 +1,89 @@
+// CSAutomation.idl : IDL source for CSAutomation.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CSAutomation.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+	[
+		object,
+		uuid(61FE777C-09DF-11D3-8664-E0570BC14908),
+		dual,
+		oleautomation,
+		helpstring("ITask Interface"),
+		pointer_default(unique)
+	]
+	interface ITask : IDispatch
+	{
+		typedef enum CSGOAL
+		{	csSourceAna,		// analysis and auto disambiguation
+			csGlossedInterlinear, // perform sentrans "adjustment"
+			csAutoSynthCheck,		 // analyze, synthesis, and compare
+			csTargetANA,
+			csTargetText
+		} CSGOAL;
+
+
+		typedef enum CSOUTPUTLOCATION
+		{
+			csReplaceInput,
+			csSameFolderAsInput,
+			csSpecifiedPath
+		} CSOUTPUTLOCATION;
+
+		[id(8), helpstring("method Perform")] HRESULT Perform();
+		[id(9), helpstring("method Save")] HRESULT Save([in] BSTR bstrPath);
+		[id(10), helpstring("method Load")] HRESULT Load([in] BSTR bstrPath);
+		[propget, id(1), helpstring("property InputPath")] HRESULT InputPath([out, retval] BSTR *pVal);
+		[propput, id(1), helpstring("property InputPath")] HRESULT InputPath([in] BSTR newVal);
+		[propget, id(2), helpstring("property DesiredOutputPath")] HRESULT DesiredOutputPath([out, retval] BSTR *pVal);
+		[propput, id(2), helpstring("property DesiredOutputPath")] HRESULT DesiredOutputPath([in] BSTR newVal);
+		[propget, id(3), helpstring("property SourceLangCode")] HRESULT SourceLangCode([out, retval] BSTR *pVal);
+		[propput, id(3), helpstring("property SourceLangCode")] HRESULT SourceLangCode([in] BSTR newVal);
+		[propget, id(4), helpstring("property TargetLangCode")] HRESULT TargetLangCode([out, retval] BSTR *pVal);
+		[propput, id(4), helpstring("property TargetLangCode")] HRESULT TargetLangCode([in] BSTR newVal);
+		[propget, id(5), helpstring("property AnalysisMarkers")] HRESULT AnalysisMarkers([out, retval] BSTR *pVal);
+		[propput, id(5), helpstring("property AnalysisMarkers")] HRESULT AnalysisMarkers([in] BSTR newVal);
+		[propget, id(6), helpstring("property Goal")] HRESULT Goal([out, retval] CSGOAL *pVal);
+		[propput, id(6), helpstring("property Goal")] HRESULT Goal([in] CSGOAL newVal);
+		[propget, id(7), helpstring("property InputIsInterlinear")] HRESULT InputIsInterlinear([out, retval] BOOL *pVal);
+		[propput, id(7), helpstring("property InputIsInterlinear")] HRESULT InputIsInterlinear([in] BOOL newVal);
+		[propget, id(11), helpstring("property ActualOutputPath")] HRESULT ActualOutputPath([out, retval] BSTR *pVal);
+		[propput, id(11), helpstring("property ActualOutputPath")] HRESULT ActualOutputPath([in] BSTR newVal);
+		[propget, id(12), helpstring("property IncludeLinesWithSpecifiedMarkers")] HRESULT IncludeLinesWithSpecifiedMarkers([out, retval] BOOL *pVal);
+		[propput, id(12), helpstring("property IncludeLinesWithSpecifiedMarkers")] HRESULT IncludeLinesWithSpecifiedMarkers([in] BOOL newVal);
+		[propget, id(13), helpstring("property MarkersToIncludeOrExclude")] HRESULT MarkersToIncludeOrExclude([out, retval] BSTR *pVal);
+		[propput, id(13), helpstring("property MarkersToIncludeOrExclude")] HRESULT MarkersToIncludeOrExclude([in] BSTR newVal);
+		[propget, id(14), helpstring("property SAFEARRAY of LangCodes")] HRESULT LangCodes([out, retval] VARIANT *pVal);
+//		[propget, id(15), helpstring("property CurrentIntergenAnalysisMarkers")] HRESULT CurrentIntergenAnalysisMarkers([in] BSTR bstrLangCode, [out, retval] BSTR *pVal);
+		[propget, id(16), helpstring("property LangCodesString")] HRESULT LangCodesString([out, retval] BSTR *pVal);
+		[propget, id(17), helpstring("property OutputLocation")] HRESULT OutputLocation([out, retval] CSOUTPUTLOCATION *pVal);
+		[propput, id(17), helpstring("property OutputLocation")] HRESULT OutputLocation([in] CSOUTPUTLOCATION newVal);
+		[propget, id(18), helpstring("property InterlinearWordMarker")] HRESULT InterlinearWordMarker([out, retval] BSTR *pVal);
+		[propput, id(18), helpstring("property InterlinearWordMarker")] HRESULT InterlinearWordMarker([in] BSTR newVal);
+		[id(19), helpstring("method RetrieveIntergenSettings")] HRESULT RetrieveIntergenSettings();
+		[id(20), helpstring("method RetrieveTextInSettings")] HRESULT RetrieveTextInSettings();
+	};
+
+[
+	uuid(61FE776F-09DF-11D3-8664-E0570BC14908),
+	version(1.0),
+	helpstring("CSAutomation 1.0 Type Library")
+]
+library CSAUTOMATIONLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(61FE777D-09DF-11D3-8664-E0570BC14908),
+		helpstring("Task Class")
+	]
+	coclass TaskImpl
+	{
+		[default] interface ITask;
+	};
+};
