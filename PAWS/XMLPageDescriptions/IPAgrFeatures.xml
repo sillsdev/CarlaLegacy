@@ -3,82 +3,153 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPAgrFeatures">
 	<title level="2">Basic, Single-Clause Sentences - Agreement Features</title>
-<instruction>Verbs and auxiliaries may also carry agreement features that force agreement with the subject, and sometimes also with the direct object.  Key the appropriate features on the relevant affixes.  In the case of animacy, this is most likely not an affix but a property of the individual verb’s semantics whether its subject and/or object must be animate, so those features will need to be keyed on the verb entry.
-<featureChart>
-<featureRow>
-<featureType>person</featureType>
-<featureItem>first_subjectfirst_object</featureItem>
-<featureExplanation>the subject must be first personthe object must be first person</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>first_exclusive_subjectfirst_exclusive_object</featureItem>
-<featureExplanation>the subject must be first person exclusivethe object must be first person exclusive</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>first_inclusive_subjectfirst_inclusive_object</featureItem>
-<featureExplanation>the subject must be first person inclusivethe object must be first person inclusive</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>second_subjectsecond_object</featureItem>
-<featureExplanation>the subject must be second personthe object must be second person</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>third_subjectthird_object</featureItem>
-<featureExplanation>the subject must be third personthe object must be third person</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType>number</featureType>
-<featureItem>singular_subjectsingular_object</featureItem>
-<featureExplanation>the subject must be singularthe object must be singular</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>dual_subjectdual_object</featureItem>
-<featureExplanation>the subject must be dualthe object must be dual</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>plural_subjectplural_object</featureItem>
-<featureExplanation>the subject must be pluralthe object must be plural</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType>gender</featureType>
-<featureItem>masculine_subjectmasculine_object</featureItem>
-<featureExplanation>the subject must be masculinethe object must be masculine</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>feminine_subjectfeminine_object</featureItem>
-<featureExplanation>the subject must be femininethe object must be feminine</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>neuter_subjectneuter_object</featureItem>
-<featureExplanation>the subject must be neuterthe object must be neuter</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType>animacy</featureType>
-<featureItem>animate_subjectanimate_object</featureItem>
-<featureExplanation>the subject must be animatethe object must be animate</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType/>
-<featureItem>-animate_subject-animate_object</featureItem>
-<featureExplanation>the subject must be inanimatethe object must be inanimate</featureExplanation>
-</featureRow>
-<featureRow>
-<featureType>class</featureType>
-<featureItem>class_##_subjectclass_##_object</featureItem>
-<featureExplanation>(replace ## with the class number up to 99)</featureExplanation>
-</featureRow>
-</featureChart>
-
-</instruction>
+	<instruction>Verbs and auxiliaries may also carry agreement features that force agreement with the subject, and sometimes also with the direct object.  Key the appropriate features on the relevant affixes, including pronominal clitics that may attach to the verb.
+<br/><br/>For animacy, it is most likely a property of the semantics of the individual verb whether its subject and/or object must be animate, so those features will need to be keyed on the verb entry.  Since verbs are a large, open class, you do not need to mark all verbs at this point (or even ever).  Mark those common verbs that come to mind that can only have an animate subject or object.  For example, any "experiencer" verbs which have to do with feeling or thinking must have an animate subject.  Later, when you are working on eliminating incorrect parses, you will find others that need these features.<br/>
+		<featureChart>
+			<featureRow>
+				<featureType>person</featureType>
+				<featureItem>first_subject</featureItem>
+				<featureExplanation>the subject must be first person</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>first_object</featureItem>
+				<featureExplanation>the object must be first person</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>first_exclusive_subject</featureItem>
+				<featureExplanation>the subject must be first person exclusive</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>first_exclusive_object</featureItem>
+				<featureExplanation>the object must be first person exclusive</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>first_inclusive_subject</featureItem>
+				<featureExplanation>the subject must be first person inclusive</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>first_inclusive_object</featureItem>
+				<featureExplanation>the object must be first person inclusive</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>second_subject</featureItem>
+				<featureExplanation>the subject must be second person</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>second_object</featureItem>
+				<featureExplanation>the object must be second person</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>third_subject</featureItem>
+				<featureExplanation>the subject must be third person</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>third_object</featureItem>
+				<featureExplanation>the object must be third person</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType>number</featureType>
+				<featureItem>singular_subject</featureItem>
+				<featureExplanation>the subject must be singular</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>singular_object</featureItem>
+				<featureExplanation>the object must be singular</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>dual_subject</featureItem>
+				<featureExplanation>the subject must be dual</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>dual_object</featureItem>
+				<featureExplanation>the object must be dual</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>plural_subject</featureItem>
+				<featureExplanation>the subject must be plural</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>plural_object</featureItem>
+				<featureExplanation>the object must be plural</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType>gender</featureType>
+				<featureItem>masculine_subject</featureItem>
+				<featureExplanation>the subject must be masculine</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>masculine_object</featureItem>
+				<featureExplanation>the object must be masculine</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>feminine_subject</featureItem>
+				<featureExplanation>the subject must be feminine</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>feminine_object</featureItem>
+				<featureExplanation>the object must be feminine</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>neuter_subject</featureItem>
+				<featureExplanation>the subject must be neuter</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>neuter_object</featureItem>
+				<featureExplanation>the object must be neuter</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType>animacy</featureType>
+				<featureItem>animate_subject</featureItem>
+				<featureExplanation>the subject must be animate</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>animate_object</featureItem>
+				<featureExplanation>the object must be animate</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>-animate_subject</featureItem>
+				<featureExplanation>the subject must be inanimate</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>-animate_object</featureItem>
+				<featureExplanation>the object must be inanimate</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType>class</featureType>
+				<featureItem>class_##_subject</featureItem>
+				<featureExplanation>(replace ## with the class number up to 99)</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>class_##_object</featureItem>
+				<featureExplanation>(replace ## with the class number up to 99)</featureExplanation>
+			</featureRow>
+		</featureChart>
+	</instruction>
 	<form section="ip" transparent="yes">
+		<br/>
 		<buttons>
 			<button id="IPAgrFeaturesBack" value="Back" goto="IPInflFeatures.htm"/>
 			<button id="IPAgrFeaturesNext" value="Next" goto="IPContents.htm"/>

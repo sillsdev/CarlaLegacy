@@ -3,17 +3,17 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPCop">
 	<title level="2">Basic, Single-Clause Sentences - Intransitive and Copular Sentences</title>
-		<introduction>Simple intransitives do not have any complements after the verb.  Motion verbs include a location in the form of either a PP or adverb.  English examples include:</introduction>
-		<EnglishExample>
-			<exItem label="1.">The girl swims.</exItem>
-			<exItem label="2.">My mother went to the store.</exItem>
-			<exItem label="3.">My teacher came here.</exItem>
-		</EnglishExample>
+	<introduction>Simple intransitives do not have any complements after the verb.  Motion verbs include a location in the form of either a PP or adverb.  English examples include:</introduction>
+	<EnglishExample>
+		<exItem label="1.">The girl swims.</exItem>
+		<exItem label="2.">My mother went to the store.</exItem>
+		<exItem label="3.">My teacher came here.</exItem>
+	</EnglishExample>
 	<form section="ip">
 		<prompt>Key your examples here:</prompt>
 		<textBox id="IPExamplesIntranExample" dataItem="intransExample" cols="50"/>
-	<instruction>Partial subcategorization can be done as follows, without entering a feature on every verb: if a particular verb is intransitive and can never have anything but a subject, mark it with the feature <feature>intransitive</feature>.  (Don't consider temporal elements.)  If it is an intransitive motion verb that can have a locative PP or AdvP <span id="IPCopFollow">following</span>
-		<span id="IPCopPrecede">preceding</span> it, add the feature <feature>motion</feature> to its lexical entry.</instruction>
+		<instruction>Partial subcategorization can be done as follows, without entering a feature on every verb: if a particular verb is intransitive and can never have anything but a subject, mark it with the feature <feature>intransitive</feature>.  (Don't consider temporal elements.)  If it is an intransitive motion verb that can have a locative PP or AdvP <span id="IPCopFollow" show="swHeadInitial">following</span>
+			<span id="IPCopPrecede" show="swHeadFinal">preceding</span> it, add the feature <feature>motion</feature> to its lexical entry.</instruction>
 		<introduction>Copular sentences can have an adjective, PP, or nominal phrase following the copular verb.  Some languages do not require a copular verb or auxiliary to be present.  English examples include:</introduction>
 		<EnglishExample>
 			<exItem label="1.">The girl is pretty.</exItem>
@@ -23,17 +23,42 @@
 		</EnglishExample>
 		<prompt>Key your examples here:</prompt>
 		<textBox id="IPExamplesCopularExample" dataItem="copularExample" cols="50"/>
-		<radioGroup>
-			<groupName dataItem="copular" default="no">RIPCopVerb</groupName>
-			<prompt>Can copular type sentences be expressed without an overt verb in your language?</prompt>
-			<radio id="IPCopVerbNo" dataValue="no">No</radio>
-			<radio id="IPCopVerbYesNeither" dataValue="yesNeither">Yes, neither a verb nor an Aux is required</radio>
-			<radio id="IPCopVerbYesAux" dataValue="yesAux">Yes, but an Aux is required</radio>
-		</radioGroup>
-<instruction>Add the feature <feature>copular</feature> to the verbs that take AdjP, PP or predicate nominative complements. Since the motion and copular verbs are a small, closed set, these features must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-motion</feature> and <feature>-copular</feature>.</instruction>
-		<buttons>
+		<instruction>Add the feature <feature>copular</feature> to the verbs that take AdjP, PP or predicate nominative complements. Since the motion and copular verbs are a small, closed set, these features must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-motion</feature> and <feature>-copular</feature>.</instruction>      <radioGroup>
+			<groupName dataItem="copular" default="yes">RIPCopVerb</groupName>
+			<prompt>Do copular type sentences require an overt verb in your language?</prompt>
+			<radio id="IPCopVerbYes" dataValue="yes">Yes</radio>
+			<radio id="IPCopVerbNoNeither" dataValue="noNeither">No, neither a verb nor an auxiliary is required</radio>
+			<radio id="IPCopVerbNoAux" dataValue="noAux">No, but an auxiliary is required</radio>
+<radioGroup id="IPCopVerbNoNeitherTable" show="swIPCopVerbNoNeither">
+	<groupName dataItem="copularAffix" default="no">RIPCopAiifx</groupName>
+	<prompt>Is there an affix which occurs on the predicate nominal or predicate adjective in copular sentences?</prompt>
+	<radio id="IPCopAffixNo" dataValue="no">No</radio>
+<radio id="IPCopAffixYes" dataValue="yes">Yes</radio>
+</radioGroup>
+ </radioGroup>
+
+<instruction id="IPCopAffixYesInstruction" show="swIPCopAffixYes">Add either of the features <feature>copular_prefix</feature> or <feature>copular_suffix</feature> as appropriate in the lexicon.</instruction>
+<br/>
+<buttons>
 			<button id="IPCopBack" value="Back" goto="IPContents.htm"/>
 			<button id="IPCopNext" value="Next" goto="IPContents.htm"/>
 		</buttons>
 	</form>
+<showWhen id="swHeadInitial">
+	<whenValue element="typology" attr="wordOrder" value="SVO"></whenValue>
+  <or/>  <whenValue element="typology" attr="wordOrder" value="VOS"></whenValue>
+   <or/> <whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
+</showWhen>
+<showWhen id="swHeadFinal">
+	<whenValue element="typology" attr="wordOrder" value="SOV"></whenValue>
+  <or/>  <whenValue element="typology" attr="wordOrder" value="OVS"></whenValue>
+   <or/> <whenValue element="typology" attr="wordOrder" value="OSV"></whenValue>
+</showWhen>
+<showWhen id="swIPCopVerbNoNeither">
+	<whenRadio button="IPCopVerbNoNeither"></whenRadio>
+</showWhen>
+<showWhen id="swIPCopAffixYes">
+	<whenRadio button="IPCopVerbNoNeither"></whenRadio>
+<and/> <whenRadio button="IPCopAffixYes"></whenRadio>
+</showWhen>
 </page>

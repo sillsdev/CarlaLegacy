@@ -8,14 +8,18 @@
 		<instruction>Think about how possession is expressed in your language.  We won't be able to handle pre/post-positional phrases until <section number="8">Pre/Post-positional Phrases</section> and relative clauses within nominal phrases until <section number="15">Relative Clauses</section>, but examples such as the English ones above will clarify for you what type of possessive marking you have.<br/>
 			<br/>
 Note also that possessors can be embedded in one another, as in <example>the boy's sister's dog</example>.  Include such an example in your test data.</instruction>
-		<prompt>Key some examples with simple and embedded possessors here:</prompt>
+		<prompt>
+			Key some examples with simple and embedded possessors here:</prompt>
 		<textBox id="NPPossEmbeddedExample" dataItem="embeddedExample"/>
 		<br/>
-		<prompt>Key some examples with pre/post-positional phrases within the possessor here:</prompt>
+		<prompt>
+			Key some examples with pre/post-positional phrases within the possessor here:</prompt>
 		<textBox id="NPPossPPExample" dataItem="ppExample"/>
 		<br/>
-		<prompt>Key some examples with relative clauses within the possessor here:</prompt>
+		<prompt>
+			Key some examples with relative clauses within the possessor here:</prompt>
 		<textBox id="NPPossRelClExample" dataItem="relClExample"/>
+		<br/>
 		<radioGroup>
 			<groupName dataItem="possMarked" default="no">RNPPossMarked</groupName>
 			<prompt>Based on your examples, does your language have any special marking to distinguish possessors from any other nominal phrase?</prompt>
@@ -129,8 +133,6 @@ Does the presence of a possessor change the case marking on the head noun to mat
 	</showWhen>
 	<showWhen id="swNPCaseErg">
 		<whenValue element="np" attr="case" value="ergative"/>
-		<or/>
-		<whenValue element="np" attr="case" value="split"/>
 	</showWhen>
 	<showWhen id="swNPCaseYes">
 		<not/>

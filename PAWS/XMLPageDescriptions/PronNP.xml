@@ -4,22 +4,26 @@
 <page id="PronNP">
 	<title level="2">Pronouns - Pronouns as an NP</title>
 	<form section="pron">
-		<introduction>Pronouns and also demonstratives, quantifiers, and numbers can stand alone as a nominal phrase in the right context.  They cannot normally be modified by possessors, adjectives, or other quantifiers, although they can be modified by a degree word, an article or demonstrative. English examples of this type include the following:</introduction>
+		<introduction>Pronouns and also demonstratives, quantifiers, and numbers can stand alone as a nominal phrase in the right context.  In most languages, they cannot be modified by possessors, adjectives, or other quantifiers, although they can be modified by a degree word, an article and/or a demonstrative. English examples of this type include the following:</introduction>
 		<EnglishExample>
 			<exItem label="1.">all twelve.</exItem>
 			<exItem label="2.">only he.</exItem>
 			<exItem label="3.">just two.</exItem>
 			<exItem label="4.">just those few.</exItem>
 		</EnglishExample>
+		<br/>
 		<prompt>Key your examples here:</prompt>
 		<textBox id="PronNPStandAloneExample" dataItem="standAloneNPExample"/>
+		<br/>
 		<introduction>In addition, it is possible to have a pronoun, demonstrative, or quantifier modified by a relative clause, as in:</introduction>
 		<EnglishExample>
 			<exItem label="1.">all those who are going with us.</exItem>
 			<exItem label="2.">only these two that I saw.</exItem>
 		</EnglishExample>
+		<br/>
 		<prompt>Key your examples here:</prompt>
 		<textBox id="PronNPRelCl" dataItem="pronRelClExample"/>
+		<br/>
 		<introduction>Finally, these categories can also be modified by a partitive phrase (or other PP), as in:</introduction>
 		<EnglishExample>
 			<exItem label="1.">only a few of you.</exItem>
@@ -28,19 +32,34 @@
 			<exItem label="4.">all of us.</exItem>
 			<exItem label="5.">all by himself.</exItem>
 		</EnglishExample>
+		<br/>
 		<prompt>Key your examples here:</prompt>
 		<textBox id="PronNPPartitiveExample" dataItem="partitiveExample"/>
-		<instruction>This distribution can be accounted for if we allow pronouns, demonstratives, quantifiers, and numbers to be NPs (rather than DPs) in the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>.</instruction>
-		<radioGroup>
-			<groupName dataItem="partitive" default="unknown" position="yesHeadDiff"/>
-			<prompt>Where does the optional partitive PP occur with respect to the pronoun, demonstrative, quantifier or number?</prompt>
+		<br/>
+<introduction>This distribution discussed for English can be accounted for if we allow pronouns, demonstratives, quantifiers, and numbers to be NPs (rather than DPs) in the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>.  However, some languages allow pronouns to be modified by possessors and adjectives as well, so the correct category in that case is N.  A few languages may require pronouns to stand alone without any modification at all, making them DPs.</introduction><br/>
+<radioGroup>
+	<groupName dataItem="pronounCat" default="NP">RPronNPCat</groupName>
+	<prompt>Which category or level in the tree structure is correct for pronouns (and other elements which can occur without a head noun) in your language?
+</prompt>
+	<radio id="PronNPCatNP" dataValue="NP">NP, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives</radio>
+   <radio id="PronNPCatN" dataValue="N">N, because they can be modified by all the same categories as nouns can</radio>
+<radio id="PronNPCatDP" dataValue="DP">DP, because they must stand alone in the place of a whole nominal phrase</radio>
+		<radioGroup id="PronNPPartitiveTable" show="swPronNPCatNPorN">
+			<groupName dataItem="partitive" default="unknown" position="yesHeadDiff">RPronNPPartitive</groupName>
+			<prompt>Where does the optional PP occur with respect to the pronoun, demonstrative, quantifier or number?</prompt>
 			<radio id="PronNPPartBefore" dataValue="before">Before</radio>
 			<radio id="PronNPPartAfter" dataValue="after">After</radio>
 		</radioGroup>
-		<instruction>The partitive PP is usually headed by a specific preposition or postposition.  Mark this pre/post-position with the feature <feature>partitive</feature> in the lexicon.  All others will automatically default to <feature>-partitive</feature> so those PPs will not be allowed.</instruction>
+ </radioGroup>
+	   <instruction id="PronNPPartitiveInstruction" show="swPronNPCatNPorN">The partitive PP is usually headed by a specific preposition or postposition.  Mark this pre/post-position with the feature <feature>partitive</feature> in the lexicon.</instruction>
+		<br/>
 		<buttons>
 			<button id="PronNPBack" value="Back" goto="PronIndefinite.htm"/>
 			<button id="PronNPNext" value="Next" goto="PronTesting.htm"/>
 		</buttons>
 	</form>
+<showWhen id="swPronNPCatNPorN">
+	<whenRadio button="PronNPCatNP"></whenRadio>
+<or/>  <whenRadio button="PronNPCatN"></whenRadio>
+</showWhen>
 </page>

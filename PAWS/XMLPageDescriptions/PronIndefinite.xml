@@ -2,27 +2,35 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronIndefinite">
-	<title level="2">Pronouns - Indefinite Pronouns</title>
-	<introduction>A final type of pronouns is indefinite pronouns.  In English, these include <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>something</example>, etc.  Also, <example>nobody</example>, <example>nothing</example>, <example>none</example> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier or negative plus an indefinite generic noun, and some languages may not merge them into a single word, as in <example>no one</example> for English.</introduction>
+	<title level="2">Pronouns - Indefinites</title>
+	<introduction>A final type of pronouns is indefinites.  In English, these include <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>something</example>, etc.  Also, <example>nobody</example>, <example>nothing</example>, <example>none</example> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier or negative plus an indefinite generic noun, and some languages may not merge them into a single word, as in <example>no one</example> for English.</introduction>
 	<form section="pron">
 		<radioGroup id="PronIndefGroup">
 			<groupName dataItem="indef" default="no">RPronIndef</groupName>
 			<prompt>Does your language have single-word indefinite pronouns?</prompt>
 			<radio id="PronIndefNo" dataValue="no">No, they are all noun phrases</radio>
-			<radio id="PronIndefYes" dataValue="yes">Yes, like English, they are merged into indefinite pronouns</radio>
+			<radio id="PronIndefYes" dataValue="yes">Yes, like English, at least some of them are merged into indefinite pronouns</radio>
 		</radioGroup>
-		<prompt>
-			<span id="PronIndefNPExamplePrompt">Key some examples of how your language expresses indefinites:</span>
-		</prompt>
+		<prompt id="PronIndefExamples" show="swPronIndefYes">
+		Key some examples of indefinite pronouns here:</prompt>
+		<textBox id="PronIndefExample" dataItem="indefExample" show="swPronIndefYes"/>
+		<prompt id="PronIndefNPExamples">
+		  Key some examples of indefinite noun phrases <span id="PronIndefYesSpan" show="swPronIndefYes">(if any) </span>in your language:</prompt>
 		<textBox id="PronIndefNPExample" dataItem="indefNPExample"/>
-		<prompt>
-			<span id="PronIndefExamplePrompt">Key some examples of indefinite pronouns here:</span>
-		</prompt>
-		<textBox id="PronIndefExample" dataItem="indefExample"/>
-		<instruction id="PronIndefYesInstruction">These need to have the same category as regular pronouns when they come out of the lexicon.  Add the feature <feature>negative</feature> to any versions of the indefinite pronouns which are negative.  Otherwise, we will leave indefinite as unspecified.</instruction>
+		<instruction id="PronIndefYesInstruction" show="swPronIndefYes">
+			Add the feature <feature>negative</feature> to any versions of the indefinite pronouns which are negative.  Also add this feature to any negative quantifiers that can be used in a noun phrase.  We will leave <feature>indefinite</feature> as unspecified.</instruction>
+		<instruction id="PronIndefNoInstruction" show="swPronIndefNo">
+			Add the feature <feature>negative</feature> to any elements (such as quantifiers) in the noun phrases which are negative.  We will leave <feature>indefinite</feature> as unspecified.</instruction>
+		<br/>
 		<buttons>
 			<button id="PronIndefBack" value="Back" goto="PronReciprocal.htm"/>
 			<button id="PronIndefNext" value="Next" goto="PronNP.htm"/>
 		</buttons>
 	</form>
+	<showWhen id="swPronIndefYes">
+		<whenRadio button="PronIndefYes"/>
+	</showWhen>
+	<showWhen id="swPronIndefNo">
+		<whenRadio button="PronIndefNo"/>
+	</showWhen>
 </page>

@@ -2,8 +2,9 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPInflFeatures">
-	<title level="2">Basic, Single-Clause Sentences - Inflection Features</title>    <introduction>Sentences normally include some kind of inflection on the verbs and possibly agreement between the subject, object and verb.</introduction>
-	<instruction>Verbs and auxiliaries usually carry inflection features, such as tense, aspect, and/or mood.  In most cases, these features are added by affixes.  Add the appropriate features from the following chart to the relevant affixes:
+	<title level="2">Basic, Single-Clause Sentences - Inflection Features</title>
+	<introduction>Sentences normally include some kind of inflection on the verbs and possibly agreement between the subject, object and verb.</introduction>
+	<instruction>Verbs and auxiliaries usually carry inflection features, such as tense, aspect, and/or mood.  In most cases, these features are added by affixes.  Add the appropriate features from the following chart to the relevant affixes and also to any auxiliaries or irregular verb forms: <br/>
 	<featureChart explanations="no">
 			<featureRow>
 				<featureType>tense</featureType>
@@ -93,6 +94,7 @@
 		</featureChart>
 	</instruction>
 	<form section="ip" transparent="yes">
+<br/>
 		<buttons>
 			<button id="IPInflFeaturesBack" value="Back" goto="IPContents.htm"/>
 			<button id="IPInflFeaturesNext" value="Next" goto="IPAgrFeatures.htm"/>

@@ -2,28 +2,41 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPAlone">
-	<title level="2">Pre/Post-Positional Phrases - Stand Alone</title>
+	<title level="2">Pre/Post-Positional Phrases - Other Complements</title>
 	<form section="pp">
-<radioGroup>
-	<groupName dataItem="alone" default="no">RPPAlone</groupName>
-	<prompt>Does your language allow any pre/post- positions to stand alone?</prompt>
-	<radio id="PPAloneNo" dataValue="no">No</radio>
-	<radio id="PPAloneYes" dataValue="yes">Yes</radio>
-<radioGroup id="PPSentCompGroup">
-	<groupName dataItem="sentComp" default="no">RPPSentComp</groupName>
-	<prompt>Does your language have any pre/post-positions which take a sentential complement?</prompt>
-	<radio id="PPSentCompNo" dataValue="no">No</radio>
-	<radio id="PPSentCompYes" dataValue="yes">Yes</radio>
-<radioGroup>
-	<groupName dataItem="prePost" default="unknown" position="yesHead">RPPPrePost</groupName>
-	<prompt>Does your language have prepositions or postpositions?</prompt>
-	<radio id="PPPrePostPre" dataValue="pre">Prepositions	</radio>
-	<radio id="PPPrePostPost" dataValue="post">Postpositions</radio>
-	<radio id="PPPrePostBoth" dataValue="both">Some of each</radio>
-</radioGroup>
-</radioGroup>
-</radioGroup>
-<instruction id="PPPrePostBothInstruction">In the lexicon, mark the prepositions with the feature <feature>PP-initial</feature> and the postpositions with the feature <feature>PP-final</feature>.</instruction>
+<introduction>MAKE NEW PAGE FROM HERE In addition, some pre/post-positions can stand alone without a complement, such as in the sentences <example>Come [right in]</example>, or <example>John turned the light [on/off]</example>.</introduction>
+	   <prompt>Key some examples of stand alone pre/post-positions from your language here:</prompt>
+		<textBox id="PPCompsstandAloneExample" dataItem="aloneExample"/>
+
+		<introduction>Also, most languages will allow locative adverbs as objects of pre/post-positions, such as <example>over there</example>, <example>in here</example>.</introduction>
+		<prompt>Key some examples with locative adverbs complements here:</prompt>
+		<textBox id="PPCompsLocExample" dataItem="locExample"/>
+		<introduction>But some pre/post-positions (especially temporals) can also have sentences as their complements, as in <example>before the rain stops</example> and <example>while John was at the store</example>.</introduction>
+		<prompt>Key some examples with sentential complements here:</prompt>
+		<textBox id="PPCompsSentExample" dataItem="sentExample"/>
+		<instruction>[If you find that you need to restrict which pre/post-positions can take sentential complements and which can stand alone, see the <help href="advanced.doc">Advanced Help</help> file.]</instruction>
+		<instruction>[Note: the starter kit grammar rules assume that objects of pre/post-positions have accusative case.  Ergative or absolutive case will not be ruled out, but if you need to require only one of them as objects of pre/post-positions, see the <help href="advanced.doc">Advanced Help</help> file.  If you need other cases than accusative as complements, see the <help href="advanced.doc">Advanced Help</help> file.]</instruction>
+
+		<radioGroup>
+			<groupName dataItem="alone" default="no">RPPAlone</groupName>
+			<prompt>Does your language allow any pre/post- positions to stand alone?</prompt>
+			<radio id="PPAloneNo" dataValue="no">No</radio>
+			<radio id="PPAloneYes" dataValue="yes">Yes</radio>
+			<radioGroup id="PPSentCompGroup">
+				<groupName dataItem="sentComp" default="no">RPPSentComp</groupName>
+				<prompt>Does your language have any pre/post-positions which take a sentential complement?</prompt>
+				<radio id="PPSentCompNo" dataValue="no">No</radio>
+				<radio id="PPSentCompYes" dataValue="yes">Yes</radio>
+				<radioGroup>
+					<groupName dataItem="prePost" default="unknown" position="yesHead">RPPPrePost</groupName>
+					<prompt>Does your language have prepositions or postpositions?</prompt>
+					<radio id="PPPrePostPre" dataValue="pre">Prepositions	</radio>
+					<radio id="PPPrePostPost" dataValue="post">Postpositions</radio>
+					<radio id="PPPrePostBoth" dataValue="both">Some of each</radio>
+				</radioGroup>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="PPPrePostBothInstruction">In the lexicon, mark the prepositions with the feature <feature>PP-initial</feature> and the postpositions with the feature <feature>PP-final</feature>.</instruction>
 		<buttons>
 			<button id="PPAloneBack" value="Back" goto="PPComps.htm"/>
 			<button id="PPAloneNext" value="Next" goto="PPCat.htm"/>

@@ -2,22 +2,89 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPComps">
-	<title level="2">Pre/Post-Positional Phrases - Complements</title>
-<introduction>Prepositions or postpositions normally take a nominal phrase for their complements, as in <example>to Bill's house</example> and <example>under the giant Sycamore tree</example>.  In addition, some pre/post-positions can stand alone, such as in the sentences <example>Come right in</example>, or <example>Turn the light on/off</example>.</introduction>
+	<title level="2">Pre/Post-Positional Phrases - Nominal Complements</title>
+	<introduction>Next we move to the level of complements.  Prepositions or postpositions normally take a nominal phrase for their complements, as in <example>to [Bill's house]</example> and <example>under [the giant Sycamore tree]</example>.  </introduction>
 	<form section="pp">
-<prompt>Key some PP examples from your language here:</prompt>
-<textBox id="PPCompsStandAlone" dataItem="ppExample"/>
-<introduction>Also, most languages will allow locative adverbs as objects of pre/post-positions, such as <example>over there</example>, <example>in here</example>.</introduction>
-<prompt>Key some examples with locative adverbs complements here:</prompt>
-<textBox id="PPCompsLocExample" dataItem="locExample"/>
-<introduction>But some pre/post-positions can also have sentences as their complements, as in <example>before the rain stops</example> and <example>while John was at the store</example>.</introduction>
-<prompt>Key some examples with sentential complements here:</prompt>
-<textBox id="PPCompsSentExample" dataItem="sentExample"/>
-<instruction>[If you find that you need to restrict which pre/post-positions can take sentential complements and which can stand alone, see the <help href="advanced.doc">Advanced Help</help> file.]</instruction>
-<instruction>[Note: the starter kit grammar rules assume that objects of pre/post-positions have accusative case.  Ergative or absolutive case will not be ruled out, but if you need to require only one of them as objects of pre/post-positions, see the <help href="advanced.doc">Advanced Help</help> file.  If you need other cases than accusative as complements, see the <help href="advanced.doc">Advanced Help</help> file.]</instruction>
+		<prompt>Key some PP examples from your language here (without brackets and followed by a period):</prompt>
+		<textBox id="PPCompsNominalExample" dataItem="ppExample"/>
+		<radioGroup>
+			<groupName dataItem="pPos" default="unknown" position="yesHead">RPPPosition</groupName>
+			<prompt>Does you language have prepositions or postpositions?</prompt>
+			<radio id="PPPosPrep" dataValue="before">Prepositions only</radio>
+			<radio id="PPPosPost" dataValue="after">Postpositions only</radio>
+			<radio id="PPPosBoth" dataValue="both">Some of each type</radio>
+		</radioGroup>
+		<radioGroup>
+			<groupName dataItem="pType" default="word">RPPType</groupName>
+			<prompt>Are the<span id="PPPrepSpan" show="swPPPosPrep"> prepositions</span>
+				<span id="PPPostSpan" show="swPPPosPost"> postpositions</span>
+				<span id="PPBothSpan" show="swPPPosBoth"> prepositions and postpositions </span>written as separate words?</prompt>
+			<radio id="PPTypeWord" dataValue="word">Yes, they are all separate syntactic words</radio>
+			<radio id="PPTypeClitic" dataValue="clitic">No, they are all clitics written attached to another word</radio>
+			<radio id="PPTypeBoth" dataValue="both">Some are written as separate syntactic words, but some are clitics written attached to another word</radio>
+			<radioGroup id="PPTypeCliticAttachesTable" show="swPPTypeCliticOrBoth">
+				<groupName dataItem="attaches" default="edge">RPPTypeCliticAttaches</groupName>
+				<prompt>Where do the clitics attach to the nominal phrase?</prompt>
+				<radio id="PPTypeCliticAttachesEdge" dataValue="edge">At the edge of the phrase</radio>
+				<radio id="PPTypeCliticAttachesHead" dataValue="head">To the head noun</radio>
+			</radioGroup>
+		</radioGroup>
+		 <instruction id="PPPosBothBothInstruction" show="swPPPosBothBoth">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix</feature> and the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
+<instruction id="PPPosBothWordInstruction" show="swPPPosBothWord">In the lexicon, mark the prepositions with the feature <feature>PP-initial</feature> and the postpositions with the feature <feature>PP-final</feature>.</instruction>
+		<instruction id="PPPosBothCliticInstruction" show="swPPPosBothClitic">In the lexicon, mark the prepositions with the feature <feature>P_prefix</feature> and the postpositions with the feature <feature>P_suffix</feature>.</instruction>
+		<instruction id="PPTypeCliticPrepInstruction" show="swPPTypeCliticOrBothPrep">In the lexicon, mark the clitic prepositions with the feature <feature>P_prefix</feature>.</instruction>
+		<instruction id="PPTypeCliticPostInstruction" show="swPPTypeCliticOrBothPost">In the lexicon, mark the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
+		 <br/>
 		<buttons>
 			<button id="PPCompBack" value="Back" goto="PPModifiers.htm"/>
-			<button id="PPCompNext" value="Next" goto="PPAlone.htm"/>
+			<button id="PPCompNext" value="Next" goto="PPOther.htm"/>
 		</buttons>
 	</form>
+	<showWhen id="swPPPosPrep">
+		<whenRadio button="PPPosPrep"/>
+	</showWhen>
+	<showWhen id="swPPPosPost">
+		<whenRadio button="PPPosPost"/>
+	</showWhen>
+	<showWhen id="swPPPosBoth">
+		<whenRadio button="PPPosBoth"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticOrBoth">
+		<whenRadio button="PPTypeClitic"/>
+		<or/>
+		<whenRadio button="PPTypeBoth"/>
+	</showWhen>
+<showWhen id="swPPPosBothBoth">
+	  <whenRadio button="PPPosBoth"/>
+		<and/>
+			   <whenRadio button="PPTypeBoth"/>
+</showWhen>
+	<showWhen id="swPPPosBothWord">
+		<whenRadio button="PPPosBoth"/>
+		<and/>
+				<whenRadio button="PPTypeWord"/>
+		   </showWhen>
+	<showWhen id="swPPPosBothClitic">
+		<whenRadio button="PPPosBoth"/>
+		<and/>
+		 <whenRadio button="PPTypeClitic"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticOrBothPrep">
+		<whenRadio button="PPPosPrep"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="PPTypeClitic"/>
+		<or/>
+		<whenRadio button="PPTypeBoth"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticOrBothPost">
+		<whenRadio button="PPPosPost"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="PPTypeClitic"/>
+		<or/>
+		<whenRadio button="PPTypeBoth"/>
+		<closeParen/>
+	</showWhen>
 </page>

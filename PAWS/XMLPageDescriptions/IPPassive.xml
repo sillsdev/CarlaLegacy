@@ -2,51 +2,72 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPPassive">
-  <title level="2">Basic, Single-Clause Sentences - Passive Sentences</title>
-  <introduction>Most languages also have passive sentences, where the Theme or Patient fills the subject position.  The Agent may be optionally expressed in some languages, but not allowed at all in others.  If expressed, it may take the form of a PP (as in English with the particular preposition <example>by</example>) or a nominal phrase (DP), depending on the language.  In addition, a particular auxiliary may be required in passives (a form of <example>be</example> in English).  English examples, including some showing interaction with multiple auxiliaries are:</introduction>
-  <EnglishExample>
-	<exItem label="1.">The glass was broken.</exItem>
-	<exItem label="2.">The glass was broken by the child.</exItem>
-	<exItem label="3.">The ball might have been hit.</exItem>
-	<exItem label="4.">The ball might have been hit by the boy.</exItem>
-  </EnglishExample>
-  <form section="ip">
-	<prompt>Key your examples here:</prompt>
-	<textBox id="IPPassiveExample" dataItem="passiveExample" cols="50"/>
-	<radioGroup>
-	  <groupName dataItem="passive" default="yes">RIPPassive</groupName>
-	  <prompt>Does your language have passive sentences?</prompt>
-	  <radio id="IPPassiveNo" dataValue="no">No</radio>
-	  <radio id="IPPassiveYes" dataValue="yes">Yes</radio>
-	  <radioGroup id="IPPassiveAgentTable" show="swPassiveYes">
-		<groupName dataItem="passiveAgent" default="no">RIPPassiveAgent</groupName>
-		<prompt>Is an Agent phrase allowed?</prompt>
-		<radio id="IPPassiveAgentNo" dataValue="no">No, the Agent may not be expressed</radio>
-		<radio id="IPPassiveAgentYes" dataValue="yes">Yes, the Agent may be expressed</radio>
-		<radioGroup id="IPPassiveAgentCatTable" show="swPassiveAgentYes">
-		  <groupName dataItem="passiveAgentCat" default="dp">RIPPassiveAgentCat</groupName>
-		  <prompt>What syntactic category is the Agent phrase?</prompt>
-		  <radio id="IPPassiveAgentCatPP" dataValue="pp">PP</radio>
-		  <radio id="IPPassiveAgentCatDP" dataValue="dp">DP</radio>
-		</radioGroup>
+	<title level="2">Basic, Single-Clause Sentences - Passive Sentences</title>
+	<introduction>Most languages also have passive sentences, where the Theme or Patient fills the subject position.  The Agent may be optionally expressed in some languages, but not allowed at all in others.  If expressed, it may take the form of a PP (as in English with the particular preposition <example>by</example>) or a nominal phrase (DP), depending on the language.  In addition, a particular auxiliary may be required in passives (a form of <example>be</example> in English).  English examples, including some showing interaction with multiple auxiliaries are:</introduction>
+	<EnglishExample>
+		<exItem label="1.">The glass was broken.</exItem>
+		<exItem label="2.">The glass was broken by the child.</exItem>
+		<exItem label="3.">The ball might have been hit.</exItem>
+		<exItem label="4.">The ball might have been hit by the boy.</exItem>
+	</EnglishExample>
+	<form section="ip">
+		<prompt>Key your examples here:</prompt>
+		<textBox id="IPPassiveExample" dataItem="passiveExample" cols="50"/>
 		<radioGroup>
-		  <groupName dataItem="passiveAux" default="no">RIPPassiveAux</groupName>
-		  <prompt>Is a particular auxiliary required with passives?</prompt>
-		  <radio id="IPPassiveAuxNo" dataValue="no">No</radio>
-		  <radio id="IPPassiveAuxYes" dataValue="yes">Yes</radio>
+			<groupName dataItem="passive" default="yes">RIPPassive</groupName>
+			<prompt>Does your language have passive sentences?</prompt>
+			<radio id="IPPassiveNo" dataValue="no">No</radio>
+			<radio id="IPPassiveYes" dataValue="yes">Yes</radio>
+			<radioGroup id="IPPassiveAgentTable" show="swPassiveYes">
+				<groupName dataItem="passiveAgent" default="no">RIPPassiveAgent</groupName>
+				<prompt>Is an Agent phrase allowed?</prompt>
+				<radio id="IPPassiveAgentNo" dataValue="no">No, the Agent may not be expressed</radio>
+				<radio id="IPPassiveAgentYes" dataValue="yes">Yes, the Agent may be expressed</radio>
+				<radioGroup id="IPPassiveAgentCatTable" show="swPassiveAgentYes">
+					<groupName dataItem="passiveAgentCat" default="dp">RIPPassiveAgentCat</groupName>
+					<prompt>What syntactic category is the Agent phrase?</prompt>
+					<radio id="IPPassiveAgentCatPP" dataValue="pp">PP</radio>
+					<radio id="IPPassiveAgentCatDP" dataValue="dp">DP</radio>
+				</radioGroup>
+				</radioGroup>
+				<radioGroup id="IPPassiveAuxTable" show="swPassiveYes">
+					<groupName dataItem="passiveAux" default="no">RIPPassiveAux</groupName>
+					<prompt>Is a particular auxiliary form required with passives?</prompt>
+					<radio id="IPPassiveAuxNo" dataValue="no">No</radio>
+					<radio id="IPPassiveAuxYes" dataValue="yes">Yes</radio>
+			</radioGroup>
 		</radioGroup>
-	  </radioGroup>
-	</radioGroup>
-	<instruction id="InstPassive" show="swPassiveYes">Mark inherently passive verbs and any passive affixes with the feature <feature>passive</feature> in the lexicon.  Also, mark the preposition that is included in the Agent phrase, if any, and the Aux that goes with passive sentences, if any, with the feature <feature>passive</feature>.</instruction>
-	<buttons>
-	  <button id="IPPassiveBack" value="Back" goto="IPContents.htm"/>
-	  <button id="IPPassiveNext" value="Next" goto="IPContents.htm"/>
-	</buttons>
-  </form>
-  <showWhen id="swPassiveYes">
-  <whenRadio button="IPPassiveYes"/>
-  </showWhen>
-  <showWhen id="swPassiveAgentYes">
-  <whenRadio button="IPPassiveAgentYes"/>
-  </showWhen>
+		<instruction id="IPPassiveInstruction" show="swPassiveYes">Mark inherently passive verbs and any passive affixes with the feature <feature>passive</feature> in the lexicon.  <span id="IPPassiveAgentPPSpan" show="swPassiveAgentPP">Also, mark the<span id="IPPrepSpan" show="swPPPosPrep"> preposition</span>
+			<span id="PPPostSpan" show="swPPPosPost"> postposition</span>
+			<span id="PPBothSpan" show="swPPPosBoth"> preposition or postposition </span>that is included in the Agent phrase with the feature <feature>passive</feature>.</span>  <span id="IPPassiveAuxSpan" show="swIPPassiveAuxYes">Mark the particular auxiliary that goes with passive sentences with the feature <feature>passive</feature> as well.</span></instruction>
+		<buttons>
+			<button id="IPPassiveBack" value="Back" goto="IPContents.htm"/>
+			<button id="IPPassiveNext" value="Next" goto="IPContents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swPassiveYes">
+		<whenRadio button="IPPassiveYes"/>
+	</showWhen>
+	<showWhen id="swPassiveAgentYes">
+		<whenRadio button="IPPassiveAgentYes"/>
+<and/>     <whenRadio button="IPPassiveYes"/>
+   </showWhen>
+<showWhen id="swPassiveAgentPP">
+	<whenRadio button="IPPassiveAgentCatPP"></whenRadio>
+<and/>         <whenRadio button="IPPassiveAgentYes"/>
+<and/>     <whenRadio button="IPPassiveYes"/>
+</showWhen>
+<showWhen id="swIPPassiveAuxYes">
+	<whenRadio button="IPPassiveAuxYes"></whenRadio>
+<and/>     <whenRadio button="IPPassiveYes"/>
+</showWhen>
+  <showWhen id="swPPPosPrep">
+		<whenValue element="pp" attr="pPos" value="before"/>
+	</showWhen>
+	<showWhen id="swPPPosPost">
+		<whenValue element="pp" attr="pPos" value="after"/>
+	</showWhen>
+	<showWhen id="swPPPosBoth">
+		<whenValue element="pp" attr="pPos" value="both"/>
+	</showWhen>
 </page>

@@ -4,7 +4,19 @@
 <page id="QEmbYN">
 	<title level="2">Questions - Embedded Clause Yes/No Questions</title>
 	<form section="q">
-		<radioGroup>
+		<EnglishExample>
+			<exItem>Representative examples of English embedded Yes/No questions include:</exItem>
+			<exItem label="1.">I wonder whether she will come.</exItem>
+			<exItem label="2.">I will know if she goes.</exItem>
+			<exItem label="3.">Sue wonders whether the boy could have hit the ball.</exItem>
+		</EnglishExample>
+		<prompt>Key similar examples of embedded Yes/No questions in your language here:</prompt>
+		<textBox id="QEmbYNExample" dataItem="embYNExample" cols="50"/>
+<br/>
+		<instruction>Only certain verbs can take a question or sentential complement. In the lexicon, mark the verbs from your examples and any others that come to mind with the feature <feature>sentential</feature>
+		</instruction>
+<br/>
+   <radioGroup>
 			<groupName dataItem="embYN" default="no">RQEmbYN</groupName>
 			<prompt>For embedded clause Yes/No questions, does your language have one or more Yes/No question marker particles, words or complementizers?</prompt>
 			<radio id="QEmbYNYes" dataValue="yes">Yes, like <example>whether</example> and <example>if</example> in English</radio>
@@ -26,26 +38,26 @@
 					<radio id="QEmbYNEitherYes" dataValue="yes">Yes, there is no restriction</radio>
 					<radio id="QEmbYNEitherNo" dataValue="no">No, there are separate sets for each side</radio>
 				</radioGroup>
-			<radioGroup id="QEmbYNBothTable">
-				<groupName dataItem="embYNBoth" default="no">RQEmbYNBoth</groupName>
-				<prompt>Can the Yes/No question markers appear on both sides in the question?</prompt>
-				<radio id="QEmbYNBothNo" dataValue="no">No, only on one side or the other</radio>
-				<radio id="QEmbYNBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
-				<radio id="QEmbYNBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
-				<radioGroup id="QEmbYNBothInitialFinalTable">
-					<groupName dataItem="embYNBothInitialFinal" default="no">RQEmbYNBothInitialFinal</groupName>
-					<prompt>May a different Yes/No question marker also occur only in final position?</prompt>
-					<radio id="QEmbYNBothInitialFinalNo" dataValue="no">No</radio>
-					<radio id="QEmbYNBothInitialFinalYes" dataValue="yes">Yes</radio>
+				<radioGroup id="QEmbYNBothTable">
+					<groupName dataItem="embYNBoth" default="no">RQEmbYNBoth</groupName>
+					<prompt>Can the Yes/No question markers appear on both sides in the question?</prompt>
+					<radio id="QEmbYNBothNo" dataValue="no">No, only on one side or the other</radio>
+					<radio id="QEmbYNBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
+					<radio id="QEmbYNBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
+					<radioGroup id="QEmbYNBothInitialFinalTable">
+						<groupName dataItem="embYNBothInitialFinal" default="no">RQEmbYNBothInitialFinal</groupName>
+						<prompt>May a different Yes/No question marker also occur only in final position?</prompt>
+						<radio id="QEmbYNBothInitialFinalNo" dataValue="no">No</radio>
+						<radio id="QEmbYNBothInitialFinalYes" dataValue="yes">Yes</radio>
+					</radioGroup>
+					<radio id="QEmbYNBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
+					<radioGroup id="QEmbYNBothFinalInitialTable">
+						<groupName dataItem="embYNBothFinalInitial" default="no">RQEmbYNBothFinalInitial</groupName>
+						<prompt>May a different Yes/No question marker also occur only in initial position?</prompt>
+						<radio id="QEmbYNBothFinalInitialNo" dataValue="no">No</radio>
+						<radio id="QEmbYNBothFinalInitialYes" dataValue="yes">Yes</radio>
+					</radioGroup>
 				</radioGroup>
-				<radio id="QEmbYNBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
-				<radioGroup id="QEmbYNBothFinalInitialTable">
-					<groupName dataItem="embYNBothFinalInitial" default="no">RQEmbYNBothFinalInitial</groupName>
-					<prompt>May a different Yes/No question marker also occur only in initial position?</prompt>
-					<radio id="QEmbYNBothFinalInitialNo" dataValue="no">No</radio>
-					<radio id="QEmbYNBothFinalInitialYes" dataValue="yes">Yes</radio>
-				</radioGroup>
-			</radioGroup>
 			</radioGroup>
 			<radio id="QEmbYNNoAux" dataValue="noAux">No, but an auxiliary is fronted</radio>
 			<radioGroup id="QEmbYNAuxPosTable">
