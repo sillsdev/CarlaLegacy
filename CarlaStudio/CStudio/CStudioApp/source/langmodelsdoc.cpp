@@ -1,3 +1,4 @@
+// Modified by mr (6/3/2002 2:55:43 PM)
 // LangModelsDoc.cpp : implementation file
 //
 // JDH 6/3/99 Added OnModifyTests
@@ -17,6 +18,7 @@
 #include "WizNewFromScratch.h"
 #include "TextDisplayInfo.h"
 
+
 #include "DlgNewLanguage.h"
 #include <strstrea.h>
 #include "SFMFile.h"
@@ -24,6 +26,8 @@
 #include "PathDescriptor.h" // just for checkForFileError
 
 #include "DlgProgress.h"
+#include "DlgEditTestColor.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -218,6 +222,7 @@ BEGIN_MESSAGE_MAP(CLangModelsDoc, CTabbedTreeDoc)
 	ON_COMMAND(ID_LangInterlinearSeq, OnLangInterlinearSeq)
 	ON_COMMAND(ID_LangRemove, OnRemoveLanguage)
 	ON_COMMAND(ID_LANGUAGE_SETUPTESTS, OnModifyTests)
+	ON_COMMAND(ID_CustomizeUserTestDisplay, OnCustomizeUserTestDisplay)
 	//}}AFX_MSG_MAP
 
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -687,4 +692,11 @@ void CLangModelsDoc::OnModifyTests()
 	// in fact, there is a  bug here where if you're in the maximums when you
 	// invoke the wizard, when you move *out* of the maximums form, the old values
 	// that are in the form will become the the current values again
+}
+
+// added by mr 5/1/2002
+void CLangModelsDoc::OnCustomizeUserTestDisplay()
+{
+	CDlgEditTestColor dlg;
+	dlg.DoModal( );
 }
