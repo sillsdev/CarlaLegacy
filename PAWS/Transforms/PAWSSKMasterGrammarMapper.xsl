@@ -34,19 +34,30 @@ Main template
 	<xsl:apply-templates select="/" mode="templates"/>
 	<xsl:apply-templates select="/" mode="adjp"/>
 	<xsl:apply-templates select="/" mode="advp"/>
-<!--    <xsl:apply-templates select="/" mode="np"/> -->
+	<xsl:apply-templates select="/" mode="cp"/>
+	<xsl:apply-templates select="/" mode="dp"/>
+	<xsl:apply-templates select="/" mode="ip"/>
+	<xsl:apply-templates select="/" mode="np"/>
+	<xsl:apply-templates select="/" mode="pp"/>
 	<xsl:apply-templates select="/" mode="qp"/>
+	<xsl:apply-templates select="/" mode="vp"/>
   </xsl:template>
   <xsl:include href="starter6templates.xsl"/>
   <xsl:include href="starter6adjp.xsl"/>
   <xsl:include href="starter6advp.xsl"/>
+  <xsl:include href="starter6cp.xsl"/>
+  <xsl:include href="starter6dp.xsl"/>
+  <xsl:include href="starter6ip.xsl"/>
+  <xsl:include href="starter6np.xsl"/>
+  <xsl:include href="starter6pp.xsl"/>
   <xsl:include href="starter6qp.xsl"/>
-<!--   <xsl:include href="starter6np.xsl"/> -->
+  <xsl:include href="starter6vp.xsl"/>
 </xsl:stylesheet>
 <!--
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+17-Jul-2002    Andy Black  Added rest of XSLs
 02-Jul-2002    Andy Black  Initial version
 ================================================================
  -->

@@ -62,13 +62,21 @@ Let <xsl:for-each select="id(@show)/whenValue">
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+content template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//content">
+	<xsl:element name="xsl:text">
+	  <xsl:value-of select="."/>
+	</xsl:element>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 generalized templates template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//generalizedTemplates">
-	<xsl:element name="xsl:text">
-	  <xsl:value-of select="."/>
-	</xsl:element>
+<xsl:apply-templates select="*"/>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -156,6 +164,7 @@ BuildCondition
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+17-Jul-2002    Andy Black  Allow specializedTemplates within generalizedTemplates
 02-Jul-2002    Andy Black  Added prmType; handled cases where there is no @show or it is empty; renamed it
 25-Apr-2002      Andy Black  Began working on Initial Draft
 ================================================================

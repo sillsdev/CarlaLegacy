@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE masterGrammar SYSTEM "MasterGrammar.dtd">
 <masterGrammar>
-	<!-- |main set of feature templates -->
-	<generalizedTemplates>
+<generalizedTemplates>
+<content>
+Let me be &lt;ignore&gt; = true
+</content>
+<specializedTemplates show="whPronCat">  &lt;dummy&gt; = youBet </specializedTemplates>
+</generalizedTemplates>
+  <!-- |main set of feature templates -->
+  <generalizedTemplates>
+<content>
 Let absolutive		be	&lt;head agr case&gt; = absolutive
 Let absolutive_prefix   be      &lt;head type prefix absolutive&gt;   = +
 								[absolutive]
@@ -362,7 +369,7 @@ Let embedded_question   be      &lt;embedded head type question&gt;        = +
 Let embedded_question_allowed be &lt;embedded head type question&gt;       = {+/-}
 Let embedded_subjunctive be     &lt;embedded head infl mood realis&gt;     = -
 <!-- ||add other restrictions -->
-		<!-- ||add defaults to -!!! -->
+	<!-- ||add defaults to -!!! -->
 Let ergative		be	&lt;head agr case&gt; = ergative
 Let ergative_prefix     be      &lt;head type prefix ergative&gt;     = +
 								[ergative]
@@ -573,9 +580,10 @@ Let YNQ_prefix		be	&lt;head type prefix YNQ&gt;          = +
 Let YNQ_prefix_V	be      &lt;head type YNQ_prefix_V&gt;        = +
 Let YNQ_suffix		be	&lt;head type suffix YNQ&gt;          = +
 Let YNQ_suffix_V	be      &lt;head type YNQ_suffix_V&gt;        = +
+</content>
 </generalizedTemplates>
-	<specializedTemplates show="">
-		<!-- |-Category changes and defaults (basic set) -->
+  <specializedTemplates show="">
+	<!-- |-Category changes and defaults (basic set) -->
 Let Adj			be	&lt;cat&gt; = !Adj
 				&lt;head type ordinal&gt;		= !-
 				&lt;head type wh&gt;			= !-
@@ -813,83 +821,83 @@ Let makeV               be      &lt;cat&gt; = V
 								&lt;head infl mood realis&gt;         = !+
 
 </specializedTemplates>
-	<!-- |**need set for nominative default -->
-	<!-- |**need set without singular default for quantifier marking lgs -->
-	<!-- |**need set for alienably possessed -->
-	<!-- |**need sets for DP-initial and DP-final Num (np qpeitherRestrictedNumPos)-->
-	<!-- |**need sets for P,copular,gen,erg,abs_prefix,suffix, P_on_N, YNQ -->
-	<!-- | -CP-specifier-initial default for VSO with possibility -->
-	<!-- |***Category Mapper templates for starter kit**** -->
-	<catMapper show="cardinalNumberCat">Num</catMapper>
-	<showWhen id="cardinalNumberCat">
-		<whenValue element="qp/cardinalNumberCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="adverbCat">Adv</catMapper>
-	<showWhen id="adverbCat">
-		<whenValue element="advp/adverbCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="adjectiveCat">Adj</catMapper>
-	<showWhen id="adjectiveCat">
-		<whenValue element="adjp/adjectiveCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="articleCat">Art</catMapper>
-	<showWhen id="articleCat">
-		<whenValue element="np/articleCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="demonstrativeCat">Dem</catMapper>
-	<showWhen id="demonstrativeCat">
-		<whenValue element="np/demonstrativeCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="nounCat">N</catMapper>
-	<showWhen id="nounCat">
-		<whenValue element="np/nounCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="propAnimate1Cat">PropN</catMapper>
-	<showWhen id="propAnimate1Cat">
-		<whenValue element="np/propAnimate1Category" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="propAnimate2Cat">PropN</catMapper>
-	<showWhen id="propAnimate2Cat">
-		<whenValue element="np/propAnimate2Category" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="propInanimateCat">PropN</catMapper>
-	<showWhen id="propInanimateCat">
-		<whenValue element="np/propInanimateCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<specializedTemplates show="propInanimateCat">
+  <!-- |**need set for nominative default -->
+  <!-- |**need set without singular default for quantifier marking lgs -->
+  <!-- |**need set for alienably possessed -->
+  <!-- |**need sets for DP-initial and DP-final Num (np qpeitherRestrictedNumPos)-->
+  <!-- |**need sets for P,copular,gen,erg,abs_prefix,suffix, P_on_N, YNQ -->
+  <!-- | -CP-specifier-initial default for VSO with possibility -->
+  <!-- |***Category Mapper templates for starter kit**** -->
+  <catMapper show="cardinalNumberCat">Num</catMapper>
+  <showWhen id="cardinalNumberCat">
+	<whenValue element="qp/cardinalNumberCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="adverbCat">Adv</catMapper>
+  <showWhen id="adverbCat">
+	<whenValue element="advp/adverbCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="adjectiveCat">Adj</catMapper>
+  <showWhen id="adjectiveCat">
+	<whenValue element="adjp/adjectiveCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="articleCat">Art</catMapper>
+  <showWhen id="articleCat">
+	<whenValue element="np/articleCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="demonstrativeCat">Dem</catMapper>
+  <showWhen id="demonstrativeCat">
+	<whenValue element="np/demonstrativeCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="nounCat">N</catMapper>
+  <showWhen id="nounCat">
+	<whenValue element="np/nounCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="propAnimate1Cat">PropN</catMapper>
+  <showWhen id="propAnimate1Cat">
+	<whenValue element="np/propAnimate1Category" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="propAnimate2Cat">PropN</catMapper>
+  <showWhen id="propAnimate2Cat">
+	<whenValue element="np/propAnimate2Category" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="propInanimateCat">PropN</catMapper>
+  <showWhen id="propInanimateCat">
+	<whenValue element="np/propInanimateCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <specializedTemplates show="propInanimateCat">
 									   &lt;head agr animate&gt; = -
 </specializedTemplates>
-	<catMapper show="pronounCat">Pron</catMapper>
-	<showWhen id="pronounCat">
-		<whenValue element="pron/pronounCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="pCat">P</catMapper>
-	<showWhen id="pCat">
-		<whenValue element="pp/pCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="auxCat">Aux</catMapper>
-	<showWhen id="auxCat">
-		<whenValue element="ip/auxCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="verbCat">V</catMapper>
-	<showWhen id="verbCat">
-		<whenValue element="ip/verbCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<catMapper show="whPronCat">Pron</catMapper>
-	<showWhen id="whPronCat">
-		<whenValue element="q/whPronCategory" value="" negateValue="yes"/>
-	</showWhen>
-	<!-- |************************************************************ -->
-	<!-- |Phrase structure rules -->
-	<rule show="Soptiontesting">
+  <catMapper show="pronounCat">Pron</catMapper>
+  <showWhen id="pronounCat">
+	<whenValue element="pron/pronounCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="pCat">P</catMapper>
+  <showWhen id="pCat">
+	<whenValue element="pp/pCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="auxCat">Aux</catMapper>
+  <showWhen id="auxCat">
+	<whenValue element="ip/auxCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="verbCat">V</catMapper>
+  <showWhen id="verbCat">
+	<whenValue element="ip/verbCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <catMapper show="whPronCat">Pron</catMapper>
+  <showWhen id="whPronCat">
+	<whenValue element="q/whPronCategory" value="" negateValue="yes"/>
+  </showWhen>
+  <!-- |************************************************************ -->
+  <!-- |Phrase structure rules -->
+  <rule show="Soptiontesting">
 rule {S option testing - first eight sections}
 S = AdvP / AdjP / QP / DP / PP
 	&lt;S option&gt; = testing
 </rule>
-	<showWhen id="Soptiontesting">
-		<whenValue element="pp" attr="checkedOff" value="yes" negateValue="yes"/>
-	</showWhen>
-	<rule>
+  <showWhen id="Soptiontesting">
+	<whenValue element="pp" attr="checkedOff" value="yes" negateValue="yes"/>
+  </showWhen>
+  <rule>
 rule {S option start.symbol - section 9 and beyond}
 S = (AdvP_1 / PP_1 / DP_1) {IP / CP} (AdvP_2 / PP_2 / DP_2)
 	&lt;S head&gt; = &lt;IP head&gt;
