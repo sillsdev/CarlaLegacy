@@ -4,12 +4,14 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "January 7, 2004"	/* date of release version */
+#define PATCHLEVEL 1		/* bug fix or other minor change */
+#define DATE "December 3, 2004"	/* date of release version */
 #define YEAR "2004"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 03-Dec-2004  hab  - Ignore interfix entry type in unified dictionaries
+ * [2.2.1]
  * 07-Jan-2004  hab  - Enhancement: add negative SECs (~/)
  * [2.2.0]
  * 04-Nov-2003  hab  - Fix bug: multiple allomorphs with differing PECs could

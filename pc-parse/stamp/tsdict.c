@@ -1103,6 +1103,11 @@ while (*pszField != NUL)
 			}
 			break;
 
+		case 'n':			/* interfix */
+		case 'N':
+		  /* ignore for STAMP */
+		  break;
+
 		default:
 			if (pStamp_io->pLogFP != NULL)
 			fprintf(pStamp_io->pLogFP,
