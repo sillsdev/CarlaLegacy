@@ -41,3 +41,36 @@ lPutWindowPlacement(LPCTSTR lpScreenName, WINDOWPLACEMENT *pwp);
  */
 extern long
 lGetWindowPlacement(LPCTSTR lpScreenName, WINDOWPLACEMENT *pwp);
+
+/*
+ * To do the resizing of any dialog window, you can call the vResize() function.
+ * This is typically called from an OnSize() function.
+ * The job that vResize() does, is reposition and resizing the member elements
+ * in a dialog.
+ * The following structure can contain, for each item, it's position relative
+ * to the borders of the mother window (dialog).
+ */
+typedef struct {
+		int iItem;          // Item ID in the dialog; should be unique
+		int iFromBorder,    // horizontal distance from border; if iAlignLeft = 1, then
+							// this is taken from the left border; else, from the right border
+			iWidth,         // width of the box; if this is negative,
+							// it is computed relative to the right hand border.
+			iTopFromBorder, // is the distance of the top of this element to the border;
+							// if positive, distance to the top, if negative, distance from the bottom
+			iHeight;        // if this is negative, this element doesn't move but stretch with the bottom
+		int iAlignLeft;
+	} tsSizingElement;
+
+/* extern void
+ * vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE)
+ * in/out : cd
+ * in : cx, cy    // size of the mother window
+ * in : psSE      // specifies the relative positions of elements you wish to float
+ * in : gNoSE     // number of elements in psSE
+ *
+ * This functions repositions all of the elements in the array psSE.
+ * If you want elements to stay where they are, leave them out of the array.
+ */
+extern void
+vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE);

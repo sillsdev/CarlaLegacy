@@ -45,7 +45,7 @@ protected:
 	void checkButtonStatus();
 	void selectItem(int i);
 	CImageList m_iconList;
-	void setupListCtrl();
+	void setupListCtrl(int cx);
 	CProcess* getFirstSelectedProcess(int *pIndex=0);
 	void populateListCtrl();
 	void insertProcess(BOOL before) ;
@@ -62,6 +62,9 @@ protected:
 	afx_msg void OnItemchangedProcessList(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnHelp();
 	virtual void OnOK();
+	afx_msg void OnSize(UINT nType, int cx, int cy);
+	afx_msg void OnDestroy();
+	afx_msg void OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 #ifndef hab15a7

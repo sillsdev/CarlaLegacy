@@ -79,67 +79,20 @@ END_MESSAGE_MAP()
 void CDlgEditSentransTransfer::vSize(int cx, int cy)
 {
 	// resize all bits
-	CEdit *pE;
 	CRect r;
-	int iItem;
 
-/*
- * Items that shift right when resized.
- *
- *  DEFPUSHBUTTON   IDOK     190,138,50,14
- *  PUSHBUTTON      IDCANCEL 245,138,50,14
- */
-
-	/* Align things from boundary (left or right) and bottom */
-	struct {
-		int iItem;
-		int iFromBorder,    // distance from boundary boundary from right + width
-			iWidth,         // if this is 0, aligns right hand side
-			iTopFromBottom, // is bottom from bottom + height; OR (if iHeight is negative)
-							//      distance from top from top
-			iHeight;        // if this is negative, this element doesn't move but stretch with the bottom
-		int iAlignLeft;
-	} asSizingElements[] =
+	// Align things from boundary (left or right) and bottom
+	tsSizingElement asSizingElements[] =
 	{
-		{ IDCANCEL, (BASE_WIDTH - 245) * 2, 100, (BASE_HEIGHT - 138) * 2, 28, 0 },
-		{ IDOK,     (BASE_WIDTH - 190) * 2, 100, (BASE_HEIGHT - 138) * 2, 28, 0 },
-		{ IDC_CHECKEnabled, (10) * 2, 84, (BASE_HEIGHT - 135) * 2, 20, 1 },
-		{ IDC_STATICcomments,18 * 2,68, (BASE_HEIGHT - 102) * 2, 16, 1 },
-		{ IDC_Comments, 60*2, 0, (BASE_HEIGHT - 100) * 2, 62, 1 },
-		{ IDC_EnvList,  60*2, 0, 44 * 2, -134, 1 }
+		{ IDCANCEL, (BASE_WIDTH - 245) * 2, 100, -1*(BASE_HEIGHT - 138) * 2, 28, 0 },
+		{ IDOK,     (BASE_WIDTH - 190) * 2, 100, -1*(BASE_HEIGHT - 138) * 2, 28, 0 },
+		{ IDC_CHECKEnabled, (10) * 2, 84, -1*(BASE_HEIGHT - 135) * 2, 20, 1 },
+		{ IDC_STATICcomments,18 * 2,68, -1*(BASE_HEIGHT - 102) * 2, 16, 1 },
+		{ IDC_Comments, 60*2, -12, -1*(BASE_HEIGHT - 100) * 2, 62, 1 },
+		{ IDC_EnvList,  60*2, -12, 44 * 2, -134, 1 }
 
 	};
-	for (iItem = 0; iItem < sizeof(asSizingElements)/sizeof(asSizingElements[0]); iItem++) {
-	  pE = (CEdit*) GetDlgItem(asSizingElements[iItem].iItem);
-	  if(pE && pE->m_hWnd)
-	  {
-		pE->GetWindowRect(&r);
-		ScreenToClient(&r);
-
-		if (asSizingElements[iItem].iAlignLeft) {
-			r.left = asSizingElements[iItem].iFromBorder;
-		}
-		else {
-			r.left = cx - asSizingElements[iItem].iFromBorder;
-		}
-		if (asSizingElements[iItem].iWidth == 0) {
-			r.right = cx - 12;
-		}
-		else {
-			r.right = r.left + asSizingElements[iItem].iWidth;
-		}
-		if (asSizingElements[iItem].iHeight < 0) {
-			r.top    = asSizingElements[iItem].iTopFromBottom;
-			r.bottom = cy + asSizingElements[iItem].iHeight;
-		}
-		else {
-			r.top = cy - asSizingElements[iItem].iTopFromBottom;
-			r.bottom = r.top + asSizingElements[iItem].iHeight;
-		}
-
-		pE->MoveWindow(r.left, r.top, r.Width(), r.Height(), TRUE);
-	  }
-	}
+	vResize(this, cx, cy, asSizingElements, sizeof(asSizingElements)/sizeof(asSizingElements[0]));
 
 	/* finally, the ultimate resizer - resize the List control automatically */
 	CListCtrl *clc = (CListCtrl *) GetDlgItem(IDC_EnvList);

@@ -66,6 +66,7 @@ public:
 
 	// Interface
 	virtual LPCTSTR getDisplayName() const = 0;
+	virtual CString getSpecificName() { return CString(""); };
 	//virtual CString getDisplayName() const =0;
 	virtual BOOL doEditDialog(int iFunctionCode) = 0;
 	virtual CString getListCtrlText(int iColumn);

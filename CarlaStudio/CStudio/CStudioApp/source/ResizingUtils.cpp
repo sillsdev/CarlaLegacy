@@ -115,3 +115,47 @@ long lGetWindowPlacement(LPCTSTR lpScreenName, WINDOWPLACEMENT *pwp)
   return RegQueryValueExRecursive(HKEY_CURRENT_USER, szBuffer, 0,
 								&type, (BYTE*) pwp, &length);
 }
+
+extern void
+vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE)
+{
+	size_t gSE;
+	CEdit *pE;
+	CRect r;
+
+	for (gSE = 0; gSE < gNoSE; gSE++) {
+	  pE = (CEdit*) cd->GetDlgItem(psSE[gSE].iItem);
+	  if(pE && pE->m_hWnd)
+	  {
+		pE->GetWindowRect(&r);
+		cd->ScreenToClient(&r);
+
+		if (psSE[gSE].iAlignLeft) {
+			r.left = psSE[gSE].iFromBorder;
+		}
+		else {
+			r.left = cx - psSE[gSE].iFromBorder;
+		}
+		if (psSE[gSE].iWidth < 0) {
+			r.right = cx + psSE[gSE].iWidth;
+		}
+		else {
+			r.right = r.left + psSE[gSE].iWidth;
+		}
+		if (psSE[gSE].iTopFromBorder < 0) {
+			r.top = cy + psSE[gSE].iTopFromBorder;
+		}
+		else {
+			r.top = psSE[gSE].iTopFromBorder;
+		}
+		if (psSE[gSE].iHeight < 0) {
+			r.bottom = cy + psSE[gSE].iHeight;
+		}
+		else {
+			r.bottom = r.top + psSE[gSE].iHeight;
+		}
+
+		pE->MoveWindow(r.left, r.top, r.Width(), r.Height(), TRUE);
+	  }
+	}
+}

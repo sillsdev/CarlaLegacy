@@ -76,7 +76,7 @@ END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // CDlgPhonruleRule message handlers
-
+static const char *oszDialogName = "DlgPhonruleRule";
 #define BASE_WIDTH   289
 #define BASE_HEIGHT  201
 
@@ -85,100 +85,24 @@ void CDlgPhonruleRule::vSize(int cx, int cy)
 	// resize all bits
 	CEdit *pE;
 	CRect r;
-	/* items that align right hand side: */
-	int aiItemsRH[] = {
-						IDC_EnvList,
-						IDC_Comments,
-						IDC_STATICapply};
 
-/*
-	DEFPUSHBUTTON   "OK",IDOK,173,179,50,14   = 116,22,50,14 (232, 100, 44, 28)
-	PUSHBUTTON      "Cancel",IDCANCEL,232,179,50,14 = 57,22,50,14 (114, 100, 44, 28)
-	IDC_STATICcategory 181,9,31,8 = (108,62,192,16)
-	IDC_Category, 217,6,65,14 = (72,130,189,28)
- */
+#define TOPBORDER (::GetSystemMetrics(SM_CYCAPTION) + ::GetSystemMetrics(SM_CYFRAME))
 
-	struct {
-		int iItem;
-		int iLeftFromRight, // is right hand boundary from right + width
-			iWidth,
-			iTop,
-			iHeight;
-	} asFixedRHSElements[] = // fixed right hand side
-	{
-		{ IDC_STATICcategory, 216,62,18,16 },
-		{ IDC_Category, 144,130,12,28 }
+	// sizing elements
+	tsSizingElement asSizingElements[] = {
+		// fixed to the right hand side of the dialog
+		{ IDC_STATICcategory, 216,62,18,16,0 },
+		{ IDC_Category, 144,130,12,28,0 },
+		// Aligned from the left or right hand side and the bottom
+		{ IDCANCEL, 114, 100, -44, 28, 0 },
+		{ IDOK, 232, 100, -44, 28, 0 },
+		{ IDC_CHECKEnabled, 16, 84, (183 - BASE_HEIGHT) * 2, 10*2, 1 }, // 8,183,42,10
+		// align things on the right hand side
+		{ IDC_EnvList, 58 * 2, -12, /*TOPBORDER + */28 * 2, 48*2, 1 },  // 58,28,224,48
+		{ IDC_Comments, 58 * 2, -12, /* TOPBORDER + */ 85 * 2, 28*2, 1 }, //58,85,224,28,
+		{ IDC_STATICapply, 174 * 2, -12, /* TOPBORDER + */ 119 * 2, 50*2, 1 } // 174,119,108,50
 	};
-
-	pE = (CEdit*) GetDlgItem(IDC_From);
-	pE = (CEdit*) GetDlgItem(IDC_To);
-
-	/* align things on the right hand side */
-	for (int iItem = 0; iItem < sizeof(aiItemsRH)/sizeof(int); iItem++) {
-	  pE = (CEdit*) GetDlgItem(aiItemsRH[iItem]);
-	  if(pE && pE->m_hWnd)
-	  {
-		pE->GetWindowRect(&r);
-		ScreenToClient(&r);
-		r.right = cx - 12;
-		if (r.right < r.left + 10)
-		  r.right = r.left + 10;
-
-		pE->MoveWindow(r.left, r.top, r.Width(), r.Height(), TRUE);
-	  }
-	}
-
-	/* Align things from boundary (left or right) and bottom */
-	struct {
-		int iItem;
-		int iFromBorder, // distance from boundary boundary from right + width
-			iWidth,
-			iTopFromBottom, // is bottom from bottom + height
-			iHeight;
-		int iAlignLeft;
-	} asFixedSizeElements[] =
-	{
-		{ IDCANCEL, 114, 100, 44, 28, 0 },
-		{ IDOK, 232, 100, 44, 28, 0 },
-		{ IDC_CHECKEnabled, 16, 84, 36, 20, 1 } // 8,183,42,10
-	};
-	for (iItem = 0; iItem < sizeof(asFixedSizeElements)/sizeof(asFixedSizeElements[0]); iItem++) {
-	  pE = (CEdit*) GetDlgItem(asFixedSizeElements[iItem].iItem);
-	  if(pE && pE->m_hWnd)
-	  {
-		pE->GetWindowRect(&r);
-		ScreenToClient(&r);
-
-		if (asFixedSizeElements[iItem].iAlignLeft) {
-			r.left = asFixedSizeElements[iItem].iFromBorder;
-		}
-		else {
-			r.left = cx - asFixedSizeElements[iItem].iFromBorder;
-		}
-		r.top = cy - asFixedSizeElements[iItem].iTopFromBottom;
-		r.right = r.left + asFixedSizeElements[iItem].iWidth;
-		r.bottom = r.top + asFixedSizeElements[iItem].iHeight;
-
-		pE->MoveWindow(r.left, r.top, r.Width(), r.Height(), TRUE);
-	  }
-	}
-
-	// the category box does not resize, it just moves
-	for (iItem = 0; iItem < sizeof(asFixedRHSElements)/sizeof(asFixedRHSElements[0]); iItem++) {
-	  pE = (CEdit*) GetDlgItem(asFixedRHSElements[iItem].iItem);
-	  if(pE && pE->m_hWnd)
-	  {
-		pE->GetWindowRect(&r);
-		ScreenToClient(&r);
-
-		r.left = cx - asFixedRHSElements[iItem].iLeftFromRight;
-		r.top = asFixedRHSElements[iItem].iTop;
-		r.right = r.left + asFixedRHSElements[iItem].iWidth;
-		r.bottom = r.top + asFixedRHSElements[iItem].iHeight;
-
-		pE->MoveWindow(r.left, r.top, r.Width(), r.Height(), TRUE);
-	  }
-	}
+	vResize(this,cx,cy,asSizingElements,sizeof(asSizingElements)/sizeof(asSizingElements[0]));
 
 	/*
 	 * The To-box moves half steps and resizes half steps
@@ -198,9 +122,9 @@ void CDlgPhonruleRule::vSize(int cx, int cy)
 	{
 		{ IDC_STATICto, 228, 24, 18, 16, 0,1 },
 		{ IDC_To,       260, 78, 12, 28, 1,1 },
-		{ IDC_From,     112, 86, 12, 38, 1,0 }
+		{ IDC_From,     58*2, 43*2, 12, 14*2, 1,0 } // 58,6,43,14
 	};
-	for (iItem = 0; iItem < sizeof(asFixedRHSHalfElements)/sizeof(asFixedRHSHalfElements[0]); iItem++) {
+	for (int iItem = 0; iItem < sizeof(asFixedRHSHalfElements)/sizeof(asFixedRHSHalfElements[0]); iItem++) {
 	  pE = (CEdit*) GetDlgItem(asFixedRHSHalfElements[iItem].iItem);
 	  if(pE && pE->m_hWnd)
 	  {
@@ -242,7 +166,7 @@ BOOL CDlgPhonruleRule::OnInitDialog()
 	// retrieve the window placement
 	WINDOWPLACEMENT wp;
 
-	if (ERROR_SUCCESS == lGetWindowPlacement("DlgPhonruleRule", &wp)) {
+	if (ERROR_SUCCESS == lGetWindowPlacement(oszDialogName, &wp)) {
 	  SetWindowPlacement(&wp);
 	  vSize(wp.rcNormalPosition.right - wp.rcNormalPosition.left - 8,  // 8 is the magic figure (border width)
 			wp.rcNormalPosition.bottom - wp.rcNormalPosition.top - 32); // 32 is magic: border + title bar
@@ -259,7 +183,7 @@ void CDlgPhonruleRule::OnDestroy()
 	WINDOWPLACEMENT wp; /* wndpl */
 	GetWindowPlacement(&wp);
 
-	lPutWindowPlacement("DlgPhonruleRule", &wp);
+	lPutWindowPlacement(oszDialogName, &wp);
 }
 
 void CDlgPhonruleRule::OnSize(UINT nType, int cx, int cy)

@@ -296,7 +296,7 @@ CString CProcessTemplate::getListCtrlText(int iColumn)
 		case 2: return m_sOutputTypeDisplay; break;
 
 		default: ASSERTX(FALSE);
-				return CString("COLUMN ERROR"); ;
+				return CString("COLUMN ERROR");
 				break;
 	}
 }
@@ -330,6 +330,8 @@ CString CProcess::getListCtrlText(int iColumn)
 
 		case 2: return getOutputTypeDisplayName();
 				break;
+
+		case 3: return getSpecificName();
 
 		default: ASSERTX(FALSE);
 				return CString("COLUMN ERROR"); ;

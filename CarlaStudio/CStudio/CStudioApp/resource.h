@@ -482,6 +482,7 @@
 #define IDC_STATICto                    3054
 #define IDC_STATICcategory              3055
 #define IDC_STATICcomments              3056
+#define IDC_Uncheck                     3057
 #define IDLangSetup                     32771
 #define ID_FILE                         32772
 #define IDProjectSetup                  32773
@@ -545,7 +546,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        264
 #define _APS_NEXT_COMMAND_VALUE         32831
-#define _APS_NEXT_CONTROL_VALUE         3057
+#define _APS_NEXT_CONTROL_VALUE         3058
 #define _APS_NEXT_SYMED_VALUE           148
 #endif
 #endif
