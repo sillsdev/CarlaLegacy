@@ -24,6 +24,8 @@ namespace PAWSStarterKit
 		const string m_strLocationY = "LocationY";
 		const string m_strSizeHeight = "SizeHeight";
 		const string m_strSizeWidth = "SizeWidth";
+		const string m_strStatusBarChecked = "StatusBarChecked";
+		const string m_strToolBarChecked = "ToolBarChecked";
 		const string m_strBackgroundGif = "p12c08.gif";
 		const string m_strUnderConstructionHtm = "UnderConstruction.htm";
 		string m_strAppPath = Path.GetDirectoryName(Application.ExecutablePath);
@@ -41,6 +43,7 @@ namespace PAWSStarterKit
 		MenuItem miEditPaste;
 		MenuItem miLanguageProperties;
 		MenuItem miViewToolBar;
+		MenuItem miViewStatusBar;
 		MenuItem miViewRefresh;
 		MenuItem miHelpAbout;
 
@@ -67,7 +70,10 @@ namespace PAWSStarterKit
 		private XslTransform m_XslExampleTransform = new XslTransform();
 		System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(PAWSSKForm));
 		private AxSHDocVw.AxWebBrowser axWebBrowser;
+		private ToolBar tbar;
+		private bool m_bViewToolBarChecked;
 		private StatusBar sb;
+		private bool m_bViewStatusBarChecked;
 		private Panel panel;
 		private System.ComponentModel.IContainer components = null;
 
@@ -88,6 +94,8 @@ namespace PAWSStarterKit
 				m_strUserAnswerFile = (string)regkey.GetValue(m_strLastAnswerFile);
 				m_strUserGrammarFile = (string)regkey.GetValue(m_strLastGrammarFile);
 				m_strUserExampleFilesPath = (string)regkey.GetValue(m_strLastExampleFilesPath);
+				m_bViewToolBarChecked = Convert.ToBoolean((string) regkey.GetValue(m_strToolBarChecked));
+				m_bViewStatusBarChecked = Convert.ToBoolean((string) regkey.GetValue(m_strStatusBarChecked));
 				int iX = Convert.ToInt32((string)regkey.GetValue(m_strLocationX));
 				int iY = Convert.ToInt32((string)regkey.GetValue(m_strLocationY));
 				int iWidth = Convert.ToInt32((string)regkey.GetValue(m_strSizeWidth));
@@ -170,13 +178,13 @@ namespace PAWSStarterKit
 			// File New
 			miFileNew = new MenuItem("&New...");
 			miFileNew.Click += new EventHandler(MenuFileNewOnClick);
-			miFileNew.Shortcut = Shortcut.CtrlN;
+			//miFileNew.Shortcut = Shortcut.CtrlN;  // short cuts don't always work
 			mMenu.MenuItems[index].MenuItems.Add(miFileNew);
 
 			// File Open
 			miFileOpen = new MenuItem("&Open...");
 			miFileOpen.Click += new EventHandler(MenuFileOpenOnClick);
-			miFileOpen.Shortcut = Shortcut.CtrlO;
+			//miFileOpen.Shortcut = Shortcut.CtrlO;
 			mMenu.MenuItems[index].MenuItems.Add(miFileOpen);
 
 			// File Close
@@ -191,7 +199,7 @@ namespace PAWSStarterKit
 			// File Save
 			miFileSave = new MenuItem("&Save...");
 			miFileSave.Click += new EventHandler(MenuFileSaveOnClick);
-			miFileSave.Shortcut = Shortcut.CtrlS;
+			//miFileSave.Shortcut = Shortcut.CtrlS;
 			mMenu.MenuItems[index].MenuItems.Add(miFileSave);
 
 			// File Save As
@@ -218,19 +226,19 @@ namespace PAWSStarterKit
 			// Edit Cut
 			miEditCut = new MenuItem("Cu&t");
 			miEditCut.Click += new EventHandler(MenuEditCutOnClick);
-			miEditCut.Shortcut = Shortcut.CtrlX;
+			//miEditCut.Shortcut = Shortcut.CtrlX;
 			mMenu.MenuItems[index].MenuItems.Add(miEditCut);
 
 			// Edit Copy
 			miEditCopy = new MenuItem("&Copy");
 			miEditCopy.Click += new EventHandler(MenuEditCopyOnClick);
-			miEditCopy.Shortcut = Shortcut.CtrlC;
+			//miEditCopy.Shortcut = Shortcut.CtrlC;
 			mMenu.MenuItems[index].MenuItems.Add(miEditCopy);
 
 			// Edit Paste
 			miEditPaste = new MenuItem("&Paste");
 			miEditPaste.Click += new EventHandler(MenuEditPasteOnClick);
-			miEditPaste.Shortcut = Shortcut.CtrlV;
+			//miEditPaste.Shortcut = Shortcut.CtrlV;
 			mMenu.MenuItems[index].MenuItems.Add(miEditPaste);
 
 			// Language
@@ -254,11 +262,13 @@ namespace PAWSStarterKit
 			miViewToolBar = new MenuItem("&Tool Bar");
 			miViewToolBar.Click += new EventHandler(MenuViewToolBarOnClick);
 			mMenu.MenuItems[index].MenuItems.Add(miViewToolBar);
+			miViewToolBar.Checked = m_bViewToolBarChecked;
 
 			// View Status Bar
-			MenuItem miViewStatusBar = new MenuItem("&Status Bar");
+			miViewStatusBar = new MenuItem("&Status Bar");
 			miViewStatusBar.Click += new EventHandler(MenuViewStatusBarOnClick);
 			mMenu.MenuItems[index].MenuItems.Add(miViewStatusBar);
+			miViewStatusBar.Checked = m_bViewStatusBarChecked;
 
 			// Horizontal line
 			mi = new MenuItem("-");
@@ -267,7 +277,7 @@ namespace PAWSStarterKit
 			// View Refresh
 			miViewRefresh = new MenuItem("&Refresh");
 			miViewRefresh.Click += new EventHandler(MenuViewRefreshOnClick);
-			miViewRefresh.Shortcut = Shortcut.F5;
+			//miViewRefresh.Shortcut = Shortcut.F5;
 			mMenu.MenuItems[index].MenuItems.Add(miViewRefresh);
 
 
@@ -323,7 +333,7 @@ namespace PAWSStarterKit
 			imglst.Images.Add(bmCopy);
 			imglst.Images.Add(bmPaste);
 
-			ToolBar tbar = new ToolBar();
+			tbar = new ToolBar();
 			tbar.Parent = this;
 			tbar.ImageList = imglst;
 			tbar.ShowToolTips = true;
@@ -369,6 +379,7 @@ namespace PAWSStarterKit
 			tbbPaste.Tag = miEditPaste;
 			tbar.Buttons.Add(tbbPaste);
 
+			tbar.Visible = m_bViewToolBarChecked;
 		}
 		void InitWebBrowser()
 		{
@@ -398,6 +409,7 @@ namespace PAWSStarterKit
 			//            sb.Location = new Point(0, ClientSize.Height - 14);
 
 			sb.Height = (int)(SystemInformation.MenuHeight * .8);
+			sb.Visible = m_bViewStatusBarChecked;
 		}
 
 		/// <summary>
@@ -635,11 +647,17 @@ namespace PAWSStarterKit
 		}
 		void MenuViewToolBarOnClick(object obj, EventArgs ea)
 		{
-			MessageBox.Show("View ToolBar item clicked.", Text);
+			MenuItem mi = (MenuItem) obj;
+			mi.Checked ^= true;;
+			tbar.Visible = mi.Checked;
+			Invalidate();
 		}
 		void MenuViewStatusBarOnClick(object obj, EventArgs ea)
 		{
-			MessageBox.Show("View StatusBar item clicked.", Text);
+			MenuItem mi = (MenuItem) obj;
+			mi.Checked ^= true;;
+			sb.Visible = mi.Checked;
+			Invalidate();
 		}
 		void MenuViewRefreshOnClick(object obj, EventArgs ea)
 		{
@@ -771,6 +789,13 @@ namespace PAWSStarterKit
 		void PAWSSKOnClosing(object obj, CancelEventArgs cea)
 		{
 			saveUserDataStoreToUserAnswerFile();
+			if (m_bIsDirty)
+			{
+				if (DialogResult.Yes == MessageBox.Show("The Answer file has changed.  Do you want to generate the grammar and example files?",
+					"Program Ending...", MessageBoxButtons.YesNo,
+					MessageBoxIcon.Question))
+					MenuFileSaveOnClick(null, null);
+			}
 		}
 		protected override void OnClosed(EventArgs ea)
 		{
@@ -790,6 +815,8 @@ namespace PAWSStarterKit
 			regkey.SetValue(m_strLocationY, Location.Y.ToString());
 			regkey.SetValue(m_strSizeWidth, Size.Width.ToString());
 			regkey.SetValue(m_strSizeHeight, Size.Height.ToString());
+			regkey.SetValue(m_strToolBarChecked, miViewToolBar.Checked.ToString());
+			regkey.SetValue(m_strStatusBarChecked, miViewStatusBar.Checked.ToString());
 			regkey.Close();
 		}
 		void createPAWSSKInitHtm()
