@@ -164,6 +164,9 @@ AmpleData	sPCPATRAmpleData_g = {
 	NULL, 0,		/*      optional string for trace output */
 	WANT_PROPERTIES,	/* output field flags */
 	0,			/* -/	iDebugLevel */
+#ifndef hab136
+	MAX_ANALYSES_TO_RETURN_NO_LIMIT,
+#endif
 	NULL,		/* log FILE pointer */
 	NULL,		/* selective analysis filename */
 	NULL,		/* selective analysis data */

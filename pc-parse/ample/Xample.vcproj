@@ -241,6 +241,9 @@
 			RelativePath=".\puncla.c">
 		</File>
 		<File
+			RelativePath="resource.h">
+		</File>
+		<File
 			RelativePath=".\select.c">
 		</File>
 		<File

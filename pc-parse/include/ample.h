@@ -1,6 +1,6 @@
 /* AMPLE.H - definitions/declarations for AMPLE library
  ***************************************************************************
- * Copyright 1988, 1998 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1988, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #ifndef _AMPLE_H_INCLUDED_
@@ -52,6 +52,11 @@ typedef struct ample_allomorph AmpleAllomorph;
 typedef struct ample_fnlist		AmpleTestList;
 typedef struct ample_pairlist		AmplePairList;
 typedef struct ample_morph_constraint	AmpleMorphConstraint;
+#ifdef EXPERIMENTAL
+#ifndef hab350
+typedef struct ample_never_constraint	AmpleNeverConstraint;
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 typedef struct ample_hlalist		AmpleHeadlistList;
 typedef struct ample_morpheme		AmpleMorpheme;
 typedef struct ample_data		AmpleData;
@@ -103,6 +108,10 @@ struct ample_data {
 	size_t		   uiTraceSize;
 	int			   iOutputFlags;		/* -w, -x */
 	int			   iDebugLevel;			/* -/ */
+#ifndef hab365
+	int			   iMaxAnalysesToReturn; /* only used by XAmple.dll */
+#define MAX_ANALYSES_TO_RETURN_NO_LIMIT -1
+#endif
 	FILE *		   pLogFP;
 	/*
 	 *  information loaded from the selective analysis file
@@ -127,6 +136,16 @@ struct ample_data {
 #define AMPLE_NO_CATEGORY	0	/* no word category guessing */
 #define AMPLE_SUFFIX_CATEGORY	1	/* last suffix has word category */
 #define AMPLE_PREFIX_CATEGORY	2	/* first prefix has word category */
+#ifndef hab340
+#define AMPLE_AFFIX             3       /* used to reset affix setting
+					   when there are multiple \cat
+					   fields */
+#define AMPLE_COMPOUND_ROOT_LEFTHEAD  4	/* compound roots are left headed */
+#define AMPLE_COMPOUND_ROOT_RIGHTHEAD 8	/* compound roots are righ headed */
+#define AMPLE_COMPOUND_ROOT          12	/* used to reset compound setting
+					   when there are multiple \catcr
+					   fields */
+#endif /* hab340 */
 	int			   bWriteMorphCats;
 	StringList *	   pCategories;		/* \\ca */
 	AmpleCategoryClass *   pCategoryClasses;	/* \\ccl */
@@ -147,6 +166,11 @@ struct ample_data {
 	int			   iMaxRootCount;	/* \\maxr */
 	int			   iMaxSuffixCount;	/* \\maxs */
 	AmpleMorphConstraint * pMorphConstraints;	/* \\mcc */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+	AmpleNeverConstraint * pNeverConstraints;	/* \\ancc */
+#endif /* hab350 */
+#endif /* EXPERIMENTAL */
 	int			   iMaxNullCount;	/* \\maxnull */
 	char *		   pszValidChars;	/* \\strcheck */
 	int			   bDictionaryCapitals;	/* \\dicdecap */
@@ -344,6 +368,11 @@ extern void	writeAmpleParses P((FILE *           pOutputFP_in,
 #endif /* EXPERIMENTAL */
 extern void	eraseAmpleWord P((AmpleWord * pWord_in,
 				  AmpleData * pAmple_in));
+#ifndef hab3312
+extern AmpleAmlist * getAllAllomorphs P((char * pszRestOfWord_in,
+					 int         iState_in,
+					 AmpleData * pAmple_in));
+#endif /* hab3312 */
 
 /* putsd.c */
 extern void writeAmpleDictionary P((const char * pszFilename_in,

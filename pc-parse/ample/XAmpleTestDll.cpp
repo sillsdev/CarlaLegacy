@@ -50,7 +50,7 @@ HINSTANCE   hAmpleLib_g = 0;
 
 #ifdef _DEBUG
 // #define DLL_FILE "C:/carla/Dev/SOSMirror/pc-parse/ample/Debug-dll/xample.dll"
-#define DLL_FILE "Debug-dll/xample.dll"
+#define DLL_FILE "Debug-dll-x/xample.dll"
 #else
 #define DLL_FILE "xample.dll"
 #endif
@@ -470,10 +470,22 @@ void parseWord(
 #ifndef hab35013
 if (pfAmpleSetParameter_g != NULL)
   {
+#ifndef hab36516
+	pszResult_g = (*pfAmpleSetParameter_g)(pSetup_io,
+					   "OutputStyle", "FWParse");
+	printf("AmpleSetParameter(\"OutputStyle\", \"FWParse\"):\n\t%s\n",
+	   pszResult_g);
+	pszResult_g = (*pfAmpleSetParameter_g)(pSetup_io,
+					   "MaxAnalysesToReturn", "1");
+	printf("AmpleSetParameter(\"MaxAnalysesToReturn\", \"2\"):\n\t%s\n",
+	   pszResult_g);
+
+#else
 	pszResult_g = (*pfAmpleSetParameter_g)(pSetup_io,
 					   "OutputStyle", "AResult");
 	printf("AmpleSetParameter(\"OutputStyle\", \"AResult\"):\n\t%s\n",
 	   pszResult_g);
+#endif
   }
 #endif // hab35013
 

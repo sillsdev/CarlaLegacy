@@ -152,6 +152,15 @@ static PATRMemory sAmplePATRMemory_m =
 	NULL, NULL, NULL, 0, NULL, NULL, 0, NULL, NULL, 0, { NULL, 0, 0, 0 },
 	NULL, 0, 0, 0
 };
+#ifndef hab36516
+/*
+ * FieldWorks strings
+ */
+static char szExceptionBufSizeBegin_m[] = "  <Exception code='ReachedMaxBufferSize' totalAnalyses='";
+static char szExceptionAnalysesSizeBegin_m[] = "  <Exception code='ReachedMaxAnalyses' totalAnalyses='";
+static char szExceptionEnd_m[]   = "'/>\r\n";
+static char szWordFormClose_m[]  = " </Wordform>\r\n";
+#endif /* hab36516 */
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
 /*
@@ -177,11 +186,12 @@ static PATRMemory sAmplePATRMemory_m =
 #define OUTPUT_PROPERTIES       16
 #define OUTPUT_ORIGINAL_WORD    17
 #define OUTPUT_DECOMPOSITION    18
-
 /* jdh 2002.1.15 */
-#define ALLOMORPH_IDS   19
+#define ALLOMORPH_IDS           19
+/* hab 2002.10.17 */
+#define MAX_ANALYSES_TO_RETURN  20
 
-#define NUMBER_OF_PARAMETERS	20
+#define NUMBER_OF_PARAMETERS	21
 
 static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 	"DebugAllomorphConds",
@@ -202,8 +212,9 @@ static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 	"VerifyLoading",		/* hab 1999.03.11 */
 	"OutputProperties",		/* hab 1999.03.11 */
 	"OutputOriginalWord",	/* hab 1999.03.11 */
-	"OutputDecomposition",//,	/* hab 1999.03.11 */
-	"AllomorphIds",			/* jdh 2002.01.15 */
+	"OutputDecomposition",	/* hab 1999.03.11 */
+	"AllomorphIds",		/* jdh 2002.01.15 */
+	"MaxAnalysesToReturn",	/* hab 2002.10.17 */
 	};
 
 #define MAXAMBIG 16		/* high level of ambiguity for stats */
@@ -302,6 +313,11 @@ if (pPATRMemory)
 pSetup_io->sData.cBeginComment                  = '|';
 pSetup_io->sData.iMaxTrieDepth                  = 2;
 pSetup_io->sData.iMaxMorphnameLength            = 15;
+#ifndef hab365
+#ifdef EXPERIMENTAL
+pSetup_io->sData.iMaxAnalysesToReturn = MAX_ANALYSES_TO_RETURN_NO_LIMIT;
+#endif
+#endif
 
 pSetup_io->sData.sTextCtl.cFormatMark           = '\\';
 pSetup_io->sData.sTextCtl.cAnaAmbig             = '%';
@@ -1055,6 +1071,49 @@ static char * addAResultToBuffer(
 
 #ifndef hab34112
 #ifdef EXPERIMENTAL
+#ifndef hab36516
+/*****************************************************************************
+ * NAME
+ *    fwConCat
+ * DESCRIPTION
+ *    concatenate a string to a buffer and check for overflow;
+ *    if there's potential overflow, concatenate a message to the buffer
+ * RETURN VALUE
+ *    none
+ */
+static void fwConCat(char * pszString_in, int iAnalysesCount_in,
+			 int *iRoom_io, char *pszAResult_io)
+{
+  int  iSize;
+  char szCountBuffer[11];
+
+#define  NOMOREROOM -65000
+
+  if (*iRoom_io == NOMOREROOM)
+	return;
+
+  iSize = strlen(pszString_in);
+  if (*iRoom_io < (iSize + 300)) /* use 300 to ensure plenty of room */
+	{
+	  strncat(pszAResult_io, szExceptionBufSizeBegin_m, *iRoom_io);
+	  *iRoom_io -= strlen(szExceptionBufSizeBegin_m);
+	  _itoa(iAnalysesCount_in, szCountBuffer, 10);
+	  strncat(pszAResult_io, szCountBuffer, *iRoom_io);
+	  *iRoom_io -= strlen(szCountBuffer);
+	  strncat(pszAResult_io, szExceptionEnd_m, *iRoom_io);
+	  *iRoom_io -= strlen(szExceptionEnd_m);
+	  strncat(pszAResult_io, szWordFormClose_m, *iRoom_io);
+	  *iRoom_io = NOMOREROOM; 	/* force bad value so no more gets added to
+								   pszAResult_io*/
+	}
+  else
+	{
+	  strncat(pszAResult_io, pszString_in, *iRoom_io);
+	  pszAResult_io += iSize;
+	  *iRoom_io -= iSize;
+	}
+}
+
 /*****************************************************************************
  * NAME
  *    addFWParseToBuffer
@@ -1064,15 +1123,136 @@ static char * addAResultToBuffer(
  * RETURN VALUE
  *    pointer to the buffer
  */
-
- // this was made by assuming the changes marked with #ifndef hab33169 and removing the #ifdef EXPERIMENTAL ones
-
 static char * addFWParseToBuffer(
-	 AmpleSetup *  pSetup_in,
+	 AmpleSetup *           pSetup_in,
 	 const AmpleWord *	pWord_in,
 	 const TextControl *	pTextCtl_in,
-	 char *		pszBuffer_out,
-	 size_t		uiBufferSize_in)  /* this doesn't count space for NUL*/
+	 char *		        pszBuffer_out,
+	 size_t		        uiBufferSize_in,  /* this doesn't count space for NUL*/
+		 int                    iAnalysesCount_in)
+{
+  WordAnalysis *		pAnal;
+  AmpleHeadlistList *	        pHeadlists;
+  AmpleHeadList *		pHead;
+  AmpleAllomorph *	        pAllo;
+  char *			pszAResult;
+  int			        iSize;
+  int 			        iRoom;
+  int                           iAnalCount;
+  int                           iMaxAnalyses;
+
+  /*
+   *  adjust pointers and counters for less redundant skipping
+   */
+  iSize     = strlen(pszBuffer_out);
+  pszAResult = pszBuffer_out + iSize;
+  iRoom     = uiBufferSize_in - iSize;
+
+  if (pSetup_in)
+	iMaxAnalyses = pSetup_in->sData.iMaxAnalysesToReturn;
+  else
+	iMaxAnalyses = MAX_ANALYSES_TO_RETURN_NO_LIMIT;
+
+  fwConCat(" <Wordform DbRef=DB_REF_HERE Form=\"", iAnalysesCount_in, &iRoom, pszAResult);
+  fwConCat(pWord_in->pTemplate->pszOrigWord, iAnalysesCount_in, &iRoom, pszAResult);
+  fwConCat("\">\r\n", iAnalysesCount_in, &iRoom, pszAResult);;
+
+  if (pWord_in->pTemplate->pAnalyses == NULL)
+	{
+	  fwConCat("  <WfiAnalysis/>\r\n", iAnalysesCount_in, &iRoom, pszAResult); /* empty means failed to parse */
+	}
+  else
+	{
+	  iAnalCount = 0;
+	  for (   pAnal = pWord_in->pTemplate->pAnalyses,
+		pHeadlists = pWord_in->pHeadlists ;
+		  pAnal && pHeadlists ;
+		  pAnal = pAnal->pNext, pHeadlists = pHeadlists->pNext )
+	{
+	  ++iAnalCount;
+	  if ((iMaxAnalyses != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
+		  (iMaxAnalyses < iAnalCount))
+		{
+		  char   szCountBuffer[11];
+		  fwConCat(szExceptionAnalysesSizeBegin_m, iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  _itoa(iAnalysesCount_in, szCountBuffer, 10);
+		  fwConCat(szCountBuffer, iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  fwConCat(szExceptionEnd_m, iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  break;		/* don't do any more */
+		}
+	  else
+		{
+		  fwConCat("  <WfiAnalysis>\r\n", iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  fwConCat("   <Morphs>\r\n", iAnalysesCount_in,
+			   &iRoom, pszAResult);
+
+		  for (pHead = pHeadlists->pHeadList; pHead; pHead = pHead->pRight)
+		{
+		  fwConCat("    <Morph>\r\n", iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  pAllo = pHead->pAllomorph;
+		  if (pAllo == NULL)
+			{
+			  reportError(ERROR_MSG, "pHead->pAllomorph is NULL?\n");
+			  fwConCat("     <MoForm DbRef='0' Label=\"?\"/>\r\n",
+				   iAnalysesCount_in, &iRoom, pszAResult);
+			  continue;
+			}
+		  fwConCat("      <MoForm DbRef='", iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  if (pAllo->pszAllomorphID != NULL)
+			fwConCat(pAllo->pszAllomorphID, iAnalysesCount_in,
+				 &iRoom, pszAResult);
+		  else
+			{
+			  fwConCat("0", iAnalysesCount_in, &iRoom, pszAResult);
+			  /* todo: consider raising an error at this point, */
+			  /* once the caller is normalling giving us an allo id */
+			}
+		  fwConCat("' Label=\"", iAnalysesCount_in, &iRoom, pszAResult);
+		  fwConCat(pAllo->pszAllomorph, iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  fwConCat("\"/>\r\n", iAnalysesCount_in, &iRoom, pszAResult);
+		  fwConCat("      <MSI DbRef='", iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  fwConCat(pAllo->pMorpheme->pszMorphName, iAnalysesCount_in,
+			   &iRoom, pszAResult); // assumes pszMorphName is
+					 // holding the database id (a long int) of this msi
+		  fwConCat("'/>\r\n", iAnalysesCount_in, &iRoom, pszAResult);
+		  fwConCat("    </Morph>\r\n", iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		}
+		  fwConCat("   </Morphs>\r\n", iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		  fwConCat("  </WfiAnalysis>\r\n", iAnalysesCount_in,
+			   &iRoom, pszAResult);
+		}
+	}
+	}
+  fwConCat(szWordFormClose_m, iAnalysesCount_in, &iRoom, pszAResult);
+
+  return pszBuffer_out;
+}
+#else  /* hab36516 */
+/*****************************************************************************
+ * NAME
+ *    addFWParseToBuffer
+ * DESCRIPTION
+ *    add the parsed word in the WordTemplate structure to the buffer in
+ *    <AResult> form
+ * RETURN VALUE
+ *    pointer to the buffer
+ */
+static char * addFWParseToBuffer(
+	 AmpleSetup *           pSetup_in,
+	 const AmpleWord *	pWord_in,
+	 const TextControl *	pTextCtl_in,
+	 char *		        pszBuffer_out,
+	 size_t		        uiBufferSize_in)  /* this doesn't count space for NUL*/
 {
   WordAnalysis *		pAnal;
   AmpleHeadlistList *	pHeadlists;
@@ -1153,6 +1333,7 @@ static char * addFWParseToBuffer(
 
 	return pszBuffer_out;
 }
+#endif /* hab36516 */
 #endif /* EXPERIMENTAL */
 #endif /* hab34112 */
 
@@ -1433,8 +1614,14 @@ DllExport const char * AmpleParseText(
 		  addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
 				 szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
 		case FWParse:
+#ifndef hab36516
+		  addFWParseToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
+				 szOutputBuffer_g, sizeof(szOutputBuffer_g)-1,
+				 iResult);
+#else  /* hab26416 */
 		  addFWParseToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
 				 szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+#endif /* hab36516 */
 		  break;
 
 		default:
@@ -2876,6 +3063,30 @@ else
 return szAmpleSuccess_m;
 }
 
+#ifndef hab36516
+#ifdef EXPERIMENTAL
+/*****************************************************************************
+ * NAME
+ *    setMaxAnalysesToReturn
+ * DESCRIPTION
+ *    set the maximum number of analyses to return
+ *      (MAX_ANALYSES_TO_RETURN_NO_LIMIT = no limit)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setMaxAnalysesToReturn(
+	const char *	pszValue_in,
+	AmpleSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.iMaxAnalysesToReturn = MAX_ANALYSES_TO_RETURN_NO_LIMIT;
+else
+	pSetup_io->sData.iMaxAnalysesToReturn = atoi(pszValue_in);
+return szAmpleSuccess_m;
+}
+#endif /* EXPERIMENTAL */
+#endif /* hab36516 */
+
 /*****************************************************************************
  * NAME
  *    setMaxTrieDepth
@@ -3433,8 +3644,14 @@ switch (findParameterIndex(pszName_in))
 	return setOutputDecomposition(pszValue_in, pSetup_io);
 
 	case ALLOMORPH_IDS:	/* jdh 2002.1.15 */
-	return setEnableAllomorphIDs(pszValue_in, pSetup_io);
+		return setEnableAllomorphIDs(pszValue_in, pSetup_io);
 
+#ifndef hab36516
+#ifdef EXPERIMENTAL
+	case MAX_ANALYSES_TO_RETURN:
+		return setMaxAnalysesToReturn(pszValue_in, pSetup_io);
+#endif
+#endif
 	default:
 
 	return szInvalidParameterName_m;
@@ -3474,6 +3691,44 @@ szMessageBuffer_g[1] = NUL;
 
 return szMessageBuffer_g;
 }
+
+#ifndef hab36516
+/*****************************************************************************
+ * NAME
+ *    getEnableAllomorphIDs
+ * DESCRIPTION
+ *    get the maximum number of analyses to return
+ *     (MAX_ANALYSES_TO_RETURN_NO_LIMIT = no limit)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getEnableAllomorphIDs(
+	AmpleSetup *	pSetup_io)
+{
+if (pSetup_io->sData.bRootGlosses)
+	return "TRUE";
+else
+	return "FALSE";
+}
+#ifdef EXPERIMENTAL
+/*****************************************************************************
+ * NAME
+ *    getMaxAnalysesToReturn
+ * DESCRIPTION
+ *    get the maximum number of analyses to return
+ *     (MAX_ANALYSES_TO_RETURN_NO_LIMIT = no limit)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getMaxAnalysesToReturn(
+	AmpleSetup *	pSetup_io)
+{
+sprintf(szMessageBuffer_g, "%d", pSetup_io->sData.iMaxAnalysesToReturn);
+
+return szMessageBuffer_g;
+}
+#endif /* EXPERIMENTAL */
+#endif /* hab36516 */
 
 /*****************************************************************************
  * NAME
@@ -3873,6 +4128,15 @@ switch (findParameterIndex(pszName_in))
 	case OUTPUT_DECOMPOSITION:	/* hab 1999.03.11 */
 	return getOutputDecomposition(pSetup_io);
 
+#ifndef hab36516
+	case ALLOMORPH_IDS:
+		return getEnableAllomorphIDs(pSetup_io);
+
+#ifdef EXPERIMENTAL
+	case MAX_ANALYSES_TO_RETURN:
+		return getMaxAnalysesToReturn(pSetup_io);
+#endif
+#endif
 	default:
 	return szInvalidParameterName_m;
 	}
@@ -4294,9 +4558,13 @@ return pszResult;
 
 /******************************************************************************
  * EDIT HISTORY
- * 09-04-2002   hab  - Increased size of szOutputBuffer_g for AmpleParseText()
+ * 17-Oct-2002  hab  - Added MaxAnalysesToReturn parameter and AmpleParseText()
+ * [3.6.5.16]            now returns the first analyses up to this parameter
+ *                       for the FWParse option, only (default is all analyses)
+ *                     Added an FWParse message if the buffer is overrun.
+ * 04-Sep-2002  hab  - Increased size of szOutputBuffer_g for AmpleParseText()
  * [3.6.0.15]
- * 08-23-2002   hab  - fix FWParse results
+ * 23-Aug-2002  hab  - fix FWParse results
  * [3.6.0.14]
  * 06-Mar-2002  hab  - Add hooks to ANCCs.
  * [3.5.0.13]          Add pszUseTextIn param to AmpleParseText() to allow

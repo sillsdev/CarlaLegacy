@@ -1524,6 +1524,11 @@ pAmple_io->bRootGlosses         = FALSE;
 pAmple_io->iMaxMorphnameLength  = 15;
 pAmple_io->eTraceAnalysis       = AMPLE_TRACE_OFF;
 pAmple_io->iDebugLevel          = 0;
+#ifndef hab365
+#ifdef EXPERIMENTAL
+pAmple_io->iMaxAnalysesToReturn = MAX_ANALYSES_TO_RETURN_NO_LIMIT;
+#endif
+#endif
 }
 
 #ifdef EXPERIMENTAL

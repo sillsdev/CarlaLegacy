@@ -12,8 +12,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release-dll"
-			IntermediateDirectory=".\Release-dll"
+			OutputDirectory=".\Release-dll-x"
+			IntermediateDirectory=".\Release-dll-x"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE">
@@ -127,6 +127,9 @@
 	<Files>
 		<File
 			RelativePath=".\ampledll.c">
+		</File>
+		<File
+			RelativePath="resource.h">
 		</File>
 		<File
 			RelativePath=".\xampledll.rc">

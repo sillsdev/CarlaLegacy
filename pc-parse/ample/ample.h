@@ -108,6 +108,10 @@ struct ample_data {
 	size_t		   uiTraceSize;
 	int			   iOutputFlags;		/* -w, -x */
 	int			   iDebugLevel;			/* -/ */
+#ifndef hab365
+	int			   iMaxAnalysesToReturn; /* only used by XAmple.dll */
+#define MAX_ANALYSES_TO_RETURN_NO_LIMIT -1
+#endif
 	FILE *		   pLogFP;
 	/*
 	 *  information loaded from the selective analysis file
