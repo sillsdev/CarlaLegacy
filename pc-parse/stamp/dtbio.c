@@ -236,6 +236,7 @@ for ( ambp = list ; ambp ; ambp = next_ambp )
 	{
 	next_ambp = ambp->pNext;     /* save the address of the next node */
 	freeStampAnalysis( ambp->pAnal ); /* release the analysis list */
+	freeMemory( ambp->pszSynthResult );
 	freeMemory( ambp );     /* release the node space */
 	}
 }

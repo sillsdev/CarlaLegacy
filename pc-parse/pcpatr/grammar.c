@@ -406,11 +406,14 @@ static PATRConstraint *	loadLogicalConstraint P((
 						 StringList *     pLeftPath_in,
 						 GrammarData * pData));
 static void		freePATRLogicalFactor P((
-						  PATRLogicalFactor * pFactor_io));
+						  PATRLogicalFactor * pFactor_io,
+						  PATRData * pPATR_in));
 static void		freePATRLogicalExpression P((
-					  PATRLogicalExpression * pExpression_io));
+					  PATRLogicalExpression * pExpression_io,
+					  PATRData * pPATR_in));
 static void		freeLogicalConstraints P((
-											PATRConstraint * pConstraints_in));
+											PATRConstraint * pConstraints_in,
+						PATRData * pPATR_in));
 static PATRLogicalFactor * copyPATRLogicalFactor P((
 						  PATRLogicalFactor * pFactor_in,
 						  PATRData * pPATR_in));
@@ -1745,7 +1748,7 @@ abort_rule:
 	if (pPriorityUnions != NULL)
 		freePriorityUnions(pPriorityUnions, pData->pPATR);
 	if (pConstraints != NULL)
-		freeLogicalConstraints(pConstraints);
+		freeLogicalConstraints(pConstraints, pData->pPATR);
 	/*
 	 *  skip forward until the next keyword in the grammar file
 	 */
@@ -2072,7 +2075,8 @@ if (pPATR_io->pGrammar != NULL)
 	if (pPATR_io->pGrammar->apConstraints != NULL)
 	{
 	for ( i = 0 ; pPATR_io->pGrammar->apConstraints[i] ; ++i )
-		freeLogicalConstraints(pPATR_io->pGrammar->apConstraints[i]);
+		freeLogicalConstraints(pPATR_io->pGrammar->apConstraints[i],
+				   pPATR_io);
 	freeMemory( pPATR_io->pGrammar->apConstraints );
 	}
 	freeMemory( pPATR_io->pGrammar );
@@ -5147,7 +5151,7 @@ if (iTokenType == '(')
 	iTokenType = getToken(szToken, MAX_TOKEN_SIZE, pData);
 	if (iTokenType != ')')
 	{
-	freePATRLogicalExpression(sLeftFactor.u.pExpression);
+	freePATRLogicalExpression(sLeftFactor.u.pExpression, pData->pPATR);
 	displayNumberedMessage(&sNoConstraintCloseParen_m,
 				   pData->bSilent, pData->bShowWarnings,
 				   pData->pLogFP,
@@ -5257,15 +5261,15 @@ if (iTokenType == '(')
 	if (sRightFactor.u.pExpression == NULL)
 	{
 	if (sLeftFactor.eType == kExpression)
-		freePATRLogicalExpression(sLeftFactor.u.pExpression);
+		freePATRLogicalExpression(sLeftFactor.u.pExpression, pData->pPATR);
 	return NULL;
 	}
 	iTokenType = getToken(szToken, MAX_TOKEN_SIZE, pData);
 	if (iTokenType != ')')
 	{
 	if (sLeftFactor.eType == kExpression)
-		freePATRLogicalExpression(sLeftFactor.u.pExpression);
-	freePATRLogicalExpression(sRightFactor.u.pExpression);
+		freePATRLogicalExpression(sLeftFactor.u.pExpression, pData->pPATR);
+	freePATRLogicalExpression(sRightFactor.u.pExpression, pData->pPATR);
 	displayNumberedMessage(&sNoConstraintCloseParen_m,
 			   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
 			   pData->pszGrammarFilename, pData->uiLineNumber, "");
@@ -5279,14 +5283,14 @@ else if (iTokenType == '[')
 	if (sRightFactor.u.pFeature == NULL)
 	{
 	if (sLeftFactor.eType == kExpression)
-		freePATRLogicalExpression(sLeftFactor.u.pExpression);
+		freePATRLogicalExpression(sLeftFactor.u.pExpression, pData->pPATR);
 	return NULL;
 	}
 	}
 else if (iTokenType == '<')
 	{
 	if (sLeftFactor.eType == kExpression)
-	freePATRLogicalExpression(sLeftFactor.u.pExpression);
+	freePATRLogicalExpression(sLeftFactor.u.pExpression, pData->pPATR);
 	displayNumberedMessage(&sNoConstraintPath_m,
 			   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
 			   pData->pszGrammarFilename, pData->uiLineNumber, "");
@@ -5298,7 +5302,7 @@ else if (iTokenType == '<')
 else if (iTokenType == '{')
 	{
 	if (sLeftFactor.eType == kExpression)
-	freePATRLogicalExpression(sLeftFactor.u.pExpression);
+	freePATRLogicalExpression(sLeftFactor.u.pExpression, pData->pPATR);
 	displayNumberedMessage(&sNoConstraintDisjunction_m,
 			   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
 			   pData->pszGrammarFilename, pData->uiLineNumber, "");
@@ -5310,7 +5314,7 @@ else if (iTokenType == '{')
 else
 	{
 	if (sLeftFactor.eType == kExpression)
-	freePATRLogicalExpression(sLeftFactor.u.pExpression);
+	freePATRLogicalExpression(sLeftFactor.u.pExpression, pData->pPATR);
 	displayNumberedMessage(&sNoConstraintAtom_m,
 			   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
 			   pData->pszGrammarFilename, pData->uiLineNumber, "");
@@ -5456,17 +5460,19 @@ return pConstraints_in;
  * RETURN VALUE
  *    none
  */
-static void freePATRLogicalFactor(pFactor_io)
+static void freePATRLogicalFactor(pFactor_io, pPATR_in)
 PATRLogicalFactor * pFactor_io;
+PATRData * pPATR_in;
 {
 if (pFactor_io == NULL)
 	return;
 switch (pFactor_io->eType)
 	{
 	case kExpression:
-	freePATRLogicalExpression(pFactor_io->u.pExpression);
+	freePATRLogicalExpression(pFactor_io->u.pExpression, pPATR_in);
 	break;
 	case kFeature:
+	freePATRFeature(pFactor_io->u.pFeature, pPATR_in);
 	break;
 	}
 freeMemory(pFactor_io);
@@ -5480,8 +5486,9 @@ freeMemory(pFactor_io);
  * RETURN VALUE
  *    none
  */
-static void freePATRLogicalExpression(pExpression_io)
+static void freePATRLogicalExpression(pExpression_io, pPATR_in)
 PATRLogicalExpression * pExpression_io;
+PATRData * pPATR_in;
 {
 if (pExpression_io == NULL)
 	return;
@@ -5489,14 +5496,14 @@ switch (pExpression_io->eOperation)
 	{
 	case kExist:
 	case kNegate:
-	freePATRLogicalFactor(pExpression_io->pLeft);
+	freePATRLogicalFactor(pExpression_io->pLeft, pPATR_in);
 	break;
 	case kAnd:
 	case kOr:
 	case kConditional:
 	case kBiconditional:
-	freePATRLogicalFactor(pExpression_io->pLeft);
-	freePATRLogicalFactor(pExpression_io->pRight);
+	freePATRLogicalFactor(pExpression_io->pLeft, pPATR_in);
+	freePATRLogicalFactor(pExpression_io->pRight, pPATR_in);
 	break;
 	}
 freeMemory(pExpression_io);
@@ -5510,8 +5517,9 @@ freeMemory(pExpression_io);
  * RETURN VALUE
  *    none
  */
-static void freeLogicalConstraints(pConstraints_in)
+static void freeLogicalConstraints(pConstraints_in, pPATR_in)
 PATRConstraint * pConstraints_in;
+PATRData * pPATR_in;
 {
 PATRConstraint * pCon;
 PATRConstraint * pNextConstraint;
@@ -5519,7 +5527,7 @@ PATRConstraint * pNextConstraint;
 for ( pCon = pConstraints_in ; pCon ; pCon = pNextConstraint )
 	{
 	pNextConstraint = pCon->pNext;
-	freePATRLogicalExpression( pCon->pExpression );
+	freePATRLogicalExpression( pCon->pExpression, pPATR_in );
 	freeMemory( pCon );
 	}
 }

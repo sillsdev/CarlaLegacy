@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 6		/* enhancement requiring adding to book */
-#define PATCHLEVEL 1		/* bug fix or other minor change */
-#define DATE "October 2, 2002"	/* date of release version */
+#define PATCHLEVEL 2		/* bug fix or other minor change */
+#define DATE "October 4, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ *  4-Oct-2002	SRMc - fix bugs found by evaluating Insure++
+ * [3.6.2]
  *  2-Oct-2002	SRMc - fix a memory allocation bug in decapitalizeWord().
  * [3.6.1]
  * 13-Jun-2002  hab  - Allow both min and max orderclass numbers (i.e. allow

@@ -1,6 +1,6 @@
 /* CONVLEX.C - program to convert PC-KIMMO version 1 lexicon to version 2
  ***************************************************************************
- * Copyright 1994, 1997 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1994, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #include <stdio.h>
@@ -61,7 +61,7 @@ char whitespace[7] = " \t\n\r\f";
 char cCommentMarker_g = ';';
 char buffer[BUFSIZ];
 char answerbuf[10];
-char lexname[128];
+char lexname[MAXFILENAME+1];
 #define MAXFILENAME 256
 char infile[MAXFILENAME+1];
 char incfile[MAXFILENAME+1];

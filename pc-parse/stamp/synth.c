@@ -107,7 +107,8 @@ else
 	{
 		pSynthResults = synthesis( cur_ambp->pAnal, cur_ambp, pUnit_in,
 				   pStamp_in );
-	if (pSynthResults != NULL)
+	if (pSynthResults != NULL && cur_ambp->pszSynthResult == NULL
+		)
 		{			/* use only the first result */
 		cur_ambp->pszSynthResult =
 			duplicateString(pSynthResults->pszString);
@@ -202,7 +203,8 @@ else
 #ifndef TONEGEN
 		pSynthResults = synthesis( cur_ambp->pAnal, cur_ambp, pUnit_in,
 					   pStamp_in);
-		if (pSynthResults != NULL)
+		if (pSynthResults != NULL && cur_ambp->pszSynthResult == NULL
+		)
 		{			/* use only the first result */
 		cur_ambp->pszSynthResult =
 			duplicateString(pSynthResults->pszString);

@@ -4,7 +4,7 @@
  *	void user_cmd()
  *
  ******************************************************************************
- * Copyright 1989, 2000 by SIL International.  All rights reserved.
+ * Copyright 1989, 2002 by SIL International.  All rights reserved.
  */
 #include "patr.h"
 #include "pcpatr.h"
@@ -2950,7 +2950,7 @@ exist in the lexicon, then this flag is ignored.\n\
 	break;
 
 	case KW_KIMMO:
-	do_hlp_set_kimmo();
+	do_hlp_set_kimmo(key);
 	break;
 
 	case KW_MARKER:	 /* SET MARKER {RECORD|WORD|CATEGORY|FEATURES} */

@@ -449,16 +449,18 @@ else
 		if (pLogFP_m != NULL)
 #ifdef EXPERIMENTAL
 #ifndef hab350
-		  if (iType != AMPLE_ALLOID_ENVIR)
-		fprintf(pLogFP_m, /* 3.3.0 hab */
+		{
+		if (iType != AMPLE_ALLOID_ENVIR)
+			fprintf(pLogFP_m, /* 3.3.0 hab */
 			  "WARNING: {} invalid in %s environment; entry: %s\n",
-			(iType == AMPLE_STRING_ENVIR) ? "string" :
-											"punctuation",
-			getAmpleRecordIDTag(szRecordKey_m,
+				(iType == AMPLE_STRING_ENVIR) ?
+				"string" : "punctuation",
+				getAmpleRecordIDTag(szRecordKey_m,
 						uiRecordNumber_m));
-		  else
-		fprintf(pLogFP_m,
-			 "WARNING: {} invalid in allomorphs never co-occur environment\n");
+		else
+			fprintf(pLogFP_m,
+		 "WARNING: {} invalid in allomorphs never co-occur environment\n");
+		}
 #endif /* hab350 */
 #else /* EXPERIMENTAL */
 		fprintf(pLogFP_m, /* 3.3.0 hab */
@@ -697,7 +699,7 @@ char *		flags;
 {
 AmpleEnvItem *	env           = NULL;
 AmpleEnvItem *	env_tail      = NULL;
-AmpleEnvItem *	pe;
+AmpleEnvItem *	pe            = NULL;
 int		myflags       = 0;	/* what to put in ei_flags field */
 int		need_bracklit = FALSE;	/* have just seen a '[' */
 int		need_brack    = FALSE;	/* have just seen '[' <CLASSNAME> */
@@ -1082,6 +1084,7 @@ new_item:
 			else
 			env_tail->pNext = pe;
 			env_tail = pe;
+			pe = NULL;
 			}
 		}
 		else
@@ -1113,6 +1116,7 @@ new_item:
 			{
 			pe->pNext = env;      /* link at the head of the list */
 			env = pe;
+			pe = NULL;
 			}
 		}
 		break;
@@ -1139,9 +1143,13 @@ new_item:
 	} /* end for (;;) */
 
 bad_side:               /* here only on parse error */
+/* free any memory we may have allocated */
+if (pe)
+	freeMemory(pe);
+if (env)
+	free_env_item(env);
 
 return( (AmpleEnvItem *)NULL );      /* ERROR RETURN */
-
 }
 
 /*****************************************************************************
@@ -1256,6 +1264,8 @@ if (pLogFP_m != NULL)
 #endif /* hab341 */
 
 bad_side:
+if (ec)
+	freeAmpleEnvConstraint(ec);
 
 return( (AmpleEnvConstraint *)NULL );
 }

@@ -5960,7 +5960,6 @@ if (pWord != NULL)
 	}
 	else
 	{
-	char * pszMessage = NULL;
 	bSuccess   = FALSE;
 	pAmple_in->uiPATRFailCount++;
 		if (    (   (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF) ||
@@ -6002,29 +6001,31 @@ if (pWord != NULL)
 		switch (iStage)
 		{
 		case 1:
-			pszMessage = "**** Turning off unification ****\n";
+			fprintf(pAmple_in->pLogFP,
+				"**** Turning off unification ****\n");
 			break;
 		case 2:
-			pszMessage = "**** Turning off top-down filtering ****\n";
+			fprintf(pAmple_in->pLogFP,
+				"**** Turning off top-down filtering ****\n");
 			break;
 		case 3:
-			pszMessage =
-				 "**** Building the largest parse \"bush\" ****\n";
+			fprintf(pAmple_in->pLogFP,
+				"**** Building the largest parse \"bush\" ****\n");
 			break;
 		case 4:
-			pszMessage = "**** No output available ****\n";
+			fprintf(pAmple_in->pLogFP,
+				"**** No output available ****\n");
 			break;
 		case 5:
-			pszMessage = "**** Out of Memory (after %lu edges) ****\n";
+			fprintf(pAmple_in->pLogFP,
+				"**** Out of Memory (after %lu edges) ****\n",
+				pAmple_in->sPATR.uiEdgesAdded);
 			break;
 		case 6:
-			pszMessage = "**** Out of Time (after %lu edges) ****\n";
+			fprintf(pAmple_in->pLogFP,
+				"**** Out of Time (after %lu edges) ****\n",
+				pAmple_in->sPATR.uiEdgesAdded);
 			break;
-		}
-		if (pszMessage != NULL)
-		{
-		fprintf(pAmple_in->pLogFP, pszMessage,
-			pAmple_in->sPATR.uiEdgesAdded);
 		}
 			if (pWordParse != NULL)
 				{

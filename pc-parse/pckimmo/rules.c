@@ -14,7 +14,7 @@
  *		       KimmoData * pKimmo_in)
  *
  ***************************************************************************
- * Copyright 1989, 1997 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1989, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #ifdef HAVE_CONFIG_H
@@ -1492,7 +1492,7 @@ if (rp->iRowCount <= 0)
 			   tok);
 	return( -1 );
 	}
-tok = get_token();
+tok = get_token(lang->cComment);
 if (tok == (unsigned char *)NULL)
 	{
 	displayNumberedMessage(&sUnexpectedEndOfRules_m,

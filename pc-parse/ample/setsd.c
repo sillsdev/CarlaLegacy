@@ -576,9 +576,15 @@ while (pAlloList_io)
 	{
 	alp = pAlloList_io;
 	pAlloList_io = alp->pNext;
+	alp->pNext = NULL;
 	if (alp->bMallocString)
+	{
 	freeMemory( alp->pszAllomorph );
-	if ((alp >= pAmple_in->asAlloList) && (alp < &pAmple_in->asAlloList[MAXALPS]))
+	alp->pszAllomorph = NULL;
+	alp->bMallocString = FALSE;
+	}
+	if (    (alp >= pAmple_in->asAlloList) &&
+		(alp < &pAmple_in->asAlloList[MAXALPS]))
 	continue;
 	freeMemory( (char *)alp );
 	}

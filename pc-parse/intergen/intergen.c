@@ -835,12 +835,20 @@ static char * zap_spc(cp)
 char *	cp;		/* pointer to string to check */
 {
 register char *p;
+int cch;
 
 if (cp == (char *)NULL)
 	return((char *)NULL);
-p = cp + strlen(cp) - 1;                /* point to end of string */
-while ((p >= cp) && (*p == ' '))
-	*p-- = '\0';                        /* delete trailing space */
+cch = strlen(cp);
+if (cch)
+	{
+	for (p = cp + cch - 1 ; *p == ' ' ; --p)
+	{
+	*p = '\0';
+	if (p == cp)
+		break;
+	}
+	}
 return(cp);
 }
 
@@ -1008,9 +1016,9 @@ char            * pszLeftMost;
 char            * pszRightMost;
 char            * pszFound;
 
-iLength      = strlen(pszString_in);
+iLength      = pszString_in ? strlen(pszString_in) : 0;
 pszCurrent   = pszString_in;
-pszRightMost = pszCurrent + strlen(pszCurrent) - 1;
+pszRightMost = iLength ? pszString_in + iLength - 1 : pszString_in;
 
 while (pszCurrent != NULL &&
 	   pszCurrent < pszRightMost) /* no need to check final char since it
