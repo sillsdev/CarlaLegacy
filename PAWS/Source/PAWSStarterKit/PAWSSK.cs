@@ -1171,9 +1171,6 @@ namespace PAWSStarterKit
 				{
 					File.Copy(m_strXLingPapDtd, strUserWriterDtd, true);
 				}
-				string strUserWriterCss = Path.Combine(strUserWriterDir,
-					m_strLanguageAbbreviation + m_strWriteUpCSS);
-				File.Copy(m_strXLingPapCss, strUserWriterCss, true);
 				string strUserWriterXsl = Path.Combine(strUserWriterDir, "XLingPap1.xsl");
 				if (!File.Exists(strUserWriterXsl))
 				{
@@ -1546,8 +1543,7 @@ namespace PAWSStarterKit
 		}
 		void createWriterStyleSheet()
 		{
-			m_strXLingPapCss = getWriterStyleFile();
-			createStyleSheet("WriteUpMaster.css", m_strXLingPapCss);
+			createStyleSheet("WriteUpMaster.css", getWriterStyleFile());
 		}
 		void createStyleSheet(string strMasterCss, string strUserStyleFile)
 		{
@@ -1604,7 +1600,7 @@ namespace PAWSStarterKit
 		}
 		string getWriterStyleFile()
 		{
-			return Path.Combine(m_strStylesPath,
+			return Path.Combine(Path.GetDirectoryName(m_strUserWriterFile),
 				m_strLanguageAbbreviation + m_strWriteUpCSS);
 		}
 		void sayGoodBye()
