@@ -9,10 +9,12 @@
 //                       language from scratch.
 //       07-Dec-1999 hab Allow multiple markers for gates A,C,P,Z,!,L and F
 // 2.1.5 28-Mar-2000 hab Root dict codes have no orderclass; affix ones have no root gloss
+//	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
 
 #include "stdafx.h"
 #include "CodeTable.h"
 #include "Parsestream.h"
+#include "SafeStream.h"
 #include "SFMFile.h"
 #include "CWTopic.h"
 #include "CARLAStudioApp.h"	// for globals
@@ -332,10 +334,11 @@ BOOL CWCodeTable::writeFile(CString & sPath, BOOL bHavePrefixes, BOOL bHaveInfix
 BOOL CWCodeTable::writeFile(CString & sPath, BOOL bHavePrefixes, BOOL bHaveInfixes, BOOL bHaveSuffixes)
 #endif //hab17a1
 {
-	ofstream fout(sPath);
-	DWORD error = ::checkForFileError(sPath);
-	if(error)
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
+
 
 	// To DO: only output either unified or separate ones, and maybe
 	// be smarter about which non-unified ones should be output
@@ -369,6 +372,8 @@ BOOL CWCodeTable::writeFile(CString & sPath, BOOL bHavePrefixes, BOOL bHaveInfix
 	if(m_rootSet.m_record.getData().GetLength() > 0)	// don't output gates that don't have codes assigned
 		m_rootSet.appendToFile(fout, "root", TRUE);
 #endif //hab17a1
+
+	ssOutput.close();
 	return TRUE;
 }
 

@@ -10,11 +10,13 @@
 //                       order to keep full line comments and test data in
 //                       the correct list.
 // 2.1.5 28-Mar-2000 hab Root dict codes have no orderclass; affix ones have no root gloss
+//	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
 
 #include "stdafx.h"
 #include "carlaStudioApp.h"
 #include "PhonruleModel.h"
 #include "DlgPhonruleRule.h"
+#include "SafeStream.h"
 #include "SFMFile.h"
 #include "PathDescriptor.h"
 #include "ParseStream.h"
@@ -242,9 +244,11 @@ BOOL CPhonruleModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonMod
 
 BOOL CPhonruleModel::writeFile(CString& sPath, CWCommonModel& commonModel, CWCodeTable& codeTable, BOOL bUsingUnifiedDicts)
 {
-	if(::checkForFileError(sPath))
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
-	ofstream fout(sPath);
+
 
 	fout << "\\id " << getFullFileName(sPath) << "     Phonological Rule File Created by CarlaStudio\n";
 	if(m_bBaseBecomesAllomorph.isTrue())
@@ -290,6 +294,7 @@ BOOL CPhonruleModel::writeFile(CString& sPath, CWCommonModel& commonModel, CWCod
 
 	m_rules.write(fout, commonModel.m_cCommentChar);
 #endif //hab211
+	ssOutput.close();
 	return TRUE;
 }
 

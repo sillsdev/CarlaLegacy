@@ -9,6 +9,7 @@
 //                       order to keep full line comments and test data in
 //                       the correct list.
 //	jdh  5/29/01 added support for Sentrans \pat field
+//	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
 //////////////////////////////////////////////////////////////////////
 
 
@@ -16,6 +17,7 @@
 #include "CARLAStudioApp.h"
 #include "SentransModel.h"
 #include "SFMFile.h"
+#include "SafeStream.h"
 #include "PathDescriptor.h"
 #include "DlgEditSentransDisambig.h"
 #include "DlgEditSentransTransfer.h"
@@ -407,14 +409,12 @@ void CSentransModel::writeHeader(ostream& fout,CWCommonModel& commonModel)
 }
 
 BOOL CSentransDisambigModel::writeFile(CString& sPath, CWCommonModel& commonModel)
+
 {
-	DWORD error = ::checkForFileError(sPath);
-	if(error)
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
-
-	ofstream fout(sPath);
-
-
 
 	writeHeader(fout, commonModel);
 	fout << "\n";
@@ -427,16 +427,16 @@ BOOL CSentransDisambigModel::writeFile(CString& sPath, CWCommonModel& commonMode
 	m_rules.write(fout, commonModel.m_cCommentChar);
 #endif //hab211
 
+	ssOutput.close();
 	return TRUE;
 }
 
 BOOL CSentransTransferModel::writeFile(CString& sPath, CWCommonModel& commonModel)
 {
-	DWORD error = ::checkForFileError(sPath);
-	if(error)
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
-
-	ofstream fout(sPath);
 
 	writeHeader(fout, commonModel);
 	fout << "\n";
@@ -449,9 +449,10 @@ BOOL CSentransTransferModel::writeFile(CString& sPath, CWCommonModel& commonMode
 	m_rules.write(fout, commonModel.m_cCommentChar);
 #endif //hab211
 
+	ssOutput.close();
+
 	return TRUE;
 }
-
 const CString CSentransDisambigList::getDisplayName() const
 {
 	return "ST Disambig Rule";

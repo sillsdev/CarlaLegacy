@@ -20,11 +20,13 @@
 //jdh 26Sept2000 fix crash when running modify wizard, connect to absence of pPageFinalCatTest in this wizard after initial project setup (why that is, I don't remember)
 // 2.4.1 26-Oct-2000 hab If infixes are chosen in the New Language Wizard, set
 //                       maxInfixes to one.
+//	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
 
 #include "CWModel.h"
 #include "CWAmpleModels.h"
 #include "Parsestream.h"
 #include "SFMFile.h"
+#include "SafeStream.h"
 #include "CARLAStudioApp.h"
 #include "PathDescriptor.h"
 #include "PageAffixes.h"
@@ -537,9 +539,9 @@ BOOL CWAnalysisModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonMo
 // write or rewrite the ad.ctl file
 BOOL CWAnalysisModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 {
-	ofstream fout(sPath);
-	DWORD error = ::checkForFileError(sPath);
-	if(error)
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
 
 #ifdef hab217			// wrong spot; should be in intx.ctl file
@@ -651,6 +653,9 @@ BOOL CWAnalysisModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 	suffixTests.write(fout, commonModel.m_cCommentChar);
 	finalTests.write(fout, commonModel.m_cCommentChar);
 #endif // hab211
+
+
+	ssOutput.close();
 	return TRUE;
 }
 

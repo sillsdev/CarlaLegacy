@@ -10,11 +10,12 @@
 // 2.1.1 09-Mar-2000 hab Add CS-specific begin and end codes in data files in
 //                       order to keep full line comments and test data in
 //                       the correct list.
-
+//	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
 //////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
 #include "CARLAStudioApp.h"
 #include "StampModel.h"
+#include "SafeStream.h"
 #include "SFMFile.h"
 #include "PathDescriptor.h"
 #include "DlgEditStampLexChange.h"
@@ -194,9 +195,11 @@ BOOL CStampTransferModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& comm
 
 BOOL CStampTransferModel::writeFile(CString& sPath, CWCommonModel& commonModel)
 {
-	if(::checkForFileError(sPath))
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
-	ofstream fout(sPath);
+
 #ifndef hab211
 	m_transferExpressions.write(fout, commonModel.m_cCommentChar, "tr");
 	m_lexChanges.write(fout, commonModel.m_cCommentChar, "lc");
@@ -207,6 +210,8 @@ BOOL CStampTransferModel::writeFile(CString& sPath, CWCommonModel& commonModel)
 // handled here instead of by carlalanguage because of multiple transfer sets
 	fout << "\\CarlaStudioLexChangePrefs " << m_lexChanges.getPrefsField()<<'\n';
 	fout << "\\CarlaStudioXferExprPrefs " << m_transferExpressions.getPrefsField()<<'\n';
+
+	ssOutput.close();
 	return TRUE;
 }
 
@@ -895,9 +900,11 @@ BOOL CStampSynthesisModel::loadFromFile(LPCTSTR lpszPathName,
 
 BOOL CStampSynthesisModel::writeFile(CString& sPath, CWCommonModel& commonModel)
 {
-	if(::checkForFileError(sPath))
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
-	ofstream fout(sPath);
+
 #ifndef hab211
 #ifndef hab17a1
 	m_lexChanges.write(fout, commonModel.m_cCommentChar, "lc");
@@ -913,6 +920,8 @@ BOOL CStampSynthesisModel::writeFile(CString& sPath, CWCommonModel& commonModel)
 	m_regSoundChanges.write(fout, commonModel.m_cCommentChar);
 	m_tests.write(fout, commonModel.m_cCommentChar);
 #endif //hab211
+
+	ssOutput.close();
 	return TRUE;
 }
 

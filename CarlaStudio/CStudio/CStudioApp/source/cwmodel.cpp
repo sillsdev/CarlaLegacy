@@ -11,11 +11,13 @@
 //                       order to keep full line comments and test data in
 //                       the correct list.
 // 2.1.7 11-Apr-2000 hab Move \\ambig write to textin
+//	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
 
 #include "stdafx.h"
 #include "CWModel.h"
 #include "CWAmpleModels.h"
 #include "Parsestream.h"
+#include "SafeStream.h"
 #include "SFMFile.h"
 #include "CARLAStudioApp.h"
 #include "PathDescriptor.h"
@@ -175,10 +177,11 @@ BOOL CWTextOutModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonMod
 
 BOOL CWTextOutModel::writeFile(CString & sPath, CWCommonModel& commonModel, BOOL bIncludeSCL)
 {
-	ofstream fout(sPath);
-	DWORD error = ::checkForFileError(sPath);
-	if(error)
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
+
 
 	// jdh 9/1/99 add this for intergen-specific version
 	if(bIncludeSCL)
@@ -229,6 +232,7 @@ BOOL CWTextOutModel::writeFile(CString & sPath, CWCommonModel& commonModel, BOOL
 	m_orthoChanges.write(fout, commonModel.m_cCommentChar);
 #endif //hab211
 
+	ssOutput.close();
 	return TRUE;
 }
 
@@ -420,9 +424,9 @@ BOOL CWTextInModel::loadFromFile(LPCTSTR lpszPathName,
 // Called by CCARLALanguage::writeControlFiles()
 BOOL CWTextInModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 {
-	ofstream fout(sPath);
-	DWORD error = ::checkForFileError(sPath);
-	if(error)
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
 
 // aren't needed here because they're in the ad.ctl file
@@ -488,6 +492,7 @@ BOOL CWTextInModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 		fout << "\\ambig " << commonModel.m_cAmbigDelimiter  << "\n";
 #endif //hab217
 
+	ssOutput.close();
 	return TRUE;
 }
 
@@ -585,10 +590,11 @@ BOOL CWDictOrthoModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonM
 
 BOOL CWDictOrthoModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 {
-	ofstream fout(sPath);
-	DWORD error = ::checkForFileError(sPath);
-	if(error)
+	CSafeStream ssOutput(sPath);
+	ofstream& fout = ssOutput.openStream();
+	if(::checkForFileError(sPath) != 0)
 		return FALSE;
+
 
 //commonModel.stringClasses.write(fout, commonModel.m_cCommentChar);
 #ifndef hab211
@@ -597,6 +603,7 @@ BOOL CWDictOrthoModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 	m_orthoChanges.write(fout, commonModel.m_cCommentChar);
 #endif //hab211
 
+	ssOutput.close();
 	return TRUE;
 }
 
