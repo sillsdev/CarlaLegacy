@@ -556,7 +556,7 @@ CAPTION "About CARLA Studio"
 FONT 8, "MS Sans Serif"
 BEGIN
 	ICON            IDR_MAINFRAME,IDC_STATIC,12,9,20,20
-	LTEXT           "CARLA Studio Version 2.6.0",IDC_STATIC,40,10,119,8,
+	LTEXT           "CARLA Studio Version 2.6.1",IDC_STATIC,40,10,119,8,
 					SS_NOPREFIX
 	LTEXT           "Copyright SIL International © 1999-2001",IDC_STATIC,40,
 					20,158,8
@@ -1863,8 +1863,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,6,0,0
- PRODUCTVERSION 2,6,0,0
+ FILEVERSION 2,6,1,0
+ PRODUCTVERSION 2,6,1,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x3L
@@ -1879,17 +1879,17 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "2.6.0\0"
+			VALUE "Comments", "2.6.1\0"
 			VALUE "CompanyName", " SIL International\0"
 			VALUE "FileDescription", "CARLA Studio Application\0"
-			VALUE "FileVersion", "2, 6, 0, 0\0"
+			VALUE "FileVersion", "2, 6, 1, 0\0"
 			VALUE "InternalName", "CARLAStudio\0"
 			VALUE "LegalCopyright", "Copyright © 1999-2001\0"
 			VALUE "LegalTrademarks", "\0"
 			VALUE "OriginalFilename", "CStudio.EXE\0"
 			VALUE "PrivateBuild", "\0"
 			VALUE "ProductName", "CarlaStudio Application\0"
-			VALUE "ProductVersion", "2, 6, 0, 0\0"
+			VALUE "ProductVersion", "2, 6, 1, 0\0"
 			VALUE "SpecialBuild", "\0"
 		END
 	END
@@ -2550,7 +2550,7 @@ STRINGTABLE DISCARDABLE
 BEGIN
 	CG_IDS_PROGRESS_CAPTION "Loading Files...."
 	IDS_NewFromScratchCaption "New Language"
-	IDS_WizCatProp_RSP_FT   "RtmostPfxCategoryCheck\n|RSP Cat propagation, inserted by CarlaStudio wizard\n|connect the tocat of the last morpheme (sfx or root) to the fromcat of the rightmost pfx\nIF   (    (current type is prefix)\n      AND (right   type is root)\n     )\nTHEN (current fromcategory is FINAL tocategory)\n"
+	IDS_WizCatProp_RSP_FT   "RtmostPfxCategoryCheck\n|RSP Cat propagation, inserted by CarlaStudio wizard\n|connect the tocat of the last morpheme (sfx or root) to the fromcat of the rightmost pfx or ifx\nIF   (       (   (current type is prefix)\n              OR (current type is infix)\n              )\n     AND (right   type is root)\n     )\nTHEN (current fromcategory is FINAL tocategory)\n"
 	IDS_WizCatProp_RSP_RT   "LeftmostPfxFinalCatCheck\n|RSP Cat propagation, inserted by CarlaStudio wizard\nIF   (INITIAL type is prefix)\nTHEN (INITIAL tocategory is member finalcategory)\n"
 	IDS_WizFinalCat_RSP_FT  "RootFinalCatClassCheck\n|RSP Check of final category\n|The first morpheme must have a tocategory found in the finalcategory class\n|Inserted by CarlaStudio wizard.\nIF  (INITIAL type is root)\nTHEN   (FINAL tocategory is member [finalcategory])\n"
 END
@@ -2567,7 +2567,7 @@ STRINGTABLE DISCARDABLE
 BEGIN
 	IDS_UNUSEDWizCatProp_RPS_FT
 							"FirstSfxCategoryCheck\n|RPS Cat propagation, inserted by CarlaStudio wizard\n| Connect the tocat of the leftmost morpheme (prefix or root) to the fromcat of the leftmost suffix\nIF   (    (current type is suffix)\n      AND (left   type is root)\n     )\nTHEN (current fromcategory is INITIAL tocategory)\n"
-	IDS_WizFinalCat_RPS_FT  "RtmostMorphFinalCatClassCheck\n |RPS Check of final category, inserted by CarlaStudio wizard\n| The final suffix or the first morpheme's tocategory must be listed in the finalcategory class\n    (IF (FINAL type is suffix)\n THEN (FINAL tocategory is member [finalcategory]))\nAND (IF NOT(FINAL type is suffix)\nTHEN (INITIAL tocategory is member [finalcategory]))"
+	IDS_WizFinalCat_RPS_FT  "RtmostMorphFinalCatClassCheck\n |RPS Check of final category, inserted by CarlaStudio wizard\n| The final suffix or the first morpheme's tocategory must be listed in the finalcategory class\n    (IF (FINAL type is suffix)\n    THEN (FINAL tocategory is member [finalcategory]))\nAND  (IF NOT(FINAL type is suffix)\n    THEN (INITIAL tocategory is member [finalcategory]))"
 END
 
 STRINGTABLE DISCARDABLE
@@ -2584,17 +2584,18 @@ BEGIN
 	CG_IDS_FILE_ABSENT      "Tips file does not exist in the prescribed directory"
 	CG_IDP_FILE_CORRUPT     "Trouble reading the tips file"
 	CG_IDS_TIPOFTHEDAYHELP  "&Help"
-	IDS_WizOrderclass_A0_ST "SfxOrderclassCheck\n|Make sure that each suffix has a greater orderclass than the morpheme to its left, unless its orderclass is zero.\n|Inserted by CarlaStudio wizard.\nIF   (current orderclass ~= 0)\n\t\tTHEN (left orderclass <= current orderclass)\n"
-	IDS_WizOrderclass_A0_FT "OrderclassZeroCheck\n|Where there was a morpheme with orderclass 0, make sure that the closest non-zero orderclass morpheme to its right is greater than the closest non-zero orderclass morpheme to its left.\n|Inserted by CarlaStudio wizard.\nIF   (    (current orderclass = 0)\n\t\t      AND (FOR_SOME_LEFT  (LEFT  orderclass ~= 0))\n\t\t      AND (FOR_SOME_RIGHT (RIGHT orderclass ~= 0) )\n\t\t     )\n\t\tTHEN (LEFT orderclass <= RIGHT orderclass)\n"
+	IDS_WizOrderclass_A0_ST "SfxOrderclassCheck\n|Make sure that each suffix has a greater orderclass than the morpheme to its left, unless its orderclass is zero.\n|Inserted by CarlaStudio wizard.\nIF   (current orderclass ~= 0)\n\t\tTHEN (left orderclass < current orderclass)\n"
+	IDS_WizOrderclass_A0_FT "OrderclassZeroCheck\n|Where there was a morpheme with orderclass 0, make sure that the closest non-zero orderclass morpheme to its right is greater than the closest non-zero orderclass morpheme to its left.\n|Inserted by CarlaStudio wizard.\nIF   (    (current orderclass = 0)\n\t\t      AND (FOR_SOME_LEFT  (LEFT  orderclass ~= 0))\n\t\t      AND (FOR_SOME_RIGHT (RIGHT orderclass ~= 0) )\n\t\t     )\n\t\tTHEN (LEFT orderclass < RIGHT orderclass)\n"
 	IDS_WizCatProp_Ifx_InsideOut_ST
-							"InfxCategoryCheck\n|This is not enough.  When infixes are found in the suffix side, then it needs to be reversed.\n|The tocategory of each infix must match the fromcategory of the morpheme to its left. \n|Inserted by CarlaStudio wizard.\nleft fromcategory is current tocategory\n"
+							"InfxCategoryCheck\n|This is not enough.  When infixes are found in the suffix side, then this test should be identical to SfxCategoryCheck.\n|On the prefix side, the tocategory of each infix must match the fromcategory of the morpheme to its left.\n|On the suffix side, the tocategory of each infix must match the fromcategory of the morpheme to its right. \n|Inserted by CarlaStudio wizard.\nleft fromcategory is current tocategory\n"
 	IDS_WizBuiltIn_MCC_FT   "MCC_FT\n| This test checks that all of the morpheme cooccurrence constraints of morphemes are satisfied.\n| This test is built-in to Ample, and is displayed here so that you can change the ordering with respect to other tests, or disable it.\n|Inserted by CarlaStudio wizard.\n"
 	IDS_WizBuiltIn_SEC_ST   "SEC_ST\n| This test checks that the String Environment Constraints of morpheme being posited are satisified.\n| This test is built-in to Ample, and is displayed here so that you can change the ordering with respect to other tests, or disable it.\n|Inserted by CarlaStudio wizard.\n"
 END
 
 STRINGTABLE DISCARDABLE
 BEGIN
-	IDS_WizOrderclass_A0_PT "PfxOrderclassCheck\n|Make sure that each prefix has a higher orderclass than the morpheme to its left, unless its orderclass is zero\n|Inserted by CarlaStudio wizard.\nIF   (left orderclass ~= 0)\n\t\tTHEN (left orderclass <= current orderclass)\n"
+	IDS_WizOrderclass_A0_PT "PfxOrderclassCheck\n|Make sure that each prefix has a higher orderclass than the morpheme to its left, unless its orderclass is zero\n|Inserted by CarlaStudio wizard.\nIF   (left orderclass ~= 0)\n\t\tTHEN (left orderclass < current orderclass)\n"
+	IDS_WizOrderclass_A0_IT "IfxOrderclassCheck\n|Make sure that each infix has a higher orderclass than the morpheme to its left, unless its orderclass is zero\n|Inserted by CarlaStudio wizard.\nIF   (left orderclass ~= 0)\n\t\tTHEN (left orderclass < current orderclass)\n"
 	IDB_ChooseFolder        "Choose Folder"
 END
 
@@ -2623,7 +2624,7 @@ STRINGTABLE DISCARDABLE
 BEGIN
 	IDS_MSGCancelMeansDefault
 							"If you want to reset this the default value, click ""Cancel""  in the following dialog."
-	IDS_WizCatProp_RPS_RT   "RightmostPfxCatCheck|The root category must match the fromcategory of the  nearest prefix (if any):Inserted by CarlaStudio Wizard\n current tocategory is left fromcategory\n"
+	IDS_WizCatProp_RPS_RT   "RightmostPfxCatCheck|The root category must match the fromcategory of the  nearest prefix (if any):Inserted by CarlaStudio Wizard\nIF   (   (left type is prefix)\n     OR (left type is infix)\n    )\nTHEN (current tocategory is left fromcategory)\n"
 	IDS_ModifyTestsAffixPage "Affixes"
 	IDS_ModifyTestsCatPropPage "Category Propogation"
 	IDS_WizCatProp_RS_ST    "SuffixCategoryCheck\n|RS Cat propagation, inserted by CarlaStudio wizard\n      left tocategory is current fromcategory\n"

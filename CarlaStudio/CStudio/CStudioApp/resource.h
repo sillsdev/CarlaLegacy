@@ -116,6 +116,7 @@
 #define IDD_EditAmpleDLLProcess         209
 #define IDS_WizOrderclass_A0_PT         210
 #define IDC_CURSOR1                     211
+#define IDS_WizOrderclass_A0_IT         211
 #define IDB_Delete                      212
 #define IDB_AddFile                     213
 #define IDB_SPLASH                      214

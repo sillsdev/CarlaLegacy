@@ -20,7 +20,9 @@
 //jdh 26Sept2000 fix crash when running modify wizard, connect to absence of pPageFinalCatTest in this wizard after initial project setup (why that is, I don't remember)
 // 2.4.1 26-Oct-2000 hab If infixes are chosen in the New Language Wizard, set
 //                       maxInfixes to one.
-//	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
+// 2.6.1 11-Sep-2001 jdh Cntrl file output now uses SafeStream to generate .bak file.
+// 2.6.1 11-Sep-2001 hab Added Infix orderclass test.
+//                       Ensured two RSP tests and one RPS test were deleted when changing method
 
 #include "CWModel.h"
 #include "CWAmpleModels.h"
@@ -755,16 +757,23 @@ void CWAnalysisModel::processTestPropertyPages(CPageAffixes *pPageAffixes,
 	removeTest(IDS_WizOrderclass_A0_FT, 'f');
 	removeTest(IDS_WizOrderclass_A0_PT, 'p');
 	removeTest(IDS_WizOrderclass_A0_ST, 's');
+#ifndef hab261
+	removeTest(IDS_WizOrderclass_A0_IT, 'i');
+#endif //hab261
 
 
 	addTest(IDS_WizOrderclass_A0_FT, 'f');
 	if(pPageAffixes->m_bPrefixes)
 		addTest(IDS_WizOrderclass_A0_PT, 'p');
+#ifndef hab261
+	if(pPageAffixes->m_bInfixes)
+		addTest(IDS_WizOrderclass_A0_IT, 'i');
+#endif // hab261
 	if(pPageAffixes->m_bSuffixes)
 		addTest(IDS_WizOrderclass_A0_ST, 's');
 
 
-	// category propogation
+	// category propagation
 
 	// remove any existing test that we may have inserted previously
 	removeTest(IDS_WizCatProp_RPS_ST, 's');
@@ -773,6 +782,11 @@ void CWAnalysisModel::processTestPropertyPages(CPageAffixes *pPageAffixes,
 	removeTest(IDS_WizCatProp_RSP_RT, 'r');
 	removeTest(IDS_WizCatProp_Pfx_InsideOut_PT, 'p');
 	removeTest(IDS_WizCatProp_Ifx_InsideOut_ST, 'i');
+#ifndef hab261
+	removeTest(IDS_WizFinalCat_RSP_FT, 'f');
+	removeTest(IDS_WizCatProp_RSP_ST, 's');
+	removeTest(IDS_WizFinalCat_RPS_FT, 'f');
+#endif // hab261
 
 	if(pPageCatProp->m_nCatPropScheme == 2)
 	{}

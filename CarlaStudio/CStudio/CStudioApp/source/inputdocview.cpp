@@ -6,6 +6,7 @@
 // rbr 14-Jul-2001 Revise Andy's 241 attempt to scroll windows after reprocessing a file. It now works.
 // hab 07-Aug-2001 Fine tune Randy's 253; one has to adjust for the current position and also one has to call some routines to get others to take effect, apparently.
 // jdh 11-Sept-2001 a hack to get a horizontal scrollbar for pc-patr
+// hab
 
 #include "stdafx.h"
 #include "CARLAStudioApp.h"
@@ -121,11 +122,13 @@ void CInputDocView::addPanel(CResultStream* pStream, int id)
 	DWORD dwFlags = ECO_SAVESEL | ES_AUTOVSCROLL | ES_MULTILINE |
 				ES_NOHIDESEL   | WS_BORDER | WS_VSCROLL | WS_CHILD | WS_VISIBLE | ES_WANTRETURN;
 
+#ifndef jdhhab621
 	// a hack to get a scrollbar for pc-patr.  This could be generalized or put in the user's
 	// control, but not without work that seems unjustified if it's just for pcpatr.
 
-	if (pStream->getDescriptor()->getTabLabel() == "PATR-Disamb ANA")
-		dwFlags |= WS_HSCROLL;
+	if (pStream->getDescriptor()->getTabLabel().Find("PATR") != -1)
+		dwFlags |= WS_HSCROLL | ES_AUTOHSCROLL;
+#endif // jdhhab261
 
 	pEC->Create(dwFlags,
 				(RECT&)r,
