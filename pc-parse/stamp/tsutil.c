@@ -105,6 +105,10 @@ if (ap->pAlloEnvironment != NULL)
 	{
 	writeAmpleEnvConstraint(pOutputFP_in, ap->pAlloEnvironment->pStringCond,
 				FALSE);
+#ifndef hab220
+	writeAmpleEnvConstraint(pOutputFP_in, ap->pAlloEnvironment->pNegStringCond,
+				FALSE);
+#endif /* hab220 */
 	writeAmpleEnvConstraint(pOutputFP_in, ap->pAlloEnvironment->pMorphCond,
 				FALSE);
 				/* 2.1b1 hab */
@@ -139,6 +143,9 @@ for ( ; ap ; ap = apx )
 	if (ap->a.pAlloEnvironment != NULL)
 		{
 		freeAmpleEnvConstraint(ap->a.pAlloEnvironment->pStringCond);
+#ifndef hab220
+		freeAmpleEnvConstraint(ap->a.pAlloEnvironment->pNegStringCond);
+#endif /* hab220 */
 		freeAmpleEnvConstraint(ap->a.pAlloEnvironment->pMorphCond);
 				/* 2.1b1 hab */
 		freeAmpleEnvConstraint(ap->a.pAlloEnvironment->pPunctCond);

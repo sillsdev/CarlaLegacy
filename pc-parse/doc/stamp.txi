@@ -10,10 +10,10 @@
 
 @set TITLE STAMP Reference Manual
 @set SUBTITLE Synthesizing after Transferring AMPLE Analyses
-@set VERSION version 2.1b17
-@set DATE October 2003
+@set VERSION version 2.2.0
+@set DATE January 2004
 @set AUTHOR by Stephen McConnel (and H. Andrew Black for v. 2.1b1 and above)
-@set COPYRIGHT Copyright @copyright{} 2000-2003 SIL International
+@set COPYRIGHT Copyright @copyright{} 2000-2004 SIL International
 
 @include front.txi
 
@@ -94,6 +94,8 @@ permission from the coauthors.
 @item 1. Version 2.1 (May 1999) introduced punctuation environment constraints in the allomorph fields of the dictionary files.  These are handled by a new built-in test called PEC_ST.  This version also added two punctuation-oriented clauses to user-written tests.
 
 @item 2. Version 2.1b17 (October 2003) filled out several sections which previously had missing content.
+
+@item 3. Version 2.2.0 (January 2004) added negative string environment constraints.
 
 @end table
 

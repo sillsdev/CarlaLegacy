@@ -57,6 +57,9 @@ static int  adjust_infixes P((StampAnalysis *  head,
 				  StampUnit *      pUnit_in,
 				  StampData *      pStamp_in));
 
+static void traceSECFailure P((StampAnalysis *mp, int level, AmpleEnvConstraint *pCond, StampData *pStamp_in));
+
+
 /*************************************************************************
  * NAME
  *    performStampSynthesis
@@ -639,7 +642,9 @@ StampUnit *	pUnit_in;
 StampData *	pStamp_in;
 {
 register StampAnalysis *mp;
+#ifdef hab220
 StampAnalysis *ap;
+#endif /* hab220 */
 StampAllomorph *am;
 int            iLen;		/* 2.1b1 hab */
 
@@ -717,6 +722,7 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 		mp->pCurrentAllo->pAlloEnvironment->pStringCond)
 		{
 		++pStamp_in->uiCalledSEC;                   /* bump the called count */
+#ifdef hab220
 #ifdef hab217
 		if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 			{
@@ -745,12 +751,18 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 		putc('\n', pStamp_in->pLogFP);
 			}
 #endif /* hab217 */
+#endif /* hab220 */
 		if ( !checkStampStringEnvironment(synword,
 					  (int)(mp->pszAlloStart - synword),
 					  mp->pszAlloEnd,
 				   mp->pCurrentAllo->pAlloEnvironment->pStringCond,
 					  pUnit_in, pStamp_in ) )
 			{
+#ifndef hab220
+		traceSECFailure(mp, level,
+				mp->pCurrentAllo->pAlloEnvironment->pStringCond,
+				pStamp_in);
+#else  /* hab220 */
 			if (pStamp_in->bTrace)
 				{
 #ifndef hab217
@@ -768,10 +780,33 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 			"string environment check failed\n");
 #endif /* hab217 */
 				}
+#endif /* hab220 */
 			++pStamp_in->uiSECFailed;		/* bump the failure count */
 			return(FALSE);
 			}
 		}
+#ifndef hab220
+	/*
+	 *  apply negative string environment constraints, if any
+	 */
+	if (    mp->pCurrentAllo->pAlloEnvironment &&
+		mp->pCurrentAllo->pAlloEnvironment->pNegStringCond)
+		{
+	++pStamp_in->uiCalledSEC;           /* bump the called count */
+	if ( checkStampStringEnvironment(synword,
+					 (int)(mp->pszAlloStart - synword),
+					 mp->pszAlloEnd,
+					 mp->pCurrentAllo->pAlloEnvironment->pNegStringCond,
+					 pUnit_in, pStamp_in ) )
+		{
+		traceSECFailure(mp, level,
+				mp->pCurrentAllo->pAlloEnvironment->pNegStringCond,
+				pStamp_in);
+		++pStamp_in->uiSECFailed;	/* bump the failure count */
+		return(FALSE);
+		}
+	}
+#endif /* hab220 */
 	/*
 	 *  apply the punctuation environment constraints, if any   2.1b1 hab
 	 */
@@ -779,6 +814,7 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 		mp->pCurrentAllo->pAlloEnvironment->pPunctCond)
 		{
 		++pStamp_in->uiCalledPEC;                   /* bump the called count */
+#ifdef hab220
 		if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 			{
 			fprintf(pStamp_in->pLogFP, "  Punctuation environment constraint:\n");
@@ -805,7 +841,7 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 				}
 		putc('\n', pStamp_in->pLogFP);
 			}
-
+#endif /* hab220 */
 	iLen = (pUnit_in->pCurrentWord->pTemplate->pszFormat == (char *)NULL)
 				? 0 : strlen(pUnit_in->pCurrentWord->pTemplate->pszFormat);
 		if ( !checkStampPunctEnvironment(
@@ -1002,4 +1038,29 @@ for ( cnd = inf->ptr->m.u.pInfixEnv ; cnd ; cnd = cnd->pNext)
  * nothing worked
  */
 return (FALSE);
+}
+
+/*************************************************************************
+ * NAME
+ *    traceSECFailure
+ * ARGUMENTS
+ *    mp      - pointer to the current morpheme
+ *    level   - trace level
+ *    pCond   - pointer to an environment constraint
+ * DESCRIPTION
+ *    Display failure report for tracing this SEC/NegSEC
+ * RETURN VALUE
+ *    none
+ */
+static void traceSECFailure(StampAnalysis *mp, int level, AmpleEnvConstraint *pCond, StampData *pStamp_in)
+{
+if (pStamp_in->bTrace)
+	{
+	t_indent(level+1, pStamp_in->pLogFP);
+	fprintf(pStamp_in->pLogFP,
+		"SEC failed for %s (%s):",
+		mp->pCurrentAllo->pszAllomorph, mp->m.pszMorphname);
+	writeAmpleEnvConstraint(pStamp_in->pLogFP, pCond, FALSE);
+	putc('\n', pStamp_in->pLogFP);
+	}
 }

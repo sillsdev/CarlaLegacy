@@ -186,6 +186,11 @@ for ( ; mp ; mp = mp->mlink )
 			writeAmpleEnvConstraint( pOutputFP_in,
 					 ap->a.pAlloEnvironment->pStringCond,
 					 FALSE);
+#ifndef hab220
+			writeAmpleEnvConstraint( pOutputFP_in,
+					 ap->a.pAlloEnvironment->pNegStringCond,
+					 FALSE);
+#endif /* hab220 */
 			writeAmpleEnvConstraint( pOutputFP_in,
 					 ap->a.pAlloEnvironment->pMorphCond,
 					 FALSE);

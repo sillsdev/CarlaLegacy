@@ -1,5 +1,12 @@
 STAMP CHANGE HISTORY
 
+2.2.0 (07-Jan-2004)
+-------------------
+1.  Enhancement: Added negative string environment constraints to complement
+	the exsting string environemtn constraints (SECs).  NegSECs say what the
+	string environment *cannot* be.  Multiple NegSECs are logically ANDed
+	together.  They are indicated by "~/" (instead of SEC's "/").
+
 2.1.18 (04-Nov-2003)
 --------------------
 1. Fix bug: multiple allomorphs with differing PECs could

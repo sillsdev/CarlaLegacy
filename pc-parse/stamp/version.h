@@ -3,13 +3,15 @@
  * Copyright 1997-2003 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
-#define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL 18		/* bug fix or other minor change */
-#define DATE "November 4, 2003"	/* date of release version */
-#define YEAR "2003"		/* used for copyright notice in banner */
+#define REVISION 2		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0		/* bug fix or other minor change */
+#define DATE "January 7, 2004"	/* date of release version */
+#define YEAR "2004"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 07-Jan-2004  hab  - Enhancement: add negative SECs (~/)
+ * [2.2.0]
  * 04-Nov-2003  hab  - Fix bug: multiple allomorphs with differing PECs could
  * [2.1.18]             end up using only the first.
  * 20-May-2003  hab  - When matching category and morphname of a root from the
