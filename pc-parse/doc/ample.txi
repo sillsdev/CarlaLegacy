@@ -10,8 +10,8 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.4
-@set DATE August 2001
+@set VERSION version 3.5
+@set DATE March 2002
 @set AUTHOR by Stephen McConnel and H. Andrew Black
 @set COPYRIGHT Copyright @copyright{} 2000-2001 SIL International
 
@@ -85,9 +85,23 @@ value to the @code{\patr} field in the analysis data file for use by
 XAMPLE in controlling the PCPATR word parser.
 
 @c Added by SRMc 24-Apr-2000 for XAMPLE
-@item 5. Version 3.3.10 (April 2000) added the @code{PropertyIsFeature}
+@item 6. Version 3.3.10 (April 2000) added the @code{PropertyIsFeature}
 value to the @code{\patr} field in the analysis data file for use by
 XAMPLE in controlling the PCPATR word parser.
+
+@c Added by hab 20-Jul-2001
+@item 7. Version 3.4.0 (March 2002) added the @code{\\catcr}
+field in the analysis data file for words which consist solely of
+compound roots (i.e. no affixes).  It indicates whether the category of
+the word (i.e. the content of the @code{\\cat} field in the analysis
+file) should come from the leftmost or the rightmost root in the
+compound.  The field content should be either @code{left} or
+@code{right}.
+
+@c Added by hab 05-Mar-2002 for XAMPLE
+@item 8. Version 3.5.0 (March 2002) added the @code{\\ancc}
+field in the analysis data file for use by
+XAMPLE for handling allomorph never co-occurrence constraints.
 @end table
 
 @c ----------------------------------------------------------------------------
@@ -359,6 +373,7 @@ single data record.
 * Analysis data file fields::
 * Test syntax::
 * MCC syntax::
+* ANCC syntax::
 @end menu
 
 @node Analysis data file fields, Test syntax, Analysis data file, Analysis data file
@@ -371,7 +386,9 @@ ignored by AMPLE.
 @c \maxprops and \pcl added by hab 14-May-1999
 @c \patr added by SRMc 21-Aug-1999 for XAMPLE
 @c \catct added by hab 20-Jul-2001
+@c \ancc added by hab 05-Mar-2002 for XAMPLE
 @menu
+* \ancc::              Allomorph never co-occurrence constraint
 * \ap::                Allomorph properties
 * \ca::                Categories
 * \cat (xxAD01.CTL)::  Category output control
@@ -404,7 +421,34 @@ ignored by AMPLE.
 * \strcheck::          Valid allomorph and string environment characters
 @end menu
 
-@node \ap, \ca, Analysis data file fields, Analysis data file fields
+@node \ancc, \ap, Analysis data file fields, Analysis data file fields
+@subsection Allomorph Never Co-occurrence Constraint: \ancc
+@findex \ancc
+
+Allomorph Never Co-occurrence constraints are valid only for XAMPLE.
+
+An allomorph never co-occurrence constraint is defined by the
+@code{\ancc} field code followed by one or more allomorph identification
+strings, and finally an allomorph never environment constraint.  This
+constraint states that the indicated allomorph identification strings
+may @b{never} co-occur.  If there are more than one environments, the
+various environments are logically ANDed together (i.e. when all of the
+indicated environments are found, then the constraint will fail; if
+some, but not all, of the environments are found, then the constraint
+will succeed).
+
+For the syntax of allomorph never co-occurrence constraints, see
+@ifset txt
+`Allomorph Never Co-occurrence Constraint Syntax' below.
+@end ifset
+@ifclear txt
+@ref{ANCC syntax}.
+@end ifclear
+
+If no @code{\ancc} fields appear in the analysis data file, then AMPLE
+does not eliminate any analyses by the @code{ANCC_FT} test.
+
+@node \ap, \ca, \ancc, Analysis data file fields
 @subsection Allomorph properties: \ap
 @findex \ap
 
@@ -1426,7 +1470,7 @@ quoted identifier not contain the closing quote character.
 @end table
 
 @c ----------------------------------------------------------------------------
-@node MCC syntax, , Test syntax, Analysis data file
+@node MCC syntax, ANCC syntax, Test syntax, Analysis data file
 @section Morpheme Co-occurrence Constraint Syntax
 
 This section presents a grammatical description of the syntax of
@@ -1586,6 +1630,149 @@ data file
 @item 10.
 A @code{/} is usually used for string environment constraints, but may
 used for morpheme environment constraints in @code{\mcc} fields in the
+analysis data file.
+
+@item 11.
+A tilde (@code{~}) attached to the environment bar inverts the sense of
+the constraint as a whole.
+
+@item 12b.
+The boundary marker preceded by a tilde (@code{~#}) indicates that it
+must not be a word boundary.
+
+@need 1000
+@item 13.
+The special characters used by environment constraints can be included
+in a literal only if they are immediately preceded by a backslash:
+@example
+
+\+  \/  \#  \~  \[  \]  \(  \)  \@{  \@}  \.  \_  \\
+
+@end example
+@end table
+
+@c ----------------------------------------------------------------------------
+@node ANCC syntax, , MCC syntax, Analysis data file
+@section Allomorph Never Co-occurrence Constraint Syntax
+
+This section presents a grammatical description of the syntax of
+allomorph never co-occurrence constraints in BNF notation.  These constraints
+are found in the analysis data file
+@ifset txt
+(see `Allomorph Never Co-occurrence Constraint: \ancc' above).
+@end ifset
+@ifclear txt
+(@pxref{\ancc}).
+@end ifclear
+
+@example
+
+ 1a. <constraint>   ::= <allomorphIDs> <environments>
+ 1b.                    @{ <literal> @} <allomorphIDs> <environments>
+
+@group
+ 2a. <allomorphIDs> ::= <literal>
+ 2b.                    <literal> <allomorphIDs>
+@end group
+
+@group
+ 3a. <environments> ::= <environment>
+ 3b.                    <environment> <environments>
+@end group
+
+@group
+ 4a. <environment>  ::= <marker> <leftside> <envbar> <rightside>
+ 4b.                    <marker> <leftside> <envbar>
+ 4c.                    <marker> <envbar> <rightside>
+@end group
+
+@group
+ 5a. <leftside>     ::= <side>
+ 5b.                    <boundary>
+ 5c.                    <boundary> <side>
+ 5d.                    <side> # <side>
+ 5e.                    <boundary> <side> # <side>
+@end group
+
+@group
+ 6a. <rightside>  ::= <side>
+ 6b.                  <boundary>
+ 6c.                  <side> <boundary>
+ 6d.                  <side> # <side>
+ 6e.                  <side> # <side> <boundary>
+@end group
+
+@group
+ 7a. <side>       ::= <item>
+ 7b.                  <item> <side>
+ 7c.                  <item> ... <side>
+@end group
+
+@group
+ 8a. <item>       ::= <piece>
+ 8b.                  ( <piece> )
+@end group
+
+@group
+ 9a. <piece>      ::= ~ <piece>
+ 9b.                  <literal>
+@end group
+
+@group
+10.  <marker>     ::= /
+					  ~/
+@end group
+
+@group
+11.  <envbar>     ::= _
+					  ~_
+@end group
+
+@group
+12.  <boundary>   ::= #
+					  ~#
+
+13.  <literal>    ::= one or more contiguous characters
+@end group
+
+@end example
+
+@subsubheading Comments on selected BNF rules
+@table @asis
+
+@item 1b.
+A literal enclosed in braces is an arbitary identifier for this
+allomorph never co-occurrence constraint.  (This feature was added to support
+LinguaLinks.)
+
+@item 2ab.
+A literal is an allomorph identification string from one of the dictionary files.
+
+@item 5-6.
+Note that what can appear to the left of the environment bar is a
+mirror image of what can appear to the right.
+
+@item 5de.
+@itemx 6de.
+These should be avoided, and other means used to prune analyses based
+on adjacent words.
+
+@item 7c.
+An ellipsis (@code{...}) indicates a possible break in contiguity.
+
+@item 8b.
+Something enclosed in parentheses is optional.
+
+@item 9a.
+A tilde (@code{~}) reverses the desirability of an element, causing the
+constraint to fail if it is found rather than fail if it is not found.
+
+@item 9b.
+A literal is an allomorph identification string from one of the dictionary files.
+
+@item 10.
+A @code{/} is usually used for string environment constraints, but may
+used for allomorph never environment constraints in @code{\ancc} fields in the
 analysis data file.
 
 @item 11.
