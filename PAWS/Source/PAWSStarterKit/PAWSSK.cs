@@ -28,6 +28,7 @@ namespace PAWSStarterKit
 		const string m_strStatusBarChecked = "StatusBarChecked";
 		const string m_strToolBarChecked = "ToolBarChecked";
 		const string m_strBackgroundGif = "p12c08.gif";
+		const string m_strPurposeHtm = "Purpose.htm";
 		const string m_strUnderConstructionHtm = "UnderConstruction.htm";
 		const string m_strEditCaption = "Edit Items";
 		string m_strAppPath = Path.GetDirectoryName(Application.ExecutablePath);
@@ -1140,9 +1141,9 @@ namespace PAWSStarterKit
 				astrContentsFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\HTMs"), "*Contents.htm");
 				astrGifFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\HTMs"), "*.gif");
 				dlg.progressBar.Minimum = 1;
-				// Max is all the files plus the UnderConstruction.htm
+				// Max is all the files plus the UnderConstruction.htm and Purpose.htm
 				dlg.progressBar.Maximum = astrXmlFiles.Length +
-					astrContentsFiles.Length + astrGifFiles.Length + 1;
+					astrContentsFiles.Length + astrGifFiles.Length + 2;
 				dlg.progressBar.Value = 1;
 				dlg.progressBar.Step = 1;
 				dlg.progressBar.Visible = true;
@@ -1176,6 +1177,8 @@ namespace PAWSStarterKit
 						dlg.doProgressUpdate(strFile);
 						updateHTM(strFile);
 					}
+					updateHTM(Path.Combine(m_strAppPath,
+						Path.Combine(@"..\HTMs", m_strPurposeHtm)));
 					updateHTM(Path.Combine(m_strAppPath,
 						Path.Combine(@"..\HTMs", m_strUnderConstructionHtm)));
 				}
