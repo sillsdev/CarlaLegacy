@@ -4,6 +4,7 @@
 // jdh 12April2001	check the readonly flag of the file
 // hab 11-Jun-2001 above change in CInputDocView::saveBaseStream failed to check if the file existed or not
 // rbr 14-Jul-2001 Revise Andy's 241 attempt to scroll windows after reprocessing a file. It now works.
+// hab 07-Aug-2001 Fine tune Randy's 253; one has to adjust for the current position and also one has to call some routines to get others to take effect, apparently.
 
 #include "stdafx.h"
 #include "CARLAStudioApp.h"
@@ -379,8 +380,17 @@ void CInputDocView::updatePanels()
 	{
 		if(m_pEditCtrls[i]->m_hWnd)
 		{
+#ifndef hab254
+		  int iPos = m_pEditCtrls[i]->GetFirstVisibleLine();
+				// following seems to be needed to get
+				// some windows to scroll to their proper
+				// position; I don't know why...
+		  int iCount = m_pEditCtrls[i]->GetLineCount();
+		  m_pEditCtrls[i]->LineScroll(m_iLine[i] - iPos);
+#else
 			// Restore window positions.
 			m_pEditCtrls[i]->LineScroll(m_iLine[i]);
+#endif // hab254
 			m_pEditCtrls[i]->Invalidate();
 		}
 	}
