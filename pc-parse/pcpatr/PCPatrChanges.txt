@@ -1,5 +1,10 @@
 PC-PATR CHANGE HISTORY
 
+1.2.12 (27-Sep-2001)
+--------------------
+1. Fixed a bug to verify that all logical constraints are still satisfied in
+   the final result.
+
 1.2.11 (20-Sep-2001)
 --------------------
 1. Changed failure message from "Cannot parse this sentence" to

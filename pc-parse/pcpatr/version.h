@@ -11,7 +11,7 @@
 /******************************************************************************
  * EDIT HISTORY
  * 27-Sep-2001	SRMc - add doublecheck_constraints() function to perform a
- *			final pass through a parse tree to verify that all
+ * [1.2.12]		final pass through a parse tree to verify that all
  *			logical constraints are still satisfied in the final
  *			result.
  * 20-Sep-2001  hab  - change failure message from "Cannot parse" to
