@@ -5,12 +5,12 @@
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
 #define PATCHLEVEL -19		/* bug fix or other internal improvement */
-#define DATE       "December 3, 2004"	/* date of release version */
+#define DATE       "December 7, 2004"	/* date of release version */
 #define YEAR       "2004"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
- * 03-Dec-2004  hab  - Recompile for interfixes
+ * 07-Dec-2004  hab  - Ignore interfix entry type in unified dictionaries
  * [1.0.19]
  * 15-Mar-2004  hab  - Fix a bug where a valid analysis was removed during the
  * [1.0.18]             the process which removes an analysis in a word when its

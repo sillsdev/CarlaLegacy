@@ -952,6 +952,10 @@ new_item:
 			if ( !( (strcmp( szEnvLexToken_m, "root" )   == 0) ||
 				(strcmp( szEnvLexToken_m, "prefix" ) == 0) ||
 				(strcmp( szEnvLexToken_m, "infix" )  == 0) ||
+				(strcmp( szEnvLexToken_m, "interfix" )  == 0) ||
+				(strcmp( szEnvLexToken_m, "interfixinfix" )  == 0) ||
+				(strcmp( szEnvLexToken_m, "interfixprefix" )  == 0) ||
+				(strcmp( szEnvLexToken_m, "interfixsuffix" )  == 0) ||
 				(strcmp( szEnvLexToken_m, "suffix" ) == 0) ||
 				findAmplePropertyNumber(szEnvLexToken_m,
 							pProperties_m) ||
@@ -1000,6 +1004,10 @@ new_item:
 			if ( !( (strcmp( szEnvLexToken_m, "root" ) == 0)   ||
 				(strcmp( szEnvLexToken_m, "prefix" ) == 0) ||
 				(strcmp( szEnvLexToken_m, "infix" ) == 0)  ||
+				(strcmp( szEnvLexToken_m, "interfix" ) == 0)  ||
+				(strcmp( szEnvLexToken_m, "interfixinfix" ) == 0)  ||
+				(strcmp( szEnvLexToken_m, "interfixprefix" ) == 0)  ||
+				(strcmp( szEnvLexToken_m, "interfixsuffix" ) == 0)  ||
 				(strcmp( szEnvLexToken_m, "suffix" ) == 0) ||
 				findAmplePropertyNumber(szEnvLexToken_m,
 							pProperties_m) ||

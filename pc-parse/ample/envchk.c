@@ -1106,6 +1106,18 @@ for (;; left = left->pLeft )
 
 	else if (strcmp( name, "infix" ) == 0)    /* else if infix test */
 		val = (left->eType == AMPLE_IFX );  /* Check for infix */
+
+	else if (strcmp( name, "interfix" ) == 0)    /* else if interfix test */
+		val = (left->eType == AMPLE_NFX );  /* Check for interfix */
+
+	else if (strcmp( name, "interfixprefix" ) == 0)    /* else if prefixal interfix test */
+		val = (left->eType == AMPLE_NFXPFX );  /* Check for prefixal interfix */
+
+	else if (strcmp( name, "interfixsuffix" ) == 0)    /* else if suffixal interfix test */
+		val = (left->eType == AMPLE_NFXSFX );  /* Check for suffixal interfix */
+
+	else if (strcmp( name, "interfixinfix" ) == 0)    /* else if infixal interfix test */
+		val = (left->eType == AMPLE_NFXIFX );  /* Check for infixal interfix */
 	/*
 	 *  If property name, check property
 	 */
@@ -1280,6 +1292,18 @@ for (;; right = right->pRight )
 
 	else if (strcmp( name, "infix" ) == 0)    /* else if infix test */
 		val = (right->eType == AMPLE_IFX );  /* Check for infix */
+
+	else if (strcmp( name, "interfix" ) == 0)    /* else if interfix test */
+		val = (right->eType & AMPLE_NFX );  /* Check for interfix */
+
+	else if (strcmp( name, "interfixprefix" ) == 0)    /* else if prefixal interfix test */
+		val = (right->eType == AMPLE_NFXPFX );  /* Check for prefixal interfix */
+
+	else if (strcmp( name, "interfixsuffix" ) == 0)    /* else if suffixal interfix test */
+		val = (right->eType == AMPLE_NFXSFX );  /* Check for suffixal interfix */
+
+	else if (strcmp( name, "interfixinfix" ) == 0)    /* else if infixal interfix test */
+		val = (right->eType == AMPLE_NFXIFX );  /* Check for infixal interfix */
 	/*
 	 *  If property name, check property
 	 */

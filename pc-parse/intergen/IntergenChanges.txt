@@ -1,5 +1,9 @@
 INTERGEN CHANGE HISTORY
 
+2.2.0 (03-Dec-2004)
+--------------------
+1. Allow for interfixes.
+
 2.1b16 (16-Oct-2002)
 --------------------
 1. Some minor internal code changes (nothing visible to the user).

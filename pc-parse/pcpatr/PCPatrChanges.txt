@@ -1,5 +1,9 @@
 PC-PATR CHANGE HISTORY
 
+1.3.9 (06-Dec-2002)
+-------------------
+1. Allow for interfixes in Ample ANA (i.e. handle more than one set of roots).
+
 1.3.8 (11-Dec-2002)
 -------------------
 1. Fix bug in logical constraint processing: only need to double

@@ -1,5 +1,9 @@
 TonePars CHANGE HISTORY
 
+1.0.18 (07-Dec-2004)
+--------------------
+Ignore interfix entry type in unified dictionaries.
+
 1.0.17 (15-Mar-2004)
 --------------------
 1. Fix a bug where a valid analysis was removed during the

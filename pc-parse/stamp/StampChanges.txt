@@ -1,5 +1,9 @@
 STAMP CHANGE HISTORY
 
+2.2.1 (03-Dec-2004)
+-------------------
+1.  Ignore interfix entry type in unified dictionaries.
+
 2.2.0 (07-Jan-2004)
 -------------------
 1.  Enhancement: Added negative string environment constraints to complement
