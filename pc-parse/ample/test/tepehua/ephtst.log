@@ -1,8 +1,8 @@
 XAMPLE: A Morphological Parser for Linguistic Exploration
-Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+Version 3.5x0 (March 5, 2002), Copyright 2002 SIL, Inc.
 	AMPLE with experimental enhancement: PC-PATR word grammar
-Experimental version compiled Mar 29 2001 09:00:44
-				Analysis Performed Thu Mar 29 09:07:57 2001
+Experimental version compiled Mar  5 2002 09:31:34
+				Analysis Performed Wed Mar 06 14:28:30 2002
 
 Control files, dictionary files, and responses
 	  from file ttpatr.cmd:

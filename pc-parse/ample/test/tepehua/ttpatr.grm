@@ -38,8 +38,10 @@ rule Word = Infl
 		<Word morphoSyntax subject person 1> = !-
 		<Word morphoSyntax subject person 2> = !-
 		{
-		<Word morphoSyntax object>           = none /
-		<Word morphoSyntax object>           = unspecified /
+		<Word morphoSyntax object>           = none
+ /
+		<Word morphoSyntax object>           = unspecified
+ /
 		<Word morphoSyntax object  number>   = !sg
 		<Word morphoSyntax object  person 1> = !-
 		<Word morphoSyntax object  person 2> = !-
@@ -162,8 +164,8 @@ rule Infl_1 = Infl_2 Pers
 								| constraints
 		<Infl_2 synCat>       = V
 		<Pers   morphoSyntax> = <Infl_2 morphoSyntax>
-		<Infl_2 morphoSyntax> == ~[mood: irrealis] | arbitrarily put mood last
-		<Infl_2 morphoSyntax> == ~[tense: past]    | arbitrarily put past last
+||        <Infl_2 morphoSyntax> == ~[mood: irrealis] | arbitrarily put mood last
+||        <Infl_2 morphoSyntax> == ~[tense: past]    | arbitrarily put past last
 
 rule Infl_1 = Infl_2 2PlSubj
 								| percolation
@@ -172,7 +174,7 @@ rule Infl_1 = Infl_2 2PlSubj
 								| constraints
 		<Infl_2 synCat>       = V
 		<2PlSubj morphoSyntax> = <Infl_2 morphoSyntax>
-		<Infl_2 morphoSyntax> == ~[mood: irrealis] | arbitrarily put mood last
+||        <Infl_2 morphoSyntax> == ~[mood: irrealis] | arbitrarily put mood last
 
 |  Had: Rule Word = (MdPst) (1st) (Imm) (3SPl) (Rec) (Ha) (3OPl) Stem Asp (Loc) (Pers) (2PlSubj)
 |  Had: Rule Word = Mood (1st) (Imm) (3SPl) (Rec) (Ha) (3OPl) Stem Tense (Pers) (2PlSubj)

@@ -198,3 +198,4 @@ THEN  (current fromcategory is FINAL tocategory)
 
 \patr ShowAllFeatures	off
 \patr TreeStyle		full
+|\patr showfailures on

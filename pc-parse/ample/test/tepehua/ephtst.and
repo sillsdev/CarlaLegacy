@@ -434,17 +434,43 @@ Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
 
 
 5:
-							Word_33
+								  Word_33
+						 ____________|_____________
+					  Word_34                Clitic_15+
+						 |                       ©a
+					  Infl_35                    ya
+		 ________________|________________
+	  Infl_36                         Pers_14
+   ______|_______                        n
+Past_4+      Infl_32                   2OBJ
+  †iš     ______|_______
+  PT   1st_6+       Infl_27
+		 kin      _____|______
+		1OBJ   3SPl_21   Infl_10+
+				 ta       ___|____
+			   3SUB,PL Stem_11+ Asp_13+
+						  |     ta
+					  Root_12+  PF
+					   laksak
+					   escojer
+
+Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
+		  pl person:[ 1:+ 2:+ ] ] subject:[ number:!sg person:[ 1:- 2:- ] ]
+		  tense:past ] synCat:V ]
+
+
+6:
+							Word_37
 			___________________|___________________
-		 Word_34                             Clitic_15+
+		 Word_38                             Clitic_15+
 			|                                    ©a
-		 Infl_35                                 ya
+		 Infl_39                                 ya
    _________|_________
-Past_4+           Infl_36
+Past_4+           Infl_40
   †iš     ___________|___________
-  PT   1st_6+                Infl_37
+  PT   1st_6+                Infl_41
 		 kin           _________|_________
-		1OBJ        Infl_38           Pers_14
+		1OBJ        Infl_42           Pers_14
 				  _____|______           n
 			   3SPl_8    Infl_10+      2OBJ
 				 ta       ___|____
@@ -459,18 +485,18 @@ Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
 		  tense:past ] synCat:V ]
 
 
-6:
-							 Word_39
+7:
+							 Word_43
 			   _________________|__________________
-			Word_40                          Clitic_15+
+			Word_44                          Clitic_15+
 			   |                                 ©a
-			Infl_41                              ya
+			Infl_45                              ya
    ____________|_____________
-Past_4+                  Infl_42
+Past_4+                  Infl_46
   †iš           ____________|_____________
-  PT         Infl_43                  Pers_14
+  PT         Infl_47                  Pers_14
 		  ______|_______                 n
-	   1st_6+       Infl_38            2OBJ
+	   1st_6+       Infl_42            2OBJ
 		 kin      _____|______
 		1OBJ   3SPl_8    Infl_10+
 				 ta       ___|____
@@ -485,20 +511,46 @@ Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
 		  tense:past ] synCat:V ]
 
 
-7:
-						   Word_44
+8:
+								  Word_48
+						 ____________|_____________
+					  Word_49                Clitic_15+
+						 |                       ©a
+					  Infl_50                    ya
+		 ________________|________________
+	  Infl_51                         Pers_14
+   ______|_______                        n
+Past_4+      Infl_47                   2OBJ
+  †iš     ______|_______
+  PT   1st_6+       Infl_42
+		 kin      _____|______
+		1OBJ   3SPl_8    Infl_10+
+				 ta       ___|____
+			   3SUB,PL Stem_11+ Asp_13+
+						  |     ta
+					  Root_12+  PF
+					   laksak
+					   escojer
+
+Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
+		  !sg person:[ 1:+ 2:+ ] ] subject:[ number:pl person:[ 1:- 2:- ] ]
+		  tense:past ] synCat:V ]
+
+
+9:
+						   Word_52
 		  ____________________|____________________
-	   Word_45                               Clitic_15+
+	   Word_53                               Clitic_15+
 		  |                                      ©a
-	   Infl_46                                   ya
+	   Infl_54                                   ya
    _______|________
-Past_4+        Infl_47
+Past_4+        Infl_55
   †iš     ________|________
-  PT   1st_6+          Infl_48
+  PT   1st_6+          Infl_56
 		 kin      ________|_________
-		1OBJ   3SPl_8           Infl_49
+		1OBJ   3SPl_8           Infl_57
 				 ta          ______|______
-			   3SUB,PL   Infl_10+     Pers_50
+			   3SUB,PL   Infl_10+     Pers_58
 						  ___|____       n
 					  Stem_11+ Asp_13+ 2OBJ
 						  |     ta
@@ -511,20 +563,20 @@ Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
 		  tense:past ] synCat:V ]
 
 
-8:
-						   Word_51
+10:
+						   Word_59
 		  ____________________|____________________
-	   Word_52                               Clitic_15+
+	   Word_60                               Clitic_15+
 		  |                                      ©a
-	   Infl_53                                   ya
+	   Infl_61                                   ya
    _______|________
-Past_4+        Infl_54
+Past_4+        Infl_62
   †iš     ________|________
-  PT   1st_6+          Infl_55
+  PT   1st_6+          Infl_63
 		 kin      ________|_________
-		1OBJ   3SPl_21          Infl_49
+		1OBJ   3SPl_21          Infl_57
 				 ta          ______|______
-			   3SUB,PL   Infl_10+     Pers_50
+			   3SUB,PL   Infl_10+     Pers_58
 						  ___|____       n
 					  Stem_11+ Asp_13+ 2OBJ
 						  |     ta
@@ -536,59 +588,7 @@ Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
 		  pl person:[ 1:+ 2:!- ] ] subject:[ number:!sg person:[ 1:- 2:- ] ]
 		  tense:past ] synCat:V ]
 
-
-9:
-							Word_56
-			___________________|___________________
-		 Word_57                             Clitic_15+
-			|                                    ©a
-		 Infl_58                                 ya
-   _________|_________
-Past_4+           Infl_59
-  †iš     ___________|___________
-  PT   1st_6+                Infl_60
-		 kin           _________|_________
-		1OBJ        Infl_27           Pers_50
-				  _____|______           n
-			   3SPl_21   Infl_10+      2OBJ
-				 ta       ___|____
-			   3SUB,PL Stem_11+ Asp_13+
-						  |     ta
-					  Root_12+  PF
-					   laksak
-					   escojer
-
-Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
-		  pl person:[ 1:+ 2:!- ] ] subject:[ number:!sg person:[ 1:- 2:- ] ]
-		  tense:past ] synCat:V ]
-
-
-10:
-							 Word_61
-			   _________________|__________________
-			Word_62                          Clitic_15+
-			   |                                 ©a
-			Infl_63                              ya
-   ____________|_____________
-Past_4+                  Infl_64
-  †iš           ____________|_____________
-  PT         Infl_32                  Pers_50
-		  ______|_______                 n
-	   1st_6+       Infl_27            2OBJ
-		 kin      _____|______
-		1OBJ   3SPl_21   Infl_10+
-				 ta       ___|____
-			   3SUB,PL Stem_11+ Asp_13+
-						  |     ta
-					  Root_12+  PF
-					   laksak
-					   escojer
-
-Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:[ number:
-		  pl person:[ 1:+ 2:!- ] ] subject:[ number:!sg person:[ 1:- 2:- ] ]
-		  tense:past ] synCat:V ]
-
-12 parses found (10 printed)
+16 parses found (10 printed)
 
 \endWordParse
 
@@ -873,17 +873,17 @@ Word:   [ cat:Word morphoSyntax:[ location:none mood:irrealis object:[ number:
 \WordParse
 
 1:
-		 Word
-		   |
-		 Infl
-   ________|_________
- Mood             Infl
-  k†a         ______|_______
-  IRR       Infl         Pers
-		   ___|____      pitik
-		 Stem   Tense  2PLSUBFUT
-		   |     ya
-		 Root    FUT
+			   Word_1
+				  |
+			   Infl_2
+		 _________|__________
+	  Infl_3             Pers_9+
+   ______|______          pitik
+Mood_4+     Infl_5+     2PLSUBFUT
+  k†a      ____|____
+  IRR   Stem_6+ Tense_8+
+		   |      ya
+		Root_7+   FUT
 		misp†a
 		conocer
 
@@ -891,7 +891,27 @@ Word:   [ cat:Word morphoSyntax:[ location:none mood:irrealis object:[ number:
 		  !sg person:[ 1:!- 2:!- ] ] subject:[ number:pl person:[ 1:- 2:+ ] ]
 		  tense:future ] synCat:V ]
 
-1 parse found
+
+2:
+		 Word_10
+			|
+		 Infl_11
+   _________|_________
+Mood_4+           Infl_12
+  k†a          ______|_______
+  IRR       Infl_5+      Pers_9+
+		   ____|____      pitik
+		Stem_6+ Tense_8+ 2PLSUBFUT
+		   |      ya
+		Root_7+   FUT
+		misp†a
+		conocer
+
+Word:   [ cat:Word morphoSyntax:[ location:none mood:irrealis object:[ number:
+		  !sg person:[ 1:!- 2:!- ] ] subject:[ number:pl person:[ 1:- 2:+ ] ]
+		  tense:future ] synCat:V ]
+
+2 parses found
 
 \endWordParse
 
@@ -1206,19 +1226,19 @@ Word:   [ cat:Word morphoSyntax:[ location:proximal mood:!realis object:[
 \WordParse %2%
 
 1:
-			  Word
-				|
-			  Infl
-   _____________|_____________
- Mood                      Infl
-  k†a                 _______|_______
-  IRR               Infl         2PlSubj
-				______|______     t†ik
-			  Infl        Pers   2PLSUB
-			____|____      p†i
-		  Stem    Tense  2SUBFUT
-			|       a
-		  Root     FUT
+					  Word_1
+						 |
+					  Infl_2
+			_____________|_____________
+		 Infl_3                  2PlSubj_11+
+   _________|__________             t†ik
+Mood_4+            Infl_5          2PLSUB
+  k†a           ______|_______
+  IRR        Infl_6+     Pers_10+
+			____|_____      p†i
+		 Stem_7+ Tense_9+ 2SUBFUT
+			|        a
+		 Root_8+    FUT
 		   †un
 		decirselo
 
@@ -1226,24 +1246,68 @@ Word:   [ cat:Word morphoSyntax:[ aspect:perfect location:none mood:irrealis
 		  object:[ number:!sg person:[ 1:!- 2:!- ] ] subject:[ number:pl
 		  person:[ 1:- 2:+ ] ] tense:future ] synCat:V ]
 
-1 parse found
+
+2:
+			 Word_12
+				|
+			 Infl_13
+   _____________|______________
+Mood_4+                    Infl_14
+  k†a                 ________|________
+  IRR              Infl_5        2PlSubj_11+
+				______|_______      t†ik
+			 Infl_6+     Pers_10+  2PLSUB
+			____|_____      p†i
+		 Stem_7+ Tense_9+ 2SUBFUT
+			|        a
+		 Root_8+    FUT
+		   †un
+		decirselo
+
+Word:   [ cat:Word morphoSyntax:[ aspect:perfect location:none mood:irrealis
+		  object:[ number:!sg person:[ 1:!- 2:!- ] ] subject:[ number:pl
+		  person:[ 1:- 2:+ ] ] tense:future ] synCat:V ]
+
+
+3:
+						 Word_15
+							|
+						 Infl_16
+				   _________|__________
+				Infl_17          2PlSubj_11+
+		 __________|__________      t†ik
+	  Infl_18            Pers_10+  2PLSUB
+   ______|_______           p†i
+Mood_4+      Infl_6+      2SUBFUT
+  k†a       ____|_____
+  IRR    Stem_7+ Tense_9+
+			|        a
+		 Root_8+    FUT
+		   †un
+		decirselo
+
+Word:   [ cat:Word morphoSyntax:[ aspect:perfect location:none mood:irrealis
+		  object:[ number:!sg person:[ 1:!- 2:!- ] ] subject:[ number:pl
+		  person:[ 1:- 2:+ ] ] tense:future ] synCat:V ]
+
+3 parses found
 
 %
 
 1:
-			 Word
-			   |
-			 Infl
-   ____________|____________
- Mood                    Infl
-  k†a               _______|_______
-  IRR             Infl         2PlSubj
-			  ______|______     t†ik
-			Infl        Pers   2PLSUB
-		   ___|____      p†i
-		 Stem   Tense  2SUBFUT
-		   |      a
-		 Root    FUT
+					 Word_1
+						|
+					 Infl_2
+			____________|____________
+		 Infl_3                2PlSubj_11+
+   _________|_________            t†ik
+Mood_4+           Infl_5         2PLSUB
+  k†a          ______|______
+  IRR       Infl_6+    Pers_10+
+		   ____|____      p†i
+		Stem_7+ Tense_9+ 2SUBFUT
+		   |       a
+		Root_8+   FUT
 		  †un
 		hacerse
 
@@ -1251,7 +1315,51 @@ Word:   [ cat:Word morphoSyntax:[ aspect:perfect location:none mood:irrealis
 		  object:none subject:[ number:pl person:[ 1:- 2:+ ] ] tense:future ]
 		  synCat:V ]
 
-1 parse found
+
+2:
+			Word_12
+			   |
+			Infl_13
+   ____________|_____________
+Mood_4+                  Infl_14
+  k†a                _______|________
+  IRR             Infl_5       2PlSubj_11+
+			   ______|______      t†ik
+			Infl_6+    Pers_10+  2PLSUB
+		   ____|____      p†i
+		Stem_7+ Tense_9+ 2SUBFUT
+		   |       a
+		Root_8+   FUT
+		  †un
+		hacerse
+
+Word:   [ cat:Word morphoSyntax:[ aspect:perfect location:none mood:irrealis
+		  object:none subject:[ number:pl person:[ 1:- 2:+ ] ] tense:future ]
+		  synCat:V ]
+
+
+3:
+						Word_15
+						   |
+						Infl_16
+				  _________|_________
+			   Infl_17         2PlSubj_11+
+		 _________|_________      t†ik
+	  Infl_18          Pers_10+  2PLSUB
+   ______|______          p†i
+Mood_4+     Infl_6+     2SUBFUT
+  k†a      ____|____
+  IRR   Stem_7+ Tense_9+
+		   |       a
+		Root_8+   FUT
+		  †un
+		hacerse
+
+Word:   [ cat:Word morphoSyntax:[ aspect:perfect location:none mood:irrealis
+		  object:none subject:[ number:pl person:[ 1:- 2:+ ] ] tense:future ]
+		  synCat:V ]
+
+3 parses found
 
 %
 \endWordParse
@@ -1323,26 +1431,47 @@ Word:   [ cat:Word morphoSyntax:[ aspect:imperfective mood:realis object:none
 \WordParse
 
 1:
-				  Word
-		  __________|___________
-		Word                Clitic
-		  |                   ©a
-		Infl                  ya
-   _______|________
- Past           Infl
-  †iš        _____|______
-  PT       Infl       Pers
-		  ___|____      0
-		Stem    Asp    2SG
+				   Word_1
+		   ___________|____________
+		Word_2               Clitic_11+
+		   |                     ©a
+		Infl_3                   ya
+   ________|________
+Past_4+         Infl_5
+  †iš        ______|______
+  PT      Infl_6+    Pers_10+
+		  ___|____       0
+	   Stem_7+ Asp_9+   2SG
 		  |     t†a
-		Root    PF
+	   Root_8+  PF
 		 ni
 		morir
 
 Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:none
 		  subject:[ number:sg person:[ 1:- 2:+ ] ] tense:past ] synCat:V ]
 
-1 parse found
+
+2:
+					  Word_12
+				_________|_________
+			 Word_13         Clitic_11+
+				|                ©a
+			 Infl_14             ya
+		________|_________
+	 Infl_15         Pers_10+
+   _____|_____           0
+Past_4+   Infl_6+       2SG
+  †iš     ___|____
+  PT   Stem_7+ Asp_9+
+		  |     t†a
+	   Root_8+  PF
+		 ni
+		morir
+
+Word:   [ cat:Word morphoSyntax:[ aspect:perfect mood:realis object:none
+		  subject:[ number:sg person:[ 1:- 2:+ ] ] tense:past ] synCat:V ]
+
+2 parses found
 
 \endWordParse
 

@@ -333,6 +333,9 @@ pSetup_io->sData.sPATR.bSilent                  = FALSE;
 pSetup_io->sData.sPATR.bShowWarnings            = TRUE;
 pSetup_io->sData.sPATR.bPromoteDefAtoms         = TRUE;
 pSetup_io->sData.sPATR.bPropIsFeature           = TRUE;
+#ifndef hab35013
+pSetup_io->sData.sPATR.eRootGlossFeature        = PATR_ROOT_GLOSS_NO_FEATURE;
+#endif // hab35013
 	}
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
@@ -912,26 +915,26 @@ static char * addAResultToBuffer(
 	size_t		uiBufferSize_in)  /* this doesn't count space for NUL*/
 #endif /* hab33169 */
 {
-WordAnalysis *		pAnal;
-AmpleHeadlistList *	pHeadlists;
-AmpleHeadList *		pHead;
-AmpleAllomorph *	pAllo;
-char *			pszAResult;
-size_t			uiSize;
-size_t			uiRoom;
+  WordAnalysis *		pAnal;
+  AmpleHeadlistList *	pHeadlists;
+  AmpleHeadList *		pHead;
+  AmpleAllomorph *	pAllo;
+  char *			pszAResult;
+  size_t			uiSize;
+  size_t			uiRoom;
 #ifndef hab33169
 #ifdef EXPERIMENTAL
-AmpleParseList *        pPATRParses;
-char *                  pszXml;
-int                     iOrigTreeDisplay;
+  AmpleParseList *        pPATRParses;
+  char *                  pszXml;
+  int                     iOrigTreeDisplay;
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
-/*
- *  adjust pointers and counters for less redundant skipping
- */
-uiSize     = strlen(pszBuffer_out);
-pszAResult = pszBuffer_out + uiSize;
-uiRoom     = uiBufferSize_in - uiSize;
+  /*
+   *  adjust pointers and counters for less redundant skipping
+   */
+  uiSize     = strlen(pszBuffer_out);
+  pszAResult = pszBuffer_out + uiSize;
+  uiRoom     = uiBufferSize_in - uiSize;
 
 #define CONCAT(psz) { \
 	strncat(pszAResult, psz, uiRoom); \
@@ -940,18 +943,18 @@ uiRoom     = uiBufferSize_in - uiSize;
 	uiRoom -= uiSize; \
 	}
 
-if (pWord_in->pTemplate->pAnalyses == NULL)
+  if (pWord_in->pTemplate->pAnalyses == NULL)
 	{
-	if (pWord_in->bFoundRoot)
+	  if (pWord_in->bFoundRoot)
 	CONCAT("<error code=analysisFailure>")
-	else
-	CONCAT("<error code=rootFailure>")
-	CONCAT(pWord_in->pTemplate->pszOrigWord)
-	CONCAT("</error>\r\n")
-	}
-else
+	  else
+		CONCAT("<error code=rootFailure>")
+		  CONCAT(pWord_in->pTemplate->pszOrigWord)
+		  CONCAT("</error>\r\n")
+		  }
+  else
 	{
-	CONCAT("<parse id=")
+	  CONCAT("<parse id=")
 	CONCAT(pWord_in->pTemplate->pszOrigWord)
 	CONCAT(">\r\n")
 #ifndef hab33169
@@ -959,91 +962,91 @@ else
 				/* remember the tree display type */
 	iOrigTreeDisplay = pSetup_in->sData.sPATR.eTreeDisplay;
 				/* change it to XML */
-	pSetup_in->sData.sPATR.eTreeDisplay = PATR_XML_TREE;
-	pszXml = NULL;
-	for (   pAnal = pWord_in->pTemplate->pAnalyses,
-			pHeadlists = pWord_in->pHeadlists,
-					pPATRParses = pWord_in->pParses;
-		pAnal && pHeadlists && pPATRParses;
-		pAnal = pAnal->pNext,
-					pHeadlists = pHeadlists->pNext,
-					pPATRParses = pPATRParses->pNext)
+	  pSetup_in->sData.sPATR.eTreeDisplay = PATR_XML_TREE;
+	  pszXml = NULL;
+	  for (   pAnal = pWord_in->pTemplate->pAnalyses,
+		pHeadlists = pWord_in->pHeadlists,
+		pPATRParses = pWord_in->pParses;
+		  pAnal && pHeadlists && pPATRParses;
+		  pAnal = pAnal->pNext,
+		pHeadlists = pHeadlists->pNext,
+		pPATRParses = pPATRParses->pNext)
 #else
 	for (   pAnal = pWord_in->pTemplate->pAnalyses,
-			pHeadlists = pWord_in->pHeadlists ;
+		  pHeadlists = pWord_in->pHeadlists ;
 		pAnal && pHeadlists ;
 		pAnal = pAnal->pNext, pHeadlists = pHeadlists->pNext )
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
-	{
-			//jdh 26may2000 added quotes around categories
-	CONCAT("<analysis cat=\"")
-	if (pAnal->pszCategory != NULL)
+	  {
+		//jdh 26may2000 added quotes around categories
+		CONCAT("<analysis cat=\"")
+		  if (pAnal->pszCategory != NULL)
 		CONCAT(pAnal->pszCategory)
-	else
+		  else
 #ifndef hab232
-		CONCAT("?")
+			CONCAT("?")
 #else // hab232
-		CONCAT("?\"")
+			  CONCAT("?\"")
 #endif // hab232
-	CONCAT("\">\r\n")
+			  CONCAT("\">\r\n")
 
-	for ( pHead = pHeadlists->pHeadList ; pHead ; pHead = pHead->pRight )
-		{
-		pAllo = pHead->pAllomorph;
-		if (pAllo == NULL)
-		{
-		reportError(ERROR_MSG, "pHead->pAllomorph is NULL?\n");
-		CONCAT("<morph id=? allo=?>\r\n")
-		continue;
-		}
-		CONCAT("<morph id=")
-		CONCAT(pAllo->pMorpheme->pszMorphName)
-		CONCAT(" allo=")
-		if (pAllo->pszAllomorphID != NULL)
-		CONCAT(pAllo->pszAllomorphID)
-		else
-		{
-		CONCAT("#")
-		CONCAT(pAllo->pszAllomorph)
-		CONCAT("#")
-		}
-		// JDH26May2000 add morpheme type to the output
-		CONCAT(" type=\"");
-		if (pAllo->pMorpheme->iMorphType & AMPLE_PFX)
-		  CONCAT("p");
-		if (pAllo->pMorpheme->iMorphType & AMPLE_IFX)
-		  CONCAT("i");
-		if (pAllo->pMorpheme->iMorphType & AMPLE_ROOT)
-		  CONCAT("r");
-		if (pAllo->pMorpheme->iMorphType & AMPLE_SFX)
-		  CONCAT("s");
-		CONCAT("\"");
-		CONCAT(">\r\n")
-		}
+			  for ( pHead = pHeadlists->pHeadList ; pHead ; pHead = pHead->pRight )
+			{
+			  pAllo = pHead->pAllomorph;
+			  if (pAllo == NULL)
+				{
+				  reportError(ERROR_MSG, "pHead->pAllomorph is NULL?\n");
+				  CONCAT("<morph id=? allo=?>\r\n")
+				continue;
+				}
+			  CONCAT("<morph id=")
+				CONCAT(pAllo->pMorpheme->pszMorphName)
+				CONCAT(" allo=")
+				if (pAllo->pszAllomorphID != NULL)
+				  CONCAT(pAllo->pszAllomorphID)
+				else
+				  {
+					CONCAT("#")
+					  CONCAT(pAllo->pszAllomorph)
+					  CONCAT("#")
+					  }
+			  // JDH26May2000 add morpheme type to the output
+			  CONCAT(" type=\"");
+			  if (pAllo->pMorpheme->iMorphType & AMPLE_PFX)
+				CONCAT("p");
+			  if (pAllo->pMorpheme->iMorphType & AMPLE_IFX)
+				CONCAT("i");
+			  if (pAllo->pMorpheme->iMorphType & AMPLE_ROOT)
+				CONCAT("r");
+			  if (pAllo->pMorpheme->iMorphType & AMPLE_SFX)
+				CONCAT("s");
+			  CONCAT("\"");
+			  CONCAT(">\r\n")
+				}
 #ifndef hab33169
 #ifdef EXPERIMENTAL
-	if (!stringifyPATRParses(pPATRParses->pParse, &pSetup_in->sData.sPATR,
-				pWord_in->pTemplate->pszOrigWord, &pszXml))
-	  if (pszXml)
+		if (!stringifyPATRParses(pPATRParses->pParse, &pSetup_in->sData.sPATR,
+					 pWord_in->pTemplate->pszOrigWord, &pszXml))
+		  if (pszXml)
 		CONCAT(pszXml);
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
-	CONCAT("</analysis>\r\n")
-	}
-	CONCAT("</parse>\r\n")
+		CONCAT("</analysis>\r\n")
+		  }
+	  CONCAT("</parse>\r\n")
 	}
 #ifndef hab33169
 #ifdef EXPERIMENTAL
 				/* restore tree display to whatever it was
 				   originally */
-pSetup_in->sData.sPATR.eTreeDisplay = iOrigTreeDisplay;
+  pSetup_in->sData.sPATR.eTreeDisplay = iOrigTreeDisplay;
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
 
 #undef CONCAT
 
-return pszBuffer_out;
+  return pszBuffer_out;
 }
 
 #ifndef hab34112
@@ -1060,28 +1063,28 @@ return pszBuffer_out;
 
  // this was made by assuming the changes marked with #ifndef hab33169 and removing the #ifdef EXPERIMENTAL ones
 
- static char * addFWParseToBuffer(
+static char * addFWParseToBuffer(
 	 AmpleSetup *  pSetup_in,
 	 const AmpleWord *	pWord_in,
 	 const TextControl *	pTextCtl_in,
 	 char *		pszBuffer_out,
 	 size_t		uiBufferSize_in)  /* this doesn't count space for NUL*/
- {
-	 WordAnalysis *		pAnal;
-	 AmpleHeadlistList *	pHeadlists;
-	 AmpleHeadList *		pHead;
-	 AmpleAllomorph *	pAllo;
-	 char *			pszAResult;
-	 size_t			uiSize;
-	 size_t			uiRoom;
+{
+  WordAnalysis *		pAnal;
+  AmpleHeadlistList *	pHeadlists;
+  AmpleHeadList *		pHead;
+  AmpleAllomorph *	pAllo;
+  char *			pszAResult;
+  size_t			uiSize;
+  size_t			uiRoom;
 
 
-	 /*
-	 *  adjust pointers and counters for less redundant skipping
-	 */
-	 uiSize     = strlen(pszBuffer_out);
-	 pszAResult = pszBuffer_out + uiSize;
-	 uiRoom     = uiBufferSize_in - uiSize;
+  /*
+   *  adjust pointers and counters for less redundant skipping
+   */
+  uiSize     = strlen(pszBuffer_out);
+  pszAResult = pszBuffer_out + uiSize;
+  uiRoom     = uiBufferSize_in - uiSize;
 
 #define CONCAT(psz) { \
 	strncat(pszAResult, psz, uiRoom); \
@@ -1090,62 +1093,62 @@ return pszBuffer_out;
 	uiRoom -= uiSize; \
 	 }
 
-	 CONCAT(" <Wordform DbRef=DB_REF_HERE Form=\"")
-		 CONCAT(pWord_in->pTemplate->pszOrigWord)
-		 CONCAT("\">\r\n");
+  CONCAT(" <Wordform DbRef=DB_REF_HERE Form=\"")
+	CONCAT(pWord_in->pTemplate->pszOrigWord)
+	CONCAT("\">\r\n");
 
-	 if (pWord_in->pTemplate->pAnalyses == NULL)
-	 {
-			 CONCAT("  <WfiAnalysis/>\r\n")// empty means failed to parse
+  if (pWord_in->pTemplate->pAnalyses == NULL)
+	{
+	  CONCAT("  <WfiAnalysis/>\r\n")// empty means failed to parse
 
-	 }
-	 else
-	 {
-		 for (   pAnal = pWord_in->pTemplate->pAnalyses,
-			 pHeadlists = pWord_in->pHeadlists ;
-		 pAnal && pHeadlists ;
-		 pAnal = pAnal->pNext, pHeadlists = pHeadlists->pNext )
-		 {
-			 CONCAT("  <WfiAnalysis>\r\n")
-				 CONCAT("   <Morphs>\r\n")
+	}
+  else
+	{
+	  for (   pAnal = pWord_in->pTemplate->pAnalyses,
+		pHeadlists = pWord_in->pHeadlists ;
+		  pAnal && pHeadlists ;
+		  pAnal = pAnal->pNext, pHeadlists = pHeadlists->pNext )
+	{
+	  CONCAT("  <WfiAnalysis>\r\n")
+		CONCAT("   <Morphs>\r\n")
 
-				 for ( pHead = pHeadlists->pHeadList ; pHead ; pHead = pHead->pRight )
-				 {
-					 CONCAT("    <Morph>\r\n")
-						 pAllo = pHead->pAllomorph;
-					 if (pAllo == NULL)
-					 {
-						 reportError(ERROR_MSG, "pHead->pAllomorph is NULL?\n");
-						 CONCAT("     <MoForm DbRef='0' Label=\"?\"/>\r\n")
-							 continue;
-					 }
-					 CONCAT("      <MoForm DbRef='")
-						 if (pAllo->pszAllomorphID != NULL)
-							 CONCAT(pAllo->pszAllomorphID)
-						else
-						 {
-							 CONCAT("0") //todo: consider raising an error at this point, once the caller is normalling giving us an allo id
-						 }
-						 CONCAT("' Label=\"");
-						 CONCAT(pAllo->pszAllomorph);
-						 CONCAT("\"/>\r\n");
-						 CONCAT("      <MSI DbRef='");
-						 CONCAT(pAllo->pMorpheme->pszMorphName); // assumes pszMorphName is holding the database id (a long int) of this msi
-						 CONCAT("'/>\r\n");
-						 CONCAT("    </Morph>\r\n")
-				 }
+		for ( pHead = pHeadlists->pHeadList ; pHead ; pHead = pHead->pRight )
+		  {
+		CONCAT("    <Morph>\r\n")
+		  pAllo = pHead->pAllomorph;
+		if (pAllo == NULL)
+		  {
+			reportError(ERROR_MSG, "pHead->pAllomorph is NULL?\n");
+			CONCAT("     <MoForm DbRef='0' Label=\"?\"/>\r\n")
+			  continue;
+		  }
+		CONCAT("      <MoForm DbRef='")
+		  if (pAllo->pszAllomorphID != NULL)
+			CONCAT(pAllo->pszAllomorphID)
+			  else
+			{
+			  CONCAT("0") //todo: consider raising an error at this point, once the caller is normalling giving us an allo id
+				}
+		CONCAT("' Label=\"");
+		CONCAT(pAllo->pszAllomorph);
+		CONCAT("\"/>\r\n");
+		CONCAT("      <MSI DbRef='");
+		CONCAT(pAllo->pMorpheme->pszMorphName); // assumes pszMorphName is holding the database id (a long int) of this msi
+		CONCAT("'/>\r\n");
+		CONCAT("    </Morph>\r\n")
+		  }
 
-				 CONCAT("   </Morphs>\r\n")
-					 CONCAT("  </WfiAnalysis>\r\n")
-		 }
-	 }
-	 CONCAT(" </Wordform>\r\n")
+	  CONCAT("   </Morphs>\r\n")
+		CONCAT("  </WfiAnalysis>\r\n")
+		}
+	}
+  CONCAT(" </Wordform>\r\n")
 
 
 #undef CONCAT
 
-		 return pszBuffer_out;
- }
+	return pszBuffer_out;
+}
 #endif /* EXPERIMENTAL */
 #endif /* hab34112 */
 
@@ -1163,25 +1166,47 @@ static const int getOutputFlags(
 	AmpleSetup * pSetup_io,
 	int          iOutputFlags_in)
 {
-int iResult = iOutputFlags_in;
+  int iResult = iOutputFlags_in;
 
-if (pSetup_io->bOutputProperties)
+  if (pSetup_io->bOutputProperties)
 	iResult |= WANT_PROPERTIES;
-else
+  else
 	iResult &= ~WANT_PROPERTIES;
 
-if (pSetup_io->bOutputOriginalWord)
+  if (pSetup_io->bOutputOriginalWord)
 	iResult |= WANT_ORIGINAL;
-else
+  else
 	iResult &= ~WANT_ORIGINAL;
 
-if (pSetup_io->bOutputDecomposition)
+  if (pSetup_io->bOutputDecomposition)
 	iResult |= WANT_DECOMPOSITION;
-else
+  else
 	iResult &= ~WANT_DECOMPOSITION;
 
-return iResult;
+  return iResult;
 }
+
+#ifdef EXPERIMENTAL
+#ifndef hab35013
+/*****************************************************************************
+ * NAME
+ *    applyAnyChanges
+ * DESCRIPTION
+ *    apply any orth changes to a word and store in the paWord array of a
+ *    template
+ * RETURN VALUE
+ *    none
+ */
+static void applyAnyChanges(WordTemplate *pWordTemplate_io,
+				char * pszWord_in,
+				Change *pOrthoChanges_in)
+{
+  pWordTemplate_io->paWord = (char **)allocMemory(2 * sizeof(char *));
+  pWordTemplate_io->paWord[0] = applyChanges(pszWord_in, pOrthoChanges_in);
+  pWordTemplate_io->paWord[1] = NULL;
+}
+#endif /* hab35013 */
+#endif /* EXPERIMENTAL */
 
 /*****************************************************************************
  * NAME
@@ -1191,260 +1216,337 @@ return iResult;
  * RETURN VALUE
  *    parse result string
  */
+#ifdef EXPERIMENTAL
+#ifndef hab35013
+DllExport const char * AmpleParseText(
+	AmpleSetup * pSetup_io,
+	const char * pszInputText_in,
+	const char * pszUseTextIn)
+{
+  char          cUseTextIn = (pszUseTextIn != NULL) ? tolower(*pszUseTextIn) :
+													  'n';
+#endif /* hab35013 */
+#else /* EXPERIMENTAL */
 DllExport const char * AmpleParseText(
 	AmpleSetup * pSetup_io,
 	const char * pszInputText_in)
 {
-	char *		pszInputText;
-	char *		pszWord;
-	AmpleWord	sWord;
-	AmpleWord	sPrevWord;
-	AmpleWord	sNextWord;
-	int		iFailureCount = 0;
-	int		iSuccessCount = 0;
-	void *		pAResult = NULL;
-	const char *	pszResult = szOutputBuffer_g;
-	int		iResult;
-	int		bParsedAlready = FALSE;
-	/*
-	*  verify a valid AMPLE setup
-	*/
-	if (!isValidSetup(pSetup_io))
-		return szAmpleInvalidSetup_m;
-		/*
-		*  set variables for emergency exits
-	*/
-	if (setjmp(sAbortPoint) != 0)
+#endif /* EXPERIMENTAL */
+  char *	pszInputText;
+  char *	pszWord;
+  AmpleWord	sWord;
+  AmpleWord	sPrevWord;
+  AmpleWord	sNextWord;
+  int		iFailureCount = 0;
+  int		iSuccessCount = 0;
+  void *	pAResult = NULL;
+  const char *	pszResult = szOutputBuffer_g;
+  int		iResult;
+  int		bParsedAlready = FALSE;
+  /*
+   *  verify a valid AMPLE setup
+   */
+  if (!isValidSetup(pSetup_io))
+	return szAmpleInvalidSetup_m;
+  /*
+   *  set variables for emergency exits
+   */
+  if (setjmp(sAbortPoint) != 0)
 	{
-		pLogFP_m      = NULL;
-		iDebugLevel_m = 0;
-		return szAmpleDLLCrash_m;
+	  pLogFP_m      = NULL;
+	  iDebugLevel_m = 0;
+	  return szAmpleDLLCrash_m;
 	}
-	if (pSetup_io->pszLogFilename != NULL)
-		pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
-	pLogFP_m      = pSetup_io->sData.pLogFP;
-	iDebugLevel_m = pSetup_io->sData.iDebugLevel;
-	pszInputText_in = checkEmptyString(pszInputText_in);
-	if (pszInputText_in == NULL)
+  if (pSetup_io->pszLogFilename != NULL)
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+  pLogFP_m      = pSetup_io->sData.pLogFP;
+  iDebugLevel_m = pSetup_io->sData.iDebugLevel;
+  pszInputText_in = checkEmptyString(pszInputText_in);
+  if (pszInputText_in == NULL)
 	{
-		reportError(ERROR_MSG,
-			"AmpleParseText() missing input text string");
-		pszResult = szMissingArgument_m;
-		goto close_and_return;
+	  reportError(ERROR_MSG,
+		  "AmpleParseText() missing input text string");
+	  pszResult = szMissingArgument_m;
+	  goto close_and_return;
 	}
-	/*
-	*  copy the input string, and parse each word in turn
-	*/
-	pszInputText = duplicateString(pszInputText_in);
+  /*
+   *  copy the input string, and parse each word in turn
+   */
+  pszInputText = duplicateString(pszInputText_in);
 				/* hab 1999.03.11 */
-	pSetup_io->sData.iOutputFlags = getOutputFlags(pSetup_io,
-		pSetup_io->sData.iOutputFlags);
-	pSetup_io->sData.bMorphemeLookahead = FALSE;
-	pSetup_io->sData.bLookaheadDone     = FALSE;
-	pSetup_io->sData.bMultiDependency   = FALSE;
-	memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
+  pSetup_io->sData.iOutputFlags = getOutputFlags(pSetup_io,
+						 pSetup_io->sData.iOutputFlags);
+  pSetup_io->sData.bMorphemeLookahead = FALSE;
+  pSetup_io->sData.bLookaheadDone     = FALSE;
+  pSetup_io->sData.bMultiDependency   = FALSE;
+  memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
 #ifndef hab34112
 #ifdef EXPERIMENTAL
-	switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
+  switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
 	{
 	case AResult:
-		strncpy(szOutputBuffer_g, "<AResult>\r\n", sizeof(szOutputBuffer_g)-1);
-		break;
+	  strncpy(szOutputBuffer_g, "<AResult>\r\n", sizeof(szOutputBuffer_g)-1);
+	  break;
 
 	case FWParse:
-	//	strncpy(szOutputBuffer_g, "<WfiAnalysis>\r\n", sizeof(szOutputBuffer_g)-1);
-		break;
+	  //	strncpy(szOutputBuffer_g, "<WfiAnalysis>\r\n", sizeof(szOutputBuffer_g)-1);
+	  break;
 
 	default:
-		assert(FALSE);
-		break;
+	  assert(FALSE);
+	  break;
 	}
 #else /* EXPERIMENTAL */
-	strncpy(szOutputBuffer_g, "<AResult>\r\n", sizeof(szOutputBuffer_g)-1);
+  strncpy(szOutputBuffer_g, "<AResult>\r\n", sizeof(szOutputBuffer_g)-1);
 #endif /* EXPERIMENTAL */
 #endif /* hab34112 */
-	/*
-	*  if tracing with SGML output, initiate the trace
-	*/
-	initiateAmpleTrace( &pSetup_io->sData );
-	/*
-	*  the following is made unduly complicated by AMPLE's use of adjacent words
-	*/
-	memset(&sWord,     0, sizeof(AmpleWord));
-	memset(&sNextWord, 0, sizeof(AmpleWord));
-	memset(&sPrevWord, 0, sizeof(AmpleWord));
-#ifndef hab33105
-	pszWord = pszInputText;
-	sWord.pTemplate = readTemplateFromTextString(&pszWord,
-		&pSetup_io->sData.sTextCtl);
-	sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
-		&pSetup_io->sData.sTextCtl);
-#else /* hab33105 */
-	pszWord = strtok(pszInputText, szWhitespace_g);
-	if (pszWord != NULL)
+  /*
+   *  if tracing with SGML output, initiate the trace
+   */
+  initiateAmpleTrace( &pSetup_io->sData );
+  /*
+   *  the following is made unduly complicated by AMPLE's use of adjacent words
+   */
+  memset(&sWord,     0, sizeof(AmpleWord));
+  memset(&sNextWord, 0, sizeof(AmpleWord));
+  memset(&sPrevWord, 0, sizeof(AmpleWord));
+#ifndef hab33105		/* older change to fix use of TextIn */
+#ifdef EXPERIMENTAL
+#ifndef hab35013		/* newer change to allow following */
+				/* XAmple: caller has choice to use TextIn
+				   or not */
+  if (cUseTextIn == 'y')
+	{				/* use TextIn as normal */
+	  pszWord = pszInputText;
+	  sWord.pTemplate = readTemplateFromTextString(&pszWord,
+						   &pSetup_io->sData.sTextCtl);
+	  sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
+							   &pSetup_io->sData.sTextCtl);
+	}
+  else
+	{				/* use whitespace to delimit words;
+				   do no decapitalization
+				   do apply any changes */
+	  pszWord = strtok(pszInputText, szWhitespace_g);
+	  if (pszWord != NULL)
 	{
-		sWord.pTemplate = allocMemory(sizeof(WordTemplate));
-		sWord.pTemplate->pszOrigWord = duplicateString(pszWord);
-		sWord.pTemplate->iCapital    = decapitalizeWord(sWord.pTemplate,
-			&pSetup_io->sData.sTextCtl);
-		pszWord = strtok(NULL, szWhitespace_g);
-		if (pszWord != NULL)
+	  sWord.pTemplate = allocMemory(sizeof(WordTemplate));
+	  sWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+	  sWord.pTemplate->iCapital    = NOCAP;
+	  applyAnyChanges(sWord.pTemplate, pszWord,
+			  pSetup_io->sData.sTextCtl.pOrthoChanges);
+	  pszWord = strtok(NULL, szWhitespace_g);
+	  if (pszWord != NULL)
 		{
-			sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
-			sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
-			sNextWord.pTemplate->iCapital    = decapitalizeWord(
-				sNextWord.pTemplate,
-				&pSetup_io->sData.sTextCtl);
+		  sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
+		  sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+		  sNextWord.pTemplate->iCapital    = NOCAP;
+		  applyAnyChanges(sNextWord.pTemplate, pszWord,
+			  pSetup_io->sData.sTextCtl.pOrthoChanges);
 		}
 	}
-#endif /* hab33105 */
-	while (sWord.pTemplate != NULL)
+	}
+#endif /* hab35013 */
+#else  /* EXPERIMENTAL */
+				/* For Ample - normal case: use TextIn */
+  pszWord = pszInputText;
+  sWord.pTemplate = readTemplateFromTextString(&pszWord,
+						   &pSetup_io->sData.sTextCtl);
+  sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
+						   &pSetup_io->sData.sTextCtl);
+#endif /* EXPERIMENTAL */
+#else /* hab33105 */
+  /* Original did not use TextIn (but should have) */
+  pszWord = strtok(pszInputText, szWhitespace_g);
+  if (pszWord != NULL)
 	{
-		if (sWord.pTemplate->paWord != NULL)
+	  sWord.pTemplate = allocMemory(sizeof(WordTemplate));
+	  sWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+	  sWord.pTemplate->iCapital    = decapitalizeWord(sWord.pTemplate,
+							  &pSetup_io->sData.sTextCtl);
+	  pszWord = strtok(NULL, szWhitespace_g);
+	  if (pszWord != NULL)
+	{
+	  sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
+	  sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+	  sNextWord.pTemplate->iCapital    = decapitalizeWord(
+								  sNextWord.pTemplate,
+								  &pSetup_io->sData.sTextCtl);
+	}
+	}
+#endif /* hab33105 */
+  while (sWord.pTemplate != NULL)
+	{
+	  if (sWord.pTemplate->paWord != NULL)
+	{
+	  if (!bParsedAlready)
+		iResult = analyzeAmpleWord(&sWord, &pSetup_io->sData);
+	  bParsedAlready = FALSE;
+	  if (iResult)
 		{
-			if (!bParsedAlready)
-				iResult = analyzeAmpleWord(&sWord, &pSetup_io->sData);
-			bParsedAlready = FALSE;
-			if (iResult)
+		  if (sWord.bUsesNextWord &&
+		  (sNextWord.pTemplate != NULL) &&
+		  (sNextWord.pTemplate->paWord != NULL) )
+		{
+		  iResult = analyzeAmpleWord(&sNextWord, &pSetup_io->sData);
+		  if (sNextWord.bUsesNextWord)
 			{
-				if (sWord.bUsesNextWord &&
-					(sNextWord.pTemplate != NULL) &&
-					(sNextWord.pTemplate->paWord != NULL) )
-				{
-					iResult = analyzeAmpleWord(&sNextWord, &pSetup_io->sData);
-					if (sNextWord.bUsesNextWord)
-					{
-						/* warning message */
-						if (pSetup_io->sData.pLogFP != NULL)
-						{
-							fprintf(pSetup_io->sData.pLogFP,
-								"\nWARNING:  Multiple dependency:  %s %s\n",
-								sWord.pTemplate->pszOrigWord,
-								sNextWord.pTemplate->pszOrigWord);
-						}
-					}
-					bParsedAlready = TRUE;
-				}
-				if (sWord.bUsesPrevWord ||
-					sWord.bUsesNextWord)
-				{
-					pSetup_io->sData.bLookaheadDone = TRUE;
-					refineAmpleAnalysis(&sWord,
-						&sPrevWord,
-						&sNextWord,
-						&pSetup_io->sData);
-					pSetup_io->sData.bLookaheadDone = FALSE;
-				}
+			  /* warning message */
+			  if (pSetup_io->sData.pLogFP != NULL)
+			{
+			  fprintf(pSetup_io->sData.pLogFP,
+				  "\nWARNING:  Multiple dependency:  %s %s\n",
+				  sWord.pTemplate->pszOrigWord,
+				  sNextWord.pTemplate->pszOrigWord);
 			}
-			if (iResult == 0)
-				++iFailureCount;
-			else
-				++iSuccessCount;
+			}
+		  bParsedAlready = TRUE;
+		}
+		  if (sWord.bUsesPrevWord ||
+		  sWord.bUsesNextWord)
+		{
+		  pSetup_io->sData.bLookaheadDone = TRUE;
+		  refineAmpleAnalysis(&sWord,
+					  &sPrevWord,
+					  &sNextWord,
+					  &pSetup_io->sData);
+		  pSetup_io->sData.bLookaheadDone = FALSE;
+		}
+		}
+	  if (iResult == 0)
+		++iFailureCount;
+	  else
+		++iSuccessCount;
 				/*
-				*  output the results of analysis
-			*/
+				 *  output the results of analysis
+				 */
 #ifndef hab33169
 #ifndef hab34112
 #ifdef EXPERIMENTAL
-			switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
-			{
-			case AResult:
-				addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
-					szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+	  switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
+		{
+		case AResult:
+		  addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
+				 szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+		case FWParse:
+		  addFWParseToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
+				 szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+		  break;
 
-			case FWParse:
-				addFWParseToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
-					szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
-				break;
-
-			default:
-				assert(FALSE);
-				break;
-			}
+		default:
+		  assert(FALSE);
+		  break;
+		}
 #else /* EXPERIMENTAL */
-			addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
-					   szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+	  addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
+				 szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
 #endif /* EXPERIMENTAL */
 #endif /* hab34112 */
 #else /* hab33169 */
-			addAResultToBuffer(&sWord, &pSetup_io->sData.sTextCtl,
-				szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+	  addAResultToBuffer(&sWord, &pSetup_io->sData.sTextCtl,
+				 szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
 #endif /* hab33169 */
 
-		}
-		/*
-		*  get the next word from the input string
-		*/
-		eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
-		memcpy(&sPrevWord, &sWord,     sizeof(AmpleWord));
-		memcpy(&sWord,     &sNextWord, sizeof(AmpleWord));
-		memset(&sNextWord, 0, sizeof(AmpleWord));
-#ifndef hab33105
-		sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
-			&pSetup_io->sData.sTextCtl);
-#else /* hab33105 */
-		pszWord = strtok(NULL, szWhitespace_g);
-		if (pszWord != NULL)
-		{
-			sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
-			sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
-			sNextWord.pTemplate->iCapital    = decapitalizeWord(
-				sNextWord.pTemplate,
-				&pSetup_io->sData.sTextCtl);
-		}
-#endif /* hab33105 */
 	}
-	eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
+	  /*
+	   *  get the next word from the input string
+	   */
+	  eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
+	  memcpy(&sPrevWord, &sWord,     sizeof(AmpleWord));
+	  memcpy(&sWord,     &sNextWord, sizeof(AmpleWord));
+	  memset(&sNextWord, 0, sizeof(AmpleWord));
+#ifndef hab33105		/* older change to fix use of TextIn */
+#ifdef EXPERIMENTAL
+#ifndef hab35013		/* newer change to allow following */
+				/* XAmple: caller has choice to use TextIn
+				   or not */
+	  if (cUseTextIn == 'y')
+	sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
+						 &pSetup_io->sData.sTextCtl);
+	  else
+	{				/* use whitespace to delimit words;
+					   do no decapitalization
+					   do apply any changes */
+	  pszWord = strtok(NULL, szWhitespace_g);
+	  if (pszWord != NULL)
+		{
+		  sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
+		  sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+		  sNextWord.pTemplate->iCapital    = NOCAP;
+		  applyAnyChanges(sNextWord.pTemplate, pszWord,
+				  pSetup_io->sData.sTextCtl.pOrthoChanges);
+		}
+	}
+	}
+#endif /* hab35013 */
+#else  /* EXPERIMENTAL */
+				/* For Ample - normal case: use TextIn */
+  sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
+						   &pSetup_io->sData.sTextCtl);
+#endif /* EXPERIMENTAL */
+#else /* hab33105 */
+  /* Original did not use TextIn (but should have) */
+  pszWord = strtok(NULL, szWhitespace_g);
+  if (pszWord != NULL)
+	{
+	  sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
+	  sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+	  sNextWord.pTemplate->iCapital    = decapitalizeWord(
+						  sNextWord.pTemplate,
+						  &pSetup_io->sData.sTextCtl);
+	}
+#endif /* hab33105 */
+  eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
 #ifndef hab34112
 #ifdef EXPERIMENTAL
-		switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
-		{
-		case AResult:
-			strncat(szOutputBuffer_g, "</AResult>\r\n",
-				sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
-		case FWParse:
-	//		strncat(szOutputBuffer_g, "</WfiAnalysis>\r\n",
-		//		sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
-			break;
+  switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
+	{
+	case AResult:
+	  strncat(szOutputBuffer_g, "</AResult>\r\n",
+		  sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
+	case FWParse:
+	  //		strncat(szOutputBuffer_g, "</WfiAnalysis>\r\n",
+	  //		sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
+	  break;
 
-		default:
-			assert(FALSE);
-			break;
-		}
+	default:
+	  assert(FALSE);
+	  break;
+	}
 #else /* EXPERIMENTAL */
-		strncat(szOutputBuffer_g, "</AResult>\r\n",
-			sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
+  strncat(szOutputBuffer_g, "</AResult>\r\n",
+	  sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
 #endif /* EXPERIMENTAL */
 #endif /* hab34112 */
-		/*
-		*  if tracing with SGML output, terminate the trace
-	*/
-	terminateAmpleTrace( &pSetup_io->sData );
-	/*
-	*  free the copy of the input string
-	*/
-	freeMemory(pszInputText);
+  /*
+   *  if tracing with SGML output, terminate the trace
+   */
+  terminateAmpleTrace( &pSetup_io->sData );
+  /*
+   *  free the copy of the input string
+   */
+  freeMemory(pszInputText);
 #ifdef _DEBUG
-	if (pSetup_io->sData.pLogFP != NULL)
+  if (pSetup_io->sData.pLogFP != NULL)
 	{
-		fprintf(pSetup_io->sData.pLogFP, "\nAmpleParseText()\nInput =\n");
-		fputs(pszInputText_in,  pSetup_io->sData.pLogFP);
-		fprintf(pSetup_io->sData.pLogFP, "\nOutput =\n");
-		fputs(szOutputBuffer_g, pSetup_io->sData.pLogFP);
-		fprintf(pSetup_io->sData.pLogFP, "\nEnd of AmpleParseText()\n");
+	  fprintf(pSetup_io->sData.pLogFP, "\nAmpleParseText()\nInput =\n");
+	  fputs(pszInputText_in,  pSetup_io->sData.pLogFP);
+	  fprintf(pSetup_io->sData.pLogFP, "\nOutput =\n");
+	  fputs(szOutputBuffer_g, pSetup_io->sData.pLogFP);
+	  fprintf(pSetup_io->sData.pLogFP, "\nEnd of AmpleParseText()\n");
 	}
 #endif
 
-close_and_return:
-	if (pSetup_io->sData.pLogFP != NULL)
+ close_and_return:
+  if (pSetup_io->sData.pLogFP != NULL)
 	{
-		fclose(pSetup_io->sData.pLogFP);
-		pSetup_io->sData.pLogFP = NULL;
+	  fclose(pSetup_io->sData.pLogFP);
+	  pSetup_io->sData.pLogFP = NULL;
 	}
 
-	pLogFP_m      = NULL;
-	iDebugLevel_m = 0;
-	return pszResult;
+  pLogFP_m      = NULL;
+  iDebugLevel_m = 0;
+  return pszResult;
 }
 
 /*****************************************************************************
@@ -2655,6 +2757,12 @@ if (pSetup_io->pszLogFilename != NULL)
 			   pSetup_io->sData.pMorphClasses);
 	writeAmpleMorphConstraints(pSetup_io->sData.pLogFP,
 				   &pSetup_io->sData);
+#ifdef EXPERIMENTAL
+#ifndef hab35013
+	writeAmpleNeverConstraints(pSetup_io->sData.pLogFP,
+				   &pSetup_io->sData);
+#endif /* hab35013 */
+#endif /* EXPERIMENTAL */
 	/* tests */
 	writeAmpleTests( "Prefix", &pSetup_io->sData );
 	writeAmpleTests( "Infix",  &pSetup_io->sData );
@@ -3011,8 +3119,6 @@ else if (_stricmp(pszValue_in, "AResult") == 0)
 	pSetup_io->eOutputStyle = AResult;
 else if (_stricmp(pszValue_in, "Ptext") == 0)
 	pSetup_io->eOutputStyle = Ptext;
-else if (_stricmp(pszValue_in, "FWParse") == 0)
-	pSetup_io->eOutputStyle = FWParse;
 #ifndef hab34112
 #ifdef EXPERIMENTAL
 else if (_stricmp(pszValue_in, "FWParse") == 0)
@@ -4183,6 +4289,10 @@ return pszResult;
 
 /******************************************************************************
  * EDIT HISTORY
+ * 06-Mar-2002  hab  - Add hooks to ANCCs.
+ * [3.5.0.13]          Add pszUseTextIn param to AmpleParseText() to allow
+ *                       one to skip word formation check and decapitalization
+ *                       (for XAmple.dll only; needed by WordWorks)
  * 10-Aug-2001  hab  - Fix 3.3.20.11 so it doesn't break CarlaStudio's
  * [3.4.1.12]           QuickParse: make it only be for EXPERIMENTAL (i.e.
  *                      XAmple)

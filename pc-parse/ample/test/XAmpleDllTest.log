@@ -29,11 +29,11 @@ AMPLE Message:
 	ROOT DICTIONARY: Loaded 8 records
 
 XAMPLE: A Morphological Parser for Linguistic Exploration
-Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+Version 3.5x0 (March 6, 2002), Copyright 2002 SIL, Inc.
 	AMPLE with experimental enhancement: PC-PATR word grammar
-Experimental version compiled Apr 11 2001 14:02:52
+Experimental version compiled Mar  6 2002 10:11:58
 
-Analysis Performed Wed Apr 11 14:18:04 2001
+Analysis Performed Wed Mar 06 15:08:54 2002
 
 Input  file: test/hg/hgtest.txt
 Output file: test/hg/hgtest.ana
@@ -64,6 +64,7 @@ ANALYSIS STATISTICS:   78 words processed.
 				ORDER_FT called   206 times, rejected 0.
 				  MEC_FT called   206 times, rejected 0.
 				  MCC_FT called   206 times, rejected 10.
+				 ANCC_FT called   196 times, rejected 0.
 
 
 AmpleParseText()
@@ -71,27 +72,42 @@ Input =
 allchakaachimanqa
 Output =
 <AResult>
-
 <parse id=allchakaachimanqa>
-
 <analysis cat="?">
-
 <morph id=*allcha allo=#allcha# type="r">
-
 <morph id=PASS allo=#ka:# type="s">
-
 <morph id=CAUS allo=#chi# type="s">
-
 <morph id=1O allo=#ma# type="s">
-
 <morph id=3FUT allo=#nqa# type="s">
-
 </analysis>
-
 </parse>
-
+ <Wordform DbRef=DB_REF_HERE Form="allchakaachimanqa">
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="allcha"/>
+	  <MSI DbRef='*allcha'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="ka:"/>
+	  <MSI DbRef='PASS'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="chi"/>
+	  <MSI DbRef='CAUS'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="ma"/>
+	  <MSI DbRef='1O'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="nqa"/>
+	  <MSI DbRef='3FUT'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+ </Wordform>
 </AResult>
-
 
 End of AmpleParseText()
 AMPLE Message:
@@ -188,11 +204,11 @@ AMPLE Message:
 	ROOT DICTIONARY: Loaded 1874 records
 
 XAMPLE: A Morphological Parser for Linguistic Exploration
-Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+Version 3.5x0 (March 6, 2002), Copyright 2002 SIL, Inc.
 	AMPLE with experimental enhancement: PC-PATR word grammar
-Experimental version compiled Apr 11 2001 14:02:52
+Experimental version compiled Mar  6 2002 10:11:58
 
-Analysis Performed Wed Apr 11 14:18:04 2001
+Analysis Performed Wed Mar 06 15:08:54 2002
 
 Input  file: test/tepehua/Ephtst.txt
 Output file: test/tepehua/Ephtst.ana
@@ -235,39 +251,32 @@ ANALYSIS STATISTICS:   32 words processed.
 		  GLOTTALIZED_FT called   205 times, rejected 20.
 				  MEC_FT called   185 times, rejected 95.
 				  MCC_FT called    90 times, rejected 30.
+				 ANCC_FT called    60 times, rejected 0.
 
-	  PC-PATR word parse called    57 times, rejected 20 (skipped 3).
+	  PC-PATR word parse called    20 times, rejected 3 (skipped 0).
 
 
 AmpleParseText()
 Input =
-klamastak'ayau
+klamastak'ayau k'a'unap'it'ik
 Output =
 <AResult>
-
 <parse id=klamastak'ayau>
-
 <analysis cat="?">
-
 <morph id=1SUB allo=#k# type="p">
-
 <morph id=REC allo=#la# type="p">
-
 <morph id=saludar allo=#mastak†a# type="r">
-
 <morph id=IMPF allo=#ya# type="s">
-
 <morph id=1PL allo=#w# type="s">
-
 <Analysis count="3">
 <Parse>
-<Node cat="Word" id="_1:_1">
+<Node cat="Word" id="_1._1">
 <Fs></Fs>
-<Node cat="Infl" id="_1:_2">
+<Node cat="Infl" id="_1._2">
 <Fs></Fs>
-<Node cat="Infl" id="_1:_3">
+<Node cat="Infl" id="_1._3">
 <Fs></Fs>
-<Leaf cat="1st" id="_1:_4" all="true" gloss="1SUB">
+<Leaf cat="1st" id="_1._4" all="true" gloss="1SUB">
 <Fs>
 <F name="cat"><Str>1st</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -310,9 +319,9 @@ Output =
 </Lexfs>
 <Str>k</Str>
 </Leaf>
-<Node cat="Infl" id="_1:_5">
+<Node cat="Infl" id="_1._5">
 <Fs></Fs>
-<Leaf cat="Rec" id="_1:_6" all="true" gloss="REC">
+<Leaf cat="Rec" id="_1._6" all="true" gloss="REC">
 <Fs>
 <F name="cat"><Str>Rec</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -339,11 +348,11 @@ Output =
 </Lexfs>
 <Str>la</Str>
 </Leaf>
-<Node cat="Infl" id="_1:_7" all="true">
+<Node cat="Infl" id="_1._7" all="true">
 <Fs></Fs>
-<Node cat="Stem" id="_1:_8" all="true">
+<Node cat="Stem" id="_1._8" all="true">
 <Fs></Fs>
-<Leaf cat="Root" id="_1:_9" all="true" gloss="saludar">
+<Leaf cat="Root" id="_1._9" all="true" gloss="saludar">
 <Fs>
 <F name="cat"><Str>Root</Str></F>
 <F name="gloss"><Str>saludar</Str></F>
@@ -379,7 +388,7 @@ Output =
 <Str>mastak†a</Str>
 </Leaf>
 </Node>
-<Leaf cat="Asp" id="_1:_10" all="true" gloss="IMPF">
+<Leaf cat="Asp" id="_1._10" all="true" gloss="IMPF">
 <Fs>
 <F name="cat"><Str>Asp</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -411,7 +420,7 @@ Output =
 </Node>
 </Node>
 </Node>
-<Leaf cat="Pers" id="_1:_11" all="true" gloss="1PL">
+<Leaf cat="Pers" id="_1._11" all="true" gloss="1PL">
 <Fs>
 <F name="cat"><Str>Pers</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -462,11 +471,11 @@ Output =
 </Node>
 </Parse>
 <Parse>
-<Node cat="Word" id="_2:_12">
+<Node cat="Word" id="_2._12">
 <Fs></Fs>
-<Node cat="Infl" id="_2:_13">
+<Node cat="Infl" id="_2._13">
 <Fs></Fs>
-<Leaf cat="1st" id="_2:_4" all="true" gloss="1SUB">
+<Leaf cat="1st" id="_2._4" all="true" gloss="1SUB">
 <Fs>
 <F name="cat"><Str>1st</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -509,11 +518,11 @@ Output =
 </Lexfs>
 <Str>k</Str>
 </Leaf>
-<Node cat="Infl" id="_2:_14">
+<Node cat="Infl" id="_2._14">
 <Fs></Fs>
-<Node cat="Infl" id="_2:_5">
+<Node cat="Infl" id="_2._5">
 <Fs></Fs>
-<Leaf cat="Rec" id="_2:_6" all="true" gloss="REC">
+<Leaf cat="Rec" id="_2._6" all="true" gloss="REC">
 <Fs>
 <F name="cat"><Str>Rec</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -540,11 +549,11 @@ Output =
 </Lexfs>
 <Str>la</Str>
 </Leaf>
-<Node cat="Infl" id="_2:_7" all="true">
+<Node cat="Infl" id="_2._7" all="true">
 <Fs></Fs>
-<Node cat="Stem" id="_2:_8" all="true">
+<Node cat="Stem" id="_2._8" all="true">
 <Fs></Fs>
-<Leaf cat="Root" id="_2:_9" all="true" gloss="saludar">
+<Leaf cat="Root" id="_2._9" all="true" gloss="saludar">
 <Fs>
 <F name="cat"><Str>Root</Str></F>
 <F name="gloss"><Str>saludar</Str></F>
@@ -580,7 +589,7 @@ Output =
 <Str>mastak†a</Str>
 </Leaf>
 </Node>
-<Leaf cat="Asp" id="_2:_10" all="true" gloss="IMPF">
+<Leaf cat="Asp" id="_2._10" all="true" gloss="IMPF">
 <Fs>
 <F name="cat"><Str>Asp</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -611,7 +620,7 @@ Output =
 </Leaf>
 </Node>
 </Node>
-<Leaf cat="Pers" id="_2:_11" all="true" gloss="1PL">
+<Leaf cat="Pers" id="_2._11" all="true" gloss="1PL">
 <Fs>
 <F name="cat"><Str>Pers</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -663,11 +672,11 @@ Output =
 </Node>
 </Parse>
 <Parse>
-<Node cat="Word" id="_3:_15">
+<Node cat="Word" id="_3._15">
 <Fs></Fs>
-<Node cat="Infl" id="_3:_16">
+<Node cat="Infl" id="_3._16">
 <Fs></Fs>
-<Leaf cat="1st" id="_3:_4" all="true" gloss="1SUB">
+<Leaf cat="1st" id="_3._4" all="true" gloss="1SUB">
 <Fs>
 <F name="cat"><Str>1st</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -710,9 +719,9 @@ Output =
 </Lexfs>
 <Str>k</Str>
 </Leaf>
-<Node cat="Infl" id="_3:_17">
+<Node cat="Infl" id="_3._17">
 <Fs></Fs>
-<Leaf cat="Rec" id="_3:_6" all="true" gloss="REC">
+<Leaf cat="Rec" id="_3._6" all="true" gloss="REC">
 <Fs>
 <F name="cat"><Str>Rec</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -739,13 +748,13 @@ Output =
 </Lexfs>
 <Str>la</Str>
 </Leaf>
-<Node cat="Infl" id="_3:_18">
+<Node cat="Infl" id="_3._18">
 <Fs></Fs>
-<Node cat="Infl" id="_3:_7" all="true">
+<Node cat="Infl" id="_3._7" all="true">
 <Fs></Fs>
-<Node cat="Stem" id="_3:_8" all="true">
+<Node cat="Stem" id="_3._8" all="true">
 <Fs></Fs>
-<Leaf cat="Root" id="_3:_9" all="true" gloss="saludar">
+<Leaf cat="Root" id="_3._9" all="true" gloss="saludar">
 <Fs>
 <F name="cat"><Str>Root</Str></F>
 <F name="gloss"><Str>saludar</Str></F>
@@ -781,7 +790,7 @@ Output =
 <Str>mastak†a</Str>
 </Leaf>
 </Node>
-<Leaf cat="Asp" id="_3:_10" all="true" gloss="IMPF">
+<Leaf cat="Asp" id="_3._10" all="true" gloss="IMPF">
 <Fs>
 <F name="cat"><Str>Asp</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -811,7 +820,7 @@ Output =
 <Str>ya</Str>
 </Leaf>
 </Node>
-<Leaf cat="Pers" id="_3:_11" all="true" gloss="1PL">
+<Leaf cat="Pers" id="_3._11" all="true" gloss="1PL">
 <Fs>
 <F name="cat"><Str>Pers</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -865,11 +874,1328 @@ Output =
 </Parse>
 </Analysis>
 </analysis>
-
 </parse>
-
+ <Wordform DbRef=DB_REF_HERE Form="klamastak'ayau">
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="k"/>
+	  <MSI DbRef='1SUB'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="la"/>
+	  <MSI DbRef='REC'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="mastak†a"/>
+	  <MSI DbRef='saludar'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="ya"/>
+	  <MSI DbRef='IMPF'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="w"/>
+	  <MSI DbRef='1PL'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+ </Wordform>
+<parse id=k'a'unap'it'ik>
+<analysis cat="?">
+<morph id=IRR allo=#k†a# type="p">
+<morph id=decirselo allo=#†un# type="r">
+<morph id=FUT allo=#a# type="s">
+<morph id=2SUBFUT allo=#p†i# type="s">
+<morph id=2PLSUB allo=#t†ik# type="s">
+<Analysis count="3">
+<Parse>
+<Node cat="Word" id="_1._1">
+<Fs></Fs>
+<Node cat="Infl" id="_1._2">
+<Fs></Fs>
+<Node cat="Infl" id="_1._3">
+<Fs></Fs>
+<Leaf cat="Mood" id="_1._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_1._5">
+<Fs></Fs>
+<Node cat="Infl" id="_1._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_1._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_1._8" all="true" gloss="decirselo">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_1._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_1._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="2PlSubj" id="_1._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_2._12">
+<Fs></Fs>
+<Node cat="Infl" id="_2._13">
+<Fs></Fs>
+<Leaf cat="Mood" id="_2._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_2._14">
+<Fs></Fs>
+<Node cat="Infl" id="_2._5">
+<Fs></Fs>
+<Node cat="Infl" id="_2._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_2._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_2._8" all="true" gloss="decirselo">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_2._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_2._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+<Leaf cat="2PlSubj" id="_2._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_3._15">
+<Fs></Fs>
+<Node cat="Infl" id="_3._16">
+<Fs></Fs>
+<Node cat="Infl" id="_3._17">
+<Fs></Fs>
+<Node cat="Infl" id="_3._18">
+<Fs></Fs>
+<Leaf cat="Mood" id="_3._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_3._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_3._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_3._8" all="true" gloss="decirselo">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_3._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="Pers" id="_3._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+<Leaf cat="2PlSubj" id="_3._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+</Analysis>
+</analysis>
+<analysis cat="?">
+<morph id=IRR allo=#k†a# type="p">
+<morph id=hacerse allo=#†un# type="r">
+<morph id=FUT allo=#a# type="s">
+<morph id=2SUBFUT allo=#p†i# type="s">
+<morph id=2PLSUB allo=#t†ik# type="s">
+<Analysis count="3">
+<Parse>
+<Node cat="Word" id="_1._1">
+<Fs></Fs>
+<Node cat="Infl" id="_1._2">
+<Fs></Fs>
+<Node cat="Infl" id="_1._3">
+<Fs></Fs>
+<Leaf cat="Mood" id="_1._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_1._5">
+<Fs></Fs>
+<Node cat="Infl" id="_1._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_1._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_1._8" all="true" gloss="hacerse">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_1._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_1._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="2PlSubj" id="_1._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_2._12">
+<Fs></Fs>
+<Node cat="Infl" id="_2._13">
+<Fs></Fs>
+<Leaf cat="Mood" id="_2._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_2._14">
+<Fs></Fs>
+<Node cat="Infl" id="_2._5">
+<Fs></Fs>
+<Node cat="Infl" id="_2._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_2._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_2._8" all="true" gloss="hacerse">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_2._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_2._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+<Leaf cat="2PlSubj" id="_2._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_3._15">
+<Fs></Fs>
+<Node cat="Infl" id="_3._16">
+<Fs></Fs>
+<Node cat="Infl" id="_3._17">
+<Fs></Fs>
+<Node cat="Infl" id="_3._18">
+<Fs></Fs>
+<Leaf cat="Mood" id="_3._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_3._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_3._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_3._8" all="true" gloss="hacerse">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_3._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="Pers" id="_3._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+<Leaf cat="2PlSubj" id="_3._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+</Analysis>
+</analysis>
+</parse>
+ <Wordform DbRef=DB_REF_HERE Form="k'a'unap'it'ik">
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="k†a"/>
+	  <MSI DbRef='IRR'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="†un"/>
+	  <MSI DbRef='decirselo'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="a"/>
+	  <MSI DbRef='FUT'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="p†i"/>
+	  <MSI DbRef='2SUBFUT'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="t†ik"/>
+	  <MSI DbRef='2PLSUB'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="k†a"/>
+	  <MSI DbRef='IRR'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="†un"/>
+	  <MSI DbRef='hacerse'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="a"/>
+	  <MSI DbRef='FUT'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="p†i"/>
+	  <MSI DbRef='2SUBFUT'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="t†ik"/>
+	  <MSI DbRef='2PLSUB'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+ </Wordform>
 </AResult>
-
 
 End of AmpleParseText()
 SUFFIX TEST: IMPERATIVE_ST contains more than one leftward iteration
@@ -1000,11 +2326,11 @@ AMPLE Message:
 	ROOT DICTIONARY: Loaded 150 records
 
 XAMPLE: A Morphological Parser for Linguistic Exploration
-Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+Version 3.5x0 (March 6, 2002), Copyright 2002 SIL, Inc.
 	AMPLE with experimental enhancement: PC-PATR word grammar
-Experimental version compiled Apr 11 2001 14:02:52
+Experimental version compiled Mar  6 2002 10:11:58
 
-Analysis Performed Wed Apr 11 14:18:05 2001
+Analysis Performed Wed Mar 06 15:08:55 2002
 
 Input  file: test/yalalag/Marktest.txt
 Output file: test/yalalag/Marktest.ana
@@ -1073,8 +2399,9 @@ Root_takes_kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
 	 kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
 				  MEC_FT called   752 times, rejected 356.
 				  MCC_FT called   396 times, rejected 56.
+				 ANCC_FT called   340 times, rejected 0.
 
-	  PC-PATR word parse called   340 times, rejected 73 (skipped 0).
+	  PC-PATR word parse called    73 times, rejected 0 (skipped 0).
 
 
 AmpleParseText()
@@ -1082,20 +2409,15 @@ Input =
 bzorao
 Output =
 <AResult>
-
 <parse id=bzorao>
-
 <analysis cat="V">
-
 <morph id=C allo=#p# type="p">
-
 <morph id=empezar allo=#solao# type="r">
-
 <Analysis count="1">
 <Parse>
-<Node cat="Word" id="_1:_1">
+<Node cat="Word" id="_1._1">
 <Fs></Fs>
-<Leaf cat="Aspect" id="_1:_2" gloss="C">
+<Leaf cat="Aspect" id="_1._2" gloss="C">
 <Fs>
 <F name="cat"><Str>Aspect</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -1122,9 +2444,9 @@ Output =
 </Lexfs>
 <Str>p</Str>
 </Leaf>
-<Node cat="Stem" id="_1:_3">
+<Node cat="Stem" id="_1._3">
 <Fs></Fs>
-<Leaf cat="Root" id="_1:_4" gloss="empezar">
+<Leaf cat="Root" id="_1._4" gloss="empezar">
 <Fs>
 <F name="cat"><Str>Root</Str></F>
 <F name="gloss"><Str>empezar</Str></F>
@@ -1156,11 +2478,22 @@ Output =
 </Parse>
 </Analysis>
 </analysis>
-
 </parse>
-
+ <Wordform DbRef=DB_REF_HERE Form="bzorao">
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="p"/>
+	  <MSI DbRef='C'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="solao"/>
+	  <MSI DbRef='empezar'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+ </Wordform>
 </AResult>
-
 
 End of AmpleParseText()
 SUFFIX TEST: IMPERATIVE_ST contains more than one leftward iteration
@@ -1414,11 +2747,11 @@ AMPLE Message:
 	ROOT DICTIONARY: Loaded 150 records
 
 XAMPLE: A Morphological Parser for Linguistic Exploration
-Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+Version 3.5x0 (March 6, 2002), Copyright 2002 SIL, Inc.
 	AMPLE with experimental enhancement: PC-PATR word grammar
-Experimental version compiled Apr 11 2001 14:02:52
+Experimental version compiled Mar  6 2002 10:11:58
 
-Analysis Performed Wed Apr 11 14:18:06 2001
+Analysis Performed Wed Mar 06 15:08:56 2002
 
 Input  file: test/hg/hgtest.txt
 Output file: test/hg/hgtest.ana
@@ -1449,13 +2782,14 @@ ANALYSIS STATISTICS:   78 words processed.
 				ORDER_FT called   206 times, rejected 0.
 				  MEC_FT called   206 times, rejected 0.
 				  MCC_FT called   206 times, rejected 10.
+				 ANCC_FT called   196 times, rejected 0.
 
 XAMPLE: A Morphological Parser for Linguistic Exploration
-Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+Version 3.5x0 (March 6, 2002), Copyright 2002 SIL, Inc.
 	AMPLE with experimental enhancement: PC-PATR word grammar
-Experimental version compiled Apr 11 2001 14:02:52
+Experimental version compiled Mar  6 2002 10:11:58
 
-Analysis Performed Wed Apr 11 14:18:06 2001
+Analysis Performed Wed Mar 06 15:08:56 2002
 
 Input  file: test/tepehua/Ephtst.txt
 Output file: test/tepehua/Ephtst.ana
@@ -1498,15 +2832,16 @@ ANALYSIS STATISTICS:   32 words processed.
 		  GLOTTALIZED_FT called   205 times, rejected 20.
 				  MEC_FT called   185 times, rejected 95.
 				  MCC_FT called    90 times, rejected 30.
+				 ANCC_FT called    60 times, rejected 0.
 
-	  PC-PATR word parse called    57 times, rejected 20 (skipped 3).
+	  PC-PATR word parse called    20 times, rejected 3 (skipped 0).
 
 XAMPLE: A Morphological Parser for Linguistic Exploration
-Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
+Version 3.5x0 (March 6, 2002), Copyright 2002 SIL, Inc.
 	AMPLE with experimental enhancement: PC-PATR word grammar
-Experimental version compiled Apr 11 2001 14:02:52
+Experimental version compiled Mar  6 2002 10:11:58
 
-Analysis Performed Wed Apr 11 14:18:07 2001
+Analysis Performed Wed Mar 06 15:08:57 2002
 
 Input  file: test/yalalag/Marktest.txt
 Output file: test/yalalag/Marktest.ana
@@ -1575,8 +2910,9 @@ Root_takes_kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
 	 kw_C_WITH_Pl.pfx_FT called   752 times, rejected 0.
 				  MEC_FT called   752 times, rejected 356.
 				  MCC_FT called   396 times, rejected 56.
+				 ANCC_FT called   340 times, rejected 0.
 
-	  PC-PATR word parse called   340 times, rejected 73 (skipped 0).
+	  PC-PATR word parse called    73 times, rejected 0 (skipped 0).
 
 
 AmpleParseText()
@@ -1584,59 +2920,66 @@ Input =
 allchakaachimanqa
 Output =
 <AResult>
-
 <parse id=allchakaachimanqa>
-
 <analysis cat="?">
-
 <morph id=*allcha allo=#allcha# type="r">
-
 <morph id=PASS allo=#ka:# type="s">
-
 <morph id=CAUS allo=#chi# type="s">
-
 <morph id=1O allo=#ma# type="s">
-
 <morph id=3FUT allo=#nqa# type="s">
-
 </analysis>
-
 </parse>
-
+ <Wordform DbRef=DB_REF_HERE Form="allchakaachimanqa">
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="allcha"/>
+	  <MSI DbRef='*allcha'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="ka:"/>
+	  <MSI DbRef='PASS'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="chi"/>
+	  <MSI DbRef='CAUS'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="ma"/>
+	  <MSI DbRef='1O'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="nqa"/>
+	  <MSI DbRef='3FUT'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+ </Wordform>
 </AResult>
-
 
 End of AmpleParseText()
 
 AmpleParseText()
 Input =
-klamastak'ayau
+klamastak'ayau k'a'unap'it'ik
 Output =
 <AResult>
-
 <parse id=klamastak'ayau>
-
 <analysis cat="?">
-
 <morph id=1SUB allo=#k# type="p">
-
 <morph id=REC allo=#la# type="p">
-
 <morph id=saludar allo=#mastak†a# type="r">
-
 <morph id=IMPF allo=#ya# type="s">
-
 <morph id=1PL allo=#w# type="s">
-
 <Analysis count="3">
 <Parse>
-<Node cat="Word" id="_1:_1">
+<Node cat="Word" id="_1._1">
 <Fs></Fs>
-<Node cat="Infl" id="_1:_2">
+<Node cat="Infl" id="_1._2">
 <Fs></Fs>
-<Node cat="Infl" id="_1:_3">
+<Node cat="Infl" id="_1._3">
 <Fs></Fs>
-<Leaf cat="1st" id="_1:_4" all="true" gloss="1SUB">
+<Leaf cat="1st" id="_1._4" all="true" gloss="1SUB">
 <Fs>
 <F name="cat"><Str>1st</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -1679,9 +3022,9 @@ Output =
 </Lexfs>
 <Str>k</Str>
 </Leaf>
-<Node cat="Infl" id="_1:_5">
+<Node cat="Infl" id="_1._5">
 <Fs></Fs>
-<Leaf cat="Rec" id="_1:_6" all="true" gloss="REC">
+<Leaf cat="Rec" id="_1._6" all="true" gloss="REC">
 <Fs>
 <F name="cat"><Str>Rec</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -1708,11 +3051,11 @@ Output =
 </Lexfs>
 <Str>la</Str>
 </Leaf>
-<Node cat="Infl" id="_1:_7" all="true">
+<Node cat="Infl" id="_1._7" all="true">
 <Fs></Fs>
-<Node cat="Stem" id="_1:_8" all="true">
+<Node cat="Stem" id="_1._8" all="true">
 <Fs></Fs>
-<Leaf cat="Root" id="_1:_9" all="true" gloss="saludar">
+<Leaf cat="Root" id="_1._9" all="true" gloss="saludar">
 <Fs>
 <F name="cat"><Str>Root</Str></F>
 <F name="gloss"><Str>saludar</Str></F>
@@ -1748,7 +3091,7 @@ Output =
 <Str>mastak†a</Str>
 </Leaf>
 </Node>
-<Leaf cat="Asp" id="_1:_10" all="true" gloss="IMPF">
+<Leaf cat="Asp" id="_1._10" all="true" gloss="IMPF">
 <Fs>
 <F name="cat"><Str>Asp</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -1780,7 +3123,7 @@ Output =
 </Node>
 </Node>
 </Node>
-<Leaf cat="Pers" id="_1:_11" all="true" gloss="1PL">
+<Leaf cat="Pers" id="_1._11" all="true" gloss="1PL">
 <Fs>
 <F name="cat"><Str>Pers</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -1831,11 +3174,11 @@ Output =
 </Node>
 </Parse>
 <Parse>
-<Node cat="Word" id="_2:_12">
+<Node cat="Word" id="_2._12">
 <Fs></Fs>
-<Node cat="Infl" id="_2:_13">
+<Node cat="Infl" id="_2._13">
 <Fs></Fs>
-<Leaf cat="1st" id="_2:_4" all="true" gloss="1SUB">
+<Leaf cat="1st" id="_2._4" all="true" gloss="1SUB">
 <Fs>
 <F name="cat"><Str>1st</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -1878,11 +3221,11 @@ Output =
 </Lexfs>
 <Str>k</Str>
 </Leaf>
-<Node cat="Infl" id="_2:_14">
+<Node cat="Infl" id="_2._14">
 <Fs></Fs>
-<Node cat="Infl" id="_2:_5">
+<Node cat="Infl" id="_2._5">
 <Fs></Fs>
-<Leaf cat="Rec" id="_2:_6" all="true" gloss="REC">
+<Leaf cat="Rec" id="_2._6" all="true" gloss="REC">
 <Fs>
 <F name="cat"><Str>Rec</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -1909,11 +3252,11 @@ Output =
 </Lexfs>
 <Str>la</Str>
 </Leaf>
-<Node cat="Infl" id="_2:_7" all="true">
+<Node cat="Infl" id="_2._7" all="true">
 <Fs></Fs>
-<Node cat="Stem" id="_2:_8" all="true">
+<Node cat="Stem" id="_2._8" all="true">
 <Fs></Fs>
-<Leaf cat="Root" id="_2:_9" all="true" gloss="saludar">
+<Leaf cat="Root" id="_2._9" all="true" gloss="saludar">
 <Fs>
 <F name="cat"><Str>Root</Str></F>
 <F name="gloss"><Str>saludar</Str></F>
@@ -1949,7 +3292,7 @@ Output =
 <Str>mastak†a</Str>
 </Leaf>
 </Node>
-<Leaf cat="Asp" id="_2:_10" all="true" gloss="IMPF">
+<Leaf cat="Asp" id="_2._10" all="true" gloss="IMPF">
 <Fs>
 <F name="cat"><Str>Asp</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -1980,7 +3323,7 @@ Output =
 </Leaf>
 </Node>
 </Node>
-<Leaf cat="Pers" id="_2:_11" all="true" gloss="1PL">
+<Leaf cat="Pers" id="_2._11" all="true" gloss="1PL">
 <Fs>
 <F name="cat"><Str>Pers</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -2032,11 +3375,11 @@ Output =
 </Node>
 </Parse>
 <Parse>
-<Node cat="Word" id="_3:_15">
+<Node cat="Word" id="_3._15">
 <Fs></Fs>
-<Node cat="Infl" id="_3:_16">
+<Node cat="Infl" id="_3._16">
 <Fs></Fs>
-<Leaf cat="1st" id="_3:_4" all="true" gloss="1SUB">
+<Leaf cat="1st" id="_3._4" all="true" gloss="1SUB">
 <Fs>
 <F name="cat"><Str>1st</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -2079,9 +3422,9 @@ Output =
 </Lexfs>
 <Str>k</Str>
 </Leaf>
-<Node cat="Infl" id="_3:_17">
+<Node cat="Infl" id="_3._17">
 <Fs></Fs>
-<Leaf cat="Rec" id="_3:_6" all="true" gloss="REC">
+<Leaf cat="Rec" id="_3._6" all="true" gloss="REC">
 <Fs>
 <F name="cat"><Str>Rec</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -2108,13 +3451,13 @@ Output =
 </Lexfs>
 <Str>la</Str>
 </Leaf>
-<Node cat="Infl" id="_3:_18">
+<Node cat="Infl" id="_3._18">
 <Fs></Fs>
-<Node cat="Infl" id="_3:_7" all="true">
+<Node cat="Infl" id="_3._7" all="true">
 <Fs></Fs>
-<Node cat="Stem" id="_3:_8" all="true">
+<Node cat="Stem" id="_3._8" all="true">
 <Fs></Fs>
-<Leaf cat="Root" id="_3:_9" all="true" gloss="saludar">
+<Leaf cat="Root" id="_3._9" all="true" gloss="saludar">
 <Fs>
 <F name="cat"><Str>Root</Str></F>
 <F name="gloss"><Str>saludar</Str></F>
@@ -2150,7 +3493,7 @@ Output =
 <Str>mastak†a</Str>
 </Leaf>
 </Node>
-<Leaf cat="Asp" id="_3:_10" all="true" gloss="IMPF">
+<Leaf cat="Asp" id="_3._10" all="true" gloss="IMPF">
 <Fs>
 <F name="cat"><Str>Asp</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -2180,7 +3523,7 @@ Output =
 <Str>ya</Str>
 </Leaf>
 </Node>
-<Leaf cat="Pers" id="_3:_11" all="true" gloss="1PL">
+<Leaf cat="Pers" id="_3._11" all="true" gloss="1PL">
 <Fs>
 <F name="cat"><Str>Pers</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -2234,11 +3577,1328 @@ Output =
 </Parse>
 </Analysis>
 </analysis>
-
 </parse>
-
+ <Wordform DbRef=DB_REF_HERE Form="klamastak'ayau">
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="k"/>
+	  <MSI DbRef='1SUB'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="la"/>
+	  <MSI DbRef='REC'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="mastak†a"/>
+	  <MSI DbRef='saludar'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="ya"/>
+	  <MSI DbRef='IMPF'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="w"/>
+	  <MSI DbRef='1PL'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+ </Wordform>
+<parse id=k'a'unap'it'ik>
+<analysis cat="?">
+<morph id=IRR allo=#k†a# type="p">
+<morph id=decirselo allo=#†un# type="r">
+<morph id=FUT allo=#a# type="s">
+<morph id=2SUBFUT allo=#p†i# type="s">
+<morph id=2PLSUB allo=#t†ik# type="s">
+<Analysis count="3">
+<Parse>
+<Node cat="Word" id="_1._1">
+<Fs></Fs>
+<Node cat="Infl" id="_1._2">
+<Fs></Fs>
+<Node cat="Infl" id="_1._3">
+<Fs></Fs>
+<Leaf cat="Mood" id="_1._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_1._5">
+<Fs></Fs>
+<Node cat="Infl" id="_1._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_1._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_1._8" all="true" gloss="decirselo">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_1._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_1._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="2PlSubj" id="_1._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_2._12">
+<Fs></Fs>
+<Node cat="Infl" id="_2._13">
+<Fs></Fs>
+<Leaf cat="Mood" id="_2._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_2._14">
+<Fs></Fs>
+<Node cat="Infl" id="_2._5">
+<Fs></Fs>
+<Node cat="Infl" id="_2._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_2._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_2._8" all="true" gloss="decirselo">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_2._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_2._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+<Leaf cat="2PlSubj" id="_2._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_3._15">
+<Fs></Fs>
+<Node cat="Infl" id="_3._16">
+<Fs></Fs>
+<Node cat="Infl" id="_3._17">
+<Fs></Fs>
+<Node cat="Infl" id="_3._18">
+<Fs></Fs>
+<Leaf cat="Mood" id="_3._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_3._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_3._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_3._8" all="true" gloss="decirselo">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>decirselo</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object">
+<Fs>
+<F name="number"><Any/></F>
+<F name="person"><Any/></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_3._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="Pers" id="_3._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+<Leaf cat="2PlSubj" id="_3._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+</Analysis>
+</analysis>
+<analysis cat="?">
+<morph id=IRR allo=#k†a# type="p">
+<morph id=hacerse allo=#†un# type="r">
+<morph id=FUT allo=#a# type="s">
+<morph id=2SUBFUT allo=#p†i# type="s">
+<morph id=2PLSUB allo=#t†ik# type="s">
+<Analysis count="3">
+<Parse>
+<Node cat="Word" id="_1._1">
+<Fs></Fs>
+<Node cat="Infl" id="_1._2">
+<Fs></Fs>
+<Node cat="Infl" id="_1._3">
+<Fs></Fs>
+<Leaf cat="Mood" id="_1._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_1._5">
+<Fs></Fs>
+<Node cat="Infl" id="_1._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_1._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_1._8" all="true" gloss="hacerse">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_1._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_1._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="2PlSubj" id="_1._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_2._12">
+<Fs></Fs>
+<Node cat="Infl" id="_2._13">
+<Fs></Fs>
+<Leaf cat="Mood" id="_2._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_2._14">
+<Fs></Fs>
+<Node cat="Infl" id="_2._5">
+<Fs></Fs>
+<Node cat="Infl" id="_2._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_2._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_2._8" all="true" gloss="hacerse">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_2._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+<Leaf cat="Pers" id="_2._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+<Leaf cat="2PlSubj" id="_2._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Node>
+</Parse>
+<Parse>
+<Node cat="Word" id="_3._15">
+<Fs></Fs>
+<Node cat="Infl" id="_3._16">
+<Fs></Fs>
+<Node cat="Infl" id="_3._17">
+<Fs></Fs>
+<Node cat="Infl" id="_3._18">
+<Fs></Fs>
+<Leaf cat="Mood" id="_3._4" all="true" gloss="IRR">
+<Fs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Mood</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>IRR</Str></F>
+<F name="lex"><Str>k†a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="mood"><Str>irrealis</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>k†a</Str>
+</Leaf>
+<Node cat="Infl" id="_3._6" all="true">
+<Fs></Fs>
+<Node cat="Stem" id="_3._7" all="true">
+<Fs></Fs>
+<Leaf cat="Root" id="_3._8" all="true" gloss="hacerse">
+<Fs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Root</Str></F>
+<F name="gloss"><Str>hacerse</Str></F>
+<F name="lex"><Str>†un</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="object"><Str>none</Str></F>
+</Fs>
+</F>
+<F name="rootCat"><Str>V</Str></F>
+</Lexfs>
+<Str>†un</Str>
+</Leaf>
+</Node>
+<Leaf cat="Tense" id="_3._9" all="true" gloss="FUT">
+<Fs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Tense</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>FUT</Str></F>
+<F name="lex"><Str>a</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>a</Str>
+</Leaf>
+</Node>
+</Node>
+<Leaf cat="Pers" id="_3._10" all="true" gloss="2SUBFUT">
+<Fs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>Pers</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2SUBFUT</Str></F>
+<F name="lex"><Str>p†i</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="location"><Str>none</Str></F>
+<F name="subject">
+<Fs>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="tense"><Str>future</Str></F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>p†i</Str>
+</Leaf>
+</Node>
+<Leaf cat="2PlSubj" id="_3._11" all="true" gloss="2PLSUB">
+<Fs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Fs>
+<Lexfs>
+<F name="cat"><Str>2PlSubj</Str></F>
+<F name="fromCat"><Str>V</Str></F>
+<F name="gloss"><Str>2PLSUB</Str></F>
+<F name="lex"><Str>t†ik</Str></F>
+<F name="morphoSyntax">
+<Fs>
+<F name="aspect"><Str>perfect</Str></F>
+<F name="subject">
+<Fs>
+<F name="number"><Str>pl</Str></F>
+<F name="person">
+<Fs>
+<F name="1"><Str>-</Str></F>
+<F name="2"><Str>+</Str></F>
+</Fs>
+</F>
+</Fs>
+</F>
+</Fs>
+</F>
+<F name="toCat"><Str>V</Str></F>
+</Lexfs>
+<Str>t†ik</Str>
+</Leaf>
+</Node>
+</Node>
+</Parse>
+</Analysis>
+</analysis>
+</parse>
+ <Wordform DbRef=DB_REF_HERE Form="k'a'unap'it'ik">
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="k†a"/>
+	  <MSI DbRef='IRR'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="†un"/>
+	  <MSI DbRef='decirselo'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="a"/>
+	  <MSI DbRef='FUT'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="p†i"/>
+	  <MSI DbRef='2SUBFUT'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="t†ik"/>
+	  <MSI DbRef='2PLSUB'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="k†a"/>
+	  <MSI DbRef='IRR'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="†un"/>
+	  <MSI DbRef='hacerse'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="a"/>
+	  <MSI DbRef='FUT'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="p†i"/>
+	  <MSI DbRef='2SUBFUT'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="t†ik"/>
+	  <MSI DbRef='2PLSUB'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+ </Wordform>
 </AResult>
-
 
 End of AmpleParseText()
 
@@ -2247,20 +4907,15 @@ Input =
 bzorao
 Output =
 <AResult>
-
 <parse id=bzorao>
-
 <analysis cat="V">
-
 <morph id=C allo=#p# type="p">
-
 <morph id=empezar allo=#solao# type="r">
-
 <Analysis count="1">
 <Parse>
-<Node cat="Word" id="_1:_1">
+<Node cat="Word" id="_1._1">
 <Fs></Fs>
-<Leaf cat="Aspect" id="_1:_2" gloss="C">
+<Leaf cat="Aspect" id="_1._2" gloss="C">
 <Fs>
 <F name="cat"><Str>Aspect</Str></F>
 <F name="fromCat"><Str>V</Str></F>
@@ -2287,9 +4942,9 @@ Output =
 </Lexfs>
 <Str>p</Str>
 </Leaf>
-<Node cat="Stem" id="_1:_3">
+<Node cat="Stem" id="_1._3">
 <Fs></Fs>
-<Leaf cat="Root" id="_1:_4" gloss="empezar">
+<Leaf cat="Root" id="_1._4" gloss="empezar">
 <Fs>
 <F name="cat"><Str>Root</Str></F>
 <F name="gloss"><Str>empezar</Str></F>
@@ -2321,10 +4976,21 @@ Output =
 </Parse>
 </Analysis>
 </analysis>
-
 </parse>
-
+ <Wordform DbRef=DB_REF_HERE Form="bzorao">
+  <WfiAnalysis>
+   <Morphs>
+	<Morph>
+	  <MoForm DbRef='0' Label="p"/>
+	  <MSI DbRef='C'/>
+	</Morph>
+	<Morph>
+	  <MoForm DbRef='0' Label="solao"/>
+	  <MSI DbRef='empezar'/>
+	</Morph>
+   </Morphs>
+  </WfiAnalysis>
+ </Wordform>
 </AResult>
-
 
 End of AmpleParseText()

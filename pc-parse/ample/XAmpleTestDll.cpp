@@ -37,7 +37,12 @@ AMPLEFUNC1  pfAmpleReset_g            = 0;
 AMPLEFUNC5  pfAmpleLoadControlFiles_g = 0;
 AMPLEFUNC3  pfAmpleLoadDictionary_g   = 0;
 AMPLEFUNC3  pfAmpleParseFile_g        = 0;
+#ifndef hab35013
+AMPLEFUNC3  pfAmpleParseText_g        = 0;
+AMPLEFUNC2  pfAmpleGetParameter_g     = 0;
+#else // hab35013
 AMPLEFUNC2  pfAmpleParseText_g        = 0;
+#endif /* hab35013 */
 AMPLEFUNC3  pfAmpleSetParameter_g     = 0;
 AMPLEFUNC2  pfAmpleLoadGrammarFile_g  = 0;
 
@@ -90,7 +95,11 @@ const char *	apszTtDictFiles_g[5] = {
 const char *    pszTtGrammarFile_g = "test/tepehua/ttpatr.grm";
 const char *	pszTtInputFile_g   = "test/tepehua/Ephtst.txt";
 const char *	pszTtOutputFile_g  = "test/tepehua/Ephtst.ana";
+#ifndef hab35013
+const char *	pszTtWord_g        = "klamastak'ayau k'a'unap'it'ik";
+#else
 const char *	pszTtWord_g        = "klamastak'ayau";
+#endif // hab35013
 
 AmpleSetup *	pYalAmple_g = NULL;
 const char *	apszYalControlFiles_g[4] = {
@@ -156,8 +165,15 @@ pfAmpleLoadDictionary_g   = (AMPLEFUNC3)GetProcAddress(hAmpleLib_g,
 							  "AmpleLoadDictionary");
 pfAmpleParseFile_g        = (AMPLEFUNC3)GetProcAddress(hAmpleLib_g,
 							  "AmpleParseFile");
+#ifndef hab35013
+pfAmpleParseText_g        = (AMPLEFUNC3)GetProcAddress(hAmpleLib_g,
+							  "AmpleParseText");
+pfAmpleGetParameter_g     = (AMPLEFUNC2)GetProcAddress(hAmpleLib_g,
+							  "AmpleGetParameter");
+#else // hab35013
 pfAmpleParseText_g        = (AMPLEFUNC2)GetProcAddress(hAmpleLib_g,
 							  "AmpleParseText");
+#endif // hab35013
 pfAmpleSetParameter_g     = (AMPLEFUNC3)GetProcAddress(hAmpleLib_g,
 							  "AmpleSetParameter");
 pfAmpleDeleteSetup_g      = (AMPLEFUNC1)GetProcAddress(hAmpleLib_g,
@@ -174,6 +190,9 @@ assert(pfAmpleParseFile_g);
 assert(pfAmpleParseText_g);
 assert(pfAmpleSetParameter_g);
 assert(pfAmpleLoadGrammarFile_g);
+#ifndef hab35013
+assert(pfAmpleGetParameter_g);
+#endif // hab35013
 
 // truncate the log file
 FILE * fp = fopen(pszLogFile_g, "w");
@@ -448,15 +467,41 @@ void parseWord(
 	AmpleSetup *	pSetup_io,
 	const char *	pszWord_in)
 {
+#ifndef hab35013
+if (pfAmpleSetParameter_g != NULL)
+  {
+	pszResult_g = (*pfAmpleSetParameter_g)(pSetup_io,
+					   "OutputStyle", "AResult");
+	printf("AmpleSetParameter(\"OutputStyle\", \"AResult\"):\n\t%s\n",
+	   pszResult_g);
+  }
+#endif // hab35013
+
 if (pfAmpleParseText_g != NULL)
 	{
+#ifndef hab35013
+	pszResult_g = (*pfAmpleParseText_g)(pSetup_io,
+					 pszWord_in, "n");
+	printf("AmpleParseText(\"%s, %s\"):\n%s\n",
+	   pszWord_in, "n", pszResult_g);
+#else // hab35013
 	pszResult_g = (*pfAmpleParseText_g)(pSetup_io,
 					 pszWord_in);
 	printf("AmpleParseText(\"%s\"):\n%s\n",
 	   pszWord_in, pszResult_g);
+#endif // hab35013
 	}
 else
 	printf("CANNOT CALL DLL/AmpleParseText()\n");
+#ifndef hab35013
+if (pfAmpleSetParameter_g != NULL)
+  {
+	pszResult_g = (*pfAmpleSetParameter_g)(pSetup_io,
+				   "OutputStyle", "Ana");
+	printf("AmpleSetParameter(\"OutputStyle\", \"Ana\"):\n\t%s\n",
+	   pszResult_g);
+  }
+#endif // hab35013
 }
 
 ///////////////////////////////////////////////////////////////////////////////
