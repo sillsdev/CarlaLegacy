@@ -1176,43 +1176,45 @@ bp = szStripBuf_s;
 /*
  *  look for root begin and end markers - failures will not have these markers
  */
-root_beg = strchr( cp, BORT);
-while (root_beg != (char *)NULL)
+while ((root_beg = strchr( cp, BORT)) != NULL)
+{
+  while (root_beg != (char *)NULL)
 	{
-	if ((*(root_beg+1)==' ') && ((root_beg==cp) || (*(root_beg-1)==' ')))
+	  if ((*(root_beg+1)==' ') && ((root_beg==cp) || (*(root_beg-1)==' ')))
 		break;
-	root_beg = strchr(root_beg+1,BORT);
+	  root_beg = strchr(root_beg+1,BORT);
 	}
-root_end = (root_beg!=(char *)NULL) ? strchr(root_beg,EORT) : (char *)NULL;
-while (root_end != (char *)NULL)
+  root_end = (root_beg!=(char *)NULL) ? strchr(root_beg,EORT) : (char *)NULL;
+  while (root_end != (char *)NULL)
 	{
-	if ( (*(root_end-1)==' ') &&
-		 ((*(root_end+1)==' ')||(*(root_end+1)=='\n')||(*(root_end+1)==NUL)) )
+	  if ( (*(root_end-1)==' ') &&
+	   ((*(root_end+1)==' ')||(*(root_end+1)=='\n')||(*(root_end+1)==NUL)) )
 		break;
-	root_end = strchr(root_end+1,EORT);
+	  root_end = strchr(root_end+1,EORT);
 	}
-if ((root_beg != (char *)NULL) && (root_end != (char *)NULL))
+  if ((root_beg != (char *)NULL) && (root_end != (char *)NULL))
 	{
-	while (cp < root_beg)               /* copy over any prefix forms */
+	  while (cp < root_beg)               /* copy over any prefix forms */
 		*bp++ = *cp++;
-	cp = root_beg + 2;                  /* point to category of 1st root */
-	while (cp < root_end)
+	  cp = root_beg + 2;                  /* point to category of 1st root */
+	  while (cp < root_end)
 		{                               /* copy over each root */
-		cp = strchr(cp, ' ') + 1;        /* skip to begin of root */
-		while (*cp != ' ')              /* copy over root */
+	  cp = strchr(cp, ' ') + 1;        /* skip to begin of root */
+	  while (*cp != ' ')              /* copy over root */
 			*bp++ = *cp++;
-		*bp++ = *cp++;                  /* copy over space */
-		cp++;                           /* point to what comes after root */
+	  *bp++ = *cp++;                  /* copy over space */
+	  cp++;                           /* point to what comes after root */
 		}
-	/*
-	 *  if there are suffixes, then there is a space after the end of the
-	 *  root; pass over it
-	 */
-	if (*(cp = root_end + 1))
+	  /*
+	   *  if there are suffixes, then there is a space after the end of the
+	   *  root; pass over it
+	   */
+	  if (*(cp = root_end + 1))
 		cp++;
-	else
+	  else
 		*(bp-1) = NUL;                  /* no suffix; delete trailing space */
 	}
+}
 while (*cp)                     /* pass the rest of the analysis on */
 	*bp++ = *cp++;
 return(szStripBuf_s);

@@ -3,13 +3,15 @@
  * Copyright 1998, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
-#define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL -16		/* bug fix or other minor change */
-#define DATE "October 16, 2002"	/* date of release version */
-#define YEAR "2002"		/* used for copyright notice in banner */
+#define REVISION 2		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0		/* bug fix or other minor change */
+#define DATE "December 3, 2004"	/* date of release version */
+#define YEAR "2004"		/* used for copyright notice in banner */
 
 /****************************************************************************
  * EDIT HISTORY
+ * 03-Dec-2004	hab  - Allow for interfixes
+ * [2.2.0]
  * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library
  * [2.1b16]
  * 15-Oct-2002	SRMc - facilitate checking memory allocation
