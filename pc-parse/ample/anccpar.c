@@ -1,6 +1,6 @@
 #ifdef EXPERIMENTAL
 #ifndef hab350
-/* ANCCPAR.C - parse allomorph never co-occurrence constraint expressions for XAMPLE
+/* ANCCPAR.C - parse allomorphs never co-occur constraint expressions for XAMPLE
  *****************************************************************************
  *
  * AmpleNeverConstraint * parseAmpleNeverConstraint(char * pszLine_in,
@@ -29,7 +29,7 @@ static const char	szWhitespace_m[7] = " \t\n\r\f\v";
  *    line - pointer to NUL-terminated string containing a list of
  *              allomorph IDs followed by environment constraints
  * DESCRIPTION
- *    Parse an allomorph never co-occurrence constraint, which consists of a
+ *    Parse an allomorphs never co-occur constraint, which consists of a
  *     list of allomorph IDs followed by allomorph ID environment constraints.
  * RETURN VALUE
  *    pointer to AmpleNeverConstraint structure containing the constraints,
@@ -49,7 +49,7 @@ StringList *	         pAlloList = NULL;
 StringList *	         pLastAllo = NULL;
 StringList *	         pAllo;
 int			 cSave = NUL;
-char *			 pszEnvErrHead = "NEVER ENVIRONMENT: ";
+char *			 pszEnvErrHead = "ALLOMORPHS NEVER CO-OCCUR: ";
 /*
  *  first, check for an empty environment
  */
@@ -58,7 +58,7 @@ if ((line == (char *)NULL) || (*line == NUL))
 	{
 	if (pAmple_in->pLogFP != NULL)
 	fprintf(pAmple_in->pLogFP,
-		"%sEmpty allomorph never co-occurrence constraint.\n", pszEnvErrHead);
+		"%sEmpty allomorphs never co-occur constraint.\n", pszEnvErrHead);
 	return( (AmpleNeverConstraint *)NULL);         /* no environment */
 	}
 pszToken     = line;
@@ -66,7 +66,7 @@ pszNextToken = NULL;
 if (*pszToken == '{')
 	{
 	/*
-	 *  get the allomorph never co-occurrence constraint label
+	 *  get the allomorphs never co-occur constraint label
 	 */
 	pszName = pszToken + 1;
 	pszName += strspn(pszName, szWhitespace_m);
@@ -74,11 +74,11 @@ if (*pszToken == '{')
 	{
 	if (szRecordKey_g[0])
 		reportError(ERROR_MSG,
-	"%sMissing allomorph never co-occurrence constraint label (in entry %s)\n",
+	"%sMissing allomorphs never co-occur constraint label (in entry %s)\n",
 			pszEnvErrHead, szRecordKey_g);
 	else
 		reportError(ERROR_MSG,
-			"%sMissing allomorph never co-occurrence constraint label\n",
+			"%sMissing allomorphs never co-occur constraint label\n",
 			pszEnvErrHead);
 	goto cleanup;
 	}
@@ -152,7 +152,7 @@ pNeverConstraint->pszLabel     = pszLabel;
 pNeverConstraint->pAlloIDs     = pAlloList;
 pNeverConstraint->pEnvironment = parseAmpleNeverEnvConstraint(
 					   pszToken,
-					   "allomorph never co-occurrence constraint",
+					   "allomorphs never co-occur constraint",
 					   NULL,
 					   NULL,
 					   NULL,
@@ -185,7 +185,7 @@ return( pNeverConstraint );
  * NAME
  *    writeAmpleNeverConstraint
  * DESCRIPTION
- *    write an allomorph never co-occurrence constraint to a file
+ *    write an allomorphs never co-occur constraint to a file
  * RETURN VALUE
  *    none
  */
@@ -243,7 +243,7 @@ AmpleNeverConstraint *	pConstraint;
 if (pOutputFP_in == NULL)
 	return;
 
-fprintf(pOutputFP_in, "Never Environment Constraints:\n");
+fprintf(pOutputFP_in, "Allomorphs Never Co-occur Constraints:\n");
 for (	pConstraint = pAmple_in->pNeverConstraints ;
 	pConstraint ;
 	pConstraint = pConstraint->pNext )
@@ -258,7 +258,7 @@ for (	pConstraint = pAmple_in->pNeverConstraints ;
  * NAME
  *    stringifyAmpleNeverConstraint
  * DESCRIPTION
- *    add the expansion of the given allomorph never co-occurrence constraint
+ *    add the expansion of the given allomorphs never co-occur constraint
  *    to the end of the dynamically allocated string
  * RETURN VALUE
  *    pointer to the (possibly reallocated) dynamic string

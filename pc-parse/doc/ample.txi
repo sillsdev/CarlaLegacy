@@ -90,7 +90,7 @@ value to the @code{\patr} field in the analysis data file for use by
 XAMPLE in controlling the PCPATR word parser.
 
 @c Added by hab 20-Jul-2001
-@item 7. Version 3.4.0 (March 2002) added the @code{\\catcr}
+@item 7. Version 3.4.0 (July 2001) added the @code{\\catcr}
 field in the analysis data file for words which consist solely of
 compound roots (i.e. no affixes).  It indicates whether the category of
 the word (i.e. the content of the @code{\\cat} field in the analysis
@@ -101,7 +101,7 @@ compound.  The field content should be either @code{left} or
 @c Added by hab 05-Mar-2002 for XAMPLE
 @item 8. Version 3.5.0 (March 2002) added the @code{\\ancc}
 field in the analysis data file for use by
-XAMPLE for handling allomorph never co-occurrence constraints.
+XAMPLE for handling allomorphs never co-occur constraints.
 @end table
 
 @c ----------------------------------------------------------------------------
@@ -388,7 +388,7 @@ ignored by AMPLE.
 @c \catct added by hab 20-Jul-2001
 @c \ancc added by hab 05-Mar-2002 for XAMPLE
 @menu
-* \ancc::              Allomorph never co-occurrence constraint
+* \ancc::              Allomorphs never co-occur constraint
 * \ap::                Allomorph properties
 * \ca::                Categories
 * \cat (xxAD01.CTL)::  Category output control
@@ -422,24 +422,24 @@ ignored by AMPLE.
 @end menu
 
 @node \ancc, \ap, Analysis data file fields, Analysis data file fields
-@subsection Allomorph Never Co-occurrence Constraint: \ancc
+@subsection Allomorphs Never Co-occur Constraint: \ancc
 @findex \ancc
 
-Allomorph Never Co-occurrence constraints are valid only for XAMPLE.
+Allomorphs Never Co-occur constraints are valid only for XAMPLE.
 
-An allomorph never co-occurrence constraint is defined by the
+An allomorphs never co-occur constraint is defined by the
 @code{\ancc} field code followed by one or more allomorph identification
-strings, and finally an allomorph never environment constraint.  This
+strings, and finally an allomorphs never co-occur environment.  This
 constraint states that the indicated allomorph identification strings
-may @b{never} co-occur.  If there are more than one environments, the
+may @b{never} co-occur.  If there is more than one environment, the
 various environments are logically ANDed together (i.e. when all of the
 indicated environments are found, then the constraint will fail; if
 some, but not all, of the environments are found, then the constraint
 will succeed).
 
-For the syntax of allomorph never co-occurrence constraints, see
+For the syntax of allomorphs never co-occur constraints, see
 @ifset txt
-`Allomorph Never Co-occurrence Constraint Syntax' below.
+`Allomorphs Never Co-occur Constraint Syntax' below.
 @end ifset
 @ifclear txt
 @ref{ANCC syntax}.
@@ -1653,13 +1653,13 @@ in a literal only if they are immediately preceded by a backslash:
 
 @c ----------------------------------------------------------------------------
 @node ANCC syntax, , MCC syntax, Analysis data file
-@section Allomorph Never Co-occurrence Constraint Syntax
+@section Allomorphs Never Co-occur Constraint Syntax
 
 This section presents a grammatical description of the syntax of
-allomorph never co-occurrence constraints in BNF notation.  These constraints
+allomorphs never co-occur constraints in BNF notation.  These constraints
 are found in the analysis data file
 @ifset txt
-(see `Allomorph Never Co-occurrence Constraint: \ancc' above).
+(see `Allomorphs Never Co-occur Constraint: \ancc' above).
 @end ifset
 @ifclear txt
 (@pxref{\ancc}).
@@ -1742,8 +1742,7 @@ are found in the analysis data file
 
 @item 1b.
 A literal enclosed in braces is an arbitary identifier for this
-allomorph never co-occurrence constraint.  (This feature was added to support
-LinguaLinks.)
+allomorphs never co-occur constraint.
 
 @item 2ab.
 A literal is an allomorph identification string from one of the dictionary files.
@@ -1772,8 +1771,8 @@ A literal is an allomorph identification string from one of the dictionary files
 
 @item 10.
 A @code{/} is usually used for string environment constraints, but may
-used for allomorph never environment constraints in @code{\ancc} fields in the
-analysis data file.
+used for allomorphs never co-occur environment constraints in
+@code{\ancc} fields in the analysis data file.
 
 @item 11.
 A tilde (@code{~}) attached to the environment bar inverts the sense of

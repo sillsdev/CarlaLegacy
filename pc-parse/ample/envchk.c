@@ -1641,9 +1641,9 @@ for (;; right = right->pRight )
  * ARGUMENTS
  *    left  - pointer to leftward headlist structure
  *    right - pointer to rightward headlist structure
- *    nenv  - pointer to the allomorph never co-occurrence list
+ *    nenv  - pointer to the allomorphs never co-occur list
  * DESCRIPTION
- *    Check if we meet the given allomorph never co-occurrence environment.
+ *    Check if we meet the given allomorphs never co-occur environment.
  * RETURN VALUE
  *    nonzero if okay, zero if the environment is wrong
  */
@@ -1664,7 +1664,7 @@ if (nenv == (AmpleEnvConstraint *)NULL)
 pPreviousWord_m = pPreviousWord_in;
 pNextWord_m     = pNextWord_in;
 /*
- *  go through the list of allomorph never co-occurrence conditions, quitting
+ *  go through the list of allomorphs never co-occur conditions, quitting
  *  at the first one that succeeds
  */
 for ( ; nenv != (AmpleEnvConstraint *)NULL ; nenv = nenv->pNext )

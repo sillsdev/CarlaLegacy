@@ -272,7 +272,7 @@ typedef struct ample_env_item {
 #define E_PUNCT		0100	/* punctuation environment 3.3.0 hab */
 #ifdef EXPERIMENTAL
 #ifndef hab350
-#define E_ALLOID	0040	/* allomorph never co-occurence constraint */
+#define E_ALLOID	0040	/* allomorphs never co-occur constraint */
 #endif /* hab350 */
 #endif /* EXPERIMENTAL */
 

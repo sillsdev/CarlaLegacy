@@ -1068,7 +1068,7 @@ while (*rp != NUL)
 
 #ifdef EXPERIMENTAL
 #ifndef hab350
-	case 'n':		/* XAmple Never Environment Constraint */
+	case 'n':		/* Allomorphs Never Co-occur Constraint */
 		if (pAmple_io->bEnableAllomorphIDs)
 			{
 		  szRecordKey_g[0] = NUL; /* not using dict entries */

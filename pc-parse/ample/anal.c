@@ -3299,7 +3299,7 @@ return TRUE;
  *    len     - unused
  * DESCRIPTION
  *    check whether the current morpheme fails any applicable
- *    allomorph never co-occurence constraints
+ *    allomorphs never co-occur constraints
  * RETURN VALUE
  *    nonzero if okay, zero if the test fails
  */
@@ -3326,12 +3326,12 @@ return TRUE;
  * NAME
  *    checkAmpleNeverConstraint
  * DESCRIPTION
- *    check whether this allomorph never co-occurence constraint applies to the
+ *    check whether this allomorphs never co-occur constraint applies to the
  *    allomorph of this morpheme,
  *    and if so, check whether the allomorph fails the constraint
  * RETURN VALUE
  *    TRUE if the current morpheme's allomorph fails to meet an applicable
- *    allomorph never constraint, FALSE if it meets one
+ *    allomorphs never co-occur constraint, FALSE if it meets one
  */
 static int checkAmpleNeverConstraint(pNeverConstraint_in, pCurrent_in,
 					 pLeft_in, pAmple_in)
@@ -3406,7 +3406,7 @@ for ( tp = pNeverConstraint_in->pAlloIDs, hp = pCurrent_in ; hp ; )
 	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
 		{
 		store_AMPLE_trace(pAmple_in,
-		  "        Never Environment Constraint Failed for %s:\n",
+		   "        Allomorphs Never Co-occur Constraint Failed for %s:\n",
 				  pCurrent_in->pAllomorph->pszAllomorphID);
 		store_AMPLE_trace(pAmple_in, "                ", NULL);
 		if (pAmple_in->pszTrace != NULL)

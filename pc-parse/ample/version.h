@@ -5,12 +5,12 @@
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 5		/* enhancement requiring adding to book */
 #define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "March 5, 2002"	/* date of release version */
+#define DATE "March 6, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
- * 04-Mar-2002  hab  - Add Allomorph Never Co-occurrence Constraints
+ * 06-Mar-2002  hab  - Add Allomorphs Never Co-occur Constraints
  * [3.5.0]               (for XAmple only)
  * 24-Jul-2001  hab  - Fix bug: empty environment constraint messages did not
  * [3.4.1]               include any information about which entry they were

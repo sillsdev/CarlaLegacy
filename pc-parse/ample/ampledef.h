@@ -263,7 +263,7 @@ struct ample_morph_constraint {
  * NAME
  *    AmpleNeverConstraint (struct ample_never_constraint)
  * DESCRIPTION
- *    structure for allomorph never co-occurrence constraints
+ *    structure for allomorphs never co-occur constraints
  *
  *    All of the constraints are stored in a single linked list.
  *    Each node of this list has a pointer to a linked list of allomoprh IDs,

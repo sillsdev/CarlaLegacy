@@ -253,7 +253,7 @@ pszEnvLexLine_m = line;       /* 1.9z BJY */
  *    iType - AMPLE_STRING_ENVIR if string environment,             3.3.0 hab
  *            AMPLE_MORPH_ENVIR  if morpheme environment,
  *            AMPLE_PUNCT_ENVIR  if punctuation environment.
- *            AMPLE_ALLOID_ENVIR  if allomorph never co-occurrence. 3.5.0 hab
+ *            AMPLE_ALLOID_ENVIR  if allomorphs never co-occur. 3.5.0 hab
  * DESCRIPTION
  *    Get the next lexical token, storing a string if needed.
  * RETURN VALUE
@@ -324,7 +324,7 @@ switch (eEnvLexState_m)
  *    iType - AMPLE_STRING_ENVIR if string environment,             3.3.0 hab
  *            AMPLE_MORPH_ENVIR  if morpheme environment,
  *            AMPLE_PUNCT_ENVIR  if punctuation environment.
- *            AMPLE_ALLOID_ENVIR if allomorph never co-occurrence.  3.5.0 hab
+ *            AMPLE_ALLOID_ENVIR if allomorphs never co-occur.  3.5.0 hab
  * DESCRIPTION
  *    Load the next lexical token into szEnvLexToken_m.
  *    This is the only lexical function which modifies pszEnvLex_m.
@@ -458,7 +458,7 @@ else
 						uiRecordNumber_m));
 		  else
 		fprintf(pLogFP_m,
-			 "WARNING: {} invalid in allomorph never co-occurrence environment\n");
+			 "WARNING: {} invalid in allomorphs never co-occur environment\n");
 #endif /* hab350 */
 #else /* EXPERIMENTAL */
 		fprintf(pLogFP_m, /* 3.3.0 hab */
@@ -678,7 +678,7 @@ fprintf(pLogFP_m, "\n");
  *    iType   - AMPLE_STRING_ENVIR if string environment,        3.3.0 hab
  *              AMPLE_MORPH_ENVIR  if morpheme environment,
  *              AMPLE_PUNCT_ENVIR  if punctuation environment.
- *              AMPLE_ALLOID_ENVIR if allo never co-occur.	 3.5.0 hab
+ *              AMPLE_ALLOID_ENVIR if allomorphs never co-occur. 3.5.0 hab
  *    isright - nonzero if right side, zero if left side
  *    flags   - pointer to ec_flags field for env_cond structure
  * DESCRIPTION
@@ -1176,7 +1176,7 @@ return FALSE;
  *    iType - AMPLE_STRING_ENVIR if string environment,             3.3.0 hab
  *            AMPLE_MORPH_ENVIR  if morpheme environment,
  *            AMPLE_PUNCT_ENVIR  if punctuation environment.
- *            AMPLE_ALLOID_ENVIR if allo never co-occur.            3.5.0 hab
+ *            AMPLE_ALLOID_ENVIR if allomorphs never co-occur.      3.5.0 hab
  * DESCRIPTION
  *    Parse a single environment constraint, building the structure for the
  *    interpreter to run over later.
@@ -2492,9 +2492,10 @@ return( head );
  * NAME
  *    parseAmpleNeverEnvConstraint
  * ARGUMENTS
- *    str - pointer to a string defining an allo never co-occurence constraint
+ *    str - pointer to a string defining an allomorphs never co-occur
+ *          constraint
  * DESCRIPTION
- *    Parse an allomorph never co-occurrence constraint, build the
+ *    Parse an allomorphs never co-occur constraint, build the
  *    env_cond structure for it.
  * RETURN VALUE
  *    pointer to the list built, or NULL if an error occurred.
@@ -2544,7 +2545,7 @@ pLogFP_m             = pLogFP_in;
 ppStringList_m       = ppStringList_io;
 ppAlloEnvList_m      = NULL;
 
-pszEnvErrHead_m = "\nNEVER ENVIRONMENT: ";
+pszEnvErrHead_m = "\nALLOMORPHS NEVER CO_OCCUR: ";
 pszEnvErrTail_m = NULL;
 initEnvLex(str);		/* initialize the lexical scan */
 parserror = FALSE;		/* no errors yet */
@@ -2555,7 +2556,7 @@ while ( (token = getEnvLex(0)) != EOF )
 	if (token == ENV_STRENV ||
 	token == ENV_MORPH  ||
 	token == ENV_PUNCT)
-		token = ENV_ALLOID;      /* only allo never co-occurs, so why not? */
+		token = ENV_ALLOID;      /* only allos never co-occur, so why not? */
 	if ( (token == ENV_ALLOID) &&
 		 ((e_cond = env_parse(AMPLE_ALLOID_ENVIR)) != NULL))
 		{
