@@ -285,10 +285,15 @@ while ((pszLine = readLineFromFile(pInputFP_in, NULL, 0)) != NULL)
 	 *  \f and \n can extend over multiple lines, with additional lines
 	 *  marked by a leading tab
 	 */
+	/* this code breaks the /O2 option under Visual Studio .NET somehow
 	apszRecord[iIndex] = strcat(reallocMemory(apszRecord[iIndex],
 						  strlen(apszRecord[iIndex]) +
-								  strlen(pszLine)),
-					pszLine+1);
+							 strlen(pszLine)),
+					   pszLine+1);
+	 */
+	int cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
+	apszRecord[iIndex] = reallocMemory(apszRecord[iIndex], cch);
+	strcat(apszRecord[iIndex], pszLine + 1);
 	}
 	else
 	{

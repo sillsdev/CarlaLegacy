@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 6		/* enhancement requiring adding to book */
-#define PATCHLEVEL 3		/* bug fix or other minor change */
-#define DATE "October 15, 2002"	/* date of release version */
+#define PATCHLEVEL 4		/* bug fix or other minor change */
+#define DATE "October 16, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library
+ * [3.6.4]
  * 15-Oct-2002	SRMc - facilitate checking memory leaks
  * [3.6.3]           - fix more memory allocation problems
  *  4-Oct-2002	SRMc - fix bugs found by evaluating Insure++

@@ -887,6 +887,9 @@ switch (tp->iOpCode & OP_MASK)
 			{
 			val = (strcmp( p, tp->uRight.pszString ) == 0);
 			}
+#if 1
+	get_surf(ARGCURRENT);	/* frees any allocated memory */
+#endif
 		break;
 
 	case STRING_MEMBER: /* 'string' 'is' 'member' IDENTIFIER */
@@ -894,6 +897,9 @@ switch (tp->iOpCode & OP_MASK)
 			{
 			val = isStringClassMember( p, tp->uRight.pStringClass );
 			}
+#if 1
+	get_surf(ARGCURRENT);	/* frees any allocated memory */
+#endif
 		break;
 
 	case ST_IS_AL:      /* 'string' 'is' POSITION 'allomorph' */
@@ -902,6 +908,9 @@ switch (tp->iOpCode & OP_MASK)
 			{
 			val = (strcmp( p, hp2->pCurrentAllo->pszAllomorph ) == 0);
 			}
+#if 1
+	get_surf(ARGCURRENT);	/* frees any allocated memory */
+#endif
 		break;
 
 	case ST_MATCH:      /* 'string' 'matches'  STRING */
@@ -919,6 +928,9 @@ switch (tp->iOpCode & OP_MASK)
 				val = matchBeginning( p, tp->uRight.pszString );
 				}
 			}
+#if 1
+	get_surf(ARGCURRENT);	/* frees any allocated memory */
+#endif
 		break;
 
 	case ST_MAT_MEM: /* 'string' 'matches' 'member' IDENTIFIER */
@@ -935,6 +947,9 @@ switch (tp->iOpCode & OP_MASK)
 				val = matchBeginWithStringClass( p, tp->uRight.pStringClass );
 				}
 			}
+#if 1
+	get_surf(ARGCURRENT);	/* frees any allocated memory */
+#endif
 		break;
 
 	case ST_MAT_AL: /* 'string' 'matches' POSITION 'allomorph' */
@@ -952,6 +967,9 @@ switch (tp->iOpCode & OP_MASK)
 				val = matchBeginning( p, hp2->pCurrentAllo->pszAllomorph );
 				}
 			}
+#if 1
+	get_surf(ARGCURRENT);	/* frees any allocated memory */
+#endif
 		break;
 
 	case TYPE_IS:       /* 'type' 'is' <type> */
@@ -1183,7 +1201,7 @@ switch (pos)
  * RETURN VALUE
  *    pointer to the surface string (all the way to the edge of the word)
  */
-static char *get_surf(pos)
+static char * get_surf(pos)
 int pos;
 {
 static char *	pszAllo_s = NULL;

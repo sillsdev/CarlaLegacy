@@ -4,12 +4,14 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 9		/* bug fix or other minor change */
-#define DATE "October 15, 2002"	/* date of release version */
+#define PATCHLEVEL 10		/* bug fix or other minor change */
+#define DATE "October 16, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library
+ * [1.0.10]
  * 15-Oct-2002	SRMc - facilitate memory leak testing
  * [1.0.9]	     - plug a couple of minor memory leaks
  * 20-Jun-2002  hab  - fix to make work with recent Pc-Patr data structure

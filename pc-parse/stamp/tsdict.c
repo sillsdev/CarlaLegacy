@@ -1648,14 +1648,8 @@ for ( pMorphL = (StampMorphemeList *)pList_in ; pMorphL ; pMorphL = pNext )
 	pNext = pMorphL->mlink;
 	freeMemory(pMorphL->m.pszMorphname);
 	free_allolist(pMorphL->m.pAllomorphs);
-/*  if (pMorphL->m.iMorphType & ROOT)
-	freeMemory(pMorphL->m.u.pRootCategories);
-	else*/
 	if (pMorphL->m.iMorphType & IFX)
 	freeAmpleEnvConstraint( pMorphL->m.u.pInfixEnv );
-#ifdef TONEPARS
-	freeTones( pMorphL->m.pTones );
-#endif
 	freeMemory(pMorphL);
 	}
 }

@@ -4,12 +4,14 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL -15		/* bug fix or other minor change */
-#define DATE "October 4, 2002"	/* date of release version */
+#define PATCHLEVEL -16		/* bug fix or other minor change */
+#define DATE "October 16, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /****************************************************************************
  * EDIT HISTORY
+ * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library
+ * [2.1b16]
  * 15-Oct-2002	SRMc - facilitate checking memory allocation
  * [2.1b15]
  *  4-Oct-2002	SRMc - fix bugs found by evaluating Insure++

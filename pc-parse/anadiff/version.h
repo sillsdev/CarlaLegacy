@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for ANADIFF
  ***************************************************************************
- * Copyright 1997, 2000 by SIL International.  All rights reserved.
+ * Copyright 1997, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 5		/* bug fix or other minor change */
-#define DATE "May 11, 2000"	/* date of release version */
-#define YEAR "1999"		/* used for copyright notice in banner */
+#define PATCHLEVEL 6		/* bug fix or other minor change */
+#define DATE "October 16, 2002"	/* date of release version */
+#define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library
+ * [1.0.6]
  * 11-May-2000	SRMc - fix portability to antique C compilers
  * [1.0.5]
  * 24-Apr-2000	SRMc - remove some leftover cruft from earlier versions that
