@@ -700,10 +700,19 @@ void CLangModelsDoc::OnCustomizeUserTestDisplay()
 
 #ifndef mr270
 	// extract Font Face Name
+
+	CFont fontTemp,*pFont ;
+	pFont =& fontTemp;
 	LOGFONT lf;
-	CFont *pFont = m_pLang->getFont();
-	if( pFont != NULL ) {
-		pFont->GetLogFont(&lf);}
+	if(getLangDisplayInfo()->m_bShowUserTestsInLangFont)
+	{
+		pFont = m_pLang->getFont();
+		if( pFont != NULL ) {
+			pFont->GetLogFont(&lf);}
+	}
+	else {
+		pFont->CreateFont(0,0,0,0,0,0,0,0,0,0,0,0,0,"Courier New");
+	}
 
 	// extract Comment Char
 	char cCommentChar = m_pLang->getCommentChar();
@@ -712,8 +721,10 @@ void CLangModelsDoc::OnCustomizeUserTestDisplay()
 	dlg.m_cCommentChar=cCommentChar;
 	dlg.m_pFont=pFont;
 	dlg.m_pTestEditModel=m_pLang->m_pTestEditModel;
+
 	if(dlg.DoModal( )==IDOK) {
 		SetModifiedFlag(TRUE);}
+
 
 #else // mr270
 	CDlgEditTestColor dlg;

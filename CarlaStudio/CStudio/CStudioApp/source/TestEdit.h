@@ -7,6 +7,9 @@
 #endif // _MSC_VER >= 1000
 // TestEdit.h : header file
 //
+#ifndef mr270
+#include "TestEditModel.h"
+#endif // mr270
 
 /////////////////////////////////////////////////////////////////////////////
 // CTestEdit window
@@ -42,6 +45,10 @@ public:
 			m_strKEYWordsLower,m_strKEYWords_ActLower,m_strCONNectorsLower,
 			m_strTYPesLower,m_strNBRLower;
 
+#ifndef mr270
+	CTestEditModel *m_pTestEditModel;
+#endif // mr270
+
 // Operations
 public:
 	void Initialize();
@@ -57,7 +64,19 @@ public:
 	void setSelectionCharFormat( );
 	void setWordWrap( BOOL bFlag );
 	void setBackgroundColor( BOOL bUseSystemColor );
+#ifndef mr270
+	void readTestEditModel();
+#else // mr270
 	void readRegistry( LPCTSTR lpzSection );
+#endif // mr270
+
+#ifndef mr270
+	void setFontFaceName(CString lpstrFontName);
+#endif // mr270
+
+#ifndef mr270
+	void setTestEditModel(CTestEditModel *pTestEditModel){m_pTestEditModel=pTestEditModel;}
+#endif // mr270
 
 
 // Overrides
@@ -70,10 +89,12 @@ public:
 	virtual ~CTestEdit();
 
 	// Generated message map functions
-protected:
+//protected:
+public:
 
 
-
+	//BOOL m_bOpenQuote;
+	BOOL m_bUseBackgroundSystemColor;
 
 
 	BOOL IsStringQuote(TCHAR ch);
@@ -115,11 +136,15 @@ protected:
 	afx_msg void OnSelChange(NMHDR*, LRESULT* pResult);
 	DECLARE_MESSAGE_MAP()
 
-	private:
-		BOOL m_bOpenQuote;
-		BOOL m_bUseBackgroundSystemColor;
 
 
+#ifndef mr270
+	CString m_strFontFaceName;
+#endif // mr270
+
+public:
+
+	COLORREF getColor(COLORREF &color){return color;};
 
 };
 

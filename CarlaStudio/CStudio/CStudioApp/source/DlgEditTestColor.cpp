@@ -18,18 +18,14 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditTestColor dialog
 
-// CTestEdit	->
-//static LPCTSTR szOPE = " AND IF IFF NOT OR THEN XOR ";
-//static LPCTSTR szFOROPE = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
-//static LPCTSTR szLOC = " current last left next right FINAL INITIAL LEFT RIGHT ";
-//static LPCTSTR szKEYW = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word ";
-//static LPCTSTR szKEYW_ACT = " insert before after report ";
-//static LPCTSTR szCONN = " is matches member = > >= <= < ~= ";
-//static LPCTSTR szTYP = " prefix infix root suffix initial final ";
-//static LPCTSTR szNBR = " 0 1 2 3 4 5 6 7 8 9 ";
-// <- CTestEdit
 
+#ifndef mr270
+
+#else // mr270
 static const TCHAR szSection [] = _T("Settings\\TestsColor");
+#endif // mr270
+
+
 static const TCHAR szDefaultFontSize [] = _T("10");
 
 CDlgEditTestColor::CDlgEditTestColor(CWnd* pParent /*=NULL*/)
@@ -56,24 +52,57 @@ void CDlgEditTestColor::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BUTTONTestColorFont, m_buttonColorFont);
 	//}}AFX_DATA_MAP
 
-
-	CWinApp* pApp = AfxGetApp ();
-
 	if( pDX->m_bSaveAndValidate==0 ) // read the Registry
 	{
 
-		// initialize combo box with font size
-		m_strFontSize = pApp->GetProfileString(szSection,"FontSize","10");
-		int nId = m_combo.FindString( -1, m_strFontSize );
 
-		if( nId != CB_ERR )
-		{
-			m_combo.SetCurSel( nId );
-		}
-		else
-		{
-			m_combo.SetCurSel( 2 ); // index 2 = size 10 pt
-		}
+#ifndef mr270
+	LOGFONT logfont;
+	m_pFont->GetLogFont(&logfont);
+	m_richTestPreview.setFontFaceName(logfont.lfFaceName);
+#endif // mr270
+
+
+#ifndef mr270
+	m_richTestPreview.setTestEditModel(m_pTestEditModel);
+	m_richTestPreview.Initialize();
+
+
+	// initialize combo box with font size
+	m_strFontSize = m_richTestPreview.m_lpzFontSize;
+	int nId = m_combo.FindString( -1, m_strFontSize );
+
+	if( nId != CB_ERR )
+	{
+		m_combo.SetCurSel( nId );
+	}
+	else
+	{
+		m_combo.SetCurSel( 2 ); // index 2 = size 10 pt
+	}
+
+	// initialize the background color button
+	m_colorBackground = m_richTestPreview.m_clrBackgoundColor;
+	m_buttonColorBackground.currentcolor = m_colorBackground;
+
+	// IF using background system color THEN disabled the button
+	BOOL bUseBackground = m_richTestPreview.m_bUseBackgroundSystemColor;
+	if(bUseBackground)
+	{
+		CheckDlgButton(IDC_CHECKTestUseBckgroundColr,bUseBackground);
+		m_buttonColorBackground.currentcolor=GetSysColor(COLOR_WINDOW);
+		m_buttonColorBackground.EnableWindow(FALSE);
+		m_staticBackgrColorSyst.EnableWindow(FALSE);
+	}
+
+	// word wrap
+	m_bWordWrap = m_richTestPreview.m_pTestEditModel->m_bWordWrap;
+	m_richTestPreview.setWordWrap( m_bWordWrap );
+	CheckDlgButton( IDC_CHECKTestWordwrap,m_bWordWrap );
+
+#else // mr270
+
+		CWinApp* pApp = AfxGetApp ();
 
 		// initialize the background color button
 		m_colorBackground = pApp->GetProfileInt(szSection,"ColorBackground",RGB(255,255,255));
@@ -95,6 +124,7 @@ void CDlgEditTestColor::DoDataExchange(CDataExchange* pDX)
 		m_richTestPreview.setWordWrap( m_bWordWrap );
 		CheckDlgButton( IDC_CHECKTestWordwrap,m_bWordWrap );
 
+#endif // mr270
 
 		// logical operators, FOR operators, locators, item keyword,
 		// connectors, types, identifiers, numbers, comment, errors
@@ -110,6 +140,70 @@ void CDlgEditTestColor::DoDataExchange(CDataExchange* pDX)
 		COM = new GROUP_KEYWORDS;
 		ERRORS = new GROUP_KEYWORDS;
 
+#ifndef mr270
+
+		OPE->clrColor = m_richTestPreview.m_colorOPErators.clrColor;
+		OPE->bBold = m_richTestPreview.m_colorOPErators.bBold;
+		OPE->bItalic = m_richTestPreview.m_colorOPErators.bItalic;
+		OPE->bUnderline = m_richTestPreview.m_colorOPErators.bUnderline;
+		OPE->bStrikeout = m_richTestPreview.m_colorOPErators.bStrikeout;
+
+		FOROPE->clrColor = m_richTestPreview.m_colorForOPErators.clrColor;
+		FOROPE->bBold = m_richTestPreview.m_colorForOPErators.bBold;
+		FOROPE->bItalic = m_richTestPreview.m_colorForOPErators.bItalic;
+		FOROPE->bUnderline = m_richTestPreview.m_colorForOPErators.bUnderline;
+		FOROPE->bStrikeout = m_richTestPreview.m_colorForOPErators.bStrikeout;
+
+		LOC->clrColor = m_richTestPreview.m_colorLOCations.clrColor;
+		LOC->bBold = m_richTestPreview.m_colorLOCations.bBold;
+		LOC->bItalic = m_richTestPreview.m_colorLOCations.bItalic;
+		LOC->bUnderline = m_richTestPreview.m_colorLOCations.bUnderline;
+		LOC->bStrikeout = m_richTestPreview.m_colorLOCations.bStrikeout;
+
+		KEYW->clrColor = m_richTestPreview.m_colorKEYWords.clrColor;
+		KEYW->bBold = m_richTestPreview.m_colorKEYWords.bBold;
+		KEYW->bItalic = m_richTestPreview.m_colorKEYWords.bItalic;
+		KEYW->bUnderline = m_richTestPreview.m_colorKEYWords.bUnderline;
+		KEYW->bStrikeout = m_richTestPreview.m_colorKEYWords.bStrikeout;
+
+		CONN->clrColor = m_richTestPreview.m_colorCONNectors.clrColor;
+		CONN->bBold = m_richTestPreview.m_colorCONNectors.bBold;
+		CONN->bItalic = m_richTestPreview.m_colorCONNectors.bItalic;
+		CONN->bUnderline = m_richTestPreview.m_colorCONNectors.bUnderline;
+		CONN->bStrikeout = m_richTestPreview.m_colorCONNectors.bStrikeout;
+
+		TYPE->clrColor = m_richTestPreview.m_colorTYPes.clrColor;
+		TYPE->bBold = m_richTestPreview.m_colorTYPes.bBold;
+		TYPE->bItalic = m_richTestPreview.m_colorTYPes.bItalic;
+		TYPE->bUnderline = m_richTestPreview.m_colorTYPes.bUnderline;
+		TYPE->bStrikeout = m_richTestPreview.m_colorTYPes.bStrikeout;
+
+		IDENTIF->clrColor = m_richTestPreview.m_colorIdentifiers.clrColor;
+		IDENTIF->bBold = m_richTestPreview.m_colorIdentifiers.bBold;
+		IDENTIF->bItalic = m_richTestPreview.m_colorIdentifiers.bItalic;
+		IDENTIF->bUnderline = m_richTestPreview.m_colorIdentifiers.bUnderline;
+		IDENTIF->bStrikeout = m_richTestPreview.m_colorIdentifiers.bStrikeout;
+
+		NBR->clrColor = m_richTestPreview.m_colorNBR.clrColor;
+		NBR->bBold = m_richTestPreview.m_colorNBR.bBold;
+		NBR->bItalic = m_richTestPreview.m_colorNBR.bItalic;
+		NBR->bUnderline = m_richTestPreview.m_colorNBR.bUnderline;
+		NBR->bStrikeout = m_richTestPreview.m_colorNBR.bStrikeout;
+
+		COM->clrColor = m_richTestPreview.m_colorCOMments.clrColor;
+		COM->bBold = m_richTestPreview.m_colorCOMments.bBold;
+		COM->bItalic = m_richTestPreview.m_colorCOMments.bItalic;
+		COM->bUnderline = m_richTestPreview.m_colorCOMments.bUnderline;
+		COM->bStrikeout = m_richTestPreview.m_colorCOMments.bStrikeout;
+
+		ERRORS->clrColor = m_richTestPreview.m_colorError.clrColor;
+		ERRORS->bBold = m_richTestPreview.m_colorError.bBold;
+		ERRORS->bItalic = m_richTestPreview.m_colorError.bItalic;
+		ERRORS->bUnderline = m_richTestPreview.m_colorError.bUnderline;
+		ERRORS->bStrikeout = m_richTestPreview.m_colorError.bStrikeout;
+
+#else // mr270
+		CWinApp* pApp = AfxGetApp ();
 
 		OPE->clrColor = pApp->GetProfileInt( szSection,"OPEcolor",RGB(255,0,0));
 		OPE->bBold = pApp->GetProfileInt( szSection,"OPEbold",FALSE);
@@ -171,10 +265,17 @@ void CDlgEditTestColor::DoDataExchange(CDataExchange* pDX)
 		ERRORS->bUnderline = pApp->GetProfileInt( szSection,"ERRORunderline",FALSE);
 		ERRORS->bStrikeout = pApp->GetProfileInt( szSection,"ERRORstrikeout",TRUE);
 
+#endif // mr270
 
-	}
+}
 	else // write the Registry
 	{
+
+#ifndef mr270
+	saveNewParam();
+#else // mr270
+
+		CWinApp* pApp = AfxGetApp ();
 		// color background
 		pApp->WriteProfileInt(szSection,"ColorBackground",m_buttonColorBackground.currentcolor);
 
@@ -189,8 +290,9 @@ void CDlgEditTestColor::DoDataExchange(CDataExchange* pDX)
 
 		// logical operators, FOR operators, locators, item keyword,
 		// connectors, types, identifiers, numbers, comment, errors
-		writeNewParamInRegistry();
 
+		writeNewParamInRegistry();
+#endif // mr270
 	}
 }
 
@@ -227,18 +329,6 @@ BOOL CDlgEditTestColor::OnInitDialog()
 	TCHAR szNBR [] = " 0 1 2 3 4 5 6 7 8 9 ";
 	TCHAR szKEYW [] = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word ";
 	LPCTSTR szKEYW_ACT = " insert before after report ";
-
-
-	// this line must be before Initialize
-	CWinApp* pApp = AfxGetApp ();
-
-#ifndef mr270
-	LOGFONT logfont;
-	m_pFont->GetLogFont(&logfont);
-	m_richTestPreview.setFontFaceName(logfont.lfFaceName);
-#endif // mr270
-
-	m_richTestPreview.Initialize();
 
 	m_richTestPreview.SetStringQuotes(_T("\""));
 	m_richTestPreview.SetStringQuotes(_T("\'"));
@@ -666,9 +756,81 @@ void CDlgEditTestColor::OnSTRIKEOUT()
 	refreshRichEditCtrl();
 }
 
-
+#ifndef mr270
+void CDlgEditTestColor::saveNewParam( )
+#else // mr270
 void CDlgEditTestColor::writeNewParamInRegistry( )
+#endif // mr270
 {
+#ifndef mr270
+
+	m_richTestPreview.m_pTestEditModel->m_colorBkg = m_buttonColorBackground.currentcolor;
+	m_richTestPreview.m_pTestEditModel->m_bUseSystemColorBkg = IsDlgButtonChecked( IDC_CHECKTestUseBckgroundColr );
+	m_richTestPreview.m_pTestEditModel->m_bWordWrap = m_bWordWrap;
+	m_richTestPreview.m_pTestEditModel->m_strFontSize = m_strFontSize;
+
+	m_richTestPreview.m_pTestEditModel->m_OPEColor = OPE->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bOPEBold = OPE->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bOPEItalic = OPE->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bOPEUnderline = OPE->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bOPEStrikeout = OPE->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_FOROPColor = FOROPE->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bFOROPBold = FOROPE->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bFOROPItalic = FOROPE->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bFOROPUnderline = FOROPE->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bFOROPStrikeout = FOROPE->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_LOCColor = LOC->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bLOCBold = LOC->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bLOCItalic = LOC->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bLOCUnderline = LOC->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bLOCStrikeout = LOC->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_KEYWColor = KEYW->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bKEYWBold = KEYW->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bKEYWItalic = KEYW->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bKEYWUnderline = KEYW->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bKEYWStrikeout = KEYW->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_CONColor = CONN->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bCONBold = CONN->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bCONItalic = CONN->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bCONUnderline = CONN->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bCONStrikeout = CONN->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_TYPColor = TYPE->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bTYPBold = TYPE->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bTYPItalic = TYPE->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bTYPUnderline = TYPE->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bTYPStrikeout = TYPE->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_IDENTIFColor = IDENTIF->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bIDENTIFBold = IDENTIF->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bIDENTIFItalic = IDENTIF->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bIDENTIFUnderline = IDENTIF->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bIDENTIFStrikeout = IDENTIF->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_NBRColor = NBR->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bNBRBold = NBR->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bNBRItalic = NBR->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bNBRUnderline = NBR->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bNBRStrikeout = NBR->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_COMColor = COM->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bCOMBold = COM->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bCOMItalic = COM->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bCOMUnderline = COM->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bCOMStrikeout = COM->bStrikeout;
+
+	m_richTestPreview.m_pTestEditModel->m_ERRORColor = ERRORS->clrColor;
+	m_richTestPreview.m_pTestEditModel->m_bERRORBold = ERRORS->bBold;
+	m_richTestPreview.m_pTestEditModel->m_bERRORItalic = ERRORS->bItalic;
+	m_richTestPreview.m_pTestEditModel->m_bERRORUnderline = ERRORS->bUnderline;
+	m_richTestPreview.m_pTestEditModel->m_bERRORStrikeout = ERRORS->bStrikeout;
+
+#else // mr270
+
 	CWinApp* pApp = AfxGetApp ();
 
 	 pApp->WriteProfileInt( szSection,"OPEcolor",OPE->clrColor);
@@ -730,6 +892,8 @@ void CDlgEditTestColor::writeNewParamInRegistry( )
 	 pApp->WriteProfileInt( szSection,"ERRORitalic",ERRORS->bItalic);
 	 pApp->WriteProfileInt( szSection,"ERRORunderline",ERRORS->bUnderline);
 	 pApp->WriteProfileInt( szSection,"ERRORstrikeout",ERRORS->bStrikeout);
+#endif // mr270
+
 }
 
 void CDlgEditTestColor::OnFontSize()
@@ -751,6 +915,7 @@ void CDlgEditTestColor::OnDefault()
 	m_richTestPreview.SetBackgroundColor( TRUE,GetSysColor(COLOR_WINDOW) );
 	CheckDlgButton(IDC_CHECKTestUseBckgroundColr,TRUE);
 
+
 	// word wrap - yes
 	m_bWordWrap=TRUE;
 	m_richTestPreview.setWordWrap( TRUE );
@@ -770,6 +935,7 @@ void CDlgEditTestColor::OnDefault()
 	OPE->bItalic=FALSE;
 	OPE->bUnderline=FALSE;
 	OPE->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorOPErators,OPE->clrColor,OPE->bBold,OPE->bItalic,OPE->bUnderline,OPE->bStrikeout);
 
 	// FOR operators
 	FOROPE->clrColor=RGB(0,0,255);
@@ -777,6 +943,7 @@ void CDlgEditTestColor::OnDefault()
 	FOROPE->bItalic=FALSE;
 	FOROPE->bUnderline=FALSE;
 	FOROPE->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorForOPErators,FOROPE->clrColor,FOROPE->bBold,FOROPE->bItalic,FOROPE->bUnderline,FOROPE->bStrikeout);
 
 	// locators
 	LOC->clrColor=RGB(0,0,255);
@@ -784,6 +951,7 @@ void CDlgEditTestColor::OnDefault()
 	LOC->bItalic=FALSE;
 	LOC->bUnderline=TRUE;
 	LOC->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorLOCations,LOC->clrColor,LOC->bBold,LOC->bItalic,LOC->bUnderline,LOC->bStrikeout);
 
 	// item keyword
 	KEYW->clrColor=RGB(0,0,0);
@@ -791,6 +959,7 @@ void CDlgEditTestColor::OnDefault()
 	KEYW->bItalic=FALSE;
 	KEYW->bUnderline=FALSE;
 	KEYW->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorKEYWords,KEYW->clrColor,KEYW->bBold,KEYW->bItalic,KEYW->bUnderline,KEYW->bStrikeout);
 
 	// connectors
 	CONN->clrColor=RGB(0,0,0);
@@ -798,6 +967,7 @@ void CDlgEditTestColor::OnDefault()
 	CONN->bItalic=FALSE;
 	CONN->bUnderline=FALSE;
 	CONN->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorCONNectors,CONN->clrColor,CONN->bBold,CONN->bItalic,CONN->bUnderline,CONN->bStrikeout);
 
 	// types
 	TYPE->clrColor=RGB(255,0,0);
@@ -805,6 +975,8 @@ void CDlgEditTestColor::OnDefault()
 	TYPE->bItalic=FALSE;
 	TYPE->bUnderline=TRUE;
 	TYPE->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorTYPes,TYPE->clrColor,TYPE->bBold,TYPE->bItalic,TYPE->bUnderline,TYPE->bStrikeout);
+
 
 	// identifiers
 	IDENTIF->clrColor=RGB(123,112,230);
@@ -812,6 +984,7 @@ void CDlgEditTestColor::OnDefault()
 	IDENTIF->bItalic=TRUE;
 	IDENTIF->bUnderline=FALSE;
 	IDENTIF->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorIdentifiers,IDENTIF->clrColor,IDENTIF->bBold,IDENTIF->bItalic,IDENTIF->bUnderline,IDENTIF->bStrikeout);
 
 	// numbers
 	NBR->clrColor=RGB(255,0,255);
@@ -819,6 +992,8 @@ void CDlgEditTestColor::OnDefault()
 	NBR->bItalic=FALSE;
 	NBR->bUnderline=FALSE;
 	NBR->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorNBR,NBR->clrColor,NBR->bBold,NBR->bItalic,NBR->bUnderline,NBR->bStrikeout);
+
 
 	// comment
 	COM->clrColor=RGB(192,192,192);
@@ -826,6 +1001,8 @@ void CDlgEditTestColor::OnDefault()
 	COM->bItalic=FALSE;
 	COM->bUnderline=FALSE;
 	COM->bStrikeout=FALSE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorCOMments,COM->clrColor,COM->bBold,COM->bItalic,COM->bUnderline,COM->bStrikeout);
+
 
 	// errors
 	ERRORS->clrColor=RGB(128,128,128);
@@ -833,6 +1010,8 @@ void CDlgEditTestColor::OnDefault()
 	ERRORS->bItalic=FALSE;
 	ERRORS->bUnderline=FALSE;
 	ERRORS->bStrikeout=TRUE;
+	m_richTestPreview.setColor(m_richTestPreview.m_colorError,ERRORS->clrColor,ERRORS->bBold,ERRORS->bItalic,ERRORS->bUnderline,ERRORS->bStrikeout);
+
 
 	// tree: select the first item
 	m_tree.SelectItem(m_hItemOPE);

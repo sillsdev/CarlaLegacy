@@ -10,6 +10,7 @@
 
 #include "TestEdit.h"
 #include "ColorBtn.h"
+#include "TestEditModel.h"
 
 #ifndef mr270
   class CTextDisplayInfo;
@@ -42,6 +43,12 @@ public:
 	CFont *m_pFont;
 #endif // mr270
 
+#ifndef mr270
+	CTestEditModel *m_pTestEditModel;
+#endif // mr270
+
+
+
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDlgEditTestColor)
@@ -52,8 +59,14 @@ public:
 // Implementation
 protected:
 
-	void refreshRichEditCtrl();
+
+#ifndef mr270
+	void saveNewParam( );
+#else // mr270
 	void writeNewParamInRegistry();
+#endif // mr270
+
+	void refreshRichEditCtrl();
 	HTREEITEM insertItem( CTreeCtrl* pTree,
 							CString sTextItem,
 							HTREEITEM hParent,

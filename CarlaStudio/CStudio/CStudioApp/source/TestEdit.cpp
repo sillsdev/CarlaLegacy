@@ -13,7 +13,11 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
+#ifndef mr270
+#else // mr270
 static const TCHAR szSection [] = _T("Settings\\TestsColor");
+#endif // mr270
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CTestEdit
@@ -28,7 +32,7 @@ CTestEdit::CTestEdit()
 	m_bInForcedChange = FALSE;
 	m_changeType = ctUndo;
 	m_crOldSel.cpMin = m_crOldSel.cpMax = 0;
-	m_bOpenQuote=FALSE;
+	//m_bOpenQuote=FALSE;
 	m_lpzFontSize="10";
 
 }
@@ -37,11 +41,119 @@ CTestEdit::~CTestEdit()
 {
 
 }
-
+#ifndef mr270
+void CTestEdit::readTestEditModel()
+#else // mr270
 void CTestEdit::readRegistry( LPCTSTR lpzSection )
+#endif // mr270
 {
-	CWinApp* pApp = AfxGetApp ();
 
+#ifndef mr270
+
+	// text background color - default color system
+	m_clrBackgoundColor = m_pTestEditModel->m_colorBkg;
+
+	// use system Color background - default TRUE
+	m_bUseBackgroundSystemColor = m_pTestEditModel->m_bUseSystemColorBkg;
+
+	// font size
+	SetFontSize( m_pTestEditModel->m_strFontSize );
+
+	// word wrap
+	setWordWrap( m_pTestEditModel->m_bWordWrap );
+
+
+	// default color
+	setColor( m_colorDefault,
+				m_pTestEditModel->m_DefaultColor,
+				m_pTestEditModel->m_bDefaultBold,
+				m_pTestEditModel->m_bDefaultItalic,
+				m_pTestEditModel->m_bDefaultUnderline,
+				m_pTestEditModel->m_bDefaultStrikeout);
+
+	// operators
+	setColor( m_colorOPErators,
+				m_pTestEditModel->m_OPEColor,
+				m_pTestEditModel->m_bOPEBold,
+				m_pTestEditModel->m_bOPEItalic,
+				m_pTestEditModel->m_bOPEUnderline,
+				m_pTestEditModel->m_bOPEStrikeout);
+
+	// forop
+	setColor( m_colorForOPErators,
+				m_pTestEditModel->m_FOROPColor,
+				m_pTestEditModel->m_bFOROPBold,
+				m_pTestEditModel->m_bFOROPItalic,
+				m_pTestEditModel->m_bFOROPUnderline,
+				m_pTestEditModel->m_bFOROPStrikeout);
+
+	// location
+	setColor( m_colorLOCations,
+				m_pTestEditModel->m_LOCColor,
+				m_pTestEditModel->m_bLOCBold,
+				m_pTestEditModel->m_bLOCItalic,
+				m_pTestEditModel->m_bLOCUnderline,
+				m_pTestEditModel->m_bLOCStrikeout);
+
+	// keywords
+	setColor( m_colorKEYWords,
+				m_pTestEditModel->m_KEYWColor,
+				m_pTestEditModel->m_bKEYWBold,
+				m_pTestEditModel->m_bKEYWItalic,
+				m_pTestEditModel->m_bKEYWUnderline,
+				m_pTestEditModel->m_bKEYWStrikeout);
+
+	// connectors
+	setColor( m_colorCONNectors,
+				m_pTestEditModel->m_CONColor,
+				m_pTestEditModel->m_bCONBold,
+				m_pTestEditModel->m_bCONItalic,
+				m_pTestEditModel->m_bCONUnderline,
+				m_pTestEditModel->m_bCONStrikeout);
+
+	// type
+	setColor( m_colorTYPes,
+				m_pTestEditModel->m_TYPColor,
+				m_pTestEditModel->m_bTYPBold,
+				m_pTestEditModel->m_bTYPItalic,
+				m_pTestEditModel->m_bTYPUnderline,
+				m_pTestEditModel->m_bTYPStrikeout);
+
+	// identifiers
+	setColor( m_colorIdentifiers,
+				m_pTestEditModel->m_IDENTIFColor,
+				m_pTestEditModel->m_bIDENTIFBold,
+				m_pTestEditModel->m_bIDENTIFItalic,
+				m_pTestEditModel->m_bIDENTIFUnderline,
+				m_pTestEditModel->m_bIDENTIFStrikeout);
+
+	// nombres
+	setColor( m_colorNBR,
+				m_pTestEditModel->m_NBRColor,
+				m_pTestEditModel->m_bNBRBold,
+				m_pTestEditModel->m_bNBRItalic,
+				m_pTestEditModel->m_bNBRUnderline,
+				m_pTestEditModel->m_bNBRStrikeout);
+
+	// comment
+	setColor( m_colorCOMments,
+				m_pTestEditModel->m_COMColor,
+				m_pTestEditModel->m_bCOMBold,
+				m_pTestEditModel->m_bCOMItalic,
+				m_pTestEditModel->m_bCOMUnderline,
+				m_pTestEditModel->m_bCOMStrikeout);
+
+	// errors
+	setColor( m_colorError,
+				m_pTestEditModel->m_ERRORColor,
+				m_pTestEditModel->m_bERRORBold,
+				m_pTestEditModel->m_bERRORItalic,
+				m_pTestEditModel->m_bERRORUnderline,
+				m_pTestEditModel->m_bERRORStrikeout);
+
+#else // mr270
+
+	CWinApp* pApp = AfxGetApp ();
 
 	clrDefaultColor=pApp->GetProfileInt( lpzSection,"DefaultColor",RGB(0,0,0));
 
@@ -63,7 +175,8 @@ void CTestEdit::readRegistry( LPCTSTR lpzSection )
 				pApp->GetProfileInt( lpzSection,"Defaultstrikeout",FALSE));	// striketout
 
 	setColor( m_colorOPErators,
-				pApp->GetProfileInt( lpzSection,"OPEcolor",RGB(255,0,0)),
+				//pApp->GetProfileInt( lpzSection,"OPEcolor",RGB(255,0,0)),
+				m_pTestEditModel->getColorDefault(),
 				pApp->GetProfileInt( lpzSection,"OPEbold",FALSE),
 				pApp->GetProfileInt( lpzSection,"OPEitalic",FALSE),
 				pApp->GetProfileInt( lpzSection,"OPEunderline",FALSE),
@@ -138,6 +251,9 @@ void CTestEdit::readRegistry( LPCTSTR lpzSection )
 
 	// word wrap
 	setWordWrap( pApp->GetProfileInt( lpzSection,"WordWrap",FALSE ));
+
+#endif // mr270
+
 }
 
 void CTestEdit::SetFontSize( LPCTSTR lpzFontSize)
@@ -147,7 +263,12 @@ void CTestEdit::SetFontSize( LPCTSTR lpzFontSize)
 
 void CTestEdit::Initialize()
 {
+#ifndef mr270
+	readTestEditModel();
+#else // mr270
 	readRegistry(szSection);
+#endif // mr270
+
 
 	// tab
 	PARAFORMAT pf;
@@ -177,9 +298,14 @@ void CTestEdit::setDefaultCharFormat( )
 	//int nV = atoi (m_lpzFontSize);
 
 	cfDefault.yHeight = 20*atoi (m_lpzFontSize);
-	cfDefault.bCharSet = 0xEE;
+	//cfDefault.bCharSet = 0xEE;
 	cfDefault.crTextColor = RGB(0,0,0);
+
+#ifndef mr270
+	lstrcpy(cfDefault.szFaceName,(LPTSTR)(LPCTSTR)m_strFontFaceName);
+#else // mr270
 	strcpy(cfDefault.szFaceName, _T("Verdana"));
+#endif // mr270
 
 	SetDefaultCharFormat(cfDefault);
 }
@@ -390,18 +516,6 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 		while (*pPtr != 0)
 		{
 			TCHAR ch = *pPtr;
-
-
-			//if( bIsMemberMatches && ch != 32 )
-			//{
-			//	ic = m_colorError;
-			//}
-
-
-			//if(( ch==32 || ch=='\t' ) && ( bIsMemberMatches ) )
-			//{
-			//	bIsMemberMatches=FALSE;
-			//}
 
 
 			// allow identifier with multiple periods
@@ -839,3 +953,9 @@ void CTestEdit::setBackgroundColor( BOOL bUseSystemColor )
 
 	SetBackgroundColor( bUseSystemColor,m_clrBackgoundColor );
 }
+#ifndef mr270
+void CTestEdit::setFontFaceName(CString lpstrFontName)
+{
+	m_strFontFaceName=lpstrFontName;
+}
+#endif // mr270

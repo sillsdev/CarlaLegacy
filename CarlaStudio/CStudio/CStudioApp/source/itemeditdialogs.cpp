@@ -39,8 +39,9 @@ CDlgEditTest::CDlgEditTest(const CTextDisplayInfo* pTDI)
 	//}}AFX_DATA_INIT
 }
 #ifndef mr270
-static const TCHAR szSection [] = _T("Settings\\TestsColor");
+//static const TCHAR szSection [] = _T("Settings\\TestsColor");
 #endif // mr270
+
 
 
 void CDlgEditTest::DoDataExchange(CDataExchange* pDX)
@@ -63,12 +64,17 @@ void CDlgEditTest::DoDataExchange(CDataExchange* pDX)
 	{
 		if (m_pTDI->m_bShowUserTestsInLangFont)
 		{
-		  CEdit* pE = (CEdit*) GetDlgItem(IDC_EDITContents);  // fix name
+
+#ifndef mr270
+
+#else // mr270
+			CEdit* pE = (CEdit*) GetDlgItem(IDC_EDITContents);  // fix name
 			if(pE)
 				pE->SetFont(m_pTDI->getFont());
 			pE = (CEdit*) GetDlgItem(IDC_To);
 			if(pE)
 				pE->SetFont(m_pTDI->getFont());
+#endif // mr270
 		}
 		if (m_pTDI->m_bShowCommentsInLangFont)
 		{
@@ -125,16 +131,26 @@ BOOL CDlgEditTest::OnInitDialog()
 
 // CTestEdit	->
 	ModifyStyle(0, WS_CLIPCHILDREN);
-
 	m_richTestEdit.SubclassDlgItem(IDC_EDITContents, this);
 
 #ifndef mr270
 	// get Font Face Name for CRichEditCtrl
 	LOGFONT logfont;
-	CFont* pF=m_pTDI->getFont();
-	pF->GetLogFont(&logfont);
-	m_richTestEdit.setFontFaceName(logfont.lfFaceName);
+	if (m_pTDI->m_bShowUserTestsInLangFont)
+	{
+		CFont *pF =m_pTDI->getFont();
+		pF->GetLogFont(&logfont);
+		m_richTestEdit.setFontFaceName(logfont.lfFaceName);
+	}
+	else {
+		m_richTestEdit.setFontFaceName("Courier New");
+	}
 #endif // mr270
+
+#ifndef mr270
+	m_richTestEdit.setTestEditModel(m_pTestEditModel);
+#endif // mr270
+
 
 	m_richTestEdit.Initialize();
 
@@ -154,12 +170,10 @@ BOOL CDlgEditTest::OnInitDialog()
 	m_richTestEdit.AddKeywords(szFOROPE,m_richTestEdit.m_strFOROPerators,m_richTestEdit.m_strFOROPeratorsLower);
 	m_richTestEdit.AddKeywords(szLOC,m_richTestEdit.m_strLOCations,m_richTestEdit.m_strLOCationsLower);
 
-
 	m_richTestEdit.AddKeywords(szKEYW,m_richTestEdit.m_strKEYWords,m_richTestEdit.m_strKEYWordsLower);
 	m_richTestEdit.AddKeywords(szCONN,m_richTestEdit.m_strCONNectors,m_richTestEdit.m_strCONNectorsLower);
 	m_richTestEdit.AddKeywords(szTYP,m_richTestEdit.m_strTYPes,m_richTestEdit.m_strTYPesLower);
 	m_richTestEdit.AddKeywords(szNBR,m_richTestEdit.m_strNBR,m_richTestEdit.m_strNBRLower);
-
 
 	m_richTestEdit.FormatAll();
 	// <- CTestEdit
