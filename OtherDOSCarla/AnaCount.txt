@@ -36,6 +36,12 @@ ANALYSIS STATISTICS:  129 words processed.
 ============================================================
 AnaCount CHANGE HISTORY
 
+
+1.0.1 (28-Nov-2001)
+-------------------
+
+1. Fix bug of counting final dummy record as a failure.
+
 1.0.0 (13-Mar-2000)
 -------------------
 

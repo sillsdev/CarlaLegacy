@@ -78,6 +78,14 @@ void main()
 		  int count = 0;
 		  while (isdigit(c = getNextChar()))
 		count = 10 * count + c - '0';
+#ifndef hab101
+		  if ((count == 0) &&
+		  ((c = getNextChar()) == '%'))
+		{
+		  uiWordCount--; /* skip any final dummy record */
+		  continue;
+		}
+#endif /* hab101 */
 		  if (count > 15)
 		count = 15;
 		  aiAmbigCounts[count]++;
@@ -85,3 +93,12 @@ void main()
 	}
 	}
 }
+
+/*****************************************************************************
+ * EDIT HISTORY
+ * 28-Nov-2001  hab - FIx bug of counting final dummy record.
+ * [1.0.1]
+ *
+ * 13-Mar-2000  hab - Initial coding.
+ * [1.0.0]
+ */
