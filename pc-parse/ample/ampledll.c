@@ -1101,22 +1101,22 @@ return pszBuffer_out;
 					 if (pAllo == NULL)
 					 {
 						 reportError(ERROR_MSG, "pHead->pAllomorph is NULL?\n");
-						 CONCAT("<MoForm DbRef=? Label=\"?\"/>\r\n")
+						 CONCAT("     <MoForm DbRef=0 Label=\"?\"/>\r\n")
 							 continue;
 					 }
-					 CONCAT("<MoForm DbRef=")
+					 CONCAT("      <MoForm DbRef=")
 						 if (pAllo->pszAllomorphID != NULL)
 							 CONCAT(pAllo->pszAllomorphID)
-							 else
+						else
 						 {
-							 CONCAT("#")
-								 CONCAT(pAllo->pszAllomorph)
-								 CONCAT("#")
+							 CONCAT("0") //todo: consider raising an error at this point, once the caller is normalling giving us an allo id
 						 }
 						 CONCAT(" Label=\"");
-						 CONCAT(pAllo->pMorpheme->pszMorphName);
+						 CONCAT(pAllo->pszAllomorph);
 						 CONCAT("\">\r\n");
-						 CONCAT("     <MSI />");
+						 CONCAT("      <MSI DbRef=");
+						 CONCAT(pAllo->pMorpheme->pszMorphName); // assumes pszMorphName is holding the database id (a long int) of this msi
+						 CONCAT("/>\r\n");
 						 CONCAT("    </Morph>\r\n")
 				 }
 
