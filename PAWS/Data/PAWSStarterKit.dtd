@@ -327,7 +327,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	 Indefinites may be formed by an NP or a word (indef).
 	 Partitives may come before or after the head (partitive).
 -->
-<!ELEMENT pron (personalNoCaseExample, personalNomSubjectExample, personalNomObjectExample, personalNomPossessorExample, personalErgSubjectTransExample, personalErgSubjectIntransExample, personalErgPossessorExample, personalSplitSubjectExample, personalSplitObjectExample, personalSplitPossessorExample, personalSplitErgExample, personalSplitAbsExample, possExample, reflExample, recipExample, indefExample, indefNPExample, standAloneNPExample, pronRelClExample, partitiveExample, pronounCategory)>
+<!ELEMENT pron (personalNoCaseExample, personalNomSubjectExample, personalNomObjectExample, personalNomPossessorExample, personalErgSubjectTransExample, personalErgSubjectIntransExample, personalErgPossessorExample, personalSplitSubjectExample, personalSplitObjectExample, personalSplitPossessorExample, personalSplitErgExample, personalSplitAbsExample, possExample, reflExample, recipExample, indefExample, indefNPExample, standAloneNPExample, pronRelClExample, partitiveExample, pronounCategory, pronAgrFeatFirst, pronAgrFeatFirstExclusive, pronAgrFeatFirstInclusive, pronAgrFeatSecond, pronAgrFeatThird, pronAgrFeatSingular, pronAgrFeatDual, pronAgrFeatPlural, pronAgrFeatMasculine, pronAgrFeatFeminine, pronAgrFeatNeuter, pronAgrFeatAnimate, pronAgrFeatMinusAnimate, pronAgrFeatClassNumber)>
 <!ATTLIST pron
 	checkedOff (yes | no) "no"
 	poss (no | yes) "no"
@@ -361,6 +361,62 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT pronRelClExample (#PCDATA)>
 <!ELEMENT partitiveExample (#PCDATA)>
 <!ELEMENT pronounCategory (#PCDATA)>
+<!ELEMENT pronAgrFeatFirst EMPTY>
+<!ATTLIST pronAgrFeatFirst
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatFirstExclusive EMPTY>
+<!ATTLIST pronAgrFeatFirstExclusive
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatFirstInclusive EMPTY>
+<!ATTLIST pronAgrFeatFirstInclusive
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatSecond EMPTY>
+<!ATTLIST pronAgrFeatSecond
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatThird EMPTY>
+<!ATTLIST pronAgrFeatThird
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatSingular EMPTY>
+<!ATTLIST pronAgrFeatSingular
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatDual EMPTY>
+<!ATTLIST pronAgrFeatDual
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatPlural EMPTY>
+<!ATTLIST pronAgrFeatPlural
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatMasculine EMPTY>
+<!ATTLIST pronAgrFeatMasculine
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatFeminine EMPTY>
+<!ATTLIST pronAgrFeatFeminine
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatNeuter EMPTY>
+<!ATTLIST pronAgrFeatNeuter
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatAnimate EMPTY>
+<!ATTLIST pronAgrFeatAnimate
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatMinusAnimate EMPTY>
+<!ATTLIST pronAgrFeatMinusAnimate
+checked (yes|no) "no"
+>
+<!ELEMENT pronAgrFeatClassNumber EMPTY>
+<!ATTLIST pronAgrFeatClassNumber
+checked (yes|no) "no"
+>
 <!-- Pre/post-positional phrases have examples of six kinds.
 	 They may have modifiers (modifiers) or not of (modifierType) degree words, ordinals,
 	  manner adverbials or any combination of those.

@@ -95,6 +95,20 @@
 	<pronRelClExample/>
 	<partitiveExample/>
 	<pronounCategory/>
+<pronAgrFeatFirst checked="no"/>
+<pronAgrFeatFirstExclusive checked="no"/>
+<pronAgrFeatFirstInclusive checked="no"/>
+<pronAgrFeatSecond checked="no"/>
+<pronAgrFeatThird checked="no"/>
+<pronAgrFeatSingular checked="no"/>
+<pronAgrFeatDual checked="no"/>
+<pronAgrFeatPlural checked="no"/>
+<pronAgrFeatMasculine checked="no"/>
+<pronAgrFeatFeminine checked="no"/>
+<pronAgrFeatNeuter checked="no"/>
+<pronAgrFeatAnimate checked="no"/>
+<pronAgrFeatMinusAnimate checked="no"/>
+<pronAgrFeatClassNumber checked="no"/>
   </pron>
   <pp checkedOff="no" modifiers="no" modifierType="degree" degreePos="unknown" degreeRestricted="unrestricted" ordinalPos="unknown" ordinalRestricted="unrestricted" mannerPos="unknown" mannerRestricted="unrestricted" pPos="unknown" pType="word" attaches="edge" alone="yes" locative="yes" ppComp="no" sentComp="no">
 	<example/>
