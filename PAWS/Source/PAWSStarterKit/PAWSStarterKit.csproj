@@ -140,6 +140,16 @@
 					BuildAction = "EmbeddedResource"
 				/>
 				<File
+					RelPath = "DlgFileNew.cs"
+					SubType = "Form"
+					BuildAction = "Compile"
+				/>
+				<File
+					RelPath = "DlgFileNew.resx"
+					DependentUpon = "DlgFileNew.cs"
+					BuildAction = "EmbeddedResource"
+				/>
+				<File
 					RelPath = "DlgFirstTime.cs"
 					SubType = "Form"
 					BuildAction = "Compile"

@@ -664,6 +664,7 @@ namespace PAWSStarterKit
 		}
 		void MenuFileNewOnClick(object obj, EventArgs ea)
 		{
+#if Orig
 			// Remember current state
 			XmlDocument xmlDocTemp = m_XmlDoc;
 			m_XmlDoc.Load(m_strNewAnswerFile);
@@ -672,7 +673,44 @@ namespace PAWSStarterKit
 			else
 				// the user canceled; restore the state
 				m_XmlDoc = xmlDocTemp;
+#else
+			// Remember current state
+			XmlDocument xmlDocTemp = m_XmlDoc;
+			// ask whether to start from scratch or to copy
+			DlgFileNew dlg = new DlgFileNew();
+			if (dlg.ShowDialog() == DialogResult.Cancel)
+				return; // they quit, so we do, too
+			if (dlg.rbCopy.Checked)
+			{
+				// allow user to navigate to an answer file and open it
+				OpenFileDialog dlgOpen = new OpenFileDialog();
+				dlgOpen.Filter = m_strAnswerFileFilter;
+				if (dlgOpen.ShowDialog() == DialogResult.OK)
+				{
+					loadAnswerFile(dlgOpen.FileName);
+				}
+				else
+				{
+					return;  // they quit, so we do, too
+				}
 			}
+			else
+			{   // doing it from scratch
+				m_XmlDoc.Load(m_strNewAnswerFile);
+			}
+			// get language properties
+			if (doLanguagePropertiesDialog(true))
+			{
+				Location = new Point(2,2);
+				Size = new Size(SystemInformation.PrimaryMonitorMaximizedWindowSize.Width - SystemInformation.VerticalScrollBarWidth,
+					SystemInformation.PrimaryMonitorMaximizedWindowSize.Height- SystemInformation.HorizontalScrollBarHeight);
+				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
+			}
+			else
+				// the user canceled; restore the state
+				m_XmlDoc = xmlDocTemp;
+#endif // Orig
+		}
 		void MenuFileOpenOnClick(object obj, EventArgs ea)
 		{
 			OpenFileDialog dlg = new OpenFileDialog();
