@@ -66,6 +66,8 @@
  * Copyright 1997, 2000 by SIL International.  All rights reserved.
  */
 #include <windows.h>
+#include <assert.h> // jdh 2001.7.16
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -195,7 +197,7 @@ static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 
 #define MAXAMBIG 16		/* high level of ambiguity for stats */
 
-enum output_style { Ana, AResult, Ptext };
+enum output_style { Ana, AResult, Ptext, FWParse };
 struct ample_setup
 {
 	AmpleData		sData;
@@ -1031,6 +1033,106 @@ pSetup_in->sData.sPATR.eTreeDisplay = iOrigTreeDisplay;
 return pszBuffer_out;
 }
 
+
+/*****************************************************************************
+ * NAME
+ *    addFWParseToBuffer
+ * DESCRIPTION
+ *    add the parsed word in the WordTemplate structure to the buffer in
+ *    <AResult> form
+ * RETURN VALUE
+ *    pointer to the buffer
+ */
+
+ // this was made by assuming the changes marked with #ifndef hab33169 and removing the #ifdef EXPERIMENTAL ones
+
+ static char * addFWParseToBuffer(
+	 AmpleSetup *  pSetup_in,
+	 const AmpleWord *	pWord_in,
+	 const TextControl *	pTextCtl_in,
+	 char *		pszBuffer_out,
+	 size_t		uiBufferSize_in)  /* this doesn't count space for NUL*/
+ {
+	 WordAnalysis *		pAnal;
+	 AmpleHeadlistList *	pHeadlists;
+	 AmpleHeadList *		pHead;
+	 AmpleAllomorph *	pAllo;
+	 char *			pszAResult;
+	 size_t			uiSize;
+	 size_t			uiRoom;
+
+
+	 /*
+	 *  adjust pointers and counters for less redundant skipping
+	 */
+	 uiSize     = strlen(pszBuffer_out);
+	 pszAResult = pszBuffer_out + uiSize;
+	 uiRoom     = uiBufferSize_in - uiSize;
+
+#define CONCAT(psz) { \
+	strncat(pszAResult, psz, uiRoom); \
+	uiSize = strlen(pszAResult); \
+	pszAResult += uiSize; \
+	uiRoom -= uiSize; \
+	 }
+
+	 CONCAT(" <Wordform DbRef=DB_REF_HERE Form=\"")
+		 CONCAT(pWord_in->pTemplate->pszOrigWord)
+		 CONCAT("\">\r\n");
+
+	 if (pWord_in->pTemplate->pAnalyses == NULL)
+	 {
+		 // empty means no analysis
+	 }
+	 else
+	 {
+		 for (   pAnal = pWord_in->pTemplate->pAnalyses,
+			 pHeadlists = pWord_in->pHeadlists ;
+		 pAnal && pHeadlists ;
+		 pAnal = pAnal->pNext, pHeadlists = pHeadlists->pNext )
+		 {
+			 CONCAT("  <WfiAnalysis>\r\n")
+				 CONCAT("   <Morphs>\r\n")
+
+				 for ( pHead = pHeadlists->pHeadList ; pHead ; pHead = pHead->pRight )
+				 {
+					 CONCAT("    <Morph>\r\n")
+						 pAllo = pHead->pAllomorph;
+					 if (pAllo == NULL)
+					 {
+						 reportError(ERROR_MSG, "pHead->pAllomorph is NULL?\n");
+						 CONCAT("<MoForm DbRef=? Label=\"?\"/>\r\n")
+							 continue;
+					 }
+					 CONCAT("<MoForm DbRef=")
+						 if (pAllo->pszAllomorphID != NULL)
+							 CONCAT(pAllo->pszAllomorphID)
+							 else
+						 {
+							 CONCAT("#")
+								 CONCAT(pAllo->pszAllomorph)
+								 CONCAT("#")
+						 }
+						 CONCAT(" Label=\"");
+						 CONCAT(pAllo->pMorpheme->pszMorphName);
+						 CONCAT("\">\r\n");
+						 CONCAT("     <MSI />");
+						 CONCAT("    </Morph>\r\n")
+				 }
+
+				 CONCAT("   </Morphs>\r\n")
+					 CONCAT("  </WfiAnalysis>\r\n")
+		 }
+	 }
+	 CONCAT(" </Wordform>\r\n")
+
+
+#undef CONCAT
+
+		 return pszBuffer_out;
+ }
+
+
 /* Following added by hab 1999.03.11 */
 /*****************************************************************************
  * NAME
@@ -1076,198 +1178,243 @@ DllExport const char * AmpleParseText(
 	AmpleSetup * pSetup_io,
 	const char * pszInputText_in)
 {
-char *		pszInputText;
-char *		pszWord;
-AmpleWord	sWord;
-AmpleWord	sPrevWord;
-AmpleWord	sNextWord;
-int		iFailureCount = 0;
-int		iSuccessCount = 0;
-void *		pAResult = NULL;
-const char *	pszResult = szOutputBuffer_g;
-int		iResult;
-int		bParsedAlready = FALSE;
-/*
- *  verify a valid AMPLE setup
- */
-if (!isValidSetup(pSetup_io))
-	return szAmpleInvalidSetup_m;
-/*
- *  set variables for emergency exits
- */
-if (setjmp(sAbortPoint) != 0)
+	char *		pszInputText;
+	char *		pszWord;
+	AmpleWord	sWord;
+	AmpleWord	sPrevWord;
+	AmpleWord	sNextWord;
+	int		iFailureCount = 0;
+	int		iSuccessCount = 0;
+	void *		pAResult = NULL;
+	const char *	pszResult = szOutputBuffer_g;
+	int		iResult;
+	int		bParsedAlready = FALSE;
+	/*
+	*  verify a valid AMPLE setup
+	*/
+	if (!isValidSetup(pSetup_io))
+		return szAmpleInvalidSetup_m;
+		/*
+		*  set variables for emergency exits
+	*/
+	if (setjmp(sAbortPoint) != 0)
 	{
-	pLogFP_m      = NULL;
-	iDebugLevel_m = 0;
-	return szAmpleDLLCrash_m;
+		pLogFP_m      = NULL;
+		iDebugLevel_m = 0;
+		return szAmpleDLLCrash_m;
 	}
-if (pSetup_io->pszLogFilename != NULL)
-	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
-pLogFP_m      = pSetup_io->sData.pLogFP;
-iDebugLevel_m = pSetup_io->sData.iDebugLevel;
-pszInputText_in = checkEmptyString(pszInputText_in);
-if (pszInputText_in == NULL)
+	if (pSetup_io->pszLogFilename != NULL)
+		pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+	pLogFP_m      = pSetup_io->sData.pLogFP;
+	iDebugLevel_m = pSetup_io->sData.iDebugLevel;
+	pszInputText_in = checkEmptyString(pszInputText_in);
+	if (pszInputText_in == NULL)
 	{
-	reportError(ERROR_MSG,
-		"AmpleParseText() missing input text string");
-	pszResult = szMissingArgument_m;
-	goto close_and_return;
+		reportError(ERROR_MSG,
+			"AmpleParseText() missing input text string");
+		pszResult = szMissingArgument_m;
+		goto close_and_return;
 	}
-/*
- *  copy the input string, and parse each word in turn
- */
-pszInputText = duplicateString(pszInputText_in);
+	/*
+	*  copy the input string, and parse each word in turn
+	*/
+	pszInputText = duplicateString(pszInputText_in);
 				/* hab 1999.03.11 */
-pSetup_io->sData.iOutputFlags = getOutputFlags(pSetup_io,
-						   pSetup_io->sData.iOutputFlags);
-pSetup_io->sData.bMorphemeLookahead = FALSE;
-pSetup_io->sData.bLookaheadDone     = FALSE;
-pSetup_io->sData.bMultiDependency   = FALSE;
-memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
-strncpy(szOutputBuffer_g, "<AResult>\r\n", sizeof(szOutputBuffer_g)-1);
-/*
- *  if tracing with SGML output, initiate the trace
- */
-initiateAmpleTrace( &pSetup_io->sData );
-/*
- *  the following is made unduly complicated by AMPLE's use of adjacent words
- */
-memset(&sWord,     0, sizeof(AmpleWord));
-memset(&sNextWord, 0, sizeof(AmpleWord));
-memset(&sPrevWord, 0, sizeof(AmpleWord));
-#ifndef hab33105
-pszWord = pszInputText;
-sWord.pTemplate = readTemplateFromTextString(&pszWord,
-						 &pSetup_io->sData.sTextCtl);
-sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
-						 &pSetup_io->sData.sTextCtl);
-#else /* hab33105 */
-pszWord = strtok(pszInputText, szWhitespace_g);
-if (pszWord != NULL)
+	pSetup_io->sData.iOutputFlags = getOutputFlags(pSetup_io,
+		pSetup_io->sData.iOutputFlags);
+	pSetup_io->sData.bMorphemeLookahead = FALSE;
+	pSetup_io->sData.bLookaheadDone     = FALSE;
+	pSetup_io->sData.bMultiDependency   = FALSE;
+	memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
+
+	switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
 	{
-	sWord.pTemplate = allocMemory(sizeof(WordTemplate));
-	sWord.pTemplate->pszOrigWord = duplicateString(pszWord);
-	sWord.pTemplate->iCapital    = decapitalizeWord(sWord.pTemplate,
-						   &pSetup_io->sData.sTextCtl);
-	pszWord = strtok(NULL, szWhitespace_g);
+	case AResult:
+		strncpy(szOutputBuffer_g, "<AResult>\r\n", sizeof(szOutputBuffer_g)-1);
+		break;
+
+	case FWParse:
+	//	strncpy(szOutputBuffer_g, "<WfiAnalysis>\r\n", sizeof(szOutputBuffer_g)-1);
+		break;
+
+	default:
+		assert(FALSE);
+		break;
+	}
+
+
+
+	/*
+	*  if tracing with SGML output, initiate the trace
+	*/
+	initiateAmpleTrace( &pSetup_io->sData );
+	/*
+	*  the following is made unduly complicated by AMPLE's use of adjacent words
+	*/
+	memset(&sWord,     0, sizeof(AmpleWord));
+	memset(&sNextWord, 0, sizeof(AmpleWord));
+	memset(&sPrevWord, 0, sizeof(AmpleWord));
+#ifndef hab33105
+	pszWord = pszInputText;
+	sWord.pTemplate = readTemplateFromTextString(&pszWord,
+		&pSetup_io->sData.sTextCtl);
+	sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
+		&pSetup_io->sData.sTextCtl);
+#else /* hab33105 */
+	pszWord = strtok(pszInputText, szWhitespace_g);
 	if (pszWord != NULL)
 	{
-	sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
-	sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
-	sNextWord.pTemplate->iCapital    = decapitalizeWord(
-						   sNextWord.pTemplate,
-						   &pSetup_io->sData.sTextCtl);
-	}
+		sWord.pTemplate = allocMemory(sizeof(WordTemplate));
+		sWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+		sWord.pTemplate->iCapital    = decapitalizeWord(sWord.pTemplate,
+			&pSetup_io->sData.sTextCtl);
+		pszWord = strtok(NULL, szWhitespace_g);
+		if (pszWord != NULL)
+		{
+			sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
+			sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+			sNextWord.pTemplate->iCapital    = decapitalizeWord(
+				sNextWord.pTemplate,
+				&pSetup_io->sData.sTextCtl);
+		}
 	}
 #endif /* hab33105 */
-while (sWord.pTemplate != NULL)
+	while (sWord.pTemplate != NULL)
 	{
-	if (sWord.pTemplate->paWord != NULL)
-	{
-	if (!bParsedAlready)
-		iResult = analyzeAmpleWord(&sWord, &pSetup_io->sData);
-	bParsedAlready = FALSE;
-	if (iResult)
+		if (sWord.pTemplate->paWord != NULL)
 		{
-		if (sWord.bUsesNextWord &&
-		(sNextWord.pTemplate != NULL) &&
-		(sNextWord.pTemplate->paWord != NULL) )
+			if (!bParsedAlready)
+				iResult = analyzeAmpleWord(&sWord, &pSetup_io->sData);
+			bParsedAlready = FALSE;
+			if (iResult)
 			{
-		iResult = analyzeAmpleWord(&sNextWord, &pSetup_io->sData);
-		if (sNextWord.bUsesNextWord)
-			{
-			/* warning message */
-			if (pSetup_io->sData.pLogFP != NULL)
+				if (sWord.bUsesNextWord &&
+					(sNextWord.pTemplate != NULL) &&
+					(sNextWord.pTemplate->paWord != NULL) )
 				{
-			fprintf(pSetup_io->sData.pLogFP,
-				"\nWARNING:  Multiple dependency:  %s %s\n",
-				sWord.pTemplate->pszOrigWord,
-				sNextWord.pTemplate->pszOrigWord);
+					iResult = analyzeAmpleWord(&sNextWord, &pSetup_io->sData);
+					if (sNextWord.bUsesNextWord)
+					{
+						/* warning message */
+						if (pSetup_io->sData.pLogFP != NULL)
+						{
+							fprintf(pSetup_io->sData.pLogFP,
+								"\nWARNING:  Multiple dependency:  %s %s\n",
+								sWord.pTemplate->pszOrigWord,
+								sNextWord.pTemplate->pszOrigWord);
+						}
+					}
+					bParsedAlready = TRUE;
+				}
+				if (sWord.bUsesPrevWord ||
+					sWord.bUsesNextWord)
+				{
+					pSetup_io->sData.bLookaheadDone = TRUE;
+					refineAmpleAnalysis(&sWord,
+						&sPrevWord,
+						&sNextWord,
+						&pSetup_io->sData);
+					pSetup_io->sData.bLookaheadDone = FALSE;
+				}
 			}
-			}
-		bParsedAlready = TRUE;
-		}
-		if (sWord.bUsesPrevWord ||
-		sWord.bUsesNextWord)
-			{
-		pSetup_io->sData.bLookaheadDone = TRUE;
-		refineAmpleAnalysis(&sWord,
-					&sPrevWord,
-					&sNextWord,
-					&pSetup_io->sData);
-		pSetup_io->sData.bLookaheadDone = FALSE;
-		}
-		}
-	if (iResult == 0)
-		++iFailureCount;
-	else
-		++iSuccessCount;
-	/*
-	 *  output the results of analysis
-	 */
+			if (iResult == 0)
+				++iFailureCount;
+			else
+				++iSuccessCount;
+				/*
+				*  output the results of analysis
+			*/
 #ifndef hab33169
-	addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
-			   szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+
+			switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
+			{
+			case AResult:
+				addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
+					szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+
+			case FWParse:
+				addFWParseToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
+					szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+				break;
+
+			default:
+				assert(FALSE);
+				break;
+			}
+
 #else
-	addAResultToBuffer(&sWord, &pSetup_io->sData.sTextCtl,
-			   szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+			addAResultToBuffer(&sWord, &pSetup_io->sData.sTextCtl,
+				szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
 #endif /* hab33169 */
 
-	}
-	/*
-	 *  get the next word from the input string
-	 */
-	eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
-	memcpy(&sPrevWord, &sWord,     sizeof(AmpleWord));
-	memcpy(&sWord,     &sNextWord, sizeof(AmpleWord));
-	memset(&sNextWord, 0, sizeof(AmpleWord));
+		}
+		/*
+		*  get the next word from the input string
+		*/
+		eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
+		memcpy(&sPrevWord, &sWord,     sizeof(AmpleWord));
+		memcpy(&sWord,     &sNextWord, sizeof(AmpleWord));
+		memset(&sNextWord, 0, sizeof(AmpleWord));
 #ifndef hab33105
-	sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
-						  &pSetup_io->sData.sTextCtl);
+		sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
+			&pSetup_io->sData.sTextCtl);
 #else /* hab33105 */
-	pszWord = strtok(NULL, szWhitespace_g);
-	if (pszWord != NULL)
-	{
-	sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
-	sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
-	sNextWord.pTemplate->iCapital    = decapitalizeWord(
-						   sNextWord.pTemplate,
-						   &pSetup_io->sData.sTextCtl);
-	}
+		pszWord = strtok(NULL, szWhitespace_g);
+		if (pszWord != NULL)
+		{
+			sNextWord.pTemplate = allocMemory(sizeof(WordTemplate));
+			sNextWord.pTemplate->pszOrigWord = duplicateString(pszWord);
+			sNextWord.pTemplate->iCapital    = decapitalizeWord(
+				sNextWord.pTemplate,
+				&pSetup_io->sData.sTextCtl);
+		}
 #endif /* hab33105 */
 	}
-eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
-strncat(szOutputBuffer_g, "</AResult>\r\n",
-	sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
-/*
- *  if tracing with SGML output, terminate the trace
- */
-terminateAmpleTrace( &pSetup_io->sData );
-/*
- *  free the copy of the input string
- */
-freeMemory(pszInputText);
+	eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
+		switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
+		{
+		case AResult:
+			strncat(szOutputBuffer_g, "</AResult>\r\n",
+				sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
+		case FWParse:
+	//		strncat(szOutputBuffer_g, "</WfiAnalysis>\r\n",
+		//		sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
+			break;
+
+		default:
+			assert(FALSE);
+			break;
+		}
+
+		/*
+		*  if tracing with SGML output, terminate the trace
+	*/
+	terminateAmpleTrace( &pSetup_io->sData );
+	/*
+	*  free the copy of the input string
+	*/
+	freeMemory(pszInputText);
 #ifdef _DEBUG
-if (pSetup_io->sData.pLogFP != NULL)
+	if (pSetup_io->sData.pLogFP != NULL)
 	{
-	fprintf(pSetup_io->sData.pLogFP, "\nAmpleParseText()\nInput =\n");
-	fputs(pszInputText_in,  pSetup_io->sData.pLogFP);
-	fprintf(pSetup_io->sData.pLogFP, "\nOutput =\n");
-	fputs(szOutputBuffer_g, pSetup_io->sData.pLogFP);
-	fprintf(pSetup_io->sData.pLogFP, "\nEnd of AmpleParseText()\n");
+		fprintf(pSetup_io->sData.pLogFP, "\nAmpleParseText()\nInput =\n");
+		fputs(pszInputText_in,  pSetup_io->sData.pLogFP);
+		fprintf(pSetup_io->sData.pLogFP, "\nOutput =\n");
+		fputs(szOutputBuffer_g, pSetup_io->sData.pLogFP);
+		fprintf(pSetup_io->sData.pLogFP, "\nEnd of AmpleParseText()\n");
 	}
 #endif
 
 close_and_return:
-if (pSetup_io->sData.pLogFP != NULL)
+	if (pSetup_io->sData.pLogFP != NULL)
 	{
-	fclose(pSetup_io->sData.pLogFP);
-	pSetup_io->sData.pLogFP = NULL;
+		fclose(pSetup_io->sData.pLogFP);
+		pSetup_io->sData.pLogFP = NULL;
 	}
 
-pLogFP_m      = NULL;
-iDebugLevel_m = 0;
-return pszResult;
+	pLogFP_m      = NULL;
+	iDebugLevel_m = 0;
+	return pszResult;
 }
 
 /*****************************************************************************
@@ -1541,7 +1688,6 @@ else
 	}
 #endif
 }
-
 
 /***************************************************************************
  * NAME
@@ -2005,6 +2151,10 @@ switch (pSetup_io->eOutputStyle)
 	case AResult:
 	//jdh june 14 2000 commented out: fprintf(outfp, "<!DOCTYPE AResult SYSTEM \"aresult.dtd\">\n");
 	fprintf(outfp, "<AResult source=\"AmpleDLL\">\n");
+	break;
+
+	case FWParse:
+	/* not yet implemented */
 	break;
 
 	case Ptext:
@@ -2800,6 +2950,8 @@ else if (_stricmp(pszValue_in, "AResult") == 0)
 	pSetup_io->eOutputStyle = AResult;
 else if (_stricmp(pszValue_in, "Ptext") == 0)
 	pSetup_io->eOutputStyle = Ptext;
+else if (_stricmp(pszValue_in, "FWParse") == 0)
+	pSetup_io->eOutputStyle = FWParse;
 else
 	return szInvalidParameterValue_m;
 
@@ -3301,6 +3453,7 @@ switch (pSetup_io->eOutputStyle)
 	case Ana:		return "Ana";
 	case AResult:	return "AResult";
 	case Ptext:		return "Ptext";
+	case FWParse:		return "FWParse";
 	default:		return "?";
 	}
 }
@@ -3956,6 +4109,7 @@ return pszResult;
 
 /******************************************************************************
  * EDIT HISTORY
+ * 16-July-2001	jdh		- Add support for Fieldworks XFWParse format
  * 31-May-2001  hab  - Needed to ignore RSC bit when checking affix type in
  * [3.3.20.10]           addAlloResultToBuffer().
  * 29-Mar-2001  hab  - Add conditionally compiled XAmple version, including
