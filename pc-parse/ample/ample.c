@@ -523,8 +523,8 @@ while ((k = getopt(argc, argv, "abc:d:e:f:gi:mn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
 
 	case 't':			/* trace option */
 		sAmpleData_m.eTraceAnalysis++;
-		if (sAmpleData_m.eTraceAnalysis > AMPLE_TRACE_SGML)
-		sAmpleData_m.eTraceAnalysis = AMPLE_TRACE_SGML;
+		if (sAmpleData_m.eTraceAnalysis > AMPLE_TRACE_XML)
+		sAmpleData_m.eTraceAnalysis = AMPLE_TRACE_XML;
 		break;
 
 	case 'u':			/* combined dictionaries option */

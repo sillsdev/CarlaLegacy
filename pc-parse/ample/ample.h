@@ -104,6 +104,7 @@ struct ample_data {
 #define AMPLE_TRACE_OFF		0
 #define AMPLE_TRACE_ON		1
 #define AMPLE_TRACE_SGML	2
+#define AMPLE_TRACE_XML 	3
 	char *		   pszTrace;
 	size_t		   uiTraceSize;
 	int			   iOutputFlags;		/* -w, -x */

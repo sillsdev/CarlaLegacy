@@ -3217,6 +3217,8 @@ else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
 	pSetup_io->sData.eTraceAnalysis = AMPLE_TRACE_OFF;
 else if (_stricmp(pszValue_in, "SGML") == 0)
 	pSetup_io->sData.eTraceAnalysis = AMPLE_TRACE_SGML;
+else if (_stricmp(pszValue_in, "XML") == 0)
+	pSetup_io->sData.eTraceAnalysis = AMPLE_TRACE_XML;
 else
 	return szInvalidParameterValue_m;
 
@@ -3818,6 +3820,8 @@ switch (pSetup_io->sData.eTraceAnalysis)
 	return "ON";
 	case AMPLE_TRACE_SGML:
 	return "SGML";
+	case AMPLE_TRACE_XML:
+	return "XML";
 	default:
 	return "BOGUS!?";
 	}
@@ -4558,6 +4562,8 @@ return pszResult;
 
 /******************************************************************************
  * EDIT HISTORY
+ * 12-Jul-2003  hab  - Add AMPLE_TRACE_XML option
+ * [3.7.0.17]
  * 17-Oct-2002  hab  - Added MaxAnalysesToReturn parameter and AmpleParseText()
  * [3.6.5.16]            now returns the first analyses up to this parameter
  *                       for the FWParse option, only (default is all analyses)

@@ -188,7 +188,8 @@ AmpleAllomorph *	pAllo;
 
 if (	(pAmple_in == NULL)                             ||
 	(pAmple_in->pLogFP == NULL)                     ||
-	(pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML) ||
+	( (pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML) &&
+	  (pAmple_in->eTraceAnalysis != AMPLE_TRACE_XML) ) ||
 	(pAmple_in->pSelectiveAnalMorphs == NULL) )
 	return;
 
@@ -200,7 +201,10 @@ for ( pMorph = pAmple_in->pAmpleMorphemes ; pMorph ; pMorph = pMorph->pLink )
 	{
 	fprintf(pAmple_in->pLogFP, "    <morphID>");
 	writeAmplePCDATA(pAmple_in->pLogFP, pMorph->pszMorphName, FALSE);
-	fprintf(pAmple_in->pLogFP, "</>\n");
+	if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_XML)
+	  fprintf(pAmple_in->pLogFP, "</morphID>\n");
+	else
+	  fprintf(pAmple_in->pLogFP, "</>\n");
 	}
 	else
 	{
@@ -359,7 +363,8 @@ char *			pszName;
 if (	(pAmple_in        == NULL) ||
 	(pszString_io     == NULL) ||
 	(puiStringSize_io == NULL) ||
-	(pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML) ||
+	( (pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML) &&
+	  (pAmple_in->eTraceAnalysis != AMPLE_TRACE_XML) ) ||
 	(pAmple_in->pSelectiveAnalMorphs == NULL) )
 	return pszString_io;
 

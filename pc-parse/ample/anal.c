@@ -349,7 +349,8 @@ pNextWord_m     = pNextWord_in;
 if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
 	{
 	const char * pszFmt = "About to parse %s\n";
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	pszFmt = "<wordTrace>\n<!-- %s -->\n";
 	store_AMPLE_trace(pAmple_in, pszFmt,
 			  pCurrentWord_m->pTemplate->pszOrigWord);
@@ -372,9 +373,13 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 	{
 	const char * pszFmt = "Parsing %s\n";
 	char *       pszStr = pszSurfaceForm_m;
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		{
-		pszFmt = "<form>%s</>\n<trace>\n";
+		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		  pszFmt = "<form>%s</form>\n<trace>\n";
+		else
+		  pszFmt = "<form>%s</>\n<trace>\n";
 #ifdef HAVE_ALLOCA
 		pszStr = (char *)alloca(
 				 lengthAmplePCDATA(pszSurfaceForm_m, FALSE)+1);
@@ -386,7 +391,8 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 		}
 	store_AMPLE_trace(pAmple_in, pszFmt, pszStr);
 #ifndef HAVE_ALLOCA
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		freeMemory(pszStr);
 #endif
 	iTracingDepth_m = -1;
@@ -394,7 +400,8 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 
 	bAllosTried = get_prefix(NULL, pszSurfaceForm_m, 0, 0, 0, pAmple_in);
 
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	{
 	const char * pszFmt = "</trace>\n";
 	char *	     pszStr = NULL;
@@ -403,8 +410,12 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 		{
 		if ((pszSurfaceForm_m != NULL) && (*pszSurfaceForm_m != NUL))
 		{
-		pszFmt =
-			"<parseNode>\n  <leftover>%s</>\n</parseNode>\n</trace>\n";
+		  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			pszFmt =
+			  "<parseNode>\n  <leftover>%s</leftover>\n</parseNode>\n</trace>\n";
+		  else
+			pszFmt =
+			  "<parseNode>\n  <leftover>%s</>\n</parseNode>\n</trace>\n";
 #ifdef HAVE_ALLOCA
 		pszStr = (char *)alloca(
 				 lengthAmplePCDATA(pszSurfaceForm_m, FALSE)+1);
@@ -416,7 +427,11 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 		}
 		else
 		{
-		pszFmt =
+		  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			pszFmt =
+	 "<parseNode>\n  <endOfWord/><failure test='none'/>\n</parseNode>\n</trace>\n";
+		  else
+			pszFmt =
 	 "<parseNode>\n  <endOfWord><failure test=none>\n</parseNode>\n</trace>\n";
 		}
 		}
@@ -427,7 +442,8 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 #endif
 	}
 	}
-if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	{
 	const char * pszFmt = "</wordTrace>\n";
 	store_AMPLE_trace(pAmple_in, pszFmt, NULL);
@@ -1107,9 +1123,9 @@ if (pfxs_found < pAmple_in->iMaxPrefixCount)
 						ifxs_found, nulls_next,
 						pAmple_in);
 
-
 		if (	!bContinuation &&
-			(pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) )
+			( (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+			  (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)) )
 			{
 			sgml_trace(pAmple_in, "    <parseNode>\n", TRUE);
 			if ((newtail != NULL) && (*newtail != NUL))
@@ -1125,12 +1141,20 @@ if (pfxs_found < pAmple_in->iMaxPrefixCount)
 			sgml_trace(pAmple_in, "      <leftover>", TRUE);
 			storeAmplePCDATA(pszStr, newtail, FALSE);
 			store_AMPLE_trace(pAmple_in, pszStr, NULL);
-			sgml_trace(pAmple_in, "</>\n", FALSE);
+			if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			  sgml_trace(pAmple_in, "</leftover>\n", FALSE);
+			else
+			  sgml_trace(pAmple_in, "</>\n", FALSE);
 #ifndef HAVE_ALLOCA
 			freeMemory(pszStr);
 #endif
 			}
 			else
+			  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			sgml_trace(pAmple_in,
+				   "      <endOfWord/><failure test='none'/>\n",
+				   TRUE);
+			  else
 			sgml_trace(pAmple_in,
 				   "      <endOfWord><failure test=none>\n",
 				   TRUE);
@@ -1416,7 +1440,8 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 			break;
 			}
 		if (	!bContinuation &&
-			(pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) )
+			( (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+			  (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)) )
 			{
 			sgml_trace(pAmple_in, "    <parseNode>\n", TRUE);
 			if ((newtail != NULL) && (*newtail != NUL))
@@ -1432,15 +1457,24 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 			sgml_trace(pAmple_in, "      <leftover>", TRUE);
 			storeAmplePCDATA(pszStr, newtail, FALSE);
 			store_AMPLE_trace(pAmple_in, pszStr, NULL);
-			sgml_trace(pAmple_in, "</>\n", FALSE);
+			if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			  sgml_trace(pAmple_in, "</leftover>\n", FALSE);
+			else
+			  sgml_trace(pAmple_in, "</>\n", FALSE);
 #ifndef HAVE_ALLOCA
 			freeMemory(pszStr);
 #endif
 			}
 			else
+			  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			sgml_trace(pAmple_in,
+				   "      <endOfWord/><failure test='none'/>\n",
+				   TRUE);
+			else
 			sgml_trace(pAmple_in,
 				   "      <endOfWord><failure test=none>\n",
 				   TRUE);
+
 			sgml_trace(pAmple_in, "    </parseNode>\n", TRUE);
 			}
 		sgml_trace(pAmple_in, "  </continuation>\n", TRUE);
@@ -1615,7 +1649,8 @@ if (roots_found < pAmple_in->iMaxRootCount)
 					 ifxs_found, nulls_next,
 					 pAmple_in);
 		if (	!bContinuation &&
-			(pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) )
+			((pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+			(pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) ))
 			{
 			sgml_trace(pAmple_in, "    <parseNode>\n", TRUE);
 			if ((newtail != NULL) && (*newtail != NUL))
@@ -1631,11 +1666,19 @@ if (roots_found < pAmple_in->iMaxRootCount)
 			sgml_trace(pAmple_in, "      <leftover>", TRUE);
 			storeAmplePCDATA(pszStr, newtail, FALSE);
 			store_AMPLE_trace(pAmple_in, pszStr, NULL);
-			sgml_trace(pAmple_in, "</>\n", FALSE);
+			if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			  sgml_trace(pAmple_in, "</leftover>\n", FALSE);
+			else
+			  sgml_trace(pAmple_in, "</>\n", FALSE);
 #ifndef HAVE_ALLOCA
 			freeMemory(pszStr);
 #endif
 			}
+			else
+			  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			sgml_trace(pAmple_in,
+				   "      <endOfWord/><failure test='none'/>\n",
+				   TRUE);
 			else
 			sgml_trace(pAmple_in,
 				   "      <endOfWord><failure test=none>\n",
@@ -1945,7 +1988,8 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 						pAmple_in);
 
 		if (    !bContinuation &&
-			(pAmple_in->eTraceAnalysis==AMPLE_TRACE_SGML) )
+			( (pAmple_in->eTraceAnalysis==AMPLE_TRACE_SGML) ||
+			  (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML) ))
 			{
 			sgml_trace(pAmple_in, "    <parseNode>\n", TRUE);
 			if ((newtail != NULL) && (*newtail != NUL))
@@ -1961,12 +2005,20 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 			sgml_trace(pAmple_in, "      <leftover>", TRUE);
 			storeAmplePCDATA(pszStr, newtail, FALSE);
 			store_AMPLE_trace(pAmple_in, pszStr, NULL);
-			sgml_trace(pAmple_in, "</>\n", FALSE);
+			if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+			  sgml_trace(pAmple_in, "</leftover>\n", FALSE);
+			else
+			  sgml_trace(pAmple_in, "</>\n", FALSE);
 #ifndef HAVE_ALLOCA
 			freeMemory(pszStr);
 #endif
 			}
 			else
+			  if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+			sgml_trace(pAmple_in,
+				   "      <endOfWord/><failure test='none'/>\n",
+				   TRUE);
+			  else
 			sgml_trace(pAmple_in,
 				   "      <endOfWord><failure test=none>\n",
 				   TRUE);
@@ -2067,7 +2119,8 @@ if (*tail == NUL)
 				  pszUnderlying_m);
 		}
 		}
-	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		{
 		char * pszIndent;
 #ifdef HAVE_ALLOCA
@@ -2078,7 +2131,10 @@ if (*tail == NUL)
 #endif
 		sprintf(pszIndent, "%*s", 2*iTracingDepth_m, "");
 		store_AMPLE_trace(pAmple_in, "  %s<parseNode>\n", pszIndent);
-		store_AMPLE_trace(pAmple_in, "    %s<endOfWord>", pszIndent);
+		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		  store_AMPLE_trace(pAmple_in, "    %s<endOfWord/>", pszIndent);
+		else
+		  store_AMPLE_trace(pAmple_in, "    %s<endOfWord>", pszIndent);
 #ifndef HAVE_ALLOCA
 		freeMemory(pszIndent);
 #endif
@@ -2088,7 +2144,10 @@ if (*tail == NUL)
 	bOldUsesNext = bUsesNextWord_m;
 	if (performAmpleFinalTests(head, pAmple_in))
 	{				/* analysis successfully completed */
-	sgml_trace(pAmple_in, "<success>\n", FALSE);
+	  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		sgml_trace(pAmple_in, "<success/>\n", FALSE);
+	  else
+		sgml_trace(pAmple_in, "<success>\n", FALSE);
 	sgml_trace(pAmple_in, "  </parseNode>\n", TRUE);
 
 	if (!find_result(pCurrentWord_m->pTemplate,
@@ -2231,7 +2290,8 @@ else			/* Else (not at end of word) */
 	 *  if nothing more matches, give trace message
 	 */
 	if (	!bAllomorphsTried &&
-		(pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) )
+		(pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+		(pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) )
 		{
 		char * pszIndent;
 #ifdef HAVE_ALLOCA
@@ -2252,12 +2312,19 @@ else			/* Else (not at end of word) */
 #endif
 		store_AMPLE_trace(pAmple_in, "    %s<leftover>", pszIndent);
 		storeAmplePCDATA(pszStr, tail, FALSE);
-		store_AMPLE_trace(pAmple_in, "%s</>\n", pszStr);
+		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		  store_AMPLE_trace(pAmple_in, "%s</leftover>\n", pszStr);
+		else
+		  store_AMPLE_trace(pAmple_in, "%s</>\n", pszStr);
 #ifndef HAVE_ALLOCA
 		freeMemory(pszStr);
 #endif
 		}
 		else
+		  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		store_AMPLE_trace(pAmple_in,
+				  "  <endOfWord/><failure test='none'/>\n", NULL);
+		  else
 		store_AMPLE_trace(pAmple_in,
 				  "  <endOfWord><failure test=none>\n", NULL);
 		store_AMPLE_trace(pAmple_in, "  %s</parseNode>\n", pszIndent);
@@ -2421,7 +2488,8 @@ if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
 	}
 	store_AMPLE_trace(pAmple_in, "\n", NULL);
 	}
-else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	{
 	size_t	uiSize;
 	size_t	uiMaxSize;
@@ -2451,7 +2519,10 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
 #endif
 	store_AMPLE_trace(pAmple_in, "%s<parseNode>\n", pszIndent);
 	store_AMPLE_trace(pAmple_in, "  %s<morph",      pszIndent);
-	store_AMPLE_trace(pAmple_in, " type=%s",        pszType);
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	  store_AMPLE_trace(pAmple_in, " type='%s'",        pszType);
+	else
+	  store_AMPLE_trace(pAmple_in, " type=%s",        pszType);
 	storeAmpleCDATA(pszStr, pszAllomorphID_in ? pszAllomorphID_in : szAllo,
 			FALSE);
 	store_AMPLE_trace(pAmple_in, " alloid=\"%s\"", pszStr);
@@ -2462,7 +2533,10 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
 	storeAmpleCDATA(pszStr, pszToCat, FALSE);
 	store_AMPLE_trace(pAmple_in, "/%s", pszStr);
 	}
-	store_AMPLE_trace(pAmple_in, "\">\n", NULL);
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	  store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
+	else
+	  store_AMPLE_trace(pAmple_in, "\">\n", NULL);
 #ifndef HAVE_ALLOCA
 	freeMemory(pszStr);
 #endif
@@ -2635,7 +2709,8 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 					  pAmple_in);
 	}
 	if (    !bPassed &&
-		(pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) )
+		((pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+		 (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) ))
 	{
 	char *	pszStr;
 	size_t	uiSize;
@@ -2683,7 +2758,10 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 				current->pAllomorph->pEnvironment->pStringCond,
 				TRUE);
 		}
-	store_AMPLE_trace(pAmple_in, "\">\n", NULL);
+	if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+	  store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
+	else
+	  store_AMPLE_trace(pAmple_in, "\">\n", NULL);
 #ifndef HAVE_ALLOCA
 	freeMemory(pszStr);
 #endif
@@ -2745,7 +2823,8 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 				current->pAllomorph->pEnvironment->pPunctCond,
 				pAmple_in);
 	if (    !bPassed &&
-		(pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) )
+		( (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+		  (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) ) )
 	{
 	char *	pszStr;
 	size_t	uiSize;
@@ -2793,7 +2872,10 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 				current->pAllomorph->pEnvironment->pPunctCond,
 				TRUE);
 		}
-	store_AMPLE_trace(pAmple_in, "\">\n", NULL);
+	if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+	  store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
+	else
+	  store_AMPLE_trace(pAmple_in, "\">\n", NULL);
 #ifndef HAVE_ALLOCA
 	freeMemory(pszStr);
 #endif
@@ -3019,7 +3101,8 @@ if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
 		}
 		}
 	}
-	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	{
 	char *	pszStr;
 	size_t	uiSize;
@@ -3078,7 +3161,10 @@ if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
 				 current->pAllomorph->pEnvironment->pMorphCond,
 				 TRUE);
 		}
-	store_AMPLE_trace(pAmple_in, "\">", NULL);
+	if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+	  store_AMPLE_trace(pAmple_in, "\"/>", NULL);
+	else
+	  store_AMPLE_trace(pAmple_in, "\">", NULL);
 #ifndef HAVE_ALLOCA
 	freeMemory(pszStr);
 #endif
@@ -3194,7 +3280,8 @@ for ( tp = pMorphConstraint_in->pMorphs, hp = pCurrent_in ; hp ; )
 		}
 		store_AMPLE_trace(pAmple_in, "\n", NULL);
 		}
-	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		{
 		char *		pszStr;
 		size_t		uiSize;
@@ -3287,7 +3374,10 @@ for ( tp = pMorphConstraint_in->pMorphs, hp = pCurrent_in ; hp ; )
 						  pAmple_in->pLogFP, TRUE);
 			}
 		}
-		store_AMPLE_trace(pAmple_in, "\">", NULL);
+		if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+		  store_AMPLE_trace(pAmple_in, "\"/>", NULL);
+		else
+		  store_AMPLE_trace(pAmple_in, "\">", NULL);
 #ifndef HAVE_ALLOCA
 		freeMemory(pszStr);
 #endif
@@ -3479,7 +3569,8 @@ for ( tp = pNeverConstraint_in->pAlloIDs, hp = pCurrent_in ; hp ; )
 		}
 		store_AMPLE_trace(pAmple_in, "\n", NULL);
 		}
-	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		{
 		char *		pszStr;
 		size_t		uiSize;
@@ -3572,7 +3663,10 @@ for ( tp = pNeverConstraint_in->pAlloIDs, hp = pCurrent_in ; hp ; )
 						  pAmple_in->pLogFP, TRUE);
 			}
 		}
-		store_AMPLE_trace(pAmple_in, "\">", NULL);
+		if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+		  store_AMPLE_trace(pAmple_in, "\"/>", NULL);
+		else
+		  store_AMPLE_trace(pAmple_in, "\">", NULL);
 #ifndef HAVE_ALLOCA
 		freeMemory(pszStr);
 #endif
@@ -4060,10 +4154,12 @@ for (	flp = pAmple_in->pFinalTests,
 		{
 		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
 		{
-		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+			pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 			store_AMPLE_trace(pAmple_in, "\n  ", NULL);
 		p_trace("Final", flp, pAmple_in);
-		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+			pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 			{
 			char *	pszIndent;
 #ifdef HAVE_ALLOCA
@@ -4118,7 +4214,8 @@ if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
 	store_AMPLE_trace(pAmple_in, ptype, NULL);
 	store_AMPLE_trace(pAmple_in, " test %s failed.\n", flp->pszName);
 	}
-else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+	 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	{
 	switch (flp->eFunction)
 	{
@@ -4140,7 +4237,10 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
 		sprintf(pszStr, "%*s", 2*iTracingDepth_m, "");
 		store_AMPLE_trace(pAmple_in, pszStr, NULL);
 		storeAmpleCDATA(pszStr, flp->pszName, FALSE);
-		store_AMPLE_trace(pAmple_in, "  <failure test=\"%s\">\n", pszStr);
+		if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+		  store_AMPLE_trace(pAmple_in, "  <failure test=\"%s\"/>\n", pszStr);
+		else
+		  store_AMPLE_trace(pAmple_in, "  <failure test=\"%s\">\n", pszStr);
 #ifndef HAVE_ALLOCA
 		freeMemory(pszStr);
 #endif
@@ -5278,7 +5378,8 @@ if (pAmple_in == NULL)
 if (pAmple_in->pszTrace != NULL)
 	memset(pAmple_in->pszTrace, 0, pAmple_in->uiTraceSize);
 
-if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML)
+if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML &&
+	pAmple_in->eTraceAnalysis != AMPLE_TRACE_XML)
 	return;
 
 store_AMPLE_trace(pAmple_in,
@@ -5308,7 +5409,8 @@ AmpleData *	pAmple_in;
 {
 resetLocalGlobals();
 if (	(pAmple_in == NULL) ||
-	(pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML))
+	( (pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML) &&
+	  (pAmple_in->eTraceAnalysis != AMPLE_TRACE_XML)) )
 	return;
 
 store_AMPLE_trace(pAmple_in, "</AmpleTrace>\n", NULL);
@@ -5328,7 +5430,8 @@ AmpleData *	pAmple_in;
 char *		pszString_in;
 int		bIndent_in;
 {
-if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML)
+if ((pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML) &&
+	(pAmple_in->eTraceAnalysis != AMPLE_TRACE_XML))
 	return;
 if (pAmple_in->pszTrace != NULL)
 	{
@@ -5465,7 +5568,8 @@ pCurrentWord_m->pTemplate->pAnalyses = NULL;
 if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
 	{
 	const char * pszFmt = "About to parse %s\n";
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	pszFmt = "<wordTrace>\n<!-- %s -->\n";
 	store_AMPLE_trace(pAmple_in, pszFmt,
 			  pCurrentWord_m->pTemplate->pszOrigWord);
@@ -5488,8 +5592,12 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 	{
 	const char * pszFmt = "Parsing %s\n";
 	char *       pszStr = pszSurfaceForm_m;
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		{
+		  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		pszFmt = "<form>%s</form>\n<trace>\n";
+		  else
 		pszFmt = "<form>%s</>\n<trace>\n";
 #ifdef HAVE_ALLOCA
 		pszStr = (char *)alloca(
@@ -5502,7 +5610,8 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 		}
 	store_AMPLE_trace(pAmple_in, pszFmt, pszStr);
 #ifndef HAVE_ALLOCA
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML))
 		freeMemory(pszStr);
 #endif
 	iTracingDepth_m = -1;
@@ -5510,7 +5619,8 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 
 	bAllosTried = get_prefix(NULL, pszSurfaceForm_m, 0, 0, 0, pAmple_in);
 
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	{
 	const char * pszFmt = "</trace>\n";
 	char *	     pszStr = NULL;
@@ -5519,8 +5629,12 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 		{
 		if ((pszSurfaceForm_m != NULL) && (*pszSurfaceForm_m != NUL))
 		{
-		pszFmt =
-			"<parseNode>\n  <leftover>%s</>\n</parseNode>\n</trace>\n";
+		  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			pszFmt =
+			  "<parseNode>\n  <leftover>%s</leftover>\n</parseNode>\n</trace>\n";
+		  else
+			pszFmt =
+			  "<parseNode>\n  <leftover>%s</>\n</parseNode>\n</trace>\n";
 #ifdef HAVE_ALLOCA
 		pszStr = (char *)alloca(
 				 lengthAmplePCDATA(pszSurfaceForm_m, FALSE)+1);
@@ -5532,8 +5646,12 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 		}
 		else
 		{
-		pszFmt =
-	 "<parseNode>\n  <endOfWord><failure test=none>\n</parseNode>\n</trace>\n";
+		  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			pszFmt =
+			  "<parseNode>\n  <endOfWord/><failure test='none'/>\n</parseNode>\n</trace>\n";
+		  else
+			pszFmt =
+			  "<parseNode>\n  <endOfWord><failure test=none>\n</parseNode>\n</trace>\n";
 		}
 		}
 	store_AMPLE_trace(pAmple_in, pszFmt, pszStr);
@@ -5543,7 +5661,8 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 #endif
 	}
 	}
-if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	{
 	const char * pszFmt = "</wordTrace>\n";
 	store_AMPLE_trace(pAmple_in, pszFmt, NULL);
@@ -5625,7 +5744,8 @@ if ((pAmple_in->pLogFP != NULL) || (pAmple_in->pszTrace != NULL))
 	store_AMPLE_trace(pAmple_in,
 			  "Checking against adjacent words.\n", NULL);
 	}
-	else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+	else if ((pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+	(pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML))
 	{
 	store_AMPLE_trace(pAmple_in,
 			  "<!-- Checking against adjacent words. -->\n", NULL);
@@ -5660,7 +5780,8 @@ for ( pHL = pThisWord_io->pHeadlists,
 		store_AMPLE_trace(pAmple_in, "    Analysis:\t       %s\n",
 				  astr);
 		}
-		else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+		else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		{
 		}
 		freeMemory(astr);
@@ -5740,7 +5861,8 @@ for ( pHL = pThisWord_io->pHeadlists,
 		store_AMPLE_trace(pAmple_in,
 				  "Removed due to adjacent words.\n", NULL);
 		}
-		else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+		else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		{
 		store_AMPLE_trace(pAmple_in,
 				  "<!-- Removed due to adjacent words. -->\n",

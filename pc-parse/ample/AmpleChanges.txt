@@ -1,5 +1,9 @@
 AMPLE CHANGE HISTORY
 
+3.7.0 (12-Jun-2003)
+-------------------
+1. Added trace option to output in XML form (as well as SGML)
+
 3.6.5 (17-Oct-2002)
 -------------------
 1. Some minor internal code changes (nothing visible to the user)
