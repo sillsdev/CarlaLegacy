@@ -1,4 +1,4 @@
-// Last revison: 4/19/2002 11:47:16 AM [mr]
+// Last revison: 4/22/2002 10:58:03 AM [mr]
 // DlgEditText.cpp : implementation file
 //
 
@@ -114,10 +114,16 @@ BOOL CDlgEditText::OnInitDialog()
 	}
 
 
-HBITMAP hBitmap;
+
+	HBITMAP hBitmap;
 hBitmap = LoadBitmap(  AfxGetInstanceHandle(),
   MAKEINTRESOURCE( IDB_eye ));
 m_btnCheckOnOff.SetBitmap(hBitmap);
+
+
+//m_btnCheckOnOff.LoadBitmaps(IDB_eye,NULL,IDB_eye,NULL );
+
+
 
 	return FALSE;
 }
