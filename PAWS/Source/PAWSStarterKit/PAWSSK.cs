@@ -58,6 +58,7 @@ namespace PAWSStarterKit
 		private string m_strUserDataStore;
 		private string m_strUserAnswerFile;
 		private string m_strUserGrammarFile;
+		private string m_strUserWriterFile;
 		private string m_strUserExampleFilesPath;
 		private string m_strLanguageName;
 		private string m_strLanguageAbbreviation;
@@ -599,9 +600,13 @@ namespace PAWSStarterKit
 				if (!doSaveAnswerFileDialog())
 					return; // nothing to do; user canceled on first one
 			}
-			if ((m_strUserGrammarFile == null) ||
-				(!File.Exists(m_strUserGrammarFile)))
-			{
+#if !Orig
+			if (m_strUserGrammarFile == null)
+#else
+				if ((m_strUserGrammarFile == null) ||
+					(!File.Exists(m_strUserGrammarFile)))
+#endif
+				{
 				if (!doSaveGrammarFileDialog())
 				{   // User canceled; undo any name change to answer file
 					m_strUserAnswerFile = strAnswerFileTemp;
@@ -1020,7 +1025,7 @@ namespace PAWSStarterKit
 				return true;
 			}
 			return false;
-			}
+		}
 		void saveGrammarFile()
 		{
 			try
@@ -1100,6 +1105,11 @@ namespace PAWSStarterKit
 			strBool = getXmlElementAttribute("//language/font/@strike");
 			dlg.FontStrikeout = Convert.ToBoolean(strBool);
 
+			dlg.AnswerFile = m_strUserAnswerFile;
+			dlg.GrammarFile = m_strUserGrammarFile;
+			dlg.WriterFile = m_strUserWriterFile;
+			dlg.ExampleFiles = m_strUserExampleFilesPath;
+
 			while ((dlg.ShowDialog() == DialogResult.OK) &&
 				(dlg.Abbreviation == ""))
 			{
@@ -1118,6 +1128,10 @@ namespace PAWSStarterKit
 				bool bFontItalic = dlg.FontItalic;
 				bool bFontUnderline = dlg.FontUnderline;
 				bool bFontStrikeout = dlg.FontStrikeout;
+				m_strUserAnswerFile = dlg.AnswerFile;
+				m_strUserGrammarFile = dlg.GrammarFile;
+				m_strUserWriterFile = dlg.WriterFile;
+				m_strUserExampleFilesPath = dlg.ExampleFiles;
 				// save Answer file info
 				setXmlElementContent("//language/langName", m_strLanguageName);
 				setXmlElementContent("//language/langAbbr", m_strLanguageAbbreviation);
@@ -1183,7 +1197,8 @@ namespace PAWSStarterKit
 				File.Copy(Path.Combine(strMasterCssPath, m_strBackgroundGif),
 					Path.Combine(strUserStyleFilePath, m_strBackgroundGif), true);
 				// save user's answer file
-				doSaveAnswerFileDialog();
+				if (m_strUserAnswerFile == null)
+					doSaveAnswerFileDialog();
 				m_XmlDoc.Save(m_strUserAnswerFile);
 				setTitle();
 				// Start over so the changes will take effect

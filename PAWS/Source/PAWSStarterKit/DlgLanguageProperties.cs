@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace PAWSStarterKit
@@ -25,6 +26,10 @@ namespace PAWSStarterKit
 		private bool bFontItalic;
 		private bool bFontUnderline;
 		private bool bFontStrikeout;
+		private string strAnswerFile;
+		private string strGrammarFile;
+		private string strWriterFile;
+		private string strExampleFiles;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Button btnAnswerFile;
 		private System.Windows.Forms.TextBox tbExampleFiles;
@@ -199,6 +204,66 @@ namespace PAWSStarterKit
 				tbLanguage.Text = value;
 			}
 		}
+		/// <summary>
+		/// Gets/sets answer file name.
+		/// </summary>
+		public string AnswerFile
+		{
+			get
+			{
+				return strAnswerFile;
+			}
+			set
+			{
+				strAnswerFile = value;
+				tbAnswerFile.Text = value;  // also set the text box contents
+			}
+		}
+		/// <summary>
+		/// Gets/sets grammar file name.
+		/// </summary>
+		public string GrammarFile
+		{
+			get
+			{
+				return strGrammarFile;
+			}
+			set
+			{
+				strGrammarFile = value;
+				tbGrammarFile.Text = value;  // also set the text box contents
+			}
+		}
+		/// <summary>
+		/// Gets/sets writer file name.
+		/// </summary>
+		public string WriterFile
+		{
+			get
+			{
+				return strWriterFile;
+			}
+			set
+			{
+				strWriterFile = value;
+				tbWriterFile.Text = value;  // also set the text box contents
+			}
+		}
+		/// <summary>
+		/// Gets/sets example files directory name.
+		/// </summary>
+		public string ExampleFiles
+		{
+			get
+			{
+				return strExampleFiles;
+			}
+			set
+			{
+				strExampleFiles = value;
+				tbExampleFiles.Text = value;  // also set the text box contents
+			}
+		}
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -236,17 +301,17 @@ namespace PAWSStarterKit
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.btnOK = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.lblExampleFiles = new System.Windows.Forms.Label();
-			this.tbExampleFiles = new System.Windows.Forms.TextBox();
-			this.btnExampleFiles = new System.Windows.Forms.Button();
-			this.tbWriterFile = new System.Windows.Forms.TextBox();
-			this.btnWriterFile = new System.Windows.Forms.Button();
-			this.lblGrammarFile = new System.Windows.Forms.Label();
-			this.tbGrammarFile = new System.Windows.Forms.TextBox();
-			this.btnGrammarFile = new System.Windows.Forms.Button();
-			this.lblAnswerFile = new System.Windows.Forms.Label();
-			this.tbAnswerFile = new System.Windows.Forms.TextBox();
 			this.btnAnswerFile = new System.Windows.Forms.Button();
+			this.tbAnswerFile = new System.Windows.Forms.TextBox();
+			this.lblAnswerFile = new System.Windows.Forms.Label();
+			this.btnGrammarFile = new System.Windows.Forms.Button();
+			this.tbGrammarFile = new System.Windows.Forms.TextBox();
+			this.lblGrammarFile = new System.Windows.Forms.Label();
+			this.btnWriterFile = new System.Windows.Forms.Button();
+			this.tbWriterFile = new System.Windows.Forms.TextBox();
+			this.btnExampleFiles = new System.Windows.Forms.Button();
+			this.tbExampleFiles = new System.Windows.Forms.TextBox();
+			this.lblExampleFiles = new System.Windows.Forms.Label();
 			this.lblWriterFile = new System.Windows.Forms.Label();
 			this.helpProvider = new System.Windows.Forms.HelpProvider();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -366,80 +431,14 @@ namespace PAWSStarterKit
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "PAWS File Locatons";
 			//
-			// lblExampleFiles
+			// btnAnswerFile
 			//
-			this.lblExampleFiles.Location = new System.Drawing.Point(8, 136);
-			this.lblExampleFiles.Name = "lblExampleFiles";
-			this.lblExampleFiles.Size = new System.Drawing.Size(80, 32);
-			this.lblExampleFiles.TabIndex = 21;
-			this.lblExampleFiles.Text = "Example Files Directory:";
-			//
-			// tbExampleFiles
-			//
-			this.tbExampleFiles.Location = new System.Drawing.Point(96, 144);
-			this.tbExampleFiles.Name = "tbExampleFiles";
-			this.tbExampleFiles.ReadOnly = true;
-			this.tbExampleFiles.Size = new System.Drawing.Size(312, 20);
-			this.tbExampleFiles.TabIndex = 22;
-			this.tbExampleFiles.Text = "Example Files directory shown at runtime";
-			//
-			// btnExampleFiles
-			//
-			this.btnExampleFiles.Location = new System.Drawing.Point(416, 144);
-			this.btnExampleFiles.Name = "btnExampleFiles";
-			this.btnExampleFiles.Size = new System.Drawing.Size(64, 24);
-			this.btnExampleFiles.TabIndex = 23;
-			this.btnExampleFiles.Text = "Chang&e";
-			//
-			// tbWriterFile
-			//
-			this.tbWriterFile.Location = new System.Drawing.Point(96, 104);
-			this.tbWriterFile.Name = "tbWriterFile";
-			this.tbWriterFile.ReadOnly = true;
-			this.tbWriterFile.Size = new System.Drawing.Size(312, 20);
-			this.tbWriterFile.TabIndex = 25;
-			this.tbWriterFile.Text = "Writer File directory/filename shown at runtime";
-			//
-			// btnWriterFile
-			//
-			this.btnWriterFile.Location = new System.Drawing.Point(416, 104);
-			this.btnWriterFile.Name = "btnWriterFile";
-			this.btnWriterFile.Size = new System.Drawing.Size(64, 24);
-			this.btnWriterFile.TabIndex = 26;
-			this.btnWriterFile.Text = "C&hange";
-			//
-			// lblGrammarFile
-			//
-			this.lblGrammarFile.Location = new System.Drawing.Point(8, 64);
-			this.lblGrammarFile.Name = "lblGrammarFile";
-			this.lblGrammarFile.Size = new System.Drawing.Size(80, 16);
-			this.lblGrammarFile.TabIndex = 27;
-			this.lblGrammarFile.Text = "Grammar File:";
-			//
-			// tbGrammarFile
-			//
-			this.tbGrammarFile.Location = new System.Drawing.Point(96, 64);
-			this.tbGrammarFile.Name = "tbGrammarFile";
-			this.tbGrammarFile.ReadOnly = true;
-			this.tbGrammarFile.Size = new System.Drawing.Size(312, 20);
-			this.tbGrammarFile.TabIndex = 28;
-			this.tbGrammarFile.Text = "Grammar File directory/filename shown at runtime";
-			//
-			// btnGrammarFile
-			//
-			this.btnGrammarFile.Location = new System.Drawing.Point(416, 64);
-			this.btnGrammarFile.Name = "btnGrammarFile";
-			this.btnGrammarFile.Size = new System.Drawing.Size(64, 24);
-			this.btnGrammarFile.TabIndex = 29;
-			this.btnGrammarFile.Text = "Chan&ge";
-			//
-			// lblAnswerFile
-			//
-			this.lblAnswerFile.Location = new System.Drawing.Point(8, 24);
-			this.lblAnswerFile.Name = "lblAnswerFile";
-			this.lblAnswerFile.Size = new System.Drawing.Size(72, 16);
-			this.lblAnswerFile.TabIndex = 30;
-			this.lblAnswerFile.Text = "Answer File:";
+			this.btnAnswerFile.Location = new System.Drawing.Point(416, 24);
+			this.btnAnswerFile.Name = "btnAnswerFile";
+			this.btnAnswerFile.Size = new System.Drawing.Size(64, 24);
+			this.btnAnswerFile.TabIndex = 32;
+			this.btnAnswerFile.Text = "&Change";
+			this.btnAnswerFile.Click += new System.EventHandler(this.btnAnswerFile_Click);
 			//
 			// tbAnswerFile
 			//
@@ -450,13 +449,83 @@ namespace PAWSStarterKit
 			this.tbAnswerFile.TabIndex = 31;
 			this.tbAnswerFile.Text = "Answer File directory/filename shown at runtime";
 			//
-			// btnAnswerFile
+			// lblAnswerFile
 			//
-			this.btnAnswerFile.Location = new System.Drawing.Point(416, 24);
-			this.btnAnswerFile.Name = "btnAnswerFile";
-			this.btnAnswerFile.Size = new System.Drawing.Size(64, 24);
-			this.btnAnswerFile.TabIndex = 32;
-			this.btnAnswerFile.Text = "&Change";
+			this.lblAnswerFile.Location = new System.Drawing.Point(8, 24);
+			this.lblAnswerFile.Name = "lblAnswerFile";
+			this.lblAnswerFile.Size = new System.Drawing.Size(72, 16);
+			this.lblAnswerFile.TabIndex = 30;
+			this.lblAnswerFile.Text = "Answer File:";
+			//
+			// btnGrammarFile
+			//
+			this.btnGrammarFile.Location = new System.Drawing.Point(416, 64);
+			this.btnGrammarFile.Name = "btnGrammarFile";
+			this.btnGrammarFile.Size = new System.Drawing.Size(64, 24);
+			this.btnGrammarFile.TabIndex = 29;
+			this.btnGrammarFile.Text = "Chan&ge";
+			this.btnGrammarFile.Click += new System.EventHandler(this.btnGrammarFile_Click);
+			//
+			// tbGrammarFile
+			//
+			this.tbGrammarFile.Location = new System.Drawing.Point(96, 64);
+			this.tbGrammarFile.Name = "tbGrammarFile";
+			this.tbGrammarFile.ReadOnly = true;
+			this.tbGrammarFile.Size = new System.Drawing.Size(312, 20);
+			this.tbGrammarFile.TabIndex = 28;
+			this.tbGrammarFile.Text = "Grammar File directory/filename shown at runtime";
+			//
+			// lblGrammarFile
+			//
+			this.lblGrammarFile.Location = new System.Drawing.Point(8, 64);
+			this.lblGrammarFile.Name = "lblGrammarFile";
+			this.lblGrammarFile.Size = new System.Drawing.Size(80, 16);
+			this.lblGrammarFile.TabIndex = 27;
+			this.lblGrammarFile.Text = "Grammar File:";
+			//
+			// btnWriterFile
+			//
+			this.btnWriterFile.Location = new System.Drawing.Point(416, 104);
+			this.btnWriterFile.Name = "btnWriterFile";
+			this.btnWriterFile.Size = new System.Drawing.Size(64, 24);
+			this.btnWriterFile.TabIndex = 26;
+			this.btnWriterFile.Text = "C&hange";
+			this.btnWriterFile.Click += new System.EventHandler(this.btnWriterFile_Click);
+			//
+			// tbWriterFile
+			//
+			this.tbWriterFile.Location = new System.Drawing.Point(96, 104);
+			this.tbWriterFile.Name = "tbWriterFile";
+			this.tbWriterFile.ReadOnly = true;
+			this.tbWriterFile.Size = new System.Drawing.Size(312, 20);
+			this.tbWriterFile.TabIndex = 25;
+			this.tbWriterFile.Text = "Writer File directory/filename shown at runtime";
+			//
+			// btnExampleFiles
+			//
+			this.btnExampleFiles.Location = new System.Drawing.Point(416, 144);
+			this.btnExampleFiles.Name = "btnExampleFiles";
+			this.btnExampleFiles.Size = new System.Drawing.Size(64, 24);
+			this.btnExampleFiles.TabIndex = 23;
+			this.btnExampleFiles.Text = "Chang&e";
+			this.btnExampleFiles.Click += new System.EventHandler(this.btnExampleFiles_Click);
+			//
+			// tbExampleFiles
+			//
+			this.tbExampleFiles.Location = new System.Drawing.Point(96, 144);
+			this.tbExampleFiles.Name = "tbExampleFiles";
+			this.tbExampleFiles.ReadOnly = true;
+			this.tbExampleFiles.Size = new System.Drawing.Size(312, 20);
+			this.tbExampleFiles.TabIndex = 22;
+			this.tbExampleFiles.Text = "Example Files directory shown at runtime";
+			//
+			// lblExampleFiles
+			//
+			this.lblExampleFiles.Location = new System.Drawing.Point(8, 136);
+			this.lblExampleFiles.Name = "lblExampleFiles";
+			this.lblExampleFiles.Size = new System.Drawing.Size(80, 32);
+			this.lblExampleFiles.TabIndex = 21;
+			this.lblExampleFiles.Text = "Example Files Directory:";
 			//
 			// lblWriterFile
 			//
@@ -597,6 +666,67 @@ namespace PAWSStarterKit
 			toolTip.SetToolTip(tbExampleFiles, strExampleFilesHelp);
 		}
 
+		private void btnAnswerFile_Click(object sender, System.EventArgs e)
+		{
+			doSaveFileDialog(ref strAnswerFile, "Answer File", "PAWS Starter Kit (*.paw)|*.paw|" +
+				"All Files (*.*)|*.*", ".paw");
+			tbAnswerFile.Text = AnswerFile;
+			if (GrammarFile == null)
+			{
+				GrammarFile = Path.Combine(Path.GetDirectoryName(AnswerFile),
+					Path.GetFileNameWithoutExtension(AnswerFile) + ".grm");
+			}
+			if (WriterFile == null)
+			{
+				WriterFile = Path.Combine(Path.GetDirectoryName(AnswerFile),
+					Path.GetFileNameWithoutExtension(AnswerFile) + ".xml");
+			}
+			if (ExampleFiles == null)
+			{
+				ExampleFiles = Path.GetDirectoryName(AnswerFile);
+			}
+		}
 
+		private void btnGrammarFile_Click(object sender, System.EventArgs e)
+		{
+			doSaveFileDialog(ref strGrammarFile, "Grammar File", "PAWS Grammar File (*.grm)|*.grm|" +
+				"All Files (*.*)|*.*", ".grm");
+		}
+
+		private void btnWriterFile_Click(object sender, System.EventArgs e)
+		{
+			doSaveFileDialog(ref strWriterFile, "Writer File", "PAWS Writer file (*.xml)|*.xml|" +
+				"All Files (*.*)|*.*", ".xml");
+
+		}
+
+		private void btnExampleFiles_Click(object sender, System.EventArgs e)
+		{
+			DirectoryBrowser dirBrowser = new DirectoryBrowser();
+			if (dirBrowser.ShowDialog("Example File Path") == DialogResult.OK)
+			{
+				ExampleFiles = dirBrowser.DirectoryPath;
+			}
+		}
+		private void doSaveFileDialog(ref string strFileName, string strTitle, string strFilter, string strExtension)
+		{
+			SaveFileDialog saveDlg = new SaveFileDialog();
+			saveDlg.AddExtension = true;
+			saveDlg.Title = strTitle;
+			saveDlg.Filter = strFilter;
+			// following needed, otherwise it always returns "Cancel"
+			saveDlg.OverwritePrompt = false;
+			if (strFileName != null)
+			{
+				saveDlg.InitialDirectory = Path.GetDirectoryName(strFileName);
+				saveDlg.FileName = Path.GetFileNameWithoutExtension(strFileName);
+			}
+			if (saveDlg.ShowDialog() == DialogResult.OK)
+			{
+				if (Path.GetExtension(saveDlg.FileName) == "")
+					saveDlg.FileName += strExtension;
+				strFileName = saveDlg.FileName;
+			}
+		}
 	}
 }

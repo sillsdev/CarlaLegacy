@@ -14,7 +14,7 @@
 	<typology checkedOff="no" wordOrder="SVO">
 		<example/>
 	</typology>
-	<qp checkedOff="no" npDegree="no" npDegreePos="unknown" npDegreeEither="unrestricted" degree="no" degreePos="unknown" degreeEither="unrestricted"  ordinalFormation="affix"  ordinalPos="unknown" ordinalEither="unrestricted" cardinalHeadPos="after">
+	<qp checkedOff="no" npDegree="no" npDegreePos="unknown" npDegreeEither="unrestricted" degree="no" degreePos="unknown" degreeEither="unrestricted" ordinalFormation="affix" ordinalPos="unknown" ordinalEither="unrestricted" cardinalHeadPos="after">
 		<example/>
 		<degreeExample/>
 		<ordinalExample/>
@@ -87,7 +87,9 @@
 		<personalSplitAbsExample/>
 		<possExample/>
 		<reflExample/>
+		<reflSentExample/>
 		<recipExample/>
+		<recipSentExample/>
 		<indefExample/>
 		<indefNPExample/>
 		<standAloneNPExample/>
@@ -228,14 +230,14 @@
 		<embYNExample/>
 		<contentExample/>
 		<embContentExample/>
-	<who/>
-	<what/>
-	<why/>
-	<where/>
-	<when/>
-	<how/>
-	<which/>
-	<whose/>
+		<who/>
+		<what/>
+		<why/>
+		<where/>
+		<when/>
+		<how/>
+		<which/>
+		<whose/>
 		<whPronCategory/>
 	</q>
 	<relcl checkedOff="no" type="none" compCP="no" relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
