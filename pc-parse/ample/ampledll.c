@@ -174,7 +174,10 @@ static PATRMemory sAmplePATRMemory_m =
 #define OUTPUT_ORIGINAL_WORD    17
 #define OUTPUT_DECOMPOSITION    18
 
-#define NUMBER_OF_PARAMETERS	19
+/* jdh 2002.1.15 */
+#define ALLOMORPH_IDS   19
+
+#define NUMBER_OF_PARAMETERS	20
 
 static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 	"DebugAllomorphConds",
@@ -195,7 +198,8 @@ static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 	"VerifyLoading",		/* hab 1999.03.11 */
 	"OutputProperties",		/* hab 1999.03.11 */
 	"OutputOriginalWord",	/* hab 1999.03.11 */
-	"OutputDecomposition"	/* hab 1999.03.11 */
+	"OutputDecomposition",//,	/* hab 1999.03.11 */
+	"AllomorphIds",			/* jdh 2002.01.15 */
 	};
 
 #define MAXAMBIG 16		/* high level of ambiguity for stats */
@@ -1092,7 +1096,8 @@ return pszBuffer_out;
 
 	 if (pWord_in->pTemplate->pAnalyses == NULL)
 	 {
-		 // empty means no analysis
+			 CONCAT("  <WfiAnalysis/>\r\n")// empty means failed to parse
+
 	 }
 	 else
 	 {
@@ -1111,22 +1116,22 @@ return pszBuffer_out;
 					 if (pAllo == NULL)
 					 {
 						 reportError(ERROR_MSG, "pHead->pAllomorph is NULL?\n");
-						 CONCAT("     <MoForm DbRef=0 Label=\"?\"/>\r\n")
+						 CONCAT("     <MoForm DbRef='0' Label=\"?\"/>\r\n")
 							 continue;
 					 }
-					 CONCAT("      <MoForm DbRef=")
+					 CONCAT("      <MoForm DbRef='")
 						 if (pAllo->pszAllomorphID != NULL)
 							 CONCAT(pAllo->pszAllomorphID)
 						else
 						 {
 							 CONCAT("0") //todo: consider raising an error at this point, once the caller is normalling giving us an allo id
 						 }
-						 CONCAT(" Label=\"");
+						 CONCAT("' Label=\"");
 						 CONCAT(pAllo->pszAllomorph);
-						 CONCAT("\">\r\n");
-						 CONCAT("      <MSI DbRef=");
+						 CONCAT("\"/>\r\n");
+						 CONCAT("      <MSI DbRef='");
 						 CONCAT(pAllo->pMorpheme->pszMorphName); // assumes pszMorphName is holding the database id (a long int) of this msi
-						 CONCAT("/>\r\n");
+						 CONCAT("'/>\r\n");
 						 CONCAT("    </Morph>\r\n")
 				 }
 
@@ -2712,6 +2717,33 @@ else
 return szAmpleSuccess_m;
 }
 
+
+/*****************************************************************************
+ * NAME
+ *    setEnableAllomorphIDs
+ * DESCRIPTION
+ *
+ * RETURN VALUE
+ *    status string indicating success or failure
+ *	jdh 2002.1.15 added
+ */
+static const char * setEnableAllomorphIDs(
+	const char *	pszValue_in,
+	AmpleSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.bEnableAllomorphIDs = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->sData.bEnableAllomorphIDs = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->sData.bEnableAllomorphIDs = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szAmpleSuccess_m;
+}
 /*****************************************************************************
  * NAME
  *    setCommentChar
@@ -2979,6 +3011,8 @@ else if (_stricmp(pszValue_in, "AResult") == 0)
 	pSetup_io->eOutputStyle = AResult;
 else if (_stricmp(pszValue_in, "Ptext") == 0)
 	pSetup_io->eOutputStyle = Ptext;
+else if (_stricmp(pszValue_in, "FWParse") == 0)
+	pSetup_io->eOutputStyle = FWParse;
 #ifndef hab34112
 #ifdef EXPERIMENTAL
 else if (_stricmp(pszValue_in, "FWParse") == 0)
@@ -3286,6 +3320,9 @@ switch (findParameterIndex(pszName_in))
 
 	case OUTPUT_DECOMPOSITION:	/* hab 1999.03.11 */
 	return setOutputDecomposition(pszValue_in, pSetup_io);
+
+	case ALLOMORPH_IDS:	/* jdh 2002.1.15 */
+	return setEnableAllomorphIDs(pszValue_in, pSetup_io);
 
 	default:
 
