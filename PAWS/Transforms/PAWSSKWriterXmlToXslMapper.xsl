@@ -83,10 +83,62 @@ col template
 	<xsl:choose>
 	  <xsl:when test="@exampleLoc">
 		<col>
+		  <table>
+			<xsl:element name="xsl:variable">
+			  <xsl:attribute name="name"><xsl:text>sExampleValue</xsl:text></xsl:attribute>
+			  <xsl:element name="xsl:value-of">
+				<xsl:attribute name="select"><xsl:choose><xsl:when test="ancestor::example"><!-- remove any periods the user may have entered;  the assumption here is that this goes in a chart where periods are not wanted --><xsl:value-of select="translate(., '.', '')"/><xsl:text>translate(string(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>),'.','')</xsl:text></xsl:when><xsl:otherwise><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:otherwise></xsl:choose></xsl:attribute>
+			  </xsl:element>
+			</xsl:element>
+			<xsl:element name="xsl:variable">
+			  <xsl:attribute name="name"><xsl:text>iExampleLength</xsl:text></xsl:attribute>
+			  <xsl:attribute name="select"><xsl:text>string-length($sExampleValue)</xsl:text></xsl:attribute>
+			</xsl:element>
+			<xsl:element name="xsl:choose">
+			  <xsl:element name="xsl:when">
+				<xsl:attribute name="test"><xsl:text>$iExampleLength != 0</xsl:text></xsl:attribute>
+				<xsl:element name="xsl:call-template">
+				  <xsl:attribute name="name"><xsl:text>OutputColExamples</xsl:text></xsl:attribute>
+				  <xsl:element name="xsl:with-param">
+					<xsl:attribute name="name"><xsl:text>sExamples</xsl:text></xsl:attribute>
+					<xsl:element name="xsl:value-of">
+					  <xsl:attribute name="select"><xsl:text>$sExampleValue</xsl:text></xsl:attribute>
+					</xsl:element>
+				  </xsl:element>
+				  <xsl:element name="xsl:with-param">
+					<xsl:attribute name="name"><xsl:text>iLength</xsl:text></xsl:attribute>
+					<xsl:element name="xsl:value-of">
+					  <xsl:attribute name="select"><xsl:text>string-length($sExampleValue)</xsl:text></xsl:attribute>
+					</xsl:element>
+				  </xsl:element>
+				</xsl:element>
+			  </xsl:element>
+			  <xsl:element name="xsl:otherwise">
+				<row>
+				  <col>
+					<langData>
+					  <xsl:element name="xsl:attribute">
+						<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
+						<xsl:text>l</xsl:text>
+						<xsl:element name="xsl:value-of">
+						  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
+						</xsl:element>
+					  </xsl:element>
+					  <xsl:text>ENTER AN EXAMPLE HERE</xsl:text>
+					</langData>
+				  </col>
+				</row>
+			  </xsl:element>
+			</xsl:element>
+		  </table>
+		</col>
+		<!-- old and incorrect
+		<col>
 		  <xsl:element name="xsl:value-of">
-			<xsl:attribute name="select"><xsl:choose><xsl:when test="ancestor::example"><!-- remove any periods the user may have entered;  the assumption here is that this goes in a chart where periods are not wanted --><xsl:value-of select="translate(., '.', '')"/><xsl:text>translate(string(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>),'.','')</xsl:text></xsl:when><xsl:otherwise><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:otherwise></xsl:choose></xsl:attribute>
+			<xsl:attribute name="select"><xsl:choose><xsl:when test="ancestor::example"> < ! - - remove any periods the user may have entered;  the assumption here is that this goes in a chart where periods are not wanted - - ><xsl:value-of select="translate(., '.', '')"/><xsl:text>translate(string(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>),'.','')</xsl:text></xsl:when><xsl:otherwise><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:otherwise></xsl:choose></xsl:attribute>
 		  </xsl:element>
 		</col>
+		-->
 	  </xsl:when>
 	  <xsl:when test="@show">
 		<xsl:element name="xsl:if">
@@ -233,8 +285,19 @@ interlinear template
 		<listInterlinear>
 		  <xsl:element name="xsl:attribute">
 			<xsl:attribute name="name"><xsl:text>letter</xsl:text></xsl:attribute>
-			<xsl:element name="xsl:text">x</xsl:element>
-			<xsl:value-of select="generate-id()"/>
+			<xsl:element name="xsl:text">
+			  <xsl:text>x</xsl:text>
+			  <xsl:value-of select="ancestor::section1/@id"/>
+			  <xsl:value-of select="ancestor::section2/@id"/>
+			  <xsl:value-of select="ancestor::section3/@id"/>
+			  <xsl:value-of select="ancestor::section4/@id"/>
+			  <xsl:value-of select="ancestor::section5/@id"/>
+			  <xsl:value-of select="ancestor::section6/@id"/>
+			  <xsl:for-each select="parent::example">
+				<xsl:value-of select="position()"/>
+			  </xsl:for-each>
+			  <xsl:value-of select="position()"/>
+			</xsl:element>
 		  </xsl:element>
 		  <line>
 			<langData>
@@ -245,7 +308,7 @@ interlinear template
 				  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
 				</xsl:element>
 			  </xsl:element>
-			  <object class="comment">Enter an example here.</object>
+			  <object class="comment">ENTER AN EXAMPLE HERE.</object>
 			</langData>
 		  </line>
 		  <xsl:element name="xsl:call-template">
@@ -486,10 +549,30 @@ DoExample
 -->
   <xsl:template name="DoExample">
 	<xsl:element name="example">
-	  <xsl:if test="@num">
-		<xsl:attribute name="num"><xsl:value-of select="@num"/></xsl:attribute>
-	  </xsl:if>
-	  <xsl:apply-templates/>
+	  <xsl:variable name="sNum">
+		<xsl:choose>
+		  <xsl:when test="@num">
+			<xsl:value-of select="@num"/>
+		  </xsl:when>
+		  <xsl:otherwise>
+			<xsl:text>x</xsl:text>
+			<xsl:value-of select="ancestor::section1/@id"/>
+			<xsl:value-of select="ancestor::section2/@id"/>
+			<xsl:value-of select="ancestor::section3/@id"/>
+			<xsl:value-of select="ancestor::section4/@id"/>
+			<xsl:value-of select="ancestor::section5/@id"/>
+			<xsl:value-of select="ancestor::section6/@id"/>
+			<xsl:value-of select="position()"/>
+		  </xsl:otherwise>
+		</xsl:choose>
+	  </xsl:variable>
+	  <xsl:attribute name="num"><xsl:value-of select="$sNum"/></xsl:attribute>
+	  <xsl:call-template name="DoInterlinear">
+		<xsl:with-param name="sExNum">
+		  <xsl:value-of select="$sNum"/>
+		</xsl:with-param>
+	  </xsl:call-template>
+	  <xsl:apply-templates select="table"/>
 	</xsl:element>
   </xsl:template>
   <!--
@@ -515,6 +598,79 @@ DoHeaderRow
 	<headerRow>
 	  <xsl:apply-templates/>
 	</headerRow>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoInterlinear
+	routine to create an interlinear element
+		Parameters: sExNum = example number of parent example element
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoInterlinear">
+  <xsl:param name="sExNum"/>
+	<xsl:for-each select="interlinear">
+	  <xsl:element name="xsl:variable">
+		<xsl:attribute name="name"><xsl:text>iExampleLength</xsl:text></xsl:attribute>
+		<xsl:attribute name="select"><xsl:text>string-length(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>)</xsl:text></xsl:attribute>
+	  </xsl:element>
+	  <xsl:element name="xsl:choose">
+		<xsl:element name="xsl:when">
+		  <xsl:attribute name="test"><xsl:text>$iExampleLength != 0</xsl:text></xsl:attribute>
+		  <xsl:element name="xsl:call-template">
+			<xsl:attribute name="name"><xsl:text>OutputInterlinearExamples</xsl:text></xsl:attribute>
+			<xsl:element name="xsl:with-param">
+			  <xsl:attribute name="name"><xsl:text>sExamples</xsl:text></xsl:attribute>
+			  <xsl:element name="xsl:value-of">
+				<xsl:attribute name="select"><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:attribute>
+			  </xsl:element>
+			</xsl:element>
+			<xsl:element name="xsl:with-param">
+			  <xsl:attribute name="name"><xsl:text>iLength</xsl:text></xsl:attribute>
+			  <xsl:element name="xsl:value-of">
+				<xsl:attribute name="select"><xsl:text>string-length(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>)</xsl:text></xsl:attribute>
+			  </xsl:element>
+			</xsl:element>
+			<xsl:element name="xsl:with-param">
+			  <xsl:attribute name="name"><xsl:text>sExNumber</xsl:text></xsl:attribute>
+			  <xsl:value-of select="$sExNum"/>
+			</xsl:element>
+			<xsl:element name="xsl:with-param">
+			  <xsl:attribute name="name"><xsl:text>sLetterList</xsl:text></xsl:attribute>
+			  <xsl:element name="xsl:value-of">
+				<xsl:attribute name="select"><xsl:text>$sMasterLetterList</xsl:text></xsl:attribute>
+			  </xsl:element>
+			</xsl:element>
+		  </xsl:element>
+		</xsl:element>
+		<xsl:element name="xsl:otherwise">
+		  <listInterlinear>
+			<xsl:element name="xsl:attribute">
+			  <xsl:attribute name="name"><xsl:text>letter</xsl:text></xsl:attribute>
+			  <xsl:element name="xsl:text">
+				<xsl:value-of select="$sExNum"/>
+				<xsl:text>.</xsl:text>
+				<xsl:value-of select="position()"/>
+			  </xsl:element>
+			</xsl:element>
+			<line>
+			  <langData>
+				<xsl:element name="xsl:attribute">
+				  <xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
+				  <xsl:text>l</xsl:text>
+				  <xsl:element name="xsl:value-of">
+					<xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
+				  </xsl:element>
+				</xsl:element>
+				<object class="comment">ENTER AN EXAMPLE HERE.</object>
+			  </langData>
+			</line>
+			<xsl:element name="xsl:call-template">
+			  <xsl:attribute name="name"><xsl:text>DoGlossAndFree</xsl:text></xsl:attribute>
+			</xsl:element>
+		  </listInterlinear>
+		</xsl:element>
+	  </xsl:element>
+	</xsl:for-each>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

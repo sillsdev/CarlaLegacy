@@ -217,7 +217,7 @@ syntactically like adjectives.
 		  <content>The basic forms for the cardinal numbers are given in the following chart:</content>
 		</p>
 		<example>
-		  <table>
+		  <table border="1">
 			<row>
 			  <col>
 				<content>1 through 10</content>

@@ -188,7 +188,7 @@
 <!ATTLIST row
   class CDATA #IMPLIED
 >
-<!ELEMENT col (#PCDATA | langData | gloss)*>
+<!ELEMENT col (#PCDATA | langData | gloss | table)*>
 <!ATTLIST col
   class CDATA #IMPLIED
 >

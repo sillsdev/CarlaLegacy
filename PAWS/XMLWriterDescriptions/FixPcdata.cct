@@ -20,6 +20,7 @@ group(Main)
 
 "<col>"	> dup out(Content)
 "<col "	> dup use(EndOfElement)
+"<col exampleLoc" > dup use(ColEndOfElement)
 
 
 "</col>"	> out(EndContent) dup
@@ -76,4 +77,9 @@ group(Main)
 group(EndOfElement)
 
 ">"	> dup out(Content)
+	  use(Main)
+
+group(ColEndOfElement)
+
+">"	> dup
 	  use(Main)
