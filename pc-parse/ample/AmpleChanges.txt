@@ -1,5 +1,17 @@
 AMPLE CHANGE HISTORY
 
+3.6.3 (15-Oct-2002)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.6.2 (04-Oct-2002)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.6.1 (02-Oct-2002)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
 3.6.0 (13-Jun-2002)
 -------------------
 1. Allow both min and max orderclass numbers (i.e. allow
