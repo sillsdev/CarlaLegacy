@@ -54,7 +54,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /machine:I386
-# ADD LINK32 patrlib.lib cmdlib.lib xamplelib.lib opaclib.lib cportlib.lib libc.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /machine:I386 /nodefaultlib /out:"Release-dll/xample.dll" /libpath:"..\lib\Release"
+# ADD LINK32 patrlib.lib cmdlib.lib xamplelib.lib opaclib.lib cportlib.lib libc.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /machine:I386 /nodefaultlib /out:"Release-dll-x/xample.dll" /libpath:"..\lib\Release"
 
 !ELSEIF  "$(CFG)" == "xampledll - Win32 Debug"
 
@@ -81,7 +81,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 patrlib.lib cmdlib.lib xamplelib.lib opaclib.lib cportlib.lib libcd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib oldnames.lib /nologo /subsystem:windows /dll /debug /machine:I386 /nodefaultlib /out:"Debug-dll/xample.dll" /libpath:"..\lib\Debug"
+# ADD LINK32 patrlib.lib cmdlib.lib xamplelib.lib opaclib.lib cportlib.lib libcd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib oldnames.lib /nologo /subsystem:windows /dll /debug /machine:I386 /nodefaultlib /out:"Debug-dll-x/xample.dll" /libpath:"..\lib\Debug"
 
 !ENDIF
 

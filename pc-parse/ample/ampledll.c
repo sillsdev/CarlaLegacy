@@ -93,7 +93,11 @@ static const char	szWhitespace_g[7] = " \t\r\n\f\v";
  *  buffer for screen messages
  */
 static char	szMessageBuffer_g[1024];
+#ifndef hab36015
+static char	szOutputBuffer_g[1000000];
+#else  /* hab36015 */
 static char	szOutputBuffer_g[65000];
+#endif /* hab36015 */
 /*
  *  error return message strings
  */
@@ -1289,7 +1293,7 @@ DllExport const char * AmpleParseText(
 	  break;
 
 	case FWParse:
-	  //	strncpy(szOutputBuffer_g, "<WfiAnalysis>\r\n", sizeof(szOutputBuffer_g)-1);
+	  //      strncpy(szOutputBuffer_g, "<WfiAnalysis>\r\n", sizeof(szOutputBuffer_g)-1);
 	  break;
 
 	default:
@@ -1506,8 +1510,8 @@ DllExport const char * AmpleParseText(
 	  strncat(szOutputBuffer_g, "</AResult>\r\n",
 		  sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
 	case FWParse:
-	  //		strncat(szOutputBuffer_g, "</WfiAnalysis>\r\n",
-	  //		sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
+	  //strncat(szOutputBuffer_g, "</WfiAnalysis>\r\n",
+	  //sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
 	  break;
 
 	default:
@@ -4290,6 +4294,10 @@ return pszResult;
 
 /******************************************************************************
  * EDIT HISTORY
+ * 09-04-2002   hab  - Increased size of szOutputBuffer_g for AmpleParseText()
+ * [3.6.0.15]
+ * 08-23-2002   hab  - fix FWParse results
+ * [3.6.0.14]
  * 06-Mar-2002  hab  - Add hooks to ANCCs.
  * [3.5.0.13]          Add pszUseTextIn param to AmpleParseText() to allow
  *                       one to skip word formation check and decapitalization
