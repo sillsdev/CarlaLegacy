@@ -5,7 +5,7 @@
 ================================================================
 Convert PAWS answer xml file to an XLingPap xml file
   Input:    xml file conforming to PAWSStarterKit.dtd
-  Output: xml file confroming to XLingPap.dtd
+  Output: xml file conforming to XLingPap.dtd
 ================================================================
 Revision History is at the end of this file.
 
