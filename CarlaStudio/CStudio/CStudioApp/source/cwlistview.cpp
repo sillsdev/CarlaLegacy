@@ -349,6 +349,13 @@ void CWListView::OnEditInsertEntry()
 	if(iAtItem == -1)	// if no selection
 		iAtItem = -1; // stick it at the end
 
+#ifndef mr270
+	BOOL bIsAmple=TRUE;
+	if( m_pTopic->m_label == "Synthesis Tests" )
+	{bIsAmple=FALSE;}
+	m_pList->setTypeOfTest(bIsAmple);
+#endif //270
+
 	int iRow = m_pList->insertNewItem(m_listCtrl, iAtItem, 0);
 	if (iRow==-1)
 		return;
@@ -1197,9 +1204,6 @@ void CWListView::OnUpdateEditUndo(CCmdUI* pCmdUI)
 
 void CWListView::OnEditProperties()
 {
-	CString str = m_pTopic->m_label;
-
-
 	int iRow = getFirstSelectedRow();
 	if(iRow<0)
 		return;
@@ -1221,7 +1225,7 @@ void CWListView::OnEditProperties()
 #endif //hab214
 
 		{
-			// added by mr 5/8/2002
+#ifndef mr270
 			BOOL bIsAmple=TRUE;
 			if( m_pTopic->m_label == "Synthesis Tests" )
 			{
@@ -1229,6 +1233,7 @@ void CWListView::OnEditProperties()
 			}
 
 			pRowItem->setTypeOfTest(bIsAmple);
+#endif // mr270
 			bChanged = pRowItem->doEditDialog(m_listCtrl);
 		}
 		else

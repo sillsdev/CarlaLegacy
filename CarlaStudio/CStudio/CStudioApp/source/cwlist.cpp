@@ -416,19 +416,24 @@ BOOL CWListRowItem::doEditDialog(CListCtrl& clc, BOOL bIsNew)
 	return FALSE;	// must be overriden
 }
 
+#ifndef mr270
 BOOL CWListRowItem::setTypeOfTest(BOOL bIsAmple) // added by mr 5/24/2002
 {
 	return FALSE;	// must be overriden
 }
+#endif // mr270
+
 //#include "DlgProjectSettings.h"
 #include "cwtopic.h"
 // invoked by menu
 
+#ifndef mr270
 BOOL CWTest::setTypeOfTest(BOOL bAmple) // added by mr 5/24/2002
 {
 	m_bIsAmple=bAmple;
 	return 0;
 }
+#endif // mr270
 
 BOOL CWTest::doEditDialog(CListCtrl& clc, BOOL bIsNew )
 {
@@ -444,7 +449,9 @@ CWTopic *p=NULL;
 	dlg.m_sLabel = m_sLabel;
 	dlg.m_sContents = m_sContents;
 	dlg.m_sDescription = m_sDescription;
+#ifndef mr270
 	dlg.m_bIsAmpleTest = m_bIsAmple; // added by mr 5/24/2002
+#endif // mr270
 
 	// put up the dialog
 	if(IDOK != dlg.DoModal())
@@ -461,6 +468,12 @@ CWTopic *p=NULL;
 
 	return TRUE;
 }
+#ifndef mr270
+void CWList::setTypeOfTest(BOOL bFlag)
+{
+	m_bIsAmple=bFlag;
+}
+#endif // mr270
 
 // called by a iuent item when it is changed or by the list when it has changed
 void CWList::setModifiedFlag()
@@ -531,7 +544,10 @@ int CWList::insertNewItem(CListCtrl &clc, int iStartingRow, int iKind, CWListEnt
 		&&(m_dwFlags & ITEMS_HAVE_DIALOG)) // or for simple types (CMonad) that don't have dialog boxes
 #endif //hab211
 	{
-		if (!pEntry->doEditDialog(clc, TRUE))
+#ifndef mr270
+		pEntry->setTypeOfTest(getTypeOfTest());
+#endif // mr270
+		if (!pEntry->doEditDialog(clc, TRUE) )
 			return -1;
 	}
 
