@@ -759,7 +759,7 @@ namespace PAWSStarterKit
 			}
 			catch
 			{
-				axWebBrowser.Refresh();
+				axWebBrowser.CtlRefresh();
 			}
 		}
 		void MenuViewForwardOnClick(object obj, EventArgs ea)
@@ -770,12 +770,12 @@ namespace PAWSStarterKit
 			}
 			catch
 			{
-				axWebBrowser.Refresh();
+				axWebBrowser.CtlRefresh();
 			}
 		}
 		void MenuViewRefreshOnClick(object obj, EventArgs ea)
 		{
-			axWebBrowser.Refresh();
+			axWebBrowser.CtlRefresh();
 		}
 		void MenuHelpAboutOnClick(object obj, EventArgs ea)
 		{
