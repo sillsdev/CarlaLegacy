@@ -83,7 +83,7 @@ namespace PAWSStarterKit
 		private const string m_strInitHtm = "PawsSKInit.htm";
 		private const string m_strPAWSStarterKitCSS = "PAWSStarterKit.css";
 		private const string m_strWriteUpCSS = "WriteUp.css";
-		private const string m_strNewAnswerFileRelative = @"Data\PAWSStarterKitNew.paw";
+		private const string m_strNewAnswerFileRelative = @"Data\PAWSStarterKitMaster.paw";
 		private string m_strNewAnswerFile;
 		private const string m_strAnswerFileFilter = "PAWS Starter Kit (*.paw)|*.paw|" +
 			"All Files (*.*)|*.*";

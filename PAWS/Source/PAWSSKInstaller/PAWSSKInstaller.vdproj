@@ -663,6 +663,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_C8162402C5F548858E26C13A8E156343"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\DATA\\PAWSSTARTERKITMASTER.PAW"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_C93ECEC102114C1FBB73A55854C02893"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\DATA\\PAWSSTARTERKIT.DTD"
@@ -726,12 +732,6 @@
 		"MsmKey" = "8:_D83BD638BE504A48954A8290D6D0DDB1"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PRONNP.XML"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_DB115BE597C0417DB2FD2EA2ECC4F089"
-		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\DATA\\PAWSSTARTERKITNEW.PAW"
 		}
 		"Entry"
 		{
@@ -3020,6 +3020,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_C8162402C5F548858E26C13A8E156343"
+			{
+			"SourcePath" = "8:..\\..\\Data\\PAWSStarterKitMaster.paw"
+			"TargetName" = "8:PAWSStarterKitMaster.paw"
+			"Tag" = "8:"
+			"Folder" = "8:_6C5702405F8C476F8CA3A230687A6387"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_C93ECEC102114C1FBB73A55854C02893"
 			{
 			"SourcePath" = "8:..\\..\\Data\\PAWSStarterKit.dtd"
@@ -3206,26 +3226,6 @@
 			"TargetName" = "8:PronNP.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:FALSE"
-			"IsolateTo" = "8:"
-			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_DB115BE597C0417DB2FD2EA2ECC4F089"
-			{
-			"SourcePath" = "8:..\\..\\Data\\PAWSStarterKitNew.paw"
-			"TargetName" = "8:PAWSStarterKitNew.paw"
-			"Tag" = "8:"
-			"Folder" = "8:_6C5702405F8C476F8CA3A230687A6387"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -4073,7 +4073,7 @@
 		"Name" = "8:Microsoft Visual Studio"
 		"ProductName" = "8:PAWSStarterKit"
 		"ProductCode" = "8:{C25A0D3E-32D8-4F91-A4DD-7CD5BCE21C3A}"
-		"PackageCode" = "8:{5F103718-A8CB-41E0-8708-1A4D664B9BF9}"
+		"PackageCode" = "8:{E7E34947-4EF3-45A5-BCCA-800D92194142}"
 		"UpgradeCode" = "8:{44BCC1A0-F58B-4681-9355-F81675D52F00}"
 		"RestartWWWService" = "11:FALSE"
 		"RemovePreviousVersions" = "11:FALSE"
