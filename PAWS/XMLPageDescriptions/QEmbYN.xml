@@ -70,12 +70,12 @@
 		<instruction id="QEmbYNEdgeCliticPrefixInstruction" show="swQEmbYNEdgeCliticPrefix">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNEdgeCliticSuffixInstruction" show="swQEmbYNEdgeCliticSuffix">In the lexicon, add the feature <feature>YNQ_suffix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNEdgeCliticBothInstruction" show="swQEmbYNEdgeCliticBoth">In the lexicon, add the feature <feature>YNQ_prefix</feature> to the pro-clitics and add <feature>YNQ_suffix</feature> to the post-clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QEmbYNWordYesInstruction" show="swQEmbYNWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>C</feature> to the feature line to change the category for the syntax.  If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbYNWordYesInstruction" show="swQEmbYNWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax. In either case, add the feature <feature>question</feature>.  If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNEitherRestrictedInstruction" show="swQEmbYNEitherRestricted">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
 		<br/>
 		<buttons>
 			<button id="QEmbYNBack" value="Back" goto="QMainYN.htm"/>
-			<button id="QEmbYNNext" value="Next" goto="QCont.htm"/>
+			<button id="QEmbYNNext" value="Next" goto="QWh.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swQEmbYNYes">

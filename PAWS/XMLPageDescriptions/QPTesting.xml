@@ -14,7 +14,7 @@
 				</li>
 			</ul>
 			<br/>
-Run the file qtest.txt through your morphological parser and then
+Run the file qptest.txt through your morphological parser and then
 run the syntactic parser on the output.  Check the log for the
 results and note any changes you need to make to the lexicon or to
 answers about the order of elements in the phrase structure

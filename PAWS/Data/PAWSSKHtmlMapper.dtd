@@ -102,6 +102,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 	id ID #REQUIRED
 	dataValue CDATA #REQUIRED
 	checked (yes) #IMPLIED
+   show IDREF #IMPLIED
 >
 <!ELEMENT radioGroup (groupName, prompt, radio, (radio | codeInfo | ruleInfo | radioGroup)*)>
 <!ATTLIST radioGroup

@@ -438,6 +438,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	  main clause content examples (contentExample),
 	  embedded content examples (embContentExample), and
 	  a list of wh-words (whWords) and their glosses (whWordGlosses).
+	 There is a category mapping for wh-pronouns.
 	 Main clause Yes/No questions may have complementizers (mainYN).
 	 These may be written as separate words
 	  (mainYNWord).  These have a position with respect to the rest of the
@@ -457,33 +458,35 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	the position of the wh demonstrative (whDemPos) article (whArtPos) or
 	 degree word (whDegAdjPos), (whDegQPos) is needed
 	 Content questions may require interrogative phrases to be fronted
-	  (contFront).
+	  (contFront) (before=yes; after=no so head position can be used to predict).
 	 Main content questions may have
 	  complementizers (mainCont).  These may be written as separate words
-	  (mainContWord).  They may occur before a fronted interrogative phrase
-	  (mainContBefore).  An Aux may occur after the fronted phrase
-	  (mainContBeforeAux).  The markers may appear in the same position as
-	  the main clause Yes/No ones (mainContSame).  These have a position with
+	  (mainContWord).  These have a position with
 	  respect to the rest of the question (mainContPos).  If they can appear
-	  on either side, then all of them may do so (mainContEither) and they
-	  may appear on both sides (mainContBoth).  If initial is required, then
-	  one may also be final (mainContBothInitialFinal).  If final is required,
-	  then one may also be initial (mainContBothFinalInitial).  A question
-	  marker may be required (mainContRequired).  If only an Aux is fronted,
-	  then it may be required (mainContAux).
-	 Embedded content questions may have particles, words, or
+	  on either side, then all of them may do so (mainContEither) or there may be sets.
+	  A question marker may be required (mainContRequired).
+	  For VSO languages with fronting, they may occur before a fronted interrogative phrase
+	  (mainContVSOBeforeWh).
+	  If a clitic questions of pre/post clitic
+	 (mainContCliticPos) and type are asked (mainContCliticAttaches).
+	  An Aux may front after the fronted phrase
+	  (mainContAux).  If only an Aux is fronted,
+	  then it may be required (mainContAuxRequired).
+	 Embedded content questions may have
 	  complementizers (embCont).  These may be written as separate words
-	  (embContWord).  These may occur in the same positions as in embedded
-	  Y/N questions (embContPosAsEmbYNPos).  These have a position with
+	  (embContWord).  These have a position with
 	  respect to the rest of the question (embContPos).  If they can appear
-	  on either side, then all of them may do so (embContEither) and they
-	  may appear on both sides (embContBoth).  If initial is required, then
-	  one may also be final (embContBothInitialFinal).  If final is required,
-	  then one may also be initial (embContBothFinalInitial).  A question
-	  marker may be required (embContRequired).  If only an Aux is fronted,
+	  on either side, then all of them may do so (embContEither) or not.  A question
+	  marker may be required (embContRequired).
+	 For VSO languages with fronting, they may occur before a fronted interrogative phrase
+	  (embContVSOBeforeWh).
+	  If a clitic questions of pre/post clitic
+	 (embContCliticPos) and type are asked (embContCliticAttaches).
+	  An Aux may front after the fronted phrase
+	  (embContAux).   If only an Aux is fronted,
 	  then it may be required (embContAux).
 -->
-<!ELEMENT q (example, embYNExample, contentExample, embContentExample, whWords, whWordGlosses)>
+<!ELEMENT q (example, embYNExample, contentExample, embContentExample, whWords, whWordGlosses, whPronCategory)>
 <!ATTLIST q
 	checkedOff (yes | no) "no"
 	mainYN (yes | noAux | no) "no"
@@ -504,29 +507,32 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	whArtPos (before | after | agree | unknown) "unknown"
 	whDegAdjPos (before | after | agree | unknown) "unknown"
 	whDegQPos (before | after | agree | unknown) "unknown"
-	contFront (no | yes | unknown) "unknown"
-	mainCont (yesSame | yesDiff | noAux | no) "no"
-	mainContWord (no | yes) "yes"
-	mainContBefore (no | yes | yesSome) "no"
-	mainContBeforeAux (no | yes) "no"
-	mainContSame (no | yes) "yes"
-	mainContPos (before | after | either | both | unknown) "unknown"
+	contFront (before | after | unknown) "unknown"
+	mainCont (yes | noAux | no) "no"
+	mainContWord (yes | no) "yes"
+	mainContCliticPos (before | after | both | unknown) "unknown"
+	mainContCliticAttaches (edge | between | head) "edge"
+	mainContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	mainContEitherRestricted (unrestricted | restricted) "unrestricted"
+	mainContVSOBeforeWh (no | noEnd | yes | some) "no"
 	mainContRequired (no | yes) "no"
-	mainContAux (no | yes) "no"
-	embCont (yesSameYN | yesSameCont | yesDiff | noAux | no) "no"
+	mainContAuxRequired (no | yes) "no"
+	embCont (yes | noAux | no) "no"
 	embContWord (no | yes) "yes"
-	embContPosAsEmbYNPos (no | yes) "no"
-	embContPos (before | after | either | both | unknown) "unknown"
+	embContCliticPos (before | after | both | unknown) "unknown"
+	embContCliticAttaches (edge | between | head) "edge"
+	embContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	embContEitherRestricted (unrestricted | restricted) "unrestricted"
+	embContVSOBeforeWh (no | noEnd | yes | some) "no"
 	embContRequired (no | yes) "no"
-	embContAux (no | yes) "no"
+	embContAuxRequired (no | yes) "no"
 >
 <!ELEMENT embYNExample (#PCDATA)>
 <!ELEMENT contentExample (#PCDATA)>
 <!ELEMENT embContentExample (#PCDATA)>
 <!ELEMENT whWords (#PCDATA)>
 <!ELEMENT whWordGlosses (#PCDATA)>
+<!ELEMENT whPronCategory (#PCDATA)>
 <!-- Relative clauses have examples.
 -->
 <!ELEMENT relcl (example)>

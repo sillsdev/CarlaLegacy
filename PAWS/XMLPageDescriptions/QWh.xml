@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QWh">
+	<title level="2">Questions - Interrogative Phrases in Content Questions</title>
+	<introduction>Content questions differ from Yes/No questions in that they contain an interrogative word or phrase, known as <i>wh</i>-phrases in English because they almost all begin with <example>wh</example> (<example>who(m)</example>, <example>what</example>, <example>why</example>, <example>where</example>, <example>when</example>, <example>how</example>, <example>which</example>, <example>whose</example>).</introduction>
+	<form section="q">
+		<prompt>Key a list of the interrogative words in your language, with each word followed by a "Tab" and then its English gloss in single quotes, then "Enter" here:</prompt>
+		<textBox id="QWhWords" dataItem="whWords"/>
+		<br/>
+		<!-- NB: we really need a new kind of data box for these: one that allows for an unlimited number of paired data items This is really just for the grammar writer, though-->
+		<introduction>Of the examples of interrogative words above, most simply stand alone as pronouns or adverbs, but <example>how</example> can either be a manner adverb by itself or a degree word modifying an adjective, as in <example>how big</example> or a degree word modifying a quantifier, as in <example>how many children</example>; <example>what</example> can either be a pronoun by itself or a demonstrative modifying a noun, as in <example>what books</example>; <example>which</example> never stands alone but always modifies a noun as a demonstrative, as in <example>which boy</example>; and <example>whose</example> can be either a stand alone possessive pronoun, or it can fill the possessor position in a nominal phrase, as in <example>whose toys</example>.</introduction>
+		<instruction>In the lexicon, mark all of the interrogative words with the feature <feature>wh</feature>.
+<br/>
+			<br/>
+			<span id="QContWhichDemInstruction" show="swDemPresent">In addition, make sure that your word meaning 'which' either already has the category <category>Dem</category> or add the <feature>makeDem</feature> to the entry.</span>
+			<span id="QContWhichArtInstruction" show="swArtOnlyPresent">In addition, since your language does not have any demonstratives, make sure that your word meaning 'which' either already has the category <category>Art</category> or add the feature <feature>makeArt</feature> to the entry.</span>
+			<span id="QContWhichNoDetInstruction" show="swNoDetPresent">In addition, since your language does not have any demonstratives or articles, if you have a word meaning 'which', it will have to be treated as a possessor.  As such, it simply acts as a pronoun like the majority of the interrogative words, and the category mapping will be handled on the testing page at the end of this section.  Add the case feature <span id="QContGenCaseSpan" show="swPossCaseGen">
+					<feature>genitive</feature> to the entry to restrict its appearance to possessor position.</span>
+				<span id="QContAbsCaseSpan" show="swPossCaseAbs">
+					<feature>absolutive</feature> to the entry to restrict the positions where it may appear.</span>
+				<span id="QContErgCaseSpan" show="swPossCaseErg">
+					<feature>ergative</feature> to the entry to restrict the positions where it may appear.</span>
+			</span>
+			<br/>
+			<br/>
+The word meaning 'why' needs to have the category <category>Adv</category> (or your morphological category for adverbs that you are mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>reason</feature>. <br/>
+			<br/>
+The word meaning 'where' needs to have the category <category>Adv</category> (or your morphological category for adverbs that you are mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>locative</feature>. <br/>
+			<br/>
+			<span id="QContDegPresentSpan" show="swDegPresent">The word meaning 'how' needs to have two entries, one with the category <category>Adv</category> (or your morphological category for adverbs that you are mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>manner</feature> and another entry which can have any appropriate morphological cateogry but has the features <feature>Deg modifies_Adj modifies_Q</feature>.</span>
+			<span id="QContDegQOnlyPresentSpan" show="swDegQOnlyPresent">The word meaning 'how' needs to have two entries, one with the category <category>Adv</category> (or your morphological category for adverbs that you are mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>manner</feature> and another entry which can have any appropriate morphological cateogry but has the features <feature>Deg modifies_Q</feature>.</span>
+			<span id="QContDegAdjOnlyPresentSpan" show="swDegAdjOnlyPresent">The word meaning 'how' needs to have two entries, one with the category <category>Adv</category> (or your morphological category for adverbs that you are mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>manner</feature> and another entry which can have any appropriate morphological category but has the features <feature>Deg modifies_Adj</feature>.  Since your language does not have stand alone degree words that modify quantifiers, you may have another interrogative word meaning 'how many' and/or 'how much'.  These words/phrases act like quantifiers, so the entry needs to have the features <feature>Q wh</feature>.</span>
+			<span id="QContNoDegSpan" show="swNoDegPresent">The word meaning 'how' needs to have the category <category>Adv</category> (or your morphological category for adverbs that you are mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>manner</feature>.   Since your language does not have stand alone degree words that modify quantifiers, you may have another interrogative word meaning 'how many' and/or 'how much'.  These words/phrases act like quantifiers, so the entry needs to have the features <feature>Q wh</feature>.</span>
+			<br/>
+			<br/>
+			<span id="QContWhatDemInstruction" show="swDemPresent">The word meaning 'what' also needs two entries if it can modify a noun as in English.  This entry which allows it to modify a noun needs to have the category <category>Dem</category> or add the <feature>makeDem</feature> to the entry.<br/>
+				<br/>
+The normal pronoun use of the word meaning 'what' and the remainder of the interrogative words above need to be mapped to the category <category>Pron</category>.  This will be handled on the testing page at the end of this section.
+</span>
+			<span id="QContWhatArtInstruction" show="swArtOnlyPresent">The word meaning 'what' also needs two entries if it can modify a noun as in English.  Since your language does not have any demonstratives, this entry which allows it to modify a noun needs to have the category <category>Art</category> or add the feature <feature>makeArt</feature> to the entry.<br/>
+				<br/>
+The normal pronoun use of the word meaning 'what' and the remainder of the interrogative words above need to be mapped to the category <category>Pron</category>.  This will be handled on the testing page at the end of this section.
+</span>
+			<span id="QContWhatNoDetInstruction" show="swNoDetPresent">Since your language does not have any demonstratives or articles, the word meaning 'what' only needs one entry, since it simply acts as a pronoun like the majority of the interrogative words, and the category mapping to the category <category>Pron</category> will be handled on the testing page at the end of this section.  Do not add any case features to the entry, so it will be allowed in possessor position as well as taking the place of a full nominal phrase.</span>
+			<br/>
+			<br/>
+The word meaning 'whose' needs to have two entries, both with the category which will be mapped to the category <category>Pron</category> at the end of the section (and both with the feature <feature>wh</feature>).  One entry needs the feature <feature>possessive</feature> for the stand alone case and the other entry needs the case feature <span id="QContGenCaseSpan1" show="swPossCaseGen">
+				<feature>genitive</feature> to restrict its appearance to possessor position.</span>
+			<span id="QContAbsCaseSpan1" show="swPossCaseAbs">
+				<feature>absolutive</feature> to restrict the positions where it may appear.</span>
+			<span id="QContErgCaseSpan1" show="swPossCaseErg">
+				<feature>ergative</feature> to restrict the positions where it may appear.</span>
+		</instruction>
+		<radioGroup id="QContWhDemPosTable" show="swDemPosEither">
+			<groupName dataItem="whDemPos" default="unknown" position="yesSpec">RQContWhDemPos</groupName>
+			<prompt>Your language allows demonstratives on either side of the noun.  Where do the words meaning 'which' and 'what' occur?</prompt>
+			<radio id="QContWhDemPosBefore" dataValue="before">Always before the noun, even if another determiner occurs after the noun</radio>
+			<radio id="QContWhDemPosAfter" dataValue="after">Always after the noun, even if another determiner occurs before the noun</radio>
+			<radio id="QContWhDemPosAgree" dataValue="agree">On either side, but when there is a demonstrative on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be)</radio>
+		</radioGroup>
+		<radioGroup id="QContWhArtPosTable" show="swArtOnlyPosEither">
+			<groupName dataItem="whArtPos" default="unknown" position="yesSpec">RQContWhArtPos</groupName>
+			<prompt>Your language allows articles on either side of the noun.  Where do the words meaning 'which' and 'what' occur?</prompt>
+			<radio id="QContWhArtPosBefore" dataValue="before">Always before the noun, even if another article occurs after the noun</radio>
+			<radio id="QContWhArtPosAfter" dataValue="after">Always after the noun, even if another article occurs before the noun</radio>
+			<radio id="QContWhArtPosAgree" dataValue="agree">On either side, but when there is an article on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be)</radio>
+		</radioGroup>
+		<radioGroup id="QContWhDegAdjPosTable" show="swDegAdjPosEither">
+			<groupName dataItem="whDegAdjPos" default="unknown" position="yesSpec">RQContWhDegAdjPos</groupName>
+			<prompt>Your language allows degree words on either side of the adjective.  Where does the word meaning 'how' (or any other interrogative words which can modify adjectives) occur?</prompt>
+			<radio id="QContWhDedAdjPosBefore" dataValue="before">Always before the adjective, even if another degree word occurs after the adjective</radio>
+			<radio id="QContWhDegAdjPosAfter" dataValue="after">Always after the adjective, even if another degree word occurs before the adjective</radio>
+			<radio id="QContWhDegAdjPosAgree" dataValue="agree">On either side, but when there is a degree word on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be)</radio>
+		</radioGroup>
+		<radioGroup id="QContWhDegQPosTable" show="swDegQPosEither">
+			<groupName dataItem="whDegQPos" default="unknown" position="yesSpec">RQContWhDegQPos</groupName>
+			<prompt>Your language allows degree words on either side of the quantifier.  Where does the word meaning 'how' (or any other interrogative words which can modify quantifiers) occur?</prompt>
+			<radio id="QContWhDedQPosBefore" dataValue="before">Always before the quantifier, even if another degree word occurs after the quantifier</radio>
+			<radio id="QContWhDegQPosAfter" dataValue="after">Always after the quantifier, even if another degree word occurs before the quantifier</radio>
+			<radio id="QContWhDegQPosAgree" dataValue="agree">On either side, but when there is a degree word on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be)</radio>
+		</radioGroup>
+<br/>
+		<buttons>
+			<button id="QWhBack" value="Back" goto="QEmbYN.htm"/>
+<button id="QWhNext" value="Next" goto="QCont.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swDemPresent">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+	</showWhen>
+	<showWhen id="swArtOnlyPresent">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+	</showWhen>
+	<showWhen id="swNoDetPresent">
+		<whenValue element="np" attr="artAndDem" value="no"/>
+	</showWhen>
+	<showWhen id="swPossCaseGen">
+		<whenValue element="np" attr="case" value="none"/>
+		<or/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="case" value="split"/>
+		<or/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+	</showWhen>
+	<showWhen id="swPossCaseAbs">
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	</showWhen>
+	<showWhen id="swPossCaseErg">
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+	</showWhen>
+	<showWhen id="swDegPresent">
+		<whenValue element="qp" attr="degree" value="yes"/>
+		<and/>
+		<not/>
+		<whenValue element="adjp" attr="modifiers" value="no"/>
+	</showWhen>
+	<showWhen id="swDegQOnlyPresent">
+		<whenValue element="qp" attr="degree" value="yes"/>
+		<and/>
+		<whenValue element="adjp" attr="modifiers" value="no"/>
+	</showWhen>
+	<showWhen id="swDegAdjOnlyPresent">
+		<whenValue element="qp" attr="degree" value="no"/>
+		<and/>
+		<not/>
+		<whenValue element="adjp" attr="modifiers" value="no"/>
+	</showWhen>
+	<showWhen id="swNoDegPresent">
+		<whenValue element="qp" attr="degree" value="no"/>
+		<and/>
+		<whenValue element="adjp" attr="modifiers" value="no"/>
+	</showWhen>
+	<showWhen id="swDemPosEither">
+		<openParen/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<closeParen/>
+		<and/>
+		<openParen/>
+		<whenValue element="np" attr="demPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="demPos" value="both"/>
+		<or/>
+		<whenValue element="np" attr="demOrArtPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="demOrArtPos" value="both"/>
+		<or/>
+		<whenValue element="np" attr="demAndArtPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="demAndArtPos" value="both"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swArtOnlyPosEither">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<openParen/>
+		<whenValue element="np" attr="artPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="artPos" value="both"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swDegAdjPosEither">
+		<openParen/>
+		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+		<and/>
+		<not/>
+		<whenValue element="adjp" attr="degreePos" value="before"/>
+		<and/>
+		<not/>
+		<whenValue element="adjp" attr="degreePos" value="after"/>
+		<closeParen/>
+		<or/>
+		<openParen/>
+		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
+		<and/>
+		<not/>
+		<whenValue element="adjp" attr="mannerPos" value="before"/>
+		<and/>
+		<not/>
+		<whenValue element="adjp" attr="mannerPos" value="after"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swDegQPosEither">
+		<whenValue element="qp" attr="degree" value="yes"/>
+		<and/>
+		<not/>
+		<whenValue element="qp" attr="degreePos" value="before"/>
+		<and/>
+		<not/>
+		<whenValue element="qp" attr="degreePos" value="after"/>
+	</showWhen>
+</page>
