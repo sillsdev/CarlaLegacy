@@ -10,10 +10,10 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.6
-@set DATE June 2002
+@set VERSION version 3.7
+@set DATE July 2003
 @set AUTHOR by Stephen McConnel and H. Andrew Black
-@set COPYRIGHT Copyright @copyright{} 2000-2002 SIL International
+@set COPYRIGHT Copyright @copyright{} 2000-2003 SIL International
 
 @include front.txi
 
@@ -201,6 +201,8 @@ option.
 @item -t
 causes analyses to be traced.  This produces a huge amount of output.
 Repeating the @code{-t} option causes SGML style trace output to be
+produced.  Repeating the @code(-t) option three times
+(i.e. as @code(-ttt)) causes XML style trace output to be
 produced.
 
 @item -u
