@@ -422,8 +422,16 @@ for ( success = FALSE, ap = mp->m.pAllomorphs ; ap ; ap = ap->pNext )
 	if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 		{
 		t_indent(level, pStamp_in->pLogFP);
+#ifndef hab217
+		fprintf(pStamp_in->pLogFP, "%s:  %s %s\n",
+		(mp->m.iMorphType & PFX) ? "pfx" :
+		(mp->m.iMorphType & SFX) ? "sfx" :
+		(mp->m.iMorphType & IFX) ? "ifx" : "root",
+		   mp->pCurrentAllo->pszAllomorph, mp->m.pszMorphname );
+#else
 		fprintf(pStamp_in->pLogFP, "Trying \"%s\" for \"%s\"\n",
 		   mp->pCurrentAllo->pszAllomorph, mp->m.pszMorphname );
+#endif /* hab217 */
 		}
 	/*
 	*  1.2b Moved MEC test from here to apply_all_tests below
@@ -515,8 +523,16 @@ else
  *  add the word to the output list, and return TRUE to signal success
  */
 if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
+#ifndef hab217
+  {
+	t_indent(level+1, pStamp_in->pLogFP);
+	fprintf(pStamp_in->pLogFP, "Success: %s passed all tests\n",
+		szSynWord_m);
+  }
+#else
 	fprintf(pStamp_in->pLogFP, "\nSuccess: %s passed all tests\n",
 		szSynWord_m);
+#endif /* hab217 */
 pSynList_m = mergeIntoStringList( pSynList_m, szSynWord_m );
 return( TRUE );
 }
@@ -547,7 +563,14 @@ StampAllomorph *am;
 int            iLen;		/* 2.1b1 hab */
 
 if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
+#ifndef hab217
+  {
+	t_indent(level, pStamp_in->pLogFP);
 	fprintf(pStamp_in->pLogFP, "Testing: %s\n", synword);
+  }
+#else
+	fprintf(pStamp_in->pLogFP, "Testing: %s\n", synword);
+#endif /* hab217 */
 /*
  *  apply the tests at each morpheme in the list
  */
@@ -560,21 +583,36 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 	if (am->pAlloEnvironment && am->pAlloEnvironment->pMorphCond)
 		{
 		++pStamp_in->uiCalledMEC;
+#ifdef hab217
 		if (pStamp_in->bTrace)
 			{
 			t_indent(level, pStamp_in->pLogFP);
 			fprintf(pStamp_in->pLogFP,
 			"applying morpheme environment constraint\n");
+			}
+#endif /* hab217 */
 			/* display the constraint and the analysis list */
 			/*   with an indication of where we are */
-			}
 		if (!checkStampMorphEnviron( mp->pLeftLink, mp->pRightLink,
 					 am->pAlloEnvironment->pMorphCond,
 					 pUnit_in, pStamp_in) )
 			{
 			if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
+#ifndef hab217
+		  {
+				t_indent(level+1, pStamp_in->pLogFP);
+				fprintf(pStamp_in->pLogFP,
+			"MEC failed for %s (%s):",
+			mp->pCurrentAllo->pszAllomorph, mp->m.pszMorphname);
+		writeAmpleEnvConstraint(pStamp_in->pLogFP,
+				  am->pAlloEnvironment->pMorphCond,
+				  FALSE);
+		putc('\n', pStamp_in->pLogFP);
+		  }
+#else
 				fprintf(pStamp_in->pLogFP,
 			"morpheme environment check failed\n");
+#endif /* hab217 */
 			++pStamp_in->uiMECFailed;
 			return( FALSE );
 			}
@@ -585,7 +623,11 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 	 *     the string environment constraint checking)
 	 */
 				/* add pUnit_in 2.1b1 hab */
+#ifndef hab217
+	if (!applyStampTests(head, synword, mp, level, pUnit_in, pStamp_in))
+#else
 	if (!applyStampTests(head, synword, mp, pUnit_in, pStamp_in))
+#endif /* hab217 */
 		return( FALSE );                /* the word failed the tests */
 	/*
 	 *  apply the string environment constraints, if any
@@ -594,6 +636,7 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 		mp->pCurrentAllo->pAlloEnvironment->pStringCond)
 		{
 		++pStamp_in->uiCalledSEC;                   /* bump the called count */
+#ifdef hab217
 		if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 			{
 			fprintf(pStamp_in->pLogFP, "  String environment constraint:\n");
@@ -620,6 +663,7 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 				}
 		putc('\n', pStamp_in->pLogFP);
 			}
+#endif /* hab217 */
 		if ( !checkStampStringEnvironment(synword,
 					  (int)(mp->pszAlloStart - synword),
 					  mp->pszAlloEnd,
@@ -628,9 +672,20 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 			{
 			if (pStamp_in->bTrace)
 				{
+#ifndef hab217
+				t_indent(level+1, pStamp_in->pLogFP);
+				fprintf(pStamp_in->pLogFP,
+			"SEC failed for %s (%s):",
+			mp->pCurrentAllo->pszAllomorph, mp->m.pszMorphname);
+		writeAmpleEnvConstraint(pStamp_in->pLogFP,
+				  mp->pCurrentAllo->pAlloEnvironment->pStringCond,
+				  FALSE);
+		putc('\n', pStamp_in->pLogFP);
+#else
 				t_indent(level, pStamp_in->pLogFP);
 				fprintf(pStamp_in->pLogFP,
 			"string environment check failed\n");
+#endif /* hab217 */
 				}
 			++pStamp_in->uiSECFailed;		/* bump the failure count */
 			return(FALSE);

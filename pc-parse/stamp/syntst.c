@@ -10,6 +10,7 @@
  * int applyStampTests(StampAnalysis * headp,
  *		       char *          wordp,
  *		       StampAnalysis * curmp,
+ *                     int             level,
  *                     StampUnit     * pUnit_in,
  *		       StampData *     pStamp_in)
  *
@@ -522,6 +523,16 @@ switch (pos)
  *    TRUE (nonzero) if the word passes the tests for this morpheme and
  *    allomorph, FALSE (zero) if it fails
  */
+#ifndef hab217
+int applyStampTests(headp, wordp, curmp, level, pUnit_in, pStamp_in)
+StampAnalysis *	headp;		/* pointer to list of analysis morphemes */
+char *		wordp;		/* pointer to a synthesized word */
+StampAnalysis *	curmp;		/* pointer to the current morpheme to apply the
+				   tests to */
+int             level;          /* trace printout indentation level */
+StampUnit *	pUnit_in;
+StampData *	pStamp_in;
+#else
 int applyStampTests(headp,wordp,curmp, pUnit_in, pStamp_in)
 StampAnalysis *	headp;		/* pointer to list of analysis morphemes */
 char *		wordp;		/* pointer to a synthesized word */
@@ -529,6 +540,7 @@ StampAnalysis *	curmp;		/* pointer to the current morpheme to apply the
 				   tests to */
 StampUnit *	pUnit_in;
 StampData *	pStamp_in;
+#endif /* hab217 */
 {
 StampTestList *tp;
 StampAnalysis *ap;
@@ -544,6 +556,7 @@ if (    (headp == NULL) ||
 		(wordp == NULL) ||
 		(curmp == NULL) )
 	return(FALSE);
+#ifdef hab217
 /*
  *  produce some trace output if desired
  */
@@ -560,6 +573,7 @@ if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 		}
 	fputc('\n', pStamp_in->pLogFP);
 	}
+#endif /* hab217 */
 /*
  *  save information needed by all the tests
  */
@@ -582,17 +596,29 @@ for ( tp = pStamp_in->pSynthesisTests ; tp ; tp = tp->pNext )
 	if (user_test(tp->pTest->uLeft.pChild, pUnit_in, pStamp_in))
 		{
 		if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
+#ifndef hab217
+	  if (tp->pAction)
+			fprintf(pStamp_in->pLogFP, "    %s passed (and the action was performed)\n",
+			tp->pTest->uRight.pszString);
+#else
 			fprintf(pStamp_in->pLogFP, "    %s passed\n",
 			tp->pTest->uRight.pszString);
+#endif /* hab217 */
 		do_action(tp->pAction, tp->pTest->uRight.pszString, pStamp_in);
 		}
 	else
 		{
 		++(tp->uiTestFailures);
 		if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
+#ifndef hab217
+	  if (!tp->pAction)
+			fprintf(pStamp_in->pLogFP, "    %s failed%s\n",
+			tp->pTest->uRight.pszString);
+#else
 			fprintf(pStamp_in->pLogFP, "    %s failed%s\n",
 			tp->pTest->uRight.pszString,
 			(tp->pAction) ? " (so no action was performed)" : "");
+#endif /* hab217 */
 		if (tp->pAction == NULL)
 			return(FALSE);      /* first failure without action kills it */
 		}

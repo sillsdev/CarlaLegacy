@@ -751,11 +751,20 @@ extern void		addStampTest P((char *      src,
 					StampData * pStamp_in));
 extern void		writeStampTests P((FILE *      pOutputFP_in,
 					   StampData * pStamp_in));
+#ifndef hab217
+extern int		applyStampTests P((StampAnalysis * headp,
+					   char *          wordp,
+					   StampAnalysis * curmp,
+					   int             level,
+					   StampUnit *     pUnit_in, /* 2.1b1 */
+					   StampData *     pStamp_in));
+#else
 extern int		applyStampTests P((StampAnalysis * headp,
 					   char *          wordp,
 					   StampAnalysis * curmp,
 					   StampUnit *     pUnit_in, /* 2.1b1 */
 					   StampData *     pStamp_in));
+#endif /* hab217 */
 extern void		writeStampTestStatistics P((FILE *      pOutputFP_in,
 							StampData * pStamp_in));
 

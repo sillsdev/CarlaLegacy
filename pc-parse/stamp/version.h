@@ -4,12 +4,17 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL -6		/* bug fix or other minor change */
-#define DATE "October 26, 2000"	/* date of release version */
-#define YEAR "2000"		/* used for copyright notice in banner */
+#define PATCHLEVEL -8		/* bug fix or other minor change */
+#define DATE "July 24, 2001"	/* date of release version */
+#define YEAR "2001"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 24-Jul-2001  hab  - Fix bug: empty environment constraint messages did not
+ * [2.1.b8]              include any information about which entry they were
+ *                       for.  (fixed in envpar.c)
+ * 17-Jul-2001  hab  - rework synthesis trace output to be more like AMPLE's
+ * [2.1.b7]
  * 26-Oct-2000  hab  - fix bug which complained about multiple category fields
  * [2.1.b6]             in dictionary entries (when it should not)
  * 11-May-2000	SRMc - fix portability to antique C compilers

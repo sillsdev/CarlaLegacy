@@ -1,5 +1,14 @@
 STAMP CHANGE HISTORY
 
+2.1.b8 (24-Jul-2001)
+--------------------
+1. Fix bug: empty environment constraint messages did not include any
+   information about which entry they were for.
+
+2.1.b7 (17-Jul-2001)
+--------------------
+1. Rework synthesis trace output to be more like AMPLE's.
+
 2.1b6 (26-Oct-2000)
 -------------------
 1. Fix a bug which complained about multiple category fields in dictionary
