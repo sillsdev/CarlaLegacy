@@ -92,7 +92,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 <!ATTLIST page
 	id ID #REQUIRED
 >
-<!ELEMENT prompt (#PCDATA | category | i | span | br )*>
+<!ELEMENT prompt (#PCDATA | category | i | span | br)*>
 <!ATTLIST prompt
 	id ID #IMPLIED
 	show IDREF #IMPLIED
@@ -118,7 +118,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 <!ATTLIST section
 	number CDATA #REQUIRED
 >
-<!ELEMENT showWhen (openParen*, not?, (whenRadio | whenValue), ((or | and), openParen?, not?, (whenRadio | whenValue), closeParen*)*, closeParen*)>
+<!ELEMENT showWhen (openParen*, not?, (whenRadio | whenValue), ((or | and), openParen*, not?, (whenRadio | whenValue), closeParen*)*, closeParen*)>
 <!ATTLIST showWhen
 	id ID #REQUIRED
 >

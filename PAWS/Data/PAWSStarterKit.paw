@@ -63,35 +63,39 @@
 		<propAnimate2Category/>
 		<propInanimateCategory/>
 	</prop>
-	<pron checkedOff="no" poss="yes" possAffix="no"  refl="yes" reflAffix="yes" recip="yes" recipAffix="yes"  indef="no" partitive="unknown">
-	<personalNoCaseExample/>
-	<personalNomSubjectExample/>
-	<personalNomObjectExample/>
-	<personalNomPossessorExample/>
-	<personalErgSubjectTransExample/>
-	<personalErgSubjectIntransExample/>
-	<personalErgPossessorExample/>
-	<personalSplitSubjectExample/>
-	<personalSplitObjectExample/>
-	<personalSplitPossessorExample/>
-	<personalSplitErgExample/>
-	<personalSplitAbsExample/>
-	<possExample/>
+	<pron checkedOff="no" poss="no" possAffix="no" refl="no" reflAffix="yes" recip="no" recipAffix="yes" indef="no" pronounCat="NP" partitive="unknown">
+		<personalNoCaseExample/>
+		<personalNomSubjectExample/>
+		<personalNomObjectExample/>
+		<personalNomPossessorExample/>
+		<personalErgSubjectTransExample/>
+		<personalErgSubjectIntransExample/>
+		<personalErgPossessorExample/>
+		<personalSplitSubjectExample/>
+		<personalSplitObjectExample/>
+		<personalSplitPossessorExample/>
+		<personalSplitErgExample/>
+		<personalSplitAbsExample/>
+		<possExample/>
 		<reflExample/>
 		<recipExample/>
-		<indefNPExample/>
 		<indefExample/>
+		<indefNPExample/>
 		<standAloneNPExample/>
-		<partitiveExample/>
 		<pronRelClExample/>
+		<partitiveExample/>
+		<pronounCategory/>
 	</pron>
-	<pp checkedOff="no" degree="no" manner="no" degreePos="unknown" degreeEither="no" degreeEither2="no" mannerPos="unknown" degreeMannerPos="unknown" alone="no" sentComp="no" prePost="unknown">
+	<pp checkedOff="no" modifiers="no" modifierType="degree" degreePos="unknown" degreeRestricted="unrestricted" ordinalPos="unknown" ordinalRestricted="unrestricted" mannerPos="unknown" mannerRestricted="unrestricted" pPos="unknown" pType="word" attaches="edge" alone="no" locative="yes" ppComp="no" sentComp="no">
 		<example/>
 		<ppExample/>
+		<aloneExample/>
 		<locExample/>
+		<compPPExample/>
 		<sentExample/>
+		<pCategory/>
 	</pp>
-	<ip checkedOff="no" proDrop4="no" proDrop2="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="no" diCat="dp" passive="yes" passiveAgent="no" passiveAux="no" passiveAgentCat="dp">
+	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="dp" passive="yes" passiveAgent="no" passiveAux="no" passiveAgentCat="dp">
 		<example/>
 		<auxExample/>
 		<proDropExample/>
@@ -99,6 +103,8 @@
 		<intransExample/>
 		<copularExample/>
 		<passiveExample/>
+		<auxCategory/>
+		<verbCategory/>
 		<ipContents1 checkedOff="no"/>
 		<ipContents2 checkedOff="no"/>
 		<ipContents3 checkedOff="no"/>
@@ -109,7 +115,7 @@
 		<ipContents8 checkedOff="no"/>
 		<ipContents9 checkedOff="no"/>
 	</ip>
-	<q checkedOff="no" mainYN="no" mainYNWord="no" mainYNPos="unknown" mainYNEither="no" mainYNBoth="no" mainYNBothInitialFinal="no" mainYNBothFinalInitial="no" mainYNAuxPos="unknown" embYN="no" embYNWord="no" embYNPos="unknown" embYNEither="no" embYNBoth="no" embYNBothInitialFinal="no" embYNBothFinalInitial="no" embYNAuxPos="unknown" contFront="unknown" mainCont="no" mainContWord="no" mainContBefore="no" mainContBeforeAux="no" mainContSame="yes" mainContPos="unknown" mainContEither="no" mainContBoth="no" mainContBothInitialFinal="no" mainContBothFinalInitial="no" mainContRequired="no" mainContAux="no" embCont="no" embContWord="no" embContPosAsEmbYNPos="no" embContPos="unknown" embContEither="no" embContBoth="no" embContBothInitialFinal="no" embContBothFinalInitial="no" embContRequired="no" embContAux="no">
+	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNPos="unknown" mainYNEitherRestricted="unrestricted"  mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContBefore="no" mainContBeforeAux="no" mainContSame="yes" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContRequired="no" mainContAux="no" embCont="no" embContWord="yes" embContPosAsEmbYNPos="no" embContPos="unknown" embContEitherRestricted="unrestricted" embContRequired="no" embContAux="no">
 		<example/>
 		<embYNExample/>
 		<contentExample/>
