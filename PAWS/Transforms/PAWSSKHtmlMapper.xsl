@@ -202,12 +202,26 @@ if (<xsl:for-each select="./*">
 		</xsl:for-each>)
   {
 <xsl:for-each select="$showable">
-		  <xsl:value-of select="@id"/>.style.display = "";
-</xsl:for-each>  }
+		  <xsl:choose>
+			<xsl:when test="name()='radio'">
+			  <xsl:value-of select="@id"/>_tr.style.display = "";
+</xsl:when>
+			<xsl:otherwise>
+			  <xsl:value-of select="@id"/>.style.display = "";
+</xsl:otherwise>
+		  </xsl:choose>
+		</xsl:for-each>  }
 else
   {
 <xsl:for-each select="$showable">
+		  <xsl:choose>
+			<xsl:when test="name()='radio'">
+			  <xsl:value-of select="@id"/>_tr.style.display = "none";
+</xsl:when>
+			<xsl:otherwise>
 		  <xsl:value-of select="@id"/>.style.display = "none";
+</xsl:otherwise>
+		  </xsl:choose>
 </xsl:for-each>  }
 	  </xsl:for-each>
 }
@@ -490,18 +504,18 @@ Refresh();
   </xsl:template>
   <!-- introduction -->
   <xsl:template match="//introduction">
-	  <xsl:if test="position()>2">
-		<br/>
-	  </xsl:if>
-	  <div class="introduction">
+	<xsl:if test="position()>2">
+	  <br/>
+	</xsl:if>
+	<div class="introduction">
 	  <xsl:if test="@id">
 		<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
 	  </xsl:if>
-		<p>
-		  <xsl:apply-templates/>
-		</p>
-	  </div>
-  <!--
+	  <p>
+		<xsl:apply-templates/>
+	  </p>
+	</div>
+	<!--
 	- top level case -
 	<xsl:if test="name(..)='page'">
 	  <xsl:if test="position()>2">
@@ -575,9 +589,9 @@ Refresh();
 		  </p>
 		</xsl:when>
 		<xsl:otherwise>
-		<p style="margin-left: 0.125in">
-		  <xsl:apply-templates/>
-		  <br/>
+		  <p style="margin-left: 0.125in">
+			<xsl:apply-templates/>
+			<br/>
 		  </p>
 		</xsl:otherwise>
 	  </xsl:choose>
@@ -586,6 +600,9 @@ Refresh();
   <!-- radio -->
   <xsl:template match="//radio">
 	<tr>
+<xsl:if test="@id and @show">
+<xsl:attribute name="id"><xsl:value-of select="@id"/>_tr</xsl:attribute>
+</xsl:if>
 	  <td valign="top">
 		<xsl:element name="input">
 		  <xsl:attribute name="type">radio</xsl:attribute>
@@ -723,16 +740,20 @@ Refresh();
   <!-- tree -->
   <xsl:template match="//tree">
 	<br/>
-  <xsl:choose>
-	<xsl:when test="@img"><img><xsl:attribute name="src"><xsl:value-of select="@img"/></xsl:attribute></img></xsl:when>
-	<xsl:otherwise>
-	<span class="tree">
-	  <xsl:apply-templates/>
-	</span>
-</xsl:otherwise>
-  </xsl:choose>
-	  <br/>
-	  </xsl:template>
+	<xsl:choose>
+	  <xsl:when test="@img">
+		<img>
+		  <xsl:attribute name="src"><xsl:value-of select="@img"/></xsl:attribute>
+		</img>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<span class="tree">
+		  <xsl:apply-templates/>
+		</span>
+	  </xsl:otherwise>
+	</xsl:choose>
+	<br/>
+  </xsl:template>
   <!-- u -->
   <xsl:template match="//u">
 	<u>
