@@ -252,7 +252,17 @@ else
   - - - - - - - -
   -->
   <xsl:template match="//textBox | //catMap" mode="save">
-example = PawsSKAnswers.selectSingleNode("//<xsl:value-of select="$Section"/>/<xsl:value-of select="./@dataItem"/>");
+	<xsl:text>example = PawsSKAnswers.selectSingleNode("//</xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@section">
+		<xsl:value-of select="@section"/>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:value-of select="$Section"/>
+	  </xsl:otherwise>
+	</xsl:choose>
+	<xsl:text>/</xsl:text>
+	<xsl:value-of select="./@dataItem"/>");
 //TODO: figure what to do if any of these are missing!
 example.text = <xsl:value-of select="@id"/>.value;
 </xsl:template>
@@ -903,6 +913,7 @@ Refresh();
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+09-Aug-2002  Andy Black  Fix bug: textBox and catMap save did not allow for section attr
 08-Aug-2002  Andy Black  Add div element; "beautify" some comments
 09-Jul-2002   Andy Black  Add checkbox within featureItem element
 28-Jun-2002  Andy Black  Allow section attribute for textbox element
