@@ -5,6 +5,7 @@
 //	10-june-2000 jdh added category to each morpheme known to facilitate interlinearization
 // 2.2.1 21-Jun-2000 hab fixed bug where morpheme processing assumed that
 //                        every morpheme had a category
+// 2.8.0 06-Dec-2004 hab Add interix processing
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -325,10 +326,12 @@ CAMorph* CAMorph::readNode(CParseStream& parseStream)
 	{
 		USES_CONVERSION_U8;
 		sout << T2CU8(m_sID) << "(";
-		if(m_sType == _T("s") || m_sType == _T("i"))
+		if ((m_sType == _T("s")) || (m_sType == _T("i")) ||
+		(m_sType == _T("ns")) || (m_sType == _T("ni")))
 			sout << "-";
 		sout << T2CU8(m_sAllo);
-		if(m_sType == _T("p") || m_sType == _T("i"))
+		if ((m_sType == _T("p")) || (m_sType == _T("i")) ||
+		(m_sType == _T("np")) || (m_sType == _T("ni")))
 			sout << "-";
 		sout << ") ";// jdh 23/may/2000
 
@@ -600,7 +603,8 @@ CString CAmpleResult::getXMLRepresentation(LPCTSTR lpszPath)
 	for(int i=0; i< m_wordResults.GetSize(); i++)
 	  {
 		pAllo = (CAllo *)getResult(i);
-		if (pAllo->m_sType == _T("IFX"))
+		if ((pAllo->m_sType == _T("IFX")) ||
+		(pAllo->m_sType == _T("NFXIFX")))
 	{
 	  sAllo  = pAllo->m_sShape;
 	  sMName = pAllo->m_sMorphName;

@@ -12,6 +12,7 @@
 // 2.5.4 26-Jul-2001 hab Allow "Ask me" option to handle multiple words;
 //                       Insert decomp character between compound roots when
 //                         echoing user choices in "Ask me" option.
+// 2.8.0 06-Dec-2004 hab Allow interfixes
 
 #include "stdafx.h"
 #include "CarlaStudioApp.h"
@@ -399,11 +400,18 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 	  else
 		sState = _T("SFX");
 	}
+	  else if (m_pAlloChosen->m_sType == _T("NFX"))
+	{
+	  sState = _T("NFX");
+	}
 	  else
 	sState = m_pAlloChosen->m_sType;
 #ifndef hab254
-	  if (sState == _T("SFX") ||
-	  ((sState == _T("ROOT")) && sLastState == _T("ROOT")))
+	  if ((sState == _T("SFX")) ||
+	  (sState == _T("NFX")) ||
+	  (sState == _T("NFXIFX")) ||
+	  ((sState == _T("ROOT")) &&
+	   ((sLastState == _T("ROOT")) || (sLastState == _T("NFX")))))
 #else
 	  if (sState == _T("SFX"))
 #endif // hab254
@@ -428,7 +436,8 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 	iAlloLen = 0;	// adjust for nulls
 	  else
 	iAlloLen = m_pAlloChosen->m_sShape.GetLength();
-	  if (m_pAlloChosen->m_sType == _T("IFX"))
+	  if ((m_pAlloChosen->m_sType == _T("IFX")) ||
+	  (m_pAlloChosen->m_sType == _T("NFXIFX")))
 	{
 	  int iInfixLoc = m_pAlloChosen->m_sInfixContext.Find(kcDelim);
 	  sInput = sInput.Left(iInfixLoc) +
@@ -441,6 +450,8 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 				// reflect most recent selection in dialog
 	  m_sOutput = sAllos + sReturn + sMNames + sReturn + sReturn;
 	  UpdateData(FALSE);
+	  if (sState = _T("NFXIFX"))
+	sState = _T("NFX");	// no longer need to know it also was an infix
 #ifndef hab254
 	  sLastState = sState;
 #endif // hab254

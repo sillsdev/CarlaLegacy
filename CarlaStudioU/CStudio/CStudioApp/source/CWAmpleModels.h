@@ -3,6 +3,7 @@
 //				needed for TextOut as well: m_cPrimaryFormatChar, m_cSecondaryFormatChar (actually not output to textout),
 //				m_sWFC, m_WFCS
 // 2.1.0 07-Mar-2000 hab Added Max properties
+// 2.8.0 06-Dec-2004 hab Added maxInterfaces and interfix tests
 
 #pragma once
 
@@ -28,7 +29,7 @@ public:
 	BOOL writeFile(CString & sPath, CWCommonModel& commonModel);
 	CWAnalysisModel(CTextDisplayInfo* pTDI);
 	BOOL loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonModel);
-	CWInteger maxPrefixes, maxInfixes, maxSuffixes, maxRoots, maxNulls;
+	CWInteger maxPrefixes, maxInfixes, maxInterfixes, maxSuffixes, maxRoots, maxNulls;
 #ifndef hab210
 	CWInteger maxProps;
 #endif //hab210
@@ -37,7 +38,7 @@ public:
 	CWString m_sRootDelimiters; // hab 210 fix typo
 	CWBool decapitalizeEntries;
 	CWMCCList generalMCCs;
-	CWTestList prefixTests, infixTests, rootTests, suffixTests, finalTests;
+	CWTestList prefixTests, infixTests, interfixTests, rootTests, suffixTests, finalTests;
 
 	// in commonModel, we store the following elements of this file:
 	//		categories, allomorph properties, morpheme properties,

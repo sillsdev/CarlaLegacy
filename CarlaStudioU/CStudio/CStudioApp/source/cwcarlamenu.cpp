@@ -5,6 +5,7 @@
 //       07-Dec-1999 hab Allow multiple markers for certain fields
 // 2.1.0 07-Mar-2000 hab Added Max properties and string checks
 // jdh 4/19/02	added support for Sentrans \bpunct field
+// 2.8.0 06-Dec-2004 hab Added maxInterfaces and interfix tests
 
 #include "stdafx.h"
 #include "CWInterface.h"
@@ -253,6 +254,7 @@ void CWCarlaMenuInterface::setupForLang(CCarlaLanguage* pLang)
 	pHeading->Add(new CWListTopic(pTab, _T("Infix Tests"), &analysis.infixTests));
 	pHeading->Add(new CWListTopic(pTab, _T("Suffix Tests"), &analysis.suffixTests));
 	pHeading->Add(new CWListTopic(pTab, _T("Root Tests"), &analysis.rootTests));
+	pHeading->Add(new CWListTopic(pTab, _T("Interfix Tests"), &analysis.interfixTests));
 	pHeading->Add(new CWListTopic(pTab, _T("Final Tests"), &analysis.finalTests));
 
 	/////////////////// Adaptation //////////////////////////////
@@ -269,6 +271,7 @@ void CWCarlaMenuInterface::setupForLang(CCarlaLanguage* pLang)
 	pFTopic->Add(&analysis.maxInfixes);
 	pFTopic->Add(&analysis.maxSuffixes);
 	pFTopic->Add(&analysis.maxRoots);
+	pFTopic->Add(&analysis.maxInterfixes);
 #ifndef hab210
 	pFTopic->Add(&analysis.maxProps);
 #endif //hab210

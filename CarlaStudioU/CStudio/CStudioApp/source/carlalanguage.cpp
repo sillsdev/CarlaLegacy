@@ -16,6 +16,7 @@
 // 2.0.2 19-Jan-2000 hab Use unified dictionary in prepareMFSForProcessors()
 // 2.7.3 30-Nov-2002 rde the .csl file contains the PC-PATR punctuation which might be UTF-8, so
 //                       we have to check the UTF-8 safeness earlier in the process than we were.
+// 2.8.0 06-Dec-2004 hab Added maxInterfixes
 
 #include "stdafx.h"
 #include "CARLAStudioApp.h"
@@ -143,6 +144,7 @@ BOOL CCarlaLanguage::save(LPCTSTR lpszProjectDirectory)
 	WRITEPREFS("ptestPrefs",m_analysisModel.prefixTests);
 	WRITEPREFS("stestPrefs",m_analysisModel.suffixTests);
 	WRITEPREFS("itestPrefs",m_analysisModel.infixTests);
+	WRITEPREFS("ntestPrefs",m_analysisModel.interfixTests);
 	WRITEPREFS("rttestPrefs",m_analysisModel.rootTests);
 	WRITEPREFS("mccPrefs",m_analysisModel.generalMCCs);
 	WRITEPREFS("apPrefs",m_commonModel.m_allomorphProperties);
@@ -371,6 +373,7 @@ BOOL CCarlaLanguage::open(LPCTSTR lpszPathName)
 		CHECKPREFS("ptestPrefs",m_analysisModel.prefixTests);
 		CHECKPREFS("stestPrefs",m_analysisModel.suffixTests);
 		CHECKPREFS("itestPrefs",m_analysisModel.infixTests);
+		CHECKPREFS("ntestPrefs",m_analysisModel.interfixTests);
 		CHECKPREFS("rttestPrefs",m_analysisModel.rootTests);
 		CHECKPREFS("mccPrefs",m_analysisModel.generalMCCs);
 		CHECKPREFS("apPrefs",m_commonModel.m_allomorphProperties);
