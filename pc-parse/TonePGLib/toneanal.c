@@ -513,6 +513,11 @@ static int try_optional_rules;    /* whether or not to try right edge rules */
 #define RIGHT_RULES 2
 #define ALL_RULES 3
 
+#ifndef hab105
+StampAnalysis *		pForLeft_m;	/* used in FOR_*_LEFT */
+StampAnalysis *		pForRight_m;	/* used in FOR_*_RIGHT */
+#endif /*hab105 */
+
 /****************************************************************************
  * NAME
  *    apply_rule
@@ -2309,6 +2314,14 @@ static StampAnalysis *get_morph_pos(pos, pStamp_in)
 			t_current->pRightLink->pRightLink : (StampAnalysis *)NULL)
 									: (StampAnalysis *)NULL);
 
+#ifndef hab105
+	case FORLEFT:
+	  return( pForLeft_m );
+
+	case FORRIGHT:
+	  return( pForRight_m );
+#endif /* hab105 */
+
 	case WINITIAL:
 	case INITIALM:
 #ifdef ORIGTP
@@ -3528,6 +3541,47 @@ static int utest( cond, pStamp_in )
 #endif /* hab104 */
 	break;
 
+#ifndef hab105
+	case ALL_LEFT:              /* 'FOR_ALL_LEFT' */
+		for (   pForLeft_m = t_current->pLeftLink, val = TRUE ;
+				(pForLeft_m != NULL) && (val == TRUE) ;
+				pForLeft_m = pForLeft_m->pLeftLink )
+			{
+			val = utest( left.l_son, pWordAnal_in, pStamp_in);
+			}
+		break;
+
+	case SOME_LEFT:             /* 'FOR_SOME_LEFT' */
+		for (   pForLeft_m = t_current->pLeftLink, val = FALSE ;
+				pForLeft_m != NULL ;
+				pForLeft_m = pForLeft_m->pLeftLink )
+			{
+			val = utest( left.l_son, pWordAnal_in, pStamp_in);
+			if (val)
+				break;          /* need to preserve pointer value */
+			}
+		break;
+
+	case ALL_RIGHT:             /* 'FOR_ALL_RIGHT' */
+		for (   pForRight_m = t_current->pRightLink, val = TRUE ;
+				(pForRight_m != NULL) && (val == TRUE) ;
+				pForRight_m = pForRight_m->pRightLink )
+			{
+			val = utest( left.l_son, pWordAnal_in, pStamp_in);
+			}
+		break;
+
+	case SOME_RIGHT:    /* 'FOR_SOME_RIGHT' */
+		for (   pForRight_m = t_current->pRightLink, val = FALSE ;
+				pForRight_m != NULL ;
+				pForRight_m = pForRight_m->pRightLink )
+			{
+			val = utest(left.l_son, pWordAnal_in, pStamp_in);
+			if (val)
+				break;          /* need to preserve pointer value */
+			}
+		break;
+#endif /* hab105 */
 				/*
 				 *  the rest of these are leaf nodes
 				 */

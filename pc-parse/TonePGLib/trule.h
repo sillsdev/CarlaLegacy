@@ -131,10 +131,10 @@ struct cond_node
 #define LOGIF		  5	/* 'IF' ... 'THEN' (!A || (A & B)) */
 				   /* not implemented (yet) */
 
-#define CATEGORY_IS	  6	/* 'category 'is' IDENTIFIER */
-#define CATEGORY_MEMBER	  7	/* 'category 'is' 'member' IDENTIFIER */
+#define CATEGORY_IS	 36	/* 'category 'is' IDENTIFIER */
+#define CATEGORY_MEMBER	 37	/* 'category 'is' 'member' IDENTIFIER */
 
-#define EDGE_COND_IS	  8	/* 'edge' 'condition' 'is' IDENTIFIER */
+#define EDGE_COND_IS	 38	/* 'edge' 'condition' 'is' IDENTIFIER */
 
 #define PROP_IS		 10 	/* 'property' 'is' IDENTIFIER */
 				/* (keep in sync with stample.h) */
@@ -142,7 +142,7 @@ struct cond_node
 				/* (keep in sync with stample.h) */
 #define MORPH_MEMBER	 13	/* 'morphname' 'is' 'member' IDENTIFIER */
 				/* (keep in sync with stample.h) */
-#define MORPH_PROSODY	  9	/* 'morpheme' 'is' PROSODIC_SHAPE */
+#define MORPH_PROSODY	 39	/* 'morpheme' 'is' PROSODIC_SHAPE */
 
 #define SEGMENT_IS	 12	/* 'segment' 'is'  STRING */
 #define SEGMENT_MEMBER	 14	/* 'segment' 'is' 'member' IDENTIFIER */

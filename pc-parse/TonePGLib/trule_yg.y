@@ -169,6 +169,11 @@ static char lstname[100];
 static char *ltname  = (char *) 0;
 static char *cp;
 
+static short	bForLeftSeen_m = FALSE;  /* flag FOR-ALL-LEFT, FOR-SOME-LEFT */
+static short	bLeftSeen_m = FALSE;     /* flag LEFT */
+static short	bForRightSeen_m = FALSE; /* flag FOR-ALL-RIGHT, FOR-SOME-RIGHT */
+static short	bRightSeen_m = FALSE;    /* flag RIGHT */
+
 static AmpleCategoryClass     *tmp_ccp;
 static struct domain_list     *tmp_dl, *tmp_dl2;
 static AmpleMorphClass        *tmp_mcp;
@@ -236,12 +241,18 @@ static StampData *	pStamp_m;
 %token	<ival>	LX_EDGE
 %token	<ival>	LX_EDGE_IN
 %token	<ival>	LX_EXTRAMETRICAL
+%token  <ival>  LX_FA_LEFT
+%token  <ival>  LX_FA_RIGHT
+%token  <ival>  LX_FS_LEFT
+%token  <ival>  LX_FS_RIGHT
 %token	<ival>	LX_FEATURE_ADDING
 %token	<ival>	LX_FEATURE_CHANGING
 %token	<ival>	LX_FEATURE_FILLING
 %token	<ival>	LX_FILL_IN
 %token	<ival>	LX_FINAL
+%token  <ival>  LX_FLEFT
 %token	<ival>	LX_FLOATING
+%token  <ival>  LX_FRIGHT
 %token	<ival>	LX_HAS
 %token  <cval>  LX_IDENTIFIER
 %token	<ival>	LX_IF
@@ -327,6 +338,8 @@ static StampData *	pStamp_m;
 %type	<ival>		Entity
 %type	<cnval>		Factor
 %type	<ival>		Feature_Op
+%type   <ival>          ForLeft
+%type   <ival>          ForRight
 %type	<ival>		Iteration
 %type	<ival>		Mode
 %type	<dlval>		More_domains
@@ -541,6 +554,10 @@ name
 	: LX_IDENTIFIER			/* name of the test */
 		  {
 		ltname = strcpy(lstname,$1);    /* save for error messages */
+		bForLeftSeen_m  = FALSE;   /* These must be initialized for */
+		bForRightSeen_m = FALSE;   /* each test we parse! */
+		bLeftSeen_m     = FALSE;
+		bRightSeen_m    = FALSE;
 		  }
 			/* The name of the rule consists of a user-defined */
 			/* string.  The only restrictions on the name are */
@@ -1555,6 +1572,66 @@ Condition_Body
 				LOGIF, (unsigned)$2, (unsigned)$4);
 		  }
 		  }
+		| ForLeft Factor
+			  {
+		if (bForLeftSeen_m == TRUE)
+		  {
+			if (pStamp_m->pLogFP != NULL)
+			  fprintf(pStamp_m->pLogFP,
+				  "%s contains more than one leftward iteration\n",
+				  ltname );
+		  }
+		if (bLeftSeen_m == FALSE)
+		  {
+			if (pStamp_m->pLogFP != NULL)
+			  fprintf(pStamp_m->pLogFP,
+				  "%s contains a leftward iteration without a LEFT\n",
+				  ltname );
+		  }
+		bForLeftSeen_m = TRUE;
+		$$ = mknode( $1, $2, (struct cond_node *)NULL);
+		  }
+		| ForRight Factor
+		  {
+		if (bForRightSeen_m == TRUE)
+		  {
+			if (pStamp_m->pLogFP != NULL)
+			  fprintf(pStamp_m->pLogFP,
+				  "%s contains more than one rightward iteration\n",
+				  ltname );
+		  }
+		if (bRightSeen_m == FALSE)
+		  {
+			if (pStamp_m->pLogFP != NULL)
+			  fprintf(pStamp_m->pLogFP,
+				  "%s contains a rightward iteration without a RIGHT\n",
+				  ltname );
+		  }
+		bForRightSeen_m = TRUE;
+		$$ = mknode( $1, $2, (struct cond_node *)NULL);
+		  }
+	;
+
+ForLeft
+	: LX_FA_LEFT
+	{
+	$$ = ALL_LEFT;
+	}
+	| LX_FS_LEFT
+	{
+	$$ = SOME_LEFT;
+	}
+	;
+
+ForRight
+	: LX_FA_RIGHT
+	{
+	$$ = ALL_RIGHT;
+	}
+	| LX_FS_RIGHT
+	{
+	$$ = SOME_RIGHT;
+	}
 	;
 
 Factor
@@ -2337,6 +2414,20 @@ position
 		  }
 			/* The item two morphemes to the right of the item */
 			/* being scanned. */
+		| LX_FLEFT
+		  {
+		++bLeftSeen_m;
+		$$ = FORLEFT;
+		  }
+			/* The item found in a FOR_SOME_LEFT or FOR_ALL_LEFT */
+			/* scan. */
+		| LX_FRIGHT
+		  {
+		++bRightSeen_m;
+		$$ = FORRIGHT;
+		  }
+			/* The item found in a FOR_SOME_RIGHT or */
+			/*  FOR_ALL_RIGHT scan. */
 	| LX_PINITIAL
 		  {
 		$$ = INITIALM;
