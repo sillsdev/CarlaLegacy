@@ -591,6 +591,18 @@ namespace PAWSStarterKit
 				string strUserDataStoreDir = Path.Combine(
 					Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
 					@"Microsoft\Internet Explorer\UserData");
+				if (!Directory.Exists(strUserDataStoreDir))
+				{
+					strUserDataStoreDir = Path.Combine(
+						Environment.GetFolderPath(Environment.SpecialFolder.System),
+						@"..\UserData");
+					if (!Directory.Exists(strUserDataStoreDir))
+					{
+						MessageBox.Show("Cannot find UserData store directory!\nGiving up.", "Cannot locate UserData store",
+							MessageBoxButtons.OK, MessageBoxIcon.Error);
+						sayGoodBye();
+					}
+				}
 				string strUserDataStoreFile = m_strLanguageAbbreviation + "PawsSK*.xml";
 				// initialize
 				m_strUserDataStore = "";
