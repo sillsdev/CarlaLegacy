@@ -174,7 +174,7 @@
 				/>
 				<File
 					RelPath = "PAWS.bmp"
-					BuildAction = "Content"
+					BuildAction = "EmbeddedResource"
 				/>
 				<File
 					RelPath = "PAWS.ico"

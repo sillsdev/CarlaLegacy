@@ -13,22 +13,22 @@ namespace PAWSStarterKit
 	{
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		public System.Windows.Forms.TextBox tbAbbreviation;
-		public System.Windows.Forms.TextBox tbLanguage;
+		private System.Windows.Forms.TextBox tbAbbreviation;
+		private System.Windows.Forms.TextBox tbLanguage;
 		private System.Windows.Forms.Label label3;
-		public System.Windows.Forms.Label lblFontName;
+		private System.Windows.Forms.Label lblFontName;
 		private System.Windows.Forms.Button btnFont;
 		private System.Windows.Forms.Label label4;
-		public System.Windows.Forms.TextBox tbFieldCode;
+		private System.Windows.Forms.TextBox tbFieldCode;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.Button btnOK;
-		public string strFontName;
-		public string strFontSize;
-		public string strFontColor;
-		public bool bFontBold;
-		public bool bFontItalic;
-		public bool bFontUnderline;
-		public bool bFontStrikeout;
+		private string strFontName;
+		private string strFontSize;
+		private string strFontColor;
+		private bool bFontBold;
+		private bool bFontItalic;
+		private bool bFontUnderline;
+		private bool bFontStrikeout;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -41,7 +41,150 @@ namespace PAWSStarterKit
 			//
 			InitializeComponent();
 			btnOK.DialogResult = DialogResult.OK;
-
+		}
+		/* *******************************************
+		 * Properties
+		 * *******************************************/
+		/// <summary>
+		/// Gets/sets language abbreviation.
+		/// </summary>
+		public string Abbreviation
+		{
+			get
+			{
+				return tbAbbreviation.Text;
+			}
+			set
+			{
+				tbAbbreviation.Text = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets examples field code (SFM marker).
+		/// </summary>
+		public string FieldCode
+		{
+			get
+			{
+				return tbFieldCode.Text;
+			}
+			set
+			{
+				tbFieldCode.Text = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets font bold.
+		/// </summary>
+		public bool FontBold
+		{
+			get
+			{
+				return bFontBold;
+			}
+			set
+			{
+				bFontBold = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets font color.
+		/// </summary>
+		public string FontColor
+		{
+			get
+			{
+				return strFontColor;
+			}
+			set
+			{
+				strFontColor = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets font name.
+		/// </summary>
+		public string FontName
+		{
+			get
+			{
+				return strFontName;
+			}
+			set
+			{
+				strFontName = value;
+				lblFontName.Text = value;  // also set the label
+			}
+		}
+		/// <summary>
+		/// Gets/sets font italic.
+		/// </summary>
+		public bool FontItalic
+		{
+			get
+			{
+				return bFontItalic;
+			}
+			set
+			{
+				bFontItalic = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets font size.
+		/// </summary>
+		public string FontSize
+		{
+			get
+			{
+				return strFontSize;
+			}
+			set
+			{
+				strFontSize = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets font strikeout.
+		/// </summary>
+		public bool FontStrikeout
+		{
+			get
+			{
+				return bFontStrikeout;
+			}
+			set
+			{
+				bFontStrikeout = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets font underline.
+		/// </summary>
+		public bool FontUnderline
+		{
+			get
+			{
+				return bFontUnderline;
+			}
+			set
+			{
+				bFontUnderline = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets language name.
+		/// </summary>
+		public string Language
+		{
+			get
+			{
+				return tbLanguage.Text;
+			}
+			set
+			{
+				tbLanguage.Text = value;
+			}
 		}
 
 		/// <summary>

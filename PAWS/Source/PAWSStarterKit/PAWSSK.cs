@@ -8,6 +8,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Xsl;
 using Microsoft.Win32;
+using Microsoft.IE;
 
 namespace PAWSStarterKit
 {
@@ -28,6 +29,7 @@ namespace PAWSStarterKit
 		const string m_strToolBarChecked = "ToolBarChecked";
 		const string m_strBackgroundGif = "p12c08.gif";
 		const string m_strUnderConstructionHtm = "UnderConstruction.htm";
+		const string m_strEditCaption = "Edit Items";
 		string m_strAppPath = Path.GetDirectoryName(Application.ExecutablePath);
 		string m_strPAWSErrorMsg = Application.ProductName + ": ";
 		string m_strHtmsPath;
@@ -125,7 +127,7 @@ namespace PAWSStarterKit
 					m_strLanguageAbbreviation = getXmlElementContent("//language/langAbbr");
 					m_strTextSFM = getXmlElementContent("//language/textSFM");
 					setTitle();
-					createPAWSSKInitHtm();
+					createPAWSSKInitHtm(false);
 				}
 				catch (Exception exc)
 				{
@@ -315,7 +317,7 @@ namespace PAWSStarterKit
 			ToolBarButton tbbPaste;
 			ToolBarButton tbbSeparator;
 
-			//Bitmap bmNew = new Bitmap(GetType(), "PAWSSKForm.NEW.BMP");
+			//Bitmap bmNew2 = new Bitmap(GetType(), "PAWSSK.New.bmp");
 			const string strAppSourcePath = @"C:\carla\Dev\PAWS\Source\PAWSStarterKit\";
 			Bitmap bmNew = new Bitmap(strAppSourcePath + "New.bmp");
 			Bitmap bmOpen = new Bitmap(strAppSourcePath + "Open.bmp");
@@ -431,7 +433,6 @@ namespace PAWSStarterKit
 
 			axWebBrowser.DocumentComplete += new AxSHDocVw.DWebBrowserEvents2_DocumentCompleteEventHandler(WebBrowserOnDocumentComplete);
 			axWebBrowser.TitleChange += new AxSHDocVw.DWebBrowserEvents2_TitleChangeEventHandler(WebBrowserOnTitleChange);
-
 			axWebBrowser.Offline = true;
 			axWebBrowser.Navigate(sPagePath, ref nullObject, ref nullObjStr, ref
 				nullObjStr, ref nullObjStr);
@@ -471,6 +472,7 @@ namespace PAWSStarterKit
 				string strUserDataStoreDir = Path.Combine(
 					Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
 					@"Microsoft\Internet Explorer\UserData");
+				string strUserDataStoreFile = m_strLanguageAbbreviation + "PawsSK*.xml";
 				// initialize
 				m_strUserDataStore = "";
 
@@ -478,7 +480,7 @@ namespace PAWSStarterKit
 				foreach (string str in astrDirectories)
 				{
 					string[] astrFiles;
-					astrFiles = Directory.GetFiles(str, "PawsSK*.xml");
+					astrFiles = Directory.GetFiles(str, strUserDataStoreFile);
 					if (astrFiles.Length > 0)
 					{
 						// for now we assume there is but one and take the first otherwise
@@ -629,15 +631,21 @@ namespace PAWSStarterKit
 		}
 		void MenuEditCutOnClick(object obj, EventArgs ea)
 		{
-			MessageBox.Show("Edit Cut item clicked.", Text);
+			MessageBox.Show("To cut a selection from a page, use the keyboard shortcut Ctrl-X",
+				m_strEditCaption, MessageBoxButtons.OK,
+				MessageBoxIcon.Information);
 		}
 		void MenuEditCopyOnClick(object obj, EventArgs ea)
 		{
-			MessageBox.Show("Edit Copy item clicked.", Text);
+			MessageBox.Show("To copy a selection from a page, use the keyboard shortcut Ctrl-C",
+				m_strEditCaption, MessageBoxButtons.OK,
+				MessageBoxIcon.Information);
 		}
 		void MenuEditPasteOnClick(object obj, EventArgs ea)
 		{
-			MessageBox.Show("Edit Paste item clicked.", Text);
+			MessageBox.Show("To paste a selection onto a page, use the keyboard shortcut Ctrl-V",
+				m_strEditCaption, MessageBoxButtons.OK,
+				MessageBoxIcon.Information);
 		}
 		void MenuLanguagePropertiesOnClick(object obj, EventArgs ea)
 		{
@@ -819,7 +827,7 @@ namespace PAWSStarterKit
 			regkey.SetValue(m_strStatusBarChecked, miViewStatusBar.Checked.ToString());
 			regkey.Close();
 		}
-		void createPAWSSKInitHtm()
+		void createPAWSSKInitHtm(bool bUseContentsHtm)
 		{
 			string strUserFileWithDoubleBackslash = m_strUserAnswerFile.Replace(@"\", @"\\");
 
@@ -850,10 +858,17 @@ namespace PAWSStarterKit
 			sw.WriteLine("   PawsSKAnswers = div.XMLDocument; ");
 			sw.WriteLine("");
 			sw.WriteLine("  elem = PawsSKAnswers.selectSingleNode(\"//leftOffAt\");");
-			sw.WriteLine("  if (elem.text == \"\")");
-			sw.WriteLine("{ ");
-			sw.WriteLine("     elem.text = \"Contents.htm\";");
-			sw.WriteLine("} ");
+			if (bUseContentsHtm)
+			{
+				sw.WriteLine("     elem.text = \"Contents.htm\";");
+			}
+			else
+			{
+				sw.WriteLine("  if (elem.text == \"\")");
+				sw.WriteLine("{ ");
+				sw.WriteLine("     elem.text = \"Contents.htm\";");
+				sw.WriteLine("} ");
+			}
 			sw.WriteLine("  window.navigate(elem.text);");
 			sw.WriteLine("}");
 			sw.WriteLine("</script>");
@@ -981,41 +996,40 @@ namespace PAWSStarterKit
 		{
 			string strOriginalLanguageAbbreviation = m_strLanguageAbbreviation;
 			DlgLanguageProperties dlg = new DlgLanguageProperties();
-			dlg.tbLanguage.Text = getXmlElementContent("//language/langName");
-			dlg.tbAbbreviation.Text = getXmlElementContent("//language/langAbbr");
-			dlg.tbFieldCode.Text = getXmlElementContent("//language/textSFM");
-			dlg.lblFontName.Text = getXmlElementContent("//language/font/fontName");
-			dlg.strFontName = dlg.lblFontName.Text;
-			dlg.strFontColor = getXmlElementContent("//language/font/fontColor");
-			dlg.strFontSize = getXmlElementContent("//language/font/fontSize");
+			dlg.Language = getXmlElementContent("//language/langName");
+			dlg.Abbreviation = getXmlElementContent("//language/langAbbr");
+			dlg.FieldCode = getXmlElementContent("//language/textSFM");
+			dlg.FontName = getXmlElementContent("//language/font/fontName");
+			dlg.FontColor = getXmlElementContent("//language/font/fontColor");
+			dlg.FontSize = getXmlElementContent("//language/font/fontSize");
 
 			string strBool = getXmlElementAttribute("//language/font/@bold");
-			dlg.bFontBold = Convert.ToBoolean(strBool);
+			dlg.FontBold = Convert.ToBoolean(strBool);
 			strBool = getXmlElementAttribute("//language/font/@italic");
-			dlg.bFontItalic = Convert.ToBoolean(strBool);
+			dlg.FontItalic = Convert.ToBoolean(strBool);
 			strBool = getXmlElementAttribute("//language/font/@under");
-			dlg.bFontUnderline = Convert.ToBoolean(strBool);
+			dlg.FontUnderline = Convert.ToBoolean(strBool);
 			strBool = getXmlElementAttribute("//language/font/@strike");
-			dlg.bFontStrikeout = Convert.ToBoolean(strBool);
+			dlg.FontStrikeout = Convert.ToBoolean(strBool);
 
 			while ((dlg.ShowDialog() == DialogResult.OK) &&
-				(dlg.tbAbbreviation.Text == ""))
+				(dlg.Abbreviation == ""))
 			{
-				MessageBox.Show("You must enter a Language abbreviation",
+				MessageBox.Show("You must enter a Language Abbreviation",
 					dlg.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 			if (dlg.DialogResult == DialogResult.OK)
 			{
-				m_strLanguageName = dlg.tbLanguage.Text;
-				m_strLanguageAbbreviation = dlg.tbAbbreviation.Text;
-				m_strTextSFM = dlg.tbFieldCode.Text;
-				string strFontName = dlg.strFontName;
-				string strFontColor = dlg.strFontColor;
-				string strFontSize = dlg.strFontSize;
-				bool bFontBold = dlg.bFontBold;
-				bool bFontItalic = dlg.bFontItalic;
-				bool bFontUnderline = dlg.bFontUnderline;
-				bool bFontStrikeout = dlg.bFontStrikeout;
+				m_strLanguageName = dlg.Language;
+				m_strLanguageAbbreviation = dlg.Abbreviation;
+				m_strTextSFM = dlg.FieldCode;
+				string strFontName = dlg.FontName;
+				string strFontColor = dlg.FontColor;
+				string strFontSize = dlg.FontSize;
+				bool bFontBold = dlg.FontBold;
+				bool bFontItalic = dlg.FontItalic;
+				bool bFontUnderline = dlg.FontUnderline;
+				bool bFontStrikeout = dlg.FontStrikeout;
 				// save Answer file info
 				setXmlElementContent("//language/langName", m_strLanguageName);
 				setXmlElementContent("//language/langAbbr", m_strLanguageAbbreviation);
@@ -1078,12 +1092,11 @@ namespace PAWSStarterKit
 				File.Copy(Path.Combine(strMasterCssPath, m_strBackgroundGif),
 					Path.Combine(strUserStyleFilePath, m_strBackgroundGif), true);
 				// save user's answer file
-				if (m_strUserAnswerFile == null)
-					doSaveAnswerFileDialog();
+				doSaveAnswerFileDialog();
 				m_XmlDoc.Save(m_strUserAnswerFile);
 				setTitle();
 				// Start over so the changes will take effect
-				createPAWSSKInitHtm();
+				createPAWSSKInitHtm(true);
 				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
 			}
 		}
