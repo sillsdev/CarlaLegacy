@@ -2,7 +2,7 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronAgr">
-	<title level="2">Pronouns and Proper Nouns - Pronoun Agreement</title>
+	<title level="2">Pronouns - Agreement</title>
 	<instruction>Add the relevant agreement features to each pronoun in the lexicon, as shown in the chart.  If a pronoun is not specified for a particular type of agreement feature, do not add any feature of that type.<br/>
 		<br/>
 		<featureChart>

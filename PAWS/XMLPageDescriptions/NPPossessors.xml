@@ -3,9 +3,9 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPPossessors">
 	<title level="2">Nominal Phrases - Possessors</title>
-	<introduction>The next type of modifier to consider is possessors.  Possession can normally be expressed by a possessive pronoun (to be addressed in <section number="6">Pronouns and Proper Names</section>) or by a full nominal phrase.  Many languages also add some kind of marking, such as the <example>'s</example> in English, as an indication of possession.  These markings are either affixes (or clitics) on the head noun or phrase-level clitics which attach to one end of the whole phrase.  The English marking is this second type, because alongside phrases where the <example>'s</example> appears to attach to the head noun, as in <example>the boy's mother</example>, there are phrases which clearly show that the clitic attaches to the end of the whole nominal phrase, such as <example>the boy that I just talked to's mother</example> or <example>the girl in green's wonderful speech</example>.</introduction>
+	<introduction>The next type of modifier to consider is possessors.  Possession can normally be expressed by a possessive pronoun (to be addressed in <section number="7">Pronouns</section>) or by a full nominal phrase.  Many languages also add some kind of marking, such as the <example>'s</example> in English, as an indication of possession.  These markings are either affixes (or clitics) on the head noun or phrase-level clitics which attach to one end of the whole phrase.  The English marking is this second type, because alongside phrases where the <example>'s</example> appears to attach to the head noun, as in <example>the boy's mother</example>, there are phrases which clearly show that the clitic attaches to the end of the whole nominal phrase, such as <example>the boy that I just talked to's mother</example> or <example>the girl in green's wonderful speech</example>.</introduction>
 	<form section="np">
-		<instruction>Think about how possession is expressed in your language.  We won't be able to handle pre/post-positional phrases until <section number="7">Pre/Post-positional Phrases</section> and relative clauses within nominal phrases until <section number="14">Relative Clauses</section>, but examples such as the English ones above will clarify for you what type of possessive marking you have.<br/>
+		<instruction>Think about how possession is expressed in your language.  We won't be able to handle pre/post-positional phrases until <section number="8">Pre/Post-positional Phrases</section> and relative clauses within nominal phrases until <section number="15">Relative Clauses</section>, but examples such as the English ones above will clarify for you what type of possessive marking you have.<br/>
 			<br/>
 Note also that possessors can be embedded in one another, as in <example>the boy's sister's dog</example>.  Include such an example in your test data.</instruction>
 		<prompt>Key some examples with simple and embedded possessors here:</prompt>
@@ -26,12 +26,12 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 				<groupName dataItem="possCliticWord" default="no">RNPPossMarkedYesCliticWord</groupName>
 				<prompt>Is the phrasal clitic written as a separate word?</prompt>
 				<radio id="NPPossMarkedYesCliticWordNo" dataValue="no">No, like in English, it attaches to the closest word </radio>
-<radioGroup id="NPPossMarkedYesCliticAffixTable" show="swNPPossMarkedYesCliticWordNo">
-	<groupName dataItem="possCliticAffix" default="suffix">RNPossMarkedYesCliticAffix</groupName>
-	<prompt>How does the clitic attach to the peripheral word of the nominal phrase?</prompt>
-	<radio id="NPPossMarkedYesCliticSuffix" dataValue="suffix">As a suffix, like in English</radio>
- <radio id="NPPossMarkedYesCliticPrefix" dataValue="prefix">As a prefix</radio>
-</radioGroup>
+				<radioGroup id="NPPossMarkedYesCliticAffixTable" show="swNPPossMarkedYesCliticWordNo">
+					<groupName dataItem="possCliticAffix" default="suffix">RNPossMarkedYesCliticAffix</groupName>
+					<prompt>How does the clitic attach to the peripheral word of the nominal phrase?</prompt>
+					<radio id="NPPossMarkedYesCliticSuffix" dataValue="suffix">As a suffix, like in English</radio>
+					<radio id="NPPossMarkedYesCliticPrefix" dataValue="prefix">As a prefix</radio>
+				</radioGroup>
 				<radio id="NPPossMarkedYesCliticWordYes" dataValue="yes">Yes</radio>
 				<radioGroup id="NPPossMarkedYesCliticRequiredTable" show="swNPPossMarkedYesCliticWordYes">
 					<groupName default="no" dataItem="possCliticRequired">RNPPossMarkedYesCliticRequired</groupName>
@@ -82,7 +82,12 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<instruction id="NPPossMarkedYesAffixErgInstruction" show="swNPPossMarkedYesAffixErg">In the lexicon, mark the possessive affix with the feature <feature>ergative</feature>.</instruction>
 		<instruction id="NPPossMarkedYesAffixAbsInstruction" show="swNPPossMarkedYesAffixAbs">In the lexicon, mark the possessive affix with the feature <feature>absolutive</feature>.</instruction>
 		<instruction id="NPPossMarkedYesAffixGenInstruction" show="swNPPossMarkedYesAffixGen">In the lexicon, mark the possessive affix with the feature <feature>genitive</feature>.</instruction>
-		<instruction id="NPPossMarkedYesCliticWordNoInstruction" show="swNPPossMarkedYesCliticWordNo">In the lexicon, add  the feature <span id="NPPossCliticPrefix" show="swNPPossMarkedYesCliticPrefix"><feature>poss_prefix</feature> </span><span id="NPPossCliticSuffix" show="swNPPossMarkedYesCliticSuffix"><feature>poss_suffix</feature></span> to the possessive clitic.   <span id="NPPossMarkedYesCliticWordNoGen" show="swNPPossMarkedYesCliticWordNoGen">Also add the feature <feature>genitive</feature> for the case marking.</span>
+		<instruction id="NPPossMarkedYesCliticWordNoInstruction" show="swNPPossMarkedYesCliticWordNo">In the lexicon, add  the feature <span id="NPPossCliticPrefix" show="swNPPossMarkedYesCliticPrefix">
+				<feature>poss_prefix</feature>
+			</span>
+			<span id="NPPossCliticSuffix" show="swNPPossMarkedYesCliticSuffix">
+				<feature>poss_suffix</feature>
+			</span> to the possessive clitic.   <span id="NPPossMarkedYesCliticWordNoGen" show="swNPPossMarkedYesCliticWordNoGen">Also add the feature <feature>genitive</feature> for the case marking.</span>
 			<span id="NPPossMarkedYesCliticWordNoErg" show="swNPPossMarkedYesCliticWordNoErg">Also add the feature <feature>ergative</feature> for the case marking.</span>
 			<span id="NPPossMarkedYesCliticWordNoAbs" show="swNPPossMarkedYesCliticWordNoAbs">Also add the feature <feature>absolutive</feature> for the case marking.</span>
 		</instruction>
@@ -116,12 +121,12 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<and/>
 		<whenRadio button="NPPossMarkedYesClitic"/>
 	</showWhen>
-<showWhen id="swNPPossMarkedYesCliticSuffix">
-	<whenRadio button="NPPossMarkedYesCliticSuffix"></whenRadio>
-</showWhen>
-<showWhen id="swNPPossMarkedYesCliticPrefix">
-	<whenRadio button="NPPossMarkedYesCliticPrefix"></whenRadio>
-</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticSuffix">
+		<whenRadio button="NPPossMarkedYesCliticSuffix"/>
+	</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticPrefix">
+		<whenRadio button="NPPossMarkedYesCliticPrefix"/>
+	</showWhen>
 	<showWhen id="swNPCaseErg">
 		<whenValue element="np" attr="case" value="ergative"/>
 		<or/>

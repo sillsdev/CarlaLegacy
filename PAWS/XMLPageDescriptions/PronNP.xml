@@ -2,7 +2,7 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronNP">
-	<title level="2">Pronouns and Proper Names - Pronouns as an NP</title>
+	<title level="2">Pronouns - Pronouns as an NP</title>
 	<form section="pron">
 		<introduction>Pronouns and also demonstratives, quantifiers, and numbers can stand alone as a nominal phrase in the right context.  They cannot normally be modified by possessors, adjectives, or other quantifiers, although they can be modified by a degree word, an article or demonstrative. English examples of this type include the following:</introduction>
 		<EnglishExample>

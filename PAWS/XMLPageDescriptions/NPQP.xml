@@ -44,17 +44,17 @@
 		<br/>
 		<radioGroup>
 			<groupName dataItem="qpAgree" default="no">RNPQPAgree</groupName>
-			<prompt>Do numbers or quantifiers carry any marking to agree with the noun they modify, other than in number?</prompt>
+			<prompt>Do numbers or quantifiers carry any marking to agree with the noun they modify, other than <span id="NPQPNumberMarkingSpan1" show="swNPQPNumberMarking">marking</span><span id="NPQPNumberAgreementSpan1" show="swNPQPNumberAgreement">agreeing in</span> number?</prompt>
 			<radio id="NPQPAgreeNo" dataValue="no">No, they only <span id="NPQPNumberMarkingSpan" show="swNPQPNumberMarking"> mark number</span>
 				<span id="NPQPNumberAgreementSpan" show="swNPQPNumberAgreement"> agree in number</span>
 			</radio>
 			<radio id="NPQPAgreeYes" dataValue="yes">Yes, they agree in other features (also)</radio>
 		</radioGroup>
-		 <instruction id="NPQPPosEitherRestrictedNumBeforeInstruction" show="swNPQPPosEitherRestrictedNumBefore">The program will mark numbers with the default feature <feature>DP-initial</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
+		<instruction id="NPQPPosEitherRestrictedNumBeforeInstruction" show="swNPQPPosEitherRestrictedNumBefore">The program will mark numbers with the default feature <feature>DP-initial</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
 		<instruction id="NPQPPosEitherRestrictedNumAfterInstruction" show="swNPQPPosEitherRestrictedNumAfter">The program will mark numbers with the default feature <feature>DP-final</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
 		<instruction id="NPQPPosEitherRestrictedNumNoInstruction" show="swNPQPPosEitherRestrictedNumNo">In the lexicon, mark those quantifiers or numbers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier or number which can occur on either side.</instruction>
-<br/>
-	   <instruction id="NPQPNumberMarkingInstruction" show="swNPQPNumberMarking">
+		<br/>
+		<instruction id="NPQPNumberMarkingInstruction" show="swNPQPNumberMarking">
 To handle the number marking, we will assume that all numbers are plural by default.  Therefore, only the number "one" needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number "two".
 <br/>
 For other quantifiers, in the lexicon:

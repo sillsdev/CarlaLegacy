@@ -2,7 +2,7 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronRefl">
-	<title level="2">Pronouns and Proper Names - Reflexives</title>
+	<title level="2">Pronouns - Reflexives</title>
 	<introduction>Reflexives are another type of pronouns that most languages have.  They occur only in the same case as direct objects and normally must agree with the subject in person, gender, and number features.  Examples in English are: <example>herself</example>,<example>himself</example>, <example>themselves</example>, <example>myself</example>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning ‘self’) that is possessed by the pronoun that refers back to the subject, and some languages do not distinguish between reflexive and regular pronouns.<br/>
 		<br/>
 [Note that this starterkit does not enforce agreement between the reflexive and the subject; it only allows reflexives to parse.  Therefore, examples such as <example>The girl saw yourself</example> will not be ruled out.  See the <help href="Advanced.doc">Advanced Help</help> file to add such enforced agreement if needed for your language.]</introduction>
@@ -35,7 +35,7 @@
 		</instruction>
 		<instruction id="PronReflAffixNoNounInstruction">In the lexicon, add the feature <feature>reflexive</feature> to the relevant noun.</instruction>
 		<buttons>
-			<button id="PronReflBack" value="Back" goto="PronAgr.htm"/>
+			<button id="PronReflBack" value="Back" goto="PronRefl.htm"/>
 			<button id="PronReflNext" value="Next" goto="PronReciprocal.htm"/>
 		</buttons>
 	</form>
