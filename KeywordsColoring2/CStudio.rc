@@ -1,0 +1,3028 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\CStudio.ico"
+IDI_BookmarkAndDisabled ICON    DISCARDABLE     "res\\bookmarkanddisabled.ico"
+IDR_CStudioPTYPE        ICON    DISCARDABLE     "res\\CStudioDoc.ico"
+IDI_EnabledEnvItem      ICON    DISCARDABLE     "res\\enablEnv.ico"
+IDR_CStudioSrcDocType   ICON    DISCARDABLE     "res\\idr_src.ico"
+IDI_Process             ICON    DISCARDABLE     "res\\icon1.ico"
+IDR_CStudioLangTYPE     ICON    DISCARDABLE     "res\\cslang.ico"
+IDI_EnabledListItem     ICON    DISCARDABLE     "res\\enablede.ico"
+IDR_CStudioAnaDocType   ICON    DISCARDABLE     "res\\idr_cstu.ico"
+IDI_Construction        ICON    DISCARDABLE     "res\\construc.ico"
+IDR_QuickParseDocType   ICON    DISCARDABLE     "res\\idr_quic.ico"
+IDI_MorphEnvironment    ICON    DISCARDABLE     "res\\MorphEnviron.ico"
+IDI_DisabledOverlay     ICON    DISCARDABLE     "res\\xSymbol.ico"
+IDI_StringEnvironment   ICON    DISCARDABLE     "res\\stringEnv.ico"
+IDI_GenericListItem0    ICON    DISCARDABLE     "res\\genericl.ico"
+IDI_GenericListItem1    ICON    DISCARDABLE     "res\\ico00001.ico"
+IDI_DisabledEnvItem     ICON    DISCARDABLE     "res\\disabEnv.ico"
+IDI_SFMarker            ICON    DISCARDABLE     "res\\sfmarker.ico"
+IDI_Editable            ICON    DISCARDABLE     "res\\editable.ico"
+IDR_QuickParseDocType1  ICON    DISCARDABLE     "res\\ico00002.ico"
+IDI_STAMPFlag           ICON    DISCARDABLE     "res\\stampflag.ico"
+IDI_GenericListItem2    ICON    DISCARDABLE     "res\\ico00003.ico"
+IDI_SENTRANSLimit       ICON    DISCARDABLE     "res\\sentransLimit.ico"
+IDI_SENTRANSBegin       ICON    DISCARDABLE     "res\\sentransBegin.ico"
+IDI_SENTRANSEnd         ICON    DISCARDABLE     "res\\sentransEnd.ico"
+IDI_SENTRANSRulesOn     ICON    DISCARDABLE     "res\\senRulesOn.ico"
+IDI_SENTRANSRulesOff    ICON    DISCARDABLE     "res\\senRulesOff.ico"
+IDI_CommentListItem     ICON    DISCARDABLE     "res\\commentl.ico"
+IDI_TestDataListItem    ICON    DISCARDABLE     "res\\testdata.ico"
+IDI_Bookmark            ICON    DISCARDABLE     "res\\bookmark.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"#include ""afxres.h""\r\n"
+	"\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+	"#define _AFX_NO_OLE_RESOURCES\r\n"
+	"#define _AFX_NO_TRACKER_RESOURCES\r\n"
+	"#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+	"\r\n"
+	"#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+	"#ifdef _WIN32\r\n"
+	"LANGUAGE 9, 1\r\n"
+	"#pragma code_page(1252)\r\n"
+	"#endif\r\n"
+	"#include ""res\\CStudio.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+	"#include ""afxres.rc""         // Standard components\r\n"
+	"#include ""afxprint.rc""       // printing/print preview resources\r\n"
+	"#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_CSTUDIO             REGISTRY DISCARDABLE    "CStudio.rgs"
+IDR_HOOK                REGISTRY DISCARDABLE    "Hook.rgs"
+IDR_CONNECTOR           REGISTRY DISCARDABLE    "Connector.rgs"
+IDR_PARSECS             REGISTRY DISCARDABLE    "ParseCS.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_LIGHTBULB           BITMAP  DISCARDABLE     "res\\litebulb.bmp"
+IDB_Construction        BITMAP  DISCARDABLE     "res\\CONSTRUCTION.BMP"
+IDB_Delete              BITMAP  DISCARDABLE     "res\\delete.bmp"
+IDB_AddFile             BITMAP  DISCARDABLE     "res\\addFile.bmp"
+IDB_SPLASH              BITMAP  DISCARDABLE     "res\\SplashScreen.bmp"
+IDB_ChooseFolder        BITMAP  DISCARDABLE     "res\\choosefo.bmp"
+IDB_Environment         BITMAP  DISCARDABLE     "res\\environm.bmp"
+IDB_Error               BITMAP  DISCARDABLE     "res\\error.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+	BUTTON      ID_FILE_NewDocument
+	BUTTON      ID_FILE_OPEN
+	BUTTON      ID_FILE_SaveAll
+	SEPARATOR
+	BUTTON      ID_EDIT_CUT
+	BUTTON      ID_EDIT_COPY
+	BUTTON      ID_EDIT_PASTE
+	SEPARATOR
+	BUTTON      ID_EDIT_FIND
+	BUTTON      ID_RechercherListeSignet
+	BUTTON      ID_RechercherListeClear
+	SEPARATOR
+	BUTTON      ID_LangQuickParse
+	BUTTON      ID_QuickParseGo
+	SEPARATOR
+	BUTTON      ID_RunTrace
+	SEPARATOR
+	BUTTON      ID_RunProcessors
+	SEPARATOR
+	BUTTON      ID_BookmarkOuiNon
+	BUTTON      ID_Bookmark_NextTB
+	BUTTON      ID_Bookmark_PreviousTB
+	BUTTON      ID_Bookmark_Clear
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "&New Project...",             ID_FILE_NEW_PROJECT
+		MENUITEM "&Open Project...",            ID_FILE_OPEN_Project
+		MENUITEM SEPARATOR
+		MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "Recent Project",              ID_FILE_MRU_PROJECT, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit",                       ID_APP_EXIT
+	END
+	POPUP "&View"
+	BEGIN
+		MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+		MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Help Topics",                ID_HELP_FINDER
+		MENUITEM SEPARATOR
+		MENUITEM "&About CarlaStudio...",       ID_APP_ABOUT
+	END
+END
+
+IDR_CStudioPTYPE MENU PRELOAD DISCARDABLE
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "&Open Document...\tCtrl+O",   ID_FILE_OPEN_Document
+		MENUITEM SEPARATOR
+		MENUITEM "Save &All\tCtrl+S",           ID_FILE_SaveAll
+		MENUITEM SEPARATOR
+		MENUITEM "New Language...",             ID_FILE_NewLanguage
+		MENUITEM "&Close Project",              ID_FILE_CLOSE_PROJECT
+		MENUITEM SEPARATOR
+		MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "Recent Project",              ID_FILE_MRU_PROJECT, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit",                       ID_APP_EXIT
+	END
+	POPUP "&Edit"
+	BEGIN
+		MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+		MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+		MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+		MENUITEM SEPARATOR
+	END
+	POPUP "&View"
+	BEGIN
+		MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+		MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+		MENUITEM SEPARATOR
+		MENUITEM "CARLA Menu Style",            ID_CARLAMenu
+		MENUITEM "Functional Style",            ID_AmpleLinks
+	END
+	POPUP "&Window"
+	BEGIN
+		MENUITEM "&New Window",                 ID_WINDOW_NEW
+		MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+		MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Help Topics",                ID_HELP_FINDER
+		MENUITEM SEPARATOR
+		MENUITEM "&About CarlaStudio...",       ID_APP_ABOUT
+	END
+END
+
+IDR_InputDocPopup MENU DISCARDABLE
+BEGIN
+	POPUP "POPUP"
+	BEGIN
+		MENUITEM "Processing &Goal...",         ID_EditInputDocProperties
+		MENUITEM "&Display...",                 ID_InputDocDisplay
+		MENUITEM SEPARATOR
+		MENUITEM "&Open currently selected file", ID_OpenStreamExternal
+	END
+END
+
+IDR_CStudioSrcDocType MENU PRELOAD DISCARDABLE
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "&New Document...\tCtrl+N",    ID_FILE_NewDocument
+		MENUITEM "&Open Document...\tCtrl+O",   ID_FILE_OPEN_Document
+		MENUITEM "&Close Document",             ID_FILE_CLOSE
+		MENUITEM SEPARATOR
+		MENUITEM "Save &Document",              ID_FILE_SAVE
+		MENUITEM "Save Document &As...",        ID_FILE_SAVEDOCUMENTAS
+		MENUITEM "Save A&ll\tCtrl+S",           ID_FILE_SaveAll
+		MENUITEM SEPARATOR
+		MENUITEM "New Language...",             ID_FILE_NewLanguage
+		MENUITEM "&Close Project",              ID_FILE_CLOSE_PROJECT
+		MENUITEM SEPARATOR
+		MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "Recent Project",              ID_FILE_MRU_PROJECT, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit",                       ID_APP_EXIT
+	END
+	POPUP "&Edit"
+	BEGIN
+		MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+		MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+		MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+		MENUITEM SEPARATOR
+		MENUITEM "&Find...\tCtrl+F",            ID_EDIT_FIND
+	END
+	POPUP "&View"
+	BEGIN
+		MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+		MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+		MENUITEM SEPARATOR
+		MENUITEM "CARLA Menu Style",            ID_CARLAMenu
+		MENUITEM "Functional Style",            ID_AmpleLinks
+	END
+	POPUP "&Document"
+	BEGIN
+		MENUITEM "Processing &Goal...",         ID_EditInputDocProperties
+		MENUITEM "&Display...",                 ID_InputDocDisplay
+		MENUITEM "&Process File\tCtrl+\\",      ID_RunProcessors
+		MENUITEM "&Trace File\tCtrl+T",         ID_RunTrace
+		MENUITEM SEPARATOR
+		MENUITEM "&Open currently selected file", ID_OpenStreamExternal
+	END
+	POPUP "&Window"
+	BEGIN
+		MENUITEM "&New Window",                 ID_WINDOW_NEW
+		MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+		MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Help Topics",                ID_HELP_FINDER
+		MENUITEM SEPARATOR
+		MENUITEM "&About CarlaStudio...",       ID_APP_ABOUT
+	END
+END
+
+IDR_CStudioLangTYPE MENU PRELOAD DISCARDABLE
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "&New Document...\tCtrl+N",    ID_FILE_NewDocument
+		MENUITEM "&Open Document...\tCtrl+O",   ID_FILE_OPEN_Document
+		MENUITEM SEPARATOR
+		MENUITEM "Save A&ll\tCtrl+S",           ID_FILE_SaveAll
+		MENUITEM SEPARATOR
+		MENUITEM "New Language...",             ID_FILE_NewLanguage
+		MENUITEM "&Close Project",              ID_FILE_CLOSE_PROJECT
+		MENUITEM SEPARATOR
+		MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "Recent Project",              ID_FILE_MRU_PROJECT, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit",                       ID_APP_EXIT
+	END
+	POPUP "&Edit"
+	BEGIN
+		MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+		MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+		MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+		MENUITEM "&Delete Selected Item\tDel",  ID_Edit_Delete
+		MENUITEM SEPARATOR
+		MENUITEM "Insert &Entry...\tCtrl+I",    ID_Edit_Insert_Entry
+		MENUITEM "Insert E&nvironment...\tCtrl+E", ID_EDIT_insert_environ
+		MENUITEM "In&sert Comment...\tCtrl+M",  ID_EDIT_Insert_Comment
+		MENUITEM "&Insert Test Data...\tCtrl+D", ID_EDIT_Insert_TestData
+		MENUITEM "Insert Flag...\tCtrl+L",      ID_edit_insert_secondary
+		MENUITEM SEPARATOR
+		MENUITEM "&Find...\tCtrl+F",            ID_EDIT_FIND
+		MENUITEM SEPARATOR
+	END
+	POPUP "&View"
+	BEGIN
+		MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+		MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+		MENUITEM SEPARATOR
+		MENUITEM "CARLA Menu Style",            ID_CARLAMenu
+		MENUITEM "Functional Style",            ID_AmpleLinks
+	END
+	POPUP "&Language"
+	BEGIN
+		MENUITEM "&Analysis Sequence...",       ID_LangAnalysisSeq
+		MENUITEM "&Interlinear Sequence...",    ID_LangInterlinearSeq
+		MENUITEM "&Synthesis Sequence...",      ID_LangSynthesisSeq
+		MENUITEM SEPARATOR
+		MENUITEM "Remove the language...",      ID_LangRemove
+		MENUITEM SEPARATOR
+		MENUITEM "&Modify Tests...",            ID_LANGUAGE_SETUPTESTS
+		MENUITEM "Customize User Test &Display...",
+												ID_CustomizeUserTestDisplay
+		MENUITEM SEPARATOR
+		MENUITEM "&Properties...\tAlt+Enter",   ID_LangProperties
+	END
+	POPUP "&Window"
+	BEGIN
+		MENUITEM "&New Window",                 ID_WINDOW_NEW, GRAYED
+		MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+		MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Help Topics",                ID_HELP_FINDER
+		MENUITEM SEPARATOR
+		MENUITEM "&About CarlaStudio...",       ID_APP_ABOUT
+	END
+END
+
+IDR_CStudioAnaDocType MENU PRELOAD DISCARDABLE
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "&Open Document...\tCtrl+O",   ID_FILE_OPEN_Document
+		MENUITEM "&Close Document",             ID_FILE_CLOSE
+		MENUITEM SEPARATOR
+		MENUITEM "Save &Document",              ID_FILE_SAVE
+		MENUITEM "Save Document &As...",        ID_FILE_SAVEDOCUMENTAS
+		MENUITEM "Save A&ll\tCtrl+S",           ID_FILE_SaveAll
+		MENUITEM SEPARATOR
+		MENUITEM "New Language...",             ID_FILE_NewLanguage
+		MENUITEM "&Close Project",              ID_FILE_CLOSE_PROJECT
+		MENUITEM SEPARATOR
+		MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "Recent Project",              ID_FILE_MRU_PROJECT, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit",                       ID_APP_EXIT
+	END
+	POPUP "&Edit"
+	BEGIN
+		MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+		MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+		MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+		MENUITEM SEPARATOR
+		MENUITEM "&Find...\tCtrl+F",            ID_EDIT_FIND
+	END
+	POPUP "&View"
+	BEGIN
+		MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+		MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+		MENUITEM SEPARATOR
+		MENUITEM "CARLA Menu Style",            ID_CARLAMenu
+		MENUITEM "Functional Style",            ID_AmpleLinks
+	END
+	POPUP "&Document"
+	BEGIN
+		MENUITEM "Processing &Goal...",         ID_EditInputDocProperties
+		MENUITEM "&Display...",                 ID_InputDocDisplay
+		MENUITEM "&Process File\tCtrl+\\",      ID_RunProcessors
+		MENUITEM "&Trace File\tCtrl+T",         ID_RunTrace
+		MENUITEM SEPARATOR
+		MENUITEM "&Open currently selected file", ID_OpenStreamExternal
+	END
+	POPUP "&Window"
+	BEGIN
+		MENUITEM "&New Window",                 ID_WINDOW_NEW
+		MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+		MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Help Topics",                ID_HELP_FINDER
+		MENUITEM SEPARATOR
+		MENUITEM "&About CarlaStudio...",       ID_APP_ABOUT
+	END
+END
+
+IDR_QuickParseDocType MENU PRELOAD DISCARDABLE
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "&New Document...\tCtrl+N",    ID_FILE_NewDocument
+		MENUITEM "&Open Document...\tCtrl+O",   ID_FILE_OPEN_Document
+		MENUITEM "&Close",                      ID_FILE_CLOSE
+		MENUITEM SEPARATOR
+		MENUITEM "Save A&ll\tCtrl+S",           ID_FILE_SaveAll
+		MENUITEM SEPARATOR
+		MENUITEM "New Language...",             ID_FILE_NewLanguage
+		MENUITEM "&Close Project",              ID_FILE_CLOSE_PROJECT
+		MENUITEM SEPARATOR
+		MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "Recent Project",              ID_FILE_MRU_PROJECT, GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit",                       ID_APP_EXIT
+	END
+	POPUP "&Edit"
+	BEGIN
+		MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+		MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+		MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+		MENUITEM SEPARATOR
+	END
+	POPUP "&View"
+	BEGIN
+		MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+		MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+		MENUITEM SEPARATOR
+		MENUITEM "CARLA Menu Style",            ID_CARLAMenu
+		MENUITEM "Functional Style",            ID_AmpleLinks
+	END
+	POPUP "&Quick Parse"
+	BEGIN
+		MENUITEM "Change Language",             ID_QuickParse_ChangeLang
+		MENUITEM "&Refresh Dictionaries\tCtrl+u",
+												ID_QUICKPARSE_RefreshRequest
+		MENUITEM "Parse\tEnter",                ID_QuickParseGo
+	END
+	POPUP "&Window"
+	BEGIN
+		MENUITEM "&New Window",                 ID_WINDOW_NEW
+		MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+		MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Help Topics",                ID_HELP_FINDER
+		MENUITEM SEPARATOR
+		MENUITEM "&About CarlaStudio...",       ID_APP_ABOUT
+	END
+END
+
+IDR_EnvironPopup MENU DISCARDABLE
+BEGIN
+	POPUP "Popup"
+	BEGIN
+		MENUITEM "Delete\tDEL",                 ID_Env_Delete
+		MENUITEM "Toggle Enable",               ID_Env_Enable
+	END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	28,             ID_RunProcessors,       ASCII,  NOINVERT
+	"C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+	"D",            ID_EDIT_Insert_TestData, VIRTKEY, CONTROL, NOINVERT
+	"E",            ID_EDIT_insert_environ, VIRTKEY, CONTROL, NOINVERT
+	"F",            ID_EDIT_FIND,           VIRTKEY, CONTROL, NOINVERT
+	"I",            ID_Edit_Insert_Entry,   VIRTKEY, CONTROL, NOINVERT
+	"L",            ID_edit_insert_secondary, VIRTKEY, CONTROL, NOINVERT
+	"M",            ID_EDIT_Insert_Comment, VIRTKEY, CONTROL, NOINVERT
+	"N",            ID_FILE_NewDocument,    VIRTKEY, CONTROL, NOINVERT
+	"O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+	"P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+	"Q",            ID_LangQuickParse,      VIRTKEY, CONTROL, NOINVERT
+	"S",            ID_FILE_SaveAll,        VIRTKEY, CONTROL, NOINVERT
+	"T",            ID_RunTrace,            VIRTKEY, CONTROL, NOINVERT
+	"V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+	VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+	VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+	VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+	VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT, NOINVERT
+	VK_F3,          ID_EDIT_FindAgain,      VIRTKEY, NOINVERT
+	VK_F4,          ID_Jump,                VIRTKEY, NOINVERT
+	VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+	VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+	VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+	VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+	"X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+	"Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_QuickParseDocType ACCELERATORS DISCARDABLE
+BEGIN
+	"U",            ID_QUICKPARSE_RefreshRequest, VIRTKEY, CONTROL, NOINVERT
+	VK_RETURN,      ID_QuickParseGo,        VIRTKEY, NOINVERT
+END
+
+IDR_CStudioLangTYPE ACCELERATORS DISCARDABLE
+BEGIN
+	VK_DELETE,      ID_Edit_Delete,         VIRTKEY, NOINVERT
+	VK_RETURN,      ID_LangProperties,      VIRTKEY, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EditSetColor DIALOG DISCARDABLE  0, 0, 354, 210
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Customize"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "Test Item Variety",IDC_STATICTestItemVariety,7,7,84,9
+	CONTROL         "Tree1",IDC_TREETestKeywrdExpl,"SysTreeView32",
+					TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT |
+					TVS_SHOWSELALWAYS | TVS_TRACKSELECT | TVS_INFOTIP |
+					WS_BORDER | WS_TABSTOP,8,18,119,96
+	LTEXT           "Sample:",IDC_STATICTestSample,135,6,82,9
+	CONTROL         "",IDC_RICHEDITTestContent,"RICHEDIT",ES_MULTILINE |
+					ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_BORDER | WS_HSCROLL |
+					WS_TABSTOP,132,18,209,96
+	GROUPBOX        "Settings for Selected Item",
+					IDC_STATICTestSetForSelectedItem,8,118,104,63
+	LTEXT           "Font &Color:",IDC_STATICTestFontAndColor,17,134,38,9
+	CONTROL         "Button4",IDC_BUTTONTestColorFont,"Button",BS_OWNERDRAW |
+					BS_NOTIFY | WS_TABSTOP,59,134,28,13
+	CONTROL         "&Bold",IDC_CHECKTestBold,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,19,151,31,10
+	CONTROL         "&Underline",IDC_CHECKTestUnderline,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,58,151,43,10
+	CONTROL         "&Italic",IDC_CHECKTestItalic,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,19,167,33,10
+	CONTROL         "&Strikeout",IDC_CHECKTestStrikeout,"Button",
+					BS_AUTOCHECKBOX | NOT WS_VISIBLE,58,167,43,10
+	GROUPBOX        "Settings for All Items",IDC_STATICTestSetAllItems,135,
+					119,210,63
+	CONTROL         "Use &Word Wrap",IDC_CHECKTestWordwrap,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,140,129,78,10
+	LTEXT           "&Font Size:",IDC_STATIC,266,131,36,9
+	COMBOBOX        IDC_COMBOTestFontSize,307,131,28,60,CBS_DROPDOWNLIST |
+					WS_VSCROLL | WS_TABSTOP
+	CONTROL         "Use Background S&ystem Color",
+					IDC_CHECKTestUseBckgroundColr,"Button",BS_AUTOCHECKBOX |
+					BS_TOP | BS_MULTILINE | WS_TABSTOP,139,146,123,11
+	LTEXT           "Back&ground Color:",IDC_STATICTestBckgroundColr,152,162,
+					62,9
+	CONTROL         "Button3",IDC_BUTTONTestBckgroundColr,"Button",
+					BS_OWNERDRAW | BS_NOTIFY | WS_TABSTOP,224,162,28,13
+	PUSHBUTTON      "Reset to &Defaults",IDC_BUTTONTestResetToDefault,273,
+					162,66,15
+	PUSHBUTTON      "OK",IDOK,233,189,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,296,189,50,14
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 212, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About CARLA Studio"
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            IDR_MAINFRAME,IDC_STATIC,12,9,20,20
+	LTEXT           "CARLA Studio Version 2.6.4",IDC_STATIC,40,10,119,8,
+					SS_NOPREFIX
+	LTEXT           "Copyright SIL International © 1999-2002",IDC_STATIC,40,
+					20,158,8
+	DEFPUSHBUTTON   "OK",IDOK,175,149,32,14,WS_GROUP
+	LTEXT           "Credits",IDC_Credits,12,42,189,103
+END
+
+IDD_EditTest DIALOG DISCARDABLE  0, 0, 414, 222
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Edit Test..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_EDITLabel,50,7,200,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_EDITDescription,50,26,357,37,ES_MULTILINE |
+					ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "",IDC_EDITContents,"RICHEDIT",ES_MULTILINE |
+					ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN |
+					WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,50,77,
+					357,117
+	CONTROL         "Check test syntax",IDC_CHECKCheckTestSyntax,"Button",
+					BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,5,204,82,
+					11
+	DEFPUSHBUTTON   "OK",IDOK,301,202,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,358,202,50,14
+	LTEXT           "Label:",IDC_STATIC,23,10,20,8
+	LTEXT           "Description:",IDC_STATIC,5,27,38,8
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,5,191,42,10
+	LTEXT           "Test:",IDC_STATIC,26,79,17,8
+END
+
+IDD_OpenOrCreateProject DIALOG DISCARDABLE  0, 0, 210, 108
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Project..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "Create a blank project. Then you can add new",
+					IDC_RProjectWizard,"Button",BS_AUTORADIOBUTTON |
+					WS_GROUP | WS_TABSTOP,21,39,159,10
+	CONTROL         "Import an existing CARLAMenu Setup.",IDC_RCarlaMenu,
+					"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,21,23,165,10
+	PUSHBUTTON      "Cancel",IDCANCEL,152,88,50,14,WS_GROUP
+	DEFPUSHBUTTON   "OK",IDOK,95,88,50,14
+	GROUPBOX        "What do you want to do?",IDC_STATIC,7,7,195,69
+	LTEXT           "languages, either from scratch or from existing",
+					IDC_STATIC,34,49,150,8
+	LTEXT           "CARLA control files.",IDC_STATIC,34,60,114,8
+END
+
+IDD_WizFilesAnalysis DIALOG DISCARDABLE  0, 0, 305, 231
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Setup Language - Step 2"
+FONT 8, "MS Sans Serif"
+BEGIN
+	PUSHBUTTON      "Browse...",IDC_BUTTONCmd,237,40,50,14
+	PUSHBUTTON      "Browse...",IDC_BUTTONTextIn,238,63,50,14
+	PUSHBUTTON      "Browse...",IDC_BUTTONCodeTable,238,80,50,14
+	PUSHBUTTON      "Browse...",IDC_BUTTONAnalysis,238,118,50,14
+	PUSHBUTTON      "Browse...",IDC_BUTTONPhonrule,238,135,50,14
+	PUSHBUTTON      "Browse...",IDC_BUTTONDictOrtho,238,151,50,14
+	PUSHBUTTON      "Browse...",IDC_BUTTONSTDisambig,238,168,50,14
+	LTEXT           "*Text-In:",IDC_STATIC,18,66,51,8
+	LTEXT           "Static",IDC_STATICTextIn,103,66,125,10,SS_SUNKEN
+	LTEXT           "*Analysis Data Ctrl:",IDC_STATIC,18,121,66,8
+	LTEXT           "*Dictionary Code Table:",IDC_STATIC,18,83,76,8
+	LTEXT           "Phonrule:",IDC_STATIC,18,137,71,8
+	LTEXT           "SENTRANS Disam:",IDC_STATIC,18,170,80,8
+	LTEXT           "Dictionary Ortho Changes:",IDC_STATIC,18,154,83,8
+	LTEXT           "Static",IDC_STATICPhonrule,103,138,125,10,SS_SUNKEN
+	LTEXT           "Static",IDC_STATICDictOrtho,103,154,125,10,SS_SUNKEN
+	LTEXT           "Static",IDC_STATICCodeTable,103,83,126,9,SS_NOPREFIX |
+					SS_SUNKEN
+	LTEXT           "Static",IDC_STATICAnalysis,103,121,125,10,SS_SUNKEN
+	GROUPBOX        "Analysis Files",IDC_STATIC,6,27,291,160
+	LTEXT           "* Required File",IDC_STATIC,11,191,47,8
+	LTEXT           "Static",IDC_STDisambig,103,170,126,11,SS_SUNKEN
+	LTEXT           "Ample CMD file",IDC_STATIC,17,43,51,8
+	LTEXT           "Static",IDC_STATICCmd,103,43,125,10,SS_SUNKEN
+	LTEXT           "Comment Character:",IDC_STATIC,17,9,65,8
+	EDITTEXT        IDC_commentChar,103,9,20,14
+	LTEXT           "NB: All contents will be shown in ANSI/Windows font.",
+					IDC_STATIC,103,192,198,8
+	PUSHBUTTON      "Browse...",IDC_BUTTONCodeTableIt,238,99,50,14
+	LTEXT           "Dict Code (interlinearize):",IDC_STATIC,18,102,79,8
+	LTEXT           "Static",IDC_STATICCodeTableIt,104,102,126,9,SS_NOPREFIX |
+					SS_SUNKEN
+	LTEXT           "You only need the Dict Code Table for Interlinearization if it differs from the one you\nuse for analysis.",
+					IDC_STATIC,14,207,266,18
+END
+
+IDD_WizFilesTransfer DIALOG DISCARDABLE  0, 0, 306, 190
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Setup Language - Step 3"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "",IDC_STGlossing,31,26,202,11,SS_SUNKEN
+	PUSHBUTTON      "Choose...",IDC_btnSTGlossing,242,24,50,14
+	GROUPBOX        "Transfer Control Files",IDC_STATIC,5,67,295,94
+	LTEXT           "SENTRANS Transfer Rules For Use When Glossing Text:",
+					IDC_STATIC,17,15,208,8
+	LTEXT           "SENTRANS and STAMP transfer rules cannot be specified in this wizard yet.  Instead, you'll need to follow some directions in the CarlaStudio Documentation after you've added all your languages.",
+					IDC_STATIC,17,83,259,28
+	LTEXT           "You can read about these steps now by pressing the Help button below.",
+					IDC_STATIC,17,116,268,11
+	LTEXT           "This file is optional.",IDC_STATIC,32,41,60,8
+	LTEXT           "You can read about these steps later by looking up 'Importing Transfer Files' in the Index of the CarlaStudio online help system.",
+					IDC_STATIC,17,132,268,20
+END
+
+IDD_WizFilesSynth DIALOG DISCARDABLE  0, 0, 310, 134
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Setup Language - Step 4"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "",IDC_STAMPSynth,102,23,136,9,SS_SUNKEN
+	PUSHBUTTON      "&Browse...",IDC_btnSTAMPSynth,245,21,50,14
+	LTEXT           "",IDC_TextOut,102,43,136,10,SS_SUNKEN
+	PUSHBUTTON      "Br&owse...",IDC_btnTextOut,245,43,50,14
+	LTEXT           "STAMP TextOut:",IDC_STATIC,15,43,54,8
+	LTEXT           "STAMP Synth Changes:",IDC_STATIC,15,22,79,8
+	GROUPBOX        "Synthesis Control Files",IDC_STATIC,7,7,296,80
+	LTEXT           "These files are optional.",IDC_STATIC,17,91,76,8
+	LTEXT           "STAMP Dict. Code Table:",IDC_STATIC,15,64,82,8
+	LTEXT           "",IDC_StampDictCode,102,64,136,10,SS_SUNKEN
+	PUSHBUTTON      "Bro&wse...",IDC_btnStampDictCode,246,64,50,14
+	LTEXT           "You only need the STAMP Dictionary Code Table if it differs from the one you use for\nanalysis.",
+					IDC_STATIC,17,104,272,20
+END
+
+IDD_PageDictRootUnified DIALOG DISCARDABLE  0, 0, 289, 183
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Root Or Unified Dictionaries"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "List1",IDC_RootDicts,"SysListView32",LVS_LIST |
+					LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,20,23,248,84
+	PUSHBUTTON      "+",IDC_BtnAddRoot,251,110,13,12
+	PUSHBUTTON      "R",IDC_BtnRemove,220,110,13,12
+	LTEXT           "Uncheck a dictionary to temporarily stop using it",
+					IDC_STATIC,23,112,192,10
+	GROUPBOX        "Root or Unified Dictionaries",IDC_DictListLabel,14,8,
+					260,137
+	PUSHBUTTON      "Change Dictionary Organization Method...",
+					IDC_BtnDictMethod,14,158,139,14
+	LTEXT           " Click to\nRemove",IDC_STATIC,213,125,30,18
+	LTEXT           " Click\nto Add",IDC_STATIC,248,125,23,18
+END
+
+IDD_WizFilesFinish DIALOG DISCARDABLE  0, 0, 276, 135
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Setup Language - Finish"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "You have chosen the following files:",IDC_STATIC,44,114,
+					143,8,NOT WS_VISIBLE
+	EDITTEXT        IDC_EDITFilesList,10,94,92,36,ES_MULTILINE | ES_READONLY |
+					NOT WS_VISIBLE | WS_HSCROLL
+	LTEXT           "That's all we need to know.  The control files you specified will be copied to a folder named:",
+					IDC_STATIC,14,10,235,21
+	LTEXT           "Static",IDC_FolderPath,16,35,101,8
+END
+
+IDD_PageLangDisplayProperties DIALOG DISCARDABLE  0, 0, 320, 188
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Language Display Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "Language Name:",IDC_STATIC,7,9,56,8
+	EDITTEXT        IDC_EDITName,82,7,166,14,ES_AUTOHSCROLL
+	LTEXT           "Abbreviation:",IDC_STATIC,7,28,64,8
+	EDITTEXT        IDC_EDITAbrev,81,26,26,14,ES_AUTOHSCROLL
+	LTEXT           "(up to 3 letters)",IDC_STATIC,113,30,48,8
+	GROUPBOX        "Font information",IDC_STATIC,7,42,243,123
+	LTEXT           "Font Name:",IDC_STATIC,11,52,39,8
+	LTEXT           "Set at runtime",IDC_StaticFont,53,52,105,8
+	PUSHBUTTON      "Choose &Font...",IDC_BUTTONFont,168,49,50,14
+	CONTROL         "Show &morphnames in language font",
+					IDC_MorphnamesInLangFont,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,11,69,129,10
+	CONTROL         "Show &comments in language font",IDC_CommentsInLangFont,
+					"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,83,121,10
+	CONTROL         "Show &properties in language font",
+					IDC_PropertiesInLangFont,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,11,97,119,10
+	CONTROL         "Show &string class labels in language font",
+					IDC_StringClassInLangFont,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,11,111,142,10
+	CONTROL         "Show morpheme c&lass labels in language font",
+					IDC_MorphemeClassInLangFont,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,11,125,161,10
+	CONTROL         "Show &user tests in language font",
+					IDC_TestContentsInLangFont,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,11,139,121,10
+	CONTROL         "&Disable Font Association (Korean Windows)",
+					IDC_DisableFontAssociation,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,11,153,153,10
+	CONTROL         "Display  &Transfer Data with the Target language instead of the Source",
+					IDC_ShowFromTransfer,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,8,171,234,9
+END
+
+IDD_WizSetupFinish DIALOG DISCARDABLE  0, 0, 210, 82
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "Summary"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "This text is filled in using DDX at runtime.  What it says changes depending on whether we're creating a project or just modifying an existing one using this wizard.",
+					IDC_STATICMsg,13,7,156,57
+END
+
+IDD_EditOrthoChange DIALOG DISCARDABLE  0, 0, 294, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Orthography Change..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_From,56,5,40,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_To,136,5,40,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_Comments,56,111,231,27,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,5,143,42,10
+	PUSHBUTTON      "Cancel",IDCANCEL,237,146,50,14
+	DEFPUSHBUTTON   "OK",IDOK,177,146,50,14
+	LTEXT           "Comments",IDC_STATIC,14,110,34,8
+	LTEXT           "To",IDC_STATIC,120,8,10,8
+	LTEXT           "From",IDC_STATIC,31,8,16,8
+	CONTROL         "List1",IDC_EnvList,"SysListView32",LVS_REPORT |
+					LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,56,26,231,75
+	LTEXT           "Environments",IDC_STATIC,5,27,44,8
+END
+
+IDD_EditEnvironment DIALOG DISCARDABLE  0, 0, 230, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Environment..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_Environment,56,7,167,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_Comments,57,27,166,28,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,7,65,42,10
+	DEFPUSHBUTTON   "&OK",IDOK,117,77,50,14
+	PUSHBUTTON      "&`Cancel",IDCANCEL,175,76,50,14
+	LTEXT           "Comments:",IDC_STATIC,7,30,36,8
+	LTEXT           "Environment:",IDC_STATIC,7,7,47,8
+END
+
+IDD_EditMCC DIALOG DISCARDABLE  0, 0, 285, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit MCC"
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_Members,56,5,224,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_Comments,56,28,224,33,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,6,140,42,10
+	PUSHBUTTON      "Cancel",IDCANCEL,230,144,50,14
+	DEFPUSHBUTTON   "OK",IDOK,172,144,50,14
+	LTEXT           "Comments",IDC_STATIC,6,28,34,8
+	LTEXT           "Members",IDC_STATIC,8,8,34,8
+	CONTROL         "List1",IDC_EnvList,"SysListView32",LVS_REPORT |
+					LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,56,69,224,64
+	LTEXT           "Environments",IDC_STATIC,6,69,44,8
+END
+
+IDD_ProcessSequence DIALOG DISCARDABLE  0, 0, 365, 143
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Process Sequence..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "List1",IDC_ProcessList,"SysListView32",LVS_REPORT |
+					LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER |
+					WS_TABSTOP,8,10,284,69
+	PUSHBUTTON      "Insert &Before...",IDC_InsertBefore,304,11,50,14
+	PUSHBUTTON      "&Delete",IDC_Remove,304,48,50,14
+	PUSHBUTTON      "&Properties...",IDC_Properties,304,66,50,14
+	DEFPUSHBUTTON   "&OK",IDOK,178,120,50,14
+	PUSHBUTTON      "&Cancel",IDCANCEL,238,120,50,14
+	PUSHBUTTON      "Insert &After...",IDC_InsertAfter,304,29,50,14
+	LTEXT           "Validity Message",IDC_ValidMsg,10,96,278,20
+	PUSHBUTTON      "&Help",ID_HELP,304,120,50,14
+	LTEXT           "Uncheck an item to temporarily disable it",IDC_STATIC,9,
+					81,128,8
+END
+
+IDD_QuickParse DIALOGEX 0, 0, 386, 238
+STYLE DS_MODALFRAME | DS_CONTROL | WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Quick Parse"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+	LTEXT           "W&ord or phrase:",IDC_STATICWordToParse,7,6,53,8
+	EDITTEXT        IDC_EDITInput,65,4,133,15,ES_AUTOHSCROLL
+	LTEXT           "Press Enter to parse",IDC_STATIC,224,7,74,10
+	LTEXT           "Dictionaries Refreshed",IDC_RefreshNotice,305,7,73,11,
+					NOT WS_VISIBLE
+	GROUPBOX        "Trace Control",IDC_STATIC,7,24,372,47
+	CONTROL         "&Include a trace in the output",IDC_CHECKTrace,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,23,35,105,10
+	CONTROL         "&Ask me to select each morpheme",IDC_CHECKManualParse,
+					"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,49,118,10
+	LTEXT           "&Limit trace to these allomorphs or to entries with these morphnames:",
+					IDC_STATIC,143,32,212,8
+	EDITTEXT        IDC_EDITTraceMorphs,143,44,227,14,ES_AUTOHSCROLL
+	LTEXT           "Output of AMPLE:",IDC_STATIC,7,78,58,8
+	CONTROL         239,IDC_ErrorIcon,"Static",SS_BITMAP | NOT WS_VISIBLE,
+					153,76,12,11,WS_EX_STATICEDGE
+	LTEXT           "Ample reported Errors.",IDC_ErrorStatic,170,77,70,8,NOT
+					WS_VISIBLE
+	LTEXT           "Turn on Tracing to view them.",IDC_ErrorStatic2,245,77,
+					96,8,NOT WS_VISIBLE
+	EDITTEXT        IDC_EDITAmpleOutput,4,92,374,136,ES_MULTILINE |
+					ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+	LTEXT           "in turn && then limit the trace to them",
+					IDC_STATICManualParse,38,59,112,9
+END
+
+IDD_EditClass DIALOG DISCARDABLE  0, 0, 316, 153
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Class..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_EDITLabel,54,7,76,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_EDITContents,54,40,253,43,ES_MULTILINE |
+					ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+	EDITTEXT        IDC_EDITDescription,54,95,253,25,ES_MULTILINE |
+					ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,7,135,42,10
+	DEFPUSHBUTTON   "&OK",IDOK,200,131,50,14
+	PUSHBUTTON      "&Cancel",IDCANCEL,259,131,50,14
+	LTEXT           "Label",IDC_STATIC,27,10,18,8
+	LTEXT           "Comments",IDC_STATIC,12,96,34,8
+	LTEXT           "Contents (separate with spaces, in-line comments ok)",
+					IDC_STATIC,7,28,168,8
+END
+
+IDD_EditAdhocPair DIALOG DISCARDABLE  0, 0, 316, 117
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Adhoc Pair.."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_Morph1,54,7,76,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_Morph2,54,33,76,14,ES_AUTOHSCROLL
+	COMBOBOX        IDC_COMBOMorphTypes,213,33,48,52,CBS_DROPDOWN | CBS_SORT |
+					WS_VSCROLL | WS_TABSTOP
+	EDITTEXT        IDC_EDITComments,54,63,255,24,ES_MULTILINE |
+					ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,10,98,42,10
+	DEFPUSHBUTTON   "OK",IDOK,203,96,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,259,96,50,14
+	LTEXT           "Morpheme 1:",IDC_STATIC,6,10,46,8
+	LTEXT           "Example:",IDC_STATIC,6,63,38,8
+	LTEXT           "Morpheme 2:",IDC_STATIC,6,36,45,8
+	LTEXT           "Morpheme 2 Type:",IDC_STATIC,146,35,65,8
+END
+
+IDD_EditCompoundRoot DIALOG DISCARDABLE  0, 0, 316, 117
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Compound Root Category Pair.."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_Cat1,54,7,76,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_Cat2,54,29,76,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_EDITDescription,54,53,254,29,ES_MULTILINE |
+					ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,11,94,42,10
+	PUSHBUTTON      "Cancel",IDCANCEL,258,96,50,14
+	DEFPUSHBUTTON   "OK",IDOK,198,96,50,14
+	LTEXT           "Category 1:",IDC_STATIC,7,10,39,8
+	LTEXT           "Example:",IDC_STATIC,7,53,38,8
+	LTEXT           "Category 2:",IDC_STATIC,7,29,39,8
+END
+
+IDD_EditAmpleProcess DIALOG DISCARDABLE  0, 0, 258, 249
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Ample EXE Process..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "&Check References to Morphnames in Tests",
+					IDC_CheckMorphnames,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,21,19,153,10
+	EDITTEXT        IDC_MaxMorphLength,111,33,40,14,ES_AUTOHSCROLL |
+					ES_NUMBER
+	CONTROL         "&Print Test Parse Trees",IDC_ParseTrees,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,136,86,86,10
+	CONTROL         "Report &Ambiguity %",IDC_ReportAmbig,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,21,86,77,10
+	CONTROL         "&Output Root Glosses",IDC_OutputRootGlosses,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,21,175,81,10
+	CONTROL         "Write &Word Field",IDC_WriteWordField,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,135,142,69,10
+	CONTROL         "Write &Decomposition Field",IDC_WriteDecompField,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,21,143,98,10
+	CONTROL         "Write &Properties Field",IDC_WritePField,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,135,158,83,10
+	DEFPUSHBUTTON   "&OK",IDOK,145,228,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,201,228,50,14
+	LTEXT           "Max Morphname Length",IDC_STATIC,21,36,78,8
+	GROUPBOX        "Morphnames",IDC_STATIC,11,7,240,49
+	GROUPBOX        "Log Output",IDC_STATIC,11,71,240,49
+	GROUPBOX        "ANA Output",IDC_STATIC,11,132,240,64
+	CONTROL         "&Trace Parsing",IDC_Trace,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,21,101,60,10
+END
+
+IDD_EditIntergenProcess DIALOG DISCARDABLE  0, 0, 266, 279
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Intergen Process..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "Character for displaying morpheme breaks:",IDC_STATIC,7,
+					9,134,8
+	EDITTEXT        IDC_DecompChar,145,7,17,14
+	LTEXT           "Maximum characters in one line of output:",IDC_STATIC,7,
+					27,132,8
+	EDITTEXT        IDC_MaxLineLength,145,25,17,14
+	CONTROL         "&Start each line with an SF Marker",IDC_UseSFMarkers,
+					"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,44,124,10
+	CONTROL         "Show &all decomposition ambiguities",
+					IDC_allDecompAmbiguities,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,7,60,127,10
+	CONTROL         "Apply Synthesis &Output Changes",
+					IDC_CHECK_IntergenOutputChanges,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,7,73,151,13
+	LTEXT           "Output Fields",IDC_STATIC,8,92,42,8
+	CONTROL         "List1",IDC_FieldList,"SysListView32",LVS_REPORT |
+					LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER |
+					WS_TABSTOP,9,104,246,104
+	LTEXT           "To cause a field to be output, put a check mark next to it.",
+					IDC_STATIC,8,215,182,8
+	LTEXT           "To customize a marker, double click on it.",IDC_STATIC,
+					8,226,132,8
+	LTEXT           "To control the order in which the fields are output, drag and drop them.",
+					IDC_STATIC,8,237,222,8
+	DEFPUSHBUTTON   "OK",IDOK,147,258,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,205,258,50,14
+END
+
+IDD_EditJoinCompProcess DIALOG DISCARDABLE  0, 0, 152, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit JoinCompProcess..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "Partial Compounds OK",IDC_PartialCompoundsOK,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,7,7,92,10
+	EDITTEXT        IDC_JoinWordsMarker,113,24,17,14
+	EDITTEXT        IDC_AllomorphMarker,113,40,17,14
+	EDITTEXT        IDC_VariantFormMarker,113,56,17,14
+	DEFPUSHBUTTON   "OK",IDOK,41,92,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,97,92,50,14
+	LTEXT           "Marker for joined variant Forms:",IDC_STATIC,7,60,100,8
+	LTEXT           "Marker for joined words:",IDC_STATIC,7,27,76,8
+	LTEXT           "Marker for joined allomorphs:",IDC_STATIC,7,43,91,8
+END
+
+IDD_WizProjectLocation DIALOG DISCARDABLE  0, 0, 290, 137
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose Project Location"
+FONT 8, "MS Sans Serif"
+BEGIN
+	PUSHBUTTON      "Browse...",IDC_BTNProjectLoc,233,55,50,14
+	LTEXT           "Static",IDC_ProjectLoc,7,57,211,11,SS_SUNKEN
+	LTEXT           "We will create a project file and  a folder next to it that will contain information about the language(s).",
+					IDC_STATIC,7,7,208,21
+	LTEXT           "Please choose a location and name for this new project:",
+					IDC_STATIC,7,38,177,8
+END
+
+IDD_WizCMenuSettings DIALOG DISCARDABLE  0, 0, 290, 137
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose CARLAMenu ""CARLA.set"" file"
+FONT 8, "MS Sans Serif"
+BEGIN
+	PUSHBUTTON      "Browse...",IDC_BTNCarlaSetPath,233,23,50,14
+	LTEXT           "Static",IDC_CarlaSetPath,7,25,211,11,SS_SUNKEN
+	LTEXT           "Please locate your CARLAMenu Carla.set file:",-1,7,7,
+					144,8
+	LTEXT           "Note that the xxxCarla.set file for each language will also be read, where 'xxx' is the language abbreviation.",
+					-1,10,50,265,33
+END
+
+IDD_ChooseProcessor DIALOG DISCARDABLE  0, 0, 220, 143
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose A Processor..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "OK",IDOK,97,122,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,153,121,50,14
+	CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | WS_BORDER |
+					WS_TABSTOP,7,7,199,106
+END
+
+IDD_EditSentransDisambig DIALOG DISCARDABLE  0, 0, 303, 178
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Sentrans Disambiguation Rule..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "&Accept Analyses Fitting this Pattern",IDC_RADIOAccept,
+					"Button",BS_AUTORADIOBUTTON | WS_GROUP,56,6,127,10
+	CONTROL         "&Reject Analyses Fitting this Pattern",IDC_RADIOReject,
+					"Button",BS_AUTORADIOBUTTON,56,18,125,10
+	CONTROL         "&Only when all environments apply",
+					IDC_CHECKUnanimousEnvirons,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,56,34,121,10
+	EDITTEXT        IDC_Morphemes,56,50,156,14,ES_AUTOHSCROLL | WS_GROUP
+	CONTROL         "List1",IDC_EnvList,"SysListView32",LVS_REPORT |
+					LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,56,71,240,44
+	EDITTEXT        IDC_Comments,56,123,240,27,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,6,162,42,10
+	DEFPUSHBUTTON   "&OK",IDOK,174,158,50,14
+	PUSHBUTTON      "&Cancel",IDCANCEL,246,158,50,14
+	LTEXT           "Comments:",IDC_STATIC,13,125,36,8
+	LTEXT           "Morphemes:",IDC_STATIC,13,52,38,8
+	LTEXT           "Environments",IDC_STATIC,6,74,44,8
+END
+
+IDD_EditSentransTransfer DIALOG DISCARDABLE  0, 0, 302, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Sentrans Transfer Rule..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_From,60,5,235,12,ES_AUTOHSCROLL
+	EDITTEXT        IDC_To,60,25,235,12,ES_AUTOHSCROLL
+	CONTROL         "List1",IDC_EnvList,"SysListView32",LVS_REPORT |
+					LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,60,44,235,47
+	EDITTEXT        IDC_Comments,60,100,235,31,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,10,135,42,10
+	DEFPUSHBUTTON   "OK",IDOK,190,138,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,245,138,50,14
+	LTEXT           "Comments",IDC_STATIC,18,102,34,8
+	LTEXT           "To:",IDC_STATIC,43,27,12,8
+	LTEXT           "From",IDC_STATIC,35,9,16,8
+	LTEXT           "Environments",IDC_STATIC,8,46,44,8
+END
+
+IDD_PageSrcTextProcessing DIALOG DISCARDABLE  0, 0, 289, 241
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Source Text Processing Goal"
+FONT 8, "MS Sans Serif"
+BEGIN
+	COMBOBOX        IDC_SourceLang,126,7,105,75,CBS_DROPDOWNLIST | CBS_SORT |
+					WS_VSCROLL | WS_TABSTOP
+	COMBOBOX        IDC_TargetLangCombo,125,25,106,51,CBS_DROPDOWNLIST |
+					CBS_SORT | WS_VSCROLL | WS_TABSTOP
+	CONTROL         "A &source ANA file that can be  manually disambiguated",
+					IDC_radioGoal,"Button",BS_AUTORADIOBUTTON | WS_GROUP,20,
+					66,188,10
+	CONTROL         "A &glossed interlinear file",IDC_radioGlossing,"Button",
+					BS_AUTORADIOBUTTON,20,80,89,10
+	CONTROL         "An auto-synthesis &check",IDC_radioAutoSynthesis,"Button",
+					BS_AUTORADIOBUTTON | WS_DISABLED,20,93,93,10
+	CONTROL         "An &ANA file with the target morphemes",
+					IDC_radioAnalyzeTransfer,"Button",BS_AUTORADIOBUTTON,20,
+					108,137,10
+	CONTROL         "A &text in the target language",
+					IDC_radioAnalyzeTransfer2,"Button",BS_AUTORADIOBUTTON,20,
+					121,105,10
+	CONTROL         "Make DOS boxes stay &visible",IDC_Verbose,"Button",
+					BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,20,201,172,10
+	CONTROL         "Make these settings the &default for this project",
+					IDC_MakeDefault,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,
+					224,161,10
+	LTEXT           "Target language (if applicable):",IDC_STATIC,7,26,98,8
+	LTEXT           "Language of this text file:",IDC_STATIC,7,9,80,8
+	GROUPBOX        "What do you want to produce?",IDC_STATIC,7,52,268,88
+	CONTROL         "&Output interlinear texts to the same folder as the source text",
+					IDC_CopyInterlinearToSrcDir,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,20,171,202,10
+	CONTROL         "&Leave output files which are not the processing goal in the temp directory",
+					IDC_LeaveNonGoalsInTemp,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,20,185,245,10
+	GROUPBOX        "Output options",IDC_STATIC,7,159,268,57
+END
+
+CG_IDD_PROGRESS DIALOG DISCARDABLE  0, 0, 186, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Progress"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "Cancel",IDCANCEL,67,63,50,14
+	CONTROL         "Progress1",CG_IDC_PROGDLG_PROGRESS,"msctls_progress32",
+					WS_BORDER,15,41,154,13
+	LTEXT           " 0 %",CG_IDC_PROGDLG_PERCENT,84,29,18,8
+	LTEXT           "",CG_IDC_PROGDLG_STATUS,13,7,158,18
+END
+
+IDD_EditSentransProcess DIALOG DISCARDABLE  0, 0, 238, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SENTRANS"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "Source Disambiguation",IDC_radioFunction1,"Button",
+					BS_AUTORADIOBUTTON | WS_DISABLED | WS_GROUP,27,18,89,10
+	CONTROL         "Source Adjustment (during glossing)",IDC_radioFunction2,
+					"Button",BS_AUTORADIOBUTTON | WS_DISABLED,27,41,128,10
+	CONTROL         "Transfer to Target",IDC_radioFunction3,"Button",
+					BS_AUTORADIOBUTTON | WS_DISABLED,27,52,73,10
+	CONTROL         "Source Adjustment (during analysis)",IDC_radioFunction4,
+					"Button",BS_AUTORADIOBUTTON | WS_DISABLED,27,29,127,10
+	CONTROL         "Use Other Rule File: (Used by ParseBench)",
+					IDC_radioFunction5,"Button",BS_AUTORADIOBUTTON |
+					WS_DISABLED,27,66,152,10
+	EDITTEXT        IDC_EDITRuleFile,48,79,177,14,ES_AUTOHSCROLL
+	CONTROL         "Monitor number of ambiguities left on each word",
+					IDC_MonitorAmibiguities,"Button",BS_AUTOCHECKBOX |
+					WS_GROUP | WS_TABSTOP,27,121,176,10
+	CONTROL         "Monitor number of rules applied on each sentence",
+					IDC_MonitorRulesApplied,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,27,133,181,10
+	CONTROL         "Trace rule application",IDC_TraceRules,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,27,146,123,10
+	CONTROL         "Put class contents in log",IDC_OutputClassContents,
+					"Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,159,156,10
+	DEFPUSHBUTTON   "OK",IDOK,110,194,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,181,194,50,14
+	GROUPBOX        "Output Options",IDC_STATIC,7,110,224,66
+	GROUPBOX        "Function",IDC_STATIC,7,7,224,99
+	LTEXT           "don't change this tab order!",IDC_STATIC,125,13,81,16,
+					NOT WS_VISIBLE
+END
+
+IDD_EditStampFlag DIALOG DISCARDABLE  0, 0, 295, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Stamp Flag..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_sFlag,35,7,76,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_sMorphemes,35,40,253,15,ES_AUTOHSCROLL |
+					ES_WANTRETURN
+	EDITTEXT        IDC_sComments,34,70,253,25,ES_MULTILINE | ES_WANTRETURN |
+					WS_VSCROLL
+	CONTROL         "Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,6,110,42,10
+	DEFPUSHBUTTON   "OK",IDOK,184,106,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,239,106,50,14
+	LTEXT           "Flag:",IDC_STATIC,7,10,16,8
+	LTEXT           "Comment or Example:",IDC_STATIC,9,61,69,8
+	LTEXT           "Morphemes (separate with spaces)",IDC_STATIC,7,28,110,8
+END
+
+IDD_EditStampLexChange DIALOG DISCARDABLE  0, 0, 289, 166
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Stamp Lexical Change..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_From,51,8,83,12,ES_AUTOHSCROLL
+	EDITTEXT        IDC_To,198,8,85,12,ES_AUTOHSCROLL
+	CONTROL         "List1",IDC_EnvList,"SysListView32",LVS_REPORT |
+					LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,50,28,233,64
+	EDITTEXT        IDC_Comments,50,101,233,33,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,4,148,42,10
+	DEFPUSHBUTTON   "OK",IDOK,176,144,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,233,144,50,14
+	LTEXT           "To:",IDC_STATIC,181,10,12,8
+	LTEXT           "From:",IDC_STATIC,22,10,24,8
+	LTEXT           "Environments",IDC_STATIC,4,28,44,8
+	LTEXT           "Comments",IDC_STATIC,12,101,34,8
+END
+
+IDD_EditRegularSoundChange DIALOG DISCARDABLE  0, 0, 289, 197
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Regular Sound Change..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "&From:",IDC_STATIC,9,13,18,8
+	EDITTEXT        IDC_From,54,10,100,14,ES_AUTOHSCROLL
+	LTEXT           "&To:",IDC_STATIC,166,12,12,8
+	EDITTEXT        IDC_To,185,9,96,14,ES_AUTOHSCROLL
+	LTEXT           "&RSC Ids:",IDC_STATIC,13,36,32,8
+	EDITTEXT        IDC_RSCIds,54,33,100,14,ES_AUTOHSCROLL
+	LTEXT           "&Comments",IDC_STATIC,9,62,34,8
+	EDITTEXT        IDC_Comments,54,62,227,33,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	LTEXT           "En&vironments",IDC_STATIC,9,103,44,8
+	CONTROL         "List1",IDC_EnvList,"SysListView32",LVS_REPORT |
+					LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,54,103,227,64
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,9,174,42,10
+	DEFPUSHBUTTON   "OK",IDOK,173,175,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,231,175,50,14
+END
+
+IDD_EditStampProcess DIALOG DISCARDABLE  0, 0, 228, 177
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Stamp Process..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "Check Morphnames",IDC_CheckMorphnames,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,21,19,79,10
+	CONTROL         "Monitor Progress",IDC_MonitorProgress,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,21,80,69,10
+	CONTROL         "Print Test Parse Trees",IDC_ParseTrees,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,126,80,86,10
+	DEFPUSHBUTTON   "OK",IDOK,171,156,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,113,156,50,14
+	GROUPBOX        "Checks",IDC_STATIC,7,7,214,49
+	GROUPBOX        "Log Output",IDC_STATIC,7,65,214,45
+	CONTROL         "Check Root Categories",IDC_CheckRootCats,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,21,36,89,10
+	GROUPBOX        "Synthesis",IDC_STATIC,7,114,214,34
+	CONTROL         "Output All Combinations of Allomorphs, Not Just the First",
+					IDC_OutputAllAllomorphs,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,21,129,191,10
+	CONTROL         "Trace",IDC_Trace,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+					21,95,123,10
+END
+
+IDD_LanguageCreation DIALOG DISCARDABLE  0, 0, 209, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Language..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "Create a language from scratch",IDC_radioFunction1,
+					"Button",BS_AUTORADIOBUTTON | WS_GROUP,7,57,115,10
+	CONTROL         "Create a language from existing control files",
+					IDC_radioFunction2,"Button",BS_AUTORADIOBUTTON,7,70,152,
+					10
+	DEFPUSHBUTTON   "OK",IDOK,95,93,50,14,WS_GROUP
+	PUSHBUTTON      "Cancel",IDCANCEL,153,93,50,14
+	LTEXT           "You can either create language ""from scratch"" or",
+					IDC_STATIC,7,18,196,8
+	LTEXT           "There are two ways to add a language to your project.",
+					IDC_STATIC,7,7,196,8
+	LTEXT           " from a set of existing DOS-carla control files.",
+					IDC_STATIC,6,27,196,8
+	LTEXT           "What do you want to do?",IDC_STATIC,7,43,196,8
+END
+
+IDD_Environments DIALOG DISCARDABLE  0, 0, 280, 164
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Environments"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "OK",IDOK,223,143,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,165,143,50,14
+	CONTROL         "",IDC_MSFLEXGRID1,
+					"{6262D3A0-531B-11CF-91F6-C2863C385E30}",WS_TABSTOP,7,22,
+					266,104
+	DEFPUSHBUTTON   "test",IDtest,19,132,50,14
+END
+
+IDD_PageInputDocPanels DIALOG DISCARDABLE  0, 0, 279, 186
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Panels"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "Check the output panels you want to be visible.",
+					IDC_STATIC,7,7,150,8
+	LISTBOX         IDC_InputDocPanelList,7,20,265,87,LBS_OWNERDRAWFIXED |
+					LBS_HASSTRINGS | LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT |
+					WS_VSCROLL | WS_TABSTOP
+	EDITTEXT        IDC_PanelDetails,7,123,265,33,ES_MULTILINE |
+					ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+	LTEXT           "Details:",IDC_STATIC,7,111,24,8
+	CONTROL         "Show only available output panels.",IDC_availableOnly,
+					"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,161,125,10
+END
+
+IDD_EditSentransDirective DIALOG DISCARDABLE  0, 0, 296, 173
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Sentrans Directive..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "&Limit Rule",IDC_RADIOType,"Button",BS_AUTORADIOBUTTON |
+					WS_GROUP,48,20,47,10
+	CONTROL         "&Begin Rule Set",IDC_RADIOType2,"Button",
+					BS_AUTORADIOBUTTON,48,50,63,10
+	CONTROL         "&End Rule Set",IDC_RADIOType3,"Button",
+					BS_AUTORADIOBUTTON,48,62,58,10
+	CONTROL         "&Rules On",IDC_RADIOType4,"Button",BS_AUTORADIOBUTTON,
+					48,74,45,10
+	CONTROL         "Rules &Off",IDC_RADIOType5,"Button",BS_AUTORADIOBUTTON,
+					48,86,45,10
+	EDITTEXT        IDC_iLimit,107,30,37,14,ES_NUMBER | WS_GROUP
+	EDITTEXT        IDC_sComments,48,110,242,34,ES_MULTILINE | ES_WANTRETURN |
+					WS_VSCROLL
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,4,153,42,10
+	DEFPUSHBUTTON   "OK",IDOK,181,154,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,240,154,50,14
+	LTEXT           "Word Limit:",IDC_STATIC,66,33,36,8
+	LTEXT           "Comment:",IDC_STATIC,4,109,32,8
+	GROUPBOX        "Directive Type",IDC_STATIC,4,4,281,95
+END
+
+IDD_EditStampTransferRule DIALOG DISCARDABLE  0, 0, 305, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Stamp Transfer Rule..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "&Substitute",IDC_RADIOSubstitute,"Button",
+					BS_AUTORADIOBUTTON | WS_GROUP,77,16,47,10
+	CONTROL         "&Copy",IDC_RADIOCopy,"Button",BS_AUTORADIOBUTTON,135,16,
+					32,10
+	CONTROL         "&Insert",IDC_RADIOInsert,"Button",BS_AUTORADIOBUTTON,
+					179,16,33,10
+	EDITTEXT        IDC_FromOrInsert,58,38,239,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_To,58,55,239,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_Flags,58,74,84,14,ES_AUTOHSCROLL
+	CONTROL         "List1",IDC_EnvList,"SysListView32",LVS_REPORT |
+					LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,58,95,239,64
+	EDITTEXT        IDC_Comments,58,167,239,33,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_GROUP | WS_TABSTOP,58,207,42,10
+	DEFPUSHBUTTON   "OK",IDOK,175,210,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,247,210,50,14
+	LTEXT           "To:",IDC_ToStatic,37,58,12,8
+	RTEXT           "From:",IDC_FromOrInsertLabel,23,42,26,8
+	GROUPBOX        "Action",IDC_STATIC,49,6,248,25
+	LTEXT           "Environments:",IDC_STATIC,3,95,46,8
+	LTEXT           "Comments:",IDC_STATIC,13,169,36,8
+	RTEXT           "Flags:",IDC_FromOrInsertLabel2,24,78,26,8
+END
+
+IDD_EditPhonruleRule DIALOG DISCARDABLE  0, 0, 289, 198
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Phonology  Rule..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_From,58,6,43,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_To,130,6,39,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_Category,217,6,65,14,ES_AUTOHSCROLL
+	CONTROL         "List1",IDC_EnvList,"SysListView32",LVS_REPORT |
+					LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,58,28,224,48
+	EDITTEXT        IDC_Comments,58,85,224,28,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	CONTROL         "&Phonological",IDC_RADIORuleType,"Button",
+					BS_AUTORADIOBUTTON | WS_GROUP,65,133,57,10
+	CONTROL         "&Base Rule",IDC_RADIOBaseRule,"Button",
+					BS_AUTORADIOBUTTON,65,148,49,10
+	CONTROL         "&According to environment",IDC_RADIOForce,"Button",
+					BS_AUTORADIOBUTTON | WS_GROUP,182,130,97,10
+	CONTROL         "Morpheme &Initially",IDC_RADIOInitial,"Button",
+					BS_AUTORADIOBUTTON,182,141,70,10
+	CONTROL         "Morpheme &Finally",IDC_RADIOFinal,"Button",
+					BS_AUTORADIOBUTTON,182,153,68,10
+	DEFPUSHBUTTON   "OK",IDOK,173,176,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,232,176,50,14
+	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
+					WS_GROUP | WS_TABSTOP,8,180,42,10
+	LTEXT           "Comments",IDC_STATIC,12,87,34,8
+	LTEXT           "To:",IDC_STATIC,114,9,12,8
+	LTEXT           "From:",IDC_STATIC,28,9,18,8
+	GROUPBOX        "Rule Type",IDC_STATIC,58,119,69,49
+	LTEXT           "Category:",IDC_STATIC,181,9,31,8
+	GROUPBOX        "Apply",IDC_STATIC,174,119,108,50
+	LTEXT           "Environments",IDC_STATIC,8,28,44,8
+END
+
+IDD_PageRedundantFieldNotice DIALOG DISCARDABLE  0, 0, 297, 154
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Redundant Field Notice"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "Normally, there are some fields which are duplicated in several CARLA data files. These fields include string classes, morpheme classes, category classes, and categories.",
+					IDC_STATIC,7,7,283,31
+	LTEXT           "When CarlaStudio imports your files, it will ignore those fields in all the files except the ad.ctl file.  For example, if you named a string class ""vowels"" in the ad.ctl file, but ""V"" in the intx.ctl file, the latter will be lost during import.",
+					IDC_STATIC,7,47,283,36
+	LTEXT           "After importing, check your classes and categories to see if anything was ignored during importing.  If so, you will need to type them in again, into the corresponding CarlaStudio list.",
+					IDC_STATIC,7,93,283,30
+END
+
+IDD_CCProcess DIALOG DISCARDABLE  0, 0, 291, 217
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CC Processor"
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_EDITName,50,7,122,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_EDITDescription,50,26,234,34,ES_MULTILINE |
+					WS_VSCROLL
+	PUSHBUTTON      "Browse...",IDC_BUTTONBrowseTableFile,223,87,50,14
+	CONTROL         "Text File",IDC_RADIOFileKind,"Button",
+					BS_AUTORADIOBUTTON | WS_GROUP,25,127,43,10
+	CONTROL         "Root or Unified Dictionaries",IDC_RADIO2,"Button",
+					BS_AUTORADIOBUTTON,25,140,102,10
+	CONTROL         "ANA (Ample Analyzed Format)",IDC_RADIO3,"Button",
+					BS_AUTORADIOBUTTON,25,153,110,10
+	CONTROL         "Interlinear files (output of Intergen)",IDC_RADIO5,
+					"Button",BS_AUTORADIOBUTTON,25,166,123,10
+	DEFPUSHBUTTON   "OK",IDOK,176,196,50,14,WS_GROUP
+	PUSHBUTTON      "Cancel",IDCANCEL,234,196,50,14
+	LTEXT           "Name:",IDC_STATIC,7,9,22,8
+	LTEXT           "Pathname",IDC_STATICTablePath,25,90,182,8
+	GROUPBOX        "CC Table File",IDC_STATIC,7,78,277,28
+	LTEXT           "Description:",IDC_STATIC,7,28,38,8
+	GROUPBOX        "File(s) to process",IDC_STATIC,7,115,277,68
+END
+
+IDD_PageAnaProcessing DIALOG DISCARDABLE  0, 0, 276, 209
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "ANA File Processing Goal"
+FONT 8, "MS Sans Serif"
+BEGIN
+	COMBOBOX        IDC_InputLang,121,10,105,75,CBS_DROPDOWNLIST | CBS_SORT |
+					WS_VSCROLL | WS_TABSTOP
+	COMBOBOX        IDC_TargetLangCombo,121,29,106,51,CBS_DROPDOWNLIST |
+					CBS_SORT | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+	CONTROL         "A &glossed interlinear file in the source language",
+					IDC_RADIOProduce,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+					20,66,163,10
+	CONTROL         "An &ANA file with the target morphemes",
+					IDC_RADIOProduceTANA,"Button",BS_AUTORADIOBUTTON,20,78,
+					137,10
+	CONTROL         "A &text in the target language",IDC_RADIO3,"Button",
+					BS_AUTORADIOBUTTON,20,92,105,10
+	CONTROL         "&Leave output files which are not the processing goal in the temp directory",
+					IDC_LeaveNonGoalsInTemp,"Button",BS_AUTOCHECKBOX |
+					WS_GROUP | WS_TABSTOP,20,139,245,10
+	CONTROL         "Make DOS boxes stay &visible",IDC_Verbose,"Button",
+					BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,20,155,172,10
+	CONTROL         "Make these settings the &default for this project",
+					IDC_MakeDefault,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,
+					192,161,10
+	LTEXT           "Target Language:",IDC_STATIC,9,32,58,8
+	LTEXT           "Language of this ANA file:",IDC_STATIC,9,12,83,8
+	GROUPBOX        "What do you want to produce?",IDC_STATIC,9,54,246,55
+	GROUPBOX        "Output options",IDC_STATIC,9,124,260,51
+END
+
+IDD_TIP DIALOG DISCARDABLE  0, 0, 231, 164
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Tip of the Day"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "",-1,"Static",SS_BLACKFRAME,12,11,207,123
+	LTEXT           "Some String",IDC_TIPSTRING,28,63,177,60
+	CONTROL         "&Show Tips on StartUp",IDC_STARTUP,"Button",
+					BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,146,85,10
+	PUSHBUTTON      "&Next Tip",IDC_NEXTTIP,109,143,50,14,WS_GROUP
+	DEFPUSHBUTTON   "&Close",IDOK,168,143,50,14,WS_GROUP
+	CONTROL         "",IDC_BULB,"Static",SS_BITMAP,20,17,190,111
+END
+
+IDD_PageAffixes DIALOG DISCARDABLE  0, 0, 210, 154
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Step 2  - Affixes"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "&Suffixes",IDC_CHECKSfx,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,31,45,89,10
+	CONTROL         "&Prefixes",IDC_CHECKPfx,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,31,33,89,10
+	LTEXT           "What sort of affixes have you found in this language?",
+					IDC_STATIC,15,18,168,8
+	CONTROL         "&Infixes",IDC_CHECKIfx,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,31,57,89,10
+END
+
+IDD_PageCatPropogation DIALOG DISCARDABLE  0, 0, 256, 161
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Step 3 - Category Propogation"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "&Prefixes first",IDC_CatPropScheme,"Button",
+					BS_AUTORADIOBUTTON | WS_GROUP,14,92,177,10
+	CONTROL         "&Suffixes first",IDC_RADIOSfx,"Button",
+					BS_AUTORADIOBUTTON | WS_TABSTOP,14,105,177,10
+	CONTROL         "&I'll  write my own category propogation tests",
+					IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,14,
+					118,177,10
+	LTEXT           "Ample uses a ""from-to"" category system as one way to limit which affixes can attach where, and to determine what the category of the whole word is.  It starts with the root, then adds the affixes.  ",
+					IDC_STATIC,14,10,233,32
+	LTEXT           "In what order do you want Ample to propagate categories?",
+					IDC_STATIC,14,81,238,12
+	LTEXT           "You are encouraged to press the ""Help"" button below for more information.",
+					IDC_STATIC,14,40,236,8
+	LTEXT           "This wizard can create the Ample tests needed to make category propagation work.",
+					IDC_STATIC,14,56,238,18
+END
+
+IDD_PageCatFinalTest DIALOG DISCARDABLE  0, 0, 296, 127
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Step 4 - Category Final Test"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "One way to ensure that an analysis of a word is correct is to check the category of the word.  If  the category is in a class of ""final categories"" that you specify, then the test passes. ",
+					IDC_STATIC,11,10,233,32
+	CONTROL         "&Create the class ""finalcategory"" and a test to check it.",
+					IDC_CHECKCreateFinalCatTest,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,13,76,186,10
+	LTEXT           "This wizard can create an empty category class for you that you can fill in later.  It will also create a ""Final Test"" to make sure words end with a category in that class.",
+					IDC_STATIC,12,41,241,27
+	CONTROL         "&Initially disable the final category test.  I'll turn it on later when I'm ready.",
+					IDC_CHECKDisableFinalCat,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,13,95,238,10
+END
+
+IDD_PageDictAffix DIALOG DISCARDABLE  0, 0, 289, 111
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Affix Dictionaries"
+FONT 8, "MS Sans Serif"
+BEGIN
+	GROUPBOX        "Affix Dictionaries",IDC_STATIC,14,9,260,72
+	PUSHBUTTON      "+",IDC_BTNPrefix,252,22,13,12
+	PUSHBUTTON      "+",IDC_BTNInfix,251,40,14,14
+	PUSHBUTTON      "+",IDC_BTNSuffix,250,59,15,14
+	LTEXT           "Prefixes",IDC_STATIC,25,24,31,8
+	LTEXT           "12345678901234567891234",IDC_Prefix,58,23,184,11,
+					SS_SUNKEN
+	LTEXT           "Infixes",IDC_STATIC,25,41,26,8
+	LTEXT           "Static",IDC_Infix,58,41,184,11,SS_SUNKEN
+	LTEXT           "Suffixes",IDC_STATIC,25,58,26,8
+	LTEXT           "Static",IDC_Suffix,58,60,184,11,SS_SUNKEN
+	LTEXT           "Click the appropriate button to add or modify an affix dictionary",
+					IDC_STATIC,27,91,216,15
+END
+
+IDD_ChooseDictMethod DIALOG DISCARDABLE  0, 0, 340, 146
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Choose Dictionary Organization Method"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "Use the ""flexible/unified"" dictionary method",
+					IDC_DictMethod,"Button",BS_AUTORADIOBUTTON | WS_GROUP,19,
+					108,152,10
+	CONTROL         "Use the ""classic"" dictionary method",IDC_DictMethod2,
+					"Button",BS_AUTORADIOBUTTON,19,121,128,10
+	LTEXT           "The CARLA tools allow you to use one of two ways of organizing your dictionaries.",
+					IDC_STATIC,19,9,258,8
+	LTEXT           "With the ""flexible"" dictionary method, you can organize your roots and affixes in any way you want.  All of your morphemes can be in one dictionary,  or they can be divided between roots, affixes, etc.  This method is sometimes called the ""unified"" method.",
+					IDC_STATIC,19,26,309,24
+	LTEXT           "With the ""classic"" dictionary method, you declare one dictionary for each affix type you have.  You declare a separate standard format marker scheme for each type.  You do not need the \\type field in your affix entries.",
+					IDC_STATIC,19,58,298,25
+	LTEXT           "With either method, you can have as many root dictionaries as you want.",
+					IDC_STATIC,19,91,229,8
+END
+
+IDD_PageLocations DIALOG DISCARDABLE  0, 0, 269, 146
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Locations"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "Analyzed ANAs",IDC_STATIC,14,24,54,8
+	LTEXT           "CPathCtrl will go here",IDC_AnalyzedANA,77,24,173,11
+	GROUPBOX        "Output Folder Locations",IDC_STATIC,7,7,255,92
+	LTEXT           "CPathCtrl will go here",IDC_Interlinear,77,42,173,11
+	LTEXT           "Interlinear Texts",IDC_STATIC,14,42,54,8
+	LTEXT           "CPathCtrl will go here",IDC_TransferedANA,77,60,173,11
+	LTEXT           "Transfered ANAs",IDC_STATIC,14,60,54,8
+	LTEXT           "CPathCtrl will go here",IDC_Synthesized,77,78,173,11
+	LTEXT           "Synthesized Texts",IDC_STATIC,14,78,54,8
+	CONTROL         "&Output interlinear texts to the same folder as the source text (MOVED)",
+					IDC_CopyInterlinearToSrcDir,"Button",BS_AUTOCHECKBOX |
+					WS_DISABLED | WS_TABSTOP,7,113,234,10
+	CONTROL         "&Leave output files which are not the processing goal in the temp directory",
+					IDC_LeaveNonGoalsInTemp,"Button",BS_AUTOCHECKBOX | NOT
+					WS_VISIBLE | WS_DISABLED | WS_TABSTOP,7,129,245,10
+END
+
+IDD_HEADING_VIEW DIALOG DISCARDABLE  0, 0, 226, 140
+STYLE DS_MODALFRAME | WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_PageDisclaimer DIALOG DISCARDABLE  0, 0, 279, 111
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Disclaimer"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "This wizard will ask you some questions and do some work towards getting you started.",
+					IDC_STATIC,7,7,265,20
+	LTEXT           "However, you will probably find it difficult to even answer the questions this wizard will ask you, unless you have talked with a CARLA consultant or read documentation on the AMPLE program.",
+					IDC_STATIC,7,39,265,27
+	LTEXT           "Remember that almost anything can be changed later if you change your mind.  The exception to this is the language abbreviation, which is permanent. ",
+					IDC_STATIC,7,76,265,27
+END
+
+IDD_EditAmpleDLLProcess DIALOG DISCARDABLE  0, 0, 390, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Ample DLL Process..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_MaxMorphLength,147,18,40,14,ES_AUTOHSCROLL |
+					ES_NUMBER
+	CONTROL         "&Check References to Morphnames in Tests",
+					IDC_CheckMorphnames,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,221,20,153,10
+	CONTROL         "Report &Ambiguity %",IDC_ReportAmbig,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,27,64,77,10
+	CONTROL         "Include a &trace in the output",IDC_Trace,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,27,89,105,10
+	EDITTEXT        IDC_EDITTraceMorphs,147,89,227,14,ES_AUTOHSCROLL
+	CONTROL         "Write &Decomposition Field",IDC_WriteDecompField,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,27,135,98,10
+	CONTROL         "O&utput Root Glosses",IDC_OutputRootGlosses,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,147,136,81,10
+	CONTROL         "Write &Properties Field",IDC_WritePField,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,27,150,83,10
+	CONTROL         "Write &Word Field",IDC_WriteWordField,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,27,167,69,10
+	DEFPUSHBUTTON   "&OK",IDOK,270,194,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,333,194,50,14
+	LTEXT           "Max Morphname Length",IDC_STATIC,27,22,78,8
+	GROUPBOX        "Morphnames",IDC_STATIC,11,7,372,35
+	LTEXT           "Limit trace to these allomorphs or to entries with these morphnames:",
+					IDC_STATIC,147,76,212,8
+	GROUPBOX        "Log Output",IDC_STATIC,11,47,372,67
+	GROUPBOX        "ANA Output",IDC_STATIC,11,123,372,64
+END
+
+IDD_EditToneParseProcess DIALOG DISCARDABLE  0, 0, 371, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ToneParse"
+FONT 8, "MS Sans Serif"
+BEGIN
+	GROUPBOX        "Path to Tone Parse Control File",IDC_STATIC,7,6,357,32
+	EDITTEXT        IDC_EDITControlFile,19,18,281,14,ES_AUTOHSCROLL
+	PUSHBUTTON      "&Browse...",IDC_BUTTONToneParsControlFile,308,18,50,14
+	CONTROL         "&Trace Tone Processing",IDC_bTraceToneProcessing,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,7,46,90,10
+	PUSHBUTTON      "Tracing &Options...",IDC_BUTTONToneParsTraceOptions,105,
+					45,70,14
+	EDITTEXT        IDC_EDITTraceLevelParse,227,48,54,12,ES_AUTOHSCROLL |
+					NOT WS_VISIBLE
+	CONTROL         "&Monitor Progress",IDC_bMonitorProgress,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,7,67,69,10
+	CONTROL         "&Verify Control File Information",
+					IDC_bVerifyControlFileInformation,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,7,80,107,10
+	DEFPUSHBUTTON   "OK",IDOK,250,90,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,314,90,50,14
+	CONTROL         "Check &Morphnames",IDC_CHECKToneParseMorphnames,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,7,94,106,10
+END
+
+IDD_EditToneGenProcess DIALOG DISCARDABLE  0, 0, 373, 253
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ToneGen (Beta Version)"
+FONT 8, "MS Sans Serif"
+BEGIN
+	GROUPBOX        "TONE GENERATION PARAMETERS",IDC_STATIC,1,4,369,74
+	GROUPBOX        " Path to Tone Gen Control File",IDC_STATIC,5,16,357,31
+	EDITTEXT        IDC_EDITControlFileGen,12,28,283,14,ES_AUTOHSCROLL
+	PUSHBUTTON      "&Browse...",IDC_BUTTONToneGenControlFile,303,28,50,14
+	CONTROL         "&Trace Tone Processing",IDC_bTraceToneProcessingGen,
+					"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,55,90,10
+	PUSHBUTTON      "Tracing &Options...",IDC_BUTTONToneGenTraceOptions,104,
+					54,79,14
+	EDITTEXT        IDC_EDITTraceLevelGen,207,54,39,12,ES_AUTOHSCROLL | NOT
+					WS_VISIBLE
+	GROUPBOX        "SYNTHESIS PARAMETERS",IDC_STATIC,1,92,369,91
+	GROUPBOX        "Checks",IDC_STATIC,8,104,127,36
+	CONTROL         "Check &Morphnames",IDC_CHECKToneGenMorphnames,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,18,115,110,10
+	CONTROL         "Check Root &Categories",IDC_CHECKToneGenRootCats,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,17,128,107,10
+	GROUPBOX        "Log Output",IDC_STATIC,187,108,115,32
+	CONTROL         "Trace &Synthesis",IDC_CHECKToneGenTraceSynthesis,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,199,121,80,11
+	GROUPBOX        "Synthesis",IDC_STATIC,8,146,295,28
+	CONTROL         "Output &All Combinations of Allomorphs, Not Just the First",
+					IDC_CHECKToneGenOutputAll,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,20,160,279,10
+	GROUPBOX        "PARAMETERS FOR BOTH",IDC_STATIC,1,200,206,42
+	CONTROL         "Monitor &Progress",IDC_bMonitorProgressGen,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,7,212,69,10
+	CONTROL         "&Verify Control File Information",
+					IDC_bVerifyControlFileInformationGen,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,7,227,107,10
+	DEFPUSHBUTTON   "OK",IDOK,247,230,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,306,230,50,14
+END
+
+IDD_EditComment DIALOG DISCARDABLE  0, 0, 289, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Comment..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_SComment,7,7,275,66,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	DEFPUSHBUTTON   "&OK",IDOK,171,84,50,14
+	PUSHBUTTON      "&Cancel",IDCANCEL,232,84,50,14
+END
+
+IDD_EditTestData DIALOG DISCARDABLE  0, 0, 289, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Test Data..."
+FONT 8, "MS Sans Serif"
+BEGIN
+	EDITTEXT        IDC_STestData,7,7,275,66,ES_MULTILINE | ES_AUTOVSCROLL |
+					ES_WANTRETURN | WS_VSCROLL
+	DEFPUSHBUTTON   "&OK",IDOK,171,84,50,14
+	PUSHBUTTON      "&Cancel",IDCANCEL,232,84,50,14
+END
+
+IDD_ModifyTestsFinish DIALOG DISCARDABLE  0, 0, 289, 135
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Finish"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "CarlaStudio will now perform the following steps:",
+					IDC_STATIC,7,7,275,12
+	LTEXT           "1) Set the Maximums for prefixes, infixes, and suffixes.",
+					IDC_STATIC,7,25,275,12
+	LTEXT           "2) Remove any tests which were previously inserted by CarlaStudio.  These tests have the words ""Inserted by CarlaStudio"" in their descriptions.",
+					IDC_STATIC,7,39,275,21
+	LTEXT           "3) Add tests according to the choices you've made in this wizard.",
+					IDC_STATIC,7,89,275,12
+	LTEXT           "If this concerns you, you should click the Cancel button, and change the labels of these tests.  Then run this wizard again, and CarlaStudio will ignore them.",
+					IDC_STATIC,20,60,262,20
+END
+
+IDD_EditPrintANAProcess DIALOG DISCARDABLE  0, 0, 247, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PrintANA"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "OK",IDOK,190,7,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,190,24,50,14
+	EDITTEXT        IDC_EDITBeginPrintColumn,83,12,26,14,ES_AUTOHSCROLL
+	EDITTEXT        IDC_EDITEXENamePrintAna,83,32,101,14,ES_AUTOHSCROLL
+	LTEXT           "Begin Print Column:",IDC_STATIC,11,12,68,10
+	LTEXT           "EXE Name",IDC_STATIC,11,32,36,8
+	CONTROL         "Display analyses only (i.e. no decompositions)",
+					IDC_CHECKDisplayAnalysesOnly,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,7,60,161,14
+END
+
+IDD_BatchProcess DIALOG DISCARDABLE  0, 0, 291, 226
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Batch File Processor"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "&Name:",IDC_STATIC,7,9,22,8
+	EDITTEXT        IDC_EDITName,50,7,122,14,ES_AUTOHSCROLL
+	LTEXT           "&Description:",IDC_STATIC,7,28,38,8
+	EDITTEXT        IDC_EDITDescription,50,26,234,34,ES_MULTILINE |
+					WS_VSCROLL
+	GROUPBOX        "Batch File",IDC_STATIC,7,78,277,28
+	LTEXT           "Pathname",IDC_STATICBatchPath,25,90,182,8
+	PUSHBUTTON      "&Browse...",IDC_BUTTONBrowseBatchFile,223,87,50,14
+	GROUPBOX        "File(s) to process",IDC_STATIC,7,117,277,80
+	CONTROL         "N&one",IDC_RADIOBatchFileKind,"Button",
+					BS_AUTORADIOBUTTON | WS_GROUP,25,130,80,9
+	CONTROL         "&Text File",IDC_RADIOFileKind,"Button",
+					BS_AUTORADIOBUTTON,25,142,43,10
+	CONTROL         "Root or Unified &Dictionaries",IDC_RADIO2,"Button",
+					BS_AUTORADIOBUTTON,25,155,102,10
+	CONTROL         "&ANA (Ample Analyzed Format)",IDC_RADIO3,"Button",
+					BS_AUTORADIOBUTTON,25,168,110,10
+	CONTROL         "&Interlinear files (output of Intergen)",IDC_RADIO5,
+					"Button",BS_AUTORADIOBUTTON,25,181,123,10
+	DEFPUSHBUTTON   "OK",IDOK,176,205,50,14,WS_GROUP
+	PUSHBUTTON      "Cancel",IDCANCEL,234,205,50,14
+END
+
+IDD_ManualParseChoice DIALOG DISCARDABLE  0, 0, 292, 129
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Select Next Allomorph"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "OK",IDOK,177,108,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,235,108,50,14
+	CONTROL         "List2",IDC_LISTManualParse,"SysListView32",LVS_REPORT |
+					LVS_SINGLESEL | LVS_OWNERDRAWFIXED | WS_BORDER |
+					WS_TABSTOP,7,7,271,99
+END
+
+IDD_EditToneTracing DIALOG DISCARDABLE  0, 0, 204, 165
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Tone Processing Tracing Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "OK",IDOK,74,140,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,132,140,50,14
+	CONTROL         "&Segment parsing into root nodes",
+					IDC_CHECKToneTraceSegments,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,13,7,150,11
+	CONTROL         "&Mora parsing",IDC_CHECKToneTraceMora,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,13,35,150,11
+	CONTROL         "S&yllable parsing",IDC_CHECKToneTraceSyllable,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,13,49,150,11
+	CONTROL         "&TBU assignment",IDC_CHECKToneTraceTBU,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,13,63,150,11
+	CONTROL         "&Linking of morphemes to root nodes",
+					IDC_CHECKToneTraceLinkAnalysis,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,13,21,150,11
+	CONTROL         "&Rule application (same as regular trace)",
+					IDC_CHECKToneTraceToneRule,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,13,118,150,11
+	CONTROL         "&Domain assignment",IDC_CHECKToneTraceDomains,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,13,90,150,11
+	CONTROL         "&Primary and Register Tier assignment",
+					IDC_CHECKToneTraceTierAssignment,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,13,104,150,11
+	CONTROL         "M&orpheme tone assignment",
+					IDC_CHECKToneTraceMorphemeTone,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,13,77,150,11
+END
+
+IDD_PageCatFinalModifyTest DIALOG DISCARDABLE  0, 0, 296, 127
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Step 3 - Category Final Test"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "One way to ensure that an analysis of a word is correct is to check the category of the word.  If  the category is in a class of ""final categories"" that you specify, then the test passes. ",
+					IDC_STATIC,11,10,233,32
+	CONTROL         "&Create any finalcategory tests.",
+					IDC_CHECKCreateFinalCatTestModifyTests,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,13,76,111,10
+	LTEXT           "This wizard can create any ""Final Tests"" to make sure words end with a category in that class.",
+					IDC_STATIC,12,41,241,27
+	CONTROL         "&Initially disable the final category test.  I'll turn it on later when I'm ready.",
+					IDC_CHECKDisableFinalCatModifyTests,"Button",
+					BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,95,238,10
+END
+
+5100 DIALOGEX 0, 0, 49, 73
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+	CONTROL         "",5101,"Button",BS_OWNERDRAW | WS_TABSTOP,1,1,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5102,"Button",BS_OWNERDRAW | WS_TABSTOP,13,1,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5103,"Button",BS_OWNERDRAW | WS_TABSTOP,25,1,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5104,"Button",BS_OWNERDRAW | WS_TABSTOP,37,1,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5105,"Button",BS_OWNERDRAW | WS_TABSTOP,1,12,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5106,"Button",BS_OWNERDRAW | WS_TABSTOP,13,12,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5107,"Button",BS_OWNERDRAW | WS_TABSTOP,25,12,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5108,"Button",BS_OWNERDRAW | WS_TABSTOP,37,12,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5109,"Button",BS_OWNERDRAW | WS_TABSTOP,1,24,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5110,"Button",BS_OWNERDRAW | WS_TABSTOP,13,24,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5111,"Button",BS_OWNERDRAW | WS_TABSTOP,25,24,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5112,"Button",BS_OWNERDRAW | WS_TABSTOP,37,24,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5113,"Button",BS_OWNERDRAW | WS_TABSTOP,1,36,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5114,"Button",BS_OWNERDRAW | WS_TABSTOP,13,36,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5115,"Button",BS_OWNERDRAW | WS_TABSTOP,25,36,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5116,"Button",BS_OWNERDRAW | WS_TABSTOP,37,36,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5117,"Button",BS_OWNERDRAW | WS_TABSTOP,1,48,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5118,"Button",BS_OWNERDRAW | WS_TABSTOP,13,48,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5119,"Button",BS_OWNERDRAW | WS_TABSTOP,25,48,11,10,
+					WS_EX_CLIENTEDGE
+	CONTROL         "",5120,"Button",BS_OWNERDRAW | WS_TABSTOP,37,48,11,10,
+					WS_EX_CLIENTEDGE
+	PUSHBUTTON      "Other...",5121,1,60,47,11
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,6,4,0
+ PRODUCTVERSION 2,6,4,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x3L
+#else
+ FILEFLAGS 0x2L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904b0"
+		BEGIN
+			VALUE "Comments", "2.6.4\0"
+			VALUE "CompanyName", " SIL International\0"
+			VALUE "FileDescription", "CARLA Studio Application\0"
+			VALUE "FileVersion", "2, 6, 4, 0\0"
+			VALUE "InternalName", "CARLAStudio\0"
+			VALUE "LegalCopyright", "Copyright © 1999-2001\0"
+			VALUE "LegalTrademarks", "\0"
+			VALUE "OriginalFilename", "CStudio.EXE\0"
+			VALUE "PrivateBuild", "\0"
+			VALUE "ProductName", "CarlaStudio Application\0"
+			VALUE "ProductVersion", "2, 6, 4, 0\0"
+			VALUE "SpecialBuild", "\0"
+		END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1200
+	END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_EditAdhocPair DLGINIT
+BEGIN
+	IDC_COMBOMorphTypes, 0x403, 7, 0
+0x7250, 0x6665, 0x7869, "\000"
+	IDC_COMBOMorphTypes, 0x403, 6, 0
+0x6e49, 0x6966, 0x0078,
+	IDC_COMBOMorphTypes, 0x403, 5, 0
+0x6f52, 0x746f, "\000"
+	IDC_COMBOMorphTypes, 0x403, 7, 0
+0x7553, 0x6666, 0x7869, "\000"
+	0
+END
+
+IDD_Environments DLGINIT
+BEGIN
+	IDC_MSFLEXGRID1, 0x37a, 274, 0
+0x0024, 0x0000, 0x0037, 0x0032, 0x0045, 0x0036, 0x0037, 0x0031, 0x0032,
+0x0030, 0x002d, 0x0035, 0x0039, 0x0035, 0x0039, 0x002d, 0x0031, 0x0031,
+0x0063, 0x0066, 0x002d, 0x0039, 0x0031, 0x0046, 0x0036, 0x002d, 0x0043,
+0x0032, 0x0038, 0x0036, 0x0033, 0x0043, 0x0033, 0x0038, 0x0035, 0x0045,
+0x0033, 0x0030, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c,
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x293d, 0x0000, 0x1177,
+0x0000, 0x6f42, 0x506f, 0x0005, 0x0000, 0x0080, 0x0000, 0x0005, 0x0000,
+0x0002, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0005,
+0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 0x000d, 0x8000,
+0x000e, 0x8000, 0x8080, 0x0080, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000,
+0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000,
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002,
+0x0003, 0x0001, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001,
+0x0004, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0190, 0x4244, 0x0001,
+0x4d0d, 0x2053, 0x6153, 0x736e, 0x5320, 0x7265, 0x6669, 0x746c, 0x0000,
+0x0000, 0x0000,
+	0
+END
+
+IDD_EditSetColor DLGINIT
+BEGIN
+	IDC_COMBOTestFontSize, 0x403, 2, 0
+0x0038,
+	IDC_COMBOTestFontSize, 0x403, 2, 0
+0x0039,
+	IDC_COMBOTestFontSize, 0x403, 3, 0
+0x3031, "\000"
+	IDC_COMBOTestFontSize, 0x403, 3, 0
+0x3231, "\000"
+	IDC_COMBOTestFontSize, 0x403, 3, 0
+0x3431, "\000"
+	IDC_COMBOTestFontSize, 0x403, 3, 0
+0x3631, "\000"
+	0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+	IDD_EditTest, DIALOG
+	BEGIN
+		LEFTMARGIN, 5
+		RIGHTMARGIN, 407
+		VERTGUIDE, 43
+		VERTGUIDE, 50
+		BOTTOMMARGIN, 215
+	END
+
+	IDD_OpenOrCreateProject, DIALOG
+	BEGIN
+		RIGHTMARGIN, 202
+		BOTTOMMARGIN, 102
+	END
+
+	IDD_WizFilesAnalysis, DIALOG
+	BEGIN
+		VERTGUIDE, 103
+	END
+
+	IDD_WizFilesTransfer, DIALOG
+	BEGIN
+		VERTGUIDE, 17
+	END
+
+	IDD_PageDictRootUnified, DIALOG
+	BEGIN
+		VERTGUIDE, 58
+		VERTGUIDE, 186
+		VERTGUIDE, 202
+	END
+
+	IDD_PageLangDisplayProperties, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		BOTTOMMARGIN, 183
+	END
+
+	IDD_EditOrthoChange, DIALOG
+	BEGIN
+		LEFTMARGIN, 5
+		RIGHTMARGIN, 287
+		VERTGUIDE, 48
+		VERTGUIDE, 56
+		TOPMARGIN, 5
+		BOTTOMMARGIN, 160
+	END
+
+	IDD_EditMCC, DIALOG
+	BEGIN
+		LEFTMARGIN, 6
+		RIGHTMARGIN, 280
+		VERTGUIDE, 56
+		TOPMARGIN, 5
+		BOTTOMMARGIN, 158
+	END
+
+	IDD_ProcessSequence, DIALOG
+	BEGIN
+		VERTGUIDE, 354
+		HORZGUIDE, 134
+	END
+
+	IDD_QuickParse, DIALOG
+	BEGIN
+		RIGHTMARGIN, 378
+		VERTGUIDE, 7
+		VERTGUIDE, 23
+		BOTTOMMARGIN, 228
+	END
+
+	IDD_EditClass, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 309
+		BOTTOMMARGIN, 145
+	END
+
+	IDD_EditAdhocPair, DIALOG
+	BEGIN
+		LEFTMARGIN, 6
+		RIGHTMARGIN, 309
+		BOTTOMMARGIN, 110
+	END
+
+	IDD_EditCompoundRoot, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 308
+		BOTTOMMARGIN, 110
+	END
+
+	IDD_EditAmpleProcess, DIALOG
+	BEGIN
+		LEFTMARGIN, 11
+		RIGHTMARGIN, 251
+		VERTGUIDE, 21
+		BOTTOMMARGIN, 242
+	END
+
+	IDD_EditIntergenProcess, DIALOG
+	BEGIN
+		RIGHTMARGIN, 255
+		BOTTOMMARGIN, 272
+	END
+
+	IDD_EditJoinCompProcess, DIALOG
+	BEGIN
+		BOTTOMMARGIN, 106
+	END
+
+	IDD_EditSentransDisambig, DIALOG
+	BEGIN
+		LEFTMARGIN, 6
+		RIGHTMARGIN, 296
+		VERTGUIDE, 51
+		VERTGUIDE, 56
+		BOTTOMMARGIN, 172
+	END
+
+	IDD_EditSentransTransfer, DIALOG
+	BEGIN
+		LEFTMARGIN, 6
+		RIGHTMARGIN, 295
+		VERTGUIDE, 52
+		VERTGUIDE, 60
+		VERTGUIDE, 194
+		TOPMARGIN, 5
+		BOTTOMMARGIN, 152
+	END
+
+	IDD_PageSrcTextProcessing, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 275
+		VERTGUIDE, 20
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 234
+	END
+
+	CG_IDD_PROGRESS, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 179
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 75
+	END
+
+	IDD_EditSentransProcess, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 231
+		VERTGUIDE, 27
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 208
+	END
+
+	IDD_EditStampFlag, DIALOG
+	BEGIN
+		LEFTMARGIN, 6
+		RIGHTMARGIN, 289
+		BOTTOMMARGIN, 120
+	END
+
+	IDD_EditStampLexChange, DIALOG
+	BEGIN
+		LEFTMARGIN, 4
+		VERTGUIDE, 46
+		VERTGUIDE, 50
+		VERTGUIDE, 283
+		TOPMARGIN, 8
+		BOTTOMMARGIN, 159
+	END
+
+	IDD_EditRegularSoundChange, DIALOG
+	BEGIN
+		LEFTMARGIN, 9
+		RIGHTMARGIN, 281
+		VERTGUIDE, 54
+		BOTTOMMARGIN, 189
+	END
+
+	IDD_EditStampProcess, DIALOG
+	BEGIN
+		VERTGUIDE, 21
+	END
+
+	IDD_LanguageCreation, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 203
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 107
+	END
+
+	IDD_Environments, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 273
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 157
+	END
+
+	IDD_PageInputDocPanels, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 272
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 179
+	END
+
+	IDD_EditSentransDirective, DIALOG
+	BEGIN
+		LEFTMARGIN, 4
+		RIGHTMARGIN, 290
+		VERTGUIDE, 48
+		BOTTOMMARGIN, 168
+	END
+
+	IDD_EditStampTransferRule, DIALOG
+	BEGIN
+		LEFTMARGIN, 2
+		RIGHTMARGIN, 297
+		VERTGUIDE, 49
+		VERTGUIDE, 58
+		VERTGUIDE, 142
+		BOTTOMMARGIN, 224
+	END
+
+	IDD_EditPhonruleRule, DIALOG
+	BEGIN
+		LEFTMARGIN, 8
+		RIGHTMARGIN, 282
+		VERTGUIDE, 46
+		VERTGUIDE, 58
+		VERTGUIDE, 174
+		TOPMARGIN, 6
+		BOTTOMMARGIN, 190
+	END
+
+	IDD_PageRedundantFieldNotice, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 290
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 147
+	END
+
+	IDD_CCProcess, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 284
+		VERTGUIDE, 25
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 210
+	END
+
+	IDD_PageAnaProcessing, DIALOG
+	BEGIN
+		LEFTMARGIN, 9
+		RIGHTMARGIN, 269
+		VERTGUIDE, 20
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 202
+	END
+
+	IDD_TIP, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 224
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 157
+	END
+
+	IDD_PageAffixes, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 203
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 147
+	END
+
+	IDD_PageCatPropogation, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 249
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 154
+	END
+
+	IDD_PageCatFinalTest, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 289
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 120
+	END
+
+	IDD_PageDictAffix, DIALOG
+	BEGIN
+		VERTGUIDE, 58
+		VERTGUIDE, 186
+		VERTGUIDE, 202
+	END
+
+	IDD_ChooseDictMethod, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 333
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 139
+	END
+
+	IDD_PageLocations, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 262
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 139
+	END
+
+	IDD_PageDisclaimer, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 272
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 104
+	END
+
+	IDD_EditAmpleDLLProcess, DIALOG
+	BEGIN
+		LEFTMARGIN, 11
+		RIGHTMARGIN, 383
+		VERTGUIDE, 27
+		VERTGUIDE, 147
+		BOTTOMMARGIN, 208
+	END
+
+	IDD_EditToneParseProcess, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 364
+		VERTGUIDE, 79
+		TOPMARGIN, 6
+		BOTTOMMARGIN, 106
+	END
+
+	IDD_EditToneGenProcess, DIALOG
+	BEGIN
+		RIGHTMARGIN, 370
+	END
+
+	IDD_EditComment, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 282
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 98
+	END
+
+	IDD_ModifyTestsFinish, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 282
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 128
+	END
+
+	IDD_EditPrintANAProcess, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 240
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 88
+	END
+
+	IDD_BatchProcess, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 284
+		VERTGUIDE, 25
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 219
+	END
+
+	IDD_ManualParseChoice, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 285
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 122
+	END
+
+	IDD_EditToneTracing, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 197
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 158
+	END
+
+	IDD_PageCatFinalModifyTest, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 289
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 120
+	END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	IDR_MAINFRAME           "CARLA Studio"
+	IDR_CStudioPTYPE        "SDI only\nUntitled Project\nCarlaStudio Project\nCarlaStudio Projects (*.csp)\n.csp\nCarlaStudioProject\nCStudioProject"
+	IDS_COLUMN1             "ONE"
+	IDS_COLUMN2             "TWO"
+	IDS_FilesWizCaption     "Wiz Files Caption (fix this)"
+	IDS_SetupWizCaption     "Project Settings"
+	IDR_CStudioLangTYPE     "SDI Only\nUnnamed Language\nCarlaStudio Language\nCarlaStudio Languages (*.csl)\n.csl\nCarlaStudioLanguageDoc\nCSLanguage"
+	IDR_CStudioAnaDocType   "\nSDI only\n\nANA Files (*.ana)\n.ana\nCarlaStudioANADoc\nANA Document"
+	IDR_CStudioSrcDocType   "\nSDI only\n\nSource Text Files (*.txt)\n.txt\nCarlaStudioSourceDoc\nSource-Text Document"
+	IDR_CLogWindowType      "SDI Only\nCarlaStudio Log\nCarlaStudio Log Window\nCarlaStudio Log Window)\n.log\nLogWindow\nLogWindow"
+	IDR_QuickParseDocType   "SDI Only\nQuickParse\nQuickParse\nNOFILE\n.???\nQuickParse\nQuickParse"
+	IDS_WizBuiltIn_ROOTS_ST "ROOTS_ST\n| This test checks that the two consecutive roots are allowed to be compounded based on their categories.\n| This test is built-in to Ample, and is displayed here so that you can change the ordering with respect to other tests, or disable it.\n|Inserted by CarlaStudio wizard.\n"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	IDS_NewFromCarlaWizCaption "does this get used?"
+	IDS_WizBuiltIn_MEC_FT   "MEC_FT\n| This test checks that all of the morpheme environment constraints of morphemes are satisfied.\n| This test is built-in to Ample, and is displayed here so that you can change the ordering with respect to other tests, or disable it.\n|Inserted by CarlaStudio wizard.\n"
+	IDS_WizBuiltIn_ADHOC_ST "ADHOC_ST \n| This test checks that the morpheme being posited wouldn't violate and adhoc pair constraint.\n| This test is built-in to Ample, and is displayed here so that you can change the ordering with respect to other tests, or disable it.\n|Inserted by CarlaStudio wizard.\n"
+	IDS_SelectFolderPrompt  "Select the desired folder"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	AFX_IDS_APP_TITLE       "Carla Studio"
+	AFX_IDS_IDLEMESSAGE     "Ready"
+	AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "CAP"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "SCRL"
+	ID_INDICATOR_OVR        "OVR"
+	ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_FILE_NEW             "Create a new document\nNew"
+	ID_FILE_OPEN            "Open an existing document\nOpen"
+	ID_FILE_CLOSE           "Close the active document\nClose"
+	ID_FILE_SAVE            "Save the document\nSave"
+	ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+	ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+	ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+	ID_FILE_PRINT           "Print the active document\nPrint"
+	ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_APP_ABOUT            "Displays program information, version number and copyright\nAbout"
+	ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+	ID_HELP_INDEX           "Opens Help\nHelp Topics"
+	ID_HELP_FINDER          "List Help topics\nHelp Topics"
+	ID_HELP_USING           "Display instructions about how to use help\nHelp"
+	ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+	ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_FILE_MRU_FILE1       "Open this document"
+	ID_FILE_MRU_FILE2       "Open this document"
+	ID_FILE_MRU_FILE3       "Open this document"
+	ID_FILE_MRU_FILE4       "Open this document"
+	ID_FILE_MRU_FILE5       "Open this document"
+	ID_FILE_MRU_FILE6       "Open this document"
+	ID_FILE_MRU_FILE7       "Open this document"
+	ID_FILE_MRU_FILE8       "Open this document"
+	ID_FILE_MRU_FILE9       "Open this document"
+	ID_FILE_MRU_FILE10      "Open this document"
+	ID_FILE_MRU_FILE11      "Open this document"
+	ID_FILE_MRU_FILE12      "Open this document"
+	ID_FILE_MRU_FILE13      "Open this document"
+	ID_FILE_MRU_FILE14      "Open this document"
+	ID_FILE_MRU_FILE15      "Open this document"
+	ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+	ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+	ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+	ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+	ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+	ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+	ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_EDIT_CLEAR           "Erase the selection\nErase"
+	ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+	ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+	ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+	ID_EDIT_FIND            "Find the specified text\nFind"
+	ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+	ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+	ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+	ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+	ID_EDIT_UNDO            "Undo the last action\nUndo"
+	ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+	ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	AFX_IDS_SCSIZE          "Change the window size"
+	AFX_IDS_SCMOVE          "Change the window position"
+	AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+	AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+	AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+	AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+	AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	AFX_IDS_SCRESTORE       "Restore the window to normal size"
+	AFX_IDS_SCTASKLIST      "Activate Task List"
+	AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDLangSetup             "Edit Language Properties"
+	ID_RunProcessors        "Execute processors on this file\nProcess File (Ctrl-\\)"
+	ID_CARLAMenu            "Organize settings to be similar to the CARLAMenu program"
+	ID_AmpleLinks           "Organize settings by their function in the CARLA process"
+	ID_EditInputDocProperties
+							"Control what CStudio does with this input document."
+	ID_FILE_SaveAll         "Save all open files.\nSave All"
+	ID_FILE_SAVEProject     "Save the project and its languages."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ProcessSeqProgressCaption "Processing Progress"
+	ID_FILE_NewLanguage     "Create a new CarlaStudio Language, either from scratch or from existing control files."
+	ID_FILE_NEW_PROJECT     "Create a new CarlaStudio Project..."
+	ID_NULL                 "Disabled.  Use the File Menu to create new documents."
+	ID_LangProperties       "Edit various properties of this language"
+	ID_LangAnalysisSeq      "Edit the sequence of processors used to analyze text"
+	ID_LangSynthesisSeq     "Edit the sequence of processors used to synthesize text"
+	ID_InputDocDisplay      "Edit the display properties."
+	ID_FILE_OPEN_Project    "Open an existing Carla Studio Project"
+	ID_FILE_OPEN_Document   "Open a text or (someday) ana document for processing."
+	ID_FILE_CLOSE_PROJECT   "Close Project"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_LangQuickParse       "Open a window in which you can parse a word or phrase\nOpen a QuickParse Window (Ctrl-Q)"
+	ID_BUTTON32827          "Open a Quick Parse window"
+	ID_LangInterlinearSeq   "Edit the sequence of processors used to interlinearize text"
+	ID_EDIT_Edit            "Show the selected item's dialog box"
+	ID_EDIT_Properties      "Edit the item's properties"
+	ID_OpenStream           "Launches an external application to view this file."
+	ID_QuickParse_ChangeLang "Switch to the next language in this project"
+	ID_QuickParseGo         "Parse the word\nParse the word or phrase"
+	ID_POPUP_DISABLE        "Disabled items are ignored during processing."
+	ID_Enable_Item          "If an item isn't enabled, it will be ignored during processing."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	CG_IDS_PROGRESS_CAPTION "Loading Files...."
+	IDS_NewFromScratchCaption "New Language"
+	IDS_WizCatProp_RSP_FT   "RtmostPfxCategoryCheck\n|RSP Cat propagation, inserted by CarlaStudio wizard\n|connect the tocat of the last morpheme (sfx or root) to the fromcat of the rightmost pfx or ifx\nIF   (       (   (current type is prefix)\n              OR (current type is infix)\n              )\n     AND (right   type is root)\n     )\nTHEN (current fromcategory is FINAL tocategory)\n"
+	IDS_WizCatProp_RSP_RT   "LeftmostPfxFinalCatCheck\n|RSP Cat propagation, inserted by CarlaStudio wizard\nIF   (INITIAL type is prefix)\nTHEN (INITIAL tocategory is member finalcategory)\n"
+	IDS_WizFinalCat_RSP_FT  "RootFinalCatClassCheck\n|RSP Check of final category\n|The first morpheme must have a tocategory found in the finalcategory class\n|Inserted by CarlaStudio wizard.\nIF  (INITIAL type is root)\nTHEN   (FINAL tocategory is member [finalcategory])\n"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WizCatProp_RSP_ST   "SuffixCategoryCheck\n|RSP Cat propagation, inserted by CarlaStudio wizard\n      left tocategory is current fromcategory\n"
+	IDS_Filter_Dictionary   "Dictionary (*.dic; *.db)|*.dic; *.db|All Files (*.*)|*.*||\n"
+	IDS_TTAddFile           "Choose a file to add"
+	IDS_Credits             "Design & Programming\r|John Hatton|PNG Branch||Andy Black|Mexico Branch||Documentation\r|David Matti|Indonesia Branch||John Hatton||Andy Black||Alpha Testing\r|Andy Black|Randy Regnier|Mexico Branch||Roland Fumey|Jan Gossner|Morris Johnson|PNG Branch||Early Beta Testing\r|Terry Cline|Cote d'Ivoire Branch||Paul Heineman|PNG Branch||David Matti|Indonesia Branch||Design Consultation\r|Andy Black|Randy Regnier||Ample DLL\r|Steve McConnel|Academic Computing|Andy Black|Mexico Branch||Distribution\r|Andy Black||Morale\r|Suzanne Hatton||Office Space\r|Emelefo Village||Thanks\r|SIL PNG Technical Studies Dept||Pacific Area Administration|||||||"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_UNUSEDWizCatProp_RPS_FT
+							"FirstSfxCategoryCheck\n|RPS Cat propagation, inserted by CarlaStudio wizard\n| Connect the tocat of the leftmost morpheme (prefix or root) to the fromcat of the leftmost suffix\nIF   (    (current type is suffix)\n      AND (left   type is root)\n     )\nTHEN (current fromcategory is INITIAL tocategory)\n"
+	IDS_WizFinalCat_RPS_FT  "RtmostMorphFinalCatClassCheck\n |RPS Check of final category, inserted by CarlaStudio wizard\n| The final suffix or the first morpheme's tocategory must be listed in the finalcategory class\n    (IF (FINAL type is suffix)\n    THEN (FINAL tocategory is member [finalcategory]))\nAND  (IF NOT(FINAL type is suffix)\n    THEN (INITIAL tocategory is member [finalcategory]))"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WizCatProp_Pfx_InsideOut_PT
+							"PfxCategoryCheck\n|The tocategory of each prefix must match the fromcategory of the morpheme to its left.\n|Inserted by CarlaStudio wizard.\nleft fromcategory is current tocategory\n"
+	IDS_WizCatProp_Sfx_InsideOut_ST
+							"SfxCategoryCheck\n|The fromcategory of each suffix must match the tocategory of the morpheme to its left.\n|Inserted by CarlaStudio wizard.\nleft tocategory is current fromcategory\n"
+	IDS_WizFinalCatClassField
+							"finalcategory |Used by the Ample test FT_FinalCategory.  When that test is enabled, words must end in a category listed here."
+	CG_IDS_TIPOFTHEDAY      "Displays a Tip of the Day."
+	CG_IDS_TIPOFTHEDAYMENU  "Ti&p of the Day..."
+	CG_IDS_DIDYOUKNOW       "Did you know..."
+	CG_IDS_FILE_ABSENT      "Tips file does not exist in the prescribed directory"
+	CG_IDP_FILE_CORRUPT     "Trouble reading the tips file"
+	CG_IDS_TIPOFTHEDAYHELP  "&Help"
+	IDS_WizOrderclass_A0_ST "SfxOrderclassCheck\n|Make sure that each suffix has a greater orderclass than the morpheme to its left, unless its orderclass is zero.\n|Inserted by CarlaStudio wizard.\nIF   (current orderclass ~= 0)\n\t\tTHEN (left orderclass < current orderclass)\n"
+	IDS_WizOrderclass_A0_FT "OrderclassZeroCheck\n|Where there was a morpheme with orderclass 0, make sure that the closest non-zero orderclass morpheme to its right is greater than the closest non-zero orderclass morpheme to its left.\n|Inserted by CarlaStudio wizard.\nIF   (    (current orderclass = 0)\n\t\t      AND (FOR_SOME_LEFT  (LEFT  orderclass ~= 0))\n\t\t      AND (FOR_SOME_RIGHT (RIGHT orderclass ~= 0) )\n\t\t     )\n\t\tTHEN (LEFT orderclass < RIGHT orderclass)\n"
+	IDS_WizCatProp_Ifx_InsideOut_ST
+							"InfxCategoryCheck\n|This is not enough.  When infixes are found in the suffix side, then this test should be identical to SfxCategoryCheck.\n|On the prefix side, the tocategory of each infix must match the fromcategory of the morpheme to its left.\n|On the suffix side, the tocategory of each infix must match the fromcategory of the morpheme to its right. \n|Inserted by CarlaStudio wizard.\nleft fromcategory is current tocategory\n"
+	IDS_WizBuiltIn_MCC_FT   "MCC_FT\n| This test checks that all of the morpheme cooccurrence constraints of morphemes are satisfied.\n| This test is built-in to Ample, and is displayed here so that you can change the ordering with respect to other tests, or disable it.\n|Inserted by CarlaStudio wizard.\n"
+	IDS_WizBuiltIn_SEC_ST   "SEC_ST\n| This test checks that the String Environment Constraints of morpheme being posited are satisified.\n| This test is built-in to Ample, and is displayed here so that you can change the ordering with respect to other tests, or disable it.\n|Inserted by CarlaStudio wizard.\n"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WizOrderclass_A0_PT "PfxOrderclassCheck\n|Make sure that each prefix has a higher orderclass than the morpheme to its left, unless its orderclass is zero\n|Inserted by CarlaStudio wizard.\nIF   (left orderclass ~= 0)\n\t\tTHEN (left orderclass < current orderclass)\n"
+	IDS_WizOrderclass_A0_IT "IfxOrderclassCheck\n|Make sure that each infix has a higher orderclass than the morpheme to its left, unless its orderclass is zero\n|Inserted by CarlaStudio wizard.\nIF   (left orderclass ~= 0)\n\t\tTHEN (left orderclass < current orderclass)\n"
+	IDB_ChooseFolder        "Choose Folder"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_FILE_NewDocument     "Create a blank document that you can type in."
+	ID_FILE_SAVEDOCUMENTAS  "Saves the document with a new name"
+	ID_POPUP_PROCESSPROPERTIES
+							"Edit the properties for the processor that produced this file."
+	ID_LANGUAGE_REMOVETHELANGUAGE
+							"Permanently remove this language from the project."
+	ID_LANGUAGE_SETUPTESTS  "Modify category propogation tests"
+	ID_btnTrace             "Toggle Trace"
+	ID_Trace                "Process this file with tracing turned on\nTrace File"
+	ID_RunTrace             "Process this file with Tracing\nTrace File (Ctrl-T)"
+	ID_QUICKPARSE_RefreshRequest
+							"Choose this to force QuickParse to preprocess your dictionaries the next time you parse something.  Normally unnecessary."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDC_BtnRemove           "Remove the selected file from the list"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MSGCancelMeansDefault
+							"If you want to reset this the default value, click ""Cancel""  in the following dialog."
+	IDS_WizCatProp_RPS_RT   "RightmostPfxCatCheck|RPS Cat propagation, inserted by CarlaStudio Wizard.  The root category must match the fromcategory of the  nearest prefix (if any):\nIF   (   (left type is prefix)\n     OR (left type is infix)\n    )\nTHEN (current tocategory is left fromcategory)\n"
+	IDS_ModifyTestsAffixPage "Affixes"
+	IDS_ModifyTestsCatPropPage "Category Propogation"
+	IDS_WizCatProp_RS_ST    "SuffixCategoryCheck\n|RS Cat propagation, inserted by CarlaStudio wizard\n      left tocategory is current fromcategory\n"
+	IDS_WizFinalCat_RS_FT   "FinalCatClassCheck\n|RS Check of final category\n|The last morpheme must have a tocategory found in the finalcategory class\n|Inserted by CarlaStudio wizard.\nFINAL tocategory is member [finalcategory]\n"
+	IDS_ModifyTestsFinalCatTests "Final Category Tests"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WizCatProp_RPS_ST   "SfxCategoryCheck\n | RPS Cat propogation, inserted by CarlaStudio wizard\n| (1) the fromcategory of the first suffix after a root  must match the tocategory of the word's first morpheme (which could be a prefix or the root).\n|  (2) the fromcategory of the other suffixes matches the  tocategory of the preceding suffix.\n        (    (left type is root)\n         AND (current fromcategory is INITIAL tocategory)\n        )\n     OR (    (left type is suffix)\n         AND (left tocategory is current fromcategory)\n        )\n"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	IDR_MAINFRAME           "Fr CARLA Studio"
+	IDR_CStudioPTYPE        "SDI only\nUntitled Project\nCarlaStudio Project\nCarlaStudio Projects (*.csp)\n.csp\nCarlaStudioProject\nCStudioProject"
+	IDS_COLUMN1             "ONE"
+	IDS_COLUMN2             "TWO"
+	IDS_FilesWizCaption     "Wiz Files Caption (fix this)"
+	IDS_SetupWizCaption     "Project Settings"
+	IDR_CStudioLangTYPE     "SDI Only\nUnnamed Language\nCarlaStudio Language\nCarlaStudio Languages (*.csl)\n.csl\nCarlaStudioLanguageDoc\nCSLanguage"
+	IDR_CStudioAnaDocType   "\nSDI only\n\nANA Files (*.ana)\n.ana\nCarlaStudioANADoc\nANA Document"
+	IDR_CStudioSrcDocType   "\nSDI only\n\nSource Text Files (*.txt)\n.txt\nCarlaStudioSourceDoc\nSource-Text Document"
+	IDR_CLogWindowType      "SDI Only\nCarlaStudio Log\nCarlaStudio Log Window\nCarlaStudio Log Window)\n.log\nLogWindow\nLogWindow"
+	IDR_QuickParseDocType   "SDI Only\nQuickParse\nQuickParse\nNOFILE\n.???\nQuickParse\nQuickParse"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	IDS_NewFromCarlaWizCaption "does this get used?"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	AFX_IDS_APP_TITLE       "Carla Studio"
+	AFX_IDS_IDLEMESSAGE     "Ready"
+	AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "CAP"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "SCRL"
+	ID_INDICATOR_OVR        "OVR"
+	ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_FILE_NEW             "Create a new document\nNew"
+	ID_FILE_OPEN            "Open an existing document\nOpen"
+	ID_FILE_CLOSE           "Close the active document\nClose"
+	ID_FILE_SAVE            "Save the project and languages\nSave"
+	ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+	ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+	ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+	ID_FILE_PRINT           "Print the active document\nPrint"
+	ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_APP_ABOUT            "Displays program information, version number and copyright\nAbout"
+	ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+	ID_HELP_INDEX           "Opens Help\nHelp Topics"
+	ID_HELP_FINDER          "List Help topics\nHelp Topics"
+	ID_HELP_USING           "Display instructions about how to use help\nHelp"
+	ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+	ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_FILE_MRU_FILE1       "Open this document"
+	ID_FILE_MRU_FILE2       "Open this document"
+	ID_FILE_MRU_FILE3       "Open this document"
+	ID_FILE_MRU_FILE4       "Open this document"
+	ID_FILE_MRU_FILE5       "Open this document"
+	ID_FILE_MRU_FILE6       "Open this document"
+	ID_FILE_MRU_FILE7       "Open this document"
+	ID_FILE_MRU_FILE8       "Open this document"
+	ID_FILE_MRU_FILE9       "Open this document"
+	ID_FILE_MRU_FILE10      "Open this document"
+	ID_FILE_MRU_FILE11      "Open this document"
+	ID_FILE_MRU_FILE12      "Open this document"
+	ID_FILE_MRU_FILE13      "Open this document"
+	ID_FILE_MRU_FILE14      "Open this document"
+	ID_FILE_MRU_FILE15      "Open this document"
+	ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+	ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+	ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+	ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+	ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+	ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+	ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_EDIT_CLEAR           "Erase the selection\nErase"
+	ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+	ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+	ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+	ID_EDIT_FIND            "Find the specified text\nFind"
+	ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+	ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+	ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+	ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+	ID_EDIT_UNDO            "Undo the last action\nUndo"
+	ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+	ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	AFX_IDS_SCSIZE          "Change the window size"
+	AFX_IDS_SCMOVE          "Change the window position"
+	AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+	AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+	AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+	AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+	AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	AFX_IDS_SCRESTORE       "Restore the window to normal size"
+	AFX_IDS_SCTASKLIST      "Activate Task List"
+	AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDLangSetup             "Edit Language Properties"
+	ID_RunProcessors        "Execute processors on this file\nExecute"
+	ID_CARLAMenu            "Organize settings to be similar to the CARLAMenu program"
+	ID_AmpleLinks           "Organize settings by their function in the CARLA process"
+	ID_EditInputDocProperties
+							"Control what CStudio does with this input document."
+	ID_FILE_SaveAll         "Save the project and language documents."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ProcessSeqProgressCaption "Processing Progress"
+	ID_FILE_NewLanguage     "Create a new CarlaStudio Language, either from scratch or from existing control files."
+	ID_FILE_NEW_PROJECT     "Create a new CarlaStudio Project..."
+	ID_NULL                 "Disabled.  Use the File Menu to create new documents."
+	ID_LangProperties       "Edit various properties of this language"
+	ID_LangAnalysisSeq      "Edit the sequence of processors used to analyze text"
+	ID_LangSynthesisSeq     "Edit the sequence of processors used to synthesize text"
+	ID_InputDocDisplay      "Edit the display properties."
+	ID_FILE_OPEN_Project    "Open an existing Carla Studio Project"
+	ID_FILE_OPEN_Document   "Open a text or (someday) ana document for processing."
+	ID_FILE_CLOSE_PROJECT   "Close Project"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	ID_LangQuickParse       "Open a window in which you can parse a word or phrase\nQuick Parse"
+	ID_BUTTON32827          "Open a Quick Parse window"
+	ID_LangInterlinearSeq   "Edit the sequence of processors used to interlinearize text"
+	ID_EDIT_Edit            "Show the selected item's dialog box"
+	ID_EDIT_Properties      "Edit the item's properties"
+	ID_OpenStream           "Launches an external application to view this file."
+	ID_QuickParse_ChangeLang "Switch to the next language in this project"
+	ID_QuickParseGo         "Parse the word"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	CG_IDS_PROGRESS_CAPTION "Loading Files...."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	CG_IDS_TIPOFTHEDAY      "F Displays a Tip of the Day."
+	CG_IDS_TIPOFTHEDAYMENU  "Ti&p of the Day..."
+	CG_IDS_DIDYOUKNOW       "Did you know..."
+	CG_IDS_FILE_ABSENT      "Tips file does not exist in the prescribed directory"
+	CG_IDP_FILE_CORRUPT     "Trouble reading the tips file"
+	CG_IDS_TIPOFTHEDAYHELP  "&Help"
+END
+
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\CStudio.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

@@ -1,0 +1,2284 @@
+# Microsoft Developer Studio Generated Dependency File, included by CStudio.mak
+
+.\source\AmpleDLLProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\AmpleDLLProcess.h"\
+	".\source\AmpleDLLWrapper.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgEditAmpleDLLProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\AmpleDLLWrapper.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\AmpleDLLWrapper.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\AmpleProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\AnalysisProcesses.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgEditAmpleProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\AmpleResult.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\AmpleResult.h"\
+	".\source\CStudioAssert.h"\
+	".\source\ParseStream.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\ANACount.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\ANACount.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\ParseStream.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\BatchProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\BatchProcess.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgBatchProcess.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\CarlaLanguage.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	"..\CarlaStudio\common code\PathCtrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	"..\CarlaStudio\common code\SimpleProgressBar.h"\
+	".\source\AmpleDLLWrapper.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\colorbtn.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\dlgedittestcolor.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ListComment.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\PageDictMethod.h"\
+	".\source\PageLocations.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\PhonruleModel.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SafeStream.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\SheetLangProperties.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEdit.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\TransferModelSet.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromFiles.h"\
+	".\source\wizProjectPage.h"\
+
+
+.\source\CarlaStudioApp.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\CreditStatic.h"\
+	"..\CarlaStudio\common code\GuruSplash.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	"..\carlastudio\cstudio\cs utility dll\focuser.h"\
+	".\cstudiocom.h"\
+	".\cstudiocom_i.c"\
+	".\source\AnalysisProcesses.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CStudioMainFrm.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWProcess.h"\
+	".\source\CWTabBar.h"\
+	".\source\CWTopicTreeView.h"\
+	".\source\DlgTipDay.h"\
+	".\source\Hook.h"\
+	".\source\InputDoc.h"\
+	".\source\inputDocTabBar.h"\
+	".\source\inputDocView.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\LogWindow.h"\
+	".\source\nullwindow.h"\
+	".\source\ParseCSImpl.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProjectDoc.h"\
+	".\source\QuickParseDoc.h"\
+	".\source\QuickParseView.h"\
+	".\source\SFMFile.h"\
+	".\source\Splitter.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeChild.h"\
+	".\source\TabbedTreeDoc.h"\
+
+
+.\source\CCProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CCProcess.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgCCProcess.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\Class.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\itemeditdialogs.h"\
+	".\source\ParseStream.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEdit.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\codetable.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWTopic.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\SafeStream.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\colorbtn.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\colorbtn.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\Conversion.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\AmpleDLLProcess.h"\
+	".\source\AmpleDLLWrapper.h"\
+	".\source\AnalysisProcesses.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\PageDictMethod.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\ProcessSequence.h"\
+	".\source\SentransModel.h"\
+	".\source\SentransProcess.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StampProcess.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromFiles.h"\
+	".\source\wizProjectPage.h"\
+
+
+"..\CarlaStudio\common code\CreditStatic.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\CreditStatic.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\CStudio.rc : \
+	".\Connector.rgs"\
+	".\CStudio.rgs"\
+	".\Hook.rgs"\
+	".\ParseCS.rgs"\
+	".\res\addFile.bmp"\
+	".\res\bookmark.ico"\
+	".\res\bookmarkanddisabled.ico"\
+	".\res\choosefo.bmp"\
+	".\res\commentl.ico"\
+	".\res\construc.ico"\
+	".\res\Construction.bmp"\
+	".\res\cslang.ico"\
+	".\res\CStudio.ico"\
+	".\res\CStudio.rc2"\
+	".\res\CStudioDoc.ico"\
+	".\res\delete.bmp"\
+	".\res\disabEnv.ico"\
+	".\res\editable.ico"\
+	".\res\enablede.ico"\
+	".\res\enablEnv.ico"\
+	".\res\environm.bmp"\
+	".\res\error.bmp"\
+	".\res\genericl.ico"\
+	".\res\ico00001.ico"\
+	".\res\ico00002.ico"\
+	".\res\ico00003.ico"\
+	".\res\icon1.ico"\
+	".\res\idr_cstu.ico"\
+	".\res\idr_quic.ico"\
+	".\res\idr_src.ico"\
+	".\res\litebulb.bmp"\
+	".\res\MorphEnviron.ico"\
+	".\res\senRulesOff.ico"\
+	".\res\senRulesOn.ico"\
+	".\res\sentransBegin.ico"\
+	".\res\sentransEnd.ico"\
+	".\res\sentransLimit.ico"\
+	".\res\sfmarker.ico"\
+	".\res\SplashScreen.bmp"\
+	".\res\stampflag.ico"\
+	".\res\stringEnv.ico"\
+	".\res\testdata.ico"\
+	".\res\Toolbar.bmp"\
+	".\res\xSymbol.ico"\
+
+
+.\source\cstudioAssert.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\CStudioMainFrm.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CStudioMainFrm.h"\
+	".\source\remoteHandlers.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\CWAnalysisModel.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\Monad.h"\
+	".\source\PageAffixes.h"\
+	".\source\PageCategoryProp.h"\
+	".\source\pagecatfinalmodifytests.h"\
+	".\source\PageFinalCatTest.h"\
+	".\source\ParseStream.h"\
+	".\source\SafeStream.h"\
+	".\source\SFMFile.h"\
+	".\source\SheetModifyTests.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\CWAtomicTypes.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\FormButton.h"\
+	".\source\ParseStream.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\CWCarlaMenu.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWTopic.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\TransferModelSet.h"\
+
+
+.\source\CWFormView.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWFormView.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWTopic.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+
+
+.\source\CWFunctionalInterface.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWTopic.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\CWHeadingView.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWHeadingView.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\CWInterface.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWTopic.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\TransferModelSet.h"\
+
+
+.\source\CWList.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWTopic.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\itemeditdialogs.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\ParseStream.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEdit.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\CWListCtrl.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	"..\CarlaStudio\common code\InPlaceEdit.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWListCtrl.h"\
+	".\source\CWListView.h"\
+	".\source\CWTopicView.h"\
+	".\source\DlgManualParseChoice.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\QuickParseDoc.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+
+
+.\source\CWListView.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWListCtrl.h"\
+	".\source\CWListView.h"\
+	".\source\CWModel.h"\
+	".\source\CWTopic.h"\
+	".\source\CWTopicView.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\CWModel.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\SafeStream.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\cwprocess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgProgress.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\CWTabBar.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWFormView.h"\
+	".\source\CWHeadingView.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWListCtrl.h"\
+	".\source\CWListView.h"\
+	".\source\CWTabBar.h"\
+	".\source\CWTopic.h"\
+	".\source\CWTopicTreeView.h"\
+	".\source\CWTopicView.h"\
+	".\source\DlgFind.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\Splitter.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+
+
+.\source\CWTopic.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWFormView.h"\
+	".\source\CWTopic.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\cwtopictreeview.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWTabBar.h"\
+	".\source\CWTopic.h"\
+	".\source\CWTopicTreeView.h"\
+	".\source\Splitter.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeChild.h"\
+	".\source\TabbedTreeDoc.h"\
+
+
+.\source\CWTopicView.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWTopicView.h"\
+	".\source\StdAfx.h"\
+
+
+"..\CarlaStudio\common code\DirDialog.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\DirDialog.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgBatchProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgBatchProcess.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgCCProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgCCProcess.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgChooseProcessor.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgChooseProcessor.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditAmpleDLLProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditAmpleDLLProcess.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditAmpleProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditAmpleProcess.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditIntergenProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditIntergenProcess.h"\
+	".\source\IntergenMarkersCtrl.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditPrintANA.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditPrintANA.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditRegSoundChange.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditRegSoundChange.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgEditSentransDisambig.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditSentransDisambig.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\SDFEdit.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgEditSentransProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditSentransProcess.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditSentransTransfer.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditSentransTransfer.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgEditStampFlag.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditStampFlag.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditStampLexChange.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditStampLexChange.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgEditStampProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditStampProcess.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditStampTransfer.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditStampTransfer.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgEditTestColor.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\colorbtn.h"\
+	".\source\CStudioAssert.h"\
+	".\source\dlgedittestcolor.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEdit.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgEditToneGenProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\pc-parse\tonepglib\tonepars.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditToneGenProcess.h"\
+	".\source\dlgedittonetracing.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditToneParseProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\pc-parse\tonepglib\tonepars.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEditToneParseProcess.h"\
+	".\source\dlgedittonetracing.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEditToneTracing.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\dlgedittonetracing.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEnvConstrainedRule.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\EnvironmentListCtrl.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgEnvironments.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEnvironments.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgFind.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgFind.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgManualParseChoice.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	".\source\AmpleResult.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWListCtrl.h"\
+	".\source\DlgManualParseChoice.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgNewLanguage.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgNewLanguage.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgPhonruleRule.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\DlgPhonruleRule.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgProcessSequence.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgChooseProcessor.h"\
+	".\source\DlgProcessSequence.h"\
+	".\source\ProcessSequence.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\dlgprogress.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgProgress.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\dlgprojectopenorcreate.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgProjectOpenOrCreate.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\DlgSentransDirective.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgSentransDirective.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\DlgTipDay.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgTipDay.h"\
+	".\source\StdAfx.h"\
+
+
+"..\CarlaStudio\common code\EditListCtrl.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	"..\CarlaStudio\common code\InPlaceEdit.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\EnvironConstrainedRuleLists.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\itemeditdialogs.h"\
+	".\source\ParseStream.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEdit.h"\
+	".\source\TestEditModel.h"\
+
+
+.\source\EnvironmentListCtrl.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\EnvironmentListCtrl.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+"..\CarlaStudio\common code\FileListCtrl.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+"..\CarlaStudio\common code\FlatButton.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\FormButton.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\FormButton.h"\
+	".\source\StdAfx.h"\
+
+
+"..\CarlaStudio\common code\GuruHeaderCtrl.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+"..\CarlaStudio\common code\GuruSplash.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\GuruSplash.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\Hook.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	"..\carlastudio\cstudio\cs utility dll\cleaner.h"\
+	"..\carlastudio\cstudio\csautomation\csautomation.tlb"\
+	".\cstudiocom.h"\
+	".\source\AnalysisProcesses.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\Hook.h"\
+	".\source\InputDoc.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+"..\CarlaStudio\common code\InPlaceEdit.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\InPlaceEdit.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\InputDoc.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\InputDoc.h"\
+	".\source\inputDocTabBar.h"\
+	".\source\inputDocView.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\PrefsInputDoc.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProcessStatus.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\inputDocTabBar.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\InputDoc.h"\
+	".\source\inputDocTabBar.h"\
+	".\source\inputDocView.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\inputDocView.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgFind.h"\
+	".\source\InputDoc.h"\
+	".\source\inputDocTabBar.h"\
+	".\source\inputDocView.h"\
+	".\source\PrefsInputDoc.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SafeStream.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\IntergenMarkersCtrl.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\AnalysisProcesses.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\IntergenMarkersCtrl.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\intergenProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	"..\carlastudio\cstudio\cs utility dll\cleaner.h"\
+	".\source\AnalysisProcesses.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgEditIntergenProcess.h"\
+	".\source\IntergenMarkersCtrl.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\ParseStream.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\itemeditdialogs.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\itemeditdialogs.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEdit.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\LangModelsDoc.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\colorbtn.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWTabBar.h"\
+	".\source\CWTopic.h"\
+	".\source\CWTopicTreeView.h"\
+	".\source\dlgedittestcolor.h"\
+	".\source\DlgEnvironments.h"\
+	".\source\DlgNewLanguage.h"\
+	".\source\DlgProgress.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PageAffixes.h"\
+	".\source\PageCategoryProp.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\PageDictMethod.h"\
+	".\source\PageDisclaimer.h"\
+	".\source\PageFinalCatTest.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\Splitter.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeChild.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEdit.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromFiles.h"\
+	".\source\WizNewFromScratch.h"\
+	".\source\wizProjectPage.h"\
+
+
+.\source\ListComment.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\ListComment.h"\
+	".\source\LogWindow.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\ListTestData.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\logwindow.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\LogWindow.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\Monad.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\nullwindow.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\nullwindow.h"\
+	".\source\ProjectDoc.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PageAffixes.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageAffixes.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PageAnaProcessing.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PageAnaProcessing.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\PageCategoryProp.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageAffixes.h"\
+	".\source\PageCategoryProp.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\pagecatfinalmodifytests.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\pagecatfinalmodifytests.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PageDictAffixes.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+
+
+.\source\PageDictMethod.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\PageDictMethod.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+
+
+.\source\PageDisclaimer.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageDisclaimer.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PageFinalCatTest.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageFinalCatTest.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PageInputDocPanels.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageInputDocPanels.h"\
+	".\source\ProcessOutput.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PageLocations.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathCtrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageLocations.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PageRootUnifiedDict.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageDictMethod.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+
+
+.\source\PageSrcTextProcessing.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PageSrcTextProcessing.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\ParseCSImpl.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\cstudiocom.h"\
+	".\source\AmpleResult.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseCSImpl.h"\
+	".\source\PhonruleModel.h"\
+	".\source\PhraseParser.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+"..\CarlaStudio\common code\PathCtrl.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\DirDialog.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	"..\CarlaStudio\common code\PathCtrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	"..\CarlaStudio\common code\StaticFilespec.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PhonruleModel.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\DlgPhonruleRule.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\SafeStream.h"\
+	".\source\SDialog.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\PhraseParser.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\AmpleDLLProcess.h"\
+	".\source\AmpleDLLWrapper.h"\
+	".\source\AmpleResult.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\PhraseParser.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProcessStatus.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\PrefsInputDoc.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\PageInputDocPanels.h"\
+	".\source\PrefsInputDoc.h"\
+	".\source\ProcessOutput.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\PrintANA.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgEditPrintANA.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\ParseStream.h"\
+	".\source\PrintANA.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\processingPrefs.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PageAnaProcessing.h"\
+	".\source\PageSrcTextProcessing.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\ProcessSequence.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\AmpleDLLProcess.h"\
+	".\source\AmpleDLLWrapper.h"\
+	".\source\ANACount.h"\
+	".\source\AnalysisProcesses.h"\
+	".\source\BatchProcess.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CCProcess.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgProcessSequence.h"\
+	".\source\DlgProgress.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\PrintANA.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProcessStatus.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\SentransProcess.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StampProcess.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\ToneGen.h"\
+	".\source\ToneParse.h"\
+
+
+.\source\ProjectDoc.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	"..\CarlaStudio\common code\SimpleProgressBar.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\DlgProjectOpenOrCreate.h"\
+	".\source\InputDoc.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\PrefsInputDoc.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProjectDoc.h"\
+	".\source\QuickParseDoc.h"\
+	".\source\SafeStream.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\projectImportCode.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\ProjectDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\WizCMenuPage.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromCarla.h"\
+	".\source\wizProjectPage.h"\
+
+
+.\source\QuickParseDoc.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\ProjectDoc.h"\
+	".\source\QuickParseDoc.h"\
+	".\source\QuickParseView.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\QuickParseView.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\EditListCtrl.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\GuruHeaderctrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\AmpleDLLProcess.h"\
+	".\source\AmpleDLLWrapper.h"\
+	".\source\AmpleResult.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWListCtrl.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgManualParseChoice.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\PhraseParser.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProcessStatus.h"\
+	".\source\ProjectDoc.h"\
+	".\source\QuickParseDoc.h"\
+	".\source\QuickParseView.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\remoteHandlers.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	"..\carlastudio\cstudio\cs utility dll\cleaner.h"\
+	"..\carlastudio\cstudio\csremote\csremoteregistry.h"\
+	".\source\AnalysisProcesses.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\InputDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProjectDoc.h"\
+	".\source\remoteHandlers.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\RemoveLanguage.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\InputDoc.h"\
+	".\source\LangModelsDoc.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessSequence.h"\
+	".\source\ProjectDoc.h"\
+	".\source\QuickParseDoc.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeDoc.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\TransferModelSet.h"\
+
+
+.\source\SafeStream.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\SafeStream.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\SDFEdit.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\SDFEdit.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\SDialog.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\carlastudio\cstudio\cs utility dll\focuser.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\SDialog.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\SEdit.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\SEdit.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\SentransModel.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\DlgEditSentransDisambig.h"\
+	".\source\DlgEditSentransTransfer.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\DlgSentransDirective.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\SafeStream.h"\
+	".\source\SDFEdit.h"\
+	".\source\SDialog.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\SentransProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgEditSentransProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SentransModel.h"\
+	".\source\SentransProcess.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\SheetLangProperties.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	"..\CarlaStudio\common code\PathCtrl.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\PageLocations.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\PhonruleModel.h"\
+	".\source\SentransModel.h"\
+	".\source\SheetLangProperties.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizLangProps.h"\
+
+
+.\source\SheetModifyTests.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageAffixes.h"\
+	".\source\PageCategoryProp.h"\
+	".\source\pagecatfinalmodifytests.h"\
+	".\source\SheetModifyTests.h"\
+	".\source\StdAfx.h"\
+
+
+"..\CarlaStudio\common code\SimpleProgressBar.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\SimpleProgressBar.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\Splitter.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\Splitter.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\StampModel.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\DlgEditRegSoundChange.h"\
+	".\source\DlgEditStampFlag.h"\
+	".\source\DlgEditStampLexChange.h"\
+	".\source\DlgEditStampTransfer.h"\
+	".\source\DlgEnvConstrainedRule.h"\
+	".\source\ListComment.h"\
+	".\source\ListTestData.h"\
+	".\source\LogWindow.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\SafeStream.h"\
+	".\source\SDialog.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\StampProcess.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgEditStampProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StampProcess.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+"..\CarlaStudio\common code\StaticFilespec.cpp" : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\StaticFilespec.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\StdAfx.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+
+
+.\source\TabbedTreeChild.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWTabBar.h"\
+	".\source\CWTopicTreeView.h"\
+	".\source\Splitter.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeChild.h"\
+
+
+.\source\TabbedTreeDoc.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWInterface.h"\
+	".\source\CWTabBar.h"\
+	".\source\CWTopicTreeView.h"\
+	".\source\ProjectDoc.h"\
+	".\source\Splitter.h"\
+	".\source\StdAfx.h"\
+	".\source\TabbedTreeChild.h"\
+	".\source\TabbedTreeDoc.h"\
+
+
+.\source\TestEdit.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEdit.h"\
+	".\source\TestEditModel.h"\
+
+
+.\source\TestEditModel.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+
+
+.\source\TextDisplayInfo.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+	".\source\TextDisplayInfo.h"\
+
+
+.\source\ToneGen.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgEditToneGenProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\ToneGen.h"\
+
+
+.\source\ToneParse.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\DlgEditToneParseProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\ParseStream.h"\
+	".\source\PhonruleModel.h"\
+	".\source\processingPrefs.h"\
+	".\source\ProcessOutput.h"\
+	".\source\ProcessStatus.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\ToneParse.h"\
+
+
+.\source\TransferModelSet.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	"..\CarlaStudio\common code\SimpleProgressBar.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\SentransModel.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
+	".\source\TransferModelSet.h"\
+
+
+.\source\WizBaseClasses.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\PageDictMethod.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromFiles.h"\
+	".\source\wizProjectPage.h"\
+
+
+.\source\WizCMenuPage.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\ProjectDoc.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\WizCMenuPage.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromCarla.h"\
+	".\source\wizProjectPage.h"\
+
+
+.\source\wizLangProps.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizLangProps.h"\
+
+
+.\source\WizNewFromCarla.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\ProjectDoc.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\WizCMenuPage.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromCarla.h"\
+	".\source\wizProjectPage.h"\
+
+
+.\source\WizNewFromFiles.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\PageDictMethod.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromFiles.h"\
+	".\source\wizProjectPage.h"\
+
+
+.\source\WizNewFromScratch.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\FileListCtrl.h"\
+	"..\CarlaStudio\common code\flatbutton.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\PageAffixes.h"\
+	".\source\PageCategoryProp.h"\
+	".\source\PageDictAffixes.h"\
+	".\source\PageDictMethod.h"\
+	".\source\PageDisclaimer.h"\
+	".\source\PageFinalCatTest.h"\
+	".\source\PageRootUnifiedDict.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizLangProps.h"\
+	".\source\WizNewFromScratch.h"\
+
+
+.\source\wizProjectPage.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CStudioAssert.h"\
+	".\source\ProjectDoc.h"\
+	".\source\StdAfx.h"\
+	".\source\WizBaseClasses.h"\
+	".\source\wizProjectPage.h"\
+
+
+.\source\processoutput.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\CarlaStudio\common code\filelist.h"\
+	"..\CarlaStudio\common code\PathDescriptor.h"\
+	".\source\CarlaLanguage.h"\
+	".\source\CarlaStudioApp.h"\
+	".\source\CodeTable.h"\
+	".\source\CStudioAssert.h"\
+	".\source\CWAmpleModels.h"\
+	".\source\CWAtomicTypes.h"\
+	".\source\CWList.h"\
+	".\source\CWModel.h"\
+	".\source\CWProcess.h"\
+	".\source\LogWindow.h"\
+	".\source\ModelFilesSet.h"\
+	".\source\Monad.h"\
+	".\source\PhonruleModel.h"\
+	".\source\ProcessOutput.h"\
+	".\source\SentransModel.h"\
+	".\source\SFMFile.h"\
+	".\source\StampModel.h"\
+	".\source\StdAfx.h"\
+	".\source\TestEditModel.h"\
+	".\source\TextDisplayInfo.h"\
