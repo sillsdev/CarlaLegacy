@@ -11,7 +11,7 @@
 		<exItem label="4.">The ball might have been hit by the boy.</exItem>
 	</EnglishExample>
 	<form section="ip">
-		<prompt>Key your examples here:</prompt>
+		<prompt>Key examples of passive sentences (if any) in your language here:</prompt>
 		<textBox id="IPPassiveExample" dataItem="passiveExample" cols="50"/>
 		<radioGroup>
 			<groupName dataItem="passive" default="yes">RIPPassive</groupName>
@@ -29,17 +29,19 @@
 					<radio id="IPPassiveAgentCatPP" dataValue="pp">PP</radio>
 					<radio id="IPPassiveAgentCatDP" dataValue="dp">DP</radio>
 				</radioGroup>
-				</radioGroup>
-				<radioGroup id="IPPassiveAuxTable" show="swPassiveYes">
-					<groupName dataItem="passiveAux" default="no">RIPPassiveAux</groupName>
-					<prompt>Is a particular auxiliary form required with passives?</prompt>
-					<radio id="IPPassiveAuxNo" dataValue="no">No</radio>
-					<radio id="IPPassiveAuxYes" dataValue="yes">Yes</radio>
+			</radioGroup>
+			<radioGroup id="IPPassiveAuxTable" show="swPassiveYes">
+				<groupName dataItem="passiveAux" default="no">RIPPassiveAux</groupName>
+				<prompt>Is a particular auxiliary form required with passives?</prompt>
+				<radio id="IPPassiveAuxNo" dataValue="no">No</radio>
+				<radio id="IPPassiveAuxYes" dataValue="yes">Yes</radio>
 			</radioGroup>
 		</radioGroup>
 		<instruction id="IPPassiveInstruction" show="swPassiveYes">Mark inherently passive verbs and any passive affixes with the feature <feature>passive</feature> in the lexicon.  <span id="IPPassiveAgentPPSpan" show="swPassiveAgentPP">Also, mark the<span id="IPPrepSpan" show="swPPPosPrep"> preposition</span>
-			<span id="PPPostSpan" show="swPPPosPost"> postposition</span>
-			<span id="PPBothSpan" show="swPPPosBoth"> preposition or postposition </span>that is included in the Agent phrase with the feature <feature>passive</feature>.</span>  <span id="IPPassiveAuxSpan" show="swIPPassiveAuxYes">Mark the particular auxiliary that goes with passive sentences with the feature <feature>passive</feature> as well.</span></instruction>
+				<span id="PPPostSpan" show="swPPPosPost"> postposition</span>
+				<span id="PPBothSpan" show="swPPPosBoth"> preposition or postposition </span>that is included in the Agent phrase with the feature <feature>passive</feature>.</span>
+			<span id="IPPassiveAuxSpan" show="swIPPassiveAuxYes">Mark the particular auxiliary that goes with passive sentences with the feature <feature>passive</feature> as well.</span>
+		</instruction>
 		<buttons>
 			<button id="IPPassiveBack" value="Back" goto="IPContents.htm"/>
 			<button id="IPPassiveNext" value="Next" goto="IPContents.htm"/>
@@ -50,18 +52,22 @@
 	</showWhen>
 	<showWhen id="swPassiveAgentYes">
 		<whenRadio button="IPPassiveAgentYes"/>
-<and/>     <whenRadio button="IPPassiveYes"/>
-   </showWhen>
-<showWhen id="swPassiveAgentPP">
-	<whenRadio button="IPPassiveAgentCatPP"></whenRadio>
-<and/>         <whenRadio button="IPPassiveAgentYes"/>
-<and/>     <whenRadio button="IPPassiveYes"/>
-</showWhen>
-<showWhen id="swIPPassiveAuxYes">
-	<whenRadio button="IPPassiveAuxYes"></whenRadio>
-<and/>     <whenRadio button="IPPassiveYes"/>
-</showWhen>
-  <showWhen id="swPPPosPrep">
+		<and/>
+		<whenRadio button="IPPassiveYes"/>
+	</showWhen>
+	<showWhen id="swPassiveAgentPP">
+		<whenRadio button="IPPassiveAgentCatPP"/>
+		<and/>
+		<whenRadio button="IPPassiveAgentYes"/>
+		<and/>
+		<whenRadio button="IPPassiveYes"/>
+	</showWhen>
+	<showWhen id="swIPPassiveAuxYes">
+		<whenRadio button="IPPassiveAuxYes"/>
+		<and/>
+		<whenRadio button="IPPassiveYes"/>
+	</showWhen>
+	<showWhen id="swPPPosPrep">
 		<whenValue element="pp" attr="pPos" value="before"/>
 	</showWhen>
 	<showWhen id="swPPPosPost">

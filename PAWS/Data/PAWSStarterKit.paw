@@ -106,7 +106,7 @@
 		<sentExample/>
 		<pCategory/>
 	</pp>
-	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="dp" passive="yes" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
+	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="dp" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
 		<example/>
 		<auxExample/>
 		<auxNonfiniteExample/>

@@ -171,26 +171,26 @@ DP = Deg_1 {D' / D''} Deg_2
 	</showWhen>
 	<!--|********************************************** -->
 	<!--|rules: use final for all, initial for head final	-->
-	<rule show="DBarBaroption1f">
-rule {DBarBar option 1f - relative clause CP final}
-D'' = D' CP
-	&lt;D'' head&gt; = &lt;D' head&gt;
+	<rule show="DBaroption1frel">
+rule {DBar option 1frel - relative clause CP final}
+D' = D'_1 CP
+	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;CP head type relative&gt; = +
-	&lt;D'' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
-	&lt;DBarBar option&gt; = 1f
+	&lt;D' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+	&lt;D' option&gt; = 1frel
 </rule>
-	<showWhen id="DBarBaroption1f">
+	<showWhen id="DBaroption1frel">
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 	</showWhen>
-	<rule show="DBarBaroption1i">
-rule {DBarBar option 1i - relative clause CP initial}
-D'' = CP D'
-	&lt;D'' head&gt; = &lt;D' head&gt;
+	<rule show="DBaroption1irel">
+rule {DBar option 1irel - relative clause CP initial}
+D = CP D'_1
+	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;CP head type relative&gt; = +
-	&lt;D'' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
-	&lt;DBarBar option&gt; = 1i
+	&lt;D' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+	&lt;D' option&gt; = 1irel
 </rule>
-	<showWhen id="DBarBaroption1i">
+	<showWhen id="DBaroption1irel">
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
@@ -203,26 +203,26 @@ D'' = CP D'
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
 	</showWhen>
-	<rule show="DBarBaroption2f">
-rule {DBarBar option 2f - relative clause IP final}
-D'' = D' IP
-	&lt;D'' head&gt; = &lt;D' head&gt;
+	<rule show="DBaroption2frel">
+rule {DBar option 2frel - relative clause IP final}
+D' = D'_1 IP
+	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;IP head type relative&gt; = +
-	&lt;D'' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
-	&lt;DBarBar option&gt; = 2f
+	&lt;D' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
+	&lt;D' option&gt; = 2frel
 </rule>
-	<showWhen id="DBarBaroption2f">
+	<showWhen id="DBaroption2frel">
 		<whenValue element="relcl" attr="type" value="IP" negateValue="no"/>
 	</showWhen>
-	<rule show="DBarBaroption2i">
-rule {DBarBar option 2i - relative clause IP initial}
-D'' = IP D'
-	&lt;D'' head&gt; = &lt;D' head&gt;
+	<rule show="DBaroption2irel">
+rule {DBar option 2irel - relative clause IP initial}
+D' = IP D'_1
+	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;IP head type relative&gt; = +
-	&lt;D'' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
-	&lt;DBarBar option&gt; = 2i
+	&lt;D' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
+	&lt;D' option&gt; = 2irel
 </rule>
-	<showWhen id="DBarBaroption2i">
+	<showWhen id="DBaroption2irel">
 		<whenValue element="relcl" attr="type" value="IP" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
@@ -240,7 +240,7 @@ D'' = IP D'
 rule {DBar option 1 - no determiners}
 D' = NP
 	&lt;D' head&gt; = &lt;NP head&gt;
-	&lt;DBar option&gt; = 1
+	&lt;D' option&gt; = 1
 </rule>
 	<showWhen id="DBaroption1">
 		<whenValue element="np" attr="artAndDem" value="no" negateValue="no"/>
@@ -250,7 +250,7 @@ rule {DBar option 1poss - no determiners with possessed}
 D' = NP
 	&lt;D' head&gt; = &lt;NP head&gt;
 		&lt;NP head type possessed&gt; = +
-	&lt;DBar option&gt; = 1poss
+	&lt;D' option&gt; = 1poss
 </rule>
 	<showWhen id="DBaroption1poss">
 		<whenValue element="np" attr="possCooccur" value="no" negateValue="no"/>
@@ -262,7 +262,7 @@ D' = (Art) NP
 	&lt;Art head agr&gt; = &lt;NP head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 2a
+	&lt;D' option&gt; = 2a
 </rule>
 	<showWhen id="DBaroption2a">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -283,7 +283,7 @@ D' = (Art) NP
 		}
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 2apl
+	&lt;D' option&gt; = 2apl
 </rule>
 	<showWhen id="DBaroption2apl">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -302,7 +302,7 @@ D' = (Art) NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 2aposs
+	&lt;D' option&gt; = 2aposs
 </rule>
 	<showWhen id="DBaroption2aposs">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -324,7 +324,7 @@ D' = (Art) NP
 		&lt;NP head type possessed&gt; = -
 		&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 2aplposs
+	&lt;D' option&gt; = 2aplposs
 </rule>
 	<showWhen id="DBaroption2aplposs">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -342,7 +342,7 @@ D' = NP (Art)
 	&lt;Art head agr&gt; = &lt;NP head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 2b
+	&lt;D' option&gt; = 2b
 </rule>
 	<showWhen id="DBaroption2b">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -363,7 +363,7 @@ D' = NP (Art)
 		}
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 2bpl
+	&lt;D' option&gt; = 2bpl
 </rule>
 	<showWhen id="DBaroption2bpl">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -382,7 +382,7 @@ D' = NP (Art)
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 2bposs
+	&lt;D' option&gt; = 2bposs
 </rule>
 	<showWhen id="DBaroption2bposs">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -404,7 +404,7 @@ D' = NP (Art)
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 2bplposs
+	&lt;D' option&gt; = 2bplposs
 </rule>
 	<showWhen id="DBaroption2bplposs">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -426,7 +426,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cwhI
+	&lt;D' option&gt; = 2cwhI
 </rule>
 	<showWhen id="DBaroption2cwhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -450,7 +450,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cwhF
+	&lt;D' option&gt; = 2cwhF
 </rule>
 	<showWhen id="DBaroption2cwhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -475,7 +475,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cwhagr
+	&lt;D' option&gt; = 2cwhagr
 </rule>
 	<showWhen id="DBaroption2cwhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -502,7 +502,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cplwhI
+	&lt;D' option&gt; = 2cplwhI
 </rule>
 	<showWhen id="DBaroption2cplwhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -529,7 +529,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cplwhF
+	&lt;D' option&gt; = 2cplwhF
 </rule>
 	<showWhen id="DBaroption2cplwhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -557,7 +557,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cplwhagr
+	&lt;D' option&gt; = 2cplwhagr
 </rule>
 	<showWhen id="DBaroption2cplwhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -582,7 +582,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cposswhI
+	&lt;D' option&gt; = 2cposswhI
 </rule>
 	<showWhen id="DBaroption2cposswhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -607,7 +607,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cposswhF
+	&lt;D' option&gt; = 2cposswhF
 </rule>
 	<showWhen id="DBaroption2cposswhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -633,7 +633,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cposswhagr
+	&lt;D' option&gt; = 2cposswhagr
 </rule>
 	<showWhen id="DBaroption2cposswhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -661,7 +661,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cplposswhI
+	&lt;D' option&gt; = 2cplposswhI
 </rule>
 	<showWhen id="DBaroption2cplposswhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -689,7 +689,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cplposswhF
+	&lt;D' option&gt; = 2cplposswhF
 </rule>
 	<showWhen id="DBaroption2cplposswhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -718,7 +718,7 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 2cplposswhagr
+	&lt;D' option&gt; = 2cplposswhagr
 </rule>
 	<showWhen id="DBaroption2cplposswhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -738,7 +738,7 @@ D' = Art NP
 	&lt;Art head agr&gt; = &lt;NP head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 3a
+	&lt;D' option&gt; = 3a
 </rule>
 	<showWhen id="DBaroption3a">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -758,7 +758,7 @@ D' = Art NP
 		&lt;NP head type mass&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 3asg
+	&lt;D' option&gt; = 3asg
 </rule>
 	<showWhen id="DBaroption3asg">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -777,7 +777,7 @@ D' = Art NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 3aposs
+	&lt;D' option&gt; = 3aposs
 </rule>
 	<showWhen id="DBaroption3aposs">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -798,7 +798,7 @@ D' = Art NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 3asgposs
+	&lt;D' option&gt; = 3asgposs
 </rule>
 	<showWhen id="DBaroption3asgposs">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -816,7 +816,7 @@ D' = NP Art
 	&lt;Art head agr&gt; = &lt;NP head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 3b
+	&lt;D' option&gt; = 3b
 </rule>
 	<showWhen id="DBaroption3b">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -836,7 +836,7 @@ D' = NP Art
 		&lt;NP head type mass&gt; = -
 		&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 3bsg
+	&lt;D' option&gt; = 3bsg
 </rule>
 	<showWhen id="DBaroption3bsg">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -855,7 +855,7 @@ D' = NP Art
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 3bposs
+	&lt;D' option&gt; = 3bposs
 </rule>
 	<showWhen id="DBaroption3bposs">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -876,7 +876,7 @@ D' = NP Art
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 3bsgposs
+	&lt;D' option&gt; = 3bsgposs
 </rule>
 	<showWhen id="DBaroption3bsgposs">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -898,7 +898,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3cwhI
+	&lt;D' option&gt; = 3cwhI
 </rule>
 	<showWhen id="DBaroption3cwhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -924,7 +924,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3cwhF
+	&lt;D' option&gt; = 3cwhF
 </rule>
 	<showWhen id="DBaroption3cwhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -951,7 +951,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3cwhagr
+	&lt;D' option&gt; = 3cwhagr
 </rule>
 	<showWhen id="DBaroption3cwhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -979,7 +979,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3csgwhI
+	&lt;D' option&gt; = 3csgwhI
 </rule>
 	<showWhen id="DBaroption3csgwhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1007,7 +1007,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3csgwhF
+	&lt;D' option&gt; = 3csgwhF
 </rule>
 	<showWhen id="DBaroption3csgwhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1036,7 +1036,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3csgwhagr
+	&lt;D' option&gt; = 3csgwhagr
 </rule>
 	<showWhen id="DBaroption3csgwhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1063,7 +1063,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3cposswhI
+	&lt;D' option&gt; = 3cposswhI
 </rule>
 	<showWhen id="DBaroption3cposswhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1090,7 +1090,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3cposswhF
+	&lt;D' option&gt; = 3cposswhF
 </rule>
 	<showWhen id="DBaroption3cposswhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1118,7 +1118,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3cposswhagr
+	&lt;D' option&gt; = 3cposswhagr
 </rule>
 	<showWhen id="DBaroption3cposswhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1147,7 +1147,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3csgposswhI
+	&lt;D' option&gt; = 3csgposswhI
 </rule>
 	<showWhen id="DBaroption3csgposswhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1176,7 +1176,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3csgposswhF
+	&lt;D' option&gt; = 3csgposswhF
 </rule>
 	<showWhen id="DBaroption3csgposswhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1206,7 +1206,7 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3csgposswhagr
+	&lt;D' option&gt; = 3csgposswhagr
 </rule>
 	<showWhen id="DBaroption3csgposswhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1232,7 +1232,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dwhI
+	&lt;D' option&gt; = 3dwhI
 </rule>
 	<showWhen id="DBaroption3dwhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1258,7 +1258,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dwhF
+	&lt;D' option&gt; = 3dwhF
 </rule>
 	<showWhen id="DBaroption3dwhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1285,7 +1285,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dwhagr
+	&lt;D' option&gt; = 3dwhagr
 </rule>
 	<showWhen id="DBaroption3dwhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1313,7 +1313,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dsgwhI
+	&lt;D' option&gt; = 3dsgwhI
 </rule>
 	<showWhen id="DBaroption3dsgwhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1341,7 +1341,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dsgwhF
+	&lt;D' option&gt; = 3dsgwhF
 </rule>
 	<showWhen id="DBaroption3dsgwhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1370,7 +1370,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dsgwhagr
+	&lt;D' option&gt; = 3dsgwhagr
 </rule>
 	<showWhen id="DBaroption3dsgwhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1397,7 +1397,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dposswhI
+	&lt;D' option&gt; = 3dposswhI
 </rule>
 	<showWhen id="DBaroption3dposswhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1424,7 +1424,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dposswhF
+	&lt;D' option&gt; = 3dposswhF
 </rule>
 	<showWhen id="DBaroption3dposswhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1452,7 +1452,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dposswhagr
+	&lt;D' option&gt; = 3dposswhagr
 </rule>
 	<showWhen id="DBaroption3dposswhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1481,7 +1481,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dsgposswhI
+	&lt;D' option&gt; = 3dsgposswhI
 </rule>
 	<showWhen id="DBaroption3dsgposswhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1510,7 +1510,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dsgposswhF
+	&lt;D' option&gt; = 3dsgposswhF
 </rule>
 	<showWhen id="DBaroption3dsgposswhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1540,7 +1540,7 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3dsgposswhagr
+	&lt;D' option&gt; = 3dsgposswhagr
 </rule>
 	<showWhen id="DBaroption3dsgposswhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1566,7 +1566,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3ewhI
+	&lt;D' option&gt; = 3ewhI
 </rule>
 	<showWhen id="DBaroption3ewhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1592,7 +1592,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3ewhF
+	&lt;D' option&gt; = 3ewhF
 </rule>
 	<showWhen id="DBaroption3ewhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1621,7 +1621,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3esgwhagr
+	&lt;D' option&gt; = 3esgwhagr
 </rule>
 	<showWhen id="DBaroption3esgwhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1648,7 +1648,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3eposswhI
+	&lt;D' option&gt; = 3eposswhI
 </rule>
 	<showWhen id="DBaroption3eposswhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1675,7 +1675,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3eposswhF
+	&lt;D' option&gt; = 3eposswhF
 </rule>
 	<showWhen id="DBaroption3eposswhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1703,7 +1703,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3eposswhagr
+	&lt;D' option&gt; = 3eposswhagr
 </rule>
 	<showWhen id="DBaroption3eposswhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1732,7 +1732,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3esgposswhI
+	&lt;D' option&gt; = 3esgposswhI
 </rule>
 	<showWhen id="DBaroption3esgposswhI">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1761,7 +1761,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3esgposswhF
+	&lt;D' option&gt; = 3esgposswhF
 </rule>
 	<showWhen id="DBaroption3esgposswhF">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1791,7 +1791,7 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 3esgposswhagr
+	&lt;D' option&gt; = 3esgposswhagr
 </rule>
 	<showWhen id="DBaroption3esgposswhagr">
 		<whenValue element="np" attr="artAndDem" value="article" negateValue="no"/>
@@ -1813,7 +1813,7 @@ D' = (Dem) NP
 	&lt;Dem head agr&gt; = &lt;NP head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 4a
+	&lt;D' option&gt; = 4a
 </rule>
 	<showWhen id="DBaroption4a">
 		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
@@ -1834,7 +1834,7 @@ D' = (Dem) NP
 		}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 4apl
+	&lt;D' option&gt; = 4apl
 </rule>
 	<showWhen id="DBaroption4apl">
 		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
@@ -1853,7 +1853,7 @@ D' = (Dem) NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 4aposs
+	&lt;D' option&gt; = 4aposs
 </rule>
 	<showWhen id="DBaroption4aposs">
 		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
@@ -1875,7 +1875,7 @@ D' = (Dem) NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 4aplposs
+	&lt;D' option&gt; = 4aplposs
 </rule>
 	<showWhen id="DBaroption4aplposs">
 		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
@@ -1893,7 +1893,7 @@ D' = NP (Dem)
 	&lt;Dem head agr&gt; = &lt;NP head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 4b
+	&lt;D' option&gt; = 4b
 </rule>
 	<showWhen id="DBaroption4b">
 		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
@@ -1914,7 +1914,7 @@ D' = NP (Dem)
 		}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 4bpl
+	&lt;D' option&gt; = 4bpl
 </rule>
 	<showWhen id="DBaroption4bpl">
 		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
@@ -1933,7 +1933,7 @@ D' = NP (Dem)
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 4bposs
+	&lt;D' option&gt; = 4bposs
 </rule>
 	<showWhen id="DBaroption4bposs">
 		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
@@ -1955,7 +1955,7 @@ D' = NP (Dem)
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 4bplposs
+	&lt;D' option&gt; = 4bplposs
 </rule>
 	<showWhen id="DBaroption4bplposs">
 		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
@@ -1966,8 +1966,7 @@ D' = NP (Dem)
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
 	</showWhen>
-
-  <rule show="DBaroption4cwhI">
+	<rule show="DBaroption4cwhI">
 rule {DBar option 4cwhI - only demonstratives, either side, optional, wh initial}
 D' = (Dem_1) NP (Dem_2)
 	&lt;D' head&gt; = &lt;NP head&gt;
@@ -1978,10 +1977,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cwhI
+	&lt;D' option&gt; = 4cwhI
 </rule>
 	<showWhen id="DBaroption4cwhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2002,10 +2001,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cwhF
+	&lt;D' option&gt; = 4cwhF
 </rule>
 	<showWhen id="DBaroption4cwhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2027,10 +2026,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cwhagr
+	&lt;D' option&gt; = 4cwhagr
 </rule>
 	<showWhen id="DBaroption4cwhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2054,10 +2053,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cplwhI
+	&lt;D' option&gt; = 4cplwhI
 </rule>
 	<showWhen id="DBaroption4cplwhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2081,10 +2080,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cplwhF
+	&lt;D' option&gt; = 4cplwhF
 </rule>
 	<showWhen id="DBaroption4cplwhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2109,10 +2108,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cplwhagr
+	&lt;D' option&gt; = 4cplwhagr
 </rule>
 	<showWhen id="DBaroption4cplwhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2134,10 +2133,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cposswhI
+	&lt;D' option&gt; = 4cposswhI
 </rule>
 	<showWhen id="DBaroption4cposswhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2159,10 +2158,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cposswhF
+	&lt;D' option&gt; = 4cposswhF
 </rule>
 	<showWhen id="DBaroption4cposswhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2185,10 +2184,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cposswhagr
+	&lt;D' option&gt; = 4cposswhagr
 </rule>
 	<showWhen id="DBaroption4cposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2213,10 +2212,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cplposswhI
+	&lt;D' option&gt; = 4cplposswhI
 </rule>
 	<showWhen id="DBaroption4cplposswhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2241,10 +2240,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cplposswhF
+	&lt;D' option&gt; = 4cplposswhF
 </rule>
 	<showWhen id="DBaroption4cplposswhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2270,10 +2269,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 4cplposswhagr
+	&lt;D' option&gt; = 4cplposswhagr
 </rule>
 	<showWhen id="DBaroption4cplposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
@@ -2290,10 +2289,10 @@ D' = Dem NP
 	&lt;Dem head agr&gt; = &lt;NP head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 5a
+	&lt;D' option&gt; = 5a
 </rule>
 	<showWhen id="DBaroption5a">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="before"/>
 		<and/>
@@ -2310,10 +2309,10 @@ D' = Dem NP
 		&lt;NP head type mass&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 5asg
+	&lt;D' option&gt; = 5asg
 </rule>
 	<showWhen id="DBaroption5asg">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="before"/>
 		<and/>
@@ -2329,10 +2328,10 @@ D' = Dem NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 5aposs
+	&lt;D' option&gt; = 5aposs
 </rule>
 	<showWhen id="DBaroption5aposs">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="before"/>
 		<and/>
@@ -2350,10 +2349,10 @@ D' = Dem NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 5asgposs
+	&lt;D' option&gt; = 5asgposs
 </rule>
 	<showWhen id="DBaroption5asgposs">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="before"/>
 		<and/>
@@ -2368,10 +2367,10 @@ D' = NP Dem
 	&lt;Dem head agr&gt; = &lt;NP head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 5b
+	&lt;D' option&gt; = 5b
 </rule>
 	<showWhen id="DBaroption5b">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="after"/>
 		<and/>
@@ -2388,10 +2387,10 @@ D' = NP Dem
 		&lt;NP head type mass&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 5bsg
+	&lt;D' option&gt; = 5bsg
 </rule>
 	<showWhen id="DBaroption5bsg">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="after"/>
 		<and/>
@@ -2407,10 +2406,10 @@ D' = NP Dem
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 5bposs
+	&lt;D' option&gt; = 5bposs
 </rule>
 	<showWhen id="DBaroption5bposs">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="after"/>
 		<and/>
@@ -2428,10 +2427,10 @@ D' = NP Dem
 		&lt;NP head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 5bsgposs
+	&lt;D' option&gt; = 5bsgposs
 </rule>
 	<showWhen id="DBaroption5bsgposs">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="after"/>
 		<and/>
@@ -2450,15 +2449,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5cwhI
+	&lt;D' option&gt; = 5cwhI
 </rule>
 	<showWhen id="DBaroption5cwhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2476,15 +2475,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5cwhF
+	&lt;D' option&gt; = 5cwhF
 </rule>
 	<showWhen id="DBaroption5cwhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2503,15 +2502,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5cwhagr
+	&lt;D' option&gt; = 5cwhagr
 </rule>
 	<showWhen id="DBaroption5cwhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2531,15 +2530,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5csgwhI
+	&lt;D' option&gt; = 5csgwhI
 </rule>
 	<showWhen id="DBaroption5csgwhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2559,15 +2558,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5csgwhF
+	&lt;D' option&gt; = 5csgwhF
 </rule>
 	<showWhen id="DBaroption5csgwhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2588,15 +2587,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5csgwhagr
+	&lt;D' option&gt; = 5csgwhagr
 </rule>
 	<showWhen id="DBaroption5csgwhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2615,15 +2614,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5cposswhI
+	&lt;D' option&gt; = 5cposswhI
 </rule>
 	<showWhen id="DBaroption5cposswhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -2642,15 +2641,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5cposswhF
+	&lt;D' option&gt; = 5cposswhF
 </rule>
 	<showWhen id="DBaroption5cposswhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -2670,15 +2669,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5cposswhagr
+	&lt;D' option&gt; = 5cposswhagr
 </rule>
 	<showWhen id="DBaroption5cposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -2699,15 +2698,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5csgposswhI
+	&lt;D' option&gt; = 5csgposswhI
 </rule>
 	<showWhen id="DBaroption5csgposswhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -2728,15 +2727,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5csgposswhF
+	&lt;D' option&gt; = 5csgposswhF
 </rule>
 	<showWhen id="DBaroption5csgposswhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -2758,15 +2757,15 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5csgposswhagr
+	&lt;D' option&gt; = 5csgposswhagr
 </rule>
 	<showWhen id="DBaroption5csgposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="both"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -2784,15 +2783,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dwhI
+	&lt;D' option&gt; = 5dwhI
 </rule>
 	<showWhen id="DBaroption5dwhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2810,15 +2809,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dwhF
+	&lt;D' option&gt; = 5dwhF
 </rule>
 	<showWhen id="DBaroption5dwhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2837,15 +2836,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dwhagr
+	&lt;D' option&gt; = 5dwhagr
 </rule>
 	<showWhen id="DBaroption5dwhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2865,15 +2864,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dsgwhI
+	&lt;D' option&gt; = 5dsgwhI
 </rule>
 	<showWhen id="DBaroption5dsgwhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2893,15 +2892,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dsgwhF
+	&lt;D' option&gt; = 5dsgwhF
 </rule>
 	<showWhen id="DBaroption5dsgwhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2922,15 +2921,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dsgwhagr
+	&lt;D' option&gt; = 5dsgwhagr
 </rule>
 	<showWhen id="DBaroption5dsgwhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -2949,15 +2948,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dposswhI
+	&lt;D' option&gt; = 5dposswhI
 </rule>
 	<showWhen id="DBaroption5dposswhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -2976,15 +2975,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dposswhF
+	&lt;D' option&gt; = 5dposswhF
 </rule>
 	<showWhen id="DBaroption5dposswhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3004,15 +3003,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dposswhagr
+	&lt;D' option&gt; = 5dposswhagr
 </rule>
 	<showWhen id="DBaroption5dposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3033,15 +3032,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dsgposswhI
+	&lt;D' option&gt; = 5dsgposswhI
 </rule>
 	<showWhen id="DBaroption5dsgposswhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3062,15 +3061,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dsgposswhF
+	&lt;D' option&gt; = 5dsgposswhF
 </rule>
 	<showWhen id="DBaroption5dsgposswhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3092,15 +3091,15 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5dsgposswhagr
+	&lt;D' option&gt; = 5dsgposswhagr
 </rule>
 	<showWhen id="DBaroption5dsgposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3118,15 +3117,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5ewhI
+	&lt;D' option&gt; = 5ewhI
 </rule>
 	<showWhen id="DBaroption5ewhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -3144,15 +3143,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5ewhF
+	&lt;D' option&gt; = 5ewhF
 </rule>
 	<showWhen id="DBaroption5ewhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -3171,15 +3170,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5ewhagr
+	&lt;D' option&gt; = 5ewhagr
 </rule>
 	<showWhen id="DBaroption5ewhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -3199,15 +3198,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5esgwhI
+	&lt;D' option&gt; = 5esgwhI
 </rule>
 	<showWhen id="DBaroption5esgwhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -3227,15 +3226,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5esgwhF
+	&lt;D' option&gt; = 5esgwhF
 </rule>
 	<showWhen id="DBaroption5esgwhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -3256,15 +3255,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5esgwhagr
+	&lt;D' option&gt; = 5esgwhagr
 </rule>
 	<showWhen id="DBaroption5esgwhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
@@ -3283,15 +3282,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5eposswhI
+	&lt;D' option&gt; = 5eposswhI
 </rule>
 	<showWhen id="DBaroption5eposswhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3310,15 +3309,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5eposswhF
+	&lt;D' option&gt; = 5eposswhF
 </rule>
 	<showWhen id="DBaroption5eposswhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3338,15 +3337,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5eposswhagr
+	&lt;D' option&gt; = 5eposswhagr
 </rule>
 	<showWhen id="DBaroption5eposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="yes"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3367,15 +3366,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5esgposswhI
+	&lt;D' option&gt; = 5esgposswhI
 </rule>
 	<showWhen id="DBaroption5esgposswhI">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3396,15 +3395,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5esgposswhF
+	&lt;D' option&gt; = 5esgposswhF
 </rule>
 	<showWhen id="DBaroption5esgposswhF">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3426,15 +3425,15 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 5esgposswhagr
+	&lt;D' option&gt; = 5esgposswhagr
 </rule>
 	<showWhen id="DBaroption5esgposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="demPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="demRequired" value="mass"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="demBothRequiredPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -3451,11 +3450,11 @@ D' = (Art / Dem) NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 6a
+	&lt;D' option&gt; = 6a
 </rule>
 	<showWhen id="DBaroption6a">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="before"/>
@@ -3477,11 +3476,11 @@ D' = (Art / Dem) NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 6apl
+	&lt;D' option&gt; = 6apl
 </rule>
 	<showWhen id="DBaroption6apl">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="before"/>
@@ -3501,11 +3500,11 @@ D' = (Art / Dem) NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 6aposs
+	&lt;D' option&gt; = 6aposs
 </rule>
 	<showWhen id="DBaroption6aposs">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="before"/>
@@ -3528,11 +3527,11 @@ D' = (Art / Dem) NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 6aplposs
+	&lt;D' option&gt; = 6aplposs
 </rule>
 	<showWhen id="DBaroption6aplposs">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="before"/>
@@ -3551,11 +3550,11 @@ D' = NP (Art / Dem)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 6b
+	&lt;D' option&gt; = 6b
 </rule>
 	<showWhen id="DBaroption6b">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after"/>
@@ -3577,11 +3576,11 @@ D' = NP (Art / Dem)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 6bpl
+	&lt;D' option&gt; = 6bpl
 </rule>
 	<showWhen id="DBaroption6bpl">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after"/>
@@ -3601,11 +3600,11 @@ D' = NP (Art / Dem)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 6bposs
+	&lt;D' option&gt; = 6bposs
 </rule>
 	<showWhen id="DBaroption6bposs">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after"/>
@@ -3628,11 +3627,11 @@ D' = NP (Art / Dem)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 6bplposs
+	&lt;D' option&gt; = 6bplposs
 </rule>
 	<showWhen id="DBaroption6bplposs">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after"/>
@@ -3659,11 +3658,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cwhI
+	&lt;D' option&gt; = 6cwhI
 </rule>
 	<showWhen id="DBaroption6cwhI">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3671,8 +3670,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="no"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="before"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="before"/>
 	</showWhen>
 	<rule show="DBaroption6cwhF">
 rule {DBar option 6cwhF - article or demonstrative either side, optional, wh final}
@@ -3692,11 +3691,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cwhF
+	&lt;D' option&gt; = 6cwhF
 </rule>
 	<showWhen id="DBaroption6cwhF">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3704,8 +3703,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="no"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="after"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="after"/>
 	</showWhen>
 	<rule show="DBaroption6cwhagr">
 rule {DBar option 6cwhagr - article or demonstrative either side, optional, wh agree}
@@ -3729,11 +3728,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cwhagr
+	&lt;D' option&gt; = 6cwhagr
 </rule>
 	<showWhen id="DBaroption6cwhagr">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3741,8 +3740,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="no"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="agree"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="agree"/>
 	</showWhen>
 	<rule show="DBaroption6cplwhI">
 rule {DBar option 6cplwhI - article or demonstrative either side, optional for plural, wh initial}
@@ -3765,11 +3764,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cplwhI
+	&lt;D' option&gt; = 6cplwhI
 </rule>
 	<showWhen id="DBaroption6cplwhI">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3777,8 +3776,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="before"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="before"/>
 	</showWhen>
 	<rule show="DBaroption6cplwhF">
 rule {DBar option 6cplwhF - article or demonstrative either side, optional for plural, wh final}
@@ -3801,11 +3800,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cplwhF
+	&lt;D' option&gt; = 6cplwhF
 </rule>
 	<showWhen id="DBaroption6cplwhF">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3813,8 +3812,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="after"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="after"/>
 	</showWhen>
 	<rule show="DBaroption6cplwhagr">
 rule {DBar option 6cplwhagr - article or demonstrative either side, optional for plural, wh agree}
@@ -3841,11 +3840,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cplwhagr
+	&lt;D' option&gt; = 6cplwhagr
 </rule>
 	<showWhen id="DBaroption6cplwhagr">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3853,8 +3852,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="yes"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="agree"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="agree"/>
 	</showWhen>
 	<rule show="DBaroption6cposswhI">
 rule {DBar option 6cposswhI - article or demonstrative either side, optional, not possessed, wh initial}
@@ -3875,11 +3874,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cposswhI
+	&lt;D' option&gt; = 6cposswhI
 </rule>
 	<showWhen id="DBaroption6cposswhI">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3887,8 +3886,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="no"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="before"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="before"/>
 	</showWhen>
 	<rule show="DBaroption6cposswhF">
 rule {DBar option 6cposswhF - article or demonstrative either side, optional, not possessed, wh final}
@@ -3909,11 +3908,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cposswhF
+	&lt;D' option&gt; = 6cposswhF
 </rule>
 	<showWhen id="DBaroption6cposswhF">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3921,8 +3920,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="no"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="after"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="after"/>
 	</showWhen>
 	<rule show="DBaroption6cposswhagr">
 rule {DBar option 6cposswhagr - article or demonstrative either side, optional, not possessed, wh agree}
@@ -3947,11 +3946,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cposswhagr
+	&lt;D' option&gt; = 6cposswhagr
 </rule>
 	<showWhen id="DBaroption6cposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3959,8 +3958,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="no"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="agree"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="agree"/>
 	</showWhen>
 	<rule show="DBaroption6cplposswhI">
 rule {DBar option 6cplposswhI - article or demonstrative either side, optional for plural, not possessed, wh initial}
@@ -3984,11 +3983,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cplposswhI
+	&lt;D' option&gt; = 6cplposswhI
 </rule>
 	<showWhen id="DBaroption6cplposswhI">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -3996,8 +3995,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="before"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="before"/>
 	</showWhen>
 	<rule show="DBaroption6cplposswhF">
 rule {DBar option 6cplposswhF - article or demonstrative either side, optional for plural, not possessed, wh final}
@@ -4021,11 +4020,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cplposswhF
+	&lt;D' option&gt; = 6cplposswhF
 </rule>
 	<showWhen id="DBaroption6cplposswhF">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4033,8 +4032,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="after"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="after"/>
 	</showWhen>
 	<rule show="DBaroption6cplposswhagr">
 rule {DBar option 6cplposswhagr - article or demonstrative either side, optional for plural, not possessed, wh agree}
@@ -4062,11 +4061,11 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 6cplposswhagr
+	&lt;D' option&gt; = 6cplposswhagr
 </rule>
 	<showWhen id="DBaroption6cplposswhagr">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4074,8 +4073,8 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
-<and/>
-<whenValue element="q" attr="whDemPos" value="agree"></whenValue>
+		<and/>
+		<whenValue element="q" attr="whDemPos" value="agree"/>
 	</showWhen>
 	<rule show="DBaroption7a">
 rule {DBar option 7a - article or demonstrative initial, required}
@@ -4087,11 +4086,11 @@ D' = {Art / Dem} NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 7a
+	&lt;D' option&gt; = 7a
 </rule>
 	<showWhen id="DBaroption7a">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="before"/>
@@ -4112,11 +4111,11 @@ D' = {Art / Dem} NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 7asg
+	&lt;D' option&gt; = 7asg
 </rule>
 	<showWhen id="DBaroption7asg">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="before"/>
@@ -4136,11 +4135,11 @@ D' = {Art / Dem} NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 7aposs
+	&lt;D' option&gt; = 7aposs
 </rule>
 	<showWhen id="DBaroption7aposs">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="before"/>
@@ -4162,11 +4161,11 @@ D' = {Art / Dem} NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBar option&gt; = 7asgposs
+	&lt;D' option&gt; = 7asgposs
 </rule>
 	<showWhen id="DBaroption7asgposs">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="before"/>
@@ -4185,11 +4184,11 @@ D' = NP {Art / Dem}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 7b
+	&lt;D' option&gt; = 7b
 </rule>
 	<showWhen id="DBaroption7b">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after"/>
@@ -4210,11 +4209,11 @@ D' = NP {Art / Dem}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 7bsg
+	&lt;D' option&gt; = 7bsg
 </rule>
 	<showWhen id="DBaroption7bsg">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after"/>
@@ -4234,11 +4233,11 @@ D' = NP {Art / Dem}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 7bposs
+	&lt;D' option&gt; = 7bposs
 </rule>
 	<showWhen id="DBaroption7bposs">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after"/>
@@ -4260,11 +4259,11 @@ D' = NP {Art / Dem}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBar option&gt; = 7bsgposs
+	&lt;D' option&gt; = 7bsgposs
 </rule>
 	<showWhen id="DBaroption7bsgposs">
-		  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after"/>
@@ -4291,11 +4290,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7cwhI
+	&lt;D' option&gt; = 7cwhI
 </rule>
 	<showWhen id="DBaroption7cwhI">
-		 <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4326,11 +4325,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7cwhF
+	&lt;D' option&gt; = 7cwhF
 </rule>
 	<showWhen id="DBaroption7cwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4365,11 +4364,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7cwhagr
+	&lt;D' option&gt; = 7cwhagr
 </rule>
 	<showWhen id="DBaroption7cwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4402,11 +4401,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7csgwhI
+	&lt;D' option&gt; = 7csgwhI
 </rule>
 	<showWhen id="DBaroption7csgwhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4439,11 +4438,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7csgwhF
+	&lt;D' option&gt; = 7csgwhF
 </rule>
 	<showWhen id="DBaroption7csgwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4480,11 +4479,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7csgwhagr
+	&lt;D' option&gt; = 7csgwhagr
 </rule>
 	<showWhen id="DBaroption7csgwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4516,11 +4515,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7cposswhI
+	&lt;D' option&gt; = 7cposswhI
 </rule>
 	<showWhen id="DBaroption7cposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4552,11 +4551,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7cposswhF
+	&lt;D' option&gt; = 7cposswhF
 </rule>
 	<showWhen id="DBaroption7cposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4592,11 +4591,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7cposswhagr
+	&lt;D' option&gt; = 7cposswhagr
 </rule>
 	<showWhen id="DBaroption7cposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4630,11 +4629,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7csgposswhI
+	&lt;D' option&gt; = 7csgposswhI
 </rule>
 	<showWhen id="DBaroption7csgposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4668,11 +4667,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7csgposswhF
+	&lt;D' option&gt; = 7csgposswhF
 </rule>
 	<showWhen id="DBaroption7csgposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4710,11 +4709,11 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7csgposswhagr
+	&lt;D' option&gt; = 7csgposswhagr
 </rule>
 	<showWhen id="DBaroption7csgposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4745,11 +4744,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dwhI
+	&lt;D' option&gt; = 7dwhI
 </rule>
 	<showWhen id="DBaroption7dwhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4780,11 +4779,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dwhF
+	&lt;D' option&gt; = 7dwhF
 </rule>
 	<showWhen id="DBaroption7dwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4819,11 +4818,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dwhagr
+	&lt;D' option&gt; = 7dwhagr
 </rule>
 	<showWhen id="DBaroption7dwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4856,11 +4855,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dsgwhI
+	&lt;D' option&gt; = 7dsgwhI
 </rule>
 	<showWhen id="DBaroption7dsgwhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4893,11 +4892,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dsgwhF
+	&lt;D' option&gt; = 7dsgwhF
 </rule>
 	<showWhen id="DBaroption7dsgwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4934,11 +4933,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dsgwhagr
+	&lt;D' option&gt; = 7dsgwhagr
 </rule>
 	<showWhen id="DBaroption7dsgwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -4970,11 +4969,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dposswhI
+	&lt;D' option&gt; = 7dposswhI
 </rule>
 	<showWhen id="DBaroption7dposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5006,11 +5005,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dposswhF
+	&lt;D' option&gt; = 7dposswhF
 </rule>
 	<showWhen id="DBaroption7dposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5046,11 +5045,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dposswhagr
+	&lt;D' option&gt; = 7dposswhagr
 </rule>
 	<showWhen id="DBaroption7dposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5084,11 +5083,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dsgposswhI
+	&lt;D' option&gt; = 7dsgposswhI
 </rule>
 	<showWhen id="DBaroption7dsgposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5122,11 +5121,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dsgposswhF
+	&lt;D' option&gt; = 7dsgposswhF
 </rule>
 	<showWhen id="DBaroption7dsgposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5164,11 +5163,11 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7dsgposswhagr
+	&lt;D' option&gt; = 7dsgposswhagr
 </rule>
 	<showWhen id="DBaroption7dsgposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5199,11 +5198,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7ewhI
+	&lt;D' option&gt; = 7ewhI
 </rule>
 	<showWhen id="DBaroption7ewhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5234,11 +5233,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7ewhF
+	&lt;D' option&gt; = 7ewhF
 </rule>
 	<showWhen id="DBaroption7ewhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5273,11 +5272,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7ewhagr
+	&lt;D' option&gt; = 7ewhagr
 </rule>
 	<showWhen id="DBaroption7ewhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5310,11 +5309,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7esgwhI
+	&lt;D' option&gt; = 7esgwhI
 </rule>
 	<showWhen id="DBaroption7esgwhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5347,11 +5346,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7esgwhF
+	&lt;D' option&gt; = 7esgwhF
 </rule>
 	<showWhen id="DBaroption7esgwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5388,11 +5387,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7esgwhagr
+	&lt;D' option&gt; = 7esgwhagr
 </rule>
 	<showWhen id="DBaroption7esgwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5424,11 +5423,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7eposswhI
+	&lt;D' option&gt; = 7eposswhI
 </rule>
 	<showWhen id="DBaroption7eposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5460,11 +5459,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7eposswhF
+	&lt;D' option&gt; = 7eposswhF
 </rule>
 	<showWhen id="DBaroption7eposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5500,11 +5499,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7eposswhagr
+	&lt;D' option&gt; = 7eposswhagr
 </rule>
 	<showWhen id="DBaroption7eposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5538,11 +5537,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7esgposswhI
+	&lt;D' option&gt; = 7esgposswhI
 </rule>
 	<showWhen id="DBaroption7esgposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5576,11 +5575,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBar option&gt; = 7esgposswhF
+	&lt;D' option&gt; = 7esgposswhF
 </rule>
 	<showWhen id="DBaroption7esgposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5618,11 +5617,11 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-		  &lt;DBar option&gt; = 7esgposswhagr
+		  &lt;D' option&gt; = 7esgposswhagr
 </rule>
 	<showWhen id="DBaroption7esgposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
@@ -5642,11 +5641,11 @@ D' = (Dem) D''
 	&lt;Dem head agr&gt; =  &lt;D'' head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 8aD
+	&lt;D' option&gt; = 8aD
 </rule>
 	<showWhen id="DBaroption8aD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="before"/>
@@ -5665,11 +5664,11 @@ D' = (Dem) D''
 		}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 8aplD
+	&lt;D' option&gt; = 8aplD
 </rule>
 	<showWhen id="DBaroption8aplD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="before"/>
@@ -5686,11 +5685,11 @@ D' = (Dem) D''
 		&lt;D'' head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 8aDposs
+	&lt;D' option&gt; = 8aDposs
 </rule>
 	<showWhen id="DBaroption8aDposs">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="before"/>
@@ -5710,11 +5709,11 @@ D' = (Dem) D''
 		&lt;D'' head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 8aplDposs
+	&lt;D' option&gt; = 8aplDposs
 </rule>
 	<showWhen id="DBaroption8aplDposs">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="before"/>
@@ -5730,11 +5729,11 @@ D' = D'' (Dem)
 	&lt;Dem head agr&gt; =  &lt;D'' head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 8bD
+	&lt;D' option&gt; = 8bD
 </rule>
 	<showWhen id="DBaroption8bD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="after"/>
@@ -5753,11 +5752,11 @@ D' = D'' (Dem)
 		}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 8bplD
+	&lt;D' option&gt; = 8bplD
 </rule>
 	<showWhen id="DBaroption8bplD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="after"/>
@@ -5774,11 +5773,11 @@ D' = D'' (Dem)
 		&lt;D'' head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 8bDposs
+	&lt;D' option&gt; = 8bDposs
 </rule>
 	<showWhen id="DBaroption8bDposs">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="after"/>
@@ -5798,11 +5797,11 @@ D' = D'' (Dem)
 		&lt;D'' head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 8bplDposs
+	&lt;D' option&gt; = 8bplDposs
 </rule>
 	<showWhen id="DBaroption8bplDposs">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="after"/>
@@ -5822,11 +5821,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cDwhI
+	&lt;D' option&gt; = 8cDwhI
 </rule>
 	<showWhen id="DBaroption8cDwhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -5848,11 +5847,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cDwhF
+	&lt;D' option&gt; = 8cDwhF
 </rule>
 	<showWhen id="DBaroption8cDwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -5875,11 +5874,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cDwhagr
+	&lt;D' option&gt; = 8cDwhagr
 </rule>
 	<showWhen id="DBaroption8cDwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -5904,11 +5903,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cplDwhI
+	&lt;D' option&gt; = 8cplDwhI
 </rule>
 	<showWhen id="DBaroption8cplDwhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -5933,11 +5932,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cplDwhF
+	&lt;D' option&gt; = 8cplDwhF
 </rule>
 	<showWhen id="DBaroption8cplDwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -5963,11 +5962,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cplDwhagr
+	&lt;D' option&gt; = 8cplDwhagr
 </rule>
 	<showWhen id="DBaroption8cplDwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -5990,11 +5989,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cDposswhI
+	&lt;D' option&gt; = 8cDposswhI
 </rule>
 	<showWhen id="DBaroption8cDposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6017,11 +6016,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cDposswhF
+	&lt;D' option&gt; = 8cDposswhF
 </rule>
 	<showWhen id="DBaroption8cDposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6045,11 +6044,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cDposswhagr
+	&lt;D' option&gt; = 8cDposswhagr
 </rule>
 	<showWhen id="DBaroption8cDposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6075,11 +6074,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cplDposswhI
+	&lt;D' option&gt; = 8cplDposswhI
 </rule>
 	<showWhen id="DBaroption8cplDposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6105,11 +6104,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cplDposswhF
+	&lt;D' option&gt; = 8cplDposswhF
 </rule>
 	<showWhen id="DBaroption8cplDposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6136,11 +6135,11 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8cplDposswhagr
+	&lt;D' option&gt; = 8cplDposswhagr
 </rule>
 	<showWhen id="DBaroption8cplDposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6158,11 +6157,11 @@ D' = Dem D''
 	&lt;Dem head agr&gt; =  &lt;D'' head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 8dD
+	&lt;D' option&gt; = 8dD
 </rule>
 	<showWhen id="DBaroption8dD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="before"/>
@@ -6180,11 +6179,11 @@ D' = Dem D''
 		&lt;D'' head type mass&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 8dsgD
+	&lt;D' option&gt; = 8dsgD
 </rule>
 	<showWhen id="DBaroption8dsgD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="before"/>
@@ -6201,11 +6200,11 @@ D' = Dem D''
 		&lt;D'' head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 8dDposs
+	&lt;D' option&gt; = 8dDposs
 </rule>
 	<showWhen id="DBaroption8dDposs">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="before"/>
@@ -6224,11 +6223,11 @@ D' = Dem D''
 		&lt;D'' head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
-	&lt;DBar option&gt; = 8dsgDposs
+	&lt;D' option&gt; = 8dsgDposs
 </rule>
 	<showWhen id="DBaroption8dsgDposs">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="before"/>
@@ -6244,11 +6243,11 @@ D' = D'' Dem
 	&lt;Dem head agr&gt; =  &lt;D'' head agr&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 8eD
+	&lt;D' option&gt; = 8eD
 </rule>
 	<showWhen id="DBaroption8eD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="after"/>
@@ -6266,11 +6265,11 @@ D' = D'' Dem
 		&lt;D'' head type mass&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 8esgD
+	&lt;D' option&gt; = 8esgD
 </rule>
 	<showWhen id="DBaroption8esgD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="after"/>
@@ -6287,11 +6286,11 @@ D' = D'' Dem
 		&lt;D'' head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 8epossD
+	&lt;D' option&gt; = 8epossD
 </rule>
 	<showWhen id="DBaroption8epossD">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="after"/>
@@ -6310,11 +6309,11 @@ D' = D'' Dem
 		&lt;D'' head type possessed&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
-	&lt;DBar option&gt; = 8esgDposs
+	&lt;D' option&gt; = 8esgDposs
 </rule>
 	<showWhen id="DBaroption8esgDposs">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="after"/>
@@ -6334,11 +6333,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fDwhI
+	&lt;D' option&gt; = 8fDwhI
 </rule>
 	<showWhen id="DBaroption8fDwhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6362,11 +6361,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fDwhF
+	&lt;D' option&gt; = 8fDwhF
 </rule>
 	<showWhen id="DBaroption8fDwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6391,11 +6390,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fDwhagr
+	&lt;D' option&gt; = 8fDwhagr
 </rule>
 	<showWhen id="DBaroption8fDwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6421,11 +6420,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fsgDwhI
+	&lt;D' option&gt; = 8fsgDwhI
 </rule>
 	<showWhen id="DBaroption8fsgDwhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6451,11 +6450,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fsgDwhF
+	&lt;D' option&gt; = 8fsgDwhF
 </rule>
 	<showWhen id="DBaroption8fsgDwhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6482,11 +6481,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fsgDwhagr
+	&lt;D' option&gt; = 8fsgDwhagr
 </rule>
 	<showWhen id="DBaroption8fsgDwhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6511,11 +6510,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fDposswhI
+	&lt;D' option&gt; = 8fDposswhI
 </rule>
 	<showWhen id="DBaroption8fDposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6540,11 +6539,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fDposswhF
+	&lt;D' option&gt; = 8fDposswhF
 </rule>
 	<showWhen id="DBaroption8fDposswhF">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6570,11 +6569,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fDposswhagr
+	&lt;D' option&gt; = 8fDposswhagr
 </rule>
 	<showWhen id="DBaroption8fDposswhagr">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6601,11 +6600,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fsgDposswhI
+	&lt;D' option&gt; = 8fsgDposswhI
 </rule>
 	<showWhen id="DBaroption8fsgDposswhI">
 		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6632,11 +6631,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fsgDposswhF
+	&lt;D' option&gt; = 8fsgDposswhF
 </rule>
 	<showWhen id="DBaroption8fsgDposswhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6664,11 +6663,11 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8fsgDposswhagr
+	&lt;D' option&gt; = 8fsgDposswhagr
 </rule>
 	<showWhen id="DBaroption8fsgDposswhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6692,11 +6691,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gDwhI
+	&lt;D' option&gt; = 8gDwhI
 </rule>
 	<showWhen id="DBaroption8gDwhI">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6720,11 +6719,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gDwhF
+	&lt;D' option&gt; = 8gDwhF
 </rule>
 	<showWhen id="DBaroption8gDwhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6749,11 +6748,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gDwhagr
+	&lt;D' option&gt; = 8gDwhagr
 </rule>
 	<showWhen id="DBaroption8gDwhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6779,11 +6778,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gsgDwhI
+	&lt;D' option&gt; = 8gsgDwhI
 </rule>
 	<showWhen id="DBaroption8gsgDwhI">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6809,11 +6808,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gsgDwhF
+	&lt;D' option&gt; = 8gsgDwhF
 </rule>
 	<showWhen id="DBaroption8gsgDwhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6840,11 +6839,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gsgDwhagr
+	&lt;D' option&gt; = 8gsgDwhagr
 </rule>
 	<showWhen id="DBaroption8gsgDwhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6869,11 +6868,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gDposswhI
+	&lt;D' option&gt; = 8gDposswhI
 </rule>
 	<showWhen id="DBaroption8gDposswhI">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6898,11 +6897,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gDposswhF
+	&lt;D' option&gt; = 8gDposswhF
 </rule>
 	<showWhen id="DBaroption8gDposswhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6928,11 +6927,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gDposswhagr
+	&lt;D' option&gt; = 8gDposswhagr
 </rule>
 	<showWhen id="DBaroption8gDposswhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6959,11 +6958,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gsgDposswhI
+	&lt;D' option&gt; = 8gsgDposswhI
 </rule>
 	<showWhen id="DBaroption8gsgDposswhI">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -6990,11 +6989,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gsgDposswhF
+	&lt;D' option&gt; = 8gsgDposswhF
 </rule>
 	<showWhen id="DBaroption8gsgDposswhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7022,11 +7021,11 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8gsgDposswhagr
+	&lt;D' option&gt; = 8gsgDposswhagr
 </rule>
 	<showWhen id="DBaroption8gsgDposswhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7050,11 +7049,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hDwhI
+	&lt;D' option&gt; = 8hDwhI
 </rule>
 	<showWhen id="DBaroption8hDwhI">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7078,11 +7077,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hDwhF
+	&lt;D' option&gt; = 8hDwhF
 </rule>
 	<showWhen id="DBaroption8hDwhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7107,11 +7106,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hDwhagr
+	&lt;D' option&gt; = 8hDwhagr
 </rule>
 	<showWhen id="DBaroption8hDwhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7137,11 +7136,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hsgDwhI
+	&lt;D' option&gt; = 8hsgDwhI
 </rule>
 	<showWhen id="DBaroption8hsgDwhI">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7167,11 +7166,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hsgDwhF
+	&lt;D' option&gt; = 8hsgDwhF
 </rule>
 	<showWhen id="DBaroption8hsgDwhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7198,11 +7197,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hsgDwhagr
+	&lt;D' option&gt; = 8hsgDwhagr
 </rule>
 	<showWhen id="DBaroption8hsgDwhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7227,11 +7226,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hDposswhI
+	&lt;D' option&gt; = 8hDposswhI
 </rule>
 	<showWhen id="DBaroption8hDposswhI">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7256,11 +7255,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hDposswhF
+	&lt;D' option&gt; = 8hDposswhF
 </rule>
 	<showWhen id="DBaroption8hDposswhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7286,11 +7285,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hDposswhagr
+	&lt;D' option&gt; = 8hDposswhagr
 </rule>
 	<showWhen id="DBaroption8hDposswhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7317,11 +7316,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hsgDposswhI
+	&lt;D' option&gt; = 8hsgDposswhI
 </rule>
 	<showWhen id="DBaroption8hsgDposswhI">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7348,11 +7347,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hsgDposswhF
+	&lt;D' option&gt; = 8hsgDposswhF
 </rule>
 	<showWhen id="DBaroption8hsgDposswhF">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7380,11 +7379,11 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 		&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 		&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
-	&lt;DBar option&gt; = 8hsgDposswhagr
+	&lt;D' option&gt; = 8hsgDposswhagr
 </rule>
 	<showWhen id="DBaroption8hsgDposswhagr">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
@@ -7404,11 +7403,11 @@ D'' = (Art) NP
 	&lt;Art head agr&gt; =  &lt;NP head agr&gt;
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBarBar option&gt; = 8aA
+	&lt;D'' option&gt; = 8aA
 </rule>
 	<showWhen id="DBarBaroption8aA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="before"/>
@@ -7427,11 +7426,11 @@ D'' = (Art) NP
 		}
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBarBar option&gt; = 8aplA
+	&lt;D'' option&gt; = 8aplA
 </rule>
 	<showWhen id="DBarBaroption8aplA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="before"/>
@@ -7448,11 +7447,11 @@ D'' = (Art) NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBarBar option&gt; = 8aAposs
+	&lt;D'' option&gt; = 8aAposs
 </rule>
 	<showWhen id="DBarBaroption8aAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="before"/>
@@ -7472,11 +7471,11 @@ D'' = (Art) NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBarBar option&gt; = 8apAposs
+	&lt;D'' option&gt; = 8apAposs
 </rule>
 	<showWhen id="DBarBaroption8apAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="before"/>
@@ -7492,11 +7491,11 @@ D'' = NP (Art)
 	&lt;Art head agr&gt; =  &lt;NP head agr&gt;
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBarBar option&gt; = 8bA
+	&lt;D'' option&gt; = 8bA
 </rule>
 	<showWhen id="DBarBaroption8bA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="after"/>
@@ -7515,11 +7514,11 @@ D'' = NP (Art)
 		}
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBarBar option&gt; = 8bplA
+	&lt;D'' option&gt; = 8bplA
 </rule>
 	<showWhen id="DBarBaroption8bplA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="after"/>
@@ -7536,11 +7535,11 @@ D'' = NP (Art)
 		&lt;NP head type possessed&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBarBar option&gt; = 8bAposs
+	&lt;D'' option&gt; = 8bAposs
 </rule>
 	<showWhen id="DBarBaroption8bAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="after"/>
@@ -7560,11 +7559,11 @@ D'' = NP (Art)
 		&lt;NP head type possessed&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBarBar option&gt; = 8bplAposs
+	&lt;D'' option&gt; = 8bplAposs
 </rule>
 	<showWhen id="DBarBaroption8bplAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="after"/>
@@ -7583,11 +7582,11 @@ D'' = (Art_1) NP (Art_2)
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8cA
+	&lt;D'' option&gt; = 8cA
 </rule>
 	<showWhen id="DBarBaroption8cA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7609,11 +7608,11 @@ D'' = (Art_1) NP (Art_2)
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8cplA
+	&lt;D'' option&gt; = 8cplA
 </rule>
 	<showWhen id="DBarBaroption8cplA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7633,11 +7632,11 @@ D'' = (Art_1) NP (Art_2)
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8cAposs
+	&lt;D'' option&gt; = 8cAposs
 </rule>
 	<showWhen id="DBarBaroption8cAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7660,11 +7659,11 @@ D'' = (Art_1) NP (Art_2)
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8cplAposs
+	&lt;D'' option&gt; = 8cplAposs
 </rule>
 	<showWhen id="DBarBaroption8cplAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7680,11 +7679,11 @@ D'' = Art NP
 	&lt;Art head agr&gt; =  &lt;NP head agr&gt;
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBarBar option&gt; = 8dA
+	&lt;D'' option&gt; = 8dA
 </rule>
 	<showWhen id="DBarBaroption8dA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="before"/>
@@ -7702,11 +7701,11 @@ D'' = Art NP
 		&lt;NP head type mass&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBarBar option&gt; = 8dsgA
+	&lt;D'' option&gt; = 8dsgA
 </rule>
 	<showWhen id="DBarBaroption8dsgA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="before"/>
@@ -7723,11 +7722,11 @@ D'' = Art NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBarBar option&gt; = 8dAposs
+	&lt;D'' option&gt; = 8dAposs
 </rule>
 	<showWhen id="DBarBaroption8dAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="before"/>
@@ -7746,11 +7745,11 @@ D'' = Art NP
 		&lt;NP head type possessed&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
-	&lt;DBarBar option&gt; = 8dsgAposs
+	&lt;D'' option&gt; = 8dsgAposs
 </rule>
 	<showWhen id="DBarBaroption8dsgAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="before"/>
@@ -7766,11 +7765,11 @@ D'' = NP Art
 	&lt;Art head agr&gt; =  &lt;NP head agr&gt;
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBarBar option&gt; = 8eA
+	&lt;D'' option&gt; = 8eA
 </rule>
 	<showWhen id="DBarBaroption8eA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="after"/>
@@ -7788,11 +7787,11 @@ D'' = NP Art
 		&lt;NP head type mass&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBarBar option&gt; = 8esgA
+	&lt;D'' option&gt; = 8esgA
 </rule>
 	<showWhen id="DBarBaroption8esgA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="after"/>
@@ -7809,11 +7808,11 @@ D'' = NP Art
 		&lt;NP head type possessed&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBarBar option&gt; = 8eAposs
+	&lt;D'' option&gt; = 8eAposs
 </rule>
 	<showWhen id="DBarBaroption8eAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="after"/>
@@ -7832,11 +7831,11 @@ D'' = NP Art
 		&lt;NP head type possessed&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
-	&lt;DBarBar option&gt; = 8esgAposs
+	&lt;D'' option&gt; = 8esgAposs
 </rule>
 	<showWhen id="DBarBaroption8esgAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="after"/>
@@ -7855,11 +7854,11 @@ D'' = Art_1 NP Art_2
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8fA
+	&lt;D'' option&gt; = 8fA
 </rule>
 	<showWhen id="DBarBaroption8fA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7882,11 +7881,11 @@ D'' = Art_1 NP Art_2
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8fsgA
+	&lt;D'' option&gt; = 8fsgA
 </rule>
 	<showWhen id="DBarBaroption8fsgA">
-	   <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7908,11 +7907,11 @@ D'' = Art_1 NP Art_2
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8fAposs
+	&lt;D'' option&gt; = 8fAposs
 </rule>
 	<showWhen id="DBarBaroption8fAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7936,11 +7935,11 @@ D'' = Art_1 NP Art_2
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8fsgAposs
+	&lt;D'' option&gt; = 8fsgAposs
 </rule>
 	<showWhen id="DBarBaroption8fsgAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7961,11 +7960,11 @@ D'' = Art_1 NP (Art_2)
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8gA
+	&lt;D'' option&gt; = 8gA
 </rule>
 	<showWhen id="DBarBaroption8gA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -7988,11 +7987,11 @@ D'' = Art_1 NP (Art_2)
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8gsgA
+	&lt;D'' option&gt; = 8gsgA
 </rule>
 	<showWhen id="DBarBaroption8gsgA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -8014,11 +8013,11 @@ D'' = Art_1 NP (Art_2)
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8gAposs
+	&lt;D'' option&gt; = 8gAposs
 </rule>
 	<showWhen id="DBarBaroption8gAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -8042,11 +8041,11 @@ D'' = Art_1 NP (Art_2)
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8gsgAposs
+	&lt;D'' option&gt; = 8gsgAposs
 </rule>
 	<showWhen id="DBarBaroption8gsgAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -8067,11 +8066,11 @@ D'' = (Art_1) NP Art_2
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8hA
+	&lt;D'' option&gt; = 8hA
 </rule>
 	<showWhen id="DBarBaroption8hA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -8094,11 +8093,11 @@ D'' = (Art_1) NP Art_2
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8hsgA
+	&lt;D'' option&gt; = 8hsgA
 </rule>
 	<showWhen id="DBarBaroption8hsgA">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -8120,11 +8119,11 @@ D'' = (Art_1) NP Art_2
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8hAposs
+	&lt;D'' option&gt; = 8hAposs
 </rule>
 	<showWhen id="DBarBaroption8hAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
@@ -8148,11 +8147,11 @@ D'' = (Art_1) NP Art_2
 	&lt;Art_2 head type DP-final&gt;   = +
 		&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 		&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
-	&lt;DBarBar option&gt; = 8hsgAposs
+	&lt;D'' option&gt; = 8hsgAposs
 </rule>
 	<showWhen id="DBarBaroption8hsgAposs">
-	  <whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
-	   <and/>
+		<whenValue element="np" attr="artAndDem" value="both" negateValue="no"/>
+		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="yes"/>
 		<and/>
 		<whenValue element="np" attr="demAndArtArtPos" value="either"/>

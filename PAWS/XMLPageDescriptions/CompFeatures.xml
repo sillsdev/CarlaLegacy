@@ -16,7 +16,9 @@
 		<textBox id="CompFiniteExample" dataItem="finiteExample" cols="50"/>
 		<br/>
 		<br/>
-		<instruction>Add the features <feature>sentential embedded_finite</feature> to the lexical entries for the main verbs in the examples.  If one or more of your verbs require the complementizer to be present, add the feature <feature>embedded_CP</feature> to those entries.</instruction>
+		<instruction>In the lexicon, add the feature <feature>makeC</feature> to the complementizer(s) so it will show up in the correct position in the tree structure.
+<br/><br/>
+Add the features <feature>sentential embedded_finite</feature> to the lexical entries for the main verbs in the examples.  If one or more of your verbs require the complementizer to be present, also add the feature <feature>embedded_CP</feature> to those entries.</instruction>
 		<br/>
 		<EnglishExample>
 			<exItem>Next, consider verbs which take either a finite CP (or IP) complement or a nonfinite IP complement, like:</exItem>
