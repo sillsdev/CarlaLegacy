@@ -3,88 +3,95 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <portion>
-	<section1 id="advp"><secTitle>Adverbs and Adverb Phrases</secTitle>
+  <section1 id="sAdvP">
+	<secTitle>Adverbs and Adverb Phrases</secTitle>
 	<p>Adverbs express four basic types of information:</p>
-<ul>
-			<li> time,</li>
-			<li> location,</li>
-			<li>manner, and</li>
-			<li>reason or purpose.</li>
-		</ul>
-<p>These types have different characteristics as to
+	<ul>
+	  <li> time,</li>
+	  <li> location,</li>
+	  <li>manner, and</li>
+	  <li>reason or purpose.</li>
+	</ul>
+	<p>These types have different characteristics as to
 which positions they may occupy and how they may be modified.  Each type will be covered in turn.
 </p>
-<p>Languages normally have degree words which can modify at least some types of adverbs.  <langName/> <case element="avdp" attr="degree">
-<caseText value="no">does not have any such degree words, however.</caseText>
-<caseText value="yes">has such degree words.</caseText>
-</case>
-<text show="swAdvPDegreeYes">These degree words occur <case element="advp" attr="degreePos">
-				<caseText value="before">before</caseText>
-				<caseText value="after">after</caseText>
-				<caseText value="either">on either side (but not both sides) of</caseText>
-				<caseText value="beforeOrBoth">before or on both sides of</caseText>
-				<caseText value="afterOrBoth">after or on both sides of</caseText>
-				<caseText value="both">on both sides of</caseText>
-			</case> the adverb.  <case element="advp" attr="degreeSet">
-<caseText value="unrestricted">The degree words can modify any type of adverb.</caseText>
-<caseText value="exceptReason">The degree words can modify temporals, locatives, and manner adverbs, but reason or purpose adverbs are not modified.</caseText>
-<caseText value="restricted">There are distinct sets of the degree words which can modify each type of adverb.</caseText>
-</case>
-</text></p>
-</section1>
-<section2 id="advpTemporals"><secTitle>Temporal Adverbs</secTitle>
+	<p>Languages normally have degree words which can modify at least some types of adverbs.  <langName/>
+	  <case element="avdp" attr="degree">
+		<caseText value="no">does not have any such degree words, however.</caseText>
+		<caseText value="yes">has such degree words.</caseText>
+	  </case>
+	  <text show="swAdvPDegreeYes">These degree words occur <case element="advp" attr="degreePos">
+		  <caseText value="before">before</caseText>
+		  <caseText value="after">after</caseText>
+		  <caseText value="either">on either side (but not both sides) of</caseText>
+		  <caseText value="beforeOrBoth">before or on both sides of</caseText>
+		  <caseText value="afterOrBoth">after or on both sides of</caseText>
+		  <caseText value="both">on both sides of</caseText>
+		</case> the adverb.  <case element="advp" attr="degreeSet">
+		  <caseText value="unrestricted">The degree words can modify any type of adverb.</caseText>
+		  <caseText value="exceptReason">The degree words can modify temporals, locatives, and manner adverbs, but reason or purpose adverbs are not modified.</caseText>
+		  <caseText value="restricted">There are distinct sets of the degree words which can modify each type of adverb.</caseText>
+		</case>
+	  </text>
+	</p>
+  <section2 id="sAdvPTemporals">
+	<secTitle>Temporal Adverbs</secTitle>
 	<p>Temporal adverbs include the English words: <langData>already</langData>, <langData>then</langData>, <langData>soon</langData>, <langData>now</langData>,
 <langData>later</langData>, and <langData>always</langData>.  Examples including degree word modifiers are: <langData>very soon</langData>, <langData>much later</langData> and <langData>only now</langData>.
 </p>
-<p>Examples of <langName/> temporal adverbs and any degree words which can modify them include:
+	<p>Examples of <langName/> temporal adverbs and any degree words which can modify them include:
 </p>
-<example>
-	<interlinear exampleLoc="advp/temporalExample"></interlinear>
-</example>
-<p>The time element of a sentence can also be expressed by other types of words or phrases, such as: nominal phrases <langData>yesterday</langData>,
+	<example>
+	  <interlinear exampleLoc="advp/temporalExample"/>
+	</example>
+	<p>The time element of a sentence can also be expressed by other types of words or phrases, such as: nominal phrases <langData>yesterday</langData>,
 <langData>last night</langData>, <langData>next year</langData>, <langData>tomorrow</langData>, <langData>a long time ago</langData>; prepositional
 phrases <langData>for a long time</langData>, <langData>in a little while</langData>, <langData>at 10 o'clock</langData>; and
 adverbial clauses <langData>while you are working</langData>, <langData>when Sue arrived</langData>.  These phrases occur in the same positions as the temporal adverbs, normally either initially or finally in the clause.  See section <sectionRef sec="np"/> for the structure of nominal phrases and section <sectionRef sec="pp"/> for information on pre/post-positional phrases.  See also section <sectionRef sec="advclTemporal"/> for examples of temporal adverbial clauses.</p>
-</section2>
-	<section2 id="advpLocative"><secTitle>Locative Adverbs</secTitle>
+  </section2>
+  <section2 id="sAdvPLocative">
+	<secTitle>Locative Adverbs</secTitle>
 	<p>Locative adverbs include the English words: <langData>here</langData>, <langData>there</langData>, <langData>everywhere</langData>.  Locative adverbs can be modified by <langData>only</langData> and <langData>right</langData>, as in: <langData>only here</langData>, <langData>right here</langData> and <langData>right there</langData>.</p>
-<p>Examples of <langName/> locative adverbs and any degree words which can modify them include:
+	<p>Examples of <langName/> locative adverbs and any degree words which can modify them include:
 </p>
-<example>
-	<interlinear exampleLoc="advp/locativeExample"></interlinear>
-</example>
-<p>Location is often also expressed by a prepositional
+	<example>
+	  <interlinear exampleLoc="advp/locativeExample"/>
+	</example>
+	<p>Location is often also expressed by a prepositional
 phrase, such as: <langData>in the mountains</langData>, <langData>at San Jose</langData>, <langData>over there</langData>.  Many
 languages allow just a nominal phrase, consisting of a proper noun or
 description of the place.  Locative expressions may normally occur either initially or finally in the clause, or as complements to motion verbs.  See section <sectionRef sec="ipMotion"/> for examples with motion verbs.
 </p>
-</section2>
-	<section2 id="advpManner"><secTitle>Manner Adverbs</secTitle>
+  </section2>
+  <section2 id="sAdvPManner">
+	<secTitle>Manner Adverbs</secTitle>
 	<p>Manner adverbs directly modify the verb and usually end in <langData>-ly</langData> in English.  These
 manner adverbs can be modified by <langData>very</langData>
 and <langData>so</langData>, as in: <langData>very quickly</langData>, <langData>so slowly</langData> and <langData>very well</langData>.</p>
-<p>Examples of <langName/> manner adverbs and any degree words which can modify them include:
+	<p>Examples of <langName/> manner adverbs and any degree words which can modify them include:
 </p>
-<example>
-	<interlinear exampleLoc="advp/mannerExample"></interlinear>
-</example>
-<p show="swAdvPMannerTypeAffix">Manner adverbs in <langName/> are all written as affixes on the verb, rather than being separate words.</p>
-</section2>
-	<section2 id="advpReason"><secTitle>Reason or Purpose Adverbs</secTitle>
+	<example>
+	  <interlinear exampleLoc="advp/mannerExample"/>
+	</example>
+	<p show="swAdvPMannerTypeAffix">Manner adverbs in <langName/> are all written as affixes on the verb, rather than being separate words.</p>
+  </section2>
+  <section2 id="sAdvPReason">
+	<secTitle>Reason or Purpose Adverbs</secTitle>
 	<p>Reason or purpose adverbs include <langData>therefore</langData> and
 <langData>so</langData>.  Reason or purpose adverbs do not allow modifiers in English.  Reason or purpose can also be expressed by an adverbial clause beginning with <langData>because</langData> or <langData>since</langData> or <langData>in order</langData>.  These adverbial phrases or clauses occur either initially or finally in the sentence.</p>
-<p>Examples of <langName/> reason or purpose adverbs or adverbial clauses, included in full sentences are:
+	<p>Examples of <langName/> reason or purpose adverbs or adverbial clauses, included in full sentences are:
 </p>
-<example>
-	<interlinear exampleLoc="advp/reasonExample"></interlinear>
-</example>
-<p>The structure of the adverbial clauses will be addressed in section <sectionRef sec="advclReason"/>.  Reason or purpose can also be expressed by a prepositional phrase, such as <langData>for this reason</langData> or <langData>on purpose</langData>.  Such phrases are described in section <sectionRef sec="pp"/>.
+	<example>
+	  <interlinear exampleLoc="advp/reasonExample"/>
+	</example>
+	<p>The structure of the adverbial clauses will be addressed in section <sectionRef sec="advclReason"/>.  Reason or purpose can also be expressed by a prepositional phrase, such as <langData>for this reason</langData> or <langData>on purpose</langData>.  Such phrases are described in section <sectionRef sec="pp"/>.
 </p>
-</section2>
+  </section2>
+  </section1>
 	<showWhen id="swAdvPDegreeYes">
-		<whenValue element="advp" attr="degree" value="yes"/>
-	</showWhen>
-	<showWhen id="swAdvPMannerTypeAffix">
-		<whenValue element="advp" attr="mannerType" value="affix"/>
-	</showWhen>
+	<whenValue element="advp" attr="degree" value="yes"/>
+  </showWhen>
+  <showWhen id="swAdvPMannerTypeAffix">
+	<whenValue element="advp" attr="mannerType" value="affix"/>
+  </showWhen>
 </portion>

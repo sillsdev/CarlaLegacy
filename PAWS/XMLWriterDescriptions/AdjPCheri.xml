@@ -2,81 +2,85 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <portion>
-	<section1 id="adjp"><secTitle>Adjectives and Adjective Phrases</secTitle>
-	<p>In many grammars, numbers, quantifiers, articles, and demonstratives are considered adjectives, but each of them has a different distribution from the qualitative adjectives, so they will each have distinct syntactic categories.  This section is limited to considering qualitative adjectives that express size, color, age, texture, form, or quality.  One characteristic of this type of adjective is that more than one can modify a noun and in general the order of the adjectives can change (with a slight change in meaning due to the scope of the modification).  For example, <langData>hard dull brass rods</langData> versus <langData>dull hard brass rods</langData> versus <langData>brass hard dull rods</langData>, etc.  The position of adjectives within the nominal phrase will be dealt with in section <sectionRef sec="npAdjP"/>.
+  <section1 id="sAdjP">
+	<secTitle>Adjectives and Adjective Phrases</secTitle>
+	<p>In many grammars, numbers, quantifiers, articles, and demonstratives are considered adjectives, but each of them has a different distribution from the qualitative adjectives, so they will each have distinct syntactic categories.  This section is limited to considering qualitative adjectives that express size, color, age, texture, form, or quality.  One characteristic of this type of adjective is that more than one can modify a noun and in general the order of the adjectives can change (with a slight change in meaning due to the scope of the modification).  For example, <langData>hard dull brass rods</langData> versus <langData>dull hard brass rods</langData> versus <langData>brass hard dull rods</langData>, etc.  The position of adjectives within the nominal phrase will be dealt with in section <sectionRef sec="sNPAdjP"/>.
 </p>
 	<p>Here we consider what types of words can modify qualitative adjectives themselves.  Some English examples are:
 <langData>very big</langData>, <langData>so blue</langData>, <langData>extremely large</langData>, <langData>very well built</langData> and <langData>very easily forgotten</langData>.  Not all combinations of words work due to semantics and other considerations, but in general it seems that certain degree words and manner adverbs or manner adverb phrases can modify adjectives.</p>
-<p>Examples of adjectives or adjective phrases in <langName/> include:
+	<p>Examples of adjectives or adjective phrases in <langName/> include:
 </p>
-<example>
-	<interlinear exampleLoc="adjp/example"></interlinear>
-</example>
-<p show="swAdjPModifiersNo"><langName/> does not all any degree words or manner adverbs to modify adjectives.</p>
-<p show="swAdjPModifiersYesDegree"><langName/> allows certain degree words to modify adjectives, but manner adverbs may not.  The degree words occur <case element="adjp" attr="degreePos">
-				<caseText value="before">before</caseText>
-				<caseText value="after">after</caseText>
-				<caseText value="either">on either side (but not both sides) of</caseText>
-				<caseText value="beforeOrBoth">before or on both sides of</caseText>
-				<caseText value="afterOrBoth">after or on both sides of</caseText>
-				<caseText value="both">on both sides of</caseText>
-</case> the adjective.  <text show="swAdjPDegreeEitherUnrestricted">All of the degree words can occur on either side of the adjective.</text>
-			<text show="swAdjPDegreeEitherRestricted">There are restrictions as to which of the degree words can occur on each side of the adjective.</text>
-		</p>
-<p show="swAdjPModifiersYesManner"><langName/> allows both certain degree words and manner adverbs to modify adjectives.  These modifiers occur <case element="adjp" attr="mannerPos">
-				<caseText value="before">before</caseText>
-				<caseText value="after">after</caseText>
-				<caseText value="either">on either side (but not both sides) of</caseText>
-				<caseText value="beforeOrBoth">before or on both sides of</caseText>
-				<caseText value="afterOrBoth">after or on both sides of</caseText>
-				<caseText value="both">on both sides of</caseText>
-</case> the adjective.  <text show="swAdjPMannerEitherUnrestricted">All of the degree words and manner adverbs can occur on either side of the adjective.</text>
-			<text show="swAdjPMannerEitherRestricted">There are restrictions as to which of the degree words and manner adverbs can occur on each side of the adjective.</text>
-</p>
-</section1>
-	<showWhen id="swAdjPModifiersNo">
-		<whenValue element="adjp" attr="modifiers" value="no"/>
-	</showWhen>
-	<showWhen id="swAdjPModifiersYesDegree">
-		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
-	</showWhen>
-	<showWhen id="swAdjPModifiersYesManner">
-		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
-	</showWhen>
-	<showWhen id="swAdjPDegreeEitherUnrestricted">
-		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
-		<and/>
-		<whenValue element="adjp" attr="degreeEither" value="unrestricted"/>
-		<and/>
-<whenValue element="adjp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-<whenValue element="adjp" attr="degreePos" value="after" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swAdjPDegreeEitherRestricted">
-		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
-		<and/>
-		<whenValue element="adjp" attr="degreeEither" value="restricted"/>
-		<and/>
-<whenValue element="adjp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-<whenValue element="adjp" attr="degreePos" value="after" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swAdjPMannerEitherUnrestricted">
-		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
-		<and/>
-		<whenValue element="adjp" attr="mannerEither" value="unrestricted"/>
-		<and/>
-<whenValue element="adjp" attr="mannerPos" value="before" negateValue="yes"/>
-		<and/>
-<whenValue element="adjp" attr="mannerPos" value="after" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swAdjPMannerEitherRestricted">
-		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
-		<and/>
-		<whenValue element="adjp" attr="mannerEither" value="restricted"/>
-		<and/>
-<whenValue element="adjp" attr="mannerPos" value="before" negateValue="yes"/>
-		<and/>
-<whenValue element="adjp" attr="mannerPos" value="after" negateValue="yes"/>
-	</showWhen>
+	<example>
+	  <interlinear exampleLoc="adjp/example"/>
+	</example>
+	<p show="swAdjPModifiersNo">
+	  <langName/> does not all any degree words or manner adverbs to modify adjectives.</p>
+	<p show="swAdjPModifiersYesDegree">
+	  <langName/> allows certain degree words to modify adjectives, but manner adverbs may not.  The degree words occur <case element="adjp" attr="degreePos">
+		<caseText value="before">before</caseText>
+		<caseText value="after">after</caseText>
+		<caseText value="either">on either side (but not both sides) of</caseText>
+		<caseText value="beforeOrBoth">before or on both sides of</caseText>
+		<caseText value="afterOrBoth">after or on both sides of</caseText>
+		<caseText value="both">on both sides of</caseText>
+	  </case> the adjective.  <text show="swAdjPDegreeEitherUnrestricted">All of the degree words can occur on either side of the adjective.</text>
+	  <text show="swAdjPDegreeEitherRestricted">There are restrictions as to which of the degree words can occur on each side of the adjective.</text>
+	</p>
+	<p show="swAdjPModifiersYesManner">
+	  <langName/> allows both certain degree words and manner adverbs to modify adjectives.  These modifiers occur <case element="adjp" attr="mannerPos">
+		<caseText value="before">before</caseText>
+		<caseText value="after">after</caseText>
+		<caseText value="either">on either side (but not both sides) of</caseText>
+		<caseText value="beforeOrBoth">before or on both sides of</caseText>
+		<caseText value="afterOrBoth">after or on both sides of</caseText>
+		<caseText value="both">on both sides of</caseText>
+	  </case> the adjective.  <text show="swAdjPMannerEitherUnrestricted">All of the degree words and manner adverbs can occur on either side of the adjective.</text>
+	  <text show="swAdjPMannerEitherRestricted">There are restrictions as to which of the degree words and manner adverbs can occur on each side of the adjective.</text>
+	</p>
+  </section1>
+  <showWhen id="swAdjPModifiersNo">
+	<whenValue element="adjp" attr="modifiers" value="no"/>
+  </showWhen>
+  <showWhen id="swAdjPModifiersYesDegree">
+	<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+  </showWhen>
+  <showWhen id="swAdjPModifiersYesManner">
+	<whenValue element="adjp" attr="modifiers" value="yesManner"/>
+  </showWhen>
+  <showWhen id="swAdjPDegreeEitherUnrestricted">
+	<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+	<and/>
+	<whenValue element="adjp" attr="degreeEither" value="unrestricted"/>
+	<and/>
+	<whenValue element="adjp" attr="degreePos" value="before" negateValue="yes"/>
+	<and/>
+	<whenValue element="adjp" attr="degreePos" value="after" negateValue="yes"/>
+  </showWhen>
+  <showWhen id="swAdjPDegreeEitherRestricted">
+	<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+	<and/>
+	<whenValue element="adjp" attr="degreeEither" value="restricted"/>
+	<and/>
+	<whenValue element="adjp" attr="degreePos" value="before" negateValue="yes"/>
+	<and/>
+	<whenValue element="adjp" attr="degreePos" value="after" negateValue="yes"/>
+  </showWhen>
+  <showWhen id="swAdjPMannerEitherUnrestricted">
+	<whenValue element="adjp" attr="modifiers" value="yesManner"/>
+	<and/>
+	<whenValue element="adjp" attr="mannerEither" value="unrestricted"/>
+	<and/>
+	<whenValue element="adjp" attr="mannerPos" value="before" negateValue="yes"/>
+	<and/>
+	<whenValue element="adjp" attr="mannerPos" value="after" negateValue="yes"/>
+  </showWhen>
+  <showWhen id="swAdjPMannerEitherRestricted">
+	<whenValue element="adjp" attr="modifiers" value="yesManner"/>
+	<and/>
+	<whenValue element="adjp" attr="mannerEither" value="restricted"/>
+	<and/>
+	<whenValue element="adjp" attr="mannerPos" value="before" negateValue="yes"/>
+	<and/>
+	<whenValue element="adjp" attr="mannerPos" value="after" negateValue="yes"/>
+  </showWhen>
 </portion>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="XLingPap.dtd"/>
+  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="XLingPap.dtd"/>
   <!--
 ================================================================
 Convert PAWS answers xml file to an XLingPap xml file
@@ -19,20 +19,27 @@ Main template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="/">
-  <xsl:processing-instruction name="xml-stylesheet">
-  <xsl:text>type="text/xsl" href="XLingPap1.xsl"</xsl:text>
-  </xsl:processing-instruction>
-<lingPaper>
-<xsl:attribute name="css"><xsl:value-of select="//language/langAbbr"/><xsl:text>WriteUp.css</xsl:text></xsl:attribute>
-<language>
-<xsl:attribute name="id"><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
-</language>
-	<xsl:apply-templates select="/" mode="intro"/>
-	<xsl:apply-templates select="/" mode="qp"/>
-</lingPaper>
+	<xsl:processing-instruction name="xml-stylesheet">
+	  <xsl:text>type="text/xsl" href="XLingPap1.xsl"</xsl:text>
+	</xsl:processing-instruction>
+	<lingPaper>
+	  <xsl:attribute name="css"><xsl:value-of select="//language/langAbbr"/><xsl:text>WriteUp.css</xsl:text></xsl:attribute>
+	  <language id="lPAWSSKEnglish">PAWSSKEnglish</language>
+	  <language id="lGloss">GlossLanguage</language>
+	  <language>
+		<xsl:attribute name="id"><xsl:text>l</xsl:text><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
+		<xsl:value-of select="//language/langName"/>
+	  </language>
+	  <xsl:apply-templates select="/" mode="intro"/>
+	  <xsl:apply-templates select="/" mode="qp"/>
+	  <xsl:apply-templates select="/" mode="advp"/>
+	  <xsl:apply-templates select="/" mode="adjp"/>
+	</lingPaper>
   </xsl:template>
-  <xsl:include href="..\XMLWriterDescriptions\IntroAndTypology.xsl"/>
-  <xsl:include href="..\XMLWriterDescriptions\QP.xsl"/>
+  <xsl:include href="IntroAndTypology.xsl"/>
+  <xsl:include href="QP.xsl"/>
+  <xsl:include href="AdvP.xsl"/>
+  <xsl:include href="AdjP.xsl"/>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 DoGlossAndFree
@@ -42,12 +49,12 @@ DoGlossAndFree
 -->
   <xsl:template name="DoGlossAndFree">
 	<line>
-	  <gloss lang="eng">
+	  <gloss lang="lGloss">
 		<object class="comment">Enter gloss here.</object>
 	  </gloss>
 	</line>
 	<free>
-	  <gloss lang="eng">
+	  <gloss lang="lGloss">
 		<object class="comment">Enter free translation here.</object>
 	  </gloss>
 	</free>
@@ -76,14 +83,14 @@ OutputInterlinearExamples
 		</xsl:choose>
 	  </xsl:variable>
 	  <listInterlinear>
-		<xsl:attribute name="letter"><xsl:value-of select="generate-id()"/>_<xsl:value-of select="$iLength"/></xsl:attribute>
+		<xsl:attribute name="letter">x<xsl:value-of select="generate-id(.)"/>_<xsl:value-of select="$iLength"/></xsl:attribute>
 		<line>
 		  <langData>
-			<xsl:attribute name="lang"><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
+			<xsl:attribute name="lang"><xsl:text>l</xsl:text><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
 			<xsl:value-of select="$sLine"/>
 		  </langData>
 		</line>
-	  <xsl:call-template name="DoGlossAndFree"/>
+		<xsl:call-template name="DoGlossAndFree"/>
 	  </listInterlinear>
 	  <xsl:call-template name="OutputInterlinearExamples">
 		<xsl:with-param name="sExamples">

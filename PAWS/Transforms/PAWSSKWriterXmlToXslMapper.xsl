@@ -33,6 +33,16 @@ Main template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+caption template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//caption">
+	<caption>
+	  <xsl:apply-templates/>
+	</caption>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 case template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
@@ -56,23 +66,31 @@ caseText template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+category template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//category">
+	<xsl:element name="xsl:text">
+	  <xsl:value-of select="."/>
+	</xsl:element>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 col template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//col">
 	<col>
-	<xsl:choose>
-	  <xsl:when test="@exampleLoc">
-	  <xsl:element name="xsl:value-of">
-	  <xsl:attribute name="select">
-	  <xsl:text>//</xsl:text>
-	  <xsl:value-of select="@exampleLoc"/>
-	  </xsl:attribute>
-	  </xsl:element>
-	  </xsl:when>
-	  <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
-	</xsl:choose>
-
+	  <xsl:choose>
+		<xsl:when test="@exampleLoc">
+		  <xsl:element name="xsl:value-of">
+			<xsl:attribute name="select"><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:attribute>
+		  </xsl:element>
+		</xsl:when>
+		<xsl:otherwise>
+		  <xsl:apply-templates/>
+		</xsl:otherwise>
+	  </xsl:choose>
 	</col>
   </xsl:template>
   <!--
@@ -102,12 +120,69 @@ example template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//example">
-	<xsl:element name="example">
-	  <xsl:if test="@num">
-		<xsl:attribute name="num"><xsl:value-of select="@num"/></xsl:attribute>
-	  </xsl:if>
-	  <xsl:apply-templates/>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:element name="example">
+			<xsl:if test="@num">
+			  <xsl:attribute name="num"><xsl:value-of select="@num"/></xsl:attribute>
+			</xsl:if>
+			<xsl:apply-templates/>
+		  </xsl:element>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:element name="example">
+		  <xsl:if test="@num">
+			<xsl:attribute name="num"><xsl:value-of select="@num"/></xsl:attribute>
+		  </xsl:if>
+		  <xsl:apply-templates/>
+		</xsl:element>
+	  </xsl:otherwise>
+	</xsl:choose>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+exampleRef template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//exampleRef">
+	<xsl:copy>
+	  <xsl:for-each select="@*">
+		<xsl:copy/>
+	  </xsl:for-each>
+	</xsl:copy>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+feature template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//feature">
+	<xsl:element name="xsl:text">
+	  <xsl:value-of select="."/>
 	</xsl:element>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+headerCol template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//headerCol">
+	<headerCol>
+		  <xsl:apply-templates/>
+	</headerCol>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+headerRowl template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//headerRow">
+	<headerRow>
+		  <xsl:apply-templates/>
+	</headerRow>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -142,14 +217,14 @@ interlinear template
 		<listInterlinear>
 		  <xsl:element name="xsl:attribute">
 			<xsl:attribute name="name"><xsl:text>letter</xsl:text></xsl:attribute>
-			<xsl:element name="xsl:value-of">
-			  <xsl:attribute name="select"><xsl:text>generate-id()</xsl:text></xsl:attribute>
-			</xsl:element>
+			<xsl:element name="xsl:text">x</xsl:element>
+			<xsl:value-of select="generate-id()"/>
 		  </xsl:element>
 		  <line>
 			<langData>
 			  <xsl:element name="xsl:attribute">
 				<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
+				<xsl:text>l</xsl:text>
 				<xsl:element name="xsl:value-of">
 				  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
 				</xsl:element>
@@ -172,7 +247,10 @@ langData template
   <xsl:template match="//langData">
 	<langData>
 	  <xsl:element name="xsl:attribute">
-		<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute><xsl:element name="xsl:value-of"><xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute></xsl:element>
+		<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
+		<xsl:element name="xsl:text">
+		  <xsl:text>lPAWSSKEnglish</xsl:text>
+		</xsl:element>
 	  </xsl:element>
 	  <xsl:apply-templates/>
 	</langData>
@@ -199,13 +277,35 @@ li template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ol template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//ol">
+	<ol>
+	  <xsl:apply-templates/>
+	</ol>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 p template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//p">
-	<p>
-	  <xsl:apply-templates select="*"/>
-	</p>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <p>
+			<xsl:apply-templates select="*"/>
+		  </p>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<p>
+		  <xsl:apply-templates select="*"/>
+		</p>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -295,6 +395,18 @@ section6 template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+sectionRef template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//sectionRef">
+	<xsl:copy>
+	  <xsl:for-each select="@*">
+		<xsl:copy/>
+	  </xsl:for-each>
+	</xsl:copy>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 table template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
@@ -302,6 +414,17 @@ table template
 	<table>
 	  <xsl:apply-templates/>
 	</table>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+text template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//text">
+	<xsl:element name="xsl:if">
+	  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+	  <xsl:apply-templates/>
+	</xsl:element>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

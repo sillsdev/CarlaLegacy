@@ -65,6 +65,8 @@ c "<col "	> dup use(EndOfElement)
 
 "</p>"	>  out(EndContent) dup
 
+"<sectionRef "	> out(EndContent) dup use(EndOfElement)
+
 "<text>"	> out(EndContent) dup out(Content)
 "<text "	> out(EndContent) dup use(EndOfElement)
 

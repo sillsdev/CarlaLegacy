@@ -2,7 +2,7 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <portion>
-  <section1 id="intro">
+  <section1 id="sIntro">
 	<secTitle>Introduction</secTitle>
 	<p>
 	  <content>This is a description of the syntax of </content>
@@ -24,7 +24,7 @@
 	  <content> language family.</content>
 	</p>
   </section1>
-  <section1 id="typology">
+  <section1 id="sTypology">
 	<secTitle>Typology</secTitle>
 	<p>
 	  <content>The basic typology of </content>
