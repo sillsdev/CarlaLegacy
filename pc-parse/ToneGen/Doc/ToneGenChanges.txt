@@ -1,5 +1,9 @@
 ToneGen CHANGE HISTORY
 
+1.0.4 (20-Nov-2001)
+-------------------
+1. Updated to incorporate updates to embedded STAMP functions.
+
 1.0.3 (27-Dec-2000)
 -------------------
 1. Various internal changes not visible to the user.
