@@ -1,0 +1,98 @@
+						Lexical Transfer
+						  Alan Buseman
+							1 Oct 92
+
+The Lexical  Transfer  LEXTRANS  program  is designed to transfer
+source citation  forms  of  roots  in  an analysis file to target
+citation forms using correspondences from a dictionary.
+
+If CADA  analysis  is  done using source forms instead of glosses
+for morphnames,  then  the  source  forms  have  to be changed to
+target forms  during  transfer  to a target language.  Doing this
+with a  long  list  of  lexical  changes  is  clumsy,  slow,  and
+redundant.  The  LEXTRANS  program  builds  an  internal table of
+lexical changes from a dictionary and applies those changes to an
+analysis file.   It  picks  up source forms from one field of the
+dictionary and  target  forms  from  another  field.   It  uses a
+high-speed search to apply the changes rapidly.
+
+Besides converting  from  source  forms to target forms, LEXTRANS
+can also  be  used to convert source forms to glosses, or glosses
+to target forms.  This gives enhanced flexibility in transfer.
+
+LEXTRANS gets all the information it needs from the command line.
+It reads command line arguments as follows:
+
+lextrans -d dicfile -i infile -o outfile [options]
+	-r record marker in dictionary
+	-s source mark
+	-n target mark
+	-m  monitor changes applied
+	-t  trace changes applied
+
+Options can  be  placed  anywhere  in the line. Options that give
+dictionary markers  should be followed by a space and then by the
+marker without  a  backslash.  For example, the following command
+line says  that  \fri  is  both  the record marker and the source
+marker, and \eng is the target marker.
+
+	lextrans -d fri.dic -r fri -s fri -t eng -i x.ana -o xout.ana
+
+A sample dictionary for the above command is:
+
+	\fri syn
+	\eng his
+	\c Pron
+
+	\fri gre^f
+	\eng grave
+	\c N
+
+A sample analysis file contains:
+
+	\a < Pron syn >
+
+	\a < N gre^f >
+
+The output is:
+
+	\a < Pron his >
+
+	\a < N grave >
+
+The record  marker  can be the same as the source, or the same as
+the target,  or different from both of them. Markers not given on
+the command line default as follows:
+
+	-r r
+	-s r
+	-t g
+
+There is  no option for comment character because it doesn't make
+any difference. (The morphname is simply the first word after the
+marker.)
+
+Duplicate entries  for the same source form generate ambiguities.
+Duplicates also generate warning messages in the log file.
+
+For example, the following dictionary has duplicates:
+
+	\fri skinke
+	\eng give
+	\c V
+
+	\fri skinke
+	\eng pour
+	\c V
+
+This dictionary produces the following warning in the log:
+
+	Duplicate match: skinke -> pour, give
+
+This dictionary can be applied to the following analysis:
+
+	\a < V skinke >
+
+The output is:
+
+	\a %2%< V give >%< V pour >%

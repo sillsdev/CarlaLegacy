@@ -1,0 +1,8 @@
+; JoinCompDLL.def : Declares the module parameters for the DLL.
+
+; let it come from the dsp /out: stmt (unicode) LIBRARY      "JoinCompCS"
+DESCRIPTION  'JoinComp DLL for use with Carla Studio'
+
+EXPORTS
+	GetProcessorDisplayName   @1
+	?GetProcessTemplate@@YAPAVCProcessTemplate@@XZ  @2

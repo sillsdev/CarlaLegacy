@@ -1,0 +1,84 @@
+LEXTRANS.TXT Release Notes for LEXTRANS Lexical Transfer
+
+LEXTRANS does lexical transfer to convert morphnames from source
+to target based on a combined dictionary. LEXTRANS is documented
+in the file LEXTRANS.DOC.
+
+Change history:
+
+0.2w Mar 2001 Fixed bug which did not manage memory properly for properties
+in rules.
+
+0.2v Oct 2000 Fixed bug whereby Lextrans was not allowing *just* category
+changing: When only '-p' replace categories is selected, the rule file was
+processing as having no rules.
+
+0.2u Sep 2000 Increased temporary memory work space size from 63000 to
+640000.  This should prevent LexTrans from running out of memory when
+loading large rule sets.
+
+0.2t Jul 2000 Fix bug which did not pass on \u field in ANA file.
+
+0.2s Mar 2000 Limit of 2000 characters per line is too small for some
+  large ambiguities.  Increased it to 10000.
+
+0.2r Jan 2000 Various internal handling improvements.  Nothing visible
+  to the user.
+
+0.2p Sep 1998 Added compile time display.  Created DJGPP, Win32, and
+8086 versions.  Conformed monitoring display to new standard.
+
+0.2o Dec 95 Add -q option to replace properties through dictionary.
+
+0.2n Dec 95 transmits the \p field from source to target.
+
+0.2m Nov 95 ports to the DJGPP compiler to make a 386 version.
+
+0.2k Jun 95 adds the ability to ignore noload records.  For this
+to happen LEXTRANS needed to load the Analysis Code Table file to
+find out what the noload markers are.  A -f command line option
+was added that tells LEXTRANS to read an AMPLE command file
+containing among other things the name of the code table file.
+LEXTRANS also reads the root dictionary filenames from the
+command file, rather than using the -d command line option.  If
+the -f option is not used the program behaves as before.
+
+0.2j Mar 95 fixes a bug in 0.2h that prevented Lextrans from
+running on an XT.
+
+0.2h Mar 95 fixes a bug which caused a change rule to be
+generated for only the last target and source word in a record
+containing multiple target and/or source words. 0.2h corrects
+this by generating change rules for all target and source words
+in a record.
+
+0.2g Feb 94 adds a -p option to replace categories as well as
+roots. It is used to convert from source to target categories. To
+use it, give the category field marker after the -p option. This
+option can also convert only categories and not roots. To do that
+use a -p option and no -n option.
+
+0.2f Jun 93 further fixes the bug which was partly fixed by
+version 0.2e.
+
+0.2e May 93 fixes a bug in which source words that started with
+an upper ASCII character failed to match.
+
+0.2d Mar 93 greatly increases the dictionary storage space.
+Versions previous to 0.2d recognized dictionary markers only if
+they were followed by a space. Version 0.2d allows nl or tab
+after the marker.
+
+0.2c Mar 93 puts the version header and a statistical summary
+into the log file.  0.2c also exits with an error if no
+dictionary entries are found, or if no change rules are found, or
+if the source and target marks are the same, or if no output file
+is given.
+
+0.2b Mar 93 fixes a bug which could cause the program to hang
+when morphnames to be transferred contained extended ASCII
+characters.  0.2b also fixes a bug which caused the output file
+to have extra carriage returns in it.
+
+0.2a Nov 92 adds a -c command line option to give the comment
+character for dictionaries.
