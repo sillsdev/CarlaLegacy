@@ -1,5 +1,10 @@
 TonePars CHANGE HISTORY
 
+1.0.7 (04-Dec-2001)
+-------------------
+1. Feature changing mode should only remove previously linked tones;
+floating ones remain.
+
 1.0.6 (28-Nov-2001)
 -------------------
 1. When linking a left-floating tone leftward or linking a
