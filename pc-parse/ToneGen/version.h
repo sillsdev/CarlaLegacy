@@ -4,12 +4,14 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL -10		/* bug fix or other internal improvement */
-#define DATE       "August 15, 2002"	/* date of release version */
+#define PATCHLEVEL -11		/* bug fix or other internal improvement */
+#define DATE       "October 17, 2002"	/* date of release version */
 #define YEAR       "2002"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 17-Oct-2002  hab - reflect Steve's recent fixes to opaclib
+ * [1.0.11]
  * 15-Aug-2002  hab - Not showing synthesized forms in tone part of trace.
  * [1.0.10]           Would only output one correct form.
  * 10-Dec-2001  hab - 'tonestatus' 'tone' 'is' TONE clause in rules needs to

@@ -1,5 +1,9 @@
 TonePars CHANGE HISTORY
 
+1.0.10 (17-Oct-2002)
+--------------------
+1. Some minor internal changes - nothing visible to the user.
+
 1.0.9 (10-Dec-2001)
 -------------------
 1. Finish fix to linking left/right floating tones so that

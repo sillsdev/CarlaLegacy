@@ -1,5 +1,18 @@
 ToneGen CHANGE HISTORY
 
+
+1.0.11 (17-Oct-2002)
+--------------------
+1. Some minor internal changes - nothing visible to the user.
+
+
+1.0.10 (15-Aug-2002)
+--------------------
+1. Not showing synthesized forms in tone part of trace.
+
+2. Would only output one correct form.
+
+
 1.0.9 (10-Dec-2001)
 -------------------
 1. The "'tonestatus' 'tone' 'is' TONE" clause in rules needs to use the first

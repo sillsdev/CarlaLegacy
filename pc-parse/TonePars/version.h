@@ -4,12 +4,14 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 9		/* bug fix or other internal improvement */
-#define DATE       "December 10, 2001"	/* date of release version */
-#define YEAR       "2001"	/* used for release date and copyright */
+#define PATCHLEVEL 10		/* bug fix or other internal improvement */
+#define DATE       "October 17, 2002"	/* date of release version */
+#define YEAR       "2002"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 17-Oct-2002  hab - reflect Steve's recent fixes to opaclib
+ * [1.0.10]
  * 10-Dec-2001  hab - Finish fix to linking left/right floating tones so that
  * [1.0.9]              the source morpheme no longer acts as if the tone
  *                      still belongs to it after it has been linked to the
