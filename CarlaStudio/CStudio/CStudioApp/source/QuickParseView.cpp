@@ -440,7 +440,7 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 	  m_sOutput = sAllos + sReturn + sMNames + sReturn + sReturn;
 	  UpdateData(FALSE);
 #ifndef hab254
-	  if (sState = "NFXIFX")
+	  if (sState == "NFXIFX")
 	sState = "NFX";		// no longer need to know it also was an infix
 	  sLastState = sState;
 #endif // hab254
