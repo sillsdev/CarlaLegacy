@@ -123,6 +123,10 @@ SOURCE=.\cvtkp2wa.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\disphead.c
+# End Source File
+# Begin Source File
+
 SOURCE=.\grammar.c
 # End Source File
 # Begin Source File

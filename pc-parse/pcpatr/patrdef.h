@@ -362,8 +362,15 @@ struct patr_feature
 #define PATR_FAILFS	5
 #define PATR_DEFATOM	6
 #define PATR_DISJUNCT	7
+#ifndef hab130v
+#define PATR_VARIABLE	8
+#endif /* hab130v */
 	union {			/* feature value */
 	char *			 pszAtom;	/* PATR_ATOM or PATR_DEFATOM */
+#ifndef hab130v
+	int                      iVariable;	/* PATR_VARIABLE */
+												/* value is 0-8 */
+#endif /* hab130v */
 	PATRComplexFeature *	 pComplex;	/* PATR_COMPLEX */
 	PATRFeatureDisjunction * pDisjunction;	/* PATR_DISJUNCT */
 	PATRFeature *		 pForward;	/* PATR_FORWARD */
@@ -659,8 +666,14 @@ extern void		recordPATRFeatureCopy P((PATRFeature *x,
 /*
  *  subsume.c
  */
+#ifndef hab130v
+extern int	subsumesPATRFeature P((PATRFeature * pFirst_in,
+					   PATRFeature * pSecond_in,
+					   char ** apszIndexedVariableValues));
+#else  /* hab130v */
 extern int	subsumesPATRFeature P((PATRFeature * pFirst_in,
 					   PATRFeature * pSecond_in));
+#endif /* hab130v */
 /*
  *  unify.c
  */

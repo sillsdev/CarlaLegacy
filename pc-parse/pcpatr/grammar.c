@@ -3617,6 +3617,22 @@ if ( *token == '!' )			/* If default atom, marked !atom */
 					/* Make atom of rest */
 	tfeat->u.pszAtom = storedPATRString(token + 1, pPATR_in);
 	}
+#ifndef hab130v
+else if ( *token == '^' &&	/* if indexed variable (^1, ^2, ..., ^9) */
+	  *(token+1) >= '1' && *(token+1) <= '9' &&
+	  *(token+2) == NUL)
+	{
+	tfeat = allocPATRFeature(pPATR_in);		/* Allocate space */
+	tfeat->eType     = PATR_VARIABLE;	/* Mark it as a variable */
+					/* Set the index to digit minus 1 */
+	tfeat->u.iVariable = *(token+1) - '1';
+	/*
+	  NB: this is only valid in logical constraints.
+	  How can we notify the user when this is not found within a logical
+	  constraint?
+	 */
+	}
+#endif /* hab130v */
 else
 	tfeat = createPATRAtomFeature(storedPATRString(token, pPATR_in), pPATR_in);
 return( tfeat );

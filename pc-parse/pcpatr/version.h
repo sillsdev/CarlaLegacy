@@ -5,13 +5,16 @@
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
 #define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "February 15, 2002"	/* date of release version */
+#define DATE "March 7, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
- * 15-Feb-2002  hab  - add rootgloss feature capability
- * [1.3.0]
+ * 07-Mar-2002  hab  - add rootgloss feature capability (hab130)
+ * [1.3.0]             add indexed variables to logical constraints (hab130v)
+ *                     redid display_header() to have an argument and made it
+ *                      so that the DLL will output the header info (hab130l)
+ *                      display_header is now in disphead.c
  * 27-Sep-2001	SRMc - add doublecheck_constraints() function to perform a
  * [1.2.12]		final pass through a parse tree to verify that all
  *			logical constraints are still satisfied in the final

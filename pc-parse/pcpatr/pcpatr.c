@@ -358,6 +358,8 @@ MaxApplZone();
 }
 #endif
 
+#ifdef hab130l
+				/* moved to disphead.c */
 /*****************************************************************************
  * NAME
  *    display_header
@@ -396,6 +398,7 @@ fprintf(stderr,
 	__GNUC__, __GNUC_MINOR__ );
 #endif
 }
+#endif /* hab130l */
 
 /*****************************************************************************
  * NAME
@@ -588,7 +591,11 @@ if (pszPCPATRTakFile_g == NULL)
 	}
 if (errflag)
 	{
+#ifndef hab130l
+	display_header(stderr);
+#else  /* hab130l */
 	display_header();
+#endif /* hab130l */
 	fputs("\
 Usage:  pcpatr [-q] [-g grmfile] [-l lexfile] [-a anafile] [-t takfile]\n\
 	-q           work as quietly as possible (requires -t as well)\n\
@@ -606,5 +613,9 @@ if (trap_address != (VOIDP)NULL)
 	setAllocMemoryTrap(trap_address, trap_count);
 #endif
 if (!sPCPATRData_g.bSilent)
+#ifndef hab130l
+	display_header(stderr);
+#else  /* hab130l */
 	display_header();
+#endif /* hab130l */
 }

@@ -7,6 +7,12 @@
 #include "patrdef.h"
 #include <assert.h>
 
+#ifndef hab130l
+#ifndef _KIMMO_H_INCLUDED_
+#include "kimmo.h"
+#endif
+#endif // hab130l
+
 static const char szDefaultWordMarker_g[3]     = "\\w";
 static const char szDefaultCategoryMarker_g[3] = "\\c";
 static const char szDefaultFeatureMarker_g[3]  = "\\f";
@@ -1712,6 +1718,12 @@ STDMETHODIMP PatrParser::DisambiguateAnaFile(BSTR bstrInput, BSTR bstrOutput)
 	unsigned successes[11];
 	for ( i = 0 ; i < 11 ; ++i )
 		successes[i] = 0;
+#ifndef hab130l
+	if (m_data.pLogFP != NULL)
+		{
+		display_header(m_data.pLogFP);
+		}
+#endif // hab130l
 	for (;;)
 	{
 		wtp = readSentenceOfTemplates(pfileIn, pszInput, m_data.pFinalPunc,

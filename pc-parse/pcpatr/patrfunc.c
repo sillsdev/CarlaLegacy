@@ -1402,6 +1402,10 @@ switch (fnp1->eType)
 	case PATR_NULLFS:
 	case PATR_FAILFS:
 	return( fnp1->u.pszAtom == fnp2->u.pszAtom );
+#ifndef hab130v
+	case PATR_VARIABLE:
+	  return( fnp1->u.iVariable == fnp2->u.iVariable );
+#endif /* hab130v */
 	}
 
 return( 1 );

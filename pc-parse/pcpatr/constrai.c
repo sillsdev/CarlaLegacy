@@ -26,10 +26,19 @@
 void writePATRLogicalFactor P((PATRLogicalFactor * pFactor_in,
 				   PATRData *          pPATR_in,
 				   FILE *              pOutput_in));
+#ifndef hab130v
+int evalLogicalFactor P((PATRFeature *       pFeature_in,
+			 PATRLogicalFactor * pFactor_in,
+			 char ** apszIndexedVariableValues));
+int evalLogicalExpression P((PATRFeature *           pFeature_in,
+				 PATRLogicalExpression * pExpression_in,
+				 char ** apszIndexedVariableValues));
+#else  /* hab130v */
 int evalLogicalFactor P((PATRFeature *       pFeature_in,
 			 PATRLogicalFactor * pFactor_in));
 int evalLogicalExpression P((PATRFeature *           pFeature_in,
 				 PATRLogicalExpression * pExpression_in));
+#endif /* hab130v */
 
 /*****************************************************************************
  * NAME
@@ -154,6 +163,31 @@ fprintf(pOutputFP_in, "\n");
  * RETURN VALUE
  *    TRUE or FALSE
  */
+#ifndef hab130v
+int evalLogicalFactor(pFeature_in, pFactor_in, apszIndexedVariableValues)
+PATRFeature *       pFeature_in;
+PATRLogicalFactor * pFactor_in;
+char ** apszIndexedVariableValues;
+{
+if ((pFeature_in == NULL) || (pFactor_in == NULL))
+	return TRUE;
+switch (pFactor_in->eType)
+	{
+	case kExpression:
+	return evalLogicalExpression(pFeature_in,
+					 pFactor_in->u.pExpression,
+					 apszIndexedVariableValues);
+
+	case kFeature:
+	return subsumesPATRFeature(pFactor_in->u.pFeature,
+				   pFeature_in,
+				   apszIndexedVariableValues);
+
+	default:
+	return FALSE;
+	}
+}
+#else  /* hab130v */
 int evalLogicalFactor(pFeature_in, pFactor_in)
 PATRFeature *       pFeature_in;
 PATRLogicalFactor * pFactor_in;
@@ -172,6 +206,7 @@ switch (pFactor_in->eType)
 	return FALSE;
 	}
 }
+#endif /* hab130v */
 
 /*****************************************************************************
  * NAME
@@ -181,6 +216,69 @@ switch (pFactor_in->eType)
  * RETURN VALUE
  *    TRUE or FALSE
  */
+#ifndef hab130v
+int evalLogicalExpression(pFeature_in, pExpression_in,
+			  apszIndexedVariableValues)
+PATRFeature *           pFeature_in;
+PATRLogicalExpression * pExpression_in;
+char ** apszIndexedVariableValues;
+{
+int bLeftValue;
+int bRightValue;
+
+if ((pFeature_in == NULL) || (pExpression_in == NULL))
+	return TRUE;
+switch (pExpression_in->eOperation)
+	{
+	case kExist:
+	return evalLogicalFactor(pFeature_in,
+				 pExpression_in->pLeft,
+				 apszIndexedVariableValues);
+
+	case kNegate:
+	return !evalLogicalFactor(pFeature_in,
+				  pExpression_in->pLeft,
+				  apszIndexedVariableValues);
+
+	case kAnd:
+	return  evalLogicalFactor(pFeature_in,
+				  pExpression_in->pLeft,
+				  apszIndexedVariableValues) &&
+		evalLogicalFactor(pFeature_in,
+				  pExpression_in->pRight,
+				  apszIndexedVariableValues);
+
+	case kOr:
+	return  evalLogicalFactor(pFeature_in,
+				  pExpression_in->pLeft,
+				  apszIndexedVariableValues) ||
+		evalLogicalFactor(pFeature_in,
+				  pExpression_in->pRight,
+				  apszIndexedVariableValues);
+
+	case kConditional:
+	bLeftValue  = evalLogicalFactor(pFeature_in,
+					pExpression_in->pLeft,
+					apszIndexedVariableValues);
+	bRightValue = evalLogicalFactor(pFeature_in,
+					pExpression_in->pRight,
+					apszIndexedVariableValues);
+	return !bLeftValue || bRightValue;
+
+	case kBiconditional:
+	bLeftValue  = evalLogicalFactor(pFeature_in,
+					pExpression_in->pLeft,
+					apszIndexedVariableValues);
+	bRightValue = evalLogicalFactor(pFeature_in,
+					pExpression_in->pRight,
+					apszIndexedVariableValues);
+	return (bLeftValue && bRightValue) || (!bLeftValue && !bRightValue);
+
+	default:
+	return FALSE;
+	}
+}
+#else  /* hab130v */
 int evalLogicalExpression(pFeature_in, pExpression_in)
 PATRFeature *           pFeature_in;
 PATRLogicalExpression * pExpression_in;
@@ -220,6 +318,7 @@ switch (pExpression_in->eOperation)
 	return FALSE;
 	}
 }
+#endif /* hab130v */
 
 /*****************************************************************************
  * NAME
@@ -236,6 +335,13 @@ PATRData *       pPATR_in;
 {
 PATRFeature * pTestFeature;
 int           bValue = TRUE;
+#ifndef hab130v
+#define MAXVARIABLES 9
+				/* array to hold instantiated variables */
+char * apszIndexedVariableValues[MAXVARIABLES];
+memset(&apszIndexedVariableValues, 0, MAXVARIABLES * sizeof(char *));
+#endif /* hab130v */
+
 
 if ((pFeature_in == NULL) || (pConstraint_in == NULL) || (pPATR_in == NULL))
 	return TRUE;
@@ -252,7 +358,12 @@ if (pPATR_in->iDebugLevel >= 2)
 
 pTestFeature = followPATRFeaturePath(pFeature_in, pConstraint_in->pPath);
 if (pTestFeature != NULL)
+#ifndef hab130v
+	bValue = evalLogicalExpression(pTestFeature, pConstraint_in->pExpression,
+				   apszIndexedVariableValues);
+#else  /* hab130v */
 	bValue = evalLogicalExpression(pTestFeature, pConstraint_in->pExpression);
+#endif /* hab130v */
 
 if (pPATR_in->iDebugLevel >= 2)
 	fprintf(stdout, "DEBUG: applyPATRConstraint() => %s\n",

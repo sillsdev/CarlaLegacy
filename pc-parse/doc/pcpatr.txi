@@ -10,7 +10,7 @@
 @set TITLE PC-PATR Reference Manual
 @set SUBTITLE a unification based syntactic parser
 @set VERSION version 1.3.0
-@set DATE February 2002
+@set DATE March 2002
 @set AUTHOR by Stephen McConnel (changes for v. 1.2.5-1.3.0 by H. Andrew Black)
 @set COPYRIGHT Copyright @copyright{} 2000-2002 SIL International
 
@@ -2472,11 +2472,48 @@ A BNF grammar for PC-PATR logical constraint operations follows.
 
 <attribute>          ::= <LABEL> ':' <ATOM>
 					   | <LABEL> ':' <feature>
+					   | <LABEL> ':' <indexedvariable>
 
+<indexedvariable>    ::= '^1'
+					   | '^2'
+					   | '^3'
+					   | '^4'
+					   | '^5'
+					   | '^6'
+					   | '^7'
+					   | '^8'
+					   | '^9'
 @end example
 @noindent
-Note that both @code{<LABEL>} and @code{<ATOM>} refer to a single string
-token of contiguous characters.
+Note that both <LABEL> and <ATOM> refer to a single string token of
+contiguous characters.
+
+An <indexedvariable> is interpreted as a variable for the
+atomic value at that place in the feature structure.  The
+first such variable is instantiated by the atomic value of
+the feature at that place in the feature-path.  All
+subsequent instances of the variable are compared for
+equality with the first instantiated one.
+
+For example, consider the following logical constraint (which
+is to prevent the rule it is a part of from being used
+within a compound; there is another rule for dealing with
+the compounding situation in the grammar this example was
+taken from):
+@example
+	<IP head> == [rootgloss:^1] ->
+				~( [type:[no_intervening:+]] &
+					(  [subject:[head:[type:[compounds_with1:^1]]]]
+					 / ( [subject:[head:[type:[compounds_with2:^1]]]]
+						/ [subject:[head:[type:[compounds_with3:^1]]]]
+					   )
+					)
+				  )
+@end example
+The atomic value of the rootgloss feature is stored in
+variable @code{^1} in the "if" part of the conditional.
+This atomic value is then compared with the values of the
+various compounds_with features.
 
 @c ----------------------------------------------------------------------------
 @node Feature templates, Parameter settings, Rules, Grammar file

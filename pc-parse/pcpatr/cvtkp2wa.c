@@ -64,7 +64,11 @@ if (pFeature == (PATRFeature *)NULL)
 
 for ( pFdDef = pFdDefinitions_in ; pFdDef ; pFdDef = pFdDef->pNext )
 	{
+#ifndef hab130v
+	if (subsumesPATRFeature(pFdDef->pFeature, pFeature, (char **)NULL))
+#else  /* hab130v */
 	if (subsumesPATRFeature(pFdDef->pFeature, pFeature))
+#endif /* hab130v */
 	{
 	uiLength = strlen(pFdDef->pszLabel);
 	if (uiFeaturesLength + uiLength + 2 > uiTotalLength)
