@@ -4,72 +4,69 @@
 <page id="NPPossessorAgreement">
 	<title level="2">Nominal Phrase - Possessor Agreement</title>
 	<form section="np">
- <instruction>If your language has articles and/or demonstratives (and you followed instructions), any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.</instruction>
-   <radioGroup>
-	<groupName dataItem="possNounAgrKeyed" default="yes">RNPPossNounAgrKeyed</groupName>
-	<prompt>Did you already enter the agreement features on nouns or noun affixes?</prompt>
-	<radio id="NPPossNounAgrKeyedYes" dataValue="yes">Yes</radio>
- <radio id="NPPossNounAgrKeyedNo" dataValue="no">No, I still need to work on that</radio>
-</radioGroup>
-<instruction id="NPPossNounAgrKeyedYesInstruction" show="swNPPossNounAgrKeyedYes">Great! You can continue on.</instruction>
-<instruction id="NPPossNounAgrKeyedNoInstruction" show="swNPPossNounAgrKeyedNo">The instructions relevant to your language are given here.
+		<instruction>If your language has articles and/or demonstratives (and you followed instructions), any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.</instruction>
+		<radioGroup>
+			<groupName dataItem="possNounAgrKeyed" default="yes">RNPPossNounAgrKeyed</groupName>
+			<prompt>Did you already enter the agreement features on nouns or noun affixes?</prompt>
+			<radio id="NPPossNounAgrKeyedYes" dataValue="yes">Yes</radio>
+			<radio id="NPPossNounAgrKeyedNo" dataValue="no">No, I still need to work on that</radio>
+		</radioGroup>
+		<instruction id="NPPossNounAgrKeyedYesInstruction" show="swNPPossNounAgrKeyedYes">Great! You can continue on.</instruction>
+		<instruction id="NPPossNounAgrKeyedNoInstruction" show="swNPPossNounAgrKeyedNo">The instructions relevant to your language are given here.
 <br/>
-<span id="NPPossNounAgrNoneInstruction" show="swNPArtAgreementNone">Since your language does not have any agreement marking, you can continue on.</span>
- <span id="NPPossNounAgrNumberInstruction" show="swNPArtAgreementNumberYes">
+			<span id="NPPossNounAgrNoneInstruction" show="swNPArtAgreementNone">Since your language does not have any agreement marking, you can continue on.</span>
+			<span id="NPPossNounAgrNumberInstruction" show="swNPArtAgreementNumberYes">
 To handle the number agreement, we will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
 <ul>
-				<li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
-				<li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don't take an affix.</li>
-				<li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
-				<li id="NPPossArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature>.</li>
-			</ul>
-		</span>
-	  <span id="NPPossNounAgrAnimacyInstruction" show="swNPArtAgreementAnimacyYes">
+					<li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
+					<li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don't take an affix.</li>
+					<li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+					<li id="NPPossArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature>.</li>
+				</ul>
+			</span>
+			<span id="NPPossNounAgrAnimacyInstruction" show="swNPArtAgreementAnimacyYes">
 To handle animacy agreement, we will assume that all (common) nouns are inanimate by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  (Proper names will be dealt with in <section number="6">Pronouns and Proper Names</section> and will be assumed to be animate by default.)
 </span>
-		<span id="NPPossNounAgrGenderInstruction" show="swNPArtAgreementGenderYes">
+			<span id="NPPossNounAgrGenderInstruction" show="swNPArtAgreementGenderYes">
 To handle gender agreement, we will assume that all nouns are masculine by default.  Therefore, only the feminine and neuter nouns need to be marked.  In the lexicon:
 <ul>
-				<li>Add the feature <feature>feminine</feature> to any affixes which can be added to a noun to make it feminine.  Add the feature <feature>neuter</feature> to any affixes which can be added to a noun to make it neuter.</li>
-				<li>Also, add the feature <feature>feminine</feature> to any nouns which are inherently feminine, or exceptionally don't take an affix.  Similarly, add the feature <feature>neuter</feature> to any nouns which are inherently neuter, or exceptionally don't take an affix.</li>
-				<li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of their modifiers based on gender need to have two entries in the lexicon, one marked with the feature <feature>feminine</feature> and the other for masculine (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
-			</ul>
-		</span>
-		<span id="NPPossNounAgrClassInstruction" show="swNPArtAgreementClassYes">
+					<li>Add the feature <feature>feminine</feature> to any affixes which can be added to a noun to make it feminine.  Add the feature <feature>neuter</feature> to any affixes which can be added to a noun to make it neuter.</li>
+					<li>Also, add the feature <feature>feminine</feature> to any nouns which are inherently feminine, or exceptionally don't take an affix.  Similarly, add the feature <feature>neuter</feature> to any nouns which are inherently neuter, or exceptionally don't take an affix.</li>
+					<li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of their modifiers based on gender need to have two entries in the lexicon, one marked with the feature <feature>feminine</feature> and the other for masculine (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+				</ul>
+			</span>
+			<span id="NPPossNounAgrClassInstruction" show="swNPArtAgreementClassYes">
 To handle class marking and agreement, in the lexicon:
 <ul>
-				  <li>It may be the case that the same affixes mark the class number on nouns and all their modifiers.  If this is the case in your language, simply add the class feature <feature>class_##</feature> (where ## is replaced by a number between 1 and 99) to the affixes, and all the words will automatically come from the morphological parser with the class number marked.</li>
-				<li>Any cases where nouns do not have an affix which marks the class will require marking of the class feature on the particular noun.</li>
-			</ul>
-		</span>
-</instruction>
-<br/>
+					<li>It may be the case that the same affixes mark the class number on nouns and all their modifiers.  If this is the case in your language, simply add the class feature <feature>class_##</feature> (where ## is replaced by a number between 1 and 99) to the affixes, and all the words will automatically come from the morphological parser with the class number marked.</li>
+					<li>Any cases where nouns do not have an affix which marks the class will require marking of the class feature on the particular noun.</li>
+				</ul>
+			</span>
+		</instruction>
+		<br/>
 		<introduction>Possessor agreement normally comes in two basic forms:
 <ul>
-	<li>An affix that occurs on alienably possessed nouns to indicate that they are possessed and therefore must have a possessor in the nominal phrase.  Inalienably possessed nouns do not take any marking, but must always have a possessor.</li>
-<li>An affix that agrees with the possessor (or possibly expresses the possessor by itself).</li>
-</ul></introduction>
-<radioGroup>
-	<groupName dataItem="possAlienable" default="no">RNPPossAlienable</groupName>
-	<prompt>Does your language distinguich between alienably and inalienably possessed nouns?</prompt>
-	<radio id="NPPossAlienableNo" dataValue="no">No</radio>
-	<radio id="NPPossAlienableYes" dataValue="yes">Yes</radio>
-</radioGroup>
-<instruction>******</instruction>
+				<li>An affix that occurs on alienably possessed nouns to indicate that they are possessed and therefore must have a possessor in the nominal phrase.  Inalienably possessed nouns do not take any marking, but must always have a possessor.</li>
+				<li>An affix that agrees with the possessor (or possibly expresses the possessor by itself).</li>
+			</ul>
+We will deal with each type in turn.
+		</introduction>
+		<radioGroup>
+			<groupName dataItem="possAlienable" default="no">RNPPossAlienable</groupName>
+			<prompt>Does your language distinguish between alienably and inalienably possessed nouns?</prompt>
+			<radio id="NPPossAlienableNo" dataValue="no">No</radio>
+			<radio id="NPPossAlienableYes" dataValue="yes">Yes</radio>
+		</radioGroup>
+		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
 		<radioGroup id="NPPossAgrTable">
 			<groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
 			<prompt>Are nouns marked with an affix with agrees with the possessor (or possibly expreses the possessor by itself)?</prompt>
 			<radio id="NPPossAgrNo" dataValue="no">No</radio>
 			<radio id="NPPossAgrYes" dataValue="yes">Yes</radio>
 		</radioGroup>
-		<instruction id="NPPossAgrYesInstruction">In the lexicon, add one or more features as appropriate to the affix entries from the following list.  The first feature in the list <feature>possessed</feature> is used when it is the only affix used and it simply marks that a possessor must be present.  It is conceivable that there is a language that has this type of general affix for possession and also has the more specific affixes that mark agreement with the possessor, probably not occuring on the same noun.
+		<instruction id="NPPossAgrYesInstruction" show="swNPPossAgrYes">In the lexicon, add one or more features from the following list as appropriate to the affix entries.
 <featureChart types="no">
-				<featureRow>
-					<featureType/>
-					<featureItem>possessed</featureItem>
-					<featureExplanation>there must be a possessor</featureExplanation>
-				</featureRow>
-				<featureRow>
+				  <featureRow>
 					<featureType/>
 					<featureItem>poss_first</featureItem>
 					<featureExplanation>the possessor must be first person</featureExplanation>
@@ -97,37 +94,37 @@ To handle class marking and agreement, in the lexicon:
 				<featureRow>
 					<featureType/>
 					<featureItem>poss_singular</featureItem>
-					<featureExplanation>the possessor must be singular number</featureExplanation>
+					<featureExplanation>the possessor must be singular in number</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
 					<featureItem>poss_plural</featureItem>
-					<featureExplanation>the possessor must be plural number</featureExplanation>
+					<featureExplanation>the possessor must be plural in number</featureExplanation>
 				</featureRow>
 				<featureRow>
 					<featureType/>
 					<featureItem>poss_dual</featureItem>
-					<featureExplanation>the possessor must be dual number</featureExplanation>
+					<featureExplanation>the possessor must be dual in number</featureExplanation>
 				</featureRow>
 			</featureChart>
 		</instruction>
-		<instruction id="NPPossAgr2Instruction">Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="6">Pronouns and Proper Names</section>.</instruction>
+		<instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes">Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="6">Pronouns and Proper Names</section>.</instruction>
 		<buttons>
 			<button id="NPPossAgrBack" value="Back" goto="NPPossessors.htm"/>
 			<button id="NPPossAgrNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
-<showWhen id="swNPPossNounAgrKeyedYes">
-	<whenRadio button="NPPossNounAgrKeyedYes"></whenRadio>
-</showWhen>
-<showWhen id="swNPPossNounAgrKeyedNo">
-	<whenRadio button="NPPossNounAgrKeyedNo"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAgreementNone">
-	<whenValue element="np" attr="agreeNumber" value="no"/>
-<and/>
-	<whenValue element="np" attr="agreeOther" value="no"/>
-</showWhen>
+	<showWhen id="swNPPossNounAgrKeyedYes">
+		<whenRadio button="NPPossNounAgrKeyedYes"/>
+	</showWhen>
+	<showWhen id="swNPPossNounAgrKeyedNo">
+		<whenRadio button="NPPossNounAgrKeyedNo"/>
+	</showWhen>
+	<showWhen id="swNPArtAgreementNone">
+		<whenValue element="np" attr="agreeNumber" value="no"/>
+		<and/>
+		<whenValue element="np" attr="agreeOther" value="no"/>
+	</showWhen>
 	<showWhen id="swNPArtAgreementNumberYes">
 		<whenValue element="np" attr="agreeNumber" value="yes"/>
 	</showWhen>
@@ -151,4 +148,10 @@ To handle class marking and agreement, in the lexicon:
 		<or/>
 		<whenValue element="np" attr="demAndArtArt" value="mass"/>
 	</showWhen>
+<showWhen id="swNPPossAlienableYes">
+	<whenRadio button="NPPossAlienableYes"></whenRadio>
+</showWhen>
+<showWhen id="swNPPossAgrYes">
+	<whenRadio button="NPPossAgrYes"></whenRadio>
+</showWhen>
 </page>

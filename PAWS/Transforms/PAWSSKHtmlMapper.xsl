@@ -474,7 +474,16 @@ Refresh();
   </xsl:template>
   <!-- introduction -->
   <xsl:template match="//introduction">
-	<!-- top level case -->
+	  <xsl:if test="position()>2">
+		<br/>
+	  </xsl:if>
+	  <div class="introduction">
+		<p>
+		  <xsl:apply-templates/>
+		</p>
+	  </div>
+  <!--
+	- top level case -
 	<xsl:if test="name(..)='page'">
 	  <xsl:if test="position()>2">
 		<br/>
@@ -485,13 +494,14 @@ Refresh();
 		</p>
 	  </div>
 	</xsl:if>
-	<!-- within a form case -->
-	<!-- won't work now... 2002.04.01-->
+	- within a form case -
+	- won't work now... 2002.04.01-
 	<xsl:if test="name(..)='form'">
 	  <p class="introduction">
 		<xsl:apply-templates/>
 	  </p>
 	</xsl:if>
+	-->
   </xsl:template>
   <!-- li -->
   <xsl:template match="//li">
