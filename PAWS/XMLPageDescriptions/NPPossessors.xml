@@ -17,7 +17,7 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 		<textBox id="NPPossPPExample" dataItem="ppExample"/>
 		<br/>
 		<prompt>
-			Key some examples with relative clauses within the possessor here:</prompt>
+			Key some examples with relative clauses within the possessor here, included in simple full sentences:</prompt>
 		<textBox id="NPPossRelClExample" dataItem="relClExample"/>
 		<br/>
 		<radioGroup>
@@ -61,7 +61,9 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 		<introduction id="NPPossCooccurIntroduction" show="swNPArtAndOrDem">We also need to know whether possessors and articles or demonstratives can co-occur in the same nominal phrase.  In English, these elements do not co-occur, unless the possessor is expressed in a prepositional phrase.  For example, we can't say <example>those [the boy's] books</example>; instead we use <example>those books [of his]</example> to express the same thought.  Some other languages allow both possessors and articles or demonstratives to occur in the same phrase, so the first example above would be grammatical.</introduction>
 		<radioGroup id="NPPossCooccurTable" show="swNPArtAndOrDem">
 			<groupName dataItem="possCooccur" default="yes"/>
-			<prompt>Can possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> in your language?</prompt>
+			<prompt>Can possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span>
+				<span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span>
+				<span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> in your language?</prompt>
 			<radio id="NPPossCooccurYes" dataValue="yes">Yes, they may co-occur</radio>
 			<radio id="NPPossCooccurNo" dataValue="no">No, it is the same as English in this regard</radio>
 		</radioGroup>
@@ -140,14 +142,14 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossMarkedYesAffix"/>
 		<and/>
 		<whenRadio button="NPPossCaseErgative"/>
-<and/>
+		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesAffixAbs">
 		<whenRadio button="NPPossMarkedYesAffix"/>
 		<and/>
 		<whenRadio button="NPPossCaseAbsolutive"/>
-<and/>
+		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesAffixGen">
@@ -181,14 +183,14 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
 		<and/>
 		<whenRadio button="NPPossCaseErgative"/>
-<and/>
+		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoAbs">
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
 		<and/>
 		<whenRadio button="NPPossCaseAbsolutive"/>
-<and/>
+		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesGen">
@@ -206,14 +208,14 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
 		<and/>
 		<whenRadio button="NPPossCaseErgative"/>
-<and/>
+		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesAbs">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
 		<and/>
 		<whenRadio button="NPPossCaseAbsolutive"/>
-<and/>
+		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 </page>

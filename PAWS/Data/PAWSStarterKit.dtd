@@ -27,33 +27,37 @@
 	wordOrder (SVO | SOV | VSO | VOS | OVS | OSV) "SVO"
 >
 <!-- Quantifier Phrases consist of five kinds of examples, plus a possible category mapping.
-	 Degree words may or may not appear (degree).
+	 Degree words modifying the whole NP may or may not appear (npDegree)
+	 If so, they may appear before, after, or on either side or both sides at the same time.
+	 If either side, they may appear (npDegreeEither) unrestricted or restricted.
+	 Degree words within QPs may or may not appear (degree).
 	 If so, they have a position (degreePos) with respect to the quantifier.
 	 If they can appear either before or after, then either there are sets
 		for each side (degreeEither="restricted") or not.
-	 Compound cardinal numbers are either head-initial or head-final (cardinalHeadPos).
 	 Ordinal numbers are formed by affixation or are independent
-	   (ordinalFormation).  'Last' and 'next' may still be independent (lastNextFormation).
+	   (ordinalFormation).
 	 Ordinal numbers appear before, after, or on either side of the
 	   cardinal number they may modify (ordinalPos).
 	  If they can appear either before or after, then either there are sets
 		for each side (ordinalEither="restricted") or not.
+	 Compound cardinal numbers are either head-initial or head-final (cardinalHeadPos).
 -->
-<!ELEMENT qp (example, degreeExample, cardinalExample, cardinalCompoundExample, ordinalExample, cardinalNumberCategory)>
+<!ELEMENT qp (example, degreeExample, ordinalExample, cardinalCompoundExample, cardinalNumberCategory)>
 <!ATTLIST qp
 	checkedOff (yes | no) "no"
-	degree (yes | no) "yes"
+	npDegree (yes | no) "no"
+	npDegreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	npDegreeEither (unrestricted | restricted) "unrestricted"
+	degree (yes | no) "no"
 	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	degreeEither (unrestricted | restricted) "unrestricted"
-	cardinalHeadPos (before | after) "after"
-	ordinalFormation (affix | independent) "affix"
-	lastNextFormation (affix | independent) "affix"
+	ordinalFormation (affix | independent | both) "affix"
 	ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	ordinalEither (unrestricted | restricted) "unrestricted"
+	cardinalHeadPos (before | after) "after"
 >
 <!ELEMENT example (#PCDATA)>
 <!ELEMENT degreeExample (#PCDATA)>
-<!ELEMENT cardinalExample (#PCDATA)>
 <!ELEMENT cardinalCompoundExample (#PCDATA)>
 <!ELEMENT ordinalExample (#PCDATA)>
 <!ELEMENT cardinalNumberCategory (#PCDATA)>
@@ -115,9 +119,6 @@
 	 marked for the nominal phrase by numbers and quantifiers.
 	The case system (case) may be "none, nominative, ergative, split".
 	If nominative or split, it can have a default of nominative (caseDefault).
-	 Degree words may or may not appear (degree)
-	 If so, they may appear before, after, or on either side or both sides at the same time.
-	 If either side, they may appear (degreeEither) unrestricted or restricted.
 	 The phrase may have articles and/or demonstratives (artAndDem).
 	 The article/demonstrative may have case (artCase).
   If articles only, the article has a position (artPos) which may be restricted if it can occur on
@@ -164,9 +165,6 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	agreeOther (no | yesAnimacy | yesClass | yesGender) "no"
 	case (none | nominative | ergative | split) "nominative"
 	caseDefault (no | nominative) "no"
-	degree (yes | no) "no"
-	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	degreeEither (unrestricted | restricted) "unrestricted"
 	artAndDem (no | article | demonstrative | both) "no"
 	artCase (yes | no) "no"
 	artPos (before | after | either | unknown) "unknown"
@@ -444,8 +442,8 @@ checked (yes|no) "no"
 	pPos (before | after | both | unknown) "unknown"
 	pType (word | clitic | both) "word"
 	attaches (edge | head) "edge"
-	alone (no | yes) "yes"
-	locative (no | yes) "yes"
+	alone (no | yes) "no"
+	locative (no | yes) "no"
 	ppComp (no | yes) "no"
 	sentComp (no | yes) "no"
 >
@@ -863,7 +861,7 @@ checked (yes|no) "no"
 	  embedded Yes/No examples (embYNExample),
 	  main clause content examples (contentExample),
 	  embedded content examples (embContentExample), and
-	  a list of wh-words (whWords) and their glosses (whWordGlosses).
+	  eight examples of whWords or phrases (who, etc.).
 	 There is a category mapping for wh-pronouns.
 	 Main clause Yes/No questions may have complementizers (mainYN).
 	 These may be written as separate words
@@ -912,7 +910,7 @@ checked (yes|no) "no"
 	  (embContAux).   If only an Aux is fronted,
 	  then it may be required (embContAux).
 -->
-<!ELEMENT q (example, embYNExample, contentExample, embContentExample, whWords, whWordGlosses, whPronCategory)>
+<!ELEMENT q (example, embYNExample, contentExample, embContentExample, who, what, why, where, when, how, which, whose, whPronCategory)>
 <!ATTLIST q
 	checkedOff (yes | no) "no"
 	mainYN (yes | noAux | no) "no"
@@ -958,8 +956,14 @@ checked (yes|no) "no"
 <!ELEMENT embYNExample (#PCDATA)>
 <!ELEMENT contentExample (#PCDATA)>
 <!ELEMENT embContentExample (#PCDATA)>
-<!ELEMENT whWords (#PCDATA)>
-<!ELEMENT whWordGlosses (#PCDATA)>
+<!ELEMENT who (#PCDATA)>
+<!ELEMENT what (#PCDATA)>
+<!ELEMENT why (#PCDATA)>
+<!ELEMENT where (#PCDATA)>
+<!ELEMENT when (#PCDATA)>
+<!ELEMENT how (#PCDATA)>
+<!ELEMENT which (#PCDATA)>
+<!ELEMENT whose (#PCDATA)>
 <!ELEMENT whPronCategory (#PCDATA)>
 <!-- Relative clauses have examples and full sentence examples of headed relatives, plus
 	  examples of headless relatives if allowed. They can be of type CP, IP(with marker on V)

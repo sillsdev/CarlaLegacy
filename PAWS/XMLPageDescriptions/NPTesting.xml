@@ -50,7 +50,7 @@ Please check off this section now in 'Contents' and then proceed to
 		<br/>
 		<buttons>
 			<button id="NPTestingBack" value="Back" goto="NPContents.htm"/>
-			<button id="NPTestingNext" value="Next" goto="Contents.htm"/>
+			<button id="NPTestingNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swNPArt">

@@ -16,9 +16,7 @@
 		</radioGroup>
 		<radioGroup>
 			<groupName dataItem="pType" default="word">RPPType</groupName>
-			<prompt>Are the<span id="PPPrepSpan" show="swPPPosPrep"> prepositions</span>
-				<span id="PPPostSpan" show="swPPPosPost"> postpositions</span>
-				<span id="PPBothSpan" show="swPPPosBoth"> prepositions and postpositions </span>written as separate words?</prompt>
+			<prompt>Are the <span id="PPPrepSpan" show="swPPPosPrep">prepositions</span><span id="PPPostSpan" show="swPPPosPost">postpositions</span><span id="PPBothSpan" show="swPPPosBoth">prepositions and postpositions</span> written as separate words?</prompt>
 			<radio id="PPTypeWord" dataValue="word">Yes, they are all separate syntactic words</radio>
 			<radio id="PPTypeClitic" dataValue="clitic">No, they are all clitics written attached to another word</radio>
 			<radio id="PPTypeBoth" dataValue="both">Some are written as separate syntactic words, but some are clitics written attached to another word</radio>
@@ -35,9 +33,7 @@
 		<instruction id="PPPosBothCliticEdgeInstruction" show="swPPPosBothCliticEdge">In the lexicon, mark the prepositions with the feature <feature>P_prefix</feature> and the postpositions with the feature <feature>P_suffix</feature>.</instruction>
 		<instruction id="PPTypeCliticPrepEdgeInstruction" show="swPPTypeCliticOrBothPrepEdge">In the lexicon, mark the clitic prepositions with the feature <feature>P_prefix</feature>.</instruction>
 		<instruction id="PPTypeCliticPostEdgeInstruction" show="swPPTypeCliticOrBothPostEdge">In the lexicon, mark the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
-		<instruction id="PPPosBothCliticHeadInstruction" show="swPPPosBothCliticHead">In the lexicon, mark the prepositions with the feature <feature>P_prefix_N</feature> and the postpositions with the feature <feature>P_suffix_N</feature>.</instruction>
-		<instruction id="PPTypeCliticPrepHeadInstruction" show="swPPTypeCliticOrBothPrepHead">In the lexicon, mark the clitic prepositions with the feature <feature>P_prefix_N</feature>.</instruction>
-		<instruction id="PPTypeCliticPostHeadInstruction" show="swPPTypeCliticOrBothPostHead">In the lexicon, mark the clitic postpositions with the feature <feature>P_suffix_N</feature>.</instruction>
+		<instruction id="PPTypeCliticHeadInstruction" show="swPPTypeCliticOrBothHead">In the lexicon, mark the clitics with the feature <feature>PP</feature>.</instruction>
 		<br/>
 		<buttons>
 			<button id="PPCompBack" value="Back" goto="PPModifiers.htm"/>
@@ -62,13 +58,15 @@
 		<whenRadio button="PPPosBoth"/>
 		<and/>
 		<whenRadio button="PPTypeBoth"/>
-<and/> <whenRadio button="PPTypeCliticAttachesEdge"></whenRadio>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesEdge"/>
 	</showWhen>
 	<showWhen id="swPPPosBothBothHead">
 		<whenRadio button="PPPosBoth"/>
 		<and/>
 		<whenRadio button="PPTypeBoth"/>
-<and/> <whenRadio button="PPTypeCliticAttachesHead"></whenRadio>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesHead"/>
 	</showWhen>
 	<showWhen id="swPPPosBothWord">
 		<whenRadio button="PPPosBoth"/>
@@ -79,7 +77,8 @@
 		<whenRadio button="PPPosBoth"/>
 		<and/>
 		<whenRadio button="PPTypeClitic"/>
-<and/> <whenRadio button="PPTypeCliticAttachesEdge"></whenRadio>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesEdge"/>
 	</showWhen>
 	<showWhen id="swPPTypeCliticOrBothPrepEdge">
 		<whenRadio button="PPPosPrep"/>
@@ -89,8 +88,9 @@
 		<or/>
 		<whenRadio button="PPTypeBoth"/>
 		<closeParen/>
-  <and/> <whenRadio button="PPTypeCliticAttachesEdge"></whenRadio>
-  </showWhen>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesEdge"/>
+	</showWhen>
 	<showWhen id="swPPTypeCliticOrBothPostEdge">
 		<whenRadio button="PPPosPost"/>
 		<and/>
@@ -99,32 +99,16 @@
 		<or/>
 		<whenRadio button="PPTypeBoth"/>
 		<closeParen/>
-<and/> <whenRadio button="PPTypeCliticAttachesEdge"></whenRadio>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesEdge"/>
 	</showWhen>
-	<showWhen id="swPPPosBothCliticHead">
-		<whenRadio button="PPPosBoth"/>
-		<and/>
-		<whenRadio button="PPTypeClitic"/>
- <and/> <whenRadio button="PPTypeCliticAttachesHead"></whenRadio>
-   </showWhen>
-	<showWhen id="swPPTypeCliticOrBothPrepHead">
-		<whenRadio button="PPPosPrep"/>
-		<and/>
+	<showWhen id="swPPTypeCliticOrBothHead">
 		<openParen/>
 		<whenRadio button="PPTypeClitic"/>
 		<or/>
 		<whenRadio button="PPTypeBoth"/>
 		<closeParen/>
- <and/> <whenRadio button="PPTypeCliticAttachesHead"></whenRadio>
-	</showWhen>
-	<showWhen id="swPPTypeCliticOrBothPostHead">
-		<whenRadio button="PPPosPost"/>
 		<and/>
-		<openParen/>
-		<whenRadio button="PPTypeClitic"/>
-		<or/>
-		<whenRadio button="PPTypeBoth"/>
-		<closeParen/>
- <and/> <whenRadio button="PPTypeCliticAttachesHead"></whenRadio>
+		<whenRadio button="PPTypeCliticAttachesHead"/>
 	</showWhen>
 </page>

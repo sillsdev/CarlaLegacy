@@ -26,7 +26,7 @@ var sTemp;
    PawsSKAnswers = div.XMLDocument;
 
 displayStatus(NPContentsOverviewStatus,"npContents1");
-displayStatus(NPContentsDegreeWordsStatus,"npContents2");
+displayStatus(NPContentsAgreementStatus,"npContents2");
 displayStatus(NPContentsArticleStatus,"npContents3");
 displayStatus(NPContentsPossessorsStatus,"npContents4");
 displayStatus(NPContentsQPStatus,"npContents5");
@@ -87,12 +87,12 @@ function StatusClicked(idOfItem, strElem)
 		<tr>
 			<td id="NPContentsOverviewStatus" onclick="StatusClicked(NPContentsOverviewStatus,'npContents1')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">5.1.</td>
-			<td valign="top"><A id=NPContentsOverview href="NPMain.htm" >Overview plus Agreement and Case</A></td>
+			<td valign="top"><A id=NPContentsOverview href="NPMain.htm" >Overview</A></td>
 		</tr>
 		<tr>
-			<td id="NPContentsDegreeWordsStatus" onclick="StatusClicked(NPContentsDegreeWordsStatus,'npContents2')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+			<td id="NPContentsAgreementStatus" onclick="StatusClicked(NPContentsAgreementStatus,'npContents2')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">5.2.</td>
-			<td valign="top"><A id=NPContentsDegreeWords href="NPDegree.htm" >Degree Words</A></td>
+			<td valign="top"><A id=NPContentsAgreement href="NPAgreement.htm" >Agreement and Case</A></td>
 		</tr>
 		<tr>
 			<td id="NPContentsArticleStatus" onclick="StatusClicked(NPContentsArticleStatus,'npContents3')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>

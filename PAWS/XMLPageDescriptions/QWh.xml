@@ -5,10 +5,30 @@
 	<title level="2">Questions - Interrogative Phrases in Content Questions</title>
 	<introduction>Content questions differ from Yes/No questions in that they contain an interrogative word or phrase, known as <i>wh</i>-phrases in English because they almost all begin with <example>wh</example> (<example>who(m)</example>, <example>what</example>, <example>why</example>, <example>where</example>, <example>when</example>, <example>how</example>, <example>which</example>, <example>whose</example>).</introduction>
 	<form section="q">
-		<prompt>Key a list of the interrogative words in your language, with each word followed by a "Tab" and then its English gloss in single quotes, then "Enter" here:</prompt>
-		<textBox id="QWhWords" dataItem="whWords"/>
+		<prompt>Key the interrogative words or phrases in your language used for 'who' or 'whom' here:</prompt>
+		<textBox id="QWho" dataItem="who" rows="3"/>
 		<br/>
-		<!-- NB: we really need a new kind of data box for these: one that allows for an unlimited number of paired data items This is really just for the grammar writer, though-->
+		<prompt>Key the interrogative words or phrases in your language used for 'what' here:</prompt>
+		<textBox id="QWhat" dataItem="what" rows="3"/>
+		<br/>
+		<prompt>Key the interrogative words or phrases in your language used for 'why' here:</prompt>
+		<textBox id="QWhy" dataItem="why" rows="3"/>
+		<br/>
+		<prompt>Key the interrogative words or phrases in your language used for 'where' here:</prompt>
+		<textBox id="QWhere" dataItem="where" rows="3"/>
+		<br/>
+		<prompt>Key the interrogative words or phrases in your language used for 'when' here:</prompt>
+		<textBox id="QWhen" dataItem="when" rows="3"/>
+		<br/>
+		<prompt>Key the interrogative words or phrases in your language used for 'how' here:</prompt>
+		<textBox id="QHow" dataItem="how" rows="3"/>
+		<br/>
+		<prompt>Key the interrogative words or phrases in your language used for 'which' here:</prompt>
+		<textBox id="QWhich" dataItem="which" rows="3"/>
+		<br/>
+		<prompt>Key the interrogative words or phrases in your language used for 'whose' here:</prompt>
+		<textBox id="QWhose" dataItem="whose" rows="3"/>
+		<br/>
 		<introduction>Of the examples of interrogative words above, most simply stand alone as pronouns or adverbs, but <example>how</example> can either be a manner adverb by itself or a degree word modifying an adjective, as in <example>how big</example> or a degree word modifying a quantifier, as in <example>how many children</example>; <example>what</example> can either be a pronoun by itself or a demonstrative modifying a noun, as in <example>what books</example>; <example>which</example> never stands alone but always modifies a noun as a demonstrative, as in <example>which boy</example>; and <example>whose</example> can be either a stand alone possessive pronoun, or it can fill the possessor position in a nominal phrase, as in <example>whose toys</example>.</introduction>
 		<instruction>In the lexicon, mark all of the interrogative words with the feature <feature>wh</feature>.
 <br/>
