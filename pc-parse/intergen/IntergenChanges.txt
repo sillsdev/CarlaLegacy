@@ -1,5 +1,23 @@
 INTERGEN CHANGE HISTORY
 
+2.1b16 (16-Oct-2002)
+--------------------
+1. Some minor internal code changes (nothing visible to the user).
+
+2.1b15 (15-Oct-2002)
+--------------------
+1. Some minor internal code changes (nothing visible to the user).
+
+2.1b14 ( 4-Oct-2002)
+--------------------
+1. Some minor internal code changes (nothing visible to the user).
+
+2.1b13 ( 2-Oct-2002)
+--------------------
+1. Handle underlying forms missing from the analysis file
+   better, without spurious output lines for analysis
+   failures, and without crashing the program.
+
 2.1.b12 (23-Jul-2001)
 ---------------------
 1. If the \w field is being used, it would apply any output changes and
