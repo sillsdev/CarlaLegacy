@@ -45,7 +45,7 @@
 		<example/>
 		<adjectiveCategory/>
 	</adjp>
-	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" caseDefault="no" artAndDem="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="no" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown" possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpAgree="no" comp="no" compHead="right" ppPos="unknown">
+	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" caseDefault="no" artAndDem="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="different" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown" possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpAgree="no" comp="no" compHead="right" ppPos="unknown">
 		<example/>
 		<embeddedExample/>
 		<ppExample/>
@@ -77,6 +77,11 @@
 		<npPossAgrPossMasculine checked="no"/>
 		<npPossAgrPossFeminine checked="no"/>
 		<npPossAgrPossNeuter checked="no"/>
+		<npPossAgrPossAnimate checked="no"/>
+		<npPossAgrPossInanimate checked="no"/>
+		<npPossAgrPossHuman checked="no"/>
+		<npPossAgrPossNonHuman checked="no"/>
+		<npPossAgrPossClassClassNumber checked="no"/>
 	</np>
 	<prop checkedOff="no">
 		<example/>
@@ -125,6 +130,8 @@
 		<pronAgrFeatNeuter checked="no"/>
 		<pronAgrFeatAnimate checked="no"/>
 		<pronAgrFeatMinusAnimate checked="no"/>
+		<pronAgrFeatHuman checked="no"/>
+		<pronAgrFeatMinusHuman checked="no"/>
 		<pronAgrFeatClassNumber checked="no"/>
 	</pron>
 	<pp checkedOff="no" modifiers="no" modifierType="degree" degreePos="unknown" degreeRestricted="unrestricted" ordinalPos="unknown" ordinalRestricted="unrestricted" mannerPos="unknown" mannerRestricted="unrestricted" pPos="unknown" pType="word" attaches="edge" alone="no" locative="no" ppComp="no" sentComp="no">
@@ -136,7 +143,7 @@
 		<sentExample/>
 		<pCategory/>
 	</pp>
-	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="dp" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
+	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
 		<example/>
 		<proDropExample/>
 		<auxExample/>
@@ -210,6 +217,14 @@
 		<ipAgrFeatMinusAnimateObject checked="no"/>
 		<ipAgrFeatMinusAnimateErgative checked="no"/>
 		<ipAgrFeatMinusAnimateAbsolutive checked="no"/>
+		<ipAgrFeatHumanSubject checked="no"/>
+		<ipAgrFeatHumanObject checked="no"/>
+		<ipAgrFeatHumanErgative checked="no"/>
+		<ipAgrFeatHumanAbsolutive checked="no"/>
+		<ipAgrFeatMinusHumanSubject checked="no"/>
+		<ipAgrFeatMinusHumanObject checked="no"/>
+		<ipAgrFeatMinusHumanErgative checked="no"/>
+		<ipAgrFeatMinusHumanAbsolutive checked="no"/>
 		<ipAgrFeatClassClassNumberSubject checked="no"/>
 		<ipAgrFeatClassClassNumberObject checked="no"/>
 		<ipAgrFeatClassClassNumberErgative checked="no"/>
@@ -256,10 +271,10 @@
 		<how/>
 		<which/>
 		<whose/>
+		<other/>
 		<whPronCategory/>
 	</q>
-	<relcl checkedOff="no" type="none" compCP="no" whAndComp="no" relWord="yes" relCliticPos="unknown"
-relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
+	<relcl checkedOff="no" type="none" compCP="no" whAndComp="no" relWord="yes" relCliticPos="unknown" relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
 		<example/>
 		<sentExample/>
 		<headlessExample/>
