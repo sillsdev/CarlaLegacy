@@ -225,6 +225,17 @@ typedef struct
 	char	bShowWarnings;	/* enable warnings as well as error messages */
 	char	bPromoteDefAtoms; /* promote default atoms before parsing */
 	char	bPropIsFeature;	/* AMPLE property is feature template name */
+#ifndef hab130
+	char	eRootGlossFeature; /* rootgloss feature mode*/
+#define PATR_ROOT_GLOSS_NO_FEATURE	0 /* no rootgloss feature */
+#define PATR_ROOT_GLOSS_ON      	1 /* use rootgloss feature */
+				/* following use rootgloss feature & are
+				   special cases for when the input is an
+				   ANA file */
+#define PATR_ROOT_GLOSS_LEFT_HEADED	2 /* use leftmost ANA root */
+#define PATR_ROOT_GLOSS_RIGHT_HEADED	3 /* use rightmost ANA root */
+#define PATR_ROOT_GLOSS_USE_ALL 	4 /* use all ANA roots */
+#endif /* hab130 */
 	time_t	iMaxProcTime;	/* max number of seconds to process */
 	FILE *	pLogFP;
 	StringList *	pFinalPunc;	/* sentence final punctuation chars */
@@ -240,6 +251,9 @@ typedef struct
 	const char *	pszGlossMarker;
 	const char *	pszCategoryMarker;
 	const char *	pszFeatureMarker;
+#ifndef hab130
+	const char *        pszRootGlossMarker;
+#endif /* hab130 */
 	PATRLexicon *	pLexicon;
 	/*
 	 *  values used for internal processing
@@ -358,12 +372,22 @@ extern PATREdgeList *	parseWithPATR	   P((PATRWord * pSentence_in,
  */
 extern int	loadPATRLexicon P((const char * pszLexiconFile_in,
 				   PATRData * pPATR_io));
+#ifdef hab130
 extern void	addPATRLexItem P((char *	pszWord_in,
 				  char *	pszGloss_in,
 				  char *	pszCategory_in,
 				  char *	pszFeatures_in,
 				  PATRFeature * pFeature_in,
 				  PATRData *    pPATR_io));
+#else  /* hab130 */
+extern void	addPATRLexItem P((char *	pszWord_in,
+				  char *	pszGloss_in,
+				  char *	pszRootGloss_in,
+				  char *	pszCategory_in,
+				  char *	pszFeatures_in,
+				  PATRFeature * pFeature_in,
+				  PATRData *    pPATR_io));
+#endif /* hab130 */
 extern void	freePATRLexicon P((PATRData * pPATR_io));
 extern void	showPATRLexicon P((PATRData * pPATR_in));
 extern void	writePATRLexicon P((FILE *     pOutputFP_in,
@@ -503,6 +527,12 @@ extern const char *	pszPATRCompileTime_g;
 #else
 extern const char *	pszPATRTestVersion_g;
 #endif
+#ifndef hab130l
+  /*
+   * disphead.c
+   */
+extern void     display_header P((FILE *pOutFL_in));
+#endif /* hab130l */
 
 #ifdef __cplusplus
 }
