@@ -76,7 +76,7 @@
 <!ATTLIST gloss
   lang IDREF #REQUIRED
 >
-<!ELEMENT headerCol (#PCDATA)>
+<!ELEMENT headerCol (#PCDATA| langName)*>
 <!ATTLIST headerCol
   class CDATA #IMPLIED
   show IDREF #IMPLIED

@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
-  <section1 id="sAdvCl">
+	<section1 id="sAdvCl">
 	<secTitle>Adverbial Clauses</secTitle>
-	<p>
-	  <img src="CONSTRUCTION.gif"/>
-	  <content> This section is still under construction.</content>
-	</p>
-	<section2 id="sAdvClTemporal">
-	  <secTitle>Temporal Adverbial Clauses</secTitle>
-	  <p>
-		<img src="CONSTRUCTION.gif"/>
-		<content> This section is still under construction.</content>
-	  </p>
-	</section2>
-	<section2 id="sAdvClReason">
-	  <secTitle>Reason or Purpose Adverbial Clauses</secTitle>
-	  <p>
-		<img src="CONSTRUCTION.gif"/>
-		<content> This section is still under construction.</content>
-	  </p>
-	</section2>
-  </section1>
+	<p><content>This section considers the complements that can follow temporal and reason adverbs, which were introduced in sections </content><sectionRef sec="sAdvTemporals"/><content> and </content><sectionRef sec="sAdvPReason"/><content>.  All of these adverbial clauses (or phrases) act the same as simple adverbs, so they will be considered AdvPs with the appropriate type of complement.  Adverbial clauses of these types normally may occur either sentence-initial or sentence-final.</content></p>
+<section2 id="sAdvClTemp">
+	<secTitle>Complements of Temporal Adverbs</secTitle>
+		<p><content>English examples of temporal adverbs with complements used in full sentences include:</content></p>
+	  <ol>  <li><content>[Since then], John has been moody.</content></li>
+		<li><content>John has been home [since last week].</content></li>
+		<li><content>[Since John has been home from the hospital] he is doing better.</content></li>
+		<li><content>John is feeling fine [now that he is home from the hospital].</content></li>
+		<li><content>The dog followed Sue everywhere [when she returned from college].</content></li>
+		<li><content> [When she returned from college], the dog followed Sue everywhere.</content></li>
+	</ol>
+	<p><content>These examples show that particular temporal adverbs subcategorize for certain types of complements.  In (1) </content><langData>since</langData><content> is followed by another temporal adverb, in (2) by a temporal nominal phrase, and in (3) it has a sentential complement.  Examples (5) and (6) show that </content><langData>when</langData><content> also takes a finitie sentential complement, whereas </content><langData>now</langData><content> in (4) has a finite clausal complement with a complementizer.</content></p>
+<p><content>In </content><langName/><content>, the complements occur </content><case element="advCl" attr="advOrNPPos">
+<caseText value="before">before</caseText>
+<caseText value="after">after</caseText>
+<caseText value="either">on either side of</caseText>
+</case><content> the adverb.  Examples of temporal adverbial clauses in </content><langName/><content>, included in full sentences are:</content></p>
+		<example>
+	<interlinear exampleLoc="advCl/tempSentExample"></interlinear>
+</example>
+</section2>
+<section2 id="sAdvClReason">
+	<secTitle>Complements of Reason Adverbs</secTitle>
+		<p><content>Turning now to adverbial phrases or clauses which express reason or purpose, we find adverbs which stand alone, such as </content><langData>therefore</langData><content> and </content><langData>so</langData><content>, along with those that take various types of complement clauses.  English examples of reason or purpose adverbs which take clausal complements include:</content></p>
+<ol>            <li><content>John rushed to the hospital [because Sue was in an accident].</content></li>
+			<li><content>[Since Jill said that she likes him], Joe smiles all the time.</content></li>
+			<li><content>Bill rushed to the airport [so that he could see Kay before she left].</content></li>
+			<li><content>The troops threw grenades at the enemy [in order to escape].</content></li>
+			<li><content>The troops threw grenades at the enemy [in order for the prisoners to escape].</content></li>
+	</ol>
+		<p><content>In the examples above, </content><langData>because</langData><content> and </content><langData>since</langData><content> take only finite sentential complements and </content><langData>so</langData><content> takes a finite clausal complement with a complementizer.  In contrast, </content><langData>in order</langData><content> takes either a nonfinite sentential complement with a pro-dropped subject or a nonfinite clausal complement with a complementizer.  This is the same subcategorization as shown for </content><langData>like</langData><content> and </content><langData>hate</langData><content> in section </content><sectionRef sec="sCompTypeNonfiniteCP"/><content>.</content></p>
+		<p><content>Examples of reason or purpose adverbial clauses in </content><langName/><content>, included in full sentences are:</content></p>
+		<example>
+	<interlinear exampleLoc="advp/reasonExample"></interlinear>
+</example>
+</section2>
+</section1>
+
 </portion>
