@@ -11,7 +11,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEnvConstrainedRule dialog
-class CEnvironmentListCtrl;
+#include "EnvironmentListCtrl.h"
 class CWEnvironConstrainedRule;
 class CTextDisplayInfo;
 

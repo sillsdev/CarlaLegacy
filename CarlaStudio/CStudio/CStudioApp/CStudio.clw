@@ -2,7 +2,7 @@
 
 [General Info]
 Version=1
-LastClass=CPageCatFinalModifyTest
+LastClass=CDlgEditSentransDisambig
 LastTemplate=CPropertyPage
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "cstudio.h"
@@ -105,7 +105,7 @@ Class92=CPageFilesSynth
 Class93=CWizNewFromScratch
 Class94=CPageProjectPath
 
-ResourceCount=70
+ResourceCount=140
 Resource1=IDD_EditSentransTransfer
 Resource2=IDD_PageAnaProcessing
 Resource3=IDD_EditIntergenProcess
@@ -178,6 +178,76 @@ Class95=CDlgEditToneTracing
 Resource69=IDD_EditTestData
 Class96=CPageCatFinalModifyTest
 Resource70=IDD_ABOUTBOX
+Resource71=IDD_ProcessSequence (English (U.S.))
+Resource72=IDD_EditStampTransferRule (English (U.S.))
+Resource73=IDD_EditAdhocPair (English (U.S.))
+Resource74=IDR_CStudioPTYPE (English (U.S.))
+Resource75=IDR_InputDocPopup (English (U.S.))
+Resource76=IDD_TIP (English (U.S.))
+Resource77=IDR_CStudioAnaDocType (English (U.S.))
+Resource78=IDR_QuickParseDocType (English (U.S.))
+Resource79=IDD_EditPhonruleRule (English (U.S.))
+Resource80=IDR_CStudioLangTYPE (English (U.S.))
+Resource81=IDD_PageCatPropogation (English (U.S.))
+Resource82=IDD_PageCatFinalTest (English (U.S.))
+Resource83=IDD_PageDictAffix (English (U.S.))
+Resource84=IDD_ChooseDictMethod (English (U.S.))
+Resource85=IDD_PageLocations (English (U.S.))
+Resource86=IDD_HEADING_VIEW (English (U.S.))
+Resource87=IDD_PageDisclaimer (English (U.S.))
+Resource88=IDD_EditAmpleDLLProcess (English (U.S.))
+Resource89=IDD_EditToneParseProcess (English (U.S.))
+Resource90=IDD_EditToneGenProcess (English (U.S.))
+Resource91=IDD_EditComment (English (U.S.))
+Resource92=IDD_EditTestData (English (U.S.))
+Resource93=IDD_ModifyTestsFinish (English (U.S.))
+Resource94=IDD_EditPrintANAProcess (English (U.S.))
+Resource95=IDD_BatchProcess (English (U.S.))
+Resource96=IDD_ManualParseChoice (English (U.S.))
+Resource97=IDD_EditToneTracing (English (U.S.))
+Resource98=IDR_MAINFRAME (English (U.S.))
+Resource99=IDR_EnvironPopup (English (U.S.))
+Resource100=IDD_CCProcess (English (U.S.))
+Resource101=IDD_WizFilesTransfer (English (U.S.))
+Resource102=IDR_CStudioSrcDocType (English (U.S.))
+Resource103=IDD_PageAffixes (English (U.S.))
+Resource104=IDD_EditSentransDirective (English (U.S.))
+Resource105=IDD_EditTest (English (U.S.))
+Resource106=IDD_PageRedundantFieldNotice (English (U.S.))
+Resource107=IDD_Environments (English (U.S.))
+Resource108=IDD_PageAnaProcessing (English (U.S.))
+Resource109=IDD_WizFilesSynth (English (U.S.))
+Resource110=IDD_PageDictRootUnified (English (U.S.))
+Resource111=IDD_WizFilesFinish (English (U.S.))
+Resource112=IDD_PageLangDisplayProperties (English (U.S.))
+Resource113=IDD_WizSetupFinish (English (U.S.))
+Resource114=IDD_EditOrthoChange (English (U.S.))
+Resource115=IDD_EditEnvironment (English (U.S.))
+Resource116=IDD_EditMCC (English (U.S.))
+Resource117=IDD_QuickParse (English (U.S.))
+Resource118=IDD_EditClass (English (U.S.))
+Resource119=IDD_OpenOrCreateProject (English (U.S.))
+Resource120=IDD_EditCompoundRoot (English (U.S.))
+Resource121=IDD_EditAmpleProcess (English (U.S.))
+Resource122=IDD_EditIntergenProcess (English (U.S.))
+Resource123=IDD_EditJoinCompProcess (English (U.S.))
+Resource124=IDD_WizProjectLocation (English (U.S.))
+Resource125=IDD_WizCMenuSettings (English (U.S.))
+Resource126=IDD_ChooseProcessor (English (U.S.))
+Resource127=IDD_EditSentransDisambig (English (U.S.))
+Resource128=IDD_EditSentransTransfer (English (U.S.))
+Resource129=IDD_PageSrcTextProcessing (English (U.S.))
+Resource130=CG_IDD_PROGRESS (English (U.S.))
+Resource131=IDD_EditSentransProcess (English (U.S.))
+Resource132=IDD_EditStampFlag (English (U.S.))
+Resource133=IDD_EditStampLexChange (English (U.S.))
+Resource134=IDD_EditRegularSoundChange (English (U.S.))
+Resource135=IDD_EditStampProcess (English (U.S.))
+Resource136=IDD_LanguageCreation (English (U.S.))
+Resource137=IDD_WizFilesAnalysis (English (U.S.))
+Resource138=IDD_PageInputDocPanels (English (U.S.))
+Resource139=IDD_ABOUTBOX (English (U.S.))
+Resource140=IDD_PageCatFinalModifyTest (English (U.S.))
 
 [CLS:CCarlaStudioApp]
 Type=0
@@ -299,6 +369,9 @@ Type=0
 BaseClass=CDialog
 HeaderFile=source\DlgEditSentransDisambig.h
 ImplementationFile=source\DlgEditSentransDisambig.cpp
+Filter=W
+VirtualFilter=dWC
+LastObject=CDlgEditSentransDisambig
 
 [CLS:CDlgEditSentransProcess]
 Type=0
@@ -311,6 +384,8 @@ Type=0
 BaseClass=CDialog
 HeaderFile=source\DlgEditSentransTransfer.h
 ImplementationFile=source\DlgEditSentransTransfer.cpp
+Filter=W
+VirtualFilter=dWC
 
 [CLS:CDlgEditStampFlag]
 Type=0
@@ -389,6 +464,8 @@ Type=0
 BaseClass=CDialog
 HeaderFile=source\DlgPhonruleRule.h
 ImplementationFile=source\DlgPhonruleRule.cpp
+Filter=W
+VirtualFilter=dWC
 
 [CLS:CDlgProcessSequence]
 Type=0
@@ -425,6 +502,9 @@ Type=0
 BaseClass=CEditListCtrl
 HeaderFile=source\EnvironmentListCtrl.h
 ImplementationFile=source\EnvironmentListCtrl.cpp
+Filter=W
+VirtualFilter=FWC
+LastObject=CEnvironmentListCtrl
 
 [CLS:CFormButton]
 Type=0
@@ -1916,3 +1996,1145 @@ BaseClass=CPropertyPage
 Filter=D
 LastObject=IDC_CHECKCreateFinalCatTestModifyTests
 VirtualFilter=idWC
+
+[DLG:IDD_EditPhonruleRule (English (U.S.))]
+Type=1
+Class=?
+ControlCount=20
+Control1=IDC_From,edit,1350631552
+Control2=IDC_To,edit,1350631552
+Control3=IDC_Category,edit,1350631552
+Control4=IDC_EnvList,SysListView32,1350631553
+Control5=IDC_Comments,edit,1352732740
+Control6=IDC_RADIORuleType,button,1342308361
+Control7=IDC_RADIOBaseRule,button,1342177289
+Control8=IDC_RADIOForce,button,1342308361
+Control9=IDC_RADIOInitial,button,1342177289
+Control10=IDC_RADIOFinal,button,1342177289
+Control11=IDOK,button,1342242817
+Control12=IDCANCEL,button,1342242816
+Control13=IDC_CHECKEnabled,button,1342373891
+Control14=IDC_STATIC,static,1342308352
+Control15=IDC_STATICto,static,1342308352
+Control16=IDC_STATIC,static,1342308352
+Control17=IDC_STATIC,button,1342177287
+Control18=IDC_STATICcategory,static,1342308352
+Control19=IDC_STATICapply,button,1342177287
+Control20=IDC_STATIC,static,1342308352
+
+[TB:IDR_MAINFRAME (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_FILE_NewDocument
+Command2=ID_FILE_OPEN
+Command3=ID_FILE_SaveAll
+Command4=ID_EDIT_CUT
+Command5=ID_EDIT_COPY
+Command6=ID_EDIT_PASTE
+Command7=ID_EDIT_FIND
+Command8=ID_LangQuickParse
+Command9=ID_QuickParseGo
+Command10=ID_RunTrace
+Command11=ID_RunProcessors
+CommandCount=11
+
+[MNU:IDR_MAINFRAME (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_FILE_NEW_PROJECT
+Command2=ID_FILE_OPEN_Project
+Command3=ID_FILE_MRU_FILE1
+Command4=ID_FILE_MRU_PROJECT
+Command5=ID_APP_EXIT
+Command6=ID_VIEW_TOOLBAR
+Command7=ID_VIEW_STATUS_BAR
+Command8=ID_HELP_FINDER
+Command9=ID_APP_ABOUT
+CommandCount=9
+
+[MNU:IDR_CStudioPTYPE (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_FILE_OPEN_Document
+Command2=ID_FILE_SaveAll
+Command3=ID_FILE_NewLanguage
+Command4=ID_FILE_CLOSE_PROJECT
+Command5=ID_FILE_MRU_FILE1
+Command6=ID_FILE_MRU_PROJECT
+Command7=ID_APP_EXIT
+Command8=ID_EDIT_UNDO
+Command9=ID_EDIT_CUT
+Command10=ID_EDIT_COPY
+Command11=ID_EDIT_PASTE
+Command12=ID_VIEW_TOOLBAR
+Command13=ID_VIEW_STATUS_BAR
+Command14=ID_CARLAMenu
+Command15=ID_AmpleLinks
+Command16=ID_WINDOW_NEW
+Command17=ID_WINDOW_CASCADE
+Command18=ID_WINDOW_TILE_HORZ
+Command19=ID_HELP_FINDER
+Command20=ID_APP_ABOUT
+CommandCount=20
+
+[MNU:IDR_InputDocPopup (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_EditInputDocProperties
+Command2=ID_InputDocDisplay
+Command3=ID_OpenStreamExternal
+CommandCount=3
+
+[MNU:IDR_CStudioSrcDocType (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_FILE_NewDocument
+Command2=ID_FILE_OPEN_Document
+Command3=ID_FILE_CLOSE
+Command4=ID_FILE_SAVE
+Command5=ID_FILE_SAVEDOCUMENTAS
+Command6=ID_FILE_SaveAll
+Command7=ID_FILE_NewLanguage
+Command8=ID_FILE_CLOSE_PROJECT
+Command9=ID_FILE_MRU_FILE1
+Command10=ID_FILE_MRU_PROJECT
+Command11=ID_APP_EXIT
+Command12=ID_EDIT_UNDO
+Command13=ID_EDIT_CUT
+Command14=ID_EDIT_COPY
+Command15=ID_EDIT_PASTE
+Command16=ID_EDIT_FIND
+Command17=ID_VIEW_TOOLBAR
+Command18=ID_VIEW_STATUS_BAR
+Command19=ID_CARLAMenu
+Command20=ID_AmpleLinks
+Command21=ID_EditInputDocProperties
+Command22=ID_InputDocDisplay
+Command23=ID_RunProcessors
+Command24=ID_RunTrace
+Command25=ID_OpenStreamExternal
+Command26=ID_WINDOW_NEW
+Command27=ID_WINDOW_CASCADE
+Command28=ID_WINDOW_TILE_HORZ
+Command29=ID_HELP_FINDER
+Command30=ID_APP_ABOUT
+CommandCount=30
+
+[MNU:IDR_CStudioLangTYPE (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_FILE_NewDocument
+Command2=ID_FILE_OPEN_Document
+Command3=ID_FILE_SaveAll
+Command4=ID_FILE_NewLanguage
+Command5=ID_FILE_CLOSE_PROJECT
+Command6=ID_FILE_MRU_FILE1
+Command7=ID_FILE_MRU_PROJECT
+Command8=ID_APP_EXIT
+Command9=ID_EDIT_UNDO
+Command10=ID_EDIT_CUT
+Command11=ID_EDIT_COPY
+Command12=ID_EDIT_PASTE
+Command13=ID_Edit_Delete
+Command14=ID_Edit_Insert_Entry
+Command15=ID_EDIT_insert_environ
+Command16=ID_EDIT_Insert_Comment
+Command17=ID_EDIT_Insert_TestData
+Command18=ID_edit_insert_secondary
+Command19=ID_EDIT_FIND
+Command20=ID_VIEW_TOOLBAR
+Command21=ID_VIEW_STATUS_BAR
+Command22=ID_CARLAMenu
+Command23=ID_AmpleLinks
+Command24=ID_LangAnalysisSeq
+Command25=ID_LangInterlinearSeq
+Command26=ID_LangSynthesisSeq
+Command27=ID_LangRemove
+Command28=ID_LANGUAGE_SETUPTESTS
+Command29=ID_LangProperties
+Command30=ID_WINDOW_NEW
+Command31=ID_WINDOW_CASCADE
+Command32=ID_WINDOW_TILE_HORZ
+Command33=ID_HELP_FINDER
+Command34=ID_APP_ABOUT
+CommandCount=34
+
+[MNU:IDR_CStudioAnaDocType (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_FILE_OPEN_Document
+Command2=ID_FILE_CLOSE
+Command3=ID_FILE_SAVE
+Command4=ID_FILE_SAVEDOCUMENTAS
+Command5=ID_FILE_SaveAll
+Command6=ID_FILE_NewLanguage
+Command7=ID_FILE_CLOSE_PROJECT
+Command8=ID_FILE_MRU_FILE1
+Command9=ID_FILE_MRU_PROJECT
+Command10=ID_APP_EXIT
+Command11=ID_EDIT_UNDO
+Command12=ID_EDIT_CUT
+Command13=ID_EDIT_COPY
+Command14=ID_EDIT_PASTE
+Command15=ID_EDIT_FIND
+Command16=ID_VIEW_TOOLBAR
+Command17=ID_VIEW_STATUS_BAR
+Command18=ID_CARLAMenu
+Command19=ID_AmpleLinks
+Command20=ID_EditInputDocProperties
+Command21=ID_InputDocDisplay
+Command22=ID_RunProcessors
+Command23=ID_RunTrace
+Command24=ID_OpenStreamExternal
+Command25=ID_WINDOW_NEW
+Command26=ID_WINDOW_CASCADE
+Command27=ID_WINDOW_TILE_HORZ
+Command28=ID_HELP_FINDER
+Command29=ID_APP_ABOUT
+CommandCount=29
+
+[MNU:IDR_QuickParseDocType (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_FILE_NewDocument
+Command2=ID_FILE_OPEN_Document
+Command3=ID_FILE_CLOSE
+Command4=ID_FILE_SaveAll
+Command5=ID_FILE_NewLanguage
+Command6=ID_FILE_CLOSE_PROJECT
+Command7=ID_FILE_MRU_FILE1
+Command8=ID_FILE_MRU_PROJECT
+Command9=ID_APP_EXIT
+Command10=ID_EDIT_UNDO
+Command11=ID_EDIT_CUT
+Command12=ID_EDIT_COPY
+Command13=ID_EDIT_PASTE
+Command14=ID_VIEW_TOOLBAR
+Command15=ID_VIEW_STATUS_BAR
+Command16=ID_CARLAMenu
+Command17=ID_AmpleLinks
+Command18=ID_QuickParse_ChangeLang
+Command19=ID_QUICKPARSE_RefreshRequest
+Command20=ID_QuickParseGo
+Command21=ID_WINDOW_NEW
+Command22=ID_WINDOW_CASCADE
+Command23=ID_WINDOW_TILE_HORZ
+Command24=ID_HELP_FINDER
+Command25=ID_APP_ABOUT
+CommandCount=25
+
+[MNU:IDR_EnvironPopup (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_Env_Delete
+Command2=ID_Env_Enable
+CommandCount=2
+
+[ACL:IDR_MAINFRAME (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_RunProcessors
+Command2=ID_EDIT_COPY
+Command3=ID_EDIT_Insert_TestData
+Command4=ID_EDIT_insert_environ
+Command5=ID_EDIT_FIND
+Command6=ID_Edit_Insert_Entry
+Command7=ID_edit_insert_secondary
+Command8=ID_EDIT_Insert_Comment
+Command9=ID_FILE_NewDocument
+Command10=ID_FILE_OPEN
+Command11=ID_FILE_PRINT
+Command12=ID_LangQuickParse
+Command13=ID_FILE_SaveAll
+Command14=ID_RunTrace
+Command15=ID_EDIT_PASTE
+Command16=ID_EDIT_UNDO
+Command17=ID_EDIT_CUT
+Command18=ID_HELP
+Command19=ID_CONTEXT_HELP
+Command20=ID_EDIT_FindAgain
+Command21=ID_Jump
+Command22=ID_NEXT_PANE
+Command23=ID_PREV_PANE
+Command24=ID_EDIT_COPY
+Command25=ID_EDIT_PASTE
+Command26=ID_EDIT_CUT
+Command27=ID_EDIT_UNDO
+CommandCount=27
+
+[ACL:IDR_QuickParseDocType (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_QUICKPARSE_RefreshRequest
+Command2=ID_QuickParseGo
+CommandCount=2
+
+[ACL:IDR_CStudioLangTYPE (English (U.S.))]
+Type=1
+Class=?
+Command1=ID_Edit_Delete
+Command2=ID_LangProperties
+CommandCount=2
+
+[DLG:IDD_ABOUTBOX (English (U.S.))]
+Type=1
+Class=?
+ControlCount=5
+Control1=IDC_STATIC,static,1342177283
+Control2=IDC_STATIC,static,1342308480
+Control3=IDC_STATIC,static,1342308352
+Control4=IDOK,button,1342373889
+Control5=IDC_Credits,static,1342308352
+
+[DLG:IDD_EditTest (English (U.S.))]
+Type=1
+Class=?
+ControlCount=9
+Control1=IDC_EDITLabel,edit,1350631552
+Control2=IDC_EDITDescription,edit,1352732740
+Control3=IDC_EDITContents,edit,1353781444
+Control4=IDOK,button,1342242817
+Control5=IDCANCEL,button,1342242816
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_CHECKEnabled,button,1342242819
+Control9=IDC_STATIC,static,1342308352
+
+[DLG:IDD_OpenOrCreateProject (English (U.S.))]
+Type=1
+Class=?
+ControlCount=7
+Control1=IDC_RProjectWizard,button,1342373897
+Control2=IDC_RCarlaMenu,button,1342242825
+Control3=IDCANCEL,button,1342373888
+Control4=IDOK,button,1342242817
+Control5=IDC_STATIC,button,1342177287
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+
+[DLG:IDD_WizFilesAnalysis (English (U.S.))]
+Type=1
+Class=?
+ControlCount=30
+Control1=IDC_BUTTONCmd,button,1342242816
+Control2=IDC_BUTTONTextIn,button,1342242816
+Control3=IDC_BUTTONCodeTable,button,1342242816
+Control4=IDC_BUTTONAnalysis,button,1342242816
+Control5=IDC_BUTTONPhonrule,button,1342242816
+Control6=IDC_BUTTONDictOrtho,button,1342242816
+Control7=IDC_BUTTONSTDisambig,button,1342242816
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATICTextIn,static,1342312448
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATIC,static,1342308352
+Control12=IDC_STATIC,static,1342308352
+Control13=IDC_STATIC,static,1342308352
+Control14=IDC_STATIC,static,1342308352
+Control15=IDC_STATICPhonrule,static,1342312448
+Control16=IDC_STATICDictOrtho,static,1342312448
+Control17=IDC_STATICCodeTable,static,1342312576
+Control18=IDC_STATICAnalysis,static,1342312448
+Control19=IDC_STATIC,button,1342177287
+Control20=IDC_STATIC,static,1342308352
+Control21=IDC_STDisambig,static,1342312448
+Control22=IDC_STATIC,static,1342308352
+Control23=IDC_STATICCmd,static,1342312448
+Control24=IDC_STATIC,static,1342308352
+Control25=IDC_commentChar,edit,1350631424
+Control26=IDC_STATIC,static,1342308352
+Control27=IDC_BUTTONCodeTableIt,button,1342242816
+Control28=IDC_STATIC,static,1342308352
+Control29=IDC_STATICCodeTableIt,static,1342312576
+Control30=IDC_STATIC,static,1342308352
+
+[DLG:IDD_WizFilesTransfer (English (U.S.))]
+Type=1
+Class=?
+ControlCount=8
+Control1=IDC_STGlossing,static,1342312448
+Control2=IDC_btnSTGlossing,button,1342242816
+Control3=IDC_STATIC,button,1342177287
+Control4=IDC_STATIC,static,1342308352
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_STATIC,static,1342308352
+
+[DLG:IDD_WizFilesSynth (English (U.S.))]
+Type=1
+Class=?
+ControlCount=12
+Control1=IDC_STAMPSynth,static,1342312448
+Control2=IDC_btnSTAMPSynth,button,1342242816
+Control3=IDC_TextOut,static,1342312448
+Control4=IDC_btnTextOut,button,1342242816
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,button,1342177287
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_StampDictCode,static,1342312448
+Control11=IDC_btnStampDictCode,button,1342242816
+Control12=IDC_STATIC,static,1342308352
+
+[DLG:IDD_PageDictRootUnified (English (U.S.))]
+Type=1
+Class=?
+ControlCount=8
+Control1=IDC_RootDicts,SysListView32,1350631431
+Control2=IDC_BtnAddRoot,button,1342242816
+Control3=IDC_BtnRemove,button,1342242816
+Control4=IDC_STATIC,static,1342308352
+Control5=IDC_DictListLabel,button,1342177287
+Control6=IDC_BtnDictMethod,button,1342242816
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_STATIC,static,1342308352
+
+[DLG:IDD_WizFilesFinish (English (U.S.))]
+Type=1
+Class=?
+ControlCount=4
+Control1=IDC_STATIC,static,1073872896
+Control2=IDC_EDITFilesList,edit,1083246596
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_FolderPath,static,1342308352
+
+[DLG:IDD_PageLangDisplayProperties (English (U.S.))]
+Type=1
+Class=?
+ControlCount=17
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_EDITName,edit,1350631552
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_EDITAbrev,edit,1350631552
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_STATIC,button,1342177287
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_StaticFont,static,1342308352
+Control9=IDC_BUTTONFont,button,1342242816
+Control10=IDC_MorphnamesInLangFont,button,1342242819
+Control11=IDC_CommentsInLangFont,button,1342242819
+Control12=IDC_PropertiesInLangFont,button,1342242819
+Control13=IDC_StringClassInLangFont,button,1342242819
+Control14=IDC_MorphemeClassInLangFont,button,1342242819
+Control15=IDC_TestContentsInLangFont,button,1342242819
+Control16=IDC_DisableFontAssociation,button,1342242819
+Control17=IDC_ShowFromTransfer,button,1342242819
+
+[DLG:IDD_WizSetupFinish (English (U.S.))]
+Type=1
+Class=?
+ControlCount=1
+Control1=IDC_STATICMsg,static,1342308352
+
+[DLG:IDD_EditOrthoChange (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDC_From,edit,1350631552
+Control2=IDC_To,edit,1350631552
+Control3=IDC_Comments,edit,1352732740
+Control4=IDC_CHECKEnabled,button,1342242819
+Control5=IDCANCEL,button,1342242816
+Control6=IDOK,button,1342242817
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_EnvList,SysListView32,1350631553
+Control11=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditEnvironment (English (U.S.))]
+Type=1
+Class=?
+ControlCount=7
+Control1=IDC_Environment,edit,1350631552
+Control2=IDC_Comments,edit,1352732740
+Control3=IDC_CHECKEnabled,button,1342242819
+Control4=IDOK,button,1342242817
+Control5=IDCANCEL,button,1342242816
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditMCC (English (U.S.))]
+Type=1
+Class=?
+ControlCount=9
+Control1=IDC_Members,edit,1350631552
+Control2=IDC_Comments,edit,1352732740
+Control3=IDC_CHECKEnabled,button,1342242819
+Control4=IDCANCEL,button,1342242816
+Control5=IDOK,button,1342242817
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_EnvList,SysListView32,1350631553
+Control9=IDC_STATIC,static,1342308352
+
+[DLG:IDD_ProcessSequence (English (U.S.))]
+Type=1
+Class=?
+ControlCount=10
+Control1=IDC_ProcessList,SysListView32,1350664197
+Control2=IDC_InsertBefore,button,1342242816
+Control3=IDC_Remove,button,1342242816
+Control4=IDC_Properties,button,1342242816
+Control5=IDOK,button,1342242817
+Control6=IDCANCEL,button,1342242816
+Control7=IDC_InsertAfter,button,1342242816
+Control8=IDC_ValidMsg,static,1342308352
+Control9=ID_HELP,button,1342242816
+Control10=IDC_STATIC,static,1342308352
+
+[DLG:IDD_QuickParse (English (U.S.))]
+Type=1
+Class=?
+ControlCount=15
+Control1=IDC_STATICWordToParse,static,1342308352
+Control2=IDC_EDITInput,edit,1350631552
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_RefreshNotice,static,1073872896
+Control5=IDC_STATIC,button,1342177287
+Control6=IDC_CHECKTrace,button,1342242819
+Control7=IDC_CHECKManualParse,button,1342242819
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_EDITTraceMorphs,edit,1350631552
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_ErrorIcon,static,1073741838
+Control12=IDC_ErrorStatic,static,1073872896
+Control13=IDC_ErrorStatic2,static,1073872896
+Control14=IDC_EDITAmpleOutput,edit,1353781380
+Control15=IDC_STATICManualParse,static,1342308352
+
+[DLG:IDD_EditClass (English (U.S.))]
+Type=1
+Class=?
+ControlCount=9
+Control1=IDC_EDITLabel,edit,1350631552
+Control2=IDC_EDITContents,edit,1352732740
+Control3=IDC_EDITDescription,edit,1352732740
+Control4=IDC_CHECKEnabled,button,1342242819
+Control5=IDOK,button,1342242817
+Control6=IDCANCEL,button,1342242816
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditAdhocPair (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDC_Morph1,edit,1350631552
+Control2=IDC_Morph2,edit,1350631552
+Control3=IDC_COMBOMorphTypes,combobox,1344340226
+Control4=IDC_EDITComments,edit,1352732740
+Control5=IDC_CHECKEnabled,button,1342242819
+Control6=IDOK,button,1342242817
+Control7=IDCANCEL,button,1342242816
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditCompoundRoot (English (U.S.))]
+Type=1
+Class=?
+ControlCount=9
+Control1=IDC_Cat1,edit,1350631552
+Control2=IDC_Cat2,edit,1350631552
+Control3=IDC_EDITDescription,edit,1352732740
+Control4=IDC_CHECKEnabled,button,1342242819
+Control5=IDCANCEL,button,1342242816
+Control6=IDOK,button,1342242817
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditAmpleProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=15
+Control1=IDC_CheckMorphnames,button,1342242819
+Control2=IDC_MaxMorphLength,edit,1350639744
+Control3=IDC_ParseTrees,button,1342242819
+Control4=IDC_ReportAmbig,button,1342242819
+Control5=IDC_OutputRootGlosses,button,1342242819
+Control6=IDC_WriteWordField,button,1342242819
+Control7=IDC_WriteDecompField,button,1342242819
+Control8=IDC_WritePField,button,1342242819
+Control9=IDOK,button,1342242817
+Control10=IDCANCEL,button,1342242816
+Control11=IDC_STATIC,static,1342308352
+Control12=IDC_STATIC,button,1342177287
+Control13=IDC_STATIC,button,1342177287
+Control14=IDC_STATIC,button,1342177287
+Control15=IDC_Trace,button,1342242819
+
+[DLG:IDD_EditIntergenProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=14
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_DecompChar,edit,1350631424
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_MaxLineLength,edit,1350631424
+Control5=IDC_UseSFMarkers,button,1342242819
+Control6=IDC_allDecompAmbiguities,button,1342242819
+Control7=IDC_CHECK_IntergenOutputChanges,button,1342242819
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_FieldList,SysListView32,1350664197
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATIC,static,1342308352
+Control12=IDC_STATIC,static,1342308352
+Control13=IDOK,button,1342242817
+Control14=IDCANCEL,button,1342242816
+
+[DLG:IDD_EditJoinCompProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=9
+Control1=IDC_PartialCompoundsOK,button,1342242819
+Control2=IDC_JoinWordsMarker,edit,1350631424
+Control3=IDC_AllomorphMarker,edit,1350631424
+Control4=IDC_VariantFormMarker,edit,1350631424
+Control5=IDOK,button,1342242817
+Control6=IDCANCEL,button,1342242816
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+
+[DLG:IDD_WizProjectLocation (English (U.S.))]
+Type=1
+Class=?
+ControlCount=4
+Control1=IDC_BTNProjectLoc,button,1342242816
+Control2=IDC_ProjectLoc,static,1342312448
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_STATIC,static,1342308352
+
+[DLG:IDD_WizCMenuSettings (English (U.S.))]
+Type=1
+Class=?
+ControlCount=4
+Control1=IDC_BTNCarlaSetPath,button,1342242816
+Control2=IDC_CarlaSetPath,static,1342312448
+Control3=65535,static,1342308352
+Control4=65535,static,1342308352
+
+[DLG:IDD_ChooseProcessor (English (U.S.))]
+Type=1
+Class=?
+ControlCount=3
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_LIST,SysListView32,1350631425
+
+[DLG:IDD_EditSentransDisambig (English (U.S.))]
+Type=1
+Class=CDlgEditSentransDisambig
+ControlCount=12
+Control1=IDC_RADIOAccept,button,1342308361
+Control2=IDC_RADIOReject,button,1342177289
+Control3=IDC_CHECKUnanimousEnvirons,button,1342242819
+Control4=IDC_Morphemes,edit,1350762624
+Control5=IDC_EnvList,SysListView32,1350631553
+Control6=IDC_Comments,edit,1352732740
+Control7=IDC_CHECKEnabled,button,1342242819
+Control8=IDOK,button,1342242817
+Control9=IDCANCEL,button,1342242816
+Control10=IDC_STATICcomments,static,1342308352
+Control11=IDC_STATIC,static,1342308352
+Control12=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditSentransTransfer (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDC_From,edit,1350631552
+Control2=IDC_To,edit,1350631552
+Control3=IDC_EnvList,SysListView32,1350631553
+Control4=IDC_Comments,edit,1352732740
+Control5=IDC_CHECKEnabled,button,1342242819
+Control6=IDOK,button,1342242817
+Control7=IDCANCEL,button,1342242816
+Control8=IDC_STATICcomments,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATIC,static,1342308352
+
+[DLG:IDD_PageSrcTextProcessing (English (U.S.))]
+Type=1
+Class=?
+ControlCount=15
+Control1=IDC_SourceLang,combobox,1344340227
+Control2=IDC_TargetLangCombo,combobox,1344340227
+Control3=IDC_radioGoal,button,1342308361
+Control4=IDC_radioGlossing,button,1342177289
+Control5=IDC_radioAutoSynthesis,button,1476395017
+Control6=IDC_radioAnalyzeTransfer,button,1342177289
+Control7=IDC_radioAnalyzeTransfer2,button,1342177289
+Control8=IDC_Verbose,button,1342373891
+Control9=IDC_MakeDefault,button,1342242819
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATIC,static,1342308352
+Control12=IDC_STATIC,button,1342177287
+Control13=IDC_CopyInterlinearToSrcDir,button,1342242819
+Control14=IDC_LeaveNonGoalsInTemp,button,1342242819
+Control15=IDC_STATIC,button,1342177287
+
+[DLG:CG_IDD_PROGRESS (English (U.S.))]
+Type=1
+Class=?
+ControlCount=4
+Control1=IDCANCEL,button,1342242817
+Control2=CG_IDC_PROGDLG_PROGRESS,msctls_progress32,1350565888
+Control3=CG_IDC_PROGDLG_PERCENT,static,1342308352
+Control4=CG_IDC_PROGDLG_STATUS,static,1342308352
+
+[DLG:IDD_EditSentransProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=15
+Control1=IDC_radioFunction1,button,1476526089
+Control2=IDC_radioFunction2,button,1476395017
+Control3=IDC_radioFunction3,button,1476395017
+Control4=IDC_radioFunction4,button,1476395017
+Control5=IDC_radioFunction5,button,1476395017
+Control6=IDC_EDITRuleFile,edit,1350631552
+Control7=IDC_MonitorAmibiguities,button,1342373891
+Control8=IDC_MonitorRulesApplied,button,1342242819
+Control9=IDC_TraceRules,button,1342242819
+Control10=IDC_OutputClassContents,button,1342242819
+Control11=IDOK,button,1342242817
+Control12=IDCANCEL,button,1342242816
+Control13=IDC_STATIC,button,1342177287
+Control14=IDC_STATIC,button,1342177287
+Control15=IDC_STATIC,static,1073872896
+
+[DLG:IDD_EditStampFlag (English (U.S.))]
+Type=1
+Class=?
+ControlCount=9
+Control1=IDC_sFlag,edit,1350631552
+Control2=IDC_sMorphemes,edit,1350635648
+Control3=IDC_sComments,edit,1352732676
+Control4=IDC_CHECKEnabled,button,1342242819
+Control5=IDOK,button,1342242817
+Control6=IDCANCEL,button,1342242816
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditStampLexChange (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDC_From,edit,1350631552
+Control2=IDC_To,edit,1350631552
+Control3=IDC_EnvList,SysListView32,1350631553
+Control4=IDC_Comments,edit,1352732740
+Control5=IDC_CHECKEnabled,button,1342242819
+Control6=IDOK,button,1342242817
+Control7=IDCANCEL,button,1342242816
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditRegularSoundChange (English (U.S.))]
+Type=1
+Class=?
+ControlCount=13
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_From,edit,1350631552
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_To,edit,1350631552
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_RSCIds,edit,1350631552
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_Comments,edit,1352732740
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_EnvList,SysListView32,1350631553
+Control11=IDC_CHECKEnabled,button,1342242819
+Control12=IDOK,button,1342242817
+Control13=IDCANCEL,button,1342242816
+
+[DLG:IDD_EditStampProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDC_CheckMorphnames,button,1342242819
+Control2=IDC_MonitorProgress,button,1342242819
+Control3=IDC_ParseTrees,button,1342242819
+Control4=IDOK,button,1342242817
+Control5=IDCANCEL,button,1342242816
+Control6=IDC_STATIC,button,1342177287
+Control7=IDC_STATIC,button,1342177287
+Control8=IDC_CheckRootCats,button,1342242819
+Control9=IDC_STATIC,button,1342177287
+Control10=IDC_OutputAllAllomorphs,button,1342242819
+Control11=IDC_Trace,button,1342242819
+
+[DLG:IDD_LanguageCreation (English (U.S.))]
+Type=1
+Class=?
+ControlCount=8
+Control1=IDC_radioFunction1,button,1342308361
+Control2=IDC_radioFunction2,button,1342177289
+Control3=IDOK,button,1342373889
+Control4=IDCANCEL,button,1342242816
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_STATIC,static,1342308352
+
+[DLG:IDD_Environments (English (U.S.))]
+Type=1
+Class=?
+ControlCount=4
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_MSFLEXGRID1,{6262D3A0-531B-11CF-91F6-C2863C385E30},1342242816
+Control4=IDtest,button,1342242817
+
+[DLG:IDD_PageInputDocPanels (English (U.S.))]
+Type=1
+Class=?
+ControlCount=5
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_InputDocPanelList,listbox,1352729041
+Control3=IDC_PanelDetails,edit,1352730692
+Control4=IDC_STATIC,static,1342308352
+Control5=IDC_availableOnly,button,1342242819
+
+[DLG:IDD_EditSentransDirective (English (U.S.))]
+Type=1
+Class=?
+ControlCount=13
+Control1=IDC_RADIOType,button,1342308361
+Control2=IDC_RADIOType2,button,1342177289
+Control3=IDC_RADIOType3,button,1342177289
+Control4=IDC_RADIOType4,button,1342177289
+Control5=IDC_RADIOType5,button,1342177289
+Control6=IDC_iLimit,edit,1350770688
+Control7=IDC_sComments,edit,1352732676
+Control8=IDC_CHECKEnabled,button,1342242819
+Control9=IDOK,button,1342242817
+Control10=IDCANCEL,button,1342242816
+Control11=IDC_STATIC,static,1342308352
+Control12=IDC_STATIC,static,1342308352
+Control13=IDC_STATIC,button,1342177287
+
+[DLG:IDD_EditStampTransferRule (English (U.S.))]
+Type=1
+Class=?
+ControlCount=17
+Control1=IDC_RADIOSubstitute,button,1342308361
+Control2=IDC_RADIOCopy,button,1342177289
+Control3=IDC_RADIOInsert,button,1342177289
+Control4=IDC_FromOrInsert,edit,1350631552
+Control5=IDC_To,edit,1350631552
+Control6=IDC_Flags,edit,1350631552
+Control7=IDC_EnvList,SysListView32,1350631553
+Control8=IDC_Comments,edit,1352732740
+Control9=IDC_CHECKEnabled,button,1342373891
+Control10=IDOK,button,1342242817
+Control11=IDCANCEL,button,1342242816
+Control12=IDC_ToStatic,static,1342308352
+Control13=IDC_FromOrInsertLabel,static,1342308354
+Control14=IDC_STATIC,button,1342177287
+Control15=IDC_STATIC,static,1342308352
+Control16=IDC_STATIC,static,1342308352
+Control17=IDC_FromOrInsertLabel2,static,1342308354
+
+[DLG:IDD_PageRedundantFieldNotice (English (U.S.))]
+Type=1
+Class=?
+ControlCount=3
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_STATIC,static,1342308352
+Control3=IDC_STATIC,static,1342308352
+
+[DLG:IDD_CCProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=14
+Control1=IDC_EDITName,edit,1350631552
+Control2=IDC_EDITDescription,edit,1352728580
+Control3=IDC_BUTTONBrowseTableFile,button,1342242816
+Control4=IDC_RADIOFileKind,button,1342308361
+Control5=IDC_RADIO2,button,1342177289
+Control6=IDC_RADIO3,button,1342177289
+Control7=IDC_RADIO5,button,1342177289
+Control8=IDOK,button,1342373889
+Control9=IDCANCEL,button,1342242816
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATICTablePath,static,1342308352
+Control12=IDC_STATIC,button,1342177287
+Control13=IDC_STATIC,static,1342308352
+Control14=IDC_STATIC,button,1342177287
+
+[DLG:IDD_PageAnaProcessing (English (U.S.))]
+Type=1
+Class=?
+ControlCount=12
+Control1=IDC_InputLang,combobox,1344340227
+Control2=IDC_TargetLangCombo,combobox,1344471299
+Control3=IDC_RADIOProduce,button,1342308361
+Control4=IDC_RADIOProduceTANA,button,1342177289
+Control5=IDC_RADIO3,button,1342177289
+Control6=IDC_LeaveNonGoalsInTemp,button,1342373891
+Control7=IDC_Verbose,button,1342373891
+Control8=IDC_MakeDefault,button,1342242819
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATIC,button,1342177287
+Control12=IDC_STATIC,button,1342177287
+
+[DLG:IDD_TIP (English (U.S.))]
+Type=1
+Class=?
+ControlCount=6
+Control1=65535,static,1342177287
+Control2=IDC_TIPSTRING,static,1342308352
+Control3=IDC_STARTUP,button,1342373891
+Control4=IDC_NEXTTIP,button,1342373888
+Control5=IDOK,button,1342373889
+Control6=IDC_BULB,static,1342177294
+
+[DLG:IDD_PageAffixes (English (U.S.))]
+Type=1
+Class=?
+ControlCount=4
+Control1=IDC_CHECKSfx,button,1342242819
+Control2=IDC_CHECKPfx,button,1342242819
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_CHECKIfx,button,1342242819
+
+[DLG:IDD_PageCatPropogation (English (U.S.))]
+Type=1
+Class=?
+ControlCount=7
+Control1=IDC_CatPropScheme,button,1342308361
+Control2=IDC_RADIOSfx,button,1342242825
+Control3=IDC_RADIO3,button,1342242825
+Control4=IDC_STATIC,static,1342308352
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+
+[DLG:IDD_PageCatFinalTest (English (U.S.))]
+Type=1
+Class=?
+ControlCount=4
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_CHECKCreateFinalCatTest,button,1342242819
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_CHECKDisableFinalCat,button,1342242819
+
+[DLG:IDD_PageDictAffix (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDC_STATIC,button,1342177287
+Control2=IDC_BTNPrefix,button,1342242816
+Control3=IDC_BTNInfix,button,1342242816
+Control4=IDC_BTNSuffix,button,1342242816
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_Prefix,static,1342312448
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_Infix,static,1342312448
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_Suffix,static,1342312448
+Control11=IDC_STATIC,static,1342308352
+
+[DLG:IDD_ChooseDictMethod (English (U.S.))]
+Type=1
+Class=?
+ControlCount=6
+Control1=IDC_DictMethod,button,1342308361
+Control2=IDC_DictMethod2,button,1342177289
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_STATIC,static,1342308352
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_STATIC,static,1342308352
+
+[DLG:IDD_PageLocations (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_AnalyzedANA,static,1342308352
+Control3=IDC_STATIC,button,1342177287
+Control4=IDC_Interlinear,static,1342308352
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_TransferedANA,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_Synthesized,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_CopyInterlinearToSrcDir,button,1476460547
+Control11=IDC_LeaveNonGoalsInTemp,button,1208025091
+
+[DLG:IDD_HEADING_VIEW (English (U.S.))]
+Type=1
+Class=?
+ControlCount=0
+
+[DLG:IDD_PageDisclaimer (English (U.S.))]
+Type=1
+Class=?
+ControlCount=3
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_STATIC,static,1342308352
+Control3=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditAmpleDLLProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=16
+Control1=IDC_MaxMorphLength,edit,1350639744
+Control2=IDC_CheckMorphnames,button,1342242819
+Control3=IDC_ReportAmbig,button,1342242819
+Control4=IDC_Trace,button,1342242819
+Control5=IDC_EDITTraceMorphs,edit,1350631552
+Control6=IDC_WriteDecompField,button,1342242819
+Control7=IDC_OutputRootGlosses,button,1342242819
+Control8=IDC_WritePField,button,1342242819
+Control9=IDC_WriteWordField,button,1342242819
+Control10=IDOK,button,1342242817
+Control11=IDCANCEL,button,1342242816
+Control12=IDC_STATIC,static,1342308352
+Control13=IDC_STATIC,button,1342177287
+Control14=IDC_STATIC,static,1342308352
+Control15=IDC_STATIC,button,1342177287
+Control16=IDC_STATIC,button,1342177287
+
+[DLG:IDD_EditToneParseProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDC_STATIC,button,1342177287
+Control2=IDC_EDITControlFile,edit,1350631552
+Control3=IDC_BUTTONToneParsControlFile,button,1342242816
+Control4=IDC_bTraceToneProcessing,button,1342242819
+Control5=IDC_BUTTONToneParsTraceOptions,button,1342242816
+Control6=IDC_EDITTraceLevelParse,edit,1082196096
+Control7=IDC_bMonitorProgress,button,1342242819
+Control8=IDC_bVerifyControlFileInformation,button,1342242819
+Control9=IDOK,button,1342242817
+Control10=IDCANCEL,button,1342242816
+Control11=IDC_CHECKToneParseMorphnames,button,1342242819
+
+[DLG:IDD_EditToneGenProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=20
+Control1=IDC_STATIC,button,1342177287
+Control2=IDC_STATIC,button,1342177287
+Control3=IDC_EDITControlFileGen,edit,1350631552
+Control4=IDC_BUTTONToneGenControlFile,button,1342242816
+Control5=IDC_bTraceToneProcessingGen,button,1342242819
+Control6=IDC_BUTTONToneGenTraceOptions,button,1342242816
+Control7=IDC_EDITTraceLevelGen,edit,1082196096
+Control8=IDC_STATIC,button,1342177287
+Control9=IDC_STATIC,button,1342177287
+Control10=IDC_CHECKToneGenMorphnames,button,1342242819
+Control11=IDC_CHECKToneGenRootCats,button,1342242819
+Control12=IDC_STATIC,button,1342177287
+Control13=IDC_CHECKToneGenTraceSynthesis,button,1342242819
+Control14=IDC_STATIC,button,1342177287
+Control15=IDC_CHECKToneGenOutputAll,button,1342242819
+Control16=IDC_STATIC,button,1342177287
+Control17=IDC_bMonitorProgressGen,button,1342242819
+Control18=IDC_bVerifyControlFileInformationGen,button,1342242819
+Control19=IDOK,button,1342242817
+Control20=IDCANCEL,button,1342242816
+
+[DLG:IDD_EditComment (English (U.S.))]
+Type=1
+Class=?
+ControlCount=3
+Control1=IDC_SComment,edit,1352732740
+Control2=IDOK,button,1342242817
+Control3=IDCANCEL,button,1342242816
+
+[DLG:IDD_EditTestData (English (U.S.))]
+Type=1
+Class=?
+ControlCount=3
+Control1=IDC_STestData,edit,1352732740
+Control2=IDOK,button,1342242817
+Control3=IDCANCEL,button,1342242816
+
+[DLG:IDD_ModifyTestsFinish (English (U.S.))]
+Type=1
+Class=?
+ControlCount=5
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_STATIC,static,1342308352
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_STATIC,static,1342308352
+Control5=IDC_STATIC,static,1342308352
+
+[DLG:IDD_EditPrintANAProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=7
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_EDITBeginPrintColumn,edit,1350631552
+Control4=IDC_EDITEXENamePrintAna,edit,1350631552
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_CHECKDisplayAnalysesOnly,button,1342242819
+
+[DLG:IDD_BatchProcess (English (U.S.))]
+Type=1
+Class=?
+ControlCount=15
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_EDITName,edit,1350631552
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_EDITDescription,edit,1352728580
+Control5=IDC_STATIC,button,1342177287
+Control6=IDC_STATICBatchPath,static,1342308352
+Control7=IDC_BUTTONBrowseBatchFile,button,1342242816
+Control8=IDC_STATIC,button,1342177287
+Control9=IDC_RADIOBatchFileKind,button,1342308361
+Control10=IDC_RADIOFileKind,button,1342177289
+Control11=IDC_RADIO2,button,1342177289
+Control12=IDC_RADIO3,button,1342177289
+Control13=IDC_RADIO5,button,1342177289
+Control14=IDOK,button,1342373889
+Control15=IDCANCEL,button,1342242816
+
+[DLG:IDD_ManualParseChoice (English (U.S.))]
+Type=1
+Class=?
+ControlCount=3
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_LISTManualParse,SysListView32,1350632453
+
+[DLG:IDD_EditToneTracing (English (U.S.))]
+Type=1
+Class=?
+ControlCount=11
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_CHECKToneTraceSegments,button,1342242819
+Control4=IDC_CHECKToneTraceMora,button,1342242819
+Control5=IDC_CHECKToneTraceSyllable,button,1342242819
+Control6=IDC_CHECKToneTraceTBU,button,1342242819
+Control7=IDC_CHECKToneTraceLinkAnalysis,button,1342242819
+Control8=IDC_CHECKToneTraceToneRule,button,1342242819
+Control9=IDC_CHECKToneTraceDomains,button,1342242819
+Control10=IDC_CHECKToneTraceTierAssignment,button,1342242819
+Control11=IDC_CHECKToneTraceMorphemeTone,button,1342242819
+
+[DLG:IDD_PageCatFinalModifyTest (English (U.S.))]
+Type=1
+Class=?
+ControlCount=4
+Control1=IDC_STATIC,static,1342308352
+Control2=IDC_CHECKCreateFinalCatTestModifyTests,button,1342242819
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_CHECKDisableFinalCatModifyTests,button,1476460547
