@@ -1,5 +1,5 @@
 # Master Unix makefile for the AMPLE library and program
-# Steve McConnel,  1-May-2000
+# Steve McConnel,  2-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -57,7 +57,7 @@ OBJ  = ample.o
 LIBO = anal.o     analda.o   atest.o    categ.o    envchk.o   envpar.o  \
 	   loadcc.o   loadtb.o   mktest.o   morcla.o   proper.o   select.o  \
 	   setsd.o    spreds.o   version.o  putsd.o    writests.o cmdutil.o \
-	   mccpar.o   validch.o  puncla.o   dynstr.o
+	   mccpar.o   validch.o  puncla.o   dynstr.o   anccpar.o
 
 ample: $(OBJ) $(LIBS)
 	$(CC) -o ample $(OBJ) $(LIBS) @LIBS@
@@ -74,7 +74,7 @@ OBJP  = ample.op
 LIBOP = anal.op     analda.op   atest.op    categ.op   envchk.op   envpar.op \
 		loadcc.op   loadtb.op   mktest.op   morcla.op  proper.op   select.op \
 		setsd.op    spreds.op   version.op  putsd.op   writests.op cmdutil.op \
-		mccpar.op   validch.op  puncla.op   dynstr.op
+		mccpar.op   validch.op  puncla.op   dynstr.op  anccpar.op
 
 ample_p: $(OBJP) $(LIBSP)
 	$(CC) -pg -o ample_p $(OBJP) $(LIBSP) @LIBS@
@@ -92,7 +92,7 @@ OBJX  = ample.ox
 LIBOX = anal.ox   analda.ox  atest.ox   categ.ox  envchk.ox   envpar.ox  \
 		loadcc.ox loadtb.ox  mktest.ox  morcla.ox proper.ox   select.ox  \
 		setsd.ox  spreds.ox  version.ox putsd.ox  writests.ox cmdutil.ox \
-		mccpar.ox validch.ox puncla.ox  dynstr.ox
+		mccpar.ox validch.ox puncla.ox  dynstr.ox anccpar.ox
 
 xample: $(OBJX) $(LIBSX)
 	$(CC) -o xample $(OBJX) $(LIBSX) @LIBS@
@@ -111,7 +111,7 @@ OBJXP =ample.oxp
 LIBOXP=anal.oxp   analda.oxp  atest.oxp   categ.oxp  envchk.oxp   envpar.oxp  \
 	   loadcc.oxp loadtb.oxp  mktest.oxp  morcla.oxp proper.oxp   select.oxp  \
 	   setsd.oxp  spreds.oxp  version.oxp putsd.oxp  writests.oxp cmdutil.oxp \
-	   mccpar.oxp validch.oxp puncla.oxp  dynstr.oxp
+	   mccpar.oxp validch.oxp puncla.oxp  dynstr.oxp anccpar.oxp
 
 xample_p: $(OBJXP) $(LIBSXP)
 	$(CC) -pg -o xample_p $(OBJXP) $(LIBSXP) @LIBS@
@@ -155,6 +155,7 @@ spreds.o   spreds.op   spreds.ox   spreds.oxp:   spreds.c   $(HEADERS) atest.h
 version.o  version.op  version.ox  version.oxp:  version.c  $(SOURCES)
 writests.o writests.op writests.ox writests.oxp: writests.c $(HEADERS)
 dynstr.o   dynstr.op   dynstr.ox   dynstr.oxp:   dynstr.c   $(HEADERS)
+anccpar.o  anccpar.op  anccpar.ox  anccpar.oxp:  anccpar.c  $(HEADERS)
 #
 #  shared by AMPLE and STAMP
 #
@@ -201,10 +202,13 @@ installdirs:
 
 ../include/ample.h: ample.h
 	$(COPY) ample.h ../include
+	chmod u+w $@
 ../include/stample.h: stample.h
 	$(COPY) stample.h ../include
+	chmod u+w $@
 ../include/punclass.h: punclass.h
 	$(COPY) punclass.h ../include
+	chmod u+w $@
 
 all: libs ample xample
 

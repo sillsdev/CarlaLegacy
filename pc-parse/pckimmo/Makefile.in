@@ -1,5 +1,5 @@
 # Master Unix makefile for the PC-KIMMO library and programs
-# Steve McConnel, 24-Apr-2000
+# Steve McConnel,  2-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -114,6 +114,7 @@ installdirs:
 	$(RANLIB) ../lib/libkimmo_p.a
 ../include/kimmo.h: kimmo.h
 	$(COPY) kimmo.h ../include
+	chmod u+w $@
 
 all: libs pckimmo convlex
 

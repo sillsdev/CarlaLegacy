@@ -1,5 +1,5 @@
 # Master Unix makefile for the OPAC library
-# Steve McConnel, 24-April-2000
+# Steve McConnel,  2-Oct-2002
 #
 # additional possible definitions:
 # Hardware
@@ -181,26 +181,37 @@ installdirs:
 
 ../include/allocmem.h: allocmem.h
 	$(COPY) allocmem.h ../include/allocmem.h
+	chmod u+w $@
 ../include/change.h: change.h
 	$(COPY) change.h   ../include/change.h
+	chmod u+w $@
 ../include/dynstr.h: dynstr.h
 	$(COPY) dynstr.h   ../include/dynstr.h
+	chmod u+w $@
 ../include/opaclib.h: opaclib.h
 	$(COPY) opaclib.h  ../include/opaclib.h
+	chmod u+w $@
 ../include/record.h: record.h
 	$(COPY) record.h   ../include/record.h
+	chmod u+w $@
 ../include/rpterror.h: rpterror.h
 	$(COPY) rpterror.h ../include/rpterror.h
+	chmod u+w $@
 ../include/strclass.h: strclass.h
 	$(COPY) strclass.h ../include/strclass.h
+	chmod u+w $@
 ../include/strlist.h: strlist.h
 	$(COPY) strlist.h  ../include/strlist.h
+	chmod u+w $@
 ../include/template.h: template.h
 	$(COPY) template.h ../include/template.h
+	chmod u+w $@
 ../include/textctl.h: textctl.h
 	$(COPY) textctl.h  ../include/textctl.h
+	chmod u+w $@
 ../include/trie.h: trie.h
 	$(COPY) trie.h     ../include/trie.h
+	chmod u+w $@
 
 all install: libs
 

@@ -1,5 +1,5 @@
 # Master Unix makefile for the SIL C Portability library
-# Steve McConnel, 29-Apr-2000
+# Steve McConnel,  2-Oct-2002
 
 @SET_MAKE@
 srcdir  = @srcdir@
@@ -131,6 +131,7 @@ installdirs:
 	$(RANLIB) ../lib/libcport_p.a
 ../include/cportlib.h: cportlib.h
 	$(COPY) cportlib.h ../include
+	chmod u+w $@
 
 all install: libs
 

@@ -1,5 +1,5 @@
 # Master Unix makefile for the CMD library
-# Steve McConnel, 24-Apr-2000
+# Steve McConnel,  2-Oct-2002
 
 @SET_MAKE@
 srcdir  = @srcdir@
@@ -76,6 +76,7 @@ installdirs:
 	$(RANLIB) ../lib/libcmd_p.a
 ../include/cmd.h: cmd.h
 	$(COPY) cmd.h ../include
+	chmod u+w $@
 
 all install: libs
 

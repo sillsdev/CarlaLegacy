@@ -1,5 +1,5 @@
 # Master Unix makefile for the STAMP library and program
-# Steve McConnel, 24-Apr-2000
+# Steve McConnel,  2-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -151,6 +151,7 @@ installdirs:
 
 ../include/stamp.h: stamp.h
 	$(COPY) stamp.h ../include
+	chmod u+w $@
 
 all: libs stamp
 
