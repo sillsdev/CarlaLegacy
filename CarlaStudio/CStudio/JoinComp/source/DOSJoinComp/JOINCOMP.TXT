@@ -5,6 +5,8 @@ analyze them. JOINCOMP is documented in the file JOINCOMP.DOC.
 
 Change history:
 
+0.2s Sep 2001 Internal change, not visible to the user.
+
 0.2r Jul 2001 Allow final line to not have a newline.
 
 0.2q Dec 2000 Some internal changes not visible to the user.

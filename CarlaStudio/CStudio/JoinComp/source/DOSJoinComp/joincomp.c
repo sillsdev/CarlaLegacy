@@ -52,12 +52,13 @@
 * 0.2p 22-Jun-2000 hab fix memory leaks
 * 0.2q 27-Dec-2000 hab define myfree as freeMemory for non-DLL versions
 * 0.2r 24-Jul-2001 hab allow final line to not have a newline
+* 0.2s 20-Sep-2001 hab close intx control file after checking for its existance
 *-----------------------------------------------------------*/
 
 #ifdef DJGPP
-#define VERSION "Join Compounds 0.2r (386) July 2001 Copyright SIL International\n"
+#define VERSION "Join Compounds 0.2s (386) September 2001 Copyright SIL International\n"
 #else
-#define VERSION "Join Compounds 0.2r July 2001 Copyright SIL International\n"
+#define VERSION "Join Compounds 0.2s September 2001 Copyright SIL International\n"
 #endif
 
 #include <stdio.h>              /* Include standard lib prototypes */
@@ -297,6 +298,12 @@ BOOL setupProcess(char* lpszErrorStr,
 		   lpszINTXPath );
 	  return FALSE;
 	}
+#ifndef hab02s
+  fclose(intxfile);		/* make sure its closed in case this is
+				   for the CS JoinComp DLL; otherwise
+				   it holds the file and it cannot be
+				   moved. */
+#endif /* hab02s */
 #ifndef hab02o
   memcpy(intxfname, lpszINTXPath, FILENAME_MAX);
 #endif /* hab02o */
