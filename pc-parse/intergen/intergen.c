@@ -1403,6 +1403,23 @@ switch (iTextualField_m) /* set pointers to the textual field */
 	pszTextualLine = szWrdLine_m;
 	break;
 	}
+#ifndef hab2112
+if (iTextualField_m == 'w')
+  {
+	cp = duplicateString(pszTextualBuf);
+  }
+ else
+  {
+	cp = applyChanges( pszTextualBuf, sTextCtl_m.pOutputChanges );
+	if (cp == NULL)
+	  {
+	/* report error? */
+	return;
+	  }
+	cp = recapitalizeWord(cp, pWord_in->iCapital, &sTextCtl_m, NULL);
+	strncpy(pszTextualBuf, cp, LINESIZE); /* ensure buffer has new contents */
+  }
+#else
 cp = applyChanges( pszTextualBuf, sTextCtl_m.pOutputChanges );
 if (cp == NULL)
 	{
@@ -1411,6 +1428,7 @@ if (cp == NULL)
 	}
 cp = recapitalizeWord(cp, pWord_in->iCapital, &sTextCtl_m, NULL);
 strncpy(pszTextualBuf, cp, LINESIZE); /* ensure buffer has new contents */
+#endif /* hab2112 */
 /*
  *  Break lines if necessary
  */

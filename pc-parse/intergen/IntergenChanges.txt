@@ -1,5 +1,12 @@
 INTERGEN CHANGE HISTORY
 
+2.1.b12 (23-Jul-2001)
+---------------------
+1. If the \w field is being used, it would apply any output changes and
+   would try to recapitalize the word, but there is no need to apply
+   output changes or to try to recapitalize because the content of the
+   \w field already has these.
+
 2.1.b11 (26-Oct-2000)
 ---------------------
 1. If the first word is a failure, then the underlying form field was not

@@ -4,12 +4,15 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL -11		/* bug fix or other minor change */
-#define DATE "October 26, 2000"	/* date of release version */
-#define YEAR "2000"		/* used for copyright notice in banner */
+#define PATCHLEVEL -12		/* bug fix or other minor change */
+#define DATE "July 23, 2001"	/* date of release version */
+#define YEAR "2001"		/* used for copyright notice in banner */
 
 /****************************************************************************
  * EDIT HISTORY
+ * 23-Jul-2001  hab  - If the \w field is being used, there is no need to apply
+ * [2.1.b12]            output changes or to try to recapitalize: the content
+ *                      of the \w field already has these.
  * 26-Oct-2000  hab  - If the first word is a failure, then the underlying form
  * [2.1.b11]            field was not displayed, resulting in the next word's
  *                      \u content to appear under the first word.
