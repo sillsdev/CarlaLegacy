@@ -5387,9 +5387,15 @@ if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_SGML &&
 	pAmple_in->eTraceAnalysis != AMPLE_TRACE_XML)
 	return;
 
-store_AMPLE_trace(pAmple_in,
+if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML)
+  store_AMPLE_trace(pAmple_in,
 		   "<!DOCTYPE AmpleTrace SYSTEM \"ampletrc.dtd\">\n<AmpleTrace>\n",
 		  NULL);
+else
+  store_AMPLE_trace(pAmple_in,
+		   "<!DOCTYPE AmpleTrace SYSTEM \"AmpleTrcXml.dtd\">\n<AmpleTrace>\n",
+		  NULL);
+
 /*
  *  write the selected morphs (if selective analysis)
  */

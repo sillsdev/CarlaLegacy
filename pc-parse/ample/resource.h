@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Developer Studio generated include file.
-// Used by ample.rc
+// Used by ampledll.rc
 //
 
 // Next default values for new objects

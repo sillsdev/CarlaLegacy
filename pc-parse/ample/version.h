@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 7		/* enhancement requiring adding to book */
-#define PATCHLEVEL 2		/* bug fix or other minor change */
-#define DATE "July 23, 2003"	/* date of release version */
+#define PATCHLEVEL 3		/* bug fix or other minor change */
+#define DATE "July 24, 2003"	/* date of release version */
 #define YEAR "2003"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 24-Jul-2003  hab  - Xml form of trace used wrong dtd file name
+ * [3.7.3]
  * 23-Jul-2003  hab  - Fixed bug which could cause SGML/XML trace output to
  * [3.7.2]              be lost
  * 17-Jun-2003  hab  - add SGML/XML trace output for PC-PATR grammar call

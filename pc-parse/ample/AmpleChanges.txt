@@ -1,6 +1,10 @@
 AMPLE CHANGE HISTORY
 
-3.7.2 (22-Jul-2003)
+3.7.3 (24-Jul-2003)
+-------------------
+1.  Xml form of trace used wrong dtd file name
+
+3.7.2 (23-Jul-2003)
 -------------------
 1.  Fixed bug which could cause SGML/XML trace output to be lost
 
