@@ -910,8 +910,11 @@ for ( cnd = inf->ptr->m.u.pInfixEnv ; cnd ; cnd = cnd->pNext)
    {
 	 t_indent(level+1, pStamp_in->pLogFP);
 	 fprintf(pStamp_in->pLogFP,
-		 "Could not find an infix location for %s\n",
-			inf->ptr->m.pszMorphname);
+		 "Could not find an infix location for %s within allomorph %s of %s\n",
+		 inf->ptr->m.pszMorphname,
+		 next->pCurrentAllo->pszAllomorph,
+		 next->m.pszMorphname
+		 );
    }
 #endif /* hab219 */
 /*
