@@ -261,6 +261,9 @@ KimmoData sLang_g = {	/* data for the current language */
 	TRUE,	/* bShowWarnings    - enable warning messages */
 	TRUE,	/* bPromoteDefAtoms - promote default atoms before parsing */
 	FALSE,	/* bPropIsFeature   - AMPLE property is feature template */
+#ifndef hab216
+	0,  	/* eRootGlossFeature  - use AMPLE root gloss as feature */
+#endif /* hab216 */
 	0,	/* iMaxProcTime     - maximum processing time for a parse */
 	NULL,	/* pLogFP           - output log file */
 	NULL,	/* pFinalPunc       - not used by Kimmo functions */
@@ -268,6 +271,9 @@ KimmoData sLang_g = {	/* data for the current language */
 	NULL,	/* pGrammar         - data loaded from the grammar file */
 	0,
 	NULL, NULL, NULL, NULL, NULL, NULL, /* not used by Kimmo functions */
+#ifndef hab216
+	NULL,
+#endif /* hab216 */
 	0, 0,	/* internal processing values */
 	&sLangPATRMemory_s,
 	0, 0, NULL,
@@ -322,6 +328,9 @@ KimmoData sSynLang_g = {		/* contains the synthesis lexicon */
 	TRUE,	/* bShowWarnings    - enable warning messages */
 	TRUE,	/* bPromoteDefAtoms - promote default atoms before parsing */
 	FALSE,	/* bPropIsFeature   - AMPLE property is feature template */
+#ifndef hab216
+	0,  	/* eRootGlossFeature  - use AMPLE root gloss as feature */
+#endif /* hab216 */
 	0,	/* iMaxProcTime     - maximum processing time for a parse */
 	NULL,	/* pLogFP           - output log file */
 	NULL,	/* pFinalPunc       - not used by Kimmo functions */
@@ -329,6 +338,9 @@ KimmoData sSynLang_g = {		/* contains the synthesis lexicon */
 	NULL,	/* pGrammar         - data loaded from the grammar file */
 	1,
 	NULL, NULL, NULL, NULL, NULL, NULL, /* not used by Kimmo functions */
+#ifndef hab216
+	NULL,
+#endif /* hab216 */
 	0, 0,	/* internal processing values */
 	&sLangPATRMemory_s,
 	0, 0, NULL,

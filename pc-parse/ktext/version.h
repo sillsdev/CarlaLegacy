@@ -4,12 +4,14 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL 5		/* bug fix or other minor change */
-#define DATE "May 11, 2000"	/* date of release version */
+#define PATCHLEVEL 6		/* bug fix or other minor change */
+#define DATE "June 20, 2002"	/* date of release version */
 #define YEAR "2000"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 20-Jun-2002  hab  - fix to make work with recent Pc-Patr data structure
+ * [2.1.6]              changes
  * 11-May-2000	SRMc - new release with changes to underlying libraries
  * [2.1.5]
  * 24-Apr-2000	SRMc - more minor edits for more changes to the PC-PATR data
