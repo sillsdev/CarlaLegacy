@@ -1,5 +1,9 @@
 STAMP CHANGE HISTORY
 
+2.1.10b (12-Apr-2002)
+---------------------
+1. Add allomorph and morpheme properties to affix line in synthesis trace.
+
 2.1.b9 (20-Sep-2001)
 --------------------
 1. Fix synthesis trace so it is no longer silent when no infix location

@@ -423,11 +423,23 @@ for ( success = FALSE, ap = mp->m.pAllomorphs ; ap ; ap = ap->pNext )
 		{
 		t_indent(level, pStamp_in->pLogFP);
 #ifndef hab217
+#ifndef hab2110
+		fprintf(pStamp_in->pLogFP, "%s:  %s %s ",
+		(mp->m.iMorphType & PFX) ? "pfx" :
+		(mp->m.iMorphType & SFX) ? "sfx" :
+		(mp->m.iMorphType & IFX) ? "ifx" : "root",
+		   mp->pCurrentAllo->pszAllomorph, mp->m.pszMorphname );
+	writeAmplePropertySet(ap->a.uAlloPropertySet,
+				  &pStamp_in->sProperties,
+				  pStamp_in->pLogFP);
+	fputc('\n', pStamp_in->pLogFP);
+#else  /* hab2110 */
 		fprintf(pStamp_in->pLogFP, "%s:  %s %s\n",
 		(mp->m.iMorphType & PFX) ? "pfx" :
 		(mp->m.iMorphType & SFX) ? "sfx" :
 		(mp->m.iMorphType & IFX) ? "ifx" : "root",
 		   mp->pCurrentAllo->pszAllomorph, mp->m.pszMorphname );
+#endif /* hab2110 */
 #else
 		fprintf(pStamp_in->pLogFP, "Trying \"%s\" for \"%s\"\n",
 		   mp->pCurrentAllo->pszAllomorph, mp->m.pszMorphname );

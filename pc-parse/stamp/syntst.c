@@ -612,7 +612,7 @@ for ( tp = pStamp_in->pSynthesisTests ; tp ; tp = tp->pNext )
 		if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 #ifndef hab217
 	  if (!tp->pAction)
-			fprintf(pStamp_in->pLogFP, "    %s failed%s\n",
+			fprintf(pStamp_in->pLogFP, "    %s failed\n",
 			tp->pTest->uRight.pszString);
 #else
 			fprintf(pStamp_in->pLogFP, "    %s failed%s\n",
