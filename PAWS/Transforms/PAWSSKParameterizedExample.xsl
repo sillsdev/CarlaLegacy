@@ -37,6 +37,8 @@
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/possExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/indefNPExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/indefExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/negIndefNPExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/negIndefExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/standAloneNPExample"/><xsl:text>&#xa;</xsl:text>
 		</xsl:when>
 	<xsl:when test="$prmIdTitle='PP'">
@@ -52,11 +54,13 @@
 	<xsl:when test="$prmIdTitle='IP'">
 		<xsl:value-of select="//ip/example"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pp/sentExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/proDropExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/auxExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/auxNonfiniteExample"/><xsl:text>&#xa;</xsl:text>
-<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/proDropExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/auxOtherExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/diExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/intransExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/motionExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/copularExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//ip/passiveExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text> </xsl:text> <xsl:value-of select="//pron/reflSentExample"/><xsl:text>&#xa;</xsl:text>
