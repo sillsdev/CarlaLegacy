@@ -4,12 +4,14 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL 15		/* bug fix or other minor change */
-#define DATE "October 16, 2002"	/* date of release version */
-#define YEAR "2002"		/* used for copyright notice in banner */
+#define PATCHLEVEL 16		/* bug fix or other minor change */
+#define DATE "January 13, 2003"	/* date of release version */
+#define YEAR "2003"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 13-Jan-2003	hab  - input and output filename buffer sizes were too small;
+ * [2.1.16]	         increased to 300 (from 100)
  * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library
  * [2.1.15]	     - fix compilation problem under Visual Studio
  * 15-Oct-2002	SRMc - facilitate memory allocation checking

@@ -827,8 +827,13 @@ if ((sStamp_m.iDebugLevel > 2) && (sStamp_m.pLogFP != NULL))
 static void tsproc()
 {
 FILE *infp, *outfp;
+#ifndef hab2116
+char outfilename[BUFSIZE];
+char infilename[BUFSIZE];
+#else  /* hab2116 */
 char outfilename[100];
 char infilename[100];
+#endif /* hab2116 */
 int k;
 WordTemplate *	pWord;
 /*
