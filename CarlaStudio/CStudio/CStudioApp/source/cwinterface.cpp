@@ -4,6 +4,7 @@
 //       07-Dec-1999 hab Added interlinear and stamp dict code tables.
 //                       Make order of Sentrans CL field consistent
 // jdh 5/29/01	added sentrans patterns
+// jdh 4/19/02	added support for Sentrans \bpunct field
 
 #include "stdafx.h"
 #include "CWInterface.h"
@@ -190,6 +191,7 @@ static void addTransferModel(CTransferModelSet* pTMS, CWTopicTab* pTab, LPCTSTR 
 	pTab->Add(pHeading);
 		pFTopic = new CWFormTopic(pTab, "SENTRANS Punct");
 			pFTopic->Add(&rSTModel.m_sPunctuation);
+			pFTopic->Add(&rSTModel.m_sBeginPunctuation);
 			pFTopic->Add(&rSTModel.m_sSentencePunctuation);
 			pFTopic->Add(&rSTModel.m_cTagChar);
 		pHeading->Add(pFTopic);

@@ -4,6 +4,7 @@
 // 1.7a1 03-Dec-1999 hab Add lexical changes to Synthesis (Sample)
 //       07-Dec-1999 hab Allow multiple markers for certain fields
 // 2.1.0 07-Mar-2000 hab Added Max properties and string checks
+// jdh 4/19/02	added support for Sentrans \bpunct field
 
 #include "stdafx.h"
 #include "CWInterface.h"
@@ -207,6 +208,7 @@ void CWCarlaMenuInterface::setupForLang(CCarlaLanguage* pLang)
 		// sentrans disambig
 	pFTopic = (CWFormTopic*) pTab->Add(new CWFormTopic(pTab, "Surrounding Words Punctuation"));
 	pFTopic->Add(&stDisambig.m_sPunctuation);
+	pFTopic->Add(&stDisambig.m_sBeginPunctuation);
 	pFTopic->Add(&stDisambig.m_sSentencePunctuation);
 	pFTopic->Add(&stDisambig.m_cTagChar);
 	pTab->Add(new CWListTopic(pTab, "Surrounding Words Rules", &stDisambig.m_rules));
@@ -219,6 +221,7 @@ void CWCarlaMenuInterface::setupForLang(CCarlaLanguage* pLang)
 	pTab->Add(pHeading);
 	pFTopic = (CWFormTopic*) pHeading->Add(new CWFormTopic(pTab, "Punctuation"));
 	pFTopic->Add(&stGlossAdjust.m_sPunctuation);
+	pFTopic->Add(&stGlossAdjust.m_sBeginPunctuation);
 	pFTopic->Add(&stGlossAdjust.m_sSentencePunctuation);
 	pFTopic->Add(&stGlossAdjust.m_cTagChar);
 	//moved to "LISTS" pHeading->Add(new CWListTopic(pTab, "CL Field", &stGlossAdjust.m_genericClasses)); // jdh 11/9/99
@@ -233,6 +236,7 @@ void CWCarlaMenuInterface::setupForLang(CCarlaLanguage* pLang)
 
 	pFTopic = (CWFormTopic*) pHeading->Add(new CWFormTopic(pTab, "Punctuation"));
 	pFTopic->Add(&stAnaAdjust.m_sPunctuation);
+	pFTopic->Add(&stAnaAdjust.m_sBeginPunctuation);
 	pFTopic->Add(&stAnaAdjust.m_sSentencePunctuation);
 	pFTopic->Add(&stAnaAdjust.m_cTagChar);
 	//moved to "LISTS" pHeading->Add(new CWListTopic(pTab, "CL Field", &stAnaAdjust.m_genericClasses)); // jdh 11/9/99

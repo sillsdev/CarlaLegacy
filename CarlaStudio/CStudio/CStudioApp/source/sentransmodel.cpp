@@ -10,6 +10,7 @@
 //                       the correct list.
 //	jdh  5/29/01 added support for Sentrans \pat field
 //	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
+// jdh 4/19/02	added support for Sentrans \bpunct field
 //////////////////////////////////////////////////////////////////////
 
 
@@ -43,6 +44,7 @@ IMPLEMENT_DYNAMIC(CSentransModel, CWModel)
 CSentransModel::CSentransModel(const CTextDisplayInfo* pTDI)
 :CWModel("SENTRANS"), // this label currently unused, actually
 	m_sPunctuation("Punctuation"),
+	m_sBeginPunctuation("Begining Punctuation"),
 	m_sSentencePunctuation("Sentence Punctuation"),
 	m_cTagChar("Tag Char", '^'),	// added feb 99
 
@@ -255,6 +257,10 @@ try
 				{
 					m_sPunctuation.setData(sField);
 				}
+				else if(sMarker == "bpunc")
+				{
+					m_sBeginPunctuation.setData(sField);
+				}
 				else if(sMarker == "tagchar") // tagchar added feb 99
 				{
 					if(sField.GetLength()>0)
@@ -402,6 +408,8 @@ void CSentransModel::writeHeader(ostream& fout,CWCommonModel& commonModel)
 
 	if(!m_sPunctuation.isEmpty())
 		fout << "\\punc " <<  m_sPunctuation << '\n';
+	if(!m_sBeginPunctuation.isEmpty())
+		fout << "\\bpunc " <<  m_sBeginPunctuation << '\n';
 	if(!m_sSentencePunctuation.isEmpty())
 		fout << "\\sentpunc " <<  m_sSentencePunctuation << '\n';
 	if(!m_cTagChar.isEmpty() && m_cTagChar != '^') // tagchar added feb 99

@@ -4,6 +4,7 @@
 //	jdh 11/9/99 added support for Sentrans \CL field (generic classes)
 // 1.7a1 03-Dec-1999 hab Added Ctrl-L keyboard notice to Directive menu item
 // jdh 5/29/01	added support for \pat field
+// jdh 4/19/02	added support for Sentrans \bpunct field
 //////////////////////////////////////////////////////////////////////
 
 #if !defined(AFX_SENTRANSMODEL_H__D2489341_2252_11D2_A09E_E12649467D2F__INCLUDED_)
@@ -138,6 +139,7 @@ public:
 	virtual int  getEnvironmentType() const {return kMorphEnv;}
 	void writeHeader(ostream& fout, CWCommonModel& commonModel);
 	CWString m_sPunctuation;
+	CWString m_sBeginPunctuation;
 	CWString m_sSentencePunctuation;
 	CWChar	 m_cTagChar;
 	CWClassList m_genericClasses;	// SENTRANS \CL field  Added jdh 11/9/99
