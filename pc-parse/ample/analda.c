@@ -1441,7 +1441,7 @@ pAmple_io->iDebugLevel          = 0;
 }
 
 #ifdef EXPERIMENTAL
-#include "cmd.h"
+#include ".\cmdlib/cmd.h" /* jdh july 19 2001; compiler could never find "cmd.h", I added the ".\cmdlib" */
 
 #define KW_CHECKCYCLES        1
 #define KW_DEBUGGINGLEVEL     2
