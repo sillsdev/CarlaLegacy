@@ -10,8 +10,8 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.8
-@set DATE January 2004
+@set VERSION version 3.9
+@set DATE December 2004
 @set AUTHOR by Stephen McConnel and H. Andrew Black
 @set COPYRIGHT Copyright @copyright{} 2000-2004 SIL International
 
@@ -109,6 +109,9 @@ pair (min, max) which delimits the order class span of the affix.
 
 @c Added by hab 07-Jan-2004
 @item 10. Version 3.8.0 (January 2004) allows for negative string environment constraints.
+
+@c Added by hab 06-Dec-2004
+@item 11. Version 3.9.0 (December 2004) allows for ``interfixes'' (affixes which appear between roots).
 @end table
 
 @c ----------------------------------------------------------------------------
@@ -396,6 +399,9 @@ ignored by AMPLE.
 @c \patr added by SRMc 21-Aug-1999 for XAMPLE
 @c \catct added by hab 20-Jul-2001
 @c \ancc added by hab 05-Mar-2002 for XAMPLE
+@c \maxn added by hab 06-Dec-2004
+@c \nah added by hab 06-Dec-2004
+@c \nt added by hab 06-Dec-2004
 @menu
 * \ancc::              Allomorphs never co-occur constraint
 * \ap::                Allomorph properties
@@ -409,6 +415,7 @@ ignored by AMPLE.
 * \iah::               Infix ad hoc pair
 * \it::                Infix successor test
 * \maxi::              Maximum number of infixes
+* \maxn::              Maximum number of interfixes
 * \maxnull::           Maximum number of null allomorphs
 * \maxp::              Maximum number of prefixes
 * \maxprops::          Maximum number of properties
@@ -417,6 +424,8 @@ ignored by AMPLE.
 * \mcc::               Morpheme co-occurrence constraint
 * \mcl::               Morpheme class
 * \mp::                Morpheme properties
+* \nah::               Interfix ad hoc pair
+* \nt::                Interfix successor test
 * \pah::               Prefix ad hoc pair
 * \patr::              PCPATR word parser control setting
 * \pcl::               Punctuation class
@@ -655,7 +664,7 @@ the syntax of successor tests, see
 If no @code{\it} fields appear in the analysis data file, AMPLE still
 applies the built-in infix tests SEC_ST, ADHOC_ST and PEC_ST.
 
-@node \maxi, \maxnull, \it, Analysis data file fields
+@node \maxi, \maxn, \it, Analysis data file fields
 @subsection Maximum number of infixes: \maxi
 @findex \maxi
 
@@ -670,7 +679,25 @@ that is used.
 If no @code{\maxi} fields appear in the analysis data file, then AMPLE
 assumes that the language does not have infixes.
 
-@node \maxnull, \maxp, \maxi, Analysis data file fields
+@c Added by hab 06-Dec-2004
+@node \maxn, \maxnull, \maxi, Analysis data file fields
+@subsection Maximum number of interfixes: \maxn
+@findex \maxn
+
+(An ``interfix'' is an affix that can also appear between roots.)
+
+The maximum number of interfixes that may appear in a word is defined by
+the @code{\maxn} field code followed by a number greater than or equal
+to zero.
+
+The @code{\maxn} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\maxn} fields appear in the analysis data file, then AMPLE
+assumes that the language does not have interfixes.
+
+@node \maxnull, \maxp, \maxn, Analysis data file fields
 @subsection Maximum number of null allomorphs: \maxnull
 @findex \maxnull
 
@@ -792,7 +819,7 @@ If no @code{\mcl} fields appear in the analysis data file, then AMPLE
 does not allow any morpheme classes in morpheme environment constraints
 or tests.
 
-@node \mp, \pah, \mcl, Analysis data file fields
+@node \mp, \nah, \mcl, Analysis data file fields
 @subsection Morpheme properties: \mp
 @findex \mp
 
@@ -809,14 +836,57 @@ used so long as the number of property names does not exceed 255.
 If no @code{\mp} fields appear in the analysis data file, then AMPLE
 does not allow any morpheme properties in dictionary files or tests.
 
-@node \pah, \patr, \mp, Analysis data file fields
+@c Added by hab 06-Dec-2004
+@node \nah, \nt, \mp, Analysis data file fields
+@subsection Interfix ad hoc pair: \nah
+@findex \nah
+
+An interfix ad hoc pair is defined by the @code{\nah} field code followed
+by two morpheme identifiers.  The first morphname may belong to either
+a root or an interfix.
+The second must belong to an interfix.
+
+Any number of interfix ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no @code{\nah} fields appear in the analysis data file, then AMPLE
+never eliminates any analyses via the interfix @code{ADHOC_ST} test.
+
+@c Added by hab 06-Dec-2004
+@node \nt, \pah, \nah, Analysis data file fields
+@subsection Interfix successor test: \nt
+@findex \nt
+
+An interfix successor test is defined by the @code{\nt} field code
+followed by the test name and possibly a test body.  The test body is
+not needed if the test name is that of a built-in test (either SEC_ST
+ADHOC_ST, or PEC_ST), or a previously defined prefix test or infix
+test that is to be used as an interfix test.
+
+Interfix tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, and PEC_ST are
+applied after all the user-defined interfix tests.
+
+Any number of interfix successor tests may be defined in the file.  For
+the syntax of successor tests, see
+@ifset txt
+`Test Syntax' below.
+@end ifset
+@ifclear txt
+@ref{Test syntax}.
+@end ifclear
+
+If no @code{\nt} fields appear in the analysis data file, AMPLE still
+applies the built-in interfix tests SEC_ST, ADHOC_ST and PEC_ST.
+
+@node \pah, \patr, \nt, Analysis data file fields
 @subsection Prefix ad hoc pair: \pah
 @findex \pah
 
 A prefix ad hoc pair is defined by the @code{\pah} field code followed
 by two morpheme identifiers.  The first morphname may belong to either
 a prefix or an infix (if infixes exist and can mingle with prefixes).
-The second must belong to an prefix.
+The second must belong to a prefix.
 
 Any number of prefix ad hoc pairs may be defined in the file.  However,
 their use is strongly discouraged on linguistic grounds.

@@ -202,6 +202,10 @@ separate lines.
 @group
 15.  <type>          ::= prefix
 						 infix
+						 interfix
+						 interfixinfix
+						 interfixprefix
+						 interfixsuffix
 						 root
 						 suffix
 						 initial
@@ -372,6 +376,14 @@ before or after the current word.  A @code{<neighbor>} value of
 @code{last} refers to immediately before the current word and
 a @code{<neighbor>} value of @code{next} refers to
 immediately after the current word.
+
+@c Added by hab 06-Dec-2004
+@item 15.
+A note on interfixes: these are affixes which can also appear between
+roots.  A given interfix is both a prefix and interfix or both a
+suffix and an interfix or both an infix and interfix.  Therefore in a
+test, one may specify the particular subtype of interfix (i.e. it is
+also a prefix/infix/suffix).
 
 @item 18a-d.
 The quoted forms of an identifier are needed only if the identifier is

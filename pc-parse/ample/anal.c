@@ -74,16 +74,28 @@ static int		ifx_loc		P((AmpleAmlist * ifxp,
 					   AmpleData *   pAmple_in));
 static int		get_infix	P((AmpleHeadList * head,
 					   char *          tail,
+					   int             roots_found,
 					   int             ifxs_found,
+					   int             nfxs_found,
 					   int             what,
 					   int             what_found,
 					   int             nulls_have,
+					   AmpleData *     pAmple_in));
+static int		get_interfix	P((AmpleHeadList * head,
+					   char *          tail,
+					   int             roots_found,
+					   int             ifxs_found,
+					   int             nfxs_found,
+					   int             nulls_have,
+					   int		   bInterfixJustFound,
 					   AmpleData *     pAmple_in));
 static int		get_root	P((AmpleHeadList * head,
 					   char *          tail,
 					   int             roots_found,
 					   int             ifxs_found,
+					   int             nfxs_found,
 					   int             nulls_have,
+					   int		   bRootJustFound,
 					   AmpleData *     pAmple_in));
 static AmpleAllomorph *	dup_am		P((AmpleAllomorph * ap));
 static int		same_string	P((char * pszFirst_in,
@@ -184,6 +196,11 @@ static int	performAmplePrefixTests	P((AmpleHeadList * left,
 					   int             len,
 					   AmpleData *     pAmple_in));
 static int	performAmpleInfixTests	P((AmpleHeadList * left,
+					   AmpleHeadList * current,
+					   char *          strp,
+					   int             len,
+					   AmpleData *     pAmple_in));
+static int	performAmpleInterfixTests	P((AmpleHeadList * left,
 					   AmpleHeadList * current,
 					   char *          strp,
 					   int             len,
@@ -963,7 +980,8 @@ for ( i = 0 ; i <= len ; ++i )
 	pAllomorphs = findDataInTrie(pAmple_in->pDictionary, key);
 	for ( pAllo = pAllomorphs ; pAllo != NULL ; pAllo = pAllo->pNext )
 	{
-	if (etype != (pAllo->iMORPHTYPE & ATYPE))
+	if ((etype != (pAllo->iMORPHTYPE & ATYPE)) &&
+		(etype != (pAllo->iMORPHTYPE & AMPLE_NFX)))	/* interfix is subtyped */
 		continue;					/* wrong type */
 	if ((pAllo->iAllomorphFlags & ACTIVE) == 0)
 		continue;					/* not selected */
@@ -1030,7 +1048,17 @@ if (head == (AmpleHeadList *)NULL)
 /*
  *  look for more prefixes if we have not yet found the maximum number
  */
-if (pfxs_found < pAmple_in->iMaxPrefixCount)
+if (pfxs_found >= pAmple_in->iMaxPrefixCount)
+	{
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
+	{
+	store_AMPLE_trace(pAmple_in,
+			  "%sMaximum prefixes found.\n",
+			  szTraceTab_m);
+	}
+	/*    return FALSE; */
+	}
+else
 	{
 	iTracingDepth_m++;
 	/*
@@ -1195,7 +1223,7 @@ if (pfxs_found < pAmple_in->iMaxPrefixCount)
 	 */
 	if (    (ifxs_found < pAmple_in->iMaxInfixCount) &&
 		(pAmple_in->iInfixLocations & AMPLE_PFX) &&
-		get_infix( head, tail, ifxs_found, AMPLE_PFX, pfxs_found,
+		get_infix( head, tail, 0, ifxs_found, 0, AMPLE_PFX, pfxs_found,
 			   nulls_have, pAmple_in) )
 	bAllomorphsTried = TRUE;
 
@@ -1204,7 +1232,7 @@ if (pfxs_found < pAmple_in->iMaxPrefixCount)
  *  having processed all prefixes & infixes beginning with tail, now go look
  *  for all roots beginning with tail
  */
-if (get_root( head, tail, 0, ifxs_found, nulls_have, pAmple_in))
+if (get_root( head, tail, 0, ifxs_found, 0, nulls_have, FALSE, pAmple_in))
 	bAllomorphsTried = TRUE;
 
 return bAllomorphsTried;
@@ -1246,6 +1274,9 @@ switch (what)
 	if (!(ip->iInfixLoc & AMPLE_SFX))
 		return( 0 );
 	break;
+	case AMPLE_NFX:
+		/* any are conceivable */
+	break;
 	default:
 
 	return( 0 );
@@ -1267,12 +1298,14 @@ return( checkAmpleStringEnviron(tail,
  * RETURN VALUE
  *    none
  */
-static int get_infix( head, tail, ifxs_found, what, what_found, nulls_have,
-			   pAmple_in)
+static int get_infix( head, tail, roots_found, ifxs_found, nfxs_found,
+			  what, what_found, nulls_have, pAmple_in)
 AmpleHeadList *	head;		/* list of morphemes already analyzed
 				 * (headlist) */
 char *		tail;		/* remainder of word string to be parsed */
+int		roots_found;	/* number of roots found in word so far */
 int		ifxs_found;	/* number of infixes found in word so far */
+int		nfxs_found;	/* number of interfixes found in word so far */
 int		what;		/* where called from (AMPLE_PFX, AMPLE_ROOT,
 				   or AMPLE_SFX) */
 int		what_found;	/* number of such items already found */
@@ -1303,8 +1336,18 @@ int		bOldUsesNext;
  *  if the end of the word is found, then we have an incorrect analysis.
  *  also, if no more infixes are possible, then we can't proceed either.
  */
-if ((*tail == NUL) || (ifxs_found >= pAmple_in->iMaxInfixCount))
+if (*tail == NUL)
 	return FALSE;
+if (ifxs_found >= pAmple_in->iMaxInfixCount)
+	{
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
+	{
+	store_AMPLE_trace(pAmple_in,
+			  "%sMaximum infixes found.\n",
+			  szTraceTab_m);
+	}
+	return FALSE;
+	}
 /*
  *  if beginning analysis, then play it safe
  */
@@ -1325,7 +1368,8 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 	 *	create list of all infixes whose string matches
 	 *	loop for each allomorph found
 	 */
-	ifxlist = get_entries( ifxtail, AMPLE_IFX, pAmple_in);
+	ifxlist = get_entries( ifxtail, (what == AMPLE_NFX) ? AMPLE_NFXIFX : AMPLE_IFX,
+			   pAmple_in);
 	if (ifxlist != NULL)
 	bAllomorphsTried = TRUE;
 	for (ifxp = ifxlist ; ifxp != (AmpleAmlist *)NULL ; ifxp = ifxp->amlink)
@@ -1356,14 +1400,13 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 	for ( i = 0 ; (ap->pINFIX->pFromCategories)[i] ; ++i )
 		{
 		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
-		a_trace(AMPLE_IFX, ifxtail, ifxp->alen, ap->pMORPHNAME,
+		a_trace((what == AMPLE_NFX) ? AMPLE_NFX : AMPLE_IFX,
+			ifxtail, ifxp->alen, ap->pMORPHNAME,
 			(ap->pINFIX->pFromCategories)[i],
 			(ap->pINFIX->pToCategories)[i],
 			ap->sPropertySet,
 			ap->pINFIX->iOrderClass,
-#ifndef hab360
 			ap->pINFIX->iOrderClassMax,
-#endif
 			ap->pszAllomorphID,
 			ap->pEnvironment, pAmple_in);
 
@@ -1371,9 +1414,7 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 		newhead.iToCategory	  = (ap->pINFIX->pToCategories)[i];
 		newhead.sPropertySet.pProperties = ap->sPropertySet.pProperties;
 		newhead.iOrderClass	  = ap->pINFIX->iOrderClass;
-#ifndef hab360
 		newhead.iOrderClassMax  = ap->pINFIX->iOrderClassMax;
-#endif
 		newhead.pAllomorph	  = ap;
 		newhead.eType	  = AMPLE_IFX;
 		newhead.uiAllomorphLength = ifxp->alen;
@@ -1434,10 +1475,17 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 						   what_found, ifxs_found+1,
 						   nulls_next, pAmple_in);
 			break;
+			case AMPLE_NFX:
+			bContinuation = get_interfix(&newhead, newtail,
+							 roots_found, ifxs_found+1,
+							 what_found+1, nulls_next,
+							 TRUE, pAmple_in);
+			break;
 			default:
 			bContinuation = get_root(&newhead, newtail,
 						 what_found, ifxs_found+1,
-						 nulls_next, pAmple_in);
+						 nfxs_found, nulls_next,
+						 FALSE, pAmple_in);
 			break;
 			}
 		if (	!bContinuation &&
@@ -1533,15 +1581,18 @@ return bAllomorphsTried;
  * RETURN VALUE
  *    none
  */
-static int get_root( head, tail, roots_found, ifxs_found, nulls_have,
-			  pAmple_in)
+static int get_root( head, tail, roots_found, ifxs_found, nfxs_found,
+			 nulls_have, bRootJustFound, pAmple_in)
 AmpleHeadList *	head;		/* list of morphemes already analyzed
 				 * (headlist) */
 char *		tail;		/* remainder of word string to be parsed */
 int		roots_found;	/* number of roots found in word so far */
 int		ifxs_found;	/* number of infixes found in word so far */
+int		nfxs_found;	/* number of interfixes found in word so far */
 int		nulls_have;	/* number of nulls we already have in this
 				 * word */
+int		bRootJustFound;	/* found a root in this cycle of looking for
+				 * roots*/
 AmpleData *	pAmple_in;
 {
 AmpleHeadList	newhead;
@@ -1570,7 +1621,16 @@ if (head == (AmpleHeadList *)NULL)
 /*
  *  look for more roots if we have not yet found the maximum number
  */
-if (roots_found < pAmple_in->iMaxRootCount)
+if (roots_found >= pAmple_in->iMaxRootCount)
+	{
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
+	{
+	store_AMPLE_trace(pAmple_in,
+			  "%sMaximum roots found.\n",
+			  szTraceTab_m);
+	}
+	}
+else
 	{
 	/*
 	 * create a list of all roots whose string matches
@@ -1647,8 +1707,8 @@ if (roots_found < pAmple_in->iMaxRootCount)
 		 *  go look for a compound root
 		 */
 		bContinuation = get_root(&newhead, newtail, roots_found+1,
-					 ifxs_found, nulls_next,
-					 pAmple_in);
+					 ifxs_found, nfxs_found, nulls_next,
+					 TRUE, pAmple_in);
 		if (	!bContinuation &&
 			((pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
 			(pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) ))
@@ -1726,21 +1786,269 @@ if (roots_found < pAmple_in->iMaxRootCount)
 	if (    (ifxs_found < pAmple_in->iMaxInfixCount) &&
 		(pAmple_in->iInfixLocations & AMPLE_ROOT) &&
 		(roots_found == 0) &&
-		get_infix( head, tail, ifxs_found, AMPLE_ROOT, roots_found,
-			   nulls_have, pAmple_in) )
+		get_infix( head, tail, roots_found, ifxs_found, nfxs_found,
+			   AMPLE_ROOT, roots_found, nulls_have, pAmple_in) )
 	bAllomorphsTried = TRUE;
 
+	/*
+	 *  having processed all roots & infixes beginning with tail, now go look
+	 *  for interfixes beginning with tail (but only if we have a root...)
+	 */
+	if (roots_found &&
+	get_interfix( head, tail, roots_found, ifxs_found, nfxs_found,
+			  nulls_have, FALSE, pAmple_in))
+	  bAllomorphsTried = TRUE;
 	} /* end of test for more roots possible */
 /*
  *  having processed all roots & infixes beginning with tail, now go look
  *  for suffixes beginning with tail (but only if we have a root...)
  */
-if (	roots_found &&
+if (	bRootJustFound &&
+	roots_found &&
 	get_suffix( head, tail, 0, ifxs_found, nulls_have, pAmple_in))
 	bAllomorphsTried = TRUE;
 
 return bAllomorphsTried;
 } /* end get_root */
+
+/***************************************************************************
+ * NAME
+ *    get_interfix
+ * DESCRIPTION
+ *    Find all interfixes that match an initial part of the rest of the word.
+ *    This function is called recursively to find all such interfixes.  When
+ *    it cannot find any more interfixes, it calls get_root().
+ * RETURN VALUE
+ *    TRUE if one or more interfix allomorphs tried, otherwise FALSE
+ */
+static int get_interfix( head, tail, roots_found, ifxs_found, nfxs_found,
+			 nulls_have, bInterfixJustFound, pAmple_in)
+AmpleHeadList *	head;		/* list of morphemes already analyzed
+				 * (headlist) */
+char *		tail;		/* remainder of word string to be parsed */
+int		roots_found;	/* number of roots found in word so far */
+int		ifxs_found;	/* number of infixes found in word so far */
+int		nfxs_found;	/* number of interfixes found in word so far */
+int		nulls_have;	/* number of nulls we already have in this
+				 * word */
+int		bInterfixJustFound;	/* found an interfix in this cycle of
+					 * looking for interfixes */
+AmpleData *	pAmple_in;
+{
+AmpleHeadList	newhead;
+char *		newtail;
+int		i;
+AmpleAllomorph *ap;
+AmpleAmlist *	nfxp;
+AmpleAmlist *	nfxlist;
+AmpleAmlist *	np;
+int		nulls_next;	/* number of nulls we will have in the next
+				 * recursive pass */
+int		bAllomorphsTried = FALSE;
+int		bContinuation;
+int		bOldUsesPrev;
+int		bOldUsesNext;
+/*
+ *  save furthest penetration during parse
+ */
+if (pszDeeptail_m < tail)
+	pszDeeptail_m = tail;
+/*
+ *  if beginning analysis, then play it safe (should never happen, though)
+ */
+if (head == (AmpleHeadList *)NULL)
+	pAmpleLeftHead_m = pAmpleRightHead_m = (AmpleHeadList *)NULL;
+/*
+ *  look for more interfixes if we have not yet found the maximum number
+ */
+if (nfxs_found > pAmple_in->iMaxInterfixCount)
+	{
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
+	{
+	store_AMPLE_trace(pAmple_in,
+			  "%sMaximum interfixes found.\n",
+			  szTraceTab_m);
+	}
+	return FALSE;
+	}
+else
+	{
+	iTracingDepth_m++;
+	/*
+	 *	create list of all interfixes whose string matches
+	 */
+	nfxlist = get_entries( tail, AMPLE_NFX, pAmple_in);
+	if (nfxlist != NULL)
+	bAllomorphsTried = TRUE;
+	/*
+	 *	for each allomorph in nfxlist
+	 */
+	for (nfxp = nfxlist ; nfxp != (AmpleAmlist *)NULL ; nfxp = nfxp->amlink)
+	{
+	ap = nfxp->amp;
+	/* pass along incoming information */
+	nulls_next = nulls_have;
+	/*
+	 * if null morpheme...
+	 */
+	if (!nfxp->alen)
+		{
+		/* if we already have the maximum number of nulls allowed,
+		   we don't want another one */
+		if (nulls_have >= pAmple_in->iMaxNullCount)
+		continue;
+		/* make note of the fact that we are trying another null */
+		nulls_next = nulls_have + 1;
+		}
+	/*
+	 *  for each fromcategory/tocategory pair
+	 */
+	for ( i = 0 ; (ap->pAFFIX->pFromCategories)[i] ; ++i )
+		{
+		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
+		a_trace(AMPLE_NFX, tail, nfxp->alen, ap->pMORPHNAME,
+			(ap->pAFFIX->pFromCategories)[i],
+			(ap->pAFFIX->pToCategories)[i],
+			ap->sPropertySet,
+			ap->pAFFIX->iOrderClass,
+			ap->pAFFIX->iOrderClassMax,
+			ap->pszAllomorphID,
+			ap->pEnvironment, pAmple_in);
+		/*
+		 *	build a tentative morpheme (headlist) structure
+		 */
+		newhead.iFromCategory = (ap->pAFFIX->pFromCategories)[i];
+		newhead.iToCategory	  = (ap->pAFFIX->pToCategories)[i];
+		newhead.sPropertySet.pProperties = ap->sPropertySet.pProperties;
+		newhead.iOrderClass	  = ap->pAFFIX->iOrderClass;
+		newhead.iOrderClassMax  = ap->pAFFIX->iOrderClassMax;
+		newhead.pAllomorph	  = ap;
+		newhead.eType	  = ap->iMORPHTYPE;
+		newhead.uiAllomorphLength = nfxp->alen;
+		newhead.pLeft    = head;
+		newhead.pRight    = (AmpleHeadList *)NULL;
+		if (head)
+		head->pRight = (AmpleHeadList *)NULL;
+		/*
+		 *	check for validity of this interfix
+		 */
+		bOldUsesPrev = bUsesPrevWord_m;
+		bOldUsesNext = bUsesNextWord_m;
+		if (performAmpleInterfixTests(head, &newhead, tail, nfxp->alen,
+					pAmple_in))
+		{
+		/*
+		 *  add newhead to head and form newtail
+		 */
+		if (!head)
+			{
+			pAmpleLeftHead_m = &newhead;
+			newhead.uiMorphnamesLength = strlen(ap->pMORPHNAME) + 1;
+			}
+		else
+			{
+			head->pRight = &newhead;
+			newhead.uiMorphnamesLength = strlen(ap->pMORPHNAME) +
+						  head->uiMorphnamesLength + 1;
+			}
+		newtail = tail + nfxp->alen;
+
+		sgml_trace(pAmple_in, "  <continuation>\n", TRUE);
+		/*
+		 *  go find next interfix
+		 */
+		bContinuation = get_interfix( &newhead, newtail, roots_found,
+						  ifxs_found, nfxs_found+1,
+						  nulls_next, TRUE, pAmple_in);
+
+		if (	!bContinuation &&
+			( (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
+			  (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)) )
+			{
+			sgml_trace(pAmple_in, "    <parseNode>\n", TRUE);
+			if ((newtail != NULL) && (*newtail != NUL))
+			{
+			char * pszStr;
+#ifdef HAVE_ALLOCA
+			pszStr = (char *)alloca(
+					  lengthAmplePCDATA(newtail, FALSE)+1);
+#else
+			pszStr = (char *)allocMemory(
+					  lengthAmplePCDATA(newtail, FALSE)+1);
+#endif
+			sgml_trace(pAmple_in, "      <leftover>", TRUE);
+			storeAmplePCDATA(pszStr, newtail, FALSE);
+			store_AMPLE_trace(pAmple_in, pszStr, NULL);
+			if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			  sgml_trace(pAmple_in, "</leftover>\n", FALSE);
+			else
+			  sgml_trace(pAmple_in, "</>\n", FALSE);
+#ifndef HAVE_ALLOCA
+			freeMemory(pszStr);
+#endif
+			}
+			else
+			  if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+			sgml_trace(pAmple_in,
+				   "      <endOfWord/><failure test='none'/>\n",
+				   TRUE);
+			  else
+			sgml_trace(pAmple_in,
+				   "      <endOfWord><failure test=none>\n",
+				   TRUE);
+			sgml_trace(pAmple_in, "    </parseNode>\n", TRUE);
+			}
+		sgml_trace(pAmple_in, "  </continuation>\n", TRUE);
+
+		} /* end of performAmpleInterfixTests test */
+		bUsesPrevWord_m = bOldUsesPrev;
+		bUsesNextWord_m = bOldUsesNext;
+		/*
+		 *  a_trace() writes the <parseNode> marker
+		 */
+		sgml_trace(pAmple_in, "</parseNode>\n", TRUE);
+
+		} /* end of each category pair loop */
+	} /* end of each allomorph loop */
+	/*
+	 *	interfix list exhausted, so release any allocated space
+	 */
+	for ( nfxp = nfxlist ; nfxp ; nfxp = np )
+	{
+	np = nfxp->amlink;
+	freeMemory( (char *)nfxp );
+	}
+	iTracingDepth_m--;
+
+	if (    (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON) &&
+		(nfxlist == (AmpleAmlist *)NULL) )
+	{
+	store_AMPLE_trace(pAmple_in, "%sNo more interfixes found.\n",
+			  szTraceTab_m);
+	}
+	/*
+	 *	having processed all interfixes beginning with tail, now go look
+	 *	for all infixes near tail which are hidden inside a following item
+	 */
+	if (    (ifxs_found < pAmple_in->iMaxInfixCount) &&
+		/* any will do (pAmple_in->iInfixLocations & AMPLE_NFX) && */
+		get_infix( head, tail, roots_found, ifxs_found, nfxs_found,
+			   AMPLE_NFX, nfxs_found, nulls_have, pAmple_in) )
+	bAllomorphsTried = TRUE;
+	} /* end of more interfixes allowed test */
+/*
+ *  having processed all interfixes & infixes beginning with tail, now go look
+ *  for all roots beginning with tail
+ */
+if (bInterfixJustFound &&
+	nfxs_found &&
+	get_root( head, tail, roots_found, ifxs_found, nfxs_found, nulls_have,
+		  FALSE, pAmple_in))
+	bAllomorphsTried = TRUE;
+
+return bAllomorphsTried;
+
+} /* end get_interfix */
 
 
 /***************************************************************************
@@ -2060,7 +2368,8 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 	 */
 	if (    (ifxs_found < pAmple_in->iMaxInfixCount) &&
 		(pAmple_in->iInfixLocations & AMPLE_SFX) &&
-		get_infix( head, tail, ifxs_found, AMPLE_SFX, sfxs_found,
+		get_infix( head, tail, 0 /* don't care about root count now */,
+			   ifxs_found, 0, AMPLE_SFX, sfxs_found,
 			   nulls_have, pAmple_in) )
 	bAllomorphsTried = TRUE;
 
@@ -2352,13 +2661,8 @@ return bAllomorphsTried;
  * RETURN VALUE
  *    none
  */
-#ifdef hab360
-static void a_trace( dtype, tail, tlen, m_name, fcat, tcat, props, ordercl,
-			 pszAllomorphID_in, ac_ptr, pAmple_in)
-#else
 static void a_trace( dtype, tail, tlen, m_name, fcat, tcat, props, ordercl,
 			 orderclMax, pszAllomorphID_in, ac_ptr, pAmple_in)
-#endif
 int		dtype;		/* type of dictionary entry (pfx, root, sfx) */
 char *		tail;		/* remainder of word string to be parsed */
 int		tlen;		/* length of tail */
@@ -2367,9 +2671,7 @@ unsigned	fcat;		/* from category of affix, root category */
 unsigned	tcat;		/* to category of affix */
 PropertySet_t	props;		/* allomorph and morpheme properties */
 int		ordercl;	/* orderclass */
-#ifndef hab360
 int		orderclMax;	/* orderclassMax */
-#endif
 char *		pszAllomorphID_in;	/* allomorph indentifier */
 AmpleAlloEnv *	ac_ptr;		/* allomorph environment conditions pointer */
 AmpleData *	pAmple_in;
@@ -2407,6 +2709,7 @@ switch (dtype)
 	case AMPLE_PFX:	pszType = "pfx";	break;
 	case AMPLE_IFX:	pszType = "ifx";	break;
 	case AMPLE_SFX:	pszType = "sfx";	break;
+	case AMPLE_NFX:	pszType = "nfx";	break;
 	case AMPLE_ROOT:	pszType = "root";	break;
 	default:		pszType = "BAD";	break;
 	}
@@ -2436,10 +2739,8 @@ if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
 						pAmple_in->pCategories));
 	sprintf(szNumber,  "%d", ordercl);
 	store_AMPLE_trace(pAmple_in, szNumber, NULL);
-#ifndef hab360
 	sprintf(szNumber,  ",%d", orderclMax);
 	store_AMPLE_trace(pAmple_in, szNumber, NULL);
-#endif
 	}
 	/*
 	 *  allomorph indentifier
@@ -3971,6 +4272,103 @@ return(TRUE);
 
 /***************************************************************************
  * NAME
+ *    performAmpleInterfixTests
+ * ARGUMENTS
+ *    left    - pointer to the morpheme to the left in the headlist
+ *    current - pointer to current morpheme in the headlist
+ *    strp    - pointer to allomorph in the word
+ *    len     - length of the allomorph string
+ * DESCRIPTION
+ *    Work through the list of interfix tests.
+ * RETURN VALUE
+ *    nonzero if all Interfix Successor tests succeed, zero if any of them fail
+ */
+static int performAmpleInterfixTests( left, current, strp, len, pAmple_in)
+AmpleHeadList *	left;
+AmpleHeadList *	current;
+char *		strp;
+int		len;
+AmpleData *	pAmple_in;
+{
+AmpleTestList *	flp;
+int		bTestValue;
+
+pszAmpleTestErrorHeader_m = "INTERFIX TEST: ";
+for (	flp = pAmple_in->pInterfixSuccTests,
+				pAdhocList_m = pAmple_in->pInterfixAdhocPairs ;
+	flp != NULL ;
+	flp = flp->pNext )
+	{
+	/*
+	 *	if at beginning of word, call only testAmpleStringEnvirons()
+	 */
+	if ((left != (AmpleHeadList *)NULL)  ||
+	(flp->eFunction == AMPLE_SEC_ST) ||
+	(flp->eFunction == AMPLE_PEC_ST)) /* 3.3.0 hab */
+	{
+	flp->uiTestCallCount++;
+	switch (flp->eFunction)
+		{
+		case AMPLE_SEC_ST:
+		bTestValue = testAmpleStringEnvirons(left, current, strp, len,
+							 pAmple_in);
+		break;
+		case AMPLE_PEC_ST:	/* 3.3.0 hab */
+		bTestValue = testAmplePunctEnvirons(left, current, strp, len,
+							 pAmple_in);
+		break;
+		case AMPLE_ADHOC_ST:
+		bTestValue = testAmpleAdhocPairs(left, current, strp, len);
+		break;
+		case AMPLE_ROOTS_ST:
+		bTestValue = testAmpleCompoundRoots(left, current, strp, len,
+							pAmple_in);
+		break;
+		case AMPLE_SP_TEST:
+		if (flp->bUsesPrevWord)
+			bUsesPrevWord_m = TRUE;
+		if (flp->bUsesNextWord)
+			bUsesNextWord_m = TRUE;
+		if (bUseSurroundingWords_m)
+			{
+			if (flp->bUsesPrevWord || flp->bUsesNextWord)
+			bTestValue = testAmpleUserDefined(left, current,
+							  strp, len,
+							  flp->pTestTree,
+							  pAmple_in);
+			else
+			bTestValue = TRUE;
+			}
+		else
+			{
+			if (flp->bUsesPrevWord || flp->bUsesNextWord)
+			bTestValue = TRUE;
+			else
+			bTestValue = testAmpleUserDefined(left, current,
+							  strp, len,
+							  flp->pTestTree,
+							  pAmple_in);
+			}
+		break;
+		default:
+		bTestValue = FALSE;
+		break;
+		}
+	if (bTestValue == FALSE)
+		{
+		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
+		p_trace("Interfix", flp, pAmple_in);
+		flp->uiTestFailCount++;
+		return(FALSE);
+		}
+	}
+	}
+return(TRUE);
+
+} /* end performAmpleInterfixTests() */
+
+/***************************************************************************
+ * NAME
  *    performAmpleRootTests
  * ARGUMENTS
  *    left    - pointer to the morpheme to the left in the headlist
@@ -5053,6 +5451,8 @@ switch (tree->iOpCode & OP_MASK)
 		val = (hp->pLeft == (AmpleHeadList *)NULL);
 		else if (right.iValue == WFINAL)
 		val = (hp->pRight == (AmpleHeadList *)NULL);
+		else if (right.iValue == AMPLE_NFX)
+			val = (hp->eType & AMPLE_NFX);
 		else
 		val = (hp->eType == right.iValue);
 		}
@@ -5915,6 +6315,15 @@ for ( pHL = pThisWord_io->pHeadlists,
 						   pAmple_in) == 0)
 			bFailed = TRUE;
 			break;
+		case AMPLE_NFXPFX: /* fall through */
+		case AMPLE_NFXSFX: /* fall through */
+		case AMPLE_NFXIFX: /* fall through */
+		case AMPLE_NFX:
+			if (performAmpleInterfixTests(pH->pLeft, pH, pszCurrent,
+						   pH->uiAllomorphLength,
+						   pAmple_in) == 0)
+			bFailed = TRUE;
+			break;
 		case AMPLE_ROOT:
 			if (performAmpleRootTests(pH->pLeft, pH, pszCurrent,
 						  pH->uiAllomorphLength,
@@ -6480,6 +6889,7 @@ return concatAmpleAmlists(pTo_in, pNew_io);
  */
 AmpleAmlist * getInfixEntries(
 	char      * pszRestOfWord_in,
+	int         iState_in,
 	AmpleData * pAmple_in)
 {
 char        *   pszInfixTail;
@@ -6494,7 +6904,11 @@ for ( pszInfixTail = pszRestOfWord_in; *pszInfixTail != NUL ; ++pszInfixTail )
 	/*
 	 *	create list of all infixes whose string matches
 	 */
-	pAlloList = get_entries( pszInfixTail, AMPLE_IFX, pAmple_in);
+	  int iType = AMPLE_IFX;
+	  if ((iState_in == AMPLE_STATE_INTERFIX) ||
+	  (iState_in == AMPLE_STATE_ROOT))
+	iType = AMPLE_NFXIFX;
+	  pAlloList = get_entries( pszInfixTail, iType, pAmple_in);
 				/* merge/sort by infix so the result has */
 				/* similar infixes together */
 	pResultList = mergeAmpleAmlists( pResultList, pAlloList);
@@ -6524,7 +6938,7 @@ switch(iState_in)
   case AMPLE_STATE_BOW:		/* Begin-of-Word and Prefix are the same */
   case AMPLE_STATE_PREFIX:
 	pResultList = get_entries( pszRestOfWord_in, AMPLE_PFX, pAmple_in);
-	pAlloList   = getInfixEntries( pszRestOfWord_in, pAmple_in);
+	pAlloList   = getInfixEntries( pszRestOfWord_in, iState_in, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_ROOT, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
@@ -6533,12 +6947,24 @@ switch(iState_in)
 	pResultList = get_entries( pszRestOfWord_in, AMPLE_ROOT, pAmple_in);
 	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_SFX, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
-	pAlloList   = getInfixEntries( pszRestOfWord_in, pAmple_in);
+	pAlloList   = getInfixEntries( pszRestOfWord_in, iState_in, pAmple_in);
+	pResultList = concatAmpleAmlists( pResultList, pAlloList);
+	if (pAmple_in->iMaxInterfixCount > 0)
+	  {
+	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_NFX, pAmple_in);
+	pResultList = concatAmpleAmlists( pResultList, pAlloList);
+	  }
+	break;
+  case AMPLE_STATE_INTERFIX:
+	pResultList = get_entries( pszRestOfWord_in, AMPLE_NFX, pAmple_in);
+	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_ROOT, pAmple_in);
+	pResultList = concatAmpleAmlists( pResultList, pAlloList);
+	pAlloList   = getInfixEntries( pszRestOfWord_in, iState_in, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	break;
   case AMPLE_STATE_SUFFIX:
 	pResultList = get_entries( pszRestOfWord_in, AMPLE_SFX, pAmple_in);
-	pAlloList   = getInfixEntries( pszRestOfWord_in, pAmple_in);
+	pAlloList   = getInfixEntries( pszRestOfWord_in, iState_in, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	break;
   case AMPLE_STATE_EOW:

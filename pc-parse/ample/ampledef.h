@@ -98,6 +98,10 @@ struct ample_morpheme {
  * iMorphType =  (low 4 bits) = AMPLE_PFX   for prefix entries
  *                            = AMPLE_IFX   for infix  entries
  *                            = AMPLE_SFX   for suffix entries
+ *                            = AMPLE_NFX   for interfix entries
+ *                            = AMPLE_NFXPFX   for interfix/prefix entries
+ *                            = AMPLE_NFXIFX   for interfix/infix entries
+ *                            = AMPLE_NFXSFX   for interfix/suffix entries
  *                            = AMPLE_ROOT  for root   entries
  *              (high 4 bits) = RSC   for root   entries
  */

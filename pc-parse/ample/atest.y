@@ -83,6 +83,10 @@ static AmpleTestNode *	pAmpleTestTree_m = NULL;
 %token  <ival>  LX_GE   /* >= */
 %token  <ival>  LX_GT   /* >  */
 %token  <ival>  LX_INFX
+%token  <ival>  LX_INTERFX
+%token  <ival>  LX_INTERFXPFX
+%token  <ival>  LX_INTERFXSFX
+%token  <ival>  LX_INTERFXIFX
 %token  <ival>  LX_IS
 %token  <ival>  LX_LE   /* <= */
 %token  <ival>  LX_LEFT
@@ -423,6 +427,22 @@ type
 	| LX_INFX
 	{
 	$$ = AMPLE_IFX;
+	}
+	| LX_INTERFX
+	{
+	$$ = AMPLE_NFX;
+	}
+	| LX_INTERFXPFX
+	{
+	$$ = AMPLE_NFXPFX;
+	}
+	| LX_INTERFXSFX
+	{
+	$$ = AMPLE_NFXSFX;
+	}
+	| LX_INTERFXIFX
+	{
+	$$ = AMPLE_NFXIFX;
 	}
 	| LX_ROOT
 	{

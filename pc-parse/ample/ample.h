@@ -131,6 +131,7 @@ struct ample_data {
 	AmpleTestList *	   pRootSuccTests;	/* \\rt */
 	AmpleTestList *	   pSuffixSuccTests;	/* \\st */
 	AmpleTestList *	   pInfixSuccTests;	/* \\it */
+	AmpleTestList *	   pInterfixSuccTests;	/* \\nt */
 	AmpleTestList *	   pFinalTests;		/* \\ft */
 	/* defunct item */				/* \\tc */
 	int			   eWriteCategory;	/* \\cat */
@@ -158,6 +159,7 @@ struct ample_data {
 	AmplePairList *	   pPrefixAdhocPairs;	/* \\pah */
 	AmplePairList *	   pRootAdhocPairs;	/* \\rah */
 	AmplePairList *	   pSuffixAdhocPairs;	/* \\sah */
+	AmplePairList *	   pInterfixAdhocPairs;	/* \\nah */
 	unsigned char *	   pCompoundRootPairs;	/* \\cr */
 	AmpleMorphClass *	   pMorphClasses;	/* \\mcl */
 	AmpleProperties	   sProperties;		/* \\ap, \\mp */
@@ -166,6 +168,7 @@ struct ample_data {
 	int			   iMaxInfixCount;	/* \\maxi */
 	int			   iMaxRootCount;	/* \\maxr */
 	int			   iMaxSuffixCount;	/* \\maxs */
+	int			   iMaxInterfixCount;	/* \\maxn */
 	AmpleMorphConstraint * pMorphConstraints;	/* \\mcc */
 #ifdef EXPERIMENTAL
 #ifndef hab350
@@ -287,10 +290,15 @@ typedef struct {
 /*
  *  AMPLE morpheme types
  */
-#define AMPLE_PFX	0x01
-#define AMPLE_ROOT	0x02
+#define AMPLE_PFX	0x02
+#define AMPLE_ROOT	0x01
 #define AMPLE_SFX	0x04
-#define AMPLE_IFX	0x08
+#define AMPLE_IFX	0x06
+  /* NFX = interfix; these must also be one of the other affix types */
+#define AMPLE_NFX	0x08
+#define AMPLE_NFXPFX	0x0A
+#define AMPLE_NFXSFX	0x0C
+#define AMPLE_NFXIFX	0x0E
 #define AMPLE_UNIFIED	0x0F
 
 #ifndef hab3312
@@ -309,11 +317,12 @@ typedef struct ample_amlist {
 /*
  *  getAllAllomorphs states
  */
-#define AMPLE_STATE_BOW     0x01
-#define AMPLE_STATE_PREFIX  0x02
-#define AMPLE_STATE_ROOT    0x04
-#define AMPLE_STATE_SUFFIX  0x08
-#define AMPLE_STATE_EOW     0x10
+#define AMPLE_STATE_BOW     	0x01
+#define AMPLE_STATE_PREFIX  	0x02
+#define AMPLE_STATE_ROOT    	0x04
+#define AMPLE_STATE_INTERFIX    0x08
+#define AMPLE_STATE_SUFFIX  	0x10
+#define AMPLE_STATE_EOW     	0x20
 #endif /* hab3312 */
 /*
  *  global functions available for AMPLE parsing

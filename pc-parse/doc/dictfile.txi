@@ -24,6 +24,8 @@
 @c
 @c Modified for AMPLE v. 3.8.0 by H. Andrew Black
 @c      January 7, 2004
+@c Modified for AMPLE v. 3.9.0 by H. Andrew Black
+@c      December 6, 2004
 @set dictfile
 @ifclear endash
 @iftex
@@ -942,13 +944,28 @@ prefix, infix, suffix, and root.
 
 In a unified dictionary, the type of an entry is determined by the
 first letter following the morpheme type field code: @code{p} or
-@code{P} for prefixes, @code{i} or @code{I} for infixes, @code{s} or
-@code{S} for suffixes, and @code{r} or @code{R} for roots.  The
-morpheme type field is not needed for root entries because the entry
-type defaults to root.
+@code{P} for prefixes, @code{i} or @code{I} for infixes, @code{n} or
+@code{N} for interfixes, @code{s} or @code{S} for suffixes, and
+@code{r} or @code{R} for roots.  The morpheme type field is not needed
+for root entries because the entry type defaults to root.
 
-The morpheme type field is used only in unified dictionary files, since
-the morpheme type is otherwise implicit.
+The morpheme type field is used only in unified dictionary files,
+since the morpheme type is otherwise implicit.  The only exception to
+this is for interfixes.
+
+Special notes for interfixes:
+
+An ``interfix'' is an affix that can also appear between roots.  That
+is, it is a prefix, infix, or suffix that can occur in the usual
+position for prefixes/infixes/suffixes, but which can also occur
+between roots.  As such, one uses a regular prefix/infix/suffix entry
+and adds the morpheme type of @code{n} or @code{N}.  For unified
+dictionaries, the interfix code must follow the prefix/infix/suffix
+code.  Separate it by a space.
+
+If one is using the non-unified dictionary approach, one can add a
+morpheme type field to an affix entry to indicate that it is also an
+interfix.
 
 @ifset ample
 @c ----------------------------------------------------------------------------

@@ -109,7 +109,7 @@ static void	afx_create	P((char *recp, int dtype,
 static void	infix_locate	P((char *recp, AmpleInfixInfo *ip,
 				   int rec_read, char *rec_key,
 				   AmpleData * pAmple_in));
-static void	ifx_create	P((char *recp, AmpleData * pAmple_in));
+static void	ifx_create	P((char *recp, int dtype, AmpleData * pAmple_in));
 static void	root_create	P((char *recp, AmpleData * pAmple_in));
 static void	to_list		P((char *line, unsigned char **tocats,
 				   int count, AmpleData * pAmple_in));
@@ -1740,8 +1740,9 @@ if (ip->pInfixEnv == (AmpleEnvConstraint *)NULL)
  * RETURN VALUE
  *    none
  */
-static void ifx_create(recp, pAmple_in)
+static void ifx_create(recp, dtype, pAmple_in)
 char *		recp;	/* pointer to a record of the dictionary file */
+int		dtype;		/* AMPLE_IFX ot AMPLE_NFXIFX */
 AmpleData *	pAmple_in;
 {
 AmpleInfixInfo *	de;
@@ -2026,7 +2027,7 @@ while (*rp != NUL)
 		head = build_allomorphs(rp,
 					isolateWord(rp),
 					head,
-					AMPLE_IFX,
+					dtype,
 					mde,
 					&bBadAllomorph,
 					NULL,
@@ -2784,6 +2785,36 @@ freealist(head, pAmple_in);
 
 /*****************************************************************************
  * NAME
+ *    copyAmpleDictEntry
+ * DESCRIPTION
+ *    makes a copy of an AMPLE dictionary entry
+ * RETURN VALUE
+ *    pointer to beginning of copy
+ */
+static char *copyAmpleDictEntry(char *pRecord_in)
+{
+  char *cp;
+  char *pszCopy = NULL;
+  size_t uiLength;
+
+  cp = pRecord_in;
+  while(1)
+  {				/* look until see two NULs in a row */
+	if (*cp == NUL && *(cp+1) == NUL)
+	  break;
+	cp++;
+  }
+  if (cp != pRecord_in)
+	{
+	  uiLength = (cp - pRecord_in) + 2; /* include the final double nul */
+	  pszCopy = allocMemory(uiLength);
+	  memcpy(pszCopy, pRecord_in, uiLength);
+	}
+  return pszCopy;
+}
+
+/*****************************************************************************
+ * NAME
  *    addAmpleDictEntry
  * DESCRIPTION
  *    fills in data structure for a source dialect morpheme (prefix, infix,
@@ -2801,7 +2832,9 @@ int	iFieldCode;
 int	bPrefixStored = FALSE;
 int	bInfixStored  = FALSE;
 int	bSuffixStored = FALSE;
+int	bInterfixStored  = FALSE;
 int	bRootStored   = FALSE;
+char *  pszCopyOfRecord = NULL;
 /*
  *  scan the record looking for a 'T'ype field
  */
@@ -2829,6 +2862,8 @@ while (*pszField != NUL)
 			iDicType = AMPLE_PFX;
 			if (bPrefixStored == FALSE)
 			{
+			if (pAmple_in->iMaxInterfixCount > 0)
+			  pszCopyOfRecord = copyAmpleDictEntry(pRecord_in);
 			afx_create(pRecord_in, iDicType, pAmple_in);
 			bPrefixStored = TRUE;
 			}
@@ -2838,7 +2873,9 @@ while (*pszField != NUL)
 			iDicType = AMPLE_IFX;
 			if (bInfixStored == FALSE)
 			{
-			ifx_create(pRecord_in, pAmple_in);
+			if (pAmple_in->iMaxInterfixCount > 0)
+			  pszCopyOfRecord = copyAmpleDictEntry(pRecord_in);
+			ifx_create(pRecord_in, iDicType, pAmple_in);
 			bInfixStored = TRUE;
 			}
 			break;
@@ -2847,9 +2884,47 @@ while (*pszField != NUL)
 			iDicType = AMPLE_SFX;
 			if (bSuffixStored == FALSE)
 			{
+			if (pAmple_in->iMaxInterfixCount > 0)
+			  pszCopyOfRecord = copyAmpleDictEntry(pRecord_in);
 			afx_create(pRecord_in, iDicType, pAmple_in);
 			bSuffixStored = TRUE;
 			}
+			break;
+		case 'n':			/* interfix */
+		case 'N':
+			iDicType = AMPLE_NFX;
+			if (bInterfixStored == FALSE)
+			  {
+			if (bPrefixStored)
+			  {
+				iDicType = AMPLE_NFXPFX;
+				afx_create(pszCopyOfRecord, iDicType, pAmple_in);
+				bInterfixStored = TRUE;
+			  }
+			else if (bSuffixStored)
+			  {
+				iDicType = AMPLE_NFXSFX;
+				afx_create(pszCopyOfRecord, iDicType, pAmple_in);
+				bInterfixStored = TRUE;
+			  }
+			else if (bInfixStored)
+			  {
+				iDicType = AMPLE_NFXIFX;
+				ifx_create(pszCopyOfRecord, iDicType, pAmple_in);
+				bInterfixStored = TRUE;
+			  }
+			else
+			  {
+				if (pAmple_in->pLogFP != NULL)
+				  fprintf(pAmple_in->pLogFP,
+				"%sInterfix type field must follow other affix type (prefix, suffix, or infix): in entry %s: \"%s\"\n",
+				pAmple_in->pszAmpleDictErrorHeader,
+				getAmpleRecordIDTag(szRecordKey_g,
+							pAmple_in->uiRecordCount),
+				pszField );
+				iDicType = -1;
+			  }
+			  }
 			break;
 		case 'r':			/* root */
 		case 'R':
@@ -2889,6 +2964,61 @@ while (*pszField != NUL)
  */
 if ((iDicType == AMPLE_ROOT) && (bRootStored == FALSE))
 	root_create(pRecord_in, pAmple_in);
+if (pszCopyOfRecord != NULL)
+	freeMemory(pszCopyOfRecord);
+}
+
+/*****************************************************************************
+ * NAME
+ *    loadAmpleDictionary
+ * DESCRIPTION
+ *    load a dictionary into memory
+ * RETURN VALUE
+ *    the number of entries loaded if successful, -1 if an error occurs
+ */
+static int bRecordHasInterfixType(char *pRecord_in)
+{
+char *pszField;
+int   iFieldCode;
+int   bResult;
+
+bResult = FALSE;		/* be pessimistic */
+/*
+ *  scan the record looking for a 'T'ype field
+ */
+pszField = pRecord_in;
+while (*pszField != NUL)
+  {
+	/*
+	 *  get the field code and skip over white space
+	 */
+	iFieldCode = *pszField++;
+	if (iFieldCode == 'T')
+	  {
+	/*
+	 *  allow multiple morpheme types (why not?)
+	 */
+	while (*pszField != NUL)
+	  {
+		pszField += strspn(pszField, szWhitespace_m);
+		if ((*pszField == 'n') ||(*pszField == 'N'))
+		  {
+		bResult = TRUE;
+		break;
+		  }
+		/*
+		 *  advance pointer past this keyword
+		 */
+		pszField += strcspn(pszField, szWhitespace_m);
+	  }
+	break;
+	  }
+	/*
+	 *  advance pointer past this field
+	 */
+	pszField += strlen(pszField) + 1;
+	} /* end of record */
+return bResult;
 }
 
 /*****************************************************************************
@@ -2911,6 +3041,8 @@ char *		rp;       /* pointer to a record */
 int		count;
 char *		pszType;
 StringList *	pList;
+char *          pszCopyOfRecord;
+int		iInterfixType;
 
 
 infp = fopen(pszFilename_in, "r");
@@ -2992,10 +3124,26 @@ while ((rp = readStdFormatRecord(infp,
 	{
 	case AMPLE_PFX:       /* fall through */
 	case AMPLE_SFX:
+		if ( (pAmple_io->iMaxInterfixCount > 0) &&
+		 (bRecordHasInterfixType(rp)))
+		  {
+		pszCopyOfRecord = copyAmpleDictEntry(rp);
+		iInterfixType = (eDictType_in == AMPLE_PFX) ? AMPLE_NFXPFX
+													: AMPLE_NFXSFX;
+		afx_create(pszCopyOfRecord, iInterfixType, pAmple_io);
+		freeMemory(pszCopyOfRecord);
+		  }
 		afx_create(rp, eDictType_in, pAmple_io);
 		break;
 	case AMPLE_IFX:
-		ifx_create(rp, pAmple_io);
+		if ( (pAmple_io->iMaxInterfixCount > 0) &&
+		 (bRecordHasInterfixType(rp)))
+		  {
+		pszCopyOfRecord = copyAmpleDictEntry(rp);
+		ifx_create(pszCopyOfRecord, AMPLE_NFXIFX, pAmple_io);
+		freeMemory(pszCopyOfRecord);
+		  }
+		ifx_create(rp, eDictType_in, pAmple_io);
 		break;
 	case AMPLE_ROOT:
 		root_create(rp, pAmple_io);

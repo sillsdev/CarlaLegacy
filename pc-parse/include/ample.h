@@ -104,6 +104,7 @@ struct ample_data {
 #define AMPLE_TRACE_OFF		0
 #define AMPLE_TRACE_ON		1
 #define AMPLE_TRACE_SGML	2
+#define AMPLE_TRACE_XML 	3
 	char *		   pszTrace;
 	size_t		   uiTraceSize;
 	int			   iOutputFlags;		/* -w, -x */
@@ -130,6 +131,7 @@ struct ample_data {
 	AmpleTestList *	   pRootSuccTests;	/* \\rt */
 	AmpleTestList *	   pSuffixSuccTests;	/* \\st */
 	AmpleTestList *	   pInfixSuccTests;	/* \\it */
+	AmpleTestList *	   pInterfixSuccTests;	/* \\nt */
 	AmpleTestList *	   pFinalTests;		/* \\ft */
 	/* defunct item */				/* \\tc */
 	int			   eWriteCategory;	/* \\cat */
@@ -157,6 +159,7 @@ struct ample_data {
 	AmplePairList *	   pPrefixAdhocPairs;	/* \\pah */
 	AmplePairList *	   pRootAdhocPairs;	/* \\rah */
 	AmplePairList *	   pSuffixAdhocPairs;	/* \\sah */
+	AmplePairList *	   pInterfixAdhocPairs;	/* \\nah */
 	unsigned char *	   pCompoundRootPairs;	/* \\cr */
 	AmpleMorphClass *	   pMorphClasses;	/* \\mcl */
 	AmpleProperties	   sProperties;		/* \\ap, \\mp */
@@ -165,6 +168,7 @@ struct ample_data {
 	int			   iMaxInfixCount;	/* \\maxi */
 	int			   iMaxRootCount;	/* \\maxr */
 	int			   iMaxSuffixCount;	/* \\maxs */
+	int			   iMaxInterfixCount;	/* \\maxn */
 	AmpleMorphConstraint * pMorphConstraints;	/* \\mcc */
 #ifdef EXPERIMENTAL
 #ifndef hab350
@@ -286,10 +290,15 @@ typedef struct {
 /*
  *  AMPLE morpheme types
  */
-#define AMPLE_PFX	0x01
-#define AMPLE_ROOT	0x02
+#define AMPLE_PFX	0x02
+#define AMPLE_ROOT	0x01
 #define AMPLE_SFX	0x04
-#define AMPLE_IFX	0x08
+#define AMPLE_IFX	0x06
+  /* NFX = interfix; these must also be one of the other affix types */
+#define AMPLE_NFX	0x08
+#define AMPLE_NFXPFX	0x0A
+#define AMPLE_NFXSFX	0x0C
+#define AMPLE_NFXIFX	0x0E
 #define AMPLE_UNIFIED	0x0F
 
 #ifndef hab3312

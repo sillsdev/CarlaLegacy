@@ -3,13 +3,15 @@
  * Copyright 1996 - 2003 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
-#define REVISION 8		/* enhancement requiring adding to book */
+#define REVISION 9		/* enhancement requiring adding to book */
 #define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "January 7, 2004"	/* date of release version */
+#define DATE "December 3, 2004"	/* date of release version */
 #define YEAR "2004"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 03-Dec-2004  hab  - Enhancement: add interfixes (affixes which appear
+ * [3.9.0]               between roots)
  * 07-Jan-2004  hab  - Enhancement: add negative SECs (~/)
  * [3.8.0]
  * 17-Nov-2003  hab  - Fix bug: empty morpheme co-occurrence constraint message

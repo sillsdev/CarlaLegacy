@@ -212,6 +212,7 @@ static AmpleData	sAmpleData_m = {
 	NULL,		/* \\rt */
 	NULL,		/* \\st */
 	NULL,		/* \\it */
+	NULL,		/* \\nt */
 	NULL,		/* \\ft */
 	AMPLE_NO_CATEGORY,	/* \\cat */
 	FALSE,
@@ -224,6 +225,7 @@ static AmpleData	sAmpleData_m = {
 	NULL,		/* \\pah */
 	NULL,		/* \\rah */
 	NULL,		/* \\sah */
+	NULL,		/* \\nah */
 	NULL,		/* \\cr */
 	NULL,		/* \\mcl */
 	{ NULL, 0, 0, 255 },	/* \\ap, \\mp, \\maxprops */
@@ -232,6 +234,7 @@ static AmpleData	sAmpleData_m = {
 	0,			/* \\maxi */
 	1,			/* \\maxr */
 	100,		/* \\maxs */
+	0,			/* \\maxn */
 	NULL,		/* \\mcc */
 #ifdef EXPERIMENTAL
 #ifndef hab350
@@ -1468,6 +1471,8 @@ if (sAmpleData_m.iMaxPrefixCount)
 if (sAmpleData_m.iMaxInfixCount)
 	show_test("   Infix", sAmpleData_m.pInfixSuccTests);
 show_test("   Root", sAmpleData_m.pRootSuccTests);	/* always have roots */
+if (sAmpleData_m.iMaxInterfixCount)
+	show_test("   Interfix", sAmpleData_m.pInterfixSuccTests);
 if (sAmpleData_m.iMaxSuffixCount)
 	show_test("   Suffix", sAmpleData_m.pSuffixSuccTests);
 /* always have final tests */

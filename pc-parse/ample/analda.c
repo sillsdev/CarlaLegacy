@@ -57,17 +57,13 @@ static void		process_patr_setting P((char * pszRec_in,
 
 /*
  *  analysis data record code table
- *	\pcl added by hab for version 3.3.0
- *	\patr added by SRMc for version 3.3.4 (#ifdef EXPERIMENTAL)
  */
-#ifndef hab340
-#ifdef EXPERIMENTAL
-#ifndef hab350
 static const CodeTable sAnalysisCodeTable_m = { "\
 \\pt\0A\0\
 \\rt\0B\0\
 \\st\0C\0\
 \\it\0D\0\
+\\nt\0d\0\
 \\ft\0E\0\
 \\tc\0F\0\
 \\cat\0G\0\
@@ -82,12 +78,14 @@ static const CodeTable sAnalysisCodeTable_m = { "\
 \\pah\0O\0\
 \\rah\0P\0\
 \\sah\0Q\0\
+\\nah\0q\0\
 \\cr\0R\0\
 \\mcl\0S\0\
 \\ap\0T\0\
 \\mp\0U\0\
 \\maxp\0V\0\
 \\maxi\0W\0\
+\\maxn\0w\0\
 \\maxr\0X\0\
 \\maxs\0Y\0\
 \\mcc\0Z\0\
@@ -96,83 +94,9 @@ static const CodeTable sAnalysisCodeTable_m = { "\
 \\pcl\0c\0\
 \\patr\0p\0\
 \\ancc\0n\0",
-	32,
+	35,
 	NULL
 	};
-#endif /* hab350 */
-#else /* EXPERIMENTAL */
-static const CodeTable sAnalysisCodeTable_m = { "\
-\\pt\0A\0\
-\\rt\0B\0\
-\\st\0C\0\
-\\it\0D\0\
-\\ft\0E\0\
-\\tc\0F\0\
-\\cat\0G\0\
-\\catcr\0g\0\
-\\ca\0H\0\
-\\ccl\0I\0\
-\\rd\0J\0\
-\\strcheck\0K\0\
-\\maxnull\0L\0\
-\\scl\0M\0\
-\\iah\0N\0\
-\\pah\0O\0\
-\\rah\0P\0\
-\\sah\0Q\0\
-\\cr\0R\0\
-\\mcl\0S\0\
-\\ap\0T\0\
-\\mp\0U\0\
-\\maxp\0V\0\
-\\maxi\0W\0\
-\\maxr\0X\0\
-\\maxs\0Y\0\
-\\mcc\0Z\0\
-\\dicdecap\0a\0\
-\\maxprops\0b\0\
-\\pcl\0c\0\
-\\patr\0p\0",
-	31,
-	NULL
-	};
-#endif /* EXPERIMENTAL */
-#else /* hab340 */
-static const CodeTable sAnalysisCodeTable_m = { "\
-\\pt\0A\0\
-\\rt\0B\0\
-\\st\0C\0\
-\\it\0D\0\
-\\ft\0E\0\
-\\tc\0F\0\
-\\cat\0G\0\
-\\ca\0H\0\
-\\ccl\0I\0\
-\\rd\0J\0\
-\\strcheck\0K\0\
-\\maxnull\0L\0\
-\\scl\0M\0\
-\\iah\0N\0\
-\\pah\0O\0\
-\\rah\0P\0\
-\\sah\0Q\0\
-\\cr\0R\0\
-\\mcl\0S\0\
-\\ap\0T\0\
-\\mp\0U\0\
-\\maxp\0V\0\
-\\maxi\0W\0\
-\\maxr\0X\0\
-\\maxs\0Y\0\
-\\mcc\0Z\0\
-\\dicdecap\0a\0\
-\\maxprops\0b\0\
-\\pcl\0c\0\
-\\patr\0p\0",
-	30,
-	NULL
-	};
-#endif /* hab340 */
 
 static const AmpleFunctionTable asPrefixTestTable_m[] = {
 	{"SEC_ST",   AMPLE_SEC_ST},
@@ -211,6 +135,15 @@ static const AmpleFunctionTable asSuffixTestTable_m[] = {
 static const int iSuffixTestTableSize_m =
 		sizeof(asSuffixTestTable_m) / sizeof(AmpleFunctionTable);
 
+static const AmpleFunctionTable asInterfixTestTable_m[] = {
+	{"SEC_ST",   AMPLE_SEC_ST},
+	{"ADHOC_ST", AMPLE_ADHOC_ST},
+	{"PEC_ST",   AMPLE_PEC_ST},
+	{"SP_TEST",  AMPLE_SP_TEST}
+	};
+static const int iInterfixTestTableSize_m =
+		sizeof(asInterfixTestTable_m) / sizeof(AmpleFunctionTable);
+
 static const AmpleFunctionTable asFinalTestTable_m[] = {
 	{"MEC_FT",   AMPLE_MEC_FT},
 	{"MCC_FT",   AMPLE_MCC_FT},
@@ -224,7 +157,7 @@ static const AmpleFunctionTable asFinalTestTable_m[] = {
 static const int iFinalTestTableSize_m =
 		sizeof(asFinalTestTable_m) / sizeof(AmpleFunctionTable);
 
-#define AMPLE_FINAL	0x10	/* to go with AMPLE_PFX, AMPLE_IFX,
+#define AMPLE_FINAL	0x10	/* to go with AMPLE_PFX, AMPLE_IFX, AMPLE_NFX,
 				   AMPLE_ROOT, and AMPLE_SFX */
 
 static const AmpleFunctionTable asStringEnvTestTable_m[] = {
@@ -278,6 +211,7 @@ switch (kind)
 	{
 	case AMPLE_PFX:	listp = &pAmple_io->pPrefixSuccTests;	break;
 	case AMPLE_IFX:	listp = &pAmple_io->pInfixSuccTests;	break;
+	case AMPLE_NFX:	listp = &pAmple_io->pInterfixSuccTests;	break;
 	case AMPLE_ROOT:	listp = &pAmple_io->pRootSuccTests;		break;
 	case AMPLE_SFX:	listp = &pAmple_io->pSuffixSuccTests;	break;
 	case AMPLE_FINAL:	listp = &pAmple_io->pFinalTests;		break;
@@ -373,6 +307,7 @@ switch (kind)			/* set the test type for error messages */
 	{
 	case AMPLE_PFX:	pszTestErrorHeader = "PREFIX TEST: ";	break;
 	case AMPLE_IFX:	pszTestErrorHeader = "INFIX TEST: ";	break;
+	case AMPLE_NFX:	pszTestErrorHeader = "INTERFIX TEST: ";	break;
 	case AMPLE_ROOT:	pszTestErrorHeader = "ROOT TEST: ";	break;
 	case AMPLE_SFX:	pszTestErrorHeader = "SUFFIX TEST: ";	break;
 	case AMPLE_FINAL:	pszTestErrorHeader = "FINAL TEST: ";	break;
@@ -455,13 +390,14 @@ AmpleTestList *		new;
 int			success;
 int			stop = 0;
 int			i;
-AmpleTestList **	asFunctionTable[5];
+AmpleTestList **	asFunctionTable[6];
 
 asFunctionTable[0] = &pAmple_io->pPrefixSuccTests;
 asFunctionTable[1] = &pAmple_io->pInfixSuccTests;
 asFunctionTable[2] = &pAmple_io->pRootSuccTests;
 asFunctionTable[3] = &pAmple_io->pSuffixSuccTests;
-asFunctionTable[4] = &pAmple_io->pFinalTests;
+asFunctionTable[4] = &pAmple_io->pInterfixSuccTests;
+asFunctionTable[5] = &pAmple_io->pFinalTests;
 /*
  *  initialize based on kind of function
  */
@@ -471,7 +407,8 @@ switch (kind)
 	case AMPLE_IFX:	stop = 1;	break;
 	case AMPLE_ROOT:	stop = 2;	break;
 	case AMPLE_SFX:	stop = 3;	break;
-	case AMPLE_FINAL:	stop = 4;	break;
+	case AMPLE_NFX:	stop = 4;	break;
+	case AMPLE_FINAL:	stop = 5;	break;
 	}
 /*
  *  search each list in sequence
@@ -523,6 +460,7 @@ switch (kind)
 	{
 	case AMPLE_PFX:	flp = pAmple_io->pPrefixSuccTests;	break;
 	case AMPLE_IFX:	flp = pAmple_io->pInfixSuccTests;	break;
+	case AMPLE_NFX:	flp = pAmple_io->pInterfixSuccTests;	break;
 	case AMPLE_ROOT:	flp = pAmple_io->pRootSuccTests;	break;
 	case AMPLE_SFX:	flp = pAmple_io->pSuffixSuccTests;	break;
 	case AMPLE_FINAL:	flp = pAmple_io->pFinalTests;	break;
@@ -818,6 +756,11 @@ while (*rp != NUL)
 			   AMPLE_IFX, pAmple_io);
 		break;
 
+	case 'd':		/* Interfix Successor predicate */
+		in_fnlist( rp, asInterfixTestTable_m, iInterfixTestTableSize_m,
+			   AMPLE_NFX, pAmple_io);
+		break;
+
 	case 'E':		/* Final Test predicate */
 		in_fnlist( rp, asFinalTestTable_m, iFinalTestTableSize_m,
 			   AMPLE_FINAL, pAmple_io);
@@ -945,6 +888,13 @@ while (*rp != NUL)
 								pAmple_io);
 		break;
 
+	case 'q':		/* interfix adhoc pair */
+		pAmple_io->pInterfixAdhocPairs = adhoc_create(rp,
+						  pAmple_io->pInterfixAdhocPairs,
+								"interfix",
+								pAmple_io);
+		break;
+
 	case 'R':		/* compound root category pairs */
 		cr_create( rp, pAmple_io );
 		break;
@@ -989,6 +939,19 @@ while (*rp != NUL)
 		if (pAmple_io->pLogFP != NULL)
 			fprintf(pAmple_io->pLogFP,
 			 "%sCannot have fewer than zero infixes - assuming zero\n",
+				errhead);
+		}
+		break;
+
+	case 'w':		/* Maximum number of interfixes allowed */
+		p2 = isolateWord(rp);
+		pAmple_io->iMaxInterfixCount = atoi(rp);
+		if (pAmple_io->iMaxInterfixCount < 0)
+		{
+		pAmple_io->iMaxInterfixCount = 0;
+		if (pAmple_io->pLogFP != NULL)
+			fprintf(pAmple_io->pLogFP,
+			 "%sCannot have fewer than zero interfixes - assuming zero\n",
 				errhead);
 		}
 		break;
@@ -1152,6 +1115,18 @@ if (pAmple_io->iMaxInfixCount)
 	if (pAmple_io->pInfixAdhocPairs)
 	add_builtin_fns( &pAmple_io->pInfixSuccTests, asAdhocTestTable_m,
 			 iAdhocTestTableSize_m, AMPLE_IFX, pAmple_io);
+	}
+if (pAmple_io->iMaxInterfixCount)
+	{
+	add_builtin_fns( &pAmple_io->pInterfixSuccTests, asStringEnvTestTable_m,
+			 iStringEnvTestTableSize_m, AMPLE_NFX, pAmple_io);
+				/* 3.3.0 hab */
+	add_builtin_fns( &pAmple_io->pInterfixSuccTests, asPunctEnvTestTable_m,
+			 iPunctEnvTestTableSize_m, AMPLE_NFX, pAmple_io);
+	/* ADHOC_ST only if needed */
+	if (pAmple_io->pInterfixAdhocPairs)
+	add_builtin_fns( &pAmple_io->pInterfixSuccTests, asAdhocTestTable_m,
+			 iAdhocTestTableSize_m, AMPLE_NFX, pAmple_io);
 	}
 add_builtin_fns( &pAmple_io->pRootSuccTests, asStringEnvTestTable_m,
 		 iStringEnvTestTableSize_m, AMPLE_ROOT, pAmple_io);

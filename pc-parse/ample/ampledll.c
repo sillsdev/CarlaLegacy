@@ -1033,14 +1033,35 @@ static char * addAResultToBuffer(
 					  }
 			  // JDH26May2000 add morpheme type to the output
 			  CONCAT(" type=\"");
-			  if (pAllo->pMorpheme->iMorphType & AMPLE_PFX)
-				CONCAT("p");
-			  if (pAllo->pMorpheme->iMorphType & AMPLE_IFX)
-				CONCAT("i");
-			  if (pAllo->pMorpheme->iMorphType & AMPLE_ROOT)
-				CONCAT("r");
-			  if (pAllo->pMorpheme->iMorphType & AMPLE_SFX)
-				CONCAT("s");
+			  switch (pAllo->pMorpheme->iMorphType & ATYPE)
+				{
+				case AMPLE_PFX:
+				  CONCAT("p")
+				break;
+				case AMPLE_IFX:
+				  CONCAT("i")
+				break;
+				case AMPLE_ROOT:
+				  CONCAT("r")
+				break;
+				case AMPLE_NFX:
+				  CONCAT("n")
+				break;
+				case AMPLE_NFXPFX:
+				  CONCAT("np")
+				break;
+				case AMPLE_NFXSFX:
+				  CONCAT("ns")
+				break;
+				case AMPLE_NFXIFX:
+				  CONCAT("ni")
+				break;
+				case AMPLE_SFX:
+				  CONCAT("s")
+				break;
+				default:
+				  CONCAT("UNKNOWN")
+				}
 			  CONCAT("\"");
 			  CONCAT(">\r\n")
 				}
@@ -1933,14 +1954,29 @@ else
 				writeCDATA(pAllo->pszAllomorphID, pOutputFP_in, FALSE);
 
 			// output the morpheme type attribute
-			if (pAllo->pMorpheme->iMorphType & AMPLE_PFX)
-			  cType = 'p';
-			if (pAllo->pMorpheme->iMorphType & AMPLE_IFX)
-			   cType = 'i';
-			if (pAllo->pMorpheme->iMorphType & AMPLE_ROOT)
-			   cType = 'r';
-			if (pAllo->pMorpheme->iMorphType & AMPLE_SFX)
-			   cType = 's';
+			switch (pAllo->pMorpheme->iMorphType & ATYPE)
+			  {
+			  case AMPLE_PFX:
+				cType = 'p';
+				  break;
+			  case AMPLE_IFX:
+				cType = 'i';
+				  break;
+			  case AMPLE_ROOT:
+				cType = 'r';
+				  break;
+			  case AMPLE_NFXPFX: /* fall through */
+			  case AMPLE_NFXIFX: /* fall through */
+			  case AMPLE_NFXSFX: /* fall through */
+			  case AMPLE_NFX:
+				cType = 'n';
+				  break;
+			  case AMPLE_SFX:
+				cType = 's';
+				  break;
+			  default:
+				cType = 'u';
+			  }
 
 			fprintf(pOutputFP_in, "\" type=\"%c\"", cType);
 
@@ -2648,6 +2684,8 @@ if (pSetup_io->sData.pLogFP != NULL)
 	show_test("   Prefix", pSetup_io->sData.pPrefixSuccTests, pSetup_io);
 	if (pSetup_io->sData.iMaxInfixCount)
 	show_test("   Infix", pSetup_io->sData.pInfixSuccTests, pSetup_io);
+	if (pSetup_io->sData.iMaxInterfixCount)
+	show_test("   Interfix", pSetup_io->sData.pInterfixSuccTests, pSetup_io);
 	show_test("   Root", pSetup_io->sData.pRootSuccTests, pSetup_io);
 	if (pSetup_io->sData.iMaxSuffixCount)
 	show_test("   Suffix", pSetup_io->sData.pSuffixSuccTests, pSetup_io);
@@ -4320,6 +4358,14 @@ uiRoom        = uiBufferSize_in - uiSize;
 		   case AMPLE_ROOT:
 		 CONCAT("ROOT")
 		 break;
+		   case AMPLE_NFXPFX: /* fall through */
+		   case AMPLE_NFXSFX: /* fall through */
+		   case AMPLE_NFX:
+		 CONCAT("NFX")
+		 break;
+		   case AMPLE_NFXIFX:
+		 CONCAT("NFXIFX")
+		 break;
 		   case AMPLE_SFX:
 		 CONCAT("SFX")
 		 break;
@@ -4385,6 +4431,8 @@ else if (strcmp(pszState_in, "ROOT") == 0)
   iState = AMPLE_STATE_ROOT;
 else if (strcmp(pszState_in, "SFX") == 0)
   iState = AMPLE_STATE_SUFFIX;
+else if (strcmp(pszState_in, "NFX") == 0)
+  iState = AMPLE_STATE_INTERFIX;
 else if (strcmp(pszState_in, "EOW") == 0)
   iState = AMPLE_STATE_EOW;
 else
@@ -4562,6 +4610,8 @@ return pszResult;
 
 /******************************************************************************
  * EDIT HISTORY
+ * 03-Dec-2004  hab  - Add Interfixes
+ * [3.9.0.18]
  * 12-Jul-2003  hab  - Add AMPLE_TRACE_XML option
  * [3.7.0.17]
  * 17-Oct-2002  hab  - Added MaxAnalysesToReturn parameter and AmpleParseText()
