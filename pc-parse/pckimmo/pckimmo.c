@@ -95,6 +95,9 @@ KimmoData sKimmoData_g = {
 	TRUE,	/* bShowWarnings    - allow warning messages */
 	TRUE,	/* bPromoteDefAtoms - promote default atoms before parsing */
 	FALSE,	/* bPropIsFeature   - AMPLE property is feature template */
+#ifndef hab219
+	0,  	/* eRootGlossFeature  - use AMPLE root gloss as feature */
+#endif /* hab219 */
 	0,	/* iMaxProcTime     - maximum processing time for a parse */
 	NULL,	/* pLogFP           - output log file */
 	NULL,	/* pFinalPunc       - not used by Kimmo functions */
@@ -102,6 +105,9 @@ KimmoData sKimmoData_g = {
 	NULL,	/* pGrammar         - data loaded from the grammar file */
 	0,
 	NULL, NULL, NULL, NULL, NULL, NULL, /* not used by Kimmo functions */
+#ifndef hab219
+	NULL,
+#endif /* hab219 */
 	0, 0,	/* internal processing values */
 	&sKimmoPATRMemory_s,
 	0, 0, NULL,
