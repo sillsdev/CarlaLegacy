@@ -194,6 +194,7 @@ AmpleData	sPCPATRAmpleData_g = {
 	NULL,		/* \\rt */
 	NULL,		/* \\st */
 	NULL,		/* \\it */
+	NULL,		/* \\nt */
 	NULL,		/* \\ft */
 	AMPLE_NO_CATEGORY,	/* \\cat */
 	FALSE,
@@ -206,6 +207,7 @@ AmpleData	sPCPATRAmpleData_g = {
 	NULL,		/* \\pah */
 	NULL,		/* \\rah */
 	NULL,		/* \\sah */
+	NULL,		/* \\nah */
 	NULL,		/* \\cr */
 	NULL,		/* \\mcl */
 	{ NULL, 0, 0, 255 },	/* \\ap, \\mp, \\maxprops */
@@ -214,6 +216,7 @@ AmpleData	sPCPATRAmpleData_g = {
 	0,			/* \\maxi */
 	1,			/* \\maxr */
 	100,		/* \\maxs */
+	0,			/* \\maxn */
 	NULL,		/* \\mcc */
 	10,			/* \\maxnull */
 	NULL,		/* \\strcheck */

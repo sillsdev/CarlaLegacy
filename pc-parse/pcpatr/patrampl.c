@@ -64,40 +64,39 @@ char * pch;
 char * pszRest;
 
 pszMorphnames = allocPATRStringCopy(pszAnal_in, pPATR_in);
-pch = strchr(pszMorphnames, '<');
-if (pch == NULL)
-	{
-	return pszMorphnames;
-	}
-pszRest = strchr(pch + 2, ' ');
-if (pszRest == NULL)
-	{
-	return pszMorphnames;
-	}
-++pszRest;
-memmove(pch, pszRest, strlen(pszRest) + 1);
-for (;;)
-	{
-	pch = strchr(pch, ' ');
-	if (pch == NULL)
-	{
-	return pszMorphnames;
-	}
-	if (strncmp(pch, " >", 2) == 0)
-	{
-	if (pch[2] == NUL)
-		{
-		*pch = NUL;
-		return pszMorphnames;
-		}
-	memmove(pch, pch + 2, strlen(pch + 1));
-	return pszMorphnames;
-	}
-	++pch;
-	pszRest = strchr(pch, ' ');
-	++pszRest;
-	memmove(pch, pszRest, strlen(pszRest) + 1);
-	}
+ while ((pch = strchr(pszMorphnames, '<')) != NULL)
+   {
+	 pszRest = strchr(pch + 2, ' ');
+	 if (pszRest == NULL)
+	   {
+	 return pszMorphnames;
+	   }
+	 ++pszRest;
+	 memmove(pch, pszRest, strlen(pszRest) + 1);
+	 for (;;)
+	   {
+	 pch = strchr(pch, ' ');
+	 if (pch == NULL)
+	   {
+		 return pszMorphnames;
+	   }
+	 if (strncmp(pch, " >", 2) == 0)
+	   {
+		 if (pch[2] == NUL)
+		   {
+		 *pch = NUL;
+		 return pszMorphnames;
+		   }
+		 memmove(pch, pch + 2, strlen(pch + 1));
+		 break;
+	   }
+	 ++pch;
+	 pszRest = strchr(pch, ' ');
+	 ++pszRest;
+	 memmove(pch, pszRest, strlen(pszRest) + 1);
+	   }
+   }
+ return pszMorphnames;
 }
 
 #ifndef hab130

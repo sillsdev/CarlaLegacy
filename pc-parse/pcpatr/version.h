@@ -4,12 +4,14 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
-#define PATCHLEVEL 8		/* bug fix or other minor change */
-#define DATE "December 11, 2002"	/* date of release version */
-#define YEAR "2002"		/* used for copyright notice in banner */
+#define PATCHLEVEL 9		/* bug fix or other minor change */
+#define DATE "December 6, 2004"	/* date of release version */
+#define YEAR "2004"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 06-Dec-2004  hab  - Allow for interfixes in Ample ANA (i.e. handle more than
+ * [1.3.9]              one set of roots)
  * 11-Dec-2002  hab  - fix bug in doublecheck_constraints(): only need to double
  * [1.3.8]              check logical constraints for mother nodes within a
  *                      production;  these are the only ones where the feature
