@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LingTreeTree xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>0.6.0.17128</Version>
+  <Description>(IP (DP) (I/S'))</Description>
+  <VerticalGap>300</VerticalGap>
+  <HorizontalGap>300</HorizontalGap>
+  <InitialXCoord>100</InitialXCoord>
+  <InitialYCoord>100</InitialYCoord>
+  <HorizontalOffset>2028</HorizontalOffset>
+  <LexGlossGapAdjustment>0</LexGlossGapAdjustment>
+  <TrySmoothing>false</TrySmoothing>
+  <TryPixelOffset>false</TryPixelOffset>
+  <ShowFlatView>false</ShowFlatView>
+  <GlossFontFace>Courier New</GlossFontFace>
+  <GlossFontSize>12</GlossFontSize>
+  <GlossFontStyle>Regular</GlossFontStyle>
+  <LexFontFace>Courier New</LexFontFace>
+  <LexFontSize>12</LexFontSize>
+  <LexFontStyle>Regular</LexFontStyle>
+  <NTFontFace>Courier New</NTFontFace>
+  <NTFontSize>12</NTFontSize>
+  <NTFontStyle>Regular</NTFontStyle>
+  <GlossColorArgb>-16744448</GlossColorArgb>
+  <LexColorArgb>-16776961</LexColorArgb>
+  <NTColorArgb>-16777216</NTColorArgb>
+  <LinesColorArgb>-16777216</LinesColorArgb>
+  <BackgroundColorArgb>-1</BackgroundColorArgb>
+  <LineWidth>0</LineWidth>
+  <CustomColors>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+	<int>0</int>
+  </CustomColors>
+</LingTreeTree>
