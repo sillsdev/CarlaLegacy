@@ -67,6 +67,9 @@ static void usage P((void));
 static void tsinit P((void));
 static void outstats P((void));
 static void tsproc P((void));
+#ifndef hab1013
+static void updateStats P((WordTemplate *pWord));
+#endif /* hab1013 */
 
 /*****************************************************************************
  *  local global data
@@ -849,7 +852,9 @@ char outfilename[100];
 char infilename[100];
 int k;
 WordTemplate *	pWord;
+#ifdef hab1013
 WordAnalysis *  pAnal;
+#endif /* hab1013 */
 
 /*
  *  Get input file name from command line or user
@@ -972,6 +977,19 @@ do  {
 		}
 	do_tone_anal(&sWords_m, do_trace, &sStamp_m );
 
+#ifndef hab1013
+	if (sWords_m.pPreviousWord != NULL)
+	  {
+		writeStampWord(sWords_m.pPreviousWord, outfp, outfilename,
+			   &sStamp_m);
+		pWord = sWords_m.pPreviousWord->pTemplate;
+	  }
+	else
+	  {
+		pWord = NULL;
+	  }
+	updateStats(pWord);
+#else  /* hab1013 */
 	pWord = sWords_m.pCurrentWord->pTemplate;
 
 	writeStampWord(sWords_m.pCurrentWord, outfp, outfilename,
@@ -998,6 +1016,7 @@ do  {
 					uiWordCount_m);
 		++uiWordCount_m;
 	  }
+#endif /* hab1013 */
 		/*
 		 *  Advance to next word
 		 */
@@ -1005,6 +1024,11 @@ do  {
 		sWords_m.pPreviousWord = sWords_m.pCurrentWord;
 		sWords_m.pCurrentWord = sWords_m.pNextWord;
 		}
+#ifndef hab1013
+	writeStampWord(sWords_m.pPreviousWord, outfp, outfilename,
+		   &sStamp_m);
+	updateStats(sWords_m.pPreviousWord->pTemplate);
+#endif /* hab1013 */
 	if (bMonitorProgress_m)			    /* If monitoring */
 	{
 	unsigned	uiFix;
@@ -1040,6 +1064,40 @@ do  {
 
 	} while (infilename[0]);      /* until the user wants no more */
 }
+
+#ifndef hab1013
+/*************************************************************************
+ * NAME
+ *    updateStats
+ * DESCRIPTION
+ *    Update the statistical counts for the word just processed.
+ * RETURN VALUE
+ *    none
+ */
+static void updateStats(WordTemplate *pWord)
+{
+  WordAnalysis *  pAnal;
+
+  if ( (pWord != NULL) &&
+	   ( (pWord->pszOrigWord    != NULL) &&
+	 (pWord->pszOrigWord[0] != NUL) ) )
+	{
+	  sStamp_m.uiAmbiguityCount = 0;
+	  for (pAnal = pWord->pAnalyses;
+	   pAnal != NULL;
+	   pAnal = pAnal->pNext)
+	sStamp_m.uiAmbiguityCount++;
+	  if (sStamp_m.uiAmbiguityCount < MAXAMBIG)
+	++auiAmbiguityLevels_m[sStamp_m.uiAmbiguityCount];
+	  else
+	++auiAmbiguityLevels_m[MAXAMBIG];
+	  if (bMonitorProgress_m)
+	showAmbiguousProgress(sStamp_m.uiAmbiguityCount,
+				  uiWordCount_m);
+	  ++uiWordCount_m;
+	}
+}
+#endif /* hab1013 */
 
 /*************************************************************************
  * NAME

@@ -4,13 +4,17 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 12		/* bug fix or other internal improvement */
-#define DATE       "April 22, 2003"	/* date of release version */
+#define PATCHLEVEL 13		/* bug fix or other internal improvement */
+#define DATE       "May 15, 2003"	/* date of release version */
 #define YEAR       "2003"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 15-May-2003  hab - fix bug which failed to remove an analysis in a word
+ * [1.0.13]            when its edge-conditions failed to produce a successful
+ *                     analysis in the following word.
  * 22-Apr-2003  hab - fix bug in delinking in feature-changing mode.
+ * [1.0.12]
  * 25-Oct-2002	SRMc - fix portability to Linux and OpenBSD using gcc and make
  * [1.0.11]
  * 17-Oct-2002  hab - reflect Steve's recent fixes to opaclib

@@ -1938,6 +1938,7 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 	 StampData *pStamp_in;
 {
   WordTemplate *word = pUnit_in->pCurrentWord->pTemplate;
+  WordTemplate *last_word;
   WordAnalysis *anp, *anp2;
   StampAnalysisList *trp, *trp2;
   int i, j;
@@ -1950,6 +1951,9 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
   int is_good_analysis[MAX_ANALYSES];
   int anal_count;
   int found_good_anal;
+#ifndef hab1013
+  int bLastWordHadAnalyses;
+#endif /* hab1013 */
 
   if ( word &&
 	   word->pszOrigWord &&
@@ -1994,6 +1998,7 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 	  max_conds = 1;
 	  edge_conds[0] = 0L;
 	}
+
 				/* run through all previous edge_conditions */
 	  for (i = 0; i < max_conds; i++)
 	{
@@ -2107,17 +2112,14 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 		}	   /* end of anp for loop */
 	}	   /* end of i for loop */
 
-#ifdef DEBUG_SILENT_FAILURE
-	  /* NB: this is not working correctly.  It will remove an analysis if
-	 any one of its edge conditions fails.  A given analysis, however,
-	 may have more than one edge condition.  That is, Word i may have
-	 two edge conditions.  Each analysis of Word i+1 will be tried for
-	 both edge conditions.  Just because one of these fails, it does
-	 follow that the other one also fails.  */
-	  if (last_word      != (WordTemplate *)NULL &&
+
+#ifndef hab1013
+	  if (pUnit_in->pPreviousWord != (StampWord *)NULL &&
+	  pUnit_in->pPreviousWord->pTemplate != (WordTemplate *)NULL &&
 	  found_good_anal)
 	{			/* found a good analysis in this word; */
-#ifndef SILENT_FAILURE
+	  last_word = pUnit_in->pPreviousWord->pTemplate;
+#ifdef SILENT_FAILURE
 		  fprintf(pStamp_in->pLogFP, "\nLast edge conds are:");
 	  for (i=0; i < max_conds; i++)
 		fprintf(pStamp_in->pLogFP, "\n\t%ld", last_edge_conds[i]);
@@ -2128,34 +2130,48 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 	  for (i=0; i < max_conds; i++)
 		fprintf(pStamp_in->pLogFP, "\n\t%ld", is_good_cond[i]);
 #endif
+	  bLastWordHadAnalyses = FALSE;
 				/* remove any analyses from previous word */
 				/* whose edge conditions failed to produce */
 				/* a good analysis */
 	  for (anp = last_word->pAnalyses,
-		   anal_count = 0;
+		 trp = pUnit_in->pPreviousWord->pTrAnalyses,
+		 anal_count = 0;
 		   anp != (WordAnalysis *)NULL &&
-		   anal_count < MAX_ANALYSES;
-		   anp = anp2, anal_count++)
+		 trp != (StampAnalysisList *)NULL &&
+		 anal_count < MAX_ANALYSES;
+		   anp = anp2,
+		 trp = trp2,
+		 anal_count++)
 		{
+		  bLastWordHadAnalyses = TRUE;
 		  anp2 = anp->pNext;
+		  trp2 = trp->pNext;
 		  for (i = 0; i < max_conds; i++)
 		if (last_edge_conds[anal_count] == edge_conds[i])
 		  if (!is_good_cond[i])
 			{
-#ifndef SILENT_FAILURE
-			  fprintf(pStamp_in->pLogFP, "\nRemoving: %s",
-				  anp->pszAnalysis);
-#endif
+			  if (do_trace && pStamp_in->pLogFP)
+			{
+			  fprintf(pStamp_in->pLogFP,
+				  "\nRemoving: %s from previous word (%s)",
+				  anp->pszAnalysis, last_word->pszOrigWord);
+			}
 			  last_word = remove_bad_anal(last_word, anp);
+			  pUnit_in->pPreviousWord->pTrAnalyses =
+			remove_bad_tranal(pUnit_in->pPreviousWord->pTrAnalyses,
+					  trp);
 			}
 		}			/* end of anlp loop */
-#ifndef SILENT_FAILURE
-	  if (last_word->pAnalyses == (WordAnalysis *)NULL)
-		fprintf(pStamp_in->pLogFP, "\nTF: %s [%s]",
-			last_word->pszOrigWord, last_word->pszRootNodeWord);
-#endif
+	  if (bLastWordHadAnalyses &&
+		  last_word->pAnalyses == (WordAnalysis *)NULL)
+		{			/* we've removed them all; let user know */
+		  fprintf(pStamp_in->pLogFP, "\nTF: %s [%s]",
+			  last_word->pszOrigWord,
+			  last_word->pszRootNodeWord);
+		}
 	}	/* end of check for finding a good analysis */
-#endif /* DEBUG_SILENT_FAILURE */
+#endif /* hab1013 */
 			/* save edge_conditions for next word. */
 	  for (i = 0; i < j; i++)
 	last_edge_conds[i] = new_edge_conds[i];
