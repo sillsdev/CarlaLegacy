@@ -29,7 +29,7 @@ It may be difficult to understand the need for the change in English, because ar
 			<groupName dataItem="agreeNumber" default="no">RAgreementNumber</groupName>
 			<prompt>Think about the various modifiers that can be included in a nominal phrase, as in the tree structure above.  Does your language have any marking on articles, demonstratives, adjectives, etc. to show number agreement with the head noun?</prompt>
 			<radio id="NPAgreeNoNumber" checked="yes" dataValue="no">No, there is no agreement, but number marking comes from the number or quantifier</radio>
-			<radio id="NPAgreeYesNumber" checked="yes" dataValue="yesNumber">Yes, like English, the various nominal modifiers may/must agree in number with the head noun</radio>
+			<radio id="NPAgreeYesNumber" checked="yes" dataValue="yes">Yes, like English, the various nominal modifiers may/must agree in number with the head noun</radio>
 		</radioGroup>
 		<radioGroup>
 			<groupName dataItem="agreeOther" default="no">RAgreementOther</groupName>

@@ -2,7 +2,7 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPArtPosition">
-	<title level="2">Nominal Phrase - Article &amp; Demonstrative Position</title>
+	<title level="2">Nominal Phrase - Article &amp; Demonstrative Position and Agreement Features</title>
 	<introduction>Now we are ready to build the next part of the phrase structure tree.  Look at the examples of noun phrases with articles and demonstratives that you keyed in (repeated below).</introduction>
 	<form section="np">
 		<textBox id="NPArtPosExample" dataItem="example"/>
@@ -11,7 +11,6 @@
 			<prompt>Does your language have articles and demonstratives?</prompt>
 			<radio id="NPArtAndDemNo" dataValue="no">No, neither one</radio>
 			<radio id="NPArtAndDemArt" dataValue="article">Only articles, no demonstratives</radio>
-
 			<radioGroup id="NPArtAndDemArtPosTable" show="swNPArtAndDemArt">
 				<groupName dataItem="artPos" default="unknown" position="yesSpec">RNPArtAndDemArtPos</groupName>
 				<prompt>Where does the article occur with respect to the noun?</prompt>
@@ -20,33 +19,28 @@
 				<radio id="NPArtAndDemArtPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
 				<radio id="NPArtAndDemArtPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
 			</radioGroup>
-
 			<radioGroup id="NPArtAndDemArtPosEitherorBothTable" show="swNPArtAndDemArtPosEitherorBoth">
 				<groupName dataItem="artEither" default="unrestricted">RNPArtAndDemArtPosEitherorBoth</groupName>
 				<prompt>Can all the articles appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemArtPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 				<radio id="NPArtAndDemArtPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
-
 			<radioGroup id="NPArtAndDemArtRequiredTable" show="swNPArtAndDemArt">
 				<groupName dataItem="artRequired" default="no">RNPArtAndDemArtRequired</groupName>
 				<prompt>Is an article required to be present in every nominal phrase?</prompt>
 				<radio id="NPArtAndDemArtRequiredNo" dataValue="no">No, an article is always optional</radio>
 				<radio id="NPArtAndDemArtRequiredMass" dataValue="mass">No, an article is optional with plural or mass nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
 				<radio id="NPArtAndDemArtRequiredYes" dataValue="yes">Yes, an article is always required</radio>
-
 				<radioGroup id="NPArtAndDemArtPosBothSidesRequiredTable" show="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
 					<groupName dataItem="artBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemArtPosBothRequired</groupName>
-					<prompt>In which position(s) is the article required to be present<span id="NPArtBothMass" show="swNPArtAndDemArtPosBothRequiredMass">for singular forms</span>? </prompt>
+					<prompt>In which position(s) is the article required to be present<span id="NPArtBothMass" show="swNPArtAndDemArtPosBothRequiredMass">  for singular forms</span>? </prompt>
 					<radio id="NPArtAndDemArtPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
-					<radio id="NPArtAndDemArtPosBothRequiredInitial" dataValue="initial">Initial is required and final is optional</radio>
-					<radio id="NPArtAndDemArtPosBothRequiredFinal" dataValue="final">Final is required and initial is optional</radio>
+					<radio id="NPArtAndDemArtPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
+					<radio id="NPArtAndDemArtPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
 					<radio id="NPArtAndDemArtPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
 				</radioGroup>
-
 			</radioGroup>
 			<radio id="NPArtAndDemDem" dataValue="demonstrative">Only demonstratives, no articles</radio>
-
 			<radioGroup id="NPArtAndDemDemPosTable" show="swNPArtAndDemDem">
 				<groupName dataItem="demPos" default="unknown" position="yesSpec">RNPArtAndDemDemPos</groupName>
 				<prompt>Where does the demonstrative occur with respect to the noun?</prompt>
@@ -55,38 +49,32 @@
 				<radio id="NPArtAndDemDemPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
 				<radio id="NPArtAndDemDemPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
 			</radioGroup>
-
 			<radioGroup id="NPArtAndDemDemPosEitherorBothTable" show="swNPArtAndDemDemPosEitherorBoth">
 				<groupName dataItem="demEither" default="unrestricted">RNPArtAndDemDemPosEitherorBoth</groupName>
 				<prompt>Can all the demonstratives appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemDemPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 				<radio id="NPArtAndDemDemPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
-
 			<radioGroup id="NPArtAndDemDemRequiredTable" show="swNPArtAndDemDem">
 				<groupName dataItem="demRequired" default="no">RNPArtAndDemDemRequired</groupName>
 				<prompt>Is a demonstrative required to be present in every nominal phrase?</prompt>
 				<radio id="NPArtAndDemDemRequiredNo" dataValue="no">No, a demonstrative is always optional</radio>
 				<radio id="NPArtAndDemDemRequiredMass" dataValue="mass">No, a demonstrative is optional with plural or mass nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
 				<radio id="NPArtAndDemDemRequiredYes" dataValue="yes">Yes, a demonstrative is always required</radio>
-
 				<radioGroup id="NPArtAndDemDemPosBothSidesRequiredTable" show="swNPArtAndDemDemPosBothSidesRequiredMassorYes">
 					<groupName dataItem="demBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemDemPosBothRequired</groupName>
-					<prompt>In which position(s) is the demonstrative required to be present<span id="NPDemBothMass" show="swNPArtAndDemDemPosBothRequiredMass">for singular forms</span>? </prompt>
+					<prompt>In which position(s) is the demonstrative required to be present<span id="NPDemBothMass" show="swNPArtAndDemDemPosBothRequiredMass">  for singular forms</span>? </prompt>
 					<radio id="NPArtAndDemDemPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
-					<radio id="NPArtAndDemDemPosBothRequiredInitial" dataValue="initial">Initial is required and final is optional</radio>
-					<radio id="NPArtAndDemDemPosBothRequiredFinal" dataValue="final">Final is required and initial is optional</radio>
+					<radio id="NPArtAndDemDemPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
+					<radio id="NPArtAndDemDemPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
 					<radio id="NPArtAndDemDemPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
 				</radioGroup>
-
 			</radioGroup>
 			<radio id="NPArtAndDemBoth" dataValue="both">Yes, both articles and demonstratives</radio>
-
 			<radioGroup id="NPArtAndDemBothTable" show="swNPArtAndDemBoth">
 				<groupName dataItem="artBothCooccur" default="no">RNPArtAndDemBoth</groupName>
 				<prompt>Do articles and demonstratives co-occur in the same nominal phrase?</prompt>
 				<radio id="NPArtAndDemBothCooccurNo" dataValue="no">No, they occur in the same position, like in English</radio>
-
 				<radioGroup id="NPArtAndDemBothCooccurNoPosTable" show="swNPArtAndDemBothCooccurNo">
 					<groupName dataItem="demOrArtPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurNoPos</groupName>
 					<prompt>Where does the demonstrative or article occur with respect to the noun?</prompt>
@@ -95,294 +83,382 @@
 					<radio id="NPArtAndDemBothCooccurNoPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
 					<radio id="NPArtAndDemBothCooccurNoPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
 				</radioGroup>
-
 				<radioGroup id="NPArtAndDemBothCooccurNoPosEitherorBothTable" show="swNPArtAndDemBothCooccurNoPosEitherorBoth">
 					<groupName dataItem="demOrArtEither" default="unrestricted">RNPArtAndDemBothCooccurNoPosEitherorBoth</groupName>
 					<prompt>Can all the demonstratives and articles appear on either side of the noun?</prompt>
 					<radio id="NPArtAndDemBothCooccurNoPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 					<radio id="NPArtAndDemBothCooccurNoPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
 				</radioGroup>
-
 				<radioGroup id="NPArtAndDemBothCooccurNoRequiredTable" show="swNPArtAndDemBothCooccurNo">
 					<groupName dataItem="demOrArtRequired" default="no">RNPArtAndDemBothCooccurNoRequired</groupName>
 					<prompt>Is a demonstrative or an article required to be present in every nominal phrase?</prompt>
 					<radio id="NPArtAndDemBothCooccurNoRequiredNo" dataValue="no">No, the presence of a demonstrative or an article is always optional</radio>
 					<radio id="NPArtAndDemBothCooccurNoRequiredMass" dataValue="mass">No, a demonstrative or an article is optional with plural or mass nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
 					<radio id="NPArtAndDemBothCooccurNoRequiredYes" dataValue="yes">Yes, either a demonstrative or an article is always required</radio>
-
 					<radioGroup id="NPArtAndDemBothCooccurNoPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurNoPosBothSidesRequiredMassorYes">
 						<groupName dataItem="demOrArtBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurNoPosBothRequired</groupName>
-						<prompt>In which position(s) is the demonstrative or article required to be present<span id="NPBothCooccurNoBothMass" show="swNPArtAndDemBothCooccurNoPosBothRequiredMass">for singular forms</span>? </prompt>
+						<prompt>In which position(s) is the demonstrative or article required to be present<span id="NPBothCooccurNoBothMass" show="swNPArtAndDemBothCooccurNoPosBothRequiredMass">  for singular forms</span>? </prompt>
 						<radio id="NPArtAndDemBothCooccurNoPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
-						<radio id="NPArtAndDemBothCooccurNoPosBothRequiredInitial" dataValue="initial">Initial is required and final is optional</radio>
-						<radio id="NPArtAndDemBothCooccurNoPosBothRequiredFinal" dataValue="final">Final is required and initial is optional</radio>
+						<radio id="NPArtAndDemBothCooccurNoPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
+						<radio id="NPArtAndDemBothCooccurNoPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
 						<radio id="NPArtAndDemBothCooccurNoPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
 					</radioGroup>
-
 				</radioGroup>
-			<radio id="NPArtAndDemBothCooccurYes" dataValue="yes">Yes, both can be present in a single nominal phrase</radio>
-
-			<radioGroup id="NPArtAndDemBothCooccurYesDemPosTable" show="swNPArtAndDemBothCooccurYes">
-				<groupName dataItem="demAndArtDemPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesDemPos</groupName>
-				<prompt>Where does the demonstrative occur with respect to the noun?</prompt>
-				<radio id="NPArtAndDemBothCooccurYesDemPosBefore" dataValue="before">Before</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemPosAfter" dataValue="after">After</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
-			</radioGroup>
-
-			<radioGroup id="NPArtAndDemBothCooccurYesDemPosEitherorBothTable" show="swNPArtAndDemBothCooccurYesDemPosEitherorBoth">
-				<groupName dataItem="demAndArtDemEither" default="unrestricted">RNPArtAndDemBothCooccurYesDemPosEitherorBoth</groupName>
-				<prompt>Can all the demonstratives appear on either side of the noun?</prompt>
-				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
-			</radioGroup>
-
-			<radioGroup id="NPArtAndDemBothCooccurYesDemRequiredTable" show="swNPArtAndDemBothCooccurYes">
-				<groupName dataItem="demAndArtDemRequired" default="no">RNPArtAndDemBothCooccurYesDemRequired</groupName>
-				<prompt>Is a demonstrative required to be present in every nominal phrase?</prompt>
-				<radio id="NPArtAndDemBothCooccurYesDemRequiredNo" dataValue="no">No, a demonstrative is always optional</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemRequiredMass" dataValue="mass">No, a demonstrative is optional with plural or mass nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemRequiredYes" dataValue="yes">Yes, a demonstrative is always required</radio>
-
-				<radioGroup id="NPArtAndDemBothCooccurYesDemPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMassorYes">
-					<groupName dataItem="demAndArtDemBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesDemPosBothRequired</groupName>
-					<prompt>In which position(s) is the demonstrative required to be present<span id="NPArtandDemBothCooccurYesDemBothMass" show="swNPArtAndDemBothCooccurYesDemPosBothRequiredMass">for singular forms</span>? </prompt>
-					<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
-					<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredInitial" dataValue="initial">Initial is required and final is optional</radio>
-					<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredFinal" dataValue="final">Final is required and initial is optional</radio>
-					<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
+				<radio id="NPArtAndDemBothCooccurYes" dataValue="yes">Yes, both can be present in a single nominal phrase</radio>
+				<radioGroup id="NPArtAndDemBothCooccurYesDemPosTable" show="swNPArtAndDemBothCooccurYes">
+					<groupName dataItem="demAndArtDemPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesDemPos</groupName>
+					<prompt>Where does the demonstrative occur with respect to the noun?</prompt>
+					<radio id="NPArtAndDemBothCooccurYesDemPosBefore" dataValue="before">Before</radio>
+					<radio id="NPArtAndDemBothCooccurYesDemPosAfter" dataValue="after">After</radio>
+					<radio id="NPArtAndDemBothCooccurYesDemPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
+					<radio id="NPArtAndDemBothCooccurYesDemPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
 				</radioGroup>
-</radioGroup>
-
-<radioGroup id="NPArtAndDemBothCooccurYesArtPosTable" show="swNPArtAndDemBothCooccurYes">
-				<groupName dataItem="demAndArtArtPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesArtPos</groupName>
-				<prompt>Where does the article occur with respect to the noun?</prompt>
-				<radio id="NPArtAndDemBothCooccurYesArtPosBefore" dataValue="before">Before</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtPosAfter" dataValue="after">After</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
-			</radioGroup>
-
-			<radioGroup id="NPArtAndDemBothCooccurYesArtPosEitherorBothTable" show="swNPArtAndDemBothCooccurYesArtPosEitherorBoth">
-				<groupName dataItem="demAndArtArtEither" default="unrestricted">RNPArtAndDemBothCooccurYesArtPosEitherorBoth</groupName>
-				<prompt>Can all the articles appear on either side of the noun?</prompt>
-				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
-			</radioGroup>
-
-			<radioGroup id="NPArtAndDemBothCooccurYesArtRequiredTable" show="swNPArtAndDemBothCooccurYes">
-				<groupName dataItem="demAndArtArtRequired" default="no">RNPArtAndDemBothCooccurYesArtRequired</groupName>
-				<prompt>Is an article required to be present in every nominal phrase?</prompt>
-				<radio id="NPArtAndDemBothCooccurYesArtRequiredNo" dataValue="no">No, an article is always optional</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtRequiredMass" dataValue="mass">No, an article is optional with plural or mass nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtRequiredYes" dataValue="yes">Yes, an article is always required</radio>
-
-				<radioGroup id="NPArtAndDemBothCooccurYesArtPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMassorYes">
-					<groupName dataItem="demAndArtArtBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesArtPosBothRequired</groupName>
-					<prompt>In which position(s) is the article required to be present<span id="NPArtAndDemArtBothMass" show="swNPArtAndDemBothCooccurYesArtPosBothRequiredMass">for singular forms</span>? </prompt>
-					<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
-					<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredInitial" dataValue="initial">Initial is required and final is optional</radio>
-					<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredFinal" dataValue="final">Final is required and initial is optional</radio>
-					<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
+				<radioGroup id="NPArtAndDemBothCooccurYesDemPosEitherorBothTable" show="swNPArtAndDemBothCooccurYesDemPosEitherorBoth">
+					<groupName dataItem="demAndArtDemEither" default="unrestricted">RNPArtAndDemBothCooccurYesDemPosEitherorBoth</groupName>
+					<prompt>Can all the demonstratives appear on either side of the noun?</prompt>
+					<radio id="NPArtAndDemBothCooccurYesDemPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
+					<radio id="NPArtAndDemBothCooccurYesDemPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
 				</radioGroup>
-			</radioGroup>
-						</radioGroup>
+				<radioGroup id="NPArtAndDemBothCooccurYesDemRequiredTable" show="swNPArtAndDemBothCooccurYes">
+					<groupName dataItem="demAndArtDemRequired" default="no">RNPArtAndDemBothCooccurYesDemRequired</groupName>
+					<prompt>Is a demonstrative required to be present in every nominal phrase?</prompt>
+					<radio id="NPArtAndDemBothCooccurYesDemRequiredNo" dataValue="no">No, a demonstrative is always optional</radio>
+					<radio id="NPArtAndDemBothCooccurYesDemRequiredMass" dataValue="mass">No, a demonstrative is optional with plural or mass nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
+					<radio id="NPArtAndDemBothCooccurYesDemRequiredYes" dataValue="yes">Yes, a demonstrative is always required</radio>
+					<radioGroup id="NPArtAndDemBothCooccurYesDemPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMassorYes">
+						<groupName dataItem="demAndArtDemBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesDemPosBothRequired</groupName>
+						<prompt>In which position(s) is the demonstrative required to be present<span id="NPArtandDemBothCooccurYesDemBothMass" show="swNPArtAndDemBothCooccurYesDemPosBothRequiredMass">   for singular forms</span>? </prompt>
+						<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
+						<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
+						<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
+						<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
 					</radioGroup>
-			<instruction id="NPArtDemEitherSideRestrictedInstruction" show="swNPArtDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any articles or demonstratives which can occur on either side.</instruction>
-<instruction id="NPArtEitherSideRestrictedInstruction" show="swNPArtEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any articles which can occur on either side.</instruction>
-<instruction id="NPDemEitherSideRestrictedInstruction" show="swNPDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any demonstratives which can occur on either side.</instruction>
-
-<instruction>ADD INSTRUCTIONS FOR AGREEMENT BASED ON ANSWERS IN NPMAIN!!!  SEE NPArtAgreement.xml</instruction>
-<br/>
+				</radioGroup>
+				<radioGroup id="NPArtAndDemBothCooccurYesArtPosTable" show="swNPArtAndDemBothCooccurYes">
+					<groupName dataItem="demAndArtArtPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesArtPos</groupName>
+					<prompt>Where does the article occur with respect to the noun?</prompt>
+					<radio id="NPArtAndDemBothCooccurYesArtPosBefore" dataValue="before">Before</radio>
+					<radio id="NPArtAndDemBothCooccurYesArtPosAfter" dataValue="after">After</radio>
+					<radio id="NPArtAndDemBothCooccurYesArtPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
+					<radio id="NPArtAndDemBothCooccurYesArtPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
+				</radioGroup>
+				<radioGroup id="NPArtAndDemBothCooccurYesArtPosEitherorBothTable" show="swNPArtAndDemBothCooccurYesArtPosEitherorBoth">
+					<groupName dataItem="demAndArtArtEither" default="unrestricted">RNPArtAndDemBothCooccurYesArtPosEitherorBoth</groupName>
+					<prompt>Can all the articles appear on either side of the noun?</prompt>
+					<radio id="NPArtAndDemBothCooccurYesArtPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
+					<radio id="NPArtAndDemBothCooccurYesArtPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
+				</radioGroup>
+				<radioGroup id="NPArtAndDemBothCooccurYesArtRequiredTable" show="swNPArtAndDemBothCooccurYes">
+					<groupName dataItem="demAndArtArtRequired" default="no">RNPArtAndDemBothCooccurYesArtRequired</groupName>
+					<prompt>Is an article required to be present in every nominal phrase?</prompt>
+					<radio id="NPArtAndDemBothCooccurYesArtRequiredNo" dataValue="no">No, an article is always optional</radio>
+					<radio id="NPArtAndDemBothCooccurYesArtRequiredMass" dataValue="mass">No, an article is optional with plural or mass nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
+					<radio id="NPArtAndDemBothCooccurYesArtRequiredYes" dataValue="yes">Yes, an article is always required</radio>
+					<radioGroup id="NPArtAndDemBothCooccurYesArtPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMassorYes">
+						<groupName dataItem="demAndArtArtBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesArtPosBothRequired</groupName>
+						<prompt>In which position(s) is the article required to be present<span id="NPArtAndDemArtBothMass" show="swNPArtAndDemBothCooccurYesArtPosBothRequiredMass">  for singular forms</span>? </prompt>
+						<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
+						<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
+						<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
+						<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
+					</radioGroup>
+				</radioGroup>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="NPArtDemEitherSideRestrictedInstruction" show="swNPArtDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any articles or demonstratives which can occur on either side.</instruction>
+		<instruction id="NPArtEitherSideRestrictedInstruction" show="swNPArtEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any articles which can occur on either side.</instruction>
+		<instruction id="NPDemEitherSideRestrictedInstruction" show="swNPDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any demonstratives which can occur on either side.</instruction>
+		<instruction id="NPArtAgreementNumberInstruction" show="swNPArtAgreementNumberYes">
+To handle the number agreement, in the lexicon:
+<ul>
+				<li>Mark the<span id="NPArtOnlySingularSpan" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPDemOnlySingularSpan" show="swNPArtAndDemDem">demonstratives</span>
+					<span id="NPArtAndDemSingularSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with singular nouns with the feature <feature>singular</feature>.</li>
+				<li>Mark the<span id="NPArtOnlyPluralSpan" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPDemOnlyPluralSpan" show="swNPArtAndDemDem">demonstratives</span>
+					<span id="NPArtAndDemPluralSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with plural nouns with the feature <feature>plural</feature>.</li>
+				<li>Do not add any feature for number agreement to ones like <example>the</example> in English which can go with either singular or plural nouns.</li>
+				<li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate<span id="NPArtOnlyDualSpan" show="swNPArtAndDemArt"> articles.</span>
+					<span id="NPDemOnlyDualSpan" show="swNPArtAndDemDem">demonstratives.</span>
+					<span id="NPArtAndDemDualSpan" show="swNPArtAndDemBoth">articles and demonstratives.</span>
+				</li>
+			</ul>
+We will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
+<ul>
+				<li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
+				<li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don't take an affix.</li>
+				<li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+				<li id="NPArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature> so that<span id="NPArtOnlyMassSpan" show="swNPArtAndDemArt"> an article</span>
+					<span id="NPDemOnlyMassSpan" show="swNPArtAndDemDem">a demonstrative</span>
+					<span id="NPArtAndDemMassSpan" show="swNPArtAndDemBoth">an article or demonstrative </span>will not be required.</li>
+			</ul>
+		</instruction>
+		<instruction id="NPArtAgreementAnimacyInstruction" show="swNPArtAgreementAnimacyYes">
+To handle animacy agreement:
+<ul>
+				<li>Mark the<span id="NPArtOnlyAnimateSpan" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPDemOnlyAnimateSpan" show="swNPArtAndDemDem">demonstratives</span>
+					<span id="NPArtAndDemAnimateSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+				<li>Mark the<span id="NPArtOnlyInanimateSpan" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPDemOnlyInanimateSpan" show="swNPArtAndDemDem">demonstratives</span>
+					<span id="NPArtAndDemInanimateSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+				<li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
+			</ul>
+We will assume that all (common) nouns are inanimate by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  (Proper names will be dealt with in <section number="6">Pronouns and Proper Names</section> and will be assumed to be animate by default.)
+</instruction>
+		<instruction id="NPArtAgreementGenderInstruction" show="swNPArtAgreementGenderYes">
+Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any<span id="NPArtOnlyGenderSpan" show="swNPArtAndDemArt"> articles</span>
+			<span id="NPDemOnlyGenderSpan" show="swNPArtAndDemDem">demonstratives</span>
+			<span id="NPArtAndDemGenderSpan" show="swNPArtAndDemBoth">articles or demonstratives </span>that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.<br/>
+			<br/>
+We will assume that all nouns are masculine by default.  Therefore, only the feminine and neuter nouns need to be marked.  In the lexicon:
+<ul>
+				<li>Add the feature <feature>feminine</feature> to any affixes which can be added to a noun to make it feminine.  Add the feature <feature>neuter</feature> to any affixes which can be added to a noun to make it neuter.</li>
+				<li>Also, add the feature <feature>feminine</feature> to any nouns which are inherently feminine, or exceptionally don't take an affix.  Similarly, add the feature <feature>neuter</feature> to any nouns which are inherently neuter, or exceptionally don't take an affix.</li>
+				<li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of the<span id="NPArtOnlyGender2Span" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPDemOnlyGender2Span" show="swNPArtAndDemDem">demonstratives</span>
+					<span id="NPArtAndDemGender2Span" show="swNPArtAndDemBoth">articles and demonstratives </span>based on gender need to have two entries in the lexicon, one marked with the feature <feature>feminine</feature> and the other for masculine (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+			</ul>
+		</instruction>
+		<instruction id="NPArtAgreementClassInstruction" show="swNPArtAgreementClassYes">
+To handle class marking and agreement:
+<ul>
+				<li>Mark the<span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span>
+					<span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 99.</li>
+				<li>It may be the case that the same affixes that mark the class number on articles and demonstratives (and possibly adjectives too) also mark the class number on nouns.  If this is the case in your language, simply add the class feature to the affixes, and all the words will automatically come from the morphological parser with the class number marked.</li>
+				<li>Any cases where<span id="NPArtOnlyClass2Span" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPDemOnlyClass2Span" show="swNPArtAndDemDem">demonstratives</span>
+					<span id="NPArtAndDemClass2Span" show="swNPArtAndDemBoth">articles, demonstratives </span>or nouns do not have an affix which marks the class will require marking of the class feature on the particular lexical item in the lexicon.</li>
+			</ul>
+		</instruction>
+		<br/>
 		<buttons>
 			<button id="NPArtPosBack" value="Back" goto="NPArtCase.htm"/>
 			<button id="NPArtPosNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
-<showWhen id="swNPArtAndDemArt">
-<whenRadio button="NPArtAndDemArt"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemArtPosEitherorBoth">
-<whenRadio button="NPArtAndDemArt"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemArtPosEitherSide"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemArtPosBothSides"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
-<whenRadio button="NPArtAndDemArt"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemArtPosBothSides"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemArtRequiredMass"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemArtRequiredYes"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemArtPosBothRequiredMass">
-<whenRadio button="NPArtAndDemArt"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemArtPosBothSides"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemArtRequiredMass"></whenRadio>
-</showWhen>
-
-<showWhen id="swNPArtAndDemDem">
-<whenRadio button="NPArtAndDemDem"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemDemPosEitherorBoth">
-<whenRadio button="NPArtAndDemDem"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemDemPosEitherSide"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemDemPosBothSides"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemDemPosBothSidesRequiredMassorYes">
-<whenRadio button="NPArtAndDemDem"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemDemPosBothSides"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemDemRequiredMass"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemDemRequiredYes"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemDemPosBothRequiredMass">
-<whenRadio button="NPArtAndDemDem"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemDemPosBothSides"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemDemRequiredMass"></whenRadio>
-</showWhen>
-
-<showWhen id="swNPArtAndDemBoth">
-	<whenRadio button="NPArtAndDemBoth"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurNo">
-<whenRadio button="NPArtAndDemBoth"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurNo"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurNoPosEitherorBoth">
-<whenRadio button="NPArtAndDemBothCooccurNo"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemBothCooccurNoPosEitherSide"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurNoPosBothSidesRequiredMassorYes">
-<whenRadio button="NPArtAndDemBothCooccurNo"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemBothCooccurNoRequiredYes"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurNoPosBothRequiredMass">
-<whenRadio button="NPArtAndDemBothCooccurNo"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"></whenRadio>
-</showWhen>
-
-<showWhen id="swNPArtAndDemBothCooccurYes">
-<whenRadio button="NPArtAndDemBoth"></whenRadio>
-<and/>
-	<whenRadio button="NPArtAndDemBothCooccurYes"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurYesDemPosEitherorBoth">
-<whenRadio button="NPArtAndDemBothCooccurYes"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemBothCooccurYesDemPosEitherSide"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMassorYes">
-<whenRadio button="NPArtAndDemBothCooccurYes"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredYes"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurYesDemPosBothRequiredMass">
-<whenRadio button="NPArtAndDemBothCooccurYes"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurYesArtPosEitherorBoth">
-<whenRadio button="NPArtAndDemBothCooccurYes"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemBothCooccurYesArtPosEitherSide"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMassorYes">
-<whenRadio button="NPArtAndDemBothCooccurYes"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredYes"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swNPArtAndDemBothCooccurYesArtPosBothRequiredMass">
-<whenRadio button="NPArtAndDemBothCooccurYes"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"></whenRadio>
-</showWhen>
-
-<showWhen id="swNPArtEitherSideRestricted">
- <whenRadio button="NPArtAndDemArt"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemArtPosEitherSideRestricted"></whenRadio>
-</showWhen>
-<showWhen id="swNPDemEitherSideRestricted">
- <whenRadio button="NPArtAndDemDem"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemDemPosEitherSideRestricted"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtDemEitherSideRestricted">
- <whenRadio button="NPArtAndDemBoth"></whenRadio>
-<and/>
-<openParen/>
-<whenRadio button="NPArtAndDemBothCooccurYes"></whenRadio>
-<and/> <openParen/>
-<whenRadio button="NPArtAndDemBothCooccurYesArtPosEitherSideRestricted"></whenRadio>
-<or/>
-<whenRadio button="NPArtAndDemBothCooccurYesDemPosEitherSideRestricted"></whenRadio>
-<closeParen/>
-<or/>
-<openParen/>
-<whenRadio button="NPArtAndDemBothCooccurNo"></whenRadio>
-<and/>
-<whenRadio button="NPArtAndDemBothCooccurNoPosEitherSideRestricted"></whenRadio>
-<closeParen/> <closeParen/>
-</showWhen>
+	<showWhen id="swNPArtAndDemArt">
+		<whenRadio button="NPArtAndDemArt"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArtPosEitherorBoth">
+		<whenRadio button="NPArtAndDemArt"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemArtPosEitherSide"/>
+		<or/>
+		<whenRadio button="NPArtAndDemArtPosBothSides"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
+		<whenRadio button="NPArtAndDemArt"/>
+		<and/>
+		<whenRadio button="NPArtAndDemArtPosBothSides"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemArtRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemArtRequiredYes"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArtPosBothRequiredMass">
+		<whenRadio button="NPArtAndDemArt"/>
+		<and/>
+		<whenRadio button="NPArtAndDemArtPosBothSides"/>
+		<and/>
+		<whenRadio button="NPArtAndDemArtRequiredMass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDem">
+		<whenRadio button="NPArtAndDemDem"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDemPosEitherorBoth">
+		<whenRadio button="NPArtAndDemDem"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemDemPosEitherSide"/>
+		<or/>
+		<whenRadio button="NPArtAndDemDemPosBothSides"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDemPosBothSidesRequiredMassorYes">
+		<whenRadio button="NPArtAndDemDem"/>
+		<and/>
+		<whenRadio button="NPArtAndDemDemPosBothSides"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemDemRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemDemRequiredYes"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDemPosBothRequiredMass">
+		<whenRadio button="NPArtAndDemDem"/>
+		<and/>
+		<whenRadio button="NPArtAndDemDemPosBothSides"/>
+		<and/>
+		<whenRadio button="NPArtAndDemDemRequiredMass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBoth">
+		<whenRadio button="NPArtAndDemBoth"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNo">
+		<whenRadio button="NPArtAndDemBoth"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurNo"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNoPosEitherorBoth">
+		<whenRadio button="NPArtAndDemBothCooccurNo"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurNoPosEitherSide"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNoPosBothSidesRequiredMassorYes">
+		<whenRadio button="NPArtAndDemBothCooccurNo"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurNoRequiredYes"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNoPosBothRequiredMass">
+		<whenRadio button="NPArtAndDemBothCooccurNo"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurNoPosBothSides"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYes">
+		<whenRadio button="NPArtAndDemBoth"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurYes"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesDemPosEitherorBoth">
+		<whenRadio button="NPArtAndDemBothCooccurYes"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemPosEitherSide"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMassorYes">
+		<whenRadio button="NPArtAndDemBothCooccurYes"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredYes"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesDemPosBothRequiredMass">
+		<whenRadio button="NPArtAndDemBothCooccurYes"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemPosBothSides"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesArtPosEitherorBoth">
+		<whenRadio button="NPArtAndDemBothCooccurYes"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtPosEitherSide"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMassorYes">
+		<whenRadio button="NPArtAndDemBothCooccurYes"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredYes"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesArtPosBothRequiredMass">
+		<whenRadio button="NPArtAndDemBothCooccurYes"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtPosBothSides"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
+	</showWhen>
+	<showWhen id="swNPArtEitherSideRestricted">
+		<whenRadio button="NPArtAndDemArt"/>
+		<and/>
+		<whenRadio button="NPArtAndDemArtPosEitherSideRestricted"/>
+	</showWhen>
+	<showWhen id="swNPDemEitherSideRestricted">
+		<whenRadio button="NPArtAndDemDem"/>
+		<and/>
+		<whenRadio button="NPArtAndDemDemPosEitherSideRestricted"/>
+	</showWhen>
+	<showWhen id="swNPArtDemEitherSideRestricted">
+		<whenRadio button="NPArtAndDemBoth"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurYes"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtPosEitherSideRestricted"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemPosEitherSideRestricted"/>
+		<closeParen/>
+		<or/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemBothCooccurNo"/>
+		<and/>
+		<whenRadio button="NPArtAndDemBothCooccurNoPosEitherSideRestricted"/>
+		<closeParen/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPArtAgreementNumberYes">
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+		<and/>
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAgreementAnimacyYes">
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+		<and/>
+		<whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
+	</showWhen>
+	<showWhen id="swNPArtAgreementGenderYes">
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+		<and/>
+		<whenValue element="np" attr="agreeOther" value="yesGender"/>
+	</showWhen>
+	<showWhen id="swNPArtAgreementClassYes">
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+		<and/>
+		<whenValue element="np" attr="agreeOther" value="yesClass"/>
+	</showWhen>
+	<showWhen id="swNPArtDemMassYes">
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPArtAndDemArtRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemDemRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"/>
+		<or/>
+		<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
+		<closeParen/>
+	</showWhen>
 </page>

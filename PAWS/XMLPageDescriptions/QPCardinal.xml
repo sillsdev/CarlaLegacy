@@ -20,10 +20,10 @@ written as separate words, such as <example>one hundred thirty three</example>. 
 		<prompt>Key any examples of compound numbers here:</prompt>
 		<textBox id="QPCardinalCompoundExample" dataItem="cardinalCompoundExample" cols="50"/>
 		<radioGroup>
-			<groupName dataItem="cardinalHeadPos" default="final" position="yesHead">RCardinalHead</groupName>
+			<groupName dataItem="cardinalHeadPos" default="after" position="yesHead">RCardinalHead</groupName>
 			<prompt>Based on these examples, where is the head in the cardinal compound numbers?</prompt>
-			<radio id="CardinalHeadInitial" checked="yes" dataValue="initial">Initial, the numbers zero through nine occur initially and any conjunctions occur in the initial part of the compound. </radio>
-			<radio id="CardinalHeadFinal" checked="yes" dataValue="final">Final, the numbers zero through nine occur finally and any conjunctions occur in the final part of the compound.</radio>
+			<radio id="CardinalHeadInitial" checked="yes" dataValue="before">Initial, the numbers zero through nine occur initially and any conjunctions occur in the initial part of the compound. </radio>
+			<radio id="CardinalHeadFinal" checked="yes" dataValue="after">Final, the numbers zero through nine occur finally and any conjunctions occur in the final part of the compound.</radio>
 		</radioGroup>
 		<br/>
 		<buttons>

@@ -2,65 +2,65 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPPossessors2">
-	<title>Nominal Phrase - Possessors Part 2</title>
+	<title>Nominal Phrase - Possessor Case Marking</title>
 	<form section="np">
-<radioGroup>
-	<groupName default="no" dataItem="possMarked">RNPPossMarked</groupName>
-	<prompt>Does your language have any special marking to distinguish possessors from any other nominal phrase?</prompt>
-	<radio id="NPPossMarkedNo" dataValue="no">No, there is no special marking to indicate genitive case.  (Agreement with an affix on the possessed noun, if needed, is also handled by this.)
+		<radioGroup>
+			<groupName  dataItem="possMarked" default="no">RNPPossMarked</groupName>
+			<prompt>Does your language have any special marking to distinguish possessors from any other nominal phrase?</prompt>
+			<radio id="NPPossMarkedNo" dataValue="no">No, there is no special marking to indicate genitive case.
 </radio>
-<radioGroup id="NPPossMarkedNoTable">
-	<groupName default="unknown" dataItem="possNounPos1" position="yesSpec">RNPPossMarkedNoPos</groupName>
-	<prompt>Where does the possessor occur with respect to the noun being possessed?</prompt>
-	<radio id="NPPossMarkedNoPosBefore" dataValue="before">Before the noun</radio>
-	<radio id="NPPossMarkedNoPosAfter" dataValue="after">After the noun</radio>
-	<radio id="NPPossMarkedNoPosEitherSide" dataValue="either">Either side of the noun</radio>
-</radioGroup>
-	<radio id="NPPossMarkedYesAffix" dataValue="yesAffix">Yes, the head noun within the possessor is syntactically marked via an affix.  (Agreement with an affix on the possessed noun, if needed, is also handled by this.)
+			<radioGroup id="NPPossMarkedNoTable" show="swNPPossMarkedNo">
+				<groupName default="unknown" dataItem="possNounPos1" position="yesSpec">RNPPossMarkedNoPos</groupName>
+				<prompt>Where does the possessor occur with respect to the noun being possessed?</prompt>
+				<radio id="NPPossMarkedNoPosBefore" dataValue="before">Before the noun</radio>
+				<radio id="NPPossMarkedNoPosAfter" dataValue="after">After the noun</radio>
+				<radio id="NPPossMarkedNoPosEitherSide" dataValue="either">Either side of the noun</radio>
+			</radioGroup>
+			<radio id="NPPossMarkedYesAffix" dataValue="yesAffix">Yes, the head noun within the possessor is syntactically marked via an affix.  (Agreement with an affix on the possessed noun, if needed, is also handled by this.)
 </radio>
-<radioGroup id="NPPossMarkedYesAffixTable">
-	<groupName default="unknown" dataItem="possNounPos2" position="yesSpec">RNPPossMarkedYesAffixPos</groupName>
-	<prompt>Where does the possessor occur with respect to the noun being possessed?</prompt>
-	<radio id="NPPossMarkedYesAffixPosBefore" dataValue="before">Before the noun</radio>
-	<radio id="NPPossMarkedYesAffixPosAfter" dataValue="after">After the noun</radio>
-	<radio id="NPPossMarkedYesAffixPosEitherSide" dataValue="either">Either side of the noun</radio>
-</radioGroup>
-	<radio id="NPPossMarkedYesClitic" dataValue="yesClitic">Yes, the whole possessive phrase is syntactically marked via a phrasal clitic. (Agreement
+			<radioGroup id="NPPossMarkedYesAffixTable">
+				<groupName default="unknown" dataItem="possNounPos2" position="yesSpec">RNPPossMarkedYesAffixPos</groupName>
+				<prompt>Where does the possessor occur with respect to the noun being possessed?</prompt>
+				<radio id="NPPossMarkedYesAffixPosBefore" dataValue="before">Before the noun</radio>
+				<radio id="NPPossMarkedYesAffixPosAfter" dataValue="after">After the noun</radio>
+				<radio id="NPPossMarkedYesAffixPosEitherSide" dataValue="either">Either side of the noun</radio>
+			</radioGroup>
+			<radio id="NPPossMarkedYesClitic" dataValue="yesClitic">Yes, the whole possessive phrase is syntactically marked via a phrasal clitic. (Agreement
 		with an affix on the possessed noun, if needed, is also handled by this.)
 </radio>
-<radioGroup id="NPPossMarkedYesCliticTable">
-	<groupName default="no" dataItem="possCliticWord">RNPPossMarkedYesCliticWord</groupName>
-	<prompt>Is the phrasal clitic written as a separate word?</prompt>
-	<radio id="NPPossMarkedYesCliticWordNo" dataValue="no">No, like in English, it attaches to the closest word (can be either the preceding or following word).
+			<radioGroup id="NPPossMarkedYesCliticTable">
+				<groupName default="no" dataItem="possCliticWord">RNPPossMarkedYesCliticWord</groupName>
+				<prompt>Is the phrasal clitic written as a separate word?</prompt>
+				<radio id="NPPossMarkedYesCliticWordNo" dataValue="no">No, like in English, it attaches to the closest word (can be either the preceding or following word).
 </radio>
-	<radio id="NPPossMarkedYesCliticWordYes" dataValue="yes">Yes</radio>
-</radioGroup>
-<radioGroup id="NPPossMarkedYesCliticRequiredTable">
-	<groupName default="no" dataItem="possCliticRequired">RNPPossMarkedYesCliticRequired</groupName>
-	<prompt>Is this possessive marker required on all possessors (other than pronouns)?</prompt>
-	<radio id="NPPossMarkedYesCliticRequiredNo" dataValue="no">No, it is optional in some cases</radio>
-	<radio id="NPPossMarkedYesCliticRequiredYes" dataValue="yes">Yes, it is always required</radio>
-<radioGroup id="NPPossMarkedYesCliticRequiredPosTable">
-	<groupName default="before" dataItem="possCliticPossPos">RNPPossMarkedYesCliticRequiredPos</groupName>
-	<prompt>Where does the possessive marker occur with respect to the possessor?</prompt>
-	<radio id="NPPossMarkedYesCliticRequiredPossPosBefore" dataValue="before">Before the possessor</radio>
-	<radio id="NPPossMarkedYesCliticRequiredPossPosAfter" dataValue="after">After the possessor</radio>
-<radioGroup id="NPPossMarkedYesCliticRequiredNounPosTable">
-	<groupName default="unknown" dataItem="possNounPos3" position="yesSpec">RNPPossMarkedYesCliticRequiredNounPos</groupName>
-	<prompt>Where does the possessor occur with respect to the noun being possessed?</prompt>
-	<radio id="NPPossMarkedYesCliticRequiredNounPosBefore" dataValue="before">Before the noun</radio>
-	<radio id="NPPossMarkedYesCliticRequiredNounPosAfter" dataValue="after">After the noun</radio>
-	<radio id="NPPossMarkedYesCliticRequiredNounPosEitherSide" dataValue="either">Either side of the noun</radio>
-</radioGroup>
-</radioGroup>
-</radioGroup>
-</radioGroup>
-<instruction id="NPPossMarkedYesAffixInstruction">In the lexicon, mark the affix with the feature <feature>genitive</feature>.</instruction>
-<instruction id="NPPossMarkedYesCliticWordNoInstruction">You need to write a CC table pre-pass that will split the clitic into a separate word.  Then add a root entry to your lexicon for that clitic, and add the feature <feature>Poss</feature> to assure the correct category and genitive case feature for the syntactic parser.  [Note that this may be a little more complicated.  For example, in English <example>'s</example> can also be the contraction of is or has, so those also need to have root entries and the .ana file will have a three-way ambiguity.  The syntactic parser will then disambiguate it.  In addition, regular English plurals have a different form for the possessive (e.g. <example>boys'</example>), so the CC table must change <example>___s'</example> to <example>___s 's</example> and <example>___'s</example> to <example>____  's</example>.]</instruction>
-<instruction id="NPPossMarkedYesCliticWordYesInstruction">In the lexicon, mark this entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
+				<radio id="NPPossMarkedYesCliticWordYes" dataValue="yes">Yes</radio>
+			</radioGroup>
+			<radioGroup id="NPPossMarkedYesCliticRequiredTable">
+				<groupName default="no" dataItem="possCliticRequired">RNPPossMarkedYesCliticRequired</groupName>
+				<prompt>Is this possessive marker required on all possessors (other than pronouns)?</prompt>
+				<radio id="NPPossMarkedYesCliticRequiredNo" dataValue="no">No, it is optional in some cases</radio>
+				<radio id="NPPossMarkedYesCliticRequiredYes" dataValue="yes">Yes, it is always required</radio>
+				<radioGroup id="NPPossMarkedYesCliticRequiredPosTable">
+					<groupName default="before" dataItem="possCliticPossPos">RNPPossMarkedYesCliticRequiredPos</groupName>
+					<prompt>Where does the possessive marker occur with respect to the possessor?</prompt>
+					<radio id="NPPossMarkedYesCliticRequiredPossPosBefore" dataValue="before">Before the possessor</radio>
+					<radio id="NPPossMarkedYesCliticRequiredPossPosAfter" dataValue="after">After the possessor</radio>
+					<radioGroup id="NPPossMarkedYesCliticRequiredNounPosTable">
+						<groupName default="unknown" dataItem="possNounPos3" position="yesSpec">RNPPossMarkedYesCliticRequiredNounPos</groupName>
+						<prompt>Where does the possessor occur with respect to the noun being possessed?</prompt>
+						<radio id="NPPossMarkedYesCliticRequiredNounPosBefore" dataValue="before">Before the noun</radio>
+						<radio id="NPPossMarkedYesCliticRequiredNounPosAfter" dataValue="after">After the noun</radio>
+						<radio id="NPPossMarkedYesCliticRequiredNounPosEitherSide" dataValue="either">Either side of the noun</radio>
+					</radioGroup>
+				</radioGroup>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="NPPossMarkedYesAffixInstruction">In the lexicon, mark the affix with the feature <feature>genitive</feature>.</instruction>
+		<instruction id="NPPossMarkedYesCliticWordNoInstruction">You need to write a CC table pre-pass that will split the clitic into a separate word.  Then add a root entry to your lexicon for that clitic, and add the feature <feature>Poss</feature> to assure the correct category and genitive case feature for the syntactic parser.  [Note that this may be a little more complicated.  For example, in English <example>'s</example> can also be the contraction of is or has, so those also need to have root entries and the .ana file will have a three-way ambiguity.  The syntactic parser will then disambiguate it.  In addition, regular English plurals have a different form for the possessive (e.g. <example>boys'</example>), so the CC table must change <example>___s'</example> to <example>___s 's</example> and <example>___'s</example> to <example>____  's</example>.]</instruction>
+		<instruction id="NPPossMarkedYesCliticWordYesInstruction">In the lexicon, mark this entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
 		<buttons>
 			<button id="NPPoss2Back" value="Back" goto="NPPossessors.htm"/>
-			<button id="NPPoss2Next" value="Next" goto="NPContents.htm"/>
+			<button id="NPPoss2Next" value="Next" goto="NPPossessorAgreement.htm"/>
 		</buttons>
 	</form>
 </page>

@@ -26,7 +26,7 @@ We will assume that all (common) nouns are inanimate by default. Therefore, only
 				<!-- number -->
 				<li id="NPArtAgrNumberInstruction">
 					<span id="NPArtAgrNumberOptionalInstruction">If your language also has number agreement: i</span>
-					<span id="NPArtAgrNumberObligatoryInstruction">I</span>n the lexicon,
+					<span id="NPArtAgrNumberObligatoryInstruction"></span>In the lexicon,
 <ul>
 						<li>mark the articles and demonstratives that can only go with singular nouns with the feature <feature>singular</feature>.</li>
 						<li>Mark the articles and demonstratives that can only go with plural nouns with the feature <feature>plural</feature>.</li>
@@ -54,7 +54,7 @@ All nouns are also assumed to be third person by default; only pronouns have oth
 				<li id="NPArtAgrGenderInstruction">If applicable, add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any articles or demonstratives that can only go with that type of noun or pronoun.</li>
 			</ol>
 		</instruction>
-		<instruction id="NPArtAgrYesClassInstruction"/>
+
 		<buttons>
 			<button id="NPArtAgrBack" value="Back" goto="NPArtCase.htm"/>
 			<button id="NPArtAgrNext" value="Next" goto="NPArtPosition.htm"/>
