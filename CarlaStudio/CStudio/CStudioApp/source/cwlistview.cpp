@@ -21,10 +21,6 @@
 #include "ListComment.h"
 #include "ListTestData.h"
 #endif //hab214
-#ifndef mr270
-#include "CarlaLanguage.h"
-#endif // mr270
-
 
 // REMOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!
 #include <strstrea.h>
@@ -45,6 +41,7 @@ const int kTestDataEntryKind = 98;
 
 /////////////////////////////////////////////////////////////////////////////
 // CWListView
+
 
 IMPLEMENT_DYNCREATE(CWListView, CView)
 
@@ -351,22 +348,6 @@ void CWListView::OnEditInsertEntry()
 	int iAtItem = getFirstSelectedRow();
 	if(iAtItem == -1)	// if no selection
 		iAtItem = -1; // stick it at the end
-
-#ifndef mr270
-	BOOL bIsAmple=TRUE;
-	if( m_pTopic->m_label == "Synthesis Tests" )
-	{bIsAmple=FALSE;}
-	m_pList->setTypeOfTest(bIsAmple);
-#endif //270
-
-#ifndef mr270
-	CLangModelsDoc *pdoc = (CLangModelsDoc*) GetDocument();
-	pdoc->getLang();
-	CCarlaLanguage *pLang = pdoc->m_pLang;
-	char cCommentChar = pLang->getCommentChar();
-	m_pList->setCommentChar(cCommentChar);
-	m_pList->setTestEditModel(pLang->m_pTestEditModel);
-#endif // mr270
 
 	int iRow = m_pList->insertNewItem(m_listCtrl, iAtItem, 0);
 	if (iRow==-1)
@@ -1235,26 +1216,7 @@ void CWListView::OnEditProperties()
 #else //hab214
 		if(m_pList->m_dwFlags & CWList::ITEMS_HAVE_DIALOG)
 #endif //hab214
-
-		{
-#ifndef mr270
-			BOOL bIsAmple=TRUE;
-			if( m_pTopic->m_label == "Synthesis Tests" )
-			{
-				bIsAmple=FALSE;
-			}
-
-			CLangModelsDoc *pdoc = (CLangModelsDoc*) GetDocument();
-			pdoc->getLang();
-			CCarlaLanguage *pLang = pdoc->m_pLang;
-			char cCommentChar = pLang->getCommentChar();
-			pRowItem->setCommentChar(cCommentChar);
-
-			pRowItem->setTypeOfTest(bIsAmple);
-			pRowItem->setTestEditModel(pLang->m_pTestEditModel);
-#endif // mr270
 			bChanged = pRowItem->doEditDialog(m_listCtrl);
-		}
 		else
 			m_listCtrl.EditSubLabel(iRow, 0); // do in-place edit
 
