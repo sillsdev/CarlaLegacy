@@ -32,15 +32,15 @@ Main template
 |-Phrase structure rules
 </xsl:text>
 	<xsl:apply-templates select="/" mode="templates"/>
-	<xsl:apply-templates select="/" mode="adjp"/>
-	<xsl:apply-templates select="/" mode="advp"/>
 	<xsl:apply-templates select="/" mode="cp"/>
-	<xsl:apply-templates select="/" mode="dp"/>
 	<xsl:apply-templates select="/" mode="ip"/>
+	<xsl:apply-templates select="/" mode="vp"/>
+	<xsl:apply-templates select="/" mode="dp"/>
 	<xsl:apply-templates select="/" mode="np"/>
 	<xsl:apply-templates select="/" mode="pp"/>
+	<xsl:apply-templates select="/" mode="adjp"/>
+	<xsl:apply-templates select="/" mode="advp"/>
 	<xsl:apply-templates select="/" mode="qp"/>
-	<xsl:apply-templates select="/" mode="vp"/>
   </xsl:template>
   <xsl:include href="starter6templates.xsl"/>
   <xsl:include href="starter6adjp.xsl"/>
@@ -57,6 +57,7 @@ Main template
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+18-Jul-2002    Andy Black  Reordered XSLs per Cheri's preference
 17-Jul-2002    Andy Black  Added rest of XSLs
 02-Jul-2002    Andy Black  Initial version
 ================================================================
