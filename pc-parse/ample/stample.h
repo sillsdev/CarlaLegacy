@@ -368,9 +368,12 @@ typedef struct ample_env_cond {
 #define AMPLE_STRING_ENVIR 0
 #define AMPLE_MORPH_ENVIR  1
 #define AMPLE_PUNCT_ENVIR  2	/* 3.3.0 hab */
+#ifndef hab380
+#define AMPLE_NEGSTRING_ENVIR 3
+#endif /* hab380 */
 #ifdef EXPERIMENTAL
 #ifndef hab350
-#define AMPLE_ALLOID_ENVIR 3
+#define AMPLE_ALLOID_ENVIR 4
 #endif /* hab350 */
 #endif /* EXPERIMENTAL */
 
@@ -388,6 +391,9 @@ typedef struct ample_allo_env {
 	AmpleEnvConstraint *	pStringCond;	/* environment constraints */
 	AmpleEnvConstraint *	pMorphCond;	/* environment constraints */
 	AmpleEnvConstraint *	pPunctCond;	/* 3.3.0 hab */
+#ifndef hab380
+	AmpleEnvConstraint *	pNegStringCond;
+#endif /* hab380 */
 	/*
 	 *  we link all AmpleAlloEnv structs together in one linked list so that
 	 *  they can be freed without worrying about multiple pointers to them

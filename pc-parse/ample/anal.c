@@ -2463,6 +2463,13 @@ if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
 							   &pAmple_in->uiTraceSize,
 							   ac_ptr->pStringCond,
 							   FALSE);
+#ifndef hab380
+		pAmple_in->pszTrace = stringifyAmpleEnvConstraint(
+							   pAmple_in->pszTrace,
+							   &pAmple_in->uiTraceSize,
+							   ac_ptr->pNegStringCond,
+							   FALSE);
+#endif /* hab380 */
 		pAmple_in->pszTrace = stringifyAmpleEnvConstraint(
 							   pAmple_in->pszTrace,
 							   &pAmple_in->uiTraceSize,
@@ -2484,6 +2491,10 @@ if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
 		{
 		writeAmpleEnvConstraint(pAmple_in->pLogFP, ac_ptr->pStringCond,
 					FALSE);
+#ifndef hab380
+		writeAmpleEnvConstraint(pAmple_in->pLogFP, ac_ptr->pNegStringCond,
+					FALSE);
+#endif /* hab380 */
 		writeAmpleEnvConstraint(pAmple_in->pLogFP, ac_ptr->pMorphCond,
 					FALSE);
 				/* 3.3.0 hab */
@@ -2671,6 +2682,11 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 	writeAmpleEnvConstraint(pAmple_in->pLogFP,
 				current->pAllomorph->pEnvironment->pStringCond,
 				FALSE);
+#ifndef hab380
+	writeAmpleEnvConstraint(pAmple_in->pLogFP,
+				current->pAllomorph->pEnvironment->pNegStringCond,
+				FALSE);
+#endif /* hab380 */
 	writeAmpleEnvConstraint(pAmple_in->pLogFP,
 				current->pAllomorph->pEnvironment->pMorphCond,
 				FALSE);
@@ -2687,6 +2703,17 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 	if (pEC->bUsesNextWord)
 		bUsesNext = TRUE;
 	}
+#ifndef hab380
+	for (   pEC = current->pAllomorph->pEnvironment->pNegStringCond ;
+		pEC ;
+		pEC = pEC->pNext )
+	{
+	if (pEC->bUsesPrevWord)
+		bUsesPrev = TRUE;
+	if (pEC->bUsesNextWord)
+		bUsesNext = TRUE;
+	}
+#endif /* hab380 */
 	if (bUsesPrev)
 	bUsesPrevWord_m = TRUE;
 	if (bUsesNext)
@@ -2694,11 +2721,35 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 	if (bUseSurroundingWords_m)
 	{
 	if (bUsesPrev || bUsesNext)
+#ifndef hab380
+	  {
 		bPassed = checkAmpleStringEnviron(pszSurfaceForm_m,
 				(int)(strp - pszSurfaceForm_m),
 				strp + len,
 				current->pAllomorph->pEnvironment->pStringCond,
 				pPreviousWord_m, pNextWord_m, pAmple_in);
+	/* if the regular SEC passed and if there are NegSECs to check,
+	 * check them.  The result is their negation.
+	 * (SECs are logically ORd. NegSECs are logically ANDed.  So if we
+	 *  treat NegSECs as SECs but negate the result, we get what we want.)
+	 */
+	if (bPassed &&
+		(current->pAllomorph->pEnvironment->pNegStringCond !=
+		 (AmpleEnvConstraint *)NULL) )
+	  bPassed = !checkAmpleStringEnviron(pszSurfaceForm_m,
+						 (int)(strp - pszSurfaceForm_m),
+						 strp + len,
+				  current->pAllomorph->pEnvironment->pNegStringCond,
+						 pPreviousWord_m, pNextWord_m,
+						 pAmple_in);
+	  }
+#else  /* hab380 */
+		bPassed = checkAmpleStringEnviron(pszSurfaceForm_m,
+				(int)(strp - pszSurfaceForm_m),
+				strp + len,
+				current->pAllomorph->pEnvironment->pStringCond,
+				pPreviousWord_m, pNextWord_m, pAmple_in);
+#endif /* hab380 */
 	else
 		return TRUE;	/* already checked in previous pass */
 	}
@@ -2712,6 +2763,22 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 				current->pAllomorph->pEnvironment->pStringCond,
 					  pPreviousWord_m, pNextWord_m,
 					  pAmple_in);
+#ifndef hab380
+	/* if the regular SEC passed and if there are NegSECs to check,
+	 * check them.  The result is their negation.
+	 * (SECs are logically ORd. NegSECs are logically ANDed.  So if we
+	 *  treat NegSECs as SECs but negate the result, we get what we want.)
+	 */
+	if (bPassed &&
+		(current->pAllomorph->pEnvironment->pNegStringCond !=
+		 (AmpleEnvConstraint *)NULL) )
+	  bPassed = !checkAmpleStringEnviron(pszSurfaceForm_m,
+						 (int)(strp - pszSurfaceForm_m),
+						 strp + len,
+				  current->pAllomorph->pEnvironment->pNegStringCond,
+						 pPreviousWord_m, pNextWord_m,
+						 pAmple_in);
+#endif /* hab380 */
 	}
 	if (    !bPassed &&
 		((pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
@@ -2755,6 +2822,13 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 				&pAmple_in->uiTraceSize,
 				current->pAllomorph->pEnvironment->pStringCond,
 				TRUE);
+#ifndef hab380
+		pAmple_in->pszTrace = stringifyAmpleEnvConstraint(
+				  pAmple_in->pszTrace,
+				  &pAmple_in->uiTraceSize,
+				  current->pAllomorph->pEnvironment->pNegStringCond,
+				  TRUE);
+#endif /* hab380 */
 		}
 	else if (pAmple_in->pLogFP != NULL)
 		{
@@ -2762,6 +2836,12 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 				pAmple_in->pLogFP,
 				current->pAllomorph->pEnvironment->pStringCond,
 				TRUE);
+#ifndef hab380
+		writeAmpleEnvConstraint(
+				  pAmple_in->pLogFP,
+				  current->pAllomorph->pEnvironment->pNegStringCond,
+				  TRUE);
+#endif /* hab380 */
 		}
 	if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
 	  store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
@@ -2812,6 +2892,11 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 	writeAmpleEnvConstraint(pAmple_in->pLogFP,
 				current->pAllomorph->pEnvironment->pStringCond,
 				FALSE);
+#ifndef hab380
+	writeAmpleEnvConstraint(pAmple_in->pLogFP,
+				current->pAllomorph->pEnvironment->pNegStringCond,
+				FALSE);
+#endif /* hab380 */
 	writeAmpleEnvConstraint(pAmple_in->pLogFP,
 				current->pAllomorph->pEnvironment->pMorphCond,
 				FALSE);

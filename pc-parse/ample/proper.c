@@ -536,11 +536,15 @@ pszWord = pszLine_in + strspn(pszLine_in, szWhitespace_m);
 /*
  *  look for name until find:
  *     the end of the line (\0)
- *     beginning of a surface environment (/)
+ *     beginning of a surface environment (/) or (~/)
  *     beginning of a morpheme environment (+/)
+ *     beginning of a punctuation environment (./)
  */
 while ( (*pszWord != NUL) &&
 		(*pszWord != '/') &&
+#ifndef hab380
+		((pszWord[0] != '~') || (pszWord[1] != '/')) &&
+#endif /* hab380 */
 		((pszWord[0] != '+') || (pszWord[1] != '/')) &&
 		((pszWord[0] != '.') || (pszWord[1] != '/')) ) /* 3.3.0 hab */
 	{

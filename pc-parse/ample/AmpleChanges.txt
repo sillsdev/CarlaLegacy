@@ -1,5 +1,12 @@
 AMPLE CHANGE HISTORY
 
+3.8.0 (19-Dec-2003)
+-------------------
+1.  Enhancement: Added negative string environment constraints to complement
+	the exsting string environemtn constraints (SECs).  NegSECs say what the
+	string environment *cannot* be.  Multiple NegSECs are logically ANDed
+	together.  They are indicated by "~/" (instead of SEC's "/").
+
 3.7.5 (17-Nov-2003)
 -------------------
 1.  Fixed bug which caused an empty morpheme co-occurrence constraint message

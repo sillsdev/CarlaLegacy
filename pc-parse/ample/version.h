@@ -3,13 +3,15 @@
  * Copyright 1996 - 2003 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
-#define REVISION 7		/* enhancement requiring adding to book */
-#define PATCHLEVEL 5		/* bug fix or other minor change */
-#define DATE "November 17, 2003"	/* date of release version */
+#define REVISION 8		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0		/* bug fix or other minor change */
+#define DATE "December 19, 2003"	/* date of release version */
 #define YEAR "2003"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 19-Dec-2003  hab  - Enhancement: add negative SECs (~/)
+ * [3.8.0]
  * 17-Nov-2003  hab  - Fix bug: empty morpheme co-occurrence constraint message
  * [3.7.5]               did not include any information about which entry it
  *                       was for.  (fixed in mccpar.c)

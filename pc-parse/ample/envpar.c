@@ -159,9 +159,12 @@ static void			resetLocalGlobals P((void));
 #define ENV_LCURL       13      /* '{' */
 #define ENV_RCURL       14      /* '}' */
 #define ENV_PUNCT       15      /* './' 3.3.0 hab */
+#ifndef hab380
+#define ENV_NEGSTRENV   16      /* '~/' */
+#endif /* hab380 */
 #ifdef EXPERIMENTAL
 #ifndef hab350
-#define ENV_ALLOID      16      /* '~/' */
+#define ENV_ALLOID      17      /* '-/' */
 #endif /* hab350 */
 #endif /* EXPERIMENTAL */
 /*
@@ -187,9 +190,12 @@ static char *	pszEnvParseType_m = NULL;
 #define EL_HLD1 2       /* finished with one, holding a '/' */
 #define EL_HLD2 3       /* finished with one, holding a '+/' */
 #define EL_HLD3 4       /* finished with one, holding a './' 3.3.0 hab */
+#ifndef hab380
+#define EL_HLD4 5       /* finished with one, holding a '~/' */
+#endif /* hab380 */
 #ifdef EXPERIMENTAL
 #ifndef hab350
-#define EL_HLD4 5       /* finished with one, holding a '~/' */
+#define EL_HLD5 6       /* finished with one, holding a '-/' */
 #endif /* hab350 */
 #endif /* EXPERIMENTAL */
 #define EL_EOF  -1      /* at end of input string */
@@ -282,9 +288,12 @@ switch (eEnvLexState_m)
 		case ENV_MORPH:     eEnvLexState_m = EL_HLD2;   return( ENV_END );
 				/* 3.3.0 hab */
 		case ENV_PUNCT:     eEnvLexState_m = EL_HLD3;   return( ENV_END );
+#ifndef hab380
+		case ENV_NEGSTRENV: eEnvLexState_m = EL_HLD4;   return( ENV_END );
+#endif /* hab380 */
 #ifdef EXPERIMENTAL
 #ifndef hab350
-		case ENV_ALLOID:    eEnvLexState_m = EL_HLD4;   return( ENV_END );
+		case ENV_ALLOID:    eEnvLexState_m = EL_HLD5;   return( ENV_END );
 #endif /* hab350 */
 #endif /* EXPERIMENTAL */
 		default:                                    return( type );
@@ -303,12 +312,16 @@ switch (eEnvLexState_m)
 	eEnvLexState_m = EL_WORK;
 	return( ENV_PUNCT );
 
-#ifdef EXPERIMENTAL
-#ifndef hab350
+#ifndef hab380
 	case EL_HLD4:               /* saw a '~/' previously */
 	eEnvLexState_m = EL_WORK;
+	return( ENV_NEGSTRENV );
+#endif /* hab380 */
+#ifdef EXPERIMENTAL
+#ifndef hab350
+	case EL_HLD5:               /* saw a '-/' previously */
+	eEnvLexState_m = EL_WORK;
 	return( ENV_ALLOID );
-
 #endif /* hab350 */
 #endif /* EXPERIMENTAL */
 	default:                    /* assume EL_EOF state */
@@ -371,21 +384,19 @@ else if ( (strchr("/_#[]()", ch) != (char *)NULL)
 	default:        return( EOF );                  /* "can't happen" */
 	}
 	}
-#ifdef EXPERIMENTAL
-#ifndef hab350
+#ifndef hab380
 else if ((ch == '~') && (*pszEnvLex_m == '/'))
 	{
 	szEnvLexToken_m[0] = ch;        /* special two character token */
 	szEnvLexToken_m[1] = *pszEnvLex_m++;
 	szEnvLexToken_m[2] = NUL;
-	return( ENV_ALLOID );
+	return( ENV_NEGSTRENV );
 	}
 else if ((ch == '~') &&                 /* if tilde and not ANCC */
-	 (iType != AMPLE_ALLOID_ENVIR))
-#endif /* hab350 */
-#else /* EXPERIMENTAL */
+	 (iType != AMPLE_NEGSTRING_ENVIR))
+#else /* hab380 */
 else if (ch == '~')                 /* if tilde */
-#endif /* EXPERIMENTAL */
+#endif /* hab380 */
 	{                               /* if underline next */
 	if (*pszEnvLex_m == '_')
 	{
@@ -416,6 +427,17 @@ else if ((ch == '+') && (*pszEnvLex_m == '/'))
 	szEnvLexToken_m[2] = NUL;
 	return( ENV_MORPH );
 	}
+#ifdef EXPERIMENTAL
+#ifndef hab380
+else if ((ch == '-') && (*pszEnvLex_m == '/')) /* 3.3.0 hab */
+	{
+	szEnvLexToken_m[0] = ch;        /* special two character token */
+	szEnvLexToken_m[1] = *pszEnvLex_m++;
+	szEnvLexToken_m[2] = NUL;
+	return( ENV_ALLOID );
+	}
+#endif /* hab380 */
+#endif /* EXPERIMENTAL */
 else if ((ch == '.') && (*pszEnvLex_m == '/')) /* 3.3.0 hab */
 	{
 	szEnvLexToken_m[0] = ch;        /* special two character token */
@@ -561,6 +583,21 @@ while (fgets(buf,sizeof buf, stdin) != (char *)NULL)
 		case ENV_RPAREN:
 		fprintf(TEST_OUT,"(ENV_RPAREN)");
 		break;
+#ifndef hab380
+		case ENV_PUNCT:
+		fprintf(TEST_OUT,"(ENV_PUNCT)");
+		environment_type = AMPLE_PUNCT_ENVIR;
+		break;
+		case ENV_NEGSTRENV:
+		fprintf(TEST_OUT,"(ENV_NEGSTRENV)");
+		environment_type = AMPLE_NEGSTRING_ENVIR;
+		break;
+#ifdef EXPERIMENTAL
+		case ENV_ALLOID:
+		fprintf(TEST_OUT,"(ENV_ALLOID)");
+		break;
+#endif /* EXPERIMENTAL */
+#endif /* hab380 */
 		default:
 		fprintf(TEST_OUT,"<<UNKNOWN>>");
 		break;
@@ -1406,6 +1443,9 @@ AmpleAlloEnv *	aenv1;
 AmpleAlloEnv *	aenv2;
 {
 if ( env_comp( aenv1->pStringCond, aenv2->pStringCond ) &&
+#ifndef hab380
+	 env_comp( aenv1->pNegStringCond, aenv2->pNegStringCond )   &&
+#endif /* hab380 */
 	 env_comp( aenv1->pMorphCond, aenv2->pMorphCond )   &&
 	 env_comp( aenv1->pPunctCond, aenv2->pPunctCond ) )
 	return( TRUE );
@@ -1747,6 +1787,10 @@ for ( ; ec ; ec = ec->pNext )
 		writeAmpleCDATA(pLogFP_m, "  +/ ", FALSE);
 	else if (ec->eType == AMPLE_STRING_ENVIR) /* 3.3.0 hab */
 		writeAmpleCDATA(pLogFP_m, "   / ", FALSE);
+#ifndef hab380
+	else if (ec->eType == AMPLE_NEGSTRING_ENVIR)
+		writeAmpleCDATA(pLogFP_m, "  ~/ ", FALSE);
+#endif /* hab380 */
 	else
 		writeAmpleCDATA(pLogFP_m, "  ./ ", FALSE);
 	}
@@ -1756,6 +1800,10 @@ for ( ; ec ; ec = ec->pNext )
 		fprintf(pLogFP_m, "  +/ ");
 	else if (ec->eType == AMPLE_STRING_ENVIR) /* 3.3.0 hab */
 		fprintf(pLogFP_m, "   / ");
+#ifndef hab380
+	else if (ec->eType == AMPLE_NEGSTRING_ENVIR)
+		fprintf(pLogFP_m, "  ~/ ");
+#endif /* hab380 */
 	else
 		fprintf(pLogFP_m, "  ./ ");
 	}
@@ -2140,6 +2188,9 @@ AmpleAlloEnv *pAlloEnv_io;
 {
 resetLocalGlobals();
 freeAmpleEnvConstraint( pAlloEnv_io->pStringCond );
+#ifndef hab380
+freeAmpleEnvConstraint( pAlloEnv_io->pNegStringCond );
+#endif /* hab380 */
 freeAmpleEnvConstraint( pAlloEnv_io->pMorphCond );
 #ifndef hab3318
 freeAmpleEnvConstraint( pAlloEnv_io->pPunctCond );
@@ -2233,6 +2284,14 @@ while ( (token = getEnvLex(0)) != EOF )
 	e_cond->pNext = a_env->pStringCond;
 	a_env->pStringCond = e_cond;    /* link into the proper list */
 	}
+#ifndef hab380
+	else if ((token == ENV_NEGSTRENV) &&
+		 ((e_cond = env_parse(AMPLE_NEGSTRING_ENVIR)) != NULL))
+	{
+	e_cond->pNext = a_env->pNegStringCond;
+	a_env->pNegStringCond = e_cond;     /* link into the proper list */
+	}
+#endif /* hab380 */
 	else if ((token == ENV_MORPH) &&
 		 ((e_cond = env_parse(AMPLE_MORPH_ENVIR)) != NULL))
 	{
@@ -2257,9 +2316,16 @@ if (*parserror)
  *  if no string or morpheme environment constraints, then free the space
  *  and return NULL
  */
+#ifndef hab380
+if (    (a_env->pStringCond == (AmpleEnvConstraint *)NULL) &&
+		(a_env->pPunctCond  == (AmpleEnvConstraint *)NULL) && /* 3.3.0 hab */
+		(a_env->pMorphCond  == (AmpleEnvConstraint *)NULL) &&
+	(a_env->pNegStringCond  == (AmpleEnvConstraint *)NULL) )
+#else  /* hab380 */
 if (    (a_env->pStringCond == (AmpleEnvConstraint *)NULL) &&
 		(a_env->pPunctCond  == (AmpleEnvConstraint *)NULL) && /* 3.3.0 hab */
 	(a_env->pMorphCond  == (AmpleEnvConstraint *)NULL) )
+#endif /* hab380 */
 	{
 	freeMemory( a_env );
 	a_env = NULL;
@@ -2363,8 +2429,14 @@ head = tail = (AmpleEnvConstraint *)NULL;
 
 while ( (token = getEnvLex(0)) != EOF )
 	{
+#ifndef hab380
+	if (token == ENV_MORPH ||
+		token == ENV_NEGSTRENV ||
+	token == ENV_PUNCT)	/* 3.3.0 hab */
+#else  /* hab380 */
 	if (token == ENV_MORPH ||
 	token == ENV_PUNCT)	/* 3.3.0 hab */
+#endif /* hab380 */
 	token = ENV_STRENV;     /* only string environments, so why not? */
 	if (    (token == ENV_STRENV) &&
 		((e_cond = env_parse(AMPLE_STRING_ENVIR)) != NULL))
@@ -2470,7 +2542,18 @@ head      = NULL;
 
 while ( (token = getEnvLex(0)) != EOF )
 	{
+#ifndef hab380
+#ifdef EXPERIMENTAL
+	if (token == ENV_STRENV ||
+		token == ENV_NEGSTRENV ||
+		token == ENV_ALLOID)
+#else  /* EXPERIMENTAL */
+	if (token == ENV_STRENV ||
+	  token == ENV_NEGSTRENV)
+#endif /* EXPERIMENTAL */
+#else  /* hab380 */
 	if (token == ENV_STRENV)
+#endif /* hab380 */
 		token = ENV_MORPH;      /* only morpheme environments, so why not? */
 	if ( (token == ENV_MORPH) &&
 		 ((e_cond = env_parse(AMPLE_MORPH_ENVIR)) != NULL))
@@ -2644,10 +2727,34 @@ for ( pEC = pEnvConstraint_in ; pEC ; pEC = pEC->pNext )
 	/*
 	 *  show the appropriate marker
 	 */
+#ifndef hab380
+	  switch (pEC->eType)
+	{
+	case AMPLE_MORPH_ENVIR:
+	  pszSlash = "  +/ ";
+	  break;
+	case AMPLE_PUNCT_ENVIR:
+	  pszSlash = "  ./ ";
+	  break;
+	case AMPLE_NEGSTRING_ENVIR:
+	  pszSlash = "  ~/ ";
+	  break;
+#ifdef EXPERIMENTAL
+	case AMPLE_ALLOID_ENVIR:
+	  pszSlash = "  -/ ";
+	  break;
+#endif /* EXPERIMENTAL */
+	case AMPLE_STRING_ENVIR: /* fall through on purpose */
+	default:
+	  pszSlash = "   / ";
+	  break;
+	}
+#else  /* hab380 */
 	if (pEC->eType == AMPLE_MORPH_ENVIR)
 	pszSlash = "  +/ ";
 	else
 	pszSlash = "   / ";
+#endif /* hab380 */
 	if (bSGML_in)
 	{
 	storeAmpleCDATA(szBuffer, pszSlash, FALSE);

@@ -377,6 +377,10 @@ for (	pMorph = pAmple_in->pAmpleMorphemes, uiCount = 1 ;
 		{
 		writeAmpleEnvConstraint(pDictFP,
 					pAllo->pEnvironment->pStringCond, FALSE);
+#ifndef hab380
+		writeAmpleEnvConstraint(pDictFP,
+					pAllo->pEnvironment->pNegStringCond, FALSE);
+#endif /* hab380 */
 		writeAmpleEnvConstraint(pDictFP,
 					pAllo->pEnvironment->pMorphCond, FALSE);
 		}

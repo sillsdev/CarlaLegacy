@@ -3995,6 +3995,10 @@ if (alp->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 	{
 	writeAmpleEnvConstraint(pLogFP_in,
 				alp->pAllomorph->pEnvironment->pStringCond, FALSE);
+#ifndef hab380
+	writeAmpleEnvConstraint(pLogFP_in,
+				alp->pAllomorph->pEnvironment->pNegStringCond, FALSE);
+#endif /* hab380 */
 	writeAmpleEnvConstraint(pLogFP_in,
 				alp->pAllomorph->pEnvironment->pMorphCond, FALSE);
 				/* 3.3.0 hab */
