@@ -8,6 +8,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Xsl;
+using System.Xml.XPath;
 using Microsoft.Win32;
 using Microsoft.IE;
 
@@ -43,6 +44,7 @@ namespace PAWSStarterKit
 		string m_strHtmsPath;
 		string m_strStylesPath;
 		string m_strTreeDescriptionsPath;
+		string m_strTempGrammarFile;
 		string m_strBlack1997;
 		string m_strBlack1999;
 		string m_strMcConnel2002;
@@ -1191,7 +1193,17 @@ namespace PAWSStarterKit
 		{
 			try
 			{
-				m_XslGrammarTransform.Transform(m_strUserAnswerFile, m_strUserGrammarFile);
+				m_XslGrammarTransform.Transform(m_strUserAnswerFile, m_strTempGrammarFile);
+				// the above outputs the Unicode BOM in UTF8; we need to remove that
+				// open and read the file
+				StreamReader sr = new StreamReader(m_strTempGrammarFile);
+				string strFile = sr.ReadToEnd();
+				// use no BOM
+				UTF8Encoding utf8NoBOM = new UTF8Encoding(false);
+				// write it out without the BOM
+				StreamWriter sw = new StreamWriter(m_strUserGrammarFile, false, utf8NoBOM);
+				sw.Write(strFile);
+				sw.Close();
 			}
 			catch (Exception exc)
 			{
@@ -1380,6 +1392,8 @@ namespace PAWSStarterKit
 			m_strHelpPath = setWorkingPath("Help");
 			m_strTreeDescriptionsPath = setWorkingPath("TreeDescriptions");
 			m_strStylesPath = setWorkingPath("Styles");
+			string strTempPath = setWorkingPath("Temp");
+			m_strTempGrammarFile = Path.Combine(strTempPath, "temp.grm");
 		}
 		void createHTMs()
 		{
