@@ -24,6 +24,11 @@
 <!ELEMENT closeParen EMPTY>
 <!ELEMENT codeInfo (#PCDATA)>
 <!ELEMENT contents (#PCDATA)>
+<!ELEMENT div (textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br | div)*>
+<!ATTLIST div
+  id ID #REQUIRED
+  show IDREF #REQUIRED
+>
 <!ELEMENT EnglishExample (exItem+)>
 <!ELEMENT example (#PCDATA)>
 <!ELEMENT exItem (#PCDATA | u | sub)*>
@@ -52,7 +57,7 @@
 <!--
 transparent = 'yes' means do not show yellow background, let the grey background come through.
 -->
-<!ELEMENT form ((textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br)*, br?, buttons)>
+<!ELEMENT form ((textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br | div)*, br?, buttons)>
 <!ATTLIST form
   transparent (yes | no) "no"
   section CDATA #REQUIRED

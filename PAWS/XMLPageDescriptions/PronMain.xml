@@ -2,203 +2,213 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PronMain">
-	<title>Pronouns</title>
-	<introduction>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals,  and indefinites.  These pronouns normally stand alone in the place of a nominal phrase, but they can also be modified by a partitive phrase and in some languages may be modified by determiners and quantifiers.  Each of these types and issues will be looked at in turn.
+  <title>Pronouns</title>
+  <introduction>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals,  and indefinites.  These pronouns normally stand alone in the place of a nominal phrase, but they can also be modified by a partitive phrase and in some languages may be modified by determiners and quantifiers.  Each of these types and issues will be looked at in turn.
 <br/>
-		<br/>
+	<br/>
 The main task for pronouns is to add all the relevant features in the lexicon for case and agreement and pronoun type.  Personal pronouns normally have either more than or the same number of case and agreement features as nouns have.  </introduction>
-	<form section="pron">
-		<prompt id="PronCaseNonePrompt" show="swNPCaseNone">
+  <form section="pron">
+	<div id="PronCaseNoneDiv" show="swNPCaseNone">
+	<br/>
+	  <prompt id="PronCaseNonePrompt" show="swNPCaseNone">
 			Since your language does not distinguish case, you should have only a single set of pronouns that can be used in any position in the sentence.
 Key the personal pronouns in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns. <br/>
-		</prompt>
-		<textBox id="PronPersonalNoCaseExample" dataItem="personalNoCaseExample" show="swNPCaseNone"/>
-		<prompt id="PronCaseNomPrompt" show="swNPCaseNom">
+	  </prompt>
+	  <textBox id="PronPersonalNoCaseExample" dataItem="personalNoCaseExample" show="swNPCaseNone"/>
+	</div>
+	<div id="PronCaseNomDiv" show="swNPCaseNom">
+	<br/>
+	  <prompt id="PronCaseNomPrompt" show="swNPCaseNom">
 			Since your language has a nominative-accusative case system, you should have distinct sets of pronouns that can be used as subjects, objects, and possessors.  Key the personal pronouns which can appear in subject position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns. <br/>
-		</prompt>
-		<textBox id="PronPersonalNomSubjectExample" dataItem="personalNomSubjectExample" show="swNPCaseNom"/>
-		<prompt id="PronCaseNomPrompt1" show="swNPCaseNom">
+	  </prompt>
+	  <textBox id="PronPersonalNomSubjectExample" dataItem="personalNomSubjectExample" show="swNPCaseNom"/>
+	  <prompt id="PronCaseNomPrompt1" show="swNPCaseNom">
 		Key the personal pronouns which can appear in object position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalNomObjectExample" dataItem="personalNomObjectExample" show="swNPCaseNom"/>
-		<prompt id="PronCaseNomPrompt2" show="swNPCaseNom">
+	  </prompt>
+	  <textBox id="PronPersonalNomObjectExample" dataItem="personalNomObjectExample" show="swNPCaseNom"/>
+	  <prompt id="PronCaseNomPrompt2" show="swNPCaseNom">
 		Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalNomPossessorExample" dataItem="personalNomPossessorExample" show="swNPCaseNom"/>
-		<instruction id="PronCaseTypeNomAccInstruction" show="swNPCaseNom">
-			<br/>In the lexicon:
+	  </prompt>
+	  <textBox id="PronPersonalNomPossessorExample" dataItem="personalNomPossessorExample" show="swNPCaseNom"/>
+	  <instruction id="PronCaseTypeNomAccInstruction" show="swNPCaseNom">
+		<br/>In the lexicon:
 <ul>
-				<li>Add the feature <feature>nominative</feature> to all the pronouns that occur in subject position.</li>
-				<li>Add the feature <feature>accusative</feature> to all the pronouns that occur in object position.</li>
-				<li>Add the feature <feature>genitive</feature> to all the pronouns that occur in possessor position.</li>
-				<li>If a particular pronoun can show up in any position, do not add any feature.</li>
-				<li>If a particular pronoun can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <feature>nominative.or.genitive</feature>.</li>
-				<li>If a particular pronoun can occur as a subject or as an object but not as a possessor, add the feature <feature>nominative.or.accusative</feature>.</li>
-				<li>If a particular pronoun may occur as an object or as a possessor, but not as a subject, add the feature <feature>accusative.or.genitive</feature>.</li>
-			</ul>
-		</instruction>
-		<prompt id="PronCaseErgPrompt" show="swNPCaseErg">
-			<br/>Since your language has an ergative-absolutive case system, you should have distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  Key the personal pronouns which can appear in subject position of transitive verbs in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalErgSubjectTransExample" dataItem="personalErgSubjectTransExample" show="swNPCaseErg"/>
-		<prompt id="PronCaseErgPrompt1" show="swNPCaseErg">
-			<br/>Key the personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalErgSubjectIntransExample" dataItem="personalErgSubjectIntransExample" show="swNPCaseErg"/>
-		<prompt id="PronCaseErgPrompt2" show="swNPCaseErg">
-			<br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalErgPossessorExample" dataItem="personalErgPossessorExample" show="swNPCaseErg"/>
-		<instruction id="PronCaseTypeErgInstruction" show="swNPCaseErg">
-			<br/>In the lexicon:
+		  <li>Add the feature <feature>nominative</feature> to all the pronouns that occur in subject position.</li>
+		  <li>Add the feature <feature>accusative</feature> to all the pronouns that occur in object position.</li>
+		  <li>Add the feature <feature>genitive</feature> to all the pronouns that occur in possessor position.</li>
+		  <li>If a particular pronoun can show up in any position, do not add any feature.</li>
+		  <li>If a particular pronoun can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <feature>nominative.or.genitive</feature>.</li>
+		  <li>If a particular pronoun can occur as a subject or as an object but not as a possessor, add the feature <feature>nominative.or.accusative</feature>.</li>
+		  <li>If a particular pronoun may occur as an object or as a possessor, but not as a subject, add the feature <feature>accusative.or.genitive</feature>.</li>
+		</ul>
+	  </instruction>
+	</div>
+	<div id="PronCaseErgDiv" show="swNPCaseErg">
+	  <prompt id="PronCaseErgPrompt" show="swNPCaseErg">
+		<br/>Since your language has an ergative-absolutive case system, you should have distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  Key the personal pronouns which can appear in subject position of transitive verbs in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+	  </prompt>
+	  <textBox id="PronPersonalErgSubjectTransExample" dataItem="personalErgSubjectTransExample" show="swNPCaseErg"/>
+	  <prompt id="PronCaseErgPrompt1" show="swNPCaseErg">
+		<br/>Key the personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+	  </prompt>
+	  <textBox id="PronPersonalErgSubjectIntransExample" dataItem="personalErgSubjectIntransExample" show="swNPCaseErg"/>
+	  <prompt id="PronCaseErgPrompt2" show="swNPCaseErg">
+		<br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+	  </prompt>
+	  <textBox id="PronPersonalErgPossessorExample" dataItem="personalErgPossessorExample" show="swNPCaseErg"/>
+	  <instruction id="PronCaseTypeErgInstruction" show="swNPCaseErg">
+		<br/>In the lexicon:
 <ul>
-				<li>Add the feature <feature>ergative</feature> to all the pronouns that occur in subject position for transitive verbs.</li>
-				<li>Add the feature <feature>absolutive</feature> to all the pronouns that occur in direct object position and in subject position for intransitive verbs.</li>
-				<li>Add the feature <span id="PronPossGen" show="swNPPossCaseGenitive">
-						<feature>genitive</feature>
-					</span>
-					<span id="PronPossErg" show="swNPPossCaseErgative">
-						<feature>ergative</feature>
-					</span>
-					<span id="PronPossAbs" show="swNPPossCaseAbsolutive">
-						<feature>absolutive</feature>
-					</span> to all the pronouns that occur in possessor position.</li>
-				<li>If a particular pronoun can show up in any position, do not add any feature.</li>
-			</ul>
-		</instruction>
-		<prompt id="PronCaseSplitPrompt" show="swNPCaseSplit">
-			<br/>Since your language has a split case system, you should have distinct sets of pronouns that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  Key the personal pronouns which normally appear in subject position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalSplitSubjectExample" dataItem="personalSplitSubjectExample" show="swNPCaseSplit"/>
-		<prompt id="PronCaseSplitPrompt1" show="swNPCaseSplit">
-			<br/>Key the personal pronouns which normally appear in object position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalSplitObjectExample" dataItem="personalSplitObjectExample" show="swNPCaseSplit"/>
-		<prompt id="PronCaseSplitPrompt2" show="swNPCaseSplit">
-			<br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalSplitPossessorExample" dataItem="personalSplitPossessorExample" show="swNPCaseSplit"/>
-		<prompt id="PronCaseSplitPrompt3" show="swNPCaseSplit">
-			<br/>Key the personal pronouns which appear as subjects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalSplitErgExample" dataItem="personalSplitErgExample" show="swNPCaseSplit"/>
-		<prompt id="PronCaseSplitPrompt4" show="swNPCaseSplit">
-			<br/>Key the personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
-		</prompt>
-		<textBox id="PronPersonalSplitAbsExample" dataItem="personalSplitAbsExample" show="swNPCaseSplit"/>
-		<instruction id="PronCaseTypeSplitInstruction" show="swNPCaseSplit">
-			<br/>In the lexicon:
+		  <li>Add the feature <feature>ergative</feature> to all the pronouns that occur in subject position for transitive verbs.</li>
+		  <li>Add the feature <feature>absolutive</feature> to all the pronouns that occur in direct object position and in subject position for intransitive verbs.</li>
+		  <li>Add the feature <span id="PronPossGen" show="swNPPossCaseGenitive">
+			  <feature>genitive</feature>
+			</span>
+			<span id="PronPossErg" show="swNPPossCaseErgative">
+			  <feature>ergative</feature>
+			</span>
+			<span id="PronPossAbs" show="swNPPossCaseAbsolutive">
+			  <feature>absolutive</feature>
+			</span> to all the pronouns that occur in possessor position.</li>
+		  <li>If a particular pronoun can show up in any position, do not add any feature.</li>
+		</ul>
+	  </instruction>
+	</div>
+	<div id="PronCaseSplitDiv" show="swNPCaseSplit">
+	  <prompt id="PronCaseSplitPrompt" show="swNPCaseSplit">
+		<br/>Since your language has a split case system, you should have distinct sets of pronouns that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  Key the personal pronouns which normally appear in subject position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+	  </prompt>
+	  <textBox id="PronPersonalSplitSubjectExample" dataItem="personalSplitSubjectExample" show="swNPCaseSplit"/>
+	  <prompt id="PronCaseSplitPrompt1" show="swNPCaseSplit">
+		<br/>Key the personal pronouns which normally appear in object position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+	  </prompt>
+	  <textBox id="PronPersonalSplitObjectExample" dataItem="personalSplitObjectExample" show="swNPCaseSplit"/>
+	  <prompt id="PronCaseSplitPrompt2" show="swNPCaseSplit">
+		<br/>Key the personal pronouns which can appear in possessor position in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+	  </prompt>
+	  <textBox id="PronPersonalSplitPossessorExample" dataItem="personalSplitPossessorExample" show="swNPCaseSplit"/>
+	  <prompt id="PronCaseSplitPrompt3" show="swNPCaseSplit">
+		<br/>Key the personal pronouns which appear as subjects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+	  </prompt>
+	  <textBox id="PronPersonalSplitErgExample" dataItem="personalSplitErgExample" show="swNPCaseSplit"/>
+	  <prompt id="PronCaseSplitPrompt4" show="swNPCaseSplit">
+		<br/>Key the personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity in the text box, with each pronoun followed by a period and on a separate line, beginning with first person, then second person, then the third person pronouns.<br/>
+	  </prompt>
+	  <textBox id="PronPersonalSplitAbsExample" dataItem="personalSplitAbsExample" show="swNPCaseSplit"/>
+	  <instruction id="PronCaseTypeSplitInstruction" show="swNPCaseSplit">
+		<br/>In the lexicon:
 <ul>
-				<li>Add the feature <feature>nominative</feature> to all the pronouns that occur in subject position.</li>
-				<li>Add the feature <feature>accusative</feature> to all the pronouns that occur in object position.</li>
-				<li>Add the feature <feature>genitive</feature> to all the pronouns that occur in possessor position.</li>
-				<li>If a particular pronoun can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <feature>nominative.or.genitive</feature>.</li>
-				<li>If a particular pronoun can occur as a subject or as an object but not as a possessor, add the feature <feature>nominative.or.accusative</feature>.</li>
-				<li>If a particular pronoun may occur as an object or as a possessor, but not as a subject, add the feature <feature>accusative.or.genitive</feature>.</li>
-				<li>For the split ergativity cases, add the feature <feature>ergative</feature> to all the pronouns that can only occur as subjects of transitive verbs and add the feature <feature>absolutive</feature> to all the pronouns that can only occur as subjects of intransitive verbs and objects of transitive verbs.  Note that if there is some overlap between the pronoun sets for nominative-accusative versus ergative-absolutive, you will probably need to have two entries in your lexicon for those pronouns, each marked with the appropriate case feature.</li>
-				<li>If a particular pronoun can show up in any position, do not add any feature.</li>
-			</ul>
-		</instruction>
-		<instruction>In the chart below, check any agreement features used in your language.  Add the relevant agreement features to each pronoun in the lexicon.  If a pronoun is not specified for a particular type of agreement feature, do not add any feature of that type.<br/>
-			<br/>
-			<featureChart>
-				<featureRow>
-					<featureType>person</featureType>
-					<featureItem dataValue="pronAgrFeatFirst" name="PronFeatAgrFirst">first</featureItem>
-					<featureExplanation>first person, with no exclusive-inclusive distinction</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatFirstExclusive" name="PronFeatAgrFirstExclusive">first_exclusive</featureItem>
-					<featureExplanation>first person, cannot include the hearer</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatFirstInclusive" name="PronFeatAgrFirstInclusive">first_inclusive</featureItem>
-					<featureExplanation>first person, and including the hearer</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatSecond" name="PronFeatAgrSecond">second</featureItem>
-					<featureExplanation>second person</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatThird" name="PronFeatAgrThird">third</featureItem>
-					<featureExplanation>third person</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>number</featureType>
-					<featureItem dataValue="pronAgrFeatSingular" name="PronFeatAgrSingular">singular</featureItem>
-					<featureExplanation>singular in number</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatDual" name="PronFeatAgrDual">dual</featureItem>
-					<featureExplanation>two in number</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatPlural" name="PronFeatAgrPlural">plural</featureItem>
-					<featureExplanation>plural in number</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>gender</featureType>
-					<featureItem dataValue="pronAgrFeatMasculine" name="PronFeatAgrMasculine">masculine</featureItem>
-					<featureExplanation>male gender</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatFeminine" name="PronFeatAgrFeminine">feminine</featureItem>
-					<featureExplanation>female gender</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatNeuter" name="PronFeatAgrNeuter">neuter</featureItem>
-					<featureExplanation>neuter gender</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>animacy</featureType>
-					<featureItem dataValue="pronAgrFeatAnimate" name="PronFeatAgrAnimate">animate</featureItem>
-					<featureExplanation>persons and animals</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>&nbsp;</featureType>
-					<featureItem dataValue="pronAgrFeatMinusAnimate" name="PronFeatAgrMinusAnimate">-animate</featureItem>
-					<featureExplanation>inanimate objects</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType>class</featureType>
-					<featureItem dataValue="pronAgrFeatClassNumber" name="PronFeatAgrClassNumber">class_##</featureItem>
-					<featureExplanation>(replace ## with the class number up to 99)</featureExplanation>
-				</featureRow>
-			</featureChart>
-		</instruction>
-		<br/>
-		<buttons>
-			<button id="PronMainBack" value="Back" goto="Contents.htm"/>
-			<button id="PronMainNext" value="Next" goto="PronPoss.htm"/>
-		</buttons>
-	</form>
-	<showWhen id="swNPCaseNone">
-		<whenValue element="np" attr="case" value="none"/>
-	</showWhen>
-	<showWhen id="swNPCaseNom">
-		<whenValue element="np" attr="case" value="nominative"/>
-	</showWhen>
-	<showWhen id="swNPCaseErg">
-		<whenValue element="np" attr="case" value="ergative"/>
-	</showWhen>
-	<showWhen id="swNPCaseSplit">
-		<whenValue element="np" attr="case" value="split"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseGenitive">
-		<whenValue element="np" attr="possCaseErg" value="genitive"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseErgative">
-		<whenValue element="np" attr="possCaseErg" value="ergative"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseAbsolutive">
-		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
-	</showWhen>
+		  <li>Add the feature <feature>nominative</feature> to all the pronouns that occur in subject position.</li>
+		  <li>Add the feature <feature>accusative</feature> to all the pronouns that occur in object position.</li>
+		  <li>Add the feature <feature>genitive</feature> to all the pronouns that occur in possessor position.</li>
+		  <li>If a particular pronoun can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <feature>nominative.or.genitive</feature>.</li>
+		  <li>If a particular pronoun can occur as a subject or as an object but not as a possessor, add the feature <feature>nominative.or.accusative</feature>.</li>
+		  <li>If a particular pronoun may occur as an object or as a possessor, but not as a subject, add the feature <feature>accusative.or.genitive</feature>.</li>
+		  <li>For the split ergativity cases, add the feature <feature>ergative</feature> to all the pronouns that can only occur as subjects of transitive verbs and add the feature <feature>absolutive</feature> to all the pronouns that can only occur as subjects of intransitive verbs and objects of transitive verbs.  Note that if there is some overlap between the pronoun sets for nominative-accusative versus ergative-absolutive, you will probably need to have two entries in your lexicon for those pronouns, each marked with the appropriate case feature.</li>
+		  <li>If a particular pronoun can show up in any position, do not add any feature.</li>
+		</ul>
+	  </instruction>
+	</div>
+	<instruction>In the chart below, check any agreement features used in your language.  Add the relevant agreement features to each pronoun in the lexicon.  If a pronoun is not specified for a particular type of agreement feature, do not add any feature of that type.<br/>
+	  <br/>
+	  <featureChart>
+		<featureRow>
+		  <featureType>person</featureType>
+		  <featureItem dataValue="pronAgrFeatFirst" name="PronFeatAgrFirst">first</featureItem>
+		  <featureExplanation>first person, with no exclusive-inclusive distinction</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatFirstExclusive" name="PronFeatAgrFirstExclusive">first_exclusive</featureItem>
+		  <featureExplanation>first person, cannot include the hearer</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatFirstInclusive" name="PronFeatAgrFirstInclusive">first_inclusive</featureItem>
+		  <featureExplanation>first person, and including the hearer</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatSecond" name="PronFeatAgrSecond">second</featureItem>
+		  <featureExplanation>second person</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatThird" name="PronFeatAgrThird">third</featureItem>
+		  <featureExplanation>third person</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>number</featureType>
+		  <featureItem dataValue="pronAgrFeatSingular" name="PronFeatAgrSingular">singular</featureItem>
+		  <featureExplanation>singular in number</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatDual" name="PronFeatAgrDual">dual</featureItem>
+		  <featureExplanation>two in number</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatPlural" name="PronFeatAgrPlural">plural</featureItem>
+		  <featureExplanation>plural in number</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>gender</featureType>
+		  <featureItem dataValue="pronAgrFeatMasculine" name="PronFeatAgrMasculine">masculine</featureItem>
+		  <featureExplanation>male gender</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatFeminine" name="PronFeatAgrFeminine">feminine</featureItem>
+		  <featureExplanation>female gender</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatNeuter" name="PronFeatAgrNeuter">neuter</featureItem>
+		  <featureExplanation>neuter gender</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>animacy</featureType>
+		  <featureItem dataValue="pronAgrFeatAnimate" name="PronFeatAgrAnimate">animate</featureItem>
+		  <featureExplanation>persons and animals</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>&nbsp;</featureType>
+		  <featureItem dataValue="pronAgrFeatMinusAnimate" name="PronFeatAgrMinusAnimate">-animate</featureItem>
+		  <featureExplanation>inanimate objects</featureExplanation>
+		</featureRow>
+		<featureRow>
+		  <featureType>class</featureType>
+		  <featureItem dataValue="pronAgrFeatClassNumber" name="PronFeatAgrClassNumber">class_##</featureItem>
+		  <featureExplanation>(replace ## with the class number up to 99)</featureExplanation>
+		</featureRow>
+	  </featureChart>
+	</instruction>
+	<br/>
+	<buttons>
+	  <button id="PronMainBack" value="Back" goto="Contents.htm"/>
+	  <button id="PronMainNext" value="Next" goto="PronPoss.htm"/>
+	</buttons>
+  </form>
+  <showWhen id="swNPCaseNone">
+	<whenValue element="np" attr="case" value="none"/>
+  </showWhen>
+  <showWhen id="swNPCaseNom">
+	<whenValue element="np" attr="case" value="nominative"/>
+  </showWhen>
+  <showWhen id="swNPCaseErg">
+	<whenValue element="np" attr="case" value="ergative"/>
+  </showWhen>
+  <showWhen id="swNPCaseSplit">
+	<whenValue element="np" attr="case" value="split"/>
+  </showWhen>
+  <showWhen id="swNPPossCaseGenitive">
+	<whenValue element="np" attr="possCaseErg" value="genitive"/>
+  </showWhen>
+  <showWhen id="swNPPossCaseErgative">
+	<whenValue element="np" attr="possCaseErg" value="ergative"/>
+  </showWhen>
+  <showWhen id="swNPPossCaseAbsolutive">
+	<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+  </showWhen>
 </page>

@@ -357,11 +357,15 @@ Refresh();
   <!-- **************************************************************************
 	  Remaining templates are in alphabetical order
 	  *************************************************************************** -->
-  <!-- br -->
+  <!--
+   br
+	-->
   <xsl:template match="//br">
 	<br/>
   </xsl:template>
-  <!-- button -->
+  <!--
+   button
+	-->
   <xsl:template match="//button">
 	<xsl:element name="input">
 	  <xsl:attribute name="type">button</xsl:attribute>
@@ -373,19 +377,25 @@ Refresh();
 	</xsl:element>
 	<xsl:if test="position()=1">&nbsp;</xsl:if>
   </xsl:template>
-  <!-- buttons -->
+  <!--
+   buttons
+	-->
   <xsl:template match="//buttons">
 	<xsl:apply-templates/>
 	<scan>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Contents.htm" onclick="ReturnContents()">Return to Contents</a>
 	</scan>
   </xsl:template>
-  <!-- category -->
+  <!--
+   category
+	-->
   <xsl:template match="//category">
 	<span class="category">
 	  <xsl:value-of select="."/>
 	</span>
   </xsl:template>
-  <!-- catMap -->
+  <!--
+   catMap
+	-->
   <xsl:template match="//catMap">
 	<br/>
   Morphological category to be changed to <span class="category">
@@ -394,19 +404,34 @@ Refresh();
 	  <xsl:attribute name="name"><xsl:value-of select="./@id"/></xsl:attribute>
 	</input>
   </xsl:template>
-  <!-- codeInfo -->
+  <!--
+   codeInfo
+	-->
   <xsl:template match="//codeInfo">
 	<xsl:comment>
 	  <xsl:value-of select="."/>
 	</xsl:comment>&#xa;
 </xsl:template>
-  <!-- contents -->
+  <!--
+   contents
+	-->
   <xsl:template match="//contents">
 	<span class="contents">
 	  <xsl:value-of select="."/>
 	</span>
   </xsl:template>
-  <!-- EnglishExample -->
+  <!--
+   div
+	-->
+  <xsl:template match="//div">
+	<xsl:element name="div">
+			<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+	  <xsl:apply-templates/>
+	</xsl:element>
+  </xsl:template>
+  <!--
+   EnglishExample
+	-->
   <xsl:template match="//EnglishExample">
 	<xsl:if test="name(preceding-sibling::node()[1])='introduction'">
 	  <br/>
@@ -417,13 +442,17 @@ Refresh();
 	  </table>
 	</div>
   </xsl:template>
-  <!-- example -->
+  <!--
+   example
+	-->
   <xsl:template match="//example">
 	<span class="example">
 	  <xsl:value-of select="."/>
 	</span>
   </xsl:template>
-  <!-- exItem -->
+  <!--
+   exItem
+	-->
   <xsl:template match="//exItem">
 	<tr>
 	  <td valign="top">
@@ -437,13 +466,17 @@ Refresh();
 	  </td>
 	</tr>
   </xsl:template>
-  <!-- feature -->
+  <!--
+   feature
+	-->
   <xsl:template match="//feature">
 	<span class="feature">
 	  <xsl:value-of select="."/>
 	</span>
   </xsl:template>
-  <!-- featureChart -->
+  <!--
+   featureChart
+	-->
   <xsl:template match="//featureChart">
 	<br/>
 	<table border="1" style="BACKGROUND-COLOR: transparent" class="featureChart">
@@ -459,7 +492,9 @@ Refresh();
 	  <xsl:apply-templates/>
 	</table>
   </xsl:template>
-  <!-- featureExplanation -->
+  <!--
+   featureExplanation
+	-->
   <xsl:template match="//featureExplanation">
 	<xsl:if test="not(ancestor::featureChart/@explanations='no')">
 	  <td valign="top">
@@ -467,7 +502,9 @@ Refresh();
 	  </td>
 	</xsl:if>
   </xsl:template>
-  <!-- featureItem -->
+  <!--
+   featureItem
+	-->
   <xsl:template match="//featureItem">
 	<td valign="top">
 	  <input type="checkbox">
@@ -479,13 +516,17 @@ Refresh();
 	  </input>
 	</td>
   </xsl:template>
-  <!-- featureRow -->
+  <!--
+   featureRow
+	-->
   <xsl:template match="//featureRow">
 	<tr>
 	  <xsl:apply-templates/>
 	</tr>
   </xsl:template>
-  <!-- featureType -->
+  <!--
+   featureType
+	-->
   <xsl:template match="//featureType">
 	<xsl:if test="ancestor::featureChart/@types='yes'">
 	  <td valign="top">
@@ -493,7 +534,9 @@ Refresh();
 	  </td>
 	</xsl:if>
   </xsl:template>
-  <!-- file -->
+  <!--
+   file
+	-->
   <xsl:template match="//file">
 	<xsl:element name="span">
 	  <xsl:attribute name="class">file</xsl:attribute>
@@ -501,7 +544,9 @@ Refresh();
 	  <xsl:value-of select="."/>
 	</xsl:element>
   </xsl:template>
-  <!-- form -->
+  <!--
+   form
+	-->
   <xsl:template match="//form">
 	<br/>
 	<xsl:element name="div">
@@ -512,10 +557,14 @@ Refresh();
 	  <xsl:apply-templates/>
 	</xsl:element>
   </xsl:template>
-  <!-- groupName -->
+  <!--
+   groupName
+	-->
   <xsl:template match="//groupName"/>
   <!-- just eat it here; used in radio -->
-  <!-- instruction -->
+  <!--
+   instruction
+	-->
   <xsl:template match="//instruction">
 	<xsl:if test="not(@id)">
 	  <br/>
@@ -530,20 +579,26 @@ Refresh();
 	  </p>
 	</xsl:element>
   </xsl:template>
-  <!-- help -->
+  <!--
+   help
+	-->
   <xsl:template match="//help">
 	<xsl:element name="a">
 	  <xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
 	  <xsl:value-of select="."/>
 	</xsl:element>
   </xsl:template>
-  <!-- i -->
+  <!--
+   i
+	-->
   <xsl:template match="//i">
 	<i>
 	  <xsl:apply-templates/>
 	</i>
   </xsl:template>
-  <!-- introduction -->
+  <!--
+   introduction
+	-->
   <xsl:template match="//introduction">
 	<xsl:if test="position()>2">
 	  <br/>
@@ -577,7 +632,9 @@ Refresh();
 	</xsl:if>
 	-->
   </xsl:template>
-  <!-- li -->
+  <!--
+   li
+	-->
   <xsl:template match="//li">
 	<xsl:element name="li">
 	  <xsl:if test="@id">
@@ -586,13 +643,17 @@ Refresh();
 	  <xsl:apply-templates/>
 	</xsl:element>
   </xsl:template>
-  <!-- ol -->
+  <!--
+   ol
+	-->
   <xsl:template match="//ol">
 	<ol style="margin-top: .025in">
 	  <xsl:apply-templates/>
 	</ol>
   </xsl:template>
-  <!-- p -->
+  <!--
+   p
+	-->
   <xsl:template match="//p">
 	<xsl:element name="p">
 	  <xsl:if test="@style">
@@ -601,7 +662,9 @@ Refresh();
 	  <xsl:apply-templates/>
 	</xsl:element>
   </xsl:template>
-  <!-- prompt -->
+  <!--
+   prompt
+	-->
   <xsl:template match="//prompt">
 	<!-- within a radioGroup case -->
 	<xsl:if test="name(..)='radioGroup'">
@@ -638,7 +701,9 @@ Refresh();
 	  </xsl:choose>
 	</xsl:if>
   </xsl:template>
-  <!-- radio -->
+  <!--
+   radio
+	-->
   <xsl:template match="//radio">
 	<tr>
 	  <xsl:if test="@id and @show">
@@ -666,7 +731,9 @@ Refresh();
 	  </xsl:element>
 	</tr>
   </xsl:template>
-  <!-- radioGroup -->
+  <!--
+   radioGroup
+	-->
   <xsl:template match="//radioGroup">
 	<!-- outer-level case -->
 	<xsl:if test="not(name(..)='radioGroup')">
@@ -695,19 +762,25 @@ Refresh();
 	  </xsl:element>
 	</xsl:if>
   </xsl:template>
-  <!-- ruleInfo -->
+  <!--
+   ruleInfo
+	-->
   <xsl:template match="//ruleInfo">
 	<xsl:comment>
 	  <xsl:value-of select="."/>
 	</xsl:comment>&#xa;
 </xsl:template>
-  <!-- section -->
+  <!--
+   section
+	-->
   <xsl:template match="//section">section <xsl:element name="span">
 	  <xsl:attribute name="class">section</xsl:attribute>
 	  <xsl:value-of select="./@number"/>&nbsp;<xsl:value-of select="."/>
 	</xsl:element>
   </xsl:template>
-  <!-- span -->
+  <!--
+   span
+	-->
   <xsl:template match="//span">
 	<xsl:element name="span">
 	  <xsl:if test="@id">
@@ -716,13 +789,17 @@ Refresh();
 	  <xsl:apply-templates/>
 	</xsl:element>
   </xsl:template>
-  <!--sub -->
+  <!--
+  sub
+   -->
   <xsl:template match="//sub">
 	<sub>
 	  <xsl:value-of select="."/>
 	</sub>
   </xsl:template>
-  <!-- textBox -->
+  <!--
+   textBox
+	-->
   <xsl:template match="//textBox">&#xa;
 <xsl:element name="textarea">
 	  <xsl:attribute name="class">vernacular</xsl:attribute>
@@ -747,7 +824,9 @@ Refresh();
 	  </xsl:if>
 	</xsl:element>
   </xsl:template>
-  <!-- title -->
+  <!--
+   title
+	-->
   <xsl:template match="//title">
 	<xsl:if test="not(@level)">
 	  <h1>
@@ -760,25 +839,33 @@ Refresh();
 	  </h2>
 	</xsl:if>
   </xsl:template>
-  <!-- tool -->
+  <!--
+   tool
+	-->
   <xsl:template match="//tool">
 	<span class="tool">
 	  <xsl:value-of select="."/>
 	</span>
   </xsl:template>
-  <!-- template -->
+  <!--
+   template
+	-->
   <xsl:template match="//template">
 	<span class="template">
 	  <xsl:value-of select="."/>
 	</span>
   </xsl:template>
-  <!-- templateName -->
+  <!--
+   templateName
+	-->
   <xsl:template match="//templateName">
 	<span class="templateName">
 	  <xsl:value-of select="."/>
 	</span>
   </xsl:template>
-  <!-- tree -->
+  <!--
+   tree
+	-->
   <xsl:template match="//tree">
 	<br/>
 	<xsl:choose>
@@ -795,13 +882,17 @@ Refresh();
 	</xsl:choose>
 	<br/>
   </xsl:template>
-  <!-- u -->
+  <!--
+   u
+	-->
   <xsl:template match="//u">
 	<u>
 	  <xsl:value-of select="."/>
 	</u>
   </xsl:template>
-  <!-- ul -->
+  <!--
+   ul
+	-->
   <xsl:template match="//ul">
 	<ul style="margin-top: .025in">
 	  <xsl:apply-templates/>
@@ -812,6 +903,7 @@ Refresh();
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+08-Aug-2002  Andy Black  Add div element; "beautify" some comments
 09-Jul-2002   Andy Black  Add checkbox within featureItem element
 28-Jun-2002  Andy Black  Allow section attribute for textbox element
 26-Jun-2002  Andy Black  Change radio prompt name to end with RPrompt
