@@ -1,4 +1,4 @@
-// Last revison: 4/19/2002 11:46:45 AM [mr]
+// Modified by mr (6/18/2002 10:35:42 AM)
 // DlgEditTestColor.cpp : implementation file
 
 
@@ -113,7 +113,7 @@ void CDlgEditTestColor::DoDataExchange(CDataExchange* pDX)
 
 		OPE->clrColor = pApp->GetProfileInt( szSection,"OPEcolor",RGB(255,0,0));
 		OPE->bBold = pApp->GetProfileInt( szSection,"OPEbold",FALSE);
-		OPE->bItalic = pApp->GetProfileInt( szSection,"OPEIialic",FALSE);
+		OPE->bItalic = pApp->GetProfileInt( szSection,"OPEitalic",FALSE);
 		OPE->bUnderline = pApp->GetProfileInt( szSection,"OPEunderline",FALSE);
 		OPE->bStrikeout = pApp->GetProfileInt( szSection,"OPESsrikeout",FALSE);
 
@@ -220,7 +220,10 @@ BOOL CDlgEditTestColor::OnInitDialog()
 	CDialog::OnInitDialog();
 
 
-// CTestEdit	->
+//m_buttonColorBackground.SubclassDlgItem(IDC_BUTTONTestBckgroundColr,this);
+//m_buttonColorFont.SubclassDlgItem(IDC_BUTTONTestColorFont,this);
+
+	// CTestEdit	->
 	m_richTestPreview.SubclassDlgItem(IDC_EDITContents, this);
 	m_richTestPreview.ModifyStyle(0, WS_CLIPCHILDREN);
 
@@ -389,6 +392,7 @@ void CDlgEditTestColor::OnSelchangingTree(NMHDR* pNMHDR, LRESULT* pResult)
 			m_FontITALIC = FOROPE->bItalic;
 			m_FontUNDERLINE = FOROPE->bUnderline;
 			m_FontSTRIKEOUT = FOROPE->bStrikeout;
+
 			break;
 
 		case 2:	// locators
@@ -644,7 +648,7 @@ void CDlgEditTestColor::writeNewParamInRegistry( )
 
 	 pApp->WriteProfileInt( szSection,"OPEcolor",OPE->clrColor);
 	 pApp->WriteProfileInt( szSection,"OPEbold",OPE->bBold);
-	 pApp->WriteProfileInt( szSection,"OPEIialic",OPE->bItalic);
+	 pApp->WriteProfileInt( szSection,"OPEitalic",OPE->bItalic);
 	 pApp->WriteProfileInt( szSection,"OPEunderline",OPE->bUnderline);
 	 pApp->WriteProfileInt( szSection,"OPESsrikeout",OPE->bStrikeout);
 
@@ -822,6 +826,12 @@ void CDlgEditTestColor::OnDefault()
 	// color button need to be refreshed
 	m_buttonColorFont.currentcolor = RGB(255,0,0);
 	RedrawWindow( NULL, NULL, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ERASE );
+
+	// check buttons need to be refreshed too
+	CheckDlgButton( IDC_CHECKTestBold,OPE->bBold );
+	CheckDlgButton( IDC_CHECKTestUnderline,OPE->bItalic );
+	CheckDlgButton( IDC_CHECKTestItalic,OPE->bUnderline );
+	CheckDlgButton( IDC_CHECKTestStrikeout,OPE->bStrikeout );
 }
 
 

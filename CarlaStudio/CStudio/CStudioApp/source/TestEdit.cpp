@@ -65,7 +65,7 @@ void CTestEdit::readRegistry( LPCTSTR lpzSection )
 	setColor( m_colorOPErators,
 				pApp->GetProfileInt( lpzSection,"OPEcolor",RGB(255,0,0)),
 				pApp->GetProfileInt( lpzSection,"OPEbold",FALSE),
-				pApp->GetProfileInt( lpzSection,"OPEIitalic",FALSE),
+				pApp->GetProfileInt( lpzSection,"OPEitalic",FALSE),
 				pApp->GetProfileInt( lpzSection,"OPEunderline",FALSE),
 				pApp->GetProfileInt( lpzSection,"OPESsrikeout",FALSE));
 
