@@ -39,7 +39,6 @@ displayStatus(ContentsNegativeStatus,"neg");
 displayStatus(ContentsCompsStatus,"comp");
 displayStatus(ContentsAdvClsStatus,"advcl");
 displayStatus(ContentsRelClStatus,"relcl");
-displayStatus(ContentsFullNPsStatus,"fullnp");
 displayStatus(ContentsCoordStatus,"coord");
 
 example = PawsSKAnswers.selectSingleNode("//leftOffAt");
@@ -111,12 +110,12 @@ function StatusClicked(idOfItem, strElem)
 		the data.
 
 <li>Add the feature names to the appropriate entries
-		in the lexicon, as directed.
+		in the lexicon, as directed. Please note that both feature names and category names are case sensitive and are limited to a single word for each.  A space indicates a separate feature name.
 
 <li>Key relevant data into the test file, as
 		directed, with a period and new line after each example.
 
-<li>Save the results.  Then run the parser and check the output.
+<li>Save the results, then run the parser and check the output.
 
 <li>Make any changes to the starter kit questions
 		(to change the phrase structure) or to the lexicon feature names needed,
@@ -194,13 +193,8 @@ function StatusClicked(idOfItem, strElem)
 			<td valign="top"><A id=ContentsRelCl href="UnderConstruction.htm">Relative Clauses</A></td><!-- RelClMain.htm -->
 		</tr>
 		<tr>
-			<td id="ContentsFullNPsStatus" onclick="StatusClicked(ContentsFullNPsStatus,'fullnp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">15.</td>
-			<td valign="top"><A id=ContentsFullNPs href="UnderConstruction.htm">Fully Modified Nominal Phrases</A></td><!-- FullNPMain.htm -->
-		</tr>
-		<tr>
 			<td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">16.</td>
+						<td valign="top">15.</td>
 			<td valign="top"><A id=ContentsCoord href="UnderConstruction.htm">Coordinate Structures</A></td><!-- CoordMain.htm -->
 		</tr>
 	</tbody>

@@ -31,9 +31,8 @@ displayStatus(NPContentsArticleStatus,"npContents3");
 displayStatus(NPContentsPossessorsStatus,"npContents4");
 displayStatus(NPContentsQPStatus,"npContents5");
 displayStatus(NPContentsAdjPStatus,"npContents6");
-displayStatus(NPContentsNounCaseStatus,"npContents7");
-displayStatus(NPContentsCompoundsStatus,"npContents8");
-displayStatus(NPContentsTestingStatus,"npContents9");
+displayStatus(NPContentsCompoundsStatus,"npContents7");
+displayStatus(NPContentsTestingStatus,"npContents8");
 
 example = PawsSKAnswers.selectSingleNode("//leftOffAt");
 example.text = "NPContents.htm";
@@ -88,7 +87,7 @@ function StatusClicked(idOfItem, strElem)
 		<tr>
 			<td id="NPContentsOverviewStatus" onclick="StatusClicked(NPContentsOverviewStatus,'npContents1')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">5.1.</td>
-			<td valign="top"><A id=NPContentsOverview href="NPMain.htm" >Overview of Simple and Possessed Nominal Phrases</A></td>
+			<td valign="top"><A id=NPContentsOverview href="NPMain.htm" >Overview plus Agreement and Case</A></td>
 		</tr>
 		<tr>
 			<td id="NPContentsDegreeWordsStatus" onclick="StatusClicked(NPContentsDegreeWordsStatus,'npContents2')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
@@ -116,18 +115,13 @@ function StatusClicked(idOfItem, strElem)
 			<td valign="top"><A id=NPContentsAdjP href="NPAdjp.htm">Adjective Phrase Modifiers</A></td>
 		</tr>
 		<tr>
-			<td id="NPContentsNounCaseStatus" onclick="StatusClicked(NPContentsNounCaseStatus,'npContents7')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+			<td id="NPContentsCompoundsStatus" onclick="StatusClicked(NPContentsCompoundsStatus,'npContents7')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">5.7.</td>
-			<td valign="top"><A id=NPContentsNounCase href="NPNounCase.htm">Noun Case</A></td>
+			<td valign="top"><A id=NPContentsCompounds href="NPCompounds.htm">Noun Compounds and Complements</A></td>
 		</tr>
 		<tr>
-			<td id="NPContentsCompoundsStatus" onclick="StatusClicked(NPContentsCompoundsStatus,'npContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+			<td id="NPContentsTestingStatus" onclick="StatusClicked(NPContentsTestingStatus,'npContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">5.8.</td>
-			<td valign="top"><A id=NPContentsCompounds href="NPCompounds.htm">Noun Modifiers (noun-noun Compounds</A></td>
-		</tr>
-		<tr>
-			<td id="NPContentsTestingStatus" onclick="StatusClicked(NPContentsTestingStatus,'npContents9')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">5.9.</td>
 			<td valign="top"><A id=NPContentsTesting href="NPTesting.htm">Testing</A></td>
 		</tr>
 <tr><td>&nbsp;</td><td>&nbsp;</td><td><A href="Contents.htm">Return to Contents</A></td>
