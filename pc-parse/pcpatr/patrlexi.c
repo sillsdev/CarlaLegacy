@@ -1766,9 +1766,17 @@ if (!errors && (sentm != NULL))
 	if (iStage != 0)
 	{
 	if (pOutputFP_in != NULL)
+#ifndef hab1211
+		fprintf(pOutputFP_in, "**** Not able to parse this sentence ****\n");
+#else
 		fprintf(pOutputFP_in, "**** Cannot parse this sentence ****\n");
+#endif /* hab1211 */
 	if (pPATR_in->pLogFP != NULL)
+#ifndef hab1211
+		fprintf(pPATR_in->pLogFP,"**** Not able to parse this sentence ****\n");
+#else
 		fprintf(pPATR_in->pLogFP,"**** Cannot parse this sentence ****\n");
+#endif /* hab1211 */
 	}
 	switch (iStage)
 	{

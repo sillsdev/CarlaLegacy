@@ -4,12 +4,15 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 10		/* bug fix or other minor change */
-#define DATE "August 8, 2001"	/* date of release version */
+#define PATCHLEVEL 11		/* bug fix or other minor change */
+#define DATE "September 20, 2001"	/* date of release version */
 #define YEAR "2001"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 20-Sep-2001  hab  - change failure message from "Cannot parse" to
+ * [1.2.11]             "Not able to parse" so will not erroneously give a
+ *                      warning in CarlaStudio.  Yes, this is a hack...
  * 08-Aug-2001  hab  - fix bug which would not report number of edges in Ample
  * [1.2.10]             ANA file output in \failure line.
  * 15-Jun-2001  hab  - fix bug which would not always show gloss lines in

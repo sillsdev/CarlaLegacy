@@ -1,5 +1,11 @@
 PC-PATR CHANGE HISTORY
 
+1.2.11 (20-Sep-2001)
+--------------------
+1. Changeed failure message from "Cannot parse this sentence" to
+   "Not able to parse this sentence" so it will not erroneously give a
+   warning in CarlaStudio.
+
 1.2.10 (08-Aug-2001)
 --------------------
 1. Fixed a bug which would not report number of edges in Ample ANA file

@@ -624,7 +624,11 @@ old_glosses_exist = pPATR_in->bGlossesExist;
 parse = parseWithPATR(sentm, &iStage, pPATR_in);
 if ((parse == NULL) || (iStage != 0))
 	{
+#ifndef hab1211
+	pszCannot = "**** Not able to parse this sentence ****\n";
+#else
 	pszCannot = "**** Cannot parse this sentence ****\n";
+#endif /* hab1211 */
 	}
 switch (iStage)
 	{
