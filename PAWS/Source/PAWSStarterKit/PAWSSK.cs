@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Xsl;
 using Microsoft.Win32;
@@ -746,7 +747,14 @@ namespace PAWSStarterKit
 		void setXmlElementAttribute(string strXPathElement, string strAttribute, string strValue)
 		{
 			XmlNode xmlNode;
+#if !UseString
+			StringBuilder sb = new StringBuilder(strXPathElement);
+			sb.Append("/@");
+			sb.Append(strAttribute);
+			string strXPath = sb.ToString();
+#else
 			string strXPath = strXPathElement + "/@" + strAttribute;
+#endif
 			try
 			{
 				xmlNode = m_XmlDoc.SelectSingleNode(strXPath);
@@ -838,14 +846,28 @@ namespace PAWSStarterKit
 			sw.WriteLine("{");
 			sw.WriteLine("  var elem;");
 			sw.WriteLine(@"     //Load the answers from user's answer file");
+#if !UseString
+			StringBuilder sbFilespec =  new StringBuilder("  filespec = \"");
+			sbFilespec.Append(strUserFileWithDoubleBackslash);
+			sbFilespec.Append("\";");
+			sw.WriteLine(sbFilespec.ToString());
+#else
 			sw.WriteLine("  filespec = \"" + strUserFileWithDoubleBackslash + "\";");
+#endif
 			sw.WriteLine("  PawsSKAnswers = new ActiveXObject(\"MicroSoft.XMLDOM\");");
 			sw.WriteLine("  PawsSKAnswers.async = false;");
 			sw.WriteLine("  PawsSKAnswers.load( filespec );");
 			sw.WriteLine("     // and Save them to the UserData store named LangAbbr + \"PawsSKAnswers\"");
 			sw.WriteLine("  div = document.all(\"answerDiv\");");
 			sw.WriteLine("  div.XMLDocument.documentElement = PawsSKAnswers.documentElement;");
+#if !UseString
+			StringBuilder sbDivSave = new StringBuilder("  div.save(\"");
+			sbDivSave.Append(m_strLanguageAbbreviation);
+			sbDivSave.Append("PawsSKAnswers\");");
+			sw.WriteLine(sbDivSave.ToString());
+#else
 			sw.WriteLine("  div.save(\"" + m_strLanguageAbbreviation + "PawsSKAnswers\");");
+#endif
 			sw.WriteLine("   PawsSKAnswers = div.XMLDocument; ");
 			sw.WriteLine("");
 			sw.WriteLine("  elem = PawsSKAnswers.selectSingleNode(\"//leftOffAt\");");
@@ -973,8 +995,16 @@ namespace PAWSStarterKit
 			{
 				xslArg.AddParam("prmIdTitle","", strType);
 				xslArg.AddParam("textSFM","", m_strTextSFM);
+#if !UseString
+				StringBuilder sb = new StringBuilder(m_strLanguageAbbreviation);
+				sb.Append(strType);
+				sb.Append("Test.txt");
+				string strExampleFile = Path.Combine(m_strUserExampleFilesPath,
+					sb.ToString());
+#else
 				string strExampleFile = Path.Combine(m_strUserExampleFilesPath,
 					m_strLanguageAbbreviation + strType + "Test.txt");
+#endif
 				StreamWriter sw = new StreamWriter(strExampleFile);
 				m_XslExampleTransform.Transform(m_XmlDoc, xslArg, sw);
 				sw.Close();
