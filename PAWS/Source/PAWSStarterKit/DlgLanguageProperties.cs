@@ -673,6 +673,12 @@ namespace PAWSStarterKit
 
 		private void btnAnswerFile_Click(object sender, System.EventArgs e)
 		{
+#if !Orig
+			if (strAnswerFile == null)
+			{
+				strAnswerFile = this.tbLanguage.Text;
+			}
+#endif
 			doSaveFileDialog(ref strAnswerFile, "Answer File", "PAWS Starter Kit (*.paw)|*.paw|" +
 				"All Files (*.*)|*.*", ".paw");
 			tbAnswerFile.Text = AnswerFile;
