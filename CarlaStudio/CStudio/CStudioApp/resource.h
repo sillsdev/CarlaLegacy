@@ -158,6 +158,7 @@
 #define IDS_WizCatProp_RS_ST            250
 #define IDS_WizFinalCat_RS_FT           251
 #define IDD_EditOrthoChange             252
+#define IDS_ModifyTestsFinalCatTests    252
 #define IDD_EditTestData                253
 #define IDI_TestDataListItem            254
 #define IDD_EditPrintANAProcess         255
@@ -166,6 +167,7 @@
 #define IDR_PARSECS                     258
 #define IDD_EditToneGenProcess          259
 #define IDD_EditToneTracing             260
+#define IDD_PageCatFinalModifyTest      261
 #define IDC_EDIT1                       1000
 #define IDC_EDITRuleFile                1000
 #define IDC_EDITTraceLevelParse         1000
@@ -472,6 +474,8 @@
 #define IDC_CHECKToneTraceMorphemeTone  3048
 #define IDC_CHECKToneGenTraceSynthesis  3049
 #define IDC_CHECKToneParseMorphnames    3050
+#define IDC_CHECKCreateFinalCatTestModifyTests 3051
+#define IDC_CHECKDisableFinalCatModifyTests 3052
 #define IDLangSetup                     32771
 #define ID_FILE                         32772
 #define IDProjectSetup                  32773
@@ -535,7 +539,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        261
 #define _APS_NEXT_COMMAND_VALUE         32831
-#define _APS_NEXT_CONTROL_VALUE         3051
+#define _APS_NEXT_CONTROL_VALUE         3053
 #define _APS_NEXT_SYMED_VALUE           148
 #endif
 #endif

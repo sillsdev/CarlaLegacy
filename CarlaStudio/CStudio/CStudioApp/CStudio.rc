@@ -1855,6 +1855,23 @@ BEGIN
 					WS_TABSTOP,13,77,150,11
 END
 
+IDD_PageCatFinalModifyTest DIALOG DISCARDABLE  0, 0, 296, 127
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Step 3 - Category Final Test"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "One way to ensure that an analysis of a word is correct is to check the category of the word.  If  the category is in a class of ""final categories"" that you specify, then the test passes. ",
+					IDC_STATIC,11,10,233,32
+	CONTROL         "&Create any finalcategory tests.",
+					IDC_CHECKCreateFinalCatTestModifyTests,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,13,76,111,10
+	LTEXT           "This wizard can create an empty category class for you that you can fill in later.  It will also create a ""Final Test"" to make sure words end with a category in that class.",
+					IDC_STATIC,12,41,241,27
+	CONTROL         "&Initially disable the final category test.  I'll turn in on later when I'm ready.",
+					IDC_CHECKDisableFinalCatModifyTests,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,13,95,240,10
+END
+
 
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
@@ -2351,6 +2368,14 @@ BEGIN
 		TOPMARGIN, 7
 		BOTTOMMARGIN, 158
 	END
+
+	IDD_PageCatFinalModifyTest, DIALOG
+	BEGIN
+		LEFTMARGIN, 7
+		RIGHTMARGIN, 289
+		TOPMARGIN, 7
+		BOTTOMMARGIN, 120
+	END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -2629,6 +2654,7 @@ BEGIN
 	IDS_ModifyTestsCatPropPage "Category Propogation"
 	IDS_WizCatProp_RS_ST    "SuffixCategoryCheck\n|RS Cat propagation, inserted by CarlaStudio wizard\n      left tocategory is current fromcategory\n"
 	IDS_WizFinalCat_RS_FT   "FinalCatClassCheck\n|RS Check of final category\n|The last morpheme must have a tocategory found in the finalcategory class\n|Inserted by CarlaStudio wizard.\nFINAL tocategory is member [finalcategory]\n"
+	IDS_ModifyTestsFinalCatTests "Final Category Tests"
 END
 
 STRINGTABLE DISCARDABLE
