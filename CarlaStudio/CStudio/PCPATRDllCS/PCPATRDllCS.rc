@@ -66,8 +66,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,1,1
- PRODUCTVERSION 1,0,1,1
+ FILEVERSION 1,1,0,1
+ PRODUCTVERSION 1,1,0,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -85,14 +85,14 @@ BEGIN
 			VALUE "Comments", "\0"
 			VALUE "CompanyName", "SIL International\0"
 			VALUE "FileDescription", "PCPATRDllCS DLL\0"
-			VALUE "FileVersion", "1, 0, 1, 1\0"
+			VALUE "FileVersion", "1, 1, 0, 1\0"
 			VALUE "InternalName", "PCPATRDllCS\0"
-			VALUE "LegalCopyright", "Copyright (C) 2000, 2001\0"
+			VALUE "LegalCopyright", "Copyright (C) 2000, 2001, 2002\0"
 			VALUE "LegalTrademarks", "\0"
 			VALUE "OriginalFilename", "PCPATRDllCS.DLL\0"
 			VALUE "PrivateBuild", "\0"
 			VALUE "ProductName", "PCPATRDllCS Dynamic Link Library\0"
-			VALUE "ProductVersion", "1, 0, 1, 1\0"
+			VALUE "ProductVersion", "1, 1, 0, 1\0"
 			VALUE "SpecialBuild", "\0"
 		END
 	END
@@ -110,7 +110,7 @@ END
 // Dialog
 //
 
-IDD_EditPCPATRDllProcess DIALOG DISCARDABLE  0, 0, 320, 269
+IDD_EditPCPATRDllProcess DIALOG DISCARDABLE  0, 0, 320, 293
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "PCPATR DLL"
 FONT 8, "MS Sans Serif"
@@ -124,6 +124,9 @@ BEGIN
 					BS_AUTOCHECKBOX | WS_TABSTOP,15,46,97,10
 	CONTROL         "Display &Features",IDC_CHECK_Features,"Button",
 					BS_AUTOCHECKBOX | WS_TABSTOP,15,57,98,12
+	CONTROL         "S&how All Feature Nodes (not just top)",
+					IDC_CHECK_AllFeatures,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,28,70,143,12
 	CONTROL         "Use Fl&at format",IDC_CHECK_FlatFeatureDisplay,"Button",
 					BS_AUTOCHECKBOX | WS_TABSTOP,28,81,100,12
 	CONTROL         "Trim E&mpty Features",IDC_CHECK_TrimEmptyFeatures,
@@ -149,26 +152,33 @@ BEGIN
 					BS_AUTORADIOBUTTON,182,91,102,10
 	CONTROL         "Use &XML format",IDC_RADIO_XMLTree,"Button",
 					BS_AUTORADIOBUTTON,182,103,102,10
-	GROUPBOX        "Processing",IDC_STATIC,7,154,251,84
+	GROUPBOX        "Processing",IDC_STATIC,7,154,299,111
 	LTEXT           "S&entence Final Punctuation:",IDC_STATIC,16,165,92,10
 	EDITTEXT        IDC_EDIT_SentenceFinalPunctuation,113,165,115,12,
 					ES_AUTOHSCROLL
 	CONTROL         "Treat AMPLE &Properties as Features",
 					IDC_CHECK_AmplePropertyIsFeature,"Button",
-					BS_AUTOCHECKBOX | WS_TABSTOP,16,182,159,9
+					BS_AUTOCHECKBOX | WS_TABSTOP,16,182,136,9
 	CONTROL         "Use &Unification",IDC_CHECK_Unification,"Button",
 					BS_AUTOCHECKBOX | WS_TABSTOP,16,193,116,11
 	CONTROL         "Promote Default Atomic &Values",
 					IDC_CHECK_PromoteDefaultAtomicValues,"Button",
-					BS_AUTOCHECKBOX | WS_TABSTOP,16,206,146,10
+					BS_AUTOCHECKBOX | WS_TABSTOP,16,206,124,10
 	LTEXT           "&Time Limit:",IDC_STATIC,16,220,36,9
 	EDITTEXT        IDC_EDIT_TimeLimit,59,220,37,12,ES_AUTOHSCROLL |
 					ES_NUMBER
-	DEFPUSHBUTTON   "OK",IDOK,204,248,50,14
-	PUSHBUTTON      "Cancel",IDCANCEL,263,248,50,14
-	CONTROL         "S&how All Feature Nodes (not just top)",
-					IDC_CHECK_AllFeatures,"Button",BS_AUTOCHECKBOX |
-					WS_TABSTOP,28,70,143,12
+	GROUPBOX        "Root Gloss as a feature",IDC_STATIC,158,189,129,70
+	CONTROL         "Do not use a &root gloss feature",IDC_RADIO_RootGlossNo,
+					"Button",BS_AUTORADIOBUTTON | WS_GROUP,166,201,114,11
+	CONTROL         "Use leftmost r&oot as gloss",IDC_RADIO_RootGlossLeft,
+					"Button",BS_AUTORADIOBUTTON,166,215,114,11
+	CONTROL         "Use rightmost root as gloss (&z)",
+					IDC_RADIO_RootGlossRight,"Button",BS_AUTORADIOBUTTON,166,
+					229,114,11
+	CONTROL         "Use all roots in compound (&k)",IDC_RADIO_RootGlossAll,
+					"Button",BS_AUTORADIOBUTTON,166,243,114,11
+	DEFPUSHBUTTON   "OK",IDOK,204,273,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,263,273,50,14
 END
 
 
@@ -185,7 +195,7 @@ BEGIN
 		LEFTMARGIN, 7
 		RIGHTMARGIN, 313
 		TOPMARGIN, 7
-		BOTTOMMARGIN, 262
+		BOTTOMMARGIN, 286
 	END
 END
 #endif    // APSTUDIO_INVOKED

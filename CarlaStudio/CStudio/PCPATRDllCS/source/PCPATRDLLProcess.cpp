@@ -58,6 +58,9 @@ void CPCPATRDllProcess::setDefaultValues()
 	m_sGrammarFileName = _T("");
 	m_bFlatFeatureDisplay = FALSE;
 	m_bAllFeatures = FALSE;
+#ifndef hab262
+	m_iTreeDisplayFormat = 0;
+#endif // hab262
 }
 
 void CPCPATRDllProcess::readParametersFromSFMFile(SFMFile *f)
@@ -84,6 +87,9 @@ void CPCPATRDllProcess::readParametersFromSFMFile(SFMFile *f)
 	  else checkAndReadInt( "TimeLimit", m_uiTimeLimit)
 	  else checkAndReadInt( "TreeDisplayFormat", m_iTreeDisplayFormat)
 	  else checkAndReadString("GrammarFileName", m_sGrammarFileName)
+#ifndef hab262
+	  else checkAndReadInt( "RootGlossFeature", m_iRootGlossSetting)
+#endif // hab262
 	  else f->throwParseFailure("PCPATRDLLProcess", sMarker, sField);
 	}
 }
@@ -106,6 +112,9 @@ void CPCPATRDllProcess::writeToStream(ostream& fout) const
   outputInt(fout, "TimeLimit", m_uiTimeLimit)	;
   outputInt(fout, "TreeDisplayFormat", m_iTreeDisplayFormat);
   fout << "\\GrammarFileName " <<  m_sGrammarFileName << "\n";
+#ifndef hab262
+  outputInt(fout, "RootGlossFeature", m_iRootGlossSetting);
+#endif // hab262
   fout << "\\-Process " << getProcessorID() << "\n";
 }
 
@@ -180,6 +189,14 @@ void CPCPATRDllProcess::processANAFile(CProcessStatus& status)
 	  checkResults(hr, "set TreeDisplay", pPatr);
 	  hr = pPatr->put_FlatFeatureDisplay(m_bFlatFeatureDisplay);
 	  checkResults(hr, "set FlatFeatureDisplay", pPatr);
+#ifndef hab262
+	  if (m_iRootGlossSetting > 0)
+	m_iRootGlossSetting++;	// need to adjust value to get correct setting
+	  hr = pPatr->put_RootGlossFeature(m_iRootGlossSetting);
+	  if (m_iRootGlossSetting > 0)
+	m_iRootGlossSetting--;	// adjust the value back
+	  checkResults(hr, "set RootGlossFeature", pPatr);
+#endif // hab262
 	  hr = pPatr->LoadGrammarFile(m_sGrammarFileName.AllocSysString());
 	  checkResults(hr, "load grammar file.\nSee Log File.", pPatr);
 	  s = m_sOutPath.getQuotedPath();;
@@ -302,6 +319,9 @@ BOOL CPCPATRDllProcess::doEditDialog(int iFunctionCode)
   dlg.m_iTreeDisplayFormat = m_iTreeDisplayFormat;
   dlg.m_sGrammarFileName = m_sGrammarFileName;
   dlg.m_bFlatFeatureDisplay = m_bFlatFeatureDisplay;
+#ifndef hab262
+  dlg.m_iRootGlossSetting = m_iRootGlossSetting;
+#endif // hab262
 
   // put up the dialog
   if(IDOK != dlg.DoModal())
@@ -323,6 +343,9 @@ BOOL CPCPATRDllProcess::doEditDialog(int iFunctionCode)
   m_iTreeDisplayFormat = dlg.m_iTreeDisplayFormat;
   m_sGrammarFileName = dlg.m_sGrammarFileName;
   m_bFlatFeatureDisplay = dlg.m_bFlatFeatureDisplay;
+#ifndef hab262
+  m_iRootGlossSetting = dlg.m_iRootGlossSetting;
+#endif // hab262
 
   return TRUE;
 }

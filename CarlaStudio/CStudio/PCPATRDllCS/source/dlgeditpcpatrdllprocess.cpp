@@ -33,6 +33,7 @@ CDlgEditPCPATRDllProcess::CDlgEditPCPATRDllProcess(CWnd* pParent /*=NULL*/)
 	m_sGrammarFileName = _T("");
 	m_bFlatFeatureDisplay = FALSE;
 	m_bAllFeatures = FALSE;
+	m_iRootGlossSetting = -1;
 	//}}AFX_DATA_INIT
 }
 
@@ -64,6 +65,7 @@ void CDlgEditPCPATRDllProcess::DoDataExchange(CDataExchange* pDX)
   DDX_Text(pDX, IDC_STATIC_GrammarFileName, m_sGrammarFileName);
   DDX_Check(pDX, IDC_CHECK_FlatFeatureDisplay, m_bFlatFeatureDisplay);
 	DDX_Check(pDX, IDC_CHECK_AllFeatures, m_bAllFeatures);
+	DDX_Radio(pDX, IDC_RADIO_RootGlossNo, m_iRootGlossSetting);
 	//}}AFX_DATA_MAP
 }
 

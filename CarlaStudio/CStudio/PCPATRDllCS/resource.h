@@ -23,6 +23,10 @@
 #define IDC_CHECK_PromoteDefaultAtomicValues 3017
 #define IDC_EDIT_TimeLimit              3018
 #define IDC_CHECK_AllFeatures           3019
+#define IDC_RADIO_RootGlossNo           3020
+#define IDC_RADIO_RootGlossLeft         3021
+#define IDC_RADIO_RootGlossRight        3022
+#define IDC_RADIO_RootGlossAll          3023
 
 // Next default values for new objects
 //
@@ -30,7 +34,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        3001
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         3020
+#define _APS_NEXT_CONTROL_VALUE         3022
 #define _APS_NEXT_SYMED_VALUE           3000
 #endif
 #endif

@@ -35,6 +35,7 @@ public:
 	CString	m_sGrammarFileName;
 	BOOL	m_bFlatFeatureDisplay;
 	BOOL	m_bAllFeatures;
+	int		m_iRootGlossSetting;
 	//}}AFX_DATA
 
 

@@ -75,6 +75,9 @@ protected:
 	CString	m_sGrammarFileName;
 	BOOL	m_bFlatFeatureDisplay;
 	BOOL    m_bAllFeatures;
+#ifndef hab262
+	int	m_iRootGlossSetting;
+#endif /* hab262 */
 };
 
 #endif // !defined(AFX_PCPATRDLLPROCESS_H__436BCE6E_4FD6_11D2_864E_444553540000__INCLUDED_)
