@@ -7,7 +7,6 @@
 #include "ItemEditDialogs.h"
 #include "TextDisplayInfo.h"
 
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -19,42 +18,32 @@ static char THIS_FILE[] = __FILE__;
 
 
 
-//#ifndef hab15a7
+#ifndef hab15a7
 CDlgEditTest::CDlgEditTest(const CTextDisplayInfo* pTDI)
-
 	: CSDialog(CDlgEditTest::IDD),
 	  m_pTDI(pTDI)
-
-//#else
-//CDlgEditTest::CDlgEditTest(CWnd* pParent /*=NULL*/)
-//	: CSDialog(CDlgEditTest::IDD, pParent)
-//#endif // hab15a7
+#else
+CDlgEditTest::CDlgEditTest(CWnd* pParent /*=NULL*/)
+	: CSDialog(CDlgEditTest::IDD, pParent)
+#endif // hab15a7
 {
 	//{{AFX_DATA_INIT(CDlgEditTest)
 	m_sContents = _T("");
 	m_sDescription = _T("");
 	m_sLabel = _T("");
 	m_bEnabled = FALSE;
-	m_bIsAmpleTest = TRUE;
 	//}}AFX_DATA_INIT
 }
-#ifndef mr270
-//static const TCHAR szSection [] = _T("Settings\\TestsColor");
-#endif // mr270
-
 
 
 void CDlgEditTest::DoDataExchange(CDataExchange* pDX)
 {
-
 	CSDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CDlgEditTest)
 	DDX_Text(pDX, IDC_EDITContents, m_sContents);
 	DDX_Text(pDX, IDC_EDITDescription, m_sDescription);
 	DDX_Text(pDX, IDC_EDITLabel, m_sLabel);
-#ifndef mr270
 	DDX_Check(pDX, IDC_CHECKEnabled, m_bEnabled);
-#endif // mr270
 	//}}AFX_DATA_MAP
 #ifndef hab15a7
 	// when we're opening the dialog, set the fonts
@@ -64,17 +53,12 @@ void CDlgEditTest::DoDataExchange(CDataExchange* pDX)
 	{
 		if (m_pTDI->m_bShowUserTestsInLangFont)
 		{
-
-#ifndef mr270
-
-#else // mr270
-			CEdit* pE = (CEdit*) GetDlgItem(IDC_EDITContents);  // fix name
+		  CEdit* pE = (CEdit*) GetDlgItem(IDC_EDITContents);  // fix name
 			if(pE)
 				pE->SetFont(m_pTDI->getFont());
 			pE = (CEdit*) GetDlgItem(IDC_To);
 			if(pE)
 				pE->SetFont(m_pTDI->getFont());
-#endif // mr270
 		}
 		if (m_pTDI->m_bShowCommentsInLangFont)
 		{
@@ -92,66 +76,6 @@ BEGIN_MESSAGE_MAP(CDlgEditTest, CSDialog)
 		// NOTE: the ClassWizard will add message map macros here
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
-
-
-#ifndef mr270
-BOOL CDlgEditTest::OnInitDialog()
-{
-	CDialog::OnInitDialog();
-
-
-	CWnd* pWnd=NULL;
-	pWnd = GetDlgItem( IDC_EDITLabel );
-	pWnd->SetWindowText( m_sLabel );
-
-	pWnd = GetDlgItem( IDC_EDITDescription );
-	pWnd->SetWindowText( m_sDescription );
-
-	pWnd = GetDlgItem( IDC_EDITContents );
-	pWnd->SetWindowText( m_sContents );
-
-
-// CTestEdit	->
-	ModifyStyle(0, WS_CLIPCHILDREN);
-	m_richTestEdit.SubclassDlgItem(IDC_EDITContents, this);
-
-#ifndef mr270
-	// get Font Face Name for CRichEditCtrl
-	LOGFONT logfont;
-	CString strFontFaceName="Courier New";
-	if (m_pTDI->m_bShowUserTestsInLangFont)
-	{
-		CFont *pF =m_pTDI->getFont();
-		pF->GetLogFont(&logfont);
-		strFontFaceName=logfont.lfFaceName;
-	}
-#endif // mr270
-
-	m_richTestEdit.Initialize(m_bIsAmpleTest /*TRUE=Ample FALSE=Stamp*/,
-								m_cCommentChar /*User's comment char*/,
-								strFontFaceName /*User's font or default font*/,
-								m_pTestEditModel /*color model for tests*/,
-								FALSE /*control is read-only*/ );
-	m_richTestEdit.FormatAll();
-
-
-	if( m_sLabel.IsEmpty() )
-	{
-		GotoDlgCtrl( GetDlgItem( IDC_EDITLabel ) );
-	}
-	else
-	{
-		m_richTestEdit.SetFocus();
-	}
-
-	return FALSE;
-}
-#endif // mr270
-
-void CDlgEditTest::OnCheckOnOff()
-{
-
-}
 
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditTest message handlers
