@@ -51,12 +51,13 @@
 *                        log file will show all passes)
 * 0.2p 22-Jun-2000 hab fix memory leaks
 * 0.2q 27-Dec-2000 hab define myfree as freeMemory for non-DLL versions
+* 0.2r 24-Jul-2001 hab allow final line to not have a newline
 *-----------------------------------------------------------*/
 
 #ifdef DJGPP
-#define VERSION "Join Compounds 0.2q (386) December 2000 Copyright SIL International\n"
+#define VERSION "Join Compounds 0.2r (386) July 2001 Copyright SIL International\n"
 #else
-#define VERSION "Join Compounds 0.2q December 2000 Copyright SIL International\n"
+#define VERSION "Join Compounds 0.2r July 2001 Copyright SIL International\n"
 #endif
 
 #include <stdio.h>              /* Include standard lib prototypes */
@@ -559,7 +560,21 @@ for ( moresw = line; moresw; )          /* Until end of file */
 	}
 
 	flineend = line + (linelen - 1);     /* Remember first line end */
+#ifndef hab02r
+	if (*flineend == '\n')
+	  *flineend = ' ';   /* Change its nl to space */
+	else
+	  {				/* eof found; try to add space at end */
+	if (linelen < MAXLINE)
+	  {
+		linelen++;
+		flineend++;
+		*flineend = ' ';
+	  }
+	  }
+#else
 	*flineend = ' ';                     /* Change its nl to space */
+#endif /* hab202r */				    /* Bring in line after end of first */
 
 					/* Bring in line after end of first */
 	moresw = fgets( flineend + 1, MAXLINE - linelen, infile );
