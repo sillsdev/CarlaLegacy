@@ -17,7 +17,8 @@
 		<br/>
 		<br/>
 		<instruction>In the lexicon, add the feature <feature>makeC</feature> to the complementizer(s) so it will show up in the correct position in the tree structure.
-<br/><br/>
+<br/>
+			<br/>
 Add the features <feature>sentential embedded_finite</feature> to the lexical entries for the main verbs in the examples.  If one or more of your verbs require the complementizer to be present, also add the feature <feature>embedded_CP</feature> to those entries.</instruction>
 		<br/>
 		<EnglishExample>
@@ -74,7 +75,10 @@ Add the features <feature>sentential embedded_finite</feature> to the lexical en
 		<textBox id="CompNonfiniteCPOrProDropExample" dataItem="nonfiniteCPOrProDropExample" cols="50"/>
 		<br/>
 		<br/>
-		<instruction>Add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature> to the lexical entries for the main verbs in the examples.</instruction>
+	  <instruction>In the lexicon, add the features <feature>makeC -finite</feature> to any complementizer(s) like 'for' so it will show up in the correct position in the tree structure and be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.)
+<br/>
+			<br/>
+		Add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature> to the lexical entries for the main verbs in the examples.</instruction>
 		<br/>
 		<prompt>
   Your language may also have other restrictions on embbeded clauses, such as the embbeded verb being in the subjunctive mood or in the perfective aspect.  Key any of those examples here:</prompt>
@@ -85,7 +89,7 @@ Add the features <feature>sentential embedded_finite</feature> to the lexical en
 		<br/>
 		<buttons>
 			<button id="CompFeaturesBack" value="Back" goto="CompMain.htm"/>
-			<button id="CompFeaturesNext" value="Next" goto="CompTesting.htm"/>
+			<button id="CompFeaturesNext" value="Next" goto="CompPosition.htm"/>
 		</buttons>
 	</form>
 </page>

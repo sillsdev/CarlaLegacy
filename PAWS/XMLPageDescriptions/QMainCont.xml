@@ -15,7 +15,8 @@
 		</EnglishExample>
 		<prompt>Key similar examples from your language, whether or not fronting is required, here:</prompt>
 		<textBox id="QContExample" dataItem="contentExample" cols="50"/>
-		<br/> <br/>
+		<br/>
+		<br/>
 		<radioGroup>
 			<groupName dataItem="contFront" default="unknown" position="yesHead">RQContFront</groupName>
 			<prompt>Is an interrogative phrase required to be fronted in content questions in your language?</prompt>
@@ -41,13 +42,14 @@
 					<groupName dataItem="mainContCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
 					<prompt>Where does the clitic attach to the question?</prompt>
 					<radio id="QMainContCliticAttachesEdge" dataValue="edge">At the edge</radio>
-					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">                        <span id="QMainContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
-</radio>
+					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">
+						<span id="QMainContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
+					</radio>
 					<radio id="QMainContCliticAttachesHead" dataValue="head">To the verb</radio>
 				</radioGroup>
 				<radio id="QMainContWordYes" dataValue="yes">Yes</radio>
 			</radioGroup>
-	 <radioGroup id="QMainContVSOBeforeWhTable" show="swVSOWordFrontYes">
+			<radioGroup id="QMainContVSOBeforeWhTable" show="swVSOWordFrontYes">
 				<groupName dataItem="mainContVSOBeforeWh" default="no">RQMainContVSOBeforeWh</groupName>
 				<prompt>Do any of these question markers occur before a fronted interrogative phrase?</prompt>
 				<radio id="QMainContVSOBeforeWhNo" dataValue="no">No, all the question markers occur immediately after any fronted interrogative phrase</radio>
@@ -85,7 +87,13 @@
 				<radio id="QMainContRequiredNo" dataValue="no">No, some content questions do not use/need the question marker</radio>
 			</radioGroup>
 			<radio id="QMainContNoAux" dataValue="noAux">No, but an auxiliary is fronted, like in English</radio>
-			<radioGroup id="QMainContAuxTable" show="swQMainContNoAux">
+			 <radioGroup id="QMainContAuxPosTable" show="swQMainContNoAux">
+				<groupName dataItem="mainContAuxPos" default="unknown" position="yesHead">RQMainContAuxPos</groupName>
+				<prompt>Where does the auxiliary occur with respect to the rest of the question?</prompt>
+				<radio id="QMainContAuxPosBefore" dataValue="before">Before</radio>
+				<radio id="QMainContAuxPosAfter" dataValue="after">After</radio>
+			</radioGroup>
+		   <radioGroup id="QMainContAuxTable" show="swQMainContNoAux">
 				<groupName dataItem="mainContAuxRequired" default="no">RQMainContAux</groupName>
 				<prompt>Is an auxiliary required to be fronted in every content question?</prompt>
 				<radio id="QMainContAuxRequiredYes" dataValue="yes">Yes</radio>
@@ -104,7 +112,7 @@
 		<instruction id="QMainContVSONoEndRestrictedInstruction" show="swQMainContVSONoEndRestricted">In the lexicon, mark those markers which can only occur after the fronted interrogative phrase with the feature <feature>CP-initial</feature> and those which can only occur at the end of the question with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur in either position.</instruction>
 		<instruction id="QMainContVSOBeforeWhYesInstruction" show="swQMainContVSOBeforeWhYes">In the lexicon, mark each of the question markers which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.</instruction>
 		<instruction id="QMainContVSOBeforeWhSomeInstruction" show="swQMainContVSOBeforeWhSome">In the lexicon, mark those which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.  The others will default to <feature>-</feature> for that feature. </instruction>
-<br/>
+		<br/>
 		<buttons>
 			<button id="QCont2Back" value="Back" goto="QCont.htm"/>
 			<button id="QCont2Next" value="Next" goto="QEmbCont.htm"/>
@@ -132,18 +140,24 @@
 		<whenRadio button="QMainContYes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-<and/> <whenRadio button="QContFrontYes"></whenRadio>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
 	</showWhen>
 	<showWhen id="swQMainContWordNotVSOFrontYes">
-		 <whenRadio button="QMainContWordYes"/>
+		<whenRadio button="QMainContWordYes"/>
 		<and/>
 		<whenRadio button="QMainContYes"/>
-<and/><openParen/>
-<not/>   <whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
 		<openParen/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-<and/> <whenRadio button="QContFrontNo"></whenRadio> <closeParen/><closeParen/>
+		<and/>
+		<whenRadio button="QContFrontNo"/>
+		<closeParen/>
+		<closeParen/>
 	</showWhen>
 	<showWhen id="swQMainContEitherOrBoth">
 		<whenRadio button="QMainContWordYes"/>
@@ -155,46 +169,64 @@
 		<and/>
 		<not/>
 		<whenRadio button="QMainContPosAfter"/>
-<and/><openParen/>
-<not/>   <whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
 		<openParen/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-<and/> <whenRadio button="QContFrontNo"></whenRadio> <closeParen/><closeParen/>
+		<and/>
+		<whenRadio button="QContFrontNo"/>
+		<closeParen/>
+		<closeParen/>
 	</showWhen>
 	<showWhen id="swQMainContNoAux">
 		<whenRadio button="QMainContNoAux"/>
 	</showWhen>
 	<showWhen id="swQMainContVSOBeforeWhNoEnd">
-<whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
- <and/> <whenRadio button="QContFrontYes"></whenRadio>
-	 <and/>  <whenRadio button="QMainContVSOBeforeWhNoEnd"/>
-<and/>           <whenRadio button="QMainContWordYes"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+		<and/>
+		<whenRadio button="QMainContVSOBeforeWhNoEnd"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
 		<and/>
 		<whenRadio button="QMainContYes"/>
- </showWhen>
+	</showWhen>
 	<showWhen id="swQMainContVSONoEndRestricted">
-   <whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
- <and/> <whenRadio button="QContFrontYes"></whenRadio>
-	 <and/>  <whenRadio button="QMainContVSOBeforeWhNoEnd"/>
-	  <and/>       <whenRadio button="QMainContVSONoEndRestricted"/>
-<and/>           <whenRadio button="QMainContWordYes"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+		<and/>
+		<whenRadio button="QMainContVSOBeforeWhNoEnd"/>
+		<and/>
+		<whenRadio button="QMainContVSONoEndRestricted"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
 		<and/>
 		<whenRadio button="QMainContYes"/>
 	</showWhen>
 	<showWhen id="swQMainContVSOBeforeWhYes">
-  <whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
-<and/> <whenRadio button="QContFrontYes"></whenRadio>
-	  <and/>        <whenRadio button="QMainContVSOBeforeWhYes"/>
-<and/>           <whenRadio button="QMainContWordYes"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+		<and/>
+		<whenRadio button="QMainContVSOBeforeWhYes"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
 		<and/>
 		<whenRadio button="QMainContYes"/>
 	</showWhen>
 	<showWhen id="swQMainContVSOBeforeWhSome">
-<whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
-<and/> <whenRadio button="QContFrontYes"></whenRadio>
-	  <and/>          <whenRadio button="QMainContVSOBeforeWhSome"/>
-<and/>           <whenRadio button="QMainContWordYes"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+		<and/>
+		<whenRadio button="QMainContVSOBeforeWhSome"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
 		<and/>
 		<whenRadio button="QMainContYes"/>
 	</showWhen>
@@ -264,11 +296,16 @@
 		<whenRadio button="QMainContYes"/>
 		<and/>
 		<whenRadio button="QMainContEitherRestricted"/>
-<and/><openParen/>
-<not/>   <whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
 		<openParen/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-<and/> <whenRadio button="QContFrontNo"></whenRadio> <closeParen/><closeParen/>
+		<and/>
+		<whenRadio button="QContFrontNo"/>
+		<closeParen/>
+		<closeParen/>
 	</showWhen>
 </page>

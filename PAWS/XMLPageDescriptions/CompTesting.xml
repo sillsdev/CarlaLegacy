@@ -17,7 +17,7 @@ Please check off this section now in 'Contents' and then proceed to
 </instruction>
 		<br/>
 		<buttons>
-			<button id="CompTestingBack" value="Back" goto="CompFeatures.htm"/>
+			<button id="CompTestingBack" value="Back" goto="CompPosition.htm"/>
 			<button id="CompTestingNext" value="Next" goto="Contents.htm"/>
 		</buttons>
 	</form>

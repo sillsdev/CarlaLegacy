@@ -168,6 +168,9 @@ Adv' = Adv IP
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv head type sentential&gt; = +
 	&lt;Adv head embedded&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head type root&gt; = -
 	&lt;Adv' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;Adv' option&gt; = 3f
 </rule>
@@ -177,6 +180,9 @@ Adv' = IP Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv head type sentential&gt; = +
 	&lt;Adv head embedded&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head type root&gt; = -
 	&lt;Adv' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;Adv' option&gt; = 3i
 </rule>
@@ -193,6 +199,9 @@ Adv' = Adv CP
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv head type sentential&gt; = +
 	&lt;Adv head embedded&gt; = &lt;CP head&gt;
+	&lt;CP head type question&gt; = -
+	&lt;CP head type relative&gt; = -
+	&lt;CP head type root&gt; = -
 	&lt;Adv' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
 	&lt;Adv' option&gt; = 4f
 </rule>
@@ -202,6 +211,9 @@ Adv' = CP Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv head type sentential&gt; = +
 	&lt;Adv head embedded&gt; = &lt;CP head&gt;
+	&lt;CP head type question&gt; = -
+	&lt;CP head type relative&gt; = -
+	&lt;CP head type root&gt; = -
 	&lt;Adv' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
 	&lt;Adv' option&gt; = 4i
 </rule>

@@ -2564,8 +2564,8 @@ P' = IP
 	<rule show="PBaroption6b">
 rule {PBar option 6b - P_suffix, IP complement}
 P' = IP
-		&lt;P' head&gt; = &lt;DP head&gt;
-		&lt;DP head type suffix P&gt; = +
+		&lt;P' head&gt; = &lt;IP head&gt;
+		&lt;IP head type suffix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' head type sentential&gt; = +
 	&lt;P' option&gt; = 6b

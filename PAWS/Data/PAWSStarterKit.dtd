@@ -778,9 +778,23 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	 types of complement clauses they can take: finiteExample,
 	finiteOrNonfiniteExample, DPCPExample, nonfiniteExample,
 	nonfiniteProDropExample, nonfiniteCPOrProDropExample,
-	otherExample.
+	otherExample.       Complement Clauses may have
+	  complementizers (comp).  These may be written as separate words
+	  (compWord).  These have a position with respect to the rest of the
+	  embedded clause (compPos).  If they can appear on either side, then all of
+	  them may do so (compEitherRestricted) or not.  If a clitic questions of pre/post clitic
+	 (compCliticPos) and type are asked (compCliticAttaches).
 -->
 <!ELEMENT comp (finiteExample, finiteOrNonfiniteExample, DPCPExample, nonfiniteExample, nonfiniteProDropExample, nonfiniteCPOrProDropExample, otherExample)>
+<!ATTLIST comp
+	checkedOff (yes | no) "no"
+	comp (yes | no) "no"
+	compWord (no | yes) "yes"
+	compCliticPos (before | after | both | unknown) "unknown"
+	compCliticAttaches (edge | head) "edge"
+	compPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	compEitherRestricted (unrestricted | restricted) "unrestricted"
+>
 <!ELEMENT finiteExample (#PCDATA)>
 <!ELEMENT finiteOrNonfiniteExample (#PCDATA)>
 <!ELEMENT DPCPExample (#PCDATA)>
@@ -788,9 +802,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT nonfiniteProDropExample (#PCDATA)>
 <!ELEMENT nonfiniteCPOrProDropExample (#PCDATA)>
 <!ELEMENT otherExample (#PCDATA)>
-<!ATTLIST comp
-	checkedOff (yes | no) "no"
->
+
 <!-- Questions have main clause Yes/No examples (example),
 	  embedded Yes/No examples (embYNExample),
 	  main clause content examples (contentExample),
@@ -874,6 +886,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	mainContEitherRestricted (unrestricted | restricted) "unrestricted"
 	mainContVSOBeforeWh (no | noEnd | yes | some) "no"
 	mainContRequired (no | yes) "no"
+	mainContAuxPos (before | after | unknown) "unknown"
 	mainContAuxRequired (no | yes) "no"
 	embCont (yes | noAux | no) "no"
 	embContWord (no | yes) "yes"
@@ -883,6 +896,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	embContEitherRestricted (unrestricted | restricted) "unrestricted"
 	embContVSOBeforeWh (no | noEnd | yes | some) "no"
 	embContRequired (no | yes) "no"
+	embContAuxPos (before | after | unknown) "unknown"
 	embContAuxRequired (no | yes) "no"
 >
 <!ELEMENT embYNExample (#PCDATA)>

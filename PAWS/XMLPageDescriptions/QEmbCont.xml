@@ -14,7 +14,7 @@
 		<textBox id="QEmbContentExample" dataItem="embContentExample" cols="50"/>
 		<br/>
 		<instruction>If any main verbs used in these examples were not marked with the feature <feature>sentential</feature> above, go to the lexicon and add the feature <feature>sentential</feature> to the appropriate entries now.</instruction>
-	  <radioGroup>
+		<radioGroup>
 			<groupName dataItem="embCont" default="no">RQEmbCont</groupName>
 			<prompt>In embedded clause content questions, are there one or more special question marker particles or complementizers that may occur in addition to the interrogative phrases?</prompt>
 			<radio id="QEmbContYes" dataValue="yes">Yes</radio>
@@ -78,6 +78,12 @@
 				<radio id="QEmbContRequiredNo" dataValue="no">No, some embedded content questions do not use/need the question marker</radio>
 			</radioGroup>
 			<radio id="QEmbContNoAux" dataValue="noAux">No, but an auxiliary is fronted</radio>
+			 <radioGroup id="QEmbContAuxPosTable" show="swQEmbContNoAux">
+				<groupName dataItem="embContAuxPos" default="unknown" position="yesHead">RQEmbContAuxPos</groupName>
+				<prompt>Where does the auxiliary occur with respect to the rest of the question?</prompt>
+				<radio id="QEmbContAuxPosBefore" dataValue="before">Before</radio>
+				<radio id="QEmbContAuxPosAfter" dataValue="after">After</radio>
+			</radioGroup>
 			<radioGroup id="QEmbContAuxTable" show="swQEmbContNoAux">
 				<groupName dataItem="mainEmbAuxRequired" default="no">RQEmbContAux</groupName>
 				<prompt>Is an auxiliary required to be fronted in every embedded content question?</prompt>
@@ -97,7 +103,7 @@
 		<instruction id="QEmbContVSONoEndRestrictedInstruction" show="swQEmbContVSONoEndRestricted">In the lexicon, mark those markers which can only occur after the fronted interrogative phrase with the feature <feature>CP-initial</feature> and those which can only occur at the end of the question with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur in either position.</instruction>
 		<instruction id="QEmbContVSOBeforeWhYesInstruction" show="swQEmbContVSOBeforeWhYes">In the lexicon, mark each of the question markers which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.</instruction>
 		<instruction id="QEmbContVSOBeforeWhSomeInstruction" show="swQEmbContVSOBeforeWhSome">In the lexicon, mark those which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.  The others will default to <feature>-</feature> for that feature. </instruction>
-<br/>
+		<br/>
 		<buttons>
 			<button id="QEmbContBack" value="Back" goto="QMainCont.htm"/>
 			<button id="QEmbContNext" value="Next" goto="QTesting.htm"/>
@@ -119,25 +125,30 @@
 	<showWhen id="swQContFrontYes">
 		<whenValue element="q" attr="contFront" value="before"/>
 	</showWhen>
-	  <showWhen id="swVSOWordFrontYes">
+	<showWhen id="swVSOWordFrontYes">
 		<whenRadio button="QEmbContWordYes"/>
 		<and/>
 		<whenRadio button="QEmbContYes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-<and/> <whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
 	</showWhen>
 	<showWhen id="swQEmbContWordNotVSOFrontYes">
-		 <whenRadio button="QEmbContWordYes"/>
+		<whenRadio button="QEmbContWordYes"/>
 		<and/>
 		<whenRadio button="QEmbContYes"/>
-<and/><openParen/>
-<not/>   <whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
 		<openParen/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-<and/> <whenValue element="q" attr="contFront" value="after"/>
-<closeParen/><closeParen/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="after"/>
+		<closeParen/>
+		<closeParen/>
 	</showWhen>
 	<showWhen id="swQEmbContEitherOrBoth">
 		<whenRadio button="QEmbContWordYes"/>
@@ -149,47 +160,64 @@
 		<and/>
 		<not/>
 		<whenRadio button="QEmbContPosAfter"/>
-<and/><openParen/>
-<not/>   <whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
 		<openParen/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-<and/> <whenValue element="q" attr="contFront" value="after"/>
-<closeParen/><closeParen/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="after"/>
+		<closeParen/>
+		<closeParen/>
 	</showWhen>
 	<showWhen id="swQEmbContNoAux">
 		<whenRadio button="QEmbContNoAux"/>
 	</showWhen>
 	<showWhen id="swQEmbContVSOBeforeWhNoEnd">
-<whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
- <and/> <whenValue element="q" attr="contFront" value="before"/>
-	 <and/>  <whenRadio button="QEmbContVSOBeforeWhNoEnd"/>
-<and/>           <whenRadio button="QEmbContWordYes"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenRadio button="QEmbContVSOBeforeWhNoEnd"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
 		<and/>
 		<whenRadio button="QEmbContYes"/>
- </showWhen>
+	</showWhen>
 	<showWhen id="swQEmbContVSONoEndRestricted">
-   <whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
- <and/> <whenValue element="q" attr="contFront" value="before"/>
-	 <and/>  <whenRadio button="QEmbContVSOBeforeWhNoEnd"/>
-	  <and/>       <whenRadio button="QEmbContVSONoEndRestricted"/>
-<and/>           <whenRadio button="QEmbContWordYes"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenRadio button="QEmbContVSOBeforeWhNoEnd"/>
+		<and/>
+		<whenRadio button="QEmbContVSONoEndRestricted"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
 		<and/>
 		<whenRadio button="QEmbContYes"/>
 	</showWhen>
 	<showWhen id="swQEmbContVSOBeforeWhYes">
-  <whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
-<and/> <whenValue element="q" attr="contFront" value="before"/>
-	  <and/>        <whenRadio button="QEmbContVSOBeforeWhYes"/>
-<and/>           <whenRadio button="QEmbContWordYes"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenRadio button="QEmbContVSOBeforeWhYes"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
 		<and/>
 		<whenRadio button="QEmbContYes"/>
 	</showWhen>
 	<showWhen id="swQEmbContVSOBeforeWhSome">
-<whenValue element="typology" attr="wordOrder" value="VSO"></whenValue>
-<and/> <whenValue element="q" attr="contFront" value="before"/>
-	  <and/>          <whenRadio button="QEmbContVSOBeforeWhSome"/>
-<and/>           <whenRadio button="QEmbContWordYes"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenRadio button="QEmbContVSOBeforeWhSome"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
 		<and/>
 		<whenRadio button="QEmbContYes"/>
 	</showWhen>
@@ -259,12 +287,16 @@
 		<whenRadio button="QEmbContYes"/>
 		<and/>
 		<whenRadio button="QEmbContEitherRestricted"/>
-<and/><openParen/>
-<not/>   <whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
 		<openParen/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-<and/> <whenValue element="q" attr="contFront" value="after"/>
-<closeParen/><closeParen/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="after"/>
+		<closeParen/>
+		<closeParen/>
 	</showWhen>
 </page>

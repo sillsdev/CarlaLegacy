@@ -202,7 +202,7 @@
 		<ipInflFeatFinite checked="no"/>
 		<ipInflFeatMinusFinite checked="no"/>
 	</ip>
-	<comp checkedOff="no">
+	<comp checkedOff="no" comp="no" compWord="yes" compCliticPos="unknown" compCliticAttaches="edge" compPos="unknown" compEitherRestricted="unrestricted">
 		<finiteExample/>
 		<finiteOrNonfiniteExample/>
 		<DPCPExample/>
@@ -211,7 +211,9 @@
 		<nonfiniteCPOrProDropExample/>
 		<otherExample/>
 	</comp>
-	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContCliticPos="unknown" mainContCliticAttaches="edge" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContRequired="no" mainContAuxRequired="no" embCont="no" embContWord="yes" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContRequired="no" embContAuxRequired="no">
+	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContCliticPos="unknown" mainContCliticAttaches="edge" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContRequired="no" mainContAuxPos="unknown"
+mainContAuxRequired="no" embCont="no" embContWord="yes" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContRequired="no" embContAuxPos="unknown"
+embContAuxRequired="no">
 		<example/>
 		<embYNExample/>
 		<contentExample/>

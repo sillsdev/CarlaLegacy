@@ -7,7 +7,7 @@ rule {VP option 0a - Aux initial, VP complement}
 VP = Aux VP_1
 	&lt;VP head&gt; = &lt;VP_1 head&gt;
 	&lt;VP head type auxiliary&gt; = +	<!-- | must have higher aux -->
-		&lt;VP head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
 	&lt;VP option&gt; = 0a
 </rule>
 	<showWhen id="VPoption0a">
@@ -28,7 +28,7 @@ rule {VP option 0b - Aux final, VP complement}
 VP = VP_1 Aux
 	&lt;VP head&gt; = &lt;VP_1 head&gt;
 	&lt;VP head type auxiliary&gt; = +	| must have higher aux
-		&lt;VP head type suffix&gt; &lt;= &lt;Aux head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;Aux head type suffix&gt;
 	&lt;VP option&gt; = 0b
 </rule>
 	<showWhen id="VPoption0b">
@@ -63,7 +63,7 @@ rule {VP option 1a - manner AdvP initial, adjoined to VP}
 VP = AdvP VP_1
 	&lt;VP head&gt; = &lt;VP_1 head&gt;
 	&lt;AdvP head type manner&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
 	&lt;VP option&gt; = 1a
 </rule>
 	<showWhen id="VPoption1a">
@@ -74,7 +74,7 @@ rule {VP option 1b - manner AdvP final, adjoined to VP}
 VP = VP_1 AdvP
 	&lt;VP head&gt; = &lt;VP_1 head&gt;
 	&lt;AdvP head type manner&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 	&lt;VP option&gt; = 1b
 </rule>
 	<showWhen id="VPoption1b">
@@ -85,7 +85,7 @@ rule {VP option 1c - split CP relative clause adjoined to VP}
 VP = VP_1 CP
 	&lt;VP head&gt; = &lt;VP_1 head&gt;
 	&lt;CP head type relative&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
 	&lt;VP option&gt; = 1c
 </rule>
 	<showWhen id="VPoption1c">
@@ -96,7 +96,7 @@ rule {VP option 1d - split IP relative clause adjoined to VP}
 VP = VP_1 IP
 	&lt;VP head&gt; = &lt;VP_1 head&gt;
 	&lt;IP head type relative&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 1d
 </rule>
 	<showWhen id="VPoption1d">
@@ -135,7 +135,7 @@ VP = V DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 		&lt;VP option&gt; = 2b
 </rule>
 	<showWhen id="VPoption2b">
@@ -202,7 +202,7 @@ VP = DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 2c
 </rule>
 	<showWhen id="VPoption2c">
@@ -284,8 +284,8 @@ VP = V {PP / AdvP}
 	&lt;V head type passive&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 		&lt;VP option&gt; = 3a
 </rule>
 	<showWhen id="VPoption3a">
@@ -306,8 +306,8 @@ VP = {PP / AdvP} V
 	&lt;V head type passive&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
 		&lt;VP option&gt; = 3b
 </rule>
 	<showWhen id="VPoption3b">
@@ -340,8 +340,8 @@ VP = V DP {PP / AdvP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted cat&gt; = PP
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 	&lt;VP option&gt; = 3c
 </rule>
 	<showWhen id="VPoption3c">
@@ -362,8 +362,8 @@ VP = V {PP / AdvP}
 	&lt;V head type copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 		&lt;VP option&gt; = 3ci
 </rule>
 	<showWhen id="VPoption3ci">
@@ -392,8 +392,8 @@ VP = V {PP / AdvP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted cat&gt; = PP
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 		&lt;VP option&gt; = 3cp
 </rule>
 	<showWhen id="VPoption3cp">
@@ -430,8 +430,8 @@ VP = {PP / AdvP} DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted cat&gt; = PP
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
 	&lt;VP option&gt; = 3d
 </rule>
 	<showWhen id="VPoption3d">
@@ -452,8 +452,8 @@ VP = {PP / AdvP} V
 	&lt;V head type copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
 		&lt;VP option&gt; = 3di
 </rule>
 	<showWhen id="VPoption3di">
@@ -482,8 +482,8 @@ VP = {PP / AdvP} (DP) V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted cat&gt; = PP
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
 	&lt;VP option&gt; = 3dp
 </rule>
 	<showWhen id="VPoption3dp">
@@ -508,8 +508,8 @@ VP = V {PP / AdvP}
 	&lt;VP head fronted cat&gt; = DP
 	&lt;VP head fronted head type wh&gt; = +
 	&lt;VP head fronted&gt; = &lt;V head subject&gt;
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 		&lt;VP option&gt; = 3e
 </rule>
 	<showWhen id="VPoption3e">
@@ -534,8 +534,8 @@ VP = {PP / AdvP} V
 	&lt;VP head fronted cat&gt; = DP
 	&lt;VP head fronted head type wh&gt; = +
 	&lt;VP head fronted&gt; = &lt;V head subject&gt;
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
 		&lt;VP option&gt; = 3f
 </rule>
 	<showWhen id="VPoption3f">
@@ -559,9 +559,9 @@ VP = V {PP / AdjP / DP}
 		&lt;DP head type suffix copular&gt; = -
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 4a
 </rule>
 	<showWhen id="VPoption4a">
@@ -585,9 +585,9 @@ VP = {PP / AdjP / DP} V
 		&lt;DP head type suffix copular&gt; = -
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 4b
 </rule>
 	<showWhen id="VPoption4b">
@@ -703,8 +703,8 @@ VP = V DP {PP / AdjP / DP_1}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PP
 	&lt;VP option&gt; = 4e
 </rule>
@@ -729,8 +729,8 @@ VP = V {PP / AdjP / DP}
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PP
 		&lt;VP option&gt; = 4ei
 </rule>
@@ -763,8 +763,8 @@ VP = V {PP / AdjP / DP_1}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PP
 	&lt;VP option&gt; = 4ep
 </rule>
@@ -1130,9 +1130,9 @@ VP = {PP / AdjP / DP_1} DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 4g
 </rule>
 	<showWhen id="VPoption4g">
@@ -1156,9 +1156,9 @@ VP = {PP / AdjP / DP_1} V
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 		&lt;VP option&gt; = 4gi
 </rule>
 	<showWhen id="VPoption4gi">
@@ -1190,9 +1190,9 @@ VP = {PP / AdjP / DP_1} V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 4gp
 </rule>
 	<showWhen id="VPoption4gp">
@@ -1229,7 +1229,7 @@ VP = {PP / AdjP / DP_1} DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 4h
 </rule>
 	<showWhen id="VPoption4h">
@@ -1270,7 +1270,7 @@ VP = {PP / AdjP / DP_1} DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 4haff
 </rule>
 	<showWhen id="VPoption4haff">
@@ -1306,7 +1306,7 @@ VP = {PP / AdjP / DP_1} DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 4ha
 </rule>
 	<showWhen id="VPoption4ha">
@@ -1548,9 +1548,9 @@ VP = V {PP / AdjP / DP_1}
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
 	&lt;PP head type sentential&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 4i
 </rule>
 	<showWhen id="VPoption4i">
@@ -1692,9 +1692,9 @@ VP = {PP / AdjP / DP_1} V
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
 	&lt;PP head type sentential&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 4k
 </rule>
 	<showWhen id="VPoption4k">
@@ -1715,7 +1715,7 @@ VP = V DP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 5a
 </rule>
 	<showWhen id="VPoption5a">
@@ -1740,7 +1740,7 @@ VP = V DP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 5b
 </rule>
 	<showWhen id="VPoption5b">
@@ -1773,7 +1773,7 @@ VP = DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 5c
 </rule>
 	<showWhen id="VPoption5c">
@@ -1798,7 +1798,7 @@ VP = DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 5d
 </rule>
 	<showWhen id="VPoption5d">
@@ -1853,7 +1853,7 @@ VP = V DP DP_1
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -1880,7 +1880,7 @@ VP = V DP_1
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 5ei
 </rule>
 	<showWhen id="VPoption5ei">
@@ -1924,7 +1924,7 @@ VP = V DP_1
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -1979,7 +1979,7 @@ VP = V DP DP_1
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -2010,7 +2010,7 @@ VP = V DP_1
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 5fi
 </rule>
 	<showWhen id="VPoption5fi">
@@ -2060,7 +2060,7 @@ VP = V DP_1
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -2127,7 +2127,7 @@ VP = DP_1 DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -2154,7 +2154,7 @@ VP = DP_1 V
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 5gi
 </rule>
 	<showWhen id="VPoption5gi">
@@ -2198,7 +2198,7 @@ VP = DP_1 V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -2253,7 +2253,7 @@ VP = DP_1 DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -2284,7 +2284,7 @@ VP = DP_1 V
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 5hi
 </rule>
 	<showWhen id="VPoption5hi">
@@ -2329,7 +2329,7 @@ VP = DP_1 V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -2434,7 +2434,7 @@ VP = V DP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 5k
 </rule>
 	<showWhen id="VPoption5k">
@@ -2495,7 +2495,7 @@ VP = V DP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 5l
 </rule>
 	<showWhen id="VPoption5l">
@@ -2578,7 +2578,7 @@ VP = DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 5m
 </rule>
 	<showWhen id="VPoption5m">
@@ -2639,7 +2639,7 @@ VP = DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 5n
 </rule>
 	<showWhen id="VPoption5n">
@@ -2730,7 +2730,7 @@ VP = V DP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 5o
 </rule>
 	<showWhen id="VPoption5o">
@@ -2767,7 +2767,7 @@ VP = V DP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 5p
 </rule>
 	<showWhen id="VPoption5p">
@@ -2810,7 +2810,7 @@ VP = DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 5q
 </rule>
 	<showWhen id="VPoption5q">
@@ -2847,7 +2847,7 @@ VP = DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 5r
 </rule>
 	<showWhen id="VPoption5r">
@@ -2880,7 +2880,7 @@ VP = V DP PP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6a
 </rule>
 	<showWhen id="VPoption6a">
@@ -2925,7 +2925,7 @@ VP = V DP PP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6b
 </rule>
 	<showWhen id="VPoption6b">
@@ -2994,7 +2994,7 @@ VP = PP DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6c
 </rule>
 	<showWhen id="VPoption6c">
@@ -3039,7 +3039,7 @@ VP = PP DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6d
 </rule>
 	<showWhen id="VPoption6d">
@@ -3106,7 +3106,7 @@ VP = V PP
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6aq
 </rule>
 	<showWhen id="VPoption6aq">
@@ -3157,7 +3157,7 @@ VP = V PP
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6bq
 </rule>
 	<showWhen id="VPoption6bq">
@@ -3240,7 +3240,7 @@ VP = PP V
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6cq
 </rule>
 	<showWhen id="VPoption6cq">
@@ -3291,7 +3291,7 @@ VP = PP V
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6dq
 </rule>
 	<showWhen id="VPoption6dq">
@@ -3375,7 +3375,7 @@ VP = V DP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 6aqpp
 </rule>
 	<showWhen id="VPoption6aqpp">
@@ -3427,7 +3427,7 @@ VP = V DP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 6bqpp
 </rule>
 	<showWhen id="VPoption6bqpp">
@@ -3511,7 +3511,7 @@ VP = DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 6cqpp
 </rule>
 	<showWhen id="VPoption6cqpp">
@@ -3563,7 +3563,7 @@ VP = DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 6dqpp
 </rule>
 	<showWhen id="VPoption6dqpp">
@@ -3663,7 +3663,7 @@ VP = V DP DP_1 PP
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -3702,7 +3702,7 @@ VP = V DP_1 PP
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6ei
 </rule>
 	<showWhen id="VPoption6ei">
@@ -3748,7 +3748,7 @@ VP = V DP_1 PP
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -3820,7 +3820,7 @@ VP = V DP DP_1 PP
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -3871,7 +3871,7 @@ VP = V DP_1 PP
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6fi
 </rule>
 	<showWhen id="VPoption6fi">
@@ -3934,7 +3934,7 @@ VP = V DP_1 PP
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -4038,7 +4038,7 @@ VP = PP DP_1 DP V
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -4077,7 +4077,7 @@ VP = PP DP_1 V
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6gi
 </rule>
 	<showWhen id="VPoption6gi">
@@ -4123,7 +4123,7 @@ VP = PP DP_1 V
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -4195,7 +4195,7 @@ VP = PP DP_1 DP V
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -4246,7 +4246,7 @@ VP = PP DP_1 V
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6hi
 </rule>
 	<showWhen id="VPoption6hi">
@@ -4308,7 +4308,7 @@ VP = PP DP_1 V
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -4395,7 +4395,7 @@ VP = V PP
 		&lt;PP head type prefix poss&gt; = -
 	&lt;VP head type passive&gt; = -
 	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6i
 </rule>
 	<showWhen id="VPoption6i">
@@ -4446,7 +4446,7 @@ VP = V PP
 		&lt;PP head type prefix poss&gt; = -
 	&lt;VP head type passive&gt; = -
 	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6j
 </rule>
 	<showWhen id="VPoption6j">
@@ -4529,7 +4529,7 @@ VP = PP V
 		&lt;PP head type prefix poss&gt; = -
 	&lt;VP head type passive&gt; = -
 	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6k
 </rule>
 	<showWhen id="VPoption6k">
@@ -4580,7 +4580,7 @@ VP = PP V
 		&lt;PP head type prefix poss&gt; = -
 	&lt;VP head type passive&gt; = -
 	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6l
 </rule>
 	<showWhen id="VPoption6l">
@@ -4671,7 +4671,7 @@ VP = V DP PP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6m
 </rule>
 	<showWhen id="VPoption6m">
@@ -4708,7 +4708,7 @@ VP = V PP
 	&lt;V head type transitive&gt; = +
 	&lt;V head type copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6mp
 </rule>
 	<showWhen id="VPoption6mp">
@@ -4775,7 +4775,7 @@ VP = V DP PP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6n
 </rule>
 	<showWhen id="VPoption6n">
@@ -4828,7 +4828,7 @@ VP = V PP
 	&lt;V head type transitive&gt; = +
 	&lt;V head type copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6np
 </rule>
 	<showWhen id="VPoption6np">
@@ -4935,7 +4935,7 @@ VP = PP DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6o
 </rule>
 	<showWhen id="VPoption6o">
@@ -4972,7 +4972,7 @@ VP = PP V
 	&lt;V head type transitive&gt; = +
 	&lt;V head type copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6op
 </rule>
 	<showWhen id="VPoption6op">
@@ -5039,7 +5039,7 @@ VP = PP DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6p
 </rule>
 	<showWhen id="VPoption6p">
@@ -5092,7 +5092,7 @@ VP = PP V
 	&lt;V head type transitive&gt; = +
 	&lt;V head type copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6pp
 </rule>
 	<showWhen id="VPoption6pp">
@@ -5207,7 +5207,7 @@ VP = V DP PP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6q
 </rule>
 	<showWhen id="VPoption6q">
@@ -5257,7 +5257,7 @@ VP = V DP PP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 6r
 </rule>
 	<showWhen id="VPoption6r">
@@ -5324,7 +5324,7 @@ VP = PP DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6s
 </rule>
 	<showWhen id="VPoption6s">
@@ -5375,7 +5375,7 @@ VP = PP DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 6t
 </rule>
 	<showWhen id="VPoption6t">
@@ -5442,7 +5442,7 @@ VP = V DP DP_1
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head fronted cat&gt; = PP
 	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 6u
 </rule>
 	<showWhen id="VPoption6u">
@@ -5487,7 +5487,7 @@ VP = V DP_1
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head fronted cat&gt; = PP
 	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 6up
 </rule>
 	<showWhen id="VPoption6up">
@@ -5562,7 +5562,7 @@ VP = V DP DP_1
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head fronted cat&gt; = PP
 	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 6v
 </rule>
 	<showWhen id="VPoption6v">
@@ -5623,7 +5623,7 @@ VP = V DP_1
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head fronted cat&gt; = PP
 	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 6vp
 </rule>
 	<showWhen id="VPoption6vp">
@@ -5738,7 +5738,7 @@ VP = DP_1 DP V
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head fronted cat&gt; = PP
 	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 6w
 </rule>
 	<showWhen id="VPoption6w">
@@ -5783,7 +5783,7 @@ VP = DP_1 V
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head fronted cat&gt; = PP
 	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 6wp
 </rule>
 	<showWhen id="VPoption6wp">
@@ -5858,7 +5858,7 @@ VP = DP_1 DP V
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head fronted cat&gt; = PP
 	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 6x
 </rule>
 	<showWhen id="VPoption6x">
@@ -5919,7 +5919,7 @@ VP = DP_1 V
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head fronted cat&gt; = PP
 	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 6xp
 </rule>
 	<showWhen id="VPoption6xp">
@@ -6021,7 +6021,7 @@ VP = V DP_1 DP_2
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;VP option&gt; = 7a
 </rule>
 	<showWhen id="VPoption7a">
@@ -6067,7 +6067,7 @@ VP = V DP_1 DP_2
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;VP option&gt; = 7b
 </rule>
 	<showWhen id="VPoption7b">
@@ -6137,7 +6137,7 @@ VP = DP_2 DP_1 V
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
 	&lt;VP option&gt; = 7c
 </rule>
 	<showWhen id="VPoption7c">
@@ -6183,7 +6183,7 @@ VP = DP_2 DP_1 V
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
 	&lt;VP option&gt; = 7d
 </rule>
 	<showWhen id="VPoption7d">
@@ -6251,7 +6251,7 @@ VP = V DP
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 7aq
 </rule>
 	<showWhen id="VPoption7aq">
@@ -6303,7 +6303,7 @@ VP = V DP
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 7bq
 </rule>
 	<showWhen id="VPoption7bq">
@@ -6387,7 +6387,7 @@ VP = DP V
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 7cq
 </rule>
 	<showWhen id="VPoption7cq">
@@ -6439,7 +6439,7 @@ VP = DP V
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 7dq
 </rule>
 	<showWhen id="VPoption7dq">
@@ -6548,7 +6548,7 @@ VP = V DP DP_1 DP_2
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -6588,7 +6588,7 @@ VP = V DP_1 DP_2
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;VP option&gt; = 7ei
 </rule>
 	<showWhen id="VPoption7ei">
@@ -6643,7 +6643,7 @@ VP = V  DP_1 DP_2
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -6724,7 +6724,7 @@ VP = V DP DP_1 DP_2
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -6776,7 +6776,7 @@ VP = V DP_1 DP_2
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;VP option&gt; = 7fi
 </rule>
 	<showWhen id="VPoption7fi">
@@ -6847,7 +6847,7 @@ VP = V DP_1 DP_2
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -6960,7 +6960,7 @@ VP = DP_2 DP_1 DP V
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -7000,7 +7000,7 @@ VP = DP_2 DP_1 V
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
 	&lt;VP option&gt; = 7gi
 </rule>
 	<showWhen id="VPoption7gi">
@@ -7055,7 +7055,7 @@ VP = DP_2 DP_1 V
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -7136,7 +7136,7 @@ VP = DP_2 DP_1 DP V
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -7188,7 +7188,7 @@ VP = DP_2 DP_1 V
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
 	&lt;VP option&gt; = 7hi
 </rule>
 	<showWhen id="VPoption7hi">
@@ -7259,7 +7259,7 @@ VP = DP_2 DP_1 V
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -7348,7 +7348,7 @@ VP = V DP
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
 	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 7iq
 </rule>
 	<showWhen id="VPoption7iq">
@@ -7401,7 +7401,7 @@ VP = V DP
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
 	&lt;VP head type question&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 7jq
 </rule>
 	<showWhen id="VPoption7jq">
@@ -7486,7 +7486,7 @@ VP = DP V
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
 	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 7kq
 </rule>
 	<showWhen id="VPoption7kq">
@@ -7539,7 +7539,7 @@ VP = DP V
 		&lt;DP head type suffix copular&gt; = -
 	&lt;VP head type passive&gt; = -
 	&lt;VP head type question&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 7lq
 </rule>
 	<showWhen id="VPoption7lq">
@@ -7646,7 +7646,7 @@ VP = V DP DP_1
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7i
 </rule>
 	<showWhen id="VPoption7i">
@@ -7705,7 +7705,7 @@ VP = V DP DP_1
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7j
 </rule>
 	<showWhen id="VPoption7j">
@@ -7780,7 +7780,7 @@ VP = DP_1 DP V
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7k
 </rule>
 	<showWhen id="VPoption7k">
@@ -7838,7 +7838,7 @@ VP = (DP_3 / PP_1) DP_1 DP V
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7l
 </rule>
 	<showWhen id="VPoption7l">
@@ -7905,7 +7905,7 @@ VP = V DP DP_1
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7m
 </rule>
 	<showWhen id="VPoption7m">
@@ -7950,7 +7950,7 @@ VP = V DP_1
 		&lt;DP_1 head type prefix poss&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7mp
 </rule>
 	<showWhen id="VPoption7mp">
@@ -8025,7 +8025,7 @@ VP = V DP DP_1
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7n
 </rule>
 	<showWhen id="VPoption7n">
@@ -8086,7 +8086,7 @@ VP = V DP_1
 		&lt;DP_1 head type prefix poss&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7np
 </rule>
 	<showWhen id="VPoption7np">
@@ -8201,7 +8201,7 @@ VP = DP_1 DP V
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7o
 </rule>
 	<showWhen id="VPoption7o">
@@ -8246,7 +8246,7 @@ VP = DP_1 V
 		&lt;DP_1 head type prefix poss&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7op
 </rule>
 	<showWhen id="VPoption7op">
@@ -8321,7 +8321,7 @@ VP = DP_1 DP V
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7p
 </rule>
 	<showWhen id="VPoption7p">
@@ -8382,7 +8382,7 @@ VP = DP_1 V
 		&lt;DP_1 head type prefix poss&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7pp
 </rule>
 	<showWhen id="VPoption7pp">
@@ -8497,7 +8497,7 @@ VP = V DP DP_1
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7q
 </rule>
 	<showWhen id="VPoption7q">
@@ -8542,7 +8542,7 @@ VP = V DP_1
 		&lt;DP_1 head type prefix poss&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7qp
 </rule>
 	<showWhen id="VPoption7qp">
@@ -8617,7 +8617,7 @@ VP = V DP DP_1
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7r
 </rule>
 	<showWhen id="VPoption7r">
@@ -8678,7 +8678,7 @@ VP = V DP_1
 		&lt;DP_1 head type prefix poss&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 7rp
 </rule>
 	<showWhen id="VPoption7rp">
@@ -8793,7 +8793,7 @@ VP = DP_1 DP V
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7s
 </rule>
 	<showWhen id="VPoption7s">
@@ -8838,7 +8838,7 @@ VP = DP_1 V
 		&lt;DP_1 head type prefix poss&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7sp
 </rule>
 	<showWhen id="VPoption7sp">
@@ -8913,7 +8913,7 @@ VP = DP_1 DP V
 		&lt;DP head type suffix copular&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7t
 </rule>
 	<showWhen id="VPoption7t">
@@ -8974,7 +8974,7 @@ VP = DP_1 V
 		&lt;DP_1 head type prefix poss&gt; = -
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 7tp
 </rule>
 	<showWhen id="VPoption7tp">
@@ -9070,8 +9070,8 @@ VP = V {CP / IP}
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;V head type passive&gt; = -
 	&lt;VP option&gt; = 8a
 </rule>
@@ -9093,8 +9093,8 @@ VP = {CP / IP} V
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8b
 </rule>
 	<showWhen id="VPoption8b">
@@ -9117,8 +9117,8 @@ VP = V DP {CP / IP}
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8aoacc
 </rule>
 	<showWhen id="VPoption8aoacc">
@@ -9145,8 +9145,8 @@ VP = V DP {CP / IP}
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8aoabs
 </rule>
 	<showWhen id="VPoption8aoabs">
@@ -9181,8 +9181,8 @@ VP = {CP / IP} DP V
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8boacc
 </rule>
 	<showWhen id="VPoption8boacc">
@@ -9209,8 +9209,8 @@ VP = {CP / IP} DP V
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8boabs
 </rule>
 	<showWhen id="VPoption8boabs">
@@ -9256,8 +9256,8 @@ VP = V DP {CP / IP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8c
 </rule>
 	<showWhen id="VPoption8c">
@@ -9280,8 +9280,8 @@ VP = V {CP / IP}
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8ci
 </rule>
 	<showWhen id="VPoption8ci">
@@ -9311,8 +9311,8 @@ VP = V {CP / IP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8cp
 </rule>
 	<showWhen id="VPoption8cp">
@@ -9360,8 +9360,8 @@ VP = V DP DP_1 {CP / IP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8co
 </rule>
 	<showWhen id="VPoption8co">
@@ -9390,8 +9390,8 @@ VP = V DP_1 {CP / IP}
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8cio
 </rule>
 	<showWhen id="VPoption8cio">
@@ -9427,8 +9427,8 @@ VP = V DP_1 {CP / IP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8cpo
 </rule>
 	<showWhen id="VPoption8cpo">
@@ -9470,8 +9470,8 @@ VP = {CP / IP} DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8d
 </rule>
 	<showWhen id="VPoption8d">
@@ -9494,8 +9494,8 @@ VP = {CP / IP} V
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8di
 </rule>
 	<showWhen id="VPoption8di">
@@ -9525,8 +9525,8 @@ VP = {CP / IP} V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8dp
 </rule>
 	<showWhen id="VPoption8dp">
@@ -9574,8 +9574,8 @@ VP = {CP / IP} DP_1 DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8do
 </rule>
 	<showWhen id="VPoption8do">
@@ -9604,8 +9604,8 @@ VP = {CP / IP} DP_1 V
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8dio
 </rule>
 	<showWhen id="VPoption8dio">
@@ -9641,8 +9641,8 @@ VP = {CP / IP} DP_1 V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8dpo
 </rule>
 	<showWhen id="VPoption8dpo">
@@ -9684,8 +9684,8 @@ VP = V DP {CP / IP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8e
 </rule>
 	<showWhen id="VPoption8e">
@@ -9713,8 +9713,8 @@ VP = V {CP / IP}
 	&lt;V head type passive&gt; = -
 		&lt;DP head agr case&gt; = ergative     | assume like transitive
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8ei
 </rule>
 	<showWhen id="VPoption8ei">
@@ -9750,8 +9750,8 @@ VP = V {CP / IP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8ep
 </rule>
 	<showWhen id="VPoption8ep">
@@ -9811,8 +9811,8 @@ VP = V DP DP_1 {CP / IP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8eo
 </rule>
 	<showWhen id="VPoption8eo">
@@ -9845,8 +9845,8 @@ VP = V DP_1 {CP / IP}
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8eio
 </rule>
 	<showWhen id="VPoption8eio">
@@ -9888,8 +9888,8 @@ VP = V DP_1 {CP / IP}
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;VP option&gt; = 8epo
 </rule>
 	<showWhen id="VPoption8epo">
@@ -9943,8 +9943,8 @@ VP = {CP / IP} DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8f
 </rule>
 	<showWhen id="VPoption8f">
@@ -9971,8 +9971,8 @@ VP = {CP / IP} V
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8fi
 </rule>
 	<showWhen id="VPoption8fi">
@@ -10008,8 +10008,8 @@ VP = {CP / IP}  V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8fp
 </rule>
 	<showWhen id="VPoption8fp">
@@ -10069,8 +10069,8 @@ VP = {CP / IP} DP DP_1 V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8fo
 </rule>
 	<showWhen id="VPoption8fo">
@@ -10103,8 +10103,8 @@ VP = {CP / IP} DP_1 V
 		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_1 head type suffix copular&gt; = -
 	&lt;VP head type question&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8fio
 </rule>
 	<showWhen id="VPoption8fio">
@@ -10146,8 +10146,8 @@ VP = {CP / IP} DP_1 V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;VP option&gt; = 8fpo
 </rule>
 	<showWhen id="VPoption8fpo">
@@ -10200,7 +10200,7 @@ VP = V PP
 	&lt;PP head type sentential&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 9b
 </rule>
 	<showWhen id="VPoption9b">
@@ -10245,7 +10245,7 @@ VP = PP V
 	&lt;PP head type sentential&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 9c
 </rule>
 	<showWhen id="VPoption9c">
@@ -10308,7 +10308,7 @@ VP = V PP
 	&lt;VP head type auxiliary&gt; = +
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 9e
 </rule>
 	<showWhen id="VPoption9e">
@@ -10354,7 +10354,7 @@ VP = PP V
 	&lt;VP head type auxiliary&gt; = +
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 9f
 </rule>
 	<showWhen id="VPoption9f">
@@ -10679,7 +10679,7 @@ VP = V DP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 9k
 </rule>
 	<showWhen id="VPoption9k">
@@ -10713,7 +10713,7 @@ VP = DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 9l
 </rule>
 	<showWhen id="VPoption9l">
@@ -10748,7 +10748,7 @@ VP = V DP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 9m
 </rule>
 	<showWhen id="VPoption9m">
@@ -10783,7 +10783,7 @@ VP = DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 9n
 </rule>
 	<showWhen id="VPoption9n">
@@ -10824,7 +10824,7 @@ VP = V DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 10a
 </rule>
 	<showWhen id="VPoption10a">
@@ -10882,7 +10882,7 @@ VP = DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 10b
 </rule>
 	<showWhen id="VPoption10b">
@@ -10944,7 +10944,7 @@ VP = V DP PP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 10c
 </rule>
 	<showWhen id="VPoption10c">
@@ -10980,7 +10980,7 @@ VP = V PP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 10cp
 </rule>
 	<showWhen id="VPoption10cp">
@@ -11045,7 +11045,7 @@ VP = PP DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 10d
 </rule>
 	<showWhen id="VPoption10d">
@@ -11081,7 +11081,7 @@ VP = PP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 10dp
 </rule>
 	<showWhen id="VPoption10dp">
@@ -11143,7 +11143,7 @@ VP = V DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 10e
 </rule>
 	<showWhen id="VPoption10e">
@@ -11203,7 +11203,7 @@ VP = DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 10f
 </rule>
 	<showWhen id="VPoption10f">
@@ -11267,7 +11267,7 @@ VP = V DP PP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 10g
 </rule>
 	<showWhen id="VPoption10g">
@@ -11304,7 +11304,7 @@ VP = V PP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 10gp
 </rule>
 	<showWhen id="VPoption10gp">
@@ -11370,7 +11370,7 @@ VP = PP DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 10h
 </rule>
 	<showWhen id="VPoption10h">
@@ -11407,7 +11407,7 @@ VP = PP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 10hp
 </rule>
 	<showWhen id="VPoption10hp">
@@ -12041,7 +12041,7 @@ VP = V DP DP_1
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 10m
 </rule>
 	<showWhen id="VPoption10m">
@@ -12072,7 +12072,7 @@ VP = V DP_1
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 10mp
 </rule>
 	<showWhen id="VPoption10mp">
@@ -12122,7 +12122,7 @@ VP = DP_1 DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 10n
 </rule>
 	<showWhen id="VPoption10n">
@@ -12157,7 +12157,7 @@ VP = DP_1 V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 10np
 </rule>
 	<showWhen id="VPoption10np">
@@ -12208,7 +12208,7 @@ VP = V DP DP_1
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 10o
 </rule>
 	<showWhen id="VPoption10o">
@@ -12244,7 +12244,7 @@ VP = V DP_1
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP option&gt; = 10op
 </rule>
 	<showWhen id="VPoption10op">
@@ -12295,7 +12295,7 @@ VP = DP_1 DP V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 10p
 </rule>
 	<showWhen id="VPoption10p">
@@ -12331,7 +12331,7 @@ VP = DP_1 V
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP option&gt; = 10pp
 </rule>
 	<showWhen id="VPoption10pp">
@@ -12400,7 +12400,7 @@ VP = V PP
 	&lt;PP head type sentential&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 10r
 </rule>
 	<showWhen id="VPoption10r">
@@ -12437,7 +12437,7 @@ VP = PP V
 	&lt;PP head type sentential&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 10rf
 </rule>
 	<showWhen id="VPoption10rf">
@@ -12504,7 +12504,7 @@ VP = V PP
 	&lt;PP head type sentential&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP option&gt; = 10t
 </rule>
 	<showWhen id="VPoption10t">
@@ -12542,7 +12542,7 @@ VP = PP V
 	&lt;PP head type sentential&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP option&gt; = 10tf
 </rule>
 	<showWhen id="VPoption10tf">
@@ -12799,7 +12799,7 @@ VP = V DP
 	&lt;VP head type question&gt; = +
 	&lt;VP head fronted cat&gt; = DP
 	&lt;VP head fronted head agr case&gt; = nominative
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 10y
 </rule>
 	<showWhen id="VPoption10y">
@@ -12830,7 +12830,7 @@ VP = DP V
 	&lt;VP head type question&gt; = +
 	&lt;VP head fronted cat&gt; = DP
 	&lt;VP head fronted head agr case&gt; = nominative
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 10z
 </rule>
 	<showWhen id="VPoption10z">
@@ -12862,7 +12862,7 @@ VP = V DP
 	&lt;VP head type auxiliary&gt; = +
 	&lt;VP head fronted cat&gt; = DP
 	&lt;VP head fronted head agr case&gt; = nominative
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 10ya
 </rule>
 	<showWhen id="VPoption10ya">
@@ -12894,7 +12894,7 @@ VP = DP V
 	&lt;VP head type auxiliary&gt; = +
 	&lt;VP head fronted cat&gt; = DP
 	&lt;VP head fronted head agr case&gt; = nominative
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 10za
 </rule>
 	<showWhen id="VPoption10za">
@@ -12932,7 +12932,7 @@ VP = DP V'
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -12969,7 +12969,7 @@ VP = DP V'
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -13001,7 +13001,7 @@ VP = DP V'
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;VP option&gt; = 11b
 </rule>
 	<showWhen id="VPoption11b">
@@ -13033,7 +13033,7 @@ VP = V' DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -13070,7 +13070,7 @@ VP = V' DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -13102,7 +13102,7 @@ VP = V' DP
 	/&lt;VP head type question&gt; = +
 	 &lt;VP head fronted&gt; = none
 	}
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;VP option&gt; = 11d
 </rule>
 	<showWhen id="VPoption11d">
@@ -13151,8 +13151,8 @@ V' = V {PP / AdvP}
 	&lt;V head type passive&gt; = -
 	&lt;V' head type pro-drop&gt; = -
 	&lt;V' head type auxiliary&gt; = +
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 	&lt;V' option&gt; = 2a
 </rule>
 	<showWhen id="VBaroption2a">
@@ -13175,8 +13175,8 @@ V' = {PP / AdvP} V
 	&lt;V head type passive&gt; = -
 	&lt;V' head type pro-drop&gt; = -
 	&lt;V' head type auxiliary&gt; = +
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
 	&lt;V' option&gt; = 2b
 </rule>
 	<showWhen id="VBaroption2b">
@@ -13201,9 +13201,9 @@ V' = V {PP / AdjP / DP}
 		&lt;DP head type suffix copular&gt; = -
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;  | sentential PPs
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 3a
 </rule>
 	<showWhen id="VBaroption3a">
@@ -13228,9 +13228,9 @@ V' = {PP / AdjP / DP} V
 		&lt;DP head type suffix copular&gt; = -
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;  | sentential PPs
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 3b
 </rule>
 	<showWhen id="VBaroption3b">
@@ -13299,7 +13299,7 @@ V' = V DP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 4a
 </rule>
 	<showWhen id="VBaroption4a">
@@ -13324,7 +13324,7 @@ V' = V DP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 4b
 </rule>
 	<showWhen id="VBaroption4b">
@@ -13355,7 +13355,7 @@ V' = DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 4c
 </rule>
 	<showWhen id="VBaroption4c">
@@ -13380,7 +13380,7 @@ V' = DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 4d
 </rule>
 	<showWhen id="VBaroption4d">
@@ -13415,7 +13415,7 @@ V' = V DP PP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;V' option&gt; = 5a
 </rule>
 	<showWhen id="VBaroption5a">
@@ -13454,7 +13454,7 @@ V' = V DP PP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;V' option&gt; = 5b
 </rule>
 	<showWhen id="VBaroption5b">
@@ -13509,7 +13509,7 @@ V' = PP DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;V' option&gt; = 5c
 </rule>
 	<showWhen id="VBaroption5c">
@@ -13548,7 +13548,7 @@ V' = PP DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;V' option&gt; = 5d
 </rule>
 	<showWhen id="VBaroption5d">
@@ -13604,7 +13604,7 @@ V' = V DP_1 DP_2
 		&lt;DP_1 head type suffix copular&gt; = -
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;V' option&gt; = 6a
 </rule>
 	<showWhen id="VBaroption6a">
@@ -13644,7 +13644,7 @@ V' = V DP_1 DP_2
 		&lt;DP_1 head type suffix copular&gt; = -
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
 	&lt;V' option&gt; = 6b
 </rule>
 	<showWhen id="VBaroption6b">
@@ -13700,7 +13700,7 @@ V' = DP_1 DP_2 V
 		&lt;DP_1 head type suffix copular&gt; = -
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;V' option&gt; = 6c
 </rule>
 	<showWhen id="VBaroption6c">
@@ -13740,7 +13740,7 @@ V' = DP_1 DP_2 V
 		&lt;DP_1 head type suffix copular&gt; = -
 		&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP_2 head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;V' option&gt; = 6d
 </rule>
 	<showWhen id="VBaroption6d">
@@ -13809,7 +13809,7 @@ V' = V PP
 	&lt;V' head type auxiliary&gt; = +
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;V' option&gt; = 7b
 </rule>
 	<showWhen id="VBaroption7b">
@@ -13834,7 +13834,7 @@ V' = V DP
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 7c
 </rule>
 	<showWhen id="VBaroption7c">
@@ -13859,7 +13859,7 @@ V' = PP V
 	&lt;PP head type sentential&gt; = -
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;V' option&gt; = 7d
 </rule>
 	<showWhen id="VBaroption7d">
@@ -13884,7 +13884,7 @@ V' = DP V
 		&lt;DP head type prefix poss&gt; = -
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
-		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 7e
 </rule>
 	<showWhen id="VBaroption7e">
@@ -13912,8 +13912,8 @@ V' = V {CP / IP}
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
-		&lt;V' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;V' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;V' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;V head type passive&gt; = -
 	&lt;V' option&gt; = 8a
 </rule>
@@ -13937,8 +13937,8 @@ V' = {CP / IP} V
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;V' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;V' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;V' option&gt; = 8b
 </rule>
 	<showWhen id="VBaroption8b">
@@ -13963,8 +13963,8 @@ V' = V DP {CP / IP}
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;V' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;V' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;V' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;V' option&gt; = 8aoacc
 </rule>
 	<showWhen id="VBaroption8aoacc">
@@ -13991,8 +13991,8 @@ V' = V DP {CP / IP}
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;V' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;  | sentential PPs
-		&lt;V' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+		&lt;V' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;V' option&gt; = 8aoabs
 </rule>
 	<showWhen id="VBaroption8aoabs">
@@ -14025,8 +14025,8 @@ V' = {CP / IP} DP V
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;V' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;V' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;V' option&gt; = 8boacc
 </rule>
 	<showWhen id="VBaroption8boacc">
@@ -14053,8 +14053,8 @@ V' = {CP / IP} DP V
 	&lt;IP head type question&gt; = -
 	&lt;V head type sentential&gt; = +
 	&lt;V head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;  | sentential PPs
-		&lt;V' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+		&lt;V' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;V' option&gt; = 8boabs
 </rule>
 	<showWhen id="VBaroption8boabs">
@@ -14169,7 +14169,7 @@ V' = V PP
 		&lt;PP head type prefix poss&gt; = -
 	&lt;V' head type passive&gt; = -
 	&lt;V' head type question&gt; = +
-		&lt;V' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;V' option&gt; = 9c
 </rule>
 	<showWhen id="VBaroption9c">
@@ -14210,7 +14210,7 @@ V' = V PP
 		&lt;PP head type prefix poss&gt; = -
 	&lt;V' head type passive&gt; = -
 	&lt;V' head type question&gt; = +
-		&lt;V' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;V' option&gt; = 9d
 </rule>
 	<showWhen id="VBaroption9d">
@@ -14271,7 +14271,7 @@ V' = PP V
 		&lt;PP head type prefix poss&gt; = -
 	&lt;V' head type passive&gt; = -
 	&lt;V' head type question&gt; = +
-		&lt;V' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;V' option&gt; = 9e
 </rule>
 	<showWhen id="VBaroption9e">
@@ -14312,7 +14312,7 @@ V' = PP V
 		&lt;PP head type prefix poss&gt; = -
 	&lt;V' head type passive&gt; = -
 	&lt;V' head type question&gt; = +
-		&lt;V' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;V' option&gt; = 9f
 </rule>
 	<showWhen id="VBaroption9f">
@@ -14375,7 +14375,7 @@ V' = V DP
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
 	&lt;V' head type question&gt; = +
-		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 9g
 </rule>
 	<showWhen id="VBaroption9g">
@@ -14418,7 +14418,7 @@ V' = V DP
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
 	&lt;V' head type question&gt; = +
-		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 9h
 </rule>
 	<showWhen id="VBaroption9h">
@@ -14481,7 +14481,7 @@ V' = DP V
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
 	&lt;V' head type question&gt; = +
-		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 9i
 </rule>
 	<showWhen id="VBaroption9i">
@@ -14524,7 +14524,7 @@ V' = DP V
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
 	&lt;V' head type question&gt; = +
-		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 9j
 </rule>
 	<showWhen id="VBaroption9j">
@@ -14585,7 +14585,7 @@ V' = V PP
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;V' option&gt; = 9k
 </rule>
 	<showWhen id="VBaroption9k">
@@ -14626,7 +14626,7 @@ V' = V PP
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;V' option&gt; = 9l
 </rule>
 	<showWhen id="VBaroption9l">
@@ -14687,7 +14687,7 @@ V' = PP V
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;V' option&gt; = 9m
 </rule>
 	<showWhen id="VBaroption9m">
@@ -14728,7 +14728,7 @@ V' = PP V
 		&lt;PP head type suffix poss&gt; = -         | only in possessor position
 		&lt;PP head type prefix poss&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;V' option&gt; = 9n
 </rule>
 	<showWhen id="VBaroption9n">
@@ -14790,7 +14790,7 @@ V' = V DP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 9o
 </rule>
 	<showWhen id="VBaroption9o">
@@ -14832,7 +14832,7 @@ V' = V DP
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 9p
 </rule>
 	<showWhen id="VBaroption9p">
@@ -14894,7 +14894,7 @@ V' = DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 9q
 </rule>
 	<showWhen id="VBaroption9q">
@@ -14936,7 +14936,7 @@ V' = DP V
 		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 9r
 </rule>
 	<showWhen id="VBaroption9r">
@@ -14998,7 +14998,7 @@ V' = V DP
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 9s
 </rule>
 	<showWhen id="VBaroption9s">
@@ -15040,7 +15040,7 @@ V' = V DP
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PPs
+		&lt;V' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;V' option&gt; = 9t
 </rule>
 	<showWhen id="VBaroption9t">
@@ -15102,7 +15102,7 @@ V' = DP V
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 9u
 </rule>
 	<showWhen id="VBaroption9u">
@@ -15144,7 +15144,7 @@ V' = DP V
 		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
 		&lt;DP head type suffix copular&gt; = -
 	&lt;V' head type passive&gt; = -
-		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;  | sentential PPs
+		&lt;V' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;V' option&gt; = 9v
 </rule>
 	<showWhen id="VBaroption9v">

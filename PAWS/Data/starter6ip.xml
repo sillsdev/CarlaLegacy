@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE masterGrammar SYSTEM "MasterGrammar.dtd">
+<masterGrammar>
+	<rule show="IPoption1a">
+rule {IP option 1a - no subject for imperatives}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;I' head infl mood imperative&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;IP option&gt; = 1a
+</rule>
+	<showWhen id="IPoption1a">
+		<whenValue element="ip" attr="proDrop" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+	</showWhen>
+	<rule show="IPoption1b">
+rule {IP option 1b - subject pro-drop, not passive}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+		&lt;IP head type pro-drop&gt; = +
+		&lt;IP head infl mood imperative&gt; = -
+		{&lt;I' head type transitive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+		 &lt;I' head object head type reflexive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+		 &lt;I' head object head type reflexive&gt; = +
+		 &lt;I' head subject head agr person&gt; = &lt;I' head object head agr person&gt;
+		 &lt;I' head subject head agr number&gt; = &lt;I' head object head agr number&gt;
+		 &lt;I' head subject head agr gender&gt; = &lt;I' head object head agr gender&gt;
+		 &lt;I' head subject head agr animate&gt; = &lt;I' head object head agr animate&gt;
+		 &lt;I' head subject head agr class&gt; = &lt;I' head object head agr class&gt;
+	}
+	&lt;IP head type passive&gt; = -
+	{&lt;IP head type question&gt; = -
+	/&lt;IP head type question&gt; = +
+	 &lt;IP head fronted cat&gt; = AdvP
+	/&lt;IP head type question&gt; = +
+	 &lt;IP head fronted cat&gt; = PP
+	}
+	&lt;IP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;IP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;IP option&gt; = 1b
+</rule>
+	<showWhen id="IPoption1b">
+		<whenValue element="ip" attr="proDrop" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+		<or/>
+		<whenValue element="ip" attr="proDrop" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+	</showWhen>
+	<rule show="IPoption1c">
+rule {IP option 1c - subject pro-drop, passive}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+		&lt;IP head type pro-drop&gt; = +
+		&lt;IP head infl mood imperative&gt; = -
+	&lt;IP head type passive&gt; = +
+	{&lt;IP head type question&gt; = -
+	/&lt;IP head type question&gt; = +
+	 &lt;IP head fronted cat&gt; = AdvP
+	/&lt;IP head type question&gt; = +
+	 &lt;IP head fronted cat&gt; = PP
+	}
+	&lt;IP option&gt; = 1c
+</rule>
+	<showWhen id="IPoption1c">
+		<whenValue element="ip" attr="proDrop" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+		<or/>
+		<whenValue element="ip" attr="proDrop" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+	</showWhen>
+	<rule show="IPoption2a">
+rule {IP option 2a - subject initial, required, not passive}
+IP = DP I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+		&lt;IP head type pro-drop&gt; = -
+	&lt;I' head subject&gt; = &lt;DP&gt;
+		{&lt;I' head type transitive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+		 &lt;I' head object head type reflexive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+		 &lt;I' head object head type reflexive&gt; = +
+		 &lt;DP head agr person&gt; = &lt;I' head object head agr person&gt;
+		 &lt;DP head agr number&gt; = &lt;I' head object head agr number&gt;
+		 &lt;DP head agr gender&gt; = &lt;I' head object head agr gender&gt;
+		 &lt;DP head agr animate&gt; = &lt;I' head object head agr animate&gt;
+		 &lt;DP head agr class&gt; = &lt;I' head object head agr class&gt;
+	}
+	&lt;DP head type wh&gt; = -
+	&lt;IP head type passive&gt; = -
+		&lt;DP head type suffix poss&gt; = -         | only in possessor position
+		&lt;DP head type prefix poss&gt; = -
+		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+		&lt;DP head type suffix copular&gt; = -
+		&lt;IP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;IP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;IP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;DP head&gt; == ~[case:accusative]
+	&lt;IP option&gt; = 2a
+</rule>
+	<showWhen id="IPoption2a">
+		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+	</showWhen>
+	<rule show="IPoption2b">
+rule {IP option 2b - subject initial, required, passive}
+IP = DP I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+		&lt;IP head type pro-drop&gt; = -
+	&lt;I' head object&gt; = &lt;DP&gt;
+	&lt;DP head type wh&gt; = -
+	&lt;IP head type passive&gt; = +
+		&lt;DP head type suffix poss&gt; = -         | only in possessor position
+		&lt;DP head type prefix poss&gt; = -
+		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+		&lt;DP head type suffix copular&gt; = -
+	{&lt;IP head type question&gt; = -
+	/&lt;IP head type question&gt; = +
+	 &lt;IP head fronted cat&gt; = AdvP
+	/&lt;IP head type question&gt; = +
+	 &lt;IP head fronted cat&gt; = PP
+	}
+		&lt;IP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;DP head&gt; == ~[case:accusative]
+	&lt;IP option&gt; = 2b
+</rule>
+	<showWhen id="IPoption2b">
+		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+	</showWhen>
+	<rule show="IPoption2c">
+rule {IP option 2c - subject final, required, not passive}
+IP = I' DP
+	&lt;IP head&gt; = &lt;I' head&gt;
+		&lt;IP head type pro-drop&gt; = -
+	&lt;I' head subject&gt; = &lt;DP&gt;
+		{&lt;I' head type transitive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+		 &lt;I' head object head type reflexive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+		 &lt;I' head object head type reflexive&gt; = +
+		 &lt;DP head agr person&gt; = &lt;I' head object head agr person&gt;
+		 &lt;DP head agr number&gt; = &lt;I' head object head agr number&gt;
+		 &lt;DP head agr gender&gt; = &lt;I' head object head agr gender&gt;
+		 &lt;DP head agr animate&gt; = &lt;I' head object head agr animate&gt;
+		 &lt;DP head agr class&gt; = &lt;I' head object head agr class&gt;
+	}
+	&lt;DP head type wh&gt; = -
+	&lt;IP head type passive&gt; = -
+		&lt;DP head type suffix poss&gt; = -         | only in possessor position
+		&lt;DP head type prefix poss&gt; = -
+		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+		&lt;DP head type suffix copular&gt; = -
+		&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;IP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;IP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;DP head&gt; == ~[case:accusative]
+	&lt;IP option&gt; = 2c
+</rule>
+	<showWhen id="IPoption2c">
+		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+	</showWhen>
+	<rule show="IPoption2d">
+rule {IP option 2d - subject final, required, passive}
+IP = I' DP
+	&lt;IP head&gt; = &lt;I' head&gt;
+		&lt;IP head type pro-drop&gt; = -
+	&lt;I' head object&gt; = &lt;DP&gt;
+	&lt;DP head type wh&gt; = -
+	&lt;IP head type passive&gt; = +
+		&lt;DP head type suffix poss&gt; = -         | only in possessor position
+		&lt;DP head type prefix poss&gt; = -
+		&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+		&lt;DP head type suffix copular&gt; = -
+	{&lt;IP head type question&gt; = -
+	/&lt;IP head type question&gt; = +
+	 &lt;IP head fronted cat&gt; = AdvP
+	/&lt;IP head type question&gt; = +
+	 &lt;IP head fronted cat&gt; = PP
+	}
+		&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;DP head&gt; == ~[case:accusative]
+	&lt;IP option&gt; = 2d
+</rule>
+	<showWhen id="IPoption2d">
+		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+	</showWhen>
+	<rule show="IPoption3">
+rule {IP option 3 - subject internal to VP for VSO, OSV}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;IP option&gt; = 3
+</rule>
+	<showWhen id="IPoption3">
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
+	</showWhen>
+	<rule show="IPoption4a">
+rule {IP option 4a - subject questioned, not passive}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;IP head type question&gt; = +
+		&lt;IP head type pro-drop&gt; = -
+	&lt;IP head type passive&gt; = -
+	&lt;IP head fronted cat&gt; = DP
+	&lt;IP head fronted head type wh&gt; = +
+	&lt;IP head fronted&gt; = &lt;I' head subject&gt;
+		{&lt;I' head type transitive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+		 &lt;I' head object head type reflexive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+		 &lt;I' head object head type reflexive&gt; = +
+		 &lt;I' head fronted head agr gender&gt; = &lt;I' head object head agr gender&gt;
+		 &lt;I' head fronted head agr animate&gt; = &lt;I' head object head agr animate&gt;
+		 &lt;I' head fronted head agr class&gt; = &lt;I' head object head agr class&gt;
+	}
+	&lt;IP head fronted head&gt; == ~[case:accusative]
+	&lt;IP option&gt; = 4a
+</rule>
+	<showWhen id="IPoption4a">
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+	</showWhen>
+	<rule show="IPoption4b">
+rule {IP option 4b - subject questioned, passive}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;IP head type question&gt; = +
+		&lt;IP head type pro-drop&gt; = -
+	&lt;IP head type passive&gt; = +
+	&lt;IP head fronted cat&gt; = DP
+	&lt;IP head fronted head type wh&gt; = +
+	&lt;IP head fronted&gt; = &lt;I' head object&gt;
+	&lt;IP rule&gt; = 4b
+	&lt;IP head fronted head&gt; == ~[case:accusative]
+	&lt;IP option&gt; = 4b
+</rule>
+	<showWhen id="IPoption4b">
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+	</showWhen>
+	<rule show="IPoption5">
+rule {IP option 5 - adverb questioned, copular verb}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;IP head type question&gt; = +
+	&lt;IP head fronted cat&gt; = AdvP
+	&lt;IP head fronted head type wh&gt; = +
+	&lt;I' head type copular&gt; = +
+	&lt;I' head type transitive&gt; = -
+	&lt;I' head type passive&gt; = -
+	&lt;IP option&gt; = 5
+</rule>
+	<showWhen id="IPoption5">
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+	</showWhen>
+	<!--
+|******************************************************** -->
+	<rule show="IBaroption1">
+rule {IBar option 1 - no auxiliaries}
+I' = VP
+	&lt;I' head&gt; = &lt;VP head&gt;
+	{&lt;I' head type auxiliary&gt; = -
+	 &lt;I' head type question&gt; = -
+	/&lt;I' head type question&gt; = +
+	}
+	&lt;I' option&gt; = 1
+</rule>
+	<showWhen id="IBaroption1">
+		<whenValue element="ip" attr="auxRequired" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="IBaroption2">
+rule {IBar option 2 - Aux initial, required}
+I' = Aux VP
+	&lt;I' head&gt; = &lt;VP head&gt;
+	&lt;I' head type auxiliary&gt; = +
+	&lt;I' head subject agr&gt; = &lt;Aux head subject agr&gt;
+		&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
+	&lt;I' option&gt; = 2
+</rule>
+	<showWhen id="IBaroption2">
+		<whenValue element="ip" attr="aux" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="SVO"/>
+		<or/>
+		<whenValue element="ip" attr="aux" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VOS"/>
+		<or/>
+		<whenValue element="ip" attr="aux" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<rule show="IBaroption3">
+rule {IBar option 3 - Aux final, required}
+I' = VP Aux
+	&lt;I' head&gt; = &lt;VP head&gt;
+	&lt;I' head type auxiliary&gt; = +
+	&lt;I' head subject agr&gt; = &lt;Aux head subject agr&gt;
+		&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;I' option&gt; = 3
+</rule>
+	<showWhen id="IBaroption3">
+		<whenValue element="ip" attr="aux" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="SOV"/>
+		<or/>
+		<whenValue element="ip" attr="aux" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+		<or/>
+		<whenValue element="ip" attr="aux" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="OVS"/>
+	</showWhen>
+</masterGrammar>
