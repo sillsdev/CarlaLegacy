@@ -4,12 +4,17 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 4		/* bug fix or other minor change */
-#define DATE "October 25, 2000"	/* date of release version */
-#define YEAR "2000"		/* used for copyright notice in banner */
+#define PATCHLEVEL 6		/* bug fix or other minor change */
+#define DATE "July 18, 2001"	/* date of release version */
+#define YEAR "2001"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 18-Jul-2001  hab  - Fix bug: if \a field of ANA has any extra spaces, then
+ * [2.0.6]               the extra space can be treated as a morphname.
+ * 14-Jul-2001  hab  - Fix bug: Converting a root to a suffix on a previous
+ * [2.0.5]               word fails if the previous word has any trailing
+ *                       whitespace
  * 25-Oct-2000  hab  - Fix bug: SenTrans32 version crashes if there is no
  * [2.0.4]               log file.
  * 28-Sep-2000  jdh  - increase memory limit from 64000 to 640000

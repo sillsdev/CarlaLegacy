@@ -6,6 +6,12 @@ file SENTRANS.DOC.
 
 Change History:
 
+2.0.6 Jul 2001 Fixed a bug: if \a field of ANA has any extra spaces, then
+the extra space could be treated as a morphname.
+
+2.0.5 Jul 2001 Fixed a bug: Converting a root to a suffix on a previous
+word fails if the previous word has any trailing whitespace.
+
 2.0.4  Oct 2000 Fixed a bug: the SenTrans32.exe version would crash
 if there was no log file.
 

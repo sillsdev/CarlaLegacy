@@ -1203,7 +1203,11 @@ Word *firstwd;          /* First word matched */
 Word *first_matwd = NULL;      /* First word matched, for affix carrying */
 Word *lastwd;           /* Last word matched */
 Word *last_matwd = NULL;       /* Last word matched, for affix carrying */
+#ifndef hab205
+Word *prevwrd;           /* Previous word before first matched */
+#else
 Word *prevwd;           /* Previous word before first matched */
+#endif /* hab205 */
 Word *nextwd;           /* Next word after last matched */
 Word *wd;               /* Temp word pointer */
 Word *twd;              /* Another temp word pointer */
@@ -1372,7 +1376,11 @@ if ( !matchisallaff )
 	  lastwd_next->prev = firstwd_prev;   /* Link backward */
   }
 
+#ifndef hab205
+prevwrd = firstwd_prev;
+#else
 prevwd = firstwd_prev;
+#endif /* hab205 */
 nextwd = lastwd_next;
 
 		/*
@@ -1455,9 +1463,17 @@ if ( !deleting )                        /* If not empty replace */
 			{                           /* Link morph onto morphs */
 			if ( tmat->type & (SFX | CR) ) /* If suffix or croot */
 			  {                         /* Link to end of prev word */
-			  if ( prevwd )             /* If prev word */
+#ifndef hab205
+		  if (prevwrd->type & WHSPC)
+		prevwrd = prevwd(prevwrd);
+			  if ( prevwrd )             /* If prev word */
+				{
+				for ( amb = prevwrd->ambigs; amb; amb = amb->next )
+#else
+		  if ( prevwd )
 				{
 				for ( amb = prevwd->ambigs; amb; amb = amb->next )
+#endif /* hab205 */
 				  {
 				  /* If tmat->begwd is ambiguous
 				  *     Make new ambigs as needed
@@ -1483,9 +1499,15 @@ if ( !deleting )                        /* If not empty replace */
 			  }
 			else if ( tmat->type & CR ) /* If croot */
 			  {                         /* Link to end of prev word */
+#ifndef hab205
+			  if ( prevwrd )             /* If prev word */
+				{
+				for ( amb = prevwrd->ambigs; amb; amb = amb->next )
+#else
 			  if ( prevwd )             /* If prev word */
 				{
 				for ( amb = prevwd->ambigs; amb; amb = amb->next )
+#endif /* hab205 */
 				  {
 				  tmp = copymp( tmat->matmp ); /* Copy morph for ambig */
 										/* Find last morph */
@@ -1501,7 +1523,11 @@ if ( !deleting )                        /* If not empty replace */
 			  {                         /* Link to begin of next word */
 			  if ( backbase             /* If working from a backup base */
 					  && backbase->type & RT ) /* That is a root */
+#ifndef hab205
+				  wd = prevwrd;          /* Attach to inserted base */
+#else
 				  wd = prevwd;          /* Attach to inserted base */
+#endif /* hab205 */
 			  else
 				  wd = nextwd;          /* Else attach to next word */
 			  if ( wd )       /* If next word */
@@ -1519,12 +1545,21 @@ if ( !deleting )                        /* If not empty replace */
 			}
 		else                            /* Else (not affix) */
 			{                               /* Link in new word */
+#ifndef hab205
+			prevwrd->next = tmat->begwd;     /* Link prev to new */
+			tmat->begwd->prev = prevwrd;     /* Link new to prev */
+#else
 			prevwd->next = tmat->begwd;     /* Link prev to new */
 			tmat->begwd->prev = prevwd;     /* Link new to prev */
+#endif /* hab205 */
 			if ( nextwd )                   /* If there was a next */
 				nextwd->prev = tmat->endwd; /* Link next to new */
 			tmat->endwd->next = nextwd;     /* Link new to next */
+#ifndef hab205
+			prevwrd = tmat->endwd;           /* Set prev to end of new */
+#else
 			prevwd = tmat->endwd;           /* Set prev to end of new */
+#endif /* hab205 */
 			} /* else (not affix) */
 		}
 

@@ -946,6 +946,10 @@ while ( *rest && *rest != ' ' ) /* Find end */
 if ( *rest )                    /* If space */
 	*rest++ = '\0';             /* Make NUL and move on */
 
+#ifndef hab206
+while (*rest && *rest == ' ')
+  rest++;			/* skip any extra spaces */
+#endif /* hab206 */
 return( begmorph );             /* Return beginning of morph */
 }
 
