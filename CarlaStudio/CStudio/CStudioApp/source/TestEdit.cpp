@@ -621,9 +621,20 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 					//if (!bFound ) // ajouter <pos> ?????
 					if( !bFound && !bIsMemberMatches )
 					{
-						if((( m_strLastKeyWord == "is" ) ||
-						  ( m_strLastKeyWord == "member" ) ||
-						  ( m_strLastKeyWord == "matches" ) ))
+						if((( m_strLastKeyWord == "is" )	||
+						  ( m_strLastKeyWord == "member" )	||
+						  ( m_strLastKeyWord == "matches" ) ||
+						  ( m_strLastKeyWord == "left" )	||
+						  ( m_strLastKeyWord == "right" )	||
+						  ( m_strLastKeyWord == "current" ) ||
+						  ( m_strLastKeyWord == "LEFT" )	||
+						  ( m_strLastKeyWord == "RIGHT" )	||
+						  ( m_strLastKeyWord == "initial" ) ||
+						  ( m_strLastKeyWord == "final" ) ))
+
+
+
+
 						{
 							bIsMemberMatches=TRUE;
 							m_strLastKeyWord.Empty();
@@ -635,6 +646,11 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 						}
 
 						bFound = TRUE;
+
+
+
+
+
 					}
 
 
