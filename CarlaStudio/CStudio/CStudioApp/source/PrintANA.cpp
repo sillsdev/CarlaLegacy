@@ -1,6 +1,7 @@
 // PrintANA.cpp: implementation of the CPrintANAProcess class.
 //
 // 2.1.0 14-Feb-2000 hab Initial coding
+// 2.6.5 13-Sep-2002 hab Chnage default name of EXE to PrintAna32.exe
 //////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
 #include "carlastudioapp.h"
@@ -75,7 +76,11 @@ void CPrintANAProcess::setDefaultValues()
 {
 	m_nDisplayBeginColumn = 25;
 	m_bDisplayAnalysesOnly = FALSE;
+#ifndef hab265
+	m_sEXEName = "PrintANA32.exe";
+#else  // hab265
 	m_sEXEName = "PrintANA.exe";
+#endif // hab265
 }
 
 
