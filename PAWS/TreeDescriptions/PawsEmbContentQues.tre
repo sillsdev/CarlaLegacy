@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LingTreeTree xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Description>(S (IP (I' (Aux (\L auxiliary)) (VP (V (\L verb)) (DP (\T \L subject)) (DP (\T \L object))))))</Description>
+  <Description>(S (IP (DP (D' (NP (Pron (\L I))))) (VP (V (\L know)) (CP (AdvP (Adv (\L when))) (IP (DP (D' (NP (Pron (\L she))))) (Aux (\L will)) (VP (V (\L come))))))))</Description>
   <VerticalGap>300</VerticalGap>
   <HorizontalGap>300</HorizontalGap>
   <InitialXCoord>100</InitialXCoord>
   <InitialYCoord>100</InitialYCoord>
-  <HorizontalOffset>8664</HorizontalOffset>
+  <HorizontalOffset>9016</HorizontalOffset>
   <LexGlossGapAdjustment>0</LexGlossGapAdjustment>
   <ShowFlatView>false</ShowFlatView>
   <GlossFontFace>Courier New</GlossFontFace>
