@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding = "Windows-1252"?>
+<?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.00"
+	Version="7.10"
 	Name="ToneGLib"
 	SccProjectName=""
 	SccLocalPath="">
@@ -55,6 +55,12 @@
 				Culture="1033"/>
 			<Tool
 				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -102,32 +108,22 @@
 				Culture="1033"/>
 			<Tool
 				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
 		</Configuration>
 	</Configurations>
+	<References>
+	</References>
 	<Files>
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
 			<File
 				RelativePath=".\Domain.c">
-			</File>
-			<File
-				RelativePath=".\Moras.c">
-			</File>
-			<File
-				RelativePath=".\Pword.c">
-			</File>
-			<File
-				RelativePath=".\Segparse.c">
-			</File>
-			<File
-				RelativePath=".\Syllable.c">
-			</File>
-			<File
-				RelativePath=".\Tbu.c">
-			</File>
-			<File
-				RelativePath=".\Trule_ls.c">
 			</File>
 			<File
 				RelativePath="..\stamp\dtbio.c">
@@ -145,6 +141,18 @@
 				RelativePath="..\stamp\menvck.c">
 			</File>
 			<File
+				RelativePath=".\Moras.c">
+			</File>
+			<File
+				RelativePath=".\Pword.c">
+			</File>
+			<File
+				RelativePath=".\Segparse.c">
+			</File>
+			<File
+				RelativePath=".\Syllable.c">
+			</File>
+			<File
 				RelativePath="..\stamp\synrsc.c">
 			</File>
 			<File
@@ -160,6 +168,9 @@
 				RelativePath="..\stamp\sytest_y.c">
 			</File>
 			<File
+				RelativePath=".\Tbu.c">
+			</File>
+			<File
 				RelativePath="..\stamp\tmatch.c">
 			</File>
 			<File
@@ -173,6 +184,9 @@
 			</File>
 			<File
 				RelativePath="..\stamp\treplace.c">
+			</File>
+			<File
+				RelativePath=".\Trule_ls.c">
 			</File>
 			<File
 				RelativePath=".\trule_yg.c">
@@ -197,28 +211,28 @@
 				RelativePath=".\Domain.h">
 			</File>
 			<File
+				RelativePath="..\stamp\stamp.h">
+			</File>
+			<File
+				RelativePath="..\stamp\sytest_y.h">
+			</File>
+			<File
+				RelativePath=".\sytest_y.h">
+			</File>
+			<File
 				RelativePath=".\Tone.h">
 			</File>
 			<File
 				RelativePath=".\Tonepars.h">
 			</File>
 			<File
+				RelativePath=".\trule.h">
+			</File>
+			<File
 				RelativePath=".\Trule_ls.h">
 			</File>
 			<File
 				RelativePath=".\Trule_yg.h">
-			</File>
-			<File
-				RelativePath="..\stamp\stamp.h">
-			</File>
-			<File
-				RelativePath=".\sytest_y.h">
-			</File>
-			<File
-				RelativePath="..\stamp\sytest_y.h">
-			</File>
-			<File
-				RelativePath=".\trule.h">
 			</File>
 		</Filter>
 	</Files>
