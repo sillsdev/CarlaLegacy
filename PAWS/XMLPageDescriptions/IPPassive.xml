@@ -37,12 +37,10 @@
 				<radio id="IPPassiveAuxYes" dataValue="yes">Yes</radio>
 			</radioGroup>
 		</radioGroup>
-		<instruction id="IPPassiveInstruction" show="swPassiveYes">Mark inherently passive verbs and any passive affixes with the feature <feature>passive</feature> in the lexicon.  <span id="IPPassiveAgentPPSpan" show="swPassiveAgentPP">Also, mark the<span id="IPPrepSpan" show="swPPPosPrep"> preposition</span>
-				<span id="PPPostSpan" show="swPPPosPost"> postposition</span>
-				<span id="PPBothSpan" show="swPPPosBoth"> preposition or postposition </span>that is included in the Agent phrase with the feature <feature>passive</feature>.</span>
+		<instruction id="IPPassiveInstruction" show="swPassiveYes">Mark inherently passive verbs and any passive affixes with the feature <feature>passive</feature> in the lexicon.  <span id="IPPassiveAgentPPSpan" show="swPassiveAgentPP">Also, mark the <span id="IPPrepSpan" show="swPPPosPrep">preposition</span><span id="PPPostSpan" show="swPPPosPost">postposition</span><span id="PPBothSpan" show="swPPPosBoth">preposition or postposition</span> that is included in the Agent phrase with the feature <feature>passive</feature>.</span>
 			<span id="IPPassiveAuxSpan" show="swIPPassiveAuxYes">Mark the particular auxiliary that goes with passive sentences with the feature <feature>passive</feature> as well.</span>
 		</instruction>
-<br/>
+		<br/>
 		<buttons>
 			<button id="IPPassiveBack" value="Back" goto="IPContents.htm"/>
 			<button id="IPPassiveNext" value="Next" goto="IPContents.htm"/>
