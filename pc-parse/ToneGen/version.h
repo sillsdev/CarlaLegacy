@@ -4,13 +4,19 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL -7		/* bug fix or other internal improvement */
-#define DATE       "November 30, 2001"	/* date of release version */
+#define PATCHLEVEL -8		/* bug fix or other internal improvement */
+#define DATE       "Decmeber 4, 2001"	/* date of release version */
 #define YEAR       "2001"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
- * Nov-30-2001  hab - Fix bug: was using properties of first allomorph in the
+ * 04-Dec-2001  hab - Feature changing mode should only remove previously
+ * [1.0.8]             linked tones; floating ones remain.
+ *                    Add patch to patch 1.0.6 first change when have both
+ *                     primary and register tier - now it doesn't go into
+ *                     an infinite loop or crash.  Note that still need to
+ *                     figure out what is causing the problem here...
+ * 30-Nov-2001  hab - Fix bug: was using properties of first allomorph in the
  * [1.0.7]             dictionary record rather than the properties of the
  *                     selected allomorph.
  * 28-Nov-2001  hab - When linking a left-floating tone leftward or linking a

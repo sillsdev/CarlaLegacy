@@ -600,6 +600,9 @@ void adjust_morpheme_tone_pointers(ap, tp, tbu, iOrigStatus, act_params,
   struct tone *tp2;
   struct tone_list *tlp;
   StampAnalysis *apOrig = ap;
+#ifndef hab107
+  struct tone_value_list *tvp;
+#endif /* hab107 */
 				/* just in case ... */
   if (ap == (StampAnalysis *)NULL)
 	return;
@@ -620,6 +623,17 @@ void adjust_morpheme_tone_pointers(ap, tp, tbu, iOrigStatus, act_params,
   if (ap->pToneBeg == (struct tone *)NULL)
 	{				/* is morph's first and only tone */
 	  ap->pToneBeg = ap->pToneEnd = tp;
+#ifndef hab107
+	  for (tvp = Tone_Value_List_Head;
+	   tvp != (struct tone_value_list *)NULL;
+	   tvp = tvp->tv_next)
+	{
+	  if (tvp->tv_tier == REGISTER)
+		return;		/* quit; following code doesn't work with
+				   with both primary and register tier
+				   so for now using this patch. */
+	}
+#endif /* hab107 */
 	  if (ap != apOrig)
 	{			/* remove tone from original morpheme */
 	  if (iOrigStatus == LeftFloating &&
@@ -895,6 +909,10 @@ struct tone *copy_tone(otp)
 {
   struct tone *ntp;
   int i;
+#ifndef hab107
+  if (otp == (struct tone*)NULL)
+	return (struct tone*)NULL;
+#endif /* hab107 */
 				/* create a new tone struct */
   ntp = structalloc(tone);
 				/* set new tone to original tone */
@@ -2638,6 +2656,19 @@ int link_tone_to_tbu(tp, tier, act_params, tbu, tbu_head, ap, status,
 	}
 			  /* create tone_list element for tbu struct */
   if (MODE(act_params) == FEATURE_CHANGING)
+#ifndef hab107
+	{				/* if it is feature_changing, delink all */
+				/* previously linked tones */
+	  for (tlp = tbu->tbu_tonel;
+	   tlp != (struct tone_list *)NULL;
+	   tlp = tlp->tonl_right)
+	{
+	  if ((tlp->tonl_tone != (struct tone*)NULL) &&
+		  (tlp->tonl_tone->tone_status[tier] == Linked))
+		delink_tone_from_tbu(tlp->tonl_tone, tier, tbu);
+	}
+	}
+#else /* hab107 */
 	{				/* if it is feature_changing, delink all */
 				/* previous tones */
 	  for (tlp = tbu->tbu_tonel;
@@ -2647,6 +2678,7 @@ int link_tone_to_tbu(tp, tier, act_params, tbu, tbu_head, ap, status,
 	  delink_tone_from_tbu(tlp->tonl_tone, tier, tbu);
 	}
 	}
+#endif /* hab107 */
 			 /* create new tone list element for tbu */
 			 /* if needed */
   if (!is_in_tone_list(tp, tbu->tbu_tonel))

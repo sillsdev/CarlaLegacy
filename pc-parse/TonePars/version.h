@@ -4,12 +4,18 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 6		/* bug fix or other internal improvement */
-#define DATE       "November 28, 2001"	/* date of release version */
+#define PATCHLEVEL 7		/* bug fix or other internal improvement */
+#define DATE       "December 4, 2001"	/* date of release version */
 #define YEAR       "2001"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 04-Dec-2001  hab - Feature changing mode should only remove previously
+ * [1.0.7]             linked tones; floating ones remain.
+ *                    Add patch to patch 1.0.6 first change when have both
+ *                     primary and register tier - now it doesn't go into
+ *                     an infinite loop or crash.  Note that still need to
+ *                     figure out what is causing the problem here...
  * 28-Nov-2001  hab - When linking a left-floating tone leftward or linking a
  * [1.0.6]             right-floating tone rightward, need to ensure that the
  *                     the morpheme owning the linked-to tbu is listed as
