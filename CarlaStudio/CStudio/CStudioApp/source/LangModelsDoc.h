@@ -92,6 +92,7 @@ protected:
 	afx_msg void OnLangInterlinearSeq();
 	afx_msg void OnRemoveLanguage();
 	afx_msg void OnModifyTests();
+	afx_msg void OnCustomizeUserTestDisplay();
 	//}}AFX_MSG
 	afx_msg void OnTransferSeqCommand(UINT id);
 	DECLARE_MESSAGE_MAP()
