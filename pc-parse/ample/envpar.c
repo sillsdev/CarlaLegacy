@@ -1849,7 +1849,9 @@ const char *	p;
 int		iChar;
 size_t		uiLength;
 
+#ifdef hab372
 resetLocalGlobals();
+#endif
 if (pszPCDATA_in == NULL)
 	return 0;
 for ( uiLength = 0, p = pszPCDATA_in ; *p ; ++p )
@@ -1899,7 +1901,9 @@ const char *	p;
 char *		q;
 int		iChar;
 
+#ifdef hab372
 resetLocalGlobals();
+#endif
 if ((pszPCDATA_in == NULL) || (pszOutput_in == NULL))
 	return;
 *pszOutput_in = NUL;
@@ -1998,7 +2002,9 @@ const char *	p;
 int		iChar;
 size_t		uiLength;
 
+#ifdef hab372
 resetLocalGlobals();
+#endif
 if (pszCDATA_in == NULL)
 	return 0;
 for ( uiLength = 0, p = pszCDATA_in ; *p ; ++p )
@@ -2040,7 +2046,9 @@ const char *	p;
 char *		q;
 int		iChar;
 
+#ifdef hab372
 resetLocalGlobals();
+#endif
 if ((pszCDATA_in == NULL) || (pszOutput_in == NULL))
 	return;
 *pszOutput_in = NUL;
