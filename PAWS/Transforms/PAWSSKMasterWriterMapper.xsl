@@ -20,13 +20,79 @@ Main template
 -->
   <xsl:template match="/">
   <xsl:processing-instruction name="xml-stylesheet">
-  <xsl:text>type="text/xsl" href="c:\fw\ww\XLingPap\XLingPap1.xsl"</xsl:text>
+  <xsl:text>type="text/xsl" href="XLingPap1.xsl"</xsl:text>
   </xsl:processing-instruction>
-<lingPaper css="engWriteUp.css">
+<lingPaper>
+<xsl:attribute name="css"><xsl:value-of select="//language/langAbbr"/><xsl:text>WriteUp.css</xsl:text></xsl:attribute>
+<language>
+<xsl:attribute name="id"><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
+</language>
 	<xsl:apply-templates select="/" mode="x"/>
 </lingPaper>
   </xsl:template>
-  <xsl:include href="..\XMLWriterDescriptions\XSL Output.xsl"/>
+  <xsl:include href="..\XMLWriterDescriptions\IntroAndTypology.xsl"/>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoGlossAndFree
+	routine to create empty gloss and free lines for interlinear
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoGlossAndFree">
+	<line>
+	  <gloss lang="eng">
+		<object class="comment">Enter gloss here.</object>
+	  </gloss>
+	</line>
+	<free>
+	  <gloss lang="eng">
+		<object class="comment">Enter free translation here.</object>
+	  </gloss>
+	</free>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+OutputInterlinearExamples
+	routine to create examples recursively
+		Parameters: sExamles: text of examples
+							 iLength: length of example text
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="OutputInterlinearExamples">
+	<xsl:param name="sExamples"/>
+	<xsl:param name="iLength"/>
+	<xsl:if test="string-length($sExamples) != 0">
+	  <xsl:variable name="sBefore" select="substring-before($sExamples, '&#xA;')"/>
+	  <xsl:variable name="sLine">
+		<xsl:choose>
+		  <xsl:when test="string-length($sBefore) = 0">
+			<xsl:value-of select="$sExamples"/>
+		  </xsl:when>
+		  <xsl:otherwise>
+			<xsl:value-of select="$sBefore"/>
+		  </xsl:otherwise>
+		</xsl:choose>
+	  </xsl:variable>
+	  <listInterlinear>
+		<xsl:attribute name="letter"><xsl:value-of select="generate-id()"/>_<xsl:value-of select="$iLength"/></xsl:attribute>
+		<line>
+		  <langData>
+			<xsl:attribute name="lang"><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
+			<xsl:value-of select="$sLine"/>
+		  </langData>
+		</line>
+	  <xsl:call-template name="DoGlossAndFree"/>
+	  </listInterlinear>
+	  <xsl:call-template name="OutputInterlinearExamples">
+		<xsl:with-param name="sExamples">
+		  <xsl:value-of select="substring-after($sExamples,'&#xA;')"/>
+		</xsl:with-param>
+		<xsl:with-param name="iLength">
+		  <xsl:value-of select="string-length(substring-after($sExamples,'&#xA;'))"/>
+		</xsl:with-param>
+	  </xsl:call-template>
+	</xsl:if>
+  </xsl:template>
 </xsl:stylesheet>
 <!--
 ================================================================
