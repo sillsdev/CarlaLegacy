@@ -36,8 +36,6 @@
 #include "logwindow.h"
 #include "AmpleDLLWrapper.h"
 #include "ListComment.h"
-#include "DlgEditTestColor.h"
-
 
 #define CONTROL_FOLDER_SUFFIX "Control Files"
 
@@ -72,10 +70,6 @@ CCarlaLanguage::CCarlaLanguage(CLangModelsDoc *pDoc, LPCTSTR lpszAbrev)
 	m_pAnalysisSequence = new CAnalysisProcessSequence(this);
 	m_pSynthesisSequence = new CSynthesisProcessSequence(this);
 	m_pInterlinearSequence = new CInterlinearProcessSequence(this);
-
-#ifndef mr270
-	m_pTestEditModel = new CTestEditModel();
-#endif // mr270
 
 	// to do: I don't like these names, but currently
 	// the name is both for display and identification
@@ -168,103 +162,6 @@ BOOL CCarlaLanguage::save(LPCTSTR lpszProjectDirectory)
 	WRITEPREFS("sentAdjPrefs",m_sentransGlossAdjustmentModel.m_rules);
 	WRITEPREFS("sentAnaAdjPrefs",m_sentransAnaAdjustmentModel.m_rules);// JDH 6/2/99
 	WRITEPREFS("sentDisamPrefs",m_sentransDisambigModel.m_rules);
-
-#ifndef mr270
-
-	// test background
-	fout << "\\TestBkgCol " << m_pTestEditModel->m_colorBkg << "\n";
-	fout << "\\TestUseSystemColBkg " << m_pTestEditModel->m_bUseSystemColorBkg << "\n";
-
-	// test font size
-	fout << "\\TestFontSize " << m_pTestEditModel->m_strFontSize << "\n";
-
-	// test word wrap
-	fout << "\\TestWordWrap " << m_pTestEditModel->m_bWordWrap << "\n";
-
-#ifndef mr270	// do not save the default color because the user can't modify it.
-
-#else // mr270
-	// test default: color, bold, italic, undernline, strikeout
-	fout << "\\TestDefaultCol " << m_pTestEditModel->m_DefaultColor << "\n";
-		fout << "\\TestDefaultBold " << m_pTestEditModel->m_bDefaultBold << "\n";
-		fout << "\\TestDefaultItalic " << m_pTestEditModel->m_bDefaultItalic << "\n";
-		fout << "\\TestDefaultUnderline " << m_pTestEditModel->m_bDefaultUnderline << "\n";
-		fout << "\\TestDefaultStrikeout " << m_pTestEditModel->m_bDefaultStrikeout << "\n";
-#endif // mr270
-
-
-	// test operators: color, bold, italic, undernline, strikeout
-	fout << "\\TestOPECol " << m_pTestEditModel->m_OPEColor << "\n";
-		fout << "\\TestOPEBold " << m_pTestEditModel->m_bOPEBold << "\n";
-		fout << "\\TestOPEItalic " << m_pTestEditModel->m_bOPEItalic << "\n";
-		fout << "\\TestOPEUnderline " << m_pTestEditModel->m_bOPEUnderline << "\n";
-		fout << "\\TestOPEStrikeout " << m_pTestEditModel->m_bOPEStrikeout << "\n";
-
-	// test for operators: color, bold, italic, undernline, strikeout
-	fout << "\\TestFOROPCol " << m_pTestEditModel->m_FOROPColor << "\n";
-		fout << "\\TestFOROPBold " << m_pTestEditModel->m_bFOROPBold << "\n";
-		fout << "\\TestFOROPItalic " << m_pTestEditModel->m_bFOROPItalic << "\n";
-		fout << "\\TestFOROPUnderline " << m_pTestEditModel->m_bFOROPUnderline << "\n";
-		fout << "\\TestFOROPStrikeout " << m_pTestEditModel->m_bFOROPStrikeout << "\n";
-
-	// test locations: color, bold, italic, undernline, strikeout
-	fout << "\\TestLOCCol " << m_pTestEditModel->m_LOCColor << "\n";
-		fout << "\\TestLOCBold " << m_pTestEditModel->m_bLOCBold << "\n";
-		fout << "\\TestLOCItalic " << m_pTestEditModel->m_bLOCItalic << "\n";
-		fout << "\\TestLOCUnderline " << m_pTestEditModel->m_bLOCUnderline << "\n";
-		fout << "\\TestLOCStrikeout " << m_pTestEditModel->m_bLOCStrikeout << "\n";
-
-	// test keywords: color, bold, italic, undernline, strikeout
-	fout << "\\TestKEYWCol " << m_pTestEditModel->m_KEYWColor << "\n";
-		fout << "\\TestKEYWBold " << m_pTestEditModel->m_bKEYWBold << "\n";
-		fout << "\\TestKEYWItalic " << m_pTestEditModel->m_bKEYWItalic << "\n";
-		fout << "\\TestKEYWUnderline " << m_pTestEditModel->m_bKEYWUnderline << "\n";
-		fout << "\\TestKEYWStrikeout " << m_pTestEditModel->m_bKEYWStrikeout << "\n";
-
-	// test connectors: color, bold, italic, undernline, strikeout
-	fout << "\\TestCONCol " << m_pTestEditModel->m_CONColor << "\n";
-		fout << "\\TestCONBold " << m_pTestEditModel->m_bCONBold << "\n";
-		fout << "\\TestCONItalic " << m_pTestEditModel->m_bCONItalic << "\n";
-		fout << "\\TestCONUnderline " << m_pTestEditModel->m_bCONUnderline << "\n";
-		fout << "\\TestCONStrikeout " << m_pTestEditModel->m_bCONStrikeout << "\n";
-
-	// test types: color, bold, italic, undernline, strikeout
-	fout << "\\TestTYPCol " << m_pTestEditModel->m_TYPColor << "\n";
-		fout << "\\TestTYPBold " << m_pTestEditModel->m_bTYPBold << "\n";
-		fout << "\\TestTYPItalic " << m_pTestEditModel->m_bTYPItalic << "\n";
-		fout << "\\TestTYPUnderline " << m_pTestEditModel->m_bTYPUnderline << "\n";
-		fout << "\\TestTYPStrikeout " << m_pTestEditModel->m_bTYPStrikeout << "\n";
-
-	// test identifiers: color, bold, italic, undernline, strikeout
-	fout << "\\TestIDENTIFCol " << m_pTestEditModel->m_IDENTIFColor << "\n";
-		fout << "\\TestIDENTIFBold " << m_pTestEditModel->m_bIDENTIFBold << "\n";
-		fout << "\\TestIDENTIFItalic " << m_pTestEditModel->m_bIDENTIFItalic << "\n";
-		fout << "\\TestIDENTIFUnderline " << m_pTestEditModel->m_bIDENTIFUnderline << "\n";
-		fout << "\\TestIDENTIFStrikeout " << m_pTestEditModel->m_bIDENTIFStrikeout << "\n";
-
-	// test nombres: color, bold, italic, undernline, strikeout
-	fout << "\\TestNBRCol " << m_pTestEditModel->m_NBRColor << "\n";
-		fout << "\\TestNBRBold " << m_pTestEditModel->m_bNBRBold << "\n";
-		fout << "\\TestNBRItalic " << m_pTestEditModel->m_bNBRItalic << "\n";
-		fout << "\\TestNBRUnderline " << m_pTestEditModel->m_bNBRUnderline << "\n";
-		fout << "\\TestNBRStrikeout " << m_pTestEditModel->m_bNBRStrikeout << "\n";
-
-	// test comment: color, bold, italic, undernline, strikeout
-	fout << "\\TestCOMCol " << m_pTestEditModel->m_COMColor << "\n";
-		fout << "\\TestCOMBold " << m_pTestEditModel->m_bCOMBold << "\n";
-		fout << "\\TestCOMItalic " << m_pTestEditModel->m_bCOMItalic << "\n";
-		fout << "\\TestCOMUnderline " << m_pTestEditModel->m_bCOMUnderline << "\n";
-		fout << "\\TestCOMStrikeout " << m_pTestEditModel->m_bCOMStrikeout << "\n";
-
-	// test errors: color, bold, italic, undernline, strikeout
-	fout << "\\TestERRORCol " << m_pTestEditModel->m_ERRORColor << "\n";
-		fout << "\\TestERRORBold " << m_pTestEditModel->m_bERRORBold << "\n";
-		fout << "\\TestERRORItalic " << m_pTestEditModel->m_bERRORItalic << "\n";
-		fout << "\\TestERRORUnderline " << m_pTestEditModel->m_bERRORUnderline << "\n";
-		fout << "\\TestERRORStrikeout " << m_pTestEditModel->m_bERRORStrikeout << "\n";
-
-
-#endif // mr270
 
 	fout << "\\DisplayFlags " << m_wDisplayFlags << "\n";	// jdh 11/9/99
 
@@ -486,210 +383,6 @@ BOOL CCarlaLanguage::open(LPCTSTR lpszPathName)
 		}
 		else
 			TRACE("****UNKNOWN sField [%s]  [%s]\n", sMarker, sField);
-#ifndef mr270
-
-		// test background color
-		if( sMarker=="TestBkgCol" )
-		{
-			m_pTestEditModel->m_colorBkg=atoi(sField);
-		}
-		// test background use system color
-		if( sMarker=="TestUseSystemColBkg" )
-		{
-			m_pTestEditModel->m_bUseSystemColorBkg=atoi(sField);
-		}
-		// test font size
-		if( sMarker=="TestFontSize" )
-		{
-			m_pTestEditModel->m_strFontSize=sField;
-		}
-		// test word wrap
-		if( sMarker=="TestWordWrap" )
-		{
-			m_pTestEditModel->m_bWordWrap=atoi(sField);
-		}
-
-#ifndef mr270	// default color is not saved because the user can't modify it.
-
-#else // mr270
-		// default color
-		if( sMarker=="TestDefaultCol" ) {
-			m_pTestEditModel->m_DefaultColor=atoi(sField);}
-
-			if( sMarker=="TestDefaultBold" ) {
-				m_pTestEditModel->m_bDefaultBold=atoi(sField);}
-
-			if( sMarker=="TestDefaultItalic" ) {
-				m_pTestEditModel->m_bDefaultItalic=atoi(sField);}
-
-			if( sMarker=="TestDefaultUnderline" ) {
-				m_pTestEditModel->m_bDefaultUnderline=atoi(sField);}
-
-			if( sMarker=="TestDefaultStrikeout" ) {
-				m_pTestEditModel->m_bDefaultStrikeout=atoi(sField);}
-#endif // mr270
-
-		// operators color
-		if( sMarker=="TestOPECol" ) {
-			m_pTestEditModel->m_OPEColor=atoi(sField);}
-
-			if( sMarker=="TestOPEBold" ) {
-				m_pTestEditModel->m_bOPEBold=atoi(sField);}
-
-			if( sMarker=="TestOPEItalic" ) {
-				m_pTestEditModel->m_bOPEItalic=atoi(sField);}
-
-			if( sMarker=="TestOPEUnderline" ) {
-				m_pTestEditModel->m_bOPEUnderline=atoi(sField);}
-
-			if( sMarker=="TestOPEStrikeout" ) {
-				m_pTestEditModel->m_bOPEStrikeout=atoi(sField);}
-
-		// for operators color
-		if( sMarker=="TestFOROPCol" ) {
-			m_pTestEditModel->m_FOROPColor=atoi(sField);}
-
-			if( sMarker=="TestFOROPBold" ) {
-				m_pTestEditModel->m_bFOROPBold=atoi(sField);}
-
-			if( sMarker=="TestFOROPItalic" ) {
-				m_pTestEditModel->m_bFOROPItalic=atoi(sField);}
-
-			if( sMarker=="TestFOROPUnderline" ) {
-				m_pTestEditModel->m_bFOROPUnderline=atoi(sField);}
-
-			if( sMarker=="TestFOROPStrikeout" ) {
-				m_pTestEditModel->m_bFOROPStrikeout=atoi(sField);}
-
-		// locators color
-		if( sMarker=="TestLOCCol" ) {
-			m_pTestEditModel->m_LOCColor=atoi(sField);}
-
-			if( sMarker=="TestLOCBold" ) {
-				m_pTestEditModel->m_bLOCBold=atoi(sField);}
-
-			if( sMarker=="TestLOCItalic" ) {
-				m_pTestEditModel->m_bLOCItalic=atoi(sField);}
-
-			if( sMarker=="TestLOCUnderline" ) {
-				m_pTestEditModel->m_bLOCUnderline=atoi(sField);}
-
-			if( sMarker=="TestLOCStrikeout" ) {
-				m_pTestEditModel->m_bLOCStrikeout=atoi(sField);}
-
-		// keywords color
-		if( sMarker=="TestKEYWCol" ) {
-			m_pTestEditModel->m_KEYWColor=atoi(sField);}
-
-			if( sMarker=="TestKEYWBold" ) {
-				m_pTestEditModel->m_bKEYWBold=atoi(sField);}
-
-			if( sMarker=="TestKEYWItalic" ) {
-				m_pTestEditModel->m_bKEYWItalic=atoi(sField);}
-
-			if( sMarker=="TestKEYWUnderline" ) {
-				m_pTestEditModel->m_bKEYWUnderline=atoi(sField);}
-
-			if( sMarker=="TestKEYWStrikeout" ) {
-				m_pTestEditModel->m_bKEYWStrikeout=atoi(sField);}
-
-		// connectors color
-		if( sMarker=="TestCONCol" ) {
-			m_pTestEditModel->m_CONColor=atoi(sField);}
-
-			if( sMarker=="TestCONBold" ) {
-				m_pTestEditModel->m_bCONBold=atoi(sField);}
-
-			if( sMarker=="TestCONItalic" ) {
-				m_pTestEditModel->m_bCONItalic=atoi(sField);}
-
-			if( sMarker=="TestCONUnderline" ) {
-				m_pTestEditModel->m_bCONUnderline=atoi(sField);}
-
-			if( sMarker=="TestCONStrikeout" ) {
-				m_pTestEditModel->m_bCONStrikeout=atoi(sField);}
-
-		// types color
-		if( sMarker=="TestTYPCol" ) {
-			m_pTestEditModel->m_TYPColor=atoi(sField);}
-
-			if( sMarker=="TestTYPBold" ) {
-				m_pTestEditModel->m_bTYPBold=atoi(sField);}
-
-			if( sMarker=="TestTYPItalic" ) {
-				m_pTestEditModel->m_bTYPItalic=atoi(sField);}
-
-			if( sMarker=="TestTYPUnderline" ) {
-				m_pTestEditModel->m_bTYPUnderline=atoi(sField);}
-
-			if( sMarker=="TestTYPStrikeout" ) {
-				m_pTestEditModel->m_bTYPStrikeout=atoi(sField);}
-
-		// identifiers color
-		if( sMarker=="TestIDENTIFCol" ) {
-			m_pTestEditModel->m_IDENTIFColor=atoi(sField);}
-
-			if( sMarker=="TestIDENTIFBold" ) {
-				m_pTestEditModel->m_bIDENTIFBold=atoi(sField);}
-
-			if( sMarker=="TestIDENTIFItalic" ) {
-				m_pTestEditModel->m_bIDENTIFItalic=atoi(sField);}
-
-			if( sMarker=="TestIDENTIFUnderline" ) {
-				m_pTestEditModel->m_bIDENTIFUnderline=atoi(sField);}
-
-			if( sMarker=="TestIDENTIFStrikeout" ) {
-				m_pTestEditModel->m_bIDENTIFStrikeout=atoi(sField);}
-
-		// nombres color
-		if( sMarker=="TestNBRCol" ) {
-			m_pTestEditModel->m_NBRColor=atoi(sField);}
-
-			if( sMarker=="TestNBRBold" ) {
-				m_pTestEditModel->m_bNBRBold=atoi(sField);}
-
-			if( sMarker=="TestNBRItalic" ) {
-				m_pTestEditModel->m_bNBRItalic=atoi(sField);}
-
-			if( sMarker=="TestNBRUnderline" ) {
-				m_pTestEditModel->m_bNBRUnderline=atoi(sField);}
-
-			if( sMarker=="TestNBRStrikeout" ) {
-				m_pTestEditModel->m_bNBRStrikeout=atoi(sField);}
-
-		// comment color
-		if( sMarker=="TestCOMCol" ) {
-			m_pTestEditModel->m_COMColor=atoi(sField);}
-
-			if( sMarker=="TestCOMBold" ) {
-				m_pTestEditModel->m_bCOMBold=atoi(sField);}
-
-			if( sMarker=="TestCOMItalic" ) {
-				m_pTestEditModel->m_bCOMItalic=atoi(sField);}
-
-			if( sMarker=="TestCOMUnderline" ) {
-				m_pTestEditModel->m_bCOMUnderline=atoi(sField);}
-
-			if( sMarker=="TestCOMStrikeout" ) {
-				m_pTestEditModel->m_bCOMStrikeout=atoi(sField);}
-
-		// errors color
-		if( sMarker=="TestERRORCol" ) {
-			m_pTestEditModel->m_ERRORColor=atoi(sField);}
-
-			if( sMarker=="TestERRORBold" ) {
-				m_pTestEditModel->m_bERRORBold=atoi(sField);}
-
-			if( sMarker=="TestERRORItalic" ) {
-				m_pTestEditModel->m_bERRORItalic=atoi(sField);}
-
-			if( sMarker=="TestERRORUnderline" ) {
-				m_pTestEditModel->m_bERRORUnderline=atoi(sField);}
-
-			if( sMarker=="TestERRORStrikeout" ) {
-				m_pTestEditModel->m_bERRORStrikeout=atoi(sField);}
-#endif // mr270
-
 	}
 
 	delete pFile;
@@ -1134,14 +827,6 @@ CCarlaLanguage::~CCarlaLanguage()
 	{
 		delete m_pTransferSequences.GetAt(i);
 	}
-
-#ifndef mr270
-	if(m_pTestEditModel)
-		delete m_pTestEditModel;
-#endif // mr270
-
-
-
 }
 
 // returns true if the user clicked OK
