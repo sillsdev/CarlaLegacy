@@ -1,0 +1,34 @@
+	   AMBEX (Ambiguity Extractor) Documentation
+
+AMBEX is a filter to extract ambiguities from a file.
+
+It accepts as input either an analysis file produced
+by the AMPLE program, or a synthesis file produced by
+the STAMP program.
+
+If the input is an analysis file, then the output file
+includes every \a and \d line with an ambiguity.
+
+If the input is a synthesis file, then the output file
+includes all ambiguous words, one per line.
+
+For example, the following input:
+
+	This is a %2%line%sentence% of %2%sample%example% text.
+
+produces the following output:
+
+	%2%line%sentence%
+	%2%sample%example%
+
+The ambiguity character can be changed with the -a option
+on the command line.  For example, the following command
+uses dollar sign as the ambiguity marker:
+	ambex -a $ input >output
+
+The upper and lower bounds of ambiguity to be included can
+be changed with the -u and -l options.  (They default to zero
+lower bound, which includes failures, and unlimited upper bound.)
+For example, the following command chooses only words with two
+and three way ambiguities:
+	ambex -l 2 -u 3 input >output

@@ -1,0 +1,16 @@
+AMBEX.TXT Release notes for AMBEX
+
+AMBEX extracts ambiguities from a file. The file can be either
+analysis or synthesized output. AMBEX is documented in the book
+"STAMP: A Tool for Dialect Adaptation", and in the file
+AMBEX.DOC.
+
+Change history:
+
+0.1b Aug 90 allows one to either type the input file name on the
+command line or proceed it with the file indirection symbol '<'.
+For example:
+
+	ambex input >output
+
+0.1c Sep 1998 Created DJGPP, Win32, and 8086 versions.

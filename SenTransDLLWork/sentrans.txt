@@ -1,0 +1,391 @@
+SENTRANS.TXT Release notes for SENTRANS Sentence Transfer Program
+
+SENTRANS disambiguates and rearranges morphemes, words, and
+phrases in files output by AMPLE. SENTRANS is documented in the
+file SENTRANS.DOC.
+
+Change History:
+
+2.0.4  Oct 2000 Fixed a bug: the SenTrans32.exe version would crash
+if there was no log file.
+
+2.0.3  Sep 2000 Increase memory processing limit of 64000 to 640000.
+
+2.0.2  Jul 2000 Create a DJGPP version.
+
+2.0.1  Jun 2000 Remember morpheme category information in the \cat field.
+
+2.0.0  Jun 2000 Create a DLL version.
+
+1.2zh  Feb 2000 Fixed a bug: it would crash if a failure was missing
+a \cat field.
+
+1.2zg  Nov 1999 Fixed a bug: it did not always count input
+ambiguities correctly
+
+1.2zf  Jun 1999 Fixed a bug: would not allow ampersands within morphnames.
+
+1.2ze  Apr 1999 Fixed a bug: a reject rule with a repeated affix would
+incorrectly disambiguate a single occurrence of that affix.
+
+1.2zd Nov 1998 Fixed a bug: an ending punctuation symbol
+in a replacement without following environment would crash
+Win32 version.
+
+1.2zc Nov 1998 Fixed a bug (probably introduced in v. 1.2a):
+when a begin punctuation symbol is also used as an end
+punctuation symbol, it erroneously treated the begin
+occurrence as if it were an end occurrence.
+
+1.2zb Oct 1998 Insist that all optional replacement elements
+have identical match elements as originally intended.
+(I.e. if there is an optional replacement with no
+corresponding match, give an error message.)
+
+1.2za Oct 1998 Fix bug which caused Win32 version to crash
+on non-ANA input.
+
+1.2z Sep 1998 Send errlogfile error messages to logfile,
+too, if the logfile is redirected to a file.  Refine 1.2y so
+that capitalization of a deleted root within a "Cat=A > -B"
+kind of rule does not put A's capitalization on a following
+word.
+
+1.2y Sep 1998 Refine 1.2x so that it applies only to
+replacements and not to deletions or initial insertions.
+
+1.2x Sep 1998 Fix a bug which failed to maintain
+capitalization of the initial matching word in a replacement
+when it was not sentence initial
+
+1.2w Aug 1998 Fixed a bug that crashed Win32 version when a category
+was missing.  Added compile time display.
+
+1.2v Apr 97 Don't treat ] or } as close of class name unless [ or
+{ was present to open the class name. This fixed problems in
+languages that use those characters in their orthography.
+
+1.2u Apr 97 Fix bug in 1.2t of AFF- > AFF- outputting garbage.
+Note that PREF- > -SUFF replaces in place, so suffix attaches to
+previous word. Similarly, SUFF- > PREF- puts prefix on following
+word. To change on the same word, include the word category:
+PREF- N > N -SUFF
+
+1.2t Apr 97 Fix bug from 1.2a of seeing \f \\v as an element to
+match ~Conj in / # ~Conj _.
+
+1.2s Apr 97 Make split and join work. Split is changing an affix
+to a word. Join is changing a word to an affix.
+
+1.2r Apr 97 Make affix substitution work. One or more affixs
+without a root are now acceptable as a match. Replacement affixes
+are put in where the matched affix was. If there are multiple
+matched suffixes, the replacement goes where the last suffix was.
+If there are multiple mathed prefixes, the replacement goes where
+the first prefix was.
+
+1.2q Apr 97 Don't keep affixes if root completely deleted.
+
+1.2p Apr 97 Allow / and _ in morphnames if not followed by space.
+Also allow parends in morphnames if not preceded by space.
+
+1.2n Apr 97 Fix bug of zero at eof with no nl inserting zero.
+
+1.2m Apr 97 Fix bug of not correctly distinguishing multiples of
+same affix class.
+
+1.2k Apr 97 Fix bug of problems when a rule has all elements optional.
+
+1.2h Dec 95 Processing of properties (\mp morpheme and allomorph \ap).
+Also, we handle properties in the rule environments but not in the match and
+replace sections of the rules.
+Also, recognize \tagchar <ch> to set the tag character, which defaults to '^'
+
+1.2h Dec 95 Applying property rules in environments.
+
+1.2f Nov 95 Fixed a bug so the number of occurrences of \rulesoff
+and \ruleson in a rule file are reported correctly.
+
+1.2e Nov 95 Fixed a bug that prevented a morpheme class suffix in
+a rule from being recognized if it was inside square brackets.
+For example, -[mcl] is now recognized  correctly.
+
+1.2d Nov 95 Fixed a bug that could cause SENTRANS to crash when
+it ran out memory. It now exits gracefully with an out of memory
+message.
+
+1.2c Nov 95 Fixed a bug from version 1.2a that allowed words
+inserted at the beginning of a sentence to be inserted in front
+of initial punctuation, markers, etc.  It also fixed a problem
+that caused the trace to output initial punctuation, markers,
+etc. as the first word of the sentence being processed instead of
+the first real word.
+
+1.2b Jun 95 Fixed a new capitalization bug that appeared in 1.2a.
+
+1.2a Jun 95 Added code to improve punctuation handling. It is now
+possible to insert and delete punctuation marks. This fixes some
+problems.  But it may cause some existing rules to delete
+punctuation marks where they didn't before. For example,
+previously the rule: x ! > y would change x to y before an
+exclamation point.  Now it also deletes the exclamation point, so
+it should now be written: x > y / _ !
+
+A bug was fixed that caused: x ... ! > x ... N=y to insert y one word
+before the end of the sentence. It is now inserted at the end of the
+sentence. However, the above rule must now include the exclamation
+point in the replacement as well: x ... ! > x ... N=y !
+But this rule would be better expressed as: ! > N=y ! / x ... _
+
+A bug was fixed that caused: x ... # and # ... x to fail. Code was
+also added to make ... x and x ... work. Initial ellipses now reach
+to the beginning of the sentence and final ellipses reach to the end
+of the sentence.
+
+1.2a Jun 95 Also added code to output a \u field for inserted
+words. It is filled in with the same form as the inserted word.
+
+1.2a Jun 95 Also added code to limit the length of sentences to
+100 words. This allows processing of word lists. However, it
+means that sentence boundaries will appear at arbitrary places in
+the word list, which may cause rules to apply in unexpected ways.
+
+1.2 May 95 Added code to require matching parens without
+whitespace between for optional items in rules and removed parens
+from default punctuation list
+
+1.1y Oct 94 fixed a bug in which deleting a word lost the
+punctuation of the preceding word.
+
+1.1w Oct 94 fixed a bug in which deleting a word lost the format
+of the following word.
+
+1.1v Oct 94 fixed a bug in which deleting a word lost the
+capitalization of the following word.
+
+1.1u Oct 94 fixed a bug in which the output from an analysis with
+more than about 200 ambiguities would be corrupted.  1.1u also
+fixed a new bug in 1.1t of losing some percent signs in trace
+output.
+
+1.1t Aug 94 has enhancements that allow it to be compiled as a
+Windows function and a DLL function. It should be functionally
+equivalent to 1.1s.
+
+1.1s Jul 94 fixed a bug of a false error message appearing in
+certain cases. The message said "Illegal use of >, /, or _ in
+rule". When it appeared falsely, it would have no line showing
+under it. The error message was added to the program at some time
+in 1993, but there is no record of what version was the first to
+have the message.  1.1s also passes the \u (underlying form)
+field of the analysis file on to output. This field is new in
+AMPLE 1.9k.
+
+1.1m Mar 94 fixed a bug of preceding context of intitial #
+showing garbage.  1.1m also fixed a bug in 1.1k of not ignoring
+erroneous rules.
+
+1.1k Mar 94 fixed some whitespace bugs and truncation of the \n
+field.  1.1k also fixed some hang conditions in 1.1e.  1.1k also
+fixed a but of not allowing classes within classes.
+
+1.1j Feb 94 adds automatic assignment of category to a
+replacement so that there is no need to mention category on
+simple lexical substitutions. For example:
+   \ru black > white The above rule assigns "white" the same
+category as was on "black".
+
+Each inserted replace element without a category is assigned the
+category of a deleted match element. If there are not enough
+deleted match elements to provide categories for all inserted
+replace elements, an error message saying "Inserted root must
+have category" is given. For example, the following rule
+generates an error message:
+	\ru black > coal black
+
+To avoid this error message, any inserted replace element that is
+not taking the place of a deleted match element should be given a
+category. For example, the following corrects the above rule:
+	\ru black > N=coal black
+
+1.1j Feb 94 also correctly associates identical items used
+multiple times in the match and replace of a rule with each other
+in sequence. For example:
+   \ru Noun Noun > Noun -ONE Noun -TWO In the above rule the
+first Noun in the replace refers to the first Noun in the match
+and the second refers to the second.
+
+1.1j Feb 94 also allows tags to distinguish elements with
+otherwise identical names. Tags are written as ^xxx where xxx is
+the tag. For example:
+   \ru Noun of Noun^2 > Noun^2 -GEN Noun The above rule reverses
+the two nouns while converting to a genetive construction.
+
+1.1j Feb 94 also implements repetition of elements with a plus
+sign. For example:
+	\ru Dem (Adj+) N > (Adj+) Dem N The above rule moves a Dem
+element past any number of Adj elements.
+
+1.1j Feb 94 also implements patterns. For example:
+   \pat PP  Prep (Dem) (Adj+) N
+   \pat NP  (Dem) (Adj+) N (PP)
+
+   \ru NP of NP^2 > NP^2 -GEN NP
+The above rule reverses the two noun phrases while converting to
+a genetive construction.
+
+A pattern must be defined before it is used. A pattern can
+include the name of another pattern. However, a pattern cannot be
+made to recursively refer to itself or to another pattern that
+refers to it.
+
+1.1j Feb 94 also implements AND of multiple environments using
+the symbol &/.  For example:
+   \ru black > white / _ ... board &/ ~_ ... bird
+
+The above environment says the rule should apply if the word
+"board" is found somewhere to the right, AND the word "bird" is
+not found somewhere to the right.
+
+If the environment contains multiple environments OR'ed together
+the OR is given higher priority than AND. For example:
+	\ru black > white / _ ... board / _ ... smith &/ ~_ ... bird
+
+In the above rule, the first two environments are OR'ed together,
+and then the result is AND'ed with the third. This means that the
+word "bird" is not allowed with either the word "board" or the
+word "smith".
+
+1.1j Feb 94 also implements rule sets, where output of each rule
+in the set cannot be reprocessed by other rules in the same set.
+Rule sets are delimited with markers as shown below:
+   \ruleset
+   ...
+   ... set of rules that will not feed each other
+   ...
+   \endruleset
+
+Any number of rule sets can be defined. Rules from different rule
+sets can feed each other, but rules from a single ruleset cannot
+feed each other.
+
+1.1j Feb 94 also added a marker that causes all following \am and
+\rej rules to be treated as \amun and \rejun rules requiring
+unanimous environment.
+	\unanimous
+	...
+	... set of rules to be treated as unanimous environment rules
+	...
+	\nonunanimous
+
+This was done mostly to make it easy to make experiments to see
+the effect of unanimous environments on existing rule sets. We do
+not plan to support this option in the menu.
+
+1.1e Dec 93 fixed a bug of hang on duplicated root:
+	\ru x > x x
+The above rule is now rejected as an error.
+
+1.1e Dec 93 also fixed a bug of failing all alternatives on a
+negated affix environment. For example:
+	\rej x > -Y ~_ The above rule now works correctly.
+
+1.1e Dec 93 also fixed a bug of failing to match some loose
+affixes in environments. For example:
+	\am x > _ ... -SUFF The environment on the above rule now
+correctly finds any word with -SUFF on it.
+
+1.1e Dec 93 also fixed a bug of classes with brackets not working
+in rules, and fixes some whitespace bugs.
+
+1.1e Dec 93 also removed a limitation which did not allow a
+negated affix after other affixes. For example:
+	\am x / _ y -SUFF ~-SUFF2 The above rule used to reject
+~-SUFF2 as an error. It now works as expected.
+
+1.1e Dec 93 also removed a limitation which did not allow a
+negated affix in the match of a rule.
+	\am x ~-SUFF The above rule used to reject ~-SUFF as an
+error. It now works as expected. (It matches any x that does not
+have a -SUFF anywhere on it.)
+
+1.1e Dec 93 also adds a flag -v for dumping class contents to the
+log file.
+
+1.1d Sep 93 cleans up trace display.
+
+1.1c Sep 93 allows 0 as a replacement, as an alternative to an
+empty side of the rule.
+
+1.1c Sep 93 also adds statistics on ambiguity flow.
+
+1.1b Aug 93 allows -> instead of > to start the replacement, and
+allows ## instead of # to stand for sentence boundary.
+
+1.1a Jun 93 adds new rule forms and fixes certain bugs that
+sometimes made it necessary to reboot.  \rulesoff and \ruleson
+are added for controlling the set of rules.  \rejun and \amun are
+added (by analogy to \rej and \am).  These forms require
+unanimous match in the environment in order to act.
+
+Backslash is not allowed as sentence punctuation.  Tracing shows
+rule numbers and first words of sentences.  The version number is
+announced to the screen.  The bug of /_ not working in
+environments is removed.
+
+Classes are allowed to include other classes, and that inclusion
+can optionally be stated with square brackets around the included
+class name, e.g.:
+	\cl tense [past] PRESENT
+
+1.0s Apr 93 was sent out in the CARLA release of Sep 93.
+
+1.0s Apr 93 added numbers after ambiguity monitor dots.
+
+1.0r Apr 93 outputs a warning to the log file when an \ru rule
+disambiguates.  1.0r also changed the trace output to show the
+rule first and to show the changed word at the front of the line.
+This makes the trace easier to read.
+
+1.0q Mar 93 fixed a bug which caused punctuation to not be
+correctly matched in environments.
+
+1.0p Mar 93 allows much greater storage space for rules. It also
+outputs statistics and the time of the run to the log file.  It
+also adds numbers to the monitor display.  1.0p also fixed a bug
+which caused input files with no punctuation to run out of memory
+space.
+
+1.0n Jan 93 fixed a bug in 1.0m which caused the default comment
+character to not be recognized.
+
+1.0m Nov 92 added a -c command line option which changes the
+comment character used in the rule file.
+
+1.0k Nov 92 fixed a bug which caused any error in a rule file to
+make the program output a zero length file.  1.0k also fixed a
+bug which sent error messages to the screen only and not to the
+log file.
+
+1.0f Jul 92 accepts \mcl and \ccl as class definitions along with
+\cl.  This allows the user interface to feed in the classes built
+in it.
+
+1.0e Apr 92 added a reject rule as a way of disambiguating.  It
+is like an \am rule, but starts with \rej instead.  It rejects
+any ambiguity it matches instead of accepting it.  If a rejection
+rule matches every analysis in a word, then it does not reject
+any of them.  (It can't reject them all, and it has no reason to
+prefer any one of them, so it can't effectively do anything.)
+
+1.0d Mar 92 fixed a bug which caused sentence intial environment
+/ # _ to fail to match.
+
+1.0c Jan 92 fixed a bug which caused a "Memory full" message if a
+line contained two wedges or a wedge after a slash.
+
+1.0b Jan 92 fixed bugs in the error messages for inserted word
+and root.  Also fixed a bug in trace display of compound root
+rules.
+
+1.0a Nov 91 was given out for field test in Nov 91.

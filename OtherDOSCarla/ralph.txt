@@ -1,0 +1,12 @@
+RALPH.TXT Release notes for RALPH Right Alphabetization
+
+RALPH alphabetizes lines from the right to group similar suffixes.
+RALPH is documented in the book "AMPLE: A Tool for Exploring
+Morphology".
+
+Change history:
+
+1.1a Apr 93 fixes a bug which removed the top bit from upper
+ASCII characters.
+
+1.1b Sep 1998 Created DJGPP, Win32, and 8086 versions.

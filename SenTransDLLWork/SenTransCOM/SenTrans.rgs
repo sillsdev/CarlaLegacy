@@ -1,0 +1,26 @@
+HKCR
+{
+	SenTransCOM.SenTrans.1 = s 'SenTrans Class'
+	{
+		CLSID = s '{FB263D52-4293-11D4-942A-0050BF068CF6}'
+	}
+	SenTransCOM.SenTrans = s 'SenTrans Class'
+	{
+		CLSID = s '{FB263D52-4293-11D4-942A-0050BF068CF6}'
+		CurVer = s 'SenTransCOM.SenTrans.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {FB263D52-4293-11D4-942A-0050BF068CF6} = s 'SenTrans Class'
+		{
+			ProgID = s 'SenTransCOM.SenTrans.1'
+			VersionIndependentProgID = s 'SenTransCOM.SenTrans'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{FB263D44-4293-11D4-942A-0050BF068CF6}'
+		}
+	}
+}

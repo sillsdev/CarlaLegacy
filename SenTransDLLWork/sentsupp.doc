@@ -1,0 +1,64 @@
+
+
+SUPPLEMENTARY DOCUMENTATION ON SENTRANS
+
+Bill Mann
+
+June 12, 1993
+
+Sentrans has recently been modified extensively, resulting in version 1.1a.
+
+The major changes are involved with how environments in rules are allowed
+to match.   Rules  (\am, \rej or \ru) have the form
+
+MATCH / LEFT _ RIGHT
+
+The MATCH, LEFT and RIGHT regions each consist of a sequence of one or more
+words, possibly with affixes and other complications.
+
+The rule would be used provided that some interpretation of the LEFT
+region matches, and some interpretation of RIGHT matches.
+
+This is a problem in that the interpretation that matches may be in error,
+some ambiguity that does not represent the actual sentence structure.
+Many people have wanted something more reliable.  The addition in this
+version is to allow the rule to require unanimous match in the
+environment.  This means that with unanimity, EVERY interpretation of LEFT
+and RIGHT must match the text with its ambiguities.
+
+To implement this, two additional disambiguation rule types have been added:
+
+\amun  (corresponding to \am):    Accept MATCH if the environment matches
+								  unambiguously.
+
+\rejun  (corresponding to \rej):  Reject MATCH if the environment matches
+								  unambiguously.
+
+I recommend that as many of your rules as possible be \rejun tests.  They
+will not fire unless the environment justifies it, and the basis for the
+rejection is visible in the rule, unlike \amun and \am rules, in which you
+must imagine the things being removed.
+
+EXPERIMENTING WITH THE RULES
+
+It is good to test the rules, and to be sure that they have the intended
+consequences.  One help in doing this is to turn on tracing (the -t
+command line flag) and see what the rules are doing.
+
+Another aid, new in version 1.1a, is to turn off all of the rules except
+the one(s) that you want to test.  Two new commands, \ruleson and
+\rulesoff are provided.  They can be inserted into the rule sequence, and
+they apply to all of the rules below them until another occurs, e.g.
+given the sequence
+
+\am ..
+\rulesoff
+\rej ..
+\amun ..
+\ruleson
+\rejun ..
+\rejun ..
+
+the first \am and the two \rejun rules would be tried.  Any number of
+\ruleson and \rulesoff can be used, and they need not alternate in an
+on/off sequence.
