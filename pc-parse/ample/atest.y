@@ -102,6 +102,7 @@ static AmpleTestNode *	pAmpleTestTree_m = NULL;
 %token  <ival>  LX_LAST
 %token  <ival>  LX_WORD
 %token  <ival>  LX_CAPITALIZED  /* 1.9zb BJY */
+%token  <ival>  LX_ORDRCLASSMAX	/* hab360 */
 
 %type   <cval>      name
 %type   <tstval>    factor
@@ -113,7 +114,7 @@ static AmpleTestNode *	pAmpleTestTree_m = NULL;
 %type   <tstval>    type_expr
 %type   <ival>      forleft
 %type   <ival>      forright
-%type   <ival>          relop
+%type   <ival>      relop
 %type   <ival>      type
 %type   <tstval>    sptest
 %type   <ival>      logop
@@ -541,6 +542,43 @@ orderclass_expr
 	   }
 	$$ = makeAmpleTestInt( $3 + (ORDR_EQ_CON-ORDR_EQ), $1, iTemp_m );
 	}
+				/* change begin hab360 */
+	| position LX_ORDRCLASS relop position LX_ORDRCLASSMAX
+	{
+	$$ = makeAmpleTestInt( $3 + (ORDR_EQ_ORDRMAX-ORDR_EQ) , $1, $4 );
+	}
+	| position LX_ORDRCLASSMAX relop position LX_ORDRCLASS
+	{
+	$$ = makeAmpleTestInt( $3 + (ORDRMAX_EQ_ORDR-ORDR_EQ), $1, $4 );
+	}
+	| position LX_ORDRCLASSMAX relop position LX_ORDRCLASSMAX
+	{
+	$$ = makeAmpleTestInt( $3 + (ORDRMAX_EQ_ORDRMAX-ORDR_EQ), $1, $4 );
+	}
+	| position LX_ORDRCLASSMAX relop LX_IDENTIFIER
+	{
+	iTemp_m = atoi($4);    /* convert identifier to integer */
+			/* check for valid digit sequence */
+	pszTemp_m = $4;
+	if (*pszTemp_m == '-') pszTemp_m++;   /* skip initial minus sign */
+	while (*pszTemp_m != NUL)  /* rest should be digits */
+	   {
+	   if (!isdigit(*pszTemp_m++))
+		{           /* found a non-digit; report error */
+		if (pLogFP_m != NULL)
+		{
+		fprintf(pLogFP_m,
+		"%s%s constant %s in orderclass expression is not a number.\n",
+			pszErrorHeader_m, szTestName_m, $4 );
+		fprintf(pLogFP_m,
+			"%19sWill use the value %d for it\n", " ", iTemp_m);
+		}
+		break;
+		}
+	   }
+	$$ = makeAmpleTestInt( $3 + (ORDRMAX_EQ_CON-ORDR_EQ), $1, iTemp_m );
+	}
+				/* change end hab360 */
 	;
 
 relop

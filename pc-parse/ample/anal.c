@@ -103,6 +103,7 @@ static int		get_suffix	P((AmpleHeadList * head,
 					   int             ifxs_found,
 					   int             nulls_have,
 					   AmpleData *     pAmple_in));
+#ifdef hab360
 static void		a_trace		P((int            dtype,
 					   char *         tail,
 					   int            tlen,
@@ -114,6 +115,20 @@ static void		a_trace		P((int            dtype,
 					   char *         pszAllomorphID_in,
 					   AmpleAlloEnv * ac_ptr,
 					   AmpleData *    pAmple_in));
+#else  /* hab360 */
+static void		a_trace		P((int            dtype,
+					   char *         tail,
+					   int            tlen,
+					   char *         m_name,
+					   unsigned       fcat,
+					   unsigned       tcat,
+					   PropertySet_t  props,
+					   int            ordercl,
+					   int            orderclMax,
+					   char *         pszAllomorphID_in,
+					   AmpleAlloEnv * ac_ptr,
+					   AmpleData *    pAmple_in));
+#endif /* hab360 */
 static int	testAmpleStringEnvirons	P((AmpleHeadList * left,
 					   AmpleHeadList * current,
 					   char *          strp,
@@ -451,6 +466,9 @@ if (rhead->iROOTCATEG == NUL)
 rhead->pAllomorph  = ap;
 rhead->sPropertySet.pProperties = ap->sPropertySet.pProperties;
 rhead->iOrderClass = 0;
+#ifndef hab360
+rhead->iOrderClassMax = 0;
+#endif
 rhead->eType	   = AMPLE_ROOT;
 rhead->uiAllomorphLength = 0;
 rhead->uiMorphnamesLength = strlen(pAmple_in->bRootGlosses ?
@@ -1035,6 +1053,9 @@ if (pfxs_found < pAmple_in->iMaxPrefixCount)
 			(ap->pAFFIX->pToCategories)[i],
 			ap->sPropertySet,
 			ap->pAFFIX->iOrderClass,
+#ifndef hab360
+			ap->pAFFIX->iOrderClassMax,
+#endif
 			ap->pszAllomorphID,
 			ap->pEnvironment, pAmple_in);
 		/*
@@ -1044,6 +1065,9 @@ if (pfxs_found < pAmple_in->iMaxPrefixCount)
 		newhead.iToCategory	  = (ap->pAFFIX->pToCategories)[i];
 		newhead.sPropertySet.pProperties = ap->sPropertySet.pProperties;
 		newhead.iOrderClass	  = ap->pAFFIX->iOrderClass;
+#ifndef hab360
+		newhead.iOrderClassMax  = ap->pAFFIX->iOrderClassMax;
+#endif
 		newhead.pAllomorph	  = ap;
 		newhead.eType	  = AMPLE_PFX;
 		newhead.uiAllomorphLength = pfxp->alen;
@@ -1312,6 +1336,9 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 			(ap->pINFIX->pToCategories)[i],
 			ap->sPropertySet,
 			ap->pINFIX->iOrderClass,
+#ifndef hab360
+			ap->pINFIX->iOrderClassMax,
+#endif
 			ap->pszAllomorphID,
 			ap->pEnvironment, pAmple_in);
 
@@ -1319,6 +1346,9 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 		newhead.iToCategory	  = (ap->pINFIX->pToCategories)[i];
 		newhead.sPropertySet.pProperties = ap->sPropertySet.pProperties;
 		newhead.iOrderClass	  = ap->pINFIX->iOrderClass;
+#ifndef hab360
+		newhead.iOrderClassMax  = ap->pINFIX->iOrderClassMax;
+#endif
 		newhead.pAllomorph	  = ap;
 		newhead.eType	  = AMPLE_IFX;
 		newhead.uiAllomorphLength = ifxp->alen;
@@ -1542,6 +1572,9 @@ if (roots_found < pAmple_in->iMaxRootCount)
 		if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
 		a_trace(AMPLE_ROOT, tail, rootp->alen, ap->pMORPHNAME,
 			newhead.iROOTCATEG, NUL, ap->sPropertySet, 0,
+#ifndef hab360
+			0,
+#endif
 			ap->pszAllomorphID,
 			ap->pEnvironment, pAmple_in);
 		/*
@@ -1867,6 +1900,9 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 			(ap->pAFFIX->pToCategories)[i],
 			ap->sPropertySet,
 			ap->pAFFIX->iOrderClass,
+#ifndef hab360
+			ap->pAFFIX->iOrderClassMax,
+#endif
 			ap->pszAllomorphID,
 			ap->pEnvironment, pAmple_in);
 		/*
@@ -1876,6 +1912,9 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 		newhead.iToCategory	  = (ap->pAFFIX->pToCategories)[i];
 		newhead.sPropertySet.pProperties = ap->sPropertySet.pProperties;
 		newhead.iOrderClass	  = ap->pAFFIX->iOrderClass;
+#ifndef hab360
+		newhead.iOrderClassMax = ap->pAFFIX->iOrderClassMax;
+#endif
 		newhead.pAllomorph	  = ap;
 		newhead.eType	  = AMPLE_SFX;
 		newhead.uiAllomorphLength = sfxp->alen;
@@ -2108,6 +2147,9 @@ if (*tail == NUL)
 			thp->sPropertySet.pProperties =
 						  hp->sPropertySet.pProperties;
 			thp->iOrderClass       = hp->iOrderClass;
+#ifndef hab360
+			thp->iOrderClassMax    = hp->iOrderClassMax;
+#endif
 						/* 1.9r BJY make duplicate */
 			thp->pAllomorph        = dup_am(hp->pAllomorph);
 			thp->eType	           = hp->eType;
@@ -2238,8 +2280,13 @@ return bAllomorphsTried;
  * RETURN VALUE
  *    none
  */
+#ifdef hab360
 static void a_trace( dtype, tail, tlen, m_name, fcat, tcat, props, ordercl,
 			 pszAllomorphID_in, ac_ptr, pAmple_in)
+#else
+static void a_trace( dtype, tail, tlen, m_name, fcat, tcat, props, ordercl,
+			 orderclMax, pszAllomorphID_in, ac_ptr, pAmple_in)
+#endif
 int		dtype;		/* type of dictionary entry (pfx, root, sfx) */
 char *		tail;		/* remainder of word string to be parsed */
 int		tlen;		/* length of tail */
@@ -2248,6 +2295,9 @@ unsigned	fcat;		/* from category of affix, root category */
 unsigned	tcat;		/* to category of affix */
 PropertySet_t	props;		/* allomorph and morpheme properties */
 int		ordercl;	/* orderclass */
+#ifndef hab360
+int		orderclMax;	/* orderclassMax */
+#endif
 char *		pszAllomorphID_in;	/* allomorph indentifier */
 AmpleAlloEnv *	ac_ptr;		/* allomorph environment conditions pointer */
 AmpleData *	pAmple_in;
@@ -2314,6 +2364,10 @@ if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
 						pAmple_in->pCategories));
 	sprintf(szNumber,  "%d", ordercl);
 	store_AMPLE_trace(pAmple_in, szNumber, NULL);
+#ifndef hab360
+	sprintf(szNumber,  ",%d", orderclMax);
+	store_AMPLE_trace(pAmple_in, szNumber, NULL);
+#endif
 	}
 	/*
 	 *  allomorph indentifier
@@ -4917,6 +4971,152 @@ switch (tree->iOpCode & OP_MASK)
 		}
 	break;
 
+#ifndef hab360
+	case ORDR_EQ_ORDRMAX:	/* 'orderclass' '=' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClass == hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDR_GT_ORDRMAX:	/* 'orderclass' '>' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClass > hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDR_GE_ORDRMAX:	/* 'orderclass' '>=' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClass >= hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDR_LE_ORDRMAX:	/* 'orderclass' '<=' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClass <= hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDR_LT_ORDRMAX:	/* 'orderclass' '<' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClass < hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDR_NE_ORDRMAX:	/* 'orderclass' '~=' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClass != hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDRMAX_EQ_ORDR:	/* 'orderclassmax' '=' ... 'orderclass' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax == hp2->iOrderClass);
+		}
+	break;
+
+	case ORDRMAX_GT_ORDR:	/* 'orderclassmax' '>' ... 'orderclass' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax > hp2->iOrderClass);
+		}
+	break;
+
+	case ORDRMAX_GE_ORDR:	/* 'orderclassmax' '>=' ... 'orderclass' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax >= hp2->iOrderClass);
+		}
+	break;
+
+	case ORDRMAX_LE_ORDR:	/* 'orderclassmax' '<=' ... 'orderclass' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax <= hp2->iOrderClass);
+		}
+	break;
+
+	case ORDRMAX_LT_ORDR:	/* 'orderclassmax' '<' ... 'orderclass' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax < hp2->iOrderClass);
+		}
+	break;
+
+	case ORDRMAX_NE_ORDR:	/* 'orderclassmax' '~=' ... 'orderclass' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax != hp2->iOrderClass);
+		}
+	break;
+
+	case ORDRMAX_EQ_ORDRMAX:	/* 'orderclassmax' '=' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax == hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDRMAX_GT_ORDRMAX:	/* 'orderclassmax' '>' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax > hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDRMAX_GE_ORDRMAX:	/* 'orderclassmax' '>=' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax >= hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDRMAX_LE_ORDRMAX:	/* 'orderclassmax' '<=' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax <= hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDRMAX_LT_ORDRMAX:	/* 'orderclassmax' '<' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax < hp2->iOrderClassMax);
+		}
+	break;
+
+	case ORDRMAX_NE_ORDRMAX:	/* 'orderclassmax' '~=' ... 'orderclassmax' */
+	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
+		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
+		{
+		val = (hp->iOrderClassMax != hp2->iOrderClassMax);
+		}
+	break;
+#endif
+
 	case ORDR_EQ_CON:	/* 'orderclass' '=' CONSTANT */
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
 		{
@@ -4958,6 +5158,51 @@ switch (tree->iOpCode & OP_MASK)
 		val = (hp->iOrderClass != right.iValue);
 		}
 	break;
+
+#ifndef hab360
+	case ORDRMAX_EQ_CON:	/* 'orderclassmax' '=' CONSTANT */
+	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
+		{
+		val = (hp->iOrderClassMax == right.iValue);
+		}
+	break;
+
+	case ORDRMAX_GT_CON:	/* 'orderclassmax' '>' CONSTANT */
+	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
+		{
+		val = (hp->iOrderClassMax > right.iValue);
+		}
+	break;
+
+	case ORDRMAX_GE_CON:	/* 'orderclassmax' '>=' CONSTANT */
+	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
+		{
+		val = (hp->iOrderClassMax >= right.iValue);
+		}
+	break;
+
+	case ORDRMAX_LE_CON:	/* 'orderclassmax' '<=' CONSTANT */
+	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
+		{
+		val = (hp->iOrderClassMax <= right.iValue);
+		}
+	break;
+
+	case ORDRMAX_LT_CON:	/* 'orderclassmax' '<' CONSTANT */
+	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
+		{
+		val = (hp->iOrderClassMax < right.iValue);
+		}
+	break;
+
+	case ORDRMAX_NE_CON:	/* 'orderclassmax' '~=' CONSTANT */
+	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
+		{
+		val = (hp->iOrderClassMax != right.iValue);
+		}
+	break;
+
+#endif
 
 	case AL_IS_CAP:	/* 'allomorph' 'is' 'capitalized'  1.9zb BJY*/
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)

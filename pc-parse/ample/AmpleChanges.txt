@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.6.0 (13-Jun-2002)
+-------------------
+1. Allow both min and max orderclass numbers (i.e. allow
+   orderclasses to span a range).
+
 3.5.0 (06-Mar-2002)
 -------------------
 1. Added Allomorphs Never Co-occur Constraints (for XAmple only).

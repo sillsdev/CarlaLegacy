@@ -11,8 +11,8 @@ CFLAGS  = -DHAVE_CONFIG_H -I. -I.. -I../include
 RANLIB  = ranlib
 INSTALL = copy
 # either GNU bison or Berkeley yacc work okay: need the -d and -p options
-#YACC = bison -y
-YACC = byacc
+YACC = bison -y
+#YACC = byacc
 FLEX = flex
 SED  = sed
 

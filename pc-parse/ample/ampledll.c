@@ -1480,6 +1480,7 @@ DllExport const char * AmpleParseText(
 	}
 #endif /* hab35013 */
 #else  /* EXPERIMENTAL */
+	}
 				/* For Ample - normal case: use TextIn */
   sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
 						   &pSetup_io->sData.sTextCtl);

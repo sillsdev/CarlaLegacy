@@ -200,6 +200,8 @@ typedef struct ample_test_node {
 #define TO_MEMBER   40  /* 'tocategory 'is' 'member' IDENTIFIER */
 #define FROM_IS     41  /* 'fromcategory 'is' IDENTIFIER */
 #define TO_IS       42  /* 'tocategory 'is' IDENTIFIER */
+
+#ifdef hab360
 /*
  *  the next twelve must be consecutively numbered and in this order
  */
@@ -225,6 +227,65 @@ typedef struct ample_test_node {
  */
 #define PUNCT_IS     62  /* neighbor 'punctuation' 'is' STRING */
 #define PUNCT_MEMBER 63  /* neighbor 'punctuation' 'is' 'member' IDENTIFIER */
+
+#else  /* hab360 */
+
+/*
+ *  the next 36 must be consecutively numbered and in this order
+ */
+#define ORDR_EQ             43  /* 'orderclass' '=' ... 'orderclass' */
+#define ORDR_GT             44  /* 'orderclass' '>' ... 'orderclass' */
+#define ORDR_GE             45  /* 'orderclass' '>=' ... 'orderclass' */
+#define ORDR_LE             46  /* 'orderclass' '<=' ... 'orderclass' */
+#define ORDR_LT             47  /* 'orderclass' '<' ... 'orderclass' */
+#define ORDR_NE             48  /* 'orderclass' '~=' ... 'orderclass' */
+
+#define ORDR_EQ_ORDRMAX     49  /* 'orderclass' '=' ... 'orderclassmax' */
+#define ORDR_GT_ORDRMAX     50  /* 'orderclass' '>' ... 'orderclassmax' */
+#define ORDR_GE_ORDRMAX     51  /* 'orderclass' '>=' ... 'orderclassmax' */
+#define ORDR_LE_ORDRMAX     52  /* 'orderclass' '<=' ... 'orderclassmax' */
+#define ORDR_LT_ORDRMAX     53  /* 'orderclass' '<' ... 'orderclassmax' */
+#define ORDR_NE_ORDRMAX     54  /* 'orderclass' '~=' ... 'orderclassmax' */
+
+#define ORDRMAX_EQ_ORDR     55  /* 'orderclassmax' '=' ... 'orderclass' */
+#define ORDRMAX_GT_ORDR     56  /* 'orderclassmax' '>' ... 'orderclass' */
+#define ORDRMAX_GE_ORDR     57  /* 'orderclassmax' '>=' ... 'orderclass' */
+#define ORDRMAX_LE_ORDR     58  /* 'orderclassmax' '<=' ... 'orderclass' */
+#define ORDRMAX_LT_ORDR     59  /* 'orderclassmax' '<' ... 'orderclass' */
+#define ORDRMAX_NE_ORDR     60  /* 'orderclassmax' '~=' ... 'orderclass' */
+
+#define ORDRMAX_EQ_ORDRMAX  61  /* 'orderclassmax' '=' ... 'orderclassmax' */
+#define ORDRMAX_GT_ORDRMAX  62  /* 'orderclassmax' '>' ... 'orderclassmax' */
+#define ORDRMAX_GE_ORDRMAX  63  /* 'orderclassmax' '>=' ... 'orderclassmax' */
+#define ORDRMAX_LE_ORDRMAX  64  /* 'orderclassmax' '<=' ... 'orderclassmax' */
+#define ORDRMAX_LT_ORDRMAX  65  /* 'orderclassmax' '<' ... 'orderclassmax' */
+#define ORDRMAX_NE_ORDRMAX  66  /* 'orderclassmax' '~=' ... 'orderclassmax' */
+
+#define ORDR_EQ_CON    67  /* 'orderclass' '=' CONSTANT */
+#define ORDR_GT_CON    68  /* 'orderclass' '>' CONSTANT */
+#define ORDR_GE_CON    69  /* 'orderclass' '>=' CONSTANT */
+#define ORDR_LE_CON    70  /* 'orderclass' '<=' CONSTANT */
+#define ORDR_LT_CON    71  /* 'orderclass' '<' CONSTANT */
+#define ORDR_NE_CON    72  /* 'orderclass' '~=' CONSTANT */
+
+#define ORDRMAX_EQ_CON 73  /* 'orderclassmax' '=' CONSTANT */
+#define ORDRMAX_GT_CON 74  /* 'orderclassmax' '>' CONSTANT */
+#define ORDRMAX_GE_CON 75  /* 'orderclassmax' '>=' CONSTANT */
+#define ORDRMAX_LE_CON 76  /* 'orderclassmax' '<=' CONSTANT */
+#define ORDRMAX_LT_CON 77  /* 'orderclassmax' '<' CONSTANT */
+#define ORDRMAX_NE_CON 78  /* 'orderclassmax' '~=' CONSTANT */
+/*
+ *  CAPS tests  1.9zb BJY
+ */
+#define AL_IS_CAP   79  /* 'allomorph' 'is' 'capitalized' */
+#define WD_IS_CAP   80  /* 'word' 'is' 'capitalized' */
+/*
+ *  Punctuation tests  3.3.0 hab
+ */
+#define PUNCT_IS     81  /* neighbor 'punctuation' 'is' STRING */
+#define PUNCT_MEMBER 82  /* neighbor 'punctuation' 'is' 'member' IDENTIFIER */
+
+#endif /* hab360 */
 
 /*
  *   morpheme position constants

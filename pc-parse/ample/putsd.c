@@ -88,6 +88,9 @@ AmpleAffixInfo *	pAffix;
 AmpleInfixInfo *	pInfix;
 AmpleAllomorph *	pAllo;
 int			iOrder = 0;
+#ifndef hab360
+int			iOrderMax = 0;
+#endif
 int			iFromCat;
 int			iToCat;
 unsigned short *	pBigProp;
@@ -168,12 +171,18 @@ for (	pMorph = pAmple_in->pAmpleMorphemes, uiCount = 1 ;
 		pFromCats = pAffix->pFromCategories;
 		pToCats   = pAffix->pToCategories;
 		iOrder    = pAffix->iOrderClass;
+#ifndef hab360
+		iOrderMax = pAffix->iOrderClassMax;
+#endif
 		}
 	else
 		{
 		pFromCats = NULL;
 		pToCats   = NULL;
 		iOrder    = 0;
+#ifndef hab360
+		iOrderMax    = 0;
+#endif
 		}
 	}
 	if (pMorph->iMorphType & AMPLE_IFX)
@@ -184,6 +193,9 @@ for (	pMorph = pAmple_in->pAmpleMorphemes, uiCount = 1 ;
 		pFromCats = pInfix->pFromCategories;
 		pToCats   = pInfix->pToCategories;
 		iOrder    = pInfix->iOrderClass;
+#ifndef hab360
+		iOrderMax = pInfix->iOrderClassMax;
+#endif
 		/*
 		 *  write the infix "location" field
 		 */
@@ -202,6 +214,9 @@ for (	pMorph = pAmple_in->pAmpleMorphemes, uiCount = 1 ;
 		pFromCats = NULL;
 		pToCats   = NULL;
 		iOrder    = 0;
+#ifndef hab360
+		iOrderMax = 0;
+#endif
 		}
 	}
 	if (pMorph->iMorphType & (AMPLE_PFX | AMPLE_IFX | AMPLE_SFX))
@@ -228,7 +243,12 @@ for (	pMorph = pAmple_in->pAmpleMorphemes, uiCount = 1 ;
 	 *  write the "order class" field
 	 */
 	if (iOrder != 0)
+	if (iOrder != 0)
+#ifdef hab360
 		fprintf(pDictFP, "\\o  %d\n", iOrder);
+#else
+		fprintf(pDictFP, "\\o  %d %d\n", iOrder, iOrderMax);
+#endif
 	}
 	if (pMorph->iMorphType & AMPLE_ROOT)
 	{

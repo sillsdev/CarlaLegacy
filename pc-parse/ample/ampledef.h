@@ -25,6 +25,9 @@ typedef struct {
 	unsigned char *	pFromCategories;
 	unsigned char *	pToCategories;
 	short		iOrderClass;
+#ifndef hab360
+	short               iOrderClassMax;
+#endif
 	} AmpleAffixInfo;
 
 /*****************************************************************************
@@ -37,6 +40,9 @@ typedef struct {
 	unsigned char *		pFromCategories;
 	unsigned char *		pToCategories;
 	short			iOrderClass;
+#ifndef hab360
+	short                       iOrderClassMax;
+#endif
 	unsigned char		iInfixLoc;	/* AMPLE_PFX | AMPLE_ROOT |
 						   AMPLE_SFX */
 	AmpleEnvConstraint *	pInfixEnv;
@@ -189,6 +195,9 @@ typedef struct ample_headlist {
 	unsigned char	iToCategory;
 	PropertySet_t	sPropertySet;	/* properties of the morpheme */
 	short		iOrderClass;	/* orderclass (negative for prefixes)*/
+#ifndef hab360
+	short               iOrderClassMax; /* max orderclass (for range); above is min */
+#endif
 	unsigned char	eType;		/* type: AMPLE_PFX, AMPLE_IFX,
 					   AMPLE_SFX, or AMPLE_ROOT */
 	unsigned		uiAllomorphLength;	/* length of allomorph */

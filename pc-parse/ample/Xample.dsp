@@ -222,5 +222,9 @@ SOURCE=.\version.h
 
 SOURCE=.\writests.c
 # End Source File
+# Begin Source File
+
+SOURCE=.\xample.rc
+# End Source File
 # End Target
 # End Project

@@ -149,6 +149,11 @@ static void	addAmpleDictEntry P((char * pRecord_in,
 static void check_for_valid_mcc P((AmpleMorphConstraint * pMCC_in,
 				   char *                 pszMorphName_in,
 				   AmpleData *            pAmple_in));
+
+#ifndef hab360
+static long parseAmpleOrderClass P((char * rp, AmpleData * pAmple_in));
+#endif
+
 #ifdef EXPERIMENTAL
 static char *		setPATRCategory P((char * pszCategory_in,
 					   AmpleData * pAmple_in));
@@ -169,16 +174,28 @@ static const char	szMorphnameWarning_m[] =
 		"%sMorphname %c%s too long in entry: %s\n";
 static const char	szBadOrderclass_m[] =
 		"%sInvalid orderclass %ld, stored as %d in entry: %s\n";
+#ifndef hab360
+static const char	szBadOrderclassMax_m[] =
+		"%sInvalid orderclassmax %ld, stored as %d in entry: %s\n\
+\tThe orderclassMax is less than the orderclassmin.\n";
+#endif
 static const char	szEmptyAllomorph_m[] =
 		"%sEmpty allomorph field in entry: %s\n";
 static const char	szTwoMorphnames_m[] =
 		"%sMultiple morphnames in entry: %s\n\
 \t%s\n\
 \t%s (ignored)\n";
+#ifdef hab360
 static const char	szTwoOrderclasses_m[] =
 		"%sMultiple orderclasses in entry: %s\n\
 \t%d\n\
 \t%s (ignored)\n";
+#else
+static const char	szTwoOrderclasses_m[] =
+		"%sMultiple orderclasses in entry: %s\n\
+\t%d %d\n\
+\t%s (ignored)\n";
+#endif
 static const char	szTwoUnderlyingForms_m[] =
 		"%sMultiple underlying forms in entry: %s\n\
 \t%s\n\
@@ -1200,6 +1217,9 @@ AmpleAllomorphList *	head        = NULL;
 AmpleAllomorphList *	alp;
 char *			rp;
 char *			end;
+#ifndef hab360
+char *			pszNext;
+#endif
 int			code;
 long			ord;
 /*
@@ -1353,6 +1373,9 @@ while (*rp != NUL)
 		break;
 
 	case 'O':     /* orderclass (is negative for prefixes) */
+#ifndef hab360
+		end = rp + strlen(rp); /* save end of line position */
+#endif
 		if (bDidOrderClass)
 		{
 		if (pAmple_in->pLogFP != NULL)
@@ -1360,10 +1383,15 @@ while (*rp != NUL)
 				pAmple_in->pszAmpleDictErrorHeader,
 				getAmpleRecordIDTag(szRecordKey_g,
 						pAmple_in->uiRecordCount),
+#ifdef hab360
 				de->iOrderClass, rp);
+#else
+				de->iOrderClass, de->iOrderClassMax, rp);
+#endif
 		}
 		else
 		{
+#ifdef hab360
 		ord = atol(rp);
 		if (ord < -32767)
 			{
@@ -1384,9 +1412,44 @@ while (*rp != NUL)
 			ord = 32767L;
 			}
 		de->iOrderClass = (short)ord;
+#else  /* hab360 */
+		for (i = 0; i < 2; i++)
+		  {
+			pszNext = isolateWord(rp);
+			ord = parseAmpleOrderClass(rp, pAmple_in);
+			if (i == 0)
+			  de->iOrderClass = (short)ord;
+			else
+			  {
+			if ((de->iOrderClass != 0) &&
+				 ord == 0)
+				/* there was no second orderclass */
+			  de->iOrderClassMax = de->iOrderClass;
+			else	/* there was a second orderclass */
+			  {
+				if (ord >= de->iOrderClass)
+				  de->iOrderClassMax = (short)ord;
+				else
+				  if (pAmple_in->pLogFP != NULL)
+				{
+				  fprintf(pAmple_in->pLogFP, szBadOrderclassMax_m,
+					  pAmple_in->pszAmpleDictErrorHeader, ord, de->iOrderClass,
+					  getAmpleRecordIDTag(szRecordKey_g,
+								  pAmple_in->uiRecordCount));
+				  de->iOrderClassMax = de->iOrderClass;
+				}
+			  }
+			  }
+			rp = pszNext;
+		  }
+#endif /* hab360 */
 		bDidOrderClass = TRUE;
 		}
+#ifdef hab360
 		rp = rp + strlen(rp);
+#else
+		rp = end;
+#endif
 		break;
 
 	case 'P':         /* morpheme properties */
@@ -1675,6 +1738,9 @@ AmpleAllomorphList *	head        = NULL;
 AmpleAllomorphList *	alp;
 char *			rp;
 char *			end;
+#ifndef hab360
+char *			pszNext;
+#endif
 int			code;
 long			ord;
 /*
@@ -1828,6 +1894,9 @@ while (*rp != NUL)
 		break;
 
 	case 'O':                       /* orderclass */
+#ifndef hab360
+		end = rp + strlen(rp); /* save end of line position */
+#endif
 		if (bDidOrderClass)
 		{
 		if (pAmple_in->pLogFP != NULL)
@@ -1835,10 +1904,15 @@ while (*rp != NUL)
 				pAmple_in->pszAmpleDictErrorHeader,
 				getAmpleRecordIDTag(szRecordKey_g,
 						pAmple_in->uiRecordCount),
+#ifdef hab360
 				de->iOrderClass, rp);
+#else
+				de->iOrderClass, de->iOrderClassMax, rp);
+#endif
 		}
 		else
 		{
+#ifdef hab360
 		ord = atol(rp);
 		if (ord < -32767)
 			{
@@ -1859,9 +1933,44 @@ while (*rp != NUL)
 			ord = 32767L;
 			}
 		de->iOrderClass = (short)ord;
+#else  /* hab360 */
+		for (i = 0; i < 2; i++)
+		  {
+			pszNext = isolateWord(rp);
+			ord = parseAmpleOrderClass(rp, pAmple_in);
+			if (i == 0)
+			  de->iOrderClass = (short)ord;
+			else
+			  {
+			if ((de->iOrderClass != 0) &&
+				 ord == 0)
+				/* there was no second orderclass */
+			  de->iOrderClassMax = de->iOrderClass;
+			else	/* there was a second orderclass */
+			  {
+				if (ord >= de->iOrderClass)
+				  de->iOrderClassMax = (short)ord;
+				else
+				  if (pAmple_in->pLogFP != NULL)
+				{
+				  fprintf(pAmple_in->pLogFP, szBadOrderclassMax_m,
+					  pAmple_in->pszAmpleDictErrorHeader, ord, de->iOrderClass,
+					  getAmpleRecordIDTag(szRecordKey_g,
+								  pAmple_in->uiRecordCount));
+				  de->iOrderClassMax = de->iOrderClass;
+				}
+			  }
+			  }
+			rp = pszNext;
+		  }
+#endif /* hab360 */
 		bDidOrderClass = TRUE;
 		}
+#ifdef hab360
 		rp = rp + strlen(rp);
+#else
+		rp = end;
+#endif
 		break;
 
 	case 'P':                       /* morpheme properties */
@@ -4392,6 +4501,35 @@ freeAmpleMorpheme( pMorph, pAmple_io );
 
 return 0;
 }
+
+
+#ifndef hab360
+static long parseAmpleOrderClass(char * rp, AmpleData * pAmple_in)
+{
+  long ord;
+
+  ord = atol(rp);
+  if (ord < -32767)
+	{
+	  if (pAmple_in->pLogFP != NULL)
+	fprintf(pAmple_in->pLogFP, szBadOrderclass_m,
+		pAmple_in->pszAmpleDictErrorHeader, ord, -32767,
+		getAmpleRecordIDTag(szRecordKey_g,
+					pAmple_in->uiRecordCount));
+	  ord = -32767L;
+	}
+  else if (ord > 32767)
+	{
+	  if (pAmple_in->pLogFP != NULL)
+	fprintf(pAmple_in->pLogFP, szBadOrderclass_m,
+		pAmple_in->pszAmpleDictErrorHeader, ord, 32767,
+		getAmpleRecordIDTag(szRecordKey_g,
+					pAmple_in->uiRecordCount));
+	  ord = 32767L;
+	}
+  return ord;
+}
+#endif
 
 #ifdef EXPERIMENTAL
 /*****************************************************************************
