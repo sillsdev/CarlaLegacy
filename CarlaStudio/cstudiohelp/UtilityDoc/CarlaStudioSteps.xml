@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE lingPaper SYSTEM ".\XLingPap.dtd">
+<?xml-stylesheet type="text/xsl" href=".\XLingPap1.xsl"?>
+<lingPaper css="CarlaStudioSteps.css">
+  <frontMatter>
+	<title>Suggested <object class="program">CarlaStudio</object> Processing and Troubleshooting Steps</title>
+	<author>H. Andrew Black</author>
+	<date>02-Aug-2001</date>
+	<abstract>
+	  <p>This document outlines steps you can take to more efficiently process texts and troubleshoot problems while using the <object class="program">CarlaStudio</object> tool.  It lists them in terms of the two major steps users usually perform: analysis and adaptation (the latter involves both transfer and synthesis).</p>
+<p>The assumption is that you will normally be in a <object class="program">CarlaStudio</object> document window.</p>
+	  <p>It uses the following notations:</p>
+	  <dl>
+		<dt>
+		  <object class="program">Program Name</object>
+		</dt>
+		<dd>The name of a program or tool used within <object class="program">CarlaStudio</object> or available elsewhere on your machine.</dd>
+<dt><object class="tab">Tab</object></dt><dd>The name of a tab section within <object class="project">CarlaStudio</object> (e.g. <object class="tab">Sample Log</object> or <object class="tab">Transfer</object>).</dd>
+<dt><object class="menu">Menu Item 1 / Menu Item 2</object></dt><dd>A sequence of menu options you can select.  These may result in some dialog boxes appearing, in which case select the options indicated.</dd>
+	  </dl>
+	</abstract>
+  </frontMatter>
+  <section1 id="sAnalysis">
+	<secTitle>Analysis</secTitle>
+	<ol>
+	  <li>Make sure the processing goal of the document you are working on is to create <object class="menu">A glossed interlinear file</object> for the right source language (<object class="menu">Document / Processing Goal...</object>).</li>
+	  <li>Process the file (click on <img src="ProcessFile.gif"/>, the rightmost toolbar button).</li>
+	  <li>Check the <object class="tab">AmpleDLL Log</object> tab for errors (indicated by the red circle <img src="error.gif"/> in the tab label).  Fix the errors if there are any.</li>
+	  <li>Look for failures in the <object class="tab">AmpleDLL Log</object> tab.</li>
+	  <li>To try and fix a failure:
+<ol>
+		  <li>Select the word (use the leftmost one).</li>
+		  <li>Copy it (e.g. use Ctrl-C or <object class="menu">Edit / Copy</object>).</li>
+		  <li>Open up or go to a QuickParse window.  To create a QuickParse window, click on <img src="QP.gif"/>, the fourth tool bar button from the right.<ul><li>Make sure the QuickParse window is for the language you are working on: Look in the title bar of the QuickParse window where it will say, "QuickParseN LanguageName" (where "N" is some number and "LanguageName" is the name of a <object class="program">CarlaStudio</object> language.</li><li>If "LanguageName" is not the one you want to work on, use <object class="menu">Quick Parse / Change Language</object> until you have the right language.</li></ul></li>
+		  <li>Paste the word into the <object class="menu">Word or Phrase</object> field of the QuickParse window.</li>
+		  <li>Check both the <object class="menu">Include a trace in the output</object> box and the <object class="menu">Ask me…</object> boxes.</li>
+		  <li>Press return.</li>
+		  <li>Select the correct set of allomorphs for the word.</li>
+		  <li>If it does not show an expected allomorph, check the spelling of the word and/or the set of allomorphs in the dictionary entry for the expected morpheme. </li>
+		  <li>If all the allomorphs are present, study the trace output.    Look for the correct sequence of allomorphs.  Some times, you may find that it finds the end of the word, but there is some MEC that does not work.  Try to figure out what is wrong and fix any dictionary entries.</li>
+		  <li>Do this for all the failing words you can.</li>
+		</ol>
+	  </li>
+	  <li>Look in the <object class="tab">Interlinear</object> tab for any parses which are incorrect.</li>
+	  <li>For wrong parses, you can try and add constraints to dictionary entries to eliminate the bad ones.</li>
+	  <li>Contact your consultant for any failures or incorrect parses you are not able to fix.
+</li>
+	</ol>
+  </section1>
+  <section1 id="sAdaptation">
+	<secTitle>Adaptation</secTitle>
+	<ol>
+	  <li>Make sure the processing goal of the document you are working on is to create <object class="menu">A text in the target language</object> for the right source and target languages (<object class="menu">Document / Processing Goal...</object>).</li>
+	  <li>Process the file (click on <img src="ProcessFile.gif"/>, the rightmost toolbar button).</li>
+	  <li>Check the <object class="tab">Sample Log</object> tab for any errors (indicated by the red circle <img src="error.gif"/> in the tab label).  Fix the errors.</li>
+	  <li>Check the <object class="tab">Sample Log</object> tab for any morphnames that are not in the dictionary.  (Note that you must have a certain option set in the Sample processor to make these messages appear in the log file; to set this option, go to your language window and then use <object class="menu">Language Model / Language / Synthesis Sequence...</object>; double click on the word <object class="menu">SAMPLE</object>; make sure that the <object class="menu">Check Morphnames</object> box is checked.  Click on <object class="menu">OK</object> twice and then go back to your document window.)  These missing morphnames will be indicated by a message of the form: <chart class="message">Warning: "Morphname" not found in dictionary while synthesizing word</chart>Add the entry for the indicated morphname.</li>
+	  <li>Check the <object class="tab">Sample Log</object> tab for any synthesis failures.  Try to figure out why it is failing to synthesize.  It might be because a verb entry doesn’t have a conjugation class indicated or a noun doesn’t have its paradigm class indicated.  It also might be because all allomorphs are too tightly constrained.<br/>
+		<br/>If it is still not clear what is wrong, create a copy of the troublesome word.  To do this, first do one of the following (depending on which is appropriate for your situation):
+<ul>
+		  <li>If you are running from the source text file:</li>
+		  <ol>
+			<li>Copy the source word as it appears in the Sample log (e.g. select it, then use CTRL-C or <object class="menu">Edit / Copy</object>).</li>
+			<li>Create a new document window.</li>
+			<li>Paste in the source word copied in the first step above (be sure to add a space at the end if you're using <object class="program">JoinComp</object> or it will chop off the last character).</li>
+		  </ol>
+		  <li>If you are running from a source ANA file:</li>
+		  <ol>
+			<li>In the <object class="tab">ZZZ ANA</object> tab<endnoteRef ref="eZZZ"/>, find the word that is failing to synthesize (you could search for it by using <object class="menu">Edit / Find</object>).</li>
+			<li>Select the entire <object class="sfm">\a</object> field of the ANA record for this word.</li>
+			<li>Copy the <object class="sfm">\a</object> field (e.g. use Ctrl-C or <object class="menu">Edit / Copy</object>).</li>
+			<li>Create a new file outside of <object class="program">CarlaStudio</object> which has an extension of <object class="fileName">.ana</object> (it does not have to have anything in it).  You could use a tool like <object class="program">WordPad</object> to do this.</li>
+			<li>In <object class="program">CarlaStudio</object>, open the file you just created (<object class="menu">File / Open</object>).</li>
+			<li>Paste in the <object class="sfm">\a</object> field you copied earlier (e.g. use Ctrl-C or <object class="menu">Edit / Paste</object>).</li>
+			<li>Make sure the processing goal is to transfer from the correct source language to the right target language (<object class="menu">Document / Processing Goal...</object>).</li>
+		  </ol>
+		</ul>
+				Now trace the word you copied:
+				<ol>
+		  <li>Trace the word (click on <img src="Trace.gif"/>, the second toolbar button from the right).</li>
+		  <li>Look at the trace in the <object class="tab">Sample Log</object> tab.</li>
+		  <li>Find the correct allomorph for the first morpheme.  Then look for where it is trying the correct allomorph of the next morpheme, and so on.  When you find the form that contains all the correct allomorphs, see what constraint is failing.  Fix the entry or test.</li>
+		</ol>
+	  </li>
+	  <li>Now check the <object class="tab">ZZZ Text</object> tab<endnote id="eZZZ">
+		  <p>The letters <object class="tab">ZZZ</object> will be whatever your language abbreviation code is.</p>
+		</endnote> and see if there are any incorrectly synthesized words or if you need to add or modify any transfer rules.</li>
+	  <ul>
+		<li>For those words which are incorrectly synthesized, find the word in the <object class="tab">ZZZ ANA</object> tab.<endnoteRef ref="eZZZ"/>  Check out the analyses and make sure they are all reasonable.  Then follow the tracing procedure mentioned above.  If you cannot figure it out, make a note of it and tell your consultant.</li>
+		<li>If the word is correctly synthesized according to the synthesis trace, but shows up with a different (and incorrect) spelling in the <object class="tab">ZZZ Text</object> tab<endnoteRef ref="eZZZ"/>, check the Output orthography changes (go to the target language model window, click on the <object class="tab">Synthesis</object> tab, and then click on <object class="menu">Output Ortho Changes</object>).  The changes may not be correct.</li>
+		<li>If the word is not correctly transferred, add any appropriate transfer rules.</li>
+		<li>To try and debug the transfer process, perform the steps outlined in the previous step.  This time, however, compare the output of the various <object class="tab">ANA</object> tabs.
+<ul>
+			<li>The tab labeled <object class="tab">ST-Trans ANA</object> is the result of the <object class="menu">SENTRANS Rules</object>.</li>
+			<li>The tab labeled <object class="tab">ZZZ ANA</object>
+			  <endnoteRef ref="eZZZ"/> is the result of the <object class="menu">STAMP Lexical Changes</object> and the <object class="menu">STAMP Morpheme Transfer</object> rules.</li>
+		  </ul>Compare the content of the <object class="sfm">\a</object> fields in these tabs to see how the various rules are applying.  Try and fix them.    If you cannot figure it out, make a note of it and tell your consultant.</li>
+	  </ul>
+	</ol>
+  </section1>
+  <backMatter>
+	<endnotes/>
+  </backMatter>
+</lingPaper>
