@@ -2,7 +2,7 @@
  *****************************************************************************
  * Edit history is at the end of VERSION.H
  *****************************************************************************
- * Copyright 1995, 2000 by SIL International.  All rights reserved.
+ * Copyright 1995, 2002 by SIL International.  All rights reserved.
  */
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -259,13 +259,13 @@ void process_input_file P((void));
 
 /*****************************************************************************
  * NAME
- *    display_header
+ *    display_ktagger_header
  * DESCRIPTION
  *    Write the program header information to the screen (stderr).
  * RETURN VALUE
  *    none
  */
-void display_header()
+static void display_ktagger_header()
 {
 fprintf(stderr, "KTAGGER (tag words using PC-Kimmo parsing)\n");
 fprintf(stderr, "Version %d.%d%c%d (%s), Copyright %s SIL\n",
@@ -373,7 +373,7 @@ return TRUE;
 void usage(status)
 int status;
 {
-display_header();
+display_ktagger_header();
 fputs("\n\
 Usage:  ktagger [options] [infile]\n\
 	-i infile    read the input list of words from infile\n\
@@ -486,7 +486,7 @@ if (errflag)
 	usage(2);
 
 if (!sLang_g.bSilent)
-	display_header();
+	display_ktagger_header();
 
 if (Log_file != (char *)NULL)
 	{

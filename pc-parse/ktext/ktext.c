@@ -2,7 +2,7 @@
  ***************************************************************************
  * Edit history is at the end of VERSION.H
  *****************************************************************************
- * Copyright 1991, 2000 by SIL International.  All rights reserved.
+ * Copyright 1991, 2002 by SIL International.  All rights reserved.
  */
 #include <stdio.h>
 #include <ctype.h>
@@ -364,13 +364,13 @@ static void			checkIfEmptyFeatureCat P((
 
 /*****************************************************************************
  * NAME
- *    display_header
+ *    display_ktext_header
  * DESCRIPTION
  *    Write the program header information to the screen (stderr).
  * RETURN VALUE
  *    none
  */
-void display_header()
+static void display_ktext_header()
 {
 fprintf(stderr, "KTEXT (analyze/synthesize words using PC-Kimmo functions)\n");
 fprintf(stderr, "Version %d.%d%c%d (%s), Copyright %s SIL\n",
@@ -508,7 +508,7 @@ return TRUE;
  */
 static void usage()
 {
-display_header();
+display_ktext_header();
 fputs("\n\
 Usage:  ktext [options]\n\
 	-c char      make char the comment character for the control files\n\
@@ -672,7 +672,7 @@ if (errflag)
 	exit_ktext(EXIT_FAILURE);
 	}
 if (!sLang_g.bSilent)
-	display_header();
+	display_ktext_header();
 }
 
 /*****************************************************************************

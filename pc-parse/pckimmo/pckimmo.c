@@ -6,7 +6,7 @@
  *	char **argv;
  *
  ***************************************************************************
- * Copyright 1989, 2000 by SIL International.  All rights reserved.
+ * Copyright 1989, 2002 by SIL International.  All rights reserved.
  */
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -133,13 +133,13 @@ char *	t_file = NULL;			/* -t "take" file */
 
 /*****************************************************************************
  * NAME
- *    display_header
+ *    display_pckimmo_header
  * DESCRIPTION
  *    Write the program header information to the screen (stderr).
  * RETURN VALUE
  *    none
  */
-void display_header()
+static void display_pckimmo_header()
 {
 fprintf(stderr,"PC-KIMMO TWO-LEVEL PROCESSOR\n");
 fprintf(stderr,"Version %d.%d%c%d (%s), Copyright %s SIL\n",
@@ -277,7 +277,7 @@ if (t_file == NULL)
 	}
 if (errflag)
 	{
-	display_header();
+	display_pckimmo_header();
 	fputs("\
 Usage:  pckimmo [-r file] [-l file] [-s file] [-g file] [-t file]\n\
 	-r file.rul  read rules from file.rul\n\
@@ -294,7 +294,7 @@ if (trap_address != (VOIDP)NULL)
 	setAllocMemoryTrap(trap_address, trap_count);
 #endif
 if (!sKimmoData_g.bSilent)
-	display_header();
+	display_pckimmo_header();
 }
 
 /***************************************************************************
