@@ -28,15 +28,36 @@ Main template
 	  <language id="lGloss">GlossLanguage</language>
 	  <language>
 		<xsl:attribute name="id"><xsl:text>l</xsl:text><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
-		<xsl:value-of select="//language/langName"/>
+		<xsl:text>vernacular</xsl:text>
 	  </language>
+	  <frontMatter>
+		<title>PAWS-Generated Grammar Write-Up<br/> for <xsl:value-of select="//language/langName"/>
+		</title>
+		<author>FIRST AUTHOR NAME GOES HERE</author>
+		<author>SECOND AUTHOR NAME GOES HERE (if there's only one, delete this)</author>
+		<affiliation>AFFILIATION GOES HERE</affiliation>
+		<date>DATE GOES HERE</date>
+		<contents showLevel="3"/>
+		<abstract>
+		  <p>ABSTRACT GOES HERE</p>
+		</abstract>
+	  </frontMatter>
 	  <xsl:apply-templates select="/" mode="intro"/>
 	  <xsl:apply-templates select="/" mode="qp"/>
 	  <xsl:apply-templates select="/" mode="advp"/>
 	  <xsl:apply-templates select="/" mode="adjp"/>
 	  <xsl:apply-templates select="/" mode="np"/>
+	  <backMatter>
+		<endnotes/>
+		<references/>
+	  </backMatter>
 	</lingPaper>
   </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Include other templates
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
   <xsl:include href="WriterIntroAndTypology.xsl"/>
   <xsl:include href="WriterQP.xsl"/>
   <xsl:include href="WriterAdvP.xsl"/>

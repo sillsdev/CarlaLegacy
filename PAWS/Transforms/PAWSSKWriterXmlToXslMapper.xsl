@@ -84,7 +84,7 @@ col template
 	  <xsl:when test="@exampleLoc">
 		<col>
 		  <xsl:element name="xsl:value-of">
-			<xsl:attribute name="select"><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:attribute>
+			<xsl:attribute name="select"><xsl:choose><xsl:when test="ancestor::example"><!-- remove any periods the user may have entered;  the assumption here is that this goes in a chart where periods are not wanted --><xsl:value-of select="translate(., '.', '')"/><xsl:text>translate(string(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>),'.','')</xsl:text></xsl:when><xsl:otherwise><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:otherwise></xsl:choose></xsl:attribute>
 		  </xsl:element>
 		</col>
 	  </xsl:when>
@@ -170,19 +170,35 @@ headerCol template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//headerCol">
-	<headerCol>
-	  <xsl:apply-templates/>
-	</headerCol>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:call-template name="DoHeaderCol"/>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:call-template name="DoHeaderCol"/>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-headerRowl template
+headerRow template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//headerRow">
-	<headerRow>
-	  <xsl:apply-templates/>
-	</headerRow>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:call-template name="DoHeaderRow"/>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:call-template name="DoHeaderRow"/>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -271,9 +287,17 @@ li template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//li">
-	<li>
-	  <xsl:apply-templates/>
-	</li>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:call-template name="DoLI"/>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:call-template name="DoLI"/>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -281,9 +305,17 @@ ol template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//ol">
-	<ol>
-	  <xsl:apply-templates/>
-	</ol>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:call-template name="DoOL"/>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:call-template name="DoOL"/>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -309,9 +341,17 @@ row template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//row">
-	<row>
-	  <xsl:apply-templates/>
-	</row>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:call-template name="DoRow"/>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:call-template name="DoRow"/>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -359,9 +399,17 @@ table template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//table">
-	<table>
-	  <xsl:apply-templates/>
-	</table>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:call-template name="DoTable"/>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:call-template name="DoTable"/>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -380,9 +428,17 @@ ul template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//ul">
-	<ul>
-	  <xsl:apply-templates/>
-	</ul>
+	<xsl:choose>
+	  <xsl:when test="@show">
+		<xsl:element name="xsl:if">
+		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+		  <xsl:call-template name="DoUL"/>
+		</xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:call-template name="DoUL"/>
+	  </xsl:otherwise>
+	</xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -438,6 +494,54 @@ DoExample
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoHeaderCol
+	routine to create a headerCol element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoHeaderCol">
+	<headerCol>
+	  <xsl:apply-templates/>
+	</headerCol>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoHeaderRow
+	routine to create a headerRow element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoHeaderRow">
+	<headerRow>
+	  <xsl:apply-templates/>
+	</headerRow>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoLI
+	routine to create an li element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoLI">
+	<li>
+	  <xsl:apply-templates/>
+	</li>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoOL
+	routine to create an ol element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoOL">
+	<ol>
+	  <xsl:apply-templates/>
+	</ol>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 DoP
 	routine to create a p element
 		Parameters: none
@@ -447,6 +551,18 @@ DoP
 	<p>
 	  <xsl:apply-templates select="*"/>
 	</p>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoRow
+	routine to create a row element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoRow">
+	<row>
+	  <xsl:apply-templates/>
+	</row>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -461,11 +577,39 @@ DoSection
 	  <xsl:apply-templates/>
 	</xsl:element>
   </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoTable
+	routine to create a table element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoTable">
+	<table>
+	  <xsl:for-each select="@border | @class">
+		<xsl:copy/>
+	  </xsl:for-each>
+	  <xsl:apply-templates/>
+	</table>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoUL
+	routine to create a ul element
+		Parameters: none
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoUL">
+	<ul>
+	  <xsl:apply-templates/>
+	</ul>
+  </xsl:template>
 </xsl:stylesheet>
 <!--
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
-26-Jul-2002      Andy Black  Began working on Initial Draft
+31-Jul-2002    Andy Black  Many refinements.
+26-Jul-2002    Andy Black  Began working on Initial Draft
 ================================================================
  -->

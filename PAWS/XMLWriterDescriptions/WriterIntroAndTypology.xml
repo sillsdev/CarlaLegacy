@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <portion>
   <section1 id="sIntro">
 	<secTitle>Introduction</secTitle>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <portion>
   <section1 id="sAdvP">
 	<secTitle>Adverbs and Adverb Phrases</secTitle>
