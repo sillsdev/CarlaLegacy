@@ -21,6 +21,9 @@
 @c
 @c Modified for AMPLE v. 3.6.0 by H. Andrew Black
 @c      June 13, 2002
+@c
+@c Modified for AMPLE v. 3.8.0 by H. Andrew Black
+@c      January 7, 2004
 @set dictfile
 @ifclear endash
 @iftex
@@ -163,13 +166,16 @@ given below.
 @end group
 
 @c Following reworked by hab 14-May-1999
+@c Following also reworked by hab 07-Jan-2004
 @group
  4a. <constraints>     ::= <string_constraint>
- 4b.                       <morph_constraint>
- 4c.                       <punct_constraint>
- 4d.                       <string_constraint> <constraints>
- 4e.                       <morph_constraint> <constraints>
- 4f.                       <punct_constraint> <constraints>
+ 4b.                       <negative_string_constraint>
+ 4c.                       <morph_constraint>
+ 4d.                       <punct_constraint>
+ 4e.                       <string_constraint> <constraints>
+ 4f.                       <negative_string_constraint> <constraints>
+ 4g.                       <morph_constraint> <constraints>
+ 4h.                       <punct_constraint> <constraints>
 @end group
 
  5.  <comment>         ::= <comment_char> anything to the end of the line
@@ -178,6 +184,12 @@ given below.
  6a. <string_constraint> ::= / <envbar> <string_right>
  6b.                         / <string_left> <envbar>
  6c.                         / <string_left> <envbar> <string_right>
+@end group
+
+@group
+ 6d. <negative_string_constraint> ::= ~/ <envbar> <string_right>
+ 6e.                                  ~/ <string_left> <envbar>
+ 6f.                                  ~/ <string_left> <envbar> <string_right>
 @end group
 
 @group
@@ -344,6 +356,31 @@ punctuation constraints together and the morpheme constraints together.
 @item 5.
 A comment begins with a specified character and ends with the end of
 the line.
+
+@c Item 6 added by hab 07-Jan-2004
+@item 6d.
+A negative string constraint is just like a string
+constraint with two exceptions:
+@enumerate
+@item
+the result is negated (that is, whatever the value of the
+regular string constraint would be, it takes its opposite value
+as the result); and
+@item
+multiple negative string constraints are logically
+ANDed together (whereas multiple regular string constraints
+are logically ORed together).
+@end enumerate
+
+Thus one can use negative string constraints to say that a
+given allomorph may not occur in environment X and it also
+may not occur in environment Y.
+
+If an allomorph has both regular and negative string
+constraints, both must be met.  That is, at least one of
+the regular string constraints must be true and none of the
+environments described within the negative string
+constraints must be true.
 
 @item 7@value{endash}8.
 Note that what can appear to the left of the environment bar is a

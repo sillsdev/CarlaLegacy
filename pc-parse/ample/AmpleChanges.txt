@@ -1,6 +1,6 @@
 AMPLE CHANGE HISTORY
 
-3.8.0 (19-Dec-2003)
+3.8.0 (07-Jan-2004)
 -------------------
 1.  Enhancement: Added negative string environment constraints to complement
 	the exsting string environemtn constraints (SECs).  NegSECs say what the

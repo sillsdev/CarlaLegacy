@@ -392,11 +392,8 @@ else if ((ch == '~') && (*pszEnvLex_m == '/'))
 	szEnvLexToken_m[2] = NUL;
 	return( ENV_NEGSTRENV );
 	}
-else if ((ch == '~') &&                 /* if tilde and not ANCC */
-	 (iType != AMPLE_NEGSTRING_ENVIR))
-#else /* hab380 */
-else if (ch == '~')                 /* if tilde */
 #endif /* hab380 */
+else if (ch == '~')                 /* if tilde */
 	{                               /* if underline next */
 	if (*pszEnvLex_m == '_')
 	{
@@ -1238,10 +1235,16 @@ int			token;
 #ifndef hab350
 pszEnvParseType_m = (iType == AMPLE_MORPH_ENVIR) ? "morpheme" :
 					(iType == AMPLE_STRING_ENVIR) ? "string" :
+#ifndef hab380
+					(iType == AMPLE_NEGSTRING_ENVIR) ? "negative string" :
+#endif /* hab380 */
 					(iType == AMPLE_PUNCT_ENVIR) ? "punctuation" : "never";
 #endif /* hab350 */
 #else /* EXPERIMENTAL */
 pszEnvParseType_m = (iType == AMPLE_MORPH_ENVIR) ? "morpheme" :
+#ifndef hab380
+					(iType == AMPLE_NEGSTRING_ENVIR) ? "negative string" :
+#endif /* hab380 */
 					(iType == AMPLE_STRING_ENVIR) ? "string" : "punctuation";
 #endif /* EXPERIMENTAL */
 ec = (AmpleEnvConstraint *)allocMemory(sizeof(AmpleEnvConstraint));

@@ -10,10 +10,10 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.7
-@set DATE July 2003
+@set VERSION version 3.8
+@set DATE January 2004
 @set AUTHOR by Stephen McConnel and H. Andrew Black
-@set COPYRIGHT Copyright @copyright{} 2000-2003 SIL International
+@set COPYRIGHT Copyright @copyright{} 2000-2004 SIL International
 
 @include front.txi
 
@@ -106,6 +106,9 @@ XAMPLE for handling allomorphs never co-occur constraints.
 @c Added by hab 13-Jun-2002
 @item 9. Version 3.6.0 (June 2002) allows for an orderclass
 pair (min, max) which delimits the order class span of the affix.
+
+@c Added by hab 07-Jan-2004
+@item 10. Version 3.8.0 (January 2004) allows for negative string environment constraints.
 @end table
 
 @c ----------------------------------------------------------------------------
