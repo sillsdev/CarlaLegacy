@@ -556,7 +556,7 @@ CAPTION "About CARLA Studio"
 FONT 8, "MS Sans Serif"
 BEGIN
 	ICON            IDR_MAINFRAME,IDC_STATIC,12,9,20,20
-	LTEXT           "CARLA Studio Version 2.5.2",IDC_STATIC,40,10,119,8,
+	LTEXT           "CARLA Studio Version 2.6.0",IDC_STATIC,40,10,119,8,
 					SS_NOPREFIX
 	LTEXT           "Copyright SIL International © 1999-2001",IDC_STATIC,40,
 					20,158,8
@@ -1863,8 +1863,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,5,1,0
- PRODUCTVERSION 2,5,1,0
+ FILEVERSION 2,6,0,0
+ PRODUCTVERSION 2,6,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x3L
@@ -1879,17 +1879,17 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "2.5.1\0"
+			VALUE "Comments", "2.6.0\0"
 			VALUE "CompanyName", " SIL International\0"
 			VALUE "FileDescription", "CARLA Studio Application\0"
-			VALUE "FileVersion", "2, 5, 1, 0\0"
+			VALUE "FileVersion", "2, 6, 0, 0\0"
 			VALUE "InternalName", "CARLAStudio\0"
 			VALUE "LegalCopyright", "Copyright © 1999-2001\0"
 			VALUE "LegalTrademarks", "\0"
 			VALUE "OriginalFilename", "CStudio.EXE\0"
 			VALUE "PrivateBuild", "\0"
 			VALUE "ProductName", "CarlaStudio Application\0"
-			VALUE "ProductVersion", "2, 5, 1, 0\0"
+			VALUE "ProductVersion", "2, 6, 0, 0\0"
 			VALUE "SpecialBuild", "\0"
 		END
 	END
@@ -2594,7 +2594,7 @@ END
 
 STRINGTABLE DISCARDABLE
 BEGIN
-	IDS_WizOrderclass_A0_PT "PfxOrderclassCheck\n|Make sure that each prefix has a higher orderclass than the morpheme to its left, unless its orderclass is zero\n|Inserted by CarlaStudio wizard.\nIF   (current orderclass ~= 0)\n\t\tTHEN (left orderclass <= current orderclass)\n"
+	IDS_WizOrderclass_A0_PT "PfxOrderclassCheck\n|Make sure that each prefix has a higher orderclass than the morpheme to its left, unless its orderclass is zero\n|Inserted by CarlaStudio wizard.\nIF   (left orderclass ~= 0)\n\t\tTHEN (left orderclass <= current orderclass)\n"
 	IDB_ChooseFolder        "Choose Folder"
 END
 

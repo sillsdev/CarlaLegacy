@@ -1,5 +1,7 @@
 // EnvironmentListCtrl.cpp: implementation of the CEnvironmentListCtrl class.
 //
+// 2.5.4 26-Jul-2001 hab Force redrawing of control when the user toggles
+//                         the enbale/disable state of an environment
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -226,7 +228,14 @@ void CEnvironmentListCtrl::OnToggleEnable()
 	if(!penv->m_bEnabled)
 		SetItemState(n, INDEXTOOVERLAYMASK(1), LVIS_OVERLAYMASK);
 	else
+#ifndef hab254
+	  {
 		SetItemState(n, NULL, LVIS_OVERLAYMASK);	// clear the overlay
+		RedrawItems(n,n);
+	  }
+#else
+		SetItemState(n, NULL, LVIS_OVERLAYMASK);	// clear the overlay
+#endif // hab254
 }
 
 void CEnvironmentListCtrl::OnUpdateToggleEnable(CCmdUI *pCmdUI)

@@ -1,3 +1,9 @@
+//
+// 2.5.4 26-Jul-2001 hab If an environment is disabled, make sure there's a nl
+//                         after it so it will not also disable following
+//                         environments.
+
+
 #include "stdafx.h"
 #include "ParseStream.h"
 #include "CARLAStudioApp.h"
@@ -853,7 +859,16 @@ void CStringEnvironment::write(ostream& fout, char cCommentChar) const
 		}
 	}
 
+#ifndef hab254
+	fout << x ;
+	if (m_bEnabled)
+	  fout << " ";
+	else
+	  fout << "\n  ";	// make sure there's a newline so the comment
+				// will not affect any remaining environments
+#else
 	fout << x << " ";
+#endif // hab254
 
 	writeCommentStr(fout, m_sComments, cCommentChar);
 }
