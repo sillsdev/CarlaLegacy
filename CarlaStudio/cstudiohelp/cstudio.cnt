@@ -1,0 +1,51 @@
+:Base cstudio.hlp
+1 What's New?=whats_new
+1 Getting Started
+2 What's in CarlaStudio?=whats_in_carlastudio
+2 Where does CarlaStudio fit in?=where_fit_in
+2 The future of CarlaStudio=future_of_carlastudio
+2 Where to go for more help=where_more_help
+2 Known Problems=known_problems
+2 Frequently Asked Questions=faq
+1 Application Reference
+2 Menus
+3 File menu=menu_file
+3 ~Edit menu=menu_edit
+3 View menu=menu_view
+3 Language menu=menu_language
+3 ~Document menu=menu_document
+2 Windows
+3 Language Model window=HIDR_CStudioLangTYPE
+3 Document window=HIDR_CStudioSrcDocType
+3 Quick Parse window=HIDR_QuickParseDocType
+2 Dialogs
+3 Document Display: Panels=HIDD_PageInputDocPanels
+3 Document Processing Goal=HIDD_PageSrcTextProcessing
+3 Process Sequence=HIDD_ProcessSequence
+3 Language Properties: Locations Tab=HIDD_PageLocations
+3 Language Properties: Dicts Tab=HIDD_PageDictRootUnified
+3 Language Properties: Affix Dicts Tab=HIDD_PageDictAffix
+3 Language Properties: Display Tab=HIDD_PageLangDisplayProperties
+2 Processors
+3 Batch File Processor=HIDD_BatchProcessors
+1 Step-by-step procedures
+2 Importing existing Carla Files=import_exist
+2 Getting started with a new language=new_language
+2 Processing documents
+3 Parsing Texts=parsing_texts
+3 Interlinearizing text=interlinearizing_text
+3 Interlinearizing from Shoebox=callingCSFromShbx
+3 Manually disambiguating texts=manual_disamb
+3 Calling CarlaStudio from Paratext=callingCSFromParatext
+2 Adaptation
+3 Adapting to another language=adapting_text
+3 Adapting ANA files=adapt_ana
+3 Adapting source texts=adapt_source_text
+1 Tips and TroubleShooting
+2 Debugging Problem Parses=debug_parses
+2 Importing notes and problems=importing_problems
+2 Frequently Asked Questions=faq
+2 Known Problems=known_problems
+2 Jumping to Shoebox=jumpingToShoebox
+1 Other Documentation
+2 Online documentation for the CARLA tools=documentation

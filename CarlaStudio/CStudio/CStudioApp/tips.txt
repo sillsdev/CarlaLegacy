@@ -1,0 +1,23 @@
+Welcome to CarlaStudio.
+Make sure to read the help section named "Known Problems".
+You can choose between two views of your model.  Select the "Functional Style" or "CarlaMenu Style" under the "View" menu.
+You can have as many languages as you want in a project.
+Have you checked out the online Help yet?
+Did you know that you can 'jump' to entries in Shoebox?  See the Help index under 'Shoebox'.
+Have you registered CarlaStudio yet?  Email CarlaStudio_Support@sil.org so that we can notify you of tips and updated versions.
+Press Ctrl-Tab to easily switch between windows in CarlaStudio.
+When working with a document, you can hide result panels that you don't need.  Choose "Display" from the Document menu.
+CarlaStudio divides STAMP into its two halves. TRAMPLE is the half that does transfer, while SAMPLE is the half that does synthesis.
+In a list of items, like string classes, you can create an entry by double-clicking in the space below existing entries.
+You can reorder list items by dragging and dropping them.
+CarlaStudio saves backup of your projects(*.csp) and language files (*.csl), with the suffix ".bak" appended.
+In a list of items, like string classes, you can create a comment line.  Use Edit/Insert Comment or just type Ctrl-M.
+Have you registered CarlaStudio yet?  Email CarlaStudio_Support@sil.org so that we can notify you of tips and updated versions.
+The AmpleDLL process only reloads your dictionaries and control files when you make a change to them.
+In a list of items, like string classes, you can create a test data example line.  Use Edit/Insert Test Data or just type Ctrl-D.
+After doing a Find, you can press F3 to repeat the last search without bringing up the Find dialog box.
+In a document window, if you let the mouse cursor hover over a tab, the path to that file will appear.
+You can press Ctrl-\ to process a document.
+If there is only one document open, Ctrl-\ will process it even if the document isn't the front-most window.
+CarlaStudio automatically saves all your files every time you process a document.
+That's all the tips.  The tips will now rewind so that you see them all again.

@@ -1,0 +1,8 @@
+; LextransDLL.def : Declares the module parameters for the DLL.
+
+LIBRARY      "LextransCS"
+DESCRIPTION  'Lextrans DLL for use with Carla Studio'
+
+EXPORTS
+	GetProcessorDisplayName   @1
+	?GetProcessTemplate@@YAPAVCProcessTemplate@@XZ  @2

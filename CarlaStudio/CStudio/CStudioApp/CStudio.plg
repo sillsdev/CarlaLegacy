@@ -1,0 +1,261 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CStudioProcessorLib - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSP2373.TMP" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\..\common code" /I "..\cstudioapp\source" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/CStudioProcessorLib.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\ProcessStatus.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSP2373.TMP"
+Creating temporary file "c:\windows\TEMP\RSP2374.TMP" with contents
+[
+/nologo /out:"Release\CStudioProcessorLib.lib"
+.\Release\CWProcess.obj
+.\Release\DlgProgress.obj
+.\Release\filelist.obj
+.\Release\logwindow.obj
+.\Release\modelfilesset.obj
+.\Release\ParseStream.obj
+.\Release\PathDescriptor.obj
+.\Release\ProcessStatus.obj
+.\Release\SFMFile.obj
+]
+Creating command line "link.exe -lib @c:\windows\TEMP\RSP2374.TMP"
+<h3>Output Window</h3>
+Compiling...
+ProcessStatus.cpp
+Creating library...
+<h3>
+--------------------Configuration: CStudio - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /nologo /D "NDEBUG" /tlb "Release/CStudioCOM.tlb" /win32 "C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\CStudioCOM.idl""
+Creating command line "rc.exe /l 0x409 /fo"Release/CStudio.res" /d "NDEBUG" /d "_AFXDLL" "C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\CStudio.rc""
+Creating temporary file "c:\windows\TEMP\RSP3073.TMP" with contents
+[
+/nologo /MD /W3 /GX /Od /I "..\..\common code" /I "..\..\cstudio\cs utility dll" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/CStudio.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\AmpleDLLProcess.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\AmpleDLLWrapper.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSP3073.TMP"
+Creating temporary file "c:\windows\TEMP\RSP3074.TMP" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\..\common code" /I "..\..\cstudio\cs utility dll" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/CStudio.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\AmpleResult.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\CarlaLanguage.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\CarlaStudioApp.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\Conversion.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\DlgManualParseChoice.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\Hook.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\ParseCSImpl.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\PhraseParser.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\ProcessSequence.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\SentransProcess.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSP3074.TMP"
+Creating temporary file "c:\windows\TEMP\RSP3075.TMP" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\..\common code" /I "..\..\cstudio\cs utility dll" /I ".." /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/CStudio.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\CWListCtrl.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\DlgEditSentransProcess.cpp"
+"C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\QuickParseView.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSP3075.TMP"
+Creating temporary file "c:\windows\TEMP\RSP3076.TMP" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Release/CStudio.pdb" /machine:I386 /nodefaultlib:"mfc42d.lib" /out:"Release/CStudio.exe"
+.\Release\AmpleDLLProcess.obj
+.\Release\AmpleDLLWrapper.obj
+.\Release\AmpleProcess.obj
+.\Release\AmpleResult.obj
+.\Release\BatchProcess.obj
+.\Release\CarlaLanguage.obj
+.\Release\CarlaStudioApp.obj
+.\Release\CCProcess.obj
+.\Release\Class.obj
+.\Release\codetable.obj
+.\Release\Conversion.obj
+.\Release\CreditStatic.obj
+.\Release\csRemoteRegistry.obj
+.\Release\cstudioAssert.obj
+.\Release\CStudioMainFrm.obj
+.\Release\CWAnalysisModel.obj
+.\Release\CWAtomicTypes.obj
+.\Release\CWCarlaMenu.obj
+.\Release\CWFormView.obj
+.\Release\CWFunctionalInterface.obj
+.\Release\CWHeadingView.obj
+.\Release\CWInterface.obj
+.\Release\CWList.obj
+.\Release\CWListCtrl.obj
+.\Release\CWListView.obj
+.\Release\CWModel.obj
+.\Release\cwprocess.obj
+.\Release\CWTabBar.obj
+.\Release\CWTopic.obj
+.\Release\cwtopictreeview.obj
+.\Release\CWTopicView.obj
+.\Release\DirDialog.obj
+.\Release\DlgBatchProcess.obj
+.\Release\DlgCCProcess.obj
+.\Release\DlgChooseProcessor.obj
+.\Release\DlgEditAmpleDLLProcess.obj
+.\Release\DlgEditAmpleProcess.obj
+.\Release\DlgEditIntergenProcess.obj
+.\Release\DlgEditPrintANA.obj
+.\Release\DlgEditRegSoundChange.obj
+.\Release\DlgEditSentransDisambig.obj
+.\Release\DlgEditSentransProcess.obj
+.\Release\DlgEditSentransTransfer.obj
+.\Release\DlgEditStampFlag.obj
+.\Release\DlgEditStampLexChange.obj
+.\Release\DlgEditStampProcess.obj
+.\Release\DlgEditStampTransfer.obj
+.\Release\DlgEditToneParseProcess.obj
+.\Release\DlgEnvConstrainedRule.obj
+.\Release\DlgEnvironments.obj
+.\Release\DlgFind.obj
+.\Release\DlgManualParseChoice.obj
+.\Release\DlgNewLanguage.obj
+.\Release\DlgPhonruleRule.obj
+.\Release\DlgProcessSequence.obj
+.\Release\dlgprogress.obj
+.\Release\dlgprojectopenorcreate.obj
+.\Release\DlgSentransDirective.obj
+.\Release\DlgTipDay.obj
+.\Release\EditListCtrl.obj
+.\Release\EnvironConstrainedRuleLists.obj
+.\Release\EnvironmentListCtrl.obj
+.\Release\FileListCtrl.obj
+.\Release\FlatButton.obj
+.\Release\FormButton.obj
+.\Release\GuruHeaderCtrl.obj
+.\Release\GuruSplash.obj
+.\Release\Hook.obj
+.\Release\InPlaceEdit.obj
+.\Release\InputDoc.obj
+.\Release\inputDocTabBar.obj
+.\Release\inputDocView.obj
+.\Release\IntergenMarkersCtrl.obj
+.\Release\intergenProcess.obj
+.\Release\itemeditdialogs.obj
+.\Release\LangModelsDoc.obj
+.\Release\ListComment.obj
+.\Release\ListTestData.obj
+.\Release\logwindow.obj
+.\Release\Monad.obj
+.\Release\nullwindow.obj
+.\Release\PageAffixes.obj
+.\Release\PageAnaProcessing.obj
+.\Release\PageCategoryProp.obj
+.\Release\PageDictAffixes.obj
+.\Release\PageDictMethod.obj
+.\Release\PageDisclaimer.obj
+.\Release\PageFinalCatTest.obj
+.\Release\PageInputDocPanels.obj
+.\Release\PageLocations.obj
+.\Release\PageRootUnifiedDict.obj
+.\Release\PageSrcTextProcessing.obj
+.\Release\ParseCSImpl.obj
+.\Release\PathCtrl.obj
+.\Release\PhonruleModel.obj
+.\Release\PhraseParser.obj
+.\Release\PrefsInputDoc.obj
+.\Release\PrintANA.obj
+.\Release\processingPrefs.obj
+.\Release\ProcessSequence.obj
+.\Release\ProjectDoc.obj
+.\Release\projectImportCode.obj
+.\Release\QuickParseDoc.obj
+.\Release\QuickParseView.obj
+.\Release\remoteHandlers.obj
+.\Release\RemoveLanguage.obj
+.\Release\SafeStream.obj
+.\Release\SDFEdit.obj
+.\Release\SDialog.obj
+.\Release\SEdit.obj
+.\Release\SentransModel.obj
+.\Release\SentransProcess.obj
+.\Release\SheetLangProperties.obj
+.\Release\SheetModifyTests.obj
+.\Release\SimpleProgressBar.obj
+.\Release\simpleRegKey.obj
+.\Release\Splitter.obj
+.\Release\StampModel.obj
+.\Release\StampProcess.obj
+.\Release\StaticFilespec.obj
+.\Release\StdAfx.obj
+.\Release\TabbedTreeChild.obj
+.\Release\TabbedTreeDoc.obj
+.\Release\TextDisplayInfo.obj
+.\Release\ToneParse.obj
+.\Release\TransferModelSet.obj
+.\Release\WizBaseClasses.obj
+.\Release\WizCMenuPage.obj
+.\Release\wizLangProps.obj
+.\Release\WizNewFromCarla.obj
+.\Release\WizNewFromFiles.obj
+.\Release\WizNewFromScratch.obj
+.\Release\wizProjectPage.obj
+.\Release\processoutput.obj
+.\Release\CStudio.res
+.\Cc32.lib
+\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioProcessorLib\Release\CStudioProcessorLib.lib
+"\carla\Dev\SOSMirror\CarlaStudio\CStudio\CS Utility DLL\Release\CSUtils.lib"
+]
+Creating command line "link.exe @c:\windows\TEMP\RSP3076.TMP"
+<h3>Output Window</h3>
+Creating Type Library...
+Processing C:\carla\Dev\SOSMirror\CarlaStudio\CStudio\CStudioApp\source\CStudioCOM.idl
+CStudioCOM.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\oaidl.idl
+oaidl.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\objidl.idl
+objidl.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\unknwn.idl
+unknwn.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\wtypes.idl
+wtypes.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\ocidl.idl
+ocidl.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\oleidl.idl
+oleidl.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\servprov.idl
+servprov.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\urlmon.idl
+urlmon.idl
+Processing C:\Program Files\MSVisualStudio\VC98\INCLUDE\msxml.idl
+msxml.idl
+Compiling resources...
+Compiling...
+AmpleDLLProcess.cpp
+AmpleDLLWrapper.cpp
+Compiling...
+AmpleResult.cpp
+CarlaLanguage.cpp
+CarlaStudioApp.cpp
+Conversion.cpp
+DlgManualParseChoice.cpp
+Hook.cpp
+ParseCSImpl.cpp
+PhraseParser.cpp
+ProcessSequence.cpp
+SentransProcess.cpp
+Compiling...
+CWListCtrl.cpp
+DlgEditSentransProcess.cpp
+QuickParseView.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+CStudio.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
