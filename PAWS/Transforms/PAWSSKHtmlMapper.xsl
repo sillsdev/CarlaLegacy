@@ -4,11 +4,27 @@
 ]>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+  <!--
+================================================================
+Convert XML Page description to HTML and JScript code
+  Input:    xml file conforming to PAWSSKHtmlMapper.dtd
+  Output: HTML within embedded JScript
+================================================================
+Revision History is at the end of this file.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Preamble
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
   <xsl:param name="prmLangAbbr"/>
   <xsl:variable name="Section">
 	<xsl:value-of select="//form/@section"/>
   </xsl:variable>
-  <!-- main template -->
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Main template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
   <xsl:template match="/">
 	<html>
 	  <head>
@@ -705,11 +721,16 @@ Refresh();
   <!-- tree -->
   <xsl:template match="//tree">
 	<br/>
+  <xsl:choose>
+	<xsl:when test="@img"><img><xsl:attribute name="src"><xsl:value-of select="@img"/></xsl:attribute></img></xsl:when>
+	<xsl:otherwise>
 	<span class="tree">
 	  <xsl:apply-templates/>
 	</span>
-	<br/>
-  </xsl:template>
+</xsl:otherwise>
+  </xsl:choose>
+	  <br/>
+	  </xsl:template>
   <!-- u -->
   <xsl:template match="//u">
 	<u>
@@ -723,3 +744,11 @@ Refresh();
 	</ul>
   </xsl:template>
 </xsl:stylesheet>
+<!--
+================================================================
+Revision History
+- - - - - - - - - - - - - - - - - - -
+05-Jun-2002  Andy Black  Added img to tree
+2001               Andy Black  Began working on Initial Draft
+================================================================
+ -->

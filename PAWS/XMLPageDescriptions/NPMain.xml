@@ -1,75 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPMain">
-	<title>Simple and Possessed Nominal Phrases</title>
-	<introduction>Nominal phrases can be very complex, so they will be divided into five sections in this starter kit.  This section concentrates on those with common nouns as the lexical head.  We will consider modification by articles, demonstratives, quantifiers and degree words, adjective phrases, and possessors.   Nominal phrases headed by proper names are handled in <section number="6">Proper Names</section> and those headed by pronouns, demonstratives, and quantifiers are handled in <section number="7">Pronouns</section>.  The possibility of modification by pre/post-positional phrases is added in <section number="8">Pre/Post-positional Phrases</section> and modification by relative clauses is added in <section number="15">Relative Clauses</section>.</introduction>
-	<introduction>Because there are so many positions needed for distinct sets of modifiers, we will use the expanded DP (determiner phrase) structure, rather than the simpler NP phrase structure.  These more complex tree structures will be built step-by-step from your answers to the questions here. You simply need to be aware that when you look at the tree structures generated, nominal phrases will have DPs on top of the NPs.  A simple English example is given here:
-<tree>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DP&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;______|_______<br/>
-&nbsp;Deg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D'&nbsp;<br/>
-&nbsp;just&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______|______<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NP<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;those&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N'&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____|______<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AdjP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N'&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;____|____<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adj&nbsp;&nbsp;&nbsp;&nbsp;AdjP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N'&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fine&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;young&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;men&nbsp;<br/>
-		</tree>
+  <title>Simple and Possessed Nominal Phrases</title>
+  <introduction>Nominal phrases can be very complex, so they will be divided into five sections in this starter kit.  This section concentrates on those with common nouns as the lexical head.  We will consider modification by articles, demonstratives, quantifiers and degree words, adjective phrases, and possessors.   Nominal phrases headed by proper names are handled in <section number="6">Proper Names</section> and those headed by pronouns, demonstratives, and quantifiers are handled in <section number="7">Pronouns</section>.  The possibility of modification by pre/post-positional phrases is added in <section number="8">Pre/Post-positional Phrases</section> and modification by relative clauses is added in <section number="15">Relative Clauses</section>.</introduction>
+  <introduction>Because there are so many positions needed for distinct sets of modifiers, we will use the expanded DP (determiner phrase) structure, rather than the simpler NP phrase structure.  These more complex tree structures will be built step-by-step from your answers to the questions here. You simply need to be aware that when you look at the tree structures generated, nominal phrases will have DPs on top of the NPs.  A simple English example is given here:
+<tree img="../TreeDescriptions/PawsNPTree.png"/>
 It may be difficult to understand the need for the change in English, because articles, demonstratives and possessors are mutually exclusive, but in many languages all three can occur in a single nominal phrase.  <help href="../Help/Cbgbtext.doc#DPHypothesis">(Click here to see more on the DP hypothesis.)</help>
-	</introduction>
-	<form section="np">
-		<introduction>Many languages require agreement between at least some of the modifiers and the head noun.  While English only has number agreement, in other languages this agreement may also include animacy, class, or gender.  The grammar rules generated by this starter kit include the constraints for full agreement, but if your language only has partial or no agreement, you simply will not add those features to your lexical items.  In that case, the constraints will only apply vacuously.  Based on your answers below about the agreement system in your language, you will be instructed to add the appropriate features in the sections that follow.</introduction>
-		<radioGroup>
-			<groupName dataItem="agreeNumber" default="no">RAgreementNumber</groupName>
-			<prompt>Think about the various modifiers that can be included in a nominal phrase, as in the tree structure above.  Does your language have any marking on articles, demonstratives, adjectives, etc. to show number agreement with the head noun?</prompt>
-			<radio id="NPAgreeNoNumber" checked="yes" dataValue="no">No, there is no agreement, but number marking comes from the number or quantifier</radio>
-			<radio id="NPAgreeYesNumber" checked="yes" dataValue="yes">Yes, like English, the various nominal modifiers may/must agree in number with the head noun</radio>
-		</radioGroup>
-		<radioGroup>
-			<groupName dataItem="agreeOther" default="no">RAgreementOther</groupName>
-			<prompt>Does your language have any additional features which may or must be marked on modifiers so that they agree with the head noun?</prompt>
-			<radio id="NPAgreeNoOther" checked="yes" dataValue="no">No</radio>
-			<radio id="NPAgreeYesAnimacy" checked="yes" dataValue="yesAnimacy">Yes, they may/must agree in animacy</radio>
-			<radio id="NPAgreeYesClass" checked="yes" dataValue="yesClass">Yes, they may/must agree in class number </radio>
-			<radio id="NPAgreeYesGender" checked="yes" dataValue="yesGender">Yes, they may/must agree in gender </radio>
-		</radioGroup>
-		<introduction>Besides agreement, nouns and their modifiers may be marked for case.  Therefore, we need to know what case system, if any, your language uses.  You may have the situation (as is true for two fo the projects this starter kit was initially tested on) where the source language you wish to adapt from is unmarked or less marked for case than the target language(s) you wish to adapt into.  If so, you will need to add null allomorphs for the case markers in the source language to match the case markers in the target language(s) and allow the syntactic parser to disambiguate between these as much as possible.  If you have this situation, read the following information and answer the question(s) below based on the target language(s) case system.<br/>
-			<br/>
+  </introduction>
+  <form section="np">
+	<introduction>Many languages require agreement between at least some of the modifiers and the head noun.  While English only has number agreement, in other languages this agreement may also include animacy, class, or gender.  The grammar rules generated by this starter kit include the constraints for full agreement, but if your language only has partial or no agreement, you simply will not add those features to your lexical items.  In that case, the constraints will only apply vacuously.  Based on your answers below about the agreement system in your language, you will be instructed to add the appropriate features in the sections that follow.</introduction>
+	<radioGroup>
+	  <groupName dataItem="agreeNumber" default="no">RAgreementNumber</groupName>
+	  <prompt>Think about the various modifiers that can be included in a nominal phrase, as in the tree structure above.  Does your language have any marking on articles, demonstratives, adjectives, etc. to show number agreement with the head noun?</prompt>
+	  <radio id="NPAgreeNoNumber" checked="yes" dataValue="no">No, there is no agreement, but number marking comes from the number or quantifier</radio>
+	  <radio id="NPAgreeYesNumber" checked="yes" dataValue="yes">Yes, like English, the various nominal modifiers may/must agree in number with the head noun</radio>
+	</radioGroup>
+	<radioGroup>
+	  <groupName dataItem="agreeOther" default="no">RAgreementOther</groupName>
+	  <prompt>Does your language have any additional features which may or must be marked on modifiers so that they agree with the head noun?</prompt>
+	  <radio id="NPAgreeNoOther" checked="yes" dataValue="no">No</radio>
+	  <radio id="NPAgreeYesAnimacy" checked="yes" dataValue="yesAnimacy">Yes, they may/must agree in animacy</radio>
+	  <radio id="NPAgreeYesClass" checked="yes" dataValue="yesClass">Yes, they may/must agree in class number </radio>
+	  <radio id="NPAgreeYesGender" checked="yes" dataValue="yesGender">Yes, they may/must agree in gender </radio>
+	</radioGroup>
+	<introduction>Besides agreement, nouns and their modifiers may be marked for case.  Therefore, we need to know what case system, if any, your language uses.  You may have the situation (as is true for two fo the projects this starter kit was initially tested on) where the source language you wish to adapt from is unmarked or less marked for case than the target language(s) you wish to adapt into.  If so, you will need to add null allomorphs for the case markers in the source language to match the case markers in the target language(s) and allow the syntactic parser to disambiguate between these as much as possible.  If you have this situation, read the following information and answer the question(s) below based on the target language(s) case system.<br/>
+	  <br/>
 The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: <example>I, we, you, he, she, they</example>.  The accusative pronouns are: <example>me, us, you, him, her, them</example>.  The genitive pronouns include: <example>my, mine, our, ours, your, yours, his, her, hers, their, theirs</example>.  Therefore, we say <example>They hit him</example> and not <example>Them hit he</example>. <br/>
-			<br/>
+	  <br/>
 In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  The case of possessors is not set cross-linguistically, so if your language has an ergative-absolutive system, you will be asked about the case of possessors in that section. Some languages with an ergative-absolutive system simply have different sets of verbal agreement markers, but no marking on nouns.  If this is true in your language, and there is also only a single set of stand-alone pronouns, answer "None" below.  If there are two sets of pronouns, however, as well as different sets of agreement markers, answer "Ergative-Absolutive" below.  The agreement marking will be handled separately in the section on verbal agreement.<br/>
-			<br/>
+	  <br/>
 Some languages are even more complex in that they normally have a nominative-accusative system but under some conditions the case system switches to ergative-absolutive.  This is called "split ergativity".  In this starter kit, the best we can do for these languages is to add all the rules allowing both case systems.  Afterward, the specific constraints needed for your language can be added to the rules.
 </introduction>
-		<radioGroup>
-			<groupName dataItem="case" default="nominative">RCase</groupName>
-			<prompt>Based on the description of the case systems above, which one is correct for your language?  Be sure to think about (stand-alone) pronouns as well as nouns in considering your answer.</prompt>
-			<radio id="NPCaseNone" checked="yes" dataValue="none">None: the exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence</radio>
-			<radio id="NPCaseNom" checked="yes" dataValue="nominative">Nominative-Accusative: like English, subjects of both transitive and intransitive verbs are the same, but objects of transitive verbs are different</radio>
-			<radio id="NPCaseErg" checked="yes" dataValue="ergative">Ergative-Absolutive: subjects of intransitive verbs and objects of transitive verbs are the same, but subjects of transitive verbs are different</radio>
-			<radio id="NPCaseSplit" checked="yes" dataValue="split">Split Ergativity: the language has a Nominative-Accusative system normally, but the Ergative-Absolutive system is used under certain conditions.</radio>
-		</radioGroup>
-		<radioGroup id="NPCaseDefaultTable" show="swNPCaseNomOrSplit">
-			<groupName dataItem="caseDefault" default="no">RNPCaseDefault</groupName>
-			<prompt>Is there a default (unmarked) case for your language?</prompt>
-			<radio id="NPCaseDefaultNo" dataValue="no">No, all the case markers are overt (some null allomorphs are OK)</radio>
-			<radio id="NPCaseDefaultNom" dataValue="nominative">Yes, nominative case is completely unmarked, but the others are overt (some null allomorphs are OK)</radio>
-		</radioGroup>
-		<br/>
-		<buttons>
-			<button id="NPMainBack" value="Back" goto="NPContents.htm"/>
-			<button id="NPMainNext" value="Next" goto="NPContents.htm"/>
-		</buttons>
-	</form>
-	<showWhen id="swNPCaseNomOrSplit">
-		<whenRadio button="NPCaseNom"/>
-		<or/>
-		<whenRadio button="NPCaseSplit"/>
-	</showWhen>
+	<radioGroup>
+	  <groupName dataItem="case" default="nominative">RCase</groupName>
+	  <prompt>Based on the description of the case systems above, which one is correct for your language?  Be sure to think about (stand-alone) pronouns as well as nouns in considering your answer.</prompt>
+	  <radio id="NPCaseNone" checked="yes" dataValue="none">None: the exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence</radio>
+	  <radio id="NPCaseNom" checked="yes" dataValue="nominative">Nominative-Accusative: like English, subjects of both transitive and intransitive verbs are the same, but objects of transitive verbs are different</radio>
+	  <radio id="NPCaseErg" checked="yes" dataValue="ergative">Ergative-Absolutive: subjects of intransitive verbs and objects of transitive verbs are the same, but subjects of transitive verbs are different</radio>
+	  <radio id="NPCaseSplit" checked="yes" dataValue="split">Split Ergativity: the language has a Nominative-Accusative system normally, but the Ergative-Absolutive system is used under certain conditions.</radio>
+	</radioGroup>
+	<radioGroup id="NPCaseDefaultTable" show="swNPCaseNomOrSplit">
+	  <groupName dataItem="caseDefault" default="no">RNPCaseDefault</groupName>
+	  <prompt>Is there a default (unmarked) case for your language?</prompt>
+	  <radio id="NPCaseDefaultNo" dataValue="no">No, all the case markers are overt (some null allomorphs are OK)</radio>
+	  <radio id="NPCaseDefaultNom" dataValue="nominative">Yes, nominative case is completely unmarked, but the others are overt (some null allomorphs are OK)</radio>
+	</radioGroup>
+	<br/>
+	<buttons>
+	  <button id="NPMainBack" value="Back" goto="NPContents.htm"/>
+	  <button id="NPMainNext" value="Next" goto="NPContents.htm"/>
+	</buttons>
+  </form>
+  <showWhen id="swNPCaseNomOrSplit">
+	<whenRadio button="NPCaseNom"/>
+	<or/>
+	<whenRadio button="NPCaseSplit"/>
+  </showWhen>
 </page>
