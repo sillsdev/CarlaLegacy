@@ -1,0 +1,70 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; ">
+<title>Quantifiers and QP - Degree Words (Part 2)</title>
+<link rel="stylesheet" href="../styles/PAWSStarterKit.css">
+</head>
+<body>
+<h2>Quantifiers and QP - Degree Words (Part 2)</h2>
+<div class="form">
+<form action="--WEBBOT-SELF--" method="post">Key your examples containing degree words here (only include the degree word and quantifier (i.e. not the noun)):<br><TEXTAREA class=vernacular id=QPDegreeExample style="MARGIN-LEFT: 0.5in" rows=7 wrap=off cols=40></TEXTAREA><table border="0" style="MARGIN-LEFT: 0.5in">
+<tr>
+<td colspan="2"><span class="radioPrompt">Based on these examples, where do the degree words occur with respect to the quantifier?</span></td>
+</tr>
+<tr>
+<td><input type="radio" name="RDegree" id="QPDegreeBefore" checked></td>
+<td width="99%" id="QPDegreeBeforePrompt">Before the quantifier</td>
+</tr><!--Before is QP Option 2; is Spec-initial default; is Spec-internal default.-->
+
+<tr>
+<td><input type="radio" name="RDegree" id="QPDegreeAfter"></td>
+<td width="99%" id="QPDegreeAfterPrompt">After the quantifier</td>
+</tr><!--After is QP Option 3; is Spec-final default.-->
+
+<tr>
+<td><input type="radio" name="RDegree" id="QPDegreeEitherSide"></td>
+<td width="99%" id="QPDegreeEitherSidePrompt">On either side of the quantifier</td>
+</tr><!--Either is QP Option 4 (no matter what the answer is to next question).--><!--Following is greyed out unless the either button is checked-->
+
+<tr>
+<td>&nbsp;</td>
+<td>
+<table border="0" id="QPDegreeEitherSideTable">
+<tr>
+<td colspan="2"><span class="radioPrompt">Can all the degree words appear on either side of the quantifier?</span></td>
+</tr>
+<tr>
+<td><input type="radio" name="RDegreeEitherSide" id="QPDegreeEitherYes" checked></td>
+<td width="99%" id="QPDegreeEitherYesPrompt">Yes, there is no restriction</td>
+</tr>
+<tr>
+<td><input type="radio" name="RDegreeEitherSide" id="QPDegreeEitherNo"></td>
+<td width="99%" id="QPDegreeEitherNoPrompt">No, there are separate sets for each side</td>
+</tr><!--End of greyed out section-->
+
+</table>
+</td>
+</tr>
+</table><br><div class="instruction">
+<p>In the lexicon, mark this type of quantifier
+with the feature <span class="feature">Q</span>.  This will change
+their category to <span class="category">Q</span> for the syntax.  If a particular quantifier can
+only go with plural nouns, add the feature <span class="feature">plural</span> to that entry.  Also, mark any words
+which can modify them with the features <span class="feature">Deg
+modifies_Q</span>.<!--For the No answer to either side:-->
+
+<span id="QPDegreeEitherNoInstruction">Those which can only occur before the quantifier
+also need to have the feature <span class="feature">QP-initial</span>
+and those which can only occur after the quantifier also need the
+feature <span class="feature">QP-final</span>.  Do not enter either
+feature <span class="feature">QP-initial</span> or <span class="feature">QP-final</span> on any degree words which can occur on
+either side.</span><!--end of For the No answer to either side:-->
+
+Note that these degree words will most likely not be the
+same as the ones which can modify an NP above.</p>
+</div><input type="button" value="OK" name="BOK" id="QPDegree2OK" style="WIDTH: 78px; HEIGHT: 24px">&nbsp;<!--OK link to QPCardinal.htm-->
+
+<input type="button" value="Cancel" name="BCancel" id="QPDegree2Cancel" style="WIDTH: 78px; HEIGHT: 24px"></form>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKCodeMapper.xsl"?>
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+  <title level="2">Adverbs and AdvP - Locative Adverbs</title>
+  <introduction>Locative adverbs include the English words: <example>here</example>, <example>there</example>, <example>everywhere</example>.
+In English, location is often also expressed by a prepositional
+phrase, such as: <example>in the mountains</example>, <example>at San Jose</example>, <example>over there</example>.  Many
+languages allow just a nominal phrase, consisting of a proper noun or
+description of the place.
+</introduction>
+  <instruction>Think about how locatives are expressed in
+your language.  For those which are adverbs, are there any degree
+words which can modify them?  In English, this seems to be limited to
+<example>only</example> (a type of focus construction) and <example>right</example>, as in:
+</instruction>
+  <EnglishExample>
+	<exItem label="1.">only here.</exItem>
+	<exItem label="2">only there.</exItem>
+	<exItem label="3.">right here.</exItem>
+	<exItem label="4.">right there.</exItem>
+  </EnglishExample>
+  <form>
+	<prompt>Key your examples here:</prompt>
+	<textBox id="AdvPLocExample"/>
+	<codeInfo>These go in advtest.txt</codeInfo>
+	<instruction>In the lexicon, key the feature <feature>locative</feature>
+on all adverbs that express location.  You can also add this feature
+to nouns and proper names which express location.
+</instruction>
+	<buttons>
+	  <button id="AdvPLocExamplesOK" value="OK" goto="AdvPManner.htm"/>
+	  <button id="AdvPLocExamplesCancel" value="Cancel"/>
+	</buttons>
+  </form>
+</page>

@@ -1,0 +1,93 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; ">
+<title>Pronouns and Proper Names - Pronoun Case</title>
+<link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+</head>
+<body>
+<h2>Pronouns and Proper Names - Pronoun Case</h2>
+<div class="introduction">
+<p>Moving to pronouns, we can start by adding all the relevant case and agreement features in the lexicon.  Personal pronouns normally have either more than or the same number of these features as nouns have.</p>
+</div>
+<div class="form">
+<form action="--WEBBOT-SELF--" method="post">
+<table border="0" style="MARGIN-LEFT: 0.5in">
+<tr>
+<td colspan="2"><span class="radioPrompt">Beginning with case, does your language have different sets of pronouns for different positions in the sentence?</span></td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronCase" id="PronCaseNo"></td>
+<td width="99%" id="PronCaseNoPrompt">No, the exact same set of pronouns is used in subject, object, and possessor position</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronCase" id="PronCaseYes"></td>
+<td width="99%" id="PronCaseYesPrompt">Yes, either completely different sets, or just differences in a few forms</td>
+</tr>
+<tr id="PronCaseYesTable">
+<td>&nbsp;&nbsp;</td>
+<td>
+<table border="0">
+<tr>
+<td colspan="2"><span class="radioPrompt">Do the subjects of intransitive verbs and the subjects of transitive verbs use the same pronouns?</span></td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronCaseType" id="PronCaseTypeNomAcc"></td>
+<td width="99%" id="PronCaseTypeNomAccPrompt">Yes, and direct objects and possessors each have separate sets</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronCaseType" id="PronCaseTypeErg"></td>
+<td width="99%" id="PronCaseTypeErgPrompt">No, the subjects of intransitives and direct objects use the same set of pronouns, but the subjects of transitive verbs use a different set</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<div class="instruction" id="PronCaseTypeNomAccInstruction">
+<p>Your language has a nominative-accusative case system.  In the lexicon:
+<ul style="MARGIN-TOP: 0.025in">
+<li>Add the feature <span class="feature">nominative</span> to all the pronouns that occur in
+  subject position.
+
+<li>Add the feature <span class="feature">accusative</span> to all the pronouns that occur in
+  object position.
+
+<li>Add the feature <span class="feature">genitive</span> to all the pronouns that occur in
+  possessor position.
+
+<li>If a particular pronoun can show up in any position,
+  do not add any feature.
+
+<li>If a particular pronoun can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <span class="feature">-accusative</span>.
+
+<li>If a particular pronoun can occur as a subject or as an object but not as a possessor, add the feature <span class="feature">-genitive</span>.
+
+<li>If a particular pronoun may occur as an object or as a possessor, but not as a subject, add the feature <span class="feature">-nominative</span>.</li>
+</ul>
+<P></P>
+</div>
+<div class="instruction" id="PronCaseTypeErgInstruction">
+<p>Your language has an ergative-absolutive case system.  In the lexicon:
+<ul style="MARGIN-TOP: 0.025in">
+<li>Add the feature <span class="feature">ergative</span> to all the pronouns that occur in subject
+  position for transitive verbs.
+
+<li>Add the feature <span class="feature">absolutive</span> to all the pronouns that occur in
+  direct object position and in subject position for intransitive verbs.
+
+<li>Add the feature <span class="feature">genitive</span> to all the pronouns that occur in
+  possessor position.
+
+<li>If a particular pronoun can show up in any position,
+  do not add any feature.
+
+<li>If a particular pronoun can occur as a subject of transitive verbs or as a possessor but not as an object or as the subject of an intransitive verb, add the feature <span class="feature">-absolutive</span>.
+
+<li>If a particular pronoun can occur as a subject of any verb or as an object but not as a possessor, add the feature <span class="feature">-genitive</span>.
+
+<li>If a particular pronoun may occur as an object or the subject of an intransitive verb or as a possessor, but not as the subject of a transitive verb, add the feature <span class="feature">-ergative</span>.</li>
+</ul>
+<P></P>
+</div><input type="button" value="OK" name="BOK" id="PronCaseOK" style="WIDTH: 78px; HEIGHT: 24px">&nbsp;&nbsp;<input type="button" value="Cancel" name="BCancel" id="PronCaseCancel" style="WIDTH: 78px; HEIGHT: 24px"></form>
+</div>
+</body>
+</html>

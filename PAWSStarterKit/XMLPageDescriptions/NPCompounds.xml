@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Nominal Phrase - Noun Modifiers</title>
+<introduction>Many languages are like English, in that they have noun modifiers. Normally, we simply think that all nouns can also be used as adjectives, but a closer look reveals that true adjectives come before the noun modifier, as in <example>large, round syrup bottle</example> but not <example>*round, syrup large bottle</example>.  Therefore, we will treat noun modifiers as compound nouns which are written as separate words.<br/><br/>In the English examples above, <example>bottle</example> is clearly the head noun.  This is true of all compound nouns and noun modifier constructions in English: the head is the right-most noun in the series.</introduction>
+	<form section="np">
+<prompt>Key one of more examples with noun modifiers or compound nouns written as separate words here:</prompt>
+<textBox id="NPCompExample" dataItem="compExample"/>
+<introduction>Now consider pre/post-positional phrase (PP) modifiers (or complements), such as in <example>the large, round bottle of syrup</example> or <example>the boy’s letter to that girl</example>.</introduction>
+<prompt>Key your examples of pre/post-positional phrases modifying nouns here:</prompt>
+<textBox id="NPCompPPExample" dataItem="compPPExample"/>
+<introduction>Refer to both of the above sets of data for the following questions.</introduction>
+<radioGroup>
+	<groupName dataItem="compHead" default="right">RNPCompHead</groupName>
+	<prompt>In a compound or noun modifier construction, which noun is the head in your language?</prompt>
+	<radio id="NPCompHeadLeft" dataValue="">Left-most</radio>
+	<radio id="NPCompHeadRight" dataValue="">Right-most</radio>
+<radioGroup>
+	<groupName dataItem="compHeadPPPos" default="unknown" position="yesHeadDiff">RNPCompHeadPos</groupName>
+	<prompt>Where does the PP occur with respect to the head noun?</prompt>
+	<radio id="NPCompHeadPosBefore" dataValue="before">Before</radio>
+	<radio id="NPCompHeadPosAfter" dataValue="after">After</radio>
+	<radio id="NPCompHeadPosEither" dataValue="either">Either</radio>
+</radioGroup>
+</radioGroup>
+		<buttons>
+			<button id="NPCompOK" value="OK" goto="NPTesting.htm"/>
+			<button id="NPCompCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

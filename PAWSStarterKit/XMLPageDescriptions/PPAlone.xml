@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Pre/Post-Positional Phrases - Stand Alone</title>
+	<form section="pp">
+<radioGroup>
+	<groupName dataItem="alone" default="no">RPPAlone</groupName>
+	<prompt>Does your language allow any pre/post- positions to stand alone?</prompt>
+	<radio id="PPAloneNo" dataValue="no">No</radio>
+	<radio id="PPAloneYes" dataValue="yes">Yes</radio>
+<radioGroup id="PPSentCompGroup">
+	<groupName dataItem="sentComp" default="no">RPPSentComp</groupName>
+	<prompt>Does your language have any pre/post-positions which take a sentential complement?</prompt>
+	<radio id="PPSentCompNo" dataValue="no">No</radio>
+	<radio id="PPSentCompYes" dataValue="yes">Yes</radio>
+<radioGroup>
+	<groupName dataItem="prePost" default="unknown" position="yesHead">RPPPrePost</groupName>
+	<prompt>Does your language have prepositions or postpositions?</prompt>
+	<radio id="PPPrePostPre" dataValue="pre">Prepositions	</radio>
+	<radio id="PPPrePostPost" dataValue="post">Postpositions</radio>
+	<radio id="PPPrePostBoth" dataValue="both">Some of each</radio>
+</radioGroup>
+</radioGroup>
+</radioGroup>
+<instruction id="PPPrePostBothInstruction">In the lexicon, mark the prepositions with the feature <feature>PP-initial</feature> and the postpositions with the feature <feature>PP-final</feature>.</instruction>
+		<buttons>
+			<button id="PPAloneOK" value="OK" goto="PPCat.htm"/>
+			<button id="PPAloneCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Basic, Single-Clause Sentences - Examples</title>
+	<introduction>Sentences normally include some kind of inflection on the verbs and possibly agreement between the subject, object and verb.  Some languages are <i>pro</i>-drop languages which allow a subject and/or object to be missing.  In addition, think about whether there are any auxiliary elements that are separate words, and whether there can be more than one auxiliary element before the main verb.  Examples of all of the above (except <i>pro</i>-drop) are given for English transitive single-clause sentences.</introduction>
+	<EnglishExample>
+		<exItem label="1.">The boy hit the ball.</exItem>
+		<exItem label="2.">The boy will hit the ball.</exItem>
+		<exItem label="3.">The boy might have hit the ball.</exItem>
+		<exItem label="4.">The boy might have been hitting the ball.</exItem>
+	</EnglishExample>
+	<form section="ip">
+		<prompt>Think of similar examples from your language and key them here:</prompt>
+		<textBox id="IPExamplesExample" dataItem="example" cols="50"/>
+		<introduction>Ditransitives can have the second object expressed as a PP, as in English, or as a nominal phrase (DP).  Some English examples of ditransitives are given below.</introduction>
+		<EnglishExample>
+			<exItem label="1.">The girl bought the present for her mother.</exItem>
+			<exItem label="2.">The man sold his car for two thousand dollars.</exItem>
+		</EnglishExample>
+		<prompt>Key your examples here:</prompt>
+		<textBox id="IPExamplesDiExamples" dataItem="diExample" cols="50"/>
+		<introduction>Simple intransitives do not have any complements after the verb.  Motion verbs include a location in the form of either a PP or adverb.  English examples include:</introduction>
+		<EnglishExample>
+			<exItem label="1.">The girl swims.</exItem>
+			<exItem label="2.">My mother went to the store.</exItem>
+			<exItem label="3.">My teacher came here.</exItem>
+		</EnglishExample>
+		<prompt>Key your examples here:</prompt>
+		<textBox id="IPExamplesIntranExample" dataItem="intransExample" cols="50"/>
+<introduction>Copular sentences can have an adjective, PP, or nominal phrase following the copular verb.  Some languages do not require a copular verb or auxiliary to be present.  English examples include:</introduction>
+<EnglishExample>
+	<exItem label="1.">The girl is pretty.</exItem>
+	<exItem label="2.">She seems nice.</exItem>
+	<exItem label="3.">The girl is in charge.</exItem>
+	<exItem label="4.">The girl is the leader.</exItem>
+</EnglishExample>
+<prompt>Key your examples here:</prompt>
+<textBox id="IPExamplesCopularExample" dataItem="copularExample" cols="50"/>
+<introduction>Most languages also have passive sentences, where the Theme or Patient fills the subject position.  The Agent may be optionally expressed in some languages, but not allowed at all in others.  If expressed, it may take the form of a PP (as in English with the particular preposition <example>by</example>) or a nominal phrase (DP), depending on the language.  In addition, a particular auxiliary may be required in passives (a form of <example>be</example> in English).  English examples, including some showing interaction with multiple auxiliaries are:</introduction>
+<EnglishExample>
+	<exItem label="1.">The glass was broken.</exItem>
+	<exItem label="2.">The glass was broken by the child.</exItem>
+	<exItem label="3.">The ball might have been hit.</exItem>
+	<exItem label="4.">The ball might have been hit by the boy.</exItem>
+</EnglishExample>
+<prompt>Key your examples here:</prompt>
+<textBox id="IPExamplesPassiveExample" dataItem="passiveExample" cols="50"/>
+<br/>
+		<buttons>
+			<button id="IPExamplesOK" value="OK" goto="IPContents.htm"/>
+			<button id="IPExamplesCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

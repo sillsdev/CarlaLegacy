@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+  <title level="2">Quantifiers and QP - Ordinal Numbers</title>
+  <form>
+	<prompt>Key your examples containing ordinal numbers here:</prompt>
+	<textBox id="QPOrdinalExample"/>
+	<codeInfo>go in qtest.txt</codeInfo>
+	<radioGroup>
+	  <groupName>ROrdinalFormation</groupName>
+	  <prompt>How are ordinal numbers formed in your language?</prompt>
+	  <radio id="QPOrdinalAffix" checked="yes">An affix is added to the cardinal number.</radio>
+	  <radio id="QPOrdinalIndependent">They are independent syntactic words.</radio>
+	</radioGroup>
+	<instruction id="QPOrdinalAffixInstruction">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words meaning <example>next</example> and <example>last</example> with this feature.
+</instruction>
+	<instruction id="QPOrdinalIndependentInstruction">In the lexicon, mark each word with the feature <feature>ordinal</feature>.</instruction>
+	<radioGroup>
+	  <groupName>ROrdinalPosition</groupName>
+	  <prompt>Where do ordinal adjectives occur with respect to the cardinal number?</prompt>
+	  <radio id="QPOrdinalBefore" checked="yes">Before the cardinal number</radio>
+	  <codeInfo> Before is QP as Numbers Option 1; is Spec-initial default; is Spec-internal default.</codeInfo>
+	  <radio id="QPOrdinalAfter">After the cardinal number</radio>
+	  <codeInfo>After is QP as Numbers Option 2; is Spec-final default.</codeInfo>
+	  <radio id="QPOrdinalEitherSide">On either side of the cardinal number</radio>
+	  <codeInfo>Either is QP as Numbers Option 3.</codeInfo>
+	</radioGroup>
+	<br/>
+	<buttons>
+	  <button id="QPOrdinalOK" value="OK"/>
+	  <codeInfo>OK link to QPTesting.htm</codeInfo>
+	  <button id="QPOrdinalCancel" value="Cancel"/>
+	</buttons>
+  </form>
+</page>

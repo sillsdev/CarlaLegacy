@@ -1,0 +1,28 @@
+[Version]
+Version=0.2.0.0
+
+[PAWSControl.ocx <0009>]
+Dest=$(AppPath)
+Date=4/4/01
+Time=14:39
+Version=0.2.0.0
+CABFilename=PAWSControl.CAB
+CABINFFile=PAWSControl.INF
+Uses1=MSVBVM60.DLL
+Uses2=OLEAUT32.DLL
+Uses3=OLEPRO32.DLL
+Uses4=ASYCFILT.DLL
+Uses5=STDOLE2.TLB
+Uses6=COMCAT.DLL
+Uses7=MSHTMPGR.DLL
+Uses8=msxml3.dll
+Uses9=scrrun.dll
+Uses10=COMDLG32.OCX
+Uses11=MSCOMCTL.OCX
+Uses12=MSSTKPRP.DLL
+
+[msxml3.dll <0009>]
+Dest=$(WinSysPath)
+Date=10/19/00
+Time=18:07
+Version=8.0.7820.0

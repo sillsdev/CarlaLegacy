@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKCodeMapper.xsl"?>
+<page>
+  <title level="2">Adverbs and AdvP - Degree Words</title>
+  <instruction>You need to make sure the adverbs in your lexicon will be mapped to the syntax category <category>Adv</category>.  Choose one of the following options, depending on your situation, and check it off when it is completed:
+
+<ul>
+	  <li>If you already have adverbs marked with the category <category>Adv</category> in your lexicon nothing more needs to be
+done.</li>
+	  <li>If you have adverbs marked in your lexicon with a distinct
+category all their own, but it is different from <category>Adv</category>, go to the <tool>Category Mapper</tool> and map your
+morphological category to <category>Adv</category>.</li>
+	  <li>If adverbs are mixed in with another category in the lexicon, you
+need to add the feature <feature>Adv</feature> to each
+appropriate entry so the category will be changed. </li>
+	</ul>
+  </instruction>
+  <form section="advp">
+	<radioGroup>
+	  <groupName dataItem="x" default="x">RDegreeYN</groupName>
+	  <prompt>Looking back at your examples is this section, does your language have degree words which can modify adverbs?</prompt>
+	  <radio id="AdvPDegreeNo" dataValue="n">No</radio>
+	  <ruleInfo>No: AdvP Option 1.</ruleInfo>
+	  <radio id="AdvPDegreeYes" checked="yes"  dataValue="n">Yes</radio>
+	  <radioGroup id="AdvPDegreeYesTable">
+		<groupName dataItem="y" default="z">RDegree</groupName>
+		<prompt>Where do the degree words occur with respect to the adverb?</prompt>
+		<radio id="AdvPDegreeBefore" checked="yes"  dataValue="n">Before the adverb</radio>
+		<ruleInfo>Before is AdvP Option 2</ruleInfo>
+		<codeInfo>Before is Spec-initial default; is Spec-internal default.</codeInfo>
+		<radio id="AdvPDegreeAfter" dataValue="n">After the adverb</radio>
+		<ruleInfo>After is AdvP Option 3</ruleInfo>
+		<codeInfo>After is Spec-final default.</codeInfo>
+		<radio id="AdvPDegreeEitherSide" dataValue="n">On either side of the adverb</radio>
+		<ruleInfo>Either is AdvP Option 4 (no matter what the answer is to next question).</ruleInfo>
+		<codeInfo>Following is grayed out unless the either button is checked</codeInfo>
+		<radioGroup id="AdvPDegreeEitherSideTable1">
+		  <groupName dataItem="z" default="z">RDegreeEitherSide</groupName>
+		  <prompt>Can all the degree words appear on either side of the adverb?</prompt>
+		  <radio id="AdvPDegreeEitherYes" checked="yes" dataValue="n">Yes, there is no restriction</radio>
+		  <radio id="AdvPDegreeEitherNo" dataValue="n">No, there are separate sets for each side</radio>
+		</radioGroup>
+</radioGroup>
+		<radioGroup id="AdvPDegreeEitherSideTable2">
+		  <groupName dataItem="a" default="b">RSet</groupName>
+		  <prompt>Are the degree words which can modify adverbs all the same ones?</prompt>
+		  <radio id="AdvPSetYes" checked="yes" dataValue="n">Yes, the same set can modify any type of adverb</radio>
+		  <radio id="AdvPSetAlmost" dataValue="n">Almost; the same set can modify temporals, locatives, and manner adverbs, but reason adverbs are not modified</radio>
+		  <radio id="AdvPSetNo" dataValue="n">No, there are distinct sets of degree words for each type of adverb.  Note that some overlap is OK (just add more than one <feature>modifies...</feature> feature after a space), and none for reason is OK (just don't mark any words with this feature).
+</radio>
+		</radioGroup>
+	</radioGroup>
+	<codeInfo>Show appropriate instruction, depending on how they answered </codeInfo>
+	<codeInfo>Yes</codeInfo>
+	<instruction id="AdvPSetYesInstruction">Key the feature <feature>Deg modifies_Adv</feature> on this type of degree word in the lexicon.</instruction>
+	<codeInfo>almost:</codeInfo>
+	<instruction id="AdvPSetAlmostInstruction">Key the features <feature>Deg modifies_Adv-reason</feature> on this type of degree word in the lexicon
+</instruction>
+	<codeInfo>no:</codeInfo>
+	<instruction id="AdvPSetNoInstruction">In the lexicon, key the features:
+<ul>
+		<li>
+		  <feature>Deg modifies_temporal</feature> for temporal modifiers,</li>
+		<li>
+		  <feature>Deg modifies_locative</feature> for locative modifiers,</li>
+		<li>
+		  <feature>Deg modifies_manner</feature> for manner modifiers, and</li>
+		<li>
+		  <feature>Deg modifies_reason</feature> for reason modifiers</li>
+	  </ul>
+	</instruction>
+	<codeInfo>End of grayed out section</codeInfo>
+	<buttons>
+	  <button id="AdvPDegreeOK" value="OK" goto="AdvPTesting.htm"/>
+	  <button id="AdvPDegreeCancel" value="Cancel"/>
+	</buttons>
+  </form>
+</page>

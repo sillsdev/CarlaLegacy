@@ -1,0 +1,65 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; ">
+<title>Pronouns and Proper Names - Reflexives</title>
+<link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+</head>
+<body>
+<h2>Pronouns and Proper Names - Reflexives</h2>
+<div class="introduction">
+<p>Reflexives are another type of pronouns that most languages have.  They occur only in the same case as direct objects and normally must agree with the subject in person, gender, and number features.  Examples in English are: <span class="example">herself</span>,<span class="example">himself</span>, <span class="example">themselves</span>, <span class="example">myself</span>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning 'self') that is possessed by the pronoun that refers back to the subject, and some languages do not distinguish between reflexive and regular pronouns.<br><br>
+[Note that this starterkit does not enforce agreement between the reflexive and the subject; it only allows reflexives to parse.  Therefore, examples such as <span class="example">The girl saw yourself</span> will not be ruled out.  See the <A href="Advanced.doc">Advanced Help</A> file to add such enforced agreement if needed for your language.]</p>
+</div>
+<div class="form">
+<form action="--WEBBOT-SELF--" method="post">
+<table border="0" style="MARGIN-LEFT: 0.5in">
+<tr>
+<td colspan="2"><span class="radioPrompt">Does your language have reflexives?</span></td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronRefl" id="PronReflNo"></td>
+<td width="99%" id="PronReflNoPrompt">No</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronRefl" id="PronReflYes"></td>
+<td width="99%" id="PronReflYesPrompt">Yes</td>
+</tr>
+</table><span id="PronReflExamplePrompt">Key some examples here:</span><br><TEXTAREA class=vernacular id=PronReflExample style="MARGIN-LEFT: 0.5in" rows=7 wrap=off cols=40></TEXTAREA><table border="0" style="MARGIN-LEFT: 0.5in" id="PronReflYesTable">
+<tr>
+<td colspan="2"><span class="radioPrompt">Are the reflexive pronouns built by adding an affix to other pronouns, as in English?</span></td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronReflAffix" id="PronReflAffixYes"></td>
+<td width="99%" id="PronReflAffixYesPrompt">Yes, one or more affixes are chosen among to make another pronoun reflexive</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronReflAffix" id="PronReflAffixNoWord"></td>
+<td width="99%" id="PronReflAffixNoWordPrompt">No, they are distinct, stand alone words</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronReflAffix" id="PronReflAffixNoNoun"></td>
+<td width="99%" id="PronReflAffixNoNounPrompt">No, a phrase consisting of a certain noun with a pronoun as the possessor is used</td>
+</tr>
+</table>
+<div class="instruction" id="PronReflAffixYesInstruction">
+<p>In the lexicon, add the feature <span class="feature">reflexive</span> to the relevant affixes.</p>
+</div>
+<div class="instruction" id="PronReflAffixNoWordInstruction">
+<p>In the lexicon, mark each reflexive pronoun with the feature <span class="feature">reflexive</span> and also all the relevant
+<ul style="MARGIN-TOP: 0.025in">
+<li>person (<span class="feature">first</span>, <span class="feature">first_exclusive</span>, <span class="feature">first_inclusive</span>, <span class="feature">second</span>, <span class="feature">third</span>),
+
+<li>number (<span class="feature">singular</span>, <span class="feature">dual</span>, <span class="feature">plural</span>), and
+
+<li>gender (<span class="feature">masculine</span>, <span class="feature">feminine</span>, <span class="feature">neuter</span>) features.
+
+<li>Also, add the appropriate case feature (<span class="feature">accusative</span>, <span class="feature">absolutive</span>).</li>
+</ul>
+<P></P>
+</div>
+<div class="instruction" id="PronReflAffixNoNounInstruction">
+<p>In the lexicon, add the feature <span class="feature">reflexive</span> to the relevant noun.</p>
+</div><input type="button" value="OK" name="BOK" id="PronReflOK" style="WIDTH: 78px; HEIGHT: 24px">&nbsp;&nbsp;<input type="button" value="Cancel" name="BCancel" id="PronReflCancel" style="WIDTH: 78px; HEIGHT: 24px"></form>
+</div>
+</body>
+</html>

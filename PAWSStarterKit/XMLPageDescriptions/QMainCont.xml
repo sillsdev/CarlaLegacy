@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Questions - Main Clause Content Questions - Part 2</title>
+	<introduction>Depending on the basic word order of your language, questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.</introduction>
+	<form section="q">
+		<radioGroup>
+			<groupName dataItem="contFront" default="unknown">RQContFront</groupName>
+			<prompt>For content questions in your language, is an interrogative phrase required to be fronted?</prompt>
+			<radio id="QContFrontYes" dataValue="yes">Yes, like English</radio>
+			<radio id="QContFrontNo" dataValue="no">No, it simply remains in place</radio>
+		</radioGroup>
+		<radioGroup>
+			<groupName dataItem="mainCont" default="no">RQMainCont</groupName>
+			<prompt>In main clause content questions, are there one or more special question marker particles or complementizers that may occur?</prompt>
+			<radio id="QMainContYesSame" dataValue="yesSame">Yes, and it is the same as the Yes/No question marker for main clauses (or both main and embedded clauses)
+</radio>
+			<radio id="QMainContYesDiff" dataValue="yesDiff">Yes, but it is different than the Yes/No question marker </radio>
+			<radioGroup id="QMainContWordTable">
+				<groupName dataItem="mainContWord" default="no">RQMainContWord</groupName>
+				<prompt>Is it a separate word?</prompt>
+				<radio id="QMainContWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
+				<radio id="QMainContWordYes" dataValue="yes">Yes</radio>
+			</radioGroup>
+			<radioGroup id="QMainContBeforeTable">
+				<groupName dataItem="mainContBefore" default="no">RQMainContBefore</groupName>
+				<prompt>Do any of these question markers occur before a fronted interrogative phrase?</prompt>
+				<radio id="QMainContBeforeNo" dataValue="no">No, all the question markers occur after any fronted interrogative phrase</radio>
+				<radio id="QMainContBeforeYes" dataValue="yes">Yes, all do</radio>
+				<radioGroup id="QMainContBeforeAuxTable">
+					<groupName dataItem="mainContBeforeAux" default="no">RQMainContBeforeAux</groupName>
+					<prompt>Can an Aux also be fronted after the interrogative phrase?</prompt>
+					<radio id="QMainContBeforeAuxYes" dataValue="yes">Yes</radio>
+					<radio id="QMainContBeforeAuxNo" dataValue="no">No</radio>
+				</radioGroup>
+				<radio id="QMainContBeforeYesSome" dataValue="yesSome">Yes, some may but others may not</radio>
+			</radioGroup>
+			<radioGroup id="QMainContSameTable">
+				<groupName dataItem="mainContSame" default="no">RQMainContSame</groupName>
+				<prompt>
+					<span id="QMainContSameFronting">Now considering only the (normal) questions markers which occur after any fronted interrogative phrase, d</span>
+					<span id="QMainContSameNoFronting">D</span>o the question markers occur in the same position(s) in main clause content questions as in main clause Yes/No questions? </prompt>
+				<radio id="QMainContSameYes" dataValue="yes">Yes</radio>
+				<radio id="QMainContSameNo" dataValue="no">No, the positions are different or there are no Yes/No question markers in main clauses</radio>
+			</radioGroup>
+			<radioGroup id="QMainContPosTable">
+				<groupName dataItem="mainContPos" default="unknown" position="yesHead">RQMainContPos</groupName>
+				<prompt>Where does the question marker occur with respect to the rest of the question<span id="QMainContPosNoFronting"> (other than a fronted interrogative phrase)</span>?</prompt>
+				<radio id="QMainContPosBefore" dataValue="before">Before</radio>
+				<radio id="QMainContPosAfter" dataValue="after">After</radio>
+				<radio id="QMainContPosEitherSide" dataValue="either">Either side</radio>
+				<radioGroup id="QMainContEitherTable">
+					<groupName dataItem="mainContEither" default="no">RQMainContEither</groupName>
+					<prompt>Can all the question markers appear on either side of the question?</prompt>
+					<radio id="QMainContEitherYes" dataValue="yes">Yes, there is no restriction</radio>
+					<radio id="QMainContEitherNo" dataValue="no">No, there are separate sets for each side</radio>
+				</radioGroup>
+			<radioGroup id="QMainContBothTable">
+				<groupName dataItem="mainContBoth" default="no">RQMainContBoth</groupName>
+				<prompt>Can the question markers appear on both sides in the question?</prompt>
+				<radio id="QMainContBothNo" dataValue="no">No, only on one side or the other</radio>
+				<radio id="QMainContBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
+				<radio id="QMainContBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
+				<radioGroup id="QMainContBothInitialFinalTable">
+					<groupName dataItem="mainContBothInitialFinal" default="no">RQMainContBothInitialFinal</groupName>
+					<prompt>May a different question marker also occur only in final position?</prompt>
+					<radio id="QMainContBothInitialFinalNo" dataValue="no">No</radio>
+					<radio id="QMainContBothInitialFinalYes" dataValue="yes">Yes</radio>
+				</radioGroup>
+				<radio id="QMainContBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
+				<radioGroup id="QMainContBothFinalInitialTable">
+					<groupName dataItem="mainContBothFinalInitial" default="no">RQMainContBothFinalInitial</groupName>
+					<prompt>May a different question marker also occur only in initial position?</prompt>
+					<radio id="QMainContBothFinalInitialNo" dataValue="no">No</radio>
+					<radio id="QMainContBothFinalInitialYes" dataValue="yes">Yes</radio>
+				</radioGroup>
+			</radioGroup>
+			</radioGroup>
+			<radioGroup id="QMainContRequiredTable">
+				<groupName dataItem="mainContRequired" default="no">RQMainContRequired</groupName>
+				<prompt>Is a question marker required in every content question?</prompt>
+				<radio id="QMainContRequiredYes" dataValue="yes">Yes</radio>
+				<radio id="QMainContRequiredNo" dataValue="no">No, some content questions do not use/need the question marker</radio>
+			</radioGroup>
+			<radio id="QMainContNoAux" dataValue="noAux">No, but an auxiliary is fronted, like in English</radio>
+			<radioGroup id="QMainContAuxTable">
+				<groupName dataItem="mainContAux" default="no">RQMainContAux</groupName>
+				<prompt>Is an auxiliary required to be fronted in every content question?</prompt>
+				<radio id="QMainContAuxYes" dataValue="yes">Yes</radio>
+				<radio id="QMainContAuxNo" dataValue="no">No, some content questions do not require a fronted auxiliary, such as content questions which question the subject in English</radio>
+			</radioGroup>
+			<radio id="QMainContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just fronting of an interrogative phrase and/or a difference in intonation or tone or other non-syntactic marking</radio>
+		</radioGroup>
+		<instruction id="QMainContWordNoInstruction">You need to write a CC table pre-pass to separate it so that it stands alone and also make a root entry for this clitic in your lexicon.  Give the entry the category <category>C</category>, or add the feature <feature>C</feature> to the feature line to change the category for the syntax.  Also add the feature <feature>wh</feature> in either case.  Mark the Yes/No question markers with the feature <feature>-wh</feature>.  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, no additional feature is needed.</instruction>
+		<instruction id="QMainContWordYesInstruction">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>C</feature> to the feature line to change the category for the syntax.  Also add the feature <feature>wh</feature> in either case.  Mark the Yes/No question markers with the feature <feature>-wh</feature>.  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, no additional feature is needed.</instruction>
+		<instruction id="QMainContBeforeYesInstruction">In the lexicon, mark each of the question markers which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.</instruction>
+		<instruction id="QMainContBeforeYesSomeInstruction">In the lexicon, mark those which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.  The others will default to <feature>-</feature> for that feature. </instruction>
+		<instruction id="QMainContEitherNoInstruction">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+		<buttons>
+			<button id="QCont2OK" value="OK" goto="QEmbCont.htm"/>
+			<button id="QCont2Cancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

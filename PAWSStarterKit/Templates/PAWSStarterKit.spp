@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project ValidFile="C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd" XSL_XMLUseFile=".\PAWSSKHtmlMapper.xsl" XSL_DestFolder=".\..\HTMs" XSL_DestFileExt=".htm">
+	<Folder FolderName="XML Files" ExtStr="xml;cml;math;mtx;rdf;smil;svg;wml"/>
+	<Folder FolderName="XSL Files" ExtStr="xsl;xslt">
+		<File FilePath=".\ParameterizedExample.xsl" HomeFolder="Yes"/>
+		<File FilePath=".\PAWSSKCodeMapper.xsl" HomeFolder="Yes"/>
+		<File FilePath=".\PAWSSKGrammarTextMapper.xsl" HomeFolder="Yes"/>
+		<File FilePath=".\PAWSSKHtmlMapper.xsl" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
+	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd" HomeFolder="Yes"/>
+		<File FilePath="C:\Fieldworks\ww\ww\PAWS\Data\PAWSStarterKit.dtd" HomeFolder="Yes"/>
+		<File FilePath="C:\Fieldworks\ww\ww\PAWS\Data\PAWSStarterKit.xsd" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="Entities" ExtStr="ent"/>
+	<Folder FolderName="StarterKits" ExtStr="*.paw" ValidFileSet="Yes" ValidFile="C:\FieldWorks\ww\ww\PAWS\Data\PAWSStarterKit.xsd" XSL_XMLUseSet="Yes" XSL_XMLUseFile=".\PAWSSKGrammarTextMapper.xsl" XSL_DestFolder="C:\FieldWorks\ww\ww\PAWS\Data" XSL_DestFileExtSet="Yes" XSL_DestFileExt=".grm">
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\Testing\atlPAWSStarterKit.paw" HomeFolder="Yes"/>
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\Data\PAWSStarterKitNew.paw" HomeFolder="Yes"/>
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\Testing\tqpStarterKit.paw" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="HTMLPageDescription" ExtStr="*.xml" ValidFileSet="Yes" ValidFile="C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd" XSL_XMLUseSet="Yes" XSL_XMLUseFile=".\PAWSSKHtmlMapper.xsl" XSL_DestFolder="C:\FieldWorks\ww\ww\PAWS\Data" XSL_DestFileExtSet="Yes" XSL_DestFileExt=".htm">
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\XMLPageDescriptions\NPMain.xml" HomeFolder="Yes"/>
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\XMLPageDescriptions\QEmbCont.xml" HomeFolder="Yes"/>
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\XMLPageDescriptions\QEmbYN.xml" HomeFolder="Yes"/>
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\XMLPageDescriptions\QMainCont.xml" HomeFolder="Yes"/>
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\XMLPageDescriptions\QMainYN.xml" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="VBDHTMLPageDescription" ExtStr="*.xml" ValidFileSet="Yes" ValidFile="C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd" XSL_XMLUseSet="Yes" XSL_XMLUseFile=".\PAWSSKCodeMapper.xsl" XSL_DestFileExtSet="Yes" XSL_DestFileExt=".dsr"/>
+	<Folder FolderName="PatrGrammar" ExtStr="*.paw" ValidFileSet="Yes" ValidFile="C:\FieldWorks\ww\ww\PAWS\Data\PAWSStarterKit.xsd" XSL_XMLUseSet="Yes" XSL_XMLUseFile=".\PAWSSKGrammarTextMapper.xsl" XSL_DestFileExtSet="Yes" XSL_DestFileExt=".grm">
+		<File FilePath="C:\FieldWorks\ww\ww\PAWS\Testing\tqpStarterKit.paw"/>
+	</Folder>
+</Project>

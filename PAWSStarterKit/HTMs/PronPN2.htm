@@ -1,0 +1,61 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; ">
+<title>Pronouns and Proper Names - Proper Names Part 2</title>
+<link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+</head>
+<body>
+<h2>Pronouns and Proper Names - Proper Names Part 2</h2>
+<div class="introduction">
+<p>All of these options above will be allowed if we simply give proper names the category of <span class="category">N</span>.</p>
+</div><br><div class="instruction">
+<p>There is a good chance that you have given proper names a different category than <span class="category">N</span> for your morphological parser, since they may not take affixes at all, or they may take different ones than regular nouns.  Check to see what category proper names have in your morphological parser.</p>
+</div>
+<div class="form">
+<form action="--WEBBOT-SELF--" method="post">
+<table border="0" style="MARGIN-LEFT: 0.5in">
+<tr>
+<td colspan="2"><span class="radioPrompt">Do proper names have the category N in your morphological parser?</span></td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronPN2Cat" id="PronPN2CatYes"></td>
+<td width="99%" id="PronPN2CatYesPrompt">Yes</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronPN2Cat" id="PronPN2CatNo"></td>
+<td width="99%" id="PronPN2CatNoPrompt">No</td>
+</tr>
+</table>
+<div class="instruction" id="PronPN2CatYesInstruction">
+<p>In this case, your proper names will have the same defaults as nouns, i.e. third person, singular, and inanimate.  Third person should be correct.  Any inherently plural proper names need to have the feature <span class="feature">plural</span> added in the lexicon (as well as any affixes which mark plural that do not yet have the feature.  In addition, any proper names which name people or animals need to have the feature <span class="feature">animate</span> added to their lexical entry.</p>
+</div>
+<div class="instruction" id="PronPN2CatNoInstruction">
+<p>Go to the <span class="tool">Category Mapper</span> and map whatever category is used in your morphological parser (possibly more than one mapping will be needed, such as for Biblical names) to <span class="category">N</span>.  Add the default values of  <span class="feature">third</span>, <span class="feature">singular</span>, and <span class="feature">animate</span>. Any inherently plural proper 	names need to have the feature <span class="feature">plural</span> added in the lexicon (as well as any affixes which mark plural that do not yet have the feature.  In addition, any proper names which do not name people or animals need to have the feature <span class="feature">-animate</span> added to their lexical entry.</p>
+</div>
+<table border="0" style="MARGIN-LEFT: 0.5in">
+<tr>
+<td colspan="2"><span class="radioPrompt">Are proper names marked for case in the same way that nouns are?</span></td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronPN2Case" id="PronPN2CaseYesAffix"></td>
+<td width="99%" id="PronPN2CaseYesAffixPrompt">Yes, by the same set of affixes</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronPN2Case" id="PronPN2CaseYesArt"></td>
+<td width="99%" id="PronPN2CaseYesArtPrompt">Yes, by taking the same set of articles or demonstratives</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronPN2Case" id="PronPN2CaseYesNone"></td>
+<td width="99%" id="PronPN2CaseYesNonePrompt">Yes, there is no case marking on either one, or just none on proper names</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RPronPN2Case" id="PronPN2CaseNo"></td>
+<td width="99%" id="PronPN2CaseNoPrompt">No, proper names have a different set of affixes to mark case than nouns</td>
+</tr>
+</table>
+<div class="instruction" id="PronPN2CaseNoInstruction">
+<p>In the lexicon, mark the affixes with the appropriate feature, either <span class="feature">nominative</span>, <span class="feature">accusative</span>, <span class="feature">ergative</span>, <span class="feature">absolutive</span>, or possibly <span class="feature">genitive</span>, based on your case system (discussed in section <span class="section">5&nbsp;&nbsp;Simple and Possessed Nominal Phrases</span>).</p>
+</div><input type="button" value="OK" name="BOK" id="PronPN2OK" style="WIDTH: 78px; HEIGHT: 24px">&nbsp;&nbsp;<input type="button" value="Cancel" name="BCancel" id="PronPN2Cancel" style="WIDTH: 78px; HEIGHT: 24px"></form>
+</div>
+</body>
+</html>

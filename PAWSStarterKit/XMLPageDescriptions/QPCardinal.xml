@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Quantifiers and QP - Cardinal Numbers</title>
+	<introduction>Now consider cardinal numbers.  They cannot be modified by the
+degree words like the quantifiers can, though they occur in the same
+position.  Note, however, that cardinal numbers can be modified by
+ordinal numbers and by <example>next</example> and <example>last</example>, as in <example>the first twenty boys</example> or
+<example>the next one hundred years</example>.  Since these modifiers also act as regular
+adjectives in modifying nouns directly, they will need to have the
+syntactic category of adjectives plus a feature to distinguish them.
+</introduction>
+	<form>
+		<prompt>Key your examples here:</prompt>
+		<textBox id="QPCardinalExample"/>
+		<codeInfo>go in qtest.txt, too</codeInfo>
+		<introduction>Further, larger cardinal numbers can be compounds which may be
+written as separate words, such as <example>one hundred thirty three</example>.  In
+addition, some languages allow two numbers to occur side by side, such
+as <example>two three</example> to mean <example>a few</example>.
+</introduction>
+		<prompt>Key any examples of compound numbers here:</prompt>
+		<textBox id="QPCardinalCompoundExample"/>
+		<codeInfo>go in qtest.txt, too</codeInfo>
+		<instruction>You need to make sure the cardinal number words in your lexicon will be mapped to the syntax category <category>Num</category>.  Choose one of the following options, depending on your situation, and check it off when it is completed:
+<ul>
+				<li>If you already have numbers marked with the category <category>Num</category> in your lexicon nothing
+  more needs to be done.</li>
+				<li>If you have numbers marked in your lexicon with a distinct category all their own, but it is different from <category>Num</category>, go to the Category Mapper and map your morphological category to <category>Num</category>. </li>
+				<li>If numbers are mixed in with another category in the lexicon (e.g. adjectives), you need to add the feature <feature>Num</feature> to each appropriate entry so the category will be changed.</li>
+			</ul>
+		</instruction>
+		<buttons>
+			<button id="QPCardinalExamplesOK" value="OK"/>
+			<codeInfo>OK link to QPOrdinal.htm</codeInfo>
+			<button id="QPCardinalExamplesCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

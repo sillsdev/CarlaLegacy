@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Basic, Single-Clause Sentences - Auxiliaries</title>
+	<introduction>Some languages have auxiliary elements that are separate words, and some can have more than one auxiliary element before the main verb.  Examples are given for English transitive single-clause sentences.</introduction>
+	<EnglishExample>
+		<exItem label="1.">The boy hit the ball.</exItem>
+		<exItem label="2.">The boy will hit the ball.</exItem>
+		<exItem label="3.">The boy might have hit the ball.</exItem>
+		<exItem label="4.">The boy might have been hitting the ball.</exItem>
+	</EnglishExample>
+	<form section="ip">
+		<prompt>Think of any similar examples from your language and key them here:</prompt>
+		<textBox id="IPExamplesAuxExample" dataItem="auxExample" cols="50"/>
+		<radioGroup>
+			<groupName dataItem="aux" default="no">RIPAux</groupName>
+			<prompt>Does your language have any auxiliary elements that are separate words?</prompt>
+			<radio id="IPAuxNo" dataValue="no">No</radio>
+			<radio id="IPAuxYes" dataValue="yes">Yes</radio>
+			<radioGroup id="IPAuxRequiredTable">
+				<groupName dataItem="auxRequired" default="no">RIPAuxRequired</groupName>
+				<prompt>Is an auxiliary element required in every sentence?</prompt>
+				<radio id="IPAuxRequiredNo" dataValue="no">No, it is optional</radio>
+				<radio id="IPAuxRequiredYes" dataValue="yes">Yes, at least one is always required</radio>
+			</radioGroup>
+			<radioGroup id="IPAuxManyTable">
+				<groupName dataItem="auxMany" default="no">RIPAuxMany</groupName>
+				<prompt>Can there be more than one auxiliary in a single sentence?</prompt>
+				<radio id="IPAuxManyNo" dataValue="no">No, only 1 is possible</radio>
+				<radio id="IPAuxManyYes" dataValue="yes">Yes, more than one may occur before the verb phrase</radio>
+			</radioGroup>
+			<radioGroup id="IPAuxOrderTable">
+				<groupName dataItem="auxOrder" default="no">RIPAuxOrder</groupName>
+				<prompt>
+					<span id="IPAuxOrderPromptVSO">After an auxiliary, is the normal VSO word order maintained?</span>
+					<span id="IPAuxOrderPromptOSV">Before an auxiliary, is the normal OSV word order maintained?</span>
+				</prompt>
+				<radio id="IPAuxOrderYes" dataValue="yes">Yes, the order is always <span id="IPAuxOrderYesVSOPrompt">Aux V S then other elements</span>
+					<span id="IPAuxOrderYesOSVPrompt">other elements then S V Aux</span>
+				</radio>
+				<radio id="IPAuxOrderNo" dataValue="no">No, the subject may come directly after the  <span id="IPAuxOrderNoVSOPrompt">Aux and before the verb</span>
+					<span id="IPAuxOrderNoOSVPrompt">verb and before the Aux</span>
+				</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="IPAuxYesInstruction">The auxiliary elements need to have the category <category>Aux</category>.  If a particular form can also stand alone as the main verb in the sentence, you need to have two separate entries, one with the category <category>Aux</category> and one with the category <category>V</category>.  Choose one of the following options, depending on your situation:
+<ul>
+				<li>If you already have auxiliaries marked with the category <category>Aux</category> in your lexicon nothing more needs to be done.</li>
+				<li>If you have auxiliaries marked in your lexicon with a distinct category all their own, but it is different from <category>Aux</category>, go to the <tool>Category Mapper</tool> and map your morphological category to <category>Aux</category>.</li>
+				<li>If auxiliaries are mixed in with another category in the lexicon, you need to add the feature <category>Aux</category> to each appropriate entry so the category will be changed.</li>
+			</ul>
+		</instruction>
+		<buttons>
+			<button id="IPAuxOK" value="OK" goto="IPContents.htm"/>
+			<button id="IPAuxCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

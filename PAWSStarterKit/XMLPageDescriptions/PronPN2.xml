@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Pronouns and Proper Names - Proper Names Part 2</title>
+<introduction>All of these options above will be allowed if we simply give proper names the category of <category>N</category>.</introduction>
+<instruction>There is a good chance that you have given proper names a different category than <category>N</category> for your morphological parser, since they may not take affixes at all, or they may take different ones than regular nouns.  Check to see what category proper names have in your morphological parser.</instruction>
+	<form section="pron">
+<radioGroup>
+	<groupName dataItem="pnCat" default="no">RPronPN2Cat</groupName>
+	<prompt>Do proper names have the category <category>N</category> in your morphological parser?</prompt>
+	<radio id="PronPN2CatYes" dataValue="yes">Yes</radio>
+	<radio id="PronPN2CatNo" dataValue="no">No</radio>
+</radioGroup>
+<instruction id="PronPN2CatYesInstruction">In this case, your proper names will have the same defaults as nouns, i.e. third person, singular, and inanimate.  Third person should be correct.  Any inherently plural proper names need to have the feature <feature>plural</feature> added in the lexicon (as well as any affixes which mark plural that do not yet have the feature.  In addition, any proper names which name people or animals need to have the feature <feature>animate</feature> added to their lexical entry.</instruction>
+<instruction id="PronPN2CatNoInstruction">Go to the <tool>Category Mapper</tool> and map whatever category is used in your morphological parser (possibly more than one mapping will be needed, such as for Biblical names) to <category>N</category>.  Add the default values of  <feature>third</feature>, <feature>singular</feature>, and <feature>animate</feature>. Any inherently plural proper 	names need to have the feature <feature>plural</feature> added in the lexicon (as well as any affixes which mark plural that do not yet have the feature.  In addition, any proper names which do not name people or animals need to have the feature <feature>-animate</feature> added to their lexical entry.</instruction>
+<radioGroup id="PronPN2Group">
+	<groupName dataItem="pnCase" default="no">RPronPN2Case</groupName>
+	<prompt>Are proper names marked for case in the same way that nouns are?</prompt>
+	<radio id="PronPN2CaseYesAffix" dataValue="yesAffix">Yes, by the same set of affixes</radio>
+	<radio id="PronPN2CaseYesArt" dataValue="yesArt">Yes, by taking the same set of articles or demonstratives</radio>
+	<radio id="PronPN2CaseYesNone" dataValue="yesNone">Yes, there is no case marking on either one, or just none on proper names</radio>
+	<radio id="PronPN2CaseNo" dataValue="no">No, proper names have a different set of affixes to mark case than nouns</radio>
+</radioGroup>
+<instruction id="PronPN2CaseNoInstruction">In the lexicon, mark the affixes with the appropriate feature, either <feature>nominative</feature>, <feature>accusative</feature>, <feature>ergative</feature>, <feature>absolutive</feature>, or possibly <feature>genitive</feature>, based on your case system (discussed in <section number="5">Simple and Possessed Nominal Phrases</section>).</instruction>
+		<buttons>
+			<button id="PronPN2OK" value="OK" goto="PronCase.htm"/>
+			<button id="PronPN2Cancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

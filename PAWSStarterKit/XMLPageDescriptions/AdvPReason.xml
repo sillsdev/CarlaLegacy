@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKCodeMapper.xsl"?>
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+  <title level="2">Adverbs and AdvP - Reason Adverbs</title>
+  <introduction>Reason adverbs include <example>therefore</example> and
+<example>so</example>.  Reason can also be expressed by a
+prepositional phrase <example>for this reason</example> and
+by an adverbial clause beginning with <example>because</example>.  Reason adverbs do not allow modifiers
+(at least in English).
+</introduction>
+  <form>
+	<prompt>Key your examples here:</prompt>
+	<textBox id="AdvPReasonExample"/>
+	<codeInfo>These go in advtest.txt</codeInfo>
+	<instruction>In the lexicon, key the feature <feature>reason</feature> on
+all adverbs that express reason, and also on the nouns like <example>reason</example> and <example>purpose</example>.
+</instruction>
+	<buttons>
+	  <button id="AdvPReasonExamplesOK" value="OK" goto="AdvPDegree.htm"/>
+	  <button id="AdvPReasonExamplesCancel" value="Cancel"/>
+	</buttons>
+  </form>
+</page>

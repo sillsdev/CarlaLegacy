@@ -1,0 +1,5695 @@
+|PC-PATR Grammar file for PAWS Starter Kit - starter3.doc
+| C Black    Feb 2001
+
+|Feature templates
+
+Let absolutive		be	<head agr case absolutive>	= +
+				<head agr case ergative>	= -
+				<head agr case genitive>	= -
+Let -absolutive		be	<head agr case absolutive>	= -
+				<head agr case ergative>	= +
+				<head agr case genitive>	= +
+Let accusative		be	<head agr case accusative>	= +
+				<head agr case nominative>	= -
+				<head agr case genitive>	= -
+Let -accusative		be	<head agr case accusative>	= -
+				<head agr case nominative>	= +
+				<head agr case genitive>	= +
+Let AdjP-final		be	<head type AdjP-final>		= +
+				<head type AdjP-initial>	= -
+Let AdjP-initial	be	<head type AdjP-initial>	= +
+				<head type AdjP-final>		= -
+Let AdvP-final		be	<head type AdvP-final>		= +
+				<head type AdvP-initial>	= -
+Let AdvP-initial	be	<head type AdvP-initial>	= +
+				<head type AdvP-final>		= -
+Let animate		be	<head agr animate>		= +
+Let animate_object	be	<head object head agr animate> 	= +
+Let animate_subject	be	<head subject head agr animate>	= +
+Let -animate		be	<head agr animate>		= -
+Let -animate_object	be	<head object head agr animate> 	= -
+Let -animate_subject	be	<head subject head agr animate>	= -
+Let class_##		be	<head agr class>		= ##
+	| generate the above entry for ## = 1-99 as needed
+Let class_##_object	be	<head object agr class>		= ##
+	| generate the above entry for ## = 1-99 as needed
+Let class_##_subject	be	<head subject agr class>	= ##
+	| generate the above entry for ## = 1-99 as needed
+Let completive		be	<head infl aspect completive>	= +
+Let continuative	be	<head infl aspect continuative>	= +
+Let copular		be	<head type copular>		= +
+				<head type transitive>		= -
+Let CP-final		be	<head type CP-final>		= +
+Let CP-initial		be	<head type CP-initial>		= +
+Let CP-specifier-initial be	<head type CP-specifier-initial> = +
+Let declarative		be	<head infl mood declarative>	= +
+Let ditransitive	be	<head type ditransitive>	= +
+								<head type transitive>          = +
+Let DP-final		be	<head type DP-final>		= +
+				<head type DP-initial>		= -
+Let DP-initial		be	<head type DP-initial>		= +
+				<head type DP-final>		= -
+Let dual		be	<head agr number dual>		= +
+				<head agr number singular>	= -
+				<head agr number plural>	= -
+Let dual_object		be	<head object head agr number dual> = +
+Let dual_subject	be	<head subject head agr number dual> = +
+Let ergative		be	<head agr case ergative>	= +
+				<head agr case absolutive>	= -
+				<head agr case genitive>	= -
+Let -ergative		be	<head agr case ergative>	= -
+				<head agr case absolutive>	= +
+				<head agr case genitive>	= +
+Let exclusive		be	<head agr person second>	= -
+Let feminine		be	<head agr gender feminine> 	= +
+Let feminine_object	be	<head object head agr gender feminine> = +
+Let feminine_subject	be	<head subject head agr gender feminine> = +
+Let first		be	<head agr person first>		= +
+				<head agr person second>	= !-
+				<head agr person third>		= -
+Let first_exclusive_subject be  <head subject head agr person first> = +
+				<head subject head agr person second> = -
+Let first_exclusive_object  be  <head object head agr person first> = +
+				<head object head agr person second> = -
+Let first_inclusive_subject be  <head subject head agr person first> = +
+				<head subject head agr person second> = +
+Let first_inclusive_object be   <head object head agr person first> = +
+				<head object head agr person second> = +
+Let first_object	be	<head object head agr person first>  = +
+Let first_subject	be	<head subject head agr person first> = +
+Let future		be	<head infl tense future>	= +
+Let genitive		be	<head agr case genitive>	= +
+Let -genitive		be	<head agr case genitive>	= -
+Let habitual		be	<head infl aspect habitual>	= +
+Let imperative		be	<head infl mood imperative>	= +
+Let imperfective	be	<head infl aspect perfective>	= -
+Let inclusive		be	<head agr person second>	= +
+Let incompletive	be	<head infl aspect completive> 	= -
+Let interrogative	be	<head infl mood interrogative>	= +
+Let intransitive	be	<head type transitive>		= -
+Let irrealis		be	<head infl mood realis>		= -
+Let locative		be	<head type locative>		= +
+Let manner		be	<head type manner>		= +
+Let masculine		be	<head agr gender masculine>	= +
+Let masculine_object	be	<head object head agr gender masculine> = +
+Let masculine_subject	be	<head subject head agr gender masculine> = +
+Let modifies_Adj	be	<head type modifies_Adj>	= +
+Let modifies_Adv	be	<head type modifies_Adv temporal> = +
+				<head type modifies_Adv locative> = +
+				<head type modifies_Adv manner> = +
+				<head type modifies_Adv reason> = +
+Let modifies_Adv-reason be	<head type modifies_Adv reason>	= -
+				<head type modifies_Adv locative> = +
+				<head type modifies_Adv manner> = +
+				<head type modifies_Adv temporal> = +
+Let modifies_locative	be	<head type modifies_Adv locative> = +
+Let modifies_manner	be	<head type modifies_Adv manner>	= +
+Let modifies_NP		be	<head type modifies_NP>		= +
+Let modifies_PP		be	<head type modifies_PP>		= +
+Let modifies_Q 		be	<head type modifies_Q>		= +
+Let modifies_reason	be	<head type modifies_Adv reason>	= +
+Let modifies_temporal	be	<head type modifies_Adv temporal> = +
+Let motion		be	<head type motion>		= +
+				[intransitive]
+Let negative		be	<head type negative>		= +
+Let neuter		be	<head agr gender neuter>	= +
+Let neuter_object	be	<head object head agr gender neuter> = +
+Let neuter_subject	be	<head subject head agr gender neuter> = +
+Let nominative		be	<head agr case nominative> 	= +
+				<head agr case accusative>	= -
+				<head agr case genitive>	= -
+Let -nominative		be	<head agr case nominative> 	= -
+				<head agr case accusative>	= +
+				<head agr case genitive>	= +
+Let partitive		be	<head type partitive>		= +
+Let passive		be	<head type passive>		= +
+Let past		be	<head infl tense past>		= +
+Let perfective		be	<head infl aspect perfective>	= +
+Let plural		be	<head agr number plural>	= +
+				<head agr number singular>	= -
+Let plural_object	be	<head object head agr number plural> = +
+Let plural_subject	be	<head subject head agr number plural> = +
+Let poss_dual		be	<head possessor agr number dual>     = +
+				<head possessor agr number singular> = -
+				<head possessor agr number plural>   = -
+Let poss_exclusive	be	<head possessor agr person first>  = +
+				<head possessor agr person second> = -
+				<head possessor agr person third>  = -
+Let poss_first		be	[poss_exclusive]
+Let poss_inclusive	be	<head possessor agr person first>  = +
+				<head possessor agr person second> = +
+				<head possessor agr person third>  = -
+Let poss_plural		be	<head possessor agr number plural>   = +
+				<head possessor agr number singular> = -
+Let poss_second		be	<head possessor agr person first>  = -
+				<head possessor agr person second> = +
+				<head possessor agr person third>  = -
+Let poss_singular	be	<head possessor agr number plural>   = -
+				<head possessor agr number singular> = +
+Let poss_third		be	<head possessor agr person first>  = -
+				<head possessor agr person second> = -
+				<head possessor agr person third>  = +
+Let possessive		be	<head type possessive> = +
+Let potential		be	<head infl aspect potential>	= +
+Let PP-final		be	<head type QP-final>		= +
+				<head type QP-initial>		= -
+Let PP-initial		be	<head type QP-initial>		= +
+				<head type QP-final>		= -
+Let present		be	<head infl tense present>	= +
+Let progressive		be	<head infl aspect progressive> 	= +
+Let -question		be	<head type question>		= -
+Let QP-final		be	<head type QP-final>		= +
+				<head type QP-initial>		= -
+Let QP-initial		be	<head type QP-initial>		= +
+				<head type QP-final>		= -
+Let quantifier		be	<head type quantifier>		= +
+Let reason		be	<head type reason>		= +
+Let realis		be	<head infl mood realis>		= +
+Let reciprocal 		be	<head type reciprocal>		= +
+Let reflexive		be	<head type reflexive>		= +
+Let +root		be	<head type root>		= +
+Let -root		be	<head type root>		= -
+Let second		be	<head agr person second>	= +
+				<head agr person first>		= -
+				<head agr person third>		= -
+Let second_object	be	<head object head agr person second> = +
+Let second_subject	be	<head subject head agr person second> = +
+Let sentential		be	<head type sentential>		= +
+Let singular		be	<head agr number singular>	= +
+				<head agr number plural>	= -
+Let singular_object	be	<head object head agr number singular> = +
+Let singular_subject	be	<head subject head agr number singular> = +
+Let stative		be	<head infl aspect stative>	= +
+Let temporal		be	<head type temporal>		= +
+Let third		be	<head agr person third>		= +
+				<head agr person first>		= -
+				<head agr person second>	= -
+Let third_object	be	<head object head agr person third> = +
+Let third_subject	be	<head subject head agr person third> = +
+Let transitive		be	<head type transitive>		= +
+Let wh			be	<head type wh>			= +
+Let -wh			be	<head type wh> 			= -
+
+
+
+
+
+
+|Category changes and defaults
+
+Let Adj			be	<cat> = Adj
+				<head type ordinal>		= !-
+				<head type wh>			= !-
+
+Let Adv			be	<cat> = Adv
+				<head type wh>			= !-
+
+Let Art			be	<cat> = Art
+				<head type wh>			= !-
+
+Let Aux			be	<cat> = Aux
+				<head type passive>		= !-
+
+Let C			be	<cat> = C
+				<head type question>		= !+
+				<head type CP-specifier-initial> = !-
+
+Let Deg 		be	<cat> = Deg
+				<head type modifies_Adj>	= !-
+				<head type modifies_Adv temporal> = !-
+				<head type modifies_Adv locative> = !-
+				<head type modifies_Adv manner>	= !-
+				<head type modifies_Adv reason>	= !-
+				<head type modifies_NP>		= !-
+				<head type modifies_PP>		= !-
+				<head type modifies_Q>		= !-
+				<head type quantifier>		= !-
+				<head type wh>			= !-
+
+Let Dem			be	<cat> = Dem
+				<head type wh>			= !-
+
+Let N			be	<head agr animate>		= !-
+				<head agr person third>		= !+
+				<head agr person first>		= !-
+				<head agr person second>	= !-
+				<head agr number singular>	= !+
+				<head agr number plural>	= !-
+				<head type wh>			= -
+				<head type reciprocal>		= !-
+
+Let Num			be	<cat> = Num
+				<head type ordinal>		= !-
+				<head type wh>			= !-
+
+Let ordinal     	be	<cat> = Adj
+				<head type ordinal>		= +
+
+Let P			be	<cat> = P
+				<head type passive>		= !-
+				<head type wh>			= -
+				<head type partitive>		= !-
+
+Let Poss		be	<cat> = Poss
+				[genitive]
+
+Let Pron		be	<cat> = Pron
+				<head type wh>			= !-
+				<head agr animate>		= !+
+				<head agr case genitive>	= !-
+				<head type reciprocal>		= !-
+
+Let PropN		be	<cat> = N
+				<head agr animate>		= !+
+				<head agr person third>		= !+
+				<head agr person first>		= !-
+				<head agr person second>	= !-
+				<head agr number singular>	= !+
+				<head agr number plural>	= !-
+				<head type wh>			= -
+
+Let Q			be	<cat> = Q
+				<head type wh>			= !-
+
+Let V			be	<cat> = V
+				<head type passive> 		= !-
+				<head type sentential>		= !-
+				<head type copular>		= !-
+				<head type motion>		= !-
+				<head type reciprocal>		= !-
+
+
+
+|--------------------------------------------------------------------
+|Phrase structure rules
+
+|testing
+|rule
+|S = AdvP / AdjP / QP / DP / PP
+
+|start symbol
+rule {start symbol}
+S = IP / CP
+	<S head> = <IP head>
+	<S head> = <CP head>
+	<IP head type root> = +
+	<IP head type question> = -
+	<CP head type root> = +
+
+|********************************************************
+|CP option 1 - no fronting, root
+rule {CP option 1 - no fronting, root}
+CP = C'
+	<CP head> = <C' head>
+	<C' head type root > = +
+	<C' head type vacuous> = -		| to avoid empty CP
+	<C' head fronted> = none
+
+|CP option 2a - DP specifier initial, wh, root
+rule {CP option 2a - DP specifier initial, wh, root}
+CP = DP C'
+	<CP head> = <C' head>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C' head fronted> = <DP>
+	<DP head type wh> = +
+
+|CP option 2b - PP specifier initial, wh, root
+rule {CP option 2b - PP specifier initial, wh, root}
+CP = PP C'
+	<CP head> = <C' head>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C' head fronted> = <PP>
+	<PP head type wh> = +
+
+|CP option 2c - AdvP specifier initial, wh, root
+rule {CP option 2c - AdvP specifier initial, wh, root}
+CP = AdvP C'
+	<CP head> = <C' head>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C' head fronted> = <AdvP>
+	<AdvP head type wh> = +
+
+|CP option 2d - C, DP specifier initial, wh, root
+rule {CP option 2d - C, DP specifier initial, wh, root}
+CP = C DP C'
+	<CP head> = <C' head>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C head type question> = +
+	<C head type wh> = +
+	<C head type CP-specifier-initial> = +
+	<C' head fronted> = <DP>
+	<DP head type wh> = +
+
+|CP option 2e - C, PP specifier initial, wh, root
+rule {CP option 2e - C, PP specifier initial, wh, root}
+CP = C PP C'
+	<CP head> = <C' head>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C head type question> = +
+	<C head type wh> = +
+	<C head type CP-specifier-initial> = +
+	<C' head fronted> = <PP>
+	<PP head type wh> = +
+
+|CP option 2f - C, AdvP specifier initial, wh, root
+rule {CP option 2f - C, AdvP specifier initial, wh, root}
+CP = C AdvP C'
+	<CP head> = <C' head>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C head type question> = +
+	<C head type wh> = +
+	<C head type CP-specifier-initial> = +
+	<C' head fronted> = <AdvP>
+	<AdvP head type wh> = +
+
+|CP option 3 - no fronting, non-root
+rule {CP option 3 - no fronting, non-root}
+CP = C'
+	<CP head> = <C' head>
+	<C' head type root > = -
+	<C' head type vacuous> = -		| to avoid empty CP
+	<C' head fronted> = none
+
+|CP option 4a - DP specifier initial, wh, non-root
+rule {CP option 4a - DP specifier initial, wh, non-root}
+CP = DP C'
+	<CP head> = <C' head>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C' head fronted> = <DP>
+	<DP head type wh> = +
+
+|CP option 4b - PP specifier initial, wh, non-root
+rule {CP option 4b - PP specifier initial, wh, non-root}
+CP = PP C'
+	<CP head> = <C' head>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C' head fronted> = <PP>
+	<PP head type wh> = +
+
+|CP option 4c - AdvP specifier initial, wh, non-root
+rule {CP option 4c - AdvP specifier initial, wh, non-root}
+CP = AdvP C'
+	<CP head> = <C' head>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C' head fronted> = <AdvP>
+	<AdvP head type wh> = +
+
+|CP option 4d - C, DP specifier initial, wh, non-root
+rule {CP option 4d - C, DP specifier initial, wh, non-root}
+CP = C DP C'
+	<CP head> = <C' head>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C head type question> = +
+	<C head type wh> = +
+	<C head type CP-specifier-initial> = +
+	<C' head fronted> = <DP>
+	<DP head type wh> = +
+
+|CP option 4e - C, PP specifier initial, wh, non-root
+rule {CP option 4e - C, PP specifier initial, wh, non-root}
+CP = C PP C'
+	<CP head> = <C' head>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C head type question> = +
+	<C head type wh> = +
+	<C head type CP-specifier-initial> = +
+	<C' head fronted> = <PP>
+	<PP head type wh> = +
+
+|CP option 4f - C, AdvP specifier initial, wh, non-root
+rule {CP option 4f - C, AdvP specifier initial, wh, non-root}
+CP = C AdvP C'
+	<CP head> = <C' head>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type wh> = +
+	<C head type question> = +
+	<C head type wh> = +
+	<C head type CP-specifier-initial> = +
+	<C' head fronted> = <AdvP>
+	<AdvP head type wh> = +
+
+|********************************************************
+|C' option 1a - head vacuous, root, no aux fronting
+rule {C' option 1a - head vacuous, root, no aux fronting}
+C' = IP
+	<C' head> = <IP head>
+	<C' head type root> = +
+	<C' head type vacuous> = +		| to avoid empty CP
+
+|C' option 1b - head vacuous, root, with possible aux fronting
+rule {C' option 1b - head vacuous, root, with possible aux fronting}
+C' = IP
+	<C' head> = <IP head>
+	<C' head type root> = +
+	<C' head type vacuous> = +		| to avoid empty CP
+	<IP head type auxiliary> = -		| if aux present, must front
+
+|C' option 1c - head-initial, question, root
+rule {C' option 1c - head-initial, question, root}
+C' = C IP
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+
+|C' option 1d - Aux initial, question, root
+rule {C' option 1d - Aux initial, question, root}
+C' = Aux IP
+	<C' head> = <IP head>
+	<C' head type root> = +
+	<C' head type question> = +
+
+|C' option 1e - head-final, question, root
+rule {C' option 1e - head-final, question, root}
+C' = IP C
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-final> = +
+
+|C' option 1f - Aux final, question, root
+rule {C' option 1f - Aux final, question, root}
+C' = IP Aux
+	<C' head> = <IP head>
+	<C' head type root> = +
+	<C' head type question> = +
+
+|C' option 1g - head both sides, question, root
+rule {C' option 1g - head both sides, question, root}
+C' = C IP C_1
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 1h - head both sides, initial required, question, root
+rule {C' option 1h - head both sides, initial required, question, root}
+C' = C IP (C_1)
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 1i - head both sides, final required, question, root
+rule {C' option 1i - head both sides, final required, question, root}
+C' = (C) IP C_1
+	<C' head> = <IP head>
+	<C' head type> = <C_1 head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = +
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 1j - head-initial, non-question, root
+rule {C' option 1j - head-initial, non-question, root}
+C' = C IP
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C' head type root> = +
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+
+|C' option 1k - head-final, non-question, root
+rule {C' option 1k - head-final, non-question, root}
+C' = IP C
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C' head type root> = +
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-final> = +
+
+|C' option 1l - head both sides, non-question, root
+rule {C' option 1l - head both sides, non-question, root}
+C' = C IP C_1
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = +
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 1m - head both sides, initial required, non-question, root
+rule {C' option 1m - head both sides, initial required, non-question, root}
+C' = C IP (C_1)
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = +
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 1n - head both sides, final required, non-question, root
+rule {C' option 1n - head both sides, final required, non-question, root}
+C' = (C) IP C_1
+	<C' head> = <IP head>
+	<C' head type> = <C_1 head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = +
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 2a - head vacuous, non-root, no aux fronting
+rule {C' option 2a - head vacuous, non-root, no aux fronting}
+C' = IP
+	<C' head> = <IP head>
+	<C' head type root> = -
+	<C' head type vacuous> = +		| to avoid empty CP
+
+|C' option 2b - head vacuous, non-root, with possible aux fronting
+rule {C' option 2b - head vacuous, non-root, with possible aux fronting}
+C' = IP
+	<C' head> = <IP head>
+	<C' head type root> = -
+	<C' head type vacuous> = +		| to avoid empty CP
+	<IP head type auxiliary> = -		| if aux present, must front
+
+|C' option 2c - head-initial, question, non-root
+rule {C' option 2c - head-initial, question, non-root}
+C' = C IP
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+
+|C' option 2d - Aux initial, question, non-root
+rule {C' option 2d - Aux initial, question, non-root}
+C' = Aux IP
+	<C' head> = <IP head>
+	<C' head type root> = -
+	<C' head type question> = +
+
+|C' option 2e - head-final, question, non-root
+rule {C' option 2e - head-final, question, non-root}
+C' = IP C
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-final> = +
+
+|C' option 2f - Aux final, question, non-root
+rule {C' option 2f - Aux final, question, non-root}
+C' = IP Aux
+	<C' head> = <IP head>
+	<C' head type root> = -
+	<C' head type question> = +
+
+|C' option 2g - head both sides, question, non-root
+rule {C' option 2g - head both sides, question, non-root}
+C' = C IP C_1
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 2h - head both sides, initial required, question, non-root
+rule {C' option 2h - head both sides, initial required, question, non-root}
+C' = C IP (C_1)
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 2i - head both sides, final required, question, non-root
+rule {C' option 2i - head both sides, final required, question, non-root}
+C' = (C) IP C_1
+	<C' head> = <IP head>
+	<C' head type> = <C_1 head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = -
+	<C' head type question> = +
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 2j - head-initial, non-question, non-root
+rule {C' option 2j - head-initial, non-question, non-root}
+C' = C IP
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C' head type root> = -
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+
+|C' option 2k - head-final, non-question, non-root
+rule {C' option 2k - head-final, non-question, non-root}
+C' = IP C
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C' head type root> = -
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-final> = +
+
+|C' option 2l - head both sides, non-question, non-root
+rule {C' option 2l - head both sides, non-question, non-root}
+C' = C IP C_1
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = -
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 2m - head both sides, initial required, non-question, non-root
+rule {C' option 2m - head both sides, initial required, non-question, non-root}
+C' = C IP (C_1)
+	<C' head> = <IP head>
+	<C' head type> = <C head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = -
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|C' option 2n - head both sides, final required, non-question, non-root
+rule {C' option 2n - head both sides, final required, non-question, non-root}
+C' = (C) IP C_1
+	<C' head> = <IP head>
+	<C' head type> = <C_1 head type>
+	<C head type question> = <C_1 head type question>
+	<C' head type root> = -
+	<C' head type question> = -
+	<C' head type vacuous> = -
+	<C head type CP-initial> = +
+	<C_1 head type CP-final> = +
+
+|********************************************************
+|IP option 1 - no subject for imperatives
+rule {IP option 1 - no subject for imperatives}
+IP = I'
+	<IP head> = <I' head>
+	<I' head infl mood imperative> = +
+	<IP head type question> = -
+
+|IP option 2a - subject initial, required, not passive
+rule {IP option 2a - subject initial, required, not passive}
+IP = DP I'
+	<IP head> = <I' head>
+	<I' head subject> = <DP>
+	<DP head agr case nominative> = +
+	<DP head type wh> = -
+	<IP head type passive> = -
+	<IP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<IP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|IP option 2b - subject initial, required, passive
+rule {IP option 2b - subject initial, required, passive}
+IP = DP I'
+	<IP head> = <I' head>
+	<I' head object> = <DP>
+	<DP head agr case nominative> = +
+	<DP head type wh> = -
+	<IP head type passive> = +
+	{<IP head type question> = -
+	/<IP head type question> = +
+	 <IP head fronted cat> = AdvP
+	/<IP head type question> = +
+	 <IP head fronted cat> = PP
+	}
+
+|IP option 2c - subject initial, optional for pro-drop, not passive
+rule {IP option 2c - subject initial, optional for pro-drop, not passive}
+IP = (DP) I'
+	<IP head> = <I' head>
+	<I' head subject> = <DP>
+	<DP head agr case nominative> = +
+	<DP head type wh> = -
+	<IP head type passive> = -
+	<IP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<IP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|IP option 2d - subject initial, optional for pro-drop, passive
+rule {IP option 2d - subject initial, optional for pro-drop, passive}
+IP = (DP) I'
+	<IP head> = <I' head>
+	<I' head object> = <DP>
+	<DP head agr case nominative> = +
+	<DP head type wh> = -
+	<IP head type passive> = +
+	<IP head type question> = -
+	{<IP head type question> = -
+	/<IP head type question> = +
+	 <IP head fronted cat> = AdvP
+	/<IP head type question> = +
+	 <IP head fronted cat> = PP
+	}
+
+|IP option 2e - subject final, required, not passive
+rule {IP option 2e - subject final, required, not passive}
+IP = I' DP
+	<IP head> = <I' head>
+	<I' head subject> = <DP>
+	<DP head agr case nominative> = +
+	<DP head type wh> = -
+	<IP head type passive> = -
+	<IP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<IP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|IP option 2f - subject final, required, passive
+rule {IP option 2f - subject final, required, passive}
+IP = I' DP
+	<IP head> = <I' head>
+	<I' head object> = <DP>
+	<DP head agr case nominative> = +
+	<DP head type wh> = -
+	<IP head type passive> = +
+	{<IP head type question> = -
+	/<IP head type question> = +
+	 <IP head fronted cat> = AdvP
+	/<IP head type question> = +
+	 <IP head fronted cat> = PP
+	}
+
+|IP option 2g - subject final, optional for pro-drop, not passive
+rule {IP option 2g - subject final, optional for pro-drop, not passive}
+IP = I' (DP)
+	<IP head> = <I' head>
+	<I' head subject> = <DP>
+	<DP head agr case nominative> = +
+	<DP head type wh> = -
+	<IP head type passive> = -
+	<IP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<IP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|IP option 2h - subject final, optional for pro-drop, passive
+rule {IP option 2h - subject final, optional for pro-drop, passive}
+IP = I' (DP)
+	<IP head> = <I' head>
+	<I' head object> = <DP>
+	<DP head agr case nominative> = +
+	<DP head type wh> = -
+	<IP head type passive> = +
+	{<IP head type question> = -
+	/<IP head type question> = +
+	 <IP head fronted cat> = AdvP
+	/<IP head type question> = +
+	 <IP head fronted cat> = PP
+	}
+
+|IP option 3 - subject internal to VP for VSO, OSV
+rule {IP option 3 - subject internal to VP for VSO, OSV}
+IP = I'
+	<IP head> = <I' head>
+
+|IP option 4a - subject questioned, not passive
+rule {IP option 4a - subject questioned, not passive}
+IP = I'
+	<IP head> = <I' head>
+	<IP head type question> = +
+	<IP head type passive> = -
+	<IP head fronted cat> = DP
+	<IP head fronted head type wh> = +
+	<IP head fronted head agr case nominative> = +
+	<IP head fronted> = <I' head subject>
+	<IP rule> = 4a
+
+|IP option 4b - subject questioned, passive
+rule {IP option 4b - subject questioned, passive}
+IP = I'
+	<IP head> = <I' head>
+	<IP head type question> = +
+	<IP head type passive> = +
+	<IP head fronted cat> = DP
+	<IP head fronted head type wh> = +
+	<IP head fronted head agr case nominative> = +
+	<IP head fronted> = <I' head object>
+	<IP rule> = 4b
+
+|IP option 5 - adverb questioned, copular verb
+rule {IP option 5 - adverb questioned, copular verb}
+IP = I'
+	<IP head> = <I' head>
+	<IP head type question> = +
+	<IP head fronted cat> = AdvP
+	<IP head fronted head type wh> = +
+	<I' head type copular> = +
+	<I' head type transitive> = -
+	<I' head type passive> = -
+
+|********************************************************
+|I' option 1 - no auxiliaries
+rule {I' option 1 - no auxiliaries}
+I' = VP
+	<I' head> = <VP head>
+	{<I' head type auxiliary> = -
+	 <I' head type question> = -
+	/<I' head type question> = +
+	}
+
+|I' option 2 - Aux initial, required
+rule {I' option 2 - Aux initial, required}
+I' = Aux VP
+	<I' head> = <VP head>
+	<I' head type auxiliary> = +
+	<I' head subject agr> = <Aux head subject agr>
+
+|I' option 3 - Aux final, required
+rule {I' option 3 - Aux final, required}
+I' = VP Aux
+	<I' head> = <VP head>
+	<I' head type auxiliary> = +
+	<I' head subject agr> = <Aux head subject agr>
+
+|********************************************************
+|VP option 1a - Aux initial, VP complement
+rule {VP option 1a - Aux initial, VP complement}
+VP = Aux VP_1
+	<VP head> = <VP_1 head>
+	<VP head type auxiliary> = +	| must have higher aux
+
+|VP option 1b - Aux final, VP complement
+rule {VP option 1b - Aux final, VP complement}
+VP = VP_1 Aux
+	<VP head> = <VP_1 head>
+	<VP head type auxiliary> = +	| must have higher aux
+
+|VP option 1c - Aux only for non-root copular questions - English specific?
+rule {VP option 1c - Aux only for non-root copular questions - English specific?}
+VP = Aux
+	<VP head> = <Aux head>
+	<VP head type copular> = +
+	<VP head type question> = +
+	<VP head type root> = -
+
+|VP option 2a - V initial/final, intransitive
+rule {VP option 2a - V initial/final, intransitive}
+VP = V
+	<VP head> = <V head>
+	<V head type transitive> = -
+	<V head type passive> = -
+
+|VP option 2b - VSO order, intransitive
+rule {VP option 2b - VSO order, intransitive}
+VP = V DP
+	<VP head> = <V head>
+	<V head type transitive> = -
+	<V head subject> = <DP>
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 2bi - VSO order, intransitive, imperative
+rule {VP option 2bi - VSO order, intransitive, imperative}
+VP = V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head type transitive> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 2bp - VSO order, intransitive, pro-drop
+rule {VP option 2bp - VSO order, intransitive, pro-drop}
+VP = V (DP)
+	<VP head> = <V head>
+	<V head type transitive> = -
+	<V head subject> = <DP>
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 2c - OSV order, intransitive
+rule {VP option 2c - OSV order, intransitive}
+VP = DP V
+	<VP head> = <V head>
+	<V head type transitive> = -
+	<V head subject> = <DP>
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 2ci - OSV order, intransitive, imperative
+rule {VP option 2ci - OSV order, intransitive, imperative}
+VP = V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head type transitive> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 2cp - OSV order, intransitive, pro-drop
+rule {VP option 2cp - OSV order, intransitive, pro-drop}
+VP = (DP) V
+	<VP head> = <V head>
+	<V head type transitive> = -
+	<V head subject> = <DP>
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 2d - VSO/OSV, intransitive, subject questioned
+rule {VP option 2d - VSO/OSV, intransitive, subject questioned}
+VP = V
+	<VP head> = <V head>
+	<V  head type transitive> = -
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head type wh> = +
+	<VP head fronted> = <V head subject>
+
+|VP option 3a - V initial, motion intransitive
+rule {VP option 3a - V initial, motion intransitive}
+VP = V {PP / AdvP}
+	<VP head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head type passive> = -
+
+|VP option 3b - V final, motion intransitive
+rule {VP option 3b - V final, motion intransitive}
+VP = {PP / AdvP} V
+	<VP head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head type passive> = -
+
+|VP option 3c - VSO order, motion intransitive
+rule {VP option 3c - VSO order, motion intransitive}
+VP = V DP {PP / AdvP}
+	<VP head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head subject> = <DP>
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted cat> = PP
+	}
+
+|VP option 3ci - VSO order, motion intransitive, imperative
+rule {VP option 3ci - VSO order, motion intransitive, imperative}
+VP = V {PP / AdvP}
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type motion> = +
+	<V head type transitive> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 3cp - VSO order, motion intransitive, pro-drop
+rule {VP option 3cp - VSO order, motion intransitive, pro-drop}
+VP = V (DP) {PP / AdvP}
+	<VP head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head subject> = <DP>
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted cat> = PP
+	}
+
+|VP option 3d - OSV order, motion intransitive
+rule {VP option 3d - OSV order, motion intransitive}
+VP = {PP / AdvP} DP V
+	<VP head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head subject> = <DP>
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted cat> = PP
+	}
+
+|VP option 3di - OSV order, motion intransitive, imperative
+rule {VP option 3di - OSV order, motion intransitive, imperative}
+VP = {PP / AdvP} V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type motion> = +
+	<V head type transitive> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 3dp - OSV order, motion intransitive, pro-drop
+rule {VP option 3dp - OSV order, motion intransitive, pro-drop}
+VP = {PP / AdvP} (DP) V
+	<VP head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head subject> = <DP>
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted cat> = PP
+	}
+
+|VP option 3e - VSO order, motion intransitive, subject questioned
+rule {VP option 3e - VSO order, motion intransitive, subject questioned}
+VP = V {PP / AdvP}
+	<VP head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head type passive> = -
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head type wh> = +
+	<VP head fronted> = <V head subject>
+
+|VP option 3f - OSV order, motion intransitive, subject questioned
+rule {VP option 3f - OSV order, motion intransitive, subject questioned}
+VP = {PP / AdvP} V
+	<VP head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head type passive> = -
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head type wh> = +
+	<VP head fronted> = <V head subject>
+
+|VP option 4a - V initial, copular, not passive
+rule {VP option 4a - V initial, copular, not passive}
+VP = V {PP / AdjP / DP}
+	<VP head> = <V head>
+	<V head type copular> = +
+	<PP head type sentential> = -
+	<VP head type passive> = -
+
+|VP option 4b - V final, copular, not passive
+rule {VP option 4b - V final, copular, not passive}
+VP = {PP / AdjP / DP} V
+	<VP head> = <V head>
+	<V head type copular> = +
+	<PP head type sentential> = -
+	<VP head type passive> = -
+
+|VP option 4c - copular sentence, no verb, not passive, no aux required
+rule {VP option 4c - copular sentence, no verb, not passive, no aux required}
+VP = {PP / AdjP / DP}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP head>
+	<PP head type sentential> = -
+	<VP head type copular> = +
+	<VP head type passive> = -
+
+|VP option 4d - copular sentence, no verb, not passive, aux required
+rule {VP option 4d - copular sentence, no verb, not passive, aux required}
+VP = {PP / AdjP / DP}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP head>
+	<PP head type sentential> = -
+	<VP head type copular> = +
+	<VP head type auxiliary> = +
+	<VP head type passive> = -
+
+|VP option 4e - VSO order, copular
+rule {VP option 4e - VSO order, copular}
+VP = V DP {PP / AdjP / DP_1}
+	<VP head> = <V head>
+	<V head type copular> = +
+	<V head subject> = <DP>
+	<VP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4ei - VSO order, copular, imperative
+rule {VP option 4ei - VSO order, copular, imperative}
+VP = V {PP / AdjP / DP_1}
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<PP head type sentential> = -
+	<V head type copular> = +
+	<V head type transitive> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 4ep - VSO order, copular, pro-drop
+rule {VP option 4ep - VSO order, copular, pro-drop}
+VP = V (DP) {PP / AdjP / DP_1}
+	<VP head> = <V head>
+	<V head type copular> = +
+	<V head subject> = <DP>
+	<VP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4f - VSO order, copular sentence, no verb, no Aux required
+rule {VP option 4f - VSO order, copular sentence, no verb, no Aux required}
+VP = DP {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head subject> = <DP>
+	<VP head type passive> = -
+	<DP head type wh> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4fa - VSO order, copular sentence, no verb, Aux required
+rule {VP option 4f - VSO order, copular sentence, no verb, Aux required}
+VP = DP {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head type auxiliary> = +
+	<VP head subject> = <DP>
+	<VP head type passive> = -
+	<DP head type wh> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4fi - VSO order, copular sentence, no verb, imperative, no Aux required
+rule {VP option 4fi - VSO order, copular sentence, no verb, imperative, no Aux required}
+VP = {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head infl mood imperative> = +
+	<PP head type sentential> = -
+	<VP head type copular> = +
+	<VP head type transitive> = -
+	<VP head type passive> = -
+	<VP head type question> = -
+
+|VP option 4fai - VSO order, copular sentence, no verb, imperative, Aux required
+rule {VP option 4fai - VSO order, copular sentence, no verb, imperative, Aux required}
+VP = {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head infl mood imperative> = +
+	<PP head type sentential> = -
+	<VP head type copular> = +
+	<VP head type auxiliary> = +
+	<VP head type transitive> = -
+	<VP head type passive> = -
+	<VP head type question> = -
+
+|VP option 4fp - VSO order, copular sentence, no verb, pro-drop, no Aux required
+rule {VP option 4fp - VSO order, copular sentence, no verb, pro-drop, no Aux required}
+VP = (DP) {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head subject> = <DP>
+	<VP head type passive> = -
+	<DP head type wh> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4fap - VSO order, copular sentence, no verb, pro-drop, Aux required
+rule {VP option 4fap - VSO order, copular sentence, no verb, pro-drop, Aux required}
+VP = (DP) {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head type auxiliary> = +
+	<VP head subject> = <DP>
+	<VP head type passive> = -
+	<DP head type wh> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4g - OSV order, copular
+rule {VP option 4g - OSV order, copular}
+VP = {PP / AdjP / DP_1} DP V
+	<VP head> = <V head>
+	<V head type copular> = +
+	<V head subject> = <DP>
+	<VP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4gi - OSV order, copular, imperative
+rule {VP option 4gi - OSV order, copular, imperative}
+VP = {PP / AdjP / DP_1} V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<PP head type sentential> = -
+	<V head type copular> = +
+	<V head type transitive> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 4gp - OSV order, copular, pro-drop
+rule {VP option 4gp - OSV order, copular, pro-drop}
+VP = {PP / AdjP / DP_1} (DP) V
+	<VP head> = <V head>
+	<V head type copular> = +
+	<V head subject> = <DP>
+	<VP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4h - OSV order, copular sentence, no verb, no Aux required
+rule {VP option 4h - OSV order, copular sentence, no verb, no Aux required}
+VP = {PP / AdjP / DP_1} DP
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head subject> = <DP>
+	<VP head type passive> = -
+	<DP head type wh> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4ha - OSV order, copular sentence, no verb, Aux required
+rule {VP option 4ha - OSV order, copular sentence, no verb, Aux required}
+VP = {PP / AdjP / DP_1} DP
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head type auxiliary> = +
+	<VP head subject> = <DP>
+	<VP head type passive> = -
+	<DP head type wh> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4hi - OSV order, copular sentence, no verb, imperative, no Aux required
+rule {VP option 4hi - OSV order, copular sentence, no verb, imperative, no Aux required}
+VP = {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head infl mood imperative> = +
+	<PP head type sentential> = -
+	<VP head type copular> = +
+	<VP head type transitive> = -
+	<VP head type passive> = -
+	<VP head type question> = -
+
+|VP option 4hai - OSV order, copular sentence, no verb, imperative, Aux required
+rule {VP option 4hai - OSV order, copular sentence, no verb, imperative, Aux required}
+VP = {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head infl mood imperative> = +
+	<PP head type sentential> = -
+	<VP head type copular> = +
+	<VP head type auxiliary> = +
+	<VP head type transitive> = -
+	<VP head type passive> = -
+	<VP head type question> = -
+
+|VP option 4hp - OSV order, copular sentence, no verb, pro-drop, no Aux required
+rule {VP option 4hp - OSV order, copular sentence, no verb, pro-drop, no Aux required}
+VP = {PP / AdjP / DP_1} (DP)
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head subject> = <DP>
+	<VP head type passive> = -
+	<DP head type wh> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4hap - OSV order, copular sentence, no verb, pro-drop, Aux required
+rule {VP option 4hap - OSV order, copular sentence, no verb, pro-drop, Aux required}
+VP = {PP / AdjP / DP_1} (DP)
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head type auxiliary> = +
+	<VP head subject> = <DP>
+	<VP head type passive> = -
+	<DP head type wh> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 4i - VSO order, copular, subject questioned
+rule {VP option 4i - VSO order, copular, subject questioned}
+VP = V {PP / AdjP / DP_1}
+	<VP head> = <V head>
+	<V head type copular> = +
+	<V head type transitive> = -
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head type wh> = +
+	<VP head fronted> = <V head subject>
+	<VP head type passive> = -
+	<PP head type sentential> = -
+
+|VP option 4j - VSO/OSV order, copular sentence, no verb, subj/AdvP questioned
+rule {VP option 4j - VSO/OSV order, copular sentence, no verb, subj/AdvP questioned}
+VP = {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head type question> = +
+	{<VP head fronted cat> = AdvP
+	/<VP head fronted cat> = DP }
+	<VP head fronted head type wh> = +
+	<VP head type passive> = -
+	<PP head type sentential> = -
+
+|VP option 4ja - VSO/OSV order, copular sentence, no verb, subj/AdvP questioned, Aux required
+rule {VP option 4ja - VSO/OSV order, copular sentence, no verb, subj/AdvP questioned, Aux required}
+VP = {PP / AdjP / DP_1}
+	<VP head> = <PP head>
+	<VP head> = <AdjP head>
+	<VP head> = <DP_1 head>
+	<VP head type copular> = +
+	<VP head type auxiliary> = +
+	<VP head type question> = +
+	{<VP head fronted cat> = AdvP
+	/<VP head fronted cat> = DP }
+	<VP head fronted head type wh> = +
+	<VP head type passive> = -
+	<PP head type sentential> = -
+
+|VP option 4k - OSV order, copular, subject questioned
+rule {VP option 4k - OSV order, copular, subject questioned}
+VP = {PP / AdjP / DP_1} V
+	<VP head> = <V head>
+	<V head type copular> = +
+	<V head type transitive> = -
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head type wh> = +
+	<VP head fronted> = <V head subject>
+	<VP head type passive> = -
+	<PP head type sentential> = -
+
+|VP option 5a - V initial, transitive (accusative case object)
+rule {VP option 5a - V initial, transitive (accusative case object)}
+VP = V DP
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head type transitive> = +
+	<DP head agr case accusative> = +
+	<V head type passive> = -
+
+|VP option 5b - V initial, transitive (absolutive case object)
+rule {VP option 5b - V initial, transitive (absolutive case object)}
+VP = V DP
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head type transitive> = +
+	<DP head agr case absolutive> = +
+	<V head type passive> = -
+
+|VP option 5c - V final, transitive (accusative case object)
+rule {VP option 5c - V final, transitive (accusative case object)}
+VP = DP V
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head type transitive> = +
+	<DP head agr case accusative> = +
+	<V head type passive> = -
+
+|VP option 5d - V final, transitive (absolutive case object)
+rule {VP option 5d - V final, transitive (absolutive case object)}
+VP = DP V
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head type transitive> = +
+	<DP head agr case absolutive> = +
+	<V head type passive> = -
+
+|VP option 5e - VSO order, transitive (accusative case object)
+rule {VP option 5e - VSO order, transitive (accusative case object)}
+VP = V DP DP_1
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 5ei - VSO order, transitive (accusative case object), imperative
+rule {VP option 5ei - VSO order, transitive (accusative case object), imperative}
+VP = V DP_1
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP_1 head agr case accusative> = +
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 5ep - VSO order, transitive (accusative case object), pro-drop
+rule {VP option 5ep - VSO order, transitive (accusative case object), pro-drop}
+VP = V (DP) DP_1
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 5f - VSO order, transitive (absolutive case object)
+rule {VP option 5f - VSO order, transitive (absolutive case object)}
+VP = V DP DP_1
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 5fi - VSO order, transitive (absolutive case object), imperative
+rule {VP option 5fi - VSO order, transitive (absolutive case object), imperative}
+VP = V DP_1
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP_1 head agr case absolutive> = +
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 5fp - VSO order, transitive (absolutive case object), pro-drop
+rule {VP option 5fp - VSO order, transitive (absolutive case object), pro-drop}
+VP = V (DP) DP_1
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 5g - OSV order, transitive (accusative case object)
+rule {VP option 5g - OSV order, transitive (accusative case object)}
+VP = DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 5gi - OSV order, transitive (accusative case object), imperative
+rule {VP option 5gi - OSV order, transitive (accusative case object), imperative}
+VP = DP_1 V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP_1 head agr case accusative> = +
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 5gp - OSV order, transitive (accusative case object), pro-drop
+rule {VP option 5gp - OSV order, transitive (accusative case object), pro-drop}
+VP = DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 5h - OSV order, transitive (absolutive case object)
+rule {VP option 5h - OSV order, transitive (absolutive case object)}
+VP = DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 5hi - OSV order, transitive (absolutive case object), imperative
+rule {VP option 5hi - OSV order, transitive (absolutive case object), imperative}
+VP = DP_1 V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP_1 head agr case absolutive> = +
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 5hp - OSV order, transitive (absolutive case object), pro-drop
+rule {VP option 5hp - OSV order, transitive (absolutive case object), pro-drop}
+VP = DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type transitive> = +
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<V head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 5i - V initial/final, object questioned (accusative object)
+rule {VP option 5i - V initial/final, object questioned (accusative object)}
+VP = V
+	<VP head> = <V head>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5j - V initial/final, object questioned (absolutive object)
+rule {VP option 5j - V initial/final, object questioned (absolutive object)}
+VP = V
+	<VP head> = <V head>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5k - VSO order, transitive, object questioned (accusative)
+rule {VP option 5k - VSO order, transitive, object questioned (accusative)}
+VP = V DP
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case nominative> = +
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5kp - VSO order, transitive, object questioned (accusative), pro-drop
+rule {VP option 5kp - VSO order, transitive, object questioned (accusative), pro-drop}
+VP = V (DP)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case nominative> = +
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5l - VSO order, transitive, object questioned (absolutive)
+rule {VP option 5l - VSO order, transitive, object questioned (absolutive)}
+VP = V DP
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case ergative> = +
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5lp - VSO order, transitive, object questioned (absolutive), pro-drop
+rule {VP option 5lp - VSO order, transitive, object questioned (absolutive), pro-drop}
+VP = V (DP)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case ergative> = +
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5m - OSV order, transitive, object questioned (accusative)
+rule {VP option 5m - OSV order, transitive, object questioned (accusative)}
+VP = DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case nominative> = +
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5mp - OSV order, transitive, object questioned (accusative), pro-drop
+rule {VP option 5mp - OSV order, transitive, object questioned (accusative), pro-drop}
+VP = (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case nominative> = +
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5n - OSV order, transitive, object questioned (absolutive)
+rule {VP option 5n - OSV order, transitive, object questioned (absolutive)}
+VP = DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case ergative> = +
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5np - OSV order, transitive, object questioned (absolutive), pro-drop
+rule {VP option 5np - OSV order, transitive, object questioned (absolutive), pro-drop}
+VP = (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case ergative> = +
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5o - VSO order, transitive, subject questioned (nominative)
+rule {VP option 5o - VSO order, transitive, subject questioned (nominative)}
+VP = V DP
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head subject> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case accusative> = +
+	<VP head fronted head agr case nominative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5p - VSO order, transitive, subject questioned (ergative)
+rule {VP option 5p - VSO order, transitive, subject questioned (ergative)}
+VP = V DP
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head subject> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case absolutive> = +
+	<VP head fronted head agr case ergative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5q - OSV order, transitive, subject questioned (nominative)
+rule {VP option 5q - OSV order, transitive, subject questioned (nominative)}
+VP = DP V
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head subject> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case accusative> = +
+	<VP head fronted head agr case nominative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 5r - OSV order, transitive, subject questioned (ergative)
+rule {VP option 5r - OSV order, transitive, subject questioned (ergative)}
+VP = DP V
+	<VP head> = <V head>
+	<V head object> = <DP head>
+	<V head subject> = <VP head fronted>
+	<V head type transitive> = +
+	<DP head agr case absolutive> = +
+	<VP head fronted head agr case ergative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 6a - V initial, ditransitive with PP (accusative object)
+rule {VP option 6a - V initial, ditransitive with PP (accusative object)}
+VP = V DP PP (PP_1)
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head type ditransitive> = +
+	<DP head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+
+|VP option 6b - V initial, ditransitive with PP (absolutive object)
+rule {VP option 6b - V initial, ditransitive with PP (absolutive object)}
+VP = V DP PP (PP_1)
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head type ditransitive> = +
+	<DP head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+
+|VP option 6c - V final, ditransitive with PP (accusative object)
+rule {VP option 6c - V final, ditransitive with PP (accusative object)}
+VP = (PP_1) PP DP V
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head type ditransitive> = +
+	<DP head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+
+|VP option 6d - V final, ditransitive with PP (absolutive object)
+rule {VP option 6d - V final, ditransitive with PP (absolutive object)}
+VP = (PP_1) PP DP V
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head type ditransitive> = +
+	<DP head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+
+|VP option 6e - VSO order, ditransitive with PP (accusative object)
+rule {VP option 6e - VSO order, ditransitive with PP (accusative object)}
+VP = V DP DP_1 PP (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 6ei - VSO order, ditransitive with PP (accusative case object), imperative
+rule {VP option 6ei - VSO order, ditransitive with PP (accusative case object), imperative}
+VP = V DP_1 PP (PP_1)
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP_1 head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 6ep - VSO order, ditransitive with PP (accusative object), pro-drop
+rule {VP option 6ep - VSO order, ditransitive with PP (accusative object), pro-drop}
+VP = V (DP) DP_1 PP (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 6f - VSO order, ditransitive with PP (absolutive object)
+rule {VP option 6f - VSO order, ditransitive with PP (absolutive object)}
+VP = V DP DP_1 PP (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 6fi - VSO order, ditransitive with PP (absolutive case object), imperative
+rule {VP option 6fi - VSO order, ditransitive with PP (absolutive case object), imperative}
+VP = V DP_1 PP (PP_1)
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP_1 head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 6fp - VSO order, ditransitive with PP (absolutive object), pro-drop
+rule {VP option 6fp - VSO order, ditransitive with PP (absolutive object), pro-drop}
+VP = V (DP) DP_1 PP (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 6g - OSV order, ditransitive with PP (accusative object)
+rule {VP option 6g - OSV order, ditransitive with PP (accusative object)}
+VP = (PP_1) PP DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 6gi - OSV order, ditransitive with PP (accusative case object), imperative
+rule {VP option 6gi - OSV order, ditransitive with PP (accusative case object), imperative}
+VP = (PP_1) PP DP_1 V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP_1 head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 6gp - OSV order, ditransitive with PP (accusative object), pro-drop
+rule {VP option 6gp - OSV order, ditransitive with PP (accusative object), pro-drop}
+VP = (PP_1) PP DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 6h - OSV order, ditransitive with PP (absolutive object)
+rule {VP option 6h - OSV order, ditransitive with PP (absolutive object)}
+VP = (PP_1) PP DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 6hi - OSV order, ditransitive with PP (absolutive case object), imperative
+rule {VP option 6hi - OSV order, ditransitive with PP (absolutive case object), imperative}
+VP = (PP_1) PP DP_1 V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP_1 head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 6hp - OSV order, ditransitive with PP (absolutive object), pro-drop
+rule {VP option 6hp - OSV order, ditransitive with PP (absolutive object), pro-drop}
+VP = (PP_1) PP DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 6i - V initial, ditransitive with PP, accusative object questioned
+rule {VP option 6i - V initial, ditransitive with PP, accusative object questioned}
+VP = V PP (PP_1)
+	<VP head> = <V head>
+	<V head object> = <VP head fronted>
+	<V head type ditransitive> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head type question> = +
+
+|VP option 6j - V initial, ditransitive with PP, absolutive object questioned
+rule {VP option 6j - V initial, ditransitive with PP, absolutive object questioned}
+VP = V PP (PP_1)
+	<VP head> = <V head>
+	<V head object> = <VP head fronted>
+	<V head type ditransitive> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head type question> = +
+
+|VP option 6k - V final, ditransitive with PP, accusative object questioned
+rule {VP option 6k - V final, ditransitive with PP, accusative object questioned}
+VP = (PP_1) PP V
+	<VP head> = <V head>
+	<V head object> = <VP head fronted>
+	<V head type ditransitive> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head type question> = +
+
+|VP option 6l - V final, ditransitive with PP, absolutive object questioned
+rule {VP option 6l - V final, ditransitive with PP, absolutive object questioned}
+VP = (PP_1) PP V
+	<VP head> = <V head>
+	<V head object> = <VP head fronted>
+	<V head type ditransitive> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head type passive> = -
+	<VP head type question> = +
+
+|VP option 6m - VSO order, ditransitive with PP (accusative object questioned)
+rule {VP option 6m - VSO order, ditransitive with PP (accusative object questioned)}
+VP = V DP PP (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<DP head agr case nominative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 6mp - VSO order, ditransitive with PP (accusative object questioned), pro-drop
+rule {VP option 6mp - VSO order, ditransitive with PP (accusative object questioned), pro-drop}
+VP = V (DP) PP (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<DP head agr case nominative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 6n - VSO order, ditransitive with PP (absolutive object questioned)
+rule {VP option 6n - VSO order, ditransitive with PP (absolutive object questioned)}
+VP = V DP PP (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<DP head agr case ergative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 6np - VSO order, ditransitive with PP (absolutive object questioned), pro-drop
+rule {VP option 6np - VSO order, ditransitive with PP (absolutive object questioned), pro-drop}
+VP = V (DP) PP (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<DP head agr case ergative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 6o - OSV order, ditransitive with PP (accusative object questioned)
+rule {VP option 6o - OSV order, ditransitive with PP (accusative object questioned)}
+VP = (PP_1) PP DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<DP head agr case nominative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 6op - OSV order, ditransitive with PP (accusative object questioned), pro-drop
+rule {VP option 6op - OSV order, ditransitive with PP (accusative object questioned), pro-drop}
+VP = (PP_1) PP (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<DP head agr case nominative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case accusative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 6p - OSV order, ditransitive with PP (absolutive object questioned)
+rule {VP option 6p - OSV order, ditransitive with PP (absolutive object questioned)}
+VP = (PP_1) PP DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<DP head agr case ergative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 6pp - OSV order, ditransitive with PP (absolutive object questioned), pro-drop
+rule {VP option 6pp - OSV order, ditransitive with PP (absolutive object questioned), pro-drop}
+VP = (PP_1) PP (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<DP head agr case ergative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case absolutive> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 6q - VSO order, ditransitive with PP (acc object), subj questioned
+rule {VP option 6q - VSO order, ditransitive with PP (acc object), subj questioned}
+VP = V DP PP (PP_1)
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head subject> = <VP head fronted>
+	<V head type ditransitive> = +
+	<DP head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case nominative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 6r - VSO order, ditransitive with PP (abs object), subj questioned
+rule {VP option 6r - VSO order, ditransitive with PP (abs object), subj questioned}
+VP = V DP PP (PP_1)
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head subject> = <VP head fronted>
+	<V head type ditransitive> = +
+	<DP head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case ergative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 6s - OSV order, ditransitive with PP (acc object), subj questioned
+rule {VP option 6s - OSV order, ditransitive with PP (acc object), subj questioned}
+VP = (PP_1) PP DP V
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head subject> = <VP head fronted>
+	<V head type ditransitive> = +
+	<DP head agr case accusative> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case nominative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 6t - OSV order, ditransitive with PP (abs object), subj questioned
+rule {VP option 6t - OSV order, ditransitive with PP (abs object), subj questioned}
+VP = (PP_1) PP DP V
+	<VP head> = <V head>
+	<V head object> = <DP>
+	<V head subject> = <VP head fronted>
+	<V head type ditransitive> = +
+	<DP head agr case absolutive> = +
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<VP head fronted head agr case ergative> = +
+	<VP head fronted head type wh> = +
+	<VP head fronted cat> = DP
+	<VP head type question> = +
+	<V head type passive> = -
+
+|VP option 6u - VSO order, ditransitive with PP questioned (acc object)
+rule {VP option 6u - VSO order, ditransitive with PP questioned (acc object)}
+VP = V DP DP_1 (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<VP head fronted cat> = PP
+	<VP head type question> = +
+
+|VP option 6up - VSO order, ditransitive with PP questioned (acc object), pro-drop
+rule {VP option 6up - VSO order, ditransitive with PP questioned (acc object), pro-drop}
+VP = V (DP) DP_1 (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<VP head fronted cat> = PP
+	<VP head type question> = +
+
+|VP option 6v - VSO order, ditransitive with PP questioned (abs object)
+rule {VP option 6v - VSO order, ditransitive with PP questioned (abs object)}
+VP = V DP DP_1 (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<DP head agr case absolutive> = +
+	<VP head fronted cat> = PP
+	<VP head type question> = +
+
+|VP option 6vp - VSO order, ditransitive with PP questioned (abs object), pro-drop
+rule {VP option 6vp - VSO order, ditransitive with PP questioned (abs object), pro-drop}
+VP = V (DP) DP_1 (PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<DP head agr case absolutive> = +
+	<VP head fronted cat> = PP
+	<VP head type question> = +
+
+|VP option 6w - OSV order, ditransitive with PP questioned (acc object)
+rule {VP option 6w - OSV order, ditransitive with PP questioned (acc object)}
+VP = (PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<VP head fronted cat> = PP
+	<VP head type question> = +
+
+|VP option 6wp - OSV order, ditransitive with PP questioned (acc object), pro-drop
+rule {VP option 6wp - OSV order, ditransitive with PP questioned (acc object), pro-drop}
+VP = (PP_1) DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<VP head fronted cat> = PP
+	<VP head type question> = +
+
+|VP option 6x - OSV order, ditransitive with PP questioned (abs object)
+rule {VP option 6x - OSV order, ditransitive with PP questioned (abs object)}
+VP = (PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<DP head agr case absolutive> = +
+	<VP head fronted cat> = PP
+	<VP head type question> = +
+
+|VP option 6xp - OSV order, ditransitive with PP questioned (abs object), pro-drop
+rule {VP option 6xp - OSV order, ditransitive with PP questioned (abs object), pro-drop}
+VP = (PP_1) DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<DP head agr case absolutive> = +
+	<VP head fronted cat> = PP
+	<VP head type question> = +
+
+|VP option 7a - V initial, ditransitive with DP (accusative object)
+rule {VP option 7a - V initial, ditransitive with DP (accusative object)}
+VP = V DP_1 DP_2 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case accusative> = +
+	<VP head type passive> = -
+
+|VP option 7b - V initial, ditransitive with DP (absolutive object)
+rule {VP option 7b - V initial, ditransitive with DP (absolutive object)}
+VP = V DP_1 DP_2 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case absolutive> = +
+	<VP head type passive> = -
+
+|VP option 7c - V final, ditransitive with DP (accusative object)
+rule {VP option 7c - V final, ditransitive with DP (accusative object)}
+VP = (DP_3 / PP_1) DP_2 DP_1 V
+	<VP head> = <V head>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case accusative> = +
+	<VP head type passive> = -
+
+|VP option 7d - V final, ditransitive with DP (absolutive object)
+rule {VP option 7d - V final, ditransitive with DP (absolutive object)}
+VP = (DP_3 / PP_1) DP_2 DP_1 V
+	<VP head> = <V head>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case absolutive> = +
+	<VP head type passive> = -
+
+|VP option 7e - VSO order, ditransitive with DP (accusative object)
+rule {VP option 7e - VSO order, ditransitive with DP (accusative object)}
+VP = V DP DP_1 DP_2 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 7ei - VSO order, ditransitive with DP (accusative case object), imperative
+rule {VP option 7ei - VSO order, ditransitive with DP (accusative case object), imperative}
+VP = V DP_1 DP_2 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case accusative> = +
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 7ep - VSO order, ditransitive with DP (accusative object), pro-drop
+rule {VP option 7ep - VSO order, ditransitive with DP (accusative object), pro-drop}
+VP = V (DP) DP_1 DP_2 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 7f - VSO order, ditransitive with DP (absolutive object)
+rule {VP option 7f - VSO order, ditransitive with DP (absolutive object)}
+VP = V DP DP_1 DP_2 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 7fi - VSO order, ditransitive with DP (absolutive case object), imperative
+rule {VP option 7fi - VSO order, ditransitive with DP (absolutive case object), imperative}
+VP = V DP_1 DP_2 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case absolutive> = +
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 7fp - VSO order, ditransitive with DP (absolutive object), pro-drop
+rule {VP option 7fp - VSO order, ditransitive with DP (absolutive object), pro-drop}
+VP = V (DP) DP_1 DP_2 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 7g - OSV order, ditransitive with DP (accusative object)
+rule {VP option 7g - OSV order, ditransitive with DP (accusative object)}
+VP = (DP_3 / PP_1) DP_2 DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 7gi - OSV order, ditransitive with DP (accusative case object), imperative
+rule {VP option 7gi - OSV order, ditransitive with DP (accusative case object), imperative}
+VP = (DP_3 / PP_1) DP_2 DP_1 V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case accusative> = +
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 7gp - OSV order, ditransitive with DP (accusative object), pro-drop
+rule {VP option 7gp - OSV order, ditransitive with DP (accusative object), pro-drop}
+VP = (DP_3 / PP_1) DP_2 DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<DP_1 head agr case accusative> = +
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 7h - OSV order, ditransitive with DP (absolutive object)
+rule {VP option 7h - OSV order, ditransitive with DP (absolutive object)}
+VP = (DP_3 / PP_1) DP_2 DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 7hi - OSV order, ditransitive with DP (absolutive case object), imperative
+rule {VP option 7hi - OSV order, ditransitive with DP (absolutive case object), imperative}
+VP = (DP_3 / PP_1) DP_2 DP_1 V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case absolutive> = +
+	<V head type passive> = -
+	<VP head type question> = -
+
+|VP option 7hp - OSV order, ditransitive with DP (absolutive object), pro-drop
+rule {VP option 7hp - OSV order, ditransitive with DP (absolutive object), pro-drop}
+VP = (DP_3 / PP_1) DP_2 DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_2>
+	<V head type ditransitive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<DP_1 head agr case absolutive> = +
+	<VP head type passive> = -
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 7i - VSO order, ditransitive with DP (acc object), subj questioned
+rule {VP option 7i - VSO order, ditransitive with DP (acc object), subj questioned}
+VP = V DP DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <VP head fronted>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+	<PP_1 head type sentential> = -
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<DP head agr case accusative> = +
+
+|VP option 7j - VSO order, ditransitive with DP (abs object), subj questioned
+rule {VP option 7j - VSO order, ditransitive with DP (abs object), subj questioned}
+VP = V DP DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <VP head fronted>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case ergative> = +
+	<PP_1 head type sentential> = -
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<DP head agr case absolutive> = +
+
+|VP option 7k - OSV order, ditransitive with DP (acc object), subj questioned
+rule {VP option 7k - OSV order, ditransitive with DP (acc object), subj questioned}
+VP = (DP_3 / PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <VP head fronted>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+	<PP_1 head type sentential> = -
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<DP head agr case accusative> = +
+
+|VP option 7l - OSV order, ditransitive with DP (abs object), subj questioned
+rule {VP option 7l - OSV order, ditransitive with DP (abs object), subj questioned}
+VP = (DP_3 / PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <VP head fronted>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case ergative> = +
+	<PP_1 head type sentential> = -
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+	<DP head agr case absolutive> = +
+
+|VP option 7m - VSO order, ditransitive with DP (acc object questioned)
+rule {VP option 7m - VSO order, ditransitive with DP (acc object questioned)}
+VP = V DP DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case accusative> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7mp - VSO order, ditransitive with DP (acc object questioned), pro-drop
+rule {VP option 7mp - VSO order, ditransitive with DP (acc object questioned), pro-drop}
+VP = V (DP) DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case accusative> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7n - VSO order, ditransitive with DP (abs object questioned)
+rule {VP option 7n - VSO order, ditransitive with DP (abs object questioned)}
+VP = V DP DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case absolutive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7np - VSO order, ditransitive with DP (abs object questioned), pro-drop
+rule {VP option 7np - VSO order, ditransitive with DP (abs object questioned), pro-drop}
+VP = V (DP) DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case absolutive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7o - OSV order, ditransitive with DP (acc object questioned)
+rule {VP option 7o - OSV order, ditransitive with DP (acc object questioned)}
+VP = (DP_3 / PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case accusative> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7op - OSV order, ditransitive with DP (acc object questioned), pro-drop
+rule {VP option 7op - OSV order, ditransitive with DP (acc object questioned), pro-drop}
+VP = (DP_3 / PP_1) DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case accusative> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case nominative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7p - OSV order, ditransitive with DP (abs object questioned)
+rule {VP option 7p - OSV order, ditransitive with DP (abs object questioned)}
+VP = (DP_3 / PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case absolutive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7pp - OSV order, ditransitive with DP (abs object questioned), pro-drop
+rule {VP option 7pp - OSV order, ditransitive with DP (abs object questioned), pro-drop}
+VP = (DP_3 / PP_1) DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <VP head fronted>
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case absolutive> = +
+	<PP_1 head type sentential> = -
+	<DP head agr case ergative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7q - VSO order, ditransitive with DP questioned (acc object)
+rule {VP option 7q - VSO order, ditransitive with DP questioned (acc object)}
+VP = V DP DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case accusative> = +
+	<DP head agr case nominative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7qp - VSO order, ditransitive with DP questioned (acc object), pro-drop
+rule {VP option 7qp - VSO order, ditransitive with DP questioned (acc object), pro-drop}
+VP = V (DP) DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case accusative> = +
+	<DP head agr case nominative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7r - VSO order, ditransitive with DP questioned (abs object)
+rule {VP option 7r - VSO order, ditransitive with DP questioned (abs object)}
+VP = V DP DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case absolutive> = +
+	<DP head agr case ergative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7rp - VSO order, ditransitive with DP questioned (abs object), pro-drop
+rule {VP option 7rp - VSO order, ditransitive with DP questioned (abs object), pro-drop}
+VP = V (DP) DP_1 (DP_3 / PP_1)
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case absolutive> = +
+	<DP head agr case ergative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7s - OSV order, ditransitive with DP questioned (acc object)
+rule {VP option 7s - OSV order, ditransitive with DP questioned (acc object)}
+VP = (DP_3 / PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case accusative> = +
+	<DP head agr case nominative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7sp - OSV order, ditransitive with DP questioned (acc object), pro-drop
+rule {VP option 7sp - OSV order, ditransitive with DP questioned (acc object), pro-drop}
+VP = (DP_3 / PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case accusative> = +
+	<DP head agr case nominative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7t - OSV order, ditransitive with DP questioned (abs object)
+rule {VP option 7t - OSV order, ditransitive with DP questioned (abs object)}
+VP = (DP_3 / PP_1) DP_1 DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case absolutive> = +
+	<DP head agr case ergative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 7tp - OSV order, ditransitive with DP questioned (abs object), pro-drop
+rule {VP option 7tp - OSV order, ditransitive with DP questioned (abs object), pro-drop}
+VP = (DP_3 / PP_1) DP_1 (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<V head object> = <DP_1>
+	<VP head fronted cat> = DP
+	<PP_1 head type sentential> = -
+	<DP_1 head agr case absolutive> = +
+	<DP head agr case ergative> = +
+	<VP head type question> = +
+	<V head type ditransitive> = +
+	<V head type passive> = -
+
+|VP option 8a - V initial, sentential complement
+rule {VP option 8a - V initial, sentential complement}
+VP = V {CP / IP}
+	<VP head> = <V head>
+	<CP head type root> = -
+	<IP head type root> = -
+	<IP head type question> = -
+	<V head type sentential> = +
+
+|VP option 8b - V final, sentential complement
+rule {VP option 8b - V final, sentential complement}
+VP = {CP / IP} V
+	<VP head> = <V head>
+	<CP head type root> = -
+	<IP head type root> = -
+	<IP head type question> = -
+	<V head type sentential> = +
+
+|VP option 8c - VSO with sentential complement
+rule {VP option 8c - VSO with sentential complement}
+VP = V DP {CP / IP}
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<CP head type root> = -
+	<IP head type root> = -
+	<IP head type question> = -
+	<V head type sentential> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 8ci - VSO with sentential complement, imperative
+rule {VP option 8ci - VSO with sentential complement, imperative}
+VP = V {CP / IP}
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<CP head type root> = -
+	<IP head type root> = -
+	<IP head type question> = -
+	<V head type sentential> = +
+	<VP head type question> = -
+
+|VP option 8cp - VSO with sentential complement, pro-drop
+rule {VP option 8cp - VSO with sentential complement, pro-drop}
+VP = V (DP) {CP / IP}
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<CP head type root> = -
+	<IP head type root> = -
+	<IP head type question> = -
+	<V head type sentential> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 8d - OSV with sentential complement
+rule {VP option 8d - OSV with sentential complement}
+VP = {CP / IP} DP V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<CP head type root> = -
+	<IP head type root> = -
+	<IP head type question> = -
+	<V head type sentential> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 8di - OSV with sentential complement, imperative
+rule {VP option 8di - OSV with sentential complement, imperative}
+VP = {CP / IP} V
+	<VP head> = <V head>
+	<VP head infl mood imperative> = +
+	<CP head type root> = -
+	<IP head type root> = -
+	<IP head type question> = -
+	<V head type sentential> = +
+	<VP head type question> = -
+
+|VP option 8dp - OSV with sentential complement, pro-drop
+rule {VP option 8dp - OSV with sentential complement, pro-drop}
+VP = {CP / IP} (DP) V
+	<VP head> = <V head>
+	<V head subject> = <DP>
+	<CP head type root> = -
+	<IP head type root> = -
+	<IP head type question> = -
+	<V head type sentential> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 9a - V initial/final, passive, no Agent phrase, no passive aux
+rule {VP option 9a - V initial/final, passive, no Agent phrase, no passive aux}
+VP = V
+	<VP head> = <V head>
+	<V head type passive> = +
+
+|VP option 9b - V initial, passive, no Agent but PP ditrans, no passive aux
+rule {VP option 9b - V initial, passive, no Agent but PP ditrans, no passive aux}
+VP = V (PP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+
+|VP option 9c - V final, passive, no Agent but PP ditrans, no passive aux
+rule {VP option 9c - V final, passive, no Agent but PP ditrans, no passive aux}
+VP = (PP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+
+|VP option 9d - V initial/final, passive, no Agent phrase, passive aux
+rule {VP option 9d - V initial/final, passive, no Agent phrase, passive aux}
+VP = V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<VP head type auxiliary> = +
+
+|VP option 9e - V initial, passive, no Agent but PP ditrans, passive aux
+rule {VP option 9e - V initial, passive, no Agent but PP ditrans, passive aux}
+VP = V (PP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	<VP head type auxiliary> = +
+
+|VP option 9f - V final, passive, no Agent but PP ditrans, passive aux
+rule {VP option 9f - V final, passive, no Agent but PP ditrans, passive aux}
+VP = (PP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	<VP head type auxiliary> = +
+
+|VP option 9g - V initial, passive, with PP Agent, PP ditrans, no passive Aux
+rule {VP option 9g - V initial, passive, with PP Agent, PP ditrans, no passive Aux}
+VP = V (PP_1) PP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head subject> = <PP head object>
+
+|VP option 9h - V final, passive, with PP Agent, PP ditrans, no passive Aux
+rule {VP option 9h - V final, passive, with PP Agent, PP ditrans, no passive Aux}
+VP =  (PP_1) PP (PP_2) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head subject> = <PP head object>
+
+|VP option 9i - V initial, passive, with PP Agent, PP ditrans, passive Aux
+rule {VP option 9i - V initial, passive, with PP Agent, PP ditrans, passive Aux}
+VP = V (PP_1) PP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head subject> = <PP head object>
+	<VP head type auxiliary> = +
+
+|VP option 9j - V final, passive, with PP Agent, PP ditrans, passive Aux
+rule {VP option 9j - V final, passive, with PP Agent, PP ditrans, passive Aux}
+VP =  (PP_1) PP (PP_2) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head subject> = <PP head object>
+	<VP head type auxiliary> = +
+
+|VP option 9k - V initial, passive, with DP Agent phrase, no passive Aux
+rule {VP option 9k - V initial, passive, with DP Agent phrase, no passive Aux}
+VP = V DP
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head subject> = <DP>
+
+|VP option 9l - V final, passive, with DP Agent phrase, no passive Aux
+rule {VP option 9l - V final, passive, with DP Agent phrase, no passive Aux}
+VP = DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head subject> = <DP>
+
+|VP option 9m - V initial, passive, with DP Agent phrase, passive Aux
+rule {VP option 9m - V initial, passive, with DP Agent phrase, passive Aux}
+VP = V DP
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head subject> = <DP>
+	<VP head type auxiliary> = +
+
+|VP option 9n - V final, passive, with DP Agent phrase, passive Aux
+rule {VP option 9n - V final, passive, with DP Agent phrase, passive Aux}
+VP = DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head subject> = <DP>
+	<VP head type auxiliary> = +
+
+|VP option 10a - VSO order, passive, no Agent phrase, no passive Aux
+rule {VP option 10a - VSO order, passive, no Agent phrase, no passive Aux}
+VP = V DP
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10ap - VSO order, passive, no Agent phrase, no passive Aux, pro-drop
+rule {VP option 10ap - VSO order, passive, no Agent phrase, no passive Aux, pro-drop}
+VP = V (DP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10b - OSV order, passive, no Agent phrase, no passive Aux
+rule {VP option 10b - OSV order, passive, no Agent phrase, no passive Aux}
+VP = DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10bp - OSV order, passive, no Agent phrase, no passive Aux, pro-drop
+rule {VP option 10bp - OSV order, passive, no Agent phrase, no passive Aux, pro-drop}
+VP = (DP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10c - VSO order, passive, no Agent but PP ditrans, no passive Aux
+rule {VP option 10c - VSO order, passive, no Agent but PP ditrans, no passive Aux}
+VP = V DP (PP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10cp - VSO order, passive, no Agent but PP ditrans, no passive Aux, pro-drop
+rule {VP option 10cp - VSO order, passive, no Agent but PP ditrans, no passive Aux, pro-drop}
+VP = V (DP) (PP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10d - OSV order, passive, no Agent but PP ditrans, no passive Aux
+rule {VP option 10d - OSV order, passive, no Agent but PP ditrans, no passive Aux}
+VP = (PP) DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10dp - OSV order, passive, no Agent but PP ditrans, no passive Aux, pro-drop
+rule {VP option 10dp - OSV order, passive, no Agent but PP ditrans, no passive Aux, pro-drop}
+VP = (PP) (DP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10e - VSO order, passive, no Agent phrase, passive Aux
+rule {VP option 10e - VSO order, passive, no Agent phrase, passive Aux}
+VP = V DP
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<VP head type auxiliary> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10ep - VSO order, passive, no Agent phrase, passive Aux, pro-drop
+rule {VP option 10ep - VSO order, passive, no Agent phrase, passive Aux, pro-drop}
+VP = V (DP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<VP head type auxiliary> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10f - OSV order, passive, no Agent phrase, passive Aux
+rule {VP option 10f - OSV order, passive, no Agent phrase, passive Aux}
+VP = DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<VP head type auxiliary> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10fp - OSV order, passive, no Agent phrase, passive Aux, pro-drop
+rule {VP option 10fp - OSV order, passive, no Agent phrase, passive Aux, pro-drop}
+VP = (DP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<VP head type auxiliary> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10g - VSO order, passive, no Agent but PP ditrans, passive Aux
+rule {VP option 10g - VSO order, passive, no Agent but PP ditrans, passive Aux}
+VP = V DP (PP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<VP head type auxiliary> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10gp - VSO order, passive, no Agent but PP ditrans, passive Aux, pro-drop
+rule {VP option 10gp - VSO order, passive, no Agent but PP ditrans, passive Aux, pro-drop}
+VP = V (DP) (PP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<VP head type auxiliary> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10h - OSV order, passive, no Agent but PP ditrans, passive Aux
+rule {VP option 10h - OSV order, passive, no Agent but PP ditrans, passive Aux}
+VP = (PP) DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<VP head type auxiliary> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10hp - OSV order, passive, no Agent but PP ditrans, passive Aux, pro-drop
+rule {VP option 10hp - OSV order, passive, no Agent but PP ditrans, passive Aux, pro-drop}
+VP = (PP) (DP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<VP head type auxiliary> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10i - VSO order, passive, with PP Agent, PP ditrans, no passive Aux
+rule {VP option 10i - VSO order, passive, with PP Agent, PP ditrans, no passive Aux}
+VP = V DP (PP_1) PP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <PP head object>
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10ip - VSO order, passive, with PP Agent, PP ditrans, no passive Aux, pro-drop
+rule {VP option 10ip - VSO order, passive, with PP Agent, PP ditrans, no passive Aux, pro-drop}
+VP = V (DP) (PP_1) PP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <PP head object>
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10j - OSV order, passive, with PP Agent, PP ditrans, no passive Aux
+rule {VP option 10j - OSV order, passive, with PP Agent, PP ditrans, no passive Aux}
+VP = (PP_1) PP (PP_2) DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <PP head object>
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10jp - OSV order, passive, with PP Agent, PP ditrans, no passive Aux, pro-drop
+rule {VP option 10jp - OSV order, passive, with PP Agent, PP ditrans, no passive Aux, pro-drop}
+VP = (PP_1) PP (PP_2) (DP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <PP head object>
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10k - VSO order, passive, with PP Agent, PP ditrans, passive Aux
+rule {VP option 10k - VSO order, passive, with PP Agent, PP ditrans, passive Aux}
+VP = V DP (PP_1) PP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <PP head object>
+	<VP head type auxiliary> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10kp - VSO order, passive, with PP Agent, PP ditrans, passive Aux, pro-drop
+rule {VP option 10kp - VSO order, passive, with PP Agent, PP ditrans, passive Aux, pro-drop}
+VP = V (DP) (PP_1) PP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <PP head object>
+	<VP head type auxiliary> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10l - OSV order, passive, with PP Agent, PP ditrans, passive Aux
+rule {VP option 10l - OSV order, passive, with PP Agent, PP ditrans, passive Aux}
+VP = (PP_1) PP (PP_2) DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <PP head object>
+	<VP head type auxiliary> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10lp - OSV order, passive, with PP Agent, PP ditrans, passive Aux, pro-drop
+rule {VP option 10lp - OSV order, passive, with PP Agent, PP ditrans, passive Aux, pro-drop}
+VP = (PP_1) PP (PP_2) (DP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <PP head object>
+	<VP head type auxiliary> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10m - VSO order, passive, with DP Agent phrase, no passive Aux
+rule {VP option 10m - VSO order, passive, with DP Agent phrase, no passive Aux}
+VP = V DP DP_1
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <DP_1>
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10mp - VSO order, passive, with DP Agent phrase, no passive Aux, pro-drop
+rule {VP option 10mp - VSO order, passive, with DP Agent phrase, no passive Aux, pro-drop}
+VP = V (DP) DP_1
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <DP_1>
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10n - OSV order, passive, with DP Agent phrase, no passive Aux
+rule {VP option 10n - OSV order, passive, with DP Agent phrase, no passive Aux}
+VP = DP_1 DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <DP_1>
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10np - OSV order, passive, with DP Agent phrase, no passive Aux, pro-drop
+rule {VP option 10np - OSV order, passive, with DP Agent phrase, no passive Aux, pro-drop}
+VP = DP_1 (DP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <DP_1>
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10o - VSO order, passive, with DP Agent phrase, passive Aux
+rule {VP option 10o - VSO order, passive, with DP Agent phrase, passive Aux}
+VP = V DP DP_1
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <DP_1>
+	<VP head type auxiliary> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10op - VSO order, passive, with DP Agent phrase, passive Aux, pro-drop
+rule {VP option 10op - VSO order, passive, with DP Agent phrase, passive Aux, pro-drop}
+VP = V (DP) DP_1
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <DP_1>
+	<VP head type auxiliary> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10p - OSV order, passive, with DP Agent phrase, passive Aux
+rule {VP option 10p - OSV order, passive, with DP Agent phrase, passive Aux}
+VP = DP_1 DP V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <DP_1>
+	<VP head type auxiliary> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10pp - OSV order, passive, with DP Agent phrase, passive Aux, pro-drop
+rule {VP option 10pp - OSV order, passive, with DP Agent phrase, passive Aux, pro-drop}
+VP = DP_1 (DP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<V head object> = <DP>
+	<V head subject> = <DP_1>
+	<VP head type auxiliary> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 10q - VSO order, passive, no Agent, no passive Aux, subj questioned
+rule {VP option 10q - VSO order, passive, no Agent, no passive Aux, subj questioned}
+VP = V (PP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	<V head object> = <VP head fronted>
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10r - OSV order, passive, no Agent, no passive Aux, subj questioned
+rule {VP option 10r - OSV order, passive, no Agent, no passive Aux, subj questioned}
+VP = (PP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	<V head object> = <VP head fronted>
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10s - VSO order, passive, no Agent, passive Aux, subj questioned
+rule {VP option 10s - VSO order, passive, no Agent, passive Aux, subj questioned}
+VP = V (PP)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	<V head object> = <VP head fronted>
+	<VP head type question> = +
+	<VP head type auxiliary> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10t - OSV order, passive, no Agent, passive Aux, subj questioned
+rule {VP option 10t - OSV order, passive, no Agent, passive Aux, subj questioned}
+VP = (PP) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = -
+	<PP head type sentential> = -
+	<V head object> = <VP head fronted>
+	<VP head type question> = +
+	<VP head type auxiliary> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10u - VSO order, passive, PP Agent, no passive Aux, subj questioned
+rule {VP option 10u - VSO order, passive, PP Agent, no passive Aux, subj questioned}
+VP = V (PP_1) PP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head object> = <VP head fronted>
+	<V head subject> = <PP head object>
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10v - OSV order, passive, PP Agent, no passive Aux, subj questioned
+rule {VP option 10v - OSV order, passive, PP Agent, no passive Aux, subj questioned}
+VP = (PP_1) PP (PP_2) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head object> = <VP head fronted>
+	<V head subject> = <PP head object>
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10w - VSO order, passive, PP Agent, passive Aux, subj questioned
+rule {VP option 10w - VSO order, passive, PP Agent, passive Aux, subj questioned}
+VP = V (PP_1) PP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head object> = <VP head fronted>
+	<V head subject> = <PP head object>
+	<VP head type question> = +
+	<VP head type auxiliary> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10x - OSV order, passive, PP Agent, passive Aux, subj questioned
+rule {VP option 10x - OSV order, passive, PP Agent, passive Aux, subj questioned}
+VP = (PP_1) PP (PP_2) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP head type sentential> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head object> = <VP head fronted>
+	<V head subject> = <PP head object>
+	<VP head type question> = +
+	<VP head type auxiliary> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10y - VSO order, passive, DP Agent, no passive Aux, subj questioned
+rule {VP option 10y - VSO order, passive, DP Agent, no passive Aux, subj questioned}
+VP = V (PP_1) DP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head object> = <VP head fronted>
+	<V head subject> = <DP head object>
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10z - OSV order, passive, DP Agent, no passive Aux, subj questioned
+rule {VP option 10z - OSV order, passive, DP Agent, no passive Aux, subj questioned}
+VP = (PP_1) DP (PP_2) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head object> = <VP head fronted>
+	<V head subject> = <DP head object>
+	<VP head type question> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10ya - VSO order, passive, DP Agent, passive Aux, subj questioned
+rule {VP option 10ya - VSO order, passive, DP Agent, passive Aux, subj questioned}
+VP = V (PP_1) DP (PP_2)
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head object> = <VP head fronted>
+	<V head subject> = <DP head object>
+	<VP head type question> = +
+	<VP head type auxiliary> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 10za - OSV order, passive, DP Agent, passive Aux, subj questioned
+rule {VP option 10za - OSV order, passive, DP Agent, passive Aux, subj questioned}
+VP = (PP_1) DP (PP_2) V
+	<VP head> = <V head>
+	<V head type passive> = +
+	<PP_1 head type passive> = -
+	<PP_2 head type passive> = -
+	<PP_1 head type sentential> = -
+	<PP_2 head type sentential> = -
+	<V head object> = <VP head fronted>
+	<V head subject> = <DP head object>
+	<VP head type question> = +
+	<VP head type auxiliary> = +
+	<VP head fronted cat> = DP
+	<VP head fronted head agr case nominative> = +
+
+|VP option 11a - Aux Subject V for VSO languages, not passive
+rule {VP option 11a - Aux Subject V for VSO languages, not passive}
+VP = DP V'
+	<VP head> = <V' head>
+	<V' head subject> = <DP>
+	<VP head type auxiliary> = +
+	<VP head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 11b - Aux Subject V for VSO languages, passive
+rule {VP option 11b - Aux Subject V for VSO languages, passive}
+VP = DP V'
+	<VP head> = <V' head>
+	<V' head object> = <DP>
+	<VP head type auxiliary> = +
+	<VP head type passive> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|VP option 11c - V Subject Aux for OSV languages, not passive
+rule {VP option 11c - V Subject Aux for OSV languages, not passive}
+VP = V' DP
+	<VP head> = <V' head>
+	<V' head subject> = <DP>
+	<VP head type auxiliary> = +
+	<VP head type passive> = -
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+	<VP head> == [type:[reciprocal:+]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+	<VP head> == [object:[head:[type:[reciprocal:+]]]] ->
+					 [subject:[head:[agr:[number:[plural:+]]]]]
+
+|VP option 11d - V Subject Aux for OSV languages, passive
+rule {VP option 11d - V Subject Aux for OSV languages, passive}
+VP = V' DP
+	<VP head> = <V' head>
+	<V' head object> = <DP>
+	<VP head type auxiliary> = +
+	<VP head type passive> = +
+	{<VP head type question> = -
+	/<VP head type question> = +
+	 <VP head fronted cat> = AdvP
+	/<VP head type question> = +
+	 <VP head fronted> = none
+	}
+
+|*******************************************************
+|only for VSO, OSV languages that have different order after Aux
+
+|V' option 1 - V initial/final, intransitive
+rule {V' option 1 - V initial/final, intransitive}
+V' = V
+	<V' head> = <V head>
+	<V head type transitive> = -
+	<V head type passive> = -
+	<V' head type auxiliary> = +
+
+|V' option 2a - V initial, motion intransitive
+rule {V' option 2a - V initial, motion intransitive}
+V' = V {PP / AdvP}
+	<V' head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head type passive> = -
+	<V' head type auxiliary> = +
+
+|V' option 2b - V final, motion intransitive
+rule {V' option 2b - V final, motion intransitive}
+V' = {PP / AdvP} V
+	<V' head> = <V head>
+	<PP head type locative> = +
+	<PP head type sentential> = -
+	<AdvP head type locative> = +
+	<V head type transitive> = -
+	<V head type motion> = +
+	<V head type passive> = -
+	<V' head type auxiliary> = +
+
+|V' option 3a - V initial, copular
+rule {V' option 3a - V initial, copular}
+V' = V {PP / AdjP / DP}
+	<V' head> = <V head>
+	<V head type copular> = +
+	<V' head type auxiliary> = +
+	<PP head type sentential> = -
+
+|V' option 3b - V final, copular
+rule {V' option 3b - V final, copular}
+V' = {PP / AdjP / DP} V
+	<V' head> = <V head>
+	<V head type copular> = +
+	<V' head type auxiliary> = +
+	<PP head type sentential> = -
+
+|V' option 3c - copular sentence, no verb
+rule {V' option 3c - copular sentence, no verb}
+V' = {PP / AdjP / DP}
+	<V' head> = <PP head>
+	<V' head> = <AdjP head>
+	<V' head> = <DP head>
+	<V' head type copular> = +
+	<V' head type auxiliary> = +
+	<PP head type sentential> = -
+
+|V' option 4a - V initial, transitive (accusative case oject)
+rule {V' option 4a - V initial, transitive (accusative case oject)}
+V' = V DP
+	<V' head> = <V head>
+	<V head object> = <DP>
+	<V head type transitive> = +
+	<DP head agr case accusative> = +
+	<V head type passive> = -
+	<V' head type auxiliary> = +
+
+|V' option 4b - V initial, transitive (absolutive case oject)
+rule {V' option 4b - V initial, transitive (absolutive case oject)}
+V' = V DP
+	<V' head> = <V head>
+	<V head object> = <DP>
+	<V head type transitive> = +
+	<DP head agr case absolutive> = +
+	<V head type passive> = -
+	<V' head type auxiliary> = +
+
+|V' option 4c - V final, transitive (accusative case oject)
+rule {V' option 4c - V final, transitive (accusative case oject)}
+V' = DP V
+	<V' head> = <V head>
+	<V head object> = <DP>
+	<V head type transitive> = +
+	<DP head agr case accusative> = +
+	<V head type passive> = -
+	<V' head type auxiliary> = +
+
+|V' option 4d - V final, transitive (absolutive case oject)
+rule {V' option 4d - V final, transitive (absolutive case oject)}
+V' = DP V
+	<V' head> = <V head>
+	<V head object> = <DP>
+	<V head type transitive> = +
+	<DP head agr case absolutive> = +
+	<V head type passive> = -
+	<V' head type auxiliary> = +
+
+|V' option 5a - V initial, ditransitive with PP (accusative object)
+rule {V' option 5a - V initial, ditransitive with PP (accusative object)}
+V' = V DP PP
+	<V' head> = <V head>
+	<V head object> = <DP>
+	<V head type ditransitive> = +
+	<DP head agr case accusative> = +
+	<PP head type sentential> = -
+	<V' head type auxiliary> = +
+
+|V' option 5b - V initial, ditransitive with PP (absolutive object)
+rule {V' option 5b - V initial, ditransitive with PP (absolutive object)}
+V' = V DP PP
+	<V' head> = <V head>
+	<V head object> = <DP>
+	<V head type ditransitive> = +
+	<DP head agr case accusative> = +
+	<PP head type sentential> = -
+	<V' head type auxiliary> = +
+
+|V' option 5c - V final, ditransitive with PP (accusative object)
+rule {V' option 5c - V final, ditransitive with PP (accusative object)}
+V' = PP DP V
+	<V' head> = <V head>
+	<V head object> = <DP>
+	<V head type ditransitive> = +
+	<DP head agr case accusative> = +
+	<PP head type sentential> = -
+	<V' head type auxiliary> = +
+
+|V' option 5d - V final, ditransitive with PP (absolutive object)
+rule {V' option 5d - V final, ditransitive with PP (absolutive object)}
+V' = PP DP V
+	<V' head> = <V head>
+	<V head object> = <DP>
+	<V head type ditransitive> = +
+	<DP head agr case accusative> = +
+	<PP head type sentential> = -
+	<V' head type auxiliary> = +
+
+|V' option 6a - V initial, ditransitive with DP (accusative object)
+rule {V' option 6a - V initial, ditransitive with DP (accusative object)}
+V' = V DP_1 DP_2
+	<V' head> = <V head>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP_1 head agr case accusative> = +
+	<V' head type auxiliary> = +
+
+|V' option 6b - V initial, ditransitive with DP (absolutive object)
+rule {V' option 6b - V initial, ditransitive with DP (absolutive object)}
+V' = V DP_1 DP_2
+	<V' head> = <V head>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP_1 head agr case absolutive> = +
+	<V' head type auxiliary> = +
+
+|V' option 6c - V final, ditransitive with DP (accusative object)
+rule {V' option 6c - V final, ditransitive with DP (accusative object)}
+V' = DP_1 DP_2 V
+	<V' head> = <V head>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP_1 head agr case accusative> = +
+	<V' head type auxiliary> = +
+
+|V' option 6d - V final, ditransitive with DP (absolutive object)
+rule {V' option 6d - V final, ditransitive with DP (absolutive object)}
+V' = DP_1 DP_2 V
+	<V' head> = <V head>
+	<V head object> = <DP_1>
+	<V head type ditransitive> = +
+	<DP_1 head agr case absolutive> = +
+	<V' head type auxiliary> = +
+
+|V' option 7a - V initial/final, passive, no Agent phrase
+rule {V' option 7a - V initial/final, passive, no Agent phrase}
+V' = V
+	<V' head> = <V head>
+	<V head type passive> = +
+	<V' head type auxiliary> = +
+
+|V' option 7b - V initial, passive, with PP Agent phrase
+rule {V' option 7b - V initial, passive, with PP Agent phrase}
+V' = V PP
+	<V' head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP head type sentential> = -
+	<V' head type auxiliary> = +
+
+|V' option 7c - V initial, passive, with DP Agent phrase
+rule {V' option 7c - V initial, passive, with DP Agent phrase}
+V' = V DP
+	<V' head> = <V head>
+	<V head type passive> = +
+	<V' head type auxiliary> = +
+
+|V' option 7d - V final, passive, with PP Agent phrase
+rule {V' option 7d - V final, passive, with PP Agent phrase}
+V' = PP V
+	<V' head> = <V head>
+	<V head type passive> = +
+	<PP head type passive> = +
+	<PP head type sentential> = -
+	<V' head type auxiliary> = +
+
+|V' option 7e - V final, passive, with DP Agent phrase
+rule {V' option 7e - V final, passive, with DP Agent phrase}
+V' = DP V
+	<V' head> = <V head>
+	<V head type passive> = +
+	<V' head type auxiliary> = +
+
+|********************************************************
+|DP option 1 - no modifiers
+rule {DP option 1 - no modifiers}
+DP = D'
+	<DP head> = <D' head>
+
+|DP option 2 - modifiers initial
+rule {DP option 2 - modifiers initial}
+DP = Deg D'
+	<DP head> = <D' head>
+	<Deg head type modifies_NP> = +
+	<Deg head agr> = <D' head agr>
+	<D' head agr case genitive> = - 	|Deg not w/in possessor
+
+|DP option 3 - modifiers final
+rule {DP option 3 - modifiers final}
+DP = D' Deg
+	<DP head> = <D' head>
+	<Deg head type modifies_NP> = +
+	<Deg head agr> = <D' head agr>
+	<D' head agr case genitive> = - 	|Deg not w/in possessor
+
+|DP option 4a - modifiers either side, both required
+rule {DP option 4a - modifiers either side, both required}
+DP = Deg_1 D' Deg_2
+	<DP head> = <D' head>
+	<Deg_1 head agr> = <D' head agr>
+	<Deg_2 head agr> = <D' head agr>
+	<Deg_1 head type modifies_NP> = +
+	<Deg_2 head type modifies_NP> = +
+	<Deg_1 head type DP-initial>  = +
+	<Deg_2 head type DP-final>    = +
+	<D' head agr case genitive> = - 	|Deg not w/in possessor
+
+|DP option 4b - modifiers either side, initial required
+rule {DP option 4b - modifiers either side, initial required}
+DP = Deg_1 D' (Deg_2)
+	<DP head> = <D' head>
+	<Deg_1 head agr> = <D' head agr>
+	<Deg_2 head agr> = <D' head agr>
+	<Deg_1 head type modifies_NP> = +
+	<Deg_2 head type modifies_NP> = +
+	<Deg_1 head type DP-initial>  = +
+	<Deg_2 head type DP-final>    = +
+	<D' head agr case genitive> = - 	|Deg not w/in possessor
+
+|DP option 4c - modifiers either side, final required
+rule {DP option 4c - modifiers either side, final required}
+DP = (Deg_1) D' Deg_2
+	<DP head> = <D' head>
+	<Deg_1 head agr> = <D' head agr>
+	<Deg_2 head agr> = <D' head agr>
+	<Deg_1 head type modifies_NP> = +
+	<Deg_2 head type modifies_NP> = +
+	<Deg_1 head type DP-initial>  = +
+	<Deg_2 head type DP-final>    = +
+	<D' head agr case genitive> = - 	|Deg not w/in possessor
+
+
+|********************************************************
+|D' option 1 - no determiners
+rule {D' option 1 - no determiners}
+D' = NP
+	<D' head> = <NP head>
+
+|D' option 2a - only articles, initial , optional
+rule {D' option 2a - only articles, initial , optional}
+D' = (Art) NP
+	<D' head> = <NP head>
+	<Art head agr> = <NP head agr>
+	<D' head type wh> <= <Art head type wh>
+
+|D' option 2b - only articles, final, optional
+rule {D' option 2b - only articles, final, optional}
+D' = NP (Art)
+	<D' head> = <NP head>
+	<Art head agr> = <NP head agr>
+	<D' head type wh> <= <Art head type wh>
+
+|D' option 2c - only articles, either side, optional
+rule {D' option 2c - only articles, either side, optional}
+D' = (Art_1) NP (Art_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> = <NP head agr>
+	<Art_2 head agr> = <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Art_2 head type DP-final> = +
+	<D' head type wh> <= <Art_1 head type wh>
+	<D' head type wh> <= <Art_2 head type wh>
+
+|D' option 3a - only articles, initial, required
+rule {D' option 3a - only articles, initial, required}
+D' = Art NP
+	<D' head> = <NP head>
+	<Art head agr> = <NP head agr>
+	<D' head type wh> <= <Art head type wh>
+
+|D' option 3b - only articles, final, required
+rule {D' option 3b - only articles, final, required}
+D' = NP Art
+	<D' head> = <NP head>
+	<Art head agr> = <NP head agr>
+	<D' head type wh> <= <Art head type wh>
+
+|D' option 3c - only articles, either side, required
+rule {D' option 3c - only articles, either side, required}
+D' = Art_1 NP Art_2
+	<D' head> = <NP head>
+	<Art_1 head agr> = <NP head agr>
+	<Art_2 head agr> = <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Art_2 head type DP-final> = +
+	<D' head type wh> <= <Art_1 head type wh>
+	<D' head type wh> <= <Art_2 head type wh>
+
+|D' option 3d - only articles, initial required, final optional
+rule {D' option 3d - only articles, initial required, final optional}
+D' = Art_1 NP (Art_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> = <NP head agr>
+	<Art_2 head agr> = <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Art_2 head type DP-final> = +
+	<D' head type wh> <= <Art_1 head type wh>
+
+|D' option 3e - only articles, final required, initial optional
+rule {D' option 3e - only articles, final required, initial optional}
+D' = (Art_1) NP Art_2
+	<D' head> = <NP head>
+	<Art_1 head agr> = <NP head agr>
+	<Art_2 head agr> = <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Art_2 head type DP-final> = +
+	<D' head type wh> <= <Art_2 head type wh>
+
+|D' option 4a - only demonstratives, initial, optional
+rule {D' option 4a - only demonstratives, initial, optional}
+D' = (Dem) NP
+	<D' head> = <NP head>
+	<Dem head agr> = <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 4b - only demonstratives, final, optional
+rule {D' option 4b - only demonstratives, final, optional}
+D' = NP (Dem)
+	<D' head> = <NP head>
+	<Dem head agr> = <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 4c - only demonstratives, either side, optional
+rule {D' option 4c - only demonstratives, either side, optional}
+D' = (Dem_1) NP (Dem_2)
+	<D' head> = <NP head>
+	<Dem_1 head agr> = <NP head agr>
+	<Dem_2 head agr> = <NP head agr>
+	<Dem_1 head type DP-initial> = +
+	<Dem_2 head type DP-final> = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 5a - only demonstratives, initial, required
+rule {D' option 5a - only demonstratives, initial, required}
+D' = Dem NP
+	<D' head> = <NP head>
+	<Dem head agr> = <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 5b - only demonstratives, final, required
+rule {D' option 5b - only demonstratives, final, required}
+D' = NP Dem
+	<D' head> = <NP head>
+	<Dem head agr> = <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 5c - only demonstratives, either side, required
+rule {D' option 5c - only demonstratives, either side, required}
+D' = Dem_1 NP Dem_2
+	<D' head> = <NP head>
+	<Dem_1 head agr> = <NP head agr>
+	<Dem_2 head agr> = <NP head agr>
+	<Dem_1 head type DP-initial> = +
+	<Dem_2 head type DP-final> = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 5d - only demonstratives, initial required, final optional
+rule {D' option 5d - only demonstratives, initial required, final optional}
+D' = Dem_1 NP (Dem_2)
+	<D' head> = <NP head>
+	<Dem_1 head agr> = <NP head agr>
+	<Dem_2 head agr> = <NP head agr>
+	<Dem_1 head type DP-initial> = +
+	<Dem_2 head type DP-final> = +
+	<D' head type wh> <= <Dem_1 head type wh>
+
+|D' option 5e - only demonstratives, final required, initial optional
+rule {D' option 5e - only demonstratives, final required, initial optional}
+D' = (Dem_1) NP Dem_2
+	<D' head> = <NP head>
+	<Dem_1 head agr> = <NP head agr>
+	<Dem_2 head agr> = <NP head agr>
+	<Dem_1 head type DP-initial> = +
+	<Dem_2 head type DP-final> = +
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 6a - article or demonstrative initial, optional
+rule {D' option 6a - article or demonstrative initial, optional}
+D' = (Art / Dem) NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 6b - article or demonstrative final, optional
+rule {D' option 6b - article or demonstrative final, optional}
+D' = NP (Art / Dem)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 6c - article or demonstrative either side, optional
+rule {D' option 6c - article or demonstrative either side, optional}
+D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 7a - article or demonstrative initial, required
+rule {D' option 7a - article or demonstrative initial, required}
+D' = {Art / Dem} NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 7b - article or demonstrative final, required
+rule {D' option 7b - article or demonstrative final, required}
+D' = NP {Art / Dem}
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 7c - article or demonstrative either side, required
+rule {D' option 7c - article or demonstrative either side, required}
+D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 7d - article or demonstrative either side, initial required
+rule {D' option 7d - article or demonstrative either side, initial required}
+D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+
+|D' option 7e - article or demonstrative either side, final required
+rule {D' option 7e - article or demonstrative either side, final required}
+D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 8a - articles before, demonstratives after, both optional
+rule {D' option 8a - articles before, demonstratives after, both optional}
+D' = (Art) NP (Dem)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 8b - articles after, demonstratives before, both optional
+rule {D' option 8b - articles after, demonstratives before, both optional}
+D' = (Dem) NP (Art)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 8c - article then demonstrative, both before, both optional
+rule {D' option 8c - article then demonstrative, both before, both optional}
+D' = (Art) (Dem) NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 8d - article then demonstrative, both after, both optional
+rule {D' option 8d - article then demonstrative, both after, both optional}
+D' = NP (Art) (Dem)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 8e - article then demonstrative, either side, optional
+rule {D' option 8e - article then demonstrative, either side, optional}
+D' = (Art_1) (Dem_1) NP (Art_2) (Dem_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 8f - demonstrative then article, both before, both optional
+rule {D' option 8f - demonstrative then article, both before, both optional}
+D' = (Dem) (Art) NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 8g - demonstrative then article, both after, both optional
+rule {D' option 8g - demonstrative then article, both after, both optional}
+D' = NP (Dem) (Art)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 8h - demonstrative then article, either side, optional
+rule {D' option 8h - demonstrative then article, either side, optional}
+D' = (Dem_1) (Art_1) NP (Dem_2) (Art_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 8i - articles external, demonstratives internal, optional
+rule {D' option 8i - articles external, demonstratives internal, optional}
+D' = (Art_1) (Dem_1) NP (Dem_2) (Art_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 8j - demonstratives external, articles internal, optional
+rule {D' option 8j - demonstratives external, articles internal, optional}
+D' = (Dem_1) (Art_1) NP (Art_2) (Dem_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 9a - articles before, demonstratives after, article required
+rule {D' option 9a - articles before, demonstratives after, article required}
+D' = Art NP (Dem)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 9b - articles after, demonstratives before, article required
+rule {D' option 9b - articles after, demonstratives before, article required}
+D' = (Dem) NP Art
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 9c - article then demonstrative, both before, article required
+rule {D' option 9c - article then demonstrative, both before, article required}
+D' = Art (Dem) NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 9d - article then demonstrative, both after, article required
+rule {D' option 9d - article then demonstrative, both after, article required}
+D' = NP Art (Dem)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 9e - article then demonstrative, either side, article required
+rule {D' option 9e - article then demonstrative, either side, article required}
+D' = Art_1 (Dem_1) NP Art_2 (Dem_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 9f - demonstrative then article, both before, article required
+rule {D' option 9f - demonstrative then article, both before, article required}
+D' = (Dem) Art NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 9g - demonstrative then article, both after, article required
+rule {D' option 9g - demonstrative then article, both after, article required}
+D' = NP (Dem) Art
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 9h - demonstrative then article, either side, article required
+rule {D' option 9h - demonstrative then article, either side, article required}
+D' = (Dem_1) Art_1 NP (Dem_2) Art_2
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 9i - articles external, demonstratives internal, art. required
+rule {D' option 9i - articles external, demonstratives internal, art. required}
+D' = Art_1 (Dem_1) NP (Dem_2) Art_2
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 9j - demonstratives external, articles internal, art. required
+rule {D' option 9j - demonstratives external, articles internal, art. required}
+D' = (Dem_1) Art_1 NP Art_2 (Dem_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh> |both agree?
+
+|D' option 10a - articles before, demonstratives after, dem. required
+rule {D' option 10a - articles before, demonstratives after, dem. required}
+D' = (Art) NP Dem
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 10b - articles after, demonstratives before, dem. required
+rule {D' option 10b - articles after, demonstratives before, dem. required}
+D' = Dem NP (Art)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 10c - article then demonstrative, both before, dem. required
+rule {D' option 10c - article then demonstrative, both before, dem. required}
+D' = (Art) Dem NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 10d - article then demonstrative, both after, dem. required
+rule {D' option 10d - article then demonstrative, both after, dem. required}
+D' = NP (Art) Dem
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 10e - article then demonstrative, either side, dem. required
+rule {D' option 10e - article then demonstrative, either side, dem. required}
+D' = (Art_1) Dem_1 NP (Art_2) Dem_2
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 10f - demonstrative then article, both before, dem. required
+rule {D' option 10f - demonstrative then article, both before, dem. required}
+D' = Dem (Art) NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 10g - demonstrative then article, both after, dem. required
+rule {D' option 10g - demonstrative then article, both after, dem. required}
+D' = NP Dem (Art)
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 10h - demonstrative then article, either side, dem. required
+rule {D' option 10h - demonstrative then article, either side, dem. required}
+D' = Dem_1 (Art_1) NP Dem_2 (Art_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 10i - articles external, demonstratives internal, dem. required
+rule {D' option 10i - articles external, demonstratives internal, dem. required}
+D' = (Art_1) Dem_1 NP Dem_2 (Art_2)
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 10j - demonstratives external, articles internal, dem. required
+rule {D' option 10j - demonstratives external, articles internal, dem. required}
+D' = Dem_1 (Art_1) NP (Art_2) Dem_2
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 11a - articles before, demonstratives after, both required
+rule {D' option 11a - articles before, demonstratives after, both required}
+D' = Art NP Dem
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 11b - articles after, demonstratives before, both required
+rule {D' option 11b - articles after, demonstratives before, both required}
+D' = Dem NP Art
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 11c - article then demonstrative, both before, both required
+rule {D' option 11c - article then demonstrative, both before, both required}
+D' = Art Dem NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 11d - article then demonstrative, both after, both required
+rule {D' option 11d - article then demonstrative, both after, both required}
+D' = NP Art Dem
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 11e - article then demonstrative, either side, both required
+rule {D' option 11e - article then demonstrative, either side, both required}
+D' = Art_1 Dem_1 NP Art_2 Dem_2
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 11f - demonstrative then article, both before, both required
+rule {D' option 11f - demonstrative then article, both before, both required}
+D' = Dem Art NP
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 11g - demonstrative then article, both after, both required
+rule {D' option 11g - demonstrative then article, both after, both required}
+D' = NP Dem Art
+	<D' head> = <NP head>
+	<Art head agr> =  <NP head agr>
+	<Dem head agr> =  <NP head agr>
+	<D' head type wh> <= <Dem head type wh>
+
+|D' option 11h - demonstrative then article, either side, both required
+rule {D' option 11h - demonstrative then article, either side, both required}
+D' = Dem_1 Art_1 NP Dem_2 Art_2
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 11i - articles external, demonstratives internal, required
+rule {D' option 11i - articles external, demonstratives internal, required}
+D' = Art_1 Dem_1 NP Dem_2 Art_2
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|D' option 11j - demonstratives external, articles internal, required
+rule {D' option 11j - demonstratives external, articles internal, required}
+D' = Dem_1 Art_1 NP Art_2 Dem_2
+	<D' head> = <NP head>
+	<Art_1 head agr> =  <NP head agr>
+	<Art_2 head agr> =  <NP head agr>
+	<Dem_1 head agr> =  <NP head agr>
+	<Dem_2 head agr> =  <NP head agr>
+	<Art_1 head type DP-initial> = +
+	<Dem_1 head type DP-initial> = +
+	<Art_2 head type DP-final>   = +
+	<Dem_2 head type DP-final>   = +
+	<D' head type wh> <= <Dem_1 head type wh>
+	<D' head type wh> <= <Dem_2 head type wh>
+
+|*********************************************************
+|NP option 1a - no separate marker, possessor initial
+rule {NP option 1a - no separate marker, possessor initial}
+NP = (DP / Pron) {N" / N'}
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP   head agr case genitive> = +
+	<Pron head agr case genitive> = +
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 1b - no separate marker, possessor final
+rule {NP option 1b - no separate marker, possessor final}
+NP = {N" / N'} (DP / Pron)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP   head agr case genitive> = +
+	<Pron head agr case genitive> = +
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 1c - no separate marker, possessor either side
+rule {NP option 1c - no separate marker, possessor either side}
+NP = (DP_1 / Pron_1) {N" / N'} (DP_2 / Pron_2)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP_1   head agr case genitive> = +
+	<Pron_1 head agr case genitive> = +
+	<DP_1 head agr> = <N" head possessor agr>
+	<DP_1 head agr> = <N' head possessor agr>
+	<Pron_1 head agr> = <N" head possessor agr>
+	<Pron_1 head agr> = <N' head possessor agr>
+	<DP_2   head agr case genitive> = +
+	<Pron_2 head agr case genitive> = +
+	<DP_2 head agr> = <N" head possessor agr>
+	<DP_2 head agr> = <N' head possessor agr>
+	<Pron_2 head agr> = <N" head possessor agr>
+	<Pron_2 head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron_1 head type wh>
+	<NP head type wh> <= <Pron_2 head type wh>
+	<NP head agr animate> <= <Pron_1 head agr animate>
+	<NP head agr animate> <= <DP_1 head agr animate>
+	<NP head agr animate> <= <Pron_2 head agr animate>
+	<NP head agr animate> <= <DP_2 head agr animate>
+
+|NP option 2a - optional marker before, possessor initial
+rule {NP option 2a - optional marker before, possessor initial}
+NP = ({(Poss) DP} / Pron) {N" / N'}
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP   head agr case genitive> = +
+	<Pron head agr case genitive> = +
+	<DP head agr case> = <Poss head agr case>
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 2b - optional marker before, possessor final
+rule {NP option 2b - optional marker before, possessor final}
+NP = {N" / N'} ({(Poss) DP} / Pron)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP   head agr case genitive> = +
+	<Pron head agr case genitive> = +
+	<DP head agr case> = <Poss head agr case>
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 2c - optional marker before, possessor either side
+rule {NP option 2c - optional marker before, possessor either side}
+NP = ({(Poss_1) DP_1} / Pron_1) {N" / N'} ({(Poss_2) DP_2} / Pron_2)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP_1   head agr case genitive> = +
+	<Pron_1 head agr case genitive> = +
+	<DP_1 head agr case> = <Poss_1 head agr case>
+	<DP_1 head agr> = <N" head possessor agr>
+	<DP_1 head agr> = <N' head possessor agr>
+	<Pron_1 head agr> = <N" head possessor agr>
+	<Pron_1 head agr> = <N' head possessor agr>
+	<DP_2   head agr case genitive> = +
+	<Pron_2 head agr case genitive> = +
+	<DP_2 head agr case> = <Poss_2 head agr case>
+	<DP_2 head agr> = <N" head possessor agr>
+	<DP_2 head agr> = <N' head possessor agr>
+	<Pron_2 head agr> = <N" head possessor agr>
+	<Pron_2 head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron_1 head type wh>
+	<NP head type wh> <= <Pron_2 head type wh>
+	<NP head agr animate> <= <Pron_1 head agr animate>
+	<NP head agr animate> <= <DP_1 head agr animate>
+	<NP head agr animate> <= <Pron_2 head agr animate>
+	<NP head agr animate> <= <DP_2 head agr animate>
+
+|NP option 3a - optional marker after, possessor initial
+rule {NP option 3a - optional marker after, possessor initial}
+NP = ({DP (Poss)} / Pron) {N" / N'}
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP   head agr case genitive> = +
+	<Pron head agr case genitive> = +
+	<DP head agr case> = <Poss head agr case>
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 3b - optional marker after, possessor final
+rule {NP option 3b - optional marker after, possessor final}
+NP = {N" / N'} ({DP (Poss)} / Pron)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP   head agr case genitive> = +
+	<Pron head agr case genitive> = +
+	<DP head agr case> = <Poss head agr case>
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 3c - optional marker after, possessor either side
+rule {NP option 3c - optional marker after, possessor either side}
+NP = ({DP_1 (Poss_1)} / Pron_1) {N" / N'} ({DP_2 (Poss_2)} / Pron_2)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP_1   head agr case genitive> = +
+	<Pron_1 head agr case genitive> = +
+	<DP_1 head agr case> = <Poss_1 head agr case>
+	<DP_1 head agr> = <N" head possessor agr>
+	<DP_1 head agr> = <N' head possessor agr>
+	<Pron_1 head agr> = <N" head possessor agr>
+	<Pron_1 head agr> = <N' head possessor agr>
+	<DP_2   head agr case genitive> = +
+	<Pron_2 head agr case genitive> = +
+	<DP_2 head agr case> = <Poss_2 head agr case>
+	<DP_2 head agr> = <N" head possessor agr>
+	<DP_2 head agr> = <N' head possessor agr>
+	<Pron_2 head agr> = <N" head possessor agr>
+	<Pron_2 head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron_1 head type wh>
+	<NP head type wh> <= <Pron_2 head type wh>
+	<NP head agr animate> <= <Pron_1 head agr animate>
+	<NP head agr animate> <= <DP_1 head agr animate>
+	<NP head agr animate> <= <Pron_2 head agr animate>
+	<NP head agr animate> <= <DP_2 head agr animate>
+
+|NP option 4a - required marker before, possessor initial
+rule {NP option 4a - required marker before, possessor initial}
+NP = ({Poss DP} / Pron) {N" / N'}
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP head agr case> = <Poss head agr case>
+	<Pron head agr case genitive> = +
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 4b - required marker before, possessor final
+rule {NP option 4b - required marker before, possessor final}
+NP = {N" / N'} ({Poss DP} / Pron)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP head agr case> = <Poss head agr case>
+	<Pron head agr case genitive> = +
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 4c - required marker before, possessor either side
+rule {NP option 4c - required marker before, possessor either side}
+NP = ({Poss_1 DP_1} / Pron_1) {N" / N'} ({Poss_2 DP_2} / Pron_2)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP_1 head agr case> = <Poss_1 head agr case>
+	<Pron_1 head agr case genitive> = +
+	<DP_1 head agr> = <N" head possessor agr>
+	<DP_1 head agr> = <N' head possessor agr>
+	<Pron_1 head agr> = <N" head possessor agr>
+	<Pron_1 head agr> = <N' head possessor agr>
+	<DP_2 head agr case> = <Poss_2 head agr case>
+	<Pron_2 head agr case genitive> = +
+	<DP_2 head agr> = <N" head possessor agr>
+	<DP_2 head agr> = <N' head possessor agr>
+	<Pron_2 head agr> = <N" head possessor agr>
+	<Pron_2 head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron_1 head type wh>
+	<NP head type wh> <= <Pron_2 head type wh>
+	<NP head agr animate> <= <Pron_1 head agr animate>
+	<NP head agr animate> <= <DP_1 head agr animate>
+	<NP head agr animate> <= <Pron_2 head agr animate>
+	<NP head agr animate> <= <DP_2 head agr animate>
+
+|NP option 5a - required marker after, possessor initial
+rule {NP option 5a - required marker after, possessor initial}
+NP = ({DP Poss} / Pron) {N" / N'}
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP head agr case> = <Poss head agr case>
+	<Pron head agr case genitive> = +
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 5b - required marker after, possessor final
+rule {NP option 5b - required marker after, possessor final}
+NP = {N" / N'} ({DP Poss} / Pron)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP head agr case> = <Poss head agr case>
+	<Pron head agr case genitive> = +
+	<DP head agr> = <N" head possessor agr>
+	<DP head agr> = <N' head possessor agr>
+	<Pron head agr> = <N" head possessor agr>
+	<Pron head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron head type wh>
+	<NP head agr animate> <= <Pron head agr animate>
+	<NP head agr animate> <= <DP head agr animate>
+
+|NP option 5c - required marker after, possessor either side
+rule {NP option 5c - required marker after, possessor either side}
+NP = ({DP_1 Poss_1} / Pron_1) {N" / N'} ({DP_2 Poss_2} / Pron_2)
+	<NP head> = <N" head>
+	<NP head> = <N' head>
+	<DP_1 head agr case> = <Poss_1 head agr case>
+	<Pron_1 head agr case genitive> = +
+	<DP_1 head agr> = <N" head possessor agr>
+	<DP_1 head agr> = <N' head possessor agr>
+	<Pron_1 head agr> = <N" head possessor agr>
+	<Pron_1 head agr> = <N' head possessor agr>
+	<DP_2 head agr case> = <Poss_2 head agr case>
+	<Pron_2 head agr case genitive> = +
+	<DP_2 head agr> = <N" head possessor agr>
+	<DP_2 head agr> = <N' head possessor agr>
+	<Pron_2 head agr> = <N" head possessor agr>
+	<Pron_2 head agr> = <N' head possessor agr>
+	<NP head type wh> <= <Pron_1 head type wh>
+	<NP head type wh> <= <Pron_2 head type wh>
+	<NP head agr animate> <= <Pron_1 head agr animate>
+	<NP head agr animate> <= <DP_1 head agr animate>
+	<NP head agr animate> <= <Pron_2 head agr animate>
+	<NP head agr animate> <= <DP_2 head agr animate>
+
+|********
+|NP option 6a - pronoun,dem,quantifiers w/ optional partitive PP after
+rule {NP option 6a - pronoun,dem,quantifiers w/ optional partitive PP after}
+NP = {Pron / Dem / Q / Num / Deg} (PP)
+	<NP head> = <Pron head>
+	<NP head> = <Dem head>
+	<NP head> = <Q head>
+	<NP head> = <Num head>
+	<NP head> = <Deg head>
+	<Pron head agr case genitive> = -
+	<Deg head type quantifier> = +
+	<Dem head type wh > = -		| so "which" not separate
+	<PP head type stranded> = -	| PP must have overt complement
+	<PP head type sentential> = -	| sentential not within NP
+	<PP head type partitive> = +
+
+|NP option 6b - pronoun,dem,quantifiers w/ optional partitive PP before
+rule {NP option 6b - pronoun,dem,quantifiers w/ optional partitive PP before}
+NP = (PP) {Pron / Dem / Q / Num / Deg}
+	<NP head> = <Pron head>
+	<NP head> = <Dem head>
+	<NP head> = <Q head>
+	<NP head> = <Num head>
+	<NP head> = <Deg head>
+	<Pron head agr case genitive> = -
+	<Deg head type quantifier> = +
+	<Dem head type wh > = -		| so "which" not separate
+	<PP head type stranded> = -	| PP must have overt complement
+	<PP head type sentential> = -	| sentential not within NP
+	<PP head type partitive> = +
+
+|********************************************************
+|N" option 1 - QPs initial
+rule {N" option 1 - QPs initial}
+N" = QP N'
+	<N" head> = <N' head>
+	<QP head agr> = <N' head agr>
+
+|N" option 2 - QPs final
+rule {N" option 2 - QPs final}
+N" = QP N'
+	<N" head> = <N' head>
+	<QP head agr> = <N' head agr>
+
+|N" option 3a - QPs either side, both required
+rule {N" option 3a - QPs either side, both required}
+N" = QP_1 N' QP_2
+	<N" head> = <N' head>
+	<QP_1 head agr> = <N' head agr>
+	<QP_2 head agr> = <N' head agr>
+	<QP_1 head type DP-initial> = +
+	<QP_2 head type DP-final>   = +
+
+|N" option 3b - QPs either side, initial required
+rule {N" option 3b - QPs either side, initial required}
+N" = QP_1 N' (QP_2)
+	<N" head> = <N' head>
+	<QP_1 head agr> = <N' head agr>
+	<QP_2 head agr> = <N' head agr>
+	<QP_1 head type DP-initial> = +
+	<QP_2 head type DP-final>   = +
+
+|N" option 3c - QPs either side, final required
+rule {N" option 3c - QPs either side, final required}
+N" = (QP_1) N' QP_2
+	<N" head> = <N' head>
+	<QP_1 head agr> = <N' head agr>
+	<QP_2 head agr> = <N' head agr>
+	<QP_1 head type DP-initial> = +
+	<QP_2 head type DP-final>   = +
+
+
+|********************************************************
+|N' option 1a - AdjP initial, recursive
+rule {N' option 1a - AdjP initial, recursive}
+N'_1 = AdjP N'_2
+	<N'_1 head> = <N'_2 head>
+	<AdjP head agr> = <N'_2 head agr>
+	<AdjP head type DP-initial> = +
+
+|N' option 1b - AdjP final, recursive
+rule {N' option 1b - AdjP final, recursive}
+N'_1 = N'_2 AdjP
+	<N'_1 head> = <N'_2 head>
+	<AdjP head agr> = <N'_2 head agr>
+	<AdjP head type DP-initial> = +
+
+|N' option 2a - left-most noun head, PP initial, optional
+rule {N' option 2a - left-most noun head, PP initial, optional}
+N' = (PP) N_1 (N_2 (N_3))
+	<N' head> = <N_1 head>
+	<PP head type stranded> = -	| P must have overt complement
+	<PP head type passive> = -	| by-phrase not within NP
+	<PP head type sentential> = -	| sentential not within NP
+
+|N' option 2b - left-most noun head, PP final, optional
+rule {N' option 2b - left-most noun head, PP final, optional}
+N' = N_1 (N_2 (N_3)) (PP)
+	<N' head> = <N_1 head>
+	<PP head type stranded> = -	| P must have overt complement
+	<PP head type passive> = -	| by-phrase not within NP
+	<PP head type sentential> = -	| sentential not within NP
+
+|N' option 2c - left-most noun head, PP final, required
+rule {N' option 2c - left-most noun head, PP final, required}
+N' = N_1 (N_2 (N_3)) PP
+	<N' head> = <N_1 head>
+	<PP head type stranded> = -	| P must have overt complement
+	<PP head type passive> = -	| by-phrase not within NP
+	<PP head type sentential> = -	| sentential not within NP
+
+|N' option 3a - right-most noun head, PP initial, optional
+rule {N' option 3a - right-most noun head, PP initial, optional}
+N' = (PP) ((N_3) N_2) N_1
+	<N' head> = <N_1 head>
+	<PP head type stranded> = -	| P must have overt complement
+	<PP head type passive> = -	| by-phrase not within NP
+	<PP head type sentential> = -	| sentential not within NP
+
+|N' option 3b - right-most noun head, PP final, optional
+rule {N' option 3b - right-most noun head, PP final, optional}
+N' = ((N_3) N_2) N_1 (PP)
+	<N' head> = <N_1 head>
+	<PP head type stranded> = -	| P must have overt complement
+	<PP head type passive> = -	| by-phrase not within NP
+	<PP head type sentential> = -	| sentential not within NP
+
+|N' option 3c - right-most noun head, PP final, required
+rule {N' option 3c - right-most noun head, PP final, required}
+N' = ((N_3) N_2) N_1 PP
+	<N' head> = <N_1 head>
+	<PP head type stranded> = -	| P must have overt complement
+	<PP head type passive> = -	| by-phrase not within NP
+	<PP head type sentential> = -	| sentential not within NP
+
+|*********************************************************
+|PP option 1 - no modifiers
+rule {PP option 1 - no modifiers}
+PP = P'
+	<PP head> = <P' head>
+
+|PP option 2a - optional adverbial before
+rule {PP option 2a - optional adverbial before}
+PP = (AdvP) P'
+	<PP head> = <P' head>
+	<AdvP head type manner> = +
+
+|PP option 2b - optional adverbial after
+rule {PP option 2b - optional adverbial after}
+PP = P' (AdvP)
+	<PP head> = <P' head>
+	<AdvP head type manner> = +
+
+|PP option 2c - optional adverbial either side
+rule {PP option 2c - optional adverbial either side}
+PP = (AdvP_1) P' (AdvP_2)
+	<PP head> = <P' head>
+	<AdvP_1 head type manner> = +
+	<AdvP_2 head type manner> = +
+
+|PP option 3a - optional degree word before
+rule {PP option 3a - optional degree word before}
+PP = (Deg) P'
+	<PP head> = <P' head>
+	<Deg head type modifies_PP> = +
+
+|PP option 3b - optional degree word after
+rule {PP option 3b - optional degree word after}
+PP = P' (Deg)
+	<PP head> = <P' head>
+	<Deg head type modifies_PP> = +
+
+|PP option 3c - optional degree word either side
+rule {PP option 3c - optional degree word either side}
+PP = (Deg_1) P' (Deg_2)
+	<PP head> = <P' head>
+	<Deg_1 head type modifies_PP> = +
+	<Deg_1 head type PP-initial> = +
+	<Deg_2 head type modifies_PP> = +
+	<Deg_2 head type PP-final> = +
+
+|PP option 4a - optional degree word or adverbial before
+rule {PP option 4a - optional degree word or adverbial before}
+PP = (Deg / AdvP) P'
+	<PP head> = <P' head>
+	<Deg head type modifies_PP> = +
+	<AdvP head type manner> = +
+
+|PP option 4b - optional degree word or adverbial after
+rule {PP option 4b - optional degree word or adverbial after}
+PP = P' (Deg / AdvP)
+	<PP head> = <P' head>
+	<Deg head type modifies_PP> = +
+	<AdvP head type manner> = +
+
+|PP option 4c - optional degree word before, adverbial after
+rule {PP option 4c - optional degree word before, adverbial after}
+PP = (Deg) P' (AdvP)
+	<PP head> = <P' head>
+	<Deg head type modifies_PP> = +
+	<AdvP head type manner> = +
+
+|PP option 4d - optional degree word after, adverbial before
+rule {PP option 4d - optional degree word after, adverbial before}
+PP = (AdvP) P' (Deg)
+	<PP head> = <P' head>
+	<Deg head type modifies_PP> = +
+	<AdvP head type manner> = +
+
+|PP option 4e - optional degree word or adverbial either side
+rule {PP option 4e - optional degree word or adverbial either side}
+PP = (Deg_1 / AdvP_1) P' (Deg_2 / AdvP_2)
+	<PP head> = <P' head>
+	<Deg_1 head type modifies_PP> = +
+	<Deg_1 head type PP-initial> = +
+	<AdvP_1 head type manner> = +
+	<Deg_2 head type modifies_PP> = +
+	<Deg_2 head type PP-final> = +
+	<AdvP_2 head type manner> = +
+
+|*********************************************************
+|P' option 1a - prepositions, DP or locative complement only
+rule {P' option 1a - prepositions, DP or locative complement only}
+P' = P {DP / AdvP}
+	<P' head> = <P head>
+	<P head type PP-initial> = +
+	<DP head agr case accusative> = +
+	<AdvP head type locative> = +
+	<P' head type stranded> = -		| not missing a complement
+	<P' head object agr> = <DP head agr>	| for passive
+	<P' head type wh> = <DP head type wh>	| wh for pied-piping
+
+|P' option 1b - postpositions, DP or locative complement only
+rule {P' option 1b - postpositions, DP or locative complement only}
+P' = {DP / AdvP} P
+	<P' head> = <P head>
+	<P head type PP-final> = +
+	<DP head agr case accusative> = +
+	<AdvP head type locative> = +
+	<P' head type stranded> = -		| not missing a complement
+	<P' head object agr> = <DP head agr>	| for passive
+	<P' head type wh> = <DP head type wh>	| wh for pied-piping
+
+|P' option 2a - prepositions, IP complement
+rule {P' option 2a - prepositions, IP complement }
+P' = P IP
+	<P' head> = <P head>
+	<P head type PP-initial> = +
+	<IP head type question> = -
+	<IP head infl mood imperative> = -
+	<IP head type copular> = -
+	<P' head type stranded> = -		| not missing a complement
+	<P' head type sentential> = +
+
+|P' option 2b - postpositions, IP complement
+rule {P' option 2b - postpositions, IP complement}
+P' = IP P
+	<P' head> = <P head>
+	<P head type PP-final> = +
+	<IP head type question> = -
+	<IP head infl mood imperative> = -
+	<IP head type copular> = -
+	<P' head type stranded> = -		| not missing a complement
+	<P' head type sentential> = +
+
+|P' option 3 - prepositions or postpositions with no complement
+rule {P' option 3 - prepositions or postpositions with no complement }
+P' = P
+	<P' head> = <P head>
+	<P' head type stranded> = +		| missing a complement
+
+|*********************************************************
+|AdjP option 1 - no modifiers
+rule {AdjP option 1 - no modifiers}
+AdjP = Adj
+	<AdjP head> = <Adj head>
+
+|AdjP option 2 - degree modifiers initial
+rule {AdjP option 2 - degree modifiers initial }
+AdjP = (Deg) Adj
+	<AdjP head> = <Adj head>
+	<Deg head type modifies_Adj> = +
+
+|AdjP option 3 - degree modifiers final
+rule {AdjP option 3 - degree modifiers final }
+AdjP = Adj (Deg)
+	<AdjP head> = <Adj head>
+	<Deg head type modifies_Adj> = +
+
+|AdjP option 4 - degree modifiers both sides
+rule {AdjP option 4 - degree modifiers both sides }
+AdjP = (Deg_1) Adj (Deg_2)
+	<AdjP head> = <Adj head>
+	<Deg_1 head type modifies_Adj> = +
+	<Deg_2 head type modifies_Adj> = +
+	<Deg_1 head type AdjP-initial> = +
+	<Deg_2 head type AdjP-final>   = +
+
+|AdjP option 5 - degree or AdvP modifiers initial
+rule {AdjP option 5 - degree or AdvP modifiers initial }
+AdjP = (Deg / AdvP) Adj
+	<AdjP head> = <Adj head>
+	<Deg head type modifies_Adj> = +
+	<AdvP head type manner>      = +
+
+|AdjP option 6 - degree or AdvP modifiers final
+rule {AdjP option 6 - degree or AdvP modifiers final }
+AdjP = Adj (Deg / AdvP)
+	<AdjP head> = <Adj head>
+	<Deg head type modifies_Adj> = +
+	<AdvP head type manner>      = +
+
+|AdjP option 7 - degree modifiers both sides
+rule {AdjP option 7 - degree modifiers both sides }
+AdjP = (Deg_1 / AdvP_1) Adj (Deg_2 / AdvP_2)
+	<AdjP head> = <Adj head>
+	<AdvP_1 head type manner>      = +
+	<AdvP_2 head type manner>      = +
+	<Deg_1 head type modifies_Adj> = +
+	<Deg_2 head type modifies_Adj> = +
+	<Deg_1 head type AdjP-initial> = +
+	<Deg_2 head type AdjP-final>   = +
+
+
+|***********************************************************
+|AdvP option 1 - no modifiers
+rule {AdvP option 1 - no modifiers}
+AdvP = Adv
+	<AdvP head> = <Adv head>
+
+|AdvP option 2 - modifiers initial
+rule {AdvP option 2 - modifiers initial}
+AdvP = (Deg) Adv
+	<AdvP head> = <Adv head>
+	<Deg head type modifies_Adv> = <Adv head type>
+
+|AdvP option 3 - modifiers final
+rule {AdvP option 3 - modifiers final}
+AdvP = Adv (Deg)
+	<AdvP head> = <Adv head>
+	<Deg head type modifies_Adv> = <Adv head type>
+
+|AdvP option 4 - modifiers both sides
+rule {AdvP option 4 - modifiers both sides}
+AdvP = (Deg_1) Adv (Deg_2)
+	<AdvP head> = <Adv head>
+	<Deg_1) head type modifies_Adv> = <Adv head type>
+	<Deg_2) head type modifies_Adv> = <Adv head type>
+	<Deg_1 head type AdvP-initial> = +
+	<Deg_2 head type AdvP-final>   = +
+
+
+|***********************************************************
+|QP option 1 - no modifiers
+rule {QP option 1 - no modifiers}
+QP = Q
+	<QP head> = <Q head>
+
+|QP option 2 - modifiers initial
+rule {QP option 2 - modifiers initial}
+QP = (Deg) Q
+	<QP head> = <Q head>
+	<Deg head type modifies_Q> = +
+
+|QP option 3 - modifiers final
+rule {QP option 3 - modifiers final}
+QP = Q (Deg)
+	<QP head> = <Q head>
+	<Deg head type modifies_Q> = +
+
+|QP option 4 - modifiers both sides
+rule {QP option 4 - modifiers both sides}
+QP = (Deg_1) Q (Deg_2)
+	<QP head> = <Q head>
+	<Deg_1 head type modifies_Q> = +
+	<Deg_2 head type modifies_Q> = +
+	<Deg_1 head type QP-initial> = +
+	<Deg_2 head type QP-final>   = +
+
+|QP as Numbers option 1 - modifiers initial
+rule {QP as Numbers option 1 - modifiers initial}
+QP = (Adj) Num (Num_1 (Num_2 (Num_3 (Num_4 (Num_5)))))
+	<QP head> = <Num head>
+	<Adj head type ordinal> = +
+
+|QP as Numbers option 2 - modifiers final
+rule {QP as Numbers option 2 - modifiers final}
+QP = Num (Num_1 (Num_2 (Num_3 (Num_4 (Num_5))))) (Adj)
+	<QP head> = <Num head>
+	<Adj head type ordinal> = +
+
+|QP as Numbers option 3 - modifiers either side
+rule {QP as Numbers option 3 - modifiers either side}
+QP = (Adj_1) Num (Num_1 (Num_2 (Num_3 (Num_4 (Num_5))))) (Adj_2)
+	<QP head> = <Num head>
+	<Adj_1 head type ordinal> = +
+	<Adj_2 head type ordinal> = +

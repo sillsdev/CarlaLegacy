@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Pronouns and Proper Names - Pronouns as an NP</title>
+	<form section="pron">
+<introduction>Pronouns and also demonstratives, quantifiers, and numbers can stand alone as a nominal phrase in the right context.  They cannot normally be modified by possessors, adjectives, or other quantifiers, although they can be modified by a degree word, an article or demonstrative. English examples of this type include the following:</introduction>
+<EnglishExample>
+	<exItem label="1.">all twelve.</exItem>
+<exItem label="2.">only he.</exItem>
+<exItem label="3.">just two.</exItem>
+<exItem label="4.">just those few.</exItem>
+</EnglishExample>
+<prompt>Key your examples here:</prompt>
+<textBox id="PronNPStandAloneExample" dataItem="standAloneNPExample"/>
+<introduction>In addition, it is possible to have a pronoun, demonstrative, or quantifier modified by a relative clause, as in:</introduction>
+<EnglishExample>
+	<exItem label="1.">all those who are going with us.</exItem>
+<exItem label="2.">only these two that I saw.</exItem>
+</EnglishExample>
+<prompt>Key your examples here:</prompt>
+<textBox id="PronNPRelCl" dataItem="pronRelClExample"/>
+<introduction>Finally, these categories can also be modified by a partitive phrase (or other PP), as in:</introduction>
+<EnglishExample>
+	<exItem label="1.">only a few of you.</exItem>
+<exItem label="2.">just that many of those.</exItem>
+<exItem label="3.">only those in there.</exItem>
+<exItem label="4.">all of us.</exItem>
+<exItem label="5.">all by himself.</exItem>
+</EnglishExample>
+<prompt>Key your examples here:</prompt>
+<textBox id="PronNPPartitiveExample" dataItem="partitiveExample"/>
+<instruction>This distribution can be accounted for if we allow pronouns, demonstratives, quantifiers, and numbers to be NPs (rather than DPs) in the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>.</instruction>
+<radioGroup>
+	<groupName dataItem="partitive" default="unknown" position="yesHeadDiff"></groupName>
+	<prompt>Where does the optional partitive PP occur with respect to the pronoun, demonstrative, quantifier or number?</prompt>
+	<radio id="PronNPPartBefore" dataValue="before">Before</radio>
+	<radio id="PronNPPartAfter" dataValue="after">After</radio>
+</radioGroup>
+<instruction>The partitive PP is usually headed by a specific preposition or postposition.  Mark this pre/post-position with the feature <feature>partitive</feature> in the lexicon.  All others will automatically default to <feature>-partitive</feature> so those PPs will not be allowed.</instruction>
+		<buttons>
+			<button id="PronNPOK" value="OK" goto="PronCat.htm"/>
+			<button id="PronNPCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

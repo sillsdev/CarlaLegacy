@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKGrammarTextMapper.xsl"?>
+<paws xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\Data\PAWSStarterKit.xsd">
+	<language bold="False" italic="False" under="False" strike="False">
+		<langName>Testing QP</langName>
+		<langAbbr>tqp</langAbbr>
+		<fontName>Courier New</fontName>
+		<fontSize>12</fontSize>
+		<fontColor>0</fontColor>
+		<textSFM>\d</textSFM>
+	</language>
+	<typology checkedOff="yes" wordOrder="VSO">
+		<example>Likes Matt music.</example>
+	</typology>
+	<qp checkedOff="yes" degree="yes" degreePos="either" degreeEither="no" ordinalFormation="independent" ordinalPos="either">
+		<example>all God's children.</example>
+		<degreeExample>quite all people.</degreeExample>
+		<cardinalExample>one.
+thirty three.</cardinalExample>
+		<cardinalCompoundExample>one hundred twenty two.</cardinalCompoundExample>
+		<ordinalExample>first book.</ordinalExample>
+	</qp>
+	<advp checkedOff="yes" degree="yes" degreePos="unknown" degreeEither="yes" degreeSet="yes">
+		<temporalExample>now.
+later.</temporalExample>
+		<locativeExample>here.
+there.
+everywhere.</locativeExample>
+		<mannerExample>tastefully.
+lightly.</mannerExample>
+		<reasonExample>therefore.
+so.</reasonExample>
+	</advp>
+	<adjp checkedOff="yes" modifiers="yesManner" degreePos="after" degreeEither="yes" mannerPos="unknown" mannerEither="yes" agree="no">
+		<example>true blue
+so red</example>
+	</adjp>
+	<np checkedOff="yes" degree="yes" degreePos="before" degreeEither="no" degreeBoth="no" degreeInitialFinal="no" degreeFinalInitial="no" artCase="yes" artCaseType="nomAcc" artAgr="yesNumber" artAndDem="both" artArtRequired="yes" artArtPos1="before" artArtPos2="before" artArtEither1="no" artArtEither2="no" artArtRequiredBoth="yes" artDemRequired="yes" artDemPos1="before" artDemPos2="before" artDemEither1="no" artDemEither2="no" artDemRequiredBoth="yes" artBothCooccur="no" artBothRequired1="no" artBothRequired2="yesBoth" artBothPos1="before" artBothPos2="before" artBothEither1="no" artBothEither2="no" artBothEither3="no" artBothRequiredBoth="noAfter" artBothBothPos="demArtNounArtDem" possMarked="no" possNounPos1="before" possNounPos2="before" possNounPos3="before" possCliticWord="no" possCliticRequired="no" possCliticPossPos="before" possAgr="no" qpPos="before" qpEither="no" qpBoth="no" qpBothAfter="no" qpBothBefore="no" adjpPos="before" adjpEither="no" nounCase="yes" nounCaseType="erg" compHead="right" compHeadPPPos="after">
+		<example>this book.
+the storm.</example>
+		<embeddedExample>the goose's quill.
+a man's best friend's collar.</embeddedExample>
+		<ppExample>the man of La Mancha's hat.</ppExample>
+		<relClExample>the man who likes to eat tamales' beard.</relClExample>
+		<qpExample>every good boy.</qpExample>
+		<adjpExample>all the blue trucks.</adjpExample>
+		<compExample>big auto shop.</compExample>
+		<compPPExample>the tall man in the post office.</compPPExample>
+		<npContents1 checkedOff="yes"/>
+		<npContents2 checkedOff="yes"/>
+		<npContents3 checkedOff="yes"/>
+		<npContents4 checkedOff="yes"/>
+		<npContents5 checkedOff="yes"/>
+		<npContents6 checkedOff="yes"/>
+		<npContents7 checkedOff="yes"/>
+		<npContents8 checkedOff="yes"/>
+		<npContents9 checkedOff="yes"/>
+	</np>
+	<pron checkedOff="yes" pnCat="yes" pnCase="yesNone" pronCase="no" pronCaseType="nomAcc" refl="yes" reflAffix="noWord" recip="yes" recipAffix="noWord" poss="yes" possAffix="no" indef="yes" partitive="after">
+		<example>simple and compound proper names.</example>
+		<ppExample>proper names with prepositional phrases.</ppExample>
+		<relClExample>proper names with rel. clauses.</relClExample>
+		<reflExample>reflexives</reflExample>
+		<recipExample>reciprocals</recipExample>
+		<possExample>possessives</possExample>
+		<indefNPExample>indefinites</indefNPExample>
+		<indefExample>merged indefinites</indefExample>
+		<standAloneNPExample>all twelve</standAloneNPExample>
+		<partitiveExample>only a few of you</partitiveExample>
+		<pronRelClExample>all those who are going with us</pronRelClExample>
+	</pron>
+	<pp checkedOff="yes" degree="yes" manner="no" degreePos="before" degreeEither="no" degreeEither2="no" mannerPos="before" degreeMannerPos="bothBefore" alone="no" sentComp="yes" prePost="both">
+		<example>similar examples here.</example>
+		<ppExample>PP examples</ppExample>
+		<locExample>locative examples</locExample>
+		<sentExample>sent comps</sentExample>
+	</pp>
+	<ip checkedOff="yes" proDrop4="yes" proDrop2="no" aux="yes" auxRequired="yes" auxMany="no" auxOrder="yes" copular="no" diCat="dp" passive="yes" passiveAgent="yes" passiveAux="no" passiveAgentCat="dp">
+		<example>transitve</example>
+		<auxExample>Auxiliary</auxExample>
+		<proDropExample>Pro-drop</proDropExample>
+		<diExample>ditransitives</diExample>
+		<intransExample>simple intranstives and motion</intransExample>
+		<copularExample>copular</copularExample>
+		<passiveExample>passives</passiveExample>
+		<ipContents1 checkedOff="yes"/>
+		<ipContents2 checkedOff="yes"/>
+		<ipContents3 checkedOff="yes"/>
+		<ipContents4 checkedOff="yes"/>
+		<ipContents5 checkedOff="yes"/>
+		<ipContents6 checkedOff="yes"/>
+		<ipContents7 checkedOff="yes"/>
+		<ipContents8 checkedOff="yes"/>
+		<ipContents9 checkedOff="no"/>
+	</ip>
+	<q checkedOff="yes" mainYN="noAux" mainYNWord="no" mainYNPos="before" mainYNEither="no" mainYNBoth="no" mainYNBothInitialFinal="no" mainYNBothFinalInitial="no" mainYNAuxPos="before" embYN="no" embYNWord="no" embYNPos="before" embYNEither="no" embYNBoth="no" embYNBothInitialFinal="no" embYNBothFinalInitial="no" embYNAuxPos="before" contFront="yes" mainCont="no" mainContWord="no" mainContBefore="no" mainContBeforeAux="no" mainContSame="no" mainContPos="before" mainContEither="no" mainContBoth="no" mainContBothInitialFinal="no" mainContBothFinalInitial="no" mainContRequired="no" mainContAux="no" embCont="no" embContWord="no" embContPosAsEmbYNPos="no" embContPos="before" embContEither="no" embContBoth="no" embContBothInitialFinal="no" embContBothFinalInitial="no" embContRequired="no" embContAux="no">
+		<example>Main clause Yes/No questions.</example>
+		<embYNExample>Embedded Yes/No questions.</embYNExample>
+		<contentExample>Main clause content questions.</contentExample>
+		<embContentExample>Embedded content questions.</embContentExample>
+		<whWords>Who
+What
+Where
+When
+Why
+How</whWords>
+		<whWordGlosses/>
+	</q>
+	<focus checkedOff="no">
+		<example/>
+	</focus>
+	<neg checkedOff="no">
+		<example/>
+	</neg>
+	<comp checkedOff="no">
+		<example/>
+	</comp>
+	<advcl checkedOff="no">
+		<example/>
+	</advcl>
+	<relcl checkedOff="no">
+		<example/>
+	</relcl>
+	<fullnp checkedOff="no">
+		<example/>
+	</fullnp>
+	<coord checkedOff="no">
+		<example/>
+	</coord>
+</paws>

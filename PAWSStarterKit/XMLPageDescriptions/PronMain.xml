@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title>Pronouns and Proper Names</title>
+<introduction>Let's consider proper names first.  In English, some names can stand alone, like <example>Sue</example> or <example>Russia</example>.  Others are like compound nouns, such as <example>George Washington</example>.  Proper names may also contain articles and/or prepositional phrases, as in <example>the United States of America</example>.  Many languages require an article before a name.  Appositives, possibly including a possessor, as in <example>my son, David</example>, also occur.  In addition, proper names can be modified by adjectives and relative clauses, as in <example>the good, old USA</example> or <example>the Susan Welch that I know</example>.</introduction>
+	<form section="pron">
+<prompt>Key your examples with simple and compound proper names, or those including articles,	adjectives, and/or possessors here:</prompt>
+<textBox id="PronPNExample" dataItem="example"/>
+<prompt>Key your examples of proper names with prepositional phrases here:</prompt>
+<textBox id="PronPNPPExample" dataItem="ppExample"/>
+<prompt>Key your examples of proper names modified by relative clauses here:</prompt>
+<textBox id="PronPNRelClExample" dataItem="relClExample"/>
+		<buttons>
+			<button id="PronPNOK" value="OK" goto="PronPN2.htm"/>
+			<button id="PronPNCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

@@ -1,0 +1,132 @@
+|Relevant categories for feature names for PAWS Starter Kit - starter3.doc
+| C Black March 2000
+
+Feature template name	Relevant categories
+-------------------------------------------
+absolutive		N Pron
+-absolutive		N Pron
+accusative		N Pron
+-accusative		N Pron
+Adj			Adj
+AdjP-initial		Deg
+AdjP-final		Deg
+Adv			Adv
+AdvP-initial		Deg
+AdvP-initial		Deg
+animate			Adj Art Dem N
+animate_object		V Aux
+animate_subject		V Aux
+-animate		Adj Art Dem N
+-animate_object		V Aux
+-animate_subject	V Aux
+Art			Art
+Aux			Aux
+class_##		Adj Art Dem N
+class_##_object		V Aux
+class_##_subject	V Aux
+completive		V Aux
+continuative		V Aux
+copular			V Aux
+declarative		V Aux C
+Deg			Deg
+Dem			Dem
+ditransitive		V
+DP-initial		Adj Art Deg Dem
+DP-final		Adj Art Deg Dem
+dual			Adj Art Dem N
+dual_object		V Aux
+dual_subject		V Aux
+ergative		N V Pron
+-ergative		N V Pron
+exclusive		Adj Art Dem N
+feminine		Pron N Art Dem Adj
+feminine_object		V Aux
+feminine_subject	V Aux
+first			Adj Art Dem N
+first_object		V Aux
+first_subject		V Aux
+first_exclusive_object	V Aux
+first_exclusive_subject	V Aux
+first_inclusive_object	V Aux
+first_inclusive_subject	V Aux
+fronted
+future			V Aux
+genitive		N Poss Pron
+-genitive		N Poss Pron
+habitual		V Aux
+imperative		V Aux C
+imperfective		V Aux
+inclusive		Adj Art Dem N
+incompletive		V Aux
+interrogative		V Aux C
+intransitive		V
+irrealis		V Aux C
+locative		Adv N
+manner			Adv
+masculine		Pron N Dem Art Adj
+masculine_object	V Aux
+masculine_subject	V Aux
+motion			V Aux
+plural_object		V Aux
+plural_subject		V Aux
+modifies_Adj		Deg
+modifies_Adv		Deg
+modifies_Adv-reason	Deg
+modifies_locative	Deg
+modifies_manner		Deg
+modifies_NP		Deg
+modifies_PP		Deg
+modifies_Q		Deg
+modifies_reason		Deg
+modifies_temporal	Deg
+neuter			Pron N Dem Art Adj
+neuter_object		V Aux
+neuter_subject		V Aux
+negative		Pron Art Aux
+nominative		N Pron
+-nominative		N Pron
+Num			Num
+ordinal			Adj
+P			P
+passive			V Aux
+past			V Aux
+perfective		V Aux
+plural			Adj Art Dem N
+Poss			Poss
+poss_first		N
+poss_exclusive		N
+poss_inclusive		N
+poss_second		N
+poss_third		N
+poss_singular		N
+poss_plural		N
+poss_dual		N
+possessive		Pron
+potential		V Aux
+PP-initial		Deg P
+PP-final		Deg P
+present			V Aux
+progressive		V Aux
+Pron			Pron
+Q			Q
+QP-initial		Deg
+QP-final		Deg
+quantifier		Deg
+question
+realis			V Aux C
+reason			Adv N
+reflexive		Pron
+second			Adj Art Dem N
+second_object		V Aux
+second_subject		V Aux
+sentential		V
+singular		Adj Art Dem N
+singular_object		V Aux
+singular_subject	V Aux
+stative			V Aux
+temporal		Adv N
+third			Adj Art Dem N
+third_object		V Aux
+third_subject		V Aux
+transitive		V
+wh			Pron N Dem Art P Adv PropN Adj Deg

@@ -1,0 +1,70 @@
+<html>
+   <head>
+	  <title>Purpose</title>
+	  <link rel="stylesheet" href="../styles/PAWSStarterKit.css">
+   </head>
+   <body>
+<h1>Purpose</h1>
+<div class="introduction">
+
+<p>The purpose of this starter kit is to aid the user in
+setting up the initial phrase structure rules, lexical
+entries, feature templates, and constraints needed for using
+the Parser and Writer for Syntax (PAWS) program.  Those
+characteristics of the language which are general, usually
+about 2/3 of the rules, can be modelled via this starter
+kit.  The language-specific rules will need to be added
+later using the tools provided with the PAWS interface.</p>
+
+<p>Setting up a complete syntactic parser for a language is a
+monumental task.  Experimentation was therefore done to
+determine how much was necessary to achieve adequate
+coverage of the language for the parser to be able to
+disambiguate AMPLE output.  On the sliding scale between the
+simplest and most complex, this parser is about the middle.
+Specifically, it is simpler in some ways and more complex in
+others than the analysis put forth in Bickford's (1998)
+text.  The major differences are:</p>
+<ul>
+<li>Only very limited, partial subcategorization is used,
+  since this is the point which requires the most time and complexity in a
+  complete parser.
+
+
+<li>An articulated phrase structure following X-bar
+  theory is used (see Black 1999, included in the Help file, for an
+  introduction), since flat structures with lots of optionality are much harder
+  to properly constrain and require more memory and processing time.
+
+
+<li>A parser necessarily works on the surface structure, so
+the phrase structure rules must model the output of
+transformations, not the underlying structure.  This parser
+does not include traces or other null elements which would
+be necessary in a complete parser (see Black 1998 for an
+example).</li>
+</ul>
+
+<p>This starter kit is designed in sections, working from the
+smaller phrases which may be included in other phrases up to
+the more complex phrases and clauses. This allows the user
+to work on one section at a time, test hypotheses for each
+type of phrase and at the same time become familiar with the
+whole PAWS program.  The entire starter kit must be
+completed before attempting to parse full sentences or
+texts, however.  As the name PAWS indicates, there are two
+outputs created by the starter kit:</p>
+<ul>
+<li>All the files needed for using the PC-PATR syntactic
+  parser (McConnel 1998, included in the Help file), which is the engine for
+  PAWS, and
+
+<li>A rough draft syntax write-up file (WinWord RTF or HTML).</li>
+</ul>
+</div>
+<div align="center">
+  <A href="Contents.htm">Return to Contents</A>
+</div>
+
+   </body>
+</html>

@@ -1,0 +1,199 @@
+
+.userData {
+  behavior: url(#default#userdata);
+}
+
+BODY {
+  font-family: sans-serif;
+  color: navy;
+  font-size: x-small;
+  background-image: url(p12c08.gif);
+}
+
+H1 {
+  text-align: center;
+  background-color: #e0e0e0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+H2 {
+  text-align: center;
+  background-color: #e0e0e0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+H3 {
+  text-align: center;
+  background-color: #e0e0e0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+
+
+DIV.parameter TABLE {
+  background-color: #F0F0F0;
+  border-top: thin gray solid;
+  border-right: thin gray solid;
+  border-bottom: thin gray solid;
+  border-left: thin gray solid;
+  margin-bottom: 24px;
+}
+
+DIV.parameter TABLE TR TD {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+SPAN.parameter {
+  color: blue;
+}
+
+SPAN.subParameter {
+  color: blue;
+}
+
+SPAN.example {
+  font-style: italic;
+/*  font-weight: bold; */
+  color: black;
+}
+
+SPAN.feature {
+  font-family: Courier New;
+  color: blue;
+}
+
+SPAN.category {
+  font-family: Courier New;
+  color: black;
+}
+
+SPAN.radioPrompt {
+  color: green;
+}
+
+SPAN.tool {
+  font-family: Courier New;
+  color: blue;
+  text-decoration: underline;
+}
+
+SPAN.file {
+  font-family: Courier New;
+  color: black;
+}
+
+SPAN.tree {
+  font-family: Courier New;
+  color: black;
+}
+
+SPAN.template {
+  font-family: Courier New;
+  color: black;
+}
+
+SPAN.templateName {
+  font-family: Courier New;
+  color: darkgreen;
+}
+
+SPAN.section {
+  font-family: Courier New;
+  font-weight: bold;
+}
+
+SPAN.contents {
+  font-family: Courier New;
+  font-weight: bold;
+}
+
+PRE {
+  font-family: fixed;
+}
+
+.introduction {
+  color: #446688;
+  margin-left: .5in;
+  margin-right: .5in;
+  padding-top: 6px;
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-bottom: 6px;
+  background-color: white;
+  border-top: thin gray solid;
+  border-right: thin gray solid;
+  border-bottom: thin gray solid;
+  border-left: thin gray solid;
+}
+
+.instruction {
+  margin-left: .75in;
+  margin-right: .75in;
+  color: red;
+  font-size: x-small;
+}
+
+
+.featureChart {
+ color: red;
+ font-size: x-small;
+}
+
+.reviewer {
+  color: purple;
+  margin-left: .75in;
+  margin-right: .75in;
+}
+
+.EnglishExample {
+  margin-left: .75in;
+  margin-right: .75in;
+  color: purple;
+  background-color: #e0e0e0;
+}
+
+.form {
+  color: darkgreen;
+  background-color: #fffccc;
+}
+
+SPAN.term {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.history {
+  color: gray;
+  font-size: smaller;
+  margin-top: .5in;
+  padding-top: 12px;
+  border-top: groove;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-bottom: 12px;
+  border-right: groove;
+  border-bottom: groove;
+  border-left: groove;
+}
+
+
+/* REVISION HISTORY
+
+18 Apr 2000, hab.  Added .example, SPAN.example, SPAN.term, H2 and H3;
+				   Decreased table padding to make rows be closer
+
+31 Mar 2000, GFS.  First version.
+
+*/
+.vernacular {
+font-family: Courier New;
+font-size: 12pt;
+color: #0;
+}

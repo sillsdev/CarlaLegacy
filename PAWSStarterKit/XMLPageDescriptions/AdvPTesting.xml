@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKCodeMapper.xsl"?>
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+  <title level="2">Adverbs and AdvP - Testing</title>
+  <instruction>
+	<p>Run the file <file id="AdvPTestingFile" section="AdvP">advtest.txt</file> through your morphological parser and then
+run the syntactic parser on the output.  Check the log browser for the
+results and note any changes you need to make to the lexicon or to
+answers about the order of elements in the phrase structure
+rules. Make the changes as needed and rerun.</p>
+	<p>
+Please check off this section now in 'Contents' and then proceed to
+the Adjectives and AdjP section when you are ready.</p>
+  </instruction>
+  <form transparent="yes">
+	<buttons>
+	  <button id="AdvPTestingOK" value="OK" goto="Contents.htm"/>
+	  <button id="AdvPTestingCancel" value="Cancel"/>
+	</buttons>
+  </form>
+</page>

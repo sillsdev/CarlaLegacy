@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Nominal Phrase - Article &amp; Demonstrative: Case</title>
+<introduction>Some languages mark the case of the nominal phrase by the form of the article and/or demonstrative.</introduction>
+	<form section="np">
+<radioGroup>
+	<groupName dataItem="artCase">RArtCase</groupName>
+	<prompt>Does your language have different forms for articles and/or demonstratives based on case?</prompt>
+	<radio id="NPArtCaseNo">No</radio>
+	<radio id="NPArtCaseYes">Yes</radio>
+<radioGroup id="NPArtCaseTypeTable">
+	<groupName dataItem="artCaseType">NPArtCaseType</groupName>
+	<prompt>Do subjects of intransitive verbs take the same set as subjects of transitive verbs?</prompt>
+	<radio id="NPArtCaseNomAcc">Yes, and direct objects take a different set of articles and/or demonstratives</radio>
+<radio id="NPArtCaseErg">No, subjects of intransitive verbs take the same set as direct objects, but subjects of transitive verbs take a different set</radio>
+</radioGroup>
+</radioGroup>
+<instruction id="NPArtCaseNomAccInstruction">You have a nominative-accusative case system.
+<ul>
+<li>In the lexicon, mark the articles and demonstratives that go with subjects with the feature <feature>nominative</feature> and those that go with direct objects with the feature <feature>accusative</feature>.</li>
+<li>If you have a set for possessors, add the feature <feature>genitive</feature> to those entries.</li>
+<li>If a particular article or demonstrative can show up in any position, do not add any feature.</li>
+<li>If a particular article or demonstrative can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <feature>-accusative</feature>.</li>
+<li>If a particular article or demonstrative can occur as a subject or as an object but not as a possessor, add the feature <feature>-genitive</feature>.</li>
+<li>If a particular article or demonstrative may occur as an object or as a possessor, but not as a subject, add the feature <feature>-nominative</feature>.</li>
+</ul></instruction>
+<instruction id="NPArtCaseErgInstruction">You have an ergative-absolutive case system.
+<ul>
+<li>In the lexicon, mark the articles and demonstratives that go with subjects of transitive verbs with the feature <feature>ergative</feature> and those that go with direct objects and subjects of intransitive verbs with the feature <feature>absolutive</feature>.</li>
+<li>If you have a set for possessors, add the feature <feature>genitive</feature> to those entries.</li>
+<li>If a particular article or demonstrative can show up in any position, do not add any feature.</li>
+<li>If a particular article or demonstrative can occur as a subject of transitive verbs or as a possessor but not as an object or as the subject of an intransitive verb, add the feature <feature>-absolutive</feature>.</li>
+<li>If a particular article or demonstrative can occur as a subject of any verb or as an object but not as a possessor, add the feature <feature>-genitive</feature>.</li>
+<li>If a particular article or demonstrative may occur as an object or the subject of an intransitive verb or as a possessor, but not as the subject of a transitive verb, add the feature <feature>-ergative</feature>.</li>
+</ul>
+</instruction>
+		<buttons>
+			<button id="NPArtCaseOK" value="OK" goto="NPArtAgreement.htm"/>
+			<button id="NPArtCaseCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>

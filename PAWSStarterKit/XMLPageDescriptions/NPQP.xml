@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "C:\FieldWorks\ww\ww\PAWS\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="C:\FieldWorks\ww\ww\PAWS\Templates\PAWSSKHtmlMapper.xsl"?>
+<page>
+	<title level="2">Nominal Phrase - QP Modifiers</title>
+<introduction>Next to add to the nominal phrase are quantifier phrases (QP), discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>
+<EnglishExample>
+	<exItem label="1.">just those very few books.</exItem>
+	<exItem label="2.">all the boy’s many dogs.</exItem>
+	<exItem label="3.">only the first one hundred boys.</exItem>
+</EnglishExample>
+	<form section="np">
+<prompt>Key your examples here:</prompt>
+<textBox id="NPQPExample" dataItem="qpExample"/>
+		<buttons>
+			<button id="NPQPOK" value="OK" goto="NPQP2.htm"/>
+			<button id="NPQPCancel" value="Cancel"/>
+		</buttons>
+	</form>
+</page>
