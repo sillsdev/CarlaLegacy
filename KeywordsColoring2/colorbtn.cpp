@@ -1,3 +1,4 @@
+// Last revison: 4/19/2002 11:46:23 AM [mr]
 // ColorBtn.cpp : implementation file
 
 #include "stdafx.h"

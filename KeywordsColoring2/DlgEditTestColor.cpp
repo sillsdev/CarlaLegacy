@@ -1,5 +1,6 @@
+// Last revison: 4/19/2002 11:46:45 AM [mr]
 // DlgEditTestColor.cpp : implementation file
-// essai
+
 
 #include "stdafx.h"
 #include "keywordscoloring2.h"

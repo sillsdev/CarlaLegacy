@@ -106,10 +106,6 @@ SOURCE=.\DlgEditText.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\DlgKeywordsList.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\FlatButton.cpp
 # End Source File
 # Begin Source File
@@ -175,10 +171,6 @@ SOURCE=.\DlgEditText.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\DlgKeywordsList.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\flatbutton.h
 # End Source File
 # Begin Source File
@@ -232,6 +224,10 @@ SOURCE=.\res\exit.bmp
 # Begin Source File
 
 SOURCE=.\res\exit_26x24.bmp
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\eye.bmp
 # End Source File
 # Begin Source File
 

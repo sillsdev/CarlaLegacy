@@ -5,6 +5,8 @@
 #include "keywordscoloring2.h"
 
 #include "MainFrm.h"
+#include "DlgEditTestColor.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -19,9 +21,9 @@ IMPLEMENT_DYNAMIC(CMainFrame, CMDIFrameWnd)
 
 BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWnd)
 	//{{AFX_MSG_MAP(CMainFrame)
-		// NOTE - the ClassWizard will add and remove mapping macros here.
-		//    DO NOT EDIT what you see in these blocks of generated code !
 	ON_WM_CREATE()
+	ON_COMMAND(ID_Tample, OnTample)
+	ON_COMMAND(ID_Tstamp, OnTstamp)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -104,3 +106,20 @@ void CMainFrame::Dump(CDumpContext& dc) const
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainFrame message handlers
+
+
+void CMainFrame::OnTample()
+{
+	CDlgEditTestColor dlg (this);
+	dlg.m_bIsAMPLE = TRUE;
+	dlg.DoModal( );
+}
+
+void CMainFrame::OnTstamp()
+{
+	CDlgEditTestColor dlg (this);
+	dlg.m_bIsAMPLE = FALSE;
+	dlg.DoModal( );
+
+
+}

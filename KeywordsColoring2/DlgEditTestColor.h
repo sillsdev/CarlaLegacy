@@ -1,3 +1,4 @@
+// Last revison: 4/19/2002 11:46:34 AM [mr]
 #if !defined(AFX_DLGEDITTESTCOLOR_H__B3CFB14A_68CE_4662_8281_893B03A31DB1__INCLUDED_)
 #define AFX_DLGEDITTESTCOLOR_H__B3CFB14A_68CE_4662_8281_893B03A31DB1__INCLUDED_
 
@@ -11,7 +12,6 @@
 #include "TestEdit.h"
 #include "flatbutton.h"
 
-
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditTestColor dialog
 
@@ -24,6 +24,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CDlgEditTestColor)
 	enum { IDD = IDD_EditSetColor };
+	CStatic	m_staticBackgrColorSyst;
 	CButton	m_buttonStrikeout;
 	CComboBox	m_combo;
 	CTestEdit	m_richTestPreview;
@@ -44,9 +45,13 @@ public:
 protected:
 
 	//CColorBtn colorbtn;
-	void refreshRichEditCtrl( );
+	void refreshRichEditCtrl();
 	void writeNewParamInRegistry();
-
+	HTREEITEM insertItem( CTreeCtrl* pTree,
+							CString sTextItem,
+							HTREEITEM hParent,
+							HTREEITEM hInsertAfter,
+							LPARAM lParam );
 
 	// Generated message map functions
 	//{{AFX_MSG(CDlgEditTestColor)
@@ -62,10 +67,11 @@ protected:
 	afx_msg void OnSTRIKEOUT();
 	afx_msg void OnFontSize();
 	afx_msg void OnDefault();
+	afx_msg void OnDestroy();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 
-
+private:
 
 	DWORD m_dwTreeID;
 	HTREEITEM m_hItemOPE;
@@ -73,6 +79,24 @@ protected:
 	COLORREF m_colorBackground;
 	COLORREF m_colorFont;
 	BOOL m_FontBOLD,m_FontITALIC,m_FontUNDERLINE,m_FontSTRIKEOUT;
+	BOOL m_bWordWrap;
+	CString m_strFontSize;
+
+struct GROUP_KEYWORDS {
+		COLORREF clrColor;
+		BOOL bBold;
+		BOOL bItalic;
+		BOOL bUnderline;
+		BOOL bStrikeout;
+	};
+
+GROUP_KEYWORDS *OPE,*FOROPE,*LOC,
+				*KEYW,*CONN,*TYPE,*IDENTIF,
+				*NBR,*COM,*ERRORS;
+
+public:
+	BOOL m_bIsAMPLE;
+
 
 };
 

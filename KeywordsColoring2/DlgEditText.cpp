@@ -1,11 +1,10 @@
+// Last revison: 4/19/2002 11:47:16 AM [mr]
 // DlgEditText.cpp : implementation file
 //
 
 #include "stdafx.h"
 #include "keywordscoloring2.h"
 #include "DlgEditText.h"
-#include "DlgEditTestColor.h"
-
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -17,11 +16,13 @@ static char THIS_FILE[] = __FILE__;
 // CDlgEditText dialog
 
 // CTestEdit	->
-static LPCTSTR szOPE = " IF IFF NOT THEN AND OR XOR = > >= <= < ~= ";
-static LPCTSTR szPOS = " left right current LEFT RIGHT INITIAL FINAL last next FOR_ALL_LEFT FOR_SOME_LEFT FOR_ALL_RIGHT FOR_SOME_RIGHT ";
-static LPCTSTR szTYP = " prefix infix root suffix initial final fromcategory tocategory ";
-static LPCTSTR szTRM = " allomorph is matches member morphname orderclass property string type word ";
-static LPCTSTR szACT = " insert report after before ";
+static LPCTSTR szOPE = " AND IF IFF NOT OR THEN XOR ";
+static LPCTSTR szFOROPE = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
+static LPCTSTR szLOC = " current last left next right FINAL INITIAL LEFT RIGHT ";
+static LPCTSTR szKEYW = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word ";
+static LPCTSTR szKEYW_ACT = " insert before after report ";
+static LPCTSTR szCONN = " is matches member = > >= <= < ~= ";
+static LPCTSTR szTYP = " prefix infix root suffix initial final ";
 static LPCTSTR szNBR = " 0 1 2 3 4 5 6 7 8 9 ";
 // <- CTestEdit
 
@@ -30,15 +31,17 @@ static const TCHAR szSection [] = _T("Settings\\TestsColor");
 CDlgEditText::CDlgEditText(CWnd* pParent /*=NULL*/)
 	: CDialog(CDlgEditText::IDD, pParent)
 {
-	//{{AFX_DATA_MAP(CDlgEditText)
-
-	//}}AFX_DATA_MAP
 }
 
 
 void CDlgEditText::DoDataExchange(CDataExchange* pDX)
 {
+
 	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CDlgEditText)
+	DDX_Control(pDX, IDC_BUTTON1, m_btnCheckOnOff);
+	//}}AFX_DATA_MAP
+
 
 	// perform some tests
 	if( pDX->m_bSaveAndValidate == 1)
@@ -50,7 +53,7 @@ void CDlgEditText::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CDlgEditText, CDialog)
 	//{{AFX_MSG_MAP(CDlgEditText)
-	ON_BN_CLICKED(IDC_BUTTON1, OnCustomize)
+	ON_BN_CLICKED(IDC_BUTTON1, OnCheckOnOff)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -87,12 +90,15 @@ BOOL CDlgEditText::OnInitDialog()
 	m_richTestEdit.SetSLComment(_T('|'));
 	m_richTestEdit.SetSLComment(_T("\\co"));
 
-	m_richTestEdit.AddOPErators(szOPE);
-	m_richTestEdit.AddPOSition(szPOS);
-	m_richTestEdit.AddTYPe(szTYP);
-	m_richTestEdit.AddTRM(szTRM);
-	m_richTestEdit.AddNBR(szACT);
-	m_richTestEdit.AddACTions(szACT);
+	m_richTestEdit.AddKeywords(szOPE,m_richTestEdit.m_strOPErators,m_richTestEdit.m_strOPEratorsLower);
+	m_richTestEdit.AddKeywords(szFOROPE,m_richTestEdit.m_strFOROPerators,m_richTestEdit.m_strFOROPeratorsLower);
+	m_richTestEdit.AddKeywords(szLOC,m_richTestEdit.m_strLOCations,m_richTestEdit.m_strLOCationsLower);
+	m_richTestEdit.AddKeywords(szKEYW,m_richTestEdit.m_strKEYWords,m_richTestEdit.m_strKEYWordsLower);
+	m_richTestEdit.AddKeywords(szKEYW_ACT,m_richTestEdit.m_strKEYWords_Act,m_richTestEdit.m_strKEYWords_ActLower);
+	m_richTestEdit.AddKeywords(szCONN,m_richTestEdit.m_strCONNectors,m_richTestEdit.m_strCONNectorsLower);
+	m_richTestEdit.AddKeywords(szTYP,m_richTestEdit.m_strTYPes,m_richTestEdit.m_strTYPesLower);
+	m_richTestEdit.AddKeywords(szNBR,m_richTestEdit.m_strNBR,m_richTestEdit.m_strNBRLower);
+
 
 	m_richTestEdit.FormatAll();
 	// <- CTestEdit
@@ -107,23 +113,17 @@ BOOL CDlgEditText::OnInitDialog()
 		m_richTestEdit.SetFocus();
 	}
 
+
+HBITMAP hBitmap;
+hBitmap = LoadBitmap(  AfxGetInstanceHandle(),
+  MAKEINTRESOURCE( IDB_eye ));
+m_btnCheckOnOff.SetBitmap(hBitmap);
+
 	return FALSE;
 }
 
-
-
-void CDlgEditText::OnCustomize()
+void CDlgEditText::OnCheckOnOff()
 {
-	CDlgEditTestColor dlg (this);
+	// TODO: Add your control notification handler code here
 
-	dlg.DoModal( );
-
-	// ---------------------
-	// refresh the control
-	// ---------------------
-
-	m_richTestEdit.Initialize();
-
-	m_richTestEdit.setSelectionCharFormat();
-	m_richTestEdit.FormatAll();
 }
