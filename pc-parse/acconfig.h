@@ -10,6 +10,9 @@
 
 /* Define to 1 if ANSI function prototypes are usable.  */
 #undef HAVE_PROTOTYPES
+
+/* Define to 1 if gettimeofday exists and allows NULL timezone argument */
+#undef GETTIMEOFDAY_ALLOWS_NULL_TZ
 @BOTTOM@
 /****************** BEGINNING OF INVARIANT BOTTOM MATTER *******************/
 

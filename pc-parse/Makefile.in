@@ -1,7 +1,7 @@
 # Master Makefile for the OPAC/PC-PARSE programs and libraries.
-# Steve McConnel, 16-Oct-2002
+# Steve McConnel, 25-Oct-2002
 
-datestamp=20021016
+datestamp=20021025
 
 @SET_MAKE@
 # the next line requires GNU make ...
@@ -13,13 +13,16 @@ COPY   = @COPYPROG@
 SHELL = /bin/sh
 
 # subdirectories for making selected libraries
-LIBDIRS = cportlib opaclib cmdlib ample stamp pckimmo pcpatr
+LIBDIRS = cportlib opaclib cmdlib ample stamp pckimmo pcpatr \
+		  TonePGLib
 
 # subdirectories for making selected programs (which may use libraries)
-PROGS = ample stamp anadiff intergen pckimmo pcpatr ktagger ktext
+PROGS = ample stamp anadiff intergen pckimmo pcpatr ktagger ktext \
+		ToneGen TonePars
 
 # combined list of program and library subdirectories
-SUBDIRS = $(LIBDIRS) anadiff intergen ktext ktagger
+SUBDIRS = $(LIBDIRS) anadiff intergen ktext ktagger \
+		  ToneGen TonePars
 
 # directory and archive basename for distribution
 distbase = pc-parse
@@ -29,7 +32,7 @@ distdir  = $(distbase)-$(datestamp)
 DISTFILES = Makefile.in acconfig.h aclocal.m4 config.hin configure.in \
 			stamp-h.in configure install-sh \
 			LICENSE README INSTALL INSTALL.DOS \
-			Makefile.dj config.DOS configure.bat \
+			Makefile.dj config.DOS configure.bat winconfig.bat \
 			Pcparse.dsw Pcparse.sln
 TESTDISTFILES = winchk.bat
 

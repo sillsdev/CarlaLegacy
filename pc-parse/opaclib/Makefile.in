@@ -1,5 +1,5 @@
 # Master Unix makefile for the OPAC library
-# Steve McConnel,  7-Oct-2002
+# Steve McConnel, 24-Oct-2002
 #
 # additional possible definitions:
 # Hardware
@@ -249,10 +249,6 @@ dist: $(DISTFILES)
 	done
 
 testdist:
-	for file in $(TESTFILES); do \
-	  ln $$file $(distdir) \
-		|| { echo copying $$file instead; $(COPY) $$file $(distdir);}; \
-	done
 
 #############################################################################
 

@@ -40,9 +40,12 @@ DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
 			AmpleChanges.txt Ample.dsp Amplelib.dsp Xample.dsp ample.rc \
 			Llample.dsp llample.c Ampledll.dsp ampledll.h ampledll.c \
 			ampledll.rc Wllample.dsp wllample.c wllample.h wllample.rc \
-			resource.h Testdll.dsp testdll.cpp \
+			resource.h Testdll.dsp testdll.cpp xample.rc xampledll.rc \
+			XAmpleTestDll.cpp XAmpleTestDll.dsp XAmpledll.dsp XAmplelib.dsp \
 			Ample.vcproj Amplelib.vcproj Xample.vcproj Llample.vcproj \
-			Ampledll.vcproj Wllample.vcproj Testdll.vcproj
+			Ampledll.vcproj Wllample.vcproj Testdll.vcproj \
+			XAmpleTestDll.vcproj XAmpledll.vcproj XAmplelib.vcproj
+
 TESTFILES = check.bat xcheck.bat
 TESTS     = ae cq hg sb
 TESTBASES = ad01.ctl ancd.tab intx.ctl if01.dic pf01.dic rt01.dic sf01.dic \

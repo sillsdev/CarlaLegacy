@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for ToneGen
  ***************************************************************************
- * Copyright 1996, 2000 by SIL International.  All rights reserved.
+ * Copyright 1996, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL -11		/* bug fix or other internal improvement */
-#define DATE       "October 17, 2002"	/* date of release version */
+#define PATCHLEVEL -12		/* bug fix or other internal improvement */
+#define DATE       "October 25, 2002"	/* date of release version */
 #define YEAR       "2002"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 25-Oct-2002	SRMc - fix portability to Linux and OpenBSD using gcc and make
+ * [1.0b12]
  * 17-Oct-2002  hab - reflect Steve's recent fixes to opaclib
  * [1.0.11]
  * 15-Aug-2002  hab - Not showing synthesized forms in tone part of trace.

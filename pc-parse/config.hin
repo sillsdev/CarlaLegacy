@@ -92,6 +92,9 @@
 /* Define to 1 if ANSI function prototypes are usable.  */
 #undef HAVE_PROTOTYPES
 
+/* Define to 1 if gettimeofday exists and allows NULL timezone argument */
+#undef GETTIMEOFDAY_ALLOWS_NULL_TZ
+
 /* Define if you have the abs function.  */
 #undef HAVE_ABS
 

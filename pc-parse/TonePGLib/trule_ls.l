@@ -9,13 +9,12 @@
  *	14-Feb-95	H.A. Black  initial coding, based on spreds.l
  * 1.9k 22-Mar-94 hab make DJGPP compiler happy: remove its warning msgs
 ***************************************************************************
- * Copyright 1995  by the Summer Institute of Linguistics, Inc.
+ * Copyright 1995, 2002  by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
-#include <ctype.h>
-#include <stdlib.h>
-#include <string.h>
+#ifdef _MSC_VER
 #include <io.h>
+#endif
 #include "stamp.h"
 
 #include "trule_yg.h"

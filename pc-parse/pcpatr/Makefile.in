@@ -1,5 +1,5 @@
 # Master Unix makefile for the PC-PATR library and program
-# Steve McConnel,  7-Oct-2002
+# Steve McConnel, 24-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -31,7 +31,7 @@ DISTFILES = $(SOURCES) $(DLLFILES) Makefile.in Makefile.dj \
 			Patrlib.dsp Pcpatr.dsp Patrlib.vcproj Pcpatr.vcproj
 
 
-TESTFILES = check.bat test/mac-test.tak
+TESTFILES = check.bat
 TESTS=a bears eng-ela eng-ela2 eng-gfs gazdar shieber1 shieber2 shieber3 \
 	  shieber4 tomita woody
 TESTEXTS = .grm .lex .ana .sen .tak .lll

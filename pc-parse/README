@@ -1,22 +1,26 @@
-pc-parse-src-20021007				October 7, 2002
-pc-parse-doc-20021007
-pc-parse-tst-20021007
+pc-parse-src-20021025				October 25, 2002
+pc-parse-doc-20021025
+pc-parse-tst-20021025
 
 These archives include sources, documentation, and test data for the
 following natural language processing / computational linguistics
 programs:
 
-		PC-Kimmo version 2.1.10
-		PC-PATR version 1.3.3
-		KTEXT version 2.1.6
-		KTAGGER version 1.0.8
-		AMPLE version 3.6.2
-		ANADIFF version 1.0.5
-		INTERGEN version 2.1b14
-		STAMP version 2.1.13
+		PC-Kimmo version 2.1.13
+		PC-PATR version 1.3.7
+		KTEXT version 2.1.8
+		KTAGGER version 1.0.10
+		AMPLE version 3.6.5
+		ANADIFF version 1.0.6
+		INTERGEN version 2.1b16
+		STAMP version 2.1.15
+		ToneGen version 1.0b12
+		TonePars version 1.0.11
 
 along with required function libraries.  The sources and documentation
-are all stored in the subdirectory pc-parse-20021007.
+are all stored in the subdirectory pc-parse-20021007.  (Note that the
+documentation stored in the doc subdirectory have not been kept up to
+date.  They may still be useful as a starting point, however.)
 
 The file INSTALL describes how to compile and install the pc-parse
 programs on a Unix (or Unix-like) system.  Minimally, you need to enter
@@ -27,15 +31,18 @@ only two commands:
 
 The build process has been tested on the following systems:
 
-  1. Intel Pentium / Linux 2.2.17 system / gcc 2.95.2
-  2. Intel Pentium II / cygwin 1.3.10-1 (Windows XP) / gcc 2.95.3-5
-  3. OpenBSD 3.1 / gcc
+  1. Debian GNU/Linux 2.2 (kernel 2.2.17) / gcc 2.95.2, glibc 2.1.3-24
+  2. Red Hat Linux 7.3 (kernel 2.4.18) / gcc 2.96, glibc 2.2.5-34
+  3. OpenBSD 3.1 / gcc 2.95.3
+  4. cygwin 1.3.10-1 (Windows XP Pro) / gcc 2.95.3-5
 
-It should work on any Unix system.  (If not, let us know!)
+Unfortunately, these are all Intel Pentium family CPU based systems,
+but this set of programs should compile and work on any Unix type
+system.  (If not, let us know!)
 
 The file INSTALL.DOS describes how to compile and install the pc-parse
 programs on MS-DOS or MS Windows.  This requires either the DJGPP port
-of the GNU C compiler or Microsoft C/C++ (or both).  Other C compilers
+of the GNU C compiler or Microsoft Visual C/C++.  Other C compilers
 may work, but have not been tested.  An archive containing precompiled
 executables and documentation for these programs should be available
 from the same place as where you got the sources.
@@ -165,8 +172,8 @@ word lexicon using the "Save Lexicon" command.
 
 Please send programming questions and feedback to:
 
-	Steve McConnel                   |  e-mail: steve@acadcomp.sil.org
+	Steve McConnel                   |  e-mail: Stephen_McConnel@sil.org
 	Language Software Development    |  phone:  972-708-7361
-	SIL International                |  fax:    972-708-7561
+	SIL International
 	7500 W. Camp Wisdom Road
 	Dallas, TX 75236

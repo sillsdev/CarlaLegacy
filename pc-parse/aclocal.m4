@@ -65,3 +65,22 @@ AC_DEFUN(opAC_PROG_COPY,
 
 AC_DEFUN(opAC_PROG_YACC,
 [AC_CHECK_PROGS(YACC, byacc 'bison -y', yacc)])
+
+## -------------------------------------------------------------------- ##
+## check whether gettimeofday allows NULL pointer argument for timezone ##
+## -------------------------------------------------------------------- ##
+
+AC_DEFUN(opAC_STRUCT_TIMEZONE,
+[AC_CACHE_CHECK(whether gettimeofday accepts NULL for timezone argument,
+ac_cv_gettimeofday_accepts_null,
+[AC_TRY_RUN([#include <sys/time.h>
+int main(int argc, char ** argv)
+{
+struct timeval tv;
+return gettimeofday(&tv, 0);
+}], ac_cv_gettimeofday_accepts_null=yes, ac_cv_gettimeofday_accepts_null=no,
+ ac_cv_gettimeofday_accepts_null=no)])
+if test "$ac_cv_gettimeofday_accepts_null" = yes; then
+  AC_DEFINE(GETTIMEOFDAY_ALLOWS_NULL_TZ)
+fi
+])

@@ -1,5 +1,5 @@
 # Master Unix makefile for the SIL C Portability library
-# Steve McConnel,  7-Oct-2002
+# Steve McConnel, 24-Oct-2002
 
 @SET_MAKE@
 srcdir  = @srcdir@
@@ -34,7 +34,7 @@ TESTFILES =
 # C portability library
 #
 OBJS = @LIBOBJS@ \
-	   cpystr.o fgetss.o zapnl.o
+	   cpystr.o fgetss.o streq.o zapnl.o
 
 libcport.a:  $(OBJS)
 	ar rc libcport.a $(OBJS)
@@ -43,7 +43,7 @@ libcport.a:  $(OBJS)
 # C portability library compiled for profiling
 #
 OBJSP = $(addsuffix .op,$(basename @LIBOBJS@)) \
-	   cpystr.op fgetss.op zapnl.op
+	   cpystr.op fgetss.op streq.op zapnl.op
 
 libcport_p.a:  $(OBJSP)
 	ar rc libcport_p.a $(OBJSP)

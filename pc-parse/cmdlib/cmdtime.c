@@ -107,8 +107,12 @@ _ftime( &start );
 #endif
 
 #ifdef HAVE_GETTIMEOFDAY
+#ifdef GETTIMEOFDAY_ALLOWS_NULL_TZ
+gettimeofday(&t_start, NULL);
+#else
 struct timezone timezone;
 gettimeofday(&t_start, &timezone);
+#endif
 #else
 #ifdef HAVE_TIMES
 startup = time((long *)NULL);
@@ -141,8 +145,12 @@ _ftime( &finish );
 #endif
 
 #ifdef HAVE_GETTIMEOFDAY
+#ifdef STRUCT_TIMEZONE_IN_SYS_TIME
 struct timezone timezone;
 gettimeofday(&t_finish, &timezone);
+#else
+gettimeofday(&t_finish, NULL);
+#endif
 #else
 #ifdef HAVE_TIMES
 finish = time((long *)NULL);

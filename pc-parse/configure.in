@@ -41,6 +41,7 @@ opAC_C_VOID
 opAC_C_PROTOTYPES
 AC_SUBST(ANSIFLAGS)
 opAC_C_WARNINGS
+opAC_STRUCT_TIMEZONE
 
 dnl Checks for library functions.
 AC_FUNC_ALLOCA
@@ -68,5 +69,5 @@ AC_CHECK_LIB(readline, readline)
 AC_CHECK_FUNCS(readline)
 AC_CHECK_FUNCS(add_history)
 
-AC_OUTPUT(Makefile cportlib/Makefile opaclib/Makefile cmdlib/Makefile ample/Makefile stamp/Makefile pckimmo/Makefile pcpatr/Makefile ktext/Makefile ktagger/Makefile anadiff/Makefile intergen/Makefile doc/Makefile,
+AC_OUTPUT(Makefile cportlib/Makefile opaclib/Makefile cmdlib/Makefile ample/Makefile stamp/Makefile pckimmo/Makefile pcpatr/Makefile ktext/Makefile ktagger/Makefile anadiff/Makefile intergen/Makefile doc/Makefile TonePGLib/Makefile ToneGen/Makefile TonePars/Makefile,
 [echo > stamp-h])dnl

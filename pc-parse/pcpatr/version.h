@@ -4,12 +4,14 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
-#define PATCHLEVEL 6		/* bug fix or other minor change */
-#define DATE "October 17, 2002"	/* date of release version */
+#define PATCHLEVEL 7		/* bug fix or other minor change */
+#define DATE "October 25, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 25-Oct-2002	SRMc - portability fix in cmd library
+ * [1.3.7]
  * 17-Oct-2002  hab  - add init change for change in ample data struct
  * [1.3.6]
  * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library
