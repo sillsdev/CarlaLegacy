@@ -46,7 +46,7 @@
 	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	degreeEither (unrestricted | restricted) "unrestricted"
 	cardinalHeadPos (before | after) "after"
-	ordinalFormation (affix | independent) "independent"
+	ordinalFormation (affix | independent) "affix"
 	lastNextFormation (affix | independent) "affix"
 	ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	ordinalEither (unrestricted | restricted) "unrestricted"
@@ -58,6 +58,7 @@
 <!ELEMENT ordinalExample (#PCDATA)>
 <!ELEMENT cardinalNumberCategory (#PCDATA)>
 <!-- Adverb Phrases consist of four kinds of examples, plus a possible category mapping.
+	Manner adverbs may be words or affixes (mannerType).
 	 Degree words may or may not appear (degree).
 	 If so, they have a position (degreePos) with respect to the adverb.
 	 If they can appear either before or after, then either there are sets
@@ -69,6 +70,7 @@
 <!ELEMENT advp (temporalExample, locativeExample, mannerExample, reasonExample, adverbCategory)>
 <!ATTLIST advp
 	checkedOff (yes | no) "no"
+	mannerType (word | affix) "word"
 	degree (yes | no) "no"
 	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	degreeEither (unrestricted | restricted) "unrestricted"
@@ -119,7 +121,7 @@
 	 The phrase may have articles and/or demonstratives (artAndDem).
 	 The article/demonstrative may have case (artCase).
   If articles only, the article has a position (artPos) which may be restricted if it can occur on
-	 either or both sides (artEither).  It may be required (artRequired) or optional always,
+	 either side (artEither).  It may be required (artRequired) or optional always,
 	or it may have a split based on number and mass.  The requirement is further divided
    if articles may appear on both sides (artRequiredBothPos)
    The same options are available for demonstratives only (dem), both but do not
@@ -167,24 +169,24 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	degreeEither (unrestricted | restricted) "unrestricted"
 	artAndDem (no | article | demonstrative | both) "no"
 	artCase (yes | no) "no"
-	artPos (before | after | either | both | unknown) "unknown"
+	artPos (before | after | either | unknown) "unknown"
 	artEither (unrestricted | restricted) "unrestricted"
 	artRequired (no | mass | yes) "no"
 	artBothRequiredPos (no | before | after | both | unknown) "unknown"
-	demPos (before | after | either | both | unknown) "unknown"
+	demPos (before | after | either | unknown) "unknown"
 	demEither (unrestricted | restricted) "unrestricted"
 	demRequired (no | mass | yes) "no"
 	demBothRequiredPos (no | before | after | both | unknown) "unknown"
 	artBothCooccur (no | yes) "no"
-	demOrArtPos (before | after | either | both | unknown) "unknown"
+	demOrArtPos (before | after | either | unknown) "unknown"
 	demOrArtEither (unrestricted | restricted) "unrestricted"
 	demOrArtRequired (no | mass | yes) "no"
 	demOrArtBothRequiredPos (no | before | after | both | unknown) "unknown"
-	demAndArtDemPos (before | after | either | both | unknown) "unknown"
+	demAndArtDemPos (before | after | either | unknown) "unknown"
 	demAndArtDemEither (unrestricted | restricted) "unrestricted"
 	demAndArtDemRequired (no | mass | yes) "no"
 	demAndArtDemBothRequiredPos (no | before | after | both | unknown) "unknown"
-	demAndArtArtPos (before | after | either | both | unknown) "unknown"
+	demAndArtArtPos (before | after | either | unknown) "unknown"
 	demAndArtArtEither (unrestricted | restricted) "unrestricted"
 	demAndArtArtRequired (no | mass | yes) "no"
 	demAndArtArtBothRequiredPos (no | before | after | both | unknown) "unknown"
@@ -351,7 +353,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT locExample (#PCDATA)>
 <!ELEMENT sentExample (#PCDATA)>
 <!ELEMENT pCategory (#PCDATA)>
-<!-- Single clause sentences have examples for transitives, auxiliaries,
+<!-- Single clause sentences have examples for transitives, auxiliaries, nonfinite aux,
 	 pro-drop, ditransitives, intransitives and motion,
 	   copular constructions, and passives.
 	 There may be pro-drop of the subject or not or just imperatives or clitics.
@@ -366,7 +368,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	   required (passiveAux).
 	 Category mappings for Aux and V are available.
 -->
-<!ELEMENT ip (example, auxExample, proDropExample, diExample, intransExample, copularExample, passiveExample, auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9)>
+<!ELEMENT ip (example, auxExample, auxNonfiniteExample, proDropExample, diExample, intransExample, copularExample, passiveExample, auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9)>
 <!ATTLIST ip
 	checkedOff (yes | no) "no"
 	proDrop (noImp | no | yes | yesClitic) "noImp"
@@ -384,6 +386,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	passiveAgentCat (dp | pp) "dp"
 >
 <!ELEMENT auxExample (#PCDATA)>
+<!ELEMENT auxNonfiniteExample (#PCDATA)>
 <!ELEMENT proDropExample (#PCDATA)>
 <!ELEMENT diExample (#PCDATA)>
 <!ELEMENT intransExample (#PCDATA)>
@@ -427,9 +430,20 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ATTLIST ipContents9
 	checkedOff (yes | no) "no"
 >
-<!-- Complement clauses have examples.
+<!-- Complement clauses have various type of examples of the
+	 types of complement clauses they can take: finiteExample,
+	finiteOrNonfiniteExample, DPCPExample, nonfiniteExample,
+	nonfiniteProDropExample, nonfiniteCPOrProDropExample,
+	otherExample.
 -->
-<!ELEMENT comp (example)>
+<!ELEMENT comp (finiteExample, finiteOrNonfiniteExample, DPCPExample, nonfiniteExample, nonfiniteProDropExample, nonfiniteCPOrProDropExample, otherExample)>
+<!ELEMENT finiteExample (#PCDATA)>
+<!ELEMENT finiteOrNonfiniteExample (#PCDATA)>
+<!ELEMENT DPCPExample (#PCDATA)>
+<!ELEMENT nonfiniteExample (#PCDATA)>
+<!ELEMENT nonfiniteProDropExample (#PCDATA)>
+<!ELEMENT nonfiniteCPOrProDropExample (#PCDATA)>
+<!ELEMENT otherExample (#PCDATA)>
 <!ATTLIST comp
 	checkedOff (yes | no) "no"
 >
@@ -533,18 +547,31 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT whWords (#PCDATA)>
 <!ELEMENT whWordGlosses (#PCDATA)>
 <!ELEMENT whPronCategory (#PCDATA)>
-<!-- Relative clauses have examples.
+<!-- Relative clauses have examples and full sentence examples of headed relatives, plus
+	  examples of headless relatives if allowed. They can be of type CP, IP(with marker on V)
+	  or none at all.  If type CP, they can have complementizer (compCP) or just wh-relatives or both.
+	  If there is a complementizer, it can be the same as in verbal CPs or not (relCompSame).
+	 The relative marker (C) has a position and, if either or both sides, there may be restricted sets.
+	 Headless relatives may or may not be allowed (headless).
 -->
-<!ELEMENT relcl (example)>
+<!ELEMENT relcl (example, sentExample, headlessExample)>
 <!ATTLIST relcl
 	checkedOff (yes | no) "no"
+	type (CP | IP | none) "none"
+	compCP (yes | yesBoth | no) "no"
+	relCompSame (yes | no) "no"
+	relCompPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	relCompEitherRestricted (unrestricted | restricted) "unrestricted"
+	headless (no | yes) "no"
 >
-<!-- Adverbial clauses have examples.
+<!ELEMENT headlessExample (#PCDATA)>
+<!-- Adverbial clauses have temporal and reason/purpose examples in full sentences.
 -->
-<!ELEMENT advcl (example)>
+<!ELEMENT advcl (tempSentExample, reasonExample)>
 <!ATTLIST advcl
 	checkedOff (yes | no) "no"
 >
+<!ELEMENT tempSentExample (#PCDATA)>
 <!-- Negative Constructions have examples.
 -->
 <!ELEMENT neg (example)>

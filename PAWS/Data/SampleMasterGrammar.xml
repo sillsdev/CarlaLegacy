@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE masterGrammar SYSTEM "MasterGrammar.dtd">
 <masterGrammar>
-  <rule show="swIP">
+	<rule show="swIP">
 rule {start symbol}
 S = IP / CP
 		&lt; S head &gt; = &lt; IP head &gt;
@@ -10,17 +10,17 @@ S = IP / CP
 		&lt;IP head type question&gt; = -
 		&lt;CP head type root&gt; = +
 </rule>
-  <showWhen id="swIP">
-	<whenValue element="ip" attr="checkedOff" value="yes"/>
-  </showWhen>
-  <rule show="swNotIP">
+	<showWhen id="swIP">
+		<whenValue element="ip" attr="checkedOff" value="yes"/>
+	</showWhen>
+	<rule show="swNotIP">
 rule {testing}
 S = NP / AdjP / PP / QP / AdvP
 </rule>
-  <showWhen id="swNotIP">
-	<whenValue element="ip" attr="checkedOff" value="yes" negateValue="yes"/>
-  </showWhen>
-  <rule show="swCPOpt1">
+	<showWhen id="swNotIP">
+		<whenValue element="ip" attr="checkedOff" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="swCPOpt1">
 |********************************************************
 |CP option 1 - no fronting, root
 rule {CP option 1 - no fronting, root}
@@ -30,10 +30,10 @@ CP = C'
 		&lt;C' head type vacuous&gt; = -                | to avoid empty CP
 		&lt;C' head fronted&gt; = none
 </rule>
-  <showWhen id="swCPOpt1">
-	<whenValue element="q" attr="mainCont" value="no" negateValue="yes"/>
-  </showWhen>
-  <generalizedTemplates>
+	<showWhen id="swCPOpt1">
+		<whenValue element="q" attr="mainCont" value="no" negateValue="yes"/>
+	</showWhen>
+	<generalizedTemplates>
 |Feature templates
 
 Let absolutive          be      &lt;head agr case absolutive&gt;        = +
@@ -224,7 +224,7 @@ Let wh                  be      &lt;head type wh&gt;                    = +
 Let -wh                 be      &lt;head type wh&gt;                    = -
 
 </generalizedTemplates>
-  <specializedTemplates show="swNomTemplate">
+	<specializedTemplates show="swNomTemplate">
 |Category changes and defaults
 
 Let Adj                 be      &lt;cat&gt; = Adj
@@ -308,23 +308,23 @@ Let V                   be      &lt;cat&gt; = V
 								&lt;head type motion&gt;                = !-
 								&lt;head type reciprocal&gt;            = !-
 </specializedTemplates>
-  <showWhen id="swNomTemplate">
-	<whenValue element="np" attr="case" value="nom"/>
-  </showWhen>
-  <specializedTemplates show="swUseWhenTest">
+	<showWhen id="swNomTemplate">
+		<whenValue element="np" attr="case" value="nom"/>
+	</showWhen>
+	<specializedTemplates show="swUseWhenTest">
 Hi there!
 </specializedTemplates>
-  <showWhen id="swUseWhenTest">
-	<useShowWhen show="swNomTemplate"/>
-	<and/>
-	<whenValue element="x" value="y"/>
-  </showWhen>
-  <catMapper show="swCMNom">Num</catMapper>
-  <showWhen id="swCMNom">
-	<whenValue element="qp/cardinalNumberCategory" value="" negateValue="yes"/>
-  </showWhen>
-  <catMapper show="swCMNpArt">Art</catMapper>
-  <showWhen id="swCMNpArt">
-	<whenValue element="np/articleCategory" value="" negateValue="yes"/>
-  </showWhen>
+	<showWhen id="swUseWhenTest">
+		<useShowWhen show="swNomTemplate"/>
+		<and/>
+		<whenValue element="x" attr="y" value="z"/>
+	</showWhen>
+	<catMapper show="swCMNom">Num</catMapper>
+	<showWhen id="swCMNom">
+		<whenValue element="qp/cardinalNumberCategory"  value="" negateValue="yes"/>
+	</showWhen>
+	<catMapper show="swCMNpArt">Art</catMapper>
+	<showWhen id="swCMNpArt">
+		<whenValue element="np/articleCategory" value="" negateValue="yes"/>
+	</showWhen>
 </masterGrammar>

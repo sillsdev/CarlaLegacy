@@ -23,7 +23,7 @@
 		<ordinalExample/>
 		<cardinalNumberCategory/>
 	</qp>
-	<advp checkedOff="no" degree="no" degreePos="unknown" degreeEither="unrestricted" degreeSet="unrestricted">
+	<advp checkedOff="no" mannerType="word" degree="no" degreePos="unknown" degreeEither="unrestricted" degreeSet="unrestricted">
 		<temporalExample/>
 		<locativeExample/>
 		<mannerExample/>
@@ -98,6 +98,7 @@
 	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="dp" passive="yes" passiveAgent="no" passiveAux="no" passiveAgentCat="dp">
 		<example/>
 		<auxExample/>
+		<auxNonfiniteExample/>
 		<proDropExample/>
 		<diExample/>
 		<intransExample/>
@@ -116,22 +117,31 @@
 		<ipContents9 checkedOff="no"/>
 	</ip>
 	<comp checkedOff="no">
-		<example/>
+		<finiteExample/>
+		<finiteOrNonfiniteExample/>
+		<DPCPExample/>
+		<nonfiniteExample/>
+		<nonfiniteProDropExample/>
+		<nonfiniteCPOrProDropExample/>
+		<otherExample/>
 	</comp>
-	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContCliticPos="unknown" mainContCliticAttaches="edge"  mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContRequired="no" mainContAuxRequired="no" embCont="no" embContWord="yes" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContRequired="no" embContAuxRequired="no">
+	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContCliticPos="unknown" mainContCliticAttaches="edge" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContRequired="no" mainContAuxRequired="no" embCont="no" embContWord="yes" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContRequired="no" embContAuxRequired="no">
 		<example/>
 		<embYNExample/>
 		<contentExample/>
 		<embContentExample/>
 		<whWords/>
 		<whWordGlosses/>
-	<whPronCategory/>
+		<whPronCategory/>
 	</q>
-	<relcl checkedOff="no">
+	<relcl checkedOff="no" type="none" compCP="no" relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
 		<example/>
+		<sentExample/>
+		<headlessExample/>
 	</relcl>
 	<advcl checkedOff="no">
-		<example/>
+		<tempSentExample/>
+		<reasonExample/>
 	</advcl>
 	<neg checkedOff="no">
 		<example/>

@@ -4,31 +4,31 @@
 <!ELEMENT and EMPTY>
 <!ELEMENT catMapper (#PCDATA)>
 <!ATTLIST catMapper
-  show IDREF #REQUIRED
+	show IDREF #REQUIRED
 >
 <!ELEMENT generalizedTemplates (#PCDATA)>
-<!ELEMENT masterGrammar (rule| generalizedTemplates| specializedTemplates | catMapper | showWhen)*>
+<!ELEMENT masterGrammar (rule | generalizedTemplates | specializedTemplates | catMapper | showWhen)*>
 <!ELEMENT or EMPTY>
 <!ELEMENT rule (#PCDATA)>
 <!ATTLIST rule
-  show IDREF #REQUIRED
+	show IDREF #IMPLIED
 >
 <!ELEMENT showWhen ((whenValue | useShowWhen), ((or | and), (whenValue | useShowWhen))*)>
 <!ATTLIST showWhen
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
 <!ELEMENT specializedTemplates (#PCDATA)>
 <!ATTLIST specializedTemplates
-  show IDREF #REQUIRED
+	show IDREF #REQUIRED
 >
 <!ELEMENT whenValue EMPTY>
 <!ATTLIST whenValue
-  element CDATA #REQUIRED
-  attr CDATA #IMPLIED
-  value CDATA #REQUIRED
-  negateValue (yes | no) "no"
+	element CDATA #REQUIRED
+	attr CDATA #IMPLIED
+	value CDATA #REQUIRED
+	negateValue (yes | no) "no"
 >
 <!ELEMENT useShowWhen EMPTY>
 <!ATTLIST useShowWhen
-  show IDREF #REQUIRED
+	show IDREF #REQUIRED
 >

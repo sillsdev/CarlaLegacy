@@ -219,10 +219,10 @@ else
 			  <xsl:value-of select="@id"/>_tr.style.display = "none";
 </xsl:when>
 			<xsl:otherwise>
-		  <xsl:value-of select="@id"/>.style.display = "none";
+			  <xsl:value-of select="@id"/>.style.display = "none";
 </xsl:otherwise>
 		  </xsl:choose>
-</xsl:for-each>  }
+		</xsl:for-each>  }
 	  </xsl:for-each>
 }
   </script>
@@ -233,7 +233,17 @@ else
   - - - - - - - -
   -->
   <xsl:template match="//textBox | //catMap" mode="load">
-example = PawsSKAnswers.selectSingleNode("//<xsl:value-of select="$Section"/>/<xsl:value-of select="./@dataItem"/>");
+	<xsl:text>example = PawsSKAnswers.selectSingleNode("//</xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@section">
+		<xsl:value-of select="@section"/>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:value-of select="$Section"/>
+	  </xsl:otherwise>
+	</xsl:choose>
+	<xsl:text>/</xsl:text>
+	<xsl:value-of select="./@dataItem"/>");
 <xsl:value-of select="@id"/>.value = example.text;
 </xsl:template>
   <!--
@@ -600,9 +610,9 @@ Refresh();
   <!-- radio -->
   <xsl:template match="//radio">
 	<tr>
-<xsl:if test="@id and @show">
-<xsl:attribute name="id"><xsl:value-of select="@id"/>_tr</xsl:attribute>
-</xsl:if>
+	  <xsl:if test="@id and @show">
+		<xsl:attribute name="id"><xsl:value-of select="@id"/>_tr</xsl:attribute>
+	  </xsl:if>
 	  <td valign="top">
 		<xsl:element name="input">
 		  <xsl:attribute name="type">radio</xsl:attribute>
@@ -617,7 +627,7 @@ Refresh();
 	  </td>
 	  <xsl:element name="td">
 		<xsl:attribute name="width">99%</xsl:attribute>
-		<xsl:attribute name="id"><xsl:value-of select="@id"/>Prompt</xsl:attribute>
+		<xsl:attribute name="id"><xsl:value-of select="@id"/>RPrompt</xsl:attribute>
 		<xsl:attribute name="onclick"><xsl:value-of select="../groupName"/>(<xsl:value-of select="@id"/>)</xsl:attribute>
 		<xsl:attribute name="value"><xsl:value-of select="@dataValue"/></xsl:attribute>
 		<xsl:attribute name="onmouseover">this.style.cursor='default'</xsl:attribute>
@@ -771,6 +781,8 @@ Refresh();
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+28-Jun-2002  Andy Black  Allow section attribute for textbox element
+26-Jun-2002  Andy Black  Change radio prompt name to end with RPrompt
 10-Jun-2002  Andy Black  Added indent to default prompt
 05-Jun-2002  Andy Black  Added img to tree
 2001               Andy Black  Began working on Initial Draft
