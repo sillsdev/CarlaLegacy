@@ -4,12 +4,20 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 13		/* bug fix or other internal improvement */
-#define DATE       "May 15, 2003"	/* date of release version */
+#define PATCHLEVEL 14		/* bug fix or other internal improvement */
+#define DATE       "May 20, 2003"	/* date of release version */
 #define YEAR       "2003"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 20-May-2003  hab  - When matching category and morphname of a root from the
+ * [1.0.14]             ANA file (tsdict.c), did not necessarily set the
+ *                      category of the returned dictionary entry to the
+ *                      category in the ANA file.  This gave some odd results
+ *                      for tools like TonePars which are an ANA filter and
+ *                      also use the dictionary entry (Note: STAMP does not
+ *                      have this characteristic and therefore this problem
+ *                      never showed for STAMP).
  * 15-May-2003  hab - fix bug which failed to remove an analysis in a word
  * [1.0.13]            when its edge-conditions failed to produce a successful
  *                     analysis in the following word.
