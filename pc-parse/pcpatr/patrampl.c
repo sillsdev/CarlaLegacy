@@ -100,6 +100,69 @@ for (;;)
 	}
 }
 
+#ifndef hab130
+/******************************************************************************
+ * NAME
+ *    get_ample_primary_root_morphname
+ * ARGUMENTS
+ *    pszAnal_in - input analysis string
+ * DESCRIPTION
+ *    Get primary root morphname from analysis string.  I.e., remove the root markers and
+ *    root categories, any prefixes and suffixes, and only use one root.
+ * RETURN VALUE
+ *    pointer to morphname found
+ */
+static char * get_ample_primary_root_morphname( pszAnal_in, pPATR_in )
+char * pszAnal_in;
+PATRData * pPATR_in;
+{
+char * pszMorphname;
+char * pch;
+char * pszRest;
+
+pszMorphname = allocPATRStringCopy(pszAnal_in, pPATR_in);
+pch = strchr(pszMorphname, '<');
+if (pch == NULL)
+	{
+	return pszMorphname;
+	}
+pszRest = strchr(pch + 2, ' ');
+if (pszRest == NULL)
+	{
+	return pszMorphname;
+	}
+++pszRest;
+memmove(pszMorphname, pszRest, strlen(pszRest) + 1);
+for (pch = pszMorphname;;)
+	{
+	pch = strchr(pch, ' ');
+	if (pch == NULL)
+	{
+	return pszMorphname;
+	}
+	if ((pPATR_in->eRootGlossFeature == PATR_ROOT_GLOSS_LEFT_HEADED) ||
+	(pPATR_in->eRootGlossFeature == PATR_ROOT_GLOSS_ON))
+		{			/* use leftmost root */
+	*pch = NUL;
+	return pszMorphname;
+	}
+	if (strncmp(pch, " >", 2) == 0)
+	{
+	  *pch = NUL;
+	  return pszMorphname;
+	}
+	++pch;
+	pszRest = strchr(pch, ' ');
+	++pszRest;
+	if (pPATR_in->eRootGlossFeature == PATR_ROOT_GLOSS_RIGHT_HEADED)
+		{
+	pch = pszMorphname;
+	}
+	memmove(pch, pszRest, strlen(pszRest) + 1);
+	}
+}
+#endif /* hab130 */
+
 /*****************************************************************************
  * NAME
  *    parseWithAmpleForPATRLexicon
@@ -118,6 +181,9 @@ AmpleWord	sAmpleWord;
 WordAnalysis *	pAnalysis;
 PATRLexItem *	pLexItem;
 char *		p;
+#ifndef hab130
+char * pszRootGloss;
+#endif /* hab130 */
 /*
  *  check that we have the necessary information
  */
@@ -163,11 +229,25 @@ for (	pAnalysis = sAmpleWord.pTemplate->pAnalyses ;
 	while ((p = strchr(pAnalysis->pszFeatures, '=')) != NULL)
 		*p = ' ';
 	}
+#ifdef hab130
 	addPATRLexItem(pszWord_in,
 		   pAnalysis->pszAnalysis,
 		   pAnalysis->pszCategory,
 		   pAnalysis->pszFeatures,
 		   NULL, pPATR_in);
+#else  /* hab130 */
+	if (pPATR_in->eRootGlossFeature != PATR_ROOT_GLOSS_NO_FEATURE)
+	pszRootGloss = get_ample_primary_root_morphname(pAnalysis->pszAnalysis,
+							pPATR_in);
+	else
+		pszRootGloss = NULL;
+	addPATRLexItem(pszWord_in,
+		   pAnalysis->pszAnalysis,
+		   pszRootGloss,
+		   pAnalysis->pszCategory,
+		   pAnalysis->pszFeatures,
+		   NULL, pPATR_in);
+#endif /* hab130 */
 	}
 eraseAmpleWord( &sAmpleWord, pAmple_in );
 
@@ -201,6 +281,9 @@ FILE *fp;
 WordTemplate *wtp;
 WordAnalysis *	pAnal;
 char *p, *category;
+#ifndef hab130
+char * pszRootGloss;
+#endif /* hab130 */
 
 if ((fp = fopen(filename, "r")) == (FILE *)NULL)
 	{
@@ -242,11 +325,25 @@ while ((wtp = readTemplateFromAnalysis(fp, pTextControl_in)) != NULL)
 	++pPATR_in->pLexicon->iLexEntriesCount;
 	pPATR_in->bGlossesExist = TRUE;
 	pPATR_in->bGloss        = TRUE;
+#ifdef hab130
 	addPATRLexItem(wtp->pszOrigWord,
 			   get_ample_morphnames(pAnal->pszAnalysis, pPATR_in),
 			   category,
 			   pAnal->pszFeatures,
 			   NULL, pPATR_in);
+#else  /* hab130 */
+	if (pPATR_in->eRootGlossFeature != PATR_ROOT_GLOSS_NO_FEATURE)
+		pszRootGloss = get_ample_primary_root_morphname(pAnal->pszAnalysis,
+							  pPATR_in);
+	else
+		pszRootGloss = NULL;
+	addPATRLexItem(wtp->pszOrigWord,
+			   get_ample_morphnames(pAnal->pszAnalysis, pPATR_in),
+			   pszRootGloss,
+			   category,
+			   pAnal->pszFeatures,
+			   NULL, pPATR_in);
+#endif /* hab130 */
 	}
 	freeWordTemplate(wtp);
 	}
@@ -274,22 +371,36 @@ char *			gloss;
 PATRData *		pPATR_in;
 {
 PATRFeature *	tfeat;
+#ifdef hab130
 char *	anal_root;            /* Root of analysis */
+#else /* hab130 */
+char *	anal_root;            /* Root of analysis */
+char *	anal_morphs;          /* morphnames in analysis */
+#endif /* hab130 */
 char *	pszCatFeatName;
 char *	pszLexFeatName;
 char *	pszGlossFeatName;
+#ifndef hab130
+char *  pszRootGlossFeatName;
+#endif /* hab130 */
 
 if (pPATR_in->pGrammar != NULL)
 	{
 	pszCatFeatName   = pPATR_in->pGrammar->pszCatFeatName;
 	pszLexFeatName   = pPATR_in->pGrammar->pszLexFeatName;
 	pszGlossFeatName = pPATR_in->pGrammar->pszGlossFeatName;
+#ifndef hab130
+	pszRootGlossFeatName = pPATR_in->pGrammar->pszRootGlossFeatName;
+#endif /* hab130 */
 	}
 else
 	{
 	pszCatFeatName   = storedPATRString( "cat", pPATR_in);
 	pszLexFeatName   = storedPATRString( "lex", pPATR_in);
 	pszGlossFeatName = storedPATRString( "gloss", pPATR_in);
+#ifndef hab130
+	pszRootGlossFeatName = storedPATRString( "rootgloss", pPATR_in);
+#endif /* hab130 */
 	}
 /*
  *  Add cat feature
@@ -320,6 +431,7 @@ if (lex)
  */
 if (gloss)
 	{
+#ifdef hab130
 	anal_root = get_ample_morphnames( gloss, pPATR_in );
 	addPATRFeatureToComplex(wordt->pFeature,
 		createPATRComplexFeature(pszGlossFeatName,
@@ -327,6 +439,25 @@ if (gloss)
 								 pPATR_in),
 						pPATR_in),
 					 pPATR_in));
+#else /* hab130 */
+	anal_morphs = get_ample_morphnames( gloss, pPATR_in );
+	addPATRFeatureToComplex(wordt->pFeature,
+		createPATRComplexFeature(pszGlossFeatName,
+			  createPATRAtomFeature(storedPATRString(anal_morphs,
+								 pPATR_in),
+						pPATR_in),
+					 pPATR_in));
+	if (pPATR_in->eRootGlossFeature != PATR_ROOT_GLOSS_NO_FEATURE)
+		{			/* Add root gloss feature */
+	anal_root = get_ample_primary_root_morphname( gloss, pPATR_in );
+	addPATRFeatureToComplex(wordt->pFeature,
+		createPATRComplexFeature(pszRootGlossFeatName,
+			  createPATRAtomFeature(storedPATRString(anal_root,
+								 pPATR_in),
+						pPATR_in),
+					 pPATR_in));
+	}
+#endif /* hab130 */
 	}
 }
 

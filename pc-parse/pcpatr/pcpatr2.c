@@ -130,6 +130,12 @@ static const NumberedMessage sBadAmpleTextCtlFile_m	= { ERROR_MSG,   721,
 #define KW_PROMOTE	61	/* added for SET PROMOTE-DEFAULTS {ON|OFF} */
 #define KW_FINAL_PUNC	62	/* added for SET FINAL-PUNCTUATION */
 #define KW_PROPERTY_FEATURE 63	/* added for SET PROPERTY-IS-FEATURE {ON|OFF} */
+#ifndef hab130
+#define KW_ROOTGLOSS         64	/* added for SET MARKER ROOTGLOSS */
+#define KW_ROOTGLOSS_FEATURE 65	/* added for SET ROOTGLOSS (OFF|ON|LEFTHEADED|RIGHTHEADED|ALL) */
+#define KW_LEFT              66 /* added for SET ROOTGLOSS LEFTHEADED */
+#define KW_RIGHT             67 /* added for SET ROOTGLOSS RIGHTHEADED */
+#endif /* hab130 */
 
 /*************************************************************************
  *  Variables and symbols local to this module
@@ -216,6 +222,9 @@ static const CmdKeyword set_tab[] = {	/* SET command keyword table */
 	{ "marker",			KW_MARKER,		0 },
 	{ "promote-defaults",	KW_PROMOTE,		0 },
 	{ "property-is-feature",	KW_PROPERTY_FEATURE,	0 },
+#ifndef hab130
+	{ "rootgloss",              KW_ROOTGLOSS_FEATURE,   0 },
+#endif /* hab130 */
 	{ "timing",			KW_TIMING,		0 },
 	{ "top-down-filter",	KW_TOPDOWN_FILTER,	0 },
 	{ "tree",			KW_TREE,		0 },
@@ -262,9 +271,23 @@ const CmdKeyword marker_tab[] = { /* SET MARKER command keyword table */
 	{ "features",	KW_FEATURES, 0 },
 	{ "gloss",		KW_GLOSS,    0 },
 	{ "record",		KW_RECORD,   0 },
+#ifndef hab130
+	{ "rootgloss",      KW_ROOTGLOSS,0 },
+#endif /* hab130 */
 	{ "word",		KW_WORD,     0 },
 	};
 const int n_marker = (sizeof(marker_tab) / sizeof(CmdKeyword));
+
+#ifndef hab130
+const CmdKeyword rootgloss_tab[] = { /* SET ROOTGLOSS command keyword table */
+	{ "all",		KW_ALL,   0 },
+	{ "leftheaded",	KW_LEFT,  0 },
+	{ "off",		KW_OFF,   0 },
+	{ "on",		KW_ON,    0 },
+	{ "rightheaded",	KW_RIGHT, 0 },
+	};
+const int n_rootgloss = (sizeof(rootgloss_tab) / sizeof(CmdKeyword));
+#endif /* hab130 */
 
 const CmdKeyword tree_tab[] = {	/* SET TREE command keyword table */
 	{ "flat",		KW_FLAT,     0 },
@@ -1664,6 +1687,34 @@ switch (lookupCmdKeyword( arg, set_tab, n_set, ""))
 			sPCPATRData_g.pszGlossMarker = duplicateString(arg);
 			}
 		break;
+#ifndef hab130
+		case KW_ROOTGLOSS:
+		arg = (char *)tokenizeString(NULL,szWhitespace_g);
+		if (arg == NULL)
+			displayNumberedMessage(&sCmdMissingArgument_g,
+					   bCmdSilentMessages_g,
+					   bCmdShowWarnings_g, pCmdLogFP_g,
+					   NULL, 0,
+					   "SET MARKER ROOTGLOSS");
+		else if (*arg == '?')
+			{
+			fprintf(stderr,
+		 "The string that marks a rootgloss entry in a lexicon record.\n");
+			fprintf(stderr, "The default is \\r\n");
+			}
+		else
+			{
+			if (sPCPATRData_g.pszRootGlossMarker !=
+						  szPCPATRDefaultRootGlossMarker_g)
+			freeMemory((char *)sPCPATRData_g.pszRootGlossMarker);
+			if (strcmp(arg, szPCPATRDefaultRootGlossMarker_g) == 0)
+			sPCPATRData_g.pszRootGlossMarker =
+						  szPCPATRDefaultRootGlossMarker_g;
+			else
+			sPCPATRData_g.pszRootGlossMarker = duplicateString(arg);
+			}
+		break;
+#endif /* hab130 */
 
 		default:
 		displayNumberedMessage(&sCmdBadArgument_g,
@@ -1674,6 +1725,55 @@ switch (lookupCmdKeyword( arg, set_tab, n_set, ""))
 		break;
 		}
 	break;
+
+#ifndef hab130
+	case KW_ROOTGLOSS_FEATURE:		/* SET ROOTGLOSS {ON|OFF|ALL|LEFTHEADED|RIGHTHEADED} */
+	arg = (char *)tokenizeString(NULL,szWhitespace_g);
+	switch (lookupCmdKeyword( arg, rootgloss_tab, n_rootgloss, ""))
+		{
+		case CMD_NULL:
+		displayNumberedMessage(&sCmdMissingKeyword_g,
+					   bCmdSilentMessages_g,
+					   bCmdShowWarnings_g, pCmdLogFP_g,
+					   NULL, 0,
+					   "SET ROOTGLOSS");
+		break;
+		case CMD_AMBIGUOUS:
+		displayNumberedMessage(&sCmdAmbiguousKeyword_g,
+					   bCmdSilentMessages_g,
+					   bCmdShowWarnings_g, pCmdLogFP_g,
+					   NULL, 0,
+					   "SET ROOTGLOSS", arg);
+		break;
+		case CMD_HELP:
+		return;			/* already gave help */
+
+		case KW_ALL:
+		  sPCPATRData_g.eRootGlossFeature = PATR_ROOT_GLOSS_USE_ALL;
+		  break;
+		case KW_LEFT:
+		  sPCPATRData_g.eRootGlossFeature = PATR_ROOT_GLOSS_LEFT_HEADED;
+		  break;
+		case KW_OFF:
+		  sPCPATRData_g.eRootGlossFeature = PATR_ROOT_GLOSS_NO_FEATURE;
+		  break;
+		case KW_ON:
+		  sPCPATRData_g.eRootGlossFeature = PATR_ROOT_GLOSS_ON;
+		  break;
+		case KW_RIGHT:
+		  sPCPATRData_g.eRootGlossFeature = PATR_ROOT_GLOSS_RIGHT_HEADED;
+		  break;
+
+		default:
+		displayNumberedMessage(&sCmdBadKeyword_g,
+					   bCmdSilentMessages_g,
+					   bCmdShowWarnings_g, pCmdLogFP_g,
+					   NULL, 0,
+					   "SET ROOTGLOSS", arg);
+		break;
+		}
+	break;
+#endif /* hab130 */
 
 	case KW_TIMING:		/* SET TIMING {ON|OFF} */
 	arg = (char *)tokenizeString(NULL,szWhitespace_g);

@@ -2,7 +2,7 @@
 
 
 /* File created by MIDL compiler version 5.01.0164 */
-/* at Wed Aug 08 09:34:19 2001
+/* at Fri Feb 15 13:53:56 2002
  */
 /* Compiler settings for C:\carla\Dev\pc-parse\pcpatr\patr100.idl:
 	Oicf (OptLev=i2), W1, Zp8, env=Win32, ms_ext, c_ext
@@ -265,6 +265,18 @@ EXTERN_C const IID IID_IPatrParser;
 
 		virtual /* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE put_AmplePropertyIsFeature(
 			/* [in] */ BOOL newVal) = 0;
+
+		virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_LexRootGlossMarker(
+			/* [retval][out] */ BSTR __RPC_FAR *pVal) = 0;
+
+		virtual /* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE put_LexRootGlossMarker(
+			/* [in] */ BSTR newVal) = 0;
+
+		virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_RootGlossFeature(
+			/* [retval][out] */ long __RPC_FAR *pVal) = 0;
+
+		virtual /* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE put_RootGlossFeature(
+			/* [in] */ long newVal) = 0;
 
 	};
 
@@ -565,6 +577,22 @@ EXTERN_C const IID IID_IPatrParser;
 			IPatrParser __RPC_FAR * This,
 			/* [in] */ BOOL newVal);
 
+		/* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *get_LexRootGlossMarker )(
+			IPatrParser __RPC_FAR * This,
+			/* [retval][out] */ BSTR __RPC_FAR *pVal);
+
+		/* [helpstring][id][propput] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *put_LexRootGlossMarker )(
+			IPatrParser __RPC_FAR * This,
+			/* [in] */ BSTR newVal);
+
+		/* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *get_RootGlossFeature )(
+			IPatrParser __RPC_FAR * This,
+			/* [retval][out] */ long __RPC_FAR *pVal);
+
+		/* [helpstring][id][propput] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *put_RootGlossFeature )(
+			IPatrParser __RPC_FAR * This,
+			/* [in] */ long newVal);
+
 		END_INTERFACE
 	} IPatrParserVtbl;
 
@@ -786,6 +814,18 @@ EXTERN_C const IID IID_IPatrParser;
 
 #define IPatrParser_put_AmplePropertyIsFeature(This,newVal)	\
 	(This)->lpVtbl -> put_AmplePropertyIsFeature(This,newVal)
+
+#define IPatrParser_get_LexRootGlossMarker(This,pVal)	\
+	(This)->lpVtbl -> get_LexRootGlossMarker(This,pVal)
+
+#define IPatrParser_put_LexRootGlossMarker(This,newVal)	\
+	(This)->lpVtbl -> put_LexRootGlossMarker(This,newVal)
+
+#define IPatrParser_get_RootGlossFeature(This,pVal)	\
+	(This)->lpVtbl -> get_RootGlossFeature(This,pVal)
+
+#define IPatrParser_put_RootGlossFeature(This,newVal)	\
+	(This)->lpVtbl -> put_RootGlossFeature(This,newVal)
 
 #endif /* COBJMACROS */
 
@@ -1535,6 +1575,54 @@ void __RPC_STUB IPatrParser_get_AmplePropertyIsFeature_Stub(
 
 
 void __RPC_STUB IPatrParser_put_AmplePropertyIsFeature_Stub(
+	IRpcStubBuffer *This,
+	IRpcChannelBuffer *_pRpcChannelBuffer,
+	PRPC_MESSAGE _pRpcMessage,
+	DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IPatrParser_get_LexRootGlossMarker_Proxy(
+	IPatrParser __RPC_FAR * This,
+	/* [retval][out] */ BSTR __RPC_FAR *pVal);
+
+
+void __RPC_STUB IPatrParser_get_LexRootGlossMarker_Stub(
+	IRpcStubBuffer *This,
+	IRpcChannelBuffer *_pRpcChannelBuffer,
+	PRPC_MESSAGE _pRpcMessage,
+	DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IPatrParser_put_LexRootGlossMarker_Proxy(
+	IPatrParser __RPC_FAR * This,
+	/* [in] */ BSTR newVal);
+
+
+void __RPC_STUB IPatrParser_put_LexRootGlossMarker_Stub(
+	IRpcStubBuffer *This,
+	IRpcChannelBuffer *_pRpcChannelBuffer,
+	PRPC_MESSAGE _pRpcMessage,
+	DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IPatrParser_get_RootGlossFeature_Proxy(
+	IPatrParser __RPC_FAR * This,
+	/* [retval][out] */ long __RPC_FAR *pVal);
+
+
+void __RPC_STUB IPatrParser_get_RootGlossFeature_Stub(
+	IRpcStubBuffer *This,
+	IRpcChannelBuffer *_pRpcChannelBuffer,
+	PRPC_MESSAGE _pRpcMessage,
+	DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IPatrParser_put_RootGlossFeature_Proxy(
+	IPatrParser __RPC_FAR * This,
+	/* [in] */ long newVal);
+
+
+void __RPC_STUB IPatrParser_put_RootGlossFeature_Stub(
 	IRpcStubBuffer *This,
 	IRpcChannelBuffer *_pRpcChannelBuffer,
 	PRPC_MESSAGE _pRpcMessage,

@@ -5,7 +5,7 @@
 
 
 /* File created by MIDL compiler version 5.01.0164 */
-/* at Wed Aug 08 09:34:19 2001
+/* at Fri Feb 15 13:53:56 2002
  */
 /* Compiler settings for C:\carla\Dev\pc-parse\pcpatr\patr100.idl:
 	Oicf (OptLev=i2), W1, Zp8, env=Win32, ms_ext, c_ext

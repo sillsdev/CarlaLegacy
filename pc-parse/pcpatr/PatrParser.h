@@ -51,6 +51,10 @@ public:
 	STDMETHOD(put_Unification)(/*[in]*/ BOOL newVal);
 	STDMETHOD(get_TreeDisplay)(/*[out, retval]*/ long *pVal);
 	STDMETHOD(put_TreeDisplay)(/*[in]*/ long newVal);
+#ifndef hab130
+	STDMETHOD(get_RootGlossFeature)(/*[out, retval]*/ long *pVal);
+	STDMETHOD(put_RootGlossFeature)(/*[in]*/ long newVal);
+#endif // hab130
 	STDMETHOD(get_Gloss)(/*[out, retval]*/ BOOL *pVal);
 	STDMETHOD(put_Gloss)(/*[in]*/ BOOL newVal);
 	STDMETHOD(get_MaxAmbiguity)(/*[out, retval]*/ long *pVal);
@@ -77,6 +81,10 @@ public:
 	STDMETHOD(put_LexFeaturesMarker)(/*[in]*/ BSTR newVal);
 	STDMETHOD(get_LexGlossMarker)(/*[out, retval]*/ BSTR *pVal);
 	STDMETHOD(put_LexGlossMarker)(/*[in]*/ BSTR newVal);
+#ifndef hab130
+	STDMETHOD(get_LexRootGlossMarker)(/*[out, retval]*/ BSTR *pVal);
+	STDMETHOD(put_LexRootGlossMarker)(/*[in]*/ BSTR newVal);
+#endif // hab130
 	STDMETHOD(get_TopFeatureOnly)(/*[out, retval]*/ BOOL *pVal);
 	STDMETHOD(put_TopFeatureOnly)(/*[in]*/ BOOL newVal);
 	STDMETHOD(get_DisplayFeatures)(/*[out, retval]*/ BOOL *pVal);

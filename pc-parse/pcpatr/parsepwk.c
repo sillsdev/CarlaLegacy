@@ -150,8 +150,13 @@ for ( rp = rresp ; rp != (KimmoResult *)NULL ; rp = rp->pNext )
 			flp->pNext = features->u.pComplex;
 			features->u.pComplex = flp;
 			}
+#ifdef hab130
 		addPATRLexItem(pszWord_in, NULL, NULL, NULL, features,
 				   pPATR_in);
+#else  /* hab130 */
+		addPATRLexItem(pszWord_in, NULL, NULL, NULL, NULL, features,
+				   pPATR_in);
+#endif /* hab130 */
 		}
 		}
 	freeMemory(pszMorphGlosses);

@@ -517,6 +517,9 @@ temp_gram.pszStartSymbol   = (char *)NULL;
 temp_gram.pszCatFeatName   = (char *)NULL;
 temp_gram.pszLexFeatName   = (char *)NULL;
 temp_gram.pszGlossFeatName = (char *)NULL;
+#ifndef hab130
+temp_gram.pszRootGlossFeatName = (char *)NULL;
+#endif /* hab130 */
 temp_gram.pRestrictors     = (PATRPathList *)NULL;
 temp_gram.pAttributeOrder  = (StringList *)NULL;
 temp_gram.apPriorityUnions = (PATRPriorityUnion **)NULL;
@@ -711,6 +714,10 @@ if (temp_gram.pszLexFeatName == NULL)
 	temp_gram.pszLexFeatName = storedPATRString("lex", pPATR_io);
 if (temp_gram.pszGlossFeatName == NULL)
 	temp_gram.pszGlossFeatName = storedPATRString("gloss", pPATR_io);
+#ifndef hab130
+if (temp_gram.pszRootGlossFeatName == NULL)
+	temp_gram.pszRootGlossFeatName = storedPATRString("rootgloss", pPATR_io);
+#endif /* hab130 */
 /*
  *  copy the grammar values into a dynamically allocated data structure
  */
@@ -721,6 +728,9 @@ gram->pszStartSymbol   = temp_gram.pszStartSymbol;
 gram->pszCatFeatName   = temp_gram.pszCatFeatName;
 gram->pszLexFeatName   = temp_gram.pszLexFeatName;
 gram->pszGlossFeatName = temp_gram.pszGlossFeatName;
+#ifndef hab130
+gram->pszRootGlossFeatName = temp_gram.pszRootGlossFeatName;
+#endif /* hab130 */
 gram->pRestrictors     = temp_gram.pRestrictors;
 gram->pAttributeOrder  = temp_gram.pAttributeOrder;
 gram->apPriorityUnions = temp_gram.apPriorityUnions;
@@ -1082,6 +1092,27 @@ else if ((strcasecmp(szKeyword,   "gloss")   == 0) &&
 	if (iTokenType == '.')
 	getToken(szToken, MAX_TOKEN_SIZE, pData);      /* skip terminating . */
 	}
+#ifndef hab130
+else if ((strcasecmp(szKeyword,   "rootgloss") == 0) &&
+	 (strcasecmp(szQualifier, "feature")   == 0) )
+	{
+	/*
+	 *  Get the function word ("is")
+	 */
+	getToken(szFunction, MAX_TOKEN_SIZE, pData);
+	if (strcasecmp(szFunction, "is") != 0)
+	goto bad_parameter;
+	/*
+	 *  Get the Root Gloss feature name and store it
+	 */
+	iTokenType = getToken(szToken, MAX_TOKEN_SIZE, pData);
+	pData->pGrammar->pszRootGlossFeatName = storedPATRString(szToken,
+								 pData->pPATR);
+	iTokenType = getNextToken(szToken, MAX_TOKEN_SIZE, pData);
+	if (iTokenType == '.')
+	getToken(szToken, MAX_TOKEN_SIZE, pData);      /* skip terminating . */
+	}
+#endif /* hab130 */
 else
 	{
 bad_parameter:

@@ -5,6 +5,7 @@
  *		       PATRData *   pPATR_io)
  * void addPATRLexItem(char *	     pszWord_in,
  *		       char *	     pszGloss_in,
+ *		       char *	     pszRootGloss_in,
  *		       char *	     pszCategory_in,
  *		       char *	     pszFeatures_in,
  *		       PATRFeature * pFeature_in,
@@ -405,6 +406,10 @@ while (pPATR_in->pMem->pHeadPATRLexItemArrays != NULL)
 		free_patr_lex_item_indexes(lip->piFeatureIndexes, pPATR_in);
 	if (lip->pszGloss)
 		free_patr_lex_item_string(lip->pszGloss, pPATR_in);
+#ifndef hab130
+	if (lip->pszRootGloss)
+		free_patr_lex_item_string(lip->pszRootGloss, pPATR_in);
+#endif /* hab130 */
 	if (lip->pFeature)
 		freePATRFeature(lip->pFeature, pPATR_in);
 	}
@@ -478,6 +483,10 @@ for ( lp = listp ; lp ; lp = nextlp )
 	free_patr_lex_item_indexes(lp->piFeatureIndexes, pPATR_m);
 	if (lp->pszGloss)
 	free_patr_lex_item_string(lp->pszGloss, pPATR_m);
+#ifndef hab130
+	if (lp->pszRootGloss)
+	free_patr_lex_item_string(lp->pszRootGloss, pPATR_m);
+#endif /* hab130 */
 	if (lp->pFeature)
 	freePATRFeature(lp->pFeature, pPATR_m);
 	freeMemory(lp);
@@ -728,6 +737,9 @@ FILE *fp;
 char *rp, *recp, *nextrp;
 int k, num_feats;
 unsigned char *word, *category, *features, *gloss;
+#ifndef hab130
+unsigned char *rootgloss;
+#endif /* hab130 */
 unsigned char *p, *q;
 StringList *fsp, *sp, *nextsp, *avail_sp;
 PATRLexItem *lp;
@@ -762,7 +774,12 @@ if (pPATR_io->pLexicon == NULL)
 k = strlen(pPATR_io->pszWordMarker)     +
 	strlen(pPATR_io->pszCategoryMarker) +
 	strlen(pPATR_io->pszFeatureMarker)  +
+#ifdef hab130
 	strlen(pPATR_io->pszGlossMarker)    + 12;
+#else  /* hab130 */
+	strlen(pPATR_io->pszGlossMarker)    +
+	strlen(pPATR_io->pszRootGlossMarker)+ 15;
+#endif /* hab130 */
 lex_table.pCodeTable = allocMemory( k );
 strcpy(lex_table.pCodeTable, pPATR_io->pszWordMarker);
 k = strlen(pPATR_io->pszWordMarker) + 1;
@@ -780,7 +797,15 @@ strcpy(lex_table.pCodeTable + k, pPATR_io->pszGlossMarker);
 k += strlen(pPATR_io->pszGlossMarker) + 1;
 lex_table.pCodeTable[k++] = 'G';
 lex_table.pCodeTable[k++] = NUL;
+#ifdef hab130
 lex_table.uiCodeCount = 4;
+#else
+strcpy(lex_table.pCodeTable + k, pPATR_io->pszRootGlossMarker);
+k += strlen(pPATR_io->pszRootGlossMarker) + 1;
+lex_table.pCodeTable[k++] = 'R';
+lex_table.pCodeTable[k++] = NUL;
+lex_table.uiCodeCount = 5;
+#endif /* hab130 */
 lex_table.pszFirstCode = (char *)pPATR_io->pszRecordMarker;
 /*
  *  load all the records from the lexicon file
@@ -793,7 +818,11 @@ while ((recp = readStdFormatRecord(fp,
 				   pPATR_io->cComment,
 				   &uiLexRecords)) != NULL )
 	{
+#ifdef hab130
 	word = category = features = gloss = (unsigned char *)NULL;
+#else
+	word = category = features = gloss = rootgloss = (unsigned char *)NULL;
+#endif /* hab130 */
 	rp = recp;
 	while (*rp)
 	{
@@ -826,6 +855,13 @@ while ((recp = readStdFormatRecord(fp,
 		while (*gloss && isascii(*gloss) && isspace(*gloss))
 			++gloss;
 		break;
+#ifndef hab130
+		case 'R':	/* rootgloss */
+		rootgloss = (unsigned char *)rp + 1;
+		while (*rootgloss && isascii(*rootgloss) && isspace(*rootgloss))
+			++rootgloss;
+		break;
+#endif /* hab130 */
 		default:
 		break;
 		}
@@ -966,6 +1002,27 @@ while ((recp = readStdFormatRecord(fp,
 	}
 	else
 	lp->pszGloss = NULL;
+#ifndef hab130
+	if ((pPATR_io->eRootGlossFeature != PATR_ROOT_GLOSS_NO_FEATURE) &&
+	(rootgloss != NULL))
+		{
+	  /*
+	   *  remove any trailing whitespace
+	   */
+	for ( p = rootgloss + strlen((char *)rootgloss) - 1 ;
+		  p >= rootgloss ;
+		  --p )
+		{
+		if (isascii(*p) && isspace(*p))
+		  *p = NUL;
+		else
+		  break;
+		}
+	lp->pszRootGloss = new_patr_lex_item_string( rootgloss, pPATR_io );
+	}
+	else
+		lp->pszRootGloss = NULL;
+#endif /* hab130 */
 	lp->uiCategory = category_index( (char *)category, pPATR_io );
 	lp->piFeatureIndexes   = new_patr_lex_item_indexes( num_feats + 1,
 							pPATR_io );
@@ -1130,6 +1187,15 @@ else if ((p1st_in->pszGloss == NULL) || (p2nd_in->pszGloss == NULL))
 else if (strcmp((char *)p1st_in->pszGloss, (char *)p2nd_in->pszGloss) != 0)
 	return FALSE;
 
+#ifndef hab130
+if (p1st_in->pszRootGloss == p2nd_in->pszRootGloss)
+	/* do nothing */;
+else if ((p1st_in->pszRootGloss == NULL) || (p2nd_in->pszRootGloss == NULL))
+	return FALSE;
+else if (strcmp((char *)p1st_in->pszRootGloss, (char *)p2nd_in->pszRootGloss) != 0)
+	return FALSE;
+#endif /* hab130 */
+
 if (p1st_in->uiCategory != p2nd_in->uiCategory)
 	return FALSE;
 
@@ -1164,6 +1230,9 @@ for ( lastlp = lp = list ; lp ; lp = lp->pNext )
 	if (same_patr_lex_entry(lp, item))
 	{
 	reuse_patr_lex_item_string( item->pszGloss, pPATR_m );
+#ifndef hab130
+	reuse_patr_lex_item_string( item->pszRootGloss, pPATR_m );
+#endif /* hab130 */
 	reuse_patr_lex_item_string( item->pszLexString, pPATR_m );
 	reuse_patr_lex_item_indexes( item->piFeatureIndexes, pPATR_m );
 	reuse_patr_lex_item( item, pPATR_m );
@@ -1202,16 +1271,25 @@ char *gloss, *cat;
 PATRFeature *fnp;
 char *	pszCatFeatName;
 char *	pszGlossFeatName;
-
+#ifndef hab130
+char *  pszRootGlossFeatName;
+char *  rootgloss;
+#endif /* hab130 */
 if (pPATR_m->pGrammar != NULL)
 	{
 	pszCatFeatName   = pPATR_m->pGrammar->pszCatFeatName;
 	pszGlossFeatName = pPATR_m->pGrammar->pszGlossFeatName;
+#ifndef hab130
+	pszRootGlossFeatName = pPATR_m->pGrammar->pszRootGlossFeatName;
+#endif /* hab130 */
 	}
 else
 	{
 	pszCatFeatName   = storedPATRString( "cat", pPATR_m);
 	pszGlossFeatName = storedPATRString( "gloss", pPATR_m);
+#ifndef hab130
+	pszRootGlossFeatName = storedPATRString( "rootgloss", pPATR_m);
+#endif /* hab130 */
 	}
 for ( lip = (PATRLexItem *)list ; lip ; lip = lip->pNext )
 	{
@@ -1234,6 +1312,22 @@ for ( lip = (PATRLexItem *)list ; lip ; lip = lip->pNext )
 	if (gloss == NULL)
 	gloss = "?";
 	fprintf(outfp, "  '%s'", gloss);
+#ifndef hab130
+	rootgloss = (char *)lip->pszRootGloss;
+	if (rootgloss == NULL)
+	{
+	if (	lip->pFeature &&
+		((fnp = findPATRAttribute(lip->pFeature,
+					  pszRootGlossFeatName)) != NULL))
+		{
+		if ((fnp->eType == PATR_ATOM) || (fnp->eType == PATR_DEFATOM))
+		rootgloss = fnp->u.pszAtom;
+		}
+	}
+	if (rootgloss == NULL)
+	rootgloss = "?";
+	fprintf(outfp, "  '%s'", rootgloss);
+#endif /* hab130 */
 	cat = NULL;
 	if (lip->uiCategory > 0)
 	cat = pPATR_m->pLexicon->ppszCategories[lip->uiCategory-1];
@@ -1269,6 +1363,7 @@ for ( lip = (PATRLexItem *)list ; lip ; lip = lip->pNext )
  * RETURN VALUE
  *    none
  */
+#ifdef hab130
 void addPATRLexItem(pszWord_in, pszGloss_in, pszCategory_in, pszFeatures_in,
 			pFeature_in, pPATR_io)
 char *		pszWord_in;
@@ -1277,6 +1372,17 @@ char *		pszCategory_in;
 char *		pszFeatures_in;
 PATRFeature *	pFeature_in;
 PATRData *	pPATR_io;
+#else  /* hab130 */
+void addPATRLexItem(pszWord_in, pszGloss_in, pszRootGloss_in, pszCategory_in,
+			pszFeatures_in, pFeature_in, pPATR_io)
+char *		pszWord_in;
+char *		pszGloss_in;
+char *		pszRootGloss_in;
+char *		pszCategory_in;
+char *		pszFeatures_in;
+PATRFeature *	pFeature_in;
+PATRData *	pPATR_io;
+#endif /* hab130 */
 {
 PATRLexItem *	pLexItem;
 
@@ -1297,6 +1403,14 @@ if (pszGloss_in != NULL)
 else
 	pLexItem->pszGloss = NULL;
 
+#ifndef hab130
+if (pszRootGloss_in != NULL)
+	pLexItem->pszRootGloss = new_patr_lex_item_string(
+				   (unsigned char *)pszRootGloss_in, pPATR_io);
+else
+	pLexItem->pszRootGloss = NULL;
+#endif /* hab130 */
+
 if (pszCategory_in != NULL)
 	pLexItem->uiCategory = category_index( pszCategory_in, pPATR_io );
 else
@@ -1309,6 +1423,9 @@ else
 
 pPATR_m = pPATR_io;
 if (	(pszGloss_in    == NULL) &&
+#ifndef hab130
+	(pszRootGloss_in == NULL) &&
+#endif /* hab130 */
 	(pszCategory_in == NULL) &&
 	(pszFeatures_in == NULL) &&
 	(pFeature_in    != NULL) )
@@ -1418,6 +1535,10 @@ char *			pszGlossFeatName;
 char *			pszCat;
 char *			pszLex;
 char *			pszGloss;
+#ifndef hab130
+char *			pszRootGlossFeatName;
+char *			pszRootGloss;
+#endif /* hab130 */
 PATRDefinition *	pDef;
 
 wordnum = 0;
@@ -1446,12 +1567,18 @@ if (pPATR_in->pGrammar != NULL)
 	pszCatFeatName   = pPATR_in->pGrammar->pszCatFeatName;
 	pszLexFeatName   = pPATR_in->pGrammar->pszLexFeatName;
 	pszGlossFeatName = pPATR_in->pGrammar->pszGlossFeatName;
+#ifndef hab130
+	pszRootGlossFeatName = pPATR_in->pGrammar->pszRootGlossFeatName;
+#endif /* hab130 */
 	}
 else
 	{
 	pszCatFeatName   = storedPATRString( "cat", pPATR_in);
 	pszLexFeatName   = storedPATRString( "lex", pPATR_in);
 	pszGlossFeatName = storedPATRString( "gloss", pPATR_in);
+#ifndef hab130
+	pszRootGlossFeatName = storedPATRString( "rootgloss", pPATR_in);
+#endif /* hab130 */
 	}
 for ( wordsp = headsp ; wordsp ; wordsp = wordsp->pNext )
 	{
@@ -1546,6 +1673,9 @@ for ( wordsp = headsp ; wordsp ; wordsp = wordsp->pNext )
 		/*
 		 *  The "cat" feature is added later if needed.
 		 *  The "lex" and "gloss" features are added here if they exist.
+#ifndef hab130
+			 *  Also add the "rootgloss" feature if it exists.
+#endif
 		 */
 		cat    = pPATR_in->pLexicon->ppszCategories[lip->uiCategory - 1];
 		wordt  = addPATRWordCategory(cat, sentt, pPATR_in);
@@ -1564,6 +1694,18 @@ for ( wordsp = headsp ; wordsp ; wordsp = wordsp->pNext )
 									 pPATR_in),
 								  pPATR_in));
 		}
+#ifndef hab130
+		if (lip->pszRootGloss != (unsigned char *)NULL)
+		{
+		pszRootGloss = storedPATRString( (char *)lip->pszRootGloss,
+						 pPATR_in);
+		addPATRFeatureToComplex(wordt->pFeature,
+				 createPATRComplexFeature(pszRootGlossFeatName,
+						createPATRAtomFeature(pszRootGloss,
+								  pPATR_in),
+							  pPATR_in));
+		}
+#endif /* hab130 */
 		tfeatd = buildPATRFeatureDisjunction(cat,
 						 NULL,
 						 FALSE,
@@ -1843,6 +1985,9 @@ return(num_parses);
  * DESCRIPTION
  *    Write the COMPLEX feature structure to the file as a set of "paths",
  *    ignoring the "cat", "gloss", and "lex" features.
+#ifndef hab130
+ *    Also ignore the "rootgloss" feature.
+#endif
  * RETURN VALUE
  *    the number of features actually written to the file
  */
@@ -1860,6 +2005,9 @@ int count_written = 0;
 char *	pszCatFeatName;
 char *	pszLexFeatName;
 char *	pszGlossFeatName;
+#ifndef hab130
+char *	pszRootGlossFeatName;
+#endif /* hab130 */
 
 if ((outfp == NULL) || (featp == NULL) || (headsp == NULL))
 	return( 0 );
@@ -1869,12 +2017,18 @@ if (pPATR_m->pGrammar != NULL)
 	pszCatFeatName   = pPATR_m->pGrammar->pszCatFeatName;
 	pszLexFeatName   = pPATR_m->pGrammar->pszLexFeatName;
 	pszGlossFeatName = pPATR_m->pGrammar->pszGlossFeatName;
+#ifndef hab130
+	pszRootGlossFeatName = pPATR_m->pGrammar->pszRootGlossFeatName;
+#endif /* hab130 */
 	}
 else
 	{
 	pszCatFeatName   = storedPATRString( "cat", pPATR_in);
 	pszLexFeatName   = storedPATRString( "lex", pPATR_in);
 	pszGlossFeatName = storedPATRString( "gloss", pPATR_in);
+#ifndef hab130
+	pszRootGlossFeatName = storedPATRString( "rootgloss", pPATR_in);
+#endif /* hab130 */
 	}
 switch (featp->eType)
 	{
@@ -1885,6 +2039,9 @@ switch (featp->eType)
 		{
 		if (    (strcmp(headsp->pszString, pszLexFeatName)   == 0) ||
 			(strcmp(headsp->pszString, pszCatFeatName)   == 0) ||
+#ifndef hab130
+			(strcmp(headsp->pszString, pszRootGlossFeatName) == 0) ||
+#endif /* hab130 */
 			(strcmp(headsp->pszString, pszGlossFeatName) == 0) )
 		return( 0 );
 		}
@@ -1926,6 +2083,9 @@ return( count_written );
  * DESCRIPTION
  *    Write the COMPLEX feature structure to the file as a set of "paths",
  *    ignoring the "cat", "gloss", and "lex" features.
+#ifndef hab130
+ *    Also ignore the "rootgloss" feature.
+#endif
  * RETURN VALUE
  *    none
  */
@@ -1968,6 +2128,9 @@ PATRFeature *fnp;
 int i, j, k;
 char *	pszCatFeatName;
 char *	pszGlossFeatName;
+#ifndef hab130
+char *	pszRootGlossFeatName;
+#endif /* hab130 */
 
 if (pLexOutputFP_m == NULL)
 	return;
@@ -1976,11 +2139,17 @@ if (pPATR_m->pGrammar != NULL)
 	{
 	pszCatFeatName   = pPATR_m->pGrammar->pszCatFeatName;
 	pszGlossFeatName = pPATR_m->pGrammar->pszGlossFeatName;
+#ifndef hab130
+	pszRootGlossFeatName = pPATR_m->pGrammar->pszRootGlossFeatName;
+#endif /* hab130 */
 	}
 else
 	{
 	pszCatFeatName   = storedPATRString( "cat", pPATR_m);
 	pszGlossFeatName = storedPATRString( "gloss", pPATR_m);
+#ifndef hab130
+	pszRootGlossFeatName = storedPATRString( "rootgloss", pPATR_m);
+#endif /* hab130 */
 	}
 for ( lip = (PATRLexItem *)list ; lip ; lip = lip->pNext )
 	{
@@ -2023,6 +2192,24 @@ for ( lip = (PATRLexItem *)list ; lip ; lip = lip->pNext )
 			fnp->u.pszAtom);
 		}
 	}
+#ifndef hab130
+	if (lip->pszRootGloss)
+	{
+	fprintf(pLexOutputFP_m, "%s %s\n",
+		pPATR_m->pszRootGlossMarker, lip->pszRootGloss);
+	}
+	else if (lip->pFeature &&
+		 ((fnp = findPATRAttribute(lip->pFeature,
+					   pszRootGlossFeatName)) != NULL))
+	{
+	if ((fnp->eType == PATR_ATOM) || (fnp->eType == PATR_DEFATOM))
+		{
+		fprintf(pLexOutputFP_m, "%s %s\n",
+			pPATR_m->pszRootGlossMarker,
+			fnp->u.pszAtom);
+		}
+	}
+#endif /* hab130 */
 	fprintf(pLexOutputFP_m, "%s", pPATR_m->pszFeatureMarker);
 	len = strlen(pPATR_m->pszFeatureMarker);
 	for ( i = 0 ; lip->piFeatureIndexes && lip->piFeatureIndexes[i] ; ++i )

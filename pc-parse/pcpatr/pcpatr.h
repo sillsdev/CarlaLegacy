@@ -75,6 +75,9 @@ extern char		szPCPATRDefaultWordMarker_g[3];
 extern char		szPCPATRDefaultCategoryMarker_g[3];
 extern char		szPCPATRDefaultFeatureMarker_g[3];
 extern char		szPCPATRDefaultGlossMarker_g[3];
+#ifndef hab130
+extern char		szPCPATRDefaultRootGlossMarker_g[3];
+#endif /* hab130 */
 extern unsigned char	szWhitespace_g[7];
 extern int		bPCPATRWriteAmpleParses_g;
 extern unsigned char	szPCPATRDefaultBarcodes_g[15];

@@ -274,6 +274,9 @@ struct patr_grammar
 	char *		pszCatFeatName;
 	char *		pszLexFeatName;
 	char *		pszGlossFeatName;
+#ifndef hab130
+	char *		pszRootGlossFeatName;
+#endif /* hab130 */
 	PATRPathList *	pRestrictors;
 	StringList *	pAttributeOrder;
 	PATRPriorityUnion ** apPriorityUnions;
@@ -291,6 +294,9 @@ struct patr_lex_item
 	PATRLexItem *	pNext;		/* link to next element */
 	unsigned char *	pszLexString;	/* lexical string (word) */
 	unsigned char *	pszGloss;	/* lexical gloss */
+#ifndef hab130
+	unsigned char *	pszRootGloss;	/* lexical rootgloss */
+#endif /* hab130 */
 	unsigned short	uiCategory;	/* lexical category (part of speech) */
 	short *		piFeatureIndexes; /* array of feature indexes */
 	PATRFeature *	pFeature;	/* pointer to feature structure */

@@ -39,6 +39,9 @@ char		szPCPATRDefaultWordMarker_g[3]     = "\\w";
 char		szPCPATRDefaultCategoryMarker_g[3] = "\\c";
 char		szPCPATRDefaultFeatureMarker_g[3]  = "\\f";
 char		szPCPATRDefaultGlossMarker_g[3]    = "\\g";
+#ifndef hab130
+char		szPCPATRDefaultRootGlossMarker_g[3]= "\\r";
+#endif /* hab130 */
 PATRData	sPCPATRData_g = {
 	FALSE,	/* bFailure           - display parser failures */
 	TRUE,	/* bUnification       - enable unification */
@@ -56,6 +59,9 @@ PATRData	sPCPATRData_g = {
 	TRUE,	/* bShowWarnings      - allow warning messages */
 	TRUE,	/* bPromoteDefAtoms   - promote default atoms before parsing */
 	FALSE,	/* bPropIsFeature     - AMPLE property is feature template */
+#ifndef hab130
+	0,  	/* eRootGlossFeature  - use AMPLE root gloss as feature */
+#endif /* hab130 */
 	0,		/* iMaxProcTime       - maximum processing time for a parse */
 	NULL,	/* pLogFP             - output log file */
 	NULL,	/* pFinalPunc         - sentence final punctuation chars */
@@ -67,6 +73,9 @@ PATRData	sPCPATRData_g = {
 	szPCPATRDefaultGlossMarker_g,	/* pszGlossMarker    */
 	szPCPATRDefaultCategoryMarker_g,	/* pszCategoryMarker */
 	szPCPATRDefaultFeatureMarker_g,	/* pszFeatureMarker  */
+#ifndef hab130
+	szPCPATRDefaultRootGlossMarker_g,	/* pszRootGlossMarker*/
+#endif /* hab130 */
 	NULL,	/* pLexicon           - data loaded from lexicon files */
 	0, 0,
 	&sPCPATRMemory_g,
@@ -121,6 +130,9 @@ KimmoData	sPCPATRKimmoData_g =
 	TRUE,	/* bShowWarnings    - allow warning messages */
 	TRUE,	/* bPromoteDefAtoms - promote default atoms before parsing */
 	FALSE,	/* bPropIsFeature   - AMPLE property is feature template */
+#ifndef hab130
+	0,	/* eRootGlossFeature- use AMPLE root gloss as feature */
+#endif /* hab130 */
 	0,	/* iMaxProcTime     - maximum processing time for a parse */
 	NULL,	/* pLogFP           - output log file */
 	NULL,	/* pFinalPunc         - sentence final punctuation chars */
@@ -128,6 +140,9 @@ KimmoData	sPCPATRKimmoData_g =
 	NULL,	/* pGrammar         - data loaded from the grammar file */
 	1,
 	NULL, NULL, NULL, NULL, NULL, NULL, /* not used by Kimmo functions */
+#ifndef hab130
+	NULL,	/* not used by Kimmo functions */
+#endif /* hab130 */
 	0, 0,	/* internal processing values */
 	&sPCPATRMemory_g,
 	0, 0, NULL,
@@ -235,6 +250,9 @@ AmpleData	sPCPATRAmpleData_g = {
 	TRUE,					/* sPATR.bPromoteDefAtoms */
 	TRUE,					/* sPATR.bPropIsFeature */
 	0,					/* sPATR.iMaxProcTime */
+#ifndef hab130
+	0,					/* sPATR.eRootGlossFeature */
+#endif /* hab130 */
 	NULL,					/* sPATR.pLogFP */
 	NULL,					/* sPATR.pFinalPunc */
 	NULL,					/* sPATR.pszGrammarFile */

@@ -11,6 +11,9 @@ static const char szDefaultWordMarker_g[3]     = "\\w";
 static const char szDefaultCategoryMarker_g[3] = "\\c";
 static const char szDefaultFeatureMarker_g[3]  = "\\f";
 static const char szDefaultGlossMarker_g[3]    = "\\g";
+#ifndef hab130
+static const char szDefaultRootGlossMarker_g[3]= "\\r";
+#endif // hab130
 static const char szWhitespace_g[7] = " \t\r\n\f\v";
 static unsigned char szDefaultBarcodes_g[15] = "bdefhijmrsuvyz";
 
@@ -35,6 +38,9 @@ PatrParser::PatrParser()
 
 	m_data.bUnification      = TRUE;
 	m_data.eTreeDisplay      = PATR_FULL_TREE;
+#ifndef hab130
+	m_data.eRootGlossFeature = PATR_ROOT_GLOSS_NO_FEATURE;
+#endif // hab130
 	m_data.bGloss            = TRUE;
 	m_data.iFeatureDisplay   = PATR_FEATURE_ON | PATR_FEATURE_TRIM;
 	m_data.bCheckCycles      = TRUE;
@@ -48,6 +54,9 @@ PatrParser::PatrParser()
 	m_data.pszRecordMarker   = szDefaultWordMarker_g;
 	m_data.pszWordMarker     = szDefaultWordMarker_g;
 	m_data.pszGlossMarker    = szDefaultGlossMarker_g;
+#ifndef hab130
+	m_data.pszRootGlossMarker= szDefaultRootGlossMarker_g;
+#endif // hab130
 	m_data.pszCategoryMarker = szDefaultCategoryMarker_g;
 	m_data.pszFeatureMarker  = szDefaultFeatureMarker_g;
 	m_data.pMem              = &m_memory;
@@ -112,6 +121,13 @@ void PatrParser::FinalRelease()
 		free((void *)m_data.pszGlossMarker);
 		m_data.pszGlossMarker = szDefaultGlossMarker_g;
 	}
+#ifndef hab130
+	if (m_data.pszRootGlossMarker != szDefaultRootGlossMarker_g)
+	{
+		free((void *)m_data.pszRootGlossMarker);
+		m_data.pszRootGlossMarker = szDefaultRootGlossMarker_g;
+	}
+#endif // hab130
 	if (m_data.pszCategoryMarker != szDefaultCategoryMarker_g)
 	{
 		free((void *)m_data.pszCategoryMarker);
@@ -1231,6 +1247,104 @@ STDMETHODIMP PatrParser::put_LexGlossMarker(BSTR newVal)
 	m_data.pszGlossMarker = psz;
 	return S_OK;
 }
+
+#ifndef hab130
+///////////////////////////////////////////////////////////////////////////////
+// NAME
+//    PatrParser::get_LexRootGlossMarker
+// DESCRIPTION
+//    return (indirectly) the current lexicon root gloss marker as a BSTR
+// RETURN VALUE
+//    S_OK, or an appropriate COM error code
+//
+STDMETHODIMP PatrParser::get_LexRootGlossMarker(BSTR * pVal)
+{
+	// check for valid input
+	if (pVal == NULL)
+	{
+		return E_POINTER;
+	}
+	*pVal = NULL;
+	// convert the current lexicon root gloss marker
+	if (m_data.pszRootGlossMarker != NULL)
+	{
+		return ConvertStringToBstr(m_data.pszRootGlossMarker, CP_ACP, pVal);
+	}
+	else
+	{
+		return E_UNEXPECTED;
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// NAME
+//    PatrParser::put_LexRootGlossMarker
+// DESCRIPTION
+//    set the value of m_data.pszRootGlossMarker
+// RETURN VALUE
+//    S_OK, or an appropriate COM error code
+//
+STDMETHODIMP PatrParser::put_LexRootGlossMarker(BSTR newVal)
+{
+	// check for valid input
+	if (newVal == NULL)
+	{
+		return E_INVALIDARG;
+	}
+	char * psz;
+	HRESULT hr = ConvertBstrToString(newVal, m_iCodePage, &psz);
+	if (FAILED(hr))
+	{
+		return hr;
+	}
+	if (m_data.pszRootGlossMarker != szDefaultRootGlossMarker_g)
+	{
+		free((void *)m_data.pszRootGlossMarker);
+		m_data.pszRootGlossMarker = NULL;
+	}
+	m_data.pszRootGlossMarker = psz;
+	return S_OK;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// NAME
+//    PatrParser::get_RootGlossFeature
+// DESCRIPTION
+//    get the value of m_data.eRootGlossFeature
+// RETURN VALUE
+//    S_OK, or an appropriate COM error code
+//
+STDMETHODIMP PatrParser::get_RootGlossFeature(long * pVal)
+{
+	// check for valid input
+	if (pVal == NULL)
+	{
+		return E_POINTER;
+	}
+	*pVal = (long)m_data.eRootGlossFeature;
+	return S_OK;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// NAME
+//    PatrParser::put_RootGlossFeature
+// DESCRIPTION
+//    set the value of m_data.eRootGlossFeature
+// RETURN VALUE
+//    S_OK, or an appropriate COM error code
+//
+STDMETHODIMP PatrParser::put_RootGlossFeature(long newVal)
+{
+	// check for valid input
+	if ((newVal < PATR_ROOT_GLOSS_NO_FEATURE) ||
+		(newVal > PATR_ROOT_GLOSS_USE_ALL))
+	{
+		return E_INVALIDARG;
+	}
+	m_data.eRootGlossFeature = (char)newVal;
+	return S_OK;
+}
+#endif // hab130
 
 ///////////////////////////////////////////////////////////////////////////////
 // NAME

@@ -144,6 +144,16 @@ import "ocidl.idl";
 			HRESULT AmplePropertyIsFeature([out, retval] BOOL * pVal);
 		[propput, id(38), helpstring("interpret AMPLE properties as features")]
 			HRESULT AmplePropertyIsFeature([in] BOOL newVal);
+#ifndef hab130
+		[propget, id(39), helpstring("the Lexicon Root Gloss Marker")]
+			HRESULT LexRootGlossMarker([out, retval] BSTR * pVal);
+		[propput, id(39), helpstring("the Lexicon Root Gloss Marker")]
+			HRESULT LexRootGlossMarker([in] BSTR newVal);
+		[propget, id(40), helpstring("Root Gloss setting")]
+			HRESULT RootGlossFeature([out, retval] long * pVal);
+		[propput, id(40), helpstring("Root Gloss setting")]
+			HRESULT RootGlossFeature([in] long newVal);
+#endif // hab130
 	};
 
 [
