@@ -4,12 +4,14 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "March 7, 2002"	/* date of release version */
+#define PATCHLEVEL 1		/* bug fix or other minor change */
+#define DATE "June 20, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 20-Jun-2002  hab  - added disphead.h so that pckimmo, etc. that use patr.h
+ * [1.3.1]              do not have conflict with new display_header()
  * 07-Mar-2002  hab  - add rootgloss feature capability (hab130)
  * [1.3.0]             add indexed variables to logical constraints (hab130v)
  *                     redid display_header() to have an argument and made it

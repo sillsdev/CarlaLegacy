@@ -8,6 +8,12 @@
 #include "resource.h"       // main symbols
 #include "patr.h"
 
+#ifndef hab131
+extern "C" {
+#include "disphead.h"
+}
+#endif // hab131
+
 ///////////////////////////////////////////////////////////////////////////////
 // PatrParser
 

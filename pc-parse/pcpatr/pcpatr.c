@@ -7,6 +7,10 @@
 #include "patr.h"
 #include "pcpatr.h"
 
+#ifndef hab131
+#include "disphead.h"
+#endif
+
 extern int	getopt P((int argc, char * const argv[], const char *opts));
 extern char *	optarg;
 extern int	optind;
