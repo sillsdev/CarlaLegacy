@@ -1036,6 +1036,9 @@ namespace PAWSStarterKit
 			sw.WriteLine("  PawsSKAnswers = new ActiveXObject(\"MicroSoft.XMLDOM\");");
 			sw.WriteLine("  PawsSKAnswers.async = false;");
 			sw.WriteLine("  PawsSKAnswers.load( filespec );");
+#if CheckLangAbbrOnLoad
+			sw.WriteLine("alert(\"loaded \" + filespec);");
+#endif  // CheckLangAbbrOnLoad
 			sw.WriteLine("     // and Save them to the UserData store named LangAbbr + \"PawsSKAnswers\"");
 			sw.WriteLine("  div = document.all(\"answerDiv\");");
 			sw.WriteLine("  div.XMLDocument.documentElement = PawsSKAnswers.documentElement;");
@@ -1485,6 +1488,9 @@ namespace PAWSStarterKit
 				m_XmlDoc.Load(strAnswerFile);
 				m_strLanguageName = getXmlElementContent("//language/langName");
 				m_strLanguageAbbreviation = getXmlElementContent("//language/langAbbr");
+#if CheckLangAbbrOnLoad
+				MessageBox.Show("In loadAnswerFile: langAbbr = " + m_strLanguageAbbreviation);
+#endif // CheckLangAbbrOnLoad
 				m_strTextSFM = getXmlElementContent("//language/textSFM");
 				m_strUserGrammarFile = getXmlElementContent("//language/grammarFile");
 				m_strUserWriterFile = getXmlElementContent("//language/writerFile");
@@ -1600,13 +1606,20 @@ namespace PAWSStarterKit
 			base.OnLoad(ea);
 
 			string[] astrArgs = Environment.GetCommandLineArgs();
+#if CheckLangAbbrOnLoad
+			MessageBox.Show("In OnLoad");
+#endif // CheckLangAbbrOnLoad
 
 			if (astrArgs.Length > 1)
 			{
 				if (File.Exists(astrArgs[1]))
 				{
 					string strFullFileName = Path.GetFullPath(astrArgs[1]);
+#if CheckLangAbbrOnLoad
+					MessageBox.Show("In OnLoad before loadAnswerFile");
+#endif // CheckLangAbbrOnLoad
 					loadAnswerFile(strFullFileName);
+					showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
 				}
 				else
 				{
