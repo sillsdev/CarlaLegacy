@@ -19,9 +19,9 @@ class CProcessStatus;
 
 class CInputDocView : public CView
 {
-#ifdef hab241 // didn't work
+#ifndef rbr253
 #define MAXPANELS 100
-#endif // hab241
+#endif // rbr253
 protected:
 	CImageList m_imageList;	// this could just as well belong to the m_tabCtrl, where it is used
 	CInputDocView();           // protected constructor used by dynamic creation
@@ -29,9 +29,9 @@ protected:
 	void populatePanels();
 	void choosePanel(CWnd* pEdit);
 	CTypedPtrArray<CPtrArray, CRichEditCtrl*>  m_pEditCtrls;
-#ifdef hab241 // didn't work
+#ifndef rbr253
 	int m_iLine[MAXPANELS];
-#endif // hab241
+#endif // rbr253
 //	CTypedPtrArray<CPtrArray, CEdit*>  m_pEditCtrls;
 	afx_msg void OnParseButton();
 	BOOL OnToolTip(UINT id, NMHDR *pTTTStruct, LRESULT *pResult);

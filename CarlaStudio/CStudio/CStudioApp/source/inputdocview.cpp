@@ -3,6 +3,7 @@
 // JDH 5/28/99 Make popup-menu shortcut to processor properties
 // jdh 12April2001	check the readonly flag of the file
 // hab 11-Jun-2001 above change in CInputDocView::saveBaseStream failed to check if the file existed or not
+// rbr 14-Jul-2001 Revise Andy's 241 attempt to scroll windows after reprocessing a file. It now works.
 
 #include "stdafx.h"
 #include "CARLAStudioApp.h"
@@ -35,12 +36,11 @@ CInputDocView::CInputDocView()
 	m_pFindDlg(NULL),
 	m_iLastFoundPos(0) // would fit better in a subclass of each richedit ctrl, if we had one
 {
-#ifdef hab241 // didn't work
-				// initialize window line positions
-  for (int i=0; i < MAXPANELS; i++)
-	m_iLine[i] = 0;
-  TRACE("\nInitializing");
-#endif // hab241
+#ifndef rbr253
+	// initialize window line positions
+	for (int i=0; i < MAXPANELS; i++)
+		m_iLine[i] = 0;
+#endif // rbr253
 }
 
 CInputDocView::~CInputDocView()
@@ -98,14 +98,6 @@ void CInputDocView::populatePanels()
 			m_tabCtrl.SetCurSel(0);	// should always at least be the source panel
 			tabSelected(0); // don't know why this isn't triggered
 		}
-#ifdef hab241 // didn't work
-		for(i=0; i< m_pEditCtrls.GetSize() && i < MAXPANELS; i++)
-		  {		// scroll to previous position
-			m_pEditCtrls[i]->LineScroll(m_iLine[i]);
-			TRACE("\npopulate: %d %d", i, m_iLine[i]);
-			m_pEditCtrls[i]->Invalidate();
-		  }
-#endif // hab241
 	}
 }
 // id 0 is the basestream
@@ -214,13 +206,6 @@ void CInputDocView::removePanels()
 		m_tabCtrl.DeleteAllItems();
 	for(int i=0; i< m_pEditCtrls.GetSize(); i++)
 	{
-#ifdef hab241 // didn't work
-	  if (m_pEditCtrls[i]->m_hWnd)
-		{			// remember current window position
-		  m_iLine[i] = m_pEditCtrls[i]->GetFirstVisibleLine();
-		  TRACE("\nremove %d %d", i, m_iLine[i]);
-		}
-#endif // hab241
 		delete m_pEditCtrls[i];
 	}
 	m_pEditCtrls.RemoveAll();
@@ -238,21 +223,8 @@ void CInputDocView::choosePanel(CWnd* pEdit)
 	}
 
 	// 2) show the chosen one
-#ifdef hab241 // didn't work
-	if(pEdit->m_hWnd)
-	  {
-		pEdit->ShowWindow(SW_SHOW);
-		for(int i=0; i< m_pEditCtrls.GetSize() && i < MAXPANELS; i++)
-		  {
-		m_pEditCtrls[i]->LineScroll(m_iLine[i]);
-		TRACE("\nChoose: %d %d", i, m_iLine[i]);
-		m_pEditCtrls[i]->Invalidate();
-		  }
-	  }
-#else // hab241
 	if(pEdit->m_hWnd)
 		pEdit->ShowWindow(SW_SHOW);
-#endif // hab241
 	// this is just a hack, to sort-of help the problem of unwanted selection of the src text,
 	// but it only help once the user clicks on some tab, which causes this to be exectuted
 //	if(pEdit.m_hWnd)
@@ -388,9 +360,31 @@ void CInputDocView::tabSelected(int iTab)
 
 void CInputDocView::updatePanels()
 {
+#ifndef rbr253
+	int i;
+	for(i=0; i< m_pEditCtrls.GetSize(); i++)
+	{
+		// Remember window positions.
+		if(m_pEditCtrls[i]->m_hWnd)
+			m_iLine[i] = m_pEditCtrls[i]->GetFirstVisibleLine();
+	}
+#endif // rbr253
+
 	LockWindowUpdate();
 	populatePanels();
 	UnlockWindowUpdate();
+
+#ifndef rbr253
+	for(i=0; i< m_pEditCtrls.GetSize(); i++)
+	{
+		if(m_pEditCtrls[i]->m_hWnd)
+		{
+			// Restore window positions.
+			m_pEditCtrls[i]->LineScroll(m_iLine[i]);
+			m_pEditCtrls[i]->Invalidate();
+		}
+	}
+#endif // rbr253
 }
 
 void CInputDocView::OnSize(UINT nType, int cx, int cy)
