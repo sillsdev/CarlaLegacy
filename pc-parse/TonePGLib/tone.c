@@ -1230,8 +1230,11 @@ void  delink_tone_from_tbu(tp, tier, tbu)
 		tb_lastp->tbul_next = tbp->tbul_next;
 	  else
 		tp->tone_tbul = tbp->tbul_next;
+#ifdef hab1017
+	  /* hab on 2004.03.15: I do not follow why this should be freed */
 				/* free memory of the tbu_list struct */
 	  freeMemory((char *)tbp);
+#endif
 	  break;
 	}
 	}
@@ -1249,9 +1252,11 @@ void  delink_tone_from_tbu(tp, tier, tbu)
 		  tbu->tbu_tonel = tlp->tonl_right;
 	  if (tlp->tonl_right != (struct tone_list *)NULL)
 		tlp->tonl_right->tonl_left = tlp->tonl_left;
-
+#ifdef hab1017
+	  /* hab on 2004.03.15: I do not follow why this should be freed */
 				/* free memory of the tone_list struct */
 	  freeMemory((char *)tlp);
+#endif
 	  break;
 	}
 	}

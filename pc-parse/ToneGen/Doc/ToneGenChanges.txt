@@ -1,5 +1,12 @@
 ToneGen CHANGE HISTORY
 
+1.0.18 (15-Mar-2004)
+--------------------
+1. Fix a bug where a valid analysis was removed during the
+   the process which removes an analysis in a word when its
+   edge-conditions failed to produce a successful analysis
+   in the following word
+
 1.0.17 (07-Jan-2004)
 --------------------
 1. Incorporate changes made to STAMP to allow for negative

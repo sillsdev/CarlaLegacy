@@ -1998,10 +1998,17 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
   static int max_conds = 1;
   static long      edge_conds[MAX_ANALYSES] = {0L, 0L}; /* init to all zeros */
   static long last_edge_conds[MAX_ANALYSES] = {0L, 0L}; /* init to all zeros */
-		 long  new_edge_conds[MAX_ANALYSES];
+		 long  new_edge_conds[MAX_ANALYSES] = {0L, 0L}; /* init to all zeros */
   long is_good_cond[MAX_ANALYSES];
   long last_cond;
   int is_good_analysis[MAX_ANALYSES];
+#ifndef hab1017
+  int bLastAnalIsGood[MAX_ANALYSES];
+  WordAnalysis * this_anal[MAX_ANALYSES] = {0L};
+  static WordAnalysis * last_anal[MAX_ANALYSES] = {0L};
+  static int max_last_conds = 0;
+  int i2, i3;
+#endif
   int anal_count;
   int found_good_anal;
 #ifndef hab1013
@@ -2050,6 +2057,10 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 	{
 	  max_conds = 1;
 	  edge_conds[0] = 0L;
+#ifndef hab1017
+	  max_last_conds = 0;
+	  last_anal[0] = NULL;
+#endif
 	}
 
 				/* run through all previous edge_conditions */
@@ -2157,6 +2168,10 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 		  found_good_anal = is_good_analysis[anal_count] = TRUE;
 				/* remember that it is a good edge condition */
 		  is_good_cond[i] = TRUE;
+#ifndef hab1017
+				/* remember the analysis */
+		  this_anal[j] = anp;
+#endif
 				/* save edge conditions by incrementing */
 		  j++;	/* new_edge_conds array index */
 
@@ -2184,6 +2199,68 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 		fprintf(pStamp_in->pLogFP, "\n\t%ld", is_good_cond[i]);
 #endif
 	  bLastWordHadAnalyses = FALSE;
+#ifndef hab1017
+				/* remove any analyses from previous word */
+				/* whose edge conditions failed to produce */
+				/* a good analysis */
+
+		  /* first, for each analysis, determine if it is still good */
+	  for (anp = last_word->pAnalyses,
+		 anal_count = 0;
+		   max_last_conds > 0 &&
+		 anp != (WordAnalysis *)NULL &&
+		 anal_count < MAX_ANALYSES;
+		   anp = anp->pNext,
+		 anal_count++)
+		{
+		  /* intialize; assume previous anals will fail */
+		  bLastAnalIsGood[anal_count] = FALSE;
+		  bLastWordHadAnalyses = TRUE;
+		  for (i2 = 0;
+		   i2 < max_conds && !bLastAnalIsGood[anal_count];
+		   i2++)
+		{
+		  for (i3 = 0; i3 < max_last_conds; i3++)
+			{
+			  if ((last_anal[i3] == anp) &&
+			  (last_edge_conds[i3] == edge_conds[i2]))
+			if (is_good_cond[i2])
+			  {
+				bLastAnalIsGood[anal_count] = TRUE;
+				break;
+			  }
+			}
+		}
+		}			/* end of anlp loop */
+	  /* now remove any analyses that are bad */
+	  for (anp = last_word->pAnalyses,
+		 trp = pUnit_in->pPreviousWord->pTrAnalyses,
+		 anal_count = 0;
+		   max_last_conds > 0 &&
+		 anp != (WordAnalysis *)NULL &&
+		 trp != (StampAnalysisList *)NULL &&
+		 anal_count < MAX_ANALYSES;
+		   anp = anp2,
+		 trp = trp2,
+		 anal_count++)
+		{
+		  anp2 = anp->pNext;
+		  trp2 = trp->pNext;
+		  if (!bLastAnalIsGood[anal_count])
+		{
+		  if (do_trace && pStamp_in->pLogFP)
+			{
+			  fprintf(pStamp_in->pLogFP,
+				  "\nRemoving: %s from previous word (%s)",
+				  anp->pszAnalysis, last_word->pszOrigWord);
+			}
+		  last_word = remove_bad_anal(last_word, anp);
+		  pUnit_in->pPreviousWord->pTrAnalyses =
+			remove_bad_tranal(pUnit_in->pPreviousWord->pTrAnalyses,
+					  trp);
+		}
+		}			/* end of anlp loop */
+#else
 				/* remove any analyses from previous word */
 				/* whose edge conditions failed to produce */
 				/* a good analysis */
@@ -2201,7 +2278,8 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 		  anp2 = anp->pNext;
 		  trp2 = trp->pNext;
 		  for (i = 0; i < max_conds; i++)
-		if (last_edge_conds[anal_count] == edge_conds[i])
+		{
+		  if (last_edge_conds[anal_count] == edge_conds[i])
 		  if (!is_good_cond[i])
 			{
 			  if (do_trace && pStamp_in->pLogFP)
@@ -2215,7 +2293,9 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 			remove_bad_tranal(pUnit_in->pPreviousWord->pTrAnalyses,
 					  trp);
 			}
+		}
 		}			/* end of anlp loop */
+#endif
 	  if (bLastWordHadAnalyses &&
 		  last_word->pAnalyses == (WordAnalysis *)NULL)
 		{			/* we've removed them all; let user know */
@@ -2225,9 +2305,20 @@ void do_tone_anal ( pUnit_in, do_trace, pStamp_in)
 		}
 	}	/* end of check for finding a good analysis */
 #endif /* hab1013 */
+#ifndef hab1017
+			/* save edge_conditions for next word. */
+	  for (i = 0; i < j; i++)
+	{
+	  last_edge_conds[i] = new_edge_conds[i];
+	  last_anal[i] = this_anal[i];
+	}
+				/*  remember number of last edge conditions */
+	  max_last_conds = j;
+#else
 			/* save edge_conditions for next word. */
 	  for (i = 0; i < j; i++)
 	last_edge_conds[i] = new_edge_conds[i];
+#endif
 				/* throw away duplicate edge conditions by */
 				/* sorting the array and copying only */
 				/* unique entries */

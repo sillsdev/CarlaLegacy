@@ -4,12 +4,16 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL -17		/* bug fix or other internal improvement */
-#define DATE       "January 7, 2004"	/* date of release version */
+#define PATCHLEVEL -18		/* bug fix or other internal improvement */
+#define DATE       "March 15, 2004"	/* date of release version */
 #define YEAR       "2004"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 15-Mar-2004  hab  - Fix a bug where a valid analysis was removed during the
+ * [1.0.18]             the process which removes an analysis in a word when its
+ *                      edge-conditions failed to produce a successful analysis
+ *                      in the following word
  * 07-Jan-2004  hab  - Incorporate changes made to STAMP to allow for negative
  * [1.0.17]             string environment constraints.
  * 04-Nov-2003  hab  - Fix a bug where associate and insert rule actions would
