@@ -66,8 +66,11 @@
  * Copyright 1997, 2000 by SIL International.  All rights reserved.
  */
 #include <windows.h>
+#ifndef hab34112
+#ifdef EXPERIMENTAL
 #include <assert.h> // jdh 2001.7.16
-
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -197,7 +200,13 @@ static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 
 #define MAXAMBIG 16		/* high level of ambiguity for stats */
 
+#ifndef hab34112
+#ifdef EXPERIMENTAL
 enum output_style { Ana, AResult, Ptext, FWParse };
+#else /* EXPERIMENTAL */
+enum output_style { Ana, AResult, Ptext };
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
 struct ample_setup
 {
 	AmpleData		sData;
@@ -1033,7 +1042,8 @@ pSetup_in->sData.sPATR.eTreeDisplay = iOrigTreeDisplay;
 return pszBuffer_out;
 }
 
-
+#ifndef hab34112
+#ifdef EXPERIMENTAL
 /*****************************************************************************
  * NAME
  *    addFWParseToBuffer
@@ -1131,6 +1141,8 @@ return pszBuffer_out;
 
 		 return pszBuffer_out;
  }
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
 
 
 /* Following added by hab 1999.03.11 */
@@ -1226,7 +1238,8 @@ DllExport const char * AmpleParseText(
 	pSetup_io->sData.bLookaheadDone     = FALSE;
 	pSetup_io->sData.bMultiDependency   = FALSE;
 	memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
-
+#ifndef hab34112
+#ifdef EXPERIMENTAL
 	switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
 	{
 	case AResult:
@@ -1241,9 +1254,10 @@ DllExport const char * AmpleParseText(
 		assert(FALSE);
 		break;
 	}
-
-
-
+#else /* EXPERIMENTAL */
+	strncpy(szOutputBuffer_g, "<AResult>\r\n", sizeof(szOutputBuffer_g)-1);
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
 	/*
 	*  if tracing with SGML output, initiate the trace
 	*/
@@ -1325,7 +1339,8 @@ DllExport const char * AmpleParseText(
 				*  output the results of analysis
 			*/
 #ifndef hab33169
-
+#ifndef hab34112
+#ifdef EXPERIMENTAL
 			switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
 			{
 			case AResult:
@@ -1341,8 +1356,12 @@ DllExport const char * AmpleParseText(
 				assert(FALSE);
 				break;
 			}
-
-#else
+#else /* EXPERIMENTAL */
+			addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
+					   szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
+#else /* hab33169 */
 			addAResultToBuffer(&sWord, &pSetup_io->sData.sTextCtl,
 				szOutputBuffer_g, sizeof(szOutputBuffer_g)-1);
 #endif /* hab33169 */
@@ -1371,6 +1390,8 @@ DllExport const char * AmpleParseText(
 #endif /* hab33105 */
 	}
 	eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
+#ifndef hab34112
+#ifdef EXPERIMENTAL
 		switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
 		{
 		case AResult:
@@ -1385,7 +1406,11 @@ DllExport const char * AmpleParseText(
 			assert(FALSE);
 			break;
 		}
-
+#else /* EXPERIMENTAL */
+		strncat(szOutputBuffer_g, "</AResult>\r\n",
+			sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
 		/*
 		*  if tracing with SGML output, terminate the trace
 	*/
@@ -2153,9 +2178,13 @@ switch (pSetup_io->eOutputStyle)
 	fprintf(outfp, "<AResult source=\"AmpleDLL\">\n");
 	break;
 
+#ifndef hab34112
+#ifdef EXPERIMENTAL
 	case FWParse:
 	/* not yet implemented */
 	break;
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
 
 	case Ptext:
 	/* not yet implemented */
@@ -2950,8 +2979,12 @@ else if (_stricmp(pszValue_in, "AResult") == 0)
 	pSetup_io->eOutputStyle = AResult;
 else if (_stricmp(pszValue_in, "Ptext") == 0)
 	pSetup_io->eOutputStyle = Ptext;
+#ifndef hab34112
+#ifdef EXPERIMENTAL
 else if (_stricmp(pszValue_in, "FWParse") == 0)
 	pSetup_io->eOutputStyle = FWParse;
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
 else
 	return szInvalidParameterValue_m;
 
@@ -3453,7 +3486,11 @@ switch (pSetup_io->eOutputStyle)
 	case Ana:		return "Ana";
 	case AResult:	return "AResult";
 	case Ptext:		return "Ptext";
-	case FWParse:		return "FWParse";
+#ifndef hab34112
+#ifdef EXPERIMENTAL
+	case FWParse:	return "FWParse";
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
 	default:		return "?";
 	}
 }
@@ -4109,7 +4146,11 @@ return pszResult;
 
 /******************************************************************************
  * EDIT HISTORY
- * 16-July-2001	jdh		- Add support for Fieldworks XFWParse format
+ * 10-Aug-2001  hab  - Fix 3.3.20.11 so it doesn't break CarlaStudio's
+ * [3.4.1.12]           QuickParse: make it only be for EXPERIMENTAL (i.e.
+ *                      XAmple)
+ * 16-Jul-2001  jdh  - Add support for Fieldworks XFWParse format
+ * [3.3.20.11]
  * 31-May-2001  hab  - Needed to ignore RSC bit when checking affix type in
  * [3.3.20.10]           addAlloResultToBuffer().
  * 29-Mar-2001  hab  - Add conditionally compiled XAmple version, including
