@@ -407,12 +407,21 @@ while ( TRUE )                          /* While line (tested below) */
 
 		pSenTransData->other_punc = loadpunc( infile, pSenTransData );	/* Load punc from line */
 		}
+#ifndef hab207
+	else if ( !strncmp( "\\bpunc ", pSenTransData->line, 7 ) ) /* If begin punc */
+		{
+		rest = skipwhite( pSenTransData->line + 7 );  /* Start after marker */
+
+		pSenTransData->begin_punc = loadpunc( infile, pSenTransData );	/* Load punc from line */
+		}
+#else  /* hab207 */
 	else if ( !strncmp( "\\bpunc ", pSenTransData->line, 6 ) ) /* If begin punc */
 		{
 		rest = skipwhite( pSenTransData->line + 6 );  /* Start after marker */
 
 		pSenTransData->begin_punc = loadpunc( infile, pSenTransData );	/* Load punc from line */
 		}
+#endif /* hab207 */
 	else if ( !strncmp( "\\... ", pSenTransData->line, 5 ) ) /* If dot number */
 		{
 		rest = skipwhite( pSenTransData->line + 5 );  /* Start after marker */

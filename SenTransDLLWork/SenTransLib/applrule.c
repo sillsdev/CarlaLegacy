@@ -278,7 +278,14 @@ for ( env = rule->env; env; env = env->next )
 	if ( env->envlf )                       /* If left envir */
 		{
 				wd = prevwd( firstwd ); /* Start looking in previous word */
+#ifndef hab207
+				if ( (match->type & SFX) && /* If match starts with a suffix, start looking in same word */
+			 env != NULL && /* but only if the environment is not */
+			 env->envlf != NULL && /* a begin punc */
+			 !(env->envlf->type & PUNC))
+#else  /* hab207 */
 				if ( match->type & SFX ) /* If match starts with a suffix, start looking in same word */
+#endif /* hab207 */
 						wd = firstwd;
 		match_envlf = TRUE;                 /* Signal for trymatch */
 		leftenv = do_match_left( wd, env->envlf );
@@ -705,7 +712,13 @@ for ( mat = match; mat; mat = mat->prev ) /* For each match element */
 	succ = NONE;                            /* Clear success */
 
 
+#ifndef hab207
+		while ( wd &&
+		(wd->type & FROMF) && /* 1.2t AB Move past from field elements */
+		!(mat->type & PUNC)) /* but only if it is not a begin punc match */
+#else  /* hab207 */
 		while ( wd && wd->type & FROMF ) /* 1.2t AB Move past from field elements */
+#endif /* hab207 */
 				wd = wd->prev;
 	if ( !wd )                              /* If no more words
 				  then there are match elements that cannot be matched */

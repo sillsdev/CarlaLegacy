@@ -6,6 +6,9 @@ file SENTRANS.DOC.
 
 Change History:
 
+2.0.7 Apr 2002 Fixed a bug: a begin punctuation would not match in some
+disambiguation rules.
+
 2.0.6 Jul 2001 Fixed a bug: if \a field of ANA has any extra spaces, then
 the extra space could be treated as a morphname.
 

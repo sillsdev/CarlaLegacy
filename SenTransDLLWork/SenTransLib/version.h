@@ -4,12 +4,14 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 6		/* bug fix or other minor change */
-#define DATE "July 18, 2001"	/* date of release version */
-#define YEAR "2001"		/* used for copyright notice in banner */
+#define PATCHLEVEL 7		/* bug fix or other minor change */
+#define DATE "April 22, 2002"	/* date of release version */
+#define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 22-Apr-2002  hab  - Fix bug: a begin punctuation would not match in some
+ * [2.0.7]               disambiguation rules.
  * 18-Jul-2001  hab  - Fix bug: if \a field of ANA has any extra spaces, then
  * [2.0.6]               the extra space can be treated as a morphname.
  * 14-Jul-2001  hab  - Fix bug: Converting a root to a suffix on a previous
