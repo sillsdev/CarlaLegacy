@@ -599,9 +599,15 @@ if (	(pAmple_in->eWriteCategory != AMPLE_NO_CATEGORY) &&
 	/*
 	 *	If prefix last and prefix, output prefix cat
 	 */
+#ifndef hab340
+	if (    (pAmple_in->eWriteCategory & AMPLE_PREFIX_CATEGORY) &&
+		(   (pAmpleLeftHead_m->eType == AMPLE_PFX)  ||
+		(pAmpleLeftHead_m->eType == AMPLE_IFX) ) )
+#else
 	if (    (pAmple_in->eWriteCategory == AMPLE_PREFIX_CATEGORY) &&
 		(   (pAmpleLeftHead_m->eType == AMPLE_PFX)  ||
 		(pAmpleLeftHead_m->eType == AMPLE_IFX) ) )
+#endif /* hab340 */
 	finalcat = (int)(pAmpleLeftHead_m->iToCategory);
 	/*
 	 *	Else (suffix last or no prefix) If suffix output its cat
@@ -611,13 +617,27 @@ if (	(pAmple_in->eWriteCategory != AMPLE_NO_CATEGORY) &&
 	/*
 	 *	Else (no suffix) If prefix, output its cat
 	 */
+#ifndef hab3319
+	else if ( (pAmpleLeftHead_m->eType == AMPLE_PFX) ||
+		  (pAmpleLeftHead_m->eType == AMPLE_IFX) )  /* IFX, too */
+#else
 	else if (pAmpleLeftHead_m->eType == AMPLE_PFX)
+#endif /* hab3319 */
 	finalcat = (int)(pAmpleLeftHead_m->iToCategory);
 	/*
 	 *	Else output root cat
 	 */
 	else
+#ifndef hab340
+				/* could be compound roots;
+				   use headedness */
+	  if (pAmple_in->eWriteCategory & AMPLE_COMPOUND_ROOT_LEFTHEAD)
+	finalcat = (int)(pAmpleLeftHead_m->iROOTCATEG);
+	  else
 	finalcat = (int)(pAmpleRightHead_m->iROOTCATEG);
+#else
+	finalcat = (int)(pAmpleRightHead_m->iROOTCATEG);
+#endif /* hab340 */
 	pszFinalCat = findAmpleCategoryName(finalcat, pAmple_in->pCategories);
 	if (pszFinalCat == NULL)
 	pszFinalCat = "?";

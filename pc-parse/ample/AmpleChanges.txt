@@ -1,5 +1,18 @@
 AMPLE CHANGE HISTORY
 
+3.4.1 (24-Jul-2001)
+--------------------
+1. Fix bug: empty environment constraint messages did not include any
+   information about which entry they were for.
+
+3.4.0 (20-Jul-2001)
+-------------------
+1. Add \catcr field to xxAD.CTL file: for words which consist solely of
+   compound roots (i.e. no affixes).  It indicates whether the category of
+   the word (i.e. the content of the \cat field in the ANA file) should
+   come from the leftmost or the rightmost root in the compound.  The field
+   content should be either "left" or "right".
+
 3.3.21 (11-June-2001)
 ---------------------
 1. Fix bug that labeled an allomorph property as a morpheme property (only evident when using -a option).

@@ -60,6 +60,43 @@ static void		process_patr_setting P((char * pszRec_in,
  *	\pcl added by hab for version 3.3.0
  *	\patr added by SRMc for version 3.3.4 (#ifdef EXPERIMENTAL)
  */
+#ifndef hab340
+static const CodeTable sAnalysisCodeTable_m = { "\
+\\pt\0A\0\
+\\rt\0B\0\
+\\st\0C\0\
+\\it\0D\0\
+\\ft\0E\0\
+\\tc\0F\0\
+\\cat\0G\0\
+\\catcr\0g\0\
+\\ca\0H\0\
+\\ccl\0I\0\
+\\rd\0J\0\
+\\strcheck\0K\0\
+\\maxnull\0L\0\
+\\scl\0M\0\
+\\iah\0N\0\
+\\pah\0O\0\
+\\rah\0P\0\
+\\sah\0Q\0\
+\\cr\0R\0\
+\\mcl\0S\0\
+\\ap\0T\0\
+\\mp\0U\0\
+\\maxp\0V\0\
+\\maxi\0W\0\
+\\maxr\0X\0\
+\\maxs\0Y\0\
+\\mcc\0Z\0\
+\\dicdecap\0a\0\
+\\maxprops\0b\0\
+\\pcl\0c\0\
+\\patr\0p\0",
+	31,
+	NULL
+	};
+#else /* hab340 */
 static const CodeTable sAnalysisCodeTable_m = { "\
 \\pt\0A\0\
 \\rt\0B\0\
@@ -94,6 +131,7 @@ static const CodeTable sAnalysisCodeTable_m = { "\
 	30,
 	NULL
 	};
+#endif /* hab340 */
 
 static const AmpleFunctionTable asPrefixTestTable_m[] = {
 	{"SEC_ST",   AMPLE_SEC_ST},
@@ -740,9 +778,23 @@ while (*rp != NUL)
 	case 'G':		/* category to output */
 		p2 = isolateWord(rp);
 		if ((*rp == 's') || (*rp == 'S'))
+#ifndef hab340
+		  {			/* reset any previous settings */
+		pAmple_io->eWriteCategory &= ~AMPLE_AFFIX;
+		pAmple_io->eWriteCategory |= AMPLE_SUFFIX_CATEGORY;
+		  }
+#else
 		pAmple_io->eWriteCategory = AMPLE_SUFFIX_CATEGORY;
+#endif /* hab340 */
 		else if ((*rp == 'p') || (*rp == 'P'))
+#ifndef hab340
+		  {			/* reset any previous settings */
+		pAmple_io->eWriteCategory &= ~AMPLE_AFFIX;
+		pAmple_io->eWriteCategory |= AMPLE_PREFIX_CATEGORY;
+		  }
+#else
 		pAmple_io->eWriteCategory = AMPLE_PREFIX_CATEGORY;
+#endif /* hab340 */
 		else if (pAmple_io->pLogFP != NULL)
 		fprintf(pAmple_io->pLogFP,
 			"%s\\cat must be followed by prefix or suffix\n",
@@ -752,6 +804,26 @@ while (*rp != NUL)
 		else
 		pAmple_io->bWriteMorphCats = FALSE;	/* don't write ... */
 		break;
+
+#ifndef hab340
+	case 'g':		/* category to output for compound roots */
+		p2 = isolateWord(rp);
+		if ((*rp == 'l') || (*rp == 'L'))
+		  {			/* reset any previous settings */
+		pAmple_io->eWriteCategory &= ~AMPLE_COMPOUND_ROOT;
+		pAmple_io->eWriteCategory |= AMPLE_COMPOUND_ROOT_LEFTHEAD;
+		  }
+		else if ((*rp == 'r') || (*rp == 'R'))
+		  {			/* reset any previous settings */
+		pAmple_io->eWriteCategory &= ~AMPLE_COMPOUND_ROOT;
+		pAmple_io->eWriteCategory |= AMPLE_COMPOUND_ROOT_RIGHTHEAD;
+		  }
+		else if (pAmple_io->pLogFP != NULL)
+		fprintf(pAmple_io->pLogFP,
+			"%s\\catcr must be followed by left or right\n",
+			errhead );
+		break;
+#endif /* hab340 */
 
 	case 'H':		/* category definition */
 		pAmple_io->pCategories = addAmpleCategory(rp,
@@ -959,6 +1031,14 @@ while (*rp != NUL)
 	rp = pszNextField;
 	} /* end of record */
 
+#ifndef hab340
+if ( pAmple_io->eWriteCategory != AMPLE_NO_CATEGORY &&
+	!(pAmple_io->eWriteCategory & AMPLE_SUFFIX_CATEGORY) &&
+	!(pAmple_io->eWriteCategory & AMPLE_PREFIX_CATEGORY) )
+  pAmple_io->eWriteCategory = AMPLE_NO_CATEGORY; /* had \catcr without also
+							having \cat so don't use
+							\catcr info. */
+#endif /* hab340 */
 if (pAmple_io->eWriteCategory != AMPLE_NO_CATEGORY)
 	pAmple_io->iOutputFlags |= WANT_CATEGORY;
 else
@@ -1441,7 +1521,7 @@ pAmple_io->iDebugLevel          = 0;
 }
 
 #ifdef EXPERIMENTAL
-#include ".\cmdlib/cmd.h" /* jdh july 19 2001; compiler could never find "cmd.h", I added the ".\cmdlib" */
+#include "cmd.h"
 
 #define KW_CHECKCYCLES        1
 #define KW_DEBUGGINGLEVEL     2

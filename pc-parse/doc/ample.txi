@@ -10,10 +10,10 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.3
-@set DATE April 2000
+@set VERSION version 3.4
+@set DATE August 2001
 @set AUTHOR by Stephen McConnel and H. Andrew Black
-@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+@set COPYRIGHT Copyright @copyright{} 2000-2001 SIL International
 
 @include front.txi
 
@@ -370,10 +370,12 @@ ignored by AMPLE.
 
 @c \maxprops and \pcl added by hab 14-May-1999
 @c \patr added by SRMc 21-Aug-1999 for XAMPLE
+@c \catct added by hab 20-Jul-2001
 @menu
 * \ap::                Allomorph properties
 * \ca::                Categories
 * \cat (xxAD01.CTL)::  Category output control
+* \catcr::             Category output control for compound roots
 * \ccl::               Category class
 * \cr::                Compound root category pair
 * \dicdecap::          Dictionary decapitalization control
@@ -437,7 +439,7 @@ If no @code{\ca} fields appear in the analysis data file, then AMPLE
 does not allow categories to be used in the dictionary entries or in
 the tests.  This is inconceivable for AMPLE's model of morphology.
 
-@node \cat (xxAD01.CTL), \ccl, \ca, Analysis data file fields
+@node \cat (xxAD01.CTL), \catcr, \ca, Analysis data file fields
 @subsection Category output control: \cat
 @findex \cat
 
@@ -448,6 +450,9 @@ abbreviation of one of those words), either capitalized or lowercase.
 The second word, if present, must be @code{morpheme} (or an
 abbreviation thereof), either capitalized or lowercase.
 
+In addition, the @code{\catcr} further defines what category to use
+for the case that a word consists solely of compound roots.
+
 The @code{\cat} field may appear any number of times, but once is
 enough.  If more than one such field occurs, the last one is the one
 that is used.
@@ -455,7 +460,33 @@ that is used.
 If no @code{\cat} fields appear in the analysis data file, then AMPLE
 does not write any category information to the output file.
 
-@node \ccl, \cr, \cat (xxAD01.CTL), Analysis data file fields
+@node \catcr, \ccl, \cat (xxAD01.CTL), Analysis data file fields
+@subsection Category output control for compound roots: \catcr
+@findex \catcr
+
+The @code{\catcr} defines what category to output in the
+analysis output file for the case when a word consists
+solely of compound roots.
+The first word must be either @code{left} or @code{right} (or an
+abbreviation of one of those words), either capitalized or lowercase.
+If the word is @code{left}, then the category of the
+leftmost root in the compound will be used.  If the word is
+@code{right}, then the category of the rightmost root in the
+compound will be used.  If a @code{\cat} field appears, but no
+@code{\catcr} field, then the default is to use the
+rightmost root.
+
+The @code{\catcr} field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no @code{\cat} field appears in the analysis data file, then AMPLE
+does not write any category information to the output file,
+regardless of the setting of the @code{\catcr} field.  That
+is, the @code{\catcr} field has no effect whatsoever unless
+the @code{\cat} field is also present.
+
+@node \ccl, \cr, \catcr (xxAD01.CTL), Analysis data file fields
 @subsection Category class: \ccl
 @findex \ccl
 
@@ -1274,8 +1305,8 @@ separate lines.
 						current
 						LEFT
 						RIGHT
-						initial
-						final
+						INITIAL
+						FINAL
 @end group
 
 @group

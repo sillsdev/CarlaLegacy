@@ -1151,9 +1151,13 @@ if (iType == AMPLE_PUNCT_ENVIR &&
 return( ec );                           /* successful return */
 
 empty_env:                              /* no environment */
+#ifndef hab341
+epar_error("Empty %s environment constraint", pszEnvParseType_m);
+#else
 if (pLogFP_m != NULL)
 	fprintf(pLogFP_m, "%sEmpty %s environment constraint\n",
 		pszEnvErrHead_m, pszEnvParseType_m );
+#endif /* hab341 */
 
 bad_side:
 

@@ -127,6 +127,16 @@ struct ample_data {
 #define AMPLE_NO_CATEGORY	0	/* no word category guessing */
 #define AMPLE_SUFFIX_CATEGORY	1	/* last suffix has word category */
 #define AMPLE_PREFIX_CATEGORY	2	/* first prefix has word category */
+#ifndef hab340
+#define AMPLE_AFFIX             3       /* used to reset affix setting
+					   when there are mutliple \cat
+					   fields */
+#define AMPLE_COMPOUND_ROOT_LEFTHEAD  4	/* compound roots are left headed */
+#define AMPLE_COMPOUND_ROOT_RIGHTHEAD 8	/* compound roots are righ headed */
+#define AMPLE_COMPOUND_ROOT          12	/* used to reset compound setting
+					   when there are mutliple \catcr
+					   fields */
+#endif /* hab340 */
 	int			   bWriteMorphCats;
 	StringList *	   pCategories;		/* \\ca */
 	AmpleCategoryClass *   pCategoryClasses;	/* \\ccl */

@@ -3,14 +3,24 @@
  * Copyright 1996, 2000 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
-#define REVISION 3		/* enhancement requiring adding to book */
-#define PATCHLEVEL 21		/* bug fix or other minor change */
-#define DATE "June 11, 2001"	/* date of release version */
+#define REVISION 4		/* enhancement requiring adding to book */
+#define PATCHLEVEL 1		/* bug fix or other minor change */
+#define DATE "July 24, 2001"	/* date of release version */
 #define YEAR "2001"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
- * 11-June-2001  rbr  - Fix bug in setting property type
+ * 24-Jul-2001  hab  - Fix bug: empty environment constraint messages did not
+ * [3.4.1]               include any information about which entry they were
+ *                       for.  (fixed in envpar.c)
+ * 20-Jul-2001  hab  - Add \catcr field to xxAD.CTL file: for words which
+ * [3.4.0]               consist solely of compound roots (i.e. no affixes),
+ *                       it indicates whether the category of the word (i.e.
+ *                       the content of the \cat field in the ANA file) should
+ *                       come from the leftmost or the rightmost root in the
+ *                       compound.  The field content should be either "left"
+ *                       or "right".
+ * 11-Jun-2001  rbr  - Fix bug in setting property type
  * [3.3.21]              (addAmpleProperty() in proper.c)
  * 31-May-2001  hab  - Fix bug which ignored RSC in processing selective
  * [3.3.20]              tracing (setAmpleSelectiveAnal() in select.c and
