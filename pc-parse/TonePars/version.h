@@ -1,15 +1,16 @@
 /* VERSION.H - version number and date information for TonePars
  ***************************************************************************
- * Copyright 1996, 2002 by SIL International.  All rights reserved.
+ * Copyright 1996-2003 by SIL International.  All rights reserved.
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 11		/* bug fix or other internal improvement */
-#define DATE       "October 17, 2002"	/* date of release version */
-#define YEAR       "2002"	/* used for release date and copyright */
+#define PATCHLEVEL 12		/* bug fix or other internal improvement */
+#define DATE       "April 22, 2003"	/* date of release version */
+#define YEAR       "2003"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 22-Apr-2003  hab - fix bug in delinking in feature-changing mode.
  * 25-Oct-2002	SRMc - fix portability to Linux and OpenBSD using gcc and make
  * [1.0.11]
  * 17-Oct-2002  hab - reflect Steve's recent fixes to opaclib

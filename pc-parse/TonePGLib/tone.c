@@ -2667,7 +2667,9 @@ int link_tone_to_tbu(tp, tier, act_params, tbu, tbu_head, ap, status,
 #ifndef hab106
   int               iOrigStatus;
 #endif /* hab106 */
-
+#ifndef hab1012
+  struct tone_list *tlp2;
+#endif /* hab1012 */
 				/* check for invalid structs */
   if (tp == (struct tone *)NULL || tbu == (struct tbu *)NULL)
 	return(FALSE);
@@ -2774,7 +2776,15 @@ int link_tone_to_tbu(tp, tier, act_params, tbu, tbu_head, ap, status,
 	{
 	  if ((tlp->tonl_tone != (struct tone*)NULL) &&
 		  (tlp->tonl_tone->tone_status[tier] == Linked))
+#ifndef hab1012
+		{
+		  tlp2 = tlp->tonl_right; /* right can get changed below */
+		  delink_tone_from_tbu(tlp->tonl_tone, tier, tbu);
+		  tlp->tonl_right = tlp2;
+		}
+#else  /* hab1012 */
 		delink_tone_from_tbu(tlp->tonl_tone, tier, tbu);
+#endif /* hab1012 */
 	}
 	}
 #else /* hab107 */
