@@ -9,10 +9,10 @@
 
 @set TITLE PC-PATR Reference Manual
 @set SUBTITLE a unification based syntactic parser
-@set VERSION version 1.2.5
-@set DATE April 2001
-@set AUTHOR by Stephen McConnel (changes for v. 1.2.5 by H. Andrew Black)
-@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+@set VERSION version 1.3.0
+@set DATE February 2002
+@set AUTHOR by Stephen McConnel (changes for v. 1.2.5-1.3.0 by H. Andrew Black)
+@set COPYRIGHT Copyright @copyright{} 2000-2002 SIL International
 
 @include front.txi
 
@@ -1208,9 +1208,11 @@ below.
 * set marker features::
 * set marker gloss::
 * set marker record::
+* set marker rootgloss::
 * set marker word::
 * set promote-defaults::
 * set property-is-feature::
+* set rootgloss::
 * set timing::
 * set top-down-filter::
 * set tree::
@@ -1426,7 +1428,7 @@ establishes the marker for the field containing the word gloss.  The
 default is @code{\g}.
 
 @c ----------------------------------------------------------------------------
-@node set marker record, set marker word, set marker gloss, set
+@node set marker record, set marker rootgloss, set marker gloss, set
 @subsubsection set marker record
 
 @w{@code{set marker record} @var{marker}}
@@ -1435,7 +1437,19 @@ file.  This may or may not be the same as the @code{word} marker.  The
 default is @code{\w}.
 
 @c ----------------------------------------------------------------------------
-@node set marker word, set promote-defaults, set marker record, set
+@node set marker rootgloss, set marker word, set marker record, set
+@subsubsection set marker rootgloss
+
+@w{@code{set marker rootgloss} @var{marker}}
+establishes the marker for the field containing the word rootgloss.  The
+default is @code{\r}.  The word's root gloss may be useful for handling
+syntactic constructions such as verb reduplication.  One can write a
+unification constraint that ensures that the rootgloss unifies between
+two successive lexical items/terminal symbols.  Note that this does
+not work when using Kimmo to parse words.
+
+@c ----------------------------------------------------------------------------
+@node set marker word, set promote-defaults, set marker rootgloss, set
 @subsubsection set marker word
 
 @w{@code{set marker word} @var{marker}}
@@ -1457,7 +1471,7 @@ default, but this has been the behavior since the program was first
 written.)
 
 @c ----------------------------------------------------------------------------
-@node set property-is-feature, set timing, set promote-defaults, set
+@node set property-is-feature, set rootgloss, set promote-defaults, set
 @subsubsection set property-is-feature
 
 @w{@code{set property-is-feature} @var{value}} controls whether the
@@ -1471,7 +1485,40 @@ wrong choice for the default, but this has been the behavior since the
 program was first written.)
 
 @c ----------------------------------------------------------------------------
-@node set timing, set top-down-filter, set property-is-feature, set
+@node set rootgloss, set timing, set property-is-feature, set
+@subsubsection set rootgloss
+
+@w{@code{set rootgloss} @var{value}} specifies if root glosses should be
+treated as a lexical feature and, if so, which root(s) in compound roots
+are used.  The word's root gloss may be useful for handling syntactic
+constructions such as verb reduplication.  Note that this does not work
+when using Kimmo to parse words.
+
+@w{@code{set rootgloss off}} turns off the use of the root gloss feature.
+This is the default setting.
+
+@w{@code{set rootgloss on}} turns on the use of the root gloss feature.
+This value should be used when using a word lexicon (i.e. when using the
+@code{load lexicon file} command).  N.B. that it must be set @b{before} one
+loads the lexicon file (otherwise, no root glosses will be loaded).
+
+@w{@code{set rootgloss leftheaded}} turns on the use of the root gloss
+feature and, if one is either disambiguating an ANA file or using AMPLE to
+parse the words in a sentence, only the leftmost root in compound roots
+will be used as the root gloss feature value.
+
+@w{@code{set rootgloss rightheaded}} turns on the use of the root gloss
+feature and, if one is either disambiguating an ANA file or using AMPLE to
+parse the words in a sentence, only the rightmost root in compound roots
+will be used as the root gloss feature value.
+
+@w{@code{set rootgloss all}} turns on the use of the root gloss
+feature and, if one is either disambiguating an ANA file or using AMPLE to
+parse the words in a sentence, every root gloss in compound roots
+will be used as the root gloss feature value.
+
+@c ----------------------------------------------------------------------------
+@node set timing, set top-down-filter, set rootgloss, set
 @subsubsection set timing
 
 @w{@code{set timing} @var{value}}
@@ -2677,6 +2724,19 @@ Parameter Gloss feature is Gloss
 @noindent
 declares that @emph{Gloss} is the name of the gloss attribute.  The
 default name for this attribute is @emph{gloss}.
+
+@item RootGloss feature
+defines the label for the root gloss attribute.  For example,
+@example
+
+Parameter RootGloss feature is RootGloss
+
+@end example
+@noindent
+declares that @emph{RootGloss} is the name of the root gloss attribute.  The
+default name for this attribute is @emph{rootgloss}.  Note that this does
+not work when using Kimmo to parse words.
+
 @end table
 
 @c ----------------------------------------------------------------------------
