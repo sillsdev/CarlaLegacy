@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 9		/* enhancement requiring adding to book */
-#define PATCHLEVEL 2		/* bug fix or other minor change */
-#define DATE "February 3, 2005"	/* date of release version */
+#define PATCHLEVEL 3		/* bug fix or other minor change */
+#define DATE "February 9, 2005"	/* date of release version */
 #define YEAR "2005"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 09-Feb-2005  hab  - For XML output, handle special case of < in CDATA.
+ * [3.9.3]
  * 03-Feb-2005  hab  - Add XML output for maximums reached and special case
  * [3.9.2]               of <leftover> when there are null suffixes.
  * 12-Dec-2004  hab  - Add more XML output for use in FieldWorks XAmple

@@ -2019,6 +2019,7 @@ FILE *		pOutputFP_in;
 const char *	pszCDATA_in;
 int		b7Bit_in;
 {
+#ifdef KeepDistinctionBetweenCDATAandPCDATA
 const char *	p;
 int		iChar;
 
@@ -2044,6 +2045,9 @@ for ( p = pszCDATA_in ; *p ; ++p )
 		break;
 	}
 	}
+#else  /* KeepDistinctionBetweenCDATAandPCDATA */
+ writeAmplePCDATA(pOutputFP_in, pszCDATA_in, b7Bit_in);
+#endif /* KeepDistinctionBetweenCDATAandPCDATA */
 }
 
 /*****************************************************************************
@@ -2058,6 +2062,7 @@ size_t lengthAmpleCDATA(pszCDATA_in, b7Bit_in)
 const char *	pszCDATA_in;
 int		b7Bit_in;
 {
+#ifdef KeepDistinctionBetweenCDATAandPCDATA
 const char *	p;
 int		iChar;
 size_t		uiLength;
@@ -2087,6 +2092,9 @@ for ( uiLength = 0, p = pszCDATA_in ; *p ; ++p )
 	}
 	}
 return uiLength;
+#else  /* KeepDistinctionBetweenCDATAandPCDATA */
+ return lengthAmplePCDATA(pszCDATA_in, b7Bit_in);
+#endif /* KeepDistinctionBetweenCDATAandPCDATA */
 }
 
 /*****************************************************************************
@@ -2102,6 +2110,7 @@ char *		pszOutput_in;
 const char *	pszCDATA_in;
 int		b7Bit_in;
 {
+#ifdef KeepDistinctionBetweenCDATAandPCDATA
 const char *	p;
 char *		q;
 int		iChar;
@@ -2139,6 +2148,9 @@ for ( q = pszOutput_in, p = pszCDATA_in ; *p ; ++p )
 		break;
 	}
 	}
+#else  /* KeepDistinctionBetweenCDATAandPCDATA */
+ storeAmplePCDATA(pszOutput_in, pszCDATA_in, b7Bit_in);
+#endif /* KeepDistinctionBetweenCDATAandPCDATA */
 }
 
 /*************************************************************************
