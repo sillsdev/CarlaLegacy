@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XML Spy v3.0.7 (http://www.xmlspy.com) by Andy Black (SIL International) -->
 <!-- PAWS Starter Kit DTD -->
-<!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, pron, pp, ip, q, focus, neg, comp, advcl, relcl, coord)>
+<!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, prop, pron, pp, ip, q, focus, neg, comp, advcl, relcl, coord)>
 <!-- leftOffAt is the html page where the user last performed a save operation -->
 <!ELEMENT leftOffAt (#PCDATA)>
 <!-- Language has the language name, abbreviation and font information.  It
@@ -112,12 +112,13 @@
 	  If agreeNumber=no, we assume that number is
 	 marked for the nominal phrase by numbers and quantifiers.
 	The case system (case) may be "none, nominative, ergative, split".
+	If nominative or split, it can have a default of nominative (caseDefault).
 	 Degree words may or may not appear (degree)
 	 If so, they may appear before, after, or on either side or both sides at the same time.
 	 If either side, they may appear (degreeEither) unrestricted or restricted.
-   The article/demonstrative may have case (artCase).
 	 The phrase may have articles and/or demonstratives (artAndDem).
-	  If articles only, the article has a position (artPos) which may be restricted if it can occur on
+	 The article/demonstrative may have case (artCase).
+  If articles only, the article has a position (artPos) which may be restricted if it can occur on
 	 either or both sides (artEither).  It may be required (artRequired) or optional always,
 	or it may have a split based on number and mass.  The requirement is further divided
    if articles may appear on both sides (artRequiredBothPos)
@@ -126,7 +127,8 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	 The phrase may have a possessor.
 	   The possessor may or may not be marked (possMarked).
 	   If it is a phrasal clitic, it may be written as a distinct word
-		  (possCliticWord).  It may be required on all possessors
+		  (possCliticWord) or not (in which case the affix type is needed (possCliticAffix).
+	   The clitic word may be required on all possessors
 	  (possCliticRequired).  It has a position with respect to the
 	  possessor (possCliticPossPos).
 	 The possessor has a position with respect to the head noun (possNounPos).
@@ -144,23 +146,27 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	 If either or both sides, they may appear (qpEither) unrestricted or restricted.  Numbers only may
 	 have a reqtricted position (qpEitherRestrictedNumPos).
 	QPs may or may not agree with the noun they modify (qpAgree).
-	 If the phrase has an adjective phrase, then it has a
-	   position with respect to the noun (adjpPos).
+	If either side, they may appear (adjpEither) unrestricted  or  restricted.
+	Languages which change the case for a possessor may also do so just for an adjective (adjpCaseChange).
+	Some of these languages have a phrase delimiting case afix (adjpCaseAffix), which
+	may be either a prefix or a suffix (adjpCaseAffixType).
+	 Adjective phrases have a position with respect to the noun (adjpPos).
 	Adjective Phrases may or may not agree with the noun they modify (adjpAgree).
-	 Noun-noun compounds have a head (compHead) and any PP occurs in a position
-		 with respect to that head (compHeadPPPos).
+	 Noun-noun compounds may or may not occur (comp).  If yes, they have a head (compHead)
+	and any PP occurs in a position with respect to that head (compHeadPPPos).
 -->
-<!ELEMENT np (example, embeddedExample, ppExample, relClExample, qpExample, adjpExample, compExample, compPPExample, articleCategory, demonstrativeCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npContents9)>
+<!ELEMENT np (example, embeddedExample, ppExample, relClExample, qpExample, adjpExample, compExample, compPPExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8)>
 <!ATTLIST np
 	checkedOff (yes | no) "no"
 	agreeNumber (no | yes) "no"
 	agreeOther (no | yesAnimacy | yesClass | yesGender) "no"
 	case (none | nominative | ergative | split) "nominative"
+	caseDefault (no | nominative) "no"
 	degree (yes | no) "no"
 	degreePos (before | after | either | both | unknown) "unknown"
 	degreeEither (unrestricted | restricted) "unrestricted"
-	artCase (yes | no) "no"
 	artAndDem (no | article | demonstrative | both) "no"
+	artCase (yes | no) "no"
 	artPos (before | after | either | both | unknown) "unknown"
 	artEither (unrestricted | restricted) "unrestricted"
 	artRequired (no | mass | yes) "no"
@@ -184,6 +190,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	demAndArtArtBothRequiredPos (no | before | after | both | unknown) "unknown"
 	possMarked (no | yesAffix | yesClitic) "no"
 	possCliticWord (no | yes) "no"
+	possCliticAffix (suffix | prefix) "suffix"
 	possCliticRequired (no | yes) "no"
 	possCliticPossPos (before | after | unknown) "unknown"
 	possNounPos (before | after | either | unknown) "unknown"
@@ -200,7 +207,11 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	qpAgree (no | yes) "no"
 	adjpPos (before | after | either | unknown) "unknown"
 	adjpEither (unrestricted | restricted) "unrestricted"
+	adjpCaseChange (no | yes) "no"
+	adjpCaseAffix (no | yes) "no"
+	adjpCaseAffixType (suffix | prefix) "suffix"
 	adjpAgree (no | yes) "no"
+	comp (no | yes) "no"
 	compHead (left | right) "right"
 	compHeadPPPos (before | after | either | unknown) "unknown"
 >
@@ -213,6 +224,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT compPPExample (#PCDATA)>
 <!ELEMENT articleCategory (#PCDATA)>
 <!ELEMENT demonstrativeCategory (#PCDATA)>
+<!ELEMENT nounCategory (#PCDATA)>
 <!ELEMENT npContents1 EMPTY>
 <!ATTLIST npContents1
 	checkedOff (yes | no) "no"
@@ -245,46 +257,58 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ATTLIST npContents8
 	checkedOff (yes | no) "no"
 >
-<!ELEMENT npContents9 EMPTY>
-<!ATTLIST npContents9
+<!-- Proper names.  Proper Names have examples, including ones
+	   with PPs and relative clauses.
+	 Proper Names may be marked in the morphological parser by N or one or more other
+	   categories, so three category mappings are allowed (propAnimate1Category, propAnimate2Category and    propInanimateCategory).
+ -->
+<!ELEMENT prop (example, ppExample, relClExample, propAnimate1Category, propAnimate2Category, propInanimateCategory)>
+<!ATTLIST prop
 	checkedOff (yes | no) "no"
 >
-<!-- Pronouns and proper names.  Proper Names have examples, including ones
-	   with PPs and relative clauses.  Pronoun examples include reflexives,
-	   possessives, indefinites as NPs and/or indefinites as words, stand
+<!ELEMENT propAnimate1Category (#PCDATA)>
+<!ELEMENT propAnimate2Category (#PCDATA)>
+<!ELEMENT propInanimateCategory (#PCDATA)>
+<!-- Pronouns. Pronoun examples include personal pronouns in each position as determined by the
+	  case system, possessives,  reflexives, reciprocals,
+	   indefinites as NPs and/or indefinites as words, stand
 	   alone NPs, partitives, and pronominals with relative clauses.
-	 Proper Names may be marked in the morphological parser by N or some other
-	   category (pnCat).
-	 Proper Names are marked by case in various fashions (pnCase).
-	 Pronouns may have case (pronCase) and may have a type (pronCase).
+	 Stand alone possessives may exist (poss) and if so, may be formed by an affix
+	   (possAffix).
 	 Reflexives may exist (refl) and if so, may be formed by an affix
 	   (reflAffix).
 	 Reciprocals may exist (recip) and if so, may be formed by an affix
 	   (recipAffix).
-	 Possessives may exist (poss) and if so, may be formed by an affix
-	   (possAffix).
 	 Indefinites may be formed by an NP or a word (indef).
 	 Partitives may come before or after the head (partitive).
 -->
-<!ELEMENT pron (example, ppExample, relClExample, reflExample, recipExample, possExample, indefNPExample, indefExample, standAloneNPExample, partitiveExample, pronRelClExample)>
+<!ELEMENT pron (personalNoCaseExample, personalNomSubjectExample, personalNomObjectExample, personalNomPossessorExample, personalErgSubjectTransExample, personalErgSubjectIntransExample, personalErgPossessorExample, personalSplitSubjectExample, personalSplitObjectExample, personalSplitPossessorExample, personalSplitErgExample, personalSplitAbsExample, possExample, reflExample, recipExample,  indefNPExample, indefExample, standAloneNPExample, partitiveExample, pronRelClExample)>
 <!ATTLIST pron
 	checkedOff (yes | no) "no"
-	pnCat (no | yes) "no"
-	pnCase (no | yesAffix | yesArt | yesNone) "no"
-	pronCase (no | yes | unknown) "unknown"
-	pronCaseType (nomAcc | erg | unknown) "unknown"
+	poss (no | yes) "yes"
+	possAffix (no | yes) "no"
 	refl (yes | no) "yes"
 	reflAffix (noWord | noNoun | yes) "yes"
 	recip (yes | no) "yes"
 	recipAffix (noWord | noNoun | noQP | yes) "yes"
-	poss (no | yes) "yes"
-	possAffix (no | yes) "no"
 	indef (no | yes) "no"
 	partitive (before | after | unknown) "unknown"
 >
+<!ELEMENT personalNoCaseExample (#PCDATA)>
+<!ELEMENT personalNomSubjectExample (#PCDATA)>
+<!ELEMENT personalNomObjectExample (#PCDATA)>
+<!ELEMENT personalNomPossessorExample (#PCDATA)>
+<!ELEMENT personalErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalErgPossessorExample (#PCDATA)>
+<!ELEMENT personalSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalSplitObjectExample (#PCDATA)>
+<!ELEMENT personalSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalSplitErgExample (#PCDATA)>
+<!ELEMENT personalSplitAbsExample (#PCDATA)>
+<!ELEMENT possExample (#PCDATA)>
 <!ELEMENT reflExample (#PCDATA)>
 <!ELEMENT recipExample (#PCDATA)>
-<!ELEMENT possExample (#PCDATA)>
 <!ELEMENT indefNPExample (#PCDATA)>
 <!ELEMENT indefExample (#PCDATA)>
 <!ELEMENT standAloneNPExample (#PCDATA)>

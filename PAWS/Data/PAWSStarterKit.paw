@@ -23,7 +23,7 @@
 		<ordinalExample/>
 		<cardinalNumberCategory/>
 	</qp>
-	<advp checkedOff="no" degree="yes" degreePos="unknown" degreeEither="unrestricted" degreeSet="unrestricted">
+	<advp checkedOff="no" degree="no" degreePos="unknown" degreeEither="unrestricted" degreeSet="unrestricted">
 		<temporalExample/>
 		<locativeExample/>
 		<mannerExample/>
@@ -34,7 +34,7 @@
 		<example/>
 		<adjectiveCategory/>
 	</adjp>
-	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" degree="no" degreePos="unknown" degreeEither="unrestricted" artCase="no" artAndDem="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="no" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown" possMarked="no" possCliticWord="no" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpBothRequiredPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpAgree="no"  compHead="right" compHeadPPPos="unknown">
+	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" caseDefault="no" degree="no" degreePos="unknown" degreeEither="unrestricted" artAndDem="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="no" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown" possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpBothRequiredPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpCaseAffixType="suffix" adjpAgree="no" comp="no" compHead="right" compHeadPPPos="unknown">
 		<example/>
 		<embeddedExample/>
 		<ppExample/>
@@ -45,6 +45,7 @@
 		<compPPExample/>
 		<articleCategory/>
 		<demonstrativeCategory/>
+		<nounCategory/>
 		<npContents1 checkedOff="no"/>
 		<npContents2 checkedOff="no"/>
 		<npContents3 checkedOff="no"/>
@@ -53,15 +54,31 @@
 		<npContents6 checkedOff="no"/>
 		<npContents7 checkedOff="no"/>
 		<npContents8 checkedOff="no"/>
-		<npContents9 checkedOff="no"/>
 	</np>
-	<pron checkedOff="no" pnCat="no" pnCase="no" pronCase="unknown" pronCaseType="unknown" refl="yes" reflAffix="yes" recip="yes" recipAffix="yes" poss="yes" possAffix="no" indef="no" partitive="unknown">
+	<prop checkedOff="no">
 		<example/>
 		<ppExample/>
 		<relClExample/>
+		<propAnimate1Category/>
+		<propAnimate2Category/>
+		<propInanimateCategory/>
+	</prop>
+	<pron checkedOff="no" poss="yes" possAffix="no"  refl="yes" reflAffix="yes" recip="yes" recipAffix="yes"  indef="no" partitive="unknown">
+	<personalNoCaseExample/>
+	<personalNomSubjectExample/>
+	<personalNomObjectExample/>
+	<personalNomPossessorExample/>
+	<personalErgSubjectTransExample/>
+	<personalErgSubjectIntransExample/>
+	<personalErgPossessorExample/>
+	<personalSplitSubjectExample/>
+	<personalSplitObjectExample/>
+	<personalSplitPossessorExample/>
+	<personalSplitErgExample/>
+	<personalSplitAbsExample/>
+	<possExample/>
 		<reflExample/>
 		<recipExample/>
-		<possExample/>
 		<indefNPExample/>
 		<indefExample/>
 		<standAloneNPExample/>
