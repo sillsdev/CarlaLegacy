@@ -10,6 +10,7 @@
 //                       order to keep full line comments and test data in
 //                       the correct list.
 // 2.1.2 13-Mar-2000 jdh removed problem with dragging and entry into the middle of another entry
+// 2.6.0 07-Aug-2001 hab when drag an item up, put it in the right spot in the file (was one too high)
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -1005,7 +1006,11 @@ void CWListEntry::doMoveToSlot(CListCtrl & clc, int iSlot)
 			iNewEntryIndex=iRowIndex=0;
 		else
 		{
+#ifndef hab260
+		  iNewEntryIndex= iDraggedOntoEntryIndex;  // put at right spot in file, too
+#else
 			iNewEntryIndex= iDraggedOntoEntryIndex-1;
+#endif // hab260
 			iRowIndex=m_pOwningList->entryIndexToRowIndex(clc, iDraggedOntoEntryIndex);
 		}
 	}
