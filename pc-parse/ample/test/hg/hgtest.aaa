@@ -1,0 +1,449 @@
+\a < N0 *hirka > LOC
+\d hirka-chaw
+\p =
+\w HIRKACHAW
+\f \\id MAT 5 HGMT05.SFM, 14-feb-84 D. Weber, Huallaga (Huanuco) Quechua\n
+	\\c 5\n\n
+	\\s
+\c 2
+
+\a < N0 jesus >
+\d jesus
+\p
+\w JESUS
+\c 2
+
+\a < V2 *yatra > CAUS 3
+\d yacha-chi-n
+\p =Mlowers=foreshortens
+\w YACHACHIN
+\c 2
+\n \n
+
+\a < N0 jesus >
+\d jesus
+\p
+\w Jesus
+\f \\p\n
+	\\v 1
+\c 1
+
+\a < V2 *rika > PST 3
+\d rika-ra-n
+\p =foreshortens=foreshortens
+\w rikaran
+
+\a < N0 *aypalla >
+\d aypalla
+\p
+\w aypalla
+
+\a < N0 *runa > PLUR
+\d runa-kuna
+\p =
+\w runakuna
+
+\a %2%< V2 *shunta > PASS PRT%< V1 *shuntaka: > PRT%
+\d %2%shunta-ka-sha%shuntaka-sha%
+\p %2%=foreshortened underlong=foreshortens%foreshortened underlong=foreshortens%
+\w shuntakasha
+
+\a %2%< V1 *ka > IMPFV AG OBJ%< N0 *kay > DEF OBJ%
+\d %2%ka-yka-q-ta%kay-kaq-ta%
+\p %2%=foreshortened underlong foreshortens=foreshortens=%==%
+\w kaykaqta
+\n .\n
+
+\a < N0 *chay > OBJ
+\d chay-ta
+\p =
+\w Chayta
+\c 1
+
+\a < V2 *rika > ADVSS1
+\d rika-r
+\p =foreshortens
+\w rikar
+
+\a < N0 lu:ma > GOAL
+\d lu:ma-man
+\p =
+\w loomaman
+
+\a < V1 *wicha: > UP ADVSS1
+\d wicha-rku-r
+\p foreshortened underlong=foreshortens PMlowered=foreshortens
+\w wicharkur
+
+\a < V1 *hama > REF IN PST 3
+\d hama-ku-yku-ra-n
+\p =PMlowered=foreshortens PMlowered=foreshortens=foreshortens
+\w hamakuykuran
+
+\a < V2 *yatra > CAUS NOM 3P PUR
+\d yacha-chi-na-n-paq
+\p =Mlowers===
+\w yachachinanpaq
+\n .\n
+
+\a < N0 disi*pulu > 3P PLUR
+\d risi:pulu-n-kuna
+\p ==
+\w Risiipulunkuna
+\c 1
+
+\a %2%< V1 *n~awpa > 3 COND%< N0 *n~awpa > 3P GOAL%
+\d %2%n~awpa-n-man%n~awpa-n-man%
+\p %2%=foreshortens=%==%
+\w n~awpanman
+
+\a %2%< V2 *shunta > PASS ADVDS 3P%< V1 *shuntaka: > ADVDS 3P%
+\d %2%shunta-ka-pti-n%shuntaka-pti-n%
+\p %2%=foreshortened underlong=foreshortens=%foreshortened underlong=foreshortens=%
+\w shuntakaptin
+\n \n
+
+\a < V2 *yatra > CAUS PST 3
+\d yacha-chi-ra-n
+\p =Mlowers=foreshortens=foreshortens
+\w yachachiran
+\f \\v 2
+
+\a %2%< V1 *ka > INF SIM%< N0 *kay > SIM%
+\d %2%ka-y-naw%kay-naw%
+\p %2%=foreshortens=%=%
+\w kaynaw
+
+\a < V2 *ni > ADVSS1
+\d ni-r
+\p =foreshortens
+\w nir
+\n :\n
+
+\a < V1 *kushi > PRT
+\d kushi-sha
+\p =foreshortens
+\w Kushisha
+\f \\v 3 <<
+\c 1
+
+\a < V1 *ka > 3FUT
+\d ka-nqa
+\p =foreshortens
+\w kanqa
+
+\a < N0 dyus > JUST DIR
+\d dyus-lla-mi
+\p ==
+\w Dyusllami
+\f <
+\c 1
+
+\a < V2 *yarpa: > INF 1P OBJ
+\d yarpa-y-ni:-ta
+\p foreshortened underlong=foreshortens==
+\w yarpayneeta
+
+\a < V2 *allcha > PASS CAUS 1O 3FUT
+\d allcha-ka:-chi-ma-nqa
+\p =underlong=Mlowers=foreshortened underlong Mlowers=foreshortens
+\w allchakaachimanqa
+\n >
+
+\a < V2 *ni > AG
+\d ni-q
+\p =foreshortens
+\w niq
+
+\a < V1 *ka > AG TOP
+\d ka-q-qa
+\p =foreshortens=
+\w kaqqa
+\n .\n
+
+\a < N0 *chay > DEF OBJ
+\d chay-kaq-ta
+\p ==
+\w Chaykaqta
+\c 1
+
+\a < N0 dyus >
+\d dyus
+\p
+\w Dyus
+\c 1
+
+\a %3%< N0 *yana > VRBL 3FUT%< N0 *yana > BCM2 3FUT%< V2 *yanapa: > 3FUT%
+\d %3%yana-pa-nqa%yana-pa-nqa%yanapa-nqa%
+\p %3%=foreshortened underlong=foreshortens%==foreshortens%foreshortened underlong=foreshortens%
+\w yanapanqa
+
+\a < V2 *shunta > REL 3P GOAL
+\d shunta-sha-n-man
+\p =foreshortens==
+\w shuntashanman
+
+\a < V1 *yaykU > NOM 3P PUR
+\d yayku-na-n-paq
+\p ===
+\w yaykunanpaq
+\n .\n
+
+\a < V1 *kushi > PRT
+\d kushi-sha
+\p =foreshortens
+\w Kushisha
+\f \\p\n
+	\\v 4 <
+\c 1
+
+\a < V1 *ka > 3FUT
+\d ka-nqa
+\p =foreshortens
+\w kanqa
+
+\a < V1 *llaki > REF ADVSS1
+\d llaki-ku-r
+\p =PMlowered=foreshortens
+\w llakikur
+
+\a < V2 *yarpa: > INTER REF AG TOP
+\d yarpa-cha-ku-q-qa
+\p foreshortened underlong=foreshortens=PMlowered=foreshortens=
+\w yarpachakuqqa
+\n .\n
+
+\a < N0 *chay > DEF OBJ
+\d chay-kaq-ta
+\p ==
+\w Chaykaqta
+\c 1
+
+\a < N0 dyus >
+\d dyus
+\p
+\w Dyus
+\c 1
+
+\a < V1 *shuqu > 3FUT
+\d shoqo-nqa
+\p =foreshortens
+\w shoqonqa
+
+\a < N0 *alli >
+\d alli
+\p
+\w alli
+
+\a < V1 *ka > NOM 3P PUR
+\d ka-na-n-paq
+\p ===
+\w kananpaq
+\n .\n
+
+\a < V1 *kushi > PRT
+\d kushi-sha
+\p =foreshortens
+\w Kushisha
+\f \\p\n
+	\\v 5 <
+\c 1
+
+\a < V1 *ka > 3FUT
+\d ka-nqa
+\p =foreshortens
+\w kanqa
+
+\a < R0 pasaypa >
+\d pasaypa
+\p
+\w pasaypa
+
+\a < N0 inu*til > DEF TOP
+\d inu:til-kaq-qa
+\p ==
+\w inuutilkaqqa
+\n .\n
+
+\a < N0 *chay > PLUR
+\d chay-kuna
+\p =
+\w Chaykuna
+\c 1
+
+\a < N0 inti:ru >
+\d inti:ru
+\p
+\w inteeru
+
+\a < N0 mundu >
+\d mundu
+\p
+\w mundu
+
+\a < N0 *allpa > INST
+\d allpa-wan
+\p =
+\w allpawan
+
+\a < N0 duyn~u >
+\d duyn~u
+\p
+\w duyn~u
+
+\a < V1 *ka > 3FUT
+\d ka-nqa
+\p =foreshortens
+\w kanqa
+\n .\n
+
+\a < V1 *kushi > PRT
+\d kushi-sha
+\p =foreshortens
+\w Kushisha
+\f \\p\n
+	\\v 6 <
+\c 1
+
+\a < V1 *ka > 3FUT
+\d ka-nqa
+\p =foreshortens
+\w kanqa
+
+\a < V1 *yarqa: > IMPFV AG SIM
+\d yarqa-yka-q-naw
+\p foreshortened underlong=foreshortened underlong foreshortens=foreshortens=
+\w yarqaykaqnaw
+
+\a < N0 *alli >
+\d alli
+\p
+\w alli
+
+\a < V2 *rura > INF OBJ
+\d rura-y-ta
+\p =foreshortens=
+\w rurayta
+
+\a < V2 *rura > AG DEF TOP
+\d rura-q-kaq-qa
+\p =foreshortens==
+\w ruraqkaqqa
+\n .\n
+
+\a < N0 *chay > DEF OBJ
+\d chay-kaq-ta
+\p ==
+\w Chaykaqta
+\c 1
+
+\a < N0 dyus >
+\d dyus
+\p
+\w Dyus
+\c 1
+
+\a %3%< N0 *yana > VRBL 3FUT%< N0 *yana > BCM2 3FUT%< V2 *yanapa: > 3FUT%
+\d %3%yana-pa-nqa%yana-pa-nqa%yanapa-nqa%
+\p %3%=foreshortened underlong=foreshortens%==foreshortens%foreshortened underlong=foreshortens%
+\w yanapanqa
+
+\a < N0 *alli >
+\d alli
+\p
+\w alli
+
+\a < V2 *rura > AG
+\d rura-q
+\p =foreshortens
+\w ruraq
+
+\a < V1 *ka > NOM 3P PUR
+\d ka-na-n-paq
+\p ===
+\w kananpaq
+\n .\n
+
+\a < V1 *kushi > PRT
+\d kushi-sha
+\p =foreshortens
+\w Kushisha
+\f \\p\n
+	\\v 7 <
+\c 1
+
+\a < V1 *ka > 3FUT
+\d ka-nqa
+\p =foreshortens
+\w kanqa
+
+\a < V2 *kuya > PLALL AG
+\d kuya-pa:ku-q
+\p =foreshortens PMlowered=foreshortens
+\w kuyapaakuq
+
+\a < V1 *ka > AG TOP
+\d ka-q-qa
+\p =foreshortens=
+\w kaqqa
+\n .\n
+
+\a < N0 *chay > PLUR OBJ
+\d chay-kuna-ta
+\p ==
+\w Chaykunata
+\c 1
+
+\a < N0 dyus >
+\d dyus
+\p
+\w Dyus
+\c 1
+
+\a %2%< V2 *kuya > BEN 3FUT%< V2 *kuya > BNF 3FUT%
+\d %2%kuya-pa-nqa%kuya-pa-nqa%
+\p %2%=foreshortened underlong foreshortens=foreshortens%==foreshortens%
+\w kuyapanqa
+\n .\n
+
+\a < V1 *kushi > PRT
+\d kushi-sha
+\p =foreshortens
+\w Kushisha
+\f \\p\n
+	\\v 8 <
+\c 1
+
+\a < V1 *ka > 3FUT
+\d ka-nqa
+\p =foreshortens
+\w kanqa
+
+\a < V2 *yarpa: > AG
+\d yarpa-q
+\p foreshortened underlong=foreshortens
+\w yarpaq
+
+\a < V1 *ka > AG TOP
+\d ka-q-qa
+\p =foreshortens=
+\w kaqqa
+\n .\n
+
+\a < N0 *chay > DEF PUR
+\d chay-kaq-paq
+\p ==
+\w Chaykaqpaq
+\c 1
+
+\a < N0 dyus > OBJ
+\d dyus-ta
+\p =
+\w Dyusta
+\c 1
+
+\a < V2 *rika > 3FUT
+\d rika-nqa
+\p =foreshortens
+\w rikanqa
+\n .\n

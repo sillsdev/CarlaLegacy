@@ -77,9 +77,9 @@ typedef struct {
 #define WANT_SYNTHESIS		0x0100
 	WordAnalysis *	pAnalyses;
 	StringList *	pNewWords;
-#ifdef TONEPARS
-	char *       pszRootNodeWord;
-#endif /* TONEPARS */
+#ifndef hab20000926
+	char *       pszRootNodeWord; /* used in TonePars and ToneGen */
+#endif /* hab20000926 */
 
 	} WordTemplate;
 

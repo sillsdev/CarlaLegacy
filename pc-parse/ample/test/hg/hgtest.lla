@@ -1,8 +1,7 @@
-XAMPLE: A Morphological Parser for Linguistic Exploration
-Version 3.3x16 (December 12, 2000), Copyright 2000 SIL, Inc.
-	AMPLE with experimental enhancement: PC-PATR word grammar
-Experimental version compiled Mar 29 2001 09:00:44
-				Analysis Performed Thu Mar 29 09:05:51 2001
+AMPLE: A Morphological Parser for Linguistic Exploration
+Version 3.6.5 (October 17, 2002), Copyright 2002 SIL, Inc.
+Compiled Mar 19 2003 13:53:15
+				Analysis Performed Wed Mar 19 14:03:45 2003
 
 Control files, dictionary files, and responses
 	  from file hgtest.cmd:
@@ -10,16 +9,10 @@ hgad01.ctl
 hgancd.tab
 
 hgsf01.dic
+SUFFIX DICTIONARY: Invalid orderclassmax 180, stored as 220 in entry: rayku
+	The orderclassMax is less than the orderclassmin.
 hgrt01.dic
 
-MORPH_CHECK: Unknown morphname "*sha" in co-occurrence constraint
-		*sha   +/ _ ... AFAR
-MORPH_CHECK: Unknown morphname "CND" in co-occurrence constraint
-		CND   +/ 3 ... _  +/ 2 ... _  +/ 1 ... _
-MORPH_CHECK: Unknown morphname "1PRS2" in co-occurrence constraint
-		PST   +/ _ ... 1PRS2  +/ _ ... 12  +/ _ ... 1  +/ _ ... 3
-MORPH_CHECK: Unknown morphname "1PRS2" in suffix adhoc pair
-MORPH_CHECK: Unknown morphname "DIS" in suffix adhoc pair
 hgintx.ctl
 	Using the following as word-formation characters:
 	 Caseless alphabetic characters =
@@ -27,9 +20,11 @@ hgintx.ctl
 	 Lower/uppercase alphabetic characters (lowercase above, uppercase below) =
 		a b c d e f g h i j k l m n o p q r s t u v w x y z
 		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+y
+y
 
 Input  file: hgtest.txt
-Output file: hgtest.and
+Output file: hgtest.ana
 
 ANALYSIS STATISTICS:   78 words processed.
    Ambiguity Levels:

@@ -527,12 +527,6 @@ extern const char *	pszPATRCompileTime_g;
 #else
 extern const char *	pszPATRTestVersion_g;
 #endif
-#ifndef hab130l
-  /*
-   * disphead.c
-   */
-extern void     display_header P((FILE *pOutFL_in));
-#endif /* hab130l */
 
 #ifdef __cplusplus
 }

@@ -1,6 +1,6 @@
 /* STAMP.H - data structure definitions and function prototypes for STAMP
  ***************************************************************************
- * Copyright 1989, 1998 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1989, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #ifndef _STAMP_H_INCLUDED_
@@ -459,6 +459,11 @@ typedef struct stamp_analysis {
 #endif /* TONEGEN */
 #endif /* hab104 */
 #endif /* TONEPARS */
+#ifndef hab2111
+#ifdef TONEGEN
+	int                bDidSynthWordSave; /* note when saved synthesized form */
+#endif /* TONEGEN */
+#endif /* hab2111 */
 	} StampAnalysis;
 
 /*****************************************************************************
@@ -469,6 +474,11 @@ typedef struct stamp_analysis {
  */
 typedef struct stamp_anal_list {
 	StampAnalysis *		pAnal;	/* pointer to analysis structure */
+#ifndef hab2111
+#ifndef TONEGEN
+	char *                      pszSynthResult;
+#endif /* TONEGEN */
+#endif /* hab2111 */
 	struct stamp_anal_list *	pNext;	/* pointer to next node in list */
 	} StampAnalysisList;
 
@@ -792,6 +802,7 @@ extern void		writeStampInsertionRule P((
 						  StampData *         pStamp_in));
 extern void		writeStampFlagRule P((StampTrFlagRule * flgp,
 						  FILE *            pOutputFP_in));
+extern void		freeStampTransferRules P((StampData * pStamp_io));
 
 /* sytest.l */
 extern int		stampyylex P((void));
@@ -819,6 +830,7 @@ extern void		setStampRegSoundChangeMarkers P((
 							   StampData * pStamp_in));
 extern void		writeStampRegSoundChanges P((FILE *      pOutputFP_in,
 							 StampData * pStamp_in));
+extern void		freeStampRegSoundChanges P((StampData * pStamp_io));
 
 /* lexchg.c */
 extern StampAnalysis *	applyStampSynthesisLexChanges P((
@@ -838,6 +850,7 @@ extern void		writeStampTransferLexChanges P((
 extern Trie *		storeStampLexChange P((Trie *      pLexChgTrie_in,
 						   char *      pszChg_in,
 						   StampData * pStamp_in));
+extern void		freeStampLexChanges P((Trie * pLexChgTrie_io));
 
 /* tmatch.c */
 extern StampAnalysis *		checkStampTransferMatch P((
@@ -914,6 +927,14 @@ extern int	loadStampDictionary P((const char * pszFilename_in,
 extern void	writeStampDictionary P((FILE *      pOutputFP_in,
 					StampData *  pStamp_in));
 
+#ifndef hab2111
+#ifdef TONEGEN
+extern void     writeStampDecomposition P((StampAnalysis * analp,
+						 StampData *     pStamp_in));
+#endif /* TONEGEN */
+#endif /* hab2111 */
+extern void	freeStampDictionary P((StampData * pStamp_io));
+
 /* dtbio.c */
 extern StampWord *	readStampWord P((FILE *        pInputFP_in,
 					 TextControl * pTextCtl_in));
@@ -936,6 +957,7 @@ extern int	loadStampSynthesisFile P((const char * pszFilename_in,
 					  StampData *  pStamp_io));
 extern int	loadStampTransferFile P((const char * pszFilename_in,
 					 StampData *  pStamp_io));
+extern void	resetStampData P((StampData *  pStamp_io));
 
 /* envchk.c */
 extern int	checkStampStringEnvironment P((char * leftstring,
