@@ -81,6 +81,8 @@ namespace PAWSStarterKit
 		private bool m_bIsDirty;
 		private const string m_strProgName = "PAWS Starter Kit";
 		private const string m_strInitHtm = "PawsSKInit.htm";
+		private const string m_strPAWSStarterKitCSS = "PAWSStarterKit.css";
+		private const string m_strWriteUpCSS = "WriteUp.css";
 		private const string m_strNewAnswerFileRelative = @"Data\PAWSStarterKitNew.paw";
 		private string m_strNewAnswerFile;
 		private const string m_strAnswerFileFilter = "PAWS Starter Kit (*.paw)|*.paw|" +
@@ -150,7 +152,7 @@ namespace PAWSStarterKit
 			// Initialize some values
 			m_strNewAnswerFile = Path.Combine(m_strAppPath, m_strNewAnswerFileRelative);
 			m_strXLingPapDtd = Path.Combine(m_strAppPath, @"Data\XLingPap.dtd");
-			m_strXLingPapCss = Path.Combine(m_strAppPath, @"Styles\XLingPap1.css");
+			m_strXLingPapCss = Path.Combine(m_strAppPath, @"Styles\WriteUpMaster.css");
 			m_strXLingPapXsl = Path.Combine(m_strAppPath, @"Transforms\XLingPap1.xsl");
 			m_strBlack1997 = Path.Combine(m_strAppPath, @"Help\Black1997.htm");
 			m_strBlack1999 = Path.Combine(m_strAppPath, @"Help\CBGBTEXT.DOC");
@@ -1153,11 +1155,8 @@ namespace PAWSStarterKit
 					File.Copy(m_strXLingPapDtd, strUserWriterDtd, true);
 				}
 				string strUserWriterCss = Path.Combine(strUserWriterDir,
-					m_strLanguageAbbreviation + "WriteUp.css");
-				if (!File.Exists(strUserWriterCss))
-				{
-					File.Copy(m_strXLingPapCss, strUserWriterCss, true);
-				}
+					m_strLanguageAbbreviation + m_strWriteUpCSS);
+				File.Copy(m_strXLingPapCss, strUserWriterCss, true);
 				string strUserWriterXsl = Path.Combine(strUserWriterDir, "XLingPap1.xsl");
 				if (!File.Exists(strUserWriterXsl))
 				{
@@ -1287,8 +1286,9 @@ namespace PAWSStarterKit
 					// now recreate all HTM, etc. files
 					createHTMs();
 				}
-				// create language specific style sheet
-				createStyleSheet();
+				// create language specific style sheets
+				createPageStyleSheet();
+				createWriterStyleSheet();
 				// save user's answer file
 				if (m_strUserAnswerFile == null)
 					doSaveAnswerFileDialog();
@@ -1420,11 +1420,11 @@ namespace PAWSStarterKit
 			string strLine;
 			while ((strLine = sr.ReadLine()) != null)
 			{
-				if (strLine.IndexOf("../styles/PAWSStarterKit.css") != -1)
+				if (strLine.IndexOf("../styles/PAWSStarterKitMaster.css") != -1)
 				{
 					sw.Write("      <link rel=\"stylesheet\" href=\"../styles/");
 					sw.Write(m_strLanguageAbbreviation);
-					sw.WriteLine("PAWSStarterKit.css\">");
+					sw.WriteLine(m_strPAWSStarterKitCSS + "\">");
 				}
 				else if (strLine.IndexOf("strUserDataStore = ") != -1)
 				{
@@ -1486,7 +1486,8 @@ namespace PAWSStarterKit
 				// if working subdirs are empty, create them
 				string[] astrHtmFiles = Directory.GetFiles(m_strHtmsPath, "*.htm");
 				if ((astrHtmFiles.Length == 0) ||
-					(!File.Exists(getStyleFile())))
+					(!File.Exists(getPageStyleFile())) ||
+					(!File.Exists(getWriterStyleFile())))
 				{
 					DialogResult dr = MessageBox.Show("The language in file " + strAnswerFile + " needs to have its working files initialized.\n" +
 						"Do you want to initialize them now?", "Missing working files",
@@ -1495,8 +1496,10 @@ namespace PAWSStarterKit
 					{
 						if (astrHtmFiles.Length == 0)
 							createHTMs();
-						if (!File.Exists(getStyleFile()))
-							createStyleSheet();
+						if (!File.Exists(getPageStyleFile()))
+							createPageStyleSheet();
+						if (!File.Exists(getWriterStyleFile()))
+							createWriterStyleSheet();
 					}
 					else
 						sayGoodBye();
@@ -1512,15 +1515,22 @@ namespace PAWSStarterKit
 			}
 
 		}
-		void createStyleSheet()
+		void createPageStyleSheet()
+		{
+			createStyleSheet("PAWSStarterKitMaster.css", getPageStyleFile());
+		}
+		void createWriterStyleSheet()
+		{
+			m_strXLingPapCss = getWriterStyleFile();
+			createStyleSheet("WriteUpMaster.css", m_strXLingPapCss);
+		}
+		void createStyleSheet(string strMasterCss, string strUserStyleFile)
 		{
 			const string strStyles = @"Styles\";
-			const string strMasterCss = "PAWSStarterKitMaster.css";
 			try
 			{
 				string strMasterCssPath = Path.Combine(m_strAppPath, strStyles);
 				string strMasterCssFile = Path.Combine(strMasterCssPath, strMasterCss);
-				string strUserStyleFile = getStyleFile();
 				// copy the master
 				File.Copy(strMasterCssFile, strUserStyleFile, true);
 				StreamWriter sw = new StreamWriter(strUserStyleFile, true);
@@ -1562,10 +1572,15 @@ namespace PAWSStarterKit
 					"Create Style Sheet", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 		}
-		string getStyleFile()
+		string getPageStyleFile()
 		{
 			return Path.Combine(m_strStylesPath,
-				m_strLanguageAbbreviation + "PAWSStarterKit.css");
+				m_strLanguageAbbreviation + m_strPAWSStarterKitCSS);
+		}
+		string getWriterStyleFile()
+		{
+			return Path.Combine(m_strStylesPath,
+				m_strLanguageAbbreviation + m_strWriteUpCSS);
 		}
 		void sayGoodBye()
 		{
