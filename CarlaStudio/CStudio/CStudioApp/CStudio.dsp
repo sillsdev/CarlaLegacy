@@ -165,6 +165,10 @@ SOURCE=.\source\codetable.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\source\colorbtn.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\Conversion.cpp
 # End Source File
 # Begin Source File
@@ -328,6 +332,10 @@ SOURCE=.\source\DlgEditStampProcess.cpp
 
 SOURCE=.\source\DlgEditStampTransfer.cpp
 # ADD CPP /I ".."
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\DlgEditTestColor.cpp
 # End Source File
 # Begin Source File
 
@@ -678,6 +686,10 @@ SOURCE=.\source\TabbedTreeChild.cpp
 # Begin Source File
 
 SOURCE=.\source\TabbedTreeDoc.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\TestEdit.cpp
 # End Source File
 # Begin Source File
 
@@ -1639,16 +1651,6 @@ SOURCE=.\Cc32.lib
 # End Source File
 # End Target
 # End Project
-# Section CStudio : {BDD1F053-858B-11D1-B16A-00C0F0283628}
-# 	2:5:Class:CListSubItems
-# 	2:10:HeaderFile:listsubitems.h
-# 	2:8:ImplFile:listsubitems.cpp
-# End Section
-# Section CStudio : {9F6AA700-D188-11CD-AD48-00AA003C9CB6}
-# 	2:5:Class:CRowCursor
-# 	2:10:HeaderFile:rowcursor.h
-# 	2:8:ImplFile:rowcursor.cpp
-# End Section
 # Section CStudio : {00000000-0000-0000-0000-000000000000}
 # 	1:17:CG_IDS_DIDYOUKNOW:119
 # 	1:22:CG_IDS_TIPOFTHEDAYMENU:118
@@ -1672,6 +1674,16 @@ SOURCE=.\Cc32.lib
 # 	2:18:CG_IDS_FILE_ABSENT:CG_IDS_FILE_ABSENT
 # 	2:10:TipDlg.cpp:source/TipDay.cpp
 # End Section
+# Section CStudio : {9F6AA700-D188-11CD-AD48-00AA003C9CB6}
+# 	2:5:Class:CRowCursor
+# 	2:10:HeaderFile:rowcursor.h
+# 	2:8:ImplFile:rowcursor.cpp
+# End Section
+# Section CStudio : {BDD1F053-858B-11D1-B16A-00C0F0283628}
+# 	2:5:Class:CListSubItems
+# 	2:10:HeaderFile:listsubitems.h
+# 	2:8:ImplFile:listsubitems.cpp
+# End Section
 # Section CStudio : {BDD1F04E-858B-11D1-B16A-00C0F0283628}
 # 	2:5:Class:CListItem
 # 	2:10:HeaderFile:listitem.h
@@ -1682,39 +1694,39 @@ SOURCE=.\Cc32.lib
 # 	2:10:HeaderFile:msflexgrid.h
 # 	2:8:ImplFile:msflexgrid.cpp
 # End Section
-# Section CStudio : {BDD1F051-858B-11D1-B16A-00C0F0283628}
-# 	2:5:Class:CColumnHeader
-# 	2:10:HeaderFile:columnheader.h
-# 	2:8:ImplFile:columnheader.cpp
+# Section CStudio : {6262D3A0-531B-11CF-91F6-C2863C385E30}
+# 	2:21:DefaultSinkHeaderFile:msflexgrid.h
+# 	2:16:DefaultSinkClass:CMSFlexGrid
 # End Section
 # Section CStudio : {BEF6E003-A874-101A-8BBA-00AA00300CAB}
 # 	2:5:Class:COleFont
 # 	2:10:HeaderFile:font.h
 # 	2:8:ImplFile:font.cpp
 # End Section
-# Section CStudio : {6262D3A0-531B-11CF-91F6-C2863C385E30}
-# 	2:21:DefaultSinkHeaderFile:msflexgrid.h
-# 	2:16:DefaultSinkClass:CMSFlexGrid
-# End Section
-# Section CStudio : {BDD1F04C-858B-11D1-B16A-00C0F0283628}
-# 	2:5:Class:CListItems
-# 	2:10:HeaderFile:listitems.h
-# 	2:8:ImplFile:listitems.cpp
+# Section CStudio : {BDD1F051-858B-11D1-B16A-00C0F0283628}
+# 	2:5:Class:CColumnHeader
+# 	2:10:HeaderFile:columnheader.h
+# 	2:8:ImplFile:columnheader.cpp
 # End Section
 # Section CStudio : {BDD1F055-858B-11D1-B16A-00C0F0283628}
 # 	2:5:Class:CListSubItem
 # 	2:10:HeaderFile:listsubitem.h
 # 	2:8:ImplFile:listsubitem.cpp
 # End Section
-# Section CStudio : {7BF80981-BF32-101A-8BBB-00AA00300CAB}
-# 	2:5:Class:CPicture
-# 	2:10:HeaderFile:picture.h
-# 	2:8:ImplFile:picture.cpp
+# Section CStudio : {BDD1F04C-858B-11D1-B16A-00C0F0283628}
+# 	2:5:Class:CListItems
+# 	2:10:HeaderFile:listitems.h
+# 	2:8:ImplFile:listitems.cpp
 # End Section
 # Section CStudio : {BDD1F050-858B-11D1-B16A-00C0F0283628}
 # 	2:5:Class:CColumnHeaders
 # 	2:10:HeaderFile:columnheaders.h
 # 	2:8:ImplFile:columnheaders.cpp
+# End Section
+# Section CStudio : {7BF80981-BF32-101A-8BBB-00AA00300CAB}
+# 	2:5:Class:CPicture
+# 	2:10:HeaderFile:picture.h
+# 	2:8:ImplFile:picture.cpp
 # End Section
 # Section CStudio : {BDD1F049-858B-11D1-B16A-00C0F0283628}
 # 	2:5:Class:CListView1
