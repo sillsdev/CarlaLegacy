@@ -3,9 +3,9 @@
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
   <!--
 ================================================================
-Convert master grammar rule xml file to an xslt to perform the creation of a
+Convert master grammar rule xml file portion to an xslt to help perform the creation of a
  PC-PATR grammar file based on PAWS answers xml file
-  Input:    xml file conforming to GrammarGenerator.dtd
+  Input:    xml file conforming to GrammarGenerator.dtd and parameter telling which type this is
   Output: XSL file
 ================================================================
 Revision History is at the end of this file.
@@ -156,6 +156,7 @@ BuildCondition
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+02-Jul-2002    Andy Black  Added prmType; handled cases where there is no @show or it is empty; renamed it
 25-Apr-2002      Andy Black  Began working on Initial Draft
 ================================================================
  -->
