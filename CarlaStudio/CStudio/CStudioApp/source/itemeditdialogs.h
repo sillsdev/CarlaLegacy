@@ -1,3 +1,4 @@
+// Modified by mr (4/26/2002 2:31:32 PM)
 // ItemEditDialogs.h : header file
 
 // april 19 1999 jdh Made subclasses of CSDialog to enable shoebox jumping
@@ -15,8 +16,12 @@
 #include "..\resource.h"
 #include "DlgEnvConstrainedRule.h"
 #include "SDialog.h"
+#include "TestEdit.h"
+
 
 class CTextDisplayInfo;
+
+
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditTest dialog
 
@@ -33,15 +38,17 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CDlgEditTest)
 	enum { IDD = IDD_EditTest };
-	CString	m_sContents;
-	CString	m_sDescription;
 	CString	m_sLabel;
+	CString	m_sDescription;
 	BOOL	m_bEnabled;
+	CString	m_sContents;
+	CRichEditCtrl	m_richContents;  // added by mr 4/26/2002
 #ifndef hab15a7
 	const	CTextDisplayInfo* m_pTDI;
 #endif // hab15a7
 	//}}AFX_DATA
-
+	CTestEdit m_richTestEdit; // added by mr 4/26/2002
+	BOOL m_bIsAmpleTest; // added by mr 5/24/2002
 
 // Overrides
 	// ClassWizard generated virtual function overrides
@@ -50,14 +57,18 @@ public:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
+
 // Implementation
 protected:
+	virtual BOOL OnInitDialog();
+	afx_msg void OnCheckOnOff();
 
 	// Generated message map functions
 	//{{AFX_MSG(CDlgEditTest)
 		// NOTE: the ClassWizard will add member functions here
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+
 };
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditOrthoChange dialog

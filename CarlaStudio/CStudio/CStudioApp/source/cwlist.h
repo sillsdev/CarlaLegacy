@@ -30,6 +30,7 @@ class CWEnvironConstrainedRule;
 class CTextDisplayInfo;
 class CEnvironmentListCtrl;
 
+
 #include "CWAtomicTypes.h"	// just for CWINFONTSELECTOR
 #include "iostream.h"
 
@@ -57,6 +58,7 @@ public:
 	void setOwningList(CWList* pOwningList)  {m_pOwningList=pOwningList;}
 	virtual CWList* getOwningList() const {ASSERTX(m_pOwningList); return m_pOwningList;}
 	virtual void write(ostream& fout, char cCommentChar) const {fout << "\\co UNIMPLEMENTED WRITE()\n";}
+	virtual BOOL setTypeOfTest(BOOL bIsAmple=TRUE); // added by mr 5/24/2002
 
 	BOOL m_bEnabled;
 protected:
@@ -411,15 +413,19 @@ class CWTest : public CWListEntry
 		CWListRowItem* getCopy();
 		CWTest(const CWTest *pCopy);
 		virtual BOOL doEditDialog(CListCtrl& clc, BOOL bIsNew=FALSE);
+		//virtual BOOL doEditDialog(CListCtrl& clc, BOOL bIsNew=FALSE, BOOL bIsAmple=TRUE);
 		CWTest(CString& sField, BOOL bEnabled, char cCommentChar);
 		virtual CString getText(int iColumn);
 	//	virtual const CString getDisplayName() const {return CString("Test");}
 		virtual void write(ostream& fout, char cCommentChar) const;
 		virtual CString getLabel() {return m_sLabel;} // jdh 6/3/99
+		virtual BOOL CWTest::setTypeOfTest(BOOL bIsAmple=TRUE); // added by mr 5/24/2002
+
 	protected:
 		CString m_sLabel;
 		CString m_sContents;
 		CString m_sDescription;
+		BOOL m_bIsAmple; // added by mr 5/24/2002
 };
 
 class CWTestList : public CWList

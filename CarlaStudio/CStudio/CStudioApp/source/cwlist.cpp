@@ -416,11 +416,24 @@ BOOL CWListRowItem::doEditDialog(CListCtrl& clc, BOOL bIsNew)
 	return FALSE;	// must be overriden
 }
 
-//#include "DlgProjectSettings.h"
-
-// invoked by menu
-BOOL CWTest::doEditDialog(CListCtrl& clc, BOOL bIsNew)
+BOOL CWListRowItem::setTypeOfTest(BOOL bIsAmple) // added by mr 5/24/2002
 {
+	return FALSE;	// must be overriden
+}
+//#include "DlgProjectSettings.h"
+#include "cwtopic.h"
+// invoked by menu
+
+BOOL CWTest::setTypeOfTest(BOOL bAmple) // added by mr 5/24/2002
+{
+	m_bIsAmple=bAmple;
+	return 0;
+}
+
+BOOL CWTest::doEditDialog(CListCtrl& clc, BOOL bIsNew )
+{
+
+CWTopic *p=NULL;
 #ifndef hab15a7
 	CDlgEditTest dlg(m_pOwningList->getTextDisplayInfo());
 #else
@@ -431,6 +444,7 @@ BOOL CWTest::doEditDialog(CListCtrl& clc, BOOL bIsNew)
 	dlg.m_sLabel = m_sLabel;
 	dlg.m_sContents = m_sContents;
 	dlg.m_sDescription = m_sDescription;
+	dlg.m_bIsAmpleTest = m_bIsAmple; // added by mr 5/24/2002
 
 	// put up the dialog
 	if(IDOK != dlg.DoModal())

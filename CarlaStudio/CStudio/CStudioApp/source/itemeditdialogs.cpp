@@ -7,6 +7,7 @@
 #include "ItemEditDialogs.h"
 #include "TextDisplayInfo.h"
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -32,12 +33,15 @@ CDlgEditTest::CDlgEditTest(CWnd* pParent /*=NULL*/)
 	m_sDescription = _T("");
 	m_sLabel = _T("");
 	m_bEnabled = FALSE;
+	m_bIsAmpleTest = TRUE;
 	//}}AFX_DATA_INIT
 }
 
+static const TCHAR szSection [] = _T("Settings\\TestsColor");
 
 void CDlgEditTest::DoDataExchange(CDataExchange* pDX)
 {
+
 	CSDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CDlgEditTest)
 	DDX_Text(pDX, IDC_EDITContents, m_sContents);
@@ -76,6 +80,86 @@ BEGIN_MESSAGE_MAP(CDlgEditTest, CSDialog)
 		// NOTE: the ClassWizard will add message map macros here
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
+
+BOOL CDlgEditTest::OnInitDialog()
+{
+	CDialog::OnInitDialog();
+
+	// CTestEdit	-> // added by mr 4/26/2002
+	TCHAR szOPE [] = " AND IF IFF NOT OR THEN XOR ";
+	TCHAR szFOROPE [] = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
+	TCHAR szLOC [] = " current last left next right FINAL INITIAL LEFT RIGHT ";
+	TCHAR szCONN [] = " is matches member = > >= <= < ~= ";
+	TCHAR szTYP [] = " prefix infix root suffix initial final ";
+	TCHAR szNBR [] = " 0 1 2 3 4 5 6 7 8 9 ";
+	TCHAR szKEYW [] = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word ";
+	// <- CTestEdit
+
+	// IF Syntehis test, THEN
+	// those keywords need to be added to the Keyword list.
+	if( !m_bIsAmpleTest ) // added by mr 5/24/2002
+	{
+		lstrcat(szKEYW," insert before after report ");
+	}
+
+
+
+	CWnd* pWnd=NULL;
+	pWnd = GetDlgItem( IDC_EDITLabel );
+	pWnd->SetWindowText( m_sLabel );
+
+	pWnd = GetDlgItem( IDC_EDITDescription );
+	pWnd->SetWindowText( m_sDescription );
+
+	pWnd = GetDlgItem( IDC_EDITContents );
+	pWnd->SetWindowText( m_sContents );
+
+
+// CTestEdit	->
+	ModifyStyle(0, WS_CLIPCHILDREN);
+
+	m_richTestEdit.SubclassDlgItem(IDC_EDITContents, this);
+
+	m_richTestEdit.Initialize();
+
+	m_richTestEdit.SetStringQuotes(_T("\""));
+	m_richTestEdit.SetStringQuotes(_T("\'"));
+	m_richTestEdit.SetStringQuotes(_T("."));
+
+	m_richTestEdit.SetSLComment(_T('|'));
+	m_richTestEdit.SetSLComment(_T("\\co"));
+
+	m_richTestEdit.AddKeywords(szOPE,m_richTestEdit.m_strOPErators,m_richTestEdit.m_strOPEratorsLower);
+	m_richTestEdit.AddKeywords(szFOROPE,m_richTestEdit.m_strFOROPerators,m_richTestEdit.m_strFOROPeratorsLower);
+	m_richTestEdit.AddKeywords(szLOC,m_richTestEdit.m_strLOCations,m_richTestEdit.m_strLOCationsLower);
+
+
+	m_richTestEdit.AddKeywords(szKEYW,m_richTestEdit.m_strKEYWords,m_richTestEdit.m_strKEYWordsLower);
+	m_richTestEdit.AddKeywords(szCONN,m_richTestEdit.m_strCONNectors,m_richTestEdit.m_strCONNectorsLower);
+	m_richTestEdit.AddKeywords(szTYP,m_richTestEdit.m_strTYPes,m_richTestEdit.m_strTYPesLower);
+	m_richTestEdit.AddKeywords(szNBR,m_richTestEdit.m_strNBR,m_richTestEdit.m_strNBRLower);
+
+
+	m_richTestEdit.FormatAll();
+	// <- CTestEdit
+
+
+	if( m_sLabel.IsEmpty() )
+	{
+		GotoDlgCtrl( GetDlgItem( IDC_EDITLabel ) );
+	}
+	else
+	{
+		m_richTestEdit.SetFocus();
+	}
+
+	return FALSE;
+}
+
+void CDlgEditTest::OnCheckOnOff()
+{
+
+}
 
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditTest message handlers

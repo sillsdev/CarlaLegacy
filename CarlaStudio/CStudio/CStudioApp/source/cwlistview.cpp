@@ -1197,6 +1197,9 @@ void CWListView::OnUpdateEditUndo(CCmdUI* pCmdUI)
 
 void CWListView::OnEditProperties()
 {
+	CString str = m_pTopic->m_label;
+
+
 	int iRow = getFirstSelectedRow();
 	if(iRow<0)
 		return;
@@ -1216,7 +1219,18 @@ void CWListView::OnEditProperties()
 #else //hab214
 		if(m_pList->m_dwFlags & CWList::ITEMS_HAVE_DIALOG)
 #endif //hab214
+
+		{
+			// added by mr 5/8/2002
+			BOOL bIsAmple=TRUE;
+			if( m_pTopic->m_label == "Synthesis Tests" )
+			{
+				bIsAmple=FALSE;
+			}
+
+			pRowItem->setTypeOfTest(bIsAmple);
 			bChanged = pRowItem->doEditDialog(m_listCtrl);
+		}
 		else
 			m_listCtrl.EditSubLabel(iRow, 0); // do in-place edit
 
