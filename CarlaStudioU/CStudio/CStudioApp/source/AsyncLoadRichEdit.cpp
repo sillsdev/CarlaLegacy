@@ -8,7 +8,10 @@
 //                  if it's still loaded.
 // rde273 17-Nov-02 If the input file has a BOM, then remove it (the control is displaying
 //                  it as a box and since we send the code page, it isn't really needed anyway
-//
+// rde274 13-May-04 It turns out that MLang is rather worthless... so, at least for CSU, let's
+//                  force it to be either UTF8 or UTF16. This confirms, once again, that CSU
+//                  will always, only deal with a Unicode encoding (and not a legacy one).
+
 //  The RichEdit control is taking too long to load UTF-8 files, so this control will
 //  load the control in the background in chunks. The chunk size and elapsed time between
 //  chunks is defined immediately below the include statements.
@@ -684,6 +687,16 @@ HANDLE  AsyncLoadRichEditCtrl::ReadWriteFirstChunk(LPCTSTR lpszFile)
 				// it turns out we *don't* want the BOM in the stream because the control
 				//  isn't removing it... (it displays as a box)
 				m_eEncoding = m_pML2.WhichEncoding(pbBuff,lNumRead);
+
+#if !defined(rde274) && defined(_UNICODE)
+				// it turns out that MLang is rather worthless... so, at least for CSU, let's
+				//  force it to be either UTF8 or UTF16: so if it isn't explicitly UTF-16,
+				//  make it UTF-8. This confirms, once again, that CSU will always, only deal
+				//  with a Unicode encoding (and not a legacy one).
+				if( m_eEncoding != eUTF16 )
+					m_eEncoding = eUTF8;
+#endif  // rde274
+
 #else   // rde273
 				switch(m_pML2.WhichEncoding(pbBuff,lNumRead))
 				{
