@@ -38,7 +38,7 @@ OBJ =pcpatr.o pcpatr2.o pcpatr3.o
 LIBO=lcparse.o  grammar.o  patrfunc.o patrdata.o patalloc.o patrstrg.o \
 	 patrampl.o patrkimm.o patrlexi.o userpatr.o unify.o    wrtstyle.o \
 	 cvtkp2wa.o parsepwk.o copyfeat.o subsume.o amplpatr.o  priunion.o \
-	 constrai.o
+	 constrai.o disphead.o
 
 pcpatr.exe: $(OBJ) $(LIBS)
 	$(CC) -o pcpatr $(OBJ) libpatr.a $(LIBS)
@@ -61,7 +61,7 @@ OBJP =pcpatr.op pcpatr2.op pcpatr3.op
 LIBOP=lcparse.op  grammar.op  patrfunc.op patrdata.op patalloc.op patrstrg.op \
 	  patrampl.op patrkimm.op patrlexi.op userpatr.op unify.op    wrtstyle.op \
 	  cvtkp2wa.op parsepwk.op copyfeat.op subsume.op amplpatr.op  priunion.op \
-	  constrai.op
+	  constrai.op disphead.op
 
 pcpatrp.exe: $(OBJP) $(LIBSP)
 	$(CC) -pg -o pcpatrp $(OBJ) libpat_p.a $(LIBSP)
@@ -103,6 +103,7 @@ parsepwk.o parsepwk.op: parsepwk.c patr.h patrdef.h ../include/kimmo.h
 amplpatr.o amplpatr.op: amplpatr.c patr.h patrdef.h
 priunion.o priunion.op: priunion.c patr.h patrdef.h
 constrai.o constrai.op: constrai.c patr.h patrdef.h
+disphead.o disphead.op: disphead.c patr.h patrdef.h
 
 #############################################################################
 
