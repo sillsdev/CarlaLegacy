@@ -1,0 +1,77 @@
+c FixPcdata.cct  CC table to insert <content> elements where required
+
+begin	> store(Content) "<content>" endstore
+	  store(EndContent) "</content>" endstore
+	  use(Main)
+
+group(Main)
+
+"<caption>"	> dup out(Content)
+"<caption "	> dup use(EndOfElement)
+
+
+"</caption>"	> out(EndContent) dup
+
+"<case>"	> out(EndContent) dup
+"<case "	> out(EndContent) dup
+
+
+"</case>"	> dup out(Content)
+
+"<col>"	> dup out(Content)
+c "<col "	> dup use(EndOfElement)
+
+
+"</col>"	> out(EndContent) dup
+
+"<dd>"	> dup out(Content)
+"<dd "	> dup use(EndOfElement)
+
+
+"</dd>"	> out(EndContent) dup
+
+"<dt>"	> dup out(Content)
+"<dt "	> dup use(EndOfElement)
+
+
+"</dt>"	> out(EndContent) dup
+
+"<gloss>"	> dup out(Content)
+"<gloss "	> dup use(EndOfElement)
+
+
+"</gloss>"	> out(EndContent) dup
+
+"<langData>"	> out(EndContent) dup
+"</langData>"	> dup out(Content)
+
+"<langName/>"	> out(EndContent) dup out(Content)
+
+"<li>"	> dup out(Content)
+"<li "	> dup use(EndOfElement)
+
+
+"</li>"	> out(EndContent) dup
+
+"<object>"	> dup out(Content)
+"<object "	> dup use(EndOfElement)
+
+
+"</object>"	> out(EndContent) dup
+
+"<p>"	> dup out(Content)
+"<p "	> dup use(EndOfElement)
+
+
+"</p>"	>  out(EndContent) dup
+
+"<text>"	> out(EndContent) dup out(Content)
+"<text "	> out(EndContent) dup use(EndOfElement)
+
+
+"</text>"	>  out(EndContent) dup out(Content)
+
+group(EndOfElement)
+
+">"	> dup out(Content)
+	  use(Main)

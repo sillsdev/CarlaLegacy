@@ -1,0 +1,225 @@
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<portion>
+	<section1 id="qp">
+		<secTitle>Quantifiers and Quantifier Phrases</secTitle>
+		<p>Most languages have three sets of quantifiers:</p>
+		<ul>
+			<li>Those meaning <langData>all</langData>,</li>
+			<li>other quantifiers such as <langData>many</langData>
+or <langData>few</langData>, and</li>
+			<li>numbers.</li>
+		</ul>
+		<p>Each type will be considered in turn.
+</p>
+	</section1>
+	<section2 id="qpAll">
+		<secTitle>Quantifiers meaning "all"</secTitle>
+		<p>Quantifiers meaning <langData>all</langData> seem to be a category of their
+own.  They usually occur first (or last) in a nominal phrase, in a position distinct from
+the other quantifiers, but in the same place as words
+like <langData>only</langData> and <langData>just</langData>.  These words modify the whole nominal phrase, as in <langData>all five children</langData>, <langData>only Sue's three children</langData> and <langData>just this many children</langData>.
+</p>
+		<p>
+			<langName/> uses the following to express these notions:</p>
+		<example>
+			<table>
+				<row>
+					<col>all</col>
+					<col exampleLoc="qp/all"/>
+				</row>
+				<row>
+					<col>only</col>
+					<col exampleLoc="qp/only"/>
+				</row>
+				<row>
+					<col>just</col>
+					<col exampleLoc="qp/just"/>
+				</row>
+			</table>
+		</example>
+		<p show="swQPNPDegreeNo">In <langName/>, these are not expressed as separate words which modify the whole nominal phrase.</p>
+		<p show="swQPNPDegreeYes">In <langName/>, these are expressed as separate words which modify the whole nominal phrase, as shown in:</p>
+		<example show="swQPNPDegreeYes">
+			<interlinear exampleLoc="qp/example"/>
+		</example>
+		<p>These words occur <case element="qp" attr="npDegreePos">
+				<caseText value="before">before</caseText>
+				<caseText value="after">after</caseText>
+				<caseText value="either">on either side (but not both sides) of</caseText>
+				<caseText value="beforeOrBoth">before or on both sides of</caseText>
+				<caseText value="afterOrBoth">after or on both sides of</caseText>
+				<caseText value="both">on both sides of</caseText>
+			</case> the rest of the nominal phrase.  <text show="swQPNPDegreeEitherUnrestricted">All of these words can occur on either side of the nominal phrase.</text>
+			<text show="swQPNPDegreeEitherRestricted">There are restrictions as to which of these words can occur on each side of the nominal phrase.</text>
+		</p>
+	</section2>
+	<section2 id="qpOtherQuantifiers">
+		<secTitle>Other Quantifiers and their Modifiers</secTitle>
+		<p>Other quantifiers, like <langData>many</langData>, <langData>much</langData>, and <langData>few</langData>, come
+in a different position in the nominal phrase.  In English,
+this is after an article, demonstrative or possessor and
+before an adjective and noun, as in <langData>John's many black dogs.</langData>.
+Further, these quantifiers can be modified by degree words
+such as <langData>very</langData> and <langData>so</langData>, as in <langData>very many dogs</langData> or <langData>so much
+waste</langData>.</p>
+		<p>
+			<langName/> has the following quantifiers of this type:</p>
+		<example>
+			<table>
+				<row>
+					<col exampleLoc="qp/quantifierExample"/>
+				</row>
+			</table>
+		</example>
+		<p show="swQPDegreeNo">
+			<langName/>does not have any degree words which modify the quantifiers.</p>
+		<p show="swQPDegreeYes">
+			<langName/>has degree words which can modify the quantifiers, as shown in:</p>
+		<example show="swQPDegreeYes">
+			<interlinear exampleLoc="qp/degreeExample"/>
+		</example>
+		<p>These degree words occur <case element="qp" attr="degreePos">
+				<caseText value="before">before</caseText>
+				<caseText value="after">after</caseText>
+				<caseText value="either">on either side (but not both sides) of</caseText>
+				<caseText value="beforeOrBoth">before or on both sides of</caseText>
+				<caseText value="afterOrBoth">after or on both sides of</caseText>
+				<caseText value="both">on both sides of</caseText>
+			</case> the quantifier.  <text show="swQPDegreeEitherUnrestricted">All of the degree words can occur on either side of the quantifier.</text>
+			<text show="swQPDegreeEitherRestricted">There are restrictions as to which of these degree words can occur on each side of the quantifier.</text>
+		</p>
+	</section2>
+	<section2 id="qpNumbers">
+		<secTitle>Numbers</secTitle>
+		<p>Now consider numbers.  They cannot be modified by the
+degree words like the quantifiers can, though they occur in the same
+position.  Cardinal numbers can, however, be modified by
+ordinal numbers and by <langData>next</langData> and <langData>last</langData>, as in <langData>the first twenty boys</langData> or
+<langData>the next one hundred years</langData>.  Ordinal numbers and <langData>next</langData> and <langData>last</langData> can also modify nouns directly, as in <langData>the third girl</langData> and <langData>the last boy</langData>.  Since these modifiers (including ordinal numbers) also act as regular
+adjectives in modifying nouns directly, they act
+syntactically like adjectives.
+</p>
+	</section2>
+	<section3 id="qpNumbersCardinal"><secTitle>Cardinal Numbers</secTitle>
+		<p>The basic forms for the cardinal numbers are given in the following chart:</p>
+<example><table>
+	<row>
+		<col>1 through 10</col>
+	   <col exampleLoc="qp/cardinalNumbers1to10"/>
+	</row>
+	<row>
+		<col>11 through 20</col>
+	   <col exampleLoc="qp/cardinalNumbers11to20"/>
+	</row>
+	<row>
+		<col>30 through 100 (by tens)</col>
+	   <col exampleLoc="qp/cardinalNumbers30to100"/>
+	</row>
+</table>
+</example>
+	<p>Larger cardinal numbers can be compounds which may be
+written as separate words, such as <langData>one hundred thirty three</langData>, <langData>four thousand and three</langData> or <langData>six thousand one hundred and thirty three</langData>.
+Examples of compound numbers in <langName/> include:</p>
+	<example>
+	<interlinear exampleLoc="qp/cardinalCompoundExample"></interlinear>
+</example>
+<p>Based on the position of the unit number and any conjunctions, cardinal numbers in <langName/> are <case element="qp" attr="cardinalHeadPos">
+<caseText value="before">left-</caseText>
+<caseText value="after">right-</caseText>
+</case>headed.
+</p>
+</section3>
+	<section3 id="qpNumbersOrdinal">
+		<secTitle>Ordinal Numbers</secTitle>
+<p>Ordinal numbers in <langName/> <case element="qp" attr="ordinalFormation">
+<caseText value="affix">are formed by adding an affix to the cardinal number.</caseText>
+<caseText value="independent">are all independent syntactic words, distinct from the cardinal numbers.</caseText>
+<caseText value="both">may be formed by adding an affix to the cardinal number, but some forms are independent syntactic words.</caseText>
+</case>  The first ten ordinal numbers are:</p>
+   <example><table>
+	<row>
+		<col>first through tenth</col>
+		<col exampleLoc="qp/ordinalNumbers"/>
+	</row>
+</table>
+</example>
+		<p>When the ordinal numbers modify a cardinal number, as in <langData>the first twenty boys</langData>, they occur <case element="qp" attr="ordinalPos">
+				<caseText value="before">before</caseText>
+				<caseText value="after">after</caseText>
+				<caseText value="either">on either side (but not both sides) of</caseText>
+				<caseText value="beforeOrBoth">before or on both sides of</caseText>
+				<caseText value="afterOrBoth">after or on both sides of</caseText>
+				<caseText value="both">on both sides of</caseText>
+			</case> the cardinal number.  <text show="swQPOrdinalEitherUnrestricted">All of the ordinal numbers can occur on either side of the cardinal number.</text>
+			<text show="swQPOrdinalEitherRestricted">There are restrictions as to which of the ordinal numbers can occur on each side of the cardinal number.</text>
+		</p>
+ <p>Examples of the use of ordinal numbers and the modifiers meaning "last" or "next" within a nminal phrase include:</p>
+	 <example>
+	<interlinear exampleLoc="qp/ordinalExample"></interlinear>
+</example>
+	</section3>
+	<showWhen id="swQPOrdinalEitherUnrestricted">
+		<whenValue element="qp" attr="ordinalEitherRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="qp" attr="ordinalPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="ordinalPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalEitherRestricted">
+		<whenValue element="qp" attr="ordinalEitherRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="qp" attr="ordinalPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="ordinalPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPDegreeNo">
+		<whenValue element="qp" attr="degree" value="no"/>
+	</showWhen>
+	<showWhen id="swQPDegreeYes">
+		<whenValue element="qp" attr="degree" value="yes"/>
+	</showWhen>
+	<showWhen id="swQPDegreeEitherUnrestricted">
+		<whenValue element="qp" attr="degree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="degreeEitherRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="qp" attr="degreePos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="degreePos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPDegreeEitherRestricted">
+		<whenValue element="qp" attr="degree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="degreeEitherRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="qp" attr="degreePos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="degreePos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNo">
+		<whenValue element="qp" attr="npDegree" value="no"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYes">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeEitherUnrestricted">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeEitherRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeEitherRestricted">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeEitherRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
+	</showWhen>
+</portion>

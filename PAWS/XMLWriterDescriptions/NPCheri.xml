@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Cheri Black (SIL International) -->
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<portion>
+	<section1 id="np"><secTitle>Nominal Phrases</secTitle>
+	<p>Nominal phrases can be very complex.  This section concentrates on those with common nouns as the lexical head.  Modification by articles, demonstratives, possessors, quantifiers and degree words, adjective phrases, pre/post-positional phrases and noun compounds is considered.   Nominal phrases headed by proper names are handled in section <sectionRef sec="prop"/> and those headed by pronouns, demonstratives, and quantifiers are handled in section <sectionRef sec="pn"/>.  Relative clauses are covered in section <sectionRef sec="relcl"/>.</p>
+<p>The basic order of elements allowed in nominal phrases in <langName/> is:</p>
+<example show="swPossDemAndArtCooccurYes"><table>
+	<row>
+		<col show="swQPNPDegreeYesBefore">(Deg)</col>
+		<col show="swNPDemBefore">(Dem)</col>
+		<col show="swNPArtBefore">(Art)</col>
+		<col show="swNPPossessorBefore">(Poss)</col>
+		<col show="swNPQPBefore">(QP)</col>
+		<col show="swNPAdjPBefore">(AdjP)</col>
+		<col show="swNPPPBefore">(PP)</col>
+		<col show="swNPCompoundYesRightHead">((N) N)</col>
+		<col>N</col>
+		<col show="swNPCompoundYesLeftHead">(N (N))</col>
+		<col show="swNPPPAfter">(PP)</col>
+		<col show="swNPAdjPAfter">(AdjP)</col>
+		<col show="swNPQPAfter">(QP)</col>
+		<col show="swNPPossessorAfter">(Poss)</col>
+		<col show="swNPArtAfter">(Art)</col>
+		<col show="swNPDemAfter">(Dem)</col>
+		<col show="swQPNPDegreeYesAfter">(Deg)</col>
+	</row>
+</table>
+</example>
+<example show="swPossDemOrArtCooccurYes"><table>
+	<row>
+		<col show="swQPNPDegreeYesBefore">(Deg)</col>
+		<col show="swNPDemOrArtBefore">(Dem/Art)</col>
+		<col show="swNPPossessorBefore">(Poss)</col>
+		<col show="swNPQPBefore">(QP)</col>
+		<col show="swNPAdjPBefore">(AdjP)</col>
+		<col show="swNPPPBefore">(PP)</col>
+		<col show="swNPCompoundYesRightHead">((N) N)</col>
+		<col>N</col>
+		<col show="swNPCompoundYesLeftHead">(N (N))</col>
+		<col show="swNPPPAfter">(PP)</col>
+		<col show="swNPAdjPAfter">(AdjP)</col>
+		<col show="swNPQPAfter">(QP)</col>
+		<col show="swNPPossessorAfter">(Poss)</col>
+		<col show="swNPDemOrArtAfter">(Art/Dem)</col>
+		<col show="swQPNPDegreeYesAfter">(Deg)</col>
+	</row>
+</table>
+</example>
+<example show="swPossDemAndOrArtCooccurNo"><table>
+	<row>
+		<col show="swQPNPDegreeYesBefore">(Deg)</col>
+		<col show="swPossDemAndOrArtCooccurNoBefore">(Dem/Art/Poss)</col>
+		<col show="swNPQPBefore">(QP)</col>
+		<col show="swNPAdjPBefore">(AdjP)</col>
+		<col show="swNPPPBefore">(PP)</col>
+		<col show="swNPCompoundYesRightHead">((N) N)</col>
+		<col>N</col>
+		<col show="swNPCompoundYesLeftHead">(N (N))</col>
+		<col show="swNPPPAfter">(PP)</col>
+		<col show="swNPAdjPAfter">(AdjP)</col>
+		<col show="swNPQPAfter">(QP)</col>
+		<col show="swPossDemAndOrArtCooccurNoAfter">(Poss/Art/Dem)</col>
+		<col show="swQPNPDegreeYesAfter">(Deg)</col>
+	</row>
+</table>
+</example>
+<example show="swPossDemOnlyCooccurNo"><table>
+	<row>
+		<col show="swQPNPDegreeYesBefore">(Deg)</col>
+		<col show="swPossDemOnlyCooccurNoBefore">(Dem/Poss)</col>
+		<col show="swNPQPBefore">(QP)</col>
+		<col show="swNPAdjPBefore">(AdjP)</col>
+		<col show="swNPPPBefore">(PP)</col>
+		<col show="swNPCompoundYesRightHead">((N) N)</col>
+		<col>N</col>
+		<col show="swNPCompoundYesLeftHead">(N (N))</col>
+		<col show="swNPPPAfter">(PP)</col>
+		<col show="swNPAdjPAfter">(AdjP)</col>
+		<col show="swNPQPAfter">(QP)</col>
+		<col show="swPossDemOnlyCooccurNoAfter">(Poss/Dem)</col>
+		<col show="swQPNPDegreeYesAfter">(Deg)</col>
+	</row>
+</table>
+</example>
+<example show="swPossArtOnlyCooccurNo"><table>
+	<row>
+		<col show="swQPNPDegreeYesBefore">(Deg)</col>
+		<col show="swPossArtOnlyCooccurNoBefore">(Art/Poss)</col>
+		<col show="swNPQPBefore">(QP)</col>
+		<col show="swNPAdjPBefore">(AdjP)</col>
+		<col show="swNPPPBefore">(PP)</col>
+		<col show="swNPCompoundYesRightHead">((N) N)</col>
+		<col>N</col>
+		<col show="swNPCompoundYesLeftHead">(N (N))</col>
+		<col show="swNPPPAfter">(PP)</col>
+		<col show="swNPAdjPAfter">(AdjP)</col>
+		<col show="swNPQPAfter">(QP)</col>
+		<col show="swPossArtOnlyCooccurNoAfter">(Poss/Art)</col>
+		<col show="swQPNPDegreeYesAfter">(Deg)</col>
+	</row>
+</table>
+</example>
+<p>Each of these phrases, starting with the outermost, will be discussed and exemplified in sections <sectionRef sec="npDegree"/>-<sectionRef sec="npCompounds"/>, after first dealing with agreement and case marking.</p>
+</section1>
+<section2 id="npAgreement">
+	<secTitle>Agreement</secTitle>
+	<p>Many languages require agreement between at least some of the modifiers and the head noun.  While English only has number agreement, in other languages this agreement may also include animacy, class, or gender.</p>
+<p>In <langName/>, <case element="np" attr="agreeNumber">
+<caseText value="no"> there is no number agreement.  Instead, number marking comes from the number or quantifier.</caseText>
+<caseText value="yes"> the various nominal modifiers may/must agree in number with the head noun.</caseText></case>  Further, <case element="np" attr="agreeOther">
+<caseText value="no">there is no agreement in animacy, class number, nor gender between the modifiers and the head noun.</caseText>
+<caseText value="yesAnimacy">the modifiers and the head noun may/must agree in animacy.</caseText>
+<caseText value="yesClass">the modifiers and the head noun may/must agree in class number.</caseText>
+<caseText value="yesGender">the modifiers and the head noun may/must agree in gender.</caseText>
+</case>
+ </p>
+</section2>
+<section2 id="npCase">
+	<secTitle>Case</secTitle>
+		<p>Nouns and their modifiers may also be marked for case.  The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: <langData>I, we, you, he, she, they</langData>.  The accusative pronouns are: <langData>me, us, you, him, her, them</langData>.  The genitive pronouns include: <langData>my, mine, our, ours, your, yours, his, her, hers, their, theirs</langData>.  Therefore, we say <langData>They hit him</langData> and not <langData>Them hit he</langData>. </p>
+			<p>
+In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  The case of possessors is not set cross-linguistically.  Some languages with an ergative-absolutive system simply have different sets of verbal agreement markers, but no marking on nouns.  This type of agreement marking will be handled in section <sectionRef sec="ipAgreement"/>.</p>
+<p>
+Some languages are even more complex in that they normally have a nominative-accusative system but under some conditions the case system switches to ergative-absolutive.  This is called "split ergativity".</p>
+<p><langName/> <case element="np" attr="case">
+<caseText value="none">does not have any case system.   The exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence.</caseText>
+<caseText value="nominative">has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</caseText>
+<caseText value="ergative">has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</caseText>
+<caseText value="split">has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain conditions.</caseText>
+</case>  <text show="swNPCaseDefaultNom">Nominative case is the default (unmarked) case.</text></p>
+<p>The pronoun sets will be given in section <sectionRef sec="pn"/>.</p>
+</section2>
+<section2 id="npDegree">
+	<secTitle>Degree Words and "All"</secTitle>
+<p>
+The outer or top level of the nominal phrase is occupied by those degree words that modify the whole DP, such as <langData>just</langData>, <langData>only</langData>, and <langData>all</langData>.  These were discussed in section <sectionRef sec="qpall"/>.  To review the facts for <langName/>,  <text show="swQPNPDegreeNo">these are not expressed as separate words which modify the whole nominal phrase.</text><text show="swQPNPDegreeYes">these are expressed as separate words which occur <case element="qp" attr="npDegreePos">
+				<caseText value="before">before</caseText>
+				<caseText value="after">after</caseText>
+				<caseText value="either">on either side (but not both sides) of</caseText>
+				<caseText value="beforeOrBoth">before or on both sides of</caseText>
+				<caseText value="afterOrBoth">after or on both sides of</caseText>
+				<caseText value="both">on both sides of</caseText>
+			</case> the rest of the nominal phrase.  Some examples are:</text>
+	</p>
+		<example show="swQPNPDegreeYes">
+			<interlinear exampleLoc="qp/example"/>
+		</example>
+</section2>
+<showWhen id="swPossDemAndArtCooccurYes">
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="artBothCooccur" value="yes"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="yes"></whenValue>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="article"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="yes"></whenValue>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="demonstrative"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="yes"></whenValue>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="no"></whenValue>
+</showWhen>
+<showWhen id="swPossDemOrArtCooccurYes">
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="artBothCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="yes"></whenValue>
+</showWhen>
+<showWhen id="swPossDemAndOrArtCooccurNoBefore">
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="demAndArtArtPos" value="after" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="demAndArtDemPos" value="after" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="possNPPos" value="after" negateValue="yes"/>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="demOrArtPos" value="after" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="possNPPos" value="after" negateValue="yes"/>
+</showWhen>
+<showWhen id="swPossDemAndOrArtCooccurNoAfter">
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="demAndArtArtPos" value="before" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="demAndArtDemPos" value="before" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="possNPPos" value="before" negateValue="yes"/>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="demOrArtPos" value="before" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="possNPPos" value="before" negateValue="yes"/>
+</showWhen>
+<showWhen id="swPossDemAndOrArtCooccurNo">
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+</showWhen>
+<showWhen id="swPossDemOnlyCooccurNo">
+	<whenValue element="np" attr="artAndDem" value="demonstrative"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+</showWhen>
+<showWhen id="swPossDemOnlyCooccurNoBefore">
+	<whenValue element="np" attr="artAndDem" value="demonstrative"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="demPos" value="after" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="possNPPos" value="after" negateValue="yes"/>
+</showWhen>
+<showWhen id="swPossDemOnlyCooccurNoAfter">
+	<whenValue element="np" attr="artAndDem" value="demonstrative"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="demPos" value="before" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="possNPPos" value="before" negateValue="yes"/>
+</showWhen>
+<showWhen id="swPossArtOnlyCooccurNo">
+	<whenValue element="np" attr="artAndDem" value="article"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+</showWhen>
+<showWhen id="swPossArtOnlyCooccurNoBefore">
+	<whenValue element="np" attr="artAndDem" value="article"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="artPos" value="after" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="possNPPos" value="after" negateValue="yes"/>
+</showWhen>
+<showWhen id="swPossArtOnlyCooccurNoAfter">
+	<whenValue element="np" attr="artAndDem" value="article"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="artPos" value="before" negateValue="yes"/>
+<and/>
+	<whenValue element="np" attr="possNPPos" value="before" negateValue="yes"/>
+</showWhen>
+
+<showWhen id="swQPNPDegreeYesBefore">
+	<whenValue element="qp" attr="npDegree" value="yes"></whenValue>
+<and/>
+<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
+</showWhen>
+<showWhen id="swQPNPDegreeYesAfter">
+	<whenValue element="qp" attr="npDegree" value="yes"></whenValue>
+<and/>
+<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
+</showWhen>
+<showWhen id="swNPDemOrArtBefore">
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="artBothCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="yes"></whenValue>
+<and/>
+	<whenValue element="np" attr="demOrArtPos" value="after" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPDemOrArtAfter">
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="artBothCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="yes"></whenValue>
+<and/>
+	<whenValue element="np" attr="demOrArtPos" value="before" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPDemAndOrArtCooccurNoBefore">
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="demOrArtPos" value="after" negateValue="yes"></whenValue>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="possCooccur" value="no"></whenValue>
+<and/>
+	<whenValue element="np" attr="demOrArtPos" value="after" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPDemBefore">
+	<whenValue element="np" attr="artAndDem" value="demonstrative"></whenValue>
+<and/>
+	<whenValue element="np" attr="demPos" value="after" negateValue="yes"></whenValue>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="demAndArtDemPos" value="after" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPDemAfter">
+	<whenValue element="np" attr="artAndDem" value="demonstrative"></whenValue>
+<and/>
+	<whenValue element="np" attr="demPos" value="before" negateValue="yes"></whenValue>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="demAndArtDemPos" value="before" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPArtBefore">
+	<whenValue element="np" attr="artAndDem" value="article"></whenValue>
+<and/>
+	<whenValue element="np" attr="artPos" value="after" negateValue="yes"></whenValue>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="demAndArtArtPos" value="after" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPArtAfter">
+	<whenValue element="np" attr="artAndDem" value="article"></whenValue>
+<and/>
+	<whenValue element="np" attr="artPos" value="before" negateValue="yes"></whenValue>
+<or/>
+	<whenValue element="np" attr="artAndDem" value="both"></whenValue>
+<and/>
+	<whenValue element="np" attr="demAndArtArtPos" value="before" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPPossessorBefore">
+	<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPPossessorAfter">
+	<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPQPBefore">
+	<whenValue element="np" attr="qpPos" value="after" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPQPAfter">
+	<whenValue element="np" attr="qpPos" value="before" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPAdjPBefore">
+	<whenValue element="np" attr="adjpPos" value="after" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPAdjPAfter">
+	<whenValue element="np" attr="adjpPos" value="before" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPPPBefore">
+	<whenValue element="np" attr="compHeadPPPos" value="after" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPPPAfter">
+	<whenValue element="np" attr="compHeadPPPos" value="before" negateValue="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPCompoundYesRightHead">
+	<whenValue element="np" attr="compHead" value="right"></whenValue>
+<and/>
+	<whenValue element="np" attr="comp" value="yes"></whenValue>
+</showWhen>
+<showWhen id="swNPCompoundYesLeftHead">
+	<whenValue element="np" attr="compHead" value="left"></whenValue>
+<and/>
+	<whenValue element="np" attr="comp" value="yes"></whenValue>
+</showWhen>
+	<showWhen id="swNPCaseDefaultNom">
+		<whenValue element="np" attr="case" value="nominative"/>
+<and/>
+		<whenValue element="np" attr="caseDefault" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="case" value="split"/>
+<and/>
+		<whenValue element="np" attr="caseDefault" value="nominative"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNo">
+		<whenValue element="qp" attr="npDegree" value="no"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYes">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+	</showWhen>
+</portion>
