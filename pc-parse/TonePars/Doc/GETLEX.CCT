@@ -1,0 +1,28 @@
+c getlex.cct  CC Table to build sed script which makes substitutions of
+c		 the LX_??? tokens to their respective inputs.
+
+begin		> "s/LX_IDENTIFIER/identifier/g" nl
+		  store(thowout)
+		  use(1)
+
+group(1)
+
+'{"'		> store(input)
+		  use(2)
+
+group(2)
+
+'"'		> endstore
+		  store(throwout)
+		  use(3)
+
+group(3)
+"token("	> endstore
+		  store(lx)
+			  use(4)
+
+group(4)
+")"		> endstore
+		  "s/" out(lx) "/'" out(input) "'/g" nl
+		  store(throwout)
+		  use(1)
