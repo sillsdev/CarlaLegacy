@@ -60,14 +60,12 @@ Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" 
 				</radioGroup>
 			</radioGroup>
 		</radioGroup>
-
 		<radioGroup>
 			<groupName dataItem="adjpAgree" default="no">RNPAdjPAgree</groupName>
 			<prompt>Do adjectives carry any marking to agree with the noun they modify?</prompt>
 			<radio id="NPAdjPAgreeNo" dataValue="no">No</radio>
 			<radio id="NPAdjPAgreeYes" dataValue="yes">Yes</radio>
 		</radioGroup>
-
 		<instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen">
 				<feature>genitive_prefix</feature>
 			</span>
@@ -92,6 +90,7 @@ Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" 
 			<span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive</span>case.</instruction>
 		<instruction id="NPAdjPPosEitherSideEitherRestrictedInstruction" show="swNPAdjPPosEitherSideEitherRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
 		<br/>
+<instruction id="NPAdjPNoAgreementInstruction" show="swNPAgreementNone">You said your language does not mark any agreement in <section number="5.1">Overview Plus Agreement and Case</section>, so it is unclear what agreement marking adjectives may have.  Return to <section number="5.1">Overview Plus Agreement and Case</section> and change your answer appropriately if you do have agreement marking.  If not, change your answer here to "no".</instruction>
 		<instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
 To handle the number agreement, in the lexicon:
 <ul>
@@ -166,7 +165,14 @@ To handle class marking and agreement, in the lexicon:
 		<and/>
 		<whenRadio button="NPAdjPPosEitherSide"/>
 	</showWhen>
-	<showWhen id="swNPNumberAgreement">
+<showWhen id="swNPAgreementNone">
+	 <whenRadio button="NPAdjPAgreeYes"/>
+		<and/>
+		<whenValue element="np" attr="agreeNumber" value="no"/>
+		<and/>
+		<whenValue element="np" attr="agreeOther" value="no"/>
+</showWhen>
+ <showWhen id="swNPNumberAgreement">
 		<whenRadio button="NPAdjPAgreeYes"/>
 		<and/>
 		<whenValue element="np" attr="agreeNumber" value="yes"/>

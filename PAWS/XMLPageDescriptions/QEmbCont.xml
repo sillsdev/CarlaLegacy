@@ -4,7 +4,17 @@
 <page id="QEmbCont">
 	<title level="2">Questions - Embedded Content Questions</title>
 	<form section="q">
-		<radioGroup>
+			 <EnglishExample>
+		<exItem>Examples of English embedded content questions include:</exItem>
+		  <exItem label="1.">I know who hit the ball.</exItem>
+			<exItem label="2.">I know when she will come.</exItem>
+			<exItem label="3.">I know what the boy hit.</exItem>
+		</EnglishExample>
+		<prompt>Key similar examples from your language here:</prompt>
+		<textBox id="QEmbContentExample" dataItem="embContentExample" cols="50"/>
+<br/>
+		<instruction>If any main verbs used in these examples were not marked with the feature <feature>sentential</feature> above, go to the lexicon and add the feature <feature>sentential</feature> to the appropriate entries now.</instruction>
+ <radioGroup>
 			<groupName dataItem="embCont" default="no">RQEmbCont</groupName>
 			<prompt>In embedded content questions, are there one or more special question marker particles or complementizers that may occur?</prompt>
 			<radio id="QEmbContYesSameYN" dataValue="yesSameYN">Yes, and it is the same as the Yes/No question marker for embedded clauses (or both main and embedded clauses)
@@ -37,26 +47,26 @@
 					<radio id="QEmbContEitherYes" dataValue="yes">Yes, there is no restriction</radio>
 					<radio id="QEmbContEitherNo" dataValue="no">No, there are separate sets for each side</radio>
 				</radioGroup>
-			<radioGroup id="QEmbContBothTable">
-				<groupName dataItem="embContBoth" default="no">RQEmbContBoth</groupName>
-				<prompt>Can the question markers appear on both sides in the question?</prompt>
-				<radio id="QEmbContBothNo" dataValue="no">No, only on one side or the other</radio>
-				<radio id="QEmbContBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
-				<radio id="QEmbContBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
-				<radioGroup id="QEmbContBothInitialFinalTable">
-					<groupName dataItem="embContBothInitialFinal" default="no">RQEmbContBothInitialFinal</groupName>
-					<prompt>May a different question marker also occur only in final position?</prompt>
-					<radio id="QEmbContBothInitialFinalNo" dataValue="no">No</radio>
-					<radio id="QEmbContBothInitialFinalYes" dataValue="yes">Yes</radio>
+				<radioGroup id="QEmbContBothTable">
+					<groupName dataItem="embContBoth" default="no">RQEmbContBoth</groupName>
+					<prompt>Can the question markers appear on both sides in the question?</prompt>
+					<radio id="QEmbContBothNo" dataValue="no">No, only on one side or the other</radio>
+					<radio id="QEmbContBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
+					<radio id="QEmbContBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
+					<radioGroup id="QEmbContBothInitialFinalTable">
+						<groupName dataItem="embContBothInitialFinal" default="no">RQEmbContBothInitialFinal</groupName>
+						<prompt>May a different question marker also occur only in final position?</prompt>
+						<radio id="QEmbContBothInitialFinalNo" dataValue="no">No</radio>
+						<radio id="QEmbContBothInitialFinalYes" dataValue="yes">Yes</radio>
+					</radioGroup>
+					<radio id="QEmbContBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
+					<radioGroup id="QEmbContBothFinalInitialTable">
+						<groupName dataItem="embContBothFinalInitial" default="no">RQEmbContBothFinalInitial</groupName>
+						<prompt>May a different question marker also occur only in initial position?</prompt>
+						<radio id="QEmbContBothFinalInitialNo" dataValue="no">No</radio>
+						<radio id="QEmbContBothFinalInitialYes" dataValue="yes">Yes</radio>
+					</radioGroup>
 				</radioGroup>
-				<radio id="QEmbContBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
-				<radioGroup id="QEmbContBothFinalInitialTable">
-					<groupName dataItem="embContBothFinalInitial" default="no">RQEmbContBothFinalInitial</groupName>
-					<prompt>May a different question marker also occur only in initial position?</prompt>
-					<radio id="QEmbContBothFinalInitialNo" dataValue="no">No</radio>
-					<radio id="QEmbContBothFinalInitialYes" dataValue="yes">Yes</radio>
-				</radioGroup>
-			</radioGroup>
 			</radioGroup>
 			<radioGroup id="QEmbContRequiredTable">
 				<groupName dataItem="embContRequired" default="no">RQEmbContRequired</groupName>

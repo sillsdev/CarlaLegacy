@@ -6,7 +6,7 @@
 	<introduction>Now we are ready to build the next part of the phrase structure tree.  Look at the examples of noun phrases with articles and demonstratives that you keyed in (repeated below).</introduction>
 	<form section="np">
 		<textBox id="NPArtPosExample" dataItem="example"/>
-		<instruction id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Since your language does not have articles or demonstratives expressed as separate words, we do not need to determine a syntactic position for them.  You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the secion on possessors.</instruction>
+		<instruction id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Since your language does not have articles or demonstratives expressed as separate words, we do not need to determine a syntactic position for them.  You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the section on possessors.</instruction>
 		<radioGroup id="NPArtAndDemArtPosTable" show="swNPArtAndDemArt">
 			<groupName dataItem="artPos" default="unknown" position="yesSpec">RNPArtAndDemArtPos</groupName>
 			<prompt>Where does the article occur with respect to the noun?</prompt>

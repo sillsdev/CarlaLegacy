@@ -39,7 +39,7 @@ like <example>only</example> and <example>just</example>.
 		<prompt>Key your examples here:</prompt>
 		<textBox id="QPExample" dataItem="example"/>
 		<instruction>If you have words like <example>all</example>, <example>only</example>, and <example>just</example> which
-occur either initially or finally in the nominal phrase,
+occur either initially or finally in the nominal phrase (the position will be determined in <section number="5">Simple and Possessed Nominal Phrases</section>),
 mark these words as <feature>Deg modifies_NP</feature> in the lexicon.  Note
 that this is two separate features with a space between
 them.  The first will change their syntactic category to <category>Deg</category>

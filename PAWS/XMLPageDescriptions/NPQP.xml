@@ -19,14 +19,10 @@
 			<radio id="NPQPPosBefore" dataValue="before">Before</radio>
 			<radio id="NPQPPosAfter" dataValue="after">After</radio>
 			<radio id="NPQPPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
-			<radio id="NPQPPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
-			<radioGroup id="NPQPPosBothRequiredTable" show="swNPQPPosBothSides">
-				<groupName dataItem="qpBothRequiredPos" default="unknown" position="yesSpec"/>
-				<prompt>Of the two positions that a number or quantifier phrase may occur, which is required when a number is present in the nominal phrase?</prompt>
-				<radio id="NPQPPosBothRequiredBefore" dataValue="before">The initial position is required, and a final number or quantifier phrase may also optionally occur</radio>
-				<radio id="NPQPPosBothRequiredAfter" dataValue="after">The final position is required, and an initial number or quantifier phrase may also optionally occur</radio>
-				<radio id="NPQPPosBothRequiredBoth" dataValue="both">Both positions must be filled in a quantified nominal phrase</radio>
-			</radioGroup>
+			<radio id="NPQPPosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
+			<radio id="NPQPPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the noun, or on both sides at the same time</radio>
+			<radio id="NPQPPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the noun, or on both sides at the same time</radio>
+			<radio id="NPQPPosBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
 			<radioGroup id="NPQPPosEitherorBothTable" show="swNPQPPosEitherorBoth">
 				<groupName dataItem="qpEither" default="unrestricted">RNPQPPosEitherorBoth</groupName>
 				<prompt>Can all the quantifier phrases appear on either side of the nominal phrase?</prompt>
@@ -44,7 +40,8 @@
 		<br/>
 		<radioGroup>
 			<groupName dataItem="qpAgree" default="no">RNPQPAgree</groupName>
-			<prompt>Do numbers or quantifiers carry any marking to agree with the noun they modify, other than <span id="NPQPNumberMarkingSpan1" show="swNPQPNumberMarking">marking</span><span id="NPQPNumberAgreementSpan1" show="swNPQPNumberAgreement">agreeing in</span> number?</prompt>
+			<prompt>Do numbers or quantifiers carry any marking to agree with the noun they modify, other than <span id="NPQPNumberMarkingSpan1" show="swNPQPNumberMarking">marking</span>
+				<span id="NPQPNumberAgreementSpan1" show="swNPQPNumberAgreement">agreeing in</span> number?</prompt>
 			<radio id="NPQPAgreeNo" dataValue="no">No, they only <span id="NPQPNumberMarkingSpan" show="swNPQPNumberMarking"> mark number</span>
 				<span id="NPQPNumberAgreementSpan" show="swNPQPNumberAgreement"> agree in number</span>
 			</radio>
@@ -100,54 +97,42 @@ To handle class marking and agreement, in the lexicon:
 		</buttons>
 	</form>
 	<showWhen id="swNPQPPosEitherorBoth">
-		<whenRadio button="NPQPPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPQPPosBothSides"/>
+<not/>       <whenRadio button="NPQPPosBefore"/>
+   <and/> <not/>
+		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherorBothRestricted">
 		<whenRadio button="NPQPPosEitherorBothRestricted"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="NPQPPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPQPPosBothSides"/>
-		<closeParen/>
+<and/><not/>       <whenRadio button="NPQPPosBefore"/>
+   <and/> <not/>
+		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumBefore">
 		<whenRadio button="NPQPPosEitherRestrictedNumBefore"/>
 		<and/>
 		<whenRadio button="NPQPPosEitherorBothRestricted"/>
 		<and/>
-		<openParen/>
-		<whenRadio button="NPQPPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPQPPosBothSides"/>
-		<closeParen/>
+<not/>       <whenRadio button="NPQPPosBefore"/>
+   <and/> <not/>
+		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumAfter">
 		<whenRadio button="NPQPPosEitherRestrictedNumAfter"/>
 		<and/>
 		<whenRadio button="NPQPPosEitherorBothRestricted"/>
 		<and/>
-		<openParen/>
-		<whenRadio button="NPQPPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPQPPosBothSides"/>
-		<closeParen/>
+<not/>       <whenRadio button="NPQPPosBefore"/>
+   <and/> <not/>
+		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumNo">
 		<whenRadio button="NPQPPosEitherRestrictedNumNo"/>
 		<and/>
 		<whenRadio button="NPQPPosEitherorBothRestricted"/>
 		<and/>
-		<openParen/>
-		<whenRadio button="NPQPPosEitherSide"/>
-		<or/>
-		<whenRadio button="NPQPPosBothSides"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swNPQPPosBothSides">
-		<whenRadio button="NPQPPosBothSides"/>
+<not/>       <whenRadio button="NPQPPosBefore"/>
+   <and/> <not/>
+		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPNumberMarking">
 		<whenValue element="np" attr="agreeNumber" value="no"/>

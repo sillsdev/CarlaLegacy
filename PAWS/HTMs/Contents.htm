@@ -34,13 +34,14 @@ displayStatus(ContentsProperNamesStatus,"prop");
 displayStatus(ContentsPronounsStatus,"pron");
 displayStatus(ContentsPrepositionsStatus,"pp");
 displayStatus(ContentsSingleClausesStatus,"ip");
-displayStatus(ContentsQuestionsStatus,"q");
-displayStatus(ContentsFocusStatus,"focus");
-displayStatus(ContentsNegativeStatus,"neg");
 displayStatus(ContentsCompsStatus,"comp");
-displayStatus(ContentsAdvClsStatus,"advcl");
+displayStatus(ContentsQuestionsStatus,"q");
 displayStatus(ContentsRelClStatus,"relcl");
+displayStatus(ContentsAdvClsStatus,"advcl");
+displayStatus(ContentsNegativeStatus,"neg");
 displayStatus(ContentsCoordStatus,"coord");
+displayStatus(ContentsFocusStatus,"focus");
+displayStatus(ContentsExclamationsStatus,"excl");
 
 example = PawsSKAnswers.selectSingleNode("//leftOffAt");
 example.text = "Contents.htm";
@@ -169,39 +170,44 @@ function StatusClicked(idOfItem, strElem)
 			<td valign="top"><A id=ContentsSingleClauses href="IPContents.htm">Basic, Single-clause Sentences</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsQuestionsStatus" onclick="StatusClicked(ContentsQuestionsStatus,'q')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">10.</td>
-			<td valign="top"><A id=ContentsQuestions href="QMain.htm">Main Clause Questions</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">11.</td>
-			<td valign="top"><A id=ContentsFocus href="UnderConstruction.htm">Focus and/or Topic Constructions</A></td><!-- FocusMain.htm -->
-		</tr>
-		<tr>
-			<td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">12.</td>
-			<td valign="top"><A id=ContentsNegative href="UnderConstruction.htm">Negative Constructions</A></td><!-- NegMain.htm  -->
-		</tr>
-		<tr>
 			<td id="ContentsCompsStatus" onclick="StatusClicked(ContentsCompsStatus,'comp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">13.</td>
+						<td valign="top">10.</td>
 			<td valign="top"><A id=ContentsComps href="UnderConstruction.htm">Complement Clauses</A></td><!-- CompMain.htm -->
 		</tr>
 		<tr>
-			<td id="ContentsAdvClsStatus" onclick="StatusClicked(ContentsAdvClsStatus,'advcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">14.</td>
-			<td valign="top"><A id=ContentsAdvCls href="UnderConstruction.htm">Adverbial Clauses</A></td><!-- AdvClMain.htm -->
+			<td id="ContentsQuestionsStatus" onclick="StatusClicked(ContentsQuestionsStatus,'q')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">11.</td>
+			<td valign="top"><A id=ContentsQuestions href="QMain.htm">Questions</A></td>
 		</tr>
 		<tr>
 			<td id="ContentsRelClStatus" onclick="StatusClicked(ContentsRelClStatus,'relcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">15.</td>
+						<td valign="top">12.</td>
 			<td valign="top"><A id=ContentsRelCl href="UnderConstruction.htm">Relative Clauses</A></td><!-- RelClMain.htm -->
 		</tr>
 		<tr>
+			<td id="ContentsAdvClsStatus" onclick="StatusClicked(ContentsAdvClsStatus,'advcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">13.</td>
+			<td valign="top"><A id=ContentsAdvCls href="UnderConstruction.htm">Adverbial Clauses</A></td><!-- AdvClMain.htm -->
+		</tr>
+		<tr>
+			<td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">14.</td>
+			<td valign="top"><A id=ContentsNegative href="UnderConstruction.htm">Negative Constructions</A></td><!-- NegMain.htm  -->
+		</tr>
+		<tr>
 			<td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">16.</td>
+						<td valign="top">15.</td>
 			<td valign="top"><A id=ContentsCoord href="UnderConstruction.htm">Coordinate Structures</A></td><!-- CoordMain.htm -->
+		</tr>
+		<tr>
+			<td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">16.</td>
+			<td valign="top"><A id=ContentsFocus href="UnderConstruction.htm">Focus and Topic Constructions</A></td><!-- FocusMain.htm -->
+		</tr>
+		<tr>
+			<td id="ContentsExclamationsStatus" onclick="StatusClicked(ContentsExclamationsStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">17.</td>
+			<td valign="top"><A id=ContentsExclamations href="UnderConstruction.htm">Exclamations</A></td><!-- ExclMain.htm -->
 		</tr>
 	</tbody>
 </table>

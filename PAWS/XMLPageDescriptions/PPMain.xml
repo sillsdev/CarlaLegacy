@@ -29,8 +29,11 @@
 					<radio id="PPModifiersDegreePosBefore" dataValue="before">Before</radio>
 					<radio id="PPModifiersDegreePosAfter" dataValue="after">After</radio>
 					<radio id="PPModifiersDegreePosEitherSide" dataValue="either">Either side, but not on both sides at the same time</radio>
-					<radio id="PPModifiersDegreePosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
-					<radioGroup id="PPModifiersDegreePosEitherOrBothRestrictedTable" show="swPPModifiersYesDegreeEitherOrBoth">
+					<radio id="PPModifiersDegreePosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
+			 <radio id="PPModifiersDegreePosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
+			<radio id="PPModifiersDegreePosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
+			<radio id="PPModifiersDegreePosBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+				   <radioGroup id="PPModifiersDegreePosEitherOrBothRestrictedTable" show="swPPModifiersYesDegreeEitherOrBoth">
 						<groupName dataItem="degreeRestricted" default="unrestricted">RPPModifiersDegreePosRestricted</groupName>
 						<prompt>Can all the degree words appear on either side of the PP?</prompt>
 						<radio id="PPModifiersDegreePosEitherOrBothUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
@@ -43,7 +46,10 @@
 					<radio id="PPModifiersOrdinalPosBefore" dataValue="before">Before</radio>
 					<radio id="PPModifiersOrdinalPosAfter" dataValue="after">After</radio>
 					<radio id="PPModifiersOrdinalPosEitherSide" dataValue="either">Either side, but not on both sides at the same time</radio>
-					<radio id="PPModifiersOrdinalPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
+					<radio id="PPModifiersOrdinalPosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
+			 <radio id="PPModifiersOrdinalPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
+			<radio id="PPModifiersOrdinalPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
+			<radio id="PPModifiersOrdinalPosBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
 					<radioGroup id="PPModifiersOrdinalPosEitherOrBothRestrictedTable" show="swPPModifiersYesOrdinalEitherOrBoth">
 						<groupName dataItem="ordinalRestricted" default="unrestricted">RPPModifiersOrdinalPosRestricted</groupName>
 						<prompt>Can all the ordinals appear on either side of the PP?</prompt>
@@ -57,7 +63,10 @@
 					<radio id="PPModifiersMannerPosBefore" dataValue="before">Before</radio>
 					<radio id="PPModifiersMannerPosAfter" dataValue="after">After</radio>
 					<radio id="PPModifiersMannerPosEitherSide" dataValue="either">Either side, but not on both sides at the same time</radio>
-					<radio id="PPModifiersMannerPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
+					<radio id="PPModifiersMannerPosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
+			 <radio id="PPModifiersMannerPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
+			<radio id="PPModifiersMannerPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
+			<radio id="PPModifiersMannerPosBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
 					<radioGroup id="PPModifiersMannerPosEitherOrBothRestrictedTable" show="swPPModifiersYesMannerEitherOrBoth">
 						<groupName dataItem="mannerRestricted" default="unrestricted">RPPModifiersMannerPosRestricted</groupName>
 						<prompt>Can all the manner adverbials appear on either side of the PP?</prompt>
@@ -86,7 +95,7 @@
 		<openParen/>
 		<whenRadio button="PPModifiersDegree"/>
 		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner "/>
+		<whenRadio button="PPModifiersDegreeAndManner"/>
 		<or/>
 		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
 		<or/>
@@ -99,18 +108,14 @@
 		<openParen/>
 		<whenRadio button="PPModifiersDegree"/>
 		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner "/>
+		<whenRadio button="PPModifiersDegreeAndManner"/>
 		<or/>
 		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
 		<or/>
 		<whenRadio button="PPModifiersAll"/>
 		<closeParen/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersDegreePosEitherSide"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreePosBothSides"/>
-		<closeParen/>
+		<and/> <not/>         <whenRadio button="PPModifiersDegreePosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersDegreePosAfter"/>
 	</showWhen>
 	<showWhen id="swPPModifiersYesDegreeRestricted">
 		<whenRadio button="PPModifiersYes"/>
@@ -118,20 +123,17 @@
 		<openParen/>
 		<whenRadio button="PPModifiersDegree"/>
 		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner "/>
+		<whenRadio button="PPModifiersDegreeAndManner"/>
 		<or/>
 		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
 		<or/>
 		<whenRadio button="PPModifiersAll"/>
 		<closeParen/>
 		<and/>
-		<openParen/> <openParen/>
-		<whenRadio button="PPModifiersDegreePosEitherSide"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreePosBothSides"/>
-		<closeParen/>
-<and/> <whenRadio button="PPModifiersDegreePosEitherOrBothRestricted"></whenRadio>
-<closeParen/>
+		 <not/>         <whenRadio button="PPModifiersDegreePosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersDegreePosAfter"/>
+		<and/>
+		<whenRadio button="PPModifiersDegreePosEitherOrBothRestricted"/>
 	</showWhen>
 	<showWhen id="swPPModifiersYesOrdinal">
 		<whenRadio button="PPModifiersYes"/>
@@ -158,14 +160,10 @@
 		<or/>
 		<whenRadio button="PPModifiersAll"/>
 		<closeParen/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersOrdinalPosEitherSide"/>
-		<or/>
-		<whenRadio button="PPModifiersOrdinalPosBothSides"/>
-		<closeParen/>
+			 <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosAfter"/>
 	</showWhen>
-   <showWhen id="swPPModifiersYesOrdinalRestricted">
+	<showWhen id="swPPModifiersYesOrdinalRestricted">
 		<whenRadio button="PPModifiersYes"/>
 		<and/>
 		<openParen/>
@@ -177,14 +175,10 @@
 		<or/>
 		<whenRadio button="PPModifiersAll"/>
 		<closeParen/>
+		<and/> <not/>         <whenRadio button="PPModifiersOrdinalPosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosAfter"/>
 		<and/>
-		<openParen/> <openParen/>
-		<whenRadio button="PPModifiersOrdinalPosEitherSide"/>
-		<or/>
-		<whenRadio button="PPModifiersOrdinalPosBothSides"/>
-		<closeParen/>
-<and/><whenRadio button="PPModifiersOrdinalPosEitherOrBothRestricted"></whenRadio>
-<closeParen/>
+		<whenRadio button="PPModifiersOrdinalPosEitherOrBothRestricted"/>
 	</showWhen>
 	<showWhen id="swPPModifiersYesManner">
 		<whenRadio button="PPModifiersYes"/>
@@ -192,7 +186,7 @@
 		<openParen/>
 		<whenRadio button="PPModifiersManner"/>
 		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner "/>
+		<whenRadio button="PPModifiersDegreeAndManner"/>
 		<or/>
 		<whenRadio button="PPModifiersMannerAndOrdinal"/>
 		<or/>
@@ -205,18 +199,14 @@
 		<openParen/>
 		<whenRadio button="PPModifiersManner"/>
 		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner "/>
+		<whenRadio button="PPModifiersDegreeAndManner"/>
 		<or/>
 		<whenRadio button="PPModifiersMannerAndOrdinal"/>
 		<or/>
 		<whenRadio button="PPModifiersAll"/>
 		<closeParen/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersMannerPosEitherSide"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerPosBothSides"/>
-		<closeParen/>
+		<and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
 	</showWhen>
 	<showWhen id="swPPModifiersYesMannerRestricted">
 		<whenRadio button="PPModifiersYes"/>
@@ -224,20 +214,15 @@
 		<openParen/>
 		<whenRadio button="PPModifiersManner"/>
 		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner "/>
+		<whenRadio button="PPModifiersDegreeAndManner"/>
 		<or/>
 		<whenRadio button="PPModifiersMannerAndOrdinal"/>
 		<or/>
 		<whenRadio button="PPModifiersAll"/>
 		<closeParen/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
 		<and/>
-		<openParen/> <openParen/>
-		<whenRadio button="PPModifiersMannerPosEitherSide"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerPosBothSides"/>
-		<closeParen/>
-<and/> <whenRadio button="PPModifiersMannerPosEitherOrBothRestricted"></whenRadio>
-<closeParen/>
+		<whenRadio button="PPModifiersMannerPosEitherOrBothRestricted"/>
 	</showWhen>
-
 </page>

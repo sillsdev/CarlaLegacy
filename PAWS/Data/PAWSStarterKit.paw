@@ -34,7 +34,7 @@
 		<example/>
 		<adjectiveCategory/>
 	</adjp>
-	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" caseDefault="no" degree="no" degreePos="unknown" degreeEither="unrestricted" artAndDem="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="no" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown" possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpBothRequiredPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpCaseAffixType="suffix" adjpAgree="no" comp="no" compHead="right" compHeadPPPos="unknown">
+	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" caseDefault="no" degree="no" degreePos="unknown" degreeEither="unrestricted" artAndDem="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="no" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown" possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpCaseAffixType="suffix" adjpAgree="no" comp="no" compHead="right" compHeadPPPos="unknown">
 		<example/>
 		<embeddedExample/>
 		<ppExample/>
@@ -115,7 +115,10 @@
 		<ipContents8 checkedOff="no"/>
 		<ipContents9 checkedOff="no"/>
 	</ip>
-	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNPos="unknown" mainYNEitherRestricted="unrestricted"  mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContBefore="no" mainContBeforeAux="no" mainContSame="yes" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContRequired="no" mainContAux="no" embCont="no" embContWord="yes" embContPosAsEmbYNPos="no" embContPos="unknown" embContEitherRestricted="unrestricted" embContRequired="no" embContAux="no">
+	<comp checkedOff="no">
+		<example/>
+	</comp>
+	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContBefore="no" mainContBeforeAux="no" mainContSame="yes" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContRequired="no" mainContAux="no" embCont="no" embContWord="yes" embContPosAsEmbYNPos="no" embContPos="unknown" embContEitherRestricted="unrestricted" embContRequired="no" embContAux="no">
 		<example/>
 		<embYNExample/>
 		<contentExample/>
@@ -123,22 +126,22 @@
 		<whWords/>
 		<whWordGlosses/>
 	</q>
-	<focus checkedOff="no">
-		<example/>
-	</focus>
-	<neg checkedOff="no">
-		<example/>
-	</neg>
-	<comp checkedOff="no">
-		<example/>
-	</comp>
-	<advcl checkedOff="no">
-		<example/>
-	</advcl>
 	<relcl checkedOff="no">
 		<example/>
 	</relcl>
+	<advcl checkedOff="no">
+		<example/>
+	</advcl>
+	<neg checkedOff="no">
+		<example/>
+	</neg>
 	<coord checkedOff="no">
 		<example/>
 	</coord>
+	<focus checkedOff="no">
+		<example/>
+	</focus>
+	<excl checkedOff="no">
+		<example/>
+	</excl>
 </paws>

@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPArtDem">
 	<title level="2">Nominal Phrase - Articles and Demonstratives: Examples and Case</title>
-	<introduction>Now consider articles and demonstratives.  In English, the articles are <example>a</example>, <example>an</example>, and <example>the</example>.  English demostratives include <example>this</example>, <example>that</example>, <example>these</example>, and <example>those</example>.  Some simple examples are:</introduction>
+	<introduction>Now consider articles and demonstratives.  In English, the articles are <example>a</example>, <example>an</example>, and <example>the</example>.  English demonstratives include <example>this</example>, <example>that</example>, <example>these</example>, and <example>those</example>.  Some simple examples are:</introduction>
 	<EnglishExample>
 		<exItem label="1.">a book.</exItem>
 		<exItem label="2.">an apple.</exItem>
@@ -14,107 +14,111 @@
 	</EnglishExample>
 	<introduction>In English, articles and demonstratives do not co-occur in the same nominal phrase, and both occur before the noun.  They may be able to co-occur in your language, or they may occur in different positions with respect to the noun.  Therefore, we will give them different syntactic categories.  Some languages only have one set, either articles or demonstratives.  A few languages may not have either type expressed as separate words.</introduction>
 	<form section="np">
-  <instruction>Key some examples with both an article and a demonstrative in the box below, if grammatical, as well as some with each type alone.</instruction>
+		<instruction>Key some examples with both an article and a demonstrative in the box below, if grammatical, as well as some with each type alone.</instruction>
 		<prompt>Key your examples here:</prompt>
 		<textBox id="NPExample" dataItem="example"/>
 		<br/>
-		  <radioGroup>
+		<radioGroup>
 			<groupName dataItem="artAndDem" default="no">RNPArtAndDem</groupName>
 			<prompt>Does your language have articles and demonstratives realized as separate words?</prompt>
 			<radio id="NPArtAndDemNo" dataValue="no">No, neither one</radio>
 			<radio id="NPArtAndDemArt" dataValue="article">Only articles, no demonstratives</radio>
 			<radio id="NPArtAndDemDem" dataValue="demonstrative">Only demonstratives, no articles</radio>
 			<radio id="NPArtAndDemBoth" dataValue="both">Yes, both articles and demonstratives</radio>
-</radioGroup>
-<br/>
+		</radioGroup>
+		<br/>
 		<radioGroup id="NPArtCaseTable" show="swNPArtAndOrDem">
 			<groupName dataItem="artCase" default="no">RArtCase</groupName>
-			<prompt>Does your language have different forms for<span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt"> articles</span>
-					<span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives </span> based on case?</prompt>
+			<prompt>Does your language have different forms for <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">articles</span>
+				<span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span>
+				<span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives</span>  based on case?</prompt>
 			<radio id="NPArtCaseNo" dataValue="no">No</radio>
 			<radio id="NPArtCaseYes" dataValue="yes">Yes</radio>
 		</radioGroup>
 		<instruction id="NPArtCaseNomAccInstruction" show="swNPCaseNom">Since your language has a nominative-accusative case system, in the lexicon:
 <ul>
-				<li>Mark the<span id="NPArtOnlyCaseNomSpan" show="swNPArtAndDemArt"> articles</span>
+				<li>Mark the <span id="NPArtOnlyCaseNomSpan" show="swNPArtAndDemArt">articles</span>
 					<span id="NPDemOnlyCaseNomSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemCaseNomSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that  go with subjects with the feature <feature>nominative</feature> and those that go with direct objects with the feature <feature>accusative</feature>.</li>
+					<span id="NPArtAndDemCaseNomSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that  go with subjects with the feature <feature>nominative</feature> and those that go with direct objects with the feature <feature>accusative</feature>.</li>
 				<li>If you have a set for possessors, add the feature <feature>genitive</feature> to those entries.</li>
-				<li>If a particular<span id="NPArtOnlyCaseGenSpan" show="swNPArtAndDemArt"> article</span>
+				<li>If a particular <span id="NPArtOnlyCaseGenSpan" show="swNPArtAndDemArt">article</span>
 					<span id="NPDemOnlyCaseGenSpan" show="swNPArtAndDemDem">demonstrative</span>
-					<span id="NPArtAndDemCaseGenSpan" show="swNPArtAndDemBoth">article or demonstrative </span>can show up in any position, do not add any feature.</li>
-				<li>If a particular<span id="NPArtOnlyCaseNomGenSpan" show="swNPArtAndDemArt"> article</span>
+					<span id="NPArtAndDemCaseGenSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can show up in any position, do not add any feature.</li>
+				<li>If a particular <span id="NPArtOnlyCaseNomGenSpan" show="swNPArtAndDemArt">article</span>
 					<span id="NPDemOnlyCaseNomGenSpan" show="swNPArtAndDemDem">demonstrative</span>
-					<span id="NPArtAndDemCaseNomGenSpan" show="swNPArtAndDemBoth">article or demonstrative </span>can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <feature>nominative.or.genitive</feature>.</li>
-				<li>If a particular<span id="NPArtOnlyCaseNomAccSpan" show="swNPArtAndDemArt"> article</span>
+					<span id="NPArtAndDemCaseNomGenSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <feature>nominative.or.genitive</feature>.</li>
+				<li>If a particular <span id="NPArtOnlyCaseNomAccSpan" show="swNPArtAndDemArt">article</span>
 					<span id="NPDemOnlyCaseNomAccSpan" show="swNPArtAndDemDem">demonstrative</span>
-					<span id="NPArtAndDemCaseNomAccSpan" show="swNPArtAndDemBoth">article or demonstrative </span>can occur as a subject or as an object but not as a possessor, add the feature <feature>nominative.or.accusative</feature>.</li>
-				<li>If a particular<span id="NPArtOnlyCaseAccGenSpan" show="swNPArtAndDemArt"> article</span>
+					<span id="NPArtAndDemCaseNomAccSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can occur as a subject or as an object but not as a possessor, add the feature <feature>nominative.or.accusative</feature>.</li>
+				<li>If a particular <span id="NPArtOnlyCaseAccGenSpan" show="swNPArtAndDemArt">article</span>
 					<span id="NPDemOnlyCaseAccGenSpan" show="swNPArtAndDemDem">demonstrative</span>
-					<span id="NPArtAndDemCaseAccGenSpan" show="swNPArtAndDemBoth">article or demonstrative </span>can occur as an object or as a possessor, but not as a subject, add the feature <feature>accusative.or.genitive</feature>.</li>
+					<span id="NPArtAndDemCaseAccGenSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can occur as an object or as a possessor, but not as a subject, add the feature <feature>accusative.or.genitive</feature>.</li>
 			</ul>
 		</instruction>
 		<instruction id="NPArtCaseErgInstruction" show="swNPCaseErg">Since your language has an ergative-absolutive case system, in the lexicon:
 <ul>
-				<li>Mark the<span id="NPArtOnlyCaseErgSpan" show="swNPArtAndDemArt"> articles</span>
+				<li>Mark the <span id="NPArtOnlyCaseErgSpan" show="swNPArtAndDemArt">articles</span>
 					<span id="NPDemOnlyCaseErgSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemCaseErgSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that  go with subjects of transitive verbs with the feature <feature>ergative</feature> and those that go with direct objects and subjects of intransitive verbs with the feature <feature>absolutive</feature>.</li>
+					<span id="NPArtAndDemCaseErgSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that  go with subjects of transitive verbs with the feature <feature>ergative</feature> and those that go with direct objects and subjects of intransitive verbs with the feature <feature>absolutive</feature>.</li>
 				<li>If you have a distinct set for possessors, add the feature <feature>genitive</feature> to those entries, but if either the ergative or absolutive set is used for possessors as well, do not add any additional feature.</li>
-				<li>If a particular<span id="NPArtOnlyCaseErg2Span" show="swNPArtAndDemArt"> article</span>
+				<li>If a particular <span id="NPArtOnlyCaseErg2Span" show="swNPArtAndDemArt">article</span>
 					<span id="NPDemOnlyCaseErg2Span" show="swNPArtAndDemDem">demonstrative</span>
-					<span id="NPArtAndDemCaseErg2Span" show="swNPArtAndDemBoth">article or demonstrative </span>can show up in any position, do not add any feature.</li>
+					<span id="NPArtAndDemCaseErg2Span" show="swNPArtAndDemBoth">article or demonstrative</span> can show up in any position, do not add any feature.</li>
 			</ul>
 		</instruction>
 		<instruction id="NPArtCaseSplitInstruction" show="swNPCaseSplit">Since your language has a split ergativity case system, in the lexicon:
 <ul>
-				<li>Mark the<span id="NPArtOnlyCaseSplitNomSpan" show="swNPArtAndDemArt"> articles</span>
+				<li>Mark the <span id="NPArtOnlyCaseSplitNomSpan" show="swNPArtAndDemArt">articles</span>
 					<span id="NPDemOnlyCaseSplitNomSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemCaseSplitNomSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that  occur with nominative nouns with the feature <feature>nominative</feature> and those  that occur with accusative nouns with the feature <feature>accusative</feature>.  </li>
-				<li> Mark the<span id="NPArtOnlyCaseSplitErgSpan" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPArtAndDemCaseSplitNomSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that occur with nominative nouns with the feature <feature>nominative</feature> and those  that occur with accusative nouns with the feature <feature>accusative</feature>.  </li>
+				<li> Mark the <span id="NPArtOnlyCaseSplitErgSpan" show="swNPArtAndDemArt">articles</span>
 					<span id="NPDemOnlyCaseSplitErgSpan" show="swNPArtAndDemDem">demonstratives</span>
-					<span id="NPArtAndDemCaseSplitErgSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that  occur with ergative nouns with the feature <feature>ergative</feature> and those that occur with absolutive nouns with the feature <feature>absolutive</feature>.</li>
+					<span id="NPArtAndDemCaseSplitErgSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that occur with ergative nouns with the feature <feature>ergative</feature> and those that occur with absolutive nouns with the feature <feature>absolutive</feature>.</li>
 				<li>If you have a distinct set for possessors, add the feature <feature>genitive</feature> to those entries.</li>
-				<li>If a particular<span id="NPArtOnlyCaseSplitSpan" show="swNPArtAndDemArt"> article</span>
+				<li>If a particular <span id="NPArtOnlyCaseSplitSpan" show="swNPArtAndDemArt">article</span>
 					<span id="NPDemOnlyCaseSplitSpan" show="swNPArtAndDemDem">demonstrative</span>
-					<span id="NPArtAndDemCaseSplitSpan" show="swNPArtAndDemBoth">article or demonstrative </span>can show up in any position, do not add any feature.</li>
+					<span id="NPArtAndDemCaseSplitSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can show up in any position, do not add any feature.</li>
 			</ul>
 		</instruction>
-<br/>
-	   <buttons>
+		<br/>
+		<buttons>
 			<button id="NPArtDemBack" value="Back" goto="NPContents.htm"/>
 			<button id="NPArtDemNext" value="Next" goto="NPArtPosition.htm"/>
 		</buttons>
 	</form>
-<showWhen id="swNPArtAndOrDem">
-	<not/> <whenRadio button="NPArtAndDemNo"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemArt">
-	<whenRadio button="NPArtAndDemArt"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemDem">
-	<whenRadio button="NPArtAndDemDem"></whenRadio>
-</showWhen>
-<showWhen id="swNPArtAndDemBoth">
-	<whenRadio button="NPArtAndDemBoth"></whenRadio>
-</showWhen>
+	<showWhen id="swNPArtAndOrDem">
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArt">
+		<whenRadio button="NPArtAndDemArt"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDem">
+		<whenRadio button="NPArtAndDemDem"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBoth">
+		<whenRadio button="NPArtAndDemBoth"/>
+	</showWhen>
 	<showWhen id="swNPCaseNom">
-	 <not/> <whenRadio button="NPArtAndDemNo"></whenRadio>
-<and/>
-	  <whenRadio button="NPArtCaseYes"/>
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+		<and/>
+		<whenRadio button="NPArtCaseYes"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<showWhen id="swNPCaseErg">
-	<not/> <whenRadio button="NPArtAndDemNo"></whenRadio>
-<and/>
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+		<and/>
 		<whenRadio button="NPArtCaseYes"/>
 		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPCaseSplit">
-	<not/> <whenRadio button="NPArtAndDemNo"></whenRadio>
-<and/>
+		<not/>
+		<whenRadio button="NPArtAndDemNo"/>
+		<and/>
 		<whenRadio button="NPArtCaseYes"/>
 		<and/>
 		<whenValue element="np" attr="case" value="split"/>

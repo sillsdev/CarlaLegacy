@@ -3,16 +3,24 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPDegree">
 	<title level="2">Adverbs and AdvP - Degree Words</title>
-<instruction>Look again at the examples you have keyed for the various types of adverb phrases, repeated here, before answering the following question(s).</instruction>
+	<instruction>Look again at the examples you have keyed for the various types of adverb phrases, repeated here, before answering the following question(s).</instruction>
 	<form section="advp">
-	  <prompt>Temporal examples:</prompt>
-		<textBox id="AdvPExample" dataItem="temporalExample"/> <br/> <br/>
+		<prompt>Temporal examples:</prompt>
+		<textBox id="AdvPExample" dataItem="temporalExample"/>
+		<br/>
+		<br/>
 		<prompt>Locative examples:</prompt>
-		<textBox id="AdvPLocExample" dataItem="locativeExample"/><br/> <br/>
-	  <prompt>Manner examples:</prompt>
-		<textBox id="AdvPMannerExample" dataItem="mannerExample"/> <br/> <br/>
+		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
+		<br/>
+		<br/>
+		<prompt>Manner examples:</prompt>
+		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
+		<br/>
+		<br/>
 		<prompt>Reason examples:</prompt>
-		<textBox id="AdvPReasonExample" dataItem="reasonExample"/><br/> <br/>
+		<textBox id="AdvPReasonExample" dataItem="reasonExample"/>
+		<br/>
+		<br/>
 		<radioGroup>
 			<groupName dataItem="degree" default="no">RDegreeYN</groupName>
 			<prompt>Does your language have degree words (written as separate syntactic words) which can modify any of the adverbs?</prompt>
@@ -24,8 +32,11 @@
 				<radio id="AdvPDegreeBefore" checked="yes" dataValue="before">Before the adverb</radio>
 				<radio id="AdvPDegreeAfter" checked="yes" dataValue="after">After the adverb</radio>
 				<radio id="AdvPDegreeEitherSide" checked="yes" dataValue="either">On either side of the adverb, but not both sides at the same time</radio>
-				<radio id="AdvPDegreeBothSides" checked="yes" dataValue="both">On either side of the adverb, or both sides at the same time</radio>
-				<radioGroup id="AdvPDegreeEitherSideTable" show="swAdvPDegreeEitherorBoth">
+				<radio id="AdvPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the adverb, or both sides at the same time</radio>
+			 <radio id="AdvPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adverb, or both sides at the same time</radio>
+			<radio id="AdvPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adverb, or both sides at the same time</radio>
+			<radio id="AdvPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+			   <radioGroup id="AdvPDegreeEitherSideTable" show="swAdvPDegreeEitherorBoth">
 					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
 					<prompt>Can all the degree words appear on either side of the adverb?</prompt>
 					<radio id="AdvPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
@@ -78,23 +89,15 @@ either side.</span>
 	</showWhen>
 	<showWhen id="swAdvPDegreeEitherorBoth">
 		<whenRadio button="AdvPDegreeYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="AdvPDegreeEitherSide"/>
-		<or/>
-		<whenRadio button="AdvPDegreeBothSides"/>
-		<closeParen/>
-	</showWhen>
+		<and/> <not/>   <whenRadio button="AdvPDegreeBefore"/>
+  <and/> <not/>        <whenRadio button="AdvPDegreeAfter"/>
+		</showWhen>
 	<showWhen id="swAdvPDegreeEitherRestricted">
 		<whenRadio button="AdvPDegreeYes"/>
 		<and/>
 		<whenRadio button="AdvPDegreeEitherRestricted"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="AdvPDegreeEitherSide"/>
-		<or/>
-		<whenRadio button="AdvPDegreeBothSides"/>
-		<closeParen/>
+	  <and/> <not/>   <whenRadio button="AdvPDegreeBefore"/>
+  <and/> <not/>        <whenRadio button="AdvPDegreeAfter"/>
 	</showWhen>
 	<showWhen id="swAdvPSetUnrestricted">
 		<whenRadio button="AdvPDegreeYes"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XML Spy v3.0.7 (http://www.xmlspy.com) by Andy Black (SIL International) -->
 <!-- PAWS Starter Kit DTD -->
-<!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, prop, pron, pp, ip, q, focus, neg, comp, advcl, relcl, coord)>
+<!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, prop, pron, pp, ip, comp, q, relcl, advcl, neg, coord, focus, excl)>
 <!-- leftOffAt is the html page where the user last performed a save operation -->
 <!ELEMENT leftOffAt (#PCDATA)>
 <!-- Language has the language name, abbreviation and font information.  It
@@ -43,12 +43,12 @@
 <!ATTLIST qp
 	checkedOff (yes | no) "no"
 	degree (yes | no) "yes"
-	degreePos (before | after | either | both | unknown) "unknown"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	degreeEither (unrestricted | restricted) "unrestricted"
 	cardinalHeadPos (before | after) "after"
 	ordinalFormation (affix | independent) "independent"
 	lastNextFormation (affix | independent) "affix"
-	ordinalPos (before | after | either | both | unknown) "unknown"
+	ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	ordinalEither (unrestricted | restricted) "unrestricted"
 >
 <!ELEMENT example (#PCDATA)>
@@ -70,7 +70,7 @@
 <!ATTLIST advp
 	checkedOff (yes | no) "no"
 	degree (yes | no) "no"
-	degreePos (before | after | either | both | unknown) "unknown"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	degreeEither (unrestricted | restricted) "unrestricted"
 	degreeSet (unrestricted | exceptReason | restricted) "unrestricted"
 >
@@ -96,9 +96,9 @@
 <!ATTLIST adjp
 	checkedOff (yes | no) "no"
 	modifiers (yesDegree | yesManner | no) "no"
-	degreePos (before | after | either | both | unknown) "unknown"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	degreeEither (unrestricted | restricted) "unrestricted"
-	mannerPos (before | after | either | both | unknown) "unknown"
+	mannerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	mannerEither (unrestricted | restricted) "unrestricted"
 >
 <!ELEMENT adjectiveCategory (#PCDATA)>
@@ -142,7 +142,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	(possNounAgrKeyed) asks if noun agreement features were keyed in Art/Dem section.
 	 If the phrase has a quantifier phrase (at the N'' level), then it has a
 	   position with respect to the noun (qpPos) which may be before, after, or on either side
-	 or both sides at the same time.  If both sides we need to know which is required (qpBothRequiredPos)
+	 or both sides at the same time.
 	 If either or both sides, they may appear (qpEither) unrestricted or restricted.  Numbers only may
 	 have a reqtricted position (qpEitherRestrictedNumPos).
 	QPs may or may not agree with the noun they modify (qpAgree).
@@ -163,7 +163,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	case (none | nominative | ergative | split) "nominative"
 	caseDefault (no | nominative) "no"
 	degree (yes | no) "no"
-	degreePos (before | after | either | both | unknown) "unknown"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	degreeEither (unrestricted | restricted) "unrestricted"
 	artAndDem (no | article | demonstrative | both) "no"
 	artCase (yes | no) "no"
@@ -200,8 +200,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	possAlienable (no | yes) "no"
 	possAgr (yes | no) "no"
 	possNounAgrKeyed (yes | no) "yes"
-	qpPos (before | after | either | both | unknown) "unknown"
-	qpBothRequiredPos (before | after | both | unknown) "unknown"
+	qpPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	qpEither (unrestricted | restricted) "unrestricted"
 	qpEitherRestrictedNumPos (before | after | no | unknown) "unknown"
 	qpAgree (no | yes) "no"
@@ -334,11 +333,11 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	checkedOff (yes | no) "no"
 	modifiers (no | yes) "no"
 	modifierType (degree | ordinal | manner | degreeAndOrdinal | degreeAndManner | mannerAndOrdinal | all) "degree"
-	degreePos (before | after | either | both | unknown) "unknown"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	degreeRestricted (unrestricted | restricted) "unrestricted"
-	ordinalPos (before | after | either | both | unknown) "unknown"
+	ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	ordinalRestricted (unrestricted | restricted) "unrestricted"
-	mannerPos (before | after | either | both | unknown) "unknown"
+	mannerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	mannerRestricted (unrestricted | restricted) "unrestricted"
 	pPos (before | after | both | unknown) "unknown"
 	pType (word | clitic | both) "word"
@@ -428,29 +427,38 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ATTLIST ipContents9
 	checkedOff (yes | no) "no"
 >
+<!-- Complement clauses have examples.
+-->
+<!ELEMENT comp (example)>
+<!ATTLIST comp
+	checkedOff (yes | no) "no"
+>
 <!-- Questions have main clause Yes/No examples (example),
 	  embedded Yes/No examples (embYNExample),
 	  main clause content examples (contentExample),
 	  embedded content examples (embContentExample), and
 	  a list of wh-words (whWords) and their glosses (whWordGlosses).
-	 Main clause Yes/No questions may have particles, words, or
-	  complementizers (mainYN).  These may be written as separate words
+	 Main clause Yes/No questions may have complementizers (mainYN).
+	 These may be written as separate words
 	  (mainYNWord).  These have a position with respect to the rest of the
 	  question (mainYNPos).  If they can appear on either or both sides, then all of
-	  them may do so (mainYNEitherRestricted)
+	  them may do so or not (mainYNEitherRestricted).  If a clitic questions of pre/post clitic
+	 (mainYNCliticPos) and type are asked (mainYNCliticAttaches).
 	  If only an Aux is fronted, then it has a position (mainYNAuxPos).
-	 Embedded Yes/No questions may have particles, words, or
+	 Embedded Yes/No questions may have
 	  complementizers (embYN).  These may be written as separate words
 	  (embYNWord).  These have a position with respect to the rest of the
 	  question (embYNPos).  If they can appear on either side, then all of
-	  them may do so (embYNEither) and they may appear on both sides
-	  (embYNBoth).  If initial is required, then one may also be final
-	  (embYNBothInitialFinal).  If final is required, then one may also
-	  be initial (embYNBothFinalInitial).  If only an Aux is fronted, then it
+	  them may do so (embYNEitherRestricted) or not.  If a clitic questions of pre/post clitic
+	 (embYNCliticPos) and type are asked (embYNCliticAttaches).
+	  If only an Aux is fronted, then it
 	  has a position (embYNAuxPos).
+	 Within interrogative phrases for languages which allow modifiers on either side,
+	the position of the wh demonstrative (whDemPos) article (whArtPos) or
+	 degree word (whDegAdjPos), (whDegQPos) is needed
 	 Content questions may require interrogative phrases to be fronted
 	  (contFront).
-	 Main content questions may have particles, words, or
+	 Main content questions may have
 	  complementizers (mainCont).  These may be written as separate words
 	  (mainContWord).  They may occur before a fronted interrogative phrase
 	  (mainContBefore).  An Aux may occur after the fronted phrase
@@ -480,14 +488,22 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	checkedOff (yes | no) "no"
 	mainYN (yes | noAux | no) "no"
 	mainYNWord (no | yes) "yes"
-	mainYNPos (before | after | either | both | unknown) "unknown"
+	mainYNCliticPos (before | after | both | unknown) "unknown"
+	mainYNCliticAttaches (edge | head) "edge"
+	mainYNPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	mainYNEitherRestricted (unrestricted | restricted) "unrestricted"
 	mainYNAuxPos (before | after | unknown) "unknown"
 	embYN (yes | noAux | no) "no"
 	embYNWord (no | yes) "yes"
-	embYNPos (before | after | either | both | unknown) "unknown"
+	embYNCliticPos (before | after | both | unknown) "unknown"
+	embYNCliticAttaches (edge | head) "edge"
+	embYNPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	embYNEitherRestricted (unrestricted | restricted) "unrestricted"
 	embYNAuxPos (before | after | unknown) "unknown"
+	whDemPos (before | after | agree | unknown) "unknown"
+	whArtPos (before | after | agree | unknown) "unknown"
+	whDegAdjPos (before | after | agree | unknown) "unknown"
+	whDegQPos (before | after | agree | unknown) "unknown"
 	contFront (no | yes | unknown) "unknown"
 	mainCont (yesSame | yesDiff | noAux | no) "no"
 	mainContWord (no | yes) "yes"
@@ -511,22 +527,10 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT embContentExample (#PCDATA)>
 <!ELEMENT whWords (#PCDATA)>
 <!ELEMENT whWordGlosses (#PCDATA)>
-<!-- Focus/topic constuctions have examples.
+<!-- Relative clauses have examples.
 -->
-<!ELEMENT focus (example)>
-<!ATTLIST focus
-	checkedOff (yes | no) "no"
->
-<!-- Negative Constructions have examples.
--->
-<!ELEMENT neg (example)>
-<!ATTLIST neg
-	checkedOff (yes | no) "no"
->
-<!-- Complement clauses have examples.
--->
-<!ELEMENT comp (example)>
-<!ATTLIST comp
+<!ELEMENT relcl (example)>
+<!ATTLIST relcl
 	checkedOff (yes | no) "no"
 >
 <!-- Adverbial clauses have examples.
@@ -535,15 +539,27 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ATTLIST advcl
 	checkedOff (yes | no) "no"
 >
-<!-- Relative clauses have examples.
+<!-- Negative Constructions have examples.
 -->
-<!ELEMENT relcl (example)>
-<!ATTLIST relcl
+<!ELEMENT neg (example)>
+<!ATTLIST neg
 	checkedOff (yes | no) "no"
 >
 <!-- Coordinate structures have examples.
 -->
 <!ELEMENT coord (example)>
 <!ATTLIST coord
+	checkedOff (yes | no) "no"
+>
+<!-- Focus/topic constuctions have examples.
+-->
+<!ELEMENT focus (example)>
+<!ATTLIST focus
+	checkedOff (yes | no) "no"
+>
+<!-- Exclamations have examples.
+-->
+<!ELEMENT excl (example)>
+<!ATTLIST excl
 	checkedOff (yes | no) "no"
 >

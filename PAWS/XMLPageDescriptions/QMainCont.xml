@@ -2,9 +2,21 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QMainCont">
-	<title level="2">Questions - Main Clause Content Questions - Part 2</title>
-	<introduction>Depending on the basic word order of your language, questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.</introduction>
+	<title level="2">Questions - Main Clause Content Questions</title>
+<introduction>Depending on the basic word order of your language, questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.</introduction>
 	<form section="q">
+		<EnglishExample>
+  <exItem>Some examples of English main clause content questions are:</exItem>
+			<exItem label="1.">Which boy hit the ball?</exItem>
+			<exItem label="2.">Who hit the ball?</exItem>
+			<exItem label="3.">Who might have hit the ball?</exItem>
+			<exItem label="4.">What did the boy hit?</exItem>
+			<exItem label="5.">Where is the leader?</exItem>
+			<exItem label="6.">When will she come?</exItem>
+		</EnglishExample>
+		<prompt>Key similar examples from your language here:</prompt>
+		<textBox id="QContExample" dataItem="contentExample" cols="50"/>
+<br/>
 		<radioGroup>
 			<groupName dataItem="contFront" default="unknown">RQContFront</groupName>
 			<prompt>For content questions in your language, is an interrogative phrase required to be fronted?</prompt>
@@ -39,7 +51,7 @@
 			<radioGroup id="QMainContSameTable">
 				<groupName dataItem="mainContSame" default="no">RQMainContSame</groupName>
 				<prompt>
-					<span id="QMainContSameFronting">Now considering only the (normal) questions markers which occur after any fronted interrogative phrase, d</span>
+					<span id="QMainContSameFronting">Now considering only the (normal) question markers which occur after any fronted interrogative phrase, d</span>
 					<span id="QMainContSameNoFronting">D</span>o the question markers occur in the same position(s) in main clause content questions as in main clause Yes/No questions? </prompt>
 				<radio id="QMainContSameYes" dataValue="yes">Yes</radio>
 				<radio id="QMainContSameNo" dataValue="no">No, the positions are different or there are no Yes/No question markers in main clauses</radio>
@@ -56,26 +68,26 @@
 					<radio id="QMainContEitherYes" dataValue="yes">Yes, there is no restriction</radio>
 					<radio id="QMainContEitherNo" dataValue="no">No, there are separate sets for each side</radio>
 				</radioGroup>
-			<radioGroup id="QMainContBothTable">
-				<groupName dataItem="mainContBoth" default="no">RQMainContBoth</groupName>
-				<prompt>Can the question markers appear on both sides in the question?</prompt>
-				<radio id="QMainContBothNo" dataValue="no">No, only on one side or the other</radio>
-				<radio id="QMainContBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
-				<radio id="QMainContBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
-				<radioGroup id="QMainContBothInitialFinalTable">
-					<groupName dataItem="mainContBothInitialFinal" default="no">RQMainContBothInitialFinal</groupName>
-					<prompt>May a different question marker also occur only in final position?</prompt>
-					<radio id="QMainContBothInitialFinalNo" dataValue="no">No</radio>
-					<radio id="QMainContBothInitialFinalYes" dataValue="yes">Yes</radio>
+				<radioGroup id="QMainContBothTable">
+					<groupName dataItem="mainContBoth" default="no">RQMainContBoth</groupName>
+					<prompt>Can the question markers appear on both sides in the question?</prompt>
+					<radio id="QMainContBothNo" dataValue="no">No, only on one side or the other</radio>
+					<radio id="QMainContBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
+					<radio id="QMainContBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
+					<radioGroup id="QMainContBothInitialFinalTable">
+						<groupName dataItem="mainContBothInitialFinal" default="no">RQMainContBothInitialFinal</groupName>
+						<prompt>May a different question marker also occur only in final position?</prompt>
+						<radio id="QMainContBothInitialFinalNo" dataValue="no">No</radio>
+						<radio id="QMainContBothInitialFinalYes" dataValue="yes">Yes</radio>
+					</radioGroup>
+					<radio id="QMainContBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
+					<radioGroup id="QMainContBothFinalInitialTable">
+						<groupName dataItem="mainContBothFinalInitial" default="no">RQMainContBothFinalInitial</groupName>
+						<prompt>May a different question marker also occur only in initial position?</prompt>
+						<radio id="QMainContBothFinalInitialNo" dataValue="no">No</radio>
+						<radio id="QMainContBothFinalInitialYes" dataValue="yes">Yes</radio>
+					</radioGroup>
 				</radioGroup>
-				<radio id="QMainContBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
-				<radioGroup id="QMainContBothFinalInitialTable">
-					<groupName dataItem="mainContBothFinalInitial" default="no">RQMainContBothFinalInitial</groupName>
-					<prompt>May a different question marker also occur only in initial position?</prompt>
-					<radio id="QMainContBothFinalInitialNo" dataValue="no">No</radio>
-					<radio id="QMainContBothFinalInitialYes" dataValue="yes">Yes</radio>
-				</radioGroup>
-			</radioGroup>
 			</radioGroup>
 			<radioGroup id="QMainContRequiredTable">
 				<groupName dataItem="mainContRequired" default="no">RQMainContRequired</groupName>

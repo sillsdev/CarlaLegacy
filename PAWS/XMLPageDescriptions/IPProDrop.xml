@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPProDrop">
 	<title level="2">Basic, Single-Clause Sentences - <i>Pro</i>-Drop</title>
-	<introduction>Some languages are <i>pro</i>-drop languages which allow a subject and/or object to be missing.  For example, in Spanish the normal way to say "I buy a book" is <example>Compro un libro</example> rather than with the overt subject pronoun included: <example>Yo compro un libro</example>.  This is not allowed in English (except for imperatives).  <br/>
+	<introduction>Some languages are <i>pro</i>-drop languages which allow a subject and/or object to be missing.  For example, in Spanish the normal way to say "I buy a book" is <example>Compro un libro</example> rather than with the overt subject pronoun included: <example>Yo compro un libro</example>.  This is not allowed in English, except for imperatives.  (The missing subject of infinitives in embedded complements will be considered in <section number="10">Complement Clauses</section>.)  <br/>
 		<br/>
 Some languages are not really <i>pro</i>-drop languages, but at least some of the pronouns are clitics which can attach to the verb.  When this happens, there is no pronoun or nominal phrase in subject position, so the sentence looks the same as in a true <i>pro</i>-drop language.</introduction>
 	<form section="ip">
@@ -13,9 +13,9 @@ Some languages are not really <i>pro</i>-drop languages, but at least some of th
 			<groupName dataItem="proDrop" default="no">RIPProDrop</groupName>
 			<prompt>
 				<br/>Does your language allow <i>pro</i>-drop of the subject?</prompt>
-				<radio id="IPProDropNoImp" dataValue="noImp">No, like English, the subject must be overt except in imperatives</radio>
+			<radio id="IPProDropNoImp" dataValue="noImp">No, like English, the subject must be overt except in imperatives</radio>
 			<radio id="IPProDropNo" dataValue="no">No, the subject must be overt even in imperatives</radio>
-		<radio id="IPProDropYes" dataValue="yes">Yes, <i>pro</i>-drop of the subject is allowed</radio>
+			<radio id="IPProDropYes" dataValue="yes">Yes, <i>pro</i>-drop of the subject is allowed</radio>
 			<radio id="IPProDropYesClitic" dataValue="yesClitic">The subject may look like it is missing due to pronominal clitics attached to the verb</radio>
 		</radioGroup>
 		<instruction id="IPProDropImpInstruction">In the lexicon, mark any affixes that indicate imperative and any inherently imperative verbs with the feature <feature>imperative</feature>.</instruction>

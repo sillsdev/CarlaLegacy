@@ -16,43 +16,38 @@
 				<radio id="NPDegreeBefore" checked="yes" dataValue="before">Before it</radio>
 				<radio id="NPDegreeAfter" checked="yes" dataValue="after">After it</radio>
 				<radio id="NPDegreeEitherSide" checked="yes" dataValue="either">On either side, but not both sides at the same time</radio>
-				<radio id="NPDegreeBothSides" checked="yes" dataValue="both">On either, or both sides at the same time</radio>
-				<radioGroup id="NPDegreeEitherSideTable" show="swNPDegreeEitherorBoth">
+				<radio id="NPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrboth">On either side, or both sides at the same time</radio>
+			 <radio id="NPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
+			<radio id="NPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
+			<radio id="NPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+			   <radioGroup id="NPDegreeEitherSideTable" show="swNPDegreeEitherorBoth">
 					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
 					<prompt>Can all the degree words appear on either side of the rest of the nominal phrase?</prompt>
 					<radio id="NPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
 					<radio id="NPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
 				</radioGroup>
 			</radioGroup>
-</radioGroup>
+		</radioGroup>
 		<instruction id="NPDegreeEitherRestrictedInstruction" show="swNPDegreeEitherRestricted">In the lexicon, mark those which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>
-<br/>
+		<br/>
 		<buttons>
 			<button id="NPDegreeBack" value="Back" goto="NPContents.htm"/>
 			<button id="NPDegreeNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
-   <showWhen id="swNPDegreeYes">
+	<showWhen id="swNPDegreeYes">
 		<whenRadio button="NPDegreeYes"/>
 	</showWhen>
 	<showWhen id="swNPDegreeEitherorBoth">
 		<whenRadio button="NPDegreeYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="NPDegreeEitherSide"/>
-		<or/>
-		<whenRadio button="NPDegreeBothSides"/>
-		<closeParen/>
+		<and/> <not/>        <whenRadio button="NPDegreeBefore"/>
+	  <and/> <not/>         <whenRadio button="NPDegreeAfter"/>
 	</showWhen>
 	<showWhen id="swNPDegreeEitherRestricted">
 		<whenRadio button="NPDegreeYes"/>
 		<and/>
 		<whenRadio button="NPDegreeEitherRestricted"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="NPDegreeEitherSide"/>
-		<or/>
-		<whenRadio button="NPDegreeBothSides"/>
-		<closeParen/>
+		<and/> <not/>        <whenRadio button="NPDegreeBefore"/>
+	  <and/> <not/>         <whenRadio button="NPDegreeAfter"/>
 	</showWhen>
 </page>

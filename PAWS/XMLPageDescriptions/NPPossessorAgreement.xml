@@ -84,7 +84,7 @@ We will deal with each type in turn.
 			</featureChart>
 		</instruction>
 		<instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes">Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Pronouns</section>.</instruction>
-		<instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If your language has articles and/or demonstratives (and you followed instructions), any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.</instruction>
+		<instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.</instruction>
 		<radioGroup id="NPPossNounAgrKeyedTable" show="swNPArtAndOrDem">
 			<groupName dataItem="possNounAgrKeyed" default="yes">RNPPossNounAgrKeyed</groupName>
 			<prompt>Did you already enter the agreement features on nouns or noun affixes?</prompt>
