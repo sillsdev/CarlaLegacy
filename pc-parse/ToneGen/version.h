@@ -4,12 +4,14 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL -16		/* bug fix or other internal improvement */
-#define DATE       "November 4, 2003"	/* date of release version */
-#define YEAR       "2003"	/* used for release date and copyright */
+#define PATCHLEVEL -17		/* bug fix or other internal improvement */
+#define DATE       "January 7, 2004"	/* date of release version */
+#define YEAR       "2004"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 07-Jan-2004  hab  - Incorporate changes made to STAMP to allow for negative
+ * [1.0.17]             string environment constraints.
  * 04-Nov-2003  hab  - Fix a bug where associate and insert rule actions would
  * [1.0.16]             leave a phantom tone if applied in feature-filling mode
  *                      and a tone was already present.
