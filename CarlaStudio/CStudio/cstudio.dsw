@@ -7,6 +7,10 @@ Project: "CS DOSBridge"=".\DOSBridge\CS DOSBridge.dsp" - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	CS DOSBridge
+	.\dosbridge
+	end source code control
 }}}
 
 Package=<4>
@@ -19,6 +23,10 @@ Project: "CS Utility DLL"=".\CS Utility DLL\CS Utility DLL.dsp" - Package Owner=
 
 Package=<5>
 {{{
+	begin source code control
+	CS Utility DLL
+	.\cs utility dll
+	end source code control
 }}}
 
 Package=<4>
@@ -31,6 +39,10 @@ Project: "CSAutomation"=.\CSAutomation\CSAutomation.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	CSAutomation
+	.\csautomation
+	end source code control
 }}}
 
 Package=<4>
@@ -43,6 +55,10 @@ Project: "CSRemote"=.\CSRemote\CSRemote.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	CSRemote
+	.\csremote
+	end source code control
 }}}
 
 Package=<4>
@@ -55,6 +71,10 @@ Project: "CStudio"=.\CStudioApp\CStudio.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	"$/CStudio", MNAAAAAA
+	.\cstudioapp
+	end source code control
 }}}
 
 Package=<4>
@@ -73,6 +93,10 @@ Project: "CStudioProcessorLib"=.\CStudioProcessorLib\CStudioProcessorLib.dsp - P
 
 Package=<5>
 {{{
+	begin source code control
+	CStudioProcessorLib
+	..
+	end source code control
 }}}
 
 Package=<4>
@@ -85,10 +109,17 @@ Project: "JoinCompDLL"=.\JoinComp\JoinCompDLL.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	JoinCompDLL
+	.
+	end source code control
 }}}
 
 Package=<4>
 {{{
+	Begin Project Dependency
+	Project_Dep_Name CStudioProcessorLib
+	End Project Dependency
 }}}
 
 ###############################################################################
@@ -97,6 +128,10 @@ Project: "LextransDLL"=.\LextransDLL\LextransDLL.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	LextransDLL
+	.
+	end source code control
 }}}
 
 Package=<4>
@@ -112,6 +147,10 @@ Project: "PCPATRDllCS"=.\PCPATRDllCS\PCPATRDllCS.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	PCPATRDllCS
+	.
+	end source code control
 }}}
 
 Package=<4>
@@ -127,6 +166,10 @@ Project: "PhonruleDLL"=.\PhonruleDLL\PhonruleDLL.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	PhonruleDLL
+	.
+	end source code control
 }}}
 
 Package=<4>
@@ -142,6 +185,10 @@ Project: "SenTransCOM"=..\..\SenTransDLLWork\SenTransCOM\SenTransCOM.dsp - Packa
 
 Package=<5>
 {{{
+	begin source code control
+	SenTransCOM
+	..\..\sentransdllwork\sentranscom
+	end source code control
 }}}
 
 Package=<4>
@@ -157,6 +204,10 @@ Project: "SenTransDLLCS"=.\SenTransDLLCS\SenTransDLLCS.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	SenTransDLLCS
+	.
+	end source code control
 }}}
 
 Package=<4>
@@ -172,6 +223,10 @@ Project: "SenTransLib"=..\..\SenTransDLLWork\SenTransLib\SenTransLib.dsp - Packa
 
 Package=<5>
 {{{
+	begin source code control
+	SenTransLib
+	..\..\sentransdllwork\sentranslib
+	end source code control
 }}}
 
 Package=<4>
@@ -184,6 +239,10 @@ Project: "cportlib"="..\..\pc-parse\cportlib\Cportlib.dsp" - Package Owner=<4>
 
 Package=<5>
 {{{
+	begin source code control
+	Cportlib
+	..\..\pc-parse\cportlib
+	end source code control
 }}}
 
 Package=<4>
