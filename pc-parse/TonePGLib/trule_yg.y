@@ -2094,7 +2094,7 @@ Tone_expr
 			/* tone.  If position is right, the tone is the */
 			/* immediately following tone.  For cyclic rules, */
 			/* this condition only makes sense if 'position' is */
-			/* initial or final. */
+			/* not current. */
 	| position tone_status LX_TONE LX_IS Tone_none
 		  {
 		if ($2 != $5->ti_status &&
@@ -2187,7 +2187,9 @@ Tone_expr
 			/* position has the indicated tone pattern.  If */
 			/* position is left, the tone is the immediately */
 			/* preceding tone.  If position is right, the tone */
-			/* is the immediately following tone. */
+			/* is the immediately following tone.  For cyclic */
+			/* rules, this only makes sense if 'position' is */
+			/* not 'current'. */
 	| position LX_MORPHEME LX_TONE LX_PATTERN LX_IS Tone_Pattern
 		  {
 				$$ = mklftp(MORPH_TONE_PAT_IS, $1, $6);
