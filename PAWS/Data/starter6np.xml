@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE masterGrammar SYSTEM "MasterGrammar.dtd">
 <masterGrammar>
-<!-- |********************************************************* -->
-<!-- |all options now need to use NP option 0 as well as other(s) noted -->
-<!-- |added 6a-c rules for poss_suffix, poss_prefix -->
-
-<rule show="NPoption0">
+	<!-- |********************************************************* -->
+	<rule show="NPoption0">
 rule {NP option 0 - not possessed}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -14,11 +11,10 @@ NP = {N'' / N'}
 		&lt;NP head possessor agr&gt; = none
 	&lt;NP option&gt; = 0
 </rule>
-<showWhen id="NPoption0">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption0Asuf">
+	<showWhen id="NPoption0">
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="NPoption0Asuf">
 rule {NP option 0Asuf - not possessed, absolutive_suffix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -28,11 +24,12 @@ NP = {N'' / N'}
 		&lt;NP head type suffix absolutive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Asuf
 </rule>
-<showWhen id="NPoption0Asuf">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption0Apre">
+	<showWhen id="NPoption0Asuf">
+	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+<and/> <whenValue element="np" attr="adjpCaseAffixType" value="suffix"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+  </showWhen>
+	<rule show="NPoption0Apre">
 rule {NP option 0Apre - not possessed, absolutive_prefix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -42,11 +39,12 @@ NP = {N'' / N'}
 		&lt;NP head type prefix absolutive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Apre
 </rule>
-<showWhen id="NPoption0Apre">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption0Esuf">
+	<showWhen id="NPoption0Apre">
+	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+<and/> <whenValue element="np" attr="adjpCaseAffixType" value="prefix"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+	</showWhen>
+	<rule show="NPoption0Esuf">
 rule {NP option 0Esuf - not possessed, ergative_suffix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -56,11 +54,12 @@ NP = {N'' / N'}
 		&lt;NP head type suffix ergative&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Esuf
 </rule>
-<showWhen id="NPoption0Esuf">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption0Epre">
+	<showWhen id="NPoption0Esuf">
+	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+<and/> <whenValue element="np" attr="adjpCaseAffixType" value="suffix"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+	</showWhen>
+	<rule show="NPoption0Epre">
 rule {NP option 0Epre - not possessed, ergative_prefix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -70,11 +69,12 @@ NP = {N'' / N'}
 		&lt;NP head type prefix ergative&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Epre
 </rule>
-<showWhen id="NPoption0Epre">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption0Gsuf">
+	<showWhen id="NPoption0Epre">
+	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+<and/> <whenValue element="np" attr="adjpCaseAffixType" value="prefix"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+	</showWhen>
+	<rule show="NPoption0Gsuf">
 rule {NP option 0Gsuf - not possessed, genitive_suffix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -84,11 +84,16 @@ NP = {N'' / N'}
 		&lt;NP head type suffix genitive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Gsuf
 </rule>
-<showWhen id="NPoption0Gsuf">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption0Gpre">
+	<showWhen id="NPoption0Gsuf">
+	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+<and/> <whenValue element="np" attr="adjpCaseAffixType" value="suffix"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
+<or/>
+	  <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+<and/> <whenValue element="np" attr="adjpCaseAffixType" value="suffix"></whenValue>
+<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
+	</showWhen>
+	<rule show="NPoption0Gpre">
 rule {NP option 0Gpre - not possessed, genitive_prefix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -98,26 +103,29 @@ NP = {N'' / N'}
 		&lt;NP head type prefix genitive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Gpre
 </rule>
-<showWhen id="NPoption0Gpre">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption0p">
+	<showWhen id="NPoption0Gpre">
+	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+<and/> <whenValue element="np" attr="adjpCaseAffixType" value="prefix"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
+<or/>
+	  <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+<and/> <whenValue element="np" attr="adjpCaseAffixType" value="prefix"></whenValue>
+<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
+	</showWhen>
+	<rule show="NPoption0p">
 rule {NP option 0p - possessed with person affix, pro-drop}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
 		&lt;NP head type possessed&gt; = +
 		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-		&lt;NP head possessor agr person&gt; = {first first_exclusive first_inclusive
-										  second third}
+		&lt;NP head possessor&gt; == ~[agr:none]
 	&lt;NP option&gt; = 0p
 </rule>
-<showWhen id="NPoption0p">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption1a">
+	<showWhen id="NPoption0p">
+		<whenValue element="np" attr="possAgr" value="yes" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption1a">
 rule {NP option 1a - no marker, possessor initial}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -134,11 +142,24 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1a
 </rule>
-<showWhen id="NPoption1a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption1aErg">
+	<showWhen id="NPoption1a">
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="before"></whenValue>
+<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="before"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
+<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
+	</showWhen>
+	<rule show="NPoption1aErg">
 rule {NP option 1aErg - no marker, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -155,11 +176,16 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1aErg
 </rule>
-<showWhen id="NPoption1aErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption1aAbs">
+	<showWhen id="NPoption1aErg">
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="before"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+	</showWhen>
+	<rule show="NPoption1aAbs">
 rule {NP option 1aAbs - no marker, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -176,11 +202,16 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1aAbs
 </rule>
-<showWhen id="NPoption1aAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption1b">
+	<showWhen id="NPoption1aAbs">
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="before"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+	</showWhen>
+	<rule show="NPoption1b">
 rule {NP option 1b - no marker, possessor final}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -197,11 +228,24 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1b
 </rule>
-<showWhen id="NPoption1b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption1bErg">
+	<showWhen id="NPoption1b">
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="after"></whenValue>
+<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="after"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
+<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
+	</showWhen>
+	<rule show="NPoption1bErg">
 rule {NP option 1bErg - no marker, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -218,11 +262,16 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1bErg
 </rule>
-<showWhen id="NPoption1bErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption1bAbs">
+	<showWhen id="NPoption1bErg">
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="after"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+	</showWhen>
+	<rule show="NPoption1bAbs">
 rule {NP option 1bAbs - no marker, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -237,15 +286,18 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
 	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
-
-|rule {NP option 1c - no marker, possessor either side} - use 1a&amp;b
 	&lt;NP option&gt; = 1bAbs
 </rule>
-<showWhen id="NPoption1bAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption2a">
+	<showWhen id="NPoption1bAbs">
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="after"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+<or/>
+		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
+<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+	</showWhen>
+	<rule show="NPoption2a">
 rule {NP option 2a - optional marker before, possessor initial}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -263,11 +315,10 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2a
 </rule>
-<showWhen id="NPoption2a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption2aErg">
+	<showWhen id="NPoption2a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption2aErg">
 rule {NP option 2aErg - optional marker before, possessor initial, ergative}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -285,11 +336,10 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2aErg
 </rule>
-<showWhen id="NPoption2aErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption2aAbs">
+	<showWhen id="NPoption2aErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption2aAbs">
 rule {NP option 2aAbs - optional marker before, possessor initial, absolutive}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -307,11 +357,10 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2aAbs
 </rule>
-<showWhen id="NPoption2aAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption2b">
+	<showWhen id="NPoption2aAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption2b">
 rule {NP option 2b - optional marker before, possessor final}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -329,11 +378,10 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2b
 </rule>
-<showWhen id="NPoption2b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption2bErg">
+	<showWhen id="NPoption2b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption2bErg">
 rule {NP option 2bErg - optional marker before, possessor final, ergative}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -351,11 +399,10 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2bErg
 </rule>
-<showWhen id="NPoption2bErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption2bAbs">
+	<showWhen id="NPoption2bErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption2bAbs">
 rule {NP option 2bAbs - optional marker before, possessor final, absolutive}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -375,11 +422,10 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 |rule {NP option 2c - optional marker before, possessor either side} use 2a&amp;b
 	&lt;NP option&gt; = 2bAbs
 </rule>
-<showWhen id="NPoption2bAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption3a">
+	<showWhen id="NPoption2bAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption3a">
 rule {NP option 3a - optional marker after, possessor initial}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -397,11 +443,10 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3a
 </rule>
-<showWhen id="NPoption3a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption3aErg">
+	<showWhen id="NPoption3a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption3aErg">
 rule {NP option 3aErg - optional marker after, possessor initial, ergative}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -419,11 +464,10 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3aErg
 </rule>
-<showWhen id="NPoption3aErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption3aAbs">
+	<showWhen id="NPoption3aErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption3aAbs">
 rule {NP option 3aAbs - optional marker after, possessor initial, absolutive}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -441,11 +485,10 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3aAbs
 </rule>
-<showWhen id="NPoption3aAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption3b">
+	<showWhen id="NPoption3aAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption3b">
 rule {NP option 3b - optional marker after, possessor final}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -463,11 +506,10 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3b
 </rule>
-<showWhen id="NPoption3b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption3bErg">
+	<showWhen id="NPoption3b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption3bErg">
 rule {NP option 3bErg - optional marker after, possessor final, ergative}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -485,11 +527,10 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3bErg
 </rule>
-<showWhen id="NPoption3bErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption3bAbs">
+	<showWhen id="NPoption3bErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption3bAbs">
 rule {NP option 3bAbs - optional marker after, possessor final, absolutive}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -509,11 +550,10 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 |rule {NP option 3c - optional marker after, possessor either side} use 3a&amp;b
 	&lt;NP option&gt; = 3bAbs
 </rule>
-<showWhen id="NPoption3bAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption4a">
+	<showWhen id="NPoption3bAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption4a">
 rule {NP option 4a - required marker before, possessor initial}
 NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -530,11 +570,10 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4a
 </rule>
-<showWhen id="NPoption4a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption4aErg">
+	<showWhen id="NPoption4a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption4aErg">
 rule {NP option 4aErg - required marker before, possessor initial, ergative}
 NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -551,11 +590,10 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4aErg
 </rule>
-<showWhen id="NPoption4aErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption4aAbs">
+	<showWhen id="NPoption4aErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption4aAbs">
 rule {NP option 4aAbs - required marker before, possessor initial, absolutive}
 NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -572,11 +610,10 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4aAbs
 </rule>
-<showWhen id="NPoption4aAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption4b">
+	<showWhen id="NPoption4aAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption4b">
 rule {NP option 4b - required marker before, possessor final}
 NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -593,11 +630,10 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4b
 </rule>
-<showWhen id="NPoption4b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption4bErg">
+	<showWhen id="NPoption4b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption4bErg">
 rule {NP option 4bErg - required marker before, possessor final, ergative}
 NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -614,11 +650,10 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4bErg
 </rule>
-<showWhen id="NPoption4bErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption4bAbs">
+	<showWhen id="NPoption4bErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption4bAbs">
 rule {NP option 4bAbs - required marker before, possessor final, absolutive}
 NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -637,11 +672,10 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 |rule {NP option 4c - required marker before, possessor either side} use 4a&amp;b
 	&lt;NP option&gt; = 4bAbs
 </rule>
-<showWhen id="NPoption4bAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption5a">
+	<showWhen id="NPoption4bAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption5a">
 rule {NP option 5a - required marker after, possessor initial}
 NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -658,11 +692,10 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5a
 </rule>
-<showWhen id="NPoption5a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption5aErg">
+	<showWhen id="NPoption5a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption5aErg">
 rule {NP option 5aErg - required marker after, possessor initial, ergative}
 NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -679,11 +712,10 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5aErg
 </rule>
-<showWhen id="NPoption5aErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption5aAbs">
+	<showWhen id="NPoption5aErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption5aAbs">
 rule {NP option 5aAbs - required marker after, possessor initial, absolutive}
 NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -700,11 +732,10 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5aAbs
 </rule>
-<showWhen id="NPoption5aAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption5b">
+	<showWhen id="NPoption5aAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption5b">
 rule {NP option 5b - required marker after, possessor final}
 NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -721,11 +752,10 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5b
 </rule>
-<showWhen id="NPoption5b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption5bErg">
+	<showWhen id="NPoption5b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption5bErg">
 rule {NP option 5bErg - required marker after, possessor final, ergative}
 NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -742,11 +772,10 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5bErg
 </rule>
-<showWhen id="NPoption5bErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption5bAbs">
+	<showWhen id="NPoption5bErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption5bAbs">
 rule {NP option 5bAbs - required marker after, possessor final, absolutive}
 NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -765,11 +794,10 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 |rule {NP option 5c - required marker after, possessor either side} use 5a&amp;b
 	&lt;NP option&gt; = 5bAbs
 </rule>
-<showWhen id="NPoption5bAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6ap">
+	<showWhen id="NPoption5bAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6ap">
 rule {NP option 6ap - poss_prefix, possessor initial}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -787,11 +815,10 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6ap
 </rule>
-<showWhen id="NPoption6ap">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6apErg">
+	<showWhen id="NPoption6ap">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6apErg">
 rule {NP option 6apErg - poss_prefix, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -809,11 +836,10 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6apErg
 </rule>
-<showWhen id="NPoption6apErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6apAbs">
+	<showWhen id="NPoption6apErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6apAbs">
 rule {NP option 6apAbs - poss_prefix, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -831,11 +857,10 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6apAbs
 </rule>
-<showWhen id="NPoption6apAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6as">
+	<showWhen id="NPoption6apAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6as">
 rule {NP option 6as - poss_suffix, possessor initial}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -853,11 +878,10 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6as
 </rule>
-<showWhen id="NPoption6as">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6asErg">
+	<showWhen id="NPoption6as">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6asErg">
 rule {NP option 6asErg - poss_suffix, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -875,11 +899,10 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6asErg
 </rule>
-<showWhen id="NPoption6asErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6asAbs">
+	<showWhen id="NPoption6asErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6asAbs">
 rule {NP option 6asAbs - poss_suffix, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -897,11 +920,10 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6asAbs
 </rule>
-<showWhen id="NPoption6asAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6bp">
+	<showWhen id="NPoption6asAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6bp">
 rule {NP option 6bp - poss_prefix, possessor final}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -919,11 +941,10 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bp
 </rule>
-<showWhen id="NPoption6bp">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6bpErg">
+	<showWhen id="NPoption6bp">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6bpErg">
 rule {NP option 6bpErg - poss_prefix, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -941,11 +962,10 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bpErg
 </rule>
-<showWhen id="NPoption6bpErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6bpAbs">
+	<showWhen id="NPoption6bpErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6bpAbs">
 rule {NP option 6bpAbs - poss_prefix, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -963,11 +983,10 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bpAbs
 </rule>
-<showWhen id="NPoption6bpAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6bs">
+	<showWhen id="NPoption6bpAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6bs">
 rule {NP option 6bs - poss_suffix, possessor final}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -985,11 +1004,10 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bs
 </rule>
-<showWhen id="NPoption6bs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6bsErg">
+	<showWhen id="NPoption6bs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6bsErg">
 rule {NP option 6bsErg - poss_suffix, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -1007,11 +1025,10 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bsErg
 </rule>
-<showWhen id="NPoption6bsErg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6bsAbs">
+	<showWhen id="NPoption6bsErg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6bsAbs">
 rule {NP option 6bsAbs - poss_suffix, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
@@ -1033,11 +1050,10 @@ NP = {N'' / N'} {DP / Pron}
 
 |********	&lt;NP option&gt; = 6bsAbs
 </rule>
-<showWhen id="NPoption6bsAbs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6a">
+	<showWhen id="NPoption6bsAbs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6a">
 rule {NP option 6a - pronoun,dem,quantifiers w/ optional partitive PP after}
 NP = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;NP head&gt; = &lt;Pron head&gt;
@@ -1058,11 +1074,10 @@ NP = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;Pron head&gt; == ~[case:genitive]
 	&lt;NP option&gt; = 6a
 </rule>
-<showWhen id="NPoption6a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NPoption6b">
+	<showWhen id="NPoption6a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NPoption6b">
 rule {NP option 6b - pronoun,dem,quantifiers w/ optional partitive PP before}
 NP = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;NP head&gt; = &lt;Pron head&gt;
@@ -1084,11 +1099,10 @@ NP = (PP) {Pron / Dem / Q / Num / Deg}
 
 |********************************************************	&lt;NP option&gt; = 6b
 </rule>
-<showWhen id="NPoption6b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBarBaroption1">
+	<showWhen id="NPoption6b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBarBaroption1">
 rule {NBarBar option 1 - QPs initial}
 N'' = QP N'
 	&lt;N'' head&gt; = &lt;N' head&gt;
@@ -1097,11 +1111,10 @@ N'' = QP N'
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;NBarBar option&gt; = 1
 </rule>
-<showWhen id="NBarBaroption1">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBarBaroption2">
+	<showWhen id="NBarBaroption1">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBarBaroption2">
 rule {NBarBar option 2 - QPs final}
 N'' = N' QP
 	&lt;N'' head&gt; = &lt;N' head&gt;
@@ -1111,11 +1124,10 @@ N'' = N' QP
 
 |**Note: for either side but only one side at a time, use 1&amp;2, for both, use appropriate above and 3	&lt;NBarBar option&gt; = 2
 </rule>
-<showWhen id="NBarBaroption2">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBarBaroption3whI">
+	<showWhen id="NBarBaroption2">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBarBaroption3whI">
 rule {NBarBar option 3whI - QPs both sides, wh initial}
 N'' = QP_1 N' QP_2
 	&lt;N'' head&gt; = &lt;N' head&gt;
@@ -1128,11 +1140,10 @@ N'' = QP_1 N' QP_2
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_1 head type wh&gt;
 	&lt;NBarBar option&gt; = 3whI
 </rule>
-<showWhen id="NBarBaroption3whI">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBarBaroption3whF">
+	<showWhen id="NBarBaroption3whI">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBarBaroption3whF">
 rule {NBarBar option 3whF - QPs both sides, wh final}
 N'' = QP_1 N' QP_2
 	&lt;N'' head&gt; = &lt;N' head&gt;
@@ -1145,11 +1156,10 @@ N'' = QP_1 N' QP_2
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_2 head type wh&gt;
 	&lt;NBarBar option&gt; = 3whF
 </rule>
-<showWhen id="NBarBaroption3whF">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBarBaroption3whagr">
+	<showWhen id="NBarBaroption3whF">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBarBaroption3whagr">
 rule {NBarBar option 3whagr - QPs both sides, wh agree}
 N'' = QP_1 N' QP_2
 	&lt;N'' head&gt; = &lt;N' head&gt;
@@ -1165,11 +1175,10 @@ N'' = QP_1 N' QP_2
 |********************************************************
 |use 1a &amp; 1b for either	&lt;NBarBar option&gt; = 3whagr
 </rule>
-<showWhen id="NBarBaroption3whagr">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption1a">
+	<showWhen id="NBarBaroption3whagr">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption1a">
 rule {NBar option 1a - AdjP initial, recursive}
 N'_1 = AdjP N'_2
 	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
@@ -1180,11 +1189,10 @@ N'_1 = AdjP N'_2
 	&lt;N'_1 head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt; | N case marking can be overridden by AdjP, if AdjP also marked then another modifier required.
 	&lt;NBar option&gt; = 1a
 </rule>
-<showWhen id="NBaroption1a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption1b">
+	<showWhen id="NBaroption1a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption1b">
 rule {NBar option 1b - AdjP final, recursive}
 N'_1 = N'_2 AdjP
 	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
@@ -1196,11 +1204,10 @@ N'_1 = N'_2 AdjP
 
 |****************section redone, use proper combinations of rules************	&lt;NBar option&gt; = 1b
 </rule>
-<showWhen id="NBaroption1b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2a">
+	<showWhen id="NBaroption1b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2a">
 rule {NBar option 2a - left-most noun head, poss_prefix}
 N' = N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1208,11 +1215,10 @@ N' = N_1 (N_2 (N_3))
 	&lt;N_3 head type prefix poss&gt; = -
 		&lt;NBar option&gt; = 2a
 </rule>
-<showWhen id="NBaroption2a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2b">
+	<showWhen id="NBaroption2a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2b">
 rule {NBar option 2b - left-most noun head, poss_prefix, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1225,11 +1231,10 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;PP head&gt; == ~[case:genitive]
 		&lt;NBar option&gt; = 2b
 </rule>
-<showWhen id="NBaroption2b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2bgen">
+	<showWhen id="NBaroption2b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2bgen">
 rule {NBar option 2bgen - left-most noun head, poss_prefix, genitive PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1243,11 +1248,10 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;NBar option&gt; = 2bgen
 </rule>
-<showWhen id="NBaroption2bgen">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2bnoterg">
+	<showWhen id="NBaroption2bgen">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2bnoterg">
 rule {NBar option 2bnoterg - left-most noun head, poss_prefix, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1260,11 +1264,10 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;PP head&gt; == ~[case:ergative]
 		&lt;NBar option&gt; = 2bnoterg
 </rule>
-<showWhen id="NBaroption2bnoterg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2berg">
+	<showWhen id="NBaroption2bnoterg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2berg">
 rule {NBar option 2berg - left-most noun head, poss_prefix, ergative PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1278,11 +1281,10 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;NBar option&gt; = 2berg
 </rule>
-<showWhen id="NBaroption2berg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2bnotabs">
+	<showWhen id="NBaroption2berg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2bnotabs">
 rule {NBar option 2bnotabs - left-most noun head, poss_prefix, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1295,11 +1297,10 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;PP head&gt; == ~[case:absolutive]
 		&lt;NBar option&gt; = 2bnotabs
 </rule>
-<showWhen id="NBaroption2bnotabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2babs">
+	<showWhen id="NBaroption2bnotabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2babs">
 rule {NBar option 2babs - left-most noun head, poss_prefix, absolutive PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1313,11 +1314,10 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;NBar option&gt; = 2babs
 </rule>
-<showWhen id="NBaroption2babs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2c">
+	<showWhen id="NBaroption2babs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2c">
 rule {NBar option 2c - left-most noun head, poss_prefix, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1330,11 +1330,10 @@ N' = N_1 (N_2 (N_3)) PP
 		&lt;PP head&gt; == ~[case:genitive]
 	&lt;NBar option&gt; = 2c
 </rule>
-<showWhen id="NBaroption2c">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2cgen">
+	<showWhen id="NBaroption2c">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2cgen">
 rule {NBar option 2cgen - left-most noun head, poss_prefix, genitive PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1348,11 +1347,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;NBar option&gt; = 2cgen
 </rule>
-<showWhen id="NBaroption2cgen">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2cnoterg">
+	<showWhen id="NBaroption2cgen">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2cnoterg">
 rule {NBar option 2cnoterg - left-most noun head, poss_prefix, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1365,11 +1363,10 @@ N' = N_1 (N_2 (N_3)) PP
 		&lt;PP head&gt; == ~[case:ergative]
 	&lt;NBar option&gt; = 2cnoterg
 </rule>
-<showWhen id="NBaroption2cnoterg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2cerg">
+	<showWhen id="NBaroption2cnoterg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2cerg">
 rule {NBar option 2cerg - left-most noun head, poss_prefix, ergative PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1383,11 +1380,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;NBar option&gt; = 2cerg
 </rule>
-<showWhen id="NBaroption2cerg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2cnotabs">
+	<showWhen id="NBaroption2cerg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2cnotabs">
 rule {NBar option 2cnotabs - left-most noun head, poss_prefix, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1400,11 +1396,10 @@ N' = N_1 (N_2 (N_3)) PP
 		&lt;PP head&gt; == ~[case:absolutive]
 	&lt;NBar option&gt; = 2cnotabs
 </rule>
-<showWhen id="NBaroption2cnotabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption2cabs">
+	<showWhen id="NBaroption2cnotabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption2cabs">
 rule {NBar option 2cabs - left-most noun head, poss_prefix, absolutive PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1418,11 +1413,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;NBar option&gt; = 2cabs
 </rule>
-<showWhen id="NBaroption2cabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3a">
+	<showWhen id="NBaroption2cabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3a">
 rule {NBar option 3a - right-most noun head, poss_suffix}
 N' = ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1430,11 +1424,10 @@ N' = ((N_3) N_2) N_1
 	&lt;N_3 head type suffix poss&gt; = -
 		&lt;NBar option&gt; = 3a
 </rule>
-<showWhen id="NBaroption3a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3b">
+	<showWhen id="NBaroption3a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3b">
 rule {NBar option 3b - right-most noun head, poss_suffix, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1447,11 +1440,10 @@ N' = PP ((N_3) N_2) N_1
 		&lt;PP head&gt; == ~[case:genitive]
 		&lt;NBar option&gt; = 3b
 </rule>
-<showWhen id="NBaroption3b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3bgen">
+	<showWhen id="NBaroption3b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3bgen">
 rule {NBar option 3bgen - right-most noun head, poss_suffix, genitive PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1465,11 +1457,10 @@ N' = PP ((N_3) N_2) N_1
 	&lt;N_3 head type suffix poss&gt; = -
 		&lt;NBar option&gt; = 3bgen
 </rule>
-<showWhen id="NBaroption3bgen">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3bnoterg">
+	<showWhen id="NBaroption3bgen">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3bnoterg">
 rule {NBar option 3bnoterg - right-most noun head, poss_suffix, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1482,11 +1473,10 @@ N' = PP ((N_3) N_2) N_1
 		&lt;PP head&gt; == ~[case:ergative]
 		&lt;NBar option&gt; = 3bnoterg
 </rule>
-<showWhen id="NBaroption3bnoterg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3berg">
+	<showWhen id="NBaroption3bnoterg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3berg">
 rule {NBar option 3berg - right-most noun head, poss_suffix, ergative PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1500,11 +1490,10 @@ N' = PP ((N_3) N_2) N_1
 	&lt;N_3 head type suffix poss&gt; = -
 		&lt;NBar option&gt; = 3berg
 </rule>
-<showWhen id="NBaroption3berg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3bnotabs">
+	<showWhen id="NBaroption3berg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3bnotabs">
 rule {NBar option 3bnotabs - right-most noun head, poss_suffix, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1517,11 +1506,10 @@ N' = PP ((N_3) N_2) N_1
 		&lt;PP head&gt; == ~[case:absolutive]
 		&lt;NBar option&gt; = 3bnotabs
 </rule>
-<showWhen id="NBaroption3bnotabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3babs">
+	<showWhen id="NBaroption3bnotabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3babs">
 rule {NBar option 3babs - right-most noun head, poss_suffix, absolutive PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1535,11 +1523,10 @@ N' = PP ((N_3) N_2) N_1
 	&lt;N_3 head type suffix poss&gt; = -
 		&lt;NBar option&gt; = 3babs
 </rule>
-<showWhen id="NBaroption3babs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3c">
+	<showWhen id="NBaroption3babs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3c">
 rule {NBar option 3c - right-most noun head, poss_suffix, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1552,11 +1539,10 @@ N' = ((N_3) N_2) N_1 PP
 		&lt;PP head&gt; == ~[case:genitive]
 	&lt;NBar option&gt; = 3c
 </rule>
-<showWhen id="NBaroption3c">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3cgen">
+	<showWhen id="NBaroption3c">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3cgen">
 rule {NBar option 3cgen - right-most noun head, poss_suffix, genitive PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1570,11 +1556,10 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;NBar option&gt; = 3cgen
 </rule>
-<showWhen id="NBaroption3cgen">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3cnoterg">
+	<showWhen id="NBaroption3cgen">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3cnoterg">
 rule {NBar option 3cnoterg - right-most noun head, poss_suffix, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1587,11 +1572,10 @@ N' = ((N_3) N_2) N_1 PP
 		&lt;PP head&gt; == ~[case:ergative]
 	&lt;NBar option&gt; = 3cnoterg
 </rule>
-<showWhen id="NBaroption3cnoterg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3cerg">
+	<showWhen id="NBaroption3cnoterg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3cerg">
 rule {NBar option 3cerg - right-most noun head, poss_suffix, ergative PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1605,11 +1589,10 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;NBar option&gt; = 3cerg
 </rule>
-<showWhen id="NBaroption3cerg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3cnotabs">
+	<showWhen id="NBaroption3cerg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3cnotabs">
 rule {NBar option 3cnotabs - right-most noun head, poss_suffix, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1622,11 +1605,10 @@ N' = ((N_3) N_2) N_1 PP
 		&lt;PP head&gt; == ~[case:absolutive]
 	&lt;NBar option&gt; = 3cnotabs
 </rule>
-<showWhen id="NBaroption3cnotabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption3cabs">
+	<showWhen id="NBaroption3cnotabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption3cabs">
 rule {NBar option 3cabs - right-most noun head, poss_suffix, absolutive PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
@@ -1641,21 +1623,19 @@ N' = ((N_3) N_2) N_1 PP
 
 |***no compounds	&lt;NBar option&gt; = 3cabs
 </rule>
-<showWhen id="NBaroption3cabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4a">
+	<showWhen id="NBaroption3cabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4a">
 rule {NBar option 4a - no compounds}
 N' = N
 	&lt;N' head&gt; = &lt;N head&gt;
 		&lt;NBar option&gt; = 4a
 </rule>
-<showWhen id="NBaroption4a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4b">
+	<showWhen id="NBaroption4a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4b">
 rule {NBar option 4b - no compounds, poss_prefix, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1666,11 +1646,10 @@ N' = PP N
 		&lt;PP head&gt; == ~[case:genitive]
 		&lt;NBar option&gt; = 4b
 </rule>
-<showWhen id="NBaroption4b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4bgen">
+	<showWhen id="NBaroption4b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4bgen">
 rule {NBar option 4bgen - no compounds, poss_prefix, genitive PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1682,11 +1661,10 @@ N' = PP N
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;NBar option&gt; = 4bgen
 </rule>
-<showWhen id="NBaroption4bgen">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4bnoterg">
+	<showWhen id="NBaroption4bgen">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4bnoterg">
 rule {NBar option 4bnoterg - no compounds, poss_prefix, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1697,11 +1675,10 @@ N' = PP N
 		&lt;PP head&gt; == ~[case:ergative]
 		&lt;NBar option&gt; = 4bnoterg
 </rule>
-<showWhen id="NBaroption4bnoterg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4berg">
+	<showWhen id="NBaroption4bnoterg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4berg">
 rule {NBar option 4berg - no compounds, poss_prefix, ergative PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1713,11 +1690,10 @@ N' = PP N
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;NBar option&gt; = 4berg
 </rule>
-<showWhen id="NBaroption4berg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4bnotabs">
+	<showWhen id="NBaroption4berg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4bnotabs">
 rule {NBar option 4bnotabs - no compounds, poss_prefix, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1728,11 +1704,10 @@ N' = PP N
 		&lt;PP head&gt; == ~[case:absolutive]
 		&lt;NBar option&gt; = 4bnotabs
 </rule>
-<showWhen id="NBaroption4bnotabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4babs">
+	<showWhen id="NBaroption4bnotabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4babs">
 rule {NBar option 4babs - no compounds, poss_prefix, absolutive PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1744,11 +1719,10 @@ N' = PP N
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;NBar option&gt; = 4babs
 </rule>
-<showWhen id="NBaroption4babs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4c">
+	<showWhen id="NBaroption4babs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4c">
 rule {NBar option 4c - no compounds, poss_prefix, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1759,11 +1733,10 @@ N' = N PP
 		&lt;PP head&gt; == ~[case:genitive]
 	&lt;NBar option&gt; = 4c
 </rule>
-<showWhen id="NBaroption4c">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4cgen">
+	<showWhen id="NBaroption4c">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4cgen">
 rule {NBar option 4cgen - no compounds, poss_prefix, genitive PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1775,11 +1748,10 @@ N' = N PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;NBar option&gt; = 4cgen
 </rule>
-<showWhen id="NBaroption4cgen">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4cntoerg">
+	<showWhen id="NBaroption4cgen">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4cntoerg">
 rule {NBar option 4cntoerg - no compounds, poss_prefix, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1790,11 +1762,10 @@ N' = N PP
 		&lt;PP head&gt; == ~[case:ergative]
 	&lt;NBar option&gt; = 4cntoerg
 </rule>
-<showWhen id="NBaroption4cntoerg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4cerg">
+	<showWhen id="NBaroption4cntoerg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4cerg">
 rule {NBar option 4cerg - no compounds, poss_prefix, ergative PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1806,11 +1777,10 @@ N' = N PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;NBar option&gt; = 4cerg
 </rule>
-<showWhen id="NBaroption4cerg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4cnotabs">
+	<showWhen id="NBaroption4cerg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4cnotabs">
 rule {NBar option 4cnotabs - no compounds, poss_prefix, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1821,11 +1791,10 @@ N' = N PP
 		&lt;PP head&gt; == ~[case:absolutive]
 	&lt;NBar option&gt; = 4cnotabs
 </rule>
-<showWhen id="NBaroption4cnotabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4cabs">
+	<showWhen id="NBaroption4cnotabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4cabs">
 rule {NBar option 4cabs - no compounds, poss_prefix, absolutive PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1837,11 +1806,10 @@ N' = N PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;NBar option&gt; = 4cabs
 </rule>
-<showWhen id="NBaroption4cabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4d">
+	<showWhen id="NBaroption4cabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4d">
 rule {NBar option 4d - no compounds, poss_suffix, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1852,11 +1820,10 @@ N' = PP N
 		&lt;PP head&gt; == ~[case:genitive]
 		&lt;NBar option&gt; = 4d
 </rule>
-<showWhen id="NBaroption4d">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4dgen">
+	<showWhen id="NBaroption4d">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4dgen">
 rule {NBar option 4dgen - no compounds, poss_suffix, genitive PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1868,11 +1835,10 @@ N' = PP N
 	&lt;PP head type suffix poss&gt; = -
 		&lt;NBar option&gt; = 4dgen
 </rule>
-<showWhen id="NBaroption4dgen">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4dnoterg">
+	<showWhen id="NBaroption4dgen">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4dnoterg">
 rule {NBar option 4dnoterg - no compounds, poss_suffix, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1883,11 +1849,10 @@ N' = PP N
 		&lt;PP head&gt; == ~[case:ergative]
 		&lt;NBar option&gt; = 4dnoterg
 </rule>
-<showWhen id="NBaroption4dnoterg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4derg">
+	<showWhen id="NBaroption4dnoterg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4derg">
 rule {NBar option 4derg - no compounds, poss_suffix, ergative PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1899,11 +1864,10 @@ N' = PP N
 	&lt;PP head type suffix poss&gt; = -
 		&lt;NBar option&gt; = 4derg
 </rule>
-<showWhen id="NBaroption4derg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4dnotabs">
+	<showWhen id="NBaroption4derg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4dnotabs">
 rule {NBar option 4dnotabs - no compounds, poss_suffix, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1914,11 +1878,10 @@ N' = PP N
 		&lt;PP head&gt; == ~[case:absolutive]
 		&lt;NBar option&gt; = 4dnotabs
 </rule>
-<showWhen id="NBaroption4dnotabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4dabs">
+	<showWhen id="NBaroption4dnotabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4dabs">
 rule {NBar option 4dabs - no compounds, poss_suffix, absolutive PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1930,11 +1893,10 @@ N' = PP N
 	&lt;PP head type suffix poss&gt; = -
 		&lt;NBar option&gt; = 4dabs
 </rule>
-<showWhen id="NBaroption4dabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4e">
+	<showWhen id="NBaroption4dabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4e">
 rule {NBar option 4e - no compounds, poss_suffix, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1945,11 +1907,10 @@ N' = N PP
 		&lt;PP head&gt; == ~[case:genitive]
 	&lt;NBar option&gt; = 4e
 </rule>
-<showWhen id="NBaroption4e">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4egen">
+	<showWhen id="NBaroption4e">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4egen">
 rule {NBar option 4egen - no compounds, poss_suffix, genitive PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1961,11 +1922,10 @@ N' = N PP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;NBar option&gt; = 4egen
 </rule>
-<showWhen id="NBaroption4egen">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4enoterg">
+	<showWhen id="NBaroption4egen">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4enoterg">
 rule {NBar option 4enoterg - no compounds, poss_suffix, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1976,11 +1936,10 @@ N' = N PP
 		&lt;PP head&gt; == ~[case:ergative]
 	&lt;NBar option&gt; = 4enoterg
 </rule>
-<showWhen id="NBaroption4enoterg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4eerg">
+	<showWhen id="NBaroption4enoterg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4eerg">
 rule {NBar option 4eerg - no compounds, poss_suffix, ergative PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -1992,11 +1951,10 @@ N' = N PP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;NBar option&gt; = 4eerg
 </rule>
-<showWhen id="NBaroption4eerg">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4enotabs">
+	<showWhen id="NBaroption4eerg">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4enotabs">
 rule {NBar option 4enotabs - no compounds, poss_suffix, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -2007,11 +1965,10 @@ N' = N PP
 		&lt;PP head&gt; == ~[case:absolutive]
 	&lt;NBar option&gt; = 4enotabs
 </rule>
-<showWhen id="NBaroption4enotabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption4eabs">
+	<showWhen id="NBaroption4enotabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption4eabs">
 rule {NBar option 4eabs - no compounds, poss_suffix, absolutive PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
@@ -2024,11 +1981,10 @@ N' = N PP
 
 |**********	&lt;NBar option&gt; = 4eabs
 </rule>
-<showWhen id="NBaroption4eabs">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption5a">
+	<showWhen id="NBaroption4eabs">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption5a">
 rule {NBar option 5a - pronoun,dem,quantifiers w/o head noun (optional PP after)}
 N' = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;N' head&gt; = &lt;Pron head&gt;
@@ -2049,11 +2005,10 @@ N' = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;Pron head&gt; == ~[case:genitive]
 	&lt;NBar option&gt; = 5a
 </rule>
-<showWhen id="NBaroption5a">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
-
-<rule show="NBaroption5b">
+	<showWhen id="NBaroption5a">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
+	<rule show="NBaroption5b">
 rule {NBar option 5b - pronoun,dem,quantifiers w/o head noun (optional PP before)}
 N' = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;N' head&gt; = &lt;Pron head&gt;
@@ -2075,7 +2030,7 @@ N' = (PP) {Pron / Dem / Q / Num / Deg}
 
 	&lt;NBar option&gt; = 5b
 </rule>
-<showWhen id="NBaroption5b">
-<whenValue element="" attr="" value="" negateValue="no"/>
-</showWhen>
+	<showWhen id="NBaroption5b">
+		<whenValue element="" attr="" value="" negateValue="no"/>
+	</showWhen>
 </masterGrammar>

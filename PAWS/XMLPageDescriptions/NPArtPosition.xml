@@ -29,7 +29,6 @@
 			<radioGroup id="NPArtAndDemArtPosBothSidesRequiredTable" show="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
 				<groupName dataItem="artBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemArtPosBothRequired</groupName>
 				<prompt>In which position(s) is the article required to be present<span id="NPArtBothMass" show="swNPArtAndDemArtPosBothRequiredMass">  for singular forms</span>? </prompt>
-				<radio id="NPArtAndDemArtPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
 				<radio id="NPArtAndDemArtPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
 				<radio id="NPArtAndDemArtPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
 				<radio id="NPArtAndDemArtPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
@@ -41,7 +40,7 @@
 			<radio id="NPArtAndDemDemPosBefore" dataValue="before">Before</radio>
 			<radio id="NPArtAndDemDemPosAfter" dataValue="after">After</radio>
 			<radio id="NPArtAndDemDemPosEitherSide" dataValue="either">Either side</radio>
-			   <radioGroup id="NPArtAndDemDemPosEitherTable" show="swNPArtAndDemDemPosEither">
+			<radioGroup id="NPArtAndDemDemPosEitherTable" show="swNPArtAndDemDemPosEither">
 				<groupName dataItem="demEither" default="unrestricted">RNPArtAndDemDemPosEither</groupName>
 				<prompt>Can all the demonstratives appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemDemPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
@@ -57,7 +56,6 @@
 			<radioGroup id="NPArtAndDemDemPosBothSidesRequiredTable" show="swNPArtAndDemDemPosBothSidesRequiredMassorYes">
 				<groupName dataItem="demBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemDemPosBothRequired</groupName>
 				<prompt>In which position(s) is the demonstrative required to be present<span id="NPDemBothMass" show="swNPArtAndDemDemPosBothRequiredMass">  for singular forms</span>? </prompt>
-				<radio id="NPArtAndDemDemPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
 				<radio id="NPArtAndDemDemPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
 				<radio id="NPArtAndDemDemPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
 				<radio id="NPArtAndDemDemPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
@@ -89,7 +87,6 @@
 				<radioGroup id="NPArtAndDemBothCooccurNoPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurNoPosBothSidesRequiredMassorYes">
 					<groupName dataItem="demOrArtBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurNoPosBothRequired</groupName>
 					<prompt>In which position(s) is the demonstrative or article required to be present<span id="NPBothCooccurNoBothMass" show="swNPArtAndDemBothCooccurNoPosBothRequiredMass">  for singular forms</span>? </prompt>
-					<radio id="NPArtAndDemBothCooccurNoPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
 					<radio id="NPArtAndDemBothCooccurNoPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
 					<radio id="NPArtAndDemBothCooccurNoPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
 					<radio id="NPArtAndDemBothCooccurNoPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
@@ -118,7 +115,6 @@
 				<radioGroup id="NPArtAndDemBothCooccurYesDemPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMassorYes">
 					<groupName dataItem="demAndArtDemBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesDemPosBothRequired</groupName>
 					<prompt>In which position(s) is the demonstrative required to be present<span id="NPArtandDemBothCooccurYesDemBothMass" show="swNPArtAndDemBothCooccurYesDemPosBothRequiredMass">   for singular forms</span>? </prompt>
-					<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
 					<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
 					<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
 					<radio id="NPArtAndDemBothCooccurYesDemPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
@@ -146,7 +142,6 @@
 				<radioGroup id="NPArtAndDemBothCooccurYesArtPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMassorYes">
 					<groupName dataItem="demAndArtArtBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesArtPosBothRequired</groupName>
 					<prompt>In which position(s) is the article required to be present<span id="NPArtAndDemArtBothMass" show="swNPArtAndDemBothCooccurYesArtPosBothRequiredMass">  for singular forms</span>? </prompt>
-					<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredNo" dataValue="no">Neither side is required, but both may optionally occur in the same phrase</radio>
 					<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredInitial" dataValue="before">Initial is required and final is optional</radio>
 					<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredFinal" dataValue="after">Final is required and initial is optional</radio>
 					<radio id="NPArtAndDemBothCooccurYesArtPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
@@ -237,8 +232,8 @@ To handle class marking and agreement:
 	<showWhen id="swNPArtAndDemArtPosEither">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
-		  <whenRadio button="NPArtAndDemArtPosEitherSide"/>
-	  </showWhen>
+		<whenRadio button="NPArtAndDemArtPosEitherSide"/>
+	</showWhen>
 	<showWhen id="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
@@ -294,8 +289,8 @@ To handle class marking and agreement:
 	<showWhen id="swNPArtAndDemBothCooccurNoPosEither">
 		<whenRadio button="NPArtAndDemBothCooccurNo"/>
 		<and/>
-		 <whenRadio button="NPArtAndDemBothCooccurNoPosEitherSide"/>
-	   </showWhen>
+		<whenRadio button="NPArtAndDemBothCooccurNoPosEitherSide"/>
+	</showWhen>
 	<showWhen id="swNPArtAndDemBothCooccurNoPosBothSidesRequiredMassorYes">
 		<whenRadio button="NPArtAndDemBothCooccurNo"/>
 		<and/>
