@@ -152,7 +152,7 @@
 					<content>&#x20;</content>
 					<text show="swQEmbYNWordYes">
 						<content>The question marker or complementizer occurs </content>
-						<case element="q" attr="mainYNPos">
+						<case element="q" attr="embYNPos">
 							<caseText value="before">before</caseText>
 							<caseText value="after">after</caseText>
 							<caseText value="either">on either side (but not both sides) of</caseText>
@@ -382,10 +382,11 @@
 						<case element="q" attr="mainContAuxRequired">
 							<caseText value="no">allowed but not required</caseText>
 							<caseText value="yes">required</caseText>
-						</case><case element="q" attr="contFront">
-<caseText value="after">.</caseText>
-<caseText value="before"> in addition to the fronting of an interrogative phrase.</caseText>
-</case>
+						</case>
+						<case element="q" attr="contFront">
+							<caseText value="after">.</caseText>
+							<caseText value="before"> in addition to the fronting of an interrogative phrase.</caseText>
+						</case>
 						<content>&#x20;</content>
 					</text>
 					<content>&#x20;</content>
@@ -511,10 +512,11 @@
 						<case element="q" attr="embContAuxRequired">
 							<caseText value="no">allowed but not required</caseText>
 							<caseText value="yes">required</caseText>
-						</case><case element="q" attr="contFront">
-<caseText value="after">.</caseText>
-<caseText value="before"> in addition to the fronting of an interrogative phrase.</caseText>
-</case>
+						</case>
+						<case element="q" attr="contFront">
+							<caseText value="after">.</caseText>
+							<caseText value="before"> in addition to the fronting of an interrogative phrase.</caseText>
+						</case>
 						<content>&#x20;</content>
 					</text>
 					<content>&#x20;</content>
@@ -638,6 +640,8 @@
 	</showWhen>
 	<showWhen id="swQEmbYNWordYes">
 		<whenValue element="q" attr="embYNWord" value="yes"/>
+<and/>
+		<whenValue element="q" attr="embYN" value="yes"/>
 	</showWhen>
 	<showWhen id="swQEmbYNEitherRestricted">
 		<whenValue element="q" attr="embYNEitherRestricted" value="restricted"/>
@@ -645,6 +649,8 @@
 		<whenValue element="q" attr="embYNPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="q" attr="embYNPos" value="after" negateValue="yes"/>
+<and/>
+		<whenValue element="q" attr="embYN" value="yes"/>
 	</showWhen>
 	<showWhen id="swQEmbYNEitherUnrestricted">
 		<whenValue element="q" attr="embYNEitherRestricted" value="unrestricted"/>
@@ -652,6 +658,8 @@
 		<whenValue element="q" attr="embYNPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="q" attr="embYNPos" value="after" negateValue="yes"/>
+<and/>
+		<whenValue element="q" attr="embYN" value="yes"/>
 	</showWhen>
 	<showWhen id="swQEmbYNNoAux">
 		<whenValue element="q" attr="embYN" value="noAux"/>

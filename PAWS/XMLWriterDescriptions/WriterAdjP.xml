@@ -92,7 +92,7 @@
 		<whenValue element="adjp" attr="modifiers" value="no"/>
 	</showWhen>
 	<showWhen id="swAdjPModifiersYesDegree">
-		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+		<whenValue element="adjp" attr="modifiers" value="yes"/>
 	</showWhen>
 	<showWhen id="swAdjPModifiersYesManner">
 		<whenValue element="adjp" attr="modifiers" value="yesManner"/>

@@ -327,7 +327,7 @@ Some languages are even more complex in that they normally have a nominative-acc
 				</case>
 				<content/>
 				<text show="swNPCaseDefaultNom">
-					<content>Nominative case is the default (unmarked) case.</content>
+					<content>  Nominative case is the default (unmarked) case.</content>
 				</text>
 				<content/>
 			</p>
@@ -772,7 +772,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<content/>
 				</p>
 				<p>
-					<content>In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system.   In </content>
+					<content>In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system.</content></p>
+<p><content>In </content>
 					<langName/>
 					<content>, </content>
 					<case element="np" attr="possNounCaseChange">
@@ -1015,7 +1016,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content> the noun.  </content>
 				<text show="swNPAdjPPosEitherOrBothUnrestricted">
-					<content>All of adjective phrases can occur on either side of the noun. </content>
+					<content>All of the adjective phrases can occur on either side of the noun. </content>
 				</text>
 				<content/>
 				<text show="swNPAdjPPosEitherOrBothRestricted">
@@ -1044,7 +1045,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<p>
 					<content>Languages like </content>
 					<langName/>
-					<content> which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.  In </content>
+					<content> which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.</content></p>
+<p><content>In </content>
 					<langName/>
 					<content>, the case of the head noun </content>
 					<case element="np" attr="adjpCaseChange">
@@ -1054,7 +1056,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<content/>
 				</p>
 				<p show="swNPAdjPCaseChangeYes">
-					<content>Further, some languages of this latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase.   In </content>
+					<content>Further, some languages of this latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase.</content></p>
+<p><content>In </content>
 					<langName/>
 					<content>, the case marking </content>
 					<case element="np" attr="adjpCaseAffix">
@@ -1172,8 +1175,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<example>
 				<interlinear exampleLoc="np/compPPExample"/>
 			</example>
-
-<p><content>See section </content>
+			<p>
+				<content>See section </content>
 				<sectionRef sec="sPP"/>
 				<content> for more details on PPs in </content>
 				<langName/>

@@ -210,9 +210,13 @@
 	</showWhen>
 	<showWhen id="swCompWordYes">
 		<whenValue element="comp" attr="compWord" value="yes"/>
+<and/>
+		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
 	<showWhen id="swCompWordNo">
 		<whenValue element="comp" attr="compWord" value="no"/>
+<and/>
+		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
 	<showWhen id="swCompEitherRestricted">
 		<whenValue element="comp" attr="compPos" value="before" negateValue="yes"/>
@@ -220,6 +224,8 @@
 		<whenValue element="comp" attr="compPos" value="after" negateValue="yes"/>
 		<and/>
 		<whenValue element="comp" attr="compEitherRestricted" value="restricted"/>
+<and/>
+		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
 	<showWhen id="swCompEitherUnrestricted">
 		<whenValue element="comp" attr="compPos" value="before" negateValue="yes"/>
@@ -227,5 +233,7 @@
 		<whenValue element="comp" attr="compPos" value="after" negateValue="yes"/>
 		<and/>
 		<whenValue element="comp" attr="compEitherRestricted" value="unrestricted"/>
+<and/>
+		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
 </portion>

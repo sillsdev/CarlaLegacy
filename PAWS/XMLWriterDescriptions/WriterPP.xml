@@ -31,12 +31,12 @@
 				<langData>nearly upon the enemy</langData>
 				<content>.</content>
 			</p>
-			<p>
+			<p show="swPPModifiersYes">
 				<content>Similar examples as expressed in </content>
 				<langName/>
 				<content> are:</content>
 			</p>
-			<example>
+			<example show="swPPModifiersYes">
 				<interlinear exampleLoc="pp/example"/>
 			</example>
 			<p>

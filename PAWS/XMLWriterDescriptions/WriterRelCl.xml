@@ -65,7 +65,7 @@
 						<content>&#x20;</content>
 						<case element="relcl" attr="relCompSame">
 							<caseText value="yes">Some of</caseText>
-							<caseText value="yes">None of</caseText>
+							<caseText value="no">None of</caseText>
 						</case>
 						<content> the relative markers are the same as the complementizer(s) used in verbal complement clauses.  The relative marker occurs </content>
 						<case element="relcl" attr="relCompPos">
@@ -102,21 +102,21 @@
 			</text>
 			<content>&#x20;</content>
 		</p>
-		<p>
+		<p show="swRelClTypeNotNone">
 			<content>Examples of relative clauses in </content>
 			<langName/>
 			<content> include:</content>
 		</p>
-		<example>
+		<example show="swRelClTypeNotNone">
 			<interlinear exampleLoc="relcl/example"/>
 		</example>
-		<p>
+		<p show="swRelClTypeNotNone">
 			<content>Full sentence examples of the above relative clauses include:</content>
 		</p>
-		<example>
+		<example show="swRelClTypeNotNone">
 			<interlinear exampleLoc="relcl/sentExample"/>
 		</example>
-		<p>
+		<p show="swRelClTypeNotNone">
 			<content>&#x20;</content>
 			<langName/>
 			<content>&#x20;</content>
@@ -136,6 +136,9 @@
 	<showWhen id="swRelClTypeCP">
 		<whenValue element="relcl" attr="type" value="CP"/>
 	</showWhen>
+<showWhen id="swRelClTypeNotNone">
+	<whenValue element="relcl" attr="type" value="none" negateValue="yes"></whenValue>
+</showWhen>
 	<showWhen id="swRelClTypeCPCompClitic">
 		<whenValue element="relcl" attr="relWord" value="no"/>
 		<and/>
