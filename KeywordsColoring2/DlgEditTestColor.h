@@ -24,7 +24,6 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CDlgEditTestColor)
 	enum { IDD = IDD_EditSetColor };
-	CSimpleFlatButton m_buttonEXIT; //
 	CButton	m_buttonStrikeout;
 	CComboBox	m_combo;
 	CTestEdit	m_richTestPreview;

@@ -42,7 +42,6 @@ void CDlgEditTestColor::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CDlgEditTestColor)
-	DDX_Control(pDX, IDOK, m_buttonEXIT);
 	DDX_Control(pDX, IDC_CHECK4, m_buttonStrikeout);
 	DDX_Control(pDX, IDC_COMBO1, m_combo);
 	DDX_Control(pDX, IDC_RICHEDIT1, m_richTestPreview);
@@ -124,9 +123,6 @@ END_MESSAGE_MAP()
 BOOL CDlgEditTestColor::OnInitDialog()
 {
 	CDialog::OnInitDialog();
-
-
-	m_buttonEXIT.SetBitmap( IDB_EXIT_26x24 );
 
 
 // CTestEdit	->
@@ -585,7 +581,7 @@ void CDlgEditTestColor::OnDefault()
 	pApp->WriteProfileString( szSection, "FontSize", strSize );
 
 
-	// save temporarerily tree index (m_dwTreeID)
+	// save temporary tree index (m_dwTreeID)
 	DWORD dwTemp = m_dwTreeID;
 
 	// operators
