@@ -1,6 +1,6 @@
 /* AMPLE.H - definitions/declarations for AMPLE library
  ***************************************************************************
- * Copyright 1988, 1998 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1988, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #ifndef _AMPLE_H_INCLUDED_
@@ -134,12 +134,12 @@ struct ample_data {
 #define AMPLE_PREFIX_CATEGORY	2	/* first prefix has word category */
 #ifndef hab340
 #define AMPLE_AFFIX             3       /* used to reset affix setting
-					   when there are mutliple \cat
+					   when there are multiple \cat
 					   fields */
 #define AMPLE_COMPOUND_ROOT_LEFTHEAD  4	/* compound roots are left headed */
 #define AMPLE_COMPOUND_ROOT_RIGHTHEAD 8	/* compound roots are righ headed */
 #define AMPLE_COMPOUND_ROOT          12	/* used to reset compound setting
-					   when there are mutliple \catcr
+					   when there are multiple \catcr
 					   fields */
 #endif /* hab340 */
 	int			   bWriteMorphCats;
@@ -369,6 +369,7 @@ extern AmpleAmlist * getAllAllomorphs P((char * pszRestOfWord_in,
 					 int         iState_in,
 					 AmpleData * pAmple_in));
 #endif /* hab3312 */
+
 /* putsd.c */
 extern void writeAmpleDictionary P((const char * pszFilename_in,
 					AmpleData *  pAmple_in));

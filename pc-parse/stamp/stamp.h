@@ -1,6 +1,6 @@
 /* STAMP.H - data structure definitions and function prototypes for STAMP
  ***************************************************************************
- * Copyright 1989, 1998 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1989, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #ifndef _STAMP_H_INCLUDED_
@@ -474,6 +474,11 @@ typedef struct stamp_analysis {
  */
 typedef struct stamp_anal_list {
 	StampAnalysis *		pAnal;	/* pointer to analysis structure */
+#ifndef hab2111
+#ifndef TONEGEN
+	char *                      pszSynthResult;
+#endif /* TONEGEN */
+#endif /* hab2111 */
 	struct stamp_anal_list *	pNext;	/* pointer to next node in list */
 	} StampAnalysisList;
 
