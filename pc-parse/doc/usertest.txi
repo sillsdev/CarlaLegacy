@@ -1,0 +1,399 @@
+@c this file should be @include d by another -*- texinfo -*- file
+@c following a node `Test syntax'.
+@c
+@c this file is conditionalized by
+@c	@set ample
+@c	@set stamp
+@c
+@set usertest
+@ifclear endash
+@iftex
+@ifset html
+@set endash -
+@end ifset
+@ifclear html
+@set endash --
+@end ifclear
+@end iftex
+@ifinfo
+@set endash -
+@end ifinfo
+@end ifclear
+@c
+@ifclear commentchar
+@ifset ample
+@set commentchar |
+@set ProgName AMPLE
+@end ifset
+@ifset stamp
+@set commentchar |
+@set ProgName STAMP
+@end ifset
+@end ifclear
+@ifclear commentchar
+@set commentchar ;
+@end ifclear
+@ifclear ProgName
+@set ProgName UNKNOWN_PROGRAM
+@end ifclear
+@cindex Test syntax
+
+@ifset ample
+The remainder of this chapter presents grammatical descriptions of the
+syntax of tests and morpheme co-occurrence constraints in BNF notation.
+@end ifset
+@ifset stamp
+The remainder of this chapter presents grammatical descriptions of the
+syntax of tests in BNF notation.
+@end ifset
+The following comments explain how to read the syntax rules given
+below:
+@enumerate
+
+@item
+Names shown inside wedges (@code{<>}) are nonterminal symbols.  These
+must eventually be expanded into terminal symbols.
+
+@item
+The symbol @code{::=} means ``is replaced by.''
+
+@item
+Items on the righthand side of the rule (following the @code{::=}) that
+are not enclosed in wedges are terminal symbols, and appear in the rule
+exactly as they must appear in
+@ifset ample
+an AMPLE control file.
+@end ifset
+@ifset stamp
+a STAMP synthesis control file.
+@end ifset
+Whitespace is largely optional; it is required only to separate
+identifiers and keywords.  (Keywords are the alphabetic terminal
+symbols shown in the rules below.)
+
+@item
+Alternative ways of replacing a nonterminal symbol are listed on
+separate lines.
+@end enumerate
+
+@example
+
+@group
+ 1.  <test>          ::= <identifier> <body>
+@ifset stamp
+						 <identifier> <body> @{ <actions> @}
+@end ifset
+
+ 2a. <body>          ::= <body> <logop> <factor>
+ 2b.                     IF <factor> THEN <factor>
+ 2c.                     <forleft> <factor>
+ 2d.                     <forright> <factor>
+ 2e.                     <factor>
+@end group
+
+@group
+ 3a. <factor>        ::= NOT <factor>
+ 3b.                     ( <body> )
+ 3c.                     <property_expr>
+ 3d.                     <string_expr>
+ 3e.                     <type_expr>
+ 3f.                     <category_expr>
+ 3g.                     <order_expr>
+ 3h.                     <cap_expr>
+@c Added by hab 14-May-1999
+ 3i.                     <punct_expr>
+@end group
+
+ 4.  <property_expr> ::= <position> property is <identifier>
+
+@group
+ 5a. <string_expr>   ::= <position> morphname is <identifier>
+ 5b.                     <position> morphname is member <identifier>
+ 5c.                     <position> morphname is <position> morphname
+ 5d.                     <position> allomorph is <identifier>
+ 5e.                     <position> allomorph is member <identifier>
+ 5f.                     <position> allomorph is <position> allomorph
+ 5g.                     <position> allomorph matches <identifier>
+ 5h.                     <position> allomorph matches member <identifier>
+ 5i.                     <position> allomorph matches <position> allomorph
+ 5j.                     <position> surface is <identifier>
+ 5k.                     <position> surface is member <identifier>
+ 5l.                     <position> surface is <position> allomorph
+ 5m.                     <position> surface matches <identifier>
+ 5n.                     <position> surface matches member <identifier>
+ 5o.                     <position> surface matches <position> allomorph
+ 5p.                     <neighbor> word is <identifier>
+ 5q.                     <neighbor> word is member <identifier>
+ 5r.                     <neighbor> word matches <identifier>
+ 5s.                     <neighbor> word matches member <identifier>
+@end group
+
+ 6.  <type_expr>     ::= <position> type is <type>
+
+@group
+ 7a. <category_expr> ::= <position> fromcategory is <position> fromcategory
+ 7b.                     <position> fromcategory is <position> tocategory
+ 7c.                     <position> tocategory is <position> fromcategory
+ 7d.                     <position> tocategory is <position> tocategory
+ 7e.                     <position> fromcategory is member <identifier>
+ 7f.                     <position> tocategory is member <identifier>
+ 7g.                     <position> fromcategory is <identifier>
+ 7h.                     <position> tocategory is <identifier>
+@end group
+
+@group
+ 8a. <cap_expr>      ::= <position> allomorph is capitalized
+ 8b.                     word is capitalized
+@end group
+
+@group
+ 9a. <order_expr>    ::= <position> orderclass <relop> <position> orderclass
+@c following modified by hab 13-Jun-2002
+ 9b.                     <position> orderclass <relop> <position> orderclassmin
+ 9c.                     <position> orderclass <relop> <position> orderclassmax
+ 9d.                     <position> orderclassmin <relop> <position> orderclass
+ 9e.                     <position> orderclassmin <relop> <position> orderclassmin
+ 9f.                     <position> orderclassmin <relop> <position> orderclassmax
+ 9g.                     <position> orderclassmax <relop> <position> orderclass
+ 9h.                     <position> orderclassmax <relop> <position> orderclassmin
+ 9i.                     <position> orderclassmax <relop> <position> orderclassmax
+ 9j.                     <position> orderclass <relop> <constant>
+ 9k.                     <position> orderclassmin <relop> <constant>
+ 9l.                     <position> orderclassmax <relop> <constant>
+@end group
+
+@c Added by hab 14-May-1999
+@group
+10a. <punct_expr>    ::= <neighbor> punctuation is <identifier>
+10b.                     <neighbor> punctuation is member <identifier>
+@end group
+
+@c following renumbered by hab 14-May-1999
+@group
+11.  <logop>         ::= AND
+						 OR
+						 XOR
+						 IFF
+@end group
+
+@group
+12.  <forleft>       ::= FOR_ALL_LEFT
+						 FOR-ALL-LEFT
+						 FORALLLEFT
+						 FOR_SOME_LEFT
+						 FOR-SOME-LEFT
+						 FORSOMELEFT
+@end group
+
+@group
+13.  <forright>      ::= FOR_ALL_RIGHT
+						 FOR-ALL-RIGHT
+						 FORALLRIGHT
+						 FOR_SOME_RIGHT
+						 FOR-SOME-RIGHT
+						 FORSOMERIGHT
+@end group
+
+@group
+14.  <neighbor>      ::= last
+						 next
+@end group
+
+@group
+15.  <type>          ::= prefix
+						 infix
+						 root
+						 suffix
+						 initial
+						 final
+@end group
+
+@group
+16.  <relop>        ::= =
+						>
+						>=
+						<=
+						<
+						~=
+@end group
+
+@group
+17.  <position>     ::= left
+						right
+						current
+						LEFT
+						RIGHT
+						INITIAL
+						FINAL
+@end group
+
+@group
+18a. <identifier>   ::= "<word>"
+18b.                    '<word>'
+18c.                    .<word>.
+18d.                    [<word>]
+18e.                    <word>
+@end group
+
+@group
+19.  <word>         ::= <wchar>
+						<wchar><word>
+@end group
+
+@group
+20.  <wchar>        ::= one of the following characters:
+							!"#$%&'*+,-./0123456789:;?
+							@@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_
+							`abcdefghijklmnopqrstuvwxyz@{@}
+							\200-\376 (character codes 128@value{endash}254)
+@end group
+
+@group
+21.  <constant>     ::= <number>
+						-<number>
+@end group
+
+@group
+22.  <number>       ::= <digit>
+						<digit><number>
+
+23.  <digit>        ::= one of the following characters:  0123456789
+@end group
+
+@ifset stamp
+@group
+24.  <actions>      ::= <action>
+						<action> , <action>
+
+25.  <action>       ::= <insert>
+						<report>
+@end group
+
+@group
+26.  <insert>       ::= insert <string> before <position>
+						insert <string> after <position>
+@end group
+
+@group
+27.  <report>       ::= report
+						report "<message>"
+						report '<message>'
+						report .<message>.
+
+28.  <message>      ::= any character besides the quoting character
+@end group
+@end ifset
+@end example
+
+@subsubheading Comments on selected BNF rules
+@table @asis
+
+@item  1.
+A test consists of an identifier followed by the body of the test.  The
+identifier is the name by which a test is known.  The body consists of
+the expressions which are interpreted to evaluate the test.
+@ifset stamp
+Actions are allowed after tests, but are optional.
+@end ifset
+
+@item  4.
+The identifier in a property expression must be a property name defined
+with @code{\mp} or @code{\ap} in the analysis data file.
+
+@item  5a.
+In a string expression involving morphnames, an identifier must be equal to
+some morphname; for example, @code{left morphname is "PAST"} indicates that
+the name of the morpheme to the left is PAST.
+
+@item 5b.
+A member identifier in such expressions must be the name of a class of
+morphnames defined with @code{\mcl} in the analysis data file.
+
+@item 5dgjmpr.
+In a string expression involving allomorphs, surface strings, or
+adjacent words, an identifier must be equal to some portion of a word after
+any orthography change has been applied.  For example, @code{left allomorph
+is "abadaba"} indicates that the allomorph of the morpheme to the left
+is abadaba.
+
+@item 5ehknqs.
+A member identifier in such expressions must be the name of a
+class of strings defined with @code{\scl} in the analysis data file.
+
+@item 5d-i.
+If reference is made to left, LEFT or INITIAL, the allomorph is tested
+to see if it ends with the string; for example, @code{left allomorph
+matches "ba"} indicates that the allomorph of the morpheme to the left
+ends in ba.  If reference is made to current, right, RIGHT, or FINAL,
+the allomorph is tested to see if it begins with the string.
+
+@item 5j-o.
+If reference is made to left, LEFT or INITIAL, the surface string is
+tested to see if it ends with the given value.  If reference is made to
+current, right, RIGHT, or FINAL, the surface string is tested to see if
+it begins with the given value.
+
+@item 5p-s.
+If reference is made to last, the word is tested to see if it ends with
+the string.  If reference is made to next, the word is tested to see if
+it begins with the string.  (These should be avoided, and other means
+used to prune analyses based on adjacent words.)
+
+@item 6.
+The type must be a keyword indicating whether the morpheme referred to
+is a prefix, an infix, a root, and so on
+
+@item 7ef.
+The identifier must be the name of a class of categories defined with
+@code{\ccl} in the analysis data file.
+
+@item 7gh.
+The identifier must be a category defined with @code{\ca} in the
+analysis data file.
+
+@c following modified by hab 13-Jun-2002
+@item 9a-l.
+A constant is an integer between -32767 and (positive) 32767.  The
+relational operator (relop) must be among those listed in
+rule 16.
+@c following added by hab 13-Jun-2002
+The terminals @code{orderclass} and @code{orderclassmin} are
+treated identically.  Both refer to the first of potentially
+two order class numbers in a dictionary order class field.
+The terminal @code{orderclassmax} refers to the second
+order class number in a dictionary order class field.  If the
+second number is not present, @code{orderclassmax} is set to
+the same value as @code{orderclass}.
+
+@c Added by hab 14-May-1999
+@item 10.
+Punctuation expressions always refer to punctuation either immediately
+before or after the current word.  A @code{<neighbor>} value of
+@code{last} refers to immediately before the current word and
+a @code{<neighbor>} value of @code{next} refers to
+immediately after the current word.
+
+@item 18a-d.
+The quoted forms of an identifier are needed only if the identifier is
+the same as one of the AMPLE test keywords.  It is recommended that the
+quoted identifier not contain the closing quote character.
+
+@ifset stamp
+@item 24.
+Multiple actions are allowed, separated by commas.
+
+@item 25.
+Possible actions are insertion or reporting.
+
+@item 26.
+Insertion is before or after some position.
+
+@item 27.
+Report if test succeeds.  Include optional message, quoted with
+double quotes, single quotes, or periods.
+
+@item 28.
+A message can be any string of characters.  It can continue across
+multiple lines.
+@end ifset
+@end table

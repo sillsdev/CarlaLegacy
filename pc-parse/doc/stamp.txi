@@ -10,10 +10,10 @@
 
 @set TITLE STAMP Reference Manual
 @set SUBTITLE Synthesizing after Transferring AMPLE Analyses
-@set VERSION version 2.1b1
-@set DATE May 1999
-@set AUTHOR by Stephen McConnel (and H. Andrew Black for v. 2.1b1)
-@set COPYRIGHT Copyright @copyright{} 2000 SIL International
+@set VERSION version 2.1b17
+@set DATE October 2003
+@set AUTHOR by Stephen McConnel (and H. Andrew Black for v. 2.1b1 and above)
+@set COPYRIGHT Copyright @copyright{} 2000-2003 SIL International
 
 @include front.txi
 
@@ -92,6 +92,8 @@ permission from the coauthors.
 @table @asis
 
 @item 1. Version 2.1 (May 1999) introduced punctuation environment constraints in the allomorph fields of the dictionary files.  These are handled by a new built-in test called PEC_ST.  This version also added two punctuation-oriented clauses to user-written tests.
+
+@item 2. Version 2.1b17 (October 2003) filled out several sections which previously had missing content.
 
 @end table
 
@@ -627,18 +629,23 @@ constraints for containing only valid characters.
 @node Transfer file, Synthesis file, STAMP declarations file, Top
 @chapter Transfer Control File
 
-The transfer control file for the STAMP program is a standard format file
-containing a single data record.
+The transfer control file for the STAMP program is a standard format
+file containing a single data record.  The fields that STAMP
+recognizes in its ``transfer control file'' are described below. Fields that
+start with any other backslash codes are ignored by STAMP
 
-@menu
-* Transfer file fields::
-* Syntax of transfer rules::
-* Syntax of lexical changes::
-@end menu
 
-@c ----------------------------------------------------------------------------
-@node Transfer file fields, Syntax of transfer rules, Transfer file, Transfer file
-@section Transfer file fields
+@c commented off by hab 2003.10.27
+@c @menu
+@c * Transfer file fields::
+@c * Syntax of transfer rules::
+@c * Syntax of lexical changes::
+@c @end menu
+@c
+@c @c ----------------------------------------------------------------------------
+@c @node Transfer file fields, Syntax of transfer rules, Transfer file, Transfer file
+@c @section Transfer file fields
+@c
 
 @c \maxprops and \pcl added by hab 14-May-1999
 @menu
@@ -666,8 +673,8 @@ declarations file or the synthesis control file instead.
 @end ifclear
 @end ifinfo
 
-@node \ambig (xxzzTR.CHG), \ap (xxzzTR.CHG), Transfer file fields, Transfer file fields
-@subsection Analytic ambiguity delimiter: \ambig
+@node \ambig (xxzzTR.CHG), \ap (xxzzTR.CHG), Transfer file, Transfer file
+@section Analytic ambiguity delimiter: \ambig
 @findex \ambig
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -680,8 +687,8 @@ synthesis control file instead; see
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \ap (xxzzTR.CHG), \ca (xxzzTR.CHG), \ambig (xxzzTR.CHG), Transfer file fields
-@subsection Allomorph property declaration: \ap
+@node \ap (xxzzTR.CHG), \ca (xxzzTR.CHG), \ambig (xxzzTR.CHG), Transfer file
+@section Allomorph property declaration: \ap
 @findex \ap
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -695,8 +702,8 @@ above.
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \ca (xxzzTR.CHG), \ccl (xxzzTR.CHG), \ap (xxzzTR.CHG), Transfer file fields
-@subsection Category declarations: \ca
+@node \ca (xxzzTR.CHG), \ccl (xxzzTR.CHG), \ap (xxzzTR.CHG), Transfer file
+@section Category declarations: \ca
 @findex \ca
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -709,8 +716,8 @@ synthesis control file instead; see
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \ccl (xxzzTR.CHG), \cr, \ca (xxzzTR.CHG), Transfer file fields
-@subsection Category class declaration: \ccl
+@node \ccl (xxzzTR.CHG), \cr, \ca (xxzzTR.CHG), Transfer file
+@section Category class declaration: \ccl
 @findex \ccl
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -723,8 +730,8 @@ synthesis control file instead; see
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \cr, \fl, \ccl (xxzzTR.CHG), Transfer file fields
-@subsection Copy rule: \cr
+@node \cr, \fl, \ccl (xxzzTR.CHG), Transfer file
+@section Copy rule: \cr
 @findex \cr
 
 Suppose that a single source language morpheme corresponds to either of
@@ -763,14 +770,17 @@ see
 @end ifclear
 The only syntactic difference between a copying rule and a substitution
 rule is that the former begins with the field code @code{\cr} and the
-latter begins with a @code{\sr}.  See
-@ifset txt
-`Syntax of transfer rules' below
-@end ifset
-@ifclear txt
-@ref{Syntax of transfer rules}
-@end ifclear
-For a description of the syntax for these rules.
+latter begins with a @code{\sr}.
+
+@c commented off hab 2003.10.27
+@c  See
+@c @ifset txt
+@c `Syntax of transfer rules' below
+@c @end ifset
+@c @ifclear txt
+@c @ref{Syntax of transfer rules}
+@c @end ifclear
+@c for a description of the syntax for these rules.
 
 Returning to the Quechua example, the copying rule in 3 would apply to
 the analysis in 4 to produce the two analyses in 5:
@@ -814,8 +824,8 @@ there might be a dramatic increase in the levels of ambiguity produced.
 Let the user beware!
 
 @c ----------------------------------------------------------------------------
-@node \fl, \ir, \cr, Transfer file fields
-@subsection Flag rule: \fl
+@node \fl, \ir, \cr, Transfer file
+@section Flag rule: \fl
 @findex \fl
 
 Flags are a mechanism for temporarily remembering some information about
@@ -971,18 +981,25 @@ volatile: they are raised when certain morphemes are present in an
 analysis and lowered when a rule having the flag applies effectively.
 
 @c ----------------------------------------------------------------------------
-@node \ir, \lc, \fl, Transfer file fields
-@subsection Insertion rule: \ir
+@node \ir, \lc, \fl, Transfer file
+@section Insertion rule: \ir
 @findex \ir
 
 Insertion rules insert morphnames into an analysis.  An insertion rule
-may have (in order): (1) the field code \ir, (2) the morphname to be
-inserted, (3) optionally one or more flags, (4) optionally one or more
-environments into which the morphname should be inserted, and (5) a
-comment.  The insertion string is delimited by some printing character.
-The morphname is inserted into an analysis if all the rule's flags are
-raised (or, for complemented flags, not raised) and at least one of its
-environments is satisfied (if any are specified).
+may have (in order):
+@enumerate
+
+@item the field code @code{\ir},
+@item the morphname to be inserted,
+@item optionally one or more flags,
+@item optionally one or more environments into which the morphname should be inserted, and
+@item a comment.
+@end enumerate
+@noindent
+The insertion string is delimited by some printing character.  The
+morphname is inserted into an analysis if all the rule's flags are
+raised (or, for complemented flags, not raised) and at least one of
+its environments is satisfied (if any are specified).
 
 Of the five parts listed above, only the first two are obligatory.
 However, an insertion rule comprised only of a field code and the
@@ -1063,6 +1080,8 @@ Since there are two rules, both would apply to @code{Z Y}, the first
 producing @code{Z X Y}, the second applying to @code{Z X Y} to produce
 @code{Z X X Y}.
 
+@subsection Flags in insertion rules
+
 Insertion rules are frequently conditioned by flags; thus some comments
 about them are in order.  First, recall the discussion above:
 the application of a rule automatically results in the lowering of any
@@ -1092,7 +1111,8 @@ analysis had a pluralizer and no suffix with kU is now present in the
 analysis.  If @code{PLKU} is ever inserted by this rule, @code{PLFLG}
 will be lowered.
 
-@unnumberedsubsec Determining the site for insertion
+@subsection Determining the site for insertion
+@c @unnumberedsubsec Determining the site for insertion
 
 If an insertion rule has an environment with a simple environment bar,
 then the position of the bar defines the site for insertion.  But when
@@ -1144,7 +1164,7 @@ insertion rule would be the following:
 
 If it is necessary to insert a sequence of morphnames, they can be
 inserted by a sequence of insertion rules.  For example, the following
-three rules inserts @code{ABC DEF GHI} when @code{XYZFLAG} is up:
+three rules insert @code{ABC DEF GHI} when @code{XYZFLAG} is up:
 @example
 
 @group
@@ -1181,16 +1201,929 @@ without violating orderclass whenever @code{M4} occurs in an analysis:
 @end example
 
 @c ----------------------------------------------------------------------------
-@node \lc, \maxprops (xxzzTR.CHG), \ir, Transfer file fields
-@subsection Lexical change: \lc
+@c Added by hab 27-Oct-2003
+@node \lc, \maxprops (xxzzTR.CHG), \ir, Transfer file
+@section Lexical change: \lc
 @findex \lc
 
-FIX ME!
+@menu
+* Morphnames in lexical changes::
+* Categories in lexical changes::
+* Delimiters and type in lexical changes::
+* Environment conditions on lexical changes::
+* Which change applies?::
+* Common errors in lexical changes::
+* Two examples::
+* Where should lexical changes be made?::
+@end menu
+
+Lexical changes are similar to the string changes described in the
+AMPLE Reference manual section 8.5 or Weber, Black, and McConnel
+(1988:79ff), but they differ in several respects.  First, changes are
+made to sequences of morphnames rather than to strings.
+(Nevertheless, we use ``string'' in referring to parts of a lexical
+change.)  Second, lexical changes must match at least one root.  (In
+this they differ from substitution rules, discussed in
+@ifset txt
+`Substitution rules' below,
+@end ifset
+@ifclear txt
+@ref{\sr},
+@end ifclear
+which do not have this limitation.)  Third, lexical changes use a
+different type of environment condition: whereas string changes may be
+constrained with respect to character strings, lexical changes are
+constrained with respect to morphnames.
+
+A lexical change may have (in order):
+@enumerate
+
+@item
+the field code @code{\lc};
+
+@item the match string, that is, the sequence to be replaced;
+
+@item
+the substitution string, that is, what should be put in place of the match
+string;
+@cindex substitution string
+@cindex lexical changes:substitution string
+
+@item
+one or more environments in which the change is to be made; and
+
+@item
+a comment, initiated by the comment character.
+@end enumerate
+@noindent
+The first three elements are obligatory; the remainder are optional.
+For example, the following is an acceptable lexical change:
+@example
+
+\lc "sha" "shamu" / _... AFAR |to reorder -mu
+
+@end example
+@noindent
+This would change the root sha to shamu whenever it was followed by
+the suffix @code{AFAR} somewhere in the analysis.
+
+The match and substitution strings must be enclosed by delimiter
+characters.  Any printing character can be used as the delimiter (see
+Weber, Black, and McConnel 1988:80); the first printable character
+after the field code is taken to be the delimiter.  The same delimiter
+must be used for both the match and substitution strings.  For
+example, the change given above could just as well be expressed as
+follows:
+@example
+
+\lc @@sha@@ @@shamu@@ / _... AFAR |to reorder -mu
+
+@end example
+@noindent
+Below, we will use the double quote mark as the delimiter.
+
+Only one lexical change is ever made to a given root.  If an
+applicable change is discovered, the substitution is made and TRANSFER
+proceeds to the next root, if any.  When there are no more roots,
+TRANSFER goes on to consider rules.
+
+A lexical change must mention at least one root.  (It may have more
+than one.)  The change applies only if the root portion of the match
+string and the root of an analysis are identical.  Lexical changes
+never apply to anything less than a complete morphname, so there is
+never a danger of matching a proper substring of a morphname.  For
+example, if the root in the match string is ka, this would have no
+effect on the root kanta.  Likewise, a change where the match string
+contains the root allpa would have no effect on the root
+wallpa.
+
+Lexical changes included in the transfer file should express facts
+about the relationship between the source and target languages; this
+is discussed further in
+@ifset txt
+`Where should lexical changes be made?' below.
+@end ifset
+@ifclear txt
+@ref{Where should lexical changes be made?}.
+@end ifclear
+
+Lexical changes make it possible to handle lexical shifts.  For
+example, consider adaptation from Huaraz to Huallaga Quechua.  Both
+languages have verbs @code{urya-}, @code{aru-}, and @code{yanukU-} but
+their meanings have shifted, so that the following lexical changes are
+appropriate:
+@example
+
+\lc "yapya"  "urya"    |cultivate
+\lc "urya"   "aru"     |work
+\lc "aru"    "yanukU"  |cook
+
+@end example
+@noindent
+(Subsequently, in SYNTHESIS it is necessary to consult a dictionary
+entry for @code{yanukU}, which has allomorphs @code{yanuku} and
+@code{yanuka}, the choice being determined by properties and tests.)
+
+@c ----------------------------------------------------------------------------
+@node Morphnames in lexical changes, Categories in lexical changes, \lc, \lc
+@subsection Morphnames in lexical changes
+
+The match string of a lexical change must match --- morphname by
+morphname --- the portion of any analysis to which it should apply.
+Whenever there is some doubt about the exact form of morphnames in the
+analysis of some word, the user should inspect an actual analysis
+produced by AMPLE.
+
+It is possible to use morpheme classes in the match string of a
+lexical change.  This is useful to change various forms of a root into
+a single form.  For example, in Huallaga Quechua,
+`write' is written in at least four different ways; therefore changing
+these to a single target language form could be accomplished by four
+lexical changes.
+@example
+
+\lc "eskirbi" "*qillqa" |write
+\lc "eskribi" "*qillqa" |write
+\lc "iskirbi" "*qillqa" |write
+\lc "iskribi" "*qillqa" |write
+
+@end example
+@noindent
+However, if a morpheme class @code{WRITE} contains @code{eskirbi},
+@code{eskribi}, @code{iskirbi}, and @code{iskribi}, then the changes
+can be made by a single lexical change which uses the class name
+enclosed in square brackets:
+@example
+
+\lc "[WRITE]" "*qillqa" |write
+
+@end example
+
+Morpheme classes can also be used in morpheme environment constraints,
+as illustrated below.  They cannot be used in the substitution string,
+since the desired result of the change would not be uniquely
+determined.
+
+@c ----------------------------------------------------------------------------
+@node Categories in lexical changes, Delimiters and type in lexical changes, Morphnames in lexical changes, \lc
+@subsection Categories in lexical changes
+
+Each root may be accompanied in the match string by a category.  An
+analysis will be changed only if explicit categories in the match
+string are identical to those of the corresponding roots in the
+analysis.
+
+For example, consider Huallaga Quechua @code{muru}, an ``ambivalent''
+root: as a noun it means `seed', but as a verb it means `to plant
+seeds'.  In some other Quechua languages, these correspond to the noun
+root @code{semi:lla} `seed' (where colon represents vowel length) and
+the verb root @code{muru} `plant or scatter seeds'.  The change of
+@code{muru} to @code{semi:lla} must therefore be conditioned to apply
+only when @code{muru} is a noun:
+@example
+
+\lc "N0 *muru" "semi:lla"
+
+@end example
+@noindent
+If the category had not been included in the match string, all cases
+of @code{muru} would be changed, giving many incorrect results.
+
+The category is generally optional.  Therefore to change a sequence of
+roots, the category between them may be present or absent.  For
+example, to change @code{bathroom} (analyzed as in @i{a}) to @code{john},
+either @i{b} or @i{c} would work:
+@example
+
+a. < N bath N room >
+b. \lc "bath N room" "john"
+c. \lc "bath room" "john"
+
+@end example
+@noindent
+Here --- as elsewhere --- if the category is not stated, the change is
+simply not constrained by category; thus, @i{b} would apply only when
+room was analyzed as a noun (category @code{N}) whereas @i{c} would
+change room regardless of its category.
+
+It is possible to include category classes in the match strings of
+lexical changes. Before the class can be used, the categories it
+contains must be declared (see
+@ifset txt
+`Category declarations: \ca' above).
+@end ifset
+@ifclear txt
+@ref{\ccl})
+@end ifclear
+and the class must be
+defined (see
+@ifset txt
+`Category class declaration: \ccl' above).
+@end ifset
+@ifclear txt
+@ref{\ca})
+@end ifclear
+For example, suppose that @code{kalap}
+could be a noun (@code{N}), an intransitive verb (@code{V1}), or a
+transitive verb (@code{V2}), and suppose that we wish to change
+@code{kalap} to @code{pakla} only when it is a verb.  Further assume
+that the category class @code{VERB} has been defined in the STAMP
+declarations file as follows:
+@example
+
+\ccl VERB V1 V2
+
+@end example
+@noindent
+Then the lexical change @i{a} (below) would apply to the analyses of
+@i{b} and @i{c}, but not to that of @i{d}:
+@example
+
+a. \lc "[VERB] kalap" "pakla"
+b. < V1 kalap >
+c. < V2 kalap >
+d. < N kalap >
+
+@end example
+
+It is possible to change a root's category by including a new category
+in the substitution string.  This might be useful when the target
+language does not make the same categorial distinctions as the source
+language.  For example, if the source language distinguishes nouns and
+adjectives but the target language has a single class of substantives,
+the following change might be useful:
+@example
+
+\lc "A0 hatun" "S0 hatun" |big
+
+@end example
+@noindent
+Note that neither categories nor category classes can be included in
+an environment conditioning a lexical change.
+
+In the substitution string, when a root is given without an
+accompanying category, the following rules determines its category:
+@enumerate
+@item If it corresponds to a root in the match string, assign it the
+category of that root.
+@item If not, and if there are one or more roots in the match string, assign
+it the category of the first one.
+@item If there are no roots in the match string, assign it the first
+category declared with @code{\ca}.
+@end enumerate
+@noindent
+For example, consider the following lexical changes:
+@example
+
+a. \lc "< N aibcud > SX1" "paqur"
+b. \lc "< N aibcud > SX1" "PSTPRF paqur"
+c. \lc "> SX1 SX2" "< paqur >"
+
+@end example
+@noindent
+In @i{a}, @code{paqur} would be assigned category @code{N} by the
+first rule above because it corresponds to @code{aibcud}, which has
+category @code{N}.  In @i{b}, @code{PSTPRF} would be taken as a root
+corresponding to @code{aibcud} and assigned the category @code{N} by
+the first rule above.  By conventions explained in
+@ifset txt
+`Delimiters and type in lexical changes' below,
+@end ifset
+@ifclear txt
+@ref{Delimiters and type in lexical changes},
+@end ifclear
+@code{paqur} would also be taken to be a root; since it does not
+correspond to a root in the match string, the second rule above
+assigns it the category of the first root in the match string, namely,
+@code{N}.  In @i{c}, @code{paqur} is a root (as forced by the wedges,
+see
+@ifset txt
+`Delimiters and type in lexical changes' below)
+@end ifset
+@ifclear txt
+@ref{Delimiters and type in lexical changes})
+@end ifclear
+but there is no root in the match string;
+therefore, by the third rule above, @code{paqur} would be assigned
+whatever category was declared first.
+
+Note that mentioning a category always forces the following morphname
+to be a root of the given category.  Thus, if the substitution string
+contains ``@code{.ÿ.ÿ.ÿNÿpaqurÿ.ÿ.ÿ.}'', where @code{N} is a category,
+then no matter what the match string is, or what precedes or follows
+it in the substitution string, @code{paqur} is a root of category
+@code{N}.
+
+@c ----------------------------------------------------------------------------
+@node Delimiters and type in lexical changes, Environment conditions on lexical changes,  Categories in lexical changes, \lc
+@subsection Delimiters and type in lexical changes
+
+The match string of a lexical change may contain the characters that
+mark the boundaries between prefixes and roots, for which ``<'' is the
+default, and between roots and suffixes, for which ``>'' is the
+default.  (In the following discussion we simply use these default
+values.)  For example, in some Quechua languages, `to leave' is
+expressed by the root @code{ya-} followed by the suffix @code{-rqU}
+`OUT', whereas others use the root @code{lluqshi-}.  Either of the
+following would make this change:
+@example
+
+\lc "ya > OUT" "lluqshi" |leave
+\lc "ya OUT"   "lluqshi" |leave
+
+@end example
+@noindent
+Likewise, if a prefix is included, the wedge and intervening category
+may be included:
+changes;
+@example
+
+\lc "CAUSE < Vi die" "Vt kill"
+
+@end example
+@noindent
+Note that it is not necessary to keep these delimiters balanced; this
+change is acceptable even though the match string does not have a
+corresponding right wedge.
+
+Using wedges in the match string forces the morphnames to be assigned
+a type (prefix, root, or suffix) according to the following rules:
+@enumerate
+@item Any morphname to the left of @code{<} is a prefix.
+@item Any morphname to the right of @code{>} is a suffix.
+@item Otherwise, a morphname is a root.
+@end enumerate
+@noindent
+For a lexical change to apply, the morphnames matched in the analysis
+must be consistent as to type with the corresponding morphnames in the
+match string.  Furthermore, the boundaries must be present in the
+analysis at the place indicated by the delimiter in the match string.
+For example, consider the following:
+@example
+
+a. \lc "room" "chamber"
+b. \lc "N room" "chamber"
+c. \lc "< N room >" "chamber"
+d. < N room >
+e. < N bath N room >
+
+@end example
+@noindent
+Changes @i{a}, @i{b}, and @i{c} would apply to the analysis in @i{d},
+changing @code{room} to @code{chamber}.  However, if @code{bathroom}
+is analyzed as in @i{e}, only @i{a} and @i{b} would change it to
+@code{bathchamber}.  Change @i{c} does not apply because the left
+wedge in the change does not correspond to a wedge in the analysis.
+
+We now turn to the substitution string and how its morphemes are
+assigned type.  The general rule is this: counting from the left, the
+morphnames of the substitution string are assigned the type of the
+corresponding morphname in the match string.  For example, consider
+the following lexical change:
+@example
+
+\lc "PX < N abcd > SX1" "PY efg SY1 SY2"
+
+@end example
+@noindent
+@code{PY} is a prefix because @code{PX} (the corresponding morphname
+in the match string) is a prefix; @code{efg} is a root because
+@code{abcd} is a root; and @code{SY1} is a suffix because @code{SX1}
+is a suffix.
+
+And what of @code{SY2}?  For such cases there is another rule:
+morphnames in a substitution string for which there are no
+corresponding morphnames in the match string (which arise when the
+substitution string is longer than the match string) are assigned the
+type of the last morphname in the match string.  Thus, since
+@code{SX1} is a suffix, @code{SY2} is also a suffix.
+
+Wedges can be used in the substitution string to force morphnames to a
+particular type.  The rules are the same as those given above for the
+match string: anything to the left of @code{<} is a prefix, and anything to
+the right of @code{>} is a suffix.
+
+In formulating lexical changes, it is probably wise to err on the side
+of being too specific (that is, to include wedges and categories where
+they are not necessarily needed) rather than to depend entirely on
+STAMP's built-in rules.  Explicitness makes the user's intentions more
+intelligible to those who must subsequently read and understand the
+data files, including the person who first created them!
+
+@c ----------------------------------------------------------------------------
+@node Environment conditions on lexical changes, Which change applies?,  Delimiters and type in lexical changes, \lc
+@subsection Environment conditions on lexical changes
+
+A lexical change may be restricted by a morpheme environment
+constraint; see Weber, Black, and McConnel (1988:74).  For example,
+the following would change @code{allcha} to @code{kacha} only if
+@code{PASS} (a passive suffix) immediately follows:
+@example
+
+\lc "allcha" "kacha" / _ PASS |get well
+
+@end example
+@noindent
+The environment may contain multiple conditions; for example, in the
+following, @code{hata} becomes @code{shaya} if followed by the
+morphname @code{UP} or by @code{SUD}:
+@example
+
+\lc "hata" "shaya" / _ UP  |hata-rI-  to shaya-rI-
+				   / _ SUD |hata-ykU- to shaya-ykU-
+
+@end example
+@noindent
+And environments may contain morpheme classes; for example, if a
+morpheme class called @code{FORCE} contains @code{UP} and @code{SUD},
+then the previous change could be stated as follows:
+@example
+
+\lc "hata" "shaya" / _ [FORCE] |hata-rI-, hata-ykU-
+
+@end example
+@noindent
+An environment may not contain a category, a category class, or a
+wedge.  To change @code{bath} to @code{wash} only in the context of
+@code{room} (whereby @code{bathroom} would become @code{washroom}),
+one is tempted to formulate the change as follows:
+@example
+
+\lc "bath" "wash" / _ N room |**INCORRECT**
+
+@end example
+@noindent
+However, this is not correct because the environment contains the
+category @code{N}.  The change must be given as follows:
+@example
+
+\lc "bath N room" "wash N room"
+
+@end example
+@noindent
+One might also be tempted to write a rule like the following:
+@example
+
+\lc "bath N" "wash" / _ room |**INCORRECT**
+
+@end example
+@noindent
+This, too, is not correct because a category can be used only
+accompanied by the root for which it is a category.  In this rule,
+@code{N} occurs in the match string without the word for which it is
+the category.
+
+@c ----------------------------------------------------------------------------
+@node Which change applies?, Common errors in lexical changes, Environment conditions on lexical changes, \lc
+@subsection Which change applies?
+
+If two or more lexical changes could apply to the same analysis, the
+most specific should apply.  STAMP determines the most specific change
+by assigning each change a weight as follows.  For each morpheme in
+the match string (whether a root or an affix), add 100 points.  For
+each root, add 50 if it is accompanied by a category or 25 if it is
+accompanied by a category class.  Finally, add 150 if the change
+contains one or more morpheme environment constraints.  The change
+with the greatest number of points is judged to be the most specific,
+and is thus applied in preference to changes with fewer
+points.
+
+For example, the following changes would have the number of points indicated:
+@example
+
+\lc "igmo" "ingo"               |total points = 100
+\lc "[AMBIV] igmo" "vago"       |total points = 125
+\lc "N0 igmo" "vago"            |total points = 150
+\lc "igmo > BEC" "vago BEC"     |total points = 200
+\lc "igmo" "vago" / _ BEC       |total points = 250
+\lc "N anza V misi" "V anzasi"  |total points = 300
+
+@end example
+
+Only one lexical change ever applies to a single root.  However, if an
+analysis has multiple roots, each could be modified by a different
+lexical change.  For example, given changes @i{a} and @i{b}, analysis
+@i{c} would become @i{d}:
+@example
+
+a. \lc "alla" "oqti"  |dig
+b. \lc "papa" "aqshu" |potato
+c. < N papa V alla > PROG PAST 3
+d. < N aqshu V oqti > PROG PAST 3
+
+@end example
+@noindent
+
+@c ----------------------------------------------------------------------------
+@node Common errors in lexical changes, Two examples, Which change applies?, \lc
+@subsection Common errors in lexical changes
+
+Capitalization is significant.  Roots must be in upper or lower case,
+exactly as they appear in the analysis.  (This usually comes from the
+etymology field of the source language dictionary.)  Likewise, affix
+morphnames must be upper or lower case, exactly as they appear in the
+analysis.  Users will make fewer errors of case if they follow some
+convention, such as putting all roots entirely in lower case and all
+affix morphnames entirely in upper case.
+
+If the root of an analysis has a regular sound change identifier (see
+section 7.2.3.2), then the match string of a change applying to it
+must include that character.  Conversely, if the root does not have
+such a character, the match string of a change applying to the
+analysis must not have it.  For example, consider an analysis as in
+@i{a} and changes as in @i{b} through @i{e}:
+@example
+
+a. < N0 *qasqu >
+b. \lc       "qasqu"        "pe:chu"
+c. \lc      "*qasqu"        "pe:chu"
+d. \lc   "N0 *qasqu"     "N0 pe:chu"
+e. \lc "< N0 *qasqu >" "< N0 pe:chu >"
+
+@end example
+@noindent
+The change in @i{b} cannot apply because its match string does not
+contain an asterisk, while the analysis in @i{a} does.  By contrast,
+any of changes @i{c} through @i{e} would match the analysis in @i{a}
+and change the root.
+
+@c ----------------------------------------------------------------------------
+@node Two examples, Where should lexical changes be made?, Common errors in lexical changes, \lc
+@subsection Two examples
+
+This section contains two examples.  The first serves to review many
+points about lexical changes.  The second is a complete list of the
+lexical changes for an actual language pair.
+
+For the first example, consider the analysis in @i{a}:
+@example
+
+a. M1 <C1 root1 C2 root2> M2
+
+@end example
+@noindent
+Either @i{b} or @i{c} would change this to @i{d}:
+@example
+
+b. \lc "root2 > M2" "root3 > M2"
+c. \lc "root2" "root3" / _ M2
+d. M1 < C1 root1 C2 root3 > M2
+
+@end example
+@noindent
+Any of @i{e} through @i{j} (among other possibilities) would change
+the two roots of @i{a} to @code{root3}, yielding the analysis in
+@i{k}:
+@example
+
+e. \lc "root1 root2"           "root3"
+f. \lc "< root1 root2 >"       "root3"
+g. \lc "C1 root1 root2"        "root3"
+h. \lc "< root1 C2 root2"      "root3"
+i. \lc "C1 root1 C2 root2"     "root3"
+j. \lc "< C1 root1 C2 root2 >" "root3"
+k. M1 < C1 root3 > M2
+
+@end example
+@noindent
+Change @i{l} would change @i{a} to the analysis in @i{m}, in which the
+second root and the first suffix become a single root, namely,
+@code{root3}:
+@example
+
+l. \lc "root2 > M2" "root3"
+m. M1 < C1 root1 C2 root3 >
+
+@end example
+@noindent
+Likewise, @i{n} would change the analysis to @i{o}, in which the second root
+and the first suffix become a single suffix, namely, @code{MX}:
+@example
+
+n. \lc "root2 > M2" "> MX"
+o. M1 < C1 root1 > MX
+
+@end example
+@noindent
+Note that the wedge (@code{>}) in the substitution string of @i{n}
+forces TRANSFER to treat @code{MX} as a suffix.  If this wedge were
+omitted, @code{MX} would be treated as a root, since counting from the
+left it corresponds to a root.
+
+Either @i{p} or @i{q} would change @i{a} to the analysis in @i{r}, in
+which the second prefix and the first root become a single root
+(namely, @code{root4}):
+@example
+
+p. \lc "M1 < root1"    "root4"
+q. \lc "M1 < C1 root1" "root4"
+r. <C1 root4 C2 root2 > M2
+
+@end example
+@noindent
+Note that the category of @code{root4} is the same as that of
+@code{root1}, since no category is given in the substitution string of
+these changes.
+
+The second example is given below, which contains
+the lexical changes used to adapt from Huallaga Quechua to Huamalies
+Quechua.  To facilitate managing these changes, it is convenient to
+organize them alphabetically by the root of the match string.  This is
+achieved by aligning the first character of the roots (excluding the
+asterisk identifying Proto-Quechua roots) and thenÿperiodically
+sorting the list on the column in which the roots begin (using the
+appropriate switch with a sort program).
+
+@example
+TRANSFER lexical changes for Huallaga to Huamalies Quechua
+
+\co Huallaga to Huamalies Quechua lexical changes
+\lc    "[WRITE]"      "*qillqa"          |eskirbi eskribi etc.
+\lc "N0  a:bi"        "*pishqu"          |bird
+\lc    "*allcha"      "*katra" / _ PASS  |get well
+\lc     "awturida:"   "awturda:"         |authority
+\lc "N0  corte"       "konsehu"          |council
+\lc     "empleada"    "ashmay"           |servant
+\lc     "fista"       "fyesta"           |fiesta
+\lc "N0  fiyu > GEN"  "R0 siqaypa"       |really
+\lc "N0  ga:llu"      "kakash"           |rooster
+\lc "V1 *hata > PNCT" "*shaya > UP"      |hata-rI- > sha-rkU-
+\lc "V1 *hata"        "*itri" / _ UP     |hata-rkU- > ichi-rkU-
+\lc    "*hawa"        "*waqta"           |outside
+\lc    "*huknaylla"   "*hukllaylla"      |unique
+\lc "V2  insulta"     "*ashlli"          |insult
+\lc "V2 *kama"        "alista"           |prepare
+\lc "N0  kantu"       "kuchu"            |bank
+\lc "N0  korte"       "konsehu"          |council
+\lc "N0 *llachapa"    "mu:dana"          |clothes
+\lc    "*lluqshi"     "*ya > OUT"        |leave
+\lc "V1 *mallwa"      "*hama"            |sit
+\lc    "*manacha:"    "manasay"          |(contrastive)
+\lc "V2 *matanka"     "umbru"            |carry on shoulder
+\lc     "mawka"       "makwa"            |worn out
+\lc     "mayistru"    "mayestru"         |teacher
+\lc     "mu:su"       "maqta"            |young man
+\lc     "pakilla:"    "pa:kila:"         |thanks
+\lc     "parasimri"   "imayyaqpis"       |forever, eternal
+\lc     "pare:hu"     "patinti"          |be similar
+\lc     "patinti"     "patenti"          |tax
+\lc    "*patra"       "posa:da" / _ CAUS |give lodging
+\lc     "primer"      "punta > OBJ"      |first
+\lc "N0 *puyn~u"      "*uyllu"           |jug
+\lc    "*qaqlla"      "ka:ra"            |face
+\lc "V1 *qatrwa"      "tu*na"            |dance (verb)(u* = uu)
+\lc "N0 *qatrwa"      "tushu"            |dance (noun)
+\lc     "reda"        "red"              |net
+\lc     "rey"         "ray"              |king
+\lc    "*rima"        "parla"            |say
+\lc    "*siksik"      "suksuk"           |tremble
+\lc     "tra:pu"      "ratash"           |rag
+\lc     "tu:ka"       "tuka"             |to play (instrument)
+\lc "V2 *uywa"        "*ashma"           |to raise
+\lc     "werta"       "*qintra"          |garden
+\lc    "*yanqa"       "wala:"            |in vain
+\lc    "*yarqa:"      "*miku > DES"      |be hungry
+\lc    "*yaykU"       "*ya > IN"         |enter
+@end example
+
+Note that the order in which the lexical changes are listed in the
+file is not relevant to the program.  Recall, from
+@ifset txt
+`Insertion rule: \ir' above,
+@end ifset
+@ifclear txt
+@ref{\ir},
+@end ifclear
+that if more than one lexical change could match the current analysis,
+the most specific one is applied.
+
+@c ----------------------------------------------------------------------------
+@node Where should lexical changes be made?, , Two examples, \lc
+@subsection Where should lexical changes be made?
+
+It is natural to ask why lexical changes can be made both by TRANSFER
+and by SYNTHESIS.  The reason lies in how we wish to organize the
+data.  A reasonable distribution of the data to the transfer and
+synthesis files can make these files much more linguistically and
+computationally useful.
+
+For linguistic purposes, the files are more useful if all information
+of a certain type, or about a certain topic, is localized in a single
+place.  It would be unfortunate, for example, if information about the
+target language were distributed through transfer and synthesis files,
+or if information about the relationship of the source and target
+languages were mixed in with the synthesis files.
+
+For computational purposes, a careful distribution of information can
+make the files more reusable.  The same synthesis file can be used
+when adapting from different source languages if it contains only
+information about the target language.  The transfer file can be more
+easily reversed when adapting in the other direction if it includes
+only information about the relationship between the source and target
+languages.
+
+Lexical changes can be used to express two types of fact: facts about
+the relationship between two languages, and facts about the
+distinctives of the target language.  The former should be given in
+the transfer file and the latter should be given in the synthesis
+file.  For example, the following are about the relationship between
+two languages, so they should be given in the transfer file:
+@example
+
+\lc "V1 *aru"    "V1 *urya" |work
+\lc "V2 *yanuku" "V2 *aru"  |cook
+\lc "*lluqshi"   "*ya OUT"  |go out
+
+@end example
+@noindent
+These change one root to another.  Of course, this list would be quite
+different for each pair of source and target languages.
+
+By contrast, the following express facts about the distinctives of the
+target language, so they should be given in the synthesis file:
+@example
+
+\lc "eskwela"    "eskuyla"        |exceptional loan
+\lc "V1 GETWELL" "V1 *kacha PASS" |recover from illness
+\lc "*killa"     "killa"          |block *ll to l
+
+@end example
+@noindent
+The first indicates the peculiar borrowing of Spanish @code{escuela},
+where closely-related languages have @code{eskwela}.  The second
+indicates how this language expresses `recovery from illness'.  The
+third indicates that @code{*killa} is an exception to the RSC
+@code{ll} to @code{l} (a case to which we return later).  Note that
+these changes are likely to be relevant no matter what the source
+language is, and thus belong in the synthesis file.
+
+The following subsections give guidelines for determining where a
+change should be placed.  For many cases, the decision may seem rather
+subjective, but with experience the user will gain an understanding of
+the distinction.
+
+@subsubsection In the transfer file
+
+When considering the inclusion of a change in the transfer file, the following questions should be asked:
+@enumerate
+
+@item Does the change express a fact about the relationship between
+languages?  If so, then it belongs in the transfer file.  If, however,
+it expresses a fact about the target language (for example, how a loan
+has been assimilated in the target language or an exception to a
+regular sound change in the target language) then the change belongs
+in the synthesis file.
+
+@item Does the change mediate between pan-dialectal normal forms?  For
+native vocabulary, the pan-dialectal normal forms might be
+reconstructed proto-forms; for borrowed vocabulary, they might be the
+forms of the language from which each word is borrowed.  Changes
+mediating between pan-dialectal normal forms belong in the transfer
+file.
+
+@item Is the change reversible?  That is, if the match and substitution
+strings were reversed, would the change serve for adapting in the
+other direction?  By and large, changes which belong in the transfer
+file are reversible.  However, this criterion is not absolute; for
+example, if two lexical items are changed to a single one, simply
+reversing both changes will probably not give the desired result in
+the reverse adaptation path.
+
+@end enumerate
+
+For example, suppose that for `money', the source language has
+@code{qillay} and the target has @code{qullqi}, which is not cognate
+with @code{qillay}.  To introduce this change, the following lexical
+change would be used:
+@example
+
+\lc "*qillay" "*qullqi"
+
+@end example
+@noindent
+By all the above-mentioned criteria, the change of @code{*qillay} to
+@code{*qullqi} belongs in the transfer file: it expresses a fact about
+the relationship between the two languages, it mediates between two
+pan-Quechua normal forms, and it is reversible.
+
+By the way, it would be possible to make @code{qillay} become
+@code{qullqi} by giving @code{*qullqi} as the etymology for
+@code{qillay} in the source language dictionary.  However, this would
+be an extremely bad solution because, first, it would distort the
+etymology of @code{qillay} in the source language dictionary since
+@code{qullqi} is not the etymology of @code{qillay}, and second, it
+would keep a fact about the relationship between the source and target
+languages from being given in the transfer file.
+
+@subsubsection In the synthesis file
+
+ When considering the inclusion of a change in the synthesis file, the
+following questions should be asked:
+@enumerate
+
+@item Does it express a fact about a distinctive of the target language?  Or
+to put it another way, does the change mediate between a pan-dialectal
+normal form and the corresponding form in the target language?  If so,
+the change belongs in the synthesis file.
+
+@item Does the change contain any information about the source language?  If
+so, it does not belong in the synthesis file.  The synthesis file
+should not contain information about the source language because
+ideally it would be used regardless of the language from which texts
+are being adapted.
+
+@item Would the change be appropriate for adapting from a language to
+itself?  Imagine analyzing a text, whereby each root comes to be
+represented by its pan-dialectal normal form, and then synthesizing
+the text back to the same language, using only SYNTHESIS and TEXTOUT.
+(That is, no transfer file would be loaded.)  If the change under
+consideration would not contribute to this process, it probably
+belongs in the transfer file.
+
+@end enumerate
+
+Returning to the case of @code{qellay} discussed in the previous
+section, it would be possible to include the change of @code{*qillay}
+to @code{*qullqi} in the synthesis file.  However, this would violate
+all the above-mentioned criteria.
+
+@subsubsection Using both the transfer and synthesis files
+
+The previous sections describe criteria for whether a change should be
+made in the transfer file or in the synthesis file.  In this section
+we will show that even for a single change it is sometimes best to
+distribute the information across both files.  To show this, we
+consider a single example, that of adapting North Junin Quechua
+@code{yarpun} `he goes down' to Wanka Quechua, where the corresponding
+form is @code{hiyalpun}.
+
+If there were nothing to consider beyond getting the change made,
+there would be many ways to do it.  But if we consider factors such as
+the flexibility for adapting to and from other languages, the ease of
+reversing the direction of adaptation, and the value of the data files
+as representing linguistic realities, then we are lead to one solution
+which seems better than the rest.
+
+North Junin @code{yarpu-} analyzes as @code{ya DWN} (that is, as
+@code{ya-rpU-}).  One possibility is to make the following change in
+the transfer file:
+@example
+
+\lc "*ya DWN" "hiyalpu"
+
+@end example
+@noindent
+However, this would not be reversible, since Wanka @code{hiyalpu-}
+should analyze as the root @code{hiya-} and the suffix @code{-lpu}
+`DWN'.  So let's consider another possibility:
+@example
+
+\lc "*ya DWN" "hiya DWN"
+
+@end example
+@noindent
+However, this fails to capture a significant fact, namely, that
+@code{hiya} is the Wanka reflex of Proto-Quechua @code{*hiqa}.  (Wanka
+has undergone RSCs which eliminate /@code{*q}/; /@code{y}/ is inserted
+between /@code{i}/ and /@code{a}/ to maintain syllable structure.)  In
+light of this, another way to make the change is as follows:
+@example
+
+\lc "*ya DWN" "*hiqa DWN"
+
+@end example
+@noindent
+We count on the Wanka synthesis file to contain whatever is necessary
+to produce Wanka @code{hiya} from Proto-Quechua @code{*hiqa} (for
+example, a RSC which deletes @code{q} followed by a change of
+@code{ia} to @code{iya}).  Of course, such changes would be needed
+independently.
+
+The example below summarizes the steps by which @code{yarpun} becomes
+@code{hiyalpun} using this final formulation.  This approach is
+superior to the former ones because it meets our criteria of
+flexibility, reversibility, and linguistic integrity.
+@example
+
+North Junin yarpun to Wanka hiyalpun
+		North Junin Quechua input:          yarpun
+											  |
+		ANALYSIS                              v
+										  *ya  DWN 3
+		TRANSFER                              v
+										 *hiqa DWN 3
+				  |regular sound change       v
+		SYNTHESIS |                       hiya DWN 3
+				  |allomorph selection        |
+											  v
+		Wanka Quechua output:              hiyalpun
+
+@end example
 
 @c ----------------------------------------------------------------------------
 @c Added by hab 14-May-1999
-@node \maxprops (xxzzTR.CHG), \mcl (xxzzTR.CHG), \lc, Transfer file fields
-@subsection Maximum number of properties: \maxprops
+@node \maxprops (xxzzTR.CHG), \mcl (xxzzTR.CHG), \lc, Transfer file
+@section Maximum number of properties: \maxprops
 @findex \maxprops
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -1204,8 +2137,8 @@ above.
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \mcl (xxzzTR.CHG), \mp (xxzzTR.CHG), \maxprops (xxzzTR.CHG), Transfer file fields
-@subsection Morpheme class declaration: \mcl
+@node \mcl (xxzzTR.CHG), \mp (xxzzTR.CHG), \maxprops (xxzzTR.CHG), Transfer file
+@section Morpheme class declaration: \mcl
 @findex \mcl
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -1218,8 +2151,8 @@ synthesis control file instead; see
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \mp (xxzzTR.CHG), \pcl (xxzzTR.CHG), \mcl (xxzzTR.CHG), Transfer file fields
-@subsection Morpheme property declaration: \mp
+@node \mp (xxzzTR.CHG), \pcl (xxzzTR.CHG), \mcl (xxzzTR.CHG), Transfer file
+@section Morpheme property declaration: \mp
 @findex \mp
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -1234,8 +2167,8 @@ above.
 
 @c ----------------------------------------------------------------------------
 @c Added by hab 14-May-1999
-@node \pcl (xxzzTR.CHG), \rd (xxzzTR.CHG), \mp (xxzzTR.CHG), Transfer file fields
-@subsection Punctuation class: \pcl
+@node \pcl (xxzzTR.CHG), \rd (xxzzTR.CHG), \mp (xxzzTR.CHG), Transfer file
+@section Punctuation class: \pcl
 @findex \pcl
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -1249,8 +2182,8 @@ above.
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \rd (xxzzTR.CHG), \scl (xxzzTR.CHG), \pcl (xxzzTR.CHG), Transfer file fields
-@subsection Root delimiter: \rd
+@node \rd (xxzzTR.CHG), \scl (xxzzTR.CHG), \pcl (xxzzTR.CHG), Transfer file
+@section Root delimiter: \rd
 @findex \rd
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -1263,8 +2196,8 @@ synthesis control file instead; see
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \scl (xxzzTR.CHG), \sr, \rd (xxzzTR.CHG), Transfer file fields
-@subsection String class declaration: \scl
+@node \scl (xxzzTR.CHG), \sr, \rd (xxzzTR.CHG), Transfer file
+@section String class declaration: \scl
 @findex \scl
 
 This field can also occur in the STAMP declarations file or the STAMP
@@ -1278,22 +2211,305 @@ above.
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \sr, , \scl (xxzzTR.CHG), Transfer file fields
-@subsection Substitution rule: \sr
+@c Added by hab 27-Oct-2003
+@node \sr, , \scl (xxzzTR.CHG), Transfer file
+@section Substitution rule: \sr
 @findex \sr
 
-FIX ME!
+Substitution rules are similar to the string changes described in
+Weber, Black, and McConnel (1988:79ff), but they differ in two
+respects.  First, changes are made to sequences of morphnames rather
+than to strings.  (Nevertheless, we use ``string'' in referring to
+parts of a substitution rule.)  Second, they use a different type of
+environment condition.  Whereas string changes may be constrained with
+respect to character strings, conditions on substitution rules may be
+constrained with respect to morphnames, flags, or some combination of
+these.
+
+Substitution rules may have (in order):
+@enumerate
+
+@item the field code @code{\sr},
+
+@item the match string,
+
+@item the substitution string
+
+@item one or more flags,
+
+@item one or more environments, and
+
+@item a comment.
+@end enumerate
+@noindent
+The match and substitution strings are delimited by some printing
+character, as described above in
+@ifset txt
+`Lexical change: \lc' above
+@end ifset
+@ifclear txt
+@ref{\lc}
+@end ifclear
+(see also Weber, Black, and McConnel (1988:80).  When the match string
+is found in an analysis, it is replaced by the substitution string if
+all the rule's flags are raised (or, for complemented flags, not
+raised) and at least one of its environments is satisfied (if any are
+specified).
+
+Of the six parts listed above, only the first three are obligatory.
+Thus the following is an acceptable rule to change every instance of
+@code{3PST} (in every analysis) to @code{PAST3}:
+@example
+
+\sr "3PST" "PAST3"
+
+@end example
+@noindent
+Here, every case of @code{3PST} is changed because the rule is not
+conditioned.  Such rules are useful in cases where affixes which
+correspond between the source and target languages have different
+morphnames.
+
+Anything between the match and substitution strings is ignored.
+Therefore, any characters may be included there, such as the word
+``becomes'' or an arrow:
+@example
+
+\sr "3PST" --> "PAST3"
+
+@end example
+
+As with lexical changes, the match and substitution strings of
+substitution rules may contain the markers indicating the beginning or
+end of the root portion of an analysis (for which the defaults are
+@code{<} and @code{>}).  These can be used to force morphnames to be
+assigned a certain type: prefix, root, or suffix.  For example, rule
+@i{a} would apply to a root and a suffix, while rules @i{b} and @i{c}
+would apply to a prefix and a root:
+@example
+
+a. \sr "*ya > OUT" "*lluqshi"
+b. \sr "PST < *gaga" "bukaga"
+c. \sr "PST < *gaga" "< bukaga"
+
+@end example
+@noindent
+Rules @i{b} and @i{c} differ in that @code{bukaga} in @i{b} would be
+interpreted as a prefix, whereas in @i{c} it would be interpreted as a
+root.
+
+The rules by which a type is assigned to a morphname are as follows:
+@enumerate
+@item Any morphname to the left of @code{<} is a prefix.
+
+@item Any morphname to the right of @code{>} is a suffix.
+
+@item All morphnames between @code{<} and  @code{>} are roots.
+
+@item If the only delimiter in the match string is @code{<}, every morphname
+after it is a root.  Likewise, if the only delimiter is @code{>},
+every morphname preceding it is a root.
+@end enumerate
+@noindent
+Recall that in lexical changes, morphnames that are not forced to be
+prefixes or suffixes are assumed to be roots.  This is not the case
+for substitution rules: if the match string does not contain a
+delimiter, the type of each morphname is free to vary (that is, it can
+be taken as either a prefix, a root, or a suffix) and type identity is
+not imposed in determining a match to some portion of an analysis.
+When a match is achieved, the morphnames of the match string inherit
+the types of the matched morphnames in the analysis.  These types may
+then influence the types assigned to the substitution string,
+following the rules outlined in
+@ifset txt
+`Delimiters and type in lexical changes' above
+@end ifset
+@ifclear txt
+@ref{Delimiters and type in lexical changes}
+@end ifclear
+for lexical changes.
+
+It is possible to make lexical changes with substitution rules; for
+example,
+@example
+
+\sr "*wishlla" "kucha:ra"
+
+@end example
+@noindent
+However, substitution rules are computationally more time consuming
+than lexical changes, so they should be used only if there is good
+reason to do so.  Here are two possible motivations for using a
+substitution rule rather than a lexical change.  First, it may be
+necessary to order the change after other rules of the transfer file
+(for example, an insertion rule); recall that the lexical changes
+apply before all other rules, so there is no control on their
+ordering.  Second, it may be necessary to condition the change with a
+flag; flags are not available for lexical changes.
+
+We now proceed to illustrate some of the flexibilities afforded by
+substitution rules.  The match and substitution strings may have
+multiple morphnames.  For example, the following is used between
+Quechua languages to reorder the pluralizer @code{-rka} `PLIMPF'
+and the imperfective @code{-yka:} `IMPFV':
+@example
+
+\sr "PLIMPF IMPFV" "IMPFV PLIMPF"
+
+@end example
+
+The match and substitution strings need not contain the same number of
+morphnames.  For example, suppose --- as is the case in some Quechua
+languages --- that in one language the reflex of @code{-ra} `PST3'
+indicates both past tense and third person, whereas in another
+language the cognate @code{-rqa} indicates just past tense, with third
+person indicated by a following third person marker.  The following
+makes the appropriate change:
+@example
+
+\sr "PST3" "PST 3P" |-ra (PST3) to -rqa-n (PST 3)
+
+@end example
+@noindent
+Whereas in this case the substitution string is longer than the match
+string, in the following example it is shorter.  In San Martin
+Quechua, the adverbializer @code{-shpa} may be inflected to reflect
+the person of the subject, whereas in Cuzco Quechua it is never so
+inflected.  For example, San Martin @code{-shpa-yki} `ADVSSÿ2P' should
+become Cuzco @code{-spa} `ADV'.  One way to do this would be to write
+a substitution rule for each case:
+@example
+
+\sr "ADVSS  1P" "ADV"
+\sr "ADVSS  2P" "ADV"
+\sr "ADVSS  3P" "ADV"
+\sr "ADVSS 12P" "ADV"
+
+@end example
+@noindent
+Alternatively, one could use a morpheme class and a single rule.  If
+the morpheme class @code{POSS} contains @code{1P}, @code{2P},
+@code{3P}, and @code{12P}, then the following would make the desired
+change:
+@example
+
+\sr "ADVSS [POSS]" "ADV"
+
+@end example
+
+The substitution string may even be empty, in which case the morphname
+sequence in the match string is simply deleted.  (The converse, that
+is, changing an empty match string into some morphnames, is not
+acceptable.  Insertion rules are provided for that purpose.)  Consider
+two examples:
+@enumerate
+
+@item Some Quechua languages have a future suffix @code{-paq} `FUT', which
+is simply absent in others.  To adapt to the latter languages from
+ones that have @code{-paq}, the following change is appropriate:
+@example
+
+\sr "FUT" "" |delete -paq FUT
+
+@end example
+
+@item
+
+Campa languages have considerable epenthesis phenomena at morpheme
+boundaries.  To adapt across these, the strategy that has been taken
+is to analyze the epenthesized phonemes as separate morphemes (named
+``&'') and then to delete them in TRANSFER with the following rule:
+@example
+
+\sr "&" "" |remove epenthesis
+
+@end example
+@noindent
+Epenthesis is then reintroduced as appropriate for the target language
+by SYNTHESIS.
+@end enumerate
+
+Substitution rules may be conditioned by one or more flags (discussed
+in
+@ifset txt
+`Flag rule: \fl').
+@end ifset
+@ifclear txt
+@ref{\fl}).
+@end ifclear
+For example, the following would substitute @code{-rpa} `PLSTAT' for
+@code{-ra:} `STAT' whenever the PLURAL flag is up:
+@example
+
+\sr "STAT" "PLSTAT" PLURAL
+
+@end example
+@noindent
+
+Substitution rules may also be conditioned by one or more environments
+like those described in Weber, Black, and McConnel (1988:74ff).  An
+environment must contain an environment bar and at least one
+morphname, root, morpheme class, or the complement of one of these.
+
+Let us consider three examples, each used in adapting from San Martin
+to Cajamarca Quechua:
+@enumerate
+@item Following @code{-rqa} `PST', some Quechua languages use @code{-yki}
+`2P', the possessive form of the second person, whereas others use
+@code{-nki} `2', the verbal form.  Therefore it is sometimes necessary
+to change one into the other.  To avoid changing the second person
+suffix everywhere, the rule must be constrained to apply only after
+@code{PST}:
+@example
+
+\sr "2" "2P" / PST _ |-rqa-yki to -rqa-nki
+
+@end example
+
+@item The following substitution rule is also used:
+@example
+
+\sr "2" "3" / 2O PST _ |-shu-rqa-nki to -shu-rqa-n
+
+@end example
+@noindent
+The order of this change and the preceding change of @code{2} (verbal)
+to @code{2P} (possessive) is critical.  Since both deal with morphname
+@code{2} following @code{PST}, the one with the more specific
+environment, that is, the one changing @code{2} to @code{3}, must be
+put first.  Otherwise we have the undesirable situation in which the
+more general rule would always apply, destroying the environment of
+the more specific rule.
+
+@item
+
+The following rule assumes that the morpheme class @code{POSS}
+containing @code{1P}, @code{2P}, @code{3P}, and @code{12P} has been
+defined in the STAMP declarations file, and uses this class in a
+morpheme environment constraint:
+@example
+
+\sr "PLUR PUR" "PUR PL1" / NOM [POSS] _
+		 |-NOM-POSS-PLUR-PUR --> -NOM-POSS-PUR-PL1
+		 |-na -yki -kuna-pa  --> -na -yki -paq-llapa
+		 |-na -n   -kuna-pa  --> -na -n   -paq-llapa
+		 |etc.
+
+@end example
+@end enumerate
 
 @c ----------------------------------------------------------------------------
-@node Syntax of transfer rules, Syntax of lexical changes, Transfer file fields, Transfer file
-@section Syntax of transfer rules
-
-FIX ME!
-
-@node Syntax of lexical changes, , Syntax of transfer rules, Transfer file
-@section Syntax of lexical changes
-
-FIX ME!
+@c commented off hab 2003.10.27
+@c @node Syntax of transfer rules, Syntax of lexical changes, Transfer file, Transfer file
+@c @section Syntax of transfer rules
+@c
+@c FIX ME!
+@c
+@c @node Syntax of lexical changes, , Syntax of transfer rules, Transfer file
+@c @section Syntax of lexical changes
+@c
+@c FIX ME!
+@c
 
 @c ----------------------------------------------------------------------------
 @node Synthesis file, Dictionary code table file, Transfer file, Top
@@ -1312,7 +2528,7 @@ FIX ME!
 * \pcl (zzSYNT.CHG)::       Punctuation class
 * \rd (zzSYNT.CHG)::        Root delimiter
 * \rsc::                    Regular sound change
-* \rscid::                  Regular sound change markers
+* \rscid::                  Regular sound change identifiers
 * \scl (zzSYNT.CHG)::       String class declaration
 * \test::                   Synthesis test
 @end menu
@@ -1380,7 +2596,122 @@ transfer control file instead; see
 @section Lexical change: \lc
 @findex \lc
 
-FIX ME!
+The lexical changes of SYNTHESIS are like those of TRANSFER both with
+respect to notation and program behavior (see
+@ifset txt
+`Lexical changes' in the chapter `STAMP transfer file' above.)
+@end ifset
+@ifclear txt
+@ref{\lc}.)
+@end ifclear
+The difference is that lexical changes included in the synthesis file
+should express distinctives of the target language; this is discussed
+further in
+@ifset txt
+`Where should lexical changes be made?' in the chapter `STAMP transfer file' above.
+@end ifset
+@ifclear txt
+@ref{Where should lexical changes be made?}.
+@end ifclear
+The example below contains lexical changes used for synthesizing to
+Huamalies Quechua.  All lexical changes apply before any other changes
+of the synthesis file.
+
+@example
+
+SYNTHESIS lexical changes for adapting to Huamalies Quechua
+
+\co exceptional changes from proto, not handled below
+\lc "*illaqa:"    "elaqa:"      |disappear
+\lc "*illaqpita"  "elaqpita"    |surprisingly
+\lc "V1 *pa:ri"   "V1 paha"     |fly
+
+\co words in which proto /s/ is lost:
+\lc "*wasi"       "wayi"        |house
+\lc "*masi"       "mayi"        |paisano
+\lc "*masa"       "maha"        |mate
+
+\co words which do not undergo */ll/ > /l/
+\lc "N0 *qillay"  "N0 qellay"   |money
+\lc "*llan~u"     "llanu"       |thin
+
+\co words which do not undergo */n~/ > /n/
+\lc "*pin~a"      "pin~a"       |bad, angry
+
+\co words which do not undergo */ch/ > /ts/ > /s/
+\lc "V1 *wacha"   "V1 wacha"    |give:birth
+\lc "N0 *ichik"   "N0 ichik"    |small
+
+\co words which have /sh/ from /*s/
+\lc "*sumaq"      "shumaq"      |pretty
+
+\co words with /e/ for /*i/, not due to phonetic lowering
+\lc "*wira"       "wera"        |fat
+
+\co words which have */aya/ > /a:/
+\lc "V1 *tiya"    "V1 ta:"      |reside
+\lc "V1 *traya"   "V1 cha:"     |arrive
+\lc "V1 *shaya"   "V1 sha:"     |stand
+
+\co Exceptions to phonetic lowering following /q/:
+\lc "V2 *ruqu"    "V2 roqu"     |sever
+
+\co Spanish loans handled differently:
+\lc "kri*yi"      "krigi"       |believe
+\lc "inri*ga"     "entriga"     |turn over to
+@end example
+@noindent
+As illustrated above, synthesis lexical changes allow one to handle
+exceptions to regular sound changes (RSCs) discussed in
+@ifset txt
+`Regular sound change: \rsc' below.
+@end ifset
+@ifclear txt
+@ref{\rsc}.
+@end ifclear
+For example, suppose that an RSC generally makes @code{ll} into
+@code{l} but should not apply to @code{*qillay} for the target
+language.  This form can be ``exempted'' from the application of RSCs
+by omitting the RSC identifier (@code{*}) from the output of the
+lexical change, as in the following:
+@example
+
+\lc "N0 *qillay"  "N0 qellay"   |money
+
+@end example
+
+The greatest source of errors in lexical changes (both in TRANSFER and
+SYNTHESIS) is the omission of the RSC identifier.  For example,
+consider the following change:
+@example
+
+\lc "papa" "aqshu" | potato
+
+@end example
+@noindent
+This will not work if the entry for @code{papa} in the source language
+dictionary is either of the following, which are equivalent (see
+Weber, Black, and McConnel 1988:128):
+@example
+
+\w papa                \w papa
+\p N0                  \p N0
+\ge potato             \ge potato
+\e *                   \e *papa
+
+@end example
+@noindent
+The reason is that an analysis with the root papa will come through as
+follows:
+@example
+
+\a < N0 *papa > ...
+
+@end example
+@noindent
+The solution is to make the left side of the transfer change
+@code{*papa} rather than simply @code{papa}.
+
 
 @c ----------------------------------------------------------------------------
 @c Added by hab 14-May-1999
@@ -1462,14 +2793,193 @@ transfer control file instead; see
 @section Regular sound change: \rsc
 @findex \rsc
 
-FIX ME!
+The second part of a synthesis file defines regular sound changes
+(RSCs).  The definition of an rsc may have five parts:
+@enumerate
+
+@item the field code @code{\rsc},
+@item a match string,
+@item a substitution string,
+@item optionally, one or more one-character RSC identifiers, and
+@item optionally, one or more string environment constraints.
+@end enumerate
+@noindent
+RSCs are string changes as described in Weber, Black, and McConnel
+(1988:80ff), except that RSCs may have identifiers following the
+substitution string.
+
+It is possible to have different sets of regular sound changes apply
+to different roots.  The rules of each set must be identified by a
+distinguishing character, called an RSC identifier, and all roots
+undergoing each set must also be marked with the same identifier by
+putting that character in front of the etymology in the source
+language dictionary.  When SYNTHESIS sees a root beginning with an RSC
+identifier, it strips it off (since it is not really part of the
+string), remembering the type of RSC identifier it had.  Subsequently,
+only RSCs of that type are applied to it.
+
+Any character used as an RSC identifier must be declared in the
+synthesis file with the @code{\rscid} field.  For
+instance,
+@example
+\rscid * +
+@end example
+@noindent
+declares @code{*} and @code{+} as RSC identifiers.
+
+There are three things to know about the @code{\rscid} field:
+@enumerate
+@item There may be at most four classes of RSCs, so the @code{\rscid} field
+may contain no more than four characters.
+
+@item
+If the @code{\rscid} field is not declared, SYNTHESIS assumes that there is a single class identified by an asterisk (@code{*}).  That is, no declaration is equivalent to the following declaration:
+@example
+\rscid *
+@end example
+
+@item
+An RSC identifier should not be a character that could begin a word
+(although it could be a character used only medially or finally within
+words), nor should it be @code{/} because in the RSCs this is
+interpreted as initiating a string environment constraint.
+@end enumerate
+
+The identifiers in an RSC indicate the roots to which the change
+should be applied.  The RSC applies only to roots marked by one of its
+identifiers.  For example, the root in analysis @i{a} would undergo
+the RSC defined in @i{b} because it is marked by the identifier
+(namely, @code{+}) in @i{b}:
+@example
+a. < N +auricula >
+b. \rsc "au" "o" +
+@end example
+@noindent
+Likewise, the rsc in @i{e} would apply to both @i{c} and @i{d}, since both @code{*} and @code{+}
+occur as identifiers in @i{e}:
+@example
+c. < N +gzudu >
+d. < field V *mido >
+e. \rsc "d" "r" * + / [V] _ [V]
+@end example
+
+RSCs are applied to etymological forms to generate target language
+roots in the following way:
+@enumerate
+@item
+An etymological form is stored in the source language dictionary.
+Ordinarily, this would be a reconstructed proto form.  This form would
+bear the appropriate RSC identifier.
+
+@item
+The etymology is put into analyses (by assigning the field code of
+etymologies to internal code @code{M} ) and passes unchanged to the
+point where RSCs apply.  (This would be the case if in TRANSFER it is
+not changed by any lexical changes, if in SYNTHESIS no dictionary
+entry is found for it, and if it is not changed by any synthesis
+lexical changes.)
+
+@item
+RSCs apply, recapitulating the sound changes by which the target
+language form evolved from the proto-form.  Unlike lexical changes,
+only one of which ever applies to a given root, all RSCs are applied
+to each susceptible root.  The RSCs are applied in the order they are
+defined, with each change applying to the output of all previous ones.
+And unlike lexical changes, which must match the entire root, RSCs
+apply whenever they match any portion of a root.
+@end enumerate
+@noindent
+For example, consider the following set of rules (which assume the
+default RSC identifier of @code{*}):
+@example
+
+\rsc "ch" > "ts" |(1) laminal to apical
+\rsc "ts" > "s"  |(2) deaffrication
+\rcs "ll" > "l"  |(3) depalatalization of *ll
+\rcs "n~" > "n"  |(4) depalatalization of *n~
+
+@end example
+@noindent
+Consider their effect on roots like @code{*chaki-} and @code{*llan~u}.
+@example
+
+input  :   *chaki     *llan~u
+after 1:    tsaki      llan~u
+after 2:    saki       llan~u
+after 3:    saki       lan~u
+after 4:    saki       lanu
+@end example
+@noindent
+Note that each rule applies to the output of the previous rule.  (The
+reader may wonder why two rules (@code{ch} to @code{ts} and then
+@code{ts} to @code{s}) are used here instead of a direct change of
+@code{ch} to @code{s}.  If the proto-language had @code{*ts} and the
+change of @code{ts} to @code{s} were needed regardless of cases
+produced by the first rule, this would be necessary.  However, this is
+not the case in Quechua.  A single rule could have been used; two were
+used for reasons of linguistic integrity: this models the actual
+historical steps through which the language evolved; neighboring
+dialects have undergone the first, more widespread change of @code{ch}
+to @code{ts}, but not the more local change of @code{ts} to @code{s}.)
+
+With the possible exception of a few loan words, many languages draw
+their vocabulary from a single source language.  For such languages,
+only one set of RSCs would be needed.  In other cases, the vocabulary
+is drawn from multiple parents, and for each it might be useful to
+derive target language words with different sets of RSCs.  For
+Quechua, for example, in addition to deriving native roots from
+Proto-Quechua forms, one could use RSCs to derive words borrowed from
+Spanish, where RSCs carry out loan processes, such as changing mid
+vowels to high vowels, stressed vowels to long vowels, vowel sequences
+to vowel semivowel sequences, and so on.  In this case, since there
+would be two sets of RSCs, it would be necessary to declare two rsc
+identifiers, perhaps @code{*} for changes applied to Proto-Quechua
+roots and @code{+} for changes applied to Spanish roots.
+
+As is the case for string changes in general, RSCs may be conditioned.
+The conditioning environments may make use of string classes, which
+must be defined before being used.
+
+The final example below gives the RSCs used to synthesize
+Asheninca Campa:
+@example
+
+Regular sound changes for Asheninca Campa
+
+   \rsc "hi"  "ii" / #_
+   \rsc "h"   " "   /a_a / a_i / e_e / i_i / o_o / o_i / a_e
+   \rsc "iha" "yaa"
+   \rsc "ih"  "y"
+   \rsc "eh"  "y"
+
+   \rsc "g"   ""   / a_a / o_i
+   \rsc "g"   "y"  / a_i / i_ / e_
+   \rsc "g"   "k"  / _o
+
+   \rsc "iy"  "y"   |ohig > oig > oiy > oy
+					  |and rig > riy > ry
+   \rsc "io"  "oo"  |Asheninca's Great Vowel Shift
+   \rsc "oa"  "aa"
+   \rsc "ei"  "ee"
+   \rsc "ae"  "ai"  |so ahe > ae > ai
+   \rsc "ch"  "tsy"
+   \rsc "sh"  "sy"
+   \rsc "se"  "sye"
+@end example
 
 @c ----------------------------------------------------------------------------
 @node \rscid, \scl (zzSYNT.CHG), \rsc, Synthesis file
-@section Regular sound change markers: \rscid
+@section Regular sound change identifiers: \rscid
 @findex \rscid
 
-FIX ME!
+The @code{\rscid} field defines an RSC identifier.  See
+@ifset txt
+`Regular sound changes: \rsc' above.
+@end ifset
+@ifclear txt
+@ref{\rsc}.
+@end ifclear
+
 
 @c ----------------------------------------------------------------------------
 @node \scl (zzSYNT.CHG), \test, \rscid, Synthesis file
@@ -1487,11 +2997,214 @@ above.
 @end ifclear
 
 @c ----------------------------------------------------------------------------
-@node \test, , \scl (zzSYNT.CHG), Synthesis file
+@node \test, Campa epenthesis revisited, \scl (zzSYNT.CHG), Synthesis file
 @section Synthesis test: \test
 @findex \test
 
-FIX ME!
+@menu
+* Campa epenthesis revisited::
+* Reporting conditions::
+* Test syntax::
+@end menu
+
+
+Some of the test mechanisms of AMPLE (Weber, Black, and McConnel
+1988:149ff) have been incorporated into SYNTHESIS.  Only three of
+AMPLE's built-in tests (Weber, Black, and McConnel 1988:150ffÿ) apply
+in SYNTHESIS.  These are string environment constraints (SEC_ST's,
+Weber, Black, and McConnel 1988:74, 151), morpheme environment
+constraints (MEC_FT's, Weber, Black, and McConnel 1988:74,
+152), and punctuation environment constraints (PEC-ST's).
+
+
+Like AMPLE, SYNTHESIS allows the user to define tests in terms of
+information associated with a morpheme or allomorph.  The test
+definitions must conform to the syntax detailed in XXXXXXXXXXXXX.
+User-defined tests can be employed to constrain the selection of
+allomorphs in cases that are too complex for string or morpheme
+environment constraints.  Whenever a morpheme has two or more
+allomorphs, the first one that passes all environmental conditions, as
+well as all built-in and user-defined tests, is the one chosen as the
+realization of that morpheme.  The order of tests in the synthesis
+file determines the order in which they are applied.
+
+If SYNTHESIS cannot parse a user-defined test, it reports this to
+standard output as a ``syntax error,'' followed by an identification
+of the offending test.
+
+Every test begins with a field code and must be followed by a name,
+either the name of a built-in test or a user-given name.  Unless it is
+a built-in test, the name must be followed by the definition of the
+test.  In test definitions, @code{current} refers to the morpheme
+whose allomorph is currently being considered, while @code{left}
+refers to the previous morpheme and @code{right} refers to the
+following one.  @code{LEFT} and @code{RIGHT} refer to some (or all) of
+the units to the left or right, respectively, as represented in the
+following diagram:
+@example
+
+ MORPHNAMES:    M(1)  M(2)  M(3)  M(4) ... M(k)  M(k+1) ...
+				 |     |     |     |        |      |
+ CHOSEN          |     |     |     |        |      |
+ ALLOMORPHS:    abc   def   ghi    ?   ...  ?      ?    ...
+					 left current right
+				 <---LEFT         RIGHT--->
+
+@end example
+@noindent
+For details, see Weber, Black, and McConnel 1988:164ff.
+
+A test definition may be followed by an action to be taken whenever
+the test succeeds.  Actions have two uses:
+@enumerate
+@item
+They can make late modifications to a synthesized target language word
+(for example, handle Campa's epenthesis as illustrated below in
+@ifset txt
+`Campa epenthesis revisited').
+above.
+@end ifset
+@ifclear txt
+@ref{Campa epenthesis revisited}).
+@end ifclear
+
+@item
+They can monitor a particular condition (defined by the user) and,
+whenever it is found, make a report to standard output (usually
+redirected to a log file).
+@end enumerate
+@noindent
+Note that it is possible to write a test that is true for all
+analyses; an action associated with such a test would apply to every
+analysis.
+
+The definition of an action must directly follow that of a test; it is
+delimited by curly braces, that is, opened by @code{@{} and closed by @code{@}}.
+Thus, a typical test with an action has the following form:
+@example
+
+\test NAME
+	 (...definition of test...)
+	 @{...definition of action...@}
+@end example
+
+There are two kinds of actions, insertion actions and report actions.  An insertion action has one of the following forms:
+@example
+@{ insert <string> before <position> @}
+@{ insert <string> after  <position> @}
+@end example
+@noindent
+where @code{<string>} is what is to be inserted and @code{<position>}
+indicates the position with a keyword like current.  As explained
+below, insertion actions should be used only under exceptional
+circumstances.
+
+A report action has one of the following forms:
+@example
+
+@{ report @}
+@{ report "<message>" @}
+
+@end example
+@noindent
+A report always outputs the test name and the offending analysis.  The
+text of @code{<message>} is output as well, if supplied as part of the
+report action.  Either double quotes, periods, or apostrophes may be
+used to delimit the message.
+
+We now illustrate the use of actions.
+
+
+@c ----------------------------------------------------------------------------
+@node Campa epenthesis revisited, Reporting conditions, \test, \test
+@subsection Campa epenthesis revisited
+
+In synthesizing Campa words, after all allomorphs have been chosen, an
+epenthetic @code{t} must be inserted at boundaries which satisfy certain
+phonological conditions.  These conditions are defined in a test which
+has an action to insert the epenthetic @code{t} if the conditions are met.
+This test is as follows:
+@example
+
+\test EPEN_t_FT
+  (    NOT (left is PREFIX)
+   AND (    NOT (left string matches #)
+		AND NOT (right string matches #)
+	   )
+   AND (   (        (left string matches [V])
+			AND NOT (left property is gdeleted)
+			AND NOT (left property is FUC)
+		   )
+		OR (left string matches "N")
+	   )
+   AND (        (current string matches [V])
+		AND NOT (current property is PUC)
+	   )
+  )
+  @{ insert "t" before current @}
+
+@end example
+
+An alternative approach to Campa epenthesis is possible.  The
+@code{EPEN_t_FT} test and its insertion action could be dispensed with
+if allomorphs incorporating the epenthetic segment were added to the
+dictionaries, and conditions for their selection were given with
+string environment constraints or tests.  This would be more in line
+with STAMP's overall design, and would make it possible to simplify
+the handling of epenthesis both in analysis and synthesis.
+
+However, putting these allomorphs into the dictionaries manually would
+be very tedious.  A nice alternative would be to introduce them
+computationally before the dictionary is loaded.  This could be done
+by the PhonRule program, for example.
+
+An insertion action is justified in the case of Campa epenthesis
+because the phenomenon is superficial (indeed, it can apply after
+allomorph selection) and because it is regular and pervasive (indeed,
+it would require thousands of allomorphs to handle without an
+insertion rule).  Insertion actions should be used only under such
+exceptional circumstances.  We strongly encourage the user to use the
+allomorph selection method wherever possible.
+
+@c ----------------------------------------------------------------------------
+@node Reporting conditions, Test syntax, Campa epenthesis revisited, \test
+@subsection Reporting conditions
+
+A test may be used as a monitor for violations of a particular
+condition, reporting these to the standard output.  For example,
+suppose one suspects errors in the order of morphemes for the target
+language.  Assume that orderclasses for morphemes are defined in the
+target language dictionaries, and that the condition should always
+hold that a lesser orderclass never follows a greater one.  The
+following test would monitor for violations of this
+condition:
+@example
+
+\test ORDER_REPORT_ST
+	(left orderclass > current orderclass)
+	@{ report "Orderclass violation" @}
+
+@end example
+@noindent
+This test would cause a message like the following to be printed to
+standard output, where the first line gives the test name and the
+second line gives the offending analysis:
+@example
+
+Report from test  ORDER_REPORT_ST
+< V1 aka > MU IMPFV
+Orderclass violation
+
+@end example
+@noindent
+Note that when the report action includes a message, the message is
+printed at the end of the report.
+
+@c ----------------------------------------------------------------------------
+@node Test syntax, , Reporting conditions, \test
+@subsection Test syntax
+@include usertest.txi
+
 
 @c hab 14-May-1999 need to also add <punc_expr> to <factor>, add
 @c <neighbor>, and insert <punc_expr> itself.
