@@ -556,9 +556,9 @@ CAPTION "About CARLA Studio"
 FONT 8, "MS Sans Serif"
 BEGIN
 	ICON            IDR_MAINFRAME,IDC_STATIC,12,9,20,20
-	LTEXT           "CARLA Studio Version 2.6.5.3",IDC_STATIC,40,10,119,8,
+	LTEXT           "CARLA Studio Version 2.6.5.4",IDC_STATIC,40,10,119,8,
 					SS_NOPREFIX
-	LTEXT           "Copyright SIL International © 1999-2003",IDC_STATIC,40,
+	LTEXT           "Copyright SIL International © 1999-2004",IDC_STATIC,40,
 					20,158,8
 	DEFPUSHBUTTON   "OK",IDOK,175,149,32,14,WS_GROUP
 	LTEXT           "Credits",IDC_Credits,12,42,189,103
@@ -1880,8 +1880,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,6,5,3
- PRODUCTVERSION 2,6,5,3
+ FILEVERSION 2,6,5,4
+ PRODUCTVERSION 2,6,5,4
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x3L
@@ -1896,17 +1896,17 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "2.6.5.3\0"
+			VALUE "Comments", "2.6.5.4\0"
 			VALUE "CompanyName", " SIL International\0"
 			VALUE "FileDescription", "CARLA Studio Application\0"
-			VALUE "FileVersion", "2, 6, 5, 3\0"
+			VALUE "FileVersion", "2, 6, 5, 4\0"
 			VALUE "InternalName", "CARLAStudio\0"
 			VALUE "LegalCopyright", "Copyright © 1999-2004\0"
 			VALUE "LegalTrademarks", "\0"
 			VALUE "OriginalFilename", "CStudio.EXE\0"
 			VALUE "PrivateBuild", "\0"
 			VALUE "ProductName", "CarlaStudio Application\0"
-			VALUE "ProductVersion", "2, 6, 5, 3\0"
+			VALUE "ProductVersion", "2, 6, 5, 4\0"
 			VALUE "SpecialBuild", "\0"
 		END
 	END
