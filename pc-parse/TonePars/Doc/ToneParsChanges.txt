@@ -1,8 +1,8 @@
 TonePars CHANGE HISTORY
 
-1.0.8 (07-Dec-2001)
+1.0.8 (10-Dec-2001)
 -------------------
-1. The "'tonestatus' 'tone' 'is' TONE" clause in rules needed to use the first
+1. The "'tonestatus' 'tone' 'is' TONE" clause in rules needs to use the first
 morpheme to left/right that has a tbu.
 
 2. The position in rule action needs to refer to the first morpheme
