@@ -362,6 +362,9 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 	BOOL bCommentMarker = FALSE;
 	BOOL bFound=FALSE;
 
+	BOOL bIsMemberMatches = FALSE;
+	//BOOL bQuote = FALSE;
+
 	CHARRANGE crOldSel;
 
 	GetSel(crOldSel);
@@ -388,6 +391,25 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 		{
 			TCHAR ch = *pPtr;
 
+
+			//if( bIsMemberMatches && ch != 32 )
+			//{
+			//	ic = m_colorError;
+			//}
+
+
+			//if(( ch==32 || ch=='\t' ) && ( bIsMemberMatches ) )
+			//{
+			//	bIsMemberMatches=FALSE;
+			//}
+
+
+			// allow identifier with multiple periods
+			if(bIsMemberMatches)
+			{
+				ic = m_colorIdentifiers;
+			}
+
 			// //////////////////
 			// Process comment |
 			// //////////////////
@@ -400,11 +422,37 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 				}	while (ch != 0 && ch != '\r');
 				ic = m_colorCOMments;}
 
+
 			// ////////////////////////////////
 			// Process strings with quotes
 			// ////////////////////////////////
-			else if ( IsStringQuote(ch) )
+/*
+			else if ( IsStringQuote(ch) )// && (!bIsMemberMatches))
 			{
+
+
+				// search for a space before " or ' or .
+				TCHAR *essai = pStart;
+				TCHAR charac;
+				for(int i=0;i<=0;i++)
+				{
+					charac = *essai;
+					essai++;
+				}
+
+				if(( charac==32 ) && (  m_strLastKeyWord=="is"
+									|| m_strLastKeyWord=="member"
+									|| m_strLastKeyWord=="matches" ))
+				{
+					bQuote=TRUE;
+				}
+				else
+				{
+					bQuote=FALSE;
+
+				}
+
+
 				pSymbolStart = pPtr;
 				TCHAR ch1 = ch;
 				do
@@ -417,9 +465,17 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 					pPtr++;
 				}
 				m_bOpenQuote = TRUE;
-				ic = m_colorIdentifiers;
+
+//if( !bQuote	)
+//ic = m_colorError;
+//else ic = m_colorIdentifiers;
+
+
 				m_strLastKeyWord.Empty();
 			}
+
+*/
+
 
 			// ///////////////////////
 			// Process numbers
@@ -441,7 +497,11 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									 || ch == '<'
 									 || ch == '-'
 									 || ch == '~'
-									 || ch == '\\' )
+									 || ch == '\\'
+									 || ch == '.'		// added by mr 6/20/2002 to solve bug is"identif"
+									 || ch == '\"'
+									 || ch == '\'' )
+
 
 			{
 
@@ -455,7 +515,12 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									 || ch == '<'
 									 || ch == '~'
 									 || ch == '-'
-									 || ch == '\\' );
+									 || ch == '\\'
+									 || ch == '.'		// added by mr 6/20/2002
+									 || ch == '\"'
+									 || ch == '\'' );
+
+
 
 
 					// ///////////////////
@@ -553,12 +618,14 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 					// OTHER
 					// /////////
 
-					if (!bFound )
+					//if (!bFound ) // ajouter <pos> ?????
+					if( !bFound && !bIsMemberMatches )
 					{
 						if((( m_strLastKeyWord == "is" ) ||
 						  ( m_strLastKeyWord == "member" ) ||
 						  ( m_strLastKeyWord == "matches" ) ))
 						{
+							bIsMemberMatches=TRUE;
 							m_strLastKeyWord.Empty();
 							ic = m_colorIdentifiers;
 						}
