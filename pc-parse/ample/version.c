@@ -21,8 +21,8 @@
 #define PATCHLEVELSEPCHAR 'b'
 #else   /* Beta */
 #ifdef EXPERIMENTAL
-#define TESTFORMAT     "Experimental version\n"
-#define COMPILEDFORMAT "Experimental version compiled %s %s\n"
+#define TESTFORMAT     "Extended version\n"
+#define COMPILEDFORMAT "Extended version compiled %s %s\n"
 #define PATCHLEVELSEPCHAR 'x'
 #else   /* EXPERIMENTAL */
 #undef  TESTFORMAT

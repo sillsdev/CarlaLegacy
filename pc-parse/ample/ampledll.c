@@ -2336,7 +2336,7 @@ fprintf(pOutFP_in, "Version %d.%d%c%d (%s), Copyright %s SIL, Inc.\n",
 	iAmplePatchlevel_g, pszAmpleDate_g, pszAmpleYear_g);
 #ifdef EXPERIMENTAL
 fprintf(pOutFP_in,
-	"    AMPLE with experimental enhancement: PC-PATR word grammar\n");
+	"    AMPLE with extensions: PC-PATR word grammar\n");
 #endif /* EXPERIMENTAL */
 #ifdef __DATE__
 fprintf(pOutFP_in, pszAmpleCompileFormat_g,
