@@ -2648,7 +2648,7 @@ END
 STRINGTABLE DISCARDABLE
 BEGIN
 	IDS_MSGCancelMeansDefault
-							"If you want to reset this the default value, click ""Cancel""  in the following dialog."
+							"If you want to reset this to the default value, click ""Cancel""  in the following dialog."
 	IDS_WizCatProp_RPS_RT   "RightmostPfxCatCheck|RPS Cat propagation, inserted by CarlaStudio Wizard.  The root category must match the fromcategory of the  nearest prefix (if any):\nIF   (   (left type is prefix)\n     OR (left type is infix)\n    )\nTHEN (current tocategory is left fromcategory)\n"
 	IDS_ModifyTestsAffixPage "Affixes"
 	IDS_ModifyTestsCatPropPage "Category Propogation"
