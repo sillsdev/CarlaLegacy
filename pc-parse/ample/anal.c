@@ -7203,6 +7203,7 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
 	  }
 	else
 	  store_AMPLE_trace(pAmple_in, " test=InfixType: %s>\n", pszType_in);
+	store_AMPLE_trace(pAmple_in, "</parseNode>\n", NULL);
 	}
 #ifndef HAVE_ALLOCA
 freeMemory(pszIndent);
