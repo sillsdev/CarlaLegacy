@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QPOrdinal">
+	<title level="2">Quantifiers and QP - Ordinal Numbers</title>
+	<form section="qp">
+		<prompt>Key your examples containing ordinal numbers here, including ordinal numbers with a noun, ordinal numbers modifying a cardinal number with a noun, and examples meaning the last or next something:</prompt>
+		<textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
+		<codeInfo>go in qtest.txt</codeInfo>
+		<radioGroup>
+			<groupName dataItem="ordinalFormation" default="independent">ROrdinalFormation</groupName>
+			<prompt>How are ordinal numbers formed in your language?</prompt>
+			<radio id="QPOrdinalAffix" checked="yes" dataValue="affix">An affix is added to the cardinal number</radio>
+			<radioGroup id="QPOrdinalAffixTable" show="swQPOrdinalAffix">
+				<groupName dataItem="lastNextFormation" default="affix">RLastNextFormation</groupName>
+				<prompt>Are the notions of 'last' and 'next' also expressed by affixes?</prompt>
+				<radio id="QPLastNextAffix" checked="yes" dataValue="affix">Yes</radio>
+				<radio id="QPLastNextIndependent" checked="yes" dataValue="independent">No, they are separate words</radio>
+			</radioGroup>
+			<radio id="QPOrdinalIndependent" checked="yes" dataValue="independent">They are independent syntactic words</radio>
+			<radioGroup id="QPOrdinalIndependentTable" show="swQPOrdinalOrLastNextIndependent">
+				<groupName dataItem="ordinalPos" default="unknown" position="yesSpec">ROrdinalPosition</groupName>
+				<prompt>Where do ordinal numbers or the words for 'last' and 'next' occur with respect to the cardinal number?</prompt>
+				<radio id="QPOrdinalBefore" checked="yes" dataValue="before">Before the cardinal number</radio>
+				<radio id="QPOrdinalAfter" checked="yes" dataValue="after">After the cardinal number</radio>
+				<radio id="QPOrdinalEitherSide" checked="yes" dataValue="either">On either side of the cardinal number, but not both at the same time</radio>
+				<radio id="QPOrdinalBothSides" checked="yes" dataValue="both">On either side of the cardinal number, or both sides at the same time</radio>
+				<radioGroup id="QPOrdinalEitherSideTable" show="swQPOrdinalEitherorBoth">
+					<groupName dataItem="ordinalEither" default="yes">ROrdinalEitherSide</groupName>
+					<prompt>Can all the ordinal numbers and/or the words for 'last' and 'next' appear on either side of the cardinal number?</prompt>
+					<radio id="QPOrdinalEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
+					<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
+				</radioGroup>
+			</radioGroup>
+		</radioGroup>
+		<instruction>
+			<span id="QPOrdinalAffixInstruction" show="swQPOrdinalAffix">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
+			<span id="QPOrdinalIndependentInstruction" show="swQPOrdinalIndependent">In the lexicon, mark each ordinal word with the feature <feature>ordinal</feature>. Also, mark the words meaning <example>next</example> and <example>last</example> with this feature.</span>
+			<span id="QPOrdinalEitherRestrictedInstruction" show="swQPOrdinalEitherRestricted">Those which can only occur before the cardinal number also need to have the feature <feature>QP-initial</feature>
+and those which can only occur after the cardinal number also need the
+feature <feature>QP-final</feature>.  Do not enter either
+feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any ordinal numbers which can occur on
+either side.</span>
+		</instruction>
+		<br/>
+		<buttons>
+			<button id="QPOrdinalBack" value="Back" goto="QPCardinal.htm"/>
+			<button id="QPOrdinalNext" value="Next" goto="QPTesting.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swQPOrdinalAffix">
+		<whenRadio button="QPOrdinalAffix"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalOrLastNextIndependent">
+		<whenRadio button="QPOrdinalIndependent"/>
+		<or/>
+		<whenRadio button="QPLastNextIndependent"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalIndependent">
+		<whenRadio button="QPOrdinalIndependent"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalEitherorBoth">
+	 <openParen/>
+   <whenRadio button="QPOrdinalEitherSide"/>
+		<or/>
+		<whenRadio button="QPOrdinalBothSides"/>
+<closeParen/>
+<and/>
+<openParen/>
+ <whenRadio button="QPOrdinalIndependent"/>
+		<or/>
+		<whenRadio button="QPLastNextIndependent"/>
+<closeParen/>
+	</showWhen>
+	<showWhen id="swQPOrdinalEitherRestricted">
+		<whenRadio button="QPOrdinalEitherRestricted"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="QPOrdinalEitherSide"/>
+		<or/>
+		<whenRadio button="QPOrdinalBothSides"/>
+		<closeParen/>
+   <and/>
+<openParen/>
+ <whenRadio button="QPOrdinalIndependent"/>
+		<or/>
+		<whenRadio button="QPLastNextIndependent"/>
+<closeParen/>
+ </showWhen>
+</page>

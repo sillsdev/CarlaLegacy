@@ -1,0 +1,132 @@
+<html>
+   <head>
+	  <title>Contents for Basic, Single-clause Sentences</title>
+	  <link rel="stylesheet" href="../styles/PAWSStarterKit.css">
+<style>.userData {behavior: url(#default#userdata);}
+  </style><script language="jscript">
+  // variables used throughout functions below
+var div;
+var PawsSKAnswers;
+var attr;
+var elem;
+var example;
+var strUserDataStore;
+var sImg;
+var sTemp;
+
+  function Initialize()
+{
+   // Load answers from the UserData store named "PawsSKAnswers"
+   // The store is associated with an empty <DIV id="answerDiv">
+   div = document.all("answerDiv");
+   strUserDataStore = "PawsSKAnswers";
+   div.load(strUserDataStore);
+   PawsSKAnswers = new ActiveXObject("MicroSoft.XMLDOM");
+   PawsSKAnswers.async = false;
+   PawsSKAnswers = div.XMLDocument;
+
+displayStatus(IPContentsOverviewStatus,"ipContents1");
+displayStatus(IPContentsFeaturesStatus,"ipContents2");
+displayStatus(IPContentsProDropStatus,"ipContents3");
+displayStatus(IPContentsAuxStatus,"ipContents4");
+displayStatus(IPContentsIntransStatus,"ipContents5");
+displayStatus(IPContentsTransStatus,"ipContents6");
+displayStatus(IPContentsPassiveStatus,"ipContents7");
+displayStatus(IPContentsTestingStatus,"ipContents8");
+
+example = PawsSKAnswers.selectSingleNode("//leftOffAt");
+example.text = "IPContents.htm";
+
+  div.save(strUserDataStore);
+}
+function displayStatus(idOfItem, strElem)
+{
+	elem = PawsSKAnswers.selectSingleNode("//" + strElem);
+	attr = elem.getAttribute("checkedOff")
+	sImg = "&nbsp;&nbsp;<img src='";
+	if (attr == "no")
+{
+		sImg = sImg + "UnCheckedOff.GIF'>";
+}
+	else
+{
+		sImg = sImg + "CheckedOff.GIF'>";
+}
+	idOfItem.innerHTML = sImg;
+}
+function StatusClicked(idOfItem, strElem)
+{
+	elem = PawsSKAnswers.selectSingleNode("//" + strElem);
+	attr = elem.getAttribute("checkedOff")
+	sImg = "&nbsp;&nbsp;<img src='";
+	if (attr == "no")
+{
+		sImg = sImg + "CheckedOff.GIF'>";
+		sTemp = "yes";
+}
+	else
+{
+		sImg = sImg + "UnCheckedOff.GIF'>";
+		sTemp = "no";
+}
+	elem.setAttribute("checkedOff", sTemp);
+	idOfItem.innerHTML = sImg;
+  div.save(strUserDataStore);
+}
+</script>
+   </head>
+   <body onload="Initialize()">
+<h2>Contents for Basic, Single-clause Sentences</h2>
+<p>Please check off each section as completed to keep track of your progress.  To check off a section, click on the white box to the left of it.</p>
+<table align="left" border="0" cellpadding="3" width="100%" >
+		<tr>
+			<th align="left">Status</th>
+			<th align="left" valign="top">No.</th>
+			<th align="left" valign="top">Description</th>
+		</tr>
+		<tr>
+			<td id="IPContentsOverviewStatus" onclick="StatusClicked(IPContentsOverviewStatus,'ipContents1')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.1.</td>
+			<td valign="top"><A id=IPContentsOverview href="IPMain.htm" >Overview of Basic, Single-clause Sentences</A></td>
+		</tr>
+		<tr>
+			<td id="IPContentsFeaturesStatus" onclick="StatusClicked(IPContentsFeaturesStatus,'ipContents2')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.2.</td>
+			<td valign="top"><A id=IPContentsFeatures href="IPInflFeatures.htm">Inflection and Agreement Features</A></td>
+		</tr>
+		<tr>
+			<td id="IPContentsProDropStatus" onclick="StatusClicked(IPContentsProDropStatus,'ipContents3')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.3.</td>
+			<td valign="top"><A id=IPContentsProDrop href="IPProDrop.htm"><i>Pro</i>-Drop</A>  </td>
+		</tr>
+		<tr>
+			<td id="IPContentsAuxStatus" onclick="StatusClicked(IPContentsAuxStatus,'ipContents4')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.4.</td>
+			<td valign="top"><A id=IPContentsAux href="IPAux.htm">Auxiliaries</A></td>
+		</tr>
+		<tr>
+			<td id="IPContentsIntransStatus" onclick="StatusClicked(IPContentsIntransStatus,'ipContents5')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.5.</td>
+			<td valign="top"><A id=IPContentsIntrans href="IPCop.htm">Intransitive and Copular Sentences</A></td>
+		</tr>
+		<tr>
+			<td id="IPContentsTransStatus" onclick="StatusClicked(IPContentsTransStatus,'ipContents6')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.6.</td>
+			<td valign="top"><A id=IPContentsTrans href="IPTrans.htm">Transitive and Ditransitive Sentences</A></td>
+		</tr>
+		<tr>
+			<td id="IPContentsPassiveStatus" onclick="StatusClicked(IPContentsPassiveStatus,'ipContents7')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.7.</td>
+			<td valign="top"><A id=IPContentsPassive href="IPPassive.htm">Passive Sentences</A></td>
+		</tr>
+		<tr>
+			<td id="IPContentsTestingStatus" onclick="StatusClicked(IPContentsTestingStatus,'ipContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.8.</td>
+			<td valign="top"><A id=IPContentsTesting href="IPTesting.htm">Testing</A></td>
+		</tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td><A href="Contents.htm">Return to Contents</A></td>
+</tr>
+</table>
+<div class="userData" id="answerDiv"></div>
+   </body>
+</html>

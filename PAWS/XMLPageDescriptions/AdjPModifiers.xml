@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdjPModifiers">
+	<title>Adjectives and AdjP - Modifiers</title>
+	<introduction>Here we need to consider again what types of words can modify qualitative adjectives themselves.</introduction>
+	<EnglishExample>
+		<exItem>Some English examples are:</exItem>
+		<exItem label="1.">
+			<u>very</u> big</exItem>
+		<exItem label="2.">
+			<u>so</u> blue</exItem>
+		<exItem label="3.">
+			<u>extremely</u> large</exItem>
+		<exItem label="4.">
+			<u>very well</u>  built</exItem>
+		<exItem label="5.">
+			<u>very easily</u> forgotten</exItem>
+	</EnglishExample>
+	<introduction>Not all combinations of words work due to semantics and other considerations, but in general it seems that certain degree words and manner adverbs or manner adverb phrases can modify adjectives.</introduction>
+	<form>
+<prompt>Key your examples here:</prompt>
+<textBox id="AdjPExamples"/>
+		<radioGroup>
+			<groupName>RAdjPModifiers</groupName>
+			<prompt>Does your language have any words or phrases which can modify adjectives?</prompt>
+			<radio id="AdjPModifiersNo" checked="yes">No</radio>
+			<ruleInfo>AdjP Option 1</ruleInfo>
+			<radio id="AdjPModifiersYesDegree">Yes - only certain degree words, though</radio>
+			<radioGroup id="AdjPModifiersYesDegreeTable">
+				<groupName>RDegreePos</groupName>
+				<prompt>Where do the degree words occur with respect to the adjective?</prompt>
+				<radio id="AdjPDegreeBefore" checked="yes">Before</radio>
+				<ruleInfo>AdjP Option 2; Spec-initial and spec-internal default</ruleInfo>
+				<codeInfo>Spec-initial and spec-internal default</codeInfo>
+				<radio id="AdjPDegreeAfter">After</radio>
+				<ruleInfo>AdjP Option 3; spec-final default</ruleInfo>
+				<codeInfo>spec-final default</codeInfo>
+				<radio id="AdjPDegreeEitherSide">Either side</radio>
+				<ruleInfo>AdjP option 4</ruleInfo>
+				<radioGroup id="AdjPModifiersYesDegreeEitherSideTable">
+					<groupName>RDegreeEitherSide</groupName>
+					<prompt>Can all the degree words appear on either side of the adjective?</prompt>
+					<radio id="AdjPDegreeEitherSideYes" checked="yes">Yes, there is no restriction</radio>
+					<radio id="AdjPDegreeEitherSideNo">No, there are separate sets for each side</radio>
+				</radioGroup>
+			</radioGroup>
+			<radio id="AdjPModifiersYesManner">Yes - both certain degree words and manner adverb phrases</radio>
+			<radioGroup id="AdjPModifiersYesMannerTable">
+				<groupName>RManner</groupName>
+				<prompt>Where do these modifiers occur with respect to the adjective?</prompt>
+				<radio id="AdjPMannerBefore" checked="yes">Before</radio>
+				<ruleInfo>AdjP Option 5; Spec-initial and spec-internal default</ruleInfo>
+				<codeInfo>Spec-initial and spec-internal default</codeInfo>
+				<radio id="AdjPMannerAfter">After</radio>
+				<ruleInfo>AdjP Option 6; spec-final default</ruleInfo>
+				<codeInfo>spec-final default</codeInfo>
+				<radio id="AdjPMannerEitherSide">Either side</radio>
+				<ruleInfo>AdjP option 7</ruleInfo>
+				<radioGroup id="AdjPModifiersYesMannerEitherSIdeTable">
+					<groupName>RMannerEitherSide</groupName>
+					<prompt>Can all the degree words appear on either side of the adjective?</prompt>
+					<radio id="AdjPMannerEitherSideYes" checked="yes">Yes, there is no restriction</radio>
+					<radio id="AdjPMannerEitherSideNo">No, there are separate sets for each side</radio>
+				</radioGroup>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="AdjPModifiersYesDegreeInstruction">In the lexicon, mark the degree words with the feature <feature>Deg modifies_Adj</feature>.</instruction>
+		<instruction id="AdjPDegreeEitherSideNoInstruction">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>
+		<instruction id="AdjPModifiersYesMannerInstruction">In the lexicon, mark the degree words with the features <feature>Deg modifies_Adj</feature>.</instruction>
+		<instruction id="AdjPMannerEitherSideNoInstruction">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>
+		<buttons>
+			<button id="AdjPModifiersBack" value="Back" goto="AdjPMain.htm"/>
+			<button id="AdjPModifiersNext" value="Next" goto="AdjPAgreement.htm"/>
+		</buttons>
+	</form>
+</page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="OverallTypology">
+  <title>Overall Typology Questions</title>
+  <introduction>The answers given to these questions will be used to set the default values for the remaining questions on phrase structure.  If at any point, you do not know the answer to a particular question, you can accept the default value expected for the basic word order of your language.  Then test the phrase structures with your data and go back and amend your answers as needed.</introduction>
+<instruction>Think of one or more basic transitive sentences in your language.
+  These should be in the normal word order with no special characteristics, such as focus,
+topic, passive, imperative, or interrogative.  Further, choose sentences with proper names
+or simple noun phrases in the subject and direct object positions, rather than pronouns.
+(Do not key in the brackets and subscripts like the example has - these are for your information only.)</instruction>
+  <EnglishExample>
+	<exItem label="1.">[John]<sub>S</sub> [hit]<sub>V</sub> [the ball]<sub>O</sub>.</exItem>
+	<exItem label="2.">[The dog]<sub>S</sub> [buried]<sub>V</sub> [a bone]<sub>O</sub>.</exItem>
+  </EnglishExample>
+  <form section="typology">
+	<prompt>Key your examples here:</prompt>
+	<textBox id="OTExample" dataItem="example" cols="50"/>
+	<radioGroup>
+	  <groupName dataItem="wordOrder" default="SVO">RTypology</groupName>
+	  <prompt>Based on these sentences, what is the normal word order of your language?</prompt>
+	  <radio id="OTSVO" dataValue="SVO">Subject-Verb-Object</radio>
+	  <radio id="OTSOV" dataValue="SOV">Subject-Object-Verb</radio>
+	  <radio id="OTVSO" dataValue="VSO">Verb-Subject-Object</radio>
+	  <radio id="OTVOS" dataValue="VOS">Verb-Object-Subject</radio>
+	  <radio id="OTOVS" dataValue="OVS">Object-Verb-Subject</radio>
+	  <radio id="OTOSV" dataValue="OSV">Object-Subject-Verb</radio>
+	</radioGroup>
+	<buttons>
+	  <button id="OTBack" value="Back" goto="Contents.htm"/>
+	  <button id="OTNext" value="Next" goto="Contents.htm"/>
+	</buttons>
+  </form>
+</page>

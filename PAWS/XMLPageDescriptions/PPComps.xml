@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PPComps">
+	<title level="2">Pre/Post-Positional Phrases - Complements</title>
+<introduction>Prepositions or postpositions normally take a nominal phrase for their complements, as in <example>to Bill's house</example> and <example>under the giant Sycamore tree</example>.  In addition, some pre/post-positions can stand alone, such as in the sentences <example>Come right in</example>, or <example>Turn the light on/off</example>.</introduction>
+	<form section="pp">
+<prompt>Key some PP examples from your language here:</prompt>
+<textBox id="PPCompsStandAlone" dataItem="ppExample"/>
+<introduction>Also, most languages will allow locative adverbs as objects of pre/post-positions, such as <example>over there</example>, <example>in here</example>.</introduction>
+<prompt>Key some examples with locative adverbs complements here:</prompt>
+<textBox id="PPCompsLocExample" dataItem="locExample"/>
+<introduction>But some pre/post-positions can also have sentences as their complements, as in <example>before the rain stops</example> and <example>while John was at the store</example>.</introduction>
+<prompt>Key some examples with sentential complements here:</prompt>
+<textBox id="PPCompsSentExample" dataItem="sentExample"/>
+<instruction>[If you find that you need to restrict which pre/post-positions can take sentential complements and which can stand alone, see the <help href="advanced.doc">Advanced Help</help> file.]</instruction>
+<instruction>[Note: the starter kit grammar rules assume that objects of pre/post-positions have accusative case.  Ergative or absolutive case will not be ruled out, but if you need to require only one of them as objects of pre/post-positions, see the <help href="advanced.doc">Advanced Help</help> file.  If you need other cases than accusative as complements, see the <help href="advanced.doc">Advanced Help</help> file.]</instruction>
+		<buttons>
+			<button id="PPCompBack" value="Back" goto="PPModifiers.htm"/>
+			<button id="PPCompNext" value="Next" goto="PPAlone.htm"/>
+		</buttons>
+	</form>
+</page>

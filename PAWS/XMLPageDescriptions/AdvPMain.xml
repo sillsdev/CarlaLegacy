@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPMain">
+	<title>Adverbs and AdvP</title>
+	<introduction>Adverbs express four basic types of information:
+<ul>
+			<li> time,</li>
+			<li> location,</li>
+			<li>manner, and</li>
+			<li>reason.</li>
+		</ul>
+These types have different characteristics as to
+which positions they may occupy and how they may be modified, so they
+need to be distinguished from each other by a feature.
+We'll deal with each in turn.
+</introduction>
+	<introduction>Temporal adverbs include the English words: <example>already</example>, <example>then</example>, <example>soon</example>, <example>now</example>,
+<example>later</example>, and <example>always</example>.  Think of similar words in your language.  These need
+to be distinguished from other types of words or phrases that can also
+express the time in a sentence, such as: nominal phrases <example>yesterday</example>,
+<example>last night</example>, <example>next year</example>, <example>tomorrow</example>, <example>a long time ago</example>; prepositional
+phrases <example>for a long time</example>, <example>in a little while</example>, <example>at 10 o</example>clock'; and
+adverbial clauses <example>while you are working</example>, <example>when Sue arrived</example>.
+</introduction>
+	<EnglishExample>
+		<exItem>Example English temporal adverbial phrases:</exItem>
+		<exItem label="1.">very soon.</exItem>
+		<exItem label="2.">much later.</exItem>
+		<exItem label="3.">only now.</exItem>
+	</EnglishExample>
+	<instruction>Think of examples of temporal adverbs and include any degree words which can modify them.</instruction>
+	<form section="advp">
+		<prompt>Key your examples here:</prompt>
+		<textBox id="AdvPExample" dataItem="temporalExample"/>
+		<instruction>In the lexicon, key the feature <feature>temporal</feature> on all adverbs that express
+time.  You can also add this feature to nouns such as <example>night</example>, <example>year</example>,
+<example>day</example>, <example>yesterday</example>, <example>tomorrow</example>, <example>time</example>,  and <example>o'clock</example>.
+</instruction>
+		<buttons>
+			<button id="AdvPExamplesBack" value="Back" goto="Contents.htm"/>
+			<button id="AdvPExamplesNext" value="Next" goto="AdvPLocative.htm"/>
+		</buttons>
+	</form>
+</page>

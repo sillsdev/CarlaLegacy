@@ -1,0 +1,211 @@
+﻿<html>
+  <head>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Overall Typology Questions</title>
+	<link rel="stylesheet" href="../styles/PAWSStarterKit.css">
+	<style>.userData {behavior: url(#default#userdata);}
+  </style>
+	<script language="jscript">
+  // variables used throughout functions below
+var div;
+var PawsSKAnswers;
+var attr;
+var elem;
+var example;
+var strUserDataStore;
+	// would like to use enums, but apparently they are not supported yet
+var HeadPosInitial = 1;
+var HeadPosFinal = 2;
+
+var SpecPosInitial = 1;
+var SpecPosInternal = 2;
+var SpecPosFinal = 3;
+var SpecPosUnknown = 4;
+
+  function Initialize()
+{
+   // Load answers from the UserData store named "PawsSKAnswers"
+   // The store is associated with an empty <DIV id="answerDiv">
+   div = document.all("answerDiv");
+   strUserDataStore = "PawsSKAnswers";
+   div.load(strUserDataStore);
+   PawsSKAnswers = new ActiveXObject("MicroSoft.XMLDOM");
+   PawsSKAnswers.async = false;
+   PawsSKAnswers = div.XMLDocument;
+
+example = PawsSKAnswers.selectSingleNode("//typology/example");
+OTExample.value = example.text;
+
+	elem = PawsSKAnswers.selectSingleNode("//typology");
+	attr = elem.getAttribute("wordOrder")
+if (attr == "SVO")
+		OTSVO.checked = true;
+	else if (attr == "SOV")
+OTSOV.checked = true;
+	else if (attr == "VSO")
+OTVSO.checked = true;
+	else if (attr == "VOS")
+OTVOS.checked = true;
+	else if (attr == "OVS")
+OTOVS.checked = true;
+	else
+			OTOSV.checked = true;
+
+example = PawsSKAnswers.selectSingleNode("//leftOffAt");
+example.text = "OverallTypology.htm";
+
+  div.save(strUserDataStore);
+Refresh()
+}
+function GetSpecifierPos()
+{
+	elem = PawsSKAnswers.selectSingleNode("//typology");
+	attr = elem.getAttribute("wordOrder");
+	if (attr == "SVO" || attr == "SOV")
+		return SpecPosInitial;
+	else
+	  {
+		if (attr == "VSO" || attr == "OSV")
+			return SpecPosInternal;
+		  else
+			return SpecPosFinal;
+	  }
+}
+function GetHeadPos()
+{
+	elem = PawsSKAnswers.selectSingleNode("//typology");
+	attr = elem.getAttribute("wordOrder");
+	if (attr == "SVO" || attr == "VSO" || attr == "VOS")
+	   return HeadPosInitial;
+	else
+	   return HeadPosFinal;
+}
+
+function GetPositionBasedOnSpecifier(sAttr)
+{
+	var eSpecPos;
+	if (sAttr == "unknown")
+	  {
+		// set default
+		eSpecPos = GetSpecifierPos();
+		if (eSpecPos == SpecPosInitial || eSpecPos == SpecPosInternal)
+			return "before";
+		else
+			return  "after";
+	  }
+	else
+		return sAttr;
+}
+function GetPositionBasedOnHead(sAttr, bSame)
+{
+	var eHeadPo;
+	if (sAttr == "unknown")
+	  {
+		// set default
+		eHeadPos = GetHeadPos();
+		if (eHeadPos == HeadPosInitial)
+		  {
+			if (bSame)
+				return "before";
+			else
+				return "after";
+		  }
+		else
+		  {
+			if (bSame)
+				return "after";
+			else
+				return "before";
+		  }
+	  }
+	else
+		return sAttr;
+}
+
+function RTypology(radio)
+{
+radio.checked = true;
+Refresh();
+}
+
+function saveData()
+{
+var sTemp;
+
+example = PawsSKAnswers.selectSingleNode("//typology/example");
+//TODO: figure what to do if any of these are missing!
+example.text = OTExample.value;
+
+	elem = PawsSKAnswers.selectSingleNode("//typology");
+	attr = elem.getAttribute("wordOrder");
+	//TODO: figure what to do if any of these are missing!
+	sTemp = "SVO" // use default if all else fails...
+	if (OTSVO.checked)
+	sTemp = "SVO";
+	if (OTSOV.checked)
+	sTemp = "SOV";
+	if (OTVSO.checked)
+	sTemp = "VSO";
+	if (OTVOS.checked)
+	sTemp = "VOS";
+	if (OTOVS.checked)
+	sTemp = "OVS";
+	if (OTOSV.checked)
+	sTemp = "OSV";
+	elem.setAttribute("wordOrder", sTemp);
+
+  div.save(strUserDataStore);
+}
+function ButtonNext()
+{
+	saveData();
+	window.navigate ("Contents.htm");
+}
+function ButtonBack()
+{
+	saveData();
+	window.navigate ("Contents.htm");
+}
+function ReturnContents()
+{
+	saveData();
+	window.navigate ("Contents.htm");
+}
+function Refresh()
+{
+var valArray = new Array();
+
+}
+  </script>
+  </head>
+  <body onload="Initialize()">
+	<div class="userData" id="answerDiv">
+	</div>
+	<h1>Overall Typology Questions</h1>
+	<div class="introduction">
+	  <p>The answers given to these questions will be used to set the default values for the remaining questions on phrase structure.  If at any point, you do not know the answer to a particular question, you can accept the default value expected for the basic word order of your language.  Then test the phrase structures with your data and go back and amend your answers as needed.</p>
+	</div>
+	<br>
+	<div class="instruction">
+	  <p>Think of one or more basic transitive sentences in your language.
+  These should be in the normal word order with no special characteristics, such as focus,
+topic, passive, imperative, or interrogative.  Further, choose sentences with proper names
+or simple noun phrases in the subject and direct object positions, rather than pronouns.
+(Do not key in the brackets and subscripts like the example has - these are for your information only.)</p>
+	</div>
+	<div align="left" class="EnglishExample">
+	  <table border="0">
+		<tr>
+		  <td valign="top">1.</td>
+		  <td>[John]<sub>S</sub> [hit]<sub>V</sub> [the ball]<sub>O</sub>.</td>
+		</tr>
+		<tr>
+		  <td valign="top">2.</td>
+		  <td>[The dog]<sub>S</sub> [buried]<sub>V</sub> [a bone]<sub>O</sub>.</td>
+		</tr>
+	  </table>
+	</div>
+	<br>
+	<div class="form">Key your examples here:<br><textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="7" cols="50" id="OTExample" name="OTExample" contenteditable="inherit"></textarea><table border="0" style="margin-left: 0.5in"><tr><td colspan="2"><span class="radioPrompt">Based on these sentences, what is the normal word order of your language?</span></td></tr><tr><td valign="top"><input type="radio" name="RTypology" id="OTSVO" onclick="RTypology(OTSVO)" value="SVO"></td><td width="99%" id="OTSVOPrompt" onclick="RTypology(OTSVO)" value="SVO" onmouseover="this.style.cursor='default'">Subject-Verb-Object</td></tr><tr><td valign="top"><input type="radio" name="RTypology" id="OTSOV" onclick="RTypology(OTSOV)" value="SOV"></td><td width="99%" id="OTSOVPrompt" onclick="RTypology(OTSOV)" value="SOV" onmouseover="this.style.cursor='default'">Subject-Object-Verb</td></tr><tr><td valign="top"><input type="radio" name="RTypology" id="OTVSO" onclick="RTypology(OTVSO)" value="VSO"></td><td width="99%" id="OTVSOPrompt" onclick="RTypology(OTVSO)" value="VSO" onmouseover="this.style.cursor='default'">Verb-Subject-Object</td></tr><tr><td valign="top"><input type="radio" name="RTypology" id="OTVOS" onclick="RTypology(OTVOS)" value="VOS"></td><td width="99%" id="OTVOSPrompt" onclick="RTypology(OTVOS)" value="VOS" onmouseover="this.style.cursor='default'">Verb-Object-Subject</td></tr><tr><td valign="top"><input type="radio" name="RTypology" id="OTOVS" onclick="RTypology(OTOVS)" value="OVS"></td><td width="99%" id="OTOVSPrompt" onclick="RTypology(OTOVS)" value="OVS" onmouseover="this.style.cursor='default'">Object-Verb-Subject</td></tr><tr><td valign="top"><input type="radio" name="RTypology" id="OTOSV" onclick="RTypology(OTOSV)" value="OSV"></td><td width="99%" id="OTOSVPrompt" onclick="RTypology(OTOSV)" value="OSV" onmouseover="this.style.cursor='default'">Object-Subject-Verb</td></tr></table><input type="button" value="< Back" name="BBack" id="OTBack" onclick="ButtonBack()" style="width: 78px; height: 24px"> <input type="button" value="Next >" name="BNext" id="OTNext" onclick="ButtonNext()" style="width: 78px; height: 24px"><scan>         <a href="Contents.htm" onclick="ReturnContents()">Return to Contents</a></scan></div>
+  </body>
+</html>

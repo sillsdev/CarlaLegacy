@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QPCardinal">
+	<title level="2">Quantifiers and QP - Cardinal Numbers</title>
+	<introduction>Now consider cardinal numbers.  They cannot be modified by the
+degree words like the quantifiers can, though they occur in the same
+position.  Note, however, that cardinal numbers can be modified by
+ordinal numbers and by <example>next</example> and <example>last</example>, as in <example>the first twenty boys</example> or
+<example>the next one hundred years</example>.  Since these modifiers also act as regular
+adjectives in modifying nouns directly, they will need to have the
+syntactic category of adjectives plus a feature to distinguish them.
+</introduction>
+	<form section="qp">
+		<prompt>Key your examples here:</prompt>
+		<textBox id="QPCardinalExample" dataItem="cardinalExample" cols="50"/>
+		<introduction>Further, larger cardinal numbers can be compounds which may be
+written as separate words, such as <example>one hundred thirty three</example>.  In many languages, conjunctions are either required or allowed in the compounds.  The position of the conjunction is usually on the same side of the number as the smallest numbers are.  These two facts tell us whether the compound is head-initial or head-final.  For example, English has head-final number compounds because the conjunction appears towards the end of the compound, either before the last number (the ones digit) or the last two numbers in the compound (the tens and ones digits), as in <example>four thousand and three</example> or <example>six thousand one hundred and thirty three</example>.
+</introduction>
+		<prompt>Key any examples of compound numbers here:</prompt>
+		<textBox id="QPCardinalCompoundExample" dataItem="cardinalCompoundExample" cols="50"/>
+		<radioGroup>
+			<groupName dataItem="cardinalHeadPos" default="final" position="yesHead">RCardinalHead</groupName>
+			<prompt>Based on these examples, where is the head in the cardinal compound numbers?</prompt>
+			<radio id="CardinalHeadInitial" checked="yes" dataValue="initial">Initial, the numbers zero through nine occur initially and any conjunctions occur in the initial part of the compound. </radio>
+			<radio id="CardinalHeadFinal" checked="yes" dataValue="final">Final, the numbers zero through nine occur finally and any conjunctions occur in the final part of the compound.</radio>
+		</radioGroup>
+		<br/>
+		<buttons>
+			<button id="QPCardinalExamplesBack" value="Back" goto="QPDegree.htm"/>
+			<button id="QPCardinalExamplesNext" value="Next" goto="QPOrdinal.htm"/>
+		</buttons>
+	</form>
+</page>

@@ -1,0 +1,210 @@
+<html>
+   <head>
+	  <title>Contents</title>
+	  <link rel="stylesheet" href="../styles/PAWSStarterKit.css">
+<style>.userData {behavior: url(#default#userdata);}
+  </style><script language="jscript">
+  // variables used throughout functions below
+var div;
+var PawsSKAnswers;
+var attr;
+var elem;
+var example;
+var strUserDataStore;
+var sImg;
+var sTemp;
+
+  function Initialize()
+{
+   // Load answers from the UserData store named "PawsSKAnswers"
+   // The store is associated with an empty <DIV id="answerDiv">
+   div = document.all("answerDiv");
+   strUserDataStore = "PawsSKAnswers";
+   div.load(strUserDataStore);
+   PawsSKAnswers = new ActiveXObject("MicroSoft.XMLDOM");
+   PawsSKAnswers.async = false;
+   PawsSKAnswers = div.XMLDocument;
+
+displayStatus(ContentsOverallTypologyQuestionsStatus,"typology");
+displayStatus(ContentsQuantifiersStatus, "qp");
+displayStatus(ContentsAdverbsStatus,"advp");
+displayStatus(ContentsAdjectivesStatus,"adjp");
+displayStatus(ContentsSimpleNPStatus,"np");
+displayStatus(ContentsPronounsStatus,"pron");
+displayStatus(ContentsPrepositionsStatus,"pp");
+displayStatus(ContentsSingleClausesStatus,"ip");
+displayStatus(ContentsQuestionsStatus,"q");
+displayStatus(ContentsFocusStatus,"focus");
+displayStatus(ContentsNegativeStatus,"neg");
+displayStatus(ContentsCompsStatus,"comp");
+displayStatus(ContentsAdvClsStatus,"advcl");
+displayStatus(ContentsRelClStatus,"relcl");
+displayStatus(ContentsFullNPsStatus,"fullnp");
+displayStatus(ContentsCoordStatus,"coord");
+
+example = PawsSKAnswers.selectSingleNode("//leftOffAt");
+example.text = "Contents.htm";
+
+  div.save(strUserDataStore);
+}
+function displayStatus(idOfItem, strElem)
+{
+	elem = PawsSKAnswers.selectSingleNode("//" + strElem);
+	attr = elem.getAttribute("checkedOff")
+	sImg = "&nbsp;&nbsp;<img src='";
+	if (attr == "no")
+{
+		sImg = sImg + "UnCheckedOff.GIF'>";
+}
+	else
+{
+		sImg = sImg + "CheckedOff.GIF'>";
+}
+	idOfItem.innerHTML = sImg;
+}
+function StatusClicked(idOfItem, strElem)
+{
+	elem = PawsSKAnswers.selectSingleNode("//" + strElem);
+	attr = elem.getAttribute("checkedOff")
+	sImg = "&nbsp;&nbsp;<img src='";
+	if (attr == "no")
+{
+		sImg = sImg + "CheckedOff.GIF'>";
+		sTemp = "yes";
+}
+	else
+{
+		sImg = sImg + "UnCheckedOff.GIF'>";
+		sTemp = "no";
+}
+	elem.setAttribute("checkedOff", sTemp);
+	idOfItem.innerHTML = sImg;
+  div.save(strUserDataStore);
+}
+</script>
+
+   </head>
+   <body onload="Initialize()">
+<h1>Contents</h1>
+<p>Click <A href="purpose.htm">here</A> to see a purpose statement.<p>
+<p>Please check off each section as completed to keep track of your progress.  To check off a section, click on the white box to the left of it.</p>
+<table align="left" border="0" cellpadding="3" width="100%" >
+	<tbody>
+		<tr>
+			<th align="left">Status</th>
+			<th align="left" valign="top">No.</th>
+			<th align="left" valign="top">Description</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td id="ContentsOverallTypologyQuestionsStatus" onclick="StatusClicked(ContentsOverallTypologyQuestionsStatus,'typology')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">1.</td>
+			<td valign="top"><A id=ContentsOverallTypologyQuestions href="OverallTypology.htm" >Overall Typology Questions</A></td>
+			<td rowspan="18" width="50%" class="instruction" valign="top">For each section:<br>
+<ol>
+<li>Think of relevant data for your language,
+		concentrating on straightforward data with no special language-specific
+		constructions (those will have to be dealt with after completion of the
+		starter kit).
+
+<li>Fill in the answer to each question, based on
+		the data.
+
+<li>Add the feature names to the appropriate entries
+		in the lexicon, as directed.
+
+<li>Key relevant data into the test file, as
+		directed, with a period and new line after each example.
+
+<li>Save the results.  Then run the parser and check the output.
+
+<li>Make any changes to the starter kit questions
+		(to change the phrase structure) or to the lexicon feature names needed,
+		then re-run. Note any details the starter kit is not able to handle, so
+		that you can deal with it later.
+
+<li>Check off that you've completed that section, save it, and go on to the next.  (To check off a section, click on the white box to the left of it.)</li>
+</ol>
+</td>
+		</tr>
+		<tr>
+			<td id="ContentsQuantifiersStatus" onclick="StatusClicked(ContentsQuantifiersStatus, 'qp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">2.</td>
+			<td valign="top"><A id=ContentsQuantifiers href="QPMain.htm" >Quantifiers and QP</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsAdverbsStatus" onclick="StatusClicked(ContentsAdverbsStatus,'advp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">3.</td>
+			<td valign="top"><A id=ContentsAdverbs href="AdvPMain.htm">Adverbs and AdvP</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsAdjectivesStatus" onclick="StatusClicked(ContentsAdjectivesStatus,'adjp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">4.</td>
+			<td valign="top"><A id=ContentsAdjectives href="AdjPMain.htm">Adjectives and
+	AdjP</A>  </td>
+		</tr>
+		<tr>
+			<td id="ContentsSimpleNPStatus" onclick="StatusClicked(ContentsSimpleNPStatus,'np')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.</td>
+			<td valign="top"><A id=ContentsSimpleNP href="NPContents.htm" >Simple and Possessed Nominal Phrases</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsPronounsStatus" onclick="StatusClicked(ContentsPronounsStatus,'pron')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">6.</td>
+			<td valign="top"><A id=ContentsPronouns href="PronMain.htm">Pronouns and Proper Names</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsPrepositionsStatus" onclick="StatusClicked(ContentsPrepositionsStatus,'pp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">7.</td>
+			<td valign="top"><A id=ContentsPrepositions href="PPMain.htm">Pre/Post-positional Phrases</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsSingleClausesStatus" onclick="StatusClicked(ContentsSingleClausesStatus,'ip')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.</td>
+			<td valign="top"><A id=ContentsSingleClauses href="IPContents.htm">Basic, Single-clause Sentences</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsQuestionsStatus" onclick="StatusClicked(ContentsQuestionsStatus,'q')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">9.</td>
+			<td valign="top"><A id=ContentsQuestions href="QMain.htm">Main Clause Questions</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">10.</td>
+			<td valign="top"><A id=ContentsFocus href="UnderConstruction.htm">Focus and/or Topic Constructions</A></td><!-- FocusMain.htm -->
+		</tr>
+		<tr>
+			<td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">11.</td>
+			<td valign="top"><A id=ContentsNegative href="UnderConstruction.htm">Negative Constructions</A></td><!-- NegMain.htm  -->
+		</tr>
+		<tr>
+			<td id="ContentsCompsStatus" onclick="StatusClicked(ContentsCompsStatus,'comp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">12.</td>
+			<td valign="top"><A id=ContentsComps href="UnderConstruction.htm">Complement Clauses</A></td><!-- CompMain.htm -->
+		</tr>
+		<tr>
+			<td id="ContentsAdvClsStatus" onclick="StatusClicked(ContentsAdvClsStatus,'advcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">13.</td>
+			<td valign="top"><A id=ContentsAdvCls href="UnderConstruction.htm">Adverbial Clauses</A></td><!-- AdvClMain.htm -->
+		</tr>
+		<tr>
+			<td id="ContentsRelClStatus" onclick="StatusClicked(ContentsRelClStatus,'relcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">14.</td>
+			<td valign="top"><A id=ContentsRelCl href="UnderConstruction.htm">Relative Clauses</A></td><!-- RelClMain.htm -->
+		</tr>
+		<tr>
+			<td id="ContentsFullNPsStatus" onclick="StatusClicked(ContentsFullNPsStatus,'fullnp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">15.</td>
+			<td valign="top"><A id=ContentsFullNPs href="UnderConstruction.htm">Fully Modified Nominal Phrases</A></td><!-- FullNPMain.htm -->
+		</tr>
+		<tr>
+			<td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">16.</td>
+			<td valign="top"><A id=ContentsCoord href="UnderConstruction.htm">Coordinate Structures</A></td><!-- CoordMain.htm -->
+		</tr>
+	</tbody>
+</table>
+<div class="userData" id="answerDiv"></div>
+   </body>
+</html>

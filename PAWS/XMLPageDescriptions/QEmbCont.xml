@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QEmbCont">
+	<title level="2">Questions - Embedded Content Questions</title>
+	<form section="q">
+		<radioGroup>
+			<groupName dataItem="embCont" default="no">RQEmbCont</groupName>
+			<prompt>In embedded content questions, are there one or more special question marker particles or complementizers that may occur?</prompt>
+			<radio id="QEmbContYesSameYN" dataValue="yesSameYN">Yes, and it is the same as the Yes/No question marker for embedded clauses (or both main and embedded clauses)
+</radio>
+			<radio id="QEmbContYesSameCont" dataValue="yesSameCont">Yes, and it is the same as used in main clause content questions, even though it is different than the Yes/No question marker
+</radio>
+			<radio id="QEmbContYesDiff" dataValue="yesDiff">Yes, but it is different from the one(s) used in main clause content questions and also different from the Yes/No question marker
+</radio>
+			<radioGroup id="QEmbContWordTable">
+				<groupName dataItem="embContWord" default="no">RQEmbContWord</groupName>
+				<prompt>Is it a separate word?</prompt>
+				<radio id="QEmbContWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
+				<radio id="QEmbContWordYes" dataValue="yes">Yes</radio>
+			</radioGroup>
+			<radioGroup id="QEmbContPosAsEmbYNPosTable">
+				<groupName dataItem="embContPosAsEmbYNPos" default="no">RQEmbContPosAsEmbYNPos</groupName>
+				<prompt>Do the question markers occur in the same position(s) in embedded content questions as in embedded Yes/No questions?</prompt>
+				<radio id="QEmbContPosAsEmbYNPosYes" dataValue="yes">Yes</radio>
+				<radio id="QEmbContPosAsEmbYNPosNo" dataValue="no">No, the positions are different or there are no Yes/No question markers in embedded clauses</radio>
+			</radioGroup>
+			<radioGroup id="QEmbContPosTable">
+				<groupName dataItem="embContPos" default="unknown" position="yesHead">RQEmbContPos</groupName>
+				<prompt>Where does the question marker occur with respect to the rest of the question?</prompt>
+				<radio id="QEmbContPosBefore" dataValue="before">Before</radio>
+				<radio id="QEmbContPosAfter" dataValue="after">After</radio>
+				<radio id="QEmbContPosEitherSide" dataValue="either">Either side</radio>
+				<radioGroup id="QEmbContEitherTable">
+					<groupName dataItem="embContEither" default="no">RQEmbContEither</groupName>
+					<prompt>Can all the question markers appear on either side of the question?</prompt>
+					<radio id="QEmbContEitherYes" dataValue="yes">Yes, there is no restriction</radio>
+					<radio id="QEmbContEitherNo" dataValue="no">No, there are separate sets for each side</radio>
+				</radioGroup>
+			<radioGroup id="QEmbContBothTable">
+				<groupName dataItem="embContBoth" default="no">RQEmbContBoth</groupName>
+				<prompt>Can the question markers appear on both sides in the question?</prompt>
+				<radio id="QEmbContBothNo" dataValue="no">No, only on one side or the other</radio>
+				<radio id="QEmbContBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
+				<radio id="QEmbContBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
+				<radioGroup id="QEmbContBothInitialFinalTable">
+					<groupName dataItem="embContBothInitialFinal" default="no">RQEmbContBothInitialFinal</groupName>
+					<prompt>May a different question marker also occur only in final position?</prompt>
+					<radio id="QEmbContBothInitialFinalNo" dataValue="no">No</radio>
+					<radio id="QEmbContBothInitialFinalYes" dataValue="yes">Yes</radio>
+				</radioGroup>
+				<radio id="QEmbContBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
+				<radioGroup id="QEmbContBothFinalInitialTable">
+					<groupName dataItem="embContBothFinalInitial" default="no">RQEmbContBothFinalInitial</groupName>
+					<prompt>May a different question marker also occur only in initial position?</prompt>
+					<radio id="QEmbContBothFinalInitialNo" dataValue="no">No</radio>
+					<radio id="QEmbContBothFinalInitialYes" dataValue="yes">Yes</radio>
+				</radioGroup>
+			</radioGroup>
+			</radioGroup>
+			<radioGroup id="QEmbContRequiredTable">
+				<groupName dataItem="embContRequired" default="no">RQEmbContRequired</groupName>
+				<prompt>Is a question marker required in every embedded content question?</prompt>
+				<radio id="QEmbContRequiredYes" dataValue="yes">Yes</radio>
+				<radio id="QEmbContRequiredNo" dataValue="no">No, some content questions do not use/need the question marker</radio>
+			</radioGroup>
+			<radio id="QEmbContNoAux" dataValue="noAux">No, but an auxiliary is fronted</radio>
+			<radioGroup id="QEmbContAuxTable">
+				<groupName dataItem="embContAux" default="no">RQEmbContAux</groupName>
+				<prompt>Is an auxiliary required to be fronted in every embedded content question?</prompt>
+				<radio id="QEmbContAuxYes" dataValue="yes">Yes</radio>
+				<radio id="QEmbContAuxNo" dataValue="no">No, some embedded content questions do not require a fronted auxiliary</radio>
+			</radioGroup>
+			<radio id="QEmbContNo" dataValue="no">No, there is no marker or auxiliary fronting in embedded content questions, just fronting of an interrogative phrase and/or a difference in intonation or tone or other non-syntactic marking (this is like English)</radio>
+		</radioGroup>
+		<instruction id="QEmbContWordNoInstruction">You need to write a CC table pre-pass to separate it so that it stands alone and also make a root entry for this clitic in your lexicon.  Give the entry the category <category>C</category>, or add the feature <feature>C</feature> to the feature line to change the category for the syntax.  Also add the feature <feature>wh</feature> in either case.  Mark the Yes/No question markers with the feature <feature>-wh</feature>. Add the feature <feature>-root</feature> to this entry.</instruction>
+		<instruction id="QEmbContWordYesInstruction">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>C</feature> to the feature line to change the category for the syntax.  Also add the feature <feature>wh</feature> in either case.  Mark the Yes/No question markers with the feature <feature>-wh</feature>.  Add the feature <feature>-root</feature> to this entry.</instruction>
+		<instruction id="QEmbContEitherNoInstruction">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+		<buttons>
+			<button id="QEmbContBack" value="Back" goto="QMainCont.htm"/>
+			<button id="QEmbContNext" value="Next" goto="QTesting.htm"/>
+		</buttons>
+	</form>
+</page>

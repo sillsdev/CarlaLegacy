@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NPArtAgreement">
+	<title level="2">Nominal Phrases - Article and Demonstrative Agreement</title>
+	<form section="np">
+		<instruction>
+			<ol>
+				<!-- animacy -->
+				<li id="NPArtAgrAnimateInstruction">To handle animacy:
+<ul>
+						<li>mark the articles and demonstratives that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+						<li>Mark the articles and demonstratives that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+						<li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
+					</ul>
+We will assume that all (common) nouns are inanimate by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  (Proper names will be dealt with in <section number="6">Pronouns and Proper Names</section> and will be assumed to be animate by default.)
+</li>
+				<!-- class -->
+				<li id="NPArtAgrClassInstruction">To handle class:
+<ul>
+						<li>mark the articles and demonstratives that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 99.</li>
+						<li>It may be the case that the same affixes that mark the class number on articles and demonstratives (and possibly adjectives too) also mark the class number on nouns.  If this is the case in your language, simply add the class feature to the affixes, and all the words will automatically come from the morphological parser with the class number marked.</li>
+						<li>Any cases where articles, demonstratives, or nouns do not have an affix which marks the class will require marking of the class feature on the particular lexical item in the root dictionary.</li>
+					</ul>
+				</li>
+				<!-- number -->
+				<li id="NPArtAgrNumberInstruction">
+					<span id="NPArtAgrNumberOptionalInstruction">If your language also has number agreement: i</span>
+					<span id="NPArtAgrNumberObligatoryInstruction">I</span>n the lexicon,
+<ul>
+						<li>mark the articles and demonstratives that can only go with singular nouns with the feature <feature>singular</feature>.</li>
+						<li>Mark the articles and demonstratives that can only go with plural nouns with the feature <feature>plural</feature>.</li>
+						<li>Do not add any feature for number agreement to ones like <example>the</example> in English which can go with either singular or plural nouns.</li>
+						<li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate articles and demonstratives.</li>
+					</ul>
+We will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon,
+<ul>
+						<li>add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
+						<li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don't take an affix.</li>
+						<li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to be have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+					</ul>
+				</li>
+				<!-- person -->
+				<li id="NPArtAgrPersonInstruction">
+					<span id="NPArtAgrPersonOptionalInstruction">If your language also has person agreement, i</span>
+					<span id="NPArtAgrPersonObligatoryInstruction">I</span>n the lexicon,
+<ul>
+						<li>add the person features <feature>first</feature> (with <feature>exclusive</feature> or <feature>inclusive</feature> added after a space if distinguished in your language), <feature>second</feature> or <feature>third</feature> to any articles or demonstratives that can only go with that type of noun or pronoun.</li>
+						<li>(If you do not have this type of agreement, simply do not add any features.)</li>
+					</ul>
+All nouns are also assumed to be third person by default; only pronouns have other person features.  These will be dealt with in <section number="6">Pronouns and Proper Names</section>.
+</li>
+				<!-- gender -->
+				<li id="NPArtAgrGenderInstruction">If applicable, add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any articles or demonstratives that can only go with that type of noun or pronoun.</li>
+			</ol>
+		</instruction>
+		<instruction id="NPArtAgrYesClassInstruction"/>
+		<buttons>
+			<button id="NPArtAgrBack" value="Back" goto="NPArtCase.htm"/>
+			<button id="NPArtAgrNext" value="Next" goto="NPArtPosition.htm"/>
+		</buttons>
+	</form>
+</page>

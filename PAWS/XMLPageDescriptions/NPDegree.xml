@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NPDegree">
+	<title level="2">Nominal Phrases - Degree Words</title>
+	<introduction>The top level of the nominal phrase is occupied by those degree words that modify the whole NP, such as <example>just</example>, <example>only</example>, and <example>all</example>, that were discussed and marked in the "Quantifiers and QP" section.</introduction>
+	<form section="np">
+		<radioGroup>
+			<groupName dataItem="degree" default="no">RDegree</groupName>
+			<prompt>Does your language have these special words which modify the whole nominal phrase?</prompt>
+			<radio id="NPDegreeNo" checked="yes" dataValue="no">No</radio>
+			<radio id="NPDegreeYes" checked="yes" dataValue="yes">Yes</radio>
+			<radioGroup id="NPDegreeYesTable" show="swNPDegreeYes">
+				<groupName dataItem="degreePos" default="unknown" position="yesSpec">RNPDegreePos</groupName>
+				<prompt>Where do these special degree words occur with respect to the rest of the nominal phrase?</prompt>
+				<radio id="NPDegreeBefore" checked="yes" dataValue="before">Before it</radio>
+				<radio id="NPDegreeAfter" checked="yes" dataValue="after">After it</radio>
+				<radio id="NPDegreeEitherSide" checked="yes" dataValue="either">On either side, but not both sides at the same time</radio>
+				<radio id="NPDegreeBothSides" checked="yes" dataValue="both">On either, or both sides at the same time</radio>
+				<radioGroup id="NPDegreeEitherSideTable" show="swNPDegreeEitherorBoth">
+					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
+					<prompt>Can all the degree words appear on either side of the rest of the nominal phrase?</prompt>
+					<radio id="NPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
+					<radio id="NPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
+				</radioGroup>
+			</radioGroup>
+</radioGroup>
+		<instruction id="NPDegreeEitherRestrictedInstruction" show="swNPDegreeEitherRestricted">In the lexicon, mark those which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>
+<br/>
+		<buttons>
+			<button id="NPDegreeBack" value="Back" goto="NPContents.htm"/>
+			<button id="NPDegreeNext" value="Next" goto="NPContents.htm"/>
+		</buttons>
+	</form>
+   <showWhen id="swNPDegreeYes">
+		<whenRadio button="NPDegreeYes"/>
+	</showWhen>
+	<showWhen id="swNPDegreeEitherorBoth">
+		<whenRadio button="NPDegreeYes"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPDegreeEitherSide"/>
+		<or/>
+		<whenRadio button="NPDegreeBothSides"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPDegreeEitherRestricted">
+		<whenRadio button="NPDegreeYes"/>
+		<and/>
+		<whenRadio button="NPDegreeEitherRestricted"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPDegreeEitherSide"/>
+		<or/>
+		<whenRadio button="NPDegreeBothSides"/>
+		<closeParen/>
+	</showWhen>
+</page>

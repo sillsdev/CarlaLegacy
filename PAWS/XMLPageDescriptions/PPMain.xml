@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PPMain">
+	<title>Pre/Post-Positional Phrases</title>
+<introduction>This section considers the internal structure of PPs.    First, we need to see what words can modify PPs.  There are normally a few degree words that can modify a whole PP, such as <example>just</example> and <example>right</example> in <example>just around the corner</example> and <example>right to the last second</example>. We can consider words like <example>next</example> and <example>close</example> degree words of this type in <example>next in line</example> and <example>close behind Joe</example>.  In addition, certain manner adverbs, such as <example>almost</example>, <example>mostly</example>, <example>squarely</example>, and <example>nearly</example>, can modify PPs, as in <example>almost in the hole</example>, <example>mostly up the tree</example>, <example>squarely on the table</example>, and <example>nearly upon the enemy</example>.</introduction>
+	<form section="pp">
+<prompt>Key similar examples from your language here:</prompt>
+<textBox id="PPMainExample" dataItem="example"/>
+		<buttons>
+			<button id="PPMainBack" value="Back" goto="Contents.htm"/>
+			<button id="PPMainNext" value="Next" goto="PPModifiers.htm"/>
+		</buttons>
+	</form>
+</page>

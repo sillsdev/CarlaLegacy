@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PronIndefinite">
+	<title level="2">Pronouns and Proper Names - Indefinite Pronouns</title>
+	<introduction>A final type of pronouns is indefinite pronouns.  In English, these include <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>something</example>, etc.  Also, <example>nobody</example>, <example>nothing</example>, <example>none</example> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier or negative plus an indefinite generic noun, and some languages may not merge them into a single word, as in <example>no one</example> for English.</introduction>
+	<form section="pron">
+		<radioGroup id="PronIndefGroup">
+			<groupName dataItem="indef" default="no">RPronIndef</groupName>
+			<prompt>Does your language have single-word indefinite pronouns?</prompt>
+			<radio id="PronIndefNo" dataValue="no">No, they are all noun phrases</radio>
+			<radio id="PronIndefYes" dataValue="yes">Yes, like English, they are merged into indefinite pronouns</radio>
+		</radioGroup>
+		<prompt>
+			<span id="PronIndefNPExamplePrompt">Key some examples of how your language expresses indefinites:</span>
+		</prompt>
+		<textBox id="PronIndefNPExample" dataItem="indefNPExample"/>
+		<prompt>
+			<span id="PronIndefExamplePrompt">Key some examples of indefinite pronouns here:</span>
+		</prompt>
+		<textBox id="PronIndefExample" dataItem="indefExample"/>
+		<instruction id="PronIndefYesInstruction">These need to have the same category as regular pronouns when they come out of the lexicon.  Add the feature <feature>negative</feature> to any versions of the indefinite pronouns which are negative.  Otherwise, we will leave indefinite as unspecified.</instruction>
+		<buttons>
+			<button id="PronIndefBack" value="Back" goto="PronPoss.htm"/>
+			<button id="PronIndefNext" value="Next" goto="PronNP.htm"/>
+		</buttons>
+	</form>
+</page>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QMainYN">
+	<title level="2">Questions - Main Clause Yes/No Questions</title>
+	<form section="q">
+		<radioGroup>
+			<groupName dataItem="mainYN" default="no">RQMainYN</groupName>
+			<prompt>For main clause Yes/No questions, does your language have one or more Yes/No question marker particles, words or complementizers?</prompt>
+			<radio id="QMainYNYes" dataValue="yes">Yes</radio>
+			<radioGroup id="QMainYNWordTable">
+				<groupName dataItem="mainYNWord" default="no">RQMainYNWord</groupName>
+				<prompt>Is it a separate word?</prompt>
+				<radio id="QMainYNWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
+				<radio id="QMainYNWordYes" dataValue="yes">Yes</radio>
+			</radioGroup>
+			<radioGroup id="QMainYNPosTable">
+				<groupName dataItem="mainYNPos" default="unknown" position="yesHead">RQMainYNPos</groupName>
+				<prompt>Where does the Yes/No question marker occur with respect to the rest of the question?</prompt>
+				<radio id="QMainYNPosBefore" dataValue="before">Before</radio>
+				<radio id="QMainYNPosAfter" dataValue="after">After</radio>
+				<radio id="QMainYNPosEitherSide" dataValue="either">Either side</radio>
+				<radioGroup id="QMainYNEitherTable">
+					<groupName dataItem="mainYNEither" default="no">RQMainYNEither</groupName>
+					<prompt>Can all the Yes/No question markers appear on either side of the question?</prompt>
+					<radio id="QMainYNEitherYes" dataValue="yes">Yes, there is no restriction</radio>
+					<radio id="QMainYNEitherNo" dataValue="no">No, there are separate sets for each side</radio>
+				</radioGroup>
+			<radioGroup id="QMainYNBothTable">
+				<groupName dataItem="mainYNBoth" default="no">RQMainYNBoth</groupName>
+				<prompt>Can the Yes/No question markers appear on both sides in the question?</prompt>
+				<radio id="QMainYNBothNo" dataValue="no">No, only on one side or the other</radio>
+				<radio id="QMainYNBothYesBoth" dataValue="yesBoth">Yes, and they must appear on both sides</radio>
+				<radio id="QMainYNBothYesInitial" dataValue="yesInitial">Yes, they may appear on both sides, but only the one in initial position is required</radio>
+				<radioGroup id="QMainYNBothInitialFinalTable">
+					<groupName dataItem="mainYNBothInitialFinal" default="no">RQMainYNBothInitialFinal</groupName>
+					<prompt>May a different Yes/No question marker also occur only in final position?</prompt>
+					<radio id="QMainYNBothInitialFinalNo" dataValue="no">No</radio>
+					<radio id="QMainYNBothInitialFinalYes" dataValue="yes">Yes</radio>
+				</radioGroup>
+				<radio id="QMainYNBothYesFinal" dataValue="yesFinal">Yes, they may appear on both sides, but only the one in final position is required</radio>
+				<radioGroup id="QMainYNBothFinalInitialTable">
+					<groupName dataItem="mainYNBothFinalInitial" default="no">RQMainYNBothFinalInitial</groupName>
+					<prompt>May a different Yes/No question marker also occur only in initial position?</prompt>
+					<radio id="QMainYNBothFinalInitialNo" dataValue="no">No</radio>
+					<radio id="QMainYNBothFinalInitialYes" dataValue="yes">Yes</radio>
+				</radioGroup>
+			</radioGroup>
+			</radioGroup>
+			<radio id="QMainYNNoAux" dataValue="noAux">No, but an auxiliary is fronted, like in English</radio>
+			<radioGroup id="QMainYNAuxPosTable">
+				<groupName dataItem="mainYNAuxPos" default="unknown" position="yesHead">RQMainYNAuxPos</groupName>
+				<prompt>Where does the auxiliary occur with respect to the rest of the question?</prompt>
+				<radio id="QMainYNAuxPosBefore" dataValue="before">Before</radio>
+				<radio id="QMainYNAuxPosAfter" dataValue="after">After</radio>
+			</radioGroup>
+			<radio id="QMainYNNo" dataValue="no">No, there is no marker or word order change in main clauseYes/No questions, just a difference in intonation or tone or other non-syntactic marking</radio>
+		</radioGroup>
+		<instruction id="QMainYNWordNoInstruction">You need to write a CC table pre-pass to separate the clitic so that it stands alone and also make a root entry for this clitic in your lexicon.  Give the entry the category <category>C</category>, or add the feature <feature>C</feature> to the feature line to change the category for the syntax.  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, no additional feature is needed.</instruction>
+		<instruction id="QMainYNWordYesInstruction">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>C</feature> to the feature line to change the category for the syntax.  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, no additional feature is needed.</instruction>
+		<instruction id="QMainYNEitherNoInstruction">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+		<buttons>
+			<button id="QMainYNBack" value="Back" goto="QMain.htm"/>
+			<button id="QMainYNNext" value="Next" goto="QEmbYN.htm"/>
+		</buttons>
+	</form>
+</page>

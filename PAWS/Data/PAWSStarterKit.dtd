@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.0.7 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!-- PAWS Starter Kit DTD -->
+<!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, pron, pp, ip, q, focus, neg, comp, advcl, relcl, fullnp, coord)>
+<!-- leftOffAt is the html page where the user last performed a save operation -->
+<!ELEMENT leftOffAt (#PCDATA)>
+<!-- Language has the language name, abbreviation and font information.  It
+	 also has the SFM field code to use for examples (textSFM).  -->
+<!ELEMENT language (langName, langAbbr, font, textSFM?)>
+<!ELEMENT langName (#PCDATA)>
+<!ELEMENT langAbbr (#PCDATA)>
+<!ELEMENT font (fontName, fontSize, fontColor)>
+<!ATTLIST font
+  bold (True | False) "False"
+  italic (True | False) "False"
+  under (True | False) "False"
+  strike (True | False) "False"
+>
+<!ELEMENT fontName (#PCDATA)>
+<!ELEMENT fontSize (#PCDATA)>
+<!ELEMENT fontColor (#PCDATA)>
+<!ELEMENT textSFM (#PCDATA)>
+<!-- Typology has the basic word order and some examples. -->
+<!ELEMENT typology (example?)>
+<!ATTLIST typology
+  checkedOff (yes | no) "no"
+  wordOrder (SVO | SOV | VSO | VOS | OVS | OSV) "SVO"
+>
+<!-- Quantifier Phrases consist of five kinds of examples.
+	 Degree words may or may appear (degree).
+	 If so, they have a position (degreePos) with respect to the quantifier.
+	 If they can appear either before or after, then either there are sets
+		for each side (degreeEither="no") or not.
+	 Ordinal numbers are formed by affixation or are independent
+	   (ordinalFormation).
+	 Ordinal numbers appear before, after, or on either side of the
+	   cardinal number they may modify.
+-->
+<!ELEMENT qp (example, degreeExample?, cardinalExample, cardinalCompoundExample?, ordinalExample)>
+<!ATTLIST qp
+  checkedOff (yes | no) "no"
+  degree (yes | no) "yes"
+  degreePos (before | after | either | unknown) "unknown"
+  degreeEither (yes | no) "yes"
+  ordinalFormation (affix | independent) "affix"
+  ordinalPos (before | after | either | unknown) "unknown"
+>
+<!ELEMENT example (#PCDATA)>
+<!ELEMENT degreeExample (#PCDATA)>
+<!ELEMENT cardinalExample (#PCDATA)>
+<!ELEMENT cardinalCompoundExample (#PCDATA)>
+<!ELEMENT ordinalExample (#PCDATA)>
+<!-- Adverb Phrases consist of four kinds of examples.
+	 Degree words may or may appear (degree).
+	 If so, they have a position (degreePos) with respect to the adverb.
+	 If they can appear either before or after, then either there are sets
+		for each side (degreeEither="no") or not.
+	 The set of degree words which can modify the four kinds of adverbs
+	   (degreeSet) can modify all four kinds (yes), all but reason (almost),
+	   or they are differnt (no).
+-->
+<!ELEMENT advp (temporalExample, locativeExample, mannerExample, reasonExample)>
+<!ATTLIST advp
+  checkedOff (yes | no) "no"
+  degree (yes | no) "yes"
+  degreePos (before | after | either | unknown) "unknown"
+  degreeEither (yes | no) "yes"
+  degreeSet (yes | almost | no) "yes"
+>
+<!ELEMENT temporalExample (#PCDATA)>
+<!ELEMENT locativeExample (#PCDATA)>
+<!ELEMENT mannerExample (#PCDATA)>
+<!ELEMENT reasonExample (#PCDATA)>
+<!-- Adjective Phrases have one set of examples.
+	 Modifiers may or may not appear (modifiers).
+	 If so and it is degree words only (modifiers="yesDegree"), then they
+		have a position (degreePos) with respect to the adjective.
+		If they can appear either before or after, then either there are sets
+		  for each side (degreeEither="no") or not.
+	 If so and it is degree words & manner adverbials (modifiers="yesManner"),
+		then the degree words may have a position (mannerPos) with respect to
+		the adjective.
+		If they can appear either before or after, then either there are sets
+		  for each side (mannerEither="no") or not.
+-->
+<!ELEMENT adjp (example)>
+<!ATTLIST adjp
+  checkedOff (yes | no) "no"
+  modifiers (yesDegree | yesManner | no) "no"
+  degreePos (before | after | either | unknown) "unknown"
+  degreeEither (yes | no) "yes"
+  mannerPos (before | after | either | unknown) "unknown"
+  mannerEither (yes | no) "yes"
+  agree (no | yesAnimacy | yesClass) "no"
+>
+<!-- Nominal phrases have examples with articles and demonstratives, embedded
+	   possessors, prepositional phrases within the possessor, relative
+	   clauses within the possessor, quantifier modifiers, adjective
+	   phrase modifiers, compounds, and compounds containing PPs.  There also
+	   is a series of table of contents items.
+	 Degree words may or may not appear (degree)
+	 If so, they may appear before, after, or on either side.
+	 If either side, they may appear with (degreeEither="no") or
+	   without (degreeEither="yes") restriction.
+	 If with restriction, then they:
+	   can only appear on one side or the other, but not both (degreeBoth="no")
+	   must appear on both sides (degreeBoth="yesBoth")
+	   on both, but initial only is required (degreeBoth="yesInitial")
+		 if so, a degree word may or may not also appear finally
+			 (degreeInitialFinal)
+	   on both, but final only is required (degreeBoth="yesFinal")
+		 if so, a degree word may or may not also appear initially
+			 (degreeFinalInitial)
+	 The article/demonstrative may have case (artCase) which can be either
+		 nominative-accusative or erative (artCaseType)
+	 The phrase may have agreement (artAgr).
+	 The phrase may have articles and/or demonstratives (artAndDem).
+	   The article may be required (artArtRequired) and may have a position
+		 with respect to the noun (artArtPos*).  Every article may appear on
+	 either side or not (artArtEither*).  If an article is required, then
+	 it may be required on both sides or just before or after
+	 (artArtRequiredBoth).
+	   The demonstrative may be required (artDemRequired) and may have a
+		 position with respect to the noun (artDemPos*).  Every demonstrative
+	 may appear on either side or not (artDemEither*).  If a demonstrative
+	 is required, then it may be required on both sides or just before
+	 or after (artDemRequiredBoth).
+	   Both may cooccur (artBothCooccur).  If not, then they may be required
+		 (artBothRequired*) and will have a position with respect to the noun
+	 (artBothPos*).  Every one may apper on either side or not
+	 (artBothEither*).  It may be required on both sides or just before or
+	 just after (artBothRequiredBoth).
+		 If they may cooccur, then the order must be given (artBothBothPos).
+	 The phrase may have a possessor.
+	   The possessor may or may not be marked (possMarked).
+	   The possessor has a position with respect to the head noun (possNounPos1
+		 possNounPos2 or possNounPos3).
+	   If it is a phrasal clitic, it may be written as a distinct word
+		  (possCliticWord).  It may be required on all possessors
+	  (possCliticRequired).  It has a position with respect to the
+	  possessor (possCliticPossPos).
+	   The possessor may agree with the head noun (possAgr).
+	 If the phrase has a quantifier phrase (at the N'' level), then it has a
+	   position with respect to the noun (qpPos).  All or some of the QPs may
+	   appear on either side of the noun (qpEither).  QPs may appear on both
+	   sides in the same nominal phrase (qpBoth).  If one must be initial, then
+	   the other may also occur after (qpBothAfter).  If one must be final,
+	   then the other may also occur before (qpBothBefore).
+	 If the phrase has an adjective phrase, then it has a
+	   position with respect to the noun (adjpPos).  All or some of the AdjPs
+	   may appear on either side of the noun (adjpEither).
+	 The head noun may have case (nounCase) which can be either
+		 nominative-accusative or erative (nounCaseType).
+	 Noun-noun compounds have a head (compHead) and any PP occurs in a position
+		 with respect to that head (compHeadPPPos).
+-->
+<!ELEMENT np (example, embeddedExample, ppExample, relClExample, qpExample, adjpExample, compExample, compPPExample, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npContents9)>
+<!ATTLIST np
+  checkedOff (yes | no) "no"
+  degree (yes | no) "no"
+  degreePos (before | after | either | unknown) "unknown"
+  degreeEither (yes | no) "no"
+  degreeBoth (no | yesBoth | yesInitial | yesFinal) "no"
+  degreeInitialFinal (yes | no) "no"
+  degreeFinalInitial (yes | no) "no"
+  artCase (yes | no) "no"
+  artCaseType (nomAcc | erg) "nomAcc"
+  artAgr (no | yesNumber | yesPerson | yesAnimacy | yesClass) "no"
+  artAndDem (no | article | demonstrative | both) "no"
+  artArtRequired (no | yes) "no"
+  artArtPos1 (before | after | either | unknown) "unknown"
+  artArtPos2 (before | after | either | unknown) "unknown"
+  artArtEither1 (yes | no) "no"
+  artArtEither2 (yes | no) "no"
+  artArtRequiredBoth (yes | noBefore | noAfter) "yes"
+  artDemRequired (no | yes) "no"
+  artDemPos1 (before | after | either | unknown) "unknown"
+  artDemPos2 (before | after | either | unknown) "unknown"
+  artDemEither1 (yes | no) "no"
+  artDemEither2 (yes | no) "no"
+  artDemRequiredBoth (yes | noBefore | noAfter) "yes"
+  artBothCooccur (no | yes) "no"
+  artBothRequired1 (no | yes) "no"
+  artBothRequired2 (no | yesArt | yesDem | yesBoth) "no"
+  artBothPos1 (before | after | either | unknown) "unknown"
+  artBothPos2 (before | after | either | unknown) "unknown"
+  artBothEither1 (yes | no) "no"
+  artBothEither2 (yes | no) "no"
+  artBothEither3 (yes | no) "no"
+  artBothRequiredBoth (yes | noBefore | noAfter) "yes"
+  artBothBothPos (artNounDem | demNounArt | artDemNoun | nounArtDem | artDemEither | demArtNoun | nounDemArt | demArtEither | artDemNounDemArt | demArtNounArtDem) "artNounDem"
+  possMarked (no | yesAffix | yesClitic) "no"
+  possNounPos1 (before | after | either | unknown) "unknown"
+  possNounPos2 (before | after | either | unknown) "unknown"
+  possNounPos3 (before | after | either | unknown) "unknown"
+  possCliticWord (no | yes) "no"
+  possCliticRequired (no | yes) "no"
+  possCliticPossPos (before | after) "before"
+  possAgr (yes | no) "no"
+  qpPos (before | after | either | unknown) "unknown"
+  qpEither (no | yes) "no"
+  qpBoth (no | yesBoth | yesInitial | yesFinal) "no"
+  qpBothAfter (no | yes) "no"
+  qpBothBefore (no | yes) "no"
+  adjpPos (before | after | either | unknown) "unknown"
+  adjpEither (no | yes) "no"
+  nounCase (yes | no | unknown) "unknown"
+  nounCaseType (nomAcc | erg | unknown) "unknown"
+  compHead (left | right) "right"
+  compHeadPPPos (before | after | either | unknown) "unknown"
+>
+<!ELEMENT embeddedExample (#PCDATA)>
+<!ELEMENT ppExample (#PCDATA)>
+<!ELEMENT relClExample (#PCDATA)>
+<!ELEMENT qpExample (#PCDATA)>
+<!ELEMENT adjpExample (#PCDATA)>
+<!ELEMENT compExample (#PCDATA)>
+<!ELEMENT compPPExample (#PCDATA)>
+<!ELEMENT npContents1 EMPTY>
+<!ATTLIST npContents1
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents2 EMPTY>
+<!ATTLIST npContents2
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents3 EMPTY>
+<!ATTLIST npContents3
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents4 EMPTY>
+<!ATTLIST npContents4
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents5 EMPTY>
+<!ATTLIST npContents5
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents6 EMPTY>
+<!ATTLIST npContents6
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents7 EMPTY>
+<!ATTLIST npContents7
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents8 EMPTY>
+<!ATTLIST npContents8
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents9 EMPTY>
+<!ATTLIST npContents9
+  checkedOff (yes | no) "no"
+>
+<!-- Pronouns and proper names.  Proper Names have examples, including ones
+	   with PPs and relative clauses.  Pronoun examples include reflexives,
+	   possessives, indefinites as NPs and/or indefinites as words, stand
+	   alone NPs, partitives, and pronominals with relative clauses.
+	 Proper Names may be marked in the morphological parser by N or some other
+	   category (pnCat).
+	 Proper Names are marked by case in various fashions (pnCase).
+	 Pronouns may have case (pronCase) and may have a type (pronCase).
+	 Reflexives may exist (refl) and if so, may be formed by an affix
+	   (reflAffix).
+	 Reciprocals may exist (recip) and if so, may be formed by an affix
+	   (recipAffix).
+	 Possessives may exist (poss) and if so, may be formed by an affix
+	   (possAffix).
+	 Indefinites may be formed by an NP or a word (indef).
+	 Partitives may come before or after the head (partitive).
+-->
+<!ELEMENT pron (example, ppExample, relClExample, reflExample, recipExample, possExample, indefNPExample, indefExample, standAloneNPExample, partitiveExample, pronRelClExample)>
+<!ATTLIST pron
+  checkedOff (yes | no) "no"
+  pnCat (no | yes) "no"
+  pnCase (no | yesAffix | yesArt | yesNone) "no"
+  pronCase (no | yes | unknown) "unknown"
+  pronCaseType (nomAcc | erg | unknown) "unknown"
+  refl (yes | no) "yes"
+  reflAffix (noWord | noNoun | yes) "yes"
+  recip (yes | no) "yes"
+  recipAffix (noWord | noNoun | noQP | yes) "yes"
+  poss (no | yes) "yes"
+  possAffix (no | yes) "no"
+  indef (no | yes) "no"
+  partitive (before | after | unknown) "unknown"
+>
+<!ELEMENT reflExample (#PCDATA)>
+<!ELEMENT recipExample (#PCDATA)>
+<!ELEMENT possExample (#PCDATA)>
+<!ELEMENT indefNPExample (#PCDATA)>
+<!ELEMENT indefExample (#PCDATA)>
+<!ELEMENT standAloneNPExample (#PCDATA)>
+<!ELEMENT partitiveExample (#PCDATA)>
+<!ELEMENT pronRelClExample (#PCDATA)>
+<!-- Pre/post-positions have examples of four kinds.
+	 Degree words may modify them (degree) and/or manner words may modify them
+	   (manner).
+	 Degree words have a position (degreePos), as do manner words (mannerPos).
+	 If both modify, then degreeMannerPos is used.
+	 If degree position is "either", then all may appear on either side
+	   (degreeEither and degreeEither2 - the latter for the "both" case).
+	 Prepositions may be stand alone (alone).  Some may take sentential
+	   complements (sentComp).  The language may take prepositions,
+	   postpositions, or both (prePost).
+-->
+<!ELEMENT pp (example, ppExample, locExample, sentExample)>
+<!ATTLIST pp
+  checkedOff (yes | no) "no"
+  degree (no | yes) "no"
+  manner (no | yes) "no"
+  degreePos (before | after | either | unknown) "unknown"
+  degreeEither (no | yes) "no"
+  degreeEither2 (no | yes) "no"
+  mannerPos (before | after | either | unknown) "unknown"
+  degreeMannerPos (bothBefore | bothAfter | degreeManner | mannerDegree | either | unknown) "unknown"
+  alone (no | yes) "no"
+  sentComp (no | yes) "no"
+  prePost (pre | post | both | unknown) "unknown"
+>
+<!ELEMENT locExample (#PCDATA)>
+<!ELEMENT sentExample (#PCDATA)>
+<!-- Single clause sentences have examples for transitives, auxiliaries,
+	 pro-drop, ditransitives, intransitives and motion,
+	   copular constructions, and passives.
+	 There are two sets of ProDrop questions, depending on whether the
+	   typology is set to SVO/SOV/VOS/OVS (proDrop4) or VSO/OSV (proDrop2).
+	 Auxiliaries may be present (aux) and may be required (auxRequired).
+	   More than one aux may be present (auxMany).  VSO and OSV have an order
+	   issue (auxOrder).
+	 Copular constructions can have verbs or aux or neither (copular).
+	 Ditransitives take a particualr category (diCat).
+	 Passives may exist (passive).  If so, there may be an agent (passiveAgent)
+	   and it will have a category (passiveAgentCat).  Auxiliaries may also be
+	   required (passiveAux).
+-->
+<!ELEMENT ip (example, auxExample, proDropExample, diExample, intransExample, copularExample, passiveExample, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9)>
+<!ATTLIST ip
+  checkedOff (yes | no) "no"
+  proDrop4 (no | noImpv | yes) "no"
+  proDrop2 (no | noImpv | notReally | yes) "no"
+  aux (no | yes) "no"
+  auxRequired (no | yes) "no"
+  auxMany (no | yes) "no"
+  auxOrder (no | yes) "no"
+  copular (no | yesNeither | yesAux) "no"
+  diCat (dp | pp | both) "dp"
+  passive (no | yes) "yes"
+  passiveAgent (no | yes) "no"
+  passiveAux (no | yes) "no"
+  passiveAgentCat (dp | pp) "dp"
+>
+<!ELEMENT auxExample (#PCDATA)>
+<!ELEMENT proDropExample (#PCDATA)>
+<!ELEMENT diExample (#PCDATA)>
+<!ELEMENT intransExample (#PCDATA)>
+<!ELEMENT copularExample (#PCDATA)>
+<!ELEMENT passiveExample (#PCDATA)>
+<!ELEMENT ipContents1 EMPTY>
+<!ATTLIST ipContents1
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT ipContents2 EMPTY>
+<!ATTLIST ipContents2
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT ipContents3 EMPTY>
+<!ATTLIST ipContents3
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT ipContents4 EMPTY>
+<!ATTLIST ipContents4
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT ipContents5 EMPTY>
+<!ATTLIST ipContents5
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT ipContents6 EMPTY>
+<!ATTLIST ipContents6
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT ipContents7 EMPTY>
+<!ATTLIST ipContents7
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT ipContents8 EMPTY>
+<!ATTLIST ipContents8
+  checkedOff (yes | no) "no"
+>
+<!ELEMENT ipContents9 EMPTY>
+<!ATTLIST ipContents9
+  checkedOff (yes | no) "no"
+>
+<!-- Questions have main clause Yes/No examples (example),
+	  embedded Yes/No examples (embYNExample),
+	  main clause content examples (contentExample),
+	  embedded content examples (embContentExample), and
+	  a list of wh-words (whWords) and their glosses (whWordGlosses).
+	 Main clause Yes/No questions may have particles, words, or
+	  complementizers (mainYN).  These may be written as separate words
+	  (mainYNWord).  These have a position with respect to the rest of the
+	  question (mainYNPos).  If they can appear on either side, then all of
+	  them may do so (mainYNEither) and they may appear on both sides
+	  (mainYNBoth).  If initial is required, then one may also be final
+	  (mainYNBothInitialFinal).  If final is required, then one may also
+	  be initial (mainYNBothFinalInitial).  If only an Aux is fronted, then it
+	  has a position (mainYNAuxPos).
+	 Embedded Yes/No questions may have particles, words, or
+	  complementizers (embYN).  These may be written as separate words
+	  (embYNWord).  These have a position with respect to the rest of the
+	  question (embYNPos).  If they can appear on either side, then all of
+	  them may do so (embYNEither) and they may appear on both sides
+	  (embYNBoth).  If initial is required, then one may also be final
+	  (embYNBothInitialFinal).  If final is required, then one may also
+	  be initial (embYNBothFinalInitial).  If only an Aux is fronted, then it
+	  has a position (embYNAuxPos).
+	 Content questions may require interrogative phrases to be fronted
+	  (contFront).
+	 Main content questions may have particles, words, or
+	  complementizers (mainCont).  These may be written as separate words
+	  (mainContWord).  They may occur before a fronted interrogative phrase
+	  (mainContBefore).  An Aux may occur after the fronted phrase
+	  (mainContBeforeAux).  The markers may appear in the same position as
+	  the main clause Yes/No ones (mainContSame).  These have a position with
+	  respect to the rest of the question (mainContPos).  If they can appear
+	  on either side, then all of them may do so (mainContEither) and they
+	  may appear on both sides (mainContBoth).  If initial is required, then
+	  one may also be final (mainContBothInitialFinal).  If final is required,
+	  then one may also be initial (mainContBothFinalInitial).  A question
+	  marker may be required (mainContRequired).  If only an Aux is fronted,
+	  then it may be required (mainContAux).
+	 Embedded content questions may have particles, words, or
+	  complementizers (embCont).  These may be written as separate words
+	  (embContWord).  These may occur in the same positions as in embedded
+	  Y/N questions (embContPosAsEmbYNPos).  These have a position with
+	  respect to the rest of the question (embContPos).  If they can appear
+	  on either side, then all of them may do so (embContEither) and they
+	  may appear on both sides (embContBoth).  If initial is required, then
+	  one may also be final (embContBothInitialFinal).  If final is required,
+	  then one may also be initial (embContBothFinalInitial).  A question
+	  marker may be required (embContRequired).  If only an Aux is fronted,
+	  then it may be required (embContAux).
+-->
+<!ELEMENT q (example, embYNExample, contentExample, embContentExample, whWords, whWordGlosses)>
+<!ATTLIST q
+  checkedOff (yes | no) "no"
+  mainYN (yes | noAux | no) "no"
+  mainYNWord (no | yes) "no"
+  mainYNPos (before | after | either | unknown) "unknown"
+  mainYNEither (no | yes) "no"
+  mainYNBoth (no | yesBoth | yesInitial | yesFinal) "no"
+  mainYNBothInitialFinal (no | yes) "no"
+  mainYNBothFinalInitial (no | yes) "no"
+  mainYNAuxPos (before | after | unknown) "unknown"
+  embYN (yes | noAux | no) "no"
+  embYNWord (no | yes) "no"
+  embYNPos (before | after | either | unknown) "unknown"
+  embYNEither (no | yes) "no"
+  embYNBoth (no | yesBoth | yesInitial | yesFinal) "no"
+  embYNBothInitialFinal (no | yes) "no"
+  embYNBothFinalInitial (no | yes) "no"
+  embYNAuxPos (before | after | unknown) "unknown"
+  contFront (no | yes | unknown) "unknown"
+  mainCont (yesSame | yesDiff | noAux | no) "no"
+  mainContWord (no | yes) "no"
+  mainContBefore (no | yes | yesSome) "no"
+  mainContBeforeAux (no | yes) "no"
+  mainContSame (no | yes) "yes"
+  mainContPos (before | after | either | unknown) "unknown"
+  mainContEither (no | yes) "no"
+  mainContBoth (no | yesBoth | yesInitial | yesFinal) "no"
+  mainContBothInitialFinal (no | yes) "no"
+  mainContBothFinalInitial (no | yes) "no"
+  mainContRequired (no | yes) "no"
+  mainContAux (no | yes) "no"
+  embCont (yesSameYN | yesSameCont | yesDiff | noAux | no) "no"
+  embContWord (no | yes) "no"
+  embContPosAsEmbYNPos (no | yes) "no"
+  embContPos (before | after | either | unknown) "unknown"
+  embContEither (no | yes) "no"
+  embContBoth (no | yesBoth | yesInitial | yesFinal) "no"
+  embContBothInitialFinal (no | yes) "no"
+  embContBothFinalInitial (no | yes) "no"
+  embContRequired (no | yes) "no"
+  embContAux (no | yes) "no"
+>
+<!ELEMENT embYNExample (#PCDATA)>
+<!ELEMENT contentExample (#PCDATA)>
+<!ELEMENT embContentExample (#PCDATA)>
+<!ELEMENT whWords (#PCDATA)>
+<!ELEMENT whWordGlosses (#PCDATA)>
+<!-- Focus/topic constuctions have examples.
+-->
+<!ELEMENT focus (example)>
+<!ATTLIST focus
+  checkedOff (yes | no) "no"
+>
+<!-- Negative Constructions have examples.
+-->
+<!ELEMENT neg (example)>
+<!ATTLIST neg
+  checkedOff (yes | no) "no"
+>
+<!-- Complement clauses have examples.
+-->
+<!ELEMENT comp (example)>
+<!ATTLIST comp
+  checkedOff (yes | no) "no"
+>
+<!-- Adverbial clauses have examples.
+-->
+<!ELEMENT advcl (example)>
+<!ATTLIST advcl
+  checkedOff (yes | no) "no"
+>
+<!-- Relative clauses have examples.
+-->
+<!ELEMENT relcl (example)>
+<!ATTLIST relcl
+  checkedOff (yes | no) "no"
+>
+<!-- Fully modified NPs have examples.
+-->
+<!ELEMENT fullnp (example)>
+<!ATTLIST fullnp
+  checkedOff (yes | no) "no"
+>
+<!-- Coordinate structures have examples.
+-->
+<!ELEMENT coord (example)>
+<!ATTLIST coord
+  checkedOff (yes | no) "no"
+>

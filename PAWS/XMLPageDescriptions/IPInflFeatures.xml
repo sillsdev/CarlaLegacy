@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="IPInflFeatures">
+	<title level="2">Basic, Single-Clause Sentences - Inflection Features</title>    <introduction>Sentences normally include some kind of inflection on the verbs and possibly agreement between the subject, object and verb.</introduction>
+	<instruction>Verbs and auxiliaries usually carry inflection features, such as tense, aspect, and/or mood.  In most cases, these features are added by affixes.  Add the appropriate features from the following chart to the relevant affixes:
+	<featureChart explanations="no">
+			<featureRow>
+				<featureType>tense</featureType>
+				<featureItem>present</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>past</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>future</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType>aspect</featureType>
+				<featureItem>completive</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>continuative</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>habitual</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>imperfective</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>incompletive</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>perfective</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>potential</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>progressive</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>stative</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType>mood</featureType>
+				<featureItem>declarative</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>imperative</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>interrogative</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>irrealis</featureItem>
+				<featureExplanation/>
+			</featureRow>
+			<featureRow>
+				<featureType/>
+				<featureItem>realis</featureItem>
+				<featureExplanation/>
+			</featureRow>
+		</featureChart>
+	</instruction>
+	<form section="ip" transparent="yes">
+		<buttons>
+			<button id="IPInflFeaturesBack" value="Back" goto="IPContents.htm"/>
+			<button id="IPInflFeaturesNext" value="Next" goto="IPAgrFeatures.htm"/>
+		</buttons>
+	</form>
+</page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NPAdjP2">
+	<title level="2">Nominal Phrases - Adjp Modifiers Part 2</title>
+	<form section="np">
+<radioGroup>
+	<groupName dataItem="adjpPos" default="unknown" position="yesSpec">RNPAdjPPos</groupName>
+	<prompt>Where do adjective phrases occur with respect to the noun?</prompt>
+	<radio id="NPAdjPPosBefore" dataValue="before">Before</radio>
+	<radio id="NPAdjPPosAfter" dataValue="after">After</radio>
+	<radio id="NPAdjPPosEitherSide" dataValue="either">Either side</radio>
+<radioGroup id="NPAdjPPosEitherSideTable">
+	<groupName dataItem="adjpEither" default="no">RNPAdjPPosEitherSideEither</groupName>
+	<prompt>Can all the adjective phrases appear on either side of the noun?</prompt>
+	<radio id="NPAdjPPosEitherSideEitherYes" dataValue="yes">Yes, there is no restriction</radio>
+	<radio id="NPAdjPPosEitherSideEitherNo" dataValue="no">No, there are separate sets for each side</radio>
+</radioGroup>
+</radioGroup>
+<instruction id="NPAdjPPosEitherSideEitherNoInstruction">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
+		<buttons>
+			<button id="NPAdjp2Back" value="Back" goto="NPAdjP.htm"/>
+			<button id="NPAdjp2Next" value="Next" goto="NPAgreement.htm"/>
+		</buttons>
+	</form>
+</page>

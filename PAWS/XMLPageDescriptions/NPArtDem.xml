@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NPArtDem">
+	<title level="2">Nominal Phrase - Articles and Demonstratives</title>
+	<introduction>Now consider articles and demonstratives.  In English, the articles are <example>a</example>, <example>an</example>, and <example>the</example>.  English demostratives include <example>this</example>, <example>that</example>, <example>these</example>, and <example>those</example>.  Some simple examples are:</introduction>
+	<EnglishExample>
+		<exItem label="1.">a book.</exItem>
+		<exItem label="2.">an apple.</exItem>
+		<exItem label="3.">the book.</exItem>
+		<exItem label="4.">the books.</exItem>
+		<exItem label="5.">this apple.</exItem>
+		<exItem label="6.">those books.</exItem>
+	</EnglishExample>
+	<introduction>In English, articles and demonstratives do not co-occur in the same nominal phrase, and both occur before the noun.  They may be able to co-occur in your language, or they may occur in different positions with respect to the noun.  Therefore, we will give them different syntactic categories.</introduction>
+	<form section="np">
+		<instruction>Key some examples with both an article and a demonstrative in the box below, if grammatical, as well as some with each type alone.</instruction>
+		<prompt>Key your examples here:</prompt>
+		<textBox id="NPExample" dataItem="example"/>
+		<br/>
+		<buttons>
+			<button id="NPArtDemBack" value="Back" goto="NPContents.htm"/>
+			<button id="NPArtDemNext" value="Next" goto="NPArtCase.htm"/>
+		</buttons>
+	</form>
+</page>

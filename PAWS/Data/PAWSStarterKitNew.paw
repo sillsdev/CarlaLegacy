@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE paws SYSTEM "..\Data\PAWSStarterKit.dtd">
+<paws>
+<leftOffAt>Contents.htm</leftOffAt>
+  <language>
+	<langName/>
+	<langAbbr/>
+	<font bold="False" italic="False" under="False" strike="False">
+	  <fontName>Courier New</fontName>
+	  <fontSize>12</fontSize>
+	  <fontColor>0</fontColor>
+	  </font>
+	<textSFM>\t</textSFM>
+  </language>
+  <typology checkedOff="no" wordOrder="SVO">
+	<example/>
+  </typology>
+  <qp checkedOff="no" degree="yes" degreePos="unknown" degreeEither="yes" ordinalFormation="affix" ordinalPos="unknown">
+	<example/>
+	<degreeExample/>
+	<cardinalExample/>
+	<cardinalCompoundExample/>
+	<ordinalExample/>
+  </qp>
+  <advp checkedOff="no" degree="yes" degreePos="unknown" degreeEither="yes" degreeSet="yes">
+	<temporalExample/>
+	<locativeExample/>
+	<mannerExample/>
+	<reasonExample/>
+  </advp>
+  <adjp checkedOff="no" modifiers="no" degreePos="unknown" degreeEither="yes" mannerPos="unknown" mannerEither="yes" agree="no">
+	<example/>
+  </adjp>
+  <np checkedOff="no" degree="no" degreePos="unknown" degreeEither="no" degreeBoth="no" degreeInitialFinal="no" degreeFinalInitial="no" artCase="no" artCaseType="nomAcc" artAgr="no" artAndDem="no" artArtRequired="no" artArtPos1="unknown" artArtPos2="unknown" artArtEither1="no" artArtEither2="no" artArtRequiredBoth="yes" artDemRequired="no" artDemPos1="unknown" artDemPos2="unknown" artDemEither1="no" artDemEither2="no" artDemRequiredBoth="yes" artBothCooccur="no" artBothRequired1="no" artBothRequired2="no" artBothPos1="unknown" artBothPos2="unknown" artBothEither1="no" artBothEither2="no" artBothEither3="no" artBothRequiredBoth="yes" artBothBothPos="artNounDem" possMarked="no" possNounPos1="unknown" possNounPos2="unknown" possNounPos3="unknown" possCliticWord="no" possCliticRequired="no" possCliticPossPos="before" possAgr="no" qpPos="unknown" qpEither="no" qpBoth="no" qpBothAfter="no" qpBothBefore="no" adjpPos="unknown" adjpEither="no" nounCase="unknown" nounCaseType="unknown" compHead="right" compHeadPPPos="unknown">
+	<example/>
+	<embeddedExample/>
+	<ppExample/>
+	<relClExample/>
+	<qpExample/>
+	<adjpExample/>
+	<compExample/>
+	<compPPExample/>
+	<npContents1 checkedOff="no"/>
+	<npContents2 checkedOff="no"/>
+	<npContents3 checkedOff="no"/>
+	<npContents4 checkedOff="no"/>
+	<npContents5 checkedOff="no"/>
+	<npContents6 checkedOff="no"/>
+	<npContents7 checkedOff="no"/>
+	<npContents8 checkedOff="no"/>
+	<npContents9 checkedOff="no"/>
+  </np>
+  <pron checkedOff="no" pnCat="no" pnCase="no" pronCase="unknown" pronCaseType="unknown" refl="yes" reflAffix="yes" recip="yes" recipAffix="yes" poss="yes" possAffix="no" indef="no" partitive="unknown">
+	<example/>
+	<ppExample/>
+	<relClExample/>
+	<reflExample/>
+	<recipExample/>
+	<possExample/>
+	<indefNPExample/>
+	<indefExample/>
+	<standAloneNPExample/>
+	<partitiveExample/>
+	<pronRelClExample/>
+  </pron>
+  <pp checkedOff="no" degree="no" manner="no" degreePos="unknown" degreeEither="no" degreeEither2="no" mannerPos="unknown" degreeMannerPos="unknown" alone="no" sentComp="no" prePost="unknown">
+	<example/>
+	<ppExample/>
+	<locExample/>
+	<sentExample/>
+  </pp>
+  <ip checkedOff="no" proDrop4="no" proDrop2="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="no" diCat="dp" passive="yes" passiveAgent="no" passiveAux="no" passiveAgentCat="dp">
+	<example/>
+	<auxExample/>
+	<proDropExample/>
+	<diExample/>
+	<intransExample/>
+	<copularExample/>
+	<passiveExample/>
+	<ipContents1 checkedOff="no"/>
+	<ipContents2 checkedOff="no"/>
+	<ipContents3 checkedOff="no"/>
+	<ipContents4 checkedOff="no"/>
+	<ipContents5 checkedOff="no"/>
+	<ipContents6 checkedOff="no"/>
+	<ipContents7 checkedOff="no"/>
+	<ipContents8 checkedOff="no"/>
+	<ipContents9 checkedOff="no"/>
+  </ip>
+  <q checkedOff="no" mainYN="no" mainYNWord="no" mainYNPos="unknown" mainYNEither="no" mainYNBoth="no" mainYNBothInitialFinal="no" mainYNBothFinalInitial="no" mainYNAuxPos="unknown" embYN="no" embYNWord="no" embYNPos="unknown" embYNEither="no" embYNBoth="no" embYNBothInitialFinal="no" embYNBothFinalInitial="no" embYNAuxPos="unknown" contFront="unknown" mainCont="no" mainContWord="no" mainContBefore="no" mainContBeforeAux="no" mainContSame="yes" mainContPos="unknown" mainContEither="no" mainContBoth="no" mainContBothInitialFinal="no" mainContBothFinalInitial="no" mainContRequired="no" mainContAux="no" embCont="no" embContWord="no" embContPosAsEmbYNPos="no" embContPos="unknown" embContEither="no" embContBoth="no" embContBothInitialFinal="no" embContBothFinalInitial="no" embContRequired="no" embContAux="no">
+	<example/>
+	<embYNExample/>
+	<contentExample/>
+	<embContentExample/>
+	<whWords/>
+	<whWordGlosses/>
+  </q>
+  <focus checkedOff="no">
+	<example/>
+  </focus>
+  <neg checkedOff="no">
+	<example/>
+  </neg>
+  <comp checkedOff="no">
+	<example/>
+  </comp>
+  <advcl checkedOff="no">
+	<example/>
+  </advcl>
+  <relcl checkedOff="no">
+	<example/>
+  </relcl>
+  <fullnp checkedOff="no">
+	<example/>
+  </fullnp>
+  <coord checkedOff="no">
+	<example/>
+  </coord>
+</paws>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PronPoss">
+	<title level="2">Pronouns and Proper Names - Possessive Pronouns</title>
+	<introduction>Many languages also have possessive pronouns which can stand alone, such as <example>yours</example>, <example>mine</example>, <example>theirs</example>, <example>hers</example> in English.  These are distinct from those pronouns which can occur in possessor position, such as <example>your</example>, <example>my</example>, <example>their</example>, <example>her</example>, which should have already been handled in <section number="5.4">Possessors</section> and marked with the case of possessors.</introduction>
+	<form section="pron">
+	<radioGroup>
+		<groupName dataItem="poss" default="yes">RPronPoss</groupName>
+		<prompt>Does your language have stand alone possessive pronouns?</prompt>
+		<radio id="PronPossNo" dataValue="no">No</radio>
+		<radio id="PronPossYes" dataValue="yes">Yes</radio>
+	</radioGroup>
+	<prompt><span id="PronPossExamplePrompt">Key some examples here:</span></prompt>
+	<textBox id="PronPossExample" dataItem="possExample"/>
+	<radioGroup id="PronPossAffix">
+		<groupName dataItem="possAffix" default="no">RPronPossAffix</groupName>
+		<prompt>Are the stand alone possessive pronouns built by adding an affix to other pronouns?</prompt>
+		<radio id="PronPossAffixNo" dataValue="no">No, they are distinct, stand alone words</radio>
+		<radio id="PronPossAffixYes" dataValue="yes">Yes, one or more affixes are used to make another pronoun possessive</radio>
+	</radioGroup>
+	<instruction id="PronPossAffixNoInstruction">In the lexicon, mark each possessive pronoun with the feature <feature>possessive</feature> and also
+<ul>
+<li>all the relevant person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
+<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), and</li>
+<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
+</ul>
+</instruction>
+	<instruction id="PronPossAffixYesInstruction">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.</instruction>
+		<buttons>
+			<button id="PronPossBack" value="Back" goto="PronReciprocal.htm"/>
+			<button id="PronPossNext" value="Next" goto="PronIndefinite.htm"/>
+		</buttons>
+	</form>
+</page>

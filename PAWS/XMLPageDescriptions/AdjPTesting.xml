@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdjPTesting">
+	<title level="2">Adjectives and AdjP - Testing</title>
+	 <form section="adjp">
+   <instruction>You need to make sure the adjectives in your lexicon will be mapped to the syntactic category <category>Adj</category>.  Choose one of the following options, depending on your situation:
+<ul>
+				<li>If you already have adjectives marked with the category <category>Adj</category> in your lexicon, nothing
+  more needs to be done.</li>
+				<li>If adjectives are mixed in with another category in the lexicon, you either need to give them the category <category>Adj</category> in your morphological parser, or add the feature <feature>Adj</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.</li>
+				<li>If you have adjectives marked in your lexicon with a distinct category all their own, but it is different from <category>Adj</category>, enter that category below so PAWS can map your morphological category to <category>Adj</category>. <br/>
+					<catMap id="AdjPAdjectiveCategory" dataItem="adjectiveCategory">Adj</catMap>
+				</li>
+			</ul>
+
+ <br/>
+		<p>Run the file <file id="AdjPTestingFile" section="AdjP">adjtest.txt</file> through your morphological parser and then
+run the syntactic parser on the output.  Check the log browser for the
+results and note any changes you need to make to the lexicon or to
+answers about the order of elements in the phrase structure
+rules. Make the changes as needed and rerun.</p>
+		<p>
+Please check off this section now in 'Contents' and then proceed to
+the Simple and Possessed Nominal Phrases section when you are ready.</p>
+	</instruction>
+  <br/>
+		<buttons>
+			<button id="AdjPTestingBack" value="Back" goto="AdjPMain.htm"/>
+			<button id="AdjPTestingNext" value="Next" goto="Contents.htm"/>
+		</buttons>
+	</form>
+</page>

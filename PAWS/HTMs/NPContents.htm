@@ -1,0 +1,138 @@
+<html>
+   <head>
+	  <title>Contents for Simple and Possessed Nominal Phrases</title>
+	  <link rel="stylesheet" href="../styles/PAWSStarterKit.css">
+<style>.userData {behavior: url(#default#userdata);}
+  </style><script language="jscript">
+  // variables used throughout functions below
+var div;
+var PawsSKAnswers;
+var attr;
+var elem;
+var example;
+var strUserDataStore;
+var sImg;
+var sTemp;
+
+  function Initialize()
+{
+   // Load answers from the UserData store named "PawsSKAnswers"
+   // The store is associated with an empty <DIV id="answerDiv">
+   div = document.all("answerDiv");
+   strUserDataStore = "PawsSKAnswers";
+   div.load(strUserDataStore);
+   PawsSKAnswers = new ActiveXObject("MicroSoft.XMLDOM");
+   PawsSKAnswers.async = false;
+   PawsSKAnswers = div.XMLDocument;
+
+displayStatus(NPContentsOverviewStatus,"npContents1");
+displayStatus(NPContentsDegreeWordsStatus,"npContents2");
+displayStatus(NPContentsArticleStatus,"npContents3");
+displayStatus(NPContentsPossessorsStatus,"npContents4");
+displayStatus(NPContentsQPStatus,"npContents5");
+displayStatus(NPContentsAdjPStatus,"npContents6");
+displayStatus(NPContentsNounCaseStatus,"npContents7");
+displayStatus(NPContentsCompoundsStatus,"npContents8");
+displayStatus(NPContentsTestingStatus,"npContents9");
+
+example = PawsSKAnswers.selectSingleNode("//leftOffAt");
+example.text = "NPContents.htm";
+
+  div.save(strUserDataStore);
+}
+function displayStatus(idOfItem, strElem)
+{
+	elem = PawsSKAnswers.selectSingleNode("//" + strElem);
+	attr = elem.getAttribute("checkedOff")
+	sImg = "&nbsp;&nbsp;<img src='";
+	if (attr == "no")
+{
+		sImg = sImg + "UnCheckedOff.GIF'>";
+}
+	else
+{
+		sImg = sImg + "CheckedOff.GIF'>";
+}
+	idOfItem.innerHTML = sImg;
+}
+function StatusClicked(idOfItem, strElem)
+{
+	elem = PawsSKAnswers.selectSingleNode("//" + strElem);
+	attr = elem.getAttribute("checkedOff")
+	sImg = "&nbsp;&nbsp;<img src='";
+	if (attr == "no")
+{
+		sImg = sImg + "CheckedOff.GIF'>";
+		sTemp = "yes";
+}
+	else
+{
+		sImg = sImg + "UnCheckedOff.GIF'>";
+		sTemp = "no";
+}
+	elem.setAttribute("checkedOff", sTemp);
+	idOfItem.innerHTML = sImg;
+  div.save(strUserDataStore);
+}
+</script>
+   </head>
+   <body onload="Initialize()">
+<h2>Contents for Simple and Possessed Nominal Phrases</h2>
+<p>Please check off each section as completed to keep track of your progress.  To check off a section, click on the white box to the left of it.</p>
+<table align="left" border="0" cellpadding="3" width="100%" >
+		<tr>
+			<th align="left">Status</th>
+			<th align="left" valign="top">No.</th>
+			<th align="left" valign="top">Description</th>
+		</tr>
+		<tr>
+			<td id="NPContentsOverviewStatus" onclick="StatusClicked(NPContentsOverviewStatus,'npContents1')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.1.</td>
+			<td valign="top"><A id=NPContentsOverview href="NPMain.htm" >Overview of Simple and Possessed Nominal Phrases</A></td>
+		</tr>
+		<tr>
+			<td id="NPContentsDegreeWordsStatus" onclick="StatusClicked(NPContentsDegreeWordsStatus,'npContents2')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.2.</td>
+			<td valign="top"><A id=NPContentsDegreeWords href="NPDegree.htm" >Degree Words</A></td>
+		</tr>
+		<tr>
+			<td id="NPContentsArticleStatus" onclick="StatusClicked(NPContentsArticleStatus,'npContents3')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.3.</td>
+			<td valign="top"><A id=NPContentsArticle href="NPArtDem.htm">Articles and Demonstratives</A></td>
+		</tr>
+		<tr>
+			<td id="NPContentsPossessorsStatus" onclick="StatusClicked(NPContentsPossessorsStatus,'npContents4')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.4.</td>
+			<td valign="top"><A id=NPContentsPossessors href="NPPossessors.htm">Possessors</A>  </td>
+		</tr>
+		<tr>
+			<td id="NPContentsQPStatus" onclick="StatusClicked(NPContentsQPStatus,'npContents5')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.5.</td>
+			<td valign="top"><A id=NPContentsQP href="NPQP.htm">Quantifier Phrase Modifiers</A></td>
+		</tr>
+		<tr>
+			<td id="NPContentsAdjPStatus" onclick="StatusClicked(NPContentsAdjPStatus,'npContents6')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.6.</td>
+			<td valign="top"><A id=NPContentsAdjP href="NPAdjp.htm">Adjective Phrase Modifiers</A></td>
+		</tr>
+		<tr>
+			<td id="NPContentsNounCaseStatus" onclick="StatusClicked(NPContentsNounCaseStatus,'npContents7')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.7.</td>
+			<td valign="top"><A id=NPContentsNounCase href="NPNounCase.htm">Noun Case</A></td>
+		</tr>
+		<tr>
+			<td id="NPContentsCompoundsStatus" onclick="StatusClicked(NPContentsCompoundsStatus,'npContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.8.</td>
+			<td valign="top"><A id=NPContentsCompounds href="NPCompounds.htm">Noun Modifiers (noun-noun Compounds</A></td>
+		</tr>
+		<tr>
+			<td id="NPContentsTestingStatus" onclick="StatusClicked(NPContentsTestingStatus,'npContents9')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.9.</td>
+			<td valign="top"><A id=NPContentsTesting href="NPTesting.htm">Testing</A></td>
+		</tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td><A href="Contents.htm">Return to Contents</A></td>
+</tr>
+</table>
+<div class="userData" id="answerDiv"></div>
+   </body>
+</html>
