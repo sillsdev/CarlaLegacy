@@ -136,16 +136,7 @@ namespace PAWSStarterKit
 				try
 				{
 					// load our copy of the answer file
-#if Orig
-					m_XmlDoc.Load(m_strUserAnswerFile);
-					m_strLanguageName = getXmlElementContent("//language/langName");
-					m_strLanguageAbbreviation = getXmlElementContent("//language/langAbbr");
-					m_strTextSFM = getXmlElementContent("//language/textSFM");
-					setTitle();
-					createPAWSSKInitHtm(false);
-#else
 					loadAnswerFile(m_strUserAnswerFile);
-#endif
 				}
 				catch (Exception exc)
 				{
@@ -602,12 +593,6 @@ namespace PAWSStarterKit
 		}
 		void MenuFileNewOnClick(object obj, EventArgs ea)
 		{
-#if Orig
-			m_XmlDoc.Load(m_strNewAnswerFile);
-			m_strUserExampleFilesPath = m_strUserGrammarFile = null;
-			if (doLanguagePropertiesDialog())
-				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
-#else
 			// Remember current state
 			XmlDocument xmlDocTemp = m_XmlDoc;
 			m_XmlDoc.Load(m_strNewAnswerFile);
@@ -616,7 +601,6 @@ namespace PAWSStarterKit
 			else
 				// the user canceled; restore the state
 				m_XmlDoc = xmlDocTemp;
-#endif
 			}
 		void MenuFileOpenOnClick(object obj, EventArgs ea)
 		{
@@ -1207,53 +1191,7 @@ namespace PAWSStarterKit
 					createHTMs();
 				}
 				// create language specific style sheet
-#if !Orig
 				createStyleSheet();
-#else
-				const string strStyles = @"..\Styles\";
-				const string strMasterCss = "PAWSStarterKitMaster.css";
-				string strMasterCssPath = Path.Combine(m_strAppPath, strStyles);
-				string strMasterCssFile = Path.Combine(strMasterCssPath, strMasterCss);
-				string strUserStyleFilePath = Path.Combine(
-					Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-					"PAWSSK");
-				strUserStyleFilePath = Path.Combine(strUserStyleFilePath, m_strLanguageAbbreviation);
-				strUserStyleFilePath = Path.Combine(strUserStyleFilePath, "Styles");
-				string strUserStyleFile = Path.Combine(strUserStyleFilePath,
-					m_strLanguageAbbreviation + "PAWSStarterKit.css");
-				// copy the master
-				File.Copy(strMasterCssFile, strUserStyleFile, true);
-				StreamWriter sw = new StreamWriter(strUserStyleFile, true);
-				// append the font info
-				sw.WriteLine (".vernacular {");
-				sw.Write ("font-family: ");
-				sw.Write (strFontName);
-				sw.WriteLine (";");
-				sw.Write ("font-size: ");
-				sw.Write (strFontSize);
-				sw.WriteLine ("pt;");
-				sw.Write ("color: ");
-				sw.Write (strFontColor);
-				sw.WriteLine (";");
-				if (bFontBold)
-					sw.WriteLine ("font-weight: bold;");
-				if (bFontItalic)
-					sw.WriteLine ("font-style: italic;");
-				if (bFontUnderline || bFontStrikeout)
-				{
-					sw.Write ("text-decoration: ");
-					if (bFontUnderline)
-						sw.Write ("underline ");
-					if (bFontStrikeout)
-						sw.Write ("line-through");
-					sw.WriteLine (";");
-				}
-				sw.WriteLine ("}");
-				sw.Close();
-				// copy the background gif
-				File.Copy(Path.Combine(strMasterCssPath, m_strBackgroundGif),
-					Path.Combine(strUserStyleFilePath, m_strBackgroundGif), true);
-#endif
 				// save user's answer file
 				if (m_strUserAnswerFile == null)
 					doSaveAnswerFileDialog();
@@ -1525,6 +1463,28 @@ namespace PAWSStarterKit
 			MessageBox.Show("Exiting program.\nGood Bye!", "Canceled Initialization",
 				MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			Environment.Exit(1);
+		}
+		protected override void OnLoad(EventArgs ea)
+		{
+			base.OnLoad(ea);
+
+			string[] astrArgs = Environment.GetCommandLineArgs();
+
+			if (astrArgs.Length > 1)
+			{
+				if (File.Exists(astrArgs[1]))
+				{
+					loadAnswerFile(astrArgs[1]);
+				}
+				else
+				{
+					MessageBox.Show("You have invoked this program with a file name on the command line.\n" +
+						"The file could not be found, however.\n" +
+						"The file was: " + astrArgs[1],  "Command Line Error",
+						MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					sayGoodBye();
+				}
+			}
 		}
 	}
 }
