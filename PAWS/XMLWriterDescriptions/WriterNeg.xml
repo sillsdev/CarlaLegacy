@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+  <section1 id="sNeg">
+	<secTitle>Negative Constructions</secTitle>
+	<p>
+	  <img src="CONSTRUCTION.gif"/>
+	  <content> This section is still under construction.</content>
+	</p>
+  </section1>
+</portion>
