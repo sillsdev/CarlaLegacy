@@ -163,13 +163,13 @@ CP = C'
 		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
-<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
-<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
-<and/>
-<whenValue element="relcl" attr="whAndComp" value="yes" negateValue="yes"/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="yes" negateValue="yes"/>
 	</showWhen>
 	<rule show="CPoption4a">
 rule {CP option 4a - DP specifier initial, wh, non-root}
@@ -629,12 +629,12 @@ C' = IP
 		<whenValue element="q" attr="embCont" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="q" attr="embContRequired" value="no" negateValue="no"/>
-<or/>
-<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
-<and/>
-<whenValue element="relcl" attr="compCP" value="yes" negateValue="yes"/>
-<and/>
-<whenValue element="relcl" attr="whAndComp" value="yes" negateValue="yes"/>
+		<or/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="yes" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="yes" negateValue="yes"/>
 	</showWhen>
 	<rule show="CBaroption2b">
 rule {CBar option 2b - head vacuous, non-root, with possible aux fronting}
@@ -1257,71 +1257,71 @@ C' = C IP
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="before" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="beforeOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="either" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="before" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="beforeOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="either" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
 	</showWhen>
@@ -1341,71 +1341,71 @@ C' = IP C
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="after" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="afterOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="either" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="after" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="afterOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="either" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
 	</showWhen>
@@ -1428,71 +1428,71 @@ C' = C IP C_1
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="both" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="afterOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="beforeOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="both" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="afterOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="beforeOrBoth" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="word" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
 	</showWhen>
@@ -1511,35 +1511,35 @@ C' = IP
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="clitic" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCliticPos" value="before" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="clitic" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCliticPos" value="both" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="clitic" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCliticPos" value="before" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="clitic" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCliticPos" value="both" negateValue="no"/>
 	</showWhen>
@@ -1558,35 +1558,35 @@ C' = IP
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="clitic" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCliticPos" value="after" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="clitic" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCliticPos" value="both" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="clitic" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCliticPos" value="after" negateValue="no"/>
-<or/>
+		<or/>
 		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="relcl" attr="relType" value="clitic" negateValue="no"/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="relcl" attr="relCliticPos" value="both" negateValue="no"/>
 	</showWhen>
