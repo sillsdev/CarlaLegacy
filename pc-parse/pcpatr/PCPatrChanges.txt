@@ -2,7 +2,7 @@ PC-PATR CHANGE HISTORY
 
 1.2.11 (20-Sep-2001)
 --------------------
-1. Changeed failure message from "Cannot parse this sentence" to
+1. Changed failure message from "Cannot parse this sentence" to
    "Not able to parse this sentence" so it will not erroneously give a
    warning in CarlaStudio.
 
