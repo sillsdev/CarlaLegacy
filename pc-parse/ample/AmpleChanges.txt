@@ -1,5 +1,14 @@
 AMPLE CHANGE HISTORY
 
+3.9.4 (02-Mar-2005)
+-------------------
+1. Add information in tracing for when an infix allomorph matched, but its
+   location failed (either the embedded morpheme type or environment(s)).
+
+3.9.3 (09-Feb-2005)
+-------------------
+1. For XML output, handle special case of < in attributes.
+
 3.9.2 (03-Feb-2005)
 -------------------
 1. Add XML output for maximums reached and special case of <leftover> when

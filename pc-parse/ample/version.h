@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 9		/* enhancement requiring adding to book */
-#define PATCHLEVEL 3		/* bug fix or other minor change */
-#define DATE "February 9, 2005"	/* date of release version */
+#define PATCHLEVEL 4		/* bug fix or other minor change */
+#define DATE "March 2, 2005"	/* date of release version */
 #define YEAR "2005"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 02-Mar-2005  hab  - Add information in tracing for when an infix allomorph
+ * [3.9.4]               matched, but its location failed.
  * 09-Feb-2005  hab  - For XML output, handle special case of < in CDATA.
  * [3.9.3]
  * 03-Feb-2005  hab  - Add XML output for maximums reached and special case

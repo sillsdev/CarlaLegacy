@@ -1862,6 +1862,7 @@ const char *	p;
 int		iChar;
 
 resetLocalGlobals();
+pLogFP_m = pOutputFP_in;
 if ((pszPCDATA_in == NULL) || (pOutputFP_in == NULL))
 	return;
 for ( p = pszPCDATA_in ; *p ; ++p )

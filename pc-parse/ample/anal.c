@@ -128,6 +128,21 @@ static void		a_trace		P((int            dtype,
 					   char *         pszPATRCat_in,
 					   AmpleAlloEnv * ac_ptr,
 					   AmpleData *    pAmple_in));
+static void	reportInfixEnvironmentFailure	P((char * pszTail_in,
+						   AmpleAllomorph *ap,
+						   AmpleData *    pAmple_in));
+static void	reportInfixTypeFailure	P((char *         pszType_in,
+					   AmpleData *    pAmple_in));
+static void formatFormForXMLEnvironment P((char *pszTest_in,
+					   char *pszAllomorph_in,
+					   int   iAlloLen,
+					   AmpleData *Ample_in));
+static void reportInfixMorphForLocationFailure P((int what,
+						   char * ifxtail,
+						   AmpleAmlist *ifxp,
+						   AmpleAllomorph *ap,
+						   AmpleInfixInfo *ip,
+						  AmpleData *pAmple_in));
 static int	testAmpleStringEnvirons	P((AmpleHeadList * left,
 					   AmpleHeadList * current,
 					   char *          strp,
@@ -1258,37 +1273,63 @@ int		what;		/* type of morpheme being considered:
 				 * AMPLE_PFX, AMPLE_ROOT, or AMPLE_SFX */
 AmpleData *	pAmple_in;
 {
-AmpleInfixInfo *	ip;
+AmpleAllomorph *ap;
+AmpleInfixInfo *ip;
+int             bPassed;
 
 if ((ifxp == NULL) || (tail == NULL) || (ifxtail == NULL))
 	return( 0 );
-ip = ifxp->amp->pINFIX;
+ap = ifxp->amp;
+ip = ap->pINFIX;
+
 switch (what)
 	{
 	case AMPLE_PFX:
 	if (!(ip->iInfixLoc & AMPLE_PFX))
+	  {
+		reportInfixMorphForLocationFailure(what, ifxtail, ifxp, ap, ip, pAmple_in);
+		reportInfixTypeFailure("prefix", pAmple_in);;
 		return( 0 );
+	  }
 	break;
 	case AMPLE_ROOT:
 	if (!(ip->iInfixLoc & AMPLE_ROOT))
+	  {
+		reportInfixMorphForLocationFailure(what, ifxtail, ifxp, ap, ip, pAmple_in);
+		reportInfixTypeFailure("root", pAmple_in);;
 		return( 0 );
+	  }
 	break;
 	case AMPLE_SFX:
 	if (!(ip->iInfixLoc & AMPLE_SFX))
+	  {
+		reportInfixMorphForLocationFailure(what, ifxtail, ifxp, ap, ip, pAmple_in);
+		reportInfixTypeFailure("suffix", pAmple_in);;
 		return( 0 );
+	  }
 	break;
 	case AMPLE_NFX:
 		/* any are conceivable */
 	break;
 	default:
-
+	  {
+	reportInfixMorphForLocationFailure(what, ifxtail, ifxp, ap, ip, pAmple_in);
+	reportInfixTypeFailure("unknown", pAmple_in);;
 	return( 0 );
+	  }
 	}
-return( checkAmpleStringEnviron(tail,
-				(int)(ifxtail-tail),
-				ifxtail+ifxp->alen,
-				ip->pInfixEnv,
-				pPreviousWord_m, pNextWord_m, pAmple_in) );
+bPassed = checkAmpleStringEnviron(tail,
+				  (int)(ifxtail-tail),
+				  ifxtail+ifxp->alen,
+				  ip->pInfixEnv,
+				  pPreviousWord_m, pNextWord_m, pAmple_in);
+if (!bPassed)
+{
+  reportInfixMorphForLocationFailure(what, ifxtail, ifxp, ap, ip, pAmple_in);
+  reportInfixEnvironmentFailure(ifxtail, ap, pAmple_in);
+}
+return( bPassed );
+
 }
 
 /***************************************************************************
@@ -2801,17 +2842,20 @@ if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
 	store_AMPLE_trace(pAmple_in, ": %s", szAllo);
 	store_AMPLE_trace(pAmple_in, " %s", m_name);
 	store_AMPLE_trace(pAmple_in, " %s",
-			  findAmpleCategoryName((int)fcat,
-						pAmple_in->pCategories));
+			  (fcat != 0) ? findAmpleCategoryName((int)fcat,
+						  pAmple_in->pCategories) : "");
 	if (dtype != AMPLE_ROOT)
 	{
 	char szNumber[16];
 	/*
 	 *  output additional information for affixes
 	 */
-	store_AMPLE_trace(pAmple_in, "/%s oc = ",
-			  findAmpleCategoryName((int)tcat,
-						pAmple_in->pCategories));
+	if (tcat != 0)
+	  store_AMPLE_trace(pAmple_in, "/%s oc = ",
+				findAmpleCategoryName((int)tcat,
+						  pAmple_in->pCategories));
+	else
+	  store_AMPLE_trace(pAmple_in, "oc = ", NULL);
 	sprintf(szNumber,  "%d", ordercl);
 	store_AMPLE_trace(pAmple_in, szNumber, NULL);
 	sprintf(szNumber,  ",%d", orderclMax);
@@ -3049,7 +3093,6 @@ int		len;
 AmpleData *	pAmple_in;
 {
 int	bPassed;
-int	cSave;
 int	bUsesPrev;
 int	bUsesNext;
 AmpleEnvConstraint * pEC;
@@ -3166,38 +3209,9 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 		((pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML) ||
 		 (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML) ))
 	{
-	char *	pszStr;
-	size_t	uiSize;
-	size_t	uiMaxSize;
+	  formatFormForXMLEnvironment("SEC_ST", strp, len, pAmple_in);
 
-	uiMaxSize = 2 * iTracingDepth_m;
-	uiSize    = lengthAmpleCDATA(pszSurfaceForm_m, FALSE);
-	if (uiMaxSize < uiSize)
-		uiMaxSize = uiSize;
-#ifdef HAVE_ALLOCA
-	pszStr    = (char *)alloca(uiMaxSize + 1);
-#else
-	pszStr    = (char *)allocMemory(uiMaxSize + 1);
-#endif
-	sprintf(pszStr, "%*s", 2*iTracingDepth_m, "");
-	store_AMPLE_trace(pAmple_in,"  %s<failure test=\"SEC_ST: ", pszStr);
-
-	cSave = *strp;
-	*strp = NUL;
-	storeAmpleCDATA(pszStr, pszSurfaceForm_m,  FALSE);
-	*strp = cSave;
-	store_AMPLE_trace(pAmple_in, pszStr, NULL);
-
-	cSave = strp[len];
-	strp[len] = NUL;
-	storeAmpleCDATA(pszStr, strp, FALSE);
-	strp[len] = cSave;
-	store_AMPLE_trace(pAmple_in, " _%s_ ", pszStr);
-
-	storeAmpleCDATA(pszStr, strp+len, FALSE);
-	store_AMPLE_trace(pAmple_in, pszStr, NULL);
-
-	if (pAmple_in->pszTrace != NULL)
+	  if (pAmple_in->pszTrace != NULL)
 		{
 		pAmple_in->pszTrace = stringifyAmpleEnvConstraint(
 				pAmple_in->pszTrace,
@@ -3212,7 +3226,7 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 				  TRUE);
 #endif /* hab380 */
 		}
-	else if (pAmple_in->pLogFP != NULL)
+	  else if (pAmple_in->pLogFP != NULL)
 		{
 		writeAmpleEnvConstraint(
 				pAmple_in->pLogFP,
@@ -3225,13 +3239,10 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 				  TRUE);
 #endif /* hab380 */
 		}
-	if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
-	  store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
-	else
-	  store_AMPLE_trace(pAmple_in, "\">\n", NULL);
-#ifndef HAVE_ALLOCA
-	freeMemory(pszStr);
-#endif
+	  if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+		store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
+	  else
+		store_AMPLE_trace(pAmple_in, "\">\n", NULL);
 	}
 	return bPassed;
 	}
@@ -7094,4 +7105,195 @@ static void xml_maximum_reached(AmpleData * pAmple_in, char * pszType_in)
   store_AMPLE_trace(pAmple_in, "  %s<maxReached>", pszIndent);
   store_AMPLE_trace(pAmple_in, "%s</maxReached>\n", pszType_in);
   store_AMPLE_trace(pAmple_in, "  %s</parseNode>\n", pszIndent);
+}
+/*****************************************************************************
+ * NAME
+ *    reportInfixEnvironmentFailure
+ * DESCRIPTION
+ *    report failure of infix environment to match
+ * RETURN VALUE
+ *    none
+ */
+static void reportInfixEnvironmentFailure(char *pszInfixTail_in,
+					  AmpleAllomorph *ap,
+					  AmpleData *pAmple_in)
+{
+char * pszIndent;
+
+if ((pAmple_in->pszTrace == NULL) && (pAmple_in->pLogFP == NULL))
+	return;
+
+#ifdef HAVE_ALLOCA
+pszIndent = (char *)alloca((2*iTracingDepth_m+1)*sizeof(char));
+#else
+pszIndent = (char *)allocMemory((2*iTracingDepth_m+1)*sizeof(char));
+#endif
+sprintf(pszIndent, "%*s", 2*iTracingDepth_m, "");
+if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
+	{
+	store_AMPLE_trace(pAmple_in, pszIndent, NULL);
+	store_AMPLE_trace(pAmple_in,
+			  "               The infix location environment(s) failed.\n",
+			  NULL);
+	}
+else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	{
+	  formatFormForXMLEnvironment("InfixEnvironment", pszInfixTail_in,
+					  strlen(ap->pszAllomorph), pAmple_in);
+	  if (pAmple_in->pszTrace != NULL)
+		{
+		pAmple_in->pszTrace = stringifyAmpleEnvConstraint(
+				pAmple_in->pszTrace,
+				&pAmple_in->uiTraceSize,
+				ap->pINFIX->pInfixEnv,
+				TRUE);
+		}
+	  else if (pAmple_in->pLogFP != NULL)
+		{
+		writeAmpleEnvConstraint(
+				pAmple_in->pLogFP,
+				ap->pINFIX->pInfixEnv,
+				TRUE);
+		}
+	  if (pAmple_in->eTraceAnalysis==AMPLE_TRACE_XML)
+		store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
+	  else
+		store_AMPLE_trace(pAmple_in, "\">\n", NULL);
+	}
+}
+/*****************************************************************************
+ * NAME
+ *    reportInfixTypeFailure
+ * DESCRIPTION
+ *    report failure to try infix because of trying to insert the prefix
+ *    into a wrong type of morpheme
+ * RETURN VALUE
+ *    none
+ */
+static void reportInfixTypeFailure(char *pszType_in, AmpleData *pAmple_in)
+{
+char * pszIndent;
+
+if ((pAmple_in->pszTrace == NULL) && (pAmple_in->pLogFP == NULL))
+	return;
+
+#ifdef HAVE_ALLOCA
+pszIndent = (char *)alloca((2*iTracingDepth_m+1)*sizeof(char));
+#else
+pszIndent = (char *)allocMemory((2*iTracingDepth_m+1)*sizeof(char));
+#endif
+sprintf(pszIndent, "%*s", 2*iTracingDepth_m, "");
+if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON)
+	{
+	store_AMPLE_trace(pAmple_in, pszIndent, NULL);
+	store_AMPLE_trace(pAmple_in,
+			  "               Cannot insert this infix in a %s morpheme.\n",
+			  pszType_in);
+	}
+else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
+		 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	{
+	store_AMPLE_trace(pAmple_in, "  %s<failure ", pszIndent);
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	  {
+	store_AMPLE_trace(pAmple_in, " test=\"InfixType: %s\"/>\n", pszType_in);
+	  }
+	else
+	  store_AMPLE_trace(pAmple_in, " test=InfixType: %s>\n", pszType_in);
+	}
+#ifndef HAVE_ALLOCA
+freeMemory(pszIndent);
+#endif
+
+}
+/*****************************************************************************
+ * NAME
+ *    formatFormForXMLEnvironment
+ * DESCRIPTION
+ *    format string environment for XML failure reporting
+ * RETURN VALUE
+ *    none
+ */
+static void formatFormForXMLEnvironment(char *pszTest_in,
+					char *pszAllomorph_in,
+					int   iAlloLen,
+					AmpleData *pAmple_in)
+{
+  int	cSave;
+  char *	pszStr;
+  size_t	uiSize;
+  size_t	uiMaxSize;
+
+  uiMaxSize = 2 * iTracingDepth_m;
+  uiSize    = lengthAmpleCDATA(pszSurfaceForm_m, FALSE);
+  if (uiMaxSize < uiSize)
+	uiMaxSize = uiSize;
+#ifdef HAVE_ALLOCA
+  pszStr    = (char *)alloca(uiMaxSize + 1);
+#else
+  pszStr    = (char *)allocMemory(uiMaxSize + 1);
+#endif
+  sprintf(pszStr, "%*s", 2*iTracingDepth_m, "");
+  store_AMPLE_trace(pAmple_in,"  %s<failure ", pszStr);
+  store_AMPLE_trace(pAmple_in,"test=\"%s: ", pszTest_in);
+
+  cSave = *pszAllomorph_in;
+  *pszAllomorph_in = NUL;
+  storeAmpleCDATA(pszStr, pszSurfaceForm_m,  FALSE);
+  *pszAllomorph_in = cSave;
+  store_AMPLE_trace(pAmple_in, pszStr, NULL);
+
+  cSave = pszAllomorph_in[iAlloLen];
+  pszAllomorph_in[iAlloLen] = NUL;
+  storeAmpleCDATA(pszStr, pszAllomorph_in, FALSE);
+  pszAllomorph_in[iAlloLen] = cSave;
+  store_AMPLE_trace(pAmple_in, " _%s_ ", pszStr);
+
+  storeAmpleCDATA(pszStr, pszAllomorph_in+iAlloLen, FALSE);
+  store_AMPLE_trace(pAmple_in, pszStr, NULL);
+
+#ifndef HAVE_ALLOCA
+  freeMemory(pszStr);
+#endif
+}
+/*****************************************************************************
+ * NAME
+ *    reportInfixMorphForLocationFailure
+ * DESCRIPTION
+ *    report infix morpheme info when there's
+ * RETURN VALUE
+ *    none
+ */
+static void reportInfixMorphForLocationFailure(int what,
+						   char * ifxtail,
+						   AmpleAmlist *ifxp,
+						   AmpleAllomorph *ap,
+						   AmpleInfixInfo *ip,
+						   AmpleData *pAmple_in)
+{
+if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
+#ifdef EXPERIMENTAL
+	a_trace((what == AMPLE_NFX) ? AMPLE_NFX : AMPLE_IFX,
+		ifxtail, ifxp->alen, ap->pMORPHNAME,
+		0,
+		0,
+		ap->sPropertySet,
+		ip->iOrderClass,
+		ip->iOrderClassMax,
+		ap->pszAllomorphID,
+		ap->pPATRCAT,
+		ap->pEnvironment, pAmple_in);
+#else
+	a_trace((what == AMPLE_NFX) ? AMPLE_NFX : AMPLE_IFX,
+		ifxtail, ifxp->alen, ap->pMORPHNAME,
+		0,
+		0,
+		ap->sPropertySet,
+		ip->iOrderClass,
+		ip->iOrderClassMax,
+		ap->pszAllomorphID,
+		NULL,
+		ap->pEnvironment, pAmple_in);
+#endif
 }
