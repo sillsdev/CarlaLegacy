@@ -11,6 +11,10 @@
 #include "TestEdit.h"
 #include "ColorBtn.h"
 
+#ifndef mr270
+  class CTextDisplayInfo;
+#endif // mr270
+
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditTestColor dialog
 
@@ -18,9 +22,10 @@ class CDlgEditTestColor : public CDialog
 {
 // Construction
 public:
-	CDlgEditTestColor(CWnd* pParent = NULL);   // standard constructor
 
-// Dialog Data
+	CDlgEditTestColor(CWnd* pParent = NULL);
+
+	// Dialog Data
 	//{{AFX_DATA(CDlgEditTestColor)
 	enum { IDD = IDD_EditSetColor };
 	CStatic	m_staticBackgrColorSyst;
@@ -31,7 +36,11 @@ public:
 	CColorBtn	m_buttonColorBackground;
 	CColorBtn	m_buttonColorFont;
 	//}}AFX_DATA
-
+#ifndef mr270
+	char m_cFontName;
+	char m_cCommentChar;
+	CFont *m_pFont;
+#endif // mr270
 
 // Overrides
 	// ClassWizard generated virtual function overrides
@@ -43,7 +52,6 @@ public:
 // Implementation
 protected:
 
-	//CColorBtn colorbtn;
 	void refreshRichEditCtrl();
 	void writeNewParamInRegistry();
 	HTREEITEM insertItem( CTreeCtrl* pTree,
@@ -80,6 +88,7 @@ private:
 	BOOL m_FontBOLD,m_FontITALIC,m_FontUNDERLINE,m_FontSTRIKEOUT;
 	BOOL m_bWordWrap;
 	CString m_strFontSize;
+
 
 struct GROUP_KEYWORDS {
 		COLORREF clrColor;

@@ -13,6 +13,9 @@ class CTextDisplayInfo;
 class SFMFile;
 class ofstream ;
 #include "TabbedTreeDoc.h"
+#include "cwlist.h"
+
+
 
 const UINT kBaseFormControlID = 2000;
 
@@ -92,7 +95,10 @@ protected:
 	afx_msg void OnLangInterlinearSeq();
 	afx_msg void OnRemoveLanguage();
 	afx_msg void OnModifyTests();
+#ifndef mr270
 	afx_msg void OnCustomizeUserTestDisplay();
+#endif // mr270
+
 	//}}AFX_MSG
 	afx_msg void OnTransferSeqCommand(UINT id);
 	DECLARE_MESSAGE_MAP()

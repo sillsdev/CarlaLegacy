@@ -694,9 +694,29 @@ void CLangModelsDoc::OnModifyTests()
 	// that are in the form will become the the current values again
 }
 
-// added by mr 5/1/2002
+#ifndef mr270
 void CLangModelsDoc::OnCustomizeUserTestDisplay()
 {
+
+#ifndef mr270
+	// extract Font Face Name
+	LOGFONT lf;
+	CFont *pFont = m_pLang->getFont();
+	if( pFont != NULL ) {
+		pFont->GetLogFont(&lf);}
+
+	// extract Comment Char
+	char cCommentChar = m_pLang->getCommentChar();
+
+	CDlgEditTestColor dlg;
+	dlg.m_cCommentChar=cCommentChar;
+	dlg.m_pFont=pFont;
+	dlg.DoModal( );
+
+#else // mr270
 	CDlgEditTestColor dlg;
 	dlg.DoModal( );
+#endif // mr270
+
 }
+#endif // mr270

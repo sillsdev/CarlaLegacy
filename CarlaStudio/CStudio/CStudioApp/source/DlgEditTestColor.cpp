@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "..\resource.h"
 #include "DlgEditTestColor.h"
+#include "TextDisplayInfo.h"
 
 
 #ifdef _DEBUG
@@ -18,19 +19,18 @@ static char THIS_FILE[] = __FILE__;
 // CDlgEditTestColor dialog
 
 // CTestEdit	->
-static LPCTSTR szOPE = " AND IF IFF NOT OR THEN XOR ";
-static LPCTSTR szFOROPE = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
-static LPCTSTR szLOC = " current last left next right FINAL INITIAL LEFT RIGHT ";
-static LPCTSTR szKEYW = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word ";
-static LPCTSTR szKEYW_ACT = " insert before after report ";
-static LPCTSTR szCONN = " is matches member = > >= <= < ~= ";
-static LPCTSTR szTYP = " prefix infix root suffix initial final ";
-static LPCTSTR szNBR = " 0 1 2 3 4 5 6 7 8 9 ";
+//static LPCTSTR szOPE = " AND IF IFF NOT OR THEN XOR ";
+//static LPCTSTR szFOROPE = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
+//static LPCTSTR szLOC = " current last left next right FINAL INITIAL LEFT RIGHT ";
+//static LPCTSTR szKEYW = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word ";
+//static LPCTSTR szKEYW_ACT = " insert before after report ";
+//static LPCTSTR szCONN = " is matches member = > >= <= < ~= ";
+//static LPCTSTR szTYP = " prefix infix root suffix initial final ";
+//static LPCTSTR szNBR = " 0 1 2 3 4 5 6 7 8 9 ";
 // <- CTestEdit
 
 static const TCHAR szSection [] = _T("Settings\\TestsColor");
 static const TCHAR szDefaultFontSize [] = _T("10");
-
 
 CDlgEditTestColor::CDlgEditTestColor(CWnd* pParent /*=NULL*/)
 	: CDialog(CDlgEditTestColor::IDD, pParent)
@@ -219,23 +219,35 @@ BOOL CDlgEditTestColor::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
+	TCHAR szOPE [] = " AND IF IFF NOT OR THEN XOR ";
+	TCHAR szFOROPE [] = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
+	TCHAR szLOC [] = " current last left next right FINAL INITIAL LEFT RIGHT ";
+	TCHAR szCONN [] = " is matches member = > >= <= < ~= ";
+	TCHAR szTYP [] = " prefix infix root suffix initial final ";
+	TCHAR szNBR [] = " 0 1 2 3 4 5 6 7 8 9 ";
+	TCHAR szKEYW [] = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word ";
+	LPCTSTR szKEYW_ACT = " insert before after report ";
 
-//m_buttonColorBackground.SubclassDlgItem(IDC_BUTTONTestBckgroundColr,this);
-//m_buttonColorFont.SubclassDlgItem(IDC_BUTTONTestColorFont,this);
-
-	// CTestEdit	->
-	m_richTestPreview.SubclassDlgItem(IDC_EDITContents, this);
-	m_richTestPreview.ModifyStyle(0, WS_CLIPCHILDREN);
 
 	// this line must be before Initialize
 	CWinApp* pApp = AfxGetApp ();
+
+#ifndef mr270
+	LOGFONT logfont;
+	m_pFont->GetLogFont(&logfont);
+	m_richTestPreview.setFontFaceName(logfont.lfFaceName);
+#endif // mr270
 
 	m_richTestPreview.Initialize();
 
 	m_richTestPreview.SetStringQuotes(_T("\""));
 	m_richTestPreview.SetStringQuotes(_T("\'"));
 	m_richTestPreview.SetStringQuotes(_T("."));
+#ifndef mr270
+	m_richTestPreview.SetSLComment(m_cCommentChar);
+#else // mr270
 	m_richTestPreview.SetSLComment(_T('|'));
+#endif // mr270
 	m_richTestPreview.SetSLComment(_T("\\co"));
 
 	m_richTestPreview.AddKeywords(szOPE,m_richTestPreview.m_strOPErators,m_richTestPreview.m_strOPEratorsLower);
@@ -444,7 +456,13 @@ void CDlgEditTestColor::OnSelchangingTree(NMHDR* pNMHDR, LRESULT* pResult)
 			break;
 
 		case 6:	// identifiers
+
+		#ifndef mr270
+			str = "current allomorph is \"chro\"\ncurrent allomorph is .chro.\ncurrent allomorph is \'chro\'";
+		#else // mr270
 			str = "\"a\"\t\'a\'\t.a.\n\"abc\"\t\'abc\'\t.abc.\n\"u\'la\"\t\'u\"la\'\t.u\"la\'.\n";
+		#endif // mr270
+
 			m_richTestPreview.SetWindowText(str);
 			m_richTestPreview.FormatAll();
 
@@ -468,7 +486,14 @@ void CDlgEditTestColor::OnSelchangingTree(NMHDR* pNMHDR, LRESULT* pResult)
 			break;
 
 		case 8:	// comment
+
+#ifndef mr270
+			str = m_cCommentChar;
+			str += " FINAL allomorph is member \"Egon\"\n\n\\co FINAL allomorph is member \"Egon\"";
+#else // mr270
 			str = "| FINAL allomorph is member \"Egon\"\n\n\\co FINAL allomorph is member \"Egon\"";
+#endif // mr270
+
 			m_richTestPreview.SetWindowText(str);
 			m_richTestPreview.FormatAll();
 

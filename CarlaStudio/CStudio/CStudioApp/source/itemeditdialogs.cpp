@@ -19,14 +19,16 @@ static char THIS_FILE[] = __FILE__;
 
 
 
-#ifndef hab15a7
+//#ifndef hab15a7
 CDlgEditTest::CDlgEditTest(const CTextDisplayInfo* pTDI)
+
 	: CSDialog(CDlgEditTest::IDD),
 	  m_pTDI(pTDI)
-#else
-CDlgEditTest::CDlgEditTest(CWnd* pParent /*=NULL*/)
-	: CSDialog(CDlgEditTest::IDD, pParent)
-#endif // hab15a7
+
+//#else
+//CDlgEditTest::CDlgEditTest(CWnd* pParent /*=NULL*/)
+//	: CSDialog(CDlgEditTest::IDD, pParent)
+//#endif // hab15a7
 {
 	//{{AFX_DATA_INIT(CDlgEditTest)
 	m_sContents = _T("");
@@ -36,8 +38,10 @@ CDlgEditTest::CDlgEditTest(CWnd* pParent /*=NULL*/)
 	m_bIsAmpleTest = TRUE;
 	//}}AFX_DATA_INIT
 }
-
+#ifndef mr270
 static const TCHAR szSection [] = _T("Settings\\TestsColor");
+#endif // mr270
+
 
 void CDlgEditTest::DoDataExchange(CDataExchange* pDX)
 {
@@ -47,7 +51,9 @@ void CDlgEditTest::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_EDITContents, m_sContents);
 	DDX_Text(pDX, IDC_EDITDescription, m_sDescription);
 	DDX_Text(pDX, IDC_EDITLabel, m_sLabel);
+#ifndef mr270
 	DDX_Check(pDX, IDC_CHECKEnabled, m_bEnabled);
+#endif // mr270
 	//}}AFX_DATA_MAP
 #ifndef hab15a7
 	// when we're opening the dialog, set the fonts
@@ -81,11 +87,14 @@ BEGIN_MESSAGE_MAP(CDlgEditTest, CSDialog)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
+
+#ifndef mr270
 BOOL CDlgEditTest::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	// CTestEdit	-> // added by mr 4/26/2002
+
+	// CTestEdit	->
 	TCHAR szOPE [] = " AND IF IFF NOT OR THEN XOR ";
 	TCHAR szFOROPE [] = " FOR_ALL_LEFT FOR_ALL_RIGHT FOR_SOME_LEFT FOR_SOME_RIGHT FOR-ALL-LEFT FOR-ALL-RIGHT FOR-SOME-LEFT FOR-SOME-RIGHT FORALLLEFT FORALLRIGHT FORSOMELEFT FORSOMERIGHT ";
 	TCHAR szLOC [] = " current last left next right FINAL INITIAL LEFT RIGHT ";
@@ -101,7 +110,6 @@ BOOL CDlgEditTest::OnInitDialog()
 	{
 		lstrcat(szKEYW," insert before after report ");
 	}
-
 
 
 	CWnd* pWnd=NULL;
@@ -120,13 +128,26 @@ BOOL CDlgEditTest::OnInitDialog()
 
 	m_richTestEdit.SubclassDlgItem(IDC_EDITContents, this);
 
+#ifndef mr270
+	// get Font Face Name for CRichEditCtrl
+	LOGFONT logfont;
+	CFont* pF=m_pTDI->getFont();
+	pF->GetLogFont(&logfont);
+	m_richTestEdit.setFontFaceName(logfont.lfFaceName);
+#endif // mr270
+
 	m_richTestEdit.Initialize();
 
 	m_richTestEdit.SetStringQuotes(_T("\""));
 	m_richTestEdit.SetStringQuotes(_T("\'"));
 	m_richTestEdit.SetStringQuotes(_T("."));
 
+#ifndef mr270
+	m_richTestEdit.SetSLComment(m_cCommentChar);
+#else // mr270
 	m_richTestEdit.SetSLComment(_T('|'));
+#endif // mr270
+
 	m_richTestEdit.SetSLComment(_T("\\co"));
 
 	m_richTestEdit.AddKeywords(szOPE,m_richTestEdit.m_strOPErators,m_richTestEdit.m_strOPEratorsLower);
@@ -155,6 +176,7 @@ BOOL CDlgEditTest::OnInitDialog()
 
 	return FALSE;
 }
+#endif // mr270
 
 void CDlgEditTest::OnCheckOnOff()
 {

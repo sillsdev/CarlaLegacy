@@ -25,15 +25,19 @@ class CTextDisplayInfo;
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditTest dialog
 
+
 class CDlgEditTest : public CSDialog
 {
 // Construction
 public:
-#ifndef hab15a7
+
+//#ifndef hab15a7
+	//CDlgEditTest(const CTextDisplayInfo* pTDI);
 	CDlgEditTest(const CTextDisplayInfo* pTDI);
-#else
-	CDlgEditTest(CWnd* pParent = NULL);   // standard constructor
-#endif // hab15a7
+
+//#else
+	//CDlgEditTest(CWnd* pParent = NULL);   // standard constructor
+//#endif // hab15a7
 
 // Dialog Data
 	//{{AFX_DATA(CDlgEditTest)
@@ -42,15 +46,20 @@ public:
 	CString	m_sDescription;
 	BOOL	m_bEnabled;
 	CString	m_sContents;
-	CRichEditCtrl	m_richContents;  // added by mr 4/26/2002
+	CRichEditCtrl	m_richContents;
 #ifndef hab15a7
 	const	CTextDisplayInfo* m_pTDI;
 #endif // hab15a7
-	//}}AFX_DATA
-	CTestEdit m_richTestEdit; // added by mr 4/26/2002
-	BOOL m_bIsAmpleTest; // added by mr 5/24/2002
 
-// Overrides
+
+	//}}AFX_DATA
+#ifndef mr270
+	CTestEdit m_richTestEdit;
+	BOOL m_bIsAmpleTest;
+	char m_cCommentChar;
+#endif // mr270
+
+	// Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDlgEditTest)
 	protected:
@@ -60,7 +69,11 @@ public:
 
 // Implementation
 protected:
+
+#ifndef mr270
 	virtual BOOL OnInitDialog();
+#endif // mr270
+
 	afx_msg void OnCheckOnOff();
 
 	// Generated message map functions
