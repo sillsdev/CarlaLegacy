@@ -15,7 +15,7 @@
 		<br/>
 		<radioGroup>
 			<groupName dataItem="qpPos" default="unknown" position="yesSpec">RNPQPPos</groupName>
-			<prompt>Based on the data you keyed, where do quantifier phrases (including numbers) occur with respect to the noun?</prompt>
+			<prompt>Based on the data you keyed, where do quantifier phrases (including cardinal numbers but not ordinal numbers modifying a noun, because ordinals are considered adjectives) occur with respect to the noun?</prompt>
 			<radio id="NPQPPosBefore" dataValue="before">Before</radio>
 			<radio id="NPQPPosAfter" dataValue="after">After</radio>
 			<radio id="NPQPPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
@@ -97,14 +97,19 @@ To handle class marking and agreement, in the lexicon:
 		</buttons>
 	</form>
 	<showWhen id="swNPQPPosEitherorBoth">
-<not/>       <whenRadio button="NPQPPosBefore"/>
-   <and/> <not/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
 		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherorBothRestricted">
 		<whenRadio button="NPQPPosEitherorBothRestricted"/>
-<and/><not/>       <whenRadio button="NPQPPosBefore"/>
-   <and/> <not/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
 		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumBefore">
@@ -112,8 +117,10 @@ To handle class marking and agreement, in the lexicon:
 		<and/>
 		<whenRadio button="NPQPPosEitherorBothRestricted"/>
 		<and/>
-<not/>       <whenRadio button="NPQPPosBefore"/>
-   <and/> <not/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
 		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumAfter">
@@ -121,8 +128,10 @@ To handle class marking and agreement, in the lexicon:
 		<and/>
 		<whenRadio button="NPQPPosEitherorBothRestricted"/>
 		<and/>
-<not/>       <whenRadio button="NPQPPosBefore"/>
-   <and/> <not/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
 		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumNo">
@@ -130,8 +139,10 @@ To handle class marking and agreement, in the lexicon:
 		<and/>
 		<whenRadio button="NPQPPosEitherorBothRestricted"/>
 		<and/>
-<not/>       <whenRadio button="NPQPPosBefore"/>
-   <and/> <not/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
 		<whenRadio button="NPQPPosAfter"/>
 	</showWhen>
 	<showWhen id="swNPQPNumberMarking">

@@ -105,11 +105,9 @@ Adv' = Adv Adv_1
 	&lt;Adv' option&gt; = 1f
 </rule>
 	<showWhen id="AdvBaroption1f">
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+		<whenValue element="advcl" attr="advOrNPPos" value="after"/>
+<or/>
+		<whenValue element="advcl" attr="advOrNPPos" value="either"/>
 	</showWhen>
 	<rule show="AdvBaroption1i">
 rule {AdvBar option 1i - Adv complements initial}
@@ -122,11 +120,9 @@ Adv' = Adv_1 Adv
 	&lt;Adv' option&gt; = 1i
 </rule>
 	<showWhen id="AdvBaroption1i">
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+		<whenValue element="advcl" attr="advOrNPPos" value="before"/>
+<or/>
+		<whenValue element="advcl" attr="advOrNPPos" value="either"/>
 	</showWhen>
 	<rule show="AdvBaroption2f">
 rule {AdvBar option 2f - DP complements final}
@@ -139,11 +135,9 @@ Adv' = Adv DP
 	&lt;Adv' option&gt; = 2f
 </rule>
 	<showWhen id="AdvBaroption2f">
-		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+		<whenValue element="advcl" attr="advOrNPPos" value="after"/>
+<or/>
+		<whenValue element="advcl" attr="advOrNPPos" value="either"/>
 	</showWhen>
 	<rule show="AdvBaroption2i">
 rule {AdvBar option 2i - DP complements initial}
@@ -156,11 +150,9 @@ Adv' = DP Adv
 	&lt;Adv' option&gt; = 2i
 </rule>
 	<showWhen id="AdvBaroption2i">
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+		<whenValue element="advcl" attr="advOrNPPos" value="before"/>
+<or/>
+		<whenValue element="advcl" attr="advOrNPPos" value="either"/>
 	</showWhen>
 	<rule>
 rule {AdvBar option 3f - IP complements final}

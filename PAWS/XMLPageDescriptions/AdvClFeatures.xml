@@ -7,10 +7,17 @@
 		<prompt>Key similar examples of temporal adverbial clauses in your language, included in (simple) full sentences here:</prompt>
 		<textBox id="AdvlClTemporalExample" dataItem="tempSentExample" cols="50"/>
 		<br/>
+<radioGroup>
+	<groupName dataItem="advOrNPPos" default="unknown" position="yesHeadDiff">RAdvOrNPPos</groupName>
+	<prompt>Where does an adverb or nominal phrase complement occur with respect to the head adverb?</prompt>
+	<radio id="AdvClAdvOrNPPosBefore" dataValue="before">Before the adverb</radio>
+	<radio id="AdvClAdvOrNPPosAfter" dataValue="after">After the adverb</radio>
+	<radio id="AdvClAdvOrNPPosEither" dataValue="either">On either side</radio>
+</radioGroup>
 		<br/>
 		<instruction>In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>temporal</feature>.  Note that the first two features can be added to the same entry, or either or both can be added to the third or fourth sets of features.
 <ul>
-				<li>If the adverb may have another adverb following it, add the feature <feature>takes_Adv</feature>.</li>
+				<li>If the adverb may have another adverb as its complement, add the feature <feature>takes_Adv</feature>.</li>
 				<li>If the adverb may have a nominal phrase complement, add the feature <feature>takes_DP</feature>.</li>
 				<li>If the adverb may have an IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
 				<li>If the adverb requires a complementizer to be present in its sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>

@@ -657,6 +657,9 @@ Let Adv			be	&lt;cat&gt; = !Adv
 Let Art			be	&lt;cat&gt; = !Art
 				&lt;head type wh&gt;			= !-
 </content>
+<specializedTemplates show="nominativeArtDemdefault">
+								&lt;head agr case&gt;            = !nominative
+</specializedTemplates>
 <specializedTemplates show="whQcliticdefault">
 							   &lt;head type prefix whQ&gt;      = !-
 								&lt;head type suffix whQ&gt;      = !-
@@ -828,6 +831,9 @@ Let Dem                 be      &lt;cat&gt; = !Dem
 								&lt;head agr person&gt; = !third
 								&lt;head type relative&gt;            = !-
 </content>
+<specializedTemplates show="nominativeArtDemdefault">
+								&lt;head agr case&gt;            = !nominative
+</specializedTemplates>
 <specializedTemplates show="whQcliticdefault">
 							   &lt;head type prefix whQ&gt;      = !-
 								&lt;head type suffix whQ&gt;      = !-
@@ -1468,6 +1474,9 @@ Let makeAdv		be	&lt;cat&gt; = Adv
 Let makeArt		be	&lt;cat&gt; = Art
 				&lt;head type wh&gt;			= !-
 </content>
+<specializedTemplates show="nominativeArtDemdefault">
+								&lt;head agr case&gt;            = !nominative
+</specializedTemplates>
 <specializedTemplates show="whQcliticdefault">
 							   &lt;head type prefix whQ&gt;      = !-
 								&lt;head type suffix whQ&gt;      = !-
@@ -1639,6 +1648,9 @@ Let makeDem             be      &lt;cat&gt; = Dem
 								&lt;head agr person&gt; = !third
 								&lt;head type relative&gt;            = !-
 </content>
+<specializedTemplates show="nominativeArtDemdefault">
+								&lt;head agr case&gt;            = !nominative
+</specializedTemplates>
 <specializedTemplates show="whQcliticdefault">
 							   &lt;head type prefix whQ&gt;      = !-
 								&lt;head type suffix whQ&gt;      = !-
@@ -1920,6 +1932,13 @@ Let makeV               be      &lt;cat&gt; = V
 		<whenValue element="np" attr="caseDefault" value="nominative"/>
 <and/>
 		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="nominativeArtDemdefault">
+		<whenValue element="np" attr="caseDefault" value="nominative"/>
+<and/>
+		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+<and/>
+		<whenValue element="np" attr="artCase" value="yes"/>
 	</showWhen>
 	<showWhen id="singulardefault">
 		<whenValue element="np" attr="agreeNumber" value="yes"/>
