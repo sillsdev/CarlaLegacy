@@ -337,9 +337,9 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	 Reciprocals may exist (recip) and if so, may be formed by an affix
 	   (recipAffix).
 	 Indefinites may be formed by an NP or a word (indef).
-	 Partitives may come before or after the head (partitive).
+	 Partitives may come before or after the head (partitivePos).
 -->
-<!ELEMENT pron (personalNoCaseExample, personalNomSubjectExample, personalNomObjectExample, personalNomPossessorExample, personalErgSubjectTransExample, personalErgSubjectIntransExample, personalErgPossessorExample, personalSplitSubjectExample, personalSplitObjectExample, personalSplitPossessorExample, personalSplitErgExample, personalSplitAbsExample, possExample, reflExample, reflSentExample, recipExample, recipSentExample, indefExample, indefNPExample, standAloneNPExample, pronRelClExample, partitiveExample, pronounCategory, pronAgrFeatFirst, pronAgrFeatFirstExclusive, pronAgrFeatFirstInclusive, pronAgrFeatSecond, pronAgrFeatThird, pronAgrFeatSingular, pronAgrFeatDual, pronAgrFeatPlural, pronAgrFeatMasculine, pronAgrFeatFeminine, pronAgrFeatNeuter, pronAgrFeatAnimate, pronAgrFeatMinusAnimate, pronAgrFeatClassNumber)>
+<!ELEMENT pron (personalNoCaseExample, personalNomSubjectExample, personalNomObjectExample, personalNomPossessorExample, personalErgSubjectTransExample, personalErgSubjectIntransExample, personalErgPossessorExample, personalSplitSubjectExample, personalSplitObjectExample, personalSplitPossessorExample, personalSplitErgExample, personalSplitAbsExample, possExample, reflExample, reflSentExample, recipExample, recipSentExample, indefExample, negIndefExample, indefNPExample, negIndefNPExample, standAloneNPExample, pronRelClExample, partitiveExample, pronounCategory, pronAgrFeatFirst, pronAgrFeatFirstExclusive, pronAgrFeatFirstInclusive, pronAgrFeatSecond, pronAgrFeatThird, pronAgrFeatSingular, pronAgrFeatDual, pronAgrFeatPlural, pronAgrFeatMasculine, pronAgrFeatFeminine, pronAgrFeatNeuter, pronAgrFeatAnimate, pronAgrFeatMinusAnimate, pronAgrFeatClassNumber)>
 <!ATTLIST pron
 	checkedOff (yes | no) "no"
 	poss (no | yes) "no"
@@ -350,7 +350,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	recipAffix (noWord | noNoun | noQP | yes) "yes"
 	indef (no | yes) "no"
 	pronounCat (NP | N | DP) "NP"
-	partitive (before | after | unknown) "unknown"
+	partitivePos (before | after | unknown) "unknown"
 >
 <!ELEMENT personalNoCaseExample (#PCDATA)>
 <!ELEMENT personalNomSubjectExample (#PCDATA)>
@@ -369,8 +369,10 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT reflSentExample (#PCDATA)>
 <!ELEMENT recipExample (#PCDATA)>
 <!ELEMENT recipSentExample (#PCDATA)>
-<!ELEMENT indefNPExample (#PCDATA)>
 <!ELEMENT indefExample (#PCDATA)>
+<!ELEMENT indefNPExample (#PCDATA)>
+<!ELEMENT negIndefExample (#PCDATA)>
+<!ELEMENT negIndefNPExample (#PCDATA)>
 <!ELEMENT standAloneNPExample (#PCDATA)>
 <!ELEMENT pronRelClExample (#PCDATA)>
 <!ELEMENT partitiveExample (#PCDATA)>
@@ -468,8 +470,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT sentExample (#PCDATA)>
 <!ELEMENT pCategory (#PCDATA)>
 <!-- Single clause sentences have examples for transitives, auxiliaries, nonfinite aux,
-	 pro-drop, ditransitives, intransitives and motion,
-	   copular constructions, and passives.
+	 pro-drop, ditransitives, intransitives, motion, copular constructions, and passives.
 	 There may be pro-drop of the subject or not or just imperatives or clitics.
 	 If yes, pro-drop of the object is questioned.
 	 Auxiliaries may be present (aux) and may be required (auxRequired).
@@ -482,7 +483,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	   required (passiveAux).
 	 Category mappings for Aux and V are available.
 -->
-<!ELEMENT ip (example, auxExample, auxNonfiniteExample, proDropExample, diExample, intransExample, copularExample, passiveExample, auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9, ipAgrFeatFirstSubject, ipAgrFeatFirstObject, ipAgrFeatFirstErgative, ipAgrFeatFirstAbsolutive, ipAgrFeatFirstExclusiveSubject, ipAgrFeatFirstExclusiveObject, ipAgrFeatFirstExclusiveErgative, ipAgrFeatFirstExclusiveAbsolutive, ipAgrFeatFirstInclusiveSubject, ipAgrFeatFirstInclusiveObject, ipAgrFeatFirstInclusiveErgative, ipAgrFeatFirstInclusiveAbsolutive, ipAgrFeatSecondSubject, ipAgrFeatSecondObject, ipAgrFeatSecondErgative, ipAgrFeatSecondAbsolutive, ipAgrFeatThirdSubject, ipAgrFeatThirdObject, ipAgrFeatThirdErgative, ipAgrFeatThirdAbsolutive, ipAgrFeatSingularSubject, ipAgrFeatSingularObject, ipAgrFeatSingularErgative, ipAgrFeatSingularAbsolutive, ipAgrFeatDualSubject, ipAgrFeatDualObject, ipAgrFeatDualErgative, ipAgrFeatDualAbsolutive, ipAgrFeatPluralSubject, ipAgrFeatPluralObject, ipAgrFeatPluralErgative, ipAgrFeatPluralAbsolutive, ipAgrFeatMasculineSubject, ipAgrFeatMasculineObject, ipAgrFeatMasculineErgative, ipAgrFeatMasculineAbsolutive, ipAgrFeatFeminineSubject, ipAgrFeatFeminineObject, ipAgrFeatFeminineErgative, ipAgrFeatFeminineAbsolutive, ipAgrFeatNeuterSubject, ipAgrFeatNeuterObject, ipAgrFeatNeuterErgative, ipAgrFeatNeuterAbsolutive, ipAgrFeatAnimateSubject, ipAgrFeatAnimateObject, ipAgrFeatAnimateErgative, ipAgrFeatAnimateAbsolutive, ipAgrFeatMinusAnimateSubject, ipAgrFeatMinusAnimateObject, ipAgrFeatMinusAnimateErgative, ipAgrFeatMinusAnimateAbsolutive, ipAgrFeatClassClassNumberSubject, ipAgrFeatClassClassNumberObject, ipAgrFeatClassClassNumberErgative, ipAgrFeatClassClassNumberAbsolutive, ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatCompletive, ipInflFeatContinuative, ipInflFeatHabitual, ipInflFeatImperfective, ipInflFeatIncompletive, ipInflFeatPerfective, ipInflFeatPotential, ipInflFeatProgressive, ipInflFeatStative, ipInflFeatDeclarative, ipInflFeatImperative, ipInflFeatInterrogative, ipInflFeatIrrealis, ipInflFeatRealis, ipInflFeatFinite, ipInflFeatMinusFinite)>
+<!ELEMENT ip (example, proDropExample, auxExample, auxNonfiniteExample, auxOtherExample, diExample, intransExample, motionExample, copularExample, passiveExample, auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9, ipAgrFeatFirstSubject, ipAgrFeatFirstObject, ipAgrFeatFirstErgative, ipAgrFeatFirstAbsolutive, ipAgrFeatFirstExclusiveSubject, ipAgrFeatFirstExclusiveObject, ipAgrFeatFirstExclusiveErgative, ipAgrFeatFirstExclusiveAbsolutive, ipAgrFeatFirstInclusiveSubject, ipAgrFeatFirstInclusiveObject, ipAgrFeatFirstInclusiveErgative, ipAgrFeatFirstInclusiveAbsolutive, ipAgrFeatSecondSubject, ipAgrFeatSecondObject, ipAgrFeatSecondErgative, ipAgrFeatSecondAbsolutive, ipAgrFeatThirdSubject, ipAgrFeatThirdObject, ipAgrFeatThirdErgative, ipAgrFeatThirdAbsolutive, ipAgrFeatSingularSubject, ipAgrFeatSingularObject, ipAgrFeatSingularErgative, ipAgrFeatSingularAbsolutive, ipAgrFeatDualSubject, ipAgrFeatDualObject, ipAgrFeatDualErgative, ipAgrFeatDualAbsolutive, ipAgrFeatPluralSubject, ipAgrFeatPluralObject, ipAgrFeatPluralErgative, ipAgrFeatPluralAbsolutive, ipAgrFeatMasculineSubject, ipAgrFeatMasculineObject, ipAgrFeatMasculineErgative, ipAgrFeatMasculineAbsolutive, ipAgrFeatFeminineSubject, ipAgrFeatFeminineObject, ipAgrFeatFeminineErgative, ipAgrFeatFeminineAbsolutive, ipAgrFeatNeuterSubject, ipAgrFeatNeuterObject, ipAgrFeatNeuterErgative, ipAgrFeatNeuterAbsolutive, ipAgrFeatAnimateSubject, ipAgrFeatAnimateObject, ipAgrFeatAnimateErgative, ipAgrFeatAnimateAbsolutive, ipAgrFeatMinusAnimateSubject, ipAgrFeatMinusAnimateObject, ipAgrFeatMinusAnimateErgative, ipAgrFeatMinusAnimateAbsolutive, ipAgrFeatClassClassNumberSubject, ipAgrFeatClassClassNumberObject, ipAgrFeatClassClassNumberErgative, ipAgrFeatClassClassNumberAbsolutive, ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatCompletive, ipInflFeatContinuative, ipInflFeatHabitual, ipInflFeatImperfective, ipInflFeatIncompletive, ipInflFeatPerfective, ipInflFeatPotential, ipInflFeatProgressive, ipInflFeatStative, ipInflFeatDeclarative, ipInflFeatImperative, ipInflFeatInterrogative, ipInflFeatIrrealis, ipInflFeatRealis, ipInflFeatFinite, ipInflFeatMinusFinite)>
 <!ATTLIST ip
 	checkedOff (yes | no) "no"
 	proDrop (noImp | no | yes | yesClitic) "noImp"
@@ -499,11 +500,13 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	passiveAux (no | yes) "no"
 	passiveAgentCat (dp | pp) "pp"
 >
+<!ELEMENT proDropExample (#PCDATA)>
 <!ELEMENT auxExample (#PCDATA)>
 <!ELEMENT auxNonfiniteExample (#PCDATA)>
-<!ELEMENT proDropExample (#PCDATA)>
+<!ELEMENT auxOtherExample (#PCDATA)>
 <!ELEMENT diExample (#PCDATA)>
 <!ELEMENT intransExample (#PCDATA)>
+<!ELEMENT motionExample (#PCDATA)>
 <!ELEMENT copularExample (#PCDATA)>
 <!ELEMENT passiveExample (#PCDATA)>
 <!ELEMENT auxCategory (#PCDATA)>
@@ -954,6 +957,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	mainContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	mainContEitherRestricted (unrestricted | restricted) "unrestricted"
 	mainContVSOBeforeWh (no | noEnd | yes | some) "no"
+	mainContVSOBeforeWhNoEndRestricted (unrestricted | restricted) "unrestricted"
 	mainContRequired (no | yes) "no"
 	mainContAuxPos (before | after | unknown) "unknown"
 	mainContAuxRequired (no | yes) "no"
@@ -964,6 +968,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	embContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	embContEitherRestricted (unrestricted | restricted) "unrestricted"
 	embContVSOBeforeWh (no | noEnd | yes | some) "no"
+	embContVSOBeforeWhNoEndRestricted (unrestricted | restricted) "unrestricted"
 	embContRequired (no | yes) "no"
 	embContAuxPos (before | after | unknown) "unknown"
 	embContAuxRequired (no | yes) "no"
@@ -992,6 +997,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	checkedOff (yes | no) "no"
 	type (CP | IP | none) "none"
 	compCP (yes | yesBoth | no) "no"
+	whAndComp (no | yes | optional) "no"
 	relCompSame (yes | no) "no"
 	relCompPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
 	relCompEitherRestricted (unrestricted | restricted) "unrestricted"
@@ -1000,7 +1006,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT headlessExample (#PCDATA)>
 <!-- Adverbial clauses have temporal and reason/purpose examples in full sentences.
 -->
-<!ELEMENT advcl (tempSentExample, reasonExample)>
+<!ELEMENT advcl (tempSentExample)>
 <!ATTLIST advcl
 	checkedOff (yes | no) "no"
 	advOrNPPos (before | after | either | unknown) "unknown"

@@ -50,7 +50,7 @@
 		<embeddedExample/>
 		<ppExample/>
 		<relClExample/>
-	 <possAlienableAffixExample/>
+		<possAlienableAffixExample/>
 		<qpExample/>
 		<adjpExample/>
 		<compExample/>
@@ -86,7 +86,7 @@
 		<propAnimate2Category/>
 		<propInanimateCategory/>
 	</prop>
-	<pron checkedOff="no" poss="no" possAffix="no" refl="no" reflAffix="yes" recip="no" recipAffix="yes" indef="no" pronounCat="NP" partitive="unknown">
+	<pron checkedOff="no" poss="no" possAffix="no" refl="no" reflAffix="yes" recip="no" recipAffix="yes" indef="no" pronounCat="NP" partitivePos="unknown">
 		<personalNoCaseExample/>
 		<personalNomSubjectExample/>
 		<personalNomObjectExample/>
@@ -105,7 +105,9 @@
 		<recipExample/>
 		<recipSentExample/>
 		<indefExample/>
+		<negIndefExample/>
 		<indefNPExample/>
+		<negIndefNPExample/>
 		<standAloneNPExample/>
 		<pronRelClExample/>
 		<partitiveExample/>
@@ -136,11 +138,13 @@
 	</pp>
 	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="dp" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
 		<example/>
+		<proDropExample/>
 		<auxExample/>
 		<auxNonfiniteExample/>
-		<proDropExample/>
+		<auxOtherExample/>
 		<diExample/>
 		<intransExample/>
+		<motionExample/>
 		<copularExample/>
 		<passiveExample/>
 		<auxCategory/>
@@ -239,7 +243,7 @@
 		<nonfiniteCPOrProDropExample/>
 		<otherExample/>
 	</comp>
-	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContCliticPos="unknown" mainContCliticAttaches="edge" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContRequired="no" mainContAuxPos="unknown" mainContAuxRequired="no" embCont="no" embContWord="yes" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContRequired="no" embContAuxPos="unknown" embContAuxRequired="no">
+	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContCliticPos="unknown" mainContCliticAttaches="edge" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContVSOBeforeWhNoEndRestricted="unrestricted" mainContRequired="no" mainContAuxPos="unknown" mainContAuxRequired="no" embCont="no" embContWord="yes" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContVSOBeforeWhNoEndRestricted="unrestricted" embContRequired="no" embContAuxPos="unknown" embContAuxRequired="no">
 		<example/>
 		<embYNExample/>
 		<contentExample/>
@@ -254,14 +258,13 @@
 		<whose/>
 		<whPronCategory/>
 	</q>
-	<relcl checkedOff="no" type="none" compCP="no" relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
+	<relcl checkedOff="no" type="none" compCP="no" whAndComp="no" relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
 		<example/>
 		<sentExample/>
 		<headlessExample/>
 	</relcl>
 	<advcl checkedOff="no" advOrNPPos="unknown">
 		<tempSentExample/>
-		<reasonExample/>
 	</advcl>
 	<neg checkedOff="no">
 		<example/>
