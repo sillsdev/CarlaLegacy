@@ -3649,9 +3649,16 @@ static int utest( cond, pStamp_in )
 	  if ( hasAmpleProperty( uAlloPropertySet,
 				 fcode, &pStamp_in->sProperties ) )
 #else /* TONEGEN */
+#ifndef hab107
+				/* use properties of the allomorph */
+	  if ( ap->pCurrentAllo != (StampAllomorph *)NULL &&
+		   hasAmpleProperty( ap->pCurrentAllo->uAlloPropertySet,
+				 fcode, &pStamp_in->sProperties ) )
+#else /* hab107 */
 	  if ( ap->m.pAllomorphs != (StampAllomorphList *)NULL &&
 		   hasAmpleProperty( ap->m.pAllomorphs->a.uAlloPropertySet,
 				 fcode, &pStamp_in->sProperties ) )
+#endif /* hab107 */
 #endif /* TONEGEN */
 #else /* hab104 */
 	  if ( ap->m.pAllomorphs != (StampAllomorphList *)NULL &&

@@ -1,5 +1,10 @@
 ToneGen CHANGE HISTORY
 
+1.0.7 (Nov-30-2001)
+-------------------
+1. Fix bug: was using properties of first allomorph in the dictionary record
+rather than the properties of the selected allomorph.
+
 1.0.6 (28-Nov-2001)
 -------------------
 1. When linking a left-floating tone leftward or linking a
