@@ -11,6 +11,7 @@ namespace PAWSStarterKit
 		/// </summary>
 	public class DlgAbout : Form
 	{
+		private string strVersion = Application.ProductVersion;
 		private PictureBox pbLogo;
 		private Label label1;
 		private Label label2;
@@ -71,7 +72,7 @@ namespace PAWSStarterKit
 			label2.Name = "label2";
 			label2.Size = new Size(iClientWidth, label2.Font.Height);
 			label2.TabIndex = 6;
-			label2.Text = "Version 0.3.0";
+			label2.Text = "Version " + strVersion + " Alpha";
 			label2.TextAlign = ContentAlignment.MiddleLeft;
 			//
 			// label3
