@@ -1406,7 +1406,8 @@ AmpleAlloEnv *	aenv1;
 AmpleAlloEnv *	aenv2;
 {
 if ( env_comp( aenv1->pStringCond, aenv2->pStringCond ) &&
-	 env_comp( aenv1->pMorphCond, aenv2->pMorphCond ) )
+	 env_comp( aenv1->pMorphCond, aenv2->pMorphCond )   &&
+	 env_comp( aenv1->pPunctCond, aenv2->pPunctCond ) )
 	return( TRUE );
 return( FALSE );
 }

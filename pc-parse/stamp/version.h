@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for STAMP
  ***************************************************************************
- * Copyright 1997, 2002 by SIL International.  All rights reserved.
+ * Copyright 1997-2003 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL 17		/* bug fix or other minor change */
-#define DATE "May 20, 2003"	/* date of release version */
+#define PATCHLEVEL 18		/* bug fix or other minor change */
+#define DATE "November 4, 2003"	/* date of release version */
 #define YEAR "2003"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 04-Nov-2003  hab  - Fix bug: multiple allomorphs with differing PECs could
+ * [2.1.18]             end up using only the first.
  * 20-May-2003  hab  - When matching category and morphname of a root from the
  * [2.1.17]             ANA file (tsdict.c), did not necessarily set the
  *                      category of the returned dictionary entry to the

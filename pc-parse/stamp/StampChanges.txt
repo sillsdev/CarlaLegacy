@@ -1,5 +1,11 @@
 STAMP CHANGE HISTORY
 
+2.1.18 (04-Nov-2003)
+--------------------
+1. Fix bug: multiple allomorphs with differing PECs could
+   end up using only the first.
+
+
 2.1.17b (20-May-2003)
 --------------------
 1. Some minor internal code changes (nothing visible to the user)
