@@ -25,9 +25,9 @@
 				<radio id="QEmbYNWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
 				<radioGroup id="QEmbYNCliticPosTable" show="swQEmbYNWordNo">
 					<groupName dataItem="embYNCliticPos" default="unknown" position="yesHead">RQEmbYNCliticPos</groupName>
-					<prompt>Is the clitic a pro-clitic or a post-clitic?</prompt>
-					<radio id="QEmbYNCliticPosBefore" dataValue="before">A pro-clitic or prefix</radio>
-					<radio id="QEmbYNCliticPosAfter" dataValue="after">A post-clitic or suffix</radio>
+					<prompt>Is the clitic a proclitic or an enclitic?</prompt>
+					<radio id="QEmbYNCliticPosBefore" dataValue="before">A proclitic or prefix</radio>
+					<radio id="QEmbYNCliticPosAfter" dataValue="after">An enclitic or suffix</radio>
 					<radio id="QEmbYNCliticPosBoth" dataValue="both">Some of each type</radio>
 				</radioGroup>
 				<radioGroup id="QEmbYNCliticTypeTable" show="swQEmbYNWordNo">
@@ -64,12 +64,10 @@
 			</radioGroup>
 			<radio id="QEmbYNNo" dataValue="no">No, there is no marker or word order change in embedded clause Yes/No questions, just a difference in intonation or tone or other non-syntactic marking</radio>
 		</radioGroup>
-		<instruction id="QEmbYNHeadCliticPrefixInstruction" show="swQEmbYNHeadCliticPrefix">In the lexicon, add the feature <feature>YNQ_prefix_V</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QEmbYNHeadCliticSuffixInstruction" show="swQEmbYNHeadCliticSuffix">In the lexicon, add the feature <feature>YNQ_suffix_V</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QEmbYNHeadCliticBothInstruction" show="swQEmbYNHeadCliticBoth">In the lexicon, add the feature <feature>YNQ_prefix_V</feature> to the pro-clitics and add <feature>YNQ_suffix_V</feature> to the post-clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbYNHeadCliticInstruction" show="swQEmbYNHeadClitic">In the lexicon, add the feature <feature>YNQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNEdgeCliticPrefixInstruction" show="swQEmbYNEdgeCliticPrefix">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNEdgeCliticSuffixInstruction" show="swQEmbYNEdgeCliticSuffix">In the lexicon, add the feature <feature>YNQ_suffix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QEmbYNEdgeCliticBothInstruction" show="swQEmbYNEdgeCliticBoth">In the lexicon, add the feature <feature>YNQ_prefix</feature> to the pro-clitics and add <feature>YNQ_suffix</feature> to the post-clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbYNEdgeCliticBothInstruction" show="swQEmbYNEdgeCliticBoth">In the lexicon, add the feature <feature>YNQ_prefix</feature> to the proclitics and add <feature>YNQ_suffix</feature> to the enclitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNWordYesInstruction" show="swQEmbYNWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax. In either case, add the feature <feature>question</feature>.  If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNEitherRestrictedInstruction" show="swQEmbYNEitherRestricted">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
 		<br/>
@@ -94,32 +92,12 @@
 	<showWhen id="swQEmbYNNoAux">
 		<whenRadio button="QEmbYNNoAux"/>
 	</showWhen>
-	<showWhen id="swQEmbYNHeadCliticPrefix">
-		<whenRadio button="QEmbYNWordNo"/>
-		<and/>
-		<whenRadio button="QEmbYNYes"/>
-		<and/>
-		<whenRadio button="QEmbYNCliticPosBefore"/>
-		<and/>
-		<whenRadio button="QEmbYNCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swQEmbYNHeadCliticSuffix">
-		<whenRadio button="QEmbYNWordNo"/>
-		<and/>
-		<whenRadio button="QEmbYNYes"/>
-		<and/>
-		<whenRadio button="QEmbYNCliticPosAfter"/>
-		<and/>
-		<whenRadio button="QEmbYNCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swQEmbYNHeadCliticBoth">
+	<showWhen id="swQEmbYNHeadClitic">
 		<whenRadio button="QEmbYNWordNo"/>
 		<and/>
 		<whenRadio button="QEmbYNYes"/>
 		<and/>
 		<whenRadio button="QEmbYNCliticAttachesHead"/>
-		<and/>
-		<whenRadio button="QEmbYNCliticPosBoth"/>
 	</showWhen>
 	<showWhen id="swQEmbYNEdgeCliticPrefix">
 		<whenRadio button="QEmbYNWordNo"/>

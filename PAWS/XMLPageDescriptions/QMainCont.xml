@@ -33,17 +33,16 @@
 				<radio id="QMainContWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
 				<radioGroup id="QMainContCliticPosTable" show="swQMainContWordNo">
 					<groupName dataItem="mainContCliticPos" default="unknown" position="yesHead">RQMainContCliticPos</groupName>
-					<prompt>Is the clitic a pro-clitic or a post-clitic?</prompt>
-					<radio id="QMainContCliticPosBefore" dataValue="before">A pro-clitic or prefix</radio>
-					<radio id="QMainContCliticPosAfter" dataValue="after">A post-clitic or suffix</radio>
+					<prompt>Is the clitic a proclitic or an enclitic?</prompt>
+					<radio id="QMainContCliticPosBefore" dataValue="before">A proclitic or prefix</radio>
+					<radio id="QMainContCliticPosAfter" dataValue="after">An enclitic or suffix</radio>
 					<radio id="QMainContCliticPosBoth" dataValue="both">Some of each type</radio>
 				</radioGroup>
 				<radioGroup id="QMainContCliticTypeTable" show="swQMainContWordNo">
 					<groupName dataItem="mainContCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
 					<prompt>Where does the clitic attach to the question?</prompt>
 					<radio id="QMainContCliticAttachesEdge" dataValue="edge">At the edge</radio>
-					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">
-						<span id="QMainContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
+					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes"><span id="QMainContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
 					</radio>
 					<radio id="QMainContCliticAttachesHead" dataValue="head">To the verb</radio>
 				</radioGroup>
@@ -87,13 +86,13 @@
 				<radio id="QMainContRequiredNo" dataValue="no">No, some content questions do not use/need the question marker</radio>
 			</radioGroup>
 			<radio id="QMainContNoAux" dataValue="noAux">No, but an auxiliary is fronted, like in English</radio>
-			 <radioGroup id="QMainContAuxPosTable" show="swQMainContNoAux">
+			<radioGroup id="QMainContAuxPosTable" show="swQMainContNoAux">
 				<groupName dataItem="mainContAuxPos" default="unknown" position="yesHead">RQMainContAuxPos</groupName>
 				<prompt>Where does the auxiliary occur with respect to the rest of the question?</prompt>
 				<radio id="QMainContAuxPosBefore" dataValue="before">Before</radio>
 				<radio id="QMainContAuxPosAfter" dataValue="after">After</radio>
 			</radioGroup>
-		   <radioGroup id="QMainContAuxTable" show="swQMainContNoAux">
+			<radioGroup id="QMainContAuxTable" show="swQMainContNoAux">
 				<groupName dataItem="mainContAuxRequired" default="no">RQMainContAux</groupName>
 				<prompt>Is an auxiliary required to be fronted in every content question?</prompt>
 				<radio id="QMainContAuxRequiredYes" dataValue="yes">Yes</radio>
@@ -101,12 +100,10 @@
 			</radioGroup>
 			<radio id="QMainContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QMainContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
 		</radioGroup>
-		<instruction id="QMainContHeadCliticPrefixInstruction" show="swQMainContHeadCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix_V</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QMainContHeadCliticSuffixInstruction" show="swQMainContHeadCliticSuffix">In the lexicon, add the feature <feature>whQ_suffix_V</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QMainContHeadCliticBothInstruction" show="swQMainContHeadCliticBoth">In the lexicon, add the feature <feature>whQ_prefix_V</feature> to the pro-clitics and add <feature>whQ_suffix_V</feature> to the post-clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QMainContHeadCliticInstruction" show="swQMainContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QMainContEdgeCliticPrefixInstruction" show="swQMainContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QMainContEdgeCliticSuffixInstruction" show="swQMainContEdgeCliticSuffix">In the lexicon, add the feature <feature>whQ_suffix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QMainContEdgeCliticBothInstruction" show="swQMainContEdgeCliticBoth">In the lexicon, add the feature <feature>whQ_prefix</feature> to the pro-clitics and add <feature>whQ_suffix</feature> to the post-clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QMainContEdgeCliticBothInstruction" show="swQMainContEdgeCliticBoth">In the lexicon, add the feature <feature>whQ_prefix</feature> to the proclitics and add <feature>whQ_suffix</feature> to the enclitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QMainContWordYesInstruction" show="swQMainContWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax.  In either case, add the features <feature>question wh</feature>.  Mark any Yes/No question markers with the feature <feature>-wh</feature> if they cannot occur in content questions .  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QMainContEitherRestrictedInstruction" show="swQMainContEitherRestricted">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
 		<instruction id="QMainContVSONoEndRestrictedInstruction" show="swQMainContVSONoEndRestricted">In the lexicon, mark those markers which can only occur after the fronted interrogative phrase with the feature <feature>CP-initial</feature> and those which can only occur at the end of the question with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur in either position.</instruction>
@@ -230,32 +227,12 @@
 		<and/>
 		<whenRadio button="QMainContYes"/>
 	</showWhen>
-	<showWhen id="swQMainContHeadCliticPrefix">
-		<whenRadio button="QMainContWordNo"/>
-		<and/>
-		<whenRadio button="QMainContYes"/>
-		<and/>
-		<whenRadio button="QMainContCliticPosBefore"/>
-		<and/>
-		<whenRadio button="QMainContCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swQMainContHeadCliticSuffix">
-		<whenRadio button="QMainContWordNo"/>
-		<and/>
-		<whenRadio button="QMainContYes"/>
-		<and/>
-		<whenRadio button="QMainContCliticPosAfter"/>
-		<and/>
-		<whenRadio button="QMainContCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swQMainContHeadCliticBoth">
+	<showWhen id="swQMainContHeadClitic">
 		<whenRadio button="QMainContWordNo"/>
 		<and/>
 		<whenRadio button="QMainContYes"/>
 		<and/>
 		<whenRadio button="QMainContCliticAttachesHead"/>
-		<and/>
-		<whenRadio button="QMainContCliticPosBoth"/>
 	</showWhen>
 	<showWhen id="swQMainContEdgeCliticPrefix">
 		<whenRadio button="QMainContWordNo"/>

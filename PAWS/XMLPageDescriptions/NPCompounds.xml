@@ -32,7 +32,7 @@
 			</radioGroup>
 		</radioGroup>
 		<radioGroup>
-			<groupName dataItem="ppPos" default="unknown" position="yesHeadDiff">RNPCompHeadPos</groupName>
+			<groupName dataItem="ppPos" default="unknown" position="yesHeadDiff">RNPPPPos</groupName>
 			<prompt>Where does the PP occur with respect to the head noun?</prompt>
 			<radio id="NPPPPosBefore" dataValue="before">Before</radio>
 			<radio id="NPPPPosAfter" dataValue="after">After</radio>

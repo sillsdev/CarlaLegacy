@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="CompPosition">
 	<title level="2">Complement Clauses - Complementizer Position</title>
-<form section="comp">
+	<form section="comp">
 		<radioGroup>
 			<groupName dataItem="comp" default="no">RComp</groupName>
 			<prompt>Considering the examples you gave of complement clauses, does your language have one or more complementizers which mark embedded clauses?   (Questions and relative clauses will be considered in the following sections, so do not answer for those types here.)</prompt>
@@ -14,9 +14,9 @@
 				<radio id="CompWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
 				<radioGroup id="CompCliticPosTable" show="swCompWordNo">
 					<groupName dataItem="compCliticPos" default="unknown" position="yesHead">RCompCliticPos</groupName>
-					<prompt>Is the clitic a pro-clitic or a post-clitic?</prompt>
-					<radio id="CompCliticPosBefore" dataValue="before">A pro-clitic or prefix</radio>
-					<radio id="CompCliticPosAfter" dataValue="after">A post-clitic or suffix</radio>
+					<prompt>Is the clitic a proclitic or an enclitic?</prompt>
+					<radio id="CompCliticPosBefore" dataValue="before">A proclitic or prefix</radio>
+					<radio id="CompCliticPosAfter" dataValue="after">An enclitic or suffix</radio>
 					<radio id="CompCliticPosBoth" dataValue="both">Some of each type</radio>
 				</radioGroup>
 				<radioGroup id="CompCliticTypeTable" show="swCompWordNo">
@@ -46,12 +46,10 @@
 			</radioGroup>
 			<radio id="CompNo" dataValue="no">No, there is no complementizer word or clitic for complement clauses, so all embedded clauses are simply IPs in this language</radio>
 		</radioGroup>
-		<instruction id="CompHeadCliticPrefixInstruction" show="swCompHeadCliticPrefix">In the lexicon, add the feature <feature>comp_prefix_V</feature> to these clitics.</instruction>
-		<instruction id="CompHeadCliticSuffixInstruction" show="swCompHeadCliticSuffix">In the lexicon, add the feature <feature>comp_suffix_V</feature> to these clitics.</instruction>
-		<instruction id="CompHeadCliticBothInstruction" show="swCompHeadCliticBoth">In the lexicon, add the feature <feature>comp_prefix_V</feature> to the pro-clitics and add <feature>comp_suffix_V</feature> to the post-clitics.</instruction>
+		<instruction id="CompHeadCliticInstruction" show="swCompHeadClitic">In the lexicon, add the feature <feature>comp</feature> to these clitics.</instruction>
 		<instruction id="CompEdgeCliticPrefixInstruction" show="swCompEdgeCliticPrefix">In the lexicon, add the feature <feature>comp_prefix</feature> to these clitics.</instruction>
 		<instruction id="CompEdgeCliticSuffixInstruction" show="swCompEdgeCliticSuffix">In the lexicon, add the feature <feature>comp_suffix</feature> to these clitics.</instruction>
-		<instruction id="CompEdgeCliticBothInstruction" show="swCompEdgeCliticBoth">In the lexicon, add the feature <feature>comp_prefix</feature> to the pro-clitics and add <feature>comp_suffix</feature> to the post-clitics.</instruction>
+		<instruction id="CompEdgeCliticBothInstruction" show="swCompEdgeCliticBoth">In the lexicon, add the feature <feature>comp_prefix</feature> to the proclitics and add <feature>comp_suffix</feature> to the enclitics.</instruction>
 		<instruction id="CompWordYesInstruction" show="swCompWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax.</instruction>
 		<instruction id="CompEitherRestrictedInstruction" show="swCompEitherRestricted">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
 		<br/>
@@ -73,32 +71,12 @@
 		<and/>
 		<whenRadio button="CompYes"/>
 	</showWhen>
-	<showWhen id="swCompHeadCliticPrefix">
-		<whenRadio button="CompWordNo"/>
-		<and/>
-		<whenRadio button="CompYes"/>
-		<and/>
-		<whenRadio button="CompCliticPosBefore"/>
-		<and/>
-		<whenRadio button="CompCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swCompHeadCliticSuffix">
-		<whenRadio button="CompWordNo"/>
-		<and/>
-		<whenRadio button="CompYes"/>
-		<and/>
-		<whenRadio button="CompCliticPosAfter"/>
-		<and/>
-		<whenRadio button="CompCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swCompHeadCliticBoth">
+	<showWhen id="swCompHeadClitic">
 		<whenRadio button="CompWordNo"/>
 		<and/>
 		<whenRadio button="CompYes"/>
 		<and/>
 		<whenRadio button="CompCliticAttachesHead"/>
-		<and/>
-		<whenRadio button="CompCliticPosBoth"/>
 	</showWhen>
 	<showWhen id="swCompEdgeCliticPrefix">
 		<whenRadio button="CompWordNo"/>
