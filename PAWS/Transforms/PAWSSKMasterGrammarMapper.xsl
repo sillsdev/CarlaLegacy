@@ -44,6 +44,11 @@ Main template
 	<xsl:apply-templates select="/" mode="advp"/>
 	<xsl:apply-templates select="/" mode="qp"/>
   </xsl:template>
+	<!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Include other templates
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
   <xsl:include href="GrammarTemplates.xsl"/>
   <xsl:include href="GrammarAdjP.xsl"/>
   <xsl:include href="GrammarAdvP.xsl"/>
