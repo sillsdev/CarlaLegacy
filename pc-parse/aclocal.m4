@@ -43,12 +43,19 @@ AC_DEFUN(opAC_C_WARNINGS, [
 AC_REQUIRE([AC_PROG_CC])dnl
 AC_MSG_CHECKING([for warning and ANSI flags])
 if test "$ac_cv_prog_gcc" != yes; then
-	  AC_MSG_RESULT(only normal warnings)
-	  ANSIFLAGS=""
+	AC_MSG_RESULT(only normal warnings)
+	ANSIFLAGS=""
 else
-	  AC_MSG_RESULT([-Wall -ansi -pedantic])
-	  CFLAGS="${CFLAGS} -Wall"
-	  ANSIFLAGS="-ansi -pedantic"
+	# we don't want -pedantic on Mac OS X, where it gets ridiculous
+	AC_CHECK_HEADER(AvailabilityMacros.h, OSX=yes, OSX=)
+	CFLAGS="${CFLAGS} -Wall"
+	if test "$OSX" = yes; then
+		AC_MSG_RESULT([-Wall -ansi])
+		ANSIFLAGS="-ansi"
+	else
+		AC_MSG_RESULT([-Wall -ansi -pedantic])
+		ANSIFLAGS="-ansi -pedantic"
+	fi
 fi
 ])
 

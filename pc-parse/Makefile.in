@@ -1,7 +1,7 @@
 # Master Makefile for the OPAC/PC-PARSE programs and libraries.
-# Steve McConnel, 20-Mar-2003
+# Steve McConnel, 21-Mar-2003
 
-datestamp=20030320
+datestamp=20030321
 
 @SET_MAKE@
 # the next line requires GNU make ...

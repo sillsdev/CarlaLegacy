@@ -3263,7 +3263,7 @@ if (setjmp(sCmdJmpBuf_g) != 0)
 	}
 else
 	{
-#ifdef USE_SIGNAL
+#ifdef HAVE_SIGNAL
 #ifdef SIGINT
 	signal( SIGINT, handleCmdSigint );
 #endif
