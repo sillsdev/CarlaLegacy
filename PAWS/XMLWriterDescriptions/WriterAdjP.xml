@@ -42,9 +42,11 @@
 				<caseText value="before">before</caseText>
 				<caseText value="after">after</caseText>
 				<caseText value="either">on either side (but not both sides) of</caseText>
+				<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 				<caseText value="beforeOrBoth">before or on both sides of</caseText>
 				<caseText value="afterOrBoth">after or on both sides of</caseText>
 				<caseText value="both">on both sides of</caseText>
+				<caseText value="unknown">_______</caseText>
 			</case>
 			<content> the adjective.  </content>
 			<text show="swAdjPDegreeEitherUnrestricted">
@@ -64,9 +66,11 @@
 				<caseText value="before">before</caseText>
 				<caseText value="after">after</caseText>
 				<caseText value="either">on either side (but not both sides) of</caseText>
+				<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 				<caseText value="beforeOrBoth">before or on both sides of</caseText>
 				<caseText value="afterOrBoth">after or on both sides of</caseText>
 				<caseText value="both">on both sides of</caseText>
+				<caseText value="unknown">_______</caseText>
 			</case>
 			<content> the adjective.  </content>
 			<text show="swAdjPMannerEitherUnrestricted">

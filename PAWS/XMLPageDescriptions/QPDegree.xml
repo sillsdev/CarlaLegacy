@@ -7,13 +7,14 @@
 	<introduction>Other quantifiers, like <example>many</example>, <example>much</example>, and <example>few</example>, come
 in a different position in the nominal phrase.  In English,
 this is after an article, demonstrative or possessor and
-before an adjective and noun (as in the examples above).
-Further, these quantifiers can be modified by degree words
+before an adjective and noun, as in <example>a few sad children</example> or <example>Sue's many black dogs</example>.  Further, these quantifiers can be modified by degree words
 such as <example>very</example> and <example>so</example>, as in <example>very many dogs</example> or <example>so much
 waste</example>.</introduction>
 	<form section="qp">
 		<prompt>Key examples of this type of quantifier in your language here:</prompt>
-		<textBox id="QPQuantifierExample" dataItem="quantifierExample"/><br/> <br/>
+		<textBox id="QPQuantifierExample" dataItem="quantifierExample"/>
+		<br/>
+		<br/>
 		<radioGroup>
 			<groupName dataItem="degree" default="yes">RDegreeYesNo</groupName>
 			<prompt>Does your language have degree words which can modify this type of quantifier?</prompt>
@@ -42,7 +43,7 @@ waste</example>.</introduction>
 		<instruction>In the lexicon, mark this type of quantifier
 with the feature <feature>Q</feature>.  This will change
 their category to <category>Q</category> for the syntax.  If a particular quantifier can
-only go with plural nouns, add the feature <feature>plural</feature> to that entry.  <br/>
+only go with plural nouns or if it marks plural itself (such as <example>many</example>), add the feature <feature>plural</feature> to that entry.  <br/>
 			<span id="QPDegreeYesInstruction" show="swQPDegreeYes">
 				<br/>Also, mark any words
 which can modify them with the features <feature>Deg
@@ -55,11 +56,11 @@ feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any degr
 either side.</span>
 			<br/>
 			<span id="QPDegreeNoteInstruction" show="swQPDegreeYes">
-				<br/>Note that these degree words will most likely not be the
-same as the ones which can modify an NP above. </span>
+				<br/>Note that these degree words should not be the
+same as the ones which can modify an entire nominal phrase dealt with in the first section above. </span>
 		</instruction>
 		<buttons>
-			<button id="QPDegreeBack" value="Back" goto="QPMain.htm"/>
+			<button id="QPDegreeBack" value="Back" goto="QPDeterminers.htm"/>
 			<button id="QPDegreeNext" value="Next" goto="QPCardinal.htm"/>
 		</buttons>
 	</form>

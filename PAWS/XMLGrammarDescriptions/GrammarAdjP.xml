@@ -2,16 +2,24 @@
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
 <rule>
+rule {AdjP option conj - conjoined AdjPs}
+AdjP = (InitConj) AdjP_1 Conj AdjP_2
+	&lt;AdjP head&gt; = &lt;AdjP_1 head&gt;
+	&lt;AdjP conjoined&gt; = +
+	&lt;AdjP_1 conjoined&gt; = -	|limit recursion
+	&lt;AdjP head type clausal-comp&gt; = -
+	&lt;AdjP option&gt; = conj
+</rule>
+<rule>
 rule {AdjP option 0 - no modifiers}
-AdjP = Adj
-	&lt;AdjP head&gt; = &lt;Adj head&gt;
+AdjP = Adj'
+	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;AdjP option&gt; = 0
 </rule>
 <rule show="AdjPoption1d">
-
 rule {AdjP option 1d - degree modifiers initial}
-AdjP = Deg Adj
-	&lt;AdjP head&gt; = &lt;Adj head&gt;
+AdjP = Deg Adj'
+	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg head type modifies_Adj&gt; = +
 	&lt;Deg head type AdjP-initial&gt;   = +
 	&lt;AdjP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
@@ -30,8 +38,8 @@ AdjP = Deg Adj
 
 <rule show="AdjPoption1m">
 rule {AdjP option 1m - degree or AdvP modifiers initial}
-AdjP = {Deg / AdvP} Adj
-	&lt;AdjP head&gt; = &lt;Adj head&gt;
+AdjP = {Deg / AdvP} Adj'
+	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg head type modifies_Adj&gt; = +
 	&lt;AdvP head type manner&gt;      = +
 	&lt;Deg head type AdjP-initial&gt;   = +
@@ -53,8 +61,8 @@ AdjP = {Deg / AdvP} Adj
 
 <rule show="AdjPoption2d">
 rule {AdjP option 2d - degree modifiers final}
-AdjP = Adj Deg
-	&lt;AdjP head&gt; = &lt;Adj head&gt;
+AdjP = Adj' Deg
+	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg head type modifies_Adj&gt; = +
 	&lt;Deg head type AdjP-final&gt;   = +
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
@@ -73,8 +81,8 @@ AdjP = Adj Deg
 
 <rule show="AdjPoption2m">
 rule {AdjP option 2m - degree or AdvP modifiers final}
-AdjP = Adj {Deg / AdvP}
-	&lt;AdjP head&gt; = &lt;Adj head&gt;
+AdjP = Adj' {Deg / AdvP}
+	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg head type modifies_Adj&gt; = +
 	&lt;AdvP head type manner&gt;      = +
 	&lt;Deg head type AdjP-final&gt;   = +
@@ -96,8 +104,8 @@ AdjP = Adj {Deg / AdvP}
 
 <rule show="AdjPoption3d">
 rule {AdjP option 3d - degree modifiers both sides}
-AdjP = Deg_1 Adj Deg_2
-	&lt;AdjP head&gt; = &lt;Adj head&gt;
+AdjP = Deg_1 Adj' Deg_2
+	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg_1 head type modifies_Adj&gt; = +
 	&lt;Deg_2 head type modifies_Adj&gt; = +
 	&lt;Deg_1 head type AdjP-initial&gt; = +
@@ -119,8 +127,8 @@ AdjP = Deg_1 Adj Deg_2
 
 <rule show="AdjPoption3m">
 rule {AdjP option 3m - degree or AdvP modifiers both sides}
-AdjP = {Deg_1 / AdvP_1} Adj {Deg_2 / AdvP_2}
-	&lt;AdjP head&gt; = &lt;Adj head&gt;
+AdjP = {Deg_1 / AdvP_1} Adj' {Deg_2 / AdvP_2}
+	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;AdvP_1 head type manner&gt;      = +
 	&lt;AdvP_2 head type manner&gt;      = +
 	&lt;Deg_1 head type modifies_Adj&gt; = +
@@ -143,4 +151,61 @@ AdjP = {Deg_1 / AdvP_1} Adj {Deg_2 / AdvP_2}
 <or/><whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
 <and/> <whenValue element="adjp" attr="mannerPos" value="beforeOrBoth"></whenValue>
 </showWhen>
+
+<!-- |***********Adj'*********************************-->
+<rule>
+rule {Adj' option 0 - no complements}
+Adj' = Adj
+	&lt;Adj' head&gt; = &lt;Adj head&gt;
+	&lt;Adj' head type clausal-comp&gt; = -
+	&lt;Adj' option&gt; = 0
+</rule>
+
+<!-- |***********sentential complements for Adj*********************************-->
+	<rule>
+rule {Adj' option 1a - Adj initial, sentential complement}
+Adj' = Adj {CP / IP}
+	&lt;Adj' head&gt; = &lt;Adj head&gt;
+	&lt;Adj embedded&gt; = &lt;CP&gt;
+	&lt;Adj embedded&gt; = &lt;IP&gt;
+	&lt;CP head type root&gt; = -
+	&lt;CP head type relative&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
+	&lt;IP head type root&gt; = -
+	&lt;IP head type question&gt; = -
+	&lt;Adj head type sentential&gt; = +
+	&lt;Adj' head type clausal-comp&gt; = +
+	&lt;Adj' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+	&lt;Adj' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
+	&lt;Adj' option&gt; = 1a
+</rule>
+	<rule show="AdjBaroption1b">
+rule {Adj' option 1b - Adj final, sentential complement}
+Adj' = {CP / IP} Adj
+	&lt;Adj' head&gt; = &lt;Adj head&gt;
+	&lt;Adj embedded&gt; = &lt;CP&gt;
+	&lt;Adj embedded&gt; = &lt;IP&gt;
+	&lt;CP head type root&gt; = -
+	&lt;CP head type relative&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head type comp&gt; = -
+	&lt;IP head type prefix comp&gt; = - | uses CP
+	&lt;IP head type suffix comp&gt; = -
+	&lt;IP head type root&gt; = -
+	&lt;IP head type question&gt; = -
+	&lt;Adj head type sentential&gt; = +
+	&lt;Adj' head type clausal-comp&gt; = +
+	&lt;Adj' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+	&lt;Adj' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
+	&lt;Adj' option&gt; = 1b
+</rule>
+	<showWhen id="AdjBaroption1b">
+		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+	</showWhen>
+
 </masterGrammar>

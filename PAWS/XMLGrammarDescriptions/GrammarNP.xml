@@ -7,8 +7,8 @@ rule {NP option 0 - not possessed}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = -
-		&lt;NP head possessor agr&gt; = none
+	&lt;NP head type possessed&gt; = -
+	&lt;NP head possessor head agr&gt; = none
 	&lt;NP option&gt; = 0
 </rule>
 	<showWhen id="NPoption0">
@@ -19,9 +19,9 @@ rule {NP option 0Asuf - not possessed, absolutive_suffix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = -
-		&lt;NP head possessor agr&gt; = none
-		&lt;NP head type suffix absolutive&gt; = -   | if +, possessor required
+	&lt;NP head type possessed&gt; = -
+	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head type suffix absolutive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Asuf
 </rule>
 	<showWhen id="NPoption0Asuf">
@@ -36,9 +36,9 @@ rule {NP option 0Apre - not possessed, absolutive_prefix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = -
-		&lt;NP head possessor agr&gt; = none
-		&lt;NP head type prefix absolutive&gt; = -   | if +, possessor required
+	&lt;NP head type possessed&gt; = -
+	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head type prefix absolutive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Apre
 </rule>
 	<showWhen id="NPoption0Apre">
@@ -53,9 +53,9 @@ rule {NP option 0Esuf - not possessed, ergative_suffix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = -
-		&lt;NP head possessor agr&gt; = none
-		&lt;NP head type suffix ergative&gt; = -   | if +, possessor required
+	&lt;NP head type possessed&gt; = -
+	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head type suffix ergative&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Esuf
 </rule>
 	<showWhen id="NPoption0Esuf">
@@ -70,9 +70,9 @@ rule {NP option 0Epre - not possessed, ergative_prefix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = -
-		&lt;NP head possessor agr&gt; = none
-		&lt;NP head type prefix ergative&gt; = -   | if +, possessor required
+	&lt;NP head type possessed&gt; = -
+	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head type prefix ergative&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Epre
 </rule>
 	<showWhen id="NPoption0Epre">
@@ -87,9 +87,9 @@ rule {NP option 0Gsuf - not possessed, genitive_suffix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = -
-		&lt;NP head possessor agr&gt; = none
-		&lt;NP head type suffix genitive&gt; = -   | if +, possessor required
+	&lt;NP head type possessed&gt; = -
+	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head type suffix genitive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Gsuf
 </rule>
 	<showWhen id="NPoption0Gsuf">
@@ -110,9 +110,9 @@ rule {NP option 0Gpre - not possessed, genitive_prefix}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = -
-		&lt;NP head possessor agr&gt; = none
-		&lt;NP head type prefix genitive&gt; = -   | if +, possessor required
+	&lt;NP head type possessed&gt; = -
+	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head type prefix genitive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Gpre
 </rule>
 	<showWhen id="NPoption0Gpre">
@@ -133,9 +133,9 @@ rule {NP option 0p - possessed with person affix, pro-drop}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-		&lt;NP head possessor&gt; == ~[agr:none]
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;NP head possessor&gt; == ~[agr:none]
 	&lt;NP option&gt; = 0p
 </rule>
 	<showWhen id="NPoption0p">
@@ -146,15 +146,13 @@ rule {NP option 1a - no marker, possessor initial}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1a
 </rule>
@@ -164,7 +162,7 @@ NP = {DP / Pron} {N'' / N'}
 		<whenValue element="np" attr="possNounPos" value="before"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before"/>
@@ -200,15 +198,13 @@ rule {NP option 1aErg - no marker, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1aErg
 </rule>
@@ -230,15 +226,13 @@ rule {NP option 1aAbs - no marker, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1aAbs
 </rule>
@@ -260,15 +254,13 @@ rule {NP option 1b - no marker, possessor final}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1b
 </rule>
@@ -278,7 +270,7 @@ NP = {N'' / N'} {DP / Pron}
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
@@ -314,15 +306,13 @@ rule {NP option 1bErg - no marker, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1bErg
 </rule>
@@ -344,15 +334,13 @@ rule {NP option 1bAbs - no marker, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1bAbs
 </rule>
@@ -374,16 +362,14 @@ rule {NP option 2a - optional marker before, possessor initial}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2a
 </rule>
@@ -411,7 +397,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
- <or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -435,7 +421,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="none"/>
-	   <or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -465,16 +451,14 @@ rule {NP option 2aErg - optional marker before, possessor initial, ergative}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2aErg
 </rule>
@@ -508,16 +492,14 @@ rule {NP option 2aAbs - optional marker before, possessor initial, absolutive}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2aAbs
 </rule>
@@ -551,16 +533,14 @@ rule {NP option 2b - optional marker before, possessor final}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2b
 </rule>
@@ -588,7 +568,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -642,16 +622,14 @@ rule {NP option 2bErg - optional marker before, possessor final, ergative}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2bErg
 </rule>
@@ -685,16 +663,14 @@ rule {NP option 2bAbs - optional marker before, possessor final, absolutive}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2bAbs
 </rule>
@@ -728,16 +704,14 @@ rule {NP option 3a - optional marker after, possessor initial}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3a
 </rule>
@@ -765,7 +739,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -819,16 +793,14 @@ rule {NP option 3aErg - optional marker after, possessor initial, ergative}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3aErg
 </rule>
@@ -862,16 +834,14 @@ rule {NP option 3aAbs - optional marker after, possessor initial, absolutive}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3aAbs
 </rule>
@@ -905,16 +875,14 @@ rule {NP option 3b - optional marker after, possessor final}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3b
 </rule>
@@ -942,7 +910,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -996,16 +964,14 @@ rule {NP option 3bErg - optional marker after, possessor final, ergative}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3bErg
 </rule>
@@ -1039,16 +1005,14 @@ rule {NP option 3bAbs - optional marker after, possessor final, absolutive}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3bAbs
 </rule>
@@ -1082,15 +1046,13 @@ rule {NP option 4a - required marker before, possessor initial}
 NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4a
 </rule>
@@ -1118,7 +1080,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -1172,15 +1134,13 @@ rule {NP option 4aErg - required marker before, possessor initial, ergative}
 NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4aErg
 </rule>
@@ -1214,15 +1174,13 @@ rule {NP option 4aAbs - required marker before, possessor initial, absolutive}
 NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4aAbs
 </rule>
@@ -1256,15 +1214,13 @@ rule {NP option 4b - required marker before, possessor final}
 NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4b
 </rule>
@@ -1292,7 +1248,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -1346,15 +1302,13 @@ rule {NP option 4bErg - required marker before, possessor final, ergative}
 NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4bErg
 </rule>
@@ -1388,15 +1342,13 @@ rule {NP option 4bAbs - required marker before, possessor final, absolutive}
 NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4bAbs
 </rule>
@@ -1430,15 +1382,13 @@ rule {NP option 5a - required marker after, possessor initial}
 NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5a
 </rule>
@@ -1466,7 +1416,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -1520,15 +1470,13 @@ rule {NP option 5aErg - required marker after, possessor initial, ergative}
 NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5aErg
 </rule>
@@ -1562,15 +1510,13 @@ rule {NP option 5aAbs - required marker after, possessor initial, absolutive}
 NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5aAbs
 </rule>
@@ -1604,15 +1550,13 @@ rule {NP option 5b - required marker after, possessor final}
 NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5b
 </rule>
@@ -1640,7 +1584,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="yes"/>
@@ -1694,15 +1638,13 @@ rule {NP option 5bErg - required marker after, possessor final, ergative}
 NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5bErg
 </rule>
@@ -1736,15 +1678,13 @@ rule {NP option 5bAbs - required marker after, possessor final, absolutive}
 NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP head agr case&gt; = &lt;Poss head agr case&gt;
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5bAbs
 </rule>
@@ -1778,16 +1718,14 @@ rule {NP option 6ap - poss_prefix, possessor initial}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type prefix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type prefix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6ap
 </rule>
@@ -1811,7 +1749,7 @@ NP = {DP / Pron} {N'' / N'}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="no"/>
@@ -1857,16 +1795,14 @@ rule {NP option 6apErg - poss_prefix, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type prefix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type prefix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6apErg
 </rule>
@@ -1896,16 +1832,14 @@ rule {NP option 6apAbs - poss_prefix, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type prefix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type prefix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6apAbs
 </rule>
@@ -1935,16 +1869,14 @@ rule {NP option 6as - poss_suffix, possessor initial}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type suffix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type suffix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6as
 </rule>
@@ -1968,7 +1900,7 @@ NP = {DP / Pron} {N'' / N'}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="no"/>
@@ -2014,16 +1946,14 @@ rule {NP option 6asErg - poss_suffix, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type suffix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type suffix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6asErg
 </rule>
@@ -2053,16 +1983,14 @@ rule {NP option 6asAbs - poss_suffix, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type suffix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type suffix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6asAbs
 </rule>
@@ -2092,16 +2020,14 @@ rule {NP option 6bp - poss_prefix, possessor final}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type prefix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type prefix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bp
 </rule>
@@ -2125,7 +2051,7 @@ NP = {N'' / N'} {DP / Pron}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="no"/>
@@ -2171,16 +2097,14 @@ rule {NP option 6bpErg - poss_prefix, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type prefix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type prefix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bpErg
 </rule>
@@ -2210,16 +2134,14 @@ rule {NP option 6bpAbs - poss_prefix, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type prefix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type prefix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bpAbs
 </rule>
@@ -2249,16 +2171,14 @@ rule {NP option 6bs - poss_suffix, possessor final}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;DP   head agr case&gt; = genitive
-	&lt;Pron head agr case&gt; = genitive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP   head case&gt; = genitive
+	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type suffix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type suffix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bs
 </rule>
@@ -2282,7 +2202,7 @@ NP = {N'' / N'} {DP / Pron}
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-<or/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCliticWord" value="no"/>
@@ -2328,16 +2248,14 @@ rule {NP option 6bsErg - poss_suffix, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
-	&lt;DP   head agr case&gt; = ergative
-	&lt;Pron head agr case&gt; = ergative
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
+	&lt;DP   head case&gt; = ergative
+	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type suffix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type suffix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bsErg
 </rule>
@@ -2367,16 +2285,14 @@ rule {NP option 6bsAbs - poss_suffix, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
-		&lt;NP head type possessed&gt; = +
-		&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
-	&lt;DP   head agr case&gt; = absolutive
-	&lt;Pron head agr case&gt; = absolutive
+	&lt;NP head possessor&gt; = &lt;DP&gt;
+	&lt;NP head possessor&gt; = &lt;Pron&gt;
+	&lt;NP head type possessed&gt; = +
+	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP   head case&gt; = absolutive
+	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
-	&lt;DP head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;DP head agr&gt; = &lt;N' head possessor agr&gt;
-		&lt;DP head type suffix poss&gt; = +
-	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
-	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
+	&lt;DP head type suffix poss&gt; = +
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bsAbs
 </rule>
@@ -2406,9 +2322,9 @@ NP = {N'' / N'} {DP / Pron}
 rule {NP option 7a - pronoun,dem,quantifiers w/ optional partitive PP after}
 NP = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;NP head&gt; = &lt;Pron head&gt;
-		&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
-		&lt;Pron head type reflexive&gt; = -
-		&lt;Pron head type reciprocal&gt; = -
+	&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
+	&lt;Pron head type reflexive&gt; = -
+	&lt;Pron head type reciprocal&gt; = -
 	&lt;NP head&gt; = &lt;Dem head&gt;
 	&lt;NP head&gt; = &lt;Q head&gt;
 	&lt;NP head&gt; = &lt;Num head&gt;
@@ -2418,23 +2334,23 @@ NP = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;PP head type stranded&gt; = -	| PP must have overt complement
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 |	&lt;PP head type partitive&gt; = +
-		&lt;NP head type prefix poss&gt; = -  |can't be possessors
-		&lt;NP head type suffix poss&gt; = -  |can't be possessors
+	&lt;NP head type prefix poss&gt; = -  |can't be possessors
+	&lt;NP head type suffix poss&gt; = -  |can't be possessors
 	&lt;Pron head&gt; == ~[case:genitive]
 	&lt;NP option&gt; = 7a
 </rule>
 	<showWhen id="NPoption7a">
 		<whenValue element="pron" attr="pronounCat" value="NP"/>
 		<and/>
-		<whenValue element="pron" attr="partitive" value="after"/>
+		<whenValue element="pron" attr="partitivePos" value="after"/>
 	</showWhen>
 	<rule show="NPoption7b">
 rule {NP option 7b - pronoun,dem,quantifiers w/ optional partitive PP before}
 NP = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;NP head&gt; = &lt;Pron head&gt;
-		&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
-		&lt;Pron head type reflexive&gt; = -
-		&lt;Pron head type reciprocal&gt; = -
+	&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
+	&lt;Pron head type reflexive&gt; = -
+	&lt;Pron head type reciprocal&gt; = -
 	&lt;NP head&gt; = &lt;Dem head&gt;
 	&lt;NP head&gt; = &lt;Q head&gt;
 	&lt;NP head&gt; = &lt;Num head&gt;
@@ -2444,15 +2360,15 @@ NP = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;PP head type stranded&gt; = -	| PP must have overt complement
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 |	&lt;PP head type partitive&gt; = +
-		&lt;NP head type prefix poss&gt; = -  |can't be possessors
-		&lt;NP head type suffix poss&gt; = -  |can't be possessors
+	&lt;NP head type prefix poss&gt; = -  |can't be possessors
+	&lt;NP head type suffix poss&gt; = -  |can't be possessors
 	&lt;Pron head&gt; == ~[case:genitive]
 	&lt;NP option&gt; = 7b
 </rule>
 	<showWhen id="NPoption7b">
 		<whenValue element="pron" attr="pronounCat" value="NP"/>
 		<and/>
-		<whenValue element="pron" attr="partitive" value="before"/>
+		<whenValue element="pron" attr="partitivePos" value="before"/>
 	</showWhen>
 	<!-- ***************************************************************************-->
 	<rule show="NBarBaroption1">
@@ -2461,7 +2377,7 @@ N'' = QP N'
 	&lt;N'' head&gt; = &lt;N' head&gt;
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP head type DP-initial&gt; = +
-		&lt;N'' head type prefix&gt; &lt;= &lt;QP head type prefix&gt;
+	&lt;N'' head type prefix&gt; &lt;= &lt;QP head type prefix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;N'' option&gt; = 1
 </rule>
@@ -2480,7 +2396,7 @@ N'' = N' QP
 	&lt;N'' head&gt; = &lt;N' head&gt;
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP head type DP-final&gt; = +
-		&lt;N'' head type suffix&gt; &lt;= &lt;QP head type suffix&gt;
+	&lt;N'' head type suffix&gt; &lt;= &lt;QP head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;N'' option&gt; = 2
 </rule>
@@ -2501,8 +2417,8 @@ N'' = QP_1 N' QP_2
 	&lt;QP_2 head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP_1 head type DP-initial&gt; = +
 	&lt;QP_2 head type DP-final&gt;   = +
-		&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
-		&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
+	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
+	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_1 head type wh&gt;
 	&lt;N'' option&gt; = 3whI
 </rule>
@@ -2531,8 +2447,8 @@ N'' = QP_1 N' QP_2
 	&lt;QP_2 head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP_1 head type DP-initial&gt; = +
 	&lt;QP_2 head type DP-final&gt;   = +
-		&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
-		&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
+	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
+	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_2 head type wh&gt;
 	&lt;N'' option&gt; = 3whF
 </rule>
@@ -2563,8 +2479,8 @@ N'' = QP_1 N' QP_2
 	&lt;QP_2 head type DP-final&gt;   = +
 	&lt;QP_1 head type wh&gt; = &lt;QP_2 head type wh&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_1 head type wh&gt;
-		&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
-		&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
+	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
+	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
 	&lt;N'' option&gt; = 3whagr
 </rule>
 	<showWhen id="NBarBaroption3whagr">
@@ -2590,8 +2506,9 @@ N'_1 = AdjP N'_2
 	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
 	&lt;AdjP head agr&gt; = &lt;N'_2 head agr&gt;
 	&lt;AdjP head type DP-initial&gt; = +
-		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
-		&lt;AdjP head type suffix copular&gt; = -
+	&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;AdjP head type suffix copular&gt; = -
+	&lt;AdjP head type clausal-comp&gt; = -
 	&lt;N'_1 head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt; | N case marking can be overridden by AdjP, if AdjP also marked then another modifier required.
 	&lt;N' option&gt; = 1a
 </rule>
@@ -2606,8 +2523,9 @@ N'_1 = N'_2 AdjP
 	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
 	&lt;AdjP head agr&gt; = &lt;N'_2 head agr&gt;
 	&lt;AdjP head type DP-final&gt; = +
-		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
-		&lt;AdjP head type suffix copular&gt; = -
+	&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;AdjP head type suffix copular&gt; = -
+	&lt;AdjP head type clausal-comp&gt; = -
 	&lt;N'_1 head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt; | N case marking can be overridden by AdjP, if AdjP also marked then another modifier required.
 	&lt;N' option&gt; = 1b
 </rule>
@@ -2639,7 +2557,7 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:genitive]
+	&lt;PP head&gt; == ~[case:genitive]
 		&lt;N' option&gt; = 2b
 </rule>
 	<showWhen id="NBaroption2b">
@@ -2698,8 +2616,8 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = genitive
+	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
@@ -2764,7 +2682,7 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:ergative]
+	&lt;PP head&gt; == ~[case:ergative]
 		&lt;N' option&gt; = 2bnoterg
 </rule>
 	<showWhen id="NBaroption2bnoterg">
@@ -2791,8 +2709,8 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = ergative
+	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
@@ -2825,7 +2743,7 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;PP head&gt; == ~[case:absolutive]
 		&lt;N' option&gt; = 2bnotabs
 </rule>
 	<showWhen id="NBaroption2bnotabs">
@@ -2852,8 +2770,8 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = absolutive
+	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
@@ -2886,7 +2804,7 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
-		&lt;PP head&gt; == ~[case:genitive]
+	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 2c
 </rule>
 	<showWhen id="NBaroption2c">
@@ -3030,7 +2948,7 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-		&lt;PP head&gt; == ~[case:genitive]
+	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 2cs
 </rule>
 	<showWhen id="NBaroption2cs">
@@ -3113,8 +3031,8 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = genitive
+	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
@@ -3260,8 +3178,8 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = genitive
+	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cgens
 </rule>
@@ -3324,7 +3242,7 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
-		&lt;PP head&gt; == ~[case:ergative]
+	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 2cnoterg
 </rule>
 	<showWhen id="NBaroption2cnoterg">
@@ -3380,7 +3298,7 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-		&lt;PP head&gt; == ~[case:ergative]
+	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 2cnotergs
 </rule>
 	<showWhen id="NBaroption2cnotergs">
@@ -3415,8 +3333,8 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = ergative
+	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
@@ -3474,8 +3392,8 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = ergative
+	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cergs
 </rule>
@@ -3514,7 +3432,7 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
-		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 2cnotabs
 </rule>
 	<showWhen id="NBaroption2cnotabs">
@@ -3570,7 +3488,7 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 2cnotabss
 </rule>
 	<showWhen id="NBaroption2cnotabss">
@@ -3605,8 +3523,8 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = absolutive
+	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
@@ -3664,8 +3582,8 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = absolutive
+	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cabss
 </rule>
@@ -3717,7 +3635,7 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;PP head&gt; == ~[case:genitive]
+	&lt;PP head&gt; == ~[case:genitive]
 		&lt;N' option&gt; = 3b
 </rule>
 	<showWhen id="NBaroption3b">
@@ -3861,7 +3779,7 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:genitive]
+	&lt;PP head&gt; == ~[case:genitive]
 		&lt;N' option&gt; = 3bp
 </rule>
 	<showWhen id="NBaroption3bp">
@@ -3944,8 +3862,8 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = genitive
+	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
@@ -4047,8 +3965,8 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = genitive
+	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 3bgenp
 </rule>
@@ -4111,7 +4029,7 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;PP head&gt; == ~[case:ergative]
+	&lt;PP head&gt; == ~[case:ergative]
 		&lt;N' option&gt; = 3bnoterg
 </rule>
 	<showWhen id="NBaroption3bnoterg">
@@ -4167,7 +4085,7 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:ergative]
+	&lt;PP head&gt; == ~[case:ergative]
 		&lt;N' option&gt; = 3bnotergp
 </rule>
 	<showWhen id="NBaroption3bnotergp">
@@ -4202,8 +4120,8 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = ergative
+	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
@@ -4261,8 +4179,8 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = ergative
+	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 3bergp
 </rule>
@@ -4301,7 +4219,7 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;PP head&gt; == ~[case:absolutive]
 		&lt;N' option&gt; = 3bnotabs
 </rule>
 	<showWhen id="NBaroption3bnotabs">
@@ -4357,7 +4275,7 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;PP head&gt; == ~[case:absolutive]
 		&lt;N' option&gt; = 3bnotabsp
 </rule>
 	<showWhen id="NBaroption3bnotabsp">
@@ -4392,8 +4310,8 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = absolutive
+	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
@@ -4451,8 +4369,8 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = absolutive
+	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 3babsp
 </rule>
@@ -4491,7 +4409,7 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-		&lt;PP head&gt; == ~[case:genitive]
+	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 3c
 </rule>
 	<showWhen id="NBaroption3c">
@@ -4550,8 +4468,8 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = genitive
+	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
@@ -4600,7 +4518,7 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-		&lt;PP head&gt; == ~[case:ergative]
+	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 3cnoterg
 </rule>
 	<showWhen id="NBaroption3cnoterg">
@@ -4627,8 +4545,8 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = ergative
+	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
@@ -4661,7 +4579,7 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 3cnotabs
 </rule>
 	<showWhen id="NBaroption3cnotabs">
@@ -4688,8 +4606,8 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = absolutive
+	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
@@ -4730,7 +4648,7 @@ N' = PP N
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:genitive]
+	&lt;PP head&gt; == ~[case:genitive]
 		&lt;N' option&gt; = 4b
 </rule>
 	<showWhen id="NBaroption4b">
@@ -4777,8 +4695,8 @@ N' = PP N
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = genitive
+	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 4bgen
 </rule>
@@ -4815,7 +4733,7 @@ N' = PP N
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:ergative]
+	&lt;PP head&gt; == ~[case:ergative]
 		&lt;N' option&gt; = 4bnoterg
 </rule>
 	<showWhen id="NBaroption4bnoterg">
@@ -4838,8 +4756,8 @@ N' = PP N
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = ergative
+	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 4berg
 </rule>
@@ -4864,7 +4782,7 @@ N' = PP N
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;PP head&gt; == ~[case:absolutive]
 		&lt;N' option&gt; = 4bnotabs
 </rule>
 	<showWhen id="NBaroption4bnotabs">
@@ -4887,8 +4805,8 @@ N' = PP N
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = absolutive
+	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 4babs
 </rule>
@@ -4913,7 +4831,7 @@ N' = N PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix poss&gt; &lt;= &lt;PP head type suffix poss&gt;
-		&lt;PP head&gt; == ~[case:genitive]
+	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 4e
 </rule>
 	<showWhen id="NBaroption4e">
@@ -4960,8 +4878,8 @@ N' = N PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = genitive
+	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4egen
 </rule>
@@ -4998,7 +4916,7 @@ N' = N PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-		&lt;PP head&gt; == ~[case:ergative]
+	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 4enoterg
 </rule>
 	<showWhen id="NBaroption4enoterg">
@@ -5021,8 +4939,8 @@ N' = N PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = ergative
+	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4eerg
 </rule>
@@ -5047,7 +4965,7 @@ N' = N PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 4enotabs
 </rule>
 	<showWhen id="NBaroption4enotabs">
@@ -5070,8 +4988,8 @@ N' = N PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head case&gt; = absolutive
+	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4eabs
 </rule>
@@ -5092,9 +5010,9 @@ N' = N PP
 rule {NBar option 5a - pronoun,dem,quantifiers w/o head noun (optional PP after)}
 N' = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;N' head&gt; = &lt;Pron head&gt;
-		&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
-		&lt;Pron head type reflexive&gt; = -
-		&lt;Pron head type reciprocal&gt; = -
+	&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
+	&lt;Pron head type reflexive&gt; = -
+	&lt;Pron head type reciprocal&gt; = -
 	&lt;N' head&gt; = &lt;Dem head&gt;
 	&lt;N' head&gt; = &lt;Q head&gt;
 	&lt;N' head&gt; = &lt;Num head&gt;
@@ -5104,8 +5022,8 @@ N' = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;PP head type stranded&gt; = -	| PP must have overt complement
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 |	&lt;PP head type partitive&gt; = +
-		&lt;N' head type prefix poss&gt; = -  |can't be possessors
-		&lt;N' head type suffix poss&gt; = -  |can't be possessors
+	&lt;N' head type prefix poss&gt; = -  |can't be possessors
+	&lt;N' head type suffix poss&gt; = -  |can't be possessors
 	&lt;Pron head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 5a
 </rule>
@@ -5118,9 +5036,9 @@ N' = {Pron / Dem / Q / Num / Deg} (PP)
 rule {NBar option 5b - pronoun,dem,quantifiers w/o head noun (optional PP before)}
 N' = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;N' head&gt; = &lt;Pron head&gt;
-		&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
-		&lt;Pron head type reflexive&gt; = -
-		&lt;Pron head type reciprocal&gt; = -
+	&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
+	&lt;Pron head type reflexive&gt; = -
+	&lt;Pron head type reciprocal&gt; = -
 	&lt;N' head&gt; = &lt;Dem head&gt;
 	&lt;N' head&gt; = &lt;Q head&gt;
 	&lt;N' head&gt; = &lt;Num head&gt;
@@ -5130,8 +5048,8 @@ N' = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;PP head type stranded&gt; = -	| PP must have overt complement
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 |	&lt;PP head type partitive&gt; = +
-		&lt;N' head type prefix poss&gt; = -  |can't be possessors
-		&lt;N' head type suffix poss&gt; = -  |can't be possessors
+	&lt;N' head type prefix poss&gt; = -  |can't be possessors
+	&lt;N' head type suffix poss&gt; = -  |can't be possessors
 	&lt;Pron head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 5b
 </rule>

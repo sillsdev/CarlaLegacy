@@ -3,15 +3,15 @@
 <masterGrammar>
 	<generalizedTemplates>
 		<content>
-Let absolutive		be	&lt;head agr case&gt; = absolutive
+Let absolutive		be	&lt;head case&gt; = absolutive
 Let absolutive_prefix   be      &lt;head type prefix absolutive&gt;   = +
 								[absolutive]
 Let absolutive_suffix   be      &lt;head type suffix absolutive&gt;   = +
 								[absolutive]
 Let -absolutive		be	[]
-Let accusative		be	&lt;head agr case&gt; = accusative
+Let accusative		be	&lt;head case&gt; = accusative
 Let -accusative		be	[]
-Let accusative.or.genitive be   &lt;head agr case&gt; = {accusative genitive}
+Let accusative.or.genitive be   &lt;head case&gt; = {accusative genitive}
 Let AdjP-final		be	&lt;head type AdjP-final&gt;		= +
 				&lt;head type AdjP-initial&gt;	= -
 Let AdjP-initial	be	&lt;head type AdjP-initial&gt;	= +
@@ -329,7 +329,7 @@ Let -CP-final           be      &lt;head type CP-final&gt;            = -
 Let CP-initial          be      &lt;head type CP-initial&gt;          = +
 Let -CP-initial         be      &lt;head type CP-initial&gt;          = -
 Let CP-specifier-initial be	&lt;head type CP-specifier-initial&gt; = +
-Let dative              be      &lt;head agr case&gt; = dative
+Let dative              be      &lt;head case&gt; = dative
 Let declarative		be	&lt;head infl mood declarative&gt;    = +
 Let ditransitive	be	&lt;head type ditransitive&gt;	= +
 								&lt;head type transitive&gt;          = +
@@ -361,13 +361,15 @@ Let embedded_pro-drop   be      &lt;embedded head subject head type pro-drop&gt;
 Let embedded_question   be      &lt;embedded head type question&gt;        = +
 Let embedded_question_allowed be &lt;embedded head type question&gt;       = {+/-}
 Let embedded_subjunctive be     &lt;embedded head infl mood realis&gt;     = -
-Let ergative		be	&lt;head agr case&gt; = ergative
+Let ergative		be	&lt;head case&gt; = ergative
 Let ergative_prefix     be      &lt;head type prefix ergative&gt;     = +
 								[ergative]
 Let ergative_suffix     be      &lt;head type suffix ergative&gt;     = +
 								[ergative]
 Let -ergative		be	[]
 Let exclusive		be	&lt;head agr person&gt; = first_exclusive
+Let excl-initial		be	&lt;head type excl-initial&gt; = +
+Let excl-final		be	&lt;head type excl-final&gt; = +
 Let feminine		be	&lt;head agr gender&gt; = feminine
 Let feminine_absolutive	be	{ [head:[object:[head:[agr:[gender:feminine]]]
 															type:[transitive:+]]]
@@ -406,8 +408,11 @@ Let first_ergative	be	&lt;head subject head agr person&gt; = first
 											&lt;head type transitive&gt; = +
 Let first_object	be	&lt;head object head agr person&gt; = first
 Let first_subject	be	&lt;head subject head agr person&gt; = first
+Let focus		be	&lt;head type focus&gt; = +
+Let focus-initial		be	&lt;head type focus-initial&gt; = +
+Let focus-final		be	&lt;head type focus-final&gt; = +
 Let future		be	&lt;head infl tense&gt; = future
-Let genitive		be	&lt;head agr case&gt; = genitive
+Let genitive		be	&lt;head case&gt; = genitive
 Let genitive_prefix     be      &lt;head type prefix genitive&gt;     = +
 								[genitive]
 Let genitive_suffix     be      &lt;head type suffix genitive&gt;     = +
@@ -439,7 +444,7 @@ Let incompletive	be	&lt;head infl aspect incompletive&gt; = +
 Let indefinite          be      &lt;head type indefinite&gt;          = +
 								&lt;head type relative&gt;            = -
 Let infinitive          be      &lt;head infl finite&gt;              = -
-Let instrumental        be      &lt;head agr case&gt; = instrumental
+Let instrumental        be      &lt;head case&gt; = instrumental
 Let interrogative	be	&lt;head infl mood interrogative&gt;  = +
 				&lt;head type question&gt; 		= +
 Let -interrogative  	be	&lt;head type question&gt;		= -
@@ -475,7 +480,17 @@ Let modifies_Q 		be	&lt;head type modifies_Q&gt;		= +
 Let modifies_reason	be	&lt;head type modifies_Adv reason&gt;	= +
 Let modifies_temporal	be	&lt;head type modifies_Adv temporal&gt; = +
 Let motion		be	&lt;head type motion&gt;		= +
-Let negative		be	&lt;head infl polarity&gt;            = -
+Let negative		be	&lt;head type negative&gt;            = +
+Let negative_prefix   be      &lt;head type prefix negative&gt;   = +
+								[negative]
+Let negative_suffix   be      &lt;head type suffix negative&gt;   = +
+								[negative]
+Let negative-polarity		be	&lt;head type negative-polarity&gt;            = +
+								[negative]
+Let negative-polarity_prefix   be      &lt;head type prefix negative-polarity&gt;   = +
+				[negative_prefix]
+Let negative-polarity_suffix   be      &lt;head type suffix negative-polarity&gt;   = +
+				[negative_suffix]
 Let neuter		be	&lt;head agr gender&gt; = neuter
 Let neuter_absolutive	be	{ [head:[object:[head:[agr:[gender:neuter]]]
 													  type:[transitive:+]]]
@@ -485,10 +500,10 @@ Let neuter_ergative	be	&lt;head subject head agr gender&gt; = neuter
 											&lt;head type transitive&gt; = +
 Let neuter_object	be	&lt;head object head agr gender&gt; = neuter
 Let neuter_subject	be	&lt;head subject head agr gender&gt; = neuter
-Let nominative		be	&lt;head agr case&gt; = nominative
+Let nominative		be	&lt;head case&gt; = nominative
 Let -nominative		be	[]
-Let nominative.or.accusative be &lt;head agr case&gt; = {nominative accusative}
-Let nominative.or.genitive   be &lt;head agr case&gt; = {nominative genitive}
+Let nominative.or.accusative be &lt;head case&gt; = {nominative accusative}
+Let nominative.or.genitive   be &lt;head case&gt; = {nominative genitive}
 Let oblique             be      &lt;head type oblique&gt;             = +
 Let participle          be      &lt;head type participle&gt;          = +
 Let partitive		be	&lt;head type partitive&gt;		= +
@@ -505,51 +520,51 @@ Let plural_ergative	be	&lt;head subject head agr number&gt; = plural
 											&lt;head type transitive&gt; = +
 Let plural_object	 be	&lt;head object head agr number&gt; = plural
 Let plural_subject	be	&lt;head subject head agr number&gt; = plural
-Let poss_class_1        be	&lt;head possessor agr class&gt; = 1
-Let poss_class_2        be	&lt;head possessor agr class&gt; = 2
-Let poss_class_3        be	&lt;head possessor agr class&gt; = 3
-Let poss_class_4        be	&lt;head possessor agr class&gt; = 4
-Let poss_class_5        be	&lt;head possessor agr class&gt; = 5
-Let poss_class_6        be	&lt;head possessor agr class&gt; = 6
-Let poss_class_7        be	&lt;head possessor agr class&gt; = 7
-Let poss_class_8        be	&lt;head possessor agr class&gt; = 8
-Let poss_class_9        be	&lt;head possessor agr class&gt; = 9
-Let poss_class_10       be	&lt;head possessor agr class&gt; = 10
-Let poss_class_11       be	&lt;head possessor agr class&gt; = 11
-Let poss_class_12       be	&lt;head possessor agr class&gt; = 12
-Let poss_class_13       be	&lt;head possessor agr class&gt; = 13
-Let poss_class_14       be	&lt;head possessor agr class&gt; = 14
-Let poss_class_15       be	&lt;head possessor agr class&gt; = 15
-Let poss_class_16       be	&lt;head possessor agr class&gt; = 16
-Let poss_class_17       be	&lt;head possessor agr class&gt; = 17
-Let poss_class_18       be	&lt;head possessor agr class&gt; = 18
-Let poss_class_19       be	&lt;head possessor agr class&gt; = 19
-Let poss_class_20       be	&lt;head possessor agr class&gt; = 20
-Let poss_class_21       be	&lt;head possessor agr class&gt; = 21
-Let poss_class_22       be	&lt;head possessor agr class&gt; = 22
-Let poss_class_23       be	&lt;head possessor agr class&gt; = 23
-Let poss_class_24       be	&lt;head possessor agr class&gt; = 24
-Let poss_class_25       be	&lt;head possessor agr class&gt; = 25
-Let poss_class_26       be	&lt;head possessor agr class&gt; = 26
-Let poss_class_27       be	&lt;head possessor agr class&gt; = 27
-Let poss_class_28       be	&lt;head possessor agr class&gt; = 28
-Let poss_class_29       be	&lt;head possessor agr class&gt; = 29
-Let poss_class_30       be	&lt;head possessor agr class&gt; = 30
-Let poss_animate        be	&lt;head possessor agr animate&gt; = +
-Let poss_dual		be	&lt;head possessor agr number&gt; = dual
-Let poss_exclusive	be	&lt;head possessor agr person&gt; = first_exclusive
-Let poss_feminine	be	&lt;head possessor agr gender&gt; = feminine
-Let poss_first		be	&lt;head possessor agr person&gt; = first
-Let poss_human          be	&lt;head possessor type human&gt; = +
-Let poss_inanimate      be	&lt;head possessor agr animate&gt; = -
-Let poss_inclusive	be	&lt;head possessor agr person&gt; = first_inclusive
-Let poss_masculine	be	&lt;head possessor agr gender&gt; = masculine
-Let poss_neuter  	be	&lt;head possessor agr gender&gt; = neuter
-Let poss_nonhuman       be	&lt;head possessor type human&gt; = -
-Let poss_plural		be	&lt;head possessor agr number&gt; = plural
-Let poss_second		be	&lt;head possessor agr person&gt; = second
-Let poss_singular	be	&lt;head possessor agr number&gt; = singular
-Let poss_third		be	&lt;head possessor agr person&gt; = third
+Let poss_class_1        be	&lt;head possessor head agr class&gt; = 1
+Let poss_class_2        be	&lt;head possessor head agr class&gt; = 2
+Let poss_class_3        be	&lt;head possessor head agr class&gt; = 3
+Let poss_class_4        be	&lt;head possessor head agr class&gt; = 4
+Let poss_class_5        be	&lt;head possessor head agr class&gt; = 5
+Let poss_class_6        be	&lt;head possessor head agr class&gt; = 6
+Let poss_class_7        be	&lt;head possessor head agr class&gt; = 7
+Let poss_class_8        be	&lt;head possessor head agr class&gt; = 8
+Let poss_class_9        be	&lt;head possessor head agr class&gt; = 9
+Let poss_class_10       be	&lt;head possessor head agr class&gt; = 10
+Let poss_class_11       be	&lt;head possessor head agr class&gt; = 11
+Let poss_class_12       be	&lt;head possessor head agr class&gt; = 12
+Let poss_class_13       be	&lt;head possessor head agr class&gt; = 13
+Let poss_class_14       be	&lt;head possessor head agr class&gt; = 14
+Let poss_class_15       be	&lt;head possessor head agr class&gt; = 15
+Let poss_class_16       be	&lt;head possessor head agr class&gt; = 16
+Let poss_class_17       be	&lt;head possessor head agr class&gt; = 17
+Let poss_class_18       be	&lt;head possessor head agr class&gt; = 18
+Let poss_class_19       be	&lt;head possessor head agr class&gt; = 19
+Let poss_class_20       be	&lt;head possessor head agr class&gt; = 20
+Let poss_class_21       be	&lt;head possessor head agr class&gt; = 21
+Let poss_class_22       be	&lt;head possessor head agr class&gt; = 22
+Let poss_class_23       be	&lt;head possessor head agr class&gt; = 23
+Let poss_class_24       be	&lt;head possessor head agr class&gt; = 24
+Let poss_class_25       be	&lt;head possessor head agr class&gt; = 25
+Let poss_class_26       be	&lt;head possessor head agr class&gt; = 26
+Let poss_class_27       be	&lt;head possessor head agr class&gt; = 27
+Let poss_class_28       be	&lt;head possessor head agr class&gt; = 28
+Let poss_class_29       be	&lt;head possessor head agr class&gt; = 29
+Let poss_class_30       be	&lt;head possessor head agr class&gt; = 30
+Let poss_animate        be	&lt;head possessor head agr animate&gt; = +
+Let poss_dual		be	&lt;head possessor head agr number&gt; = dual
+Let poss_exclusive	be	&lt;head possessor head agr person&gt; = first_exclusive
+Let poss_feminine	be	&lt;head possessor head agr gender&gt; = feminine
+Let poss_first		be	&lt;head possessor head agr person&gt; = first
+Let poss_human          be	&lt;head possessor head type human&gt; = +
+Let poss_inanimate      be	&lt;head possessor head agr animate&gt; = -
+Let poss_inclusive	be	&lt;head possessor head agr person&gt; = first_inclusive
+Let poss_masculine	be	&lt;head possessor head agr gender&gt; = masculine
+Let poss_neuter  	be	&lt;head possessor head agr gender&gt; = neuter
+Let poss_nonhuman       be	&lt;head possessor head type human&gt; = -
+Let poss_plural		be	&lt;head possessor head agr number&gt; = plural
+Let poss_second		be	&lt;head possessor head agr person&gt; = second
+Let poss_singular	be	&lt;head possessor head agr number&gt; = singular
+Let poss_third		be	&lt;head possessor head agr person&gt; = third
 Let poss_prefix         be      &lt;head type prefix poss&gt;         = +
 Let poss_suffix         be      &lt;head type suffix poss&gt;         = +
 Let possessed		be	&lt;head type possessed&gt;           = +
@@ -568,6 +583,10 @@ Let QP-final		be	&lt;head type QP-final&gt;		= +
 Let QP-initial		be	&lt;head type QP-initial&gt;		= +
 				&lt;head type QP-final&gt;		= -
 Let quantifier		be	&lt;head type quantifier&gt;		= +
+Let quantifier_prefix   be      &lt;head type prefix quantifier&gt;   = +
+								[quantifier]
+Let quantifier_suffix   be      &lt;head type suffix quantifier&gt;   = +
+								[quantifier]
 Let reason		be	&lt;head type reason&gt;		= +
 Let realis		be	&lt;head infl mood realis&gt;         = +
 Let reciprocal 		be	&lt;head type reciprocal&gt;		= +
@@ -612,6 +631,9 @@ Let third_ergative	be	&lt;head subject head agr person&gt; = third
 											&lt;head type transitive&gt; = +
 Let third_object	be	&lt;head object head agr person&gt; = third
 Let third_subject	be	&lt;head subject head agr person&gt; = third
+Let topic		be	&lt;head type topic&gt; = +
+Let topic-initial		be	&lt;head type topic-initial&gt; = +
+Let topic-final		be	&lt;head type topic-final&gt; = +
 Let transitive		be	&lt;head type transitive&gt;		= +
 Let wh			be	&lt;head type wh&gt;			= +
 Let -wh			be	&lt;head type wh&gt; 			= -
@@ -628,48 +650,7 @@ Let Adj			be	&lt;cat&gt; = !Adj
 				&lt;head type wh&gt;			= !-
 				&lt;head type sentential&gt;          = !-
 								&lt;head type relative&gt;            = !-
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="absolutivecliticdefault">
-							   &lt;head type prefix absolutive&gt;      = !-
-								&lt;head type suffix absolutive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="ergativecliticdefault">
-							   &lt;head type prefix ergative&gt;      = !-
-								&lt;head type suffix ergative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="genitivecliticdefault">
-							   &lt;head type prefix genitive&gt;      = !-
-								&lt;head type suffix genitive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
+					&lt;head type clausal-comp&gt; = !-
 
 Let Adv			be	&lt;cat&gt; = !Adv
 				&lt;head type wh&gt;			= !-
@@ -679,29 +660,8 @@ Let Adv			be	&lt;cat&gt; = !Adv
 				&lt;head type sentential&gt;          = !-
 								&lt;embedded&gt;      = !none
 </content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<content>
 
@@ -709,67 +669,13 @@ Let Art			be	&lt;cat&gt; = !Art
 				&lt;head type wh&gt;			= !-
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
-								&lt;head agr case&gt;            = !nominative
-</specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
 		<content>
 
 Let Aux			be	&lt;cat&gt; = !Aux
 				&lt;head type passive&gt;		= !-
 				&lt;head infl finite&gt;              = !+
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let C			be	&lt;cat&gt; = !C
 				&lt;head type question&gt;		= !-
@@ -779,59 +685,9 @@ Let C			be	&lt;cat&gt; = !C
 		<specializedTemplates show="CPSpecifierInitialdefault">
 					&lt;head type CP-specifier-initial&gt;      = !-
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
 		<content>
 
 Let Conj                be      &lt;cat&gt; = !Conj
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let Deg                 be      &lt;cat&gt; = !Deg
 								&lt;head type modifies_Adj&gt;        = !-
@@ -844,38 +700,7 @@ Let Deg                 be      &lt;cat&gt; = !Deg
 								&lt;head type modifies_Q&gt;          = !-
 								&lt;head type quantifier&gt;          = !-
 								&lt;head type wh&gt;                  = !-
-								&lt;head infl polarity&gt;            = !+
 								&lt;head type relative&gt;            = !-
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let Dem                 be      &lt;cat&gt; = !Dem
 								&lt;head type wh&gt;                  = !-
@@ -883,70 +708,29 @@ Let Dem                 be      &lt;cat&gt; = !Dem
 								&lt;head type relative&gt;            = !-
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
-								&lt;head agr case&gt;            = !nominative
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+		<content>
+
+Let Det                 be      &lt;cat&gt; = !Det
+								&lt;head type wh&gt;                  = !-
+								&lt;head agr person&gt; = !third
+								&lt;head type relative&gt;            = !-
+</content>
+		<specializedTemplates show="nominativeArtDemdefault">
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
 		<content>
 
 Let Excl                be      &lt;cat&gt; = Excl
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
+
+Let Greet                be      &lt;cat&gt; = Greet
+
+Let Intj                be      &lt;cat&gt; = Intj
 
 Let N                   be      &lt;cat&gt; = !N
 								&lt;head agr person&gt; = !third
-								&lt;head possessor agr&gt; = !none
-								&lt;head infl polarity&gt;            = !+
+								&lt;head possessor head agr&gt; = !none
 								&lt;head agr animate&gt;              = !-
 								&lt;head type human&gt;               = !-
 								&lt;head type wh&gt;                  = -
@@ -959,7 +743,7 @@ Let N                   be      &lt;cat&gt; = !N
 								&lt;head embedded&gt;      = !none
 </content>
 		<specializedTemplates show="nominativedefault">
-								&lt;head agr case&gt;            = !nominative
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
 		<specializedTemplates show="singulardefault">
 								&lt;head agr number&gt;            = !singular
@@ -970,48 +754,11 @@ Let N                   be      &lt;cat&gt; = !N
 		<specializedTemplates show="possesseddefault">
 								&lt;head type possessed&gt;            = !-
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<specializedTemplates show="PPheadcliticdefault">
 							   &lt;head type PP&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="absolutivecliticdefault">
-							   &lt;head type prefix absolutive&gt;      = !-
-								&lt;head type suffix absolutive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="ergativecliticdefault">
-							   &lt;head type prefix ergative&gt;      = !-
-								&lt;head type suffix ergative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="genitivecliticdefault">
-							   &lt;head type prefix genitive&gt;      = !-
-								&lt;head type suffix genitive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
 </specializedTemplates>
 		<content>
 
@@ -1029,81 +776,11 @@ Let Num                 be      &lt;cat&gt; = !Num
 								&lt;head type DP-final&gt;            = !-
 								&lt;head type DP-initial&gt;            = !+
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
 		<content>
 
 Let ordinal             be      &lt;cat&gt; = Adj
 								&lt;head type ordinal&gt;             = +
 								&lt;head agr number&gt; = !plural
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="absolutivecliticdefault">
-							   &lt;head type prefix absolutive&gt;      = !-
-								&lt;head type suffix absolutive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="ergativecliticdefault">
-							   &lt;head type prefix ergative&gt;      = !-
-								&lt;head type suffix ergative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="genitivecliticdefault">
-							   &lt;head type prefix genitive&gt;      = !-
-								&lt;head type suffix genitive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let P                   be      &lt;cat&gt; = !P
 								&lt;head type passive&gt;             = !-
@@ -1112,144 +789,27 @@ Let P                   be      &lt;cat&gt; = !P
 								&lt;head type temporal&gt;            = !-
 				&lt;head type locative&gt;            = !-
 								&lt;head sentential&gt;      = !-
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let Poss                be      &lt;cat&gt; = Poss
 								[genitive]
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let Poss_ergative       be      &lt;cat&gt; = Poss
 								[ergative]
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let Poss_absolutive     be      &lt;cat&gt; = Poss
 								[absolutive]
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let Pron                be      &lt;cat&gt; = !Pron
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr animate&gt;             = !+
 								&lt;head type human&gt;               = !+
-								&lt;head infl polarity&gt;            = !+
 								&lt;head type reciprocal&gt;          = !-
 								&lt;head type reflexive&gt;          = !-
 								&lt;head type posessive&gt;          = !-
 								&lt;head type relative&gt;            = !-
 </content>
 		<specializedTemplates show="nominativedefault">
-								&lt;head agr case&gt;            = !nominative
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
 		<specializedTemplates show="singulardefault">
 								&lt;head agr number&gt;            = !singular
@@ -1257,42 +817,16 @@ Let Pron                be      &lt;cat&gt; = !Pron
 		<specializedTemplates show="masculinedefault">
 								&lt;head agr gender&gt;            = !masculine
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<content>
 
 Let PropN		be	&lt;cat&gt; = N
 				&lt;head agr animate&gt;		= !+
 								&lt;head type human&gt;               = !+
-								&lt;head infl polarity&gt;            = !+
 				&lt;head agr person&gt; = !third
-								&lt;head possessor agr&gt; = !none
+								&lt;head possessor head agr&gt; = !none
 				&lt;head type wh&gt;			= -
 				&lt;head type proper&gt;		= +
 								&lt;head type reciprocal&gt;          = !-
@@ -1302,7 +836,7 @@ Let PropN		be	&lt;cat&gt; = N
 								&lt;head type mass&gt;                = !-
 </content>
 		<specializedTemplates show="nominativedefault">
-								&lt;head agr case&gt;            = !nominative
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
 		<specializedTemplates show="singulardefault">
 								&lt;head agr number&gt;            = !singular
@@ -1313,80 +847,13 @@ Let PropN		be	&lt;cat&gt; = N
 		<specializedTemplates show="possesseddefault">
 								&lt;head type possessed&gt;            = !-
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="absolutivecliticdefault">
-							   &lt;head type prefix absolutive&gt;      = !-
-								&lt;head type suffix absolutive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="ergativecliticdefault">
-							   &lt;head type prefix ergative&gt;      = !-
-								&lt;head type suffix ergative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="genitivecliticdefault">
-							   &lt;head type prefix genitive&gt;      = !-
-								&lt;head type suffix genitive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<content>
 
 Let Q                   be      &lt;cat&gt; = Q
 								&lt;head type wh&gt;                  = !-
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let V                   be      &lt;cat&gt; = !V
 								&lt;head type passive&gt;             = !-
@@ -1397,46 +864,25 @@ Let V                   be      &lt;cat&gt; = !V
 								&lt;head type reciprocal&gt;          = !-
 								&lt;head type reflexive&gt;           = !-
 								&lt;head infl finite&gt;              = !+
-								&lt;head infl polarity&gt;            = !+
+								&lt;head type negative&gt;            = !-
 								&lt;head type participle&gt;          = !-
 								&lt;head infl mood realis&gt;         = !+
 								&lt;head embedded&gt;      = !none
 </content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<specializedTemplates show="whQheadcliticdefault">
 							   &lt;head type whQ&gt;      = !-
 </specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
 		<specializedTemplates show="YNQheadcliticdefault">
 							   &lt;head type YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
 </specializedTemplates>
 		<specializedTemplates show="relativeheadcliticdefault">
 							   &lt;head type relative&gt;      = !-
 </specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
 		<specializedTemplates show="compheadcliticdefault">
 							   &lt;head type comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
 </specializedTemplates>
 		<content>
 			<!-- |****Category changes via features -->
@@ -1445,48 +891,7 @@ Let makeAdj		be	&lt;cat&gt; = Adj
 				&lt;head type wh&gt;			= !-
 				&lt;head type sentential&gt;          = !-
 								&lt;head type relative&gt;            = !-
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="absolutivecliticdefault">
-							   &lt;head type prefix absolutive&gt;      = !-
-								&lt;head type suffix absolutive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="ergativecliticdefault">
-							   &lt;head type prefix ergative&gt;      = !-
-								&lt;head type suffix ergative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="genitivecliticdefault">
-							   &lt;head type prefix genitive&gt;      = !-
-								&lt;head type suffix genitive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
+					&lt;head type clausal-comp&gt; = !-
 
 Let makeAdv		be	&lt;cat&gt; = Adv
 				&lt;head type wh&gt;			= !-
@@ -1496,29 +901,8 @@ Let makeAdv		be	&lt;cat&gt; = Adv
 				&lt;head type sentential&gt;          = !-
 								&lt;head embedded&gt;      = !none
 </content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<content>
 
@@ -1526,67 +910,13 @@ Let makeArt		be	&lt;cat&gt; = Art
 				&lt;head type wh&gt;			= !-
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
-								&lt;head agr case&gt;            = !nominative
-</specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
 		<content>
 
 Let makeAux		be	&lt;cat&gt; = Aux
 				&lt;head type passive&gt;		= !-
 				&lt;head infl finite&gt;              = !+
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let makeC		be	&lt;cat&gt; = C
 				&lt;head type question&gt;		= !-
@@ -1596,59 +926,9 @@ Let makeC		be	&lt;cat&gt; = C
 		<specializedTemplates show="CPSpecifierInitialdefault">
 					&lt;head type CP-specifier-initial&gt;      = !-
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
 		<content>
 
 Let makeConj            be      &lt;cat&gt; = Conj
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let makeDeg             be      &lt;cat&gt; = Deg
 								&lt;head type modifies_Adj&gt;        = !-
@@ -1661,38 +941,7 @@ Let makeDeg             be      &lt;cat&gt; = Deg
 								&lt;head type modifies_Q&gt;          = !-
 								&lt;head type quantifier&gt;          = !-
 								&lt;head type wh&gt;                  = !-
-								&lt;head infl polarity&gt;            = !+
 								&lt;head type relative&gt;            = !-
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let makeDem             be      &lt;cat&gt; = Dem
 								&lt;head type wh&gt;                  = !-
@@ -1700,42 +949,26 @@ Let makeDem             be      &lt;cat&gt; = Dem
 								&lt;head type relative&gt;            = !-
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
-								&lt;head agr case&gt;            = !nominative
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<content>
 
+Let makeExcl  be    &lt;cat&gt; = Excl
+
+Let makeFocusM  be    &lt;cat&gt; = FocusM
+
+Let makeGreet  be    &lt;cat&gt; = Greet
+
+Let makeInitialConj  be    &lt;cat&gt; = InitConj
+
+Let makeIntj  be    &lt;cat&gt; = Intj
+
 Let makeN               be      &lt;cat&gt; = N
 								&lt;head agr person&gt; = !third
-								&lt;head possessor agr&gt; = !none
-								&lt;head infl polarity&gt;            = !+
+								&lt;head possessor head agr&gt; = !none
 								&lt;head agr animate&gt;             = !-
 								&lt;head type human&gt;               = !-
 								&lt;head type wh&gt;                  = -
@@ -1747,7 +980,7 @@ Let makeN               be      &lt;cat&gt; = N
 								&lt;head type mass&gt;                = !-
 </content>
 		<specializedTemplates show="nominativedefault">
-								&lt;head agr case&gt;            = !nominative
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
 		<specializedTemplates show="singulardefault">
 								&lt;head agr number&gt;            = !singular
@@ -1758,48 +991,8 @@ Let makeN               be      &lt;cat&gt; = N
 		<specializedTemplates show="possesseddefault">
 								&lt;head type possessed&gt;            = !-
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPheadcliticdefault">
-							   &lt;head type PP&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="absolutivecliticdefault">
-							   &lt;head type prefix absolutive&gt;      = !-
-								&lt;head type suffix absolutive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="ergativecliticdefault">
-							   &lt;head type prefix ergative&gt;      = !-
-								&lt;head type suffix ergative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="genitivecliticdefault">
-							   &lt;head type prefix genitive&gt;      = !-
-								&lt;head type suffix genitive&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<content>
 
@@ -1817,34 +1010,6 @@ Let makeNum             be      &lt;cat&gt; = Num
 								&lt;head type DP-final&gt;            = !-
 								&lt;head type DP-initial&gt;            = !+
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
 		<content>
 
 Let makeP               be      &lt;cat&gt; = P
@@ -1853,45 +1018,18 @@ Let makeP               be      &lt;cat&gt; = P
 								&lt;head type partitive&gt;           = !-
 				&lt;head type temporal&gt;            = !-
 								&lt;head type sentential&gt;          = !-
-</content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
-</specializedTemplates>
-		<content>
 
 Let makePron            be      &lt;cat&gt; = Pron
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr animate&gt;             = !+
 								&lt;head type human&gt;               = !+
-								&lt;head infl polarity&gt;            = !+
 								&lt;head type reciprocal&gt;          = !-
 								&lt;head type reflexive&gt;          = !-
 								&lt;head type posessive&gt;          = !-
 								&lt;head type relative&gt;            = !-
 </content>
 		<specializedTemplates show="nominativedefault">
-								&lt;head agr case&gt;            = !nominative
+								&lt;head case&gt;            = !nominative
 </specializedTemplates>
 		<specializedTemplates show="singulardefault">
 								&lt;head agr number&gt;            = !singular
@@ -1899,35 +1037,12 @@ Let makePron            be      &lt;cat&gt; = Pron
 		<specializedTemplates show="masculinedefault">
 								&lt;head agr gender&gt;            = !masculine
 </specializedTemplates>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="copularcliticdefault">
-							   &lt;head type prefix copular&gt;      = !-
-								&lt;head type suffix copular&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<content>
+
+Let makeTopicM  be    &lt;cat&gt; = TopicM
 
 Let makeV               be      &lt;cat&gt; = V
 								&lt;head type passive&gt;             = !-
@@ -1937,46 +1052,25 @@ Let makeV               be      &lt;cat&gt; = V
 								&lt;head type motion&gt;              = !-
 								&lt;head type reciprocal&gt;          = !-
 								&lt;head infl finite&gt;              = !+
-								&lt;head infl polarity&gt;            = !+
+								&lt;head type negative&gt;            = !-
 								&lt;head type participle&gt;          = !-
 								&lt;head infl mood realis&gt;         = !+
 								&lt;embedded&gt;      = !none
 </content>
-		<specializedTemplates show="whQcliticdefault">
-							   &lt;head type prefix whQ&gt;      = !-
-								&lt;head type suffix whQ&gt;      = !-
+		<specializedTemplates show="negative-polaritydefault">
+								&lt;head type negative-polarity&gt;            = !-
 </specializedTemplates>
 		<specializedTemplates show="whQheadcliticdefault">
 							   &lt;head type whQ&gt;      = !-
 </specializedTemplates>
-		<specializedTemplates show="YNQcliticdefault">
-							   &lt;head type prefix YNQ&gt;      = !-
-								&lt;head type suffix YNQ&gt;      = !-
-</specializedTemplates>
 		<specializedTemplates show="YNQheadcliticdefault">
 							   &lt;head type YNQ&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="PPcliticdefault">
-							   &lt;head type prefix P&gt;      = !-
-								&lt;head type suffix P&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="relativecliticdefault">
-							   &lt;head type prefix relative&gt;      = !-
-								&lt;head type suffix relative&gt;      = !-
 </specializedTemplates>
 		<specializedTemplates show="relativeheadcliticdefault">
 							   &lt;head type relative&gt;      = !-
 </specializedTemplates>
-		<specializedTemplates show="compcliticdefault">
-							   &lt;head type prefix comp&gt;      = !-
-								&lt;head type suffix comp&gt;      = !-
-</specializedTemplates>
 		<specializedTemplates show="compheadcliticdefault">
 							   &lt;head type comp&gt;      = !-
-</specializedTemplates>
-		<specializedTemplates show="posscliticdefault">
-							   &lt;head type prefix poss&gt;      = !-
-								&lt;head type suffix poss&gt;      = !-
 </specializedTemplates>
 	</generalizedTemplates>
 	<showWhen id="nominativedefault">
@@ -2023,15 +1117,6 @@ Let makeV               be      &lt;cat&gt; = V
 		<and/>
 		<whenValue element="q" attr="embContVSOBeforeWh" value="some"/>
 	</showWhen>
-	<showWhen id="whQcliticdefault">
-		<whenValue element="q" attr="mainContWord" value="no"/>
-		<and/>
-		<whenValue element="q" attr="mainContCliticAttaches" value="head" negateValue="yes"/>
-		<or/>
-		<whenValue element="q" attr="embContWord" value="no"/>
-		<and/>
-		<whenValue element="q" attr="embContCliticAttaches" value="head" negateValue="yes"/>
-	</showWhen>
 	<showWhen id="whQheadcliticdefault">
 		<whenValue element="q" attr="mainContWord" value="no"/>
 		<and/>
@@ -2040,15 +1125,6 @@ Let makeV               be      &lt;cat&gt; = V
 		<whenValue element="q" attr="embContWord" value="no"/>
 		<and/>
 		<whenValue element="q" attr="embContCliticAttaches" value="head"/>
-	</showWhen>
-	<showWhen id="YNQcliticdefault">
-		<whenValue element="q" attr="mainYNWord" value="no"/>
-		<and/>
-		<whenValue element="q" attr="mainYNCliticAttaches" value="edge"/>
-		<or/>
-		<whenValue element="q" attr="embYNWord" value="no"/>
-		<and/>
-		<whenValue element="q" attr="embYNCliticAttaches" value="edge"/>
 	</showWhen>
 	<showWhen id="YNQheadcliticdefault">
 		<whenValue element="q" attr="mainYNWord" value="no"/>
@@ -2059,66 +1135,23 @@ Let makeV               be      &lt;cat&gt; = V
 		<and/>
 		<whenValue element="q" attr="embYNCliticAttaches" value="head"/>
 	</showWhen>
-	<showWhen id="PPcliticdefault">
-		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="attaches" value="edge"/>
-	</showWhen>
 	<showWhen id="PPheadcliticdefault">
 		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
 		<and/>
 		<whenValue element="pp" attr="attaches" value="head"/>
 	</showWhen>
-	<showWhen id="relativecliticdefault">
-		<whenValue element="relcl" attr="pType" value="word" negateValue="yes"/>
-	</showWhen>
 	<showWhen id="relativeheadcliticdefault">
 		<whenValue element="relcl" attr="type" value="IP"/>
-	</showWhen>
-	<showWhen id="compcliticdefault">
-		<whenValue element="comp" attr="compWord" value="no"/>
-		<and/>
-		<whenValue element="comp" attr="compCliticAttaches" value="edge"/>
 	</showWhen>
 	<showWhen id="compheadcliticdefault">
 		<whenValue element="comp" attr="compWord" value="no"/>
 		<and/>
 		<whenValue element="comp" attr="compCliticAttaches" value="head"/>
 	</showWhen>
-	<showWhen id="copularcliticdefault">
-		<whenValue element="ip" attr="copularAffix" value="yes"/>
-	</showWhen>
-	<showWhen id="absolutivecliticdefault">
-		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	<showWhen id="negative-polaritydefault">
+		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="np" attr="adjpCaseAffix" value="yes"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
-	</showWhen>
-	<showWhen id="ergativecliticdefault">
-		<whenValue element="np" attr="possCaseErg" value="ergative"/>
-		<and/>
-		<whenValue element="np" attr="adjpCaseAffix" value="yes"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
-	</showWhen>
-	<showWhen id="genitivecliticdefault">
-		<whenValue element="np" attr="possCaseErg" value="genitive"/>
-		<and/>
-		<whenValue element="np" attr="adjpCaseAffix" value="yes"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
-		<or/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="np" attr="case" value="none" negateValue="yes"/>
-		<and/>
-		<whenValue element="np" attr="adjpCaseAffix" value="yes"/>
-	</showWhen>
-	<showWhen id="posscliticdefault">
-		<whenValue element="np" attr="possMarked" value="yesClitic"/>
-		<and/>
-		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<whenValue element="neg" attr="polarityItems" value="yes"/>
 	</showWhen>
 	<!-- |***Category Mapper templates for starter kit**** -->
 	<catMapper show="cardinalNumberCat">Num</catMapper>
@@ -2128,6 +1161,8 @@ Let makeV               be      &lt;cat&gt; = V
 	<catMapper show="conjunctionCat">Conj</catMapper>
 	<showWhen id="conjunctionCat">
 		<whenValue element="qp/conjunctionCategory" value="" negateValue="yes"/>
+<or/>
+		<whenValue element="coord/conjunctionCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="adverbCat">Adv</catMapper>
 	<showWhen id="adverbCat">
@@ -2194,18 +1229,384 @@ S = AdvP / AdjP / QP / DP / PP
 	<showWhen id="Soptiontesting">
 		<whenValue element="pp" attr="checkedOff" value="yes" negateValue="yes"/>
 	</showWhen>
-	<rule>
-rule {S option start.symbol - section 9 and beyond}
-S = (AdvP_1 / PP_1 / DP_1) {IP / CP} (AdvP_2 / PP_2 / DP_2)
+	<rule show="Soptionstart.symbol">
+rule {S option start.symbol  - PPs optional}
+S = (PP_1) {IP / CP} (PP_2)
 	&lt;S head&gt; = &lt;IP head&gt;
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
 	&lt;CP head type root&gt; = +
-	&lt;AdvP_1 head type manner&gt; = -
-	&lt;AdvP_2 head type manner&gt; = -
-	&lt;DP_1 head type temporal&gt; = +
-	&lt;DP_2 head type temporal&gt; = +
 	&lt;S option&gt; = start.symbol
 </rule>
+<showWhen id="Soptionstart.symbol">
+	<whenValue element="focus" attr="topic" value="no"></whenValue>
+</showWhen>
+	<rule show="Soptionstart.topicinit">
+rule {S option start.topicinit  - PPs optional, topic initial}
+S = (TopicP) (PP_1) {IP / CP} (PP_2)
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;S option&gt; = start.topicinit
+</rule>
+<showWhen id="Soptionstart.topicinit">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="before"></whenValue>
+</showWhen>
+	<rule show="Soptionstart.topicfin">
+rule {S option start.topicinit  - PPs optional, topic final}
+S = (PP_1) {IP / CP} (PP_2) (TopicP)
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;S option&gt; = start.topicfin
+</rule>
+<showWhen id="Soptionstart.topicfin">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="after"></whenValue>
+</showWhen>
+	<rule show="Soptionstart.initial">
+rule {S option start.initial - AdvP or DP initial}
+S = {AdvP / DP} {IP / CP}
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from advP or DP -->
+	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;S option&gt; = start.initial
+</rule>
+	<showWhen id="Soptionstart.initial">
+		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="no"></whenValue>
+	</showWhen>
+	<rule show="Soptionstart.initial.topicinit">
+rule {S option start.initial.topicinit - AdvP or DP initial, topic initial}
+S = (TopicP) {AdvP / DP} {IP / CP}
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from advP or DP -->
+	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;S option&gt; = start.initial.topicinit
+</rule>
+	<showWhen id="Soptionstart.initial.topicinit">
+		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="before"></whenValue>
+	</showWhen>
+	<rule show="Soptionstart.initial.topicfin">
+rule {S option start.initial.topicfin - AdvP or DP initial, topic final}
+S = {AdvP / DP} {IP / CP} (TopicP)
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from advP or DP -->
+	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;S option&gt; = start.initial.topicfin
+</rule>
+	<showWhen id="Soptionstart.initial.topicfin">
+		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="after"></whenValue>
+	</showWhen>
+	<rule show="Soptionstart.final">
+rule {S option start.final - AdvP or DP final}
+S = {IP / CP} {AdvP / DP}
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from advP or DP -->
+	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;S option&gt; = start.final
+</rule>
+	<showWhen id="Soptionstart.final">
+		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="no"></whenValue>
+	</showWhen>
+	<rule show="Soptionstart.final.topicinit">
+rule {S option start.final.topicinit - AdvP or DP final, topic initial}
+S = (TopicP) {IP / CP} {AdvP / DP}
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from advP or DP -->
+	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;S option&gt; = start.final.topicinit
+</rule>
+	<showWhen id="Soptionstart.final.topicinit">
+		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="before"></whenValue>
+	</showWhen>
+	<rule show="Soptionstart.final.topicfin">
+rule {S option start.final.topicfin - AdvP or DP final, topic final}
+S = {IP / CP} {AdvP / DP} (TopicP)
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from advP or DP -->
+	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;S option&gt; = start.final.topicfin
+</rule>
+	<showWhen id="Soptionstart.final.topicfin">
+		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="after"></whenValue>
+	</showWhen>
+	<rule show="Soptionstart.negVrequired.initial">
+rule {S option start.negVrequired.initial - neg V required, AdvP or DP initial}
+S = {AdvP / DP} {IP / CP}
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;S head adverbial&gt; = &lt;AdvP&gt;
+	&lt;S head adverbial&gt; = &lt;DP&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
+					 [type:[negative:+]]
+	&lt;S option&gt; = start.negVrequired.initial
+</rule>
+	<showWhen id="Soptionstart.negVrequired.initial">
+		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
+ <and/>
+<whenValue element="focus" attr="topic" value="no"></whenValue>
+   </showWhen>
+	<rule show="Soptionstart.negVrequired.initial.topicinit">
+rule {S option start.negVrequired.initial.topicinit - neg V required, AdvP or DP initial, topic initial}
+S = (TopicP) {AdvP / DP} {IP / CP}
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;S head adverbial&gt; = &lt;AdvP&gt;
+	&lt;S head adverbial&gt; = &lt;DP&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
+					 [type:[negative:+]]
+	&lt;S option&gt; = start.negVrequired.initial.topicinit
+</rule>
+	<showWhen id="Soptionstart.negVrequired.initial.topicinit">
+		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="before"></whenValue>
+   </showWhen>
+	<rule show="Soptionstart.negVrequired.initial.topicfin">
+rule {S option start.negVrequired.initial.topicfin - neg V required, AdvP or DP initial, topic final}
+S = {AdvP / DP} {IP / CP} (TopicP)
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;S head adverbial&gt; = &lt;AdvP&gt;
+	&lt;S head adverbial&gt; = &lt;DP&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
+					 [type:[negative:+]]
+	&lt;S option&gt; = start.negVrequired.initial.topicfin
+</rule>
+	<showWhen id="Soptionstart.negVrequired.initial.topicfin">
+		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="after"></whenValue>
+   </showWhen>
+	<rule show="Soptionstart.negVrequired.final">
+rule {S option start.negVrequired.final - neg V required, AdvP or DP final}
+S = {IP / CP} {AdvP / DP}
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;S head adverbial&gt; = &lt;AdvP&gt;
+	&lt;S head adverbial&gt; = &lt;DP&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
+					 [type:[negative:+]]
+	&lt;S option&gt; = start.negVrequired.final
+</rule>
+	<showWhen id="Soptionstart.negVrequired.final">
+		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="no"></whenValue>
+	</showWhen>
+	<rule show="Soptionstart.negVrequired.final.topicinit">
+rule {S option start.negVrequired.final.topicinit - neg V required, AdvP or DP final, topic initial}
+S = (TopicP) {IP / CP} {AdvP / DP}
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;S head adverbial&gt; = &lt;AdvP&gt;
+	&lt;S head adverbial&gt; = &lt;DP&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
+					 [type:[negative:+]]
+	&lt;S option&gt; = start.negVrequired.final.topicinit
+</rule>
+	<showWhen id="Soptionstart.negVrequired.final.topicinit">
+		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="no"></whenValue>
+<and/>
+<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="before"></whenValue>
+	</showWhen>
+	<rule show="Soptionstart.negVrequired.final.topicfin">
+rule {S option start.negVrequired.final.topicfin - neg V required, AdvP or DP final, topic final}
+S = {IP / CP} {AdvP / DP} (TopicP)
+	&lt;S head&gt; = &lt;IP head&gt;
+	&lt;S head&gt; = &lt;CP head&gt;
+	&lt;S head adverbial&gt; = &lt;AdvP&gt;
+	&lt;S head adverbial&gt; = &lt;DP&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = -
+	&lt;CP head type root&gt; = +
+	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type temporal&gt; = +
+	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
+					 [type:[negative:+]]
+	&lt;S option&gt; = start.negVrequired.final.topicfin
+</rule>
+	<showWhen id="Soptionstart.negVrequired.final.topicfin">
+		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
+<and/>
+<whenValue element="focus" attr="topic" value="no"></whenValue>
+<and/>
+<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicPos" value="after"></whenValue>
+	</showWhen>
+<!-- |******************************************************-->
+	<rule>
+rule {S option greeting}
+S = Greet (DP)
+	&lt;S head&gt; = &lt;Greet head&gt;
+	&lt;DP head type temporal&gt; = -
+	&lt;DP head type locative&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type topic&gt; = -
+	&lt;DP head type focus&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;S option&gt; = greet
+</rule>
+	<rule>
+rule {S option interjection}
+S = Intj / Adj
+	&lt;S head&gt; = &lt;Intj head&gt;
+	&lt;S head&gt; = &lt;Adj head&gt;
+	&lt;S option&gt; = interjection
+</rule>
+	<rule show="Soptionexcl.init">
+rule {S option excl.init}
+S = Excl AdjP
+	&lt;S head&gt; = &lt;AdjP head&gt;
+	&lt;Excl head type excl-initial&gt; = +
+	&lt;S option&gt; = excl.init
+</rule>
+<showWhen id="Soptionexcl.init">
+	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
+<and/>
+	<whenValue element="excl" attr="exclMPos" value="before"></whenValue>
+<or/>
+	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
+<and/>
+	<whenValue element="excl" attr="exclMPos" value="either"></whenValue>
+</showWhen>
+	<rule show="Soptionexcl.fin">
+rule {S option excl.fin}
+S = AdjP Excl
+	&lt;S head&gt; = &lt;AdjP head&gt;
+	&lt;Excl head type excl-final&gt; = +
+	&lt;S option&gt; = excl.fin
+</rule>
+<showWhen id="Soptionexcl.fin">
+	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
+<and/>
+	<whenValue element="excl" attr="exclMPos" value="after"></whenValue>
+<or/>
+	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
+<and/>
+	<whenValue element="excl" attr="exclMPos" value="either"></whenValue>
+</showWhen>
+	<rule show="Soptionexcl.both">
+rule {S option excl.both}
+S = Excl_1 AdjP Excl_2
+	&lt;S head&gt; = &lt;AdjP head&gt;
+	&lt;Excl_1 head type excl-initial&gt; = +
+	&lt;Excl_2 head type excl-final&gt; = +
+	&lt;S option&gt; = excl.both
+</rule>
+<showWhen id="Soptionexcl.both">
+	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
+<and/>
+	<whenValue element="excl" attr="exclMPos" value="both"></whenValue>
+</showWhen>
 </masterGrammar>

@@ -31,6 +31,7 @@ namespace PAWSStarterKit
 		const string m_strStatusBarChecked = "StatusBarChecked";
 		const string m_strToolBarChecked = "ToolBarChecked";
 		const string m_strBackgroundGif = "p12c08.gif";
+		const string m_strCarlaStudioSetupHtm = "CarlaStudioSetup.htm";
 		const string m_strPurposeHtm = "Purpose.htm";
 		const string m_strUnderConstructionHtm = "UnderConstruction.htm";
 		const string m_strEditCaption = "Edit Items";
@@ -80,6 +81,7 @@ namespace PAWSStarterKit
 		private string m_strLanguageName;
 		private string m_strLanguageAbbreviation;
 		private string m_strTextSFM;
+		private bool m_bRightToLeftScript = false;
 		private bool m_bInitializing = true;
 		private bool m_bIsDirty;
 		private const string m_strProgName = "PAWS Starter Kit";
@@ -113,19 +115,7 @@ namespace PAWSStarterKit
 			m_strAppPath = Path.GetDirectoryName(Application.ExecutablePath);
 			m_strAppPath = m_strAppPath.Remove(m_strAppPath.Length-4, 4);
 
-			// load grammar, writer and examples transforms
-			try
-			{
-				string strTransformsPath = Path.Combine(m_strAppPath, @"Transforms");
-				m_XslGrammarTransform.Load(Path.Combine(strTransformsPath, "PAWSSKMasterGrammarMapper.xsl"));
-				m_XslWriterTransform.Load(Path.Combine(strTransformsPath, "PAWSSKMasterWriterMapper.xsl"));
-				m_XslExampleTransform.Load(Path.Combine(strTransformsPath, "PAWSSKParameterizedExample.xsl"));
-			}
-			catch (Exception exc)
-			{
-				MessageBox.Show("Could not find a transform: " + exc.Message,
-					"Error while loading transform!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-			}
+			InitTransforms();
 			// Allow handling of user closing the form
 			this.Closing += new CancelEventHandler(PAWSSKOnClosing);
 
@@ -214,6 +204,23 @@ namespace PAWSStarterKit
 					SystemInformation.PrimaryMonitorMaximizedWindowSize.Height- SystemInformation.HorizontalScrollBarHeight);
 			}
 			showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
+		}
+
+		private void InitTransforms()
+		{
+			// load grammar, writer and examples transforms
+			try
+			{
+				string strTransformsPath = Path.Combine(m_strAppPath, @"Transforms");
+				m_XslGrammarTransform.Load(Path.Combine(strTransformsPath, "PAWSSKMasterGrammarMapper.xsl"));
+				m_XslWriterTransform.Load(Path.Combine(strTransformsPath, "PAWSSKMasterWriterMapper.xsl"));
+				m_XslExampleTransform.Load(Path.Combine(strTransformsPath, "PAWSSKParameterizedExample.xsl"));
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show("Could not find a transform: " + exc.Message,
+					"Error while loading transform!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
 		}
 
 		/// <summary>
@@ -658,13 +665,13 @@ namespace PAWSStarterKit
 				//saveUserData();  // Wrong!
 				//loadUserDataStore();
 			}
-/*
-			catch (ArgumentException ae)
-			{
-				string strTemp = m_XmlDoc.InnerText;
-				ae = ae;
-			}
-			*/
+				/*
+							catch (ArgumentException ae)
+							{
+								string strTemp = m_XmlDoc.InnerText;
+								ae = ae;
+							}
+							*/
 			catch (Exception exc)
 			{
 				MessageBox.Show(m_strPAWSErrorMsg + "Failed to load XML file: " + exc);
@@ -892,6 +899,7 @@ namespace PAWSStarterKit
 		void MenuViewRefreshOnClick(object obj, EventArgs ea)
 		{
 			axWebBrowser.CtlRefresh();
+			InitTransforms();
 		}
 		void MenuHelpBlack1997OnClick(object obj, EventArgs ea)
 		{
@@ -1309,6 +1317,9 @@ namespace PAWSStarterKit
 			dlg.FontUnderline = Convert.ToBoolean(strBool);
 			strBool = getXmlElementAttribute("//language/font/@strike");
 			dlg.FontStrikeout = Convert.ToBoolean(strBool);
+			strBool = getXmlElementAttribute("//language/font/@rtl");
+			dlg.RightToLeftScript = Convert.ToBoolean(strBool);
+			bool bRtlScriptBefore = dlg.RightToLeftScript;
 
 			dlg.AnswerFile = m_strUserAnswerFile;
 			if (bDoingFileNew)
@@ -1336,6 +1347,7 @@ namespace PAWSStarterKit
 				bool bFontItalic = dlg.FontItalic;
 				bool bFontUnderline = dlg.FontUnderline;
 				bool bFontStrikeout = dlg.FontStrikeout;
+				m_bRightToLeftScript = dlg.RightToLeftScript;
 				m_strUserAnswerFile = dlg.AnswerFile;
 				m_strUserGrammarFile = dlg.GrammarFile;
 				m_strUserWriterFile = dlg.WriterFile;
@@ -1351,6 +1363,7 @@ namespace PAWSStarterKit
 				setXmlElementAttribute("//language/font", "italic", bFontItalic.ToString());
 				setXmlElementAttribute("//language/font", "under", bFontUnderline.ToString());
 				setXmlElementAttribute("//language/font", "strike", bFontStrikeout.ToString());
+				setXmlElementAttribute("//language/font", "rtl", m_bRightToLeftScript.ToString());
 				setXmlElementContent("//language/answerFile", m_strUserAnswerFile);
 				setXmlElementContent("//language/grammarFile", m_strUserGrammarFile);
 				setXmlElementContent("//language/writerFile", m_strUserWriterFile);
@@ -1358,6 +1371,11 @@ namespace PAWSStarterKit
 				if (m_strLanguageAbbreviation != strOriginalLanguageAbbreviation)
 				{   // lang abbreviation changed; need to redo working paths
 					setWorkingPaths();
+					// now recreate all HTM, etc. files
+					createHTMs();
+				}
+				else if (m_bRightToLeftScript != bRtlScriptBefore)
+				{
 					// now recreate all HTM, etc. files
 					createHTMs();
 				}
@@ -1421,10 +1439,10 @@ namespace PAWSStarterKit
 				astrPngFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"TreeDescriptions"), "*.png");
 				astrDocFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"Help"), "*.doc");
 				dlg.progressBar.Minimum = 1;
-				// Max is all the files plus the UnderConstruction.htm and Purpose.htm
+				// Max is all the files plus the UnderConstruction.htm, CarlaStudioSetup.htm and Purpose.htm
 				dlg.progressBar.Maximum = astrXmlFiles.Length +
 					astrContentsFiles.Length + astrGifFiles.Length +
-					astrPngFiles.Length + astrDocFiles.Length + 2;
+					astrPngFiles.Length + astrDocFiles.Length + 3;
 				dlg.progressBar.Value = 1;
 				dlg.progressBar.Step = 1;
 				dlg.progressBar.Visible = true;
@@ -1437,6 +1455,7 @@ namespace PAWSStarterKit
 					xslt.Load(Path.Combine(
 						Path.Combine(m_strAppPath,@"Transforms"), "PAWSSKHtmlMapper.xsl"));
 					xslArg.AddParam("prmLangAbbr", "", m_strLanguageAbbreviation);
+					xslArg.AddParam("prmRtlScript", "", m_bRightToLeftScript.ToString());
 					foreach (string strFile in astrXmlFiles)
 					{
 						dlg.doProgressUpdate(strFile);
@@ -1458,6 +1477,8 @@ namespace PAWSStarterKit
 						dlg.doProgressUpdate(strFile);
 						updateHTM(strFile);
 					}
+					updateHTM(Path.Combine(m_strAppPath,
+						Path.Combine(@"HTMs", m_strCarlaStudioSetupHtm)));
 					updateHTM(Path.Combine(m_strAppPath,
 						Path.Combine(@"HTMs", m_strPurposeHtm)));
 					updateHTM(Path.Combine(m_strAppPath,
@@ -1555,6 +1576,8 @@ namespace PAWSStarterKit
 				m_XmlDoc.Load(strAnswerFile);
 				m_strLanguageName = getXmlElementContent("//language/langName");
 				m_strLanguageAbbreviation = getXmlElementContent("//language/langAbbr");
+				string strBool = getXmlElementAttribute("//language/font/@rtl");
+				m_bRightToLeftScript = Convert.ToBoolean(strBool);
 #if CheckLangAbbrOnLoad
 				MessageBox.Show("In loadAnswerFile: langAbbr = " + m_strLanguageAbbreviation);
 #endif // CheckLangAbbrOnLoad

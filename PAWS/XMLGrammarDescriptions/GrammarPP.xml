@@ -2054,14 +2054,14 @@ PP = {Deg_1 / AdjP_2 / AdvP_1} P' {Deg_2 / AdjP_2 / AdvP_2}
 rule {PBar option 1a - prepositions, accusative DP complement}
 P' = P DP
 	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P' head object&gt; = &lt;DP&gt;
 	&lt;P head type PP-initial&gt; = +
-	&lt;DP head agr case&gt; = accusative
+	&lt;DP head case&gt; = accusative
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-	&lt;P' head object agr&gt; = &lt;DP head agr&gt;	| for passive
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
 	&lt;P' option&gt; = 1a
 </rule>
 	<showWhen id="PBaroption1a">
@@ -2081,15 +2081,15 @@ P' = P DP
 rule {PBar option 1aA - prepositions, absolutive DP complement}
 P' = P DP
 	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P' head object&gt; = &lt;DP&gt;
 	&lt;P head type PP-initial&gt; = +
-	&lt;DP head agr case&gt; = absolutive
-		&lt;P' head type absolutive_PP&gt; = +        | for restricting w/ possessor
+	&lt;DP head case&gt; = absolutive
+	&lt;P' head type absolutive_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-	&lt;P' head object agr&gt; = &lt;DP head agr&gt;	| for passive
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
 	&lt;P' option&gt; = 1aA
 </rule>
 	<showWhen id="PBaroption1aA">
@@ -2121,15 +2121,15 @@ P' = P DP
 rule {PBar option 1aE - prepositions, ergative DP complement}
 P' = P DP
 	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P' head object&gt; = &lt;DP&gt;
 	&lt;P head type PP-initial&gt; = +
-	&lt;DP head agr case&gt; = ergative
-		&lt;P' head type ergative_PP&gt; = +        | for restricting w/ possessor
+	&lt;DP head case&gt; = ergative
+	&lt;P' head type ergative_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-	&lt;P' head object agr&gt; = &lt;DP head agr&gt;	| for passive
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
 	&lt;P' option&gt; = 1aE
 </rule>
 	<showWhen id="PBaroption1aE">
@@ -2161,15 +2161,15 @@ P' = P DP
 rule {PBar option 1aG - prepositions, genitive DP complement}
 P' = P DP
 	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P' head object&gt; = &lt;DP&gt;
 	&lt;P head type PP-initial&gt; = +
-	&lt;DP head agr case&gt; = genitive
-		&lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
+	&lt;DP head case&gt; = genitive
+	&lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-	&lt;P' head object agr&gt; = &lt;DP head agr&gt;	| for passive
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
 	&lt;P' option&gt; = 1aG
 </rule>
 	<showWhen id="PBaroption1aG">
@@ -2201,14 +2201,14 @@ P' = P DP
 rule {PBar option 1b - postpositions, accusative DP complement}
 P' = DP P
 	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P' head object&gt; = &lt;DP&gt;
 	&lt;P head type PP-final&gt; = +
-	&lt;DP head agr case&gt; = accusative
+	&lt;DP head case&gt; = accusative
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-	&lt;P' head object agr&gt; = &lt;DP head agr&gt;	| for passive
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
 	&lt;P' option&gt; = 1b
 </rule>
 	<showWhen id="PBaroption1b">
@@ -2228,15 +2228,15 @@ P' = DP P
 rule {PBar option 1bA - postpositions, absolutive DP complement}
 P' = DP P
 	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P' head object&gt; = &lt;DP&gt;
 	&lt;P head type PP-final&gt; = +
-	&lt;DP head agr case&gt; = absolutive
-		&lt;P' head type absolutive_PP&gt; = +        | for restricting w/ possessor
+	&lt;DP head case&gt; = absolutive
+	&lt;P' head type absolutive_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-	&lt;P' head object agr&gt; = &lt;DP head agr&gt;	| for passive
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
 	&lt;P' option&gt; = 1bA
 </rule>
 	<showWhen id="PBaroption1bA">
@@ -2268,15 +2268,15 @@ P' = DP P
 rule {PBar option 1bE - postpositions, ergative DP complement}
 P' = DP P
 	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P' head object&gt; = &lt;DP&gt;
 	&lt;P head type PP-final&gt; = +
-	&lt;DP head agr case&gt; = ergative
-		&lt;P' head type ergative_PP&gt; = +        | for restricting w/ possessor
+	&lt;DP head case&gt; = ergative
+	&lt;P' head type ergative_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-	&lt;P' head object agr&gt; = &lt;DP head agr&gt;	| for passive
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
 	&lt;P' option&gt; = 1bE
 </rule>
 	<showWhen id="PBaroption1bE">
@@ -2296,15 +2296,15 @@ P' = DP P
 rule {PBar option 1bG - postpositions, genitive DP complement}
 P' = DP P
 	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P' head object&gt; = &lt;DP&gt;
 	&lt;P head type PP-final&gt; = +
-	&lt;DP head agr case&gt; = genitive
-		&lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
+	&lt;DP head case&gt; = genitive
+	&lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-	&lt;P' head object agr&gt; = &lt;DP head agr&gt;	| for passive
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
 	&lt;P' option&gt; = 1bG
 </rule>
 	<showWhen id="PBaroption1bG">
@@ -2339,7 +2339,7 @@ P' = P AdvP
 	&lt;P head type PP-initial&gt; = +
 	&lt;AdvP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-		&lt;P' head type suffix poss&gt; &lt;= &lt;AdvP head type suffix poss&gt;
+	&lt;P' head type suffix poss&gt; &lt;= &lt;AdvP head type suffix poss&gt;
 	&lt;P' option&gt; = 2a
 </rule>
 	<showWhen id="PBaroption2a">
@@ -2362,7 +2362,7 @@ P' = AdvP P
 	&lt;P head type PP-final&gt; = +
 	&lt;AdvP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-		&lt;P' head type prefix poss&gt; &lt;= &lt;AdvP head type prefix poss&gt;
+	&lt;P' head type prefix poss&gt; &lt;= &lt;AdvP head type prefix poss&gt;
 	&lt;P' option&gt; = 2b
 </rule>
 	<showWhen id="PBaroption2b">
@@ -2386,7 +2386,7 @@ P' = P PP
 	&lt;P head type locative&gt; = +
 	&lt;PP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-		&lt;P' head type suffix poss&gt; &lt;= &lt;PP head type suffix poss&gt;
+	&lt;P' head type suffix poss&gt; &lt;= &lt;PP head type suffix poss&gt;
 	&lt;P' option&gt; = 3a
 </rule>
 	<showWhen id="PBaroption3a">
@@ -2410,7 +2410,7 @@ P' = PP P
 	&lt;P head type locative&gt; = +
 	&lt;PP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
-		&lt;P' head type prefix poss&gt; &lt;= &lt;PP head type prefix poss&gt;
+	&lt;P' head type prefix poss&gt; &lt;= &lt;PP head type prefix poss&gt;
 	&lt;P' option&gt; = 3b
 </rule>
 	<showWhen id="PBaroption3b">
@@ -2436,7 +2436,7 @@ P' = P IP
 	&lt;IP head type copular&gt; = -
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type sentential&gt; = +
-		&lt;P head type temporal&gt; = +           | assuming only temporals take IPs
+	&lt;P head type temporal&gt; = +           | assuming only temporals take IPs
 	&lt;P' option&gt; = 4a
 </rule>
 	<showWhen id="PBaroption4a">
@@ -2462,7 +2462,7 @@ P' = IP P
 	&lt;IP head type copular&gt; = -
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type sentential&gt; = +
-		&lt;P head type temporal&gt; = +           | assuming only temporals take IPs
+	&lt;P head type temporal&gt; = +           | assuming only temporals take IPs
 	&lt;P' option&gt; = 4b
 </rule>
 	<showWhen id="PBaroption4b">
@@ -2492,7 +2492,8 @@ P' = P
 rule {PBar option 5a - P_prefix}
 P' = DP
 		&lt;P' head&gt; = &lt;DP head&gt;
-		&lt;DP head type prefix P&gt; = +
+	&lt;P' head object&gt; = &lt;DP&gt;
+	&lt;DP head type prefix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' option&gt; = 5a
 </rule>
@@ -2507,7 +2508,8 @@ P' = DP
 rule {PBar option 5b - P_suffix}
 P' = DP
 		&lt;P' head&gt; = &lt;DP head&gt;
-		&lt;DP head type suffix P&gt; = +
+	&lt;P' head object&gt; = &lt;DP&gt;
+	&lt;DP head type suffix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' option&gt; = 5b
 </rule>
@@ -2522,7 +2524,8 @@ P' = DP
 rule {PBar option 5aN - PP affix on N}
 P' = DP
 		&lt;P' head&gt; = &lt;DP head&gt;
-		&lt;DP head type PP&gt; = +
+	&lt;P' head object&gt; = &lt;DP&gt;
+	&lt;DP head type PP&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' option&gt; = 5aN
 </rule>
@@ -2535,7 +2538,7 @@ P' = DP
 rule {PBar option 6a - P_prefix, IP complement}
 P' = IP
 		&lt;P' head&gt; = &lt;IP head&gt;
-		&lt;IP head type prefix P&gt; = +
+	&lt;IP head type prefix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' head type sentential&gt; = +
 	&lt;P' option&gt; = 6a
@@ -2553,7 +2556,7 @@ P' = IP
 rule {PBar option 6b - P_suffix, IP complement}
 P' = IP
 		&lt;P' head&gt; = &lt;IP head&gt;
-		&lt;IP head type suffix P&gt; = +
+	&lt;IP head type suffix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' head type sentential&gt; = +
 	&lt;P' option&gt; = 6b

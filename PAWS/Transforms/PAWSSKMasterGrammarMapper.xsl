@@ -28,7 +28,7 @@ Main template
 | **********************************************************************
 |
 |PC-PATR Grammar file for PAWS Starter Kit
-| C Black    July 2002
+| C Black    October 2004
 |
 |------------------------------------------------------------------------------
 |-Phrase structure rules
@@ -64,6 +64,7 @@ Include other templates
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+27-Oct-2004   Andy Black  Changed date to October 2004
 31-Jul-2002    Andy Black  Changed name of generated transforms to Grammar*.xsl
 18-Jul-2002    Andy Black  Reordered XSLs per Cheri's preference
 17-Jul-2002    Andy Black  Added rest of XSLs

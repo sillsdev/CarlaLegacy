@@ -72,7 +72,7 @@ namespace PAWSStarterKit
 			label2.Name = "label2";
 			label2.Size = new Size(iClientWidth, label2.Font.Height);
 			label2.TabIndex = 6;
-			label2.Text = "Version " + strVersion + " Alpha";
+			label2.Text = "Version " + strVersion + " Beta";
 			label2.TextAlign = ContentAlignment.MiddleLeft;
 			//
 			// label3
@@ -83,7 +83,7 @@ namespace PAWSStarterKit
 			label3.Name = "label3";
 			label3.Size = new Size(iClientWidth, label3.Font.Height);
 			label3.TabIndex = 7;
-			label3.Text = "Copyright \x00A9 2002 SIL International";
+			label3.Text = "Copyright \x00A9 2002-2004 SIL International";
 			label3.TextAlign = ContentAlignment.MiddleLeft;
 			//
 			// button1

@@ -14,10 +14,6 @@
 	</EnglishExample>
 	<introduction>In English, articles and demonstratives do not co-occur in the same nominal phrase, and both occur before the noun.  They may be able to co-occur in your language, or they may occur in different positions with respect to the noun.  Therefore, we will give them different syntactic categories.  Some languages only have one set, either articles or demonstratives.  A few languages may not have either type expressed as separate words.</introduction>
 	<form section="np">
-		<instruction>Key some examples with both an article and a demonstrative in the box below, if grammatical, as well as some with each type alone.</instruction>
-		<prompt>Key your examples here:</prompt>
-		<textBox id="NPExample" dataItem="example"/>
-		<br/>
 		<radioGroup>
 			<groupName dataItem="artAndDem" default="no">RNPArtAndDem</groupName>
 			<prompt>Does your language have articles and demonstratives realized as separate words?</prompt>
@@ -27,9 +23,13 @@
 			<radio id="NPArtAndDemBoth" dataValue="both">Yes, both articles and demonstratives</radio>
 		</radioGroup>
 		<br/>
+		<instruction id="NPArtAndDemExampleInstruction" show="swNPArtAndOrDem">Key some examples with both an article and a demonstrative in the box below, if grammatical, as well as some with each type alone.</instruction>
+		<prompt id="NPArtAndDemExamplePrompt" show="swNPArtAndOrDem">Key your examples here:</prompt>
+		<textBox id="NPExample" show="swNPArtAndOrDem" dataItem="example"/>
+		<br/>
 		<radioGroup id="NPArtCaseTable" show="swNPArtAndOrDem">
 			<groupName dataItem="artCase" default="no">RArtCase</groupName>
-			<prompt>Does your language have different forms for <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives</span>  based on case?</prompt>
+			<prompt>Does your language have different forms for <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> based on case?</prompt>
 			<radio id="NPArtCaseNo" dataValue="no">No</radio>
 			<radio id="NPArtCaseYes" dataValue="yes">Yes</radio>
 		</radioGroup>

@@ -3,31 +3,44 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronIndefinite">
 	<title level="2">Pronouns - Indefinites</title>
-	<introduction>A final type of pronouns is indefinites.  In English, these include <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>something</example>, etc.  Also, <example>nobody</example>, <example>nothing</example>, <example>none</example> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier (positive or negative) plus an indefinite generic noun, and some languages may not merge them into a single word, as in <example>no one</example> for English.</introduction>
+	<introduction>A final type of pronouns is indefinites.  In English, these include <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>something</example>, etc.  Also, <example>nobody</example>, <example>nothing</example>, <example>none</example> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier determiner (positive or negative) plus an indefinite generic noun, and some languages may not merge them into a single word, as in <example>no one</example> for English.</introduction>
 	<form section="pron">
 		<radioGroup id="PronIndefGroup">
-			<groupName dataItem="indef" default="no">RPronIndef</groupName>
-			<prompt>Does your language have single-word indefinite pronouns?</prompt>
-			<radio id="PronIndefNo" dataValue="no">No, they are all noun phrases</radio>
+			<groupName dataItem="indef" default="yes">RPronIndef</groupName>
+			<prompt>Does your language have any positive single-word indefinite pronouns?</prompt>
 			<radio id="PronIndefYes" dataValue="yes">Yes, like English, at least some of them are merged into indefinite pronouns</radio>
+			<radio id="PronIndefNo" dataValue="no">No, they are all nominal phrases</radio>
+		</radioGroup>
+		<radioGroup id="PronNegIndefGroup">
+			<groupName dataItem="negIndef" default="yes">RPronNegIndef</groupName>
+			<prompt>Does your language have any negative single-word indefinite pronouns?</prompt>
+			<radio id="PronNegIndefYes" dataValue="yes">Yes, <span id="PronNegIndefNotPosOnlySpan" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">like English, at least some of them are merged into negative indefinite pronouns</span><span id="PronNegIndefPosOnlySpan" show="swQPDeterminerNoOrYesSomeAndPosOnly">but no negative indefinite nominal phrases since the language does not have any means of negating a nominal phrase</span></radio>
+			<radio id="PronNegIndefNo" dataValue="no">No, <span id="PronNegIndefNotPosOnlySpan2" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">they are all nominal phrases</span><span id="PronNegIndefPosOnlySpan2" show="swQPDeterminerNoOrYesSomeAndPosOnly">and there are no negative indefinite nominal phrases either since the language does not have any means of negating a nominal phrase</span></radio>
 		</radioGroup>
 		<prompt id="PronIndefExamples" show="swPronIndefYes">
 		Key some examples of the positive indefinite pronouns here:</prompt>
 		<textBox id="PronIndefExample" dataItem="indefExample" show="swPronIndefYes"/>
-		<prompt id="PronNegIndefExamples" show="swPronIndefYes">
+		<prompt id="PronNegIndefExamples" show="swPronNegIndefYes">
 		Key some examples of the negative indefinite pronouns here:</prompt>
-		<textBox id="PronNegIndefExample" dataItem="negIndefExample" show="swPronIndefYes"/>
+		<textBox id="PronNegIndefExample" dataItem="negIndefExample" show="swPronNegIndefYes"/>
 		<prompt id="PronIndefNPExamples">
 		  Key some examples of positive indefinite noun phrases <span id="PronIndefYesSpan" show="swPronIndefYes">(if any) </span>in your language here:</prompt>
 		<textBox id="PronIndefNPExample" dataItem="indefNPExample"/>
-		<prompt id="PronNegIndefNPExamples">
-		  Key some examples of negative indefinite noun phrases <span id="PronIndefYesSpan1" show="swPronIndefYes">(if any) </span>in your language here:</prompt>
-		<textBox id="PronNegIndefNPExample" dataItem="negIndefNPExample"/>
-		<instruction id="PronIndefYesInstruction" show="swPronIndefYes">
-			Add the feature <feature>negative</feature> to any versions of the indefinite pronouns which are negative.  Also add this feature to any negative quantifiers that can be used in a noun phrase.  We will leave <feature>indefinite</feature> as unspecified.</instruction>
-		<instruction id="PronIndefNoInstruction" show="swPronIndefNo">
-			Add the feature <feature>negative</feature> to any elements (such as quantifiers) in the noun phrases which are negative.  We will leave <feature>indefinite</feature> as unspecified.</instruction>
+		<prompt id="PronNegIndefNPExamples" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">
+		  Key some examples of negative indefinite noun phrases <span id="PronNegIndefYesSpan1" show="swPronNegIndefYes">(if any) </span>in your language here:</prompt>
+		<textBox id="PronNegIndefNPExample" dataItem="negIndefNPExample" show="swQPDeterminerNotNoOrYesSomeAndPosOnly"/>
+		<instruction id="PronNegIndefYesInstruction" show="swPronNegIndefYesAndQPDeterminerYesOrYesNo">
+			Add the feature <feature>negative</feature> to the negative indefinite pronouns.  The negative quantifier determiners meaning 'no' that can be used in a negative indefinite noun phrase should have already been marked with the features <feature>negative Det</feature> in <section number="2">Quantifiers and QP - No other modifiers</section>.  If any of the ones noted here were missed, marked them now.   We will leave <feature>indefinite</feature> unspecified.</instruction>
+		<instruction id="PronNegIndefYesInstruction2" show="swPronNegIndefYesAndQPDeterminerNoOrYesSomeAndPosOnly">
+			Add the feature <feature>negative</feature> to the negative indefinite pronouns.   We will leave <feature>indefinite</feature> unspecified.</instruction>
+		<instruction id="PronNegIndefYesInstruction3" show="swPronNegIndefYesAndQPDeterminerNoOrYesSomeAndNotPosOnly">
+			Add the feature <feature>negative</feature> to the negative indefinite pronouns.  Any negative special degree elements meaning 'not' that can be used in a negative indefinite noun phrase should have already been marked with the proper features in <section number="2">Quantifiers and QP</section>.  If any of the ones noted here were missed, marked them now: those written as separate words need the features <feature>negative Deg modifies_NP</feature>; phrasal clitics which attach to the front first word of the nominal phrase need the feature <feature>negative_prefix</feature> and phrasal clitics which attach to the end of the last word in the nominal phrase need the feature <feature>negative_suffix</feature>; affixes that attach to the head noun need only the feature <feature>negative</feature>.   We will leave <feature>indefinite</feature> unspecified.</instruction>
+		<instruction id="PronNegIndefNoInstruction" show="swPronNegIndefNoAndQPDeterminerNotNoOrYesSome">
+			The negative quantifier determiners meaning 'no' that can be used in a negative indefinite noun phrase should have already been marked with the features <feature>negative Det</feature> in <section number="2">Quantifiers and QP - No other modifiers</section>.  If any of the ones noted here were missed, marked them now.  We will leave <feature>indefinite</feature> unspecified.</instruction>
+		<instruction id="PronNegIndefNoInstruction2" show="swPronNegIndefNoAndQPDeterminerNoOrYesSomeAndNotPosOnly">
+			Any negative special degree elements meaning 'not' that can be used in a negative indefinite noun phrase should have already been marked with the proper features in <section number="2">Quantifiers and QP</section>.  If any of the ones noted here were missed, marked them now: those written as separate words need the features <feature>negative Deg modifies_NP</feature>; phrasal clitics which attach to the front first word of the nominal phrase need the feature <feature>negative_prefix</feature> and phrasal clitics which attach to the end of the last word in the nominal phrase need the feature <feature>negative_suffix</feature>; affixes that attach to the head noun need only the feature <feature>negative</feature>.   We will leave <feature>indefinite</feature> unspecified.</instruction>
 		<br/>
+<br/>
 		<buttons>
 			<button id="PronIndefBack" value="Back" goto="PronReciprocal.htm"/>
 			<button id="PronIndefNext" value="Next" goto="PronNP.htm"/>
@@ -39,4 +52,138 @@
 	<showWhen id="swPronIndefNo">
 		<whenRadio button="PronIndefNo"/>
 	</showWhen>
+	<showWhen id="swPronNegIndefYes">
+		<whenRadio button="PronNegIndefYes"/>
+	</showWhen>
+	<showWhen id="swPronNegIndefNo">
+		<whenRadio button="PronNegIndefNo"/>
+	</showWhen>
+<showWhen id="swQPDeterminerNotNoOrYesSomeAndPosOnly">
+<openParen/><openParen/>
+<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenValue element="qp" attr="determiner" value="yesSome"/>
+<closeParen/>
+<and/>
+<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="no"/>
+<closeParen/><closeParen/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesNo"/>
+</showWhen>
+<showWhen id="swQPDeterminerNoOrYesSomeAndPosOnly">
+<openParen/>
+<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenValue element="qp" attr="determiner" value="yesSome"/>
+<closeParen/>
+<and/>
+<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<closeParen/>
+</showWhen>
+<showWhen id="swPronNegIndefYesAndQPDeterminerNotNoOrYesSomeAndPosOnly">
+	<whenRadio button="PronNegIndefYes"></whenRadio>
+<and/>
+<openParen/><openParen/>
+<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenValue element="qp" attr="determiner" value="yesSome"/>
+<closeParen/>
+<and/>
+<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="no"/>
+<closeParen/><closeParen/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesNo"/>
+</showWhen>
+<showWhen id="swPronNegIndefYesAndQPDeterminerNoOrYesSomeAndPosOnly">
+	<whenRadio button="PronNegIndefYes"></whenRadio>
+<and/>
+<openParen/>
+<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenValue element="qp" attr="determiner" value="yesSome"/>
+<closeParen/>
+<and/>
+<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<closeParen/>
+</showWhen>
+<showWhen id="swPronNegIndefYesAndQPDeterminerNoOrYesSomeAndNotPosOnly">
+	<whenRadio button="PronNegIndefYes"></whenRadio>
+<and/>
+<openParen/><openParen/>
+<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenValue element="qp" attr="determiner" value="yesSome"/>
+<closeParen/>
+<and/>
+<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="npDegree" value="no"/>
+<closeParen/><closeParen/>
+</showWhen>
+<showWhen id="swPronNegIndefNoAndQPDeterminerNotNoOrYesSome">
+	<whenRadio button="PronNegIndefNo"></whenRadio>
+<and/>
+<openParen/>
+<whenValue element="qp" attr="determiner" value="yes"/>
+<or/>
+<whenValue element="qp" attr="determiner" value="yesNo"/>
+<closeParen/>
+</showWhen>
+<showWhen id="swPronNegIndefNoAndQPDeterminerNoOrYesSomeAndNotPosOnly">
+	<whenRadio button="PronNegIndefNo"></whenRadio>
+<and/>
+<openParen/>
+<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenValue element="qp" attr="determiner" value="yesSome"/>
+<closeParen/>
+<and/>
+<openParen/>
+<whenValue element="qp" attr="npDegree" value="no"/>
+<or/>
+<whenValue element="qp" attr="npDegree" value="yes"/>
+<or/>
+<whenValue element="qp" attr="npDegree" value="yesPos"/>
+<or/>
+<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+<closeParen/>
+</showWhen>
+<showWhen id="swPronNegIndefYesAndQPDeterminerYesOrYesNo">
+	<whenRadio button="PronNegIndefYes"></whenRadio>
+<and/>
+<openParen/>
+<whenValue element="qp" attr="determiner" value="yes"/>
+<or/>
+<whenValue element="qp" attr="determiner" value="yesNo"/>
+<closeParen/>
+</showWhen>
 </page>

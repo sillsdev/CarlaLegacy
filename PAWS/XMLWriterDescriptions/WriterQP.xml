@@ -4,13 +4,22 @@
 	<section1 id="sQP">
 		<secTitle>Quantifiers and Quantifier Phrases</secTitle>
 		<p>
-			<content>Most languages have three sets of quantifiers:</content>
+			<content>Quantifiers can show up in various places in a nominal phrase. Most languages have four sets of quantifiers:</content>
 		</p>
 		<ul>
 			<li>
 				<content>Those meaning </content>
 				<langData>all</langData>
-				<content>,</content>
+				<content> or </content>
+				<langData>not</langData>
+				<content>, which modify the whole nominal phrase,</content>
+			</li>
+			<li>
+				<content>quantifiers such as </content>
+				<langData>some</langData>
+				<content> or </content>
+				<langData>no</langData>
+				<content>, which do not co-occur with any other modifers except adjectives,</content>
 			</li>
 			<li>
 				<content>other quantifiers such as </content>
@@ -29,25 +38,44 @@ or </content>
 </content>
 		</p>
 		<section2 id="sQPAll">
-			<secTitle>Quantifiers meaning "all"</secTitle>
+			<secTitle>Quantifiers which modify the whole nominal phrase</secTitle>
 			<p>
 				<content>Quantifiers meaning </content>
 				<langData>all</langData>
+				<content> or </content>
+				<langData>not</langData>
 				<content> seem to be a category of their
 own.  They usually occur first (or last) in a nominal phrase, in a position distinct from
-the other quantifiers but in the same place as words
+the other quantifiers but in the same place as degree words
 like </content>
 				<langData>only</langData>
 				<content> and </content>
 				<langData>just</langData>
-				<content>.  These words modify the whole nominal phrase, as in </content>
+				<content> (which can also act as focus markers, to be dscussed in section </content>
+				<sectionRef sec="sFocus"/>
+				<content>) and words that mean the same as </content>
+				<langData>almost</langData>
+				<content> (which can also co-occur with </content>
+				<langData>all</langData>
+				<content>), so we will refer to them as special degree words.  These words modify the whole nominal phrase, as in </content>
 				<langData>all five children</langData>
 				<content>, </content>
 				<langData>only Sue's three children</langData>
+				<content>, </content>
+				<langData>nearly all  John's young children</langData>
 				<content> and </content>
 				<langData>just this many children</langData>
-				<content>.
-</content>
+				<content>.  Note that </content>
+				<langData>not</langData>
+				<content> can occur in place of or before these other special degree words, as in </content>
+				<langData>not the children</langData>
+				<content>, </content>
+				<langData>not all five children</langData>
+				<content>, </content>
+				<langData>not just this many children</langData>
+				<content> or </content>
+				<langData>not only Sue's three children</langData>
+				<content>.</content>
 			</p>
 			<p>
 				<content/>
@@ -56,46 +84,164 @@ like </content>
 			</p>
 			<example>
 				<table border="1">
-				  <headerRow>
-	<headerCol>English</headerCol>
-	<headerCol><langName/></headerCol>
-</headerRow>
-<row>
+					<headerRow>
+						<headerCol>
+							<langName/>
+						</headerCol>
+						<headerCol>meaning</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="qp/all"/>
 						<col>
 							<content>all</content>
 						</col>
-						<col exampleLoc="qp/all"/>
 					</row>
 					<row>
+						<col exampleLoc="qp/almost"/>
 						<col>
-							<content>only</content>
+							<content>almost</content>
 						</col>
+					</row>
+					<row>
 						<col exampleLoc="qp/only"/>
-					</row>
-					<row>
 						<col>
-							<content>just</content>
+							<content>only or just</content>
 						</col>
-						<col exampleLoc="qp/just"/>
+					</row>
+					<row show="swQPNPDegreeNotPosOnly">
+						<col exampleLoc="qp/not"/>
+						<col>
+							<content>not</content>
+						</col>
 					</row>
 				</table>
 			</example>
 			<p show="swQPNPDegreeNo">
 				<content>In </content>
 				<langName/>
-				<content>, these are not expressed as separate words which modify the whole nominal phrase.</content>
+				<content>, these are not expressed as separate words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.  The positive special degree elements are </content>
+				<case element="qp" attr="npDegreePosType">
+					<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+					<caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+				</case>
+				<content>  The negative special degree elements are </content>
+				<case element="qp" attr="npDegreeNegType">
+					<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+					<caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+				</case>
+				<content/>
+				<langName/>
+				<content> positive nominal phrase examples include:</content>
 			</p>
-			<p show="swQPNPDegreeYes">
+			<p show="swQPNPDegreeNoPosOnly">
 				<content>In </content>
 				<langName/>
-				<content>, these are expressed as separate words which modify the whole nominal phrase.  These words occur </content>
+				<content>, the positive special degree elements are not expressed as separate words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase as </content>
+				<case element="qp" attr="npDegreePosType">
+					<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+					<caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+				</case>
+				<content>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </content>
+				<langName/>
+				<content> positive nominal phrase examples include:</content>
+			</p>
+			<p show="swQPNPDegreeYesPos">
+				<content>In </content>
+				<langName/>
+				<content>, the positive special degree elements are expressed as separate words which modify the whole nominal phrase.  They  occur </content>
 				<case element="qp" attr="npDegreePos">
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 					<caseText value="beforeOrBoth">before or on both sides of</caseText>
 					<caseText value="afterOrBoth">after or on both sides of</caseText>
 					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> the rest of the nominal phrase.  </content>
+				<text show="swQPNPDegreeEitherUnrestricted">
+					<content>All of these words can occur on either side of the nominal phrase.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeEitherRestricted">
+					<content>There are restrictions as to which of these words can occur on each side of the nominal phrase.  </content>
+				</text>
+				<content>The negative special degree elements, however, are not expressed as separate words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.  These negative special degree elements are </content>
+				<case element="qp" attr="npDegreeNegType">
+					<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+					<caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+				</case>
+				<content/>
+				<langName/>
+				<content> positive nominal phrase examples include:</content>
+			</p>
+			<p show="swQPNPDegreeYesPosOnly">
+				<content>In </content>
+				<langName/>
+				<content>, the positive special degree elements are expressed as separate words which modify the whole nominal phrase.  They  occur </content>
+				<case element="qp" attr="npDegreePos">
+					<caseText value="before">before</caseText>
+					<caseText value="after">after</caseText>
+					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+					<caseText value="beforeOrBoth">before or on both sides of</caseText>
+					<caseText value="afterOrBoth">after or on both sides of</caseText>
+					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> the rest of the nominal phrase.  </content>
+				<text show="swQPNPDegreeEitherUnrestricted">
+					<content>All of these words can occur on either side of the nominal phrase.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeEitherRestricted">
+					<content>There are restrictions as to which of these words can occur on each side of the nominal phrase.  </content>
+				</text>
+				<content>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </content>
+				<langName/>
+				<content> positive nominal phrase examples include:</content>
+			</p>
+			<p show="swQPNPDegreeYesNeg">
+				<content>In </content>
+				<langName/>
+				<content>, the positive special degree elements are not expressed as separate words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.  These positive special degree elements are </content>
+				<case element="qp" attr="npDegreePosType">
+					<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+					<caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+					<caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+				</case>
+				<content>  The negative special degree elements in </content>
+				<langName/>
+				<content>, however, are expressed as separate words which modify the whole nominal phrase.  They  occur </content>
+				<case element="qp" attr="npDegreePos">
+					<caseText value="before">before</caseText>
+					<caseText value="after">after</caseText>
+					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+					<caseText value="beforeOrBoth">before or on both sides of</caseText>
+					<caseText value="afterOrBoth">after or on both sides of</caseText>
+					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the rest of the nominal phrase.  </content>
 				<text show="swQPNPDegreeEitherUnrestricted">
@@ -106,13 +252,235 @@ like </content>
 					<content>There are restrictions as to which of these words can occur on each side of the nominal phrase.</content>
 				</text>
 				<content/>
-	  <langName/><content> examples include:</content>          </p>
-			<example show="swQPNPDegreeYes">
+				<langName/>
+				<content> positive nominal phrase examples include:</content>
+			</p>
+			<p show="swQPNPDegreeYes">
+				<content>In </content>
+				<langName/>
+				<content>, these are expressed as separate words which modify the whole nominal phrase.  They  occur </content>
+				<case element="qp" attr="npDegreePos">
+					<caseText value="before">before</caseText>
+					<caseText value="after">after</caseText>
+					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+					<caseText value="beforeOrBoth">before or on both sides of</caseText>
+					<caseText value="afterOrBoth">after or on both sides of</caseText>
+					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> the rest of the nominal phrase.  </content>
+				<text show="swQPNPDegreeEitherUnrestricted">
+					<content>All of these words can occur on either side of the nominal phrase.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeEitherRestricted">
+					<content>There are restrictions as to which of these words can occur on each side of the nominal phrase.</content>
+				</text>
+				<content/>
+				<langName/>
+				<content> positive nominal phrase examples include:</content>
+			</p>
+			<example>
 				<interlinear exampleLoc="qp/example"/>
 			</example>
+			<p show="swQPNPDegreeNotPosOnly">
+				<content/>
+				<langName/>
+				<content> negative nominal phrase examples not including the positive special degree elements are:</content>
+			</p>
+			<example show="swQPNPDegreeNotPosOnly">
+				<interlinear exampleLoc="qp/negExample"/>
+			</example>
+			<p show="swQPNPDegreeNegCooccurNo">
+				<content/>
+				<langName/>
+				<content> does not allow the word(s) meaning </content>
+				<langData>not</langData>
+				<content> to co-occur with the positive special degree words in a single nominal phrase.</content>
+			</p>
+			<p show="swQPNPDegreeNegCooccurYes">
+				<content/>
+				<langName/>
+				<content> allows the word(s) meaning </content>
+				<langData>not</langData>
+				<content> to co-occur with the positive special degree words in a single nominal phrase.  The negative special degree words occur </content>
+				<case element="qp" attr="npDegreeNegPos">
+					<caseText value="before">before</caseText>
+					<caseText value="after">after</caseText>
+					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+					<caseText value="beforeOrBoth">before or on both sides of</caseText>
+					<caseText value="afterOrBoth">after or on both sides of</caseText>
+					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> the rest of the nominal phrase (including the positive special degree words).  </content>
+				<text show="swQPNPDegreeNegEitherUnrestricted">
+					<content>All of these negative words can occur on either side of the nominal phrase.  </content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeNegEitherRestricted">
+					<content>There are restrictions as to which of these negative words can occur on each side of the nominal phrase.  </content>
+				</text>
+				<content/>
+				<langName/>
+				<content> negative nominal phrase examples which include the positive special degree words are:</content>
+			</p>
+			<p show="swQPNPDegreeNotYesAndNegCooccurNo">
+				<content/>
+				<langName/>
+				<content> negative nominal phrase examples which include the positive special degree elements are:</content>
+			</p>
+			<example show="swQPNPDegreeNotYesAndNegCooccurNo">
+				<interlinear exampleLoc="qp/negCooccurExample"/>
+			</example>
+			<p show="swQPNPDegreeNotPosOnly">
+				<content>See section </content>
+				<sectionRef sec="sNegNominal"/>
+				<content> for examples of the negative elements used in sentences and discussion of the negation constructions in </content>
+				<langName/>
+				<content>.</content>
+			</p>
+		</section2>
+		<section2 id="sQPDeterminers">
+			<secTitle>Quantifiers which do not co-occur with Determiners</secTitle>
+			<p>
+				<content>The second set includes quantifiers like </content>
+				<langData>some</langData>
+				<content>, </content>
+				<langData>every</langData>
+				<content>, and  </content>
+				<langData>no</langData>
+				<content>, which do not allow any other articles, demonstratives or possessors in the nominal phrase.  English examples include </content>
+				<langData>some sad children</langData>
+				<content>, </content>
+				<langData>almost every little girl that I see</langData>
+				<content> and </content>
+				<langData>no black dogs</langData>
+				<content>.  Because they take the place of articles, demonstratives and possessors, we will treat these quantifiers as determiners with their own phrase structure rule.</content>
+			</p>
+			<p show="swQPDeterminerNoNotPosOnly">
+				<content/>
+				<langName/>
+				<content> does not have a separate set of quantifiers which act as the only determiner in the nominal phrase.  Negation of a nominal phrase is expressed by the special degree elements only.  The positive notions of </content>
+				<langData>some</langData>
+				<content> and </content>
+				<langData>every</langData>
+				<content> are either like </content>
+				<langData>all</langData>
+				<content> above or like the quantifiers which may co-occur with articles, demonstratives and/or possessors to be treated in the next section.</content>
+			</p>
+			<p show="swQPDeterminerNoPosOnly">
+				<content/>
+				<langName/>
+				<content> does not have a separate set of quantifiers which act as the only determiner in the nominal phrase.  Just as there is not any way to express the negative special degree element 'not', there is not any way to express 'no' modifying a nominal phrase in this language.  The positive notions of </content>
+				<langData>some</langData>
+				<content> and </content>
+				<langData>every</langData>
+				<content> are either like </content>
+				<langData>all</langData>
+				<content> above or like the quantifiers which may co-occur with articles, demonstratives and/or possessors to be treated in the next section.</content>
+			</p>
+			<p show="swQPDeterminerYesSomeNotPosOnly">
+				<content/>
+				<langName/>
+				<content> does not have a separate set of negative quantifiers which act as the only determiner in the nominal phrase.  Negation of a nominal phrase is expressed by the special degree elements only.                </content>
+				<langName/>
+				<content> has the following positive quantifiers which act as the only determiner in the nominal phrase:</content>
+			</p>
+			<p show="swQPDeterminerYesSomePosOnly">
+				<content/>
+				<langName/>
+				<content> does not have a separate set of negative quantifiers which act as the only determiner in the nominal phrase, just as there was not any way to express the negative special degree element 'not'.                </content>
+				<langName/>
+				<content> has the following positive quantifiers which act as the only determiner in the nominal phrase:</content>
+			</p>
+			<p show="swQPDeterminerYesNo">
+				<content/>
+				<langName/>
+				<content> does not have a separate set of positive quantifiers which act as the only determiner in the nominal phrase.  The positive notions of </content>
+				<langData>some</langData>
+				<content> and </content>
+				<langData>every</langData>
+				<content> are either like </content>
+				<langData>all</langData>
+				<content> above or like the quantifiers which may co-occur with articles, demonstratives and/or possessors to be treated in the next section.  </content>
+				<langName/>
+				<content> has the following negative quantifiers which act as the only determiner in the nominal phrase:</content>
+			</p>
+			<p show="swQPDeterminerYes">
+				<content/>
+				<langName/>
+				<content> has the following positive and negative quantifiers which act as the only determiner in the nominal phrase:</content>
+			</p>
+			<example show="swQPDeterminerNotNo">
+				<table border="1">
+					<caption>
+						<content>Quantifier Determiners</content>
+					</caption>
+					<row show="swQPDeterminerYesOrYesSome">
+						<col>
+							<content>positive</content>
+						</col>
+						<col exampleLoc="qp/determinerExample"/>
+					</row>
+					<row show="swQPDeterminerYesOrYesNo">
+						<col>
+							<content>negative</content>
+						</col>
+						<col exampleLoc="qp/determinerNegExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swQPDeterminerNotNo">
+				<content>These quantifier determiners occur </content>
+				<case element="qp" attr="determinerPos">
+					<caseText value="before">before</caseText>
+					<caseText value="after">after</caseText>
+					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+					<caseText value="beforeOrBoth">before or on both sides of</caseText>
+					<caseText value="afterOrBoth">after or on both sides of</caseText>
+					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> the head noun.  </content>
+				<text show="swQPDeterminerEitherUnrestricted">
+					<content>All of the quantifier determiners can occur on either side of the noun.</content>
+				</text>
+				<content/>
+				<text show="swQPDeterminerEitherRestricted">
+					<content>There are restrictions as to which of these quantifier determiners can occur on each side of the noun.</content>
+				</text>
+				<content/>
+			</p>
+			<p show="swQPDeterminerYesOrYesSome">
+				<content/>
+				<langName/>
+				<content> examples of positive quantifier determiners in full nominal phrases include:</content>
+			</p>
+			<example show="swQPDeterminerYesOrYesSome">
+				<interlinear exampleLoc="qp/determinerNPExample"/>
+			</example>
+			<p show="swQPDeterminerYesOrYesNo">
+				<content/>
+				<langName/>
+				<content> examples of negative quantifier determiners in full nominal phrases include:</content>
+			</p>
+			<example show="swQPDeterminerYesOrYesNo">
+				<interlinear exampleLoc="qp/determinerNegNPExample"/>
+			</example>
+			<p show="swQPDeterminerYesOrYesNo">
+				<content>See section </content>
+				<sectionRef sec="sNegNominal"/>
+				<content> for examples of the negative elements used in sentences and discussion of the negation constructions in </content>
+				<langName/>
+				<content>.</content>
+			</p>
 		</section2>
 		<section2 id="sQPOtherQuantifiers">
-			<secTitle>Other Quantifiers and their Modifiers</secTitle>
+			<secTitle>Other Quantifiers and Degree words</secTitle>
 			<p>
 				<content>Other quantifiers, like </content>
 				<langData>many</langData>
@@ -145,6 +513,9 @@ waste</langData>
 			</p>
 			<example>
 				<table border="1">
+					<caption>
+						<content>Quantifiers</content>
+					</caption>
 					<row>
 						<col exampleLoc="qp/quantifierExample"/>
 					</row>
@@ -163,9 +534,11 @@ waste</langData>
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 					<caseText value="beforeOrBoth">before or on both sides of</caseText>
 					<caseText value="afterOrBoth">after or on both sides of</caseText>
 					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the quantifier.  </content>
 				<text show="swQPDegreeEitherUnrestricted">
@@ -176,7 +549,9 @@ waste</langData>
 					<content>There are restrictions as to which of these degree words can occur on each side of the quantifier.</content>
 				</text>
 				<content/>
-	  <langName/><content> examples include:</content>          </p>
+				<langName/>
+				<content> examples include:</content>
+			</p>
 			<example show="swQPDegreeYes">
 				<interlinear exampleLoc="qp/degreeExample"/>
 			</example>
@@ -216,6 +591,9 @@ syntactically like adjectives.
 				</p>
 				<example>
 					<table border="1">
+						<caption>
+							<content>Cardinal Numbers</content>
+						</caption>
 						<row>
 							<col>
 								<content>1 through 10</content>
@@ -256,7 +634,7 @@ Examples of compound numbers in </content>
 					<content>Based on the position of the unit number and any conjunctions, cardinal numbers in </content>
 					<langName/>
 					<content> are </content>
-					<case element="qp" attr="cardinalHeadPos">
+					<case element="qp" attr="cardinalHead">
 						<caseText value="before">left-</caseText>
 						<caseText value="after">right-</caseText>
 					</case>
@@ -267,9 +645,9 @@ Examples of compound numbers in </content>
 			<section3 id="sQPNumbersOrdinal">
 				<secTitle>Ordinal Numbers</secTitle>
 				<p>
-					<content>Ordinal numbers in </content>
+					<content>In </content>
 					<langName/>
-					<content/>
+					<content>, ordinal numbers </content>
 					<case element="qp" attr="ordinalFormation">
 						<caseText value="affix">are formed by adding an affix to the cardinal number.</caseText>
 						<caseText value="independent">are all independent syntactic words, distinct from the cardinal numbers.</caseText>
@@ -279,6 +657,9 @@ Examples of compound numbers in </content>
 				</p>
 				<example>
 					<table border="1">
+						<caption>
+							<content>Ordinal Numbers</content>
+						</caption>
 						<row>
 							<col>
 								<content>first through tenth</content>
@@ -288,16 +669,20 @@ Examples of compound numbers in </content>
 					</table>
 				</example>
 				<p>
-					<content>When the ordinal numbers in </content><langName/><content> modify a cardinal number, as in </content>
+					<content>When the ordinal numbers in </content>
+					<langName/>
+					<content> modify a cardinal number, as in </content>
 					<langData>the first twenty boys</langData>
 					<content>, they occur </content>
 					<case element="qp" attr="ordinalPos">
 						<caseText value="before">before</caseText>
 						<caseText value="after">after</caseText>
 						<caseText value="either">on either side (but not both sides) of</caseText>
+						<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 						<caseText value="beforeOrBoth">before or on both sides of</caseText>
 						<caseText value="afterOrBoth">after or on both sides of</caseText>
 						<caseText value="both">on both sides of</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content> the cardinal number.  </content>
 					<text show="swQPOrdinalEitherUnrestricted">
@@ -310,7 +695,8 @@ Examples of compound numbers in </content>
 					<content/>
 				</p>
 				<p>
-					<langName/><content> examples of the use of ordinal numbers and the modifiers meaning "last" or "next" within a nominal phrase include:</content>
+					<langName/>
+					<content> examples of the use of ordinal numbers and the modifiers meaning "last" or "next" within a nominal phrase include:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="qp/ordinalExample"/>
@@ -324,6 +710,8 @@ Examples of compound numbers in </content>
 		<whenValue element="qp" attr="ordinalPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="qp" attr="ordinalPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="ordinalPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swQPOrdinalEitherRestricted">
 		<whenValue element="qp" attr="ordinalEitherRestricted" value="restricted"/>
@@ -331,6 +719,81 @@ Examples of compound numbers in </content>
 		<whenValue element="qp" attr="ordinalPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="qp" attr="ordinalPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNo">
+		<whenValue element="qp" attr="determiner" value="no"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNoNotPosOnly">
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNoPosOnly">
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="no"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="no"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYes">
+		<whenValue element="qp" attr="determiner" value="yes"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesSome">
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesSomeNotPosOnly">
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesSomePosOnly">
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="no"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="no"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesNo">
+		<whenValue element="qp" attr="determiner" value="yesNo"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNotNo">
+		<whenValue element="qp" attr="determiner" value="no" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesOrYesSome">
+		<whenValue element="qp" attr="determiner" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesOrYesNo">
+		<whenValue element="qp" attr="determiner" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesNo"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerEitherUnrestricted">
+		<whenValue element="qp" attr="determiner" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="determinerEitherRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="qp" attr="determinerPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="determinerPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerEitherRestricted">
+		<whenValue element="qp" attr="determiner" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="determinerEitherRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="qp" attr="determinerPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="determinerPos" value="after" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swQPDegreeNo">
 		<whenValue element="qp" attr="degree" value="no"/>
@@ -359,8 +822,25 @@ Examples of compound numbers in </content>
 	<showWhen id="swQPNPDegreeNo">
 		<whenValue element="qp" attr="npDegree" value="no"/>
 	</showWhen>
+	<showWhen id="swQPNPDegreeNoPosOnly">
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesPosOnly">
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNotPosOnly">
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+	</showWhen>
 	<showWhen id="swQPNPDegreeYes">
 		<whenValue element="qp" attr="npDegree" value="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesPos">
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesNeg">
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
 	</showWhen>
 	<showWhen id="swQPNPDegreeEitherUnrestricted">
 		<whenValue element="qp" attr="npDegree" value="yes"/>
@@ -379,5 +859,44 @@ Examples of compound numbers in </content>
 		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNegEitherUnrestricted">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegEitherRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNegEitherRestricted">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegEitherRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNegCooccurNo">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegCooccur" value="no"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNegCooccurYes">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegCooccur" value="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNotYesAndNegCooccurNo">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreeNegCooccur" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yes" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
 	</showWhen>
 </portion>

@@ -4,7 +4,7 @@
 	<language>
 		<langName/>
 		<langAbbr/>
-		<font bold="False" italic="False" under="False" strike="False">
+		<font bold="False" italic="False" under="False" strike="False" rtl="False">
 			<fontName>Courier New</fontName>
 			<fontSize>12</fontSize>
 			<fontColor>0</fontColor>
@@ -18,11 +18,18 @@
 	<typology checkedOff="no" wordOrder="SVO">
 		<example/>
 	</typology>
-	<qp checkedOff="no" npDegree="no" npDegreePos="unknown" npDegreeEither="unrestricted" degree="no" degreePos="unknown" degreeEither="unrestricted" ordinalFormation="affix" ordinalPos="unknown" ordinalEither="unrestricted" cardinalHeadPos="after">
+	<qp checkedOff="no" npDegree="yes" npDegreePosType="proclitic" npDegreeNegType="proclitic" npDegreePos="unknown" npDegreeEither="unrestricted" npDegreeNegPos="unknown" npDegreeNegEither="unrestricted" determiner="yes" determinerPos="unknown" determinerEither="unrestricted" degree="no" degreePos="unknown" degreeEither="unrestricted" ordinalFormation="affix" ordinalPos="unknown" ordinalEither="unrestricted" cardinalHead="after">
 		<all/>
+		<almost/>
 		<only/>
-		<just/>
+		<not/>
 		<example/>
+		<negExample/>
+		<negCooccurExample/>
+		<determinerExample/>
+		<determinerNPExample/>
+		<determinerNegExample/>
+		<determinerNegNPExample/>
 		<quantifierExample/>
 		<degreeExample/>
 		<cardinalNumbers1to10/>
@@ -34,9 +41,13 @@
 		<cardinalNumberCategory/>
 		<conjunctionCategory/>
 	</qp>
-	<advp checkedOff="no" mannerType="word" degree="no" degreePos="unknown" degreeEither="unrestricted" degreeSet="unrestricted">
+	<advp checkedOff="no" negTemporalType="word" negLocativeType="word" mannerType="word" degree="no" degreePos="unknown" degreeEither="unrestricted" degreeSet="unrestricted">
 		<temporalExample/>
+		<negTemporalExample/>
+		<negTemporalAffixExample/>
 		<locativeExample/>
+		<negLocativeExample/>
+		<negLocativeAffixExample/>
 		<mannerExample/>
 		<reasonExample/>
 		<adverbCategory/>
@@ -91,7 +102,7 @@
 		<propAnimate2Category/>
 		<propInanimateCategory/>
 	</prop>
-	<pron checkedOff="no" poss="no" possAffix="no" refl="no" reflAffix="yes" recip="no" recipAffix="yes" indef="no" pronounCat="NP" partitivePos="unknown">
+	<pron checkedOff="no" poss="no" possAffix="no" refl="no" reflAffix="yes" recip="no" recipAffix="yes" indef="no" negIndef="no" pronounCat="NP" partitivePos="unknown">
 		<personalNoCaseExample/>
 		<personalNomSubjectExample/>
 		<personalNomObjectExample/>
@@ -143,10 +154,13 @@
 		<sentExample/>
 		<pCategory/>
 	</pp>
-	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
+	<ip checkedOff="no" proDrop="noImp" proDropObject="no" negAux="noVerb" negAuxRequiresAux="no" aux="no" auxRequired="no" auxMany="no" auxOrder="no" copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
 		<example/>
 		<proDropExample/>
 		<auxExample/>
+		<negAuxExample/>
+		<negAuxAffixExample/>
+		<negVerbExample/>
 		<auxNonfiniteExample/>
 		<auxOtherExample/>
 		<diExample/>
@@ -258,7 +272,7 @@
 		<nonfiniteCPOrProDropExample/>
 		<otherExample/>
 	</comp>
-	<q checkedOff="no" mainYN="no" mainYNWord="yes" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="yes" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="yes" mainContCliticPos="unknown" mainContCliticAttaches="edge" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContVSOBeforeWhNoEndRestricted="unrestricted" mainContRequired="no" mainContAuxPos="unknown" mainContAuxRequired="no" embCont="no" embContWord="yes" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContVSOBeforeWhNoEndRestricted="unrestricted" embContRequired="no" embContAuxPos="unknown" embContAuxRequired="no">
+	<q checkedOff="no" mainYN="no" mainYNWord="no" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="no" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="no" mainContCliticPos="unknown" mainContCliticAttaches="edge" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContVSOBeforeWhNoEndRestricted="unrestricted" mainContRequired="no" mainContAuxPos="unknown" mainContAuxRequired="no" embCont="no" embContWord="no" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContVSOBeforeWhNoEndRestricted="unrestricted" embContRequired="no" embContAuxPos="unknown" embContAuxRequired="no">
 		<example/>
 		<embYNExample/>
 		<contentExample/>
@@ -274,7 +288,7 @@
 		<other/>
 		<whPronCategory/>
 	</q>
-	<relcl checkedOff="no" type="none" compCP="no" whAndComp="no" relWord="yes" relCliticPos="unknown" relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
+	<relcl checkedOff="no" exist="no" clausePos="unknown" type="IP" compCP="no" whAndComp="no" relWord="yes" relCliticPos="unknown" relCompSame="no" relCompPos="unknown" relCompEitherRestricted="unrestricted" headless="no">
 		<example/>
 		<sentExample/>
 		<headlessExample/>
@@ -282,16 +296,51 @@
 	<advcl checkedOff="no" advOrNPPos="unknown">
 		<tempSentExample/>
 	</advcl>
-	<neg checkedOff="no">
-		<example/>
+	<neg checkedOff="no" subjVerbRequired="no" advVerbRequired="no" auxVerbRequired="no" type="changing" polarityItems="no" objVerbRequired="other" negFront="no">
+		<degreeSubjExample/>
+		<determinerSubjExample/>
+		<pronounSubjExample/>
+		<advTemporalExample/>
+		<advLocativeExample/>
+		<auxExample/>
+		<auxAffixExample/>
+		<verbAffixExample/>
+		<npiPronounExample/>
+		<npiDeterminerExample/>
+		<npiTemporalExample/>
+		<npiLocativeExample/>
+		<objectExample/>
+		<indirectObjectExample/>
+		<subjectObjectExample/>
 	</neg>
 	<coord checkedOff="no">
-		<example/>
+		<and/>
+		<or/>
+		<but/>
+		<andOr/>
+		<with/>
+		<other/>
+		<either/>
+		<neither/>
+		<nor/>
+		<sentExample/>
+		<vpExample/>
+		<dpExample/>
+		<adjExample/>
+		<conjunctionCategory/>
 	</coord>
-	<focus checkedOff="no">
-		<example/>
+	<focus checkedOff="no" topic="no" topicPos="unknown" topicMarker="no" topicMarkerPos="unknown" topicMarkerRequired="no" topicMarkerEither="no" focus="no" focusPos="unknown" focusMarker="no" focusMarkerPos="unknown" focusMarkerRequired="no" focusMarkerEither="no">
+		<topicExample/>
+		<topicMarkerExample/>
+		<focusExample/>
+		<focusMarkerExample/>
 	</focus>
-	<excl checkedOff="no">
-		<example/>
+	<excl checkedOff="no" exclM="no" exclMPos="unknown" exclMEither="no">
+		<greetExample/>
+		<intjExample/>
+		<yesExample/>
+		<noExample/>
+		<exclExample/>
+		<exclMExample/>
 	</excl>
 </paws>

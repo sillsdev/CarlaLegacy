@@ -12,19 +12,19 @@ adjectives in modifying nouns directly, they will need to have the
 syntactic category of adjectives plus a feature to distinguish them.
 </introduction>
 	<form section="qp">
-		 <prompt>Key the first ten cardinal numbers, each on a separate line and followed by a period, in order from one to ten here:</prompt>
+		<prompt>Key the first ten cardinal numbers, each on a separate line and followed by a period, in order from one to ten here:</prompt>
 		<textBox id="QPCardinalNumbers1to10" dataItem="cardinalNumbers1to10"/>
 		<br/>
 		<br/>
-		 <prompt>Key the cardinal numbers for 11 through 20 here:</prompt>
+		<prompt>Key the cardinal numbers for 11 through 20 here:</prompt>
 		<textBox id="QPCardinalNumbers11to20" dataItem="cardinalNumbers11to20"/>
 		<br/>
 		<br/>
-		 <prompt>Key the cardinal numbers by tens for 30 through 100 here:</prompt>
+		<prompt>Key the cardinal numbers by tens for 30 through 100 here:</prompt>
 		<textBox id="QPCardinalNumbers30to100" dataItem="cardinalNumbers30to100"/>
 		<br/>
 		<br/>
-	   <prompt>Key the first ten ordinal numbers, each on a separate line and followed by a period, in order from first to tenth here:</prompt>
+		<prompt>Key the first ten ordinal numbers, each on a separate line and followed by a period, in order from first to tenth here:</prompt>
 		<textBox id="QPOrdinalNumbers" dataItem="ordinalNumbers"/>
 		<br/>
 		<br/>
@@ -72,7 +72,7 @@ written as separate words, such as <example>one hundred thirty three</example>. 
 		<prompt>Key any examples of compound numbers here:</prompt>
 		<textBox id="QPCardinalCompoundExample" dataItem="cardinalCompoundExample" cols="50"/>
 		<radioGroup>
-			<groupName dataItem="cardinalHeadPos" default="after" position="yesHead">RCardinalHead</groupName>
+			<groupName dataItem="cardinalHead" default="after">RCardinalHead</groupName>
 			<prompt>Based on these examples, where is the head in the cardinal compound numbers?</prompt>
 			<radio id="CardinalHeadInitial" checked="yes" dataValue="before">Initial, the numbers zero through nine occur initially and any conjunctions occur in the initial part of the compound. </radio>
 			<radio id="CardinalHeadFinal" checked="yes" dataValue="after">Final, the numbers zero through nine occur finally and any conjunctions occur in the final part of the compound.</radio>

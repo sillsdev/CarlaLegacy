@@ -163,6 +163,9 @@
 			</p>
 			<example show="swNPCaseNone">
 				<table border="1">
+					<caption>
+						<content>Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalNoCaseExample"/>
 					</row>
@@ -175,6 +178,9 @@
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
+					<caption>
+						<content>Nominative Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalNomSubjectExample"/>
 					</row>
@@ -185,6 +191,9 @@
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
+					<caption>
+						<content>Accusative Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalNomObjectExample"/>
 					</row>
@@ -195,6 +204,9 @@
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
+					<caption>
+						<content>Genitive Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalNomPossessorExample"/>
 					</row>
@@ -207,6 +219,9 @@
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
+					<caption>
+						<content>Ergative Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalErgSubjectTransExample"/>
 					</row>
@@ -217,6 +232,9 @@
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
+					<caption>
+						<content>Absolutive Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalErgSubjectIntransExample"/>
 					</row>
@@ -227,6 +245,9 @@
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
+					<caption>
+						<content>Personal Pronouns for Possessors</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalErgPossessorExample"/>
 					</row>
@@ -239,6 +260,9 @@
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
+					<caption>
+						<content>Nominative Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalSplitSubjectExample"/>
 					</row>
@@ -249,6 +273,9 @@
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
+					<caption>
+						<content>Accusative Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalSplitObjectExample"/>
 					</row>
@@ -259,6 +286,9 @@
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
+					<caption>
+						<content>Genitive Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalSplitPossessorExample"/>
 					</row>
@@ -269,6 +299,9 @@
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
+					<caption>
+						<content>Ergative Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalSplitErgExample"/>
 					</row>
@@ -279,6 +312,9 @@
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
+					<caption>
+						<content>Absolutive Personal Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/personalSplitAbsExample"/>
 					</row>
@@ -328,6 +364,9 @@
 			</p>
 			<example show="swPronPossYes">
 				<table border="1">
+					<caption>
+						<content>Possessive Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/possExample"/>
 					</row>
@@ -366,10 +405,17 @@
 					</case>
 					<content>  The forms used for reflexives are given here, beginning with first person, then second person, then third person:</content>
 				</text>
-			 <text show="swPronReflYesVerbal"><content> Examples of reflexives in </content><langName/><content> are:</content></text>
+				<text show="swPronReflYesVerbal">
+					<content> Examples of reflexives in </content>
+					<langName/>
+					<content> are:</content>
+				</text>
 			</p>
 			<example show="swPronReflNotNo">
 				<table border="1">
+					<caption>
+						<content>Reflexives</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/reflExample"/>
 					</row>
@@ -455,30 +501,53 @@
 				<langName/>
 				<content>, </content>
 				<case element="pron" attr="indef">
-					<caseText value="no">all of the indefinites are noun phrases, rather than being single-word pronouns.</caseText>
-					<caseText value="yes">some or all of the indefinites are merged into single-word pronouns.  Examples of the positive indefinite pronouns include:</caseText>
+					<caseText value="no">all of the positive indefinites are nominal phrases, rather than being single-word pronouns.</caseText>
+					<caseText value="yes">some or all of the positive indefinites are merged into single-word pronouns.  Examples of the positive indefinite pronouns include:</caseText>
 				</case>
 				<content/>
 			</p>
 			<example show="swPronIndefYes">
 				<table border="1">
+					<caption>
+						<content>Positive Indefinite Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/indefExample"/>
 					</row>
 				</table>
 			</example>
-			<p show="swPronIndefYes">
-				<content>Examples of the negative indefinite pronouns include:</content>
+			<p show="swNotPosOnly">
+				<content>In </content>
+				<langName/>
+				<content>, </content>
+				<case element="pron" attr="negIndef">
+					<caseText value="no">all of the negative indefinites are nominal phrases, rather than being single-word pronouns.</caseText>
+					<caseText value="yes">some or all of the negative indefinites are merged into single-word pronouns.  Examples of the negative indefinite pronouns include:</caseText>
+				</case>
+				<content/>
 			</p>
-			<example show="swPronIndefYes">
+			<p show="swPosOnly">
+				<content>In </content>
+				<langName/>
+				<content>, </content>
+				<case element="pron" attr="negIndef">
+					<caseText value="no">there are no negative indefinite pronouns and no negative indefinite nominal phrases either, since the language does not have any means of negating a nominal phrase.</caseText>
+					<caseText value="yes">all of the negative indefinites are merged into single-word pronouns.  There are no negative indefinite nominal phrases, since the language does not have any means of negating a nominal phrase.  Examples of the negative indefinite pronouns include:</caseText>
+				</case>
+				<content/>
+			</p>
+			<example show="swPronNegIndefYes">
 				<table border="1">
+					<caption>
+						<content>Negative Indefinite Pronouns</content>
+					</caption>
 					<row>
 						<col exampleLoc="pron/negIndefExample"/>
 					</row>
 				</table>
 			</example>
 			<p>
-				<content>Examples of positive indefinite noun phrases </content>
+				<content>Examples of positive indefinite nominal phrases </content>
 				<text show="swPronIndefYes">
 					<content>(if any) </content>
 				</text>
@@ -487,16 +556,23 @@
 			<example>
 				<interlinear exampleLoc="pron/indefNPExample"/>
 			</example>
-			<p>
-				<content>Examples of negative indefinite noun phrases </content>
-				<text show="swPronIndefYes">
+			<p show="swNotPosOnly">
+				<content>Examples of negative indefinite nominal phrases </content>
+				<text show="swPronNegIndefYes">
 					<content>(if any) </content>
 				</text>
 				<content>include:</content>
 			</p>
-			<example>
+			<example show="swNotPosOnly">
 				<interlinear exampleLoc="pron/negIndefNPExample"/>
 			</example>
+			<p show="swNotPosOnlyAndNo">
+				<content>See section </content>
+				<sectionRef sec="sNegNominal"/>
+				<content> for examples of the negative elements used in sentences and discussion of the negation constructions in </content>
+				<langName/>
+				<content>.</content>
+			</p>
 		</section2>
 		<section2 id="sPronNP">
 			<secTitle>Pronouns as the Head of a Nominal Phrase</secTitle>
@@ -557,16 +633,29 @@
 				<langName/>
 				<content>, the correct category or level in the tree structure for personal pronouns and other elements which can occur without a head noun is </content>
 				<case element="pron" attr="pronounCat">
-					<caseText value="NP">NP, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives.</caseText>
+					<caseText value="NP">NP, like in English, because they can be modified by </caseText>
 					<caseText value="N">N, because they can be modified by all the same categories as nouns can, including adjectives and possessors.</caseText>
 					<caseText value="DP">DP, because they must stand alone in the place of a whole nominal phrase, with no modifiers allowed.</caseText>
 				</case>
-				<content/>
+				<text show="swPronPronounCatNP">
+					<case element="qp" attr="npDegree">
+						<caseText value="yes"> degree words,</caseText>
+						<caseText value="no"/>
+					</case>
+					<case element="np" attr="artAndDem">
+						<caseText value="demonstrative"> demonstratives,</caseText>
+						<caseText value="article"> articles,</caseText>
+						<caseText value="both"> demonstratives, articles,</caseText>
+						<caseText value="no"/>
+					</case>
+					<content> relative clauses and PPs, but not by possessors or adjectives.</content>
+				</text>
 				<text show="swPronNPCatNPorN">
 					<content> The optional PP occurs </content>
 					<case element="pron" attr="partitivePos">
 						<caseText value="before">before</caseText>
 						<caseText value="after">after</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content> the element acting as the head of the nominal phrase.</content>
 				</text>
@@ -574,6 +663,9 @@
 			</p>
 		</section2>
 	</section1>
+	<showWhen id="swPronPronounCatNP">
+		<whenValue element="pron" attr="pronounCat" value="NP"/>
+	</showWhen>
 	<showWhen id="swPronAgrFeatFirst">
 		<whenValue element="pron/pronAgrFeatFirst" attr="checked" value="yes"/>
 	</showWhen>
@@ -655,6 +747,84 @@
 	<showWhen id="swPronIndefYes">
 		<whenValue element="pron" attr="indef" value="yes"/>
 	</showWhen>
+	<showWhen id="swPronNegIndefYes">
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+	</showWhen>
+<showWhen id="swNotPosOnlyAndNo">
+	   <whenValue element="qp" attr="determiner" value="yes"/>
+<or/>
+	   <whenValue element="qp" attr="determiner" value="yesNo"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+	<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+	<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+	<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+	<whenValue element="pron" attr="negIndef" value="yes"/>
+</showWhen>
+<showWhen id="swNotPosOnly">
+	   <whenValue element="qp" attr="determiner" value="yes"/>
+<or/>
+	   <whenValue element="qp" attr="determiner" value="yesNo"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+</showWhen>
+ <showWhen id="swPosOnly">
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+</showWhen>
 	<showWhen id="swPronNPCatNPorN">
 		<whenValue element="pron" attr="pronounCat" value="DP" negateValue="yes"/>
 	</showWhen>

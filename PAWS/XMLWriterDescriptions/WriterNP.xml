@@ -338,22 +338,26 @@ Some languages are even more complex in that they normally have a nominative-acc
 			</p>
 		</section2>
 		<section2 id="sNPDegree">
-			<secTitle>Degree Words and "All"</secTitle>
+			<secTitle>Special Degree Words including "All" and "Not"</secTitle>
 			<p>
 				<content>
 The outer or top level of the nominal phrase is occupied by those degree words that modify the whole phrase, such as </content>
+				<langData>all</langData>
+				<content>, </content>
+				<langData>almost</langData>
+				<content>, </content>
 				<langData>just</langData>
 				<content>, </content>
 				<langData>only</langData>
 				<content>, and </content>
-				<langData>all</langData>
+				<langData>not</langData>
 				<content>.  These were discussed in section </content>
 				<sectionRef sec="sQPAll"/>
 				<content>.  To review the facts for </content>
 				<langName/>
 				<content>,  </content>
 				<text show="swQPNPDegreeNo">
-					<content>these are not expressed as separate words which modify the whole nominal phrase.</content>
+					<content>these are not expressed as separate words which modify the whole nominal phrase, so they will not have a position in the phrase structure.  Instead, they all attach to another word in the nominal phrase.</content>
 				</text>
 				<content/>
 				<text show="swQPNPDegreeYes">
@@ -362,16 +366,57 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 						<caseText value="before">before</caseText>
 						<caseText value="after">after</caseText>
 						<caseText value="either">on either side (but not both sides) of</caseText>
+						<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 						<caseText value="beforeOrBoth">before or on both sides of</caseText>
 						<caseText value="afterOrBoth">after or on both sides of</caseText>
 						<caseText value="both">on both sides of</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
-					<content> the rest of the nominal phrase.  Some examples are:</content>
+					<content> the rest of the nominal phrase.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeYesPos">
+					<content>the positive special degree elements are expressed as separate words which occur </content>
+					<case element="qp" attr="npDegreePos">
+						<caseText value="before">before</caseText>
+						<caseText value="after">after</caseText>
+						<caseText value="either">on either side (but not both sides) of</caseText>
+						<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+						<caseText value="beforeOrBoth">before or on both sides of</caseText>
+						<caseText value="afterOrBoth">after or on both sides of</caseText>
+						<caseText value="both">on both sides of</caseText>
+						<caseText value="unknown">_______</caseText>
+					</case>
+					<content> the rest of the nominal phrase.  The negative special degree elements, however, are not expressed as separate words which modify the whole nominal phrase, so they will not have a place in the phrase structure.  Instead, they attach to another word in the nominal phrase.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeYesNeg">
+					<content>the negative special degree elements are expressed as separate words which occur </content>
+					<case element="qp" attr="npDegreePos">
+						<caseText value="before">before</caseText>
+						<caseText value="after">after</caseText>
+						<caseText value="either">on either side (but not both sides) of</caseText>
+						<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+					   <caseText value="beforeOrBoth">before or on both sides of</caseText>
+						<caseText value="afterOrBoth">after or on both sides of</caseText>
+						<caseText value="both">on both sides of</caseText>
+						<caseText value="unknown">_______</caseText>
+					</case>
+					<content> the rest of the nominal phrase.  The positive special degree elements, however, are not expressed as separate words which modify the whole nominal phrase, so they will not have a place in the phrase structure.  Instead, they attach to another word in the nominal phrase.</content>
 				</text>
 				<content/>
 			</p>
-			<example show="swQPNPDegreeYes">
+			<p show="swQPNPDegreeYesOrYesPos">
+				<content>Examples of the positive special degree words in nominal phrases include:</content>
+			</p>
+			<example show="swQPNPDegreeYesOrYesPos">
 				<interlinear exampleLoc="qp/example"/>
+			</example>
+			<p show="swQPNPDegreeYesOrYesNeg">
+				<content>Examples of the negative special degree elements in nominal phrases include:</content>
+			</p>
+			<example show="swQPNPDegreeYesOrYesNeg">
+				<interlinear exampleLoc="qp/negExample"/>
 			</example>
 		</section2>
 		<section2 id="sNPArtDem">
@@ -398,7 +443,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<content/>
 			</p>
 			<p>
-				<content>In English, articles and demonstratives do not co-occur in the same nominal phrase, and both occur before the noun.  Some languages allow both to co-occur in the same phrase, and they may occur in different positions with respect to the noun.  Therefore, thet need distinct syntactic categories.  Some languages only have one set, either articles or demonstratives.  A few languages may not have either type expressed as separate words.</content>
+				<content>In English, articles and demonstratives do not co-occur in the same nominal phrase, and both occur before the noun.  Some languages allow both to co-occur in the same phrase, and they may occur in different positions with respect to the noun.  Therefore, they need distinct syntactic categories.  Some languages only have one set, either articles or demonstratives.  A few languages may not have either type expressed as separate words.</content>
 			</p>
 			<p>
 				<content/>
@@ -432,6 +477,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the noun.  </content>
 				<text show="swNPArtAndDemArtPosEitherUnrestricted">
@@ -449,11 +495,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemArtPosBothSidesRequiredMass">
-					<content>In the singular forms, </content>
+					<content>In the singular forms, an article is required </content>
 					<case element="np" attr="artBothRequiredPos">
-						<caseText value="before">an article is required before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">an article is required after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">an article is required to appear both before and after the noun.</caseText>
+					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					<caseText value="both">to appear both before and after the noun.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -461,10 +508,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemArtPosBothSidesRequiredYes">
 					<content>An article is required to appear </content>
 					<case element="np" attr="artBothRequiredPos">
-						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">both before and after the noun.</caseText>
-					</case>
+					 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					 <caseText value="both">both before and after the noun.</caseText>
+					 <caseText value="unknown">_______</caseText>
+				   </case>
 					<content/>
 				</text>
 				<content/>
@@ -475,6 +523,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the noun.  </content>
 				<text show="swNPArtAndDemDemPosEitherUnrestricted">
@@ -492,11 +541,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemDemPosBothSidesRequiredMass">
-					<content>In the singular forms, </content>
+					<content>In the singular forms, a demonstrative is required </content>
 					<case element="np" attr="demBothRequiredPos">
-						<caseText value="before">a demonstrative is required before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">a demonstrative is required after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">a demonstrative is required to appear both before and after the noun.</caseText>
+					 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					 <caseText value="both">to appear both before and after the noun.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -504,9 +554,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemDemPosBothSidesRequiredYes">
 					<content>A demonstrative is required to appear </content>
 					<case element="np" attr="demBothRequiredPos">
-						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">both before and after the noun.</caseText>
+					 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					 <caseText value="both">both before and after the noun.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -518,6 +569,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the noun.  </content>
 				<text show="swNPArtAndDemBothCooccurNoPosEitherUnrestricted">
@@ -535,11 +587,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurNoRequiredMass">
-					<content>In the singular forms, </content>
+					<content>In the singular forms, an article or a demonstrative is required </content>
 					<case element="np" attr="demOrArtBothRequiredPos">
-						<caseText value="before">an article or a demonstrative is required before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">an article or a demonstrative is required after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">an article or a demonstrative is required to appear both before and after the noun.</caseText>
+					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					<caseText value="both">to appear both before and after the noun.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -547,10 +600,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurNoRequiredYes">
 					<content>An article or a demonstrative is required to appear </content>
 					<case element="np" attr="demOrArtBothRequiredPos">
-						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">both before and after the noun.</caseText>
-					</case>
+					 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					 <caseText value="both">both before and after the noun.</caseText>
+					 <caseText value="unknown">_______</caseText>
+				   </case>
 					<content/>
 				</text>
 				<content/>
@@ -566,6 +620,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the noun.  </content>
 				<text show="swNPArtAndDemBothCooccurYesDemPosEitherUnrestricted">
@@ -583,11 +638,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMass">
-					<content>In the singular forms, </content>
+					<content>In the singular forms, a demonstrative is required </content>
 					<case element="np" attr="demAndArtDemRequiredPos">
-						<caseText value="before">a demonstrative is required before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">a demonstrative is required after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">a demonstrative is required to appear both before and after the noun.</caseText>
+					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					<caseText value="both">to appear both before and after the noun.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -595,9 +651,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredYes">
 					<content>A demonstrative is required to appear </content>
 					<case element="np" attr="demAndArtDemBothRequiredPos">
-						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">both before and after the noun.</caseText>
+					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					<caseText value="both">both before and after the noun.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -606,6 +663,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the noun.  </content>
 				<text show="swNPArtAndDemBothCooccurYesArtPosEitherUnrestricted">
@@ -623,11 +681,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMass">
-					<content>In the singular forms, </content>
+					<content>In the singular forms, an article is required </content>
 					<case element="np" attr="demAndArtArtRequiredPos">
-						<caseText value="before">an article is required before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">an article is required after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">an article is required to appear both before and after the noun.</caseText>
+					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					<caseText value="both">to appear both before and after the noun.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -635,20 +694,21 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredYes">
 					<content>An article is required to appear </content>
 					<case element="np" attr="demAndArtArtBothRequiredPos">
-						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">both before and after the noun.</caseText>
+					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+					<caseText value="both">both before and after the noun.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
 				<content/>
 			</p>
-			<p>
+			<p show="swNPArtAndOrDem">
 				<content>Examples of nominal phrases including articles and/or demonstratives as allowed in </content>
 				<langName/>
 				<content> include:</content>
 			</p>
-			<example>
+			<example show="swNPArtAndOrDem">
 				<interlinear exampleLoc="np/example"/>
 			</example>
 		</section2>
@@ -712,13 +772,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPPossMarkedYesCliticWordYes">
 					<content> This phrasal clitic is written as a separate word which occurs </content>
 					<case element="np" attr="possCliticPossPos">
-						<caseText value="before">before</caseText>
-						<caseText value="after">after</caseText>
-					</case>
+					<caseText value="before">before</caseText>
+					<caseText value="after">after</caseText>
+					<caseText value="unknown">_______</caseText>
+				   </case>
 					<content> the possessor.  The possessive clitic is </content>
 					<case element="np" attr="possCliticRequired">
-						<caseText value="no">optional in some cases.</caseText>
-						<caseText value="no">always required.</caseText>
+					<caseText value="no">optional in some cases.</caseText>
+					<caseText value="no">always required.</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -730,6 +792,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the noun being possessed.</content>
 			</p>
@@ -997,9 +1060,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 					<caseText value="beforeOrBoth">before or on both sides of</caseText>
 					<caseText value="afterOrBoth">after or on both sides of</caseText>
 					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the noun.  </content>
 				<text show="swNPQPPosEitherOrBothUnrestricted">
@@ -1057,9 +1122,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side (but not both sides) of</caseText>
+					<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 					<caseText value="beforeOrBoth">before or on both sides of</caseText>
 					<caseText value="afterOrBoth">after or on both sides of</caseText>
 					<caseText value="both">on both sides of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the noun.  </content>
 				<text show="swNPAdjPPosEitherOrBothUnrestricted">
@@ -1218,6 +1285,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the head noun.  </content>
 				<langName/>
@@ -1352,9 +1420,25 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="qp" attr="npDegree" value="yes"/>
 		<and/>
 		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swQPNPDegreeYesAfter">
 		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+		<and/>
+		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
 		<and/>
 		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
 	</showWhen>
@@ -1427,27 +1511,43 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 	</showWhen>
 	<showWhen id="swNPPossessorBefore">
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPPossessorAfter">
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPQPBefore">
 		<whenValue element="np" attr="qpPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPQPAfter">
 		<whenValue element="np" attr="qpPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPAdjPBefore">
 		<whenValue element="np" attr="adjpPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="adjpPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPAdjPAfter">
 		<whenValue element="np" attr="adjpPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="adjpPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPPPBefore">
-		<whenValue element="np" attr="compHeadPPPos" value="after" negateValue="yes"/>
+		<whenValue element="np" attr="ppPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="ppPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPPPAfter">
-		<whenValue element="np" attr="compHeadPPPos" value="before" negateValue="yes"/>
+		<whenValue element="np" attr="ppPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="ppPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPCompoundYesRightHead">
 		<whenValue element="np" attr="compHead" value="right"/>
@@ -1473,6 +1573,22 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 	</showWhen>
 	<showWhen id="swQPNPDegreeYes">
 		<whenValue element="qp" attr="npDegree" value="yes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesPos">
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesNeg">
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesOrYesPos">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesOrYesNeg">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
 	</showWhen>
 	<showWhen id="swNPArtAndOrDem">
 		<whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
@@ -1736,6 +1852,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="qpPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="qpPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumBefore">
 		<whenValue element="np" attr="qpEitherRestrictedNumPos" value="before"/>
@@ -1771,6 +1889,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="adjpPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="adjpPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="adjpPos" value="unknown" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPAdjPAgreeYes">
 		<whenValue element="np" attr="adjpAgree" value="yes"/>

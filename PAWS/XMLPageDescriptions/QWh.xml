@@ -5,7 +5,7 @@
 	<title level="2">Questions - Interrogative Phrases in Content Questions</title>
 	<introduction>Content questions differ from Yes/No questions in that they contain an interrogative word or phrase, known as <i>wh</i>-phrases in English because they almost all begin with <example>wh</example> (<example>who(m)</example>, <example>what</example>, <example>why</example>, <example>where</example>, <example>when</example>, <example>how</example>, <example>which</example>, <example>whose</example>).  In some languages, some or all of these interrogative words are expressed as affixes.</introduction>
 	<form section="q">
-<instruction>For all of the following text boxes, if your language expresses that interrogative via an affix, enter it in the box with a hyphen on the appropriate side to indicate whether it is a prefix or a suffix.  Each word, phrase or affix ahould be entered on a separate line.</instruction>
+<instruction>For all of the following text boxes, if your language expresses that interrogative via an affix, enter it in the box with a hyphen on the appropriate side to indicate whether it is a prefix or a suffix.  Each word, phrase or affix should be entered on a separate line.</instruction>
 		<prompt>Key the interrogative words or phrases or affixes your language uses for 'who' or 'whom' here:</prompt>
 		<textBox id="QWho" dataItem="who" rows="3"/>
 		<br/>

@@ -3,10 +3,9 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPTesting">
-	<title level="2">Adverbs and AdvP - Testing</title>
+	<title level="2">Adverbs and Adverb Phrases - Testing</title>
 	<form section="advp">
-		<instruction>
-   You need to make sure the adverbs in your lexicon will be mapped to the syntactic category <category>Adv</category>.  Choose one of the following options, depending on your situation:
+		<instruction>You need to make sure the adverbs in your lexicon will be mapped to the syntactic category <category>Adv</category>.  Choose one of the following options, depending on your situation:
 <ul>
 				<li>If you already have adverbs marked with the category <category>Adv</category> in your lexicon, nothing
   more needs to be done.</li>
@@ -20,10 +19,10 @@
 run the syntactic parser on the output.  Check the log for the
 results and note any changes you need to make to the lexicon or to
 answers about the order of elements in the phrase structure
-rules. Make the changes as needed and rerun. [Note that the examples of reason or purpose adverbs will not be tested until <section number="13">Adverbial Clauses</section>.]</p>
+rules. Make the changes as needed and rerun.  [Note that the examples of reason or purpose adverbs will not be tested until <section number="13">Adverbial Clauses</section>.</p>
 			<p>
 Please check off this section now in 'Contents' and then proceed to
-<section number="4">Adjectives and AdjP</section> when you are ready.</p>
+<section number="4">Adjectives and Adjective Phrases</section> when you are ready.</p>
 		</instruction>
 		<br/>
 		<buttons>

@@ -28,95 +28,113 @@
 			<content>Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called "headless" relative clauses.</content>
 		</p>
 		<p>
-			<content>&#x20;</content>
-			<langName/>
-			<content>&#x20;</content>
-			<case element="relcl" attr="type">
-				<caseText value="none"> does not have any kind of relative clause.</caseText>
-				<caseText value="IP"> has relative clauses which are like a regular sentence with a relative marker attached to the verb.</caseText>
-				<caseText value="CP"> has relative clauses </caseText>
-			</case>
-			<content>&#x20;</content>
-			<text show="swRelClTypeCP">
-				<content>&#x20;</content>
-				<case element="relcl" attr="compCP">
-					<caseText value="no">which are like questions because a "wh" word is fronted.</caseText>
-					<caseText value="yes">which are like complement clauses with relative markers that </caseText>
-					<caseText value="yesBoth">which are like questions because a "wh" word is fronted and also relative clauses which are like complement clauses with relative markers that </caseText>
+			<text show="swRelClExistNo">
+				<langName/>
+				<content> does not have any type of relative clause.</content>
+			</text>
+			<text show="swRelClExistYes">
+				<content>In </content>
+				<langName/>
+				<content>, relative clauses occur </content>
+				<case element="relcl" attr="clausePos">
+					<caseText value="before">before</caseText>
+					<caseText value="after">after</caseText>
+					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown"> _______ </caseText>
 				</case>
-				<text show="swRelClCompCPNotNo">
-					<content>are </content>
-					<case element="relcl" attr="relWord">
-						<caseText value="yes">written as a separate word.</caseText>
-						<caseText value="no">clitics which attach to another word at the edge of the relative clause.</caseText>
+				<content> the head noun.   </content>
+				<langName/>
+				<content>&#x20;</content>
+				<case element="relcl" attr="type">
+					<caseText value="IP"> relative clauses are like a regular sentence with a relative marker attached to the verb.</caseText>
+					<caseText value="CP"> relative clauses </caseText>
+				</case>
+				<content>&#x20;</content>
+				<text show="swRelClTypeCP">
+					<content>&#x20;</content>
+					<case element="relcl" attr="compCP">
+						<caseText value="no">are like questions because a "wh" word is fronted.</caseText>
+						<caseText value="yes">are like complement clauses with relative markers that </caseText>
+						<caseText value="yesBoth">are like questions because a "wh" word is fronted and some are  like complement clauses with relative markers that </caseText>
 					</case>
-					<content>&#x20;</content>
-					<text show="swRelClTypeCPCompClitic">
-						<content>&#x20;</content>
-						<case element="relcl" attr="relCliticPos">
-							<caseText value="before">These clitics are pro-clitics.</caseText>
-							<caseText value="after">These clitics are post-clitics.</caseText>
-							<caseText value="both">Some of the clitics are pro-clitics and some are post-clitics.</caseText>
+					<text show="swRelClCompCPNotNo">
+						<content>are </content>
+						<case element="relcl" attr="relWord">
+							<caseText value="yes">written as a separate word.</caseText>
+							<caseText value="no">clitics which attach to another word at the edge of the relative clause.</caseText>
 						</case>
 						<content>&#x20;</content>
-					</text>
-					<content>&#x20;</content>
-					<text show="swRelClTypeCPCompWord">
-						<content>&#x20;</content>
-						<case element="relcl" attr="relCompSame">
-							<caseText value="yes">Some of</caseText>
-							<caseText value="no">None of</caseText>
-						</case>
-						<content> the relative markers are the same as the complementizer(s) used in verbal complement clauses.  The relative marker occurs </content>
-						<case element="relcl" attr="relCompPos">
-							<caseText value="before">before</caseText>
-							<caseText value="after">after</caseText>
-							<caseText value="either">on either side (but not both sides) of</caseText>
-							<caseText value="beforeOrBoth">before or on both sides of</caseText>
-							<caseText value="afterOrBoth">after or on both sides of</caseText>
-							<caseText value="both">on both sides of</caseText>
-						</case>
-						<content> the sentence part of the relative clause.</content>
-						<text show="swRelClTypeCPCompEitherUnrestricted">
-							<content>All of the relative markers can occur on either side.</content>
+						<text show="swRelClTypeCPCompClitic">
+							<content>&#x20;</content>
+							<case element="relcl" attr="relCliticPos">
+								<caseText value="before">These clitics are pro-clitics.</caseText>
+								<caseText value="after">These clitics are post-clitics.</caseText>
+								<caseText value="both">Some of the clitics are pro-clitics and some are post-clitics.</caseText>
+							   <caseText value="unknown"> _______ </caseText>
+						   </case>
+							<content>&#x20;</content>
 						</text>
 						<content>&#x20;</content>
-						<text show="swRelClTypeCPCompEitherRestricted">
-							<content>There are restrictions as to which of the relative markers can occur on each side.</content>
+						<text show="swRelClTypeCPCompWord">
+							<content>&#x20;</content>
+							<case element="relcl" attr="relCompSame">
+								<caseText value="yes">Some of</caseText>
+								<caseText value="no">None of</caseText>
+							</case>
+							<content> the relative markers are the same as the complementizer(s) used in verbal complement clauses.  The relative marker occurs </content>
+							<case element="relcl" attr="relCompPos">
+								<caseText value="before">before</caseText>
+								<caseText value="after">after</caseText>
+								<caseText value="either">on either side (but not both sides) of</caseText>
+								<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+								<caseText value="beforeOrBoth">before or on both sides of</caseText>
+								<caseText value="afterOrBoth">after or on both sides of</caseText>
+								<caseText value="both">on both sides of</caseText>
+								<caseText value="unknown"> _______ </caseText>
+						   </case>
+							<content> the sentence part of the relative clause.</content>
+							<text show="swRelClTypeCPCompEitherUnrestricted">
+								<content>All of the relative markers can occur on either side.</content>
+							</text>
+							<content>&#x20;</content>
+							<text show="swRelClTypeCPCompEitherRestricted">
+								<content>There are restrictions as to which of the relative markers can occur on each side.</content>
+							</text>
+							<content>&#x20;</content>
 						</text>
 						<content>&#x20;</content>
 					</text>
 					<content>&#x20;</content>
 				</text>
 				<content>&#x20;</content>
-			</text>
-			<content>&#x20;</content>
-			<text show="swRelClTypeCPWh">
-				<content>In the "wh"-relative clauses, </content>
-				<case element="relcl" attr="whAndComp">
-					<caseText value="no">only the "wh"-word occurs without any type of relative marker.</caseText>
-					<caseText value="yes">the "wh"-word and the relative marker(s) are required to both be present.</caseText>
-					<caseText value="optional">a relative marker may optionally co-occur along with the "wh"-word.</caseText>
-				</case>
+				<text show="swRelClTypeCPWh">
+					<content>In the "wh"-relative clauses, </content>
+					<case element="relcl" attr="whAndComp">
+						<caseText value="no">only the "wh"-word occurs without any type of relative marker.</caseText>
+						<caseText value="yes">the "wh"-word and the relative marker(s) are required to both be present.</caseText>
+						<caseText value="optional">a relative marker may optionally co-occur along with the "wh"-word.</caseText>
+					</case>
+					<content>&#x20;</content>
+				</text>
 				<content>&#x20;</content>
 			</text>
 			<content>&#x20;</content>
 		</p>
-		<p show="swRelClTypeNotNone">
+		<p show="swRelClExistYes">
 			<content>Examples of relative clauses in </content>
 			<langName/>
 			<content> include:</content>
 		</p>
-		<example show="swRelClTypeNotNone">
+		<example show="swRelClExistYes">
 			<interlinear exampleLoc="relcl/example"/>
 		</example>
-		<p show="swRelClTypeNotNone">
+		<p show="swRelClExistYes">
 			<content>Full sentence examples of the above relative clauses include:</content>
 		</p>
-		<example show="swRelClTypeNotNone">
+		<example show="swRelClExistYes">
 			<interlinear exampleLoc="relcl/sentExample"/>
 		</example>
-		<p show="swRelClTypeNotNone">
+		<p show="swRelClExistYes">
 			<content>&#x20;</content>
 			<langName/>
 			<content>&#x20;</content>
@@ -133,12 +151,15 @@
 			<interlinear exampleLoc="relcl/headlessExample"/>
 		</example>
 	</section1>
+	<showWhen id="swRelClExistNo">
+		<whenValue element="relcl" attr="exist" value="no"/>
+	</showWhen>
+	<showWhen id="swRelClExistYes">
+		<whenValue element="relcl" attr="exist" value="yes"/>
+	</showWhen>
 	<showWhen id="swRelClTypeCP">
 		<whenValue element="relcl" attr="type" value="CP"/>
 	</showWhen>
-<showWhen id="swRelClTypeNotNone">
-	<whenValue element="relcl" attr="type" value="none" negateValue="yes"></whenValue>
-</showWhen>
 	<showWhen id="swRelClTypeCPCompClitic">
 		<whenValue element="relcl" attr="relWord" value="no"/>
 		<and/>
@@ -213,5 +234,7 @@
 	</showWhen>
 	<showWhen id="swRelClHeadlessYes">
 		<whenValue element="relcl" attr="headless" value="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="exist" value="yes"/>
 	</showWhen>
 </portion>

@@ -3,13 +3,15 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPLocative">
 	<title level="2">Adverbs and AdvP - Locative Adverbs</title>
-	<introduction>Locative adverbs include the English words: <example>here</example>, <example>there</example>, <example>everywhere</example>.
+	<introduction>Locative adverbs include the English words: <example>here</example>, <example>there</example>, <example>everywhere</example>.  Many languages also have a negative temporal adverb meaning <example>nowhere</example>.
+<br/>
+		<br/>
 In English, location is often also expressed by a prepositional
 phrase, such as: <example>in the mountains</example>, <example>at San Jose</example>, <example>over there</example>.  Many
 languages allow just a nominal phrase, consisting of a proper noun or
 description of the place.
 <br/>
-<br/>Think about how locatives are expressed in
+		<br/>Think about how locatives are expressed in
 your language.  For those which are adverbs, are there any degree
 words which can modify them?  In English, this seems to be limited to
 <example>only</example> (a type of focus construction) and <example>right</example>, as in:
@@ -21,15 +23,51 @@ words which can modify them?  In English, this seems to be limited to
 		<exItem label="4.">right there.</exItem>
 	</EnglishExample>
 	<form section="advp">
-		<prompt>Key your examples here:</prompt>
+		<prompt>Key your examples of positive locative adverbials and any degree words which can modify them here:</prompt>
 		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
+		<radioGroup>
+			<groupName dataItem="negLocativeType" default="word">RNegLocativeType</groupName>
+			<prompt>Does your language have any negative locative adverbs which are separate words?</prompt>
+			<radio id="AdvPNegLocativeTypeWord" dataValue="word">Yes</radio>
+			<radio id="AdvPNegLocativeTypeAffix" dataValue="affix">No, they are all written as part of the verb</radio>
+			<radio id="AdvPNegLocativeTypeVerb" dataValue="verb">No, there is only a verbal negative affix, but it may occur with positive locative adverbs to give a negative locative meaning</radio>
+		</radioGroup>
+		<prompt id="AdvPNegLocativeExamplePrompt" show="swAdvPNegLocativeTypeWord">Key your examples of negative locative adverbs here:</prompt>
+		<textBox id="AdvPNegLocativeExample" dataItem="negLocativeExample" show="swAdvPNegLocativeTypeWordOrVerb" rows="3"/>
+		<prompt id="AdvPNegLocativeAffixExamplePrompt" show="swAdvPNegLocativeTypeAffix">Key your examples of the negative locative adverbial affix(es) attached to verbs here:</prompt>
+		<prompt id="AdvPNegLocativeExamplePrompt2" show="swAdvPNegLocativeTypeVerb">Key your examples of locative adverbs with a negative verb here:</prompt>
+		<textBox id="AdvPNegLocativeAffixExample" dataItem="negLocativeAffixExample" show="swAdvPNegLocativeTypeAffix" rows="3"/>
 		<instruction>In the lexicon, key the feature <feature>locative</feature>
 on all adverbs that express location.  You can also add this feature
 to nouns and proper names which express location.
 </instruction>
+		<instruction id="AdvPNegLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">In the lexicon, key the features <feature>negative locative</feature>
+on all the negative locative adverbs.  These negative words will be discussed further in <section number="14">Negation Constructions - Adverbial and Auxiliary elements</section>.
+</instruction>
+		<instruction id="AdvPNegLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">In the lexicon, key the feature <feature>negative</feature>
+on the affix(es) that express the meaning of 'nowhere'.  These negative elements will be discussed further in <section number="14">Negation Constructions - Adverbial and Auxiliary elements</section>.
+</instruction>
+		<instruction id="AdvPNegLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">In the lexicon, key the feature <feature>negative</feature>
+on the affix(es) that express the negation on the verb.  Verbal negation will be discussed further in <section number="9">Basic, Single-clause Sentences - Auxiliaries</section> and in <section number="14">Negation Constructions - Adverbial and Auxiliary elements</section>.</instruction>
+		<br/>
+		<br/>
 		<buttons>
 			<button id="AdvPLocExamplesBack" value="Back" goto="AdvPMain.htm"/>
 			<button id="AdvPLocExamplesNext" value="Next" goto="AdvPManner.htm"/>
 		</buttons>
 	</form>
+	<showWhen id="swAdvPNegLocativeTypeWord">
+		<whenRadio button="AdvPNegLocativeTypeWord"/>
+	</showWhen>
+	<showWhen id="swAdvPNegLocativeTypeAffix">
+		<whenRadio button="AdvPNegLocativeTypeAffix"/>
+	</showWhen>
+<showWhen id="swAdvPNegLocativeTypeVerb">
+		<whenRadio button="AdvPNegLocativeTypeVerb"/>
+</showWhen>
+	<showWhen id="swAdvPNegLocativeTypeWordOrVerb">
+		<whenRadio button="AdvPNegLocativeTypeWord"/>
+<or/>
+		<whenRadio button="AdvPNegLocativeTypeVerb"/>
+	</showWhen>
 </page>

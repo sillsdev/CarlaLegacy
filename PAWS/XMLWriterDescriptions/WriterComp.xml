@@ -4,7 +4,7 @@
 	<section1 id="sComp">
 		<secTitle>Complement Clauses</secTitle>
 		<p>
-			<content>There are various types of embedded clauses which are complements of main verbs. These represent the argument structure of the verb as well as its syntactic subcategorization.  Therefore, there is some degree of cross-linguistic similarity in the types of clausal complements the verbs subcategorize for.  Examples of each type of clausal complement will be given in the next section, followed by a discussion of the complementizers and their position in declarative embedded clauses.  See section </content>
+			<content>There are various types of embedded clauses which are complements of main verbs. These represent the argument structure of the verb as well as its syntactic subcategorization.  Therefore, there is some degree of cross-linguistic similarity in the types of clausal complements the verbs subcategorize for.  Adjectives acting as the predicate of the sentence may also subcategorize for the various types of clausal complements.  Examples of each type of clausal complement will be given in the next section, followed by a discussion of the complementizers and their position in declarative embedded clauses.  See section </content>
 			<sectionRef sec="sQues"/>
 			<content> for similar discussion for questions and section </content>
 			<sectionRef sec="sRelCl"/>
@@ -176,6 +176,7 @@
 							<caseText value="before">These clitic(s) is(are) proclitic(s).</caseText>
 							<caseText value="after">These clitic(s) is(are) enclitic(s).</caseText>
 							<caseText value="both">There are some complementizer clitics which are proclitics and some which are enclitics.</caseText>
+							<caseText value="unknown">_______</caseText>
 						</case>
 						<content/>
 					</text>
@@ -187,9 +188,11 @@
 						<caseText value="before">before</caseText>
 						<caseText value="after">after</caseText>
 						<caseText value="either">on either side (but not both sides) of</caseText>
+						<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 						<caseText value="beforeOrBoth">before or on both sides of</caseText>
 						<caseText value="afterOrBoth">after or on both sides of</caseText>
 						<caseText value="both">on both sides of</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content> the embedded clause.  </content>
 					<text show="swCompEitherUnrestricted">
@@ -210,12 +213,12 @@
 	</showWhen>
 	<showWhen id="swCompWordYes">
 		<whenValue element="comp" attr="compWord" value="yes"/>
-<and/>
+		<and/>
 		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
 	<showWhen id="swCompWordNo">
 		<whenValue element="comp" attr="compWord" value="no"/>
-<and/>
+		<and/>
 		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
 	<showWhen id="swCompEitherRestricted">
@@ -224,7 +227,7 @@
 		<whenValue element="comp" attr="compPos" value="after" negateValue="yes"/>
 		<and/>
 		<whenValue element="comp" attr="compEitherRestricted" value="restricted"/>
-<and/>
+		<and/>
 		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
 	<showWhen id="swCompEitherUnrestricted">
@@ -233,7 +236,7 @@
 		<whenValue element="comp" attr="compPos" value="after" negateValue="yes"/>
 		<and/>
 		<whenValue element="comp" attr="compEitherRestricted" value="unrestricted"/>
-<and/>
+		<and/>
 		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
 </portion>

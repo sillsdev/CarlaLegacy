@@ -751,7 +751,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<content>, </content>
 				<case element="ip" attr="proDrop">
 					<caseText value="noImp">pro-drop is not allowed.  The subject must be overt except in imperatives.</caseText>
-					<caseText value="no">pro-drop is not allowed.  The subject must be overt except in imperatives.</caseText>
+					<caseText value="no">pro-drop is not allowed.  The subject must be overt even in imperatives.</caseText>
 					<caseText value="yes">pro-drop of the subject is allowed in any type of sentence.</caseText>
 					<caseText value="yesClitic">the subject may look like it is missing due to pronominal clitics attaching to the verb, but it is not a true pro-drop language.</caseText>
 				</case>
@@ -802,19 +802,111 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				</case>
 				<content> auxiliaries which are written as separate words.  </content>
 				<text show="swIPAuxYes">
-					<content>Examples of auxiliaries that are like the English auxiliaries include:</content>
+					<content>Examples including auxiliaries that are like the English auxiliaries are:</content>
 				</text>
 				<content/>
 			</p>
 			<example show="swIPAuxYes">
-				<interlinear exampleLoc="ip/auxExample"/>
+						<interlinear exampleLoc="ip/auxExample"/>
 			</example>
+			<p>
+				<content>In some languages verbal negation is an auxiliary element, while in others it is simply a verbal affix. English has both the negative auxiliary </content>
+				<langData>not</langData>
+				<content>, which is a separate word that must always follow another auxiliary, and the contraction form </content>
+				<langData>-n't</langData>
+				<content>, which is written as a suffix on the auxiliary.  Examples of English negative transitive single-clause sentences include:</content>
+				<langData>The boy did not hit the ball</langData>
+				<content>, </content>
+				<langData>The boy won't hit the ball</langData>
+				<content> and </content>
+				<langData>The boy might not have hit the ball</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<langName/>
+				<content/>
+				<case element="ip" attr="negAux">
+					<caseText value="yesOnly"> has one or more</caseText>
+					<caseText value="yesAffix"> has one or more</caseText>
+					<caseText value="yesVerb"> has one or more</caseText>
+					<caseText value="yesAll"> has one or more</caseText>
+					<caseText value="noAffixOnly"> does not have any</caseText>
+					<caseText value="noAffixAndVerb"> does not have any</caseText>
+					<caseText value="noVerb"> does not have any</caseText>
+				</case>
+				<content> negative auxiliaries which are written as separate words, </content>
+				<case element="ip" attr="negAux">
+					<caseText value="yesOnly">and that is the only type of verbal negation in the language.  There is no negative verbal affix nor negative auxiliary affix. </caseText>
+					<caseText value="yesAffix">and there is also a negative auxiliary affix, but no negative verbal affix. </caseText>
+					<caseText value="yesVerb">and there is also a negative verbal affix, but no negative auxiliary affix. </caseText>
+					<caseText value="yesAll">and there is also a negative auxiliary affix and a negative verbal affix. </caseText>
+					<caseText value="noAffixOnly">but there is a negative affix which goes on the auxiliary and that is the only type of verbal negation in the language.  There is no negative verbal affix.</caseText>
+					<caseText value="noAffixAndVerb">but there is a negative affix which goes on the auxiliary and a negative verbal affix as well.</caseText>
+					<caseText value="noVerb">nor any negative affix which goes on an auxiliary.  The only way to express verbal negation is by one or more negative verbal affixes.</caseText>
+				</case>
+				<content/>
+				<text show="swIPNegAuxWord">
+					<content> The negative auxiliary </content>
+					<case element="ip" attr="negAuxRequiresAux">
+						<caseText value="no">may</caseText>
+						<caseText value="yes">may not</caseText>
+					</case>
+					<content> be the only auxiliary in the phrase; </content>
+					<case element="ip" attr="negAuxRequiresAux">
+						<caseText value="no">no other</caseText>
+						<caseText value="yes">the presence of another</caseText>
+					</case>
+					<content> auxiliary is required.</content>
+				</text>
+			</p>
+			<p show="swIPNegAuxNotNoVerb">
+				<content>Examples of the negative auxiliaries in </content>
+				<langName/>
+				<content> include:</content>
+			</p>
+<example show="swIPNegAuxNotNoVerb">
+			   <table border="1">
+					<caption>
+						<content>Negative Auxiliaries</content>
+					</caption>
+					<row show="swIPNegAuxWord">
+						<col>
+							<content>words</content>
+						</col>
+						<col exampleLoc="ip/negAuxExample"/>
+					</row>
+					<row show="swIPNegAuxAffix">
+						<col>
+							<content>affix on an auxiliary</content>
+						</col>
+						<col exampleLoc="ip/negAuxAffixExample"/>
+					</row>
+				</table>
+			</example>
+			<p show="swIPNegVerb">
+				<content>Examples of the negative verbal affixes attached to a verb in </content>
+				<langName/>
+				<content> include:</content>
+			</p>
+			<example show="swIPNegVerb">
+				<interlinear exampleLoc="ip/negVerbExample"/>
+			</example>
+			<p>
+				<content>See section </content>
+				<sectionRef sec="sNegVerbal"/>
+				<content> for examples of these negative elements used in sentences and further discussion of the negation constructions in </content>
+				<langName/>
+				<content>.</content>
+			</p>
 			<p>
 				<content>The nonfinite word </content>
 				<langData>to</langData>
 				<content> used in English embedded clauses also acts as an auxiliary in that it fills the same position and can occur before other auxiliaries.  For example, </content>
 				<langData>The boy would like to have hit the ball</langData>
-				<content>.  Nonfinite examples from </content>
+				<content>. </content>
+			</p>
+			<p>
+				<content>Nonfinite examples from </content>
 				<langName/>
 				<content> are given here, though they may not include a nonfinite auxiliary element:</content>
 			</p>
@@ -885,7 +977,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<content>.</content>
 			</p>
 			<p>
-				<content>Examples of simple intransitive in </content>
+				<content>Examples of simple intransitive sentences in </content>
 				<langName/>
 				<content> include:</content>
 			</p>
@@ -930,11 +1022,20 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<content>  There is </content>
 					<case element="ip" attr="copularAffix">
 						<caseText value="no">not any copular affix on the predicate nominal or predicate adjective either.</caseText>
-						<caseText value="yes">a copular affix on the predicate nominal or predicate adjective, however.</caseText>
+						<caseText value="yesPrefix">a copular prefix on the predicate nominal or predicate adjective, however</caseText>
+						<caseText value="yesSuffix">a copular suffix on the predicate nominal or predicate adjective, however</caseText>
+						<caseText value="yesEither">either a copular prefix or suffix on the predicate nominal or predicate adjective, however</caseText>
 					</case>
 					<content/>
 				</text>
 				<content/>
+				<text show="swIPCopVerbNoNeither">
+					<content>.</content>
+				</text>
+				<content/>
+				<text show="swIPCopVerbYesOptional">
+					<content>, that occurs when there is no copular verb present.</content>
+				</text>
 			</p>
 			<p>
 				<content>Examples of copular sentences in </content>
@@ -979,10 +1080,14 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<caseText value="pp">is always a PP.</caseText>
 					<caseText value="dp">is always a nominal phrase.  The </caseText>
 					<caseText value="both">can be either a PP or a nominal phrase.  When both objects are nominal phrases, the </caseText>
-				</case><text show="swIPDiCatNotPP"><case element="ip" attr="diOrder">
-<caseText value="direct">direct object</caseText>
-<caseText value="indirect">indirect object</caseText>
-</case><content> appears closest to the verb.</content></text>
+				</case>
+				<text show="swIPDiCatNotPP">
+					<case element="ip" attr="diOrder">
+						<caseText value="direct">direct object</caseText>
+						<caseText value="indirect">indirect object</caseText>
+					</case>
+					<content> appears closest to the verb.</content>
+				</text>
 				<content>  Examples of ditransitive sentences in </content>
 				<langName/>
 				<content> include:</content>
@@ -1320,6 +1425,36 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPAuxYes">
 		<whenValue element="ip" attr="aux" value="yes"/>
 	</showWhen>
+	<showWhen id="swIPNegAuxWord">
+		<whenValue element="ip" attr="negAux" value="yesOnly"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAffix"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
+	<showWhen id="swIPNegAuxAffix">
+		<whenValue element="ip" attr="negAux" value="noAffixOnly"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAffix"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
+<showWhen id="swIPNegAuxNotNoVerb">
+		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
+</showWhen>
+	<showWhen id="swIPNegVerb">
+		<whenValue element="ip" attr="negAux" value="noVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
 	<showWhen id="swIPAuxOrderVSO">
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 	</showWhen>
@@ -1342,12 +1477,18 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	</showWhen>
 	<showWhen id="swIPCopVerbNoNeitherOrOptional">
 		<whenValue element="ip" attr="copular" value="noNeither"/>
-<or/>
+		<or/>
 		<whenValue element="ip" attr="copular" value="yesOptional"/>
 	</showWhen>
-<showWhen id="swIPDiCatNotPP">
-	<whenValue element="ip" attr="diCat" value="pp" negateValue="yes"></whenValue>
-</showWhen>
+	<showWhen id="swIPCopVerbNoNeither">
+		<whenValue element="ip" attr="copular" value="noNeither"/>
+	</showWhen>
+	<showWhen id="swIPCopVerbYesOptional">
+		<whenValue element="ip" attr="copular" value="yesOptional"/>
+	</showWhen>
+	<showWhen id="swIPDiCatNotPP">
+		<whenValue element="ip" attr="diCat" value="pp" negateValue="yes"/>
+	</showWhen>
 	<showWhen id="swIPPassiveYes">
 		<whenValue element="ip" attr="passive" value="yes"/>
 	</showWhen>

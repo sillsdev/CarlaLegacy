@@ -41,6 +41,7 @@
 						<case element="q" attr="mainYNAuxPos">
 							<caseText value="before">front</caseText>
 							<caseText value="after">end</caseText>
+							<caseText value="unknown">_______</caseText>
 						</case>
 						<content> of the question is required.</content>
 					</text>
@@ -62,7 +63,8 @@
 								<caseText value="before">These clitic(s) is(are) proclitic(s).</caseText>
 								<caseText value="after">These clitic(s) is(are) enclitic(s).</caseText>
 								<caseText value="both">There are some question marker or complementizer clitics which are proclitics and some which are enclitics.</caseText>
-							</case>
+							   <caseText value="unknown">_______</caseText>
+						   </case>
 							<content>&#x20;</content>
 						</text>
 					</text>
@@ -73,9 +75,11 @@
 							<caseText value="before">before</caseText>
 							<caseText value="after">after</caseText>
 							<caseText value="either">on either side (but not both sides) of</caseText>
+							<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 							<caseText value="beforeOrBoth">before or on both sides of</caseText>
 							<caseText value="afterOrBoth">after or on both sides of</caseText>
 							<caseText value="both">on both sides of</caseText>
+							<caseText value="unknown">_______</caseText>
 						</case>
 						<content> the rest of the question.  </content>
 						<text show="swQMainYNEitherUnrestricted">
@@ -124,7 +128,8 @@
 						<case element="q" attr="embYNAuxPos">
 							<caseText value="before">front</caseText>
 							<caseText value="after">end</caseText>
-						</case>
+							<caseText value="unknown">_______</caseText>
+					   </case>
 						<content> of the embedded question is required.</content>
 					</text>
 					<content>&#x20;</content>
@@ -145,7 +150,8 @@
 								<caseText value="before">These clitic(s) is(are) proclitic(s).</caseText>
 								<caseText value="after">These clitic(s) is(are) enclitic(s).</caseText>
 								<caseText value="both">There are some question marker or complementizer clitics which are proclitics and some which are enclitics.</caseText>
-							</case>
+							   <caseText value="unknown">_______</caseText>
+						   </case>
 							<content>&#x20;</content>
 						</text>
 					</text>
@@ -156,10 +162,12 @@
 							<caseText value="before">before</caseText>
 							<caseText value="after">after</caseText>
 							<caseText value="either">on either side (but not both sides) of</caseText>
-							<caseText value="beforeOrBoth">before or on both sides of</caseText>
+						   <caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+						   <caseText value="beforeOrBoth">before or on both sides of</caseText>
 							<caseText value="afterOrBoth">after or on both sides of</caseText>
 							<caseText value="both">on both sides of</caseText>
-						</case>
+							<caseText value="unknown">_______</caseText>
+					   </case>
 						<content> the rest of the embedded question.  </content>
 						<text show="swQEmbYNEitherUnrestricted">
 							<content>All of the question markers or complementizers can occur on either side of the embedded question.</content>
@@ -193,65 +201,68 @@
 			</p>
 			<example>
 				<table border="1">
+					<caption>
+						<content>Interrogatives used in content questions</content>
+					</caption>
 					<headerRow>
-						<headerCol>English</headerCol>
 						<headerCol>
 							<langName/>
 						</headerCol>
+						<headerCol>meaning</headerCol>
 					</headerRow>
 					<row>
+						<col exampleLoc="q/who"/>
 						<col>
 							<content>who</content>
 						</col>
-						<col exampleLoc="q/who"/>
 					</row>
 					<row>
+						<col exampleLoc="q/what"/>
 						<col>
 							<content>what</content>
 						</col>
-						<col exampleLoc="q/what"/>
 					</row>
 					<row>
+						<col exampleLoc="q/why"/>
 						<col>
 							<content>why</content>
 						</col>
-						<col exampleLoc="q/why"/>
 					</row>
 					<row>
+						<col exampleLoc="q/where"/>
 						<col>
 							<content>where</content>
 						</col>
-						<col exampleLoc="q/where"/>
 					</row>
 					<row>
+						<col exampleLoc="q/when"/>
 						<col>
 							<content>when</content>
 						</col>
-						<col exampleLoc="q/when"/>
 					</row>
 					<row>
+						<col exampleLoc="q/how"/>
 						<col>
 							<content>how</content>
 						</col>
-						<col exampleLoc="q/how"/>
 					</row>
 					<row>
+						<col exampleLoc="q/which"/>
 						<col>
 							<content>which</content>
 						</col>
-						<col exampleLoc="q/which"/>
 					</row>
 					<row>
+						<col exampleLoc="q/whose"/>
 						<col>
 							<content>whose</content>
 						</col>
-						<col exampleLoc="q/whose"/>
 					</row>
 					<row>
+						<col exampleLoc="q/other"/>
 						<col>
 							<content>other interrogatives</content>
 						</col>
-						<col exampleLoc="q/other"/>
 					</row>
 				</table>
 			</example>
@@ -288,6 +299,7 @@
 						<caseText value="before">only before the noun, even if another determiner occurs after the noun.</caseText>
 						<caseText value="after">only after the noun, even if another determiner occurs before the noun.</caseText>
 						<caseText value="agree">on either side of the noun, but when there is a demonstrative on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be).</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content>&#x20;</content>
 				</text>
@@ -300,7 +312,8 @@
 						<caseText value="before">only before the noun, even if another article occurs after the noun.</caseText>
 						<caseText value="after">only after the noun, even if another article occurs before the noun.</caseText>
 						<caseText value="agree">on either side of the noun, but when there is a article on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be).</caseText>
-					</case>
+					 <caseText value="unknown">_______</caseText>
+				   </case>
 					<content>&#x20;</content>
 				</text>
 				<content>&#x20;</content>
@@ -313,6 +326,7 @@
 						<caseText value="after">only after the adjective, even if another degree word occurs before the adjective.
 </caseText>
 						<caseText value="agree">on either side of the adjective, but when there is a degree word on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be).</caseText>
+					<caseText value="unknown">_______</caseText>
 					</case>
 					<content>&#x20;</content>
 				</text>
@@ -326,7 +340,8 @@
 						<caseText value="after">only after the quantifier, even if another degree word occurs before the quantifier.
 </caseText>
 						<caseText value="agree">on either side of the quantifier, but when there is a degree word on each side at the same time, they must agree in features (e.g. both be interrogative words or both not be).</caseText>
-					</case>
+					 <caseText value="unknown">_______</caseText>
+				   </case>
 					<content>&#x20;</content>
 				</text>
 				<content>&#x20;</content>
@@ -343,6 +358,7 @@
 					<caseText value="no">does not front; it simply remains in place.</caseText>
 					<caseText value="after">may remain in place or it may move to the position immediately before the verb.</caseText>
 					<caseText value="before">moves to the front of the clause.</caseText>
+					<caseText value="unknown">_______.</caseText>
 				</case>
 				<content>&#x20;</content>
 			</p>
@@ -377,6 +393,7 @@
 							<caseText value="no">a difference in</caseText>
 							<caseText value="after">optional movement of an interrogative phrase and possibly a difference in</caseText>
 							<caseText value="before">fronting of an interrogative phrase and possibly a difference in</caseText>
+							<caseText value="unknown">_______ of an interrogative phrase and possibly a difference in</caseText>
 						</case>
 						<content> intonation or tone or other non-syntactic marking.</content>
 					</text>
@@ -386,6 +403,7 @@
 						<case element="q" attr="mainContAuxPos">
 							<caseText value="before">front</caseText>
 							<caseText value="after">end</caseText>
+							<caseText value="unknown">_______</caseText>
 						</case>
 						<content> of the question is </content>
 						<case element="q" attr="mainContAuxRequired">
@@ -418,6 +436,7 @@
 								<caseText value="before">These clitic(s) is(are) proclitic(s).</caseText>
 								<caseText value="after">These clitic(s) is(are) enclitic(s).</caseText>
 								<caseText value="both">There are some question marker or complementizer clitics which are proclitics and some which are enclitics.</caseText>
+							   <caseText value="unknown">_______</caseText>
 							</case>
 							<content>&#x20;</content>
 						</text>
@@ -429,10 +448,12 @@
 							<caseText value="before">before</caseText>
 							<caseText value="after">after</caseText>
 							<caseText value="either">on either side (but not both sides) of</caseText>
-							<caseText value="beforeOrBoth">before or on both sides of</caseText>
+						   <caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+						   <caseText value="beforeOrBoth">before or on both sides of</caseText>
 							<caseText value="afterOrBoth">after or on both sides of</caseText>
 							<caseText value="both">on both sides of</caseText>
-						</case>
+							<caseText value="unknown">_______</caseText>
+					   </case>
 						<content> the rest of the question.  </content>
 						<text show="swQMainContEitherUnrestrictedNotVSO">
 							<content>All of the question markers or complementizers can occur on either side of the question.</content>
@@ -509,6 +530,7 @@
 							<caseText value="no">a difference in</caseText>
 							<caseText value="after">optional movement of an interrogative phrase and possibly a difference in</caseText>
 							<caseText value="before">fronting of an interrogative phrase and possibly a difference in</caseText>
+							<caseText value="unknown">_______ of an interrogative phrase and possibly a difference in</caseText>
 						</case>
 						<content> intonation or tone or other non-syntactic marking.</content>
 					</text>
@@ -518,7 +540,8 @@
 						<case element="q" attr="embContAuxPos">
 							<caseText value="before">front</caseText>
 							<caseText value="after">end</caseText>
-						</case>
+							<caseText value="unknown">_______</caseText>
+					   </case>
 						<content> of the question is </content>
 						<case element="q" attr="embContAuxRequired">
 							<caseText value="no">allowed but not required</caseText>
@@ -553,6 +576,7 @@
 							<caseText value="before">These clitic(s) is(are) proclitic(s).</caseText>
 							<caseText value="after">These clitic(s) is(are) enclitic(s).</caseText>
 							<caseText value="both">There are some question marker or complementizer clitics which are proclitics and some which are enclitics.</caseText>
+						   <caseText value="unknown">_______</caseText>
 						</case>
 						<content>&#x20;</content>
 					</text>
@@ -563,9 +587,11 @@
 							<caseText value="before">before</caseText>
 							<caseText value="after">after</caseText>
 							<caseText value="either">on either side (but not both sides) of</caseText>
-							<caseText value="beforeOrBoth">before or on both sides of</caseText>
+							<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+						   <caseText value="beforeOrBoth">before or on both sides of</caseText>
 							<caseText value="afterOrBoth">after or on both sides of</caseText>
 							<caseText value="both">on both sides of</caseText>
+							<caseText value="unknown">_______</caseText>
 						</case>
 						<content> the rest of the embedded question.  </content>
 						<text show="swQEmbContEitherUnrestrictedNotVSO">

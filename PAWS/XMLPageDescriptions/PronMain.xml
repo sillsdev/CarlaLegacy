@@ -168,7 +168,7 @@ Key the personal pronouns in the text box, with each pronoun followed by a perio
 					<featureExplanation>inanimate objects</featureExplanation>
 				</featureRow>
 				<featureRow>
-					<featureType/>
+					<featureType>&nbsp;</featureType>
 					<featureItem dataValue="pronAgrFeatHuman" name="PronFeatAgrHuman">human</featureItem>
 					<featureExplanation>humans</featureExplanation>
 				</featureRow>

@@ -13,15 +13,28 @@
 Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called "headless" relative clauses.
 	</introduction>
 	<form section="relcl">
-		<prompt>Key examples of normal relative clauses in your language here:</prompt>
-		<textBox id="RelClExample" dataItem="example" cols="50"/>
-		<br/>
-		<br/>
-		<prompt>Now put each of the above examples into (simple) full sentences and key here:</prompt>
-		<textBox id="RelClSentenceExample" dataItem="sentExample" cols="50"/>
-		<br/>
-		<br/>
 		<radioGroup>
+			<groupName dataItem="exist" default="no">RRelClExist</groupName>
+			<prompt>Does your language have (any type of) relative clauses?</prompt>
+			<radio id="RelClExistYes" dataValue="yes">Yes</radio>
+			<radio id="RelClExistNo" dataValue="no">No, there are no relative clauses at all</radio>
+		</radioGroup>
+		<prompt id="RelClExamplePrompt" show="swRelClExistYes">Key examples of normal relative clauses in your language here:</prompt>
+		<textBox id="RelClExample" show="swRelClExistYes" dataItem="example" cols="50"/>
+		<br/>
+		<br/>
+		<prompt  id="RelClSentenceExamplePrompt" show="swRelClExistYes">Now put each of the above examples into (simple) full sentences and key here:</prompt>
+		<textBox id="RelClSentenceExample" show="swRelClExistYes" dataItem="sentExample" cols="50"/>
+		<br/>
+		<br/>
+		<radioGroup id="RelClClausePosRadioGroup"  show="swRelClExistYes">
+			<groupName dataItem="clausePos" default="unknown" position="yesHeadDiff">RRelClClausePos</groupName>
+			<prompt>Where does the clause part occur with respect to the head noun?</prompt>
+			<radio id="RelClClausePosBefore" dataValue="before">Before the head noun</radio>
+			<radio id="RelClClausePosAfter" checked="yes" dataValue="after">After the head noun</radio>
+			<radio id="RelClClausePosEitherSide" checked="yes" dataValue="either">On either side of the head noun, sometimes before and sometimes after</radio>
+		</radioGroup>
+		<radioGroup id="RelClTypeRadioGroup" show="swRelClExistYes">
 			<groupName dataItem="type" default="none">RRelClType</groupName>
 			<prompt>Does your language have relative clauses which are CPs (any of the first three types above)?</prompt>
 			<radio id="RelClTypeCP" dataValue="CP">Yes</radio>
@@ -76,7 +89,6 @@ Some languages also allow one of the above structures to occur by itself as a no
 				</radioGroup>
 			</radioGroup>
 			<radio id="RelClTypeIP" dataValue="IP">No, they are of the IP type above, with a relative marker on the verb</radio>
-			<radio id="RelClTypeNone" checked="yes" dataValue="none">No, there are no relative clauses at all</radio>
 		</radioGroup>
 		<instruction id="RelClTypeCPCompCliticPrefixInstruction" show="swRelClTypeCPCompCliticPrefix">In the lexicon, add the feature <feature>relative_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="RelClTypeCPCompCliticSuffixInstruction" show="swRelClTypeCPCompCliticSuffix">In the lexicon, add the feature <feature>relative_suffix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
@@ -86,7 +98,7 @@ Some languages also allow one of the above structures to occur by itself as a no
 		<instruction id="RelClTypeCPCompEitherRestrictedInstruction" show="swRelClTypeCPCompEitherRestrictedWord">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
 		<instruction id="RelClTypeCPWhInstruction" show="swRelClTypeCPWh">In the lexicon, add the feature <feature>relative</feature> to the "wh"-words which can be used in relative clauses.  If your language has animacy agreement between the head noun and the wh-relative word (like English "who" versus "which"), also add the feature <feature>animate</feature> to the animate forms and add the feature <feature>-animate</feature> to the inanimate forms.</instruction>
 		<instruction id="RelClTypeIPInstruction" show="swRelClTypeIP">In the lexicon, add the feature <feature>relative</feature> to each of the affixes that mark relative clauses.</instruction>
-		<radioGroup id="RelClHeadlessTable" show="swRelClYes">
+		<radioGroup id="RelClHeadlessTable" show="swRelClExistYes">
 			<groupName dataItem="headless" default="no">RRelClHeadless</groupName>
 			<prompt>Does your language allow headless relative clauses?</prompt>
 			<radio id="RelClHeadlessNo" dataValue="no">No, a head noun is required</radio>
@@ -102,6 +114,9 @@ Some languages also allow one of the above structures to occur by itself as a no
 			<button id="RelClMainNext" value="Next" goto="RelClTesting.htm"/>
 		</buttons>
 	</form>
+	<showWhen id="swRelClExistYes">
+		<whenRadio button="RelClExistYes"/>
+	</showWhen>
 	<showWhen id="swRelClTypeCP">
 		<whenRadio button="RelClTypeCP"/>
 	</showWhen>
@@ -218,15 +233,10 @@ Some languages also allow one of the above structures to occur by itself as a no
 		<not/>
 		<whenRadio button="RelClTypeCPCompNo"/>
 	</showWhen>
-	<showWhen id="swRelClYes">
-		<not/>
-		<whenRadio button="RelClTypeNone"/>
-	</showWhen>
 	<showWhen id="swRelClHeadlessYes">
 		<whenRadio button="RelClHeadlessYes"/>
 		<and/>
-		<not/>
-		<whenRadio button="RelClTypeNone"/>
+		<whenRadio button="RelClExistYes"/>
 	</showWhen>
 	<showWhen id="swRelClTypeCPCompCliticPrefix">
 		<whenRadio button="RelClTypeCPCompCliticPosBefore"/>

@@ -33,11 +33,11 @@ Finally, a tree for example 8 with a nonfinite IP complement and required pro-dr
 		<br/>
 		<help href="../Help/Cbgbtext.doc#ClausalComplements">Click here for more information about the CP phrase structure of embedded clauses.</help>
 	</introduction>
-	<form section="q" transparent="yes">
+	<form section="comp" transparent="yes">
 		<br/>
 		<buttons>
-			<button id="QBack" value="Back" goto="Contents.htm"/>
-			<button id="QNext" value="Next" goto="CompFeatures.htm"/>
+			<button id="CompMainBack" value="Back" goto="Contents.htm"/>
+			<button id="CompMainNext" value="Next" goto="CompFeatures.htm"/>
 		</buttons>
 	</form>
 </page>

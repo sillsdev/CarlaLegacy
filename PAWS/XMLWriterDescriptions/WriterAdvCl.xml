@@ -52,6 +52,7 @@
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
 					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown">_______</caseText>
 				</case>
 				<content> the adverb.  Examples of temporal adverbial clauses in </content>
 				<langName/>

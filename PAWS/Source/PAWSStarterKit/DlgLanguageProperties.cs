@@ -49,6 +49,7 @@ namespace PAWSStarterKit
 		private System.Windows.Forms.Label lblThreeLetters;
 		private System.Windows.Forms.Label lblFieldCode;
 		private System.Windows.Forms.TextBox tbAnswerFile;
+		private System.Windows.Forms.CheckBox cbRtl;
 		private System.ComponentModel.IContainer components;
 
 		public DlgLanguageProperties()
@@ -191,6 +192,20 @@ namespace PAWSStarterKit
 			}
 		}
 		/// <summary>
+		/// Gets/sets font bold.
+		/// </summary>
+		public bool RightToLeftScript
+		{
+			get
+			{
+				return cbRtl.Checked;
+			}
+			set
+			{
+				cbRtl.Checked = value;
+			}
+		}
+		/// <summary>
 		/// Gets/sets language name.
 		/// </summary>
 		public string Language
@@ -315,6 +330,7 @@ namespace PAWSStarterKit
 			this.lblWriterFile = new System.Windows.Forms.Label();
 			this.helpProvider = new System.Windows.Forms.HelpProvider();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.cbRtl = new System.Windows.Forms.CheckBox();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			//
@@ -369,7 +385,7 @@ namespace PAWSStarterKit
 			//
 			// btnFont
 			//
-			this.btnFont.Location = new System.Drawing.Point(264, 72);
+			this.btnFont.Location = new System.Drawing.Point(248, 72);
 			this.btnFont.Name = "btnFont";
 			this.btnFont.Size = new System.Drawing.Size(112, 24);
 			this.btnFont.TabIndex = 6;
@@ -412,19 +428,18 @@ namespace PAWSStarterKit
 			//
 			// groupBox1
 			//
-			this.groupBox1.Controls.AddRange(new System.Windows.Forms.Control[] {
-																					this.btnAnswerFile,
-																					this.tbAnswerFile,
-																					this.lblAnswerFile,
-																					this.btnGrammarFile,
-																					this.tbGrammarFile,
-																					this.lblGrammarFile,
-																					this.btnWriterFile,
-																					this.tbWriterFile,
-																					this.btnExampleFiles,
-																					this.tbExampleFiles,
-																					this.lblExampleFiles,
-																					this.lblWriterFile});
+			this.groupBox1.Controls.Add(this.btnAnswerFile);
+			this.groupBox1.Controls.Add(this.tbAnswerFile);
+			this.groupBox1.Controls.Add(this.lblAnswerFile);
+			this.groupBox1.Controls.Add(this.btnGrammarFile);
+			this.groupBox1.Controls.Add(this.tbGrammarFile);
+			this.groupBox1.Controls.Add(this.lblGrammarFile);
+			this.groupBox1.Controls.Add(this.btnWriterFile);
+			this.groupBox1.Controls.Add(this.tbWriterFile);
+			this.groupBox1.Controls.Add(this.btnExampleFiles);
+			this.groupBox1.Controls.Add(this.tbExampleFiles);
+			this.groupBox1.Controls.Add(this.lblExampleFiles);
+			this.groupBox1.Controls.Add(this.lblWriterFile);
 			this.groupBox1.Location = new System.Drawing.Point(8, 160);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(488, 176);
@@ -540,25 +555,33 @@ namespace PAWSStarterKit
 			this.lblWriterFile.TabIndex = 6;
 			this.lblWriterFile.Text = "Writer File:";
 			//
+			// cbRtl
+			//
+			this.cbRtl.Location = new System.Drawing.Point(376, 72);
+			this.cbRtl.Name = "cbRtl";
+			this.cbRtl.Size = new System.Drawing.Size(112, 24);
+			this.cbRtl.TabIndex = 12;
+			this.cbRtl.Text = "Right-to-left script";
+			//
 			// DlgLanguageProperties
 			//
 			this.AcceptButton = this.btnOK;
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(496, 375);
-			this.Controls.AddRange(new System.Windows.Forms.Control[] {
-																		  this.groupBox1,
-																		  this.btnOK,
-																		  this.btnCancel,
-																		  this.tbFieldCode,
-																		  this.lblFieldCode,
-																		  this.btnFont,
-																		  this.lblFontName,
-																		  this.lblThreeLetters,
-																		  this.tbLanguage,
-																		  this.tbAbbreviation,
-																		  this.lblAbbreviation,
-																		  this.lblLanguage});
+			this.Controls.Add(this.cbRtl);
+			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.btnOK);
+			this.Controls.Add(this.btnCancel);
+			this.Controls.Add(this.tbFieldCode);
+			this.Controls.Add(this.lblFieldCode);
+			this.Controls.Add(this.btnFont);
+			this.Controls.Add(this.lblFontName);
+			this.Controls.Add(this.lblThreeLetters);
+			this.Controls.Add(this.tbLanguage);
+			this.Controls.Add(this.tbAbbreviation);
+			this.Controls.Add(this.lblAbbreviation);
+			this.Controls.Add(this.lblLanguage);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.HelpButton = true;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -10,8 +10,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("Parser And Writer for Syntax")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SIL International")]
-[assembly: AssemblyProduct("PAWSStarterKit Alpha Version")]
-[assembly: AssemblyCopyright("2002 SIL International")]
+[assembly: AssemblyProduct("PAWSStarterKit Beta Version")]
+[assembly: AssemblyCopyright("2002-2004 SIL International")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -26,7 +26,7 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("0.3.6.*")]
+[assembly: AssemblyVersion("0.4.1.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="ExclTesting">
+	<title level="2">Exclamations and Greetings - Testing</title>
+	<form section="excl">
+		<instruction>
+Run the file excltest.txt through your morphological parser and then
+run the syntactic parser on the output.  Check the log for the
+results and note any changes you need to make to the lexicon or to
+answers about the order of elements in the phrase structure
+rules. Make the changes as needed and rerun.<br/>
+			<br/>
+		   <br/>
+Congratulations! You have now completed the starter kit.  Save the PC-PATR
+grammar file (.grm) and the grammar writeup (.xml) with a different name before editing.
+Contact Cheri_Black@sil.org for help on how to proceed or how to handle specific constructions.
+Feedback on how to improve this starter kit would also be appreciated.
+</instruction>
+		<br/>
+		<buttons>
+			<button id="ExclTestingBack" value="Back" goto="ExclMain.htm"/>
+			<button id="ExclTestingNext" value="Next" goto="Contents.htm"/>
+		</buttons>
+	</form>
+</page>

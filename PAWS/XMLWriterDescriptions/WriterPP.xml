@@ -66,10 +66,12 @@
 							<caseText value="before">before</caseText>
 							<caseText value="after">after</caseText>
 							<caseText value="either">on either side (but not both sides) of</caseText>
+							<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 							<caseText value="beforeOrBoth">before or on both sides of</caseText>
 							<caseText value="afterOrBoth">after or on both sides of</caseText>
 							<caseText value="both">on both sides of</caseText>
-						</case>
+							<caseText value="unknown">_______</caseText>
+					   </case>
 						<content> the rest of the PP.  </content>
 					</text>
 					<content/>
@@ -87,9 +89,11 @@
 							<caseText value="before">before</caseText>
 							<caseText value="after">after</caseText>
 							<caseText value="either">on either side (but not both sides) of</caseText>
+							<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
 							<caseText value="beforeOrBoth">before or on both sides of</caseText>
 							<caseText value="afterOrBoth">after or on both sides of</caseText>
 							<caseText value="both">on both sides of</caseText>
+						   <caseText value="unknown">_______</caseText>
 						</case>
 						<content> the rest of the PP.  </content>
 					</text>
@@ -108,10 +112,12 @@
 							<caseText value="before">before</caseText>
 							<caseText value="after">after</caseText>
 							<caseText value="either">on either side (but not both sides) of</caseText>
-							<caseText value="beforeOrBoth">before or on both sides of</caseText>
+						   <caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+						   <caseText value="beforeOrBoth">before or on both sides of</caseText>
 							<caseText value="afterOrBoth">after or on both sides of</caseText>
 							<caseText value="both">on both sides of</caseText>
-						</case>
+							<caseText value="unknown">_______</caseText>
+					   </case>
 						<content> the rest of the PP.  </content>
 					</text>
 					<content/>
@@ -144,6 +150,7 @@
 					<caseText value="before">prepositions only.  </caseText>
 					<caseText value="after">postpositions only.  </caseText>
 					<caseText value="both">both prepositions and postpositions.  </caseText>
+					<caseText value="unknown">_____-positions only.  </caseText>
 				</case>
 				<content/>
 				<case element="pp" attr="pType">
@@ -208,6 +215,10 @@
 						<content>postpositions</content>
 					</text>
 					<content/>
+					<text show="swPPPosUnknown">
+						<content>_____-positions</content>
+					</text>
+					<content/>
 					<text show="swPPPosBoth">
 						<content>prepositions and postpositions</content>
 					</text>
@@ -245,6 +256,10 @@
 					<content/>
 					<text show="swPPPosPost">
 						<content>postpositions.</content>
+					</text>
+					<content/>
+					<text show="swPPPosUnknown">
+						<content>_____-positions.</content>
 					</text>
 					<content/>
 					<text show="swPPPosBoth">
@@ -288,6 +303,10 @@
 						<content>postpositions</content>
 					</text>
 					<content/>
+					<text show="swPPPosUnknown">
+						<content>_____-positions</content>
+					</text>
+					<content/>
 					<text show="swPPPosBoth">
 						<content>prepositions and postpositions</content>
 					</text>
@@ -325,6 +344,10 @@
 					<content/>
 					<text show="swPPPosPost">
 						<content>postpositions</content>
+					</text>
+					<content/>
+					<text show="swPPPosUnknown">
+						<content>_____-positions</content>
 					</text>
 					<content/>
 					<text show="swPPPosBoth">
@@ -587,6 +610,9 @@
 	</showWhen>
 	<showWhen id="swPPPosBoth">
 		<whenValue element="pp" attr="pPos" value="both"/>
+	</showWhen>
+	<showWhen id="swPPPosUnknown">
+		<whenValue element="pp" attr="pPos" value="unknown"/>
 	</showWhen>
 	<showWhen id="swPPAloneYes">
 		<whenValue element="pp" attr="alone" value="yes"/>

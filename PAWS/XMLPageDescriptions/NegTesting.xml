@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NegTesting">
+	<title level="2">Negation Constructions - Testing</title>
+	<form section="neg">
+		<instruction>
+Run the file <file id="NegTestingFile" section="neg">negtest.txt</file> through your morphological parser and then run the syntactic parser on the output.  Check the log for the
+results and note any changes you need to make to the lexicon or to
+answers about the order of elements in the phrase structure
+rules. Make the changes as needed and rerun.
+			<p>
+Please check off this section now in 'Contents' and then proceed to
+<section number="15">Coordination Constructions</section> when you are ready.</p>
+		</instruction>
+		<br/>
+		<buttons>
+			<button id="NegTestingBack" value="Back" goto="NegType.htm"/>
+			<button id="NegTestingNext" value="Next" goto="Contents.htm"/>
+		</buttons>
+	</form>
+</page>

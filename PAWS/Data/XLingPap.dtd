@@ -1,10 +1,9 @@
 <!-- XLingPap.dtd
 	 XML/XSLT-based Linguistic paper document type definition
-
 	 (Revision history is at the end.)
   -->
 <!-- Entity definitions -->
-<!ENTITY % embedded "langData | gloss | exampleRef | sectionRef | appendixRef | citation | comment | object | br | endnote | endnoteRef | q | img">
+<!ENTITY % embedded "langData | gloss | exampleRef | sectionRef | appendixRef | citation | comment | object | br | endnote | endnoteRef | q | img | genericRef | link">
 <!ENTITY % chunk "p | pc | example | table | chart | tree | blockquote | ol | ul | dl">
 <!-- A paper contains various language information, optional frontmatter,
 	 either parts, chapters, or sections (at the top level), and optional
@@ -13,16 +12,16 @@
 	 The CSS attribute allows one to specify a particular cascading style
 	 sheet file.  The default is given in the XSLT template.
   -->
-<!ELEMENT lingPaper (language*, frontMatter?, ((chapter?, part*) | chapter* | section1*), backMatter?, comment?)>
+<!ELEMENT lingPaper (language*, frontMatter?, ((chapterBeforePart?, part*) | chapter* | section1*), backMatter?, comment?)>
 <!ATTLIST lingPaper
-  css CDATA #IMPLIED
+	css CDATA #IMPLIED
 >
 <!-- The content of language is the CSS class name to use in formating language-specific items. -->
 <!ELEMENT language (#PCDATA)>
 <!ATTLIST language
-  id ID #REQUIRED
-  name CDATA #IMPLIED
-  ethnCode CDATA #IMPLIED
+	id ID #REQUIRED
+	name CDATA #IMPLIED
+	ethnCode CDATA #IMPLIED
 >
 <!-- Front matter -->
 <!ELEMENT frontMatter (title, (author, affiliation*)+, presentedAt?, date?, version?, contents?, acknowledgements?, abstract?)>
@@ -34,59 +33,63 @@
 <!ELEMENT version (#PCDATA)>
 <!ELEMENT acknowledgements (%chunk;)+>
 <!ATTLIST acknowledgements
-  label CDATA #IMPLIED
+	label CDATA #IMPLIED
 >
 <!ELEMENT abstract (%chunk;)+>
 <!ATTLIST abstract
-  label CDATA #IMPLIED
+	label CDATA #IMPLIED
 >
 <!ELEMENT contents EMPTY>
 <!ATTLIST contents
-  showLevel (1 | 2 | 3 | 4 | 5 | 6) "3"
-  label CDATA #IMPLIED
+	showLevel (1 | 2 | 3 | 4 | 5 | 6) "3"
+	label CDATA #IMPLIED
 >
 <!-- Main content -->
-<!ELEMENT part (secTitle, (%chunk; | chapter)*)>
+<!ELEMENT part (secTitle, (%chunk;)*, chapter*)>
 <!ATTLIST part
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
-<!ELEMENT chapter (secTitle, (%chunk; | section1)*)>
+<!ELEMENT chapter (secTitle, (%chunk;)*, section1*)>
 <!ATTLIST chapter
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
-<!ELEMENT section1 (secTitle, (%chunk; | section2)*)>
+<!ELEMENT chapterBeforePart (secTitle, (%chunk;)*, section1*)>
+<!ATTLIST chapterBeforePart
+	id ID #REQUIRED
+>
+<!ELEMENT section1 (secTitle, (%chunk;)*, section2*)>
 <!ATTLIST section1
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
-<!ELEMENT section2 (secTitle, (%chunk; | section3)*)>
+<!ELEMENT section2 (secTitle, (%chunk;)*, section3*)>
 <!ATTLIST section2
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
-<!ELEMENT section3 (secTitle, (%chunk; | section4)*)>
+<!ELEMENT section3 (secTitle, (%chunk;)*, section4*)>
 <!ATTLIST section3
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
-<!ELEMENT section4 (secTitle, (%chunk; | section5)*)>
+<!ELEMENT section4 (secTitle, (%chunk;)*, section5*)>
 <!ATTLIST section4
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
-<!ELEMENT section5 (secTitle, (%chunk; | section6)*)>
+<!ELEMENT section5 (secTitle, (%chunk;)*, section6*)>
 <!ATTLIST section5
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
 <!ELEMENT section6 (secTitle, (%chunk;)*)>
 <!ATTLIST section6
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
 <!ELEMENT secTitle (#PCDATA | %embedded;)*>
 <!-- references to sections, etc. -->
 <!ELEMENT sectionRef EMPTY>
 <!ATTLIST sectionRef
-  sec IDREF #REQUIRED
+	sec IDREF #REQUIRED
 >
 <!ELEMENT appendixRef EMPTY>
 <!ATTLIST appendixRef
-  app IDREF #REQUIRED
+	app IDREF #REQUIRED
 >
 <!-- paragraph -->
 <!ELEMENT p (#PCDATA | %embedded;)*>
@@ -95,19 +98,25 @@
 <!-- blockquote -->
 <!ELEMENT blockquote (#PCDATA | %embedded; | %chunk;)*>
 <!ATTLIST blockquote
-  class CDATA #IMPLIED
-  cite CDATA #IMPLIED
+	class CDATA #IMPLIED
+	cite CDATA #IMPLIED
 >
 <!-- quote -->
 <!ELEMENT q (#PCDATA | %embedded;)*>
 <!ATTLIST q
-  class CDATA #IMPLIED
-  cite CDATA #IMPLIED
+	class CDATA #IMPLIED
+	cite CDATA #IMPLIED
 >
 <!-- ordered list -->
 <!ELEMENT ol (li | ol | ul)*>
+<!ATTLIST ol
+	class CDATA #IMPLIED
+>
 <!-- unordered list -->
 <!ELEMENT ul (li | ol | ul)*>
+<!ATTLIST ul
+	class CDATA #IMPLIED
+>
 <!-- list element -->
 <!ELEMENT li (#PCDATA | %embedded; | %chunk;)*>
 <!-- definition list -->
@@ -121,13 +130,13 @@
 	 class attribute.  -->
 <!ELEMENT object (#PCDATA | object)*>
 <!ATTLIST object
-  class CDATA #REQUIRED
+	class CDATA #REQUIRED
 >
 <!-- breaks may be used in charts and trees or other places as required. -->
 <!ELEMENT br EMPTY>
 <!-- comments are for the author.  The intent is that they will not show up in
 	 the formatted version of the paper. -->
-<!ELEMENT comment (#PCDATA)>
+<!ELEMENT comment (#PCDATA | %embedded;)*>
 <!-- Examples come in several varieties:
 	 word:           (24) nikita "I see it."
 	 listWord:       (24) a. nikitak   "I see it."
@@ -154,96 +163,107 @@
 -->
 <!ELEMENT example (word | listWord+ | single | listSingle+ | interlinear | listInterlinear+ | tree | chart | table)>
 <!ATTLIST example
-  num ID #IMPLIED
+	num ID #IMPLIED
 >
 <!ELEMENT word (langData | gloss)+>
 <!ELEMENT listWord (langData | gloss)+>
 <!ATTLIST listWord
-  letter ID #REQUIRED
+	letter ID #REQUIRED
 >
 <!ELEMENT single (langData | gloss)+>
 <!ELEMENT listSingle (langData | gloss)+>
 <!ATTLIST listSingle
-  letter ID #REQUIRED
+	letter ID #REQUIRED
 >
 <!ELEMENT interlinear (lineGroup | free | interlinear)+>
 <!ELEMENT lineGroup (line | conflatedLine)+>
 <!ELEMENT line ((langData | gloss)+ | wrd+)>
 <!ELEMENT wrd (#PCDATA | %embedded;)*>
 <!ATTLIST wrd
-  lang IDREF #REQUIRED
+	lang IDREF #REQUIRED
 >
 <!ELEMENT conflatedLine (lineSet | conflation)+>
 <!ELEMENT lineSet (lineSetRow+)>
 <!ATTLIST lineSet
-  letter ID #IMPLIED
+	letter ID #IMPLIED
 >
 <!ELEMENT lineSetRow (wrd+)>
 <!ELEMENT conflation (lineSet+)>
 <!ELEMENT free (#PCDATA | %embedded;)*>
 <!ELEMENT listInterlinear (lineGroup | free | interlinear)+>
 <!ATTLIST listInterlinear
-  letter ID #REQUIRED
+	letter ID #REQUIRED
 >
-<!ELEMENT table (caption?, headerRow?, row+, caption?)>
+<!ELEMENT table (caption?, headerRow?, row*, endCaption?)>
 <!ATTLIST table
-  border CDATA #IMPLIED
-  class CDATA #IMPLIED
+	border CDATA #IMPLIED
+	class CDATA #IMPLIED
+	cellpadding CDATA #IMPLIED
+	cellspacing CDATA #IMPLIED
 >
 <!ELEMENT caption (#PCDATA | %embedded;)*>
 <!ATTLIST caption
-  align (left | center | right | justify) "left"
-  class CDATA #IMPLIED
-  colspan CDATA #IMPLIED
-  rowspan CDATA #IMPLIED
-  valign (top | middle | bottom | baseline) "top"
+	align (left | center | right | justify) "left"
+	class CDATA #IMPLIED
+	colspan CDATA #IMPLIED
+	rowspan CDATA #IMPLIED
+	valign (top | middle | bottom | baseline) "top"
+>
+<!ELEMENT endCaption (#PCDATA | %embedded;)*>
+<!ATTLIST endCaption
+	align (left | center | right | justify) "left"
+	class CDATA #IMPLIED
+	colspan CDATA #IMPLIED
+	rowspan CDATA #IMPLIED
+	valign (top | middle | bottom | baseline) "top"
 >
 <!ELEMENT headerRow (headerCol+)>
 <!ATTLIST headerRow
-  class CDATA #IMPLIED
+	class CDATA #IMPLIED
 >
 <!ELEMENT headerCol (#PCDATA | %embedded; | table)*>
 <!ATTLIST headerCol
-  align (left | center | right | justify) "left"
-  class CDATA #IMPLIED
-  colspan CDATA #IMPLIED
-  rowspan CDATA #IMPLIED
-  valign (top | middle | bottom | baseline) "top"
+	align (left | center | right | justify) "left"
+	class CDATA #IMPLIED
+	colspan CDATA #IMPLIED
+	rowspan CDATA #IMPLIED
+	valign (top | middle | bottom | baseline) "top"
 >
 <!ELEMENT row (col+)>
 <!ATTLIST row
-  class CDATA #IMPLIED
+	class CDATA #IMPLIED
 >
-<!ELEMENT col (#PCDATA | %embedded; | table)*>
+<!ELEMENT col (#PCDATA | %embedded; | table | interlinear)*>
 <!ATTLIST col
-  align (left | center | right | justify) "left"
-  class CDATA #IMPLIED
-  colspan CDATA #IMPLIED
-  rowspan CDATA #IMPLIED
-  valign (top | middle | bottom | baseline) "top"
+	align (left | center | right | justify) "left"
+	class CDATA #IMPLIED
+	colspan CDATA #IMPLIED
+	rowspan CDATA #IMPLIED
+	valign (top | middle | bottom | baseline) "top"
+	width CDATA #IMPLIED
 >
-<!ELEMENT chart (#PCDATA | img)*>
+<!ELEMENT chart (#PCDATA | %embedded; | ol | ul | dl)*>
 <!ATTLIST chart
-  class CDATA #IMPLIED
+	class CDATA #IMPLIED
 >
 <!ELEMENT tree (#PCDATA | p | img)*>
 <!ATTLIST tree
-  class CDATA #IMPLIED
+	class CDATA #IMPLIED
 >
 <!ELEMENT img EMPTY>
 <!ATTLIST img
-  src CDATA #REQUIRED
+	src CDATA #REQUIRED
 >
 <!-- there's more... -->
 <!-- langData is a way to tag some text as belonging to a particular language. -->
 <!ELEMENT langData (#PCDATA | %embedded;)*>
 <!ATTLIST langData
-  lang IDREF #REQUIRED
+	lang IDREF #REQUIRED
 >
 <!-- gloss is a way to tag some text as being a gloss in a particular language. -->
 <!ELEMENT gloss (#PCDATA | %embedded;)*>
 <!ATTLIST gloss
-  lang IDREF #REQUIRED
+	lang IDREF #REQUIRED
 >
 <!-- references to example numbers or example number/letter.
 	 Use just num for the example number.
@@ -254,49 +274,65 @@
 	 One may only include the letter (and not the number). -->
 <!ELEMENT exampleRef EMPTY>
 <!ATTLIST exampleRef
-  num IDREF #IMPLIED
-  letter IDREF #IMPLIED
-  equal (no | yes) "no"
-  punct CDATA #IMPLIED
-  paren (none | both | initial | final) #IMPLIED
-  letterOnly (no | yes) "no"
+	num IDREF #IMPLIED
+	letter IDREF #IMPLIED
+	equal (no | yes) "no"
+	punct CDATA #IMPLIED
+	paren (none | both | initial | final) #IMPLIED
+	letterOnly (no | yes) "no"
+>
+<!-- generic references (to sections, examples, endnotes, etc.) -->
+<!ELEMENT genericRef (#PCDATA | %embedded;)*>
+<!ATTLIST genericRef
+	ref IDREF #REQUIRED
+>
+<!-- a media-independent link -->
+<!ELEMENT link (#PCDATA | %embedded;)*>
+<!ATTLIST link
+	href CDATA #REQUIRED
 >
 <!-- backmatter includes appendices, endnotes and references -->
 <!ELEMENT backMatter (appendix*, endnotes?, references?)>
 <!-- endnotes -->
 <!ELEMENT endnotes EMPTY>
+<!ATTLIST endnotes
+	label CDATA #IMPLIED
+>
 <!-- An endnote goes in the flow of the text.  One may refer to a footnote via
 	 an endnoteRef.  -->
 <!ELEMENT endnote (%chunk;)*>
 <!ATTLIST endnote
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
 <!ELEMENT endnoteRef EMPTY>
 <!ATTLIST endnoteRef
-  ref IDREF #REQUIRED
+	ref IDREF #REQUIRED
 >
 <!-- appendices are handled like chapters -->
-<!ELEMENT appendix (secTitle, (%chunk; | section1)*)>
+<!ELEMENT appendix (secTitle, (%chunk; | section1 | section2)*)>
 <!ATTLIST appendix
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
 <!-- references are organized by author.
 	 The intent is that only those references which are cited via a citation
 	 element are to appear in the list of references.
 -->
 <!ELEMENT references (refAuthor*)>
+<!ATTLIST references
+	label CDATA #IMPLIED
+>
 <!-- the citeName is the string to use in a citation within the text body -->
 <!ELEMENT refAuthor (refWork+)>
 <!ATTLIST refAuthor
-  name CDATA #REQUIRED
-  citeName CDATA #REQUIRED
+	name CDATA #REQUIRED
+	citeName CDATA #REQUIRED
 >
 <!-- Every work has a date and a title.
 	 There are a number of kinds of references, each of which has different
 	 content. -->
 <!ELEMENT refWork (refDate, refTitle, (article | book | collection | dissertation | ms | paper | proceedings | thesis | webPage), comment?)>
 <!ATTLIST refWork
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
 <!ELEMENT refDate (#PCDATA)>
 <!ELEMENT refTitle (#PCDATA | %embedded;)*>
@@ -314,7 +350,7 @@
 <!ELEMENT collection (collEd, collTitle, collVol?, collPage?, publisher, location?)>
 <!ELEMENT collEd (#PCDATA)>
 <!ATTLIST collEd
-  plural (no | yes) "yes"
+	plural (no | yes) "yes"
 >
 <!ELEMENT collTitle (#PCDATA)>
 <!ELEMENT collVol (#PCDATA)>
@@ -333,7 +369,7 @@
 <!ELEMENT proceedings (procEd, procTitle, procVol?, procPage?, publisher, location?)>
 <!ELEMENT procEd (#PCDATA)>
 <!ATTLIST procEd
-  plural (no | yes) "yes"
+	plural (no | yes) "yes"
 >
 <!ELEMENT procTitle (#PCDATA)>
 <!ELEMENT procVol (#PCDATA)>
@@ -352,10 +388,10 @@
  -->
 <!ELEMENT citation EMPTY>
 <!ATTLIST citation
-  ref IDREF #REQUIRED
-  page CDATA #IMPLIED
-  author (yes | no) "yes"
-  paren (both | none | initial | final) #IMPLIED
+	ref IDREF #REQUIRED
+	page CDATA #IMPLIED
+	author (yes | no) "yes"
+	paren (both | none | initial | final) #IMPLIED
 >
 <!-- character entities from HTML 4.0 standard -->
 <!ENTITY nbsp "&#160;">
@@ -642,7 +678,7 @@
 	 <!ENTITY % HTMLsymbol PUBLIC
 	   "-//W3C//ENTITIES Symbols//EN//HTML">
 	 %HTMLsymbol; -->
-<!-- Portions © International Organization for Standardization 1986:
+<!-- Portions Copyright International Organization for Standardization 1986:
 	 Permission to copy in any form is granted for use with
 	 conforming SGML systems and applications as defined in
 	 ISO 8879, provided this notice is included in all copies.
@@ -994,7 +1030,7 @@
 	 <!ENTITY % HTMLspecial PUBLIC
 	   "-//W3C//ENTITIES Special//EN//HTML">
 	 %HTMLspecial; -->
-<!-- Portions © International Organization for Standardization 1986:
+<!-- Portions Copyright International Organization for Standardization 1986:
 	 Permission to copy in any form is granted for use with
 	 conforming SGML systems and applications as defined in
 	 ISO 8879, provided this notice is included in all copies.
@@ -1011,27 +1047,13 @@
 <!ENTITY quot "&#34;">
 <!-- quotation mark = APL quote,
 									U+0022 ISOnum -->
-<!-- Geometric Shapes -->
-<!ENTITY loz "&#9674;">
-<!-- lozenge, U+25CA ISOpub -->
 <!-- Miscellaneous Symbols -->
-<!ENTITY spades "&#9824;">
-<!-- black spade suit, U+2660 ISOpub -->
-<!-- black here seems to mean filled as opposed to hollow -->
-<!ENTITY clubs "&#9827;">
-<!-- black club suit = shamrock,
-									 U+2663 ISOpub -->
-<!ENTITY hearts "&#9829;">
-<!-- black heart suit = valentine,
-									 U+2665 ISOpub -->
-<!ENTITY diams "&#9830;">
-<!-- black diamond suit, U+2666 ISOpub -->
 <!-- Special characters for HTML -->
 <!-- Character entity set. Typical invocation:
 	 <!ENTITY % HTMLspecial PUBLIC
 	   "-//W3C//ENTITIES Special//EN//HTML">
 	 %HTMLspecial; -->
-<!-- Portions © International Organization for Standardization 1986:
+<!-- Portions Copyright International Organization for Standardization 1986:
 	 Permission to copy in any form is granted for use with
 	 conforming SGML systems and applications as defined in
 	 ISO 8879, provided this notice is included in all copies.
@@ -1045,9 +1067,6 @@
 
 -->
 <!-- C0 Controls and Basic Latin -->
-<!ENTITY quot "&#34;">
-<!-- quotation mark = APL quote,
-									U+0022 ISOnum -->
 <!-- following already defined (?) -->
 <!-- <!ENTITY amp     "&#38;"  > -->
 <!-- ampersand, U+0026 ISOnum -->
@@ -1129,7 +1148,20 @@
 <!-- rsaquo is proposed but not yet ISO standardized -->
 <!ENTITY euro "&#8364;">
 <!-- euro sign, U+20AC NEW -->
+<!ENTITY esh "&#x283;">
+<!-- esh, U+0283 NEW -->
+<!ENTITY nbhy "&#x2011;">
+<!-- non-braking hyphen, U+2011 -->
 <!-- REVISION HISTORY
+1.7.1 14-Oct-2004  Andy Black  Allow width elements on columns
+1.7.0 03-Jun-2004  Andy Black  Add link element (for media) (skipped 1.6 to keep in sync with XLingPap1.xsl)
+1.5.4 26-May-2004 Andy Black  Allow appendices to begin with section2 (i.e. the appendix itself is equivalent to a section1)
+1.5.3 01-Dec-2003 Andy Black  Allow chart to have lists
+1.5.2 25-Nov-2003 Andy Black  Added cellpadding, cellspacing to table element; added interlinear within col element
+1.5.1 22-Jan-2003 Andy Black  Removed img from chart since it is now in embedded entity.
+1.5.0 13-Jan-2003  Andy Black Add genericRef element
+1.4.3  22-Oct-2002  Andy Black  Remove ambiguity in chapter and section element definitions.
+1.4.2  16-Oct-2002  Andy Black  Add label to endnotes and references
 1.4.1    07-Oct-2002 Andy Black Added items as needed for ZapNum paper
 1.2.1 16-Sep-2002 Andy Black  Allow a single chapter before any parts
 1.2  03-Jul-2002  Andy Black  Added HTML 4.0 entities
