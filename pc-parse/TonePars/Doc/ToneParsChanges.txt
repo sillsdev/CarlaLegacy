@@ -1,5 +1,12 @@
 TonePars CHANGE HISTORY
 
+1.0.9 (10-Dec-2001)
+-------------------
+1. Finish fix to linking left/right floating tones so that
+the source morpheme no longer acts as if the tone
+still belongs to it after it has been linked to the
+morpheme to the left/right.
+
 1.0.8 (10-Dec-2001)
 -------------------
 1. The "'tonestatus' 'tone' 'is' TONE" clause in rules needs to use the first

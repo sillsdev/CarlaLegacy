@@ -79,6 +79,13 @@ static void            adjust_morpheme_tone_pointers P((StampAnalysis *ap,
 							FILE *pOutputFP_in));
 #endif /* hab106 */
 #endif /* B4_0_4_4 */
+#ifndef hab109
+static void            adjustOrigMorphemeTonePointer P((StampAnalysis *ap,
+							StampAnalysis *apOrig,
+							struct tone     *tp,
+							int       iOrigStatus,
+							int       act_params));
+#endif /* hab109 */
 
 	   void                  build_primary_register_tone_combos P((FILE *pOutputFP_in));
 	   char                 *build_word_with_tone_marked
@@ -598,11 +605,15 @@ void adjust_morpheme_tone_pointers(ap, tp, tbu, iOrigStatus, act_params,
 	 FILE            *pOutputFP_in;
 {
   struct tone *tp2;
+#ifdef hab109
   struct tone_list *tlp;
+#endif /* hab109 */
   StampAnalysis *apOrig = ap;
+#ifdef hab109
 #ifndef hab107
   struct tone_value_list *tvp;
 #endif /* hab107 */
+#endif /* hab109 */
 				/* just in case ... */
   if (ap == (StampAnalysis *)NULL)
 	return;
@@ -623,6 +634,9 @@ void adjust_morpheme_tone_pointers(ap, tp, tbu, iOrigStatus, act_params,
   if (ap->pToneBeg == (struct tone *)NULL)
 	{				/* is morph's first and only tone */
 	  ap->pToneBeg = ap->pToneEnd = tp;
+#ifndef hab109
+	  adjustOrigMorphemeTonePointer(ap, apOrig, tp, iOrigStatus, act_params);
+#else /* hab109 */
 #ifndef hab107
 	  for (tvp = Tone_Value_List_Head;
 	   tvp != (struct tone_value_list *)NULL;
@@ -684,6 +698,7 @@ void adjust_morpheme_tone_pointers(ap, tp, tbu, iOrigStatus, act_params,
 		  ap->m.pTones = add_tone_list(ap->m.pTones, HEAD, tp);
 		}
 	}
+#endif /* hab109 */
 	  return;
 	}
 					/* scan for tone to left */
@@ -693,6 +708,9 @@ void adjust_morpheme_tone_pointers(ap, tp, tbu, iOrigStatus, act_params,
 	if (tp == tp2)
 	  {		/* found it; adjust beg pointer */
 	ap->pToneBeg = tp;
+#ifndef hab109
+	adjustOrigMorphemeTonePointer(ap, apOrig, tp, iOrigStatus, act_params);
+#endif /* hab109 */
 	return;
 	  }
 			/* did not find it to the left; look right */
@@ -703,6 +721,9 @@ void adjust_morpheme_tone_pointers(ap, tp, tbu, iOrigStatus, act_params,
 	  if (tp == tp2)
 	{		/* found it; adjust end pointer */
 	  ap->pToneEnd = tp;
+#ifndef hab109
+	adjustOrigMorphemeTonePointer(ap, apOrig, tp, iOrigStatus, act_params);
+#endif /* hab109 */
 	  return;
 	}
 				/* should not get here */
@@ -768,6 +789,94 @@ void adjust_morpheme_tone_pointers(ap, tp, tbu, pOutputFP_in)
 }	/* end adjust_morpheme_tone_pointers */
 #endif /* hab106 */
 #endif /* B4_0_4_4 */
+
+#ifndef hab109
+/****************************************************************************
+ * NAME
+ *    adjustOrigMorphemeTonePointers
+ * ARGUMENTS
+ *    ap  - pointer to current morpheme (analysis struct)
+ *    apOrig - pointer to original morpheme
+ *    tp  - pointer to tone that just got linked
+ *    iOrigStatus - status of original op
+ *    act_params - action parameters
+ * DESCRIPTION
+ *    make any necessary adjustments to the Original morpheme tone pointers
+ *    after a tone has been linked
+ * RETURN VALUE
+ *    NONE
+ */
+void adjustOrigMorphemeTonePointer(ap, apOrig, tp, iOrigStatus, act_params)
+	 StampAnalysis *ap;
+	 StampAnalysis *apOrig;
+	 struct tone     *tp;
+	 int              iOrigStatus;
+	 int              act_params;
+{
+  struct tone_list *tlp;
+  struct tone_value_list *tvp;
+
+  for (tvp = Tone_Value_List_Head;
+	   tvp != (struct tone_value_list *)NULL;
+	   tvp = tvp->tv_next)
+	{
+	  if (tvp->tv_tier == REGISTER)
+	return;		/* quit; following code doesn't work with
+			   with both primary and register tier
+			   so for now using this patch. */
+	}
+  if (ap != apOrig)
+	{			/* remove tone from original morpheme */
+	  if (iOrigStatus == LeftFloating &&
+	  DIRECTION(act_params) == LEFTWARD)
+	{			/* remove from beginning */
+	  if (apOrig->pToneBeg != (struct tone*)NULL)
+		{
+		  apOrig->pToneBeg = apOrig->pToneBeg->tone_right;
+		  if (apOrig->pToneBeg == (struct tone *)NULL)
+		apOrig->pToneEnd = (struct tone *)NULL;
+		}
+	  if (apOrig->m.pTones != (struct tone_list *)NULL)
+		{
+		  tlp = apOrig->m.pTones;
+		  apOrig->m.pTones = apOrig->m.pTones->tonl_right;
+		  if (apOrig->m.pTones != (struct tone_list *)NULL)
+		{
+		  apOrig->m.pTones->tonl_left = (struct tone_list *)NULL;
+		}
+		  freeMemory((char *)tlp);
+		}
+				/* add tone to the morpheme's tone list, too */
+	  ap->m.pTones = add_tone_list(ap->m.pTones, TAIL, tp);
+	}
+	  else if (iOrigStatus == RightFloating &&
+		   DIRECTION(act_params) == RIGHTWARD)
+	{			/* remove from end */
+	  if (apOrig->pToneEnd != (struct tone *)NULL)
+		{
+		  apOrig->pToneEnd = apOrig->pToneEnd->tone_left;
+		  if (apOrig->pToneEnd == (struct tone *)NULL)
+		apOrig->pToneBeg = (struct tone *)NULL;
+		}
+	  tlp = end_of_tone_list(apOrig->m.pTones);
+	  if (tlp != (struct tone_list *)NULL)
+		{
+		  if (tlp->tonl_left != (struct tone_list *)NULL)
+		{
+		  tlp->tonl_left->tonl_right = (struct tone_list *)NULL;
+		}
+		  else
+		{
+		  apOrig->m.pTones = (struct tone_list *)NULL;
+		}
+		  freeMemory((char *)tlp);
+		}
+				/* add tone to the morpheme's tone list, too */
+	  ap->m.pTones = add_tone_list(ap->m.pTones, HEAD, tp);
+	}
+	}
+}
+#endif /* hab109 */
 
 /****************************************************************************
  * NAME

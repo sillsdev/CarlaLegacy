@@ -4,12 +4,16 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 8		/* bug fix or other internal improvement */
+#define PATCHLEVEL 9		/* bug fix or other internal improvement */
 #define DATE       "December 10, 2001"	/* date of release version */
 #define YEAR       "2001"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 10-Dec-2001  hab - Finish fix to linking left/right floating tones so that
+ * [1.0.9]              the source morpheme no longer acts as if the tone
+ *                      still belongs to it after it has been linked to the
+ *                      morpheme to the left/right.
  * 10-Dec-2001  hab - 'tonestatus' 'tone' 'is' TONE clause in rules needs to
  * [1.0.8]              use first morpheme to left/right that has a tbu.
  *                    position in rule action needs to refer to first morpheme
