@@ -118,6 +118,10 @@
 					BuildAction = "Compile"
 				/>
 				<File
+					RelPath = "Back.bmp"
+					BuildAction = "EmbeddedResource"
+				/>
+				<File
 					RelPath = "Copy.bmp"
 					BuildAction = "EmbeddedResource"
 				/>
@@ -161,6 +165,10 @@
 					BuildAction = "Compile"
 				/>
 				<File
+					RelPath = "Forward.bmp"
+					BuildAction = "EmbeddedResource"
+				/>
+				<File
 					RelPath = "New.bmp"
 					BuildAction = "EmbeddedResource"
 				/>
@@ -188,6 +196,10 @@
 				<File
 					RelPath = "PAWSSK.resx"
 					DependentUpon = "PAWSSK.cs"
+					BuildAction = "EmbeddedResource"
+				/>
+				<File
+					RelPath = "Refresh.bmp"
 					BuildAction = "EmbeddedResource"
 				/>
 				<File

@@ -18,7 +18,7 @@ namespace PAWSStarterKit
 	/// </summary>
 	public class PAWSSKForm : Form
 	{
-		const string m_strRegKey = "Software\\SIL\\PAWSStarterKit";
+		const string m_strRegKey = "Software\\SIL International\\PAWSStarterKit";
 		const string m_strLastAnswerFile = "LastAnswerFile";
 		const string m_strLastGrammarFile = "GrammarFile";
 		const string m_strLastExampleFilesPath = "ExampleFilesPath";
@@ -34,8 +34,10 @@ namespace PAWSStarterKit
 		const string m_strEditCaption = "Edit Items";
 		string m_strAppPath = Path.GetDirectoryName(Application.ExecutablePath);
 		string m_strPAWSErrorMsg = Application.ProductName + ": ";
+		string m_strHelpPath;
 		string m_strHtmsPath;
 		string m_strStylesPath;
+		string m_strTreeDescriptionsPath;
 		MenuItem miFileNew;
 		MenuItem miFileOpen;
 		MenuItem miFileClose;
@@ -48,6 +50,8 @@ namespace PAWSStarterKit
 		MenuItem miLanguageProperties;
 		MenuItem miViewToolBar;
 		MenuItem miViewStatusBar;
+		MenuItem miViewBack;
+		MenuItem miViewForward;
 		MenuItem miViewRefresh;
 		MenuItem miHelpAbout;
 
@@ -75,9 +79,9 @@ namespace PAWSStarterKit
 		System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(PAWSSKForm));
 		private AxSHDocVw.AxWebBrowser axWebBrowser;
 		private ToolBar tbar;
-		private bool m_bViewToolBarChecked;
+		private bool m_bViewToolBarChecked = true;
 		private StatusBar sb;
-		private bool m_bViewStatusBarChecked;
+		private bool m_bViewStatusBarChecked = true;
 		private Panel panel;
 		private System.ComponentModel.IContainer components = null;
 
@@ -85,7 +89,7 @@ namespace PAWSStarterKit
 		{
 			// load grammar and examples transforms
 			m_XslGrammarTransform.Load(Path.Combine(
-				Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKGrammarTextMapper.xsl"));
+				Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKMasterGrammarMapper.xsl"));
 			m_XslExampleTransform.Load(Path.Combine(
 				Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKParameterizedExample.xsl"));
 			// Allow handling of user closing the form
@@ -278,6 +282,18 @@ namespace PAWSStarterKit
 			mi = new MenuItem("-");
 			mMenu.MenuItems[index].MenuItems.Add(mi);
 
+			// View Back
+			miViewBack = new MenuItem("&Back");
+			miViewBack.Click += new EventHandler(MenuViewBackOnClick);
+			//miViewBack.Shortcut = Shortcut.F5;
+			mMenu.MenuItems[index].MenuItems.Add(miViewBack);
+
+			// View Forward
+			miViewForward = new MenuItem("&Forward");
+			miViewForward.Click += new EventHandler(MenuViewForwardOnClick);
+			//miViewForward.Shortcut = Shortcut.F5;
+			mMenu.MenuItems[index].MenuItems.Add(miViewForward);
+
 			// View Refresh
 			miViewRefresh = new MenuItem("&Refresh");
 			miViewRefresh.Click += new EventHandler(MenuViewRefreshOnClick);
@@ -318,6 +334,9 @@ namespace PAWSStarterKit
 			ToolBarButton tbbCopy;
 			ToolBarButton tbbPaste;
 			ToolBarButton tbbSeparator;
+			ToolBarButton tbbBack;
+			ToolBarButton tbbForward;
+			ToolBarButton tbbRefresh;
 
 			ImageList imglst = new ImageList();
 			imglst.Images.Add(new Bitmap(GetType(), "New.bmp"));
@@ -326,6 +345,9 @@ namespace PAWSStarterKit
 			imglst.Images.Add(new Bitmap(GetType(), "Cut.bmp"));
 			imglst.Images.Add(new Bitmap(GetType(), "Copy.bmp"));
 			imglst.Images.Add(new Bitmap(GetType(), "Paste.bmp"));
+			imglst.Images.Add(new Bitmap(GetType(), "Back.bmp"));
+			imglst.Images.Add(new Bitmap(GetType(), "Forward.bmp"));
+			imglst.Images.Add(new Bitmap(GetType(), "Refresh.bmp"));
 
 			tbar = new ToolBar();
 			tbar.Parent = this;
@@ -372,6 +394,28 @@ namespace PAWSStarterKit
 			tbbPaste.ToolTipText = "Paste";
 			tbbPaste.Tag = miEditPaste;
 			tbar.Buttons.Add(tbbPaste);
+
+			tbbSeparator = new ToolBarButton();
+			tbbSeparator.Style = ToolBarButtonStyle.Separator;
+			tbar.Buttons.Add(tbbSeparator);
+
+			tbbBack = new ToolBarButton();
+			tbbBack.ImageIndex = 6;
+			tbbBack.ToolTipText = "Back";
+			tbbBack.Tag = miViewBack;
+			tbar.Buttons.Add(tbbBack);
+
+			tbbForward = new ToolBarButton();
+			tbbForward.ImageIndex = 7;
+			tbbForward.ToolTipText = "Forward";
+			tbbForward.Tag = miViewForward;
+			tbar.Buttons.Add(tbbForward);
+
+			tbbRefresh = new ToolBarButton();
+			tbbRefresh.ImageIndex = 8;
+			tbbRefresh.ToolTipText = "Refresh";
+			tbbRefresh.Tag = miViewRefresh;
+			tbar.Buttons.Add(tbbRefresh);
 
 			tbar.Visible = m_bViewToolBarChecked;
 		}
@@ -658,6 +702,28 @@ namespace PAWSStarterKit
 			mi.Checked ^= true;;
 			sb.Visible = mi.Checked;
 			Invalidate();
+		}
+		void MenuViewBackOnClick(object obj, EventArgs ea)
+		{
+			try
+			{
+				axWebBrowser.GoBack();
+			}
+			catch
+			{
+				axWebBrowser.Refresh();
+			}
+		}
+		void MenuViewForwardOnClick(object obj, EventArgs ea)
+		{
+			try
+			{
+				axWebBrowser.GoForward();
+			}
+			catch
+			{
+				axWebBrowser.Refresh();
+			}
 		}
 		void MenuViewRefreshOnClick(object obj, EventArgs ea)
 		{
@@ -1064,10 +1130,13 @@ namespace PAWSStarterKit
 				setXmlElementAttribute("//language/font", "under", bFontUnderline.ToString());
 				setXmlElementAttribute("//language/font", "strike", bFontStrikeout.ToString());
 				if (m_strLanguageAbbreviation != strOriginalLanguageAbbreviation)
-				{   // lang abbreviation changed; need to redo HTMs
+				{   // lang abbreviation changed; need to redo working paths
 					setHtmsPath();
+					m_strHelpPath = setWorkingPath(m_strHelpPath, "Help");
+					m_strTreeDescriptionsPath = setWorkingPath(m_strTreeDescriptionsPath, "TreeDescriptions");
+					m_strStylesPath = setWorkingPath(m_strStylesPath, "Styles");
+					// now recreate all HTM, etc. files
 					createHTMs();
-					setStylesPath();
 				}
 				// create language specific style sheet
 				const string strStyles = @"..\Styles\";
@@ -1124,33 +1193,28 @@ namespace PAWSStarterKit
 		}
 		void setHtmsPath()
 		{
-			m_strHtmsPath = Path.Combine(
-				Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-				"PAWSSK");
-			m_strHtmsPath = Path.Combine(m_strHtmsPath, m_strLanguageAbbreviation);
-			m_strHtmsPath = Path.Combine(m_strHtmsPath, "HTMs");
-			if (!Directory.Exists(m_strHtmsPath))
-			{
-				Directory.CreateDirectory(m_strHtmsPath);
-			}
+			m_strHtmsPath = setWorkingPath(m_strHtmsPath, "HTMs");
 		}
-		void setStylesPath()
+		string setWorkingPath(string strPath, string strPathName)
 		{
-			m_strStylesPath = Path.Combine(
+			strPath = Path.Combine(
 				Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
 				"PAWSSK");
-			m_strStylesPath = Path.Combine(m_strStylesPath, m_strLanguageAbbreviation);
-			m_strStylesPath = Path.Combine(m_strStylesPath, "Styles");
-			if (!Directory.Exists(m_strStylesPath))
+			strPath = Path.Combine(strPath, m_strLanguageAbbreviation);
+			strPath = Path.Combine(strPath, strPathName);
+			if (!Directory.Exists(strPath))
 			{
-				Directory.CreateDirectory(m_strStylesPath);
+				Directory.CreateDirectory(strPath);
 			}
+			return strPath;
 		}
 		void createHTMs()
 		{
 			string[] astrXmlFiles;
 			string[] astrContentsFiles;
 			string[] astrGifFiles;
+			string[] astrPngFiles;
+			string[] astrDocFiles;
 			try
 			{
 				DlgInitProgress dlg = new DlgInitProgress();
@@ -1161,10 +1225,13 @@ namespace PAWSStarterKit
 				astrXmlFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\XMLPageDescriptions"), "*.xml");
 				astrContentsFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\HTMs"), "*Contents.htm");
 				astrGifFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\HTMs"), "*.gif");
+				astrPngFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\TreeDescriptions"), "*.png");
+				astrDocFiles = Directory.GetFiles(Path.Combine(m_strAppPath, @"..\Help"), "*.doc");
 				dlg.progressBar.Minimum = 1;
 				// Max is all the files plus the UnderConstruction.htm and Purpose.htm
 				dlg.progressBar.Maximum = astrXmlFiles.Length +
-					astrContentsFiles.Length + astrGifFiles.Length + 2;
+					astrContentsFiles.Length + astrGifFiles.Length +
+					astrPngFiles.Length + astrDocFiles.Length + 2;
 				dlg.progressBar.Value = 1;
 				dlg.progressBar.Step = 1;
 				dlg.progressBar.Visible = true;
@@ -1204,21 +1271,29 @@ namespace PAWSStarterKit
 						Path.Combine(@"..\HTMs", m_strUnderConstructionHtm)));
 				}
 				// Copy the *.gif files
-				if (astrGifFiles.Length > 0)
-				{
-					foreach (string strFile in astrGifFiles)
-					{
-						dlg.doProgressUpdate(strFile);
-						string strDestFile = Path.Combine(m_strHtmsPath, Path.GetFileName(strFile));
-						File.Copy(strFile, strDestFile, true);
-					}
-				}
+				copyFileSets(astrGifFiles, m_strHtmsPath, dlg);
+				// Copy the *.png files
+				copyFileSets(astrPngFiles, m_strTreeDescriptionsPath, dlg);
+				// Copy the *.doc files
+				copyFileSets(astrDocFiles, m_strHelpPath, dlg);
 				dlg.Close();
 			}
 			catch (Exception exc)
 			{
 				MessageBox.Show(m_strPAWSErrorMsg + exc);
 				return;
+			}
+		}
+		void copyFileSets(string[] astrFiles, string strPath, DlgInitProgress dlg)
+		{
+			if (astrFiles.Length > 0)
+			{
+				foreach (string strFile in astrFiles)
+				{
+					dlg.doProgressUpdate(strFile);
+					string strDestFile = Path.Combine(strPath, Path.GetFileName(strFile));
+					File.Copy(strFile, strDestFile, true);
+				}
 			}
 		}
 		void updateHTM(string strFile)
