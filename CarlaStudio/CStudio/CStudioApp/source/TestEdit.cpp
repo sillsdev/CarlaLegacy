@@ -26,10 +26,48 @@ static const TCHAR szIdentif [] = _T("<identifier>");
 
 CTestEdit::CTestEdit()
 {
+
+	m_pTYPEList = new CStringArray();
+	m_pLOGOPList = new CStringArray();
+	m_pPOSITIONList = new CStringArray();
+	m_pNEIGHBORList = new CStringArray();
+	m_pRELOPList = new CStringArray();
+	m_pConstant = new CStringArray();
+	m_pKeyword_property = new CStringArray();
+	m_pKeyword_morphname = new CStringArray();
+	//m_pKeyword_is = new CStringArray();
+	m_pIdentifier = new CStringArray();
+	m_pKeyword_member = new CStringArray();
+	m_pKeyword_position = new CStringArray();
+	m_pKeyword_allomorph = new CStringArray();
+	//m_pKeyword_matches = new CStringArray();
+	m_pKeyword_surface = new CStringArray();
+	m_pKeyword_word = new CStringArray();
+	m_pKeyword_neighbor = new CStringArray();
+	m_pKeyword_fromtocategory = new CStringArray();
+	m_pKeyword_capitalized = new CStringArray();
+	m_pKeyword_orderclass = new CStringArray();
+	m_pKeyword_relop = new CStringArray();
+	m_pConst = new CStringArray();
+	m_pType = new CStringArray();
+	m_pKeyword_type = new CStringArray();
+	m_pKeyword_logop = new CStringArray();
+	m_pKeyword_for = new CStringArray();
+	m_pKeyword_insert = new CStringArray();
+	m_pKeyword_report = new CStringArray();
+	m_pKeyword_orderclassminmax = new CStringArray();
+	m_pKeywordPunctuation = new CStringArray();
+	m_pKeyword_afterbefore = new CStringArray();
+
+	m_pAllKeywords = new CStringArray();
+
+
+
 }
 
 CTestEdit::~CTestEdit()
 {
+/*
 	delete m_pTYPEList,m_pLOGOPList,m_pPOSITIONList,
 			m_pNEIGHBORList,m_pRELOPList,m_pConstant,
 			m_pKeyword_property,m_pKeyword_morphname,
@@ -39,6 +77,18 @@ CTestEdit::~CTestEdit()
 			m_pKeyword_fromtocategory,m_pKeyword_capitalized,m_pKeyword_orderclass,
 			m_pKeyword_relop,m_pConst,m_pType,m_pKeyword_type,m_pKeyword_logop,
 			m_pKeyword_for,m_pAllKeywords;
+*/
+
+	delete  m_pTYPEList, m_pLOGOPList, m_pPOSITIONList, m_pNEIGHBORList,
+			m_pRELOPList, m_pAllKeywords, m_pConstant, m_pKeyword_property,
+			m_pKeyword_morphname, m_pIdentifier, m_pKeyword_member,
+			m_pKeyword_position, m_pKeyword_allomorph,
+			m_pKeyword_surface, m_pKeyword_word, m_pKeyword_neighbor,
+			m_pKeyword_fromtocategory, m_pKeyword_capitalized, m_pKeyword_orderclass,
+			m_pKeyword_relop, m_pConst, m_pType, m_pKeyword_type, m_pKeyword_logop,
+			m_pKeyword_for, m_pKeyword_insert, m_pKeyword_posStamp, m_pKeyword_report,
+			m_pKeyword_afterbefore,m_pKeyword_orderclassminmax,m_pKeywordPunctuation;
+
 }
 #ifndef mr270
 void CTestEdit::readTestEditModel()
@@ -278,9 +328,9 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 
 	// comment char
 	SetSLComment(szComment); // user's comment char
-	SetSLComment(_T('|'));
-	SetSLComment(_T("\\co"));
-	m_chComment = 1;
+	//SetSLComment(_T('|'));
+	//SetSLComment(_T("\\co"));
+	//m_chComment = 1;
 
 	// quotes
 	SetStringQuotes(_T("\""));
@@ -298,7 +348,7 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	m_strCONN = " is matches member = > >= <= < ~= ";
 	m_strTYP = " prefix infix root suffix initial final ";
 	m_strNBRE = " 0 1 2 3 4 5 6 7 8 9 ";
-	m_strKEYW = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word orderclassmin orderclassmax";
+	m_strKEYW = " allomorph capitalized fromcategory morphname orderclass property punctuation string surface tocategory type word orderclassmin orderclassmax ";
 
 	// IF Syntehis test, THEN
 	// those keywords need to be added to the Keyword list.
@@ -309,7 +359,6 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 
 
 	// <type>
-	m_pTYPEList = new CStringArray();
 	m_pTYPEList->SetSize(0,1);
 	m_pTYPEList->Add("prefix");
 	m_pTYPEList->Add("infix");
@@ -319,7 +368,6 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	m_pTYPEList->Add("final");
 
 	// <logop>
-	m_pLOGOPList = new CStringArray();
 	m_pLOGOPList->SetSize(0,1);
 	m_pLOGOPList->Add("AND");
 	m_pLOGOPList->Add("OR");
@@ -329,7 +377,6 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	m_pLOGOPList->Add("THEN");
 
 	// <position>
-	m_pPOSITIONList = new CStringArray();
 	m_pPOSITIONList->SetSize(0,1);
 	m_pPOSITIONList->Add("left");
 	m_pPOSITIONList->Add("right");
@@ -352,13 +399,11 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	}
 
 	// <neighbor>
-	m_pNEIGHBORList = new CStringArray();
 	m_pNEIGHBORList->SetSize(0,1);
 	m_pNEIGHBORList->Add("last");
 	m_pNEIGHBORList->Add("next");
 
 	// <relop>
-	m_pRELOPList = new CStringArray();
 	m_pRELOPList->SetSize(0,1);
 	m_pRELOPList->Add("=");
 	m_pRELOPList->Add(">");
@@ -368,7 +413,6 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	m_pRELOPList->Add("~=");
 
 	// <constant>
-	m_pConstant = new CStringArray();
 	m_pConstant->SetSize(0,1);
 	m_pConstant->Add("-");
 	m_pConstant->Add("0");
@@ -385,41 +429,28 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	////////////////////////////////////////////////////
 
 	// 'property' may be followed by...
-	m_pKeyword_property = new CStringArray();
 	m_pKeyword_property->SetSize(0,1);
 	m_pKeyword_property->Add("is");
 
 	// 'morphname' may be followed by...
-	m_pKeyword_morphname = new CStringArray();
 	m_pKeyword_morphname->SetSize(0,1);
 	m_pKeyword_morphname->Add("is");
 	m_pKeyword_morphname->Append(*m_pLOGOPList);
 	m_pKeyword_morphname->Append(*m_pPOSITIONList);
 	m_pKeyword_morphname->Append(*m_pNEIGHBORList);
 
-	// 'is' may be followed by...
-	m_pKeyword_is = new CStringArray();
-	m_pKeyword_is->SetSize(0,1);
-	m_pKeyword_is->Append(*m_pPOSITIONList);
-	m_pKeyword_is->Append(*m_pTYPEList);
-	m_pKeyword_is->Add("member");
-	m_pKeyword_is->Add("capitalized");
-	m_pKeyword_is->Add(szIdentif);
 
 	// <identifier> may be followed by...
-	m_pIdentifier = new CStringArray();
 	m_pIdentifier->SetSize(0,1);
 	m_pIdentifier->Append(*m_pLOGOPList);
 	m_pIdentifier->Append(*m_pPOSITIONList);
 	m_pIdentifier->Append(*m_pNEIGHBORList);
 
 	// member may be followed by...
-	m_pKeyword_member = new CStringArray();
 	m_pKeyword_member->SetSize(0,1);
 	m_pKeyword_member->Add(szIdentif);
 
 	// <position> may be followed by...
-	m_pKeyword_position = new CStringArray();
 	m_pKeyword_position->SetSize(0,1);
 	m_pKeyword_position->Add("property");
 	m_pKeyword_position->Add("morphname");
@@ -432,7 +463,6 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	m_pKeyword_position->Add("orderclass");
 
 	// 'allomorph' may be followed by...
-	m_pKeyword_allomorph = new CStringArray();
 	m_pKeyword_allomorph->SetSize(0,1);
 	m_pKeyword_allomorph->Add("is");
 	m_pKeyword_allomorph->Add("matches");
@@ -440,32 +470,22 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	m_pKeyword_allomorph->Append(*m_pPOSITIONList);
 	m_pKeyword_allomorph->Append(*m_pNEIGHBORList);
 
-	// 'matches' may be followed by...
-	m_pKeyword_matches = new CStringArray();
-	m_pKeyword_matches->SetSize(0,1);
-	m_pKeyword_matches->Add("member");
-	m_pKeyword_matches->Append(*m_pPOSITIONList);
-	m_pKeyword_matches->Add(szIdentif);
-
 	// 'surface/string' may be followed by...
-	m_pKeyword_surface = new CStringArray();
 	m_pKeyword_surface->SetSize(0,1);
 	m_pKeyword_surface->Add("matches");
 	m_pKeyword_surface->Add("is");
 
 	// 'word' may be followed by...
-	m_pKeyword_word = new CStringArray();
 	m_pKeyword_word->SetSize(0,1);
 	m_pKeyword_word->Add("is");
 	m_pKeyword_word->Add("matches");
 
 	// <neighbor> may be followed by...
-	m_pKeyword_neighbor = new CStringArray();
 	m_pKeyword_neighbor->SetSize(0,1);
 	m_pKeyword_neighbor->Add("word");
+	m_pKeyword_neighbor->Add("punctuation");
 
 	// '(from/to)category' may be followed by...
-	m_pKeyword_fromtocategory = new CStringArray();
 	m_pKeyword_fromtocategory->SetSize(0,1);
 	m_pKeyword_fromtocategory->Add("is");
 	m_pKeyword_fromtocategory->Append(*m_pLOGOPList);
@@ -473,14 +493,12 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	m_pKeyword_fromtocategory->Append(*m_pNEIGHBORList);
 
 	// 'capitalized' may be followed by...
-	m_pKeyword_capitalized = new CStringArray();
 	m_pKeyword_capitalized->SetSize(0,1);
 	m_pKeyword_capitalized->Append(*m_pLOGOPList);
 	m_pKeyword_capitalized->Append(*m_pPOSITIONList);
 	m_pKeyword_capitalized->Append(*m_pNEIGHBORList);
 
 	// 'orderclass' may be followed by...
-	m_pKeyword_orderclass = new CStringArray();
 	m_pKeyword_orderclass->SetSize(0,1);
 	m_pKeyword_orderclass->Append(*m_pRELOPList);
 	m_pKeyword_orderclass->Append(*m_pLOGOPList);
@@ -488,56 +506,62 @@ void CTestEdit::Initialize(BOOL bIsAmple,TCHAR szComment,
 	m_pKeyword_orderclass->Append(*m_pNEIGHBORList);
 
 	// <relop> may be followed by...
-	m_pKeyword_relop = new CStringArray();
 	m_pKeyword_relop->SetSize(0,1);
 	//m_pKeyword_relop->Append(*m_pConstant);
 	m_pKeyword_relop->Append(*m_pPOSITIONList);
+	m_pKeyword_relop->Add("orderclassmin");
+	m_pKeyword_relop->Add("orderclassmax");
 
 	// <constant> may be followed by...
-	m_pConst = new CStringArray();
 	m_pConst->SetSize(0,1);
 	m_pConst->Append(*m_pLOGOPList);
 	m_pConst->Append(*m_pPOSITIONList);
 	m_pConst->Append(*m_pNEIGHBORList);
 
 	// <type> may be followed by...
-	m_pType = new CStringArray();
 	m_pType->SetSize(0,1);
 	m_pType->Append(*m_pLOGOPList);
 	m_pType->Append(*m_pPOSITIONList);
 	m_pType->Append(*m_pNEIGHBORList);
 
 	// 'type' may be followed by...
-	m_pKeyword_type = new CStringArray();
 	m_pKeyword_type->SetSize(0,1);
 	m_pKeyword_type->Add("is");
 
 	// <logop> may be followed by....
-	m_pKeyword_logop = new CStringArray();
 	m_pKeyword_logop->SetSize(0,1);
 	m_pKeyword_logop->Append(*m_pPOSITIONList);
 	m_pKeyword_logop->Append(*m_pNEIGHBORList);
 
 	// <forleft/forright> may be followed by...
-	m_pKeyword_for = new CStringArray();
 	m_pKeyword_for->SetSize(0,1);
 	m_pKeyword_for->Append(*m_pLOGOPList);
 	m_pKeyword_for->Append(*m_pPOSITIONList);
 	m_pKeyword_for->Append(*m_pNEIGHBORList);
 
 	// 'insert' may be followed by...
-	m_pKeyword_insert = new CStringArray();
 	m_pKeyword_insert->SetSize(0,1);
 	m_pKeyword_insert->Add(szIdentif);
 
 	// 'report' may be followed by...
-	m_pKeyword_report = new CStringArray();
 	m_pKeyword_report->SetSize(0,1);
 	m_pKeyword_report->Add(szIdentif);
 
+	// 'orderclassmin/orderclassmax' may be followed by...
+	m_pKeyword_orderclassminmax->SetSize(0,1);
+	m_pKeyword_orderclassminmax->Append(*m_pLOGOPList);
+	m_pKeyword_orderclassminmax->Append(*m_pPOSITIONList);
+	m_pKeyword_orderclassminmax->Append(*m_pNEIGHBORList);
+
+	// punctuation may be followed by ...
+	m_pKeywordPunctuation->SetSize(0,1);
+	m_pKeywordPunctuation->Add("is");
+
+	// after/before may be followed by ...
+	m_pKeyword_afterbefore->Append(*m_pPOSITIONList);
+
 
 	// all
-	m_pAllKeywords = new CStringArray();
 	m_pAllKeywords->SetSize(0,1);
 	m_pAllKeywords->Add("property");
 	m_pAllKeywords->Add("is");
@@ -667,10 +691,10 @@ void CTestEdit::SetSLComment( TCHAR chComment )
 	m_chComment = chComment;
 }
 
-void CTestEdit::SetSLComment(LPCTSTR lpszComment)
-{
-	m_strComment = lpszComment;
-}
+//void CTestEdit::SetSLComment(LPCTSTR lpszComment)
+//{
+//	m_strComment = lpszComment;
+//}
 
 
 void CTestEdit::AddKeywords( LPCTSTR lpszKwd,CString &str, CString &strLower )
@@ -851,7 +875,10 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 		n_capitalizedFollowBy=0,n_orderclassFollowBy=0,n_relopFollowBy=0,
 		n_constantFollowBy=0,n_Type_exprFollowBy=0,n_typeFollowBy=0,n_logopFollowBy=0,
 		n_for_exprFollowBy=0,n_insertFollowBy=0,n_after_beforeFollowBy=0,
-		n_reportFollowBy=0;
+		n_reportFollowBy=0,n_orderclassmaxmin=0, n_punctuation=0;
+
+	int n_previous_is=-1;
+
 
 	BOOL bIdentifier=FALSE,bPosition_expr=FALSE,bNeighbor_expr=FALSE,bFromtocategory=FALSE,
 		bRelop=FALSE,bConstant=FALSE,bTypeExpr=FALSE,bLogop=FALSE,bFor_expr=FALSE;
@@ -888,22 +915,62 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 
 			if( strLastKeyWord=="is" )
 				n_isFollowBy=2;
+			if( strLastKeyWord=="property" )
+			{
+				n_propertyFollowBy=2;
+				n_previous_is=1;
+			}
+			if( strLastKeyWord=="morphname" )
+			{
+				n_morphnameFollowBy=2;
+				n_previous_is=0;
+			}
+			if( strLastKeyWord=="allomorph" )
+			{
+				n_allomorphFollowBy=2;
+				n_previous_is=2;
+			}
+			if( strLastKeyWord=="surface" || strLastKeyWord=="string" )
+			{
+				n_surfaceFollowBy=2;
+				n_previous_is=3;
+			}
+			if( strLastKeyWord=="word" )
+			{
+				n_wordFollowBy=2;
+				n_previous_is=4;
+			}
+
+
+			if(bFromtocategory)
+			{
+				n_fromtocategoryFollowBy=2;
+				n_previous_is=5;
+			}
+
+			if( strLastKeyWord=="type" )
+			{
+				n_typeFollowBy=2;
+				n_previous_is=6;
+			}
+
+			if(strLastKeyWord=="punctuation")
+			{
+				n_punctuation=2;
+				n_previous_is=7;
+			}
+
+
 			if( strLastKeyWord=="member" )
 				n_memberFollowBy=2;
 			if( strLastKeyWord=="matches" )
 				n_matchesFollowBy=2;
-			if( strLastKeyWord=="morphname" )
-				n_morphnameFollowBy=2;
-			if( strLastKeyWord=="allomorph" )
-				n_allomorphFollowBy=2;
-			if( strLastKeyWord=="surface" || strLastKeyWord=="string" )
-				n_surfaceFollowBy=2;
-			if( strLastKeyWord=="word" )
-				n_wordFollowBy=2;
-			if( strLastKeyWord=="type" )
-				n_typeFollowBy=2;
-			if( strLastKeyWord=="property" )
-				n_propertyFollowBy=2;
+
+
+
+
+
+
 			if(bPosition_expr)
 				n_position_exprFollowBy=2;
 			if(bNeighbor_expr)
@@ -912,8 +979,7 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 				n_for_exprFollowBy=2;
 			if(bIdentifier)
 				n_identifierFollowBy=2;
-			if(bFromtocategory)
-				n_fromtocategoryFollowBy=2;
+
 			if(strLastKeyWord=="capitalized")
 				n_capitalizedFollowBy=2;
 			if(strLastKeyWord=="orderclass")
@@ -932,6 +998,9 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 				n_after_beforeFollowBy=2;
 			if(strLastKeyWord=="report")
 				n_reportFollowBy=2;
+			if(strLastKeyWord=="orderclassmin" || strLastKeyWord=="orderclassmax")
+				n_orderclassmaxmin=2;
+
 
 			// //////////////////
 			// Process comment |
@@ -1011,6 +1080,8 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									|| ch == '-'
 									|| ch == '~'
 									|| ch == '\\'
+									|| ch == '&'
+									|| ch == ';'
 									|| ch == '.'
 									|| ch == '\"'
 									|| ch == '\'' )
@@ -1049,6 +1120,8 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 									|| ch == '>'
 									|| ch == '<'
 									|| ch == '~'
+									|| ch == '&'
+									|| ch == ';'
 									|| ch == '-'
 									|| ch == '\\'
 									|| ch == '.'
@@ -1207,7 +1280,59 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 
 					if(n_isFollowBy==2)
 					{
-						int n = checkNextWord(m_pKeyword_is,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
+						BOOL bIdentifierAllowed=FALSE;
+						CStringArray *pstrTemp = new CStringArray();
+						switch(n_previous_is)
+						{
+						case 0: // morphname is ....
+							pstrTemp->Add(szIdentif);
+							pstrTemp->Add("member");
+							pstrTemp->Append(*m_pPOSITIONList);
+							bIdentifierAllowed=TRUE;
+							break;
+						case 1: // property is ...
+							pstrTemp->Add(szIdentif);
+							bIdentifierAllowed=TRUE;
+							break;
+						case 2: // allomorph is ...
+							pstrTemp->Add(szIdentif);
+							pstrTemp->Add("member");
+							pstrTemp->Append(*m_pPOSITIONList);
+							pstrTemp->Add("capitalized");
+							bIdentifierAllowed=TRUE;
+							break;
+						case 3: // surface/string is ...
+							pstrTemp->Add(szIdentif);
+							pstrTemp->Add("member");
+							pstrTemp->Append(*m_pPOSITIONList);
+							bIdentifierAllowed=TRUE;
+							break;
+						case 4: // word is ...
+							pstrTemp->Add(szIdentif);
+							pstrTemp->Add("member");
+							pstrTemp->Add("capitalized");
+							bIdentifierAllowed=TRUE;
+							break;
+						case 5: // from/tocategory is ...
+							pstrTemp->Append(*m_pPOSITIONList);
+							pstrTemp->Add("member");
+							pstrTemp->Add(szIdentif);
+							bIdentifierAllowed=TRUE;
+							break;
+						case 6: // type is ...
+							pstrTemp->Append(*m_pTYPEList);
+							break;
+						case 7:
+							pstrTemp->Add(szIdentif);
+							pstrTemp->Add("member");
+							bIdentifierAllowed=TRUE;
+							break;
+						default:
+							break;
+						}
+
+
+						int n = checkNextWord(pstrTemp,m_pAllKeywords,strLastKeyWord,bIdentifierAllowed,bIdentifier);
 						switch(n)
 						{
 						case 1:
@@ -1218,9 +1343,61 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 							break;
 						}
 
+						delete pstrTemp;
 						n_isFollowBy=0;
+						n_previous_is=-1;
 						bFlag=TRUE;
 					}
+
+
+					if(n_matchesFollowBy==2)
+					{
+
+						BOOL bIdentifierAllowed=FALSE;
+						CStringArray *pstrTemp = new CStringArray();
+						switch(n_previous_is)
+						{
+						case 2: // allomorph matches ....
+							pstrTemp->Append(*m_pPOSITIONList);
+							pstrTemp->Add("member");
+							pstrTemp->Add(szIdentif);
+							bIdentifierAllowed=TRUE;
+							break;
+						case 3: // surface/string matches ....
+							pstrTemp->Append(*m_pPOSITIONList);
+							pstrTemp->Add("member");
+							pstrTemp->Add(szIdentif);
+							bIdentifierAllowed=TRUE;
+							break;
+						case 4: // word matches ....
+							pstrTemp->Add("member");
+							pstrTemp->Add(szIdentif);
+							bIdentifierAllowed=TRUE;
+							break;
+						default:
+							break;
+						}
+
+
+						int n = checkNextWord(pstrTemp,m_pAllKeywords,strLastKeyWord,bIdentifierAllowed,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+
+						n_matchesFollowBy=0;
+						bFlag=TRUE;
+						n_previous_is=-1;
+						delete pstrTemp;
+					}
+
+
+
 
 					if(n_memberFollowBy==2)
 					{
@@ -1238,21 +1415,6 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 						bFlag=TRUE;
 					}
 
-					if(n_matchesFollowBy==2)
-					{
-						int n = checkNextWord(m_pKeyword_matches,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
-						switch(n)
-						{
-						case 1:
-							ic = m_colorError;
-							break;
-						case 2:
-							ic = m_colorIdentifiers;
-							break;
-						}
-						n_matchesFollowBy=0;
-						bFlag=TRUE;
-					}
 
 					if(n_morphnameFollowBy==2)
 					{
@@ -1470,18 +1632,24 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 
 					if(n_relopFollowBy==2)
 					{
+						int n=0;
 						if(bFound) // <relop> is followed by a kewyword; check if it belongs to the <position> group
-							int n = checkNextWord(m_pKeyword_relop,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
-						else // <relop> is followed by a non-keyword; let's check if it is a valid number.
+						{
+							n = checkNextWord(m_pKeyword_relop,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
+							// color ????????
+						}
+
+
+						if(n != 0 || !bFound) // <relop> is followed by a non-keyword; let's check if it is a valid number.
 						{
 
-						if(checkConstant(m_pConstant,strLastKeyWord))
-						{
-							ic = m_colorIdentifiers;
-							bConstant=TRUE;
-						}
-						else
-							ic = m_colorError;
+							if(checkConstant(m_pConstant,strLastKeyWord))
+							{
+								ic = m_colorIdentifiers;
+								bConstant=TRUE;
+							}
+							else
+								ic = m_colorError;
 						}
 
 						n_relopFollowBy=0;
@@ -1580,10 +1748,10 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 						n_after_beforeFollowBy=0;
 						bFlag=TRUE;
 					}
-/*
-					if(n_reportFollowBy==2)
+
+					if(n_orderclassmaxmin==2)
 					{
-						int n = checkNextWord(m_pKeyword_report,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
+						int n = checkNextWord(m_pKeyword_orderclassminmax,m_pAllKeywords,strLastKeyWord,FALSE,bIdentifier);
 						switch(n)
 						{
 						case 1:
@@ -1593,11 +1761,25 @@ void CTestEdit::FormatTextRange(int nStart, int nEnd)
 							ic = m_colorIdentifiers;
 							break;
 						}
-						n_reportFollowBy=0;
+						n_orderclassmaxmin=0;
 						bFlag=TRUE;
 					}
-*/
 
+					if(n_punctuation==2)
+					{
+						int n = checkNextWord(m_pKeywordPunctuation,m_pAllKeywords,strLastKeyWord,TRUE,bIdentifier);
+						switch(n)
+						{
+						case 1:
+							ic = m_colorError;
+							break;
+						case 2:
+							ic = m_colorIdentifiers;
+							break;
+						}
+						n_punctuation=0;
+						bFlag=TRUE;
+					}
 
 				bFound=FALSE;
 				*pPtr = ch;

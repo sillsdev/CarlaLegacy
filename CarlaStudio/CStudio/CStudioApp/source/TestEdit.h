@@ -54,13 +54,13 @@ public:
 
 	CStringArray *m_pTYPEList,*m_pLOGOPList,*m_pPOSITIONList,*m_pNEIGHBORList,
 					*m_pRELOPList,*m_pAllKeywords,*m_pConstant,*m_pKeyword_property,
-					*m_pKeyword_morphname,*m_pKeyword_is,*m_pIdentifier,*m_pKeyword_member,
-					*m_pKeyword_position,*m_pKeyword_allomorph,*m_pKeyword_matches,
+					*m_pKeyword_morphname,*m_pIdentifier,*m_pKeyword_member,
+					*m_pKeyword_position,*m_pKeyword_allomorph,
 					*m_pKeyword_surface,*m_pKeyword_word,*m_pKeyword_neighbor,
 					*m_pKeyword_fromtocategory,*m_pKeyword_capitalized,*m_pKeyword_orderclass,
 					*m_pKeyword_relop,*m_pConst,*m_pType,*m_pKeyword_type,*m_pKeyword_logop,
 					*m_pKeyword_for,*m_pKeyword_insert,*m_pKeyword_posStamp,*m_pKeyword_report,
-					*m_pKeyword_afterbefore;
+					*m_pKeyword_afterbefore,*m_pKeyword_orderclassminmax,*m_pKeywordPunctuation;
 
 
 	// Operations
@@ -73,7 +73,7 @@ public:
 	void SetFontSize( LPCTSTR lpzFontSize);
 	void SetChangeCase(BOOL bChange);
 	void SetSLComment( TCHAR chComment );
-	void SetSLComment(LPCTSTR lpszComment);
+	//void SetSLComment(LPCTSTR lpszComment);
 	void SetStringQuotes(LPCTSTR lpszStrQ);
 	void AddKeywords( LPCTSTR lpszKwd,CString &str, CString &strLower );
 	void setColor( SymbolColor &color,COLORREF clr,BOOL bBold,BOOL bItalic,BOOL bUnderline,BOOL bStrikeout);
