@@ -894,7 +894,7 @@ if (*pszChunk != NUL)
  *  free the buffer if dynamically allocated
  */
 if (pszChunk != szChunkBuffer_m)
-	free(pszChunk);
+	freeMemory(pszChunk);
 /*
  *  check for another word hidden in the trailing nonalphabetic field
  *  (most likely after one or more dashes)

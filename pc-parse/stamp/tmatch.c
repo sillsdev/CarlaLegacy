@@ -109,9 +109,9 @@ do  {
 				last_was_cat = FALSE;   /* Clear last was cat */
 				}
 			else
-				cp = new_chg_node(MORPHTYPE_MASK,
-				  (VOIDP)duplicateString(token),
-				  &bBoundary);
+		{
+				cp = new_chg_node(MORPHTYPE_MASK, NULL, &bBoundary);
+		}
 			cp->iMorphType |= MORPHCLASS;
 			cp->uMorph.pClass = mcl;     /* Store class */
 			}

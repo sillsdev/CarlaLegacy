@@ -61,8 +61,8 @@ char whitespace[7] = " \t\n\r\f";
 char cCommentMarker_g = ';';
 char buffer[BUFSIZ];
 char answerbuf[10];
-char lexname[MAXFILENAME+1];
 #define MAXFILENAME 256
+char lexname[MAXFILENAME+1];
 char infile[MAXFILENAME+1];
 char incfile[MAXFILENAME+1];
 char outfile[MAXFILENAME+1];

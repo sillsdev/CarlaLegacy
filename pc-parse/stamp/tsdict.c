@@ -15,10 +15,12 @@
  * void writeStampDictionary(FILE *      pOutputFP_in,
  *                           StampData * pStamp_in)
  *
+ * void freeStampDictionary(StampData * pStamp_io)
+ *
  ***************************************************************************
  * edit history is in version.h
  ***************************************************************************
- * Copyright 1989, 2000 by SIL International.  All rights reserved.
+ * Copyright 1989, 2002 by SIL International.  All rights reserved.
  */
 #include <stdio.h>
 #include "stamp.h"
@@ -69,12 +71,14 @@ static void  addStampDictEntry P((char *      pRecord_in,
 				  StampData * pStamp_io));
 static void * link_morpheme_list P((void * new,
 					void * old));
+static void free_allolist P((StampAllomorphList * pList_io));
 static void  insert_dict P((StampMorpheme * new,
 				StampData *     pStamp_in));
 static int  check_dict P((unsigned         type,
 			  char  *          name,
 			  unsigned char  * rcats,
 			  StampData *      pStamp_in));
+static void free_entry P((VOIDP pList_in));
 
 static const char szWhitespace_m[7] = " \t\r\n\f\v";
 static const char szNoDictionary_m[] =
@@ -738,16 +742,23 @@ if (morpheme.pszMorphname  && morpheme.pAllomorphs && !bad_allo)
 				&pStamp_in->pPropertyList);
 	insert_dict( &morpheme, pStamp_in );
 	}
-else if (pStamp_in->pLogFP != NULL)
+else
+	{
+	if (pStamp_in->pLogFP != NULL)
 	{
 	if (morpheme.pszMorphname == NULL)
 		fprintf(pStamp_in->pLogFP,
-		szLoadMessage_m, pszDictErrorHead_m, "morphname",
-		getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
+			szLoadMessage_m, pszDictErrorHead_m, "morphname",
+			getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
 	if (morpheme.pAllomorphs == NULL)
 		fprintf(pStamp_in->pLogFP,
-		szLoadMessage_m, pszDictErrorHead_m, "allomorph",
-		getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
+			szLoadMessage_m, pszDictErrorHead_m, "allomorph",
+			getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
+	}
+	if (morpheme.pAllomorphs)
+	free_allolist(morpheme.pAllomorphs);
+	if (morpheme.pszMorphname)
+	freeMemory(morpheme.pszMorphname);
 	}
 /*
  *  save key for possible future error message
@@ -983,20 +994,25 @@ if (morpheme.u.pRootCategories && morpheme.pAllomorphs && !bad_allo)
 	morpheme.iToCategory = *morpheme.u.pRootCategories;
 	insert_dict( &morpheme, pStamp_in );
 	}
-else if (pStamp_in->pLogFP != NULL)
+else
+	{
+	if (pStamp_in->pLogFP != NULL)
 	{
 	if (mname == NULL)
 		fprintf(pStamp_in->pLogFP,
-		szLoadMessage_m, pszDictErrorHead_m, "morphname",
-		getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
+			szLoadMessage_m, pszDictErrorHead_m, "morphname",
+			getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
 	if (morpheme.u.pRootCategories == NULL)
 		fprintf(pStamp_in->pLogFP,
-		szLoadMessage_m, pszDictErrorHead_m, "category",
-		getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
+			szLoadMessage_m, pszDictErrorHead_m, "category",
+			getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
 	if (morpheme.pAllomorphs == NULL)
 		fprintf(pStamp_in->pLogFP,
-		szLoadMessage_m, pszDictErrorHead_m, "allomorph",
-		getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
+			szLoadMessage_m, pszDictErrorHead_m, "allomorph",
+			getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m));
+	}
+	if (morpheme.pAllomorphs)
+	free_allolist(morpheme.pAllomorphs);
 	}
 /*
  *  save key for possible future error message
@@ -1247,6 +1263,32 @@ pNew->mlink = pOld;               /* adding to the head of the list */
 return (VOIDP)pNew;
 }
 
+/*****************************************************************************
+ * NAME
+ *    free_allolist
+ * DESCRIPTION
+ *    Free the memory allocated for a list of StampAllomorphList data
+ *    structures.
+ * RETURN VALUE
+ *    none
+ */
+static void free_allolist(pList_io)
+StampAllomorphList * pList_io;
+{
+StampAllomorphList * pAlloL;
+StampAllomorphList * pAlloNext;
+
+for ( pAlloL = pList_io ; pAlloL ; pAlloL = pAlloNext )
+	{
+	pAlloNext = pAlloL->pNext;
+	freeMemory(pAlloL->a.pszAllomorph);
+/*  freeMemory(pAlloL->a.uAlloPropertySet.pProperties);*/
+/*  or freeMemory(pAlloL->a.uAlloPropertySet.pBigProperties); ?*/
+/*  freeAmpleEnvConstraint(	pAlloL->a.pAlloEnvironment );*/
+	freeMemory(pAlloL);
+	}
+}
+
 /*************************************************************************
  * NAME
  *    insert_dict
@@ -1275,6 +1317,8 @@ if (check_dict( new->iMorphType, new->pszMorphname, new->u.pRootCategories,
 	fprintf(pStamp_io->pLogFP,
 		"%smorphname already in dictionary: %s\n",
 		pszDictErrorHead_m, new->pszMorphname);
+	freeMemory(new->pszMorphname);
+	free_allolist( new->pAllomorphs );
 	return;
 	}
 /*
@@ -1583,4 +1627,53 @@ pStamp_m = NULL;
 fprintf(pOutputFP_in,
 	"\n=====================================================================");
 fprintf(pOutputFP_in, "\nEND OF DICTIONARY LISTING\n");
+}
+
+/*****************************************************************************
+ * NAME
+ *    free entry
+ * DESCRIPTION
+ *    Free the memory allocated at the given node of the dictionary trie.
+ * RETURN VALUE
+ *    none
+ */
+static void free_entry(pList_in)
+VOIDP pList_in;
+{
+StampMorphemeList * pMorphL;
+StampMorphemeList * pNext;
+
+for ( pMorphL = (StampMorphemeList *)pList_in ; pMorphL ; pMorphL = pNext )
+	{
+	pNext = pMorphL->mlink;
+	freeMemory(pMorphL->m.pszMorphname);
+	free_allolist(pMorphL->m.pAllomorphs);
+/*  if (pMorphL->m.iMorphType & ROOT)
+	freeMemory(pMorphL->m.u.pRootCategories);
+	else*/
+	if (pMorphL->m.iMorphType & IFX)
+	freeAmpleEnvConstraint( pMorphL->m.u.pInfixEnv );
+#ifdef TONEPARS
+	freeTones( pMorphL->m.pTones );
+#endif
+	freeMemory(pMorphL);
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    freeStampDictionary
+ * DESCRIPTION
+ *    Free all the memory consumed by loading the STAMP dictionary files.
+ * RETURN VALUE
+ *    none
+ */
+void freeStampDictionary(pStamp_io)
+StampData * pStamp_io;
+{
+if (pStamp_io->pDictionary)
+	{
+	eraseTrie(pStamp_io->pDictionary, free_entry);
+	pStamp_io->pDictionary = NULL;
+	}
 }

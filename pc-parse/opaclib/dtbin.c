@@ -402,6 +402,11 @@ if (ppszAnalysisRecord[DECOMPOSITION] != NULL)
 		pAnal = pAnal->pNext;
 		pWord->iOutputFlags |= WANT_DECOMPOSITION;
 		}
+	else
+		{
+		/* don't leak memory! */
+		freeMemory( pStrList->pszString );
+		}
 	pNextStr = pStrList->pNext;
 	freeMemory( pStrList );
 	}
@@ -419,6 +424,11 @@ if (ppszAnalysisRecord[CATEGORY] != NULL)
 		pAnal->pszCategory = pStrList->pszString;
 		pAnal = pAnal->pNext;
 		pWord->iOutputFlags |= WANT_CATEGORY;
+		}
+	else
+		{
+		/* don't leak memory! */
+		freeMemory( pStrList->pszString );
 		}
 	pNextStr = pStrList->pNext;
 	freeMemory( pStrList );
@@ -438,6 +448,11 @@ if (ppszAnalysisRecord[PROPERTIES] != NULL)
 		pAnal = pAnal->pNext;
 		pWord->iOutputFlags |= WANT_PROPERTIES;
 		}
+	else
+		{
+		/* don't leak memory! */
+		freeMemory( pStrList->pszString );
+		}
 	pNextStr = pStrList->pNext;
 	freeMemory( pStrList );
 	}
@@ -455,6 +470,11 @@ if (ppszAnalysisRecord[FEATURES] != NULL)
 		pAnal->pszFeatures = pStrList->pszString;
 		pAnal = pAnal->pNext;
 		pWord->iOutputFlags |= WANT_FEATURES;
+		}
+	else
+		{
+		/* don't leak memory! */
+		freeMemory( pStrList->pszString );
 		}
 	pNextStr = pStrList->pNext;
 	freeMemory( pStrList );
@@ -474,6 +494,11 @@ if (ppszAnalysisRecord[UNDERLYING] != NULL)
 		pAnal = pAnal->pNext;
 		pWord->iOutputFlags |= WANT_UNDERLYING;
 		}
+	else
+		{
+		/* don't leak memory! */
+		freeMemory( pStrList->pszString );
+		}
 	pNextStr = pStrList->pNext;
 	freeMemory( pStrList );
 	}
@@ -490,6 +515,11 @@ if (ppszAnalysisRecord[SURFACE] != NULL)
 		{
 		pAnal->pszSurfaceForm = pStrList->pszString;
 		pAnal = pAnal->pNext;
+		}
+	else
+		{
+		/* don't leak memory! */
+		freeMemory( pStrList->pszString );
 		}
 	pNextStr = pStrList->pNext;
 	freeMemory( pStrList );

@@ -1,7 +1,7 @@
 # Master Makefile for the OPAC/PC-PARSE programs and libraries.
-# Steve McConnel,  2-Oct-2002
+# Steve McConnel, 15-Oct-2002
 
-datestamp=20021002
+datestamp=20021015
 
 @SET_MAKE@
 # the next line requires GNU make ...
@@ -28,9 +28,9 @@ distdir  = $(distbase)-$(datestamp)
 # files to include in the distribution
 DISTFILES = Makefile.in acconfig.h aclocal.m4 config.hin configure.in \
 			stamp-h.in configure install-sh \
-			LICENSE README INSTALL INSTALL.DOS INSTALL.Mac \
+			LICENSE README INSTALL INSTALL.DOS \
 			Makefile.dj config.DOS configure.bat \
-			config.Mac Projects.hqx Pcparse.dsw Pcparse.opt
+			Pcparse.dsw Pcparse.sln
 TESTDISTFILES = winchk.bat
 
 .SUFFIXES:
@@ -168,6 +168,7 @@ configure: configure.in aclocal.m4
 config.hin: stamp-h.in
 stamp-h.in: configure.in aclocal.m4 acconfig.h
 	cd $(srcdir) && autoheader
+	rm -f $(srcdir)/$@
 # Use echo instead of date to avoid spurious conflicts for
 # people who use CVS, since stamp-h.in is distributed.
 	echo $(datestamp) > $(srcdir)/$@

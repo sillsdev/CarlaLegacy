@@ -190,8 +190,8 @@ KimmoResult *	rp;
 WordAnalysis *	pAnal;
 unsigned	uiAmbiguityCount;
 PATREdgeList *	elp;
-char *		pszAnalysis;
-char *		pszDecomposition;
+char *		pszAnalysis = NULL;
+char *		pszDecomposition = NULL;
 char *		pszFeatures;
 char *		pszCategory;
 char		szDecompChar[2];
@@ -238,8 +238,7 @@ for ( rp = pKimmoResult_in ; rp ; rp = rp->pNext )
 	/*
 	 *  check for duplicate analyses
 	 */
-	if (duplicate_analysis(pAnalyses_io, pszAnalysis,
-				   pszDecomposition,
+	if (duplicate_analysis(pAnalyses_io, pszAnalysis, pszDecomposition,
 				   pszFeatures, pszCategory))
 		{
 		--uiAmbiguityCount;
@@ -273,15 +272,15 @@ for ( rp = pKimmoResult_in ; rp ; rp = rp->pNext )
 				   pszFeatures, (char *)NULL))
 		{
 		--uiAmbiguityCount;
+		freeMemory(pszFeatures);
 		freeMemory(pszAnalysis);
 		freeMemory(pszDecomposition);
-		freeMemory(pszFeatures);
 		}
 	else
 		{
 		pAnal = (WordAnalysis *)allocMemory(sizeof(WordAnalysis));
-		pAnal->pszAnalysis       = duplicateString(pszAnalysis);
-		pAnal->pszDecomposition  = duplicateString(pszDecomposition);
+		pAnal->pszAnalysis       = pszAnalysis;
+		pAnal->pszDecomposition  = pszDecomposition;
 		pAnal->pszFeatures       = pszFeatures;
 		pAnal->pszCategory       = NULL;
 		pAnal->pszProperties     = NULL;
@@ -290,6 +289,12 @@ for ( rp = pKimmoResult_in ; rp ; rp = rp->pNext )
 		pAnal->pNext             = pAnalyses_io;
 		pAnalyses_io             = pAnal;
 		}
+	}
+	else
+	{
+	/* don't leak memory! */
+	freeMemory(pszAnalysis);
+	freeMemory(pszDecomposition);
 	}
 	}
 if (puiAmbiguity_io != NULL)

@@ -1,5 +1,5 @@
 # Master Unix makefile for the CMD library
-# Steve McConnel,  2-Oct-2002
+# Steve McConnel,  7-Oct-2002
 
 @SET_MAKE@
 srcdir  = @srcdir@
@@ -20,7 +20,7 @@ SOURCES = cmd.c      cmdcd.c    cmddata.c  cmddir.c   cmdedit.c  cmdlog.c   \
 		  cmdsig.c   cmdtime.c  messages.c setcmdfi.c cmdsys.c   \
 		  wanthelp.c cmd.h
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Cmdlib.dsp
+			Cmdlib.dsp Cmdlib.vcproj
 TESTFILES = sample.c
 #
 #  CMD function library

@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for KTEXT
  ***************************************************************************
- * Copyright 1995, 2000 by SIL International.  All rights reserved.
+ * Copyright 1995, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL 6		/* bug fix or other minor change */
-#define DATE "June 20, 2002"	/* date of release version */
-#define YEAR "2000"		/* used for copyright notice in banner */
+#define PATCHLEVEL 7		/* bug fix or other minor change */
+#define DATE "October 15, 2002"	/* date of release version */
+#define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 15-Oct-2002	SRMc - facilitate memory allocation checking
+ * [2.1.7]	     - plug a couple of memory leaks
  * 20-Jun-2002  hab  - fix to make work with recent Pc-Patr data structure
  * [2.1.6]              changes
  * 11-May-2000	SRMc - new release with changes to underlying libraries

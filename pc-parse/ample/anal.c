@@ -5664,6 +5664,16 @@ for ( pHL = pThisWord_io->pHeadlists,
 		{
 		}
 		freeMemory(astr);
+		if (pAmple_in->iOutputFlags & WANT_DECOMPOSITION)
+		freeMemory( pszDecomposition_m );
+		if (pAmple_in->eWriteCategory != AMPLE_NO_CATEGORY)
+		freeMemory( pszCategory_m );
+		if (pAmple_in->iOutputFlags & WANT_PROPERTIES)
+		freeMemory( pszProperties_m );
+		if (pAmple_in->iOutputFlags & WANT_FEATURES)
+		freeMemory( pszFeatures_m );
+		if (pAmple_in->iOutputFlags & WANT_UNDERLYING)
+		freeMemory( pszUnderlying_m );
 		}
 	pszCurrent       = pHL->pszSurface;
 	pTail            = pHL->pHeadList;

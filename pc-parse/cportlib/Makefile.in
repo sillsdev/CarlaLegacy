@@ -1,5 +1,5 @@
 # Master Unix makefile for the SIL C Portability library
-# Steve McConnel,  2-Oct-2002
+# Steve McConnel,  7-Oct-2002
 
 @SET_MAKE@
 srcdir  = @srcdir@
@@ -28,7 +28,7 @@ SOURCES = abs.c      bcmp.c     bcopy.c    bsearch.c  bzero.c    ccommand.c \
 		  cportlib.h
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Cportlib.dsp
+			Cportlib.dsp Cportlib.vcproj
 TESTFILES =
 #
 # C portability library

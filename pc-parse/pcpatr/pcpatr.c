@@ -2,7 +2,7 @@
  *****************************************************************************
  * Edit history is at the end of VERSION.H
  *****************************************************************************
- * Copyright 1994, 2000 by SIL International.  All rights reserved.
+ * Copyright 1994, 2002 by SIL International.  All rights reserved.
  */
 #include "patr.h"
 #include "pcpatr.h"
@@ -296,6 +296,11 @@ char *		pszPCPATRLexFile_g = NULL;
  *  -t takfile (command line argument)
  */
 char *		pszPCPATRTakFile_g = NULL;
+/*
+ *  -z filename or -Z address[,count]
+ */
+int		bCheckAlloc_g = FALSE;
+
 char *	pszArgv0_g = NULL;	/* copy of argv[0] from main() */
 char *emergency_memory = NULL;	/* memory to release if we run out of memory */
 
@@ -493,6 +498,8 @@ parse_command(argc, argv);	/* handle the command line args */
 initPATRSentenceFinalPunctuation(&sPCPATRData_g);
 user_cmd();
 clearPATRSentenceFinalPunctuation(&sPCPATRData_g);
+if (bCheckAlloc_g)
+	do_clear();
 
 exit_pcpatr(EXIT_SUCCESS);
 
@@ -516,11 +523,9 @@ char **argv;
 {
 int k;
 int errflag = 0;
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 VOIDP	trap_address = NULL;
 int	trap_count = 0;
 char *	s;
-#endif
 
 if (argv != NULL)
 	pszArgv0_g = argv[0];
@@ -564,19 +569,23 @@ while ((k = getopt(argc, argv, "A:a:G:g:L:l:QqT:t:/Z:z:")) != EOF)
 		++iPCPATRDebugLevel_g;
 		break;
 
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 	case 'z':		/* memory allocation trace filename */
 		setAllocMemoryTracing(optarg);
+		bCheckAlloc_g = TRUE;
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &s, 10);
+		trap_address = (VOIDP)strtoul(optarg, &s, 0);
+		if (trap_address != (VOIDP)NULL)
+		{
 		if (*s == ',')
-		trap_count = (int)strtoul(s+1, NULL, 10);
+			trap_count = (int)strtoul(s+1, NULL, 10);
 		if (trap_count == 0)
-		trap_count = 1;
+			trap_count = 1;
+		setAllocMemoryTrap(trap_address, trap_count);
+		}
+		bCheckAlloc_g = TRUE;
 		break;
-#endif
 
 	default:
 		++errflag;
@@ -612,10 +621,6 @@ Only one of -a or -l may be used to load the lexicon.\n\
 ", stderr );
 	exit_pcpatr(EXIT_FAILURE);
 	}
-#if (VERSION < 1) || (PATCHLEVEL < 0)
-if (trap_address != (VOIDP)NULL)
-	setAllocMemoryTrap(trap_address, trap_count);
-#endif
 if (!sPCPATRData_g.bSilent)
 #ifndef hab130l
 	display_header(stderr);

@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for KTAGGER
  ***************************************************************************
- * Copyright 1995, 2000 by SIL International.  All rights reserved.
+ * Copyright 1995, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 8		/* bug fix or other minor change */
-#define DATE "June 20, 2002"	/* date of release version */
+#define PATCHLEVEL 9		/* bug fix or other minor change */
+#define DATE "October 15, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 15-Oct-2002	SRMc - facilitate memory leak testing
+ * [1.0.9]	     - plug a couple of minor memory leaks
  * 20-Jun-2002  hab  - fix to make work with recent Pc-Patr data structure
  * [1.0.8]              changes
  * 11-May-2000	SRMc - new release with changes to underlying libraries

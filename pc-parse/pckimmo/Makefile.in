@@ -1,5 +1,5 @@
 # Master Unix makefile for the PC-KIMMO library and programs
-# Steve McConnel,  2-Oct-2002
+# Steve McConnel,  7-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -24,7 +24,7 @@ SOURCES = convlex.c  generate.c lexicon.c  pckfuncs.c pckimmo.c  pckimmo2.c \
 		  kimmo.h    kimmodef.h version.h  pckimmo.h
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			g.c r.c s.c Kimmolib.dsp Pckimmo.dsp
+			g.c r.c s.c Kimmolib.dsp Pckimmo.dsp Kimmolib.vcproj Pckimmo.vcproj
 TESTFILES = check.bat
 ENGFILES = README abbrev.lex adjectiv.lex adverb.lex affix.lex eng.ggg \
 		   eng.rrr eng.sss eng.tak englex.tak english.fg english.fr \

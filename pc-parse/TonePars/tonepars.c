@@ -383,7 +383,7 @@ while ((k = getopt(argc, argv, "c:d:D:f:i:mo:qrTuv/z:Z:")) != EOF)
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &p, 10);
+		trap_address = (VOIDP)strtoul(optarg, &p, 0);
 		if (*p == ',')
 		trap_count = (int)strtoul(p+1, NULL, 10);
 		if (trap_count == 0)

@@ -4,12 +4,14 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
-#define PATCHLEVEL 3		/* bug fix or other minor change */
-#define DATE "October 4, 2002"	/* date of release version */
+#define PATCHLEVEL 4		/* bug fix or other minor change */
+#define DATE "October 15, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 15-Oct-2002	SRMc - fix bugs introduced earlier
+ * [1.3.4]	     - fix some memory leaks
  *  4-Oct-2002	SRMc - fix bugs found by Insure++ evaluation.
  * [1.3.3]
  *  2-Oct-2002	SRMc - make readToken() and buildPATRFeatureDisjunction() safe

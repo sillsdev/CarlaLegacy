@@ -294,11 +294,9 @@ char *	pszTime_in;
 {
 int	k;
 int	bShowUsage = FALSE;
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 VOIDP	trap_address = NULL;
 int	trap_count = 0;
 char *	p;
-#endif
 
 #ifdef USE_CCOMMAND
 print_header(stderr, pszTime_in);
@@ -370,19 +368,21 @@ while ((k = getopt(argc,argv,"ac:d:efg:i:nmo:qs:t:w:/z:Z:")) != EOF)
 		++iDebugLevel_m;		/* count the slashes */
 		break;
 
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 	case 'z':		/* memory allocation trace filename */
 		setAllocMemoryTracing(optarg);
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &p, 10);
+		trap_address = (VOIDP)strtoul(optarg, &p, 0);
+		if (trap_address != (VOIDP)NULL)
+		{
 		if (*p == ',')
-		trap_count = (int)strtoul(p+1, NULL, 10);
+			trap_count = (int)strtoul(p+1, NULL, 10);
 		if (trap_count == 0)
-		trap_count = 1;
+			trap_count = 1;
+		setAllocMemoryTrap(trap_address, trap_count);
+		}
 		break;
-#endif
 
 		default:                        /* unrecognized option */
 			bShowUsage = TRUE;
@@ -400,11 +400,6 @@ if (	bShowUsage ||
 	usage();
 	exitSafely(1);
 	}
-
-#if (VERSION < 1) || (PATCHLEVEL < 0)
-if (trap_address != (VOIDP)NULL)
-	setAllocMemoryTrap(trap_address, trap_count);
-#endif
 }
 
 /*****************************************************************************

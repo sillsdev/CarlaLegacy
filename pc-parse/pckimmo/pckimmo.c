@@ -130,6 +130,7 @@ char *	l_file = NULL;			/* -l lexicon file */
 char *	s_file = NULL;			/* -s synthesis lexicon file */
 char *	g_file = NULL;			/* -g grammar file */
 char *	t_file = NULL;			/* -t "take" file */
+int	bCheckAlloc_g = FALSE;		/* -z or -Z */
 
 /*****************************************************************************
  * NAME
@@ -185,6 +186,9 @@ fprintf(stderr, "\nUse the Quit command on the File menu (Command-Q)\n");
 #ifdef QUICKWIN
 fprintf(stderr, "\nUse the Exit command on the File menu (Control-C)\n");
 #endif
+if (bCheckAlloc_g)
+	do_clear();
+
 exit(iExitStatus_in);
 }
 
@@ -205,11 +209,9 @@ char **argv;
 {
 int k;
 int errflag = 0;
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 VOIDP	trap_address = NULL;
 int	trap_count = 0;
 char *	s;
-#endif
 
 while ((k = getopt(argc, argv, "G:g:L:l:QqR:r:S:s:T:t:/z:Z:")) != EOF)
 	{
@@ -248,19 +250,23 @@ while ((k = getopt(argc, argv, "G:g:L:l:QqR:r:S:s:T:t:/z:Z:")) != EOF)
 		t_file = optarg;
 		break;
 
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 	case 'z':		/* memory allocation trace filename */
 		setAllocMemoryTracing(optarg);
+		bCheckAlloc_g = TRUE;
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &s, 10);
+		trap_address = (VOIDP)strtoul(optarg, &s, 0);
+		if (trap_address != (VOIDP)NULL)
+		{
 		if (*s == ',')
-		trap_count = (int)strtoul(s+1, NULL, 10);
+			trap_count = (int)strtoul(s+1, NULL, 10);
 		if (trap_count == 0)
-		trap_count = 1;
+			trap_count = 1;
+		setAllocMemoryTrap(trap_address, trap_count);
+		}
+		bCheckAlloc_g = TRUE;
 		break;
-#endif
 
 	default:
 		++errflag;
@@ -289,10 +295,6 @@ Usage:  pckimmo [-r file] [-l file] [-s file] [-g file] [-t file]\n\
 
 	exit_pckimmo(2);
 	}
-#if (VERSION < 1) || (PATCHLEVEL < 0)
-if (trap_address != (VOIDP)NULL)
-	setAllocMemoryTrap(trap_address, trap_count);
-#endif
 if (!sKimmoData_g.bSilent)
 	display_pckimmo_header();
 }

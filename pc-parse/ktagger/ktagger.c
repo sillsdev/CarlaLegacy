@@ -182,6 +182,7 @@ KimmoData sLang_g = {
 	}
 	};
 int Debug_flag = 0;		/* debug level: 0 = off */
+int bCheckAlloc_g = FALSE;
 /*
  *  program version information
  */
@@ -315,6 +316,33 @@ fprintf(stderr, "\nUse the Quit command on the File menu (Command-Q)\n");
 #ifdef QUICKWIN
 fprintf(stderr, "\nUse the Exit command on the File menu (Control-C)\n");
 #endif
+
+if (bCheckAlloc_g)
+	{
+	/* free memory to check for leaks during processing */
+	freeMemory(Output_style.header);
+	freeMemory(Output_style.footer);
+	freeMemory(Output_style.record.start_tag);
+	freeMemory(Output_style.record.end_tag);
+	if (Output_style.record.fields)
+	{
+	PATRFeatureTags * pft;
+	PATRFeatureTags * pftNext;
+	for ( pft = Output_style.record.fields ; pft ; pft = pftNext )
+		{
+		pftNext = pft->pNext;
+		freeStringList(pft->pFeaturePath);
+		freeMemory(pft->pszStartTag);
+		freeMemory(pft->pszEndTag);
+		freeMemory(pft);
+		}
+	}
+	freeKimmoRules(&sLang_g);
+	freeKimmoLexicon(&sLang_g);
+	freeKimmoLexicon(&sLang_g);
+	freePATRGrammar(&sLang_g.sPATR);
+	freePATRInternalMemory(&sLang_g.sPATR);
+	}
 exit(status);
 }
 
@@ -407,11 +435,9 @@ char **argv;
 {
 int k;
 int errflag = 0;
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 VOIDP	trap_address = NULL;
 int	trap_count = 0;
 char *	s;
-#endif
 
 if (argv != NULL)
 	program_name = argv[0];
@@ -454,19 +480,23 @@ while ((k = getopt(argc, argv, "HhI:i:L:l:O:o:QqX:x:/Z:z:")) != EOF)
 		++Debug_flag;
 		break;
 
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 	case 'z':		/* memory allocation trace filename */
 		setAllocMemoryTracing(optarg);
+		bCheckAlloc_g = TRUE;
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &s, 10);
+		trap_address = (VOIDP)strtoul(optarg, &s, 0);
+		if (trap_address != (VOIDP)NULL)
+		{
 		if (*s == ',')
-		trap_count = (int)strtoul(s+1, NULL, 10);
+			trap_count = (int)strtoul(s+1, NULL, 10);
 		if (trap_count == 0)
-		trap_count = 1;
+			trap_count = 1;
+		setAllocMemoryTrap(trap_address, trap_count);
+		}
+		bCheckAlloc_g = TRUE;
 		break;
-#endif
 
 	default:
 		++errflag;
@@ -500,11 +530,6 @@ if (Log_file != (char *)NULL)
 	exit_ktagger(EXIT_FAILURE);
 	}
 	}
-
-#if (VERSION < 1) || (PATCHLEVEL < 0)
-if (trap_address != (VOIDP)NULL)
-	setAllocMemoryTrap(trap_address, trap_count);
-#endif
 }
 
 /*****************************************************************************
@@ -866,6 +891,8 @@ if (rul_file == (char *)NULL)
 			   sLang_g.bSilent, sLang_g.bShowWarnings,
 			   sLang_g.pLogFP,
 			   Control_file, 0, "field");
+	freeMemory(lex_file);
+	freeMemory(grm_file);
 	exit_ktagger(EXIT_FAILURE);
 	}
 if (lex_file == (char *)NULL)
@@ -874,6 +901,8 @@ if (lex_file == (char *)NULL)
 			   sLang_g.bSilent, sLang_g.bShowWarnings,
 			   sLang_g.pLogFP,
 			   Control_file, 0, "lexicon");
+	freeMemory(rul_file);
+	freeMemory(grm_file);
 	exit_ktagger(EXIT_FAILURE);
 	}
 if (grm_file == (char *)NULL)
@@ -882,6 +911,8 @@ if (grm_file == (char *)NULL)
 			   sLang_g.bSilent, sLang_g.bShowWarnings,
 			   sLang_g.pLogFP,
 			   Control_file, 0, "grammar");
+	freeMemory(rul_file);
+	freeMemory(lex_file);
 	exit_ktagger(EXIT_FAILURE);
 	}
 if (Output_style.record.fields == (PATRFeatureTags *)NULL)
@@ -890,6 +921,9 @@ if (Output_style.record.fields == (PATRFeatureTags *)NULL)
 			   sLang_g.bSilent, sLang_g.bShowWarnings,
 			   sLang_g.pLogFP,
 			   Control_file, 0, "field");
+	freeMemory(rul_file);
+	freeMemory(lex_file);
+	freeMemory(grm_file);
 	exit_ktagger(EXIT_FAILURE);
 	}
 if (Output_style.header == (char *)NULL)
@@ -906,6 +940,9 @@ if (loadKimmoRules((unsigned char *)rul_file, &sLang_g) != 0)
 			   sLang_g.bSilent, sLang_g.bShowWarnings,
 			   sLang_g.pLogFP,
 			   Control_file, 0, rul_file);
+	freeMemory(rul_file);
+	freeMemory(lex_file);
+	freeMemory(grm_file);
 	exit_ktagger(EXIT_FAILURE);
 	}
 if (loadKimmoLexicon((unsigned char *)lex_file, KIMMO_ANALYSIS, &sLang_g) != 0)
@@ -914,6 +951,9 @@ if (loadKimmoLexicon((unsigned char *)lex_file, KIMMO_ANALYSIS, &sLang_g) != 0)
 			   sLang_g.bSilent, sLang_g.bShowWarnings,
 			   sLang_g.pLogFP,
 			   Control_file, 0, lex_file);
+	freeMemory(rul_file);
+	freeMemory(lex_file);
+	freeMemory(grm_file);
 	exit_ktagger(EXIT_FAILURE);
 	}
 sLang_g.sPATR.cComment    = sLang_g.cComment;
@@ -924,6 +964,9 @@ if (loadPATRGrammar((char *)grm_file, &sLang_g.sPATR) == 0)
 			   sLang_g.bSilent, sLang_g.bShowWarnings,
 			   sLang_g.pLogFP,
 			   Control_file, 0, grm_file);
+	freeMemory(rul_file);
+	freeMemory(lex_file);
+	freeMemory(grm_file);
 	exit_ktagger(EXIT_FAILURE);
 	}
 else
@@ -972,6 +1015,9 @@ if (Debug_flag)
 	printf("DEBUG: footer = \"%s\"\n", Output_style.footer);
 	}
 	}
+freeMemory(rul_file);
+freeMemory(lex_file);
+freeMemory(grm_file);
 
 fclose(Control_fp);
 }

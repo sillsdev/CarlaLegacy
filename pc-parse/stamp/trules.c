@@ -24,6 +24,8 @@
  * void writeStampTransferRules(FILE *      pOutputFP_in,
  *                              StampData * pStamp_in)
  *
+ * void freeStampTransferRules(StampData * pStamp_io)
+ *
  ***************************************************************************
  * edit history is in version.h
  ***************************************************************************
@@ -45,6 +47,8 @@ static void		add_rule P((StampTransferRule * pNew_in,
 					StampData *         pStamp_io));
 static void		show_morphlist P((AmpleMorphlist * mlp,
 					  FILE *           pOutputFP_in));
+static void free_morphlist P((AmpleMorphlist * mlp));
+static void freeStampTrFlags P((StampTrFlag * pFlags));
 
 /*************************************************************************
  * NAME
@@ -672,4 +676,89 @@ for ( ; mlp ; mlp = mlp->pNext )
 	else
 		fprintf(pOutputFP_in, " %s", mlp->u.pszMorphName );
 	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    free_morphlist
+ * DESCRIPTION
+ *    Free the memory allocated for a list of AmpleMorphlist data structures.
+ * RETURN VALUE
+ *    none
+ */
+static void free_morphlist(mlp)
+AmpleMorphlist * mlp;
+{
+AmpleMorphlist * pNext;
+
+for ( ; mlp ; mlp = pNext )
+	{
+	pNext = mlp->pNext;
+	if (!mlp->bClass)
+	freeMemory(mlp->u.pszMorphName);
+	freeMemory(mlp);
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    freeStampTrFlags
+ * DESCRIPTION
+ *    Free a list of StampTrFlag data structures.
+ * RETURN VALUE
+ *    none
+ */
+static void freeStampTrFlags(pFlags)
+StampTrFlag * pFlags;
+{
+StampTrFlag * pFlag;
+StampTrFlag * pNext;
+
+for ( pFlag = pFlags ; pFlag ; pFlag = pNext )
+	{
+	pNext = pFlag->pNext;
+	freeMemory(pFlag->pszFlagname);
+	freeMemory(pFlag);
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    freeStampTransferRules
+ * DESCRIPTION
+ *    Free the memory allocated for the various transfer rules.
+ * RETURN VALUE
+ *    none
+ */
+void freeStampTransferRules(pStamp_io)
+StampData * pStamp_io;
+{
+StampTransferRule * pRule;
+StampTransferRule * pNextRule;
+
+for ( pRule = pStamp_io->pTransferRules ; pRule ; pRule = pNextRule)
+	{
+	pNextRule = pRule->pNext;
+	switch (pRule->eType)
+	{
+	case SUBRULE:
+	case COPYRULE:	/* copy rules are like substitution rules */
+		freeStampChangeMorphList(pRule->u.sSubRule.pMatch);
+		freeStampChangeMorphList(pRule->u.sSubRule.pReplace);
+		freeAmpleEnvConstraint(pRule->u.sSubRule.pEnvironment);
+		freeStampTrFlags(pRule->u.sSubRule.pFlags);
+		break;
+	case INSRULE:
+		freeStampChangeMorphList(pRule->u.sInsRule.pInsert);
+		freeAmpleEnvConstraint(pRule->u.sInsRule.pEnvironment);
+		freeStampTrFlags(pRule->u.sInsRule.pFlags);
+		break;
+	case FLAGRULE:
+		freeMemory( pRule->u.sFlagRule.pszFlagname );
+		free_morphlist(pRule->u.sFlagRule.pFlagMorphs);
+		break;
+	}
+	freeMemory( pRule );
+	}
+pStamp_io->pTransferRules = NULL;
 }

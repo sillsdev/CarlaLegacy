@@ -158,11 +158,13 @@ static NumberedMessage sNeedRulesToSynthesize_m	= { ERROR_MSG,   808,
  *  VARIABLES SET BY COMMAND LINE OPTIONS
  */
 char * pszControlFile_g   = NULL;	/* -x <control file> */
+char * pszControlFile1_g  = NULL;
 char * pszInputFile_g     = NULL;	/* -i <input data file> */
 char * pszOutputFile_g    = NULL;	/* -o <output file> */
 int    bSynthesis_g       = 0;		/* -s   (do synthesis) */
 int    bVerify_g          = 0;		/* -v   (verify synthesis) */
 int    iDebugLevel_g      = 0;		/* -/   (debug output level) */
+int    bCheckAllog_g      = FALSE;	/* -z or -Z */
 
 /*****************************************************************************
  *  VARIABLES SET BY THE CONTROL FILE
@@ -349,7 +351,7 @@ KimmoData sSynLang_g = {		/* contains the synthesis lexicon */
 
 char whiteSpace[] = " \t\n\v\f\r";	/* same chars as isspace() */
 int num_words = 0;	/*  number of words read from the input file(s) */
-char *emergency_memory = NULL;	/* memory to release if we run out of memory */
+char * emergency_memory = NULL;	/* memory to release if we run out of memory */
 /*
  *  local function prototypes
  */
@@ -420,6 +422,52 @@ fprintf(stderr, "\nUse the Quit command on the File menu (Command-Q)\n");
 #ifdef QUICKWIN
 fprintf(stderr, "\nUse the Exit command on the File menu (Control-C)\n");
 #endif
+if (bCheckAllog_g)
+	{
+	/* free memory to check for leaks during processing */
+	freeMemory(pszOutputFile_g);
+	if (pszCmdLogFile_g)
+	doCmdClose();
+	freeMemory(pszLexiconFile_g);
+	freeMemory(pszRuleFile_g);
+	freeMemory(pszTxtinCtlFile_g);
+	freeMemory(pszGrammarFile_g);
+	freeMemory(pszTxtoutCtlFile_g);
+	freeMemory(pszControlFile_g);
+	if (pAnChanges_g)
+	freeChangeList(pAnChanges_g);
+	if (pDcChanges_g)
+	freeChangeList(pDcChanges_g);
+	if (pCatPath_g)
+	freeStringList(pCatPath_g);
+	if (pFdDefinitions_g)
+	{
+	PATRLabeledFeature * plf;
+	PATRLabeledFeature * plfNext;
+	for ( plf = pFdDefinitions_g ; plf ; plf = plfNext )
+		{
+		plfNext = plf->pNext;
+		freeMemory(plf->pszLabel);
+		freePATRFeature(plf->pFeature, &sLang_g.sPATR);
+		freeMemory(plf);
+		}
+	}
+	if (pStringClasses_g != NULL)
+	freeStringClasses(pStringClasses_g);
+	if (TextControl_g.pszBarCodes == szDefaultBarCodes_g)
+	TextControl_g.pszBarCodes = NULL;
+	resetTextControl( &TextControl_g );
+	freeKimmoRules(&sLang_g);
+	freeKimmoLexicon(&sLang_g);
+	freePATRGrammar(&sLang_g.sPATR);
+	freePATRInternalMemory(&sLang_g.sPATR);
+	freeKimmoLexicon(&sSynLang_g);
+	if (emergency_memory != (char *)NULL)
+	{
+	free(emergency_memory);
+	emergency_memory = (char *)NULL;
+	}
+	}
 exit(status);
 }
 
@@ -544,11 +592,11 @@ int	k;
 int	errflag = 0;
 char *	p;
 char *	q;
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 VOIDP	trap_address = NULL;
 int	trap_count = 0;
 char *	s;
-#endif
+char *	pszLogFile = NULL;
+char *	pszOutputFile = NULL;
 
 pszCmdProgramName_g = "ktext";
 while ((k = getopt(argc, argv, "c:i:o:l:x:hqsv/z:Z:")) != EOF)
@@ -565,19 +613,15 @@ while ((k = getopt(argc, argv, "c:i:o:l:x:hqsv/z:Z:")) != EOF)
 		break;
 
 	case 'l':		/* log filename */
-		doCmdLog( optarg );
-		sLang_g.pLogFP          = sLang_g.pLogFP;
-		sLang_g.sPATR.pLogFP    = sLang_g.pLogFP;
-		sSynLang_g.pLogFP       = sLang_g.pLogFP;
-		sSynLang_g.sPATR.pLogFP = sLang_g.pLogFP;
+		pszLogFile = optarg;
 		break;
 
 	case 'o':		/* output filename */
-		pszOutputFile_g = optarg;
+		pszOutputFile = optarg;
 		break;
 
 	case 'x':		/* control filename */
-		pszControlFile_g = optarg;
+		pszControlFile1_g = optarg;
 		break;
 
 	case 'h':		/* help flag */
@@ -604,27 +648,41 @@ while ((k = getopt(argc, argv, "c:i:o:l:x:hqsv/z:Z:")) != EOF)
 		++iDebugLevel_g;
 		break;
 
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 	case 'z':		/* memory allocation trace filename */
 		setAllocMemoryTracing(optarg);
+		bCheckAllog_g = TRUE;
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &s, 10);
+		trap_address = (VOIDP)strtoul(optarg, &s, 0);
+		if (trap_address != (VOIDP)NULL)
+		{
 		if (*s == ',')
-		trap_count = (int)strtoul(s+1, NULL, 10);
+			trap_count = (int)strtoul(s+1, NULL, 10);
 		if (trap_count == 0)
-		trap_count = 1;
+			trap_count = 1;
+		setAllocMemoryTrap(trap_address, trap_count);
+		}
+		bCheckAllog_g = TRUE;
 		break;
-#endif
 
 	default:
 		++errflag;
 		break;
 	}
 	}
-if (pszControlFile_g == NULL)
-	pszControlFile_g = "ktext.ctl";
+if (pszLogFile)
+	{
+	doCmdLog( pszLogFile );
+	sLang_g.pLogFP          = pCmdLogFP_g;
+	sLang_g.sPATR.pLogFP    = sLang_g.pLogFP;
+	sSynLang_g.pLogFP       = sLang_g.pLogFP;
+	sSynLang_g.sPATR.pLogFP = sLang_g.pLogFP;
+	}
+if (pszOutputFile)
+	pszOutputFile_g = duplicateString(pszOutputFile);
+if (pszControlFile1_g == NULL)
+	pszControlFile1_g = "ktext.ctl";
 if (pszInputFile_g == NULL)
 	{
 	fprintf(stderr, "KTEXT: missing input file (-i filename)\n");
@@ -632,10 +690,6 @@ if (pszInputFile_g == NULL)
 	}
 else
 	{
-#if (VERSION < 1) || (PATCHLEVEL < 0)
-	if (trap_address != (VOIDP)NULL)
-	setAllocMemoryTrap(trap_address, trap_count);
-#endif
 	if (pszOutputFile_g == NULL)
 	{
 	/*
@@ -1083,7 +1137,7 @@ static void initialize()
 /*
  *  load the control file
  */
-pszControlFile_g = setCmdFilename( pszControlFile_g, "ktext.ctl", ".ctl");
+pszControlFile_g = setCmdFilename( pszControlFile1_g, "ktext.ctl", ".ctl");
 if (loadControlFile(pszControlFile_g) < 0)
 	{
 	fprintf(stderr, "KTEXT: Cannot load control file %s\n", pszControlFile_g);
@@ -1563,6 +1617,7 @@ if (bSynthesis_g)
 	synthesizeFile();
 else
 	analyzeFile();
+
 exit_ktext(EXIT_SUCCESS);
 return(0);
 }

@@ -1229,74 +1229,6 @@ return 1;
 
 /*****************************************************************************
  * NAME
- *    freeAmpleTestTree
- * DESCRIPTION
- *    free the memory allocated for an AMPLE user-defined test tree
- * RETURN VALUE
- *    none
- */
-static void freeAmpleTestTree(pTree_io)
-AmpleTestNode *	pTree_io;
-{
-if (pTree_io == NULL)
-	return;
-
-switch (pTree_io->iOpCode & OP_MASK)
-	{
-	case TOP_NODE:
-	freeMemory( pTree_io->uRight.pszString );
-	freeAmpleTestTree( pTree_io->uLeft.pChild );
-	break;
-
-	case LOGAND:	/* 'AND' (A && B) */
-	case LOGOR:		/* 'OR' (A || B) */
-	case LOGXOR:	/* 'XOR' ((!A && B) || (A && !B)) */
-	case LOGIFF:	/* 'IFF' ((A && B) || (!A && !B)) */
-	case LOGIF:		/* 'IF' ... 'THEN' (!A || B) */
-	freeAmpleTestTree( pTree_io->uLeft.pChild );
-	freeAmpleTestTree( pTree_io->uRight.pChild );
-	break;
-
-	case ALL_LEFT:	/* 'FOR_ALL_LEFT' */
-	case SOME_LEFT:	/* 'FOR_SOME_LEFT' */
-	case ALL_RIGHT:	/* 'FOR_ALL_RIGHT' */
-	case SOME_RIGHT:	/* 'FOR_SOME_RIGHT' */
-	freeAmpleTestTree( pTree_io->uLeft.pChild );
-	break;
-
-	case PROP_IS:	/* 'property' 'is' IDENTIFIER */
-	break;
-	case MORPH_IS:	/* 'morphname' 'is' STRING */
-	freeMemory( pTree_io->uRight.pszString );
-	break;
-	case ALLO_IS:	/* 'allomorph' 'is'  STRING */
-	freeMemory( pTree_io->uRight.pszString );
-	break;
-	case ALLO_MATCH:	/* 'allomorph' 'matches'  STRING */
-	freeMemory( pTree_io->uRight.pszString );
-	break;
-	case STRING_IS:	/* 'string' 'is'  STRING */
-	freeMemory( pTree_io->uRight.pszString );
-	break;
-	case ST_MATCH:	/* 'string' 'matches'  STRING */
-	freeMemory( pTree_io->uRight.pszString );
-	break;
-	case WORD_IS:	/* ... 'word' 'is' STRING */
-	freeMemory( pTree_io->uRight.pszString );
-	break;
-	case WORD_MATCH:	/* 'word' 'matches' STRING */
-	freeMemory( pTree_io->uRight.pszString );
-	break;
-
-	default:
-	break;
-	}
-
-freeMemory( pTree_io );
-}
-
-/*****************************************************************************
- * NAME
  *    freeAmpleTestList
  * DESCRIPTION
  *    free the memory allocated for a list of AMPLE successor or final tests
@@ -1560,6 +1492,7 @@ pAmple_io->uiTraceSize = 0;
  *  data from the PC-PATR grammar file
  */
 freePATRGrammar(&pAmple_io->sPATR);
+freePATRInternalMemory(&pAmple_io->sPATR);
 pAmple_io->sPATR.bFailure        = FALSE;
 pAmple_io->sPATR.bUnification    = TRUE;
 pAmple_io->sPATR.eTreeDisplay    = PATR_FLAT_TREE;

@@ -19,10 +19,12 @@
  * int loadStampDictOrthoChanges(const char * pszFilename_in,
  *                               StampData *  pStamp_io)
  *
+ * void resetStampData(StampData * pStamp_io)
+ *
  ***************************************************************************
  * edit history is in version.h
  ***************************************************************************
- * Copyright 1988, 1998 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1988, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #if _MSC_VER >= 800
@@ -1435,4 +1437,122 @@ else
 		p += strlen(p) + 1;
 		}
 	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    resetStampData
+ * DESCRIPTION
+ *    Free all the memory allocated for the StampData data structure.
+ * RETURN VALUE
+ *    none
+ */
+void resetStampData(StampData * pStamp_io)
+{
+AmpleAlloEnv * pEnv;
+AmpleAlloEnv * pNextEnv;
+StampTestList * pTest;
+StampTestList * pNextTest;
+StampAction * pAct;
+StampAction * pNextAct;
+
+freeMemory(pStamp_io->pabCopyRulesDone);
+pStamp_io->pabCopyRulesDone = NULL;
+pStamp_io->iCopyRulesTotalCount = 0;
+freeChangeList(pStamp_io->pDictOrthoChanges);
+pStamp_io->pDictOrthoChanges = NULL;
+freeStringList( pStamp_io->pStringList );
+pStamp_io->pStringList = NULL;
+freeStringClasses(pStamp_io->pStringClasses);
+pStamp_io->pStringClasses = NULL;
+if (pStamp_io->pPunctClasses != NULL)
+	{
+	freePunctClasses(pStamp_io->pPunctClasses);
+	pStamp_io->pPunctClasses = NULL;
+	}
+if (pStamp_io->pDictTable)
+	{
+	freeCodeTable(pStamp_io->pDictTable);
+	pStamp_io->pDictTable = NULL;
+	}
+if (pStamp_io->pPrefixTable)
+	{
+	freeCodeTable(pStamp_io->pPrefixTable);
+	pStamp_io->pPrefixTable = NULL;
+	}
+if (pStamp_io->pInfixTable)
+	{
+	freeCodeTable(pStamp_io->pInfixTable);
+	pStamp_io->pInfixTable = NULL;
+	}
+if (pStamp_io->pRootTable)
+	{
+	freeCodeTable(pStamp_io->pRootTable);
+	pStamp_io->pRootTable = NULL;
+	}
+if (pStamp_io->pSuffixTable)
+	{
+	freeCodeTable(pStamp_io->pSuffixTable);
+	pStamp_io->pSuffixTable = NULL;
+	}
+resetTextControl( &(pStamp_io->sTextCtl) );
+freeStampDictionary(pStamp_io);
+if (pStamp_io->pCategories)
+	{
+	freeStringList(pStamp_io->pCategories);
+	pStamp_io->pCategories = NULL;
+	}
+/*unlinkStringList( &pStamp_io->pCategorySetsList );*/
+freeStringList(pStamp_io->pCategorySetsList);
+pStamp_io->pCategorySetsList = NULL;
+freeAmpleCategClasses(pStamp_io->pCategClasses);
+pStamp_io->pCategClasses = NULL;
+freeAmpleMorphClasses(pStamp_io->pMorphClasses);
+pStamp_io->pMorphClasses = NULL;
+freeAmpleProperties(&pStamp_io->sProperties, pStamp_io->pPropertyList);
+		/*    AmpleProperties		pStamp_io->sProperties;*/
+		/*unlinkStringList( &pStamp_io->pPropertyList );*/
+pStamp_io->pPropertyList = NULL;
+freeStampLexChanges(pStamp_io->pTransferLexChg);
+pStamp_io->pTransferLexChg = NULL;
+freeStampTransferRules(pStamp_io);
+freeStampLexChanges(pStamp_io->pSynthesisLexChg);
+pStamp_io->pSynthesisLexChg = NULL;
+for ( pTest = pStamp_io->pSynthesisTests ; pTest ; pTest = pNextTest )
+	{
+	pNextTest = pTest->pNext;
+	freeAmpleTestTree(pTest->pTest);
+	for ( pAct = pTest->pAction ; pAct ; pAct = pNextAct )
+	{
+	pNextAct = pAct->pNext;
+	freeMemory( pAct->pszString );
+	freeMemory( pAct );
+	}
+	freeMemory(pTest);
+	}
+pStamp_io->pSynthesisTests = NULL;
+if (pStamp_io->pszValidCharacters != NULL)
+	{
+	freeMemory(pStamp_io->pszValidCharacters);
+	pStamp_io->pszValidCharacters = NULL;
+	}
+for ( pEnv = pStamp_io->pAlloEnvList ; pEnv ; pEnv = pNextEnv )
+	{
+	pNextEnv = pEnv->pLink;
+	freeAmpleAlloEnvConstraint(pEnv);
+	}
+pStamp_io->pAlloEnvList = NULL;
+freeStampRegSoundChanges(pStamp_io);
+#ifdef TONEPARS
+freeChangeList(pStamp_io->pTPOrthoChanges);
+pStamp_io->pTPOrthoChanges = NULL;
+/*    char *                      pStamp_io->pszSylStr;*/
+/*    char *                      pStamp_io->pszSylSepChar;*/
+/*    char *                      pStamp_io->pszMoraStr;*/
+/*    char *                      pStamp_io->pszPhraseFinalChars;*/
+/*    char *                      pStamp_io->pszSegFileName;*/
+/*    struct segment_list *       pStamp_io->pSegments;*/
+/*    struct stamp_analysis * pStamp_io->pInitialMorpheme;*/
+/*    struct stamp_analysis * pStamp_io->pFinalMorpheme;*/
+#endif /* TONEPARS */
 }

@@ -1,5 +1,5 @@
 # Master Unix makefile for the KTAGGER program
-# Steve McConnel, 24-Apr-2000
+# Steve McConnel,  7-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -21,7 +21,7 @@ BINDIR = $(exec_prefix)/bin
 
 SOURCES = ktagger.c version.h
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Ktagger.dsp
+			Ktagger.dsp Ktagger.vcproj
 TESTFILES = check.bat
 ENGFILES = engtdf.ctl eng.ttt engsgml.ctl eng.sss engsgml2.ctl eng.ss2 \
 		   engsfm.ctl eng.sff eng.in test.bat \

@@ -165,6 +165,10 @@ static int		bVerify_m = FALSE;
  *  flag that morpheme dictionaries are combined
  */
 static int		bUnifiedDictionary_m = FALSE;
+/*
+ *  Flag that we are checking memory allocation.
+ */
+static int	bCheckAlloc_m = FALSE;
 
 #ifdef _WINDOWS
 #define main(argc, argv) dosmain(argc, argv)
@@ -227,13 +231,14 @@ tsinit();
  *  process the data
  */
 tsproc();
-/*
- *  free everything that was dynamically allocated
- */
-/* FIX ME */
-unlinkStringList( &sStamp_m.pPropertyList );	/* free property list */
-unlinkStringList( &sStamp_m.pCategorySetsList ); /* free category list */
-unlinkStringList( &sStamp_m.pStringList );	/* free string list */
+
+if (bCheckAlloc_m)
+	{
+	/*
+	 *  free everything that was dynamically allocated
+	 */
+	resetStampData( &sStamp_m );
+	}
 
 #ifdef MACINTOSH
 fprintf(stderr, "\nUse the Quit command on the File menu (Command-Q)\n");
@@ -262,11 +267,9 @@ char *	pszTime_in;
 {
 int	k;
 int	bShowUsage = FALSE;
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 VOIDP	trap_address = NULL;
 int	trap_count = 0;
 char *	p;
-#endif
 
 #ifdef USE_CCOMMAND
 print_header(stderr, pszTime_in);
@@ -288,31 +291,14 @@ argv[0] = "stamp";
 -t	AMPLE, STAMP: trace
 -u	AMPLE, STAMP: unified (combined) dictionaries
 -v	AMPLE, STAMP: verify tests
+-a	STAMP: generate all possible syntheses
+-n	STAMP: 1.5a BJY Don't check root categories
+-r	STAMP: report unfound morphemes WM
+-x	STAMP: transfer only
+-a	STAMP: generate all possible syntheses
 -/	AMPLE, STAMP: debug
 -z	AMPLE, STAMP: memory allocation trace filename
 -Z	AMPLE, STAMP: memory allocation trap address,count
-
--a	AMPLE: debug allomorph conditions
--a	STAMP: generate all possible syntheses
-
--b	AMPLE: enable allomorph ID strings
-
--g	AMPLE: output root gloss
-
--n	AMPLE: maximum morphname length trigger
--n	STAMP: 1.5a BJY Don't check root categories
-
--p	AMPLE: 1.9u BJY output ambiguity
-
--r	AMPLE: morphname reference check
--r	STAMP: report unfound morphemes WM
-
--s	AMPLE: selective analysis
-
--w	AMPLE: write optional output
-
--x	AMPLE: exclude optional output
--x	STAMP: transfer only
 */
 #endif
 while ((k = getopt(argc, argv, "ac:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
@@ -381,19 +367,23 @@ while ((k = getopt(argc, argv, "ac:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
 			++sStamp_m.iDebugLevel;                 /* debug level counter */
 			break;
 
-#if (VERSION < 1) || (PATCHLEVEL < 0)
 	case 'z':		/* memory allocation trace filename */
 		setAllocMemoryTracing(optarg);
+		bCheckAlloc_m = TRUE;
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &p, 10);
+		trap_address = (VOIDP)strtoul(optarg, &p, 0);
+		if (trap_address != (VOIDP)NULL)
+		{
 		if (*p == ',')
-		trap_count = (int)strtoul(p+1, NULL, 10);
+			trap_count = (int)strtoul(p+1, NULL, 10);
 		if (trap_count == 0)
-		trap_count = 1;
+			trap_count = 1;
+		setAllocMemoryTrap(trap_address, trap_count);
+		bCheckAlloc_m = TRUE;
+		}
 		break;
-#endif
 
 		default:                        /* unrecognized option */
 		bShowUsage = TRUE;
@@ -411,14 +401,9 @@ if (!sStamp_m.bQuiet || bShowUsage)
 if (	bShowUsage ||
 	((optind < argc) && (strcmp(argv[optind],"?") == 0)) )
 	{
-	usage();                    /* tell the user what he can do */
-	exitSafely(1);                 /* exit with error status */
+	usage();		/* tell the user what he can do */
+	exitSafely(1);	/* exit with error status */
 	}
-
-#if (VERSION < 1) || (PATCHLEVEL < 0)
-if (trap_address != (VOIDP)NULL)
-	setAllocMemoryTrap(trap_address, trap_count);
-#endif
 }
 
 /***************************************************************************
@@ -1006,6 +991,12 @@ do  {
 		sWords_m.pPreviousWord = sWords_m.pCurrentWord;
 		sWords_m.pCurrentWord = sWords_m.pNextWord;
 		}
+	/* clean up after last word */
+	if (sWords_m.pPreviousWord)
+	{
+	freeStampWord( sWords_m.pPreviousWord );
+	sWords_m.pPreviousWord = NULL;
+	}
 	if (bMonitorProgress_m)			    /* If monitoring */
 	{
 	unsigned	uiFix;

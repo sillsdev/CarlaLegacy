@@ -19,6 +19,8 @@
  *						 StampUnit *     pUnit_in,
  *                                               StampData *     pStamp_in)
  *
+ * void freeStampLexChanges(Trie * pLexChgTrie_io)
+ *
  ***************************************************************************
  * edit history is in version.h
  ***************************************************************************
@@ -46,6 +48,7 @@ static StampAnalysis *	apply_lch P((StampAnalysis * pAnalysis_in,
 					 Trie *          lexchp,
 					 StampUnit *     pUnit_in,
 					 StampData *     pStamp_in));
+static void	free_lch	P((VOIDP pList_in));
 
 /*************************************************************************
  * NAME
@@ -496,7 +499,7 @@ StampLexChange *lp;
  *  handle null arguments
  */
 if (!pAnalysis_in || !lexchp)
-	return( pAnalysis_in );            /* no changes possible, so return input */
+	return( pAnalysis_in );	/* no changes possible, so return input */
 /*
  *  for each morpheme in the analysis
  */
@@ -568,4 +571,57 @@ next_analysis_morph:
 	} /* end for each morpheme in the analysis */
 
 return( pAnalysis_in );
+}
+
+/*****************************************************************************
+ * NAME
+ *    free_lch
+ * DESCRIPTION
+ *    Free the list of StampLexChange data structures stored at one node in the
+ *    trie.
+ * RETURN VALUE
+ *    none
+ */
+static void free_lch(pList_in)
+VOIDP	pList_in;
+{
+StampLexChange * pChg;
+StampLexChange * pNext;
+StampChangeMorphList * pCML;
+StampChangeMorphList * pNextCML;
+
+for ( pChg = (StampLexChange *)pList_in ; pChg ; pChg = pNext )
+	{
+	pNext = pChg->pNext;
+	for ( pCML = pChg->pMatch ; pCML ; pCML = pNextCML )
+	{
+	pNextCML = pCML->pNext;
+	if (!(pCML->iMorphType & MORPHCLASS))
+		freeMemory(pCML->uMorph.pszName);
+	freeMemory(pCML);
+	}
+	for ( pCML = pChg->pReplace ; pCML ; pCML = pNextCML )
+	{
+	pNextCML = pCML->pNext;
+	freeMemory(pCML->uMorph.pszName);
+	freeMemory(pCML);
+	}
+	freeAmpleEnvConstraint(pChg->pEnv);
+	freeMemory(pChg);
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    freeStampLexChanges
+ * DESCRIPTION
+ *    Free the memory allocated for a Lexical Change trie.
+ * RETURN VALUE
+ *    none
+ */
+void freeStampLexChanges(pLexChgTrie_io)
+Trie * pLexChgTrie_io;
+{
+if (pLexChgTrie_io)
+	eraseTrie(pLexChgTrie_io, free_lch);
 }

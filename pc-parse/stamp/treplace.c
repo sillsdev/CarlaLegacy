@@ -134,8 +134,7 @@ do  {
 				last_was_cat = FALSE;   /* Clear last was cat */
 				}
 			else
-				cp = new_rep_node((unsigned char)morph_type,
-								  (void *)duplicateString(token));
+				cp = new_rep_node((unsigned char)morph_type, NULL);
 			cp->iMorphType |= MORPHCLASS;
 			cp->uMorph.pClass = mcl;     /* Store class */
 			}

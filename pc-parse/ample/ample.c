@@ -21,7 +21,7 @@
  *****************************************************************************
  * edit history is in version.h
  *****************************************************************************
- * Copyright 1988, 2000 by SIL International.  All rights reserved.
+ * Copyright 1988, 2002 by SIL International.  All rights reserved.
  */
 #include "ample.h"
 #include "ampledef.h"
@@ -162,6 +162,10 @@ static char *	pszOutputFile_m = NULL;
  *  Flag that optional output was set on the command line
  */
 static int	bOptionalOutputSet_m = FALSE;
+/*
+ *  Flag that we are checking memory allocation.
+ */
+static int	bCheckAlloc_m = FALSE;
 /*
  *  information loaded from the text input control file and "analysis data"
  *  (control) file
@@ -392,13 +396,12 @@ if ((sAmpleData_m.iDebugLevel == 5) && (sAmpleData_m.pLogFP != NULL))
  *  process the data
  */
 anproc();
-
-/*#if (VERSION < 1) || (PATCHLEVEL < 0)*/
 /*
- *  free everything that was dynamically allocated
+ *  If checking memory allocations, free everything that was dynamically
+ *  allocated.
  */
-resetAmpleData( &sAmpleData_m );
-/*#endif*/
+if (bCheckAlloc_m)
+	resetAmpleData( &sAmpleData_m );
 
 #ifdef MACINTOSH
 fprintf(stderr, "\nUse the Quit command on the File menu (Command-Q)\n");
@@ -428,11 +431,10 @@ char *	pszTime_in;
 {
 int	k;
 int	bShowUsage = FALSE;
-/*#if (VERSION < 1) || (PATCHLEVEL < 0)*/
 VOIDP	trap_address = NULL;
 int	trap_count = 0;
 char *	p;
-/*#endif*/
+char * pszSelectiveAnalFile = NULL;
 
 #ifdef USE_CCOMMAND
 print_header(stderr, pszTime_in);
@@ -513,7 +515,7 @@ while ((k = getopt(argc, argv, "abc:d:e:f:gi:mn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
 		break;
 
 	case 's':			/* selective analysis option */
-		loadAmpleSelectiveAnalFile(optarg, &sAmpleData_m);
+		pszSelectiveAnalFile = optarg;
 		break;
 
 	case 't':			/* trace option */
@@ -554,19 +556,23 @@ while ((k = getopt(argc, argv, "abc:d:e:f:gi:mn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
 		++sAmpleData_m.iDebugLevel;		/* count the slashes */
 		break;
 
-/*#if (VERSION < 1) || (PATCHLEVEL < 0)*/
 	case 'z':		/* memory allocation trace filename */
 		setAllocMemoryTracing(optarg);
+		bCheckAlloc_m = TRUE;
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &p, 10);
+		trap_address = (VOIDP)strtoul(optarg, &p, 0);
+		if (trap_address != (VOIDP)NULL)
+		{
 		if (*p == ',')
-		trap_count = (int)strtoul(p+1, NULL, 10);
+			trap_count = (int)strtoul(p+1, NULL, 10);
 		if (trap_count == 0)
-		trap_count = 1;
+			trap_count = 1;
+		setAllocMemoryTrap(trap_address, trap_count);
+		}
+		bCheckAlloc_m = TRUE;
 		break;
-/*#endif*/
 
 	default:			/* unrecognized option */
 		bShowUsage = TRUE;
@@ -588,10 +594,9 @@ if (	bShowUsage ||
 	exitSafely(1);
 	}
 
-/*#if (VERSION < 1) || (PATCHLEVEL < 0)*/
-if (trap_address != (VOIDP)NULL)
-	setAllocMemoryTrap(trap_address, trap_count);
-/*#endif*/
+/* do this after memory allocation tracing has a chance to be set up */
+if (pszSelectiveAnalFile)
+	loadAmpleSelectiveAnalFile(pszSelectiveAnalFile, &sAmpleData_m);
 }
 
 /*****************************************************************************

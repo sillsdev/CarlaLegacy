@@ -245,50 +245,50 @@ AmpleSetup *    pAmple;
 ...
 hAmpleLib = LoadLibrary("AMPLE322.DLL");
 if ((unsigned long)hAmpleLib < 32)
-	{
+	@{
 	MessageBox(0, "Error loading AMPLE322.DLL", "App Name",
 			   MB_OK | MB_ICONEXCLAMATION);
 	hAmpleLib = 0;
-	}
+	@}
 ...
 if (hAmpleLib != 0)
-	{
+	@{
 	pfAmpleCreateSetup = (AMPLEFUNC0)GetProcAddress(hAmpleLib_g,
 								"AmpleCreateSetup");
 	if (pfAmpleCreateSetup == NULL)
-		{
+		@{
 		MessageBox(0,
 				   "Cannot find AmpleCreateSetup in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	pfAmpleDeleteSetup = (AMPLEFUNC1)GetProcAddress(hAmpleLib_g,
 								"AmpleDeleteSetup");
 	if (pfAmpleDeleteSetup == NULL)
-		{
+		@{
 		MessageBox(0,
 				   "Cannot find AmpleDeleteSetup in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	pfAmpleParseText = (AMPLEFUNC2)GetProcAddress(hAmpleLib,
 												  "AmpleParseText");
 	if (pfAmpleParseText == NULL)
-		{
+		@{
 		MessageBox(0, "Cannot find AmpleParseText in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	pfAmpleApplyInputChangesToWord = (AMPLEFUNC2)GetProcAddress(hAmpleLib,
 												  "AmpleApplyInputChangesToWord");
 	if (pfAmpleApplyInputChangesToWord == NULL)
-		{
+		@{
 		MessageBox(0, "Cannot find AmpleApplyInputChangesToWord in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	if (    (pfAmpleCreateSetup             == NULL) ||
 			(pfAmpleDeleteSetup             == NULL) ||
 			(pfAmpleApplyInputChangesToWord == NULL) ||
 			(pfAmpleParseText               == NULL) )
 		return -1;              /* signal an error */
-	}
+	@}
 ...
 pAmple = (*pfAmpleCreateSetup)();
 if (pAmple == NULL)
@@ -302,7 +302,7 @@ pszResult = (*pfAmpleParseText)(pAmple,
 pAmple = NULL;
 ...
 if (hAmpleLib != 0)
-	{
+	@{
 	FreeLibrary(hAmpleLib);
 	hAmpleLib                      = 0;
 	pfAmpleCreateSetup             = NULL;
@@ -310,7 +310,7 @@ if (hAmpleLib != 0)
 	pfAmpleApplyInputChangesToWord = NULL;
 	pfAmpleParseText               = NULL;
 	...
-	}
+	@}
 ...
 @end smallexample
 @subheading Source File
@@ -703,58 +703,58 @@ char *          pszState;
 ...
 hAmpleLib = LoadLibrary("AMPLE322.DLL");
 if ((unsigned long)hAmpleLib < 32)
-	{
+	@{
 	MessageBox(0, "Error loading AMPLE322.DLL", "App Name",
 			   MB_OK | MB_ICONEXCLAMATION);
 	hAmpleLib = 0;
-	}
+	@}
 ...
 if (hAmpleLib != 0)
-	{
+	@{
 	pfAmpleCreateSetup = (AMPLEFUNC0)GetProcAddress(hAmpleLib_g,
 								"AmpleCreateSetup");
 	if (pfAmpleCreateSetup == NULL)
-		{
+		@{
 		MessageBox(0,
 				   "Cannot find AmpleCreateSetup in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	pfAmpleDeleteSetup = (AMPLEFUNC1)GetProcAddress(hAmpleLib_g,
 								"AmpleDeleteSetup");
 	if (pfAmpleDeleteSetup == NULL)
-		{
+		@{
 		MessageBox(0,
 				   "Cannot find AmpleDeleteSetup in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	pfAmpleParseText = (AMPLEFUNC2)GetProcAddress(hAmpleLib,
 												  "AmpleParseText");
 	if (pfAmpleParseText == NULL)
-		{
+		@{
 		MessageBox(0, "Cannot find AmpleParseText in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	pfAmpleApplyInputChangesToWord = (AMPLEFUNC2)GetProcAddress(hAmpleLib,
 												  "AmpleApplyInputChangesToWord");
 	if (pfAmpleApplyInputChangesToWord == NULL)
-		{
+		@{
 		MessageBox(0, "Cannot find AmpleApplyInputChangesToWord in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	pfAmpleGetAllAllomorphs = (AMPLEFUNC2)GetProcAddress(hAmpleLib,
 												  "AmpleGetAllAllomorphs");
 	if (pfAmpleGetAllAllomorphs == NULL)
-		{
+		@{
 		MessageBox(0, "Cannot find AmpleGetAllAllomorphs in AMPLE322.DLL",
 				   "App Name", MB_OK | MB_ICONEXCLAMATION);
-		}
+		@}
 	if (    (pfAmpleCreateSetup             == NULL) ||
 			(pfAmpleDeleteSetup             == NULL) ||
 			(pfAmpleApplyInputChangesToWord == NULL) ||
 			(pfAmpleGetAllAllomorphs        == NULL) ||
 			(pfAmpleParseText               == NULL) )
 		return -1;              /* signal an error */
-	}
+	@}
 ...
 pAmple = (*pfAmpleCreateSetup)();
 if (pAmple == NULL)
@@ -768,7 +768,7 @@ pszResult = (*pfAmpleGetAllAllomorphs)(pAmple, pszResult, pszState);
 pAmple = NULL;
 ...
 if (hAmpleLib != 0)
-	{
+	@{
 	FreeLibrary(hAmpleLib);
 	hAmpleLib                      = 0;
 	pfAmpleCreateSetup             = NULL;
@@ -777,7 +777,7 @@ if (hAmpleLib != 0)
 	pfAmpleGetAllAllomorphs        = NULL;
 	pfAmpleParseText               = NULL;
 	...
-	}
+	@}
 ...
 @end smallexample
 @subheading Source File
@@ -1121,7 +1121,7 @@ if (hAmpleLib != 0)
 
 @c ----------------------------------------------------------------------------
 @page
-@node AmpleLoadControlFiles, AmpleLoadGrammarFile, AmpleInitializeTraceString, Functions
+@node AmpleLoadControlFiles, AmpleLoadDictionary, AmpleInitializeTraceString, Functions
 @unnumberedsec AmpleLoadControlFiles
 @subheading Syntax
 @example

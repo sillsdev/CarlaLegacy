@@ -1,5 +1,5 @@
 # Master Unix makefile for the PC-PATR library and program
-# Steve McConnel,  2-Oct-2002
+# Steve McConnel,  7-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -22,12 +22,13 @@ BINDIR = $(exec_prefix)/bin
 SOURCES=patr.h patrdef.h pcpatr.h version.h grammar.c lcparse.c copyfeat.c \
 		patrampl.c patrkimm.c patrlexi.c patalloc.c patrdata.c patrfunc.c \
 		patrstrg.c pcpatr.c pcpatr2.c pcpatr3.c unify.c userpatr.c wrtstyle.c \
-		cvtkp2wa.c parsepwk.c subsume.c amplpatr.c priunion.c constrai.c
+		cvtkp2wa.c parsepwk.c subsume.c amplpatr.c priunion.c constrai.c \
+		disphead.h disphead.c
 DLLFILES = Patr100.dsp patr100.idl PatrParser.cpp PatrParser.h PatrParser.rgs \
 		   StdAfx.cpp StdAfx.h patr100.cpp patr100.rc patr100.def resource.h \
-		   patr100ps.def patr100ps.mk
+		   patr100ps.def patr100ps.mk Patr100.vcproj
 DISTFILES = $(SOURCES) $(DLLFILES) Makefile.in Makefile.dj \
-			Patrlib.dsp Pcpatr.dsp
+			Patrlib.dsp Pcpatr.dsp Patrlib.vcproj Pcpatr.vcproj
 
 
 TESTFILES = check.bat test/mac-test.tak

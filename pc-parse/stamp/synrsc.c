@@ -13,10 +13,12 @@
  * StampAnalysis * applyStampRegSoundChanges(StampAnalysis * analp,
  *					     StampData *     pStamp_in)
  *
+ * void freeStampRegSoundChanges(StampData * pStamp_io)
+ *
  ***************************************************************************
  * edit history is in version.h
  ***************************************************************************
- * Copyright 1989, 1998 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1989, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #include <stdio.h>
@@ -293,4 +295,27 @@ for ( ap = analp ; ap ; ap = ap->pRightLink )
 		}
 	}
 return( analp );
+}
+
+/*****************************************************************************
+ * NAME
+ *    freeStampRegSoundChanges
+ * DESCRIPTION
+ *    Free the memory allocated for STAMP Regular Sound Changes.
+ * RETURN VALUE
+ *    none
+ */
+void freeStampRegSoundChanges(pStamp_io)
+StampData * pStamp_io;
+{
+int i;
+
+for ( i = 0 ; i < MAX_RSC ; ++i )
+	{
+	if (pRSCList_m[i])
+	{
+	freeChangeList(pRSCList_m[i]);
+	pRSCList_m[i] = NULL;
+	}
+	}
 }

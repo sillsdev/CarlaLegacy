@@ -1,5 +1,5 @@
 # Master Unix makefile for the OPAC library
-# Steve McConnel,  2-Oct-2002
+# Steve McConnel,  7-Oct-2002
 #
 # additional possible definitions:
 # Hardware
@@ -37,7 +37,7 @@ SOURCES = add_sl.c   adjfname.c ambprog.c  appnd_sl.c cat_sl.c   tokenize.c \
 		  strlist.h  template.h textctl.h  trie.h     dynstr.h
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Opaclib.dsp
+			Opaclib.dsp Opaclib.vcproj
 TESTFILES =
 #
 #  OPAC function library

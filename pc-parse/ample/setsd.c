@@ -27,7 +27,7 @@
  *			  AmpleData *     pAmple_in)
  *
  ****************************************************************************
- * Copyright 1988, 2000 by SIL International.  All rights reserved.
+ * Copyright 1988, 2002 by SIL International.  All rights reserved.
  */
 #include "ample.h"
 #include "ampledef.h"
@@ -149,6 +149,7 @@ static void	addAmpleDictEntry P((char * pRecord_in,
 static void check_for_valid_mcc P((AmpleMorphConstraint * pMCC_in,
 				   char *                 pszMorphName_in,
 				   AmpleData *            pAmple_in));
+static void freeAmpleAffixInfo P((AmpleAffixInfo * pAffix_in));
 
 #ifndef hab360
 static long parseAmpleOrderClass P((char * rp, AmpleData * pAmple_in));
@@ -186,10 +187,10 @@ static const char	szTwoMorphnames_m[] =
 \t%s\n\
 \t%s (ignored)\n";
 #ifdef hab360
-static const char	szTwoOrderclasses_m[] =
-		"%sMultiple orderclasses in entry: %s\n\
-\t%d\n\
-\t%s (ignored)\n";
+/*static const char	szTwoOrderclasses_m[] =*/
+/*		"%sMultiple orderclasses in entry: %s\n\*/
+/*\t%d\n\*/
+/*\t%s (ignored)\n";*/
 #else
 static const char	szTwoOrderclasses_m[] =
 		"%sMultiple orderclasses in entry: %s\n\
@@ -915,7 +916,7 @@ if (pAlloPieces_in == NULL)
 	freeMemory(pszCopy);
 #endif
 	if (pszEnv != rp)
-	free(pszEnv);
+	freeMemory(pszEnv);
 	return pHead_io;
 	}
 if (pAlloPieces_in->pClass == NULL)
@@ -1292,7 +1293,8 @@ while (*rp != NUL)
 
 		/* check for too large a morphname (warning only) */
 		pAmple_in->iMorphnameSize = strlen(rp);
-		if (    (pAmple_in->iMorphnameSize > pAmple_in->iMaxMorphnameLength) &&
+		if (    (pAmple_in->iMorphnameSize >
+			 pAmple_in->iMaxMorphnameLength) &&
 			(pAmple_in->iMorphnameSize <= MAXMORPH) )
 		{
 		/* print error message */
@@ -1390,7 +1392,7 @@ while (*rp != NUL)
 				getAmpleRecordIDTag(szRecordKey_g,
 						pAmple_in->uiRecordCount),
 #ifdef hab360
-				de->iOrderClass, rp);
+/*			    de->iOrderClass, rp);*/
 #else
 				de->iOrderClass, de->iOrderClassMax, rp);
 #endif
@@ -1398,26 +1400,26 @@ while (*rp != NUL)
 		else
 		{
 #ifdef hab360
-		ord = atol(rp);
-		if (ord < -32767)
-			{
-			if (pAmple_in->pLogFP != NULL)
-			fprintf(pAmple_in->pLogFP, szBadOrderclass_m,
-				pAmple_in->pszAmpleDictErrorHeader, ord, -32767,
-				getAmpleRecordIDTag(szRecordKey_g,
-							pAmple_in->uiRecordCount));
-			ord = -32767L;
-			}
-		else if (ord > 32767)
-			{
-			if (pAmple_in->pLogFP != NULL)
-			fprintf(pAmple_in->pLogFP, szBadOrderclass_m,
-				pAmple_in->pszAmpleDictErrorHeader, ord, 32767,
-				getAmpleRecordIDTag(szRecordKey_g,
-							pAmple_in->uiRecordCount));
-			ord = 32767L;
-			}
-		de->iOrderClass = (short)ord;
+/*		ord = atol(rp);*/
+/*		if (ord < -32767)*/
+/*		    {*/
+/*		    if (pAmple_in->pLogFP != NULL)*/
+/*			fprintf(pAmple_in->pLogFP, szBadOrderclass_m,*/
+/*			     pAmple_in->pszAmpleDictErrorHeader, ord, -32767,*/
+/*				getAmpleRecordIDTag(szRecordKey_g,*/
+/*						  pAmple_in->uiRecordCount));*/
+/*		    ord = -32767L;*/
+/*		    }*/
+/*		else if (ord > 32767)*/
+/*		    {*/
+/*		    if (pAmple_in->pLogFP != NULL)*/
+/*			fprintf(pAmple_in->pLogFP, szBadOrderclass_m,*/
+/*			      pAmple_in->pszAmpleDictErrorHeader, ord, 32767,*/
+/*				getAmpleRecordIDTag(szRecordKey_g,*/
+/*						  pAmple_in->uiRecordCount));*/
+/*		    ord = 32767L;*/
+/*		    }*/
+/*		de->iOrderClass = (short)ord;*/
 #else  /* hab360 */
 		for (i = 0; i < 2; i++)
 		  {
@@ -1452,7 +1454,7 @@ while (*rp != NUL)
 		bDidOrderClass = TRUE;
 		}
 #ifdef hab360
-		rp = rp + strlen(rp);
+/*	    rp = rp + strlen(rp);*/
 #else
 		rp = end;
 #endif
@@ -1641,7 +1643,13 @@ if (pAmple_in->pLogFP != NULL)
 	disp_allo(head, dictype);
 #endif /* PROPDEBUG */
 	}
-
+/* cleanup uselessly allocated memory */
+if (!bDidAllomorph)
+	{
+	freeAmpleAffixInfo(de);
+	if (bDidMorphName)
+	freeMemory(pszMorphName);
+	}
 freealist(head, pAmple_in);
 } /* end afx_create */
 
@@ -1716,7 +1724,7 @@ ip->pInfixEnv = parseAmpleInfixEnvConstraint(p,
 						 pAmple_in->pStringClasses,
 						 pAmple_in->pszValidChars,
 						 pAmple_in->pLogFP,
-						 NULL);
+						 &pAmple_in->pEnvStrings/*NULL*/);
 /*
  *  if they don't give us an environment, don't let anything pass
  */
@@ -1861,7 +1869,8 @@ while (*rp != NUL)
 
 		/* check for too large a morphname (warning only) */
 		pAmple_in->iMorphnameSize = strlen(rp);
-		if (    (pAmple_in->iMorphnameSize > pAmple_in->iMaxMorphnameLength) &&
+		if (    (pAmple_in->iMorphnameSize >
+			 pAmple_in->iMaxMorphnameLength) &&
 			(pAmple_in->iMorphnameSize <= MAXMORPH) )
 		{
 		/* print error message */
@@ -1911,7 +1920,7 @@ while (*rp != NUL)
 				getAmpleRecordIDTag(szRecordKey_g,
 						pAmple_in->uiRecordCount),
 #ifdef hab360
-				de->iOrderClass, rp);
+/*			    de->iOrderClass, rp);*/
 #else
 				de->iOrderClass, de->iOrderClassMax, rp);
 #endif
@@ -1919,61 +1928,67 @@ while (*rp != NUL)
 		else
 		{
 #ifdef hab360
-		ord = atol(rp);
-		if (ord < -32767)
-			{
-			if (pAmple_in->pLogFP != NULL)
-			fprintf(pAmple_in->pLogFP, szBadOrderclass_m,
-				pAmple_in->pszAmpleDictErrorHeader, ord, -32767,
-				getAmpleRecordIDTag(szRecordKey_g,
-							pAmple_in->uiRecordCount));
-			ord = -32767L;
-			}
-		else if (ord > 32767)
-			{
-			if (pAmple_in->pLogFP != NULL)
-			fprintf(pAmple_in->pLogFP, szBadOrderclass_m,
-				pAmple_in->pszAmpleDictErrorHeader, ord, 32767,
-				getAmpleRecordIDTag(szRecordKey_g,
-							pAmple_in->uiRecordCount));
-			ord = 32767L;
-			}
-		de->iOrderClass = (short)ord;
+/*		ord = atol(rp);*/
+/*		if (ord < -32767)*/
+/*		    {*/
+/*		    if (pAmple_in->pLogFP != NULL)*/
+/*			fprintf(pAmple_in->pLogFP, szBadOrderclass_m,*/
+/*				pAmple_in->pszAmpleDictErrorHeader, ord,*/
+/*				-32767, getAmpleRecordIDTag(szRecordKey_g,*/
+/*						  pAmple_in->uiRecordCount));*/
+/*		    ord = -32767L;*/
+/*		    }*/
+/*		else if (ord > 32767)*/
+/*		    {*/
+/*		    if (pAmple_in->pLogFP != NULL)*/
+/*			fprintf(pAmple_in->pLogFP, szBadOrderclass_m,*/
+/*			      pAmple_in->pszAmpleDictErrorHeader, ord, 32767,*/
+/*				getAmpleRecordIDTag(szRecordKey_g,*/
+/*						  pAmple_in->uiRecordCount));*/
+/*		    ord = 32767L;*/
+/*		    }*/
+/*		de->iOrderClass = (short)ord;*/
 #else  /* hab360 */
 		for (i = 0; i < 2; i++)
-		  {
+			{
 			pszNext = isolateWord(rp);
 			ord = parseAmpleOrderClass(rp, pAmple_in);
 			if (i == 0)
-			  de->iOrderClass = (short)ord;
+			{
+			de->iOrderClass = (short)ord;
+			}
 			else
-			  {
-			if ((de->iOrderClass != 0) &&
-				 ord == 0)
-				/* there was no second orderclass */
-			  de->iOrderClassMax = de->iOrderClass;
-			else	/* there was a second orderclass */
-			  {
-				if (ord >= de->iOrderClass)
-				  de->iOrderClassMax = (short)ord;
-				else
-				  if (pAmple_in->pLogFP != NULL)
+			{
+			if ((de->iOrderClass != 0) && ord == 0)
 				{
-				  fprintf(pAmple_in->pLogFP, szBadOrderclassMax_m,
-					  pAmple_in->pszAmpleDictErrorHeader, ord, de->iOrderClass,
-					  getAmpleRecordIDTag(szRecordKey_g,
-								  pAmple_in->uiRecordCount));
-				  de->iOrderClassMax = de->iOrderClass;
+				/* there was no second orderclass */
+				de->iOrderClassMax = de->iOrderClass;
 				}
-			  }
-			  }
+			else	/* there was a second orderclass */
+				{
+				if (ord >= de->iOrderClass)
+				{
+				de->iOrderClassMax = (short)ord;
+				}
+				else if (pAmple_in->pLogFP != NULL)
+				{
+				fprintf(pAmple_in->pLogFP,
+					szBadOrderclassMax_m,
+					pAmple_in->pszAmpleDictErrorHeader,
+					ord, de->iOrderClass,
+					getAmpleRecordIDTag(szRecordKey_g,
+							pAmple_in->uiRecordCount));
+				de->iOrderClassMax = de->iOrderClass;
+				}
+				}
+			}
 			rp = pszNext;
-		  }
+			}
 #endif /* hab360 */
 		bDidOrderClass = TRUE;
 		}
 #ifdef hab360
-		rp = rp + strlen(rp);
+/*	    rp = rp + strlen(rp);*/
 #else
 		rp = end;
 #endif
@@ -2232,6 +2247,7 @@ int			bHadInvalidAllomorph  = FALSE;
 int			bIsElsewhereAllomorph = FALSE;
 int			bHadEmptyAllomorph    = FALSE;
 int			bBadAllomorph;
+int			bStoredAllos = FALSE;
 char *			rp;
 char *			end;
 int			i;
@@ -2482,7 +2498,8 @@ if (head)
 		 */
 		pAmple_in->iMorphnameSize = strlen(alp->pszAllomorph) +
 						   bRegularSoundChange ? 1 : 0;
-		if (    (pAmple_in->iMorphnameSize > pAmple_in->iMaxMorphnameLength) &&
+		if (    (pAmple_in->iMorphnameSize >
+			 pAmple_in->iMaxMorphnameLength) &&
 			(pAmple_in->iMorphnameSize <= MAXMORPH) )
 		{
 		/* print error message */
@@ -2698,8 +2715,8 @@ for ( alp = head ; alp ; alp = alp->pNext )
 	if (isAmpleAllomorphSelected(szTempMorphname,
 					 alp->pszAllomorph, pAmple_in))
 #else /* hab3320 */
-	if (isAmpleAllomorphSelected(pszMorphName,
-					 alp->pszAllomorph, pAmple_in))
+/*	if (isAmpleAllomorphSelected(pszMorphName,*/
+/*				     alp->pszAllomorph, pAmple_in))*/
 #endif /* hab3320 */
 		{
 		/*
@@ -2711,6 +2728,7 @@ for ( alp = head ; alp ; alp = alp->pNext )
 					   alp->pAllomorph->pMorpheme->pAllomorphs;
 	alp->pAllomorph->pMorpheme->pAllomorphs = alp->pAllomorph;
 	enter_entry( alp->pszAllomorph, alp->pAllomorph, pAmple_in);
+	bStoredAllos = TRUE;
 	if (   (alp->pAllomorph->pEnvironment != NULL) &&
 		   (alp->pAllomorph->pEnvironment->pMorphCond != NULL) &&
 		   (pAmple_in->ppszMorphNames != NULL))
@@ -2747,8 +2765,21 @@ if (pAmple_in->pLogFP != NULL)
 strncpy( szOutOfMemoryMarker_g, szRecordKey_g, MAXMORPH);
 
 /* free up temporary allocations */
+if (!bStoredAllos)
+	{
+	/* an error occured, making the allomorph storage superflous */
+	for ( alp = head ; alp ; alp = alp->pNext )
+	{
+	if (alp->pAllomorph->pszAllomorph)
+		freeMemory(alp->pAllomorph->pszAllomorph);
+	if (alp->pAllomorph->pszAllomorphID)
+		freeMemory(alp->pAllomorph->pszAllomorphID);
+	if (alp->pAllomorph->pEnvironment)
+		freeAmpleAlloEnvConstraint(alp->pAllomorph->pEnvironment);
+	freeMemory(alp->pAllomorph);
+	}
+	}
 freealist(head, pAmple_in);
-
 } /* end root_create */
 
 /*****************************************************************************
@@ -3232,7 +3263,7 @@ memset(pAmple_io->asAlloList, 0, sizeof(pAmple_io->asAlloList));
  * RETURN VALUE
  *    pointer to an alist structure
  */
-static AmpleAllomorphList *mkalist(ahead, eDictType_in, mptr, pAmple_io)
+static AmpleAllomorphList * mkalist(ahead, eDictType_in, mptr, pAmple_io)
 AmpleAllomorphList *	ahead;	/* pointer to head of alist linked list */
 int			eDictType_in;	/* AMPLE_PFX, AMPLE_IFX,
 					   AMPLE_ROOT, or AMPLE_SFX */
@@ -3240,7 +3271,7 @@ AmpleMorpheme *		mptr;	/* pointer to the morpheme structure
 				 * associated with this allomorph */
 AmpleData * pAmple_io;
 {
-AmpleAllomorphList *alp;
+AmpleAllomorphList * alp;
 
 if (pAmple_io->iAlloListIndex < MAXALPS)
 	alp = &pAmple_io->asAlloList[pAmple_io->iAlloListIndex++];
@@ -3273,9 +3304,9 @@ return( alp );
  * RETURN VALUE
  *    pointer to new head of the strlist linked list
  */
-static StringList *make_root_excep( head, str, rsc)
-StringList *head;
-char *str;
+static StringList * make_root_excep( head, str, rsc)
+StringList * head;
+char * str;
 int rsc;
 {
 register StringList *strlp;
@@ -4013,9 +4044,9 @@ for ( pList = pList_in ; pList ;  )
 	if (pEntry->pEnvironment != NULL)
 	freeAmpleAlloEnvConstraint( pEntry->pEnvironment );
 #else
-	if (    ((pEntry->iMORPHTYPE & AMPLE_ROOT) == 0) &&
-		(pEntry->pEnvironment != NULL) )
-	freeAmpleAlloEnvConstraint( pEntry->pEnvironment );
+/*    if (    ((pEntry->iMORPHTYPE & AMPLE_ROOT) == 0) &&*/
+/*	    (pEntry->pEnvironment != NULL) )*/
+/*	freeAmpleAlloEnvConstraint( pEntry->pEnvironment );*/
 #endif /* hab3318 */
 	freeMemory( pEntry );
 	}

@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for PC-KIMMO
  ***************************************************************************
- * Copyright 1990, 2000 by SIL International.  All rights reserved.
+ * Copyright 1990, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL 10		/* bug fix or other minor change */
-#define DATE "October 3, 2002"	/* date of release version */
+#define PATCHLEVEL 11		/* bug fix or other minor change */
+#define DATE "October 15, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /***************************************************************************
  * EDIT HISTORY
+ * 15-Oct-2002	SRMc - facilitate checking memory allocations
+ * [2.1.11]
  *  3-Oct-2002	SRMc - fix bugs found by Insure++ evaluation.
  * [2.1.10]
  * 20-Jun-2002  hab  - fix to make work with recent Pc-Patr data structure

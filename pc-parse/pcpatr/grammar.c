@@ -426,6 +426,9 @@ static void		storeLogicalConstraints P((
 static int		loadConstraint P((GrammarData * pData));
 static void		grammar_too_big P((size_t uiRequest_in));
 
+static void		freePATRLexicalRule P((PATRLexicalRule * pLexRule_in,
+						   PATRData * pPATR_in));
+
 #ifdef applec
 #pragma segment S_grammar
 #endif
@@ -1421,7 +1424,8 @@ getToken(szToken, MAX_TOKEN_SIZE, pData);
  *  read the context-free Phrase Structure Rule
  */
 pData->pszReservedChars = szReservedCharsWithSlash_m;
-while ((iNextTokenType = getNextToken(szNextToken, MAX_TOKEN_SIZE, pData)) != EOF)
+while ((iNextTokenType = getNextToken(szNextToken, MAX_TOKEN_SIZE, pData))
+	   != EOF)
 	{
 	if (    (iNextTokenType == '.') ||
 		(iNextTokenType == '<') ||
@@ -2044,6 +2048,10 @@ if (pPATR_io->pGrammar != NULL)
 	{
 	pNextDef = pDef->pNext;
 	freeMemory(pDef->pszName);
+	if (pDef->eType == PATR_CONSTRAINT)
+		freePATRLogicalExpression(pDef->u.pExpression, pPATR_io);
+	if (pDef->eType == PATR_LEXICAL_RULE)
+		freePATRLexicalRule(pDef->u.pLexRule, pPATR_io);
 	freeMemory(pDef);
 	}
 	for (   pRestrict = pPATR_io->pGrammar->pRestrictors ;
@@ -3354,7 +3362,7 @@ while (iTokenType != ']')		/* While next not end, load features */
 	iNextTokenType = getNextToken(szNextToken, MAX_TOKEN_SIZE, pData);
 	if (iNextTokenType == '$')        /* If next is reference */
 		{
-		iTokenType = getToken(szToken, MAX_TOKEN_SIZE, pData);	/* Get $ */
+		iTokenType = getToken(szToken, MAX_TOKEN_SIZE, pData);  /* Get $ */
 		refnum = atoi( &szToken[1] );	/* Get reference number */
 		if ((refnum < 1) || (refnum > MAXREF))
 		{
@@ -3394,7 +3402,7 @@ while (iTokenType != ']')		/* While next not end, load features */
 		if ( !tfeatd )		/* Couldn't build disjunction, warn */
 		return loaderr(&sInvalidDisjunction_m, "", pData);
 		if ( tfeatd->pNext )	/* If more than one alternative, */
-		{		/* add a disjunction into pData->pEmbeddedAlts */
+		{	  /* add a disjunction into pData->pEmbeddedAlts */
 		add_embedded_disj(tfeatd, pData->pCurrentPath, pData);
 		}
 		else
@@ -3471,7 +3479,8 @@ while (iTokenType != ']')		/* While next not end, load features */
 		}
 		else			/* Else (atom or next label) */
 		{
-		iNextTokenType = getNextToken(szNextToken, MAX_TOKEN_SIZE, pData);
+		iNextTokenType = getNextToken(szNextToken, MAX_TOKEN_SIZE,
+						  pData);
 		if (iNextTokenType != ':')	/* If atom */
 			{				/* Add label and atom */
 			tfeat = read_atom( szToken, pData->pPATR );
@@ -3530,7 +3539,8 @@ while (iTokenType != ']')		/* While next not end, load features */
 		 */
 		if (strchr( "[]{}<>=", iTokenType) != NULL)
 		{
-		iNextTokenType = getNextToken(szNextToken, MAX_TOKEN_SIZE, pData);
+		iNextTokenType = getNextToken(szNextToken, MAX_TOKEN_SIZE,
+						  pData);
 		sprintf( errtxt, "%c before %s", szToken[0], szNextToken );
 		return( loaderr( &sUnexpectedSoSkipping_m, errtxt, pData) );
 		}
@@ -3538,7 +3548,7 @@ while (iTokenType != ']')		/* While next not end, load features */
 		return( loaderr( &sNotDefinedInLet_m, szToken, pData) );
 		}
 	if ( tfeatd->pNext )		/* If more than one alternative, */
-		{			/* add a disjunction into pData->pEmbeddedAlts */
+		{		  /* add a disjunction into pData->pEmbeddedAlts */
 		add_embedded_disj(tfeatd, pData->pCurrentPath, pData);
 		}
 	else
@@ -3693,8 +3703,8 @@ while (iTokenType != '}')		/* While next not closing brace */
 	tfeat = createPATRNullFeature(pData->pPATR);
 	pData->pTopFeature = tfeat;
 	tfeat = load_feat_struct( tfeat, tfeat, pData);
-	if (pData->pEmbeddedAlts)	/* if there were embedded disjunctions */
-		{		/* unify each alternative with copies of tfeat */
+	if (pData->pEmbeddedAlts)  /* if there were embedded disjunctions */
+		{		   /* unify each alternative with copies of tfeat */
 		newalts = unifyPATRDisjuncts(createPATRFeatureDisjunction(tfeat,
 								 pData->pPATR),
 					 pData->pEmbeddedAlts,
@@ -3735,9 +3745,9 @@ while (iTokenType != '}')		/* While next not closing brace */
 		{			/* Else (next disjunct not a bracketed term) */
 	iNextTokenType = getNextToken(szNextToken, MAX_TOKEN_SIZE, pData);
 	displayNumberedMessage(&sUnexpectedBeforeInPath_m,
-				   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
-				   pData->pszGrammarFilename, pData->uiLineNumber,
-				   szToken[0], szNextToken);
+				   pData->bSilent, pData->bShowWarnings,
+				   pData->pLogFP, pData->pszGrammarFilename,
+				   pData->uiLineNumber, szToken[0], szNextToken);
 	}
 	else
 	{
@@ -3756,14 +3766,15 @@ while (iTokenType != '}')		/* While next not closing brace */
 	if (iTokenType == EOF)
 		{
 		displayNumberedMessage(&sEOFbeforeBrace_m,
-				   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
-				   pData->pszGrammarFilename, pData->uiLineNumber);
+				   pData->bSilent, pData->bShowWarnings,
+				   pData->pLogFP, pData->pszGrammarFilename,
+				   pData->uiLineNumber);
 	/* Possible memory leak */
 		return( (PATRFeatureDisjunction *)NULL );
 	}
 	} /* End while */
 
-pData->pEmbeddedAlts = embedded_alts_stack;	/* restore pData->pEmbeddedAlts */
+pData->pEmbeddedAlts = embedded_alts_stack;  /* restore pData->pEmbeddedAlts */
 pData->pCurrentPath = current_path_stack;
 pData->pCurrentLast = current_last_stack;
 pData->pTopFeature = pTopFeature_stack;
@@ -3812,7 +3823,8 @@ return( result );
  *    path  - path at which disj should be embedded
  *    pGrammar_in - pointer to PATRGrammar structure
  * DESCRIPTION
- *    Add path prefix to each disjunct, then multiply disj into pData->pEmbeddedAlts
+ *    Add path prefix to each disjunct, then multiply disj into
+ *    pData->pEmbeddedAlts.
  * RETURN VALUE
  *    None.
  */
@@ -4016,25 +4028,23 @@ endpath = strchr(pszFeaturePath_in, '>');
 if (endpath == (char *)NULL)
 	{
 	displayNumberedMessage(&sUnterminatedFeaturePath_m,
-			   pPATR_in->bSilent, pPATR_in->bShowWarnings, pPATR_in->pLogFP,
-			   NULL, 0,
-			   pszFeaturePath_in);
+			   pPATR_in->bSilent, pPATR_in->bShowWarnings,
+			   pPATR_in->pLogFP, NULL, 0, pszFeaturePath_in);
 	return((PATRFeature *)NULL);
 	}
 equals = strchr(pszFeaturePath_in, '=');
 if (equals == (char *)NULL)
 	{
 	displayNumberedMessage(&sPathWithoutEqual_m,
-			   pPATR_in->bSilent, pPATR_in->bShowWarnings, pPATR_in->pLogFP,
-			   NULL, 0);
+			   pPATR_in->bSilent, pPATR_in->bShowWarnings,
+			   pPATR_in->pLogFP, NULL, 0);
 	return((PATRFeature *)NULL);
 	}
 if (equals < endpath)
 	{
 	displayNumberedMessage(&sUnexpectedBeforeInPath_m,
-			   pPATR_in->bSilent, pPATR_in->bShowWarnings, pPATR_in->pLogFP,
-			   NULL, 0,
-			   '=', ">");
+			   pPATR_in->bSilent, pPATR_in->bShowWarnings,
+			   pPATR_in->pLogFP, NULL, 0, '=', ">");
 	return((PATRFeature *)NULL);
 	}
 for (	tok = pszFeaturePath_in + 1 ;
@@ -4044,9 +4054,8 @@ for (	tok = pszFeaturePath_in + 1 ;
 if (*tok == '>')
 	{
 	displayNumberedMessage(&sEmptyPath_m,
-			   pPATR_in->bSilent, pPATR_in->bShowWarnings, pPATR_in->pLogFP,
-			   NULL, 0,
-			   pszFeaturePath_in);
+			   pPATR_in->bSilent, pPATR_in->bShowWarnings,
+			   pPATR_in->pLogFP, NULL, 0, pszFeaturePath_in);
 	return((PATRFeature *)NULL);
 	}
 *endpath = NUL;
@@ -4448,7 +4457,7 @@ while ((c = readCharacter(pData)) != EOF)
 	{
 	*pStore++ = c;
 	*pStore++ = readCharacter(pData);
-	if (c2 == '>')
+	if (readNextCharacter(pData) == '>')
 		*pStore++ = readCharacter(pData);
 	goto do_return;		/* Return token */
 	}
@@ -4500,7 +4509,7 @@ while ((c = readCharacter(pData)) != EOF)
 		*pStore++ = c;		/* Store in token */
 	break;				/* Return token */
 	}
-	if ((c == '.') && (isascii(c2) && isspace(c2)) || c2 == EOF)
+	if ((c == '.') && ((isascii(c2) && isspace(c2)) || c2 == EOF))
 	{
 	pData->bStoredPeriod = TRUE;	/* store token for next call */
 	break;
@@ -4513,7 +4522,8 @@ while ((c = readCharacter(pData)) != EOF)
 
 do_return:
 *pStore++ = NUL;			/* Terminate token */
-if ((pszBuffer[1] == NUL) && (strchr(pData->pszReservedChars, pszBuffer[0]) != NULL))
+if ((pszBuffer[1] == NUL) &&
+	(strchr(pData->pszReservedChars, pszBuffer[0]) != NULL))
 	{
 	iTokenType = pszBuffer[0];
 	}
@@ -4987,7 +4997,7 @@ if (iTokenType == '<')
 	}
 	pData->bFirstSymbol = TRUE;
 	pData->pReadingPath = NULL;
-	pRightFS = createPATRNullFeature(pData->pPATR);	/* Start with a null fs */
+	pRightFS = createPATRNullFeature(pData->pPATR);  /* Start with a null fs */
 	read_find_or_create(pRightFS, pData);
 	pRightPath = copy_path( pData->pReadingPath, pData );
 	}
@@ -5017,13 +5027,15 @@ else
 	if (szToken[0] == '!')		/* If default atom (marked !atom) */
 	{
 	displayNumberedMessage(&sNoPriorityUnionDefaultAtom_m,
-				   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
-				   pData->pszGrammarFilename, pData->uiLineNumber, "");
+				   pData->bSilent, pData->bShowWarnings,
+				   pData->pLogFP, pData->pszGrammarFilename,
+				   pData->uiLineNumber, "");
 	return pPriorityUnions_in;
 	}
 	else
 	{
-	pRightFS = createPATRNullFeature(pData->pPATR); /* Start with a null fs */
+	/* Start with a null fs */
+	pRightFS = createPATRNullFeature(pData->pPATR);
 	pRightFS->eType = PATR_ATOM;	/* Make left have it as an atom */
 	pRightFS->u.pszAtom = storedPATRString(szToken, pData->pPATR);
 	}
@@ -5517,9 +5529,9 @@ freeMemory(pExpression_io);
  * RETURN VALUE
  *    none
  */
-static void freeLogicalConstraints(pConstraints_in, pPATR_in)
+static void freeLogicalConstraints(pConstraints_in, pPATR_io)
 PATRConstraint * pConstraints_in;
-PATRData * pPATR_in;
+PATRData * pPATR_io;
 {
 PATRConstraint * pCon;
 PATRConstraint * pNextConstraint;
@@ -5527,7 +5539,7 @@ PATRConstraint * pNextConstraint;
 for ( pCon = pConstraints_in ; pCon ; pCon = pNextConstraint )
 	{
 	pNextConstraint = pCon->pNext;
-	freePATRLogicalExpression( pCon->pExpression, pPATR_in );
+	freePATRLogicalExpression( pCon->pExpression, pPATR_io );
 	freeMemory( pCon );
 	}
 }
@@ -5558,8 +5570,9 @@ switch (pFactor_in->eType)
 							pPATR_in);
 	break;
 	case kFeature:
-	pNewFactor->u.pFeature = copyPATRFeature(pFactor_in->u.pFeature,
-						 pPATR_in);
+	/* Don't use copyPATRFeature because it fails on freePATRFeature! */
+	pNewFactor->u.pFeature = storePATRFeature(pFactor_in->u.pFeature,
+						  pPATR_in);
 	break;
 	default:
 	freeMemory(pNewFactor);
@@ -5720,4 +5733,30 @@ size_t	uiRequest_in;
 {
 /* REVIEW: how much memory leakage might this allow? */
 longjmp(sOutOfMemory_m, uiRequest_in ? uiRequest_in : 1);
+}
+
+/*****************************************************************************
+ * NAME
+ *    freePATRLexicalRule
+ * DESCRIPTION
+ *    free the memory allocated for a PATRLexicalRule
+ * RETURN VALUE
+ *    none
+ */
+static void freePATRLexicalRule(pLexRule_in, pPATR_in)
+PATRLexicalRule * pLexRule_in;
+PATRData * pPATR_in;
+{
+PATRLexicalRule * pRule;
+PATRLexicalRule * pNextRule;
+
+for (pRule = pLexRule_in ; pRule; pRule = pNextRule)
+	{
+	pNextRule = pRule->pNext;
+	if (pRule->pInFeat)
+	freePATRFeature(pRule->pInFeat, pPATR_in);
+	if (pRule->pOutFeat)
+	freePATRFeature(pRule->pOutFeat, pPATR_in);
+	freeMemory( pRule );
+	}
 }

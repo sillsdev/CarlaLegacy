@@ -1,5 +1,5 @@
 # Master Unix makefile for the AMPLE library and program
-# Steve McConnel,  2-Oct-2002
+# Steve McConnel,  7-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -31,7 +31,7 @@ BINDIR = $(exec_prefix)/bin
 SOURCES=ample.c    anal.c     analda.c   atest.y    categ.c    envchk.c   \
 		envpar.c   loadcc.c   loadtb.c   mktest.c   morcla.c   proper.c   \
 		putsd.c    select.c   setsd.c    spreds.l   version.c  writests.c \
-		cmdutil.c  mccpar.c   validch.c  puncla.c   dynstr.c   \
+		cmdutil.c  mccpar.c   validch.c  puncla.c   dynstr.c   anccpar.c \
 		ample.h    ampledef.h stample.h  punclass.h version.h  \
 		fixflex.sed fixyacc.sed
 
@@ -40,7 +40,9 @@ DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
 			AmpleChanges.txt Ample.dsp Amplelib.dsp Xample.dsp ample.rc \
 			Llample.dsp llample.c Ampledll.dsp ampledll.h ampledll.c \
 			ampledll.rc Wllample.dsp wllample.c wllample.h wllample.rc \
-			resource.h Testdll.dsp testdll.cpp
+			resource.h Testdll.dsp testdll.cpp \
+			Ample.vcproj Amplelib.vcproj Xample.vcproj Llample.vcproj \
+			Ampledll.vcproj Wllample.vcproj Testdll.vcproj
 TESTFILES = check.bat xcheck.bat
 TESTS     = ae cq hg sb
 TESTBASES = ad01.ctl ancd.tab intx.ctl if01.dic pf01.dic rt01.dic sf01.dic \
@@ -57,7 +59,7 @@ OBJ  = ample.o
 LIBO = anal.o     analda.o   atest.o    categ.o    envchk.o   envpar.o  \
 	   loadcc.o   loadtb.o   mktest.o   morcla.o   proper.o   select.o  \
 	   setsd.o    spreds.o   version.o  putsd.o    writests.o cmdutil.o \
-	   mccpar.o   validch.o  puncla.o   dynstr.o   anccpar.o
+	   mccpar.o   validch.o  puncla.o   dynstr.o
 
 ample: $(OBJ) $(LIBS)
 	$(CC) -o ample $(OBJ) $(LIBS) @LIBS@
@@ -74,7 +76,7 @@ OBJP  = ample.op
 LIBOP = anal.op     analda.op   atest.op    categ.op   envchk.op   envpar.op \
 		loadcc.op   loadtb.op   mktest.op   morcla.op  proper.op   select.op \
 		setsd.op    spreds.op   version.op  putsd.op   writests.op cmdutil.op \
-		mccpar.op   validch.op  puncla.op   dynstr.op  anccpar.op
+		mccpar.op   validch.op  puncla.op   dynstr.op
 
 ample_p: $(OBJP) $(LIBSP)
 	$(CC) -pg -o ample_p $(OBJP) $(LIBSP) @LIBS@
@@ -155,7 +157,7 @@ spreds.o   spreds.op   spreds.ox   spreds.oxp:   spreds.c   $(HEADERS) atest.h
 version.o  version.op  version.ox  version.oxp:  version.c  $(SOURCES)
 writests.o writests.op writests.ox writests.oxp: writests.c $(HEADERS)
 dynstr.o   dynstr.op   dynstr.ox   dynstr.oxp:   dynstr.c   $(HEADERS)
-anccpar.o  anccpar.op  anccpar.ox  anccpar.oxp:  anccpar.c  $(HEADERS)
+anccpar.ox  anccpar.oxp:  anccpar.c  $(HEADERS)
 #
 #  shared by AMPLE and STAMP
 #

@@ -1,5 +1,5 @@
 # Master Unix makefile for the KTEXT program
-# Steve McConnel, 24-Apr-2000
+# Steve McConnel,  7-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -21,7 +21,7 @@ BINDIR = $(exec_prefix)/bin
 
 SOURCES = ktext.c version.h
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Ktext.dsp
+			Ktext.dsp Ktext.vcproj
 TESTFILES = check.bat
 ENGFILES = eng.ctl eng.txt eng.aaa enga.lll eng.sss engs.lll engintx.ctl \
 		   test.bat mac-eng.ctl

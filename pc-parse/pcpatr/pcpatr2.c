@@ -387,9 +387,13 @@ switch (lookupCmdKeyword( pszArg, loadample_tab, n_loadample, ""))
 		{
 		pszAnalysisFile = setCmdFilename( pszArg, NULL, ".ctl");
 		if (getCmdTakeLevel() != 0)
-		pszAnalysisFile = buildAdjustedFilename(pszAnalysisFile,
+		{
+		char * pszFile = buildAdjustedFilename(pszAnalysisFile,
 							getCmdTakeFile(),
 							NULL );
+		freeMemory(pszAnalysisFile);
+		pszAnalysisFile = pszFile;
+		}
 		if (!bPCPATRSilent_g)
 		fprintf(stderr,
 			"Loading AMPLE control (\"analysis data\") file %s\n",
@@ -418,8 +422,12 @@ switch (lookupCmdKeyword( pszArg, loadample_tab, n_loadample, ""))
 		{
 		pszCodesFile = setCmdFilename( pszArg, NULL, ".tab");
 		if (getCmdTakeLevel() != 0)
-		pszCodesFile = buildAdjustedFilename(pszCodesFile,
+		{
+		char * psz =  buildAdjustedFilename(pszCodesFile,
 							 getCmdTakeFile(), NULL);
+		freeMemory(pszCodesFile);
+		pszCodesFile = psz;
+		}
 		if (!bPCPATRSilent_g)
 		fprintf(stderr,
 			"Loading AMPLE dictionary codes file %s\n",
@@ -448,8 +456,12 @@ switch (lookupCmdKeyword( pszArg, loadample_tab, n_loadample, ""))
 		{
 		pszChangeFile = setCmdFilename( pszArg, NULL, ".tab");
 		if (getCmdTakeLevel() != 0)
-		pszChangeFile = buildAdjustedFilename(pszChangeFile,
+		{
+		char * psz = buildAdjustedFilename(pszChangeFile,
 							  getCmdTakeFile(), NULL);
+		freeMemory(pszChangeFile);
+		pszChangeFile = psz;
+		}
 		if (!bPCPATRSilent_g)
 		fprintf(stderr,
 			   "Loading AMPLE dictionary orthography change file %s\n",
@@ -523,9 +535,13 @@ switch (lookupCmdKeyword( pszArg, loadample_tab, n_loadample, ""))
 		{
 		pszDictionaryFile = setCmdFilename( pszArg, NULL, ".dic");
 		if (getCmdTakeLevel() != 0)
-		pszDictionaryFile = buildAdjustedFilename(pszDictionaryFile,
+		{
+		char * psz = buildAdjustedFilename(pszDictionaryFile,
 							  getCmdTakeFile(),
 							  NULL );
+		freeMemory(pszDictionaryFile);
+		pszDictionaryFile = psz;
+		}
 		if (bPCPATRUnifiedAmpleDictionary_g)
 		{
 		iCount = loadAmpleDictionary(pszDictionaryFile,
@@ -626,6 +642,9 @@ switch (lookupCmdKeyword( pszArg, loadample_tab, n_loadample, ""))
 			case AMPLE_SFX:	eDictionary = AMPLE_ROOT;	break;
 			}
 		}
+		freeMemory(pszDictionaryFile);
+		pszDictionaryFile = NULL;
+
 		pszArg = (char *)tokenizeString(NULL, szWhitespace_g);
 		} while (pszArg != NULL);
 	if (bPCPATRTiming_g)
@@ -686,9 +705,13 @@ switch (lookupCmdKeyword( pszArg, loadample_tab, n_loadample, ""))
 		{
 		pszTextControlFile = setCmdFilename( pszArg, NULL, ".ctl");
 		if (getCmdTakeLevel() != 0)
-		pszTextControlFile = buildAdjustedFilename(pszTextControlFile,
+		{
+		char * psz = buildAdjustedFilename(pszTextControlFile,
 							   getCmdTakeFile(),
 							   NULL );
+		freeMemory(pszTextControlFile);
+		pszTextControlFile = psz;
+		}
 		if (!bPCPATRSilent_g)
 		fprintf(stderr,
 			"Loading AMPLE text input control file %s\n",
@@ -745,7 +768,7 @@ switch (lookupCmdKeyword( pszArg, loadample_tab, n_loadample, ""))
  */
 static void do_load_kimmo()
 {
-register char *arg;
+register char * arg;
 
 arg = (char *)tokenizeString(NULL,szWhitespace_g);
 switch (lookupCmdKeyword( arg, loadkimmo_tab, n_loadkimmo, ""))
@@ -780,7 +803,12 @@ switch (lookupCmdKeyword( arg, loadkimmo_tab, n_loadkimmo, ""))
 
 	arg = setCmdFilename( arg, "rules.rul", ".rul");
 	if (getCmdTakeLevel() != 0)
-		arg = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		{
+		char * pszFile = buildAdjustedFilename( arg, getCmdTakeFile(),
+							NULL);
+		freeMemory(arg);
+		arg = pszFile;
+		}
 	if (bPCPATRTiming_g)
 		startCmdTiming();
 	if (!bPCPATRSilent_g)
@@ -822,7 +850,12 @@ LOAD KIMMO LEXICON [<file>] (default name is lexicon.lex, default type is .lex)\
 		{
 		arg = setCmdFilename( arg, "lexicon.lex", ".lex");
 		if (getCmdTakeLevel() != 0)
-		arg = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		{
+		char * psz = buildAdjustedFilename( arg, getCmdTakeFile(),
+							NULL);
+		freeMemory(arg);
+		arg = psz;
+		}
 		if (bPCPATRTiming_g)
 		startCmdTiming();
 		if (!bPCPATRSilent_g)
@@ -863,7 +896,12 @@ LOAD KIMMO GRAMMAR [<file>] (default name is grammar.grm, default type is .grm)\
 		{
 		arg = setCmdFilename( arg, "grammar.grm", ".grm");
 		if (getCmdTakeLevel() != 0)
-		arg = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		{
+		char * psz = buildAdjustedFilename( arg, getCmdTakeFile(),
+							NULL);
+		freeMemory(arg);
+		arg = psz;
+		}
 		if (bPCPATRTiming_g)
 		startCmdTiming();
 		if (!bPCPATRSilent_g)
@@ -943,7 +981,11 @@ switch (lookupCmdKeyword( arg, load_tab, n_load, ""))
 		}
 	arg = setCmdFilename( arg, "grammar.grm", ".grm");
 	if (getCmdTakeLevel() != 0)
-		arg = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		{
+		char * psz = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		freeMemory(arg);
+		arg = psz;
+		}
 	if (bPCPATRTiming_g)
 		startCmdTiming();
 	if (!bPCPATRSilent_g)
@@ -990,7 +1032,11 @@ switch (lookupCmdKeyword( arg, load_tab, n_load, ""))
 		}
 	arg = setCmdFilename( arg, "lexicon.lex", ".lex");
 	if (getCmdTakeLevel() != 0)
-		arg = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		{
+		char * psz = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		freeMemory(arg);
+		arg = psz;
+		}
 	if (bPCPATRTiming_g)
 		startCmdTiming();
 	if (!bPCPATRSilent_g)
@@ -1003,7 +1049,12 @@ switch (lookupCmdKeyword( arg, load_tab, n_load, ""))
 		{
 		arg = setCmdFilename( sp->pszString, NULL, ".lex");
 		if (getCmdTakeLevel() != 0)
-		arg = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		{
+		char * psz = buildAdjustedFilename( arg, getCmdTakeFile(),
+							NULL);
+		freeMemory(arg);
+		arg = psz;
+		}
 		if (!bPCPATRSilent_g)
 		fprintf(stderr, "Loading lexicon from %s\n", arg);
 		if (loadPATRLexicon(arg, &sPCPATRData_g))
@@ -1049,7 +1100,11 @@ switch (lookupCmdKeyword( arg, load_tab, n_load, ""))
 		}
 	arg = setCmdFilename( arg, "ample.ana", ".ana");
 	if (getCmdTakeLevel() != 0)
-		arg = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		{
+		char * psz = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		freeMemory(arg);
+		arg = psz;
+		}
 	if (bPCPATRTiming_g)
 		startCmdTiming();
 	if (!bPCPATRSilent_g)
@@ -1065,7 +1120,12 @@ switch (lookupCmdKeyword( arg, load_tab, n_load, ""))
 		{
 		arg = setCmdFilename( sp->pszString, NULL, ".ana");
 		if (getCmdTakeLevel() != 0)
-		arg = buildAdjustedFilename( arg, getCmdTakeFile(), NULL);
+		{
+		char * psz = buildAdjustedFilename( arg, getCmdTakeFile(),
+							NULL);
+		freeMemory(arg);
+		arg = psz;
+		}
 		if (!bPCPATRSilent_g)
 		fprintf(stderr,
 			  "Loading AMPLE analysis file %s into internal lexicon\n",

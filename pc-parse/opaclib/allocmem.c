@@ -194,23 +194,25 @@ size_t	size;
 VOIDP p;
 
 if (s == NULL)
+	{
 	p = (VOIDP)malloc(size);
+	}
 else
 	{
 	if (pAllocMemoryDebugFP_m != NULL)
 #ifndef hab3318
-	fprintf(pAllocMemoryDebugFP_m, "f %lx\n", (unsigned long)s);
+	fprintf(pAllocMemoryDebugFP_m, "f %lx r\n", (unsigned long)s);
 #else
-	fprintf(pAllocMemoryDebugFP_m, "f %lu\n", (unsigned long)s);
+	fprintf(pAllocMemoryDebugFP_m, "f %lu r\n", (unsigned long)s);
 #endif /* hab3318 */
 	p = (VOIDP)realloc(s, size);
 	}
 if (pAllocMemoryDebugFP_m != NULL)
 #ifndef hab3318
-	fprintf(pAllocMemoryDebugFP_m, "m %lu %lx\n",
+	fprintf(pAllocMemoryDebugFP_m, "m %lu %lx r\n",
 		(unsigned long)size, (unsigned long)p);
 #else
-	fprintf(pAllocMemoryDebugFP_m, "m %lu %lu\n",
+	fprintf(pAllocMemoryDebugFP_m, "m %lu %lu r\n",
 		(unsigned long)size, (unsigned long)p);
 #endif /* hab3318 */
 if (p == NULL)
@@ -247,11 +249,15 @@ VOIDP p;
 if (p == NULL)
 	return;		/* protect against braindead callers */
 if (pAllocMemoryDebugFP_m != NULL)
+	{
 #ifndef hab3318
 	fprintf(pAllocMemoryDebugFP_m, "f %lx\n", (unsigned long)p);
 #else
 	fprintf(pAllocMemoryDebugFP_m, "f %lu\n", (unsigned long)p);
 #endif /* hab3318 */
+	fflush(pAllocMemoryDebugFP_m);
+	}
+
 if ((trap_address != NULL) && (p == trap_address) && (--trap_count <= 0))
 	trap_found(p);
 if ((p < pLowBound_m) || (p > pHighBound_m))
@@ -348,9 +354,9 @@ int depth = 20;
 unsigned long *p = NULL;
 
 if (ptr == trap_address)
-	printf("allocMemory: trapping on address %lu\n", (unsigned long)ptr);
+	printf("allocMemory: trapping on address %lx\n", (unsigned long)ptr);
 else
-	printf("freeMemory: invalid address %lu\n", (unsigned long)ptr);
+	printf("freeMemory: invalid address %lx\n", (unsigned long)ptr);
 printf("Call frame traceback EIPs: (%d most recent function calls)\n", depth);
 p = (unsigned long *)(&p) + 2;
 while ((p > (unsigned long *)&p) && (*p > 0x2000L) && (*p < 0x90000000L))
@@ -367,17 +373,17 @@ static char	szMessageBuffer_s[128];
 
 if (ptr == trap_address)
 	wsprintf(szMessageBuffer_s,
-		 "allocMemory: trapping on address %lu\n", (unsigned long)ptr);
+		 "allocMemory: trapping on address %lx\n", (unsigned long)ptr);
 else
 	wsprintf(szMessageBuffer_s,
-		 "freeMemory: invalid address %lu\n", (unsigned long)ptr);
+		 "freeMemory: invalid address %lx\n", (unsigned long)ptr);
 MessageBox(0, szMessageBuffer_s, "trap_found()", MB_OK | MB_ICONINFORMATION);
 #else
 if (ptr == trap_address)
-	fprintf(stderr, "allocMemory: trapping on address %lu\n",
+	fprintf(stderr, "allocMemory: trapping on address %lx\n",
 		(unsigned long)ptr);
 else
-	fprintf(stderr, "freeMemory: invalid address %lu\n", (unsigned long)ptr);
+	fprintf(stderr, "freeMemory: invalid address %lx\n", (unsigned long)ptr);
 #endif
 #endif
 abort();

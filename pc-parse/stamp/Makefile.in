@@ -1,5 +1,5 @@
 # Master Unix makefile for the STAMP library and program
-# Steve McConnel,  2-Oct-2002
+# Steve McConnel,  7-Oct-2002
 
 @SET_MAKE@
 srcdir      = @srcdir@
@@ -28,7 +28,7 @@ SOURCES=stamp.c    dtbio.c    lexchg.c   menvck.c   synrsc.c   synth.c    \
 		fixflex.sed fixyacc.sed
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
 			sytest_l.c sytest_y.c sytest_y.h readme.1st StampChanges.txt \
-			Stamp.dsp Stamplib.dsp
+			Stamp.dsp Stamplib.dsp Stamp.vcproj Stamplib.vcproj
 TESTS     = ckea ckno cksw cz
 TESTFILES = check.bat
 TESTBASES = outx.ctl pf01.dic rt01.dic sf01.dic sytr.dec sycd.tab sy.chg \

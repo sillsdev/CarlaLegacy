@@ -534,6 +534,7 @@ extern AmpleTestNode *	makeAmpleTestNode P((int             iOpCode_in,
 						 AmpleTestNode * pRight_in));
 extern AmpleTestNode *	makeAmpleTest P((AmpleTestNode * pTest_in,
 					 char *          pszName_in));
+extern void freeAmpleTestTree P((AmpleTestNode * pTree_io));
 
 /* cmdutil.c */
 extern void	getAmpleCmd		P((const char * pszPrompt_in,

@@ -1,5 +1,7 @@
-/* CMA.C - check memory allocations written by modified MALLOC.C */
+/* CMA.C - check memory allocations written by allocmem.c functions */
 /* this program is a filter: <stdin >stdout */
+
+#undef DEBUG
 
 #include <stdio.h>
 #include <string.h>
@@ -12,15 +14,15 @@ struct allocated
 	unsigned long line;
 	unsigned long type;
 	unsigned long size;
-	struct allocated *link;
+	struct allocated * link;
 	};
 struct treenode
 	{
 	unsigned long key;
-	struct treenode *llink;
-	struct treenode *rlink;
+	struct treenode * llink;
+	struct treenode * rlink;
 	short b;
-	struct allocated *alloc;
+	struct allocated * alloc;
 	};
 struct treenode head = { 0L, NULL, NULL, 0, NULL };
 
@@ -37,9 +39,13 @@ struct treenode head = { 0L, NULL, NULL, 0, NULL };
  * RETURN VALUE
  *    pointer to the node containing the key
  */
-struct treenode *find_node(unsigned long key)
+struct treenode * find_node(unsigned long key)
 {
-struct treenode *p, *q, *r, *s, *t;
+struct treenode * p;
+struct treenode * q = NULL;
+struct treenode * r;
+struct treenode * s;
+struct treenode * t;
 int alpha;
 
 /*a1:*/				/* Initialize. */
@@ -209,10 +215,10 @@ for ( ap = t->alloc ; ap ; ap = ap->link )
 	switch (ap->type)
 	{
 	case MYALLOC:
-		printf("%6lu. malloc: %lu %lu\n", ap->line, ap->size, t->key);
+		printf("%6lu. malloc: %lu %lx\n", ap->line, ap->size, t->key);
 		break;
 	case MYFREE:
-		printf("%6lu. mfree: %lu\n", ap->line, t->key);
+		printf("%6lu. mfree: %lx\n", ap->line, t->key);
 		break;
 	}
 	}
@@ -223,8 +229,6 @@ print_tree(t->rlink);
 #ifdef DEBUG
 void dump_tree(struct treenode *t, int depth)
 {
-struct allocated *ap;
-
 if (t == NULL)
 	{
 	printf("%4d / NULL\n", depth);
@@ -258,19 +262,26 @@ unsigned long num = 0L;
 struct treenode *t;
 struct allocated *ap, *prevap;
 
+unsigned cAdd = 0;
+unsigned cReplace = 0;
+unsigned cRemove = 0;
+
 while (fgets(buffer, 128, stdin) != NULL)
 	{
 	if ((++num % 100) == 0)
 	fprintf(stderr, "%lu\r", num);
-	if (strncmp(buffer, "m: ", 3) == 0)
+	if (strncmp(buffer, "m ", 2) == 0)
 	{
-	size = strtoul(buffer+3, &p, 10);
-	value = strtoul(p, &p, 10);
+	size = strtoul(buffer+2, &p, 10);
+	value = strtoul(p+1, &p, 16);
 add_node:
-	type = MYALLOC;
+	++cAdd;
 	t = find_node(value);
 	if (t == NULL)
+		{
+		fprintf(stderr, "find_node(value = %lu) [1] failed!\n", value);
 		break;
+		}
 	ap = malloc(sizeof(struct allocated));
 	if (ap == NULL)
 		{
@@ -278,22 +289,29 @@ add_node:
 		break;
 		}
 	ap->size = size;
-	ap->type = type;
+	ap->type = MYALLOC;
 	ap->line = num;
 	ap->link = t->alloc;
 	t->alloc = ap;
+#ifdef DEBUG
+	printf("Adding malloc(%8lu) %8lu [%ld]\n", size, value, num);
+#endif
 	}
-	else if (strncmp(buffer, "r: ", 3) == 0)
+	else if (strncmp(buffer, "r ", 2) == 0)
 	{
-	prior = strtoul(buffer+3, &p, 10);
+	prior = strtoul(buffer+2, &p, 16);
 	size = strtoul(p+1, &p, 10);
-	value = strtoul(p+1, &p, 10);
+	value = strtoul(p+1, &p, 16);
 	if (prior == 0L)
 		goto add_node;
 replace_node:
+	++cReplace;
 	t = find_node(prior);
 	if (t == NULL)
+		{
+		fprintf(stderr, "find_node(prior = %lu) failed!\n", value);
 		break;
+		}
 	for ( prevap = NULL, ap = t->alloc ; ap ; ap = ap->link )
 		{
 		if (ap->type != MYFREE)
@@ -303,13 +321,19 @@ replace_node:
 		else
 			prevap->link = ap->link;
 		free(ap);
+#ifdef DEBUG
+		printf("Removing malloc() %8lu [realloc:%ld]\n", prior, num);
+#endif
 		break;
 		}
 		prevap = ap;
 		}
 	t = find_node(value);
 	if (t == NULL)
+		{
+		fprintf(stderr, "find_node(value = %lu) [2] failed!\n", value);
 		break;
+		}
 	ap = malloc(sizeof(struct allocated));
 	if (ap == NULL)
 		{
@@ -317,20 +341,27 @@ replace_node:
 		break;
 		}
 	ap->size = size;
-	ap->type = prior;
+	ap->type = MYALLOC;
 	ap->line = num;
 	ap->link = t->alloc;
 	t->alloc = ap;
+#ifdef DEBUG
+	printf("Adding malloc(%8lu) %8lu [realloc:%ld]\n", size, value, num);
+#endif
 	}
-	else if (strncmp(buffer, "f: ", 3) == 0)
+	else if (strncmp(buffer, "f ", 2) == 0)
 	{
-	value = strtoul(buffer+3, &p, 10);
+	value = strtoul(buffer+2, &p, 16);
 	size = 0L;
 	type = MYFREE;
 remove_node:
+	++cRemove;
 	t = find_node(value);
 	if (t == NULL)
+		{
+		fprintf(stderr, "find_node(value = %lu) [3] failed!\n", value);
 		break;
+		}
 	for ( prevap = NULL, ap = t->alloc ; ap ; ap = ap->link )
 		{
 		if (ap->type != MYFREE)
@@ -340,6 +371,9 @@ remove_node:
 		else
 			prevap->link = ap->link;
 		free(ap);
+#ifdef DEBUG
+		printf("Removing malloc() %8lu [%ld] [free]\n", value, num);
+#endif
 		break;
 		}
 		prevap = ap;
@@ -353,15 +387,21 @@ remove_node:
 		break;
 		}
 		ap->size = size;
-		ap->type = type;
+		ap->type = MYFREE;
 		ap->line = num;
 		ap->link = t->alloc;
 		t->alloc = ap;
+#ifdef DEBUG
+		printf("Adding free(%8lu) [%ld]\n", value, num);
+#endif
 		}
 	}
 	}
 fprintf(stderr, "%lu\n", num);
 print_tree( &head );
+if (cAdd != cRemove)
+	printf("%u alloc, %u realloc, %u free\n", cAdd, cReplace, cRemove);
+
 #ifdef DEBUG
 dump_tree( &head, 0 );
 #endif
