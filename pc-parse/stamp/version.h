@@ -4,12 +4,20 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL 16		/* bug fix or other minor change */
-#define DATE "January 13, 2003"	/* date of release version */
+#define PATCHLEVEL 17		/* bug fix or other minor change */
+#define DATE "May 20, 2003"	/* date of release version */
 #define YEAR "2003"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 20-May-2003  hab  - When matching category and morphname of a root from the
+ * [2.1.17]             ANA file (tsdict.c), did not necessarily set the
+ *                      category of the returned dictionary entry to the
+ *                      category in the ANA file.  This gave some odd results
+ *                      for tools like TonePars which are an ANA filter and
+ *                      also use the dictionary entry (Note: STAMP does not
+ *                      have this characteristic and therefore this problem
+ *                      never showed for STAMP).
  * 13-Jan-2003	hab  - input and output filename buffer sizes were too small;
  * [2.1.16]	         increased to 300 (from 100)
  * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library

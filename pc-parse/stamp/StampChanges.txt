@@ -1,10 +1,13 @@
 STAMP CHANGE HISTORY
 
+2.1.17b (20-May-2003)
+--------------------
+1. Some minor internal code changes (nothing visible to the user)
+
 2.1.16b (13-Jan-2003)
 --------------------
 1. The input and output filename buffer sizes were too small; increased them
    to 300 (from 100).
-
 
 2.1.15b (16-Oct-2002)
 --------------------

@@ -1445,6 +1445,14 @@ for (	mp = (StampMorphemeList *)findDataInTrie(pStamp_in->pDictionary,
 			/*
 			 *  matched root type and category
 			 */
+#ifndef hab2117
+			/* make sure we pass out the right category!
+			 * Note: This is not important for STAMP, but is for tools
+			 * like TonePars which are an ANA filter and also use the
+			 * dictionary entry.
+			 */
+			mp->m.iFromCategory = mp->m.iToCategory = uiCategory_in;
+#endif /* hab2117 */
 			return &(mp->m);
 			}
 		}
