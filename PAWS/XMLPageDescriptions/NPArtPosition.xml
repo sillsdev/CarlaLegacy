@@ -2,30 +2,26 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPArtPosition">
-	<title level="2">Nominal Phrase - Article &amp; Demonstrative Position and Agreement Features</title>
+	<title level="2">Nominal Phrase - Articles &amp; Demonstratives: Position and Agreement Features</title>
 	<introduction>Now we are ready to build the next part of the phrase structure tree.  Look at the examples of noun phrases with articles and demonstratives that you keyed in (repeated below).</introduction>
 	<form section="np">
 		<textBox id="NPArtPosExample" dataItem="example"/>
-		<radioGroup>
-			<groupName dataItem="artAndDem" default="no">RNPArtAndDem</groupName>
-			<prompt>Does your language have articles and demonstratives?</prompt>
-			<radio id="NPArtAndDemNo" dataValue="no">No, neither one</radio>
-			<radio id="NPArtAndDemArt" dataValue="article">Only articles, no demonstratives</radio>
-			<radioGroup id="NPArtAndDemArtPosTable" show="swNPArtAndDemArt">
+<instruction id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Since your language does not have articles or demonstratives expressed as separate words, we do not need to determine a syntactic position for them.  You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the secion on possessors.</instruction>
+				 <radioGroup id="NPArtAndDemArtPosTable" show="swNPArtAndDemArt">
 				<groupName dataItem="artPos" default="unknown" position="yesSpec">RNPArtAndDemArtPos</groupName>
 				<prompt>Where does the article occur with respect to the noun?</prompt>
 				<radio id="NPArtAndDemArtPosBefore" dataValue="before">Before</radio>
 				<radio id="NPArtAndDemArtPosAfter" dataValue="after">After</radio>
 				<radio id="NPArtAndDemArtPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
 				<radio id="NPArtAndDemArtPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
-			</radioGroup>
-			<radioGroup id="NPArtAndDemArtPosEitherorBothTable" show="swNPArtAndDemArtPosEitherorBoth">
+		   <radioGroup id="NPArtAndDemArtPosEitherorBothTable" show="swNPArtAndDemArtPosEitherorBoth">
 				<groupName dataItem="artEither" default="unrestricted">RNPArtAndDemArtPosEitherorBoth</groupName>
 				<prompt>Can all the articles appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemArtPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 				<radio id="NPArtAndDemArtPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
-			<radioGroup id="NPArtAndDemArtRequiredTable" show="swNPArtAndDemArt">
+		   </radioGroup>
+   <radioGroup id="NPArtAndDemArtRequiredTable" show="swNPArtAndDemArt">
 				<groupName dataItem="artRequired" default="no">RNPArtAndDemArtRequired</groupName>
 				<prompt>Is an article required to be present in every nominal phrase?</prompt>
 				<radio id="NPArtAndDemArtRequiredNo" dataValue="no">No, an article is always optional</radio>
@@ -40,7 +36,7 @@
 					<radio id="NPArtAndDemArtPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="NPArtAndDemDem" dataValue="demonstrative">Only demonstratives, no articles</radio>
+
 			<radioGroup id="NPArtAndDemDemPosTable" show="swNPArtAndDemDem">
 				<groupName dataItem="demPos" default="unknown" position="yesSpec">RNPArtAndDemDemPos</groupName>
 				<prompt>Where does the demonstrative occur with respect to the noun?</prompt>
@@ -48,13 +44,14 @@
 				<radio id="NPArtAndDemDemPosAfter" dataValue="after">After</radio>
 				<radio id="NPArtAndDemDemPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
 				<radio id="NPArtAndDemDemPosBothSides" dataValue="both">Either side, or on both sides at the same time</radio>
-			</radioGroup>
+
 			<radioGroup id="NPArtAndDemDemPosEitherorBothTable" show="swNPArtAndDemDemPosEitherorBoth">
 				<groupName dataItem="demEither" default="unrestricted">RNPArtAndDemDemPosEitherorBoth</groupName>
 				<prompt>Can all the demonstratives appear on either side of the noun?</prompt>
 				<radio id="NPArtAndDemDemPosEitherSideUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 				<radio id="NPArtAndDemDemPosEitherSideRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
+  </radioGroup>
 			<radioGroup id="NPArtAndDemDemRequiredTable" show="swNPArtAndDemDem">
 				<groupName dataItem="demRequired" default="no">RNPArtAndDemDemRequired</groupName>
 				<prompt>Is a demonstrative required to be present in every nominal phrase?</prompt>
@@ -70,7 +67,7 @@
 					<radio id="NPArtAndDemDemPosBothRequiredBoth" dataValue="both">Both positions are always required</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="NPArtAndDemBoth" dataValue="both">Yes, both articles and demonstratives</radio>
+
 			<radioGroup id="NPArtAndDemBothTable" show="swNPArtAndDemBoth">
 				<groupName dataItem="artBothCooccur" default="no">RNPArtAndDemBoth</groupName>
 				<prompt>Do articles and demonstratives co-occur in the same nominal phrase?</prompt>
@@ -164,7 +161,7 @@
 					</radioGroup>
 				</radioGroup>
 			</radioGroup>
-		</radioGroup>
+
 		<instruction id="NPArtDemEitherSideRestrictedInstruction" show="swNPArtDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any articles or demonstratives which can occur on either side.</instruction>
 		<instruction id="NPArtEitherSideRestrictedInstruction" show="swNPArtEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any articles which can occur on either side.</instruction>
 		<instruction id="NPDemEitherSideRestrictedInstruction" show="swNPDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any demonstratives which can occur on either side.</instruction>
@@ -226,7 +223,9 @@ To handle class marking and agreement:
 				<li>Mark the<span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt"> articles</span>
 					<span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span>
 					<span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 99.</li>
-				<li>It may be the case that the same affixes that mark the class number on articles and demonstratives (and possibly adjectives too) also mark the class number on nouns.  If this is the case in your language, simply add the class feature to the affixes, and all the words will automatically come from the morphological parser with the class number marked.</li>
+				<li>It may be the case that the same affixes that mark the class number on<span id="NPArtOnlyClass1Span" show="swNPArtAndDemArt"> articles</span>
+					<span id="NPDemOnlyClass1Span" show="swNPArtAndDemDem">demonstratives</span>
+					<span id="NPArtAndDemClass1Span" show="swNPArtAndDemBoth">articles and demonstratives </span>(and possibly adjectives too) also mark the class number on nouns.  If this is the case in your language, simply add the class feature to the affixes, and all the words will automatically come from the morphological parser with the class number marked.</li>
 				<li>Any cases where<span id="NPArtOnlyClass2Span" show="swNPArtAndDemArt"> articles</span>
 					<span id="NPDemOnlyClass2Span" show="swNPArtAndDemDem">demonstratives</span>
 					<span id="NPArtAndDemClass2Span" show="swNPArtAndDemBoth">articles, demonstratives </span>or nouns do not have an affix which marks the class will require marking of the class feature on the particular lexical item in the lexicon.</li>
@@ -234,15 +233,18 @@ To handle class marking and agreement:
 		</instruction>
 		<br/>
 		<buttons>
-			<button id="NPArtPosBack" value="Back" goto="NPArtCase.htm"/>
+			<button id="NPArtPosBack" value="Back" goto="NPArtDem.htm"/>
 			<button id="NPArtPosNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
+<showWhen id="swNPArtAndDemNo">
+	<whenValue element="np" attr="artAndDem" value="no"/>
+</showWhen>
 	<showWhen id="swNPArtAndDemArt">
-		<whenRadio button="NPArtAndDemArt"/>
+		<whenValue element="np" attr="artAndDem" value="article"/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemArtPosEitherorBoth">
-		<whenRadio button="NPArtAndDemArt"/>
+	<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemArtPosEitherSide"/>
@@ -251,7 +253,7 @@ To handle class marking and agreement:
 		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
-		<whenRadio button="NPArtAndDemArt"/>
+		 <whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenRadio button="NPArtAndDemArtPosBothSides"/>
 		<and/>
@@ -262,17 +264,17 @@ To handle class marking and agreement:
 		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemArtPosBothRequiredMass">
-		<whenRadio button="NPArtAndDemArt"/>
+		  <whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenRadio button="NPArtAndDemArtPosBothSides"/>
 		<and/>
 		<whenRadio button="NPArtAndDemArtRequiredMass"/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemDem">
-		<whenRadio button="NPArtAndDemDem"/>
+		   <whenValue element="np" attr="artAndDem" value="demonstrative"/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemDemPosEitherorBoth">
-		<whenRadio button="NPArtAndDemDem"/>
+			 <whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemDemPosEitherSide"/>
@@ -281,7 +283,7 @@ To handle class marking and agreement:
 		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemDemPosBothSidesRequiredMassorYes">
-		<whenRadio button="NPArtAndDemDem"/>
+			  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
 		<whenRadio button="NPArtAndDemDemPosBothSides"/>
 		<and/>
@@ -292,17 +294,17 @@ To handle class marking and agreement:
 		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemDemPosBothRequiredMass">
-		<whenRadio button="NPArtAndDemDem"/>
+			<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
 		<whenRadio button="NPArtAndDemDemPosBothSides"/>
 		<and/>
 		<whenRadio button="NPArtAndDemDemRequiredMass"/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemBoth">
-		<whenRadio button="NPArtAndDemBoth"/>
+			<whenValue element="np" attr="artAndDem" value="both"/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemBothCooccurNo">
-		<whenRadio button="NPArtAndDemBoth"/>
+				<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
 		<whenRadio button="NPArtAndDemBothCooccurNo"/>
 	</showWhen>
@@ -334,7 +336,7 @@ To handle class marking and agreement:
 		<whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemBothCooccurYes">
-		<whenRadio button="NPArtAndDemBoth"/>
+				   <whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
 	</showWhen>
@@ -393,17 +395,17 @@ To handle class marking and agreement:
 		<whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
 	</showWhen>
 	<showWhen id="swNPArtEitherSideRestricted">
-		<whenRadio button="NPArtAndDemArt"/>
+				 <whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenRadio button="NPArtAndDemArtPosEitherSideRestricted"/>
 	</showWhen>
 	<showWhen id="swNPDemEitherSideRestricted">
-		<whenRadio button="NPArtAndDemDem"/>
+				<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
 		<whenRadio button="NPArtAndDemDemPosEitherSideRestricted"/>
 	</showWhen>
 	<showWhen id="swNPArtDemEitherSideRestricted">
-		<whenRadio button="NPArtAndDemBoth"/>
+				 <whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemBothCooccurYes"/>
@@ -423,31 +425,31 @@ To handle class marking and agreement:
 	</showWhen>
 	<showWhen id="swNPArtAgreementNumberYes">
 		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
+				  <whenValue element="np" attr="artAndDem" value="no"/>
 		<and/>
 		<whenValue element="np" attr="agreeNumber" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPArtAgreementAnimacyYes">
 		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
+			  <whenValue element="np" attr="artAndDem" value="no"/>
 		<and/>
 		<whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
 	</showWhen>
 	<showWhen id="swNPArtAgreementGenderYes">
 		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
+			   <whenValue element="np" attr="artAndDem" value="no"/>
 		<and/>
 		<whenValue element="np" attr="agreeOther" value="yesGender"/>
 	</showWhen>
 	<showWhen id="swNPArtAgreementClassYes">
 		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
+			<whenValue element="np" attr="artAndDem" value="no"/>
 		<and/>
 		<whenValue element="np" attr="agreeOther" value="yesClass"/>
 	</showWhen>
 	<showWhen id="swNPArtDemMassYes">
 		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
+			   <whenValue element="np" attr="artAndDem" value="no"/>
 		<and/>
 		<openParen/>
 		<whenRadio button="NPArtAndDemArtRequiredMass"/>

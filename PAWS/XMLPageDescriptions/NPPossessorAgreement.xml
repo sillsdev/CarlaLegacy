@@ -3,11 +3,11 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPPossessorAgreement">
 	<title level="2">Nominal Phrase - Possessor Agreement</title>
-		<introduction>Possessor agreement normally comes in two basic forms:
+	<introduction>Possessor agreement normally comes in two basic forms:
 <ul>
-				<li>An affix that occurs on alienably possessed nouns to indicate that they are possessed and therefore must have a possessor in the nominal phrase.  Inalienably possessed nouns do not take any marking, but must always have a possessor.  These include, but are not limited to, kinship terms and body parts.</li>
-				<li>An affix that agrees with the possessor (or possibly expresses the possessor by itself).</li>
-			</ul>
+			<li>An affix that occurs on alienably possessed nouns to indicate that they are possessed and therefore must have a possessor in the nominal phrase.  Inalienably possessed nouns do not take any marking, but must always have a possessor.  These include, but are not limited to, kinship terms and body parts.</li>
+			<li>An affix that agrees with the possessor (or possibly expresses the possessor by itself).</li>
+		</ul>
 We will deal with each type in turn.
 		</introduction>
 	<form section="np">
@@ -83,7 +83,7 @@ We will deal with each type in turn.
 				</featureRow>
 			</featureChart>
 		</instruction>
-		<instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes">Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="6">Pronouns and Proper Names</section>.</instruction>
+		<instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes">Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Pronouns</section>.</instruction>
 		<instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If your language has articles and/or demonstratives (and you followed instructions), any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.</instruction>
 		<radioGroup id="NPPossNounAgrKeyedTable" show="swNPArtAndOrDem">
 			<groupName dataItem="possNounAgrKeyed" default="yes">RNPPossNounAgrKeyed</groupName>
@@ -92,9 +92,10 @@ We will deal with each type in turn.
 			<radio id="NPPossNounAgrKeyedNo" dataValue="no">No, I still need to work on that</radio>
 		</radioGroup>
 		<instruction id="NPPossNounAgrKeyedYesInstruction" show="swNPPossNounAgrKeyedYes">Great! You can continue on.</instruction>
-	   <instruction id="NPPossNounAgrArtAndDemNeitherInstruction" show="swNPArtAndDemNeither">Since your language does not have articles or demonstratives, you did not add any agreement marking on nouns for number, gender, animacy and/or class  in the section on Articles and Demonstratives.  You need to do it now.</instruction>
+		<instruction id="NPPossNounAgrArtAndDemNeitherInstruction" show="swNPArtAndDemNeither">Since your language does not have articles or demonstratives, you did not add any agreement marking on nouns for number, gender, animacy and/or class  in the section on Articles and Demonstratives.  You need to do it now.</instruction>
 		<instruction id="NPPossNounAgrKeyedNoInstruction" show="swNPPossNounAgrKeyedNo">The instructions relevant to your language are given here.
-<br/> <br/>
+<br/>
+			<br/>
 			<span id="NPPossNounAgrNoneInstruction" show="swNPArtAgreementNone">Since your language does not have any agreement marking, you can continue on.</span>
 			<span id="NPPossNounAgrNumberInstruction" show="swNPArtAgreementNumberYes">
 To handle the number agreement, we will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
@@ -132,11 +133,14 @@ To handle class marking and agreement, in the lexicon:
 	</form>
 	<showWhen id="swNPPossNounAgrKeyedYes">
 		<whenRadio button="NPPossNounAgrKeyedYes"/>
-<and/> <not/> <whenValue element="np" attr="artAndDem" value="no"></whenValue>
+		<and/>
+		<not/>
+		<whenValue element="np" attr="artAndDem" value="no"/>
 	</showWhen>
 	<showWhen id="swNPPossNounAgrKeyedNo">
 		<whenRadio button="NPPossNounAgrKeyedNo"/>
-<or/> <whenValue element="np" attr="artAndDem" value="no"></whenValue>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="no"/>
 	</showWhen>
 	<showWhen id="swNPArtAgreementNone">
 		<whenValue element="np" attr="agreeNumber" value="no"/>
@@ -172,11 +176,11 @@ To handle class marking and agreement, in the lexicon:
 	<showWhen id="swNPPossAgrYes">
 		<whenRadio button="NPPossAgrYes"/>
 	</showWhen>
-   <showWhen id="swNPArtAndOrDem">
-  <not/>       <whenValue element="np" attr="artAndDem" value="no"/>
-</showWhen>
-  <showWhen id="swNPArtAndDemNeither">
+	<showWhen id="swNPArtAndOrDem">
+		<not/>
 		<whenValue element="np" attr="artAndDem" value="no"/>
-</showWhen>
-
+	</showWhen>
+	<showWhen id="swNPArtAndDemNeither">
+		<whenValue element="np" attr="artAndDem" value="no"/>
+	</showWhen>
 </page>

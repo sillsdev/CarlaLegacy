@@ -2,18 +2,46 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronMain">
-	<title>Pronouns and Proper Names</title>
-<introduction>Let's consider proper names first.  In English, some names can stand alone, like <example>Sue</example> or <example>Russia</example>.  Others are like compound nouns, such as <example>George Washington</example>.  Proper names may also contain articles and/or prepositional phrases, as in <example>the United States of America</example>.  Many languages require an article before a name.  Appositives, possibly including a possessor, as in <example>my son, David</example>, also occur.  In addition, proper names can be modified by adjectives and relative clauses, as in <example>the good, old USA</example> or <example>the Susan Welch that I know</example>.</introduction>
+	<title>Pronouns</title>
+  <introduction>THIS SECTION NEEDS REWORKING!!! We can start by adding all the relevant case and agreement features in the lexicon.  Personal pronouns normally have either more than or the same number of these features as nouns have.</introduction>
 	<form section="pron">
-<prompt>Key your examples with simple and compound proper names, or those including articles,	adjectives, and/or possessors here:</prompt>
-<textBox id="PronPNExample" dataItem="example"/>
-<prompt>Key your examples of proper names with prepositional phrases here:</prompt>
-<textBox id="PronPNPPExample" dataItem="ppExample"/>
-<prompt>Key your examples of proper names modified by relative clauses here:</prompt>
-<textBox id="PronPNRelClExample" dataItem="relClExample"/>
+		<radioGroup>
+			<groupName dataItem="pronCase" default="no">RPronCase</groupName>
+			<prompt>Beginning with case, does your language have different sets of pronouns for different positions in the sentence?</prompt>
+			<radio id="PronCaseNo" dataValue="no">No, the exact same set of pronouns is used in subject, object, and possessor position</radio>
+			<radio id="PronCaseYes" dataValue="yes">Yes, either completely different sets, or just differences in a few forms</radio>
+			<radioGroup id="PronCaseYesTable">
+				<groupName dataItem="pronCaseType" default="nomAcc">RPronCaseType</groupName>
+				<prompt>Do the subjects of intransitive verbs and the subjects of transitive verbs use the same pronouns?</prompt>
+				<radio id="PronCaseTypeNomAcc" dataValue="nomAcc">Yes, and direct objects and possessors each have separate sets</radio>
+				<radio id="PronCaseTypeErg" dataValue="erg">No, the subjects of intransitives and direct objects use the same set of pronouns, but the subjects of transitive verbs use a different set</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="PronCaseTypeNomAccInstruction">Your language has a nominative-accusative case system.  In the lexicon:
+<ul>
+				<li>Add the feature <feature>nominative</feature> to all the pronouns that occur in subject position.</li>
+				<li>Add the feature <feature>accusative</feature> to all the pronouns that occur in object position.</li>
+				<li>Add the feature <feature>genitive</feature> to all the pronouns that occur in possessor position.</li>
+				<li>If a particular pronoun can show up in any position, do not add any feature.</li>
+				<li>If a particular pronoun can occur as a subject or as a possessor but not as the object of a verb or pre/post-position, add the feature <feature>-accusative</feature>.</li>
+				<li>If a particular pronoun can occur as a subject or as an object but not as a possessor, add the feature <feature>-genitive</feature>.</li>
+				<li>If a particular pronoun may occur as an object or as a possessor, but not as a subject, add the feature <feature>-nominative</feature>.</li>
+			</ul>
+		</instruction>
+		<instruction id="PronCaseTypeErgInstruction">Your language has an ergative-absolutive case system.  In the lexicon:
+<ul>
+				<li>Add the feature <feature>ergative</feature> to all the pronouns that occur in subject position for transitive verbs.</li>
+				<li>Add the feature <feature>absolutive</feature> to all the pronouns that occur in direct object position and in subject position for intransitive verbs.</li>
+				<li>Add the feature <feature>genitive</feature> to all the pronouns that occur in possessor position.</li>
+				<li>If a particular pronoun can show up in any position, do not add any feature.</li>
+				<li>If a particular pronoun can occur as a subject of transitive verbs or as a possessor but not as an object or as the subject of an intransitive verb, add the feature <feature>-absolutive</feature>.</li>
+				<li>If a particular pronoun can occur as a subject of any verb or as an object but not as a possessor, add the feature <feature>-genitive</feature>.</li>
+				<li>If a particular pronoun may occur as an object or the subject of an intransitive verb or as a possessor, but not as the subject of a transitive verb, add the feature <feature>-ergative</feature>.</li>
+			</ul>
+		</instruction>
 		<buttons>
-			<button id="PronPNBack" value="Back" goto="Contents.htm"/>
-			<button id="PronPNNext" value="Next" goto="PronPN2.htm"/>
+			<button id="PronMainBack" value="Back" goto="Contents.htm"/>
+			<button id="PronMainNext" value="Next" goto="PronAgr.htm"/>
 		</buttons>
 	</form>
 </page>

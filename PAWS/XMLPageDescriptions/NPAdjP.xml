@@ -28,32 +28,39 @@
 				<radio id="NPAdjPPosEitherSideEitherRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
 		</radioGroup>
-<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Languages which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.
-<br/>
-Further, some languages of the latter type have an overt affix which marks the genitive case on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case, though the case marking will not be overt on the highest modifier in the nominal phrase. </introduction>
-<radioGroup id="NPAdjPCaseChangeTable" show="swNPPossNounCaseChangeYes">
-	<groupName dataItem="adjpCaseChange" default="no">RNPAdjPCaseChange</groupName>
-	<prompt>
+		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Languages which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.
+<br/> <br/>
+Further, some languages of the latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase. </introduction>
+		<radioGroup id="NPAdjPCaseChangeTable" show="swNPPossNounCaseChangeYes">
+			<groupName dataItem="adjpCaseChange" default="no">RNPAdjPCaseChange</groupName>
+			<prompt>
 Does the presence of a adjective change the case marking on the head noun to match the normal case of a possessor, with or without a possessor also present?</prompt>
-	<radio id="NPAdjPCaseChangeNo" dataValue="no">No, the case of the head noun only changes when a possessor is present, though in that situation an intervening adjective may/must also carry that case</radio>
-   <radio id="NPAdjPCaseChangeYes" dataValue="yes">Yes, the case of the head noun changes to match the normal case of a possessor even if just an adjectival mofifier is present</radio>
-</radioGroup>
-<radioGroup id="NPAdjPCaseAffixTable" show="swNPAdjPCaseChangeYes">
-	<groupName dataItem="adjpCaseAffix" default="no">RNPAdjPCaseAffix</groupName>
-	<prompt>
-Is there an overt case affix that marks the genitive case on the head noun which, when present, indicates that there must be either an adjective or a possessor in that nominal phrase?</prompt>
-	<radio id="NPAdjPCaseAffixNo" dataValue="no">No, genitive case marking is not handled in this distinctive way</radio>
-   <radio id="NPAdjPCaseAffixYes" dataValue="yes">Yes, when the overt genitive affix is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  (If the adjective is mared with this genitive affix then another adjective and/or a possessor must also be present.) </radio>
-</radioGroup>
-<br/>
+			<radio id="NPAdjPCaseChangeNo" dataValue="no">No, the case of the head noun only changes when a possessor is present, though in that situation an intervening adjective may/must also carry that case</radio>
+			<radio id="NPAdjPCaseChangeYes" dataValue="yes">Yes, the case of the head noun changes to match the normal case of a possessor even if just an adjectival mofifier is present</radio>
+			<radioGroup id="NPAdjPCaseAffixTable" show="swNPAdjPCaseChangeYes">
+				<groupName dataItem="adjpCaseAffix" default="no">RNPAdjPCaseAffix</groupName>
+				<prompt>
+Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">genitive</span> <span id="NPAdjPCaseAffixErgPrompt" show="swNPPossCaseErg">ergative</span> <span id="NPAdjPCaseAffixAbsPrompt" show="swNPPossCaseAbs">absolutive</span>case (the normal case of possessors) on the head noun which, when present, indicates that there must be either an adjective or a possessor in that nominal phrase?</prompt>
+				<radio id="NPAdjPCaseAffixNo" dataValue="no">No, <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">genitive</span> <span id="NPAdjPCaseAffixErgNoSpan" show="swNPPossCaseErg">ergative</span> <span id="NPAdjPCaseAffixAbsNoSpan" show="swNPPossCaseAbs">absolutive</span>case marking is not handled in this distinctive way</radio>
+				<radio id="NPAdjPCaseAffixYes" dataValue="yes">Yes, when the overt <span id="NPAdjPCaseAffixGenYesSpan" show="swNPPossCaseGen">genitive</span> <span id="NPAdjPCaseAffixErgYesSpan" show="swNPPossCaseErg">ergative</span> <span id="NPAdjPCaseAffixAbsYesSpan" show="swNPPossCaseAbs">absolutive</span>affix is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  (If the adjective is marked with this <span id="NPAdjPCaseAffixGenYesSpan1" show="swNPPossCaseGen">genitive</span> <span id="NPAdjPCaseAffixErgYesSpan1" show="swNPPossCaseErg">ergative</span> <span id="NPAdjPCaseAffixAbsYesSpan1" show="swNPPossCaseAbs">absolutive</span>affix then another adjective and/or a possessor must also be present.) </radio>
+				<radioGroup id="NPAdjPCaseAffixTypeTable" show="swNPAdjPCaseAffixYes">
+					<groupName dataItem="adjpCaseAffixType" default="suffix">RNPAdjPCaseAffixType</groupName>
+					<prompt>How does the case affix attach to the head noun and other modifiers?</prompt>
+					<radio id="NPAdjPCaseAffixYesSuffix" dataValue="suffix">As a suffix</radio>
+					<radio id="NPAdjPCaseAffixYesPrefix" dataValue="prefix">As a prefix</radio>
+				</radioGroup>
+			</radioGroup>
+		</radioGroup>
+		<br/>
 		<radioGroup>
 			<groupName dataItem="adjpAgree" default="no">RNPAdjPAgree</groupName>
 			<prompt>Do adjectives carry any marking to agree with the noun they modify?</prompt>
 			<radio id="NPAdjPAgreeNo" dataValue="no">No</radio>
 			<radio id="NPAdjPAgreeYes" dataValue="yes">Yes</radio>
 		</radioGroup>
-<br/>
-<instruction id="NPAdjPCaseAffixYesInstruction" show="swNPAdjPCaseAffixYes">In the lexicon, key either the feature <feature>genitive_prefix</feature> or <feature>genitive_suffix</feature> on the phrase-delimiting affix which marks genitive case, depending on whether it is a prefix or a suffix in your language.</instruction>
+		<br/>
+		<instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen"><feature>genitive_prefix</feature></span> <span id="NPAdjPCaseAffixErgPrefixSpan" show="swNPPossCaseErg"><feature>ergative_prefix</feature></span> <span id="NPAdjPCaseAffixAbsPrefixSpan" show="swNPPossCaseAbs"><feature>absolutive_prefix</feature></span>on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenPrefixSpan1" show="swNPPossCaseGen">genitive</span> <span id="NPAdjPCaseAffixErgPrefixSpan1" show="swNPPossCaseErg">ergative</span> <span id="NPAdjPCaseAffixAbsPrefixSpan1" show="swNPPossCaseAbs">absolutive</span>case.</instruction>
+		<instruction id="NPAdjPCaseAffixYesSuffixInstruction" show="swNPAdjPCaseAffixYesSuffix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenSuffixSpan" show="swNPPossCaseGen"><feature>genitive_suffix</feature></span> <span id="NPAdjPCaseAffixErgSuffixSpan" show="swNPPossCaseErg"><feature>ergative_suffix</feature></span> <span id="NPAdjPCaseAffixAbsSuffixSpan" show="swNPPossCaseAbs"><feature>absolutive_suffix</feature></span>on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive</span> <span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative</span> <span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive</span>case.</instruction>
 		<instruction id="NPAdjPPosEitherSideEitherRestrictedInstruction" show="swNPAdjPPosEitherSideEitherRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
 		<br/>
 		<instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
@@ -88,17 +95,41 @@ To handle class marking and agreement, in the lexicon:
 			<button id="NPAdjPNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
-<showWhen id="swNPAdjPCaseChangeYes">
-	<whenRadio button="NPAdjPCaseChangeYes"></whenRadio>
+	<showWhen id="swNPAdjPCaseChangeYes">
+		<whenRadio button="NPAdjPCaseChangeYes"/>
+	</showWhen>
+	<showWhen id="swNPAdjPCaseAffixYes">
+		<whenRadio button="NPAdjPCaseAffixYes"/>
+		<and/>
+		<whenRadio button="NPAdjPCaseChangeYes"/>
+	</showWhen>
+	<showWhen id="swNPAdjPCaseAffixYesPrefix">
+		<whenRadio button="NPAdjPCaseAffixYesPrefix"/>
+		<and/>
+		<whenRadio button="NPAdjPCaseAffixYes"/>
+		<and/>
+		<whenRadio button="NPAdjPCaseChangeYes"/>
+	</showWhen>
+	<showWhen id="swNPAdjPCaseAffixYesSuffix">
+		<whenRadio button="NPAdjPCaseAffixYesSuffix"/>
+		<and/>
+		<whenRadio button="NPAdjPCaseAffixYes"/>
+		<and/>
+		<whenRadio button="NPAdjPCaseChangeYes"/>
+	</showWhen>
+	<showWhen id="swNPPossNounCaseChangeYes">
+		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
+	</showWhen>
+<showWhen id="swNPPossCaseGen">
+	<whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
 </showWhen>
-<showWhen id="swNPAdjPCaseAffixYes">
-	<whenRadio button="NPAdjPCaseAffixYes"></whenRadio>
-<and/>   <whenRadio button="NPAdjPCaseChangeYes"></whenRadio>
+<showWhen id="swNPPossCaseErg">
+	<whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
 </showWhen>
-<showWhen id="swNPPossNounCaseChangeYes">
-	<whenValue element="np" attr="possNounCaseChange" value="yes"></whenValue>
+<showWhen id="swNPPossCaseAbs">
+	<whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
 </showWhen>
-   <showWhen id="swNPAdjPPosEitherSide">
+	<showWhen id="swNPAdjPPosEitherSide">
 		<whenRadio button="NPAdjPPosEitherSide"/>
 	</showWhen>
 	<showWhen id="swNPAdjPPosEitherSideEitherRestricted">

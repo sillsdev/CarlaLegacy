@@ -3,10 +3,19 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPDegree">
 	<title level="2">Adverbs and AdvP - Degree Words</title>
+<instruction>Look again at the examples you have keyed for the various types of adverb phrases, repeated here, before answering the following question(s).</instruction>
 	<form section="advp">
+	  <prompt>Temporal examples:</prompt>
+		<textBox id="AdvPExample" dataItem="temporalExample"/> <br/> <br/>
+		<prompt>Locative examples:</prompt>
+		<textBox id="AdvPLocExample" dataItem="locativeExample"/><br/> <br/>
+	  <prompt>Manner examples:</prompt>
+		<textBox id="AdvPMannerExample" dataItem="mannerExample"/> <br/> <br/>
+		<prompt>Reason examples:</prompt>
+		<textBox id="AdvPReasonExample" dataItem="reasonExample"/><br/> <br/>
 		<radioGroup>
 			<groupName dataItem="degree" default="no">RDegreeYN</groupName>
-			<prompt>Looking back at your examples is this section, does your language have degree words which can modify adverbs?</prompt>
+			<prompt>Does your language have degree words (written as separate syntactic words) which can modify any of the adverbs?</prompt>
 			<radio id="AdvPDegreeNo" dataValue="no">No</radio>
 			<radio id="AdvPDegreeYes" checked="yes" dataValue="yes">Yes</radio>
 			<radioGroup id="AdvPDegreeYesTable" show="swAdvPDegreeYes">
@@ -28,7 +37,7 @@
 				<prompt>Are the degree words which can modify adverbs all the same ones?</prompt>
 				<radio id="AdvPSetUnrestricted" checked="yes" dataValue="unrestricted">Yes, the same set can modify any type of adverb</radio>
 				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Almost; the same set can modify temporals, locatives, and manner adverbs, but reason adverbs are not modified</radio>
-				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, there are distinct sets of degree words for each type of adverb.  Note that some overlap is OK and no degree words for reason adverbs is also OK.
+				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, there are distinct sets of degree words for each type of adverb (Note that some overlap is OK and no degree words for reason adverbs is also OK)
 </radio>
 			</radioGroup>
 		</radioGroup>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="NPQP2">
-	<title level="2">Nominal Phrase - QP Modifiers Part 2</title>
-	<introduction>Like the earlier modifiers, it may be the case that quantifier phrases in your language come before, after, or on either or both sides of the noun.</introduction>
-	<form section="np">

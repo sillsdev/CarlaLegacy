@@ -3,10 +3,9 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdjPMain">
 	<title>Adjectives and AdjP</title>
-	<introduction>In many grammars, numbers, quantifiers, articles, and demonstratives are considered adjectives, but each of them has a different distribution from the qualifying adjectives, so they will each have distinct syntactic categories.  This section is limited to considering qualitative adjectives that express size, color, age, texture, form, or quality.  One characteristic of this type of adjective is that more than one can modify a noun and in general the order of the adjectives can change (with a slight change in meaning due to the scope of the modification).  For example, <example>hard dull brass rods</example> versus <example>dull hard brass rods</example> versus <example>brass hard dull rods</example>, etc.  This characteristic of stacking adjectives will be dealt with in the next section by an adjunction rule which allows recursion.
+	<introduction>In many grammars, numbers, quantifiers, articles, and demonstratives are considered adjectives, but each of them has a different distribution from the qualifying adjectives, so they will each have distinct syntactic categories.  This section is limited to considering qualitative adjectives that express size, color, age, texture, form, or quality.  One characteristic of this type of adjective is that more than one can modify a noun and in general the order of the adjectives can change (with a slight change in meaning due to the scope of the modification).  For example, <example>hard dull brass rods</example> versus <example>dull hard brass rods</example> versus <example>brass hard dull rods</example>, etc.  This characteristic of stacking adjectives will be dealt with in the section on nominal phrases by an adjunction rule which allows recursion.
 </introduction>
-
-<introduction>Here we need to consider again what types of words can modify qualitative adjectives themselves.</introduction>
+	<introduction>Here we need to consider again what types of words can modify qualitative adjectives themselves.</introduction>
 	<EnglishExample>
 		<exItem>Some English examples are:</exItem>
 		<exItem label="1.">
@@ -60,18 +59,22 @@
 			</radioGroup>
 		</radioGroup>
 		<instruction>
-			<span id="AdjPModifiersYesDegreeInstruction" show="swAdjPModifiersYesDegreeorManner">In the lexicon, mark the degree words with the feature <feature>Deg modifies_Adj</feature>. </span> <br/>
-			<span id="AdjPModifiersYesMannerInstruction" show="swAdjPModifiersYesManner"> <br/>The manner adverbs should already be marked with the feature <feature>manner</feature>.  They do not need any additional features to modify adjectives. </span> <br/>
-			<span id="AdjPDegreeEitherRestrictedInstruction" show="swAdjPDegreeEitherRestricted">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</span> <br/>
+			<span id="AdjPModifiersYesDegreeInstruction" show="swAdjPModifiersYesDegreeorManner">In the lexicon, mark the degree words with the feature <feature>Deg modifies_Adj</feature>. </span>
+			<br/>
+			<span id="AdjPModifiersYesMannerInstruction" show="swAdjPModifiersYesManner">
+				<br/>The manner adverbs should already be marked with the feature <feature>manner</feature>.  They do not need any additional features to modify adjectives. </span>
+			<br/>
+			<span id="AdjPDegreeEitherRestrictedInstruction" show="swAdjPDegreeEitherRestricted">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</span>
+			<br/>
 			<span id="AdjPMannerEitherRestrictedInstruction" show="swAdjPMannerEitherRestricted">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</span>
 		</instruction>
 		<br/>
 		<buttons>
-		<button id="AdjPMainBack" value="Back" goto="Contents.htm"/>
+			<button id="AdjPMainBack" value="Back" goto="Contents.htm"/>
 			<button id="AdjPMainNext" value="Next" goto="AdjPTesting.htm"/>
 		</buttons>
 	</form>
-<showWhen id="swAdjPModifiersYesDegree">
+	<showWhen id="swAdjPModifiersYesDegree">
 		<whenRadio button="AdjPModifiersYesDegree"/>
 	</showWhen>
 	<showWhen id="swAdjPDegreeEitherorBoth">
