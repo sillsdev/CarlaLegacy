@@ -21,6 +21,10 @@
 #include "ListComment.h"
 #include "ListTestData.h"
 #endif //hab214
+#ifndef mr270
+#include "CarlaLanguage.h"
+#endif // mr270
+
 
 // REMOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!
 #include <strstrea.h>
@@ -41,7 +45,6 @@ const int kTestDataEntryKind = 98;
 
 /////////////////////////////////////////////////////////////////////////////
 // CWListView
-
 
 IMPLEMENT_DYNCREATE(CWListView, CView)
 
@@ -355,6 +358,15 @@ void CWListView::OnEditInsertEntry()
 	{bIsAmple=FALSE;}
 	m_pList->setTypeOfTest(bIsAmple);
 #endif //270
+
+#ifndef mr270
+	CLangModelsDoc *pdoc = (CLangModelsDoc*) GetDocument();
+	pdoc->getLang();
+	CCarlaLanguage *pLang = pdoc->m_pLang;
+	char cCommentChar = pLang->getCommentChar();
+	m_pList->setCommentChar(cCommentChar);
+	m_pList->setTestEditModel(pLang->m_pTestEditModel);
+#endif // mr270
 
 	int iRow = m_pList->insertNewItem(m_listCtrl, iAtItem, 0);
 	if (iRow==-1)
@@ -1232,7 +1244,14 @@ void CWListView::OnEditProperties()
 				bIsAmple=FALSE;
 			}
 
+			CLangModelsDoc *pdoc = (CLangModelsDoc*) GetDocument();
+			pdoc->getLang();
+			CCarlaLanguage *pLang = pdoc->m_pLang;
+			char cCommentChar = pLang->getCommentChar();
+			pRowItem->setCommentChar(cCommentChar);
+
 			pRowItem->setTypeOfTest(bIsAmple);
+			pRowItem->setTestEditModel(pLang->m_pTestEditModel);
 #endif // mr270
 			bChanged = pRowItem->doEditDialog(m_listCtrl);
 		}

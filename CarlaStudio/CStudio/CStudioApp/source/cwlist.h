@@ -70,7 +70,7 @@ public:
 	virtual void write(ostream& fout, char cCommentChar) const {fout << "\\co UNIMPLEMENTED WRITE()\n";}
 #ifndef mr270
 	virtual BOOL setTypeOfTest(BOOL bIsAmple=TRUE);
-	//	virtual void setCommentChar( char cCommentChar='|');
+	virtual void setCommentChar( char cCommentChar='|');
 	virtual void setTestEditModel(CTestEditModel* pTestEditModel){m_pTestEditModel=pTestEditModel;}
 #endif // mr270
 
@@ -213,7 +213,7 @@ class CWList : public CObject
 	public:
 		void setTypeOfTest(BOOL bFlag);
 		BOOL getTypeOfTest(){return m_bIsAmple;}
-		//		void setCommentChar( char cCommentChar);
+		void setCommentChar( char cCommentChar);
 		//void setTestEditModel(CTestEditModel* pTestEditModel){m_pTestEditModel=pTestEditModel;}
 		void setTestEditModel(CTestEditModel* pTestEditModel);
 #endif // mr270
@@ -452,7 +452,7 @@ class CWTest : public CWListEntry
 
 #ifndef mr270
 		virtual BOOL setTypeOfTest(BOOL bIsAmple=TRUE);
-//		virtual void setCommentChar(char cCommentChar);
+		virtual void setCommentChar(char cCommentChar);
 		virtual void setTestEditModel(CTestEditModel* pTestEditModel){m_pTestEditModel=pTestEditModel;}
 #endif // mr270
 

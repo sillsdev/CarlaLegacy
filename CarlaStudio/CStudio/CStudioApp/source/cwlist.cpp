@@ -27,6 +27,8 @@
 #include "ListTestData.h"
 #endif //hab17a1
 
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -37,6 +39,7 @@ const int kCommentEntryKind = 99;
 #ifndef hab17a1
 const int kTestDataEntryKind = 98;
 #endif //hab17a1
+
 
 /* this is needed because some built-in template fn uses it.
 CWListEntry& CWListEntry::operator= (CWListEntry& right_side)
@@ -199,6 +202,10 @@ IMPLEMENT_DYNAMIC(CWTest, CWListEntry); // jdh 6/3/99 added
 CWTest::CWTest(CString& sField, BOOL bEnabled, char cCommentChar)
 : CWListEntry(bEnabled)
 {
+#ifndef mr270
+	m_cCommentChar=cCommentChar;
+#endif // mr270
+
 	// first get the label
 	CParseStream stream(sField, cCommentChar);
 	CString sLabel, sTo;
@@ -421,6 +428,11 @@ BOOL CWListRowItem::setTypeOfTest(BOOL bIsAmple) // added by mr 5/24/2002
 {
 	return FALSE;	// must be overriden
 }
+
+void CWListRowItem::setCommentChar( char cCommentChar)
+{
+
+}
 #endif // mr270
 
 //#include "DlgProjectSettings.h"
@@ -428,10 +440,14 @@ BOOL CWListRowItem::setTypeOfTest(BOOL bIsAmple) // added by mr 5/24/2002
 // invoked by menu
 
 #ifndef mr270
-BOOL CWTest::setTypeOfTest(BOOL bAmple) // added by mr 5/24/2002
+BOOL CWTest::setTypeOfTest(BOOL bAmple)
 {
 	m_bIsAmple=bAmple;
 	return 0;
+}
+void CWTest::setCommentChar(char cCommentChar)
+{
+	m_cCommentChar=cCommentChar;
 }
 #endif // mr270
 
@@ -451,7 +467,10 @@ CWTopic *p=NULL;
 	dlg.m_sDescription = m_sDescription;
 #ifndef mr270
 	dlg.m_bIsAmpleTest = m_bIsAmple; // added by mr 5/24/2002
+	dlg.m_cCommentChar = m_cCommentChar;
+	dlg.m_pTestEditModel = m_pTestEditModel;
 #endif // mr270
+
 
 	// put up the dialog
 	if(IDOK != dlg.DoModal())
@@ -473,6 +492,15 @@ void CWList::setTypeOfTest(BOOL bFlag)
 {
 	m_bIsAmple=bFlag;
 }
+void CWList::setCommentChar(char cCommentChar)
+{
+	m_cCommentChar=cCommentChar;
+}
+void CWList::setTestEditModel(CTestEditModel* pTestEditModel)
+{
+	m_pTestEditModel=pTestEditModel;
+}
+
 #endif // mr270
 
 // called by a iuent item when it is changed or by the list when it has changed
@@ -546,7 +574,10 @@ int CWList::insertNewItem(CListCtrl &clc, int iStartingRow, int iKind, CWListEnt
 	{
 #ifndef mr270
 		pEntry->setTypeOfTest(getTypeOfTest());
+		pEntry->setCommentChar(m_cCommentChar);
+		pEntry->setTestEditModel(m_pTestEditModel);
 #endif // mr270
+
 		if (!pEntry->doEditDialog(clc, TRUE) )
 			return -1;
 	}
@@ -661,7 +692,7 @@ CWListEntry* CWTestList::createNewEntry(int iKind)
 }
 
 
- int CWList::rowToEntryIndex(CListCtrl &clc, int iRow)
+int CWList::rowToEntryIndex(CListCtrl &clc, int iRow)
 {
 	CWListEntry* pEntry = (CWListEntry*) clc.GetItemData(iRow);
 //	ASSERTX( pEntry->IsKindOf( RUNTIME_CLASS( CWListEntry  ) ) );
@@ -1080,7 +1111,7 @@ CFont* CWList::getLangFont()
 
 const CTextDisplayInfo* CWList::getTextDisplayInfo()
 {
-//	ASSERTX(m_pTDI);
+	//ASSERTX(m_pTDI);
 	return m_pTDI;
 }
 
