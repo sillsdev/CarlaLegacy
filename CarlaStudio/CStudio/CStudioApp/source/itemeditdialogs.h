@@ -18,6 +18,10 @@
 #include "SDialog.h"
 #include "TestEdit.h"
 
+#ifndef mr270
+#include "TestEditModel.h"
+#endif // mr270
+
 
 class CTextDisplayInfo;
 
@@ -66,9 +70,17 @@ public:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
+	public:
+
+#ifndef mr270
+	CTestEditModel *m_pTestEditModel;
+#endif // mr270
+
 
 // Implementation
 protected:
+
+
 
 #ifndef mr270
 	virtual BOOL OnInitDialog();
