@@ -155,20 +155,35 @@ namespace PAWSStarterKit
 			}
 			else
 			{
-				// need to do new language processing...
-				MessageBox.Show("Starting the PAWS Starter Kit for the first time.\n\n" +
-					"You will need to create a new language.\n\n" +
-					"Please answer all the questions in the following dialog box.",
-					"Creating a New Language",
-					MessageBoxButtons.OK,
-					MessageBoxIcon.Information);
-				m_XmlDoc.Load(m_strNewAnswerFile);
-				if (!doLanguagePropertiesDialog())
+				DlgFirstTime dlg = new DlgFirstTime();
+				if (dlg.ShowDialog() == DialogResult.Cancel)
+					sayGoodBye();
+				if (dlg.rbCreate.Checked)
 				{
-					MessageBox.Show("Exiting program.\nGood Bye!", "Canceled Initialization",
-						MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					Environment.Exit(1);
+					// need to do new language processing...
+					m_XmlDoc.Load(m_strNewAnswerFile);
+					if (!doLanguagePropertiesDialog())
+					{
+						sayGoodBye();
+					}
 				}
+				else
+				{
+					// allow user to navigate to an answer file and open it
+					OpenFileDialog dlgOpen = new OpenFileDialog();
+					dlgOpen.Filter = m_strAnswerFileFilter;
+					if (dlgOpen.ShowDialog() == DialogResult.OK)
+					{
+						loadAnswerFile(dlgOpen.FileName);
+					}
+					else
+					{
+						sayGoodBye();
+					}
+				}
+				Location = new Point(2,2);
+				Size = new Size(SystemInformation.PrimaryMonitorMaximizedWindowSize.Width - SystemInformation.VerticalScrollBarWidth,
+					SystemInformation.PrimaryMonitorMaximizedWindowSize.Height- SystemInformation.HorizontalScrollBarHeight);
 			}
 			showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
 		}
@@ -1504,6 +1519,12 @@ namespace PAWSStarterKit
 		{
 			return Path.Combine(m_strStylesPath,
 				m_strLanguageAbbreviation + "PAWSStarterKit.css");
+		}
+		void sayGoodBye()
+		{
+			MessageBox.Show("Exiting program.\nGood Bye!", "Canceled Initialization",
+				MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			Environment.Exit(1);
 		}
 	}
 }
