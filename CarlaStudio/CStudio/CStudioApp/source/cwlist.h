@@ -30,19 +30,8 @@ class CWEnvironConstrainedRule;
 class CTextDisplayInfo;
 class CEnvironmentListCtrl;
 
-class CCarlaLanguage;
-
-#ifndef mr270
-class CTestEditModel;
-#endif // mr270
-
-
-
 #include "CWAtomicTypes.h"	// just for CWINFONTSELECTOR
 #include "iostream.h"
-
-
-
 
 // everything that can be a row should subclass this.
 // Full Entries may have one or more rows; if some of their attributes get their
@@ -68,11 +57,6 @@ public:
 	void setOwningList(CWList* pOwningList)  {m_pOwningList=pOwningList;}
 	virtual CWList* getOwningList() const {ASSERTX(m_pOwningList); return m_pOwningList;}
 	virtual void write(ostream& fout, char cCommentChar) const {fout << "\\co UNIMPLEMENTED WRITE()\n";}
-#ifndef mr270
-	virtual BOOL setTypeOfTest(BOOL bIsAmple=TRUE);
-	virtual void setCommentChar( char cCommentChar='|');
-	virtual void setTestEditModel(CTestEditModel* pTestEditModel){m_pTestEditModel=pTestEditModel;}
-#endif // mr270
 
 	BOOL m_bEnabled;
 protected:
@@ -81,10 +65,6 @@ protected:
 	CFont* getLangFont();
 
 	CWList* m_pOwningList;
-
-#ifndef mr270
-		CTestEditModel *m_pTestEditModel;
-#endif // mr270
 };
 
 class CWListEntry : public CWListRowItem
@@ -186,8 +166,8 @@ class CWList : public CObject
 		CFont* getLangFont();
 		CFont* getUserFont();
 		int getSize() const {return m_pEntries.GetSize();}
-		int entryIndexToRowIndex(CListCtrl &clc, int iEntry); // jdh 3/13/00 moved out of 'protected'
-		virtual  int rowCount() {return 1;}  	// jdh 3/13/2000 moved here from CWEnvironConstrainedRule
+		 int entryIndexToRowIndex(CListCtrl &clc, int iEntry); // jdh 3/13/00 moved out of 'protected'
+		 virtual  int rowCount() {return 1;}  	// jdh 3/13/2000 moved here from CWEnvironConstrainedRule
 
 	protected:
 		int entryToIndex(CWListEntry* pEntry);
@@ -204,21 +184,7 @@ class CWList : public CObject
 
 		CTypedPtrArray<CPtrArray, CWListEntry*> m_pEntries;	// note that one entry could have multiple rows, as with ortho changes
 
-#ifndef mr270
-	private:
-		BOOL m_bIsAmple;
-		char m_cCommentChar;
-	protected:
-		CTestEditModel *m_pTestEditModel;
-	public:
-		void setTypeOfTest(BOOL bFlag);
-		BOOL getTypeOfTest(){return m_bIsAmple;}
-		void setCommentChar( char cCommentChar);
-		//void setTestEditModel(CTestEditModel* pTestEditModel){m_pTestEditModel=pTestEditModel;}
-		void setTestEditModel(CTestEditModel* pTestEditModel);
-#endif // mr270
-
-		friend class CWListView;
+	friend class CWListView;
 };
 
 
@@ -229,7 +195,7 @@ class CStringEnvironment : public CWListRowItem
 		virtual void setText(int iColumn, LPCTSTR lpszStr);
 		virtual CWListRowItem* getCopy();
 		DECLARE_DYNAMIC(CStringEnvironment);
-		CStringEnvironment(CStringEnvironment* pCopy, CWEnvironConstrainedRule* pOwner);
+		 CStringEnvironment(CStringEnvironment* pCopy, CWEnvironConstrainedRule* pOwner);
 		virtual CWList* getOwningList() const ;
 		virtual void deleteSelf(CListCtrl &clc, CWList* pList);
 		virtual const CString getDisplayName() const;
@@ -447,27 +413,13 @@ class CWTest : public CWListEntry
 		virtual BOOL doEditDialog(CListCtrl& clc, BOOL bIsNew=FALSE);
 		CWTest(CString& sField, BOOL bEnabled, char cCommentChar);
 		virtual CString getText(int iColumn);
+	//	virtual const CString getDisplayName() const {return CString("Test");}
 		virtual void write(ostream& fout, char cCommentChar) const;
 		virtual CString getLabel() {return m_sLabel;} // jdh 6/3/99
-
-#ifndef mr270
-		virtual BOOL setTypeOfTest(BOOL bIsAmple=TRUE);
-		virtual void setCommentChar(char cCommentChar);
-		virtual void setTestEditModel(CTestEditModel* pTestEditModel){m_pTestEditModel=pTestEditModel;}
-#endif // mr270
-
 	protected:
 		CString m_sLabel;
 		CString m_sContents;
 		CString m_sDescription;
-		CCarlaLanguage *m_pLang;
-
-#ifndef mr270
-		BOOL m_bIsAmple;
-		char m_cCommentChar;
-		CTestEditModel *m_pTestEditModel;
-#endif // mr270
-
 };
 
 class CWTestList : public CWList
