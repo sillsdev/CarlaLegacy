@@ -21,6 +21,7 @@ namespace PAWSStarterKit
 		const string m_strRegKey = "Software\\SIL International\\PAWSStarterKit";
 		const string m_strLastAnswerFile = "LastAnswerFile";
 		const string m_strLastGrammarFile = "GrammarFile";
+		const string m_strLastWriterFile = "WriterFile";
 		const string m_strLastExampleFilesPath = "ExampleFilesPath";
 		const string m_strLocationX = "LocationX";
 		const string m_strLocationY = "LocationY";
@@ -76,6 +77,7 @@ namespace PAWSStarterKit
 			"All Files (*.*)|*.*";
 		private XmlDocument m_XmlDoc = new XmlDocument();
 		private XslTransform m_XslGrammarTransform = new XslTransform();
+		private XslTransform m_XslWriterTransform = new XslTransform();
 		private XslTransform m_XslExampleTransform = new XslTransform();
 		System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(PAWSSKForm));
 		private AxSHDocVw.AxWebBrowser axWebBrowser;
@@ -88,31 +90,36 @@ namespace PAWSStarterKit
 
 		public PAWSSKForm()
 		{
-			// load grammar and examples transforms
-			m_XslGrammarTransform.Load(Path.Combine(
-				Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKMasterGrammarMapper.xsl"));
-			m_XslExampleTransform.Load(Path.Combine(
-				Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKParameterizedExample.xsl"));
+			// load grammar, writer and examples transforms
+			try
+			{
+				m_XslGrammarTransform.Load(Path.Combine(
+					Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKMasterGrammarMapper.xsl"));
+				m_XslWriterTransform.Load(Path.Combine(
+					Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKWriterMapper.xsl"));
+				m_XslExampleTransform.Load(Path.Combine(
+					Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKParameterizedExample.xsl"));
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show("Could not find a transform: " + exc.Message + exc.InnerException.ToString(),
+					"Error while loading transform!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
 			// Allow handling of user closing the form
 			this.Closing += new CancelEventHandler(PAWSSKOnClosing);
 
-			// Get last user data file (if any)
-			RegistryKey regkey = Registry.CurrentUser.OpenSubKey(m_strRegKey);
-			if (regkey != null)
+			// Get registry info (if any)
+			try
 			{
-				m_strUserAnswerFile = (string)regkey.GetValue(m_strLastAnswerFile);
-				m_strUserGrammarFile = (string)regkey.GetValue(m_strLastGrammarFile);
-				m_strUserExampleFilesPath = (string)regkey.GetValue(m_strLastExampleFilesPath);
-				m_bViewToolBarChecked = Convert.ToBoolean((string) regkey.GetValue(m_strToolBarChecked));
-				m_bViewStatusBarChecked = Convert.ToBoolean((string) regkey.GetValue(m_strStatusBarChecked));
-				int iX = Convert.ToInt32((string)regkey.GetValue(m_strLocationX));
-				int iY = Convert.ToInt32((string)regkey.GetValue(m_strLocationY));
-				int iWidth = Convert.ToInt32((string)regkey.GetValue(m_strSizeWidth));
-				int iHeight = Convert.ToInt32((string)regkey.GetValue(m_strSizeHeight));
-				StartPosition = FormStartPosition.Manual;
-				Location = new Point(iX, iY);
-				Size = new Size(iWidth, iHeight);
-				regkey.Close();
+				RegistryKey regkey = Registry.CurrentUser.OpenSubKey(m_strRegKey);
+				if (regkey != null)
+				{
+					retrieveRegistryInfo(regkey);
+					regkey.Close();
+				}
+			}
+			catch
+			{
 			}
 
 			// Initialize the form
@@ -129,12 +136,16 @@ namespace PAWSStarterKit
 				try
 				{
 					// load our copy of the answer file
+#if Orig
 					m_XmlDoc.Load(m_strUserAnswerFile);
 					m_strLanguageName = getXmlElementContent("//language/langName");
 					m_strLanguageAbbreviation = getXmlElementContent("//language/langAbbr");
 					m_strTextSFM = getXmlElementContent("//language/textSFM");
 					setTitle();
 					createPAWSSKInitHtm(false);
+#else
+					loadAnswerFile(m_strUserAnswerFile);
+#endif
 				}
 				catch (Exception exc)
 				{
@@ -145,13 +156,19 @@ namespace PAWSStarterKit
 			else
 			{
 				// need to do new language processing...
-				MessageBox.Show("Need to create a new language." + '\n' +
-					"Please answer the questions in the following dialog box.",
+				MessageBox.Show("Starting the PAWS Starter Kit for the first time.\n\n" +
+					"You will need to create a new language.\n\n" +
+					"Please answer all the questions in the following dialog box.",
 					"Creating a New Language",
 					MessageBoxButtons.OK,
 					MessageBoxIcon.Information);
 				m_XmlDoc.Load(m_strNewAnswerFile);
-				doLanguagePropertiesDialog();
+				if (!doLanguagePropertiesDialog())
+				{
+					MessageBox.Show("Exiting program.\nGood Bye!", "Canceled Initialization",
+						MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					Environment.Exit(1);
+				}
 			}
 			showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
 		}
@@ -570,18 +587,30 @@ namespace PAWSStarterKit
 		}
 		void MenuFileNewOnClick(object obj, EventArgs ea)
 		{
+#if Orig
 			m_XmlDoc.Load(m_strNewAnswerFile);
 			m_strUserExampleFilesPath = m_strUserGrammarFile = null;
-			doLanguagePropertiesDialog();
-		}
+			if (doLanguagePropertiesDialog())
+				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
+#else
+			// Remember current state
+			XmlDocument xmlDocTemp = m_XmlDoc;
+			m_XmlDoc.Load(m_strNewAnswerFile);
+			if (doLanguagePropertiesDialog())
+				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
+			else
+				// the user canceled; restore the state
+				m_XmlDoc = xmlDocTemp;
+#endif
+			}
 		void MenuFileOpenOnClick(object obj, EventArgs ea)
 		{
 			OpenFileDialog dlg = new OpenFileDialog();
 			dlg.Filter = m_strAnswerFileFilter;
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
-				m_strUserAnswerFile = dlg.FileName;
-				Text = m_strProgName + " - " + Path.GetFileName(m_strUserAnswerFile);
+				loadAnswerFile(dlg.FileName);
+				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
 			}
 		}
 		void MenuFileCloseOnClick(object obj, EventArgs ea)
@@ -590,6 +619,7 @@ namespace PAWSStarterKit
 		}
 		void MenuFileSaveOnClick(object obj, EventArgs ea)
 		{
+#if Orig
 			// Remember original names in case user cancels at some point
 			string strAnswerFileTemp = m_strUserAnswerFile;
 			string strGrammarFileTemp = m_strUserGrammarFile;
@@ -600,12 +630,7 @@ namespace PAWSStarterKit
 				if (!doSaveAnswerFileDialog())
 					return; // nothing to do; user canceled on first one
 			}
-#if !Orig
 			if (m_strUserGrammarFile == null)
-#else
-				if ((m_strUserGrammarFile == null) ||
-					(!File.Exists(m_strUserGrammarFile)))
-#endif
 				{
 				if (!doSaveGrammarFileDialog())
 				{   // User canceled; undo any name change to answer file
@@ -629,6 +654,23 @@ namespace PAWSStarterKit
 			saveExampleFiles();
 			m_bIsDirty = false;
 			setTitle();
+#else
+			// save the files
+			try
+			{
+				saveUserDataStoreToUserAnswerFile();
+				saveGrammarFile();
+				saveWriterFile();
+				saveExampleFiles();
+				m_bIsDirty = false;
+				setTitle();
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show("Problem saving files: " + exc.Message + exc.InnerException.ToString(),
+					"Save File Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
+#endif
 		}
 		void MenuFileSaveAsOnClick(object obj, EventArgs ea)
 		{
@@ -692,7 +734,8 @@ namespace PAWSStarterKit
 		{
 			locateUserDataStore();
 			loadUserDataStore();
-			doLanguagePropertiesDialog();
+			if (doLanguagePropertiesDialog())
+				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
 		}
 		void MenuViewToolBarOnClick(object obj, EventArgs ea)
 		{
@@ -869,7 +912,7 @@ namespace PAWSStarterKit
 			saveUserDataStoreToUserAnswerFile();
 			if (m_bIsDirty)
 			{
-				if (DialogResult.Yes == MessageBox.Show("The Answer file has changed.  Do you want to generate the grammar and example files?",
+				if (DialogResult.Yes == MessageBox.Show("The Answer file has changed.  Do you want to generate the grammar, writer and example files?",
 					"Program Ending...", MessageBoxButtons.YesNo,
 					MessageBoxIcon.Question))
 					MenuFileSaveOnClick(null, null);
@@ -877,24 +920,14 @@ namespace PAWSStarterKit
 		}
 		protected override void OnClosed(EventArgs ea)
 		{
+			base.OnClosed(ea);
+			// save registry info
 			RegistryKey regkey = Registry.CurrentUser.OpenSubKey(m_strRegKey, true);
 			if (regkey == null)
 			{
 				regkey = Registry.CurrentUser.CreateSubKey(m_strRegKey);
 			}
-
-			if (m_strUserAnswerFile != null)
-				regkey.SetValue(m_strLastAnswerFile, m_strUserAnswerFile);
-			if (m_strUserGrammarFile != null)
-				regkey.SetValue(m_strLastGrammarFile, m_strUserGrammarFile);
-			if (m_strUserExampleFilesPath != null)
-				regkey.SetValue(m_strLastExampleFilesPath, m_strUserExampleFilesPath);
-			regkey.SetValue(m_strLocationX, Location.X.ToString());
-			regkey.SetValue(m_strLocationY, Location.Y.ToString());
-			regkey.SetValue(m_strSizeWidth, Size.Width.ToString());
-			regkey.SetValue(m_strSizeHeight, Size.Height.ToString());
-			regkey.SetValue(m_strToolBarChecked, miViewToolBar.Checked.ToString());
-			regkey.SetValue(m_strStatusBarChecked, miViewStatusBar.Checked.ToString());
+			saveRegistryInfo(regkey);
 			regkey.Close();
 		}
 		void createPAWSSKInitHtm(bool bUseContentsHtm)
@@ -1037,6 +1070,17 @@ namespace PAWSStarterKit
 				MessageBox.Show(this.m_strPAWSErrorMsg + "saveGrammarFile: " + exc);
 			}
 		}
+		void saveWriterFile()
+		{
+			try
+			{
+				m_XslWriterTransform.Transform(m_strUserAnswerFile, m_strUserWriterFile);
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show(this.m_strPAWSErrorMsg + "saveWriterFile: " + exc);
+			}
+		}
 		void saveExampleFiles()
 		{
 			locateUserDataStore();
@@ -1085,7 +1129,7 @@ namespace PAWSStarterKit
 				MessageBox.Show(this.m_strPAWSErrorMsg + "createExampleFile: " + exc);
 			}
 		}
-		void doLanguagePropertiesDialog()
+		bool doLanguagePropertiesDialog()
 		{
 			string strOriginalLanguageAbbreviation = m_strLanguageAbbreviation;
 			DlgLanguageProperties dlg = new DlgLanguageProperties();
@@ -1110,13 +1154,7 @@ namespace PAWSStarterKit
 			dlg.WriterFile = m_strUserWriterFile;
 			dlg.ExampleFiles = m_strUserExampleFilesPath;
 
-			while ((dlg.ShowDialog() == DialogResult.OK) &&
-				(dlg.Abbreviation == ""))
-			{
-				MessageBox.Show("You must enter a Language Abbreviation",
-					dlg.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-			}
-			if (dlg.DialogResult == DialogResult.OK)
+			if (dlg.ShowDialog() == DialogResult.OK)
 			{
 				m_strLanguageName = dlg.Language;
 				m_strLanguageAbbreviation = dlg.Abbreviation;
@@ -1143,16 +1181,20 @@ namespace PAWSStarterKit
 				setXmlElementAttribute("//language/font", "italic", bFontItalic.ToString());
 				setXmlElementAttribute("//language/font", "under", bFontUnderline.ToString());
 				setXmlElementAttribute("//language/font", "strike", bFontStrikeout.ToString());
+				setXmlElementContent("//language/answerFile", m_strUserAnswerFile);
+				setXmlElementContent("//language/grammarFile", m_strUserGrammarFile);
+				setXmlElementContent("//language/writerFile", m_strUserWriterFile);
+				setXmlElementContent("//language/exampleFilesPath", m_strUserExampleFilesPath);
 				if (m_strLanguageAbbreviation != strOriginalLanguageAbbreviation)
 				{   // lang abbreviation changed; need to redo working paths
-					setHtmsPath();
-					m_strHelpPath = setWorkingPath(m_strHelpPath, "Help");
-					m_strTreeDescriptionsPath = setWorkingPath(m_strTreeDescriptionsPath, "TreeDescriptions");
-					m_strStylesPath = setWorkingPath(m_strStylesPath, "Styles");
+					setWorkingPaths();
 					// now recreate all HTM, etc. files
 					createHTMs();
 				}
 				// create language specific style sheet
+#if !Orig
+				createStyleSheet();
+#else
 				const string strStyles = @"..\Styles\";
 				const string strMasterCss = "PAWSStarterKitMaster.css";
 				string strMasterCssPath = Path.Combine(m_strAppPath, strStyles);
@@ -1196,6 +1238,7 @@ namespace PAWSStarterKit
 				// copy the background gif
 				File.Copy(Path.Combine(strMasterCssPath, m_strBackgroundGif),
 					Path.Combine(strUserStyleFilePath, m_strBackgroundGif), true);
+#endif
 				// save user's answer file
 				if (m_strUserAnswerFile == null)
 					doSaveAnswerFileDialog();
@@ -1203,16 +1246,17 @@ namespace PAWSStarterKit
 				setTitle();
 				// Start over so the changes will take effect
 				createPAWSSKInitHtm(true);
-				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
+				return true;
 			}
+			return false;
 		}
 		void setHtmsPath()
 		{
-			m_strHtmsPath = setWorkingPath(m_strHtmsPath, "HTMs");
+			m_strHtmsPath = setWorkingPath("HTMs");
 		}
-		string setWorkingPath(string strPath, string strPathName)
+		string setWorkingPath(string strPathName)
 		{
-			strPath = Path.Combine(
+			string strPath = Path.Combine(
 				Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
 				"PAWSSK");
 			strPath = Path.Combine(strPath, m_strLanguageAbbreviation);
@@ -1222,6 +1266,13 @@ namespace PAWSStarterKit
 				Directory.CreateDirectory(strPath);
 			}
 			return strPath;
+		}
+		void setWorkingPaths()
+		{
+			setHtmsPath();
+			m_strHelpPath = setWorkingPath("Help");
+			m_strTreeDescriptionsPath = setWorkingPath("TreeDescriptions");
+			m_strStylesPath = setWorkingPath("Styles");
 		}
 		void createHTMs()
 		{
@@ -1336,6 +1387,123 @@ namespace PAWSStarterKit
 			}
 			sr.Close();
 			sw.Close();
+		}
+		void retrieveRegistryInfo(RegistryKey regkey)
+		{
+			m_strUserAnswerFile = (string)regkey.GetValue(m_strLastAnswerFile);
+			m_strUserGrammarFile = (string)regkey.GetValue(m_strLastGrammarFile);
+			m_strUserWriterFile = (string)regkey.GetValue(m_strLastWriterFile);
+			m_strUserExampleFilesPath = (string)regkey.GetValue(m_strLastExampleFilesPath);
+			m_bViewToolBarChecked = Convert.ToBoolean((string) regkey.GetValue(m_strToolBarChecked));
+			m_bViewStatusBarChecked = Convert.ToBoolean((string) regkey.GetValue(m_strStatusBarChecked));
+			int iX = Convert.ToInt32((string)regkey.GetValue(m_strLocationX));
+			int iY = Convert.ToInt32((string)regkey.GetValue(m_strLocationY));
+			int iWidth = Convert.ToInt32((string)regkey.GetValue(m_strSizeWidth));
+			int iHeight = Convert.ToInt32((string)regkey.GetValue(m_strSizeHeight));
+			StartPosition = FormStartPosition.Manual;
+			Location = new Point(iX, iY);
+			Size = new Size(iWidth, iHeight);
+		}
+		void saveRegistryInfo(RegistryKey regkey)
+		{
+			if (m_strUserAnswerFile != null)
+				regkey.SetValue(m_strLastAnswerFile, m_strUserAnswerFile);
+			if (m_strUserGrammarFile != null)
+				regkey.SetValue(m_strLastGrammarFile, m_strUserGrammarFile);
+			if (m_strUserWriterFile != null)
+				regkey.SetValue(m_strLastWriterFile, m_strUserWriterFile);
+			if (m_strUserExampleFilesPath != null)
+				regkey.SetValue(m_strLastExampleFilesPath, m_strUserExampleFilesPath);
+			regkey.SetValue(m_strLocationX, Location.X.ToString());
+			regkey.SetValue(m_strLocationY, Location.Y.ToString());
+			regkey.SetValue(m_strSizeWidth, Size.Width.ToString());
+			regkey.SetValue(m_strSizeHeight, Size.Height.ToString());
+			regkey.SetValue(m_strToolBarChecked, miViewToolBar.Checked.ToString());
+			regkey.SetValue(m_strStatusBarChecked, miViewStatusBar.Checked.ToString());
+		}
+		void loadAnswerFile(string strAnswerFile)
+		{
+			try
+			{
+				m_XmlDoc.Load(strAnswerFile);
+				m_strLanguageName = getXmlElementContent("//language/langName");
+				m_strLanguageAbbreviation = getXmlElementContent("//language/langAbbr");
+				m_strTextSFM = getXmlElementContent("//language/textSFM");
+				m_strUserGrammarFile = getXmlElementContent("//language/grammarFile");
+				m_strUserWriterFile = getXmlElementContent("//language/writerFile");
+				m_strUserExampleFilesPath = getXmlElementContent("//language/exampleFilesPath");
+				setWorkingPaths();
+				// if working subdirs are empty, create them
+				string[] astrHtmFiles = Directory.GetFiles(m_strHtmsPath, "*.htm");
+				if (astrHtmFiles.Length == 0)
+					createHTMs();
+				if (!File.Exists(getStyleFile()))
+					createStyleSheet();
+				setTitle();
+				m_strUserAnswerFile = strAnswerFile;
+				createPAWSSKInitHtm(false);
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show("Error in loading file " + strAnswerFile + exc.Message + exc.InnerException.ToString(),
+					"Eror Loading file!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
+
+		}
+		void createStyleSheet()
+		{
+			const string strStyles = @"..\Styles\";
+			const string strMasterCss = "PAWSStarterKitMaster.css";
+			try
+			{
+				string strMasterCssPath = Path.Combine(m_strAppPath, strStyles);
+				string strMasterCssFile = Path.Combine(strMasterCssPath, strMasterCss);
+				string strUserStyleFile = getStyleFile();
+				// copy the master
+				File.Copy(strMasterCssFile, strUserStyleFile, true);
+				StreamWriter sw = new StreamWriter(strUserStyleFile, true);
+				// append the font info
+				sw.WriteLine (".vernacular {");
+				sw.Write ("font-family: ");
+				sw.Write (getXmlElementContent("//language/font/fontName"));
+				sw.WriteLine (";");
+				sw.Write ("font-size: ");
+				sw.Write (getXmlElementContent("//language/font/fontSize"));
+				sw.WriteLine ("pt;");
+				sw.Write ("color: ");
+				sw.Write (getXmlElementContent("//language/font/fontColor"));
+				sw.WriteLine (";");
+				if ("True" == getXmlElementAttribute("//language/font/@bold"))
+					sw.WriteLine ("font-weight: bold;");
+				if ("True" == getXmlElementAttribute("//language/font/@italic"))
+					sw.WriteLine ("font-style: italic;");
+				bool bFontUnderline = ("True" == getXmlElementAttribute("//language/font/@under"));
+				bool bFontStrikeout = ("True" == getXmlElementAttribute("//language/font/@strike"));
+				if (bFontUnderline || bFontStrikeout)
+				{
+					sw.Write ("text-decoration: ");
+					if (bFontUnderline)
+						sw.Write ("underline ");
+					if (bFontStrikeout)
+						sw.Write ("line-through");
+					sw.WriteLine (";");
+				}
+				sw.WriteLine ("}");
+				sw.Close();
+				// copy the background gif
+				File.Copy(Path.Combine(strMasterCssPath, m_strBackgroundGif),
+					Path.Combine(m_strStylesPath, m_strBackgroundGif), true);
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show("Error in creating style sheet: " + exc.Message + exc.InnerException.ToString(),
+					"Create Style Sheet", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
+		}
+		string getStyleFile()
+		{
+			return Path.Combine(m_strStylesPath,
+				m_strLanguageAbbreviation + "PAWSStarterKit.css");
 		}
 	}
 }

@@ -58,7 +58,7 @@ namespace PAWSStarterKit
 			//
 			InitializeComponent();
 			InitHelp();
-			btnOK.DialogResult = DialogResult.OK;
+			btnCancel.DialogResult = DialogResult.Cancel;
 		}
 		/* *******************************************
 		 * Properties
@@ -408,6 +408,7 @@ namespace PAWSStarterKit
 			this.btnOK.Size = new System.Drawing.Size(96, 24);
 			this.btnOK.TabIndex = 9;
 			this.btnOK.Text = "OK";
+			this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
 			//
 			// groupBox1
 			//
@@ -691,13 +692,14 @@ namespace PAWSStarterKit
 		{
 			doSaveFileDialog(ref strGrammarFile, "Grammar File", "PAWS Grammar File (*.grm)|*.grm|" +
 				"All Files (*.*)|*.*", ".grm");
+			tbGrammarFile.Text = GrammarFile;
 		}
 
 		private void btnWriterFile_Click(object sender, System.EventArgs e)
 		{
 			doSaveFileDialog(ref strWriterFile, "Writer File", "PAWS Writer file (*.xml)|*.xml|" +
 				"All Files (*.*)|*.*", ".xml");
-
+			tbWriterFile.Text = WriterFile;
 		}
 
 		private void btnExampleFiles_Click(object sender, System.EventArgs e)
@@ -716,7 +718,7 @@ namespace PAWSStarterKit
 			saveDlg.Filter = strFilter;
 			// following needed, otherwise it always returns "Cancel"
 			saveDlg.OverwritePrompt = false;
-			if (strFileName != null)
+			if ((strFileName != null) && (strFileName != ""))
 			{
 				saveDlg.InitialDirectory = Path.GetDirectoryName(strFileName);
 				saveDlg.FileName = Path.GetFileNameWithoutExtension(strFileName);
@@ -727,6 +729,30 @@ namespace PAWSStarterKit
 					saveDlg.FileName += strExtension;
 				strFileName = saveDlg.FileName;
 			}
+		}
+
+		private void btnOK_Click(object sender, System.EventArgs e)
+		{
+			string strMessage = "";
+			if (Abbreviation == "")
+				strMessage = "You must enter a Language Abbreviation.\n";
+			if ((AnswerFile == null) || (AnswerFile == ""))
+				strMessage += getMissingFileMessage("Answer");
+			if ((GrammarFile == null) || (GrammarFile == ""))
+				strMessage += getMissingFileMessage("Grammar");
+			if ((WriterFile == null) || (WriterFile == ""))
+				strMessage += getMissingFileMessage("Writer");
+			if ((ExampleFiles == null) || (ExampleFiles == ""))
+				strMessage += "You must enter a directory for the example files.";
+			if (strMessage == "")
+				DialogResult = DialogResult.OK;
+			else
+				MessageBox.Show(strMessage, "Required Information Missing!",
+					MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+		}
+		private string getMissingFileMessage(string strFile)
+		{
+			return "You must enter a " + strFile + " file name.\n";
 		}
 	}
 }
