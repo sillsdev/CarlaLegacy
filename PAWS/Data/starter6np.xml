@@ -25,10 +25,12 @@ NP = {N'' / N'}
 	&lt;NP option&gt; = 0Asuf
 </rule>
 	<showWhen id="NPoption0Asuf">
-	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
-<and/> <whenValue element="np" attr="adjpCaseAffixType" value="suffix"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
-  </showWhen>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseAffixType" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	</showWhen>
 	<rule show="NPoption0Apre">
 rule {NP option 0Apre - not possessed, absolutive_prefix}
 NP = {N'' / N'}
@@ -40,9 +42,11 @@ NP = {N'' / N'}
 	&lt;NP option&gt; = 0Apre
 </rule>
 	<showWhen id="NPoption0Apre">
-	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
-<and/> <whenValue element="np" attr="adjpCaseAffixType" value="prefix"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseAffixType" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption0Esuf">
 rule {NP option 0Esuf - not possessed, ergative_suffix}
@@ -55,9 +59,11 @@ NP = {N'' / N'}
 	&lt;NP option&gt; = 0Esuf
 </rule>
 	<showWhen id="NPoption0Esuf">
-	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
-<and/> <whenValue element="np" attr="adjpCaseAffixType" value="suffix"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseAffixType" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption0Epre">
 rule {NP option 0Epre - not possessed, ergative_prefix}
@@ -70,9 +76,11 @@ NP = {N'' / N'}
 	&lt;NP option&gt; = 0Epre
 </rule>
 	<showWhen id="NPoption0Epre">
-	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
-<and/> <whenValue element="np" attr="adjpCaseAffixType" value="prefix"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseAffixType" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption0Gsuf">
 rule {NP option 0Gsuf - not possessed, genitive_suffix}
@@ -85,13 +93,17 @@ NP = {N'' / N'}
 	&lt;NP option&gt; = 0Gsuf
 </rule>
 	<showWhen id="NPoption0Gsuf">
-	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
-<and/> <whenValue element="np" attr="adjpCaseAffixType" value="suffix"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
-<or/>
-	  <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
-<and/> <whenValue element="np" attr="adjpCaseAffixType" value="suffix"></whenValue>
-<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseAffixType" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseAffixType" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NPoption0Gpre">
 rule {NP option 0Gpre - not possessed, genitive_prefix}
@@ -104,13 +116,17 @@ NP = {N'' / N'}
 	&lt;NP option&gt; = 0Gpre
 </rule>
 	<showWhen id="NPoption0Gpre">
-	   <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
-<and/> <whenValue element="np" attr="adjpCaseAffixType" value="prefix"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
-<or/>
-	  <whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
-<and/> <whenValue element="np" attr="adjpCaseAffixType" value="prefix"></whenValue>
-<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseAffixType" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="adjpCaseAffix" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseAffixType" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NPoption0p">
 rule {NP option 0p - possessed with person affix, pro-drop}
@@ -144,20 +160,28 @@ NP = {DP / Pron} {N'' / N'}
 </rule>
 	<showWhen id="NPoption1a">
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="before"></whenValue>
-<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="before"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
-<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption1aErg">
 rule {NP option 1aErg - no marker, possessor initial, ergative}
@@ -178,12 +202,16 @@ NP = {DP / Pron} {N'' / N'}
 </rule>
 	<showWhen id="NPoption1aErg">
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="before"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption1aAbs">
 rule {NP option 1aAbs - no marker, possessor initial, absolutive}
@@ -204,12 +232,16 @@ NP = {DP / Pron} {N'' / N'}
 </rule>
 	<showWhen id="NPoption1aAbs">
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="before"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption1b">
 rule {NP option 1b - no marker, possessor final}
@@ -230,20 +262,28 @@ NP = {N'' / N'} {DP / Pron}
 </rule>
 	<showWhen id="NPoption1b">
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="after"></whenValue>
-<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="after"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
-<and/> <whenValue element="np" attr="case" value="nominative"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="genitive"></whenValue>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption1bErg">
 rule {NP option 1bErg - no marker, possessor final, ergative}
@@ -264,12 +304,16 @@ NP = {N'' / N'} {DP / Pron}
 </rule>
 	<showWhen id="NPoption1bErg">
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="after"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="ergative"></whenValue>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption1bAbs">
 rule {NP option 1bAbs - no marker, possessor final, absolutive}
@@ -290,12 +334,16 @@ NP = {N'' / N'} {DP / Pron}
 </rule>
 	<showWhen id="NPoption1bAbs">
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="after"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
-<or/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+		<or/>
 		<whenValue element="np" attr="possMarked" value="no" negateValue="no"/>
-<and/> <whenValue element="np" attr="possNounPos" value="either"></whenValue>
-<and/> <whenValue element="np" attr="possCaseErg" value="absolutive"></whenValue>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption2a">
 rule {NP option 2a - optional marker before, possessor initial}
@@ -316,7 +364,53 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 2a
 </rule>
 	<showWhen id="NPoption2a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption2aErg">
 rule {NP option 2aErg - optional marker before, possessor initial, ergative}
@@ -337,7 +431,29 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 2aErg
 </rule>
 	<showWhen id="NPoption2aErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption2aAbs">
 rule {NP option 2aAbs - optional marker before, possessor initial, absolutive}
@@ -358,7 +474,29 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 2aAbs
 </rule>
 	<showWhen id="NPoption2aAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption2b">
 rule {NP option 2b - optional marker before, possessor final}
@@ -379,7 +517,53 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP option&gt; = 2b
 </rule>
 	<showWhen id="NPoption2b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption2bErg">
 rule {NP option 2bErg - optional marker before, possessor final, ergative}
@@ -400,7 +584,29 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP option&gt; = 2bErg
 </rule>
 	<showWhen id="NPoption2bErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption2bAbs">
 rule {NP option 2bAbs - optional marker before, possessor final, absolutive}
@@ -418,12 +624,32 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
 	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
-
-|rule {NP option 2c - optional marker before, possessor either side} use 2a&amp;b
 	&lt;NP option&gt; = 2bAbs
 </rule>
 	<showWhen id="NPoption2bAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption3a">
 rule {NP option 3a - optional marker after, possessor initial}
@@ -444,7 +670,53 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 3a
 </rule>
 	<showWhen id="NPoption3a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption3aErg">
 rule {NP option 3aErg - optional marker after, possessor initial, ergative}
@@ -465,7 +737,29 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 3aErg
 </rule>
 	<showWhen id="NPoption3aErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption3aAbs">
 rule {NP option 3aAbs - optional marker after, possessor initial, absolutive}
@@ -486,7 +780,29 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 3aAbs
 </rule>
 	<showWhen id="NPoption3aAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption3b">
 rule {NP option 3b - optional marker after, possessor final}
@@ -507,7 +823,53 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP option&gt; = 3b
 </rule>
 	<showWhen id="NPoption3b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption3bErg">
 rule {NP option 3bErg - optional marker after, possessor final, ergative}
@@ -528,7 +890,29 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP option&gt; = 3bErg
 </rule>
 	<showWhen id="NPoption3bErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption3bAbs">
 rule {NP option 3bAbs - optional marker after, possessor final, absolutive}
@@ -546,12 +930,32 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
 	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
-
-|rule {NP option 3c - optional marker after, possessor either side} use 3a&amp;b
 	&lt;NP option&gt; = 3bAbs
 </rule>
 	<showWhen id="NPoption3bAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption4a">
 rule {NP option 4a - required marker before, possessor initial}
@@ -571,7 +975,53 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 4a
 </rule>
 	<showWhen id="NPoption4a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption4aErg">
 rule {NP option 4aErg - required marker before, possessor initial, ergative}
@@ -591,7 +1041,29 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 4aErg
 </rule>
 	<showWhen id="NPoption4aErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption4aAbs">
 rule {NP option 4aAbs - required marker before, possessor initial, absolutive}
@@ -611,7 +1083,29 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 4aAbs
 </rule>
 	<showWhen id="NPoption4aAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption4b">
 rule {NP option 4b - required marker before, possessor final}
@@ -631,7 +1125,53 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP option&gt; = 4b
 </rule>
 	<showWhen id="NPoption4b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption4bErg">
 rule {NP option 4bErg - required marker before, possessor final, ergative}
@@ -651,7 +1191,29 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP option&gt; = 4bErg
 </rule>
 	<showWhen id="NPoption4bErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption4bAbs">
 rule {NP option 4bAbs - required marker before, possessor final, absolutive}
@@ -668,12 +1230,32 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
 	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
-
-|rule {NP option 4c - required marker before, possessor either side} use 4a&amp;b
 	&lt;NP option&gt; = 4bAbs
 </rule>
 	<showWhen id="NPoption4bAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption5a">
 rule {NP option 5a - required marker after, possessor initial}
@@ -693,7 +1275,53 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 5a
 </rule>
 	<showWhen id="NPoption5a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption5aErg">
 rule {NP option 5aErg - required marker after, possessor initial, ergative}
@@ -713,7 +1341,29 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 5aErg
 </rule>
 	<showWhen id="NPoption5aErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption5aAbs">
 rule {NP option 5aAbs - required marker after, possessor initial, absolutive}
@@ -733,7 +1383,29 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP option&gt; = 5aAbs
 </rule>
 	<showWhen id="NPoption5aAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption5b">
 rule {NP option 5b - required marker after, possessor final}
@@ -753,7 +1425,53 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP option&gt; = 5b
 </rule>
 	<showWhen id="NPoption5b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption5bErg">
 rule {NP option 5bErg - required marker after, possessor final, ergative}
@@ -773,7 +1491,29 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP option&gt; = 5bErg
 </rule>
 	<showWhen id="NPoption5bErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption5bAbs">
 rule {NP option 5bAbs - required marker after, possessor final, absolutive}
@@ -790,12 +1530,32 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
 	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
-
-|rule {NP option 5c - required marker after, possessor either side} use 5a&amp;b
 	&lt;NP option&gt; = 5bAbs
 </rule>
 	<showWhen id="NPoption5bAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticRequired" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possCliticPossPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption6ap">
 rule {NP option 6ap - poss_prefix, possessor initial}
@@ -816,7 +1576,45 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP option&gt; = 6ap
 </rule>
 	<showWhen id="NPoption6ap">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption6apErg">
 rule {NP option 6apErg - poss_prefix, possessor initial, ergative}
@@ -837,7 +1635,25 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP option&gt; = 6apErg
 </rule>
 	<showWhen id="NPoption6apErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		 <and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption6apAbs">
 rule {NP option 6apAbs - poss_prefix, possessor initial, absolutive}
@@ -858,7 +1674,25 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP option&gt; = 6apAbs
 </rule>
 	<showWhen id="NPoption6apAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		 <and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption6as">
 rule {NP option 6as - poss_suffix, possessor initial}
@@ -879,7 +1713,45 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP option&gt; = 6as
 </rule>
 	<showWhen id="NPoption6as">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption6asErg">
 rule {NP option 6asErg - poss_suffix, possessor initial, ergative}
@@ -900,7 +1772,25 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP option&gt; = 6asErg
 </rule>
 	<showWhen id="NPoption6asErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		 <and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption6asAbs">
 rule {NP option 6asAbs - poss_suffix, possessor initial, absolutive}
@@ -921,7 +1811,25 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP option&gt; = 6asAbs
 </rule>
 	<showWhen id="NPoption6asAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	 <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		 <and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption6bp">
 rule {NP option 6bp - poss_prefix, possessor final}
@@ -942,7 +1850,45 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP option&gt; = 6bp
 </rule>
 	<showWhen id="NPoption6bp">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption6bpErg">
 rule {NP option 6bpErg - poss_prefix, possessor final, ergative}
@@ -963,7 +1909,25 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP option&gt; = 6bpErg
 </rule>
 	<showWhen id="NPoption6bpErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	  <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		 <and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption6bpAbs">
 rule {NP option 6bpAbs - poss_prefix, possessor final, absolutive}
@@ -984,7 +1948,25 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP option&gt; = 6bpAbs
 </rule>
 	<showWhen id="NPoption6bpAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	  <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+		 <and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NPoption6bs">
 rule {NP option 6bs - poss_suffix, possessor final}
@@ -1005,7 +1987,45 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP option&gt; = 6bs
 </rule>
 	<showWhen id="NPoption6bs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="case" value="nominative"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	</showWhen>
 	<rule show="NPoption6bsErg">
 rule {NP option 6bsErg - poss_suffix, possessor final, ergative}
@@ -1026,7 +2046,25 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP option&gt; = 6bsErg
 </rule>
 	<showWhen id="NPoption6bsErg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	  <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		 <and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NPoption6bsAbs">
 rule {NP option 6bsAbs - poss_suffix, possessor final, absolutive}
@@ -1044,17 +2082,32 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;Pron head agr&gt; = &lt;N'' head possessor agr&gt;
 	&lt;Pron head agr&gt; = &lt;N' head possessor agr&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
-
-|rule {NP option 6cp - poss_prefix, possessor either side} - use 6ap&amp;6bp
-|rule {NP option 6cs - poss_suffix, possessor either side} - use 6as&amp;6bs
-
-|********	&lt;NP option&gt; = 6bsAbs
+	&lt;NP option&gt; = 6bsAbs
 </rule>
 	<showWhen id="NPoption6bsAbs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	  <whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+		 <and/>
+		<whenValue element="np" attr="possNounPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
-	<rule show="NPoption6a">
-rule {NP option 6a - pronoun,dem,quantifiers w/ optional partitive PP after}
+<!-- ******************************************************-->
+	<rule show="NPoption7a">
+rule {NP option 7a - pronoun,dem,quantifiers w/ optional partitive PP after}
 NP = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;NP head&gt; = &lt;Pron head&gt;
 		&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
@@ -1072,13 +2125,15 @@ NP = {Pron / Dem / Q / Num / Deg} (PP)
 		&lt;NP head type prefix poss&gt; = -  |can't be possessors
 		&lt;NP head type suffix poss&gt; = -  |can't be possessors
 	&lt;Pron head&gt; == ~[case:genitive]
-	&lt;NP option&gt; = 6a
+	&lt;NP option&gt; = 7a
 </rule>
-	<showWhen id="NPoption6a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	<showWhen id="NPoption7a">
+		<whenValue element="pron" attr="pronounCat" value="NP"/>
+		<and/>
+		<whenValue element="pron" attr="partitive" value="after"/>
 	</showWhen>
-	<rule show="NPoption6b">
-rule {NP option 6b - pronoun,dem,quantifiers w/ optional partitive PP before}
+	<rule show="NPoption7b">
+rule {NP option 7b - pronoun,dem,quantifiers w/ optional partitive PP before}
 NP = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;NP head&gt; = &lt;Pron head&gt;
 		&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
@@ -1096,12 +2151,14 @@ NP = (PP) {Pron / Dem / Q / Num / Deg}
 		&lt;NP head type prefix poss&gt; = -  |can't be possessors
 		&lt;NP head type suffix poss&gt; = -  |can't be possessors
 	&lt;Pron head&gt; == ~[case:genitive]
-
-|********************************************************	&lt;NP option&gt; = 6b
+	&lt;NP option&gt; = 7b
 </rule>
-	<showWhen id="NPoption6b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	<showWhen id="NPoption7b">
+		<whenValue element="pron" attr="pronounCat" value="NP"/>
+		<and/>
+		<whenValue element="pron" attr="partitive" value="before"/>
 	</showWhen>
+<!-- ***************************************************************************-->
 	<rule show="NBarBaroption1">
 rule {NBarBar option 1 - QPs initial}
 N'' = QP N'
@@ -1112,7 +2169,13 @@ N'' = QP N'
 	&lt;NBarBar option&gt; = 1
 </rule>
 	<showWhen id="NBarBaroption1">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="qpPos" value="before"/>
+		<or/>
+		<whenValue element="np" attr="qpPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="qpPos" value="eitherOrBoth"/>
+		<or/>
+		<whenValue element="np" attr="qpPos" value="beforeOrBoth"/>
 	</showWhen>
 	<rule show="NBarBaroption2">
 rule {NBarBar option 2 - QPs final}
@@ -1121,11 +2184,16 @@ N'' = N' QP
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
 		&lt;N'' head type suffix&gt; &lt;= &lt;QP head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
-
-|**Note: for either side but only one side at a time, use 1&amp;2, for both, use appropriate above and 3	&lt;NBarBar option&gt; = 2
+	&lt;NBarBar option&gt; = 2
 </rule>
 	<showWhen id="NBarBaroption2">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="qpPos" value="after"/>
+		<or/>
+		<whenValue element="np" attr="qpPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="qpPos" value="eitherOrBoth"/>
+		<or/>
+		<whenValue element="np" attr="qpPos" value="afterOrBoth"/>
 	</showWhen>
 	<rule show="NBarBaroption3whI">
 rule {NBarBar option 3whI - QPs both sides, wh initial}
@@ -1141,7 +2209,21 @@ N'' = QP_1 N' QP_2
 	&lt;NBarBar option&gt; = 3whI
 </rule>
 	<showWhen id="NBarBaroption3whI">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="q" attr="whDegQPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="both"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="afterOrBoth"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="eitherOrBoth"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="before"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="beforeOrBoth"/>
 	</showWhen>
 	<rule show="NBarBaroption3whF">
 rule {NBarBar option 3whF - QPs both sides, wh final}
@@ -1157,7 +2239,21 @@ N'' = QP_1 N' QP_2
 	&lt;NBarBar option&gt; = 3whF
 </rule>
 	<showWhen id="NBarBaroption3whF">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="q" attr="whDegQPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="both"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="afterOrBoth"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="eitherOrBoth"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="after"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="beforeOrBoth"/>
 	</showWhen>
 	<rule show="NBarBaroption3whagr">
 rule {NBarBar option 3whagr - QPs both sides, wh agree}
@@ -1171,12 +2267,24 @@ N'' = QP_1 N' QP_2
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_1 head type wh&gt;
 		&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
 		&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
-
-|********************************************************
-|use 1a &amp; 1b for either	&lt;NBarBar option&gt; = 3whagr
+	&lt;NBarBar option&gt; = 3whagr
 </rule>
 	<showWhen id="NBarBaroption3whagr">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="q" attr="whDegQPos" value="agree"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="both"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="agree"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="afterOrBoth"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="agree"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="eitherOrBoth"/>
+		<or/>
+		<whenValue element="q" attr="whDegQPos" value="agree"/>
+		<and/>
+		<whenValue element="np" attr="qpPos" value="beforeOrBoth"/>
 	</showWhen>
 	<rule show="NBaroption1a">
 rule {NBar option 1a - AdjP initial, recursive}
@@ -1190,7 +2298,8 @@ N'_1 = AdjP N'_2
 	&lt;NBar option&gt; = 1a
 </rule>
 	<showWhen id="NBaroption1a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="adjpPos" value="before" negateValue="no"/>
+<or/>        <whenValue element="np" attr="adjpPos" value="either" negateValue="no"/>
 	</showWhen>
 	<rule show="NBaroption1b">
 rule {NBar option 1b - AdjP final, recursive}
@@ -1201,14 +2310,14 @@ N'_1 = N'_2 AdjP
 		&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 		&lt;AdjP head type suffix copular&gt; = -
 	&lt;N'_1 head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt; | N case marking can be overridden by AdjP, if AdjP also marked then another modifier required.
-
-|****************section redone, use proper combinations of rules************	&lt;NBar option&gt; = 1b
+	&lt;NBar option&gt; = 1b
 </rule>
 	<showWhen id="NBaroption1b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="adjpPos" value="after" negateValue="no"/>
+<or/>        <whenValue element="np" attr="adjpPos" value="either" negateValue="no"/>
 	</showWhen>
 	<rule show="NBaroption2a">
-rule {NBar option 2a - left-most noun head, poss_prefix}
+rule {NBar option 2a - left-most noun head}
 N' = N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;N_2 head type prefix poss&gt; = -
@@ -1216,10 +2325,11 @@ N' = N_1 (N_2 (N_3))
 		&lt;NBar option&gt; = 2a
 </rule>
 	<showWhen id="NBaroption2a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
 	</showWhen>
-	<rule show="NBaroption2b">
-rule {NBar option 2b - left-most noun head, poss_prefix, PP initial}
+<rule show="NBaroption2b">
+rule {NBar option 2b - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1232,10 +2342,28 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;NBar option&gt; = 2b
 </rule>
 	<showWhen id="NBaroption2b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption2bgen">
-rule {NBar option 2bgen - left-most noun head, poss_prefix, genitive PP initial}
+rule {NBar option 2bgen - left-most noun head, genitive PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1249,10 +2377,28 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;NBar option&gt; = 2bgen
 </rule>
 	<showWhen id="NBaroption2bgen">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption2bnoterg">
-rule {NBar option 2bnoterg - left-most noun head, poss_prefix, PP initial}
+rule {NBar option 2bnoterg - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1265,10 +2411,18 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;NBar option&gt; = 2bnoterg
 </rule>
 	<showWhen id="NBaroption2bnoterg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NBaroption2berg">
-rule {NBar option 2berg - left-most noun head, poss_prefix, ergative PP initial}
+rule {NBar option 2berg - left-most noun head, ergative PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1282,10 +2436,18 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;NBar option&gt; = 2berg
 </rule>
 	<showWhen id="NBaroption2berg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NBaroption2bnotabs">
-rule {NBar option 2bnotabs - left-most noun head, poss_prefix, PP initial}
+rule {NBar option 2bnotabs - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1298,10 +2460,18 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;NBar option&gt; = 2bnotabs
 </rule>
 	<showWhen id="NBaroption2bnotabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NBaroption2babs">
-rule {NBar option 2babs - left-most noun head, poss_prefix, absolutive PP initial}
+rule {NBar option 2babs - left-most noun head, absolutive PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1315,10 +2485,18 @@ N' = PP N_1 (N_2 (N_3))
 		&lt;NBar option&gt; = 2babs
 </rule>
 	<showWhen id="NBaroption2babs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NBaroption2c">
-rule {NBar option 2c - left-most noun head, poss_prefix, PP final}
+rule {NBar option 2c - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1331,10 +2509,100 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;NBar option&gt; = 2c
 </rule>
 	<showWhen id="NBaroption2c">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption2cs">
+rule {NBar option 2cs - left-most noun head, poss_suffix, PP final}
+N' = N_1 (N_2 (N_3)) PP
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;PP head&gt; == ~[case:genitive]
+	&lt;NBar option&gt; = 2cs
+</rule>
+	<showWhen id="NBaroption2cs">
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption2cgen">
-rule {NBar option 2cgen - left-most noun head, poss_prefix, genitive PP final}
+rule {NBar option 2cgen - left-most noun head, genitive PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1348,10 +2616,101 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;NBar option&gt; = 2cgen
 </rule>
 	<showWhen id="NBaroption2cgen">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption2cgens">
+rule {NBar option 2cgens - left-most noun head, poss_suffix, genitive PP final}
+N' = N_1 (N_2 (N_3)) PP
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+		&lt;PP head agr case&gt; = genitive
+		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;NBar option&gt; = 2cgens
+</rule>
+	<showWhen id="NBaroption2cgens">
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption2cnoterg">
-rule {NBar option 2cnoterg - left-most noun head, poss_prefix, PP final}
+rule {NBar option 2cnoterg - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1364,10 +2723,60 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;NBar option&gt; = 2cnoterg
 </rule>
 	<showWhen id="NBaroption2cnoterg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption2cnotergs">
+rule {NBar option 2cnotergs - left-most noun head, poss_suffix, PP final}
+N' = N_1 (N_2 (N_3)) PP
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;PP head&gt; == ~[case:ergative]
+	&lt;NBar option&gt; = 2cnotergs
+</rule>
+	<showWhen id="NBaroption2cnotergs">
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption2cerg">
-rule {NBar option 2cerg - left-most noun head, poss_prefix, ergative PP final}
+rule {NBar option 2cerg - left-most noun head, ergative PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1378,13 +2787,64 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
-	&lt;NBar option&gt; = 2cerg
+		&lt;NBar option&gt; = 2cerg
 </rule>
 	<showWhen id="NBaroption2cerg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption2cergs">
+rule {NBar option 2cergs - left-most noun head, poss_suffix, ergative PP final}
+N' = N_1 (N_2 (N_3)) PP
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+		&lt;PP head agr case&gt; = ergative
+		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;NBar option&gt; = 2cergs
+</rule>
+	<showWhen id="NBaroption2cergs">
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption2cnotabs">
-rule {NBar option 2cnotabs - left-most noun head, poss_prefix, PP final}
+rule {NBar option 2cnotabs - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1397,10 +2857,60 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;NBar option&gt; = 2cnotabs
 </rule>
 	<showWhen id="NBaroption2cnotabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption2cnotabss">
+rule {NBar option 2cnotabss - left-most noun head, poss_suffix, PP final}
+N' = N_1 (N_2 (N_3)) PP
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+		&lt;PP head&gt; == ~[case:absolutive]
+	&lt;NBar option&gt; = 2cnotabss
+</rule>
+	<showWhen id="NBaroption2cnotabss">
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption2cabs">
-rule {NBar option 2cabs - left-most noun head, poss_prefix, absolutive PP final}
+rule {NBar option 2cabs - left-most noun head, absolutive PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1414,10 +2924,61 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;NBar option&gt; = 2cabs
 </rule>
 	<showWhen id="NBaroption2cabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption2cabss">
+rule {NBar option 2cabss - left-most noun head, poss_suffix, absolutive PP final}
+N' = N_1 (N_2 (N_3)) PP
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+		&lt;PP head agr case&gt; = absolutive
+		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;NBar option&gt; = 2cabss
+</rule>
+	<showWhen id="NBaroption2cabss">
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="left" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption3a">
-rule {NBar option 3a - right-most noun head, poss_suffix}
+rule {NBar option 3a - right-most noun head}
 N' = ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;N_2 head type suffix poss&gt; = -
@@ -1425,10 +2986,11 @@ N' = ((N_3) N_2) N_1
 		&lt;NBar option&gt; = 3a
 </rule>
 	<showWhen id="NBaroption3a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
 	</showWhen>
 	<rule show="NBaroption3b">
-rule {NBar option 3b - right-most noun head, poss_suffix, PP initial}
+rule {NBar option 3b - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1441,10 +3003,100 @@ N' = PP ((N_3) N_2) N_1
 		&lt;NBar option&gt; = 3b
 </rule>
 	<showWhen id="NBaroption3b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption3bp">
+rule {NBar option 3bp - right-most noun head, poss_prefix, PP initial}
+N' = PP ((N_3) N_2) N_1
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;PP head&gt; == ~[case:genitive]
+		&lt;NBar option&gt; = 3bp
+</rule>
+	<showWhen id="NBaroption3bp">
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption3bgen">
-rule {NBar option 3bgen - right-most noun head, poss_suffix, genitive PP initial}
+rule {NBar option 3bgen - right-most noun head, genitive PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1458,10 +3110,101 @@ N' = PP ((N_3) N_2) N_1
 		&lt;NBar option&gt; = 3bgen
 </rule>
 	<showWhen id="NBaroption3bgen">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption3bgenp">
+rule {NBar option 3bgenp - right-most noun head, poss_prefix, genitive PP initial}
+N' = PP ((N_3) N_2) N_1
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+		&lt;PP head agr case&gt; = genitive
+		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;NBar option&gt; = 3bgenp
+</rule>
+	<showWhen id="NBaroption3bgenp">
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption3bnoterg">
-rule {NBar option 3bnoterg - right-most noun head, poss_suffix, PP initial}
+rule {NBar option 3bnoterg - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1474,10 +3217,60 @@ N' = PP ((N_3) N_2) N_1
 		&lt;NBar option&gt; = 3bnoterg
 </rule>
 	<showWhen id="NBaroption3bnoterg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption3bnotergp">
+rule {NBar option 3bnotergp - right-most noun head, poss_prefix, PP initial}
+N' = PP ((N_3) N_2) N_1
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;PP head&gt; == ~[case:ergative]
+		&lt;NBar option&gt; = 3bnotergp
+</rule>
+	<showWhen id="NBaroption3bnotergp">
+		 <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption3berg">
-rule {NBar option 3berg - right-most noun head, poss_suffix, ergative PP initial}
+rule {NBar option 3berg - right-most noun head, ergative PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1491,10 +3284,61 @@ N' = PP ((N_3) N_2) N_1
 		&lt;NBar option&gt; = 3berg
 </rule>
 	<showWhen id="NBaroption3berg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption3bergp">
+rule {NBar option 3bergp - right-most noun head, poss_prefix, ergative PP initial}
+N' = PP ((N_3) N_2) N_1
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+		&lt;PP head agr case&gt; = ergative
+		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;NBar option&gt; = 3bergp
+</rule>
+	<showWhen id="NBaroption3bergp">
+		 <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption3bnotabs">
-rule {NBar option 3bnotabs - right-most noun head, poss_suffix, PP initial}
+rule {NBar option 3bnotabs - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1507,10 +3351,60 @@ N' = PP ((N_3) N_2) N_1
 		&lt;NBar option&gt; = 3bnotabs
 </rule>
 	<showWhen id="NBaroption3bnotabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption3bnotabsp">
+rule {NBar option 3bnotabsp - right-most noun head, poss_prefix, PP initial}
+N' = PP ((N_3) N_2) N_1
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;PP head&gt; == ~[case:absolutive]
+		&lt;NBar option&gt; = 3bnotabsp
+</rule>
+	<showWhen id="NBaroption3bnotabsp">
+		 <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption3babs">
-rule {NBar option 3babs - right-most noun head, poss_suffix, absolutive PP initial}
+rule {NBar option 3babs - right-most noun head, absolutive PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1524,10 +3418,61 @@ N' = PP ((N_3) N_2) N_1
 		&lt;NBar option&gt; = 3babs
 </rule>
 	<showWhen id="NBaroption3babs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"></whenValue>
+<or/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="suffix"></whenValue>
+	</showWhen>
+	<rule show="NBaroption3babsp">
+rule {NBar option 3babsp - right-most noun head, poss_prefix, absolutive PP initial}
+N' = PP ((N_3) N_2) N_1
+	&lt;N' head&gt; = &lt;N_1 head&gt;
+	&lt;PP head type stranded&gt; = -	| P must have overt complement
+	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head type sentential&gt; = -	| sentential not within NP
+		&lt;PP head agr case&gt; = absolutive
+		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+		&lt;NBar option&gt; = 3babsp
+</rule>
+	<showWhen id="NBaroption3babsp">
+		 <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<and/> <whenValue element="np" attr="possMarked" value="yesAffix"></whenValue>
+<and/> <whenValue element="np" attr="possCliticAffix" value="prefix"></whenValue>
 	</showWhen>
 	<rule show="NBaroption3c">
-rule {NBar option 3c - right-most noun head, poss_suffix, PP final}
+rule {NBar option 3c - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1540,10 +3485,28 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;NBar option&gt; = 3c
 </rule>
 	<showWhen id="NBaroption3c">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption3cgen">
-rule {NBar option 3cgen - right-most noun head, poss_suffix, genitive PP final}
+rule {NBar option 3cgen - right-most noun head, genitive PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1557,10 +3520,28 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;NBar option&gt; = 3cgen
 </rule>
 	<showWhen id="NBaroption3cgen">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+	   <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption3cnoterg">
-rule {NBar option 3cnoterg - right-most noun head, poss_suffix, PP final}
+rule {NBar option 3cnoterg - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1573,10 +3554,18 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;NBar option&gt; = 3cnoterg
 </rule>
 	<showWhen id="NBaroption3cnoterg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NBaroption3cerg">
-rule {NBar option 3cerg - right-most noun head, poss_suffix, ergative PP final}
+rule {NBar option 3cerg - right-most noun head, ergative PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1590,10 +3579,18 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;NBar option&gt; = 3cerg
 </rule>
 	<showWhen id="NBaroption3cerg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NBaroption3cnotabs">
-rule {NBar option 3cnotabs - right-most noun head, poss_suffix, PP final}
+rule {NBar option 3cnotabs - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1606,10 +3603,18 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;NBar option&gt; = 3cnotabs
 </rule>
 	<showWhen id="NBaroption3cnotabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NBaroption3cabs">
-rule {NBar option 3cabs - right-most noun head, poss_suffix, absolutive PP final}
+rule {NBar option 3cabs - right-most noun head, absolutive PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1620,12 +3625,21 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-
-|***no compounds	&lt;NBar option&gt; = 3cabs
+	&lt;NBar option&gt; = 3cabs
 </rule>
 	<showWhen id="NBaroption3cabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="yes" negateValue="no"/>
+<and/>        <whenValue element="np" attr="compHead" value="right" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
+
+<!--|***no compounds*****-->
 	<rule show="NBaroption4a">
 rule {NBar option 4a - no compounds}
 N' = N
@@ -1633,10 +3647,10 @@ N' = N
 		&lt;NBar option&gt; = 4a
 </rule>
 	<showWhen id="NBaroption4a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 	</showWhen>
 	<rule show="NBaroption4b">
-rule {NBar option 4b - no compounds, poss_prefix, PP initial}
+rule {NBar option 4b - no compounds, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1647,10 +3661,24 @@ N' = PP N
 		&lt;NBar option&gt; = 4b
 </rule>
 	<showWhen id="NBaroption4b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+	   <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption4bgen">
-rule {NBar option 4bgen - no compounds, poss_prefix, genitive PP initial}
+rule {NBar option 4bgen - no compounds, genitive PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1662,10 +3690,24 @@ N' = PP N
 		&lt;NBar option&gt; = 4bgen
 </rule>
 	<showWhen id="NBaroption4bgen">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+	   <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption4bnoterg">
-rule {NBar option 4bnoterg - no compounds, poss_prefix, PP initial}
+rule {NBar option 4bnoterg - no compounds, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1676,10 +3718,16 @@ N' = PP N
 		&lt;NBar option&gt; = 4bnoterg
 </rule>
 	<showWhen id="NBaroption4bnoterg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NBaroption4berg">
-rule {NBar option 4berg - no compounds, poss_prefix, ergative PP initial}
+rule {NBar option 4berg - no compounds, ergative PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1691,10 +3739,16 @@ N' = PP N
 		&lt;NBar option&gt; = 4berg
 </rule>
 	<showWhen id="NBaroption4berg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NBaroption4bnotabs">
-rule {NBar option 4bnotabs - no compounds, poss_prefix, PP initial}
+rule {NBar option 4bnotabs - no compounds, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1705,10 +3759,16 @@ N' = PP N
 		&lt;NBar option&gt; = 4bnotabs
 </rule>
 	<showWhen id="NBaroption4bnotabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NBaroption4babs">
-rule {NBar option 4babs - no compounds, poss_prefix, absolutive PP initial}
+rule {NBar option 4babs - no compounds, absolutive PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1720,184 +3780,16 @@ N' = PP N
 		&lt;NBar option&gt; = 4babs
 </rule>
 	<showWhen id="NBaroption4babs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4c">
-rule {NBar option 4c - no compounds, poss_prefix, PP final}
-N' = N PP
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-	&lt;PP head type prefix poss&gt; = -
-		&lt;PP head&gt; == ~[case:genitive]
-	&lt;NBar option&gt; = 4c
-</rule>
-	<showWhen id="NBaroption4c">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4cgen">
-rule {NBar option 4cgen - no compounds, poss_prefix, genitive PP final}
-N' = N PP
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
-	&lt;PP head type prefix poss&gt; = -
-	&lt;NBar option&gt; = 4cgen
-</rule>
-	<showWhen id="NBaroption4cgen">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4cntoerg">
-rule {NBar option 4cntoerg - no compounds, poss_prefix, PP final}
-N' = N PP
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-	&lt;PP head type prefix poss&gt; = -
-		&lt;PP head&gt; == ~[case:ergative]
-	&lt;NBar option&gt; = 4cntoerg
-</rule>
-	<showWhen id="NBaroption4cntoerg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4cerg">
-rule {NBar option 4cerg - no compounds, poss_prefix, ergative PP final}
-N' = N PP
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
-	&lt;PP head type prefix poss&gt; = -
-	&lt;NBar option&gt; = 4cerg
-</rule>
-	<showWhen id="NBaroption4cerg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4cnotabs">
-rule {NBar option 4cnotabs - no compounds, poss_prefix, PP final}
-N' = N PP
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-	&lt;PP head type prefix poss&gt; = -
-		&lt;PP head&gt; == ~[case:absolutive]
-	&lt;NBar option&gt; = 4cnotabs
-</rule>
-	<showWhen id="NBaroption4cnotabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4cabs">
-rule {NBar option 4cabs - no compounds, poss_prefix, absolutive PP final}
-N' = N PP
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
-	&lt;PP head type prefix poss&gt; = -
-	&lt;NBar option&gt; = 4cabs
-</rule>
-	<showWhen id="NBaroption4cabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4d">
-rule {NBar option 4d - no compounds, poss_suffix, PP initial}
-N' = PP N
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-	&lt;PP head type suffix poss&gt; = -
-		&lt;PP head&gt; == ~[case:genitive]
-		&lt;NBar option&gt; = 4d
-</rule>
-	<showWhen id="NBaroption4d">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4dgen">
-rule {NBar option 4dgen - no compounds, poss_suffix, genitive PP initial}
-N' = PP N
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = genitive
-		&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
-	&lt;PP head type suffix poss&gt; = -
-		&lt;NBar option&gt; = 4dgen
-</rule>
-	<showWhen id="NBaroption4dgen">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4dnoterg">
-rule {NBar option 4dnoterg - no compounds, poss_suffix, PP initial}
-N' = PP N
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-	&lt;PP head type suffix poss&gt; = -
-		&lt;PP head&gt; == ~[case:ergative]
-		&lt;NBar option&gt; = 4dnoterg
-</rule>
-	<showWhen id="NBaroption4dnoterg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4derg">
-rule {NBar option 4derg - no compounds, poss_suffix, ergative PP initial}
-N' = PP N
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = ergative
-		&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
-	&lt;PP head type suffix poss&gt; = -
-		&lt;NBar option&gt; = 4derg
-</rule>
-	<showWhen id="NBaroption4derg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4dnotabs">
-rule {NBar option 4dnotabs - no compounds, poss_suffix, PP initial}
-N' = PP N
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-	&lt;PP head type suffix poss&gt; = -
-		&lt;PP head&gt; == ~[case:absolutive]
-		&lt;NBar option&gt; = 4dnotabs
-</rule>
-	<showWhen id="NBaroption4dnotabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
-	</showWhen>
-	<rule show="NBaroption4dabs">
-rule {NBar option 4dabs - no compounds, poss_suffix, absolutive PP initial}
-N' = PP N
-	&lt;N' head&gt; = &lt;N head&gt;
-	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
-	&lt;PP head type sentential&gt; = -	| sentential not within NP
-		&lt;PP head agr case&gt; = absolutive
-		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
-	&lt;PP head type suffix poss&gt; = -
-		&lt;NBar option&gt; = 4dabs
-</rule>
-	<showWhen id="NBaroption4dabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="before"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NBaroption4e">
-rule {NBar option 4e - no compounds, poss_suffix, PP final}
+rule {NBar option 4e - no compounds, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1908,10 +3800,24 @@ N' = N PP
 	&lt;NBar option&gt; = 4e
 </rule>
 	<showWhen id="NBaroption4e">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+	   <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption4egen">
-rule {NBar option 4egen - no compounds, poss_suffix, genitive PP final}
+rule {NBar option 4egen - no compounds, genitive PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1923,10 +3829,24 @@ N' = N PP
 	&lt;NBar option&gt; = 4egen
 </rule>
 	<showWhen id="NBaroption4egen">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="genitive"/>
+<or/>
+	   <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>                <whenValue element="np" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption4enoterg">
-rule {NBar option 4enoterg - no compounds, poss_suffix, PP final}
+rule {NBar option 4enoterg - no compounds, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1937,10 +3857,16 @@ N' = N PP
 	&lt;NBar option&gt; = 4enoterg
 </rule>
 	<showWhen id="NBaroption4enoterg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NBaroption4eerg">
-rule {NBar option 4eerg - no compounds, poss_suffix, ergative PP final}
+rule {NBar option 4eerg - no compounds, ergative PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1952,10 +3878,16 @@ N' = N PP
 	&lt;NBar option&gt; = 4eerg
 </rule>
 	<showWhen id="NBaroption4eerg">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	</showWhen>
 	<rule show="NBaroption4enotabs">
-rule {NBar option 4enotabs - no compounds, poss_suffix, PP final}
+rule {NBar option 4enotabs - no compounds, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1966,10 +3898,16 @@ N' = N PP
 	&lt;NBar option&gt; = 4enotabs
 </rule>
 	<showWhen id="NBaroption4enotabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NBaroption4eabs">
-rule {NBar option 4eabs - no compounds, poss_suffix, absolutive PP final}
+rule {NBar option 4eabs - no compounds, absolutive PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
@@ -1978,11 +3916,16 @@ N' = N PP
 		&lt;PP head agr case&gt; = absolutive
 		&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
-
-|**********	&lt;NBar option&gt; = 4eabs
+	&lt;NBar option&gt; = 4eabs
 </rule>
 	<showWhen id="NBaroption4eabs">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+	   <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="after"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+<or/>
+ <whenValue element="np" attr="comp" value="no" negateValue="no"/>
+<and/> <whenValue element="np" attr="compHeadPPPos" value="either"></whenValue>
+<and/>         <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	</showWhen>
 	<rule show="NBaroption5a">
 rule {NBar option 5a - pronoun,dem,quantifiers w/o head noun (optional PP after)}
@@ -2006,7 +3949,9 @@ N' = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;NBar option&gt; = 5a
 </rule>
 	<showWhen id="NBaroption5a">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="pron" attr="pronounCat" value="N"/>
+		<and/>
+		<whenValue element="pron" attr="partitive" value="after"/>
 	</showWhen>
 	<rule show="NBaroption5b">
 rule {NBar option 5b - pronoun,dem,quantifiers w/o head noun (optional PP before)}
@@ -2027,10 +3972,11 @@ N' = (PP) {Pron / Dem / Q / Num / Deg}
 		&lt;N' head type prefix poss&gt; = -  |can't be possessors
 		&lt;N' head type suffix poss&gt; = -  |can't be possessors
 	&lt;Pron head&gt; == ~[case:genitive]
-
 	&lt;NBar option&gt; = 5b
 </rule>
 	<showWhen id="NBaroption5b">
-		<whenValue element="" attr="" value="" negateValue="no"/>
+		<whenValue element="pron" attr="pronounCat" value="N"/>
+		<and/>
+		<whenValue element="pron" attr="partitive" value="before"/>
 	</showWhen>
 </masterGrammar>

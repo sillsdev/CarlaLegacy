@@ -523,7 +523,7 @@ Let makeV               be      &lt;cat&gt; = V
 	<!-- |**need set for nominative default -->
 	<!-- |**need set without singular default for quantifier marking lgs -->
 	<!-- |**need set for alienably possessed -->
-	<!-- |**need sets for DP-initial and DP-final Num -->
+	<!-- |**need sets for DP-initial and DP-final Num (np qpeitherRestrictedNumPos)-->
 	<!-- |**need sets for P,copular,gen,erg,abs_prefix,suffix, P_on_N, YNQ -->
 	<!-- | -CP-specifier-initial default for VSO with possibility -->
 	<!-- |***Category Mapper templates for starter kit**** -->
