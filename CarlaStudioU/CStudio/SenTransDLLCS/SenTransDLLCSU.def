@@ -1,0 +1,8 @@
+; SenTransDLLCS.def : Declares the module parameters for the DLL.
+
+; let the /out switch specify the library name (for unicode) LIBRARY      "SenTransDLLCSU"
+DESCRIPTION  'SenTransDLLCSU Windows Dynamic Link Library'
+
+EXPORTS
+	GetProcessorDisplayName   @1
+	?GetProcessTemplateU@@YAPAVCProcessTemplate@@XZ  @2

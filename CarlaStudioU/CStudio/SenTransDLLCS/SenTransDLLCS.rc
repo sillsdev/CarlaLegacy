@@ -1,0 +1,167 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"#include ""afxres.h""\r\n"
+	"\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+	"#define _AFX_NO_OLE_RESOURCES\r\n"
+	"#define _AFX_NO_TRACKER_RESOURCES\r\n"
+	"#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+	"\r\n"
+	"#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+	"#ifdef _WIN32\r\n"
+	"LANGUAGE 9, 1\r\n"
+	"#pragma code_page(1252)\r\n"
+	"#endif //_WIN32\r\n"
+	"#include ""res\\SenTransDLLCS.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+	"#include ""afxres.rc""         // Standard components\r\n"
+	"#endif\r\n"
+	"\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EditSentransDllProcess DIALOG DISCARDABLE  0, 0, 238, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SenTrans DLL"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "Source Disambiguation",IDC_radioFunction1,"Button",
+					BS_AUTORADIOBUTTON | WS_DISABLED | WS_GROUP,27,18,89,10
+	CONTROL         "Source Adjustment (during glossing)",IDC_radioFunction2,
+					"Button",BS_AUTORADIOBUTTON | WS_DISABLED,27,41,128,10
+	CONTROL         "Transfer to Target",IDC_radioFunction3,"Button",
+					BS_AUTORADIOBUTTON | WS_DISABLED,27,52,73,10
+	CONTROL         "Source Adjustment (during analysis)",IDC_radioFunction4,
+					"Button",BS_AUTORADIOBUTTON | WS_DISABLED,27,29,127,10
+	CONTROL         "Use Other Rule File: (Used by ParseBench)",
+					IDC_radioFunction5,"Button",BS_AUTORADIOBUTTON |
+					WS_DISABLED,27,66,152,10
+	EDITTEXT        IDC_EDITRuleFile,48,79,177,14,ES_AUTOHSCROLL
+	CONTROL         "Trace rule application",IDC_TraceRules,"Button",
+					BS_AUTOCHECKBOX | WS_TABSTOP,27,124,123,10
+	CONTROL         "Put class contents in log",IDC_OutputClassContents,
+					"Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,137,156,10
+	DEFPUSHBUTTON   "OK",IDOK,110,158,50,14
+	PUSHBUTTON      "Cancel",IDCANCEL,181,158,50,14
+	GROUPBOX        "Output Options",IDC_STATIC,7,110,224,40
+	GROUPBOX        "Function",IDC_STATIC,7,7,224,99
+	LTEXT           "don't change this tab order!",IDC_STATIC,125,13,81,16,
+					NOT WS_VISIBLE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,1,2
+ PRODUCTVERSION 1,0,1,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904b0"
+		BEGIN
+			VALUE "Comments", "\0"
+			VALUE "CompanyName", "\0"
+			VALUE "FileDescription", "SenTransDLLCS DLL\0"
+			VALUE "FileVersion", "1, 0, 1, 2\0"
+			VALUE "InternalName", "SenTransDLLCS\0"
+			VALUE "LegalCopyright", "Copyright (C) 2000-2002\0"
+			VALUE "LegalTrademarks", "\0"
+			VALUE "OriginalFilename", "SenTransDLLCS.DLL\0"
+			VALUE "PrivateBuild", "\0"
+			VALUE "ProductName", "SenTransDLLCS Dynamic Link Library\0"
+			VALUE "ProductVersion", "1, 0, 1, 2\0"
+			VALUE "SpecialBuild", "\0"
+		END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1200
+	END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\SenTransDLLCS.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
