@@ -176,7 +176,7 @@ if (<xsl:for-each select="./*">
 		  <xsl:choose>
 			<xsl:when test="name(.)='whenRadio'">
 			  <xsl:value-of select="@button"/>.checked</xsl:when>
-			<xsl:when test="name()='whenValue'">valArray[<xsl:value-of select="position()"/>] == "<xsl:value-of select="@value"/>"</xsl:when>
+			<xsl:when test="name()='whenValue'">(valArray[<xsl:value-of select="position()"/>] == "<xsl:value-of select="@value"/>")</xsl:when>
 			<xsl:when test="name()='and'"> &amp;&amp; </xsl:when>
 			<xsl:when test="name()='or'"> || </xsl:when>
 			<xsl:when test="name()='not'"> !</xsl:when>
