@@ -389,11 +389,18 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 	  else
 		sState = "SFX";
 	}
+	  else if (m_pAlloChosen->m_sType == "NFX")
+	{
+	  sState = "NFX";
+	}
 	  else
 	sState = m_pAlloChosen->m_sType;
 #ifndef hab254
-	  if (sState == "SFX" ||
-	  ((sState == "ROOT") && sLastState == "ROOT"))
+	  if ((sState == "SFX") ||
+	  (sState == "NFX") ||
+	  (sState == "NFXIFX") ||
+	  ((sState == "ROOT") &&
+	   ((sLastState == "ROOT") || (sLastState == "NFX"))))
 #else
 	  if (sState == "SFX")
 #endif // hab254
@@ -418,7 +425,8 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 	iAlloLen = 0;	// adjust for nulls
 	  else
 	iAlloLen = m_pAlloChosen->m_sShape.GetLength();
-	  if (m_pAlloChosen->m_sType == "IFX")
+	  if ((m_pAlloChosen->m_sType == "IFX") ||
+	  (m_pAlloChosen->m_sType == "NFXIFX"))
 	{
 	  int iInfixLoc = m_pAlloChosen->m_sInfixContext.Find(kcDelim);
 	  sInput = sInput.Left(iInfixLoc) +
@@ -432,6 +440,8 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 	  m_sOutput = sAllos + sReturn + sMNames + sReturn + sReturn;
 	  UpdateData(FALSE);
 #ifndef hab254
+	  if (sState = "NFXIFX")
+	sState = "NFX";		// no longer need to know it also was an infix
 	  sLastState = sState;
 #endif // hab254
 				// get next set of possibilities

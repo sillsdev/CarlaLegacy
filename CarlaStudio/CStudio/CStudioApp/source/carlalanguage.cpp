@@ -14,6 +14,7 @@
 //       10-Dec-1999 hab Edit Transfer Sequence is from target language's
 //                       perspective when the kLocateTransferWithTarget is set
 // 2.0.2 19-Jan-2000 hab Use unified dictionary in prepareMFSForProcessors()
+// 2.8.0 03-Dec-2004 hab Added maxInterfaces
 
 #include "stdafx.h"
 #include "CARLAStudioApp.h"
@@ -139,6 +140,7 @@ BOOL CCarlaLanguage::save(LPCTSTR lpszProjectDirectory)
 	WRITEPREFS("ptestPrefs",m_analysisModel.prefixTests);
 	WRITEPREFS("stestPrefs",m_analysisModel.suffixTests);
 	WRITEPREFS("itestPrefs",m_analysisModel.infixTests);
+	WRITEPREFS("ntestPrefs",m_analysisModel.interfixTests);
 	WRITEPREFS("rttestPrefs",m_analysisModel.rootTests);
 	WRITEPREFS("mccPrefs",m_analysisModel.generalMCCs);
 	WRITEPREFS("apPrefs",m_commonModel.m_allomorphProperties);
@@ -202,7 +204,6 @@ BOOL CCarlaLanguage::save(LPCTSTR lpszProjectDirectory)
 		if(m_mfs.getInfixDictPathD().IsEmpty())
 			m_analysisModel.maxInfixes=0;
 	}
-
 
 	if(m_pAnalysisSequence)
 		m_pAnalysisSequence->writeToFile(fout);
@@ -336,6 +337,7 @@ BOOL CCarlaLanguage::open(LPCTSTR lpszPathName)
 		CHECKPREFS("ptestPrefs",m_analysisModel.prefixTests);
 		CHECKPREFS("stestPrefs",m_analysisModel.suffixTests);
 		CHECKPREFS("itestPrefs",m_analysisModel.infixTests);
+		CHECKPREFS("ntestPrefs",m_analysisModel.interfixTests);
 		CHECKPREFS("rttestPrefs",m_analysisModel.rootTests);
 		CHECKPREFS("mccPrefs",m_analysisModel.generalMCCs);
 		CHECKPREFS("apPrefs",m_commonModel.m_allomorphProperties);

@@ -321,10 +321,12 @@ CAMorph* CAMorph::readNode(CParseStream& parseStream)
 	ostream& CAMorph::operator<<(ostream& sout) const
 	{
 		sout << m_sID << "(";
-		if(m_sType == "s" || m_sType == "i")
+		if ((m_sType == "s") || (m_sType == "i") ||
+		(m_sType == "ns") || (m_sType == "ni"))
 			sout << "-";
 		sout << m_sAllo;
-		if(m_sType == "p" || m_sType == "i")
+		if ((m_sType == "p") || (m_sType == "i") ||
+		(m_sType == "ni") || (m_sType == "np"))
 			sout << "-";
 		sout << ") ";// jdh 23/may/2000
 
@@ -569,7 +571,8 @@ CString CAmpleResult::getXMLRepresentation(LPCTSTR lpszPath)
 	for(int i=0; i< m_wordResults.GetSize(); i++)
 	  {
 		pAllo = (CAllo *)getResult(i);
-		if (pAllo->m_sType == "IFX")
+		if ((pAllo->m_sType == "IFX") ||
+		(pAllo->m_sType == "NFXIFX"))
 	{
 	  sAllo  = pAllo->m_sShape;
 	  sMName = pAllo->m_sMorphName;

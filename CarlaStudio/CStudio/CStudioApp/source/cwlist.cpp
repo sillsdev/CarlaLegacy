@@ -11,6 +11,7 @@
 //                       the correct list.
 // 2.1.2 13-Mar-2000 jdh removed problem with dragging and entry into the middle of another entry
 // 2.6.0 07-Aug-2001 hab when drag an item up, put it in the right spot in the file (was one too high)
+// 2.8.0 03-Dec-2004 hab Add interfix ad hoc pairs
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -299,6 +300,7 @@ void CWAdhocPairList::insertColumns(CListCtrl &clc)
 					case 'i': s = "infix"; break;
 					case 's': s = "suffix"; break;
 					case 'r': s = "root"; break;
+					case 'n': s = "interfix"; break;
 				}
 				return s;
 				break;
@@ -316,6 +318,7 @@ CWAdhocPair::CWAdhocPair(CString& sMarker, CString& sField, BOOL bEnabled, char 
 	THROW_STR_IF_NOT((	m_cTypeOfSecondMorpheme == 'p' ||
 						m_cTypeOfSecondMorpheme == 'i' ||
 						m_cTypeOfSecondMorpheme == 's' ||
+						m_cTypeOfSecondMorpheme == 'n' ||
 						m_cTypeOfSecondMorpheme == 'r' ),
 					sMarker);
 
@@ -845,6 +848,8 @@ BOOL CWAdhocPair::doEditDialog(CListCtrl& clc, BOOL bIsNew)
 			break;
 		case 'i': dlg.m_sMorphType = "Infix";
 			break;
+		case 'n': dlg.m_sMorphType = "Interfix";
+			break;
 		case 'r': dlg.m_sMorphType = "Root";
 			break;
 		case 's': dlg.m_sMorphType = "Suffix";
@@ -909,6 +914,8 @@ void CWAdhocPair::write(ostream& fout, char cCommentChar) const
 		case 's':	fout << "\\sah ";
 					break;
 		case 'i':	fout << "\\iah ";
+					break;
+		case 'n':	fout << "\\nah ";
 					break;
 		case 'r':	fout << "\\rah ";
 					break;

@@ -11,6 +11,7 @@
 // 2.1.5 28-Mar-2000 hab Root dict codes have no orderclass; affix ones have no root gloss
 //	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
 // jdh 12 sep 2001 added unified/classic consistency check to LoadFromFile()
+// 2.8.0 03-Dec-2004 hab Add morph type to affix code set
 
 #include "stdafx.h"
 #include "CodeTable.h"
@@ -216,6 +217,7 @@ CWAffixCodeSet::CWAffixCodeSet()
 	m_gates.Add(new CGate('N', "*Tone Information", "tone"));
 	m_gates.Add(new CGate('D', "*Tone Domain", "domain"));
 #endif // hab241
+	 m_gates.Add(new CGate('T', "Morph Type", "type"));
 }
 
 CWRootCodeSet::CWRootCodeSet()

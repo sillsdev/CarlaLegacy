@@ -26,6 +26,7 @@
 // 2.6.1 17-Sep-2001 hab Added new final cat page to modify tests wizard so can
 //                       correctly process any final cat tests
 // 2.6.1 17-Sep-2001 hab Plug memory leak when removing tests.
+// 2.8.0 03-Dec-2004 hab Added maxInterfaces, interfix ad hoc pair and interfix tests
 
 #include "CWModel.h"
 #include "CWAmpleModels.h"
@@ -117,6 +118,7 @@ CWAnalysisModel::CWAnalysisModel(CTextDisplayInfo* pTDI)
 		outputAllMorphCats("Output category of each morpheme", FALSE),
 		maxNulls("Max Nulls", 5 ), //ample's default is 10
 		maxInfixes("Max Infixes",0), //ample's default is 0
+		maxInterfixes("Max Interfixes",0), //ample's default is 0
 		maxRoots("Max Roots", 1), //ample's default is 1
 		maxPrefixes("Max Prefixes", 5), //ample's default is 0 // kNoMax),
 		maxSuffixes("Max Suffixes", 5), //ample's default is 99
@@ -126,6 +128,7 @@ CWAnalysisModel::CWAnalysisModel(CTextDisplayInfo* pTDI)
 		prefixTests("pt", pTDI),
 		infixTests("it", pTDI),
 		rootTests("rt", pTDI),
+		interfixTests("nt", pTDI),
 		suffixTests("st", pTDI),
 		finalTests("ft", pTDI),
 		adhocPairs(pTDI),
@@ -300,6 +303,12 @@ BOOL CWAnalysisModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonMo
 					CWTest *t = new CWTest(sField, bEnabled, m_cCommentChar);
 					infixTests.addItem(t);
 				}
+				else if(sMarker == "nt")
+				{
+					coOrTdCollector.disgorge(interfixTests);
+					CWTest *t = new CWTest(sField, bEnabled, m_cCommentChar);
+					interfixTests.addItem(t);
+				}
 				else if(sMarker == "mcc")
 				{
 #ifndef hab17a1
@@ -341,7 +350,13 @@ BOOL CWAnalysisModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonMo
 					CWAdhocPair *ap = new CWAdhocPair(sMarker, sField, bEnabled, m_cCommentChar);
 					adhocPairs.addItem(ap);
 				}
-				else if(sMarker == "maxnull" || sMarker == "maxn")
+				else if(sMarker == "nah")
+				{
+					coOrTdCollector.disgorge(adhocPairs);
+					CWAdhocPair *ap = new CWAdhocPair(sMarker, sField, bEnabled, m_cCommentChar);
+					adhocPairs.addItem(ap);
+				}
+				else if(sMarker == "maxnull")
 				{
 					maxNulls = atoi(sField);
 				}
@@ -352,6 +367,10 @@ BOOL CWAnalysisModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonMo
 				else if(sMarker == "maxi")
 				{
 					maxInfixes = atoi(sField);
+				}
+				else if(sMarker == "maxn")
+				{
+					maxInterfixes = atoi(sField);
 				}
 				else if(sMarker == "maxs")
 				{
@@ -481,6 +500,10 @@ BOOL CWAnalysisModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonMo
 				{
 				  pLastList = &infixTests;
 				}
+				else if(sMarker == "CSbegnt")
+				{
+				  pLastList = &interfixTests;
+				}
 				else if(sMarker == "CSbegrt")
 				{
 				  pLastList = &rootTests;
@@ -571,6 +594,7 @@ BOOL CWAnalysisModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 	OUTPUT_MAX(fout,"maxs", maxSuffixes);
 	OUTPUT_MAX(fout,"maxr", maxRoots);
 	OUTPUT_MAX(fout,"maxi", maxInfixes);
+	OUTPUT_MAX(fout,"maxn", maxInterfixes);
 	OUTPUT_MAX(fout,"maxnull", maxNulls); // hab 1.03 change from "maxn"
 #ifndef hab210
 	OUTPUT_MAX(fout,"maxprops", maxProps);
@@ -629,6 +653,7 @@ BOOL CWAnalysisModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 
 	prefixTests.write(fout, commonModel.m_cCommentChar, "pt");
 	infixTests.write(fout, commonModel.m_cCommentChar, "it");
+	interfixTests.write(fout, commonModel.m_cCommentChar, "nt");
 	rootTests.write(fout, commonModel.m_cCommentChar, "rt");
 	suffixTests.write(fout, commonModel.m_cCommentChar, "st");
 	finalTests.write(fout, commonModel.m_cCommentChar, "ft");
@@ -657,6 +682,7 @@ BOOL CWAnalysisModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 
 	prefixTests.write(fout, commonModel.m_cCommentChar);
 	infixTests.write(fout, commonModel.m_cCommentChar);
+	interfixTests.write(fout, commonModel.m_cCommentChar);
 	rootTests.write(fout, commonModel.m_cCommentChar);
 	suffixTests.write(fout, commonModel.m_cCommentChar);
 	finalTests.write(fout, commonModel.m_cCommentChar);
@@ -680,6 +706,7 @@ void CWAnalysisModel::addTest(UINT id, char cType, BOOL bEnable)
 		case 's': suffixTests.addItem(pTest); break;
 		case 'p': prefixTests.addItem(pTest); break;
 		case 'i': infixTests.addItem(pTest); break;
+		case 'n': interfixTests.addItem(pTest); break;
 	}
 }
 
@@ -695,6 +722,7 @@ void CWAnalysisModel::removeTest(UINT id, char cType)
 		case 's': pTL  = &suffixTests; break;
 		case 'p': pTL  = &prefixTests; break;
 		case 'i': pTL  = &infixTests; break;
+		case 'n': pTL  = &interfixTests; break;
 	}
 
 	ASSERTX(pTL);
