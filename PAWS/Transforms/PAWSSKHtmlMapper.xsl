@@ -568,15 +568,17 @@ Refresh();
 	  <!--      <xsl:value-of select="."/> -->
 	  <xsl:choose>
 		<xsl:when test="@id">
-		  <span>
+		  <p style="margin-left: 0.125in">
 			<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
 			<xsl:apply-templates/>
 			<br/>
-		  </span>
+		  </p>
 		</xsl:when>
 		<xsl:otherwise>
+		<p style="margin-left: 0.125in">
 		  <xsl:apply-templates/>
 		  <br/>
+		  </p>
 		</xsl:otherwise>
 	  </xsl:choose>
 	</xsl:if>
@@ -748,6 +750,7 @@ Refresh();
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+10-Jun-2002  Andy Black  Added indent to default prompt
 05-Jun-2002  Andy Black  Added img to tree
 2001               Andy Black  Began working on Initial Draft
 ================================================================
