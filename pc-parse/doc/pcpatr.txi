@@ -2485,35 +2485,67 @@ A BNF grammar for PC-PATR logical constraint operations follows.
 					   | '^9'
 @end example
 @noindent
-Note that both <LABEL> and <ATOM> refer to a single string token of
-contiguous characters.
+Note that both @code{<LABEL>} and @code{<ATOM>} refer to a
+single string token of contiguous characters.
 
-An <indexedvariable> is interpreted as a variable for the
+@c indexed variables added by hab 08-Mar-2002
+An @code{<indexedvariable>} is interpreted as a variable for the
 atomic value at that place in the feature structure.  The
 first such variable is instantiated by the atomic value of
 the feature at that place in the feature-path.  All
 subsequent instances of the variable are compared for
 equality with the first instantiated one.
 
-For example, consider the following logical constraint (which
-is to prevent the rule it is a part of from being used
-within a compound; there is another rule for dealing with
-the compounding situation in the grammar this example was
-taken from):
+Why might one need such an indexed variable?  In some SOV
+languages with pro-drop and noun-verb compounding, a clause
+consisting just of a @code{Noun Verb} sequence is
+potentially at least three ways ambiguous:
+@itemize @bullet
+@item
+@code{Subject Verb}
+@item
+@i{pro-drop} @code{Object Verb}
+@item
+@i{pro-drop} @code{Noun-Verb-compound}
+@end itemize
+In at least one of these languages, it is the case that when
+a noun-verb compound is possible, it is the only valid
+reading.  Therefore, the correct thing to do is to ensure
+that none of the other possible readings are allowed by the
+grammar.
+
+Here's a (simplified) example of how one can use indexed
+variables to rule out the @code{Subject Verb} case.  (The
+@code{Noun} is realized as the @code{DP} node and the
+@code{Verb} is realized as a @code{VP} which is a daughter
+of the @code{I'} node in the following rule.)
 @example
-	<IP head> == [rootgloss:^1] ->
-				~( [type:[no_intervening:+]] &
-					(  [subject:[head:[type:[compounds_with1:^1]]]]
-					 / ( [subject:[head:[type:[compounds_with2:^1]]]]
-						/ [subject:[head:[type:[compounds_with3:^1]]]]
-					   )
-					)
-				  )
+rule @{IP option 2cI - subject initial, required, root clause@}
+IP = DP I'
+	<IP head> = <I' head>
+	<IP head type root> = +
+	<IP head type pro-drop> = -
+	   ...
+	<DP head case nominative> = +
+	   ...
+	@b{<IP head> == [rootgloss:^1] ->
+				 ~ ( [type:[no_intervening:+]] &
+				   (( [subject:[head:[type:[compounds_with1:^1]]]]
+					/ [subject:[head:[type:[compounds_with2:^1]]]])
+					/ ([subject:[head:[type:[compounds_with3:^1]]]]
+					/ [subject:[head:[type:[compounds_with4:^1]]]]) ) )}
+	   ...
 @end example
-The atomic value of the rootgloss feature is stored in
-variable @code{^1} in the "if" part of the conditional.
-This atomic value is then compared with the values of the
-various compounds_with features.
+In the final logical constraint above (which is shown in
+bold), the atomic value of the @code{rootgloss} feature is
+stored in variable @code{^1} in the antecedent (the "if"
+part) of the conditional.  This atomic value is then
+compared with the values of the various
+@code{compounds_with} features.  The idea is that the value
+of the @code{rootgloss} feature should not be any of the
+values of the various @code{compounds_with} features (there
+are more than one of these because a given noun may compound
+with more than one verb).
 
 @c ----------------------------------------------------------------------------
 @node Feature templates, Parameter settings, Rules, Grammar file
