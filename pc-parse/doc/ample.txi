@@ -10,10 +10,10 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.5
-@set DATE March 2002
+@set VERSION version 3.6
+@set DATE June 2002
 @set AUTHOR by Stephen McConnel and H. Andrew Black
-@set COPYRIGHT Copyright @copyright{} 2000-2001 SIL International
+@set COPYRIGHT Copyright @copyright{} 2000-2002 SIL International
 
 @include front.txi
 
@@ -102,6 +102,10 @@ compound.  The field content should be either @code{left} or
 @item 8. Version 3.5.0 (March 2002) added the @code{\\ancc}
 field in the analysis data file for use by
 XAMPLE for handling allomorphs never co-occur constraints.
+
+@c Added by hab 13-Jun-2002
+@item 9. Version 3.6.0 (June 2002) allows for an orderclass
+pair (min, max) which delimits the order class span of the affix.
 @end table
 
 @c ----------------------------------------------------------------------------
@@ -1285,7 +1289,18 @@ separate lines.
 
 @group
  9a. <order_expr>    ::= <position> orderclass <relop> <position> orderclass
- 9b.                     <position> orderclass <relop> <constant>
+@c following modified by hab 13-Jun-2002
+ 9b.                     <position> orderclass <relop> <position> orderclassmin
+ 9c.                     <position> orderclass <relop> <position> orderclassmax
+ 9d.                     <position> orderclassmin <relop> <position> orderclass
+ 9e.                     <position> orderclassmin <relop> <position> orderclassmin
+ 9f.                     <position> orderclassmin <relop> <position> orderclassmax
+ 9g.                     <position> orderclassmax <relop> <position> orderclass
+ 9h.                     <position> orderclassmax <relop> <position> orderclassmin
+ 9i.                     <position> orderclassmax <relop> <position> orderclassmax
+ 9j.                     <position> orderclass <relop> <constant>
+ 9k.                     <position> orderclassmin <relop> <constant>
+ 9l.                     <position> orderclassmax <relop> <constant>
 @end group
 
 @c Added by hab 14-May-1999
@@ -1451,9 +1466,19 @@ The identifier must be the name of a class of categories defined with
 The identifier must be a category defined with @code{\ca} in the
 analysis data file.
 
-@item 9b.
+@c following modified by hab 13-Jun-2002
+@item 9a-l.
 A constant is an integer between -32767 and (positive) 32767.  The
-relational operator (relop) must be among those listed in rule 16.
+relational operator (relop) must be among those listed in
+rule 16.
+@c following added by hab 13-Jun-2002
+The terminals @code{orderclass} and @code{orderclassmin} are
+treated identically.  Both refer to the first of potentially
+two order class numbers in a dictionary order class field.
+The terminal @code{orderclassmax} refers to the second
+order class number in a dictionary order class field.  If the
+second number is not present, @code{orderclassmax} is set to
+the same value as @code{orderclass}.
 
 @c Added by hab 14-May-1999
 @item 10.

@@ -18,6 +18,9 @@
 @c
 @c Modified for AMPLE v. 3.3.0 and STAMP v. 2.1b1 by H. Andrew Black,
 @c      May 14, 1999
+@c
+@c Modified for AMPLE v. 3.6.0 by H. Andrew Black
+@c      June 13, 2002
 @set dictfile
 @ifclear endash
 @iftex
@@ -855,6 +858,21 @@ them.
 The order class field is used only in affix type dictionary entries:
 prefix, infix, and suffix.  Roots always have an implicit order class
 of zero.
+
+Beginning with AMPLE version 3.6.0, one may have up to two
+order class numbers in an order class field (separated by
+white space).  These represent the minimum and the maximum
+values of the positions this affix can span.  The first
+number is the minimum and the second is the maximum.
+Therefore the first number should be less than or equal to
+the second.  If only one number appears, both the minimum
+and maximum values are set to that number.  If no number
+appears, then both the minimum and maximum are set to zero.
+
+Note that for STAMP, only the first order class number has
+any use (it is used for transfer insertion rules whose
+environments do not indicate a location where the morpheme
+is to be inserted).
 
 @c ----------------------------------------------------------------------------
 @node Morpheme property, Morpheme type, Order class, Dictionary files
