@@ -55,6 +55,10 @@ namespace PAWSStarterKit
 		MenuItem miViewForward;
 		MenuItem miViewRefresh;
 		MenuItem miHelpAbout;
+		MenuItem miHelpBlack1997Doc;
+		MenuItem miHelpBlack1998Doc;
+		MenuItem miHelpMcConnel2002Doc;
+		MenuItem miHelpXLingPapDoc;
 
 		private string m_strUserDataStore;
 		private string m_strUserAnswerFile;
@@ -68,7 +72,8 @@ namespace PAWSStarterKit
 		private bool m_bIsDirty;
 		private const string m_strProgName = "PAWS Starter Kit";
 		private const string m_strInitHtm = "PawsSKInit.htm";
-		private const string m_strNewAnswerFile = @"..\Data\PAWSStarterKitNew.paw";
+		private const string m_strNewAnswerFileRelative = @"..\Data\PAWSStarterKitNew.paw";
+		private string m_strNewAnswerFile;
 		private const string m_strAnswerFileFilter = "PAWS Starter Kit (*.paw)|*.paw|" +
 			"All Files (*.*)|*.*";
 		private const string m_strGrammarFileFilter = "PAWS Grammar File (*.grm)|*.grm|" +
@@ -93,16 +98,14 @@ namespace PAWSStarterKit
 			// load grammar, writer and examples transforms
 			try
 			{
-				m_XslGrammarTransform.Load(Path.Combine(
-					Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKMasterGrammarMapper.xsl"));
-				m_XslWriterTransform.Load(Path.Combine(
-					Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKWriterMapper.xsl"));
-				m_XslExampleTransform.Load(Path.Combine(
-					Path.Combine(m_strAppPath, @"..\Transforms"), "PAWSSKParameterizedExample.xsl"));
+				string strTransformsPath = Path.Combine(m_strAppPath, @"..\Transforms");
+				m_XslGrammarTransform.Load(Path.Combine(strTransformsPath, "PAWSSKMasterGrammarMapper.xsl"));
+				m_XslWriterTransform.Load(Path.Combine(strTransformsPath, "PAWSSKWriterMapper.xsl"));
+				m_XslExampleTransform.Load(Path.Combine(strTransformsPath, "PAWSSKParameterizedExample.xsl"));
 			}
 			catch (Exception exc)
 			{
-				MessageBox.Show("Could not find a transform: " + exc.Message + exc.InnerException.ToString(),
+				MessageBox.Show("Could not find a transform: " + exc.Message,
 					"Error while loading transform!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 			// Allow handling of user closing the form
@@ -131,6 +134,9 @@ namespace PAWSStarterKit
 			InitToolBar();
 			InitStatusBar();
 
+			// Initialize some values
+			m_strNewAnswerFile = Path.Combine(m_strAppPath, m_strNewAnswerFileRelative);
+
 			if (m_strUserAnswerFile != null)
 			{
 				try
@@ -153,7 +159,7 @@ namespace PAWSStarterKit
 				{
 					// need to do new language processing...
 					m_XmlDoc.Load(m_strNewAnswerFile);
-					if (!doLanguagePropertiesDialog())
+					if (!doLanguagePropertiesDialog(true))
 					{
 						sayGoodBye();
 					}
@@ -330,6 +336,30 @@ namespace PAWSStarterKit
 			mi.Popup += new EventHandler(MenuHelpOnPopup);
 			mMenu.MenuItems.Add(mi);
 			index = mMenu.MenuItems.Count -1;
+
+			// Help Black1997 Documentation
+			miHelpBlack1997Doc = new MenuItem("PC-PATR and GB (&Black 1997)");
+			miHelpBlack1997Doc.Click += new EventHandler(MenuHelpBlack1997OnClick);
+			mMenu.MenuItems[index].MenuItems.Add(miHelpBlack1997Doc);
+
+			// Help Black1998 Documentation
+			miHelpBlack1998Doc = new MenuItem("&GB Intro (Black 1998)");
+			miHelpBlack1998Doc.Click += new EventHandler(MenuHelpBlack1998OnClick);
+			mMenu.MenuItems[index].MenuItems.Add(miHelpBlack1998Doc);
+
+			// Help McConnel2002 Documentation
+			miHelpMcConnel2002Doc = new MenuItem("&PC-PATR documentation (McConnel 2002)");
+			miHelpMcConnel2002Doc.Click += new EventHandler(MenuHelpMcConnel2002OnClick);
+			mMenu.MenuItems[index].MenuItems.Add(miHelpMcConnel2002Doc);
+
+			// Help XLingPap Documentation
+			miHelpXLingPapDoc = new MenuItem("&XLingPap documentation");
+			miHelpXLingPapDoc.Click += new EventHandler(MenuHelpXLingPapDocOnClick);
+			mMenu.MenuItems[index].MenuItems.Add(miHelpXLingPapDoc);
+
+			// Horizontal line
+			mi = new MenuItem("-");
+			mMenu.MenuItems[index].MenuItems.Add(mi);
 
 			// Help About
 			miHelpAbout = new MenuItem("&About " + m_strProgName + "...");
@@ -596,7 +626,7 @@ namespace PAWSStarterKit
 			// Remember current state
 			XmlDocument xmlDocTemp = m_XmlDoc;
 			m_XmlDoc.Load(m_strNewAnswerFile);
-			if (doLanguagePropertiesDialog())
+			if (doLanguagePropertiesDialog(true))
 				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
 			else
 				// the user canceled; restore the state
@@ -666,7 +696,7 @@ namespace PAWSStarterKit
 			}
 			catch (Exception exc)
 			{
-				MessageBox.Show("Problem saving files: " + exc.Message + exc.InnerException.ToString(),
+				MessageBox.Show("Problem saving files: " + exc.Message,
 					"Save File Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 #endif
@@ -733,7 +763,7 @@ namespace PAWSStarterKit
 		{
 			locateUserDataStore();
 			loadUserDataStore();
-			if (doLanguagePropertiesDialog())
+			if (doLanguagePropertiesDialog(false))
 				showPage(Path.Combine(m_strHtmsPath, m_strInitHtm));
 		}
 		void MenuViewToolBarOnClick(object obj, EventArgs ea)
@@ -775,6 +805,22 @@ namespace PAWSStarterKit
 		void MenuViewRefreshOnClick(object obj, EventArgs ea)
 		{
 			axWebBrowser.CtlRefresh();
+		}
+		void MenuHelpBlack1997OnClick(object obj, EventArgs ea)
+		{
+			showPage(Path.Combine(m_strAppPath, @"..\Help\Black1997.htm"));
+		}
+		void MenuHelpBlack1998OnClick(object obj, EventArgs ea)
+		{
+			showPage(Path.Combine(m_strAppPath, @"..\Help\CBGBTEXT.DOC"));
+		}
+		void MenuHelpMcConnel2002OnClick(object obj, EventArgs ea)
+		{
+			showPage(Path.Combine(m_strAppPath, @"..\Help\pcpatr.htm"));
+		}
+		void MenuHelpXLingPapDocOnClick(object obj, EventArgs ea)
+		{
+			showPage(Path.Combine(m_strAppPath, @"..\Help\XLingPapUserDoc.htm"));
 		}
 		void MenuHelpAboutOnClick(object obj, EventArgs ea)
 		{
@@ -1084,7 +1130,6 @@ namespace PAWSStarterKit
 		{
 			locateUserDataStore();
 			loadUserDataStore();
-			createExampleFile("Typology");
 			createExampleFile("QP");
 			createExampleFile("AdvP");
 			createExampleFile("AdjP");
@@ -1093,14 +1138,14 @@ namespace PAWSStarterKit
 			createExampleFile("Prop");
 			createExampleFile("Pron");
 			createExampleFile("IP");
-			createExampleFile("Q");
-			createExampleFile("Focus");
-			createExampleFile("Neg");
 			createExampleFile("Comp");
-			createExampleFile("AdvCl");
+			createExampleFile("Q");
 			createExampleFile("RelCl");
-			createExampleFile("FullNp");
+			createExampleFile("AdvCl");
+			createExampleFile("Neg");
 			createExampleFile("Coord");
+			createExampleFile("Focus");
+			createExampleFile("Excl");
 		}
 		void createExampleFile(string strType)
 		{
@@ -1128,7 +1173,7 @@ namespace PAWSStarterKit
 				MessageBox.Show(this.m_strPAWSErrorMsg + "createExampleFile: " + exc);
 			}
 		}
-		bool doLanguagePropertiesDialog()
+		bool doLanguagePropertiesDialog(bool bDoingFileNew)
 		{
 			string strOriginalLanguageAbbreviation = m_strLanguageAbbreviation;
 			DlgLanguageProperties dlg = new DlgLanguageProperties();
@@ -1149,9 +1194,18 @@ namespace PAWSStarterKit
 			dlg.FontStrikeout = Convert.ToBoolean(strBool);
 
 			dlg.AnswerFile = m_strUserAnswerFile;
-			dlg.GrammarFile = m_strUserGrammarFile;
-			dlg.WriterFile = m_strUserWriterFile;
-			dlg.ExampleFiles = m_strUserExampleFilesPath;
+			if (bDoingFileNew)
+			{
+				dlg.GrammarFile = null;
+				dlg.WriterFile = null;
+				dlg.ExampleFiles = null;
+			}
+			else
+			{
+				dlg.GrammarFile = m_strUserGrammarFile;
+				dlg.WriterFile = m_strUserWriterFile;
+				dlg.ExampleFiles = m_strUserExampleFilesPath;
+			}
 
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
@@ -1388,18 +1442,30 @@ namespace PAWSStarterKit
 				setWorkingPaths();
 				// if working subdirs are empty, create them
 				string[] astrHtmFiles = Directory.GetFiles(m_strHtmsPath, "*.htm");
-				if (astrHtmFiles.Length == 0)
-					createHTMs();
-				if (!File.Exists(getStyleFile()))
-					createStyleSheet();
+				if ((astrHtmFiles.Length == 0) ||
+					(!File.Exists(getStyleFile())))
+				{
+					DialogResult dr = MessageBox.Show("The language in file " + strAnswerFile + " needs to have its working files initialized.\n" +
+						"Do you want to initialize them now?", "Missing working files",
+						MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					if (dr == DialogResult.Yes)
+					{
+						if (astrHtmFiles.Length == 0)
+							createHTMs();
+						if (!File.Exists(getStyleFile()))
+							createStyleSheet();
+					}
+					else
+						sayGoodBye();
+				}
 				setTitle();
 				m_strUserAnswerFile = strAnswerFile;
 				createPAWSSKInitHtm(false);
 			}
 			catch (Exception exc)
 			{
-				MessageBox.Show("Error in loading file " + strAnswerFile + exc.Message + exc.InnerException.ToString(),
-					"Eror Loading file!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show("Error in loading file " + strAnswerFile + "\n" + exc.Message,
+					"Error Loading file!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 
 		}
@@ -1449,7 +1515,7 @@ namespace PAWSStarterKit
 			}
 			catch (Exception exc)
 			{
-				MessageBox.Show("Error in creating style sheet: " + exc.Message + exc.InnerException.ToString(),
+				MessageBox.Show("Error in creating style sheet: " + exc.Message,
 					"Create Style Sheet", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 		}
@@ -1474,7 +1540,8 @@ namespace PAWSStarterKit
 			{
 				if (File.Exists(astrArgs[1]))
 				{
-					loadAnswerFile(astrArgs[1]);
+					string strFullFileName = Path.GetFullPath(astrArgs[1]);
+					loadAnswerFile(strFullFileName);
 				}
 				else
 				{

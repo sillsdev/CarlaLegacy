@@ -99,7 +99,7 @@
 	<xsl:when test="$prmIdTitle='Focus'">
 		<xsl:value-of select="//focus/example"/><xsl:text>&#xa;</xsl:text>
 		</xsl:when>
-	<xsl:when test="$prmIdTitle='Exclamations'">
+	<xsl:when test="$prmIdTitle='Excl'">
 		<xsl:value-of select="//excl/example"/><xsl:text>&#xa;</xsl:text>
 		</xsl:when>
 </xsl:choose>

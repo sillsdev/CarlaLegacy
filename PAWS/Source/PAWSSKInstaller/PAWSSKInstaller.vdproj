@@ -15,6 +15,24 @@
 	{
 		"Entry"
 		{
+		"MsmKey" = "8:_0135D506E229420085F53F1F04DFB4C7"
+		"OwnerKey" = "8:_25C03E23B1490EBAB6F9C6338CC3C8AB"
+		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_0135D506E229420085F53F1F04DFB4C7"
+		"OwnerKey" = "8:_D802FB796A654EE888BC583748ADA390"
+		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_0135D506E229420085F53F1F04DFB4C7"
+		"OwnerKey" = "8:_35DD0F787825BEB5CDBF1C71736F6F01"
+		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_01DABCDB1C434599AA68BA270192FB71"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\STARTER6DP.XSL"
@@ -45,6 +63,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_097966AB82784D9F9F63CFDC6595D63F"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\XLINGPAPUSERDOC.CSS"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_0EB3FC5A69B94BB19856427BB1EFBF8F"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PRONREFL.XML"
@@ -57,6 +81,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_1401AA19C01446BDB5C30FF56A9E9133"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE55.GIF"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_1409941472DA4E588467FFD9036E00FF"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\STARTER6TEMPLATES.XSL"
@@ -66,6 +96,12 @@
 		"MsmKey" = "8:_1483470EC399463497FCABAD325E63A5"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\STARTER6ADJP.XSL"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_15448D881B834889AD54A1665EDEA5A0"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997APPENDIX.HTM"
 		}
 		"Entry"
 		{
@@ -90,6 +126,12 @@
 		"MsmKey" = "8:_1DF312222EA64377AA3D5BC2B9C17506"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\NPARTPOSITION.XML"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_22388A4025894C299B671804FF19A65B"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE44.GIF"
 		}
 		"Entry"
 		{
@@ -135,12 +177,6 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_3068A64F8A9541FD8AD70CA52087443A"
-		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PPALONE.XML"
-		}
-		"Entry"
-		{
 		"MsmKey" = "8:_3531232E36A64B9396639BE30F1BF700"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\PAWSSKWRITERMAPPER.XSL"
@@ -153,21 +189,9 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_35FAC817FB174F6EB20102D497504E11"
-		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PPMODIFIERS.XML"
-		}
-		"Entry"
-		{
 		"MsmKey" = "8:_36C74A59E90A41B583D12E8F4A1BB06A"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\STARTER6QP.XSL"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_3787CD3CBB18424081474C250C0EB9EA"
-		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PRONCAT.XML"
 		}
 		"Entry"
 		{
@@ -186,12 +210,6 @@
 		"MsmKey" = "8:_3D583C7654774E8F83729F4C4ED4F537"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\NPQP.XML"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_3E987F2301724541BE5ED17AACB8BB56"
-		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PRONAGR.XML"
 		}
 		"Entry"
 		{
@@ -231,6 +249,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_4AA12C301425438C879385469B027E37"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997.HTM"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_4BAD950FF8C54F0C8C6BBD363CF1553E"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\PAWSSKMASTERGRAMMARMAPPER.XSL"
@@ -264,6 +288,12 @@
 		"MsmKey" = "8:_50763FD354FD4126B70B52F03C17E21B"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HTMS\\IPCONTENTS.HTM"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_527F1979BD9940BB85D8230AE93F6F1A"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE33.GIF"
 		}
 		"Entry"
 		{
@@ -339,6 +369,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_705B45FA76794B57B3F4A2E4B666C8A9"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE42.GIF"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_7104D4402F0D49C4A973EAC7089EFD0D"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\COMPPOSITION.XML"
@@ -372,6 +408,18 @@
 		"MsmKey" = "8:_7C908532124F43659B94DCBAF8E37B10"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\OVERALLTYPOLOGY.XML"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_7D8396AB470C4C99B67EEB9621E016B4"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE67.GIF"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_7E8713F70B5E4827893CD05A800AA665"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE64.GIF"
 		}
 		"Entry"
 		{
@@ -411,6 +459,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_8688C2097FBB4C7CB6583F9D16C5F5E8"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\SILEWP.CSS"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_8803C954A165425C9E528BAAF2293F9B"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HTMS\\NPCONTENTS.HTM"
@@ -429,15 +483,15 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_8AD9124EC59043E1AD227CA0413A5E68"
+		"MsmKey" = "8:_896D4396E5764535AD1FBDA056B40FC7"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\IPCOP.XML"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE49.GIF"
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_8DE0E7C44B9A4AFFA569AB05D0A56F8B"
+		"MsmKey" = "8:_8AD9124EC59043E1AD227CA0413A5E68"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PRONPN2.XML"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\IPCOP.XML"
 		}
 		"Entry"
 		{
@@ -483,15 +537,15 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_967DAB9E6D3149AB8F3C5DBF814D65D6"
+		"MsmKey" = "8:_967CD65DD58C41AEAC3EAB0F18B52099"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\QCONT.XML"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\PCPATR.HTM"
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_999FFB2C621A456C905B5058D9B1A5E6"
+		"MsmKey" = "8:_967DAB9E6D3149AB8F3C5DBF814D65D6"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PRONCASE.XML"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\QCONT.XML"
 		}
 		"Entry"
 		{
@@ -561,15 +615,21 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_B3D8332940D24707BD4BB0F1B69359A5"
+		"MsmKey" = "8:_B2A51A1E9786465CAB8F977C1482F8B5"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TREEDESCRIPTIONS\\PAWSMAINCONTENTQUES.PNG"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE22.GIF"
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_B56C44401422402A858C9ACAB90430D6"
+		"MsmKey" = "8:_B37AB130269F45F0B2D988930E20AEBB"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\IPEXAMPLES.XML"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE30.GIF"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_B3D8332940D24707BD4BB0F1B69359A5"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TREEDESCRIPTIONS\\PAWSMAINCONTENTQUES.PNG"
 		}
 		"Entry"
 		{
@@ -579,27 +639,15 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_B852AD95CEF241B6846B5E09B6DB1969"
-		"OwnerKey" = "8:_25C03E23B1490EBAB6F9C6338CC3C8AB"
-		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_B852AD95CEF241B6846B5E09B6DB1969"
-		"OwnerKey" = "8:_D802FB796A654EE888BC583748ADA390"
-		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_B852AD95CEF241B6846B5E09B6DB1969"
-		"OwnerKey" = "8:_35DD0F787825BEB5CDBF1C71736F6F01"
-		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
-		}
-		"Entry"
-		{
 		"MsmKey" = "8:_BCD2749240204CD0A64AEB04B122DB37"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\NPPOSSESSORS.XML"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_C7BAAAB2EE234D95942BEB1645D86316"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\A-BAR1.GIF"
 		}
 		"Entry"
 		{
@@ -621,9 +669,9 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_D068505B5E0E47B9B7E3E4753CC2ABCB"
+		"MsmKey" = "8:_D473E82A39C44CDEA7ACEB8BBA903D62"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PPCAT.XML"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE69.GIF"
 		}
 		"Entry"
 		{
@@ -681,6 +729,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_DE15E115EC314F789DC7E2A148F43FE5"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\S-BAR.GIF"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_DEA7089BA59C4D54A263097991634033"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\NPARTDEM.XML"
@@ -714,6 +768,24 @@
 		"MsmKey" = "8:_E86777C9338F46AE9E64DEA10F3AEE4E"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PRONRECIPROCAL.XML"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_EB1A5435D194499D916DEAAADBDA4854"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE54.GIF"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_ECC476909C194905A9AF417B6C2173AF"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\XLINGPAPUSERDOC.HTM"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_EDB5BAC2E0184180A4492B8D03E6EF09"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997_FILES\\TREE18.GIF"
 		}
 		"Entry"
 		{
@@ -903,7 +975,7 @@
 			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_095E99AD60E61649F4D6A2C6E64DBF82"
 			{
-			"Signature" = "8:2000000000e988d5cee4c10100989e8f1632c20100e988d5cee4c101000000000064140000000000000000007300680064006f006300760077002e0064006c006c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+			"Signature" = "8:2000000000e988d5cee4c101005808badf32c20100e988d5cee4c101000000000064140000000000000000007300680064006f006300760077002e0064006c006c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 			"SourcePath" = "8:shdocvw.dll"
 			"TargetName" = "8:shdocvw.dll"
 			"Tag" = "8:"
@@ -920,6 +992,26 @@
 			"Register" = "3:4"
 			"Exclude" = "11:TRUE"
 			"IsDependency" = "11:TRUE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_097966AB82784D9F9F63CFDC6595D63F"
+			{
+			"SourcePath" = "8:..\\..\\Help\\XLingPapUserDoc.css"
+			"TargetName" = "8:XLingPapUserDoc.css"
+			"Tag" = "8:"
+			"Folder" = "8:_E42FAF4E6C47427EA2E189F72C9AEBF6"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_0EB3FC5A69B94BB19856427BB1EFBF8F"
@@ -962,6 +1054,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_1401AA19C01446BDB5C30FF56A9E9133"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree55.gif"
+			"TargetName" = "8:tree55.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_1409941472DA4E588467FFD9036E00FF"
 			{
 			"SourcePath" = "8:..\\..\\Transforms\\starter6templates.xsl"
@@ -988,6 +1100,26 @@
 			"TargetName" = "8:starter6adjp.xsl"
 			"Tag" = "8:"
 			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_15448D881B834889AD54A1665EDEA5A0"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997Appendix.htm"
+			"TargetName" = "8:Black1997Appendix.htm"
+			"Tag" = "8:"
+			"Folder" = "8:_E42FAF4E6C47427EA2E189F72C9AEBF6"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -1068,6 +1200,26 @@
 			"TargetName" = "8:NPArtPosition.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_22388A4025894C299B671804FF19A65B"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\Tree44.gif"
+			"TargetName" = "8:Tree44.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -1213,26 +1365,6 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_3068A64F8A9541FD8AD70CA52087443A"
-			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\PPAlone.xml"
-			"TargetName" = "8:PPAlone.xml"
-			"Tag" = "8:"
-			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:FALSE"
-			"IsolateTo" = "8:"
-			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_3531232E36A64B9396639BE30F1BF700"
 			{
 			"SourcePath" = "8:..\\..\\Transforms\\PAWSSKWriterMapper.xsl"
@@ -1284,52 +1416,12 @@
 			"IsDependency" = "11:TRUE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_35FAC817FB174F6EB20102D497504E11"
-			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\PPModifiers.xml"
-			"TargetName" = "8:PPModifiers.xml"
-			"Tag" = "8:"
-			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:FALSE"
-			"IsolateTo" = "8:"
-			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_36C74A59E90A41B583D12E8F4A1BB06A"
 			{
 			"SourcePath" = "8:..\\..\\Transforms\\starter6qp.xsl"
 			"TargetName" = "8:starter6qp.xsl"
 			"Tag" = "8:"
 			"Folder" = "8:_DC372409039446B286278F34A7670C36"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:FALSE"
-			"IsolateTo" = "8:"
-			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_3787CD3CBB18424081474C250C0EB9EA"
-			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\PronCat.xml"
-			"TargetName" = "8:PronCat.xml"
-			"Tag" = "8:"
-			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -1388,26 +1480,6 @@
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\NPQP.xml"
 			"TargetName" = "8:NPQP.xml"
-			"Tag" = "8:"
-			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:FALSE"
-			"IsolateTo" = "8:"
-			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_3E987F2301724541BE5ED17AACB8BB56"
-			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\PronAgr.xml"
-			"TargetName" = "8:PronAgr.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
 			"Condition" = "8:"
@@ -1544,6 +1616,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_4AA12C301425438C879385469B027E37"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997.htm"
+			"TargetName" = "8:Black1997.htm"
+			"Tag" = "8:"
+			"Folder" = "8:_E42FAF4E6C47427EA2E189F72C9AEBF6"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_4BAD950FF8C54F0C8C6BBD363CF1553E"
 			{
 			"SourcePath" = "8:..\\..\\Transforms\\PAWSSKMasterGrammarMapper.xsl"
@@ -1650,6 +1742,26 @@
 			"TargetName" = "8:IPContents.htm"
 			"Tag" = "8:"
 			"Folder" = "8:_C1FD61EB9921418BBA7BF9FDE13BD93F"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_527F1979BD9940BB85D8230AE93F6F1A"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree33.gif"
+			"TargetName" = "8:tree33.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -1904,6 +2016,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_705B45FA76794B57B3F4A2E4B666C8A9"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree42.gif"
+			"TargetName" = "8:tree42.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_7104D4402F0D49C4A973EAC7089EFD0D"
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\CompPosition.xml"
@@ -2010,6 +2142,46 @@
 			"TargetName" = "8:OverallTypology.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_7D8396AB470C4C99B67EEB9621E016B4"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree67.gif"
+			"TargetName" = "8:tree67.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_7E8713F70B5E4827893CD05A800AA665"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree64.gif"
+			"TargetName" = "8:tree64.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2144,6 +2316,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_8688C2097FBB4C7CB6583F9D16C5F5E8"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\silewp.css"
+			"TargetName" = "8:silewp.css"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_8803C954A165425C9E528BAAF2293F9B"
 			{
 			"SourcePath" = "8:..\\..\\HTMs\\NPContents.htm"
@@ -2204,12 +2396,12 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_8AD9124EC59043E1AD227CA0413A5E68"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_896D4396E5764535AD1FBDA056B40FC7"
 			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\IPCop.xml"
-			"TargetName" = "8:IPCop.xml"
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree49.gif"
+			"TargetName" = "8:tree49.gif"
 			"Tag" = "8:"
-			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2224,10 +2416,10 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_8DE0E7C44B9A4AFFA569AB05D0A56F8B"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_8AD9124EC59043E1AD227CA0413A5E68"
 			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\PronPN2.xml"
-			"TargetName" = "8:PronPN2.xml"
+			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\IPCop.xml"
+			"TargetName" = "8:IPCop.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
 			"Condition" = "8:"
@@ -2384,12 +2576,12 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_967DAB9E6D3149AB8F3C5DBF814D65D6"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_967CD65DD58C41AEAC3EAB0F18B52099"
 			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\QCont.xml"
-			"TargetName" = "8:QCont.xml"
+			"SourcePath" = "8:..\\..\\Help\\pcpatr.htm"
+			"TargetName" = "8:pcpatr.htm"
 			"Tag" = "8:"
-			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Folder" = "8:_E42FAF4E6C47427EA2E189F72C9AEBF6"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2404,10 +2596,10 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_999FFB2C621A456C905B5058D9B1A5E6"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_967DAB9E6D3149AB8F3C5DBF814D65D6"
 			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\PronCase.xml"
-			"TargetName" = "8:PronCase.xml"
+			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\QCont.xml"
+			"TargetName" = "8:QCont.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
 			"Condition" = "8:"
@@ -2644,12 +2836,12 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_B3D8332940D24707BD4BB0F1B69359A5"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_B2A51A1E9786465CAB8F977C1482F8B5"
 			{
-			"SourcePath" = "8:..\\..\\TreeDescriptions\\PawsMainContentQues.png"
-			"TargetName" = "8:PawsMainContentQues.png"
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree22.gif"
+			"TargetName" = "8:tree22.gif"
 			"Tag" = "8:"
-			"Folder" = "8:_AFCB58A975FD4B60A7A4733CEEF100CF"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2664,12 +2856,32 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_B56C44401422402A858C9ACAB90430D6"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_B37AB130269F45F0B2D988930E20AEBB"
 			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\IPExamples.xml"
-			"TargetName" = "8:IPExamples.xml"
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\Tree30.gif"
+			"TargetName" = "8:Tree30.gif"
 			"Tag" = "8:"
-			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_B3D8332940D24707BD4BB0F1B69359A5"
+			{
+			"SourcePath" = "8:..\\..\\TreeDescriptions\\PawsMainContentQues.png"
+			"TargetName" = "8:PawsMainContentQues.png"
+			"Tag" = "8:"
+			"Folder" = "8:_AFCB58A975FD4B60A7A4733CEEF100CF"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2710,6 +2922,26 @@
 			"TargetName" = "8:NPPossessors.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_C7BAAAB2EE234D95942BEB1645D86316"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\A-bar1.gif"
+			"TargetName" = "8:A-bar1.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2784,12 +3016,12 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_D068505B5E0E47B9B7E3E4753CC2ABCB"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_D473E82A39C44CDEA7ACEB8BBA903D62"
 			{
-			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\PPCat.xml"
-			"TargetName" = "8:PPCat.xml"
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree69.gif"
+			"TargetName" = "8:tree69.gif"
 			"Tag" = "8:"
-			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2964,6 +3196,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_DE15E115EC314F789DC7E2A148F43FE5"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\S-bar.gif"
+			"TargetName" = "8:S-bar.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_DEA7089BA59C4D54A263097991634033"
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\NPArtDem.xml"
@@ -3070,6 +3322,66 @@
 			"TargetName" = "8:PronReciprocal.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_EB1A5435D194499D916DEAAADBDA4854"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree54.gif"
+			"TargetName" = "8:tree54.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_ECC476909C194905A9AF417B6C2173AF"
+			{
+			"SourcePath" = "8:..\\..\\Help\\XLingPapUserDoc.htm"
+			"TargetName" = "8:XLingPapUserDoc.htm"
+			"Tag" = "8:"
+			"Folder" = "8:_E42FAF4E6C47427EA2E189F72C9AEBF6"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_EDB5BAC2E0184180A4492B8D03E6EF09"
+			{
+			"SourcePath" = "8:..\\..\\Help\\Black1997_files\\tree18.gif"
+			"TargetName" = "8:tree18.gif"
+			"Tag" = "8:"
+			"Folder" = "8:_337E1E9CF7D444D19BECB3B486490539"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -3389,6 +3701,17 @@
 					"Property" = "8:_5FA9799738EE4BED9425D414958DFF9E"
 						"Folders"
 						{
+							"{461E96AF-1495-11D3-8D6C-00A0C9CFCEE6}:_337E1E9CF7D444D19BECB3B486490539"
+							{
+							"Name" = "8:Black1997_files"
+							"AlwaysCreate" = "11:FALSE"
+							"Condition" = "8:"
+							"Transitive" = "11:FALSE"
+							"Property" = "8:_A7FA4224BC774C4AAB960E3210A9AABA"
+								"Folders"
+								{
+								}
+							}
 						}
 					}
 				}
@@ -3583,7 +3906,7 @@
 		{
 			"{B1E2BB22-187D-11D3-8E02-00C04F6837D0}:_D802FB796A654EE888BC583748ADA390"
 			{
-			"SourcePath" = "8:..\\PAWSStarterKit\\obj\\Debug\\PAWSStarterKit.exe"
+			"SourcePath" = "8:..\\PAWSStarterKit\\obj\\Release\\PAWSStarterKit.exe"
 			"TargetName" = "8:"
 			"Tag" = "8:"
 			"Folder" = "8:_C77FCD97386947C0A3B90082C1226009"
@@ -3616,7 +3939,7 @@
 		"Name" = "8:Microsoft Visual Studio"
 		"ProductName" = "8:PAWSStarterKit"
 		"ProductCode" = "8:{C25A0D3E-32D8-4F91-A4DD-7CD5BCE21C3A}"
-		"PackageCode" = "8:{25370F9B-9D81-4B93-96D0-044E524259DD}"
+		"PackageCode" = "8:{05ECB388-050A-4992-8ECE-FB302325788E}"
 		"UpgradeCode" = "8:{44BCC1A0-F58B-4681-9355-F81675D52F00}"
 		"RestartWWWService" = "11:FALSE"
 		"RemovePreviousVersions" = "11:FALSE"
@@ -3642,7 +3965,7 @@
 		}
 		"MergeModule"
 		{
-			"{AC8774A4-3E09-11D3-8E14-00C04F6837D0}:_B852AD95CEF241B6846B5E09B6DB1969"
+			"{AC8774A4-3E09-11D3-8E14-00C04F6837D0}:_0135D506E229420085F53F1F04DFB4C7"
 			{
 			"UseDynamicProperties" = "11:TRUE"
 			"IsDependency" = "11:TRUE"
