@@ -39,12 +39,12 @@
 	  <interlinear exampleLoc="adjp/example"/>
 	</example>
 	<p show="swAdjPModifiersNo">
-	  <content/>
+	  <content> </content>
 	  <langName/>
 	  <content> does not allow any degree words or manner adverbs to modify adjectives.</content>
 	</p>
 	<p show="swAdjPModifiersYesDegree">
-	  <content/>
+	  <content> </content>
 	  <langName/>
 	  <content> allows certain degree words to modify adjectives, but manner adverbs may not.  The degree words occur </content>
 	  <case element="adjp" attr="degreePos">
@@ -59,14 +59,14 @@
 	  <text show="swAdjPDegreeEitherUnrestricted">
 		<content>All of the degree words can occur on either side of the adjective.</content>
 	  </text>
-	  <content/>
+	  <content> </content>
 	  <text show="swAdjPDegreeEitherRestricted">
 		<content>There are restrictions as to which of the degree words can occur on each side of the adjective.</content>
 	  </text>
-	  <content/>
+	  <content> </content>
 	</p>
 	<p show="swAdjPModifiersYesManner">
-	  <content/>
+	  <content> </content>
 	  <langName/>
 	  <content> allows both certain degree words and manner adverbs to modify adjectives.  These modifiers occur </content>
 	  <case element="adjp" attr="mannerPos">
@@ -81,11 +81,11 @@
 	  <text show="swAdjPMannerEitherUnrestricted">
 		<content>All of the degree words and manner adverbs can occur on either side of the adjective.</content>
 	  </text>
-	  <content/>
+	  <content> </content>
 	  <text show="swAdjPMannerEitherRestricted">
 		<content>There are restrictions as to which of the degree words and manner adverbs can occur on each side of the adjective.</content>
 	  </text>
-	  <content/>
+	  <content> </content>
 	</p>
   </section1>
   <showWhen id="swAdjPModifiersNo">

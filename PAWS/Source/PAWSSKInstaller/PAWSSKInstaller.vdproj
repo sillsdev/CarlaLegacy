@@ -27,6 +27,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_06A80637275744B08E68BD69F8A72FFC"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERINTROANDTYPOLOGY.XSL"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_07034753FF3E4891AE9EDF92FA9E4132"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\QPTESTING.XML"
@@ -48,6 +54,12 @@
 		"MsmKey" = "8:_097966AB82784D9F9F63CFDC6595D63F"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\XLINGPAPUSERDOC.CSS"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_099B744A3A694F0FA54EDA108EC37405"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERCOORD.XSL"
 		}
 		"Entry"
 		{
@@ -141,6 +153,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_2776E5BEE46D49669F805BE7FBC14FC2"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERADJP.XSL"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_2B8491F9C8584AB58A821BE8A8074E21"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TREEDESCRIPTIONS\\PAWSMAINYNQUES.PNG"
@@ -177,21 +195,33 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_40842E0733EF4F73AF4FD39661B76B40"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERQP.XSL"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_416EE21F52964001A90410A73412E241"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\NPCOMPOUNDS.XML"
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_41D78C64C3504F06A4AEF5DC82CD762D"
+		"MsmKey" = "8:_437C71B5C9B34D7ABD55BAA230C925FD"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERINTROANDTYPOLOGY.XSL"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERCOMP.XSL"
 		}
 		"Entry"
 		{
 		"MsmKey" = "8:_44A5C53E9ABE423CAF5EB74B594F541A"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\PAWSSKPARAMETERIZEDEXAMPLE.XSL"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_48013EC08E634C1AAE44E317B0F38DC6"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERADVCL.XSL"
 		}
 		"Entry"
 		{
@@ -204,6 +234,12 @@
 		"MsmKey" = "8:_4AA12C301425438C879385469B027E37"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\HELP\\BLACK1997.HTM"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_4B72ABDA55D848078142C7B3E16FD0DA"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERRELCL.XSL"
 		}
 		"Entry"
 		{
@@ -243,21 +279,9 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_4FE6E2CC67C2411E87B0B57051C18FD3"
-		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERADJP.XSL"
-		}
-		"Entry"
-		{
 		"MsmKey" = "8:_4FFC4A5E417242CCAE9F6F4DEB14234C"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\ADVPREASON.XML"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_50205FBF4F9B452BA08BADB9EAE74D4A"
-		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERADVP.XSL"
 		}
 		"Entry"
 		{
@@ -267,9 +291,9 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_522A7C3872DB428EA5D48932A6C3CA64"
+		"MsmKey" = "8:_5255021ECBBD4D09808D2D12C0AD553B"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERNP.XSL"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERADVP.XSL"
 		}
 		"Entry"
 		{
@@ -303,6 +327,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_555CDA04917B4E4199991585BA677666"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERQUES.XSL"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_56F4ECD180564F6689072EFCE24098B8"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TREEDESCRIPTIONS\\PAWSNPTREE.PNG"
@@ -318,6 +348,12 @@
 		"MsmKey" = "8:_5D95D53E163F454198FBC081C6D67BC2"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\STYLES\\P12C08.GIF"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_653E64F39CDF4DEA876E74B4881AB66F"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERNP.XSL"
 		}
 		"Entry"
 		{
@@ -363,6 +399,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_70912901985A41F689672D2161A116D6"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERPROP.XSL"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_7104D4402F0D49C4A973EAC7089EFD0D"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\COMPPOSITION.XML"
@@ -372,6 +414,12 @@
 		"MsmKey" = "8:_710CD254858D466BA10A96CD17837681"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TREEDESCRIPTIONS\\PAWSCOMPIPNONFINITE.PNG"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_727DD9D3EE6F498FABBBF88662ACB3B2"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERIP.XSL"
 		}
 		"Entry"
 		{
@@ -387,9 +435,33 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_7690A78CF4CE4A3794430C17060AF87C"
+		"OwnerKey" = "8:_25C03E23B1490EBAB6F9C6338CC3C8AB"
+		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_7690A78CF4CE4A3794430C17060AF87C"
+		"OwnerKey" = "8:_D802FB796A654EE888BC583748ADA390"
+		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_7690A78CF4CE4A3794430C17060AF87C"
+		"OwnerKey" = "8:_35DD0F787825BEB5CDBF1C71736F6F01"
+		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_7C908532124F43659B94DCBAF8E37B10"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\OVERALLTYPOLOGY.XML"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_7D2705E72FEE481A8E7854EA39DFB58E"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERFOCUS.XSL"
 		}
 		"Entry"
 		{
@@ -531,9 +603,27 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_97BFDB0EE61C481CAA3E524BFDBD3920"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERPP.XSL"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_9B8FE7A11848415AA1E12E9315C48719"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERNEG.XSL"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_9BB2E67932334A9BAE0A6A2685F7326A"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\PNTESTING.XML"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_9D9C73026B554D83ABFC3F66AE8FF0A1"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERPRON.XSL"
 		}
 		"Entry"
 		{
@@ -627,24 +717,6 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_B63E93669A62429D8DB96839B06224E3"
-		"OwnerKey" = "8:_25C03E23B1490EBAB6F9C6338CC3C8AB"
-		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_B63E93669A62429D8DB96839B06224E3"
-		"OwnerKey" = "8:_D802FB796A654EE888BC583748ADA390"
-		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_B63E93669A62429D8DB96839B06224E3"
-		"OwnerKey" = "8:_35DD0F787825BEB5CDBF1C71736F6F01"
-		"MsmSig" = "8:mondo.E4183BB4_18A8_11D5_A549_0090278A1BB8"
-		}
-		"Entry"
-		{
 		"MsmKey" = "8:_BBF2C0ED0EA047CE9A7A0EA6F55EAE91"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\GRAMMARADJP.XSL"
@@ -735,6 +807,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_D8880A63DC644B1D9F66D4BAC69FD082"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITEREXCL.XSL"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_DB8B9606C14B4AB39AC9B9B94739B3CF"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\QPDEGREE.XML"
@@ -762,12 +840,6 @@
 		"MsmKey" = "8:_E20626AD54434FF4B2C42452B6F04FBF"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\XMLPAGEDESCRIPTIONS\\QMAINYN.XML"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_E4D1A48117F34086835EC6EA374FAD4C"
-		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:C:\\CARLA\\DEV\\PAWS\\TRANSFORMS\\WRITERQP.XSL"
 		}
 		"Entry"
 		{
@@ -957,6 +1029,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_06A80637275744B08E68BD69F8A72FFC"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterIntroAndTypology.xsl"
+			"TargetName" = "8:WriterIntroAndTypology.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_07034753FF3E4891AE9EDF92FA9E4132"
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\QPTesting.xml"
@@ -999,7 +1091,7 @@
 			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_095E99AD60E61649F4D6A2C6E64DBF82"
 			{
-			"Signature" = "8:2000000000e988d5cee4c1010098ece25f38c20100e988d5cee4c101000000000064140000000000000000007300680064006f006300760077002e0064006c006c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+			"Signature" = "8:2000000000e988d5cee4c1010018c037f239c20100e988d5cee4c101000000000064140000000000000000007300680064006f006300760077002e0064006c006c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 			"SourcePath" = "8:shdocvw.dll"
 			"TargetName" = "8:shdocvw.dll"
 			"Tag" = "8:"
@@ -1024,6 +1116,26 @@
 			"TargetName" = "8:XLingPapUserDoc.css"
 			"Tag" = "8:"
 			"Folder" = "8:_E42FAF4E6C47427EA2E189F72C9AEBF6"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_099B744A3A694F0FA54EDA108EC37405"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterCoord.xsl"
+			"TargetName" = "8:WriterCoord.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -1329,6 +1441,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_2776E5BEE46D49669F805BE7FBC14FC2"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterAdjP.xsl"
+			"TargetName" = "8:WriterAdjP.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_2B8491F9C8584AB58A821BE8A8074E21"
 			{
 			"SourcePath" = "8:..\\..\\TreeDescriptions\\PawsMainYNQues.png"
@@ -1460,6 +1592,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_40842E0733EF4F73AF4FD39661B76B40"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterQP.xsl"
+			"TargetName" = "8:WriterQP.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_416EE21F52964001A90410A73412E241"
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\NPCompounds.xml"
@@ -1480,10 +1632,10 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_41D78C64C3504F06A4AEF5DC82CD762D"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_437C71B5C9B34D7ABD55BAA230C925FD"
 			{
-			"SourcePath" = "8:..\\..\\Transforms\\WriterIntroAndTypology.xsl"
-			"TargetName" = "8:WriterIntroAndTypology.xsl"
+			"SourcePath" = "8:..\\..\\Transforms\\WriterComp.xsl"
+			"TargetName" = "8:WriterComp.xsl"
 			"Tag" = "8:"
 			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
@@ -1504,6 +1656,26 @@
 			{
 			"SourcePath" = "8:..\\..\\Transforms\\PAWSSKParameterizedExample.xsl"
 			"TargetName" = "8:PAWSSKParameterizedExample.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_48013EC08E634C1AAE44E317B0F38DC6"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterAdvCl.xsl"
+			"TargetName" = "8:WriterAdvCl.xsl"
 			"Tag" = "8:"
 			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
@@ -1546,6 +1718,26 @@
 			"TargetName" = "8:Black1997.htm"
 			"Tag" = "8:"
 			"Folder" = "8:_E42FAF4E6C47427EA2E189F72C9AEBF6"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_4B72ABDA55D848078142C7B3E16FD0DA"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterRelCl.xsl"
+			"TargetName" = "8:WriterRelCl.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -1680,52 +1872,12 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_4FE6E2CC67C2411E87B0B57051C18FD3"
-			{
-			"SourcePath" = "8:..\\..\\Transforms\\WriterAdjP.xsl"
-			"TargetName" = "8:WriterAdjP.xsl"
-			"Tag" = "8:"
-			"Folder" = "8:_DC372409039446B286278F34A7670C36"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:FALSE"
-			"IsolateTo" = "8:"
-			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_4FFC4A5E417242CCAE9F6F4DEB14234C"
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\AdvPReason.xml"
 			"TargetName" = "8:AdvPReason.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:FALSE"
-			"IsolateTo" = "8:"
-			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_50205FBF4F9B452BA08BADB9EAE74D4A"
-			{
-			"SourcePath" = "8:..\\..\\Transforms\\WriterAdvP.xsl"
-			"TargetName" = "8:WriterAdvP.xsl"
-			"Tag" = "8:"
-			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -1760,10 +1912,10 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_522A7C3872DB428EA5D48932A6C3CA64"
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_5255021ECBBD4D09808D2D12C0AD553B"
 			{
-			"SourcePath" = "8:..\\..\\Transforms\\WriterNP.xsl"
-			"TargetName" = "8:WriterNP.xsl"
+			"SourcePath" = "8:..\\..\\Transforms\\WriterAdvP.xsl"
+			"TargetName" = "8:WriterAdvP.xsl"
 			"Tag" = "8:"
 			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
@@ -1880,6 +2032,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_555CDA04917B4E4199991585BA677666"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterQues.xsl"
+			"TargetName" = "8:WriterQues.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_56F4ECD180564F6689072EFCE24098B8"
 			{
 			"SourcePath" = "8:..\\..\\TreeDescriptions\\PawsNPTree.png"
@@ -1926,6 +2098,26 @@
 			"TargetName" = "8:p12c08.gif"
 			"Tag" = "8:"
 			"Folder" = "8:_9A5050E7B5C545BA990FE7A51A988DDA"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_653E64F39CDF4DEA876E74B4881AB66F"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterNP.xsl"
+			"TargetName" = "8:WriterNP.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2080,6 +2272,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_70912901985A41F689672D2161A116D6"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterProp.xsl"
+			"TargetName" = "8:WriterProp.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_7104D4402F0D49C4A973EAC7089EFD0D"
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\CompPosition.xml"
@@ -2106,6 +2318,26 @@
 			"TargetName" = "8:PawsCompIPnonfinite.png"
 			"Tag" = "8:"
 			"Folder" = "8:_AFCB58A975FD4B60A7A4733CEEF100CF"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_727DD9D3EE6F498FABBBF88662ACB3B2"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterIP.xsl"
+			"TargetName" = "8:WriterIP.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2166,6 +2398,26 @@
 			"TargetName" = "8:OverallTypology.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_7D2705E72FEE481A8E7854EA39DFB58E"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterFocus.xsl"
+			"TargetName" = "8:WriterFocus.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -2640,12 +2892,72 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_97BFDB0EE61C481CAA3E524BFDBD3920"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterPP.xsl"
+			"TargetName" = "8:WriterPP.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_9B8FE7A11848415AA1E12E9315C48719"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterNeg.xsl"
+			"TargetName" = "8:WriterNeg.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_9BB2E67932334A9BAE0A6A2685F7326A"
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\PNTesting.xml"
 			"TargetName" = "8:PNTesting.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_9D9C73026B554D83ABFC3F66AE8FF0A1"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterPron.xsl"
+			"TargetName" = "8:WriterPron.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -3240,6 +3552,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_D8880A63DC644B1D9F66D4BAC69FD082"
+			{
+			"SourcePath" = "8:..\\..\\Transforms\\WriterExcl.xsl"
+			"TargetName" = "8:WriterExcl.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_DC372409039446B286278F34A7670C36"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_DB8B9606C14B4AB39AC9B9B94739B3CF"
 			{
 			"SourcePath" = "8:..\\..\\XMLPageDescriptions\\QPDegree.xml"
@@ -3326,26 +3658,6 @@
 			"TargetName" = "8:QMainYN.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_49F85947ABDC4BD3BBDCDA4B98E684FB"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:FALSE"
-			"IsolateTo" = "8:"
-			}
-			"{54DA9790-1474-11D3-8E00-00C04F6837D0}:_E4D1A48117F34086835EC6EA374FAD4C"
-			{
-			"SourcePath" = "8:..\\..\\Transforms\\WriterQP.xsl"
-			"TargetName" = "8:WriterQP.xsl"
-			"Tag" = "8:"
-			"Folder" = "8:_DC372409039446B286278F34A7670C36"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -4073,7 +4385,7 @@
 		"Name" = "8:Microsoft Visual Studio"
 		"ProductName" = "8:PAWSStarterKit"
 		"ProductCode" = "8:{C25A0D3E-32D8-4F91-A4DD-7CD5BCE21C3A}"
-		"PackageCode" = "8:{E7E34947-4EF3-45A5-BCCA-800D92194142}"
+		"PackageCode" = "8:{51A80266-0FFD-4E72-B126-1022449EC5E6}"
 		"UpgradeCode" = "8:{44BCC1A0-F58B-4681-9355-F81675D52F00}"
 		"RestartWWWService" = "11:FALSE"
 		"RemovePreviousVersions" = "11:FALSE"
@@ -4099,7 +4411,7 @@
 		}
 		"MergeModule"
 		{
-			"{AC8774A4-3E09-11D3-8E14-00C04F6837D0}:_B63E93669A62429D8DB96839B06224E3"
+			"{AC8774A4-3E09-11D3-8E14-00C04F6837D0}:_7690A78CF4CE4A3794430C17060AF87C"
 			{
 			"UseDynamicProperties" = "11:TRUE"
 			"IsDependency" = "11:TRUE"

@@ -28,12 +28,12 @@ which positions they may occupy and how they may be modified.  Each type will be
 	<p>
 	  <content>Languages normally have degree words which can modify at least some types of adverbs.  </content>
 	  <langName/>
-	  <content/>
+	  <content> </content>
 	  <case element="avdp" attr="degree">
 		<caseText value="no">does not have any such degree words, however.</caseText>
 		<caseText value="yes">has such degree words.</caseText>
 	  </case>
-	  <content/>
+	  <content> </content>
 	  <text show="swAdvPDegreeYes">
 		<content>These degree words occur </content>
 		<case element="advp" attr="degreePos">
@@ -50,9 +50,9 @@ which positions they may occupy and how they may be modified.  Each type will be
 		  <caseText value="exceptReason">The degree words can modify temporals, locatives, and manner adverbs, but reason or purpose adverbs are not modified.</caseText>
 		  <caseText value="restricted">There are distinct sets of the degree words which can modify each type of adverb.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 	  </text>
-	  <content/>
+	  <content> </content>
 	</p>
 	<section2 id="sAdvPTemporals">
 	  <secTitle>Temporal Adverbs</secTitle>

@@ -50,7 +50,7 @@ like </content>
 </content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> uses the following to express these notions:</content>
 	  </p>
@@ -103,11 +103,11 @@ like </content>
 		<text show="swQPNPDegreeEitherUnrestricted">
 		  <content>All of these words can occur on either side of the nominal phrase.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swQPNPDegreeEitherRestricted">
 		  <content>There are restrictions as to which of these words can occur on each side of the nominal phrase.</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	</section2>
 	<section2 id="sQPOtherQuantifiers">
@@ -138,7 +138,7 @@ waste</langData>
 		<content>.</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> has the following quantifiers of this type:</content>
 	  </p>
@@ -150,12 +150,12 @@ waste</langData>
 		</table>
 	  </example>
 	  <p show="swQPDegreeNo">
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> does not have any degree words which modify the quantifiers.</content>
 	  </p>
 	  <p show="swQPDegreeYes">
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> has degree words which can modify the quantifiers, as shown in:</content>
 	  </p>
@@ -176,11 +176,11 @@ waste</langData>
 		<text show="swQPDegreeEitherUnrestricted">
 		  <content>All of the degree words can occur on either side of the quantifier.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swQPDegreeEitherRestricted">
 		  <content>There are restrictions as to which of these degree words can occur on each side of the quantifier.</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	</section2>
 	<section2 id="sQPNumbers">
@@ -271,7 +271,7 @@ Examples of compound numbers in </content>
 		<p>
 		  <content>Ordinal numbers in </content>
 		  <langName/>
-		  <content/>
+		  <content> </content>
 		  <case element="qp" attr="ordinalFormation">
 			<caseText value="affix">are formed by adding an affix to the cardinal number.</caseText>
 			<caseText value="independent">are all independent syntactic words, distinct from the cardinal numbers.</caseText>
@@ -305,11 +305,11 @@ Examples of compound numbers in </content>
 		  <text show="swQPOrdinalEitherUnrestricted">
 			<content>All of the ordinal numbers can occur on either side of the cardinal number.</content>
 		  </text>
-		  <content/>
+		  <content> </content>
 		  <text show="swQPOrdinalEitherRestricted">
 			<content>There are restrictions as to which of the ordinal numbers can occur on each side of the cardinal number.</content>
 		  </text>
-		  <content/>
+		  <content> </content>
 		</p>
 		<p>
 		  <content>Examples of the use of ordinal numbers and the modifiers meaning "last" or "next" within a nominal phrase include:</content>

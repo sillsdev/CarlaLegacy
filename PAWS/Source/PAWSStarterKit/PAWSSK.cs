@@ -37,6 +37,7 @@ namespace PAWSStarterKit
 		string m_strXLingPapDtd;
 		string m_strXLingPapCss;
 		string m_strXLingPapXsl;
+		string m_strConstructionGif;
 		string m_strPAWSErrorMsg = Application.ProductName + ": ";
 		string m_strHelpPath;
 		string m_strHtmsPath;
@@ -154,6 +155,7 @@ namespace PAWSStarterKit
 			m_strXLingPapDtd = Path.Combine(m_strAppPath, @"Data\XLingPap.dtd");
 			m_strXLingPapCss = Path.Combine(m_strAppPath, @"Styles\WriteUpMaster.css");
 			m_strXLingPapXsl = Path.Combine(m_strAppPath, @"Transforms\XLingPap1.xsl");
+			m_strConstructionGif = Path.Combine(m_strAppPath, @"HTMs\Construction.gif");
 			m_strBlack1997 = Path.Combine(m_strAppPath, @"Help\Black1997.htm");
 			m_strBlack1999 = Path.Combine(m_strAppPath, @"Help\CBGBTEXT.DOC");
 			m_strMcConnel2002 = Path.Combine(m_strAppPath, @"Help\pcpatr.htm");
@@ -1161,6 +1163,11 @@ namespace PAWSStarterKit
 				if (!File.Exists(strUserWriterXsl))
 				{
 					File.Copy(m_strXLingPapXsl, strUserWriterXsl, true);
+				}
+				string strUserWriterConstructionGif = Path.Combine(strUserWriterDir, "Construction.gif");
+				if (!File.Exists(strUserWriterConstructionGif))
+				{
+					File.Copy(m_strConstructionGif, strUserWriterConstructionGif, true);
 				}
 			}
 			catch (Exception exc)

@@ -141,7 +141,7 @@
 		<content>Personal pronouns normally have either more than or the same number of case features as nouns have.</content>
 	  </p>
 	  <p show="swNPCaseNone">
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here, beginning with first person, then second person, then the third person pronouns.</content>
 	  </p>
@@ -153,7 +153,7 @@
 		</table>
 	  </example>
 	  <p show="swNPCaseNom">
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The personal pronouns which can appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </content>
 	  </p>
@@ -185,7 +185,7 @@
 		</table>
 	  </example>
 	  <p show="swNPCaseErg">
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The personal pronouns which can appear in subject position of transitive verbs are shown here, beginning with first person, then second person, then the third person pronouns. </content>
 	  </p>
@@ -217,7 +217,7 @@
 		</table>
 	  </example>
 	  <p show="swNPCaseSplit">
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The personal pronouns which normally appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </content>
 	  </p>
@@ -291,7 +291,7 @@
 		<content>, which were exemplified under personal pronouns above.</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> </content>
 		<case element="pron" attr="poss">
@@ -307,7 +307,7 @@
 		  </case>
 		  <content>  The possessive pronouns are given here, beginning with first person, then second person, then third person:</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <example show="swPronPossYes">
 		<table border="1">
@@ -331,14 +331,14 @@
 		<content>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning ‘self’) that is possessed by the pronoun that refers back to the subject, and some languages do not distinguish between reflexive and regular pronouns.</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> </content>
 		<case element="pron" attr="refl">
 		  <caseText value="no">does not have any type of reflexives.</caseText>
 		  <caseText value="yes">has reflexives</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swPronReflYes">
 		  <content> which </content>
 		  <case element="pron" attr="reflAffix">
@@ -348,7 +348,7 @@
 		  </case>
 		  <content>  The forms used for reflexives are given here, beginning with first person, then second person, then third person:</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <example show="swPronReflYes">
 		<table border="1">
@@ -374,7 +374,7 @@
 		<content>.  Some languages use only a verbal affix to indicate reciprocal action of the plural subject, others have separate pronouns, others use a possessed noun phrase or a quantified noun phrase (as in English), and some do not mark reciprocal action at all.</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> </content>
 		<case element="pron" attr="recip">
@@ -382,7 +382,7 @@
 		  <caseText value="verbal">uses a verbal affix to indicate reciprocal action.</caseText>
 		  <caseText value="yes">has reciprocals</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swPronRecipYes">
 		  <content> which </content>
 		  <case element="pron" attr="recipAffix">
@@ -390,13 +390,13 @@
 			<caseText value="noWord">are a distinct set of pronouns.</caseText>
 			<caseText value="noNoun">are phrases consisting of a certain noun with a pronoun as the possessor.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		  <text show="swPronRecipYesOrVerbal">
 			<content> Some examples of reciprocals are:</content>
 		  </text>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <example show="swPronRecipYesOrVerbal">
 		<interlinear exampleLoc="pron/recipExample"/>
@@ -439,7 +439,7 @@
 		  <caseText value="no">all of the indefinites are noun phrases, rather than being single-word pronouns.</caseText>
 		  <caseText value="yes">some or all of the indefinites are merged into single-word pronouns.  Examples of the positive indefinite pronouns include:</caseText>
 		</case>
-		<content/>
+		<content> </content>
 	  </p>
 	  <example show="swPronIndefYes">
 		<table border="1">
@@ -542,7 +542,7 @@
 		  <caseText value="N">N, because they can be modified by all the same categories as nouns can, including adjectives and possessors.</caseText>
 		  <caseText value="DP">DP, because they must stand alone in the place of a whole nominal phrase, with no modifiers allowed.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swPronNPCatNPorN">
 		  <content>The optional PP occurs </content>
 		  <case element="pron" attr="partitivePos">
@@ -551,7 +551,7 @@
 		  </case>
 		  <content> the element acting as the head of the nominal phrase.</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	</section2>
   </section1>

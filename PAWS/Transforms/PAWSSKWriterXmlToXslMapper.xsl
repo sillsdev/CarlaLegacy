@@ -15,6 +15,7 @@ Preamble
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:param name="prmType">x</xsl:param>
+  <xsl:variable name="sIdSeparator">.</xsl:variable>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Main template
@@ -254,69 +255,15 @@ headerRow template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-interlinear template
+img template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
-  <xsl:template match="//interlinear">
-	<xsl:element name="xsl:variable">
-	  <xsl:attribute name="name"><xsl:text>iExampleLength</xsl:text></xsl:attribute>
-	  <xsl:attribute name="select"><xsl:text>string-length(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>)</xsl:text></xsl:attribute>
-	</xsl:element>
-	<xsl:element name="xsl:choose">
-	  <xsl:element name="xsl:when">
-		<xsl:attribute name="test"><xsl:text>$iExampleLength != 0</xsl:text></xsl:attribute>
-		<xsl:element name="xsl:call-template">
-		  <xsl:attribute name="name"><xsl:text>OutputInterlinearExamples</xsl:text></xsl:attribute>
-		  <xsl:element name="xsl:with-param">
-			<xsl:attribute name="name"><xsl:text>sExamples</xsl:text></xsl:attribute>
-			<xsl:element name="xsl:value-of">
-			  <xsl:attribute name="select"><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:attribute>
-			</xsl:element>
-		  </xsl:element>
-		  <xsl:element name="xsl:with-param">
-			<xsl:attribute name="name"><xsl:text>iLength</xsl:text></xsl:attribute>
-			<xsl:element name="xsl:value-of">
-			  <xsl:attribute name="select"><xsl:text>string-length(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>)</xsl:text></xsl:attribute>
-			</xsl:element>
-		  </xsl:element>
-		</xsl:element>
-	  </xsl:element>
-	  <xsl:element name="xsl:otherwise">
-		<listInterlinear>
-		  <xsl:element name="xsl:attribute">
-			<xsl:attribute name="name"><xsl:text>letter</xsl:text></xsl:attribute>
-			<xsl:element name="xsl:text">
-			  <xsl:text>x</xsl:text>
-			  <xsl:value-of select="ancestor::section1/@id"/>
-			  <xsl:value-of select="ancestor::section2/@id"/>
-			  <xsl:value-of select="ancestor::section3/@id"/>
-			  <xsl:value-of select="ancestor::section4/@id"/>
-			  <xsl:value-of select="ancestor::section5/@id"/>
-			  <xsl:value-of select="ancestor::section6/@id"/>
-			  <xsl:for-each select="parent::example">
-				<xsl:value-of select="position()"/>
-			  </xsl:for-each>
-			  <xsl:value-of select="position()"/>
-			</xsl:element>
-		  </xsl:element>
-		  <line>
-			<langData>
-			  <xsl:element name="xsl:attribute">
-				<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
-				<xsl:text>l</xsl:text>
-				<xsl:element name="xsl:value-of">
-				  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
-				</xsl:element>
-			  </xsl:element>
-			  <object class="comment">ENTER AN EXAMPLE HERE.</object>
-			</langData>
-		  </line>
-		  <xsl:element name="xsl:call-template">
-			<xsl:attribute name="name"><xsl:text>DoGlossAndFree</xsl:text></xsl:attribute>
-		  </xsl:element>
-		</listInterlinear>
-	  </xsl:element>
-	</xsl:element>
+  <xsl:template match="//img">
+	  <xsl:copy>
+	  <xsl:for-each select="@*">
+		<xsl:copy/>
+	  </xsl:for-each>
+	</xsl:copy>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -556,12 +503,23 @@ DoExample
 		  </xsl:when>
 		  <xsl:otherwise>
 			<xsl:text>x</xsl:text>
-			<xsl:value-of select="ancestor::section1/@id"/>
-			<xsl:value-of select="ancestor::section2/@id"/>
-			<xsl:value-of select="ancestor::section3/@id"/>
-			<xsl:value-of select="ancestor::section4/@id"/>
-			<xsl:value-of select="ancestor::section5/@id"/>
-			<xsl:value-of select="ancestor::section6/@id"/>
+			<xsl:value-of select="substring-after(ancestor::section1/@id,'s')"/>
+			<xsl:call-template name="DoSubSectionId">
+			  <xsl:with-param name="sSectionId" select="ancestor::section2/@id"/>
+			</xsl:call-template>
+			<xsl:call-template name="DoSubSectionId">
+			  <xsl:with-param name="sSectionId" select="ancestor::section3/@id"/>
+			</xsl:call-template>
+			<xsl:call-template name="DoSubSectionId">
+			  <xsl:with-param name="sSectionId" select="ancestor::section4/@id"/>
+			</xsl:call-template>
+			<xsl:call-template name="DoSubSectionId">
+			  <xsl:with-param name="sSectionId" select="ancestor::section5/@id"/>
+			</xsl:call-template>
+			<xsl:call-template name="DoSubSectionId">
+			  <xsl:with-param name="sSectionId" select="ancestor::section6/@id"/>
+			</xsl:call-template>
+			<xsl:value-of select="$sIdSeparator"/>
 			<xsl:value-of select="position()"/>
 		  </xsl:otherwise>
 		</xsl:choose>
@@ -607,7 +565,7 @@ DoInterlinear
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template name="DoInterlinear">
-  <xsl:param name="sExNum"/>
+	<xsl:param name="sExNum"/>
 	<xsl:for-each select="interlinear">
 	  <xsl:element name="xsl:variable">
 		<xsl:attribute name="name"><xsl:text>iExampleLength</xsl:text></xsl:attribute>
@@ -735,6 +693,20 @@ DoSection
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DoSubSectionId
+	routine to create part of a an example id based on a subsection id
+		Parameters: sSectionId: the id of a subsection
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template name="DoSubSectionId">
+	<xsl:param name="sSectionId"/>
+	<xsl:if test="string-length($sSectionId) > 1">
+	  <xsl:value-of select="$sIdSeparator"/>
+	  <xsl:value-of select="substring-after($sSectionId, 's')"/>
+	</xsl:if>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 DoTable
 	routine to create a table element
 		Parameters: none
@@ -765,6 +737,7 @@ DoUL
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+02-Aug-2002  Andy Black  Add img; rework example ids to be unique
 31-Jul-2002    Andy Black  Many refinements.
 26-Jul-2002    Andy Black  Began working on Initial Draft
 ================================================================

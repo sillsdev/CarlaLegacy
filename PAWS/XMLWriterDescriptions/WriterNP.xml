@@ -267,7 +267,7 @@
 	  <sectionRef sec="sNPCompounds"/>
 	  <content>, after first dealing with agreement and case marking.</content>
 	</p>
-	<section2 id="sNPAgreement">
+	<section2 id="sNPAgr">
 	  <secTitle>Agreement</secTitle>
 	  <p>
 		<content>Many languages require agreement between at least some of the modifiers and the head noun.  While English only has number agreement, in other languages this agreement may also include animacy, class, or gender.</content>
@@ -287,7 +287,7 @@
 		  <caseText value="yesClass">the modifiers and the head noun may/must agree in class number.</caseText>
 		  <caseText value="yesGender">the modifiers and the head noun may/must agree in gender.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 	  </p>
 	</section2>
 	<section2 id="sNPCase">
@@ -308,7 +308,7 @@
 	  <p>
 		<content>
 In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  The case of possessors is not set cross-linguistically.  Some languages with an ergative-absolutive system simply have different sets of verbal agreement markers, but no marking on nouns.  This type of agreement marking will be handled in section </content>
-		<sectionRef sec="sIPAgreement"/>
+		<sectionRef sec="sIPAgr"/>
 		<content>.</content>
 	  </p>
 	  <p>
@@ -316,20 +316,20 @@ In an ergative-absolutive case system, subjects of transitive verbs are marked w
 Some languages are even more complex in that they normally have a nominative-accusative system but under some conditions the case system switches to ergative-absolutive.  This is called "split ergativity".</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
-		<content/>
+		<content> </content>
 		<case element="np" attr="case">
 		  <caseText value="none">does not have any case system.   The exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence.</caseText>
 		  <caseText value="nominative">has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</caseText>
 		  <caseText value="ergative">has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</caseText>
 		  <caseText value="split">has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain conditions.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swNPCaseDefaultNom">
 		  <content>Nominative case is the default (unmarked) case.</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p>
 		<content>The pronoun sets will be given in section </content>
@@ -355,7 +355,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<text show="swQPNPDegreeNo">
 		  <content>these are not expressed as separate words which modify the whole nominal phrase.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swQPNPDegreeYes">
 		  <content>these are expressed as separate words which occur </content>
 		  <case element="qp" attr="npDegreePos">
@@ -368,7 +368,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  </case>
 		  <content> the rest of the nominal phrase.  Some examples are:</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <example show="swQPNPDegreeYes">
 		<interlinear exampleLoc="qp/example"/>
@@ -395,22 +395,22 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<langData>a book, an apple, the book, the books, this apple</langData>
 		<content> and </content>
 		<langData>those books.</langData>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p>
 		<content>In English, articles and demonstratives do not co-occur in the same nominal phrase, and both occur before the noun.  Some languages allow both to co-occur in the same phrase, and they may occur in different positions with respect to the noun.  Therefore, thet need distinct syntactic categories.  Some languages only have one set, either articles or demonstratives.  A few languages may not have either type expressed as separate words.</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
-		<content/>
+		<content> </content>
 		<case element="np" attr="artAndDem">
 		  <caseText value="no">does not have either articles or demonstratives that are realized as separate words.</caseText>
 		  <caseText value="article">has only articles that are realized as separate words, no demonstratives.</caseText>
 		  <caseText value="demonstrative">has only demonstratives that are realized as separate words, no articles.</caseText>
 		  <caseText value="both">has both articles and demonstratives that are realized as separate words.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndOrDem">
 		  <content>The </content>
 		  <case element="np" attr="artAndDem">
@@ -424,7 +424,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  </text>
 		  <content>marked for case.</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p show="swNPArtAndDemArt">
 		<content>The article occurs </content>
@@ -437,7 +437,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<text show="swNPArtAndDemArtPosEitherUnrestricted">
 		  <content>All of the articles may appear on either side of the noun.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemArtPosEitherRestricted">
 		  <content>There are restrictions as to which of the articles may appear on either side of the noun.</content>
 		</text>
@@ -447,7 +447,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
 		  <caseText value="yes">always required.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemArtPosBothSidesRequiredMass">
 		  <content>In the singular forms, </content>
 		  <case element="np" attr="artBothRequiredPos">
@@ -455,9 +455,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">an article is required after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">an article is required to appear both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemArtPosBothSidesRequiredYes">
 		  <content>An article is required to appear </content>
 		  <case element="np" attr="artBothRequiredPos">
@@ -465,9 +465,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p show="swNPArtAndDemDem">
 		<content>The demonstrative occurs </content>
@@ -480,7 +480,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<text show="swNPArtAndDemDemPosEitherUnrestricted">
 		  <content>All of the demonstratives may appear on either side of the noun.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemDemPosEitherRestricted">
 		  <content>There are restrictions as to which of the demonstratives may appear on either side of the noun.</content>
 		</text>
@@ -490,7 +490,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
 		  <caseText value="yes">always required.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemDemPosBothSidesRequiredMass">
 		  <content>In the singular forms, </content>
 		  <case element="np" attr="demBothRequiredPos">
@@ -498,9 +498,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">a demonstrative is required after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">a demonstrative is required to appear both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemDemPosBothSidesRequiredYes">
 		  <content>A demonstrative is required to appear </content>
 		  <case element="np" attr="demBothRequiredPos">
@@ -508,9 +508,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p show="swNPArtAndDemBothCooccurNo">
 		<content>The articles and demonstratives both appear in the same position, so they do not co-occur in the same nominal phrase.  Articles or demonstratives appear </content>
@@ -523,7 +523,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<text show="swNPArtAndDemBothCooccurNoPosEitherUnrestricted">
 		  <content>All of the articles and demonstratives may appear on either side of the noun.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurNoPosEitherRestricted">
 		  <content>There are restrictions as to which of the articles and demonstratives may appear on either side of the noun.</content>
 		</text>
@@ -533,7 +533,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
 		  <caseText value="yes">always required.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurNoRequiredMass">
 		  <content>In the singular forms, </content>
 		  <case element="np" attr="demOrArtBothRequiredPos">
@@ -541,9 +541,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">an article or a demonstrative is required after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">an article or a demonstrative is required to appear both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurNoRequiredYes">
 		  <content>An article or a demonstrative is required to appear </content>
 		  <case element="np" attr="demOrArtBothRequiredPos">
@@ -551,9 +551,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p show="swNPArtAndDemBothCooccurYes">
 		<content>The articles and demonstratives do not appear in the same position and both may co-occur in the same nominal phrase.  The demonstrative occurs </content>
@@ -566,7 +566,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<text show="swNPArtAndDemBothCooccurYesDemPosEitherUnrestricted">
 		  <content>All of the demonstratives may appear on either side of the noun.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurYesDemPosEitherRestricted">
 		  <content>There are restrictions as to which of the demonstratives may appear on either side of the noun.</content>
 		</text>
@@ -576,7 +576,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
 		  <caseText value="yes">always required.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMass">
 		  <content>In the singular forms, </content>
 		  <case element="np" attr="demAndArtDemRequiredPos">
@@ -584,9 +584,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">a demonstrative is required after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">a demonstrative is required to appear both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredYes">
 		  <content>A demonstrative is required to appear </content>
 		  <case element="np" attr="demAndArtDemBothRequiredPos">
@@ -594,7 +594,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
 		<content>  The article occurs </content>
 		<case element="np" attr="demAndArtArtPos">
@@ -606,7 +606,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<text show="swNPArtAndDemBothCooccurYesArtPosEitherUnrestricted">
 		  <content>All of the articles may appear on either side of the noun.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurYesArtPosEitherRestricted">
 		  <content>There are restrictions as to which of the articles may appear on either side of the noun.</content>
 		</text>
@@ -616,7 +616,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
 		  <caseText value="yes">always required.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMass">
 		  <content>In the singular forms, </content>
 		  <case element="np" attr="demAndArtArtRequiredPos">
@@ -624,9 +624,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">an article is required after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">an article is required to appear both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredYes">
 		  <content>An article is required to appear </content>
 		  <case element="np" attr="demAndArtArtBothRequiredPos">
@@ -634,9 +634,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
 			<caseText value="both">both before and after the noun.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p>
 		<content>Examples of nominal phrases including articles and/or demonstratives as allowed in </content>
@@ -689,21 +689,21 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 	  <p>
 		<content>As seen in the example above, </content>
 		<langName/>
-		<content/>
+		<content> </content>
 		<case element="np" attr="possMarked">
 		  <caseText value="no">does not have any special marking to distinguish possessors from any other nominal phrase.</caseText>
 		  <caseText value="yesAffix">marks the head noun within the possessor with an affix to distinguish possessors from any other nominal phrase.</caseText>
 		  <caseText value="yesClitic">marks the whole possessive phrase with a phrasal clitic to distinguish possessors from any other nominal phrase.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 		<text show="swNPPossMarkedYesCliticWordNoSuffix">
 		  <content>This phrasal clitic is an enclitic which attaches to the final word in the possessor, like the English possessive clitic.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPPossMarkedYesCliticWordNoPrefix">
 		  <content>This phrasal clitic is an proclitic which attaches to the first word in the possessor.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPPossMarkedYesCliticWordYes">
 		  <content>This phrasal clitic is written as a separate word which occurs </content>
 		  <case element="np" attr="possCliticPossPos">
@@ -715,9 +715,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="no">optional in some cases.</caseText>
 			<caseText value="no">always required.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p>
 		<content>The possessor occurs </content>
@@ -769,7 +769,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="absolutive">absolutive case, the same marking as the subjects of intransitive verbs and the objects of transitive verbs.</caseText>
 			<caseText value="genitive">genitive case, a distinct marking for possessors.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</p>
 		<p>
 		  <content>In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system.   In </content>
@@ -779,7 +779,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="no">the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor.</caseText>
 			<caseText value="yes">the case of the head noun matches the case of the possessor, when a possessor is present.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</p>
 	  </section3>
 	  <section3 id="sNPPossAgreement">
@@ -796,9 +796,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  </li>
 		</ul>
 		<p>
-		  <content/>
+		  <content> </content>
 		  <langName/>
-		  <content/>
+		  <content> </content>
 		  <case element="np" attr="possAlienable">
 			<caseText value="no">does not distinguish</caseText>
 			<caseText value="yes">does make a distinction</caseText>
@@ -807,7 +807,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <text show="swNPPossAlienableYes">
 			<content>The affix which marks alienably possessed nouns when they have a possessor is:</content>
 		  </text>
-		  <content/>
+		  <content> </content>
 		</p>
 		<example show="swNPPossAlienableYes">
 		  <table>
@@ -828,7 +828,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <text show="swNPPossAgrYes">
 			<content>These affixes mark the following features of the possessor:</content>
 		  </text>
-		  <content/>
+		  <content> </content>
 		</p>
 		<example show="swNPPossAgrYes">
 		  <table border="1">
@@ -942,7 +942,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<content>.  All the quantifier phrases occur before the noun in English.</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> examples of quantified nominal phrases include:</content>
 	  </p>
@@ -965,19 +965,19 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<text show="swNPQPPosEitherOrBothUnrestricted">
 		  <content>All of quantifier phrases can occur on either side of the noun.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPQPPosEitherOrBothRestricted">
 		  <content>There are restrictions as to which of the quantifier phrases can occur on each side of the noun.  </content>
 		  <text show="swNPQPPosEitherRestrictedNumBefore">
 			<content>All of the numbers occur before the noun.</content>
 		  </text>
-		  <content/>
+		  <content> </content>
 		  <text show="swNPQPPosEitherRestrictedNumAfter">
 			<content>All of the numbers occur after the noun.</content>
 		  </text>
-		  <content/>
+		  <content> </content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p show="swNPQPAgreeYes">
 		<content>Like other modifiers within the nominal phrase, quantifier phrases in </content>
@@ -988,7 +988,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <caseText value="yesClass">class number.</caseText>
 		  <caseText value="yesGender">gender.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 	  </p>
 	</section2>
 	<section2 id="sNPAdjP">
@@ -1005,7 +1005,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<content>.  As the English examples show, adjectives all occur before the noun, and more than one adjective phrase is allowed.  This is handled by a recursive rule.</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> examples of nominal phrases which are modified by qualitative adjectives include:</content>
 	  </p>
@@ -1028,11 +1028,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<text show="swNPAdjPPosEitherOrBothUnrestricted">
 		  <content>All of adjective phrases can occur on either side of the noun.</content>
 		</text>
-		<content/>
+		<content> </content>
 		<text show="swNPAdjPPosEitherOrBothRestricted">
 		  <content>There are restrictions as to which of the adjective phrases can occur on each side of the noun.</content>
 		</text>
-		<content/>
+		<content> </content>
 	  </p>
 	  <p show="swNPAdjPAgreeYes">
 		<content>Like other modifiers within the nominal phrase, adjective phrases in </content>
@@ -1043,7 +1043,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		  <caseText value="yesClass">class number.</caseText>
 		  <caseText value="yesGender">gender.</caseText>
 		</case>
-		<content/>
+		<content> </content>
 	  </p>
 	  <section3 id="sNPAdjPCaseChange" show="swNPPossNounCaseChangeYes">
 		<secTitle>Case Change with Adjective Phrase Modifiers</secTitle>
@@ -1057,7 +1057,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<caseText value="no">only changes when a possessor is present, though in that situation an intervening adjective may/must also carry that case.</caseText>
 			<caseText value="yes">changes to match the normal case of a possessor even if just an adjectival modifier is present.</caseText>
 		  </case>
-		  <content/>
+		  <content> </content>
 		</p>
 		<p show="swNPAdjPCaseChangeYes">
 		  <content>Further, some languages of this latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase.   In </content>
@@ -1073,15 +1073,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<text show="swNPPossCaseGen">
 			  <content>genitive</content>
 			</text>
-			<content/>
+			<content> </content>
 			<text show="swNPPossCaseErg">
 			  <content>ergative</content>
 			</text>
-			<content/>
+			<content> </content>
 			<text show="swNPPossCaseAbs">
 			  <content>absolutive</content>
 			</text>
-			<content/>
+			<content> </content>
 			<case attr="np" element="adjpCaseAffixType">
 			  <caseText value="suffix">suffix</caseText>
 			  <caseText value="prefix">prefix</caseText>
@@ -1090,22 +1090,22 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<text show="swNPPossCaseGen">
 			  <content>genitive</content>
 			</text>
-			<content/>
+			<content> </content>
 			<text show="swNPPossCaseErg">
 			  <content>ergative</content>
 			</text>
-			<content/>
+			<content> </content>
 			<text show="swNPPossCaseAbs">
 			  <content>absolutive</content>
 			</text>
-			<content/>
+			<content> </content>
 			<case attr="np" element="adjpCaseAffixType">
 			  <caseText value="suffix">suffix,</caseText>
 			  <caseText value="prefix">prefix,</caseText>
 			</case>
 			<content> then another adjective and/or a possessor must also be present.</content>
 		  </text>
-		  <content/>
+		  <content> </content>
 		</p>
 	  </section3>
 	</section2>
@@ -1130,12 +1130,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<content>, not the other way around.  In all compound nouns and noun modifier constructions in English, the head is the right-most noun in the series.</content>
 	  </p>
 	  <p show="swNPCompNo">
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> does not  have any compound nouns or noun modifiers that are written as separate words.  They are all written as a single word with the head noun.  Examples include:</content>
 	  </p>
 	  <p show="swNPCompYes">
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> has compound nouns or noun modifiers that are written as separate words.  The </content>
 		<case element="np" attr="compHead">
@@ -1162,7 +1162,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<content>.    In English, the PP always comes after the noun.</content>
 	  </p>
 	  <p>
-		<content/>
+		<content> </content>
 		<langName/>
 		<content> examples with PP modifiers or complement include:</content>
 	  </p>

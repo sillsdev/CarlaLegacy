@@ -50,6 +50,16 @@ Main template
 	  <xsl:apply-templates select="/" mode="np"/>
 	  <xsl:apply-templates select="/" mode="prop"/>
 	  <xsl:apply-templates select="/" mode="pron"/>
+	  <xsl:apply-templates select="/" mode="pp"/>
+	  <xsl:apply-templates select="/" mode="ip"/>
+	  <xsl:apply-templates select="/" mode="comp"/>
+	  <xsl:apply-templates select="/" mode="ques"/>
+	  <xsl:apply-templates select="/" mode="relcl"/>
+	  <xsl:apply-templates select="/" mode="advcl"/>
+	  <xsl:apply-templates select="/" mode="neg"/>
+	  <xsl:apply-templates select="/" mode="coord"/>
+	  <xsl:apply-templates select="/" mode="focus"/>
+	  <xsl:apply-templates select="/" mode="excl"/>
 	  <backMatter>
 		<endnotes/>
 		<references/>
@@ -68,6 +78,16 @@ Include other templates
   <xsl:include href="WriterNP.xsl"/>
   <xsl:include href="WriterProp.xsl"/>
   <xsl:include href="WriterPron.xsl"/>
+  <xsl:include href="WriterPP.xsl"/>
+  <xsl:include href="WriterIP.xsl"/>
+  <xsl:include href="WriterComp.xsl"/>
+  <xsl:include href="WriterQues.xsl"/>
+  <xsl:include href="WriterRelCl.xsl"/>
+  <xsl:include href="WriterAdvCl.xsl"/>
+  <xsl:include href="WriterNeg.xsl"/>
+  <xsl:include href="WriterCoord.xsl"/>
+  <xsl:include href="WriterFocus.xsl"/>
+  <xsl:include href="WriterExcl.xsl"/>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 DoGlossAndFree
@@ -144,9 +164,9 @@ OutputInterlinearExamples
 	<xsl:param name="sExNumber"/>
 	<xsl:param name="sLetterList"/>
 	<xsl:if test="string-length($sExamples) != 0">
-			<xsl:variable name="sNewLetterList" select="concat(normalize-space($sLetterList),' ')"/>
-		<xsl:variable name="sFirstLetter" select="substring-before($sNewLetterList,' ')"/>
-		<xsl:variable name="sRestOfTheLetters" select="substring-after($sNewLetterList,' ')"/>
+	  <xsl:variable name="sNewLetterList" select="concat(normalize-space($sLetterList),' ')"/>
+	  <xsl:variable name="sFirstLetter" select="substring-before($sNewLetterList,' ')"/>
+	  <xsl:variable name="sRestOfTheLetters" select="substring-after($sNewLetterList,' ')"/>
 	  <xsl:variable name="sBefore" select="substring-before($sExamples, '&#xA;')"/>
 	  <xsl:variable name="sLine">
 		<xsl:choose>
@@ -180,7 +200,7 @@ OutputInterlinearExamples
 		  <xsl:value-of select="$sExNumber"/>
 		</xsl:with-param>
 		<xsl:with-param name="sLetterList">
-		<xsl:value-of select="$sRestOfTheLetters"/>
+		  <xsl:value-of select="$sRestOfTheLetters"/>
 		</xsl:with-param>
 	  </xsl:call-template>
 	</xsl:if>
@@ -190,6 +210,8 @@ OutputInterlinearExamples
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+02-Aug-2002  Andy Black  Add rest of the sections; add column output;
+											rework interlinear output to create unique example ids
 26-Jul-2002    Andy Black  Initial version
 ================================================================
  -->
