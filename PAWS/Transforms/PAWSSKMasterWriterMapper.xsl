@@ -27,10 +27,12 @@ Main template
 <language>
 <xsl:attribute name="id"><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
 </language>
-	<xsl:apply-templates select="/" mode="x"/>
+	<xsl:apply-templates select="/" mode="intro"/>
+	<xsl:apply-templates select="/" mode="qp"/>
 </lingPaper>
   </xsl:template>
   <xsl:include href="..\XMLWriterDescriptions\IntroAndTypology.xsl"/>
+  <xsl:include href="..\XMLWriterDescriptions\QP.xsl"/>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 DoGlossAndFree

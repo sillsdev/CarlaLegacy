@@ -56,6 +56,27 @@ caseText template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+col template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//col">
+	<col>
+	<xsl:choose>
+	  <xsl:when test="@exampleLoc">
+	  <xsl:element name="xsl:value-of">
+	  <xsl:attribute name="select">
+	  <xsl:text>//</xsl:text>
+	  <xsl:value-of select="@exampleLoc"/>
+	  </xsl:attribute>
+	  </xsl:element>
+	  </xsl:when>
+	  <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+	</xsl:choose>
+
+	</col>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 comment template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
@@ -145,6 +166,19 @@ interlinear template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+langData template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//langData">
+	<langData>
+	  <xsl:element name="xsl:attribute">
+		<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute><xsl:element name="xsl:value-of"><xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute></xsl:element>
+	  </xsl:element>
+	  <xsl:apply-templates/>
+	</langData>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 langName template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
@@ -155,6 +189,16 @@ langName template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+li template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//li">
+	<li>
+	  <xsl:apply-templates/>
+	</li>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 p template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
@@ -162,6 +206,16 @@ p template
 	<p>
 	  <xsl:apply-templates select="*"/>
 	</p>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+row template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//row">
+	<row>
+	  <xsl:apply-templates/>
+	</row>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -241,6 +295,26 @@ section6 template
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+table template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//table">
+	<table>
+	  <xsl:apply-templates/>
+	</table>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ul template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+  <xsl:template match="//ul">
+	<ul>
+	  <xsl:apply-templates/>
+	</ul>
+  </xsl:template>
+  <!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 BuildCondition
 	routine to create a test Expression
 		Parameters: prmCondition: IDREF to a showWhen
@@ -275,36 +349,6 @@ BuildCondition
 		</xsl:choose>
 	  </xsl:for-each>
 	</xsl:for-each>
-  </xsl:template>
-  <!--
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-OutputExamples
-	routine to create examples recursively
-		Parameters: sExamles: text of examples
-							 iLength: length of example text
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
--->
-  <xsl:template name="OutputExamples">
-	<xsl:param name="sExamples"/>
-	<xsl:param name="iLength"/>
-	<xsl:if test="string-length($sExamples) > 1">
-	  <xsl:variable name="sLine" select="substring-before($sExamples, '&#x0a;')"/>
-	  <listSingle>
-		<xsl:attribute name="letter"><xsl:value-of select="generate-id()"/>_<xsl:value-of select="$iLength"/></xsl:attribute>
-		<langData>
-		  <xsl:attribute name="lang"><xsl:value-of select="$prmLangCode"/></xsl:attribute>
-		  <xsl:value-of select="$sLine"/>
-		</langData>
-	  </listSingle>
-	  <xsl:call-template name="OutputExamples">
-		<xsl:with-param name="sExamples">
-		  <xsl:value-of select="substring-after($sExamples,'&#x0a;')"/>
-		</xsl:with-param>
-		<xsl:with-param name="iLength">
-		  <xsl:value-of select="string-length(substring-after($sExamples,'&#x0a;'))"/>
-		</xsl:with-param>
-	  </xsl:call-template>
-	</xsl:if>
   </xsl:template>
 </xsl:stylesheet>
 <!--

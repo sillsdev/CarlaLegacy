@@ -5,50 +5,54 @@
 <!ENTITY % chunk "p | example | table | ol | ul | dl">
 <!ENTITY % embedded "case | text | langData | langName | gloss | exampleRef | sectionRef | comment | object | br | category | feature">
 <!ENTITY nbsp "&#160;">
-
 <!ELEMENT and EMPTY>
 <!ELEMENT br EMPTY>
-<!ELEMENT caption (#PCDATA | %embedded;)*> <!-- content -->
-<!ELEMENT case (caseText*) >
+<!ELEMENT caption (content | %embedded;)*>
+<!-- content -->
+<!ELEMENT case (caseText*)>
 <!ATTLIST case
-element CDATA #REQUIRED
-attr CDATA #REQUIRED
+	element CDATA #REQUIRED
+	attr CDATA #REQUIRED
 >
-<!ELEMENT caseText (#PCDATA) >
+<!ELEMENT caseText (#PCDATA)>
 <!ATTLIST caseText
-value CDATA #REQUIRED
+	value CDATA #REQUIRED
 >
 <!ELEMENT category (#PCDATA)>
 <!-- content is the name of the syntactic category -->
-<!ELEMENT col (#PCDATA | %embedded;)*> <!-- content -->
+<!ELEMENT col (content | %embedded;)*>
+<!-- content -->
 <!ATTLIST col
-  class CDATA #IMPLIED
-  show IDREF #IMPLIED
+	class CDATA #IMPLIED
+	show IDREF #IMPLIED
+	exampleLoc CDATA #IMPLIED
 >
 <!-- comments are for the author.  The intent is that they will not show up in
 	 the formatted version of the paper. -->
 <!ELEMENT comment (#PCDATA)>
 <!ELEMENT content (#PCDATA)>
 <!-- definition description -->
-<!ELEMENT dd (#PCDATA | %embedded; | %chunk;)*>  <!-- content -->
+<!ELEMENT dd (content | %embedded; | %chunk;)*>
+<!-- content -->
 <!ATTLIST dd
-  show IDREF #IMPLIED
+	show IDREF #IMPLIED
 >
 <!-- definition list -->
 <!ELEMENT dl (dt | dd)*>
 <!ATTLIST dl
-  show IDREF #IMPLIED
+	show IDREF #IMPLIED
 >
 <!-- definition term -->
-<!ELEMENT dt (#PCDATA | %embedded; | %chunk;)*> <!-- content -->
+<!ELEMENT dt (content | %embedded; | %chunk;)*>
+<!-- content -->
 <!ATTLIST dt
-  show IDREF #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT example (interlinear | table)>
 <!ATTLIST example
-  num ID #IMPLIED
+	num ID #IMPLIED
+	show IDREF #IMPLIED
 >
-
 <!-- references to example numbers or example number/letter.
 	 Use just num for the example number.
 	 Use just letter for an example number/letter combination.
@@ -58,131 +62,134 @@ value CDATA #REQUIRED
 	 One may only include the letter (and not the number). -->
 <!ELEMENT exampleRef EMPTY>
 <!ATTLIST exampleRef
-  num CDATA #IMPLIED
-  letter CDATA #IMPLIED
-  equal (no | yes) "no"
-  punct CDATA #IMPLIED
-  paren (none | both | initial | final) #IMPLIED
-  letterOnly (no | yes) "no"
+	num CDATA #IMPLIED
+	letter CDATA #IMPLIED
+	equal (no | yes) "no"
+	punct CDATA #IMPLIED
+	paren (none | both | initial | final) #IMPLIED
+	letterOnly (no | yes) "no"
 >
 <!ELEMENT feature (#PCDATA)>
 <!-- gloss is a way to tag some text as being a gloss in a particular language. -->
-<!ELEMENT gloss (#PCDATA | %embedded;)*> <!-- content -->
+<!ELEMENT gloss (content | %embedded;)*>
+<!-- content -->
 <!ATTLIST gloss
-  lang IDREF #REQUIRED
+	lang IDREF #REQUIRED
 >
 <!ELEMENT headerCol (#PCDATA)>
 <!ATTLIST headerCol
-  class CDATA #IMPLIED
-  show IDREF #IMPLIED
+	class CDATA #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT headerRow (headerCol+)>
 <!ATTLIST headerRow
-  class CDATA #IMPLIED
-  show IDREF #IMPLIED
+	class CDATA #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT interlinear EMPTY>
 <!ATTLIST interlinear
-exampleLoc CDATA #REQUIRED
+	exampleLoc CDATA #REQUIRED
 >
 <!-- langData is a way to tag some text as belonging to a particular language. -->
-<!ELEMENT langData (#PCDATA | %embedded;)*> <!-- content -->
+<!ELEMENT langData (#PCDATA)>
+<!-- content -->
 <!ELEMENT langName EMPTY>
 <!-- object is a generic way to tag a special kind of object.  One can
 	 use the CSS stylesheet to format these objects by referring to the
 	 class attribute.  -->
 <!-- list element -->
-<!ELEMENT li (#PCDATA | %embedded; | %chunk;)*> <!-- content -->
+<!ELEMENT li (content | %embedded; | %chunk;)*>
+<!-- content -->
 <!ATTLIST li
-  id ID #IMPLIED
-  show IDREF #IMPLIED
+	id ID #IMPLIED
+	show IDREF #IMPLIED
 >
-<!ELEMENT object (#PCDATA|%embedded;)*> <!-- content -->
+<!ELEMENT object (content | %embedded;)*>
+<!-- content -->
 <!ATTLIST object
-  class CDATA #REQUIRED
+	class CDATA #REQUIRED
 >
 <!-- ordered list -->
 <!ELEMENT ol (li | ol | ul)*>
 <!ATTLIST ol
-  show IDREF #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT or EMPTY>
-<!ELEMENT p (content|%embedded;)*> <!-- content -->
+<!ELEMENT p (content | %embedded;)*>
+<!-- content -->
 <!ATTLIST p
-  style CDATA #IMPLIED
-  show IDREF #IMPLIED
+	style CDATA #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT portion ((section1 | section2 | section3 | section4 | section5 | section6)*, showWhen*)>
-
 <!ELEMENT row (col+)>
 <!ATTLIST row
-  class CDATA #IMPLIED
-  show IDREF #IMPLIED
+	class CDATA #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT secTitle (#PCDATA)>
 <!ELEMENT section1 (secTitle, (%chunk; | section2)*)>
 <!ATTLIST section1
-  id ID #REQUIRED
-  show IDREF #IMPLIED
+	id ID #REQUIRED
+	show IDREF #IMPLIED
 >
 <!ELEMENT section2 (secTitle, (%chunk; | section3)*)>
 <!ATTLIST section2
-  id ID #REQUIRED
-  show IDREF #IMPLIED
+	id ID #REQUIRED
+	show IDREF #IMPLIED
 >
 <!ELEMENT section3 (secTitle, (%chunk; | section4)*)>
 <!ATTLIST section3
-  id ID #REQUIRED
-  show IDREF #IMPLIED
+	id ID #REQUIRED
+	show IDREF #IMPLIED
 >
 <!ELEMENT section4 (secTitle, (%chunk; | section5)*)>
 <!ATTLIST section4
-  id ID #REQUIRED
-  show IDREF #IMPLIED
+	id ID #REQUIRED
+	show IDREF #IMPLIED
 >
 <!ELEMENT section5 (secTitle, (%chunk; | section6)*)>
 <!ATTLIST section5
-  id ID #REQUIRED
-  show IDREF #IMPLIED
+	id ID #REQUIRED
+	show IDREF #IMPLIED
 >
 <!ELEMENT section6 (secTitle, (%chunk;)*)>
 <!ATTLIST section6
-  id ID #REQUIRED
-  show IDREF #IMPLIED
+	id ID #REQUIRED
+	show IDREF #IMPLIED
 >
 <!-- references to sections, etc. -->
 <!ELEMENT sectionRef EMPTY>
 <!ATTLIST sectionRef
-  sec CDATA #REQUIRED
+	sec CDATA #REQUIRED
 >
-
 <!ELEMENT showWhen ((whenValue | useShowWhen), ((or | and), (whenValue | useShowWhen))*)>
 <!ATTLIST showWhen
-  id ID #REQUIRED
+	id ID #REQUIRED
 >
 <!ELEMENT table (caption?, headerRow?, row+)>
 <!ATTLIST table
-  border CDATA #IMPLIED
-  class CDATA #IMPLIED
-  show IDREF #IMPLIED
+	border CDATA #IMPLIED
+	class CDATA #IMPLIED
+	show IDREF #IMPLIED
 >
-<!ELEMENT text (#PCDATA)>
+<!ELEMENT text (content | %embedded;)*>
 <!ATTLIST text
-show IDREF #REQUIRED
+	show IDREF #REQUIRED
 >
 <!ELEMENT whenValue EMPTY>
 <!ATTLIST whenValue
-  element CDATA #REQUIRED
-  attr CDATA #IMPLIED
-  value CDATA #REQUIRED
-  negateValue (yes | no) "no"
+	element CDATA #REQUIRED
+	attr CDATA #IMPLIED
+	value CDATA #REQUIRED
+	negateValue (yes | no) "no"
 >
 <!-- unordered list -->
 <!ELEMENT ul (li | ol | ul)*>
 <!ATTLIST ul
-  show IDREF #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT useShowWhen EMPTY>
 <!ATTLIST useShowWhen
-  show IDREF #REQUIRED
+	show IDREF #REQUIRED
 >

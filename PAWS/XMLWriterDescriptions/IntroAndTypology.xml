@@ -2,20 +2,46 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <portion>
-	<section1 id="intro"><secTitle>Introduction</secTitle>
-  <p><content>This is a description of the syntax of </content><langName/><content> based on the answers given to the PAWS Starter Kit. </content><comment>Once the starter kit is completed, this fle can serve as a draft for preparing a more complete grammar.  Do not modify this file until the starter kit is completed, because your work will be overwritten by the PAWS program.</comment></p>
-<p><content>The </content><langName/><content> language is spoken in </content><comment>locations go here</comment><content>.   There are approximately </content><comment>number goes here</comment><content> speakers.  </content><langName/><content> is a member of the </content><comment>language family name goes here</comment><content> language family.</content></p>
-</section1>
-	<section1 id="typology"><secTitle>Typology</secTitle>
-	<p><content>The basic typology of </content><langName/><content> is </content><case element="typology" attr="wordOrder">
-	 <caseText value="SVO">Subject-Verb-Object</caseText>
+  <section1 id="intro">
+	<secTitle>Introduction</secTitle>
+	<p>
+	  <content>This is a description of the syntax of </content>
+	  <langName/>
+	  <content> based on the answers given to the PAWS Starter Kit. </content>
+	  <comment>Once the starter kit is completed, this fle can serve as a draft for preparing a more complete grammar.  Do not modify this file until the starter kit is completed, because your work will be overwritten by the PAWS program.</comment>
+	</p>
+	<p>
+	  <content>The </content>
+	  <langName/>
+	  <content> language is spoken in </content>
+	  <comment>locations go here</comment>
+	  <content>.   There are approximately </content>
+	  <comment>number goes here</comment>
+	  <content> speakers.  </content>
+	  <langName/>
+	  <content> is a member of the </content>
+	  <comment>language family name goes here</comment>
+	  <content> language family.</content>
+	</p>
+  </section1>
+  <section1 id="typology">
+	<secTitle>Typology</secTitle>
+	<p>
+	  <content>The basic typology of </content>
+	  <langName/>
+	  <content> is </content>
+	  <case element="typology" attr="wordOrder">
+		<caseText value="SVO">Subject-Verb-Object</caseText>
 		<caseText value="SOV">Subject-Object-Verb</caseText>
 		<caseText value="VSO">Verb-Subject-Object</caseText>
 		<caseText value="VOS">Verb-Object-Subject</caseText>
 		<caseText value="OVS">Object-Verb-Subject</caseText>
-		<caseText value="OSV">Object-Subject-Verb</caseText></case><content>, as shown in the following examples:</content></p>
-<example>
-	<interlinear exampleLoc="typology/example"></interlinear>
-</example>
-</section1>
+		<caseText value="OSV">Object-Subject-Verb</caseText>
+	  </case>
+	  <content>, as shown in the following examples:</content>
+	</p>
+	<example>
+	  <interlinear exampleLoc="typology/example"/>
+	</example>
+  </section1>
 </portion>

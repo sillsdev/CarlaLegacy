@@ -46,7 +46,7 @@
 		for each side (ordinalEither="restricted") or not.
 	 Compound cardinal numbers are either head-initial or head-final (cardinalHeadPos).
 -->
-<!ELEMENT qp (example, degreeExample, ordinalExample, cardinalCompoundExample, cardinalNumberCategory, conjunctionCategory)>
+<!ELEMENT qp (all, only, just, example, quantifierExample, degreeExample, cardinalNumbers1to10, cardinalNumbers11to20, cardinalNumbers30to100, ordinalNumbers, ordinalExample, cardinalCompoundExample, cardinalNumberCategory, conjunctionCategory)>
 <!ATTLIST qp
 	checkedOff (yes | no) "no"
 	npDegree (yes | no) "no"
@@ -60,10 +60,18 @@
 	ordinalEither (unrestricted | restricted) "unrestricted"
 	cardinalHeadPos (before | after) "after"
 >
+<!ELEMENT all (#PCDATA)>
+<!ELEMENT only (#PCDATA)>
+<!ELEMENT just (#PCDATA)>
 <!ELEMENT example (#PCDATA)>
+<!ELEMENT quantifierExample (#PCDATA)>
 <!ELEMENT degreeExample (#PCDATA)>
-<!ELEMENT cardinalCompoundExample (#PCDATA)>
+<!ELEMENT cardinalNumbers1to10 (#PCDATA)>
+<!ELEMENT cardinalNumbers11to20 (#PCDATA)>
+<!ELEMENT cardinalNumbers30to100 (#PCDATA)>
+<!ELEMENT ordinalNumbers (#PCDATA)>
 <!ELEMENT ordinalExample (#PCDATA)>
+<!ELEMENT cardinalCompoundExample (#PCDATA)>
 <!ELEMENT cardinalNumberCategory (#PCDATA)>
 <!ELEMENT conjunctionCategory (#PCDATA)>
 <!-- Adverb Phrases consist of four kinds of examples, plus a possible category mapping.
