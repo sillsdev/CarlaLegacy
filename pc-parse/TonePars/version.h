@@ -4,13 +4,20 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 5		/* bug fix or other internal improvement */
-#define DATE       "November 26, 2001"	/* date of release version */
+#define PATCHLEVEL 6		/* bug fix or other internal improvement */
+#define DATE       "November 28, 2001"	/* date of release version */
 #define YEAR       "2001"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
- * 26-nOV-2001  HAB - Add FOR_SOME and FOR_ALL factors to user test grammar.
+ * 28-Nov-2001  hab - When linking a left-floating tone leftward or linking a
+ * [1.0.6]             right-floating tone rightward, need to ensure that the
+ *                     the morpheme owning the linked-to tbu is listed as
+ *                     owning the tone (rather than always using the original
+ *                      morpheme which had the floating tone).
+ *                    Only show the "Assign_lexical_tone_to_tbus: : tbu N not
+ *                      found for morpheme X" message in trace mode.
+ * 26-Nov-2001  hab - Add FOR_SOME and FOR_ALL factors to user test grammar.
  * [1.0.5]
  * 21-Nov-2001  hab - use properties from ANA file, not from dictionary in
  * [1.0.4]             tone rule conditions

@@ -296,10 +296,18 @@ static void apply_tone_rules P((StampAnalysis *ap_head,
 				int              do_trace,
 				StampData       *pStamp_in));
 #endif /* hab104 */
+#ifndef hab106
+static void             assign_lexical_tone_to_tbus P((StampAnalysis *ap,
+						 struct tone     *tp,
+						 int tbu_type,
+						 int do_trace,
+						 StampData *pStamp_in));
+#else
 static void             assign_lexical_tone_to_tbus P((StampAnalysis *ap,
 						 struct tone     *tp,
 						 int tbu_type,
 						 StampData *pStamp_in));
+#endif /* hab106 */
 #ifdef TONEGEN
 static char *build_decomp_string P((StampAnalysis *ap_head,
 					StampData     *pStamp_in));
@@ -1202,11 +1210,20 @@ static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
  * RETURN VALUE
  *    NONE
  */
+#ifndef hab106
+static void assign_lexical_tone_to_tbus(ap, tp, tbu_type, do_trace, pStamp_in)
+	 StampAnalysis *ap;
+	 struct tone     *tp;
+	 int              tbu_type;
+	 int              do_trace;
+	 StampData       *pStamp_in;
+#else
 static void assign_lexical_tone_to_tbus(ap, tp, tbu_type, pStamp_in)
 	 StampAnalysis *ap;
 	 struct tone     *tp;
 	 int              tbu_type;
 	 StampData       *pStamp_in;
+#endif /* hab106 */
 {
   char *errhead = "\nAssign_lexical_tone_to_tbus: ";
   struct tbu       *tbup, *tbup2;
@@ -1335,6 +1352,9 @@ static void assign_lexical_tone_to_tbus(ap, tp, tbu_type, pStamp_in)
 				/* link tone to the tbu */
 		  if (tbup2 == (struct tbu *)NULL)
 		{
+#ifndef hab106
+		  if (do_trace)
+#endif /* hab106 */
 			fprintf(pStamp_in->pLogFP,
 				"\n%s: tbu %d not found for morpheme %s", errhead,
 				tloc, ap_orig->m.pszMorphname);
@@ -1445,8 +1465,13 @@ static void build_tone_tier(pwp, ap_head, do_trace, pStamp_in)
 	  ttp->tonl_tone = copy_tone(tlp->tonl_tone);
 				/* assign the lexical tone to the */
 				/* appropriate tbu's */
+#ifndef hab106
+	  assign_lexical_tone_to_tbus(ap, ttp->tonl_tone, pStamp_in->iTbuType,
+					  do_trace, pStamp_in);
+#else
 	  assign_lexical_tone_to_tbus(ap, ttp->tonl_tone, pStamp_in->iTbuType,
 					  pStamp_in);
+#endif /* hab106 */
 				/* link the tone into the tone node list */
 	  pwp->wd_tones = add_tone_node(pwp->wd_tones, TAIL, ttp->tonl_tone);
 				/* set morpheme's pointers to initial and */
