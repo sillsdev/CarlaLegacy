@@ -1,5 +1,13 @@
 TonePars CHANGE HISTORY
 
+1.0.8 (07-Dec-2001)
+-------------------
+1. The "'tonestatus' 'tone' 'is' TONE" clause in rules needed to use the first
+morpheme to left/right that has a tbu.
+
+2. The position in rule action needs to refer to the first morpheme
+to left/right that has a tbu.
+
 1.0.7 (04-Dec-2001)
 -------------------
 1. Feature changing mode should only remove previously linked tones;

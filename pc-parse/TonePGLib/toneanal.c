@@ -568,6 +568,9 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 {
   struct action    *acp;
   StampAnalysis  *ap, *ap_action;
+#ifndef hab108
+  StampAnalysis  *ap2;
+#endif /* hab108 */
   struct domain_id *dip;
   struct tone      *tp, *last_tp, *beg_tp;
 #ifndef ORIG
@@ -853,6 +856,23 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		  if (tip->ti_pos == ARGLEFT)
 			{
 			  ap = ap->pLeftLink; /* use left morph for tone */
+#ifndef hab108
+			  if ((ap != (StampAnalysis *)NULL) &&
+			  ap->pTBUBeg == (struct tbu *)NULL)
+			{	       /* find first morpheme to left
+					  that has a tbu */
+			  for (ap2 = ap->pLeftLink;
+				   ap2 != (StampAnalysis *)NULL;
+				   ap2 = ap2->pLeftLink)
+				{
+				  if (ap2->pTBUBeg != (struct tbu *)NULL)
+				{
+				  ap = ap2;
+				  break;
+				}
+				}
+			}
+#endif /* hab108 */
 			  if (DIRECTION(acp->ac_params) == RIGHTWARD)
 			ap_action = ap_orig; /* use orig morph for action */
 			  else
@@ -3910,8 +3930,26 @@ static int utest( cond, pStamp_in )
 	case ARGLEFT:
 	  if ((ap = get_morph_pos(left.l_pos, pStamp_in)) != (StampAnalysis *)NULL)
 		{
+#ifndef hab108
+		  if (ap->pTBUBeg == (struct tbu *)NULL)
+		{	       /* find first morpheme to left that has a tbu */
+		  for (ap2 = ap->pLeftLink;
+			   ap2 != (StampAnalysis *)NULL;
+			   ap2 = ap2->pLeftLink)
+			{
+			  if (ap2->pTBUBeg != (struct tbu *)NULL)
+			{
+			  ap = ap2;
+			  break;
+			}
+			}
+		}
 		  tbu_beg = ap->pTBUEnd;
 		  tbu_end = ap->pTBUBeg;
+#else /* hab108 */
+		  tbu_beg = ap->pTBUEnd;
+		  tbu_end = ap->pTBUBeg;
+#endif /* hab108 */
 		  dir = LEFTWARD;
 		}
 	  break;
@@ -3920,8 +3958,26 @@ static int utest( cond, pStamp_in )
 	case ARGRIGHT:
 	  if ((ap = get_morph_pos(left.l_pos, pStamp_in)) != (StampAnalysis *)NULL)
 		{
-		  tbu_beg = ap->pTBUBeg;
-		  tbu_end = ap->pTBUEnd;
+#ifndef hab108
+		  if (ap->pTBUBeg == (struct tbu *)NULL)
+		{	       /* find first morpheme to right that has a tbu */
+		  for (ap2 = ap->pRightLink;
+			   ap2 != (StampAnalysis *)NULL;
+			   ap2 = ap2->pRightLink)
+			{
+			  if (ap2->pTBUBeg != (struct tbu *)NULL)
+			{
+			  ap = ap2;
+			  break;
+			}
+			}
+		}
+		  tbu_beg = ap->pTBUEnd;
+		  tbu_end = ap->pTBUBeg;
+#else /* hab108 */
+		  tbu_beg = ap->pTBUEnd;
+		  tbu_end = ap->pTBUBeg;
+#endif /* hab108 */
 		}
 	  break;
 

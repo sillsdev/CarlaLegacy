@@ -4,12 +4,16 @@
  */
 #define VERSION    1	  	/* major rewrite or expansion */
 #define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 7		/* bug fix or other internal improvement */
-#define DATE       "December 4, 2001"	/* date of release version */
+#define PATCHLEVEL 8		/* bug fix or other internal improvement */
+#define DATE       "December 7, 2001"	/* date of release version */
 #define YEAR       "2001"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 07-Dec-2001  hab - 'tonestatus' 'tone' 'is' TONE clause in rules need to use
+ *                     first morpheme to left/right that has a tbu
+ *                    position in rule action needs to refer to first morpheme
+ *                     to left/right that has a tbu
  * 04-Dec-2001  hab - Feature changing mode should only remove previously
  * [1.0.7]             linked tones; floating ones remain.
  *                    Add patch to patch 1.0.6 first change when have both
