@@ -46,7 +46,7 @@
  * void addPATRSentenceFinalPunctuation(PATRData * pPATR_io,
  *                                      const char * pszChar_in)
  *****************************************************************************
- * Copyright 1989, 2000 by SIL International.  All rights reserved.
+ * Copyright 1989, 2002 by SIL International.  All rights reserved.
  */
 #include "patr.h"
 #include "patrdef.h"
@@ -1258,15 +1258,16 @@ tfdst = fdst;
 
 while (*tfdst != NUL)				/* For each fdst in string */
 	{
-	while (isspace(*tfdst) || *tfdst == '=')	/* Find start of fdst (use = */
-	tfdst++;				/* as feature separator) */
+	/* Find start of fdst (use = as feature separator) */
+	while ((*tfdst == '=') || (isascii(*tfdst) && isspace(*tfdst)))
+	++tfdst;
 	if (*tfdst == NUL)				/* If no more, return */
 	{
 	return( pFeatDisj );			/* Return built featd */
 	}
 	efdst = tfdst;				/* Find end of fdst */
-	while (*efdst && !isspace(*efdst) && (*efdst != '='))
-	efdst++;
+	while (*efdst && (*efdst != '=') && !(isascii(*efdst) && isspace(*efdst)))
+	++efdst;
 	if (*efdst != NUL)				/* If not end */
 	{
 	cSave = *efdst;

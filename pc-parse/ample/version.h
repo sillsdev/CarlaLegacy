@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 6		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "June 13, 2002"	/* date of release version */
+#define PATCHLEVEL 1		/* bug fix or other minor change */
+#define DATE "October 2, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ *  2-Oct-2002	SRMc - fix a memory allocation bug in decapitalizeWord().
+ * [3.6.1]
  * 13-Jun-2002  hab  - Allow both min and max orderclass numbers (i.e. allow
  * [3.6.0]               orderclasses to span a range)
  * 06-Mar-2002  hab  - Add Allomorphs Never Co-occur Constraints

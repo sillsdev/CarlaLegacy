@@ -1,15 +1,18 @@
 /* VERSION.H - version number and date information for STAMP
  ***************************************************************************
- * Copyright 1997, 2000 by SIL International.  All rights reserved.
+ * Copyright 1997, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL -11		/* bug fix or other minor change */
-#define DATE "August 15, 2002"	/* date of release version */
+#define PATCHLEVEL -12		/* bug fix or other minor change */
+#define DATE "October 2, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ *  2-Oct-2002	SRMc - fix memory allocation botch in performStampSynthesis():
+ * [2.1.12]		mergeTwoStringLists() can free nodes (and their
+ *			strings) in the second string list.
  * 15-Aug-2002  hab  - Internal changes for ToneGen.
  * [2.1.11]
  * 12-Apr-2002  hab  - Add allomorph and morpheme properties to affix line

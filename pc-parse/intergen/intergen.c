@@ -1,6 +1,6 @@
 /* INTERGEN.C - generate interlinear text from an ANA file (AMPLE output)
  ***************************************************************************
- * Copyright 1987, 2000 by SIL International.  All rights reserved.
+ * Copyright 1987, 2002 by SIL International.  All rights reserved.
  */
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -1569,8 +1569,16 @@ for ( i = 0, pAnal = pAnalyses_in ; pAnal ; i++, pAnal = pAnal->pNext )
 			LINESIZE - strlen(pszTempBuf_in));
 		break;
 	case 'u':			/* underlying form */
+		if (pAnal->pszUnderlyingForm)
+		{
 		strncat(pszTempBuf_in, pAnal->pszUnderlyingForm,
 			LINESIZE - strlen(pszTempBuf_in));
+		}
+		else if (pAnal->pszSurfaceForm)
+		{
+		strncat(pszTempBuf_in, pAnal->pszSurfaceForm,
+			LINESIZE - strlen(pszTempBuf_in));
+		}
 		break;
 	}
 	if (!bShowAmbigs_m ||		/* If not showing ambigs, or */
@@ -1656,6 +1664,7 @@ if ( bDoCat_m && !iCat_s && pWord_in->pAnalyses->pszCategory == NULL)
 	}
 if ( bDoDec_m && !iDec_s && pWord_in->pAnalyses->pszDecomposition == NULL)
 	{
+	if (!bUsingDefaultFields_m)
 	fprintf(stderr, pszMissingMessage, "decomposition (\\d)");
 	iDec_s++;
 	bDoDec_m = FALSE;
@@ -1672,9 +1681,9 @@ if ( bDoPro_m && !iPro_s && pWord_in->pAnalyses->pszProperties == NULL)
 	iPro_s++;
 	bDoPro_m = FALSE;
 	}
-if ( bDoUnl_m && !iUnl_s && pWord_in->pAnalyses->pszUnderlyingForm == NULL
-	 && !bUsingDefaultFields_m)
+if ( bDoUnl_m && !iUnl_s && pWord_in->pAnalyses->pszUnderlyingForm == NULL)
 	{
+	if (!bUsingDefaultFields_m)
 	fprintf(stderr, pszMissingMessage, "underlying form (\\u)");
 	iUnl_s++;
 	bDoUnl_m = FALSE;

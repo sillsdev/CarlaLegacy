@@ -6,7 +6,7 @@
  * void freePATRGrammar(PATRData * pPATR_io)
  *
  ******************************************************************************
- * Copyright 1987, 2000 by SIL International.  All rights reserved.
+ * Copyright 1987, 2002 by SIL International.  All rights reserved.
  */
 #include "patr.h"
 #include "patrdef.h"
@@ -4380,6 +4380,7 @@ unsigned	uiBufferSize;
 GrammarData *	pData;
 {
 int		c;		/* input char */
+ int		c2;		/* lookahead input char */
 char *		pStore;		/* pointer into pszBuffer for storing chars */
 char *		pEnd;		/* pointer to absolute end of pszBuffer */
 int		iTokenType;
@@ -4400,49 +4401,55 @@ if (pData->bStoredPeriod)
 while ((c = readCharacter(pData)) != EOF)
 	{
 	if (isascii(c) && isspace(c))		/* Ignore White space */
+	{
 	continue;
-	else if (c == pData->chCommentCharacter)		/* One line comment */
+	}
+	if (c == pData->chCommentCharacter)		/* One line comment */
+	{
 	skipToEndOfLine(pData);
-	else if ((c == '-') && (readNextCharacter(pData) == '>'))
+	continue;
+	}
+	c2 = readNextCharacter(pData);
+	if ((c == '-') && (c2 == '>'))
 	{
 	*pStore++ = c;
 	*pStore++ = readCharacter(pData);
-	goto do_return;
+	goto do_return;		/* Return token */
 	}
-	else if ((c == '=') && (readNextCharacter(pData) == '>'))
+	if ((c == '=') && (c2 == '>'))
 	{
 	*pStore++ = c;
 	*pStore++ = readCharacter(pData);
-	goto do_return;
+	goto do_return;		/* Return token */
 	}
-	else if ((pData->eTokenizeMode == kExpressionToken) &&
+	if ((pData->eTokenizeMode == kExpressionToken) &&
 		 (	(c == '&') || (c == '~') ) )
 	{
 	*pStore++ = c;
-	goto do_return;
+	goto do_return;		/* Return token */
 	}
-	else if ((c == '<') && (readNextCharacter(pData) == '='))
+	if ((c == '<') && (c2 == '='))
 	{
 	*pStore++ = c;
 	*pStore++ = readCharacter(pData);
-	goto do_return;
+	goto do_return;		/* Return token */
 	}
-	else if ((c == '=') && (readNextCharacter(pData) == '='))
+	if ((c == '=') && (c2 == '='))
 	{
 	*pStore++ = c;
 	*pStore++ = readCharacter(pData);
-	goto do_return;
+	goto do_return;		/* Return token */
 	}
-	else if ((c == '<') && (readNextCharacter(pData) == '-'))
+	if ((c == '<') && (c2 == '-'))
 	{
 	*pStore++ = c;
 	*pStore++ = readCharacter(pData);
-	if (readNextCharacter(pData) == '>')
+	if (c2 == '>')
 		*pStore++ = readCharacter(pData);
-	goto do_return;
+	goto do_return;		/* Return token */
 	}
-	else if ((strchr(pData->pszReservedChars, c) != NULL) ||
-		 (strchr(pData->pszReservedChars, readNextCharacter(pData)) != NULL) )
+	if ((strchr(pData->pszReservedChars, c) != NULL) ||
+	(strchr(pData->pszReservedChars, c2) != NULL) )
 	{
 	/*
 	 *  If reserved char or next res
@@ -4450,7 +4457,7 @@ while ((c = readCharacter(pData)) != EOF)
 	*pStore++ = c;		/* Store in token */
 	goto do_return;		/* Return token */
 	}
-	else if (c == '.')
+	if (c == '.')
 	{
 	*pStore++ = c;		/* Store in token */
 	goto do_return;		/* Return token */
@@ -4477,24 +4484,27 @@ while ((c = readCharacter(pData)) != EOF)
 	{				/* whitespace */
 	break;				/* return token */
 	}
-	else if (c == pData->chCommentCharacter)
+	if (c == pData->chCommentCharacter)
 	{				/* One line comment */
 	skipToEndOfLine(pData);		/* Eat rest of comment */
 	break;				/* Return token */
 	}
-	else if (strchr(pData->pszReservedChars, readNextCharacter(pData)) != NULL)
+	c2 = readNextCharacter(pData);
+	if (strchr(pData->pszReservedChars, c2) != NULL)
 	{				/* If next resv */
 	if (pStore < pEnd)
 		*pStore++ = c;		/* Store in token */
 	break;				/* Return token */
 	}
-	else if ((c == '.') && isspace( readNextCharacter(pData) ))
+	if ((c == '.') && (isascii(c2) && isspace(c2)) || c2 == EOF)
 	{
 	pData->bStoredPeriod = TRUE;	/* store token for next call */
 	break;
 	}
 	else if (pStore < pEnd)		/* If not overflow */
+	{
 	*pStore++ = c;			/* Store in token */
+	}
 	}
 
 do_return:

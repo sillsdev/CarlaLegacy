@@ -7,7 +7,7 @@
  ***************************************************************************
  * edit history is in version.h
  ***************************************************************************
- * Copyright 1989, 1998 by the Summer Institute of Linguistics, Inc.
+ * Copyright 1989, 2002 by the Summer Institute of Linguistics, Inc.
  * All rights reserved.
  */
 #include <stdio.h>
@@ -72,7 +72,7 @@ StampData *	pStamp_in;
 StampAnalysisList *cur_ambp, *next_ambp;
 #ifndef hab2111
 #ifndef TONEGEN
-StringList *pSynthResults;
+StringList * pSynthResults;
 #endif /* TONEGEN */
 #endif /* hab2111 */
 
@@ -104,15 +104,16 @@ else
 		  cur_ambp = cur_ambp->pNext )
 #ifndef hab2111
 #ifndef TONEGEN
-	  {
-		pSynthResults = synthesis( cur_ambp->pAnal, cur_ambp,
-				   pUnit_in, pStamp_in );
-		pUnit_in->pCurrentWord->pTemplate->pNewWords = mergeTwoStringLists(
-				 pUnit_in->pCurrentWord->pTemplate->pNewWords,
-					 pSynthResults );
+	{
+		pSynthResults = synthesis( cur_ambp->pAnal, cur_ambp, pUnit_in,
+				   pStamp_in );
 	if (pSynthResults != NULL)
-				/* just use first result */
-	  cur_ambp->pszSynthResult = duplicateString(pSynthResults->pszString);
+		{			/* use only the first result */
+		cur_ambp->pszSynthResult =
+			duplicateString(pSynthResults->pszString);
+		}
+		pUnit_in->pCurrentWord->pTemplate->pNewWords = mergeTwoStringLists(
+		pUnit_in->pCurrentWord->pTemplate->pNewWords, pSynthResults );
 	  }
 #else  /* TONEGEN */
 		pUnit_in->pCurrentWord->pTemplate->pNewWords = mergeTwoStringLists(
@@ -158,17 +159,14 @@ else
 				{
 #ifndef hab2111
 #ifndef TONEGEN
-		pSynthResults = synthesis(next_ambp->pAnal,
-					  next_ambp,
-					  &sTemp,
+		pSynthResults = synthesis(next_ambp->pAnal, next_ambp, &sTemp,
 					  pStamp_in);
-		pNewWords = mergeTwoStringLists(pNewWords,
-						pSynthResults );
 		if (pSynthResults != NULL)
-		  {			/* just use first result */
+			{			/* use only the first result */
 			next_ambp->pszSynthResult =
-			  duplicateString(pSynthResults->pszString);
-		  }
+				duplicateString(pSynthResults->pszString);
+			}
+		pNewWords = mergeTwoStringLists(pNewWords, pSynthResults);
 #else  /* TONEGEN */
 		pNewWords = mergeTwoStringLists(pNewWords,
 						synthesis(next_ambp->pAnal,
@@ -202,17 +200,17 @@ else
 			{
 #ifndef hab2111
 #ifndef TONEGEN
-		pSynthResults = synthesis( cur_ambp->pAnal, cur_ambp,
-					   pUnit_in, pStamp_in );
-		pUnit_in->pCurrentWord->pTemplate->pNewWords =
-				mergeTwoStringLists(
-				 pUnit_in->pCurrentWord->pTemplate->pNewWords,
-					 pSynthResults );
+		pSynthResults = synthesis( cur_ambp->pAnal, cur_ambp, pUnit_in,
+					   pStamp_in);
 		if (pSynthResults != NULL)
-		  {			/* just use first result */
+		{			/* use only the first result */
 		cur_ambp->pszSynthResult =
-		  duplicateString(pSynthResults->pszString);
-		  }
+			duplicateString(pSynthResults->pszString);
+		}
+		pUnit_in->pCurrentWord->pTemplate->pNewWords =
+			mergeTwoStringLists(
+			pUnit_in->pCurrentWord->pTemplate->pNewWords,
+			pSynthResults );
 #else  /* TONEGEN */
 		pUnit_in->pCurrentWord->pTemplate->pNewWords =
 			mergeTwoStringLists(

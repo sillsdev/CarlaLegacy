@@ -1,15 +1,18 @@
 /* VERSION.H - version number and date information for INTERGEN
  ***************************************************************************
- * Copyright 1998, 2000 by SIL International.  All rights reserved.
+ * Copyright 1998, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 1		/* enhancement requiring adding to book */
-#define PATCHLEVEL -12		/* bug fix or other minor change */
-#define DATE "July 23, 2001"	/* date of release version */
-#define YEAR "2001"		/* used for copyright notice in banner */
+#define PATCHLEVEL -13		/* bug fix or other minor change */
+#define DATE "October 2, 2002"	/* date of release version */
+#define YEAR "2002"		/* used for copyright notice in banner */
 
 /****************************************************************************
  * EDIT HISTORY
+ *  2-Oct-2002	SRMc - Handle underlying forms missing from the analysis file
+ * [2.1b13]		better, without spurious output lines for analysis
+ *			failures, and without crashing the program.
  * 23-Jul-2001  hab  - If the \w field is being used, there is no need to apply
  * [2.1.b12]            output changes or to try to recapitalize: the content
  *                      of the \w field already has these.

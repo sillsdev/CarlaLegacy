@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for PC-PATR
 *******************************************************************************
- * Copyright 1994, 2001 by SIL International.  All rights reserved.
+ * Copyright 1994, 2002 by SIL International.  All rights reserved.
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
-#define PATCHLEVEL 1		/* bug fix or other minor change */
-#define DATE "June 20, 2002"	/* date of release version */
+#define PATCHLEVEL 2		/* bug fix or other minor change */
+#define DATE "October 2, 2002"	/* date of release version */
 #define YEAR "2002"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ *  2-Oct-2002	SRMc - make readToken() and buildPATRFeatureDisjunction() safe
+ * [1.3.2]		for 8-bit characters.
  * 20-Jun-2002  hab  - added disphead.h so that pckimmo, etc. that use patr.h
  * [1.3.1]              do not have conflict with new display_header()
  * 07-Mar-2002  hab  - add rootgloss feature capability (hab130)

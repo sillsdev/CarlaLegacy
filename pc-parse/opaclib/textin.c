@@ -7,7 +7,7 @@
  ***************************************************************************
  * edit history is at the end of the file
  ***************************************************************************
- * Copyright 1982, 2000 by SIL International.  All rights reserved.
+ * Copyright 1982, 2002 by SIL International.  All rights reserved.
  */
 #include <stdio.h>
 #include <ctype.h>
@@ -255,6 +255,7 @@ else
 	size_t	uiNum;
 	size_t	uiSpan;
 	size_t	uiWordLength;
+	size_t	uiOrigLength;
 	int		iLowerLength;
 	size_t	i;
 	size_t	j;
@@ -351,6 +352,9 @@ else
 		}
 	uiWordLength += uiSpan;
 	}
+	uiOrigLength = strlen(pWord_io->pszOrigWord);
+	if (uiWordLength <= uiOrigLength)
+	uiWordLength = uiOrigLength + 1;
 	pszDecapWord = allocMemory(uiWordLength);
 	for ( i = 0 ; i < uiNumberAlternatives ; ++i )
 	{
@@ -1122,4 +1126,5 @@ else
  * 10-May-2000  hab  - add readTemplateFromTextString() and related mods to
  *                      have pertinent routines "read" string instead of file
  * 11-May-2000	SRMc - minor cleanup from Andy's changes
+ *  1-Oct-2002	SRMc - fix a memory allocation bug in decapitalizeWord().
  */
