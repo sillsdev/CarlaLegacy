@@ -37,11 +37,11 @@ Main template
 	  <xsl:apply-templates select="/" mode="np"/>
 	</lingPaper>
   </xsl:template>
-  <xsl:include href="IntroAndTypology.xsl"/>
-  <xsl:include href="QP.xsl"/>
-  <xsl:include href="AdvP.xsl"/>
-  <xsl:include href="AdjP.xsl"/>
-  <xsl:include href="NP.xsl"/>
+  <xsl:include href="WriterIntroAndTypology.xsl"/>
+  <xsl:include href="WriterQP.xsl"/>
+  <xsl:include href="WriterAdvP.xsl"/>
+  <xsl:include href="WriterAdjP.xsl"/>
+  <xsl:include href="WriterNP.xsl"/>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 DoGlossAndFree
