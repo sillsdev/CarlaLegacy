@@ -9,6 +9,9 @@
 //                        while using mini-ample in LinguaLinks)
 // 2.1.8 26-May-2000 hab Add manual parse to QP
 // 2.3.2 19-Sep-2000 hab Have manual parse apply input text changes to string
+// 2.5.4 26-Jul-2001 hab Allow "Ask me" option to handle multiple words;
+//                       Insert decomp character between compound roots when
+//                         echoing user choices in "Ask me" option.
 
 #include "stdafx.h"
 #include "CarlaStudioApp.h"
@@ -337,15 +340,35 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 {
 	  // Do the parsing by hand
   int cDecompSepChar = pSourceLang->getCommonModel().m_cDecompSepChar;
+#ifndef hab254
+  CString sAllos  = "";
+  CString sMNames = "";
+  m_sTraceMorphs = "";
+  CString sRemainingInput = m_sInput;
+  sRemainingInput.TrimLeft();
+  sRemainingInput.TrimRight();
+  CString sInput = sRemainingInput;
+  while (!sInput.IsEmpty())
+	{
+#else
   CString sInput = m_sInput;
+#endif // hab254
   CString sReturn = "\r\n";
+#ifndef hab254
+  CString sState = "BOW";
+  CString sLastState = sState;
+#else
   CString sAllos  = "";
   CString sMNames = "";
   m_sTraceMorphs = "";
   CString sState = "BOW";
+#endif // hab254
 #ifndef hab232
   CString sChoices;
 
+#ifndef hab254
+  status.m_sRAWString = sInput;
+#endif // hab254
   sChoices = m_pAmpleProcess->getAllAllomorphs(status, sState, sPath);
   sInput = status.m_sRAWString;
   CString sResult = getUserChoice(sChoices, sInput);
@@ -368,7 +391,12 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 	}
 	  else
 	sState = m_pAlloChosen->m_sType;
+#ifndef hab254
+	  if (sState == "SFX" ||
+	  ((sState == "ROOT") && sLastState == "ROOT"))
+#else
 	  if (sState == "SFX")
+#endif // hab254
 	{
 	  sAllos  += TCHAR(cDecompSepChar);
 	  sMNames += TCHAR(cDecompSepChar);
@@ -403,6 +431,9 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 				// reflect most recent selection in dialog
 	  m_sOutput = sAllos + sReturn + sMNames + sReturn + sReturn;
 	  UpdateData(FALSE);
+#ifndef hab254
+	  sLastState = sState;
+#endif // hab254
 				// get next set of possibilities
 #ifndef hab232
 	  sChoices = m_pAmpleProcess->getAllAllomorphs(status, sState, sPath);
@@ -412,6 +443,21 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 	  sResult = getUserChoice(status.m_sRAWString, sInput);
 #endif // hab232
 	}
+#ifndef hab254
+	  int iPos = sRemainingInput.FindOneOf(" \t\n");
+	  if (iPos == -1)
+	sRemainingInput.Empty();	// no words left; force it to be empty
+	  else
+	{			// get next word
+	  sRemainingInput = sRemainingInput.Right(sRemainingInput.GetLength()-iPos);
+	  sRemainingInput.TrimLeft();
+	  sRemainingInput.TrimRight();
+	  sAllos += "  ";
+	  sMNames += "  ";
+	}
+	  sInput = sRemainingInput;
+	}
+#endif // hab254
 }
 
 CString &CQuickParseView::getUserChoice(CString &sAlloResults, CString &sInput)
