@@ -487,12 +487,12 @@ static const short yyrline[] = { 0,
   1620,  1627,  1631,  1638,  1648,  1656,  1664,  1681,  1689,  1697,
   1704,  1711,  1721,  1740,  1757,  1776,  1790,  1809,  1829,  1844,
   1861,  1875,  1897,  1913,  1929,  1950,  1984,  2018,  2050,  2098,
-  2142,  2157,  2173,  2191,  2207,  2224,  2242,  2261,  2265,  2273,
-  2277,  2286,  2301,  2315,  2320,  2328,  2333,  2338,  2343,  2348,
-  2353,  2358,  2366,  2371,  2376,  2381,  2390,  2395,  2400,  2406,
-  2411,  2417,  2424,  2431,  2436,  2441,  2446,  2454,  2462,  2468,
-  2475,  2482,  2488,  2494,  2504,  2508,  2512,  2516,  2520,  2524,
-  2531,  2535
+  2142,  2157,  2173,  2193,  2209,  2226,  2244,  2263,  2267,  2275,
+  2279,  2288,  2303,  2317,  2322,  2330,  2335,  2340,  2345,  2350,
+  2355,  2360,  2368,  2373,  2378,  2383,  2392,  2397,  2402,  2408,
+  2413,  2419,  2426,  2433,  2438,  2443,  2448,  2456,  2464,  2470,
+  2477,  2484,  2490,  2496,  2506,  2510,  2514,  2518,  2522,  2526,
+  2533,  2537
 };
 
 static const char * const yytname[] = {   "$","error","$undefined.","LX_A","LX_AND",
@@ -2837,7 +2837,7 @@ case 133:
 		  ;
 	break;}
 case 134:
-#line 2192 "trule_yg.y"
+#line 2194 "trule_yg.y"
 {
 				yyval.cnval = mklftp(MORPH_TONE_PAT_IS, yyvsp[-5].ival, yyvsp[0].tpval);
 		if (rule_debug)
@@ -2853,7 +2853,7 @@ case 134:
 		  ;
 	break;}
 case 135:
-#line 2208 "trule_yg.y"
+#line 2210 "trule_yg.y"
 {
 				yyval.cnval = mklftp(MORPH_UL_TONE_PAT_IS, yyvsp[-6].ival, yyvsp[0].tpval);
 		if (rule_debug)
@@ -2869,7 +2869,7 @@ case 135:
 		  ;
 	break;}
 case 136:
-#line 2225 "trule_yg.y"
+#line 2227 "trule_yg.y"
 {
 				yyval.cnval = mklftp(WORD_TONE_IS, yyvsp[-4].ival, yyvsp[0].tpval);
 		if (rule_debug)
@@ -2884,7 +2884,7 @@ case 136:
 		  ;
 	break;}
 case 137:
-#line 2243 "trule_yg.y"
+#line 2245 "trule_yg.y"
 {
 				yyval.cnval = mklfi(TYPE_IS, yyvsp[-3].ival, yyvsp[0].ival);
 		if (rule_debug)
@@ -2898,31 +2898,31 @@ case 137:
 		  ;
 	break;}
 case 138:
-#line 2262 "trule_yg.y"
+#line 2264 "trule_yg.y"
 {
 				yyval.tival = yyvsp[0].tival;
 		  ;
 	break;}
 case 139:
-#line 2266 "trule_yg.y"
+#line 2268 "trule_yg.y"
 {
 				yyval.tival = (struct tone_id *)NULL;
 		  ;
 	break;}
 case 140:
-#line 2274 "trule_yg.y"
+#line 2276 "trule_yg.y"
 {
 				yyval.tpval = yyvsp[0].tpval;
 		  ;
 	break;}
 case 141:
-#line 2278 "trule_yg.y"
+#line 2280 "trule_yg.y"
 {
 				yyval.tpval = (struct tone_pattern *)NULL;
 		  ;
 	break;}
 case 142:
-#line 2287 "trule_yg.y"
+#line 2289 "trule_yg.y"
 {
 				tmp_tp = mktonepattern(yyvsp[0].tival);
 		yyval.tpval = link_tone_pattern(yyvsp[-1].tpval, tmp_tp);
@@ -2939,7 +2939,7 @@ case 142:
 		  ;
 	break;}
 case 143:
-#line 2302 "trule_yg.y"
+#line 2304 "trule_yg.y"
 {
 				yyval.tpval = mktonepattern(yyvsp[0].tival);
 		if (rule_debug)
@@ -2952,244 +2952,244 @@ case 143:
 		  ;
 	break;}
 case 144:
-#line 2316 "trule_yg.y"
+#line 2318 "trule_yg.y"
 {
 		yyval.ival = ONSET;
 		  ;
 	break;}
 case 145:
-#line 2321 "trule_yg.y"
+#line 2323 "trule_yg.y"
 {
 		yyval.ival = CODA;
 		  ;
 	break;}
 case 146:
-#line 2329 "trule_yg.y"
+#line 2331 "trule_yg.y"
 {
 		yyval.ival = MONOSYLLABIC;
 		  ;
 	break;}
 case 147:
-#line 2334 "trule_yg.y"
+#line 2336 "trule_yg.y"
 {
 		yyval.ival = DISYLLABIC;
 		  ;
 	break;}
 case 148:
-#line 2339 "trule_yg.y"
+#line 2341 "trule_yg.y"
 {
 		yyval.ival = TRISYLLABIC;
 		  ;
 	break;}
 case 149:
-#line 2344 "trule_yg.y"
+#line 2346 "trule_yg.y"
 {
 		yyval.ival = QUADRISYLLABIC;
 		  ;
 	break;}
 case 150:
-#line 2349 "trule_yg.y"
+#line 2351 "trule_yg.y"
 {
 		yyval.ival = POLYSYLLABIC;
 		  ;
 	break;}
 case 151:
-#line 2354 "trule_yg.y"
+#line 2356 "trule_yg.y"
 {
 		yyval.ival = MONOMORAIC;
 		  ;
 	break;}
 case 152:
-#line 2359 "trule_yg.y"
+#line 2361 "trule_yg.y"
 {
 		yyval.ival = BIMORAIC;
 		  ;
 	break;}
 case 153:
-#line 2367 "trule_yg.y"
+#line 2369 "trule_yg.y"
 {
 		yyval.ival = LOGAND;
 		  ;
 	break;}
 case 154:
-#line 2372 "trule_yg.y"
+#line 2374 "trule_yg.y"
 {
 		yyval.ival = LOGIFF;
 		  ;
 	break;}
 case 155:
-#line 2377 "trule_yg.y"
+#line 2379 "trule_yg.y"
 {
 		yyval.ival = LOGOR;
 		  ;
 	break;}
 case 156:
-#line 2382 "trule_yg.y"
+#line 2384 "trule_yg.y"
 {
 		yyval.ival = LOGXOR;
 		  ;
 	break;}
 case 157:
-#line 2391 "trule_yg.y"
+#line 2393 "trule_yg.y"
 {
 		yyval.ival = ARGCURRENT;
 		  ;
 	break;}
 case 158:
-#line 2396 "trule_yg.y"
+#line 2398 "trule_yg.y"
 {
 		yyval.ival = ARGLEFT;
 		  ;
 	break;}
 case 159:
-#line 2401 "trule_yg.y"
+#line 2403 "trule_yg.y"
 {
 		yyval.ival = ARGLEFTTWO;
 		  ;
 	break;}
 case 160:
-#line 2407 "trule_yg.y"
+#line 2409 "trule_yg.y"
 {
 		yyval.ival = ARGRIGHT;
 		  ;
 	break;}
 case 161:
-#line 2412 "trule_yg.y"
+#line 2414 "trule_yg.y"
 {
 		yyval.ival = ARGRIGHTTWO;
 		  ;
 	break;}
 case 162:
-#line 2418 "trule_yg.y"
+#line 2420 "trule_yg.y"
 {
 		++bLeftSeen_m;
 		yyval.ival = FORLEFT;
 		  ;
 	break;}
 case 163:
-#line 2425 "trule_yg.y"
+#line 2427 "trule_yg.y"
 {
 		++bRightSeen_m;
 		yyval.ival = FORRIGHT;
 		  ;
 	break;}
 case 164:
-#line 2432 "trule_yg.y"
+#line 2434 "trule_yg.y"
 {
 		yyval.ival = INITIALM;
 		  ;
 	break;}
 case 165:
-#line 2437 "trule_yg.y"
+#line 2439 "trule_yg.y"
 {
 		yyval.ival = WINITIAL;
 		  ;
 	break;}
 case 166:
-#line 2442 "trule_yg.y"
+#line 2444 "trule_yg.y"
 {
 		yyval.ival = FINALM;
 		  ;
 	break;}
 case 167:
-#line 2447 "trule_yg.y"
+#line 2449 "trule_yg.y"
 {
 		yyval.ival = WFINAL;
 		  ;
 	break;}
 case 168:
-#line 2455 "trule_yg.y"
+#line 2457 "trule_yg.y"
 {
 		if ((yyval.ival = Boundary) == 0)
 		  id_error("tone_status", "boundary");
 		  ;
 	break;}
 case 169:
-#line 2463 "trule_yg.y"
+#line 2465 "trule_yg.y"
 {
 		if ((yyval.ival = Delinked) == 0)
 		   id_error("tone_status", "delinked");
 		  ;
 	break;}
 case 170:
-#line 2469 "trule_yg.y"
+#line 2471 "trule_yg.y"
 {
 		if ((yyval.ival = Floating) == 0)
 		  id_error("tone_status", "floating");
 		  ;
 	break;}
 case 171:
-#line 2476 "trule_yg.y"
+#line 2478 "trule_yg.y"
 {
 		if ((yyval.ival = LeftFloating) == 0)
 		  id_error("tone_status", "left-floating");
 		  ;
 	break;}
 case 172:
-#line 2483 "trule_yg.y"
+#line 2485 "trule_yg.y"
 {
 		if ((yyval.ival = Linked) == 0)
 		   id_error("tone_status", "linked");
 		  ;
 	break;}
 case 173:
-#line 2489 "trule_yg.y"
+#line 2491 "trule_yg.y"
 {
 		if ((yyval.ival = Melody) == 0)
 		  id_error("tone_status", "melody");
 		  ;
 	break;}
 case 174:
-#line 2495 "trule_yg.y"
+#line 2497 "trule_yg.y"
 {
 		if ((yyval.ival = RightFloating) == 0)
 		  id_error("tone_status", "right-floating");
 		  ;
 	break;}
 case 175:
-#line 2505 "trule_yg.y"
+#line 2507 "trule_yg.y"
 {
 		yyval.ival = PFX;
 		  ;
 	break;}
 case 176:
-#line 2509 "trule_yg.y"
+#line 2511 "trule_yg.y"
 {
 		yyval.ival = IFX;
 		  ;
 	break;}
 case 177:
-#line 2513 "trule_yg.y"
+#line 2515 "trule_yg.y"
 {
 		yyval.ival = ROOT;
 		  ;
 	break;}
 case 178:
-#line 2517 "trule_yg.y"
+#line 2519 "trule_yg.y"
 {
 		yyval.ival = SFX;
 		  ;
 	break;}
 case 179:
-#line 2521 "trule_yg.y"
+#line 2523 "trule_yg.y"
 {
 		yyval.ival = WINITIAL;
 		  ;
 	break;}
 case 180:
-#line 2525 "trule_yg.y"
+#line 2527 "trule_yg.y"
 {
 		yyval.ival = WFINAL;
 		  ;
 	break;}
 case 181:
-#line 2532 "trule_yg.y"
+#line 2534 "trule_yg.y"
 {
 		yyval.ival = 0;
 		  ;
 	break;}
 case 182:
-#line 2536 "trule_yg.y"
+#line 2538 "trule_yg.y"
 {
 		yyval.ival = 0;
 		  ;
@@ -3392,7 +3392,7 @@ yyerrhandle:
   yystate = yyn;
   goto yynewstate;
 }
-#line 2549 "trule_yg.y"
+#line 2551 "trule_yg.y"
 
 
 /*****************************************************************
