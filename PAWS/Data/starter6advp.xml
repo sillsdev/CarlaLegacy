@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE masterGrammar SYSTEM "MasterGrammar.dtd">
+<masterGrammar>
+	<rule>
+rule {AdvP option 0 - no modifiers}
+AdvP = Adv'
+	&lt;AdvP head&gt; = &lt;Adv' head&gt;
+	&lt;AdvP option&gt; = 0
+</rule>
+
+ <rule show="AdvPoption1">
+rule {AdvP option 1 - modifiers initial}
+AdvP = Deg Adv'
+	&lt;AdvP head&gt; = &lt;Adv' head&gt;
+	&lt;Deg head type AdvP-initial&gt; = +
+	&lt;Deg head type modifies_Adv&gt; = &lt;Adv' head type&gt;
+	&lt;AdvP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
+	&lt;AdvP option&gt; = 1
+</rule>
+	<showWhen id="AdvPoption1">
+<whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="before"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="either"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="eitherOrBoth"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="beforeOrBoth"></whenValue>
+	</showWhen>
+
+	<rule show="AdvPoption2">
+rule {AdvP option 2 - modifiers final}
+AdvP = Adv' Deg
+	&lt;AdvP head&gt; = &lt;Adv' head&gt;
+	&lt;Deg head type AdvP-final&gt; = +
+	&lt;Deg head type modifies_Adv&gt; = &lt;Adv' head type&gt;
+	&lt;AdvP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
+	&lt;AdvP option&gt; = 2
+</rule>
+	<showWhen id="AdvPoption2">
+	  <whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="after"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="either"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="eitherOrBoth"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="afterOrBoth"></whenValue>
+	</showWhen>
+
+	<rule show="AdvPoption3">
+rule {AdvP option 3 - modifiers both sides}
+AdvP = Deg_1 Adv' Deg_2
+	&lt;AdvP head&gt; = &lt;Adv' head&gt;
+	&lt;Deg_1) head type modifies_Adv&gt; = &lt;Adv' head type&gt;
+	&lt;Deg_2) head type modifies_Adv&gt; = &lt;Adv' head type&gt;
+	&lt;Deg_1 head type AdvP-initial&gt; = +
+	&lt;Deg_2 head type AdvP-final&gt;   = +
+	&lt;AdvP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	&lt;AdvP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	&lt;AdvP option&gt; = 3
+</rule>
+	<showWhen id="AdvPoption3">
+	  <whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="both"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="beforeOrBoth"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="eitherOrBoth"></whenValue>
+<or/><whenValue element="advp" attr="degree" value="yes"></whenValue>
+<and/> <whenValue element="advp" attr="degreePos" value="afterOrBoth"></whenValue>
+	</showWhen>
+
+	<rule>
+rule {AdvBar option 0 - no complements}
+Adv' = Adv
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;AdvBar option&gt; = 0
+</rule>
+	<rule show="AdvBaroption1f">
+rule {AdvBar option 1f - Adv complements final}
+Adv' = Adv Adv_1
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type temporal&gt; = +
+	&lt;Adv_1 head type temporal&gt; = +
+	&lt;Adv head type takes_Adv&gt; = +
+	&lt;Adv' head type suffix&gt; &lt;= &lt;Adv_1 head type suffix&gt;
+	&lt;AdvBar option&gt; = 1f
+</rule>
+	<showWhen id="AdvBaroption1f">
+		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+	</showWhen>
+
+	<rule show="AdvBaroption1i">
+rule {AdvBar option 1i - Adv complements initial}
+Adv' = Adv_1 Adv
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type temporal&gt; = +
+	&lt;Adv_1 head type temporal&gt; = +
+	&lt;Adv head type takes_Adv&gt; = +
+	&lt;Adv' head type prefix&gt; &lt;= &lt;Adv_1 head type prefix&gt;
+	&lt;AdvBar option&gt; = 1i
+</rule>
+	<showWhen id="AdvBaroption1i">
+		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+	</showWhen>
+
+	<rule show="AdvBaroption2f">
+rule {AdvBar option 2f - DP complements final}
+Adv' = Adv DP
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type temporal&gt; = +
+	&lt;DP head type temporal&gt; = +
+	&lt;Adv head type takes_DP&gt; = +
+	&lt;Adv' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;AdvBar option&gt; = 2f
+</rule>
+	<showWhen id="AdvBaroption2f">
+		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+	</showWhen>
+
+	<rule show="AdvBaroption2i">
+rule {AdvBar option 2i - DP complements initial}
+Adv' = DP Adv
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type temporal&gt; = +
+	&lt;DP head type temporal&gt; = +
+	&lt;Adv head type takes_DP&gt; = +
+	&lt;Adv' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;AdvBar option&gt; = 2i
+</rule>
+	<showWhen id="AdvBaroption2i">
+		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+	</showWhen>
+
+	<rule>
+rule {AdvBar option 3f - IP complements final}
+Adv' = Adv IP
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type sentential&gt; = +
+	&lt;Adv head embedded&gt; = &lt;IP head&gt;
+	&lt;Adv' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
+	&lt;AdvBar option&gt; = 3f
+</rule>
+
+	<rule show="AdvBaroption3i">
+rule {AdvBar option 3i - IP complements initial}
+Adv' = IP Adv
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type sentential&gt; = +
+	&lt;Adv head embedded&gt; = &lt;IP head&gt;
+	&lt;Adv' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
+	&lt;AdvBar option&gt; = 3i
+</rule>
+	<showWhen id="AdvBaroption3i">
+		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+	</showWhen>
+
+	<rule>
+rule {AdvBar option 4f - CP complements final}
+Adv' = Adv CP
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type sentential&gt; = +
+	&lt;Adv head embedded&gt; = &lt;CP head&gt;
+	&lt;Adv' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
+	&lt;AdvBar option&gt; = 4f
+</rule>
+
+	<rule show="AdvBaroption4i">
+rule {AdvBar option 4i - CP complements initial}
+Adv' = CP Adv
+	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type sentential&gt; = +
+	&lt;Adv head embedded&gt; = &lt;CP head&gt;
+	&lt;Adv' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
+	&lt;AdvBar option&gt; = 4i
+</rule>
+	<showWhen id="AdvBaroption4i">
+		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+<or/>      <whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+	</showWhen>
+
+</masterGrammar>
