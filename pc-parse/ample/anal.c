@@ -7160,6 +7160,8 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
 		store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
 	  else
 		store_AMPLE_trace(pAmple_in, "\">\n", NULL);
+	  store_AMPLE_trace(pAmple_in, pszIndent, NULL);
+	  store_AMPLE_trace(pAmple_in, "</parseNode>\n", NULL);
 	}
 }
 /*****************************************************************************
