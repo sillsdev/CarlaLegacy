@@ -56,8 +56,18 @@ line += strspn(line, szWhitespace_m);
 if ((line == (char *)NULL) || (*line == NUL))
 	{
 	if (pAmple_in->pLogFP != NULL)
+#ifndef hab375
+	  if (szRecordKey_g[0])
+	  fprintf(pAmple_in->pLogFP,
+		  "%sEmpty morpheme co-occurrence constraint (in entry %s).\n",
+		  pszEnvErrHead, szRecordKey_g);
+	  else
+	  fprintf(pAmple_in->pLogFP,
+		  "%sEmpty morpheme co-occurrence constraint.\n", pszEnvErrHead);
+#else
 	fprintf(pAmple_in->pLogFP,
 		"%sEmpty morpheme co-occurrence constraint.\n", pszEnvErrHead);
+#endif /* hab375 */
 	return( (AmpleMorphConstraint *)NULL);         /* no environment */
 	}
 pszToken     = line;

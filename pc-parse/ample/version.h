@@ -1,15 +1,18 @@
 /* VERSION.H - version number and date information for AMPLE
  ***************************************************************************
- * Copyright 1996 - 2002 by SIL International.  All rights reserved.
+ * Copyright 1996 - 2003 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 7		/* enhancement requiring adding to book */
-#define PATCHLEVEL 4		/* bug fix or other minor change */
-#define DATE "October 2, 2003"	/* date of release version */
+#define PATCHLEVEL 5		/* bug fix or other minor change */
+#define DATE "November 17, 2003"	/* date of release version */
 #define YEAR "2003"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 17-Nov-2003  hab  - Fix bug: empty morpheme co-occurrence constraint message
+ * [3.7.5]               did not include any information about which entry it
+ *                       was for.  (fixed in mccpar.c)
  * 02-Oct-2003  hab  - p_trace() in anal.c needs to skip Allomorphs Never
  * [3.7.4]               Co-occurence Constraints
  * 24-Jul-2003  hab  - Xml form of trace used wrong dtd file name

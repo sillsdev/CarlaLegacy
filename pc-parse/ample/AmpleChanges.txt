@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.7.5 (17-Nov-2003)
+-------------------
+1.  Fixed bug which caused an empty morpheme co-occurrence constraint message
+	to not include any information about which entry it was for.
+
 3.7.4 (02-Oct-2003)
 -------------------
 1.  Fixed bug in Xml form of trace for Allomorphs Never Co-occur Constraints
