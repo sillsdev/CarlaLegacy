@@ -14,6 +14,10 @@
  *      char *mystrdup(str)
  *      char *str;
  *
+ *      char *mymemdup(str, end)
+ *      char *str;
+ *      char *end;
+ *
  *      char *mystrappend( char *t, char *s )
  *
  *      void *mytalloc(region)
@@ -224,6 +228,37 @@ char *mystrdup(str)
 char *str;
 {
 return( strcpy(myalloc((unsigned)strlen(str)+1), str) );
+}
+
+/***************************************************************************
+ * NAME
+ *    mymemdup
+ * ARGUMENTS
+ *    str - pointer to beginning of the character string to duplicate
+ *    end - pointer to end of the character string to duplicate
+ * DESCRIPTION
+ *    Create a duplicate of an existing character string - up to the specified
+ *    end.
+ * RETURN VALUE
+ *    pointer to the newly allocated and copied duplicate
+ */
+char *mymemdup(str,end)
+char *str;
+char *end;
+{
+  char *ret;
+
+  if (end < str) {
+	fprintf(logfile,"\nMYMEMDUP: Hard coded error!\n");
+	ret = strcpy(myalloc(1), "");
+  }
+  else {
+	size_t len = (size_t)(end - str);
+	ret = myalloc(len+1);
+	memcpy(ret, str, (size_t)(len));
+	ret[len] = '\0';
+  }
+  return ret;
 }
 
 /***************************************************************************

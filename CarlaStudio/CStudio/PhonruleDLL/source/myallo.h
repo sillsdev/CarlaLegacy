@@ -19,6 +19,8 @@ void *myalloc( unsigned size );
 void *myrealloc( void *ptr, unsigned size );
 void myfree( void *s );
 char *mystrdup( char *str );
+char *mymemdup( char *str, char *end );
 char *mystrappend( char *t, char *s );
 void *mytalloc( unsigned region );
 void mytfree( void *reg_bot );
+void myFreeAll(void);

@@ -112,6 +112,7 @@ x Add blocking rules                [1da] Austin Hale
 *					"stderr" changed to "errlogfile"
 * 0.2v 29-Sep-2000 hab increase temp memory size from 63000 to 640000
 * 0.2w 05-Dec-2000 hab increase dictionary entry size from 5000 to 50000
+* 0.2x 20-Jan-2005 md fixed minor details to make it compile under MingW
 *-----------------------------------------------------------*/
 
 
@@ -179,7 +180,6 @@ extern void prepareMyAllocGlobals();
 extern void prepareLoadEntGlobals();
 extern void preparePhnlGlobals();
 extern void preparePhnaGlobals();
-extern void myFreeAll();
 
 	//-----------------------------------------------------
 	//	setupProcess
@@ -189,7 +189,7 @@ extern void myFreeAll();
 	//  Returns TRUE if successful, FALSE otherwise (with errorStr)
 	//  Called by: DLL calls this before each execute
 
-int setupProcess(char* lpszErrorStr,	// what's this for?
+int setupProcess(char* lpszErrorStr,	/* what's this for? */
 					int bDoTrace,
 					int bDoMonitor,
 					char cCommentChar,
@@ -228,7 +228,7 @@ int setupProcess(char* lpszErrorStr,	// what's this for?
 
 	*lpszErrorStr = '\0';
 
-	do_monitor = bDoMonitor; // we'll need some other way of monitoring
+	do_monitor = bDoMonitor; /* we'll need some other way of monitoring  */
 	do_trace = bDoTrace;
 	do_debug = FALSE;
 	comment_char = cCommentChar;
@@ -280,14 +280,14 @@ int setupProcess(char* lpszErrorStr,	// what's this for?
 
 	return TRUE;
 }
-#endif	// end ifdef CSTUDIODLL
+#endif   /* end ifdef CSTUDIODLL */
 
 
 	/************************************************************************/
 #ifdef CSTUDIODLL
 int runProcess()	// should return 0 if ok, but actually always returns 0
 #else
-void main(int argc, char **argv )  /* Main prog */
+int main(int argc, char **argv )  /* Main prog */
 #endif
 {
 Rule *rules;                /* List of rules to apply */
@@ -341,8 +341,8 @@ while ( (dicent = loadent( infile, outfile )) != NULL ) /* While another diction
 	mytfree( short_term_bot );      /* Free all temporary space */
 	}
 
-fclose( rulefile); //jdh
-fclose( infile); //jdh
+fclose( rulefile); /* jdh */
+fclose( infile);   /* jdh */
 fclose( outfile );                  /* Close output file */
 if ( do_monitor )                   /* hab 0.2u If monitor, force nl */
 	{
@@ -353,9 +353,9 @@ if(logfile != errlogfile)
 	fclose(errlogfile);
 
 
-myFreeAll();	// added by jdh oct 98 to cover up memory leak
+myFreeAll();	/* added by jdh oct 98 to cover up memory leak */
 
-return 0;	// always returns this, so it doesn't mean anything
+return 0;	/* always returns this, so it doesn't mean anything */
 }
 
 

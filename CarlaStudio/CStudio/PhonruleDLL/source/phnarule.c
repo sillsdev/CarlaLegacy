@@ -61,7 +61,7 @@ extern FILE *errlogfile;
 #ifdef CSTUDIODLL
 void preparePhnaGlobals()
 {
-	//actually, it doesn't look there are any globals needing initiallizaiton here
+	/* actually, it doesn't look there are any globals needing initialization here */
 }
 #endif
 
@@ -172,10 +172,7 @@ s += basemarklen;                           /* Move to start of base */
 for ( t = s;                                /* Stop at space or cutoff char */
 		*t && !myisspace( *t ) && !( *t == cut_char );
 		t++ );
-remchar = *t;                               /* Remember char after base */
-*t = '\0';                                  /* Terminate base */
-base = mystrdup( s );                       /* Copy base */
-*t = remchar;                               /* Restore char after base */
+base = mymemdup( s, t );                    /* Copy base */
 
 s = strnlstr( dicent, catmark );            /* Find category line */ /* 0.2l BJY */
 if ( !s )                                   /* If no cat, use null */
@@ -186,10 +183,7 @@ else
 			*t && !(*t == comment_char) && !(*t == '\n');
 			t++ )                          /* Find comment or end of line */
 		;
-	remchar = *t;                           /* Remember char */
-	*t = '\0';                              /* Cut off commment, if any */
-	s = mystrdup( s );                      /* Copy cat line */
-	*t = remchar;                           /* Restore char after cats */
+	s = mymemdup( s, t );                   /* Copy cat line */
 
 	i = 0;                                  /* Init index */
 	while ( *(s = nextwd( s ) ) )           /* While another cat */
@@ -218,15 +212,13 @@ for ( ru = rules; ru; ru = ru->next )       /* For each rule */
 		{
 		for ( al = newallolist; al; al = al->next )
 			{                               /* now try on each PHONRULE generated allo */
-/*            for ( s = al->name; s && !myisspace( *s ); s++)*/ /* find end of name */
-/*                ;*/
-			s = strchr( al->name, ' ' );
 
+			s = strchr( al->name, ' ' );
 			if ( s )
-				*s = '\0';
-			alloname = mystrdup( al->name );
-			if ( s )
-				*s = ' ';                   /* restore space */
+			  alloname = mymemdup( al->name, s ); /* if the name ends in a space, copy till space */
+			else
+			  alloname = mystrdup( al->name );    /* else copy all of it */
+
 			apply_rule( alloname, ru, dicent, al );
 			}
 		}
@@ -351,7 +343,7 @@ while( *curmat && matchok )         /* While more mat & still good */
 		longsl = NULL;                  /* Init longest */
 		longnum = 0;                    /* Init number of longest */
 		for ( sl = scl->class, slnum = 0; /* For each member */
-				sl;
+				sl != NULL;
 				sl = sl->next, slnum++ ) /* Count members */
 			{
 			succ = FALSE;
