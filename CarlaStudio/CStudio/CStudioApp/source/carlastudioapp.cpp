@@ -1399,7 +1399,7 @@ void CCarlaStudioApp::OnJump()
 		if(lEnd > lStart)
 			s = pRec->GetSelText();
 	}
-#ifndef rde279
+#ifndef rde265
 	// actually, I don't think it's too bad being a CTempWnd (it seems to work just
 	//  fine for the QuickParse edit control). Perhaps, we should use the clipboard
 	//  only if we can't get any selected text from the temporary window... I don't
@@ -1440,7 +1440,7 @@ void CCarlaStudioApp::OnJump()
 			CloseClipboard();
 		}
 	}
-#else   // rde279
+#else   // rde265
 	else if(p->IsKindOf(RUNTIME_CLASS(CEdit)))
 	{
 		CEdit* pec = ((CEdit*)p);
@@ -1473,7 +1473,7 @@ void CCarlaStudioApp::OnJump()
 
 
 	}
-#endif  // rde279
+#endif  // rde265
 		if(s.IsEmpty())
 			AfxMessageBox("You must select a word first.");
 		else

@@ -543,12 +543,12 @@ BOOL CInputDoc::doRunProcessors(CRemoteCommand* pRemoteCmd/*=NULL*/)
 	ASSERTX(m_pView);	//!!!!!!!WHO'S SETTING THIS?
 	m_pView->updatePanels();
 
-#ifndef rde279
+#ifndef rde265
 	//----- ask Shoebox, to refresh all (if this isn't a remote command)
 	if(!pRemoteCmd)
 #else
 	//----- ask Shoebox, if it is running, to do a save all
-#endif  // rde279
+#endif  // rde265
 	PostMessage(HWND_BROADCAST, wm_RemoteRefreshAll, NULL, NULL);	// don't wait for it to finish that
 
 	return bOK;
