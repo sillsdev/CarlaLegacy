@@ -450,7 +450,7 @@ void CQuickParseView::getManualParse(CProcessStatus &status, CString &sPath, CCa
 				// reflect most recent selection in dialog
 	  m_sOutput = sAllos + sReturn + sMNames + sReturn + sReturn;
 	  UpdateData(FALSE);
-	  if (sState = _T("NFXIFX"))
+	  if (sState == _T("NFXIFX"))
 	sState = _T("NFX");	// no longer need to know it also was an infix
 #ifndef hab254
 	  sLastState = sState;
