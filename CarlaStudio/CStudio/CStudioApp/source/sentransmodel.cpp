@@ -11,6 +11,8 @@
 //	jdh  5/29/01 added support for Sentrans \pat field
 //	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
 // jdh 4/19/02	added support for Sentrans \bpunct field
+// 2.6.4 28-May-2002 hab \cl and \pat were putting comments and test data in
+//                       the morpheme class list.  Now they show up in the right spots.
 //////////////////////////////////////////////////////////////////////
 
 
@@ -229,7 +231,11 @@ try
 				else if(sMarker == "cl")
 				{
 #ifndef hab17a1
+#ifndef hab264
+					coOrTdCollector.disgorge(m_genericClasses);
+#else
 					coOrTdCollector.disgorge(commonModel.morphemeClasses);
+#endif // hab264
 #else // hab17a1
 					commentCollector.disgorge(commonModel.morphemeClasses);
 					bSeenSenTransField = TRUE;
@@ -241,8 +247,11 @@ try
 				// jdh 5/29/01 add \pat field
 				else if(sMarker == "pat")
 				{
+#ifndef hab264
+					coOrTdCollector.disgorge(m_patterns);
+#else
 					coOrTdCollector.disgorge(commonModel.morphemeClasses);	// why these, why here?  I just copied from the generic_class code above.
-
+#endif // hab264
 					CWClass *c = new CWClass(sField, bEnabled, commonModel.m_cCommentChar);
 					m_patterns.addItem(c);
 				}
