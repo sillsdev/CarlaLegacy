@@ -44,21 +44,22 @@ Main template
 	<xsl:apply-templates select="/" mode="advp"/>
 	<xsl:apply-templates select="/" mode="qp"/>
   </xsl:template>
-  <xsl:include href="starter6templates.xsl"/>
-  <xsl:include href="starter6adjp.xsl"/>
-  <xsl:include href="starter6advp.xsl"/>
-  <xsl:include href="starter6cp.xsl"/>
-  <xsl:include href="starter6dp.xsl"/>
-  <xsl:include href="starter6ip.xsl"/>
-  <xsl:include href="starter6np.xsl"/>
-  <xsl:include href="starter6pp.xsl"/>
-  <xsl:include href="starter6qp.xsl"/>
-  <xsl:include href="starter6vp.xsl"/>
+  <xsl:include href="GrammarTemplates.xsl"/>
+  <xsl:include href="GrammarAdjP.xsl"/>
+  <xsl:include href="GrammarAdvP.xsl"/>
+  <xsl:include href="GrammarCP.xsl"/>
+  <xsl:include href="GrammarDP.xsl"/>
+  <xsl:include href="GrammarIP.xsl"/>
+  <xsl:include href="GrammarNP.xsl"/>
+  <xsl:include href="GrammarPP.xsl"/>
+  <xsl:include href="GrammarQP.xsl"/>
+  <xsl:include href="GrammarVP.xsl"/>
 </xsl:stylesheet>
 <!--
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+31-Jul-2002    Andy Black  Changed name of generated transforms to Grammar*.xsl
 18-Jul-2002    Andy Black  Reordered XSLs per Cheri's preference
 17-Jul-2002    Andy Black  Added rest of XSLs
 02-Jul-2002    Andy Black  Initial version

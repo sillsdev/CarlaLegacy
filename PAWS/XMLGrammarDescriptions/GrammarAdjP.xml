@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE masterGrammar SYSTEM "MasterGrammar.dtd">
+<!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
 <rule>
 rule {AdjP option 0 - no modifiers}
