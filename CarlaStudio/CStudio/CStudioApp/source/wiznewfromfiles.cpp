@@ -39,6 +39,7 @@ END_MESSAGE_MAP()
 
 CWizNewFromFiles::CWizNewFromFiles(CFileList* pRootFileList)
 : CPropertySheet(IDS_FilesWizCaption),
+	m_dictMethodPage(FALSE /*default to mixed*/, NULL, &m_dictAffixesPage),
 	m_dictAffixesPage("Setup Language - Step 6"),
 	m_dictRootUnifiedPage(pRootFileList, FALSE, &m_dictAffixesPage, "Setup Language - Step 5", "Setup Language - Step 5"),
 	m_redundantFieldsNoticePage(IDD_PageRedundantFieldNotice)
@@ -47,7 +48,7 @@ CWizNewFromFiles::CWizNewFromFiles(CFileList* pRootFileList)
 	AddPage(&m_analysisPage);
 	AddPage(&m_transferPage);
 	AddPage(&m_synthPage);
-	//AddPage(&m_dictPage);
+	AddPage(&m_dictMethodPage);
 	AddPage(&m_dictRootUnifiedPage);
 	AddPage(&m_dictAffixesPage);
 	AddPage(&m_redundantFieldsNoticePage);
@@ -440,6 +441,7 @@ void CPageDictionaries::OnOK()
 	m_fileListCtrl.OnOK();
 
 	CPropertyPage::OnOK();
+	unified
 }
 
 

@@ -10,6 +10,7 @@
 //       07-Dec-1999 hab Allow multiple markers for gates A,C,P,Z,!,L and F
 // 2.1.5 28-Mar-2000 hab Root dict codes have no orderclass; affix ones have no root gloss
 //	11-Sept-2001	jdh Cntrl file output now uses SafeStream to generate .bak file.
+// jdh 12 sep 2001 added unified/classic consistency check to LoadFromFile()
 
 #include "stdafx.h"
 #include "CodeTable.h"
@@ -42,8 +43,11 @@ CWCodeSet::~CWCodeSet()
 	m_gates.RemoveAll();
 }
 
-BOOL CWCodeTable::loadFromFile(LPCTSTR lpszPathName, char cCommentChar)
+// jdh 12 sep 2001 added sanity check (bAppearsUnified)
+BOOL CWCodeTable::loadFromFile(LPCTSTR lpszPathName, char cCommentChar, BOOL* pbAppearsUnified)
 {
+	*pbAppearsUnified = FALSE;	// will be set to TRUE if we find a "UNIFIED" marker
+
 	ASSERTX(lpszPathName);
 	SFMFile sfmFile(lpszPathName, cCommentChar);
 	if(!sfmFile.ensureOpen("Code-Table File"))
@@ -90,7 +94,10 @@ BOOL CWCodeTable::loadFromFile(LPCTSTR lpszPathName, char cCommentChar)
 				else if(sMarker == "prefix" || sMarker == "suffix" || sMarker == "infix" || sMarker == "root" || sMarker == "unified")
 				{
 					if(sMarker == "unified")
+					{
 						pCurrentSet = &m_unifiedSet;
+						*pbAppearsUnified = TRUE;	// jdh 11 sept 2001
+					}
 					else if(sMarker == "prefix")
 						pCurrentSet = &m_prefixSet;
 					else if(sMarker == "suffix")

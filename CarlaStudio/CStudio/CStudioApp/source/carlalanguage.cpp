@@ -87,6 +87,8 @@ CCarlaLanguage::CCarlaLanguage(CLangModelsDoc *pDoc, LPCTSTR lpszAbrev)
 //				otherwise, it tells us where to put it (and create a directory for it if needed)
 BOOL CCarlaLanguage::save(LPCTSTR lpszProjectDirectory)
 {
+	notifyIfNotConsistent();	// jdh 17 Sept 2001 added
+
 	// if we haven't saved this file before, determine where to put it
 	if(m_mfs.m_sCtrlFilesDirectory.GetLength() ==0 )
 		m_mfs.m_sCtrlFilesDirectory = getLanguageDirectory(lpszProjectDirectory );
@@ -467,7 +469,21 @@ BOOL CCarlaLanguage::loadControlFiles(BOOL bFirstLoadAfterCarlaMenuImport, BOOL 
 
 #ifndef hab17a1
 	CSimpleProgressBar progress("Loading code table for analysis...");
-	m_codeTable.loadFromFile(m_mfs.getCtrlFilePath("cd.tab"), getCommentChar());
+	BOOL bAppearsUnified; // jdh 12 sep 2001 added sanity check (bAppearsUnified)
+	m_codeTable.loadFromFile(m_mfs.getCtrlFilePath("cd.tab"), getCommentChar(), &bAppearsUnified);
+	if(bAppearsUnified && !m_mfs.getUsingUnifiedDicts())
+	{
+		CString sMsg;
+		sMsg.Format("For the language '%s', the code table appears to be for Unified dictionaries, but this Language is set to Classic mode.  Please go to Language:Options dialog and choose the proper mode.  Also, make sure your dictionary markers are correct.", this->m_sName);
+		AfxMessageBox(sMsg);
+	}
+	if(!bAppearsUnified && m_mfs.getUsingUnifiedDicts())
+	{
+		CString sMsg;
+		sMsg.Format("For the language '%s', the code table appears to be for Classic dictionaries (at least there is no 'UNIFIED' marker), but this Language is set to Unified mode.  Please go to Language:Options dialog and choose the proper mode.  Also, make sure your dictionary markers are correct.", this->m_sName);
+		AfxMessageBox(sMsg);
+	}
+
 	progress.SetText("Loading code table for interlinearizing...");
 #ifndef hab17a2
 	CFile fTestForExistence;
@@ -478,7 +494,9 @@ BOOL CCarlaLanguage::loadControlFiles(BOOL bFirstLoadAfterCarlaMenuImport, BOOL 
 	else
 	  fTestForExistence.Close(); // It's already there, so close it.
 #endif // hab17a2
-	m_interCodeTable.loadFromFile(m_mfs.getCtrlFilePath("itcd.tab"), getCommentChar());
+
+	m_interCodeTable.loadFromFile(m_mfs.getCtrlFilePath("itcd.tab"), getCommentChar(), &bAppearsUnified);
+
 	progress.SetText("Loading code table for synthesis...");
 #ifndef hab17a2
 	sPath = m_mfs.getCtrlFilePath("sycd.tab");
@@ -488,7 +506,7 @@ BOOL CCarlaLanguage::loadControlFiles(BOOL bFirstLoadAfterCarlaMenuImport, BOOL 
 	else
 	  fTestForExistence.Close(); // It's already there, so close it.
 #endif // hab17a2
-	m_synthCodeTable.loadFromFile(m_mfs.getCtrlFilePath("sycd.tab"), getCommentChar());
+	m_synthCodeTable.loadFromFile(m_mfs.getCtrlFilePath("sycd.tab"), getCommentChar(), &bAppearsUnified);
 #else // hab17a1
 	CSimpleProgressBar progress("Loading code table...");
 	m_codeTable.loadFromFile(m_mfs.getCtrlFilePath("cd.tab"), getCommentChar());
@@ -537,21 +555,21 @@ CString CCarlaLanguage::getConsistencyMsg()
 	if(!m_mfs.getUsingUnifiedDicts())
 	{
 		if(getHavePrefixes() && (m_mfs.getPrefixDictPathD().IsEmpty()))
-			return CString("maxPrefixes is >0 and Unified Dicts is off but no prefix dict is specified.");
+			return CString("Warning: maxPrefixes is >0 and Unified Dicts is off but no prefix dict is specified.");
 		if(getHaveSuffixes() && m_mfs.getSuffixDictPathD().IsEmpty())
-			return CString("maxSuffixes is >0 and Unified Dicts is off but no suffix dict is specified.");
+			return CString("Warning: maxSuffixes is >0 and Unified Dicts is off but no suffix dict is specified.");
 		if(getHaveInfixes() && m_mfs.getInfixDictPathD().IsEmpty())
-			return CString("maxInfixes is >0 and Unified Dicts is off but no infix dict is specified.");
+			return CString("Warning: maxInfixes is >0 and Unified Dicts is off but no infix dict is specified.");
 	}
 
 	if(!getHavePrefixes() && !m_mfs.getPrefixDictPathD().IsEmpty())
-			return CString("maxPrefixes is 0 but prefix dict is specified.");
+			return CString("Warning: maxPrefixes is 0 but a prefix dict is specified.");
 
 	if(!getHaveSuffixes() && !m_mfs.getSuffixDictPathD().IsEmpty())
-			return CString("maxSuffixes is 0 but suffix dict is specified.");
+			return CString("Warning: maxSuffixes is 0 but a suffix dict is specified.");
 
 	if(!getHaveInfixes() && !m_mfs.getInfixDictPathD().IsEmpty())
-		return CString("maxInfixes is 0 but infix dict is specified.");
+		return CString("Warning: maxInfixes is 0 but an infix dict is specified.");
 
 	// TO DO: is the presence/abscense of affix dics consistent with the code table?
 

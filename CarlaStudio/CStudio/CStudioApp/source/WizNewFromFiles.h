@@ -8,9 +8,9 @@ class ostrstream;
 #include "WizBaseClasses.h"
 #include "WizLangProps.h"	// for pages these have in common
 #include "WizProjectPage.h"
-//#include "PageDicts.h"
 #include "PageRootUnifiedDict.h"
 #include "PageDictAffixes.h"
+#include "PageDictMethod.h"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -220,6 +220,7 @@ public:
 	CPageNewFromFilesFinish m_finishPage;
 	CPageAnalysisFiles m_analysisPage;
 	//CPageDictionaries m_dictPage;
+	CPageDictMethod m_dictMethodPage;// jdh 17 sept 2001
 	CPageRootUnifiedDict m_dictRootUnifiedPage;
 	CPageDictAffixes m_dictAffixesPage;
 //	CPageProjectPath m_projectPage;

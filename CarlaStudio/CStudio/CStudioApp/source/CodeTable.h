@@ -94,7 +94,7 @@ class CWCodeTable : public CWModel
 public:
 	void populateWithDefaults();
 	CWCodeTable();
-	BOOL loadFromFile(LPCTSTR lpszPathName, char cCommentChar);
+	BOOL loadFromFile(LPCTSTR lpszPathName, char cCommentChar, BOOL* pbAppearsUnified);
 
 	CWUnifiedCodeSet m_unifiedSet;
 #ifndef hab215
