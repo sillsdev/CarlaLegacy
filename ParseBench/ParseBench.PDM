@@ -1,0 +1,198 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=E:\dev\ParseBenchPackage
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+E:\dev\carla\CarlaStudio\CStudio\CStudioApp\Debug\CStudioCOM.tlb=
+E:\WINNT\system32\wshom.ocx=
+E:\WINNT\system32\mshtml.tlb=
+E:\WINNT\system32\msxml3.dll=
+E:\dev\carla\CarlaStudio\CStudio\CStudioApp\Debug\cstudio.tlb=
+E:\WINNTX\system32\mshtml.tlb=
+E:\WINNTX\system32\msxml3.dll=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+E:\WINNT\system32\scrrun.dll=
+E:\WINNTX\system32\scrrun.dll=
+
+[Package|Standard Setup Package 1|Files Added]
+e:\dev\parsebench\pb-xsl\listview.xsl=
+e:\dev\parsebench\pb-xsl\samplefilters.xml=
+e:\dev\parsebench\pb-xsl\statsview.xsl=
+e:\dev\parsebench\pb-xsl\wordview.xsl=
+e:\dev\parsebench\pb-xsl\wordview2.xsl=
+e:\dev\parsebench\pb-html\badparse.gif=
+e:\dev\parsebench\pb-html\emptywordview.htm=
+e:\dev\parsebench\pb-html\filter.gif=
+e:\dev\parsebench\pb-html\goodmissingparse.gif=
+e:\dev\parsebench\pb-html\goodparse.gif=
+e:\dev\parsebench\pb-html\loadingwfi.htm=
+e:\dev\parsebench\pb-html\loadingword.htm=
+e:\dev\parsebench\pb-html\notfound.gif=
+e:\dev\parsebench\pb-html\parsebench.css=
+e:\dev\parsebench\pb-html\stats.wmf=
+e:\dev\parsebench\pb-html\unknownparse.gif=
+e:\dev\parsebench\pb-html\splash.htm=
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+E:\dev\ParseBench\ParseBench.exe=Yes
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+E:\dev\ParseBench\PB-XSL\ListView.xsl=Yes
+E:\dev\ParseBench\PB-XSL\sampleFilters.xml=Yes
+E:\dev\ParseBench\PB-XSL\StatsView.xsl=Yes
+E:\dev\ParseBench\PB-XSL\WordView.xsl=Yes
+E:\dev\ParseBench\PB-XSL\WordView2.xsl=Yes
+E:\dev\ParseBench\PB-HTML\badParse.gif=Yes
+E:\dev\ParseBench\PB-HTML\emptyWordView.htm=Yes
+E:\dev\ParseBench\PB-HTML\filter.GIF=Yes
+E:\dev\ParseBench\PB-HTML\goodMissingParse.gif=Yes
+E:\dev\ParseBench\PB-HTML\goodParse.gif=Yes
+E:\dev\ParseBench\PB-HTML\LoadingWFI.htm=Yes
+E:\dev\ParseBench\PB-HTML\LoadingWord.htm=Yes
+E:\dev\ParseBench\PB-HTML\notFound.GIF=Yes
+E:\dev\ParseBench\PB-HTML\parseBench.css=Yes
+E:\dev\ParseBench\PB-HTML\stats.wmf=Yes
+E:\dev\ParseBench\PB-HTML\unknownParse.gif=Yes
+E:\dev\ParseBench\PB-HTML\Splash.htm=Yes
+E:\WINNTX\system32\msvbvm60.dll=Yes
+E:\WINNTX\system32\oleaut32.dll=Yes
+E:\WINNTX\system32\olepro32.dll=Yes
+E:\WINNTX\system32\asycfilt.dll=Yes
+E:\WINNTX\system32\stdole2.tlb=Yes
+E:\WINNTX\system32\scrrun.dll=Yes
+E:\WINNTX\system32\msvcrt.dll=Yes
+E:\WINNTX\system32\msxml3.dll=Yes
+E:\WINNTX\system32\mshtml.tlb=Yes
+E:\dev\carla\CarlaStudio\CStudio\CStudioApp\Debug\cstudio.tlb=Yes
+E:\WINNTX\system32\COMDLG32.OCX=Yes
+E:\WINNTX\system32\MSCOMCTL.OCX=Yes
+E:\WINNTX\system32\TABCTL32.OCX=Yes
+E:\WINNTX\system32\MSCOMCT2.OCX=Yes
+E:\WINNTX\system32\VB6STKIT.DLL=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+E:\dev\ParseBench\ParseBench.exe=$(AppPath)
+E:\WINNT\system32\msvbvm60.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\oleaut32.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\olepro32.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\asycfilt.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\stdole2.tlb=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+E:\WINNT\system32\scrrun.dll=$(WinSysPath)
+E:\WINNT\system32\msvcrt.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msxml3.dll=$(WinSysPath)
+E:\Program Files\Common Files\Designer\MSHTMPGR.DLL=$(CommonFiles)\Designer
+E:\WINNT\system32\mshtml.tlb=$(WinSysPath)
+E:\WINNT\system32\wshom.ocx=$(WinSysPath)
+E:\dev\carla\CarlaStudio\CStudio\CStudioApp\Debug\CStudioCOM.tlb=$(WinSysPath)
+E:\WINNT\system32\comdlg32.ocx=$(WinSysPath)
+E:\WINNT\system32\mscomctl.ocx=$(WinSysPath)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+E:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+E:\dev\ParseBench\PB-XSL\ListView.xsl=$(AppPath)\PB-XSL
+E:\dev\ParseBench\PB-XSL\sampleFilters.xml=$(AppPath)\PB-XSL
+E:\dev\ParseBench\PB-XSL\StatsView.xsl=$(AppPath)\PB-XSL
+E:\dev\ParseBench\PB-XSL\WordView.xsl=$(AppPath)\PB-XSL
+E:\dev\ParseBench\PB-XSL\WordView2.xsl=$(AppPath)\PB-XSL
+E:\dev\ParseBench\PB-HTML\badParse.gif=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\emptyWordView.htm=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\filter.GIF=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\goodMissingParse.gif=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\goodParse.gif=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\LoadingWFI.htm=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\LoadingWord.htm=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\notFound.GIF=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\parseBench.css=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\stats.wmf=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\unknownParse.gif=$(AppPath)\PB-HTML
+E:\dev\ParseBench\PB-HTML\Splash.htm=$(AppPath)\PB-HTML
+E:\WINNTX\system32\msvbvm60.dll=$(WinSysPathSysFile)
+E:\WINNTX\system32\oleaut32.dll=$(WinSysPathSysFile)
+E:\WINNTX\system32\olepro32.dll=$(WinSysPathSysFile)
+E:\WINNTX\system32\asycfilt.dll=$(WinSysPathSysFile)
+E:\WINNTX\system32\stdole2.tlb=$(WinSysPathSysFile)
+E:\WINNTX\system32\scrrun.dll=$(WinSysPath)
+E:\WINNTX\system32\msvcrt.dll=$(WinSysPathSysFile)
+E:\WINNTX\system32\msxml3.dll=$(WinSysPath)
+E:\WINNTX\system32\mshtml.tlb=$(WinSysPath)
+E:\dev\carla\CarlaStudio\CStudio\CStudioApp\Debug\cstudio.tlb=$(WinSysPath)
+E:\WINNTX\system32\COMDLG32.OCX=$(WinSysPath)
+E:\WINNTX\system32\MSCOMCTL.OCX=$(WinSysPath)
+E:\WINNTX\system32\TABCTL32.OCX=$(WinSysPath)
+E:\WINNTX\system32\MSCOMCT2.OCX=$(WinSysPath)
+E:\WINNTX\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+E:\dev\ParseBench\ParseBench.exe=No
+E:\dev\ParseBench\PB-XSL\ListView.xsl=No
+E:\dev\ParseBench\PB-XSL\sampleFilters.xml=No
+E:\dev\ParseBench\PB-XSL\StatsView.xsl=No
+E:\dev\ParseBench\PB-XSL\WordView.xsl=No
+E:\dev\ParseBench\PB-XSL\WordView2.xsl=No
+E:\dev\ParseBench\PB-HTML\badParse.gif=No
+E:\dev\ParseBench\PB-HTML\emptyWordView.htm=No
+E:\dev\ParseBench\PB-HTML\filter.GIF=No
+E:\dev\ParseBench\PB-HTML\goodMissingParse.gif=No
+E:\dev\ParseBench\PB-HTML\goodParse.gif=No
+E:\dev\ParseBench\PB-HTML\LoadingWFI.htm=No
+E:\dev\ParseBench\PB-HTML\LoadingWord.htm=No
+E:\dev\ParseBench\PB-HTML\notFound.GIF=No
+E:\dev\ParseBench\PB-HTML\parseBench.css=No
+E:\dev\ParseBench\PB-HTML\stats.wmf=No
+E:\dev\ParseBench\PB-HTML\unknownParse.gif=No
+E:\dev\ParseBench\PB-HTML\Splash.htm=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=ParseBench
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=SIL
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|SIL]
+Icon1=ParseBench.exe
+Title1=ParseBench
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=E:\dev\ParseBenchPackage
+ProjectFolder=E:\dev\ParseBench
+ServerSideCab=
+File1=E:\dev\ParseBenchPackage\setup.exe
+File2=E:\dev\ParseBenchPackage\Setup.Lst
+File3=E:\dev\ParseBenchPackage\ParseBench.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

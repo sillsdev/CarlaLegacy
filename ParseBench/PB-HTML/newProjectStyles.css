@@ -1,0 +1,16 @@
+SPAN.morphname
+{
+	COLOR: blue
+}
+SPAN.allomorph
+{
+	COLOR: green
+}
+SPAN.category
+{
+	COLOR: maroon
+}
+SPAN.wordform
+{
+	FONT-FAMILY: 'Comic Sans MS'
+}

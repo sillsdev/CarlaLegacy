@@ -1,0 +1,28 @@
+<filters>
+<filter label="All" query="*"  />
+<filter label="Find Word" query="@id='PARAMETER'" prompt="Enter Word"  />
+<filter label="Find FinalCat" query="parses/parse/@finalcat='PARAMETER'" prompt="Enter Final Category"  />
+<filter label="Do Parse" query="parses/parse"  />
+<filter label="Don't Parse" query="not(parses/parse)"  />
+<filter label="Has 1 or more good analysis" query="parses/parse/@goodness='good'"  />
+<filter label="Some judgment made" query="parses/parse/@goodness and parses/parse/@goodness!='?'"  />
+<filter label="300+" query="(@freq >= 300)" group="hide"  />
+<filter label="900-1000" query="(not(@freq > 1000)) and (@freq >= 900)" group="hide"  />
+<filter label="800-900" query="(not(@freq > 900)) and (@freq >= 800)" group="hide"  />
+<filter label="700-800" query="(not(@freq > 800)) and (@freq >= 700)" group="hide"  />
+<filter label="600-700" query="(not(@freq > 700)) and (@freq >= 600)" group="hide"  />
+<filter label="500-600" query="(not(@freq > 600)) and (@freq >= 500)" group="hide"  />
+<filter label="400-500" query="(not(@freq > 500)) and (@freq >= 400)" group="hide"  />
+<filter label="300-400" query="(not(@freq > 400)) and (@freq >= 300)" group="hide"  />
+<filter label="200-299" query="(not(@freq > 300)) and (@freq >= 200)" group="hide"  />
+<filter label="100-199" query="(not(@freq > 200)) and (@freq >= 100)" group="hide"  />
+<filter label="1-99" query="(not(@freq > 99)) and (@freq >= 1)" group="hide"  />
+<filter label="80-99" query="(not(@freq > 99)) and (@freq >= 80)" group="hide"  />
+<filter label="60-79" query="(not(@freq > 79)) and (@freq >= 60)" group="hide"  />
+<filter label="40-59" query="(not(@freq > 59)) and (@freq >= 40)" group="hide"  />
+<filter label="20-39" query="(not(@freq > 39)) and (@freq >= 20)" group="hide"  />
+<filter label="10-19" query="(not(@freq > 19)) and (@freq >= 10)" group="hide"  />
+<filter label="2-9" query="(not(@freq > 9)) and (@freq >= 2)" group="hide"  />
+<filter label="1" query="@freq = 1" group="hide"  />
+<filter label="TestLabel" query="@freq #3c 12"  />
+</filters>
