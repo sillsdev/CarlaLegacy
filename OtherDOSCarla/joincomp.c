@@ -1037,6 +1037,14 @@ if (sTextControl_m.bCapitalize)
 		sChar[1] = '\0';
 		cps = (unsigned char *)sChar;
 	  }
+#ifndef hab2u
+	else
+	  {
+		int iLen = strlen(cps);
+		if (iLen > 1)	/* if it was more than one character, increment s appropriately */
+		  s += iLen - 1;
+	  }
+#endif /* hab2u */
 	strcat(sBuf, (char *)cps);
 	  }
 	word = sBuf;
