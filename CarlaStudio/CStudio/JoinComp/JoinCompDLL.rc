@@ -65,8 +65,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,4,1
- PRODUCTVERSION 1,0,4,1
+ FILEVERSION 1,0,5,1
+ PRODUCTVERSION 1,0,5,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -81,17 +81,17 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "JoinComp v. 0.2t\0"
+			VALUE "Comments", "JoinComp v. 0.2u\0"
 			VALUE "CompanyName", "SIL International\0"
 			VALUE "FileDescription", "JoinCompDLL DLL\0"
-			VALUE "FileVersion", "1, 0, 4, 1\0"
+			VALUE "FileVersion", "1, 0, 5, 1\0"
 			VALUE "InternalName", "JoinCompDLL\0"
 			VALUE "LegalCopyright", "Copyright © 1999-2005\0"
 			VALUE "LegalTrademarks", "\0"
 			VALUE "OriginalFilename", "JoinCompDLL.DLL\0"
 			VALUE "PrivateBuild", "\0"
 			VALUE "ProductName", "JoinCompDLL Dynamic Link Library\0"
-			VALUE "ProductVersion", "1, 0, 4, 1\0"
+			VALUE "ProductVersion", "1, 0, 5, 1\0"
 			VALUE "SpecialBuild", "\0"
 		END
 	END

@@ -55,12 +55,13 @@
 * 0.2s 20-Sep-2001 hab close intx control file after checking for its existance
 * 0.2t 29-Mar-2005 hab when skipping word initial non-word formation characters,
 *                        check for multibyte charaters, too
+* 0.2u 14-Jun-2005 hab handle upper-lower case for multibyte characters
 *-----------------------------------------------------------*/
 
 #ifdef DJGPP
-#define VERSION "Join Compounds 0.2t (386) March 2005 Copyright SIL International\n"
+#define VERSION "Join Compounds 0.2u (386) June 2005 Copyright SIL International\n"
 #else
-#define VERSION "Join Compounds 0.2t March 2005 Copyright SIL International\n"
+#define VERSION "Join Compounds 0.2u June 2005 Copyright SIL International\n"
 #endif
 
 #include <stdio.h>              /* Include standard lib prototypes */
@@ -773,12 +774,12 @@ for ( tcomp = comp; tcomp; tcomp = tcomp->link ) /* For each comp */
 	succ = TRUE;
 	for ( s = tcomp->word, t = word; *s; s++, t++ )
 	{
-#ifndef hab02o			/* NOTE: really need to compare proper */
-				/* use of decapitalization */
+#ifndef hab02o
 	if (sTextControl_m.bCapitalize)
 	  {
 	  const unsigned char * cps, * cpt;
 	  cpt = convUpperToLower( (unsigned char *)t, &sTextControl_m );
+#ifdef hab02u
 	  if (cpt == NULL)
 		cpt = (unsigned char *)t;
 	  if ( *(cps = (unsigned char *)s) != *cpt)	                /* If non-match */
@@ -786,6 +787,37 @@ for ( tcomp = comp; tcomp; tcomp = tcomp->link ) /* For each comp */
 		succ = FALSE;                       /* Note fail and break */
 		break;
 		}
+#else  /* hab02u */
+	  if (cpt == NULL)
+		{			/* no decapitalization case */
+		  cpt = (unsigned char *)t;
+		  if ( *(cps = (unsigned char *)s) != *cpt)	                /* If non-match */
+		{
+		  succ = FALSE;                       /* Note fail and break */
+		  break;
+		}
+		}
+	  else
+		{			/* something changed; check all characters which changed */
+		  for (cps = (unsigned char *)s;
+		   cpt != NULL && *cpt != '\0';
+		   cpt++, cps++)
+		{
+		  if ( *cps != *cpt)	                /* If non-match */
+			{
+			  succ = FALSE;                       /* Note fail and break */
+			  break;
+			}
+		  else if (*(cpt+1) != '\0')
+			{		/* move master pointers over since they matched */
+			  s++;		/* but don't do if it's the last character because */
+			  t++;		/* the main for loop will do that */
+			}
+		}
+		  if (succ == FALSE)
+		break;		/* no need to look further */
+		}
+#endif /* hab20u */
 		  }
 #else
 	if ( tolower( *s ) != tolower( *t ) )   /* If non-match */

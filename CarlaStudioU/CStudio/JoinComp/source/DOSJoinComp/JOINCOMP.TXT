@@ -5,6 +5,8 @@ analyze them. JOINCOMP is documented in the file JOINCOMP.DOC.
 
 Change history:
 
+0.2u Jun 2005 handle upper-lower case for multibyte characters.
+
 0.2t Mar 2005 fixed bug: Unicode punctuation before a word could cause
 cause it to not find a compound.
 
