@@ -29,6 +29,7 @@
  *
  * void writePATRParses(PATREdgeList * parses,
  *			FILE * pOutputFP_in,
+ *                      WordTemplate ** ppWords_in,
  *			PATRData * pPATR_in)
  *
  ******************************************************************************
@@ -104,10 +105,29 @@ static void write_parse_tree_features P((PATREdge * pEdge_in,
 					 FILE * pOutputFP_in,
 					 PATRFeature * pTreeFeats_in,
 					 PATRData * pPATR_in));
+static void writeANAWordInfoAsXML P((WordTemplate **ppWords_in,
+					 FILE *pOutputFP_in,
+					 TextControl *pTextControl_in));
+static void WriteWordCat P((char *pszCat,
+				FILE* pOutputFP_in));
+static void WriteWordAnalysisAsXml P((WordAnalysis *pAnal,
+					  FILE *pOutputFP_in,
+					  TextControl *pTextControl_in,
+					  int iWord_in,
+					  int iParse_in));
+static void WriteAnalysisSubpartAsXml P((char **pszItem,
+					 unsigned char cBreak,
+					 char *pszElement,
+					 char *pszId,
+					 FILE *pOutputFP_in,
+					 int iWord_in,
+					 int iParse_in,
+					 int iMorph_in));
 
 #ifdef applec
 #pragma segment S_userpatr
 #endif
+static const char szWhitespace_m[7] = " \t\r\n\f\v";
 
 /*****************************************************************************
  * NAME
@@ -2182,15 +2202,18 @@ pPATR_in->pMem->pPrintsFP = NULL;
  * ARGUMENTS
  *    parses       - list of parses
  *    pOutputFP_in - output FILE pointer
+ *    ppWords_in   - ANA word info
  *    pPATR_in     -
  * DESCRIPTION
  *    Write all possible legal parses in the chart to the given file.
  * RETURN VALUE
  *    none
  */
-void writePATRParses(parses, pOutputFP_in, pPATR_in)
+void writePATRParses(parses, pOutputFP_in, ppWords_in, pTextControl_in, pPATR_in)
 PATREdgeList *	parses;
 FILE *		pOutputFP_in;
+WordTemplate ** ppWords_in;
+TextControl *	pTextControl_in;
 PATRData *	pPATR_in;
 {
 int count;
@@ -2242,6 +2265,7 @@ if (pPATR_in->eTreeDisplay == PATR_XML_TREE)
 	fprintf(pOutputFP_in, "<Analysis count=\"%d\"%s>\n",
 		pPATR_in->iParseCount, pszFail);
 #endif /* hab124 */
+	writeANAWordInfoAsXML(ppWords_in, pOutputFP_in, pTextControl_in);
 	}
 for ( count = 0, pel = parses ; pel != NULL ; pel = pel->pNext )
 	{
@@ -2353,4 +2377,282 @@ p = findPATRAttribute(edgep->pFeature, pszGlossFeatName);
 if (p != NULL && p->eType == PATR_ATOM)
 	return p->u.pszAtom;
 return "";
+}
+/*****************************************************************************
+ * NAME
+ *    writeANAWordInfoAsXML
+ * ARGUMENTS
+ *    ppWords_in - ANA Word info
+ *    pOutputFP_in - output file
+ * DESCRIPTION
+ *    Output words in ANA as xml
+ * RETURN VALUE
+ *
+ */
+static void writeANAWordInfoAsXML(WordTemplate **ppWords_in, FILE *pOutputFP_in, TextControl *pTextControl_in)
+{
+  int iWord;
+  int iParse;
+  WordTemplate *wtp;
+  WordAnalysis * pAnal;
+
+  if (ppWords_in == NULL)
+	return;
+  fprintf(pOutputFP_in,"<Input>\n");
+  for (iWord = 1; ppWords_in[iWord-1]; iWord++)
+	{
+	  fprintf(pOutputFP_in,"<Word id=\"word%d\">\n", iWord);
+	  wtp = ppWords_in[iWord-1];
+	  if (wtp->pszOrigWord != NULL)
+	fprintf(pOutputFP_in,"<OrigWord id=\"w%d\">%s</OrigWord>\n",
+		iWord, wtp->pszOrigWord);
+	  for ( iParse=1, pAnal = wtp->pAnalyses ;
+		pAnal ;
+		iParse++, pAnal = pAnal->pNext )
+	{
+	  fprintf(pOutputFP_in,"<WordParse id=\"parse%d.%d\">\n", iWord, iParse);
+	  fprintf(pOutputFP_in,"<Morphs id=\"a%d.%d\">\n", iWord, iParse);
+	  WriteWordAnalysisAsXml(pAnal, pOutputFP_in, pTextControl_in, iWord, iParse);
+	  fprintf(pOutputFP_in,"</Morphs>\n");
+	  if (pAnal->pszCategory != NULL)
+	{
+	  fprintf(pOutputFP_in,"<WordCat id=\"a%d.%d\">",
+		  iWord, iParse);
+	  WriteWordCat(pAnal->pszCategory, pOutputFP_in);
+	  fprintf(pOutputFP_in, "</WordCat>\n");
+	}
+	  fprintf(pOutputFP_in,"</WordParse>\n");
+	}
+	  if (wtp->pszFormat != NULL)
+	fprintf(pOutputFP_in,"<Format id=\"fmt%d\">%s</Format>\n",
+		iWord, wtp->pszFormat);
+	  if (wtp->pszNonAlpha != NULL)
+	fprintf(pOutputFP_in,"<NonAlpha id=\"na%d\">%s</NonAlpha>\n",
+		iWord, wtp->pszNonAlpha);
+	  if (wtp->iCapital != 0)
+	fprintf(pOutputFP_in,"<Capital id=\"cap%d\" value=\"%d\"/>\n",
+		iWord, wtp->iCapital);
+	  fprintf(pOutputFP_in,"</Word>\n");
+	}
+  fprintf(pOutputFP_in,"</Input>\n");
+}
+/*****************************************************************************
+ * NAME
+ *    WriteWordCat
+ * ARGUMENTS
+ *    ppWords_in - ANA Word info
+ *    pOutputFP_in - output file
+ * DESCRIPTION
+ *    Output word cat
+ * RETURN VALUE
+ *
+ */
+static void WriteWordCat(char *pszCat, FILE* pOutputFP_in)
+{
+  char *cp = strchr(pszCat, ' ');
+  if (cp == NULL)
+	fprintf(pOutputFP_in, "%s", pszCat);
+  else
+	{
+	  *cp = '\0';
+	  fprintf(pOutputFP_in, "%s", pszCat);
+	  *cp = ' ';
+	}
+}
+/*****************************************************************************
+ * NAME
+ *    WriteWordAnalysisAsXml
+ * ARGUMENTS
+ *    ppWords_in - ANA Word info
+ *    pOutputFP_in - output file
+ * DESCRIPTION
+ *    Output word analysis as xml
+ * RETURN VALUE
+ *
+ */
+static void WriteWordAnalysisAsXml(WordAnalysis *pAnal, FILE *pOutputFP_in, TextControl *pTextControl_in, int iWord_in, int iParse_in)
+{
+  char *nextp;
+  char *catp = NULL;
+  int iMorph = 1;
+  short state;                    /* finite state machine state */
+#define WANT_PREFIX     0
+#define WANT_ROOTCAT    1
+#define WANT_ROOTNAME   2
+#define WANT_SUFFIX     3
+
+  char *pszAnalysis;
+  char bufferAnalysis[BUFSIZE];
+  char *pszDecomposition;
+  char bufferDecomp[BUFSIZE];
+  char *pszCategory;
+  char bufferCategory[BUFSIZE];
+  char *pszProperties;
+  char bufferProperties[BUFSIZE];
+  char *pszFeatures;
+  char bufferFeatures[BUFSIZE];
+  char *pszUnderlyingForm;
+  char bufferUnderlyingForm[BUFSIZE];
+  unsigned char cDecomp = '-';
+  unsigned char cSplitter = '=';
+
+  if (pAnal == NULL || pAnal->pszAnalysis == NULL)
+	return;  /* nothing to do */
+  if (pTextControl_in != NULL)
+	cDecomp = pTextControl_in->cDecomp;
+
+/*
+ *  initialize the state and some pointers
+ */
+  state = WANT_PREFIX;
+  pszDecomposition = NULL;
+  pszCategory = NULL;
+  pszProperties = NULL;
+  pszFeatures = NULL;
+  pszUnderlyingForm = NULL;
+
+
+
+/* save original of these because we change them */
+  pszAnalysis = strcpy(bufferAnalysis, pAnal->pszAnalysis);
+  if (pAnal->pszDecomposition != NULL)
+	pszDecomposition = strcpy(bufferDecomp, pAnal->pszDecomposition);
+  if (pAnal->pszCategory != NULL)
+	pszCategory = strcpy(bufferCategory, pAnal->pszCategory);
+  if (pAnal->pszProperties != NULL)
+	pszProperties = strcpy(bufferProperties, pAnal->pszProperties);
+  if (pAnal->pszFeatures != NULL)
+	pszFeatures = strcpy(bufferFeatures, pAnal->pszFeatures);
+  if (pAnal->pszUnderlyingForm != NULL)
+	pszUnderlyingForm = strcpy(bufferUnderlyingForm, pAnal->pszUnderlyingForm);
+/*
+ *  scan across the analysis string
+ */
+for (	pszAnalysis = bufferAnalysis + strspn(bufferAnalysis, szWhitespace_m) ;
+	*pszAnalysis != NUL ;
+	pszAnalysis = nextp + strspn(nextp, szWhitespace_m) )
+	{
+	/*
+	 *  check for state switching markers
+	 */
+	if (*pszAnalysis == '<')       /* is it the marker beginning roots? */
+		{
+		if (state == WANT_SUFFIX)
+			{
+			/* shouldn't happen */
+			}
+		else if (state != WANT_PREFIX)
+			{
+		  return; /* something's really wrong */
+			}
+		state = WANT_ROOTCAT;   /* next thing we want is a root category */
+		nextp = pszAnalysis + 1;
+		continue;
+		}
+	if (*pszAnalysis == '>')         /* is it the marker ending roots? */
+		{
+		if (state != WANT_ROOTCAT)
+			{
+		  return; /* something's really wrong */
+			}
+		state = WANT_SUFFIX;    /* now we go looking for suffixes */
+		nextp = pszAnalysis + 1;
+		continue;
+		}
+	/*
+	 *  handle the token in the input string according to the state
+	 */
+	nextp = isolateWord(pszAnalysis);           /* split out the token */
+	switch (state)
+	  {
+	  case WANT_PREFIX:
+	fprintf(pOutputFP_in, "<Prefix id=\"pfx%d.%d.%d\">\n",
+		iWord_in, iParse_in, iMorph);
+	fprintf(pOutputFP_in, "<Morph id=\"m%d.%d.%d\">%s</Morph>\n",
+		iWord_in, iParse_in, iMorph, pszAnalysis);
+	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cSplitter, "UnderForm", "ul",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszDecomposition, cDecomp, "Decomp", "d",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszCategory, cSplitter, "MorphCat", "mcat",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszProperties, cSplitter, "Prop", "p",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszFeatures, cSplitter, "FeatDesc", "fd",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	fprintf(pOutputFP_in, "</Prefix>\n");
+	iMorph++;
+	break;
+
+	  case WANT_ROOTCAT:
+	catp = pszAnalysis;
+	state = WANT_ROOTNAME;
+	break;
+
+	  case WANT_ROOTNAME:
+	fprintf(pOutputFP_in, "<Root id=\"rt%d.%d.%d\">\n",
+		iWord_in, iParse_in, iMorph);
+	fprintf(pOutputFP_in, "<Morph id=\"m%d.%d.%d\">%s</Morph>\n",
+		iWord_in, iParse_in, iMorph, pszAnalysis);
+	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cSplitter, "UnderForm", "ul",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszDecomposition, cDecomp, "Decomp", "d",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(& catp, cSplitter, "MorphCat", "mcat",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszProperties, cSplitter, "Prop", "p",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszFeatures, cSplitter, "FeatDesc", "fd",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	fprintf(pOutputFP_in, "</Root>\n");
+	state = WANT_ROOTCAT;
+	iMorph++;
+	break;
+
+	  case WANT_SUFFIX:
+	fprintf(pOutputFP_in, "<Suffix id=\"sfx%d.%d.%d\">\n",
+		iWord_in, iParse_in, iMorph);
+	fprintf(pOutputFP_in, "<Morph id=\"m%d.%d.%d\">%s</Morph>\n",
+		iWord_in, iParse_in, iMorph, pszAnalysis);
+	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cSplitter, "UnderForm", "ul",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszDecomposition, cDecomp, "Decomp", "d",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszCategory, cSplitter, "MorphCat", "mcat",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszProperties, cSplitter, "Prop", "p",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	WriteAnalysisSubpartAsXml(&pszFeatures, cSplitter, "FeatDesc", "fd",
+				  pOutputFP_in, iWord_in, iParse_in, iMorph);
+	fprintf(pOutputFP_in, "</Suffix>\n");
+	iMorph++;
+	break;
+
+	  } /* end switch */
+	} /* end for */
+}
+/*****************************************************************************
+ * NAME
+ *    WriteAnalysisSubpartAsXml
+ * ARGUMENTS
+ *    ppWords_in - ANA Word info
+ *    pOutputFP_in - output file
+ * DESCRIPTION
+ *    Output word analysis as xml
+ * RETURN VALUE
+ *
+ */
+static void WriteAnalysisSubpartAsXml(char **ppszItem, unsigned char cBreak, char *pszElement, char *pszId, FILE *pOutputFP_in, int iWord_in, int iParse_in, int iMorph_in)
+{
+  char *pszEnd;
+
+  if (ppszItem == NULL || *ppszItem == NULL)
+	return;
+  pszEnd = strchr(*ppszItem, cBreak);
+  if (pszEnd != NULL)
+	*pszEnd = '\0';
+  fprintf(pOutputFP_in, "<%s id=\"%s%d.%d.%d\">%s</%s>\n",
+	  pszElement, pszId, iWord_in, iParse_in, iMorph_in, *ppszItem, pszElement);
+  if (pszEnd != NULL)
+	*ppszItem = pszEnd + 1;
 }

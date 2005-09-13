@@ -296,7 +296,7 @@ STDMETHODIMP PatrParser::ParseString(BSTR bstrSentence, BSTR * pbstrParse)
 	{
 		if (m_data.pLogFP != NULL)
 		{
-			writePATRParses(parses, m_data.pLogFP, &m_data);
+			writePATRParses(parses, m_data.pLogFP, NULL, NULL, &m_data);
 			putc('\n', m_data.pLogFP);
 		}
 		if (stringifyPATRParses(parses, &m_data, pszSentence, &pszXml))
@@ -1722,8 +1722,10 @@ STDMETHODIMP PatrParser::DisambiguateAnaFile(BSTR bstrInput, BSTR bstrOutput)
 	if (m_data.pLogFP != NULL)
 		{
 		display_header(m_data.pLogFP);
+		fprintf(m_data.pLogFP, "   Grammar file used: %s\n", m_data.pszGrammarFile);
 		}
 #endif // hab130l
+	fprintf(pfileOut, "\\id Grammar file used: %s\n", m_data.pszGrammarFile);
 	for (;;)
 	{
 		wtp = readSentenceOfTemplates(pfileIn, pszInput, m_data.pFinalPunc,

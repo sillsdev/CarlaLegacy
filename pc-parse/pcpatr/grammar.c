@@ -461,6 +461,8 @@ if ((pszFilename_in == NULL) || (pPATR_io == NULL))
 
 memset(&sData, 0, sizeof(sData));
 memset(&sParseData, 0, sizeof(sParseData));
+ if (pPATR_io->pLogFP != NULL)
+   fprintf(pPATR_io->pLogFP, "   Grammar file used: %s\n", pszFilename_in);
 sData.pGrammarFP = fopen( pszFilename_in, "r" );	/* Open grammar file */
 if (sData.pGrammarFP == NULL)
 	{

@@ -1957,12 +1957,12 @@ if (!errors && (sentm != NULL))
 	{
 	if (pOutputFP_in != NULL)
 		{
-		writePATRParses(parse, pOutputFP_in, pPATR_in);
+		writePATRParses(parse, pOutputFP_in, NULL, NULL, pPATR_in);
 		putc('\n', pOutputFP_in);
 		}
 	if (pPATR_in->pLogFP != NULL)
 		{
-		writePATRParses(parse, pPATR_in->pLogFP, pPATR_in);
+		writePATRParses(parse, pPATR_in->pLogFP, NULL, NULL, pPATR_in);
 		putc('\n', pPATR_in->pLogFP);
 		}
 	}

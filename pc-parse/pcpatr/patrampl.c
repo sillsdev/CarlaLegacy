@@ -807,16 +807,6 @@ else
 #ifdef hab129
 	pPATR_in->bGlossesExist = TRUE;
 #endif /* hab129 */
-	if (bVerbose_in)
-	{
-	writePATRParses(parse, stderr, pPATR_in);
-	putc('\n', stderr);
-	}
-	if (pPATR_in->pLogFP != (FILE *)NULL)
-	{
-	writePATRParses(parse, pPATR_in->pLogFP, pPATR_in);
-	putc('\n', pPATR_in->pLogFP);
-	}
 	/*
 	 *  use the parse output to eliminate redundancy from ppWords_in[]
 	 */
@@ -883,6 +873,16 @@ else
 	{
 	/* error */
 	}
+	if (bVerbose_in)
+	{
+	writePATRParses(parse, stderr, ppWords_in, pTextControl_in, pPATR_in);
+	putc('\n', stderr);
+	}
+	if (pPATR_in->pLogFP != (FILE *)NULL)
+	{
+	writePATRParses(parse, pPATR_in->pLogFP, ppWords_in, pTextControl_in, pPATR_in);
+	putc('\n', pPATR_in->pLogFP);
+	}
 	}
 /*
  *  if output file exists, write the disambiguated output and the parse tree
@@ -917,7 +917,7 @@ if (pOutputFP_in != NULL)
 #endif /* hab1210 */
 		}
 	fprintf(pOutputFP_in, "\\parse\n");
-	writePATRParses(parse, pOutputFP_in, pPATR_in);
+	writePATRParses(parse, pOutputFP_in, ppWords_in, pTextControl_in, pPATR_in);
 	fprintf(pOutputFP_in, "\\endparse\n\n");
 	}
 	}

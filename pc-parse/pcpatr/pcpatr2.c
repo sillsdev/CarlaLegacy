@@ -3729,6 +3729,10 @@ switch (cmd_code)
 		}
 		else /* KW_DISAMBIGUATE */
 		{
+		if (num_sentences == 0)
+		  fprintf(outfp, "\\id Grammar file used: %s\n",
+			  sPCPATRData_g.pszGrammarFile);
+
 		wtp = readSentenceOfTemplates(infp, anafile,
 						  sPCPATRData_g.pFinalPunc,
 						  &sPCPATRTextControl_g,

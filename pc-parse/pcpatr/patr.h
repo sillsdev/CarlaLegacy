@@ -489,6 +489,8 @@ extern int		loadPATRLexiconFromAmple P((
  */
 extern void	writePATRParses		P((PATREdgeList * pParses_in,
 					   FILE *         pOutputFP_in,
+					   WordTemplate ** ppWords_in,
+					   TextControl *  pTextControl_in,
 					   PATRData *     pPATR_in));
 /*
  *  wrtstyle.c
