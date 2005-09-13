@@ -1,5 +1,9 @@
 TonePars CHANGE HISTORY
 
+1.0.19 (13-Sep-2005)
+--------------------
+Avoid crash if (second) morphname is blank in dictionary.
+
 1.0.18 (07-Dec-2004)
 --------------------
 Ignore interfix entry type in unified dictionaries.

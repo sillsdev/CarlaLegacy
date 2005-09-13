@@ -1516,6 +1516,8 @@ static void build_tone_tier(pwp, ap_head, do_trace, pStamp_in)
 	  dp = searchStampDictionary( ap->m.iMorphType,
 				  ap->m.pszMorphname,
 				  0, TRUE, pStamp_in);
+	  if (dp == NULL) /* avoid crash; results could be bad, though */
+	continue;
 	  /* insure the working copy also has null tones */
 	  if (dp->pTones == (struct tone_list *)NULL)
 	ap->m.pTones = NULL;
