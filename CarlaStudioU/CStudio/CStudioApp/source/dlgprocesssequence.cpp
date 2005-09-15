@@ -12,6 +12,7 @@
 #include "DlgProcessSequence.h"
 #include "ProcessSequence.h"
 #include "DlgChooseProcessor.h"
+#include "ResizingUtils.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -23,6 +24,9 @@ static char THIS_FILE[] = __FILE__;
 
 /////////////////////////////////////////////////////////////////////////////
 // CDlgProcessSequence dialog
+static const char *oszDialogName = "DlgProcessSequence";
+#define BASE_WIDTH   365
+#define BASE_HEIGHT  144
 
 // iFunctionCode is one of {kDisambig, kTransfer, kSynthesis}
 CDlgProcessSequence::CDlgProcessSequence(int iFunctionCode,
@@ -89,6 +93,9 @@ BEGIN_MESSAGE_MAP(CDlgProcessSequence, CDialog)
 	ON_BN_CLICKED(IDC_InsertBefore, OnInsertBefore)
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_ProcessList, OnItemchangedProcessList)
 	ON_BN_CLICKED(ID_HELP, OnHelp)
+	ON_WM_DESTROY()
+	ON_WM_SIZE()
+	ON_WM_GETMINMAXINFO()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -206,14 +213,55 @@ void CDlgProcessSequence::OnGetdispinfoProcessList(NMHDR* pNMHDR, LRESULT* pResu
 	*pResult = 0; //	THIS WAS PUT HERE BY THE WIZARD
 }
 
+static void
+vSize(CDialog *cd, int cx, int cy)
+{
+	// resize all bits
+	CRect r;
+
+	// Align things from boundary (left or right) and bottom
+	tsSizingElement asSizingElements[] =
+	{
+		{ IDCANCEL,         (BASE_WIDTH - 238) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 238,120,50,14
+		{ IDOK,             (BASE_WIDTH - 178) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 178,120,50,14
+		{ ID_HELP,          (BASE_WIDTH - 304) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 304,120,50,14
+		{ IDC_InsertBefore, (BASE_WIDTH - 304) * 2, 100, 11*2, 28, 0}, //  304,11,50,14
+		{ IDC_InsertAfter,  (BASE_WIDTH - 304) * 2, 100, 29*2, 28, 0}, //  304,29,50,14
+		{ IDC_Remove,       (BASE_WIDTH - 304) * 2, 100, 48*2, 28, 0}, //  304,48,50,14
+		{ IDC_Properties,   (BASE_WIDTH - 304) * 2, 100, 66*2, 28, 0}, //  304,66,50,14
+		{ IDC_ValidMsg, 10 * 2, 278*2, -1*(BASE_HEIGHT - 96) * 2, 20*2, 1 }, //10,96,278,20
+		{ IDC_Uncheck,   9 * 2, 128*2, -1*(BASE_HEIGHT - 81) * 2,  8*2, 1 },  // 9,81,128,8
+		{ IDC_ProcessList, 8 * 2, -1*(BASE_WIDTH - 284 - 8) * 2, 10 * 2, -2 * (BASE_HEIGHT - 10 - 69), 1 }      // 8,10,284,69
+	};
+	vResize(cd, cx, cy, asSizingElements, sizeof(asSizingElements)/sizeof(asSizingElements[0]));
+
+}
+
 BOOL CDlgProcessSequence::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 	SetWindowText(m_sTitle);
-	setupListCtrl();
-	checkButtonStatus();
 	//if(!m_ppProcesses->GetSize()) // are we empty?
 	//	insertProcess(FALSE);
+	// retrieve the window placement
+	WINDOWPLACEMENT wp;
+
+	if (ERROR_SUCCESS == lGetWindowPlacement(oszDialogName, &wp)) {
+	  SetWindowPlacement(&wp);
+	  int cx = wp.rcNormalPosition.right - wp.rcNormalPosition.left;
+	  int cy = wp.rcNormalPosition.bottom - wp.rcNormalPosition.top;
+	   //  + ::GetSystemMetrics(SM_CXFRAME) * 2
+	   //  + ::GetSystemMetrics(SM_CYFRAME) + ::GetSystemMetrics(SM_CYCAPTION);
+	  vSize(this,
+			cx - 8,   // total width minus border width
+			cy - 32); // total height minus border + title bar
+	  setupListCtrl(cx);
+	}
+	else {
+	  setupListCtrl(0);
+	}
+
+	checkButtonStatus();
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
 }
@@ -253,24 +301,35 @@ void CDlgProcessSequence::OnDblclkProcessList(NMHDR* pNMHDR, LRESULT* pResult)
 	*pResult = 0;
 }
 
-void CDlgProcessSequence::setupListCtrl()
+void CDlgProcessSequence::setupListCtrl(int cx)
 {
 	ListView_SetExtendedListViewStyleEx(m_processListCtrl.m_hWnd, LVS_EX_CHECKBOXES, LVS_EX_CHECKBOXES);
+	if (cx <= 0) { cx = 600; } // default width
+	else { cx -= 8 * 2/* distance to left border */ + (365-284)*2/* distance to right border */; }
 
 	LV_COLUMN lv;
 	lv.mask = LVCF_FMT | LVCF_TEXT | LVCF_WIDTH;
 	lv.fmt = LVCFMT_LEFT;
-	lv.cx = 180;
-	lv.pszText = _T("Processor");
-	ASSERTX( -1 != m_processListCtrl.InsertColumn(0, &lv));
 
-	lv.cx = 60;
-	lv.pszText = _T("Input");
-	ASSERTX( -1 != m_processListCtrl.InsertColumn(1, &lv));
-
-	lv.cx = 180;
-	lv.pszText = _T("Output");
-	ASSERTX( -1 != m_processListCtrl.InsertColumn(2, &lv));
+	struct list_columns {
+#ifdef _UNICODE /* mad 14092005 */
+		WCHAR
+#else
+		char
+#endif
+			oszName[10];
+		int width;
+	} asListColumns[] = {
+		{ { 'P', 'r', 'o', 'c', 'e', 's', 's', 'o', 'r', '\0'}, cx*3/10 }, // 3
+		{ { 'I', 'n', 'p', 'u', 't', '\0'}, cx/10 },       // 1
+		{ { 'O', 'u', 't', 'p', 'u', 't', '\0'}, cx*3/10 },    // 3
+		{ { 'N', 'a', 'm', 'e', '\0'}, cx*3/10 }       // 3
+	};
+	for (int iColumn= 0; iColumn < sizeof(asListColumns)/sizeof(asListColumns[0]); iColumn++) {
+		lv.cx      = asListColumns[iColumn].width;
+		lv.pszText = asListColumns[iColumn].oszName;
+		ASSERTX( -1 != m_processListCtrl.InsertColumn(iColumn, &lv));
+	}
 
 	m_iconList.Create(GetSystemMetrics(SM_CXSMICON),
 			GetSystemMetrics(SM_CYSMICON), TRUE, 1, 2); // this last param is a mystery
@@ -420,3 +479,34 @@ void CDlgProcessSequence::updateCheckBoxes()
 		(*m_ppProcesses)[i]->m_bEnabled = ListView_GetCheckState(m_processListCtrl.m_hWnd, i);
 }
 #endif // hab15a7
+
+void CDlgProcessSequence::OnSize(UINT nType, int cx, int cy)
+{
+	CDialog::OnSize(nType, cx, cy);
+
+	// TODO: Add your message handler code here
+	vSize(this, cx, cy);
+}
+
+void CDlgProcessSequence::OnDestroy()
+{
+	CDialog::OnDestroy();
+
+	// TODO: Add your message handler code here
+	WINDOWPLACEMENT wp; /* wndpl */
+	GetWindowPlacement(&wp);
+
+	lPutWindowPlacement(oszDialogName, &wp);
+}
+
+void CDlgProcessSequence::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	CDialog::OnGetMinMaxInfo(lpMMI);
+	lpMMI->ptMinTrackSize.x = BASE_WIDTH * 2 + 2 * ::GetSystemMetrics(SM_CXFRAME);
+	lpMMI->ptMinTrackSize.y = BASE_HEIGHT * 2 + 2 * ::GetSystemMetrics(SM_CYFRAME) +
+							  ::GetSystemMetrics(SM_CYCAPTION);
+//	lpMMI->ptMaxTrackSize.x = lpMMI->ptMinTrackSize.x;
+
+}

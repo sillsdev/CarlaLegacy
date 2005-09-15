@@ -127,7 +127,12 @@ void CEnvironmentListCtrl::makeColumns()
 	this->ModifyStyle(NULL, LVS_OWNERDRAWFIXED);	// couldn't think of a handy place to put this...
 
 	insertColumn(_T("Comment"), 2000, NULL);// use the list horiz scroll bar to show a long comment
-	insertColumn(_T("Environment"), 150, NULL);
+
+	CRect rect;
+	GetClientRect(&rect);
+	int nColInterval = rect.Width()/3;  // relative positioning; first column takes one third
+	insertColumn(_T("Environment"), nColInterval, NULL);
+	// insertColumn(_T("Environment"), 150, NULL);
 }
 
 // override

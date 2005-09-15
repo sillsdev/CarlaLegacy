@@ -352,6 +352,9 @@ CString CProcess::getListCtrlText(int iColumn)
 		case 2: return getOutputTypeDisplayName();
 				break;
 
+		case 3: return getSpecificName();
+				break;
+
 		default: ASSERTX(FALSE);
 				return CString(_T("COLUMN ERROR")); ;
 				break;

@@ -486,6 +486,11 @@
 #define IDC_CHECKToneParseMorphnames    3050
 #define IDC_CHECKCreateFinalCatTestModifyTests 3051
 #define IDC_CHECKDisableFinalCatModifyTests 3052
+#define IDC_STATICcomments              3054
+#define IDC_STATICcategory              3055
+#define IDC_STATICto                    3056
+#define IDC_STATICapply                 3057
+#define IDC_Uncheck                     3058
 #define IDLangSetup                     32771
 #define ID_FILE                         32772
 #define IDProjectSetup                  32773
@@ -549,7 +554,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        267
 #define _APS_NEXT_COMMAND_VALUE         32831
-#define _APS_NEXT_CONTROL_VALUE         3054
+#define _APS_NEXT_CONTROL_VALUE         3059
 #define _APS_NEXT_SYMED_VALUE           148
 #endif
 #endif

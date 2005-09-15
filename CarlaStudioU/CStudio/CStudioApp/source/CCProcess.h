@@ -31,6 +31,7 @@ public:
 	static LPCSTR ID() {return "CC-DLL";}
 	virtual LPCSTR  getProcessorID() const {return ID();}
 	virtual LPCSTR getDisplayName() const { return CCDISPLAYNAME;}
+	virtual CString getSpecificName() { return m_sName; };
 	virtual BOOL doEditDialog(int iFunctionCode);
 
 	// Processing

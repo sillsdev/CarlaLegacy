@@ -32,6 +32,8 @@ public:
 	static LPCSTR ID() {return "Batch";}
 	virtual LPCSTR  getProcessorID() const {return ID();}
 	virtual LPCSTR getDisplayName() const { return BATCHDISPLAYNAME;}
+
+	virtual CString getSpecificName() { return m_sName; };
 	virtual BOOL doEditDialog(int iFunctionCode);
 
 	// Processing

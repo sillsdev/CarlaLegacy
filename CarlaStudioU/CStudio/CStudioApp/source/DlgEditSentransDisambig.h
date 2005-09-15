@@ -8,6 +8,7 @@
 //
 #include "DlgEnvConstrainedRule.h"
 #include "sdfedit.h"
+#include "ResizingUtils.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditSentransDisambig dialog
@@ -39,9 +40,14 @@ public:
 // Implementation
 protected:
 
+	void vSize(int cx, int cy);
 	// Generated message map functions
 	//{{AFX_MSG(CDlgEditSentransDisambig)
 	afx_msg void OnJump();
+	virtual BOOL OnInitDialog();
+	afx_msg void OnSize(UINT nType, int cx, int cy);
+	afx_msg void OnDestroy();
+	afx_msg void OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
