@@ -2482,16 +2482,16 @@ static void WriteWordAnalysisAsXml(WordAnalysis *pAnal, FILE *pOutputFP_in, Text
 #define WANT_SUFFIX     3
 
   char *pszAnalysis;
-  char bufferAnalysis[BUFSIZE];
   char *pszDecomposition;
-  char bufferDecomp[BUFSIZE];
   char *pszCategory;
-  char bufferCategory[BUFSIZE];
   char *pszProperties;
-  char bufferProperties[BUFSIZE];
   char *pszFeatures;
-  char bufferFeatures[BUFSIZE];
   char *pszUnderlyingForm;
+  char bufferAnalysis[BUFSIZE];
+  char bufferDecomp[BUFSIZE];
+  char bufferCategory[BUFSIZE];
+  char bufferProperties[BUFSIZE];
+  char bufferFeatures[BUFSIZE];
   char bufferUnderlyingForm[BUFSIZE];
   unsigned char cDecomp = '-';
   unsigned char cSplitter = '=';
@@ -2510,21 +2510,41 @@ static void WriteWordAnalysisAsXml(WordAnalysis *pAnal, FILE *pOutputFP_in, Text
   pszProperties = NULL;
   pszFeatures = NULL;
   pszUnderlyingForm = NULL;
+memset(&bufferAnalysis, '\0', BUFSIZE);
+memset(&bufferDecomp, '\0', BUFSIZE);
+memset(&bufferCategory, '\0', BUFSIZE);
+memset(&bufferProperties, '\0', BUFSIZE);
+memset(&bufferFeatures, '\0', BUFSIZE);
+memset(&bufferUnderlyingForm, '\0', BUFSIZE);
 
-
+/*  writeWordAnalysisList(pAnal, pOutputFP_in); */
 
 /* save original of these because we change them */
   pszAnalysis = strcpy(bufferAnalysis, pAnal->pszAnalysis);
+  /*
+   * I do not know why, but the following causes the decomp, etc to come out
+   * correctly in the Patr100.DLL when invoked by CarlaStudio Unicode version.
+   * If we leave it out, the content of the underlying form field is used.
+   */
+  fprintf(pOutputFP_in, "", bufferDecomp);
   if (pAnal->pszDecomposition != NULL)
 	pszDecomposition = strcpy(bufferDecomp, pAnal->pszDecomposition);
+  fprintf(pOutputFP_in, "", bufferCategory);
   if (pAnal->pszCategory != NULL)
 	pszCategory = strcpy(bufferCategory, pAnal->pszCategory);
+  fprintf(pOutputFP_in, "", bufferProperties);
   if (pAnal->pszProperties != NULL)
 	pszProperties = strcpy(bufferProperties, pAnal->pszProperties);
+  fprintf(pOutputFP_in, "", bufferFeatures);
   if (pAnal->pszFeatures != NULL)
 	pszFeatures = strcpy(bufferFeatures, pAnal->pszFeatures);
+  fprintf(pOutputFP_in, "", bufferUnderlyingForm);
   if (pAnal->pszUnderlyingForm != NULL)
 	pszUnderlyingForm = strcpy(bufferUnderlyingForm, pAnal->pszUnderlyingForm);
+  /*
+  fprintf(pOutputFP_in, "\nfd at beginning: %s\n", pszFeatures);
+  fprintf(pOutputFP_in, "\nfdbuf at beginning: %s\n", bufferFeatures);
+  */
 /*
  *  scan across the analysis string
  */
