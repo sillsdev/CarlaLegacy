@@ -6766,6 +6766,8 @@ if (pWord != NULL)
 				{
 				writePATRParses(pWordParse,
 								pAmple_in->pLogFP,
+				NULL,
+				&pAmple_in->sTextCtl,
 								&pAmple_in->sPATR);
 				putc('\n', pAmple_in->pLogFP);
 				}
@@ -6859,7 +6861,8 @@ for ( pParse = pParses_in ; pParse ; pParse = pParse->pNext )
 	{
 	if (pParse->pParse != NULL)
 	{
-	writePATRParses(pParse->pParse, pOutputFP_in, &pAmple_in->sPATR);
+	writePATRParses(pParse->pParse, pOutputFP_in, NULL,
+			&pAmple_in->sTextCtl, &pAmple_in->sPATR);
 	putc('\n', pOutputFP_in);
 	}
 	if (iAmbigCount > 1)
