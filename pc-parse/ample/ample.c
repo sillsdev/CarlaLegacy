@@ -176,7 +176,7 @@ static AmpleData	sAmpleData_m = {
 	'|',		/* -c:	cBeginComment */
 	FALSE,		/* -g	bRootGlosses */
 	FALSE,		/* -q	bQuiet */
-	2,			/* -d:	iMaxTrieDepth */
+	DEFAULTTRIEDEPTH,		/* -d:	iMaxTrieDepth */
 	15,			/* -n:	iMaxMorphnameLength */
 	AMPLE_TRACE_OFF,	/* -t	eTraceAnalysis */
 	NULL, 0,		/*      optional string for trace output */
@@ -620,10 +620,10 @@ Usage: ample [options]\n\
 \n\
 -a       enable Allomorph condition debugging\n\
 -b       enaBle allomorph identifiers\n\
-", stderr); fputs("\
+", stderr); fprintf(stderr, "\
 -c char  select the record Comment character (default is '|')\n\
--d num   select the dictionary trie Depth (default is 2)\n\
-", stderr);
+-d num   select the dictionary trie Depth (default is %d)\n\
+", DEFAULTTRIEDEPTH);
 #ifdef EXPERIMENTAL
 fputs("-e file  File containing a PC-PATR style word grammar\n", stderr);
 #endif /* EXPERIMENTAL */

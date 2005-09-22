@@ -177,6 +177,7 @@ static const struct rwtable {     /* reserved word table */
 	{"orderclass",          token(LX_ORDRCLASS)},
 	{"orderclassmax",       token(LX_ORDRCLASSMAX)}, /* hab360 */
 	{"orderclassmin",       token(LX_ORDRCLASS)}, /* hab360 */
+	{"outputcategory",      token(LX_COMPUTEDCATEGORY)},
 	{"prefix",              token(LX_PRFX)},
 	{"property",            token(LX_PROPERTY)},
 	{"punctuation",         token(LX_PUNCTUATION)},	/* hab 3.3.0 */

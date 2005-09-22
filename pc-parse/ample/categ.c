@@ -145,7 +145,7 @@ const char *		name;
 const StringList *	pCategories_in;
 {
 const StringList *	s;
-unsigned char		k;
+int		k;
 /*
  *  check for an empty name
  */
@@ -159,7 +159,7 @@ for (	s = pCategories_in, k = 1 ;
 	s = s->pNext,     ++k )
 	{
 	if (strcmp(name,s->pszString) == 0)
-		return(k);
+		return((unsigned char) (k));
 	}
 return( 0 );
 }
@@ -257,7 +257,7 @@ FILE *			pLogFP_in;
 char *name;
 char members[256];
 register int i;
-register char j;
+register unsigned char j;
 register char *p;
 register AmpleCategoryClass *cp;
 char *q;

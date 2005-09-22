@@ -32,6 +32,7 @@
  */
 #include "ample.h"
 #include "ampledef.h"
+#include "ampcat.h"
 
 #ifdef hab3312
 /*****************************************************************************
@@ -229,6 +230,7 @@ static int	testAmpleUserDefined	P((AmpleHeadList * left,
 					   AmpleTestNode * tree,
 					   AmpleData *     pAmple_in));
 static char *		get_allo	P((AmpleHeadList * morph));
+static char *		get_allo_static	P((AmpleHeadList * morph));
 static AmpleHeadList *	getpos		P((int pos));
 static char *		get_surf	P((int pos));
 static char *		get_punct 	P((int pos)); /* 3.3.0 hab */
@@ -294,6 +296,14 @@ static char *		pszUnderlying_m = NULL;
  *  surface form string
  */
 static char *		pszSurfaceForm_m = NULL;
+/*
+ *  last-asked allo string
+ */
+static char *		pszLastAllo = NULL;
+/*
+ * computed category index
+ */
+static int			iComputedCat;
 /*
  *  depth of indentation for tracing
  */
@@ -382,10 +392,11 @@ if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
 for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 	{
 	pszSurfaceForm_m = pCurrentWord_m->pTemplate->paWord[i];
-	pszDeeptail_m    = pszSurfaceForm_m;
-	bRootFound_m     = FALSE;
-	bUsesPrevWord_m  = FALSE;
-	bUsesNextWord_m  = FALSE;
+	pszLastAllo		= duplicateString(pszSurfaceForm_m);
+	pszDeeptail_m	= pszSurfaceForm_m;
+	bRootFound_m	= FALSE;
+	bUsesPrevWord_m	= FALSE;
+	bUsesNextWord_m	= FALSE;
 	/*
 	 *  Process word recursively starting with prefix, followed by root, and
 	 *  suffix, with infix appropriately mingled in.
@@ -420,6 +431,7 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 	}
 
 	bAllosTried = get_prefix(NULL, pszSurfaceForm_m, 0, 0, 0, pAmple_in);
+	freeMemory(pszLastAllo);
 
 	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
 	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
@@ -539,7 +551,6 @@ int		pcsize	 = 0;	/* total size of category output */
 int		propsize = 0;	/* total size of properties */
 int		fdsize	 = 0;	/* total size of feature descriptors */
 int		ufsize	 = 0;	/* total size of underlying forms */
-int		finalcat;	/* final category index */
 AmpleHeadList *	hp;
 char *		dp  = NULL;
 char *		nwp = NULL;
@@ -661,28 +672,32 @@ if (pAmple_in->iOutputFlags & WANT_UNDERLYING)
 	up = pszUnderlying_m = allocMemory(ufsize);	/* Space for uf's */
 	*pszUnderlying_m = NUL;			/* Init to null */
 	}
-if (	(pAmple_in->eWriteCategory != AMPLE_NO_CATEGORY) &&
-	(pAmpleLeftHead_m != NULL) &&
-	(pAmpleRightHead_m != NULL) )
-	{					/* If outputting category */
-	/*
-	 *	If prefix last and prefix, output prefix cat
-	 */
+if (	(pAmple_in->eWriteCategory == AMPLE_NO_CATEGORY) ||
+	(pAmpleLeftHead_m == NULL) ||
+	(pAmpleRightHead_m == NULL) ) {
+	iComputedCat = 0;
+}
+else {	/* If outputting category */
 #ifndef hab340
-	if (    (pAmple_in->eWriteCategory & AMPLE_PREFIX_CATEGORY) &&
-		(   (pAmpleLeftHead_m->eType == AMPLE_PFX)  ||
-		(pAmpleLeftHead_m->eType == AMPLE_IFX) ) )
+	int eWhichCategory = (pAmple_in->eWriteCategory & AMPLE_AFFIX);
 #else
-	if (    (pAmple_in->eWriteCategory == AMPLE_PREFIX_CATEGORY) &&
+	int eWhichCategory = pAmple_in->eWriteCategory;
+#endif	/* hab340 */
+		/*
+		 *	If prefix last and prefix, output prefix cat
+		 */
+	if (eWhichCategory == AMPLE_COMPUTED_CATEGORY) {
+		iComputedCat = computeCategory(pAmple_in, pAmpleLeftHead_m, pAmpleRightHead_m);
+	}
+	else if (    (eWhichCategory == AMPLE_PREFIX_CATEGORY) &&
 		(   (pAmpleLeftHead_m->eType == AMPLE_PFX)  ||
-		(pAmpleLeftHead_m->eType == AMPLE_IFX) ) )
-#endif /* hab340 */
-	finalcat = (int)(pAmpleLeftHead_m->iToCategory);
+			(pAmpleLeftHead_m->eType == AMPLE_IFX) ) )
+	iComputedCat = (int)(pAmpleLeftHead_m->iToCategory);
 	/*
 	 *	Else (suffix last or no prefix) If suffix output its cat
 	 */
 	else if (pAmpleRightHead_m->eType == AMPLE_SFX)
-	finalcat = (int)(pAmpleRightHead_m->iToCategory);
+	iComputedCat = (int)(pAmpleRightHead_m->iToCategory);
 	/*
 	 *	Else (no suffix) If prefix, output its cat
 	 */
@@ -692,7 +707,7 @@ if (	(pAmple_in->eWriteCategory != AMPLE_NO_CATEGORY) &&
 #else
 	else if (pAmpleLeftHead_m->eType == AMPLE_PFX)
 #endif /* hab3319 */
-	finalcat = (int)(pAmpleLeftHead_m->iToCategory);
+	iComputedCat = (int)(pAmpleLeftHead_m->iToCategory);
 	/*
 	 *	Else output root cat
 	 */
@@ -701,15 +716,15 @@ if (	(pAmple_in->eWriteCategory != AMPLE_NO_CATEGORY) &&
 				/* could be compound roots;
 				   use headedness */
 	  if (pAmple_in->eWriteCategory & AMPLE_COMPOUND_ROOT_LEFTHEAD)
-	finalcat = (int)(pAmpleLeftHead_m->iROOTCATEG);
+		iComputedCat = (int)(pAmpleLeftHead_m->iROOTCATEG);
 	  else
-	finalcat = (int)(pAmpleRightHead_m->iROOTCATEG);
+		iComputedCat = (int)(pAmpleRightHead_m->iROOTCATEG);
 #else
-	finalcat = (int)(pAmpleRightHead_m->iROOTCATEG);
+	iComputedCat = (int)(pAmpleRightHead_m->iROOTCATEG);
 #endif /* hab340 */
-	pszFinalCat = findAmpleCategoryName(finalcat, pAmple_in->pCategories);
+	pszFinalCat = findAmpleCategoryName(iComputedCat, pAmple_in->pCategories);
 	if (pszFinalCat == NULL)
-	pszFinalCat = "?";
+		pszFinalCat = "?";
 	/*
 	 *	increment size by length of finalcat plus space plus final nul
 	 */
@@ -955,7 +970,7 @@ return(np);
  *    list of dictionary entries
  */
 static AmpleAmlist * get_entries( key, etype, pAmple_in)
-char *		key;
+char *	key;
 int		etype;
 AmpleData *	pAmple_in;
 {
@@ -964,42 +979,59 @@ AmpleAllomorph *	pAllo;
 AmpleAmlist *		amset = NULL;	/* list of allomorphs collected */
 AmpleAmlist *		pNew;
 int			i;
-int			len;
-int			cSave;
+int			len, searchlen, alen;
+Trie *tp;
 
 if (key == NULL)
 	return NULL;
+
 len = strlen(key);
 /*
  *  because allomorphs are added at the beginning of the list, this produces
  *  a list with the longest matches first
  */
-for ( i = 0 ; i <= len ; ++i )
+if (len > pAmple_in->iMaxTrieDepth) /* only search up to the max trie depth */
+	searchlen = pAmple_in->iMaxTrieDepth;
+else
+	searchlen = len;
+
+/* while we move through the word, we also move through the trie. */
+for ( i = 0, tp = pAmple_in->pDictionary; i <= searchlen && tp != NULL; i++ )
 	{
-	cSave = key[i];
-	key[i] = NUL;
 	/* don't repeat Trie search needlessly */
-	if (i <= pAmple_in->iMaxTrieDepth)
-	pAllomorphs = findDataInTrie(pAmple_in->pDictionary, key);
+	pAllomorphs = (AmpleAllomorph *) (tp->pTrieInfo);
 	for ( pAllo = pAllomorphs ; pAllo != NULL ; pAllo = pAllo->pNext )
 	{
-	if ((etype != (pAllo->iMORPHTYPE & ATYPE)) &&
-		(etype != (pAllo->iMORPHTYPE & AMPLE_NFX)))	/* interfix is subtyped */
-		continue;					/* wrong type */
-	if ((pAllo->iAllomorphFlags & ACTIVE) == 0)
-		continue;					/* not selected */
-	if (strcmp(key, pAllo->pszAllomorph) == 0)
-		{
-		pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
-		pNew->amp = (etype == AMPLE_ROOT) ?
-				  copy_am(etype, pAllo, pAmple_in) : pAllo;
-		pNew->alen = strlen(key);
-		pNew->amlink = amset;
-		amset = pNew;
+		if ((etype != (pAllo->iMORPHTYPE & ATYPE)) &&
+			(etype != (pAllo->iMORPHTYPE & AMPLE_NFX)))	{/* interfix is subtyped */
+			/* wrong type */
+		}
+		else if ((pAllo->iAllomorphFlags & ACTIVE) == 0) {
+			/* not selected */
+		}
+		else {
+			alen = strlen(pAllo->pszAllomorph);
+			if (alen == i ||
+				(alen <= len &&
+				 memcmp(key + i, pAllo->pszAllomorph + i, alen - i) == 0)) {
+				pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
+				pNew->amp = (etype == AMPLE_ROOT) ?
+						  copy_am(etype, pAllo, pAmple_in) : pAllo;
+				pNew->alen = alen;
+				pNew->amlink = amset;
+				amset = pNew;
+			}
 		}
 	}
-	key[i] = cSave;
+	/*
+	 *  check for current key letter in children's letters
+	 */
+	tp = tp->pChildren;
+	while (	tp != NULL &&
+			tp->cLetter != (unsigned char)(key[i])) {
+		tp = tp->pSiblings;
 	}
+}
 return(amset);
 } /* end get_entries() */
 
@@ -4892,7 +4924,7 @@ return( utest( tree->uLeft.pChild, pAmple_in) );
 static char * get_allo(morph)
 AmpleHeadList *morph;
 {
-char *pszAllo = NULL;
+char *pszAlloNS = NULL;
 unsigned uiAlloSize = 0;
 char *p;
 AmpleHeadList *hp;
@@ -4900,8 +4932,8 @@ AmpleHeadList *hp;
 if (morph == pTestCurrent_m)
 	{					/* handle the easy case first */
 	uiAlloSize = iTestAlloLength_m + 1;
-	pszAllo = strncpy( allocMemory(uiAlloSize), pszTestString_m, iTestAlloLength_m );
-	return( pszAllo );			/* return its address */
+	pszAlloNS = strncpy( allocMemory(uiAlloSize), pszTestString_m, iTestAlloLength_m );
+	return( pszAlloNS );			/* return its address */
 	}
 
 for (	hp = pAmpleLeftHead_m, p = pszSurfaceForm_m ;
@@ -4913,8 +4945,29 @@ if ((hp == (AmpleHeadList *)NULL) || (hp->uiAllomorphLength == 0))
 	return( duplicateString("") );	/* nothing found or size zero */
 
 uiAlloSize = hp->uiAllomorphLength + 1;
-pszAllo = strncpy( allocMemory(uiAlloSize), p, hp->uiAllomorphLength );
-return( pszAllo );			/* return its address */
+pszAlloNS = strncpy( allocMemory(uiAlloSize), p, hp->uiAllomorphLength );
+return( pszAlloNS );			/* return its address */
+}
+
+static char * get_allo_static(morph)
+AmpleHeadList *morph;
+{
+	char *p;
+	AmpleHeadList *hp;
+
+	if (morph == pTestCurrent_m) /* handle the easy case first */
+		/* return its address */
+		return strncpy(pszLastAllo, pszTestString_m, iTestAlloLength_m );
+
+	for (	hp = pAmpleLeftHead_m, p = pszSurfaceForm_m ;
+		(hp != (AmpleHeadList *)NULL) && (hp != morph) ;
+		hp = hp->pRight )
+		p += hp->uiAllomorphLength;		/* move pointer to allomorph */
+
+	if ((hp == (AmpleHeadList *)NULL) || (hp->uiAllomorphLength == 0))
+		return strcpy(pszLastAllo, "");	/* nothing found or size zero */
+
+	return strncpy( pszLastAllo, p, hp->uiAllomorphLength );	/* return its address */
 }
 
 /***************************************************************************
@@ -5087,7 +5140,6 @@ int		rval;
 int		lval;
 char *		p;
 char *		pszAllo;
-char *		pszAllo2;
 char **		paPrevSurfaceForms = NULL;
 char **		paNextSurfaceForms = NULL;
 char **		paSurfaceForms;
@@ -5225,18 +5277,14 @@ switch (tree->iOpCode & OP_MASK)
 	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
 		(right.pszString != (char *)NULL) )
 		{
-		pszAllo = get_allo(hp);
-		val = (strcmp( pszAllo, right.pszString) == 0);
-		freeMemory(pszAllo);
+		val = (strcmp(get_allo_static(hp), right.pszString) == 0);
 		}
 	break;
 
 	case ALLO_MEMBER:	/* 'allomorph' 'is' 'member' IDENTIFIER */
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
 		{
-		pszAllo = get_allo(hp);
-		val = isStringClassMember( pszAllo, right.pStringClass);
-		freeMemory(pszAllo);
+		val = isStringClassMember(get_allo_static(hp), right.pStringClass);
 		}
 	break;
 
@@ -5245,48 +5293,42 @@ switch (tree->iOpCode & OP_MASK)
 		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
 		{
 		pszAllo  = get_allo(hp);
-		pszAllo2 = get_allo(hp2);
-		val = (strcmp(pszAllo, pszAllo2) == 0);
+		val = (strcmp(pszAllo, get_allo_static(hp2)) == 0);
 		freeMemory(pszAllo);
-		freeMemory(pszAllo2);
 		}
 	break;
 
 	case ALLO_MATCH:	/* 'allomorph' 'matches'  STRING */
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
 		{
-		pszAllo = get_allo(hp);
 		if (    (left.iPosition == ARGLEFT) ||
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
 		{					/* match end */
-		val = matchEnd(pszAllo, right.pszString);
+		val = matchEnd(get_allo_static(hp), right.pszString);
 		}
 		else
 		{					/* match beginning */
-		val = matchBeginning(pszAllo, right.pszString);
+		val = matchBeginning(get_allo_static(hp), right.pszString);
 		}
-		freeMemory(pszAllo);
 		}
 	break;
 
 	case AL_MAT_MEM: /* 'allomorph' 'matches' 'member' IDENTIFIER */
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
 		{
-		pszAllo = get_allo(hp);
 		if (    (left.iPosition == ARGLEFT) ||
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
 		{					/* match end */
-		val = matchEndWithStringClass(pszAllo,
+		val = matchEndWithStringClass(get_allo_static(hp),
 						  right.pStringClass);
 		}
 		else
 		{					/* match beginning */
-		val = matchBeginWithStringClass(pszAllo,
+		val = matchBeginWithStringClass(get_allo_static(hp),
 						right.pStringClass);
 		}
-		freeMemory(pszAllo);
 		}
 	break;
 
@@ -5295,15 +5337,13 @@ switch (tree->iOpCode & OP_MASK)
 		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
 		{
 		pszAllo  = get_allo(hp);
-		pszAllo2 = get_allo(hp2);
 		if (    (left.iPosition == ARGLEFT) ||
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
-		val = matchEnd(pszAllo, pszAllo2);
+		val = matchEnd(pszAllo, get_allo_static(hp2));
 		else
-		val = matchBeginning(pszAllo, pszAllo2);
+		val = matchBeginning(pszAllo, get_allo_static(hp2));
 		freeMemory(pszAllo);
-		freeMemory(pszAllo2);
 		}
 	break;
 
@@ -5336,9 +5376,7 @@ switch (tree->iOpCode & OP_MASK)
 	if (	((hp2 = getpos(right.iValue)) != (AmpleHeadList *)NULL) &&
 		((p = get_surf(left.iPosition)) != (char *)NULL) )
 		{
-		pszAllo2 = get_allo(hp2);
-		val = (strcmp( p, pszAllo2 ) == 0);
-		freeMemory(pszAllo2);
+		val = (strcmp( p, get_allo_static(hp2) ) == 0);
 		if (p == pszTempSurface_m)
 		{
 		freeMemory( pszTempSurface_m );
@@ -5394,18 +5432,16 @@ switch (tree->iOpCode & OP_MASK)
 	if (	((hp2 = getpos(right.iValue)) != (AmpleHeadList *)NULL) &&
 		((p = get_surf(left.iPosition)) != (char *)NULL) )
 		{
-		pszAllo2 = get_allo(hp2);
 		if (    (left.iPosition == ARGLEFT) ||
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
 		{
-		val = matchEnd( p, pszAllo2 );
+		val = matchEnd( p, get_allo_static(hp2) );
 		}
 		else
 		{
-		val = matchBeginning( p, pszAllo2 );
+		val = matchBeginning( p, get_allo_static(hp2) );
 		}
-		freeMemory(pszAllo2);
 		if (p == pszTempSurface_m)
 		{
 		freeMemory( pszTempSurface_m );
@@ -5607,6 +5643,28 @@ switch (tree->iOpCode & OP_MASK)
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
 		{
 		val = (get_to(hp) == right.iValue);
+		}
+	break;
+
+	case COMPUTED_IS: /* 'computedcategory 'is' IDENTIFIER */
+		{
+			if (iComputedCat == 0) {
+				val = 0;
+			}
+			else {
+				val = (iComputedCat == right.iValue);
+			}
+		}
+	break;
+
+	case COMPUTED_MEMBER: /* 'computedcategory 'is' 'member' IDENTIFIER */
+		{
+			if (iComputedCat == 0) {
+				val = 0;
+			}
+			else {
+				val = isAmpleCategClassMember(iComputedCat, right.pCategClass);
+			}
 		}
 	break;
 
@@ -6204,7 +6262,7 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 	store_AMPLE_trace(pAmple_in, pszFmt, pszStr);
 #ifndef HAVE_ALLOCA
 	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
-		pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML))
+		pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 		freeMemory(pszStr);
 #endif
 	iTracingDepth_m = -1;

@@ -311,7 +311,7 @@ if (pPATRMemory)
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
 pSetup_io->sData.cBeginComment                  = '|';
-pSetup_io->sData.iMaxTrieDepth                  = 2;
+pSetup_io->sData.iMaxTrieDepth                  = DEFAULTTRIEDEPTH;
 pSetup_io->sData.iMaxMorphnameLength            = 15;
 #ifndef hab365
 #ifdef EXPERIMENTAL

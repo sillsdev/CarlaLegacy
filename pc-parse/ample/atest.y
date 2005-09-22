@@ -72,6 +72,7 @@ static AmpleTestNode *	pAmpleTestTree_m = NULL;
 %token  <ival>  LX_MORPHNAME
 %token  <ival>  LX_PFINAL
 %token  <ival>  LX_PINITIAL
+%token  <ival>  LX_PCOMPUTED
 %token  <ival>  LX_PROPERTY
 %token  <ival>  LX_PUNCTUATION	/* 3.3.0 hab */
 %token  <ival>  LX_SURFACE
@@ -101,6 +102,7 @@ static AmpleTestNode *	pAmpleTestTree_m = NULL;
 %token  <ival>  LX_SUFX
 %token  <ival>  LX_TOCATEGORY
 %token  <ival>  LX_FROMCATEGORY
+%token  <ival>  LX_COMPUTEDCATEGORY
 %token  <ival>  LX_ORDRCLASS
 %token  <ival>  LX_NEXT
 %token  <ival>  LX_LAST
@@ -506,6 +508,20 @@ category_expr
 						pAmpleData_m->pCategories)) == 0)
 		id_error("category", $4);
 	$$ = makeAmpleTestInt(TO_IS, $1, iTemp_m);
+	}
+	| LX_COMPUTEDCATEGORY LX_IS LX_IDENTIFIER
+	{
+	if ((iTemp_m = findAmpleCategoryNumber($3,
+						pAmpleData_m->pCategories)) == 0)
+		id_error("category", $3);
+	$$ = makeAmpleTestInt(COMPUTED_IS, LX_PCOMPUTED, iTemp_m);
+	}
+	| LX_COMPUTEDCATEGORY LX_IS LX_MEMBER LX_IDENTIFIER
+	{
+	if ((pTempCatClass_m = findAmpleCategClass($4,
+						pAmpleData_m->pCategoryClasses)) == 0)
+		id_error("category class", $4);
+	$$ = makeAmpleTestCategClass(COMPUTED_MEMBER, LX_PCOMPUTED, pTempCatClass_m);
 	}
 	;
 

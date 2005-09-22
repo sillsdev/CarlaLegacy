@@ -32,7 +32,8 @@ SOURCES=ample.c    anal.c     analda.c   atest.y    categ.c    envchk.c   \
 		envpar.c   loadcc.c   loadtb.c   mktest.c   morcla.c   proper.c   \
 		putsd.c    select.c   setsd.c    spreds.l   version.c  writests.c \
 		cmdutil.c  mccpar.c   validch.c  puncla.c   dynstr.c   anccpar.c \
-		ample.h    ampledef.h stample.h  punclass.h version.h  \
+		ampcat.c \
+		ampcat.h   ample.h    ampledef.h stample.h  punclass.h version.h  \
 		fixflex.sed fixyacc.sed
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
@@ -59,10 +60,10 @@ XTESTBASES = adx.ctl ancd.tab intx.ctl if.dic pf.dic rt.dic sf.dic patr.grm \
 #
 LIBS = libample.a ../lib/libopac.a ../lib/libcport.a
 OBJ  = ample.o
-LIBO = anal.o     analda.o   atest.o    categ.o    envchk.o   envpar.o  \
-	   loadcc.o   loadtb.o   mktest.o   morcla.o   proper.o   select.o  \
-	   setsd.o    spreds.o   version.o  putsd.o    writests.o cmdutil.o \
-	   mccpar.o   validch.o  puncla.o   dynstr.o
+LIBO = ampcat.o   anal.o     analda.o   atest.o    categ.o    envchk.o  \
+	   envpar.o   loadcc.o   loadtb.o   mktest.o   morcla.o   proper.o  \
+	   select.o   setsd.o    spreds.o   version.o  putsd.o    writests.o \
+	   cmdutil.o  mccpar.o   validch.o  puncla.o   dynstr.o
 
 ample: $(OBJ) $(LIBS)
 	$(CC) -o ample $(OBJ) $(LIBS) @LIBS@
@@ -76,10 +77,10 @@ libample.a: $(LIBO)
 #
 LIBSP = libample_p.a ../lib/libopac_p.a ../lib/libcport_p.a
 OBJP  = ample.op
-LIBOP = anal.op     analda.op   atest.op    categ.op   envchk.op   envpar.op \
-		loadcc.op   loadtb.op   mktest.op   morcla.op  proper.op   select.op \
-		setsd.op    spreds.op   version.op  putsd.op   writests.op cmdutil.op \
-		mccpar.op   validch.op  puncla.op   dynstr.op
+LIBOP = ampcat.op   anal.op     analda.op   atest.op    categ.op   envchk.op \
+		envpar.op   loadcc.op   loadtb.op   mktest.op   morcla.op  proper.op \
+		select.op   setsd.op    spreds.op   version.op  putsd.op   writests.op \
+		cmdutil.op  mccpar.op   validch.op  puncla.op   dynstr.op
 
 ample_p: $(OBJP) $(LIBSP)
 	$(CC) -pg -o ample_p $(OBJP) $(LIBSP) @LIBS@
@@ -94,7 +95,7 @@ libample_p.a: $(LIBOP)
 LIBSX = libxample.a ../lib/libpatr.a ../lib/libcmd.a ../lib/libopac.a \
 		../lib/libcport.a
 OBJX  = ample.ox
-LIBOX = anal.ox   analda.ox  atest.ox   categ.ox  envchk.ox   envpar.ox  \
+LIBOX = ampcat.ox anal.ox   analda.ox  atest.ox   categ.ox  envchk.ox   envpar.ox  \
 		loadcc.ox loadtb.ox  mktest.ox  morcla.ox proper.ox   select.ox  \
 		setsd.ox  spreds.ox  version.ox putsd.ox  writests.ox cmdutil.ox \
 		mccpar.ox validch.ox puncla.ox  dynstr.ox anccpar.ox
@@ -113,7 +114,7 @@ libxample.a: $(LIBOX)
 LIBSXP=libxample_p.a ../lib/libpatr_p.a ../lib/libopac_p.a ../lib/libcmd_p.a \
 	   ../lib/libcport_p.a
 OBJXP =ample.oxp
-LIBOXP=anal.oxp   analda.oxp  atest.oxp   categ.oxp  envchk.oxp   envpar.oxp  \
+LIBOXP=ampcat.ox  anal.oxp   analda.oxp  atest.oxp   categ.oxp  envchk.oxp   envpar.oxp  \
 	   loadcc.oxp loadtb.oxp  mktest.oxp  morcla.oxp proper.oxp   select.oxp  \
 	   setsd.oxp  spreds.oxp  version.oxp putsd.oxp  writests.oxp cmdutil.oxp \
 	   mccpar.oxp validch.oxp puncla.oxp  dynstr.oxp anccpar.oxp
@@ -146,6 +147,7 @@ spreds.c: spreds.l fixflex.sed
 	mv spreds.c spredsl.c
 	sed -f fixflex.sed spredsl.c >spreds.c
 	rm -f spredsl.c
+ampcat.o   ampcat.op   ampcat.ox   ampcat.oxp:   ampcat.c   $(HEADERS)
 anal.o     anal.op     anal.ox     anal.oxp:     anal.c     $(HEADERS)
 analda.o   analda.op   analda.ox   analda.oxp:   analda.c   $(HEADERS)
 atest.o    atest.op    atest.ox    atest.oxp:    atest.c    $(HEADERS)

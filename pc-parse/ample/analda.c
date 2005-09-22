@@ -771,32 +771,38 @@ while (*rp != NUL)
 
 	case 'G':		/* category to output */
 		p2 = isolateWord(rp);
-		if ((*rp == 's') || (*rp == 'S'))
-#ifndef hab340
-		  {			/* reset any previous settings */
-		pAmple_io->eWriteCategory &= ~AMPLE_AFFIX;
-		pAmple_io->eWriteCategory |= AMPLE_SUFFIX_CATEGORY;
-		  }
+		if ((*rp == 's') || (*rp == 'S')) {
+#ifndef hab340	/* reset any previous settings */
+			pAmple_io->eWriteCategory &= ~AMPLE_AFFIX;
+			pAmple_io->eWriteCategory |= AMPLE_SUFFIX_CATEGORY;
 #else
-		pAmple_io->eWriteCategory = AMPLE_SUFFIX_CATEGORY;
-#endif /* hab340 */
-		else if ((*rp == 'p') || (*rp == 'P'))
-#ifndef hab340
-		  {			/* reset any previous settings */
-		pAmple_io->eWriteCategory &= ~AMPLE_AFFIX;
-		pAmple_io->eWriteCategory |= AMPLE_PREFIX_CATEGORY;
-		  }
+			pAmple_io->eWriteCategory = AMPLE_SUFFIX_CATEGORY;
+#endif			/* hab340 */
+		}
+		else if ((*rp == 'p') || (*rp == 'P')) {
+#ifndef hab340	/* reset any previous settings */
+			pAmple_io->eWriteCategory &= ~AMPLE_AFFIX;
+			pAmple_io->eWriteCategory |= AMPLE_PREFIX_CATEGORY;
 #else
 		pAmple_io->eWriteCategory = AMPLE_PREFIX_CATEGORY;
-#endif /* hab340 */
+#endif			/* hab340 */
+		}
+		else if ((*rp == 'c') || (*rp == 'C')) {
+#ifndef hab340	/* reset any previous settings */
+			pAmple_io->eWriteCategory &= ~AMPLE_AFFIX;
+			pAmple_io->eWriteCategory |= AMPLE_COMPUTED_CATEGORY;
+#else
+			pAmple_io->eWriteCategory = AMPLE_COMPUTED_CATEGORY;
+#endif			/* hab340 */
+		}
 		else if (pAmple_io->pLogFP != NULL)
-		fprintf(pAmple_io->pLogFP,
-			"%s\\cat must be followed by prefix or suffix\n",
-			errhead );
+			fprintf(pAmple_io->pLogFP,
+				"%s\\cat must be followed by prefix, suffix or computed\n",
+				errhead );
 		if ((*p2 == 'm') || (*p2 == 'M'))
-		pAmple_io->bWriteMorphCats = TRUE;	/* write morph cats */
+			pAmple_io->bWriteMorphCats = TRUE;	/* write morph cats */
 		else
-		pAmple_io->bWriteMorphCats = FALSE;	/* don't write ... */
+			pAmple_io->bWriteMorphCats = FALSE;	/* don't write ... */
 		break;
 
 #ifndef hab340

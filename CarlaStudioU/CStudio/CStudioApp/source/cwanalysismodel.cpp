@@ -135,7 +135,9 @@ CWAnalysisModel::CWAnalysisModel(CTextDisplayInfo* pTDI)
 		generalMCCs(pTDI),
 		compoundRootCatPairs(pTDI),
 		m_radioCatOutput(0, _T("Don't output word category"),
-							_T("Get word category from prefix"), _T("Get word category from suffix"))
+							_T("Get word category from prefix"),
+							_T("Get word category from suffix"),
+							_T("Compute category (either prefix or suffix)"))
 {
 }
 
@@ -399,12 +401,17 @@ BOOL CWAnalysisModel::loadFromFile(LPCTSTR lpszPathName, CWCommonModel& commonMo
 					CString sWord;
 					THROW_STR_IF_NOT(stream.word(sWord, FALSE), sField);
 
-//	enum {kNoOutputCat, kOutputPrefixCat, kOutputSuffixCat};
+//	enum {kNoOutputCat, kOutputPrefixCat, kOutputSuffixCat, kOutputComputedCat };
 					//finalCatIsPrefix = (tolower(sWord[0]) == 'p'); // else assume "suffix"
-					if(tolower(sWord[0]) == 'p') // else assume "suffix"
+					if (tolower(sWord[0]) == 'c') {       // "computed"
+						m_radioCatOutput.setData(kOutputComputedCat );
+					}
+					else if (tolower(sWord[0]) == 'p') {  // "prefix"
 						m_radioCatOutput.setData(kOutputPrefixCat);
-					else
+					}
+					else {                                // "suffix"
 						m_radioCatOutput.setData(kOutputSuffixCat);
+					}
 
 					if(stream.word(sWord, FALSE))
 					{
@@ -612,13 +619,17 @@ BOOL CWAnalysisModel::writeFile(CString & sPath, CWCommonModel& commonModel)
 
 	if(!(m_radioCatOutput == kNoOutputCat))
 	{
-		if(m_radioCatOutput == kOutputPrefixCat)
-			fout << "\\cat prefix ";
-		else //kOutputSuffixCat
-			fout << "\\cat suffix ";
-
+		if (m_radioCatOutput == kOutputPrefixCat) {
+			fout << "\\cat prefix";
+		}
+		else if (m_radioCatOutput == kOutputComputedCat) {
+			fout << "\\cat computed";
+		}
+		else {//kOutputSuffixCat
+			fout << "\\cat suffix";
+		}
 		if(outputAllMorphCats.isTrue())
-			fout << "morph";
+			fout << " morph";
 
 		fout << "\n";
 	}
