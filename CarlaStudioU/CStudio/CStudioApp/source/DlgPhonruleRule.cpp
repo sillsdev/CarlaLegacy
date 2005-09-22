@@ -18,7 +18,7 @@ static char THIS_FILE[] = __FILE__;
 // CDlgPhonruleRule dialog
 static const char *oszDialogName = "DlgPhonruleRule";
 #define BASE_WIDTH   289
-#define BASE_HEIGHT  201
+#define BASE_HEIGHT  215
 
 CDlgPhonruleRule::CDlgPhonruleRule(const CTextDisplayInfo* pTDI)
 	: CDlgEnvConstrainedRule(FALSE, CDlgPhonruleRule::IDD, pTDI)
@@ -86,6 +86,7 @@ void CDlgPhonruleRule::vSize(int cx, int cy)
 	CRect r;
 
 #define TOPBORDER (::GetSystemMetrics(SM_CYCAPTION) + ::GetSystemMetrics(SM_CYFRAME))
+#define GROUPBOXESFROMTOP 135
 
 	// sizing elements
 	tsSizingElement asSizingElements[] = {
@@ -95,20 +96,22 @@ void CDlgPhonruleRule::vSize(int cx, int cy)
 		// Aligned from the left or right hand side and the bottom
 		{ IDCANCEL, 114, 100, -44, 28, 0 },
 		{ IDOK, 232, 100, -44, 28, 0 },
-		{ IDC_CHECKEnabled, 16, 84, (183 - BASE_HEIGHT) * 2, 10*2, 1 }, // 8,183,42,10
+		{ IDC_CHECKEnabled, 16, 84, (197 - BASE_HEIGHT) * 2, 10*2, 1 }, // 8,183,42,10
 		// align things on the right hand side
-		{ IDC_EnvList, 58 * 2, -12, /*TOPBORDER + */28 * 2, 48*2, 1 },  // 58,28,224,48
-		{ IDC_Comments, 58 * 2, -12, /* TOPBORDER + */ 85 * 2, 28*2, 1 }, //58,85,224,28,
-		{ IDC_STATICapply, 174 * 2, -12, /* TOPBORDER + */ 119 * 2, 50*2, 1 } // 174,119,108,50
+		{ IDC_EnvList, 58 * 2, -12, /*TOPBORDER + */44 * 2, 48*2, 1 },  // 58,44,224,48
+		{ IDC_Comments, 58 * 2, -12, /* TOPBORDER + */ 101 * 2, 28*2, 1 }, //58,85,224,28,
+		{ IDC_STATICapply, 174 * 2, -12,
+			/* TOPBORDER + */ GROUPBOXESFROMTOP * 2, 50*2, 1 } // 174,135,108,50
 	};
 	vResize(this,cx,cy,asSizingElements,sizeof(asSizingElements)/sizeof(asSizingElements[0]));
 
 	/*
 	 * The To-box moves half steps and resizes half steps
 	 */
-	//    EDITTEXT        IDC_To,130,6,39,14,ES_AUTOHSCROLL
+	//    EDITTEXT        IDC_To,130,6,39,29,ES_AUTOHSCROLL
 	//    LTEXT           "To:",IDC_STATICto,114,9,12,8
-	//    EDITTEXT        IDC_From,58,6,43,14,ES_AUTOHSCROLL
+	//    EDITTEXT        IDC_From,58,6,43,29,ES_AUTOHSCROLL
+#define EDITTEXTHEIGHT 29 /* the from and to-boxes */
 	struct {
 		int iItem;
 		int iBaseLeft, // is distance from left hand boundary
@@ -120,8 +123,8 @@ void CDlgPhonruleRule::vSize(int cx, int cy)
 	} asFixedRHSHalfElements[] = // fixed right hand side
 	{
 		{ IDC_STATICto, 228, 24, 18, 16, 0,1 },
-		{ IDC_To,       260, 78, 12, 18*2, 1,1 },
-		{ IDC_From,     58*2, 43*2, 12, 18*2, 1,0 } // 58,6,43,14
+		{ IDC_To,       260, 78, 12, EDITTEXTHEIGHT*2, 1,1 },
+		{ IDC_From,     58*2, 43*2, 12, EDITTEXTHEIGHT*2, 1,0 } // 58,6,43,14
 	};
 	for (int iItem = 0; iItem < sizeof(asFixedRHSHalfElements)/sizeof(asFixedRHSHalfElements[0]); iItem++) {
 	  pE = (CEdit*) GetDlgItem(asFixedRHSHalfElements[iItem].iItem);

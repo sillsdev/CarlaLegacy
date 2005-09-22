@@ -17,7 +17,7 @@ static char THIS_FILE[] = __FILE__;
 // CDlgEditSentransDisambig dialog
 static const char *oszDialogName = "DlgEditSentransDisambig";
 #define BASE_WIDTH   303 // should correspond to the values in the .rc file!
-#define BASE_HEIGHT  178
+#define BASE_HEIGHT  196
 
 
 CDlgEditSentransDisambig::CDlgEditSentransDisambig(const CTextDisplayInfo* pTDI)
@@ -120,17 +120,19 @@ void CDlgEditSentransDisambig::vSize(int cx, int cy)
 	CRect r;
 
 	// top of the environment list
-#define ENVLISTTOP (::GetSystemMetrics(SM_CYCAPTION) + ::GetSystemMetrics(SM_CYFRAME) + 44)
+#define ENVLISTTOP 84
+#define EDITTEXTHEIGHT 27
+#define BUTTONSFROMTOP 176
 
 	// Align things from boundary (left or right) and bottom
 	tsSizingElement asSizingElements[] =
 	{
-		{ IDCANCEL, (BASE_WIDTH - 246) * 2, 100, -1*(BASE_HEIGHT - 159) * 2, 28, 0 },
-		{ IDOK,     (BASE_WIDTH - 174) * 2, 100, -1*(BASE_HEIGHT - 159) * 2, 28, 0 },
-		{ IDC_CHECKEnabled, (6) * 2, 84, -1*(BASE_HEIGHT - 163) * 2, 20, 1 },
-		{ IDC_STATICcomments,13 * 2,72, -1*(BASE_HEIGHT - 125) * 2, 16, 1 },
-		{ IDC_Comments, 56*2, -12, -1*(BASE_HEIGHT - 100 - 27) * 2, 27 * 2, 1 },
-		{ IDC_EnvList,  56*2, -12, ENVLISTTOP * 2, -1 * (BASE_HEIGHT - (ENVLISTTOP + 47)) * 2, 1 }
+		{ IDCANCEL, (BASE_WIDTH - 246) * 2, 100, (BUTTONSFROMTOP - BASE_HEIGHT) * 2, 28, 0 },
+		{ IDOK,     (BASE_WIDTH - 174) * 2, 100, (BUTTONSFROMTOP - BASE_HEIGHT) * 2, 28, 0 },
+		{ IDC_CHECKEnabled, (6) * 2, 84, (180 - BASE_HEIGHT) * 2, 20, 1 },
+		{ IDC_STATICcomments,13 * 2,72, (143 - BASE_HEIGHT) * 2, 16, 1 },
+		{ IDC_Comments, 56*2, -12, (141 - BASE_HEIGHT) * 2, 27 * 2, 1 },
+		{ IDC_EnvList,  56*2, -12, ENVLISTTOP * 2, ((ENVLISTTOP + 49) - BASE_HEIGHT) * 2, 1 }
 	};
 	vResize(this, cx, cy, asSizingElements, sizeof(asSizingElements)/sizeof(asSizingElements[0]));
 
