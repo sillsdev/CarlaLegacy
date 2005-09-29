@@ -39,6 +39,12 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
+/* md 20050928 -- no magic numbers please...
+ * This figure stands for the max length of data in the output
+ * counted in no of codepoints (not bytes or glyphs)
+ */
+#define MAX_TRACEOUTPUT   50000
+
 /////////////////////////////////////////////////////////////////////////////
 // CQuickParseView
 
@@ -267,13 +273,20 @@ void CQuickParseView::OnQuickParseGo()
 				DWORD sz = log.GetLength();
 				if(sz)
 				{
-					char* buf = new char[sz+2];
+					/* If the buffer is ridiculously big (e.g. > 1MB) then the likelyhood
+					 * a stack overflow increases - so we truncate early rather than later
+					 * let's say that 3 bytes for one UTF8 char is a good guess
+					 */
+					if (sz > MAX_TRACEOUTPUT * 3)
+						sz = MAX_TRACEOUTPUT * 3;
+					// on the heap rather than on the stack - stack overflows are easily created
+					char* buf = (char *) malloc(sz+2);
 					ASSERTX(buf);
 					int iReadBytes = log.Read(buf, sz);
 					buf[iReadBytes] = '\0'; //terminate it
 					USES_CONVERSION_U8;
 					sTraceOutput = U82CT(buf);
-					delete buf;
+					free(buf);
 				}
 				log.Close();
 			}
@@ -308,9 +321,9 @@ void CQuickParseView::OnQuickParseGo()
 
 		// do we need to truncate the result?
 		TRACE(_T("m_sOutput.GetLength() =%d"), m_sOutput.GetLength());
-		if(m_sOutput.GetLength() > 30000)
+		if(m_sOutput.GetLength() > MAX_TRACEOUTPUT)
 		{
-			m_sOutput = m_sOutput.Left(30000);
+			m_sOutput = m_sOutput.Left(MAX_TRACEOUTPUT);
 			m_sOutput += _T("\r\n--Ample's output is too long to fit here.  It has been truncated. ");
 		}
 
