@@ -123,11 +123,12 @@ BOOL CDlgEditSentransTransfer::OnInitDialog()
 	// retrieve the window placement
 	WINDOWPLACEMENT wp;
 
-	if (ERROR_SUCCESS == lGetWindowPlacement(oszDialogName, &wp)) {
-	  SetWindowPlacement(&wp);
-	  vSize(wp.rcNormalPosition.right - wp.rcNormalPosition.left - 8,  // 8 is the magic figure (border width)
-			wp.rcNormalPosition.bottom - wp.rcNormalPosition.top - 32); // 32 is magic: border + title bar
+	if (ERROR_SUCCESS != lGetWindowPlacement(oszDialogName, &wp)) {
+		GetWindowPlacement(&wp);
 	}
+	SetWindowPlacement(&wp);
+	vSize(wp.rcNormalPosition.right - wp.rcNormalPosition.left - 8,  // 8 is the magic figure (border width)
+		   wp.rcNormalPosition.bottom - wp.rcNormalPosition.top - 32); // 32 is magic: border + title bar
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE

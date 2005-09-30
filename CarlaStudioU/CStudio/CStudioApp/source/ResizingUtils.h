@@ -1,8 +1,10 @@
 /*
- * ResizingUtils.cpp
+ * ResizingUtils.h
  * Utility functions to help Dialogs resize themselves in a neat way
  * (with member panes and windows sizing at the same time)
  */
+#ifndef __RESIZINGUTILS_H__
+#define __RESIZINGUTILS_H__
 
 #include "stdafx.h"
 
@@ -51,16 +53,27 @@ lGetWindowPlacement(const char *ozcScreenName, WINDOWPLACEMENT *pwp);
  * to the borders of the mother window (dialog).
  */
 typedef struct {
-		int iItem;          // Item ID in the dialog; should be unique
-		int iFromBorder,    // horizontal distance from border; if iAlignLeft = 1, then
-							// this is taken from the left border; else, from the right border
-			iWidth,         // width of the box; if this is negative,
-							// it is computed relative to the right hand border.
-			iTopFromBorder, // is the distance of the top of this element to the border;
-							// if positive, distance to the top, if negative, distance from the bottom
-			iHeight;        // if this is negative, this element doesn't move but stretch with the bottom
+		int iItem;           // Item ID in the dialog; should be unique
+		int iHorFromBorder,  // horizontal distance from border; if iAlignLeft = 1, then
+							 // this is taken from the left border; else, from the right border
+			iWidth,          // width of the box; if this is negative,
+							 // it is computed relative to the right hand border.
+			iVertFromBorder, // is the distance of the top of this element to the border;
+							 // if positive, distance to the top, if negative, distance from the bottom
+			iHeight;         // if this is negative, this element doesn't move but stretch with the bottom
 		int iAlignLeft;
 	} tsSizingElement;
+
+/*
+ * If you want to fill out the values that appear in the .rc (resource file) -
+ * which makes it a lot easier - then use this macro to do a correction calculation
+ * for the iHorFromBorder parameter.
+ */
+#define LeftCorrect(l)  ((l * 2)) //- 16
+#define RightCorrect(l) ((BASE_WIDTH - (l)) * 2)
+
+#define WidthCorrect(l)  (l*2) // (l*2)
+
 
 /* extern void
  * vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE)
@@ -74,3 +87,102 @@ typedef struct {
  */
 extern void
 vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE);
+
+
+#endif /* __RESIZINGUTILS_H__ */
+/****************************************************
+
+   Set dialog DPI helper class
+
+   Use this class to make your dialog-editor based
+   dialogs look the same under any Windows DPI
+   settings (Large font mode).
+
+   This is important if your dialogs have bitmaps on
+   them. You can specify current DPI if you want
+   bitmaps to get resized to current DPI (normally
+   they don't get resized).
+
+   Copyright (C)2003 by George Yohng
+   http://www.yohng.com
+
+   LICENSE AGREEMENT:
+
+	  You agree to go to http://www.yohng.com/music.html
+	  and listen completely (without skips) to the very
+	  first track on the list.
+
+ ****************************************************/
+
+/*
+
+ *************************************************
+ * Warning: for proper sizing with large fonts,  *
+ *          set dialog font explicitly to        *
+ *                                               *
+ *         Microsoft Sans Serif (as opposed to   *
+ *                                MS Sans Serif) *
+ *          or Tahoma                            *
+ *                                               *
+ *          (they have the same sizes)           *
+ *************************************************
+
+   // -------------------------------------------------------------------
+   // MFC Example:
+   // -------------------------------------------------------------------
+
+   ...
+
+   BOOL CMyDlg::OnInitDialog()
+   {
+	   CDialog::OnInitDialog();
+
+	   dpi.Attach(AfxFindResourceHandle(IMAKEINTRESOURCE(IDD), RT_DIALOG),
+				  m_hWnd,IDD,96.0); // 96 is the DPI
+
+	   // The rest of your initialization code goes here
+
+	   return TRUE;
+   }
+
+   // -------------------------------------------------------------------
+   // ATL/WTL Example:
+   // -------------------------------------------------------------------
+
+   ...
+
+   BOOL CMyDlg::OnInitDialog()
+   {
+	   CDialog::OnInitDialog();
+
+	   dpi.Attach(_AtlBaseModule.GetResourceInstance(),m_hWnd,IDD,96.0);
+	   //                                                         ^^^^ DPI
+
+	   // The rest of your initialization code goes here
+
+	   return TRUE;
+   }
+
+*/
+
+#ifndef SETDPI_INCLUDED
+#define SETDPI_INCLUDED
+
+class CSetDPI
+{
+public:
+	int IDD;
+	HINSTANCE inst;
+	HWND hwnd;
+	HFONT font,oldfont;
+
+	CSetDPI();
+
+	void Attach(HINSTANCE inst,HWND dlg,int IDD,double dpi);
+
+	void Detach();
+
+	~CSetDPI();
+};
+
+#endif

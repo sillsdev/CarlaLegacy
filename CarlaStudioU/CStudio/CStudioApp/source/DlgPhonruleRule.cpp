@@ -17,7 +17,7 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // CDlgPhonruleRule dialog
 static const char *oszDialogName = "DlgPhonruleRule";
-#define BASE_WIDTH   289
+#define BASE_WIDTH   296
 #define BASE_HEIGHT  215
 
 CDlgPhonruleRule::CDlgPhonruleRule(const CTextDisplayInfo* pTDI)
@@ -87,21 +87,42 @@ void CDlgPhonruleRule::vSize(int cx, int cy)
 
 #define TOPBORDER (::GetSystemMetrics(SM_CYCAPTION) + ::GetSystemMetrics(SM_CYFRAME))
 #define GROUPBOXESFROMTOP 135
+#define ALIGN_BOXES_LEFT  LeftCorrect(58) // (<58)
+
+	/* {
+		char zc[100];
+		TCHAR sz[100];
+		sprintf(zc, "CXFRAME: %d", ::GetSystemMetrics(SM_CXFRAME));
+		vMyStrCpy(sz, zc);
+		MessageBox(sz);
+	} */
 
 	// sizing elements
 	tsSizingElement asSizingElements[] = {
 		// fixed to the right hand side of the dialog
-		{ IDC_STATICcategory, 216,62,18,16,0 },
-		{ IDC_Category, 144,130,12,36,0 },
-		// Aligned from the left or right hand side and the bottom
-		{ IDCANCEL, 114, 100, -44, 28, 0 },
-		{ IDOK, 232, 100, -44, 28, 0 },
-		{ IDC_CHECKEnabled, 16, 84, (197 - BASE_HEIGHT) * 2, 10*2, 1 }, // 8,183,42,10
+		{ IDC_STATICcategory, 216, 2*31, 18,16,0 },
+		{ IDC_Category,       144, 2*65, 12,36,0 },
+
+		// Aligned from the bottom - negative vertical distance
+		{ IDCANCEL,           114, 2*50, -44, 28, 0 },
+		{ IDOK,               232, 2*50, -44, 28, 0 },
+
+		/* aligned from the bottom and the left. */
+		{ IDC_CHECKEnabled,   LeftCorrect(8),  2*42, (197-BASE_HEIGHT) * 2, 10*2, 1 }, // 8,183,42,10
+
 		// align things on the right hand side
-		{ IDC_EnvList, 58 * 2, -12, /*TOPBORDER + */44 * 2, 48*2, 1 },  // 58,44,224,48
-		{ IDC_Comments, 58 * 2, -12, /* TOPBORDER + */ 101 * 2, 28*2, 1 }, //58,85,224,28,
-		{ IDC_STATICapply, 174 * 2, -12,
-			/* TOPBORDER + */ GROUPBOXESFROMTOP * 2, 50*2, 1 } // 174,135,108,50
+		{ IDC_EnvList,        LeftCorrect(58),  -12,   44*2, 48*2, 1 },  // 58,44,224,48
+		{ IDC_Comments,       LeftCorrect(58),  -12,  101*2, 28*2, 1 }, //58,85,224,28,
+		{ IDC_STATICapply,    LeftCorrect(174), -12,  135*2, 50*2, 1 }, // 174,135,108,50
+			/* radio's */
+//		iHorFromBorder, iWidth, iVertFromBorder, iHeight, iAlignLeft;
+
+		{ IDC_RADIORuleType,  LeftCorrect(65),  2*57, 149*2, 10*2, 1 },
+		{ IDC_RADIOBaseRule,  LeftCorrect(65),  2*49, 164*2, 10*2, 1 },
+		{ IDC_RADIOForce,     LeftCorrect(182), 2*97, 146*2, 10*2, 1 },
+		{ IDC_RADIOInitial,   LeftCorrect(182), 2*70, 158*2, 10*2, 1 },
+		{ IDC_RADIOFinal,     LeftCorrect(182), 2*68, 170*2, 10*2, 1 },
+		{ IDC_STATICruletype, ALIGN_BOXES_LEFT, 2*69, 135*2, 50*2, 1 } // 174,135,108,50
 	};
 	vResize(this,cx,cy,asSizingElements,sizeof(asSizingElements)/sizeof(asSizingElements[0]));
 
@@ -124,7 +145,7 @@ void CDlgPhonruleRule::vSize(int cx, int cy)
 	{
 		{ IDC_STATICto, 228, 24, 18, 16, 0,1 },
 		{ IDC_To,       260, 78, 12, EDITTEXTHEIGHT*2, 1,1 },
-		{ IDC_From,     58*2, 43*2, 12, EDITTEXTHEIGHT*2, 1,0 } // 58,6,43,14
+		{ IDC_From,     ALIGN_BOXES_LEFT, 43*2, 12, EDITTEXTHEIGHT*2, 1,0 } // 58,6,43,14
 	};
 	for (int iItem = 0; iItem < sizeof(asFixedRHSHalfElements)/sizeof(asFixedRHSHalfElements[0]); iItem++) {
 	  pE = (CEdit*) GetDlgItem(asFixedRHSHalfElements[iItem].iItem);
@@ -158,6 +179,7 @@ void CDlgPhonruleRule::vSize(int cx, int cy)
 	  clc->GetClientRect(&r);
 	  clc->SetColumnWidth(0, r.Width()/3);
 	}
+
 }
 
 
@@ -168,11 +190,16 @@ BOOL CDlgPhonruleRule::OnInitDialog()
 	// retrieve the window placement
 	WINDOWPLACEMENT wp;
 
-	if (ERROR_SUCCESS == lGetWindowPlacement(oszDialogName, &wp)) {
-	  SetWindowPlacement(&wp);
-	  vSize(wp.rcNormalPosition.right - wp.rcNormalPosition.left - 8,  // 8 is the magic figure (border width)
-			wp.rcNormalPosition.bottom - wp.rcNormalPosition.top - 32); // 32 is magic: border + title bar
+	if (ERROR_SUCCESS != lGetWindowPlacement(oszDialogName, &wp)) {
+		GetWindowPlacement(&wp);
 	}
+
+	SetWindowPlacement(&wp);
+	vSize(wp.rcNormalPosition.right - wp.rcNormalPosition.left - 8,  // 8 is the magic figure (border width)
+			wp.rcNormalPosition.bottom - wp.rcNormalPosition.top - 32); // 32 is magic: border + title bar
+
+//	dpi.Attach(AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+//				m_hWnd,IDD,120.0); // 96 is the DPI
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
