@@ -159,12 +159,26 @@ reduceCategory(AmpleData * pAmple_in,
 			psStackPointer->psResult->eDirection = eFail;
 			if (psStackPointer->sLeft.eDirection == eRootCat) {
 				if (psStackPointer->sRight.eDirection == eRootCat) {
-					/* root compounding */
-					if (pAmple_in->eWriteCategory & AMPLE_COMPOUND_ROOT_LEFTHEAD) {
-						*psStackPointer->psResult = psStackPointer->sLeft;
+					/* root compounding
+					 * 1. check if OK
+					 * 2. then select category
+					 */
+					unsigned char * rcPairs = pAmple_in->pCompoundRootPairs;
+					int iFound = 0;
+					while (iFound == 0 && *rcPairs != NUL) {
+						if (psStackPointer->sLeft.iTo == rcPairs[0] &&
+							psStackPointer->sRight.iTo == rcPairs[1]) {
+							iFound = 1;
+						}
+						rcPairs += 2;
 					}
-					else {
-						*psStackPointer->psResult = psStackPointer->sRight;
+					if (iFound) {
+						if (pAmple_in->eWriteCategory & AMPLE_COMPOUND_ROOT_LEFTHEAD) {
+							*psStackPointer->psResult = psStackPointer->sLeft;
+						}
+						else {
+							*psStackPointer->psResult = psStackPointer->sRight;
+						}
 					}
 				}
 				else if (psStackPointer->sRight.eDirection == eLeftCat) {
