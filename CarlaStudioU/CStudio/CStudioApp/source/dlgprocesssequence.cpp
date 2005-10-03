@@ -25,8 +25,6 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // CDlgProcessSequence dialog
 static const char *oszDialogName = "DlgProcessSequence";
-#define BASE_WIDTH   365
-#define BASE_HEIGHT  144
 
 // iFunctionCode is one of {kDisambig, kTransfer, kSynthesis}
 CDlgProcessSequence::CDlgProcessSequence(int iFunctionCode,
@@ -38,6 +36,7 @@ CDlgProcessSequence::CDlgProcessSequence(int iFunctionCode,
 {
 	//{{AFX_DATA_INIT(CDlgProcessSequence)
 	m_sValidMsg = _T("");
+	dpiset = false;
 	//}}AFX_DATA_INIT
 }
 
@@ -213,30 +212,6 @@ void CDlgProcessSequence::OnGetdispinfoProcessList(NMHDR* pNMHDR, LRESULT* pResu
 	*pResult = 0; //	THIS WAS PUT HERE BY THE WIZARD
 }
 
-static void
-vSize(CDialog *cd, int cx, int cy)
-{
-	// resize all bits
-	CRect r;
-
-	// Align things from boundary (left or right) and bottom
-	tsSizingElement asSizingElements[] =
-	{
-		{ IDCANCEL,         (BASE_WIDTH - 238) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 238,120,50,14
-		{ IDOK,             (BASE_WIDTH - 178) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 178,120,50,14
-		{ ID_HELP,          (BASE_WIDTH - 304) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 304,120,50,14
-		{ IDC_InsertBefore, (BASE_WIDTH - 304) * 2, 100, 11*2, 28, 0}, //  304,11,50,14
-		{ IDC_InsertAfter,  (BASE_WIDTH - 304) * 2, 100, 29*2, 28, 0}, //  304,29,50,14
-		{ IDC_Remove,       (BASE_WIDTH - 304) * 2, 100, 48*2, 28, 0}, //  304,48,50,14
-		{ IDC_Properties,   (BASE_WIDTH - 304) * 2, 100, 66*2, 28, 0}, //  304,66,50,14
-		{ IDC_ValidMsg, 10 * 2, 278*2, -1*(BASE_HEIGHT - 96) * 2, 20*2, 1 }, //10,96,278,20
-		{ IDC_Uncheck,   9 * 2, 128*2, -1*(BASE_HEIGHT - 81) * 2,  8*2, 1 },  // 9,81,128,8
-		{ IDC_ProcessList, 8 * 2, -1*(BASE_WIDTH - 284 - 8) * 2, 10 * 2, -2 * (BASE_HEIGHT - 10 - 69), 1 }      // 8,10,284,69
-	};
-	vResize(cd, cx, cy, asSizingElements, sizeof(asSizingElements)/sizeof(asSizingElements[0]));
-
-}
-
 BOOL CDlgProcessSequence::OnInitDialog()
 {
 	CDialog::OnInitDialog();
@@ -244,21 +219,34 @@ BOOL CDlgProcessSequence::OnInitDialog()
 	//if(!m_ppProcesses->GetSize()) // are we empty?
 	//	insertProcess(FALSE);
 	// retrieve the window placement
+	CSetDPIInit(&dpi, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+				m_hWnd,IDD,96.0); // 96 is the DPI
+	CSetDPIResizerFlags(&dpi, IDCANCEL,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CSetDPIResizerFlags(&dpi, IDOK,				RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CSetDPIResizerFlags(&dpi, ID_HELP,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CSetDPIResizerFlags(&dpi, IDC_InsertBefore,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CSetDPIResizerFlags(&dpi, IDC_InsertAfter,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CSetDPIResizerFlags(&dpi, IDC_Remove,		RESIZER_MOVES_WITH_RIGHTTOP);
+	CSetDPIResizerFlags(&dpi, IDC_Properties,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CSetDPIResizerFlags(&dpi, IDC_ValidMsg,		RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CSetDPIResizerFlags(&dpi, IDC_Uncheck,		RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CSetDPIResizerFlags(&dpi, IDC_ProcessList,	RESIZER_SIZES_VERTICAL | RESIZER_SIZES_HORIZONTAL);
+	dpiset = true;
+
 	WINDOWPLACEMENT wp;
 
 	if (ERROR_SUCCESS == lGetWindowPlacement(oszDialogName, &wp)) {
-	  SetWindowPlacement(&wp);
-	  int cx = wp.rcNormalPosition.right - wp.rcNormalPosition.left;
-	  int cy = wp.rcNormalPosition.bottom - wp.rcNormalPosition.top;
-	   //  + ::GetSystemMetrics(SM_CXFRAME) * 2
-	   //  + ::GetSystemMetrics(SM_CYFRAME) + ::GetSystemMetrics(SM_CYCAPTION);
-	  vSize(this,
-			cx - 8,   // total width minus border width
-			cy - 32); // total height minus border + title bar
-	  setupListCtrl(cx);
+		SetWindowPlacement(&wp);
+		int cx = wp.rcNormalPosition.right - wp.rcNormalPosition.left;
+		setupListCtrl(cx);
 	}
 	else {
-	  setupListCtrl(0);
+		GetWindowPlacement(&wp);
+		wp.rcNormalPosition.bottom = dpi.sDialogData.cy;
+		wp.rcNormalPosition.right = dpi.sDialogData.cx;
+		SetWindowPlacement(&wp);
+		CSetDPIInitialSize(&dpi);
+		setupListCtrl(0);
 	}
 
 	checkButtonStatus();
@@ -485,7 +473,8 @@ void CDlgProcessSequence::OnSize(UINT nType, int cx, int cy)
 	CDialog::OnSize(nType, cx, cy);
 
 	// TODO: Add your message handler code here
-	vSize(this, cx, cy);
+	if (dpiset)
+		CSetDPIResize(&dpi, cx, cy*2);
 }
 
 void CDlgProcessSequence::OnDestroy()
@@ -504,9 +493,9 @@ void CDlgProcessSequence::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
 	// TODO: Add your message handler code here and/or call default
 
 	CDialog::OnGetMinMaxInfo(lpMMI);
-	lpMMI->ptMinTrackSize.x = BASE_WIDTH * 2 + 2 * ::GetSystemMetrics(SM_CXFRAME);
-	lpMMI->ptMinTrackSize.y = BASE_HEIGHT * 2 + 2 * ::GetSystemMetrics(SM_CYFRAME) +
-							  ::GetSystemMetrics(SM_CYCAPTION);
+	lpMMI->ptMinTrackSize.x = (long) (((double) dpi.sDialogData.cx) * dpi.x_factor + ::GetSystemMetrics(SM_CXFRAME));
+	lpMMI->ptMinTrackSize.y = (long) (((double) dpi.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
+							  ::GetSystemMetrics(SM_CYCAPTION));
 //	lpMMI->ptMaxTrackSize.x = lpMMI->ptMinTrackSize.x;
 
 }

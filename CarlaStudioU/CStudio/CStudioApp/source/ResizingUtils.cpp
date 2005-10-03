@@ -6,9 +6,6 @@
 #include "stdafx.h"
 #include "ResizingUtils.h"
 
-/* for --setdpi-- */
-#include <windows.h>
-
 static void
 vMyStrCpy(TCHAR *tzc, const char *osz)
 {
@@ -146,112 +143,6 @@ static void getptsize( HDC &dc, HFONT &font, SIZE *pSize )
 }
 
 
-extern void
-vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE)
-{
-	size_t gSE;
-	CEdit *pE;
-	CRect r;
-
-	for (gSE = 0; gSE < gNoSE; gSE++) {
-	  pE = (CEdit*) cd->GetDlgItem(psSE[gSE].iItem);
-	  if(pE && pE->m_hWnd) {
-		pE->GetWindowRect(&r);
-		cd->ScreenToClient(&r);
-
-		if (psSE[gSE].iAlignLeft) {
-			r.left = psSE[gSE].iHorFromBorder;
-		}
-		else {
-			r.left = cx - psSE[gSE].iHorFromBorder;
-		}
-		if (psSE[gSE].iWidth < 0) {
-			r.right = cx + psSE[gSE].iWidth;
-		}
-		else {
-			r.right = r.left + psSE[gSE].iWidth;
-		}
-		if (psSE[gSE].iVertFromBorder < 0) {
-			r.top = cy + psSE[gSE].iVertFromBorder;
-		}
-		else {
-			r.top = psSE[gSE].iVertFromBorder;
-		}
-		if (psSE[gSE].iHeight < 0) {
-			r.bottom = cy + psSE[gSE].iHeight;
-		}
-		else {
-			r.bottom = r.top + psSE[gSE].iHeight;
-		}
-
-		pE->MoveWindow(r.left, r.top, r.Width(), r.Height(), TRUE);
-	  }
-	}
-
-	/* from SetDPI() */
-	SIZE szf;
-	PAINTSTRUCT ps;
-	CDC *cdc = cd->BeginPaint(&ps);
-	HDC dc = cdc->GetSafeHdc();
-/*	getptsize(dc,font,&szf);
-	EndPaint(hwnd, &ps);
-
-	double x_n=szf.cx,
-		   x_d=4,
-		   y_n=szf.cy,
-		   y_d=8;
-
-	RECT rect;
-	cd->GetWindowRect(&rect);
-	// GetClientRect(hwnd,&rect);
-
-	rect.right=rect.left+(int)(lpDialogTemplate->cx*x_n/x_d+0.5);
-	rect.bottom=rect.top+(int)(lpDialogTemplate->cy*y_n/y_d+0.5);
-
-	ClientToScreen(hwnd, (LPPOINT)&rect);
-	ClientToScreen(hwnd, ((LPPOINT)&rect)+1);
-
-	AdjustWindowRectEx(&rect, lpDialogTemplate->style, dd.has_menu, lpDialogTemplate->exStyle );
-	MoveWindow(hwnd,rect.left,rect.top,rect.right-rect.left,rect.bottom-rect.top,TRUE);
-*/
-	/* go through the Item ID's to resize them */
-/*	helper::DLGITEMTEMPLATEEX *item=
-		(helper::DLGITEMTEMPLATEEX *)helper::FindFirstDlgItem((DLGTEMPLATE *)lpDialogTemplate);
-
-	HWND wnd;
-
-	for(t=0;t<helper::DlgTemplateItemCount((DLGTEMPLATE *)lpDialogTemplate);t++)
-	{
-		// OLD IMPLEMENTATION: wnd=GetDlgItem(hwnd,item->id);
-
-		// TODO: check if it is the best implementation
-		//       are we sure that controls will preserve the order?
-
-		if (!t)
-			wnd=GetWindow(hwnd,GW_CHILD);
-		else
-			wnd=GetWindow(wnd,GW_HWNDNEXT);
-
-		while ((wnd)&&(GetDlgCtrlID(wnd) != item->id))
-			wnd=GetWindow(wnd,GW_HWNDNEXT);
-
-		if (!wnd) break;
-
-		MoveWindow(wnd,(int)(item->x*x_n/x_d+0.5),
-					   (int)(item->y*y_n/y_d+0.5),
-					   (int)(item->cx*x_n/x_d+0.5),
-					   (int)(item->cy*y_n/y_d+0.5), TRUE);
-
-		SendMessage(wnd, WM_SETFONT, (LPARAM)font, TRUE);
-
-		item=(helper::DLGITEMTEMPLATEEX *)helper::FindNextDlgItem((DLGITEMTEMPLATE *)item,TRUE);
-	}
-
-	UnlockResource(hDialogTemplate);
-	FreeResource(hDialogTemplate);
-*/
-}
-
 /****************************************************
 
    Set dialog DPI helper class
@@ -268,6 +159,25 @@ vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE)
 
  ****************************************************/
 
+#define X_CONST		4 // for some reason screen sizes are multiplied this much
+#define Y_CONST		8 // for some reason screen sizes are multiplied this much
+
+///////////////////////////////////////////////////////////////////////////
+//
+// Helper routines taken from the WIN32SDK DYNDLG sample.
+///////////////////////////////////////////////////////////////////////////
+//
+//
+LPWORD lpwAlign ( LPWORD lpIn)
+{
+  ULONG ul;
+
+  ul = (ULONG) lpIn;
+  ul +=3;
+  ul >>=2;
+  ul <<=2;
+  return (LPWORD) ul;
+}
 
 class helper
 {
@@ -340,7 +250,7 @@ public:
 
 	static BOOL IsDialogEx(const DLGTEMPLATE* pTemplate)
 	{
-		return ((DLGTEMPLATEEX*)pTemplate)->signature == 0xFFFF;
+		return (pTemplate->dwExtendedStyle == 0xFFFF);
 	}
 
 	inline static WORD& DlgTemplateItemCount(DLGTEMPLATE* pTemplate)
@@ -413,7 +323,7 @@ public:
 		}
 
 		// Dword-align and return
-		return (DLGITEMTEMPLATE*)(((DWORD_PTR)pw + 3) & ~3);
+		return (DLGITEMTEMPLATE*)(lpwAlign(pw));
 	}
 
 	// Given the current dialog item and whether this is an extended dialog
@@ -446,18 +356,9 @@ public:
 			cbExtra -= 2;
 
 		// Dword-align and return
-		return (DLGITEMTEMPLATE*)(((DWORD_PTR)pw + cbExtra + 3) & ~3);
+		return (DLGITEMTEMPLATE*)(lpwAlign(pw));
 	}
 
-};
-
-
-struct dialogdata_t
-{
-	int       pt,has_menu;
-	unsigned  weight;
-	BOOL      italic;
-	LPCWSTR    faceName;
 };
 
 
@@ -474,14 +375,19 @@ static void querydialogdata( LPCSTR data, dialogdata_t * result )
 
 	if (rstyle == 0xffff0001)
 	{
-		p+=4;
+		p+=4;     /* skip 8 bytes */
 		rstyle=dword_at(p);
 		p+=2;
 		dialogex=1;
 	}else
-		p+=2;
+			p+=2; /* NOT dialogex */
 
-	p+=5;
+	p+=3;
+	/* get the x, y sizes out */
+	result->cx = word_at(p);
+	p++;
+	result->cy = word_at(p);
+	p++;
 
 	// Skip menu
 	switch(word_at(p))
@@ -542,57 +448,46 @@ static void querydialogdata( LPCSTR data, dialogdata_t * result )
 	}
 }
 
-CSetDPI::CSetDPI()
+extern void
+CSetDPIInit(CSetDPI *cs, HINSTANCE hInst, HWND dlg, int iIDD, double dpi)
 {
-	hwnd=0;
-	font=0;
-	oldfont=0;
-	inst=0;
-	IDD=0;
-}
-CSetDPI::~CSetDPI()
-{
-	Detach();
-}
+	BOOL bDialogEx = 0;
 
-void CSetDPI::Attach(HINSTANCE hInst,HWND _hwnd,int _IDD,double dpi)
-{
-	int t;
-
-	if (hwnd) Detach();
-
-	inst = hInst;
-	IDD = _IDD;
-
-	hwnd=_hwnd;
+	/* set variables */
+	cs->inst = hInst;
+	cs->IDD  = iIDD;
+	cs->hwnd = dlg;
 
 	helper::DLGTEMPLATEEX *lpDialogTemplate;
 
 	if (!hInst)
 		{ } // hInst = AfxFindResourceHandle(IMAKEINTRESOURCE(IDD), RT_DIALOG);
 
-	HRSRC hResource = ::FindResource(hInst, MAKEINTRESOURCE(IDD), RT_DIALOG);
+	HRSRC hResource = ::FindResource(hInst, MAKEINTRESOURCE(cs->IDD), RT_DIALOG);
 	HANDLE hDialogTemplate = LoadResource(hInst, hResource);
 	lpDialogTemplate = (helper::DLGTEMPLATEEX *)LockResource(hDialogTemplate);
 
-	dialogdata_t dd;
-	querydialogdata((LPCSTR)lpDialogTemplate,&dd);
+	bDialogEx = helper::IsDialogEx((const DLGTEMPLATE*) lpDialogTemplate);
 
-	if ((dd.pt<0)||(dd.pt>32767))
+	querydialogdata((LPCSTR)lpDialogTemplate, &cs->sDialogData);
+/*	cs->sDialogData.style	= lpDialogTemplate->style;
+	cs->sDialogData.exStyle	= lpDialogTemplate->exStyle;
+ */
+	if ((cs->sDialogData.pt<0)||(cs->sDialogData.pt>32767))
 	{
 		// I don't know what to do if it happens this way
 		// this is a compromise solution:
-		dd.pt=-dd.pt;
-		dd.pt&=0xFFFF;
+		cs->sDialogData.pt = -cs->sDialogData.pt;
+		cs->sDialogData.pt &= 0xFFFF;
 	}
 
-	font=CreateFontW(
-		-(int)(dd.pt*dpi/72.0 + 0.5), // negative makes it use "char size"
+	cs->font=CreateFontW(
+		-(int)(cs->sDialogData.pt*dpi/72.0 + 0.5), // negative makes it use "char size"
 	0,              // logical average character width
 	0,              // angle of escapement
 	0,              // base-line orientation angle
-	dd.weight,  // weight
-	dd.italic,  // italic
+	cs->sDialogData.weight,  // weight
+	cs->sDialogData.italic,  // italic
 	FALSE,          // underline attribute flag
 	FALSE,          // strikeout attribute flag
 	DEFAULT_CHARSET,    // character set identifier
@@ -600,91 +495,168 @@ void CSetDPI::Attach(HINSTANCE hInst,HWND _hwnd,int _IDD,double dpi)
 	CLIP_DEFAULT_PRECIS,// clipping precision
 	DEFAULT_QUALITY,    // output quality
 	DEFAULT_PITCH,  // pitch and family
-	dd.faceName  // pointer to typeface name string
+	cs->sDialogData.faceName  // pointer to typeface name string
 	);
 
-	oldfont=(HFONT)::SendMessage(hwnd, WM_GETFONT, 0, 0);
-	SendMessage(hwnd, WM_SETFONT, (LPARAM)font, TRUE);
+	cs->oldfont=(HFONT)::SendMessage(cs->hwnd, WM_GETFONT, 0, 0);
+	SendMessage(cs->hwnd, WM_SETFONT, (LPARAM)cs->font, TRUE);
 
-	SIZE szf;
-
-	PAINTSTRUCT ps;
-	HDC dc=BeginPaint(hwnd, &ps);
-	getptsize(dc,font,&szf);
-	EndPaint(hwnd, &ps);
-
-	double x_n=szf.cx,
-		   x_d=4,
-		   y_n=szf.cy,
-		   y_d=8;
-
-	RECT rect;
-	GetClientRect(hwnd,&rect);
-
-	rect.right=rect.left+(int)(lpDialogTemplate->cx*x_n/x_d+0.5);
-	rect.bottom=rect.top+(int)(lpDialogTemplate->cy*y_n/y_d+0.5);
-
-	ClientToScreen(hwnd, (LPPOINT)&rect);
-	ClientToScreen(hwnd, ((LPPOINT)&rect)+1);
-
-	AdjustWindowRectEx(&rect, lpDialogTemplate->style, dd.has_menu, lpDialogTemplate->exStyle );
-	MoveWindow(hwnd,rect.left,rect.top,rect.right-rect.left,rect.bottom-rect.top,TRUE);
-
+	/* Pick up all of the item ID's */
 	/* go through the Item ID's to resize them */
-	helper::DLGITEMTEMPLATEEX *item=
+	helper::DLGITEMTEMPLATEEX *itemE =
 		(helper::DLGITEMTEMPLATEEX *)helper::FindFirstDlgItem((DLGTEMPLATE *)lpDialogTemplate);
+	DLGITEMTEMPLATE *item = (DLGITEMTEMPLATE *) itemE;
 
-	HWND wnd;
-
-	for(t=0;t<helper::DlgTemplateItemCount((DLGTEMPLATE *)lpDialogTemplate);t++)
-	{
-		// OLD IMPLEMENTATION: wnd=GetDlgItem(hwnd,item->id);
-
-		// TODO: check if it is the best implementation
-		//       are we sure that controls will preserve the order?
-
-		if (!t)
-			wnd=GetWindow(hwnd,GW_CHILD);
-		else
-			wnd=GetWindow(wnd,GW_HWNDNEXT);
-
-		while ((wnd)&&(GetDlgCtrlID(wnd) != item->id))
-			wnd=GetWindow(wnd,GW_HWNDNEXT);
-
-		if (!wnd) break;
-
-		MoveWindow(wnd,(int)(item->x*x_n/x_d+0.5),
-					   (int)(item->y*y_n/y_d+0.5),
-					   (int)(item->cx*x_n/x_d+0.5),
-					   (int)(item->cy*y_n/y_d+0.5), TRUE);
-
-		SendMessage(wnd, WM_SETFONT, (LPARAM)font, TRUE);
-
-		item=(helper::DLGITEMTEMPLATEEX *)helper::FindNextDlgItem((DLGITEMTEMPLATE *)item,TRUE);
+	cs->jNtItems = 0;
+	int jMax = helper::DlgTemplateItemCount((DLGTEMPLATE *)lpDialogTemplate);
+	while (cs->jNtItems < jMax) {
+		if (bDialogEx) {
+			cs->asDI[cs->jNtItems].x = itemE->x;
+			cs->asDI[cs->jNtItems].y = itemE->y;
+			cs->asDI[cs->jNtItems].cx= itemE->cx;
+			cs->asDI[cs->jNtItems].cy= itemE->cy;
+			cs->asDI[cs->jNtItems].id= itemE->id;
+			itemE=(helper::DLGITEMTEMPLATEEX *)helper::FindNextDlgItem((DLGITEMTEMPLATE *)itemE,TRUE);
+		}
+		else {
+			cs->asDI[cs->jNtItems].x = item->x;
+			cs->asDI[cs->jNtItems].y = item->y;
+			cs->asDI[cs->jNtItems].cx= item->cx;
+			cs->asDI[cs->jNtItems].cy= item->cy;
+			cs->asDI[cs->jNtItems].id= item->id;
+			cs->asDI[cs->jNtItems].uiFlags = 0;
+			item = helper::FindNextDlgItem(item,FALSE);
+		}
+		cs->asDI[cs->jNtItems].uiFlags = 0;
+		cs->jNtItems++;
 	}
 
 	UnlockResource(hDialogTemplate);
 	FreeResource(hDialogTemplate);
-}
 
-void CSetDPI::Detach()
+	/* Get current point size information */
+	PAINTSTRUCT ps;
+	SIZE szf;
+	HDC dc=BeginPaint(cs->hwnd, &ps);
+	getptsize(dc,cs->font,&szf);
+	EndPaint(cs->hwnd, &ps);
+
+	double	x_n=szf.cx,
+			x_d=X_CONST,
+			y_n=szf.cy,
+			y_d=Y_CONST;
+	cs->x_factor = x_n/x_d;
+	cs->y_factor = y_n/y_d;
+
+}	/* CSetDPIInit */
+
+extern void
+CSetDPIResizerFlags(CSetDPI *cs, DWORD id, unsigned uiFlags)
 {
-	if (!hwnd) return;
-	SendMessage(hwnd, WM_SETFONT, (LPARAM)oldfont, TRUE);
+	for (int j = 0; j < cs->jNtItems; j++) {
+		if (cs->asDI[j].id == id) {
+			cs->asDI[j].uiFlags = uiFlags;
+			return;
+		}
+	}
+	return;
+} /* CSetDPIResizerFlags */
 
+extern void
+CSetDPIResize(CSetDPI *cs, int cx, int cy)
+{
+	RECT rect;
+	int xdif = 0;// = cx / cs->x_factor - cs->sDialogData.cx;
+	int ydif = 0;// = cy / cs->y_factor - cs->sDialogData.cy;
+	int x, y, wcx, wcy;
 
-	HRSRC hResource = ::FindResource(inst, MAKEINTRESOURCE(IDD), RT_DIALOG);
-	HANDLE hDialogTemplate = LoadResource(inst, hResource);
-	helper::DLGTEMPLATEEX *lpDialogTemplate =
-		(helper::DLGTEMPLATEEX *)LockResource(hDialogTemplate);
+	GetClientRect(cs->hwnd,&rect);
 
+	rect.right  = rect.left + (int)(cx * cs->x_factor + 0.5);
+	rect.bottom = rect.top  + (int)(cy * cs->y_factor + 0.5);
 
-	helper::DLGITEMTEMPLATEEX *item=
-		(helper::DLGITEMTEMPLATEEX *)helper::FindFirstDlgItem((DLGTEMPLATE *)lpDialogTemplate);
+	ClientToScreen(cs->hwnd, (LPPOINT)&rect);
+	// ClientToScreen(cs->hwnd, ((LPPOINT)&rect)+1);
+	xdif = rect.right  / X_CONST - cs->sDialogData.cx;
+	ydif = rect.bottom / Y_CONST - cs->sDialogData.cy;
 
-	int t;
+	AdjustWindowRectEx(&rect, cs->sDialogData.style, cs->sDialogData.has_menu, cs->sDialogData.exStyle );
+	/*
+	MoveWindow(cs->hwnd,rect.left,rect.top,rect.right-rect.left,rect.bottom-rect.top,TRUE);
+	*/
+	CEdit *pE;
 	HWND wnd;
-	for(t=0;t<helper::DlgTemplateItemCount((DLGTEMPLATE *)lpDialogTemplate);t++)
+
+	for(int t=0; t<cs->jNtItems; t++)
+	{
+		// TODO: check if it is the best implementation
+		//       are we sure that controls will preserve the order?
+		if (!t)
+			wnd=GetWindow(cs->hwnd,GW_CHILD);
+		else
+			wnd=GetWindow(wnd,GW_HWNDNEXT);
+
+		while ((wnd)&&(GetDlgCtrlID(wnd) != cs->asDI[t].id))
+			wnd=GetWindow(wnd,GW_HWNDNEXT);
+
+		if (!wnd) break;
+		x	= cs->asDI[t].x;
+		y	= cs->asDI[t].y;
+		wcx	= cs->asDI[t].cx;
+		wcy	= cs->asDI[t].cy;
+		if (cs->asDI[t].uiFlags & RESIZER_MOVES_WITH_LEFTBOTTOM) {
+			if (cs->asDI[t].uiFlags & RESIZER_MOVES_VER_HALFSPEED) {
+				y = y + ydif / 2;
+			}
+			else {
+				y = y + ydif;
+			}
+		}
+		if (cs->asDI[t].uiFlags & RESIZER_SIZES_VERTICAL) {
+			if (cs->asDI[t].uiFlags & RESIZER_SIZES_VER_HALFSPEED) {
+				wcy = wcy + ydif / 2;
+			}
+			else {
+				wcy = wcy + ydif;
+			}
+		}
+		if (cs->asDI[t].uiFlags & RESIZER_MOVES_WITH_RIGHTTOP) {
+			if (cs->asDI[t].uiFlags & RESIZER_MOVES_HOR_HALFSPEED) {
+				x = x + xdif / 2;
+			}
+			else {
+				x = x + xdif;
+			}
+		}
+		if (cs->asDI[t].uiFlags & RESIZER_SIZES_HORIZONTAL) {
+			if (cs->asDI[t].uiFlags & RESIZER_SIZES_HOR_HALFSPEED) {
+				wcx = wcx + xdif / 2;
+			}
+			else {
+				wcx = wcx + xdif;
+			}
+		}
+
+/*		MoveWindow(wnd,(int)(x * cs->x_factor + 0.5),
+				   (int)(y * cs->y_factor + 0.5),
+				   (int)(cs->asDI[t].cx* cs->x_factor + 0.5),
+				   (int)(cs->asDI[t].cy* cs->y_factor + 0.5), TRUE);*/
+		MoveWindow(wnd,	(int)(x * cs->x_factor + 0.5),
+						(int)(y * cs->y_factor + 0.5),
+						(int)(wcx * cs->x_factor + 0.5),
+						(int)(wcy * cs->y_factor + 0.5), TRUE);
+		SendMessage(wnd, WM_SETFONT, (LPARAM)cs->font, TRUE);
+
+	}
+} /* Resize */
+
+extern void
+CSetDPIDetach(CSetDPI *cs)
+{
+	SendMessage(cs->hwnd, WM_SETFONT, (LPARAM)cs->oldfont, TRUE);
+
+	HWND wnd;
+	for(int t=0; t<cs->jNtItems; t++)
 	{
 		// OLD IMPLEMENTATION: wnd=GetDlgItem(hwnd,item->id);
 
@@ -692,25 +664,28 @@ void CSetDPI::Detach()
 		//       are we sure that controls will preserve the order?
 
 		if (!t)
-			wnd=GetWindow(hwnd,GW_CHILD);
+			wnd=GetWindow(cs->hwnd,GW_CHILD);
 		else
 			wnd=GetWindow(wnd,GW_HWNDNEXT);
 
-		while ((wnd)&&(GetDlgCtrlID(wnd) != item->id))
+		while ((wnd)&&(GetDlgCtrlID(wnd) != cs->asDI[t].id))
 			wnd=GetWindow(wnd,GW_HWNDNEXT);
 
 		if (!wnd) break;
 
-		SendMessage(wnd, WM_SETFONT, (LPARAM)oldfont, TRUE);
-		item=(helper::DLGITEMTEMPLATEEX *)helper::FindNextDlgItem((DLGITEMTEMPLATE *)item,TRUE);
+		SendMessage(wnd, WM_SETFONT, (LPARAM)cs->oldfont, TRUE);
 	}
 
-	UnlockResource(hDialogTemplate);
-	FreeResource(hDialogTemplate);
-
-
-	DeleteObject(font);
-	hwnd=0;
-	font=0;
-	oldfont=0;
+	DeleteObject(cs->font);
+	cs->hwnd=0;
+	cs->font=0;
+	cs->oldfont=0;
+	cs->jNtItems = 0;
 }
+
+extern void
+CSetDPIInitialSize(CSetDPI *dpi)
+{
+	CSetDPIResize(dpi, dpi->sDialogData.cx * X_CONST / 2,
+							dpi->sDialogData.cy * Y_CONST / 2);
+} /* CSetDPIInitialSize */

@@ -7,6 +7,7 @@
 // DlgEditSentransTransfer.h : header file
 //
 #include "DlgEnvConstrainedRule.h"
+#include "ResizingUtils.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditSentransTransfer dialog
@@ -36,8 +37,9 @@ public:
 
 // Implementation
 protected:
+	CSetDPI dpi;
+	BOOL dpiset;
 
-	void vSize(int cx, int cy);
 	// Generated message map functions
 	//{{AFX_MSG(CDlgEditSentransTransfer)
 	virtual BOOL OnInitDialog();

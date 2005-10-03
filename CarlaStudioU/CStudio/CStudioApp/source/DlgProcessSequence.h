@@ -4,6 +4,7 @@
 //                      lost if either a process was deleted or inserted
 
 /////////////////////////////////////////////////////////////////////////////
+#include "ResizingUtils.h"
 // CDlgProcessSequence dialog
 class CProcess;
 class CCarlaLanguage;
@@ -42,6 +43,7 @@ public:
 protected:
 	CProcessSequence* m_pSequence;
 	CString m_sTitle;
+
 	void checkButtonStatus();
 	void selectItem(int i);
 	CImageList m_iconList;
@@ -49,6 +51,9 @@ protected:
 	CProcess* getFirstSelectedProcess(int *pIndex=0);
 	void populateListCtrl();
 	void insertProcess(BOOL before) ;
+
+	CSetDPI dpi;
+	BOOL dpiset;
 
 	// Generated message map functions
 	//{{AFX_MSG(CDlgProcessSequence)

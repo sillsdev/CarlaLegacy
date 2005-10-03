@@ -16,9 +16,6 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditSentransDisambig dialog
 static const char *oszDialogName = "DlgEditSentransDisambig";
-#define BASE_WIDTH   303 // should correspond to the values in the .rc file!
-#define BASE_HEIGHT  196
-
 
 CDlgEditSentransDisambig::CDlgEditSentransDisambig(const CTextDisplayInfo* pTDI)
 	: CDlgEnvConstrainedRule(TRUE, CDlgEditSentransDisambig::IDD, pTDI)
@@ -29,6 +26,7 @@ CDlgEditSentransDisambig::CDlgEditSentransDisambig(const CTextDisplayInfo* pTDI)
 	m_sMembers = _T("");
 	m_iAcceptReject = -1;
 	m_bUnanimousEnvirons = FALSE;
+	dpiset = false;
 	//}}AFX_DATA_INIT
 }
 
@@ -80,16 +78,39 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CDlgEditSentransDisambig message handlers
 
-//DEL BOOL CDlgEditSentransDisambig::OnInitDialog()
-//DEL {
-//DEL //	m_sComments.SubclassDlgItem(IDD_PageInputDocPanels, this);
-//DEL //	m_sdfTest.SubclassDlgItem(IDC_SDF, this);
-//DEL
-//DEL 	CDialog::OnInitDialog();
-//DEL
-//DEL 	return TRUE;  // return TRUE unless you set the focus to a control
-//DEL 	              // EXCEPTION: OCX Property Pages should return FALSE
-//DEL }
+BOOL CDlgEditSentransDisambig::OnInitDialog()
+{
+	CDlgEnvConstrainedRule::OnInitDialog();
+
+	CSetDPIInit(&dpi, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+				m_hWnd,IDD,96.0); // 96 is the DPI
+
+	CSetDPIResizerFlags(&dpi, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CSetDPIResizerFlags(&dpi, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CSetDPIResizerFlags(&dpi, IDC_CHECKEnabled,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CSetDPIResizerFlags(&dpi, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_VERTICAL);
+	CSetDPIResizerFlags(&dpi, IDC_Comments,	RESIZER_MOVES_WITH_LEFTBOTTOM | RESIZER_SIZES_HORIZONTAL);
+	CSetDPIResizerFlags(&dpi, IDC_STATICcomments,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	dpiset=true;
+
+	// retrieve the window placement
+	WINDOWPLACEMENT wp;
+
+	if (ERROR_SUCCESS == lGetWindowPlacement(oszDialogName, &wp)) {
+		SetWindowPlacement(&wp);
+	}
+	else {
+		GetWindowPlacement(&wp);
+		wp.rcNormalPosition.bottom = dpi.sDialogData.cy;
+		wp.rcNormalPosition.right = dpi.sDialogData.cx;
+		SetWindowPlacement(&wp);
+		CSetDPIInitialSize(&dpi);
+	}
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+				  // EXCEPTION: OCX Property Pages should return FALSE
+}
+
 
 void CDlgEditSentransDisambig::OnJump()
 {
@@ -97,71 +118,21 @@ ASSERT(FALSE);
 
 }
 
-BOOL CDlgEditSentransDisambig::OnInitDialog()
+void CDlgEditSentransDisambig::OnSize(UINT nType, int cx, int cy)
 {
-	CDlgEnvConstrainedRule::OnInitDialog();
-
-	// retrieve the window placement
-	WINDOWPLACEMENT wp;
-
-	if (ERROR_SUCCESS != lGetWindowPlacement(oszDialogName, &wp)) {
-	/*	PAINTSTRUCT ps;
-		BeginPaint(&ps);
-		EndPaint(&ps);*/
-		GetWindowPlacement(&wp);
-	}
-
-	SetWindowPlacement(&wp);
-	vSize(wp.rcNormalPosition.right - wp.rcNormalPosition.left - 8,  // 8 is the magic figure (border width)
-		   wp.rcNormalPosition.bottom - wp.rcNormalPosition.top - 32); // 32 is magic: border + title bar
-
-	return TRUE;  // return TRUE unless you set the focus to a control
-				  // EXCEPTION: OCX Property Pages should return FALSE
-}
-
-void CDlgEditSentransDisambig::vSize(int cx, int cy)
-{
-	// resize all bits
+	CDlgEnvConstrainedRule::OnSize(nType, cx, cy);
 	CRect r;
 
-	// top of the environment list
-#define ENVLISTTOP       84
-#define EDITTEXTHEIGHT   27
-#define BUTTONSFROMTOP   176
+	// TODO: Add your message handler code here
+	if (dpiset)
+		CSetDPIResize(&dpi, cx, cy*2);
 
-	// Align things from boundary (left or right) and bottom
-	tsSizingElement asSizingElements[] =
-	{
-		{ IDCANCEL,           RightCorrect(246), 2*50, (BUTTONSFROMTOP - BASE_HEIGHT) * 2, 28, 0 },
-		{ IDOK,               RightCorrect(174), 2*50, (BUTTONSFROMTOP - BASE_HEIGHT) * 2, 28, 0 },
-
-		{ IDC_CHECKEnabled,   LeftCorrect(6),    2*42, (180 - BASE_HEIGHT) * 2, 20, 1 },
-		{ IDC_STATICcomments, LeftCorrect(13),   WidthCorrect(20), (143 - BASE_HEIGHT) * 2, 16, 1 },
-
-		/* Both top and bottom align with the bottom */
-		{ IDC_Comments,       LeftCorrect(56),   -12, (141 - BASE_HEIGHT) * 2, 27 * 2, 1 },
-
-		/* the top aligns from the top (positive figure)
-		 * the bottom aligns from the bottom (negative figure)
-		 */
-		{ IDC_EnvList,        LeftCorrect(56),   -12, ENVLISTTOP * 2, ((ENVLISTTOP + 49) - BASE_HEIGHT) * 2, 1 }
-	};
-	vResize(this, cx, cy, asSizingElements, sizeof(asSizingElements)/sizeof(asSizingElements[0]));
-
-	// finally, the ultimate resizer - resize the List control automatically
+	// TODO: Add your message handler code here
 	CListCtrl *clc = (CListCtrl *) GetDlgItem(IDC_EnvList);
 	if (clc && clc->m_hWnd) {
 	  clc->GetClientRect(&r);
 	  clc->SetColumnWidth(0, r.Width()/3);
 	}
-}
-
-void CDlgEditSentransDisambig::OnSize(UINT nType, int cx, int cy)
-{
-	CDlgEnvConstrainedRule::OnSize(nType, cx, cy);
-
-	// TODO: Add your message handler code here
-	vSize(cx,cy);
 }
 
 void CDlgEditSentransDisambig::OnDestroy()
@@ -179,8 +150,8 @@ void CDlgEditSentransDisambig::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
 	CDlgEnvConstrainedRule::OnGetMinMaxInfo(lpMMI);
 
 	// restrict minimum size to original size.
-	lpMMI->ptMinTrackSize.x = BASE_WIDTH * 2 + 2 * ::GetSystemMetrics(SM_CXFRAME);
-	lpMMI->ptMinTrackSize.y = BASE_HEIGHT * 2 + 2 * ::GetSystemMetrics(SM_CYFRAME) +
-							  ::GetSystemMetrics(SM_CYCAPTION);
+	lpMMI->ptMinTrackSize.x = (long) (((double) dpi.sDialogData.cx) * dpi.x_factor + ::GetSystemMetrics(SM_CXFRAME));
+	lpMMI->ptMinTrackSize.y = (long) (((double) dpi.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
+							  ::GetSystemMetrics(SM_CYCAPTION));
 //	lpMMI->ptMaxTrackSize.y = lpMMI->ptMinTrackSize.y; // don't change height
 }

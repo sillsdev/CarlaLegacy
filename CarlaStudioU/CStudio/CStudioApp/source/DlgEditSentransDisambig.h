@@ -39,8 +39,9 @@ public:
 
 // Implementation
 protected:
+	CSetDPI dpi;
+	BOOL dpiset;
 
-	void vSize(int cx, int cy);
 	// Generated message map functions
 	//{{AFX_MSG(CDlgEditSentransDisambig)
 	afx_msg void OnJump();
