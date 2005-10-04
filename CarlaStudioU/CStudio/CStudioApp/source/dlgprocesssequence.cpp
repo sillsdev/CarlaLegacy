@@ -36,7 +36,7 @@ CDlgProcessSequence::CDlgProcessSequence(int iFunctionCode,
 {
 	//{{AFX_DATA_INIT(CDlgProcessSequence)
 	m_sValidMsg = _T("");
-	dpiset = false;
+	resizerset = false;
 	//}}AFX_DATA_INIT
 }
 
@@ -219,19 +219,19 @@ BOOL CDlgProcessSequence::OnInitDialog()
 	//if(!m_ppProcesses->GetSize()) // are we empty?
 	//	insertProcess(FALSE);
 	// retrieve the window placement
-	CSetDPIInit(&dpi, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
-				m_hWnd,IDD,96.0); // 96 is the DPI
-	CSetDPIResizerFlags(&dpi, IDCANCEL,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDOK,				RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, ID_HELP,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDC_InsertBefore,	RESIZER_MOVES_WITH_RIGHTTOP);
-	CSetDPIResizerFlags(&dpi, IDC_InsertAfter,	RESIZER_MOVES_WITH_RIGHTTOP);
-	CSetDPIResizerFlags(&dpi, IDC_Remove,		RESIZER_MOVES_WITH_RIGHTTOP);
-	CSetDPIResizerFlags(&dpi, IDC_Properties,	RESIZER_MOVES_WITH_RIGHTTOP);
-	CSetDPIResizerFlags(&dpi, IDC_ValidMsg,		RESIZER_MOVES_WITH_LEFTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDC_Uncheck,		RESIZER_MOVES_WITH_LEFTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDC_ProcessList,	RESIZER_SIZES_VERTICAL | RESIZER_SIZES_HORIZONTAL);
-	dpiset = true;
+	CResizerInit(&resizer, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+				m_hWnd,IDD);
+	CResizerResizerFlags(&resizer, IDCANCEL,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDOK,				RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, ID_HELP,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_InsertBefore,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_InsertAfter,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_Remove,		RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_Properties,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_ValidMsg,		RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_Uncheck,		RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_ProcessList,	RESIZER_SIZES_VERTICAL | RESIZER_SIZES_HORIZONTAL);
+	resizerset = true;
 
 	WINDOWPLACEMENT wp;
 
@@ -242,10 +242,10 @@ BOOL CDlgProcessSequence::OnInitDialog()
 	}
 	else {
 		GetWindowPlacement(&wp);
-		wp.rcNormalPosition.bottom = dpi.sDialogData.cy;
-		wp.rcNormalPosition.right = dpi.sDialogData.cx;
+		wp.rcNormalPosition.bottom = resizer.sDialogData.cy;
+		wp.rcNormalPosition.right = resizer.sDialogData.cx;
 		SetWindowPlacement(&wp);
-		CSetDPIInitialSize(&dpi);
+		CResizerInitialSize(&resizer);
 		setupListCtrl(0);
 	}
 
@@ -473,8 +473,8 @@ void CDlgProcessSequence::OnSize(UINT nType, int cx, int cy)
 	CDialog::OnSize(nType, cx, cy);
 
 	// TODO: Add your message handler code here
-	if (dpiset)
-		CSetDPIResize(&dpi, cx, cy*2);
+	if (resizerset)
+		CResizerResize(&resizer, cx, cy*2);
 }
 
 void CDlgProcessSequence::OnDestroy()
@@ -493,8 +493,8 @@ void CDlgProcessSequence::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
 	// TODO: Add your message handler code here and/or call default
 
 	CDialog::OnGetMinMaxInfo(lpMMI);
-	lpMMI->ptMinTrackSize.x = (long) (((double) dpi.sDialogData.cx) * dpi.x_factor + ::GetSystemMetrics(SM_CXFRAME));
-	lpMMI->ptMinTrackSize.y = (long) (((double) dpi.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
+	lpMMI->ptMinTrackSize.x = (long) (((double) resizer.sDialogData.cx) * resizer.x_factor + ::GetSystemMetrics(SM_CXFRAME));
+	lpMMI->ptMinTrackSize.y = (long) (((double) resizer.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
 							  ::GetSystemMetrics(SM_CYCAPTION));
 //	lpMMI->ptMaxTrackSize.x = lpMMI->ptMinTrackSize.x;
 

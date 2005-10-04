@@ -42,8 +42,8 @@ public:
 // Implementation
 protected:
 	CEdit m_editEnv, m_editFrom, m_editTo;
-	CSetDPI dpi;
-	BOOL dpiset;
+	CResizer resizer;
+	BOOL resizerset;
 
 	// Generated message map functions
 	//{{AFX_MSG(CDlgPhonruleRule)

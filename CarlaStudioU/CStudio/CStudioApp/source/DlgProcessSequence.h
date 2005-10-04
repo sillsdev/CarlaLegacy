@@ -52,8 +52,8 @@ protected:
 	void populateListCtrl();
 	void insertProcess(BOOL before) ;
 
-	CSetDPI dpi;
-	BOOL dpiset;
+	CResizer resizer;
+	BOOL resizerset;
 
 	// Generated message map functions
 	//{{AFX_MSG(CDlgProcessSequence)

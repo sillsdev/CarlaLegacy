@@ -6,7 +6,7 @@
  * Dialog Resizing Code
  * by Marius Doornenbal, for (c) SIL International
  *
- * Inspired on the --Set dialog DPI helper class--
+ * Partly inspired by the 'DPI sensitivity' class
  * originally written by George Yohng [(C) 2003]
  *  http://www.yohng.com
  *
@@ -78,12 +78,12 @@ lGetWindowPlacement(const char *ozcScreenName, WINDOWPLACEMENT *pwp);
 	// -------------------------------------------------------------------
 
 	// TO your dialog class, add the following two variables:
-	CSetDPI dpi;
-	BOOL dpiset;
+	CResizer resizer;
+	BOOL resizerset;
 
 	// TO your dialog creator function, add
-	dpiset = false; // to avoid a call to the resizer before the dpi
-					// structure was properly initialised
+	resizerset = false; // to avoid a call to the resizer before the resizer
+						// structure was properly initialised
 	...
 
 	// ADD handlers for ON_INIT, ON_SIZE, ON_DESTROY and ON_MINMAXINFO
@@ -92,9 +92,9 @@ lGetWindowPlacement(const char *ozcScreenName, WINDOWPLACEMENT *pwp);
 	{
 		CDialog::OnInitDialog();
 
-		CSetDPIInit(&dpi, AfxFindResourceHandle(IMAKEINTRESOURCE(IDD), RT_DIALOG),
-				  m_hWnd,IDD,96.0); // 96 is the DPI
-		dpiset = true;
+		CResizerInit(&resizer, AfxFindResourceHandle(IMAKEINTRESOURCE(IDD), RT_DIALOG),
+				  m_hWnd,IDD,96.0); // 96 is the resizer
+		resizerset = true;
 
 	   // The rest of your initialization code goes here
 	   // here goes the collection of previously stored sizes
@@ -142,7 +142,7 @@ typedef struct dialogitem
  */
 typedef struct
 {
-	FILE *fiOut;
+	int dpi; /* the current dpi setting */
 
 	/* This first block of variables is set only once */
 	/* ID, etc */
@@ -162,18 +162,18 @@ typedef struct
 	double	x_factor,
 			y_factor;
 
-} CSetDPI;
+} CResizer;
 
 /* ----------------------------
  * methods
  * ----------------------------
  */
 /* Should you wish to resize items on a dialog, you must
- * 1. add a CSetDPI structure in the class definition
+ * 1. add a CResizer structure in the class definition
  * 2. call this initialisation function on it
  */
 extern void
-CSetDPIInit(CSetDPI *, HINSTANCE inst, HWND dlg, int IDD, double dpi);
+CResizerInit(CResizer *, HINSTANCE inst, HWND dlg, int IDD);
 
 /* To add resizable items, call this function.
  * Which flags you can set for each item, see the defines below.
@@ -193,16 +193,16 @@ CSetDPIInit(CSetDPI *, HINSTANCE inst, HWND dlg, int IDD, double dpi);
 #define RESIZER_SIZES_VER_HALFSPEED		0x0800
 
 extern void
-CSetDPIResizerFlags(CSetDPI *, DWORD id, unsigned uiFlags);
+CResizerResizerFlags(CResizer *, DWORD id, unsigned uiFlags);
 
 extern void
-CSetDPIResize(CSetDPI *,int cx, int cy);
+CResizerResize(CResizer *,int cx, int cy);
 
 extern void
-CSetDPIDetach(CSetDPI *);
+CResizerDetach(CResizer *);
 
 /* first thing to call */
 extern void
-CSetDPIInitialSize(CSetDPI *dpi);
+CResizerInitialSize(CResizer *resizer);
 
 #endif /* __RESIZINGUTILS_H__ */

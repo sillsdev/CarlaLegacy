@@ -26,7 +26,7 @@ CDlgEditSentransDisambig::CDlgEditSentransDisambig(const CTextDisplayInfo* pTDI)
 	m_sMembers = _T("");
 	m_iAcceptReject = -1;
 	m_bUnanimousEnvirons = FALSE;
-	dpiset = false;
+	resizerset = false;
 	//}}AFX_DATA_INIT
 }
 
@@ -82,16 +82,16 @@ BOOL CDlgEditSentransDisambig::OnInitDialog()
 {
 	CDlgEnvConstrainedRule::OnInitDialog();
 
-	CSetDPIInit(&dpi, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
-				m_hWnd,IDD,96.0); // 96 is the DPI
+	CResizerInit(&resizer, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+				m_hWnd,IDD);
 
-	CSetDPIResizerFlags(&dpi, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDC_CHECKEnabled,	RESIZER_MOVES_WITH_LEFTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_VERTICAL);
-	CSetDPIResizerFlags(&dpi, IDC_Comments,	RESIZER_MOVES_WITH_LEFTBOTTOM | RESIZER_SIZES_HORIZONTAL);
-	CSetDPIResizerFlags(&dpi, IDC_STATICcomments,	RESIZER_MOVES_WITH_LEFTBOTTOM);
-	dpiset=true;
+	CResizerResizerFlags(&resizer, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_CHECKEnabled,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_VERTICAL);
+	CResizerResizerFlags(&resizer, IDC_Comments,	RESIZER_MOVES_WITH_LEFTBOTTOM | RESIZER_SIZES_HORIZONTAL);
+	CResizerResizerFlags(&resizer, IDC_STATICcomments,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	resizerset=true;
 
 	// retrieve the window placement
 	WINDOWPLACEMENT wp;
@@ -101,10 +101,10 @@ BOOL CDlgEditSentransDisambig::OnInitDialog()
 	}
 	else {
 		GetWindowPlacement(&wp);
-		wp.rcNormalPosition.bottom = dpi.sDialogData.cy;
-		wp.rcNormalPosition.right = dpi.sDialogData.cx;
+		wp.rcNormalPosition.bottom = resizer.sDialogData.cy;
+		wp.rcNormalPosition.right = resizer.sDialogData.cx;
 		SetWindowPlacement(&wp);
-		CSetDPIInitialSize(&dpi);
+		CResizerInitialSize(&resizer);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
@@ -124,8 +124,8 @@ void CDlgEditSentransDisambig::OnSize(UINT nType, int cx, int cy)
 	CRect r;
 
 	// TODO: Add your message handler code here
-	if (dpiset)
-		CSetDPIResize(&dpi, cx, cy*2);
+	if (resizerset)
+		CResizerResize(&resizer, cx, cy*2);
 
 	// TODO: Add your message handler code here
 	CListCtrl *clc = (CListCtrl *) GetDlgItem(IDC_EnvList);
@@ -150,8 +150,8 @@ void CDlgEditSentransDisambig::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
 	CDlgEnvConstrainedRule::OnGetMinMaxInfo(lpMMI);
 
 	// restrict minimum size to original size.
-	lpMMI->ptMinTrackSize.x = (long) (((double) dpi.sDialogData.cx) * dpi.x_factor + ::GetSystemMetrics(SM_CXFRAME));
-	lpMMI->ptMinTrackSize.y = (long) (((double) dpi.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
+	lpMMI->ptMinTrackSize.x = (long) (((double) resizer.sDialogData.cx) * resizer.x_factor + ::GetSystemMetrics(SM_CXFRAME));
+	lpMMI->ptMinTrackSize.y = (long) (((double) resizer.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
 							  ::GetSystemMetrics(SM_CYCAPTION));
 //	lpMMI->ptMaxTrackSize.y = lpMMI->ptMinTrackSize.y; // don't change height
 }

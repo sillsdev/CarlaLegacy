@@ -127,35 +127,17 @@ long lGetWindowPlacement(const char *oszScreenName, WINDOWPLACEMENT *pwp)
 								&type, (BYTE*) pwp, &length);
 }
 
-static void getptsize( HDC &dc, HFONT &font, SIZE *pSize )
-{
-	HFONT oldfont = 0;
-	static char *sym = "abcdefghijklmnopqrstuvwxyz"
-					   "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	SIZE sz;
-	TEXTMETRICA t;
-	oldfont = (HFONT)SelectObject(dc,font);
-	GetTextMetricsA(dc,&t);
-	GetTextExtentPointA(dc,sym, 52, &sz);
-	pSize->cy = t.tmHeight;
-	pSize->cx = (sz.cx / 26 + 1) / 2;
-	SelectObject(dc,oldfont);
-}
-
 
 /****************************************************
 
-   Set dialog DPI helper class
+   Set dialog resizer helper class
+   Originally, I started from a DPI-sensitivity class:
+   that was Copyright (C)2003 by George Yohng
+   -- http://www.yohng.com
 
-   Copyright (C)2003 by George Yohng
-
-   http://www.yohng.com
-
-   LICENSE AGREEMENT:
-
-	  You agree to go to http://www.yohng.com/music.html
-	  and listen completely (without skips) to the very
-	  first track on the list.
+   However, that class was (1) full of bugs and (2) did not
+   contain any resizing functionality.
+   So most of the code here is original.
 
  ****************************************************/
 
@@ -449,7 +431,7 @@ static void querydialogdata( LPCSTR data, dialogdata_t * result )
 }
 
 extern void
-CSetDPIInit(CSetDPI *cs, HINSTANCE hInst, HWND dlg, int iIDD, double dpi)
+CResizerInit(CResizer *cs, HINSTANCE hInst, HWND dlg, int iIDD)
 {
 	BOOL bDialogEx = 0;
 
@@ -457,6 +439,17 @@ CSetDPIInit(CSetDPI *cs, HINSTANCE hInst, HWND dlg, int iIDD, double dpi)
 	cs->inst = hInst;
 	cs->IDD  = iIDD;
 	cs->hwnd = dlg;
+
+	/* Get current point size information */
+	HDC hdcScreen = GetDC(NULL);
+
+	if (!hdcScreen) {
+		cs->dpi = 96;
+	}
+	else {
+		cs->dpi = GetDeviceCaps(hdcScreen, LOGPIXELSX);
+		ReleaseDC(NULL, hdcScreen);
+	}
 
 	helper::DLGTEMPLATEEX *lpDialogTemplate;
 
@@ -482,7 +475,7 @@ CSetDPIInit(CSetDPI *cs, HINSTANCE hInst, HWND dlg, int iIDD, double dpi)
 	}
 
 	cs->font=CreateFontW(
-		-(int)(cs->sDialogData.pt*dpi/72.0 + 0.5), // negative makes it use "char size"
+		-(int)(cs->sDialogData.pt*96.0/72.0 + 0.5), // negative makes it use "char size"
 	0,              // logical average character width
 	0,              // angle of escapement
 	0,              // base-line orientation angle
@@ -534,24 +527,13 @@ CSetDPIInit(CSetDPI *cs, HINSTANCE hInst, HWND dlg, int iIDD, double dpi)
 	UnlockResource(hDialogTemplate);
 	FreeResource(hDialogTemplate);
 
-	/* Get current point size information */
-	PAINTSTRUCT ps;
-	SIZE szf;
-	HDC dc=BeginPaint(cs->hwnd, &ps);
-	getptsize(dc,cs->font,&szf);
-	EndPaint(cs->hwnd, &ps);
+	cs->x_factor = (double) 2;
+	cs->y_factor = (double) 2;
 
-	double	x_n=szf.cx,
-			x_d=X_CONST,
-			y_n=szf.cy,
-			y_d=Y_CONST;
-	cs->x_factor = x_n/x_d;
-	cs->y_factor = y_n/y_d;
-
-}	/* CSetDPIInit */
+}	/* CResizerInit */
 
 extern void
-CSetDPIResizerFlags(CSetDPI *cs, DWORD id, unsigned uiFlags)
+CResizerResizerFlags(CResizer *cs, DWORD id, unsigned uiFlags)
 {
 	for (int j = 0; j < cs->jNtItems; j++) {
 		if (cs->asDI[j].id == id) {
@@ -560,14 +542,14 @@ CSetDPIResizerFlags(CSetDPI *cs, DWORD id, unsigned uiFlags)
 		}
 	}
 	return;
-} /* CSetDPIResizerFlags */
+} /* CResizerResizerFlags */
 
 extern void
-CSetDPIResize(CSetDPI *cs, int cx, int cy)
+CResizerResize(CResizer *cs, int cx, int cy)
 {
 	RECT rect;
-	int xdif = 0;// = cx / cs->x_factor - cs->sDialogData.cx;
-	int ydif = 0;// = cy / cs->y_factor - cs->sDialogData.cy;
+	int xdif = 0;
+	int ydif = 0;
 	int x, y, wcx, wcy;
 
 	GetClientRect(cs->hwnd,&rect);
@@ -576,7 +558,7 @@ CSetDPIResize(CSetDPI *cs, int cx, int cy)
 	rect.bottom = rect.top  + (int)(cy * cs->y_factor + 0.5);
 
 	ClientToScreen(cs->hwnd, (LPPOINT)&rect);
-	// ClientToScreen(cs->hwnd, ((LPPOINT)&rect)+1);
+
 	xdif = rect.right  / X_CONST - cs->sDialogData.cx;
 	ydif = rect.bottom / Y_CONST - cs->sDialogData.cy;
 
@@ -584,7 +566,6 @@ CSetDPIResize(CSetDPI *cs, int cx, int cy)
 	/*
 	MoveWindow(cs->hwnd,rect.left,rect.top,rect.right-rect.left,rect.bottom-rect.top,TRUE);
 	*/
-	CEdit *pE;
 	HWND wnd;
 
 	for(int t=0; t<cs->jNtItems; t++)
@@ -637,10 +618,6 @@ CSetDPIResize(CSetDPI *cs, int cx, int cy)
 			}
 		}
 
-/*		MoveWindow(wnd,(int)(x * cs->x_factor + 0.5),
-				   (int)(y * cs->y_factor + 0.5),
-				   (int)(cs->asDI[t].cx* cs->x_factor + 0.5),
-				   (int)(cs->asDI[t].cy* cs->y_factor + 0.5), TRUE);*/
 		MoveWindow(wnd,	(int)(x * cs->x_factor + 0.5),
 						(int)(y * cs->y_factor + 0.5),
 						(int)(wcx * cs->x_factor + 0.5),
@@ -651,7 +628,7 @@ CSetDPIResize(CSetDPI *cs, int cx, int cy)
 } /* Resize */
 
 extern void
-CSetDPIDetach(CSetDPI *cs)
+CResizerDetach(CResizer *cs)
 {
 	SendMessage(cs->hwnd, WM_SETFONT, (LPARAM)cs->oldfont, TRUE);
 
@@ -684,8 +661,8 @@ CSetDPIDetach(CSetDPI *cs)
 }
 
 extern void
-CSetDPIInitialSize(CSetDPI *dpi)
+CResizerInitialSize(CResizer *resizer)
 {
-	CSetDPIResize(dpi, dpi->sDialogData.cx * X_CONST / 2,
-							dpi->sDialogData.cy * Y_CONST / 2);
-} /* CSetDPIInitialSize */
+	CResizerResize(resizer, resizer->sDialogData.cx * X_CONST / 2,
+							resizer->sDialogData.cy * Y_CONST / 2);
+} /* CResizerInitialSize */

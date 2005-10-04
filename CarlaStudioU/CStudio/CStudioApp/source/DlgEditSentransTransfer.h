@@ -37,8 +37,8 @@ public:
 
 // Implementation
 protected:
-	CSetDPI dpi;
-	BOOL dpiset;
+	CResizer dpi;
+	BOOL resizerset;
 
 	// Generated message map functions
 	//{{AFX_MSG(CDlgEditSentransTransfer)

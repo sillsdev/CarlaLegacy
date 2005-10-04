@@ -29,7 +29,7 @@ CDlgPhonruleRule::CDlgPhonruleRule(const CTextDisplayInfo* pTDI)
 	m_iForceType = 0;
 	m_iRuleType = 0;
 	m_sComments = _T("");
-	dpiset = false;
+	resizerset = false;
 	//}}AFX_DATA_INIT
 }
 
@@ -81,19 +81,19 @@ END_MESSAGE_MAP()
 BOOL CDlgPhonruleRule::OnInitDialog()
 {
 	CDlgEnvConstrainedRule::OnInitDialog();
-	CSetDPIInit(&dpi, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
-				m_hWnd,IDD,96.0); // 96 is the DPI
-	CSetDPIResizerFlags(&dpi, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL);
-	CSetDPIResizerFlags(&dpi, IDC_Comments,	RESIZER_SIZES_HORIZONTAL);
-	CSetDPIResizerFlags(&dpi, IDC_STATICapply,	RESIZER_SIZES_HORIZONTAL);
-	CSetDPIResizerFlags(&dpi, IDC_From,		RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_HOR_HALFSPEED );
-	CSetDPIResizerFlags(&dpi, IDC_To,		RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_HOR_HALFSPEED | RESIZER_MOVES_WITH_RIGHTTOP | RESIZER_MOVES_HOR_HALFSPEED);
-	CSetDPIResizerFlags(&dpi, IDC_STATICto,	RESIZER_MOVES_WITH_RIGHTTOP | RESIZER_MOVES_HOR_HALFSPEED);
-	CSetDPIResizerFlags(&dpi, IDC_Category,	RESIZER_MOVES_WITH_RIGHTTOP);
-	CSetDPIResizerFlags(&dpi, IDC_STATICcategory,	RESIZER_MOVES_WITH_RIGHTTOP);
-	dpiset=true;
+	CResizerInit(&resizer, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+				m_hWnd,IDD);
+	CResizerResizerFlags(&resizer, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL);
+	CResizerResizerFlags(&resizer, IDC_Comments,	RESIZER_SIZES_HORIZONTAL);
+	CResizerResizerFlags(&resizer, IDC_STATICapply,	RESIZER_SIZES_HORIZONTAL);
+	CResizerResizerFlags(&resizer, IDC_From,		RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_HOR_HALFSPEED );
+	CResizerResizerFlags(&resizer, IDC_To,		RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_HOR_HALFSPEED | RESIZER_MOVES_WITH_RIGHTTOP | RESIZER_MOVES_HOR_HALFSPEED);
+	CResizerResizerFlags(&resizer, IDC_STATICto,	RESIZER_MOVES_WITH_RIGHTTOP | RESIZER_MOVES_HOR_HALFSPEED);
+	CResizerResizerFlags(&resizer, IDC_Category,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_STATICcategory,	RESIZER_MOVES_WITH_RIGHTTOP);
+	resizerset=true;
 
 	// retrieve the window placement
 	WINDOWPLACEMENT wp;
@@ -103,10 +103,10 @@ BOOL CDlgPhonruleRule::OnInitDialog()
 	}
 	else {
 		GetWindowPlacement(&wp);
-		wp.rcNormalPosition.bottom = dpi.sDialogData.cy;
-		wp.rcNormalPosition.right = dpi.sDialogData.cx;
+		wp.rcNormalPosition.bottom = resizer.sDialogData.cy;
+		wp.rcNormalPosition.right = resizer.sDialogData.cx;
 		SetWindowPlacement(&wp);
-		CSetDPIInitialSize(&dpi);
+		CResizerInitialSize(&resizer);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
@@ -121,7 +121,7 @@ void CDlgPhonruleRule::OnDestroy()
 	GetWindowPlacement(&wp);
 
 	lPutWindowPlacement(oszDialogName, &wp);
-//	CSetDPIDetach(&dpi);
+//	CResizerDetach(&resizer);
 }
 
 void CDlgPhonruleRule::OnSize(UINT nType, int cx, int cy)
@@ -129,8 +129,8 @@ void CDlgPhonruleRule::OnSize(UINT nType, int cx, int cy)
 	CDlgEnvConstrainedRule::OnSize(nType, cx, cy*2);
 
 	// TODO: Add your message handler code here
-	if (dpiset)
-		CSetDPIResize(&dpi, cx, cy*2);
+	if (resizerset)
+		CResizerResize(&resizer, cx, cy*2);
 	/* resize the List control automatically */
 	CListCtrl *clc = (CListCtrl *) GetDlgItem(IDC_EnvList);
 	if (clc && clc->m_hWnd) {
@@ -146,8 +146,8 @@ void CDlgPhonruleRule::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
 	double dpifactor = 1.00;//1.25;
 
 	// restrict minimum size to original size.
-	lpMMI->ptMinTrackSize.x = (long) (((double) dpi.sDialogData.cx) * dpi.x_factor * dpifactor + ::GetSystemMetrics(SM_CXFRAME));
-	lpMMI->ptMinTrackSize.y = (long) (((double) dpi.sDialogData.cy) * 2 * dpifactor + ::GetSystemMetrics(SM_CYFRAME) +
+	lpMMI->ptMinTrackSize.x = (long) (((double) resizer.sDialogData.cx) * resizer.x_factor * dpifactor + ::GetSystemMetrics(SM_CXFRAME));
+	lpMMI->ptMinTrackSize.y = (long) (((double) resizer.sDialogData.cy) * 2 * dpifactor + ::GetSystemMetrics(SM_CYFRAME) +
 							  ::GetSystemMetrics(SM_CYCAPTION));
 	lpMMI->ptMaxTrackSize.y = lpMMI->ptMinTrackSize.y; // don't change height
 }

@@ -25,7 +25,7 @@ CDlgEditSentransTransfer::CDlgEditSentransTransfer(const CTextDisplayInfo* pTDI)
 	m_sComments = _T("");
 	m_sFrom = _T("");
 	m_sTo = _T("");
-	dpiset = false;
+	resizerset = false;
 	//}}AFX_DATA_INIT
 }
 
@@ -80,16 +80,16 @@ BOOL CDlgEditSentransTransfer::OnInitDialog()
 {
 	CDlgEnvConstrainedRule::OnInitDialog();
 
-	CSetDPIInit(&dpi, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
-				m_hWnd,IDD,96.0); // 96 is the DPI
+	CResizerInit(&dpi, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+				m_hWnd,IDD);
 
-	CSetDPIResizerFlags(&dpi, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDC_CHECKEnabled,	RESIZER_MOVES_WITH_LEFTBOTTOM);
-	CSetDPIResizerFlags(&dpi, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_VERTICAL);
-	CSetDPIResizerFlags(&dpi, IDC_Comments,	RESIZER_MOVES_WITH_LEFTBOTTOM | RESIZER_SIZES_HORIZONTAL);
-	CSetDPIResizerFlags(&dpi, IDC_STATICcomments,	RESIZER_MOVES_WITH_LEFTBOTTOM);
-	dpiset=true;
+	CResizerResizerFlags(&dpi, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&dpi, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&dpi, IDC_CHECKEnabled,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&dpi, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_VERTICAL);
+	CResizerResizerFlags(&dpi, IDC_Comments,	RESIZER_MOVES_WITH_LEFTBOTTOM | RESIZER_SIZES_HORIZONTAL);
+	CResizerResizerFlags(&dpi, IDC_STATICcomments,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	resizerset=true;
 
 	// retrieve the window placement
 	WINDOWPLACEMENT wp;
@@ -102,7 +102,7 @@ BOOL CDlgEditSentransTransfer::OnInitDialog()
 		wp.rcNormalPosition.bottom = dpi.sDialogData.cy;
 		wp.rcNormalPosition.right = dpi.sDialogData.cx;
 		SetWindowPlacement(&wp);
-		CSetDPIInitialSize(&dpi);
+		CResizerInitialSize(&dpi);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
@@ -125,8 +125,8 @@ void CDlgEditSentransTransfer::OnSize(UINT nType, int cx, int cy)
 	CDlgEnvConstrainedRule::OnSize(nType, cx, cy);
 
 	// TODO: Add your message handler code here
-	if (dpiset)
-		CSetDPIResize(&dpi, cx, cy*2);
+	if (resizerset)
+		CResizerResize(&dpi, cx, cy*2);
 
 	/* finally, the ultimate resizer - resize the List control automatically */
 	CListCtrl *clc = (CListCtrl *) GetDlgItem(IDC_EnvList);
