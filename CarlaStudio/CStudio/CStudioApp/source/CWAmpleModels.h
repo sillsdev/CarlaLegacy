@@ -44,7 +44,7 @@ public:
 	//		categories, allomorph properties, morpheme properties,
 	//		category classes, morpheme classes, and string classes
 
-	enum {kNoOutputCat, kOutputPrefixCat, kOutputSuffixCat};
+	enum {kNoOutputCat, kOutputPrefixCat, kOutputSuffixCat, kOutputComputedCat };
 	CWRadio m_radioCatOutput;
 	//CWBool outputFinalCat, finalCatIsPrefix;
 	CWBool	outputAllMorphCats;
