@@ -7,6 +7,7 @@
 // DlgEditSentransDisambig.h : header file
 //
 #include "DlgEnvConstrainedRule.h"
+#include "ResizingUtils.h"
 #include "sdfedit.h"
 
 /////////////////////////////////////////////////////////////////////////////
@@ -38,8 +39,9 @@ public:
 
 // Implementation
 protected:
+	CResizer resizer;
+	BOOL resizerset;
 
-	void vSize(int cx, int cy);
 	// Generated message map functions
 	//{{AFX_MSG(CDlgEditSentransDisambig)
 	afx_msg void OnJump();

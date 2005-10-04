@@ -1,8 +1,27 @@
 /*
- * ResizingUtils.cpp
+ * ResizingUtils.h
+ *
+ ****************************************************
+ *
+ * Dialog Resizing Code
+ * by Marius Doornenbal, for (c) SIL International
+ *
+ * Partly inspired by the 'DPI sensitivity' class
+ * originally written by George Yohng [(C) 2003]
+ *  http://www.yohng.com
+ *
+ * BUT:
+ *  -- his code has been debugged and the resizing code has
+ * been added.
+ *
+ ***************************************************
+ *
  * Utility functions to help Dialogs resize themselves in a neat way
  * (with member panes and windows sizing at the same time)
+ * Also - code to store sizing information in the registry.
  */
+#ifndef __RESIZINGUTILS_H__
+#define __RESIZINGUTILS_H__
 
 #include "stdafx.h"
 
@@ -13,8 +32,8 @@
 
 /*
  * extern long
- * lPutWindowPlacement(LPCTSTR lpScreenName, WINDOWPLACEMENT *pwp);
- * in : lpScreenName
+ * lPutWindowPlacement(const char *ozcScreenName, WINDOWPLACEMENT *pwp);
+ * in : ozcScreenName
  * in : pwp
  *
  * ** lpScreenName: give the name of the dialog
@@ -28,49 +47,162 @@
  * to check the different return values.
  */
 extern long
-lPutWindowPlacement(LPCTSTR lpScreenName, WINDOWPLACEMENT *pwp);
+lPutWindowPlacement(const char *ozcScreenName, WINDOWPLACEMENT *pwp);
 
 /*
  * extern long
- * lPutWindowPlacement(LPCTSTR lpScreenName, WINDOWPLACEMENT *pwp);
- * in : lpScreenName
+ * lGetWindowPlacement(const char *ozcScreenName, WINDOWPLACEMENT *pwp);
+ * in : ozcScreenName
  * out: pwp
  *
  * The reverse of the previous function, retrieves the info from the registry.
  * Return value the same as above.
  */
 extern long
-lGetWindowPlacement(LPCTSTR lpScreenName, WINDOWPLACEMENT *pwp);
+lGetWindowPlacement(const char *ozcScreenName, WINDOWPLACEMENT *pwp);
 
 /*
- * To do the resizing of any dialog window, you can call the vResize() function.
- * This is typically called from an OnSize() function.
- * The job that vResize() does, is reposition and resizing the member elements
- * in a dialog.
- * The following structure can contain, for each item, it's position relative
- * to the borders of the mother window (dialog).
- */
-typedef struct {
-		int iItem;          // Item ID in the dialog; should be unique
-		int iFromBorder,    // horizontal distance from border; if iAlignLeft = 1, then
-							// this is taken from the left border; else, from the right border
-			iWidth,         // width of the box; if this is negative,
-							// it is computed relative to the right hand border.
-			iTopFromBorder, // is the distance of the top of this element to the border;
-							// if positive, distance to the top, if negative, distance from the bottom
-			iHeight;        // if this is negative, this element doesn't move but stretch with the bottom
-		int iAlignLeft;
-	} tsSizingElement;
-
-/* extern void
- * vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE)
- * in/out : cd
- * in : cx, cy    // size of the mother window
- * in : psSE      // specifies the relative positions of elements you wish to float
- * in : gNoSE     // number of elements in psSE
+ *************************************************
+ * Warning: for proper sizing with large fonts,  *
+ *          set dialog font explicitly to        *
+ *                                               *
+ *         Microsoft Sans Serif (as opposed to   *
+ *                                MS Sans Serif) *
+ *          or Tahoma                            *
+ *                                               *
+ *          (they have the same sizes)           *
+ *************************************************
  *
- * This functions repositions all of the elements in the array psSE.
- * If you want elements to stay where they are, leave them out of the array.
+	// -------------------------------------------------------------------
+	// MFC Example:
+	// -------------------------------------------------------------------
+
+	// TO your dialog class, add the following two variables:
+	CResizer resizer;
+	BOOL resizerset;
+
+	// TO your dialog creator function, add
+	resizerset = false; // to avoid a call to the resizer before the resizer
+						// structure was properly initialised
+	...
+
+	// ADD handlers for ON_INIT, ON_SIZE, ON_DESTROY and ON_MINMAXINFO
+
+	BOOL CMyDlg::OnInitDialog()
+	{
+		CDialog::OnInitDialog();
+
+		CResizerInit(&resizer, AfxFindResourceHandle(IMAKEINTRESOURCE(IDD), RT_DIALOG),
+				  m_hWnd,IDD,96.0); // 96 is the resizer
+		resizerset = true;
+
+	   // The rest of your initialization code goes here
+	   // here goes the collection of previously stored sizes
+
+	   return TRUE;
+   }
+
+	// for further sample code, see e.g. DlgPhonruleRule.cpp
+
+*/
+
+/* data stored for each dialog.
+ * this is - original data - read from the resource.
+ */
+typedef struct dialogdata_t
+{
+	int			pt,has_menu;
+	unsigned	weight;
+	BOOL		italic;
+	LPCWSTR		faceName;
+	int			style;
+	int			exStyle;
+	int			cx, cy;  /* original sizes */
+} tsDialogData, *tpsDialogData;
+
+/* Information filed for each dialog item -
+ * ID, coordinates & size, and resizing behaviour
+ */
+typedef struct dialogitem
+{
+	int x, y, cx, cy;
+	DWORD id;
+
+	/* for each item we can list a number of flags */
+	unsigned uiFlags;
+} tsDialogItem, *tpsDialogItem;
+
+/*
+ * as we do not want to allocate memory on the heap we maximise the number of
+ * items on a dialog. 40 seems reasonable.
+ */
+#define MAX_NO_DIALOG_ITEMS   40
+
+/* As there is to know about dialogs
+ */
+typedef struct
+{
+	int dpi; /* the current dpi setting */
+
+	/* This first block of variables is set only once */
+	/* ID, etc */
+	int IDD;
+	HINSTANCE inst;
+	/* handle for the window */
+	HWND hwnd;
+	/* font sizes */
+	HFONT font,oldfont;
+
+	/* This struct is initialised only once */
+	tsDialogData sDialogData;
+	int jNtItems; /* the number of items in this dialog */
+	tsDialogItem asDI[MAX_NO_DIALOG_ITEMS];
+
+	/* current point size information */
+	double	x_factor,
+			y_factor;
+
+} CResizer;
+
+/* ----------------------------
+ * methods
+ * ----------------------------
+ */
+/* Should you wish to resize items on a dialog, you must
+ * 1. add a CResizer structure in the class definition
+ * 2. call this initialisation function on it
  */
 extern void
-vResize(CDialog *cd, int cx, int cy, tsSizingElement *psSE, size_t gNoSE);
+CResizerInit(CResizer *, HINSTANCE inst, HWND dlg, int IDD);
+
+/* To add resizable items, call this function.
+ * Which flags you can set for each item, see the defines below.
+ */
+/* MOVING behaviour */
+#define RESIZER_MOVES_WITH_LEFTTOP		0x0000
+#define RESIZER_MOVES_WITH_RIGHTTOP		0x0001
+#define RESIZER_MOVES_WITH_LEFTBOTTOM	0x0002
+#define RESIZER_MOVES_WITH_RIGHTBOTTOM	0x0003
+#define RESIZER_MOVES_HOR_HALFSPEED		0x0010
+#define RESIZER_MOVES_VER_HALFSPEED		0x0020
+
+/* SIZING behaviour */
+#define RESIZER_SIZES_HORIZONTAL		0x0100
+#define RESIZER_SIZES_HOR_HALFSPEED		0x0200
+#define RESIZER_SIZES_VERTICAL			0x0400
+#define RESIZER_SIZES_VER_HALFSPEED		0x0800
+
+extern void
+CResizerResizerFlags(CResizer *, DWORD id, unsigned uiFlags);
+
+extern void
+CResizerResize(CResizer *,int cx, int cy);
+
+extern void
+CResizerDetach(CResizer *);
+
+/* first thing to call */
+extern void
+CResizerInitialSize(CResizer *resizer);
+
+#endif /* __RESIZINGUTILS_H__ */

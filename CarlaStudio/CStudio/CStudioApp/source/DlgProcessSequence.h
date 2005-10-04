@@ -8,6 +8,7 @@
 class CProcess;
 class CCarlaLanguage;
 class CProcessSequence ;
+#include "ResizingUtils.h"
 
 class CDlgProcessSequence : public CDialog
 {
@@ -50,6 +51,9 @@ protected:
 	void populateListCtrl();
 	void insertProcess(BOOL before) ;
 	virtual BOOL OnInitDialog( );
+
+	CResizer resizer;
+	BOOL resizerset;
 
 	// Generated message map functions
 	//{{AFX_MSG(CDlgProcessSequence)

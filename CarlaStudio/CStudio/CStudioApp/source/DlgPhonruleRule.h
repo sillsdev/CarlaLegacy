@@ -8,6 +8,7 @@
 //
 class CTextDisplayInfo;
 #include "DlgEnvConstrainedRule.h"
+#include "ResizingUtils.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CDlgPhonruleRule dialog
@@ -41,8 +42,9 @@ public:
 // Implementation
 protected:
 	CEdit m_editEnv, m_editFrom, m_editTo;
+	CResizer resizer;
+	BOOL resizerset;
 
-	void vSize(int cx, int cy);
 	// Generated message map functions
 	//{{AFX_MSG(CDlgPhonruleRule)
 	virtual BOOL OnInitDialog();

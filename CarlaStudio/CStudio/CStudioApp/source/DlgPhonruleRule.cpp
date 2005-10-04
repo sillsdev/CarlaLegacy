@@ -5,7 +5,6 @@
 #include "..\resource.h"
 #include "DlgPhonruleRule.h"
 #include "TextDisplayInfo.h"
-#include "ResizingUtils.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -28,6 +27,7 @@ CDlgPhonruleRule::CDlgPhonruleRule(const CTextDisplayInfo* pTDI)
 	m_iForceType = 0;
 	m_iRuleType = 0;
 	m_sComments = _T("");
+	resizerset = false;
 	//}}AFX_DATA_INIT
 }
 
@@ -77,99 +77,37 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CDlgPhonruleRule message handlers
 static const char *oszDialogName = "DlgPhonruleRule";
-#define BASE_WIDTH   289
-#define BASE_HEIGHT  201
-
-void CDlgPhonruleRule::vSize(int cx, int cy)
-{
-	// resize all bits
-	CEdit *pE;
-	CRect r;
-
-#define TOPBORDER (::GetSystemMetrics(SM_CYCAPTION) + ::GetSystemMetrics(SM_CYFRAME))
-
-	// sizing elements
-	tsSizingElement asSizingElements[] = {
-		// fixed to the right hand side of the dialog
-		{ IDC_STATICcategory, 216,62,18,16,0 },
-		{ IDC_Category, 144,130,12,28,0 },
-		// Aligned from the left or right hand side and the bottom
-		{ IDCANCEL, 114, 100, -44, 28, 0 },
-		{ IDOK, 232, 100, -44, 28, 0 },
-		{ IDC_CHECKEnabled, 16, 84, (183 - BASE_HEIGHT) * 2, 10*2, 1 }, // 8,183,42,10
-		// align things on the right hand side
-		{ IDC_EnvList, 58 * 2, -12, /*TOPBORDER + */28 * 2, 48*2, 1 },  // 58,28,224,48
-		{ IDC_Comments, 58 * 2, -12, /* TOPBORDER + */ 85 * 2, 28*2, 1 }, //58,85,224,28,
-		{ IDC_STATICapply, 174 * 2, -12, /* TOPBORDER + */ 119 * 2, 50*2, 1 } // 174,119,108,50
-	};
-	vResize(this,cx,cy,asSizingElements,sizeof(asSizingElements)/sizeof(asSizingElements[0]));
-
-	/*
-	 * The To-box moves half steps and resizes half steps
-	 */
-	//    EDITTEXT        IDC_To,130,6,39,14,ES_AUTOHSCROLL
-	//    LTEXT           "To:",IDC_STATICto,114,9,12,8
-	//    EDITTEXT        IDC_From,58,6,43,14,ES_AUTOHSCROLL
-	struct {
-		int iItem;
-		int iBaseLeft, // is distance from left hand boundary
-			iWidth,
-			iTop,
-			iHeight;
-		int iResizes;
-		int iMoves;
-	} asFixedRHSHalfElements[] = // fixed right hand side
-	{
-		{ IDC_STATICto, 228, 24, 18, 16, 0,1 },
-		{ IDC_To,       260, 78, 12, 28, 1,1 },
-		{ IDC_From,     58*2, 43*2, 12, 14*2, 1,0 } // 58,6,43,14
-	};
-	for (int iItem = 0; iItem < sizeof(asFixedRHSHalfElements)/sizeof(asFixedRHSHalfElements[0]); iItem++) {
-	  pE = (CEdit*) GetDlgItem(asFixedRHSHalfElements[iItem].iItem);
-	  if(pE && pE->m_hWnd)
-	  {
-		pE->GetWindowRect(&r);
-		ScreenToClient(&r);
-
-		if (asFixedRHSHalfElements[iItem].iMoves) {
-		  r.left = asFixedRHSHalfElements[iItem].iBaseLeft + (cx - BASE_WIDTH * 2) / 2;
-		}
-		else {
-		  r.left = asFixedRHSHalfElements[iItem].iBaseLeft;
-		}
-		r.top = asFixedRHSHalfElements[iItem].iTop;
-		if (asFixedRHSHalfElements[iItem].iResizes) {
-		  r.right = r.left + asFixedRHSHalfElements[iItem].iWidth + (cx - BASE_WIDTH * 2) / 2;
-		}
-		else {
-		  r.right = r.left + asFixedRHSHalfElements[iItem].iWidth;
-		}
-		r.bottom = r.top + asFixedRHSHalfElements[iItem].iHeight;
-
-		pE->MoveWindow(r.left, r.top, r.Width(), r.Height(), TRUE);
-	  }
-	}
-
-	/* finally, the ultimate resizer - resize the List control automatically */
-	CListCtrl *clc = (CListCtrl *) GetDlgItem(IDC_EnvList);
-	if (clc && clc->m_hWnd) {
-	  clc->GetClientRect(&r);
-	  clc->SetColumnWidth(0, r.Width()/3);
-	}
-}
-
 
 BOOL CDlgPhonruleRule::OnInitDialog()
 {
 	CDlgEnvConstrainedRule::OnInitDialog();
 
+	CResizerInit(&resizer, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+				m_hWnd,IDD);
+	CResizerResizerFlags(&resizer, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL);
+	CResizerResizerFlags(&resizer, IDC_Comments,	RESIZER_SIZES_HORIZONTAL);
+	CResizerResizerFlags(&resizer, IDC_STATICapply,	RESIZER_SIZES_HORIZONTAL);
+	CResizerResizerFlags(&resizer, IDC_From,		RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_HOR_HALFSPEED );
+	CResizerResizerFlags(&resizer, IDC_To,		RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_HOR_HALFSPEED | RESIZER_MOVES_WITH_RIGHTTOP | RESIZER_MOVES_HOR_HALFSPEED);
+	CResizerResizerFlags(&resizer, IDC_STATICto,	RESIZER_MOVES_WITH_RIGHTTOP | RESIZER_MOVES_HOR_HALFSPEED);
+	CResizerResizerFlags(&resizer, IDC_Category,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_STATICcategory,	RESIZER_MOVES_WITH_RIGHTTOP);
+	resizerset=true;
+
 	// retrieve the window placement
 	WINDOWPLACEMENT wp;
 
 	if (ERROR_SUCCESS == lGetWindowPlacement(oszDialogName, &wp)) {
-	  SetWindowPlacement(&wp);
-	  vSize(wp.rcNormalPosition.right - wp.rcNormalPosition.left - 8,  // 8 is the magic figure (border width)
-			wp.rcNormalPosition.bottom - wp.rcNormalPosition.top - 32); // 32 is magic: border + title bar
+		SetWindowPlacement(&wp);
+	}
+	else {
+		GetWindowPlacement(&wp);
+		wp.rcNormalPosition.bottom = resizer.sDialogData.cy;
+		wp.rcNormalPosition.right = resizer.sDialogData.cx;
+		SetWindowPlacement(&wp);
+		CResizerInitialSize(&resizer);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
@@ -190,8 +128,16 @@ void CDlgPhonruleRule::OnSize(UINT nType, int cx, int cy)
 {
 	CDlgEnvConstrainedRule::OnSize(nType, cx, cy);
 
+	if (resizerset)
+		CResizerResize(&resizer, cx, cy*2);
 	// TODO: Add your message handler code here
-	vSize(cx,cy);
+	/* finally, the ultimate resizer - resize the List control automatically */
+	CListCtrl *clc = (CListCtrl *) GetDlgItem(IDC_EnvList);
+	if (clc && clc->m_hWnd) {
+		CRect r;
+		clc->GetClientRect(&r);
+		clc->SetColumnWidth(0, r.Width()/3);
+	}
 }
 
 void CDlgPhonruleRule::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
@@ -199,8 +145,8 @@ void CDlgPhonruleRule::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
 	CDlgEnvConstrainedRule::OnGetMinMaxInfo(lpMMI);
 
 	// restrict minimum size to original size.
-	lpMMI->ptMinTrackSize.x = BASE_WIDTH * 2 + 2 * ::GetSystemMetrics(SM_CXFRAME);
-	lpMMI->ptMinTrackSize.y = BASE_HEIGHT * 2 + 2 * ::GetSystemMetrics(SM_CYFRAME) +
-							  ::GetSystemMetrics(SM_CYCAPTION);
+	lpMMI->ptMinTrackSize.x = (long) (((double) resizer.sDialogData.cx) * resizer.x_factor + ::GetSystemMetrics(SM_CXFRAME));
+	lpMMI->ptMinTrackSize.y = (long) (((double) resizer.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
+							  ::GetSystemMetrics(SM_CYCAPTION));
 	lpMMI->ptMaxTrackSize.y = lpMMI->ptMinTrackSize.y; // don't change height
 }

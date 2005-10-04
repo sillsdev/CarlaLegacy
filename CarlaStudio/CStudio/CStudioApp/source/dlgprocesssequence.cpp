@@ -12,7 +12,6 @@
 #include "DlgProcessSequence.h"
 #include "ProcessSequence.h"
 #include "DlgChooseProcessor.h"
-#include "ResizingUtils.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -38,6 +37,7 @@ CDlgProcessSequence::CDlgProcessSequence(int iFunctionCode,
 {
 	//{{AFX_DATA_INIT(CDlgProcessSequence)
 	m_sValidMsg = _T("");
+	resizerset = false;
 	//}}AFX_DATA_INIT
 }
 
@@ -206,53 +206,45 @@ void CDlgProcessSequence::OnGetdispinfoProcessList(NMHDR* pNMHDR, LRESULT* pResu
 	*pResult = 0; //	THIS WAS PUT HERE BY THE WIZARD
 }
 
-static void
-vSize(CDialog *cd, int cx, int cy)
-{
-	// resize all bits
-	CRect r;
-
-	// Align things from boundary (left or right) and bottom
-	tsSizingElement asSizingElements[] =
-	{
-		{ IDCANCEL,         (BASE_WIDTH - 238) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 238,120,50,14
-		{ IDOK,             (BASE_WIDTH - 178) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 178,120,50,14
-		{ ID_HELP,          (BASE_WIDTH - 304) * 2, 100, -1*(BASE_HEIGHT - 120) * 2, 28, 0 },    // 304,120,50,14
-		{ IDC_InsertBefore, (BASE_WIDTH - 304) * 2, 100, 11*2, 28, 0}, //  304,11,50,14
-		{ IDC_InsertAfter,  (BASE_WIDTH - 304) * 2, 100, 29*2, 28, 0}, //  304,29,50,14
-		{ IDC_Remove,       (BASE_WIDTH - 304) * 2, 100, 48*2, 28, 0}, //  304,48,50,14
-		{ IDC_Properties,   (BASE_WIDTH - 304) * 2, 100, 66*2, 28, 0}, //  304,66,50,14
-		{ IDC_ValidMsg, 10 * 2, 278*2, -1*(BASE_HEIGHT - 96) * 2, 20*2, 1 }, //10,96,278,20
-		{ IDC_Uncheck,   9 * 2, 128*2, -1*(BASE_HEIGHT - 81) * 2,  8*2, 1 },  // 9,81,128,8
-		{ IDC_ProcessList, 8 * 2, -1*(BASE_WIDTH - 284 - 8) * 2, 10 * 2, -2 * (BASE_HEIGHT - 10 - 69), 1 }      // 8,10,284,69
-	};
-	vResize(cd, cx, cy, asSizingElements, sizeof(asSizingElements)/sizeof(asSizingElements[0]));
-
-}
 
 BOOL CDlgProcessSequence::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 	SetWindowText(m_sTitle);
+
 	//if(!m_ppProcesses->GetSize()) // are we empty?
 	//	insertProcess(FALSE);
-	// retrieve the window placement
+
+	CResizerInit(&resizer, AfxFindResourceHandle(MAKEINTRESOURCE(IDD), RT_DIALOG),
+				m_hWnd,IDD);
+	CResizerResizerFlags(&resizer, IDCANCEL,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDOK,				RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, ID_HELP,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_InsertBefore,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_InsertAfter,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_Remove,		RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_Properties,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_ValidMsg,		RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_Uncheck,		RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_ProcessList,	RESIZER_SIZES_VERTICAL | RESIZER_SIZES_HORIZONTAL);
+	resizerset = true;
+
 	WINDOWPLACEMENT wp;
 
 	if (ERROR_SUCCESS == lGetWindowPlacement(oszDialogName, &wp)) {
-	  SetWindowPlacement(&wp);
-	  int cx = wp.rcNormalPosition.right - wp.rcNormalPosition.left;
-	  int cy = wp.rcNormalPosition.bottom - wp.rcNormalPosition.top;
-	   //  + ::GetSystemMetrics(SM_CXFRAME) * 2
-	   //  + ::GetSystemMetrics(SM_CYFRAME) + ::GetSystemMetrics(SM_CYCAPTION);
-	  vSize(this,
-			cx - 8,   // total width minus border width
-			cy - 32); // total height minus border + title bar
-	  setupListCtrl(cx);
+		SetWindowPlacement(&wp);
+		int cx = wp.rcNormalPosition.right - wp.rcNormalPosition.left;
+		setupListCtrl(cx);
 	}
 	else {
-	  setupListCtrl(0);
+		GetWindowPlacement(&wp);
+		wp.rcNormalPosition.bottom = resizer.sDialogData.cy;
+		wp.rcNormalPosition.right = resizer.sDialogData.cx;
+		SetWindowPlacement(&wp);
+		CResizerInitialSize(&resizer);
+		setupListCtrl(0);
 	}
+
 
 	checkButtonStatus();
 
@@ -474,7 +466,8 @@ void CDlgProcessSequence::OnSize(UINT nType, int cx, int cy)
 	CDialog::OnSize(nType, cx, cy);
 
 	// TODO: Add your message handler code here
-	vSize(this, cx, cy);
+	if (resizerset)
+		CResizerResize(&resizer, cx, cy*2);
 }
 
 void CDlgProcessSequence::OnDestroy()
@@ -493,9 +486,9 @@ void CDlgProcessSequence::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
 	// TODO: Add your message handler code here and/or call default
 
 	CDialog::OnGetMinMaxInfo(lpMMI);
-	lpMMI->ptMinTrackSize.x = BASE_WIDTH * 2 + 2 * ::GetSystemMetrics(SM_CXFRAME);
-	lpMMI->ptMinTrackSize.y = BASE_HEIGHT * 2 + 2 * ::GetSystemMetrics(SM_CYFRAME) +
-							  ::GetSystemMetrics(SM_CYCAPTION);
+	lpMMI->ptMinTrackSize.x = (long) (((double) resizer.sDialogData.cx) * resizer.x_factor + ::GetSystemMetrics(SM_CXFRAME));
+	lpMMI->ptMinTrackSize.y = (long) (((double) resizer.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
+							  ::GetSystemMetrics(SM_CYCAPTION));
 //	lpMMI->ptMaxTrackSize.x = lpMMI->ptMinTrackSize.x;
 
 }
