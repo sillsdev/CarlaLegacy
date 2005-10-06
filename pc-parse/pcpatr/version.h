@@ -4,12 +4,18 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
-#define PATCHLEVEL 10		/* bug fix or other minor change */
-#define DATE "August 26, 2005"	/* date of release version */
+#define PATCHLEVEL 12		/* bug fix or other minor change */
+#define DATE "September 26, 2005"	/* date of release version */
 #define YEAR "2005"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 26-Sep-2005  hab  - In XML tree dump, either output all features if
+ * [1.3.12]             "set features on" and "set features all" are set or
+ *                      output no features if "set features off" is set.
+ * 21-Sep-2005  hab  - In XML tree dump, fix underlyingform info to use the
+ * [1.3.11]             decomposition separation character in the input word
+ *                      section.
  * 26-Aug-2005  hab  - In XML tree dump, if the input was an ANA file, also
  * [1.3.10]             output the input word and its (disambiguated) analyses
  * 06-Dec-2004  hab  - Allow for interfixes in Ample ANA (i.e. handle more than

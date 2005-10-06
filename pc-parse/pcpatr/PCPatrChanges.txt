@@ -1,5 +1,16 @@
 PC-PATR CHANGE HISTORY
 
+1.3.12 (26-Sep-2005)
+--------------------
+1. In XML tree dump, either output all features if "set features on" and
+   "set features all" are set or output no features if "set features off"
+   is set.
+
+1.3.11 (21-Sep-2005)
+--------------------
+1. In XML tree dump, fix underlyingform info to use the decomposition separation
+   character in the input word section.
+
 1.3.10 (26-Aug-2005)
 --------------------
 1. In XML tree dump, if the input was an ANA file, also output the input word and

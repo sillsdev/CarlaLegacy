@@ -1401,13 +1401,8 @@ if (pEdge_in == NULL)
 sprintf(szNodeId, "_%d", pEdge_in->iIndex);
 if (pEdge_in->bPrinted)
 	{
-#ifndef hab124
 	fprintf(pOutputFP_in, "%*s<Shared id=\"_%d.%s\"/>\n", /* hab125 */
 		iIndent_in, "", iParse_in, szNodeId);
-#else
-	fprintf(pOutputFP_in, "%*s<shared id=\"_%d:%s\"/>\n",
-		iIndent_in, "", iParse_in, szNodeId);
-#endif /* hab124 */
 	return;
 	}
 pEdge_in->bPrinted = TRUE;
@@ -1443,11 +1438,7 @@ else
 	}
 if (pEdge_in->eType == PATR_RULE_EDGE)
 	{
-#ifndef hab124
 	fprintf(pOutputFP_in, "%*s<Node cat=\"", iIndent_in, "");
-#else
-	fprintf(pOutputFP_in, "%*s<node cat=\"", iIndent_in, "");
-#endif /* hab124 */
 	write_CDATA(pEdge_in->pszLabel, pOutputFP_in);
 	if (pEdge_in->u.r.pRule && pEdge_in->u.r.pRule->pszID)
 	{
@@ -1456,55 +1447,43 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 	}
 	fprintf(pOutputFP_in, "\" id=\"_%d._%d\"%s%s>\n", /* hab125 */
 		iParse_in, pEdge_in->iIndex, pszAll, pszFail);
-	if (pFeat == NULL)
-	{
-	if (pPATR_in->bUnification)
-#ifndef hab124
-		fprintf(pOutputFP_in, "%*s<Fs></Fs>\n", iIndent_in, "");
-#else
-		fprintf(pOutputFP_in, "%*s<fs></fs>\n", iIndent_in, "");
-#endif /* hab124 */
-	}
-	else
-	{
-#ifndef hab124
-	fprintf(pOutputFP_in, "%*s<Fs>\n", iIndent_in + 2, "");
-#else
-	fprintf(pOutputFP_in, "%*s<fs>\n", iIndent_in + 2, "");
-#endif /* hab124 */
-	if (pTreeFeats_in == NULL)
+
+	if (pPATR_in->iFeatureDisplay & PATR_FEATURE_ON)
 		{
+	if (pFeat == NULL)
+		{
+		if (pPATR_in->bUnification)
+			fprintf(pOutputFP_in, "%*s<Fs></Fs>\n", iIndent_in, "");
+		}
+	else
+		{
+		fprintf(pOutputFP_in, "%*s<Fs>\n", iIndent_in + 2, "");
+		if (pTreeFeats_in == NULL)
+			{
 		pSaveMultTop = pPATR_in->pMem->pMultTop;
 		markPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
 		resetPATRFeatureCoreferenceCheck(pPATR_in);
 		checkPATRFeatureCoreferences(pFeat, pPATR_in);
 		pszFeatNodeId = szNodeId;
 		}
-	else
-		{
+		else
+			{
 		pszFeatNodeId = "";
 		}
-	write_xml_feature(pFeat, iParse_in, pszFeatNodeId, pOutputFP_in,
-			  iIndent_in + 2, pPATR_in);
-	if (pTreeFeats_in == NULL)
-		{
+		write_xml_feature(pFeat, iParse_in, pszFeatNodeId, pOutputFP_in,
+				  iIndent_in + 2, pPATR_in);
+		if (pTreeFeats_in == NULL)
+			{
 		collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
 		resetPATRFeatureCoreferenceCheck(pPATR_in);
 		pPATR_in->pMem->pMultTop = pSaveMultTop;
 		}
-#ifndef hab124
-	fprintf(pOutputFP_in, "%*s</Fs>\n", iIndent_in + 2, "");
-#else
-	fprintf(pOutputFP_in, "%*s</fs>\n", iIndent_in + 2, "");
-#endif /* hab124 */
+		fprintf(pOutputFP_in, "%*s</Fs>\n", iIndent_in + 2, "");
+		}
 	}
 	write_xml_children(pEdge_in->u.r.pChildren, pTreeFeats_in, iParse_in,
 			   pOutputFP_in, iIndent_in + 2, pPATR_in);
-#ifndef hab124
 	fprintf(pOutputFP_in, "%*s</Node>\n", iIndent_in, "");
-#else
-	fprintf(pOutputFP_in, "%*s</node>\n", iIndent_in, "");
-#endif /* hab124 */
 	}
 else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
 	{
@@ -1530,96 +1509,67 @@ else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
 		pszPostGloss = "\"";
 		}
 	}
-#ifndef hab124
 	fprintf(pOutputFP_in, "%*s<Leaf cat=\"", iIndent_in, "");
-#else
-	fprintf(pOutputFP_in, "%*s<leaf cat=\"", iIndent_in, "");
-#endif /* hab124 */
 	write_CDATA(pEdge_in->pszLabel, pOutputFP_in);
 	fprintf(pOutputFP_in, "\" id=\"_%d._%d\"%s%s%s", /* hab125 */
 		iParse_in, pEdge_in->iIndex, pszAll, pszFail, pszPreGloss);
 	write_CDATA(pszGloss, pOutputFP_in);
 	fprintf(pOutputFP_in, "%s>\n", pszPostGloss);
-	if (pFeat == NULL)
-	{
-	if (pPATR_in->bUnification)
-#ifndef hab124
-		fprintf(pOutputFP_in, "%*s<Fs></Fs>\n", iIndent_in, "");
-#else
-		fprintf(pOutputFP_in, "%*s<fs></fs>\n", iIndent_in, "");
-#endif /* hab124 */
-	}
-	else
-	{
-#ifndef hab124
-	fprintf(pOutputFP_in, "%*s<Fs>\n", iIndent_in + 2, "");
-#else
-	fprintf(pOutputFP_in, "%*s<fs>\n", iIndent_in + 2, "");
-#endif /* hab124 */
-	if (pTreeFeats_in == NULL)
+	if (pPATR_in->iFeatureDisplay & PATR_FEATURE_ON)
 		{
+	if (pFeat == NULL)
+		{
+		if (pPATR_in->bUnification)
+			fprintf(pOutputFP_in, "%*s<Fs></Fs>\n", iIndent_in, "");
+		}
+	else
+		{
+		fprintf(pOutputFP_in, "%*s<Fs>\n", iIndent_in + 2, "");
+		if (pTreeFeats_in == NULL)
+			{
 		pSaveMultTop = pPATR_in->pMem->pMultTop;
 		markPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
 		resetPATRFeatureCoreferenceCheck(pPATR_in);
 		checkPATRFeatureCoreferences(pFeat, pPATR_in);
 		pszFeatNodeId = szNodeId;
 		}
-	else
-		{
+		else
+			{
 		pszFeatNodeId = "";
 		}
-	write_xml_feature(pFeat, iParse_in, pszFeatNodeId, pOutputFP_in,
-			  iIndent_in + 2, pPATR_in);
-	if (pTreeFeats_in == NULL)
-		{
+		write_xml_feature(pFeat, iParse_in, pszFeatNodeId, pOutputFP_in,
+				  iIndent_in + 2, pPATR_in);
+		if (pTreeFeats_in == NULL)
+			{
 		collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
 		resetPATRFeatureCoreferenceCheck(pPATR_in);
 		pPATR_in->pMem->pMultTop = pSaveMultTop;
 		}
-#ifndef hab124
-	fprintf(pOutputFP_in, "%*s</Fs>\n", iIndent_in + 2, "");
-#else
-	fprintf(pOutputFP_in, "%*s</fs>\n", iIndent_in + 2, "");
-#endif /* hab124 */
-	}
+		fprintf(pOutputFP_in, "%*s</Fs>\n", iIndent_in + 2, "");
+		}
 	if ((pEdge_in->pFeature == NULL) || (pTreeFeats_in == NULL))
-	{
-	if (pPATR_in->bUnification)
-#ifndef hab124
-		fprintf(pOutputFP_in, "%*s<Lexfs></Lexfs>\n", iIndent_in, "");
-#else
-		fprintf(pOutputFP_in, "%*s<lexfs></lexfs>\n", iIndent_in, "");
-#endif /* hab124 */
-	}
+		{
+		if (pPATR_in->bUnification)
+			fprintf(pOutputFP_in, "%*s<Lexfs></Lexfs>\n", iIndent_in, "");
+		}
 	else
-	{
-	pSaveMultTop = pPATR_in->pMem->pMultTop;
-	markPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
-	resetPATRFeatureCoreferenceCheck(pPATR_in);
-	checkPATRFeatureCoreferences(pEdge_in->pFeature, pPATR_in);
+		{
+		pSaveMultTop = pPATR_in->pMem->pMultTop;
+		markPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
+		resetPATRFeatureCoreferenceCheck(pPATR_in);
+		checkPATRFeatureCoreferences(pEdge_in->pFeature, pPATR_in);
 
-#ifndef hab124
-	fprintf(pOutputFP_in, "%*s<Lexfs>\n", iIndent_in + 2, "");
-#else
-	fprintf(pOutputFP_in, "%*s<lexfs>\n", iIndent_in + 2, "");
-#endif /* hab124 */
-	write_xml_feature(pEdge_in->pFeature, iParse_in, szNodeId,
-			  pOutputFP_in, iIndent_in + 2, pPATR_in);
-#ifndef hab124
-	fprintf(pOutputFP_in, "%*s</Lexfs>\n", iIndent_in + 2, "");
-#else
-	fprintf(pOutputFP_in, "%*s</lexfs>\n", iIndent_in + 2, "");
-#endif /* hab124 */
+		fprintf(pOutputFP_in, "%*s<Lexfs>\n", iIndent_in + 2, "");
+		write_xml_feature(pEdge_in->pFeature, iParse_in, szNodeId,
+				  pOutputFP_in, iIndent_in + 2, pPATR_in);
+		fprintf(pOutputFP_in, "%*s</Lexfs>\n", iIndent_in + 2, "");
 
-	collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
-	resetPATRFeatureCoreferenceCheck(pPATR_in);
-	pPATR_in->pMem->pMultTop = pSaveMultTop;
+		collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
+		resetPATRFeatureCoreferenceCheck(pPATR_in);
+		pPATR_in->pMem->pMultTop = pSaveMultTop;
+		}
 	}
-#ifndef hab124
 	fprintf(pOutputFP_in, "%*s<Str>", iIndent_in + 2, "");
-#else
-	fprintf(pOutputFP_in, "%*s<str>", iIndent_in + 2, "");
-#endif /* hab124 */
 	pf = findPATRAttribute(pEdge_in->pFeature, pszLexFeatName);
 	if ((pf != NULL) && (pf->eType == PATR_ATOM))
 	{
@@ -1629,13 +1579,8 @@ else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
 	{
 	write_PCDATA(pEdge_in->u.l.pszTerminal, pOutputFP_in);
 	}
-#ifndef hab124
 	fprintf(pOutputFP_in, "</Str>\n");
 	fprintf(pOutputFP_in, "%*s</Leaf>\n", iIndent_in, "");
-#else
-	fprintf(pOutputFP_in, "</str>\n");
-	fprintf(pOutputFP_in, "%*s</leaf>\n", iIndent_in, "");
-#endif /* hab124 */
 	}
 }
 
@@ -2590,7 +2535,7 @@ for (	pszAnalysis = bufferAnalysis + strspn(bufferAnalysis, szWhitespace_m) ;
 		iWord_in, iParse_in, iMorph);
 	fprintf(pOutputFP_in, "<Morph id=\"m%d.%d.%d\">%s</Morph>\n",
 		iWord_in, iParse_in, iMorph, pszAnalysis);
-	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cSplitter, "UnderForm", "ul",
+	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cDecomp, "UnderForm", "ul",
 				  pOutputFP_in, iWord_in, iParse_in, iMorph);
 	WriteAnalysisSubpartAsXml(&pszDecomposition, cDecomp, "Decomp", "d",
 				  pOutputFP_in, iWord_in, iParse_in, iMorph);
@@ -2614,7 +2559,7 @@ for (	pszAnalysis = bufferAnalysis + strspn(bufferAnalysis, szWhitespace_m) ;
 		iWord_in, iParse_in, iMorph);
 	fprintf(pOutputFP_in, "<Morph id=\"m%d.%d.%d\">%s</Morph>\n",
 		iWord_in, iParse_in, iMorph, pszAnalysis);
-	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cSplitter, "UnderForm", "ul",
+	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cDecomp, "UnderForm", "ul",
 				  pOutputFP_in, iWord_in, iParse_in, iMorph);
 	WriteAnalysisSubpartAsXml(&pszDecomposition, cDecomp, "Decomp", "d",
 				  pOutputFP_in, iWord_in, iParse_in, iMorph);
@@ -2634,7 +2579,7 @@ for (	pszAnalysis = bufferAnalysis + strspn(bufferAnalysis, szWhitespace_m) ;
 		iWord_in, iParse_in, iMorph);
 	fprintf(pOutputFP_in, "<Morph id=\"m%d.%d.%d\">%s</Morph>\n",
 		iWord_in, iParse_in, iMorph, pszAnalysis);
-	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cSplitter, "UnderForm", "ul",
+	WriteAnalysisSubpartAsXml(&pszUnderlyingForm, cDecomp, "UnderForm", "ul",
 				  pOutputFP_in, iWord_in, iParse_in, iMorph);
 	WriteAnalysisSubpartAsXml(&pszDecomposition, cDecomp, "Decomp", "d",
 				  pOutputFP_in, iWord_in, iParse_in, iMorph);
