@@ -556,7 +556,7 @@ CAPTION "About CARLA Studio"
 FONT 8, "MS Sans Serif"
 BEGIN
 	ICON            IDR_MAINFRAME,IDC_STATIC,12,9,20,20
-	LTEXT           "CARLA Studio Version 2.8.2.0",IDC_STATIC,40,10,119,8,
+	LTEXT           "CARLA Studio Version 2.9.0.0",IDC_STATIC,40,10,119,8,
 					SS_NOPREFIX
 	LTEXT           "Copyright SIL International © 1999-2005",IDC_STATIC,40,
 					20,158,8
@@ -1403,10 +1403,10 @@ BEGIN
 	PUSHBUTTON      "Cancel",IDCANCEL,232,179,50,14
 	CONTROL         "&Enabled",IDC_CHECKEnabled,"Button",BS_AUTOCHECKBOX |
 					WS_GROUP | WS_TABSTOP,8,183,42,10
-	LTEXT           "Comments",IDC_STATIC,12,87,34,8
+	LTEXT           "Comments",IDC_STATICcomments,12,87,34,8
 	LTEXT           "To:",IDC_STATICto,114,9,12,8
 	LTEXT           "From:",IDC_STATIC,28,9,18,8
-	GROUPBOX        "Rule Type",IDC_STATIC,58,119,69,49
+	GROUPBOX        "Rule Type",IDC_STATICruletype,58,119,69,49
 	LTEXT           "Category:",IDC_STATICcategory,181,9,31,8
 	GROUPBOX        "Apply",IDC_STATICapply,174,119,108,50
 	LTEXT           "Environments",IDC_STATIC,8,28,44,8
@@ -1880,8 +1880,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,8,2,0
- PRODUCTVERSION 2,8,2,0
+ FILEVERSION 2,9,0,0
+ PRODUCTVERSION 2,9,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x3L
@@ -1896,17 +1896,17 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "2.8.2.0\0"
+			VALUE "Comments", "2.9.0.0\0"
 			VALUE "CompanyName", " SIL International\0"
 			VALUE "FileDescription", "CARLA Studio Application\0"
-			VALUE "FileVersion", "2, 8, 2, 0\0"
+			VALUE "FileVersion", "2, 9, 0, 0\0"
 			VALUE "InternalName", "CARLAStudio\0"
 			VALUE "LegalCopyright", "Copyright © 1999-2005\0"
 			VALUE "LegalTrademarks", "\0"
 			VALUE "OriginalFilename", "CStudio.EXE\0"
 			VALUE "PrivateBuild", "\0"
 			VALUE "ProductName", "CarlaStudio Application\0"
-			VALUE "ProductVersion", "2, 8, 2, 0\0"
+			VALUE "ProductVersion", "2, 9, 0, 0\0"
 			VALUE "SpecialBuild", "\0"
 		END
 	END
@@ -2588,7 +2588,7 @@ BEGIN
 	IDS_WizCatProp_RSP_ST   "SuffixCategoryCheck\n|RSP Cat propagation, inserted by CarlaStudio wizard\n      left tocategory is current fromcategory\n"
 	IDS_Filter_Dictionary   "Dictionary (*.dic; *.db)|*.dic; *.db|All Files (*.*)|*.*||\n"
 	IDS_TTAddFile           "Choose a file to add"
-	IDS_Credits             "Design & Programming\r|John Hatton|PNG Branch||Andy Black|Mexico Branch||Documentation\r|David Matti|Indonesia Branch||John Hatton||Andy Black||Alpha Testing\r|Andy Black|Randy Regnier|Mexico Branch||Roland Fumey|Jan Gossner|Morris Johnson|PNG Branch||Early Beta Testing\r|Terry Cline|Cote d'Ivoire Branch||Paul Heineman|PNG Branch||David Matti|Indonesia Branch||Design Consultation\r|Andy Black|Randy Regnier||Ample DLL\r|Steve McConnel|Academic Computing|Andy Black|Mexico Branch||Distribution\r|Andy Black||Morale\r|Suzanne Hatton||Office Space\r|Emelefo Village||Thanks\r|SIL PNG Technical Studies Dept||Pacific Area Administration|||||||"
+	IDS_Credits             "Design & Programming\r|John Hatton|PNG Branch||Andy Black|Mexico Branch||Marius Doornenbal|SAG||Documentation\r|David Matti|Indonesia Branch||John Hatton||Andy Black||Alpha Testing\r|Andy Black|Randy Regnier|Mexico Branch||Roland Fumey|Jan Gossner|Morris Johnson|PNG Branch||Early Beta Testing\r|Terry Cline|Cote d'Ivoire Branch||Paul Heineman|PNG Branch||David Matti|Indonesia Branch||Design Consultation\r|Andy Black|Randy Regnier||Ample DLL\r|Steve McConnel|Academic Computing|Andy Black|Mexico Branch||Distribution\r|Andy Black||Morale\r|Suzanne Hatton||Office Space\r|Emelefo Village||Thanks\r|SIL PNG Technical Studies Dept||Pacific Area Administration|||||||"
 END
 
 STRINGTABLE DISCARDABLE

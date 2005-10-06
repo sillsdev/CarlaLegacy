@@ -86,14 +86,23 @@ BOOL CDlgPhonruleRule::OnInitDialog()
 				m_hWnd,IDD);
 	CResizerResizerFlags(&resizer, IDOK,			RESIZER_MOVES_WITH_RIGHTBOTTOM);
 	CResizerResizerFlags(&resizer, IDCANCEL,		RESIZER_MOVES_WITH_RIGHTBOTTOM);
-	CResizerResizerFlags(&resizer, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL);
-	CResizerResizerFlags(&resizer, IDC_Comments,	RESIZER_SIZES_HORIZONTAL);
-	CResizerResizerFlags(&resizer, IDC_STATICapply,	RESIZER_SIZES_HORIZONTAL);
-	CResizerResizerFlags(&resizer, IDC_From,		RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_HOR_HALFSPEED );
+	CResizerResizerFlags(&resizer, IDC_EnvList,	RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_VERTICAL);
+	CResizerResizerFlags(&resizer, IDC_Comments,	RESIZER_SIZES_HORIZONTAL | RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_STATICapply,	RESIZER_SIZES_HORIZONTAL | RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_From,		RESIZER_SIZES_HORIZONTAL |  RESIZER_SIZES_HOR_HALFSPEED );
 	CResizerResizerFlags(&resizer, IDC_To,		RESIZER_SIZES_HORIZONTAL | RESIZER_SIZES_HOR_HALFSPEED | RESIZER_MOVES_WITH_RIGHTTOP | RESIZER_MOVES_HOR_HALFSPEED);
 	CResizerResizerFlags(&resizer, IDC_STATICto,	RESIZER_MOVES_WITH_RIGHTTOP | RESIZER_MOVES_HOR_HALFSPEED);
 	CResizerResizerFlags(&resizer, IDC_Category,	RESIZER_MOVES_WITH_RIGHTTOP);
 	CResizerResizerFlags(&resizer, IDC_STATICcategory,	RESIZER_MOVES_WITH_RIGHTTOP);
+	CResizerResizerFlags(&resizer, IDC_CHECKEnabled,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_STATICcomments,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_STATICruletype,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_RADIORuleType,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_RADIOBaseRule,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_RADIOForce,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_RADIOInitial,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_RADIOFinal,	RESIZER_MOVES_WITH_LEFTBOTTOM);
+	CResizerResizerFlags(&resizer, IDC_CHECKEnabled,	RESIZER_MOVES_WITH_LEFTBOTTOM);
 	resizerset=true;
 
 	// retrieve the window placement
@@ -148,5 +157,4 @@ void CDlgPhonruleRule::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI)
 	lpMMI->ptMinTrackSize.x = (long) (((double) resizer.sDialogData.cx) * resizer.x_factor + ::GetSystemMetrics(SM_CXFRAME));
 	lpMMI->ptMinTrackSize.y = (long) (((double) resizer.sDialogData.cy) * 2 + ::GetSystemMetrics(SM_CYFRAME) +
 							  ::GetSystemMetrics(SM_CYCAPTION));
-	lpMMI->ptMaxTrackSize.y = lpMMI->ptMinTrackSize.y; // don't change height
 }
