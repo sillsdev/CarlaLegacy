@@ -1180,6 +1180,7 @@ namespace SIL.PcPatrBrowser
 		{
 			m_tree.Visible = true;
 			m_tree.Enabled = true;
+			m_tree.UseRightToLeft = miViewRightToLeft.Checked;
 			m_tree.SetTreeParameters(treeDoc);
 			m_tree.ParseXmlTreeDescription(xmlTree);
 			m_tree.MessageText = "Parse " + sentence.CurrentParseNumber.ToString() + " of " + sentence.NumberOfParses.ToString();
@@ -1237,6 +1238,8 @@ namespace SIL.PcPatrBrowser
 		private void ShowFSInfo(string sId)
 		{
 			XmlNode featStruct = GetFeatureStructureAtNode(sId);
+			if (featStruct == null)
+				return; // avoid crash
 
 			XmlDocument doc1 = new XmlDocument();
 			doc1.LoadXml(featStruct.OuterXml);
@@ -1283,6 +1286,8 @@ namespace SIL.PcPatrBrowser
 		private XmlNode GetFeatureStructureAtFs(string sFsId)
 		{
 			string sFs = "//Fs[@id='" + sFsId + "']";
+			if (m_parse.Node == null)
+				return null; // avoid crash
 			XmlNode featStructBasic = m_parse.Node.SelectSingleNode(sFs);
 			XmlNode featStruct = FleshOutFVals(featStructBasic);
 			return featStruct;
@@ -1744,12 +1749,7 @@ namespace SIL.PcPatrBrowser
 			saveDlg.Filter = m_strLanguageFileFilter;
 			// following needed, otherwise it always returns "Cancel"
 			saveDlg.OverwritePrompt = false;
-			if (m_sLanguageFileName != null)
-			{
-				saveDlg.InitialDirectory = Path.GetDirectoryName(m_sLanguageFileName);
-				saveDlg.FileName = Path.GetFileNameWithoutExtension(m_sLanguageFileName);
-			}
-			if (m_sLanguageFileName != null)
+			if (m_sLanguageFileName != null && m_sLanguageFileName != "")
 			{
 				saveDlg.InitialDirectory = Path.GetDirectoryName(m_sLanguageFileName);
 				saveDlg.FileName = Path.GetFileNameWithoutExtension(m_sLanguageFileName);

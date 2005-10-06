@@ -28,7 +28,7 @@ Preamble
 	<xsl:param name="sUnderFormFont" select="'Courier New'"/>
 	<!-- text message -->
 	<xsl:param name="sTextMessage" select="'Sentence 1 of 33'"/>
-	<xsl:param name="bRightToLeft" select="'N'"/>
+	<xsl:param name="bRightToLeft" select="'Y'"/>
 	<!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Main template
@@ -51,7 +51,7 @@ Main template
 									<xsl:choose>
 										<xsl:when test="$bRightToLeft='Y'">
 											<xsl:for-each select="Word">
-												<xsl:sort select="position()" order="descending"/>
+												<xsl:sort select="position()" order="descending" data-type="number"/>
 												<xsl:call-template name="DoWord"/>
 											</xsl:for-each>
 										</xsl:when>
@@ -232,6 +232,10 @@ DoWord
 	<xsl:template name="DoWord">
 		<td valign="top">
 			<table>
+			<xsl:if test="$bRightToLeft='Y'">
+			<xsl:attribute name="align"><xsl:text>right</xsl:text></xsl:attribute>
+			<xsl:attribute name="style"><xsl:text>direction:rtl</xsl:text></xsl:attribute>
+			</xsl:if>
 				<tr>
 					<td>
 						<span>
@@ -275,6 +279,8 @@ DoWord
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+21-Sep-2005    Andy Black    Use RTL flow and right-justify;
+												  fix ordering for RTL to sort correctly when more than 9 words
 26-Aug-2005	Andy Black	Initial Draft
 ================================================================
  -->

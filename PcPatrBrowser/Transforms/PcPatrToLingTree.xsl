@@ -44,28 +44,40 @@ Main template
 						<GlossFontFace>
 							<xsl:value-of select="$sGlossFont"/>
 						</GlossFontFace>
-						<GlossFontSize><xsl:value-of select="$sGlossFontSize"/></GlossFontSize>
+						<GlossFontSize>
+							<xsl:value-of select="$sGlossFontSize"/>
+						</GlossFontSize>
 						<GlossFontStyle>Regular</GlossFontStyle>
 						<GlossColorArgb>-16744447</GlossColorArgb>
-						<GlossColorName><xsl:value-of select="$sGlossFontColor"/></GlossColorName>
+						<GlossColorName>
+							<xsl:value-of select="$sGlossFontColor"/>
+						</GlossColorName>
 					</Gloss>
 					<Lex>
 						<LexFontFace>
 							<xsl:value-of select="$sLexFont"/>
 						</LexFontFace>
-						<LexFontSize><xsl:value-of select="$sLexFontSize"/></LexFontSize>
+						<LexFontSize>
+							<xsl:value-of select="$sLexFontSize"/>
+						</LexFontSize>
 						<LexFontStyle>Regular</LexFontStyle>
 						<LexColorArgb>-16776961</LexColorArgb>
-						<LexColorName><xsl:value-of select="$sLexFontColor"/></LexColorName>
+						<LexColorName>
+							<xsl:value-of select="$sLexFontColor"/>
+						</LexColorName>
 					</Lex>
 					<NT>
 						<NTFontFace>
 							<xsl:value-of select="$sNTFont"/>
 						</NTFontFace>
-						<NTFontSize><xsl:value-of select="$sNTFontSize"/></NTFontSize>
+						<NTFontSize>
+							<xsl:value-of select="$sNTFontSize"/>
+						</NTFontSize>
 						<NTFontStyle>Regular</NTFontStyle>
 						<NTColorArgb>-16777216</NTColorArgb>
-						<NTColorName><xsl:value-of select="$sNTFontColor"/></NTColorName>
+						<NTColorName>
+							<xsl:value-of select="$sNTFontColor"/>
+						</NTColorName>
 					</NT>
 					<Lines>
 						<LineWidth>15</LineWidth>
@@ -90,9 +102,13 @@ Node
 -->
 	<xsl:template match="Node">
 		<node type="nonterminal">
-			<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+			<xsl:attribute name="id">
+				<xsl:value-of select="@id"/>
+			</xsl:attribute>
 			<label>
 				<xsl:value-of select="@cat"/>
+				<xsl:if test="@all='true'">+</xsl:if>
+				<xsl:if test="@fail='true'">-</xsl:if>
 			</label>
 			<xsl:apply-templates/>
 		</node>
@@ -104,19 +120,37 @@ Leaf
 -->
 	<xsl:template match="Leaf">
 		<node type="nonterminal">
-			<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+			<xsl:attribute name="id">
+				<xsl:value-of select="@id"/>
+			</xsl:attribute>
 			<label>
 				<xsl:value-of select="@cat"/>
 			</label>
 			<node type="lex">
-				<xsl:attribute name="id"><xsl:value-of select="@id"/>lex</xsl:attribute>
+				<xsl:attribute name="id">
+					<xsl:value-of select="@id"/>lex</xsl:attribute>
 				<label>
-					<xsl:value-of select="Fs/F[@name='decomposition']/Str"/>
+					<xsl:choose>
+						<xsl:when test="Fs/F[@name='decomposition']/Str">
+							<xsl:value-of select="Fs/F[@name='decomposition']/Str"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="Str"/>
+						</xsl:otherwise>
+					</xsl:choose>
 				</label>
 				<node type="gloss">
-					<xsl:attribute name="id"><xsl:value-of select="@id"/>gloss</xsl:attribute>
+					<xsl:attribute name="id">
+						<xsl:value-of select="@id"/>gloss</xsl:attribute>
 					<label>
-						<xsl:value-of select="Fs/F[@name='gloss']/Str"/>
+						<xsl:choose>
+							<xsl:when test="Fs/F[@name='gloss']/Str">
+								<xsl:value-of select="Fs/F[@name='gloss']/Str"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="@gloss"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</label>
 				</node>
 			</node>
@@ -133,6 +167,7 @@ Elements to ignore
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+21-Sep-2005    Andy Black    Add plus sign to nodes with @all='true'
 08-Dec-2004    Andy Black  Began working on Initial Draft
 ================================================================
  -->
