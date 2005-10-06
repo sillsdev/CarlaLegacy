@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NTColorName>Unit Test NT Color</NTColorName>
+  <NTFontFace>Unit Test NT Font Face</NTFontFace>
+  <NTFontSize>200</NTFontSize>
+  <NTFontStyle>Regular</NTFontStyle>
+  <LexColorName>Unit Test Lex Color</LexColorName>
+  <LexFontFace>Unit Test Lex Font Face</LexFontFace>
+  <LexFontSize>200</LexFontSize>
+  <LexFontStyle>Regular</LexFontStyle>
+  <GlossColorName>Unit Test Gloss Color</GlossColorName>
+  <GlossFontFace>Unit Test Gloss Font Face</GlossFontFace>
+  <GlossFontSize>200</GlossFontSize>
+  <GlossFontStyle>Regular</GlossFontStyle>
+  <LanguageName>Unit Test Language Name</LanguageName>
+  <UseRTL>false</UseRTL>
+  <DecompChar>-</DecompChar>
+</LanguageInfo>
