@@ -230,7 +230,6 @@ static int	testAmpleUserDefined	P((AmpleHeadList * left,
 					   AmpleTestNode * tree,
 					   AmpleData *     pAmple_in));
 static char *		get_allo	P((AmpleHeadList * morph));
-static char *		get_allo_static	P((AmpleHeadList * morph));
 static AmpleHeadList *	getpos		P((int pos));
 static char *		get_surf	P((int pos));
 static char *		get_punct 	P((int pos)); /* 3.3.0 hab */
@@ -297,9 +296,6 @@ static char *		pszUnderlying_m = NULL;
  */
 static char *		pszSurfaceForm_m = NULL;
 /*
- *  last-asked allo string
- */
-static char *		pszLastAllo = NULL;
 /*
  * computed category index
  */
@@ -392,11 +388,10 @@ if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_OFF)
 for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 	{
 	pszSurfaceForm_m = pCurrentWord_m->pTemplate->paWord[i];
-	pszLastAllo		= duplicateString(pszSurfaceForm_m);
-	pszDeeptail_m	= pszSurfaceForm_m;
-	bRootFound_m	= FALSE;
-	bUsesPrevWord_m	= FALSE;
-	bUsesNextWord_m	= FALSE;
+	pszDeeptail_m    = pszSurfaceForm_m;
+	bRootFound_m     = FALSE;
+	bUsesPrevWord_m  = FALSE;
+	bUsesNextWord_m  = FALSE;
 	/*
 	 *  Process word recursively starting with prefix, followed by root, and
 	 *  suffix, with infix appropriately mingled in.
@@ -431,7 +426,6 @@ for ( i = 0 ; pCurrentWord_m->pTemplate->paWord[i] ; ++i )
 	}
 
 	bAllosTried = get_prefix(NULL, pszSurfaceForm_m, 0, 0, 0, pAmple_in);
-	freeMemory(pszLastAllo);
 
 	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
 	pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
@@ -970,7 +964,7 @@ return(np);
  *    list of dictionary entries
  */
 static AmpleAmlist * get_entries( key, etype, pAmple_in)
-char *	key;
+char *		key;
 int		etype;
 AmpleData *	pAmple_in;
 {
@@ -979,59 +973,42 @@ AmpleAllomorph *	pAllo;
 AmpleAmlist *		amset = NULL;	/* list of allomorphs collected */
 AmpleAmlist *		pNew;
 int			i;
-int			len, searchlen, alen;
-Trie *tp;
+int			len;
+int			cSave;
 
 if (key == NULL)
 	return NULL;
-
 len = strlen(key);
 /*
  *  because allomorphs are added at the beginning of the list, this produces
  *  a list with the longest matches first
  */
-if (len > pAmple_in->iMaxTrieDepth) /* only search up to the max trie depth */
-	searchlen = pAmple_in->iMaxTrieDepth;
-else
-	searchlen = len;
-
-/* while we move through the word, we also move through the trie. */
-for ( i = 0, tp = pAmple_in->pDictionary; i <= searchlen && tp != NULL; i++ )
+for ( i = 0 ; i <= len ; ++i )
 	{
+	cSave = key[i];
+	key[i] = NUL;
 	/* don't repeat Trie search needlessly */
-	pAllomorphs = (AmpleAllomorph *) (tp->pTrieInfo);
+	if (i <= pAmple_in->iMaxTrieDepth)
+	pAllomorphs = findDataInTrie(pAmple_in->pDictionary, key);
 	for ( pAllo = pAllomorphs ; pAllo != NULL ; pAllo = pAllo->pNext )
 	{
-		if ((etype != (pAllo->iMORPHTYPE & ATYPE)) &&
-			(etype != (pAllo->iMORPHTYPE & AMPLE_NFX)))	{/* interfix is subtyped */
-			/* wrong type */
-		}
-		else if ((pAllo->iAllomorphFlags & ACTIVE) == 0) {
-			/* not selected */
-		}
-		else {
-			alen = strlen(pAllo->pszAllomorph);
-			if (alen == i ||
-				(alen <= len &&
-				 memcmp(key + i, pAllo->pszAllomorph + i, alen - i) == 0)) {
-				pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
-				pNew->amp = (etype == AMPLE_ROOT) ?
-						  copy_am(etype, pAllo, pAmple_in) : pAllo;
-				pNew->alen = alen;
-				pNew->amlink = amset;
-				amset = pNew;
-			}
+	if ((etype != (pAllo->iMORPHTYPE & ATYPE)) &&
+		(etype != (pAllo->iMORPHTYPE & AMPLE_NFX)))	/* interfix is subtyped */
+		continue;					/* wrong type */
+	if ((pAllo->iAllomorphFlags & ACTIVE) == 0)
+		continue;					/* not selected */
+	if (strcmp(key, pAllo->pszAllomorph) == 0)
+		{
+		pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
+		pNew->amp = (etype == AMPLE_ROOT) ?
+				  copy_am(etype, pAllo, pAmple_in) : pAllo;
+		pNew->alen = strlen(key);
+		pNew->amlink = amset;
+		amset = pNew;
 		}
 	}
-	/*
-	 *  check for current key letter in children's letters
-	 */
-	tp = tp->pChildren;
-	while (	tp != NULL &&
-			tp->cLetter != (unsigned char)(key[i])) {
-		tp = tp->pSiblings;
+	key[i] = cSave;
 	}
-}
 return(amset);
 } /* end get_entries() */
 
@@ -4924,7 +4901,7 @@ return( utest( tree->uLeft.pChild, pAmple_in) );
 static char * get_allo(morph)
 AmpleHeadList *morph;
 {
-char *pszAlloNS = NULL;
+char *pszAllo = NULL;
 unsigned uiAlloSize = 0;
 char *p;
 AmpleHeadList *hp;
@@ -4932,8 +4909,8 @@ AmpleHeadList *hp;
 if (morph == pTestCurrent_m)
 	{					/* handle the easy case first */
 	uiAlloSize = iTestAlloLength_m + 1;
-	pszAlloNS = strncpy( allocMemory(uiAlloSize), pszTestString_m, iTestAlloLength_m );
-	return( pszAlloNS );			/* return its address */
+	pszAllo = strncpy( allocMemory(uiAlloSize), pszTestString_m, iTestAlloLength_m );
+	return( pszAllo );			/* return its address */
 	}
 
 for (	hp = pAmpleLeftHead_m, p = pszSurfaceForm_m ;
@@ -4945,29 +4922,8 @@ if ((hp == (AmpleHeadList *)NULL) || (hp->uiAllomorphLength == 0))
 	return( duplicateString("") );	/* nothing found or size zero */
 
 uiAlloSize = hp->uiAllomorphLength + 1;
-pszAlloNS = strncpy( allocMemory(uiAlloSize), p, hp->uiAllomorphLength );
-return( pszAlloNS );			/* return its address */
-}
-
-static char * get_allo_static(morph)
-AmpleHeadList *morph;
-{
-	char *p;
-	AmpleHeadList *hp;
-
-	if (morph == pTestCurrent_m) /* handle the easy case first */
-		/* return its address */
-		return strncpy(pszLastAllo, pszTestString_m, iTestAlloLength_m );
-
-	for (	hp = pAmpleLeftHead_m, p = pszSurfaceForm_m ;
-		(hp != (AmpleHeadList *)NULL) && (hp != morph) ;
-		hp = hp->pRight )
-		p += hp->uiAllomorphLength;		/* move pointer to allomorph */
-
-	if ((hp == (AmpleHeadList *)NULL) || (hp->uiAllomorphLength == 0))
-		return strcpy(pszLastAllo, "");	/* nothing found or size zero */
-
-	return strncpy( pszLastAllo, p, hp->uiAllomorphLength );	/* return its address */
+pszAllo = strncpy( allocMemory(uiAlloSize), p, hp->uiAllomorphLength );
+return( pszAllo );			/* return its address */
 }
 
 /***************************************************************************
@@ -5140,6 +5096,7 @@ int		rval;
 int		lval;
 char *		p;
 char *		pszAllo;
+char *		pszAllo2;
 char **		paPrevSurfaceForms = NULL;
 char **		paNextSurfaceForms = NULL;
 char **		paSurfaceForms;
@@ -5277,14 +5234,18 @@ switch (tree->iOpCode & OP_MASK)
 	if (	((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL) &&
 		(right.pszString != (char *)NULL) )
 		{
-		val = (strcmp(get_allo_static(hp), right.pszString) == 0);
+		pszAllo = get_allo(hp);
+		val = (strcmp( pszAllo, right.pszString) == 0);
+		freeMemory(pszAllo);
 		}
 	break;
 
 	case ALLO_MEMBER:	/* 'allomorph' 'is' 'member' IDENTIFIER */
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
 		{
-		val = isStringClassMember(get_allo_static(hp), right.pStringClass);
+		pszAllo = get_allo(hp);
+		val = isStringClassMember( pszAllo, right.pStringClass);
+		freeMemory(pszAllo);
 		}
 	break;
 
@@ -5293,42 +5254,48 @@ switch (tree->iOpCode & OP_MASK)
 		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
 		{
 		pszAllo  = get_allo(hp);
-		val = (strcmp(pszAllo, get_allo_static(hp2)) == 0);
+		pszAllo2 = get_allo(hp2);
+		val = (strcmp(pszAllo, pszAllo2) == 0);
 		freeMemory(pszAllo);
+		freeMemory(pszAllo2);
 		}
 	break;
 
 	case ALLO_MATCH:	/* 'allomorph' 'matches'  STRING */
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
 		{
+		pszAllo = get_allo(hp);
 		if (    (left.iPosition == ARGLEFT) ||
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
 		{					/* match end */
-		val = matchEnd(get_allo_static(hp), right.pszString);
+		val = matchEnd(pszAllo, right.pszString);
 		}
 		else
 		{					/* match beginning */
-		val = matchBeginning(get_allo_static(hp), right.pszString);
+		val = matchBeginning(pszAllo, right.pszString);
 		}
+		freeMemory(pszAllo);
 		}
 	break;
 
 	case AL_MAT_MEM: /* 'allomorph' 'matches' 'member' IDENTIFIER */
 	if ((hp = getpos(left.iPosition)) != (AmpleHeadList *)NULL)
 		{
+		pszAllo = get_allo(hp);
 		if (    (left.iPosition == ARGLEFT) ||
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
 		{					/* match end */
-		val = matchEndWithStringClass(get_allo_static(hp),
+		val = matchEndWithStringClass(pszAllo,
 						  right.pStringClass);
 		}
 		else
 		{					/* match beginning */
-		val = matchBeginWithStringClass(get_allo_static(hp),
+		val = matchBeginWithStringClass(pszAllo,
 						right.pStringClass);
 		}
+		freeMemory(pszAllo);
 		}
 	break;
 
@@ -5337,13 +5304,15 @@ switch (tree->iOpCode & OP_MASK)
 		((hp2= getpos(right.iValue)) != (AmpleHeadList *)NULL))
 		{
 		pszAllo  = get_allo(hp);
+		pszAllo2 = get_allo(hp2);
 		if (    (left.iPosition == ARGLEFT) ||
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
-		val = matchEnd(pszAllo, get_allo_static(hp2));
+		val = matchEnd(pszAllo, pszAllo2);
 		else
-		val = matchBeginning(pszAllo, get_allo_static(hp2));
+		val = matchBeginning(pszAllo, pszAllo2);
 		freeMemory(pszAllo);
+		freeMemory(pszAllo2);
 		}
 	break;
 
@@ -5376,7 +5345,9 @@ switch (tree->iOpCode & OP_MASK)
 	if (	((hp2 = getpos(right.iValue)) != (AmpleHeadList *)NULL) &&
 		((p = get_surf(left.iPosition)) != (char *)NULL) )
 		{
-		val = (strcmp( p, get_allo_static(hp2) ) == 0);
+		pszAllo2 = get_allo(hp2);
+		val = (strcmp( p, pszAllo2 ) == 0);
+		freeMemory(pszAllo2);
 		if (p == pszTempSurface_m)
 		{
 		freeMemory( pszTempSurface_m );
@@ -5432,16 +5403,18 @@ switch (tree->iOpCode & OP_MASK)
 	if (	((hp2 = getpos(right.iValue)) != (AmpleHeadList *)NULL) &&
 		((p = get_surf(left.iPosition)) != (char *)NULL) )
 		{
+		pszAllo2 = get_allo(hp2);
 		if (    (left.iPosition == ARGLEFT) ||
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
 		{
-		val = matchEnd( p, get_allo_static(hp2) );
+		val = matchEnd( p, pszAllo2 );
 		}
 		else
 		{
-		val = matchBeginning( p, get_allo_static(hp2) );
+		val = matchBeginning( p, pszAllo2 );
 		}
+		freeMemory(pszAllo2);
 		if (p == pszTempSurface_m)
 		{
 		freeMemory( pszTempSurface_m );

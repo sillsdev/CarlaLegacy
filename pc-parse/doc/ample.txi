@@ -10,10 +10,10 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.9
-@set DATE December 2004
-@set AUTHOR by Stephen McConnel and H. Andrew Black
-@set COPYRIGHT Copyright @copyright{} 2000-2004 SIL International
+@set VERSION version 3.10
+@set DATE October 2005
+@set AUTHOR by Stephen McConnel, H. Andrew Black, and Marius Doornenbal
+@set COPYRIGHT Copyright @copyright{} 2000-2005 SIL International
 
 @include front.txi
 
@@ -112,6 +112,9 @@ pair (min, max) which delimits the order class span of the affix.
 
 @c Added by hab 06-Dec-2004
 @item 11. Version 3.9.0 (December 2004) allows for ``interfixes'' (affixes which appear between roots).
+
+@c Added by hab 06-Oct-2005
+@item 12. Version 3.10.0 (October 2005) allows the final category output in the analysis output file to be computed.
 @end table
 
 @c ----------------------------------------------------------------------------
@@ -150,7 +153,7 @@ selects the control file comment character.  The default is the vertical
 bar (@code{|}).
 
 @item -d number
-selects the maximum dictionary trie depth.  The default is 2, which
+selects the maximum dictionary trie depth.  The default is 3, which
 favors reduced memory needs over speed.
 
 @item -e filename
@@ -507,10 +510,11 @@ the tests.  This is inconceivable for AMPLE's model of morphology.
 
 The category information to write to the analysis output file is
 defined by the field code @code{\cat} followed by one or two words.
-The first word must be either @code{prefix} or @code{suffix} (or an
-abbreviation of one of those words), either capitalized or lowercase.
-The second word, if present, must be @code{morpheme} (or an
-abbreviation thereof), either capitalized or lowercase.
+The first word must be either @code{prefix}, @code{suffix}, or
+@code{computed} (or an abbreviation of one of those words), either
+capitalized or lowercase.  The second word, if present, must be
+@code{morpheme} (or an abbreviation thereof), either capitalized or
+lowercase.
 
 In addition, the @code{\catcr} further defines what category to use
 for the case that a word consists solely of compound roots.

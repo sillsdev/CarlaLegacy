@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by ampledll.rc
+// Microsoft Developer Studio generated include file.
+// Used by xampledll.rc
 //
 
 // Next default values for new objects

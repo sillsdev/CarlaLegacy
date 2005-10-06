@@ -139,6 +139,8 @@ separate lines.
  7f.                     <position> tocategory is member <identifier>
  7g.                     <position> fromcategory is <identifier>
  7h.                     <position> tocategory is <identifier>
+ 7i.                     outputcategory is <identifier>
+ 7j.                     outputcategory is member <identifier>
 @end group
 
 @group
@@ -347,11 +349,11 @@ used to prune analyses based on adjacent words.)
 The type must be a keyword indicating whether the morpheme referred to
 is a prefix, an infix, a root, and so on
 
-@item 7ef.
+@item 7efj.
 The identifier must be the name of a class of categories defined with
 @code{\ccl} in the analysis data file.
 
-@item 7gh.
+@item 7ghi.
 The identifier must be a category defined with @code{\ca} in the
 analysis data file.
 

@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.10.0 (06-Oct-2005)
+--------------------
+1. Add a "compute category" capability to hanlde "jitterbug" category
+   mappings.
+
 3.9.4 (02-Mar-2005)
 -------------------
 1. Add information in tracing for when an infix allomorph matched, but its

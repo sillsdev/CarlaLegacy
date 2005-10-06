@@ -112,6 +112,10 @@ LINK32=link.exe
 # Name "xample - Win32 Profile"
 # Begin Source File
 
+SOURCE=.\ampcat.c
+# End Source File
+# Begin Source File
+
 SOURCE=.\ample.c
 # End Source File
 # Begin Source File

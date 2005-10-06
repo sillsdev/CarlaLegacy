@@ -3,13 +3,15 @@
  * Copyright 1996 - 2003 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
-#define REVISION 9		/* enhancement requiring adding to book */
-#define PATCHLEVEL 4		/* bug fix or other minor change */
-#define DATE "March 2, 2005"	/* date of release version */
+#define REVISION 10		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0		/* bug fix or other minor change */
+#define DATE "October 6, 2005"	/* date of release version */
 #define YEAR "2005"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 06-Oct-2005  md/hab - Add "compute category" capability
+ * [3.10.0]
  * 02-Mar-2005  hab  - Add information in tracing for when an infix allomorph
  * [3.9.4]               matched, but its location failed.
  * 09-Feb-2005  hab  - For XML output, handle special case of < in CDATA.
