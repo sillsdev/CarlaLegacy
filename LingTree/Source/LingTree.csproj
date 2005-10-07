@@ -110,6 +110,11 @@
 					AssemblyName = "IEHost"
 					HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\IEHost.dll"
 				/>
+				<Reference
+					Name = "LingTreeTree"
+					AssemblyName = "LingTreeTree"
+					HintPath = "bin\Debug\LingTreeTree.dll"
+				/>
 			</References>
 		</Build>
 		<Files>
@@ -190,16 +195,6 @@
 				<File
 					RelPath = "LingTree.ico"
 					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "LingTreeNode.cs"
-					SubType = "Code"
-					BuildAction = "Compile"
-				/>
-				<File
-					RelPath = "LingTreeTree.cs"
-					SubType = "Code"
-					BuildAction = "Compile"
 				/>
 				<File
 					RelPath = "New.bmp"

@@ -21,6 +21,7 @@ namespace LingTree
 		private System.Windows.Forms.Button btnOK;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.HelpProvider helpProvider;
+		private System.Windows.Forms.CheckBox cbSVG;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -71,21 +72,22 @@ namespace LingTree
 			this.btnOK = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.helpProvider = new System.Windows.Forms.HelpProvider();
+			this.cbSVG = new System.Windows.Forms.CheckBox();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			//
 			// groupBox1
 			//
-			this.groupBox1.Controls.AddRange(new System.Windows.Forms.Control[] {
-																					this.cbEmf,
-																					this.cbTif,
-																					this.cbPng,
-																					this.cbJpg,
-																					this.cbGif,
-																					this.cbBmp});
+			this.groupBox1.Controls.Add(this.cbSVG);
+			this.groupBox1.Controls.Add(this.cbEmf);
+			this.groupBox1.Controls.Add(this.cbTif);
+			this.groupBox1.Controls.Add(this.cbPng);
+			this.groupBox1.Controls.Add(this.cbJpg);
+			this.groupBox1.Controls.Add(this.cbGif);
+			this.groupBox1.Controls.Add(this.cbBmp);
 			this.groupBox1.Location = new System.Drawing.Point(16, 8);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(264, 272);
+			this.groupBox1.Size = new System.Drawing.Size(264, 304);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Check all the formats to use when saving";
@@ -155,14 +157,21 @@ namespace LingTree
 			this.btnCancel.TabIndex = 2;
 			this.btnCancel.Text = "Cancel";
 			//
+			// cbSVG
+			//
+			this.cbSVG.Location = new System.Drawing.Point(16, 272);
+			this.cbSVG.Name = "cbSVG";
+			this.cbSVG.Size = new System.Drawing.Size(240, 16);
+			this.cbSVG.TabIndex = 6;
+			this.cbSVG.Text = "Scalable Vector Graphics (*.svg)";
+			//
 			// DlgSaveFormat
 			//
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(378, 295);
-			this.Controls.AddRange(new System.Windows.Forms.Control[] {
-																		  this.btnCancel,
-																		  this.btnOK,
-																		  this.groupBox1});
+			this.ClientSize = new System.Drawing.Size(378, 336);
+			this.Controls.Add(this.btnCancel);
+			this.Controls.Add(this.btnOK);
+			this.Controls.Add(this.groupBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.HelpButton = true;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -259,6 +268,20 @@ namespace LingTree
 				cbTif.Checked = value;
 			}
 		}
+		/// <summary>
+		/// Gets/sets use *.svg format.
+		/// </summary>
+		public bool UseSVG
+		{
+			get
+			{
+				return cbSVG.Checked;
+			}
+			set
+			{
+				cbSVG.Checked = value;
+			}
+		}
 		void InitHelp()
 		{
 			helpProvider.SetHelpString(cbBmp, "If this is checked, the tree display will be saved as a bitmap file.\n" +
@@ -272,6 +295,8 @@ namespace LingTree
 			helpProvider.SetHelpString(this.cbPng, "If this is checked, the tree display will be saved as a Portable Network Graphics file.\n" +
 				"You can use this in a web page (e.g. use a <img> HTML element).");
 			helpProvider.SetHelpString(this.cbTif, "If this is checked, the tree display will be saved as a Tagged Image file.\n" +
+				"You can use this in a web page (e.g. use a <img> HTML element).");
+			helpProvider.SetHelpString(cbSVG, "If this is checked, the tree display will be saved as a Scalable Vector Graphics file.\n" +
 				"You can use this in a web page (e.g. use a <img> HTML element).");
 		}
 	}

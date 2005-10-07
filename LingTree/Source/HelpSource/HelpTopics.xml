@@ -9,8 +9,8 @@
 	<title>LingTree Help Topics</title>
 	<author>H. Andrew Black</author>
 	<affiliation>SIL International</affiliation>
-	<date>29-March-2005</date>
-	<version>0.6.0</version>
+	<date>7-October-2005</date>
+	<version>0.7.0</version>
 	<contents/>
   </frontMatter>
   <section1 id="s0">
@@ -20,7 +20,7 @@
 	<example num="x0.1">
 	  <word>
 		<langData lang="l1">
-		  <img src="LingTree.bmp"/>
+		  <img src="LingTree.png"/>
 		</langData>
 	  </word>
 	</example>
@@ -31,7 +31,7 @@
 	<secTitle>Editing a Tree Description</secTitle>
 	<p>You key in a tree description in the top pane.  To show the corresponding tree in the bottom pane, you "process" the description in any one of three ways:</p>
 	<ul>
-	  <li>by clicking the "process the tree description button" (<img src="ProcessDescription.bmp"/>)</li>
+	  <li>by clicking the "process the tree description button" (<img src="ProcessDescription.png"/>)</li>
 	  <li>by clicking on the <object class="MenuItem">Tree</object> menu item and then <object class="MenuItem">Process Description</object>
 	  </li>
 	  <li>or by typing CTRL-D (holding the CTRL key down while pressing the D key).</li>
@@ -286,7 +286,7 @@ will come out as in </p>
 	<example num="x2.1">
 	  <word>
 		<langData lang="l1">
-		  <img src="TreeParameters.bmp"/>
+		  <img src="TreeParameters.png"/>
 		</langData>
 	  </word>
 	</example>
@@ -366,7 +366,7 @@ For example, without the box checked, the description in <exampleRef num="x2.4.1
   </section1>
   <section1 id="s3">
 	<secTitle>Saving the Tree</secTitle>
-	<p>While the resulting tree looks nice within the LingTree program, what one usually wants to do is to embed the tree in some other document.  LingTree allows you to save the tree in any one of six formats:</p>
+	<p>While the resulting tree looks nice within the LingTree program, what one usually wants to do is to embed the tree in some other document.  LingTree allows you to save the tree in any one of seven formats:</p>
 	<ul>
 	  <li>A Windows bitmap (*.bmp) file.</li>
 	  <li>A Windows Enhanced Metafile (*.emf) file.</li>
@@ -377,12 +377,13 @@ For example, without the box checked, the description in <exampleRef num="x2.4.1
 	  <li>A JPEG File Interchange Format (*.jpg) file.</li>
 	  <li>A Portable Network Graphics (*.png) file.</li>
 	  <li>A Tagged Image File format (*.tif) file.</li>
+	  <li>Scalable Vector Graphics format (*.svg) file.</li>
 	</ul>
 	<p>You select which of these formats you wish to save by clicking on the <object class="MenuItem">File</object> menu item and then clicking on the <object class="MenuItem">Set Save Formats...</object> item.  This calls up the <object class="DialogTitle">Set Save Formats</object> dialog box which looks like what is shown in <exampleRef num="x3.1"/>.</p>
 	<example num="x3.1">
 	  <word>
 		<langData lang="l1">
-		  <img src="SetSaveFormats.bmp"/>
+		  <img src="SetSaveFormats.png"/>
 		</langData>
 	  </word>
 	</example>

@@ -1,8 +1,10 @@
+
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Text;
 
 namespace LingTree
 {
@@ -10,7 +12,7 @@ namespace LingTree
 	/// Summary description for LingTreeNode.
 	/// </summary>
 	[Serializable]
-	public class LingTreeNode : Object
+	public class LingTreeNode : Control
 	{
 		public enum NodeType
 		{
@@ -18,7 +20,8 @@ namespace LingTree
 			Lex,
 			Gloss,
 		}
-		string m_strContent;		// content of the node
+		string m_sContent;		// content of the node
+		string m_sId;			// id of the node
 		NodeType m_Type;		// node type (non-terminal, lex, gloss)
 		bool m_bTriangle;		// draw triangle instead of line
 		bool m_bOmitLine;		// no line above node
@@ -31,13 +34,14 @@ namespace LingTree
 		int m_iHeight;		// height of the node
 		int m_iWidth;		// width of the node
 		int  m_iLevel;		// level (or depth) of the node within the tree
+		const int m_iYCoordAdjustment = 40; // adjustment value
 		LingTreeNode m_Daughter;	// leftmost daughter of this node in the tree
 		LingTreeNode m_Sister;	// immediate sister to the right of this node in the tree
 		LingTreeNode m_Mother;	// mother of this node in the tree
 		const int m_iTriangleOffset = 300;
 		public LingTreeNode(int iLevel,
 			int iIndex,
-			string strContent,
+			string sContent,
 			NodeType eNodeType,
 			LingTreeNode ndeMother,
 			LingTreeNode ndeDaughter,
@@ -45,7 +49,7 @@ namespace LingTree
 		{
 			Level = iLevel;
 			Index = iIndex;
-			Content = strContent;
+			Content = sContent;
 			Type = eNodeType;
 			Mother = ndeMother;
 			Daughter = ndeDaughter;
@@ -56,6 +60,7 @@ namespace LingTree
 			Width = 0;
 			XCoord = 0;
 			YCoord = 0;
+			Id = "";
 		}
 		public LingTreeNode()
 			: this(0, 0, "", NodeType.NonTerminal,
@@ -65,6 +70,10 @@ namespace LingTree
 			// TODO: Add constructor logic here
 			//
 		}
+		public static double SVGConvert(int i)
+		{
+			return ((Convert.ToDouble(i))/100.0);
+		}
 		/// <summary>
 		/// Gets/sets Content.
 		/// </summary>
@@ -72,11 +81,25 @@ namespace LingTree
 		{
 			get
 			{
-				return m_strContent;
+				return m_sContent;
 			}
 			set
 			{
-				m_strContent = value;
+				m_sContent = value;
+			}
+		}
+		/// <summary>
+		/// Gets/sets Id.
+		/// </summary>
+		public string Id
+		{
+			get
+			{
+				return m_sId;
+			}
+			set
+			{
+				m_sId = value;
 			}
 		}
 		/// <summary>
@@ -209,7 +232,7 @@ namespace LingTree
 		/// Gets/sets Height.
 		/// </summary>
 		///
-		public int Height
+		public new int Height
 		{
 			get
 			{
@@ -223,7 +246,7 @@ namespace LingTree
 		/// <summary>
 		/// Gets/sets Width.
 		/// </summary>
-		public int Width
+		public new int Width
 		{
 			get
 			{
@@ -482,30 +505,24 @@ namespace LingTree
 			if (iEnd > Tree.XSize)
 				Tree.XSize = iEnd;	// Keep track of total width for scrolling
 #if DoTrace
-			Console.WriteLine("{0}\tXSize = {1},\tWidth = {2},\tXCoord = {3},\tXMid = {4}", Content, Tree.XSize, Width, XCoord, XMid);
+			Console.WriteLine("{0}\tXSize = {1},\tWidth = {2},\tXCoord = {3},\tYCoord = {4}, \tXMid = {4}", Content, Tree.XSize, Width, XCoord, YCoord, XMid);
 #endif
 			return XMid;
 		}
 
-		///////////////////////////////////////////////////////////////////////////////
-		// NAME
-		//    CalculateYCoordinate
-		// ARGUMENTS
-		//    iVerticalOffset - vertical offset up to this node
-		//    pTree - pointer to tree this node is in
-		//    pDC - pointer to the device context
-		// DESCRIPTION
-		//    Determine the Y-axis coordinate for this node
-		// RETURN VALUE
-		//    The Y-axis coordinate of this node
-		//
+		/// <summary>
+		/// Determine the Y-axis coordinate for this node
+		/// </summary>
+		/// <param name="iVerticalOffset">vertical offset up to this node</param>
+		/// <param name="Tree">the tree itself</param>
+		/// <param name="grfx">grpahics info</param>
 		public void CalculateYCoordinate(int iVerticalOffset, LingTreeTree Tree, Graphics grfx)
 		{
 			LingTreeNode Node;
 			// Determine Y-axis coordinates for this node
 			YCoord = iVerticalOffset;
-			YLowerMid = YCoord + Height + 40;
-			YUpperMid = YCoord - 40;
+			YLowerMid = YCoord + Height + m_iYCoordAdjustment;
+			YUpperMid = YCoord - m_iYCoordAdjustment;
 			if (YLowerMid > Tree.YSize)
 				Tree.YSize = YLowerMid;	// Keep track of total height for scrolling
 			if (Type == NodeType.Lex)
@@ -575,7 +592,7 @@ namespace LingTree
 				{
 					if (Tree.TrySmoothing &&                    // when smoothing, set smoothing values
 						( ((Node.XMid != XMid) &&               //   when have slanted lines or
-						   (Node.YUpperMid != YLowerMid)) ||
+						(Node.YUpperMid != YLowerMid)) ||
 						Node.Triangle) )                        //   when are doing a triangle (which will have slanted lines)
 					{
 						grfx.SmoothingMode = SmoothingMode.HighQuality;
@@ -615,6 +632,7 @@ namespace LingTree
 			pen.Dispose();
 			brush.Dispose();
 		}
+
 		///////////////////////////////////////////////////////////////////////////////
 		// NAME
 		//    DrawString
@@ -628,6 +646,7 @@ namespace LingTree
 		//
 		protected void DrawString(string sRest, Graphics grfx, Font font, SolidBrush brush)
 		{
+			DrawBackground(grfx);
 			int i = sRest.IndexOf("/s");
 			if (i != -1)
 			{		// have a regular subscript
@@ -655,10 +674,193 @@ namespace LingTree
 							ProcessSuperOrSubScript(grfx, sRest, i, font, brush, false, true);
 						}
 						else
+						{
 							grfx.DrawString(sRest, font, brush, (float)XCoord, (float)YCoord);
+						}
 					}
 				}
 			}
+		}
+
+		/// <summary>
+		/// Draws background of node, so can show selected items, e.g.
+		/// </summary>
+		/// <param name="grfx"></param>
+		private void DrawBackground(Graphics grfx)
+		{
+			Region reg = new Region(new Rectangle(this.XCoord, this.YCoord, this.Width, this.Height));
+			grfx.SetClip(reg, System.Drawing.Drawing2D.CombineMode.Replace);
+			grfx.Clear(BackColor);
+			grfx.ResetClip();
+		}
+
+		public void SVGCreate(LingTreeTree Tree, StringBuilder sb, string sLineColor, double dLineWidth)
+		{
+			LingTreeNode Node;
+			Font font = GetTextFont(Tree);
+			Color clr = GetTextColor(Tree);
+			// Draw this node
+			if (Tree.ShowFlatView)
+			{				// adjust lex and gloss Y coordinates
+				if (Type == NodeType.Lex)
+				{
+					YCoord = Tree.LexBottomYCoord;
+					YUpperMid = Tree.LexBottomYUpperMid;
+				}
+				if (Type == NodeType.Gloss)
+				{
+					YCoord = Tree.GlossBottomYCoord;
+				}
+			}
+			SVGDrawString(Content, sb, font, clr.Name);
+			// Draw daughter nodes
+			Node = Daughter;
+			while (Node != null)
+			{
+				Node.SVGCreate(Tree, sb, sLineColor, dLineWidth);
+				if (Type == NodeType.NonTerminal)
+				{
+					if (!Node.Triangle)
+					{
+						if (!Node.OmitLine)
+						{
+							SVGDrawLine(sb, sLineColor, dLineWidth, Node.XMid, Node.YUpperMid, XMid, YLowerMid);
+						}
+					}
+					else
+					{
+#if DoTrace
+						Console.WriteLine("\tDrawing triangle: Node = {0},\tXCoord = {1}", Node.Content, Node.XCoord);
+#endif
+						int ix = Node.XCoord + m_iTriangleOffset;
+						Point[] apt = {new Point(ix, Node.YCoord),
+										  new Point(XMid, YLowerMid),
+										  new Point(ix + (Node.Width - 2 * m_iTriangleOffset), Node.YCoord),
+										  new Point(ix, Node.YCoord)};
+						SVGDrawLines(sb, sLineColor, dLineWidth, apt);
+					}
+				}
+				Node = Node.Sister;
+			}
+		}
+		protected void SVGDrawString(string sContent, StringBuilder sb, Font font, string sColor)
+		{
+			sb.Append("<text");
+			sb.AppendFormat(" x=\"{0}mm\"", SVGConvert(XCoord + (Width/6))); // I don't know why this seems to work, either, but it does... very odd
+			sb.AppendFormat(" y=\"{0}mm\"", SVGConvert(YCoord + (Height/2)));  // I don't know why this seems to work - the documentation makes it seem like shouldn't need this
+			sb.AppendFormat(" font-family=\"{0}\"", font.FontFamily.Name);
+			sb.AppendFormat(" font-size=\"{0}\"", font.Size);
+			sb.AppendFormat(" fill=\"{0}\"", sColor);
+			if (font.Style == FontStyle.Bold)
+				sb.Append(" font-weight=\"bold\"");
+			bool bFontIsItalic = font.Style == FontStyle.Italic;
+			if (bFontIsItalic)
+				sb.Append(" font-style=\"italic\"");
+			if (m_sId.Length > 0)
+				sb.AppendFormat(" onclick=\"OnClickLingTreeNode(&quot;{0}&quot;)\"", m_sId);
+			sb.Append(">");
+			SVGRefineContent(sb, sContent, bFontIsItalic);
+			sb.Append("\r\n");
+		}
+		private void SVGRefineContent(StringBuilder sb, string sContent, bool bFontIsItalic)
+		{
+			int i = sContent.IndexOf("/s");
+			if (i != -1)
+			{		// have a regular subscript
+				SVGProcessSuperOrSubScript(sb, sContent, i, true, false, bFontIsItalic);
+			}
+			else
+			{
+				i = sContent.IndexOf("/_");
+				if (i != -1)
+				{		// have an italic subscript
+					SVGProcessSuperOrSubScript(sb, sContent, i, true, true, bFontIsItalic);
+				}
+				else
+				{
+					i = sContent.IndexOf("/S");
+					if (i != -1)
+					{		// have a regular superscript
+						SVGProcessSuperOrSubScript(sb, sContent, i, false, false, bFontIsItalic);
+					}
+					else
+					{
+						i = sContent.IndexOf("/^");
+						if (i != -1)
+						{		// have an italic superscript
+							SVGProcessSuperOrSubScript(sb, sContent, i, false, true, bFontIsItalic);
+						}
+						else
+							sb.AppendFormat("{0}</text>", sContent);
+					}
+				}
+			}
+		}
+
+		private void SVGProcessSuperOrSubScript(StringBuilder sb, string sContent, int i, bool bIsSubscript, bool bIsItalic, bool bFontIsItalic)
+		{
+			string sSubOrSuper;
+			string sBefore = sContent.Substring(0, i);
+			sb.Append(sBefore);
+			if (bIsSubscript)
+				sSubOrSuper = "sub";
+			else
+				sSubOrSuper = "super";
+			sb.AppendFormat("<tspan baseline-shift=\"{0}\" font-size=\"67%\"", sSubOrSuper);
+			if (bIsItalic)
+			{
+				string sItalic;
+				if(bFontIsItalic)
+					sItalic = "normal"; // toggle italicicity
+				else
+					sItalic = "italic";
+				sb.AppendFormat(" font-style=\"{0}\"", sItalic);
+			}
+			sb.Append(">");
+			sb.Append(sContent.Substring(i+2));
+			sb.Append("</tspan></text>");
+		}
+		/// <summary>
+		///
+		/// </summary>
+		/// <param name="sb"></param>
+		/// <param name="linesColor"></param>
+		/// <param name="dLineWidth"></param>
+		/// <param name="iDaughterXMid"></param>
+		/// <param name="iDaughterYUpperMid"></param>
+		/// <param name="iXMid"></param>
+		/// <param name="iYLowerMid"></param>
+		private void SVGDrawLine(StringBuilder sb, string sLineColor, double dLineWidth, int iDaughterXMid, int iDaughterYUpperMid, int iXMid, int iYLowerMid)
+		{
+			sb.Append("<line");
+			sb.AppendFormat(" x1=\"{0}mm\"", SVGConvert(iDaughterXMid));
+			sb.AppendFormat(" y1=\"{0}mm\"", SVGConvert(iDaughterYUpperMid - Height/4)); // - Height/4)); // - m_iYCoordAdjustment));
+			sb.AppendFormat(" x2=\"{0}mm\"", SVGConvert(iXMid));
+			sb.AppendFormat(" y2=\"{0}mm\"", SVGConvert(iYLowerMid - Height/4)); //  - Height/4)); //  + m_iYCoordAdjustment));
+			sb.AppendFormat(" stroke=\"{0}\"", sLineColor);
+			sb.AppendFormat(" stroke-width=\"{0}mm\"", dLineWidth/100.0);
+			sb.Append("/>\r\n");
+		}
+		/// <summary>
+		///
+		/// </summary>
+		/// <param name="sb"></param>
+		/// <param name="linesColor"></param>
+		/// <param name="apt"></param>
+		private void SVGDrawLines(StringBuilder sb, string sLineColor, double dLineWidth, Point[] apt)
+		{
+#if Orig
+			sb.Append("<polygon points=\"");
+			foreach (Point pt in apt)
+				sb.AppendFormat("{0}mm,{1}mm ", SVGConvert(pt.X), SVGConvert(pt.Y));
+			sb.AppendFormat("\" stroke=\"{0}\"", sLineColor);
+			sb.AppendFormat(" stroke-width=\"{0}\"", dLineWidth); // /100.0);
+			sb.Append("/>\r\n");
+#else
+			SVGDrawLine(sb, sLineColor, dLineWidth, apt[0].X, apt[0].Y, apt[1].X, apt[1].Y);
+			SVGDrawLine(sb, sLineColor, dLineWidth, apt[1].X, apt[1].Y, apt[2].X, apt[2].Y);
+			SVGDrawLine(sb, sLineColor, dLineWidth, apt[2].X, apt[2].Y, apt[3].X, apt[3].Y);
+#endif
 		}
 
 		private void ProcessSuperOrSubScript(Graphics grfx, string sRest, int i, Font font, SolidBrush brush, bool bIsSubscript, bool bIsItalic)
@@ -772,6 +974,5 @@ namespace LingTree
 				NextDaughter = NextDaughter.Sister;
 			}
 		}
-
 	}
 }

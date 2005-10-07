@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Data;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.Xml;
+using System.Xml.XPath;
 using System.Xml.Serialization;
 using System.IO;
 using System.Threading;
@@ -64,6 +66,7 @@ namespace LingTree
 		const string m_strUseJpg = "UseJpg";
 		const string m_strUsePng = "UsePng";
 		const string m_strUseTif = "UseTif";
+		const string m_strUseSVG = "UseSVG";
 
 		const string m_strNewDescriptionMessage = "Enter the tree description here.";
 		private const string m_strTreeFileFilter = "Linguistic Tree (*.tre)|*.tre|" +
@@ -81,7 +84,9 @@ namespace LingTree
 		private LingTreeTree tree;
 		private RichTextBox rtbTreeDescription;
 		private RichTextBox rtbTemp;
+#if TreeNotControl
 		private Panel pnlTree;
+#endif
 		private Panel pnlForTree;
 		private MenuItem miFileNew;
 		private MenuItem miFileOpen;
@@ -112,6 +117,7 @@ namespace LingTree
 		private DlgHelpTopics dlgHelpTopics;
 
 		private string m_strTreeFile;
+		private string m_strSVG;
 		private int m_iDescriptionBoxHeight = 100;
 		private int m_iLexGlossGapAdjustment = 0;
 		private int m_iVerticalGap = 300;
@@ -138,9 +144,17 @@ namespace LingTree
 		private bool m_bUseJpg = false;
 		private bool m_bUsePng = true;
 		private bool m_bUseTif = false;
+		private bool m_bUseSVG = false;
 
 		private Font m_fntSynTagmeme = SystemInformation.MenuFont;
 		private Color m_clrSynTagmeme = SystemColors.ControlText;
+
+		public event LingTreeNodeClickedEventHandler LingTreeNodeClicked;
+		protected virtual void OnLingTreeNodeClicked(LingTreeNodeClickedEventArgs ltncea)
+		{
+			if (LingTreeNodeClicked != null)
+				LingTreeNodeClicked(this, ltncea);
+		}
 
 		public LingTreeApp(string strInitFileName)
 		{
@@ -173,7 +187,7 @@ namespace LingTree
 			pnlForTree.Parent = this;
 			pnlForTree.Dock = DockStyle.Fill;
 			pnlForTree.AutoScroll = true;
-
+#if TreeNotControl
 			pnlTree = new Panel();
 			pnlTree.Parent = pnlForTree;
 			pnlTree.Dock = DockStyle.None;
@@ -181,7 +195,9 @@ namespace LingTree
 			pnlTree.Paint += new PaintEventHandler(TreePanelOnPaint);
 			pnlTree.Size = new Size(10, 10);  // give it an initial size
 			pnlTree.Location = new Point(0, 0);
-
+#else
+			pnlForTree.Paint += new PaintEventHandler(TreePanelOnPaint);
+#endif
 			Splitter split = new Splitter();
 			split.Parent = this;
 			split.Dock = DockStyle.Top;
@@ -201,10 +217,16 @@ namespace LingTree
 			AutoScroll = true;
 
 			// create the tree with all the right parameters
-			tree = new LingTreeTree();
+			tree = new LingTreeTree(Application.ProductVersion);
 			tree.GlossColor = Color.Green;
 			tree.NTColor = Color.Red;
 			tree.LexColor = Color.Blue;
+#if !TreeNotControl
+			tree.Parent = pnlForTree;
+//			tree.Paint += new PaintEventHandler(TreePanelOnPaint);
+			tree.m_LingTreeNodeClickedEvent += new LingTreeNodeClickedEventHandler(OnNodeClicked);
+			pnlForTree.Controls.Add(tree);
+#endif
 
 			if (strInitFileName != null)
 			{
@@ -214,8 +236,9 @@ namespace LingTree
 			{
 				loadTree();
 				rtbTreeDescription.Text = tree.Description;
-				tree.ParseTreeDescription();
+				ParseTreeDescription();
 				setFontsInTreeDescription();
+				m_strSVG = tree.CreateSVG(CreateGraphics(), m_clrTreeLinesColor.Name);
 			}
 			else
 			{
@@ -235,6 +258,26 @@ namespace LingTree
 			rtbTemp = new RichTextBox();
 			// set position on screen
 			m_RectNormal = DesktopBounds;
+		}
+		private void OnNodeClicked(object sender, LingTreeNodeClickedEventArgs ltne)
+		{
+			// Do nothing for LingTreeApp.
+			//MessageBox.Show("node index = " + ltne.Node.Index + "; content = " + ltne.Node.Content);
+		}
+
+		private bool ParseTreeDescription()
+		{
+			bool fParseSucceeded = false;
+			try
+			{
+				tree.ParseTreeDescription();
+				fParseSucceeded = true;
+			}
+			catch (LingTreeDescriptionException ltexc)
+			{
+				MessageBox.Show(ltexc.Message, "Parse error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
+			return fParseSucceeded;
 		}
 
 		/// <summary>
@@ -266,7 +309,7 @@ namespace LingTree
 			//
 			//AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			Controls.AddRange(new System.Windows.Forms.Control[] {
-																		 });
+																 });
 			Icon =  new Icon(GetType(), "LingTree.ico");
 			Name = "LingTreeApp";
 			ResumeLayout(false);
@@ -532,8 +575,9 @@ namespace LingTree
 				m_strTreeFile = dlg.FileName;
 				loadTree();
 				initTree();
-				tree.ParseTreeDescription();
+				ParseTreeDescription();
 				setIsDirty(false);
+				m_strSVG = tree.CreateSVG(CreateGraphics(), m_clrTreeLinesColor.Name);
 			}
 		}
 		void MenuFileCloseOnClick(object obj, EventArgs ea)
@@ -542,7 +586,16 @@ namespace LingTree
 			{
 				LingTreeAppOnClosing(null, null);
 			}
-			tree = new LingTreeTree();
+#if Old
+			tree = new LingTreeTree(Application.ProductVersion);
+#else
+			pnlForTree.Controls.Clear();
+			tree = new LingTreeTree(Application.ProductVersion);
+			tree.Parent = pnlForTree;
+			//			tree.Paint += new PaintEventHandler(TreePanelOnPaint);
+			tree.m_LingTreeNodeClickedEvent += new LingTreeNodeClickedEventHandler(OnNodeClicked);
+			pnlForTree.Controls.Add(tree);
+#endif
 			initTreeToDefaultValues();
 			initTree();
 			m_strTreeFile = null;
@@ -550,6 +603,7 @@ namespace LingTree
 			rtbTreeDescription.Text = tree.Description;
 			rtbTreeDescription.SelectAll();
 			setIsDirty(false);
+			m_strSVG = null;
 		}
 		void MenuFileSaveOnClick(object obj, EventArgs ea)
 		{
@@ -612,6 +666,7 @@ namespace LingTree
 			fmtdlg.UseJpg = m_bUseJpg;
 			fmtdlg.UsePng = m_bUsePng;
 			fmtdlg.UseTif = m_bUseTif;
+			fmtdlg.UseSVG = m_bUseSVG;
 			if (fmtdlg.ShowDialog() == DialogResult.OK)
 			{
 				m_bUseBmp = fmtdlg.UseBmp;
@@ -620,6 +675,7 @@ namespace LingTree
 				m_bUseJpg = fmtdlg.UseJpg;
 				m_bUsePng = fmtdlg.UsePng;
 				m_bUseTif = fmtdlg.UseTif;
+				m_bUseSVG = fmtdlg.UseSVG;
 			}
 		}
 		void MenuFileExitOnClick(object obj, EventArgs ea)
@@ -650,10 +706,15 @@ namespace LingTree
 		void MenuTreeProcessDescriptionOnClick(object obj, EventArgs ea)
 		{
 			tree.Description = rtbTreeDescription.Text;
-			if (tree.ParseTreeDescription())
+			if (ParseTreeDescription())
 			{
+#if TreeNotControl
 				pnlTree.Invalidate();
+#else
+				tree.Invalidate();
+#endif
 				setFontsInTreeDescription();
+				m_strSVG = tree.CreateSVG(CreateGraphics(), m_clrTreeLinesColor.Name);
 			}
 		}
 		void MenuTreeParametersOnClick(object obj, EventArgs ea)
@@ -770,13 +831,11 @@ namespace LingTree
 		void MenuHelpOnPopup(object obj, EventArgs ea)
 		{
 		}
-
+#if !TreeNotControl
 		void TreePanelOnPaint(object obj, PaintEventArgs pea)
 		{
+#if WorksButNotRight
 			Graphics grfx = pea.Graphics;
-			grfx.PageUnit = GraphicsUnit.Millimeter;
-			grfx.PageScale = .01f;
-
 			tree.CalculateCoordinates(grfx);
 			// Adjust size
 			Point[] atpt = {new Point(tree.XSize, tree.YSize)};
@@ -785,11 +844,20 @@ namespace LingTree
 			// without any tree, the values will be zero and it never shows).
 			atpt[0].X = Math.Max(10, atpt[0].X);
 			atpt[0].Y = Math.Max(10, atpt[0].Y);
+#if TreeNotControl
 			pnlTree.Size = new Size(atpt[0]);
 			pnlTree.BackColor = tree.BackgroundColor;
+#else
+			tree.Size = new Size(atpt[0]);
+			tree.BackColor = tree.BackgroundColor;
+#endif
 
 			tree.Draw(grfx, tree.LinesColor);
+#else
+			tree.OnPaint(obj, pea);
+#endif
 		}
+#endif
 		void ToolBarOnClick(object obj, ToolBarButtonClickEventArgs tbbcea)
 		{
 			ToolBarButton tbb = tbbcea.Button;
@@ -840,7 +908,11 @@ namespace LingTree
 		{
 			rtbTreeDescription.Text = tree.Description;
 			setFontsInTreeDescription();
-			pnlTree.Invalidate();
+#if TreeNotControl
+				pnlTree.Invalidate();
+#else
+			tree.Invalidate();
+#endif
 		}
 		void saveAsImageFile()
 		{
@@ -898,6 +970,19 @@ namespace LingTree
 					File.Delete(strMetafile);
 			}
 		}
+		void saveAsSVGFile()
+		{
+			if (File.Exists(m_strTreeFile))
+			{
+				if (m_bUseSVG)
+				{
+					string strSVGfile = createFileName("svg");
+					StreamWriter sw = new StreamWriter(strSVGfile, false, System.Text.Encoding.UTF8);
+					sw.Write(m_strSVG);
+					sw.Close();
+				}
+			}
+		}
 		string createFileName(string strFileExtension)
 		{
 			string strNewFileName;
@@ -913,10 +998,50 @@ namespace LingTree
 		{
 			try
 			{
+#if UseXmlSerialization
 				XmlSerializer mySerializer = new XmlSerializer(tree.GetType());
 				StreamWriter myWriter = new StreamWriter(m_strTreeFile);
 				mySerializer.Serialize(myWriter, tree);
 				myWriter.Close();
+#else
+				StreamWriter sw = new StreamWriter(m_strTreeFile);
+				sw.WriteLine("<LingTreeTree>");
+				sw.WriteLine("  <Version>{0}</Version>", Application.ProductVersion);
+				sw.WriteLine("  <Description>{0}</Description>", tree.Description);
+				sw.WriteLine("  <VerticalGap>{0}</VerticalGap>", tree.VerticalGap);
+				sw.WriteLine("  <HorizontalGap>{0}</HorizontalGap>", tree.HorizontalGap);
+				sw.WriteLine("  <InitialXCoord>{0}</InitialXCoord>", tree.InitialXCoord);
+				sw.WriteLine("  <InitialYCoord>{0}</InitialYCoord>", tree.InitialYCoord);
+				sw.WriteLine("  <HorizontalOffset>{0}</HorizontalOffset>", tree.HorizontalOffset);
+				sw.WriteLine("  <LexGlossGapAdjustment>{0}</LexGlossGapAdjustment>", tree.LexGlossGapAdjustment);
+				sw.WriteLine("  <TrySmoothing>{0}</TrySmoothing>", tree.TrySmoothing);
+				sw.WriteLine("  <TryPixelOffset>{0}</TryPixelOffset>", tree.TryPixelOffset);
+				sw.WriteLine("  <ShowFlatView>{0}</ShowFlatView>", tree.ShowFlatView);
+				sw.WriteLine("  <GlossFontFace>{0}</GlossFontFace>", tree.GlossFontFace);
+				sw.WriteLine("  <GlossFontSize>{0}</GlossFontSize>", tree.GlossFontSize);
+				sw.WriteLine("  <GlossFontStyle>{0}</GlossFontStyle>", tree.GlossFontStyle);
+				sw.WriteLine("  <LexFontFace>{0}</LexFontFace>", tree.LexFontFace);
+				sw.WriteLine("  <LexFontSize>{0}</LexFontSize>", tree.LexFontSize);
+				sw.WriteLine("  <LexFontStyle>{0}</LexFontStyle>", tree.LexFontStyle);
+				sw.WriteLine("  <NTFontFace>{0}</NTFontFace>", tree.NTFontFace);
+				sw.WriteLine("  <NTFontSize>{0}</NTFontSize>", tree.NTFontSize);
+				sw.WriteLine("  <NTFontStyle>{0}</NTFontStyle>", tree.NTFontStyle);
+				sw.WriteLine("  <GlossColorArgb>{0}</GlossColorArgb>", tree.GlossColorArgb);
+				sw.WriteLine("  <LexColorArgb>{0}</LexColorArgb>", tree.LexColorArgb);
+				sw.WriteLine("  <NTColorArgb>{0}</NTColorArgb>", tree.NTColorArgb);
+				sw.WriteLine("  <LinesColorArgb>{0}</LinesColorArgb>", tree.LinesColorArgb);
+				sw.WriteLine("  <BackgroundColorArgb>{0}</BackgroundColorArgb>", tree.BackgroundColorArgb);
+				sw.WriteLine("  <LineWidth>{0}</LineWidth>", tree.LineWidth);
+				sw.WriteLine("  <CustomColors>");
+				foreach (int i in tree.CustomColors)
+				{
+					sw.WriteLine("    <int>{0}</int>", i);
+				}
+				sw.WriteLine("  </CustomColors>");
+				sw.WriteLine("</LingTreeTree>");
+				sw.Close();
+
+#endif
 			}
 			catch (Exception exc)
 			{
@@ -924,6 +1049,7 @@ namespace LingTree
 					"Save error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 			saveAsImageFile();
+			saveAsSVGFile();
 			setIsDirty(false);
 		}
 		bool checkValidityForFileSave()
@@ -958,7 +1084,11 @@ namespace LingTree
 				tree.LinesColor = dlg.TreeLinesColor;
 				tree.LineWidth = dlg.TreeLineWidth;
 				tree.CustomColors = dlg.CustomColors;
+#if TreeNotControl
 				pnlTree.Invalidate();  // show the changes in the tree
+#else
+				tree.Invalidate();
+#endif
 				setFontsInTreeDescription();
 			}
 		}
@@ -966,11 +1096,44 @@ namespace LingTree
 		{
 			try
 			{
+#if UseXmlSerialization
 				XmlSerializer mySerializer = new XmlSerializer(tree.GetType());
 				StreamReader myReader = new StreamReader(m_strTreeFile);
 				tree = (LingTreeTree)mySerializer.Deserialize(myReader);
 				tree.setFontsFromXml();
 				myReader.Close();
+#else
+				XmlDocument doc = new XmlDocument();
+				doc.Load(m_strTreeFile);
+				tree.Description = GetNodeContent("/LingTreeTree/Description", doc);
+				tree.VerticalGap = GetIntFromNodeContent("/LingTreeTree/VerticalGap", doc);
+
+				tree.HorizontalGap = GetIntFromNodeContent("/LingTreeTree/HorizontalGap", doc);
+				tree.InitialXCoord = GetIntFromNodeContent("/LingTreeTree/InitialXCoord", doc);
+				tree.InitialYCoord = GetIntFromNodeContent("/LingTreeTree/InitialYCoord", doc);
+				tree.HorizontalOffset = GetIntFromNodeContent("/LingTreeTree/HorizontalOffset", doc);
+				tree.LexGlossGapAdjustment = GetIntFromNodeContent("/LingTreeTree/LexGlossGapAdjustment", doc);
+				tree.TrySmoothing = GetBoolFromNodeContent("/LingTreeTree/TrySmoothing", doc);
+				tree.TryPixelOffset = GetBoolFromNodeContent("/LingTreeTree/TryPixelOffset", doc);
+				tree.GlossFontFace = GetNodeContent("/LingTreeTree/GlossFontFace", doc);
+				tree.GlossFontSize = GetIntFromNodeContent("/LingTreeTree/GlossFontSize", doc);
+				tree.GlossFontStyle = GetFontStyleFromNodeContent("/LingTreeTree/GlossFontStyle", doc);
+				tree.LexFontFace = GetNodeContent("/LingTreeTree/LexFontFace", doc);
+				tree.LexFontSize = GetIntFromNodeContent("/LingTreeTree/LexFontSize", doc);
+				tree.LexFontStyle = GetFontStyleFromNodeContent("/LingTreeTree/LexFontStyle", doc);
+				tree.NTFontFace = GetNodeContent("/LingTreeTree/NTFontFace", doc);
+				tree.NTFontSize = GetIntFromNodeContent("/LingTreeTree/NTFontSize", doc);
+				tree.NTFontStyle = GetFontStyleFromNodeContent("/LingTreeTree/NTFontStyle", doc);
+				tree.GlossColorArgb = GetIntFromNodeContent("/LingTreeTree/GlossColorArgb", doc);
+				tree.LexColorArgb = GetIntFromNodeContent("/LingTreeTree/LexColorArgb", doc);
+				tree.NTColorArgb = GetIntFromNodeContent("/LingTreeTree/NTColorArgb", doc);
+				tree.LinesColorArgb = GetIntFromNodeContent("/LingTreeTree/LinesColorArgb", doc);
+				tree.BackgroundColorArgb = GetIntFromNodeContent("/LingTreeTree/BackgroundColorArgb", doc);
+				if (tree.BackgroundColorArgb == 0)
+					tree.BackgroundColorArgb = -1; // use white instead of transparent since transparent crashes
+				tree.LineWidth = GetIntFromNodeContent("/LingTreeTree/LineWidth", doc);
+				tree.CustomColors = GetCustomColorsFromNodeContent(doc);
+#endif
 			}
 			catch (Exception exc)
 			{
@@ -979,6 +1142,58 @@ namespace LingTree
 			}
 			setIsDirty(false);
 		}
+		private int[] GetCustomColorsFromNodeContent(XmlDocument doc)
+		{
+			int[] aiCC = new int[16];
+			for (int i=0; i< 16; i++)
+			{
+				string sXPath = String.Format("/LingTreeTree/CustomColors/int[{0}]", i+1);
+				aiCC[i] = GetIntFromNodeContent(sXPath, doc);
+			}
+			return aiCC;
+		}
+		private FontStyle GetFontStyleFromNodeContent(string sXPath, XmlDocument doc)
+		{
+			FontStyle style = FontStyle.Regular;
+			string s = GetNodeContent(sXPath, doc);
+			if (s != null)
+			{
+				if (s.IndexOf("Bold") >= 0)
+					style = style | FontStyle.Bold;
+				if (s.IndexOf("Italic") >= 0)
+					style = style | FontStyle.Italic;
+				if (s.IndexOf("Strikeout") >= 0)
+					style = style | FontStyle.Strikeout;
+				if (s.IndexOf("Underline") >= 0)
+					style = style | FontStyle.Underline;
+			}
+			return style;
+		}
+		private bool GetBoolFromNodeContent(string sXPath, XmlDocument doc)
+		{
+			bool fResult = false;
+			string s = GetNodeContent(sXPath, doc);
+			if (s != null)
+				fResult = Convert.ToBoolean(s);
+			return fResult;
+		}
+		private int GetIntFromNodeContent(string sXPath, XmlDocument doc)
+		{
+			int iResult = 0;
+			string s = GetNodeContent(sXPath, doc);
+			if (s != null)
+				iResult = Convert.ToInt32(s);
+			return iResult;
+		}
+		private string GetNodeContent(string sXPath, XmlDocument doc)
+		{
+			string sResult = null;
+			XmlNode node = doc.SelectSingleNode(sXPath);
+			if (node != null)
+				sResult = node.InnerText;
+			return sResult;
+		}
+
 		void DescriptionOnKeyUp(object obj, KeyEventArgs kea)
 		{
 			int iCurrent = this.rtbTreeDescription.SelectionStart;
@@ -1075,21 +1290,21 @@ namespace LingTree
 			//    and each column is the current state (in the order given in the iStateX values).
 			//    The value in each cell is the state to transition to, given the character.
 			int[,] aiStateMapping = {
-									  // '('
+										// '('
 				{iStateSynTagmeme, iStateNonTerminal, iStateSynTagmeme, iStateSynTagmeme, iStateGloss, iStateSynTagmeme, iStateSynTagmeme, iStateLex, iStateSynTagmeme},
-									  // ')'
+										// ')'
 				{iStateSynTagmeme, iStateNonTerminal, iStateSynTagmeme, iStateSynTagmeme, iStateGloss, iStateSynTagmeme, iStateSynTagmeme, iStateLex, iStateSynTagmeme},
-									  // '\'
+										// '\'
 				{iStateBackSlash, iStateNonTerminal, iStateBackSlash, iStateBackSlashGloss, iStateGloss, iStateBackSlashGloss, iStateBackSlashLex, iStateLex, iStateBackSlashLex},
-									  // 'G'
+										// 'G'
 				{iStateNonTerminal, iStateSynTagmemeGloss, iStateNonTerminal, iStateGloss, iStateSynTagmemeGloss, iStateGloss, iStateLex, iStateSynTagmemeGloss, iStateLex},
-									  // 'T' or 'O'
+										// 'T' or 'O'
 				{iStateNonTerminal, iStateSynTagmeme, iStateNonTerminal, iStateGloss, iStateSynTagmemeGloss, iStateGloss, iStateLex, iStateSynTagmemeLex, iStateLex},
-									  // 'L'
+										// 'L'
 				{iStateNonTerminal, iStateSynTagmemeLex, iStateNonTerminal, iStateGloss, iStateSynTagmemeLex, iStateGloss, iStateLex, iStateSynTagmemeLex, iStateLex},
-									  // all other characters
+										// all other characters
 				{iStateNonTerminal, iStateNonTerminal, iStateNonTerminal, iStateGloss, iStateGloss, iStateGloss, iStateLex, iStateLex, iStateLex}
-								  };
+									};
 			const int iActionNone = 0;
 			const int iActionSynTagmeme = 1;
 			const int iActionSynTagmemeBack2 = 2;
@@ -1102,21 +1317,21 @@ namespace LingTree
 			//    The actions are given by the iActionX values above.
 			//    The action is to set the font for a previous section of the description
 			int[,] aiActionMapping = {
-											 // '('
+										 // '('
 				{iActionNone, iActionSynTagmemeBack2, iActionNonTerminal, iActionNone, iActionNone, iActionGloss, iActionNone, iActionNone, iActionLex},
-											 // ')'
+										 // ')'
 				{iActionNone, iActionSynTagmemeBack2, iActionNonTerminal, iActionNone, iActionNone, iActionGloss, iActionNone, iActionNone, iActionLex},
-											 // '\'
+										 // '\'
 				{iActionNone, iActionSynTagmemeBack2, iActionNonTerminal, iActionNone, iActionNone, iActionGloss, iActionNone, iActionNone, iActionLex},
-											 // 'G'
+										 // 'G'
 				{iActionSynTagmeme, iActionNone, iActionNone, iActionSynTagmeme, iActionSynTagmemeBack2, iActionNone, iActionSynTagmeme, iActionSynTagmemeBack2, iActionNone},
-											 // 'T' or 'O'
+										 // 'T' or 'O'
 				{iActionSynTagmeme, iActionNone, iActionNone, iActionSynTagmeme, iActionSynTagmemeBack2, iActionNone, iActionSynTagmeme, iActionSynTagmemeBack2, iActionNone},
-											 // 'L'
+										 // 'L'
 				{iActionSynTagmeme, iActionNone, iActionNone, iActionSynTagmeme, iActionSynTagmemeBack2, iActionNone, iActionSynTagmeme, iActionSynTagmemeBack2, iActionNone},
-											 // all other characters
+										 // all other characters
 				{iActionSynTagmeme, iActionSynTagmemeBack2, iActionNone, iActionSynTagmeme, iActionNone, iActionNone, iActionSynTagmeme, iActionNone, iActionNone}
-										 };
+									 };
 			int iEnd = rtbTreeDescription.Text.Length;
 			int iCurrentPosition = Math.Max(0, rtbTreeDescription.SelectionStart);
 			int iCurrentSelectionLength = Math.Max(0, rtbTreeDescription.SelectionLength);
@@ -1134,33 +1349,33 @@ namespace LingTree
 			int iIndex = 0;
 			while (iIndex < iEnd)
 			{
-					// determine action based on current state and character
-					switch (acText[iIndex])
-					{
-						case '(':
-							iAction = aiActionMapping[0, iState];
-							break;
-						case ')':
-							iAction = aiActionMapping[1, iState];
-							break;
-						case '\\':
-							iAction = aiActionMapping[2, iState];
-							break;
-						case 'G':
-							iAction = aiActionMapping[3, iState];
-							break;
-						case 'O':
-						case 'T':
-							iAction = aiActionMapping[4, iState];
-							break;
-						case 'L':
-							iAction = aiActionMapping[5, iState];
-							break;
-						default:
-							iAction = aiActionMapping[6, iState];
-							break;
-					}
-					// perform any needed action
+				// determine action based on current state and character
+				switch (acText[iIndex])
+				{
+					case '(':
+						iAction = aiActionMapping[0, iState];
+						break;
+					case ')':
+						iAction = aiActionMapping[1, iState];
+						break;
+					case '\\':
+						iAction = aiActionMapping[2, iState];
+						break;
+					case 'G':
+						iAction = aiActionMapping[3, iState];
+						break;
+					case 'O':
+					case 'T':
+						iAction = aiActionMapping[4, iState];
+						break;
+					case 'L':
+						iAction = aiActionMapping[5, iState];
+						break;
+					default:
+						iAction = aiActionMapping[6, iState];
+						break;
+				}
+				// perform any needed action
 				switch(iAction)
 				{
 					case iActionNone:
@@ -1298,6 +1513,7 @@ namespace LingTree
 			m_bUseJpg = Convert.ToBoolean((string) regkey.GetValue(m_strUseJpg));
 			m_bUsePng = Convert.ToBoolean((string) regkey.GetValue(m_strUsePng));
 			m_bUseTif = Convert.ToBoolean((string) regkey.GetValue(m_strUseTif));
+			m_bUseSVG = Convert.ToBoolean((string) regkey.GetValue(m_strUseSVG));
 			// Window location
 			int iX = (int)regkey.GetValue(m_strLocationX, 100);
 			int iY = (int)regkey.GetValue(m_strLocationY, 100);
@@ -1384,6 +1600,7 @@ namespace LingTree
 			regkey.SetValue(m_strUseJpg, m_bUseJpg.ToString());
 			regkey.SetValue(m_strUsePng, m_bUsePng.ToString());
 			regkey.SetValue(m_strUseTif, m_bUseTif.ToString());
+			regkey.SetValue(m_strUseSVG, m_bUseSVG.ToString());
 			// Window position and location
 			regkey.SetValue(m_strWindowState, (int)WindowState);
 			regkey.SetValue(m_strLocationX, this.m_RectNormal.X);
@@ -1408,5 +1625,12 @@ namespace LingTree
 				theApp = new LingTreeApp(args[0]);
 			Application.Run(theApp);
 		}
+		public void Detach()
+		{
+			// Detach the events and delete the form
+			tree.m_LingTreeNodeClickedEvent += new LingTreeNodeClickedEventHandler(OnNodeClicked);
+			tree = null;
+		}
+
 	}
 }
