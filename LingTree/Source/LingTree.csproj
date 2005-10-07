@@ -113,7 +113,7 @@
 				<Reference
 					Name = "LingTreeTree"
 					AssemblyName = "LingTreeTree"
-					HintPath = "bin\Debug\LingTreeTree.dll"
+					HintPath = "bin\Release\LingTreeTree.dll"
 				/>
 			</References>
 		</Build>
