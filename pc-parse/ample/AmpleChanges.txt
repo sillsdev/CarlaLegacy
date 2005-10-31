@@ -2,7 +2,7 @@ AMPLE CHANGE HISTORY
 
 3.10.0 (06-Oct-2005)
 --------------------
-1. Add a "compute category" capability to hanlde "jitterbug" category
+1. Add a "compute category" capability to handle "jitterbug" category
    mappings.
 
 3.9.4 (02-Mar-2005)
