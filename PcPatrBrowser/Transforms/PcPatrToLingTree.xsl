@@ -167,7 +167,7 @@ Elements to ignore
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
-15-Nov-2005    Andy Black    Increase  InitialYCoord so the Parse x of y does not conflict with tree
+15-Nov-2005    Andy Black    Increase InitialYCoord value so the Parse x of y does not conflict with tree
 21-Sep-2005    Andy Black    Add plus sign to nodes with @all='true'
 08-Dec-2004    Andy Black  Began working on Initial Draft
 ================================================================
