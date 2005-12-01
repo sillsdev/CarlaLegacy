@@ -2928,7 +2928,7 @@ void set_edge_cond(lp, pOutputFP_in)
   if ((long)Max_Number_Of_Edge_Conds >= MAX_EDGE_CONDS)
 	{
 	  fprintf(pOutputFP_in,
-		  "%sMaximum number of edge conditions exceeded!  Max is %ld",
+		  "%sMaximum number of edge conditions exceeded!  Max is %u",
 		  errhead, MAX_EDGE_CONDS);
 	  fprintf(pOutputFP_in,
 		  "\n\t\t%s will be ignored.",lp);

@@ -296,7 +296,6 @@ static char *		pszUnderlying_m = NULL;
  */
 static char *		pszSurfaceForm_m = NULL;
 /*
-/*
  * computed category index
  */
 static int			iComputedCat;

@@ -27,6 +27,13 @@ struct treenode
 struct treenode head = { 0L, NULL, NULL, 0, NULL };
 
 #define LINK(a,p) ((a == -1) ? p->llink : p->rlink)
+/* we can't use LINK as an lvalue in newer C compilers */
+#define RELINK(a,p,v) { \
+if (a == -1) \
+	p->llink = v; \
+else \
+	p->rlink = v; \
+}
 
 /*****************************************************************************
  * NAME
@@ -154,18 +161,24 @@ if (s->b == alpha)
 	{
 	/*a8:*/			/* Single rotation. */
 	p = r;
-	LINK(alpha,s) = LINK(-alpha,r);
-	LINK(-alpha,r) = s;
+	/*LINK(alpha,s) = LINK(-alpha,r);*/
+	/*LINK(-alpha,r) = s;*/
+	RELINK(alpha, s, LINK(-alpha,r));
+	RELINK(-alpha, r, s);
 	s->b = r->b = 0;
 	}
 	else
 	{
 	/*a9:*/			/* Double rotation. */
 	p = LINK(-alpha,r);
-	LINK(-alpha,r) = LINK(alpha,p);
-	LINK(alpha,p) = r;
-	LINK(alpha,s) = LINK(-alpha,p);
-	LINK(-alpha,p) = s;
+	/*LINK(-alpha,r) = LINK(alpha,p);*/
+	/*LINK(alpha,p) = r;*/
+	/*LINK(alpha,s) = LINK(-alpha,p);*/
+	/*LINK(-alpha,p) = s;*/
+	RELINK(-alpha, r, LINK(alpha,p));
+	RELINK(alpha, p, r);
+	RELINK(alpha, s, LINK(-alpha,p));
+	RELINK(-alpha, p, s);
 	if (p->b == alpha)
 		{
 		s->b = -alpha;

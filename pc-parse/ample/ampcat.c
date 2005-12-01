@@ -19,7 +19,8 @@ typedef struct category {
 	int iFrom, iTo;
 } tsCategory;
 
-#define TRACE //fprintf(stderr, "stack = %d, line=%d,", jStack,__LINE__); fflush(stderr);
+/*Don't use C++ style commenting: this may be compiled with old C compilers.*/
+#define TRACE /*fprintf(stderr, "stack = %d, line=%d,", jStack,__LINE__); fflush(stderr);*/
 /*
  * The function reduceCategory() is the labourer here.
  * For each word there will be a list of n categories, as:

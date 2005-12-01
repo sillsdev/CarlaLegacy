@@ -589,7 +589,7 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 #endif /* B4_0_4_4 */
 #ifndef hab1016
   int               did_actionB4;
-  struct tone      *apToneTemp;
+  struct tone      *apToneTemp = NULL;
 #endif /* hab1016 */
 
   trp->tr_tried++;		/* keep statistics */
@@ -855,7 +855,7 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		}
 		  delete_tone(tp, pwp);
 		}
-#endif hab1016
+#endif /*hab1016*/
 	  break;
 
 	case DELETE:		/* these all do the same thing at this point */
@@ -3449,6 +3449,8 @@ static int tone_anal(anal_head, word, decompstring,
 	;
 
   if (do_trace && pStamp_in->pLogFP)
+	{
+
 	if (which_rules == RIGHT_RULES)
 	  {
 	fprintf(pStamp_in->pLogFP, "\n        Non-right edge rules failed;");
@@ -3459,7 +3461,7 @@ static int tone_anal(anal_head, word, decompstring,
 	fprintf(pStamp_in->pLogFP, "\n        All obligatory rules failed;");
 	fprintf(pStamp_in->pLogFP, "  trying all rules.");
 	  }
-
+	}
 				/* assume it will fail */
   form_is_good = FALSE;
 

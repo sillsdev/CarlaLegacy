@@ -2375,7 +2375,7 @@ static void writeANAWordInfoAsXML(WordTemplate **ppWords_in, FILE *pOutputFP_in,
 	fprintf(pOutputFP_in,"<NonAlpha id=\"na%d\">%s</NonAlpha>\n",
 		iWord, wtp->pszNonAlpha);
 	  if (wtp->iCapital != 0)
-	fprintf(pOutputFP_in,"<Capital id=\"cap%d\" value=\"%d\"/>\n",
+	fprintf(pOutputFP_in,"<Capital id=\"cap%d\" value=\"%ld\"/>\n",
 		iWord, wtp->iCapital);
 	  fprintf(pOutputFP_in,"</Word>\n");
 	}
