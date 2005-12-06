@@ -6720,7 +6720,22 @@ if (pWord != NULL)
 	pWordParse = parseWithPATR(pWord, &iStage, &pAmple_in->sPATR);
 	if ((pWordParse != NULL) && (iStage == 0))
 	{
-	pWordParse = storePATREdgeList( pWordParse, &pAmple_in->sPATR );
+	if (pAmple_in->bRecognizeOnly)
+		{
+		writeAllocMemoryDebugMsg(
+		"*NOT* STORING PERMANENT COPY OF PARSE RESULTS FOR AMPLE\n");
+			fputs("** Word parsed with PC-PATR grammar, but parse results not stored **\n",
+		  pAmple_in->pLogFP);
+		pWordParse = NULL;
+		}
+	else
+		{
+		writeAllocMemoryDebugMsg(
+		"BEGIN STORING PERMANENT COPY OF PARSE RESULTS FOR AMPLE\n");
+		pWordParse = storePATREdgeList( pWordParse, &pAmple_in->sPATR );
+		writeAllocMemoryDebugMsg(
+		"DONE STORING PERMANENT COPY OF PARSE RESULTS FOR AMPLE\n");
+		}
 	bSuccess   = TRUE;
 	}
 	else

@@ -190,8 +190,14 @@ static char szWordFormClose_m[]  = " </Wordform>\r\n";
 #define ALLOMORPH_IDS           19
 /* hab 2002.10.17 */
 #define MAX_ANALYSES_TO_RETURN  20
-
+/* Keep the "EXPERIMENTAL" definitions grouped together at the end */
+#ifdef EXPERIMENTAL
+#define RECOGNIZE_ONLY		21	/* SRMc 2005.12.05 */
+#define NUMBER_OF_PARAMETERS	22
+#else /* EXPERIMENTAL */
 #define NUMBER_OF_PARAMETERS	21
+#endif /* EXPERIMENTAL */
+
 
 static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 	"DebugAllomorphConds",
@@ -215,6 +221,10 @@ static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 	"OutputDecomposition",	/* hab 1999.03.11 */
 	"AllomorphIds",		/* jdh 2002.01.15 */
 	"MaxAnalysesToReturn",	/* hab 2002.10.17 */
+#ifdef EXPERIMENTAL
+	/* Keep the "EXPERIMENTAL" parameter names grouped together at the end */
+	"RecognizeOnly",		/* SRMc 2005.12.05 */
+#endif /* EXPERIMENTAL */
 	};
 
 #define MAXAMBIG 16		/* high level of ambiguity for stats */
@@ -3125,6 +3135,34 @@ return szAmpleSuccess_m;
 #endif /* EXPERIMENTAL */
 #endif /* hab36516 */
 
+#ifdef EXPERIMENTAL
+/*****************************************************************************
+ * NAME
+ *    setRecognizeOnly
+ * DESCRIPTION
+ *    set flag whether or not to store parse results ("Recognize Only" == true
+ *    means not to store parse results)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setRecognizeOnly(
+	const char *	pszValue_in,
+	AmpleSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.bRecognizeOnly = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->sData.bRecognizeOnly = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->sData.bRecognizeOnly = FALSE;
+else
+	return szInvalidParameterValue_m;
+return szAmpleSuccess_m;
+}
+#endif /* EXPERIMENTAL */
+
 /*****************************************************************************
  * NAME
  *    setMaxTrieDepth
@@ -3692,6 +3730,12 @@ switch (findParameterIndex(pszName_in))
 		return setMaxAnalysesToReturn(pszValue_in, pSetup_io);
 #endif
 #endif
+
+#ifdef EXPERIMENTAL
+	case RECOGNIZE_ONLY:
+	return setRecognizeOnly(pszValue_in, pSetup_io);
+#endif /* EXPERIMENTAL */
+
 	default:
 
 	return szInvalidParameterName_m;
@@ -4079,6 +4123,26 @@ else
 	return "FALSE";
 }
 
+#ifdef EXPERIMENTAL
+/*****************************************************************************
+ * NAME
+ *    getRecognizeOnly
+ * DESCRIPTION
+ *    get the maximum number of analyses to return
+ *     (MAX_ANALYSES_TO_RETURN_NO_LIMIT = no limit)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getRecognizeOnly(
+	AmpleSetup *	pSetup_io)
+{
+if (pSetup_io->sData.bRecognizeOnly)
+	return "TRUE";
+else
+	return "FALSE";
+}
+#endif /* EXPERIMENTAL */
+
 /*****************************************************************************
  * NAME
  *    AmpleGetParameter
@@ -4179,6 +4243,12 @@ switch (findParameterIndex(pszName_in))
 		return getMaxAnalysesToReturn(pSetup_io);
 #endif
 #endif
+
+#ifdef EXPERIMENTAL
+	case RECOGNIZE_ONLY:
+		return getRecognizeOnly(pSetup_io);
+#endif
+
 	default:
 	return szInvalidParameterName_m;
 	}

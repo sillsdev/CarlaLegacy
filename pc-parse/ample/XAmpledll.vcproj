@@ -143,6 +143,9 @@
 			RelativePath=".\ampledll.c">
 		</File>
 		<File
+			RelativePath=".\ampledll.h">
+		</File>
+		<File
 			RelativePath="resource.h">
 		</File>
 		<File

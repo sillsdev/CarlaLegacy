@@ -172,6 +172,9 @@
 	</References>
 	<Files>
 		<File
+			RelativePath=".\ampcat.c">
+		</File>
+		<File
 			RelativePath=".\anal.c">
 		</File>
 		<File

@@ -801,6 +801,9 @@ recognized.
 
 @table @code
 
+@item AllomorphIds
+corresponds to the AMPLE program's @samp{-b} command line option.
+
 @item AppendLogFile
 determines whether a new log file is created, or an old log file is
 added to.
@@ -823,6 +826,10 @@ corresponds to the AMPLE program's @samp{-/} command line option.
 @item LogFile
 corresponds to redirecting the standard output from the AMPLE program.
 (This retrieves the file name.)
+
+@item MaxAnalysesToReturn
+is used only by XAmple.dll.  (It appears to be defunct, and not used
+beyond being set.)
 
 @item MaxMorphnameLength
 corresponds to the AMPLE program's @samp{-n} command line option.
@@ -850,6 +857,9 @@ file), @code{AResult} (for SGML output similar to that produced by
 the @file{ptext.dtd} document type definition).  (@code{Ptext} is not
 yet implemented.)
 The default style is @code{Ana}.
+
+@item RecognizeOnly
+corresponds to the XAMPLE program's @samp{-j} command line option.
 
 @item RootGlosses
 corresponds to the AMPLE program's @samp{-g} command line option.
@@ -1802,6 +1812,11 @@ to its default value.
 
 @table @code
 
+@item AllomorphIds
+corresponds to the AMPLE program's @samp{-b} command line option.
+Possible values are @code{"TRUE"} (or @code{"T"}) and
+@code{"FALSE"} (or @code{"F"}).  The default value is @code{"FALSE"}.
+
 @item AppendLogFile
 determines whether a new log file is created, or an old log file is
 added to.  Possible values are @code{"TRUE"} (or @code{"T"}) and
@@ -1843,6 +1858,10 @@ corresponds to redirecting the standard output from the AMPLE program.
 The value string is the name of the output log file.  The default is
 not to have a log file.
 
+@item MaxAnalysesToReturn
+is used only by XAmple.dll.  (It appears to be defunct, and not used
+beyond being set.)  The default value is @code{"-1"} (no limit).
+
 @item MaxMorphnameLength
 corresponds to the AMPLE program's @samp{-n} command line option.
 Possible values are positive integers greater than zero (encoded as
@@ -1878,6 +1897,15 @@ analysis file), @code{"AResult"} (for SGML output similar to that
 produced by @code{AmpleParseText}), and @code{"Ptext"} for SGML output
 according to the @file{ptext.dtd} document type definition).
 The default value is @code{"Ana"}.
+
+@item RecognizeOnly
+corresponds to the XAMPLE program's @samp{-j} command line option.  If
+set to to @code{"TRUE"}, the PC-PATR parse results are not stored or
+written to the output.  This greatly reduces memory consumption when
+using the internal PC-PATR engine to limit valid parses when the parse
+tree and feature structures are not needed.
+Possible values are @code{"TRUE"} (or @code{"T"}) and @code{"FALSE"}
+(or @code{"F"}).  The default value is @code{"FALSE"}.
 
 @item RootGlosses
 corresponds to the AMPLE program's @samp{-g} command line option.

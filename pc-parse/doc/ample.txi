@@ -77,17 +77,17 @@ This version also added two punctuation-oriented clauses to user-written tests.
 @c Added by SRMc 21-Aug-1999 for XAMPLE
 @item 4. Version 3.3.4 (November 1999) added XAMPLE compilation to the
 standard distribution, and added the @code{\patr} field to the analysis
-data file for use by XAMPLE in controlling the PCPATR word parser.
+data file for use by XAMPLE in controlling the PC-PATR word parser.
 
 @c Added by SRMc 27-Jan-2000 for XAMPLE
 @item 5. Version 3.3.7 (January 2000) added the @code{PromoteDefAtoms}
 value to the @code{\patr} field in the analysis data file for use by
-XAMPLE in controlling the PCPATR word parser.
+XAMPLE in controlling the PC-PATR word parser.
 
 @c Added by SRMc 24-Apr-2000 for XAMPLE
 @item 6. Version 3.3.10 (April 2000) added the @code{PropertyIsFeature}
 value to the @code{\patr} field in the analysis data file for use by
-XAMPLE in controlling the PCPATR word parser.
+XAMPLE in controlling the PC-PATR word parser.
 
 @c Added by hab 20-Jul-2001
 @item 7. Version 3.4.0 (July 2001) added the @code{\\catcr}
@@ -157,8 +157,8 @@ selects the maximum dictionary trie depth.  The default is 3, which
 favors reduced memory needs over speed.
 
 @item -e filename
-selects the PCPATR grammar file for XAMPLE to use.  (XAMPLE is a version
-of AMPLE that adds a PCPATR style word parser to AMPLE.)  This option is
+selects the PC-PATR grammar file for XAMPLE to use.  (XAMPLE is a version
+of AMPLE that adds a PC-PATR style word parser to AMPLE.)  This option is
 not recognized by AMPLE.
 
 @item -f filename
@@ -178,6 +178,15 @@ internal code @code{G} in the dictionary code table.
 
 @item -i filename
 selects a single input text file.
+
+@item -j
+enables ``Recognize Only'' mode for XAMPLE.  (This option is not
+recognized by AMPLE.)  In this mode, the PC-PATR parse results are
+neither stored nor written to the analysis output.  This greatly
+reduces the memory consumption required to use the internal PC-PATR
+engine to parse words for XAMPLE.  (Even with this option, the memory
+required to parse a single word in XAMPLE can exceed 250MB when the
+grammar and lexicon allow a large number of alternative parses!)
 
 @item -m
 monitors progress of an analysis: @code{*} means an analysis failure,
@@ -430,7 +439,7 @@ ignored by AMPLE.
 * \nah::               Interfix ad hoc pair
 * \nt::                Interfix successor test
 * \pah::               Prefix ad hoc pair
-* \patr::              PCPATR word parser control setting
+* \patr::              PC-PATR word parser control setting
 * \pcl::               Punctuation class
 * \pt::                Prefix successor test
 * \rah::               Root ad hoc pair
@@ -905,7 +914,7 @@ never eliminates any analyses via the prefix @code{ADHOC_ST} test.
 
 The @code{\patr} field is recognized only by XAMPLE, not by AMPLE, and
 has effect only if a grammar file is selected by the @code{-e} command
-line option.  Each instance of this field sets one of the PCPATR control
+line option.  Each instance of this field sets one of the PC-PATR control
 parameters.  Several instances of the field can occur in the analysis
 data file in order to set several different parameters.  Each field
 contains a parameter name followed by an argument giving its value.
@@ -927,7 +936,7 @@ should not introduce cycles, but it can happen while developing grammars.
 CheckCycles OFF} disables it.  The default is @code{ON}.
 
 @item DebuggingLevel
-This parameter specifies the amount of PCPATR debugging information which
+This parameter specifies the amount of PC-PATR debugging information which
 will be written to the log file.  Its argument is a number greater than
 or equal to zero.  If zero, then no extra debugging information will be
 written to the log file.  The default value is @code{0}.
@@ -984,7 +993,7 @@ causes partial results indicating the cause of parse failures to be
 written to the log file.  @code{\patr ShowFailures Off} prevents any
 extra output to the log file.  The default value is @code{Off}.
 
-NOTE: since the purpose of using the PCPATR word parser in XAMPLE is to
+NOTE: since the purpose of using the PC-PATR word parser in XAMPLE is to
 weed out incorrect AMPLE analyses, a large number of parse failures are
 to be expected, which can cause @emph{huge} log files.  This parameter is
 best used in conjunction with the @code{-t} command line option when
@@ -1046,7 +1055,7 @@ of the parse tree.  This setting causes the @code{FeatureStyle} parameter
 to be ignored.
 
 @code{\patr TreeStyle Off} prevents parses from being written.  This
-allows PCPATR word grammars to be used for filtering invalid AMPLE
+allows PC-PATR word grammars to be used for filtering invalid AMPLE
 analyses without cluttering up the output analysis files.
 
 @item TrimEmptyFeatures

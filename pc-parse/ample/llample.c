@@ -160,7 +160,7 @@ static AmpleData	sAmpleData_m = {
 	'|',		/* -c:	cBeginComment */
 	FALSE,		/* -g	bRootGlosses */
 	TRUE,		/* -q	bQuiet */
-	2,			/* -d:	iMaxTrieDepth */
+	DEFAULTTRIEDEPTH,	/* -d:	iMaxTrieDepth */
 	15,			/* -n:	iMaxMorphnameLength */
 	AMPLE_TRACE_OFF,	/* -t	eTraceAnalysis */
 	NULL, 0,		/*      optional string for trace output */
@@ -196,6 +196,7 @@ static AmpleData	sAmpleData_m = {
 	NULL,		/* \\rt */
 	NULL,		/* \\st */
 	NULL,		/* \\it */
+	NULL,		/* \\nt */
 	NULL,		/* \\ft */
 	AMPLE_NO_CATEGORY,	/* \\cat */
 	FALSE,
@@ -208,6 +209,7 @@ static AmpleData	sAmpleData_m = {
 	NULL,		/* \\pah */
 	NULL,		/* \\rah */
 	NULL,		/* \\sah */
+	NULL,		/* \\nah */
 	NULL,		/* \\cr */
 	NULL,		/* \\mcl */
 	{ NULL,0,0,255 },
@@ -216,6 +218,7 @@ static AmpleData	sAmpleData_m = {
 	0,			/* \\maxi */
 	1,			/* \\maxr */
 	100,		/* \\maxs */
+	0,			/* \\maxn */
 	NULL,		/* \\mcc */
 	10,			/* \\maxnull */
 	NULL,		/* \\strcheck */

@@ -2121,6 +2121,9 @@ PATRData * pPATR_io;
 PATREdgeList *	parse;
 PATRParseData	sData;
 void (*		pFunc) P((size_t size));
+PATRWord *	pWord;
+PATRWordCategory * pWC;
+
 
 if ((pSentence_in == NULL) || (pPATR_io == NULL))
 	{
@@ -2128,6 +2131,23 @@ if ((pSentence_in == NULL) || (pPATR_io == NULL))
 	*piStage_out = 4;
 	return NULL;
 	}
+/*
+ *  Put marker in memory allocation trace (if one is being produced).
+ */
+writeAllocMemoryDebugMsg("BEGIN PARSING SENTENCE:");
+for (pWord = pSentence_in; pWord; pWord = pWord->pNext)
+	{
+	writeAllocMemoryDebugMsg("  %s(", pWord->pszWordName);
+	for (pWC = pWord->pCategories; pWC; pWC = pWC->pNext)
+	{
+	if (pWC != pWord->pCategories)
+		writeAllocMemoryDebugMsg(", ");
+	writeAllocMemoryDebugMsg("%s", pWC->pszCategory);
+	}
+	writeAllocMemoryDebugMsg(")");
+	}
+writeAllocMemoryDebugMsg("\n");
+
 memset(&sData, 0, sizeof(sData));
 sData.pPATR = pPATR_io;
 if (piStage_out != NULL)
@@ -2145,6 +2165,8 @@ if (setjmp(sOutOfMemory_m))
 	fprintf(pPATR_io->pLogFP, "Out of memory after %lu edges\n",
 		pPATR_io->uiEdgesAdded);
 	}
+	writeAllocMemoryDebugMsg("Out of memory after %lu edges\n",
+	pPATR_io->uiEdgesAdded);
 	pfOutOfMemory_g = pFunc;
 	if (piStage_out != NULL)
 	*piStage_out = 5;
@@ -2167,6 +2189,8 @@ if (pPATR_io->iMaxProcTime != 0)
 			"Out of time after %lu seconds and %lu edges\n",
 			pPATR_io->iMaxProcTime + 1, pPATR_io->uiEdgesAdded);
 		}
+	writeAllocMemoryDebugMsg("Out of time after %lu seconds and %lu edges\n",
+		pPATR_io->iMaxProcTime + 1, pPATR_io->uiEdgesAdded);
 	pPATR_io->iStartTime = 0;
 	if (piStage_out != NULL)
 		*piStage_out = 6;
@@ -2174,7 +2198,9 @@ if (pPATR_io->iMaxProcTime != 0)
 	return NULL;
 	}
 	}
+
 parse = parse_with_PATR(pSentence_in, &sData);
+
 if ((parse == NULL) && (piStage_out != NULL))
 	{
 	if (pPATR_io->bFailure)
@@ -2213,6 +2239,23 @@ if (sData.pVertices)
  *  restore original error handler for memory allocation
  */
 pfOutOfMemory_g = pFunc;
+/*
+ *  Put marker in memory allocation trace (if one is being produced).
+ */
+writeAllocMemoryDebugMsg("DONE PARSING SENTENCE:");
+for (pWord = pSentence_in; pWord; pWord = pWord->pNext)
+	{
+	writeAllocMemoryDebugMsg(" %s(", pWord->pszWordName);
+	for (pWC = pWord->pCategories; pWC; pWC = pWC->pNext)
+	{
+	if (pWC != pWord->pCategories)
+		writeAllocMemoryDebugMsg(",");
+	writeAllocMemoryDebugMsg("%s", pWC->pszCategory);
+	}
+	writeAllocMemoryDebugMsg(")");
+	}
+writeAllocMemoryDebugMsg("  --  parse = 0x%08lx, iStage = %d\n",
+	(unsigned long)parse, *piStage_out);
 
 return parse;
 }

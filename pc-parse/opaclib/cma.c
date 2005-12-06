@@ -7,6 +7,13 @@
 #include <string.h>
 #include <stdlib.h>
 
+extern int getopt(int argc, char * const argv[], const char *opts);
+
+#ifndef TRUE
+#define TRUE 1
+#define FALSE 0
+#endif
+
 #define MYALLOC 0xFFFFFFFFL
 #define MYFREE  0xFFFFFFFEL
 struct allocated
@@ -266,22 +273,37 @@ dump_tree(t->rlink, depth+1);
  * RETURN VALUE
  *
  */
-int main(int argc, char **argv)
+int main(int argc, char ** argv)
 {
 char buffer[128];
-char *p;
+char * p;
 unsigned long value, size, type, prior;
 unsigned long num = 0L;
-struct treenode *t;
-struct allocated *ap, *prevap;
+unsigned long allocated = 0L;
+unsigned long maxallocated = 0L;
+struct treenode * t;
+struct allocated * ap, * prevap;
 
 unsigned cAdd = 0;
 unsigned cReplace = 0;
 unsigned cRemove = 0;
 
+int k;
+int fQuiet = FALSE;
+while ((k = getopt(argc, argv, "q")) != EOF)
+	{
+	switch (k)
+	{
+	case 'q':
+		fQuiet = TRUE;
+		break;
+	}
+	}
+
+
 while (fgets(buffer, 128, stdin) != NULL)
 	{
-	if ((++num % 100) == 0)
+	if ((++num % 1000) == 0)
 	fprintf(stderr, "%lu\r", num);
 	if (strncmp(buffer, "m ", 2) == 0)
 	{
@@ -289,6 +311,9 @@ while (fgets(buffer, 128, stdin) != NULL)
 	value = strtoul(p+1, &p, 16);
 add_node:
 	++cAdd;
+	allocated += size;
+	if (allocated > maxallocated)
+		maxallocated = allocated;
 	t = find_node(value);
 	if (t == NULL)
 		{
@@ -333,6 +358,7 @@ replace_node:
 			t->alloc = ap->link;
 		else
 			prevap->link = ap->link;
+		allocated -= ap->size;
 		free(ap);
 #ifdef DEBUG
 		printf("Removing malloc() %8lu [realloc:%ld]\n", prior, num);
@@ -353,6 +379,9 @@ replace_node:
 		fprintf(stderr, "Out of memory!\n");
 		break;
 		}
+	allocated += size;
+	if (allocated > maxallocated)
+		maxallocated = allocated;
 	ap->size = size;
 	ap->type = MYALLOC;
 	ap->line = num;
@@ -383,6 +412,7 @@ remove_node:
 			t->alloc = ap->link;
 		else
 			prevap->link = ap->link;
+		allocated -= ap->size;
 		free(ap);
 #ifdef DEBUG
 		printf("Removing malloc() %8lu [%ld] [free]\n", value, num);
@@ -411,10 +441,11 @@ remove_node:
 	}
 	}
 fprintf(stderr, "%lu\n", num);
-print_tree( &head );
+if (!fQuiet)
+	print_tree( &head );
 if (cAdd != cRemove)
 	printf("%u alloc, %u realloc, %u free\n", cAdd, cReplace, cRemove);
-
+printf("%lu still allocated, %lu max allocated\n", allocated, maxallocated);
 #ifdef DEBUG
 dump_tree( &head, 0 );
 #endif

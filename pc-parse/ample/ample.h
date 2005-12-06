@@ -97,19 +97,19 @@ struct ample_data {
 	unsigned char	   bEnableAllomorphIDs;		/* -b */
 	unsigned char	   cBeginComment;		/* -c */
 	unsigned char	   bRootGlosses;		/* -g */
-	unsigned char	   bQuiet;				/* -q */
+	unsigned char	   bQuiet;			/* -q */
 #define DEFAULTTRIEDEPTH     (3) /* upped by one md 2005 - as Unicode likes that */
-	int			   iMaxTrieDepth;			/* -d */
+	int			   iMaxTrieDepth;		/* -d */
 	int			   iMaxMorphnameLength;		/* -n */
-	int			   eTraceAnalysis;			/* -t */
+	int			   eTraceAnalysis;		/* -t */
 #define AMPLE_TRACE_OFF		0
 #define AMPLE_TRACE_ON		1
 #define AMPLE_TRACE_SGML	2
 #define AMPLE_TRACE_XML 	3
 	char *		   pszTrace;
 	size_t		   uiTraceSize;
-	int			   iOutputFlags;			/* -w, -x */
-	int			   iDebugLevel;				/* -/ */
+	int			   iOutputFlags;		/* -w, -x */
+	int			   iDebugLevel;			/* -/ */
 #ifndef hab365
 	int			   iMaxAnalysesToReturn;	/* only used by XAmple.dll */
 #define MAX_ANALYSES_TO_RETURN_NO_LIMIT -1
@@ -256,6 +256,7 @@ struct ample_data {
 	unsigned long	   uiPATRCallCount;	/* number of times called */
 	unsigned long	   uiPATRFailCount;	/* number of times failed */
 	unsigned long	   uiPATRSkipCount;	/* number of times skipped */
+	int			   bRecognizeOnly;
 #endif
 	/*
 	 *  internal temporary storage used in creating dict entries (hab 3.2.5)

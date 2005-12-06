@@ -312,6 +312,7 @@ static AmpleData	sAmpleData_m = {
 	0L,						/* uiPATRCallCount */
 	0L,						/* uiPATRFailCount */
 	0L,						/* uiPATRSkipCount */
+	FALSE,					/* bRecognizeOnly */
 #endif /* EXPERIMENTAL */
 	0,                  /* size of allolist  (hab 3.2.5) */
 						/* asAlloList is initialized in initalist() */
@@ -452,7 +453,7 @@ argc = ccommand(&argv);
 #ifdef AZTEC
 argv[0] = "ample";
 #endif
-while ((k = getopt(argc, argv, "abc:d:e:f:gi:mn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
+while ((k = getopt(argc, argv, "abc:d:e:f:gi:jmn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
 	{
 	switch (k)
 	{
@@ -494,6 +495,11 @@ while ((k = getopt(argc, argv, "abc:d:e:f:gi:mn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
 		pszInputFile_m = optarg;	    /* pick up name */
 		break;
 
+#ifdef EXPERIMENTAL
+	case 'j':
+		sAmpleData_m.bRecognizeOnly = TRUE;	/*don't store parse results */
+		break;
+#endif /* EXPERIMENTAL */
 	case 'm':			/* monitor progress option */
 		bMonitorProgress_m = TRUE;
 		break;
@@ -631,7 +637,13 @@ fputs("\
 -f file  File containing names of data files\n\
 -g       output root Glosses in analysis file from dictionary code G\n\
 ", stderr); fputs("\
--i file  name of a single Input text file\n\
+-i file  name of a single Input text file\n", stderr);
+#ifdef EXPERIMENTAL
+fputs("\
+-j       enable \"Recognize Only\" mode (don't store or write PC-PATR parses)\n",
+	stderr);
+#endif /* EXPERIMENTAL */
+fputs("\
 -m       Monitor progress of an analysis:  * = failure; . = 1 analysis;\n\
 		 2-9 = 2-9 ambiguities; > = 10 or more ambiguities\n\
 -n num   maximum recommended morphname length\n\
