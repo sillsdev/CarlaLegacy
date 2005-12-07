@@ -136,6 +136,7 @@ static const NumberedMessage sBadAmpleTextCtlFile_m	= { ERROR_MSG,   721,
 #define KW_LEFT              66 /* added for SET ROOTGLOSS LEFTHEADED */
 #define KW_RIGHT             67 /* added for SET ROOTGLOSS RIGHTHEADED */
 #endif /* hab130 */
+#define KW_RECOGNIZE_ONLY    68	/* added for SET RECOGNIZE-ONLY {ON|OFF} */
 
 /*************************************************************************
  *  Variables and symbols local to this module
@@ -222,6 +223,7 @@ static const CmdKeyword set_tab[] = {	/* SET command keyword table */
 	{ "marker",			KW_MARKER,		0 },
 	{ "promote-defaults",	KW_PROMOTE,		0 },
 	{ "property-is-feature",	KW_PROPERTY_FEATURE,	0 },
+	{ "recognize-only",		KW_RECOGNIZE_ONLY,	0 },
 #ifndef hab130
 	{ "rootgloss",              KW_ROOTGLOSS_FEATURE,   0 },
 #endif /* hab130 */
@@ -2259,6 +2261,40 @@ switch (lookupCmdKeyword( arg, set_tab, n_set, ""))
 		}
 	break;
 
+	case KW_RECOGNIZE_ONLY:
+	arg = (char *)tokenizeString(NULL,szWhitespace_g);
+	switch (lookupCmdKeyword( arg, onoff_tab, n_onoff, ""))
+		{
+		case CMD_NULL:
+		displayNumberedMessage(&sCmdMissingKeyword_g,
+					   bCmdSilentMessages_g,
+					   bCmdShowWarnings_g, pCmdLogFP_g,
+					   NULL, 0,
+					   "SET RECOGNIZE-ONLY");
+		break;
+		case CMD_AMBIGUOUS:
+		displayNumberedMessage(&sCmdAmbiguousKeyword_g,
+					   bCmdSilentMessages_g,
+					   bCmdShowWarnings_g, pCmdLogFP_g,
+					   NULL, 0,
+					   "SET RECOGNIZE-ONLY", arg );
+		break;
+		case CMD_HELP:
+		return;			/* already gave help */
+
+		case KW_ON:		sPCPATRData_g.bRecognizeOnly = TRUE;	break;
+		case KW_OFF:	sPCPATRData_g.bRecognizeOnly = FALSE;	break;
+
+		default:
+		displayNumberedMessage(&sCmdBadKeyword_g,
+					   bCmdSilentMessages_g,
+					   bCmdShowWarnings_g, pCmdLogFP_g,
+					   NULL, 0,
+					   "SET RECOGNIZE-ONLY", arg);
+		break;
+		}
+	break;
+
 	default:
 	displayNumberedMessage(&sCmdBadKeyword_g,
 				   bCmdSilentMessages_g,
@@ -3163,6 +3199,14 @@ as the values in the AMPLE analysis \\fd (feature descriptor) field.\n\
 SET PROPERTY-IS-FEATURE OFF restricts the interpretation of feature\n\
 template names to the AMPLE analysis \\fd field.  The default value is\n\
 OFF.\n\
+", stderr);
+	break;
+
+	case KW_RECOGNIZE_ONLY:		/* SET RECOGNIZE-ONLY {ON|OFF} */
+	fputs("\
+SET RECOGNIZE-ONLY ON causes the first successful parse to terminate the\n\
+parsing process.  SET RECOGNIZE-ONLY OFF allows all possible parses to be\n\
+to be checked and returned by the parsing process.\n\
 ", stderr);
 	break;
 

@@ -166,6 +166,7 @@ KimmoData sLang_g = {
 #ifndef hab108
 	0,  	/* eRootGlossFeature  - use AMPLE root gloss as feature */
 #endif /* hab108 */
+	FALSE,	/* bRecognizeOnly   - settle for one successful parse */
 	0,	/* iMaxProcTime     - maximum processing time for a parse */
 	NULL,	/* pLogFP           - output log file */
 	NULL,	/* pFinalPunc	    - not used by Kimmo functions */

@@ -3150,13 +3150,13 @@ static const char * setRecognizeOnly(
 	AmpleSetup *	pSetup_io)
 {
 if (pszValue_in == NULL)
-	pSetup_io->sData.bRecognizeOnly = FALSE;	/* default value */
+	pSetup_io->sData.sPATR.bRecognizeOnly = FALSE;	/* default value */
 else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
 	 (_stricmp(pszValue_in, "T") == 0) )
-	pSetup_io->sData.bRecognizeOnly = TRUE;
+	pSetup_io->sData.sPATR.bRecognizeOnly = TRUE;
 else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
 	 (_stricmp(pszValue_in, "F") == 0) )
-	pSetup_io->sData.bRecognizeOnly = FALSE;
+	pSetup_io->sData.sPATR.bRecognizeOnly = FALSE;
 else
 	return szInvalidParameterValue_m;
 return szAmpleSuccess_m;
@@ -4136,7 +4136,7 @@ else
 static const char * getRecognizeOnly(
 	AmpleSetup *	pSetup_io)
 {
-if (pSetup_io->sData.bRecognizeOnly)
+if (pSetup_io->sData.sPATR.bRecognizeOnly)
 	return "TRUE";
 else
 	return "FALSE";

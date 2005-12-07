@@ -96,8 +96,9 @@ KimmoData sKimmoData_g = {
 	TRUE,	/* bPromoteDefAtoms - promote default atoms before parsing */
 	FALSE,	/* bPropIsFeature   - AMPLE property is feature template */
 #ifndef hab219
-	0,  	/* eRootGlossFeature  - use AMPLE root gloss as feature */
+	0,  	/* eRootGlossFeature - use AMPLE root gloss as feature */
 #endif /* hab219 */
+	FALSE,	/* bRecognizeOnly   - settle for one successful parse */
 	0,	/* iMaxProcTime     - maximum processing time for a parse */
 	NULL,	/* pLogFP           - output log file */
 	NULL,	/* pFinalPunc       - not used by Kimmo functions */

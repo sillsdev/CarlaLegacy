@@ -1,23 +1,23 @@
-pc-parse-src-20030321				March 21, 2003
-pc-parse-doc-20030321
-pc-parse-tst-20030321
+pc-parse-src-20051207				December 7, 2005
+pc-parse-doc-20051207
+pc-parse-tst-20051207
 
 These archives include sources, documentation, and test data for the following
 natural language processing / computational linguistics programs:
 
 		PC-Kimmo version 2.1.13
-		PC-PATR version 1.3.8
+		PC-PATR version 1.3.13
 		KTEXT version 2.1.8
 		KTAGGER version 1.0.10
-		AMPLE version 3.6.5
+		AMPLE version 3.10.1
 		ANADIFF version 1.0.6
-		INTERGEN version 2.1b16
-		STAMP version 2.1.16
-		ToneGen version 1.0b12
-		TonePars version 1.0.11
+		INTERGEN version 2.2.0
+		STAMP version 2.2.1
+		ToneGen version 1.0b20
+		TonePars version 1.0.19
 
 along with required function libraries.  The sources and documentation are all
-stored in the subdirectory pc-parse-20030321.  (Note that the documentation
+stored in the subdirectory pc-parse-20051207.  (Note that the documentation
 stored in the doc subdirectory has not been kept up to date.  It may still be
 useful as a starting point, however.)
 
@@ -29,12 +29,9 @@ a Unix (or Unix-like) system.  Minimally, you need to enter only two commands:
 
 The build process has been tested on the following systems:
 
-  1. Debian GNU/Linux 2.2 (kernel 2.2.17) / gcc 2.95.2, glibc 2.1.3-24
-  2. Red Hat Linux 7.3 (kernel 2.4.18) / gcc 2.96, glibc 2.2.5-34
-  3. Red Hat Linux 8.0 (kernel 2.4.18-14) / gcc 3.2-7, glibc 2.2.93-5
-  4. OpenBSD 3.1 / gcc 2.95.3
-  5. Mac OS X (10.2) / gcc 3.1
-  6. cygwin 1.3.10-1 (Windows XP Pro) / gcc 2.95.3-5
+  1. Debian GNU/Linux Sarge (kernel 2.4.18) / gcc 3.3.5, glibc 2.3.2
+  2. Microsoft Visual Studio .NET 2003 (built through the GUI, not the same
+	 as the Unix style build process)
 
 The file INSTALL.DOS describes how to compile and install the pc-parse
 programs on MS-DOS or MS Windows using either the DJGPP port of the GNU C

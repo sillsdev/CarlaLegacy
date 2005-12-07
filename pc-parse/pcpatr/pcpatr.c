@@ -66,6 +66,7 @@ PATRData	sPCPATRData_g = {
 #ifndef hab130
 	0,  	/* eRootGlossFeature  - use AMPLE root gloss as feature */
 #endif /* hab130 */
+	FALSE,	/* bRecognizeOnly     - settle for one successful parse */
 	0,		/* iMaxProcTime       - maximum processing time for a parse */
 	NULL,	/* pLogFP             - output log file */
 	NULL,	/* pFinalPunc         - sentence final punctuation chars */
@@ -137,6 +138,7 @@ KimmoData	sPCPATRKimmoData_g =
 #ifndef hab130
 	0,	/* eRootGlossFeature- use AMPLE root gloss as feature */
 #endif /* hab130 */
+	FALSE,	/* bRecognizeOnly   - settle for one successful parse */
 	0,	/* iMaxProcTime     - maximum processing time for a parse */
 	NULL,	/* pLogFP           - output log file */
 	NULL,	/* pFinalPunc         - sentence final punctuation chars */
@@ -259,6 +261,7 @@ AmpleData	sPCPATRAmpleData_g = {
 	TRUE,					/* sPATR.bShowWarnings */
 	TRUE,					/* sPATR.bPromoteDefAtoms */
 	TRUE,					/* sPATR.bPropIsFeature */
+	FALSE,					/* sPATR.bRecognizeOnly */
 	0,					/* sPATR.iMaxProcTime */
 #ifndef hab130
 	0,					/* sPATR.eRootGlossFeature */

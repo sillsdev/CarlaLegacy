@@ -236,6 +236,11 @@ typedef struct
 #define PATR_ROOT_GLOSS_RIGHT_HEADED	3 /* use rightmost ANA root */
 #define PATR_ROOT_GLOSS_USE_ALL 	4 /* use all ANA roots */
 #endif /* hab130 */
+	/*
+	 *  flag that we don't really care about all the parse results,
+	 *  just that at least one parse succeeds.
+	 */
+	char	bRecognizeOnly;
 	time_t	iMaxProcTime;	/* max number of seconds to process */
 	FILE *	pLogFP;
 	StringList *	pFinalPunc;	/* sentence final punctuation chars */

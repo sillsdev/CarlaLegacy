@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for PC-PATR
 *******************************************************************************
- * Copyright 1994, 2002 by SIL International.  All rights reserved.
+ * Copyright 1994, 2005 by SIL International.  All rights reserved.
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 3		/* enhancement requiring adding to book */
 #define PATCHLEVEL 12		/* bug fix or other minor change */
-#define DATE "September 26, 2005"	/* date of release version */
+#define DATE "December 7, 2005"	/* date of release version */
 #define YEAR "2005"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 07-Dec-2005	SRMc - add "recognize only" capability
+ * [1.3.13]		(perhaps should be 1.4.0, but...)
  * 26-Sep-2005  hab  - In XML tree dump, either output all features if
  * [1.3.12]             "set features on" and "set features all" are set or
  *                      output no features if "set features off" is set.

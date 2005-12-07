@@ -1680,11 +1680,14 @@ if (pData->pPATR->iDebugLevel)
 pParseList = build_parse_list(pData->pPATR->pGrammar, pData);
 if (pParseList != NULL)
 	{
+#if 1
+#else
 	PATREdgeList * pel;
 	PATREdgeList * pelPrev = NULL;
 	for ( pel = pParseList ; pel ; pel = pel->pNext )
 	{
-	int ok = doublecheck_constraints(pel->pEdge, pel->pEdge->pFeature, pData);
+	int ok = doublecheck_constraints(pel->pEdge, pel->pEdge->pFeature,
+					 pData);
 	if (!ok)
 		{
 		if (pelPrev)
@@ -1692,8 +1695,14 @@ if (pParseList != NULL)
 		else
 		pParseList = pel->pNext;
 		}
+	else if (pData->pPATR->bRecognizeOnly)
+		{
+		/* one successful parse is enough */
+		break;
+		}
 	pelPrev = pel;
 	}
+#endif
 	if (    pData->pPATR->bUnification && !pData->pPATR->bFailure &&
 		count_parse_failures(pParseList) )
 	{
@@ -1796,9 +1805,9 @@ static PATREdgeList * build_parse_list(pGrammar_in, pData)
 PATRGrammar * pGrammar_in;
 PATRParseData * pData;
 {
-PATREdgeList *elp;
-PATREdgeList *parses = NULL;
-PATREdgeList *this;
+PATREdgeList * elp;
+PATREdgeList * pParses = NULL;
+PATREdgeList * pNewParse;
 int parse_count = 0;
 
 /* For all incoming passives on last vertex */
@@ -1810,15 +1819,36 @@ while (elp != NULL)
 	if (    (elp->pEdge->iStart == 0) &&
 		(strcmp(elp->pEdge->pszLabel, pGrammar_in->pszStartSymbol) == 0) )
 	{
+#if 1
+	int ok = doublecheck_constraints(elp->pEdge, elp->pEdge->pFeature,
+					 pData);
+	if (ok)
+		{
+		++parse_count;
+		pNewParse = allocPATREdgeList(pData->pPATR);
+		pNewParse->pNext = pParses;
+		pNewParse->pEdge = elp->pEdge;
+		pParses = pNewParse;
+		if (pData->pPATR->bRecognizeOnly && !pData->pPATR->bFailure &&
+		(!pData->pPATR->bUnification ||
+			(pData->pPATR->bUnification &&
+			 !count_parse_failures(pParses))))
+			{
+		/* one successful parse is enough */
+		break;
+		}
+		}
+#else
 	++parse_count;
-	this = allocPATREdgeList(pData->pPATR);
-	this->pNext = parses;
-	this->pEdge = elp->pEdge;
-	parses = this;
+	pNewParse = allocPATREdgeList(pData->pPATR);
+	pNewParse->pNext = pParses;
+	pNewParse->pEdge = elp->pEdge;
+	pParses = pNewParse;
+#endif
 	}
 	elp = elp->pNext;
 	}
-return parses;
+return pParses;
 }
 
 /*****************************************************************************

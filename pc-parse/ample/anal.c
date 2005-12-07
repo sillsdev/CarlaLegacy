@@ -6720,7 +6720,7 @@ if (pWord != NULL)
 	pWordParse = parseWithPATR(pWord, &iStage, &pAmple_in->sPATR);
 	if ((pWordParse != NULL) && (iStage == 0))
 	{
-	if (pAmple_in->bRecognizeOnly)
+	if (pAmple_in->sPATR.bRecognizeOnly)
 		{
 		writeAllocMemoryDebugMsg(
 		"*NOT* STORING PERMANENT COPY OF PARSE RESULTS FOR AMPLE\n");

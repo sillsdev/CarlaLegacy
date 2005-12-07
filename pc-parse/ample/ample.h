@@ -256,7 +256,6 @@ struct ample_data {
 	unsigned long	   uiPATRCallCount;	/* number of times called */
 	unsigned long	   uiPATRFailCount;	/* number of times failed */
 	unsigned long	   uiPATRSkipCount;	/* number of times skipped */
-	int			   bRecognizeOnly;
 #endif
 	/*
 	 *  internal temporary storage used in creating dict entries (hab 3.2.5)

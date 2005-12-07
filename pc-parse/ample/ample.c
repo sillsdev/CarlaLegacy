@@ -295,6 +295,7 @@ static AmpleData	sAmpleData_m = {
 #ifndef hab350
 	PATR_ROOT_GLOSS_NO_FEATURE,             /* sPATR.eRootGlossFeature */
 #endif /* hab350 */
+	FALSE,					/* sPATR.bRecognizeOnly */
 	0,					/* sPATR.iMaxProcTime */
 	NULL,					/* sPATR.pLogFP */
 	NULL,					/* sPATR.pFinalPunc */
@@ -312,7 +313,6 @@ static AmpleData	sAmpleData_m = {
 	0L,						/* uiPATRCallCount */
 	0L,						/* uiPATRFailCount */
 	0L,						/* uiPATRSkipCount */
-	FALSE,					/* bRecognizeOnly */
 #endif /* EXPERIMENTAL */
 	0,                  /* size of allolist  (hab 3.2.5) */
 						/* asAlloList is initialized in initalist() */
@@ -496,8 +496,8 @@ while ((k = getopt(argc, argv, "abc:d:e:f:gi:jmn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
 		break;
 
 #ifdef EXPERIMENTAL
-	case 'j':
-		sAmpleData_m.bRecognizeOnly = TRUE;	/*don't store parse results */
+	case 'j':			/*don't store parse results */
+		sAmpleData_m.sPATR.bRecognizeOnly = TRUE;
 		break;
 #endif /* EXPERIMENTAL */
 	case 'm':			/* monitor progress option */
