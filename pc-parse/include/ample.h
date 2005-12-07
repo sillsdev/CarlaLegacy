@@ -98,6 +98,7 @@ struct ample_data {
 	unsigned char	   cBeginComment;		/* -c */
 	unsigned char	   bRootGlosses;		/* -g */
 	unsigned char	   bQuiet;			/* -q */
+#define DEFAULTTRIEDEPTH     (3) /* upped by one md 2005 - as Unicode likes that */
 	int			   iMaxTrieDepth;		/* -d */
 	int			   iMaxMorphnameLength;		/* -n */
 	int			   eTraceAnalysis;		/* -t */
@@ -110,7 +111,7 @@ struct ample_data {
 	int			   iOutputFlags;		/* -w, -x */
 	int			   iDebugLevel;			/* -/ */
 #ifndef hab365
-	int			   iMaxAnalysesToReturn; /* only used by XAmple.dll */
+	int			   iMaxAnalysesToReturn;	/* only used by XAmple.dll */
 #define MAX_ANALYSES_TO_RETURN_NO_LIMIT -1
 #endif
 	FILE *		   pLogFP;
@@ -135,18 +136,17 @@ struct ample_data {
 	AmpleTestList *	   pFinalTests;		/* \\ft */
 	/* defunct item */				/* \\tc */
 	int			   eWriteCategory;	/* \\cat */
-#define AMPLE_NO_CATEGORY	0	/* no word category guessing */
+#define AMPLE_NO_CATEGORY	    0	/* no word category guessing */
 #define AMPLE_SUFFIX_CATEGORY	1	/* last suffix has word category */
 #define AMPLE_PREFIX_CATEGORY	2	/* first prefix has word category */
+#define AMPLE_COMPUTED_CATEGORY 3   /* the word category must be computed */
 #ifndef hab340
-#define AMPLE_AFFIX             3       /* used to reset affix setting
-					   when there are multiple \cat
-					   fields */
+#define AMPLE_AFFIX             3   /* used to filter the affix out, e.g. when
+			there are multiple \cat fields (analda.c) or to process (anal.c) */
 #define AMPLE_COMPOUND_ROOT_LEFTHEAD  4	/* compound roots are left headed */
 #define AMPLE_COMPOUND_ROOT_RIGHTHEAD 8	/* compound roots are righ headed */
 #define AMPLE_COMPOUND_ROOT          12	/* used to reset compound setting
-					   when there are multiple \catcr
-					   fields */
+					   when there are multiple \catcr fields */
 #endif /* hab340 */
 	int			   bWriteMorphCats;
 	StringList *	   pCategories;		/* \\ca */
@@ -317,11 +317,12 @@ typedef struct ample_amlist {
 /*
  *  getAllAllomorphs states
  */
-#define AMPLE_STATE_BOW     0x01
-#define AMPLE_STATE_PREFIX  0x02
-#define AMPLE_STATE_ROOT    0x04
-#define AMPLE_STATE_SUFFIX  0x08
-#define AMPLE_STATE_EOW     0x10
+#define AMPLE_STATE_BOW     	0x01
+#define AMPLE_STATE_PREFIX  	0x02
+#define AMPLE_STATE_ROOT    	0x04
+#define AMPLE_STATE_INTERFIX    0x08
+#define AMPLE_STATE_SUFFIX  	0x10
+#define AMPLE_STATE_EOW     	0x20
 #endif /* hab3312 */
 /*
  *  global functions available for AMPLE parsing
