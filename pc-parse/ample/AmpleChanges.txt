@@ -2,7 +2,7 @@ AMPLE CHANGE HISTORY
 
 3.11.0 (09-Dec-2004)
 -------------------
-1. Add "recognize only" capability for XAMPLE (-j option.  When "true", the
+1. Add "recognize only" capability for XAMPLE (-j option).  When "true", the
    PC-PATR parse results are neither stored nor written to the analysis output.
    Only for XAmple.
 
