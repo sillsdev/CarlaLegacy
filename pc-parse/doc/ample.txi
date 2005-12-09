@@ -115,6 +115,11 @@ pair (min, max) which delimits the order class span of the affix.
 
 @c Added by hab 06-Oct-2005
 @item 12. Version 3.10.0 (October 2005) allows the final category output in the analysis output file to be computed.
+
+@c Added by SRMc & hab 09-Dec-2005
+@item 12. Version 3.11.0 (December 2005) added ``recognize only''capability for XAMPLE (-j option).  When "true", the
+PC-PATR parse results are neither stored nor written to the analysis output.
+Only for XAmple.
 @end table
 
 @c ----------------------------------------------------------------------------
@@ -1054,7 +1059,7 @@ with each node containing the feature structure associated with that node
 of the parse tree.  This setting causes the @code{FeatureStyle} parameter
 to be ignored.
 
-@code{\patr TreeStyle Off} prevents parses from being written.  This
+@code{\patr TreeStyle None} prevents parses from being written.  This
 allows PC-PATR word grammars to be used for filtering invalid AMPLE
 analyses without cluttering up the output analysis files.
 

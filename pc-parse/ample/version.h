@@ -3,15 +3,16 @@
  * Copyright 1996 - 2005 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
-#define REVISION 10		/* enhancement requiring adding to book */
+#define REVISION 11		/* enhancement requiring adding to book */
 #define PATCHLEVEL 1		/* bug fix or other minor change */
-#define DATE "December 7, 2005"	/* date of release version */
+#define DATE "December 9, 2005"	/* date of release version */
 #define YEAR "2005"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
- * 07-Dec-2005	SRMc - add "recognize only" capability for XAMPLE (-j option)
- * [3.10.1]		(perhaps should be 3.11.0, but...)
+ * 09-Dec-2005	SRMc - add "recognize only" capability for XAMPLE (-j option)
+ * [3.11.0]		When set, the PC-PATR parse results are neither stored
+ *                      nor written to the analysis output.  Only for XAmple.
  * 06-Oct-2005  md/hab - Add "compute category" capability
  * [3.10.0]
  * 02-Mar-2005  hab  - Add information in tracing for when an infix allomorph

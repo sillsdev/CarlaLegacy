@@ -6724,8 +6724,9 @@ if (pWord != NULL)
 		{
 		writeAllocMemoryDebugMsg(
 		"*NOT* STORING PERMANENT COPY OF PARSE RESULTS FOR AMPLE\n");
+		if (pAmple_in->pLogFP)
 			fputs("** Word parsed with PC-PATR grammar, but parse results not stored **\n",
-		  pAmple_in->pLogFP);
+			  pAmple_in->pLogFP);
 		pWordParse = NULL;
 		}
 	else

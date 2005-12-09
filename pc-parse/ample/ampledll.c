@@ -4128,8 +4128,8 @@ else
  * NAME
  *    getRecognizeOnly
  * DESCRIPTION
- *    get the maximum number of analyses to return
- *     (MAX_ANALYSES_TO_RETURN_NO_LIMIT = no limit)
+ *    get flag whether or not to store parse results ("Recognize Only" == true
+ *    means not to store parse results)
  * RETURN VALUE
  *    string indicating the value
  */
@@ -4680,6 +4680,9 @@ return pszResult;
 
 /******************************************************************************
  * EDIT HISTORY
+ * 09-Dec-2004  SRMc - Add RecognizeOnly parameter.  When "true", the PC-PATR
+ * [3.11.0.19]           parse results are neither stored nor written to the
+ *                       analysis output.
  * 03-Dec-2004  hab  - Add Interfixes
  * [3.9.0.18]
  * 12-Jul-2003  hab  - Add AMPLE_TRACE_XML option

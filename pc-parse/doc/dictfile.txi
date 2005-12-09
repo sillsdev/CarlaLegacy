@@ -26,6 +26,8 @@
 @c      January 7, 2004
 @c Modified for AMPLE v. 3.9.0 by H. Andrew Black
 @c      December 6, 2004
+@c Added info on null affixes by H. Andrew Black
+@c      December 9, 2005
 @set dictfile
 @ifclear endash
 @iftex
@@ -126,15 +128,23 @@ file
 @section Allomorph (internal code A)
 
 Each dictionary entry must contain one or more allomorph fields.  Each
-of these contains one of the infix's allomorphs, that is, the string of
-characters by which the affix is represented in text and recognized by
+of these contains one of the affix/root's allomorphs, that is, the string of
+characters by which the affix/root is represented in text and recognized by
 @value{ProgName}.
 
-If an affix has multiple allomorphs, each one must be entered in its own
+If an affix/root has multiple allomorphs, each one must be entered in its own
 allomorph field.  These fields should be ordered with those on which the
 strictest constraints have been imposed preceding those with less strict
 or no constraints.  The only exception to this is the use of indexed
 string classes to indicate reduplication.  (See lines 20 and 21 below.)
+
+It is also possible to have a null allomorph (sometimes called a
+zero).  This is indicated by the single digit 0.  The occurrence of
+null allomorphs should be restricted in some way or another for
+efficiency reason.  Because the digit 0 has a special meaning in
+@value{ProgName}, it must not be part of the internal orthography.  If
+the practical orthography uses 0, it should be changed to some other
+character in the orthography input table.
 
 Properties, constraints, and comments may follow the allomorph string.
 Any properties must be listed before any constraints.  String, punctuation and

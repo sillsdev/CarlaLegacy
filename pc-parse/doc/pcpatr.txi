@@ -9,10 +9,10 @@
 
 @set TITLE PC-PATR Reference Manual
 @set SUBTITLE a unification based syntactic parser
-@set VERSION version 1.3.0
-@set DATE March 2002
-@set AUTHOR by Stephen McConnel (changes for v. 1.2.5-1.3.0 by H. Andrew Black)
-@set COPYRIGHT Copyright @copyright{} 2000-2002 SIL International
+@set VERSION version 1.4.0
+@set DATE December 2005
+@set AUTHOR by Stephen McConnel (changes for v. 1.2.5-1.4.0 by H. Andrew Black)
+@set COPYRIGHT Copyright @copyright{} 2000-2005 SIL International
 
 @include front.txi
 
@@ -1212,6 +1212,7 @@ below.
 * set marker word::
 * set promote-defaults::
 * set property-is-feature::
+* set recognize-only::
 * set rootgloss::
 * set timing::
 * set top-down-filter::
@@ -1471,7 +1472,7 @@ default, but this has been the behavior since the program was first
 written.)
 
 @c ----------------------------------------------------------------------------
-@node set property-is-feature, set rootgloss, set promote-defaults, set
+@node set property-is-feature, set recognize-only, set promote-defaults, set
 @subsubsection set property-is-feature
 
 @w{@code{set property-is-feature} @var{value}} controls whether the
@@ -1485,7 +1486,21 @@ wrong choice for the default, but this has been the behavior since the
 program was first written.)
 
 @c ----------------------------------------------------------------------------
-@node set rootgloss, set timing, set property-is-feature, set
+@node set recognize-only, set rootgloss, set property-is-feature, set
+@subsubsection set recognize-only
+
+@w{@code{set recognize-only} @var{value}} controls whether the parser
+acts as a recognizer or as a real parser and thus produces all
+possible parses.
+
+@w{@code{set recognize-only on}} causes the first successful parse to terminate the parsing process.
+
+@w{@code{set recognize-only off}} allows all possible parses to be to be checked and returned by the parsing process.
+
+The default setting is @code{off}.
+
+@c ----------------------------------------------------------------------------
+@node set rootgloss, set timing, set recognize-only, set
 @subsubsection set rootgloss
 
 @w{@code{set rootgloss} @var{value}} specifies if root glosses should be

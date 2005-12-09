@@ -10,7 +10,7 @@
 @set VERSION based on AMPLE functions version 3.3.16
 @set DATE March 2001
 @set AUTHOR by Stephen McConnel (additions for versions 3.2.5-3.3.16 by Andy Black)
-@set COPYRIGHT Copyright @copyright{} 2001 SIL International
+@set COPYRIGHT Copyright @copyright{} 2001-2005 SIL International
 
 @include front.txi
 
@@ -828,8 +828,7 @@ corresponds to redirecting the standard output from the AMPLE program.
 (This retrieves the file name.)
 
 @item MaxAnalysesToReturn
-is used only by XAmple.dll.  (It appears to be defunct, and not used
-beyond being set.)
+is used only by XAmple.dll.  It limits the number of analyses to return.
 
 @item MaxMorphnameLength
 corresponds to the AMPLE program's @samp{-n} command line option.
@@ -1859,8 +1858,8 @@ The value string is the name of the output log file.  The default is
 not to have a log file.
 
 @item MaxAnalysesToReturn
-is used only by XAmple.dll.  (It appears to be defunct, and not used
-beyond being set.)  The default value is @code{"-1"} (no limit).
+is used only by XAmple.dll.  It limits the number of analyses to return.
+The default value is @code{"-1"} (no limit).
 
 @item MaxMorphnameLength
 corresponds to the AMPLE program's @samp{-n} command line option.
