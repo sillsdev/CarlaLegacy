@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.11.1 (06-Jan-2006)
+--------------------
+1. When the MaxAnalysesToReturn parameter is set, stop looking for more analyses
+   as soon as the value is reached.  Only for XAmple.
+
 3.11.0 (09-Dec-2004)
 -------------------
 1. Add "recognize only" capability for XAMPLE (-j option).  When "true", the

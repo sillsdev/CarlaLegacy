@@ -10,8 +10,8 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.10
-@set DATE October 2005
+@set VERSION version 3.11
+@set DATE December 2005
 @set AUTHOR by Stephen McConnel, H. Andrew Black, and Marius Doornenbal
 @set COPYRIGHT Copyright @copyright{} 2000-2005 SIL International
 

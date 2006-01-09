@@ -1,15 +1,18 @@
 /* VERSION.H - version number and date information for AMPLE
  ***************************************************************************
- * Copyright 1996 - 2005 by SIL International.  All rights reserved.
+ * Copyright 1996 - 2006 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 11		/* enhancement requiring adding to book */
 #define PATCHLEVEL 1		/* bug fix or other minor change */
-#define DATE "December 9, 2005"	/* date of release version */
-#define YEAR "2005"		/* used for copyright notice in banner */
+#define DATE "January 6, 2006"	/* date of release version */
+#define YEAR "2006"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 06-Jan-2006	hab - When the MaxAnalysesToReturn parameter is set, stop
+ * [3.11.1]		looking for more analyses as soon as the value is
+ *                      reached.  Only for XAmple.
  * 09-Dec-2005	SRMc - add "recognize only" capability for XAMPLE (-j option)
  * [3.11.0]		When set, the PC-PATR parse results are neither stored
  *                      nor written to the analysis output.  Only for XAmple.

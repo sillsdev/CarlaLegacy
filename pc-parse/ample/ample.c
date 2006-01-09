@@ -453,7 +453,7 @@ argc = ccommand(&argv);
 #ifdef AZTEC
 argv[0] = "ample";
 #endif
-while ((k = getopt(argc, argv, "abc:d:e:f:gi:jmn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
+while ((k = getopt(argc, argv, "abc:d:e:f:gi:l:jmn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
 	{
 	switch (k)
 	{
@@ -499,7 +499,14 @@ while ((k = getopt(argc, argv, "abc:d:e:f:gi:jmn:o:pqrs:tuvw:x:/z:Z:")) != EOF)
 	case 'j':			/*don't store parse results */
 		sAmpleData_m.sPATR.bRecognizeOnly = TRUE;
 		break;
+
+	case 'l':			/* max analyses to return */
+		sAmpleData_m.iMaxAnalysesToReturn = atoi(optarg);
+		if (sAmpleData_m.iMaxAnalysesToReturn < 1)
+		sAmpleData_m.iMaxAnalysesToReturn = MAX_ANALYSES_TO_RETURN_NO_LIMIT;
+		break;
 #endif /* EXPERIMENTAL */
+
 	case 'm':			/* monitor progress option */
 		bMonitorProgress_m = TRUE;
 		break;
@@ -640,7 +647,8 @@ fputs("\
 -i file  name of a single Input text file\n", stderr);
 #ifdef EXPERIMENTAL
 fputs("\
--j       enable \"Recognize Only\" mode (don't store or write PC-PATR parses)\n",
+-j       enable \"Recognize Only\" mode (don't store or write PC-PATR parses)\n\
+-l num   select the maximum number of analyses to return (default is all)\n",
 	stderr);
 #endif /* EXPERIMENTAL */
 fputs("\

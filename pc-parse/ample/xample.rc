@@ -28,8 +28,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,10,0,0
- PRODUCTVERSION 3,10,0,0
+ FILEVERSION 3,11,1,0
+ PRODUCTVERSION 3,11,1,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -44,17 +44,17 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "XAmple 3.10.0\0"
+			VALUE "Comments", "XAmple 3.11.1\0"
 			VALUE "CompanyName", "SIL International\0"
 			VALUE "FileDescription", "xample\0"
-			VALUE "FileVersion", "3, 10, 0, 0\0"
+			VALUE "FileVersion", "3, 11, 1, 0\0"
 			VALUE "InternalName", "xample\0"
-			VALUE "LegalCopyright", "Copyright © 2001-2005\0"
+			VALUE "LegalCopyright", "Copyright © 2001-2006\0"
 			VALUE "LegalTrademarks", "\0"
 			VALUE "OriginalFilename", "xample32\0"
 			VALUE "PrivateBuild", "\0"
 			VALUE "ProductName", "SIL XAmple\0"
-			VALUE "ProductVersion", "3, 10, 0, 0\0"
+			VALUE "ProductVersion", "3, 11, 1, 0\0"
 			VALUE "SpecialBuild", "\0"
 		END
 	END

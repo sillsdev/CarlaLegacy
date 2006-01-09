@@ -1046,6 +1046,19 @@ int		bAllomorphsTried = FALSE;
 int		bContinuation;
 int		bOldUsesPrev;
 int		bOldUsesNext;
+#ifdef EXPERIMENTAL
+if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
+	(pAmple_in->iMaxAnalysesToReturn <= (int)uiAmbigCount_m))
+  { /* no need to do any more work; quit. */
+	/* N.B. that this ignores the possibility of any of these
+	 * analyses being removed by refineAmpleAnalysis() which
+	 * looks at surrounding words.  For FieldWorks purposes,
+	 * this is just fine.  I doubt that the iMaxAnalysesToReturn
+	 * parameter will be used in other contexts, so this is probably OK.
+	 */
+	return FALSE;
+  }
+#endif /* EXPERIMENTAL */
 /*
  *  save furthest penetration during parse
  */
@@ -1384,6 +1397,19 @@ int		bAllomorphsTried = FALSE;
 int		bContinuation;
 int		bOldUsesPrev;
 int		bOldUsesNext;
+#ifdef EXPERIMENTAL
+if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
+	(pAmple_in->iMaxAnalysesToReturn <= (int)uiAmbigCount_m))
+  { /* no need to do any more work; quit. */
+	/* N.B. that this ignores the possibility of any of these
+	 * analyses being removed by refineAmpleAnalysis() which
+	 * looks at surrounding words.  For FieldWorks purposes,
+	 * this is just fine.  I doubt that the iMaxAnalysesToReturn
+	 * parameter will be used in other contexts, so this is probably OK.
+	 */
+	return FALSE;
+  }
+#endif /* EXPERIMENTAL */
 /*
  *  if the end of the word is found, then we have an incorrect analysis.
  *  also, if no more infixes are possible, then we can't proceed either.
@@ -1678,6 +1704,19 @@ int		bAllomorphsTried = FALSE;
 int		bContinuation;
 int		bOldUsesPrev;
 int		bOldUsesNext;
+#ifdef EXPERIMENTAL
+if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
+	(pAmple_in->iMaxAnalysesToReturn <= (int)uiAmbigCount_m))
+  { /* no need to do any more work; quit. */
+	/* N.B. that this ignores the possibility of any of these
+	 * analyses being removed by refineAmpleAnalysis() which
+	 * looks at surrounding words.  For FieldWorks purposes,
+	 * this is just fine.  I doubt that the iMaxAnalysesToReturn
+	 * parameter will be used in other contexts, so this is probably OK.
+	 */
+	return FALSE;
+  }
+#endif /* EXPERIMENTAL */
 /*
  *  save furthest penetration during parse
  */
@@ -1928,6 +1967,19 @@ int		bAllomorphsTried = FALSE;
 int		bContinuation;
 int		bOldUsesPrev;
 int		bOldUsesNext;
+#ifdef EXPERIMENTAL
+if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
+	(pAmple_in->iMaxAnalysesToReturn <= (int)uiAmbigCount_m))
+  { /* no need to do any more work; quit. */
+	/* N.B. that this ignores the possibility of any of these
+	 * analyses being removed by refineAmpleAnalysis() which
+	 * looks at surrounding words.  For FieldWorks purposes,
+	 * this is just fine.  I doubt that the iMaxAnalysesToReturn
+	 * parameter will be used in other contexts, so this is probably OK.
+	 */
+	return FALSE;
+  }
+#endif /* EXPERIMENTAL */
 /*
  *  save furthest penetration during parse
  */
@@ -2289,6 +2341,20 @@ AmpleParseList *	pNewParse;
 int		bOldUsesPrev;
 int		bOldUsesNext;
 int             bAllAllosAreNull = FALSE;
+
+#ifdef EXPERIMENTAL
+if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
+	(pAmple_in->iMaxAnalysesToReturn <= (int)uiAmbigCount_m))
+  { /* no need to do any more work; quit. */
+	/* N.B. that this ignores the possibility of any of these
+	 * analyses being removed by refineAmpleAnalysis() which
+	 * looks at surrounding words.  For FieldWorks purposes,
+	 * this is just fine.  I doubt that the iMaxAnalysesToReturn
+	 * parameter will be used in other contexts, so this is probably OK.
+	 */
+	return FALSE;
+  }
+#endif /* EXPERIMENTAL */
 
 /*
  *  check for going too far
