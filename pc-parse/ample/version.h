@@ -3,13 +3,15 @@
  * Copyright 1996 - 2006 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
-#define REVISION 11		/* enhancement requiring adding to book */
-#define PATCHLEVEL 1		/* bug fix or other minor change */
-#define DATE "January 6, 2006"	/* date of release version */
+#define REVISION 12		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0		/* bug fix or other minor change */
+#define DATE "February 6, 2006"	/* date of release version */
 #define YEAR "2006"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 06-Feb-2006	hab - Add full reduplication capability.
+ * [3.12.0]
  * 06-Jan-2006	hab - When the MaxAnalysesToReturn parameter is set, stop
  * [3.11.1]		looking for more analyses as soon as the value is
  *                      reached.  Only for XAmple.

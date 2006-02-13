@@ -32,6 +32,8 @@
 #include "ample.h"
 #include "ampledef.h"
 extern char *	strlwr P((char * pszString_io));
+#define FULLREDUP "<...>"
+#define FULLREDUPLEN 5
 
 /*****************************************************************************
  * NAME
@@ -754,6 +756,10 @@ char *		     rp;
 int		     bAlloc;
 char *		     pszEnv;
 char *		     p;
+AmpleFullReduplication * pRedupAllo;
+char *               pszFullRedup;
+int                  iTokenLen;
+char                 szTokenBuffer[BUFSIZE];
 
 if ((pPartialExpansion_in == NULL) || (pPartialExpansion_in->pszAllo == NULL))
 	return NULL;
@@ -792,6 +798,33 @@ if (pAlloPieces_in == NULL)
 	 * make alist & allomorph structures
 	 */
 	alp = pHead_io = mkalist(pHead_io, iDicType_in, pMorph_io, pAmple_in);
+	pszFullRedup = strstr(pPartialExpansion_in->pszAllo, FULLREDUP);
+	if (pszFullRedup != NULL)
+	  {
+	pRedupAllo = (AmpleFullReduplication *)allocMemory(sizeof(AmpleFullReduplication));
+	pRedupAllo->pAllo = alp->pAllomorph;
+	pRedupAllo->iDicType = iDicType_in;
+	iTokenLen = pszFullRedup - pPartialExpansion_in->pszAllo;
+	if (iTokenLen > 0)
+	  {
+		memset(szTokenBuffer, 0, BUFSIZE);
+		strncpy(szTokenBuffer, pPartialExpansion_in->pszAllo, iTokenLen);
+		pRedupAllo->pszPrefix = duplicateString(szTokenBuffer);
+	  }
+	else
+		pRedupAllo->pszPrefix = NULL;
+	iTokenLen = strlen(pszFullRedup) - FULLREDUPLEN;
+	if (iTokenLen > 0)
+	  {
+		memset(szTokenBuffer, 0, BUFSIZE);
+		strcpy(szTokenBuffer, pszFullRedup + FULLREDUPLEN);
+		pRedupAllo->pszPostfix = duplicateString(szTokenBuffer);
+	  }
+	else
+		pRedupAllo->pszPostfix = NULL;
+	pRedupAllo->pNext = pAmple_in->pFullRedupAllos;
+	pAmple_in->pFullRedupAllos = pRedupAllo;
+	  }
 	if (bAlloc && bIsCaps)
 	alp->pAllomorph->iMORPHTYPE |= ISCAPS;
 	/*
@@ -1115,7 +1148,7 @@ if (	(*pszAllo_in == '[') &&
 	((p = strchr(pszAllo_in, ']')) != NULL) &&
 	(matchAlphaChar((unsigned char *)pszAllo_in,
 			&pAmple_in->sTextCtl) == 0) &&
-	(matchAlphaChar((unsigned char *)"]", &pAmple_in->sTextCtl) == 0) )
+	(matchAlphaChar((unsigned char *)"]", &pAmple_in->sTextCtl) == 0))
 	{
 	cSave = *p;
 	*p    = NUL;		/* remove ']' to limit class marker string */

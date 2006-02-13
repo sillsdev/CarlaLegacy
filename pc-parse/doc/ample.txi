@@ -10,8 +10,8 @@
 
 @set TITLE AMPLE Reference Manual
 @set SUBTITLE A Morphological Parser for Linguistic Exploration
-@set VERSION version 3.11
-@set DATE December 2005
+@set VERSION version 3.12
+@set DATE February 2006
 @set AUTHOR by Stephen McConnel, H. Andrew Black, and Marius Doornenbal
 @set COPYRIGHT Copyright @copyright{} 2000-2005 SIL International
 
@@ -120,6 +120,10 @@ pair (min, max) which delimits the order class span of the affix.
 @item 12. Version 3.11.0 (December 2005) added ``recognize only''capability for XAMPLE (-j option).  When "true", the
 PC-PATR parse results are neither stored nor written to the analysis output.
 Only for XAmple.
+
+@c Added by hab 06-Feb-2006
+@item 12. Version 3.12.0 (February 2006) allows for full reduplication.
+
 @end table
 
 @c ----------------------------------------------------------------------------

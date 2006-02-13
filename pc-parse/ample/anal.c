@@ -955,6 +955,116 @@ return(np);
 
 /*****************************************************************************
  * NAME
+ *    createFullRedupAmlist
+ * DESCRIPTION
+ *    create an AmpleAmlist struct for a full redup allomorph
+ * RETURN VALUE
+ *    updated list
+ */
+static AmpleAmlist * createFullRedupAmlist(AmpleAmlist *pList_in,
+					   AmpleFullReduplication *pFullRedup_in,
+					   int iRedupLen_in)
+{
+  AmpleAmlist * pNew;
+  pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
+  pNew->amp = pFullRedup_in->pAllo;
+  pNew->alen = iRedupLen_in;
+  pNew->amlink = pList_in;;
+  return pNew;
+}
+
+/*****************************************************************************
+ * NAME
+ *    get_entries
+ * DESCRIPTION
+ *    retrieve all allomorphs that match the given key (or a leading
+ *    substring of it) and etype
+ * RETURN VALUE
+ *    list of dictionary entries
+ */
+static AmpleAmlist * get_full_redup(char *key, int etype, AmpleAmlist *amset, AmpleData *pAmple_in)
+{
+int                     iRedupLen = 0;
+AmpleFullReduplication *pFullRedup;
+if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX))
+   { /* check for full reduplication */
+   for (pFullRedup = pAmple_in->pFullRedupAllos;
+	pFullRedup != NULL;
+	pFullRedup = pFullRedup->pNext)
+	   {
+	   int iPreLen = 0;
+	   int iPostLen = 0;
+	   char *pszPre;
+	   char *pszPost;
+	   char *pszMatchBeg;
+	   char *pszMatchEnd = NULL;
+	   if (pFullRedup->iDicType != etype)
+	   continue;
+	   pszPre = pFullRedup->pszPrefix;
+	   pszPost = pFullRedup->pszPostfix;
+	   pszMatchBeg = key;
+	   if (pszPre != NULL)
+	   {
+	   iPreLen = strlen(pszPre);
+	   if (strncmp(key, pszPre, iPreLen) != 0)
+		   continue; /* does not match prefix */
+	   pszMatchBeg += iPreLen;
+	   }
+	   if (etype == AMPLE_PFX)
+	   {
+	   if (pszPost != NULL)
+		   {
+		   pszMatchEnd = strstr(pszMatchBeg, pszPost);
+		   if (pszMatchEnd == NULL)
+		   continue; /* does not match postfix */
+		   iPostLen = strlen(pszPost);
+		   iRedupLen = pszMatchEnd - key + iPostLen;
+		   }
+	   else
+		   {
+		   int iLen = strlen(pszMatchBeg);
+		   if ((iLen % 2) != 0)
+		   continue; 	/* remaining length must be even */
+		   iRedupLen = iLen/2; /* half of rest must repeat */
+		   iRedupLen += iPreLen; /* include any prefix */
+		   }
+	   if (strstr(pszMatchBeg, key + iRedupLen) == pszMatchBeg)
+		   { /* first occurence of second half occurs at the front */
+		   amset = createFullRedupAmlist(amset, pFullRedup, iRedupLen);
+		   }
+	   }
+	   else
+	   { /*  suffix case: */
+	   if (pszPost != NULL)
+		   {
+		   pszMatchEnd = strstr(pszMatchBeg, pszPost);
+		   if (pszMatchEnd == NULL)
+		   continue; /* does not match postfix */
+		   iPostLen = strlen(pszPost);
+		   iRedupLen = pszMatchEnd - key + iPostLen;
+		   }
+	   else
+		   {
+		   iRedupLen = key - pszSurfaceForm_m;
+		   iRedupLen += iPreLen; /* include any prefix */
+		   }
+	   if (iRedupLen > 0)
+		   { /* a copy of key could fit in what came before;
+			see if it matches */
+		   int iMatchLen = iRedupLen - iPreLen - iPostLen;
+		   if (strncmp(pszMatchBeg, pszSurfaceForm_m, iMatchLen) == 0)
+		   {
+		   amset = createFullRedupAmlist(amset, pFullRedup, iRedupLen);
+		   }
+		   }
+	   }
+	   }
+   }
+return amset;
+}
+
+/*****************************************************************************
+ * NAME
  *    get_entries
  * DESCRIPTION
  *    retrieve all allomorphs that match the given key (or a leading
@@ -978,6 +1088,7 @@ int			cSave;
 if (key == NULL)
 	return NULL;
 len = strlen(key);
+amset = get_full_redup(key, etype, amset, pAmple_in);
 /*
  *  because allomorphs are added at the beginning of the list, this produces
  *  a list with the longest matches first
