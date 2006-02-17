@@ -33,6 +33,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_0CE9482F702D4F93AC74B5444C478ED7"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_0F98AA4B08A44D5B8C6CAED4674EDBD8"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:_UNDEFINED"
@@ -113,6 +119,36 @@
 		{
 		"MsmKey" = "8:_50DB2BDD3BC941A6BB661919A7510E70"
 		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_513D3839972846C9916EBB311254751B"
+		"OwnerKey" = "8:_EB1010CC185F7B016E986E111D88789B"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_513D3839972846C9916EBB311254751B"
+		"OwnerKey" = "8:_0CE9482F702D4F93AC74B5444C478ED7"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_513D3839972846C9916EBB311254751B"
+		"OwnerKey" = "8:_546ED84FF6D44167954738086B62A773"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_513D3839972846C9916EBB311254751B"
+		"OwnerKey" = "8:_33CB8849B6F6A3B64407AA1F372C3CDF"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_513D3839972846C9916EBB311254751B"
+		"OwnerKey" = "8:_5BF2A1359D051AC7859D6B5311B2AF34"
 		"MsmSig" = "8:_UNDEFINED"
 		}
 		"Entry"
@@ -207,38 +243,8 @@
 		}
 		"Entry"
 		{
-		"MsmKey" = "8:_8D6F87A5042E7300F9CF97C1E282980F"
-		"OwnerKey" = "8:_546ED84FF6D44167954738086B62A773"
-		"MsmSig" = "8:_UNDEFINED"
-		}
-		"Entry"
-		{
 		"MsmKey" = "8:_9A6A204C0E1B47CBBCE20B5A51AB4585"
 		"OwnerKey" = "8:_UNDEFINED"
-		"MsmSig" = "8:_UNDEFINED"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_9D7E6079474A472DA86DCE8C32C15ED8"
-		"OwnerKey" = "8:_5BF2A1359D051AC7859D6B5311B2AF34"
-		"MsmSig" = "8:_UNDEFINED"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_9D7E6079474A472DA86DCE8C32C15ED8"
-		"OwnerKey" = "8:_8D6F87A5042E7300F9CF97C1E282980F"
-		"MsmSig" = "8:_UNDEFINED"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_9D7E6079474A472DA86DCE8C32C15ED8"
-		"OwnerKey" = "8:_546ED84FF6D44167954738086B62A773"
-		"MsmSig" = "8:_UNDEFINED"
-		}
-		"Entry"
-		{
-		"MsmKey" = "8:_9D7E6079474A472DA86DCE8C32C15ED8"
-		"OwnerKey" = "8:_33CB8849B6F6A3B64407AA1F372C3CDF"
 		"MsmSig" = "8:_UNDEFINED"
 		}
 		"Entry"
@@ -353,6 +359,12 @@
 		{
 		"MsmKey" = "8:_E1E32952E4F047EDB5EC44816F7FDD56"
 		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_EB1010CC185F7B016E986E111D88789B"
+		"OwnerKey" = "8:_546ED84FF6D44167954738086B62A773"
 		"MsmSig" = "8:_UNDEFINED"
 		}
 		"Entry"
@@ -478,6 +490,37 @@
 			"TargetName" = "8:JuanDuerme.png"
 			"Tag" = "8:"
 			"Folder" = "8:_541200F1ACD94129B032E24030139C04"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{FB480208-1853-44D0-9ABD-A3B734C3FAAA}:_0CE9482F702D4F93AC74B5444C478ED7"
+			{
+			"AssemblyRegister" = "3:1"
+			"AssemblyIsInGAC" = "11:FALSE"
+			"AssemblyAsmDisplayName" = "8:LingTreeTree, Version=1.0.2238.30285, Culture=neutral"
+				"ScatterAssemblies"
+				{
+					"_0CE9482F702D4F93AC74B5444C478ED7"
+					{
+					"Name" = "8:LingTreeTree.dll"
+					"Attributes" = "3:512"
+					}
+				}
+			"SourcePath" = "8:..\\Source\\bin\\Release\\LingTreeTree.dll"
+			"TargetName" = "8:"
+			"Tag" = "8:"
+			"Folder" = "8:_AE61FE95B6F445EABFB1F4DCEDCCECB2"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -1054,37 +1097,6 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
-			"{FB480208-1853-44D0-9ABD-A3B734C3FAAA}:_8D6F87A5042E7300F9CF97C1E282980F"
-			{
-			"AssemblyRegister" = "3:1"
-			"AssemblyIsInGAC" = "11:FALSE"
-			"AssemblyAsmDisplayName" = "8:LingTreeTree, Version=1.0.2106.28720, Culture=neutral"
-				"ScatterAssemblies"
-				{
-					"_8D6F87A5042E7300F9CF97C1E282980F"
-					{
-					"Name" = "8:LingTreeTree.dll"
-					"Attributes" = "3:512"
-					}
-				}
-			"SourcePath" = "8:LingTreeTree.dll"
-			"TargetName" = "8:"
-			"Tag" = "8:"
-			"Folder" = "8:_AE61FE95B6F445EABFB1F4DCEDCCECB2"
-			"Condition" = "8:"
-			"Transitive" = "11:FALSE"
-			"Vital" = "11:TRUE"
-			"ReadOnly" = "11:FALSE"
-			"Hidden" = "11:FALSE"
-			"System" = "11:FALSE"
-			"Permanent" = "11:FALSE"
-			"SharedLegacy" = "11:FALSE"
-			"PackageAs" = "3:1"
-			"Register" = "3:1"
-			"Exclude" = "11:FALSE"
-			"IsDependency" = "11:TRUE"
-			"IsolateTo" = "8:"
-			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_9A6A204C0E1B47CBBCE20B5A51AB4585"
 			{
 			"SourcePath" = "8:..\\Source\\HelpSource\\SuperscriptExampleNo.tre"
@@ -1485,6 +1497,37 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{FB480208-1853-44D0-9ABD-A3B734C3FAAA}:_EB1010CC185F7B016E986E111D88789B"
+			{
+			"AssemblyRegister" = "3:1"
+			"AssemblyIsInGAC" = "11:FALSE"
+			"AssemblyAsmDisplayName" = "8:LingTreeTree, Version=1.0.2238.30285, Culture=neutral"
+				"ScatterAssemblies"
+				{
+					"_EB1010CC185F7B016E986E111D88789B"
+					{
+					"Name" = "8:LingTreeTree.dll"
+					"Attributes" = "3:512"
+					}
+				}
+			"SourcePath" = "8:LingTreeTree.dll"
+			"TargetName" = "8:"
+			"Tag" = "8:"
+			"Folder" = "8:_AE61FE95B6F445EABFB1F4DCEDCCECB2"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:TRUE"
+			"IsDependency" = "11:TRUE"
+			"IsolateTo" = "8:"
+			}
 			"{A582A373-4685-4296-BEFE-614B80A702C3}:_EFCBE12B089741A9BAE6C3B570010679"
 			{
 			"SourcePath" = "8:..\\Source\\HelpSource\\LeeGetsTheIdea.png"
@@ -1648,7 +1691,7 @@
 		"Name" = "8:Microsoft Visual Studio"
 		"ProductName" = "8:LingTree"
 		"ProductCode" = "8:{53B88542-6543-45F4-BDAC-9A845D8180EC}"
-		"PackageCode" = "8:{B5B98D1B-55E6-4D12-B0F4-0EB2577333BA}"
+		"PackageCode" = "8:{E792C61B-2758-4BD8-99F6-124E1FEAA452}"
 		"UpgradeCode" = "8:{F41FB31D-91CC-4A20-8312-838DA4910746}"
 		"RestartWWWService" = "11:FALSE"
 		"RemovePreviousVersions" = "11:FALSE"
@@ -2415,7 +2458,7 @@
 		}
 		"MergeModule"
 		{
-			"{35A69C6E-5BA4-440D-803D-762B59A45393}:_9D7E6079474A472DA86DCE8C32C15ED8"
+			"{35A69C6E-5BA4-440D-803D-762B59A45393}:_513D3839972846C9916EBB311254751B"
 			{
 			"UseDynamicProperties" = "11:TRUE"
 			"IsDependency" = "11:TRUE"

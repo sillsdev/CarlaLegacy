@@ -238,7 +238,11 @@ namespace LingTree
 				rtbTreeDescription.Text = tree.Description;
 				ParseTreeDescription();
 				setFontsInTreeDescription();
+#if !TryToFixSVGColors
+				CreateSVG();
+#else
 				m_strSVG = tree.CreateSVG(CreateGraphics(), m_clrTreeLinesColor.Name);
+#endif
 			}
 			else
 			{
@@ -577,7 +581,7 @@ namespace LingTree
 				initTree();
 				ParseTreeDescription();
 				setIsDirty(false);
-				m_strSVG = tree.CreateSVG(CreateGraphics(), m_clrTreeLinesColor.Name);
+				CreateSVG();
 			}
 		}
 		void MenuFileCloseOnClick(object obj, EventArgs ea)
@@ -714,8 +718,13 @@ namespace LingTree
 				tree.Invalidate();
 #endif
 				setFontsInTreeDescription();
-				m_strSVG = tree.CreateSVG(CreateGraphics(), m_clrTreeLinesColor.Name);
+				CreateSVG();
 			}
+		}
+		void CreateSVG()
+		{
+			string sColorName = LingTreeNode.SVGConvertColorToSVGColorString(m_clrTreeLinesColor);
+			m_strSVG = tree.CreateSVG(CreateGraphics(), sColorName);
 		}
 		void MenuTreeParametersOnClick(object obj, EventArgs ea)
 		{

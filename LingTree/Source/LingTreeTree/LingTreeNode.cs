@@ -694,6 +694,13 @@ namespace LingTree
 			grfx.ResetClip();
 		}
 
+		public static string SVGConvertColorToSVGColorString(Color clr)
+		{
+			int i = clr.ToArgb();
+			string sTemp = i.ToString("X");
+			string sSVGColor = "#" + sTemp.Substring(2);
+			return sSVGColor;
+		}
 		public void SVGCreate(LingTreeTree Tree, StringBuilder sb, string sLineColor, double dLineWidth)
 		{
 			LingTreeNode Node;
@@ -712,7 +719,8 @@ namespace LingTree
 					YCoord = Tree.GlossBottomYCoord;
 				}
 			}
-			SVGDrawString(Content, sb, font, clr.Name);
+			string sClrName = LingTreeNode.SVGConvertColorToSVGColorString(clr);
+			SVGDrawString(Content, sb, font, sClrName);
 			// Draw daughter nodes
 			Node = Daughter;
 			while (Node != null)

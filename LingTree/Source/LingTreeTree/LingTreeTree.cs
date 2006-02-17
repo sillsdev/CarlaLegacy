@@ -126,14 +126,12 @@ namespace LingTree
 			Size = new Size(atpt[0]);
 			BackColor = BackgroundColor;
 			Draw(grfx, LinesColor);
-#if !Orig
 			foreach (LingTreeNode node in this.Controls)
 			{
 				node.Location = new Point(node.XCoord, node.YCoord);
 				node.Size = new Size(node.Width, node.Height);
 				node.BringToFront();
 			}
-#endif
 		}
 
 		///////////////////////////////////////////////////////////////////////////////
