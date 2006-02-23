@@ -117,12 +117,12 @@ pair (min, max) which delimits the order class span of the affix.
 @item 12. Version 3.10.0 (October 2005) allows the final category output in the analysis output file to be computed.
 
 @c Added by SRMc & hab 09-Dec-2005
-@item 12. Version 3.11.0 (December 2005) added ``recognize only''capability for XAMPLE (-j option).  When "true", the
+@item 13. Version 3.11.0 (December 2005) added ``recognize only''capability for XAMPLE (-j option).  When "true", the
 PC-PATR parse results are neither stored nor written to the analysis output.
 Only for XAmple.
 
 @c Added by hab 06-Feb-2006
-@item 12. Version 3.12.0 (February 2006) allows for full reduplication.
+@item 14. Version 3.12.0 (February 2006) allows for full reduplication.
 
 @end table
 
