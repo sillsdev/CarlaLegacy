@@ -2925,6 +2925,8 @@ while (*pszField != NUL)
 			break;
 		case 'n':			/* interfix */
 		case 'N':
+		  if (pAmple_in->iMaxInterfixCount == 0)
+			break; 	/* if intefix count is zero, this won't work */
 			iDicType = AMPLE_NFX;
 			if (bInterfixStored == FALSE)
 			  {

@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "February 6, 2006"	/* date of release version */
+#define PATCHLEVEL 1		/* bug fix or other minor change */
+#define DATE "February 24, 2006"	/* date of release version */
 #define YEAR "2006"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 24-Feb-2006	hab - Fix bug which caused crash while loading dictionary
+ * [3.12.1]             with interfixes when max interfixes was set to zero.
  * 06-Feb-2006	hab - Add full reduplication capability.
  * [3.12.0]
  * 06-Jan-2006	hab - When the MaxAnalysesToReturn parameter is set, stop

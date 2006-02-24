@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.12.1 (24-Feb-2006)
+--------------------
+1. Fix bug which caused crash while loading dictionary with interfixes when
+   max interfixes was set to zero.
+
 3.12.0 (06-Feb-2006)
 --------------------
 1. Added full reduplication capability.
