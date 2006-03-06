@@ -5,6 +5,8 @@ phrases in files output by AMPLE. SENTRANS is documented in the
 file SENTRANS.DOC.
 
 Change History:
+2.2.1 Mar 2006 Fixed a bug: if a word is moved, then the following word got the
+capitalization of the moved word.
 
 2.2.0 Nov 2004 Allow user to mark a category in a rule as being a root
 category (as opposed to being the default of word category).

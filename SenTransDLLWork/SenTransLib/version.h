@@ -4,12 +4,14 @@
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "Nov 24, 2004"	/* date of release version */
-#define YEAR "2004"		/* used for copyright notice in banner */
+#define PATCHLEVEL 1		/* bug fix or other minor change */
+#define DATE "March 3, 2006"	/* date of release version */
+#define YEAR "2006"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 03-Mar-2006  hab  - Fix bug: if a word is moved, then the following word
+ * [2.2.1]               got the capitalization of the moved word.
  * 24-Nov-2004  md   - Feature addition; %-sign before category now makes
  * [2.2.0]             SenTrans refer to root category
  * 01-Jul-2002  hab  - Rework punctuation to use strings (in order to handle

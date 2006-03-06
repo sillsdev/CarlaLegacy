@@ -66,7 +66,7 @@ for (pMatch = pMatch_in; pMatch; pMatch = pMatch->next)
 		{			/* one is a root; is there a root
 				   in the replace? */
 	for (pReplace = pReplace_in; pReplace; pReplace = pReplace->next)
-		if (pReplace->type & RT)
+	  if ((pReplace->type & RT) && !(pReplace->type & REF))
 		  return(FALSE);	/* yes, so it does not delete a root */
 	return(TRUE);		/* no, it does delete a root */
 	}
