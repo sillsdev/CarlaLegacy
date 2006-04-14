@@ -4,12 +4,15 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 1		/* bug fix or other minor change */
-#define DATE "February 24, 2006"	/* date of release version */
+#define PATCHLEVEL 2		/* bug fix or other minor change */
+#define DATE "April 14, 2006"	/* date of release version */
 #define YEAR "2006"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 14-Apr-2006	hab - Fix bug which allowed a full reduplication suffix with
+ * [3.12.2]             trailing segmental material to be analyzed as just
+ *                      the trailing segmental material.
  * 24-Feb-2006	hab - Fix bug which caused crash while loading dictionary
  * [3.12.1]             with interfixes when max interfixes was set to zero.
  * 06-Feb-2006	hab - Add full reduplication capability.

@@ -1052,7 +1052,8 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX))
 		   { /* a copy of key could fit in what came before;
 			see if it matches */
 		   int iMatchLen = iRedupLen - iPreLen - iPostLen;
-		   if (strncmp(pszMatchBeg, pszSurfaceForm_m, iMatchLen) == 0)
+		   if ( (iMatchLen > 0) &&
+			(strncmp(pszMatchBeg, pszSurfaceForm_m, iMatchLen) == 0))
 		   {
 		   amset = createFullRedupAmlist(amset, pFullRedup, iRedupLen);
 		   }

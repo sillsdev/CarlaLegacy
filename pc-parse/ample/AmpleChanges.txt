@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.12.2 (14-Apr-2006)
+--------------------
+1. Fix bug which allowed a full reduplication suffix with trailing segmental
+   material to be analyzed as just the trailing segmental material.
+
 3.12.1 (24-Feb-2006)
 --------------------
 1. Fix bug which caused crash while loading dictionary with interfixes when
