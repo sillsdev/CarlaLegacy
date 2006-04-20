@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="XLingPap.dtd"/>
+  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
   <!--
 ================================================================
 Convert PAWS answers xml file to an XLingPap xml file
@@ -25,12 +25,6 @@ Main template
 	</xsl:processing-instruction>
 	<lingPaper>
 	  <xsl:attribute name="css"><xsl:value-of select="//language/langAbbr"/><xsl:text>WriteUp.css</xsl:text></xsl:attribute>
-	  <language id="lPAWSSKEnglish">PAWSSKEnglish</language>
-	  <language id="lGloss">GlossLanguage</language>
-	  <language>
-		<xsl:attribute name="id"><xsl:text>l</xsl:text><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
-		<xsl:text>vernacular</xsl:text>
-	  </language>
 	  <frontMatter>
 		<title>PAWS-Generated Grammar Write-Up<br/> for <xsl:value-of select="//language/langName"/>
 		</title>
@@ -64,6 +58,14 @@ Main template
 		<endnotes/>
 		<references/>
 	  </backMatter>
+	  <languages>
+			<language id="lPAWSSKEnglish">PAWSSKEnglish</language>
+	  <language id="lGloss">GlossLanguage</language>
+	  <language>
+		<xsl:attribute name="id"><xsl:text>l</xsl:text><xsl:value-of select="//language/langAbbr"/></xsl:attribute>
+		<xsl:text>vernacular</xsl:text>
+	  </language>
+	  </languages>
 	</lingPaper>
   </xsl:template>
   <!--
@@ -222,6 +224,7 @@ OutputInterlinearExamples
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+20-Apr-2006  Andy Black  Make changes for XLingPap version 1.9.0; pave way for use iwth XMLmind
 08-Oct-2002  Andy Black  Make changes for XLingPap version 1.4.1
 02-Aug-2002  Andy Black  Add rest of the sections; add column output;
 											rework interlinear output to create unique example ids

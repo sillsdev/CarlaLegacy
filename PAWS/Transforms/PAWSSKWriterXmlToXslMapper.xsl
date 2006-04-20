@@ -83,7 +83,7 @@ col template
   <xsl:template match="//col">
 	<xsl:choose>
 	  <xsl:when test="@exampleLoc">
-		<col>
+		<td>
 		  <table>
 			<xsl:element name="xsl:variable">
 			  <xsl:attribute name="name"><xsl:text>sExampleValue</xsl:text></xsl:attribute>
@@ -115,8 +115,8 @@ col template
 				</xsl:element>
 			  </xsl:element>
 			  <xsl:element name="xsl:otherwise">
-				<row>
-				  <col>
+				<tr>
+				  <td>
 					<langData>
 					  <xsl:element name="xsl:attribute">
 						<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
@@ -127,32 +127,32 @@ col template
 					  </xsl:element>
 					  <xsl:text>ENTER AN EXAMPLE HERE</xsl:text>
 					</langData>
-				  </col>
-				</row>
+				  </td>
+				</tr>
 			  </xsl:element>
 			</xsl:element>
 		  </table>
-		</col>
+		</td>
 		<!-- old and incorrect
-		<col>
+		<td>
 		  <xsl:element name="xsl:value-of">
 			<xsl:attribute name="select"><xsl:choose><xsl:when test="ancestor::example"> < ! - - remove any periods the user may have entered;  the assumption here is that this goes in a chart where periods are not wanted - - ><xsl:value-of select="translate(., '.', '')"/><xsl:text>translate(string(//</xsl:text><xsl:value-of select="@exampleLoc"/><xsl:text>),'.','')</xsl:text></xsl:when><xsl:otherwise><xsl:text>//</xsl:text><xsl:value-of select="@exampleLoc"/></xsl:otherwise></xsl:choose></xsl:attribute>
 		  </xsl:element>
-		</col>
+		</td>
 		-->
 	  </xsl:when>
 	  <xsl:when test="@show">
 		<xsl:element name="xsl:if">
 		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
-		  <col>
+		  <td>
 			<xsl:apply-templates/>
-		  </col>
+		  </td>
 		</xsl:element>
 	  </xsl:when>
 	  <xsl:otherwise>
-		<col>
+		<td>
 		  <xsl:apply-templates/>
-		</col>
+		</td>
 	  </xsl:otherwise>
 	</xsl:choose>
   </xsl:template>
@@ -541,9 +541,9 @@ DoHeaderCol
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template name="DoHeaderCol">
-	<headerCol>
+	<th>
 	  <xsl:apply-templates/>
-	</headerCol>
+	</th>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -553,9 +553,9 @@ DoHeaderRow
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template name="DoHeaderRow">
-	<headerRow>
+	<tr>
 	  <xsl:apply-templates/>
-	</headerRow>
+	</tr>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -679,9 +679,9 @@ DoRow
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template name="DoRow">
-	<row>
+	<tr>
 	  <xsl:apply-templates/>
-	</row>
+	</tr>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -742,6 +742,7 @@ DoUL
 ================================================================
 Revision History
 - - - - - - - - - - - - - - - - - - -
+20-Apr-2006  Andy Black  Make changes for XLingPap version 1.9.0; pave way for use iwth XMLmind
 08-Oct-2002  Andy Black  Make changes for XLingPap version 1.4.1
 02-Aug-2002  Andy Black  Add img; rework example ids to be unique
 31-Jul-2002    Andy Black  Many refinements.

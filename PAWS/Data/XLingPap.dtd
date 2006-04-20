@@ -11,17 +11,25 @@
 
 	 The CSS attribute allows one to specify a particular cascading style
 	 sheet file.  The default is given in the XSLT template.
+
+	 One can also embed styles.
   -->
-<!ELEMENT lingPaper (language*, frontMatter?, ((chapterBeforePart?, part*) | chapter* | section1*), backMatter?, comment?)>
+<!ELEMENT lingPaper (styles?, language*, frontMatter?, ((chapterBeforePart?, part*) | chapter* | section1*), backMatter?, languages?, styles?, comment?)>
 <!ATTLIST lingPaper
 	css CDATA #IMPLIED
 >
+<!-- Any CSS styles that are to be imbedded in the resulting html -->
+<!ELEMENT styles (#PCDATA | style)*>
+<!ELEMENT style (#PCDATA)>
+<!-- Languages groups a set of language definitions.  This is at the end because it looks better in a tool like XMLMind -->
+<!ELEMENT languages (language+)>
 <!-- The content of language is the CSS class name to use in formating language-specific items. -->
 <!ELEMENT language (#PCDATA)>
 <!ATTLIST language
 	id ID #REQUIRED
 	name CDATA #IMPLIED
 	ethnCode CDATA #IMPLIED
+	rtl (yes | no) #IMPLIED
 >
 <!-- Front matter -->
 <!ELEMENT frontMatter (title, (author, affiliation*)+, presentedAt?, date?, version?, contents?, acknowledgements?, abstract?)>
@@ -119,6 +127,9 @@
 >
 <!-- list element -->
 <!ELEMENT li (#PCDATA | %embedded; | %chunk;)*>
+<!ATTLIST li
+	id ID #IMPLIED
+>
 <!-- definition list -->
 <!ELEMENT dl (dt | dd)*>
 <!-- definition term -->
@@ -194,7 +205,7 @@
 <!ATTLIST listInterlinear
 	letter ID #REQUIRED
 >
-<!ELEMENT table (caption?, headerRow?, row*, endCaption?)>
+<!ELEMENT table (caption?, headerRow?, (row | tr)*, endCaption?)>
 <!ATTLIST table
 	border CDATA #IMPLIED
 	class CDATA #IMPLIED
@@ -229,12 +240,33 @@
 	rowspan CDATA #IMPLIED
 	valign (top | middle | bottom | baseline) "top"
 >
+<!ELEMENT th (#PCDATA | %embedded; | table)*>
+<!ATTLIST th
+	align (left | center | right | justify) "left"
+	class CDATA #IMPLIED
+	colspan CDATA #IMPLIED
+	rowspan CDATA #IMPLIED
+	valign (top | middle | bottom | baseline) "top"
+>
 <!ELEMENT row (col+)>
 <!ATTLIST row
 	class CDATA #IMPLIED
 >
+<!ELEMENT tr (th | td)+>
+<!ATTLIST tr
+	class CDATA #IMPLIED
+>
 <!ELEMENT col (#PCDATA | %embedded; | table | interlinear)*>
 <!ATTLIST col
+	align (left | center | right | justify) "left"
+	class CDATA #IMPLIED
+	colspan CDATA #IMPLIED
+	rowspan CDATA #IMPLIED
+	valign (top | middle | bottom | baseline) "top"
+	width CDATA #IMPLIED
+>
+<!ELEMENT td (#PCDATA | %embedded; | table | interlinear)*>
+<!ATTLIST td
 	align (left | center | right | justify) "left"
 	class CDATA #IMPLIED
 	colspan CDATA #IMPLIED
@@ -321,11 +353,11 @@
 <!ATTLIST references
 	label CDATA #IMPLIED
 >
-<!-- the citeName is the string to use in a citation within the text body -->
+<!-- the citename is the string to use in a citation within the text body -->
 <!ELEMENT refAuthor (refWork+)>
 <!ATTLIST refAuthor
 	name CDATA #REQUIRED
-	citeName CDATA #REQUIRED
+	citename CDATA #REQUIRED
 >
 <!-- Every work has a date and a title.
 	 There are a number of kinds of references, each of which has different
@@ -1153,6 +1185,8 @@
 <!ENTITY nbhy "&#x2011;">
 <!-- non-braking hyphen, U+2011 -->
 <!-- REVISION HISTORY
+1.9.0 19-Apr-2005 Andy Black  Modifications to make editing with XmlMind nicer
+1.8.0 29-Nov-2004 Andy Black  Add styles element so can imbed CSS styles.
 1.7.1 14-Oct-2004  Andy Black  Allow width elements on columns
 1.7.0 03-Jun-2004  Andy Black  Add link element (for media) (skipped 1.6 to keep in sync with XLingPap1.xsl)
 1.5.4 26-May-2004 Andy Black  Allow appendices to begin with section2 (i.e. the appendix itself is equivalent to a section1)
