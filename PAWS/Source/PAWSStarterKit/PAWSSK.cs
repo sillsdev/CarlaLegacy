@@ -99,6 +99,7 @@ namespace PAWSStarterKit
 		private XmlDocument m_XmlDoc = new XmlDocument();
 		private XslTransform m_XslGrammarTransform = new XslTransform();
 		private XslTransform m_XslWriterTransform = new XslTransform();
+		private XslTransform m_XslXLingPap1Transform = new XslTransform();
 		private XslTransform m_XslExampleTransform = new XslTransform();
 		System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(PAWSSKForm));
 		private AxSHDocVw.AxWebBrowser axWebBrowser;
@@ -1207,7 +1208,7 @@ namespace PAWSStarterKit
 		{
 			try
 			{
-				m_XslGrammarTransform.Transform(m_strUserAnswerFile, m_strTempGrammarFile);
+				m_XslGrammarTransform.Transform(m_strUserAnswerFile, m_strTempGrammarFile, null);
 				// the above outputs the Unicode BOM in UTF8; we need to remove that
 				// open and read the file
 				StreamReader sr = new StreamReader(m_strTempGrammarFile);
@@ -1228,7 +1229,9 @@ namespace PAWSStarterKit
 		{
 			try
 			{
-				m_XslWriterTransform.Transform(m_strUserAnswerFile, m_strUserWriterFile);
+				// Produce xml form
+				m_XslWriterTransform.Transform(m_strUserAnswerFile, m_strUserWriterFile, null);
+				// Make sure XLingPap DTD and XSL are there
 				string strUserWriterDir = Path.GetDirectoryName(m_strUserWriterFile);
 				string strUserWriterDtd = Path.Combine(strUserWriterDir, "XLingPap.dtd");
 				if (!File.Exists(strUserWriterDtd))
@@ -1240,11 +1243,27 @@ namespace PAWSStarterKit
 				{
 					File.Copy(m_strXLingPapXsl, strUserWriterXsl, true);
 				}
+				// in case something's still marked as under construction:
 				string strUserWriterConstructionGif = Path.Combine(strUserWriterDir, "Construction.gif");
 				if (!File.Exists(strUserWriterConstructionGif))
 				{
 					File.Copy(m_strConstructionGif, strUserWriterConstructionGif, true);
 				}
+				// produce the htm form, too
+				m_XslXLingPap1Transform.Load(strUserWriterXsl);
+				string strUserWriterHtmlFile = Path.GetFileNameWithoutExtension(m_strUserWriterFile) +  ".htm";
+				m_XslXLingPap1Transform.Transform(m_strUserWriterFile, strUserWriterHtmlFile, null);
+				// now change the DTD in the xml form so it can be edited with XMLmind
+				// (we have to do it in this order or the transformation will not work)
+				StreamReader sr = new StreamReader(m_strUserWriterFile);
+				string sXmlFile = sr.ReadToEnd();
+				sr.Close();
+				string sXXE = sXmlFile.Replace("<!DOCTYPE lingPaper SYSTEM \"XLingPap.dtd\">",
+					"<!DOCTYPE lingPaper PUBLIC \"-//XMLmind//DTD XLingPap//EN\" " +
+					"\"file://%SystemDrive%/Documents and Settings/%USERNAME%/Application Data/XMLmind/XMLEditor/addon/XLingPap/XLingPap.dtd\">");
+				StreamWriter sw = new StreamWriter(m_strUserWriterFile, false);
+				sw.Write(sXXE);
+				sw.Close();
 			}
 			catch (Exception exc)
 			{
@@ -1290,7 +1309,7 @@ namespace PAWSStarterKit
 					m_strLanguageAbbreviation + strType + "Test.txt");
 #endif
 				StreamWriter sw = new StreamWriter(strExampleFile);
-				m_XslExampleTransform.Transform(m_XmlDoc, xslArg, sw);
+				m_XslExampleTransform.Transform(m_XmlDoc, xslArg, sw, null);
 				sw.Close();
 			}
 			catch (Exception exc)
@@ -1465,7 +1484,7 @@ namespace PAWSStarterKit
 						XmlDocument xmlDoc = new XmlDocument();
 						xmlDoc.Load(strFile);
 						StreamWriter sw = new StreamWriter(strDestFile);
-						xslt.Transform(xmlDoc, xslArg, sw);
+						xslt.Transform(xmlDoc, xslArg, sw, null);
 						sw.Close();
 					}
 				}
