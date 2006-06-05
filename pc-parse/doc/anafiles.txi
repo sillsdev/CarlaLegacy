@@ -236,15 +236,32 @@ morpheme properties found in the analysis of the word.  It has the
 form:
 @example
 
+\p prop1=prop2
+
+@end example
+@noindent
+where @code{prop1} is a property of the first morpheme and @code{prop2} is a
+property of the second. A more complex example is:
+@example
+
 \p ==prop1 prop2=prop3=
 
 @end example
 @noindent
-where @code{prop1}, @code{prop2}, and @code{prop3} are property names.
-The equal signs (@code{=}) serve to separate the property information
-of the individual morphemes.  Note that morphemes may have more than
-one property, with the names separated by spaces, or no properties at
-all.
+where there are five morphemes in the analysis: the first, second,
+and last morphemes do not have any associated properties; the third
+has two; and the fourth has one. The equal signs (=) serve to
+separate the property information of the individual morphemes. Note
+that morphemes may have more than one property, with the names
+separated by spaces, or no properties at all.
+
+As a final example, if an analysis has four morphemes and none of them
+have properties, then it will look like this:
+@example
+
+\p ===
+@end example
+@noindent
 
 @ifset ample
 By default, the properties field is written to the output analysis
@@ -264,20 +281,37 @@ does not include @samp{p} in its argument disables the properties field.
 @findex \fd
 
 The feature descriptor field (@code{\fd}) contains the feature names
-associated with each morpheme in the analysis.  It has the following
+associated with each morpheme in the analysis.  It has the
 form:
 @example
 
-\fd ==feat1 feat2=feat3=
+\fd feat1=feat2
 
 @end example
 @noindent
-where @code{feat1}, @code{feat2}, and @code{feat3} are feature
-descriptors.  The equal signs (@code{=}) serve to separate the feature
-descriptors of the individual morphemes.  Note that morphemes may have
-more than one feature descriptor, with the names separated by spaces,
-or no feature descriptors at all.
+where @code{feat1} is a feature descriptor of the first morpheme and
+@code{feat2} is a feature descriptor of the second. A more complex
+example is:
+@example
 
+\fd =feat1==feat2 feat3=
+
+@end example
+@noindent
+where there are five morphemes in the analysis: the first, third, and
+last morphemes do not have any associated feature descriptors; the second has
+one; and the fourth has two. The equal signs (=) serve to separate the
+feature descriptor information of the individual morphemes. Note that morphemes
+may have more than one feature descriptor, with the names separated by
+spaces, or no feature descriptors at all.
+
+As a final example, if an analysis has four morphemes and none of them
+have feature descriptors, then it will look like this:
+@example
+
+\fd ===
+@end example
+@noindent
 @ifset ample
 The dictionary field code mapped to @code{F} in the dictionary code
 table file controls whether feature descriptors are written to the
