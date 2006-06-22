@@ -2,7 +2,7 @@
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
 	<!-- |******************************************************** -->
-<rule>
+	<rule>
 rule {VP option conj - conjoined VPs}
 VP = (InitConj) VP_1 Conj VP_2
 	&lt;VP head&gt; = &lt;VP_1 head&gt;
@@ -1262,7 +1262,7 @@ VP = V {PP / AdjP / DP}
 	&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4aNegVerbRequired
 </rule>
@@ -1342,7 +1342,7 @@ VP = {PP / AdjP / DP} V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4bNegVerbRequired
 </rule>
@@ -1424,7 +1424,7 @@ VP = {PP / AdjP / DP} DP_1 V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4bQSubjNegObjVerbRequired
 </rule>
@@ -1540,7 +1540,7 @@ VP = {PP / AdjP / DP} DP_1 V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, verb must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, verb must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4bNegSubjObjVerbRequired
 </rule>
@@ -1614,7 +1614,7 @@ VP = {PP / AdjP / DP} AdvP V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4bQAdvPObjVerbRequired
 </rule>
@@ -1686,7 +1686,7 @@ VP = {PP / AdjP / DP} AdvP V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, verb must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, verb must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4bNegAdvPObjVerbRequired
 </rule>
@@ -1880,7 +1880,7 @@ VP = V DP {PP / AdjP / DP_1}
 	&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
-	&lt;VP head&gt; == [subject:[type:[negative:+]]]] -&gt;  | if subject negative, VP must be
+	&lt;VP head&gt; == [subject:[head:[type:[negative:+]]]] -&gt;  | if subject negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4eNegSubjVerbRequired
 </rule>
@@ -1927,9 +1927,9 @@ VP = V DP {PP / AdjP / DP_1}
 	&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
-	&lt;VP head&gt; == [subject:[type:[negative:+]]]] -&gt;  | if subject negative, VP must be
+	&lt;VP head&gt; == [subject:[head:[type:[negative:+]]]] -&gt;  | if subject negative, VP must be
 					 [type:[negative:+]]
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4eNegSubjOrObjVerbRequired
 </rule>
@@ -1976,7 +1976,7 @@ VP = V DP {PP / AdjP / DP_1}
 	&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4eNegObjVerbRequired
 </rule>
@@ -2048,7 +2048,7 @@ VP = V {PP / AdjP / DP}
 	&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;  | sentential PP
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4eiNegObjVerbRequired
 </rule>
@@ -2142,7 +2142,7 @@ VP = V {PP / AdjP / DP}
 	&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;  | sentential PP
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4epNegObjVerbRequired
 </rule>
@@ -2643,7 +2643,7 @@ VP = {PP / AdjP / DP_1} DP V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
-	&lt;VP head&gt; == [subject:[type:[negative:+]]]] -&gt;  | if subject negative, VP must be
+	&lt;VP head&gt; == [subject:[head:[type:[negative:+]]]] -&gt;  | if subject negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4gNegSubjVerbRequired
 </rule>
@@ -2690,9 +2690,9 @@ VP = {PP / AdjP / DP_1} DP V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
-	&lt;VP head&gt; == [subject:[type:[negative:+]]]] -&gt;  | if subject negative, VP must be
+	&lt;VP head&gt; == [subject:[head:[type:[negative:+]]]] -&gt;  | if subject negative, VP must be
 					 [type:[negative:+]]
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4gNegSubjOrObjVerbRequired
 </rule>
@@ -2739,7 +2739,7 @@ VP = {PP / AdjP / DP_1} DP V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4gNegObjVerbRequired
 </rule>
@@ -2811,7 +2811,7 @@ VP = {PP / AdjP / DP_1} V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4giNegObjVerbRequired
 </rule>
@@ -2905,7 +2905,7 @@ VP = {PP / AdjP / DP_1} V
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt;
 	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
-	&lt;VP head&gt; == [object:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
+	&lt;VP head&gt; == [object:[head:[type:[negative:+]]]] -&gt;  | if object negative, VP must be
 					 [type:[negative:+]]
 	&lt;VP option&gt; = 4gpNegObjVerbRequired
 </rule>
@@ -54951,5 +54951,4 @@ V' = DP V
 		<and/>
 		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="yes"/>
 	</showWhen>
-
 </masterGrammar>
