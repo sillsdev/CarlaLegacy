@@ -45,7 +45,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\pcpatr,..\pckimmo"
-				PreprocessorDefinitions="NDEBUG;_WINDOWS;HAVE_CONFIG_H;WIN32;EXPERIMENTAL"
+				PreprocessorDefinitions="NDEBUG;_WINDOWS;HAVE_CONFIG_H;WIN32;EXPERIMENTAL;_CRT_SECURE_NO_DEPRECATE "
 				RuntimeLibrary="0"
 				PrecompiledHeaderFile=".\Release-dll/XAmpledll.pch"
 				AssemblerListingLocation=".\Release-xdll/"

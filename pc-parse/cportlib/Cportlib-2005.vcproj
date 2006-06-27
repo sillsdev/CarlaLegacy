@@ -191,7 +191,7 @@
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\include,..,../include"
-				PreprocessorDefinitions="NDEBUG,_WINDOWS,HAVE_CONFIG_H,WIN32"
+				PreprocessorDefinitions="NDEBUG,_WINDOWS,HAVE_CONFIG_H,WIN32,_CRT_SECURE_NO_DEPRECATE "
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"

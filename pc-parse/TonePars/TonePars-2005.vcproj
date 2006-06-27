@@ -135,7 +135,7 @@
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,..\TonePGLib,..\stamp"
-				PreprocessorDefinitions="WIN32,NDEBUG,_CONSOLE,HAVE_CONFIG_H,TONEPARS,HAVE_ITOA"
+				PreprocessorDefinitions="WIN32,NDEBUG,_CONSOLE,HAVE_CONFIG_H,TONEPARS,HAVE_ITOA,_CRT_SECURE_NO_DEPRECATE "
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"

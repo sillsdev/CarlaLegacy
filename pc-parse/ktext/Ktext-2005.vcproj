@@ -43,7 +43,7 @@
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\pckimmo,..\pcpatr,..\ample,..\cmdlib,../include"
-				PreprocessorDefinitions="NDEBUG,_CONSOLE,HAVE_CONFIG_H,WIN32"
+				PreprocessorDefinitions="NDEBUG,_CONSOLE,HAVE_CONFIG_H,WIN32,_CRT_SECURE_NO_DEPRECATE "
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"

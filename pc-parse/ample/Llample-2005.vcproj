@@ -45,7 +45,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,../include"
-				PreprocessorDefinitions="NDEBUG;_WINDOWS;HAVE_CONFIG_H;WIN32"
+				PreprocessorDefinitions="NDEBUG;_WINDOWS;HAVE_CONFIG_H;WIN32;_CRT_SECURE_NO_DEPRECATE "
 				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
 				PrecompiledHeaderFile=".\Release-LL/Llample.pch"

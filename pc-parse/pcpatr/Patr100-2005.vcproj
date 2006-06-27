@@ -49,7 +49,7 @@
 				Optimization="1"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..,../cportlib,../opaclib,../pckimmo,../ample"
-				PreprocessorDefinitions="NDEBUG;_WINDOWS;_USRDLL;WIN32;HAVE_CONFIG_H"
+				PreprocessorDefinitions="NDEBUG;_WINDOWS;_USRDLL;WIN32;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE "
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
