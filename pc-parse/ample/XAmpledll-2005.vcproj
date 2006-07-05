@@ -69,13 +69,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="patrlib.lib cmdlib.lib xamplelib.lib opaclib.lib cportlib.lib libcmt.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="PumpMessages.lib patrlib.lib cmdlib.lib xamplelib.lib opaclib.lib cportlib.lib libcmt.lib odbc32.lib odbccp32.lib user32.lib kernel32.lib"
 				OutputFile="Release-xdll/xample.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\lib\Release"
 				IgnoreAllDefaultLibraries="true"
-				ProgramDatabaseFile=".\Release-dll/xample.pdb"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile=".\Release-xdll/xample.pdb"
 				SubSystem="2"
 				ImportLibrary=".\Release-dll/xample.lib"
 			/>
@@ -162,14 +163,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="patrlib.lib cmdlib.lib xamplelib.lib opaclib.lib cportlib.lib libcmtd.lib odbc32.lib odbccp32.lib oldnames.lib"
+				AdditionalDependencies="PumpMessages.lib patrlib.lib cmdlib.lib xamplelib.lib opaclib.lib cportlib.lib libcmtd.lib odbc32.lib odbccp32.lib oldnames.lib user32.lib kernel32.lib"
 				OutputFile="Debug-xdll/xample.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\lib\Debug"
 				IgnoreAllDefaultLibraries="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\Debug-dll/xample.pdb"
+				ProgramDatabaseFile=".\Debug-xdll/xample.pdb"
 				SubSystem="2"
 				ImportLibrary=".\Debug-dll/xample.lib"
 			/>

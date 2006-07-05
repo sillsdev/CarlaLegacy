@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="xample"
 	ProjectGUID="{1301CBB1-AE4E-4128-9136-8944A96E07F1}"
+	RootNamespace="xample"
 	>
 	<Platforms>
 		<Platform
@@ -71,7 +72,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="patrlib.lib cmdlib.lib cportlib.lib opaclib.lib oldnames.lib"
+				AdditionalDependencies="PumpMessages.lib patrlib.lib cmdlib.lib cportlib.lib opaclib.lib oldnames.lib user32.lib kernel32.lib"
 				OutputFile="Release-x/xample32.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -252,7 +253,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="patrlib.lib cmdlib.lib cportlib.lib opaclib.lib oldnames.lib"
+				AdditionalDependencies="PumpMessages.lib patrlib.lib cmdlib.lib cportlib.lib opaclib.lib oldnames.lib user32.lib kernel32.lib"
 				OutputFile="Debug-x/Xample32.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"

@@ -262,6 +262,10 @@ struct ample_data {
 	unsigned long	   uiPATRSkipCount;	/* number of times skipped */
 #endif
 	/*
+	 *  flag whether or not to allow "pumping messages"
+	 */
+	unsigned char          bPumpMessages;
+	/*
 	 *  internal temporary storage used in creating dict entries (hab 3.2.5)
 	 */
 	int                    iAlloListIndex;

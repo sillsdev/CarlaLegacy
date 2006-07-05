@@ -280,6 +280,9 @@ AmpleData	sPCPATRAmpleData_g = {
 	0L,						/* uiPATRFailCount */
 	0L,						/* uiPATRSkipCount */
 #endif /* EXPERIMENTAL_AMPLE */
+	FALSE,					/* bPumpMessages (SRMc 3.12.3) */
+	0,                  /* size of allolist  (hab 3.2.5) */
+						/* asAlloList is initialized in initalist() */
 };
 int		iPCPATRDebugLevel_g = 0;	/* debug level: 0 = off */
 int		bPCPATRSilent_g = FALSE;	/* Keep quiet about errors? */

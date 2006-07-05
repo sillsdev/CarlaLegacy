@@ -4,12 +4,15 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 2		/* bug fix or other minor change */
-#define DATE "April 14, 2006"	/* date of release version */
+#define PATCHLEVEL 3		/* bug fix or other minor change */
+#define DATE "July 5, 2006"	/* date of release version */
 #define YEAR "2006"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ *  5-Jul-2006	SRMc - add "message pumping" capability to improve performance
+ * [3.12.3]             of FieldWorks Language Explorer when using the XAMPLE
+ *                      DLL to parse words
  * 14-Apr-2006	hab - Fix bug which allowed a full reduplication suffix with
  * [3.12.2]             trailing segmental material to be analyzed as just
  *                      the trailing segmental material.

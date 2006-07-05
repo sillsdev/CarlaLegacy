@@ -34,6 +34,8 @@
 #include "ampledef.h"
 #include "ampcat.h"
 
+extern int PumpMessages P((void));
+
 #ifdef hab3312
 /*****************************************************************************
  * NAME
@@ -345,6 +347,14 @@ static AmpleTestNode *	pTestTreeRoot_m;
 
 static char *	pszTempSurface_m = NULL;
 
+#ifdef EXPERIMENTAL
+/*
+ * this is used only in conjunction with word parsing, and probably only
+ * when the xample DLL is called from FieldWorks.
+ */
+static int bAbortParse_m = FALSE;
+#endif
+
 /***************************************************************************
  * NAME
  *    performAmpleAnalysis
@@ -362,6 +372,13 @@ AmpleData * pAmple_in;
 {
 size_t		i;
 int		bAllosTried;
+#ifdef EXPERIMENTAL
+if (bAbortParse_m)
+	{
+	bAbortParse_m = FALSE;	// reset just in case...
+	return 0;
+	}
+#endif
 /*
  *  initialize the analysis globals
  */
@@ -1170,6 +1187,8 @@ if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
 	 */
 	return FALSE;
   }
+if (bAbortParse_m)
+	return FALSE;
 #endif /* EXPERIMENTAL */
 /*
  *  save furthest penetration during parse
@@ -1521,6 +1540,8 @@ if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
 	 */
 	return FALSE;
   }
+if (bAbortParse_m)
+	return FALSE;
 #endif /* EXPERIMENTAL */
 /*
  *  if the end of the word is found, then we have an incorrect analysis.
@@ -1828,6 +1849,8 @@ if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
 	 */
 	return FALSE;
   }
+if (bAbortParse_m)
+	return FALSE;
 #endif /* EXPERIMENTAL */
 /*
  *  save furthest penetration during parse
@@ -2091,6 +2114,8 @@ if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
 	 */
 	return FALSE;
   }
+if (bAbortParse_m)
+	return FALSE;
 #endif /* EXPERIMENTAL */
 /*
  *  save furthest penetration during parse
@@ -2466,6 +2491,8 @@ if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
 	 */
 	return FALSE;
   }
+if (bAbortParse_m)
+	return FALSE;
 #endif /* EXPERIMENTAL */
 
 /*
@@ -6823,6 +6850,12 @@ if ((pAnal_in == NULL) || (pAmple_in == NULL) || (ppWordParse_out == NULL))
 *ppWordParse_out = NULL;
 if (pAmple_in->sPATR.pGrammar == NULL)
 	return TRUE;
+if (pAmple_in->bPumpMessages)
+	{
+	bAbortParse_m |= PumpMessages();
+	if (bAbortParse_m)
+	return FALSE;
+	}
 /*
  *  save pointers to temporary parse structures
  */

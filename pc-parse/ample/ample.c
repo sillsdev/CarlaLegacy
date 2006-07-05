@@ -315,6 +315,7 @@ static AmpleData	sAmpleData_m = {
 	0L,						/* uiPATRFailCount */
 	0L,						/* uiPATRSkipCount */
 #endif /* EXPERIMENTAL */
+	FALSE,					/* bPumpMessages (SRMc 3.12.3) */
 	0,                  /* size of allolist  (hab 3.2.5) */
 						/* asAlloList is initialized in initalist() */
 	};
