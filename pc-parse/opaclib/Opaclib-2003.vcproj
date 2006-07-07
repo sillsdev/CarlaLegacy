@@ -259,6 +259,9 @@
 			RelativePath=".\promptus.c">
 		</File>
 		<File
+			RelativePath=".\PumpMessages.c">
+		</File>
+		<File
 			RelativePath=".\readfiel.c">
 		</File>
 		<File

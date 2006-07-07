@@ -10,6 +10,12 @@
 #ifdef WIN32
 #include <windows.h>
 #endif
+#ifndef TRUE
+#define TRUE 1
+#endif
+#ifndef FALSE
+#define FALSE 0
+#endif
 
 /*****************************************************************************
  * NAME

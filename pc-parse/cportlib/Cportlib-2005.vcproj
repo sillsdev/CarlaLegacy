@@ -117,7 +117,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".."
-				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,WIN32"
+				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,WIN32,_CRT_SECURE_NO_DEPRECATE "
 				RuntimeLibrary="1"
 				DisableLanguageExtensions="true"
 				UsePrecompiledHeader="0"

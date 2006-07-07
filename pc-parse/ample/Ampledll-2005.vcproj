@@ -69,7 +69,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="PumpMessages.lib amplelib.lib opaclib.lib cportlib.lib libcmt.lib odbc32.lib odbccp32.lib user32.lib"
+				AdditionalDependencies="amplelib.lib opaclib.lib cportlib.lib libcmt.lib odbc32.lib odbccp32.lib user32.lib"
 				OutputFile="Release-dll/ample322.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

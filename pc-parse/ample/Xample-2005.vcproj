@@ -72,7 +72,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="PumpMessages.lib patrlib.lib cmdlib.lib cportlib.lib opaclib.lib oldnames.lib user32.lib kernel32.lib"
+				AdditionalDependencies="patrlib.lib cmdlib.lib cportlib.lib opaclib.lib oldnames.lib user32.lib kernel32.lib"
 				OutputFile="Release-x/xample32.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

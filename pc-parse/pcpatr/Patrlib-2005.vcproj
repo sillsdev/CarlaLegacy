@@ -192,7 +192,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..,..\cportlib,..\opaclib,..\pckimmo,..\ample,..\cmdlib"
-				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,EXPERIMENTAL,_DEBUG,WIN32"
+				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,EXPERIMENTAL,_DEBUG,WIN32,_CRT_SECURE_NO_DEPRECATE "
 				RuntimeLibrary="1"
 				DisableLanguageExtensions="true"
 				UsePrecompiledHeader="0"

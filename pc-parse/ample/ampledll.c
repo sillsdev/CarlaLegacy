@@ -193,8 +193,7 @@ static char szWordFormClose_m[]  = " </Wordform>\r\n";
 /* Keep the "EXPERIMENTAL" definitions grouped together at the end */
 #ifdef EXPERIMENTAL
 #define RECOGNIZE_ONLY		21	/* SRMc 2005.12.05 */
-#define PUMP_MESSAGES		22	/* SRMc 2006.06.05 */
-#define NUMBER_OF_PARAMETERS	23
+#define NUMBER_OF_PARAMETERS	22
 #else /* EXPERIMENTAL */
 #define NUMBER_OF_PARAMETERS	21
 #endif /* EXPERIMENTAL */
@@ -225,7 +224,6 @@ static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 #ifdef EXPERIMENTAL
 	/* Keep the "EXPERIMENTAL" parameter names grouped together at the end */
 	"RecognizeOnly",		/* SRMc 2005.12.05 */
-	"PumpMessages",		/* SRMc 2006.06.05 */
 #endif /* EXPERIMENTAL */
 	};
 
@@ -647,7 +645,6 @@ memset(pSetup, 0, sizeof(AmpleSetup));
 #ifdef EXPERIMENTAL
 				/* set pointer to the PATR Memory */
 pSetup->sData.sPATR.pMem = pPATRMemory;
-pSetup->sData.bPumpMessages = TRUE;
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
 
@@ -3164,32 +3161,6 @@ else
 	return szInvalidParameterValue_m;
 return szAmpleSuccess_m;
 }
-
-/*****************************************************************************
- * NAME
- *    setPumpMessages
- * DESCRIPTION
- *    set flag whether or not to store parse results ("Recognize Only" == true
- *    means not to store parse results)
- * RETURN VALUE
- *    status string indicating success or failure
- */
-static const char * setPumpMessages(
-	const char *	pszValue_in,
-	AmpleSetup *	pSetup_io)
-{
-if (pszValue_in == NULL)
-	pSetup_io->sData.bPumpMessages = FALSE;	/* default value */
-else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
-	 (_stricmp(pszValue_in, "T") == 0) )
-	pSetup_io->sData.bPumpMessages = TRUE;
-else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
-	 (_stricmp(pszValue_in, "F") == 0) )
-	pSetup_io->sData.bPumpMessages = FALSE;
-else
-	return szInvalidParameterValue_m;
-return szAmpleSuccess_m;
-}
 #endif /* EXPERIMENTAL */
 
 /*****************************************************************************
@@ -3763,9 +3734,6 @@ switch (findParameterIndex(pszName_in))
 #ifdef EXPERIMENTAL
 	case RECOGNIZE_ONLY:
 	return setRecognizeOnly(pszValue_in, pSetup_io);
-
-	case PUMP_MESSAGES:
-	return setPumpMessages(pszValue_in, pSetup_io);
 #endif /* EXPERIMENTAL */
 
 	default:
@@ -4173,24 +4141,6 @@ if (pSetup_io->sData.sPATR.bRecognizeOnly)
 else
 	return "FALSE";
 }
-
-/*****************************************************************************
- * NAME
- *    getPumpMessages
- * DESCRIPTION
- *    get flag whether or not to store parse results ("Recognize Only" == true
- *    means not to store parse results)
- * RETURN VALUE
- *    string indicating the value
- */
-static const char * getPumpMessages(
-	AmpleSetup *	pSetup_io)
-{
-if (pSetup_io->sData.bPumpMessages)
-	return "TRUE";
-else
-	return "FALSE";
-}
 #endif /* EXPERIMENTAL */
 
 /*****************************************************************************
@@ -4297,8 +4247,6 @@ switch (findParameterIndex(pszName_in))
 #ifdef EXPERIMENTAL
 	case RECOGNIZE_ONLY:
 		return getRecognizeOnly(pSetup_io);
-	case PUMP_MESSAGES:
-	return getPumpMessages(pSetup_io);
 #endif
 
 	default:
@@ -4742,13 +4690,15 @@ return pszResult;
  */
 DllExport int AmpleThreadId()
 {
-	GetCurrentThreadId();
+	return GetCurrentThreadId();
 }
 #endif
 #endif
 
 /******************************************************************************
  * EDIT HISTORY
+ * 06-Jul-2006  SRMc - Add AmpleThreadId.
+ * [3.12.3.20]
  * 09-Dec-2004  SRMc - Add RecognizeOnly parameter.  When "true", the PC-PATR
  * [3.11.0.19]           parse results are neither stored nor written to the
  *                       analysis output.

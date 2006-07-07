@@ -20,6 +20,8 @@
 #include "rpterror.h"	/* for NumberedMessage and displayNumberedMessage() */
 #include "cmd.h"	/* temp fix */
 
+extern int PumpMessages P((void));
+
 static int		hash P((char *));
 static VOIDP		searchHashTable P((char *,
 					   PATRHashList **));
@@ -713,7 +715,7 @@ PATREdge *edgep;
 /*
  *  allow the caller to kill us asynchronously, and to see our progress
  */
-if (bCancelPATROperation_g)
+if (bCancelPATROperation_g || PumpMessages())
 	{
 	longjmp( sCancelPoint_m, 1 );
 	}
@@ -768,7 +770,7 @@ PATREdge *edgep;
 /*
  *  allow the caller to kill us asynchronously, and to see our progress
  */
-if (bCancelPATROperation_g)
+if (bCancelPATROperation_g || PumpMessages())
 	{
 	longjmp( sCancelPoint_m, 1 );
 	}
@@ -1143,7 +1145,7 @@ if (!act_edge->bFailed)
 	/*
 	 *  allow the caller to kill us asynchronously, and to see our progress
 	 */
-	if (bCancelPATROperation_g)
+	if (bCancelPATROperation_g || PumpMessages())
 		{
 		collectPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
 		longjmp( sCancelPoint_m, 1 );
@@ -1625,9 +1627,9 @@ if (	(pData->pPATR == NULL) ||
  */
 if (setjmp( sCancelPoint_m ))
 	{
+	cleanupPATRGarbage(pData->pPATR->pStartGarbage, pData->pPATR);
 	pData->uiProgressCount = 0L;
 	pData = NULL;
-	cleanupPATRGarbage(pData->pPATR->pStartGarbage, pData->pPATR);
 	return NULL;
 	}
 pData->uiProgressCount = 0L;

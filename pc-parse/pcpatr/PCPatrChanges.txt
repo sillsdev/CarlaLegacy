@@ -1,5 +1,9 @@
 PC-PATR CHANGE HISTORY
 
+1.4.1 (7-Jul-2006)
+--------------------
+1. Some minor internal code changes (nothing visible to the user)
+
 1.4.0 (07-Dec-2005)
 -------------------
 1. Added "recognize only" capability.

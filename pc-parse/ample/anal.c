@@ -6850,12 +6850,9 @@ if ((pAnal_in == NULL) || (pAmple_in == NULL) || (ppWordParse_out == NULL))
 *ppWordParse_out = NULL;
 if (pAmple_in->sPATR.pGrammar == NULL)
 	return TRUE;
-if (pAmple_in->bPumpMessages)
-	{
-	bAbortParse_m |= PumpMessages();
-	if (bAbortParse_m)
+bAbortParse_m |= PumpMessages();
+if (bAbortParse_m)
 	return FALSE;
-	}
 /*
  *  save pointers to temporary parse structures
  */

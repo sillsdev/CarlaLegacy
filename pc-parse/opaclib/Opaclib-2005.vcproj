@@ -43,7 +43,7 @@
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..,..\cportlib,../include"
-				PreprocessorDefinitions="NDEBUG,_WINDOWS,HAVE_CONFIG_H,WIN32,_CRT_SECURE_NO_DEPRECATE "
+				PreprocessorDefinitions="NDEBUG,_WINDOWS,HAVE_CONFIG_H,_CRT_SECURE_NO_DEPRECATE "
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -192,7 +192,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..,..\cportlib"
-				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,WIN32"
+				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,_CRT_SECURE_NO_DEPRECATE "
 				RuntimeLibrary="1"
 				DisableLanguageExtensions="true"
 				UsePrecompiledHeader="0"
@@ -354,6 +354,10 @@
 		</File>
 		<File
 			RelativePath=".\promptus.c"
+			>
+		</File>
+		<File
+			RelativePath=".\PumpMessages.c"
 			>
 		</File>
 		<File
