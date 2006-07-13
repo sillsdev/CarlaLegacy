@@ -56,6 +56,7 @@ namespace SIL.PcPatrBrowser
 
 		public static string m_sRegKey = "Software\\SIL\\PcPatrBrowser";
 		const string m_ksLastLanguageFile = "LastTreeFile";
+		const string m_ksLastLogFile = "LastLogFile";
 		const string m_ksLocationX = "LocationX";
 		const string m_ksLocationY = "LocationY";
 		const string m_ksSizeHeight = "SizeHeight";
@@ -124,6 +125,8 @@ namespace SIL.PcPatrBrowser
 		private System.Windows.Forms.MenuItem miFileSaveLanguage;
 		private System.Windows.Forms.MenuItem miFileSaveLangAs;
 		private const string m_ksNoParses = "No parses";
+		private const string m_ksGrammarMessage = "When you click on a node in the tree in the panel above and " +
+			"a grammar file has been loaded, the corresponding rule will show here.";
 
 		public event LingTreeNodeClickedEventHandler LingTreeNodeClicked;
 		protected virtual void OnLingTreeNodeClicked(LingTreeNodeClickedEventArgs ltncea)
@@ -152,6 +155,7 @@ namespace SIL.PcPatrBrowser
 			// Required for Windows Form Designer support
 			//
 			InitializeComponent();
+			richTextBox1.Text = m_ksGrammarMessage;
 
 			InitToolBar();
 
@@ -789,8 +793,7 @@ namespace SIL.PcPatrBrowser
 			this.richTextBox1.ReadOnly = true;
 			this.richTextBox1.Size = new System.Drawing.Size(592, 100);
 			this.richTextBox1.TabIndex = 0;
-			this.richTextBox1.Text = "When you click on a node in the tree in the panel above,  the corresponding rule " +
-				"will show here.";
+			this.richTextBox1.Text = "";
 			//
 			// splitterBetweenInterlinearAndTreeFeat
 			//
@@ -1024,6 +1027,11 @@ namespace SIL.PcPatrBrowser
 		private void FileOpenAna_Click(object sender, System.EventArgs e)
 		{
 			OpenFileDialog dlg = new OpenFileDialog();
+			if (m_sLogOrAnaFileName != null && m_sLogOrAnaFileName.Length > 0)
+			{
+				dlg.InitialDirectory = Path.GetDirectoryName(m_sLogOrAnaFileName);
+				dlg.FileName = m_sLogOrAnaFileName;
+			}
 			dlg.Filter = "Log file (*.log)|*.log|" +
 				"Analysis file (*.an*)|*.an*|" +
 				"All Files (*.*)|*.*";;
@@ -1038,13 +1046,25 @@ namespace SIL.PcPatrBrowser
 					m_sGrammarFileName = sGrammarFile;
 					LoadGrammarFile();
 				}
+				else
+				{
+					richTextBox1.Text = m_ksGrammarMessage;
+				}
 
 				PcPatrSentence sent = m_doc.CurrentSentence;
 				if (sent != null)
 				{
 					ShowParseTree(sent, sent.FirstParse);
-					ShowInterlinear(sent);
 				}
+				else
+				{
+					m_tree.Root = null;
+					m_tree.Invalidate();
+					wbFeatureStructure.Navigate(m_sInitFeatureMessagePath);
+					sbpnlSentence.Text = m_ksNoSentences;
+					sbpnlParse.Text = m_ksNoParses;
+				}
+				ShowInterlinear(sent);
 				Cursor.Current = Cursors.Arrow;
 				SetTitle();
 			}
@@ -1072,11 +1092,17 @@ namespace SIL.PcPatrBrowser
 		private void ShowInterlinear(PcPatrSentence sentence)
 		{
 			if (sentence == null)
+			{
+				ReportNoInterlinear();
 				return;
+			}
 			XmlNode node = sentence.Node;
 			XmlNode interlinear = node.SelectSingleNode("//Input");
 			if (interlinear == null)
+			{
+				ReportNoInterlinear();
 				return;
+			}
 
 			XmlDocument doc1 = new XmlDocument();
 			doc1.LoadXml(interlinear.OuterXml);
@@ -1099,6 +1125,12 @@ namespace SIL.PcPatrBrowser
 
 			this.wbInterlinear.Navigate(m_sInterFile);
 
+		}
+
+		private void ReportNoInterlinear()
+		{
+			string sNoInterlinearMessagePath = Path.Combine(Application.StartupPath, @"..\..\Transforms\NoInterlinear.htm");
+			wbInterlinear.Navigate(sNoInterlinearMessagePath);
 		}
 		private void ShowParseTree(PcPatrSentence sentence, PcPatrParse parse)
 		{
@@ -1702,6 +1734,8 @@ namespace SIL.PcPatrBrowser
 					splitterBetweenTreeAndFeat.SplitPosition = (int)regkey.GetValue(m_ksSplitterBetweenTreeAndFeat, 192);
 					splitterBetweenTreeFeatAndRule.SplitPosition = (int)regkey.GetValue(m_ksSplitterBetweenTreeFeatAndRule, 100);
 
+					m_sLogOrAnaFileName = (string)regkey.GetValue(m_ksLastLogFile);
+
 					regkey.Close();
 				}
 			}
@@ -1717,6 +1751,10 @@ namespace SIL.PcPatrBrowser
 			{
 				regkey = Registry.CurrentUser.CreateSubKey(m_sRegKey);
 			}
+			if (m_sLogOrAnaFileName != null)
+				regkey.SetValue(m_ksLastLogFile, m_sLogOrAnaFileName);
+			else
+				regkey.SetValue(m_ksLastLogFile, "");
 			if (m_sLanguageFileName != null)
 				regkey.SetValue(m_ksLastLanguageFile, m_sLanguageFileName);
 			else

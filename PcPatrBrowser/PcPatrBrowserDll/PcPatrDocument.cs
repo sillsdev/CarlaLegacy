@@ -181,7 +181,9 @@ namespace SIL.PcPatrBrowser
 		protected string ReadFileIntoString(string sFileName)
 		{
 			StreamReader sr = new StreamReader(sFileName);
-			return sr.ReadToEnd();
+			string sResult = sr.ReadToEnd();
+			sr.Close();
+			return sResult;
 		}
 		/// <summary>
 		/// Get XML of next analysis element in document
