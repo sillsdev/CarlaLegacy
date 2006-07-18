@@ -4,12 +4,16 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 4		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "December 7, 2005"	/* date of release version */
-#define YEAR "2005"		/* used for copyright notice in banner */
+#define PATCHLEVEL 2		/* bug fix or other minor change */
+#define DATE "July 18, 2006"	/* date of release version */
+#define YEAR "2006"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 18-Jul-2006	hab  - in XML output, add sentence number to id (makes the
+ * [1.4.2]              id unique within the file for all sentences)
+ * 7-Jul-2006	hab  - Moved PumpMessages()( to opaclib
+ * [1.4.1]
  * 07-Dec-2005	SRMc - add "recognize only" capability
  * [1.4.0]
  * 26-Sep-2005  hab  - In XML tree dump, either output all features if

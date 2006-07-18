@@ -53,8 +53,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,4,1,1
- PRODUCTVERSION 1,4,1,1
+ FILEVERSION 1,4,2,1
+ PRODUCTVERSION 1,4,2,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,15 +69,15 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "PC-PATR 1.4.1 DLL"
+			VALUE "Comments", "PC-PATR 1.4.2 DLL"
 			VALUE "CompanyName", "SIL International"
 			VALUE "FileDescription", "patr100 Module"
-			VALUE "FileVersion", "1, 4, 1, 1"
+			VALUE "FileVersion", "1, 4, 2, 1"
 			VALUE "InternalName", "patr100"
 			VALUE "LegalCopyright", "Copyright © 2000-2006"
 			VALUE "OriginalFilename", "PATR100.DLL"
 			VALUE "ProductName", "patr100 Module"
-			VALUE "ProductVersion", "1, 4, 1, 1"
+			VALUE "ProductVersion", "1, 4, 2, 1"
 		END
 	END
 	BLOCK "VarFileInfo"

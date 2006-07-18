@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 3		/* bug fix or other minor change */
-#define DATE "July 5, 2006"	/* date of release version */
+#define PATCHLEVEL 4		/* bug fix or other minor change */
+#define DATE "July 18, 2006"	/* date of release version */
 #define YEAR "2006"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 18-Jul-2006	SRMc - writePATRParses() argument list changed.
+ * [3.12.4]
  *  5-Jul-2006	SRMc - add "message pumping" capability to improve performance
  * [3.12.3]             of FieldWorks Language Explorer when using the XAMPLE
  *                      DLL to parse words

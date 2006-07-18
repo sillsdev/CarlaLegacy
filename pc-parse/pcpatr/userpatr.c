@@ -30,6 +30,7 @@
  * void writePATRParses(PATREdgeList * parses,
  *			FILE * pOutputFP_in,
  *                      WordTemplate ** ppWords_in,
+ *                      unsigned uiSentCount_in,
  *			PATRData * pPATR_in)
  *
  ******************************************************************************
@@ -67,31 +68,37 @@ static void display_indented_tree P((PATREdge * pParse_in,
 					 PATRData * pPATR_in));
 static void write_xml_char_data P((const char * pszString_in,
 				   FILE * pOutFP_in,
-				   int bCDATA_in));
-#define write_PCDATA(in, out) write_xml_char_data(in, out, FALSE)
-#define write_CDATA(in, out) write_xml_char_data(in, out, TRUE)
+				   int bCDATA_in,
+				   int bANA_in));
+#define write_ANA_PCDATA(in, out) write_xml_char_data(in, out, FALSE, TRUE)
+#define write_PCDATA(in, out) write_xml_char_data(in, out, FALSE, FALSE)
+#define write_CDATA(in, out) write_xml_char_data(in, out, TRUE, FALSE)
 static void write_xml_feature P((PATRFeature * pFeature_in,
 				 int iParse_in,
 				 const char * pszNodeId_in,
 				 FILE * pOutputFP_in,
 				 int iIndent_in,
+				 unsigned uiSentCount_in,
 				 PATRData * pPATR_in));
 static void write_xml_children P((PATREdgeList * pChildren_in,
 				  PATRFeature * pTreeFeats_in,
 				  int iParse_in,
 				  FILE * pOutFP_in,
 				  int iIndent_in,
+				  unsigned uiSentCount_in,
 				  PATRData * pPATR_in));
 static void write_xml_node P((PATREdge * pEdge_in,
 				  PATRFeature * pTreeFeats_in,
 				  int iParse_in,
 				  FILE * pOutputFP_in,
 				  int iIndent_in,
+				  unsigned uiSentCount_in,
 				  PATRData * pPATR_in));
 static void write_xml_parse P((PATREdge * pParse_in,
 				   PATRFeature * pTreeFeats_in,
 				   int iParse_in,
 				   FILE * pOutputFP_in,
+				   unsigned uiSentCount_in,
 				   PATRData * pPATR_in));
 static PATRFeature * unify_tree_children_features P((PATREdgeList * pEdges_in,
 						   PATRFeature * pTreeFeats_in,
@@ -1103,7 +1110,7 @@ if (pParse_in != (PATREdge *)NULL)
  * RETURN VALUE
  *    none
  */
-static void write_xml_char_data(pszString_in, pOutFP_in, bCDATA_in)
+static void write_xml_char_data(pszString_in, pOutFP_in, bCDATA_in, bANA_in)
 const char * pszString_in;
 FILE * pOutFP_in;
 int bCDATA_in;
@@ -1130,6 +1137,10 @@ for ( psz = pszString_in ; *psz ; ++psz )
 	{
 	fputs("&quot;", pOutFP_in);
 	}
+	else if (bANA_in && (*psz == '\n'))
+	{
+	fputs("\\n\n", pOutFP_in);
+	}
 	else
 	{
 	putc(*psz, pOutFP_in);
@@ -1146,12 +1157,13 @@ for ( psz = pszString_in ; *psz ; ++psz )
  *    none
  */
 static void write_xml_feature(pFeature_in, iParse_in, pszNodeId_in,
-				  pOutputFP_in, iIndent_in, pPATR_in)
+				  pOutputFP_in, iIndent_in, uiSentCount_in, pPATR_in)
 PATRFeature * pFeature_in;
 int           iParse_in;
 const char *  pszNodeId_in;
 FILE *        pOutputFP_in;
 int           iIndent_in;
+unsigned      uiSentCount_in;
 PATRData *    pPATR_in;
 {
 PATRFeature * pFeat;
@@ -1175,15 +1187,9 @@ switch (pFeat->eType)
 	 *  if atom or default atom, print it
 	 */
 	/* TODO: distinguish <num>, <sym>, <plus/>, <minus/>? */
-#ifndef hab124
 	fprintf(pOutputFP_in, "%*s<Str>", iIndent_in, "");
 	write_PCDATA(pFeat->u.pszAtom, pOutputFP_in);
 	fprintf(pOutputFP_in, "</Str>\n");
-#else
-	fprintf(pOutputFP_in, "%*s<str>", iIndent_in, "");
-	write_PCDATA(pFeat->u.pszAtom, pOutputFP_in);
-	fprintf(pOutputFP_in, "</str>\n");
-#endif /* hab124 */
 	break;
 	case PATR_COMPLEX:
 	sortPATRComplexFeature(pFeat->u.pComplex, pPATR_in->pGrammar,
@@ -1196,20 +1202,12 @@ switch (pFeat->eType)
 							   pPATR_in);
 		else
 		bRepeated = FALSE;
-#ifndef hab124
 		fprintf(pOutputFP_in, "%*s<F name=\"", iIndent_in + 2, "");
-#else
-		fprintf(pOutputFP_in, "%*s<f name=\"", iIndent_in + 2, "");
-#endif /* hab124 */
 		write_CDATA(pcf->pszLabel, pOutputFP_in);
 		if (bRepeated)
 		{
-#ifndef hab124
-		  fprintf(pOutputFP_in, "\" fVal=\"_%d%s.co%d\"></F>\n", /* hab125 */
-#else
-		fprintf(pOutputFP_in, "\" fVal=\"_%d%s:co%d\"></f>\n",
-#endif /* hab124 */
-			iParse_in, pszNodeId_in, iCoref);
+		  fprintf(pOutputFP_in, "\" fVal=\"s%u_%d%s.co%d\"></F>\n", /* hab125 */
+			uiSentCount_in, iParse_in, pszNodeId_in, iCoref);
 		}
 		else
 		{
@@ -1220,117 +1218,63 @@ switch (pFeat->eType)
 			(pChild->eType == PATR_DEFATOM) )
 			{
 			/* TODO: distinguish <num>, <sym>, <plus/>, <minus/>? */
-#ifndef hab124
 			if (iCoref != 0)
-			  fprintf(pOutputFP_in, "<Str id=\"_%d%s.co%d\">", /* hab125 */
-				iParse_in, pszNodeId_in, iCoref);
+			  fprintf(pOutputFP_in, "<Str id=\"s%u_%d%s.co%d\">", /* hab125 */
+				  uiSentCount_in, iParse_in, pszNodeId_in, iCoref);
 			else
 			fprintf(pOutputFP_in, "<Str>");
 			write_PCDATA(pChild->u.pszAtom, pOutputFP_in);
 			fprintf(pOutputFP_in, "</Str></F>\n"); /* hab125 */
-#else
-			if (iCoref != 0)
-			  fprintf(pOutputFP_in, "<str id=\"_%d%s.co%d\">", /* hab125 */
-				iParse_in, pszNodeId_in, iCoref);
-			else
-			fprintf(pOutputFP_in, "<str>");
-			write_PCDATA(pChild->u.pszAtom, pOutputFP_in);
-			fprintf(pOutputFP_in, "</str></f>\n");
-#endif /* hab124 */
 			}
 		else if (pChild->eType == PATR_FAILFS)
 			{
 			/* TODO: distinguish <num>, <sym>, <plus/>, <minus/>? */
-#ifndef hab124
 			if (iCoref != 0)
-			fprintf(pOutputFP_in, "<Str id=\"_%d%s.co%d\">", /* hab125 */
-				iParse_in, pszNodeId_in, iCoref);
+			fprintf(pOutputFP_in, "<Str id=\"s%u_%d%s.co%d\">", /* hab125 */
+				uiSentCount_in, iParse_in, pszNodeId_in, iCoref);
 			else
 			fprintf(pOutputFP_in, "<Str>");
 			fprintf(pOutputFP_in, "FAIL ");
 			write_PCDATA(pChild->u.pszAtom, pOutputFP_in);
 			fprintf(pOutputFP_in, "</Str></F>\n");
-#else
-			if (iCoref != 0)
-			fprintf(pOutputFP_in, "<str id=\"_%d%s:co%d\">",
-				iParse_in, pszNodeId_in, iCoref);
-			else
-			fprintf(pOutputFP_in, "<str>");
-			fprintf(pOutputFP_in, "FAIL ");
-			write_PCDATA(pChild->u.pszAtom, pOutputFP_in);
-			fprintf(pOutputFP_in, "</str></f>\n");
-#endif /* hab124 */
 			}
 		else if (pChild->eType == PATR_NULLFS)
 			{
-#ifndef hab124
 			if (iCoref != 0)
-			fprintf(pOutputFP_in, "<Any id=\"_%d%s.co%d\"/>", /* hab125 */
-				iParse_in, pszNodeId_in, iCoref);
+			fprintf(pOutputFP_in, "<Any id=\"s%u_%d%s.co%d\"/>", /* hab125 */
+				uiSentCount_in, iParse_in, pszNodeId_in, iCoref);
 			else
 			fprintf(pOutputFP_in, "<Any/>");
 			fprintf(pOutputFP_in, "</F>\n");
-#else
-			if (iCoref != 0)
-			fprintf(pOutputFP_in, "<any id=\"_%d%s:co%d\"/>",
-				iParse_in, pszNodeId_in, iCoref);
-			else
-			fprintf(pOutputFP_in, "<any/>");
-			fprintf(pOutputFP_in, "</f>\n");
-#endif /* hab124 */
 			}
 		else
 			{
 			/* must be COMPLEX */
-#ifndef hab124
 			if (iCoref != 0)
-			fprintf(pOutputFP_in, "\n%*s<Fs id=\"_%d%s.co%d\">\n", /* hab125 */
-				iIndent_in + 4, "", iParse_in,
+			fprintf(pOutputFP_in, "\n%*s<Fs id=\"s%u_%d%s.co%d\">\n", /* hab125 */
+				iIndent_in + 4, "", uiSentCount_in, iParse_in,
 				pszNodeId_in, iCoref);
 			else
 			fprintf(pOutputFP_in, "\n%*s<Fs>\n",
 				iIndent_in + 4, "");
 			write_xml_feature(pChild, iParse_in, pszNodeId_in,
-					  pOutputFP_in, iIndent_in + 4, pPATR_in);
+					  pOutputFP_in, iIndent_in + 4, uiSentCount_in, pPATR_in);
 			fprintf(pOutputFP_in, "%*s</Fs>\n", iIndent_in + 4, "");
 			fprintf(pOutputFP_in, "%*s</F>\n", iIndent_in + 2, "");
-#else
-			if (iCoref != 0)
-			fprintf(pOutputFP_in, "\n%*s<fs id=\"_%d%s:co%d\">\n",
-				iIndent_in + 4, "", iParse_in,
-				pszNodeId_in, iCoref);
-			else
-			fprintf(pOutputFP_in, "\n%*s<fs>\n",
-				iIndent_in + 4, "");
-			write_xml_feature(pChild, iParse_in, pszNodeId_in,
-					  pOutputFP_in, iIndent_in + 4, pPATR_in);
-			fprintf(pOutputFP_in, "%*s</fs>\n", iIndent_in + 4, "");
-			fprintf(pOutputFP_in, "%*s</f>\n", iIndent_in + 2, "");
-#endif /* hab124 */
 			}
 		}
 		}
 	break;
 	case PATR_NULLFS:
-#ifndef hab124
 	fprintf(pOutputFP_in, "%*s<Any/>\n", iIndent_in, "");
-#else
-	fprintf(pOutputFP_in, "%*s<any/>\n", iIndent_in, "");
-#endif /* hab124 */
 	break;
 	case PATR_FAILFS:
 	/*
 	 *  if failure, print fail string:  u.pszAtom contains x/y
 	 */
-#ifndef hab124
 	fprintf(pOutputFP_in, "%*s<Str>FAIL ", iIndent_in, "");
 	write_PCDATA(pFeat->u.pszAtom, pOutputFP_in);
 	fprintf(pOutputFP_in, "</Str>\n");
-#else
-	fprintf(pOutputFP_in, "%*s<str>FAIL ", iIndent_in, "");
-	write_PCDATA(pFeat->u.pszAtom, pOutputFP_in);
-	fprintf(pOutputFP_in, "</str>\n");
-#endif /* hab124 */
 	break;
 	default:
 	/* should never happen */
@@ -1348,21 +1292,22 @@ switch (pFeat->eType)
  *
  */
 static void write_xml_children(pChildren_in, pTreeFeats_in, iParse_in,
-				   pOutFP_in, iIndent_in, pPATR_in)
+				   pOutFP_in, iIndent_in, uiSentCount_in,  pPATR_in)
 PATREdgeList * pChildren_in;
 PATRFeature *  pTreeFeats_in;
 int            iParse_in;
 FILE *         pOutFP_in;
 int            iIndent_in;
+unsigned       uiSentCount_in;
 PATRData *     pPATR_in;
 {
 if (pChildren_in == NULL)
 	return;
 if (pChildren_in->pNext)
 	write_xml_children(pChildren_in->pNext, pTreeFeats_in, iParse_in,
-			   pOutFP_in, iIndent_in, pPATR_in);
+			   pOutFP_in, iIndent_in, uiSentCount_in, pPATR_in);
 write_xml_node(pChildren_in->pEdge, pTreeFeats_in, iParse_in, pOutFP_in,
-		   iIndent_in, pPATR_in);
+		   iIndent_in, uiSentCount_in, pPATR_in);
 }
 
 /*****************************************************************************
@@ -1374,12 +1319,13 @@ write_xml_node(pChildren_in->pEdge, pTreeFeats_in, iParse_in, pOutFP_in,
  *    none
  */
 static void write_xml_node(pEdge_in, pTreeFeats_in, iParse_in,
-			   pOutputFP_in, iIndent_in, pPATR_in)
+			   pOutputFP_in, iIndent_in, uiSentCount_in, pPATR_in)
 PATREdge *    pEdge_in;
 PATRFeature * pTreeFeats_in;
 int           iParse_in;
 FILE *        pOutputFP_in;
 int           iIndent_in;
+unsigned      uiSentCount_in;
 PATRData *    pPATR_in;
 {
 const char * pszAll = "";
@@ -1401,8 +1347,8 @@ if (pEdge_in == NULL)
 sprintf(szNodeId, "_%d", pEdge_in->iIndex);
 if (pEdge_in->bPrinted)
 	{
-	fprintf(pOutputFP_in, "%*s<Shared id=\"_%d.%s\"/>\n", /* hab125 */
-		iIndent_in, "", iParse_in, szNodeId);
+	fprintf(pOutputFP_in, "%*s<Shared id=\"s%u_%d.%s\"/>\n", /* hab125 */
+		iIndent_in, uiSentCount_in, iParse_in, szNodeId);
 	return;
 	}
 pEdge_in->bPrinted = TRUE;
@@ -1445,8 +1391,8 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 	fprintf(pOutputFP_in, "\" rule=\"");
 	write_CDATA(pEdge_in->u.r.pRule->pszID, pOutputFP_in);
 	}
-	fprintf(pOutputFP_in, "\" id=\"_%d._%d\"%s%s>\n", /* hab125 */
-		iParse_in, pEdge_in->iIndex, pszAll, pszFail);
+	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%d\"%s%s>\n", /* hab125 */
+		uiSentCount_in, iParse_in, pEdge_in->iIndex, pszAll, pszFail);
 
 	if (pPATR_in->iFeatureDisplay & PATR_FEATURE_ON)
 		{
@@ -1471,7 +1417,7 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 		pszFeatNodeId = "";
 		}
 		write_xml_feature(pFeat, iParse_in, pszFeatNodeId, pOutputFP_in,
-				  iIndent_in + 2, pPATR_in);
+				  iIndent_in + 2, uiSentCount_in, pPATR_in);
 		if (pTreeFeats_in == NULL)
 			{
 		collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
@@ -1482,7 +1428,7 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 		}
 	}
 	write_xml_children(pEdge_in->u.r.pChildren, pTreeFeats_in, iParse_in,
-			   pOutputFP_in, iIndent_in + 2, pPATR_in);
+			   pOutputFP_in, iIndent_in + 2, uiSentCount_in, pPATR_in);
 	fprintf(pOutputFP_in, "%*s</Node>\n", iIndent_in, "");
 	}
 else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
@@ -1511,8 +1457,8 @@ else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
 	}
 	fprintf(pOutputFP_in, "%*s<Leaf cat=\"", iIndent_in, "");
 	write_CDATA(pEdge_in->pszLabel, pOutputFP_in);
-	fprintf(pOutputFP_in, "\" id=\"_%d._%d\"%s%s%s", /* hab125 */
-		iParse_in, pEdge_in->iIndex, pszAll, pszFail, pszPreGloss);
+	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%d\"%s%s%s", /* hab125 */
+		uiSentCount_in, iParse_in, pEdge_in->iIndex, pszAll, pszFail, pszPreGloss);
 	write_CDATA(pszGloss, pOutputFP_in);
 	fprintf(pOutputFP_in, "%s>\n", pszPostGloss);
 	if (pPATR_in->iFeatureDisplay & PATR_FEATURE_ON)
@@ -1538,7 +1484,7 @@ else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
 		pszFeatNodeId = "";
 		}
 		write_xml_feature(pFeat, iParse_in, pszFeatNodeId, pOutputFP_in,
-				  iIndent_in + 2, pPATR_in);
+				  iIndent_in + 2, uiSentCount_in, pPATR_in);
 		if (pTreeFeats_in == NULL)
 			{
 		collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
@@ -1561,7 +1507,7 @@ else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
 
 		fprintf(pOutputFP_in, "%*s<Lexfs>\n", iIndent_in + 2, "");
 		write_xml_feature(pEdge_in->pFeature, iParse_in, szNodeId,
-				  pOutputFP_in, iIndent_in + 2, pPATR_in);
+				  pOutputFP_in, iIndent_in + 2, uiSentCount_in, pPATR_in);
 		fprintf(pOutputFP_in, "%*s</Lexfs>\n", iIndent_in + 2, "");
 
 		collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
@@ -1594,11 +1540,12 @@ else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
  *    none
  */
 static void write_xml_parse(pParse_in, pTreeFeats_in, iParse_in,
-				pOutputFP_in, pPATR_in)
+				pOutputFP_in, uiSentCount_in, pPATR_in)
 PATREdge *	pParse_in;
 PATRFeature *	pTreeFeats_in;
 int		iParse_in;
 FILE *		pOutputFP_in;
+unsigned        uiSentCount_in;
 PATRData *	pPATR_in;
 {
 if (pParse_in != (PATREdge *)NULL)
@@ -1608,7 +1555,7 @@ if (pParse_in != (PATREdge *)NULL)
 #else
 	fprintf(pOutputFP_in, "  <parse>\n");
 #endif /* hab124 */
-	write_xml_node(pParse_in, pTreeFeats_in, iParse_in, pOutputFP_in, 4,
+	write_xml_node(pParse_in, pTreeFeats_in, iParse_in, pOutputFP_in, 4, uiSentCount_in,
 		   pPATR_in);
 #ifndef hab124
 	fprintf(pOutputFP_in, "  </Parse>\n");
@@ -2148,17 +2095,19 @@ pPATR_in->pMem->pPrintsFP = NULL;
  *    parses       - list of parses
  *    pOutputFP_in - output FILE pointer
  *    ppWords_in   - ANA word info
+ *    uiSentCount_in - sentence count
  *    pPATR_in     -
  * DESCRIPTION
  *    Write all possible legal parses in the chart to the given file.
  * RETURN VALUE
  *    none
  */
-void writePATRParses(parses, pOutputFP_in, ppWords_in, pTextControl_in, pPATR_in)
+void writePATRParses(parses, pOutputFP_in, ppWords_in, pTextControl_in, uiSentCount_in, pPATR_in)
 PATREdgeList *	parses;
 FILE *		pOutputFP_in;
 WordTemplate ** ppWords_in;
 TextControl *	pTextControl_in;
+unsigned        uiSentCount_in;
 PATRData *	pPATR_in;
 {
 int count;
@@ -2249,7 +2198,7 @@ for ( count = 0, pel = parses ; pel != NULL ; pel = pel->pNext )
 		break;
 	case PATR_XML_TREE:		/* indented tree */
 		write_xml_parse(pel->pEdge, pParseFeatures, count,
-				pOutputFP_in, pPATR_in);
+				pOutputFP_in, uiSentCount_in, pPATR_in);
 		break;
 	}
 	if (pPATR_in->eTreeDisplay != PATR_XML_TREE)
@@ -2369,8 +2318,12 @@ static void writeANAWordInfoAsXML(WordTemplate **ppWords_in, FILE *pOutputFP_in,
 	  fprintf(pOutputFP_in,"</WordParse>\n");
 	}
 	  if (wtp->pszFormat != NULL)
-	fprintf(pOutputFP_in,"<Format id=\"fmt%d\">%s</Format>\n",
-		iWord, wtp->pszFormat);
+	{
+	  fprintf(pOutputFP_in,"<Format id=\"fmt%d\">",
+		  iWord);
+	  write_ANA_PCDATA(wtp->pszFormat, pOutputFP_in);
+	  fprintf(pOutputFP_in,"</Format>\n");
+	}
 	  if (wtp->pszNonAlpha != NULL)
 	fprintf(pOutputFP_in,"<NonAlpha id=\"na%d\">%s</NonAlpha>\n",
 		iWord, wtp->pszNonAlpha);

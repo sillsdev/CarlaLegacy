@@ -160,18 +160,22 @@ else
 return(list);
 } /* end listin */
 
-#define ANALYSIS	 0	/* \a   */
-#define DECOMPOSITION	 1	/* \d   */
-#define CATEGORY	 2	/* \cat */
-#define PROPERTIES	 3	/* \p   */
-#define FEATURES	 4	/* \fd  */
-#define UNDERLYING	 5	/* \u   */
-#define SURFACE		 6	/* \s   */
-#define WORD		 7	/* \w   */
-#define FORMAT		 8	/* \f   */
-#define CAPITAL		 9	/* \c   */
-#define NONALPHABETIC	10	/* \n   */
-#define NUMBER_FIELDS	11
+#define ANALYSIS	  0	/* \a   */
+#define DECOMPOSITION	  1	/* \d   */
+#define CATEGORY	  2	/* \cat */
+#define PROPERTIES	  3	/* \p   */
+#define FEATURES	  4	/* \fd  */
+#define UNDERLYING	  5	/* \u   */
+#define SURFACE		  6	/* \s   */
+#define WORD		  7	/* \w   */
+#define FORMAT		  8	/* \f   */
+#define CAPITAL		  9	/* \c   */
+#define NONALPHABETIC	 10	/* \n   */
+#define SENTENCEPARSEBEG 11     /* \parse */
+#define SENTENCEPARSEEND 12     /* \endparse */
+#define WORDPARSEBEG     13     /* \WordParse */
+#define WORDPARSEEND     14     /* \EndWordParse */
+#define NUMBER_FIELDS	 15
 
 /*****************************************************************************
  * NAME
@@ -190,7 +194,13 @@ return(list);
  *      \f   = preceding format marks
  *      \c   = capitalization
  *      \n   = trailing nonalphabetics
- * RETURN VALUE
+ */
+/*      \parse    = beginning of a sentence parse
+ *      \endparse = end of a sentence parse
+ *      \WordParse    = beginning of a word parse
+ *      \endWordParse = end       of a word parse
+ */
+/* RETURN VALUE
  *    pointer to an array of strings containing the analysis record fields,
  *    or NULL if EOF or error
  */
@@ -290,10 +300,55 @@ while ((pszLine = readLineFromFile(pInputFP_in, NULL, 0)) != NULL)
 						  strlen(apszRecord[iIndex]) +
 							 strlen(pszLine)),
 					   pszLine+1);
-	 */
+	*/
 	int cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
 	apszRecord[iIndex] = reallocMemory(apszRecord[iIndex], cch);
 	strcat(apszRecord[iIndex], pszLine + 1);
+	}
+	else if (strncmp(pszLine, "\\parse", 6) == 0)
+	{
+	iIndex = SENTENCEPARSEBEG;
+	apszRecord[iIndex] = duplicateString( pszLine+6 );
+	}
+	else if (strncmp(pszLine, "\\endparse", 9) == 0)
+	{
+	iIndex = SENTENCEPARSEEND;
+	}
+	else if (strncmp(pszLine, "\\WordParse ", 10) == 0)
+	{
+	iIndex = WORDPARSEBEG;
+	apszRecord[iIndex] = duplicateString( pszLine+10 );
+	}
+	else if (strncmp(pszLine, "\\EndWordParse", 13) == 0)
+	{
+	iIndex = WORDPARSEEND;
+	}
+	else if ((iIndex == SENTENCEPARSEBEG) ||
+		 (iIndex == WORDPARSEBEG))
+	{
+	/*
+	 *  \parse and \WordParse can extend over multiple lines
+	 */
+#if 0
+	int iii = apszRecord[iIndex] != NULL ? strlen(apszRecord[iIndex]) : 0;
+	int jjj = strlen(pszLine);
+	if (apszRecord[iIndex] == NULL)
+	  apszRecord[iIndex] = duplicateString( pszLine );
+	else
+	  {
+#endif
+		/* may break in .Net
+	  apszRecord[iIndex] = strcat(reallocMemory(apszRecord[iIndex],
+						  strlen(apszRecord[iIndex]) +
+								  strlen(pszLine)),
+					pszLine);
+		*/
+		int cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
+		apszRecord[iIndex] = reallocMemory(apszRecord[iIndex], cch + 1);
+		strcat(apszRecord[iIndex], pszLine);
+#if 0
+	  }
+#endif
 	}
 	else
 	{
@@ -566,7 +621,18 @@ if (ppszAnalysisRecord[NONALPHABETIC] != NULL)
 					  ppszAnalysisRecord[NONALPHABETIC]) );
 	freeMemory(ppszAnalysisRecord[NONALPHABETIC]);
 	}
-
+if (ppszAnalysisRecord[SENTENCEPARSEBEG] != NULL)
+	{
+	pWord->pszSentenceParse = duplicateString( decode(
+					   ppszAnalysisRecord[SENTENCEPARSEBEG]) );
+	freeMemory(ppszAnalysisRecord[SENTENCEPARSEBEG]);
+	}
+if (ppszAnalysisRecord[WORDPARSEBEG] != NULL)
+	{
+	pWord->pszWordParse = duplicateString( decode(
+					   ppszAnalysisRecord[WORDPARSEBEG]) );
+	freeMemory(ppszAnalysisRecord[WORDPARSEBEG]);
+	}
 return pWord;
 }
 
@@ -639,4 +705,6 @@ return pWord;
  * 27-Jul-98	SRMc - set iOutputFlags according to existing input fields
  * 23-Oct-1998	SRMc - handle default and EOF values of the \n (trailing
  *			nonalphabetic) field
+ * 20-Apr-2000  hab  - allow for PCPATR \parse,\endparse and
+ *                      \WordParse,\EndWordParse fields
  */

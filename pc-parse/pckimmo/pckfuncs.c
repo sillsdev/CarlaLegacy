@@ -691,7 +691,7 @@ if (	(pKimmo_in->bAlignment || pKimmo_in->bUsePATR) &&
 		}
 		if (rp->pParseChart != (PATREdgeList *)NULL)
 		writePATRParses(rp->pParseChart, pOutputFP_in,
-				NULL, NULL, &pKimmo_in->sPATR);
+				NULL, NULL, 0, &pKimmo_in->sPATR);
 		else
 		fprintf(pOutputFP_in, "\nWord grammar result is NULL\n");
 		}

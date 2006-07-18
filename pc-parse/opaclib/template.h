@@ -80,12 +80,14 @@ typedef struct {
 #ifndef hab20000926
 	char *       pszRootNodeWord; /* used in TonePars and ToneGen */
 #endif /* hab20000926 */
-
+	char *              pszSentenceParse;
+	char *              pszWordParse;
 	} WordTemplate;
 
 /* dtbin.c */
 extern WordTemplate * readTemplateFromAnalysis P((FILE * pInputFP_in,
 						 const TextControl * pTextCtl_in));
+
 /* free_wt.c */
 extern void freeWordTemplate P((WordTemplate * pWord_io));
 
@@ -158,6 +160,7 @@ extern void freeWordAnalysisList P((WordAnalysis * pAnalyses_io));
  *			recapitalized word string
  * 21-Jul-98	SRMc - fix a typo in a comment
  * 16-Oct-98	SRMc - make header files safe for #including in C++ sources
+ * 20-Apr-2000  hab  - allow for PCPATR \parse and \WordParse fields
  * 10-May-2000  hab  - add readTemplateFromTextString()
  */
 #ifdef __cplusplus

@@ -296,7 +296,7 @@ STDMETHODIMP PatrParser::ParseString(BSTR bstrSentence, BSTR * pbstrParse)
 	{
 		if (m_data.pLogFP != NULL)
 		{
-			writePATRParses(parses, m_data.pLogFP, NULL, NULL, &m_data);
+			writePATRParses(parses, m_data.pLogFP, NULL, NULL, 0, &m_data);
 			putc('\n', m_data.pLogFP);
 		}
 		if (stringifyPATRParses(parses, &m_data, pszSentence, &pszXml))
