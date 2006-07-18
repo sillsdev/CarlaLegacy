@@ -1106,6 +1106,16 @@ namespace SIL.PcPatrBrowser
 
 			XmlDocument doc1 = new XmlDocument();
 			doc1.LoadXml(interlinear.OuterXml);
+			XmlNode format = doc1.SelectSingleNode("//Format");
+			if (format != null)
+			{
+				string sBefore = format.InnerText;
+				if (sBefore != null)
+				{
+					string sAfter = sBefore.Replace("\\n", "\n");
+					format.InnerText = sAfter;
+				}
+			}
 			XPathNavigator nav = doc1.CreateNavigator();
 
 			XmlTextWriter writer = new XmlTextWriter(m_sInterFile, null);
