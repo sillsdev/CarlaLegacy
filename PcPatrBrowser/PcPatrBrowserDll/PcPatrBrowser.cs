@@ -125,6 +125,11 @@ namespace SIL.PcPatrBrowser
 		private System.Windows.Forms.MenuItem miFileSaveLanguage;
 		private System.Windows.Forms.MenuItem miFileSaveLangAs;
 		private const string m_ksNoParses = "No parses";
+		private System.Windows.Forms.MenuItem menuItem2;
+		private System.Windows.Forms.MenuItem miViewRefresh;
+		private System.Windows.Forms.ToolBarButton tbbtnRefresh;
+		private System.Windows.Forms.ToolBarButton tbbtbSeparator4;
+		private System.Windows.Forms.ToolBarButton tbbtbSeparator5;
 		private const string m_ksGrammarMessage = "When you click on a node in the tree in the panel above and " +
 			"a grammar file has been loaded, the corresponding rule will show here.";
 
@@ -229,6 +234,7 @@ namespace SIL.PcPatrBrowser
 		}
 		private void InitToolBar()
 		{
+			tbbtnRefresh.Tag = miViewRefresh;
 			tbbtnFirstParse.Tag = miParseFirst;
 			tbbtnFirstSentence.Tag = miSentenceFirst;
 			tbbtnLastParse.Tag = miParseLast;
@@ -457,6 +463,7 @@ namespace SIL.PcPatrBrowser
 			this.menuItem10 = new System.Windows.Forms.MenuItem();
 			this.miFileOpenLanguage = new System.Windows.Forms.MenuItem();
 			this.miFileSaveLanguage = new System.Windows.Forms.MenuItem();
+			this.miFileSaveLangAs = new System.Windows.Forms.MenuItem();
 			this.menuItem9 = new System.Windows.Forms.MenuItem();
 			this.miExit = new System.Windows.Forms.MenuItem();
 			this.miView = new System.Windows.Forms.MenuItem();
@@ -467,6 +474,8 @@ namespace SIL.PcPatrBrowser
 			this.miViewToolBar = new System.Windows.Forms.MenuItem();
 			this.menuItem5 = new System.Windows.Forms.MenuItem();
 			this.miViewRightToLeft = new System.Windows.Forms.MenuItem();
+			this.menuItem2 = new System.Windows.Forms.MenuItem();
+			this.miViewRefresh = new System.Windows.Forms.MenuItem();
 			this.miSentence = new System.Windows.Forms.MenuItem();
 			this.miSentenceFirst = new System.Windows.Forms.MenuItem();
 			this.miSentencePrevious = new System.Windows.Forms.MenuItem();
@@ -497,6 +506,9 @@ namespace SIL.PcPatrBrowser
 			this.tbbtnOpenAnalysis = new System.Windows.Forms.ToolBarButton();
 			this.tbbtnSeparator1 = new System.Windows.Forms.ToolBarButton();
 			this.tbbtnSeparator2 = new System.Windows.Forms.ToolBarButton();
+			this.tbbtnRefresh = new System.Windows.Forms.ToolBarButton();
+			this.tbbtbSeparator4 = new System.Windows.Forms.ToolBarButton();
+			this.tbbtbSeparator5 = new System.Windows.Forms.ToolBarButton();
 			this.tbbtnFirstSentence = new System.Windows.Forms.ToolBarButton();
 			this.tbbtnPreviousSentence = new System.Windows.Forms.ToolBarButton();
 			this.tbbtnNextSentence = new System.Windows.Forms.ToolBarButton();
@@ -508,7 +520,6 @@ namespace SIL.PcPatrBrowser
 			this.tbbtnNextParse = new System.Windows.Forms.ToolBarButton();
 			this.tbbtnLastParse = new System.Windows.Forms.ToolBarButton();
 			this.ilToolBar = new System.Windows.Forms.ImageList(this.components);
-			this.miFileSaveLangAs = new System.Windows.Forms.MenuItem();
 			this.pnlRule.SuspendLayout();
 			this.SuspendLayout();
 			//
@@ -571,6 +582,12 @@ namespace SIL.PcPatrBrowser
 			this.miFileSaveLanguage.Text = "&Save Language File...";
 			this.miFileSaveLanguage.Click += new System.EventHandler(this.miFileSaveLanguage_Click);
 			//
+			// miFileSaveLangAs
+			//
+			this.miFileSaveLangAs.Index = 6;
+			this.miFileSaveLangAs.Text = "Save Language File &As...";
+			this.miFileSaveLangAs.Click += new System.EventHandler(this.miFileSaveLangAs_Click);
+			//
 			// menuItem9
 			//
 			this.menuItem9.Index = 7;
@@ -592,7 +609,9 @@ namespace SIL.PcPatrBrowser
 																				   this.miViewStatusBar,
 																				   this.miViewToolBar,
 																				   this.menuItem5,
-																				   this.miViewRightToLeft});
+																				   this.miViewRightToLeft,
+																				   this.menuItem2,
+																				   this.miViewRefresh});
 			this.miView.Text = "View";
 			//
 			// miViewFeatStruct
@@ -640,6 +659,18 @@ namespace SIL.PcPatrBrowser
 			this.miViewRightToLeft.Index = 6;
 			this.miViewRightToLeft.Text = "Right-to-left Orientation";
 			this.miViewRightToLeft.Click += new System.EventHandler(this.miViewRightToLeft_Click);
+			//
+			// menuItem2
+			//
+			this.menuItem2.Index = 7;
+			this.menuItem2.Text = "-";
+			//
+			// miViewRefresh
+			//
+			this.miViewRefresh.Enabled = false;
+			this.miViewRefresh.Index = 8;
+			this.miViewRefresh.Text = "Refresh";
+			this.miViewRefresh.Click += new System.EventHandler(this.miViewRefresh_Click);
 			//
 			// miSentence
 			//
@@ -850,6 +881,9 @@ namespace SIL.PcPatrBrowser
 																					  this.tbbtnOpenAnalysis,
 																					  this.tbbtnSeparator1,
 																					  this.tbbtnSeparator2,
+																					  this.tbbtnRefresh,
+																					  this.tbbtbSeparator4,
+																					  this.tbbtbSeparator5,
 																					  this.tbbtnFirstSentence,
 																					  this.tbbtnPreviousSentence,
 																					  this.tbbtnNextSentence,
@@ -881,6 +915,20 @@ namespace SIL.PcPatrBrowser
 			// tbbtnSeparator2
 			//
 			this.tbbtnSeparator2.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
+			//
+			// tbbtnRefresh
+			//
+			this.tbbtnRefresh.Enabled = false;
+			this.tbbtnRefresh.ImageIndex = 9;
+			this.tbbtnRefresh.ToolTipText = "Refresh";
+			//
+			// tbbtbSeparator4
+			//
+			this.tbbtbSeparator4.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
+			//
+			// tbbtbSeparator5
+			//
+			this.tbbtbSeparator5.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
 			//
 			// tbbtnFirstSentence
 			//
@@ -936,12 +984,6 @@ namespace SIL.PcPatrBrowser
 			this.ilToolBar.ImageSize = new System.Drawing.Size(16, 16);
 			this.ilToolBar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilToolBar.ImageStream")));
 			this.ilToolBar.TransparentColor = System.Drawing.Color.Fuchsia;
-			//
-			// miFileSaveLangAs
-			//
-			this.miFileSaveLangAs.Index = 6;
-			this.miFileSaveLangAs.Text = "Save Language File &As...";
-			this.miFileSaveLangAs.Click += new System.EventHandler(this.miFileSaveLangAs_Click);
 			//
 			// PcPatrBrowserApp
 			//
@@ -1038,36 +1080,43 @@ namespace SIL.PcPatrBrowser
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
 				m_sLogOrAnaFileName = dlg.FileName;
-				Cursor.Current = Cursors.WaitCursor;
-				string sGrammarFile;
-				m_doc = new PcPatrDocument(m_sLogOrAnaFileName, out sGrammarFile);
-				if (sGrammarFile != null)
-				{
-					m_sGrammarFileName = sGrammarFile;
-					LoadGrammarFile();
-				}
-				else
-				{
-					richTextBox1.Text = m_ksGrammarMessage;
-				}
-
-				PcPatrSentence sent = m_doc.CurrentSentence;
-				if (sent != null)
-				{
-					ShowParseTree(sent, sent.FirstParse);
-				}
-				else
-				{
-					m_tree.Root = null;
-					m_tree.Invalidate();
-					wbFeatureStructure.Navigate(m_sInitFeatureMessagePath);
-					sbpnlSentence.Text = m_ksNoSentences;
-					sbpnlParse.Text = m_ksNoParses;
-				}
-				ShowInterlinear(sent);
-				Cursor.Current = Cursors.Arrow;
-				SetTitle();
+				miViewRefresh.Enabled = true;
+				tbbtnRefresh.Enabled = true;
+				LoadAnaFile();
 			}
+		}
+
+		private void LoadAnaFile()
+		{
+			Cursor.Current = Cursors.WaitCursor;
+			string sGrammarFile;
+			m_doc = new PcPatrDocument(m_sLogOrAnaFileName, out sGrammarFile);
+			if (sGrammarFile != null)
+			{
+				m_sGrammarFileName = sGrammarFile;
+				LoadGrammarFile();
+			}
+			else
+			{
+				richTextBox1.Text = m_ksGrammarMessage;
+			}
+
+			PcPatrSentence sent = m_doc.CurrentSentence;
+			if (sent != null)
+			{
+				ShowParseTree(sent, sent.FirstParse);
+			}
+			else
+			{
+				m_tree.Root = null;
+				m_tree.Invalidate();
+				wbFeatureStructure.Navigate(m_sInitFeatureMessagePath);
+				sbpnlSentence.Text = m_ksNoSentences;
+				sbpnlParse.Text = m_ksNoParses;
+			}
+			ShowInterlinear(sent);
+			Cursor.Current = Cursors.Arrow;
+			SetTitle();
 		}
 
 		private void FileOpenGrammar_Click(object sender, System.EventArgs e)
@@ -1823,6 +1872,12 @@ namespace SIL.PcPatrBrowser
 
 			if (WindowState == FormWindowState.Normal)
 				m_RectNormal = DesktopBounds;
+		}
+
+		private void miViewRefresh_Click(object sender, System.EventArgs e)
+		{
+			if (File.Exists(m_sLogOrAnaFileName))
+				LoadAnaFile();
 		}
 
 	}
