@@ -212,6 +212,8 @@ char *		pszLine;
 int		i;
 int		iIndex = -1;
 char *		pszDefaultNonalpha;
+size_t  	uiParserBufferSize   = 0;
+#define SIZEOFPARSERBUFFER 1000000
 
 memset(apszRecord, 0, sizeof(apszRecord));
 pszDefaultNonalpha        = duplicateString( " " );
@@ -308,7 +310,9 @@ while ((pszLine = readLineFromFile(pInputFP_in, NULL, 0)) != NULL)
 	else if (strncmp(pszLine, "\\parse", 6) == 0)
 	{
 	iIndex = SENTENCEPARSEBEG;
-	apszRecord[iIndex] = duplicateString( pszLine+6 );
+	apszRecord[iIndex] = allocMemory( SIZEOFPARSERBUFFER );
+	uiParserBufferSize = SIZEOFPARSERBUFFER;
+	strcat(apszRecord[iIndex], pszLine+6);
 	}
 	else if (strncmp(pszLine, "\\endparse", 9) == 0)
 	{
@@ -344,7 +348,11 @@ while ((pszLine = readLineFromFile(pInputFP_in, NULL, 0)) != NULL)
 					pszLine);
 		*/
 		int cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
-		apszRecord[iIndex] = reallocMemory(apszRecord[iIndex], cch + 1);
+		if (cch >= uiParserBufferSize)
+		  {
+		apszRecord[iIndex] = reallocMemory(apszRecord[iIndex], cch + SIZEOFPARSERBUFFER);
+		uiParserBufferSize += SIZEOFPARSERBUFFER;
+		  }
 		strcat(apszRecord[iIndex], pszLine);
 #if 0
 	  }
