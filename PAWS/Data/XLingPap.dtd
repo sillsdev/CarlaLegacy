@@ -1,39 +1,46 @@
 <!-- XLingPap.dtd
 	 XML/XSLT-based Linguistic paper document type definition
+	 Version 1.10.0
 	 (Revision history is at the end.)
   -->
 <!-- Entity definitions -->
 <!ENTITY % embedded "langData | gloss | exampleRef | sectionRef | appendixRef | citation | comment | object | br | endnote | endnoteRef | q | img | genericRef | link">
 <!ENTITY % chunk "p | pc | example | table | chart | tree | blockquote | ol | ul | dl">
+<!-- fontinfo contains attributes common to elements dealing with font or other special issues.
+	   Note that we need to allow for xsl-foSpecial even for langData items in the cases where Charis SIL or Doulos SIL
+	   are used and one needs to add a line-height parameter to get things to come out correctly. -->
+<!ENTITY % fontinfo "color CDATA #IMPLIED
+	cssSpecial CDATA #IMPLIED
+	xsl-foSpecial CDATA #IMPLIED
+	font-family CDATA #IMPLIED
+	font-size CDATA #IMPLIED
+	font-style (normal | italic | oblique | backslant | inherit) #IMPLIED
+	font-variant (normal | small-caps | inherit) #IMPLIED
+	font-weight (normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit) #IMPLIED">
 <!-- A paper contains various language information, optional frontmatter,
 	 either parts, chapters, or sections (at the top level), and optional
 	 backmatter.
-
-	 The CSS attribute allows one to specify a particular cascading style
-	 sheet file.  The default is given in the XSLT template.
-
-	 One can also embed styles.
   -->
-<!ELEMENT lingPaper (styles?, language*, frontMatter?, ((chapterBeforePart?, part*) | chapter* | section1*), backMatter?, languages?, styles?, comment?)>
+<!ELEMENT lingPaper (frontMatter?, ((chapterBeforePart?, part*) | chapter* | section1*), backMatter?, languages?, types?, comment?)>
 <!ATTLIST lingPaper
-	css CDATA #IMPLIED
+	partlabel CDATA #IMPLIED
+	chapterlabel CDATA #IMPLIED
 >
-<!-- Any CSS styles that are to be imbedded in the resulting html -->
-<!ELEMENT styles (#PCDATA | style)*>
-<!ELEMENT style (#PCDATA)>
 <!-- Languages groups a set of language definitions.  This is at the end because it looks better in a tool like XMLMind -->
 <!ELEMENT languages (language+)>
-<!-- The content of language is the CSS class name to use in formating language-specific items. -->
-<!ELEMENT language (#PCDATA)>
+<!ELEMENT language EMPTY>
 <!ATTLIST language
 	id ID #REQUIRED
 	name CDATA #IMPLIED
 	ethnCode CDATA #IMPLIED
+	ISO639-3Code CDATA #IMPLIED
 	rtl (yes | no) #IMPLIED
+	%fontinfo;
 >
 <!-- Front matter -->
-<!ELEMENT frontMatter (title, (author, affiliation*)+, presentedAt?, date?, version?, contents?, acknowledgements?, abstract?)>
+<!ELEMENT frontMatter (title, subtitle?, (author, affiliation*)+, presentedAt?, date?, version?, contents?, acknowledgements?, (preface | abstract)?)>
 <!ELEMENT title (#PCDATA | %embedded;)*>
+<!ELEMENT subtitle (#PCDATA | %embedded;)*>
 <!ELEMENT author (#PCDATA)>
 <!ELEMENT affiliation (#PCDATA)>
 <!ELEMENT presentedAt (#PCDATA | %embedded;)*>
@@ -47,6 +54,10 @@
 <!ATTLIST abstract
 	label CDATA #IMPLIED
 >
+<!ELEMENT preface (%chunk;)+>
+<!ATTLIST preface
+	label CDATA #IMPLIED
+>
 <!ELEMENT contents EMPTY>
 <!ATTLIST contents
 	showLevel (1 | 2 | 3 | 4 | 5 | 6) "3"
@@ -56,38 +67,47 @@
 <!ELEMENT part (secTitle, (%chunk;)*, chapter*)>
 <!ATTLIST part
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT chapter (secTitle, (%chunk;)*, section1*)>
 <!ATTLIST chapter
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT chapterBeforePart (secTitle, (%chunk;)*, section1*)>
 <!ATTLIST chapterBeforePart
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT section1 (secTitle, (%chunk;)*, section2*)>
 <!ATTLIST section1
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT section2 (secTitle, (%chunk;)*, section3*)>
 <!ATTLIST section2
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT section3 (secTitle, (%chunk;)*, section4*)>
 <!ATTLIST section3
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT section4 (secTitle, (%chunk;)*, section5*)>
 <!ATTLIST section4
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT section5 (secTitle, (%chunk;)*, section6*)>
 <!ATTLIST section5
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT section6 (secTitle, (%chunk;)*)>
 <!ATTLIST section6
 	id ID #REQUIRED
+	type IDREF #IMPLIED
 >
 <!ELEMENT secTitle (#PCDATA | %embedded;)*>
 <!-- references to sections, etc. -->
@@ -106,24 +126,24 @@
 <!-- blockquote -->
 <!ELEMENT blockquote (#PCDATA | %embedded; | %chunk;)*>
 <!ATTLIST blockquote
-	class CDATA #IMPLIED
 	cite CDATA #IMPLIED
+	type IDREF #IMPLIED
 >
 <!-- quote -->
 <!ELEMENT q (#PCDATA | %embedded;)*>
 <!ATTLIST q
-	class CDATA #IMPLIED
 	cite CDATA #IMPLIED
+	type IDREF #IMPLIED
 >
 <!-- ordered list -->
-<!ELEMENT ol (li | ol | ul)*>
+<!ELEMENT ol (li)*>
 <!ATTLIST ol
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
 >
 <!-- unordered list -->
-<!ELEMENT ul (li | ol | ul)*>
+<!ELEMENT ul (li)*>
 <!ATTLIST ul
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
 >
 <!-- list element -->
 <!ELEMENT li (#PCDATA | %embedded; | %chunk;)*>
@@ -136,12 +156,30 @@
 <!ELEMENT dt (#PCDATA | %embedded; | %chunk;)*>
 <!-- definition description -->
 <!ELEMENT dd (#PCDATA | %embedded; | %chunk;)*>
-<!-- object is a generic way to tag a special kind of object.  One can
-	 use the CSS stylesheet to format these objects by referring to the
-	 class attribute.  -->
+<!-- object is a generic way to tag a special kind of object.  The type attribute
+	 defines any formatting needed to show the object.
+	 -->
 <!ELEMENT object (#PCDATA | object)*>
 <!ATTLIST object
-	class CDATA #REQUIRED
+	type IDREF #REQUIRED
+>
+<!-- types group a set of types -->
+<!ELEMENT types (type | comment)*>
+<!-- a type element allows for customization via either CSS or XSL-FO.
+	 The before CDATA is a way to input canned text prior to the content(but only works with element object).
+	 The after CDATA is a way to input canned text after the content(but only works with element object).
+	 The id allows it to be referenced by object elements.
+	 cssSpecial allows one to write CSS-specific properties
+	 xsl-foSpecific allows one to write XSL-FO-specific properties
+	 types allows one to combine several other type elements in a new one; the user is responsible to avoid duplicates
+	  -->
+<!ELEMENT type EMPTY>
+<!ATTLIST type
+	after CDATA #IMPLIED
+	before CDATA #IMPLIED
+	id ID #REQUIRED
+	types IDREFS #IMPLIED
+	%fontinfo;
 >
 <!-- breaks may be used in charts and trees or other places as required. -->
 <!ELEMENT br EMPTY>
@@ -186,12 +224,12 @@
 <!ATTLIST listSingle
 	letter ID #REQUIRED
 >
-<!ELEMENT interlinear (lineGroup | free | interlinear)+>
+<!ELEMENT interlinear (lineGroup | free | interlinear | phrase)+>
 <!ELEMENT lineGroup (line | conflatedLine)+>
 <!ELEMENT line ((langData | gloss)+ | wrd+)>
 <!ELEMENT wrd (#PCDATA | %embedded;)*>
 <!ATTLIST wrd
-	lang IDREF #REQUIRED
+	lang IDREF #IMPLIED
 >
 <!ELEMENT conflatedLine (lineSet | conflation)+>
 <!ELEMENT lineSet (lineSetRow+)>
@@ -201,90 +239,120 @@
 <!ELEMENT lineSetRow (wrd+)>
 <!ELEMENT conflation (lineSet+)>
 <!ELEMENT free (#PCDATA | %embedded;)*>
-<!ELEMENT listInterlinear (lineGroup | free | interlinear)+>
+<!ELEMENT listInterlinear (lineGroup | free | interlinear | phrase)+>
 <!ATTLIST listInterlinear
 	letter ID #REQUIRED
 >
+<!-- EMELD interlinear items
+	Augmented by morphset so we can get XMLmind to show it as a table.
+	Also changed word to iword (for interlinear word).
+	-->
+<!ELEMENT item (#PCDATA| %embedded;)*>
+<!ATTLIST item
+	type (cf | gls | hn | msa | pos | punct | txt) #REQUIRED
+	lang IDREF #REQUIRED
+>
+<!ELEMENT morph (item+)>
+<!ATTLIST morph
+	type CDATA #REQUIRED
+>
+<!-- N.B. EMELD does not use morphset; we do so we can properly format the data in an XML editor like XMLmind that uses CSS to display data  -->
+<!ELEMENT morphemes (morphset)>
+<!ELEMENT morphset (morph+)>
+<!ELEMENT phrase (words, item?)>
+<!-- N.B. EMELD uses word, but we already have that defined.  so we're using iword for interlinear word -->
+<!ELEMENT iword (morphemes | item)+>
+<!ELEMENT words (iword+)>
 <!ELEMENT table (caption?, headerRow?, (row | tr)*, endCaption?)>
 <!ATTLIST table
 	border CDATA #IMPLIED
-	class CDATA #IMPLIED
 	cellpadding CDATA #IMPLIED
 	cellspacing CDATA #IMPLIED
+	type IDREF #IMPLIED
 >
 <!ELEMENT caption (#PCDATA | %embedded;)*>
 <!ATTLIST caption
-	align (left | center | right | justify) "left"
-	class CDATA #IMPLIED
+	align (left | center | right | justify) "center"
+	type IDREF #IMPLIED
 	colspan CDATA #IMPLIED
 	rowspan CDATA #IMPLIED
 	valign (top | middle | bottom | baseline) "top"
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT endCaption (#PCDATA | %embedded;)*>
 <!ATTLIST endCaption
-	align (left | center | right | justify) "left"
-	class CDATA #IMPLIED
+	align (left | center | right | justify) "center"
+	type IDREF #IMPLIED
 	colspan CDATA #IMPLIED
 	rowspan CDATA #IMPLIED
 	valign (top | middle | bottom | baseline) "top"
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT headerRow (headerCol+)>
 <!ATTLIST headerRow
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT headerCol (#PCDATA | %embedded; | table)*>
 <!ATTLIST headerCol
 	align (left | center | right | justify) "left"
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
 	colspan CDATA #IMPLIED
 	rowspan CDATA #IMPLIED
 	valign (top | middle | bottom | baseline) "top"
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT th (#PCDATA | %embedded; | table)*>
 <!ATTLIST th
 	align (left | center | right | justify) "left"
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
 	colspan CDATA #IMPLIED
 	rowspan CDATA #IMPLIED
 	valign (top | middle | bottom | baseline) "top"
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT row (col+)>
 <!ATTLIST row
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT tr (th | td)+>
 <!ATTLIST tr
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT col (#PCDATA | %embedded; | table | interlinear)*>
 <!ATTLIST col
 	align (left | center | right | justify) "left"
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
 	colspan CDATA #IMPLIED
 	rowspan CDATA #IMPLIED
 	valign (top | middle | bottom | baseline) "top"
 	width CDATA #IMPLIED
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT td (#PCDATA | %embedded; | table | interlinear)*>
 <!ATTLIST td
 	align (left | center | right | justify) "left"
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
 	colspan CDATA #IMPLIED
 	rowspan CDATA #IMPLIED
 	valign (top | middle | bottom | baseline) "top"
 	width CDATA #IMPLIED
+	direction (ltr | rtl | inherit) #IMPLIED
 >
 <!ELEMENT chart (#PCDATA | %embedded; | ol | ul | dl)*>
 <!ATTLIST chart
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
 >
 <!ELEMENT tree (#PCDATA | p | img)*>
 <!ATTLIST tree
-	class CDATA #IMPLIED
+	type IDREF #IMPLIED
 >
 <!ELEMENT img EMPTY>
 <!ATTLIST img
 	src CDATA #REQUIRED
+	description CDATA #IMPLIED
 >
 <!-- there's more... -->
 <!-- langData is a way to tag some text as belonging to a particular language. -->
@@ -316,7 +384,7 @@
 <!-- generic references (to sections, examples, endnotes, etc.) -->
 <!ELEMENT genericRef (#PCDATA | %embedded;)*>
 <!ATTLIST genericRef
-	ref IDREF #REQUIRED
+	gref IDREF #REQUIRED
 >
 <!-- a media-independent link -->
 <!ELEMENT link (#PCDATA | %embedded;)*>
@@ -324,7 +392,7 @@
 	href CDATA #REQUIRED
 >
 <!-- backmatter includes appendices, endnotes and references -->
-<!ELEMENT backMatter (appendix*, endnotes?, references?)>
+<!ELEMENT backMatter (acknowledgements?, appendix*, endnotes?, references?)>
 <!-- endnotes -->
 <!ELEMENT endnotes EMPTY>
 <!ATTLIST endnotes
@@ -338,12 +406,13 @@
 >
 <!ELEMENT endnoteRef EMPTY>
 <!ATTLIST endnoteRef
-	ref IDREF #REQUIRED
+	note IDREF #REQUIRED
 >
 <!-- appendices are handled like chapters -->
 <!ELEMENT appendix (secTitle, (%chunk; | section1 | section2)*)>
 <!ATTLIST appendix
 	id ID #REQUIRED
+	label CDATA #IMPLIED
 >
 <!-- references are organized by author.
 	 The intent is that only those references which are cited via a citation
@@ -362,24 +431,25 @@
 <!-- Every work has a date and a title.
 	 There are a number of kinds of references, each of which has different
 	 content. -->
-<!ELEMENT refWork (refDate, refTitle, (article | book | collection | dissertation | ms | paper | proceedings | thesis | webPage), comment?)>
+<!ELEMENT refWork (refDate, refTitle, (article | book | collection | dissertation | ms | paper | proceedings | thesis | webPage), url?, comment?)>
 <!ATTLIST refWork
 	id ID #REQUIRED
 >
 <!ELEMENT refDate (#PCDATA)>
 <!ELEMENT refTitle (#PCDATA | %embedded;)*>
 <!-- journal article -->
-<!ELEMENT article (jTitle, jVol, jPages, publisher?, location?)>
+<!ELEMENT article (jTitle, jVol, jPages, location?, publisher? )>
 <!ELEMENT jTitle (#PCDATA)>
 <!ELEMENT jVol (#PCDATA)>
 <!ELEMENT jPages (#PCDATA)>
 <!-- book -->
-<!ELEMENT book (series?, publisher, location)>
+<!ELEMENT book (translatedBy?, series?, location, publisher)>
+<!ELEMENT translatedBy (#PCDATA)>
 <!ELEMENT series (#PCDATA)>
 <!ELEMENT publisher (#PCDATA)>
 <!ELEMENT location (#PCDATA)>
 <!-- paper from a collection volume -->
-<!ELEMENT collection (collEd, collTitle, collVol?, collPage?, publisher, location?)>
+<!ELEMENT collection (collEd, collTitle, collVol?, collPage?, location?, publisher)>
 <!ELEMENT collEd (#PCDATA)>
 <!ATTLIST collEd
 	plural (no | yes) "yes"
@@ -388,9 +458,9 @@
 <!ELEMENT collVol (#PCDATA)>
 <!ELEMENT collPage (#PCDATA)>
 <!-- PhD dissertation -->
-<!ELEMENT dissertation (institution, location, published?)>
+<!ELEMENT dissertation (institution, location?, published?)>
 <!ELEMENT institution (#PCDATA)>
-<!ELEMENT published (publisher, location, pubDate)>
+<!ELEMENT published (location, publisher, pubDate)>
 <!ELEMENT pubDate (#PCDATA)>
 <!-- ms (manuscript) -->
 <!ELEMENT ms (institution)>
@@ -398,7 +468,7 @@
 <!ELEMENT paper (conference, location?)>
 <!ELEMENT conference (#PCDATA)>
 <!-- proceedings paper from a conference -->
-<!ELEMENT proceedings (procEd, procTitle, procVol?, procPage?, publisher, location?)>
+<!ELEMENT proceedings (procEd?, procTitle, procVol?, procPage?, location?, publisher)>
 <!ELEMENT procEd (#PCDATA)>
 <!ATTLIST procEd
 	plural (no | yes) "yes"
@@ -407,10 +477,11 @@
 <!ELEMENT procVol (#PCDATA)>
 <!ELEMENT procPage (#PCDATA)>
 <!-- MA thesis -->
-<!ELEMENT thesis (institution, location, published?)>
+<!ELEMENT thesis (institution, location?, published?)>
 <!-- web page -->
-<!ELEMENT webPage ((institution | publisher)?, location?, url)>
+<!ELEMENT webPage ((institution | publisher)?, location?, url, dateAccessed?)>
 <!ELEMENT url (#PCDATA)>
+<!ELEMENT dateAccessed (#PCDATA)>
 <!-- In a citation,
 	 one may optionally not include the author's name
 		   (e.g. when one is citing multiple works by the same author);
@@ -1185,7 +1256,8 @@
 <!ENTITY nbhy "&#x2011;">
 <!-- non-braking hyphen, U+2011 -->
 <!-- REVISION HISTORY
-1.9.0 19-Apr-2005 Andy Black  Modifications to make editing with XmlMind nicer
+1.10.0 01-Aug-2006 Andy Black Added types/type; font info to language.; changed endnoteRef's IDREF from ref to note to make it work better in XMLmind editor.  Removed content for language; removed css attribute of lingPaper; remove styles and style.  Add EMELD-like morpheme-aligned interlinear.
+1.9.0 19-Apr-2006 Andy Black  Modifications to make editing with XmlMind nicer
 1.8.0 29-Nov-2004 Andy Black  Add styles element so can imbed CSS styles.
 1.7.1 14-Oct-2004  Andy Black  Allow width elements on columns
 1.7.0 03-Jun-2004  Andy Black  Add link element (for media) (skipped 1.6 to keep in sync with XLingPap1.xsl)

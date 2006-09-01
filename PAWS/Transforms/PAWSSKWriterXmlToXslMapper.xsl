@@ -163,7 +163,7 @@ comment template
 -->
   <xsl:template match="//comment">
 	<xsl:element name="object">
-	  <xsl:attribute name="class"><xsl:text>comment</xsl:text></xsl:attribute>
+	  <xsl:attribute name="type"><xsl:text>tComment</xsl:text></xsl:attribute>
 	  <xsl:value-of select="."/>
 	</xsl:element>
   </xsl:template>
@@ -620,7 +620,7 @@ DoInterlinear
 					  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
 					</xsl:element>
 				  </xsl:element>
-				  <object class="comment">ENTER AN EXAMPLE HERE.</object>
+				  <object type="tComment">ENTER AN EXAMPLE HERE.</object>
 				</langData>
 			  </line>
 			  <xsl:element name="xsl:call-template">

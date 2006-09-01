@@ -24,10 +24,6 @@ Main template
 			<xsl:text>type="text/xsl" href="XLingPap1.xsl"</xsl:text>
 		</xsl:processing-instruction>
 		<lingPaper>
-			<xsl:attribute name="css">
-				<xsl:value-of select="//language/langAbbr"/>
-				<xsl:text>WriteUp.css</xsl:text>
-			</xsl:attribute>
 			<frontMatter>
 				<title>PAWS-Generated Grammar Write-Up<br/> for <xsl:value-of select="//language/langName"/>
 				</title>
@@ -62,9 +58,9 @@ Main template
 				<references/>
 			</backMatter>
 			<languages>
-				<language id="lPAWSSKEnglish">PAWSSKEnglish</language>
-				<language id="lGloss">GlossLanguage</language>
-				<language>
+				<language id="lPAWSSKEnglish" name="PAWSSKEnglish" color="black" font-style="italic"></language>
+				<language id="lGloss" name="GlossLanguage" color="#446688"></language>
+				<language name="vernacular">
 					<xsl:attribute name="id">
 						<xsl:text>l</xsl:text>
 						<xsl:value-of select="//language/langAbbr"/>
@@ -74,9 +70,11 @@ Main template
 							<xsl:text>yes</xsl:text>
 						</xsl:attribute>
 					</xsl:if>
-					<xsl:text>vernacular</xsl:text>
 				</language>
 			</languages>
+			<types>
+			<type id="tComment" font-weight="bold" color="red"/>
+			</types>
 		</lingPaper>
 	</xsl:template>
 	<!--
@@ -111,7 +109,7 @@ DoFree
 	<xsl:template name="DoFree">
 		<free>
 			<gloss lang="lGloss">
-				<object class="comment">ENTER FREE TRANSLATION HERE.</object>
+				<object type="tComment">ENTER FREE TRANSLATION HERE.</object>
 			</gloss>
 		</free>
 	</xsl:template>
@@ -125,7 +123,7 @@ DoGloss
 	<xsl:template name="DoGloss">
 		<line>
 			<gloss lang="lGloss">
-				<object class="comment">ENTER GLOSS HERE</object>
+				<object type="tComment">ENTER GLOSS HERE</object>
 			</gloss>
 		</line>
 	</xsl:template>
