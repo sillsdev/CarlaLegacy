@@ -58,13 +58,44 @@ Main template
 				<references/>
 			</backMatter>
 			<languages>
-				<language id="lPAWSSKEnglish" name="PAWSSKEnglish" color="black" font-style="italic"></language>
-				<language id="lGloss" name="GlossLanguage" color="#446688"></language>
+				<language id="lPAWSSKEnglish" name="PAWSSKEnglish" color="black" font-style="italic"/>
+				<language id="lGloss" name="GlossLanguage" color="#446688"/>
 				<language name="vernacular">
 					<xsl:attribute name="id">
 						<xsl:text>l</xsl:text>
 						<xsl:value-of select="//language/langAbbr"/>
 					</xsl:attribute>
+					<xsl:attribute name="font-family">
+						<xsl:value-of select="//language/font/fontName"/>
+					</xsl:attribute>
+					<xsl:attribute name="font-size">
+						<xsl:value-of select="//language/font/fontSize"/>
+						<xsl:text>pt</xsl:text>
+					</xsl:attribute>
+					<xsl:attribute name="color">
+						<xsl:value-of select="//language/font/fontColor"/>
+					</xsl:attribute>
+					<xsl:if test="//language/font/@bold='True'">
+						<xsl:attribute name="font-weight">
+							<xsl:text>bold</xsl:text>
+						</xsl:attribute>
+					</xsl:if>
+					<xsl:if test="//language/font/@italic='True'">
+						<xsl:attribute name="font-style">
+							<xsl:text>italic</xsl:text>
+						</xsl:attribute>
+					</xsl:if>
+					<xsl:if test="//language/font/@under='True' or //language/font/@strike='True'">
+						<xsl:attribute name="cssSpecial">
+							<xsl:text>text-decoration:</xsl:text>
+							<xsl:choose>
+								<xsl:when test="//language/font/@under='True'">
+									<xsl:text>underline;</xsl:text>
+								</xsl:when>
+								<xsl:otherwise>line-through;</xsl:otherwise>
+							</xsl:choose>
+						</xsl:attribute>
+					</xsl:if>
 					<xsl:if test="//language/font/@rtl='True'">
 						<xsl:attribute name="rtl">
 							<xsl:text>yes</xsl:text>
@@ -73,7 +104,7 @@ Main template
 				</language>
 			</languages>
 			<types>
-			<type id="tComment" font-weight="bold" color="red"/>
+				<type id="tComment" font-weight="bold" color="red"/>
 			</types>
 		</lingPaper>
 	</xsl:template>
