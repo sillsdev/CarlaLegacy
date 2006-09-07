@@ -13,7 +13,7 @@ BOOL        m_bCsAcpEstablished = false;
 //  UTF-8 encodings (or no change is made if not).
 CSUTILDLL_API UINT GetCSAcp(void)
 {
-#ifndef	rde273	// CSU should always only deal with UTF8 (MLang doesn't work well with some Unicode ranges)
+#ifdef  _UNICODE // CSU should always only deal with UTF8 (MLang doesn't work well with some Unicode ranges)
 	m_csacp = eUTF8;
 #endif	// rde273
 	return (UINT)m_csacp;

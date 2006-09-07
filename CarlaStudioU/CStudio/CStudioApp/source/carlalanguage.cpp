@@ -292,6 +292,7 @@ BOOL CCarlaLanguage::open(LPCTSTR lpszPathName)
 		else if(sMarker == _T("name"))
 			m_sName = sField;
 		else if(sMarker == _T("abrev"))
+#define rde273
 #ifndef rde273
 		{
 			setAbrev(sField);
