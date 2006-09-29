@@ -180,6 +180,22 @@
 							<content>realis</content>
 						</col>
 					</row>
+					<row show="swIPInflFeatPassive">
+						<col>
+							<content>other</content>
+						</col>
+						<col>
+							<content>passive</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatParticiple">
+						<col>
+							<content>other</content>
+						</col>
+						<col>
+							<content>participle</content>
+						</col>
+					</row>
 					<row show="swIPInflFeatFinite">
 						<col>
 							<content>other</content>
@@ -807,7 +823,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<content/>
 			</p>
 			<example show="swIPAuxYes">
-						<interlinear exampleLoc="ip/auxExample"/>
+				<interlinear exampleLoc="ip/auxExample"/>
 			</example>
 			<p>
 				<content>In some languages verbal negation is an auxiliary element, while in others it is simply a verbal affix. English has both the negative auxiliary </content>
@@ -864,8 +880,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<langName/>
 				<content> include:</content>
 			</p>
-<example show="swIPNegAuxNotNoVerb">
-			   <table border="1">
+			<example show="swIPNegAuxNotNoVerb">
+				<table border="1">
 					<caption>
 						<content>Negative Auxiliaries</content>
 					</caption>
@@ -1212,6 +1228,12 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPInflFeatRealis">
 		<whenValue element="ip/ipInflFeatRealis" attr="checked" value="yes"/>
 	</showWhen>
+	<showWhen id="swIPInflFeatPassive">
+		<whenValue element="ip/ipInflFeatPassive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatParticiple">
+		<whenValue element="ip/ipInflFeatParticiple" attr="checked" value="yes"/>
+	</showWhen>
 	<showWhen id="swIPInflFeatFinite">
 		<whenValue element="ip/ipInflFeatFinite" attr="checked" value="yes"/>
 	</showWhen>
@@ -1443,9 +1465,9 @@ Some languages are not really pro-drop languages, but at least some of the prono
 		<or/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 	</showWhen>
-<showWhen id="swIPNegAuxNotNoVerb">
+	<showWhen id="swIPNegAuxNotNoVerb">
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
-</showWhen>
+	</showWhen>
 	<showWhen id="swIPNegVerb">
 		<whenValue element="ip" attr="negAux" value="noVerb"/>
 		<or/>

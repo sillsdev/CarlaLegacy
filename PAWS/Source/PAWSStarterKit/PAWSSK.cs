@@ -101,6 +101,7 @@ namespace PAWSStarterKit
 		private XslTransform m_XslWriterTransform = new XslTransform();
 		private XslTransform m_XslXLingPap1Transform = new XslTransform();
 		private XslTransform m_XslExampleTransform = new XslTransform();
+		private XslTransform m_XslUpgradeTransform = new XslTransform();
 		System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(PAWSSKForm));
 		private AxSHDocVw.AxWebBrowser axWebBrowser;
 		private ToolBar tbar;
@@ -1251,7 +1252,8 @@ namespace PAWSStarterKit
 				}
 				// produce the htm form, too
 				m_XslXLingPap1Transform.Load(strUserWriterXsl);
-				string strUserWriterHtmlFile = Path.GetFileNameWithoutExtension(m_strUserWriterFile) +  ".htm";
+				string strUserWriterFileName = Path.GetFileNameWithoutExtension(m_strUserWriterFile) +  ".htm";
+				string strUserWriterHtmlFile = Path.Combine(strUserWriterDir, strUserWriterFileName);
 				m_XslXLingPap1Transform.Transform(m_strUserWriterFile, strUserWriterHtmlFile, null);
 				// now change the DTD in the xml form so it can be edited with XMLmind
 				// (we have to do it in this order or the transformation will not work)
@@ -1400,7 +1402,9 @@ namespace PAWSStarterKit
 				}
 				// create language specific style sheets
 				createPageStyleSheet();
+#if NeedWriterStyleFile
 				createWriterStyleSheet();
+#endif
 				// save user's answer file
 				if (m_strUserAnswerFile == null)
 					doSaveAnswerFileDialog();
@@ -1592,7 +1596,21 @@ namespace PAWSStarterKit
 		{
 			try
 			{
-				m_XmlDoc.Load(strAnswerFile);
+				try
+				{
+					m_XmlDoc.Load(strAnswerFile);
+				}
+				catch (Exception exc)
+				{
+					// try to update the version
+					string strTransformsPath = Path.Combine(m_strAppPath, @"VersionUpgradeTransforms");
+					m_XslUpgradeTransform.Load(Path.Combine(strTransformsPath, "Beta4.4ToBeta4.5.xsl"));
+					string strTempPath = setWorkingPath("Temp");
+					string strUpgradedAnswerFile = Path.Combine(strTempPath, "upgrade.paw");
+					m_XslUpgradeTransform.Transform(strAnswerFile, strUpgradedAnswerFile, null);
+					m_XmlDoc.Load(strUpgradedAnswerFile);
+					File.Copy(strUpgradedAnswerFile, strAnswerFile, true);
+				}
 				m_strLanguageName = getXmlElementContent("//language/langName");
 				m_strLanguageAbbreviation = getXmlElementContent("//language/langAbbr");
 				string strBool = getXmlElementAttribute("//language/font/@rtl");
@@ -1607,9 +1625,14 @@ namespace PAWSStarterKit
 				setWorkingPaths();
 				// if working subdirs are empty, create them
 				string[] astrHtmFiles = Directory.GetFiles(m_strHtmsPath, "*.htm");
+#if NeedWriterStyleFile
 				if ((astrHtmFiles.Length == 0) ||
 					(!File.Exists(getPageStyleFile())) ||
 					(!File.Exists(getWriterStyleFile())))
+#else
+				if ((astrHtmFiles.Length == 0) ||
+					(!File.Exists(getPageStyleFile())))
+#endif
 				{
 					DialogResult dr = MessageBox.Show("The language in file " + strAnswerFile + " needs to have its working files initialized.\n" +
 						"Do you want to initialize them now?", "Missing working files",
@@ -1620,8 +1643,10 @@ namespace PAWSStarterKit
 							createHTMs();
 						if (!File.Exists(getPageStyleFile()))
 							createPageStyleSheet();
+#if NeedWriterStyleFile
 						if (!File.Exists(getWriterStyleFile()))
 							createWriterStyleSheet();
+#endif
 					}
 					else
 						sayGoodBye();
@@ -1641,10 +1666,12 @@ namespace PAWSStarterKit
 		{
 			createStyleSheet("PAWSStarterKitMaster.css", getPageStyleFile());
 		}
+#if NeedWriterStyleFile
 		void createWriterStyleSheet()
 		{
 			createStyleSheet("WriteUpMaster.css", getWriterStyleFile());
 		}
+#endif
 		void createStyleSheet(string strMasterCss, string strUserStyleFile)
 		{
 			const string strStyles = @"Styles\";
@@ -1698,11 +1725,13 @@ namespace PAWSStarterKit
 			return Path.Combine(m_strStylesPath,
 				m_strLanguageAbbreviation + m_strPAWSStarterKitCSS);
 		}
+#if NeedWriterStyleFile
 		string getWriterStyleFile()
 		{
 			return Path.Combine(Path.GetDirectoryName(m_strUserWriterFile),
 				m_strLanguageAbbreviation + m_strWriteUpCSS);
 		}
+#endif
 		void sayGoodBye()
 		{
 			MessageBox.Show("Exiting program.\nGood Bye!", "Canceled Initialization",

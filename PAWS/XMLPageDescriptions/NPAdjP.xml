@@ -28,6 +28,20 @@
 				<radio id="NPAdjPPosEitherSideEitherRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
 		</radioGroup>
+	<br/>
+		<br/>
+		<introduction>Participles or participle phrases can also act as adjectives in modifying a noun.  Some English examples with the participle or participle phrase bracketed  include:</introduction>
+	<EnglishExample>
+		<exItem label="1.">the bright, [shining] sun.</exItem>
+		<exItem label="2.">my [crying] child.</exItem>
+		<exItem label="3.">the books [loved by millions].</exItem>
+	</EnglishExample>
+		<prompt>Key similar examples from your language here:</prompt>
+		<textBox id="NPAdjPPartExample" dataItem="partExample"/>
+		<br/>
+		<instruction>Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section></instruction>
+		<br/>
+		<br/>
 		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Languages which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.
 <br/>
 			<br/>
@@ -41,11 +55,22 @@ Does the presence of a adjective change the case marking on the head noun to mat
 			<radioGroup id="NPAdjPCaseAffixTable" show="swNPAdjPCaseChangeYes">
 				<groupName dataItem="adjpCaseAffix" default="no">RNPAdjPCaseAffix</groupName>
 				<prompt>
-Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgPrompt" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsPrompt" show="swNPPossCaseAbs">absolutive</span> case (the normal case of possessors) on the head noun which, when present, indicates that there must be either an adjective or a possessor in that nominal phrase?</prompt>
-				<radio id="NPAdjPCaseAffixNo" dataValue="no">No, <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgNoSpan" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsNoSpan" show="swNPPossCaseAbs">absolutive</span> case marking is not handled in this distinctive way</radio>
-				<radio id="NPAdjPCaseAffixYesPrefix" dataValue="yesPrefix">Yes, a prefix: when the overt <span id="NPAdjPCaseAffixGenYesPrefixSpan" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgYesPrefixSpan" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsYesPrefixSpan" show="swNPPossCaseAbs">absolutive</span> prefix is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  (If the adjective is marked with this <span id="NPAdjPCaseAffixGenYesPrefixSpan1" show="swNPPossCaseGen">genitive</span>
-<span id="NPAdjPCaseAffixErgYesPrefixSpan1" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsYesPrefixSpan1" show="swNPPossCaseAbs">absolutive</span> prefix then another adjective and/or a possessor must also be present.) </radio>
-				<radio id="NPAdjPCaseAffixYesSuffix" dataValue="yesSuffix">Yes, a suffix: when the overt <span id="NPAdjPCaseAffixGenYesSuffixSpan" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgYesSuffixSpan" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsYesSuffixSpan" show="swNPPossCaseAbs">absolutive</span> suffix is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  (If the adjective is marked with this <span id="NPAdjPCaseAffixGenYesSuffixSpan1" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgYesSuffixSpan1" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsYesSuffixSpan1" show="swNPPossCaseAbs">absolutive</span> suffix then another adjective and/or a possessor must also be present.) </radio>
+Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">genitive</span>
+					<span id="NPAdjPCaseAffixErgPrompt" show="swNPPossCaseErg">ergative</span>
+					<span id="NPAdjPCaseAffixAbsPrompt" show="swNPPossCaseAbs">absolutive</span> case (the normal case of possessors) on the head noun which, when present, indicates that there must be either an adjective or a possessor in that nominal phrase?</prompt>
+				<radio id="NPAdjPCaseAffixNo" dataValue="no">No, <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">genitive</span>
+					<span id="NPAdjPCaseAffixErgNoSpan" show="swNPPossCaseErg">ergative</span>
+					<span id="NPAdjPCaseAffixAbsNoSpan" show="swNPPossCaseAbs">absolutive</span> case marking is not handled in this distinctive way</radio>
+				<radio id="NPAdjPCaseAffixYesPrefix" dataValue="yesPrefix">Yes, a prefix: when the overt <span id="NPAdjPCaseAffixGenYesPrefixSpan" show="swNPPossCaseGen">genitive</span>
+					<span id="NPAdjPCaseAffixErgYesPrefixSpan" show="swNPPossCaseErg">ergative</span>
+					<span id="NPAdjPCaseAffixAbsYesPrefixSpan" show="swNPPossCaseAbs">absolutive</span> prefix is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  (If the adjective is marked with this <span id="NPAdjPCaseAffixGenYesPrefixSpan1" show="swNPPossCaseGen">genitive</span>
+					<span id="NPAdjPCaseAffixErgYesPrefixSpan1" show="swNPPossCaseErg">ergative</span>
+					<span id="NPAdjPCaseAffixAbsYesPrefixSpan1" show="swNPPossCaseAbs">absolutive</span> prefix then another adjective and/or a possessor must also be present.) </radio>
+				<radio id="NPAdjPCaseAffixYesSuffix" dataValue="yesSuffix">Yes, a suffix: when the overt <span id="NPAdjPCaseAffixGenYesSuffixSpan" show="swNPPossCaseGen">genitive</span>
+					<span id="NPAdjPCaseAffixErgYesSuffixSpan" show="swNPPossCaseErg">ergative</span>
+					<span id="NPAdjPCaseAffixAbsYesSuffixSpan" show="swNPPossCaseAbs">absolutive</span> suffix is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  (If the adjective is marked with this <span id="NPAdjPCaseAffixGenYesSuffixSpan1" show="swNPPossCaseGen">genitive</span>
+					<span id="NPAdjPCaseAffixErgYesSuffixSpan1" show="swNPPossCaseErg">ergative</span>
+					<span id="NPAdjPCaseAffixAbsYesSuffixSpan1" show="swNPPossCaseAbs">absolutive</span> suffix then another adjective and/or a possessor must also be present.) </radio>
 			</radioGroup>
 		</radioGroup>
 		<radioGroup>
@@ -54,8 +79,28 @@ Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" 
 			<radio id="NPAdjPAgreeNo" dataValue="no">No</radio>
 			<radio id="NPAdjPAgreeYes" dataValue="yes">Yes</radio>
 		</radioGroup>
-		<instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen"><feature>genitive_prefix</feature></span><span id="NPAdjPCaseAffixErgPrefixSpan" show="swNPPossCaseErg"><feature>ergative_prefix</feature></span><span id="NPAdjPCaseAffixAbsPrefixSpan" show="swNPPossCaseAbs"><feature>absolutive_prefix</feature></span> on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenPrefixSpan1" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgPrefixSpan1" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsPrefixSpan1" show="swNPPossCaseAbs">absolutive</span> case.</instruction>
-		<instruction id="NPAdjPCaseAffixYesSuffixInstruction" show="swNPAdjPCaseAffixYesSuffix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenSuffixSpan" show="swNPPossCaseGen"><feature>genitive_suffix</feature></span><span id="NPAdjPCaseAffixErgSuffixSpan" show="swNPPossCaseErg"><feature>ergative_suffix</feature></span><span id="NPAdjPCaseAffixAbsSuffixSpan" show="swNPPossCaseAbs"><feature>absolutive_suffix</feature></span> on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive</span><span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative</span><span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive</span> case.</instruction>
+		<instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen">
+				<feature>genitive_prefix</feature>
+			</span>
+			<span id="NPAdjPCaseAffixErgPrefixSpan" show="swNPPossCaseErg">
+				<feature>ergative_prefix</feature>
+			</span>
+			<span id="NPAdjPCaseAffixAbsPrefixSpan" show="swNPPossCaseAbs">
+				<feature>absolutive_prefix</feature>
+			</span> on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenPrefixSpan1" show="swNPPossCaseGen">genitive</span>
+			<span id="NPAdjPCaseAffixErgPrefixSpan1" show="swNPPossCaseErg">ergative</span>
+			<span id="NPAdjPCaseAffixAbsPrefixSpan1" show="swNPPossCaseAbs">absolutive</span> case.</instruction>
+		<instruction id="NPAdjPCaseAffixYesSuffixInstruction" show="swNPAdjPCaseAffixYesSuffix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenSuffixSpan" show="swNPPossCaseGen">
+				<feature>genitive_suffix</feature>
+			</span>
+			<span id="NPAdjPCaseAffixErgSuffixSpan" show="swNPPossCaseErg">
+				<feature>ergative_suffix</feature>
+			</span>
+			<span id="NPAdjPCaseAffixAbsSuffixSpan" show="swNPPossCaseAbs">
+				<feature>absolutive_suffix</feature>
+			</span> on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive</span>
+			<span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative</span>
+			<span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive</span> case.</instruction>
 		<instruction id="NPAdjPPosEitherSideEitherRestrictedInstruction" show="swNPAdjPPosEitherSideEitherRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
 		<br/>
 		<instruction id="NPAdjPNoAgreementInstruction" show="swNPAgreementNone">You said your language does not mark any agreement in <section number="5.1">Overview Plus Agreement and Case</section>, so it is unclear what agreement marking adjectives may have.  Return to <section number="5.1">Overview Plus Agreement and Case</section> and change your answer appropriately if you do have agreement marking.  If not, change your answer here to "no".</instruction>

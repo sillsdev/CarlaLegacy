@@ -30,7 +30,9 @@
 <xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//np/embeddedExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//np/qpExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//np/adjpExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//np/partExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//np/compExample"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//np/partHeadExample"/><xsl:text>&#xa;</xsl:text>
 		</xsl:when>
 		<xsl:when test="$prmIdTitle='Prop'">
 		<xsl:value-of select="//prop/example"/><xsl:text>&#xa;</xsl:text>
@@ -57,6 +59,7 @@
 		</xsl:when>
 	<xsl:when test="$prmIdTitle='IP'">
 		<xsl:value-of select="//ip/example"/><xsl:text>&#xa;</xsl:text>
+<xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//np/partHeadSentExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//pp/sentExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//pp/aloneExample"/><xsl:text>&#xa;</xsl:text>
 <xsl:value-of select="$prmTextSFM"/><xsl:text>&#x20;</xsl:text> <xsl:value-of select="//ip/proDropExample"/><xsl:text>&#xa;</xsl:text>

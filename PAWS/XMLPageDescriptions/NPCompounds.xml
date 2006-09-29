@@ -2,7 +2,7 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPCompounds">
-	<title level="2">Nominal Phrase - Noun Compounds and Complements</title>
+	<title level="2">Nominal Phrase - Noun Compounds, Complements and Participle Phrases</title>
 	<introduction>Many languages are like English, in that they have noun modifiers. Normally, we simply think that all nouns can also be used as adjectives, but a closer look reveals that true adjectives come before the noun modifier, as in <example>large, round [syrup bottle]</example> but not <example>*round, syrup large bottle</example>.  Therefore, we will treat noun modifiers as compound nouns which are written as separate words.<br/>
 		<br/>In the English examples above, <example>bottle</example> is clearly the head noun rather than <example>syrup</example>, because <example>syrup</example> is restricting the type of <example>bottle</example>, not the other way around.  In all compound nouns and noun modifier constructions in English, the head is the right-most noun in the series.</introduction>
 	<form section="np">
@@ -38,6 +38,26 @@
 			<radio id="NPPPPosAfter" dataValue="after">After</radio>
 			<radio id="NPPPPosEither" dataValue="either">Either side</radio>
 		</radioGroup>
+		<br/>
+		<br/>
+	<introduction>Another case which may look like a noun and a complement may actually be a participle phrase (also called a gerund).  This whole phrase occupies a normal argument position, such as subject, object, indirect object or the object of a preposition.  Some English examples in full sentences with the participle phrase bracketed include:
+</introduction>
+	<EnglishExample>
+		<exItem label="1.">[Studying participles] is challenging.</exItem>
+		<exItem label="2.">He likes [reading Latin poetry].</exItem>
+		<exItem label="3.">The receiver showed his worth by [making the catch].</exItem>
+	</EnglishExample>
+<introduction>Such phrases may be possessed or be modified as well, and sometimes only the participle stands alone as the head of a nominal phrase, as in <example>the badly wounded</example>, <example>the dying</example> and <example>your following</example>. Therefore, our rules will allow participle phrases to occupy the head position in the nominal phrase.</introduction><br/>
+		<br/>
+			<prompt>Key one or more examples of participles or participle phrases that can take the place of a noun in a nominal phrase:</prompt>
+		<textBox id="NPPartExample" dataItem="partHeadExample"/>
+		<br/>
+<br/>
+			<prompt>Now put the participles or participle phrases you keyed above into sentences:</prompt>
+		<textBox id="NPPartSentExample" dataItem="partHeadSentExample"/>
+		<br/>
+		<instruction>Note that the head of these participle phrases is categorically a verb, so these are derived nominals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as nouns.   The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section></instruction>
+		<br/>
 		<br/>
 		<buttons>
 			<button id="NPCompBack" value="Back" goto="NPContents.htm"/>

@@ -6,6 +6,7 @@
 rule {VP option conj - conjoined VPs}
 VP = (InitConj) VP_1 Conj VP_2
 	&lt;VP head&gt; = &lt;VP_1 head&gt;
+	&lt;VP_1 head type participle&gt; = &lt;VP_2 head type participle&gt;
 	&lt;Conj head type conjoins_IP&gt; = +
 	&lt;VP conjoined&gt; = +
 	&lt;VP_1 conjoined&gt; = -	|limit recursion

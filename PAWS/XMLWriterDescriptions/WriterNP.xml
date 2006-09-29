@@ -4,7 +4,7 @@
 	<section1 id="sNP">
 		<secTitle>Nominal Phrases</secTitle>
 		<p>
-			<content>Nominal phrases can be very complex.  This section concentrates on those with common nouns as the lexical head.  Modification by articles, demonstratives, possessors, quantifiers and degree words, adjective phrases, pre/post-positional phrases and noun compounds is considered.   Nominal phrases headed by proper names are handled in section </content>
+			<content>Nominal phrases can be very complex.  This section concentrates on those with common nouns as the lexical head.  Modification by articles, demonstratives, possessors, quantifiers and degree words, adjective phrases, pre/post-positional phrases and noun compounds is considered.  Participles are also covered, but nominal phrases headed by proper names are handled in section </content>
 			<sectionRef sec="sProp"/>
 			<content> and those headed by pronouns, demonstratives, and quantifiers are handled in section </content>
 			<sectionRef sec="sPron"/>
@@ -397,7 +397,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 						<caseText value="after">after</caseText>
 						<caseText value="either">on either side (but not both sides) of</caseText>
 						<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
-					   <caseText value="beforeOrBoth">before or on both sides of</caseText>
+						<caseText value="beforeOrBoth">before or on both sides of</caseText>
 						<caseText value="afterOrBoth">after or on both sides of</caseText>
 						<caseText value="both">on both sides of</caseText>
 						<caseText value="unknown">_______</caseText>
@@ -497,10 +497,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemArtPosBothSidesRequiredMass">
 					<content>In the singular forms, an article is required </content>
 					<case element="np" attr="artBothRequiredPos">
-					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					<caseText value="both">to appear both before and after the noun.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">to appear both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -508,11 +508,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemArtPosBothSidesRequiredYes">
 					<content>An article is required to appear </content>
 					<case element="np" attr="artBothRequiredPos">
-					 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					 <caseText value="both">both before and after the noun.</caseText>
-					 <caseText value="unknown">_______</caseText>
-				   </case>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
+					</case>
 					<content/>
 				</text>
 				<content/>
@@ -543,10 +543,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemDemPosBothSidesRequiredMass">
 					<content>In the singular forms, a demonstrative is required </content>
 					<case element="np" attr="demBothRequiredPos">
-					 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					 <caseText value="both">to appear both before and after the noun.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">to appear both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -554,10 +554,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemDemPosBothSidesRequiredYes">
 					<content>A demonstrative is required to appear </content>
 					<case element="np" attr="demBothRequiredPos">
-					 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					 <caseText value="both">both before and after the noun.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -589,10 +589,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurNoRequiredMass">
 					<content>In the singular forms, an article or a demonstrative is required </content>
 					<case element="np" attr="demOrArtBothRequiredPos">
-					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					<caseText value="both">to appear both before and after the noun.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">to appear both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -600,11 +600,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurNoRequiredYes">
 					<content>An article or a demonstrative is required to appear </content>
 					<case element="np" attr="demOrArtBothRequiredPos">
-					 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					 <caseText value="both">both before and after the noun.</caseText>
-					 <caseText value="unknown">_______</caseText>
-				   </case>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
+					</case>
 					<content/>
 				</text>
 				<content/>
@@ -640,10 +640,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMass">
 					<content>In the singular forms, a demonstrative is required </content>
 					<case element="np" attr="demAndArtDemRequiredPos">
-					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					<caseText value="both">to appear both before and after the noun.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">to appear both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -651,10 +651,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredYes">
 					<content>A demonstrative is required to appear </content>
 					<case element="np" attr="demAndArtDemBothRequiredPos">
-					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					<caseText value="both">both before and after the noun.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -683,10 +683,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMass">
 					<content>In the singular forms, an article is required </content>
 					<case element="np" attr="demAndArtArtRequiredPos">
-					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					<caseText value="both">to appear both before and after the noun.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">to appear both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -694,10 +694,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredYes">
 					<content>An article is required to appear </content>
 					<case element="np" attr="demAndArtArtBothRequiredPos">
-					<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-					<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-					<caseText value="both">both before and after the noun.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+						<caseText value="both">both before and after the noun.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -772,15 +772,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<text show="swNPPossMarkedYesCliticWordYes">
 					<content> This phrasal clitic is written as a separate word which occurs </content>
 					<case element="np" attr="possCliticPossPos">
-					<caseText value="before">before</caseText>
-					<caseText value="after">after</caseText>
-					<caseText value="unknown">_______</caseText>
-				   </case>
+						<caseText value="before">before</caseText>
+						<caseText value="after">after</caseText>
+						<caseText value="unknown">_______</caseText>
+					</case>
 					<content> the possessor.  The possessive clitic is </content>
 					<case element="np" attr="possCliticRequired">
-					<caseText value="no">optional in some cases.</caseText>
-					<caseText value="no">always required.</caseText>
-					<caseText value="unknown">_______</caseText>
+						<caseText value="no">optional in some cases.</caseText>
+						<caseText value="no">always required.</caseText>
+						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
@@ -1154,6 +1154,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 			</p>
+				<p><content>Participles or participle phrases may also act as adjectives in modifying a noun.  Some English examples with the participle or participle phrase bracketed  include: </content><langData>the bright, [shining] sun, my [crying] child</langData><content> and </content><langData>the books [loved by millions].</langData></p>
+<p><content>  Examples in </content><langName/><content> include:</content>
+		</p><example>
+			<interlinear exampleLoc="np/partExample"></interlinear>
+		</example>
 			<section3 id="sNPAdjPCaseChange" show="swNPPossNounCaseChangeYes">
 				<secTitle>Case Change with Adjective Phrase Modifiers</secTitle>
 				<p>
@@ -1301,6 +1306,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<langName/>
 				<content>.</content>
 			</p>
+			<p><content>Another case which may look like a noun and a complement may actually be a participle phrase (also called a gerund).  This whole phrase occupies a normal argument position, such as subject, object, indirect object or the object of a preposition.  Some English examples in full sentences with the participle phrase bracketed include: </content><langData>[Studying participles] is challenging, He likes [reading Latin poetry]</langData><content> and </content><langData>The receiver showed his worth by [making the catch].</langData><content>  Such phrases may be possessed or be modified as well, and sometimes only the participle stands alone as the head of a nominal phrase, as in </content><langData>the badly wounded, the dying</langData><content> and </content><langData>your following.</langData><content> Therefore, our grammar rules will allow participle phrases to occupy the head position in the nominal phrase.</content></p>
+<p><content>Examples from </content><langName/><content> of participles or participle phrases that can take the place of a noun in a nominal phrase include:</content></p>
+<example>
+	<interlinear exampleLoc="np/partHeadExample"></interlinear>
+</example>
+<p><content>These participle phrases can be used in full sentences as shown here:</content></p>
+<example>
+	<interlinear exampleLoc="np/partHeadSentExample"></interlinear>
+</example>
 		</section2>
 	</section1>
 	<showWhen id="swPossDemAndArtCooccurYes">

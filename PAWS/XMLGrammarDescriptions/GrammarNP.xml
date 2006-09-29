@@ -2370,6 +2370,7 @@ NP = (PP) {Pron / Dem / Q / Num / Deg}
 		<and/>
 		<whenValue element="pron" attr="partitivePos" value="before"/>
 	</showWhen>
+
 	<!-- ***************************************************************************-->
 	<rule show="NBarBaroption1">
 rule {NBarBar option 1 - QPs initial}
@@ -2534,6 +2535,20 @@ N'_1 = N'_2 AdjP
 		<or/>
 		<whenValue element="np" attr="adjpPos" value="either" negateValue="no"/>
 	</showWhen>
+	<rule>
+rule {NBar option 1aPart - participle initial, recursive}
+N'_1 = VP N'_2
+	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
+	&lt;VP head type participle&gt; = +
+	&lt;N' option&gt; = 1aPart
+</rule>
+	<rule>
+rule {NBar option 1bPart - participle final, recursive}
+N'_1 = N'_2 VP
+	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
+	&lt;VP head type participle&gt; = +
+	&lt;N' option&gt; = 1bPart
+</rule>
 	<rule show="NBaroption2a">
 rule {NBar option 2a - left-most noun head}
 N' = N_1 (N_2 (N_3))
@@ -5058,4 +5073,11 @@ N' = (PP) {Pron / Dem / Q / Num / Deg}
 		<and/>
 		<whenValue element="pron" attr="partitive" value="before"/>
 	</showWhen>
+	<rule>
+rule {NBar option Part - participle (phrase) as NBar}
+N' = VP
+	&lt;N' head&gt; = &lt;VP head&gt;
+	&lt;VP head type participle&gt; = +
+</rule>
+
 </masterGrammar>

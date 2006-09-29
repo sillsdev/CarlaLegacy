@@ -193,7 +193,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	 Noun-noun compounds may or may not occur (comp).  If yes, they have a head (compHead)
 	and any PP occurs in a position with respect to that head (compHeadPPPos).
 -->
-<!ELEMENT np (example, embeddedExample, ppExample, relClExample, possAlienableAffixExample, qpExample, adjpExample, compExample, compPPExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter, npPossAgrPossAnimate, npPossAgrPossInanimate, npPossAgrPossHuman, npPossAgrPossNonHuman, npPossAgrPossClassClassNumber)>
+<!ELEMENT np (example, embeddedExample, ppExample, relClExample, possAlienableAffixExample, qpExample, adjpExample, partExample, compExample, compPPExample, partHeadExample, partHeadSentExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter, npPossAgrPossAnimate, npPossAgrPossInanimate, npPossAgrPossHuman, npPossAgrPossNonHuman, npPossAgrPossClassClassNumber)>
 <!ATTLIST np
 	checkedOff (yes | no) "no"
 	agreeNumber (no | yes) "no"
@@ -254,7 +254,10 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT possAlienableAffixExample (#PCDATA)>
 <!ELEMENT qpExample (#PCDATA)>
 <!ELEMENT adjpExample (#PCDATA)>
+<!ELEMENT partExample (#PCDATA)>
 <!ELEMENT compExample (#PCDATA)>
+<!ELEMENT partHeadExample (#PCDATA)>
+<!ELEMENT partHeadSentExample (#PCDATA)>
 <!ELEMENT compPPExample (#PCDATA)>
 <!ELEMENT articleCategory (#PCDATA)>
 <!ELEMENT demonstrativeCategory (#PCDATA)>
@@ -533,7 +536,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	   required (passiveAux).
 	 Category mappings for Aux and V are available.
 -->
-<!ELEMENT ip (example, proDropExample, auxExample, negAuxExample, negAuxAffixExample, negVerbExample, auxNonfiniteExample, auxOtherExample, diExample, intransExample, motionExample, copularExample, passiveExample, auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9, ipAgrFeatFirstSubject, ipAgrFeatFirstObject, ipAgrFeatFirstErgative, ipAgrFeatFirstAbsolutive, ipAgrFeatFirstExclusiveSubject, ipAgrFeatFirstExclusiveObject, ipAgrFeatFirstExclusiveErgative, ipAgrFeatFirstExclusiveAbsolutive, ipAgrFeatFirstInclusiveSubject, ipAgrFeatFirstInclusiveObject, ipAgrFeatFirstInclusiveErgative, ipAgrFeatFirstInclusiveAbsolutive, ipAgrFeatSecondSubject, ipAgrFeatSecondObject, ipAgrFeatSecondErgative, ipAgrFeatSecondAbsolutive, ipAgrFeatThirdSubject, ipAgrFeatThirdObject, ipAgrFeatThirdErgative, ipAgrFeatThirdAbsolutive, ipAgrFeatSingularSubject, ipAgrFeatSingularObject, ipAgrFeatSingularErgative, ipAgrFeatSingularAbsolutive, ipAgrFeatDualSubject, ipAgrFeatDualObject, ipAgrFeatDualErgative, ipAgrFeatDualAbsolutive, ipAgrFeatPluralSubject, ipAgrFeatPluralObject, ipAgrFeatPluralErgative, ipAgrFeatPluralAbsolutive, ipAgrFeatMasculineSubject, ipAgrFeatMasculineObject, ipAgrFeatMasculineErgative, ipAgrFeatMasculineAbsolutive, ipAgrFeatFeminineSubject, ipAgrFeatFeminineObject, ipAgrFeatFeminineErgative, ipAgrFeatFeminineAbsolutive, ipAgrFeatNeuterSubject, ipAgrFeatNeuterObject, ipAgrFeatNeuterErgative, ipAgrFeatNeuterAbsolutive, ipAgrFeatAnimateSubject, ipAgrFeatAnimateObject, ipAgrFeatAnimateErgative, ipAgrFeatAnimateAbsolutive, ipAgrFeatMinusAnimateSubject, ipAgrFeatMinusAnimateObject, ipAgrFeatMinusAnimateErgative, ipAgrFeatMinusAnimateAbsolutive, ipAgrFeatHumanSubject, ipAgrFeatHumanObject, ipAgrFeatHumanErgative, ipAgrFeatHumanAbsolutive, ipAgrFeatMinusHumanSubject, ipAgrFeatMinusHumanObject, ipAgrFeatMinusHumanErgative, ipAgrFeatMinusHumanAbsolutive, ipAgrFeatClassClassNumberSubject, ipAgrFeatClassClassNumberObject, ipAgrFeatClassClassNumberErgative, ipAgrFeatClassClassNumberAbsolutive, ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatCompletive, ipInflFeatContinuative, ipInflFeatHabitual, ipInflFeatImperfective, ipInflFeatIncompletive, ipInflFeatPerfective, ipInflFeatPotential, ipInflFeatProgressive, ipInflFeatStative, ipInflFeatDeclarative, ipInflFeatImperative, ipInflFeatInterrogative, ipInflFeatIrrealis, ipInflFeatRealis, ipInflFeatFinite, ipInflFeatMinusFinite)>
+<!ELEMENT ip (example, proDropExample, auxExample, negAuxExample, negAuxAffixExample, negVerbExample, auxNonfiniteExample, auxOtherExample, diExample, intransExample, motionExample, copularExample, passiveExample, auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9, ipAgrFeatFirstSubject, ipAgrFeatFirstObject, ipAgrFeatFirstErgative, ipAgrFeatFirstAbsolutive, ipAgrFeatFirstExclusiveSubject, ipAgrFeatFirstExclusiveObject, ipAgrFeatFirstExclusiveErgative, ipAgrFeatFirstExclusiveAbsolutive, ipAgrFeatFirstInclusiveSubject, ipAgrFeatFirstInclusiveObject, ipAgrFeatFirstInclusiveErgative, ipAgrFeatFirstInclusiveAbsolutive, ipAgrFeatSecondSubject, ipAgrFeatSecondObject, ipAgrFeatSecondErgative, ipAgrFeatSecondAbsolutive, ipAgrFeatThirdSubject, ipAgrFeatThirdObject, ipAgrFeatThirdErgative, ipAgrFeatThirdAbsolutive, ipAgrFeatSingularSubject, ipAgrFeatSingularObject, ipAgrFeatSingularErgative, ipAgrFeatSingularAbsolutive, ipAgrFeatDualSubject, ipAgrFeatDualObject, ipAgrFeatDualErgative, ipAgrFeatDualAbsolutive, ipAgrFeatPluralSubject, ipAgrFeatPluralObject, ipAgrFeatPluralErgative, ipAgrFeatPluralAbsolutive, ipAgrFeatMasculineSubject, ipAgrFeatMasculineObject, ipAgrFeatMasculineErgative, ipAgrFeatMasculineAbsolutive, ipAgrFeatFeminineSubject, ipAgrFeatFeminineObject, ipAgrFeatFeminineErgative, ipAgrFeatFeminineAbsolutive, ipAgrFeatNeuterSubject, ipAgrFeatNeuterObject, ipAgrFeatNeuterErgative, ipAgrFeatNeuterAbsolutive, ipAgrFeatAnimateSubject, ipAgrFeatAnimateObject, ipAgrFeatAnimateErgative, ipAgrFeatAnimateAbsolutive, ipAgrFeatMinusAnimateSubject, ipAgrFeatMinusAnimateObject, ipAgrFeatMinusAnimateErgative, ipAgrFeatMinusAnimateAbsolutive, ipAgrFeatHumanSubject, ipAgrFeatHumanObject, ipAgrFeatHumanErgative, ipAgrFeatHumanAbsolutive, ipAgrFeatMinusHumanSubject, ipAgrFeatMinusHumanObject, ipAgrFeatMinusHumanErgative, ipAgrFeatMinusHumanAbsolutive, ipAgrFeatClassClassNumberSubject, ipAgrFeatClassClassNumberObject, ipAgrFeatClassClassNumberErgative, ipAgrFeatClassClassNumberAbsolutive, ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatCompletive, ipInflFeatContinuative, ipInflFeatHabitual, ipInflFeatImperfective, ipInflFeatIncompletive, ipInflFeatPerfective, ipInflFeatPotential, ipInflFeatProgressive, ipInflFeatStative, ipInflFeatDeclarative, ipInflFeatImperative, ipInflFeatInterrogative, ipInflFeatIrrealis, ipInflFeatRealis, ipInflFeatPassive, ipInflFeatParticiple, ipInflFeatFinite, ipInflFeatMinusFinite)>
 <!ATTLIST ip
 	checkedOff (yes | no) "no"
 	proDrop (noImp | no | yes | yesClitic) "noImp"
@@ -925,6 +928,14 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 >
 <!ELEMENT ipInflFeatRealis EMPTY>
 <!ATTLIST ipInflFeatRealis
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatPassive EMPTY>
+<!ATTLIST ipInflFeatPassive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatParticiple EMPTY>
+<!ATTLIST ipInflFeatParticiple
 	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatFinite EMPTY>

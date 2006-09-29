@@ -64,8 +64,11 @@
 		<possAlienableAffixExample/>
 		<qpExample/>
 		<adjpExample/>
+		<partExample/>
 		<compExample/>
 		<compPPExample/>
+		<partHeadExample/>
+		<partHeadSentExample/>
 		<articleCategory/>
 		<demonstrativeCategory/>
 		<nounCategory/>
@@ -260,6 +263,8 @@
 		<ipInflFeatInterrogative checked="no"/>
 		<ipInflFeatIrrealis checked="no"/>
 		<ipInflFeatRealis checked="no"/>
+		<ipInflFeatPassive checked="no"/>
+		<ipInflFeatParticiple checked="no"/>
 		<ipInflFeatFinite checked="no"/>
 		<ipInflFeatMinusFinite checked="no"/>
 	</ip>
