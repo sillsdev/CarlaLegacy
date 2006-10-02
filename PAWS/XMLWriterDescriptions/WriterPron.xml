@@ -650,7 +650,7 @@
 					</case>
 					<content> relative clauses and PPs, but not by possessors or adjectives.</content>
 				</text>
-				<text show="swPronNPCatNPorN">
+
 					<content> The optional PP occurs </content>
 					<case element="pron" attr="partitivePos">
 						<caseText value="before">before</caseText>
@@ -658,8 +658,7 @@
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content> the element acting as the head of the nominal phrase.</content>
-				</text>
-				<content/>
+
 			</p>
 		</section2>
 	</section1>
@@ -750,82 +749,79 @@
 	<showWhen id="swPronNegIndefYes">
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 	</showWhen>
-<showWhen id="swNotPosOnlyAndNo">
-	   <whenValue element="qp" attr="determiner" value="yes"/>
-<or/>
-	   <whenValue element="qp" attr="determiner" value="yesNo"/>
-<or/>
+	<showWhen id="swNotPosOnlyAndNo">
+		<whenValue element="qp" attr="determiner" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesNo"/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="yesSome"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-<or/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="no"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-<or/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="yesSome"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-<and/>
-	<whenValue element="pron" attr="negIndef" value="yes"/>
-<or/>
+		<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="yesSome"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-<and/>
-	<whenValue element="pron" attr="negIndef" value="yes"/>
-<or/>
+		<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="no"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-<and/>
-	<whenValue element="pron" attr="negIndef" value="yes"/>
-<or/>
+		<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="no"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-<and/>
-	<whenValue element="pron" attr="negIndef" value="yes"/>
-</showWhen>
-<showWhen id="swNotPosOnly">
-	   <whenValue element="qp" attr="determiner" value="yes"/>
-<or/>
-	   <whenValue element="qp" attr="determiner" value="yesNo"/>
-<or/>
+		<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+	</showWhen>
+	<showWhen id="swNotPosOnly">
+		<whenValue element="qp" attr="determiner" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesNo"/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="yesSome"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-<or/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="no"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-</showWhen>
- <showWhen id="swPosOnly">
+	</showWhen>
+	<showWhen id="swPosOnly">
 		<whenValue element="qp" attr="determiner" value="yesSome"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-<or/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="yesSome"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-<or/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="no"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-<or/>
+		<or/>
 		<whenValue element="qp" attr="determiner" value="no"/>
-<and/>
+		<and/>
 		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-</showWhen>
-	<showWhen id="swPronNPCatNPorN">
-		<whenValue element="pron" attr="pronounCat" value="DP" negateValue="yes"/>
 	</showWhen>
 </portion>

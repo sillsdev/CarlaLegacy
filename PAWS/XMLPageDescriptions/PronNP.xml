@@ -45,7 +45,7 @@
 			<radio id="PronNPCatNP" dataValue="NP">NP, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives</radio>
 			<radio id="PronNPCatN" dataValue="N">N, because they can be modified by all the same categories as nouns can</radio>
 			<radio id="PronNPCatDP" dataValue="DP">DP, because they must stand alone in the place of a whole nominal phrase</radio>
-			<radioGroup id="PronNPPartitiveTable" show="swPronNPCatNPorN">
+			<radioGroup id="PronNPPartitiveTable">
 				<groupName dataItem="partitivePos" default="unknown" position="yesHeadDiff">RPronNPPartitive</groupName>
 				<prompt>Where does the optional PP occur with respect to the pronoun, demonstrative, quantifier or number?</prompt>
 				<radio id="PronNPPartBefore" dataValue="before">Before</radio>
@@ -58,9 +58,4 @@
 			<button id="PronNPNext" value="Next" goto="PronTesting.htm"/>
 		</buttons>
 	</form>
-	<showWhen id="swPronNPCatNPorN">
-		<whenRadio button="PronNPCatNP"/>
-		<or/>
-		<whenRadio button="PronNPCatN"/>
-	</showWhen>
 </page>
