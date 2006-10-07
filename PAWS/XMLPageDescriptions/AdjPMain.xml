@@ -57,7 +57,7 @@
 				<radio id="AdjPMannerAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adjective, or both sides at the same time</radio>
 				<radio id="AdjPMannerBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
 				<radioGroup id="AdjPMannerEitherSideTable" show="swAdjPMannerEitherorBoth">
-					<groupName dataItem="degreeEither" default="unrestricted">RMannerEitherSide</groupName>
+					<groupName dataItem="mannerEither" default="unrestricted">RMannerEitherSide</groupName>
 					<prompt>Can all the modifiers appear on either side of the adjective?</prompt>
 					<radio id="AdjPMannerEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
 					<radio id="AdjPMannerEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>

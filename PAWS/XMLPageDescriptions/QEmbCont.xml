@@ -46,7 +46,7 @@
 				<radio id="QEmbContVSOBeforeWhNo" dataValue="no">No, all the question markers occur immediately after any fronted interrogative phrase</radio>
 				<radio id="QEmbContVSOBeforeWhNoEnd" dataValue="noEnd">No, all the question markers occur either immediately after any fronted interrogative phrase or at the end of the question</radio>
 				<radioGroup id="QEmbContVSONoEndTable" show="swQEmbContVSOBeforeWhNoEnd">
-					<groupName dataItem="embContVSONoEndRestricted" default="unrestricted">RQEmbContVSONoEnd</groupName>
+					<groupName dataItem="embContVSOBeforeWhNoEndRestricted" default="unrestricted">RQEmbContVSONoEnd</groupName>
 					<prompt>Can all the question markers appear in either position?</prompt>
 					<radio id="QEmbContVSONoEndUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 					<radio id="QEmbContVSONoEndRestricted" dataValue="restricted">No, there are separate sets for each position</radio>
@@ -85,7 +85,7 @@
 				<radio id="QEmbContAuxPosAfter" dataValue="after">After</radio>
 			</radioGroup>
 			<radioGroup id="QEmbContAuxTable" show="swQEmbContNoAux">
-				<groupName dataItem="mainEmbAuxRequired" default="no">RQEmbContAux</groupName>
+				<groupName dataItem="embContAuxRequired" default="no">RQEmbContAux</groupName>
 				<prompt>Is an auxiliary required to be fronted in every embedded content question?</prompt>
 				<radio id="QEmbContAuxRequiredYes" dataValue="yes">Yes</radio>
 				<radio id="QEmbContAuxRequiredNo" dataValue="no">No, some embedded content questions do not require a fronted auxiliary</radio>

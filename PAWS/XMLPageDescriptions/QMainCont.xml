@@ -56,7 +56,7 @@
 				<radio id="QMainContVSOBeforeWhNo" dataValue="no">No, all the question markers occur immediately after any fronted interrogative phrase</radio>
 				<radio id="QMainContVSOBeforeWhNoEnd" dataValue="noEnd">No, all the question markers occur either immediately after any fronted interrogative phrase or at the end of the question</radio>
 				<radioGroup id="QMainContVSONoEndTable" show="swQMainContVSOBeforeWhNoEnd">
-					<groupName dataItem="mainContVSONoEndRestricted" default="unrestricted">RQMainContVSONoEnd</groupName>
+					<groupName dataItem="mainContVSOBeforeWhNoEndRestricted" default="unrestricted">RQMainContVSONoEnd</groupName>
 					<prompt>Can all the question markers appear in either position?</prompt>
 					<radio id="QMainContVSONoEndUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
 					<radio id="QMainContVSONoEndRestricted" dataValue="restricted">No, there are separate sets for each position</radio>

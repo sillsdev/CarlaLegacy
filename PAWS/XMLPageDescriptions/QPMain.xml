@@ -132,7 +132,7 @@ like <example>only</example> and <example>just</example> (which can also acts as
 			</radioGroup>
 		</radioGroup>
 		<radioGroup id="QPNPDegreeNegCooccurTable" show="swQPNPDegreeYes">
-			<groupName dataItem="NPDegreeNegCooccur" default="no">RQPNPDegreeNegCooccur</groupName>
+			<groupName dataItem="npDegreeNegCooccur" default="no">RQPNPDegreeNegCooccur</groupName>
 			<prompt>Can the word(s) meaning 'not' co-occur with the other special degree words?</prompt>
 			<radio id="QPNPDegreeNegCooccurYes" dataValue="yes">Yes</radio>
 			<radio id="QPNPDegreeNegCooccurNo" dataValue="no">No</radio>
