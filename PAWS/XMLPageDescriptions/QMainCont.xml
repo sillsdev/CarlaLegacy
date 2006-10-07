@@ -43,9 +43,7 @@
 					<groupName dataItem="mainContCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
 					<prompt>Where does the clitic attach to the question?</prompt>
 					<radio id="QMainContCliticAttachesEdge" dataValue="edge">At the edge</radio>
-					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">
-						<span id="QMainContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
-					</radio>
+					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</radio>
 					<radio id="QMainContCliticAttachesHead" dataValue="head">To the verb</radio>
 				</radioGroup>
 				<radio id="QMainContWordYes" dataValue="yes">Yes</radio>

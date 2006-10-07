@@ -33,9 +33,7 @@
 					<groupName dataItem="embContCliticAttaches" default="edge">RQEmbYNCliticAttaches</groupName>
 					<prompt>Where does the clitic attach to the embedded question?</prompt>
 					<radio id="QEmbContCliticAttachesEdge" dataValue="edge">At the edge</radio>
-					<radio id="QEmbContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">
-						<span id="QEmbContCliticBetweenSpan" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</span>
-					</radio>
+					<radio id="QEmbContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">Between the fronted interrogative phrase and the rest of the question</radio>
 					<radio id="QEmbContCliticAttachesHead" dataValue="head">To the verb</radio>
 				</radioGroup>
 				<radio id="QEmbContWordYes" dataValue="yes">Yes</radio>

@@ -34,7 +34,7 @@
 				<radio id="AdjPDegreeBefore" checked="yes" dataValue="before">Before the adjective</radio>
 				<radio id="AdjPDegreeAfter" checked="yes" dataValue="after">After the adjective</radio>
 				<radio id="AdjPDegreeEitherSide" checked="yes" dataValue="either">On either side of the adjective, but not both sides at the same time</radio>
-				<radio id="AdjPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrboth">On either side of the adjective, or both sides at the same time</radio>
+				<radio id="AdjPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the adjective, or both sides at the same time</radio>
 				<radio id="AdjPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adjective, or both sides at the same time</radio>
 				<radio id="AdjPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adjective, or both sides at the same time</radio>
 				<radio id="AdjPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
