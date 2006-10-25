@@ -41,13 +41,12 @@ waste</example>.</introduction>
 			</radioGroup>
 		</radioGroup>
 		<instruction>In the lexicon, mark this type of quantifier
-with the feature <feature>Q</feature>.  This will change
+with the feature <feature>makeQ</feature>.  This will change
 their category to <category>Q</category> for the syntax.  If a particular quantifier can
 only go with plural nouns or if it marks plural itself (such as <example>many</example>), add the feature <feature>plural</feature> to that entry.  <br/>
 			<span id="QPDegreeYesInstruction" show="swQPDegreeYes">
 				<br/>Also, mark any words
-which can modify them with the features <feature>Deg
-modifies_Q</feature>. </span>
+which can modify them with the features <feature>makeDeg modifies_Q</feature>. </span>
 			<span id="QPDegreeEitherNoInstruction" show="swQPDegreeEitherRestricted">Those which can only occur before the quantifier
 also need to have the feature <feature>QP-initial</feature>
 and those which can only occur after the quantifier also need the

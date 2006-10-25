@@ -88,7 +88,8 @@
 				<radio id="QEmbContAuxRequiredYes" dataValue="yes">Yes</radio>
 				<radio id="QEmbContAuxRequiredNo" dataValue="no">No, some embedded content questions do not require a fronted auxiliary</radio>
 			</radioGroup>
-			<radio id="QEmbContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span><span id="QEmbContNoFrontOptionalSpan" show="swQContFrontOptional">optional movement of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
+			<radio id="QEmbContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span>
+				<span id="QEmbContNoFrontOptionalSpan" show="swQContFrontOptional">optional movement of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
 		</radioGroup>
 		<instruction id="QEmbContHeadCliticInstruction" show="swQEmbContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbContEdgeCliticPrefixInstruction" show="swQEmbContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
@@ -102,7 +103,7 @@
 		<br/>
 		<buttons>
 			<button id="QEmbContBack" value="Back" goto="QMainCont.htm"/>
-			<button id="QEmbContNext" value="Next" goto="QTesting.htm"/>
+			<button id="QEmbContNext" value="Next" goto="QCatMap.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swQEmbContYes">

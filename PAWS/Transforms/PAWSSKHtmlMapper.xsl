@@ -369,6 +369,14 @@ Refresh();
 	  Remaining templates are in alphabetical order
 	  *************************************************************************** -->
 	<!--
+   a
+	-->
+	<xsl:template match="//a">
+		<a href="{@href}">
+		  <xsl:apply-templates/>
+		</a>
+	</xsl:template>
+	<!--
    br
 	-->
 	<xsl:template match="//br">
@@ -552,7 +560,8 @@ Refresh();
 		<xsl:element name="span">
 			<xsl:attribute name="class">file</xsl:attribute>
 			<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
-			<xsl:value-of select="."/>
+			<xsl:value-of select="$prmLangAbbr"/>
+			<xsl:value-of select="substring-after(.,'xxx')"/>
 		</xsl:element>
 	</xsl:template>
 	<!--

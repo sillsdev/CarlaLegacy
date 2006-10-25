@@ -1,0 +1,54 @@
+
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PPCatMap">
+	<title level="2">Pre/Post-Positional Phrases - Category Mapper</title>
+	<form section="pp">
+		<instruction>
+			<span id="PPWordCategorySpan" show="swPPWord">You need to make sure the<span id="PPPrepSpanT1" show="swPPPosPrep"> prepositions</span>
+				<span id="PPPostSpanT1" show="swPPPosPost"> postpositions</span>
+				<span id="PPBothSpanT1" show="swPPPosBoth"> prepositions and postpositions </span>in your lexicon will be mapped to the syntax category <category>P</category>.  Note that this only applies to<span id="PPPrepSpanT2" show="swPPPosPrep"> prepositions</span>
+				<span id="PPPostSpanT2" show="swPPPosPost"> postpositions</span>
+				<span id="PPBothSpanT2" show="swPPPosBoth"> prepositions and postpositions </span>which stand alone as independent syntactic words; any clitic forms have already been marked appropriately.  Choose one of the following options, depending on your situation:
+<ul>
+					<li>If you already have<span id="PPPrepSpanT3" show="swPPPosPrep"> prepositions</span>
+						<span id="PPPostSpanT3" show="swPPPosPost"> postpositions</span>
+						<span id="PPBothSpanT3" show="swPPPosBoth"> prepositions and postpositions </span>marked with the category <category>P</category> in your lexicon nothing more needs to be done.</li>
+					<li>If<span id="PPPrepSpanT4" show="swPPPosPrep"> prepositions</span>
+						<span id="PPPostSpanT4" show="swPPPosPost"> postpositions</span>
+						<span id="PPBothSpanT4" show="swPPPosBoth"> prepositions and postpositions </span>are mixed in with another category in the lexicon, you either need to give them the category <category>P</category> in your morphological parser, or add the feature <feature>makeP</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.</li>
+					<li>If you have<span id="PPPrepSpanT5" show="swPPPosPrep"> prepositions</span>
+						<span id="PPPostSpanT5" show="swPPPosPost"> postpositions</span>
+						<span id="PPBothSpanT5" show="swPPPosBoth"> prepositions and postpositions </span>marked in your lexicon with a distinct category all their own, but it is different from <category>P</category>, enter that category below so PAWS can map your morphological category to <category>P</category>. <br/>
+						<catMap id="PPPCategory" dataItem="pCategory">P</catMap>
+					</li>
+				</ul>
+			</span>
+			<span id="PPCliticOnlySpan" show="swPPClitic">Since all your<span id="PPPrepSpanT6" show="swPPPosPrep"> prepositions</span>
+				<span id="PPPostSpanT6" show="swPPPosPost"> postpositions</span>
+				<span id="PPBothSpanT6" show="swPPPosBoth"> prepositions and postpositions </span>are clitics, category mapping is not needed.</span>
+		</instruction>
+			<br/>
+		<br/>
+		<buttons>
+			<button id="PPCatMapBack" value="Back" goto="PPOther.htm"/>
+			<button id="PPCatMapNext" value="Next" goto="PPTesting.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swPPWord">
+		<not/>
+		<whenValue element="pp" attr="pType" value="clitic"/>
+	</showWhen>
+	<showWhen id="swPPClitic">
+		<whenValue element="pp" attr="pType" value="clitic"/>
+	</showWhen>
+	<showWhen id="swPPPosPrep">
+		<whenValue element="pp" attr="pPos" value="before"/>
+	</showWhen>
+	<showWhen id="swPPPosPost">
+		<whenValue element="pp" attr="pPos" value="after"/>
+	</showWhen>
+	<showWhen id="swPPPosBoth">
+		<whenValue element="pp" attr="pPos" value="both"/>
+	</showWhen>
+</page>

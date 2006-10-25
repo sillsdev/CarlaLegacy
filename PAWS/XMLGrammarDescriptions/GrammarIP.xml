@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
-<rule>
+	<rule>
 rule {IP option conj - conjoined IPs}
 IP = (InitConj) IP_1 Conj IP_2
 	&lt;IP head&gt; = &lt;IP_1 head&gt;
@@ -36,11 +36,7 @@ IP = I'
 	&lt;I' head object head type reflexive&gt; = -
 		/&lt;I' head type transitive&gt; = +
 	&lt;I' head object head type reflexive&gt; = +
-	&lt;I' head subject head agr person&gt; = &lt;I' head object head agr person&gt;
-	&lt;I' head subject head agr number&gt; = &lt;I' head object head agr number&gt;
-	&lt;I' head subject head agr gender&gt; = &lt;I' head object head agr gender&gt;
-	&lt;I' head subject head agr animate&gt; = &lt;I' head object head agr animate&gt;
-	&lt;I' head subject head agr class&gt; = &lt;I' head object head agr class&gt;
+	&lt;I' head subject head agr&gt; = &lt;I' head object head agr&gt;
 	}
 	&lt;IP head type passive&gt; = -
 	{&lt;IP head type question&gt; = -
@@ -130,11 +126,11 @@ IP = DP I'
 </rule>
 	<showWhen id="IPoption2a">
 		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
-	<and/>
+		<and/>
 		<whenValue element="neg" attr="subjVerbRequired" value="yes" negateValue="yes"/>
 		<or/>
 		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-	<and/>
+		<and/>
 		<whenValue element="neg" attr="subjVerbRequired" value="yes" negateValue="yes"/>
 	</showWhen>
 	<rule show="IPoption2aNegVerb">
@@ -168,7 +164,7 @@ IP = DP I'
 </rule>
 	<showWhen id="IPoption2aNegVerb">
 		<whenValue element="neg" attr="subjVerbRequired" value="yes"/>
-	<and/>
+		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
 		<or/>
 		<whenValue element="neg" attr="subjVerbRequired" value="yes"/>
@@ -434,6 +430,35 @@ IP = I'
 		<and/>
 		<whenValue element="q" attr="contFront" value="before"/>
 	</showWhen>
+	<rule show="IPoption4afoc">
+rule {IP option 4afoc - subject focused, not passive}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type pro-drop&gt; = -
+	&lt;IP head type passive&gt; = -
+	&lt;IP head fronted cat&gt; = FocusP
+	&lt;IP head fronted head type wh&gt; = -
+	&lt;IP head fronted&gt; = &lt;I' head subject&gt;
+		{&lt;I' head type transitive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+	&lt;I' head object head type reflexive&gt; = -
+		/&lt;I' head type transitive&gt; = +
+	&lt;I' head object head type reflexive&gt; = +
+	&lt;IP head fronted&gt; = &lt;I' head object&gt;
+	}
+	&lt;IP head fronted head&gt; == ~[case:accusative]
+	&lt;IP option&gt; = 4afoc
+</rule>
+	<showWhen id="IPoption4afoc">
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenValue element="focus" attr="focus" value="yes"/>
+	</showWhen>
 	<rule show="IPoption4aSOV">
 rule {IP option 4aSOV - subject questioned, not passive, SOV}
 IP = I'
@@ -469,6 +494,30 @@ IP = I'
 		<whenValue element="q" attr="contFront" value="before"/>
 		<and/>
 		<whenValue element="ip" attr="passive" value="yes"/>
+	</showWhen>
+	<rule show="IPoption4bfoc">
+rule {IP option 4b - subject focused, passive}
+IP = I'
+	&lt;IP head&gt; = &lt;I' head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type pro-drop&gt; = -
+	&lt;IP head type passive&gt; = +
+	&lt;IP head fronted cat&gt; = FocusP
+	&lt;IP head fronted head type wh&gt; = -
+	&lt;IP head fronted&gt; = &lt;I' head object&gt;
+	&lt;IP head fronted head&gt; == ~[case:accusative]
+	&lt;IP option&gt; = 4bfoc
+</rule>
+	<showWhen id="IPoption4bfoc">
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenValue element="ip" attr="passive" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="focus" value="yes"/>
 	</showWhen>
 	<rule show="IPoption4bSOV">
 rule {IP option 4bSOV - subject questioned, passive, SOV}
@@ -527,6 +576,10 @@ I' = Aux VP
 	&lt;I' head type auxiliary&gt; = +
 	&lt;Aux head type negative&gt; = -
 	&lt;I' head subject agr&gt; = &lt;Aux head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
 	&lt;I' option&gt; = 2
 </rule>
@@ -550,29 +603,33 @@ I' = Aux VP
 	&lt;I' head type auxiliary&gt; = +
 	&lt;Aux head type negative&gt; = +
 	&lt;I' head subject agr&gt; = &lt;Aux head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
 	&lt;VP head type negative&gt; &lt;= &lt;Aux head type negative&gt; | polarity from Aux
 	&lt;I' option&gt; = 2Neg
 </rule>
 	<showWhen id="IBaroption2Neg">
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
@@ -587,28 +644,32 @@ I' = Aux VP
 	&lt;Aux head type negative&gt; = +
 	&lt;VP head type negative&gt; = +    | only neg verb with neg Aux
 	&lt;I' head subject agr&gt; = &lt;Aux head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
 	&lt;I' option&gt; = 2NegAuxVerbRequired
 </rule>
 	<showWhen id="IBaroption2NegAuxVerbRequired">
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
@@ -623,101 +684,105 @@ I' = Aux_1 Aux VP
 	&lt;Aux_1 head type negative&gt; = -
 	&lt;Aux head type negative&gt; = +
 	&lt;I' head subject agr&gt; = &lt;Aux_1 head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux_1 head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type prefix&gt; &lt;= &lt;Aux_1 head type prefix&gt;
 	&lt;VP head type negative&gt; &lt;= &lt;Aux head type negative&gt; | polarity from Aux
 	&lt;I' option&gt; = 2NegPlusAux
 </rule>
 	<showWhen id="IBaroption2NegPlusAux">
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
@@ -733,100 +798,104 @@ I' = Aux_1 Aux VP
 	&lt;Aux head type negative&gt; = +
 	&lt;VP head type negative&gt; = +   | neg Aux requires neg verb
 	&lt;I' head subject agr&gt; = &lt;Aux_1 head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux_1 head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type prefix&gt; &lt;= &lt;Aux_1 head type prefix&gt;
 	&lt;I' option&gt; = 2NegPlusAuxVerbRequired
 </rule>
 	<showWhen id="IBaroption2NegPlusAuxVerbRequired">
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
@@ -840,6 +909,10 @@ I' = VP Aux
 	&lt;I' head type auxiliary&gt; = +
 	&lt;Aux head type negative&gt; = -
 	&lt;I' head subject agr&gt; = &lt;Aux head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;I' option&gt; = 3
 </rule>
@@ -863,29 +936,33 @@ I' = VP Aux
 	&lt;I' head type auxiliary&gt; = +
 	&lt;Aux head type negative&gt; = +
 	&lt;I' head subject agr&gt; = &lt;Aux head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type suffix&gt; &lt;= &lt;Aux head type suffix&gt;
 	&lt;VP head type negative&gt; &lt;= &lt;Aux head type negative&gt; | polarity from Aux
 	&lt;I' option&gt; = 3Neg
 </rule>
 	<showWhen id="IBaroption3Neg">
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
@@ -900,28 +977,32 @@ I' = VP Aux
 	&lt;Aux head type negative&gt; = +
 	&lt;VP head type negative&gt; = +    | neg Aux requires neg verb
 	&lt;I' head subject agr&gt; = &lt;Aux head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type suffix&gt; &lt;= &lt;Aux head type suffix&gt;
 	&lt;I' option&gt; = 3NegAuxVerbRequired
 </rule>
 	<showWhen id="IBaroption3NegAuxVerbRequired">
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="no" negateValue="no"/>
@@ -936,101 +1017,105 @@ I' = VP Aux Aux_1
 	&lt;Aux_1 head type negative&gt; = -
 	&lt;Aux head type negative&gt; = +
 	&lt;I' head subject agr&gt; = &lt;Aux_1 head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux_1 head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type suffix&gt; &lt;= &lt;Aux_1 head type suffix&gt;
 	&lt;VP head type negative&gt; &lt;= &lt;Aux head type negative&gt; | polarity from Aux
 	&lt;I' option&gt; = 3NegPlusAux
 </rule>
 	<showWhen id="IBaroption3NegPlusAux">
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="no"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="no"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
@@ -1046,100 +1131,104 @@ I' = VP Aux Aux_1
 	&lt;Aux head type negative&gt; = +
 	&lt;VP head type negative&gt; = +     | neg Aux requires neg verb
 	&lt;I' head subject agr&gt; = &lt;Aux_1 head subject agr&gt;
+	{&lt;VP head infl finite&gt; = -
+	/&lt;VP head infl finite&gt; = +
+	 &lt;Aux_1 head infl tense&gt; =  &lt;VP head infl tense&gt;
+	   }
 	&lt;I' head type suffix&gt; &lt;= &lt;Aux_1 head type suffix&gt;
 	&lt;I' option&gt; = 3NegPlusAuxVerbRequired
 </rule>
 	<showWhen id="IBaroption3NegPlusAuxVerbRequired">
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yes"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAffix"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesVerb"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<or/>
-	<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
-	<and/>
+		<whenValue element="neg" attr="auxVerbRequired" value="yes"/>
+		<and/>
 		<whenValue element="ip" attr="negAux" value="yesAll"/>
 		<and/>
 		<whenValue element="ip" attr="negAuxRequiresAux" value="yes"/>

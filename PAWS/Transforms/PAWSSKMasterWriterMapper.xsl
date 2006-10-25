@@ -139,9 +139,7 @@ DoFree
 -->
 	<xsl:template name="DoFree">
 		<free>
-			<gloss lang="lGloss">
-				<object type="tComment">ENTER FREE TRANSLATION HERE.</object>
-			</gloss>
+			<gloss lang="lGloss">ENTER FREE TRANSLATION HERE.</gloss>
 		</free>
 	</xsl:template>
 	<!--
@@ -153,9 +151,7 @@ DoGloss
 -->
 	<xsl:template name="DoGloss">
 		<line>
-			<gloss lang="lGloss">
-				<object type="tComment">ENTER GLOSS HERE</object>
-			</gloss>
+			<gloss lang="lGloss">ENTER GLOSS HERE</gloss>
 		</line>
 	</xsl:template>
 	<!--
@@ -181,8 +177,8 @@ OutputColExamples
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<row>
-				<col>
+			<tr>
+				<td>
 					<langData>
 						<xsl:attribute name="lang">
 							<xsl:text>l</xsl:text>
@@ -190,8 +186,8 @@ OutputColExamples
 						</xsl:attribute>
 						<xsl:value-of select="$sLine"/>
 					</langData>
-				</col>
-			</row>
+				</td>
+			</tr>
 			<!-- now recurse -->
 			<xsl:call-template name="OutputColExamples">
 				<xsl:with-param name="sExamples">

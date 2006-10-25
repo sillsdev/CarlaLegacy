@@ -32,7 +32,8 @@ displayStatus(IPContentsAuxStatus,"ipContents4");
 displayStatus(IPContentsIntransStatus,"ipContents5");
 displayStatus(IPContentsTransStatus,"ipContents6");
 displayStatus(IPContentsPassiveStatus,"ipContents7");
-displayStatus(IPContentsTestingStatus,"ipContents8");
+displayStatus(IPContentsCatMapStatus,"ipContents8");
+displayStatus(IPContentsTestingStatus,"ipContents9");
 
 example = PawsSKAnswers.selectSingleNode("//leftOffAt");
 example.text = "IPContents.htm";
@@ -120,12 +121,19 @@ function StatusClicked(idOfItem, strElem)
 			<td valign="top"><A id=IPContentsPassive href="IPPassive.htm">Passive Sentences</A></td>
 		</tr>
 		<tr>
-			<td id="IPContentsTestingStatus" onclick="StatusClicked(IPContentsTestingStatus,'ipContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+			<td id="IPContentsCatMapStatus" onclick="StatusClicked(IPContentsCatMapStatus,'ipContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">9.8.</td>
+			<td valign="top"><A id=IPContentsTesting href="IPCatMap.htm">Category Mapper</A></td>
+		</tr>
+		<tr>
+			<td id="IPContentsTestingStatus" onclick="StatusClicked(IPContentsTestingStatus,'ipContents9')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">9.9.</td>
 			<td valign="top"><A id=IPContentsTesting href="IPTesting.htm">Testing</A></td>
 		</tr>
-<tr><td>&nbsp;</td><td>&nbsp;</td><td><A href="Contents.htm">Return to Contents</A></td>
-</tr>
+		<tr>
+		<td>&nbsp;</td><td>&nbsp;</td>
+		<td><A href="Contents.htm">Return to Contents</A></td>
+		</tr>
 </table>
 <div class="userData" id="answerDiv"></div>
    </body>

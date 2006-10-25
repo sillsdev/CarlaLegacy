@@ -247,14 +247,14 @@
 	Augmented by morphset so we can get XMLmind to show it as a table.
 	Also changed word to iword (for interlinear word).
 	-->
-<!ELEMENT item (#PCDATA| %embedded;)*>
+<!ELEMENT item (#PCDATA | %embedded;)*>
 <!ATTLIST item
 	type (cf | gls | hn | msa | pos | punct | txt) #REQUIRED
 	lang IDREF #REQUIRED
 >
 <!ELEMENT morph (item+)>
 <!ATTLIST morph
-	type CDATA #REQUIRED
+	type CDATA #IMPLIED
 >
 <!-- N.B. EMELD does not use morphset; we do so we can properly format the data in an XML editor like XMLmind that uses CSS to display data  -->
 <!ELEMENT morphemes (morphset)>
@@ -353,6 +353,8 @@
 <!ATTLIST img
 	src CDATA #REQUIRED
 	description CDATA #IMPLIED
+	cssSpecial CDATA #IMPLIED
+	xsl-foSpecial CDATA #IMPLIED
 >
 <!-- there's more... -->
 <!-- langData is a way to tag some text as belonging to a particular language. -->
@@ -438,7 +440,7 @@
 <!ELEMENT refDate (#PCDATA)>
 <!ELEMENT refTitle (#PCDATA | %embedded;)*>
 <!-- journal article -->
-<!ELEMENT article (jTitle, jVol, jPages, location?, publisher? )>
+<!ELEMENT article (jTitle, jVol, jPages, location?, publisher?)>
 <!ELEMENT jTitle (#PCDATA)>
 <!ELEMENT jVol (#PCDATA)>
 <!ELEMENT jPages (#PCDATA)>
@@ -468,7 +470,7 @@
 <!ELEMENT paper (conference, location?)>
 <!ELEMENT conference (#PCDATA)>
 <!-- proceedings paper from a conference -->
-<!ELEMENT proceedings (procEd?, procTitle, procVol?, procPage?, location?, publisher)>
+<!ELEMENT proceedings (procEd?, procTitle, procVol?, procPage?, location?, publisher?)>
 <!ELEMENT procEd (#PCDATA)>
 <!ATTLIST procEd
 	plural (no | yes) "yes"

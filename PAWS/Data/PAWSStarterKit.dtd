@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XML Spy v3.0.7 (http://www.xmlspy.com) by Andy Black (SIL International) -->
 <!-- PAWS Starter Kit DTD -->
+<!-- The dbversion attribute is used in order to be able to automatically migrate data from one version to another -->
 <!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, prop, pron, pp, ip, comp, q, relcl, advcl, neg, coord, focus, excl)>
+<!ATTLIST paws
+	dbversion CDATA #IMPLIED
+>
 <!-- leftOffAt is the html page where the user last performed a save operation -->
 <!ELEMENT leftOffAt (#PCDATA)>
 <!-- Language has the language name, abbreviation and font information.  It
@@ -193,7 +197,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	 Noun-noun compounds may or may not occur (comp).  If yes, they have a head (compHead)
 	and any PP occurs in a position with respect to that head (compHeadPPPos).
 -->
-<!ELEMENT np (example, embeddedExample, ppExample, relClExample, possAlienableAffixExample, qpExample, adjpExample, partExample, compExample, compPPExample, partHeadExample, partHeadSentExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter, npPossAgrPossAnimate, npPossAgrPossInanimate, npPossAgrPossHuman, npPossAgrPossNonHuman, npPossAgrPossClassClassNumber)>
+<!ELEMENT np (example, embeddedExample, ppExample, relClExample, possAlienableAffixExample, qpExample, adjpExample, partExample, compExample, compPPExample, partHeadExample, partHeadSentExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npContents9, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter, npPossAgrPossAnimate, npPossAgrPossInanimate, npPossAgrPossHuman, npPossAgrPossNonHuman, npPossAgrPossClassClassNumber)>
 <!ATTLIST np
 	checkedOff (yes | no) "no"
 	agreeNumber (no | yes) "no"
@@ -292,6 +296,10 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 >
 <!ELEMENT npContents8 EMPTY>
 <!ATTLIST npContents8
+	checkedOff (yes | no) "no"
+>
+<!ELEMENT npContents9 EMPTY>
+<!ATTLIST npContents9
 	checkedOff (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossFirst EMPTY>
@@ -1184,7 +1192,7 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT focusMarkerExample (#PCDATA)>
 <!-- Exclamations and greetings have examples of greetings, interjections, words meaning yes and no, exclamations and exclamation marker words.  The position of the marker is determined.
 -->
-<!ELEMENT excl (greetExample, intjExample, yesExample, noExample, exclExample, exclMExample )>
+<!ELEMENT excl (greetExample, intjExample, yesExample, noExample, exclExample, exclMExample)>
 <!ATTLIST excl
 	checkedOff (yes | no) "no"
 	exclM (no | yes) "no"

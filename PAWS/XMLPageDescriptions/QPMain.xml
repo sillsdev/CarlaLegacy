@@ -116,7 +116,8 @@ like <example>only</example> and <example>just</example> (which can also acts as
 		<br/>
 		<radioGroup id="QPNPDegreeYesTable" show="swQPNPDegreeNotNo">
 			<groupName dataItem="npDegreePos" default="unknown" position="yesSpec">RQPNPDegreePos</groupName>
-			<prompt>Looking at the data in the <span id="QPNPDegreeNegYesSpan" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">two boxes</span><span id="QPNPDegreeNegNoSpan" show="swQPNPDegreeYesPosOnlyOrNoPosOnly">box</span> above, where do these special degree <span id="QPNPDegreeSomeAttachPrompt" show="swQPNPDegreeYesPosOrYesPosOnlyOrYesNeg">elements which are written as separate </span>words occur with respect to the rest of the nominal phrase?</prompt>
+			<prompt>Looking at the data in the <span id="QPNPDegreeNegYesSpan" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">two boxes</span>
+				<span id="QPNPDegreeNegNoSpan" show="swQPNPDegreeYesPosOnlyOrNoPosOnly">box</span> above, where do these special degree <span id="QPNPDegreeSomeAttachPrompt" show="swQPNPDegreeYesPosOrYesPosOnlyOrYesNeg">elements which are written as separate </span>words occur with respect to the rest of the nominal phrase?</prompt>
 			<radio id="QPNPDegreeBefore" checked="yes" dataValue="before">Before it</radio>
 			<radio id="QPNPDegreeAfter" checked="yes" dataValue="after">After it</radio>
 			<radio id="QPNPDegreeEitherSide" checked="yes" dataValue="either">On either side, but not both sides at the same time</radio>
@@ -161,17 +162,17 @@ meaning 'not' in full nominal phrases including the positive special degree elem
 				<radio id="QPNPDegreeNegEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
 		</radioGroup>
-		<instruction id="QPNPDegreeYesInstruction" show="swQPNPDegreeYes">In the lexicon, mark the words meaning <example>all</example>, <example>not</example>, <example>almost</example>, <example>only</example>, and <example>just</example> with the features <feature>Deg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>
+		<instruction id="QPNPDegreeYesInstruction" show="swQPNPDegreeYes">In the lexicon, mark the words meaning <example>all</example>, <example>not</example>, <example>almost</example>, <example>only</example>, and <example>just</example> with the features <feature>makeDeg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>
 and the second adds the feature to distinguish them as the type that modifies NPs.   If your language has a phrase meaning <example>almost</example>, such as <example>not quite</example> or <example>just about</example>, you need to make a single entry for these phrases with an underscore (_) between them and run the Join Compound program before AMPLE.  These entries need the same features as a single word entry with a similar meaning would have.<br/>
 			<br/>
 Also, mark the word or words meaning <example>all</example> with the features
 <feature>plural quantifier</feature> and mark the word or words meaning <example>not</example> with the feature <feature>negative</feature>.  These negative words will be discussed further in <section number="14">Negation Constructions</section>.</instruction>
-		<instruction id="QPNPDegreeYesPosOrYesPosOnlyInstruction" show="swQPNPDegreeYesPosOrYesPosOnly">In the lexicon, mark the words meaning <example>all</example>, <example>almost</example>, <example>only</example>, and <example>just</example> with the features <feature>Deg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>
+		<instruction id="QPNPDegreeYesPosOrYesPosOnlyInstruction" show="swQPNPDegreeYesPosOrYesPosOnly">In the lexicon, mark the words meaning <example>all</example>, <example>almost</example>, <example>only</example>, and <example>just</example> with the features <feature>makeDeg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>
 and the second adds the feature to distinguish them as the type that modifies NPs.   If your language has a phrase meaning <example>almost</example>, such as <example>just about</example>, you need to make a single entry for these phrases with an underscore (_) between them and run the Join Compound program before AMPLE.  These entries need the same features as a single word entry with a similar meaning would have.<br/>
 			<br/>
 Also, mark the word or words meaning <example>all</example> with the features
 <feature>plural quantifier</feature>.</instruction>
-		<instruction id="QPNPDegreeYesNegInstruction" show="swQPNPDegreeYesNeg">In the lexicon, mark the words meaning <example>not</example> with the features <feature>Deg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category> and the second adds the feature to distinguish them as the type that modifies NPs.  <br/>
+		<instruction id="QPNPDegreeYesNegInstruction" show="swQPNPDegreeYesNeg">In the lexicon, mark the words meaning <example>not</example> with the features <feature>Deg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>makeDeg</category> and the second adds the feature to distinguish them as the type that modifies NPs.  <br/>
 			<br/>
 Also, mark the word or words meaning <example>not</example> with the feature <feature>negative</feature>.  These negative words will be discussed further in <section number="14">Negation Constructions</section>.</instruction>
 		<instruction id="QPNPDegreePosProcliticInstruction" show="swQPNPDegreePosProclitic">In the lexicon, mark the positive proclitic(s) meaning <example>all</example> with the features <feature>plural quantifier_prefix</feature>.
@@ -248,32 +249,32 @@ Also, mark the word or words meaning <example>not</example> with the feature <fe
 	</showWhen>
 	<showWhen id="swQPNPDegreeNotNo">
 		<whenRadio button="QPNPDegreeYes"/>
-<or/>
+		<or/>
 		<whenRadio button="QPNPDegreeYesPos"/>
-<or/>
+		<or/>
 		<whenRadio button="QPNPDegreeYesPosOnly"/>
 		<or/>
 		<whenRadio button="QPNPDegreeYesNeg"/>
 	</showWhen>
-<showWhen id="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">
+	<showWhen id="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">
 		<whenRadio button="QPNPDegreeYes"/>
-<or/>
+		<or/>
 		<whenRadio button="QPNPDegreeYesPos"/>
-<or/>
+		<or/>
 		<whenRadio button="QPNPDegreeYesNeg"/>
 		<or/>
 		<whenRadio button="QPNPDegreeNo"/>
-</showWhen>
-<showWhen id="swQPNPDegreeYesPosOrYesPosOnly">
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesPosOrYesPosOnly">
 		<whenRadio button="QPNPDegreeYesPos"/>
-<or/>
+		<or/>
 		<whenRadio button="QPNPDegreeYesPosOnly"/>
-</showWhen>
-<showWhen id="swQPNPDegreeYesPosOnlyOrNoPosOnly">
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesPosOnlyOrNoPosOnly">
 		<whenRadio button="QPNPDegreeYesPosOnly"/>
-<or/>
+		<or/>
 		<whenRadio button="QPNPDegreeNoPosOnly"/>
-</showWhen>
+	</showWhen>
 	<showWhen id="swQPNPDegreePosProclitic">
 		<whenRadio button="QPNPDegreePosProclitic"/>
 		<and/>

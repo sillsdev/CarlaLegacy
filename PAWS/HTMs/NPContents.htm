@@ -32,7 +32,8 @@ displayStatus(NPContentsPossessorsStatus,"npContents4");
 displayStatus(NPContentsQPStatus,"npContents5");
 displayStatus(NPContentsAdjPStatus,"npContents6");
 displayStatus(NPContentsCompoundsStatus,"npContents7");
-displayStatus(NPContentsTestingStatus,"npContents8");
+displayStatus(NPContentsCatMapStatus,"npContents8");
+displayStatus(NPContentsTestingStatus,"npContents9");
 
 example = PawsSKAnswers.selectSingleNode("//leftOffAt");
 example.text = "NPContents.htm";
@@ -120,8 +121,13 @@ function StatusClicked(idOfItem, strElem)
 			<td valign="top"><A id=NPContentsCompounds href="NPCompounds.htm">Noun Compounds, Complements and Participle Phrases</A></td>
 		</tr>
 		<tr>
-			<td id="NPContentsTestingStatus" onclick="StatusClicked(NPContentsTestingStatus,'npContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+			<td id="NPContentsCatMapStatus" onclick="StatusClicked(NPContentsCatMapStatus,'npContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">5.8.</td>
+			<td valign="top"><A id=NPContents CatMap href="NPCatMap.htm">Category Mapper</A></td>
+		</tr>
+		<tr>
+			<td id="NPContentsTestingStatus" onclick="StatusClicked(NPContentsTestingStatus,'npContents9')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.9.</td>
 			<td valign="top"><A id=NPContentsTesting href="NPTesting.htm">Testing</A></td>
 		</tr>
 <tr><td>&nbsp;</td><td>&nbsp;</td><td><A href="Contents.htm">Return to Contents</A></td>

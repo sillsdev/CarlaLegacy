@@ -81,7 +81,7 @@ either side.</span>
 		<br/>
 		<buttons>
 			<button id="AdvPDegreeBack" value="Back" goto="AdvPReason.htm"/>
-			<button id="AdvPDegreeNext" value="Next" goto="AdvPTesting.htm"/>
+			<button id="AdvPDegreeNext" value="Next" goto="AdvPCatMap.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swAdvPDegreeYes">

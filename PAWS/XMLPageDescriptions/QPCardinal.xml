@@ -80,7 +80,7 @@ written as separate words, such as <example>one hundred thirty three</example>. 
 		<br/>
 		<buttons>
 			<button id="QPCardinalExamplesBack" value="Back" goto="QPDegree.htm"/>
-			<button id="QPCardinalExamplesNext" value="Next" goto="QPTesting.htm"/>
+			<button id="QPCardinalExamplesNext" value="Next" goto="QPCatMap.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swQPOrdinalAffix">

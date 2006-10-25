@@ -509,7 +509,7 @@ Let participle          be      &lt;head type participle&gt;          = +
 Let partitive		be	&lt;head type partitive&gt;		= +
 Let passive		be	&lt;head type passive&gt;		= +
 Let passive.optional	be	&lt;head type passive&gt;		= {+ -}
-Let past		be	&lt;head infl tense past&gt;          = +
+Let past		be	&lt;head infl tense&gt;          =  past
 Let perfective		be	&lt;head infl aspect perfective&gt;   = +
 Let plural		be	&lt;head agr number&gt; = plural
 Let plural_absolutive	be	{ [head:[object:[head:[agr:[number:plural]]]
@@ -570,7 +570,7 @@ Let poss_suffix         be      &lt;head type suffix poss&gt;         = +
 Let possessed		be	&lt;head type possessed&gt;           = +
 Let possessive          be      &lt;head type possessive&gt;          = +
 Let potential		be	&lt;head infl aspect potential&gt;    = +
-Let present		be	&lt;head infl tense present&gt;       = +
+Let present		be	&lt;head infl tense&gt;       =  present
 Let progressive		be	&lt;head infl aspect progressive&gt;  = +
 Let proper          be      &lt;head type proper&gt;          = +
 Let PP          be      &lt;head type PP&gt;          = +
@@ -675,6 +675,8 @@ Let Art			be	&lt;cat&gt; = !Art
 
 Let Aux			be	&lt;cat&gt; = !Aux
 				&lt;head type passive&gt;		= !-
+				&lt;head type negative&gt;		= !-
+				&lt;head type participle&gt;		= -
 				&lt;head infl finite&gt;              = !+
 
 Let C			be	&lt;cat&gt; = !C
@@ -706,6 +708,7 @@ Let Dem                 be      &lt;cat&gt; = !Dem
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr person&gt; = !third
 								&lt;head type relative&gt;            = !-
+								&lt;head type temporal&gt;            = !-
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
 								&lt;head case&gt;            = !nominative
@@ -740,6 +743,7 @@ Let N                   be      &lt;cat&gt; = !N
 								&lt;head type proper&gt;              = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type mass&gt;                = !-
+								&lt;head type temporal&gt;            = !-
 								&lt;head embedded&gt;      = !none
 </content>
 		<specializedTemplates show="nominativedefault">
@@ -807,6 +811,7 @@ Let Pron                be      &lt;cat&gt; = !Pron
 								&lt;head type reflexive&gt;          = !-
 								&lt;head type posessive&gt;          = !-
 								&lt;head type relative&gt;            = !-
+								&lt;head type temporal&gt;            = !-
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -834,6 +839,7 @@ Let PropN		be	&lt;cat&gt; = N
 								&lt;head type sentential&gt;          = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type mass&gt;                = !-
+								&lt;head type temporal&gt;            = !-
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -852,7 +858,7 @@ Let PropN		be	&lt;cat&gt; = N
 </specializedTemplates>
 		<content>
 
-Let Q                   be      &lt;cat&gt; = Q
+Let Q                   be      &lt;cat&gt; = !Q
 								&lt;head type wh&gt;                  = !-
 
 Let V                   be      &lt;cat&gt; = !V
@@ -867,6 +873,7 @@ Let V                   be      &lt;cat&gt; = !V
 								&lt;head type negative&gt;            = !-
 								&lt;head type participle&gt;          = !-
 								&lt;head infl mood realis&gt;         = !+
+								&lt;head infl mood imperative&gt;         = !-
 								&lt;head embedded&gt;      = !none
 </content>
 		<specializedTemplates show="negative-polaritydefault">
@@ -916,6 +923,8 @@ Let makeArt		be	&lt;cat&gt; = Art
 
 Let makeAux		be	&lt;cat&gt; = Aux
 				&lt;head type passive&gt;		= !-
+				&lt;head type negative&gt;		= !-
+				&lt;head type participle&gt;		= -
 				&lt;head infl finite&gt;              = !+
 
 Let makeC		be	&lt;cat&gt; = C
@@ -947,6 +956,7 @@ Let makeDem             be      &lt;cat&gt; = Dem
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr person&gt; = !third
 								&lt;head type relative&gt;            = !-
+								&lt;head type temporal&gt;            = !-
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
 								&lt;head case&gt;            = !nominative
@@ -978,6 +988,7 @@ Let makeN               be      &lt;cat&gt; = N
 								&lt;head type proper&gt;              = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type mass&gt;                = !-
+								&lt;head type temporal&gt;            = !-
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -1027,6 +1038,7 @@ Let makePron            be      &lt;cat&gt; = Pron
 								&lt;head type reflexive&gt;          = !-
 								&lt;head type posessive&gt;          = !-
 								&lt;head type relative&gt;            = !-
+								&lt;head type temporal&gt;            = !-
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -1042,6 +1054,9 @@ Let makePron            be      &lt;cat&gt; = Pron
 </specializedTemplates>
 		<content>
 
+Let makeQ                   be      &lt;cat&gt; = Q
+								&lt;head type wh&gt;                  = !-
+
 Let makeTopicM  be    &lt;cat&gt; = TopicM
 
 Let makeV               be      &lt;cat&gt; = V
@@ -1055,6 +1070,7 @@ Let makeV               be      &lt;cat&gt; = V
 								&lt;head type negative&gt;            = !-
 								&lt;head type participle&gt;          = !-
 								&lt;head infl mood realis&gt;         = !+
+								&lt;head infl mood imperative&gt;         = !-
 								&lt;embedded&gt;      = !none
 </content>
 		<specializedTemplates show="negative-polaritydefault">
@@ -1161,7 +1177,7 @@ Let makeV               be      &lt;cat&gt; = V
 	<catMapper show="conjunctionCat">Conj</catMapper>
 	<showWhen id="conjunctionCat">
 		<whenValue element="qp/conjunctionCategory" value="" negateValue="yes"/>
-<or/>
+		<or/>
 		<whenValue element="coord/conjunctionCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="adverbCat">Adv</catMapper>
@@ -1239,9 +1255,9 @@ S = (PP_1) {IP / CP} (PP_2)
 	&lt;CP head type root&gt; = +
 	&lt;S option&gt; = start.symbol
 </rule>
-<showWhen id="Soptionstart.symbol">
-	<whenValue element="focus" attr="topic" value="no"></whenValue>
-</showWhen>
+	<showWhen id="Soptionstart.symbol">
+		<whenValue element="focus" attr="topic" value="no"/>
+	</showWhen>
 	<rule show="Soptionstart.topicinit">
 rule {S option start.topicinit  - PPs optional, topic initial}
 S = (TopicP) (PP_1) {IP / CP} (PP_2)
@@ -1252,11 +1268,11 @@ S = (TopicP) (PP_1) {IP / CP} (PP_2)
 	&lt;CP head type root&gt; = +
 	&lt;S option&gt; = start.topicinit
 </rule>
-<showWhen id="Soptionstart.topicinit">
-	<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="before"></whenValue>
-</showWhen>
+	<showWhen id="Soptionstart.topicinit">
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="before"/>
+	</showWhen>
 	<rule show="Soptionstart.topicfin">
 rule {S option start.topicinit  - PPs optional, topic final}
 S = (PP_1) {IP / CP} (PP_2) (TopicP)
@@ -1267,11 +1283,11 @@ S = (PP_1) {IP / CP} (PP_2) (TopicP)
 	&lt;CP head type root&gt; = +
 	&lt;S option&gt; = start.topicfin
 </rule>
-<showWhen id="Soptionstart.topicfin">
-	<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="after"></whenValue>
-</showWhen>
+	<showWhen id="Soptionstart.topicfin">
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="after"/>
+	</showWhen>
 	<rule show="Soptionstart.initial">
 rule {S option start.initial - AdvP or DP initial}
 S = {AdvP / DP} {IP / CP}
@@ -1290,8 +1306,8 @@ S = {AdvP / DP} {IP / CP}
 </rule>
 	<showWhen id="Soptionstart.initial">
 		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="no"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="no"/>
 	</showWhen>
 	<rule show="Soptionstart.initial.topicinit">
 rule {S option start.initial.topicinit - AdvP or DP initial, topic initial}
@@ -1311,10 +1327,10 @@ S = (TopicP) {AdvP / DP} {IP / CP}
 </rule>
 	<showWhen id="Soptionstart.initial.topicinit">
 		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="before"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="before"/>
 	</showWhen>
 	<rule show="Soptionstart.initial.topicfin">
 rule {S option start.initial.topicfin - AdvP or DP initial, topic final}
@@ -1334,10 +1350,10 @@ S = {AdvP / DP} {IP / CP} (TopicP)
 </rule>
 	<showWhen id="Soptionstart.initial.topicfin">
 		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="after"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="after"/>
 	</showWhen>
 	<rule show="Soptionstart.final">
 rule {S option start.final - AdvP or DP final}
@@ -1357,8 +1373,8 @@ S = {IP / CP} {AdvP / DP}
 </rule>
 	<showWhen id="Soptionstart.final">
 		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="no"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="no"/>
 	</showWhen>
 	<rule show="Soptionstart.final.topicinit">
 rule {S option start.final.topicinit - AdvP or DP final, topic initial}
@@ -1378,10 +1394,10 @@ S = (TopicP) {IP / CP} {AdvP / DP}
 </rule>
 	<showWhen id="Soptionstart.final.topicinit">
 		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="before"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="before"/>
 	</showWhen>
 	<rule show="Soptionstart.final.topicfin">
 rule {S option start.final.topicfin - AdvP or DP final, topic final}
@@ -1401,10 +1417,10 @@ S = {IP / CP} {AdvP / DP} (TopicP)
 </rule>
 	<showWhen id="Soptionstart.final.topicfin">
 		<whenValue element="neg" attr="advVerbRequired" value="yes" negateValue="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="after"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="after"/>
 	</showWhen>
 	<rule show="Soptionstart.negVrequired.initial">
 rule {S option start.negVrequired.initial - neg V required, AdvP or DP initial}
@@ -1424,9 +1440,9 @@ S = {AdvP / DP} {IP / CP}
 </rule>
 	<showWhen id="Soptionstart.negVrequired.initial">
 		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
- <and/>
-<whenValue element="focus" attr="topic" value="no"></whenValue>
-   </showWhen>
+		<and/>
+		<whenValue element="focus" attr="topic" value="no"/>
+	</showWhen>
 	<rule show="Soptionstart.negVrequired.initial.topicinit">
 rule {S option start.negVrequired.initial.topicinit - neg V required, AdvP or DP initial, topic initial}
 S = (TopicP) {AdvP / DP} {IP / CP}
@@ -1445,11 +1461,11 @@ S = (TopicP) {AdvP / DP} {IP / CP}
 </rule>
 	<showWhen id="Soptionstart.negVrequired.initial.topicinit">
 		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="before"></whenValue>
-   </showWhen>
+		<and/>
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="before"/>
+	</showWhen>
 	<rule show="Soptionstart.negVrequired.initial.topicfin">
 rule {S option start.negVrequired.initial.topicfin - neg V required, AdvP or DP initial, topic final}
 S = {AdvP / DP} {IP / CP} (TopicP)
@@ -1468,11 +1484,11 @@ S = {AdvP / DP} {IP / CP} (TopicP)
 </rule>
 	<showWhen id="Soptionstart.negVrequired.initial.topicfin">
 		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="after"></whenValue>
-   </showWhen>
+		<and/>
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="after"/>
+	</showWhen>
 	<rule show="Soptionstart.negVrequired.final">
 rule {S option start.negVrequired.final - neg V required, AdvP or DP final}
 S = {IP / CP} {AdvP / DP}
@@ -1491,8 +1507,8 @@ S = {IP / CP} {AdvP / DP}
 </rule>
 	<showWhen id="Soptionstart.negVrequired.final">
 		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="no"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="no"/>
 	</showWhen>
 	<rule show="Soptionstart.negVrequired.final.topicinit">
 rule {S option start.negVrequired.final.topicinit - neg V required, AdvP or DP final, topic initial}
@@ -1512,12 +1528,12 @@ S = (TopicP) {IP / CP} {AdvP / DP}
 </rule>
 	<showWhen id="Soptionstart.negVrequired.final.topicinit">
 		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="no"></whenValue>
-<and/>
-<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="before"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="no"/>
+		<and/>
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="before"/>
 	</showWhen>
 	<rule show="Soptionstart.negVrequired.final.topicfin">
 rule {S option start.negVrequired.final.topicfin - neg V required, AdvP or DP final, topic final}
@@ -1537,14 +1553,14 @@ S = {IP / CP} {AdvP / DP} (TopicP)
 </rule>
 	<showWhen id="Soptionstart.negVrequired.final.topicfin">
 		<whenValue element="neg" attr="advVerbRequired" value="yes"/>
-<and/>
-<whenValue element="focus" attr="topic" value="no"></whenValue>
-<and/>
-<whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-<whenValue element="focus" attr="topicPos" value="after"></whenValue>
+		<and/>
+		<whenValue element="focus" attr="topic" value="no"/>
+		<and/>
+		<whenValue element="focus" attr="topic" value="yes"/>
+		<and/>
+		<whenValue element="focus" attr="topicPos" value="after"/>
 	</showWhen>
-<!-- |******************************************************-->
+	<!-- |******************************************************-->
 	<rule>
 rule {S option greeting}
 S = Greet (DP)
@@ -1571,15 +1587,15 @@ S = Excl AdjP
 	&lt;Excl head type excl-initial&gt; = +
 	&lt;S option&gt; = excl.init
 </rule>
-<showWhen id="Soptionexcl.init">
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="before"></whenValue>
-<or/>
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="either"></whenValue>
-</showWhen>
+	<showWhen id="Soptionexcl.init">
+		<whenValue element="excl" attr="exclM" value="yes"/>
+		<and/>
+		<whenValue element="excl" attr="exclMPos" value="before"/>
+		<or/>
+		<whenValue element="excl" attr="exclM" value="yes"/>
+		<and/>
+		<whenValue element="excl" attr="exclMPos" value="either"/>
+	</showWhen>
 	<rule show="Soptionexcl.fin">
 rule {S option excl.fin}
 S = AdjP Excl
@@ -1587,15 +1603,15 @@ S = AdjP Excl
 	&lt;Excl head type excl-final&gt; = +
 	&lt;S option&gt; = excl.fin
 </rule>
-<showWhen id="Soptionexcl.fin">
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="after"></whenValue>
-<or/>
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="either"></whenValue>
-</showWhen>
+	<showWhen id="Soptionexcl.fin">
+		<whenValue element="excl" attr="exclM" value="yes"/>
+		<and/>
+		<whenValue element="excl" attr="exclMPos" value="after"/>
+		<or/>
+		<whenValue element="excl" attr="exclM" value="yes"/>
+		<and/>
+		<whenValue element="excl" attr="exclMPos" value="either"/>
+	</showWhen>
 	<rule show="Soptionexcl.both">
 rule {S option excl.both}
 S = Excl_1 AdjP Excl_2
@@ -1604,9 +1620,9 @@ S = Excl_1 AdjP Excl_2
 	&lt;Excl_2 head type excl-final&gt; = +
 	&lt;S option&gt; = excl.both
 </rule>
-<showWhen id="Soptionexcl.both">
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="both"></whenValue>
-</showWhen>
+	<showWhen id="Soptionexcl.both">
+		<whenValue element="excl" attr="exclM" value="yes"/>
+		<and/>
+		<whenValue element="excl" attr="exclMPos" value="both"/>
+	</showWhen>
 </masterGrammar>

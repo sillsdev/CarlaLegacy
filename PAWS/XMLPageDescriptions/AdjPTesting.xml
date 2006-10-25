@@ -5,28 +5,20 @@
 <page id="AdjPTesting">
 	<title level="2">Adjectives and AdjP - Testing</title>
 	<form section="adjp">
-		<instruction>You need to make sure the adjectives in your lexicon will be mapped to the syntactic category <category>Adj</category>.  Choose one of the following options, depending on your situation:
-<ul>
-				<li>If you already have adjectives marked with the category <category>Adj</category> in your lexicon, nothing
-  more needs to be done.</li>
-				<li>If adjectives are mixed in with another category in the lexicon, you either need to give them the category <category>Adj</category> in your morphological parser, or add the feature <feature>makeAdj</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.</li>
-				<li>If you have adjectives marked in your lexicon with a distinct category all their own, but it is different from <category>Adj</category>, enter that category below so PAWS can map your morphological category to <category>Adj</category>. <br/>
-					<catMap id="AdjPAdjectiveCategory" dataItem="adjectiveCategory">Adj</catMap>
-				</li>
-			</ul>
-			<br/>
-			<p>Run the file <file id="AdjPTestingFile" section="AdjP">adjtest.txt</file> through your morphological parser and then
-run the syntactic parser on the output.  Check the log for the
-results and note any changes you need to make to the lexicon or to
-answers about the order of elements in the phrase structure
-rules. Make the changes as needed and rerun.</p>
-			<p>
+		<instruction>To test what you have done so far, save your work now.  This will generate the test file and grammar rules file created to this point.
+	<br/>
+	<br/>
+Run the file <file id="AdjPTestingFile" section="AdjP">xxxAdjPTest.txt</file> through your morphological parser and then
+run the syntactic parser on the output (all possible within CarlaStudio, as noted on the 'Contents' page).  Check the log for the
+results and note any changes you need to make, most likely by adding features to particular entries in the lexicon.  If any words fail to be parsed by your morphological parser, then the syntactic parser cannot parse any phrases or sentences those words are included in, so you need to fix the problem with the morphlogical parser first.  You may also find you need to change your answers on the previous pages of PAWS about the order of elements in the phrase structure rules.   Or you may need to use the Category Mapper on the previous page to correct differences between your categories and those used by PAWS.  Make the changes as needed.  If you have changed anything on the pages within PAWS, you will need to return to this page and then save the files again.  Rerun the parsers and check the results again.
+<br/>
+	<br/>
 Please check off this section now in 'Contents' and then proceed to
-<section number="5">Simple and Possessed Nominal Phrases</section> when you are ready.</p>
+<section number="5">Simple and Possessed Nominal Phrases</section> when you are ready.
 		</instruction>
 		<br/>
 		<buttons>
-			<button id="AdjPTestingBack" value="Back" goto="AdjPMain.htm"/>
+			<button id="AdjPTestingBack" value="Back" goto="AdjPCatMap.htm"/>
 			<button id="AdjPTestingNext" value="Next" goto="Contents.htm"/>
 		</buttons>
 	</form>

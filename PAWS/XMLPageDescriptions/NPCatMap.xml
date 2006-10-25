@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NPCatMap">
+	<title level="2">Nominal Phrases - Category Mapper</title>
+	<form section="np">
+		<instruction id="NPArtCategoryInstruction" show="swNPArt">You need to make sure the articles in your lexicon will be mapped to the syntactic category <category>Art</category>.  Choose one of the following options, depending on your situation:
+<ul>
+				<li>If you already have articles marked with the category <category>Art</category> in your lexicon, nothing
+  more needs to be done.</li>
+				<li>If articles are mixed in with another category in the lexicon, you either need to give them the category <category>Art</category> in your morphological parser, or add the feature <feature>makeArt</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.</li>
+				<li>If you have articles marked in your lexicon with a distinct category all their own, but it is different from <category>Art</category>, enter that category below so PAWS can map your morphological category to <category>Art</category>. <br/>
+					<catMap id="NPArticleCategory" dataItem="articleCategory">Art</catMap>
+				</li>
+			</ul>
+		</instruction>
+		<instruction id="NPDemCategoryInstruction" show="swNPDem">You need to make sure the demonstratives in your lexicon will be mapped to the syntactic category <category>Dem</category>.  Choose one of the following options, depending on your situation:
+<ul>
+				<li>If you already have demonstratives marked with the category <category>Dem</category> in your lexicon, nothing
+  more needs to be done.</li>
+				<li>If demonstratives are mixed in with another category in the lexicon, you either need to give them the category <category>Dem</category> in your morphological parser, or add the feature <feature>makeDem</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.</li>
+				<li>If you have demonstratives marked in your lexicon with a distinct category all their own, but it is different from <category>Dem</category>, enter that category below so PAWS can map your morphological category to <category>Dem</category>. <br/>
+					<catMap id="NPDemonstrativeCategory" dataItem="demonstrativeCategory">Dem</catMap>
+				</li>
+			</ul>
+		</instruction>
+		<instruction id="NPNounCategoryInstruction">You need to make sure the nouns in your lexicon will be mapped to the syntactic category <category>N</category>.  Choose one of the following options, depending on your situation:
+<ul>
+				<li>If you already have nouns marked with the category <category>N</category> in your lexicon, nothing
+  more needs to be done.</li>
+				<li>If nouns are mixed in with another category in the lexicon, you either need to give them the category <category>N</category> in your morphological parser, or add the feature <feature>makeN</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.</li>
+				<li>If you have nouns marked in your lexicon with a distinct category all their own, but it is different from <category>N</category>, enter that category below so PAWS can map your morphological category to <category>N</category>. <br/>
+					<catMap id="NPNounCategory" dataItem="nounCategory">N</catMap>
+				</li>
+			</ul>
+		</instruction>
+<br/>
+		<br/>
+		<buttons>
+			<button id="NPCatMapBack" value="Back" goto="NPContents.htm"/>
+			<button id="NPCatMapNext" value="Next" goto="NPContents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swNPArt">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+	</showWhen>
+	<showWhen id="swNPDem">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+	</showWhen>
+</page>

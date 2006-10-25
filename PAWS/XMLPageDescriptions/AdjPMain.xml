@@ -77,7 +77,7 @@
 		<br/>
 		<buttons>
 			<button id="AdjPMainBack" value="Back" goto="Contents.htm"/>
-			<button id="AdjPMainNext" value="Next" goto="AdjPTesting.htm"/>
+			<button id="AdjPMainNext" value="Next" goto="AdjPCatMap.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swAdjPModifiersYesDegree">

@@ -620,7 +620,7 @@ DoInterlinear
 					  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
 					</xsl:element>
 				  </xsl:element>
-				  <object type="tComment">ENTER AN EXAMPLE HERE.</object>
+					  <xsl:text>ENTER AN EXAMPLE HERE</xsl:text>
 				</langData>
 			  </line>
 			  <xsl:element name="xsl:call-template">

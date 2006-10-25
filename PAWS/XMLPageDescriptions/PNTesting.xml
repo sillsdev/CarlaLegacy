@@ -4,38 +4,22 @@
 <page id="PNTesting">
 	<title level="2">Proper Names - Testing</title>
 	<form section="prop">
-		<instruction>All of these options for proper names will be allowed if we simply give proper names the category of <category>N</category>.  There is a good chance that you have given proper names a different category than <category>N</category> for your morphological parser, since they may not take affixes at all, or they may take different ones than regular nouns.  You may also have more than one category for proper names, since Biblical names or place names may be separate from other proper names normally used for people in your language.  Check to see what categories proper names have in your morphological parser so that the proper mapping can be made here.Choose one of the following options, depending on your situation:<br/>
-			<ul>
-				<li>If you already have proper names mixed in with common nouns which are marked with the category <category>N</category> in your lexicon (or you have entered the category mapping to map your morphological category to the category <category>N</category> in the nominal phrases section), nothing more needs to be done for the category.
-		In this case, your proper names will have the same defaults as nouns, i.e. third person, singular, and inanimate.  Third person should be correct.  Any inherently plural proper names need to have the feature <feature>plural</feature> added in the lexicon (as well as any affixes which mark plural that do not yet have the feature).  In addition, any proper names which name people or animals need to have the feature <feature>animate</feature> (and possibly the feature <feature>human</feature>) added to their lexical entry.  Also, add the feature <feature>proper</feature> to all proper names to be able to distinguish their behavior from that of common nouns, especially if an articles or demonstrative is normally required with singular nouns, but that requirement does not hold for proper names.</li>
-				<li>If you have proper names marked in your lexicon with one or more categories distinct from common nouns, enter that category below in the proper box so PAWS can map your morphological category to <category>N</category> with the appropriate default features.   For example, Biblical names and normal proper names in your language will use the top two boxes, since the default is animate (and human), while place names would use the third box.  <br/>
-					<catMap id="PropNAnimate1Category" dataItem="propAnimate1Category">PropNAnimate</catMap>
-					<br/>
-					<catMap id="PropNAnimate2Category" dataItem="propAnimate2Category">PropNAnimate</catMap>
-					<br/>
-					<catMap id="PropNInanimateCategory" dataItem="propInanimateCategory">PropNInanimate</catMap>
-					<br/>
-					<br/>
-Any inherently plural proper names need to have the feature <feature>plural</feature> added in the lexicon.  Also, any proper names within a particular category which do not match the default value for animacy need to have the appropriate feature(s), either <feature>animate</feature> or <feature>-animate</feature> (and possibly either <feature>human</feature> or <feature>-human</feature>), added to their lexical entry.
-				</li>
-			</ul>
-		</instruction>
-		<instruction>
-			<p>Run the file <file id="PropTestingFile" section="prop">proptest.txt</file> through your
-morphological parser and then
-run the syntactic parser on the output.  Check the log for the
-results and note any changes you need to make to the lexicon or to
-answers about the order of elements in the phrase structure
-rules. Make the changes as needed and rerun.</p>
-			<p>
-(Note: some examples cannot be tested until you complete <section number="8">Pre/Post-positional Phrases</section> and <section number="12">Relative Clauses</section>.)<br/>
+		<instruction>To test what you have done so far, save your work now.  This will generate the test file and grammar rules file created to this point.
+	<br/>
+	<br/>
+Run the file <file id="PropTestingFile" section="prop">xxxPropTest.txt</file> through your morphological parser and then
+run the syntactic parser on the output (all possible within CarlaStudio, as noted on the 'Contents' page).  Check the log for the
+results and note any changes you need to make, most likely by adding features to particular entries in the lexicon.  If any words fail to be parsed by your morphological parser, then the syntactic parser cannot parse any phrases or sentences those words are included in, so you need to fix the problem with the morphlogical parser first.  You may also find you need to change your answers on the previous pages of PAWS about the order of elements in the phrase structure rules.   Or you may need to use the Category Mapper on the previous page to correct differences between your categories and those used by PAWS.  Make the changes as needed.  If you have changed anything on the pages within PAWS, you will need to return to this page and then save the files again.  Rerun the parsers and check the results again.<br/>
+			<br/>
+(Note: some examples cannot be tested until you complete <section number="8">Pre/Post-positional Phrases</section> or <section number="12">Relative Clauses</section> so they will appear in <file id="PPTestingFile" section="pp">xxxPPTest.txt</file> or <file id="RelClTestingFile" section="relcl">xxxRelClTest.txt</file> instead of this file.)<br/>
 				<br/>
 Please check off this section now in 'Contents' and then proceed to
-<section number="7">Pronouns</section> when you are ready.</p>
+<section number="7">Pronouns</section> when you are ready.
 		</instruction>
+	<br/>
 		<br/>
 		<buttons>
-			<button id="PNTestingBack" value="Back" goto="PNMain.htm"/>
+			<button id="PNTestingBack" value="Back" goto="PNCatMap.htm"/>
 			<button id="PNTestingNext" value="Next" goto="Contents.htm"/>
 		</buttons>
 	</form>

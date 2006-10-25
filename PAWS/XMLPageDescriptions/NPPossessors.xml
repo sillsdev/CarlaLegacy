@@ -20,6 +20,7 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 			Key some examples with relative clauses within the possessor here, included in simple full sentences:</prompt>
 		<textBox id="NPPossRelClExample" dataItem="relClExample"/>
 		<br/>
+		<br/>
 		<radioGroup>
 			<groupName dataItem="possMarked" default="no">RNPPossMarked</groupName>
 			<prompt>Based on your examples, does your language have any special marking to distinguish possessors from any other nominal phrase?</prompt>
@@ -59,9 +60,12 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 			<radio id="NPPossEitherSide" checked="yes" dataValue="either">On either side of the noun</radio>
 		</radioGroup>
 		<introduction id="NPPossCooccurIntroduction" show="swNPArtAndOrDem">We also need to know whether possessors and articles or demonstratives can co-occur in the same nominal phrase.  In English, these elements do not co-occur, unless the possessor is expressed in a prepositional phrase.  For example, we can't say <example>those [the boy's] books</example>; instead we use <example>those books [of his]</example> to express the same thought.  Some other languages allow both possessors and articles or demonstratives to occur in the same phrase, so the first example above would be grammatical.</introduction>
+<br/>
 		<radioGroup id="NPPossCooccurTable" show="swNPArtAndOrDem">
 			<groupName dataItem="possCooccur" default="yes"/>
-			<prompt>Can possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> in your language?</prompt>
+			<prompt>Can possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span>
+				<span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span>
+				<span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> in your language?</prompt>
 			<radio id="NPPossCooccurYes" dataValue="yes">Yes, they may co-occur</radio>
 			<radio id="NPPossCooccurNo" dataValue="no">No, it is the same as English in this regard</radio>
 		</radioGroup>
@@ -73,15 +77,40 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 			<radio id="NPPossCaseAbsolutive" dataValue="absolutive">Absolutive, the same marking as the subjects of intransitive verbs and the objects of transitive verbs</radio>
 			<radio id="NPPossCaseGenitive" dataValue="genitive">Genitive, a distinct marking for possessors</radio>
 		</radioGroup>
+		<radioGroup id="NPPossCaseSplit" show="swNPCaseSplit">
+			<groupName dataItem="possCaseErg" default="genitive">RNPPossCaseSplit</groupName>
+			<prompt>Which case is used to mark the possessors in the parts of your language that display split ergativity?</prompt>
+			<radio id="NPPossCaseSplitErgative" dataValue="ergative">Ergative, the same marking as the subjects of transitive verbs</radio>
+			<radio id="NPPossCaseSplitAbsolutive" dataValue="absolutive">Absolutive, the same marking as the subjects of intransitive verbs and the objects of transitive verbs</radio>
+			<radio id="NPPossCaseSplitGenitive" dataValue="genitive">Genitive, the same marking for possessors used in the nominative-accusative constructions</radio>
+		</radioGroup>
 		<instruction id="NPPossMarkedYesAffixErgInstruction" show="swNPPossMarkedYesAffixErg">In the lexicon, mark the possessive affix with the feature <feature>ergative</feature>.</instruction>
 		<instruction id="NPPossMarkedYesAffixAbsInstruction" show="swNPPossMarkedYesAffixAbs">In the lexicon, mark the possessive affix with the feature <feature>absolutive</feature>.</instruction>
 		<instruction id="NPPossMarkedYesAffixGenInstruction" show="swNPPossMarkedYesAffixGen">In the lexicon, mark the possessive affix with the feature <feature>genitive</feature>.</instruction>
-		<instruction id="NPPossMarkedYesCliticWordNoInstruction" show="swNPPossMarkedYesCliticWordNo">In the lexicon, add  the feature <span id="NPPossCliticPrefix" show="swNPPossMarkedYesCliticPrefix"><feature>poss_prefix</feature></span><span id="NPPossCliticSuffix" show="swNPPossMarkedYesCliticSuffix"><feature>poss_suffix</feature></span> to the possessive clitic.   <span id="NPPossMarkedYesCliticWordNoGen" show="swNPPossMarkedYesCliticWordNoGen">Also add the feature <feature>genitive</feature> for the case marking.</span><span id="NPPossMarkedYesCliticWordNoErg" show="swNPPossMarkedYesCliticWordNoErg">Also add the feature <feature>ergative</feature> for the case marking.</span><span id="NPPossMarkedYesCliticWordNoAbs" show="swNPPossMarkedYesCliticWordNoAbs">Also add the feature <feature>absolutive</feature> for the case marking.</span>
+		<instruction id="NPPossMarkedYesAffixErgSplitInstruction" show="swNPPossMarkedYesAffixErgSplit">In the lexicon, mark the possessive affix used in the nominative-accusative constructions with the feature <feature>genitive</feature> and mark the possessive affix used in the split ergativity constructions with the feature <feature>ergative</feature>.</instruction>
+		<instruction id="NPPossMarkedYesAffixAbsSplitInstruction" show="swNPPossMarkedYesAffixAbsSplit">In the lexicon, mark the possessive affix used in the nominative-accusative constructions with the feature <feature>genitive</feature> and mark the possessive affix used in the split ergativity constructions with the feature  <feature>absolutive</feature>.</instruction>
+		<instruction id="NPPossMarkedYesAffixGenSplitInstruction" show="swNPPossMarkedYesAffixGenSplit">In the lexicon, mark the possessive affix with the feature <feature>genitive</feature>.</instruction>
+		<instruction id="NPPossMarkedYesCliticWordNoInstruction" show="swNPPossMarkedYesCliticWordNo">In the lexicon, add  the feature <span id="NPPossCliticPrefix" show="swNPPossMarkedYesCliticPrefix">
+				<feature>poss_prefix</feature>
+			</span>
+			<span id="NPPossCliticSuffix" show="swNPPossMarkedYesCliticSuffix">
+				<feature>poss_suffix</feature>
+			</span> to the possessive clitic(s).
+			<span id="NPPossMarkedYesCliticWordNoGen" show="swNPPossMarkedYesCliticWordNoGen">Also, add the feature <feature>genitive</feature> for the case marking.</span>
+			<span id="NPPossMarkedYesCliticWordNoErg" show="swNPPossMarkedYesCliticWordNoErg">Also, add the feature <feature>ergative</feature> for the case marking.</span>
+			<span id="NPPossMarkedYesCliticWordNoAbs" show="swNPPossMarkedYesCliticWordNoAbs">Also, add the feature <feature>absolutive</feature> for the case marking.</span>
+			<span id="NPPossMarkedYesCliticWordNoGenSplit" show="swNPPossMarkedYesCliticWordNoGenSplit">Also, add the feature <feature>genitive</feature> for the case marking.</span>
+			<span id="NPPossMarkedYesCliticWordNoErgSplit" show="swNPPossMarkedYesCliticWordNoErgSplit">Also, add the feature <feature>genitive</feature> or <feature>ergative</feature> as appropriate for the case marking.</span>
+			<span id="NPPossMarkedYesCliticWordNoAbsSplit" show="swNPPossMarkedYesCliticWordNoAbsSplit">Also, add the feature <feature>genitive</feature> or <feature>absolutive</feature> as appropriate for the case marking.</span>
 		</instruction>
 		<instruction id="NPPossMarkedYesCliticWordYesGenInstruction" show="swNPPossMarkedYesCliticWordYesGen">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
 		<instruction id="NPPossMarkedYesCliticWordYesErgInstruction" show="swNPPossMarkedYesCliticWordYesErg">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss_ergative</feature>, which will change the category and add the ergative case.</instruction>
 		<instruction id="NPPossMarkedYesCliticWordYesAbsInstruction" show="swNPPossMarkedYesCliticWordYesAbs">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss_absolutive</feature>, which will change the category and add the absolutive case.</instruction>
+		<instruction id="NPPossMarkedYesCliticWordYesGenSplitInstruction" show="swNPPossMarkedYesCliticWordYesGenSplit">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
+		<instruction id="NPPossMarkedYesCliticWordYesErgSplitInstruction" show="swNPPossMarkedYesCliticWordYesErgSplit">In the lexicon, mark the possessive clitic word entry used in the nominative-accusative constructions with the feature <feature>Poss</feature>, which will change the category and add the genitive case.  Mark the possessive clitic word entry used in the split ergativity constructions with the feature <feature>Poss_ergative</feature>, which will change the category and add the ergative case.</instruction>
+		<instruction id="NPPossMarkedYesCliticWordYesAbsSplitInstruction" show="swNPPossMarkedYesCliticWordYesAbsSplit">In the lexicon, mark the possessive clitic word entry used in the nominative-accusative constructions with the feature <feature>Poss</feature>, which will change the category and add the genitive case.  Mark the possessive clitic word entry used in the split ergativity constructions with the feature <feature>Poss_absolutive</feature>, which will change the category and add the absolutive case.</instruction>
 		<introduction id="NPPossNounCaseChangeIntroduction" show="swNPCaseYes">In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system. </introduction>
+<br/>
 		<radioGroup id="NPPossNounCaseChange" show="swNPCaseYes">
 			<groupName dataItem="possNounCaseChange" default="no">RNPPossNounCaseChange</groupName>
 			<prompt>
@@ -89,6 +118,8 @@ Does the presence of a possessor change the case marking on the head noun to mat
 			<radio id="NPPossNounCaseChangeNo" dataValue="no">No, the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor</radio>
 			<radio id="NPPossNounCaseChangeYes" dataValue="yes">Yes, the case of the head noun matches the case of the possessor, when a possessor is present</radio>
 		</radioGroup>
+		<br/>
+		<instruction id="NPPossNounCaseChangeYesInstruction" show="swNPPossNounCaseChangeYes">Important note: The grammar rules needed to parse sentences with possessive noun phrases in your language with PC-Patr are not currently available within PAWS.  Please contact <a href="mailto:cheri_black@sil.org">Cheri_Black@sil.org</a> for help.</instruction>
 		<br/>
 		<buttons>
 			<button id="NPPossBack" value="Back" goto="NPContents.htm"/>
@@ -125,6 +156,9 @@ Does the presence of a possessor change the case marking on the head noun to mat
 	<showWhen id="swNPCaseErg">
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
+	<showWhen id="swNPCaseSplit">
+		<whenValue element="np" attr="case" value="split"/>
+	</showWhen>
 	<showWhen id="swNPCaseYes">
 		<not/>
 		<whenValue element="np" attr="case" value="none"/>
@@ -136,23 +170,44 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
 	</showWhen>
+	<showWhen id="swNPPossMarkedYesAffixErgSplit">
+		<whenRadio button="NPPossMarkedYesAffix"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitErgative"/>
+		<and/>
+		<whenValue element="np" attr="case" value="split"/>
+	</showWhen>
 	<showWhen id="swNPPossMarkedYesAffixAbs">
 		<whenRadio button="NPPossMarkedYesAffix"/>
 		<and/>
 		<whenRadio button="NPPossCaseAbsolutive"/>
 		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
+</showWhen>
+<showWhen id="swNPPossMarkedYesAffixAbsSplit">
+		<whenRadio button="NPPossMarkedYesAffix"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitAbsolutive"/>
+		<and/>
+		<whenValue element="np" attr="case" value="split"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesAffixGen">
 		<whenRadio button="NPPossMarkedYesAffix"/>
 		<and/>
-		<openParen/>
 		<whenRadio button="NPPossCaseGenitive"/>
-		<or/>
+		<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
+<or/>
+		<whenRadio button="NPPossMarkedYesAffix"/>
+		<and/>
 		<whenValue element="np" attr="case" value="nominative"/>
-		<or/>
+	</showWhen>
+	<showWhen id="swNPPossMarkedYesAffixGenSplit">
+		<whenRadio button="NPPossMarkedYesAffix"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitGenitive"/>
+		<and/>
 		<whenValue element="np" attr="case" value="split"/>
-		<closeParen/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNo">
 		<whenRadio button="NPPossMarkedYesClitic"/>
@@ -162,20 +217,44 @@ Does the presence of a possessor change the case marking on the head noun to mat
 	<showWhen id="swNPPossMarkedYesCliticWordNoGen">
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
 		<and/>
-		<openParen/>
-		<whenRadio button="NPPossCaseGenitive"/>
-		<or/>
 		<whenValue element="np" attr="case" value="nominative"/>
-		<or/>
-		<whenValue element="np" attr="case" value="split"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swNPPossMarkedYesCliticWordNoErg">
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+<or/>
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
+		<and/>
+		<whenRadio button="NPPossCaseGenitive"/>
+		<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+</showWhen>
+<showWhen id="swNPPossMarkedYesCliticWordNoGenSplit">
+		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitGenitive"/>
+		<and/>
+		<whenValue element="np" attr="case" value="split"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticWordNoErg">
+	<whenRadio button="NPPossMarkedYesCliticWordNo"/>
 		<and/>
 		<whenRadio button="NPPossCaseErgative"/>
 		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticWordNoErgSplit">
+		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitErgative"/>
+		<and/>
+		<whenValue element="np" attr="case" value="split"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoAbs">
 		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
@@ -183,17 +262,41 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossCaseAbsolutive"/>
 		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+	</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticWordNoAbsSplit">
+		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitAbsolutive"/>
+		<and/>
+		<whenValue element="np" attr="case" value="split"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesGen">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
 		<and/>
-		<openParen/>
-		<whenRadio button="NPPossCaseGenitive"/>
-		<or/>
 		<whenValue element="np" attr="case" value="nominative"/>
-		<or/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+<or/>
+		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<and/>
+		<whenRadio button="NPPossCaseGenitive"/>
+		<and/>
+		<whenValue element="np" attr="case" value="ergative"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+	</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticWordYesGenSplit">
+		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitGenitive"/>
+		<and/>
 		<whenValue element="np" attr="case" value="split"/>
-		<closeParen/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesErg">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
@@ -201,6 +304,17 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossCaseErgative"/>
 		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticWordYesErgSplit">
+		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitErgative"/>
+		<and/>
+		<whenValue element="np" attr="case" value="split"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesAbs">
 		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
@@ -208,5 +322,22 @@ Does the presence of a possessor change the case marking on the head noun to mat
 		<whenRadio button="NPPossCaseAbsolutive"/>
 		<and/>
 		<whenValue element="np" attr="case" value="ergative"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticWordYesAbsSplit">
+		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<and/>
+		<whenRadio button="NPPossCaseSplitAbsolutive"/>
+		<and/>
+		<whenValue element="np" attr="case" value="split"/>
+		<and/>
+		<whenRadio button="NPPossMarkedYesClitic"/>
+	</showWhen>
+	<showWhen id="swNPPossNounCaseChangeYes">
+		<not/>
+		<whenValue element="np" attr="case" value="none"/>
+<and/>
+		<whenRadio button="NPPossNounCaseChangeYes"/>
 	</showWhen>
 </page>

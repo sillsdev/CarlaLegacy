@@ -19,7 +19,7 @@
 		<br/>
 		<buttons>
 			<button id="PNMainBack" value="Back" goto="Contents.htm"/>
-			<button id="PNMainNext" value="Next" goto="PNTesting.htm"/>
+			<button id="PNMainNext" value="Next" goto="PNCatMap.htm"/>
 		</buttons>
 	</form>
 </page>

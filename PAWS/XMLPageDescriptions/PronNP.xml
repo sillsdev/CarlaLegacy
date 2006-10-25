@@ -55,7 +55,7 @@
 		<br/>
 		<buttons>
 			<button id="PronNPBack" value="Back" goto="PronIndefinite.htm"/>
-			<button id="PronNPNext" value="Next" goto="PronTesting.htm"/>
+			<button id="PronNPNext" value="Next" goto="PronCatMap.htm"/>
 		</buttons>
 	</form>
 </page>

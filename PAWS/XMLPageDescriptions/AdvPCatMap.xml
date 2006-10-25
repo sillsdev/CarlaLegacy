@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPCatMap">
+	<title level="2">Adverbs and Adverb Phrases - Category Mapper</title>
+	<form section="advp">
+		<instruction>You need to make sure the adverbs in your lexicon will be mapped to the syntactic category <category>Adv</category>.  Choose one of the following options, depending on your situation:
+<ul>
+				<li>If you already have adverbs marked with the category <category>Adv</category> in your lexicon, nothing
+  more needs to be done.</li>
+				<li>If adverbs are mixed in with another category in the lexicon, you either need to give them the category <category>Adv</category> in your morphological parser, or add the feature <feature>makeAdv</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.</li>
+				<li>If you have adverbs marked in your lexicon with a distinct category all their own, but it is different from <category>Adv</category>, enter that category below so PAWS can map your morphological category to <category>Adv</category>. <br/>
+					<catMap id="AdvPAdverbCategory" dataItem="adverbCategory">Adv</catMap>
+				</li>
+			</ul>
+		</instruction>
+		<br/>
+		<buttons>
+			<button id="AdvPCatMapBack" value="Back" goto="AdvPDegree.htm"/>
+			<button id="AdvPCatMapNext" value="Next" goto="Contents.htm"/>
+		</buttons>
+	</form>
+</page>
