@@ -10,9 +10,9 @@
 @set TITLE PC-PATR Reference Manual
 @set SUBTITLE a unification based syntactic parser
 @set VERSION version 1.4.0
-@set DATE December 2005
+@set DATE November 2006
 @set AUTHOR by Stephen McConnel (changes for v. 1.2.5-1.4.0 by H. Andrew Black)
-@set COPYRIGHT Copyright @copyright{} 2000-2005 SIL International
+@set COPYRIGHT Copyright @copyright{} 2000-2006 SIL International
 
 @include front.txi
 
@@ -2192,7 +2192,7 @@ A BNF grammar for PC-PATR priority union operations follows.
 				   | <feature-path> '<=' <ATOM>
 @end group
 
-<feature-path>   ::= '<' <label-list '>'
+<feature-path>   ::= '<' <label-list> '>'
 
 @group
 <label-list>     ::= <LABEL>
@@ -2459,7 +2459,7 @@ A BNF grammar for PC-PATR logical constraint operations follows.
 
 <logical-constraint> ::= <feature-path> '==' <expression>
 
-<feature-path>       ::= '<' <label-list '>'
+<feature-path>       ::= '<' <label-list> '>'
 
 <label-list>         ::= <LABEL>
 					   | <LABEL> <label-list>
