@@ -4,12 +4,15 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 4		/* enhancement requiring adding to book */
-#define PATCHLEVEL 2		/* bug fix or other minor change */
-#define DATE "July 18, 2006"	/* date of release version */
+#define PATCHLEVEL 3		/* bug fix or other minor change */
+#define DATE "November 9, 2006"	/* date of release version */
 #define YEAR "2006"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ *  9-Nov-2006	SRMc - fixed bug in constraint processing: yet another final
+ * [1.4.3]		pass over the parse trees to "triple check" the
+ *			constraints
  * 18-Jul-2006	hab  - in XML output, add sentence number to id (makes the
  * [1.4.2]              id unique within the file for all sentences)
  * 7-Jul-2006	hab  - Moved PumpMessages()( to opaclib

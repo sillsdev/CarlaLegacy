@@ -102,8 +102,22 @@ static void		show_vertex P((PATRVertex *  pVertex,
 static int		mark_parse_certainty  P((PATREdgeList * pEdgeList_io,
 						 PATRData * pThis));
 static int		count_parse_failures P((PATREdgeList * pList_in));
-static int		doublecheck_constraints P((PATREdge * pEdge_in, PATRFeature * pDag_in,
-						   PATRParseData * pData));
+static int		triplecheck_constraints P((PATREdge * pEdge_in,
+						   PATRFeature * pTreeFeats_in,
+						   PATRData * pPATR_in));
+static int		set_edge_indexes P((PATREdgeList * pel,
+					   PATRData * pData));
+static void		clear_edge_indexes P((PATREdgeList * pel,
+						 PATRData * pData,
+						 int iCurrentOld));
+static void		set_index P((PATREdge *edgep, int depth,
+					PATRData * pThis));
+static void		clear_index P((PATREdge *edgep, int depth,
+					PATRData * pThis));
+
+static int		doublecheck_constraints P((PATREdge * pEdge_in,
+						   PATRFeature * pDag_in,
+						   PATRData * pPATR_in));
 static PATREdgeList * parse_with_PATR P((PATRWord * pSentence_in,
 					 PATRParseData * pData));
 static void		parse_too_big P((size_t uiRequest_in));
@@ -1542,6 +1556,105 @@ return( fail );
 
 /*****************************************************************************
  * NAME
+ *    triplecheck_constraints
+ * DESCRIPTION
+ *    Recursively run down the parse tree, checking all logical constraints at
+ *    each edge.  First we have to find the right feature from the collection
+ *    of features.
+ * RETURN VALUE
+ *    true if all constraints are always satisfied, otherwise false.
+ */
+static int triplecheck_constraints(pEdge_in, pTreeFeats_in, pPATR_in)
+PATREdge * pEdge_in;
+PATRFeature * pTreeFeats_in;
+PATRData * pPATR_in;
+{
+int ok = TRUE;
+if (pEdge_in->eType == PATR_RULE_EDGE)
+	{
+	int bFailed = failedPATRParse(pEdge_in);
+	if (!bFailed && pTreeFeats_in != NULL)
+	{
+	PATREdgeList * pel;
+	PATRConstraint * pConstraint;
+	PATRComplexFeature * pcf;
+	PATRFeature * pf = NULL;
+	PATRDisplayedFeature * pSaveMultTop = pPATR_in->pMem->pMultTop;
+	int bCorefChecked = FALSE;
+
+	for (pcf = pTreeFeats_in->u.pComplex ; pcf ; pcf = pcf->pNext)
+		{
+		if (pcf->pszLabel == (char *)pEdge_in->iIndex)
+		{
+		pf = pcf->pValue;
+		break;
+		}
+		}
+	if (pf == NULL)
+		{
+		pf = findPATRAttribute(pEdge_in->pFeature,
+				   storedPATRString("0", pPATR_in));
+		if (pf != NULL)
+		{
+		markPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
+		resetPATRFeatureCoreferenceCheck(pPATR_in);
+		checkPATRFeatureCoreferences(pf, pPATR_in);
+		bCorefChecked = TRUE;
+		}
+		}
+	for (   pConstraint = pEdge_in->u.r.pRule->pConstraints ;
+		ok && pConstraint ;
+		pConstraint = pConstraint->pNext )
+		{
+		/* only check constraints that are for the mother node;
+		 * these are the only ones where the feature may have changed
+		 * and therefore are the only ones that need to be
+		 * double checked */
+		if (    pEdge_in->pszLabel &&
+			pConstraint->pPath &&
+			streq(pEdge_in->pszLabel, pConstraint->pPath->pszString))
+		{
+		/*
+		  the feature (*pf) is already one link on the path in, so wrap the feature
+		  appropriately. (I hate kludges like this!)
+		*/
+		PATRComplexFeature sComplex;
+		PATRFeature sFeat;
+		sComplex.pszLabel = pEdge_in->pszLabel;
+		sComplex.pValue = pf;
+		sComplex.pNext = NULL;
+		sFeat.eType = PATR_COMPLEX;
+		sFeat.u.pComplex = &sComplex;
+		if (pPATR_in->iDebugLevel >= 2)
+			{
+			fprintf(stdout, "DEBUG: triplecheck_constraints(...): edge index = %d\n",
+			pEdge_in->iIndex);
+			fprintf(stdout, "pEdge->pszLabel = \"%s\" (rule = \"%s\")\n",
+				pEdge_in->pszLabel ? pEdge_in->pszLabel : "{NULL}",
+				pEdge_in->u.r.pRule->pszID ? pEdge_in->u.r.pRule->pszID : "{NULL}");
+			fprintf(stdout, "pTreeFeat = ");
+			writePATRFeature(&sFeat, stdout, 12, pPATR_in);
+			fprintf(stdout, "\n");
+			}
+		ok = applyPATRConstraint(&sFeat, pConstraint, pPATR_in);
+		}
+		}
+	for (pel = pEdge_in->u.r.pChildren ; ok && pel ; pel = pel->pNext)
+		ok = triplecheck_constraints(pel->pEdge, pTreeFeats_in, pPATR_in);
+
+	if (bCorefChecked)
+		{
+		collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
+		resetPATRFeatureCoreferenceCheck(pPATR_in);
+		pPATR_in->pMem->pMultTop = pSaveMultTop;
+		}
+	}
+	}
+return ok;
+}
+
+/*****************************************************************************
+ * NAME
  *    doublecheck_constraints
  * DESCRIPTION
  *    Recursively run down the parse tree, checking all logical constraints at
@@ -1549,25 +1662,26 @@ return( fail );
  * RETURN VALUE
  *    true if all constraints are always satisfied, otherwise false.
  */
-static int doublecheck_constraints(pEdge_in, pDag_in, pData_in)
+static int doublecheck_constraints(pEdge_in, pDag_in, pPATR_in)
 PATREdge * pEdge_in;
 PATRFeature * pDag_in;
-PATRParseData * pData_in;
+PATRData * pPATR_in;
 {
 if (pEdge_in->eType == PATR_RULE_EDGE)
 	{
 	PATREdgeList * pel;
 	PATRConstraint * pConstraint;
 
-	if (pData_in->pPATR->iDebugLevel >= 2)
+	if (pPATR_in->iDebugLevel >= 2)
 	{
 	fprintf(stdout, "DEBUG: doublecheck_constraints(pEdge, pData)\n");
-	fprintf(stdout, "pEdge->pszLabel = \"%s\"\n",
-		pEdge_in->pszLabel ? pEdge_in->pszLabel : "{NULL}");
+	fprintf(stdout, "pEdge->pszLabel = \"%s\" (rule = \"%s\")\n",
+		pEdge_in->pszLabel ? pEdge_in->pszLabel : "{NULL}",
+		pEdge_in->u.r.pRule->pszID ? pEdge_in->u.r.pRule->pszID : "{NULL}");
 	fprintf(stdout, "pEdge_in->pFeature = ");
-	writePATRFeature(pEdge_in->pFeature, stdout, 12, pData_in->pPATR);
+	writePATRFeature(pEdge_in->pFeature, stdout, 12, pPATR_in);
 	fprintf(stdout, "\npDag_in = ");
-	writePATRFeature(pDag_in, stdout, 12, pData_in->pPATR);
+	writePATRFeature(pDag_in, stdout, 12, pPATR_in);
 	fprintf(stdout, "\n");
 	}
 
@@ -1583,17 +1697,17 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 	if (pEdge_in->pszLabel && pConstraint->pPath &&
 		streq(pEdge_in->pszLabel, pConstraint->pPath->pszString))
 		{
-		if (!applyPATRConstraint(pDag_in, pConstraint, pData_in->pPATR))
+		if (!applyPATRConstraint(pDag_in, pConstraint, pPATR_in))
 		  return FALSE;
 		}
 #else  /* hab138 */
-	if (!applyPATRConstraint(pDag_in, pConstraint, pData_in->pPATR))
+	if (!applyPATRConstraint(pDag_in, pConstraint, pPATR_in))
 		return FALSE;
 #endif /* hab138 */
 	}
 	for ( pel = pEdge_in->u.r.pChildren ; pel ; pel = pel->pNext )
 	{
-	if (!doublecheck_constraints(pel->pEdge, pEdge_in->pFeature, pData_in))
+	if (!doublecheck_constraints(pel->pEdge, pEdge_in->pFeature, pPATR_in))
 		return FALSE;
 	}
 	}
@@ -1682,29 +1796,6 @@ if (pData->pPATR->iDebugLevel)
 pParseList = build_parse_list(pData->pPATR->pGrammar, pData);
 if (pParseList != NULL)
 	{
-#if 1
-#else
-	PATREdgeList * pel;
-	PATREdgeList * pelPrev = NULL;
-	for ( pel = pParseList ; pel ; pel = pel->pNext )
-	{
-	int ok = doublecheck_constraints(pel->pEdge, pel->pEdge->pFeature,
-					 pData);
-	if (!ok)
-		{
-		if (pelPrev)
-		pelPrev->pNext = pel->pNext;
-		else
-		pParseList = pel->pNext;
-		}
-	else if (pData->pPATR->bRecognizeOnly)
-		{
-		/* one successful parse is enough */
-		break;
-		}
-	pelPrev = pel;
-	}
-#endif
 	if (    pData->pPATR->bUnification && !pData->pPATR->bFailure &&
 		count_parse_failures(pParseList) )
 	{
@@ -1795,6 +1886,93 @@ return iParseCount;
 
 /*****************************************************************************
  * NAME
+ *    clear_index
+ * ARGUMENTS
+ *    edgep -
+ *    depth -
+ *    pThis -
+ * DESCRIPTION
+ *    This routine (when called by the standard tree visiting iterator over all
+ *    the edges in a parse) clears the indices of all edges used in the parse.
+ * RETURN VALUE
+ *    none
+ */
+static void set_index(edgep, depth, pThis)
+PATREdge *edgep;
+int depth;
+PATRData * pThis;
+{
+if (edgep->iIndex == 0)    /* if index not yet assigned */
+	edgep->iIndex = ++pThis->pMem->iCurrent;   /* assign next value */
+}
+
+/*****************************************************************************
+ * NAME
+ *    set_edge_indexes
+ * ARGUMENTS
+ *    pel -
+ *    pData -
+ * DESCRIPTION
+ *
+ * RETURN VALUE
+ *
+ */
+static int set_edge_indexes(pel, pData)
+PATREdgeList * pel;
+PATRData * pData;
+{
+	int iCurrentOld = pData->pMem->iCurrent;
+	pData->pMem->iCurrent = 0;
+	visitPATREdges(pel, 1, PATR_PREORDER, set_index, pData);
+	pData->iCurrentIndex = pData->pMem->iCurrent;
+	return iCurrentOld;
+}
+
+/*****************************************************************************
+ * NAME
+ *    set_index
+ * ARGUMENTS
+ *    edgep -
+ *    depth -
+ *    pThis -
+ * DESCRIPTION
+ *    This routine (when called by the standard tree visiting iterator
+ *    over all the edges in a parse) assigns unique consecutive indices
+ *    to all edges used in the parse.  POSTORDER visiting is used to
+ *    guarantee that the index of a parent is always greater than the
+ *    index of its children.
+ * RETURN VALUE
+ *    none
+ */
+static void clear_index(edgep, depth, pThis)
+PATREdge *edgep;
+int depth;
+PATRData * pThis;
+{
+edgep->iIndex = 0;
+}
+
+/*****************************************************************************
+ * NAME
+ *    clear_edge_indexes
+ * ARGUMENTS
+ *    pel -
+ *    pData -
+ *    iCurrentOld -
+ * DESCRIPTION
+ *
+ * RETURN VALUE
+ *
+ */
+static void clear_edge_indexes(PATREdgeList * pel, PATRData * pData, int iCurrentOld)
+{
+	visitPATREdges(pel, 1, PATR_PREORDER, clear_index, pData);
+	pData->pMem->iCurrent = iCurrentOld;
+	pData->iCurrentIndex = iCurrentOld;
+}
+
+/*****************************************************************************
+ * NAME
  *    build_parse_list
  * ARGUMENTS
  *    pGrammar_in - pointer to PATRGrammar structure
@@ -1821,9 +1999,26 @@ while (elp != NULL)
 	if (    (elp->pEdge->iStart == 0) &&
 		(strcmp(elp->pEdge->pszLabel, pGrammar_in->pszStartSymbol) == 0) )
 	{
-#if 1
 	int ok = doublecheck_constraints(elp->pEdge, elp->pEdge->pFeature,
-					 pData);
+					 pData->pPATR);
+	if (ok)
+		{
+		PATRFeature * pParseFeatures;
+		if (!failedPATRParse(elp->pEdge) && (elp->pEdge->pFeature != NULL))
+		{
+		int iCurrentOrig = set_edge_indexes(elp, pData->pPATR);
+		markPATRGarbage(PATR_GARBAGE_DISPLAY, pData->pPATR);
+		pParseFeatures = unifyPATRParseTreeFeatures(elp->pEdge,
+								NULL, pData->pPATR);
+		resetPATRFeatureCoreferenceCheck(pData->pPATR);
+		checkPATRFeatureCoreferences(pParseFeatures, pData->pPATR);
+		ok = triplecheck_constraints(elp->pEdge, pParseFeatures,
+						 pData->pPATR);
+		resetPATRFeatureCoreferenceCheck(pData->pPATR);
+		collectPATRGarbage(PATR_GARBAGE_DISPLAY, pData->pPATR);
+		clear_edge_indexes(elp, pData->pPATR, iCurrentOrig);
+		}
+		}
 	if (ok)
 		{
 		++parse_count;
@@ -1840,13 +2035,6 @@ while (elp != NULL)
 		break;
 		}
 		}
-#else
-	++parse_count;
-	pNewParse = allocPATREdgeList(pData->pPATR);
-	pNewParse->pNext = pParses;
-	pNewParse->pEdge = elp->pEdge;
-	pParses = pNewParse;
-#endif
 	}
 	elp = elp->pNext;
 	}

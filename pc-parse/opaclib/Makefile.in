@@ -1,5 +1,5 @@
 # Master Unix makefile for the OPAC library
-# Steve McConnel, 24-Oct-2002
+# Steve McConnel,  9-Nov-2006
 #
 # additional possible definitions:
 # Hardware
@@ -33,6 +33,7 @@ SOURCES = add_sl.c   adjfname.c ambprog.c  appnd_sl.c cat_sl.c   tokenize.c \
 		  sqz_sl.c   strcla.c   textin.c   textout.c  trie.c     trimspac.c \
 		  unlst_sl.c updat_sl.c write_sl.c matchbeg.c matchend.c ufopen.c   \
 		  fulldisk.c free_ct.c  write_ct.c wordanal.c dynstr.c   cma.c      \
+		  PumpMessages.c \
 		  change.h   allocmem.h opaclib.h  record.h   rpterror.h strclass.h \
 		  strlist.h  template.h textctl.h  trie.h     dynstr.h
 
@@ -50,7 +51,7 @@ OBJ = myctype.o  allocmem.o dtbin.o    free_wt.o  resetxtc.o tokenize.o \
 	  rpterror.o rptmessg.o rptprgrs.o erasecha.o readfiel.o errcheck.o \
 	  numbrmsg.o adjfname.o ambprog.o  unlst_sl.o updat_sl.o safeexit.o \
 	  senttemp.o readline.o trimspac.o matchbeg.o matchend.o ufopen.o   \
-	  fulldisk.o free_ct.o  write_ct.o wordanal.o dynstr.o
+	  fulldisk.o free_ct.o  write_ct.o wordanal.o dynstr.o   PumpMessages.o
 
 libopac.a: $(OBJ)
 	rm -f libopac.a
@@ -133,6 +134,7 @@ write_ct.o write_ct.op: write_ct.c record.h
 wordanal.o wordanal.op: wordanal.c template.h textctl.h change.h strclass.h \
 								   strlist.h allocmem.h
 dynstr.o   dynstr.op:   dynstr.c   dynstr.h allocmem.h
+PumpMessages.o PumpMessages.op: PumpMessages.c
 #
 # these files don't like pedantically strict ANSI C compliance
 #

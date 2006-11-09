@@ -375,7 +375,7 @@ int		bAllosTried;
 #ifdef EXPERIMENTAL
 if (bAbortParse_m)
 	{
-	bAbortParse_m = FALSE;	// reset just in case...
+	bAbortParse_m = FALSE;	/* reset just in case... */
 	return 0;
 	}
 #endif

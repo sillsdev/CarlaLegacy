@@ -2080,10 +2080,22 @@ char *		second;
 PATRGrammar *	pGrammar_in;
 PATRData *      pPATR_in;
 {
-StringList *pName;
+StringList * pName;
 int first_idx;
 int second_idx;
-char *	pszCatFeatName;
+char * pszCatFeatName;
+char rgchFirst[20];
+char rgchSecond[20];
+if ((unsigned)first < 10000)
+	{
+	sprintf(rgchFirst, "#%d", (unsigned)first);
+	first = rgchFirst;
+	}
+if ((unsigned)second < 10000)
+	{
+	sprintf(rgchSecond, "#%d", (unsigned)second);
+	second = rgchSecond;
+	}
 
 if (	(pGrammar_in != (PATRGrammar *)NULL) &&
 	(pGrammar_in->pAttributeOrder != (StringList *)NULL) )

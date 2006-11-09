@@ -282,13 +282,28 @@ else
 		if (	(pPATR_in->iFeatureDisplay & PATR_FEATURE_TRIM) &&
 			only_null(flist->pValue) )
 			continue;
-		n = strlen(flist->pszLabel) + 1;
-		if (length + n >= 80)
+		if ((unsigned)flist->pszLabel < 10000)
+		{
+			char rgchTemp[20];
+			sprintf(rgchTemp, "#%d", (unsigned)flist->pszLabel);
+			n = strlen(rgchTemp);
+			if (length + n >= 80)
 			{
 			fprintf(fp,"\n          ");
 			length = 10;
 			}
-		fprintf(fp,"%s:", flist->pszLabel);	/* Print label */
+			fprintf(fp, "%s:", rgchTemp);	/* Print label */
+		}
+		else
+		{
+			n = strlen(flist->pszLabel) + 1;
+			if (length + n >= 80)
+			{
+			fprintf(fp,"\n          ");
+			length = 10;
+			}
+			fprintf(fp,"%s:", flist->pszLabel);	/* Print label */
+		}
 		length += n;
 						/* Print value */
 		length = show_feat_flat(flist->pValue, length, pPATR_in);
@@ -1348,7 +1363,7 @@ sprintf(szNodeId, "_%d", pEdge_in->iIndex);
 if (pEdge_in->bPrinted)
 	{
 	fprintf(pOutputFP_in, "%*s<Shared id=\"s%u_%d.%s\"/>\n", /* hab125 */
-		iIndent_in, uiSentCount_in, iParse_in, szNodeId);
+		iIndent_in, " ", uiSentCount_in, iParse_in, szNodeId);
 	return;
 	}
 pEdge_in->bPrinted = TRUE;
@@ -2088,6 +2103,7 @@ visitPATREdges(parses, 1, PATR_PREORDER, print_feat, pPATR_in);
 pPATR_in->pMem->pPrintsFP = NULL;
 }
 
+
 /*****************************************************************************
  * NAME
  *    writePATRParses
@@ -2102,7 +2118,8 @@ pPATR_in->pMem->pPrintsFP = NULL;
  * RETURN VALUE
  *    none
  */
-void writePATRParses(parses, pOutputFP_in, ppWords_in, pTextControl_in, uiSentCount_in, pPATR_in)
+void writePATRParses(parses, pOutputFP_in, ppWords_in, pTextControl_in,
+			 uiSentCount_in, pPATR_in)
 PATREdgeList *	parses;
 FILE *		pOutputFP_in;
 WordTemplate ** ppWords_in;
