@@ -650,7 +650,8 @@ Let Adj			be	&lt;cat&gt; = !Adj
 				&lt;head type wh&gt;			= !-
 				&lt;head type sentential&gt;          = !-
 								&lt;head type relative&gt;            = !-
-					&lt;head type clausal-comp&gt; = !-
+				&lt;head type clausal-comp&gt; = !-
+								&lt;head type focusmarked&gt;         = -
 
 Let Adv			be	&lt;cat&gt; = !Adv
 				&lt;head type wh&gt;			= !-
@@ -667,6 +668,7 @@ Let Adv			be	&lt;cat&gt; = !Adv
 
 Let Art			be	&lt;cat&gt; = !Art
 				&lt;head type wh&gt;			= !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
 								&lt;head case&gt;            = !nominative
@@ -703,12 +705,14 @@ Let Deg                 be      &lt;cat&gt; = !Deg
 								&lt;head type quantifier&gt;          = !-
 								&lt;head type wh&gt;                  = !-
 								&lt;head type relative&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 
 Let Dem                 be      &lt;cat&gt; = !Dem
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr person&gt; = !third
 								&lt;head type relative&gt;            = !-
 								&lt;head type temporal&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
 								&lt;head case&gt;            = !nominative
@@ -719,6 +723,7 @@ Let Det                 be      &lt;cat&gt; = !Det
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr person&gt; = !third
 								&lt;head type relative&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
 								&lt;head case&gt;            = !nominative
@@ -745,6 +750,7 @@ Let N                   be      &lt;cat&gt; = !N
 								&lt;head type mass&gt;                = !-
 								&lt;head type temporal&gt;            = !-
 								&lt;head embedded&gt;      = !none
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -771,6 +777,7 @@ Let Num                 be      &lt;cat&gt; = !Num
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr number&gt; = !plural
 								&lt;head type relative&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="DPFinaldefault">
 								&lt;head type DP-final&gt;            = !+
@@ -785,6 +792,7 @@ Let Num                 be      &lt;cat&gt; = !Num
 Let ordinal             be      &lt;cat&gt; = Adj
 								&lt;head type ordinal&gt;             = +
 								&lt;head agr number&gt; = !plural
+								&lt;head type focusmarked&gt;         = -
 
 Let P                   be      &lt;cat&gt; = !P
 								&lt;head type passive&gt;             = !-
@@ -812,6 +820,7 @@ Let Pron                be      &lt;cat&gt; = !Pron
 								&lt;head type posessive&gt;          = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type temporal&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -840,6 +849,7 @@ Let PropN		be	&lt;cat&gt; = N
 								&lt;head type relative&gt;            = !-
 								&lt;head type mass&gt;                = !-
 								&lt;head type temporal&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -860,6 +870,7 @@ Let PropN		be	&lt;cat&gt; = N
 
 Let Q                   be      &lt;cat&gt; = !Q
 								&lt;head type wh&gt;                  = !-
+								&lt;head type focusmarked&gt;         = -
 
 Let V                   be      &lt;cat&gt; = !V
 								&lt;head type passive&gt;             = !-
@@ -875,6 +886,7 @@ Let V                   be      &lt;cat&gt; = !V
 								&lt;head infl mood realis&gt;         = !+
 								&lt;head infl mood imperative&gt;         = !-
 								&lt;head embedded&gt;      = !none
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="negative-polaritydefault">
 								&lt;head type negative-polarity&gt;            = !-
@@ -898,7 +910,8 @@ Let makeAdj		be	&lt;cat&gt; = Adj
 				&lt;head type wh&gt;			= !-
 				&lt;head type sentential&gt;          = !-
 								&lt;head type relative&gt;            = !-
-					&lt;head type clausal-comp&gt; = !-
+				&lt;head type clausal-comp&gt; = !-
+								&lt;head type focusmarked&gt;         = -
 
 Let makeAdv		be	&lt;cat&gt; = Adv
 				&lt;head type wh&gt;			= !-
@@ -915,6 +928,7 @@ Let makeAdv		be	&lt;cat&gt; = Adv
 
 Let makeArt		be	&lt;cat&gt; = Art
 				&lt;head type wh&gt;			= !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
 								&lt;head case&gt;            = !nominative
@@ -951,12 +965,14 @@ Let makeDeg             be      &lt;cat&gt; = Deg
 								&lt;head type quantifier&gt;          = !-
 								&lt;head type wh&gt;                  = !-
 								&lt;head type relative&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 
 Let makeDem             be      &lt;cat&gt; = Dem
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr person&gt; = !third
 								&lt;head type relative&gt;            = !-
 								&lt;head type temporal&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativeArtDemdefault">
 								&lt;head case&gt;            = !nominative
@@ -989,6 +1005,7 @@ Let makeN               be      &lt;cat&gt; = N
 								&lt;head type relative&gt;            = !-
 								&lt;head type mass&gt;                = !-
 								&lt;head type temporal&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -1012,6 +1029,7 @@ Let makeNum             be      &lt;cat&gt; = Num
 								&lt;head type wh&gt;                  = !-
 								&lt;head agr number&gt; = !plural
 								&lt;head type relative&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="DPFinaldefault">
 								&lt;head type DP-final&gt;            = !+
@@ -1039,6 +1057,7 @@ Let makePron            be      &lt;cat&gt; = Pron
 								&lt;head type posessive&gt;          = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type temporal&gt;            = !-
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="nominativedefault">
 								&lt;head case&gt;            = !nominative
@@ -1054,8 +1073,9 @@ Let makePron            be      &lt;cat&gt; = Pron
 </specializedTemplates>
 		<content>
 
-Let makeQ                   be      &lt;cat&gt; = Q
+Let makeQ                   be  &lt;cat&gt; = Q
 								&lt;head type wh&gt;                  = !-
+								&lt;head type focusmarked&gt;         = -
 
 Let makeTopicM  be    &lt;cat&gt; = TopicM
 
@@ -1072,6 +1092,7 @@ Let makeV               be      &lt;cat&gt; = V
 								&lt;head infl mood realis&gt;         = !+
 								&lt;head infl mood imperative&gt;         = !-
 								&lt;embedded&gt;      = !none
+								&lt;head type focusmarked&gt;         = -
 </content>
 		<specializedTemplates show="negative-polaritydefault">
 								&lt;head type negative-polarity&gt;            = !-
@@ -1235,6 +1256,7 @@ Let makeV               be      &lt;cat&gt; = V
 	<showWhen id="whPronCat">
 		<whenValue element="q/whPronCategory" value="" negateValue="yes"/>
 	</showWhen>
+
 	<!-- |************************************************************ -->
 	<!-- |Phrase structure rules -->
 	<rule show="Soptiontesting">
@@ -1252,6 +1274,7 @@ S = (PP_1) {IP / CP} (PP_2)
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;S option&gt; = start.symbol
 </rule>
@@ -1265,6 +1288,7 @@ S = (TopicP) (PP_1) {IP / CP} (PP_2)
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;S option&gt; = start.topicinit
 </rule>
@@ -1280,6 +1304,7 @@ S = (PP_1) {IP / CP} (PP_2) (TopicP)
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;S option&gt; = start.topicfin
 </rule>
@@ -1295,6 +1320,7 @@ S = {AdvP / DP} {IP / CP}
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1316,6 +1342,7 @@ S = (TopicP) {AdvP / DP} {IP / CP}
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1339,6 +1366,7 @@ S = {AdvP / DP} {IP / CP} (TopicP)
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1362,6 +1390,7 @@ S = {IP / CP} {AdvP / DP}
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1383,6 +1412,7 @@ S = (TopicP) {IP / CP} {AdvP / DP}
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1406,6 +1436,7 @@ S = {IP / CP} {AdvP / DP} (TopicP)
 	&lt;S head&gt; = &lt;CP head&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1431,6 +1462,7 @@ S = {AdvP / DP} {IP / CP}
 	&lt;S head adverbial&gt; = &lt;DP&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1452,6 +1484,7 @@ S = (TopicP) {AdvP / DP} {IP / CP}
 	&lt;S head adverbial&gt; = &lt;DP&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1475,6 +1508,7 @@ S = {AdvP / DP} {IP / CP} (TopicP)
 	&lt;S head adverbial&gt; = &lt;DP&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1498,6 +1532,7 @@ S = {IP / CP} {AdvP / DP}
 	&lt;S head adverbial&gt; = &lt;DP&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1519,6 +1554,7 @@ S = (TopicP) {IP / CP} {AdvP / DP}
 	&lt;S head adverbial&gt; = &lt;DP&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
@@ -1544,6 +1580,7 @@ S = {IP / CP} {AdvP / DP} (TopicP)
 	&lt;S head adverbial&gt; = &lt;DP&gt;
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
+	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +

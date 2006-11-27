@@ -359,12 +359,34 @@ CP = FocusP IP
 	&lt;IP head type question&gt; = -
 	&lt;IP head type relative&gt; = -
 	&lt;IP head fronted&gt; = &lt;FocusP&gt;
+	&lt;IP head type pro-drop&gt; = -
+	&lt;FocusP head&gt; == [type:[focusmarked:-]] -&gt; ~[case:nominative]  | subject in place, not focused, unless focusmarked
 	&lt;CP option&gt; = FocusInit
 </rule>
 	<showWhen id="CPoptionFocusInit">
 		<whenValue element="focus" attr="focus" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="focus" attr="focusPos" value="before" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoptionFocusInitPro">
+rule {CP option FocusInitPro - FocusP initial, with pro-drop}
+CP = FocusP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;FocusP&gt;
+	&lt;IP head type pro-drop&gt; = +
+	&lt;FocusP head&gt; == ~[case:nominative]  | subject pro-dropped, not focused
+	&lt;CP head&gt; == [fronted:[head:[agr:[person:first]]]] -> ~[subject:[head:[agr:[person:first]]]]
+	&lt;CP head&gt; == [fronted:[head:[agr:[person:second]]]] -> ~[subject:[head:[agr:[person:second]]]]
+	&lt;CP option&gt; = FocusInitPro
+</rule>
+	<showWhen id="CPoptionFocusInitPro">
+		<whenValue element="focus" attr="focus" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="focus" attr="focusPos" value="before" negateValue="no"/>
+	<and/>
+	<whenValue element="ip" attr="proDrop" value="no" negateValue="yes"/>
 	</showWhen>
 	<rule show="CPoptionFocusFin">
 rule {CP option FocusFin - FocusP final}
@@ -373,12 +395,34 @@ CP = IP FocusP
 	&lt;IP head type question&gt; = -
 	&lt;IP head type relative&gt; = -
 	&lt;IP head fronted&gt; = &lt;FocusP&gt;
+	&lt;IP head type pro-drop&gt; = -
+	&lt;FocusP head&gt; == [type:[focusmarked:-]] -&gt; ~[case:nominative]  | subject in place, not focused, unless focusmarked
 	&lt;CP option&gt; = FocusFin
 </rule>
 	<showWhen id="CPoptionFocusFin">
 		<whenValue element="focus" attr="focus" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="focus" attr="focusPos" value="after" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoptionFocusFinPro">
+rule {CP option FocusFinPro - FocusP final, with pro-drop}
+CP =  IP FocusP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;FocusP&gt;
+	&lt;IP head type pro-drop&gt; = +
+	&lt;FocusP head&gt; == ~[case:nominative]  | subject pro-dropped, not focused
+	&lt;CP head&gt; == [fronted:[head:[agr:[person:first]]]] -> ~[subject:[head:[agr:[person:first]]]]
+	&lt;CP head&gt; == [fronted:[head:[agr:[person:second]]]] -> ~[subject:[head:[agr:[person:second]]]]
+	&lt;CP option&gt; = FocusFinPro
+</rule>
+	<showWhen id="CPoptionFocusFinPro">
+		<whenValue element="focus" attr="focus" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="focus" attr="focusPos" value="after" negateValue="no"/>
+	<and/>
+	<whenValue element="ip" attr="proDrop" value="no" negateValue="yes"/>
 	</showWhen>
 
 	<!--|********************************************************-->
@@ -1838,6 +1882,7 @@ FocusP = FocusM DP
 	&lt;DP head type wh&gt; = -
 	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;FocusP head type focusmarked&gt; &lt;= +
 	&lt;FocusP option&gt; = markerinit
 </rule>
 <showWhen id="FocusPoption.markerinit">
@@ -1863,6 +1908,7 @@ FocusP = DP FocusM
 	&lt;DP head type wh&gt; = -
 	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;FocusP head type focusmarked&gt; &lt;= +
 	&lt;FocusP option&gt; = markerfin
 </rule>
 <showWhen id="FocusPoption.markerfin">
@@ -1889,6 +1935,7 @@ FocusP = FocusM_1 DP FocusM_2
 	&lt;DP head type wh&gt; = -
 	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;FocusP head type focusmarked&gt; &lt;= +
 	&lt;FocusP option&gt; = markerboth
 </rule>
 <showWhen id="FocusPoption.markerboth">
