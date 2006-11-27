@@ -1,6 +1,7 @@
 PC-PATR CHANGE HISTORY
 
 1.4.3 (9-Nov-2006)
+------------------
 1. Fixed bug in (logical) constraint processing: needed yet another final
    pass over the parse trees to "triple check" the constraints
 
