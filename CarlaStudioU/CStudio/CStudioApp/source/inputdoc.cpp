@@ -279,7 +279,32 @@ BOOL CInputDoc::doRunProcessors(CRemoteCommand* pRemoteCmd/*=NULL*/)
 	// now that the output displays are loaded asynchronously, they may *still* be loading when
 	//  we get to this point (from some previous processing request). So, remove the panels if
 	//  present at this point.
+#ifndef hab2905
+  // need to stop loading for all open documents
+
+  CInputDoc* pDoc;
+  CDocTemplate* pT=theApp.getDocTemplate(CSourceTextInputDoc::getRegFileTypeID() );
+  POSITION pos;
+
+  for (pos = pT->GetFirstDocPosition();
+	   pos != NULL
+	 ;)
+	{
+	  pDoc = (CInputDoc*)pT->GetNextDoc(pos);
+	  pDoc->m_pView->stopLoadingPanels();
+	}
+
+  pT = theApp.getDocTemplate(CAnaInputDoc::getRegFileTypeID() );
+  for (pos = pT->GetFirstDocPosition();
+	   pos != NULL
+	 ;)
+	{
+	  pDoc = (CInputDoc*)pT->GetNextDoc(pos);
+	  pDoc->m_pView->stopLoadingPanels();
+	}
+#else
 	m_pView->stopLoadingPanels();
+#endif hab 2905
 #endif
 
 	CWnd* pWnd = getWindow();
