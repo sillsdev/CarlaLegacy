@@ -3188,10 +3188,16 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
 	storeAmpleCDATA(pszStr, pszToCat, FALSE);
 	store_AMPLE_trace(pAmple_in, "/%s", pszStr);
 	}
-	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
-	  store_AMPLE_trace(pAmple_in, "\"/>\n", NULL);
-	else
-	  store_AMPLE_trace(pAmple_in, "\">\n", NULL);
+	store_AMPLE_trace(pAmple_in, "\">\n", NULL);
+
+	store_AMPLE_trace(pAmple_in, "    %s<props>", pszIndent);
+	pAmple_in->pszTrace = stringifyAmplePropertySet(
+							pAmple_in->pszTrace,
+							&pAmple_in->uiTraceSize,
+							props,
+							&pAmple_in->sProperties);
+	store_AMPLE_trace(pAmple_in, "</props>\n", NULL);
+	store_AMPLE_trace(pAmple_in, "  %s</morph>\n", pszIndent);
 #ifndef HAVE_ALLOCA
 	freeMemory(pszStr);
 #endif

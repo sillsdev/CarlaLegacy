@@ -4,8 +4,8 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 4		/* bug fix or other minor change */
-#define DATE "July 18, 2006"	/* date of release version */
+#define PATCHLEVEL 5		/* bug fix or other minor change */
+#define DATE "December 18, 2006"	/* date of release version */
 #define YEAR "2006"		/* used for copyright notice in banner */
 
 /*****************************************************************************

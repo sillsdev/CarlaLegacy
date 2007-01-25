@@ -1,5 +1,9 @@
 AMPLE CHANGE HISTORY
 
+3.12.5 (18-Dec-2006)
+--------------------
+1. Add properties to XML/SGML trace output
+
 3.12.4 (18-Jul-2006)
 --------------------
 1. Some minor internal code changes (nothing visible to the user)
