@@ -360,7 +360,7 @@ VP = V
 rule {VP option 3a - V initial, motion intransitive}
 VP = V {PP / AdvP}
 	&lt;VP head&gt; = &lt;V head&gt;
-	&lt;VP head locative&gt; = &lt;AdvP
+	&lt;VP head locative&gt; = &lt;AdvP&gt;
 	&lt;PP head type locative&gt; = +
 	&lt;PP head type sentential&gt; = -
 	&lt;AdvP head type locative&gt; = +

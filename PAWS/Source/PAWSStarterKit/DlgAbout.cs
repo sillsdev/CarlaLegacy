@@ -83,7 +83,7 @@ namespace PAWSStarterKit
 			label3.Name = "label3";
 			label3.Size = new Size(iClientWidth, label3.Font.Height);
 			label3.TabIndex = 7;
-			label3.Text = "Copyright \x00A9 2002-2006 SIL International";
+			label3.Text = "Copyright \x00A9 2002-2007 SIL International";
 			label3.TextAlign = ContentAlignment.MiddleLeft;
 			//
 			// button1
