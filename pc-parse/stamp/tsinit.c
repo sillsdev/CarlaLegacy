@@ -36,6 +36,9 @@
 #include <ctype.h>
 #include <time.h>
 #include "stamp.h"
+#if _MSC_VER >= 800
+#define strlwr _strlwr
+#endif
 
 static void fix_first_code P((CodeTable * pTable_io));
 static void set_ambig P((char  *str, StampData * pStamp_io));

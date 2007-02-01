@@ -43,7 +43,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,..\stamp"
-				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,WIN32,TONEPARS,TONEGEN"
+				PreprocessorDefinitions="_WINDOWS,HAVE_CONFIG_H,_DEBUG,WIN32,TONEPARS,TONEGEN,_CRT_SECURE_NO_DEPRECATE "
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
@@ -294,11 +294,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\sytest_y.h"
+				RelativePath="..\stamp\sytest_y.h"
 				>
 			</File>
 			<File
-				RelativePath="..\stamp\sytest_y.h"
+				RelativePath=".\sytest_y.h"
 				>
 			</File>
 			<File

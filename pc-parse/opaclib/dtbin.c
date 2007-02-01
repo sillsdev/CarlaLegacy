@@ -348,7 +348,7 @@ while ((pszLine = readLineFromFile(pInputFP_in, NULL, 0)) != NULL)
 					pszLine);
 		*/
 		int cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
-		if (cch >= uiParserBufferSize)
+		if (cch >= (int)uiParserBufferSize)
 		  {
 		apszRecord[iIndex] = reallocMemory(apszRecord[iIndex], cch + SIZEOFPARSERBUFFER);
 		uiParserBufferSize += SIZEOFPARSERBUFFER;

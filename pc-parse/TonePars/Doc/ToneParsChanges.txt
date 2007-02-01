@@ -1,5 +1,12 @@
 TonePars CHANGE HISTORY
 
+1.1.0 (31-Jan-2007)
+-------------------
+Added "location" for associate and insert operations:
+  Associate a X tone at first/second/third/ultimate/penultimate/antepenultimate tbu of word
+and
+  Associate a X tone at left/right edge of first/second/third/ultimate/penultimate/antepenultimate syllable of word
+
 1.0.19 (13-Sep-2005)
 --------------------
 Avoid crash if (second) morphname is blank in dictionary.

@@ -104,6 +104,9 @@ struct strlist *remove_element_from_strlist P((struct strlist *list,
 						   struct strlist *element));
 
 			/* syllable.c */
+extern struct tbu      *get_syllable_tbu_at_word_position P((struct pword *tbhp,
+								 int iWordPosition,
+								 int iEdge));
 extern void syllable_parse P((struct root_node *rn,
 				  int do_trace,
 				  StampData *pStamp_in));
@@ -127,6 +130,7 @@ extern void free_tbus P((struct tbu *tbu_headp));
 extern struct tbu *get_edge_tbu    P((struct root_node *rbeg,
 					  struct root_node *rend,
 					  int tbu_type, int edge));
+extern struct tbu      *get_tbu_at_word_position   P((struct pword *pwp, int));
 extern void             show_tbu      P((struct tbu *tbup,
 					 StampData *pStamp_in));
 extern void             show_tbus     P((struct tbu *tbu_headp,
@@ -640,9 +644,7 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 	case INSERT:		/* insert means insert and use tone's status */
 				/* need to insert a new tone */
 	  params = acp->ac_params;
-#ifndef B4_0_4_4
 	  inserted_at = -1;	/* initialize */
-#endif /* B4_0_4_4 */
 				/* find preceding tone and also the
 				   tbu to line it up with */
 	  if (ap == (StampAnalysis *)NULL)
@@ -666,118 +668,137 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		  tbu_head = HEAD;
 		}
 				/* check conditions */
-#ifndef hab104
 		  if (!rule_condition_met(trp, ap, pwp, dp, tbu_type, *edge_conds,
 					  last_tp, pWordAnal_in, pStamp_in))
-#else /* hab104 */
-		  if (!rule_condition_met(trp, ap, pwp, dp, tbu_type, *edge_conds,
-					  last_tp, pStamp_in))
-#endif /* hab104 */
 		return;
 		}
 	  else			/* is cyclic */
 		{
 				/* check for morpheme */
-		  if ((dip = acp->ac_domain) != (struct domain_id *)NULL &&
-		   dip->di_type == DI_MORPHEME)
-		{		/* is morpheme oriented, not domain */
-					/* determine morpheme to use */
-		  if ((tip = acp->ac_tone) != (struct tone_id *)NULL)
+		  if ((dip = acp->ac_domain) != (struct domain_id *)NULL)
+		{
+		  switch(dip->di_type)
 			{
-			  if (tip->ti_pos == ARGLEFT)
-			ap = ap->pLeftLink;
-			  else if (tip->ti_pos == ARGRIGHT)
-			ap = ap->pRightLink;
-			}
+			case DI_MORPHEME:
+			  {		/* is morpheme oriented, not domain */
+					/* determine morpheme to use */
+			if ((tip = acp->ac_tone) != (struct tone_id *)NULL)
+			  {
+				if (tip->ti_pos == ARGLEFT)
+				  ap = ap->pLeftLink;
+				else if (tip->ti_pos == ARGRIGHT)
+				  ap = ap->pRightLink;
+			  }
 				/* paranoid check */
-		  if (ap == (StampAnalysis *)NULL)
-			return;
-		  if ((dip->di_edge == RIGHT_EDGE)   ||
-			  (dip->di_edge == 0          &&
-			   DIRECTION(acp->ac_params) == LEFTWARD))
-			{		/* get the last tbu in morpheme and get the
-				   tone closest to right edge of morpheme */
-			  tbp = ap->pTBUEnd;
-#ifdef B4_0_4_12
-			  last_tp = get_morphs_nearest_tone(ap, RIGHT);
-			  inserted_at = RIGHT;
-				/* new tone at tail of tbu's list of tones */
-			  tbu_head = TAIL;
-#else /* B4_0_4_12 */
-			  if (tbp == (struct tbu *)NULL)
-			{	/* morpheme does not have a tbu */
+			if (ap == (StampAnalysis *)NULL)
+			  return;
+			if ((dip->di_edge == RIGHT_EDGE)   ||
+				(dip->di_edge == 0          &&
+				 DIRECTION(acp->ac_params) == LEFTWARD))
+			  {		/* get the last tbu in morpheme and get the
+					   tone closest to right edge of morpheme */
+				tbp = ap->pTBUEnd;
+				if (tbp == (struct tbu *)NULL)
+				  {	/* morpheme does not have a tbu */
 				/* NB: assumes morpheme to right or left */
 				/* *does* have a tbu! */
 				/* NB: assumes rules are cyclic
 				   left-to-right (so want to try left 1st) */
-			  if (ap->pLeftLink != (StampAnalysis *)NULL)
-				{	/* use one to left */
-				  tbp = ap->pLeftLink->pTBUEnd;
-				  last_tp = get_morphs_nearest_tone(ap->pLeftLink,
-								RIGHT);
-				  inserted_at = RIGHT;
+				if (ap->pLeftLink != (StampAnalysis *)NULL)
+				  {	/* use one to left */
+					tbp = ap->pLeftLink->pTBUEnd;
+					last_tp = get_morphs_nearest_tone(ap->pLeftLink,
+									  RIGHT);
+					inserted_at = RIGHT;
 				/* new tone at tail of tbu's list of tones */
-				  tbu_head = TAIL;
-				}
-			  else if (ap->pRightLink != (StampAnalysis *)NULL)
-				{	/* use one to right */
-				  tbp = ap->pRightLink->pTBUBeg;
-				  last_tp = get_morphs_nearest_tone(ap->pRightLink,
-								LEFT);
-				  inserted_at = LEFT;
+					tbu_head = TAIL;
+				  }
+				else if (ap->pRightLink != (StampAnalysis *)NULL)
+				  {	/* use one to right */
+					tbp = ap->pRightLink->pTBUBeg;
+					last_tp = get_morphs_nearest_tone(ap->pRightLink,
+									  LEFT);
+					inserted_at = LEFT;
 				/* new tone at head of tbu's list of tones */
-				  tbu_head = HEAD;
-				}
-			  else
-				{	/* use old way if above doesn't work */
-				  last_tp = get_morphs_nearest_tone(ap, RIGHT);
-				  inserted_at = RIGHT;
+					tbu_head = HEAD;
+				  }
+				else
+				  {	/* use old way if above doesn't work */
+					last_tp = get_morphs_nearest_tone(ap, RIGHT);
+					inserted_at = RIGHT;
 				/* new tone at tail of tbu's list of tones */
-				  tbu_head = TAIL;
-				}
-			}
-			  else
-			{
-			  last_tp = get_morphs_nearest_tone(ap, RIGHT);
-			  inserted_at = RIGHT;
+					tbu_head = TAIL;
+				  }
+				  }
+				else
+				  {
+				last_tp = get_morphs_nearest_tone(ap, RIGHT);
+				inserted_at = RIGHT;
 				/* new tone at tail of tbu's list of tones */
-			  tbu_head = TAIL;
-			}
-#endif /* B4_0_4_12 */
-			}
-		  else		/* get the first tbu in morpheme and get */
-			{		/* the tone closest to left edge of morpheme */
-			  tbp = ap->pTBUBeg;
-			  last_tp = get_morphs_nearest_tone(ap, LEFT);
-			  inserted_at = LEFT;
+				tbu_head = TAIL;
+				  }
+			  }
+			else		/* get the first tbu in morpheme and get */
+			  {		/* the tone closest to left edge of morpheme */
+				tbp = ap->pTBUBeg;
+				last_tp = get_morphs_nearest_tone(ap, LEFT);
+				inserted_at = LEFT;
 				/* new tone at head of tbu's list of tones */
-			  tbu_head = HEAD;
-			}
-		}
-		  else if (dip != (struct domain_id *)NULL &&
-			   dip->di_type == DI_WORD)
-		{		/* is word oriented, not morpheme or domain */
+				tbu_head = HEAD;
+			  }
+			break;
+			  }
+			case DI_WORD:
+			  {		/* is word oriented, not morpheme or domain */
 				/* insert at appropriate edge of word */
-		  if ((dip->di_edge == RIGHT_EDGE)   ||
-			  (dip->di_edge == 0          &&
-			   DIRECTION(acp->ac_params) == LEFTWARD))
-			{		/* get the last tbu in word and get the
-				   last tone in the word */
-			  last_tp = end_of_tone_nodes(pwp->wd_tones);
-			  tbp = end_of_tbus(pwp->wd_tbu);
-			  tbu_head = TAIL;
-			  inserted_at = RIGHT;
-			}
-		  else		/* get the first tbu in word and get */
-			{		/* the first tone in the word */
-			  tbp = pwp->wd_tbu;
-			  last_tp = (struct tone*)NULL;
-			  inserted_at = LEFT;
+			if ((dip->di_edge == RIGHT_EDGE)   ||
+				(dip->di_edge == 0          &&
+				 DIRECTION(acp->ac_params) == LEFTWARD))
+			  {		/* get the last tbu in word and get the
+					   last tone in the word */
+				last_tp = end_of_tone_nodes(pwp->wd_tones);
+				tbp = end_of_tbus(pwp->wd_tbu);
+				tbu_head = TAIL;
+				inserted_at = RIGHT;
+			  }
+			else		/* get the first tbu in word and get */
+			  {		/* the first tone in the word */
+				tbp = pwp->wd_tbu;
+				last_tp = (struct tone*)NULL;
+				inserted_at = LEFT;
 				/* new tone at head of tbu's list of tones */
-			  tbu_head = HEAD;
+				tbu_head = HEAD;
+			  }
+			break;
+			  }
+			case DI_TBU:
+			  {
+			tbp = get_tbu_at_word_position(pwp,
+							   dip->u.di_word_position);
+			if (tbp == (struct tbu *)NULL)
+			  return; /* bail out if not found */
+			last_tp = get_previous_tone (tbp, LEFT);
+			/* set inserted_at and tbu_head */
+			tbu_head = HEAD;
+			inserted_at = LEFT;
+			break;
+			  }
+			case DI_SYLLABLE:
+			  {
+			tbp = get_syllable_tbu_at_word_position(pwp,
+							   dip->u.di_word_position,
+							   dip->di_edge);
+			if (tbp == (struct tbu *)NULL)
+			  return; /* bail out if not found */
+			last_tp = get_previous_tone (tbp, LEFT);
+			/* set inserted_at and tbu_head */
+			tbu_head = HEAD;
+			inserted_at = LEFT;
+			break;
+			  }
 			}
 		}
-		  else		/* is domain oriented */
+		  else /* is domain oriented */
 		{		/* insert at front of word for now*/
 				/* THIS NEEDS TO BE FIXED */
 		  last_tp = (struct tone *)NULL;
@@ -794,38 +815,30 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 	  tp->tone_status[tier]  = acp->ac_tone->ti_status;
 				/* insert it in list of tones */
 	  pwp->wd_tones = insert_tone(pwp->wd_tones, tp, last_tp);
-#ifndef B4_0_4_4
 	  if (ap != (StampAnalysis *)NULL)
 				/* update morpheme's tone pointers */
 		{
 		  if (inserted_at == LEFT)
 		{
-#ifndef hab1016
 		  /* remember in case need to restore */
 		  apToneTemp = ap->pToneBeg;
-#endif /* hab1016 */
 		  ap->pToneBeg = tp;
 		  if (ap->pToneEnd == (struct tone *)NULL)
 			ap->pToneEnd = tp;
 		}
 		  else if (inserted_at == RIGHT)
 		{
-#ifndef hab1016
 		  /* remember in case need to restore */
 		  apToneTemp = ap->pToneEnd;
-#endif /* hab1016 */
 		  ap->pToneEnd = tp;
 		  if (ap->pToneBeg == (struct tone *)NULL)
 			ap->pToneBeg = tp;
 		}
 		}
-#endif /* B4_0_4_4 */
 				/* insert it in tier */
 	  pwp->wd_tier[tier] = insert_tone_list(pwp->wd_tier[tier],
 							tier, tp);
-#ifndef hab1016
 	  did_actionB4 = did_action;
-#endif /* hab1016 */
 	  if (acp->ac_op == ASSOCIATE)
 				/* link tp to tbu */
 		did_action += link_tone_to_tbu(tp, tier, params, tbp, tbu_head,
@@ -834,7 +847,6 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 				/* line up tp to tbu */
 		did_action += link_tone_to_tbu(tp, tier, params, tbp, tbu_head,
 									  ap, tp->tone_status[tier]);
-#ifndef hab1016
 	  if (did_action == did_actionB4)
 		{			/* action failed; need to undo adding of tone */
 	  if (ap != (StampAnalysis *)NULL)
@@ -855,7 +867,6 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		}
 		  delete_tone(tp, pwp);
 		}
-#endif /*hab1016*/
 	  break;
 
 	case DELETE:		/* these all do the same thing at this point */
@@ -871,14 +882,9 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		   )
 		{
 		  last_tp = tp->tone_right;
-#ifndef hab104
 		  if (rule_condition_met(trp, ap, pwp, dp, tbu_type,
 					 *edge_conds, tp, pWordAnal_in,
 					 pStamp_in))
-#else /* hab104 */
-		  if (rule_condition_met(trp, ap, pwp, dp, tbu_type,
-					 *edge_conds, tp, pStamp_in))
-#endif /* hab104 */
 			did_action += do_existing_tone_action(tp, acp, ap, pwp);
 		  tp = last_tp;
 		}
@@ -893,7 +899,6 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		  if (tip->ti_pos == ARGLEFT)
 			{
 			  ap = ap->pLeftLink; /* use left morph for tone */
-#ifndef hab108
 			  if ((ap != (StampAnalysis *)NULL) &&
 			  ap->pTBUBeg == (struct tbu *)NULL)
 			{	       /* find first morpheme to left
@@ -909,7 +914,6 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 				}
 				}
 			}
-#endif /* hab108 */
 			  if (DIRECTION(acp->ac_params) == RIGHTWARD)
 			ap_action = ap_orig; /* use orig morph for action */
 			  else
@@ -933,18 +937,6 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 			  last_tp = get_edge_tone(ap, tier, RIGHT);
 			  if (DIRECTION(acp->ac_params) == RIGHTWARD)
 				{
-#ifdef ORIG
-				  for (tp = beg_tp;
-				   tp != (struct tone *)NULL &&
-				   tp->tone_left != last_tp &&
-				   !(tp != beg_tp && /* check for deletions */
-					 tp->tone_left == (struct tone *)NULL);
-				   tp = tp->tone_right)
-				if (tone_matches(tp, acp->ac_tone))
-				  did_action +=
-					do_existing_tone_action(tp, acp, ap_action,
-								pwp);
-#else  /* ORIG */
 				  for (tp = beg_tp;
 				   tp != (struct tone *)NULL &&
 				   tp->tone_left != last_tp &&
@@ -959,7 +951,6 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 					  do_existing_tone_action(tp, acp,
 								  ap_action, pwp);
 				}
-#endif /* ORIG */
 				}
 			  else
 				{

@@ -58,6 +58,13 @@
 
 #include "stamp.h"
 #include "tonepars.h"
+#include "trule.h"
+
+/******************************* LOCAL PROTOTYPES ********************/
+	   struct syllable *end_of_syllables   P((struct syllable *sylhp));
+	   struct tbu      *get_syllable_tbu_at_word_position P((struct pword *tbhp,
+								 int iWordPosition,
+								 int iEdge));
 
 /********************* OPACLIB FUNCTIONS *********************/
 
@@ -74,6 +81,117 @@ extern struct mora *add_mora P(( struct root_node *rp, struct syllable *sp ));
 #define LESS  -1
 #define EQUAL  0
 #define MORE   1
+
+/****************************************************************************
+ * NAME
+ *    end_of_syllables
+ * ARGUMENTS
+ *    sylhp - pointer to head of linked list of syllables
+ * DESCRIPTION
+ *    find the last element in a linked list of tbu structs
+ * RETURN VALUE
+ *    pointer to the last element
+ */
+struct syllable *end_of_syllables(sylhp)
+	 struct syllable *sylhp;
+{
+  struct syllable *sylp;
+
+  for (sylp = sylhp;
+	   sylp != (struct syllable *)NULL &&
+	   sylp->syl_right != (struct syllable *)NULL;
+	   sylp = sylp->syl_right)
+	;
+
+  return(sylp);
+
+}	/* end end_of_syllables */
+
+ /****************************************************************************
+ * NAME
+ *    get_syllable_tbu_at_word_position
+ * ARGUMENTS
+ *    pwp - pointer to prosodic word
+ *    iWordPosition - position within word to look for
+ *    iEdge - edge of syllable to use
+ * DESCRIPTION
+ *    find the syllable at the indicated word position
+ * RETURN VALUE
+ *    pointer to the tbu at the appropriate edge of the syllable
+ */
+struct tbu *get_syllable_tbu_at_word_position(pwp, iWordPosition, iEdge)
+	 struct pword *pwp;
+	 int          iWordPosition;
+	 int          iEdge;
+{
+  struct syllable *sylhp = pwp->wd_syl; /* head of the syllable list */
+  struct syllable *sylp;
+  struct tbu *tbp;
+  struct mora *morap;
+
+  switch (iWordPosition)
+	{
+	case FIRSTINWORD:
+	  sylp = sylhp;
+	  break;
+	case SECONDINWORD:
+	  if (sylhp != (struct syllable *)NULL)
+	sylp = sylhp->syl_right;
+	  break;
+	case THIRDINWORD:
+	  if (sylhp != (struct syllable *)NULL)
+	sylp = sylhp->syl_right;
+	  if (sylp != (struct syllable *)NULL)
+	sylp = sylp->syl_right;
+	  else
+	sylp = (struct syllable *)NULL;
+	  break;
+	case ANTEPENULTIMATE:
+	  sylp = end_of_syllables(sylhp);
+	  if (sylp != (struct syllable *)NULL)
+	sylp = sylp->syl_left;
+	  if (sylp != (struct syllable *)NULL)
+	sylp = sylp->syl_left;
+	  else
+	sylp = (struct syllable *)NULL;
+	  break;
+	case PENULTIMATE:
+	  sylp = end_of_syllables(sylhp);
+	  if (sylp != (struct syllable *)NULL)
+	sylp = sylp->syl_left;
+	  break;
+	case ULTIMATE:
+	  sylp = end_of_syllables(sylhp);
+	  break;
+	}
+
+  if (sylp == (struct syllable *)NULL)
+	return((struct tbu *)NULL);
+
+  /* current version only uses moras as tbus */
+  morap = sylp->syl_mora[0];
+  if (morap == (struct mora *)NULL)
+	return((struct tbu *)NULL); /* paranoid check */
+  tbp = morap->mora_tbu;	/* assume it's the leftmost mora's tbu */
+  if (iEdge == RIGHT_EDGE)
+	{				/* oops, it was the right most */
+	  struct tbu *tbp2;
+	  if (tbp == (struct tbu *)NULL)
+	return(tbp);		/* paranoid check */
+	  tbp2 = tbp->tbu_right;
+	  /* look for the rightmost tbu that is still in the same syllable */
+	  while ( (tbp2 != (struct tbu *)NULL) &&
+		  (tbp2->tbu_ptr.tbu_mora != (struct mora *)NULL) &&
+		  (tbp2->tbu_ptr.tbu_mora->mora_syl == sylp))
+	{
+	  tbp = tbp2;
+	  tbp2 = tbp->tbu_right;
+	}
+	}
+
+  return(tbp);
+
+}	/* end get_syllable_tbu_at_word_position */
 
 /****************************************************************************
  * NAME

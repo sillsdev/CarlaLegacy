@@ -445,6 +445,10 @@ char *yytext;
 #include "strlist.h"
 #include "stamp.h"
 #include "sytest_y.h"       /* produced from sytest.y */
+#if _MSC_VER >= 800
+#define fileno _fileno
+#define isatty _isatty
+#endif
 
 #define yylval stampyylval
 extern YYSTYPE yylval;
@@ -646,7 +650,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 73 "sytest.l"
+#line 77 "sytest.l"
 
 
 
@@ -733,88 +737,88 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 75 "sytest.l"
+#line 79 "sytest.l"
 return yylval.ival = LX_EQ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 76 "sytest.l"
+#line 80 "sytest.l"
 return yylval.ival = LX_GT;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 77 "sytest.l"
+#line 81 "sytest.l"
 return yylval.ival = LX_GE;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 78 "sytest.l"
+#line 82 "sytest.l"
 return yylval.ival = LX_LE;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 79 "sytest.l"
+#line 83 "sytest.l"
 return yylval.ival = LX_LT;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 80 "sytest.l"
+#line 84 "sytest.l"
 return yylval.ival = LX_NE;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 82 "sytest.l"
+#line 86 "sytest.l"
 { fixstring(); return( LX_IDENTIFIER ); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 83 "sytest.l"
+#line 87 "sytest.l"
 { fixstring(); return( LX_IDENTIFIER ); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 84 "sytest.l"
+#line 88 "sytest.l"
 { fixstring(); return( LX_IDENTIFIER ); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 85 "sytest.l"
+#line 89 "sytest.l"
 { fixstring(); return( LX_IDENTIFIER ); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 87 "sytest.l"
+#line 91 "sytest.l"
 { fixstring(); return( LX_MESSAGE ); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 88 "sytest.l"
+#line 92 "sytest.l"
 { fixstring(); return( LX_MESSAGE ); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 89 "sytest.l"
+#line 93 "sytest.l"
 { fixstring(); return( LX_MESSAGE ); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 91 "sytest.l"
+#line 95 "sytest.l"
 { pszStampLexLocation_m = (char *)yy_current_buffer->yy_buf_pos; /* BJY 1.5c */
 						  return( screen() ); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 94 "sytest.l"
+#line 98 "sytest.l"
 ;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 96 "sytest.l"
+#line 100 "sytest.l"
 return( yytext[0] );
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 98 "sytest.l"
+#line 102 "sytest.l"
 ECHO;
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
@@ -1702,7 +1706,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 98 "sytest.l"
+#line 102 "sytest.l"
 
 
 /*************************************************************************

@@ -24,6 +24,9 @@
  */
 #include <stdio.h>
 #include "stamp.h"
+#if _MSC_VER >= 800
+#define strlwr _strlwr
+#endif
 extern char *	strlwr P((char * pszString_io));
 
 #ifdef TONEPARS

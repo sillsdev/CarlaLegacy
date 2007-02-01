@@ -43,7 +43,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".,..,..\cportlib,..\opaclib,..\ample,..\TonePGLib,..\stamp"
-				PreprocessorDefinitions="_CONSOLE,HAVE_CONFIG_H,_DEBUG,WIN32,TONEPARS,HAVE_ITOA"
+				PreprocessorDefinitions="_CONSOLE,HAVE_CONFIG_H,_DEBUG,WIN32,TONEPARS,HAVE_ITOA,_CRT_SECURE_NO_DEPRECATE "
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"

@@ -3,13 +3,15 @@
  * Copyright 1996-2003 by SIL International.  All rights reserved.
  */
 #define VERSION    1	  	/* major rewrite or expansion */
-#define REVISION   0		/* enhancement requiring adding to book */
-#define PATCHLEVEL -20		/* bug fix or other internal improvement */
-#define DATE       "September 13, 2005"	/* date of release version */
-#define YEAR       "2005"	/* used for release date and copyright */
+#define REVISION   1		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0		/* bug fix or other internal improvement */
+#define DATE       "February 1, 2007"	/* date of release version */
+#define YEAR       "2007"	/* used for release date and copyright */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 01-Feb-2007  hab  - Add location to rule operations: e.g.
+ * [1.1.0]               "Associate a H tone at penultimate syllable of word"
  * 13-Sep-2005  hab  - Avoid crash if (second) morphname is blank in dictionary.
  * [1.0.20]
  * 07-Dec-2004  hab  - Ignore interfix entry type in unified dictionaries

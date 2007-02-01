@@ -217,6 +217,7 @@ static StampData *	pStamp_m;
 
 %token	<ival>	LX_A
 %token	<ival>	LX_AND
+%token	<ival>	LX_ANTEPENULTIMATE
 %token	<ival>	LX_APPLIES
 %token	<ival>	LX_ASSOCIATE
 %token	<ival>	LX_AT
@@ -243,6 +244,7 @@ static StampData *	pStamp_m;
 %token	<ival>	LX_EXTRAMETRICAL
 %token  <ival>  LX_FA_LEFT
 %token  <ival>  LX_FA_RIGHT
+%token  <ival>  LX_FIRST
 %token  <ival>  LX_FS_LEFT
 %token  <ival>  LX_FS_RIGHT
 %token	<ival>	LX_FEATURE_ADDING
@@ -292,6 +294,7 @@ static StampData *	pStamp_m;
 %token	<ival>	LX_ONSET
 %token	<ival>	LX_OPTIONAL
 %token	<ival>	LX_PATTERN
+%token	<ival>	LX_PENULTIMATE
 %token	<ival>	LX_PFINAL
 %token	<ival>	LX_PINITIAL
 %token	<ival>	LX_POLYSYLLABIC
@@ -303,6 +306,7 @@ static StampData *	pStamp_m;
 %token	<ival>	LX_RIGHTTWO
 %token	<ival>	LX_RIGHTWARD
 %token	<ival>	LX_ROOT
+%token	<ival>	LX_SECOND
 %token	<ival>	LX_SEGMENT
 %token	<ival>	LX_SET
 %token	<ival>	LX_SPREAD
@@ -311,11 +315,13 @@ static StampData *	pStamp_m;
 %token	<ival>	LX_TBU
 %token	<ival>	LX_TBUS
 %token	<ival>	LX_THEN
+%token	<ival>	LX_THIRD
 %token	<ival>	LX_TO
 %token	<ival>	LX_TONE
 %token	<ival>	LX_TONES
 %token	<ival>	LX_TRISYLLABIC
 %token	<ival>	LX_TYPE
+%token	<ival>	LX_ULTIMATE
 %token	<ival>	LX_UNDER
 %token	<ival>	LX_USING
 %token	<ival>	LX_WITH
@@ -341,6 +347,7 @@ static StampData *	pStamp_m;
 %type   <ival>          ForLeft
 %type   <ival>          ForRight
 %type	<ival>		Iteration
+%type	<dival>		Location
 %type	<ival>		Mode
 %type	<dlval>		More_domains
 %type	<cnval>		Morpheme_expr
@@ -367,6 +374,7 @@ static StampData *	pStamp_m;
 %type	<dival>		entity
 %type	<ival>		feature_op
 %type	<ival>		iteration
+%type	<dival>		location
 %type	<ival>		logop
 %type	<ival>		ocp
 %type	<ival>		onset_coda
@@ -376,6 +384,7 @@ static StampData *	pStamp_m;
 %type	<ival>		tone_status
 %type	<ival>		type
 %type	<ival>		tbu_tbus
+%type	<ival>		word_position
 
 %%
 
@@ -654,6 +663,20 @@ Rule_Action
 			   (unsigned)$5);
 		  }
 		  }
+	| operation Tone Dir_Iter_Mode OCP Location
+		  {
+		$$ = mkaction($1, $2, $3, $4, $5, 0L);
+		if (rule_debug)
+		  {
+			fprintf(pStamp_m->pLogFP,
+				"\n0x%x\tRule_Action:=operation Tone %s",
+				(unsigned)$$, "Dir_Iter_Mode OCP Location");
+			fprintf(pStamp_m->pLogFP,
+			   "\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0x%x, 0x%x, 0)]",
+			   $1, (unsigned)$2, (unsigned)$3, (unsigned)$4,
+			   (unsigned)$5);
+		  }
+		  }
 	| operation Tone Dir_Iter_Mode OCP
 		  {
 		$$ = mkaction($1, $2, $3, $4, (struct domain_id *)NULL, 0L);
@@ -675,6 +698,19 @@ Rule_Action
 			fprintf(pStamp_m->pLogFP,
 				"\n0x%x\tRule_Action:=operation Tone %s",
 				(unsigned)$$, "Dir_Iter_Mode Domain");
+			fprintf(pStamp_m->pLogFP,
+				"\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0, 0x%x, 0)]",
+				$1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
+		  }
+		  }
+	| operation Tone Dir_Iter_Mode Location
+		  {
+		$$ = mkaction($1, $2, $3, 0, $4, 0L);
+		if (rule_debug)
+		  {
+			fprintf(pStamp_m->pLogFP,
+				"\n0x%x\tRule_Action:=operation Tone %s",
+				(unsigned)$$, "Dir_Iter_Mode Location");
 			fprintf(pStamp_m->pLogFP,
 				"\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0, 0x%x, 0)]",
 				$1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
@@ -706,6 +742,19 @@ Rule_Action
 				$1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
 		  }
 		  }
+	| operation Tone OCP Location
+		  {
+		$$ = mkaction($1, $2, 0, $3, $4, 0L);
+		if (rule_debug)
+		  {
+			fprintf(pStamp_m->pLogFP,
+				"\n0x%x\tRule_Action:=operation Tone OCP Location",
+				(unsigned)$$);
+			fprintf(pStamp_m->pLogFP,
+				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0x%x, 0x%x, 0)]",
+				$1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
+		  }
+		  }
 	| operation Tone OCP
 		  {
 		$$ = mkaction($1, $2, 0, $3, (struct domain_id *)NULL, 0L);
@@ -726,6 +775,19 @@ Rule_Action
 		  {
 			fprintf(pStamp_m->pLogFP,
 				"\n0x%x\tRule_Action:=operation Tone Domain",
+				(unsigned)$$);
+			fprintf(pStamp_m->pLogFP,
+				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0, 0x%x, 0)]",
+				$1, (unsigned)$2, (unsigned)$3);
+		  }
+		  }
+	| operation Tone Location
+		  {
+		$$ = mkaction($1, $2, 0, 0, $3, 0L);
+		if (rule_debug)
+		  {
+			fprintf(pStamp_m->pLogFP,
+				"\n0x%x\tRule_Action:=operation Tone Location",
 				(unsigned)$$);
 			fprintf(pStamp_m->pLogFP,
 				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0, 0x%x, 0)]",
@@ -1337,6 +1399,35 @@ Domain
 			/* be at the left or right edge of the domain. */
 	;
 
+Location
+	: LX_WITHIN edge location
+		  {
+		$$ = $3;
+		$$->di_edge = $2;
+		if (rule_debug)
+		  {
+			fprintf(pStamp_m->pLogFP,
+			   "\n0x%x\tLocation:=within edge location", (unsigned)$$);
+			fprintf(pStamp_m->pLogFP, " (set edge = %d)", $2);
+		  }
+		  }
+	| LX_WITHIN location
+		  {
+		$$ = $2;
+		$$->di_edge = 0;
+		if (rule_debug)
+		  {
+			fprintf(pStamp_m->pLogFP,
+				"\n0x%x\tLocation:=within location", (unsigned)$$);
+			fprintf(pStamp_m->pLogFP, " (set edge = 0)");
+		  }
+		  }
+			/* Actions may apply only within a particular */
+			/* location (tbu or syllable) with respect to word */
+			/* boundaries.  For syllables, the action may */
+			/* also be at the left or right edge of the syllable. */
+	;
+
 edge
 	: LX_LEFT  LX_EDGE LX_OF
 		  {
@@ -1386,6 +1477,35 @@ entity
 		  }
 			/* Entities can be either user-defined domains or */
 			/* morphemes or word boundary. */
+	;
+
+location
+	: word_position LX_SYLLABLE LX_OF LX_WORD
+		  {
+		$$ = mkdomainid(DI_SYLLABLE, $1);
+		if (rule_debug)
+		  {
+			fprintf(pStamp_m->pLogFP,
+				"\n0x%x\tlocation:=word_position syllable",
+				(unsigned)$$);
+			fprintf(pStamp_m->pLogFP,
+				" [mkdomainid(%d, %d)]", DI_SYLLABLE, 0);
+		  }
+		  }
+	| word_position LX_TBU LX_OF LX_WORD
+		  {
+		$$ = mkdomainid(DI_TBU, $1);
+		if (rule_debug)
+		  {
+			fprintf(pStamp_m->pLogFP,
+				"\n0x%x\tlocation:=word_position tbu",
+				(unsigned)$$);
+			fprintf(pStamp_m->pLogFP,
+				" [mkdomainid(%d, 0)]", DI_TBU);
+		  }
+		  }
+			/* Locations can be either syllables or tbus, */
+			/* located with respect to a word boundary. */
 	;
 
 Cycle
@@ -2452,6 +2572,39 @@ position
 			/* The last item in the word. */
 	;
 
+word_position
+	: LX_FIRST
+		  {
+		$$ = FIRSTINWORD;
+		  }
+			/* First item in the word. */
+	| LX_SECOND
+		  {
+		$$ = SECONDINWORD;
+		  }
+			/* Second item in the word. */
+	| LX_THIRD
+		  {
+		$$ = THIRDINWORD;
+		  }
+			/* Third item in the word. */
+	| LX_ANTEPENULTIMATE
+		  {
+		$$ = ANTEPENULTIMATE;
+		  }
+			/* The antepenultimate item in the word. */
+	| LX_PENULTIMATE
+		  {
+		$$ = PENULTIMATE;
+		  }
+			/* The penultimate item in the word. */
+		| LX_ULTIMATE
+		  {
+		$$ = ULTIMATE;
+		  }
+			/* The ultimate item in the word. */
+	;
+
 tone_status
 	: LX_BOUNDARY
 		  {
@@ -3126,7 +3279,17 @@ static struct domain_id *mkdomainid(type, domain)
 				/* set values */
   dip->di_edge   = 0;
   dip->di_type   = type;
-  dip->di_domain = domain;
+  switch (type)
+	{
+	case DI_DOMAIN:  		/* fall through */
+	case DI_MORPHEME:		/* fall through */
+	case DI_WORD:
+	dip->u.di_domain = domain;
+	break;
+	default:
+	dip->u.di_word_position = domain;
+	break;
+	}
 
   return(dip);
 
@@ -3621,12 +3784,43 @@ static void show_domain_id(dp)
 	}
   fprintf(pStamp_m->pLogFP, "\n\t\t%s", cp);
 
-  if (dp->di_type == DI_MORPHEME)
+  switch (dp->di_type)
+	{
+	case DI_DOMAIN:
+	cp = tone_domain_name(dp->u.di_domain);
+	break;
+	case DI_MORPHEME:
 	cp = "morpheme";
-  else if (dp->di_type == DI_DOMAIN)
-	cp = tone_domain_name(dp->di_domain);
-  else
-	cp = "What should this be?";
+	break;
+	case DI_WORD:
+		cp = "word";
+	break;
+	default:
+	switch (dp->u.di_word_position)
+	  {
+	  case FIRSTINWORD:
+		  cp = "first";
+		  break;
+	  case SECONDINWORD:
+		  cp = "second";
+		  break;
+	  case THIRDINWORD:
+		  cp = "third";
+		  break;
+	  case ANTEPENULTIMATE:
+		  cp = "antepenultimate";
+		  break;
+	  case PENULTIMATE:
+		  cp = "penultimate";
+		  break;
+	  case ULTIMATE:
+		  cp = "ultimate";
+		  break;
+	  }
+	break;
+	}
+
+
   fprintf(pStamp_m->pLogFP, " %s", cp);
 
 } /* end show_domain_id */

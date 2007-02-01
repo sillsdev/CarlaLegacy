@@ -35,6 +35,10 @@
 extern long next_user_event_ticks;
 extern void allow_user_events();
 #endif
+#if _MSC_VER >= 800
+#define fileno _fileno
+#define isatty _isatty
+#endif
 
 extern int	getopt P((int argc, char * const argv[], const char *opts));
 extern char *	optarg;

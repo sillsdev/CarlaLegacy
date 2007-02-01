@@ -1,5 +1,5 @@
 TonePars Yacc Grammar
-Wed Dec 12 11:37:41 2001
+Wed Jan 31 12:06:01 2007
 
 ------------------------------------------------------------
 
@@ -107,12 +107,16 @@ Rule_End
 	;
 Rule_Action
 	: operation Tone Dir_Iter_Mode OCP Domain
+	| operation Tone Dir_Iter_Mode OCP Location
 	| operation Tone Dir_Iter_Mode OCP
 	| operation Tone Dir_Iter_Mode Domain
+	| operation Tone Dir_Iter_Mode Location
 	| operation Tone Dir_Iter_Mode
 	| operation Tone OCP Domain
+	| operation Tone OCP Location
 	| operation Tone OCP
 	| operation Tone Domain
+	| operation Tone Location
 	| operation Tone
 			/* The action of a rule consists of an operation to */
 			/* be performed on an indicated tone.  The */
@@ -375,6 +379,14 @@ Domain
 			/* domain.  In addition, the application may only */
 			/* be at the left or right edge of the domain. */
 	;
+Location
+	: 'within' edge location
+	| 'within' location
+			/* Actions may apply only within a particular */
+			/* location (tbu or syllable) with respect to word */
+			/* boundaries.  For syllables, the action may */
+			/* also be at the left or right edge of the syllable. */
+	;
 edge
 	: 'left'  'edge' 'of'
 	| 'right' 'edge' 'of'
@@ -386,6 +398,12 @@ entity
 	| 'word'
 			/* Entities can be either user-defined domains or */
 			/* morphemes or word boundary. */
+	;
+location
+	: word_position 'syllable' 'of' 'word'
+	| word_position 'tbu' 'of' 'word'
+			/* Locations can be either syllables or tbus, */
+			/* located with respect to a word boundary. */
 	;
 Cycle
 	: 'applies' 'cyclically' direction 'within' Domain_cycle
@@ -651,6 +669,20 @@ position
 			/* The last item in the word. */
 	| 'final'
 			/* The last item in the word. */
+	;
+word_position
+	: 'first'
+			/* First item in the word. */
+	| 'second'
+			/* Second item in the word. */
+	| 'third'
+			/* Third item in the word. */
+	| 'antepenultimate'
+			/* The antepenultimate item in the word. */
+	| 'penultimate'
+			/* The penultimate item in the word. */
+		| 'ultimate'
+			/* The ultimate item in the word. */
 	;
 tone_status
 	: 'boundary'

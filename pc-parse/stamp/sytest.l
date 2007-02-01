@@ -14,6 +14,10 @@
 #include "strlist.h"
 #include "stamp.h"
 #include "sytest_y.h"       /* produced from sytest.y */
+#if _MSC_VER >= 800
+#define fileno _fileno
+#define isatty _isatty
+#endif
 
 #define yylval stampyylval
 extern YYSTYPE yylval;

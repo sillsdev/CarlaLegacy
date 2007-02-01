@@ -194,6 +194,14 @@ struct cond_node
 #define MONOMORAIC	6
 #define BIMORAIC	7
 
+			/* word position constants */
+#define FIRSTINWORD	0	/* 'first' */
+#define SECONDINWORD	1	/* 'second' */
+#define THIRDINWORD	2	/* 'third' */
+#define ANTEPENULTIMATE	5	/* 'antepenultimate' */
+#define PENULTIMATE	6	/* 'penultimate' */
+#define ULTIMATE	7	/* 'ultimate' */
+
 /****************************************************************************
  * NAME
  *    struct cycle
@@ -218,8 +226,12 @@ struct cycle
 struct domain_id
 	{
 	  int                  di_edge;	/* edge of domain; 0 = no edge */
-	  int                  di_type;	/* either domain or morpheme */
-	  int                  di_domain;	/* domain */
+	  int                  di_type;	/* either domain, morpheme, word, tbu,
+						 or syllable */
+	  union {
+	int                di_domain;	/* domain */
+	int                di_word_position;	/* word position */
+	  } u;
 	};
 				/* edge */
 #define LEFT_EDGE  1
@@ -228,6 +240,11 @@ struct domain_id
 #define DI_DOMAIN   1
 #define DI_MORPHEME 2
 #define DI_WORD     3
+  /* following used in location statements, but stored in domain to save space.
+   * the di_word_position is set to the word position value for these
+   */
+#define DI_TBU      4
+#define DI_SYLLABLE 5
 
 /****************************************************************************
  * NAME

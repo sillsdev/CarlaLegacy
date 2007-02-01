@@ -34,10 +34,9 @@ static struct tbu      *add_tbu       P((struct tbu *tbu_headp, int tb_type,
 	   struct tbu      *get_edge_tbu  P((struct root_node *rbeg,
 					 struct root_node *rend,
 					 int tbu_type, int edge));
-#ifndef B4_0_4_4
 	   StampAnalysis *get_morph_from_tbu P((StampAnalysis *ap,
 						  struct tbu      *tbu));
-#endif /* B4_0_4_4 */
+	   struct tbu      *get_tbu_at_word_position   P((struct pword *pwp, int));
 	   void             show_tbu      P((struct tbu *tbup,
 					 StampData *pStamp_in));
 	   void             show_tbus     P((struct tbu *tbu_headp,
@@ -494,7 +493,6 @@ struct tbu *get_edge_tbu(rbeg, rend, tbu_type, edge)
 
 }	/* end get_edge_tbu */
 
-#ifndef B4_0_4_4
 /****************************************************************************
  * NAME
  *    get_morph_from_tbu
@@ -562,7 +560,65 @@ StampAnalysis *get_morph_from_tbu(ap, tbu)
   return( (StampAnalysis *)NULL );
 
 }	/* end get_morph_from_tbu */
-#endif /* B4_0_4_4 */
+
+ /****************************************************************************
+ * NAME
+ *    get_tbu_at_word_position
+ * ARGUMENTS
+ *    pwp - pointer to prosodic word
+ *    iWordPosition - position within word to look for
+ * DESCRIPTION
+ *    find the tbu at the indicated word position
+ * RETURN VALUE
+ *    pointer to the tbu
+ */
+struct tbu *get_tbu_at_word_position(pwp, iWordPosition)
+	 struct pword *pwp;
+	 int          iWordPosition;
+{
+  struct tbu *tbhp = pwp->wd_tbu; /* head of the tbu list */
+  struct tbu *tbp;
+
+  switch (iWordPosition)
+	{
+	case FIRSTINWORD:
+	  tbp = tbhp;
+	  break;
+	case SECONDINWORD:
+	  if (tbhp != (struct tbu *)NULL)
+	tbp = tbhp->tbu_right;
+	  break;
+	case THIRDINWORD:
+	  if (tbhp != (struct tbu *)NULL)
+	tbp = tbhp->tbu_right;
+	  if (tbp != (struct tbu *)NULL)
+	tbp = tbp->tbu_right;
+	  else
+	tbp = (struct tbu *)NULL;
+	  break;
+	case ANTEPENULTIMATE:
+	  tbp = end_of_tbus(tbhp);
+	  if (tbp != (struct tbu *)NULL)
+	tbp = tbp->tbu_left;
+	  if (tbp != (struct tbu *)NULL)
+	tbp = tbp->tbu_left;
+	  else
+	tbp = (struct tbu *)NULL;
+	  break;
+	case PENULTIMATE:
+	  tbp = end_of_tbus(tbhp);
+	  if (tbp != (struct tbu *)NULL)
+	tbp = tbp->tbu_left;
+	  break;
+	case ULTIMATE:
+	  tbp = end_of_tbus(tbhp);
+	  break;
+	}
+
+  return(tbp);
+
+}	/* end get_tbu_at_word_position */
+
 /****************************************************************************
  * NAME
  *    show_tbu
