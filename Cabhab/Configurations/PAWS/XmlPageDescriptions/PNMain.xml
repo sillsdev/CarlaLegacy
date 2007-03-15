@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PNMain" count="1/3">
+	<title>Proper Names</title>
+	<introduction> In English, some names can stand alone, like <example>Sue</example> or <example>Russia</example>.  Others are like compound nouns, such as <example>George Washington</example>.  Proper names may also contain articles and/or pre/post-positional phrases, as in <example>the United States of America</example>.  Many languages require an article before a name.  Appositives, possibly including a possessor, as in <example>my son, David</example>, also occur.  In addition, proper names can be modified by adjectives and relative clauses, as in <example>the good, old USA</example> or <example>the Susan Welch that I know</example>.</introduction>
+	<form section="prop">
+		<prompt>Key your examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors here:</prompt>
+		<textBox id="PNExample" dataItem="example"/>
+		<br/>
+		<br/>
+		<prompt>Key your examples of proper names with pre/post-positional phrases here:</prompt>
+		<textBox id="PNPPExample" dataItem="ppExample"/>
+		<br/>
+		<br/>
+		<prompt>Key your examples of proper names modified by relative clauses here, included in simple full sentences:</prompt>
+		<textBox id="PNRelClExample" dataItem="relClExample"/>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="PNMainBack" value="Back" goto="Contents.htm"/>
+			<button id="PNMainNext" value="Next" goto="PNCatMap.xml"/>
+		</buttons>
+	</form>
+</page>

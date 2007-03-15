@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPManner" count="3/7">
+	<title level="2">Adverbs and AdvP - Manner Adverbs</title>
+	<introduction>Manner adverbs directly modify the verb and usually end in <example>-ly</example> in English.  They do not seem to have clear
+counterparts of other phrase types, except possibly some comparatives,
+such as <example>as fast as he could</example>.  (Comparatives will be dealt with in <section number="15">Coordination Constructions</section>.)  In English,
+manner adverbs can be modified by <example>very</example>
+and <example>so</example>, as in:
+</introduction>
+	<EnglishExample>
+		<exItem label="1.">very quickly.</exItem>
+		<exItem label="2.">so slowly.</exItem>
+		<exItem label="3.">very well.</exItem>
+	</EnglishExample>
+	<form section="advp">
+		<prompt>Key examples of how your language expresses manner here:</prompt>
+		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
+<br/> <br/>
+<radioGroup>
+	<groupName dataItem="mannerType" default="word">RAdvPMannerType</groupName>
+	<prompt>Some languages do not have separate words, but rather use affixes to express manner.  Does your language have any manner adverbs which are separate words?</prompt>
+	<radio id="AdvPMannerTypeWord" dataValue="word">Yes</radio>
+	<radio id="AdvPMannerTypeAffix" dataValue="affix">No, they are all written as part of the verb</radio>
+</radioGroup>
+		<instruction id="AdvPMannerTypeWordInstruction" show="swAdvPMannerTypeWord">In the lexicon, key the feature <feature>manner</feature>
+on all adverbs that express manner.
+</instruction>
+<br/>
+		<buttons>
+			<button id="AdvPMannerExamplesBack" value="Back" goto="AdvPLocative.xml"/>
+			<button id="AdvPMannerExamplesNext" value="Next" goto="AdvPReason.xml"/>
+		</buttons>
+	</form>
+<showWhen id="swAdvPMannerTypeWord">
+	<whenRadio button="AdvPMannerTypeWord"></whenRadio>
+</showWhen>
+</page>

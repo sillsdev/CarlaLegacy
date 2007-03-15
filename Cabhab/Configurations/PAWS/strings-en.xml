@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	you do not have to specify the text attribute if it is identical to the id one.
+		e.g. <string id="Anywhere"/> is equivalent to <string id="Anywhere" txt="Anywhere"/>
+-->
+<!-- Strings which are shared by more than 1 application go in this file. -->
+<!-- For LexText we're going to put all strings here, rather then work up code to do includes.  2004.08.18 -->
+<strings>
+<group id="DialogStrings">
+<string id="OpenAnswerFile" txt="Open PAWS Language File"/>
+<string id="SaveAnswerFile" txt="Save PAWS Language File"/>
+<string id="CreateNewLanguage" txt="New PAWS Language File"/>
+<string id="SaveLanguageAs" txt="Save PAWS Language File As"/>
+</group>
+</strings>

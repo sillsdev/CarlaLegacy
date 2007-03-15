@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPDegree" count="5/7">
+	<title level="2">Adverbs and AdvP - Degree Words</title>
+	<instruction>Look again at the examples you have keyed for the various types of adverb phrases, repeated here, before answering the following question(s).</instruction>
+	<form section="advp">
+		<prompt>Temporal examples:</prompt>
+		<textBox id="AdvPExample" dataItem="temporalExample"/>
+		<br/>
+		<br/>
+		<prompt>Locative examples:</prompt>
+		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
+		<br/>
+		<br/>
+		<prompt>Manner examples:</prompt>
+		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
+		<br/>
+		<br/>
+		<prompt>Reason or purpose examples:</prompt>
+		<textBox id="AdvPReasonExample" dataItem="reasonExample"/>
+		<br/>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="degree" default="no">RDegreeYN</groupName>
+			<prompt>Does your language have degree words (written as separate syntactic words) which can modify any of the adverbs?</prompt>
+			<radio id="AdvPDegreeNo" dataValue="no">No</radio>
+			<radio id="AdvPDegreeYes" checked="yes" dataValue="yes">Yes</radio>
+			<radioGroup id="AdvPDegreeYesTable" show="swAdvPDegreeYes">
+				<groupName dataItem="degreePos" default="unknown" position="yesSpec">RDegree</groupName>
+				<prompt>Where do the degree words occur with respect to the adverb?</prompt>
+				<radio id="AdvPDegreeBefore" checked="yes" dataValue="before">Before the adverb</radio>
+				<radio id="AdvPDegreeAfter" checked="yes" dataValue="after">After the adverb</radio>
+				<radio id="AdvPDegreeEitherSide" checked="yes" dataValue="either">On either side of the adverb, but not both sides at the same time</radio>
+				<radio id="AdvPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the adverb, or both sides at the same time</radio>
+				<radio id="AdvPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the adverb, or both sides at the same time</radio>
+				<radio id="AdvPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the adverb, or both sides at the same time</radio>
+				<radio id="AdvPDegreeBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+				<radioGroup id="AdvPDegreeEitherSideTable" show="swAdvPDegreeEitherorBoth">
+					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
+					<prompt>Can all the degree words appear on either side of the adverb?</prompt>
+					<radio id="AdvPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
+					<radio id="AdvPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
+				</radioGroup>
+			</radioGroup>
+			<radioGroup id="AdvPDegreeSetTable" show="swAdvPDegreeYes">
+				<groupName dataItem="degreeSet" default="unrestricted">RSet</groupName>
+				<prompt>Are the degree words which can modify adverbs all the same ones?</prompt>
+				<radio id="AdvPSetUnrestricted" checked="yes" dataValue="unrestricted">Yes, the same set can modify any type of adverb</radio>
+				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Almost; the same set can modify temporals, locatives, and manner adverbs, but reason or purpose adverbs are not modified</radio>
+				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, there are distinct sets of degree words for each type of adverb (Note that some overlap is OK and no degree words for reason or purpose adverbs is also OK)
+</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction>
+			<span id="AdvPSetUnrestrictedInstruction" show="swAdvPSetUnrestricted">Key the features <feature>makeDeg modifies_Adv</feature> on this type of degree word in the lexicon.    (If any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional feature <feature>modifies_Adv</feature> to the same lexical entry.)</span>
+			<span id="AdvPSetAlmostInstruction" show="swAdvPSetAlmost">Key the features <feature>makeDeg modifies_Adv-reason</feature> on this type of degree word in the lexicon.    (If any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional feature <feature>modifies_Adv-reason</feature> to the same lexical entry.)
+</span>
+			<span id="AdvPSetRestrictedInstruction" show="swAdvPSetRestricted">In the lexicon, key the features:
+<ul>
+					<li>
+						<feature>makeDeg modifies_temporal</feature> for temporal modifiers,</li>
+					<li>
+						<feature>makeDeg modifies_locative</feature> for locative modifiers,</li>
+					<li>
+						<feature>makeDeg modifies_manner</feature> for manner modifiers, and</li>
+					<li>
+						<feature>makeDeg modifies_reason</feature> for reason or purpose modifiers</li>
+				</ul>
+ If you have overlapping in the sets, just add more than one <feature>modifies...</feature> feature after a space.    (Similarly, if any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional <feature>modifies...</feature> feature(s) to the same lexical entry.)  If there are no degree words which modify reason or purpose adverbs, just don't mark any words with this feature.</span>
+			<br/>
+			<br/>
+			<span id="AdvPDegreeEitherRestrictedInstruction" show="swAdvPDegreeEitherRestricted">
+Those which can only occur before the adverb
+also need to have the feature <feature>AdvP-initial</feature>
+and those which can only occur after the adverb also need the
+feature <feature>AdvP-final</feature>.  Do not enter either
+feature <feature>AdvP-initial</feature> or <feature>AdvP-final</feature> on any degree words which can occur on
+either side.</span>
+		</instruction>
+		<br/>
+		<buttons>
+			<button id="AdvPDegreeBack" value="Back" goto="AdvPReason.xml"/>
+			<button id="AdvPDegreeNext" value="Next" goto="AdvPCatMap.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swAdvPDegreeYes">
+		<whenRadio button="AdvPDegreeYes"/>
+	</showWhen>
+	<showWhen id="swAdvPDegreeEitherorBoth">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeAfter"/>
+	</showWhen>
+	<showWhen id="swAdvPDegreeEitherRestricted">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<whenRadio button="AdvPDegreeEitherRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeAfter"/>
+	</showWhen>
+	<showWhen id="swAdvPSetUnrestricted">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<whenRadio button="AdvPSetUnrestricted"/>
+	</showWhen>
+	<showWhen id="swAdvPSetAlmost">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<whenRadio button="AdvPSetAlmost"/>
+	</showWhen>
+	<showWhen id="swAdvPSetRestricted">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<whenRadio button="AdvPSetRestricted"/>
+	</showWhen>
+</page>

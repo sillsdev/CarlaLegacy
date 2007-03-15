@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NegType" count="3/4">
+	<title level="2">Negation Constructions - Type</title>
+	<introduction>Languages fall into two major classifications with respect to negation: Polarity Changing languages versus Negative Concord languages, exemplified by standard English and Spanish or Black English, respectively.  <br/>
+		<br/>
+Polarity Changing languages normally allow only a single negative element in the sentence for negation to be expressed (though technically any odd number of negatives expresses negative polarity) because the presence of two (or any even number of) negative elements changes the polarity back to positive. For example, <example>John saw nothing</example> is negative, but <example>John didn't see nothing</example> is positive because it means the same as <example>John saw something</example>.  The version with a negative auxiliary is expressed as <example>John didn't see anything</example>, using what is known as a negative polarity item in object position.  Such negative polarity items may occur as subjects in some contexts without any other negation present, such as <example>Anyone may come</example>, but they may only occur in object position when some higher (technically c-commanding) element is negative.  For example, one can say <example>Nobody saw anyone</example> and <example>Nowhere will they find anyone</example> but without the negative subject or fronted negative adverb the negative auxiliary must be used, as in <example>We did not see anyone</example> and <example>They will not find anyone anywhere</example>.
+<br/>
+		<br/>
+In Negative Concord languages, any number of negative elements expresses negative polarity, so in a Negative Concord version of English (such as Black English) <example>John didn't see nothing</example> is the correct way to express a negative sentence with a negative object.  In these languages, similarly to the restriction on negative polarity items above, a negative element may normally occur in subject position or a fronted position without any other negative element present, but a negative object may only occur when some higher (technically c-commanding) element is negative.  Some Negative Concord languages have the stronger restriction that any negative argument must co-occur with verbal negation and still others require fronting of the negative argument, similarly to the fronting of question words or phrases in content questions.
+<br/>
+		<br/>
+		<help href="../Help/Cbgbtext.doc#cCommand">(Click here to see more on c-command.)</help>
+	</introduction>
+	<form section="neg">
+<prompt id="NegVerbOnlyInstruction" show="swNegVerbOnly">Your language is neither Polarity changing nor Negative Concord, since the only way to express negation is via the verbal affix so there are not multiple instances of negation to change the polarity or to concord with.  Since you will not be asked for further examples on this page, it is important that you be sure you gave sufficient examples showing the verbal negation on the previous page for use in the grammar writeup before continuing on.
+</prompt>
+		<radioGroup id="NegTypeTable" show="swNegNotVerbOnly">
+			<groupName dataItem="type" default="changing">RType</groupName>
+			<prompt>Which type of negation does your language have?</prompt>
+			<radio id="NegTypeChanging" dataValue="changing">Polarity changing, like standard English, since the polarity changes between positive and negative with each instance of negation</radio>
+			<radio id="NegTypeConcord" dataValue="concord">Negative Concord, since any number of negative elements simply agree in making the polarity negative</radio>
+			<radioGroup id="PolarityItemsTable" show="swNegTypeChanging">
+				<groupName dataItem="polarityItems" default="no">RPolarityItems</groupName>
+				<prompt>Does your language have negative polarity items?</prompt>
+				<radio id="PolarityItemsYes" dataValue="yes">Yes, there is a separate set of pronouns, determiners, and adverbs which occur in object position or the normal adverb position instead of the equivalent negative item when another negative element is present in the sentence</radio>
+				<radio id="PolarityItemsNo" dataValue="no">No, the negative pronouns, determiners, and adverbs may occur in object position or the normal adverb position even when there is another negative element in the sentence</radio>
+			</radioGroup>
+		</radioGroup>
+		<prompt id="PolarityItemsYesInstruction" show="swPolarityItemsYesAndNotVerbOnly">Key your examples of the various negative polarity items in the appropriate boxes, each on a separate line and followed by a period.</prompt>
+		<prompt id="PronounPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">The negative polarity items which are pronouns, such as 'anyone', 'anybody', 'anything'.  Include elements which mean the same, but are written as more than one word.</prompt>
+		<textBox id="PronounPolarityItemsExamples" dataItem="npiPronounExample" rows="3" show="swPolarityItemsYesAndNotVerbOnly"/>
+		<prompt id="DeterminerPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">The negative polarity items which are determiners<span id="QPDeterminerNoOnlySpan" show="swQPDeterminerNoOrYesSome"> (special degree elements for your language)</span>, such as 'any':</prompt>
+		<textBox id="DeterminerPolarityItemsExamples" dataItem="npiDeterminerExample" rows="3" show="swPolarityItemsYesAndNotVerbOnly"/>
+		<prompt id="TemporalPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">The negative polarity items which are temporal adverbs, such as 'anytime':</prompt>
+		<textBox id="TemporalPolarityItemsExamples" dataItem="npiTemporalExample" rows="3" show="swPolarityItemsYesAndNotVerbOnly"/>
+		<prompt id="LocativePolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">The negative polarity items which are locative adverbs, such as 'anywhere':</prompt>
+		<textBox id="LocativePolarityItemsExamples" dataItem="npiLocativeExample" rows="3" show="swPolarityItemsYesAndNotVerbOnly"/>
+		<instruction id="PolarityItemsFeaturesInstruction" show="swPolarityItemsYesAndNotVerbOnly">Add the feature <feature>negative-polarity</feature> to all the negative polarity items<span id="QPDeterminerNoAffixSpan" show="swQPDeterminerNoOrYesSomeAffix">, including the affix(es) used in the nominal phrase in place of the negative special degree affix(es)</span>
+			<span id="QPDeterminerNoCliticSpan" show="swQPDeterminerNoOrYesSomeClitic">, though use instead the feature <feature>negative-polarity_prefix</feature> or <feature>negative-polarity_suffix</feature> for the negative-polarity proclitics and enclitics, respectively, used in the nominal phrase in place of the negative special degree clitic(s)</span>.  Those which are adverbs also need either the feature <feature>temporal</feature> or <feature>locative</feature> as appropriate.  You also need to make sure the categories are correct.  If the pronouns (written as a single word including the negative polarity item) do not already have the category <category>Pron</category>, add the feature <feature>makePron</feature> to change the category for the syntax.  If the adverbs do not already have the category <category>Adv</category>, add the feature <feature>makeAdv</feature> to change the category for the syntax.  <span id="QPDeterminerNoSpan1" show="swQPDeterminerNoOrYesSomeWord">Add the feature <feature>Q</feature> to the negative polarity special degree words to change their category appropriately.</span>
+			<span id="QPDeterminerYesSpan1" show="swQPDeterminerYesOrYesNo">Add the feature <feature>Det</feature> to the negative polarity determiners to change their category appropriately.</span>
+			<br/>
+			<br/>
+		</instruction>
+		<prompt id="NegSubjectInstruction" show="swNegNotVerbOnly">You gave the following examples of negative nominal phrases in subject position.  (You may add any additional examples you think of.)</prompt>
+		<prompt id="NegSubjectNPDegreePrompt" show="swNegNotVerbOnly">Special negative degree element modifying a subject nominal phrase:</prompt>
+		<textBox id="NegQPNPDegreeNegSubjExample" dataItem="degreeSubjExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
+		<prompt id="QPNPDeterminerNegSentPrompt" show="swQPDeterminerYesOrYesNo">Negative quantifier determiner modifying a subject nominal phrase:</prompt>
+		<textBox id="NegQPNPDeterminerNegSubjExample" dataItem="determinerSubjExample" rows="4" cols="50" show="swQPDeterminerYesOrYesNo"/>
+		<prompt id="NegSubjectPronounPrompt" show="swNegNotVerbOnly">Negative indefinite pronouns or nominal phrases as the subject of a full sentence:</prompt>
+		<textBox id="NegPronounSubjExample" dataItem="pronounSubjExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
+		<prompt id="NegObjectInstruction" show="swPolarityItemsNoAndNotVerbOnly">Now give similar examples where the negative nominal phrase is in object position and the subject is positive.</prompt>
+		<prompt id="NegPolarityObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Now give similar examples but with a positive subject and a negative polarity item in the object nominal phrase.</prompt>
+		<prompt id="NegObjectPrompt" show="swNegNotVerbOnly">Sentence examples with a negative<span id="PolarityItemsYesSpan" show="swPolarityItemsYes"> polarity item</span> nominal phrase in object position:</prompt>
+		<textBox id="NegObjectExample" dataItem="objectExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
+		<prompt id="NegIObjectInstruction" show="swPolarityItemsNoAndNotVerbOnly">Now give similar examples where the negative nominal phrase is an indirect object and the subject is positive.</prompt>
+		<prompt id="NegPolarityIObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Now give similar examples with a positive subject and a negative polarity item as the indirect object.</prompt>
+		<prompt id="NegIObjectPrompt" show="swNegNotVerbOnly">Sentence examples with a negative<span id="PolarityItemsYesSpan1" show="swPolarityItemsYes"> polarity item</span> nominal phrase in indirect object position:</prompt>
+		<textBox id="NegIObjectExample" dataItem="indirectObjectExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
+		<prompt id="NegSubjectObjectInstruction" show="swPolarityItemsNoAndNotVerbOnly">Finally, give examples where both the subject and object are negative.</prompt>
+		<prompt id="NegPolaritySubjectObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Finally, give examples with a negative subject and a negative polarity item in the object nominal phrase.</prompt>
+		<prompt id="NegSubjectObjectPrompt" show="swNegNotVerbOnly">Sentence examples with a negative subject and a negative<span id="PolarityItemsYesSpan2" show="swPolarityItemsYes"> polarity item</span> nominal phrase in object position:</prompt>
+		<textBox id="NegSubjectObjectExample" dataItem="subjectObjectExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
+		<br/>
+		<br/>
+		<radioGroup id="ObjectVerbRequiredTable" show="swNegNotVerbOnly">
+			<groupName dataItem="objVerbRequired" default="other">RObjectVerbRequired</groupName>
+			<prompt>Looking back at the full sentence examples you have given, is the verb or auxiliary required to be negative when the object nominal phrase <span id="NegObjectSpan" show="swPolarityItemsNo">is negative?</span>
+				<span id="NegPolarityObjectSpan" show="swPolarityItemsYes">contains a negative polarity item?</span>
+			</prompt>
+			<radio id="NegObjectVerbRequiredYes" dataValue="yes">Yes, a negative <span id="NegPolarityObjectYesSpan" show="swPolarityItemsYes">polarity item in the </span>object (or indirect object) is not allowed without also having a negative verb or auxiliary</radio>
+			<radio id="NegObjectVerbRequiredOther" dataValue="other">No, the verb or auxiliary is not required to be negative when there is a negative <span id="NegPolarityObjectOtherSpan" show="swPolarityItemsYes">polarity item in the </span>object (or indirect object), but if it is not there must be some other (c-commanding) negative element in the sentence</radio>
+			<radio id="NegObjectVerbRequiredNo" dataValue="no" show="swPolarityItemsNo">No, there is no restriction about the presence of another negative element in the sentence when there is a negative <span id="NegPolarityObjectNoSpan" show="swPolarityItemsYes">polarity item in the </span>object (or indirect object)</radio>
+		</radioGroup>
+<radioGroup id="NegFrontTable" show="swNegTypeConcordAndNotVerbOnly">
+	<groupName dataItem="negFront" default="no">RNegFront</groupName>
+	<prompt>Is a negative object required to be fronted in all negation constructions in your language?</prompt>
+	<radio id="NegFrontYes" dataValue="yes">Yes, a negative object must appear initially in the sentence, similarly to question phrases in English</radio>
+	<radio id="NegFrontOptional" dataValue="optional">A negative object may appear initially in the sentence, or it may remain in its normal position</radio>
+	<radio id="NegFrontBeforeVerb" dataValue="beforeVerb">A negative object may appear in the position directly before the verb, or it may remain in its normal position</radio>
+	<radio id="NegFrontNo" dataValue="no">No, a negative object simply appears in its normal position in the sentence</radio>
+</radioGroup>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="NegTypeBack" value="Back" goto="NegVerbal.xml"/>
+			<button id="NegTypeNext" value="Next" goto="NegTesting.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swNegTypeChanging">
+		<whenRadio button="NegTypeChanging"/>
+	</showWhen>
+	<showWhen id="swPolarityItemsYes">
+		<whenRadio button="NegTypeChanging"/>
+		<and/>
+		<whenRadio button="PolarityItemsYes"/>
+	</showWhen>
+	<showWhen id="swPolarityItemsNo">
+		<whenRadio button="PolarityItemsNo"/>
+		<or/>
+		<whenRadio button="NegTypeConcord"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYes">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesOrYesNo">
+		<whenValue element="qp" attr="determiner" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesNo"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNoOrYesSome">
+		<whenValue element="qp" attr="determiner" value="no"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNoOrYesSomeAffix">
+		<openParen/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<closeParen/>
+		<and/>
+		<openParen/>
+		<whenValue element="qp" attr="npDegreeNegType" value="prefix"/>
+		<or/>
+		<whenValue element="qp" attr="npDegreeNegType" value="suffix"/>
+		<or/>
+		<whenValue element="qp" attr="npDegreeNegType" value="affix"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNoOrYesSomeClitic">
+		<openParen/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<closeParen/>
+		<and/>
+		<openParen/>
+		<whenValue element="qp" attr="npDegreeNegType" value="proclitic"/>
+		<or/>
+		<whenValue element="qp" attr="npDegreeNegType" value="enclitic"/>
+		<or/>
+		<whenValue element="qp" attr="npDegreeNegType" value="clitic"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNoOrYesSomeWord">
+		<openParen/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+		<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<closeParen/>
+		<and/>
+		<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+		<closeParen/>
+	</showWhen>
+<showWhen id="swNegVerbOnly">
+		<whenValue element="qp" attr="determiner" value="no"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+		<and/>
+		<whenValue element="pron" attr="negIndef" value="no"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+		<and/>
+		<whenValue element="pron" attr="negIndef" value="no"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+		<and/>
+		<whenValue element="pron" attr="negIndef" value="no"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+		<and/>
+		<whenValue element="pron" attr="negIndef" value="no"/>
+</showWhen>
+<showWhen id="swNegNotVerbOnly">
+<not/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/><not/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+</showWhen>
+<showWhen id="swPolarityItemsNoAndNotVerbOnly">
+<whenRadio button="PolarityItemsNo"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/><not/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/><not/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenRadio button="PolarityItemsNo"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+<whenRadio button="PolarityItemsNo"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+<whenRadio button="PolarityItemsNo"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="PolarityItemsNo"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="PolarityItemsNo"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="PolarityItemsNo"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+</showWhen>
+<showWhen id="swPolarityItemsYesAndNotVerbOnly">
+<whenRadio button="PolarityItemsYes"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/><not/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/><not/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenRadio button="PolarityItemsYes"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+<whenRadio button="PolarityItemsYes"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+<whenRadio button="PolarityItemsYes"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="PolarityItemsYes"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="PolarityItemsYes"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="PolarityItemsYes"/>
+<and/>
+<whenRadio button="NegTypeChanging"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+</showWhen>
+<showWhen id="swNegTypeConcordAndNotVerbOnly">
+<whenRadio button="NegTypeConcord"/>
+<and/><not/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/><not/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<or/>
+<whenRadio button="NegTypeConcord"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+<whenRadio button="NegTypeConcord"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/><not/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<or/>
+<whenRadio button="NegTypeConcord"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="NegTypeConcord"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="yesSome"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="NegTypeConcord"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+<whenRadio button="NegTypeConcord"/>
+<and/>
+		<whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+		<whenValue element="pron" attr="negIndef" value="yes"/>
+</showWhen>
+</page>

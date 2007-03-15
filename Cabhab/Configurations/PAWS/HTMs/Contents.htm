@@ -1,0 +1,197 @@
+<html>
+   <head>
+	  <title>Contents</title>
+	  <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+<script language="jscript" id="clientEventHandlersJS">
+  // variables used throughout functions below
+var attr;
+var sImg;
+var sTemp;
+var xpath;
+
+  function Initialize()
+{
+displayStatus(ContentsOverallTypologyQuestionsStatus,"typology");
+displayStatus(ContentsQuantifiersStatus, "qp");
+displayStatus(ContentsAdverbsStatus,"advp");
+displayStatus(ContentsAdjectivesStatus,"adjp");
+displayStatus(ContentsSimpleNPStatus,"np");
+displayStatus(ContentsProperNamesStatus,"prop");
+displayStatus(ContentsPronounsStatus,"pron");
+displayStatus(ContentsPrepositionsStatus,"pp");
+displayStatus(ContentsSingleClausesStatus,"ip");
+displayStatus(ContentsCompsStatus,"comp");
+displayStatus(ContentsQuestionsStatus,"q");
+displayStatus(ContentsRelClStatus,"relcl");
+displayStatus(ContentsAdvClsStatus,"advcl");
+displayStatus(ContentsNegativeStatus,"neg");
+displayStatus(ContentsCoordStatus,"coord");
+displayStatus(ContentsFocusStatus,"focus");
+displayStatus(ContentsExclamationsStatus,"excl");
+
+window.external.SetLeftOffAt("Contents.htm");
+}
+function displayStatus(idOfItem, strElem)
+{
+	window.external.GetAnswerValue("//" + strElem + "/@checkedOff");
+	attr = window.external.OutValue;
+	sImg = "&nbsp;&nbsp;<img src='";
+	if (attr == "no")
+{
+		sImg = sImg + "UnCheckedOff.GIF'>";
+}
+	else
+{
+		sImg = sImg + "CheckedOff.GIF'>";
+}
+	idOfItem.innerHTML = sImg;
+}
+function StatusClicked(idOfItem, strElem)
+{
+	xpath = "//" + strElem + "/@checkedOff";
+	window.external.GetAnswerValue(xpath);
+	attr = window.external.OutValue;
+	sImg = "&nbsp;&nbsp;<img src='";
+	if (attr == "no")
+{
+		sImg = sImg + "CheckedOff.GIF'>";
+		sTemp = "yes";
+}
+	else
+{
+		sImg = sImg + "UnCheckedOff.GIF'>";
+		sTemp = "no";
+}
+	window.external.SetAnswerValue(xpath, sTemp);
+	idOfItem.innerHTML = sImg;
+}
+</script>
+   </head>
+   <body onload="Initialize()">
+<h1>Contents</h1>
+<p>Click <A href="purpose.htm">here</A> to see a purpose statement.<p>
+<p>Please check off each section as completed to keep track of your progress.  To check off a section, click on the white box to the left of it.</p>
+<table align="left" border="0" cellpadding="3" width="100%" >
+	<tbody>
+		<tr>
+			<th align="left">Status</th>
+			<th align="left" valign="top">No.</th>
+			<th align="left" valign="top">Description</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td id="ContentsOverallTypologyQuestionsStatus" onclick="StatusClicked(ContentsOverallTypologyQuestionsStatus,'typology')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">1.</td>
+			<td valign="top"><A id=ContentsOverallTypologyQuestions href="OverallTypology.xml" >Overall Typology Questions</A></td>
+			<td rowspan="18" width="50%" class="instruction" valign="top">For each section:<br>
+<ol>
+<li>Think of relevant data for your language,
+		concentrating on straightforward data with no special language-specific
+		constructions unless they are asked about in the questions (those will have to be dealt with after completion of the
+		starter kit). </li>
+
+<li>Fill in the answer to each question, based on
+		the data. Keep in mind that since this starterkit deals with syntactic parsing, the questions are almost always asking about categories which are written as a separate word.</li>
+
+<li>Add the feature names to the appropriate entries
+		in the lexicon, as directed. Please note that both feature names and category names are sensitive to capitalization and are limited to a single word for each.  A space indicates a separate feature name. Therefore, whenever you are instructed to add a feature to a lexical entry, simply list the feature name (with a space between it and any other features) in the feature field (normally \f).  You also need to be sure CARLA Studio knows about the feature field by keying an f (or the marker you are using) in the box by *features (one of the Optional Markers) in all the Analysis SFM Markers sections under the Dictionary tab in the Language Model.</li>
+
+<li>Key relevant data into the text box, as
+		directed, with a period and new line after each example. </li>
+
+<li>At the end of each section, save the results so that the grammar and write-up and test example files will be generated, then run the parser on the test file indicated and check the output.  Click <A href="CarlaStudioSetup.htm">here</A> to see how to modify a CARLAStudio setup to use the grammar. </li>
+
+<li>Make any changes to the starter kit questions
+		(to change the phrase structure) or to the lexicon feature names needed,
+		then save and re-run. Note any details the starter kit is not able to handle, so
+		that they can be dealt with later. </li>
+
+<li>Check off that you have completed that section, then go on to the next.  (To check off a section, click on the white box to the left of it.) You may also exit the starter kit at any time and return to it later.  Note that you have to leave a given page before the program will remember the answers you gave for that page. You leave a page by using the Back or Next buttons or clicking on the "Return to Contents" link. </li>
+</ol>
+</td>
+		</tr>
+		<tr>
+			<td id="ContentsQuantifiersStatus" onclick="StatusClicked(ContentsQuantifiersStatus, 'qp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">2.</td>
+			<td valign="top"><A id=ContentsQuantifiers href="QPMain.xml" >Quantifiers and QP</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsAdverbsStatus" onclick="StatusClicked(ContentsAdverbsStatus,'advp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">3.</td>
+			<td valign="top"><A id=ContentsAdverbs href="AdvPMain.xml">Adverbs and AdvP</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsAdjectivesStatus" onclick="StatusClicked(ContentsAdjectivesStatus,'adjp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">4.</td>
+			<td valign="top"><A id=ContentsAdjectives href="AdjPMain.xml">Adjectives and
+	AdjP</A>  </td>
+		</tr>
+		<tr>
+			<td id="ContentsSimpleNPStatus" onclick="StatusClicked(ContentsSimpleNPStatus,'np')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">5.</td>
+			<td valign="top"><A id=ContentsSimpleNP href="NPContents.htm" >Simple and Possessed Nominal Phrases</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsProperNamesStatus" onclick="StatusClicked(ContentsProperNamesStatus,'prop')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">6.</td>
+			<td valign="top"><A id=ContentsProperNames href="PNMain.xml">Proper Names</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsPronounsStatus" onclick="StatusClicked(ContentsPronounsStatus,'pron')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">7.</td>
+			<td valign="top"><A id=ContentsPronouns href="PronMain.xml">Pronouns</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsPrepositionsStatus" onclick="StatusClicked(ContentsPrepositionsStatus,'pp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">8.</td>
+			<td valign="top"><A id=ContentsPrepositions href="PPMain.xml">Pre/Post-positional Phrases</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsSingleClausesStatus" onclick="StatusClicked(ContentsSingleClausesStatus,'ip')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">9.</td>
+			<td valign="top"><A id=ContentsSingleClauses href="IPContents.htm">Basic, Single-clause Sentences</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsCompsStatus" onclick="StatusClicked(ContentsCompsStatus,'comp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">10.</td>
+			<td valign="top"><A id=ContentsComps href="CompMain.xml">Complement Clauses</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsQuestionsStatus" onclick="StatusClicked(ContentsQuestionsStatus,'q')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">11.</td>
+			<td valign="top"><A id=ContentsQuestions href="QMain.xml">Questions</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsRelClStatus" onclick="StatusClicked(ContentsRelClStatus,'relcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">12.</td>
+			<td valign="top"><A id=ContentsRelCl href="RelClMain.xml">Relative Clauses</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsAdvClsStatus" onclick="StatusClicked(ContentsAdvClsStatus,'advcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">13.</td>
+			<td valign="top"><A id=ContentsAdvCls href="AdvClMain.xml">Adverbial Clauses</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">14.</td>
+			<td valign="top"><A id=ContentsNegative href="NegMain.xml">Negative Constructions</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">15.</td>
+			<td valign="top"><A id=ContentsCoord href="CoordMain.xml">Coordination Constructions</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">16.</td>
+			<td valign="top"><A id=ContentsFocus href="FocusMain.xml">Focus and Topic Constructions</A></td>
+		</tr>
+		<tr>
+			<td id="ContentsExclamationsStatus" onclick="StatusClicked(ContentsExclamationsStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top">17.</td>
+			<td valign="top"><A id=ContentsExclamations href="ExclMain.xml">Exclamations and Greetings</A></td>
+		</tr>
+	</tbody>
+</table>
+   </body>
+</html>

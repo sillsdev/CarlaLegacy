@@ -1,0 +1,1107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)file://C:\carla\Dev\PAWS\Help\Black1997ApendixA.htm -->
+<!-- saved from url=(0048)http://www.sil.org/SILEWP/1997/006/appendix.html --><HTML><HEAD><TITLE>SILEWP 1997-006</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK
+href="Black1997Apendix_files/silewp.css" rel=StyleSheet><LINK
+href="http://www.sil.org/silewp/" rel=home><LINK
+href="http://www.sil.org/silewp/1997/contents.html" rel=up>
+<META http-equiv=Reply-to content=SILEWP@sil.org>
+<META
+content="SIL, Summer Institute of Linguistics, SILEWP, SIL Electronic Working Papers, computing, parsing, linguistics, grammar, syntax, GB, Government and Binding, X-bar, PATR"
+name=Keywords>
+<META
+content="Appendixes to A PC-PATR Implementation of GB Syntax, by Cheryl A. Black"
+name=Description>
+<META content=Document name=ObjectType>
+<META content=VPAA name=Approved-by>
+<META content="Evan Antworth" name=Maintained-by>
+<META
+content="1997 Cheryl A. Black and Summer Institute of Linguistics, Inc. All rights reserved."
+name=Copyright><!--Dublic Core Tags-->
+<META content="Appendixes to A PC-PATR Implementation of GB Syntax" name=Title>
+<META content=syntax name=Subject>
+<META content="Cheryl A. Black" name=Author>
+<META content="Summer Institute of Linguistics" name=Publisher>
+<META content=HTML3.2 name=Form>
+<META content="SILEWP 1997-006" name=Identifier>
+<META content=English name=HTTP.Language>
+<META content="Wed, 17 Dec 1997 00:00:00 GMT" name=Date.HTTP>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<P><STRONG>SIL Electronic Working Papers 1997-006, December
+1997</STRONG><BR>Copyright © 1997 Cheryl A. Black and Summer Institute of
+Linguistics, Inc.<BR>All rights reserved.</P>
+<HR>
+
+<H1 align=center>Appendixes to <EM>A PC-PATR Implementation of GB Syntax</EM>
+</H1>
+<P align=center><STRONG><A
+href="http://www.sil.org/SILEWP/authors.html#Cheryl_A_Black">Cheryl A.
+Black</A></STRONG>
+<HR>
+
+<DL>
+  <DT><A
+  href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixA">Appendix A:
+  Two Examples</A>
+  <DD>
+  <DL>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixA.1">1. Who
+	might Jorge seem to think Amy likes?</A>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixA.2">2. Amy
+	tries to like herself.</A> </DT></DL>
+  <DD>
+  <DT><BR><A
+  href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixB">Appendix B:
+  Example Sentences the Grammar Accounts For</A>
+  <DD>
+  <DL>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixB.1">1.
+	Coordination, subcategorization and particle movement</A>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixB.2">2.
+	Questions</A>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixB.3">3.
+	Auxiliaries, case, agreement, and copular constructions</A>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixB.4">4.
+	Passives and unaccusatives</A>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixB.5">5. Equi
+	and Raising constructions</A>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixB.6">6.
+	Reflexives</A>
+	<DT><A
+	href="http://www.sil.org/SILEWP/1997/006/appendix.html#AppendixB.7">7.
+	Adjuncts versus complements</A> </DT></DL></DD></DL>
+<HR>
+
+<H2><A name=AppendixA>Appendix A: Two Examples</A> </H2>
+<H3><A name=AppendixA.1>1. Who might Jorge seem to think Amy likes?</A> </H3>
+<P>The program produces the following output for the input:
+<P><TT>who might Jorge seem to think Amy likes</TT>
+<P><PRE>1:
+		 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree1.1">S_1</A>
+		  |
+		<A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.2">CP_2</A>
+   _______|______
+ <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.3">NP_3</A>         <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.4">C'_4</A>
+  who     ______|_______
+		<A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.5">V_5</A>          <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.6">IP_6</A>
+	   might    _______|________
+			  <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.7">NP_7</A>            <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.8">I'_8</A>
+			 Jorge      _______|_______
+					 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.9">V-trace_9</A>       <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.10">VP_10</A>
+						  0            |
+									 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.11">V'_11</A>
+							   ________|_________
+							<A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.12">V'_12</A>             <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.14">IP_14</A>
+							   |        ________|_______
+							 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.13">V_13</A>   <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.15">NP-A-trace_15</A>    <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.16">I'_16</A>
+							 seem      0         ______|_______
+											   <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.17">I_17</A>         <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.18">VP_18</A>
+												to            |
+															<A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.19">V'_19</A>
+														______|______
+													 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.20">V'_20</A>        <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.22">IP_22</A>
+														|   ______|______
+													 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.21">V_21</A>   <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.23">NP_23</A>       <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.24">I'_24</A>
+													think   Amy          |
+																		<A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.25">VP_25</A>
+																		 |
+																		<A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.26">V'_26</A>
+																	_____|_____
+																 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.27">V'_27</A>  <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.29">NP-trace_29</A>
+																	|        0
+																   <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.1.28">V_28</A>
+																  likes
+
+<A name=Tree1.1>S_1:</A>
+[ cat:   S ]
+
+<A name=Tree.1.2>CP_2:</A>
+[ cat:   CP
+  moved:   [ A-bar: none ]
+  type:    [ fin:   +
+			 q:     +
+			 root:  +
+			 wh:    + ] ]
+
+<A name=Tree.1.3>NP_3:</A>
+[ cat:   NP
+  agr:     [ case:  accusative
+			 number:sg
+			 person:3rd ]
+  gloss: who
+  lex:   who
+  type:    [ anaphor:-
+			 animate:+
+			 pred:  -
+			 wh:    + ] ]
+
+<A name=Tree.1.4>C'_4:</A>
+[ cat:   C'
+  moved:   [ A:     none
+			 A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ]
+			 head:  none ]
+  type:    [ fin:   +
+			 q:     +
+			 root:  + ] ]
+
+<A name=Tree.1.5>V_5:</A>
+[ cat:   V
+  agr:     [ vform: bare ]
+  gloss: might
+  lex:   might
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   VP
+								   agr:     [ person:irrelevant
+											  vform: bare ]
+								   role:  Event
+								   type:    [ modal: - ] ]
+						rest:  none ]
+			 subj:  none ]
+  type:    [ aux:   +
+			 be1:   -
+			 have:  -
+			 modal: +
+			 passive:- ] ]
+
+<A name=Tree.1.6>IP_6:</A>
+[ cat:   IP
+  agr:   $2[ case:  nominative
+			 gender:masc
+			 number:sg
+			 person:3rd ]
+  moved:   [ A:     none
+			 A-bar: $1[ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ]
+			 head:    [ cat:   V
+						type:    [ aux:   +
+								   fin:   +
+								   q:     + ] ] ]
+  subcat:  [ comp:    [ first:   [ cat:   VP
+								   agr:  [person:irrelevant
+										  vform: bare ]
+								   bind: [ agr:  [ gender:masc
+												   number:sg
+												   person:3rd ] ]
+								   moved:[ A:    [ first: [ cat:   NP
+															agr:   $2
+															gloss: Jorge
+															lex:   Jorge
+															role:  Agent
+															type:  [ anaphor:-
+																	 animate:+
+																	 pred:  -
+																	 wh:    - ] ]
+														 rest:  none ]
+											  A-bar: $1 ]
+								   subcat:  [ comp:  none
+											  subj:  none ]
+								   type:    [ aux:   -
+											  passive:- ] ] ] ]
+  type:    [ fin:   +
+			 q:     +
+			 root:  + ] ]
+
+<A name=Tree.1.7>NP_7:</A>
+[ cat:   NP
+  agr:     [ case:  nominative
+			 gender:masc
+			 number:sg
+			 person:3rd ]
+  gloss: Jorge
+  lex:   Jorge
+  type:    [ anaphor:-
+			 animate:+
+			 pred:  -
+			 wh:    - ] ]
+
+<A name=Tree.1.8>I'_8:</A>
+[ cat:   I'
+  moved:   [ A:     $3[ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ]
+			 A-bar: $2[ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ]
+			 head:    [ cat:   V
+						type:    [ aux:   +
+								   fin:   +
+								   q:     + ] ] ]
+  subcat:  [ comp:    [ first:   [ cat:   VP
+								   agr:     [ person:irrelevant
+											  vform: bare ]
+								   moved:   [ A:     $3
+											  A-bar: $2 ]
+								   subcat:  [ comp:  none
+											  subj:  none ]
+								   type:    [ aux:   -
+											  passive:- ] ] ]
+			 subj:  none ]
+  type:    [ fin:   +
+			 q:     +
+			 root:  + ] ]
+
+<A name=Tree.1.9>V-trace_9:</A>
+[ cat:   V-trace
+  type:    [ null:  + ] ]
+
+<A name=Tree.1.10>VP_10:</A>
+[ cat:   VP
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  moved:   [ A:       [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ]
+			 A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ comp:  none
+			 subj:  none ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.11>V'_11:</A>
+[ cat:   V'
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  moved:   [ A:       [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ]
+			 A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ comp:  none
+			 subj:  none ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.12>V'_12:</A>
+[ cat:   V'
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   IP
+								   role:  Proposition
+								   type:    [ fin:   -
+											  q:     -
+											  raising:+
+											  root:  - ] ]
+						rest:  none ]
+			 subj:  none ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.13>V_13:</A>
+[ cat:   V
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  gloss: seem
+  lex:   seem
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   IP
+								   role:  Proposition
+								   type:    [ fin:   -
+											  q:     -
+											  raising:+
+											  root:  - ] ]
+						rest:  none ]
+			 subj:  none ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.14>IP_14:</A>
+[ cat:   IP
+  moved:   [ A:       [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ]
+			 A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ subj:  none ]
+  type:    [ fin:   -
+			 q:     -
+			 raising:+
+			 root:  - ] ]
+
+<A name=Tree.1.15>NP-A-trace_15:</A>
+[ cat:   NP-A-trace
+  type:    [ null:  + ] ]
+
+<A name=Tree.1.16>I'_16:</A>
+[ cat:   I'
+  moved:   [ A:     none
+			 A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ fin:   -
+			 q:     - ] ]
+
+<A name=Tree.1.17>I_17:</A>
+[ cat:   I
+  gloss: to.I
+  lex:   to
+  type:    [ fin:   - ] ]
+
+<A name=Tree.1.18>VP_18:</A>
+[ cat:   VP
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  moved:   [ A:     none
+			 A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.19>V'_19:</A>
+[ cat:   V'
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  moved:   [ A:     none
+			 A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.20>V'_20:</A>
+[ cat:   V'
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   IP
+								   role:  Proposition
+								   type:    [ fin:   +
+											  q:     -
+											  root:  - ] ]
+						rest:  none ]
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.21>V_21:</A>
+[ cat:   V
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  gloss: think
+  lex:   think
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   IP
+								   role:  Proposition
+								   type:    [ fin:   +
+											  q:     -
+											  root:  - ] ]
+						rest:  none ]
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.22>IP_22:</A>
+[ cat:   IP
+  moved:   [ A:     none
+			 A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ subj:  none ]
+  type:    [ fin:   +
+			 root:  - ] ]
+
+<A name=Tree.1.23>NP_23:</A>
+[ cat:   NP
+  agr:     [ case:  nominative
+			 gender:fem
+			 number:sg
+			 person:3rd ]
+  gloss: Amy
+  lex:   Amy
+  type:    [ anaphor:-
+			 animate:+
+			 pred:  -
+			 wh:    - ] ]
+
+<A name=Tree.1.24>I'_24:</A>
+[ cat:   I'
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  moved:   [ A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ fin:   +
+			 root:  - ] ]
+
+<A name=Tree.1.25>VP_25:</A>
+[ cat:   VP
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  moved:   [ A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.26>V'_26:</A>
+[ cat:   V'
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  moved:   [ A-bar:   [ first:   [ cat:   NP
+								   agr:     [ case:  accusative ]
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ] ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.27>V'_27:</A>
+[ cat:   V'
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   NP
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ]
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.28>V_28:</A>
+[ cat:   V
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  gloss: likes
+  lex:   likes
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   NP
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ]
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.1.29>NP-trace_29:</A>
+[ cat:   NP-trace
+  type:    [ null:  + ] ]
+
+1 parse found
+</PRE>
+<HR>
+
+<H3><A name=AppendixA.2>2. Amy tries to like herself.</A> </H3>
+<P>The program produces the following output for the input:
+<P><TT>Amy tries to like herself</TT>
+<P><PRE>        <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.1">S_1</A>
+		 |
+	   <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.2">CP_2</A>
+		 |
+	   <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.3">C'_3</A>
+		 |
+	   <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.4">IP_4</A>
+   ______|_______
+ <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.5">NP_5</A>         <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.6">I'_6</A>
+  Amy           |
+			  <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.7">VP_7</A>
+				|
+			  <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.8">V'_8</A>
+		  ______|_______
+		<A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.9">V'_9</A>         <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.11">CP_11</A>
+		  |            |
+		<A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.10">V_10</A>         <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.12">C'_12</A>
+		tries          |
+					 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.13">IP_13</A>
+				 ______|______
+			  <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.14">PRO_14</A>       <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.15">I'_15</A>
+				 0      _____|______
+					  <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.16">I_16</A>       <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.17">VP_17</A>
+					   to          |
+								 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.18">V'_18</A>
+							   ____|____
+							 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.19">V'_19</A>   <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.21">NP_21</A>
+							   |    herself
+							 <A href="http://www.sil.org/SILEWP/1997/006/appendix.html#Tree.2.20">V_20</A>
+							 like
+
+<A name=Tree.2.1>S_1:</A>
+[ cat:   S ]
+
+<A name=Tree.2.2>CP_2:</A>
+[ cat:   CP
+  moved:   [ A:     none
+			 A-bar: none
+			 head:  none ]
+  type:    [ fin:   +
+			 q:     -
+			 root:  +
+			 wh:    - ] ]
+
+<A name=Tree.2.3>C'_3:</A>
+[ cat:   C'
+  moved:   [ A:     none
+			 A-bar: none ]
+  type:    [ fin:   +
+			 q:     -
+			 root:  + ] ]
+
+<A name=Tree.2.4>IP_4:</A>
+[ cat:   IP
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ subj:  none ]
+  type:    [ fin:   +
+			 q:     -
+			 root:  + ] ]
+
+<A name=Tree.2.5>NP_5:</A>
+[ cat:   NP
+  agr:     [ case:  nominative
+			 gender:fem
+			 number:sg
+			 person:3rd ]
+  gloss: Amy
+  lex:   Amy
+  type:    [ anaphor:-
+			 animate:+
+			 pred:  -
+			 wh:    - ] ]
+
+<A name=Tree.2.6>I'_6:</A>
+[ cat:   I'
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ fin:   +
+			 q:     -
+			 root:  + ] ]
+
+<A name=Tree.2.7>VP_7:</A>
+[ cat:   VP
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.2.8>V'_8:</A>
+[ cat:   V'
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.2.9>V'_9:</A>
+[ cat:   V'
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   CP
+								   role:  Proposition
+								   type:    [ fin:   -
+											  q:     -
+											  raising:-
+											  root:  - ] ]
+						rest:  none ]
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.2.10>V_10:</A>
+[ cat:   V
+  agr:     [ number:sg
+			 person:3rd
+			 vform: pres ]
+  gloss: tries
+  lex:   tries
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   CP
+								   role:  Proposition
+								   type:    [ fin:   -
+											  q:     -
+											  raising:-
+											  root:  - ] ]
+						rest:  none ]
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.2.11>CP_11:</A>
+[ cat:   CP
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none
+			 head:  none ]
+  type:    [ fin:   -
+			 q:     -
+			 root:  -
+			 wh:    - ] ]
+
+<A name=Tree.2.12>C'_12:</A>
+[ cat:   C'
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  type:    [ fin:   -
+			 q:     -
+			 root:  - ] ]
+
+<A name=Tree.2.13>IP_13:</A>
+[ cat:   IP
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ subj:  none ]
+  type:    [ fin:   -
+			 q:     -
+			 root:  - ] ]
+
+<A name=Tree.2.14>PRO_14:</A>
+[ cat:   PRO
+  type:    [ null:  + ] ]
+
+<A name=Tree.2.15>I'_15:</A>
+[ cat:   I'
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ fin:   -
+			 q:     - ] ]
+
+<A name=Tree.2.16>I_16:</A>
+[ cat:   I
+  gloss: to.I
+  lex:   to
+  type:    [ fin:   - ] ]
+
+<A name=Tree.2.17>VP_17:</A>
+[ cat:   VP
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.2.18>V'_18:</A>
+[ cat:   V'
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  bind:    [ agr:     [ gender:fem
+						number:sg
+						person:3rd ] ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:  none
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.2.19>V'_19:</A>
+[ cat:   V'
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   NP
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ]
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.2.20>V_20:</A>
+[ cat:   V
+  agr:     [ person:irrelevant
+			 vform: bare ]
+  gloss: like
+  lex:   like
+  moved:   [ A:     none
+			 A-bar: none ]
+  subcat:  [ comp:    [ first:   [ cat:   NP
+								   role:  Theme
+								   type:    [ pred:  - ] ]
+						rest:  none ]
+			 subj:    [ first:   [ cat:   NP
+								   role:  Agent
+								   type:    [ animate:+
+											  pred:  - ] ]
+						rest:  none ] ]
+  type:    [ aux:   -
+			 passive:- ] ]
+
+<A name=Tree.2.21>NP_21:</A>
+[ cat:   NP
+  agr:     [ case:  accusative
+			 gender:fem
+			 number:sg
+			 person:3rd ]
+  gloss: herself
+  lex:   herself
+  type:    [ anaphor:+
+			 animate:+
+			 pred:  -
+			 wh:    - ] ]
+
+1 parse found
+</PRE>
+<P>
+<HR>
+
+<H2><A name=AppendixB>Appendix B: Example Sentences the Grammar Accounts For</A>
+</H2>
+<P>Ungrammatical examples that must be ruled out are noted by <TT>| *</TT>
+<P><A name=AppendixB.1>1. Coordination, subcategorization and particle
+movement:</A>
+<P><PRE>     we like old movies and popcorn
+	 those extremely feisty and playful young cats and dogs bother me
+	 John turned on the light with the bananas
+	 John turned the light with the bananas on
+	 John turned for the light
+	 John turned     the light for                                      | *
+	 John turned off the light
+	 John turned the light off
+	 we count on John for bananas
+	 we count on John
+	 we count                                                           | *
+	 John sleeps
+	 John sleeps bananas                                                | *
+	 John likes bananas
+	 John likes                                                         | *
+	 John likes bananas with the bombing
+	 we depend on John
+	 we depend                                                          | *
+	 we depend with John                                                | *
+	 the authorities blamed  an innocent man for  the bombing
+	 the authorities blamed  an innocent man with the bombing           | *
+	 the authorities blamed  an innocent man of   the bombing           | *
+	 the authorities accused an innocent man of   the bombing
+	 the authorities accused an innocent man for  the bombing           | *
+	 the authorities accused an innocent man with the bombing           | *
+	 the authorities charged an innocent man with the bombing
+	 the authorities charged an innocent man for  the bombing           | *
+	 the authorities charged an innocent man of   the bombing           | *
+	 the authorities blamed  an innocent man
+	 the authorities accused an innocent man
+	 the authorities charged an innocent man
+</PRE>
+<P><A name=AppendixB.2>2. Questions:</A>
+<P><PRE>     Amy might give the book to Bill
+	 might Amy give the book to Bill
+	 what might Amy give to Bill
+	 who might give the book to Bill
+	 whom might Amy give the book to
+	 to whom might Amy give the book
+	 who might Amy give the book to Bill                                | *
+	 what might Amy give the book to Bill                               | *
+	 Jorge might think Amy likes Bill
+	 who might Jorge think Amy likes
+	 who might Jorge think likes Amy
+	 Jorge might wonder whether Amy likes Bill
+	 Jorge might wonder who Amy likes
+</PRE>
+<P><A name=AppendixB.3>3. Auxiliaries, case, agreement, and copular
+constructions:</A>
+<P><PRE>     Bill had seemed to like Amy
+	 Bill might have seemed to like Amy
+	 Amy has tried to give the book to Bill
+	 Amy had tried to give the book to Bill
+	 Amy might have tried to give the book to Bill
+	 Amy might has tried to give the book to Bill                       | *
+	 Amy has might try to give the book to Bill                         | *
+	 me have tried to give the book to Bill                             | *
+	 Amy has tried to give the book to we                               | *
+	 Jorge has been feisty
+	 has Jorge been feisty
+	 who has been feisty
+	 Jorge is feisty
+	 is Jorge feisty
+	 who is feisty
+	 Jorge seems feisty
+	 Jorge has seemed feisty
+	 who has seemed feisty
+	 the popcorn might be ours
+	 might the popcorn be ours
+	 what might be ours
+	 the popcorn is ours
+	 is the popcorn ours
+	 what is ours
+	 whose is the popcorn
+	 whose popcorn is that
+	 Jorge is president
+	 is Jorge president
+	 who is president
+	 Jorge is the president
+	 is Jorge the president
+	 who is the president
+	 what is Jorge
+	 what office is Jorge
+	 the book is under the bed
+	 is the book under the bed
+	 the book could be under the bed
+	 could the book be under the bed
+	 what could be under the bed
+	 what could the book be under
+	 the book was under the bed
+	 was the book under the bed
+	 the books are under the bed
+	 are the books under the bed
+	 the books is under the bed                                         | *
+	 is the books under the bed                                         | *
+	 the popcorn is ours
+	 the popcorn is our                                                 | *
+	 Jorge likes me
+	 Jorge likes I                                                      | *
+	 Jorge likes his book
+	 Jorge likes him book                                               | *
+	 Jorge likes he book                                                | *
+	 Jorge likes Bill's book
+	 Jorge likes Bill book                                              | *
+	 he likes bananas
+	 him likes bananas                                                  | *
+	 Jorge likes those movies of mine
+	 Jorge likes those movies of my                                     | *
+	 Jorge likes those movies of me
+	 Jorge likes those movies of I                                      | *
+</PRE>
+<P><A name=AppendixB.4>4. Passives and unaccusatives:</A>
+<P><PRE>     Bill has broken the glass
+	 Bill broke the glass
+	 the glass was broken
+	 the glass was broken by Bill
+	 Bill was broken the glass                                          | *
+	 Bill broken the glass                                              | *
+	 Bill died
+	 Bill was died                                                      | *
+	 Bill was dying
+	 Bill has died
+	 the glass broke
+	 the glass is breaking
+	 the glass has broken
+</PRE>
+<P><A name=AppendixB.5>5. Equi and Raising Constructions:</A>
+<P><PRE>     Bill seems to like Amy
+	 Jorge seems to think Amy likes Bill
+	 Amy tried to give the book to Bill
+	 Amy seemed to try to give the book to Bill
+	 who might Jorge seem to think Amy likes
+	 what might Amy try to give to Bill
+</PRE>
+<P><A name=AppendixB.6>6. Reflexives:</A>
+<P><PRE>     Amy likes herself
+	 Amy likes himself                                                  | *
+	 we like ourselves
+	 we like myself                                                     | *
+	 Bill likes the picture of himself
+	 Bill likes the picture of herself                                  | *
+	 Jorge talks to himself
+	 Jorge talks to herself                                             | *
+	 Jorge talks to Bill about himself
+	 Jorge talks to Bill about herself                                  | *
+	 Jorge thinks Amy likes herself
+	 Jorge thinks Amy likes himself                                     | *
+	 Amy tries to like herself
+	 Amy tries to like himself                                          | *
+	 Amy seems to like herself
+	 Amy seems to like himself                                          | *
+</PRE>
+<P><A name=AppendixB.7>7. Adjuncts versus complements:</A>
+<P><PRE>     Bill put the book on the bed
+	 Bill put the book on the bed in the morning
+	 Bill put the book on the bed on Tuesday
+	 Bill put the book in the morning                                   | *
+</PRE>
+<HR>
+
+<P><STRONG>Date created:</STRONG> <EM>17-Dec-1997</EM><BR><STRONG>URL:</STRONG>
+<EM><A
+href="http://www.sil.org/silewp/1997/006/appendix.html">http://www.sil.org/silewp/1997/006/appendix.html</A></EM><BR><STRONG>Questions/Comments:</STRONG>
+<EM><A href="mailto:SILEWP@SIL.ORG">SILEWP@sil.org</A></EM></P>
+<HR>
+
+<P><STRONG>[<A
+href="http://www.sil.org/SILEWP/1997/006/SILEWP1997-006.html">SILEWP
+1997-006</A> | <A href="http://www.sil.org/SILEWP/1997/">SILEWP 1997
+Contents</A> | <A href="http://www.sil.org/SILEWP/">SILEWP Home</A> | <A
+href="http://www.sil.org/">SIL Home</A>]</STRONG></P></BODY></HTML>

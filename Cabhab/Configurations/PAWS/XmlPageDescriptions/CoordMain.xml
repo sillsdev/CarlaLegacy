@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="CoordMain" count="1/3">
+	<title>Coordination Constructions</title>
+	<introduction>This section considers basic coordination constructions where there is an overt conjunction between the conjuncts.  We will deal with coordination at the sentence level and at the verb phrase, nominal phrase, pre/post-positional phrase and adjective phrase level.  More complex types of coordination constructions, such as lists without overt conjunctions between each conjunct, gapping, appositives and comparatives, will need to be dealt with later.  Other possible levels of coordination are not included here either.</introduction>
+	<form section="coord" transparent="no">
+		<introduction>In English, the conjunctions which can be used between two conjuncts are <example>and</example>, <example>or</example>, <example>but</example> and <example>and/or</example>.  In addition, there are coordination constructions which require an initial conjunction, such as <example>either...or</example> and <example>neither...nor</example> constructions.  Some languages also use a word meaning <example>with</example> as a conjunction between nominal phrases.</introduction>
+		<prompt>Key how your language expresses these conjunctions in the following text boxes.  If there is more than one option, enter each word on a separate line.</prompt>
+		<prompt>Key the conjunction words your language uses for 'and':</prompt>
+		<textBox id="CoordAnd" dataItem="and" rows="3"/>
+		<br/>
+		<prompt>Key the conjunction words your language uses for 'or' here:</prompt>
+		<textBox id="CoordOr" dataItem="or" rows="3"/>
+		<br/>
+		<prompt>Key the conunction words your language uses for 'but' here:</prompt>
+		<textBox id="CoordBut" dataItem="but" rows="3"/>
+		<br/>
+		<prompt>Key the conjunction words your language uses for 'and/or' here:</prompt>
+		<textBox id="CoordAndOr" dataItem="andOr" rows="3"/>
+		<br/>
+		<prompt>If you language uses 'with' as a nominal phrase conjunction, key that word here:</prompt>
+		<textBox id="CoordWith" dataItem="with" rows="3"/>
+		<br/>
+		<prompt>Key any additional conjunction words your language uses alone between conjuncts here:</prompt>
+		<textBox id="CoordOther" dataItem="other" rows="3"/>
+		<br/>
+		<prompt>Key the initial conjunction words meaning 'either' that your language uses for 'either...or' constructions here:</prompt>
+		<textBox id="CoordEither" dataItem="either" rows="3"/>
+		<br/>
+		<prompt>Key the initial negative conjunction words meaning 'neither' that your language uses for 'neither...nor' constructions here:</prompt>
+		<textBox id="CoordNeither" dataItem="neither" rows="3"/>
+		<br/>
+		<prompt>Key the negative conjunction words meaning 'nor' that your language uses for 'neither...nor' constructions here (even if an initial conjunction is not required for your language):</prompt>
+		<textBox id="CoordNor" dataItem="nor" rows="3"/>
+		<br/>
+		<instruction>In the lexicon, add the feature <feature>plural</feature> to the conjunctions meaning 'and', 'and/or' and 'with', and also on any other conjunctions in your language which require plural agreement when they are used to conjoin nominal phrases.  Also, add the feature <feature>-conjoins_IP</feature> to any conjunction, such as 'with', used for conjoining nominal phrases only.  Add the feature <feature>negative</feature> to the negative conjunctions meaning 'nor'.<br/>
+			<br/>
+Note that a word like 'and/or/' which is written with a slash (/) in the word, must be entered in your lexicon with a backslash in front of the slash (eg. 'and\/or') for <tool>CARLA Studio</tool> to process it correctly.</instruction>
+		<introduction>English examples of full sentence coordination include:</introduction>
+		<EnglishExample>
+			<exItem label="1.">John went to the office this morning but he did not return.</exItem>
+			<exItem label="2.">When did the mail come and where is my package?</exItem>
+			<exItem label="3.">Either I will come to the party or I will send my sister.</exItem>
+		</EnglishExample>
+		<prompt>Key examples of full sentence coordination in your language here:</prompt>
+		<textBox id="CoordSent" dataItem="sentExample" rows="5"/>
+		<br/>
+		<introduction>English examples of verb phrase coordination include:</introduction>
+		<EnglishExample>
+			<exItem label="1.">Bill ran the race and won the prize.</exItem>
+			<exItem label="2.">I will come to the party or send my sister.</exItem>
+			<exItem label="3.">I will not come to the party nor send my sister.</exItem>
+		</EnglishExample>
+		<prompt>Key examples of verb phrase coordination in your language here:</prompt>
+		<textBox id="CoordVP" dataItem="vpExample" rows="5"/>
+		<br/>
+		<introduction>English examples of nominal phrase coordination include:</introduction>
+		<EnglishExample>
+			<exItem label="1.">Bill ran in the Boston Marathon and the Olympics.</exItem>
+			<exItem label="2.">My sister or I will be there.</exItem>
+			<exItem label="3.">Neither my sister nor I will be there.</exItem>
+			<exItem label="4.">I will come to the rehearsal but not the dinner.</exItem>
+			<exItem label="5.">I will come to the wedding and/or the reception.</exItem>
+		</EnglishExample>
+		<prompt>Key examples of nominal phrase coordination in your language here:</prompt>
+		<textBox id="CoordDP" dataItem="dpExample" rows="5"/>
+		<br/>
+		<introduction>English examples of prepositionall phrase coordination include:</introduction>
+		<EnglishExample>
+			<exItem label="1.">Bill ran through the forest and over the bridge.</exItem>
+			<exItem label="2.">I will come with you to the rehearsal but not back home.</exItem>
+			<exItem label="3.">I will come either to the wedding or to the reception.</exItem>
+		</EnglishExample>
+		<prompt>Key examples of pre/post-positional phrase coordination in your language here:</prompt>
+		<textBox id="CoordPP" dataItem="coordppExample" rows="5"/>
+		<br/>
+		<introduction>English examples of adjective phrase coordination include:</introduction>
+		<EnglishExample>
+			<exItem label="1.">The black and white dog belongs to my son.</exItem>
+			<exItem label="2.">The sore on your leg is ugly and awfully painful and very dangerous.</exItem>
+			<exItem label="3.">My sister wants a red or blue candle.</exItem>
+		</EnglishExample>
+		<prompt>Key examples of adjective phrase coordination in your language here:</prompt>
+		<textBox id="CoordAdj" dataItem="adjExample" rows="5"/>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="CoordMainBack" value="Back" goto="Contents.htm"/>
+			<button id="CoordMainNext" value="Next" goto="CoordCatMap.xml"/>
+		</buttons>
+	</form>
+</page>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QPDeterminers" count="2/6">
+	<title level="2">Quantifiers and QP - No other modifiers</title>
+	<introduction>The second set includes quantifiers like <example>some</example>, <example>every</example>, and  <example>no</example>, which do not allow any other articles, demonstratives or possessors in the nominal phrase.  English examples include <example>some sad children</example>, <example>almost every litle girl that I see</example> and <example>no black dogs</example>.  Because they take the place of articles, demonstratives and possessors, we will treat these quantifiers as determiners with their own phrase structure rule.</introduction>
+	<form section="qp">
+		<radioGroup>
+			<groupName dataItem="determiner" default="yes">RDeterminerYesNo</groupName>
+			<prompt>Does your language have quantifiers like 'some', 'every', and 'no' which are written as separate words and act as the only determiner in the nominal phrase?</prompt>
+			<radio id="QPDeterminerYes" checked="yes" dataValue="yes">Yes, 'some', 'every', and 'no' are written as separate words and act in this manner</radio>
+			<radio id="QPDeterminerYesSome" checked="yes" dataValue="yesSome">Yes, 'some' and 'every' are written as separate words and act in this manner, <span id="QPDeterminerYesSomeNegSpan" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">but 'no' is the same as the negative special degree element 'not' on the previous page</span>
+				<span id="QPDeterminerYesSomeNoNegSpan" show="swQPNPDegreeYesPosOnlyOrNoPosOnly">but, just as there is not any way to express the negative special degree element 'not' on the previous page, there is not any way to express 'no' modifying a nominal phrase in this language</span>
+			</radio>
+			<radio id="QPDeterminerYesNo" checked="yes" dataValue="yesNo">Yes, 'no' is written as a separate word and acts in this manner and is distinct from the negative special degree element 'not' on the previous page, but 'some' and 'every' either act like the special degree elements or may instead be quantifiers that may co-occur with articles, demonstratives and/or possessors to be treated on the next page</radio>
+			<radio id="QPDeterminerNo" checked="yes" dataValue="no">No, <span id="QPDeterminerYesSomeNegSpan1" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">all of these notions are expressed by the special degree words only; there are not two sets (check this option if true for 'no' at least; 'some' and 'every' may instead be quantifiers that may co-occur with articles, demonstratives and/or possessors to be treated on the next page)</span>
+				<span id="QPDeterminerYesSomeNoNegSpan1" show="swQPNPDegreeYesPosOnlyOrNoPosOnly"> 'some' and 'every' either act like the special degree elements on the previous page or may instead be quantifiers that may co-occur with articles, demonstratives and/or possessors to be treated on the next page, but, just as there is not any way to express the negative special degree element 'not' on the previous page, there is not any way to express 'no' modifying a nominal phrase in this language</span>
+			</radio>
+		</radioGroup>
+		<prompt id="QPDeterminerYesExamples" show="swQPDeterminerYesOrYesSome">Key your examples of positive quantifier determiners (with each on a separate line and followed by a period) here:</prompt>
+		<textBox id="QPDeterminerExample" dataItem="determinerExample" show="swQPDeterminerYesOrYesSome" rows="3"/>
+		<prompt id="QPDeterminerYesNPExamples" show="swQPDeterminerYesOrYesSome">Key your examples of positive quantifier determiners in full nominal phrases here:</prompt>
+		<textBox id="QPDeterminerNPExample" dataItem="determinerNPExample" rows="4" show="swQPDeterminerYesOrYesSome"/>
+		<prompt id="QPDeterminerYesNegExamples" show="swQPDeterminerYesOrYesNo">Key your examples of negative quantifier determiners (with each on a separate line and followed by a period) here:</prompt>
+		<textBox id="QPDeterminerNegExample" dataItem="determinerNegExample" show="swQPDeterminerYesOrYesNo" rows="3"/>
+		<prompt id="QPDeterminerYesNPNegExamples" show="swQPDeterminerYesOrYesNo">Key your examples of negative quantifier determiners in full nominal phrases here:</prompt>
+		<textBox id="QPDeterminerNegNPExample" dataItem="determinerNegNPExample" rows="4" show="swQPDeterminerYesOrYesNo"/>
+		<radioGroup id="QPDeterminerTable" show="swQPDeterminerNotNo">
+			<groupName dataItem="determinerPos" default="unknown" position="yesHead">RDeterminer</groupName>
+			<prompt>Based on the examples, where do the quantifier determiners occur with respect to the head noun?</prompt>
+			<radio id="QPDeterminerBefore" checked="yes" dataValue="before">Before the noun</radio>
+			<radio id="QPDeterminerAfter" dataValue="after">After the noun</radio>
+			<radio id="QPDeterminerEitherSide" checked="yes" dataValue="either">On either side of the noun, but not on both sides at the same time</radio>
+			<radio id="QPDeterminerEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the noun, or both sides at the same time</radio>
+			<radio id="QPDeterminerBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the noun, or on both sides at the same time</radio>
+			<radio id="QPDeterminerAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the noun, or on both sides at the same time</radio>
+			<radio id="QPDeterminerBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+			<radioGroup id="QPDeterminerEitherSideTable" show="swQPDeterminerEitherorBoth">
+				<groupName dataItem="determinerEither" default="unrestricted">RDeterminerEitherSide</groupName>
+				<prompt>Can all the quantifier determiners appear on either side of the noun?</prompt>
+				<radio id="QPDeterminerEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
+				<radio id="QPDeterminerEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="QPDeterminerYesInstruction" show="swQPDeterminerYes">In the lexicon, mark this type of quantifier determiner with the feature <feature>makeDet</feature>.  This will change
+their category to <category>Det</category> for the syntax.  If a particular quantifier determiner can
+only go with plural nouns or if it marks plural itself (such as <example>some</example>), add the feature <feature>plural</feature> to that entry.  If a particular quantifier determiner can
+only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier determiner which can
+go with either singular or plural nouns (such as <example>no</example> in English).  <br/>
+			<br/>
+Also mark the negative quantifier determiners with the feature <feature>negative</feature>.  These negative words will be discussed further in <section number="14">Negation Constructions</section>.</instruction>
+		<instruction id="QPDeterminerYesSomeInstruction" show="swQPDeterminerYesSome">In the lexicon, mark this type of quantifier determiner with the feature <feature>makeDet</feature>.  This will change
+their category to <category>Det</category> for the syntax.  If a particular quantifier determiner can
+only go with plural nouns or if it marks plural itself (such as <example>some</example>), add the feature <feature>plural</feature> to that entry.  If a particular quantifier determiner can
+only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier determiner which can
+go with either singular or plural nouns.</instruction>
+		<instruction id="QPDeterminerYesNoInstruction" show="swQPDeterminerYesNo">In the lexicon, mark this type of quantifier determiner with the features <feature>makeDet negative</feature>.  This will change
+their category to <category>Det</category> for the syntax, as well as marking it as negative.  These negative words will be discussed further in <section number="14">Negation Constructions</section>.  </instruction>
+		<instruction id="QPDeterminerEitherRestrictedInstruction" show="swQPDeterminerEitherRestricted">Those which can only occur before the noun also need to have the feature <feature>DP-initial</feature>
+and those which can only occur after the noun also need the feature <feature>DP-final</feature>.  Do not enter either feature <feature>DP-initial</feature> or <feature>DP-final</feature> on any quantifier determiners which can occur on either side of the noun.</instruction>
+		<prompt id="QPDeterminerYesNoInstruction2" show="swQPDeterminerYesNo">Make sure that you include the words meaning <example>some</example> and <example>every</example> on either the previous page or the next page as appropriate.</prompt>
+		<prompt id="QPDeterminerYesSomeInstruction2" show="swQPDeterminerYesSomeNotDegreePosOnly">Make sure that the element meaning <example>no</example> was fully dealt with on the previous page.</prompt>
+		<prompt id="QPDeterminerNoInstruction" show="swQPDeterminerNoNotDegreePosOnly">Make sure that you include the words meaning <example>some</example> and <example>every</example> on either the previous page or the next page as appropriate, and that the element meaning <example>no</example> was fully dealt with on the previous page.</prompt>
+		<prompt id="QPDeterminerYesSomeInstruction3" show="swQPDeterminerYesSomeDegreePosOnly">If it is incorrect that your language does not have any way of negating a nominal phrase, change your answer on this page if the negative element is a separate word that cannot co-occur with articles, demonstratives, or possessors.  If the negative element is a clitic or an affix, or if it is a separate word which can co-occur with articles, demonstratives, or possessors, go back to the previous page and change your answers there before returning to this page.  If your language truly does not have any way of negating a nominal phrase, proceed to the next page.</prompt>
+		<prompt id="QPDeterminerNoInstruction2" show="swQPDeterminerNoDegreePosOnly">Make sure that you include the words meaning <example>some</example> and <example>every</example> on either the previous page or the next page as appropriate.<br/>
+			<br/>
+If it is incorrect that your language does not have any way of negating a nominal phrase, change your answer on this page if the negative element is a separate word that cannot co-occur with articles, demonstratives, or possessors.  If the negative element is a clitic or an affix, or if it is a separate word which can co-occur with articles, demonstratives, or possessors, go back to the previous page and change your answers there before returning to this page.  If your language truly does not have any way of negating a nominal phrase, proceed to the next page.</prompt>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="QPDeterminersBack" value="Back" goto="QPMain.xml"/>
+			<button id="QPDeterminersNext" value="Next" goto="QPDegree.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swQPDeterminerYes">
+		<whenRadio button="QPDeterminerYes"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNo">
+		<whenRadio button="QPDeterminerNo"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesOrYesSome">
+		<whenRadio button="QPDeterminerYes"/>
+		<or/>
+		<whenRadio button="QPDeterminerYesSome"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesOrYesNo">
+		<whenRadio button="QPDeterminerYes"/>
+		<or/>
+		<whenRadio button="QPDeterminerYesNo"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNotNo">
+		<not/>
+		<whenRadio button="QPDeterminerNo"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesSome">
+		<whenRadio button="QPDeterminerYesSome"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesNo">
+		<whenRadio button="QPDeterminerYesNo"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerEitherorBoth">
+		<not/>
+		<whenRadio button="QPDeterminerNo"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPDeterminerBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPDeterminerAfter"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerEitherRestricted">
+		<not/>
+		<whenRadio button="QPDeterminerNo"/>
+		<and/>
+		<whenRadio button="QPDeterminerEitherRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPDeterminerBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPDeterminerAfter"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="no"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesPosOnlyOrNoPosOnly">
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesSomeNotDegreePosOnly">
+		<whenRadio button="QPDeterminerYesSome"/>
+		<and/>
+		<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="no"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNoNotDegreePosOnly">
+		<whenRadio button="QPDeterminerNo"/>
+		<and/>
+		<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="no"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQPDeterminerYesSomeDegreePosOnly">
+		<whenRadio button="QPDeterminerYesSome"/>
+		<and/>
+		<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQPDeterminerNoDegreePosOnly">
+		<whenRadio button="QPDeterminerNo"/>
+		<and/>
+		<openParen/>
+		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+		<or/>
+		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+		<closeParen/>
+	</showWhen>
+</page>

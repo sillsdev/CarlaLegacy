@@ -1,0 +1,1949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
+<masterGrammar>
+	<!-- |******************************************************** -->
+<rule>
+rule {CP option conj - conjoined CPs}
+CP = (InitConj) CP_1 Conj CP_2
+	&lt;CP head&gt; = &lt;CP_1 head&gt;
+	&lt;Conj head type conjoins_IP&gt; = +
+	&lt;CP conjoined&gt; = +
+	&lt;CP_1 conjoined&gt; = -	|limit recursion
+	&lt;CP option&gt; = conj
+</rule>
+	<rule show="CPoption1">
+rule {CP option 1 - no fronting, root}
+CP = C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root &gt; = +
+	&lt;C' head type vacuous&gt; = -		<!-- | to avoid empty CP -->
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = none
+	&lt;CP option&gt; = 1
+</rule>
+	<showWhen id="CPoption1">
+		<whenValue element="q" attr="mainYN" value="no" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="no" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption2a">
+rule {CP option 2a - DP specifier initial, wh, root}
+CP = DP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;DP&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;CP option&gt; = 2a
+</rule>
+	<showWhen id="CPoption2a">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption2b">
+rule {CP option 2b - PP specifier initial, wh, root}
+CP = PP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;PP&gt;
+	&lt;PP head type wh&gt; = +
+	&lt;PP head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP head type prefix poss&gt; = -
+	&lt;CP option&gt; = 2b
+</rule>
+	<showWhen id="CPoption2b">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption2c">
+rule {CP option 2c - AdvP specifier initial, wh, root}
+CP = AdvP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;AdvP&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;CP option&gt; = 2c
+</rule>
+	<showWhen id="CPoption2c">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption2d">
+rule {CP option 2d - C, DP specifier initial, wh, root}
+CP = C DP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C head type question&gt; = +
+	&lt;C head type wh&gt; = +
+	&lt;C head type CP-specifier-initial&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;DP&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;CP option&gt; = 2d
+</rule>
+	<showWhen id="CPoption2d">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoption2e">
+rule {CP option 2e - C, PP specifier initial, wh, root}
+CP = C PP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C head type question&gt; = +
+	&lt;C head type wh&gt; = +
+	&lt;C head type CP-specifier-initial&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;PP&gt;
+	&lt;PP head type wh&gt; = +
+	&lt;PP head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP head type prefix poss&gt; = -
+	&lt;CP option&gt; = 2e
+</rule>
+	<showWhen id="CPoption2e">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoption2f">
+rule {CP option 2f - C, AdvP specifier initial, wh, root}
+CP = C AdvP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C head type question&gt; = +
+	&lt;C head type wh&gt; = +
+	&lt;C head type CP-specifier-initial&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;AdvP&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;CP option&gt; = 2f
+</rule>
+	<showWhen id="CPoption2f">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoption3">
+rule {CP option 3 - no fronting, non-root}
+CP = C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root &gt; = -
+	&lt;C' head type vacuous&gt; = -		| to avoid empty CP
+	&lt;C' head fronted&gt; = none
+	&lt;CP option&gt; = 3
+</rule>
+	<showWhen id="CPoption3">
+		<whenValue element="q" attr="mainYN" value="no" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="no" negateValue="yes"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+		<or/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<or/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption4a">
+rule {CP option 4a - DP specifier initial, wh, non-root}
+CP = DP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C' head type wh&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;DP&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;CP option&gt; = 4a
+</rule>
+	<showWhen id="CPoption4a">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption4arel">
+rule {CP option 4arel - DP specifier initial, wh, relative clause}
+CP = DP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type relative&gt; = +
+	&lt;C' head type wh&gt; = +
+	&lt;C' head fronted&gt; = &lt;DP&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;DP head type relative&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;CP option&gt; = 4arel
+</rule>
+	<showWhen id="CPoption4arel">
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption4b">
+rule {CP option 4b - PP specifier initial, wh, non-root}
+CP = PP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C' head fronted&gt; = &lt;PP&gt;
+	&lt;C' head type relative&gt; = -
+	&lt;PP head type wh&gt; = +
+	&lt;PP head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP head type prefix poss&gt; = -
+	&lt;CP option&gt; = 4b
+</rule>
+	<showWhen id="CPoption4b">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption4c">
+rule {CP option 4c - AdvP specifier initial, wh, non-root}
+CP = AdvP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;AdvP&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;CP option&gt; = 4c
+</rule>
+	<showWhen id="CPoption4c">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoption4d">
+rule {CP option 4d - C, DP specifier initial, wh, non-root}
+CP = C DP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C head type question&gt; = +
+	&lt;C head type wh&gt; = +
+	&lt;C head type CP-specifier-initial&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;DP&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;CP option&gt; = 4d
+</rule>
+	<showWhen id="CPoption4d">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoption4e">
+rule {CP option 4e - C, PP specifier initial, wh, non-root}
+CP = C PP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C head type question&gt; = +
+	&lt;C head type wh&gt; = +
+	&lt;C head type CP-specifier-initial&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;PP&gt;
+	&lt;PP head type wh&gt; = +
+	&lt;PP head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP head type prefix poss&gt; = -
+	&lt;CP option&gt; = 4e
+</rule>
+	<showWhen id="CPoption4e">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoption4f">
+rule {CP option 4f - C, AdvP specifier initial, wh, non-root}
+CP = C AdvP C'
+	&lt;CP head&gt; = &lt;C' head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C head type question&gt; = +
+	&lt;C head type wh&gt; = +
+	&lt;C head type CP-specifier-initial&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head fronted&gt; = &lt;AdvP&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;CP option&gt; = 4f
+</rule>
+	<showWhen id="CPoption4f">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoptionNeg">
+rule {CP option Neg - DP or AdvP specifier initial, negative, fronted}
+CP = {DP / AdvP} IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;DP&gt;
+	&lt;IP head fronted&gt; = &lt;AdvP&gt;
+	&lt;DP head type negative&gt; = +
+	&lt;AdvP head type negative&gt; = +
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;CP option&gt; = Neg
+</rule>
+	<showWhen id="CPoptionNeg">
+		<whenValue element="neg" attr="negFront" value="yes" negateValue="no"/>
+		<or/>
+		<whenValue element="neg" attr="negFront" value="optional" negateValue="no"/>
+	</showWhen>
+<!-- |*****************************************************-->
+	<rule show="CPoptionFocusInit">
+rule {CP option FocusInit - FocusP initial}
+CP = FocusP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;FocusP&gt;
+	&lt;IP head type pro-drop&gt; = -
+	&lt;FocusP head&gt; == [type:[focusmarked:-]] -&gt; ~[case:nominative]  | subject in place, not focused, unless focusmarked
+	&lt;CP option&gt; = FocusInit
+</rule>
+	<showWhen id="CPoptionFocusInit">
+		<whenValue element="focus" attr="focus" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="focus" attr="focusPos" value="before" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoptionFocusInitPro">
+rule {CP option FocusInitPro - FocusP initial, with pro-drop}
+CP = FocusP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;FocusP&gt;
+	&lt;IP head type pro-drop&gt; = +
+	&lt;FocusP head&gt; == ~[case:nominative]  | subject pro-dropped, not focused
+	&lt;CP head&gt; == [fronted:[head:[agr:[person:first]]]] -> ~[subject:[head:[agr:[person:first]]]]
+	&lt;CP head&gt; == [fronted:[head:[agr:[person:second]]]] -> ~[subject:[head:[agr:[person:second]]]]
+	&lt;CP option&gt; = FocusInitPro
+</rule>
+	<showWhen id="CPoptionFocusInitPro">
+		<whenValue element="focus" attr="focus" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="focus" attr="focusPos" value="before" negateValue="no"/>
+	<and/>
+	<whenValue element="ip" attr="proDrop" value="no" negateValue="yes"/>
+	</showWhen>
+	<rule show="CPoptionFocusFin">
+rule {CP option FocusFin - FocusP final}
+CP = IP FocusP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;FocusP&gt;
+	&lt;IP head type pro-drop&gt; = -
+	&lt;FocusP head&gt; == [type:[focusmarked:-]] -&gt; ~[case:nominative]  | subject in place, not focused, unless focusmarked
+	&lt;CP option&gt; = FocusFin
+</rule>
+	<showWhen id="CPoptionFocusFin">
+		<whenValue element="focus" attr="focus" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="focus" attr="focusPos" value="after" negateValue="no"/>
+	</showWhen>
+	<rule show="CPoptionFocusFinPro">
+rule {CP option FocusFinPro - FocusP final, with pro-drop}
+CP =  IP FocusP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type question&gt; = -
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;FocusP&gt;
+	&lt;IP head type pro-drop&gt; = +
+	&lt;FocusP head&gt; == ~[case:nominative]  | subject pro-dropped, not focused
+	&lt;CP head&gt; == [fronted:[head:[agr:[person:first]]]] -> ~[subject:[head:[agr:[person:first]]]]
+	&lt;CP head&gt; == [fronted:[head:[agr:[person:second]]]] -> ~[subject:[head:[agr:[person:second]]]]
+	&lt;CP option&gt; = FocusFinPro
+</rule>
+	<showWhen id="CPoptionFocusFinPro">
+		<whenValue element="focus" attr="focus" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="focus" attr="focusPos" value="after" negateValue="no"/>
+	<and/>
+	<whenValue element="ip" attr="proDrop" value="no" negateValue="yes"/>
+	</showWhen>
+
+	<!--|********************************************************-->
+	<rule show="CBaroption1a">
+rule {CBar option 1a - head vacuous, root, no aux fronting}
+C' = IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type vacuous&gt; = +		| to avoid empty CP
+	&lt;C' option&gt; = 1a
+</rule>
+	<showWhen id="CBaroption1a">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContRequired" value="no" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption1b">
+rule {CBar option 1b - head vacuous, root, with possible aux fronting}
+C' = IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type vacuous&gt; = +		| to avoid empty CP
+	&lt;IP head type auxiliary&gt; = -		| if aux present, must front
+	&lt;C' option&gt; = 1b
+</rule>
+	<showWhen id="CBaroption1b">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContAuxRequired" value="no" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption1c">
+rule {CBar option 1c - head-initial, question, root}
+C' = C IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C head type CP-initial&gt; = +
+	&lt;C' option&gt; = 1c
+</rule>
+	<showWhen id="CBaroption1c">
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="eitherOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="beforeOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="beforeOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption1d">
+rule {CBar option 1d - Aux initial, question, root}
+C' = Aux IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' option&gt; = 1d
+</rule>
+	<showWhen id="CBaroption1d">
+		<whenValue element="q" attr="mainCont" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContAuxPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNAuxPos" value="before" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption1e">
+rule {CBar option 1e - head-final, question, root}
+C' = IP C
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C head type CP-final&gt; = +
+	&lt;C' option&gt; = 1e
+</rule>
+	<showWhen id="CBaroption1e">
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="eitherOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="afterOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="noEnd" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="afterOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption1f">
+rule {CBar option 1f - Aux final, question, root}
+C' = IP Aux
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' option&gt; = 1f
+</rule>
+	<showWhen id="CBaroption1f">
+		<whenValue element="q" attr="mainYN" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNAuxPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContAuxPos" value="after" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption1g">
+rule {CBar option 1g - head both sides, question, root}
+C' = C IP C_1
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type question&gt; = &lt;C_1 head type question&gt;
+	&lt;C' head type root&gt; = +
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C head type CP-initial&gt; = +
+	&lt;C_1 head type CP-final&gt; = +
+	&lt;C' option&gt; = 1g
+</rule>
+	<showWhen id="CBaroption1g">
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="both" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="beforeOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="eitherOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="afterOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="both" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="beforeOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="afterOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2a">
+rule {CBar option 2a - head vacuous, non-root, no aux fronting}
+C' = IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type vacuous&gt; = +		| to avoid empty CP
+	&lt;C' option&gt; = 2a
+</rule>
+	<showWhen id="CBaroption2a">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContRequired" value="no" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="yes" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="yes" negateValue="yes"/>
+	</showWhen>
+	<rule show="CBaroption2b">
+rule {CBar option 2b - head vacuous, non-root, with possible aux fronting}
+C' = IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type vacuous&gt; = +		| to avoid empty CP
+	&lt;IP head type auxiliary&gt; = -		| if aux present, must front
+	&lt;C' option&gt; = 2b
+</rule>
+	<showWhen id="CBaroption2b">
+		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContAuxRequired" value="no" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2c">
+rule {CBar option 2c - head-initial, question, non-root}
+C' = C IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C head type CP-initial&gt; = +
+	&lt;C' option&gt; = 2c
+</rule>
+	<showWhen id="CBaroption2c">
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="eitherOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="beforeOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="yes" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="beforeOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2d">
+rule {CBar option 2d - Aux initial, question, non-root}
+C' = Aux IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' option&gt; = 2d
+</rule>
+	<showWhen id="CBaroption2d">
+		<whenValue element="q" attr="embCont" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContAuxPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNAuxPos" value="before" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2e">
+rule {CBar option 2e - head-final, question, non-root}
+C' = IP C
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C head type CP-final&gt; = +
+	&lt;C' option&gt; = 2e
+</rule>
+	<showWhen id="CBaroption2e">
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="eitherOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="afterOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="noEnd" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="afterOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2f">
+rule {CBar option 2f - Aux final, question, non-root}
+C' = IP Aux
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' option&gt; = 2f
+</rule>
+	<showWhen id="CBaroption2f">
+		<whenValue element="q" attr="embCont" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContAuxPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="noAux" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNAuxPos" value="after" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2g">
+rule {CBar option 2g - head both sides, question, non-root}
+C' = C IP C_1
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type question&gt; = &lt;C_1 head type question&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C head type CP-initial&gt; = +
+	&lt;C_1 head type CP-final&gt; = +
+	&lt;C' option&gt; = 2g
+</rule>
+	<showWhen id="CBaroption2g">
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="both" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="beforeOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="eitherOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embCont" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="afterOrBoth" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="both" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="beforeOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYN" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="afterOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2j">
+rule {CBar option 2j - head-initial, non-question, non-root}
+C' = C IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = -
+	&lt;C head type CP-initial&gt; = +
+	&lt;C' option&gt; = 2j
+</rule>
+	<showWhen id="CBaroption2j">
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="beforeOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="eitherOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2k">
+rule {CBar option 2k - head-final, non-question, non-root}
+C' = IP C
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = -
+	&lt;C head type CP-final&gt; = +
+	&lt;C' option&gt; = 2k
+</rule>
+	<showWhen id="CBaroption2k">
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="afterOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="eitherOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption2l">
+rule {CBar option 2l - head both sides, non-question, non-root}
+C' = C IP C_1
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type question&gt; = &lt;C_1 head type question&gt;
+	&lt;C head type relative&gt; = &lt;C_1 head type relative&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = -
+	&lt;C head type CP-initial&gt; = +
+	&lt;C_1 head type CP-final&gt; = +
+	&lt;C' option&gt; = 2l
+</rule>
+	<showWhen id="CBaroption2l">
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="both" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="beforeOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="afterOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compPos" value="eitherOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption3a">
+rule {C' option 3a - YNQ_prefix, IP complement, root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type prefix YNQ&gt; = +
+		 /&lt;IP head type YNQ&gt; = +
+	}
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = +
+</rule>
+	<showWhen id="CBaroption3a">
+		<whenValue element="q" attr="mainYNWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNCliticPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYNWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption3b">
+rule {CBar option 3b - YNQ_suffix, IP complement, root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type suffix YNQ&gt; = +
+	   /&lt;IP head type YNQ&gt; = +
+	}
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = +
+	&lt;CBar option&gt; = 3b
+</rule>
+	<showWhen id="CBaroption3b">
+		<whenValue element="q" attr="mainYNWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNCliticPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainYNWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainYNCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption3c">
+rule {CBar option 3c - YNQ_prefix, IP complement, non-root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type prefix YNQ&gt; = +
+		 /&lt;IP head type YNQ&gt; = +
+	}
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = -
+	&lt;CBar option&gt; = 3c
+</rule>
+	<showWhen id="CBaroption3c">
+		<whenValue element="q" attr="embYNWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNCliticPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYNWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption3d">
+rule {CBar option 3d - YNQ_suffix, IP complement, non-root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type suffix YNQ&gt; = +
+	   /&lt;IP head type YNQ&gt; = +
+	}
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = +
+	&lt;CBar option&gt; = 3d
+</rule>
+	<showWhen id="CBaroption3d">
+		<whenValue element="q" attr="embYNWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNCliticPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embYNWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embYNCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption4a">
+rule {CBar option 4a - whQ_prefix, IP complement, root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type prefix whQ&gt; = +
+		 /&lt;IP head type whQ&gt; = +
+	}
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = +
+	&lt;CBar option&gt; = 4a
+</rule>
+	<showWhen id="CBaroption4a">
+		<whenValue element="q" attr="mainContWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContCliticPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainContWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption4b">
+rule {CBar option 4b - whQ_suffix, IP complement, root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type suffix whQ&gt; = +
+	   /&lt;IP head type whQ&gt; = +
+	}
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = +
+	&lt;CBar option&gt; = 4b
+</rule>
+	<showWhen id="CBaroption4b">
+		<whenValue element="q" attr="mainContWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContCliticPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="mainContWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="mainContCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption4c">
+rule {CBar option 4c - whQ_prefix, IP complement, non-root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type prefix whQ&gt; = +
+		 /&lt;IP head type whQ&gt; = +
+	}
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = -
+	&lt;CBar option&gt; = 4c
+</rule>
+	<showWhen id="CBaroption4c">
+		<whenValue element="q" attr="embContWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContCliticPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embContWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption4d">
+rule {CBar option 4d - whQ_suffix, IP complement, non-root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type suffix whQ&gt; = +
+	   /&lt;IP head type whQ&gt; = +
+	}
+	&lt;C' head type question&gt; = +
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = +
+	&lt;CBar option&gt; = 4d
+</rule>
+	<showWhen id="CBaroption4d">
+		<whenValue element="q" attr="embContWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContCliticPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="q" attr="embContWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="q" attr="embContCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption4e">
+rule {CBar option 4e - comp_prefix, IP complement, non-root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type prefix comp&gt; = +
+		 /&lt;IP head type comp&gt; = +
+	}
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = -
+	&lt;CBar option&gt; = 4e
+</rule>
+	<showWhen id="CBaroption4e">
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compCliticPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption4f">
+rule {CBar option 4f - comp_suffix, IP complement, non-root}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+		{&lt;IP head type suffix comp&gt; = +
+	   /&lt;IP head type comp&gt; = +
+	}
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = -
+	&lt;C' head type root&gt; = +
+	&lt;CBar option&gt; = 4f
+</rule>
+	<showWhen id="CBaroption4f">
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compCliticPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="comp" attr="compCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<!--
+|set for relative clauses-->
+	<rule show="CBaroption5a">
+rule {CBar option 5a - head-initial, relative clause}
+C' = C IP
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = +
+	&lt;C head type CP-initial&gt; = +
+	&lt;C' option&gt; = 5a
+</rule>
+	<showWhen id="CBaroption5a">
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="beforeOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="beforeOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption5b">
+rule {CBar option 5b - head-final, relative clause}
+C' = IP C
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = +
+	&lt;C head type CP-final&gt; = +
+	&lt;C' option&gt; = 5b
+</rule>
+	<showWhen id="CBaroption5b">
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="afterOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="afterOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="either" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption5c">
+rule {CBar option 5c - head both sides, relative clause}
+C' = C IP C_1
+	&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type question&gt; = &lt;C_1 head type question&gt;
+	&lt;C head type relative&gt; = &lt;C_1 head type relative&gt;
+	&lt;C' head type root&gt; = -
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = +
+	&lt;C head type CP-initial&gt; = +
+	&lt;C_1 head type CP-final&gt; = +
+	&lt;C' option&gt; = 5c
+</rule>
+	<showWhen id="CBaroption5c">
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="both" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="afterOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="beforeOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="both" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="afterOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="beforeOrBoth" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCompPos" value="eitherOrBoth" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption5d">
+rule {CBar option 5d - relative_prefix, IP complement}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;IP head type prefix relative&gt; = +
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = +
+	&lt;C' head type root&gt; = -
+	&lt;CBar option&gt; = 5d
+</rule>
+	<showWhen id="CBaroption5d">
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCliticPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCliticPos" value="both" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCliticPos" value="before" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+	<rule show="CBaroption5e">
+rule {CBar option 5e - relative_suffix, IP complement}
+C' = IP
+		&lt;C' head&gt; = &lt;IP head&gt;
+	&lt;IP head type suffix relative&gt; = +
+	&lt;C' head type question&gt; = -
+	&lt;C' head type relative&gt; = +
+	&lt;C' head type root&gt; = +
+	&lt;CBar option&gt; = 5e
+</rule>
+	<showWhen id="CBaroption5e">
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCliticPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCliticPos" value="both" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCliticPos" value="after" negateValue="no"/>
+		<or/>
+		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="type" value="CP" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="compCP" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="relcl" attr="relWord" value="no" negateValue="no"/>
+		<and/>
+		<whenValue element="relcl" attr="relCliticPos" value="both" negateValue="no"/>
+	</showWhen>
+<!-- *****************************************************-->
+<rule show="TopicPoption.nomarker">
+rule {TopicP option nomarker}
+TopicP = DP
+		&lt;TopicP head&gt; = &lt;DP head&gt;
+	&lt;DP head type topic&gt; = +
+	&lt;DP head type focus&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;DP head type temporal&gt; = -
+	&lt;TopicP option&gt; = nomarker
+</rule>
+<showWhen id="TopicPoption.nomarker">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicMarker" value="yesWord" negateValue="yes"/>
+<or/>
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="topicMarkerRequired" value="no" negateValue="no"/>
+</showWhen>
+<rule show="TopicPoption.markerinit">
+rule {TopicP option markerinit}
+TopicP = TopicM DP
+		&lt;TopicP head&gt; = &lt;DP head&gt;
+	&lt;TopicM head type topic-initial&gt; = +
+	&lt;DP head type topic&gt; = +
+	&lt;DP head type focus&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;DP head type temporal&gt; = -
+	&lt;TopicP option&gt; = markerinit
+</rule>
+<showWhen id="TopicPoption.markerinit">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="topicMarkerPos" value="before" negateValue="no"/>
+<or/>
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="topicMarkerPos" value="either" negateValue="no"/>
+</showWhen>
+<rule show="TopicPoption.markerfin">
+rule {TopicP option markerfin}
+TopicP = DP TopicM
+		&lt;TopicP head&gt; = &lt;DP head&gt;
+	&lt;TopicM head type topic-final&gt; = +
+	&lt;DP head type topic&gt; = +
+	&lt;DP head type focus&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;DP head type temporal&gt; = -
+	&lt;TopicP option&gt; = markerfin
+</rule>
+<showWhen id="TopicPoption.markerfin">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="topicMarkerPos" value="after" negateValue="no"/>
+<or/>
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="topicMarkerPos" value="either" negateValue="no"/>
+</showWhen>
+<rule show="TopicPoption.markerboth">
+rule {TopicP option markerboth}
+TopicP = TopicM_1 DP TopicM_2
+		&lt;TopicP head&gt; = &lt;DP head&gt;
+	&lt;TopicM_1 head type topic-initial&gt; = +
+	&lt;TopicM_2 head type topic-final&gt; = +
+	&lt;DP head type topic&gt; = +
+	&lt;DP head type focus&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;DP head type temporal&gt; = -
+	&lt;TopicP option&gt; = markerboth
+</rule>
+<showWhen id="TopicPoption.markerboth">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="topicMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="topicMarkerPos" value="both" negateValue="no"/>
+</showWhen>
+
+<rule show="FocusPoption.nomarker">
+rule {FocusP option nomarker}
+FocusP = DP
+		&lt;FocusP head&gt; = &lt;DP head&gt;
+	&lt;DP head type focus&gt; = +
+	&lt;DP head type topic&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;DP head type temporal&gt; = -
+	&lt;FocusP option&gt; = nomarker
+</rule>
+<showWhen id="FocusPoption.nomarker">
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="focusMarker" value="yesWord" negateValue="yes"/>
+<or/>
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="focusMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="focusMarkerRequired" value="no" negateValue="no"/>
+</showWhen>
+<rule show="FocusPoption.markerinit">
+rule {FocusP option markerinit}
+FocusP = FocusM DP
+		&lt;FocusP head&gt; = &lt;DP head&gt;
+	&lt;FocusM head type focus-initial&gt; = +
+	&lt;DP head type focus&gt; = +
+	&lt;DP head type topic&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;DP head type temporal&gt; = -
+	&lt;FocusP head type focusmarked&gt; &lt;= +
+	&lt;FocusP option&gt; = markerinit
+</rule>
+<showWhen id="FocusPoption.markerinit">
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="focusMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="focusMarkerPos" value="before" negateValue="no"/>
+<or/>
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="focusMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="focusMarkerPos" value="either" negateValue="no"/>
+</showWhen>
+<rule show="FocusPoption.markerfin">
+rule {FocusP option markerfin}
+FocusP = DP FocusM
+		&lt;FocusP head&gt; = &lt;DP head&gt;
+	&lt;FocusM head type focus-final&gt; = +
+	&lt;DP head type focus&gt; = +
+	&lt;DP head type topic&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;DP head type temporal&gt; = -
+	&lt;FocusP head type focusmarked&gt; &lt;= +
+	&lt;FocusP option&gt; = markerfin
+</rule>
+<showWhen id="FocusPoption.markerfin">
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="focusMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="focusMarkerPos" value="after" negateValue="no"/>
+<or/>
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="focusMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="focusMarkerPos" value="either" negateValue="no"/>
+</showWhen>
+<rule show="FocusPoption.markerboth">
+rule {FocusP option markerboth}
+FocusP = FocusM_1 DP FocusM_2
+		&lt;FocusP head&gt; = &lt;DP head&gt;
+	&lt;FocusM_1 head type focus-initial&gt; = +
+	&lt;FocusM_2 head type focus-final&gt; = +
+	&lt;DP head type focus&gt; = +
+	&lt;DP head type topic&gt; = -
+	&lt;DP head type wh&gt; = -
+	&lt;DP head type negative&gt; = -
+	&lt;DP head type temporal&gt; = -
+	&lt;FocusP head type focusmarked&gt; &lt;= +
+	&lt;FocusP option&gt; = markerboth
+</rule>
+<showWhen id="FocusPoption.markerboth">
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+<whenValue element="focus" attr="focusMarker" value="yesWord" negateValue="no"/>
+<and/>
+<whenValue element="focus" attr="focusMarkerPos" value="both" negateValue="no"/>
+</showWhen>
+
+</masterGrammar>
