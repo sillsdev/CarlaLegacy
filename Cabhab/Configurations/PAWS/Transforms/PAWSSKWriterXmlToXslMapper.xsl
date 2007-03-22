@@ -80,7 +80,7 @@ category template
 col template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
-  <xsl:template match="//col">
+  <xsl:template match="//col | //td">
 	<xsl:choose>
 	  <xsl:when test="@exampleLoc">
 		<td>
@@ -222,7 +222,7 @@ feature template
 headerCol template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
-  <xsl:template match="//headerCol">
+  <xsl:template match="//headerCol | //th">
 	<xsl:choose>
 	  <xsl:when test="@show">
 		<xsl:element name="xsl:if">
@@ -350,7 +350,7 @@ p template
 row template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
-  <xsl:template match="//row">
+  <xsl:template match="//row | //tr">
 	<xsl:choose>
 	  <xsl:when test="@show">
 		<xsl:element name="xsl:if">
