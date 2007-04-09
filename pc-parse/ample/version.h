@@ -4,12 +4,17 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 5		/* bug fix or other minor change */
-#define DATE "December 18, 2006"	/* date of release version */
-#define YEAR "2006"		/* used for copyright notice in banner */
+#define PATCHLEVEL 6		/* bug fix or other minor change */
+#define DATE "April 9, 2007"	/* date of release version */
+#define YEAR "2007"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 09-Apr-2007	hab  - Add entry name to error messages in parsing environment
+ *                      of an MCC
+ * [3.12.6]
+ * 18-Dec-2006	hab  - Add properties to XML/SGML trace output
+ * [3.12.5]
  * 18-Jul-2006	SRMc - writePATRParses() argument list changed.
  * [3.12.4]
  *  5-Jul-2006	SRMc - add "message pumping" capability to improve performance

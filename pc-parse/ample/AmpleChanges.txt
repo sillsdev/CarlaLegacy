@@ -1,5 +1,9 @@
 AMPLE CHANGE HISTORY
 
+3.12.6 (09-Apr-2007)
+--------------------
+1. Add entry name to error messages in parsing environment of an MCC
+
 3.12.5 (18-Dec-2006)
 --------------------
 1. Add properties to XML/SGML trace output

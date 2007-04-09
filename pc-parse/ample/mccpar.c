@@ -218,7 +218,9 @@ pMorphConstraint->pszLabel     = pszLabel;
 pMorphConstraint->pMorphs      = pMorphList;
 pMorphConstraint->pEnvironment = parseAmpleMorphEnvConstraint(
 					   pszToken,
-					   "morpheme co-occurrence constraint",
+					   szRecordKey_g[0]
+						  ? szRecordKey_g
+						  : "morpheme co-occurrence constraint in control file",
 					   pAmple_in->pCategories,
 					   &pAmple_in->sProperties,
 					   pAmple_in->pCategoryClasses,

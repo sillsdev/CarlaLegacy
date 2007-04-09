@@ -671,9 +671,9 @@ fprintf(pLogFP_m, fmt, arg );
 if ((pszEnvErrTail_m != (char *)NULL) && (pszEnvParseType_m != (char *)NULL))
 	{
 	fprintf(pLogFP_m, pszEnvErrTail_m, pszEnvParseType_m );
-	fprintf(pLogFP_m, " in entry: %s\n",
-		getAmpleRecordIDTag(szRecordKey_m, uiRecordNumber_m) );
 	}
+fprintf(pLogFP_m, " in entry: %s\n",
+	getAmpleRecordIDTag(szRecordKey_m, uiRecordNumber_m) );
 }
 
 /*************************************************************************

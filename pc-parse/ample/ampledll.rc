@@ -27,8 +27,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,12,5,20
- PRODUCTVERSION 3,12,5,20
+ FILEVERSION 3,12,6,20
+ PRODUCTVERSION 3,12,6,20
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -43,15 +43,15 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "Ample 3.12.5.20 DLL"
+			VALUE "Comments", "Ample 3.12.6.20 DLL"
 			VALUE "CompanyName", "SIL International"
 			VALUE "FileDescription", "ample322"
-			VALUE "FileVersion", "3, 12, 5, 20"
+			VALUE "FileVersion", "3, 12, 6, 20"
 			VALUE "InternalName", "ample322"
-			VALUE "LegalCopyright", "Copyright © 2000-2006"
+			VALUE "LegalCopyright", "Copyright © 2000-2007"
 			VALUE "OriginalFilename", "ample322.dll"
 			VALUE "ProductName", "SIL ample322"
-			VALUE "ProductVersion", "3, 12, 5, 20"
+			VALUE "ProductVersion", "3, 12, 6, 20"
 		END
 	END
 	BLOCK "VarFileInfo"
