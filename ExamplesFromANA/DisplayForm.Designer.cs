@@ -43,6 +43,8 @@ namespace ExamplesFromANA
 			this.recentXMLCorpusesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.analysisOfSelectedWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewReadmeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -51,8 +53,6 @@ namespace ExamplesFromANA
 			this.flowLayoutPanelExamples = new System.Windows.Forms.FlowLayoutPanel();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.analysisOfSelectedWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.splitContainer.Panel1.SuspendLayout();
 			this.splitContainer.Panel2.SuspendLayout();
@@ -169,6 +169,24 @@ namespace ExamplesFromANA
 			this.exitToolStripMenuItem.ToolTipText = "Exit application";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			//
+			// editToolStripMenuItem
+			//
+			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.analysisOfSelectedWordToolStripMenuItem});
+			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+			this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.editToolStripMenuItem.Text = "&Edit";
+			this.editToolStripMenuItem.DropDownOpening += new System.EventHandler(this.editToolStripMenuItem_DropDownOpening);
+			//
+			// analysisOfSelectedWordToolStripMenuItem
+			//
+			this.analysisOfSelectedWordToolStripMenuItem.Name = "analysisOfSelectedWordToolStripMenuItem";
+			this.analysisOfSelectedWordToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+			this.analysisOfSelectedWordToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+			this.analysisOfSelectedWordToolStripMenuItem.Text = "Analysis of &Selected Word";
+			this.analysisOfSelectedWordToolStripMenuItem.ToolTipText = "Edit the analysis (in XML) of the selected words below";
+			this.analysisOfSelectedWordToolStripMenuItem.Click += new System.EventHandler(this.analysisOfSelectedWordToolStripMenuItem_Click);
+			//
 			// helpToolStripMenuItem
 			//
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -180,7 +198,7 @@ namespace ExamplesFromANA
 			// viewReadmeToolStripMenuItem
 			//
 			this.viewReadmeToolStripMenuItem.Name = "viewReadmeToolStripMenuItem";
-			this.viewReadmeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.viewReadmeToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.viewReadmeToolStripMenuItem.Text = "&View Readme";
 			this.viewReadmeToolStripMenuItem.ToolTipText = "Open the readme file in an RTF file viewer";
 			this.viewReadmeToolStripMenuItem.Click += new System.EventHandler(this.viewReadmeToolStripMenuItem_Click);
@@ -242,24 +260,6 @@ namespace ExamplesFromANA
 			// backgroundWorker
 			//
 			this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
-			//
-			// editToolStripMenuItem
-			//
-			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.analysisOfSelectedWordToolStripMenuItem});
-			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-			this.editToolStripMenuItem.Text = "&Edit";
-			this.editToolStripMenuItem.DropDownOpening += new System.EventHandler(this.editToolStripMenuItem_DropDownOpening);
-			//
-			// analysisOfSelectedWordToolStripMenuItem
-			//
-			this.analysisOfSelectedWordToolStripMenuItem.Name = "analysisOfSelectedWordToolStripMenuItem";
-			this.analysisOfSelectedWordToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-			this.analysisOfSelectedWordToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-			this.analysisOfSelectedWordToolStripMenuItem.Text = "Analysis of &Selected Word";
-			this.analysisOfSelectedWordToolStripMenuItem.ToolTipText = "Edit the analysis (in XML) of the selected words below";
-			this.analysisOfSelectedWordToolStripMenuItem.Click += new System.EventHandler(this.analysisOfSelectedWordToolStripMenuItem_Click);
 			//
 			// DisplayForm
 			//
