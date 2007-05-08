@@ -1,0 +1,119 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>8.0.50727</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{EBE20E75-987D-4FE9-ADF0-D0E7ED700E4A}</ProjectGuid>
+	<OutputType>WinExe</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace>ExamplesFromANA</RootNamespace>
+	<AssemblyName>ExamplesFromANA</AssemblyName>
+	<ApplicationIcon>Resources\CStudio.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+	<Reference Include="System.Data" />
+	<Reference Include="System.Deployment" />
+	<Reference Include="System.Drawing" />
+	<Reference Include="System.Windows.Forms" />
+	<Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="AnaTextExamples.cs">
+	  <DependentUpon>AnaTextExamples.xsd</DependentUpon>
+	</Compile>
+	<Compile Include="DisplayForm.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<Compile Include="DisplayForm.Designer.cs">
+	  <DependentUpon>DisplayForm.cs</DependentUpon>
+	</Compile>
+	<Compile Include="DisplayXMLForm.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<Compile Include="DisplayXMLForm.Designer.cs">
+	  <DependentUpon>DisplayXMLForm.cs</DependentUpon>
+	</Compile>
+	<Compile Include="Program.cs" />
+	<Compile Include="Properties\AssemblyInfo.cs" />
+	<EmbeddedResource Include="DisplayForm.resx">
+	  <SubType>Designer</SubType>
+	  <DependentUpon>DisplayForm.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="DisplayXMLForm.resx">
+	  <SubType>Designer</SubType>
+	  <DependentUpon>DisplayXMLForm.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="Properties\Resources.resx">
+	  <Generator>ResXFileCodeGenerator</Generator>
+	  <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  <SubType>Designer</SubType>
+	</EmbeddedResource>
+	<Compile Include="Properties\Resources.Designer.cs">
+	  <AutoGen>True</AutoGen>
+	  <DependentUpon>Resources.resx</DependentUpon>
+	  <DesignTime>True</DesignTime>
+	</Compile>
+	<None Include="Properties\Settings.settings">
+	  <Generator>SettingsSingleFileGenerator</Generator>
+	  <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	</None>
+	<Compile Include="Properties\Settings.Designer.cs">
+	  <AutoGen>True</AutoGen>
+	  <DependentUpon>Settings.settings</DependentUpon>
+	  <DesignTimeSharedInput>True</DesignTimeSharedInput>
+	</Compile>
+	<Compile Include="RemoveFileException.cs" />
+	<Compile Include="TextExample.cs" />
+	<Compile Include="WordExample.cs" />
+  </ItemGroup>
+  <ItemGroup>
+	<None Include="AnaTextExamples.xsd">
+	  <SubType>Designer</SubType>
+	  <Generator>xsd.exe</Generator>
+	</None>
+	<None Include="AnaTextExamples.xsx">
+	  <DependentUpon>AnaTextExamples.xsd</DependentUpon>
+	</None>
+	<None Include="app.config" />
+	<None Include="Resources\ToolboxSFMHeader.txt" />
+  </ItemGroup>
+  <ItemGroup>
+	<None Include="Resources\CStudio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+	<None Include="Resources\XSLTMergeInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+	<None Include="Resources\XSLTMerge.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+	<None Include="merge.xslt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

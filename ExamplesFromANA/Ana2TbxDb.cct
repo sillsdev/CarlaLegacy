@@ -1,0 +1,47 @@
+c Ana2TbxDb.cct
+c
+c Prepare a CarlaStudio .ana file to be turned into CarlaStudioAna
+c toolbox database (so we can then call sh2xml and turn it into xml
+c =======================================================================
+begin   >
+	"\_sh v3.0  400  CarlaStudioANA" nl nl use(main)
+
+group(main)
+
+	"\a %0%%"   > store(trash) use(dump)
+
+	"\a "   > store(bufferRec) dup
+	"\w "   > store(StoreW) use(FindEOWL)
+	"\n "   > dup store(StoreN) use(FindEONL)
+	nl nl   > do(FinishRec) dup store(StoreW, bufferRec, trash)
+
+c =======================================================================
+define(FinishRec) >
+	append(bufferSent) "\w " outs(StoreW) nl outs(bufferRec)
+
+c =======================================================================
+group(FindEONL)
+
+	"\n"   >   ''
+
+	nl nl   >   append(StoreT)
+				back(1) c remove last space (this gets dumped elsewhere...)
+				outs(StoreN)
+				do(FinishRec) endstore
+				"\t "
+				out(StoreT) nl
+				out(bufferSent)
+				out(StoreN)
+				dup
+				store(StoreW, StoreT, bufferSent, trash)
+				use(main)
+
+c =======================================================================
+group(FindEOWL)
+
+	nl nl   > append(StoreT) outs(StoreW) " " dup back(2) use(main)
+	nl "\"  > append(StoreT) outs(StoreW) " " endstore "\" back(1) append(bufferRec) use(main)
+
+c =======================================================================
+group(dump)
+	"\a "   > dup back(3) use(main)

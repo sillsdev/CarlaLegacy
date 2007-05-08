@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sil.org/computing/schemas/AnaTextExamples.xsd" xmlns="http://www.sil.org/computing/schemas/AnaTextExamples.xsd" version="1.0">
+	<xs:element name="shoebox">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="t">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="1" maxOccurs="unbounded" name="w">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:choice maxOccurs="unbounded" minOccurs="1">
+											<xs:element name="a" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false" />
+											<xs:element name="d" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false" />
+											<xs:element name="cat" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false" />
+											<xs:element name="u" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false" />
+											<xs:element name="p" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true" />
+											<xs:element name="n" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true" />
+											<xs:element name="f" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true" />
+										</xs:choice>
+									</xs:sequence>
+									<xs:attribute name="value" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="value" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="type" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
