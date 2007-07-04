@@ -1,0 +1,184 @@
+<!--                                                              -->
+<!-- *******************     XAMPLE.DTD     *******************   -->
+<!--                                                              -->
+<!-- A formal specification of an XAMPLE analysis output file.    -->
+<!--                                                              -->
+<!-- This file is maintained by Andy Black.   Send comments or    -->
+<!-- suggested refinements by email to: andy_black@sil.org, or 	  -->
+<!-- by post to: P.O.Box 8987, Catalina, AZ 85738-0987, USA       -->
+<!--                                                              -->
+<!-- The revision history is maintained at the end of the file.   -->
+<!--                                                              -->
+<!ENTITY % pcpatrDTD SYSTEM "pcpatr.dtd">
+%pcpatrDTD;
+<!--                                                              -->
+<!-- ******************  XAMPLE ANALYSIS OUTPUT ***************** -->
+<!--                                                              -->
+<!ELEMENT XAmpleANA (anaRec*)>
+<!-- The top-level element is named "XAmpleANA" for "XAmple
+	 analyis output file."  It consists of zero or more records.  -->
+<!--                                                              -->
+<!-- ************************ ANAREC  *************************** -->
+<!--                                                              -->
+<!ELEMENT anaRec (w, mparse*, fmt?, n?, Analysis?)>
+<!ATTLIST anaRec
+  id ID #REQUIRED
+>
+<!-- An ANA record consists of a word, its parses (which may
+	 be missing (for failures), and any preceding or following
+	 text material.                                               -->
+<!ELEMENT w (#PCDATA)>
+<!ATTLIST w
+  cap CDATA #IMPLIED
+  id ID #REQUIRED
+>
+<!-- A word consists of its original shape and an indication
+	 of its capitalization (CAP).  CAP is CDATA because the
+	 value may be:
+	   1 for initial capitalization,
+	   2 for total capitalization, or
+	   4-32767 as a bitmap indicating which letters are
+		 capitalized.
+	 If CAP is not specified, then the word is not capitalized.   -->
+<!ELEMENT mparse (a, cat?, wp?)>
+<!ATTLIST mparse
+  id ID #REQUIRED
+>
+<!-- A parse has an analysis (a), an optional word category, and
+	 an optional word constituency structure information (wp).    -->
+<!ELEMENT a (pfx*, root+, sfx*)>
+<!ATTLIST a
+  id ID #REQUIRED
+>
+<!-- An analysis contains a list of zero or more prefixes,
+	 one or more roots, and zero or more suffixes.                -->
+<!ELEMENT pfx (m, u?, d?, mcat?, p?, fd?)>
+<!ATTLIST pfx
+  id ID #REQUIRED
+  cap CDATA #IMPLIED
+>
+<!-- A prefix contains
+		a  morphname (m),
+		an optional underlying form (u),
+		an optional surface form allomorph (d),
+		an optional morpheme category pair (mcat),
+		an optional set of properties (p), and
+		an optional set of feature descriptors (fd).
+	 The CAP attribute may have the following values:
+	   1 for initial capitalization
+	   2 for total capitalization
+	   3-65535 (or 2147483647?) as a bitmap indicating which
+		 letters are capitalized.  This should rarely be needed:
+		 possibly only for names like "McConnel" which are foreign
+		 imports and no longer analyzable into their constituent
+		 morphemes which originally would have had cap="1".
+	 Note: the only difference between a <pfx> and a <sfx> is
+	 its position with respect to <root>                          -->
+<!ELEMENT root (m, u?, d?, mcat, p?, fd?)>
+<!ATTLIST root
+  id ID #REQUIRED
+  cap CDATA #IMPLIED
+>
+<!-- A root contains
+		a  morphname (m),
+		an optional underlying form (u),
+		an optional surface form allomorph (d),
+		a  morpheme category (mcat),
+		an optional set of properties (p), and
+		an optional set of feature descriptors (fd).
+	 The CAP attribute may have the following values:
+	   1 for initial capitalization
+	   2 for total capitalization
+	   3-65535 (or 2147483647?) as a bitmap indicating which
+		 letters are capitalized.  This should rarely be needed:
+		 possibly only for names like "McConnel" which are foreign
+		 imports and no longer analyzable into their constituent
+		 morphemes which originally would have had cap="1".       -->
+<!ELEMENT sfx (m, u?, d?, mcat?, p?, fd?)>
+<!ATTLIST sfx
+  id ID #REQUIRED
+  cap CDATA #IMPLIED
+>
+<!-- A suffix contains
+		a  morphname (m),
+		an optional underlying form (u),
+		an optional surface form allomorph (d),
+		an optional morpheme category pair (mcat),
+		an optional set of properties (p), and
+		an optional set of feature descriptors (fd).
+	 The CAP attribute may have the following values:
+	   1 for initial capitalization
+	   2 for total capitalization
+	   3-65535 (or 2147483647?) as a bitmap indicating which
+		 letters are capitalized.  This should rarely be needed:
+		 possibly only for names like "McConnel" which are foreign
+		 imports and no longer analyzable into their constituent
+		 morphemes which originally would have had cap="1".
+	 Note: the only difference between a <pfx> and a <sfx> is
+	 its position with respect to <root>                          -->
+<!ELEMENT m (#PCDATA)>
+<!ATTLIST m
+  id ID #REQUIRED
+>
+<!-- A morphname is a name used to identify a morpheme.  It can
+	 be a gloss, a protoform, an underlying form or some
+	 combination of these.                                        -->
+<!ELEMENT u (#PCDATA)>
+<!ATTLIST u
+  id ID #REQUIRED
+>
+<!-- Underlying form.                                             -->
+<!ELEMENT d (#PCDATA)>
+<!ATTLIST d
+  id ID #REQUIRED
+>
+<!-- A morpheme decomposition.                                    -->
+<!ELEMENT mcat (#PCDATA)>
+<!ATTLIST mcat
+  id ID #REQUIRED
+>
+<!-- Morpheme category information.                               -->
+<!ELEMENT p (#PCDATA)>
+<!ATTLIST p
+  id ID #REQUIRED
+>
+<!-- Property information.                                        -->
+<!ELEMENT fd (#PCDATA)>
+<!ATTLIST fd
+  id ID #REQUIRED
+>
+<!-- Feature descriptor information.                              -->
+<!ELEMENT cat (#PCDATA)>
+<!ATTLIST cat
+  id ID #REQUIRED
+>
+<!-- Category information.                                        -->
+<!ELEMENT wp (Analysis)>
+<!ATTLIST wp
+  id ID #REQUIRED
+>
+<!-- Word Constituency structure information.                     -->
+<!ELEMENT fmt (#PCDATA)>
+<!ATTLIST fmt
+  id ID #REQUIRED
+>
+<!-- Text formatting information that precedes the word.          -->
+<!ELEMENT n (#PCDATA)>
+<!ATTLIST n
+  id ID #REQUIRED
+>
+<!-- Text information that follows the word.                      -->
+<!-- *******************   REVISION HISTORY   ******************* -->
+<!--                                                              -->
+<!-- Version 0.3.0, February 29, 2000                             -->
+<!--     Changed <wp> to use pcpatr.dtd for its content per Morris
+		   Johnson's request.
+		 Added IDs to every element per Morris Johnson's
+		   request.
+		 Reworked <a> to include morpheme level information a la
+		   Steve McConnel's suggestion.                           -->
+<!-- Version 0.2.0, February 18, 2000                             -->
+<!--     Reworked significantly based on feedback from            -->
+<!--     Morris Johnson and Gary Simons.   -->
+<!-- Version 0.1.0, February 15, 2000                             -->
+<!--     First draft by Andy Black                                -->
