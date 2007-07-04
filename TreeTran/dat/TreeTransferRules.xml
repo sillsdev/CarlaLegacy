@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TreeTransferRules version="1.0">
+	<Rule name="Sov-Svo: VP (DP * * V) ==&gt; VP (V DP * *)">
+		<Node>
+			<Feature name="cat" value="VP" />
+			<Node>
+				<Feature name="cat" value="DP" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="DP" />
+				<Feature name="node:label" value="(DP#2)" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="PP" />
+				<Feature name="node:label" value="(PP)" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="V" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="VP" />
+			<Node>
+				<Feature name="cat" value="V" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="DP" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="DP" />
+				<Feature name="node:label" value="(DP#2)" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="PP" />
+				<Feature name="node:label" value="(PP)" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Noun-Mod: NP (N' DP) ==&gt; NP (DP N')">
+		<Node>
+			<Feature name="cat" value="NP" />
+			<Node>
+				<Feature name="cat" value="N'" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="DP" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="NP" />
+			<Node>
+				<Feature name="cat" value="DP" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="N'" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Noun-Mod: N' (N' AdjP) ==&gt; N' (AdjP N')">
+		<Node>
+			<Feature name="cat" value="N'" />
+			<Node>
+				<Feature name="cat" value="N'" />
+				<Feature name="node:label" value="N'#2" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="AdjP" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="N'" />
+			<Node>
+				<Feature name="cat" value="AdjP" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="N'" />
+				<Feature name="node:label" value="N'#2" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Pro-Drop: C' (C IP) ==&gt; C' (C IP [+NoProDrop])">
+		<Node>
+			<Feature name="cat" value="C'" />
+			<Node>
+				<Feature name="cat" value="C" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="IP" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="C'" />
+			<Node>
+				<Feature name="cat" value="C" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="IP" />
+				<Feature name="NoProDrop" value="+" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Pro-Drop: IP [-NoProDrop] (* I') ==&gt; IP (* (DP (D' (NP (Pron)))) I')">
+		<Node>
+			<Feature name="cat" value="IP" />
+			<Feature name="NoProDrop" value="!+" />
+			<Node>
+				<Feature name="cat" value="InitP" />
+				<Feature name="node:label" value="(InitP)" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="I'" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="IP" />
+			<Node>
+				<Feature name="cat" value="InitP" />
+				<Feature name="node:label" value="(InitP)" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="DP" />
+				<Feature name="conjoined" value="-" />
+				<Node>
+					<Feature name="cat" value="D'" />
+					<Node>
+						<Feature name="cat" value="NP" />
+						<Node>
+							<Feature name="node:type" value="leaf" />
+							<Feature name="cat" value="Pron" />
+							<Feature name="underlyingForm" value="&quot;he/she/it/they&quot;" />
+							<Node>
+								<Feature name="node:type" value="mparse" />
+								<Feature name="cat" value="Pn" />
+								<Node>
+									<Feature name="node:type" value="root" />
+									<Feature name="mcat" value="Pn" />
+									<Feature name="node:label" value="Pn#2" />
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+				</Node>
+			</Node>
+			<Node>
+				<Feature name="cat" value="I'" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Sov-Svo: VP (* PP * VP) ==&gt; VP (VP * PP *)">
+		<Node>
+			<Feature name="cat" value="VP" />
+			<Node>
+				<Feature name="cat" value="DP" />
+				<Feature name="node:label" value="(DP)" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="PP" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="PP" />
+				<Feature name="node:label" value="(PP#2)" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="VP" />
+				<Feature name="node:label" value="VP#2" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="VP" />
+			<Node>
+				<Feature name="cat" value="VP" />
+				<Feature name="node:label" value="VP#2" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="DP" />
+				<Feature name="node:label" value="(DP)" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="PP" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="PP" />
+				<Feature name="node:label" value="(PP#2)" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Sov-Svo: V (Adj V) ==&gt; V (V Adj)">
+		<Node>
+			<Feature name="cat" value="V" />
+			<Node>
+				<Feature name="cat" value="Adj" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="V" />
+				<Feature name="node:label" value="V#2" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="V" />
+			<Node>
+				<Feature name="cat" value="V" />
+				<Feature name="node:label" value="V#2" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="Adj" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Sov-Svo: VP (AdvP VP) ==&gt; VP (VP AdvP)">
+		<Node>
+			<Feature name="cat" value="VP" />
+			<Node>
+				<Feature name="cat" value="AdvP" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="VP" />
+				<Feature name="node:label" value="VP#2" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="VP" />
+			<Node>
+				<Feature name="cat" value="VP" />
+				<Feature name="node:label" value="VP#2" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="AdvP" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Sov-Svo: V (N V) ==&gt; V (V N)">
+		<Node>
+			<Feature name="cat" value="V" />
+			<Node>
+				<Feature name="cat" value="N" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="V" />
+				<Feature name="node:label" value="V#2" />
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="V" />
+			<Node>
+				<Feature name="cat" value="V" />
+				<Feature name="node:label" value="V#2" />
+			</Node>
+			<Node>
+				<Feature name="cat" value="N" />
+			</Node>
+		</Node>
+	</Rule>
+	<Rule name="Add-Det: DP (D' (NP (N' (N [-Proper,-Pronoun])))) ==&gt; DP (D' (Det NP (N' (N))))">
+		<Node>
+			<Feature name="cat" value="DP" />
+			<Node>
+				<Feature name="cat" value="D'" />
+				<Node>
+					<Feature name="cat" value="NP" />
+					<Node>
+						<Feature name="cat" value="N'" />
+						<Node>
+							<Feature name="node:type" value="leaf" />
+							<Feature name="cat" value="N" />
+							<Feature name="lex:head type proper" value="!+" />
+							<Feature name="lex:head type pronoun" value="!+" />
+						</Node>
+					</Node>
+				</Node>
+			</Node>
+		</Node>
+		<Node>
+			<Feature name="cat" value="DP" />
+			<Node>
+				<Feature name="cat" value="D'" />
+				<Node>
+					<Feature name="node:type" value="leaf" />
+					<Feature name="cat" value="Det" />
+					<Feature name="underlyingForm" value="&quot;the&quot;" />
+					<Node>
+						<Feature name="node:type" value="mparse" />
+						<Feature name="cat" value="Det" />
+						<Feature name="node:label" value="Det#2" />
+						<Node>
+							<Feature name="node:type" value="root" />
+							<Feature name="mcat" value="Det" />
+							<Feature name="node:label" value="Det#3" />
+						</Node>
+					</Node>
+				</Node>
+				<Node>
+					<Feature name="cat" value="NP" />
+					<Node>
+						<Feature name="cat" value="N'" />
+						<Node>
+							<Feature name="node:type" value="leaf" />
+							<Feature name="cat" value="N" />
+						</Node>
+					</Node>
+				</Node>
+			</Node>
+		</Node>
+	</Rule>
+</TreeTransferRules>
