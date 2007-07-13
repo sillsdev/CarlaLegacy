@@ -304,11 +304,13 @@ BOOL nukeDirectory(LPCSTR lpszDirPath, BOOL* pbDeletedAllFiles)
 
 	if (pbDeletedAllFiles)
 			*pbDeletedAllFiles = TRUE;	//// jdh 3/14/2000  added this because under NT we are able to delete the files but not always the dir
+#ifdef DoRemoveDirectory
+		// 2007.07.13 hab: Vista has problems with this; the next time a process is run, Vista reports that a file in the directory is still open.
 	if(bOK)
 	{
 		return RemoveDirectory(lpszDirPath); // jdh 3/14/2000 this always fails with Windows NT on a dir we created this run
-
 	}
+#endif
 	return bOK;
 }
 
