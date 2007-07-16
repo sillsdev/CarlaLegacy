@@ -313,13 +313,13 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-<xsl:if test="//excl/@exclM='no'">
+<xsl:if test="normalize-space(////excl/@exclM)='no'">
 <p>
 <xsl:value-of select="//language/langName" />
 <xsl:text> does not have a special word which marks exclamations of this type, so they are no different than the interjections consisting of adjectives in the previous section.</xsl:text>
 </p>
 </xsl:if>
-<xsl:if test="//excl/@exclM='yes'">
+<xsl:if test="normalize-space(////excl/@exclM)='yes'">
 <p>
 <xsl:value-of select="//language/langName" />
 <xsl:text> has one or more special words which signal an exclamation which occur </xsl:text>
@@ -340,7 +340,7 @@
 <xsl:text> the adjective phrase.  These exclamation marker words are:</xsl:text>
 </p>
 </xsl:if>
-<xsl:if test="//excl/@exclM='yes'">
+<xsl:if test="normalize-space(////excl/@exclM)='yes'">
 <example num="xExcl.ExclExcl.16">
 <table border="1">
 <tr>
@@ -380,12 +380,12 @@
 </table>
 </example>
 </xsl:if>
-<xsl:if test="//excl/@exclM='yes' and //excl/@exclMPos='either' and //excl/@exclMEither='no' or //excl/@exclM='yes' and //excl/@exclMPos='both' and //excl/@exclMEither='no'">
+<xsl:if test="normalize-space(////excl/@exclM)='yes' and normalize-space(////excl/@exclMPos)='either' and normalize-space(////excl/@exclMEither)='no' or normalize-space(////excl/@exclM)='yes' and normalize-space(////excl/@exclMPos)='both' and normalize-space(////excl/@exclMEither)='no'">
 <p>
 <xsl:text>There are separate sets words which can occur on each side of the adjective phrase.</xsl:text>
 </p>
 </xsl:if>
-<xsl:if test="//excl/@exclM='yes' and //excl/@exclMPos='either' and //excl/@exclMEither='yes' or //excl/@exclM='yes' and //excl/@exclMPos='both' and //excl/@exclMEither='yes'">
+<xsl:if test="normalize-space(////excl/@exclM)='yes' and normalize-space(////excl/@exclMPos)='either' and normalize-space(////excl/@exclMEither)='yes' or normalize-space(////excl/@exclM)='yes' and normalize-space(////excl/@exclMPos)='both' and normalize-space(////excl/@exclMEither)='yes'">
 <p>
 <xsl:text>All of the words may occur on either side of the adjective phrase.</xsl:text>
 </p>

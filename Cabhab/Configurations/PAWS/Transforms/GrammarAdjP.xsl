@@ -16,7 +16,7 @@ AdjP = Adj'
 	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;AdjP option&gt; = 0
 </xsl:text>
-<xsl:if test="//adjp/@modifiers='yesDegree' and //adjp/@degreePos='before' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='either' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='eitherOrBoth' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='beforeOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='before' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='either' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='beforeOrBoth'">
 <xsl:text>
 rule {AdjP option 1d - degree modifiers initial}
 AdjP = Deg Adj'
@@ -38,7 +38,7 @@ AdjP = Deg Adj'
 
 
 
-<xsl:if test="//adjp/@modifiers='yesManner' and //adjp/@mannerPos='before' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos='either' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos='eitherOrBoth' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos='beforeOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='before' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='either' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='beforeOrBoth'">
 <xsl:text>
 rule {AdjP option 1m - degree or AdvP modifiers initial}
 AdjP = {Deg / AdvP} Adj'
@@ -63,7 +63,7 @@ AdjP = {Deg / AdvP} Adj'
 
 
 
-<xsl:if test="//adjp/@modifiers='yesDegree' and //adjp/@degreePos='after' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='either' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='eitherOrBoth' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='afterOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='after' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='either' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='afterOrBoth'">
 <xsl:text>
 rule {AdjP option 2d - degree modifiers final}
 AdjP = Adj' Deg
@@ -85,7 +85,7 @@ AdjP = Adj' Deg
 
 
 
-<xsl:if test="//adjp/@modifiers='yesManner' and //adjp/@mannerPos='after' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos='either' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos='eitherOrBoth' or //adjp/@modifiers='yesManner' and //advp/@mannerPos='afterOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='after' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='either' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//advp/@mannerPos)='afterOrBoth'">
 <xsl:text>
 rule {AdjP option 2m - degree or AdvP modifiers final}
 AdjP = Adj' {Deg / AdvP}
@@ -110,7 +110,7 @@ AdjP = Adj' {Deg / AdvP}
 
 
 
-<xsl:if test="//adjp/@modifiers='yesDegree' and //adjp/@degreePos='both' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='beforeOrBoth' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='eitherOrBoth' or //adjp/@modifiers='yesDegree' and //adjp/@degreePos='afterOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='both' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='beforeOrBoth' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='afterOrBoth'">
 <xsl:text>
 rule {AdjP option 3d - degree modifiers both sides}
 AdjP = Deg_1 Adj' Deg_2
@@ -135,7 +135,7 @@ AdjP = Deg_1 Adj' Deg_2
 
 
 
-<xsl:if test="//adjp/@modifiers='yesManner' and //adjp/@mannerPos='both' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos='afterOrBoth' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos='eitherOrBoth' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos='beforeOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='both' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='afterOrBoth' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)='beforeOrBoth'">
 <xsl:text>
 rule {AdjP option 3m - degree or AdvP modifiers both sides}
 AdjP = {Deg_1 / AdvP_1} Adj' {Deg_2 / AdvP_2}
@@ -194,7 +194,7 @@ Adj' = Adj {CP / IP}
 	&lt;Adj' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;Adj' option&gt; = 1a
 </xsl:text>
-	<xsl:if test="//typology/@wordOrder='SOV' or //typology/@wordOrder='OVS'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//typology/@wordOrder)='OVS'">
 <xsl:text>
 rule {Adj' option 1b - Adj final, sentential complement}
 Adj' = {CP / IP} Adj

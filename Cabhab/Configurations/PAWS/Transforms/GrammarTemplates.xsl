@@ -660,7 +660,7 @@ Let Adv			be	&lt;cat&gt; = !Adv
 				&lt;head type sentential&gt;          = !-
 								&lt;embedded&gt;      = !none
 </xsl:text>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
@@ -671,7 +671,7 @@ Let Art			be	&lt;cat&gt; = !Art
 				&lt;head type wh&gt;			= !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative' and //np/@artCase='yes'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
@@ -689,7 +689,7 @@ Let C			be	&lt;cat&gt; = !C
 				&lt;head type relative&gt;		= !-
 								&lt;embedded&gt;      = !none
 </xsl:text>
-<xsl:if test="//typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh='yes' or //typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh='some' or //typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh='yes' or //typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh='some'">
+<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='some' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='some'">
 <xsl:text>
 					&lt;head type CP-specifier-initial&gt;      = !-
 </xsl:text>
@@ -719,7 +719,7 @@ Let Dem                 be      &lt;cat&gt; = !Dem
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative' and //np/@artCase='yes'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
@@ -732,7 +732,7 @@ Let Det                 be      &lt;cat&gt; = !Det
 								&lt;head type relative&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative' and //np/@artCase='yes'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
@@ -761,32 +761,32 @@ Let N                   be      &lt;cat&gt; = !N
 								&lt;head embedded&gt;      = !none
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeNumber='yes'">
+<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
 <xsl:text>
 								&lt;head agr number&gt;            = !singular
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeOther='yesGender'">
+<xsl:if test="normalize-space(//np/@agreeOther)='yesGender'">
 <xsl:text>
 								&lt;head agr gender&gt;            = !masculine
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@possAlienable='yes'">
+<xsl:if test="normalize-space(//np/@possAlienable)='yes'">
 <xsl:text>
 								&lt;head type possessed&gt;            = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//pp/@pType!='word' and //pp/@attaches='head'">
+<xsl:if test="normalize-space(//pp/@pType)!='word' and normalize-space(//pp/@attaches)='head'">
 <xsl:text>
 							   &lt;head type PP&gt;      = !-
 </xsl:text>
@@ -800,13 +800,13 @@ Let Num                 be      &lt;cat&gt; = !Num
 								&lt;head type relative&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@qpeitherRestrictedNumPos='after'">
+<xsl:if test="normalize-space(//np/@qpeitherRestrictedNumPos)='after'">
 <xsl:text>
 								&lt;head type DP-final&gt;            = !+
 								&lt;head type DP-initial&gt;            = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@qpeitherRestrictedNumPos='before'">
+<xsl:if test="normalize-space(//np/@qpeitherRestrictedNumPos)='before'">
 <xsl:text>
 								&lt;head type DP-final&gt;            = !-
 								&lt;head type DP-initial&gt;            = !+
@@ -847,22 +847,22 @@ Let Pron                be      &lt;cat&gt; = !Pron
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeNumber='yes'">
+<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
 <xsl:text>
 								&lt;head agr number&gt;            = !singular
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeOther='yesGender'">
+<xsl:if test="normalize-space(//np/@agreeOther)='yesGender'">
 <xsl:text>
 								&lt;head agr gender&gt;            = !masculine
 </xsl:text>
 </xsl:if>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
@@ -884,27 +884,27 @@ Let PropN		be	&lt;cat&gt; = N
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeNumber='yes'">
+<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
 <xsl:text>
 								&lt;head agr number&gt;            = !singular
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeOther='yesGender'">
+<xsl:if test="normalize-space(//np/@agreeOther)='yesGender'">
 <xsl:text>
 								&lt;head agr gender&gt;            = !masculine
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@possAlienable='yes'">
+<xsl:if test="normalize-space(//np/@possAlienable)='yes'">
 <xsl:text>
 								&lt;head type possessed&gt;            = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
@@ -931,27 +931,27 @@ Let V                   be      &lt;cat&gt; = !V
 								&lt;head embedded&gt;      = !none
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//q/@mainContWord='no' and //q/@mainContCliticAttaches='head' or //q/@embContWord='no' and //q/@embContCliticAttaches='head'">
+<xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainContCliticAttaches)='head' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embContCliticAttaches)='head'">
 <xsl:text>
 							   &lt;head type whQ&gt;      = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//q/@mainYNWord='no' and //q/@mainYNCliticAttaches='head' or //q/@embYNWord='no' and //q/@embYNCliticAttaches='head'">
+<xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/@mainYNCliticAttaches)='head' or normalize-space(//q/@embYNWord)='no' and normalize-space(//q/@embYNCliticAttaches)='head'">
 <xsl:text>
 							   &lt;head type YNQ&gt;      = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//relcl/@type='IP'">
+<xsl:if test="normalize-space(//relcl/@type)='IP'">
 <xsl:text>
 							   &lt;head type relative&gt;      = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//comp/@compWord='no' and //comp/@compCliticAttaches='head'">
+<xsl:if test="normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@compCliticAttaches)='head'">
 <xsl:text>
 							   &lt;head type comp&gt;      = !-
 </xsl:text>
@@ -974,7 +974,7 @@ Let makeAdv		be	&lt;cat&gt; = Adv
 				&lt;head type sentential&gt;          = !-
 								&lt;head embedded&gt;      = !none
 </xsl:text>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
@@ -985,7 +985,7 @@ Let makeArt		be	&lt;cat&gt; = Art
 				&lt;head type wh&gt;			= !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative' and //np/@artCase='yes'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
@@ -1003,7 +1003,7 @@ Let makeC		be	&lt;cat&gt; = C
 				&lt;head type relative&gt;		= !-
 								&lt;head embedded&gt;      = !none
 </xsl:text>
-<xsl:if test="//typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh='yes' or //typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh='some' or //typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh='yes' or //typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh='some'">
+<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='some' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='some'">
 <xsl:text>
 					&lt;head type CP-specifier-initial&gt;      = !-
 </xsl:text>
@@ -1033,12 +1033,12 @@ Let makeDem             be      &lt;cat&gt; = Dem
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative' and //np/@artCase='yes'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
 </xsl:if>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
@@ -1070,27 +1070,27 @@ Let makeN               be      &lt;cat&gt; = N
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeNumber='yes'">
+<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
 <xsl:text>
 								&lt;head agr number&gt;            = !singular
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeOther='yesGender'">
+<xsl:if test="normalize-space(//np/@agreeOther)='yesGender'">
 <xsl:text>
 								&lt;head agr gender&gt;            = !masculine
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@possAlienable='yes'">
+<xsl:if test="normalize-space(//np/@possAlienable)='yes'">
 <xsl:text>
 								&lt;head type possessed&gt;            = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
@@ -1104,13 +1104,13 @@ Let makeNum             be      &lt;cat&gt; = Num
 								&lt;head type relative&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@qpeitherRestrictedNumPos='after'">
+<xsl:if test="normalize-space(//np/@qpeitherRestrictedNumPos)='after'">
 <xsl:text>
 								&lt;head type DP-final&gt;            = !+
 								&lt;head type DP-initial&gt;            = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@qpeitherRestrictedNumPos='before'">
+<xsl:if test="normalize-space(//np/@qpeitherRestrictedNumPos)='before'">
 <xsl:text>
 								&lt;head type DP-final&gt;            = !-
 								&lt;head type DP-initial&gt;            = !+
@@ -1136,22 +1136,22 @@ Let makePron            be      &lt;cat&gt; = Pron
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//np/@caseDefault='nominative' and //np/@case!='ergative'">
+<xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
 								&lt;head case&gt;            = !nominative
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeNumber='yes'">
+<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
 <xsl:text>
 								&lt;head agr number&gt;            = !singular
 </xsl:text>
 </xsl:if>
-<xsl:if test="//np/@agreeOther='yesGender'">
+<xsl:if test="normalize-space(//np/@agreeOther)='yesGender'">
 <xsl:text>
 								&lt;head agr gender&gt;            = !masculine
 </xsl:text>
 </xsl:if>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
@@ -1179,27 +1179,27 @@ Let makeV               be      &lt;cat&gt; = V
 								&lt;embedded&gt;      = !none
 								&lt;head type focusmarked&gt;         = -
 </xsl:text>
-<xsl:if test="//neg/@type='changing' and //neg/@polarityItems='yes'">
+<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
 								&lt;head type negative-polarity&gt;            = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//q/@mainContWord='no' and //q/@mainContCliticAttaches='head' or //q/@embContWord='no' and //q/@embContCliticAttaches='head'">
+<xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainContCliticAttaches)='head' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embContCliticAttaches)='head'">
 <xsl:text>
 							   &lt;head type whQ&gt;      = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//q/@mainYNWord='no' and //q/@mainYNCliticAttaches='head' or //q/@embYNWord='no' and //q/@embYNCliticAttaches='head'">
+<xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/@mainYNCliticAttaches)='head' or normalize-space(//q/@embYNWord)='no' and normalize-space(//q/@embYNCliticAttaches)='head'">
 <xsl:text>
 							   &lt;head type YNQ&gt;      = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//relcl/@type='IP'">
+<xsl:if test="normalize-space(//relcl/@type)='IP'">
 <xsl:text>
 							   &lt;head type relative&gt;      = !-
 </xsl:text>
 </xsl:if>
-<xsl:if test="//comp/@compWord='no' and //comp/@compCliticAttaches='head'">
+<xsl:if test="normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@compCliticAttaches)='head'">
 <xsl:text>
 							   &lt;head type comp&gt;      = !-
 </xsl:text>
@@ -1285,12 +1285,12 @@ Let makeV               be      &lt;cat&gt; = V
 
 
 
-	<xsl:if test="//qp/cardinalNumberCategory!=' '">
+	<xsl:if test="normalize-space(//qp/cardinalNumberCategory)!=''">
 Let <xsl:value-of select="//qp/cardinalNumberCategory" /> be [Num]</xsl:if>
 
 
 
-	<xsl:if test="//qp/conjunctionCategory!=' ' or //coord/conjunctionCategory!=' '">
+	<xsl:if test="normalize-space(//qp/conjunctionCategory)!='' or normalize-space(//coord/conjunctionCategory)!=''">
 Let <xsl:value-of select="//qp/conjunctionCategory" />
 <xsl:value-of select="//coord/conjunctionCategory" /> be [Conj]</xsl:if>
 
@@ -1298,72 +1298,72 @@ Let <xsl:value-of select="//qp/conjunctionCategory" />
 
 
 
-	<xsl:if test="//advp/adverbCategory!=' '">
+	<xsl:if test="normalize-space(//advp/adverbCategory)!=''">
 Let <xsl:value-of select="//advp/adverbCategory" /> be [Adv]</xsl:if>
 
 
 
-	<xsl:if test="//adjp/adjectiveCategory!=' '">
+	<xsl:if test="normalize-space(//adjp/adjectiveCategory)!=''">
 Let <xsl:value-of select="//adjp/adjectiveCategory" /> be [Adj]</xsl:if>
 
 
 
-	<xsl:if test="//np/articleCategory!=' '">
+	<xsl:if test="normalize-space(//np/articleCategory)!=''">
 Let <xsl:value-of select="//np/articleCategory" /> be [Art]</xsl:if>
 
 
 
-	<xsl:if test="//np/demonstrativeCategory!=' '">
+	<xsl:if test="normalize-space(//np/demonstrativeCategory)!=''">
 Let <xsl:value-of select="//np/demonstrativeCategory" /> be [Dem]</xsl:if>
 
 
 
-	<xsl:if test="//np/nounCategory!=' '">
+	<xsl:if test="normalize-space(//np/nounCategory)!=''">
 Let <xsl:value-of select="//np/nounCategory" /> be [N]</xsl:if>
 
 
 
-	<xsl:if test="//np/propAnimate1Category!=' '">
+	<xsl:if test="normalize-space(//np/propAnimate1Category)!=''">
 Let <xsl:value-of select="//np/propAnimate1Category" /> be [PropN]</xsl:if>
 
 
 
-	<xsl:if test="//np/propAnimate2Category!=' '">
+	<xsl:if test="normalize-space(//np/propAnimate2Category)!=''">
 Let <xsl:value-of select="//np/propAnimate2Category" /> be [PropN]</xsl:if>
 
 
 
-	<xsl:if test="//np/propInanimateCategory!=' '">
+	<xsl:if test="normalize-space(//np/propInanimateCategory)!=''">
 Let <xsl:value-of select="//np/propInanimateCategory" /> be [PropN]</xsl:if>
 
 
 
-	<xsl:if test="//np/propInanimateCategory!=' '">
+	<xsl:if test="normalize-space(//np/propInanimateCategory)!=''">
 <xsl:text>
 									   &lt;head agr animate&gt; = -
 </xsl:text>
 </xsl:if>
-	<xsl:if test="//pron/pronounCategory!=' '">
+	<xsl:if test="normalize-space(//pron/pronounCategory)!=''">
 Let <xsl:value-of select="//pron/pronounCategory" /> be [Pron]</xsl:if>
 
 
 
-	<xsl:if test="//pp/pCategory!=' '">
+	<xsl:if test="normalize-space(//pp/pCategory)!=''">
 Let <xsl:value-of select="//pp/pCategory" /> be [P]</xsl:if>
 
 
 
-	<xsl:if test="//ip/auxCategory!=' '">
+	<xsl:if test="normalize-space(//ip/auxCategory)!=''">
 Let <xsl:value-of select="//ip/auxCategory" /> be [Aux]</xsl:if>
 
 
 
-	<xsl:if test="//ip/verbCategory!=' '">
+	<xsl:if test="normalize-space(//ip/verbCategory)!=''">
 Let <xsl:value-of select="//ip/verbCategory" /> be [V]</xsl:if>
 
 
 
-	<xsl:if test="//q/whPronCategory!=' '">
+	<xsl:if test="normalize-space(//q/whPronCategory)!=''">
 Let <xsl:value-of select="//q/whPronCategory" /> be [Pron]</xsl:if>
 
 
@@ -1371,7 +1371,7 @@ Let <xsl:value-of select="//q/whPronCategory" /> be [Pron]</xsl:if>
 
 
 
-	<xsl:if test="//pp/@checkedOff!='yes'">
+	<xsl:if test="normalize-space(//pp/@checkedOff)!='yes'">
 <xsl:text>
 rule {S option testing - first eight sections}
 S = AdvP / AdjP / QP / DP / PP
@@ -1381,7 +1381,7 @@ S = AdvP / AdjP / QP / DP / PP
 
 
 
-	<xsl:if test="//focus/@topic='no'">
+	<xsl:if test="normalize-space(//focus/@topic)='no'">
 <xsl:text>
 rule {S option start.symbol  - PPs optional}
 S = (PP_1) {IP / CP} (PP_2)
@@ -1397,7 +1397,7 @@ S = (PP_1) {IP / CP} (PP_2)
 
 
 
-	<xsl:if test="//focus/@topic='yes' and //focus/@topicPos='before'">
+	<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='before'">
 <xsl:text>
 rule {S option start.topicinit  - PPs optional, topic initial}
 S = (TopicP) (PP_1) {IP / CP} (PP_2)
@@ -1415,7 +1415,7 @@ S = (TopicP) (PP_1) {IP / CP} (PP_2)
 
 
 
-	<xsl:if test="//focus/@topic='yes' and //focus/@topicPos='after'">
+	<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='after'">
 <xsl:text>
 rule {S option start.topicinit  - PPs optional, topic final}
 S = (PP_1) {IP / CP} (PP_2) (TopicP)
@@ -1433,7 +1433,7 @@ S = (PP_1) {IP / CP} (PP_2) (TopicP)
 
 
 
-	<xsl:if test="//neg/@advVerbRequired!='yes' and //focus/@topic='no'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)!='yes' and normalize-space(//focus/@topic)='no'">
 <xsl:text>
 rule {S option start.initial - AdvP or DP initial}
 S = {AdvP / DP} {IP / CP}
@@ -1457,7 +1457,7 @@ S = {AdvP / DP} {IP / CP}
 
 
 
-	<xsl:if test="//neg/@advVerbRequired!='yes' and //focus/@topic='yes' and //focus/@topicPos='before'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)!='yes' and normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='before'">
 <xsl:text>
 rule {S option start.initial.topicinit - AdvP or DP initial, topic initial}
 S = (TopicP) {AdvP / DP} {IP / CP}
@@ -1483,7 +1483,7 @@ S = (TopicP) {AdvP / DP} {IP / CP}
 
 
 
-	<xsl:if test="//neg/@advVerbRequired!='yes' and //focus/@topic='yes' and //focus/@topicPos='after'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)!='yes' and normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='after'">
 <xsl:text>
 rule {S option start.initial.topicfin - AdvP or DP initial, topic final}
 S = {AdvP / DP} {IP / CP} (TopicP)
@@ -1509,7 +1509,7 @@ S = {AdvP / DP} {IP / CP} (TopicP)
 
 
 
-	<xsl:if test="//neg/@advVerbRequired!='yes' and //focus/@topic='no'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)!='yes' and normalize-space(//focus/@topic)='no'">
 <xsl:text>
 rule {S option start.final - AdvP or DP final}
 S = {IP / CP} {AdvP / DP}
@@ -1533,7 +1533,7 @@ S = {IP / CP} {AdvP / DP}
 
 
 
-	<xsl:if test="//neg/@advVerbRequired!='yes' and //focus/@topic='yes' and //focus/@topicPos='before'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)!='yes' and normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='before'">
 <xsl:text>
 rule {S option start.final.topicinit - AdvP or DP final, topic initial}
 S = (TopicP) {IP / CP} {AdvP / DP}
@@ -1559,7 +1559,7 @@ S = (TopicP) {IP / CP} {AdvP / DP}
 
 
 
-	<xsl:if test="//neg/@advVerbRequired!='yes' and //focus/@topic='yes' and //focus/@topicPos='after'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)!='yes' and normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='after'">
 <xsl:text>
 rule {S option start.final.topicfin - AdvP or DP final, topic final}
 S = {IP / CP} {AdvP / DP} (TopicP)
@@ -1585,7 +1585,7 @@ S = {IP / CP} {AdvP / DP} (TopicP)
 
 
 
-	<xsl:if test="//neg/@advVerbRequired='yes' and //focus/@topic='no'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)='yes' and normalize-space(//focus/@topic)='no'">
 <xsl:text>
 rule {S option start.negVrequired.initial - neg V required, AdvP or DP initial}
 S = {AdvP / DP} {IP / CP}
@@ -1609,7 +1609,7 @@ S = {AdvP / DP} {IP / CP}
 
 
 
-	<xsl:if test="//neg/@advVerbRequired='yes' and //focus/@topic='yes' and //focus/@topicPos='before'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)='yes' and normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='before'">
 <xsl:text>
 rule {S option start.negVrequired.initial.topicinit - neg V required, AdvP or DP initial, topic initial}
 S = (TopicP) {AdvP / DP} {IP / CP}
@@ -1635,7 +1635,7 @@ S = (TopicP) {AdvP / DP} {IP / CP}
 
 
 
-	<xsl:if test="//neg/@advVerbRequired='yes' and //focus/@topic='yes' and //focus/@topicPos='after'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)='yes' and normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='after'">
 <xsl:text>
 rule {S option start.negVrequired.initial.topicfin - neg V required, AdvP or DP initial, topic final}
 S = {AdvP / DP} {IP / CP} (TopicP)
@@ -1661,7 +1661,7 @@ S = {AdvP / DP} {IP / CP} (TopicP)
 
 
 
-	<xsl:if test="//neg/@advVerbRequired='yes' and //focus/@topic='no'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)='yes' and normalize-space(//focus/@topic)='no'">
 <xsl:text>
 rule {S option start.negVrequired.final - neg V required, AdvP or DP final}
 S = {IP / CP} {AdvP / DP}
@@ -1685,7 +1685,7 @@ S = {IP / CP} {AdvP / DP}
 
 
 
-	<xsl:if test="//neg/@advVerbRequired='yes' and //focus/@topic='no' and //focus/@topic='yes' and //focus/@topicPos='before'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)='yes' and normalize-space(//focus/@topic)='no' and normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='before'">
 <xsl:text>
 rule {S option start.negVrequired.final.topicinit - neg V required, AdvP or DP final, topic initial}
 S = (TopicP) {IP / CP} {AdvP / DP}
@@ -1713,7 +1713,7 @@ S = (TopicP) {IP / CP} {AdvP / DP}
 
 
 
-	<xsl:if test="//neg/@advVerbRequired='yes' and //focus/@topic='no' and //focus/@topic='yes' and //focus/@topicPos='after'">
+	<xsl:if test="normalize-space(//neg/@advVerbRequired)='yes' and normalize-space(//focus/@topic)='no' and normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicPos)='after'">
 <xsl:text>
 rule {S option start.negVrequired.final.topicfin - neg V required, AdvP or DP final, topic final}
 S = {IP / CP} {AdvP / DP} (TopicP)
@@ -1761,7 +1761,7 @@ S = Intj / Adj
 	&lt;S head&gt; = &lt;Adj head&gt;
 	&lt;S option&gt; = interjection
 </xsl:text>
-	<xsl:if test="//excl/@exclM='yes' and //excl/@exclMPos='before' or //excl/@exclM='yes' and //excl/@exclMPos='either'">
+	<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='before' or normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='either'">
 <xsl:text>
 rule {S option excl.init}
 S = Excl AdjP
@@ -1779,7 +1779,7 @@ S = Excl AdjP
 
 
 
-	<xsl:if test="//excl/@exclM='yes' and //excl/@exclMPos='after' or //excl/@exclM='yes' and //excl/@exclMPos='either'">
+	<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='after' or normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='either'">
 <xsl:text>
 rule {S option excl.fin}
 S = AdjP Excl
@@ -1797,7 +1797,7 @@ S = AdjP Excl
 
 
 
-	<xsl:if test="//excl/@exclM='yes' and //excl/@exclMPos='both'">
+	<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='both'">
 <xsl:text>
 rule {S option excl.both}
 S = Excl_1 AdjP Excl_2

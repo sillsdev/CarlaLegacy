@@ -7,7 +7,7 @@ AdvP = Adv'
 	&lt;AdvP head&gt; = &lt;Adv' head&gt;
 	&lt;AdvP option&gt; = 0
 </xsl:text>
-	<xsl:if test="//advp/@degree='yes' and //advp/@degreePos='before' or //advp/@degree='yes' and //advp/@degreePos='either' or //advp/@degree='yes' and //advp/@degreePos='eitherOrBoth' or //advp/@degree='yes' and //advp/@degreePos='beforeOrBoth'">
+	<xsl:if test="normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='before' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='either' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='eitherOrBoth' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='beforeOrBoth'">
 <xsl:text>
 rule {AdvP option 1 - modifiers initial}
 AdvP = Deg Adv'
@@ -35,7 +35,7 @@ AdvP = Deg Adv'
 
 
 
-	<xsl:if test="//advp/@degree='yes' and //advp/@degreePos='after' or //advp/@degree='yes' and //advp/@degreePos='either' or //advp/@degree='yes' and //advp/@degreePos='eitherOrBoth' or //advp/@degree='yes' and //advp/@degreePos='afterOrBoth'">
+	<xsl:if test="normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='after' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='either' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='eitherOrBoth' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='afterOrBoth'">
 <xsl:text>
 rule {AdvP option 2 - modifiers final}
 AdvP = Adv' Deg
@@ -63,7 +63,7 @@ AdvP = Adv' Deg
 
 
 
-	<xsl:if test="//advp/@degree='yes' and //advp/@degreePos='both' or //advp/@degree='yes' and //advp/@degreePos='beforeOrBoth' or //advp/@degree='yes' and //advp/@degreePos='eitherOrBoth' or //advp/@degree='yes' and //advp/@degreePos='afterOrBoth'">
+	<xsl:if test="normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='both' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='beforeOrBoth' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='eitherOrBoth' or normalize-space(//advp/@degree)='yes' and normalize-space(//advp/@degreePos)='afterOrBoth'">
 <xsl:text>
 rule {AdvP option 3 - modifiers both sides}
 AdvP = Deg_1 Adv' Deg_2
@@ -100,7 +100,7 @@ Adv' = Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv' option&gt; = 0
 </xsl:text>
-	<xsl:if test="//advcl/@advOrNPPos='after' or //advcl/@advOrNPPos='either'">
+	<xsl:if test="normalize-space(//advcl/@advOrNPPos)='after' or normalize-space(//advcl/@advOrNPPos)='either'">
 <xsl:text>
 rule {AdvBar option 1f - Adv complements final}
 Adv' = Adv Adv_1
@@ -117,7 +117,7 @@ Adv' = Adv Adv_1
 
 
 
-	<xsl:if test="//advcl/@advOrNPPos='before' or //advcl/@advOrNPPos='either'">
+	<xsl:if test="normalize-space(//advcl/@advOrNPPos)='before' or normalize-space(//advcl/@advOrNPPos)='either'">
 <xsl:text>
 rule {AdvBar option 1i - Adv complements initial}
 Adv' = Adv_1 Adv
@@ -134,7 +134,7 @@ Adv' = Adv_1 Adv
 
 
 
-	<xsl:if test="//advcl/@advOrNPPos='after' or //advcl/@advOrNPPos='either'">
+	<xsl:if test="normalize-space(//advcl/@advOrNPPos)='after' or normalize-space(//advcl/@advOrNPPos)='either'">
 <xsl:text>
 rule {AdvBar option 2f - DP complements final}
 Adv' = Adv DP
@@ -151,7 +151,7 @@ Adv' = Adv DP
 
 
 
-	<xsl:if test="//advcl/@advOrNPPos='before' or //advcl/@advOrNPPos='either'">
+	<xsl:if test="normalize-space(//advcl/@advOrNPPos)='before' or normalize-space(//advcl/@advOrNPPos)='either'">
 <xsl:text>
 rule {AdvBar option 2i - DP complements initial}
 Adv' = DP Adv
@@ -180,7 +180,7 @@ Adv' = Adv IP
 	&lt;Adv' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;Adv' option&gt; = 3f
 </xsl:text>
-	<xsl:if test="//typology/@wordOrder='SOV' or //typology/@wordOrder='OVS' or //typology/@wordOrder='OSV'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//typology/@wordOrder)='OSV'">
 <xsl:text>
 rule {AdvBar option 3i - IP complements initial}
 Adv' = IP Adv
@@ -213,7 +213,7 @@ Adv' = Adv CP
 	&lt;Adv' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
 	&lt;Adv' option&gt; = 4f
 </xsl:text>
-	<xsl:if test="//typology/@wordOrder='SOV' or //typology/@wordOrder='OVS' or //typology/@wordOrder='OSV'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//typology/@wordOrder)='OSV'">
 <xsl:text>
 rule {AdvBar option 4i - CP complements initial}
 Adv' = CP Adv

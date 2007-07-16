@@ -10,7 +10,7 @@ IP = (InitConj) IP_1 Conj IP_2
 	&lt;IP_1 conjoined&gt; = -	|limit recursion
 	&lt;IP option&gt; = conj
 </xsl:text>
-	<xsl:if test="//ip/@proDrop!='no' and //typology/@wordOrder!='VSO' and //typology/@wordOrder!='OSV'">
+	<xsl:if test="normalize-space(//ip/@proDrop)!='no' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//typology/@wordOrder)!='OSV'">
 <xsl:text>
 rule {IP option 1a - no subject for imperatives}
 IP = I'
@@ -27,7 +27,7 @@ IP = I'
 
 
 
-	<xsl:if test="//ip/@proDrop='yes' and //typology/@wordOrder!='VSO' and //typology/@wordOrder!='OSV' or //ip/@proDrop='yesClitic' and //typology/@wordOrder!='VSO' and //typology/@wordOrder!='OSV'">
+	<xsl:if test="normalize-space(//ip/@proDrop)='yes' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//typology/@wordOrder)!='OSV' or normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//typology/@wordOrder)!='OSV'">
 <xsl:text>
 rule {IP option 1b - subject pro-drop, not passive}
 IP = I'
@@ -68,7 +68,7 @@ IP = I'
 
 
 
-	<xsl:if test="//ip/@proDrop='yes' and //ip/@passive='yes' and //typology/@wordOrder!='VSO' and //typology/@wordOrder!='OSV' or //ip/@proDrop='yesClitic' and //ip/@passive='yes' and //typology/@wordOrder!='VSO' and //typology/@wordOrder!='OSV'">
+	<xsl:if test="normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@passive)='yes' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//typology/@wordOrder)!='OSV' or normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@passive)='yes' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//typology/@wordOrder)!='OSV'">
 <xsl:text>
 rule {IP option 1c - subject pro-drop, passive}
 IP = I'
@@ -102,7 +102,7 @@ IP = I'
 
 
 
-	<xsl:if test="//typology/@wordOrder='SVO' and //neg/@subjVerbRequired!='yes' or //typology/@wordOrder='SOV' and //neg/@subjVerbRequired!='yes'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//neg/@subjVerbRequired)!='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//neg/@subjVerbRequired)!='yes'">
 <xsl:text>
 rule {IP option 2a - subject initial, required, not passive}
 IP = DP I'
@@ -141,7 +141,7 @@ IP = DP I'
 
 
 
-	<xsl:if test="//neg/@subjVerbRequired='yes' and //typology/@wordOrder='SVO' or //neg/@subjVerbRequired='yes' and //typology/@wordOrder='SOV'">
+	<xsl:if test="normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//typology/@wordOrder)='SOV'">
 <xsl:text>
 rule {IP option 2aNegVerb - subject initial, not passive, neg subj requires neg verb}
 IP = DP I'
@@ -181,7 +181,7 @@ IP = DP I'
 
 
 
-	<xsl:if test="//neg/@subjVerbRequired!='yes' and //typology/@wordOrder='SVO' and //ip/@passive='yes' or //neg/@subjVerbRequired!='yes' and //typology/@wordOrder='SOV' and //ip/@passive='yes'">
+	<xsl:if test="normalize-space(//neg/@subjVerbRequired)!='yes' and normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//ip/@passive)='yes' or normalize-space(//neg/@subjVerbRequired)!='yes' and normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//ip/@passive)='yes'">
 <xsl:text>
 rule {IP option 2b - subject initial, required, passive}
 IP = DP I'
@@ -219,7 +219,7 @@ IP = DP I'
 
 
 
-	<xsl:if test="//neg/@subjVerbRequired='yes' and //typology/@wordOrder='SVO' and //ip/@passive='yes' or //neg/@subjVerbRequired='yes' and //typology/@wordOrder='SOV' and //ip/@passive='yes'">
+	<xsl:if test="normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//ip/@passive)='yes' or normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//ip/@passive)='yes'">
 <xsl:text>
 rule {IP option 2bNegVerb - subject initial, required, passive, neg subj requires neg verb}
 IP = DP I'
@@ -258,7 +258,7 @@ IP = DP I'
 
 
 
-	<xsl:if test="//neg/@subjVerbRequired!='yes' and //typology/@wordOrder='OVS' or //neg/@subjVerbRequired!='yes' and //typology/@wordOrder='VOS'">
+	<xsl:if test="normalize-space(//neg/@subjVerbRequired)!='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@subjVerbRequired)!='yes' and normalize-space(//typology/@wordOrder)='VOS'">
 <xsl:text>
 rule {IP option 2c - subject final, required, not passive}
 IP = I' DP
@@ -297,7 +297,7 @@ IP = I' DP
 
 
 
-	<xsl:if test="//neg/@subjVerbRequired='yes' and //typology/@wordOrder='OVS' or //neg/@subjVerbRequired='yes' and //typology/@wordOrder='VOS'">
+	<xsl:if test="normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//typology/@wordOrder)='VOS'">
 <xsl:text>
 rule {IP option 2cNegVerb - subject final, required, not passive, neg requires neg verb}
 IP = I' DP
@@ -337,7 +337,7 @@ IP = I' DP
 
 
 
-	<xsl:if test="//neg/@subjVerbRequired!='yes' and //typology/@wordOrder='OVS' and //ip/@passive='yes' or //neg/@subjVerbRequired!='yes' and //typology/@wordOrder='VOS' and //ip/@passive='yes'">
+	<xsl:if test="normalize-space(//neg/@subjVerbRequired)!='yes' and normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//ip/@passive)='yes' or normalize-space(//neg/@subjVerbRequired)!='yes' and normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//ip/@passive)='yes'">
 <xsl:text>
 rule {IP option 2d - subject final, required, passive}
 IP = I' DP
@@ -375,7 +375,7 @@ IP = I' DP
 
 
 
-	<xsl:if test="//neg/@subjVerbRequired='yes' and //typology/@wordOrder='OVS' and //ip/@passive='yes' or //neg/@subjVerbRequired='yes' and //typology/@wordOrder='VOS' and //ip/@passive='yes'">
+	<xsl:if test="normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//ip/@passive)='yes' or normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//ip/@passive)='yes'">
 <xsl:text>
 rule {IP option 2dNegVerb - subject final, required, passive, neg requires neg verb}
 IP = I' DP
@@ -414,7 +414,7 @@ IP = I' DP
 
 
 
-	<xsl:if test="//typology/@wordOrder='OSV' or //typology/@wordOrder='VSO'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//typology/@wordOrder)='VSO'">
 <xsl:text>
 rule {IP option 3 - subject internal to VP for VSO, OSV}
 IP = I'
@@ -427,7 +427,7 @@ IP = I'
 
 
 
-	<xsl:if test="//typology/@wordOrder!='OSV' and //typology/@wordOrder!='VSO' and //q/@contFront='before'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)!='OSV' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@contFront)='before'">
 <xsl:text>
 rule {IP option 4a - subject questioned, not passive}
 IP = I'
@@ -456,7 +456,7 @@ IP = I'
 
 
 
-	<xsl:if test="//typology/@wordOrder!='OSV' and //typology/@wordOrder!='VSO' and //q/@contFront='before' and //focus/@focus='yes'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)!='OSV' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@contFront)='before' and normalize-space(//focus/@focus)='yes'">
 <xsl:text>
 rule {IP option 4afoc - subject focused, not passive}
 IP = I'
@@ -487,7 +487,7 @@ IP = I'
 
 
 
-	<xsl:if test="//typology/@wordOrder='SOV' and //q/@contFront='after'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//q/@contFront)='after'">
 <xsl:text>
 rule {IP option 4aSOV - subject questioned, not passive, SOV}
 IP = I'
@@ -503,7 +503,7 @@ IP = I'
 
 
 
-	<xsl:if test="//typology/@wordOrder!='OSV' and //typology/@wordOrder!='VSO' and //q/@contFront='before' and //ip/@passive='yes'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)!='OSV' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@passive)='yes'">
 <xsl:text>
 rule {IP option 4b - subject questioned, passive}
 IP = I'
@@ -527,7 +527,7 @@ IP = I'
 
 
 
-	<xsl:if test="//typology/@wordOrder!='OSV' and //typology/@wordOrder!='VSO' and //q/@contFront='before' and //ip/@passive='yes' and //focus/@focus='yes'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)!='OSV' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@passive)='yes' and normalize-space(//focus/@focus)='yes'">
 <xsl:text>
 rule {IP option 4b - subject focused, passive}
 IP = I'
@@ -553,7 +553,7 @@ IP = I'
 
 
 
-	<xsl:if test="//typology/@wordOrder='SOV' and //q/@contFront='after' and //ip/@passive='yes'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@passive)='yes'">
 <xsl:text>
 rule {IP option 4bSOV - subject questioned, passive, SOV}
 IP = I'
@@ -571,7 +571,7 @@ IP = I'
 
 
 
-	<xsl:if test="//typology/@wordOrder!='OSV' and //typology/@wordOrder!='VSO' and //q/@contFront='before'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)!='OSV' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@contFront)='before'">
 <xsl:text>
 rule {IP option 5 - adverb questioned, copular verb}
 IP = I'
@@ -593,7 +593,7 @@ IP = I'
 
 
 
-	<xsl:if test="//ip/@auxRequired!='yes'">
+	<xsl:if test="normalize-space(//ip/@auxRequired)!='yes'">
 <xsl:text>
 rule {IBar option 1 - no auxiliaries}
 I' = VP
@@ -608,7 +608,7 @@ I' = VP
 
 
 
-	<xsl:if test="//ip/@aux='yes' and //typology/@wordOrder='SVO' or //ip/@aux='yes' and //typology/@wordOrder='VOS' or //ip/@aux='yes' and //typology/@wordOrder='VSO'">
+	<xsl:if test="normalize-space(//ip/@aux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//ip/@aux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//ip/@aux)='yes' and normalize-space(//typology/@wordOrder)='VSO'">
 <xsl:text>
 rule {IBar option 2 - positive Aux initial, required}
 I' = Aux VP
@@ -637,7 +637,7 @@ I' = Aux VP
 
 
 
-	<xsl:if test="//neg/@auxVerbRequired='no' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='no' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='no' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='VSO'">
+	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='VSO'">
 <xsl:text>
 rule {IBar option 2Neg - negative Aux initial, either word or affix, but no other aux required}
 I' = Aux VP
@@ -679,7 +679,7 @@ I' = Aux VP
 
 
 
-	<xsl:if test="//neg/@auxVerbRequired='yes' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='yes' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='yes' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='VSO'">
+	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='VSO'">
 <xsl:text>
 rule {IBar option 2NegAuxVerbRequired - negative Aux initial, either word or affix, but no other aux required}
 I' = Aux VP
@@ -721,7 +721,7 @@ I' = Aux VP
 
 
 
-	<xsl:if test="//neg/@auxVerbRequired='no' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='no' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='no' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VSO' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VSO' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VSO' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VSO'">
+	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO'">
 <xsl:text>
 rule {IBar option 2NegPlusAux - Aux_1 positive then negative Aux, initial}
 I' = Aux_1 Aux VP
@@ -836,7 +836,7 @@ I' = Aux_1 Aux VP
 
 
 
-	<xsl:if test="//neg/@auxVerbRequired='yes' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SVO' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VOS' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VSO' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VSO' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VSO' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='VSO'">
+	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO'">
 <xsl:text>
 rule {IBar option 2NegPlusAuxVerbRequired - Aux_1 positive then negative Aux, initial}
 I' = Aux_1 Aux VP
@@ -951,7 +951,7 @@ I' = Aux_1 Aux VP
 
 
 
-	<xsl:if test="//ip/@aux='yes' and //typology/@wordOrder='SOV' or //ip/@aux='yes' and //typology/@wordOrder='OSV' or //ip/@aux='yes' and //typology/@wordOrder='OVS'">
+	<xsl:if test="normalize-space(//ip/@aux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//ip/@aux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//ip/@aux)='yes' and normalize-space(//typology/@wordOrder)='OVS'">
 <xsl:text>
 rule {IBar option 3 - positive Aux final, required}
 I' = VP Aux
@@ -980,7 +980,7 @@ I' = VP Aux
 
 
 
-	<xsl:if test="//neg/@auxVerbRequired='no' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='no' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='no' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='OVS'">
+	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='OVS'">
 <xsl:text>
 rule {IBar option 3Neg - negative Aux final, either word or affix, but no other aux required}
 I' = VP Aux
@@ -1022,7 +1022,7 @@ I' = VP Aux
 
 
 
-	<xsl:if test="//neg/@auxVerbRequired='yes' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='yes' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='yes' and //ip/@negAux!='noVerb' and //ip/@negAuxRequiresAux='no' and //typology/@wordOrder='OVS'">
+	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)!='noVerb' and normalize-space(//ip/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='OVS'">
 <xsl:text>
 rule {IBar option 3NegAuxVerbRequired - negative Aux final, either word or affix, but no other aux required}
 I' = VP Aux
@@ -1064,7 +1064,7 @@ I' = VP Aux
 
 
 
-	<xsl:if test="//neg/@auxVerbRequired='no' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='no' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='no' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OVS' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OVS' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OVS' or //neg/@auxVerbRequired='no' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OVS'">
+	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS'">
 <xsl:text>
 rule {IBar option 3NegPlusAux - negative Aux then Aux_1 positive, final}
 I' = VP Aux Aux_1
@@ -1179,7 +1179,7 @@ I' = VP Aux Aux_1
 
 
 
-	<xsl:if test="//neg/@auxVerbRequired='yes' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='SOV' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OSV' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yes' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OVS' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAffix' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OVS' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesVerb' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OVS' or //neg/@auxVerbRequired='yes' and //ip/@negAux='yesAll' and //ip/@negAuxRequiresAux='yes' and //typology/@wordOrder='OVS'">
+	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yes' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAffix' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesVerb' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//ip/@negAux)='yesAll' and normalize-space(//ip/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS'">
 <xsl:text>
 rule {IBar option 3NegPlusAuxVerbRequired - negative Aux then Aux_1 positive, final}
 I' = VP Aux Aux_1

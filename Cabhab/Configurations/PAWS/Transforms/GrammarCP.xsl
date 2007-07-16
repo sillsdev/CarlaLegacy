@@ -11,7 +11,7 @@ CP = (InitConj) CP_1 Conj CP_2
 	&lt;CP_1 conjoined&gt; = -	|limit recursion
 	&lt;CP option&gt; = conj
 </xsl:text>
-	<xsl:if test="//q/@mainYN!='no' or //q/@mainCont!='no'">
+	<xsl:if test="normalize-space(//q/@mainYN)!='no' or normalize-space(//q/@mainCont)!='no'">
 <xsl:text>
 rule {CP option 1 - no fronting, root}
 CP = C'
@@ -28,7 +28,7 @@ CP = C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh!='yes'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)!='yes'">
 <xsl:text>
 rule {CP option 2a - DP specifier initial, wh, root}
 CP = DP C'
@@ -50,7 +50,7 @@ CP = DP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh!='yes'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)!='yes'">
 <xsl:text>
 rule {CP option 2b - PP specifier initial, wh, root}
 CP = PP C'
@@ -70,7 +70,7 @@ CP = PP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh!='yes'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)!='yes'">
 <xsl:text>
 rule {CP option 2c - AdvP specifier initial, wh, root}
 CP = AdvP C'
@@ -88,7 +88,7 @@ CP = AdvP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh='yes' or //q/@contFront='before' and //q/@mainContVSOBeforeWh='some'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='some'">
 <xsl:text>
 rule {CP option 2d - C, DP specifier initial, wh, root}
 CP = C DP C'
@@ -117,7 +117,7 @@ CP = C DP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh='yes' or //q/@contFront='before' and //q/@mainContVSOBeforeWh='some'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='some'">
 <xsl:text>
 rule {CP option 2e - C, PP specifier initial, wh, root}
 CP = C PP C'
@@ -144,7 +144,7 @@ CP = C PP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh='yes' or //q/@contFront='before' and //q/@mainContVSOBeforeWh='some'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='some'">
 <xsl:text>
 rule {CP option 2f - C, AdvP specifier initial, wh, root}
 CP = C AdvP C'
@@ -169,7 +169,7 @@ CP = C AdvP C'
 
 
 
-	<xsl:if test="//q/@mainYN!='no' or //q/@mainCont!='no' or //comp/@comp!='no' or //relcl/@type='CP' and //relcl/@compCP!='no' or //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='yes'">
+	<xsl:if test="normalize-space(//q/@mainYN)!='no' or normalize-space(//q/@mainCont)!='no' or normalize-space(//comp/@comp)!='no' or normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' or normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='yes'">
 <xsl:text>
 rule {CP option 3 - no fronting, non-root}
 CP = C'
@@ -197,7 +197,7 @@ CP = C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh!='yes'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)!='yes'">
 <xsl:text>
 rule {CP option 4a - DP specifier initial, wh, non-root}
 CP = DP C'
@@ -220,7 +220,7 @@ CP = DP C'
 
 
 
-	<xsl:if test="//relcl/@type='CP' and //relcl/@compCP!='yes'">
+	<xsl:if test="normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='yes'">
 <xsl:text>
 rule {CP option 4arel - DP specifier initial, wh, relative clause}
 CP = DP C'
@@ -243,7 +243,7 @@ CP = DP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh!='yes'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)!='yes'">
 <xsl:text>
 rule {CP option 4b - PP specifier initial, wh, non-root}
 CP = PP C'
@@ -263,7 +263,7 @@ CP = PP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh!='yes'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)!='yes'">
 <xsl:text>
 rule {CP option 4c - AdvP specifier initial, wh, non-root}
 CP = AdvP C'
@@ -281,7 +281,7 @@ CP = AdvP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh='yes' or //q/@contFront='before' and //q/@mainContVSOBeforeWh='some'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='some'">
 <xsl:text>
 rule {CP option 4d - C, DP specifier initial, wh, non-root}
 CP = C DP C'
@@ -310,7 +310,7 @@ CP = C DP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh='yes' or //q/@contFront='before' and //q/@mainContVSOBeforeWh='some'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='some'">
 <xsl:text>
 rule {CP option 4e - C, PP specifier initial, wh, non-root}
 CP = C PP C'
@@ -337,7 +337,7 @@ CP = C PP C'
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainContVSOBeforeWh='yes' or //q/@contFront='before' and //q/@mainContVSOBeforeWh='some'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainContVSOBeforeWh)='some'">
 <xsl:text>
 rule {CP option 4f - C, AdvP specifier initial, wh, non-root}
 CP = C AdvP C'
@@ -362,7 +362,7 @@ CP = C AdvP C'
 
 
 
-	<xsl:if test="//neg/@negFront='yes' or //neg/@negFront='optional'">
+	<xsl:if test="normalize-space(//neg/@negFront)='yes' or normalize-space(//neg/@negFront)='optional'">
 <xsl:text>
 rule {CP option Neg - DP or AdvP specifier initial, negative, fronted}
 CP = {DP / AdvP} IP
@@ -384,7 +384,7 @@ CP = {DP / AdvP} IP
 
 
 
-	<xsl:if test="//focus/@focus='yes' and //focus/@focusPos='before'">
+	<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusPos)='before'">
 <xsl:text>
 rule {CP option FocusInit - FocusP initial}
 CP = FocusP IP
@@ -402,7 +402,7 @@ CP = FocusP IP
 
 
 
-	<xsl:if test="//focus/@focus='yes' and //focus/@focusPos='before' and //ip/@proDrop!='no'">
+	<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusPos)='before' and normalize-space(//ip/@proDrop)!='no'">
 <xsl:text>
 rule {CP option FocusInitPro - FocusP initial, with pro-drop}
 CP = FocusP IP
@@ -424,7 +424,7 @@ CP = FocusP IP
 
 
 
-	<xsl:if test="//focus/@focus='yes' and //focus/@focusPos='after'">
+	<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusPos)='after'">
 <xsl:text>
 rule {CP option FocusFin - FocusP final}
 CP = IP FocusP
@@ -442,7 +442,7 @@ CP = IP FocusP
 
 
 
-	<xsl:if test="//focus/@focus='yes' and //focus/@focusPos='after' and //ip/@proDrop!='no'">
+	<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusPos)='after' and normalize-space(//ip/@proDrop)!='no'">
 <xsl:text>
 rule {CP option FocusFinPro - FocusP final, with pro-drop}
 CP =  IP FocusP
@@ -466,7 +466,7 @@ CP =  IP FocusP
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainCont='no' and //q/@mainContRequired='no'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainCont)='no' and normalize-space(//q/@mainContRequired)='no'">
 <xsl:text>
 rule {CBar option 1a - head vacuous, root, no aux fronting}
 C' = IP
@@ -484,7 +484,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@mainCont='noAux' and //q/@mainContAuxRequired='no'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@mainCont)='noAux' and normalize-space(//q/@mainContAuxRequired)='no'">
 <xsl:text>
 rule {CBar option 1b - head vacuous, root, with possible aux fronting}
 C' = IP
@@ -503,7 +503,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='before' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='either' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='eitherOrBoth' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='beforeOrBoth' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh!='yes' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='before' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='either' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='eitherOrBoth' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='beforeOrBoth'">
+	<xsl:if test="normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='before' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='either' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='eitherOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='beforeOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)!='yes' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='before' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='either' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='eitherOrBoth' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='beforeOrBoth'">
 <xsl:text>
 rule {CBar option 1c - head-initial, question, root}
 C' = C IP
@@ -581,7 +581,7 @@ C' = C IP
 
 
 
-	<xsl:if test="//q/@mainCont='noAux' and //q/@mainContAuxPos='before' or //q/@mainYN='noAux' and //q/@mainYNAuxPos='before'">
+	<xsl:if test="normalize-space(//q/@mainCont)='noAux' and normalize-space(//q/@mainContAuxPos)='before' or normalize-space(//q/@mainYN)='noAux' and normalize-space(//q/@mainYNAuxPos)='before'">
 <xsl:text>
 rule {CBar option 1d - Aux initial, question, root}
 C' = Aux IP
@@ -601,7 +601,7 @@ C' = Aux IP
 
 
 
-	<xsl:if test="//q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='after' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='either' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='eitherOrBoth' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='afterOrBoth' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh='noEnd' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='after' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='either' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='eitherOrBoth' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='afterOrBoth'">
+	<xsl:if test="normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='after' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='either' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='eitherOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='afterOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='noEnd' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='after' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='either' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='eitherOrBoth' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='afterOrBoth'">
 <xsl:text>
 rule {CBar option 1e - head-final, question, root}
 C' = IP C
@@ -679,7 +679,7 @@ C' = IP C
 
 
 
-	<xsl:if test="//q/@mainYN='noAux' and //q/@mainYNAuxPos='after' or //q/@mainCont='noAux' and //q/@mainContAuxPos='after'">
+	<xsl:if test="normalize-space(//q/@mainYN)='noAux' and normalize-space(//q/@mainYNAuxPos)='after' or normalize-space(//q/@mainCont)='noAux' and normalize-space(//q/@mainContAuxPos)='after'">
 <xsl:text>
 rule {CBar option 1f - Aux final, question, root}
 C' = IP Aux
@@ -699,7 +699,7 @@ C' = IP Aux
 
 
 
-	<xsl:if test="//q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='both' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='beforeOrBoth' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='eitherOrBoth' and //typology/@wordOrder!='VSO' or //q/@mainCont='yes' and //q/@mainContWord='yes' and //q/@mainContPos='afterOrBoth' and //typology/@wordOrder!='VSO' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='both' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='beforeOrBoth' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='eitherOrBoth' or //q/@mainYN='yes' and //q/@mainYNWord='yes' and //q/@mainYNPos='afterOrBoth'">
+	<xsl:if test="normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='both' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='beforeOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='eitherOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainContPos)='afterOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='both' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='beforeOrBoth' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='eitherOrBoth' or normalize-space(//q/@mainYN)='yes' and normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYNPos)='afterOrBoth'">
 <xsl:text>
 rule {CBar option 1g - head both sides, question, root}
 C' = C IP C_1
@@ -771,7 +771,7 @@ C' = C IP C_1
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@embCont='no' and //q/@embContRequired='no' or //relcl/@type='CP' and //relcl/@compCP!='yes' and //relcl/@whAndComp!='yes'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@embCont)='no' and normalize-space(//q/@embContRequired)='no' or normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='yes' and normalize-space(//relcl/@whAndComp)!='yes'">
 <xsl:text>
 rule {CBar option 2a - head vacuous, non-root, no aux fronting}
 C' = IP
@@ -794,7 +794,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@contFront='before' and //q/@embCont='noAux' and //q/@embContAuxRequired='no'">
+	<xsl:if test="normalize-space(//q/@contFront)='before' and normalize-space(//q/@embCont)='noAux' and normalize-space(//q/@embContAuxRequired)='no'">
 <xsl:text>
 rule {CBar option 2b - head vacuous, non-root, with possible aux fronting}
 C' = IP
@@ -813,7 +813,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='before' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='either' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='eitherOrBoth' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='beforeOrBoth' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh!='yes' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='before' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='either' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='eitherOrBoth' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='beforeOrBoth'">
+	<xsl:if test="normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='before' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='either' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='eitherOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='beforeOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)!='yes' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='before' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='either' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='eitherOrBoth' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='beforeOrBoth'">
 <xsl:text>
 rule {CBar option 2c - head-initial, question, non-root}
 C' = C IP
@@ -891,7 +891,7 @@ C' = C IP
 
 
 
-	<xsl:if test="//q/@embCont='noAux' and //q/@embContAuxPos='before' or //q/@embYN='noAux' and //q/@embYNAuxPos='before'">
+	<xsl:if test="normalize-space(//q/@embCont)='noAux' and normalize-space(//q/@embContAuxPos)='before' or normalize-space(//q/@embYN)='noAux' and normalize-space(//q/@embYNAuxPos)='before'">
 <xsl:text>
 rule {CBar option 2d - Aux initial, question, non-root}
 C' = Aux IP
@@ -911,7 +911,7 @@ C' = Aux IP
 
 
 
-	<xsl:if test="//q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='after' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='either' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='eitherOrBoth' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='afterOrBoth' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh='noEnd' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='after' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='either' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='eitherOrBoth' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='afterOrBoth'">
+	<xsl:if test="normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='after' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='either' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='eitherOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='afterOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='noEnd' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='after' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='either' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='eitherOrBoth' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='afterOrBoth'">
 <xsl:text>
 rule {CBar option 2e - head-final, question, non-root}
 C' = IP C
@@ -989,7 +989,7 @@ C' = IP C
 
 
 
-	<xsl:if test="//q/@embCont='noAux' and //q/@embContAuxPos='after' or //q/@embYN='noAux' and //q/@embYNAuxPos='after'">
+	<xsl:if test="normalize-space(//q/@embCont)='noAux' and normalize-space(//q/@embContAuxPos)='after' or normalize-space(//q/@embYN)='noAux' and normalize-space(//q/@embYNAuxPos)='after'">
 <xsl:text>
 rule {CBar option 2f - Aux final, question, non-root}
 C' = IP Aux
@@ -1009,7 +1009,7 @@ C' = IP Aux
 
 
 
-	<xsl:if test="//q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='both' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='beforeOrBoth' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='eitherOrBoth' and //typology/@wordOrder!='VSO' or //q/@embCont='yes' and //q/@embContWord='yes' and //q/@embContPos='afterOrBoth' and //typology/@wordOrder!='VSO' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='both' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='beforeOrBoth' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='eitherOrBoth' or //q/@embYN='yes' and //q/@embYNWord='yes' and //q/@embYNPos='afterOrBoth'">
+	<xsl:if test="normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='both' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='beforeOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='eitherOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embContPos)='afterOrBoth' and normalize-space(//typology/@wordOrder)!='VSO' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='both' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='beforeOrBoth' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='eitherOrBoth' or normalize-space(//q/@embYN)='yes' and normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYNPos)='afterOrBoth'">
 <xsl:text>
 rule {CBar option 2g - head both sides, question, non-root}
 C' = C IP C_1
@@ -1081,7 +1081,7 @@ C' = C IP C_1
 
 
 
-	<xsl:if test="//comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='before' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='beforeOrBoth' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='either' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='before' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='beforeOrBoth' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='either' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='eitherOrBoth'">
 <xsl:text>
 rule {CBar option 2j - head-initial, non-question, non-root}
 C' = C IP
@@ -1119,7 +1119,7 @@ C' = C IP
 
 
 
-	<xsl:if test="//comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='after' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='afterOrBoth' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='either' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='after' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='afterOrBoth' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='either' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='eitherOrBoth'">
 <xsl:text>
 rule {CBar option 2k - head-final, non-question, non-root}
 C' = IP C
@@ -1157,7 +1157,7 @@ C' = IP C
 
 
 
-	<xsl:if test="//comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='both' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='beforeOrBoth' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='afterOrBoth' or //comp/@comp='yes' and //comp/@compWord='yes' and //comp/@compPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='both' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='beforeOrBoth' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='afterOrBoth' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@compPos)='eitherOrBoth'">
 <xsl:text>
 rule {CBar option 2l - head both sides, non-question, non-root}
 C' = C IP C_1
@@ -1198,7 +1198,7 @@ C' = C IP C_1
 
 
 
-	<xsl:if test="//q/@mainYNWord='no' and //q/@mainYNCliticPos='before' or //q/@mainYNWord='no' and //q/@mainYNCliticPos='both'">
+	<xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/@mainYNCliticPos)='before' or normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/@mainYNCliticPos)='both'">
 <xsl:text>
 rule {C' option 3a - YNQ_prefix, IP complement, root}
 C' = IP
@@ -1220,7 +1220,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@mainYNWord='no' and //q/@mainYNCliticPos='after' or //q/@mainYNWord='no' and //q/@mainYNCliticPos='both'">
+	<xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/@mainYNCliticPos)='after' or normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/@mainYNCliticPos)='both'">
 <xsl:text>
 rule {CBar option 3b - YNQ_suffix, IP complement, root}
 C' = IP
@@ -1243,7 +1243,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@embYNWord='no' and //q/@embYNCliticPos='before' or //q/@embYNWord='no' and //q/@embYNCliticPos='both'">
+	<xsl:if test="normalize-space(//q/@embYNWord)='no' and normalize-space(//q/@embYNCliticPos)='before' or normalize-space(//q/@embYNWord)='no' and normalize-space(//q/@embYNCliticPos)='both'">
 <xsl:text>
 rule {CBar option 3c - YNQ_prefix, IP complement, non-root}
 C' = IP
@@ -1266,7 +1266,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@embYNWord='no' and //q/@embYNCliticPos='after' or //q/@embYNWord='no' and //q/@embYNCliticPos='both'">
+	<xsl:if test="normalize-space(//q/@embYNWord)='no' and normalize-space(//q/@embYNCliticPos)='after' or normalize-space(//q/@embYNWord)='no' and normalize-space(//q/@embYNCliticPos)='both'">
 <xsl:text>
 rule {CBar option 3d - YNQ_suffix, IP complement, non-root}
 C' = IP
@@ -1289,7 +1289,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@mainContWord='no' and //q/@mainContCliticPos='before' or //q/@mainContWord='no' and //q/@mainContCliticPos='both'">
+	<xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainContCliticPos)='before' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainContCliticPos)='both'">
 <xsl:text>
 rule {CBar option 4a - whQ_prefix, IP complement, root}
 C' = IP
@@ -1312,7 +1312,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@mainContWord='no' and //q/@mainContCliticPos='after' or //q/@mainContWord='no' and //q/@mainContCliticPos='both'">
+	<xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainContCliticPos)='after' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainContCliticPos)='both'">
 <xsl:text>
 rule {CBar option 4b - whQ_suffix, IP complement, root}
 C' = IP
@@ -1335,7 +1335,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@embContWord='no' and //q/@embContCliticPos='before' or //q/@embContWord='no' and //q/@embContCliticPos='both'">
+	<xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embContCliticPos)='before' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embContCliticPos)='both'">
 <xsl:text>
 rule {CBar option 4c - whQ_prefix, IP complement, non-root}
 C' = IP
@@ -1358,7 +1358,7 @@ C' = IP
 
 
 
-	<xsl:if test="//q/@embContWord='no' and //q/@embContCliticPos='after' or //q/@embContWord='no' and //q/@embContCliticPos='both'">
+	<xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embContCliticPos)='after' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embContCliticPos)='both'">
 <xsl:text>
 rule {CBar option 4d - whQ_suffix, IP complement, non-root}
 C' = IP
@@ -1381,7 +1381,7 @@ C' = IP
 
 
 
-	<xsl:if test="//comp/@comp='yes' and //comp/@compWord='no' and //comp/@compCliticPos='before' or //comp/@comp='yes' and //comp/@compWord='no' and //comp/@compCliticPos='both'">
+	<xsl:if test="normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@compCliticPos)='before' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@compCliticPos)='both'">
 <xsl:text>
 rule {CBar option 4e - comp_prefix, IP complement, non-root}
 C' = IP
@@ -1408,7 +1408,7 @@ C' = IP
 
 
 
-	<xsl:if test="//comp/@comp='yes' and //comp/@compWord='no' and //comp/@compCliticPos='after' or //comp/@comp='yes' and //comp/@compWord='no' and //comp/@compCliticPos='both'">
+	<xsl:if test="normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@compCliticPos)='after' or normalize-space(//comp/@comp)='yes' and normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@compCliticPos)='both'">
 <xsl:text>
 rule {CBar option 4f - comp_suffix, IP complement, non-root}
 C' = IP
@@ -1436,7 +1436,7 @@ C' = IP
 
 
 
-	<xsl:if test="//relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='before' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='beforeOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='either' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='eitherOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='before' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='beforeOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='either' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='before' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='beforeOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='either' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='eitherOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='before' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='beforeOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='either' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='eitherOrBoth'">
 <xsl:text>
 rule {CBar option 5a - head-initial, relative clause}
 C' = C IP
@@ -1538,7 +1538,7 @@ C' = C IP
 
 
 
-	<xsl:if test="//relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='after' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='afterOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='either' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='eitherOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='after' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='afterOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='either' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='after' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='afterOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='either' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='eitherOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='after' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='afterOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='either' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='eitherOrBoth'">
 <xsl:text>
 rule {CBar option 5b - head-final, relative clause}
 C' = IP C
@@ -1640,7 +1640,7 @@ C' = IP C
 
 
 
-	<xsl:if test="//relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='both' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='afterOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='beforeOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='eitherOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='both' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='afterOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='beforeOrBoth' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='yes' and //relcl/@relCompPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='both' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='afterOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='beforeOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='eitherOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='both' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='afterOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='beforeOrBoth' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='yes' and normalize-space(//relcl/@relCompPos)='eitherOrBoth'">
 <xsl:text>
 rule {CBar option 5c - head both sides, relative clause}
 C' = C IP C_1
@@ -1745,7 +1745,7 @@ C' = C IP C_1
 
 
 
-	<xsl:if test="//relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='no' and //relcl/@relCliticPos='before' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='no' and //relcl/@relCliticPos='both' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='no' and //relcl/@relCliticPos='before' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='no' and //relcl/@relCliticPos='both'">
+	<xsl:if test="normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@relCliticPos)='before' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@relCliticPos)='both' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@relCliticPos)='before' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@relCliticPos)='both'">
 <xsl:text>
 rule {CBar option 5d - relative_prefix, IP complement}
 C' = IP
@@ -1802,7 +1802,7 @@ C' = IP
 
 
 
-	<xsl:if test="//relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='no' and //relcl/@relCliticPos='after' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relWord='no' and //relcl/@relCliticPos='both' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='no' and //relcl/@relCliticPos='after' or //relcl/@exist='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no' and //relcl/@relWord='no' and //relcl/@relCliticPos='both'">
+	<xsl:if test="normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@relCliticPos)='after' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' and normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@relCliticPos)='both' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@relCliticPos)='after' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no' and normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@relCliticPos)='both'">
 <xsl:text>
 rule {CBar option 5e - relative_suffix, IP complement}
 C' = IP
@@ -1860,7 +1860,7 @@ C' = IP
 
 
 
-<xsl:if test="//focus/@topic='yes' and //focus/@topicMarker!='yesWord' or //focus/@topic='yes' and //focus/@topicMarker='yesWord' and //focus/@topicMarkerRequired='no'">
+<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)!='yesWord' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerRequired)='no'">
 <xsl:text>
 rule {TopicP option nomarker}
 TopicP = DP
@@ -1884,7 +1884,7 @@ TopicP = DP
 
 
 
-<xsl:if test="//focus/@topic='yes' and //focus/@topicMarker='yesWord' and //focus/@topicMarkerPos='before' or //focus/@topic='yes' and //focus/@topicMarker='yesWord' and //focus/@topicMarkerPos='either'">
+<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='before' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='either'">
 <xsl:text>
 rule {TopicP option markerinit}
 TopicP = TopicM DP
@@ -1911,7 +1911,7 @@ TopicP = TopicM DP
 
 
 
-<xsl:if test="//focus/@topic='yes' and //focus/@topicMarker='yesWord' and //focus/@topicMarkerPos='after' or //focus/@topic='yes' and //focus/@topicMarker='yesWord' and //focus/@topicMarkerPos='either'">
+<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='after' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='either'">
 <xsl:text>
 rule {TopicP option markerfin}
 TopicP = DP TopicM
@@ -1938,7 +1938,7 @@ TopicP = DP TopicM
 
 
 
-<xsl:if test="//focus/@topic='yes' and //focus/@topicMarker='yesWord' and //focus/@topicMarkerPos='both'">
+<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='both'">
 <xsl:text>
 rule {TopicP option markerboth}
 TopicP = TopicM_1 DP TopicM_2
@@ -1961,7 +1961,7 @@ TopicP = TopicM_1 DP TopicM_2
 
 
 
-<xsl:if test="//focus/@focus='yes' and //focus/@focusMarker!='yesWord' or //focus/@focus='yes' and //focus/@focusMarker='yesWord' and //focus/@focusMarkerRequired='no'">
+<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)!='yesWord' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerRequired)='no'">
 <xsl:text>
 rule {FocusP option nomarker}
 FocusP = DP
@@ -1985,7 +1985,7 @@ FocusP = DP
 
 
 
-<xsl:if test="//focus/@focus='yes' and //focus/@focusMarker='yesWord' and //focus/@focusMarkerPos='before' or //focus/@focus='yes' and //focus/@focusMarker='yesWord' and //focus/@focusMarkerPos='either'">
+<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='before' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='either'">
 <xsl:text>
 rule {FocusP option markerinit}
 FocusP = FocusM DP
@@ -2013,7 +2013,7 @@ FocusP = FocusM DP
 
 
 
-<xsl:if test="//focus/@focus='yes' and //focus/@focusMarker='yesWord' and //focus/@focusMarkerPos='after' or //focus/@focus='yes' and //focus/@focusMarker='yesWord' and //focus/@focusMarkerPos='either'">
+<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='after' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='either'">
 <xsl:text>
 rule {FocusP option markerfin}
 FocusP = DP FocusM
@@ -2041,7 +2041,7 @@ FocusP = DP FocusM
 
 
 
-<xsl:if test="//focus/@focus='yes' and //focus/@focusMarker='yesWord' and //focus/@focusMarkerPos='both'">
+<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='both'">
 <xsl:text>
 rule {FocusP option markerboth}
 FocusP = FocusM_1 DP FocusM_2

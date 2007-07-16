@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="np">
 
-	<xsl:if test="//np/@possNounCaseChange='no' or //np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='no'">
+	<xsl:if test="normalize-space(//np/@possNounCaseChange)='no' or normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='no'">
 <xsl:text>
 rule {NP option 0 - not possessed}
 NP = {N'' / N'}
@@ -20,7 +20,7 @@ NP = {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesSuffix' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesSuffix' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesSuffix' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesSuffix' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 0Asuf - not possessed, absolutive_suffix}
 NP = {N'' / N'}
@@ -49,7 +49,7 @@ NP = {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesPrefix' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesPrefix' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesPrefix' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesPrefix' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 0Apre - not possessed, absolutive_prefix}
 NP = {N'' / N'}
@@ -78,7 +78,7 @@ NP = {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesSuffix' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesSuffix' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesSuffix' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesSuffix' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 0Esuf - not possessed, ergative_suffix}
 NP = {N'' / N'}
@@ -107,7 +107,7 @@ NP = {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesPrefix' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesPrefix' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesPrefix' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesPrefix' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 0Epre - not possessed, ergative_prefix}
 NP = {N'' / N'}
@@ -136,7 +136,7 @@ NP = {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesSuffix' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesSuffix' and //np/@possCaseErg='genitive' and //np/@case='split' or //np/@adjpCaseAffix='yesSuffix' and //np/@case='nominative'">
+	<xsl:if test="normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesSuffix' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesSuffix' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='split' or normalize-space(//np/@adjpCaseAffix)='yesSuffix' and normalize-space(//np/@case)='nominative'">
 <xsl:text>
 rule {NP option 0Gsuf - not possessed, genitive_suffix}
 NP = {N'' / N'}
@@ -169,7 +169,7 @@ NP = {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesPrefix' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possNounCaseChange='yes' and //np/@adjpCaseAffix='yesPrefix' and //np/@possCaseErg='genitive' and //np/@case='split' or //np/@adjpCaseAffix='yesPrefix' and //np/@case='nominative'">
+	<xsl:if test="normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesPrefix' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possNounCaseChange)='yes' and normalize-space(//np/@adjpCaseAffix)='yesPrefix' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='split' or normalize-space(//np/@adjpCaseAffix)='yesPrefix' and normalize-space(//np/@case)='nominative'">
 <xsl:text>
 rule {NP option 0Gpre - not possessed, genitive_prefix}
 NP = {N'' / N'}
@@ -203,7 +203,7 @@ NP = {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possAgr='yes'">
+	<xsl:if test="normalize-space(//np/@possAgr)='yes'">
 <xsl:text>
 rule {NP option 0p - possessed with person affix, pro-drop}
 NP = {N'' / N'}
@@ -218,7 +218,7 @@ NP = {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked!='yesClitic' and //np/@possNounPos='before' and //np/@case!='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='before' and //np/@possCaseErg='genitive' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='genitive'">
+	<xsl:if test="normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive'">
 <xsl:text>
 rule {NP option 1a - no marker, possessor initial}
 NP = {DP / Pron} {N'' / N'}
@@ -260,7 +260,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked!='yesClitic' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 1aErg - no marker, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
@@ -310,7 +310,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked!='yesClitic' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 1aAbs - no marker, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
@@ -360,7 +360,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked!='yesClitic' and //np/@possNounPos='after' and //np/@case!='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='after' and //np/@possCaseErg='genitive' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='genitive'">
+	<xsl:if test="normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive'">
 <xsl:text>
 rule {NP option 1b - no marker, possessor final}
 NP = {N'' / N'} {DP / Pron}
@@ -402,7 +402,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked!='yesClitic' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 1bErg - no marker, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
@@ -452,7 +452,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked!='yesClitic' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked!='yesClitic' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked!='yesClitic' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)!='yesClitic' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 1bAbs - no marker, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
@@ -502,7 +502,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 2a - optional marker before, possessor initial}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
@@ -573,7 +573,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 2aErg - optional marker before, possessor initial, ergative}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
@@ -648,7 +648,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 2aAbs - optional marker before, possessor initial, absolutive}
 NP = {{(Poss) DP} / Pron} {N'' / N'}
@@ -723,7 +723,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 2b - optional marker before, possessor final}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
@@ -794,7 +794,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 2bErg - optional marker before, possessor final, ergative}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
@@ -869,7 +869,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 2bAbs - optional marker before, possessor final, absolutive}
 NP = {N'' / N'} {{(Poss) DP} / Pron}
@@ -944,7 +944,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 3a - optional marker after, possessor initial}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
@@ -1015,7 +1015,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 3aErg - optional marker after, possessor initial, ergative}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
@@ -1090,7 +1090,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 3aAbs - optional marker after, possessor initial, absolutive}
 NP = {{DP (Poss)} / Pron} {N'' / N'}
@@ -1165,7 +1165,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 3b - optional marker after, possessor final}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
@@ -1236,7 +1236,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 3bErg - optional marker after, possessor final, ergative}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
@@ -1311,7 +1311,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='no' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='no' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 3bAbs - optional marker after, possessor final, absolutive}
 NP = {N'' / N'} {{DP (Poss)} / Pron}
@@ -1386,7 +1386,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 4a - required marker before, possessor initial}
 NP = {{Poss DP} / Pron} {N'' / N'}
@@ -1456,7 +1456,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 4aErg - required marker before, possessor initial, ergative}
 NP = {{Poss DP} / Pron} {N'' / N'}
@@ -1530,7 +1530,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 4aAbs - required marker before, possessor initial, absolutive}
 NP = {{Poss DP} / Pron} {N'' / N'}
@@ -1604,7 +1604,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 4b - required marker before, possessor final}
 NP = {N'' / N'} {{Poss DP} / Pron}
@@ -1674,7 +1674,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 4bErg - required marker before, possessor final, ergative}
 NP = {N'' / N'} {{Poss DP} / Pron}
@@ -1748,7 +1748,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='before' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='before' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 4bAbs - required marker before, possessor final, absolutive}
 NP = {N'' / N'} {{Poss DP} / Pron}
@@ -1822,7 +1822,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 5a - required marker after, possessor initial}
 NP = {{DP Poss} / Pron} {N'' / N'}
@@ -1892,7 +1892,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 5aErg - required marker after, possessor initial, ergative}
 NP = {{DP Poss} / Pron} {N'' / N'}
@@ -1966,7 +1966,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 5aAbs - required marker after, possessor initial, absolutive}
 NP = {{DP Poss} / Pron} {N'' / N'}
@@ -2040,7 +2040,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 5b - required marker after, possessor final}
 NP = {N'' / N'} {{DP Poss} / Pron}
@@ -2110,7 +2110,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 5bErg - required marker after, possessor final, ergative}
 NP = {N'' / N'} {{DP Poss} / Pron}
@@ -2184,7 +2184,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='yes' and //np/@possCliticRequired='yes' and //np/@possCliticPossPos='after' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possCliticRequired)='yes' and normalize-space(//np/@possCliticPossPos)='after' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 5bAbs - required marker after, possessor final, absolutive}
 NP = {N'' / N'} {{DP Poss} / Pron}
@@ -2258,7 +2258,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='before' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='before' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 6ap - poss_prefix, possessor initial}
 NP = {DP / Pron} {N'' / N'}
@@ -2321,7 +2321,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 6apErg - poss_prefix, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
@@ -2388,7 +2388,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 6apAbs - poss_prefix, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
@@ -2455,7 +2455,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='before' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='before' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 6as - poss_suffix, possessor initial}
 NP = {DP / Pron} {N'' / N'}
@@ -2518,7 +2518,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='before' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 6asErg - poss_suffix, possessor initial, ergative}
 NP = {DP / Pron} {N'' / N'}
@@ -2585,7 +2585,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='before' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 6asAbs - poss_suffix, possessor initial, absolutive}
 NP = {DP / Pron} {N'' / N'}
@@ -2652,7 +2652,7 @@ NP = {DP / Pron} {N'' / N'}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='after' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='after' and //np/@possCaseErg='genitive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 6bp - poss_prefix, possessor final}
 NP = {N'' / N'} {DP / Pron}
@@ -2715,7 +2715,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 6bpErg - poss_prefix, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
@@ -2782,7 +2782,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='prefix' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='prefix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 6bpAbs - poss_prefix, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
@@ -2849,7 +2849,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='after' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@case!='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='after' and //np/@case='ergative' and //np/@possCaseErg='genitive' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='genitive' and //np/@case='ergative'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@case)!='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@case)='ergative' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@case)='ergative'">
 <xsl:text>
 rule {NP option 6bs - poss_suffix, possessor final}
 NP = {N'' / N'} {DP / Pron}
@@ -2912,7 +2912,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='after' and //np/@possCaseErg='ergative' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='ergative' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 6bsErg - poss_suffix, possessor final, ergative}
 NP = {N'' / N'} {DP / Pron}
@@ -2979,7 +2979,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='after' and //np/@possCaseErg='absolutive' and //np/@case='split' or //np/@possMarked='yesClitic' and //np/@possCliticWord='no' and //np/@possCliticAffix='suffix' and //np/@possNounPos='either' and //np/@possCaseErg='absolutive' and //np/@case='split'">
+	<xsl:if test="normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='ergative' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split' or normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possCliticAffix)='suffix' and normalize-space(//np/@possNounPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@case)='split'">
 <xsl:text>
 rule {NP option 6bsAbs - poss_suffix, possessor final, absolutive}
 NP = {N'' / N'} {DP / Pron}
@@ -3047,7 +3047,7 @@ NP = {N'' / N'} {DP / Pron}
 
 
 
-	<xsl:if test="//pron/@pronounCat='NP' and //pron/@partitivePos='after'">
+	<xsl:if test="normalize-space(//pron/@pronounCat)='NP' and normalize-space(//pron/@partitivePos)='after'">
 <xsl:text>
 rule {NP option 7a - pronoun,dem,quantifiers w/ optional partitive PP after}
 NP = {Pron / Dem / Q / Num / Deg} (PP)
@@ -3075,7 +3075,7 @@ NP = {Pron / Dem / Q / Num / Deg} (PP)
 
 
 
-	<xsl:if test="//pron/@pronounCat='NP' and //pron/@partitivePos='before'">
+	<xsl:if test="normalize-space(//pron/@pronounCat)='NP' and normalize-space(//pron/@partitivePos)='before'">
 <xsl:text>
 rule {NP option 7b - pronoun,dem,quantifiers w/ optional partitive PP before}
 NP = (PP) {Pron / Dem / Q / Num / Deg}
@@ -3104,7 +3104,7 @@ NP = (PP) {Pron / Dem / Q / Num / Deg}
 
 
 
-	<xsl:if test="//np/@qpPos='before' or //np/@qpPos='either' or //np/@qpPos='eitherOrBoth' or //np/@qpPos='beforeOrBoth'">
+	<xsl:if test="normalize-space(//np/@qpPos)='before' or normalize-space(//np/@qpPos)='either' or normalize-space(//np/@qpPos)='eitherOrBoth' or normalize-space(//np/@qpPos)='beforeOrBoth'">
 <xsl:text>
 rule {NBarBar option 1 - QPs initial}
 N'' = QP N'
@@ -3125,7 +3125,7 @@ N'' = QP N'
 
 
 
-	<xsl:if test="//np/@qpPos='after' or //np/@qpPos='either' or //np/@qpPos='eitherOrBoth' or //np/@qpPos='afterOrBoth'">
+	<xsl:if test="normalize-space(//np/@qpPos)='after' or normalize-space(//np/@qpPos)='either' or normalize-space(//np/@qpPos)='eitherOrBoth' or normalize-space(//np/@qpPos)='afterOrBoth'">
 <xsl:text>
 rule {NBarBar option 2 - QPs final}
 N'' = N' QP
@@ -3146,7 +3146,7 @@ N'' = N' QP
 
 
 
-	<xsl:if test="//q/@whDegQPos='before' and //np/@qpPos='both' or //q/@whDegQPos='before' and //np/@qpPos='afterOrBoth' or //q/@whDegQPos='before' and //np/@qpPos='eitherOrBoth' or //q/@whDegQPos='before' and //np/@qpPos='beforeOrBoth'">
+	<xsl:if test="normalize-space(//q/@whDegQPos)='before' and normalize-space(//np/@qpPos)='both' or normalize-space(//q/@whDegQPos)='before' and normalize-space(//np/@qpPos)='afterOrBoth' or normalize-space(//q/@whDegQPos)='before' and normalize-space(//np/@qpPos)='eitherOrBoth' or normalize-space(//q/@whDegQPos)='before' and normalize-space(//np/@qpPos)='beforeOrBoth'">
 <xsl:text>
 rule {NBarBar option 3whI - QPs both sides, wh initial}
 N'' = QP_1 N' QP_2
@@ -3178,7 +3178,7 @@ N'' = QP_1 N' QP_2
 
 
 
-	<xsl:if test="//q/@whDegQPos='after' and //np/@qpPos='both' or //q/@whDegQPos='after' and //np/@qpPos='afterOrBoth' or //q/@whDegQPos='after' and //np/@qpPos='eitherOrBoth' or //q/@whDegQPos='after' and //np/@qpPos='beforeOrBoth'">
+	<xsl:if test="normalize-space(//q/@whDegQPos)='after' and normalize-space(//np/@qpPos)='both' or normalize-space(//q/@whDegQPos)='after' and normalize-space(//np/@qpPos)='afterOrBoth' or normalize-space(//q/@whDegQPos)='after' and normalize-space(//np/@qpPos)='eitherOrBoth' or normalize-space(//q/@whDegQPos)='after' and normalize-space(//np/@qpPos)='beforeOrBoth'">
 <xsl:text>
 rule {NBarBar option 3whF - QPs both sides, wh final}
 N'' = QP_1 N' QP_2
@@ -3210,7 +3210,7 @@ N'' = QP_1 N' QP_2
 
 
 
-	<xsl:if test="//q/@whDegQPos='agree' and //np/@qpPos='both' or //q/@whDegQPos='agree' and //np/@qpPos='afterOrBoth' or //q/@whDegQPos='agree' and //np/@qpPos='eitherOrBoth' or //q/@whDegQPos='agree' and //np/@qpPos='beforeOrBoth'">
+	<xsl:if test="normalize-space(//q/@whDegQPos)='agree' and normalize-space(//np/@qpPos)='both' or normalize-space(//q/@whDegQPos)='agree' and normalize-space(//np/@qpPos)='afterOrBoth' or normalize-space(//q/@whDegQPos)='agree' and normalize-space(//np/@qpPos)='eitherOrBoth' or normalize-space(//q/@whDegQPos)='agree' and normalize-space(//np/@qpPos)='beforeOrBoth'">
 <xsl:text>
 rule {NBarBar option 3whagr - QPs both sides, wh agree}
 N'' = QP_1 N' QP_2
@@ -3243,7 +3243,7 @@ N'' = QP_1 N' QP_2
 
 
 
-	<xsl:if test="//np/@adjpPos='before' or //np/@adjpPos='either'">
+	<xsl:if test="normalize-space(//np/@adjpPos)='before' or normalize-space(//np/@adjpPos)='either'">
 <xsl:text>
 rule {NBar option 1a - AdjP initial, recursive}
 N'_1 = AdjP N'_2
@@ -3263,7 +3263,7 @@ N'_1 = AdjP N'_2
 
 
 
-	<xsl:if test="//np/@adjpPos='after' or //np/@adjpPos='either'">
+	<xsl:if test="normalize-space(//np/@adjpPos)='after' or normalize-space(//np/@adjpPos)='either'">
 <xsl:text>
 rule {NBar option 1b - AdjP final, recursive}
 N'_1 = N'_2 AdjP
@@ -3297,7 +3297,7 @@ N'_1 = N'_2 VP
 	&lt;VP head type participle&gt; = +
 	&lt;N' option&gt; = 1bPart
 </xsl:text>
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left'">
 <xsl:text>
 rule {NBar option 2a - left-most noun head}
 N' = N_1 (N_2 (N_3))
@@ -3312,7 +3312,7 @@ N' = N_1 (N_2 (N_3))
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@case='nominative' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='nominative' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@case='none' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='none'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='none' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none'">
 <xsl:text>
 rule {NBar option 2b - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
@@ -3376,7 +3376,7 @@ N' = PP N_1 (N_2 (N_3))
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@case='nominative' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='nominative' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@case='none' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='none'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='none' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none'">
 <xsl:text>
 rule {NBar option 2bgen - left-most noun head, genitive PP initial}
 N' = PP N_1 (N_2 (N_3))
@@ -3441,7 +3441,7 @@ N' = PP N_1 (N_2 (N_3))
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:text>
 rule {NBar option 2bnoterg - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
@@ -3473,7 +3473,7 @@ N' = PP N_1 (N_2 (N_3))
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:text>
 rule {NBar option 2berg - left-most noun head, ergative PP initial}
 N' = PP N_1 (N_2 (N_3))
@@ -3506,7 +3506,7 @@ N' = PP N_1 (N_2 (N_3))
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:text>
 rule {NBar option 2bnotabs - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
@@ -3538,7 +3538,7 @@ N' = PP N_1 (N_2 (N_3))
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:text>
 rule {NBar option 2babs - left-most noun head, absolutive PP initial}
 N' = PP N_1 (N_2 (N_3))
@@ -3571,7 +3571,7 @@ N' = PP N_1 (N_2 (N_3))
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='nominative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='none' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='none' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 2c - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -3719,7 +3719,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 2cs - left-most noun head, poss_suffix, PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -3805,7 +3805,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='nominative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='none' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='none' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 2cgen - left-most noun head, genitive PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -3954,7 +3954,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 2cgens - left-most noun head, poss_suffix, genitive PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4017,7 +4017,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 2cnoterg - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4077,7 +4077,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 2cnotergs - left-most noun head, poss_suffix, PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4115,7 +4115,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 2cerg - left-most noun head, ergative PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4176,7 +4176,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 2cergs - left-most noun head, poss_suffix, ergative PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4215,7 +4215,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 2cnotabs - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4275,7 +4275,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 2cnotabss - left-most noun head, poss_suffix, PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4313,7 +4313,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 2cabs - left-most noun head, absolutive PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4374,7 +4374,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='left' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 2cabss - left-most noun head, poss_suffix, absolutive PP final}
 N' = N_1 (N_2 (N_3)) PP
@@ -4413,7 +4413,7 @@ N' = N_1 (N_2 (N_3)) PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right'">
 <xsl:text>
 rule {NBar option 3a - right-most noun head}
 N' = ((N_3) N_2) N_1
@@ -4428,7 +4428,7 @@ N' = ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='nominative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='none' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='none' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 3b - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -4576,7 +4576,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='none' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 3bp - right-most noun head, poss_prefix, PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -4662,7 +4662,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='nominative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 3bgen - right-most noun head, genitive PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -4767,7 +4767,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='nominative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 3bgenp - right-most noun head, poss_prefix, genitive PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -4830,7 +4830,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 3bnoterg - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -4890,7 +4890,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 3bnotergp - right-most noun head, poss_prefix, PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -4928,7 +4928,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 3berg - right-most noun head, ergative PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -4989,7 +4989,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 3bergp - right-most noun head, poss_prefix, ergative PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -5028,7 +5028,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 3bnotabs - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -5088,7 +5088,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 3bnotabsp - right-most noun head, poss_prefix, PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -5126,7 +5126,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked!='yesAffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='suffix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)!='yesAffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='suffix'">
 <xsl:text>
 rule {NBar option 3babs - right-most noun head, absolutive PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -5187,7 +5187,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive' and //np/@possMarked='yesAffix' and //np/@possCliticAffix='prefix'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//np/@possMarked)='yesAffix' and normalize-space(//np/@possCliticAffix)='prefix'">
 <xsl:text>
 rule {NBar option 3babsp - right-most noun head, poss_prefix, absolutive PP initial}
 N' = PP ((N_3) N_2) N_1
@@ -5226,7 +5226,7 @@ N' = PP ((N_3) N_2) N_1
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@case='nominative' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='nominative' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@case='none' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='none'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='none' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none'">
 <xsl:text>
 rule {NBar option 3c - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
@@ -5290,7 +5290,7 @@ N' = ((N_3) N_2) N_1 PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@case='nominative' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@case='nominative'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative'">
 <xsl:text>
 rule {NBar option 3cgen - right-most noun head, genitive PP final}
 N' = ((N_3) N_2) N_1 PP
@@ -5339,7 +5339,7 @@ N' = ((N_3) N_2) N_1 PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:text>
 rule {NBar option 3cnoterg - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
@@ -5371,7 +5371,7 @@ N' = ((N_3) N_2) N_1 PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:text>
 rule {NBar option 3cerg - right-most noun head, ergative PP final}
 N' = ((N_3) N_2) N_1 PP
@@ -5404,7 +5404,7 @@ N' = ((N_3) N_2) N_1 PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:text>
 rule {NBar option 3cnotabs - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
@@ -5436,7 +5436,7 @@ N' = ((N_3) N_2) N_1 PP
 
 
 
-	<xsl:if test="//np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' or //np/@comp='yes' and //np/@compHead='right' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive'">
+	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='right' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:text>
 rule {NBar option 3cabs - right-most noun head, absolutive PP final}
 N' = ((N_3) N_2) N_1 PP
@@ -5470,7 +5470,7 @@ N' = ((N_3) N_2) N_1 PP
 
 
 
-	<xsl:if test="//np/@comp='no'">
+	<xsl:if test="normalize-space(//np/@comp)='no'">
 <xsl:text>
 rule {NBar option 4a - no compounds}
 N' = N
@@ -5481,7 +5481,7 @@ N' = N
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' or //np/@comp='no' and //np/@compHeadPPPos='before' and //np/@case='nominative' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@case='nominative' or //np/@comp='no' and //np/@compHeadPPPos='before' and //np/@case='none' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@case='none'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='none' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none'">
 <xsl:text>
 rule {NBar option 4b - no compounds, PP initial}
 N' = PP N
@@ -5531,7 +5531,7 @@ N' = PP N
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='before' and //np/@possCaseErg='genitive' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' or //np/@comp='no' and //np/@compHeadPPPos='before' and //np/@case='nominative' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@case='nominative'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative'">
 <xsl:text>
 rule {NBar option 4bgen - no compounds, genitive PP initial}
 N' = PP N
@@ -5570,7 +5570,7 @@ N' = PP N
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:text>
 rule {NBar option 4bnoterg - no compounds, PP initial}
 N' = PP N
@@ -5596,7 +5596,7 @@ N' = PP N
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='before' and //np/@possCaseErg='ergative' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:text>
 rule {NBar option 4berg - no compounds, ergative PP initial}
 N' = PP N
@@ -5623,7 +5623,7 @@ N' = PP N
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:text>
 rule {NBar option 4bnotabs - no compounds, PP initial}
 N' = PP N
@@ -5649,7 +5649,7 @@ N' = PP N
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='before' and //np/@possCaseErg='absolutive' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='before' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:text>
 rule {NBar option 4babs - no compounds, absolutive PP initial}
 N' = PP N
@@ -5676,7 +5676,7 @@ N' = PP N
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' or //np/@comp='no' and //np/@compHeadPPPos='after' and //np/@case='nominative' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@case='nominative' or //np/@comp='no' and //np/@compHeadPPPos='after' and //np/@case='none' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@case='none'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='none' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='none'">
 <xsl:text>
 rule {NBar option 4e - no compounds, PP final}
 N' = N PP
@@ -5726,7 +5726,7 @@ N' = N PP
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='after' and //np/@possCaseErg='genitive' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='genitive' or //np/@comp='no' and //np/@compHeadPPPos='after' and //np/@case='nominative' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@case='nominative'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@case)='nominative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@case)='nominative'">
 <xsl:text>
 rule {NBar option 4egen - no compounds, genitive PP final}
 N' = N PP
@@ -5765,7 +5765,7 @@ N' = N PP
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:text>
 rule {NBar option 4enoterg - no compounds, PP final}
 N' = N PP
@@ -5791,7 +5791,7 @@ N' = N PP
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='after' and //np/@possCaseErg='ergative' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='ergative'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:text>
 rule {NBar option 4eerg - no compounds, ergative PP final}
 N' = N PP
@@ -5818,7 +5818,7 @@ N' = N PP
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:text>
 rule {NBar option 4enotabs - no compounds, PP final}
 N' = N PP
@@ -5844,7 +5844,7 @@ N' = N PP
 
 
 
-	<xsl:if test="//np/@comp='no' and //np/@compHeadPPPos='after' and //np/@possCaseErg='absolutive' or //np/@comp='no' and //np/@compHeadPPPos='either' and //np/@possCaseErg='absolutive'">
+	<xsl:if test="normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='after' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//np/@comp)='no' and normalize-space(//np/@compHeadPPPos)='either' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:text>
 rule {NBar option 4eabs - no compounds, absolutive PP final}
 N' = N PP
@@ -5871,7 +5871,7 @@ N' = N PP
 
 
 
-	<xsl:if test="//pron/@pronounCat='N' and //pron/@partitive='after'">
+	<xsl:if test="normalize-space(//pron/@pronounCat)='N' and normalize-space(//pron/@partitive)='after'">
 <xsl:text>
 rule {NBar option 5a - pronoun,dem,quantifiers w/o head noun (optional PP after)}
 N' = {Pron / Dem / Q / Num / Deg} (PP)
@@ -5899,7 +5899,7 @@ N' = {Pron / Dem / Q / Num / Deg} (PP)
 
 
 
-	<xsl:if test="//pron/@pronounCat='N' and //pron/@partitive='before'">
+	<xsl:if test="normalize-space(//pron/@pronounCat)='N' and normalize-space(//pron/@partitive)='before'">
 <xsl:text>
 rule {NBar option 5b - pronoun,dem,quantifiers w/o head noun (optional PP before)}
 N' = (PP) {Pron / Dem / Q / Num / Deg}

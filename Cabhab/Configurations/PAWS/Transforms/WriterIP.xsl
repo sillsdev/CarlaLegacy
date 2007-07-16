@@ -30,7 +30,7 @@
 </xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//typology/@wordOrder='VSO' or //typology/@wordOrder='OSV'">
+<xsl:if test="normalize-space(////typology/@wordOrder)='VSO' or normalize-space(////typology/@wordOrder)='OSV'">
 				<xsl:text>  The order with any auxiliaries present will be discussed in section </xsl:text>
 				<sectionRef sec="sIPAux" />
 				<xsl:text>.</xsl:text>
@@ -56,7 +56,7 @@
 						<th>Type of feature</th>
 						<th>Feature</th>
 					</tr>
-					<xsl:if test="//ip/ipInflFeatPresent/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatPresent/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>tense</xsl:text>
@@ -66,7 +66,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatPast/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatPast/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>tense</xsl:text>
@@ -76,7 +76,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatFuture/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatFuture/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>tense</xsl:text>
@@ -86,7 +86,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatCompletive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -96,7 +96,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatContinuative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatContinuative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -106,7 +106,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeattHabitual/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeattHabitual/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -116,7 +116,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatImperfective/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatImperfective/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -126,7 +126,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatIncompletive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatIncompletive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -136,7 +136,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatPerfective/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatPerfective/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -146,7 +146,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatPotential/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatPotential/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -156,7 +156,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatProgressive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatProgressive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -166,7 +166,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatStative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>aspect</xsl:text>
@@ -176,7 +176,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatDeclarative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatDeclarative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>mood</xsl:text>
@@ -186,7 +186,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatImperative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatImperative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>mood</xsl:text>
@@ -196,7 +196,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatInterrogative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatInterrogative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>mood</xsl:text>
@@ -206,7 +206,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatIrrealis/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatIrrealis/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>mood</xsl:text>
@@ -216,7 +216,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatRealis/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatRealis/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>mood</xsl:text>
@@ -226,7 +226,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatPassive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatPassive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>other</xsl:text>
@@ -236,7 +236,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatParticiple/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatParticiple/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>other</xsl:text>
@@ -246,7 +246,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatFinite/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatFinite/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>other</xsl:text>
@@ -256,7 +256,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipInflFeatMinusFinite/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipInflFeatMinusFinite/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>other</xsl:text>
@@ -285,7 +285,7 @@
 						<th>Type of feature</th>
 						<th>Feature</th>
 					</tr>
-					<xsl:if test="//ip/ipAgrFeatFirstSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -295,7 +295,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -305,7 +305,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -315,7 +315,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -325,7 +325,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstExclusiveSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstExclusiveSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -335,7 +335,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstExclusiveObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstExclusiveObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -345,7 +345,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstExclusiveErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstExclusiveErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -355,7 +355,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstExclusiveAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstExclusiveAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -365,7 +365,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstInclusiveSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstInclusiveSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -375,7 +375,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstInclusiveObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstInclusiveObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -385,7 +385,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstInclusiveErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstInclusiveErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -395,7 +395,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFirstInclusiveAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFirstInclusiveAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -405,7 +405,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatSecondSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatSecondSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -415,7 +415,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatSecondObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatSecondObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -425,7 +425,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatSecondErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatSecondErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -435,7 +435,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatSecondAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatSecondAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -445,7 +445,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatThirdSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatThirdSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -455,7 +455,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatThirdObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatThirdObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -465,7 +465,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatThirdErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatThirdErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -475,7 +475,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatThirdAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatThirdAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -485,7 +485,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatSingularSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatSingularSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -495,7 +495,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatSingularObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatSingularObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -505,7 +505,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatSingularErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatSingularErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -515,7 +515,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatSingularAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatSingularAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -525,7 +525,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatDualSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatDualSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -535,7 +535,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatDualObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatDualObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -545,7 +545,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatDualErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatDualErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -555,7 +555,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatDualAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatDualAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -565,7 +565,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatPluralSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatPluralSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -575,7 +575,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatPluralObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatPluralObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -585,7 +585,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatPluralErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatPluralErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -595,7 +595,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatPluralAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatPluralAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -605,7 +605,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMasculineSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMasculineSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -615,7 +615,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMasculineObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMasculineObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -625,7 +625,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMasculineErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMasculineErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -635,7 +635,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMasculineAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMasculineAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -645,7 +645,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFeminineSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFeminineSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -655,7 +655,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFeminineObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFeminineObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -665,7 +665,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFeminineErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFeminineErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -675,7 +675,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatFeminineAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatFeminineAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -685,7 +685,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatNeuterSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatNeuterSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -695,7 +695,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatNeuterObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatNeuterObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -705,7 +705,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatNeuterErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatNeuterErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -715,7 +715,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatNeuterAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatNeuterAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -725,7 +725,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatAnimateSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatAnimateSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -735,7 +735,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatAnimateObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatAnimateObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -745,7 +745,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatAnimateErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatAnimateErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -755,7 +755,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatAnimateAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatAnimateAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -765,7 +765,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMinusAnimateSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMinusAnimateSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -775,7 +775,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMinusAnimateObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMinusAnimateObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -785,7 +785,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMinusAnimateErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMinusAnimateErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -795,7 +795,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMinusAnimateAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMinusAnimateAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -805,7 +805,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatHumanSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatHumanSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -815,7 +815,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatHumanObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatHumanObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -825,7 +825,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatHumanErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatHumanErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -835,7 +835,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatHumanAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatHumanAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -845,7 +845,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMinusHumanSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMinusHumanSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -855,7 +855,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMinusHumanObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMinusHumanObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -865,7 +865,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMinusHumanErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMinusHumanErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -875,7 +875,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatMinusHumanAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatMinusHumanAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -885,7 +885,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatClassClassNumberSubject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatClassClassNumberSubject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>class</xsl:text>
@@ -895,7 +895,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatClassClassNumberObject/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatClassClassNumberObject/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>class</xsl:text>
@@ -905,7 +905,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatClassClassNumberErgative/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatClassClassNumberErgative/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>class</xsl:text>
@@ -915,7 +915,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/ipAgrFeatClassClassNumberAbsolutive/@checked='yes'">
+					<xsl:if test="normalize-space(////ip/ipAgrFeatClassClassNumberAbsolutive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>class</xsl:text>
@@ -968,7 +968,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@proDrop='yes'">
+<xsl:if test="normalize-space(////ip/@proDrop)='yes'">
 					<xsl:text>  Pro-drop of the object is </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@proDropObject='no'">
@@ -981,20 +981,20 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:text> allowed.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@proDrop='noImp'">
+<xsl:if test="normalize-space(////ip/@proDrop)='noImp'">
 					<xsl:text>  Examples showing a missing subject in imperatives include:</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@proDrop='yes'">
+<xsl:if test="normalize-space(////ip/@proDrop)='yes'">
 					<xsl:text>  Examples with pro-drop include:</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@proDrop='yesClitic'">
+<xsl:if test="normalize-space(////ip/@proDrop)='yesClitic'">
 					<xsl:text>  Examples that look like pro-drop include:</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="//ip/@proDrop!='no'">
+			<xsl:if test="normalize-space(////ip/@proDrop)!='no'">
 <example num="xIP.IPProDrop.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/proDropExample" />
@@ -1067,12 +1067,12 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 				</xsl:choose>
 <xsl:text> auxiliaries which are written as separate words.  </xsl:text>
-<xsl:if test="//ip/@aux='yes'">
+<xsl:if test="normalize-space(////ip/@aux)='yes'">
 					<xsl:text>Examples including auxiliaries that are like the English auxiliaries are:</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="//ip/@aux='yes'">
+			<xsl:if test="normalize-space(////ip/@aux)='yes'">
 <example num="xIP.IPAux.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxExample" />
@@ -1191,7 +1191,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@negAux='yesOnly' or //ip/@negAux='yesAffix' or //ip/@negAux='yesVerb' or //ip/@negAux='yesAll'">
+<xsl:if test="normalize-space(////ip/@negAux)='yesOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='yesAll'">
 					<xsl:text> The negative auxiliary </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@negAuxRequiresAux='no'">
@@ -1213,20 +1213,20 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:text> auxiliary is required.</xsl:text>
 				</xsl:if>
 </p>
-			<xsl:if test="//ip/@negAux!='noVerb'">
+			<xsl:if test="normalize-space(////ip/@negAux)!='noVerb'">
 <p>
 <xsl:text>Examples of the negative auxiliaries in </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//ip/@negAux!='noVerb'">
+			<xsl:if test="normalize-space(////ip/@negAux)!='noVerb'">
 <example num="xIP.IPAux.16">
 <table border="1">
 					<caption>
 						<xsl:text>Negative Auxiliaries</xsl:text>
 					</caption>
-					<xsl:if test="//ip/@negAux='yesOnly' or //ip/@negAux='yesAffix' or //ip/@negAux='yesVerb' or //ip/@negAux='yesAll'">
+					<xsl:if test="normalize-space(////ip/@negAux)='yesOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='yesAll'">
 <tr>
 						<td>
 							<xsl:text>words</xsl:text>
@@ -1262,7 +1262,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//ip/@negAux='noAffixOnly' or //ip/@negAux='yesAffix' or //ip/@negAux='noAffixAndVerb' or //ip/@negAux='yesAll'">
+					<xsl:if test="normalize-space(////ip/@negAux)='noAffixOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
 <tr>
 						<td>
 							<xsl:text>affix on an auxiliary</xsl:text>
@@ -1301,14 +1301,14 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//ip/@negAux='noVerb' or //ip/@negAux='yesVerb' or //ip/@negAux='noAffixAndVerb' or //ip/@negAux='yesAll'">
+			<xsl:if test="normalize-space(////ip/@negAux)='noVerb' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
 <p>
 <xsl:text>Examples of the negative verbal affixes attached to a verb in </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//ip/@negAux='noVerb' or //ip/@negAux='yesVerb' or //ip/@negAux='noAffixAndVerb' or //ip/@negAux='yesAll'">
+			<xsl:if test="normalize-space(////ip/@negAux)='noVerb' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
 <example num="xIP.IPAux.20">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/negVerbExample" />
@@ -1411,14 +1411,14 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//ip/@aux='yes'">
+			<xsl:if test="normalize-space(////ip/@aux)='yes'">
 <p>
 <xsl:text>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which are written </xsl:text>
-<xsl:if test="//typology/@wordOrder='VSO' or //typology/@wordOrder='VOS' or //typology/@wordOrder='SVO'">
+<xsl:if test="normalize-space(////typology/@wordOrder)='VSO' or normalize-space(////typology/@wordOrder)='VOS' or normalize-space(////typology/@wordOrder)='SVO'">
 					<xsl:text>before</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//typology/@wordOrder='OSV' or //typology/@wordOrder='OVS' or //typology/@wordOrder='SOV'">
+<xsl:if test="normalize-space(////typology/@wordOrder)='OSV' or normalize-space(////typology/@wordOrder)='OVS' or normalize-space(////typology/@wordOrder)='SOV'">
 					<xsl:text>after</xsl:text>
 				</xsl:if>
 <xsl:text> the verb and share the same subject and complements.  Examples of these other kinds of auxiliaries, if used in </xsl:text>
@@ -1426,7 +1426,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:text>, are given below:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//ip/@aux='yes'">
+			<xsl:if test="normalize-space(////ip/@aux)='yes'">
 <example num="xIP.IPAux.32">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxOtherExample" />
@@ -1466,7 +1466,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//ip/@aux='yes'">
+			<xsl:if test="normalize-space(////ip/@aux)='yes'">
 <p>
 <xsl:text>An auxiliary is </xsl:text>
 <xsl:choose>
@@ -1489,7 +1489,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 				</xsl:choose>
 <xsl:text> in a single clause. </xsl:text>
-<xsl:if test="//typology/@wordOrder='VSO'">
+<xsl:if test="normalize-space(////typology/@wordOrder)='VSO'">
 					<xsl:text> After an auxiliary, the normal VSO order </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@auxOrder='yes'">
@@ -1502,7 +1502,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//typology/@wordOrder='OSV'">
+<xsl:if test="normalize-space(////typology/@wordOrder)='OSV'">
 					<xsl:text> Before an auxiliary, the normal OSV order </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@auxOrder='yes'">
@@ -1677,7 +1677,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@copular='noNeither' or //ip/@copular='yesOptional'">
+<xsl:if test="normalize-space(////ip/@copular)='noNeither' or normalize-space(////ip/@copular)='yesOptional'">
 					<xsl:text>  There is </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@copularAffix='no'">
@@ -1696,11 +1696,11 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@copular='noNeither'">
+<xsl:if test="normalize-space(////ip/@copular)='noNeither'">
 					<xsl:text>.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@copular='yesOptional'">
+<xsl:if test="normalize-space(////ip/@copular)='yesOptional'">
 					<xsl:text>, that occurs when there is no copular verb present.</xsl:text>
 				</xsl:if>
 </p>
@@ -1839,7 +1839,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:text>can be either a PP or a nominal phrase.  When both objects are nominal phrases, the </xsl:text>
 </xsl:when>
 				</xsl:choose>
-<xsl:if test="//ip/@diCat!='pp'">
+<xsl:if test="normalize-space(////ip/@diCat)!='pp'">
 					<xsl:choose>
 						<xsl:when test="//ip/@diOrder='direct'">
 <xsl:text>direct object</xsl:text>
@@ -1941,7 +1941,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//ip/@passive='yes'">
+<xsl:if test="normalize-space(////ip/@passive)='yes'">
 					<xsl:text> in which the Agent </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@passiveAgent='no'">
@@ -1952,7 +1952,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
-					<xsl:if test="//ip/@passiveAgent='yes'">
+					<xsl:if test="normalize-space(////ip/@passiveAgent)='yes'">
 						<xsl:text> as a </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//ip/@passiveAgentCat='pp'">
@@ -1977,14 +1977,14 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="//ip/@passive='yes'">
+			<xsl:if test="normalize-space(////ip/@passive)='yes'">
 <p>
 <xsl:text>Examples of passive sentences in </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//ip/@passive='yes'">
+			<xsl:if test="normalize-space(////ip/@passive)='yes'">
 <example num="xIP.IPPassive.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/passiveExample" />

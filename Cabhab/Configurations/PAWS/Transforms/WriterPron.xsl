@@ -20,7 +20,7 @@
 						<th>Type of feature</th>
 						<th>Feature</th>
 					</tr>
-					<xsl:if test="//pron/pronAgrFeatFirst/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatFirst/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -30,7 +30,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatFirstExclusive/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatFirstExclusive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -40,7 +40,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatFirstInclusive/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatFirstInclusive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -50,7 +50,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatSecond/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatSecond/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -60,7 +60,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatThird/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatThird/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -70,7 +70,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatSingular/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatSingular/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -80,7 +80,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatDual/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatDual/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -90,7 +90,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatPlural/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatPlural/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -100,7 +100,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatMasculine/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatMasculine/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -110,7 +110,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatFeminine/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatFeminine/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -120,7 +120,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatNeuter/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatNeuter/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -130,7 +130,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatAnimate/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatAnimate/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -140,7 +140,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatMinusAnimate/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatMinusAnimate/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -150,7 +150,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatHuman/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatHuman/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -160,7 +160,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatMinusHuman/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatMinusHuman/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -170,7 +170,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//pron/pronAgrFeatClassNumber/@checked='yes'">
+					<xsl:if test="normalize-space(////pron/pronAgrFeatClassNumber/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>class</xsl:text>
@@ -188,14 +188,14 @@
 			<p>
 <xsl:text>Personal pronouns normally have either more than or the same number of case features as nouns have.</xsl:text>
 </p>
-			<xsl:if test="//np/@case='none'">
+			<xsl:if test="normalize-space(////np/@case)='none'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here, beginning with first person, then second person, then the third person pronouns.</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='none'">
+			<xsl:if test="normalize-space(////np/@case)='none'">
 <example num="xPron.PnPersonal.8">
 <table border="1">
 					<caption>
@@ -235,14 +235,14 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='nominative'">
+			<xsl:if test="normalize-space(////np/@case)='nominative'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The personal pronouns which can appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='nominative'">
+			<xsl:if test="normalize-space(////np/@case)='nominative'">
 <example num="xPron.PnPersonal.12">
 <table border="1">
 					<caption>
@@ -282,12 +282,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='nominative'">
+			<xsl:if test="normalize-space(////np/@case)='nominative'">
 <p>
 <xsl:text>The personal pronouns which can appear in object position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='nominative'">
+			<xsl:if test="normalize-space(////np/@case)='nominative'">
 <example num="xPron.PnPersonal.16">
 <table border="1">
 					<caption>
@@ -327,12 +327,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='nominative'">
+			<xsl:if test="normalize-space(////np/@case)='nominative'">
 <p>
 <xsl:text>The personal pronouns which can appear in possessor position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='nominative'">
+			<xsl:if test="normalize-space(////np/@case)='nominative'">
 <example num="xPron.PnPersonal.20">
 <table border="1">
 					<caption>
@@ -372,14 +372,14 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='ergative'">
+			<xsl:if test="normalize-space(////np/@case)='ergative'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The personal pronouns which can appear in subject position of transitive verbs are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='ergative'">
+			<xsl:if test="normalize-space(////np/@case)='ergative'">
 <example num="xPron.PnPersonal.24">
 <table border="1">
 					<caption>
@@ -419,12 +419,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='ergative'">
+			<xsl:if test="normalize-space(////np/@case)='ergative'">
 <p>
 <xsl:text>The personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='ergative'">
+			<xsl:if test="normalize-space(////np/@case)='ergative'">
 <example num="xPron.PnPersonal.28">
 <table border="1">
 					<caption>
@@ -464,12 +464,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='ergative'">
+			<xsl:if test="normalize-space(////np/@case)='ergative'">
 <p>
 <xsl:text>The personal pronouns which can appear in possessor position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='ergative'">
+			<xsl:if test="normalize-space(////np/@case)='ergative'">
 <example num="xPron.PnPersonal.32">
 <table border="1">
 					<caption>
@@ -509,14 +509,14 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The personal pronouns which normally appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <example num="xPron.PnPersonal.36">
 <table border="1">
 					<caption>
@@ -556,12 +556,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <p>
 <xsl:text>The personal pronouns which normally appear in object position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <example num="xPron.PnPersonal.40">
 <table border="1">
 					<caption>
@@ -601,12 +601,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <p>
 <xsl:text>The personal pronouns which normally appear in possessor position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <example num="xPron.PnPersonal.44">
 <table border="1">
 					<caption>
@@ -646,12 +646,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <p>
 <xsl:text>The personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <example num="xPron.PnPersonal.48">
 <table border="1">
 					<caption>
@@ -691,12 +691,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//np/@case='split'">
+			<xsl:if test="normalize-space(////np/@case)='split'">
 <p>
 <xsl:text>The personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@case='ergative'">
+			<xsl:if test="normalize-space(////np/@case)='ergative'">
 <example num="xPron.PnPersonal.52">
 <table border="1">
 					<caption>
@@ -795,7 +795,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text> possessive pronouns that stand alone as a nominal phrase.  </xsl:text>
-<xsl:if test="//pron/@poss='yes'">
+<xsl:if test="normalize-space(////pron/@poss)='yes'">
 					<xsl:text>These possessive pronouns are </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pron/@possAffix='no'">
@@ -812,7 +812,7 @@
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="//pron/@poss='yes'">
+			<xsl:if test="normalize-space(////pron/@poss)='yes'">
 <example num="xPron.PronPoss.8">
 <table border="1">
 					<caption>
@@ -894,7 +894,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//pron/@refl='yes'">
+<xsl:if test="normalize-space(////pron/@refl)='yes'">
 					<xsl:text> which </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pron/@reflAffix='yes'">
@@ -909,13 +909,13 @@
 					</xsl:choose>
 					<xsl:text>  The forms used for reflexives are given here, beginning with first person, then second person, then third person:</xsl:text>
 				</xsl:if>
-<xsl:if test="//pron/@refl='yesVerbal'">
+<xsl:if test="normalize-space(////pron/@refl)='yesVerbal'">
 					<xsl:text> Examples of reflexives in </xsl:text>
 					<xsl:value-of select="//language/langName" />
 					<xsl:text> are:</xsl:text>
 				</xsl:if>
 </p>
-			<xsl:if test="//pron/@refl!='no'">
+			<xsl:if test="normalize-space(////pron/@refl)!='no'">
 <example num="xPron.PronRefl.8">
 <table border="1">
 					<caption>
@@ -955,12 +955,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//pron/@refl='yes'">
+			<xsl:if test="normalize-space(////pron/@refl)='yes'">
 <p>
 <xsl:text>Some examples with a reflexive used in object position of a simple sentence are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//pron/@refl='yes'">
+			<xsl:if test="normalize-space(////pron/@refl)='yes'">
 <example num="xPron.PronRefl.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/reflSentExample" />
@@ -1032,7 +1032,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//pron/@recip='yes'">
+<xsl:if test="normalize-space(////pron/@recip)='yes'">
 					<xsl:text> which </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pron/@recipAffix='yes'">
@@ -1049,14 +1049,14 @@
 </xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pron/@recip!='no'">
+					<xsl:if test="normalize-space(////pron/@recip)!='no'">
 						<xsl:text> Some examples of reciprocals are:</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="//pron/@recip!='no'">
+			<xsl:if test="normalize-space(////pron/@recip)!='no'">
 <example num="xPron.PronRecip.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/recipExample" />
@@ -1096,12 +1096,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//pron/@recip!='no'">
+			<xsl:if test="normalize-space(////pron/@recip)!='no'">
 <p>
 <xsl:text>Some examples of reciprocals in sentences are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//pron/@recip!='no'">
+			<xsl:if test="normalize-space(////pron/@recip)!='no'">
 <example num="xPron.PronRecip.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/recipSentExample" />
@@ -1206,7 +1206,7 @@
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="//pron/@indef='yes'">
+			<xsl:if test="normalize-space(////pron/@indef)='yes'">
 <example num="xPron.PronIndef.8">
 <table border="1">
 					<caption>
@@ -1246,7 +1246,7 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesNo' or //qp/@determiner='yesSome' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly' or //qp/@determiner='no' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -1262,7 +1262,7 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yesSome' and //qp/@npDegree='noPosOnly' or //qp/@determiner='yesSome' and //qp/@npDegree='yesPosOnly' or //qp/@determiner='no' and //qp/@npDegree='noPosOnly' or //qp/@determiner='no' and //qp/@npDegree='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -1278,7 +1278,7 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//pron/@negIndef='yes'">
+			<xsl:if test="normalize-space(////pron/@negIndef)='yes'">
 <example num="xPron.PronIndef.14">
 <table border="1">
 					<caption>
@@ -1320,7 +1320,7 @@
 </xsl:if>
 			<p>
 <xsl:text>Examples of positive indefinite nominal phrases </xsl:text>
-<xsl:if test="//pron/@indef='yes'">
+<xsl:if test="normalize-space(////pron/@indef)='yes'">
 					<xsl:text>(if any) </xsl:text>
 				</xsl:if>
 <xsl:text>include:</xsl:text>
@@ -1363,16 +1363,16 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesNo' or //qp/@determiner='yesSome' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly' or //qp/@determiner='no' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text>Examples of negative indefinite nominal phrases </xsl:text>
-<xsl:if test="//pron/@negIndef='yes'">
+<xsl:if test="normalize-space(////pron/@negIndef)='yes'">
 					<xsl:text>(if any) </xsl:text>
 				</xsl:if>
 <xsl:text>include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesNo' or //qp/@determiner='yesSome' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly' or //qp/@determiner='no' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <example num="xPron.PronIndef.22">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/negIndefNPExample" />
@@ -1412,7 +1412,7 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesNo' or //qp/@determiner='yesSome' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly' or //qp/@determiner='no' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly' or //qp/@determiner='yesSome' and //qp/@npDegree='noPosOnly' and //pron/@negIndef='yes' or //qp/@determiner='yesSome' and //qp/@npDegree='yesPosOnly' and //pron/@negIndef='yes' or //qp/@determiner='no' and //qp/@npDegree='noPosOnly' and //pron/@negIndef='yes' or //qp/@determiner='no' and //qp/@npDegree='yesPosOnly' and //pron/@negIndef='yes'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly' and normalize-space(////pron/@negIndef)='yes'">
 <p>
 <xsl:text>See section </xsl:text>
 <sectionRef sec="sNegNominal" />
@@ -1629,7 +1629,7 @@
 <xsl:text>DP, because they must stand alone in the place of a whole nominal phrase, with no modifiers allowed.</xsl:text>
 </xsl:when>
 				</xsl:choose>
-<xsl:if test="//pron/@pronounCat='NP'">
+<xsl:if test="normalize-space(////pron/@pronounCat)='NP'">
 					<xsl:choose>
 						<xsl:when test="//qp/@npDegree='yes'">
 <xsl:text> degree words,</xsl:text>

@@ -96,7 +96,7 @@ QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5)))))
 	&lt;QP option&gt; = Num0i
 </rule>
 	<showWhen id="QPoptionNum0i">
-		<whenValue element="qp" attr="cardinalHeadPos" value="before"/>
+		<whenValue element="qp" attr="cardinalHead" value="before"/>
 	</showWhen>
 	<rule show="QPoptionNum0f">
 rule {QP option Num0f - no modifiers, head final}
@@ -107,7 +107,7 @@ QP = (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num
 	&lt;QP option&gt; = Num0f
 </rule>
 	<showWhen id="QPoptionNum0f">
-		<whenValue element="qp" attr="cardinalHeadPos" value="after"/>
+		<whenValue element="qp" attr="cardinalHead" value="after"/>
 	</showWhen>
 	<rule show="QPoptionNum1i">
 rule {QP option Num1i - modifiers initial, head initial}

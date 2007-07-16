@@ -1193,68 +1193,68 @@ Let makeV               be      &lt;cat&gt; = V
 	<!-- |***Category Mapper templates for starter kit**** -->
 	<catMapper show="cardinalNumberCat">Num</catMapper>
 	<showWhen id="cardinalNumberCat">
-		<whenValue element="qp/cardinalNumberCategory" value=" " negateValue="yes"/>
+		<whenValue element="qp/cardinalNumberCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="conjunctionCat">Conj</catMapper>
 	<showWhen id="conjunctionCat">
-		<whenValue element="qp/conjunctionCategory" value=" " negateValue="yes"/>
+		<whenValue element="qp/conjunctionCategory" value="" negateValue="yes"/>
 		<or/>
-		<whenValue element="coord/conjunctionCategory" value=" " negateValue="yes"/>
+		<whenValue element="coord/conjunctionCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="adverbCat">Adv</catMapper>
 	<showWhen id="adverbCat">
-		<whenValue element="advp/adverbCategory" value=" " negateValue="yes"/>
+		<whenValue element="advp/adverbCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="adjectiveCat">Adj</catMapper>
 	<showWhen id="adjectiveCat">
-		<whenValue element="adjp/adjectiveCategory" value=" " negateValue="yes"/>
+		<whenValue element="adjp/adjectiveCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="articleCat">Art</catMapper>
 	<showWhen id="articleCat">
-		<whenValue element="np/articleCategory" value=" " negateValue="yes"/>
+		<whenValue element="np/articleCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="demonstrativeCat">Dem</catMapper>
 	<showWhen id="demonstrativeCat">
-		<whenValue element="np/demonstrativeCategory" value=" " negateValue="yes"/>
+		<whenValue element="np/demonstrativeCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="nounCat">N</catMapper>
 	<showWhen id="nounCat">
-		<whenValue element="np/nounCategory" value=" " negateValue="yes"/>
+		<whenValue element="np/nounCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="propAnimate1Cat">PropN</catMapper>
 	<showWhen id="propAnimate1Cat">
-		<whenValue element="np/propAnimate1Category" value=" " negateValue="yes"/>
+		<whenValue element="np/propAnimate1Category" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="propAnimate2Cat">PropN</catMapper>
 	<showWhen id="propAnimate2Cat">
-		<whenValue element="np/propAnimate2Category" value=" " negateValue="yes"/>
+		<whenValue element="np/propAnimate2Category" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="propInanimateCat">PropN</catMapper>
 	<showWhen id="propInanimateCat">
-		<whenValue element="np/propInanimateCategory" value=" " negateValue="yes"/>
+		<whenValue element="np/propInanimateCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<specializedTemplates show="propInanimateCat">
 									   &lt;head agr animate&gt; = -
 </specializedTemplates>
 	<catMapper show="pronounCat">Pron</catMapper>
 	<showWhen id="pronounCat">
-		<whenValue element="pron/pronounCategory" value=" " negateValue="yes"/>
+		<whenValue element="pron/pronounCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="pCat">P</catMapper>
 	<showWhen id="pCat">
-		<whenValue element="pp/pCategory" value=" " negateValue="yes"/>
+		<whenValue element="pp/pCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="auxCat">Aux</catMapper>
 	<showWhen id="auxCat">
-		<whenValue element="ip/auxCategory" value=" " negateValue="yes"/>
+		<whenValue element="ip/auxCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="verbCat">V</catMapper>
 	<showWhen id="verbCat">
-		<whenValue element="ip/verbCategory" value=" " negateValue="yes"/>
+		<whenValue element="ip/verbCategory" value="" negateValue="yes"/>
 	</showWhen>
 	<catMapper show="whPronCat">Pron</catMapper>
 	<showWhen id="whPronCat">
-		<whenValue element="q/whPronCategory" value=" " negateValue="yes"/>
+		<whenValue element="q/whPronCategory" value="" negateValue="yes"/>
 	</showWhen>
 
 	<!-- |************************************************************ -->

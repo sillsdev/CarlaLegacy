@@ -135,12 +135,13 @@ BuildCondition
 	  <xsl:for-each select="./*">
 		<xsl:choose>
 		  <xsl:when test="name()='whenValue'">
-			<xsl:text>//</xsl:text>
+			<xsl:text>normalize-space(//</xsl:text>
 			<xsl:value-of select="@element"/>
 			<xsl:if test="@attr">
 			  <xsl:text>/@</xsl:text>
 			  <xsl:value-of select="@attr"/>
 			</xsl:if>
+			<xsl:text>)</xsl:text>
 			<xsl:if test="@negateValue='yes'">
 			  <xsl:text>!</xsl:text>
 			</xsl:if>

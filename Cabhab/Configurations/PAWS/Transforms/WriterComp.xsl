@@ -456,7 +456,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//comp/@comp='yes'">
+<xsl:if test="normalize-space(////comp/@comp)='yes'">
 					<xsl:text>  The complementizer is </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//comp/@compWord='yes'">
@@ -467,7 +467,7 @@
 </xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
-					<xsl:if test="//comp/@compWord='no' and //comp/@comp='yes'">
+					<xsl:if test="normalize-space(////comp/@compWord)='no' and normalize-space(////comp/@comp)='yes'">
 						<xsl:text></xsl:text>
 						<xsl:choose>
 							<xsl:when test="//comp/@compCliticAttaches='edge'">
@@ -495,7 +495,7 @@
 					</xsl:if>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//comp/@compWord='yes' and //comp/@comp='yes'">
+<xsl:if test="normalize-space(////comp/@compWord)='yes' and normalize-space(////comp/@comp)='yes'">
 					<xsl:text> The complementizer occurs </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//comp/@compPos='before'">
@@ -524,11 +524,11 @@
 </xsl:when>
 					</xsl:choose>
 					<xsl:text> the embedded clause.  </xsl:text>
-					<xsl:if test="//comp/@compPos!='before' and //comp/@compPos!='after' and //comp/@compEitherRestricted='unrestricted' and //comp/@comp='yes'">
+					<xsl:if test="normalize-space(////comp/@compPos)!='before' and normalize-space(////comp/@compPos)!='after' and normalize-space(////comp/@compEitherRestricted)='unrestricted' and normalize-space(////comp/@comp)='yes'">
 						<xsl:text>All of the complementizers can occur on either side of the embedded clause.</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//comp/@compPos!='before' and //comp/@compPos!='after' and //comp/@compEitherRestricted='restricted' and //comp/@comp='yes'">
+					<xsl:if test="normalize-space(////comp/@compPos)!='before' and normalize-space(////comp/@compPos)!='after' and normalize-space(////comp/@compEitherRestricted)='restricted' and normalize-space(////comp/@comp)='yes'">
 						<xsl:text>There are restrictions as to which of the complementizers can occur on each side of the embedded clause.</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>

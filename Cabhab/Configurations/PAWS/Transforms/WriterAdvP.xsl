@@ -38,7 +38,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//advp/@degree='yes'">
+<xsl:if test="normalize-space(////advp/@degree)='yes'">
 				<xsl:text> These degree words occur </xsl:text>
 				<xsl:choose>
 					<xsl:when test="//advp/@degreePos='before'">
@@ -181,14 +181,14 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//advp/@negTemporalType='affix'">
+			<xsl:if test="normalize-space(////advp/@negTemporalType)='affix'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text>, the negative temporal idea of  'no when' is expressed by one or more verbal affixes, rather than by separate words.  Examples of the affix(es) attached to verbs include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//advp/@negTemporalType='affix'">
+			<xsl:if test="normalize-space(////advp/@negTemporalType)='affix'">
 <example num="xAdvP.AdvPTemporal.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalAffixExample" />
@@ -228,21 +228,21 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//advp/@negTemporalType='verb'">
+			<xsl:if test="normalize-space(////advp/@negTemporalType)='verb'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text>, there is only a verbal negative affix, but it may occur with positive temporal adverbs to give a negative temporal meaning.  Examples of temporal adverbs with a negative verb include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//advp/@negTemporalType='word'">
+			<xsl:if test="normalize-space(////advp/@negTemporalType)='word'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text>, the negative temporal idea of  'no when' is expressed by one or more separate words.  Examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//advp/@negTemporalType='word' or //advp/@negTemporalType='verb'">
+			<xsl:if test="normalize-space(////advp/@negTemporalType)='word' or normalize-space(////advp/@negTemporalType)='verb'">
 <example num="xAdvP.AdvPTemporal.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalExample" />
@@ -444,14 +444,14 @@ adverbial clauses </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//advp/@negLocativeType='affix'">
+			<xsl:if test="normalize-space(////advp/@negLocativeType)='affix'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text>, the negative locative idea of  'nowhere' is expressed by one or more verbal affixes, rather than by separate words.  Examples of the affix(es) attached to verbs include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//advp/@negLocativeType='affix'">
+			<xsl:if test="normalize-space(////advp/@negLocativeType)='affix'">
 <example num="xAdvP.AdvPLocative.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeAffixExample" />
@@ -491,21 +491,21 @@ adverbial clauses </xsl:text>
 </xsl:choose>
 </example>
 </xsl:if>
-			 <xsl:if test="//advp/@negLocativeType='verb'">
+			 <xsl:if test="normalize-space(////advp/@negLocativeType)='verb'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text>, there is only a verbal negative affix, but it may occur with positive locative adverbs to give a negative locative meaning.  Examples of locative adverbs with a negative verb include:</xsl:text>
 </p>
 </xsl:if>
-		   <xsl:if test="//advp/@negLocativeType='word'">
+		   <xsl:if test="normalize-space(////advp/@negLocativeType)='word'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text>, the negative locative idea of  'nowhere' is expressed by one or more separate words.  Examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//advp/@negLocativeType='word' or //advp/@negLocativeType='verb'">
+			<xsl:if test="normalize-space(////advp/@negLocativeType)='word' or normalize-space(////advp/@negLocativeType)='verb'">
 <example num="xAdvP.AdvPLocative.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeExample" />
@@ -656,7 +656,7 @@ and </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//advp/@mannerType='affix'">
+			<xsl:if test="normalize-space(////advp/@mannerType)='affix'">
 <p>
 <xsl:text>Manner adverbs in </xsl:text>
 <xsl:value-of select="//language/langName" />

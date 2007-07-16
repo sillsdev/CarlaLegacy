@@ -34,11 +34,11 @@
 <xsl:text>Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called "headless" relative clauses.</xsl:text>
 </p>
 		<p>
-<xsl:if test="//relcl/@exist='no'">
+<xsl:if test="normalize-space(////relcl/@exist)='no'">
 				<xsl:value-of select="//language/langName" />
 				<xsl:text> does not have any type of relative clause.</xsl:text>
 			</xsl:if>
-<xsl:if test="//relcl/@exist='yes'">
+<xsl:if test="normalize-space(////relcl/@exist)='yes'">
 				<xsl:text>In </xsl:text>
 				<xsl:value-of select="//language/langName" />
 				<xsl:text>, relative clauses occur </xsl:text>
@@ -68,7 +68,7 @@
 </xsl:when>
 				</xsl:choose>
 				<xsl:text> </xsl:text>
-				<xsl:if test="//relcl/@type='CP'">
+				<xsl:if test="normalize-space(////relcl/@type)='CP'">
 					<xsl:text> </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//relcl/@compCP='no'">
@@ -81,7 +81,7 @@
 <xsl:text>are like questions because a "wh" word is fronted and some are  like complement clauses with relative markers that </xsl:text>
 </xsl:when>
 					</xsl:choose>
-					<xsl:if test="//relcl/@type='CP' and //relcl/@compCP!='no' or //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no'">
+					<xsl:if test="normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)!='no' or normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)='no' and normalize-space(////relcl/@whAndComp)!='no'">
 						<xsl:text>are </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//relcl/@relWord='yes'">
@@ -92,7 +92,7 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//relcl/@relWord='no' and //relcl/@type='CP' and //relcl/@compCP!='no' or //relcl/@relWord='no' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no'">
+						<xsl:if test="normalize-space(////relcl/@relWord)='no' and normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)!='no' or normalize-space(////relcl/@relWord)='no' and normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)='no' and normalize-space(////relcl/@whAndComp)!='no'">
 							<xsl:text> </xsl:text>
 							<xsl:choose>
 								<xsl:when test="//relcl/@relCliticPos='before'">
@@ -111,7 +111,7 @@
 							<xsl:text> </xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//relcl/@relWord='yes' and //relcl/@type='CP' and //relcl/@compCP!='no' or //relcl/@relWord='yes' and //relcl/@type='CP' and //relcl/@compCP='no' and //relcl/@whAndComp!='no'">
+						<xsl:if test="normalize-space(////relcl/@relWord)='yes' and normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)!='no' or normalize-space(////relcl/@relWord)='yes' and normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)='no' and normalize-space(////relcl/@whAndComp)!='no'">
 							<xsl:text> </xsl:text>
 							<xsl:choose>
 								<xsl:when test="//relcl/@relCompSame='yes'">
@@ -149,11 +149,11 @@
 </xsl:when>
 						   </xsl:choose>
 							<xsl:text> the sentence part of the relative clause.</xsl:text>
-							<xsl:if test="//relcl/@relWord='yes' and //relcl/@relCompEitherRestricted='unrestricted' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relCompPos!='before' and //relcl/@relCompPos!='after'">
+							<xsl:if test="normalize-space(////relcl/@relWord)='yes' and normalize-space(////relcl/@relCompEitherRestricted)='unrestricted' and normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)!='no' and normalize-space(////relcl/@relCompPos)!='before' and normalize-space(////relcl/@relCompPos)!='after'">
 								<xsl:text>All of the relative markers can occur on either side.</xsl:text>
 							</xsl:if>
 							<xsl:text> </xsl:text>
-							<xsl:if test="//relcl/@relWord='yes' and //relcl/@relCompEitherRestricted='restricted' and //relcl/@type='CP' and //relcl/@compCP!='no' and //relcl/@relCompPos!='before' and //relcl/@relCompPos!='after'">
+							<xsl:if test="normalize-space(////relcl/@relWord)='yes' and normalize-space(////relcl/@relCompEitherRestricted)='restricted' and normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)!='no' and normalize-space(////relcl/@relCompPos)!='before' and normalize-space(////relcl/@relCompPos)!='after'">
 								<xsl:text>There are restrictions as to which of the relative markers can occur on each side.</xsl:text>
 							</xsl:if>
 							<xsl:text> </xsl:text>
@@ -163,7 +163,7 @@
 					<xsl:text> </xsl:text>
 				</xsl:if>
 				<xsl:text> </xsl:text>
-				<xsl:if test="//relcl/@type='CP' and //relcl/@compCP!='yes'">
+				<xsl:if test="normalize-space(////relcl/@type)='CP' and normalize-space(////relcl/@compCP)!='yes'">
 					<xsl:text>In the "wh"-relative clauses, </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//relcl/@whAndComp='no'">
@@ -182,14 +182,14 @@
 			</xsl:if>
 <xsl:text> </xsl:text>
 </p>
-		<xsl:if test="//relcl/@exist='yes'">
+		<xsl:if test="normalize-space(////relcl/@exist)='yes'">
 <p>
 <xsl:text>Examples of relative clauses in </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> include:</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//relcl/@exist='yes'">
+		<xsl:if test="normalize-space(////relcl/@exist)='yes'">
 <example num="xRelCl.14">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//relcl/example" />
@@ -229,12 +229,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-		<xsl:if test="//relcl/@exist='yes'">
+		<xsl:if test="normalize-space(////relcl/@exist)='yes'">
 <p>
 <xsl:text>Full sentence examples of the above relative clauses include:</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//relcl/@exist='yes'">
+		<xsl:if test="normalize-space(////relcl/@exist)='yes'">
 <example num="xRelCl.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//relcl/sentExample" />
@@ -274,7 +274,7 @@
 </xsl:choose>
 </example>
 </xsl:if>
-		<xsl:if test="//relcl/@exist='yes'">
+		<xsl:if test="normalize-space(////relcl/@exist)='yes'">
 <p>
 <xsl:text> </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -290,12 +290,12 @@
 <xsl:text> </xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//relcl/@headless='yes' and //relcl/@exist='yes'">
+		<xsl:if test="normalize-space(////relcl/@headless)='yes' and normalize-space(////relcl/@exist)='yes'">
 <p>
 <xsl:text>Examples of headless relative clauses included in full sentences include:</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//relcl/@headless='yes' and //relcl/@exist='yes'">
+		<xsl:if test="normalize-space(////relcl/@headless)='yes' and normalize-space(////relcl/@exist)='yes'">
 <example num="xRelCl.24">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//relcl/headlessExample" />

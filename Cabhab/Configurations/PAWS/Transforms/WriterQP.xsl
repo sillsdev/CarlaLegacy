@@ -255,7 +255,7 @@ like </xsl:text>
 							<xsl:text>only or just</xsl:text>
 						</td>
 					</tr>
-					<xsl:if test="//qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+					<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <tr>
 						<td>
 <table>
@@ -293,7 +293,7 @@ like </xsl:text>
 </xsl:if>
 				</table>
 </example>
-			<xsl:if test="//qp/@npDegree='no'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='no'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -344,7 +344,7 @@ like </xsl:text>
 <xsl:text> positive nominal phrase examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='noPosOnly'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='noPosOnly'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -374,7 +374,7 @@ like </xsl:text>
 <xsl:text> positive nominal phrase examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yesPos'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yesPos'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -406,11 +406,11 @@ like </xsl:text>
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the rest of the nominal phrase.  </xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeEitherRestricted='unrestricted' and //qp/@npDegreePos!='before' and //qp/@npDegreePos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeEitherRestricted)='unrestricted' and normalize-space(////qp/@npDegreePos)!='before' and normalize-space(////qp/@npDegreePos)!='after'">
 					<xsl:text>All of these words can occur on either side of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeEitherRestricted='restricted' and //qp/@npDegreePos!='before' and //qp/@npDegreePos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeEitherRestricted)='restricted' and normalize-space(////qp/@npDegreePos)!='before' and normalize-space(////qp/@npDegreePos)!='after'">
 					<xsl:text>There are restrictions as to which of these words can occur on each side of the nominal phrase.  </xsl:text>
 				</xsl:if>
 <xsl:text>The negative special degree elements, however, are not expressed as separate words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.  These negative special degree elements are </xsl:text>
@@ -439,7 +439,7 @@ like </xsl:text>
 <xsl:text> positive nominal phrase examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yesPosOnly'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -471,11 +471,11 @@ like </xsl:text>
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the rest of the nominal phrase.  </xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeEitherRestricted='unrestricted' and //qp/@npDegreePos!='before' and //qp/@npDegreePos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeEitherRestricted)='unrestricted' and normalize-space(////qp/@npDegreePos)!='before' and normalize-space(////qp/@npDegreePos)!='after'">
 					<xsl:text>All of these words can occur on either side of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeEitherRestricted='restricted' and //qp/@npDegreePos!='before' and //qp/@npDegreePos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeEitherRestricted)='restricted' and normalize-space(////qp/@npDegreePos)!='before' and normalize-space(////qp/@npDegreePos)!='after'">
 					<xsl:text>There are restrictions as to which of these words can occur on each side of the nominal phrase.  </xsl:text>
 				</xsl:if>
 <xsl:text>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </xsl:text>
@@ -483,7 +483,7 @@ like </xsl:text>
 <xsl:text> positive nominal phrase examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yesNeg'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yesNeg'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -538,11 +538,11 @@ like </xsl:text>
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the rest of the nominal phrase.  </xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeEitherRestricted='unrestricted' and //qp/@npDegreePos!='before' and //qp/@npDegreePos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeEitherRestricted)='unrestricted' and normalize-space(////qp/@npDegreePos)!='before' and normalize-space(////qp/@npDegreePos)!='after'">
 					<xsl:text>All of these words can occur on either side of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeEitherRestricted='restricted' and //qp/@npDegreePos!='before' and //qp/@npDegreePos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeEitherRestricted)='restricted' and normalize-space(////qp/@npDegreePos)!='before' and normalize-space(////qp/@npDegreePos)!='after'">
 					<xsl:text>There are restrictions as to which of these words can occur on each side of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
@@ -550,7 +550,7 @@ like </xsl:text>
 <xsl:text> positive nominal phrase examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yes'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -582,11 +582,11 @@ like </xsl:text>
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the rest of the nominal phrase.  </xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeEitherRestricted='unrestricted' and //qp/@npDegreePos!='before' and //qp/@npDegreePos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeEitherRestricted)='unrestricted' and normalize-space(////qp/@npDegreePos)!='before' and normalize-space(////qp/@npDegreePos)!='after'">
 					<xsl:text>All of these words can occur on either side of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeEitherRestricted='restricted' and //qp/@npDegreePos!='before' and //qp/@npDegreePos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeEitherRestricted)='restricted' and normalize-space(////qp/@npDegreePos)!='before' and normalize-space(////qp/@npDegreePos)!='after'">
 					<xsl:text>There are restrictions as to which of these words can occur on each side of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
@@ -632,14 +632,14 @@ like </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> negative nominal phrase examples not including the positive special degree elements are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <example num="xQP.QPAll.26">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negExample" />
@@ -679,7 +679,7 @@ like </xsl:text>
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeNegCooccur='no'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeNegCooccur)='no'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -691,7 +691,7 @@ like </xsl:text>
 <xsl:text> to co-occur with the positive special degree words in a single nominal phrase.</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeNegCooccur='yes'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeNegCooccur)='yes'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -728,11 +728,11 @@ like </xsl:text>
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the rest of the nominal phrase (including the positive special degree words).  </xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeNegEitherRestricted='unrestricted' and //qp/@npDegreeNegPos!='before' and //qp/@npDegreeNegPos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeNegEitherRestricted)='unrestricted' and normalize-space(////qp/@npDegreeNegPos)!='before' and normalize-space(////qp/@npDegreeNegPos)!='after'">
 					<xsl:text>All of these negative words can occur on either side of the nominal phrase.  </xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeNegEitherRestricted='restricted' and //qp/@npDegreeNegPos!='before' and //qp/@npDegreeNegPos!='after'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeNegEitherRestricted)='restricted' and normalize-space(////qp/@npDegreeNegPos)!='before' and normalize-space(////qp/@npDegreeNegPos)!='after'">
 					<xsl:text>There are restrictions as to which of these negative words can occur on each side of the nominal phrase.  </xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
@@ -740,14 +740,14 @@ like </xsl:text>
 <xsl:text> negative nominal phrase examples which include the positive special degree words are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeNegCooccur='yes' or //qp/@npDegree!='yes' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeNegCooccur)='yes' or normalize-space(////qp/@npDegree)!='yes' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> negative nominal phrase examples which include the positive special degree elements are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreeNegCooccur='yes' or //qp/@npDegree!='yes' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeNegCooccur)='yes' or normalize-space(////qp/@npDegree)!='yes' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <example num="xQP.QPAll.34">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negCooccurExample" />
@@ -787,7 +787,7 @@ like </xsl:text>
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text>See section </xsl:text>
 <sectionRef sec="sNegNominal" />
@@ -832,7 +832,7 @@ like </xsl:text>
 </xsl:attribute>no black dogs</langData>
 <xsl:text>.  Because they take the place of articles, demonstratives and possessors, we will treat these quantifiers as determiners with their own phrase structure rule.</xsl:text>
 </p>
-			<xsl:if test="//qp/@determiner='no' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -854,7 +854,7 @@ like </xsl:text>
 <xsl:text> above or like the quantifiers which may co-occur with articles, demonstratives and/or possessors to be treated in the next section.</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='no' and //qp/@npDegree='noPosOnly' or //qp/@determiner='no' and //qp/@npDegree='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -876,7 +876,7 @@ like </xsl:text>
 <xsl:text> above or like the quantifiers which may co-occur with articles, demonstratives and/or possessors to be treated in the next section.</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yesSome' and //qp/@npDegree!='noPosOnly' and //qp/@npDegree!='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -885,7 +885,7 @@ like </xsl:text>
 <xsl:text> has the following positive quantifiers which act as the only determiner in the nominal phrase:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yesSome' and //qp/@npDegree='noPosOnly' or //qp/@determiner='yesSome' and //qp/@npDegree='yesPosOnly'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -894,7 +894,7 @@ like </xsl:text>
 <xsl:text> has the following positive quantifiers which act as the only determiner in the nominal phrase:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yesNo'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yesNo'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -918,20 +918,20 @@ like </xsl:text>
 <xsl:text> has the following negative quantifiers which act as the only determiner in the nominal phrase:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> has the following positive and negative quantifiers which act as the only determiner in the nominal phrase:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner!='no'">
+			<xsl:if test="normalize-space(////qp/@determiner)!='no'">
 <example num="xQP.QPDeterminers.18">
 <table border="1">
 					<caption>
 						<xsl:text>Quantifier Determiners</xsl:text>
 					</caption>
-					<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesSome'">
+					<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesSome'">
 <tr>
 						<td>
 							<xsl:text>positive</xsl:text>
@@ -967,7 +967,7 @@ like </xsl:text>
 </td>
 					</tr>
 </xsl:if>
-					<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesNo'">
+					<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
 <tr>
 						<td>
 							<xsl:text>negative</xsl:text>
@@ -1006,7 +1006,7 @@ like </xsl:text>
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="//qp/@determiner!='no'">
+			<xsl:if test="normalize-space(////qp/@determiner)!='no'">
 <p>
 <xsl:text>These quantifier determiners occur </xsl:text>
 <xsl:choose>
@@ -1036,24 +1036,24 @@ like </xsl:text>
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the head noun.  </xsl:text>
-<xsl:if test="//qp/@determiner='yes' and //qp/@determinerEitherRestricted='unrestricted' and //qp/@determinerPos!='before' and //qp/@determinerPos!='after'">
+<xsl:if test="normalize-space(////qp/@determiner)='yes' and normalize-space(////qp/@determinerEitherRestricted)='unrestricted' and normalize-space(////qp/@determinerPos)!='before' and normalize-space(////qp/@determinerPos)!='after'">
 					<xsl:text>All of the quantifier determiners can occur on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@determiner='yes' and //qp/@determinerEitherRestricted='restricted' and //qp/@determinerPos!='before' and //qp/@determinerPos!='after'">
+<xsl:if test="normalize-space(////qp/@determiner)='yes' and normalize-space(////qp/@determinerEitherRestricted)='restricted' and normalize-space(////qp/@determinerPos)!='before' and normalize-space(////qp/@determinerPos)!='after'">
 					<xsl:text>There are restrictions as to which of these quantifier determiners can occur on each side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesSome'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesSome'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> examples of positive quantifier determiners in full nominal phrases include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesSome'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesSome'">
 <example num="xQP.QPDeterminers.24">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/determinerNPExample" />
@@ -1093,14 +1093,14 @@ like </xsl:text>
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesNo'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> examples of negative quantifier determiners in full nominal phrases include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesNo'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
 <example num="xQP.QPDeterminers.28">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/determinerNegNPExample" />
@@ -1140,7 +1140,7 @@ like </xsl:text>
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//qp/@determiner='yes' or //qp/@determiner='yesNo'">
+			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
 <p>
 <xsl:text>See section </xsl:text>
 <sectionRef sec="sNegNominal" />
@@ -1244,14 +1244,14 @@ waste</langData>
 					</tr>
 				</table>
 </example>
-			<xsl:if test="//qp/@degree='no'">
+			<xsl:if test="normalize-space(////qp/@degree)='no'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> does not have any degree words which modify the quantifiers.</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@degree='yes'">
+			<xsl:if test="normalize-space(////qp/@degree)='yes'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -1283,11 +1283,11 @@ waste</langData>
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the quantifier.  </xsl:text>
-<xsl:if test="//qp/@degree='yes' and //qp/@degreeEitherRestricted='unrestricted' and //qp/@degreePos!='before' and //qp/@degreePos!='after'">
+<xsl:if test="normalize-space(////qp/@degree)='yes' and normalize-space(////qp/@degreeEitherRestricted)='unrestricted' and normalize-space(////qp/@degreePos)!='before' and normalize-space(////qp/@degreePos)!='after'">
 					<xsl:text>All of the degree words can occur on either side of the quantifier.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@degree='yes' and //qp/@degreeEitherRestricted='restricted' and //qp/@degreePos!='before' and //qp/@degreePos!='after'">
+<xsl:if test="normalize-space(////qp/@degree)='yes' and normalize-space(////qp/@degreeEitherRestricted)='restricted' and normalize-space(////qp/@degreePos)!='before' and normalize-space(////qp/@degreePos)!='after'">
 					<xsl:text>There are restrictions as to which of these degree words can occur on each side of the quantifier.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
@@ -1295,7 +1295,7 @@ waste</langData>
 <xsl:text> examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@degree='yes'">
+			<xsl:if test="normalize-space(////qp/@degree)='yes'">
 <example num="xQP.QPOtherQuantifiers.14">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/degreeExample" />
@@ -1674,11 +1674,11 @@ Examples of compound numbers in </xsl:text>
 </xsl:when>
 					</xsl:choose>
 <xsl:text> the cardinal number.  </xsl:text>
-<xsl:if test="//qp/@ordinalEitherRestricted='unrestricted' and //qp/@ordinalPos!='before' and //qp/@ordinalPos!='after' and //qp/@ordinalPos!='unknown'">
+<xsl:if test="normalize-space(////qp/@ordinalEitherRestricted)='unrestricted' and normalize-space(////qp/@ordinalPos)!='before' and normalize-space(////qp/@ordinalPos)!='after' and normalize-space(////qp/@ordinalPos)!='unknown'">
 						<xsl:text>All of the ordinal numbers can occur on either side of the cardinal number.</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@ordinalEitherRestricted='restricted' and //qp/@ordinalPos!='before' and //qp/@ordinalPos!='after'">
+<xsl:if test="normalize-space(////qp/@ordinalEitherRestricted)='restricted' and normalize-space(////qp/@ordinalPos)!='before' and normalize-space(////qp/@ordinalPos)!='after'">
 						<xsl:text>There are restrictions as to which of the ordinal numbers can occur on each side of the cardinal number.</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>

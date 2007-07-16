@@ -57,7 +57,7 @@
 </xsl:when>
 					</xsl:choose>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainYN='noAux'">
+<xsl:if test="normalize-space(////q/@mainYN)='noAux'">
 						<xsl:text> to the </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainYNAuxPos='before'">
@@ -73,7 +73,7 @@
 						<xsl:text> of the question is required.</xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainYN='yes'">
+<xsl:if test="normalize-space(////q/@mainYN)='yes'">
 						<xsl:text>The question marker or complementizer is </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainYNWord='yes'">
@@ -84,7 +84,7 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//q/@mainYNWord='no'">
+						<xsl:if test="normalize-space(////q/@mainYNWord)='no'">
 							<xsl:text> </xsl:text>
 							<xsl:choose>
 								<xsl:when test="//q/@mainYNCliticAttaches='edge'">
@@ -112,7 +112,7 @@
 						</xsl:if>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainYNWord='yes'">
+<xsl:if test="normalize-space(////q/@mainYNWord)='yes'">
 						<xsl:text>The question marker or complementizer occurs </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainYNPos='before'">
@@ -141,11 +141,11 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> the rest of the question.  </xsl:text>
-						<xsl:if test="//q/@mainYNEitherRestricted='unrestricted' and //q/@mainYNPos!='before' and //q/@mainYNPos!='after'">
+						<xsl:if test="normalize-space(////q/@mainYNEitherRestricted)='unrestricted' and normalize-space(////q/@mainYNPos)!='before' and normalize-space(////q/@mainYNPos)!='after'">
 							<xsl:text>All of the question markers or complementizers can occur on either side of the question.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//q/@mainYNEitherRestricted='restricted' and //q/@mainYNPos!='before' and //q/@mainYNPos!='after'">
+						<xsl:if test="normalize-space(////q/@mainYNEitherRestricted)='restricted' and normalize-space(////q/@mainYNPos)!='before' and normalize-space(////q/@mainYNPos)!='after'">
 							<xsl:text>There are restrictions as to which of the question markers or complementizers can occur on each side of the question.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
@@ -232,7 +232,7 @@
 </xsl:when>
 					</xsl:choose>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embYN='noAux'">
+<xsl:if test="normalize-space(////q/@embYN)='noAux'">
 						<xsl:text> to the </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embYNAuxPos='before'">
@@ -248,7 +248,7 @@
 						<xsl:text> of the embedded question is required.</xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embYN='yes'">
+<xsl:if test="normalize-space(////q/@embYN)='yes'">
 						<xsl:text>The question marker or complementizer is </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embYNWord='yes'">
@@ -259,7 +259,7 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//q/@embYNWord='no'">
+						<xsl:if test="normalize-space(////q/@embYNWord)='no'">
 							<xsl:text> </xsl:text>
 							<xsl:choose>
 								<xsl:when test="//q/@embYNCliticAttaches='edge'">
@@ -287,7 +287,7 @@
 						</xsl:if>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embYNWord='yes' and //q/@embYN='yes'">
+<xsl:if test="normalize-space(////q/@embYNWord)='yes' and normalize-space(////q/@embYN)='yes'">
 						<xsl:text>The question marker or complementizer occurs </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embYNPos='before'">
@@ -316,11 +316,11 @@
 </xsl:when>
 					   </xsl:choose>
 						<xsl:text> the rest of the embedded question.  </xsl:text>
-						<xsl:if test="//q/@embYNEitherRestricted='unrestricted' and //q/@embYNPos!='before' and //q/@embYNPos!='after' and //q/@embYN='yes'">
+						<xsl:if test="normalize-space(////q/@embYNEitherRestricted)='unrestricted' and normalize-space(////q/@embYNPos)!='before' and normalize-space(////q/@embYNPos)!='after' and normalize-space(////q/@embYN)='yes'">
 							<xsl:text>All of the question markers or complementizers can occur on either side of the embedded question.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//q/@embYNEitherRestricted='restricted' and //q/@embYNPos!='before' and //q/@embYNPos!='after' and //q/@embYN='yes'">
+						<xsl:if test="normalize-space(////q/@embYNEitherRestricted)='restricted' and normalize-space(////q/@embYNPos)!='before' and normalize-space(////q/@embYNPos)!='after' and normalize-space(////q/@embYN)='yes'">
 							<xsl:text>There are restrictions as to which of the question markers or complementizers can occur on each side of the embedded question.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
@@ -755,7 +755,7 @@
 <xsl:text>These same possibilities are assumed to be true in </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> also.  </xsl:text>
-<xsl:if test="//np/@artAndDem='demonstrative' and //np/@demPos='either' or //np/@artAndDem='demonstrative' and //np/@demPos='both' or //np/@artAndDem='demonstrative' and //np/@demOrArtPos='either' or //np/@artAndDem='demonstrative' and //np/@demOrArtPos='both' or //np/@artAndDem='demonstrative' and //np/@demAndArtPos='either' or //np/@artAndDem='demonstrative' and //np/@demAndArtPos='both' or //np/@artAndDem='both' and //np/@demPos='either' or //np/@artAndDem='both' and //np/@demPos='both' or //np/@artAndDem='both' and //np/@demOrArtPos='either' or //np/@artAndDem='both' and //np/@demOrArtPos='both' or //np/@artAndDem='both' and //np/@demAndArtPos='either' or //np/@artAndDem='both' and //np/@demAndArtPos='both'">
+<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demPos)='either' or normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demPos)='both' or normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demOrArtPos)='either' or normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demOrArtPos)='both' or normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demAndArtPos)='either' or normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demAndArtPos)='both' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demPos)='either' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demPos)='both' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demOrArtPos)='either' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demOrArtPos)='both' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demAndArtPos)='either' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demAndArtPos)='both'">
 					<xsl:text>Demonstratives are allowed on either side of the noun in </xsl:text>
 					<xsl:value-of select="//language/langName" />
 					<xsl:text>.  The words meaning 'which' and 'what' occur </xsl:text>
@@ -776,7 +776,7 @@
 					<xsl:text> </xsl:text>
 				</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//np/@artAndDem='article' and //np/@artPos='either' or //np/@artAndDem='article' and //np/@artPos='both'">
+<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@artPos)='either' or normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@artPos)='both'">
 					<xsl:text>Articles are allowed on either side of the noun in </xsl:text>
 					<xsl:value-of select="//language/langName" />
 					<xsl:text>.  The words meaning 'which' and 'what' occur </xsl:text>
@@ -797,7 +797,7 @@
 					<xsl:text> </xsl:text>
 				</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//adjp/@modifiers='yesDegree' and //adjp/@degreePos!='before' and //adjp/@degreePos!='after' or //adjp/@modifiers='yesManner' and //adjp/@mannerPos!='before' and //adjp/@mannerPos!='after'">
+<xsl:if test="normalize-space(////adjp/@modifiers)='yesDegree' and normalize-space(////adjp/@degreePos)!='before' and normalize-space(////adjp/@degreePos)!='after' or normalize-space(////adjp/@modifiers)='yesManner' and normalize-space(////adjp/@mannerPos)!='before' and normalize-space(////adjp/@mannerPos)!='after'">
 					<xsl:text>Degree words are allowed on either side of the adjective in </xsl:text>
 					<xsl:value-of select="//language/langName" />
 					<xsl:text>.  The word meaning 'how' occurs </xsl:text>
@@ -819,7 +819,7 @@
 					<xsl:text> </xsl:text>
 				</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//qp/@degree='yes' and //qp/@degreePos!='before' and //qp/@degreePos!='after'">
+<xsl:if test="normalize-space(////qp/@degree)='yes' and normalize-space(////qp/@degreePos)!='before' and normalize-space(////qp/@degreePos)!='after'">
 					<xsl:text>Degree words are allowed on either side of the quantifier in </xsl:text>
 					<xsl:value-of select="//language/langName" />
 					<xsl:text>.  The word meaning 'how' occurs </xsl:text>
@@ -912,7 +912,7 @@
 </xsl:when>
 					</xsl:choose>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainCont='no'">
+<xsl:if test="normalize-space(////q/@mainCont)='no'">
 						<xsl:text> just </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@contFront='no'">
@@ -931,7 +931,7 @@
 						<xsl:text> intonation or tone or other non-syntactic marking.</xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainCont='noAux'">
+<xsl:if test="normalize-space(////q/@mainCont)='noAux'">
 						<xsl:text> to the </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContAuxPos='before'">
@@ -967,7 +967,7 @@
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainCont='yes'">
+<xsl:if test="normalize-space(////q/@mainCont)='yes'">
 						<xsl:text>The question marker or complementizer is </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContWord='yes'">
@@ -978,7 +978,7 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//q/@mainContWord='no' and //q/@mainCont='yes'">
+						<xsl:if test="normalize-space(////q/@mainContWord)='no' and normalize-space(////q/@mainCont)='yes'">
 							<xsl:text> </xsl:text>
 							<xsl:choose>
 								<xsl:when test="//q/@mainContCliticAttaches='edge'">
@@ -1009,7 +1009,7 @@
 						</xsl:if>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainContWord='yes' and //q/@mainCont='yes' and //typology/@wordOrder!='VSO'">
+<xsl:if test="normalize-space(////q/@mainContWord)='yes' and normalize-space(////q/@mainCont)='yes' and normalize-space(////typology/@wordOrder)!='VSO'">
 						<xsl:text>The question marker or complementizer occurs </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContPos='before'">
@@ -1038,17 +1038,17 @@
 </xsl:when>
 					   </xsl:choose>
 						<xsl:text> the rest of the question.  </xsl:text>
-						<xsl:if test="//q/@mainContPos!='before' and //q/@mainContPos!='after' and //typology/@wordOrder!='VSO' and //q/@mainContWord='yes' and //q/@mainCont='yes' and //q/@mainContEitherRestrcited='unrestricted'">
+						<xsl:if test="normalize-space(////q/@mainContPos)!='before' and normalize-space(////q/@mainContPos)!='after' and normalize-space(////typology/@wordOrder)!='VSO' and normalize-space(////q/@mainContWord)='yes' and normalize-space(////q/@mainCont)='yes' and normalize-space(////q/@mainContEitherRestrcited)='unrestricted'">
 							<xsl:text>All of the question markers or complementizers can occur on either side of the question.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//q/@mainContPos!='before' and //q/@mainContPos!='after' and //typology/@wordOrder!='VSO' and //q/@mainContWord='yes' and //q/@mainCont='yes' and //q/@mainContEitherRestrcited='restricted'">
+						<xsl:if test="normalize-space(////q/@mainContPos)!='before' and normalize-space(////q/@mainContPos)!='after' and normalize-space(////typology/@wordOrder)!='VSO' and normalize-space(////q/@mainContWord)='yes' and normalize-space(////q/@mainCont)='yes' and normalize-space(////q/@mainContEitherRestrcited)='restricted'">
 							<xsl:text>There are restrictions as to which of the question markers or complementizers can occur on each side of the question.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainContWord='yes' and //q/@mainCont='yes' and //typology/@wordOrder='VSO'">
+<xsl:if test="normalize-space(////q/@mainContWord)='yes' and normalize-space(////q/@mainCont)='yes' and normalize-space(////typology/@wordOrder)='VSO'">
 						<xsl:text>The question marker or complementizer occurs </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContVSOBeforeWh='no'">
@@ -1065,17 +1065,17 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh='noEnd' and //q/@mainContVSONoEndRestricted='unrestricted' and //q/@mainContWord='yes' and //q/@mainCont='yes'">
+						<xsl:if test="normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////q/@mainContVSOBeforeWh)='noEnd' and normalize-space(////q/@mainContVSONoEndRestricted)='unrestricted' and normalize-space(////q/@mainContWord)='yes' and normalize-space(////q/@mainCont)='yes'">
 							<xsl:text>All of the question markers or complementizers can occur in each position.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh='noEnd' and //q/@mainContVSONoEndRestricted='restricted' and //q/@mainContWord='yes' and //q/@mainCont='yes' or //typology/@wordOrder='VSO' and //q/@mainContVSOBeforeWh='some' and //q/@mainContWord='yes' and //q/@mainCont='yes'">
+						<xsl:if test="normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////q/@mainContVSOBeforeWh)='noEnd' and normalize-space(////q/@mainContVSONoEndRestricted)='restricted' and normalize-space(////q/@mainContWord)='yes' and normalize-space(////q/@mainCont)='yes' or normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////q/@mainContVSOBeforeWh)='some' and normalize-space(////q/@mainContWord)='yes' and normalize-space(////q/@mainCont)='yes'">
 							<xsl:text>There are restrictions as to which of the question markers or complementizers can occur in each position.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@mainContWord='yes' and //q/@mainCont='yes'">
+<xsl:if test="normalize-space(////q/@mainContWord)='yes' and normalize-space(////q/@mainCont)='yes'">
 						<xsl:text>A question marker or complementizer is </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContRequired='yes'">
@@ -1169,7 +1169,7 @@
 </xsl:when>
 					</xsl:choose>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embCont='no'">
+<xsl:if test="normalize-space(////q/@embCont)='no'">
 						<xsl:text> just </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@contFront='no'">
@@ -1188,7 +1188,7 @@
 						<xsl:text> intonation or tone or other non-syntactic marking.</xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embCont='noAux'">
+<xsl:if test="normalize-space(////q/@embCont)='noAux'">
 						<xsl:text> to the </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embContAuxPos='before'">
@@ -1224,7 +1224,7 @@
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embCont='yes'">
+<xsl:if test="normalize-space(////q/@embCont)='yes'">
 						<xsl:text>The question marker or complementizer is </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embContWord='yes'">
@@ -1235,7 +1235,7 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//q/@embContWord='no' and //q/@embCont='yes'">
+						<xsl:if test="normalize-space(////q/@embContWord)='no' and normalize-space(////q/@embCont)='yes'">
 							<xsl:text> </xsl:text>
 							<xsl:choose>
 								<xsl:when test="//q/@embContCliticAttaches='edge'">
@@ -1268,7 +1268,7 @@
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embContWord='yes' and //q/@embCont='yes' and //typology/@wordOrder!='VSO'">
+<xsl:if test="normalize-space(////q/@embContWord)='yes' and normalize-space(////q/@embCont)='yes' and normalize-space(////typology/@wordOrder)!='VSO'">
 						<xsl:text>The question marker or complementizer occurs </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embContPos='before'">
@@ -1297,17 +1297,17 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> the rest of the embedded question.  </xsl:text>
-						<xsl:if test="//q/@embContPos!='before' and //q/@embContPos!='after' and //typology/@wordOrder!='VSO' and //q/@embContWord='yes' and //q/@embCont='yes' and //q/@embContEitherRestrcited='unrestricted'">
+						<xsl:if test="normalize-space(////q/@embContPos)!='before' and normalize-space(////q/@embContPos)!='after' and normalize-space(////typology/@wordOrder)!='VSO' and normalize-space(////q/@embContWord)='yes' and normalize-space(////q/@embCont)='yes' and normalize-space(////q/@embContEitherRestrcited)='unrestricted'">
 							<xsl:text>All of the question markers or complementizers can occur on either side of the embedded question.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//q/@embContPos!='before' and //q/@embContPos!='after' and //typology/@wordOrder!='VSO' and //q/@embContWord='yes' and //q/@embCont='yes' and //q/@embContEitherRestrcited='restricted'">
+						<xsl:if test="normalize-space(////q/@embContPos)!='before' and normalize-space(////q/@embContPos)!='after' and normalize-space(////typology/@wordOrder)!='VSO' and normalize-space(////q/@embContWord)='yes' and normalize-space(////q/@embCont)='yes' and normalize-space(////q/@embContEitherRestrcited)='restricted'">
 							<xsl:text>There are restrictions as to which of the question markers or complementizers can occur on each side of the embedded question.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embContWord='yes' and //q/@embCont='yes' and //typology/@wordOrder='VSO'">
+<xsl:if test="normalize-space(////q/@embContWord)='yes' and normalize-space(////q/@embCont)='yes' and normalize-space(////typology/@wordOrder)='VSO'">
 						<xsl:text>The question marker or complementizer occurs </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embContVSOBeforeWh='no'">
@@ -1324,17 +1324,17 @@
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh='noEnd' and //q/@embContVSONoEndRestricted='unrestricted' and //q/@embContWord='yes' and //q/@embCont='yes'">
+						<xsl:if test="normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////q/@embContVSOBeforeWh)='noEnd' and normalize-space(////q/@embContVSONoEndRestricted)='unrestricted' and normalize-space(////q/@embContWord)='yes' and normalize-space(////q/@embCont)='yes'">
 							<xsl:text>All of the question markers or complementizers can occur in each position.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
-						<xsl:if test="//typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh='noEnd' and //q/@embContVSONoEndRestricted='restricted' and //q/@embContWord='yes' and //q/@embCont='yes' or //typology/@wordOrder='VSO' and //q/@embContVSOBeforeWh='some' and //q/@embContWord='yes' and //q/@embCont='yes'">
+						<xsl:if test="normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////q/@embContVSOBeforeWh)='noEnd' and normalize-space(////q/@embContVSONoEndRestricted)='restricted' and normalize-space(////q/@embContWord)='yes' and normalize-space(////q/@embCont)='yes' or normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////q/@embContVSOBeforeWh)='some' and normalize-space(////q/@embContWord)='yes' and normalize-space(////q/@embCont)='yes'">
 							<xsl:text>There are restrictions as to which of the question markers or complementizers can occur in each position.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
-<xsl:if test="//q/@embContWord='yes' and //q/@embCont='yes'">
+<xsl:if test="normalize-space(////q/@embContWord)='yes' and normalize-space(////q/@embCont)='yes'">
 						<xsl:text>A question marker or complementizer is </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContRequired='yes'">

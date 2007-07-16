@@ -7,7 +7,7 @@ QP = Q
 	&lt;QP head&gt; = &lt;Q head&gt;
 	&lt;QP option&gt; = 0
 </xsl:text>
-	<xsl:if test="//qp/@degree='yes' and //qp/@degreePos='before' or //qp/@degree='yes' and //qp/@degreePos='either' or //qp/@degree='yes' and //qp/@degreePos='eitherOrBoth' or //qp/@degree='yes' and //qp/@degreePos='beforeOrBoth'">
+	<xsl:if test="normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='before' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='either' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='eitherOrBoth' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='beforeOrBoth'">
 <xsl:text>
 rule {QP option 1 - modifiers initial}
 QP = Deg Q
@@ -35,7 +35,7 @@ QP = Deg Q
 
 
 
-	<xsl:if test="//qp/@degree='yes' and //qp/@degreePos='after' or //qp/@degree='yes' and //qp/@degreePos='either' or //qp/@degree='yes' and //qp/@degreePos='eitherOrBoth' or //qp/@degree='yes' and //qp/@degreePos='afterOrBoth'">
+	<xsl:if test="normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='after' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='either' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='eitherOrBoth' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='afterOrBoth'">
 <xsl:text>
 rule {QP option 2 - modifiers final}
 QP = Q Deg
@@ -63,7 +63,7 @@ QP = Q Deg
 
 
 
-	<xsl:if test="//qp/@degree='yes' and //qp/@degreePos='both' or //qp/@degree='yes' and //qp/@degreePos='beforeOrBoth' or //qp/@degree='yes' and //qp/@degreePos='eitherOrBoth' or //qp/@degree='yes' and //qp/@degreePos='afterOrBoth'">
+	<xsl:if test="normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='both' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='beforeOrBoth' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='eitherOrBoth' or normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)='afterOrBoth'">
 <xsl:text>
 rule {QP option 3 - modifiers both sides}
 QP = Deg_1 Q Deg_2
@@ -93,7 +93,7 @@ QP = Deg_1 Q Deg_2
 
 
 
-	<xsl:if test="//qp/@cardinalHeadPos='before'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='before'">
 <xsl:text>
 rule {QP option Num0i - no modifiers, head initial}
 QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5)))))
@@ -106,7 +106,7 @@ QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5)))))
 
 
 
-	<xsl:if test="//qp/@cardinalHeadPos='after'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='after'">
 <xsl:text>
 rule {QP option Num0f - no modifiers, head final}
 QP = (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num
@@ -119,7 +119,7 @@ QP = (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num
 
 
 
-	<xsl:if test="//qp/@cardinalHead='before' and //qp/@ordinalPos='before' or //qp/@cardinalHead='before' and //qp/@ordinalPos='beforeOrBoth' or //qp/@cardinalHead='before' and //qp/@ordinalPos='either' or //qp/@cardinalHead='before' and //qp/@ordinalPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='before' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num1i - modifiers initial, head initial}
 QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5)))))
@@ -148,7 +148,7 @@ QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5)))))
 
 
 
-	<xsl:if test="//qp/@cardinalHead='after' and //qp/@ordinalPos='before' or //qp/@cardinalHead='after' and //qp/@ordinalPos='beforeOrBoth' or //qp/@cardinalHead='after' and //qp/@ordinalPos='either' or //qp/@cardinalHead='after' and //qp/@ordinalPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='before' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num1f - modifiers initial, head final}
 QP = Adj (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num
@@ -177,7 +177,7 @@ QP = Adj (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num
 
 
 
-	<xsl:if test="//qp/@cardinalHead='before' and //qp/@ordinalPos='after' or //qp/@cardinalHead='before' and //qp/@ordinalPos='afterOrBoth' or //qp/@cardinalHead='before' and //qp/@ordinalPos='either' or //qp/@cardinalHead='before' and //qp/@ordinalPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='after' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num2i - modifiers final, head initial}
 QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5))))) Adj
@@ -206,7 +206,7 @@ QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5))))) Adj
 
 
 
-	<xsl:if test="//qp/@cardinalHead='after' and //qp/@ordinalPos='after' or //qp/@cardinalHead='after' and //qp/@ordinalPos='afterOrBoth' or //qp/@cardinalHead='after' and //qp/@ordinalPos='either' or //qp/@cardinalHead='after' and //qp/@ordinalPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='after' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num2f - modifiers final, head final}
 QP = (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num Adj
@@ -235,7 +235,7 @@ QP = (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num Adj
 
 
 
-	<xsl:if test="//qp/@cardinalHead='before' and //qp/@ordinalPos='both' or //qp/@cardinalHead='before' and //qp/@ordinalPos='afterOrBoth' or //qp/@cardinalHead='before' and //qp/@ordinalPos='beforeOrBoth' or //qp/@cardinalHead='before' and //qp/@ordinalPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='both' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num3i - modifiers both sides, head initial}
 QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5))))) Adj_1
@@ -266,7 +266,7 @@ QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Num_3 (Num_4 (Num_5))))) Adj_1
 
 
 
-	<xsl:if test="//qp/@cardinalHead='after' and //qp/@ordinalPos='both' or //qp/@cardinalHead='after' and //qp/@ordinalPos='afterOrBoth' or //qp/@cardinalHead='after' and //qp/@ordinalPos='beforeOrBoth' or //qp/@cardinalHead='after' and //qp/@ordinalPos='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='both' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num3f - modifiers both sides, head final}
 QP = Adj (((((Num_5) Num_4) Num_3) Num_2) (Conj_1) Num_1) (Conj) Num Adj_1

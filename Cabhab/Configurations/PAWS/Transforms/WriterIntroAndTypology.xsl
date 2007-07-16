@@ -100,7 +100,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		<xsl:if test="//typology/@wordOrder='SVO' and //pp/@pPos='before' or //typology/@wordOrder='VSO' and //pp/@pPos='before' or //typology/@wordOrder='VOS' and //pp/@pPos='before' or //typology/@wordOrder='SVO' and //pp/@pPos='unknown' or //typology/@wordOrder='VSO' and //pp/@pPos='unknown' or //typology/@wordOrder='VOS' and //pp/@pPos='unknown'">
+		<xsl:if test="normalize-space(////typology/@wordOrder)='SVO' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='VOS' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='SVO' and normalize-space(////pp/@pPos)='unknown' or normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////pp/@pPos)='unknown' or normalize-space(////typology/@wordOrder)='VOS' and normalize-space(////pp/@pPos)='unknown'">
 <p>
 <xsl:text>In keeping with the head-initial typology, </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -109,7 +109,7 @@
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//typology/@wordOrder='SVO' and //pp/@pPos='after' or //typology/@wordOrder='VSO' and //pp/@pPos='after' or //typology/@wordOrder='VOS' and //pp/@pPos='after'">
+		<xsl:if test="normalize-space(////typology/@wordOrder)='SVO' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='VOS' and normalize-space(////pp/@pPos)='after'">
 <p>
 <xsl:text>In contrast with the head-initial typology, </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -118,7 +118,7 @@
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//pp/@pPos='both'">
+		<xsl:if test="normalize-space(////pp/@pPos)='both'">
 <p>
 <xsl:value-of select="//language/langName" />
 <xsl:text> has both prepositions and postpositions (section </xsl:text>
@@ -126,7 +126,7 @@
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//typology/@wordOrder='SOV' and //pp/@pPos='after' or //typology/@wordOrder='OVS' and //pp/@pPos='after' or //typology/@wordOrder='OSV' and //pp/@pPos='after' or //typology/@wordOrder='SOV' and //pp/@pPos='unknown' or //typology/@wordOrder='OVS' and //pp/@pPos='unknown' or //typology/@wordOrder='OSV' and //pp/@pPos='unknown'">
+		<xsl:if test="normalize-space(////typology/@wordOrder)='SOV' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='OVS' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='OSV' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='SOV' and normalize-space(////pp/@pPos)='unknown' or normalize-space(////typology/@wordOrder)='OVS' and normalize-space(////pp/@pPos)='unknown' or normalize-space(////typology/@wordOrder)='OSV' and normalize-space(////pp/@pPos)='unknown'">
 <p>
 <xsl:text>In keeping with the head-final typology, </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -135,7 +135,7 @@
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//typology/@wordOrder='SOV' and //pp/@pPos='before' or //typology/@wordOrder='OVS' and //pp/@pPos='before' or //typology/@wordOrder='OSV' and //pp/@pPos='before'">
+		<xsl:if test="normalize-space(////typology/@wordOrder)='SOV' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='OVS' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='OSV' and normalize-space(////pp/@pPos)='before'">
 <p>
 <xsl:text>In contrast with the head-final typology, </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -189,10 +189,10 @@
 <xsl:text> the noun they are modifying (section </xsl:text>
 <sectionRef sec="sNPAdjP" />
 <xsl:text>).   </xsl:text>
-<xsl:if test="//relcl/@exist='no'">
+<xsl:if test="normalize-space(////relcl/@exist)='no'">
 <xsl:value-of select="//language/langName" /> <xsl:text> does not have any type of relative clause.</xsl:text>
 </xsl:if>
-<xsl:if test="//relcl/@exist='yes'">
+<xsl:if test="normalize-space(////relcl/@exist)='yes'">
 <xsl:text>Relative clauses occur </xsl:text> <xsl:choose>
 				<xsl:when test="//relcl/@clausePos='before'">
 <xsl:text>before</xsl:text>
@@ -232,7 +232,7 @@
 <xsl:text>  (section </xsl:text>
 <sectionRef sec="sIPProDrop" />
 <xsl:text>).</xsl:text>
-<xsl:if test="//ip/@proDrop='yes'">
+<xsl:if test="normalize-space(////ip/@proDrop)='yes'">
 				<xsl:text>  Pro-drop of the object is </xsl:text>
 				<xsl:choose>
 					<xsl:when test="//ip/@proDropObject='no'">
@@ -245,7 +245,7 @@
 				<xsl:text> allowed.</xsl:text>
 			</xsl:if>
 </p>
-		<xsl:if test="//ip/@aux='no'">
+		<xsl:if test="normalize-space(////ip/@aux)='no'">
 <p>
 <xsl:value-of select="//language/langName" />
 <xsl:text> does not have any auxiliaries which are written as separate words (section </xsl:text>
@@ -253,7 +253,7 @@
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="//ip/@aux='yes'">
+		<xsl:if test="normalize-space(////ip/@aux)='yes'">
 <p>
 <xsl:value-of select="//language/langName" />
 <xsl:text> has some auxiliaries which are written as separate words.  These occur </xsl:text>
@@ -283,7 +283,7 @@
 </p>
 </xsl:if>
 		<p>
-<xsl:if test="//q/@mainYNWord='yes'">
+<xsl:if test="normalize-space(////q/@mainYNWord)='yes'">
 				<xsl:text>In Yes/No questions, there is a question marker or complementizer which occurs </xsl:text>
 				<xsl:choose>
 					<xsl:when test="//q/@mainYNPos='before'">

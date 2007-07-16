@@ -17,46 +17,46 @@
 <xsl:value-of select="//language/langName" />
 <xsl:text> is:</xsl:text>
 </p>
-		<xsl:if test="//np/@artAndDem='both' and //np/@artBothCooccur!='no' and //np/@possCooccur='yes' or //np/@artAndDem='article' and //np/@possCooccur='yes' or //np/@artAndDem='demonstrative' and //np/@possCooccur='yes' or //np/@artAndDem='no'">
+		<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@possCooccur)='yes' or normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@possCooccur)='yes' or normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@possCooccur)='yes' or normalize-space(////np/@artAndDem)='no'">
 <example num="xNP.8">
 <table>
 				<tr>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='after'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='after'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='demonstrative' and //np/@demPos!='after' or //np/@artAndDem='both' and //np/@demAndArtDemPos!='after'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demPos)!='after' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demAndArtDemPos)!='after'">
 <td>
 						<xsl:text>(Dem)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='article' and //np/@artPos!='after' or //np/@artAndDem='both' and //np/@demAndArtArtPos!='after'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@artPos)!='after' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demAndArtArtPos)!='after'">
 <td>
 						<xsl:text>(Art)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@possNounPos!='after' and //np/@possNounPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@possNounPos)!='after' and normalize-space(////np/@possNounPos)!='unknown'">
 <td>
 						<xsl:text>(Poss)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='after' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='after' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='after' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='after' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='after' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='after' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@compHead='right' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='right' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>((N) N)</xsl:text>
 					</td>
@@ -64,42 +64,42 @@
 					<td>
 						<xsl:text>N</xsl:text>
 					</td>
-					<xsl:if test="//np/@compHead='left' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='left' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='before' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='before' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='before' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='before' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='before' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@possNounPos!='before' and //np/@possNounPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@possNounPos)!='before' and normalize-space(////np/@possNounPos)!='unknown'">
 <td>
 						<xsl:text>(Poss)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='article' and //np/@artPos!='before' or //np/@artAndDem='both' and //np/@demAndArtArtPos!='before'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@artPos)!='before' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demAndArtArtPos)!='before'">
 <td>
 						<xsl:text>(Art)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='demonstrative' and //np/@demPos!='before' or //np/@artAndDem='both' and //np/@demAndArtDemPos!='before'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demPos)!='before' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@demAndArtDemPos)!='before'">
 <td>
 						<xsl:text>(Dem)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='before'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='before'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
@@ -108,41 +108,41 @@
 			</table>
 </example>
 </xsl:if>
-		<xsl:if test="//np/@artAndDem='both' and //np/@artBothCooccur='no' and //np/@possCooccur='yes'">
+		<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@artBothCooccur)='no' and normalize-space(////np/@possCooccur)='yes'">
 <example num="xNP.10">
 <table>
 				<tr>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='after'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='after'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='both' and //np/@artBothCooccur='no' and //np/@possCooccur='yes' and //np/@demOrArtPos!='after'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@artBothCooccur)='no' and normalize-space(////np/@possCooccur)='yes' and normalize-space(////np/@demOrArtPos)!='after'">
 <td>
 						<xsl:text>(Dem/Art)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@possNounPos!='after' and //np/@possNounPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@possNounPos)!='after' and normalize-space(////np/@possNounPos)!='unknown'">
 <td>
 						<xsl:text>(Poss)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='after' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='after' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='after' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='after' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='after' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='after' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@compHead='right' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='right' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>((N) N)</xsl:text>
 					</td>
@@ -150,37 +150,37 @@
 					<td>
 						<xsl:text>N</xsl:text>
 					</td>
-					<xsl:if test="//np/@compHead='left' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='left' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='before' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='before' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='before' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='before' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='before' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@possNounPos!='before' and //np/@possNounPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@possNounPos)!='before' and normalize-space(////np/@possNounPos)!='unknown'">
 <td>
 						<xsl:text>(Poss)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='both' and //np/@artBothCooccur='no' and //np/@possCooccur='yes' and //np/@demOrArtPos!='before'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@artBothCooccur)='no' and normalize-space(////np/@possCooccur)='yes' and normalize-space(////np/@demOrArtPos)!='before'">
 <td>
 						<xsl:text>(Art/Dem)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='before'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='before'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
@@ -189,36 +189,36 @@
 			</table>
 </example>
 </xsl:if>
-		<xsl:if test="//np/@artAndDem='both' and //np/@possCooccur='no'">
+		<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@possCooccur)='no'">
 <example num="xNP.12">
 <table>
 				<tr>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='after'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='after'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='both' and //np/@possCooccur='no' and //np/@demAndArtArtPos!='after' and //np/@demAndArtDemPos!='after' and //np/@possNounPos!='after' or //np/@artAndDem='both' and //np/@possCooccur='no' and //np/@demOrArtPos!='after' and //np/@possNounPos!='after'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@possCooccur)='no' and normalize-space(////np/@demAndArtArtPos)!='after' and normalize-space(////np/@demAndArtDemPos)!='after' and normalize-space(////np/@possNounPos)!='after' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@possCooccur)='no' and normalize-space(////np/@demOrArtPos)!='after' and normalize-space(////np/@possNounPos)!='after'">
 <td>
 						<xsl:text>(Dem/Art/Poss)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='after' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='after' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='after' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='after' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='after' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='after' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@compHead='right' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='right' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>((N) N)</xsl:text>
 					</td>
@@ -226,32 +226,32 @@
 					<td>
 						<xsl:text>N</xsl:text>
 					</td>
-					<xsl:if test="//np/@compHead='left' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='left' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='before' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='before' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='before' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='before' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='before' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='both' and //np/@possCooccur='no' and //np/@demAndArtArtPos!='before' and //np/@demAndArtDemPos!='before' and //np/@possNounPos!='before' or //np/@artAndDem='both' and //np/@possCooccur='no' and //np/@demOrArtPos!='before' and //np/@possNounPos!='before'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@possCooccur)='no' and normalize-space(////np/@demAndArtArtPos)!='before' and normalize-space(////np/@demAndArtDemPos)!='before' and normalize-space(////np/@possNounPos)!='before' or normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@possCooccur)='no' and normalize-space(////np/@demOrArtPos)!='before' and normalize-space(////np/@possNounPos)!='before'">
 <td>
 						<xsl:text>(Poss/Art/Dem)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='before'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='before'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
@@ -260,36 +260,36 @@
 			</table>
 </example>
 </xsl:if>
-		<xsl:if test="//np/@artAndDem='demonstrative' and //np/@possCooccur='no'">
+		<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@possCooccur)='no'">
 <example num="xNP.14">
 <table>
 				<tr>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='after'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='after'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='demonstrative' and //np/@possCooccur='no' and //np/@demPos!='after' and //np/@possNounPos!='after'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@possCooccur)='no' and normalize-space(////np/@demPos)!='after' and normalize-space(////np/@possNounPos)!='after'">
 <td>
 						<xsl:text>(Dem/Poss)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='after' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='after' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='after' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='after' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='after' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='after' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@compHead='right' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='right' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>((N) N)</xsl:text>
 					</td>
@@ -297,32 +297,32 @@
 					<td>
 						<xsl:text>N</xsl:text>
 					</td>
-					<xsl:if test="//np/@compHead='left' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='left' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='before' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='before' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='before' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='before' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='before' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='demonstrative' and //np/@possCooccur='no' and //np/@demPos!='before' and //np/@possNounPos!='before'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@possCooccur)='no' and normalize-space(////np/@demPos)!='before' and normalize-space(////np/@possNounPos)!='before'">
 <td>
 						<xsl:text>(Poss/Dem)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='before'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='before'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
@@ -331,36 +331,36 @@
 			</table>
 </example>
 </xsl:if>
-		<xsl:if test="//np/@artAndDem='article' and //np/@possCooccur='no'">
+		<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@possCooccur)='no'">
 <example num="xNP.16">
 <table>
 				<tr>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='after' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='after'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='after' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='after'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='article' and //np/@possCooccur='no' and //np/@artPos!='after' and //np/@possNounPos!='after'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@possCooccur)='no' and normalize-space(////np/@artPos)!='after' and normalize-space(////np/@possNounPos)!='after'">
 <td>
 						<xsl:text>(Art/Poss)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='after' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='after' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='after' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='after' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='after' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='after' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@compHead='right' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='right' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>((N) N)</xsl:text>
 					</td>
@@ -368,32 +368,32 @@
 					<td>
 						<xsl:text>N</xsl:text>
 					</td>
-					<xsl:if test="//np/@compHead='left' and //np/@comp='yes'">
+					<xsl:if test="normalize-space(////np/@compHead)='left' and normalize-space(////np/@comp)='yes'">
 <td>
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@ppPos!='before' and //np/@ppPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@ppPos)!='before' and normalize-space(////np/@ppPos)!='unknown'">
 <td>
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@adjpPos!='before' and //np/@adjpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@adjpPos)!='before' and normalize-space(////np/@adjpPos)!='unknown'">
 <td>
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@qpPos!='before' and //np/@qpPos!='unknown'">
+					<xsl:if test="normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='unknown'">
 <td>
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//np/@artAndDem='article' and //np/@possCooccur='no' and //np/@artPos!='before' and //np/@possNounPos!='before'">
+					<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@possCooccur)='no' and normalize-space(////np/@artPos)!='before' and normalize-space(////np/@possNounPos)!='before'">
 <td>
 						<xsl:text>(Poss/Art)</xsl:text>
 					</td>
 </xsl:if>
-					<xsl:if test="//qp/@npDegree='yes' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesPos' and //qp/@npDegreePos!='before' or //qp/@npDegree='yesNeg' and //qp/@npDegreePos!='before'">
+					<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesPos' and normalize-space(////qp/@npDegreePos)!='before' or normalize-space(////qp/@npDegree)='yesNeg' and normalize-space(////qp/@npDegreePos)!='before'">
 <td>
 						<xsl:text>(Deg)</xsl:text>
 					</td>
@@ -503,7 +503,7 @@ Some languages are even more complex in that they normally have a nominative-acc
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@case='nominative' and //np/@caseDefault='nominative' or //np/@case='split' and //np/@caseDefault='nominative'">
+<xsl:if test="normalize-space(////np/@case)='nominative' and normalize-space(////np/@caseDefault)='nominative' or normalize-space(////np/@case)='split' and normalize-space(////np/@caseDefault)='nominative'">
 					<xsl:text>  Nominative case is the default (unmarked) case.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
@@ -548,11 +548,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text>.  To review the facts for </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text>,  </xsl:text>
-<xsl:if test="//qp/@npDegree='no'">
+<xsl:if test="normalize-space(////qp/@npDegree)='no'">
 					<xsl:text>these are not expressed as separate words which modify the whole nominal phrase, so they will not have a position in the phrase structure.  Instead, they all attach to another word in the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@npDegree='yes'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yes'">
 					<xsl:text>these are expressed as separate words which occur </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//qp/@npDegreePos='before'">
@@ -583,7 +583,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<xsl:text> the rest of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@npDegree='yesPos'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yesPos'">
 					<xsl:text>the positive special degree elements are expressed as separate words which occur </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//qp/@npDegreePos='before'">
@@ -614,7 +614,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<xsl:text> the rest of the nominal phrase.  The negative special degree elements, however, are not expressed as separate words which modify the whole nominal phrase, so they will not have a place in the phrase structure.  Instead, they attach to another word in the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//qp/@npDegree='yesNeg'">
+<xsl:if test="normalize-space(////qp/@npDegree)='yesNeg'">
 					<xsl:text>the negative special degree elements are expressed as separate words which occur </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//qp/@npDegreePos='before'">
@@ -646,12 +646,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="//qp/@npDegree='yes' or //qp/@npDegree='yesPos'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos'">
 <p>
 <xsl:text>Examples of the positive special degree words in nominal phrases include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yes' or //qp/@npDegree='yesPos'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos'">
 <example num="xNP.NPDegree.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/example" />
@@ -691,12 +691,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yes' or //qp/@npDegree='yesNeg'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesNeg'">
 <p>
 <xsl:text>Examples of the negative special degree elements in nominal phrases include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//qp/@npDegree='yes' or //qp/@npDegree='yesNeg'">
+			<xsl:if test="normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesNeg'">
 <example num="xNP.NPDegree.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negExample" />
@@ -809,7 +809,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artAndDem!='no'">
+<xsl:if test="normalize-space(////np/@artAndDem)!='no'">
 					<xsl:text> The </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@artAndDem='article'">
@@ -823,14 +823,14 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 					</xsl:choose>
 					<xsl:text> are </xsl:text>
-					<xsl:if test="//np/@artAndDem!='no' and //np/@artCase='no'">
+					<xsl:if test="normalize-space(////np/@artAndDem)!='no' and normalize-space(////np/@artCase)='no'">
 						<xsl:text>not </xsl:text>
 					</xsl:if>
 					<xsl:text>marked for case.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="//np/@artAndDem='article'">
+			<xsl:if test="normalize-space(////np/@artAndDem)='article'">
 <p>
 <xsl:text>The article occurs </xsl:text>
 <xsl:choose>
@@ -848,11 +848,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
-<xsl:if test="//np/@artAndDem='article' and //np/@artPos='either' and //np/@artEither='unrestricted'">
+<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@artPos)='either' and normalize-space(////np/@artEither)='unrestricted'">
 					<xsl:text>All of the articles may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artAndDem='article' and //np/@artPos='either' and //np/@artEither='restricted'">
+<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@artPos)='either' and normalize-space(////np/@artEither)='restricted'">
 					<xsl:text>There are restrictions as to which of the articles may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text>  The presence of an article is </xsl:text>
@@ -868,7 +868,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artAndDem='article' and //np/@artPos='either' and //np/@artRequired='mass'">
+<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@artPos)='either' and normalize-space(////np/@artRequired)='mass'">
 					<xsl:text>In the singular forms, an article is required </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@artBothRequiredPos='before'">
@@ -887,7 +887,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artAndDem='article' and //np/@artPos='either' and //np/@artRequired='yes'">
+<xsl:if test="normalize-space(////np/@artAndDem)='article' and normalize-space(////np/@artPos)='either' and normalize-space(////np/@artRequired)='yes'">
 					<xsl:text>An article is required to appear </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@artBothRequiredPos='before'">
@@ -908,7 +908,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@artAndDem='demonstrative'">
+			<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative'">
 <p>
 <xsl:text>The demonstrative occurs </xsl:text>
 <xsl:choose>
@@ -926,11 +926,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
-<xsl:if test="//np/@artAndDem='demonstrative' and //np/@demPos='either' and //np/@demEither='unrestricted'">
+<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demPos)='either' and normalize-space(////np/@demEither)='unrestricted'">
 					<xsl:text>All of the demonstratives may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artAndDem='demonstrative' and //np/@demPos='either' and //np/@demEither='restricted'">
+<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demPos)='either' and normalize-space(////np/@demEither)='restricted'">
 					<xsl:text>There are restrictions as to which of the demonstratives may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text>  The presence of a demonstrative is </xsl:text>
@@ -946,7 +946,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artAndDem='demonstrative' and //np/@demPos='either' and //np/@demRequired='mass'">
+<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demPos)='either' and normalize-space(////np/@demRequired)='mass'">
 					<xsl:text>In the singular forms, a demonstrative is required </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@demBothRequiredPos='before'">
@@ -965,7 +965,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artAndDem='demonstrative' and //np/@demPos='either' and //np/@demRequired='yes'">
+<xsl:if test="normalize-space(////np/@artAndDem)='demonstrative' and normalize-space(////np/@demPos)='either' and normalize-space(////np/@demRequired)='yes'">
 					<xsl:text>A demonstrative is required to appear </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@demBothRequiredPos='before'">
@@ -986,7 +986,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@artAndDem='both' and //np/@artBothCooccur='no'">
+			<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@artBothCooccur)='no'">
 <p>
 <xsl:text>The articles and demonstratives both appear in the same position, so they do not co-occur in the same nominal phrase.  Articles or demonstratives appear </xsl:text>
 <xsl:choose>
@@ -1004,11 +1004,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
-<xsl:if test="//np/@artBothCooccur='no' and //np/@demOrArtPos='either' and //np/@demOrArtEither='unrestricted'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)='no' and normalize-space(////np/@demOrArtPos)='either' and normalize-space(////np/@demOrArtEither)='unrestricted'">
 					<xsl:text>All of the articles and demonstratives may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur='no' and //np/@demOrArtPos='either' and //np/@demOrArtEither='restricted'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)='no' and normalize-space(////np/@demOrArtPos)='either' and normalize-space(////np/@demOrArtEither)='restricted'">
 					<xsl:text>There are restrictions as to which of the articles and demonstratives may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text>  The presence of an article or demonstrative is </xsl:text>
@@ -1024,7 +1024,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur='no' and //np/@demOrArtPos='either' and //np/@demOrArtRequired='mass'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)='no' and normalize-space(////np/@demOrArtPos)='either' and normalize-space(////np/@demOrArtRequired)='mass'">
 					<xsl:text>In the singular forms, an article or a demonstrative is required </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@demOrArtBothRequiredPos='before'">
@@ -1043,7 +1043,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur='no' and //np/@demOrArtPos='either' and //np/@demOrArtRequired='yes'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)='no' and normalize-space(////np/@demOrArtPos)='either' and normalize-space(////np/@demOrArtRequired)='yes'">
 					<xsl:text>An article or a demonstrative is required to appear </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@demOrArtBothRequiredPos='before'">
@@ -1064,7 +1064,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@artAndDem='both' and //np/@artBothCooccur!='no'">
+			<xsl:if test="normalize-space(////np/@artAndDem)='both' and normalize-space(////np/@artBothCooccur)!='no'">
 <p>
 <xsl:text>The articles and demonstratives do not appear in the same position with respect to the noun, </xsl:text>
 <xsl:choose>
@@ -1091,11 +1091,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
-<xsl:if test="//np/@artBothCooccur!='no' and //np/@demAndArtDemPos='either' and //np/@demAndArtDemEither='unrestricted'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@demAndArtDemPos)='either' and normalize-space(////np/@demAndArtDemEither)='unrestricted'">
 					<xsl:text>All of the demonstratives may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur!='no' and //np/@demAndArtDemPos='either' and //np/@demAndArtDemEither='restricted'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@demAndArtDemPos)='either' and normalize-space(////np/@demAndArtDemEither)='restricted'">
 					<xsl:text>There are restrictions as to which of the demonstratives may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text>  The presence of a demonstrative is </xsl:text>
@@ -1111,7 +1111,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur!='no' and //np/@demAndArtDemPos='either' and //np/@demAndArtDemRequired='mass'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@demAndArtDemPos)='either' and normalize-space(////np/@demAndArtDemRequired)='mass'">
 					<xsl:text>In the singular forms, a demonstrative is required </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@demAndArtDemRequiredPos='before'">
@@ -1130,7 +1130,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur!='no' and //np/@demAndArtDemPos='either' and //np/@demAndArtDemRequired='yes'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@demAndArtDemPos)='either' and normalize-space(////np/@demAndArtDemRequired)='yes'">
 					<xsl:text>A demonstrative is required to appear </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@demAndArtDemBothRequiredPos='before'">
@@ -1164,11 +1164,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
-<xsl:if test="//np/@artBothCooccur!='no' and //np/@demAndArtArtPos='either' and //np/@demAndArtArtEither='unrestricted'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@demAndArtArtPos)='either' and normalize-space(////np/@demAndArtArtEither)='unrestricted'">
 					<xsl:text>All of the articles may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur!='no' and //np/@demAndArtArtPos='either' and //np/@demAndArtArtEither='restricted'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@demAndArtArtPos)='either' and normalize-space(////np/@demAndArtArtEither)='restricted'">
 					<xsl:text>There are restrictions as to which of the articles may appear on either side of the noun.</xsl:text>
 				</xsl:if>
 <xsl:text>  The presence of an article is </xsl:text>
@@ -1184,7 +1184,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur!='no' and //np/@demAndArtArtPos='either' and //np/@demAndArtArtRequired='mass'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@demAndArtArtPos)='either' and normalize-space(////np/@demAndArtArtRequired)='mass'">
 					<xsl:text>In the singular forms, an article is required </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@demAndArtArtRequiredPos='before'">
@@ -1203,7 +1203,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@artBothCooccur!='no' and //np/@demAndArtArtPos='either' and //np/@demAndArtArtRequired='yes'">
+<xsl:if test="normalize-space(////np/@artBothCooccur)!='no' and normalize-space(////np/@demAndArtArtPos)='either' and normalize-space(////np/@demAndArtArtRequired)='yes'">
 					<xsl:text>An article is required to appear </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@demAndArtArtBothRequiredPos='before'">
@@ -1224,14 +1224,14 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@artAndDem!='no'">
+			<xsl:if test="normalize-space(////np/@artAndDem)!='no'">
 <p>
 <xsl:text>Examples of nominal phrases including articles and/or demonstratives as allowed in </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@artAndDem!='no'">
+			<xsl:if test="normalize-space(////np/@artAndDem)!='no'">
 <example num="xNP.NPArtDem.20">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/example" />
@@ -1450,15 +1450,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@possCliticWord='no' and //np/@possMarked='yesClitic' and //np/@possCliticAffix='suffix'">
+<xsl:if test="normalize-space(////np/@possCliticWord)='no' and normalize-space(////np/@possMarked)='yesClitic' and normalize-space(////np/@possCliticAffix)='suffix'">
 					<xsl:text> This phrasal clitic is an enclitic which attaches to the final word in the possessor.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@possCliticWord='no' and //np/@possMarked='yesClitic' and //np/@possCliticAffix='prefix'">
+<xsl:if test="normalize-space(////np/@possCliticWord)='no' and normalize-space(////np/@possMarked)='yesClitic' and normalize-space(////np/@possCliticAffix)='prefix'">
 					<xsl:text> This phrasal clitic is an proclitic which attaches to the first word in the possessor.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@possCliticWord='yes' and //np/@possMarked='yesClitic'">
+<xsl:if test="normalize-space(////np/@possCliticWord)='yes' and normalize-space(////np/@possMarked)='yesClitic'">
 					<xsl:text> This phrasal clitic is written as a separate word which occurs </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//np/@possCliticPossPos='before'">
@@ -1505,7 +1505,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</xsl:choose>
 <xsl:text> the noun being possessed.</xsl:text>
 </p>
-			<xsl:if test="//np/@artAndDem!='no'">
+			<xsl:if test="normalize-space(////np/@artAndDem)!='no'">
 <section3 id="sNPPossCooccur">
 				<secTitle>Possessors and Articles Or Demonstratives Occuring Together</secTitle>
 				<p>
@@ -1537,17 +1537,17 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </p>
 			</section3>
 </xsl:if>
-			<xsl:if test="//np/@case!='none'">
+			<xsl:if test="normalize-space(////np/@case)!='none'">
 <section3 id="sNPPossCase">
 				<secTitle>Possessor Case</secTitle>
-				<xsl:if test="//np/@case='nominative'">
+				<xsl:if test="normalize-space(////np/@case)='nominative'">
 <p>
 <xsl:text>With the normal nominative-accusative case system followed by </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text>, possessors are marked with the genitive case.</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="//np/@case='split'">
+				<xsl:if test="normalize-space(////np/@case)='split'">
 <p>
 <xsl:text>Possessors in </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -1566,7 +1566,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="//np/@case='ergative'">
+				<xsl:if test="normalize-space(////np/@case)='ergative'">
 <p>
 <xsl:text>Within the ergative-absolutive case system followed by </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -1630,12 +1630,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 					</xsl:choose>
 <xsl:text> between alienably and inalienably possessed nouns.  </xsl:text>
-<xsl:if test="//np/@possAlienable='yes'">
+<xsl:if test="normalize-space(////np/@possAlienable)='yes'">
 						<xsl:text>The affix which marks alienably possessed nouns when they have a possessor is:</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
-				<xsl:if test="//np/@possAlienable='yes'">
+				<xsl:if test="normalize-space(////np/@possAlienable)='yes'">
 <example num="xNP.NPPoss.NPPossAgreement.10">
 <table>
 						<tr>
@@ -1685,19 +1685,19 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 					</xsl:choose>
 <xsl:text> marked with an affix which either agrees with the possessor or expresses the possessor by itself.  </xsl:text>
-<xsl:if test="//np/@possAgr='yes'">
+<xsl:if test="normalize-space(////np/@possAgr)='yes'">
 						<xsl:text>These affixes mark the following features of the possessor:</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
-				<xsl:if test="//np/@possAgr='yes'">
+				<xsl:if test="normalize-space(////np/@possAgr)='yes'">
 <example num="xNP.NPPoss.NPPossAgreement.14">
 <table border="1">
 						<tr>
 							<th>Type of feature</th>
 							<th>Feature</th>
 						</tr>
-						<xsl:if test="//np/npPossAgrPossFirst/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossFirst/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>person</xsl:text>
@@ -1707,7 +1707,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossExclusive/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossExclusive/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>person</xsl:text>
@@ -1717,7 +1717,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossInclusive/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossInclusive/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>person</xsl:text>
@@ -1727,7 +1727,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossSecond/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossSecond/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>person</xsl:text>
@@ -1737,7 +1737,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossThird/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossThird/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>person</xsl:text>
@@ -1747,7 +1747,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossSingular/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossSingular/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>number</xsl:text>
@@ -1757,7 +1757,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossDual/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossDual/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>number</xsl:text>
@@ -1767,7 +1767,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossPlural/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossPlural/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>number</xsl:text>
@@ -1777,7 +1777,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossMasculine/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossMasculine/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>gender</xsl:text>
@@ -1787,7 +1787,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossFeminine/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossFeminine/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>gender</xsl:text>
@@ -1797,7 +1797,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossNeuter/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossNeuter/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>gender</xsl:text>
@@ -1807,7 +1807,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossAnimate/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossAnimate/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>animacy</xsl:text>
@@ -1817,7 +1817,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossInanimate/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossInanimate/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>animacy</xsl:text>
@@ -1827,7 +1827,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossHuman/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossHuman/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>animacy</xsl:text>
@@ -1837,7 +1837,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossNonHuman/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossNonHuman/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>animacy</xsl:text>
@@ -1847,7 +1847,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 							</td>
 						</tr>
 </xsl:if>
-						<xsl:if test="//np/npPossAgrPossClassClassNumber/@checked='yes'">
+						<xsl:if test="normalize-space(////np/npPossAgrPossClassClassNumber/@checked)='yes'">
 <tr>
 							<td>
 								<xsl:text>class</xsl:text>
@@ -1915,17 +1915,17 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
-<xsl:if test="//np/@qpEither='unrestricted' and //np/@qpPos!='before' and //np/@qpPos!='after' and //np/@qpPos!='unknown'">
+<xsl:if test="normalize-space(////np/@qpEither)='unrestricted' and normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='after' and normalize-space(////np/@qpPos)!='unknown'">
 					<xsl:text>All of quantifier phrases can occur on either side of the noun. </xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@qpEither='restricted' and //np/@qpPos!='before' and //np/@qpPos!='after'">
+<xsl:if test="normalize-space(////np/@qpEither)='restricted' and normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='after'">
 					<xsl:text>There are restrictions as to which of the quantifier phrases can occur on each side of the noun.  </xsl:text>
-					<xsl:if test="//np/@qpEitherRestrictedNumPos='before' and //np/@qpEither='unrestricted' and //np/@qpPos!='before' and //np/@qpPos!='after'">
+					<xsl:if test="normalize-space(////np/@qpEitherRestrictedNumPos)='before' and normalize-space(////np/@qpEither)='unrestricted' and normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='after'">
 						<xsl:text>All of the numbers occur before the noun. </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//np/@qpEitherRestrictedNumPos='after' and //np/@qpEither='unrestricted' and //np/@qpPos!='before' and //np/@qpPos!='after'">
+					<xsl:if test="normalize-space(////np/@qpEitherRestrictedNumPos)='after' and normalize-space(////np/@qpEither)='unrestricted' and normalize-space(////np/@qpPos)!='before' and normalize-space(////np/@qpPos)!='after'">
 						<xsl:text>All of the numbers occur after the noun. </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
@@ -1972,7 +1972,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//np/@qpAgree='yes'">
+			<xsl:if test="normalize-space(////np/@qpAgree)='yes'">
 <p>
 <xsl:text>Like other modifiers within the nominal phrase, quantifier phrases in </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -2045,11 +2045,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
-<xsl:if test="//np/@adjpEither='unrestricted' and //np/@adjpPos!='before' and //np/@adjpPos!='after' and //np/@adjpPos!='unknown'">
+<xsl:if test="normalize-space(////np/@adjpEither)='unrestricted' and normalize-space(////np/@adjpPos)!='before' and normalize-space(////np/@adjpPos)!='after' and normalize-space(////np/@adjpPos)!='unknown'">
 					<xsl:text>All of the adjective phrases can occur on either side of the noun. </xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//np/@adjpEither='restricted' and //np/@adjpPos!='before' and //np/@adjpPos!='after'">
+<xsl:if test="normalize-space(////np/@adjpEither)='restricted' and normalize-space(////np/@adjpPos)!='before' and normalize-space(////np/@adjpPos)!='after'">
 					<xsl:text>There are restrictions as to which of the adjective phrases can occur on each side of the noun. </xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
@@ -2094,7 +2094,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//np/@adjpAgree='yes'">
+			<xsl:if test="normalize-space(////np/@adjpAgree)='yes'">
 <p>
 <xsl:text>Like other modifiers within the nominal phrase, adjective phrases in </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -2168,7 +2168,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="//np/@case!='none' and //np/@possNounCaseChange='yes'">
+			<xsl:if test="normalize-space(////np/@case)!='none' and normalize-space(////np/@possNounCaseChange)='yes'">
 <section3 id="sNPAdjPCaseChange">
 				<secTitle>Case Change with Adjective Phrase Modifiers</secTitle>
 				<p>
@@ -2190,12 +2190,12 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					</xsl:choose>
 <xsl:text></xsl:text>
 </p>
-				<xsl:if test="//np/@adjpCaseChange='yes'">
+				<xsl:if test="normalize-space(////np/@adjpCaseChange)='yes'">
 <p>
 <xsl:text>Further, some languages of this latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase.</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="//np/@adjpCaseChange='yes'">
+				<xsl:if test="normalize-space(////np/@adjpCaseChange)='yes'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:value-of select="//language/langName" />
@@ -2212,20 +2212,20 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 					</xsl:choose>
 <xsl:text> handled in this distinctive way.  </xsl:text>
-<xsl:if test="//np/@adjpCaseAffix!='no' and //np/@adjpCaseChange='yes'">
+<xsl:if test="normalize-space(////np/@adjpCaseAffix)!='no' and normalize-space(////np/@adjpCaseChange)='yes'">
 						<xsl:text>When the overt </xsl:text>
-						<xsl:if test="//np/@case!='none' and //np/@possCaseErg='genitive' or //np/@case='nominative'">
+						<xsl:if test="normalize-space(////np/@case)!='none' and normalize-space(////np/@possCaseErg)='genitive' or normalize-space(////np/@case)='nominative'">
 							<xsl:text>genitive </xsl:text>
 						</xsl:if>
-						<xsl:if test="//np/@case='split' and //np/@possCaseErg!='genitive'">
+						<xsl:if test="normalize-space(////np/@case)='split' and normalize-space(////np/@possCaseErg)!='genitive'">
 							<xsl:text>or </xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
-						<xsl:if test="//np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possCaseErg='ergative' and //np/@case='split'">
+						<xsl:if test="normalize-space(////np/@possCaseErg)='ergative' and normalize-space(////np/@case)='ergative' or normalize-space(////np/@possCaseErg)='ergative' and normalize-space(////np/@case)='split'">
 							<xsl:text>ergative </xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
-						<xsl:if test="//np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possCaseErg='absolutive' and //np/@case='split'">
+						<xsl:if test="normalize-space(////np/@possCaseErg)='absolutive' and normalize-space(////np/@case)='ergative' or normalize-space(////np/@possCaseErg)='absolutive' and normalize-space(////np/@case)='split'">
 							<xsl:text>absolutive </xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
@@ -2238,18 +2238,18 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:when>
 						</xsl:choose>
 						<xsl:text> is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  If the adjective is marked with this </xsl:text>
-						<xsl:if test="//np/@case!='none' and //np/@possCaseErg='genitive' or //np/@case='nominative'">
+						<xsl:if test="normalize-space(////np/@case)!='none' and normalize-space(////np/@possCaseErg)='genitive' or normalize-space(////np/@case)='nominative'">
 							<xsl:text>genitive </xsl:text>
 						</xsl:if>
-						<xsl:if test="//np/@case='split' and //np/@possCaseErg!='genitive'">
+						<xsl:if test="normalize-space(////np/@case)='split' and normalize-space(////np/@possCaseErg)!='genitive'">
 							<xsl:text>or </xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
-						<xsl:if test="//np/@possCaseErg='ergative' and //np/@case='ergative' or //np/@possCaseErg='ergative' and //np/@case='split'">
+						<xsl:if test="normalize-space(////np/@possCaseErg)='ergative' and normalize-space(////np/@case)='ergative' or normalize-space(////np/@possCaseErg)='ergative' and normalize-space(////np/@case)='split'">
 							<xsl:text>ergative </xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
-						<xsl:if test="//np/@possCaseErg='absolutive' and //np/@case='ergative' or //np/@possCaseErg='absolutive' and //np/@case='split'">
+						<xsl:if test="normalize-space(////np/@possCaseErg)='absolutive' and normalize-space(////np/@case)='ergative' or normalize-space(////np/@possCaseErg)='absolutive' and normalize-space(////np/@case)='split'">
 							<xsl:text>absolutive </xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
@@ -2307,14 +2307,14 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:attribute>bottle</langData>
 <xsl:text>, not the other way around.  In all compound nouns and noun modifier constructions in English, the head is the right-most noun in the series.</xsl:text>
 </p>
-			<xsl:if test="//np/@comp='no'">
+			<xsl:if test="normalize-space(////np/@comp)='no'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> does not  have any compound nouns or noun modifiers that are written as separate words.  They are all written as a single word with the head noun.  Examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//np/@comp='yes'">
+			<xsl:if test="normalize-space(////np/@comp)='yes'">
 <p>
 <xsl:text></xsl:text>
 <xsl:value-of select="//language/langName" />

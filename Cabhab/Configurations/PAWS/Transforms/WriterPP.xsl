@@ -61,14 +61,14 @@
 </xsl:attribute>nearly upon the enemy</langData>
 <xsl:text>.</xsl:text>
 </p>
-			<xsl:if test="//pp/@modifiers='yes'">
+			<xsl:if test="normalize-space(////pp/@modifiers)='yes'">
 <p>
 <xsl:text>Similar examples as expressed in </xsl:text>
 <xsl:value-of select="//language/langName" />
 <xsl:text> are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="//pp/@modifiers='yes'">
+			<xsl:if test="normalize-space(////pp/@modifiers)='yes'">
 <example num="xPP.PPModifiers.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pp/example" />
@@ -121,7 +121,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@modifiers='yes'">
+<xsl:if test="normalize-space(////pp/@modifiers)='yes'">
 					<xsl:text></xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pp/@modifierType='degree'">
@@ -147,7 +147,7 @@
 </xsl:when>
 					</xsl:choose>
 					<xsl:text> as modifiers to PPs.  </xsl:text>
-					<xsl:if test="//pp/@modifierType='degree' or //pp/@modifierType='degreeAndManner' or //pp/@modifierType='degreeAndOrdinal' or //pp/@modifierType='all'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='degree' or normalize-space(////pp/@modifierType)='degreeAndManner' or normalize-space(////pp/@modifierType)='degreeAndOrdinal' or normalize-space(////pp/@modifierType)='all'">
 						<xsl:text>The degree words occur </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//pp/@degreePos='before'">
@@ -178,15 +178,15 @@
 						<xsl:text> the rest of the PP.  </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pp/@modifierType='degree' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='degreeAndManner' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='degreeAndOrdinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='all' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='degree' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='degreeAndManner' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='degreeAndOrdinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='all' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted'">
 						<xsl:text>All the degree words can occur on either side of the PP.  </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pp/@modifierType='degree' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='degreeAndManner' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='degreeAndOrdinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='all' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='degree' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='degreeAndManner' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='degreeAndOrdinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='all' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted'">
 						<xsl:text>There are restrictions as to which of the degree words can occur on each side of the PP.  </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pp/@modifierType='ordinal' or //pp/@modifierType='mannerAndOrdinal' or //pp/@modifierType='degreeAndOrdinal' or //pp/@modifierType='all'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='ordinal' or normalize-space(////pp/@modifierType)='mannerAndOrdinal' or normalize-space(////pp/@modifierType)='degreeAndOrdinal' or normalize-space(////pp/@modifierType)='all'">
 						<xsl:text>The ordinals occur </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//pp/@ordinalPos='before'">
@@ -217,15 +217,15 @@
 						<xsl:text> the rest of the PP.  </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pp/@modifierType='ordinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='mannerAndOrdinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='degreeAndOrdinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='all' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='ordinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='mannerAndOrdinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='degreeAndOrdinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='all' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted'">
 						<xsl:text>All the ordinals can occur on either side of the PP.  </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pp/@modifierType='ordinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='mannerAndOrdinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='degreeAndOrdinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='all' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='ordinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='mannerAndOrdinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='degreeAndOrdinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='all' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted'">
 						<xsl:text>There are restrictions as to which of the ordinals can occur on each side of the PP.  </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pp/@modifierType='manner' or //pp/@modifierType='degreeAndManner' or //pp/@modifierType='mannerAndOrdinal' or //pp/@modifierType='all'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='manner' or normalize-space(////pp/@modifierType)='degreeAndManner' or normalize-space(////pp/@modifierType)='mannerAndOrdinal' or normalize-space(////pp/@modifierType)='all'">
 						<xsl:text>The manner adverbials occur </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//pp/@mannerPos='before'">
@@ -256,11 +256,11 @@
 						<xsl:text> the rest of the PP.  </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pp/@modifierType='manner' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='degreeAndManner' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='mannerAndOrdinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted' or //pp/@modifierType='all' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='unrestricted'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='manner' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='degreeAndManner' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='mannerAndOrdinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted' or normalize-space(////pp/@modifierType)='all' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='unrestricted'">
 						<xsl:text>All the manner adverbials can occur on either side of the PP.  </xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="//pp/@modifierType='manner' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='degreeAndManner' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='mannerAndOrdinal' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted' or //pp/@modifierType='all' and //pp/@degreePos!='before' and //pp/@degreePos!='after' and //pp/@degreeEither='restricted'">
+					<xsl:if test="normalize-space(////pp/@modifierType)='manner' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='degreeAndManner' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='mannerAndOrdinal' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted' or normalize-space(////pp/@modifierType)='all' and normalize-space(////pp/@degreePos)!='before' and normalize-space(////pp/@degreePos)!='after' and normalize-space(////pp/@degreeEither)='restricted'">
 						<xsl:text>There are restrictions as to which of the manner adverbials can occur on each side of the PP.</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
@@ -314,7 +314,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pType!='word'">
+<xsl:if test="normalize-space(////pp/@pType)!='word'">
 					<xsl:text>The clitics attach </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pp/@attaches='egde'">
@@ -420,28 +420,28 @@
 </xsl:when>
 					</xsl:choose>
 <xsl:text> of its </xsl:text>
-<xsl:if test="//pp/@pPos='before'">
+<xsl:if test="normalize-space(////pp/@pPos)='before'">
 						<xsl:text>prepositions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='after'">
+<xsl:if test="normalize-space(////pp/@pPos)='after'">
 						<xsl:text>postpositions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='unknown'">
+<xsl:if test="normalize-space(////pp/@pPos)='unknown'">
 						<xsl:text>_____-positions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='both'">
+<xsl:if test="normalize-space(////pp/@pPos)='both'">
 						<xsl:text>prepositions and postpositions</xsl:text>
 					</xsl:if>
 <xsl:text> to stand alone.  </xsl:text>
-<xsl:if test="//pp/@alone='yes'">
+<xsl:if test="normalize-space(////pp/@alone)='yes'">
 						<xsl:text>Some examples within full sentences are:</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
-				<xsl:if test="//pp/@alone='yes'">
+				<xsl:if test="normalize-space(////pp/@alone)='yes'">
 <example num="xPP.PPComps.PPAlone.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pp/aloneExample" />
@@ -510,28 +510,28 @@
 </xsl:when>
 					</xsl:choose>
 <xsl:text> locative adverbs as complements of its </xsl:text>
-<xsl:if test="//pp/@pPos='before'">
+<xsl:if test="normalize-space(////pp/@pPos)='before'">
 						<xsl:text>prepositions.</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='after'">
+<xsl:if test="normalize-space(////pp/@pPos)='after'">
 						<xsl:text>postpositions.</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='unknown'">
+<xsl:if test="normalize-space(////pp/@pPos)='unknown'">
 						<xsl:text>_____-positions.</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='both'">
+<xsl:if test="normalize-space(////pp/@pPos)='both'">
 						<xsl:text>prepositions and postpositions.</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@locative='yes'">
+<xsl:if test="normalize-space(////pp/@locative)='yes'">
 						<xsl:text>  Some examples with locative adverb complements are:</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
-				<xsl:if test="//pp/@locative='yes'">
+				<xsl:if test="normalize-space(////pp/@locative)='yes'">
 <example num="xPP.PPComps.PPLoc.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pp/locExample" />
@@ -605,28 +605,28 @@
 </xsl:when>
 					</xsl:choose>
 <xsl:text> locative </xsl:text>
-<xsl:if test="//pp/@pPos='before'">
+<xsl:if test="normalize-space(////pp/@pPos)='before'">
 						<xsl:text>prepositions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='after'">
+<xsl:if test="normalize-space(////pp/@pPos)='after'">
 						<xsl:text>postpositions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='unknown'">
+<xsl:if test="normalize-space(////pp/@pPos)='unknown'">
 						<xsl:text>_____-positions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='both'">
+<xsl:if test="normalize-space(////pp/@pPos)='both'">
 						<xsl:text>prepositions and postpositions</xsl:text>
 					</xsl:if>
 <xsl:text> which take a locative PP complement.  </xsl:text>
-<xsl:if test="//pp/@ppComp='yes'">
+<xsl:if test="normalize-space(////pp/@ppComp)='yes'">
 						<xsl:text>Some examples with locative PP complements are:</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
-				<xsl:if test="//pp/@ppComp='yes'">
+				<xsl:if test="normalize-space(////pp/@ppComp)='yes'">
 <example num="xPP.PPComps.PPLocPP.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pp/compPPExample" />
@@ -695,28 +695,28 @@
 </xsl:when>
 					</xsl:choose>
 <xsl:text> temporal </xsl:text>
-<xsl:if test="//pp/@pPos='before'">
+<xsl:if test="normalize-space(////pp/@pPos)='before'">
 						<xsl:text>prepositions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='after'">
+<xsl:if test="normalize-space(////pp/@pPos)='after'">
 						<xsl:text>postpositions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='unknown'">
+<xsl:if test="normalize-space(////pp/@pPos)='unknown'">
 						<xsl:text>_____-positions</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="//pp/@pPos='both'">
+<xsl:if test="normalize-space(////pp/@pPos)='both'">
 						<xsl:text>prepositions and postpositions</xsl:text>
 					</xsl:if>
 <xsl:text> which take a sentential complement.  </xsl:text>
-<xsl:if test="//pp/@sentComp='yes'">
+<xsl:if test="normalize-space(////pp/@sentComp)='yes'">
 						<xsl:text>Some examples with sentential complements, included in full sentences are:</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
-				<xsl:if test="//pp/@sentComp='yes'">
+				<xsl:if test="normalize-space(////pp/@sentComp)='yes'">
 <example num="xPP.PPComps.PPSent.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pp/sentExample" />
