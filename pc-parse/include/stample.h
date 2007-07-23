@@ -49,6 +49,24 @@ typedef struct ample_cat_class {
 
 /*****************************************************************************
  * NAME
+ *    AmpleFullReduplication (struct ample_full_redup)
+ * DESCRIPTION
+ *    structure for full reduplication allomorphs
+ *
+ *    All of the full reduplication allomorphs are stored in a single linked list.
+ *    Each node of this list has a pointer to any "hyphen" character and a
+ *    pointer to the allomorph struct.
+ */
+typedef struct ample_full_redup {
+	char *			pszPrefix;  /* any preceding string (e.g. -) */
+	char *			pszPostfix; /* any trailing string (e.g. -) */
+	int                         iDicType ;  /* dictionary type (prefix or suffix) */
+	struct ample_allomorph *	pAllo;	    /* allomorph */
+	struct ample_full_redup *	pNext;	    /* pointer to next item in list */
+	} AmpleFullReduplication;
+
+/*****************************************************************************
+ * NAME
  *    AmpleMorphClass (struct ample_morph_class)
  * DESCRIPTION
  *    structure for morpheme classes
