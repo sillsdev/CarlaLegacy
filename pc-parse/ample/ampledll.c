@@ -1247,6 +1247,15 @@ static char * addFWParseToBuffer(
 		  fwConCat("' Label=\"", iAnalysesCount_in, &iRoom, pszAResult);
 		  fwConCat(pAllo->pszAllomorph, iAnalysesCount_in,
 			   &iRoom, pszAResult);
+#ifdef EXPERIMENTAL
+		  if (pAllo->pPATRCAT != NULL)
+			{
+			  fwConCat("\" wordType=\"", iAnalysesCount_in, &iRoom,
+				   pszAResult);
+		  fwConCat(pAllo->pPATRCAT, iAnalysesCount_in, &iRoom,
+			   pszAResult);
+			}
+#endif
 		  fwConCat("\"/>\r\n", iAnalysesCount_in, &iRoom, pszAResult);
 		  fwConCat("      <MSI DbRef='", iAnalysesCount_in,
 			   &iRoom, pszAResult);
@@ -4697,6 +4706,8 @@ DllExport int AmpleThreadId()
 
 /******************************************************************************
  * EDIT HISTORY
+ * 10-Sep-2007  hab  - Include XAmple word cateogry in FieldWorks XML result
+ * [3.12.6.21
  * 06-Jul-2006  SRMc - Add AmpleThreadId.
  * [3.12.3.20]
  * 09-Dec-2004  SRMc - Add RecognizeOnly parameter.  When "true", the PC-PATR
