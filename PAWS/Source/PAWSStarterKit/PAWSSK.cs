@@ -392,8 +392,8 @@ namespace PAWSStarterKit
 			miHelpMcConnel2002Doc.Click += new EventHandler(MenuHelpMcConnel2002OnClick);
 			mMenu.MenuItems[index].MenuItems.Add(miHelpMcConnel2002Doc);
 
-			// Help XLingPap Documentation
-			miHelpXLingPapDoc = new MenuItem("&XLingPap documentation");
+			// Help XLingPaper Documentation
+			miHelpXLingPapDoc = new MenuItem("&XLingPaper documentation");
 			miHelpXLingPapDoc.Click += new EventHandler(MenuHelpXLingPapDocOnClick);
 			mMenu.MenuItems[index].MenuItems.Add(miHelpXLingPapDoc);
 

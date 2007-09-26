@@ -4,12 +4,17 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 6		/* bug fix or other minor change */
-#define DATE "April 9, 2007"	/* date of release version */
+#define PATCHLEVEL 7		/* bug fix or other minor change */
+#define DATE "September 20, 2007"	/* date of release version */
 #define YEAR "2007"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 20-Sep-2007  hab  - Check selective analysis information after extracting
+ * [3.12.7]             matches from the dictionary.  When using the DLL, this
+ *                      allows one to keep the loaded dictionary, but merely
+ *                      change the set of selective analysis items.
+ *                      (Useful for FLEx.)
  * 09-Apr-2007	hab  - Add entry name to error messages in parsing environment
  *                      of an MCC
  * [3.12.6]

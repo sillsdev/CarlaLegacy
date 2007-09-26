@@ -679,7 +679,7 @@ namespace PAWSStarterKit
 			helpProvider.SetHelpString(tbGrammarFile, strGrammarFileHelp);
 			toolTip.SetToolTip(lblGrammarFile, strGrammarFileHelp);
 			toolTip.SetToolTip(tbGrammarFile, strGrammarFileHelp);
-			const string strWriterFileHelp = "This file contains the generated XLingPap grammar write-up.\n" +
+			const string strWriterFileHelp = "This file contains the generated XLingPaper grammar write-up.\n" +
 					  "Put it where you will have easy access to it, since you will want to edit it.";
 			helpProvider.SetHelpString(lblWriterFile, strWriterFileHelp);
 			helpProvider.SetHelpString(tbWriterFile, strWriterFileHelp);

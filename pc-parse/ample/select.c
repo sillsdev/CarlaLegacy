@@ -201,7 +201,7 @@ for ( pMorph = pAmple_in->pAmpleMorphemes ; pMorph ; pMorph = pMorph->pLink )
 	{
 	fprintf(pAmple_in->pLogFP, "    <morphID>");
 	writeAmplePCDATA(pAmple_in->pLogFP, pMorph->pszMorphName, FALSE);
-	if (pAmple_in->eTraceAnalysis != AMPLE_TRACE_XML)
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	  fprintf(pAmple_in->pLogFP, "</morphID>\n");
 	else
 	  fprintf(pAmple_in->pLogFP, "</>\n");
@@ -222,7 +222,10 @@ for ( pMorph = pAmple_in->pAmpleMorphemes ; pMorph ; pMorph = pMorph->pLink )
 		else
 			writeAmplePCDATA(pAmple_in->pLogFP, pMorph->pszMorphName,
 					 FALSE);
-		fprintf(pAmple_in->pLogFP, "</>\n");
+		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		  fprintf(pAmple_in->pLogFP, "</morphID>\n");
+		else
+		  fprintf(pAmple_in->pLogFP, "</>\n");
 		if (pAllo->pszAllomorphID == NULL)
 			break;
 		}
@@ -393,7 +396,11 @@ for ( pMorph = pAmple_in->pAmpleMorphemes ; pMorph ; pMorph = pMorph->pLink )
 #ifndef HAVE_ALLOCA
 	freeMemory(pszTemp);
 #endif
-	pszString_io = appendDynamicString(pszString_io, puiStringSize_io,
+	if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+	  pszString_io = appendDynamicString(pszString_io, puiStringSize_io,
+					   "</morphID>\n");
+	else
+	  pszString_io = appendDynamicString(pszString_io, puiStringSize_io,
 					   "</>\n");
 	}
 	else
@@ -428,9 +435,14 @@ for ( pMorph = pAmple_in->pAmpleMorphemes ; pMorph ; pMorph = pMorph->pLink )
 #ifndef HAVE_ALLOCA
 		freeMemory(pszTemp);
 #endif
-		pszString_io = appendDynamicString(pszString_io,
-						   puiStringSize_io,
-						   "</>\n");
+		if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
+		  pszString_io = appendDynamicString(pszString_io,
+							 puiStringSize_io,
+							 "</morphID>\n");
+		else
+		  pszString_io = appendDynamicString(pszString_io,
+							 puiStringSize_io,
+							 "</>\n");
 		if (pAllo->pszAllomorphID == NULL)
 			break;
 		}

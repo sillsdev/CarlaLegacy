@@ -1081,6 +1081,41 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX))
 return amset;
 }
 
+
+/*****************************************************************************
+ * NAME
+ *    AdjustRootMorphname
+ * DESCRIPTION
+ *    adjusts a root's morphname to include regular sound change code
+ * RETURN VALUE
+ *    pointer to adjusted morphname
+ */
+static char *AdjustRootMorphname(int bRegularSoundChange,
+				 const char *pszMorphName,
+				 const char *pszAllomorph)
+{
+static char szTempMorphname[65];
+
+if (bRegularSoundChange)	/* adjust for regular sound change */
+	{
+	szTempMorphname[0] = '*';
+	if (pszMorphName != NULL && pszMorphName !=  NUL)
+	  strncpy(szTempMorphname + 1, pszMorphName, sizeof(szTempMorphname) - 1);
+	else
+	  strncpy(szTempMorphname + 1, pszAllomorph, sizeof(szTempMorphname) - 1);
+	}
+else if (pszMorphName != NULL)
+	{
+	strncpy(szTempMorphname, pszMorphName, sizeof(szTempMorphname));
+	}
+else
+  { /* no overt morphname in entry; use allomorph */
+	strncpy(szTempMorphname, pszAllomorph, sizeof(szTempMorphname) - 1);
+	}
+szTempMorphname[sizeof(szTempMorphname) - 1] = NUL;
+return szTempMorphname;
+}
+
 /*****************************************************************************
  * NAME
  *    get_entries
@@ -1102,6 +1137,7 @@ AmpleAmlist *		pNew;
 int			i;
 int			len;
 int			cSave;
+ char                    *pszMorphName;
 
 if (key == NULL)
 	return NULL;
@@ -1127,12 +1163,36 @@ for ( i = 0 ; i <= len ; ++i )
 		continue;					/* not selected */
 	if (strcmp(key, pAllo->pszAllomorph) == 0)
 		{
+		if (pAmple_in->pSelectiveAnalMorphs == NULL)
+		  {
 		pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
 		pNew->amp = (etype == AMPLE_ROOT) ?
 				  copy_am(etype, pAllo, pAmple_in) : pAllo;
 		pNew->alen = strlen(key);
 		pNew->amlink = amset;
 		amset = pNew;
+		  }
+		else
+		  {
+		if (etype == AMPLE_ROOT)
+		  {
+			pszMorphName = AdjustRootMorphname(pAllo->iMORPHTYPE & RSC,
+							   pAllo->pMORPHNAME,
+							   pAllo->pszAllomorph);
+		  }
+		else
+		  pszMorphName = pAllo->pMORPHNAME;
+		if (isAmpleAllomorphSelected(pszMorphName, pAllo->pszAllomorph,
+						 pAmple_in))
+		  {
+			pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
+			pNew->amp = (etype == AMPLE_ROOT) ?
+			  copy_am(etype, pAllo, pAmple_in) : pAllo;
+			pNew->alen = strlen(key);
+			pNew->amlink = amset;
+			amset = pNew;
+		  }
+		  }
 		}
 	}
 	key[i] = cSave;
