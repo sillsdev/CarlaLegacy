@@ -1,0 +1,1053 @@
+AMPLE CHANGE HISTORY
+
+3.12.6 (09-Apr-2007)
+--------------------
+1. Add entry name to error messages in parsing environment of an MCC
+
+3.12.5 (18-Dec-2006)
+--------------------
+1. Add properties to XML/SGML trace output
+
+3.12.4 (18-Jul-2006)
+--------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.12.3 (5-Jul-2006)
+--------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.12.2 (14-Apr-2006)
+--------------------
+1. Fix bug which allowed a full reduplication suffix with trailing segmental
+   material to be analyzed as just the trailing segmental material.
+
+3.12.1 (24-Feb-2006)
+--------------------
+1. Fix bug which caused crash while loading dictionary with interfixes when
+   max interfixes was set to zero.
+
+3.12.0 (06-Feb-2006)
+--------------------
+1. Added full reduplication capability.
+
+3.11.1 (06-Jan-2006)
+--------------------
+1. When the MaxAnalysesToReturn parameter is set, stop looking for more analyses
+   as soon as the value is reached.  Only for XAmple.
+
+3.11.0 (09-Dec-2004)
+-------------------
+1. Add "recognize only" capability for XAMPLE (-j option).  When "true", the
+   PC-PATR parse results are neither stored nor written to the analysis output.
+   Only for XAmple.
+
+3.10.0 (06-Oct-2005)
+--------------------
+1. Add a "compute category" capability to handle "jitterbug" category
+   mappings.
+
+3.9.4 (02-Mar-2005)
+-------------------
+1. Add information in tracing for when an infix allomorph matched, but its
+   location failed (either the embedded morpheme type or environment(s)).
+
+3.9.3 (09-Feb-2005)
+-------------------
+1. For XML output, handle special case of < in attributes.
+
+3.9.2 (03-Feb-2005)
+-------------------
+1. Add XML output for maximums reached and special case of <leftover> when
+   there are null suffixes.
+
+3.9.1 (12-Dec-2004)
+-------------------
+1. Add more XML output (for use in FieldWorks XAmple).
+
+3.9.0 (07-Dec-2004)
+-------------------
+1.  Enhancement: Added abilty to have "interfixes" (affixes which may also
+	appear between roots).
+
+  Introduction
+  ------------
+
+  These interfixes also function as either a prefix, an infix,
+  or a suffix (otherwise they should just be modeled as a
+  root).  The assumption being made here is that whenever one
+  wants to model an affix as an interfix, one will also be
+  modeling that affix as either a prefix, an infix, or a
+  suffix.  Furthermore, the assumption is that one will not
+  want to create a separate dictionary entry for the interfix.
+
+  Dictionary Entries
+  ------------------
+
+  Therefore, to indicate that a given affix is also an
+  interfix, one does one of the following, depending on the
+  dictionary method being used:
+
+  For "unified" dictionaries, one indicates the normal affix
+  type in the entry type field followed by an indication that
+  it is also an interfix.  For example, if one is using
+  "\type" as the entry type field, one could use
+
+	\type prefix nterfix
+  or	\type infix nterfix
+  or	\type suffix nterfix
+
+  For non-unified dictionaries, one adds an entry type field
+  code to the set of fields used by that particular dictionary
+  (e.g. prefix dictionary) and then one indicates that the
+  entry is also an interfix.  For example, if one is using
+  "\eType" as the entry type field, one could use
+
+	 \eType nterfix
+
+  In both of these, note that only the first letter of the
+  type word is used (this is nothing new: this field has
+  always functioned this way).  Thus
+
+	  p = prefix
+	  i = infix
+	  r = root
+	  s = suffix
+	  n = interfix
+
+  (By the way, in unified dictionaries, if an entry does not
+  contain an entry type field, that entry is assumed to be a
+  root.)
+
+  Maximums
+  --------
+
+  To use interfixes, you also will need to set the maximum
+  number of interfixes to a number greater than zero.  The
+  field code for this in the analysis data control file is
+  \maxn.  (This new maximum has been added to CARLAStudio in
+  the usual place.)
+
+  Note that the number you use here is the maximum number of
+  interfixes that may occur in a word.  This is not
+  necessarily the same thing as the maximum number of
+  interfixes in a row.  For example, it is conceivable that
+  one could have multiple sets of interfixes:
+
+	   prefix root interfix root interfix root suffix
+
+  Morpheme Type and Subtype
+  -------------------------
+
+  AMPLE has the ability for the user to test the type of a
+  morpheme.  One can ask if it is a root, a prefix, a suffix,
+  or an infix.
+
+  The same is true for interfixes.  One can ask if a morpheme
+  is an interfix by using the key word "interfix".
+
+  In addition, since interfixes are also another type of
+  affix, one can check for the subtype of an interfix.  The
+  following are available:
+
+	  interfixprefix = a prefix that is also an interfix
+	  interfixinfix  = an infix that is also an interfix
+	  interfixsuffix = a suffix that is also an interfix
+
+  One likely place where this subtype may well prove useful is
+  in situations where where there are two (or more) interfixes
+  between roots.  Schematically, it would look like this:
+
+	root interfix interfix root
+
+  Now, this only makes good sense in the following situations:
+
+	a. When both interfixes are of the same subtype
+	   (i.e. they are both also prefixes or both also
+	   suffixes).
+
+	b. When the first interfix is also a suffix and the
+	   second interfix is also a prefix.
+
+  In (b), the first interfix suffixes to the first root and
+  the second interfix prefixes to the second root.
+
+  In particular, note that what does not make good linguistic
+  sense is for the first interfix to also be a prefix and for
+  the second interfix to also be a suffix.  In that case, one
+  has a prefix attaching to a suffix and vice versa.  See
+  below for an example of a user written test that rules out
+  this possibiliy.
+
+  Interfix Successor Tests
+  ------------------------
+
+  Just like for prefixes, infixes, roots, and suffixes, one
+  can use successor tests for interfixes.  The field code for
+  this in the analysis data control file is \nt.  (This new
+  set of tests has been added to CARLAStudio in the expected
+  place.)
+
+  One can use these to write category-oriented or
+  orderclass-oriented tests as desired.
+
+  As mentioned above, one such test one might want is the
+  following:
+
+	\nt InterfixTypeTest
+		NOT (    (left    type is interfixprefix)
+			 AND (current type is interfixsuffix)
+		)
+
+  This rules out the nonsensical case of a prefixal interfix
+  appearing before a suffixal interfix.
+
+  Interfix Ad-hoc Pairs
+  ---------------------
+
+  In addition, one can have interfix-oriented ad-hoc pairs
+  (just like one has ad-hoc pairs for prefixes, infixes,
+  roots, and suffixes).  The field code for this in the
+  analysis data control file is \nah.  (This new type of
+  ad-hoc pair has been added to CARLAStudio in the expected
+  place.)
+
+
+3.8.0 (07-Jan-2004)
+-------------------
+1.  Enhancement: Added negative string environment constraints to complement
+	the existing string environment constraints (SECs).  NegSECs say what the
+	string environment *cannot* be.  Multiple NegSECs are logically ANDed
+	together.  They are indicated by "~/" (instead of SEC's "/").
+
+3.7.5 (17-Nov-2003)
+-------------------
+1.  Fixed bug which caused an empty morpheme co-occurrence constraint message
+	to not include any information about which entry it was for.
+
+3.7.4 (02-Oct-2003)
+-------------------
+1.  Fixed bug in Xml form of trace for Allomorphs Never Co-occur Constraints
+	(for XAmple only).
+
+3.7.3 (24-Jul-2003)
+-------------------
+1.  Xml form of trace used wrong dtd file name
+
+3.7.2 (23-Jul-2003)
+-------------------
+1.  Fixed bug which could cause SGML/XML trace output to be lost
+
+3.7.1 (17-Jun-2003)
+-------------------
+1. Added SGML/XML trace output for PC-PATR grammar call
+
+3.7.0 (12-Jun-2003)
+-------------------
+1. Added trace option to output in XML form (as well as SGML)
+
+3.6.5 (17-Oct-2002)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.6.4 (16-Oct-2002)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.6.3 (15-Oct-2002)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.6.2 (04-Oct-2002)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.6.1 (02-Oct-2002)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.6.0 (13-Jun-2002)
+-------------------
+1. Allow both min and max orderclass numbers (i.e. allow
+   orderclasses to span a range).
+
+3.5.0 (06-Mar-2002)
+-------------------
+1. Added Allomorphs Never Co-occur Constraints (for XAmple only).
+
+3.4.1 (24-Jul-2001)
+--------------------
+1. Fix bug: empty environment constraint messages did not include any
+   information about which entry they were for.
+
+3.4.0 (20-Jul-2001)
+-------------------
+1. Add \catcr field to xxAD.CTL file: for words which consist solely of
+   compound roots (i.e. no affixes).  It indicates whether the category of
+   the word (i.e. the content of the \cat field in the ANA file) should
+   come from the leftmost or the rightmost root in the compound.  The field
+   content should be either "left" or "right".
+
+3.3.21 (11-June-2001)
+---------------------
+1. Fix bug that labeled an allomorph property as a morpheme property (only evident when using -a option).
+
+3.3.20 (31-May-2001)
+--------------------
+1. Fixed a bug which ignored the regular sound change (*) symbol while
+   processing selective tracing.
+
+3.3.19 (21-May-2001)
+--------------------
+1. Fixed a bug in outputting final category whereby if using suffix final and
+   there is no suffix, an initial infix was ignored (instead of being used).
+
+3.3.18 (23-Apr-2001)
+--------------------
+1. Fixed a bug which would fail to free memory used by properties, categories,
+   category class and affix types in MCCs.
+
+3.3.17 (17-Apr-2001)
+--------------------
+1. Fixed a bug which would fail to free memory for any unified dictionary code
+   table.
+
+3.3.16 (12-Dec-2000)
+-------------------
+1. Fixed a bug which could cause the wrong list of infix allomorphs to appear
+   in an interactive view of allomorphs (like that used in CarlaStudio's
+   QuickParse special tracing option).
+
+
+3.3.15 (30-Oct-2000)
+-------------------
+1. Fixed a bug which caused a crash in processing categories when no log
+   file was present.
+
+3.3.14 (24-Aug-2000)
+-------------------
+1. Fix a bug where a multibyte caseless character beginning with either
+   an a-z or an A-Z character would not allow the entire sequence to be
+   treated as a word formation character.
+
+3.3.13 (24-Jul-2000)
+-------------------
+1. Fix a bug in XAmple which failed to use the word category from the
+   dictionary entry.
+
+3.3.12 (26-May-2000)
+-------------------
+1. Some changes related to AmpleDLL.
+
+3.3.11 (11-May-2000)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+2. A bugfix for XAmple: show all features, not just leaf node features
+   when all features are requested.
+3. Some other changes related to XAmple.
+
+3.3.10 (24-Apr-2000)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+2. Some changes related to XAmple.
+
+3.3.9 (19-Apr-2000)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+2. Some changes related to XAmple.
+
+3.3.8 (10-Apr-2000)
+-------------------
+1. Fix a bug which reported a caseless character defined as a lowercase
+   character when case was not set.
+2. Fix a minor display bug: the message of an empty morpheme co-occurence
+   constraint did not end in a newline, so the following message would
+   display at the end of it.
+
+3.3.7 (23-Mar-2000)
+-------------------
+1. Fix a bug which caused AMPLE to crash when protoforms are used in a
+   root record and there are no allomorphs.
+
+3.3.6 (14-Jan-2000)
+-------------------
+1. Fix a bug which incorrectly calculated the length of a morphname.
+   AMPLE would abort for morphnames longer than 64 characters.
+
+3.3.5 (07-Dec-1999)
+-------------------
+1. Fix bug which caused the dictionary load process to ignore
+   regular sound change asterisks while checking for valid
+   MCCs in a dictionary entry.
+
+3.3.4 (03-Nov-1999)
+-------------------
+1. Fix error message display bug in multiple root gloss
+   message (it was erroneously outputting a "\t" before the
+   first gloss).
+
+3.3.3 (01-Jul-1999)
+-------------------
+1. Some minor internal code changes (nothing visible to the user)
+
+3.3.2 (25-May-1999)
+-------------------
+1. The Ample32 version would cease to check morphname references after
+   7500 dictionary entries.  Increased it to 16,000.
+
+3.3.1 (18-May-1999	SRMc)
+-------------------
+1. Fixed a bug in multi-word dependency processing.
+
+3.3.0 (14-May-1999)
+-------------------
+1. Add punctuation environment constraint capability.  For example,
+   Hanga indicates phonological pause orthographically by punctuation.
+   Some allomorphs are conditioned at such phonological pauses.  To make
+   this happen, one can add
+
+	\pcl pausepunc . ? ! ; :
+
+   in the AD.CTL file and then condition allomorphs something like this
+   in the dictionary file:
+
+	\s
+	\a a           ./  _ [pausepunc]
+	\a e    / e _  ./ ~_ [pausepunc]
+	\a i    / i _  ./ ~_ [pausepunc]
+	\a o    / o _  ./ ~_ [pausepunc]
+	\a u    / u _  ./ ~_ [pausepunc]
+	\g NCMPT
+	\c Noun
+
+   This means that the "a" allomorph occurs before a pausepunc
+   character; the "e" allomorph must follow an "e" and cannot occur
+   before a pausepunc character; etc.
+
+   There is a new built-in test called PEC_ST which handles these
+   punctuation environment constraints.
+
+   The user can also write a user-written test with a clause such as
+	next punctuation is "."
+   or
+	next punctuation is member [pausepunc]
+
+
+3.2.7 (30-Apr-1999)
+-------------------
+1. User-written tests will now allow use of codes 127 and 255.  They
+   used to produce error messages.
+
+
+3.2.6 (20-Apr-1999)
+-------------------
+
+1. Some minor internal code changes (nothing visible to the user)
+
+2. Revised the replication allomorph loading to increase its speed
+   (by about 90% or so).
+
+
+3.2.5 (11-Mar-1999)
+-------------------
+
+1. Some minor internal code changes (nothing visible to the user)
+
+2. Fix bug which entered null root glosses when there was no gloss in
+   the root dictionary entry.
+
+3.2.4 (25-Feb-1999)
+-------------------
+1. Fix another NULL pointer dereference bug.
+
+2. Fix some dictionary loading bugs
+
+3. Fix fallacious error report of missing dictionary type when field
+   was final field in record.
+
+4. Add final nl output to showAmpleAlloEnvConstraint().
+
+5. Fix AmpleParseText() and AmpleParseFile() (in ampledll.c) to use
+   new surrounding words method.
+
+6. Added ample.rc and ampledll.rc (Win32 only) to include version
+   information in the exe and dll files.
+
+
+3.2.3 (23-Feb-1999)
+-------------------
+1. Fix some NULL pointer dereference bugs.
+
+
+3.2.2 (18-Nov-1998)
+-------------------
+1. Make the AMPLE functions fully reentrant.
+
+2. Complain vociferously about questionable text input control file
+   contents.
+
+3. Split AMPLE processing into two phases: the first looks at the word
+   in isolation, and the second (if needed) looks as the surrounding two
+   words.
+
+
+3.2.1 (24-Oct-1998)
+-------------------
+1. Remove direct uses of stdout.
+
+2. Allow for '[' or ']' to be alphabetic characters
+   (either essentially disables the reduplication code).
+
+3. Add \maxprops to analysis data (control) file, and make use of >255
+   properties a run-time decision instead of a compile time decision.
+
+4. minor internal code changes (nothing visible to the user)
+
+5. Add capability to write tracing information to a string instead of a file.
+
+
+3.2.0 (1-Oct-1998)
+------------------
+1. Add reduplication notation handling to allomorph fields in
+   dictionary entries.
+
+
+3.1.2 (24-Sep-1998)
+------------------
+1. Enhance error reports in parsing of morph constraints to include
+   the record identifier.
+
+
+3.1.1 (18-Sep-1998)
+-------------------
+1. Add conditional compile to allow up to 4000 properties.
+
+
+3.1.0 (14-Jul-98)
+-----------------
+1. Add \luwfcs and \wfcs fields to the text input control file for
+   multibyte character handling in decapitalization.
+
+
+3.0.7 (18-Mar-98)
+-----------------
+1. minor internal code changes (nothing visible to the user)
+
+
+3.0.6 (11-Mar-98)
+-----------------
+1. Fix a bug in checking for valid MCCs in loading dictionary entries.
+
+
+3.0.5 (20-Feb-98)
+-----------------
+1. minor internal code changes (nothing visible to the user)
+
+
+3.0.4 (17-Feb-98)
+-----------------
+1. Fix a bug in handling errors while loading dictionary code tables.
+
+2. Change loading of dictionary code tables to detect unified
+   dictionaries automatically.
+
+3. Fix a bug in handling the -v command line option.
+
+4. Give up on errors loading control files rather than trying to get
+   another filename.
+
+
+3.0.3 (11-Feb-98)
+-----------------
+1. Fix a bug in SGML tracing of final test failures.
+
+2. Try to fix a bug (misfeature?) in Windows DLL interface.
+
+3. Change parsing to look for infixes only in the first root of compound
+   roots.
+
+
+3.0.2 (23-Dec-97)
+-----------------
+1. minor internal code changes (nothing visible to the user)
+
+
+3.0.1 (22-Dec-97)
+-----------------
+1. Fix a bug in setting the "Surface Form" of an analyzed word.
+
+2. Fix a long-standing bug in test evaluation reported by Andy Black:
+   adjacent word references were not always checking for the existence of
+   an adjacent word.
+
+
+3.0.0 (21-Oct-97)
+-----------------
+Decide that this is a release, no longer a beta!
+
+
+3.0b13 (15-Oct-97)
+------------------
+1. {ID} labels were added to the Morpheme Co-occurrence Constraint
+   syntax.
+
+2. The -q (work quietly) command line option was added.
+
+3. Various bugs were fixed, and other internal improvements were made.
+
+
+3.0b12 (14-Aug-97)
+------------------
+1. Progress reporting was changed to use '*' for analysis failures and
+   '>' for 10 or more ambiguous results.
+
+2. Tracing was changed to allow SGML style output, using the
+   AmpleTrc.DTD specification developed by Andy Black.
+
+
+3.0b11 (13-Jun-97)
+------------------
+1. "noload" ('!') record fields are now handled properly.
+
+2. The allomorph ID is written to the parse trace output if it exists.
+
+3. Selective tracing is now handled by setting a flag bit rather than
+   by selectively storing the allomorph.  This is for the benefit of
+   interactive applications, which may want to change the set of
+   selected morphnames (or allomorphs) on the fly.
+
+4. There are numerous internal changes that should not be visible to
+   the user.
+
+
+3.0b10 (8-May-97)
+-----------------
+1. Morpheme co-occurrence constraints loaded from the dictionary are
+   now stored with each morpheme rather than in a single list with
+   those loaded from the analysis data file.  This allows the
+   dictionary to be written to a file without losing information.  The
+   morpheme co-occurrence constraints are checked to verify that they
+   apply only to the morpheme whose entry they appear in.
+
+2. The writeAmpleDictionary() function now uses "AmpleLinks Canonical
+   Format" markers, and the updateAmpleDictEntry() function now uses
+   "AmpleLinks Canonical Format" markers by default.
+
+
+3.0b9 (30-Apr-97)
+-----------------
+1. Several changes were made to support the LinguaLinks (Microsoft
+   Windows) DLL:
+	* the writeAmpleDictionary() and updateAmpleDictEntry() functions
+	  were written;
+	* allomorph identifiers were added to the allomorph fields in the
+	  AMPLE dictionaries; and
+	* the -b command line option was added to enable storing allomorph
+	  identifiers in memory.
+
+2. The data structures were modified to allow multiple sets of AMPLE
+   data to be loaded at once.  (Neither the program nor the LinguaLinks
+   DLL actually use this capability.)
+
+
+3.0b8 (4-Apr-97)
+----------------
+1. The output of the original word field (\w) was made properly optional.
+
+2. The surface form field (\s) was removed, since it is redundant with the
+   morpheme decomposition field (\d).
+
+3. An invalid use of the {group} construct in allomorph string environment
+   constraints is now detected.
+
+4. An online AMPLE Reference Manual is now distributed with the program.
+
+5. The -x (eXclude) and -w (Write) command line options were added.  See
+   the AMPLE Reference Manual for details about these options, which
+   control the output of certain fields (\d, \p, \w).
+
+
+3.0b7 (4-Mar-97)
+----------------
+1. Some internal data structures were changed (nothing visible to users).
+
+
+3.0b6 (20-Feb-97)
+-----------------
+1. The output for analysis failures was fixed to work properly with the
+   older versions of intergen and ambex.
+
+2. Entries in unified dictionaries are now allowed to have more than
+   one type.  (See version 3.0b1 below for a description of unified
+   dictionaries.)  The different types must be separated by spaces or
+   tabs.
+
+
+3.0b5 (14-Feb-97)
+-----------------
+1. Several memory allocation bugs were fixed.
+
+2. Multiple category fields in affix dictionary entries are now allowed
+   since root dictionaries allow this; there was no good reason to have
+   this difference.
+
+3. Dictionary entries are checked for having only one occurrence of
+   fields that should occur only once.  For each redundant field that
+   should not exist, an error message is written to the log file, and
+   the field contents are ignored.  This changes the program behavior:
+   the last redundant version of such fields was used without warning.
+
+
+3.0b4 (31-Jan-97)
+-----------------
+1. Some portability issues were addressed in the code (nothing visible
+   to users).
+
+
+3.0b3 ( 9-Dec-96)
+-----------------
+1. Decapitalization was fixed to handle ambiguous situations.  This
+   addressed a longstanding deficiency in the code.
+
+2. A "surface form" field (\s) was added to the analysis output.  The
+   original word (\w) field now truly contains the original word,
+   capitalization and all.  The surface form field contains the word
+   after decapitalization and orthography changes.  It is ambiguous
+   only if decapitalization produces multiple forms, and more than one
+   of those forms produces an analysis.
+
+
+3.0b2 (25-Nov-96)
+-----------------
+1. A bug in capitalization of words with a single upper/lowercase
+   letter was fixed.  (This bug was introduced in version 3.0b1.)
+
+
+3.0b1 ( 7-Nov-96)
+-----------------
+AMPLE 3.0b1 represents a major revision of the internal code structure
+and organization; thus the change in major version number.  (I would
+have preferred to change from version 1 to version 2, but that was
+already done for minor revisions a year earlier.)  The user-visible
+changes should be limited to the following:
+
+1. A new -u command line option signals that the dictionary has been
+   "unified" into a single file (or set of files) rather than splitting
+   it into parts based on morpheme type (prefix, infix, suffix, root).
+   This affects both the dictionary files and the dictionary code table
+   file (xxANCD.TAB).  The dictionary code table file has a new field:
+   \unified which is equivalent to \prefix, \infix, \suffix, or \root.
+   As with the other fields, \unified has the unique record marker as
+   an argument following it on the line.  The set of changes for
+   dictionary entry field codes follows it as with the other fields.
+   One more "gate" has been added.  The field code for telling the type
+   of the entry must be changed to "T" (capital T).  For example, the
+   dictionary codes table could look like this for a unified dictionary:
+
+	\unified \mid
+	\ch "\type" "T"
+	\ch "\a"    "A"
+	\ch "\c"    "C"
+	\ch "\ge"   "M"
+	\ch "\lx"   "E"
+	\ch "\mp"   "P"
+	\ch "\o"    "O"
+	\ch "\mcc"  "Z"
+	\ch "\f"    "F"
+	\ch "\no"   "!"
+
+   In the dictionary, the type of an entry is determined by the first
+   letter following the type field code: "p" or "P" for prefixes, "i"
+   or "I" for infixes, "s" or "S" for suffixes, and "r" or "R" for
+   roots.  The type field is not needed for root entries because the
+   entry type defaults to root.
+
+   This change was motivated by requests from a couple of individuals,
+   from the viewpoint of using either Shoebox or LinguaLinks to
+   maintain dictionaries for AMPLE.
+
+2. The environment constraints for orthography changes are limited to
+   the word itself: they cannot access adjacent words.
+
+   This change was caused by using a common orthography change function
+   shared by several other programs such as PRIMER and KTEXT.
+
+3. Tracing messages, warnings, and other messages that go the "standard
+   output" are written only if the standard output is redirected to a
+   file.  Internally, these are written to the "log file", but only if
+   a log file has been opened.  Currently, the log file is opened by
+   redirecting the standard output:
+				ample ... >file.log
+
+   This change was motivated by the process of deriving a function
+   library from AMPLE that allows the morphological parser to be used
+   in different contexts than the AMPLE program itself.  Consider the
+   issue of using the AMPLE parser inside a Windows or Macintosh
+   program that lacks the MS-DOS (and UNIX) concept of "standard
+   output".
+
+4. A greater number of ambiguous parses may be produced.  Earlier
+   versions of AMPLE checked only the \a (analysis) field for being
+   unique.  Version 3.0b1 checks all fields that are being written to
+   the output file.  If only the \a field is written, then the results
+   should be the same.
+
+5. The order of ambiguous parses may be different even when the same
+   set of parses is produced.  This has no logical effect, but makes
+   comparing .ANA files more difficult.  To address this, a new utility
+   program ANADIFF.EXE has been written.
+
+6. The MS-DOS AMPLE program compiled for 386 processors works much
+   better with Windows than previous 386 versions.  There should be no
+   problem running it under Windows.
+
+=============================================================================
+
+2.0b Sep 95 fixes a bug in the 386 version of 1.9zc property output.
+
+2.0a Sep 95 changes the 1.9y fix to require nl only after \id.
+
+2.0 Sep 95 fixes a bug in 1.9zc property output.
+
+1.9zc Aug 95 adds the ability to output properties. They are
+output with a \p marker, and use an equal sign separator like
+features. The purpose of this enhancement is to allow Sentrans
+rules to refer to properties.
+
+1.9zb Jun 95 adds the ability to distinguish upper case input
+words from lower case words in tests. This allows better
+disambiguation of lexically capitalized words. For example 'God'
+can be distinguished from 'god'. It also allows tests to
+correctly account for orthographies in which tone marks are left
+off of upper case letters.
+
+The following is added to the user test syntax:
+
+	<factor> ::= <cap-expr>
+
+	<cap-expr> ::= <pos> allomorph is capitalized
+				   word is capitalized
+
+This allows writing tests of the form:
+
+\ft CAP_FT
+	IF ( current allomorph is capitalized
+	   AND current type is initial )
+	THEN word is capitalized
+
+This test says that if the first morpheme in the word is
+capitalized in the dictionary, then the word must be
+capitalized. This test must be written as a final test
+instead of a successor test because successor tests are not
+performed on the initial morpheme.
+
+A related enhancement is that AMPLE now applies the same
+case lowering code to dictionary allomorphs as is applied
+to input text. The result is that the list of orthography
+changes to convert the letters A-Z to a-z is no longer
+required, and in fact should not be used, as it defeats the
+ability of AMPLE to detect upper case in the dictionary.
+
+This case lowering is applied only to the first alphabetic
+character of each dictionary allomorph, on the assumption that
+there is no reason to use all caps in the dictionary.
+
+Case lowering of dictionary entries is enabled by the new
+marker \dicdecap in the Analysis Data Control file. This was
+done for upward compatibility on data sets that change lower
+case letters to upper case in the Input Text Control file.
+
+If \dicdecap is not used, then user tests that refer to
+capitalization are unable to see the capitalization.
+
+Another effect of this enhancement is that synthesis of lexically
+capitalized words now works correctly. If an allomorph of a
+dictionary entry is capitalized, the STAMP program outputs
+it capitalized. This handles words like 'naJesus' changing
+to 'nJesus' correctly, where the previous approach which
+only remembered that the third letter was capitalized failed.
+
+Because lexical capitalization is now handled correctly, AMPLE
+no longer outputs information about internal capitalization
+of individual letters. It only notes first cap or all caps.
+
+1.9za Jun 95 adds better error reporting for user tests in
+zzSTAMP.DEC
+
+1.9z May 95 adds improved string checking. A \strcheck field was
+added to the ??AD01.CTL file and should contain a list of
+characters considered valid for allomorphs, string environments
+and string classes.
+
+1.9y May 95 fixes poor handling of ignore fields in the input
+file. Instead of terminating the ignore field at the first
+backslash encountered, AMPLE now terminates ignore fields only
+when it encounters a newline backslash.
+
+1.9x May 95 adds better error reporting for MCC's without an
+environment.
+
+1.9w Apr 95 modifies curly brace and square bracket behavior in
+morpheme environments.  Curly braces: Look first for category or
+property but accept morpheme class.  Brackets: Look first for
+morpheme class but accept a category or property.
+
+1.9v Apr 95 fixes a bug that caused an MEC containing an ellipses
+and attempting to look at a neighboring word, to evaluate
+incorrectly.
+
+1.9u Apr 95 removes reporting of ambiguous words percentages by
+default but allows you to turn this reporting on by specifying
+the -p option on the command line.
+
+1.9t Apr 95 fixes a problem concerning error/warning messages
+output for dictionary entries with a blank key field. Instead of
+outputting nothing as a record identifier, the record number is
+output instead.
+
+1.9r Feb 95 fixes a bug in the 386 version of AMPLE that caused
+the program to crash and display a cryptic error message with
+several lines of register values, etc. detailing the crash.
+
+1.9p Nov 94 fixes a bug in which selective trace would not find a
+morpheme which had space before it at the beginning of a line in
+the selective trace file.
+
+1.9m May 94 adds the capability in MECs and MCCs of looking at
+the morpheme environments of neighboring words.  This capability
+is limited to one word on each side of the word under analysis.
+
+1.9k Mar 94 adds an underlying form capability as desribed below.
+
+Many linguistic theories posit "basic" or "underlying" forms for
+morphemes.  When producing interlinear texts, some linguists
+prefer using such basic or underlying forms for the morphemes.
+Until now, AMPLE has only allowed for a morpheme decomposition
+that consists of the characters of the actual "surface" form.
+This information is included in the \d field of the analysis
+output file.  For example, consider the following entry from the
+analysis output file for a word from Chichicapan Zapotec.
+
+	\a C AF < V2 throw >
+	\d p-a-:ka'h
+	\w baca'h
+
+The original word is "baca'h" which has been mapped via
+orthography changes to "pa:ka'h".  This has been decomposed
+into the sequence "p-a-:ka'h" which corresponds to the
+Completive and Actor Focus prefixes followed by the verb
+root meaning "to throw".  The "p" and "a" allomorphs of the
+Completive and Actor Focus morphemes are not the basic or
+underlying forms for these morphemes.  The underlying forms
+are "kw" and "u", respectively.
+
+Beginning with version 1.9k, there is a way to have AMPLE
+produce basic or underlying forms as well as the morpheme
+decomposition.  In the example above, the output can now
+become as follows.
+
+	\a C AF < V2 throw >
+	\d p-a-:ka'h
+	\u kw-u-:ka'h
+	\w baca'h
+
+The additional \u field contains the correct basic or
+underlying forms.  These are separated by the decomposition
+character just as in the \d field.  Beginning with version
+??.?? of the INTERGEN program, one can use INTERGEN to
+produce interlinear text that contains the underlying forms.
+
+To include underlying forms in the output, one must add a
+change in the dictionary code table to map a field to the
+"U" gate.  This should be done for every dictionary type
+used (i.e. prefix and/or infix and/or suffix and root).  For
+example, if one wishes to use \uf as the underlying form
+field, then one must add a line such as the following to
+each entry in the dictionary code table:
+
+  \ch "\uf"  "U"    | Underlying form
+
+This "U" gate must be present in the dictionary code table
+for AMPLE to include a \u field in the analysis output file
+record.  If there are not any "U" gates in the dictionary
+code table, then AMPLE will not produce the \u field in the
+analysis output file.
+
+Naturally, it is important that if one dictionary type
+employs a "U" gate, then all of the dictionaries should have
+a "U" gate.  AMPLE will check for such consistency and will
+give an error message if it detects that some dictionaries
+have a "U" gate while another does not.  The message is of
+the form:
+
+DICTIONARY CODE TABLE: missing "U" gate in <dict> record
+
+where <dict> will be "prefix", "infix", "suffix", or "root".
+
+If a particular record in a dictionary file does not have
+an underlying form field, but does use an "elsewhere" field,
+then AMPLE will use the elsewhere entry for the underlying
+form.  (The "elsewhere" field uses the "E" gate.)  If there
+is neither an underlying form field nor an elsewhere field
+in an entry, AMPLE will assume that the underlying form is
+null and will output a zero (0) for that entry.
+
+1.9h Feb 94 fixes a bug described as follows:
+
+If one had a feature field in a dictionary entry of the form
+shown below in (1), then the whitespace before the final
+comment bar was included in the feature definition (i.e. in
+the .ana file the feature field looked like the one in (2)
+below).
+
+(1)  \r na
+	 \a na
+	 \c Prt
+	 \ge rep            | repetitive
+	 \f na
+	 |\tone right-floating h @ tbu 1    | 9402.09 John Daly recalls that rep
+										|         does not have a register h
+
+(2) \a %2%< Prt rep >%< Prt prox >%
+	\d %2%na%na%
+	\fd %2%na                           %na`%
+	\w nﬂ
+
+1.9g Dec 93 collapses identical root allomorph environments
+to make more dictionary space.
+
+1.9f Dec 93 saves code space by using string list data
+structures, rather than the equivalent property list and category
+list data structures, to build lists of property sets and
+category sets.
+
+1.9f also saves dictionary space by storing only one copy
+of each unique category list.
+
+1.9f also adds double quotes into messages where
+appropriate, such as the following message:
+
+	 Unknown morphname "not" in morpheme class: Neg
+
+1.9f also removes the permanent heap.
+
+1.9f also adds code to check for non-wordforming characters
+in string environments.
+
+1.9f also fixes a bug in which AMPLE didn't recognize
+a standard format marker occurring at the end of a line in
+the input text file.  As trailing punctuation to the word
+preceding the format marker, AMPLE would put out two
+backslashes.  Then the actual marker itself (excluding the
+backslash) would be interpreted as the next word, which of
+course would fail to analyze unless it happened to coincide
+with a dictionary entry.  The repaired AMPLE recognizes the
+format marker and puts it out as formatting material
+preceding the next word.
+
+1.9f also fixes a bug in which the preceding word in a
+string environment was not recognized under some circumstances.
+
+1.9f also avoids an infinite loop of "RECORD IS TOO BIG"
+messages in the log file.
+
+1.9 May 93 was put onto distribution disks in May 93.

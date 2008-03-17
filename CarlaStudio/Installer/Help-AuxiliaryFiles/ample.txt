@@ -1,0 +1,3855 @@
+						AMPLE Reference Manual
+		   A Morphological Parser for Linguistic Exploration
+							 version 3.12
+							   June 2006
+
+	  by Stephen McConnel, H. Andrew Black, and Marius Doornenbal
+
+			   Copyright (C) 2000-2006 SIL International
+
+Published by:
+Language Software Development
+SIL International
+7500 W. Camp Wisdom Road
+Dallas, TX 75236
+U.S.A.
+Permission is granted to make and distribute verbatim copies of this
+file provided the copyright notice and this permission notice are
+preserved in all copies.
+
+The author may be reached at the address above or via email as
+`steve@acadcomp.sil.org'.
+
+Introduction to the AMPLE program
+*********************************
+
+Since it was released in 1988, the AMPLE program has been used for
+morphological analysis in many different languages.  It is a complex
+program designed to tackle a complex problem.  This manual is intended
+for reference purposes, to clarify fine points of input and behavior.
+It is not designed as a tutorial or as a "cookbook" of how to use AMPLE.
+
+AMPLE uses a plethora of input files to control its behavior.  These
+include two mandatory control files (the analysis data file and
+dictionary code table file), two optional control files (the dictionary
+orthography change table file and text control file), and a set of
+dictionary files.  The format of each of these files is described in
+this manual.
+
+New features
+............
+
+1. Version 3.1 (July 1998) introduced enhanced multibyte character
+	 handling, especially with regard to capitalization.
+
+2. Version 3.2 (October 1998) introduced reduplication patterns in
+	 the allomorph fields of the dictionary files.
+
+3. Version 3.3 (May 1999) introduced punctuation environment
+	 constraints in the allomorph fields of the dictionary files.
+	 These are handled by a new built-in test called PEC_ST.  This
+	 version also added two punctuation-oriented clauses to
+	 user-written tests.
+
+4. Version 3.3.4 (November 1999) added XAMPLE compilation to the
+	 standard distribution, and added the `\patr' field to the analysis
+	 data file for use by XAMPLE in controlling the PC-PATR word parser.
+
+5. Version 3.3.7 (January 2000) added the `PromoteDefAtoms'
+	 value to the `\patr' field in the analysis data file for use by
+	 XAMPLE in controlling the PC-PATR word parser.
+
+6. Version 3.3.10 (April 2000) added the `PropertyIsFeature'
+	 value to the `\patr' field in the analysis data file for use by
+	 XAMPLE in controlling the PC-PATR word parser.
+
+7. Version 3.4.0 (July 2001) added the `\\catcr'
+	 field in the analysis data file for words which consist solely of
+	 compound roots (i.e. no affixes).  It indicates whether the
+	 category of the word (i.e. the content of the `\\cat' field in the
+	 analysis file) should come from the leftmost or the rightmost root
+	 in the compound.  The field content should be either `left' or
+	 `right'.
+
+8. Version 3.5.0 (March 2002) added the `\\ancc'
+	 field in the analysis data file for use by XAMPLE for handling
+	 allomorphs never co-occur constraints.
+
+9. Version 3.6.0 (June 2002) allows for an orderclass
+	 pair (min, max) which delimits the order class span of the affix.
+
+10. Version 3.8.0 (January 2004) allows for negative string environment constraints.
+11. Version 3.9.0 (December 2004) allows for "interfixes" (affixes which appear between roots).
+12. Version 3.10.0 (October 2005) allows the final category output in the analysis output file to be computed.
+13. Version 3.11.0 (December 2005) added "recognize only"capability for XAMPLE (-j option).  When "true", the
+	 PC-PATR parse results are neither stored nor written to the
+	 analysis output.  Only for XAmple.
+
+14. Version 3.12.0 (February 2006) allows for full reduplication.
+Running AMPLE
+*************
+
+AMPLE is a batch process oriented program.  It reads a number of
+control files, and then processes one or more input text files to
+produce an equal number of output analysis files.
+
+AMPLE Command Options
+=====================
+
+The AMPLE program uses an old-fashioned command line interface
+following the convention of options starting with a dash character
+(`-').  The available options are listed below in alphabetical order.
+Those options which require an argument have the argument type
+following the option letter.
+
+`-a'
+	 causes debugging output for allomorph conditions.
+
+`-b'
+	 allows the allomorph identifiers to be stored in memory.  (This
+	 feature was added to support LinguaLinks.)
+
+`-c character'
+	 selects the control file comment character.  The default is the
+	 vertical bar (`|').
+
+`-d number'
+	 selects the maximum dictionary trie depth.  The default is 3, which
+	 favors reduced memory needs over speed.
+
+`-e filename'
+	 selects the PC-PATR grammar file for XAMPLE to use.  (XAMPLE is a
+	 version of AMPLE that adds a PC-PATR style word parser to AMPLE.)
+	 This option is not recognized by AMPLE.
+
+`-f filename'
+	 opens a command file containing the names of the control and data
+	 files.  The default is to read those names from the standard input
+	 (keyboard); see `Program Interaction' below.
+
+`-g'
+	 causes root glosses to be output in the analysis file, and enables
+	 the internal code `G' in the dictionary code table.
+
+`-i filename'
+	 selects a single input text file.
+
+`-j'
+	 enables "Recognize Only" mode for XAMPLE.  (This option is not
+	 recognized by AMPLE.)  In this mode, the PC-PATR parse results are
+	 neither stored nor written to the analysis output.  This greatly
+	 reduces the memory consumption required to use the internal PC-PATR
+	 engine to parse words for XAMPLE.  (Even with this option, the
+	 memory required to parse a single word in XAMPLE can exceed 250MB
+	 when the grammar and lexicon allow a large number of alternative
+	 parses!)
+
+`-m'
+	 monitors progress of an analysis: `*' means an analysis failure,
+	 `.' means a single analysis, `2'-`9' means 2-9 ambiguities, and
+	 `>' means 10 or more ambiguities.  This is not compatible with the
+	 `-q' option.
+
+`-n number'
+	 sets the maximum recommended morphname length.  Any morphnames
+	 longer than `number' characters are truncated (with a warning
+	 message).
+
+`-o filename'
+	 selects a single output analysis file.
+
+`-q'
+	 causes AMPLE to operate "quietly" with minimal screen output.  This
+	 is not compatible with the `-m' option.
+
+`-p'
+	 causes ambiguous word percentages to be reported.
+
+`-r'
+	 checks references to morphnames in all tests.
+
+`-s filename'
+	 opens a file contains morphnames (or allomorphs) for a selective
+	 analysis.  This is usually used together with the `-t' (trace)
+	 option.
+
+`-t'
+	 causes analyses to be traced.  This produces a huge amount of
+	 output.  Repeating the `-t' option causes SGML style trace output
+	 to be produced.  Repeating the `-t' option three times (i.e. as
+	 `-ttt') causes XML style trace output to be produced.
+
+`-u'
+	 signals that dictionaries are unified, not split into prefix,
+	 infix, suffix, and root files.
+
+`-w fields'
+	 selects one or more of these optional output fields for writing to
+	 the analysis file:
+
+	 `d' enables writing the `\d' (morpheme decomposition) field
+	 `p' enables writing the `\p' (properties) field
+	 `w' enables writing the `\w' (original word) field
+
+	 The default is to ask interactively about the `\d' and `\w'
+	 fields, and to write the `\p' field without asking.  All three
+	 fields can be selected for output by `-w dpw' or by
+	 `-w d -w p -w w'.
+
+`-x fields'
+	 prevents one or more of these optional output fields from being
+	 written to the analysis file:
+
+	 `d' disables writing the `\d' (morpheme decomposition) field
+	 `p' disables writing the `\p' (properties) field
+	 `w' disables writing the `\w' (original word) field
+
+	 The default is to ask interactively about the `\d' and `\w'
+	 fields, and to write the `\p' field without asking.  All three
+	 fields can be excluded from output by `-x dpw' or by
+	 `-x d -x p -x w'.
+
+`-v'
+	 verifies tests by pretty printing the parse trees.
+
+The following options exist only in beta-test versions of the program,
+since they are used only for debugging.
+
+`-/'
+	 increments the debugging level.  The default is zero (no debugging
+	 output).
+
+`-z filename'
+	 opens a file for recording a memory allocation log.
+
+`-Z address,count'
+	 traps the program at the point where `address' is allocated or
+	 freed for the `count''th time.
+
+Program Interaction
+===================
+
+If the `-f', `-i', and `-o' command options are not used, AMPLE prompts
+for a number of file names, reading the standard input for the desired
+values.  The interactive dialog goes like this:
+
+	 C> ample
+	 AMPLE: A Morphological Parser for Linguistic Exploration
+	 Version 3.0b9 (April 4, 1997), Copyright 1997 SIL, Inc.
+	 Beta test version compiled Apr  4 1997 12:18:27
+					 Analysis Performed Wed Apr  4 14:41:02 1997
+	 Analysis data file (xxAD01.CTL): hgad01.ctl
+	 Dictionary code table (xxANCD.TAB or xxGyCD.TAB): hgancd.tab
+	 Dictionary orthography change table (xxORDC.TAB) [none]:
+
+	 Suffix dictionary file (xxSF01.DIC): hgsf01.dic
+			 8 changes loaded from suffix dictionary code table.
+			 SUFFIX DICTIONARY: Loaded 116 records
+
+	 Root dictionary file (xxRTnn.DIC): hgrt01.dic
+			 7 changes loaded from root dictionary code table.
+			 ROOT DICTIONARY: Loaded 43 records
+	 Next Root dictionary file (xxRTnn.DIC) [no more]:
+	 Text Control File (xxINTX.CTL) [none]: hgintx.ctl
+	 Include the original word in the output (Y or N) [n]? y
+	 Include the morpheme decomposition in the output (Y or N) [n]? y
+
+	 First Input file: hgtest.txt
+	 Output file: hgtest.ana
+
+	 INPUT: 78 words processed.
+
+	 Next Input file [no more]:
+	 C>
+
+
+Note that each prompt contains a reminder of the expected form of the
+answer in parentheses and ends with a colon.  Several of the prompts
+also contain the default answer in brackets.
+
+Using the command options does not change the appearance of the program
+screen output significantly, but the program displays the answers to
+each of its prompts without waiting for input.  Assume that the file
+`hgtest.cmd' contains the following, which is the same as the answers
+given above:
+
+	 hgad01.ctl
+	 hgancd.tab
+
+	 hgsf01.dic
+	 hgrt01.dic
+
+	 hgintx.ctl
+	 y
+	 y
+
+
+Then running AMPLE with the command options produces screen output like
+the following:
+
+	 C> ample -f hgtest.cmd -i hgtest.txt -o hgtest.ana
+	 AMPLE: A Morphological Parser for Linguistic Exploration
+	 Version 3.0b9 (April 4, 1997), Copyright 1997 SIL, Inc.
+	 Beta test version compiled Apr  4 1997 12:18:27
+					 Analysis Performed Wed Apr  4 14:41:32 1997
+	 Analysis data file (xxAD01.CTL): hgad01.ctl
+	 Dictionary code table (xxANCD.TAB or xxGyCD.TAB): hgancd.tab
+	 Dictionary orthography change table (xxORDC.TAB) [none]:
+
+	 Suffix dictionary file (xxSF01.DIC): hgsf01.dic
+			 8 changes loaded from suffix dictionary code table.
+			 SUFFIX DICTIONARY: Loaded 116 records
+
+	 Root dictionary file (xxRTnn.DIC): hgrt01.dic
+			 7 changes loaded from root dictionary code table.
+			 ROOT DICTIONARY: Loaded 43 records
+	 Next Root dictionary file (xxRTnn.DIC) [no more]:
+	 Text Control File (xxINTX.CTL) [none]: hgintx.ctl
+	 Include the original word in the output (Y or N) [n]? y
+	 Include the morpheme decomposition in the output (Y or N) [n]? y
+
+	 INPUT: 78 words processed.
+	 C>
+
+
+The only difference in the screen output is that the prompts for the
+input text file and the output analysis file are not displayed.
+
+Standard format
+***************
+
+The input control files that AMPLE reads and the output analysis files
+that AMPLE writes are all "standard format" files.  This means that the
+files are divided into records and fields.  Each file contains at least
+one record, and some files may contain a large number of records.  Each
+record contains one or more fields.  Each field occupies at least one
+line, and is marked by a "field code" at the beginning of the line.  A
+field code begins with a backslash character (`\'), and contains 1 or
+more printing characters (usually alphabetic) in addition.
+
+If the file is designed to have multiple records, then one of the field
+codes must be designated to be the "record marker", and every record
+begins with that field, even if it is empty apart from the field code.
+If the file contains only one record, then the relative order of the
+fields is constrained only by their semantics.
+
+It is worth emphasizing that field codes must be at the *beginning* of
+a line.  Even a single space before the backslash character prevents it
+from being recognized as a field code.
+
+It is also worth emphasizing that record markers *must* be present even
+if that field has no information for that record.  Omitting the record
+marker causes two records to be merge into a single record, with
+unpredictable results.
+
+Analysis Data File
+******************
+
+The primary control file for the AMPLE program is called the "analysis
+data file".  It is a standard format file containing a single data
+record.
+
+Analysis Data File Fields
+=========================
+
+The fields that AMPLE recognizes for the analysis data file are
+described below.  Fields that start with any other backslash codes are
+ignored by AMPLE.
+
+Allomorphs Never Co-occur Constraint: \ancc
+-------------------------------------------
+
+Allomorphs Never Co-occur constraints are valid only for XAMPLE.
+
+An allomorphs never co-occur constraint is defined by the `\ancc' field
+code followed by one or more allomorph identification strings, and
+finally an allomorphs never co-occur environment.  This constraint
+states that the indicated allomorph identification strings may never
+co-occur.  If there is more than one environment, the various
+environments are logically ANDed together (i.e. when all of the
+indicated environments are found, then the constraint will fail; if
+some, but not all, of the environments are found, then the constraint
+will succeed).
+
+For the syntax of allomorphs never co-occur constraints, see
+`Allomorphs Never Co-occur Constraint Syntax' below.
+
+If no `\ancc' fields appear in the analysis data file, then AMPLE does
+not eliminate any analyses by the `ANCC_FT' test.
+
+Allomorph properties: \ap
+-------------------------
+
+Allomorph properties are defined by the field code `\ap' followed by
+one or more allomorph property names.  An allomorph property name must
+be a single, contiguous sequence of printing characters.  Characters
+and words which have special meanings in tests should not be used.
+
+A maximum of 255 properties (including both allomorph and morpheme
+properties) may be defined.  Any number of `\ap' fields may be used so
+long as the number of property names does not exceed 255.
+
+If no `\ap' fields appear in the analysis data file, then AMPLE does
+not allow allomorph properties to be used in the dictionary files or in
+the tests.
+
+Categories: \ca
+---------------
+
+Categories are defined by the field code `\ca' followed by one or more
+category names.  A category name must be a single, contiguous sequence
+of printing characters.  Characters and words which have special
+meanings in tests should not be used.
+
+A maximum of 255 categories may be defined.  Any number of `\ca' fields
+may be used so long as the number of category names does not exceed 255.
+
+If no `\ca' fields appear in the analysis data file, then AMPLE does
+not allow categories to be used in the dictionary entries or in the
+tests.  This is inconceivable for AMPLE's model of morphology.
+
+Category output control: \cat
+-----------------------------
+
+The category information to write to the analysis output file is
+defined by the field code `\cat' followed by one or two words.  The
+first word must be either `prefix', `suffix', or `computed' (or an
+abbreviation of one of those words), either capitalized or lowercase.
+The second word, if present, must be `morpheme' (or an abbreviation
+thereof), either capitalized or lowercase.
+
+In addition, the `\catcr' further defines what category to use for the
+case that a word consists solely of compound roots.
+
+The `\cat' field may appear any number of times, but once is enough.
+If more than one such field occurs, the last one is the one that is
+used.
+
+If no `\cat' fields appear in the analysis data file, then AMPLE does
+not write any category information to the output file.
+
+Category output control for compound roots: \catcr
+--------------------------------------------------
+
+The `\catcr' defines what category to output in the analysis output
+file for the case when a word consists solely of compound roots.  The
+first word must be either `left' or `right' (or an abbreviation of one
+of those words), either capitalized or lowercase.  If the word is
+`left', then the category of the leftmost root in the compound will be
+used.  If the word is `right', then the category of the rightmost root
+in the compound will be used.  If a `\cat' field appears, but no
+`\catcr' field, then the default is to use the rightmost root.
+
+The `\catcr' field may appear any number of times, but once is enough.
+If more than one such field occurs, the last one is the one that is
+used.
+
+If no `\cat' field appears in the analysis data file, then AMPLE does
+not write any category information to the output file, regardless of
+the setting of the `\catcr' field.  That is, the `\catcr' field has no
+effect whatsoever unless the `\cat' field is also present.
+
+Category class: \ccl
+--------------------
+
+A category class is defined by the field code `\ccl' followed by the
+class name, which is followed in turn by one or more category names or
+(previously defined) category class names.  A category class name used
+as part of the class definition must be enclosed in square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The category names must have been defined by an
+earlier `\ca' field.
+
+Each `\ccl' field defines a single category class.  Any number of
+`\ccl' fields may appear in the file.
+
+If no `\ccl' fields appear in the analysis data file, then AMPLE does
+not allow any category classes to be used in tests or morpheme
+environment constraints.
+
+Compound root category pair: \cr
+--------------------------------
+
+An allowable compound root category pair is defined by the `\cr' field
+code followed by two category names previously defined in a `\ca'
+field.  The order of the category names is significant.
+
+Any number of compound root category pairs may be declared.  If
+compound roots are not allowed by a `\maxr' field, then the compound
+root category pairs are ignored.
+
+If no `\cr' fields appear in the analysis data file, then AMPLE does
+not allow any compound roots.  This is, of course, immaterial if the
+maximum number of roots is one (1).
+
+Dictionary decapitalization control: \dicdecap
+----------------------------------------------
+
+The `\dicdecap' field indicates that allomorph strings in dictionary
+entries should be decapitalized.  Only the field code is significant;
+anything else in the field is ignored.
+
+The `\dicdecap' field may appear any number of times, but once is
+enough.
+
+If no `\dicdecap' fields appear in the analysis data file, then AMPLE
+stores dictionary entries verbatim without decapitalizing allomorph
+strings.
+
+Final test: \ft
+---------------
+
+A final test is defined by the `\ft' field code followed by the test
+name and possibly a test body.  The test body is not needed if the test
+name is that of a built-in test (either MEC_FT or MCC_FT), or a
+previously defined successor test that is to be used as a final test.
+
+Any number of final tests may be defined in the file.  For details
+about the syntax of final tests, see `Test Syntax' below.
+
+If no `\ft' fields appear in the analysis data file, AMPLE still
+applies the built-in final tests MEC_FT and MCC_FT.
+
+Infix ad hoc pair: \iah
+-----------------------
+
+An infix ad hoc pair is defined by the `\iah' field code followed by
+two morpheme identifiers.  The first morphname may belong to a prefix,
+root, or suffix depending on what is allowed by the infix dictionary
+entries.  The second must belong to an infix.
+
+Any number of infix ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no `\iah' fields appear in the analysis data file, then AMPLE never
+eliminates any analyses via the infix `ADHOC_ST' test.
+
+Infix successor test: \it
+-------------------------
+
+An infix successor test is defined by the `\it' field code followed by
+the test name and possibly a test body.  The test body is not needed if
+the test name is that of a built-in test (either SEC_ST ADHOC_ST, or
+PEC_ST), or a previously defined prefix test that is to be used as an
+infix test.
+
+Infix tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, and PEC_ST are
+applied after all the user-defined infix tests.
+
+Any number of infix successor tests may be defined in the file.  For
+the syntax of successor tests, see `Test Syntax' below.
+
+If no `\it' fields appear in the analysis data file, AMPLE still
+applies the built-in infix tests SEC_ST, ADHOC_ST and PEC_ST.
+
+Maximum number of infixes: \maxi
+--------------------------------
+
+The maximum number of infixes that may appear in a word is defined by
+the `\maxi' field code followed by a number greater than or equal to
+zero.
+
+The `\maxi' field may appear any number of times, but once is enough.
+If more than one such field occurs, the last one is the one that is
+used.
+
+If no `\maxi' fields appear in the analysis data file, then AMPLE
+assumes that the language does not have infixes.
+
+Maximum number of interfixes: \maxn
+-----------------------------------
+
+(An "interfix" is an affix that can also appear between roots.)
+
+The maximum number of interfixes that may appear in a word is defined by
+the `\maxn' field code followed by a number greater than or equal to
+zero.
+
+The `\maxn' field may appear any number of times, but once is enough.
+If more than one such field occurs, the last one is the one that is
+used.
+
+If no `\maxn' fields appear in the analysis data file, then AMPLE
+assumes that the language does not have interfixes.
+
+Maximum number of null allomorphs: \maxnull
+-------------------------------------------
+
+The maximum number of null allomorphs that may appear in a word is
+defined by the `\maxnull' field code followed by a number greater than
+or equal to zero.
+
+The `\maxnull' field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no `\maxnull' fields appear in the analysis data file, then AMPLE
+limits the number of null allomorphs in a word to ten (10).
+
+Maximum number of prefixes: \maxp
+---------------------------------
+
+The maximum number of prefixes that may appear in a word is defined by
+the `\maxp' field code followed by a number greater than or equal to
+zero.
+
+The `\maxp' field may appear any number of times, but once is enough.
+If more than one such field occurs, the last one is the one that is
+used.
+
+If no `\maxp' fields appear in the analysis data file, then AMPLE
+assumes that the language does not have prefixes.
+
+Maximum number of properties: \maxprops
+---------------------------------------
+
+The maximum number of properties that can be defined can be increased
+from the default of 255 by giving the `\maxprops' field code followed
+by a number greater than or equal to 255 but less than 65536.
+
+The `\maxprops' field may appear any number of times, but once is
+enough.  If more than one such field occurs, the one containing the
+largest valid value is the one that is used.
+
+The `\maxprops' must be used before any properties are defined.  This
+is the case for both morpheme and allomorph properties.
+
+If no `\maxprops' fields appear in the analysis data file, then AMPLE
+limits the number of properties which can be defined to 255.
+
+Maximum number of roots: \maxr
+------------------------------
+
+The maximum number of roots that may appear in a word is defined by the
+`\maxr' field code followed by a number greater than or equal to one.
+
+The `\maxr' field may appear any number of times, but once is enough.
+If more than one such field occurs, the last one is the one that is
+used.
+
+If no `\maxr' fields appear in the analysis data file, then AMPLE
+assumes that only a single root can appear in a word.
+
+Maximum number of suffixes: \maxs
+---------------------------------
+
+The maximum number of suffixes that may appear in a word is defined by
+the `\maxs' field code followed by a number greater than or equal to
+zero.
+
+The `\maxs' field may appear any number of times, but once is enough.
+If more than one such field occurs, the last one is the one that is
+used.
+
+If no `\maxs' fields appear in the analysis data file, then AMPLE
+assumes that up to 100 suffixes can occur in a word.
+
+Morpheme Co-occurrence Constraint: \mcc
+---------------------------------------
+
+A morpheme co-occurrence constraint is defined by the `\mcc' field code
+followed by one or more morpheme names or morpheme class names, and
+finally a morpheme environment constraint.  Each morpheme class name
+must be enclosed in square brackets, and must have been defined by a
+prior `\mcl' field.
+
+For the syntax of morpheme co-occurrence constraints, see `Morpheme
+Co-occurrence Constraint Syntax' below.
+
+If no `\mcc' fields appear in the analysis data file, then AMPLE does
+not eliminate any analyses by the `MCC_FT' test.
+
+Morpheme class: \mcl
+--------------------
+
+A morpheme class is defined by the `\mcl' field code followed by the
+class name, which is followed in turn by one or more morpheme names or
+(previously defined) morpheme class names.  A morpheme class name used
+as part of the class definition must be enclosed in square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The morpheme names should be defined by an entry
+in one of the dictionary files.
+
+Each `\mcl' field defines a single morpheme class.  Any number of
+`\mcl' fields may appear in the file.
+
+If no `\mcl' fields appear in the analysis data file, then AMPLE does
+not allow any morpheme classes in morpheme environment constraints or
+tests.
+
+Morpheme properties: \mp
+------------------------
+
+Morpheme properties are defined by the field code `\mp' followed by one
+or more morpheme property names.  An morpheme property name must be a
+single, contiguous sequence of printing characters.  Characters and
+words which have special meanings in tests should not be used.
+
+A maximum of 255 properties (including both allomorph and morpheme
+properties) may be defined.  Any number of `\mp' fields may be used so
+long as the number of property names does not exceed 255.
+
+If no `\mp' fields appear in the analysis data file, then AMPLE does
+not allow any morpheme properties in dictionary files or tests.
+
+Interfix ad hoc pair: \nah
+--------------------------
+
+An interfix ad hoc pair is defined by the `\nah' field code followed by
+two morpheme identifiers.  The first morphname may belong to either a
+root or an interfix.  The second must belong to an interfix.
+
+Any number of interfix ad hoc pairs may be defined in the file.
+However, their use is strongly discouraged on linguistic grounds.
+
+If no `\nah' fields appear in the analysis data file, then AMPLE never
+eliminates any analyses via the interfix `ADHOC_ST' test.
+
+Interfix successor test: \nt
+----------------------------
+
+An interfix successor test is defined by the `\nt' field code followed
+by the test name and possibly a test body.  The test body is not needed
+if the test name is that of a built-in test (either SEC_ST ADHOC_ST, or
+PEC_ST), or a previously defined prefix test or infix test that is to
+be used as an interfix test.
+
+Interfix tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, and PEC_ST are
+applied after all the user-defined interfix tests.
+
+Any number of interfix successor tests may be defined in the file.  For
+the syntax of successor tests, see `Test Syntax' below.
+
+If no `\nt' fields appear in the analysis data file, AMPLE still
+applies the built-in interfix tests SEC_ST, ADHOC_ST and PEC_ST.
+
+Prefix ad hoc pair: \pah
+------------------------
+
+A prefix ad hoc pair is defined by the `\pah' field code followed by
+two morpheme identifiers.  The first morphname may belong to either a
+prefix or an infix (if infixes exist and can mingle with prefixes).
+The second must belong to a prefix.
+
+Any number of prefix ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no `\pah' fields appear in the analysis data file, then AMPLE never
+eliminates any analyses via the prefix `ADHOC_ST' test.
+
+Word parser parameter settings: \patr
+-------------------------------------
+
+The `\patr' field is recognized only by XAMPLE, not by AMPLE, and has
+effect only if a grammar file is selected by the `-e' command line
+option.  Each instance of this field sets one of the PC-PATR control
+parameters.  Several instances of the field can occur in the analysis
+data file in order to set several different parameters.  Each field
+contains a parameter name followed by an argument giving its value.
+These parameters and allowable arguments are discussed below.
+
+Note that the parameter names and arguments following the `\patr' field
+code are not case sensitive: `ON' is the same as `On', which is the
+same as `on'.  Also, the parameter names and arguments may be
+abbreviated to the shortest unique value: `off' could be written `of',
+since that is sufficient to distinguish it from `on'.
+
+`CheckCycles'
+	 This parameter controls a check against introducing cycles into
+	 the parse chart.  This makes the parse safer, but slows it down.
+	 Legal grammars should not introduce cycles, but it can happen
+	 while developing grammars.  `\patr CheckCycles ON' enables this
+	 check, and `\patr CheckCycles OFF' disables it.  The default is
+	 `ON'.
+
+`DebuggingLevel'
+	 This parameter specifies the amount of PC-PATR debugging
+	 information which will be written to the log file.  Its argument
+	 is a number greater than or equal to zero.  If zero, then no extra
+	 debugging information will be written to the log file.  The
+	 default value is `0'.
+
+	 NOTE: this parameter is most useful for the programmer.  It can
+	 produce *huge* amounts of cryptic output.
+
+`FeatureStyle'
+	 This parameter controls the way that feature structures are
+	 written to either the output analysis file or the log file, but
+	 not whether they are written.  `\patr FeatureStyle Full' causes
+	 features to be displayed in an indented format that makes obvious
+	 the embedded structure of each feature.  `\patr FeatureStyle Flat'
+	 causes features to be displayed in a flat, linear string that uses
+	 less space.  The default style is `Flat'.
+
+`MaxAmbiguity'
+	 This parameter controls the maximum number of different parses for
+	 a particular AMPLE word analysis that will be written to either
+	 the output analysis file or the log file.  Its argument is a
+	 number greater than or equal to one.  The default maximum is 10.
+
+`PromoteDefAtoms'
+	 This parameter controls whether default atomic feature values
+	 loaded from the lexicon are "promoted" to ordinary atomic feature
+	 values before parsing begins.  `\patr PromoteDefAtoms On' causes
+	 default atomic values to be promoted.  `\patr PromoteDefAtoms Off'
+	 causes parsing to use default atomic values still marked as
+	 default.  (This can affect feature unification since a conflicting
+	 default value does not cause a failure: the default value merely
+	 disappears.)  The default value is `On'.
+
+`PropertyIsFeature'
+	 This parameter controls whether the values in the AMPLE analysis
+	 `\p' (property) field are to be interpreted as feature template
+	 names, the same as the values in the AMPLE analysis `\fd' (feature
+	 descriptor) field.  `\patr PropertyIsFeature On' turns on this
+	 behavior, and `\patr PropertyIsFeature Off' turns it off.  The
+	 default value is `On'.
+
+`ShowAllFeatures'
+	 This parameter controls whether the feature structures for all
+	 nodes in the parse tree are written to the output files, or just
+	 the feature structure for the top node in the parse tree. `\patr
+	 ShowAllFeatures On' causes features for all nodes to be written.
+	 `\patr ShowAllFeatures Off' causes only the feature structure for
+	 the top node of the parse to be written.  The default value is
+	 `On'.
+
+`ShowFailures'
+	 This parameter controls how the parser handles parse failures.  An
+	 AMPLE analysis may fail to parse either by failing the feature
+	 constraints or by failing the phrase structure rules.  `\patr
+	 ShowFailures On' causes partial results indicating the cause of
+	 parse failures to be written to the log file.  `\patr ShowFailures
+	 Off' prevents any extra output to the log file.  The default value
+	 is `Off'.
+
+	 NOTE: since the purpose of using the PC-PATR word parser in XAMPLE
+	 is to weed out incorrect AMPLE analyses, a large number of parse
+	 failures are to be expected, which can cause *huge* log files.
+	 This parameter is best used in conjunction with the `-t' command
+	 line option when tracing the analysis of a single word, or a small
+	 number of words.
+
+`ShowFeatures'
+	 This parameter controls whether or not any feature structures are
+	 written to the output analysis file or the log file.  It does not
+	 affect any of the other parameters related to how feature
+	 structures are written.  `\patr ShowFeatures On' enables writing
+	 feature structures to the output files.  `\patr ShowFeatures Off'
+	 disables writing feature structures.  The default value is `On'.
+
+`ShowGlosses'
+	 This parameter controls whether morpheme glosses are displayed in
+	 the parse tree output.  `\patr ShowGlosses On' enables writing
+	 glosses in the parse tree output.  `\patr ShowGlosses Off'
+	 disables writing glosses.  If no morpheme glosses exist in the
+	 dictionary, then this parameter is ignored.  The default value is
+	 `On'.
+
+`TimeLimit'
+	 This parameter limits the amount of time that parsing an AMPLE
+	 analysis can take.  Its argument is a number greater than or equal
+	 to zero, which is the maximum number of seconds than a parse is
+	 allowed before being cancelled.  The default value is `0', which
+	 has the special meaning that no limit is imposed.
+
+	 NOTE: this feature is new and still somewhat experimental.  It may
+	 not be fully debugged, and may cause unforeseen side effects such
+	 as program crashes some time after one or more parses are
+	 cancelled due to exceeding the set time limit.
+
+`TopDownFilter'
+	 This parameter controls whether simple top-down filtering based on
+	 the grammar categories is applied to the parse process.  `\patr
+	 TopDownFilter On' enables this top-down filtering.  `\patr
+	 TopDownFilter Off' disables the top-down filtering, slowing down
+	 the parse but possibly finding more solutions.  The default value
+	 is `On'.
+
+`TreeStyle'
+	 This parameter controls how parse trees are written to either the
+	 analyis output file or the log file.
+
+	 `\patr TreeStyle Full' causes parses to be written in a somewhat
+	 graphic tree display format, using ASCII characters to draw the
+	 branches of the tree.
+
+	 `\patr TreeStyle Flat' causes parses to be written as parenthesized
+	 strings, similar to the way that LISP represents trees.  This is
+	 the default value: it may be cryptic, but it requires the least
+	 space.
+
+	 `\patr TreeStyle Indented' causes parses to be written in an
+	 indented format sometimes called a *northwest tree*.
+
+	 `\patr TreeStyle XML' causes parses to be written in an XML format,
+	 with each node containing the feature structure associated with
+	 that node of the parse tree.  This setting causes the
+	 `FeatureStyle' parameter to be ignored.
+
+	 `\patr TreeStyle None' prevents parses from being written.  This
+	 allows PC-PATR word grammars to be used for filtering invalid AMPLE
+	 analyses without cluttering up the output analysis files.
+
+`TrimEmptyFeatures'
+	 This parameter controls whether empty feature structures are
+	 written to the output files.  `\patr TrimEmptyFeatures On'
+	 disables the display of empty feature values. `\patr
+	 TrimEmptyFeatures Off' enables the display of empty features.  The
+	 default value is `Off'.
+
+`Unification'
+	 This parameter controls whether the parsing process allows
+	 unification failures to block successful parsing.  `\patr
+	 Unification On' causes the constituent structure rules to
+	 constrain the parse.  `\patr Unification Off' causes feature
+	 unification failures to be ignored while parsing.  (Most likely,
+	 this would be useful only while debugging the word grammar.) The
+	 default value is `On'.
+
+Punctuation class: \pcl
+-----------------------
+
+A punctuation class is defined by the field code `\pcl' followed by the
+class name, which is followed in turn by one or more punctuation
+characters or (previously defined) punctuation class names.  A
+punctuation class name used as part of the class definition must be
+enclosed in square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each `\pcl' field defines a single punctuation class.  Any number of
+`\pcl' fields may appear in the file.
+
+If no `\pcl' fields appear in the analysis data file, then AMPLE does
+not allow any punctuation classes in tests, and does not allow any
+punctuation classes in punctuation environment constraints.
+
+Prefix successor test: \pt
+--------------------------
+
+A prefix successor test is defined by the `\pt' field code followed by
+the test name and possibly a test body.  The test body is not needed if
+the test name is that of a built-in test (either SEC_ST, ADHOC_ST, or
+PEC_ST).
+
+Prefix tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, and PEC_ST are
+applied after all the user-defined prefix tests.
+
+Any number of prefix successor tests may be defined in the file.  For
+the syntax of successor tests, see `Test Syntax' below.
+
+If no `\pt' fields appear in the analysis data file, AMPLE still
+applies the built-in prefix tests SEC_ST, ADHOC_ST, and PEC_ST.
+
+Root ad hoc pair: \rah
+----------------------
+
+A root ad hoc pair is defined by the `\rah' field code followed by two
+morpheme identifiers.  The first identifier may belong to a prefix, an
+infix (if infixes exist and can mingle with prefixes or roots), or a
+root (if compound roots are allowed).  The second morpheme identifier
+must belong to a root.
+
+A prefix or infix identifier in a root ad hoc pair must be the affix's
+morphname.  A root identifier in a root ad hoc pair must be given
+exactly as it occurs in the analysis (an etymology or a gloss,
+depending on the assignment to the `M' field in the root section of the
+dictionary code table).
+
+Any number of root ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no `\rah' fields appear in the analysis data file, then AMPLE never
+eliminates any analyses via the root `ADHOC_ST' test.
+
+Root Delimiter Characters: \rd
+------------------------------
+
+The root delimiter characters used in the output analysis file are
+defined by the `\rd' field code followed by two characters, possibly
+separated by spaces.  The first character is used to mark the beginning
+of a root analysis and the second is used to mark its end.
+
+The `\rd' field may appear any number of times, but once is enough.  If
+more than one such field occurs, the last one is the one that is used.
+
+If no `\rd' fields appear in the analysis data file, then AMPLE uses
+the delimiter characters `<' and `>'.
+
+Root successor test: \rt
+------------------------
+
+A root successor test is defined by the `\rt' field code followed by
+the test name and possibly a test body.  The test body is not needed if
+the test name is that of a built-in test (SEC_ST, ADHOC_ST, ROOTS_ST,
+or PEC_ST), or a previously defined prefix or infix test that is to be
+used as a root test.
+
+Root tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, ROOT_ST, and PEC_ST
+are applied after all the user-defined root tests.
+
+Any number of root successor tests may be defined in the file.  For the
+syntax of successor tests, see `Test Syntax' below.
+
+If no `\rt' fields appear in the analysis data file, AMPLE still
+applies the built-in root tests SEC_ST, ADHOC_ST, ROOTS_ST, and PEC_ST.
+
+Suffix ad hoc pair: \sah
+------------------------
+
+A suffix ad hoc pair is defined by the `\sah' field code followed by
+two morpheme identifiers.  The first identifier may belong to a root,
+an infix (if infixes exist and can mingle with roots or suffixes), or a
+suffix.  The second morpheme identifier must belong to a suffix.
+
+A suffix or infix identifier in a suffix ad hoc pair must be the affix's
+morphname.  A root identifier in a suffix ad hoc pair must be given
+exactly as it occurs in the analysis (an etymology or a gloss,
+depending on the assignment to the `M' field in the root section of the
+dictionary code table).
+
+Any number of suffix ad hoc pairs may be defined in the file.  However,
+their use is strongly discouraged on linguistic grounds.
+
+If no `\sah' fields appear in the analysis data file, then AMPLE never
+eliminates any analyses via the suffix `ADHOC_ST' test.
+
+String class: \scl
+------------------
+
+A string class is defined by the `\scl' field code followed by the
+class name, which is followed in turn by one or more contiguous
+character strings or (previously defined) string class names.  A string
+class name used as part of the class definition must be enclosed in
+square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The actual character strings have no such
+restrictions.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each `\scl' field defines a single string class.  Any number of `\scl'
+fields may appear in the file.
+
+If no `\scl' fields appear in the analysis data file, then AMPLE does
+not allow any string classes in tests, and does not allow any string
+classes in string environment constraints unless they are defined in
+the text input control file or the dictionary orthography changes file.
+
+Suffix successor test: \st
+--------------------------
+
+A suffix successor test is defined by the `\st' field code followed by
+the test name and possibly a test body.  The test body is not needed if
+the test name is that of a built-in test (either SEC_ST, ADHOC_ST, or
+PEC_ST), or a previously defined prefix, infix, or root test that is to
+be used as a suffix test.
+
+Suffix tests are applied in the order they appear in the analysis data
+file.  If not explicitly listed, SEC_ST, ADHOC_ST, and PEC_ST are
+applied after all the user-defined suffix tests.
+
+Any number of suffix successor tests may be defined in the file.  For
+the syntax of successor tests, see `Test Syntax' below.
+
+If no `\st' fields appear in the analysis data file, AMPLE still
+applies the built-in suffix tests SEC_ST, ADHOC_ST, and PEC_ST.
+
+Valid allomorph and string environment characters: \strcheck
+------------------------------------------------------------
+
+The characters considered to be valid for allomorph strings and string
+environment constraints are defined by a `\strcheck' field code
+followed by the list of characters.  Spaces are not significant in this
+list.
+
+The `\strcheck' field may appear any number of times, but once is
+enough.  If more than one such field occurs, the last one is the one
+that is used.
+
+If no `\strcheck' fields appear in the analysis data file, then AMPLE
+does not check allomorph strings and string environment constraints for
+containing only valid characters.
+
+Test Syntax
+===========
+
+The remainder of this chapter presents grammatical descriptions of the
+syntax of tests and morpheme co-occurrence constraints in BNF notation.
+The following comments explain how to read the syntax rules given below:
+  1. Names shown inside wedges (`<>') are nonterminal symbols.  These
+	 must eventually be expanded into terminal symbols.
+
+  2. The symbol `::=' means "is replaced by."
+
+  3. Items on the righthand side of the rule (following the `::=') that
+	 are not enclosed in wedges are terminal symbols, and appear in the
+	 rule exactly as they must appear in an AMPLE control file.
+	 Whitespace is largely optional; it is required only to separate
+	 identifiers and keywords.  (Keywords are the alphabetic terminal
+	 symbols shown in the rules below.)
+
+  4. Alternative ways of replacing a nonterminal symbol are listed on
+	 separate lines.
+
+
+	  1.  <test>          ::= <identifier> <body>
+
+	  2a. <body>          ::= <body> <logop> <factor>
+	  2b.                     IF <factor> THEN <factor>
+	  2c.                     <forleft> <factor>
+	  2d.                     <forright> <factor>
+	  2e.                     <factor>
+
+	  3a. <factor>        ::= NOT <factor>
+	  3b.                     ( <body> )
+	  3c.                     <property_expr>
+	  3d.                     <string_expr>
+	  3e.                     <type_expr>
+	  3f.                     <category_expr>
+	  3g.                     <order_expr>
+	  3h.                     <cap_expr>
+	  3i.                     <punct_expr>
+
+	  4.  <property_expr> ::= <position> property is <identifier>
+
+	  5a. <string_expr>   ::= <position> morphname is <identifier>
+	  5b.                     <position> morphname is member <identifier>
+	  5c.                     <position> morphname is <position> morphname
+	  5d.                     <position> allomorph is <identifier>
+	  5e.                     <position> allomorph is member <identifier>
+	  5f.                     <position> allomorph is <position> allomorph
+	  5g.                     <position> allomorph matches <identifier>
+	  5h.                     <position> allomorph matches member <identifier>
+	  5i.                     <position> allomorph matches <position> allomorph
+	  5j.                     <position> surface is <identifier>
+	  5k.                     <position> surface is member <identifier>
+	  5l.                     <position> surface is <position> allomorph
+	  5m.                     <position> surface matches <identifier>
+	  5n.                     <position> surface matches member <identifier>
+	  5o.                     <position> surface matches <position> allomorph
+	  5p.                     <neighbor> word is <identifier>
+	  5q.                     <neighbor> word is member <identifier>
+	  5r.                     <neighbor> word matches <identifier>
+	  5s.                     <neighbor> word matches member <identifier>
+
+	  6.  <type_expr>     ::= <position> type is <type>
+
+	  7a. <category_expr> ::= <position> fromcategory is <position> fromcategory
+	  7b.                     <position> fromcategory is <position> tocategory
+	  7c.                     <position> tocategory is <position> fromcategory
+	  7d.                     <position> tocategory is <position> tocategory
+	  7e.                     <position> fromcategory is member <identifier>
+	  7f.                     <position> tocategory is member <identifier>
+	  7g.                     <position> fromcategory is <identifier>
+	  7h.                     <position> tocategory is <identifier>
+	  7i.                     outputcategory is <identifier>
+	  7j.                     outputcategory is member <identifier>
+
+	  8a. <cap_expr>      ::= <position> allomorph is capitalized
+	  8b.                     word is capitalized
+
+	  9a. <order_expr>    ::= <position> orderclass <relop> <position> orderclass
+	  9b.                     <position> orderclass <relop> <position> orderclassmin
+	  9c.                     <position> orderclass <relop> <position> orderclassmax
+	  9d.                     <position> orderclassmin <relop> <position> orderclass
+	  9e.                     <position> orderclassmin <relop> <position> orderclassmin
+	  9f.                     <position> orderclassmin <relop> <position> orderclassmax
+	  9g.                     <position> orderclassmax <relop> <position> orderclass
+	  9h.                     <position> orderclassmax <relop> <position> orderclassmin
+	  9i.                     <position> orderclassmax <relop> <position> orderclassmax
+	  9j.                     <position> orderclass <relop> <constant>
+	  9k.                     <position> orderclassmin <relop> <constant>
+	  9l.                     <position> orderclassmax <relop> <constant>
+
+	 10a. <punct_expr>    ::= <neighbor> punctuation is <identifier>
+	 10b.                     <neighbor> punctuation is member <identifier>
+
+	 11.  <logop>         ::= AND
+							  OR
+							  XOR
+							  IFF
+
+	 12.  <forleft>       ::= FOR_ALL_LEFT
+							  FOR-ALL-LEFT
+							  FORALLLEFT
+							  FOR_SOME_LEFT
+							  FOR-SOME-LEFT
+							  FORSOMELEFT
+
+	 13.  <forright>      ::= FOR_ALL_RIGHT
+							  FOR-ALL-RIGHT
+							  FORALLRIGHT
+							  FOR_SOME_RIGHT
+							  FOR-SOME-RIGHT
+							  FORSOMERIGHT
+
+	 14.  <neighbor>      ::= last
+							  next
+
+	 15.  <type>          ::= prefix
+							  infix
+							  interfix
+							  interfixinfix
+							  interfixprefix
+							  interfixsuffix
+							  root
+							  suffix
+							  initial
+							  final
+
+	 16.  <relop>        ::= =
+							 >
+							 >=
+							 <=
+							 <
+							 ~=
+
+	 17.  <position>     ::= left
+							 right
+							 current
+							 LEFT
+							 RIGHT
+							 INITIAL
+							 FINAL
+
+	 18a. <identifier>   ::= "<word>"
+	 18b.                    '<word>'
+	 18c.                    .<word>.
+	 18d.                    [<word>]
+	 18e.                    <word>
+
+	 19.  <word>         ::= <wchar>
+							 <wchar><word>
+
+	 20.  <wchar>        ::= one of the following characters:
+								 !"#$%&'*+,-./0123456789:;?
+								 @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_
+								 `abcdefghijklmnopqrstuvwxyz{}
+								 \200-\376 (character codes 128-254)
+
+	 21.  <constant>     ::= <number>
+							 -<number>
+
+	 22.  <number>       ::= <digit>
+							 <digit><number>
+
+	 23.  <digit>        ::= one of the following characters:  0123456789
+
+
+Comments on selected BNF rules
+..............................
+
+1.
+	 A test consists of an identifier followed by the body of the test.
+	 The identifier is the name by which a test is known.  The body
+	 consists of the expressions which are interpreted to evaluate the
+	 test.
+
+4.
+	 The identifier in a property expression must be a property name
+	 defined with `\mp' or `\ap' in the analysis data file.
+
+5a.
+	 In a string expression involving morphnames, an identifier must be
+	 equal to some morphname; for example, `left morphname is "PAST"'
+	 indicates that the name of the morpheme to the left is PAST.
+
+5b.
+	 A member identifier in such expressions must be the name of a
+	 class of morphnames defined with `\mcl' in the analysis data file.
+
+5dgjmpr.
+	 In a string expression involving allomorphs, surface strings, or
+	 adjacent words, an identifier must be equal to some portion of a
+	 word after any orthography change has been applied.  For example,
+	 `left allomorph is "abadaba"' indicates that the allomorph of the
+	 morpheme to the left is abadaba.
+
+5ehknqs.
+	 A member identifier in such expressions must be the name of a
+	 class of strings defined with `\scl' in the analysis data file.
+
+5d-i.
+	 If reference is made to left, LEFT or INITIAL, the allomorph is
+	 tested to see if it ends with the string; for example, `left
+	 allomorph matches "ba"' indicates that the allomorph of the
+	 morpheme to the left ends in ba.  If reference is made to current,
+	 right, RIGHT, or FINAL, the allomorph is tested to see if it
+	 begins with the string.
+
+5j-o.
+	 If reference is made to left, LEFT or INITIAL, the surface string
+	 is tested to see if it ends with the given value.  If reference is
+	 made to current, right, RIGHT, or FINAL, the surface string is
+	 tested to see if it begins with the given value.
+
+5p-s.
+	 If reference is made to last, the word is tested to see if it ends
+	 with the string.  If reference is made to next, the word is tested
+	 to see if it begins with the string.  (These should be avoided,
+	 and other means used to prune analyses based on adjacent words.)
+
+6.
+	 The type must be a keyword indicating whether the morpheme
+	 referred to is a prefix, an infix, a root, and so on
+
+7efj.
+	 The identifier must be the name of a class of categories defined
+	 with `\ccl' in the analysis data file.
+
+7ghi.
+	 The identifier must be a category defined with `\ca' in the
+	 analysis data file.
+
+9a-l.
+	 A constant is an integer between -32767 and (positive) 32767.  The
+	 relational operator (relop) must be among those listed in rule 16.
+	 The terminals `orderclass' and `orderclassmin' are treated
+	 identically.  Both refer to the first of potentially two order
+	 class numbers in a dictionary order class field.  The terminal
+	 `orderclassmax' refers to the second order class number in a
+	 dictionary order class field.  If the second number is not
+	 present, `orderclassmax' is set to the same value as `orderclass'.
+
+10.
+	 Punctuation expressions always refer to punctuation either
+	 immediately before or after the current word.  A `<neighbor>'
+	 value of `last' refers to immediately before the current word and
+	 a `<neighbor>' value of `next' refers to immediately after the
+	 current word.
+
+15.
+	 A note on interfixes: these are affixes which can also appear
+	 between roots.  A given interfix is both a prefix and interfix or
+	 both a suffix and an interfix or both an infix and interfix.
+	 Therefore in a test, one may specify the particular subtype of
+	 interfix (i.e. it is also a prefix/infix/suffix).
+
+18a-d.
+	 The quoted forms of an identifier are needed only if the
+	 identifier is the same as one of the AMPLE test keywords.  It is
+	 recommended that the quoted identifier not contain the closing
+	 quote character.
+
+Morpheme Co-occurrence Constraint Syntax
+========================================
+
+This section presents a grammatical description of the syntax of
+morpheme co-occurrence constraints in BNF notation.  These constraints
+are found either in the analysis data file (see `Morpheme Co-occurrence
+Constraint: \mcc' above) or in a dictionary file (see `Morpheme
+Co-occurrence Constraint (internal code Z)' below).
+
+
+	  1a. <constraint>   ::= <morphnames> <environments>
+	  1b.                    { <literal> } <morphnames> <environments>
+
+	  2a. <morphnames>   ::= <literal>
+	  2b.                    <literal> <morphnames>
+	  2c.                    [ <literal> ]
+	  2d.                    [ <literal> ] <morphnames>
+
+	  3a. <environments> ::= <environment>
+	  3b.                    <environment> <environments>
+
+	  4a. <environment>  ::= <marker> <leftside> <envbar> <rightside>
+	  4b.                    <marker> <leftside> <envbar>
+	  4c.                    <marker> <envbar> <rightside>
+
+	  5a. <leftside>     ::= <side>
+	  5b.                    <boundary>
+	  5c.                    <boundary> <side>
+	  5d.                    <side> # <side>
+	  5e.                    <boundary> <side> # <side>
+
+	  6a. <rightside>  ::= <side>
+	  6b.                  <boundary>
+	  6c.                  <side> <boundary>
+	  6d.                  <side> # <side>
+	  6e.                  <side> # <side> <boundary>
+
+	  7a. <side>       ::= <item>
+	  7b.                  <item> <side>
+	  7c.                  <item> ... <side>
+
+	  8a. <item>       ::= <piece>
+	  8b.                  ( <piece> )
+
+	  9a. <piece>      ::= ~ <piece>
+	  9b.                  <literal>
+	  9c.                  [ <literal> ]
+	  9d.                  { <literal> }
+
+	 10.  <marker>     ::= /
+						   +/
+
+	 11.  <envbar>     ::= _
+						   ~_
+
+	 12.  <boundary>   ::= #
+						   ~#
+
+	 13.  <literal>    ::= one or more contiguous characters
+
+
+Comments on selected BNF rules
+..............................
+
+1b.
+	 A literal enclosed in braces is an arbitary identifier for this
+	 morpheme co-occurrence constraint.  (This feature was added to
+	 support LinguaLinks.)
+
+2ab.
+	 A literal is a morphname from one of the dictionary files.
+
+2cd.
+	 A literal enclosed in square brackets must be the name of a
+	 morpheme class defined by a `\mcl' field in the analysis data file.
+
+5-6.
+	 Note that what can appear to the left of the environment bar is a
+	 mirror image of what can appear to the right.
+
+5de.
+6de.
+	 These should be avoided, and other means used to prune analyses
+	 based on adjacent words.
+
+7c.
+	 An ellipsis (`...') indicates a possible break in contiguity.
+
+8b.
+	 Something enclosed in parentheses is optional.
+
+9a.
+	 A tilde (`~') reverses the desirability of an element, causing the
+	 constraint to fail if it is found rather than fail if it is not
+	 found.
+
+9b.
+	 A literal is a morphname from one of the dictionary files.
+
+9c.
+	 A literal enclosed in square brackets must be the name of a
+	 morpheme class defined by a `\mcl' field in the analysis data file.
+
+9d.
+	 A literal enclosed in curly braces must be one of the following
+	 (checked in this order):
+	   1. one of the keywords `root', `prefix', `infix', or `suffix'
+
+	   2. a property name defined by an `\ap' or `\mp' field in the
+		  analyis data file
+
+	   3. a category name defined by a `\ca' field in the analysis data
+		  file
+
+	   4. a category class name defined by a `\ccl' field in the
+		  analysis data file
+
+	   5. a morpheme class name defined by a `\mcl' field in the
+		  analysis data file
+
+10.
+	 A `/' is usually used for string environment constraints, but may
+	 used for morpheme environment constraints in `\mcc' fields in the
+	 analysis data file.
+
+11.
+	 A tilde (`~') attached to the environment bar inverts the sense of
+	 the constraint as a whole.
+
+12b.
+	 The boundary marker preceded by a tilde (`~#') indicates that it
+	 must not be a word boundary.
+
+13.
+	 The special characters used by environment constraints can be
+	 included in a literal only if they are immediately preceded by a
+	 backslash:
+
+		  \+  \/  \#  \~  \[  \]  \(  \)  \{  \}  \.  \_  \\
+
+Allomorphs Never Co-occur Constraint Syntax
+===========================================
+
+This section presents a grammatical description of the syntax of
+allomorphs never co-occur constraints in BNF notation.  These
+constraints are found in the analysis data file (see `Allomorphs Never
+Co-occur Constraint: \ancc' above).
+
+
+	  1a. <constraint>   ::= <allomorphIDs> <environments>
+	  1b.                    { <literal> } <allomorphIDs> <environments>
+
+	  2a. <allomorphIDs> ::= <literal>
+	  2b.                    <literal> <allomorphIDs>
+
+	  3a. <environments> ::= <environment>
+	  3b.                    <environment> <environments>
+
+	  4a. <environment>  ::= <marker> <leftside> <envbar> <rightside>
+	  4b.                    <marker> <leftside> <envbar>
+	  4c.                    <marker> <envbar> <rightside>
+
+	  5a. <leftside>     ::= <side>
+	  5b.                    <boundary>
+	  5c.                    <boundary> <side>
+	  5d.                    <side> # <side>
+	  5e.                    <boundary> <side> # <side>
+
+	  6a. <rightside>  ::= <side>
+	  6b.                  <boundary>
+	  6c.                  <side> <boundary>
+	  6d.                  <side> # <side>
+	  6e.                  <side> # <side> <boundary>
+
+	  7a. <side>       ::= <item>
+	  7b.                  <item> <side>
+	  7c.                  <item> ... <side>
+
+	  8a. <item>       ::= <piece>
+	  8b.                  ( <piece> )
+
+	  9a. <piece>      ::= ~ <piece>
+	  9b.                  <literal>
+
+	 10.  <marker>     ::= /
+						   ~/
+
+	 11.  <envbar>     ::= _
+						   ~_
+
+	 12.  <boundary>   ::= #
+						   ~#
+
+	 13.  <literal>    ::= one or more contiguous characters
+
+
+Comments on selected BNF rules
+..............................
+
+1b.
+	 A literal enclosed in braces is an arbitary identifier for this
+	 allomorphs never co-occur constraint.
+
+2ab.
+	 A literal is an allomorph identification string from one of the
+	 dictionary files.
+
+5-6.
+	 Note that what can appear to the left of the environment bar is a
+	 mirror image of what can appear to the right.
+
+5de.
+6de.
+	 These should be avoided, and other means used to prune analyses
+	 based on adjacent words.
+
+7c.
+	 An ellipsis (`...') indicates a possible break in contiguity.
+
+8b.
+	 Something enclosed in parentheses is optional.
+
+9a.
+	 A tilde (`~') reverses the desirability of an element, causing the
+	 constraint to fail if it is found rather than fail if it is not
+	 found.
+
+9b.
+	 A literal is an allomorph identification string from one of the
+	 dictionary files.
+
+10.
+	 A `/' is usually used for string environment constraints, but may
+	 used for allomorphs never co-occur environment constraints in
+	 `\ancc' fields in the analysis data file.
+
+11.
+	 A tilde (`~') attached to the environment bar inverts the sense of
+	 the constraint as a whole.
+
+12b.
+	 The boundary marker preceded by a tilde (`~#') indicates that it
+	 must not be a word boundary.
+
+13.
+	 The special characters used by environment constraints can be
+	 included in a literal only if they are immediately preceded by a
+	 backslash:
+
+		  \+  \/  \#  \~  \[  \]  \(  \)  \{  \}  \.  \_  \\
+
+Dictionary Code Table File
+**************************
+
+The second control file read by AMPLE contains the dictionary code
+table.  Each entry of an AMPLE dictionary (whether for roots, prefixes,
+infixes, or suffixes) is structured by field codes that indicate the
+type of information that follows.  The dictionary code table maps the
+field codes used in the dictionary files onto the internal codes that
+AMPLE uses.  This allows linguists to use their favorite dictionary
+field codes rather than constraining them to a predefined set.
+
+The dictionary code table is divided into one or more sections, one for
+each type of dictionary file.  Each section contains several mappings
+of field codes in the form of simple changes.  The field codes used in
+the dictionary code table file are described in the remainder of this
+chapter.
+
+Change standard format marker to internal code: \ch
+===================================================
+
+A dictionary field code change is defined by `\ch' followed by two
+quoted strings.  The first string is the field code used in the
+dictionary (including the leading backslash character).  The second
+string is the single capital letter designating the field type.  For
+the lists of dictionary field type codes, see `Dictionary Files' below.
+
+Any character not found in either the dictionary field code string or
+the dictionary field type code may be used as the quoting character.
+The double quote (`"') or single quote (`'') are most often used for
+this purpose.
+
+Infix dictionary fields: \infix
+===============================
+
+The set of dictionary field code changes for an infix dictionary file
+begins with `\infix', optionally followed by the record marker field
+code for the infix dictionary.  If the record marker is not given, then
+the field code ("from string") from the first infix dictionary field
+code change is used.  See `Dictionary Files' below for the set of infix
+dictionary field type codes.
+
+Prefix dictionary fields: \prefix
+=================================
+
+The set of dictionary field code changes for a prefix dictionary file
+begins with `\prefix', optionally followed by the record marker field
+code for the prefix dictionary.  If the record marker is not given,
+then the field code ("from string") from the first prefix dictionary
+field code change is used.  See `Dictionary Files' below for the set of
+prefix dictionary field type codes.
+
+Root dictionary fields: \root
+=============================
+
+The set of dictionary field code changes for a root dictionary file
+begins with `\root', optionally followed by the record marker field
+code for the root dictionary.  If the record marker is not given, then
+the field code ("from string") from the first root dictionary field
+code change is used.  See `Dictionary Files' below for the set of root
+dictionary field type codes.
+
+Suffix dictionary fields: \suffix
+=================================
+
+The set of dictionary field code changes for a suffix dictionary file
+begins with `\suffix', optionally followed by the record marker field
+code for the suffix dictionary.  If the record marker is not given,
+then the field code ("from string") from the first suffix dictionary
+field code change is used.  See `Dictionary Files' below for the set of
+suffix dictionary field type codes.
+
+Unified dictionary fields: \unified
+===================================
+
+The set of dictionary field code changes for a unified dictionary file
+begins with `\unified', optionally followed by the record marker field
+code for the unified dictionary.  If the record marker is not given,
+then the field code ("from string") from the first unified dictionary
+field code change is used.  See `Dictionary Files' below for the set of
+unified dictionary field type codes.
+
+Dictionary Orthography Change Table File
+****************************************
+
+The third control file read by AMPLE, and the first optional one,
+contains the dictionary orthography change table.  This table maps the
+allomorph strings in the dictionary files into the internal
+orthographic representation.  When the text and internal orthographies
+differ, it may be desirable to have the allomorphs in the dictionaries
+stored in the same orthography as the texts, or it may be desirable to
+have them in the internal form, or it might even be desirable to have
+them in a third form.  AMPLE allows for any of these choices.
+
+The dictionary orthography change table is defined by a special
+standard format file.  This file contains a single record with two
+types of fields, either of which may appear any number of times.  The
+rest of this chapter describes these fields, focusing on the syntax of
+the orthography changes.
+
+Dictionary Orthography Change: \ch
+==================================
+
+An orthography change is defined by the `\ch' field code followed by
+the actual orthography change.  Any number of orthography changes may
+be defined in the dictionary orthography change table.  The output of
+each change serves as the input the following change.  That is, each
+change is applied as many times as necessary to a dictionary allomorph
+before the next change from the dictionary orthography change table is
+applied.  See `Text Orthography Change: \ch' below for the syntax of
+orthography changes.
+
+String class: \scl
+==================
+
+A string class is defined by the `\scl' field code followed by the
+class name, which is followed in turn by one or more contiguous
+character strings or (previously defined) string class names.  A string
+class name used as part of the class definition must be enclosed in
+square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The actual character strings have no such
+restrictions.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each `\scl' field defines a single string class.  Any number of `\scl'
+fields may appear in the file.  The only restriction is that a string
+class must be defined before it is used.
+
+If no `\scl' fields appear in the dictionary orthography changes file,
+then AMPLE does not allow any string classes in dictionary orthography
+change environment constraints unless they are defined in the analysis
+data file.
+
+Dictionary Files
+****************
+
+This chapter describes the content of AMPLE dictionary files.  These
+are normally divided into
+  1. a prefix dictionary file (if needed),
+
+  2. an infix dictionary file (if needed),
+
+  3. an suffix dictionary file (if needed), and
+
+  4. one or more root dictionary files.
+
+With the `-u' command line option in conjunction with the `\unified'
+field in the dictionary code table file, the dictionary can be stored
+as one or more files containing entries of any type: prefix, infix,
+suffix, or root.
+
+The following sections describe the different types of fields used in
+the different types of dictionary files.  Remember, the mapping from
+the actual field codes used in the dictionary files to the type codes
+that AMPLE uses internally is controlled by the dictionary code table
+file (see `Dictionary Code Table File' above).
+
+Allomorph (internal code A)
+===========================
+
+Each dictionary entry must contain one or more allomorph fields.  Each
+of these contains one of the affix/root's allomorphs, that is, the
+string of characters by which the affix/root is represented in text and
+recognized by AMPLE.
+
+If an affix/root has multiple allomorphs, each one must be entered in
+its own allomorph field.  These fields should be ordered with those on
+which the strictest constraints have been imposed preceding those with
+less strict or no constraints.  The only exception to this is the use
+of indexed string classes to indicate reduplication.  (See lines 26 and
+27 below.)
+
+It is also possible to have a null allomorph (sometimes called a zero).
+This is indicated by the single digit 0.  The occurrence of null
+allomorphs should be restricted in some way or another for efficiency
+reason.  Because the digit 0 has a special meaning in AMPLE, it must
+not be part of the internal orthography.  If the practical orthography
+uses 0, it should be changed to some other character in the orthography
+input table.
+
+Properties, constraints, and comments may follow the allomorph string.
+Any properties must be listed before any constraints.  String,
+punctuation and morpheme environment constraints may be intermixed, but
+must come before any comments.  A complete BNF grammar of an allomorph
+field is given below.
+
+
+	  1a. <allomorph_field> ::= <allomorph>
+	  1b.                       <allomorph> <properties>
+	  1c.                       <allomorph> <constraints>
+	  1d.                       <allomorph> <properties> <constraints>
+	  1e.                       <allomorph> <comment>
+	  1f.                       <allomorph> <properties> <comment>
+	  1g.                       <allomorph> <constraints> <comment>
+	  1h.                       <allomorph> <properties> <constraints> <comment>
+
+	  2a. <allomorph>       ::= <literal>
+	  2b.                       <literal> { <literal> }
+	  2c.                       <redup_pattern>
+	  2d.                       <redup_pattern> { <literal> }
+	  2e.                       <full_redup>
+	  2f.                       <full_redup> { <literal> }
+
+	  3a. <properties>      ::= <literal>
+	  3b.                       <literal> <properties>
+
+	  4a. <constraints>     ::= <string_constraint>
+	  4b.                       <negative_string_constraint>
+	  4c.                       <morph_constraint>
+	  4d.                       <punct_constraint>
+	  4e.                       <string_constraint> <constraints>
+	  4f.                       <negative_string_constraint> <constraints>
+	  4g.                       <morph_constraint> <constraints>
+	  4h.                       <punct_constraint> <constraints>
+
+	  5.  <comment>         ::= <comment_char> anything to the end of the line
+
+	  6a. <string_constraint> ::= / <envbar> <string_right>
+	  6b.                         / <string_left> <envbar>
+	  6c.                         / <string_left> <envbar> <string_right>
+
+	  6d. <negative_string_constraint> ::= ~/ <envbar> <string_right>
+	  6e.                                  ~/ <string_left> <envbar>
+	  6f.                                  ~/ <string_left> <envbar> <string_right>
+
+	  7a. <string_left>       ::= <string_side>
+	  7b.                         <boundary>
+	  7c.                         <boundary> <string_side>
+	  7d.                         <string_side> # <string_side>
+	  7e.                         <boundary> <string_side> # <string_side>
+
+	  8a. <string_right>      ::= <string_side>
+	  8b.                         <boundary>
+	  8c.                         <string_side> <boundary>
+	  8d.                         <string_side> # <string_side>
+	  8e.                         <string_side> # <string_side> <boundary>
+
+	  9a. <string_side>       ::= <string_item>
+	  9b.                         <string_item> <string_side>
+	  9c.                         <string_item> ... <string_side>
+
+	 10a. <string_item>       ::= <string_piece>
+	 10b.                         ( <string_piece> )
+
+	 11a. <string_piece>      ::= ~ <string_piece>
+	 11b.                         <literal>
+	 11c.                         [ <literal> ]
+	 11d.                         [ <indexed_literal> ]
+
+	 12a. <morph_constraint>  ::= +/ <envbar> <morph_right>
+	 12b.                         +/ <morph_left> <envbar>
+	 12c.                         +/ <morph_left> <envbar> <morph_right>
+
+	 13a. <morph_left>        ::= <morph_side>
+	 13b.                         <boundary>
+	 13c.                         <boundary> <morph_side>
+	 13d.                         <morph_side> # <morph_side>
+	 13e.                         <boundary> <morph_side> # <morph_side>
+
+	 14a. <morph_right>       ::= <morph_side>
+	 14b.                         <boundary>
+	 14c.                         <morph_side> <boundary>
+	 14d.                         <morph_side> # <morph_side>
+	 14e.                         <morph_side> # <morph_side> <boundary>
+
+	 15a. <morph_side>        ::= <morph_item>
+	 15b.                         <morph_item> <morph_side>
+	 15c.                         <morph_item> ... <morph_side>
+
+	 16a. <morph_item>        ::= <morph_piece>
+	 16b.                         ( <morph_piece> )
+
+	 17a. <morph_piece>       ::= ~ <morph_piece>
+	 17b.                         <literal>
+	 17c.                         [ <literal> ]
+	 17d.                         { <literal> }
+
+	 18a. <punct_constraint>  ::= ./ <envbar> <punct_right>
+	 18b.                         ./ <punct_left> <envbar>
+	 18c.                         ./ <punct_left> <envbar> <punct_right>
+
+	 19a. <punct_left>        ::= <punct_side>
+	 19b.                         <boundary>
+	 19c.                         <boundary> <punct_side>
+
+	 20a. <punct_right>       ::= <punct_side>
+	 20b.                         <boundary>
+	 20c.                         <punct_side> <boundary>
+
+	 21a. <punct_side>        ::= <punct_item>
+	 21b.                         <punct_item> <punct_side>
+
+	 22a. <punct_item>        ::= <punct_piece>
+	 22b.                         ( <punct_piece> )
+
+	 23a. <punct_piece>       ::= ~ <punct_piece>
+	 23b.                         <literal>
+	 23c.                         [ <literal> ]
+
+	 24a. <envbar>            ::= _
+	 24b.                         ~_
+
+	 25a. <boundary>          ::= #
+	 25b.                         ~#
+
+	 26a. <redup_pattern>     ::= [ <indexed_literal> ]
+	 26b.                         <literal> [ <indexed_literal> ]
+	 26c.                         [ <indexed_literal> ] <literal>
+	 26d.                         [ <indexed_literal> ] <redup_pattern>
+	 26e.                         <redup_pattern> [ <indexed_literal> ]
+
+	 27.  <indexed_literal>   ::= <literal> ^ <number>
+
+	 28.  <literal>           ::= one or more contiguous characters
+
+	 29.  <comment_char>      ::= character defined by `-c' command
+								  line option, or `|' by default
+
+	 30.  <number>            ::= one or more contiguous digits (0-9)
+
+	 31a. <full_redup>        ::= '<'...'>'
+	 31b.                         <literal> '<'...'>'
+	 31c.                         '<'...'>' <literal>
+	 31d.                         <literal> '<'...'>' <literal>
+
+
+Comments on selected BNF rules
+..............................
+
+2.
+	 The (first) literal string is a surface form representation of the
+	 morpheme (except for full reduplication; see 31 below).  The
+	 literal string enclosed in braces is a unique allomorph
+	 identification string.  (The identification string is a feature
+	 added to support LinguaLinks.  It is not stored unless the `-b'
+	 command line option is used.
+
+3.
+	 Each literal string is an allomorph property defined by a `\ap'
+	 field in the analysis data file.
+
+4.
+	 String, punctuation and morpheme constraints can be mixed
+	 together, but it is recommended that you group the string
+	 constraints together, the punctuation constraints together and the
+	 morpheme constraints together.
+
+5.
+	 A comment begins with a specified character and ends with the end
+	 of the line.
+
+6d.
+	 A negative string constraint is just like a string constraint with
+	 two exceptions:
+	   1. the result is negated (that is, whatever the value of the
+		  regular string constraint would be, it takes its opposite
+		  value as the result); and
+
+	   2. multiple negative string constraints are logically ANDed
+		  together (whereas multiple regular string constraints are
+		  logically ORed together).
+
+	 Thus one can use negative string constraints to say that a given
+	 allomorph may not occur in environment X and it also may not occur
+	 in environment Y.
+
+	 If an allomorph has both regular and negative string constraints,
+	 both must be met.  That is, at least one of the regular string
+	 constraints must be true and none of the environments described
+	 within the negative string constraints must be true.
+
+7-8.
+	 Note that what can appear to the left of the environment bar is a
+	 mirror image of what can appear to the right.
+
+7de.
+8de.
+	 These should be avoided, and other means used to prune analyses
+	 based on adjacent words.
+
+9c.
+	 An ellipsis (`...') indicates a possible break in contiguity.
+
+10b.
+	 Something enclosed in parentheses is optional.
+
+11a.
+	 A tilde (`~') reverses the desirability of an element, causing the
+	 constraint to fail if it is found rather than fail if it is not
+	 found.
+
+11b.
+	 A literal is matched against the surface form of the word.
+
+11c.
+	 A literal enclosed in square brackets must be the name of a string
+	 class defined by a `\scl' field in the analysis data file or the
+	 dictionary orthography change table file.
+
+11d.
+	 The indexed literal enclosed in square brackets must match an
+	 indexed literal given as part of the reduplication allomorph
+	 pattern.  (See 2c, 2d, and 26.)
+
+13-14.
+	 Note that what can appear to the left of the environment bar is a
+	 mirror image of what can appear to the right.
+
+13de.
+14de.
+	 These should be avoided, and other means used to prune analyses
+	 based on adjacent words.
+
+15c.
+	 An ellipsis (`...') indicates a possible break in contiguity.
+
+16b.
+	 Something enclosed in parentheses is optional.
+
+17a.
+	 A tilde (`~') reverses the desirability of an element, causing the
+	 constraint to fail if it is found rather than fail if it is not
+	 found.
+
+17b.
+	 A literal is a morphname from one of the dictionary files.
+
+17c.
+	 A literal enclosed in square brackets must be the name of a
+	 morpheme class defined by a `\mcl' field in the analysis data file.
+
+17d.
+	 A literal enclosed in curly braces must be one of the following
+	 (checked in this order):
+	   1. one of the keywords `root', `prefix', `infix', or `suffix'
+
+	   2. a property name defined by an `\ap' or `\mp' field in the
+		  analyis data file
+
+	   3. a category name defined by a `\ca' field in the analysis data
+		  file
+
+	   4. a category class name defined by a `\ccl' field in the
+		  analysis data file
+
+	   5. a morpheme class name defined by a `\mcl' field in the
+		  analysis data file
+
+19-20.
+	 Note that what can appear to the left of the environment bar is a
+	 mirror image of what can appear to the right.
+
+22b.
+	 Something enclosed in parentheses is optional.
+
+23a.
+	 A tilde (`~') reverses the desirability of an element, causing the
+	 constraint to fail if it is found rather than fail if it is not
+	 found.
+
+23b.
+	 A literal is a punctuation character.  All such punctuation
+	 characters should not be listed in the set of word formation
+	 characters.  See `Text Input Control File' below.
+
+	 The punctuation characters can match punctuation characters either
+	 before or after the current word.  Unlike string constraints,
+	 punctuation constraints effectively ignore the position of the
+	 conditioned allomorph within the word.  All that matters are any
+	 punctuation characters immediately preceding or following the
+	 current word.  Further note that neither ellipsis nor cross word
+	 boundary conditions are allowed.
+
+24.
+	 A tilde (`~') attached to the environment bar inverts the sense of
+	 the constraint as a whole.
+
+25b.
+	 The boundary marker preceded by a tilde (`~#') indicates that it
+	 must not be a word boundary.
+
+26-27.
+	 Although the BNF has spaces in it to improve readability, these
+	 two items cannot have embedded spaces in the dictionary file.
+
+26.
+	 The reduplication allomorph pattern contains references to string
+	 classes and possibly literal strings.  The string class names are
+	 indexed to indicate identical shared values, either in the string
+	 environment constraint or in more than one location in the
+	 reduplication allomorph pattern itself.  *Note: this has been
+	 implemented only for AMPLE at this point.*
+
+27.
+	 The literal (without the following index given by an ASCII caret
+	 (`^') and a number) must be the name of a string class defined by a
+	 `\scl' field in the analysis data file or the dictionary
+	 orthography change table file.
+
+28.
+	 The special characters used by environment constraints can be
+	 included in a literal only if they are immediately preceded by a
+	 backslash:
+
+		  \+  \/  \#  \~  \[  \]  \(  \)  \{  \}  \.  \_  \\
+
+31.
+	 The special sequence `<...>' indicates full reduplication.  This
+	 may be preceded and/or followed by any literal (e.g. hyphen).  This
+	 sequence is recognized as indicating full reduplication only when
+	 it is either a prefix or a suffix.  When it is a prefix, then it
+	 will match when a sequence of one or more characters repeats
+	 itself in the rest of the word being considered.  When it is a
+	 suffix, it will match when the entire string before it is
+	 repeated.  These matches are modulo any literal elements before or
+	 after.  For example, if it is a prefix, it can match the first
+	 `hati' in a form like `kohatihati'.  If it is a suffix, it could
+	 match the second `hati' in a form like `hatihatimo'.  *Note: this
+	 has been implemented only for AMPLE at this point.*
+
+The allomorph field is used in all types of dictionary entries: prefix,
+infix, suffix, and root.
+
+Category (internal code C)
+==========================
+
+Each dictionary entry must contain a category field.  If multiple
+category fields exist, then their contents are merged together.
+
+For affix entries, this field must contain at least one category pair
+for the morpheme, but may contain any number of category pairs
+separated by spaces or tabs.  Each category pair consists of two
+category names separated by a slash (`/').  The category names must
+have been defined by a `\ca' field in the analysis data file.  The
+first category is the "from category", that is, the category of the
+unit to which this morpheme can be affixed.  The second category is the
+"to category", that is, the category of the result after this morpheme
+has been affixed.
+
+For root entries, this field contains one or more morphological
+categories as defined by a `\ca' field in the analysis data file.  If
+multiple categories are listed, they should be separated by spaces or
+tabs.
+
+The category field is used in all types of dictionary entries: prefix,
+infix, suffix, and root.
+
+Elsewhere Allomorph (internal code E)
+=====================================
+
+For compatibility with STAMP, the "elsewhere" field defines an
+allomorph.  In AMPLE, this field also provides a default value for the
+underlying form.
+
+The syntax of the elsewhere allomorph field is the same as the syntax
+of the normal allomorph field.  See `Allomorph (internal code A)' above.
+
+The elsewhere allomorph field is used in all types of dictionary
+entries: prefix, infix, suffix, and root.
+
+Feature Descriptor (internal code F)
+====================================
+
+The feature descriptor field is always optional.  It contains the names
+of one or more features that are written verbatim to the `\fd' field of
+the output analysis file.  It is not otherwise used by AMPLE.
+
+If a dictionary entry contains multiple feature descriptor fields,
+their contents are merged together.
+
+The feature descriptor field is used in all types of dictionary entries:
+prefix, infix, suffix, and root.
+
+Root Gloss (internal code G)
+============================
+
+The root gloss field contains an alternative morphname for writing to
+the output analysis file.  It is enabled by the `-g' command line
+option.  Without this command line option, it is totally ignored by
+AMPLE.  See `Morphname (internal code M)' below.  Only one root gloss
+field is allowed in each dictionary entry.  If an entry has more than
+one root gloss field, then the first one is used and the others trigger
+provoke an error message.
+
+The root gloss field is used only in root dictionary entries.
+
+Infix location (internal code L)
+================================
+
+The infix location field serves to restrict where infixes may be found,
+and must be included in each infix dictionary entry.  Subject to the
+constraints imposed by the infix location field, AMPLE searches the
+rest of the word for any occurrence of any allomorph string of the
+infix.  This makes infixes rather expensive, computationally, so they
+should be constrained as much as possible.
+
+
+	  1.  <infix_location> ::= <types> <constraints>
+
+	  2a. <types>          ::= <type>
+	  2b.                      <type> <types>
+
+	  3a. <constraints>    ::= <environment>
+	  3b.                      <environment> <constraints>
+
+	  4a. <environment>    ::= <marker> <leftside> <envbar> <rightside>
+	  4b.                      <marker> <leftside> <envbar>
+	  4c.                      <marker> <envbar> <rightside>
+
+	  5a. <leftside>       ::= <side>
+	  5b.                      <boundary>
+	  5c.                      <boundary> <side>
+
+	  6a. <rightside>      ::= <side>
+	  6b.                      <boundary>
+	  6c.                      <side> <boundary>
+
+	  7a. <side>           ::= <item>
+	  7b.                      <item> <side>
+	  7c.                      <item> ... <side>
+
+	  8a. <item>           ::= <piece>
+	  8b.                      ( <piece> )
+
+	  9a. <piece>          ::= ~ <piece>
+	  9b.                      <literal>
+	  9c.                      [ <literal> ]
+
+	 10a. <type>           ::= prefix
+	 10b.                      root
+	 10c.                      suffix
+
+	 11a. <marker>         ::= /
+	 11b.                      +/
+
+	 12a. <envbar>         ::= _
+	 12b.                      ~_
+
+	 13a. <boundary>       ::= #
+	 13b.                      ~#
+
+	 14.  <literal>        ::= one or more contiguous characters
+
+
+Comments on selected BNF rules
+..............................
+
+2.
+	 The first part of the infix location field lists the type of
+	 morpheme in which the infix may be hidden.  This consists of one
+	 or more of the words `prefix', `root', or `suffix'.  If `prefix'
+	 is given, then AMPLE looks for infixes after exhausting the
+	 possible prefixes at a given point in the word, and resumes
+	 looking for more prefixes after finding an infix.  Similarly, if
+	 `root' is given, then AMPLE looks for infixes after running out of
+	 roots while parsing the word, and if it finds an infix, it looks
+	 for more roots.  Suffixes are treated the same way if `suffix' is
+	 given in the infix location field.
+
+5.
+	 A boundary marker (`#') on the left side of the environment bar
+	 refers to the place in the word which the parse has reached before
+	 looking for infixes, not to the beginning of the word.
+
+6.
+	 A boundary marker (`#') on the right side of the environment bar
+	 refers to the end of the word.
+
+7c.
+	 An ellipsis (`...') indicates a possible break in contiguity.
+
+8b.
+	 Something enclosed in parentheses is optional.
+
+9a.
+	 A tilde (`~') reverses the desirability of an element, causing the
+	 constraint to fail if it is found rather than fail if it is not
+	 found.
+
+11.
+	 A `+/' is usually used for morpheme environment constraints, but
+	 may used for infix location environment constraints as well.
+
+12.
+	 A tilde attached to the environment bar (`~_') inverts the sense of
+	 the constraint as a whole.
+
+13b.
+	 The boundary marker preceded by a tilde (`~#') indicates that it
+	 must not be a word boundary.
+
+14.
+	 The special characters used by environment constraints can be
+	 included in a literal only if they are immediately preceded by a
+	 backslash:
+
+		  \+  \/  \#  \~  \[  \]  \(  \)  \{  \}  \.  \_  \\
+
+The infix location field is used only in infix dictionary entries.
+
+Morphname (internal code M)
+===========================
+
+A morphname is an arbitrary name for a given morpheme.  Only the first
+word (string of contiguous nonspace characters) following the morphname
+field code is used as the morphname.  Morphnames must be less than 64
+characters long.
+
+A morphname serves two important functions:
+  1. It identifies a morpheme in morpheme environment constraints,
+	 morpheme co-occurrence constraints, ad hoc pairs, and tests.
+
+  2. It is the default morpheme identifier written to the output
+	 analysis file.  See `Root Gloss (internal code G)' above.
+
+Generally, a morphname is an identifier of a morpheme and does not need
+to faithfully represent that morpheme's meaning or function.
+
+If a dictionary entry has more than one morphname field, the morphname
+from the first one is used; the others cause an error message.  The
+morphname field is used in all types of dictionary entries: prefix,
+infix, suffix, and root.  The usage differs somewhat between affix and
+root dictionary entries, so these two types of morphnames are described
+separately.
+
+Affix morphnames
+----------------
+
+Every affix dictionary entry must have a morphname field.  Users are
+strongly encouraged to observe the following suggestions in creating
+affix morphnames:
+
+  1. Make each morphname unique.  If two morphemes have the same name,
+	 it is impossible to refer unambiguously to them.  The same
+	 morphname should not be used in different affix dictionaries (that
+	 is, in the prefix dictionary and in the suffix dictionary).
+
+  2. Keep morphnames short.  This reduces the size of analysis files and
+	 makes text glossing more aesthetically pleasing.  For example, for
+	 a verbal person marker, use simply `1' rather than `1P' unless
+	 there is good reason to add the `P' for person or possessive.  For
+	 a first person object marker, `1O' might serve as well as `1OBJ'.
+
+  3. Use only uppercase alphabetic characters and numbers for contrast
+	 with root morphnames, which are generally made up of lowercase
+	 alphabetic characters.  Be cautious in using hyphens, periods,
+	 underscores, slashes, backslashes, or other nonalphanumeric
+	 characters.  The reason to avoid these is that other programs
+	 which apply to the resulting analysis may make use of
+	 nonalphanumerics in different ways.
+
+  4. Design a syntax of names and stick to it for inflectional morphemes
+	 which combine more than one semantic notion.  For example, for
+	 Latin nominal inflections, which indicate gender, number, and
+	 case, the syntax might be
+
+		  MORPHNAME = GENDER CASE NUMBER
+
+	 where `GENDER' is `M' for masculine, `F' for feminine and `N' for
+	 neuter; `CASE' is `N' for nominative, `A' for accusative, `G' for
+	 genitive, and so on; and `NUMBER' is `S' for singular and `P' for
+	 plural.  The name for masculine nominative singular would then be
+	 `MNS'.
+
+Root morphnames
+---------------
+
+Root morphnames are generally either glosses or etymologies.
+Etymologies are frequently marked with a leading asterisk (`*').  (This
+is used by STAMP to indicate regular sound changes.)
+
+If the morphname field contains only an asterisk, the morphname becomes
+an asterisk followed by whatever allomorph is matched.  If the
+morphname field is omitted, or if it contains only a comment, AMPLE
+puts whatever allomorph was matched in the text into the analysis.  If
+the morpheme contains any alternate forms, it is wise to include an
+explicit morphname field.
+
+Order class (internal code O)
+=============================
+
+The order class of an affix is a number indicating its position
+relative to other morphemes.  Prefixes should be assigned negative
+numbers and suffixes should be assigned positive numbers.  Infixes
+should be assigned order class values appropriate to where they can
+appear in the word relative to the prefixes and suffixes.
+
+If the order class field is omitted, then a default value of zero (0)
+is assigned to the affix.  Order class values must be between -32767
+and 32767.
+
+Order classes are used only by tests in the analysis data file.  They
+are needed only if appropriate tests are written to take advantage of
+them.
+
+The order class field is used only in affix type dictionary entries:
+prefix, infix, and suffix.  Roots always have an implicit order class
+of zero.
+
+Beginning with AMPLE version 3.6.0, one may have up to two order class
+numbers in an order class field (separated by white space).  These
+represent the minimum and the maximum values of the positions this
+affix can span.  The first number is the minimum and the second is the
+maximum.  Therefore the first number should be less than or equal to
+the second.  If only one number appears, both the minimum and maximum
+values are set to that number.  If no number appears, then both the
+minimum and maximum are set to zero.
+
+Note that for STAMP, only the first order class number has any use (it
+is used for transfer insertion rules whose environments do not indicate
+a location where the morpheme is to be inserted).
+
+Morpheme property (internal code P)
+===================================
+
+This field contains one or more morpheme properties.  These properties
+must have been defined by a `\mp' field in the analysis data file.  A
+morpheme property is inherited by all allomorphs of the morpheme.
+
+The morpheme property field is optional, and may be repeated.  If
+multiple properties apply to a morpheme, they may be given all in a
+single field or each in a separate field.
+
+Morpheme properties typically indicate a characteristic of the morpheme
+which conditions the occurrence of allomorphs of an adjacent morpheme.
+Morpheme properties are used in tests defined in the analysis data file
+and in morpheme environment constraints.
+
+The morpheme property field is used in all types of dictionary entries:
+prefix, infix, suffix, and root.
+
+Morpheme type (internal code T)
+===============================
+
+In a unified dictionary, the type of an entry is determined by the
+first letter following the morpheme type field code: `p' or `P' for
+prefixes, `i' or `I' for infixes, `n' or `N' for interfixes, `s' or `S'
+for suffixes, and `r' or `R' for roots.  The morpheme type field is not
+needed for root entries because the entry type defaults to root.
+
+The morpheme type field is used only in unified dictionary files, since
+the morpheme type is otherwise implicit.  The only exception to this is
+for interfixes.
+
+Special notes for interfixes:
+
+An "interfix" is an affix that can also appear between roots.  That is,
+it is a prefix, infix, or suffix that can occur in the usual position
+for prefixes/infixes/suffixes, but which can also occur between roots.
+As such, one uses a regular prefix/infix/suffix entry and adds the
+morpheme type of `n' or `N'.  For unified dictionaries, the interfix
+code must follow the prefix/infix/suffix code.  Separate it by a space.
+
+If one is using the non-unified dictionary approach, one can add a
+morpheme type field to an affix entry to indicate that it is also an
+interfix.
+
+Underlying Form (internal code U)
+=================================
+
+The underlying form field contains information for writing to `\u'
+fields in the output analysis file.  If a mapping from a dictionary
+field code to internal code `U' is not defined in the dictionary code
+table file, then this field effectively does not exist.
+
+Only one underlying form field is allowed in each dictionary entry.  If
+an entry has more than one underlying form field, then the first one is
+used and the others trigger provoke an error message.
+
+If a particular record in a dictionary file does not have an underlying
+form field, but does use an "elsewhere" field (see `Elsewhere Allomorph
+(internal code E)' above), then AMPLE uses the elsewhere entry for the
+underlying form.  If an entry has neither an underlying form field nor
+an elsewhere field, AMPLE assumes that the underlying form is null and
+will output a zero (0) for the underlying form.
+
+The underlying form field is used in all types of dictionary entries:
+prefix, infix, suffix, and root.
+
+Morpheme Co-occurrence Constraint (internal code Z)
+===================================================
+
+See `Morpheme Co-occurrence Constraint: \mcc' above for a description
+of morpheme co-occurrence constraint fields in the analysis data file.
+These fields can also occur in dictionary entries.  This is appropriate
+only if the constraint is about that morpheme.
+
+One difference between morpheme co-occurrence constraints in the
+analysis data file and those found in dictionary entries is that the
+field code in the dictionary file is not necessarily `\mcc'.  The
+primary difference is that morpheme co-occurrence constraints found in
+a dictionary entry are stored with the dictionary entry in memory, and
+those found in the analysis data file are stored together in one long
+list.  If a constraint applies to more than one morpheme, it must be
+put in the analysis data file to work properly.
+
+The morpheme co-occurrence constraint field is optional.  If more than
+one constraint applies to the morpheme, as many of these fields as
+desired may be included.
+
+The morpheme co-occurrence constraint field is used in all types of
+dictionary entries: prefix, infix, suffix, and root.
+
+Do not load (internal code !)
+=============================
+
+When a "do not load" field is included in a record, AMPLE ignores the
+record altogether.  This makes it possible to include records in the
+dictionary for linguistic purposes, while not needlessly taking up
+memory space if the dictionary is used for some other purpose.
+
+The "do not load" field is used in all types of dictionary entries:
+prefix, infix, suffix, and root.
+
+Text Input Control File
+***********************
+
+This chapter describes the expected characteristics of an input text
+file, and the options offered for describing these characteristics by a
+"text input control file".(1)
+
+---------- Footnotes ----------
+
+(1)  This chapter is adapted from chapters 7, 8, and 9 of Weber (1988).
+
+Input text files
+================
+
+Text input control files define a simple model of input text files.
+They are plain text files with two types of embedded format markers.
+  1. A primary format marker consists of one or more contiguous
+	 characters beginning with a special flag character.  The default
+	 character initiating format markers is the backslash (`\').  Thus,
+	 each of the following would be recognized as a format marker and
+	 would not be processed by the program:
+
+		  \
+		  \p
+		  \sp
+		  \begin{enumerate}
+		  \very-long.and;muddled/format*marker,to#be$sure
+
+
+	 Note that format markers cannot have a space or tab embedded in
+	 them; the first space or tab encountered terminates the format
+	 marker.
+
+	 One final note: the format character under discussion here applies
+	 only to the input text files which are to be processed.  It has
+	 absolutely nothing to do with the use of backslash (`\') to flag
+	 field codes in control files such as the text input control file.
+
+  2. A secondary type of marker consists of a flag character followed
+	 by a single character from a list of known values.  This secondary
+	 flag character must be different than the primary flag character.
+	 Its default value is the vertical bar (`|'), causing this type of
+	 format marker to be frequently called a bar code.  The following
+	 could be valid (secondary) format markers and would not be
+	 processed by the program:
+
+		  |b
+		  |i
+		  |r
+
+
+Consider the following two lines of input text:
+
+	 \bgoodbye\r
+	 |bgoodbye|r
+
+
+Using the default definitions of format markers, the first line is
+considered to be a single format marker, and provides nothing which the
+program should try to parse.  The second line, however contains two
+format markers, `|b' and `|r', and the word `goodbye' which would be
+processed by the program.
+
+The primary format markers serve to divide the text into fields.  See
+`Fields to Exclude: \excl' and `Fields to Include: \incl' below for
+details on how these fields are used.  There is no requirement that the
+format markers be at the beginning of a line as with the field codes
+used in AMPLE control files.
+
+Ambiguity Marker Character: \ambig
+==================================
+
+The `\ambig' field defines the character used to mark ambiguities and
+failures in the analysis output file.  For example, to use the hash
+mark (`#'), the text input control file would include:
+
+	 \ambig  #
+
+This would cause an ambiguous analysis to be output as follows:
+
+	 \a #3#< N0 kay >#< V1 ka > IMP#< V1 ka > INF#
+
+It makes sense to use the `\ambig' field only once in the text input
+control file.  If multiple `\ambig' fields do occur in the file, the
+value given in the first one is used.  If the text input control file
+does not have an `\ambig' field, the percent sign (`%') is used.
+
+The first printing character following the `\ambig' field code is used
+as the ambiguity marker.  The character currently being used to mark
+comments cannot be assigned to also mark ambiguities in the output file.
+Thus, the vertical bar (`|') cannot normally be used as the ambiguity
+marker.  Logically, this field should be in the analysis data file
+rather than the text *input* control file since it affects output
+instead of input.  Nevertheless, compatibility demands that it stays
+this way.
+
+Bar code format marker character: \barchar
+==========================================
+
+The `\barchar' defines the character that begins a two-character
+secondary format marker.  For example, if this type of format marker
+begins with the dollar sign (`$'), the following would be placed in the
+text input control file:
+
+	 \barchar  $
+
+An empty `\barchar' field in the text input control file prevents any
+bar code format markers from being recognized.  Thus, the following
+field effectively turns off special treatment of this style of format
+marking (assuming the `|' is marking comments):
+
+	 \barchar       | no bar character
+
+It makes sense to use the `\barchar' field only once in the text input
+control file.  If multiple `\barchar' fields do occur in the file, the
+value given in the first one is used.
+
+The first printing character following the `\barchar' field code is
+used as the bar code format marker.  The character currently being used
+to mark comments cannot be assigned to also flag format markers in
+input text files.  Thus, the default value (`|') cannot normally be
+explicitly defined (since `\barchar |' is treated as `\barchar'
+followed only by a comment), so it must be taken as given.
+
+Bar Code Format Code Characters: \barcodes
+==========================================
+
+In conjunction with the special format marking character discussed in
+the previous section, the `\barcodes' field defines the individual
+characters used with in bar codes.  These characters may be separated by
+spaces or lumped together.  Thus, the following two fields are
+equivalent:
+
+	 \barcodes    abcdefg         | lumped together
+	 \barcodes    a b c d e f g   | separated
+
+
+If provided more than one `\barcodes' field in the text input control
+file, the combination of all characters defined in all such fields is
+used.  No check is made for repeated characters: the previous example
+would be accepted without complaint despite the redundancy of the
+second line.
+
+The default value for the bar codes is `bdefhijmrsuvyz'.  Therefore, if
+the text input control file contains neither a `\barchar' nor a
+`\barcodes' field, the following bar codes are considered to be
+formatting information by AMPLE: `|b', `|d', `|e', `|f', `|h', `|i',
+`|j', `|m', `|r', `|s', `|u', `|v', `|y', and `|z'.  These are exactly
+the codes recognized by the SIL Manuscripter program that was in vogue
+when the concept of a text input control file was originally developed.
+
+Text Orthography Change: \ch
+============================
+
+An orthography change is defined by the `\ch' field code followed by
+the actual orthography change.  Any number of orthography changes may
+be defined in the text input control file.  The output of each change
+serves as the input the following change.  That is, each change is
+applied as many times as necessary to an input word before the next
+change from the text input control file is applied.
+
+Basic changes
+-------------
+
+To substitute one string of characters for another, these must be made
+known to the program in a change.  (The technical term for this sort of
+change is a production, but we will simply call them changes.)  In the
+simplest case, a change is given in three parts: (1) the field code
+`\ch' must be given at the extreme left margin to indicate that this
+line contains a change; (2) the match string is the string for which
+the program must search; and (3) the substitution string is the
+replacement for the match string, wherever it is found.
+
+The beginning and end of the match and substitution strings must be
+marked.  The first printing character following `\ch' (with at least
+one space or tab between) is used as the delimiter for that line.  The
+match string is taken as whatever lies between the first and second
+occurrences of the delimiter on the line and the substitution string is
+whatever lies between the third and fourth occurrences.  For example,
+the following lines indicate the change of hi to bye, where the
+delimiters are the double quote mark (`"'), the single quote mark
+(`''), the period (`.'), and the at sign (`@').
+	 \ch "hi" "bye"
+	 \ch 'hi' 'bye'
+	 \ch .hi. .bye.
+	 \ch @hi@ @bye@
+
+Throughout this document, we use the double quote mark as the delimiter
+unless there is some reason to do otherwise.
+
+Change tables follow these conventions:
+  1. Any characters (other than the delimiter) may be placed between the
+	 match and substitution strings.  This allows various notations to
+	 symbolize the change.  For example, the following are equivalent:
+		  \ch "thou" "you"
+		  \ch "thou" to "you"
+		  \ch "thou" > "you"
+		  \ch "thou" --> "you"
+		  \ch "thou" becomes "you"
+
+  2. Comments included after the substitution string are initiated by a
+	 vertical bar (`|'), or whatever is indicated as the comment
+	 character by means of the `-c' option when AMPLE is started.  The
+	 following lines illustrate the use of comments:
+		  \ch "qeki" "qiki" | for cases like wawqeki
+		  \ch "thou" "you"  | for modern English
+
+  3. A change can be ignored temporarily by turning it into a comment
+	 field.  This is done either by placing an unrecognized field code
+	 in front of the normal `\ch', or by placing the comment character
+	 (`|') in front of it.  For example, only the first of the
+	 following three lines would effect a change:
+		  \ch "nb" "mp"
+		  \no \ch "np" "np"
+		  |\ch "mb" "nb"
+
+The changes in the text input control file are applied as an ordered
+set of changes.  The first change is applied to the entire word by
+searching from left to right for any matching strings and, upon finding
+any, replacing them with the substitution string.  After the first
+change has been applied to the entire word, then the next change is
+applied, and so on.  Thus, each change applies to the result of all
+prior changes.  When all the changes have been applied, the resulting
+word is returned.  For example, suppose we have the following changes:
+	 \ch "aib" > "ayb"
+	 \ch "yb"  > "yp"
+
+Consider the effect these have on the word paiba.  The first changes i
+to y, yielding payba; the second changes b to p, to yield paypa.  (This
+would be better than the single change of aib to ayp if there were
+sources of yb other than the output of the first rule.)
+
+The way in which change tables are applied allows certain tricks.  For
+example, suppose that for Quechua, we wish to change hw to f, so that
+hwista becomes fista and hwis becomes fis.  However, we do not wish to
+change the sequence shw or chw to sf or cf (respectively).  This could
+be done by the following sequence of changes. (Note, `@' and `$' are
+not otherwise used in the orthography.)
+	 \ch "shw" > "@"     | (1)
+	 \ch "chw" > "$"      | (2)
+	 \ch "hw"  > "f"      | (3)
+	 \ch "@"   > "shw"   | (4)
+	 \ch "$"   > "chw"    | (5)
+
+Lines (1) and (2) protect the sh and ch by changing them to
+distinguished symbols.  This clears the way for the change of hw to f
+in (3).  Then lines (4) and (5) restore `@' and `$' to sh and ch,
+respectively. (An alternative, simpler way to do this is discussed in
+the next section.)
+
+Environmentally constrained changes
+-----------------------------------
+
+It is possible to impose string environment constraints (SECs) on
+changes in the orthography change tables.  The syntax of SECs is
+described in detail in section {No Value For "words.vs.format"}.
+
+For example, suppose we wish to change the mid vowels (e and o) to high
+vowels (i and u respectively) immediately before and after q.  This
+could be done with the following changes:
+	 \ch "o" "u"  / _ q  / q _
+	 \ch "e" "i"  / _ q  / q _
+
+This is not entirely a hypothetical example; some Quechua practical
+orthographies write the mid vowels e and o.  However, in the
+environment of /q/ these could be considered phonemically high vowels
+/i/ and /u/.  Changing the mid vowels to high upon loading texts has
+the advantage that-for cases like upun "he drinks" and upoq "the one
+who drinks"-the root needs to be represented internally only as upu
+"drink".  But note, because of Spanish loans, it is not possible to
+change all cases of e to i and o to u.  The changes must be conditioned.
+
+In reality, the regressive vowel-lowering effect of /q/ can pass over
+various intervening consonants, including /y/, /w/, /l/, /ll/, /r/,
+/m/, /n/, and /n/.  For example, /ullq/ becomes ollq, /irq/ becomes erq,
+and so on.  Rather than list each of these cases as a separate
+constraint, it is convenient to define a class (which we label
+`+resonant') and use this class to simplify the SEC.  Note that the
+string class must be defined (with the `\scl' field code) before it is
+used in a constraint.
+	 \scl +resonant y w l ll r m n n~
+	 \ch "o" "u" / q _ / _ ([+resonant]) q
+	 \ch "e" "i" / q _ / _ ([+resonant]) q
+
+This says that the mid vowels become high vowels after /q/ and before
+/q/, possibly with an intervening /y/, /w/, /l/, /ll/, /r/, /m/, /n/,
+or /n/.
+
+Consider the problem posed for Quechua in the previous section, that of
+changing hw to f.  An alternative is to condition the change so that it
+does not apply adjacent to a member of the string class `Affric' which
+contains s and c.
+	 \scl Affric c s
+	 \ch "hw" "f" / [Affric] ~_
+
+It is sometimes convenient to make certain changes only at word
+boundaries, that is, to change a sequence of characters only if they
+initiate or terminate the word.  This conditioning is easily expressed,
+as shown in the following examples.
+	 \ch "this" "that"           | anywhere in the word
+	 \ch "this" "that"  / # _    | only if word initial
+	 \ch "this" "that"  /   _ #  | only if word final
+	 \ch "this" "that"  / # _ #  | only if entire word
+
+Using text orthography changes
+------------------------------
+
+The purpose of orthography change is to convert text from an external
+orthography to an internal representation more suitable for
+morphological analysis.  In many cases this is unnecessary, the
+practical orthography being completely adequate as the internal
+representation.  In other cases, the practical orthography is an
+inconvenience that can be circumvented by converting to a more phonemic
+representation.
+
+Let us take a simple example from Latin.  In the Latin orthography, the
+nominative singular masculine of the word "king" is rex.  However,
+phonemically, this is really /reks/; /rek/ is the root meaning king and
+the /s/ is an inflectional suffix.  If the program is to recover such
+an analysis, then it is necessary to convert the x of the external,
+practical orthography into ks internally.  This can be done by
+including the following orthography change in the text input control
+file:
+	 \ch  "x"  "ks"
+
+In this, x is the match string and ks is the substitution string, as
+discussed in section {No Value For "output.file"}.  Whenever x is
+found, ks is substituted for it.
+
+Let us consider next an example from Huallaga Quechua.  The practical
+orthography currently represents long vowels by doubling the vowel.
+For example, what is written as kaa is /ka:/ "I am", where the length
+(represented by a colon) is the morpheme meaning "first person
+subject".  Other examples, such as upoo /upu:/ "I drink" and upichee
+/upi-chi-:/ "I extinguish", motivate us to convert all long vowels into
+a vowel followed by a colon.  The following changes do this:
+	 \ch  "aa"  "a:"
+	 \ch  "ee"  "i:"
+	 \ch  "ii"  "i:"
+	 \ch  "oo"  "u:"
+	 \ch  "uu"  "u:"
+
+Note that the long high vowels (i and u) have become mid vowels (e and
+o respectively); consequently, the vowel in the substitution string is
+not necessarily the same as that of the match string.  What is the
+utility of these changes?  In the lexicon, the morphemes can be
+represented in their phonemic forms; they do not have to be represented
+in all their orthographic variants.  For example, the first person
+subject morpheme can be represented simply as a colon (-:), rather than
+as -a in cases like kaa, as -o in cases like qoo, and as -e as in cases
+like upichee.  Further, the verb "drink" can be represented as upu and
+the causative suffix (in upichee) can be represented as -chi; these are
+the forms these morphemes have in other (nonlowered) environments.  As
+the next example, let us suppose that we are analyzing Spanish, and
+that we wish to work internally with k rather than c (before a, o, and
+u) and qu (before i and e). (Of course, this is probably not the only
+change we would want to make.) Consider the following changes:
+	 \ch  "ca"  "ka"
+	 \ch  "co"  "ko"
+	 \ch  "cu"  "ku"
+	 \ch  "qu"  "k"
+
+The first three handle c and the last handles qu.  By virtue of
+including the vowel after c, we avoid changing ch to kh.  There are
+other ways to achieve the same effect.  One way exploits the fact that
+each change is applied to the output of all previous changes.  Thus, we
+could first protect ch by changing it to some distinguished character
+(say `@'), then changing c to k, and then restoring `@' to ch:
+	 \ch  "ch"  "@"
+	 \ch  "c"  "k"
+	 \ch  "@"  "ch"
+	 \ch  "qu"  "k"
+
+Another approach conditions the change by the adjacent characters.  The
+changes could be rewritten as
+	 \ch  "c"  "k"  / _a  / _o  / _u  | only before a, o, or u
+	 \ch  "qu"  "k"                   | in all cases
+
+The first change says, "change c to k when followed by a, o, or u."
+(This would, for example, change como to komo, but would not affect
+chal.)  The syntax of such conditions is exactly that used in string
+environment constraints; see section {No Value For "words.vs.format"}.
+
+Where orthography changes apply
+-------------------------------
+
+Input orthography changes are made when the text being processed may be
+written in a practical orthography.  Rather than requiring that it be
+converted as a prerequisite to running the program, it is possible to
+have the program convert the orthography as it loads and before it
+processes each word.
+
+The changes loaded from the text input control file are applied after
+all the text is converted to lower case (and the information about
+upper and lower case, along with information about format marking,
+punctuation and white space, has been put to one side.)  Consequently,
+the match strings of these orthography changes should be all lower
+case; any change that has an uppercase character in the match string
+will never apply.
+
+A sample orthography change table
+---------------------------------
+
+We include here the entire orthography input change table for Caquinte
+(a language of Peru).  There are basically four changes that need to be
+made: (1) nasals, which in the practical orthography reflect their
+assimilation to the point of articulation of a following noncontinuant,
+must be changed into an unspecified nasal, represented by N; (2) c and
+qu are changed to k; (3) j is changed to h; and (4) gu is changed to g
+before i and e.
+
+	 \ch  "mp"  "Np"     | for unspecified nasals
+	 \ch  "nch" "Nch"
+	 \ch  "nc"  "Nk"
+	 \ch  "nqu" "Nk"
+	 \ch  "nt"  "Nt"
+
+	 \ch  "ch"  "@"     | to protect ch
+	 \ch  "c"   "k"      | other c's to k
+	 \ch  "@"   "ch"    | to restore ch
+	 \ch  "qu"  "k"
+
+	 \ch  "j"   "h"
+
+	 \ch  "gue" "ge"
+	 \ch  "gui" "gi"
+
+This change table can be simplified by the judicious use of string
+environment constraints:
+
+	 \ch  "m"  >  "N"  / _p
+	 \ch  "n"  >  "N"  / _c  / _t  / _qu
+
+	 \ch  "c"  >  "k"  / _~h
+	 \ch  "qu" >  "k"
+
+	 \ch  "j"  >  "h"
+
+	 \ch  "gu" >  "g"  / _e  /_i
+
+As suggested by the preceding examples, the text orthography change
+table is composed of all the `\ch' fields found in the text input
+control file.  These may appear anywhere in the file relative to the
+other fields.  It is recommended that all the orthography changes be
+placed together in one section of the text input control file, rather
+than being mixed in with other fields.
+
+Syntax of Orthography Changes
+-----------------------------
+
+This section presents a grammatical description of the syntax of
+orthography changes in BNF notation.  These changes are found either in
+the dictionary orthography change table file or in the text input
+control file (see `Dictionary Orthography Change: \ch' above).
+
+
+	  1a. <orthochange>  ::= <basic_change>
+	  1b.                    <basic_change> <constraints>
+
+	  2a. <basic_change> ::= <quote><quote> <quote><string><quote>
+	  2b.                    <quote><string><quote> <quote><quote>
+	  2c.                    <quote><string><quote> <quote><string><quote>
+
+	  3.  <quote>        ::= any printing character not used in either
+							 the ``from'' string or the ``to'' string
+
+	  4.  <string>       ::= one or more characters other than the quote
+							 character used by this orthography change
+
+	  5a. <constraints>  ::= <change_envir>
+	  5b.                    <change_envir> <constraints>
+
+	  6a. <change_envir> ::= <marker> <leftside> <envbar> <rightside>
+	  6b.                    <marker> <leftside> <envbar>
+	  6c.                    <marker> <envbar> <rightside>
+
+	  7a. <leftside>   ::= <side>
+	  7b.                  <boundary>
+	  7c.                  <boundary> <side>
+
+	  8a. <rightside>  ::= <side>
+	  8b.                  <boundary>
+	  8c.                  <side> <boundary>
+
+	  9a. <side>       ::= <item>
+	  9b.                  <item> <side>
+	  9c.                  <item> ... <side>
+
+	 10a. <item>       ::= <piece>
+	 10b.                  ( <piece> )
+
+	 11a. <piece>      ::= ~ <piece>
+	 11b.                  <literal>
+	 11c.                  [ <literal> ]
+
+	 12.  <marker>     ::= /
+						   +/
+
+	 13.  <envbar>     ::= _
+						   ~_
+
+	 14.  <boundary>   ::= #
+						   ~#
+
+	 15.  <literal>    ::= one or more contiguous characters
+
+
+Comments on selected BNF rules
+..............................
+
+2.
+	 The same `<quote>' character must be used at both the beginning
+	 and the end of both the "from" string and the "to" string.
+
+3.
+	 The double quote (`"') and single quote (`'') characters are most
+	 often used.
+
+7-8.
+	 Note that what can appear to the left of the environment bar is a
+	 mirror image of what can appear to the right.
+
+9c.
+	 An ellipsis (`...') indicates a possible break in contiguity.
+
+10b.
+	 Something enclosed in parentheses is optional.
+
+11a.
+	 A tilde (`~') reverses the desirability of an element, causing the
+	 constraint to fail if it is found rather than fail if it is not
+	 found.
+
+11c.
+	 A literal enclosed in square brackets must be the name of a string
+	 class defined by a `\scl' field in the analysis data file, or
+	 earlier in the dictionary orthography change file.
+
+12.
+	 A `+/' is usually used for morpheme environment constraints, but
+	 may used for change environment constraints in `\ch' fields in the
+	 dictionary orthography change table file.
+
+13.
+	 A tilde attached to the environment bar (`~_') inverts the sense of
+	 the constraint as a whole.
+
+14b.
+	 The boundary marker preceded by a tilde (`~#') indicates that it
+	 must not be a word boundary.
+
+15.
+	 The special characters used by environment constraints can be
+	 included in a literal only if they are immediately preceded by a
+	 backslash:
+
+		  \+  \/  \#  \~  \[  \]  \(  \)  \.  \_  \\
+
+Decomposition Separation Character: \dsc
+========================================
+
+The `\dsc' field defines the character used to separate the morphemes
+in the decomposition field of the output analysis file.  For example,
+to use the equal sign (`='), the text input control file would include:
+
+	 \dsc  =
+
+This would cause a decomposition field to be output as follows:
+
+	 \d %3%kay%ka=y%ka=y%
+
+It makes sense to use the `\dsc' field only once in the text input
+control file.  If multiple `\dsc' fields do occur in the file, the
+value given in the first one is used.  If the text input control file
+does not have an `\dsc' field, a dash (`-') is used.
+
+The first printing character following the `\dsc' field code is used as
+the morpheme decomposition separator character.  The same character
+cannot be used both for separating decomposed morphemes in the analysis
+output file and for marking comments in the input control files.  Thus,
+one normally cannot use the vertical bar (`|') as the decomposition
+separation character.
+
+Logically, this field should be in the analysis data file rather than
+the text *input* control file since it affects output instead of input.
+Nevertheless, compatibility demands that it stays this way.
+
+Fields to Exclude: \excl
+========================
+
+The `\excl' field excludes one or more fields from processing.  For
+example, to have the program ignore everything in `\co' and `\id'
+fields, the following line is included in the text input control file:
+
+	 \excl  \co  \id      | ignore these fields
+
+If more than one `\excl' field is found in the text input control file,
+the contents of each field is added to the overall list of text fields
+to exclude.  This list is initially empty, and stays empty unless the
+text input control file contains an `\excl' field.  Thus, no text
+fields are excluded from processing by default.
+
+If the text input control file contains `\excl' fields, then only those
+text fields are not processed.  Every word in every text field not
+mentioned explicitly in an `\excl' field will be processed.
+
+Note that every text field in the input text files is processed unless
+the text input control file contains either an `\excl' or an `\incl'
+field.  One or the other is used to limit processing, but never both.
+
+Primary format marker character: \format
+========================================
+
+The `\format' field designates a single character to flag the beginning
+of a primary format marker.  For example, if the format markers in the
+text files begin with the at sign (`@'), the following would be placed
+in the text input control file:
+
+	 \format  @
+
+This would be used, for example, if the text contained format markers
+like the following:
+
+	 @
+	 @p
+	 @sp
+	 @make(Article)
+	 @very-long.and;muddled/format*marker,to#be$sure
+
+
+If a `\format' field occurs in the text input control file without a
+following character to serve for flagging format markers, then the
+program will not recognize any format markers and will try to parse
+everything other than punctuation characters.
+
+It makes sense to use the `\format' field only once in the text input
+control file.  If multiple `\format' fields do occur in the file, the
+value given in the first one is used.
+
+The first printing character following the `\format' field code is used
+to flag format markers.  The character currently used to mark comments
+cannot be assigned to also flag format markers.  Thus, the
+vertical bar (`|') cannot normally be used to flag format markers.
+
+Fields to Include: \incl
+========================
+
+The `\incl' field explicitly includes one or more text fields for
+processing, excluding all other fields.  For instance, to process
+everything in `\txt' and `\qt' fields, but ignore everything else, the
+following line is placed in the text input control file:
+
+	 \incl  \txt  \qt      | process these fields
+
+If more than one `\incl' field is found in the text input control file,
+the contents of each field is added to the overall list of text fields
+to process.  This list is initially empty, and stays empty unless the
+text input control file contains an `\incl' field.
+
+If the text input control file contains `\incl' fields, then only those
+text fields are processed.  Every word in every text field not
+mentioned explicitly in an `\incl' field will not be processed.
+
+Note that every text field in the input text files is processed unless
+the text input control file contains either an `\excl' or an `\incl'
+field.  One or the other is used to limit processing, but never both.
+
+Lowercase/uppercase character pairs: \luwfc
+===========================================
+
+To break a text into words, the program needs to know which characters
+are used to form words.  It always assumes that the letters `A' through
+`Z' and `a' through `z' are used as word formation characters.  If the
+orthography of the language the user is working in uses any other
+characters that have lowercase and uppercase forms, these must given in
+a `\luwfc' field in the text input control file.
+
+The `\luwfc' field defines pairs of characters; the first member of
+each pair is a lowercase character and the second is the corresponding
+uppercase character.  Several such pairs may be placed in the field or
+they may be placed on separate fields.  Whitespace may be interspersed
+freely.  For example, the following three examples are equivalent:
+
+	 \luwfc  éÉ ñÑ
+or
+
+	 \luwfc  éÉ      | e with acute accent
+	 \luwfc  ñÑ      | enyee
+
+or
+
+	 \luwfc  é É  ñ Ñ
+
+Note that comments can be used as well (just as they can in any AMPLE
+control file).  This means that the comment character cannot be
+designated as a word formation character.  If the orthography includes
+the vertical bar (`|'), then a different comment character must be
+defined with the `-c' command line option when AMPLE is initiated; see
+`AMPLE Command Options' above.
+
+The `\luwfc' field can be entered anywhere in the text input control
+file, although a natural place would be before the `\wfc' (word
+formation character) field.
+
+Any standard alphabetic character (that is `a' through `z' or `A'
+through `Z') in the `\luwfc' field will override the standard lower-
+upper case pairing.  For example, the following will treat `X' as the
+upper case equivalent of `z':
+
+	 \luwfc z X
+
+Note that `Z' will still have `z' as its lower-case equivalent in this
+case.
+
+The `\luwfc' field is allowed to map multiple lower case characters to
+the same upper case character, and vice versa.  This is needed for
+languages that do not mark tone on upper case letters.
+
+Multibyte lowercase/uppercase character pairs: \luwfcs
+======================================================
+
+The `\luwfcs' field extends the character pair definitions of the
+`\luwfc' field to multibyte character sequences.  Like the `\luwfc'
+field, the `\luwfcs' field defines pairs of characters; the first
+member of each pair is a multibyte lowercase character and the second
+is the corresponding multibyte uppercase character.  Several such pairs
+may be placed in the field or they may be placed on separate fields.
+Whitespace separates the members of each pair, and the pairs from each
+other.  For example, the following three examples are equivalent:
+
+	 \luwfcs  e' E` n~ N^ ç C&
+or
+
+	 \luwfcs  e' E`      | e with acute accent
+	 \luwfcs  n~ N^      | enyee
+	 \luwfcs  ç  C&      | c cedilla
+
+or
+
+	 \luwfcs  e' E`
+			  n~ N^
+			  ç  C&
+
+
+Note that comments can be used as well (just as they can in any AMPLE
+control file).  This means that the comment character cannot be
+designated as a word formation character.  If the orthography includes
+the vertical bar (`|'), then a different comment character must be
+defined with the `-c' command line option when AMPLE is initiated; see
+`AMPLE Command Options' above.
+
+Also note that there is no requirement that the lowercase form be the
+same length (number of bytes) as the uppercase form.  The examples shown
+above are only one or two bytes (character codes) in length, but there
+is no limit placed on the length of a multibyte character.
+
+The `\luwfcs' field can be entered anywhere in the text input control
+file.  `\luwfcs' fields may be mixed with `\luwfc' fields in the same
+file.
+
+Any standard alphabetic character (that is `a' through `z' or `A'
+through `Z') in the `\luwfcs' field will override the standard lower-
+upper case pairing.  For example, the following will treat `X' as the
+upper case equivalent of `z':
+
+	 \luwfcs z X
+
+Note that `Z' will still have `z' as its lowercase equivalent in this
+case.
+
+The `\luwfcs' field is allowed to map multiple multibyte lowercase
+characters to the same multibyte uppercase character, and vice versa.
+This may be useful in some situations, but it introduces an element of
+ambiguity into the decapitalization and recapitalization processes.  If
+ambiguous capitalization is supported, then for the previous example,
+`z' will have both `X' and `Z' as uppercase equivalents, and `X' will
+have both `x' and `Z' as lowercase equivalents.
+
+Maximum number of decapitalizations: \maxdecap
+==============================================
+
+The `\maxdecap' field sets the maximum number of different
+decapitalizations allowed.  Since the `\luwfc' field can map several
+lowercase characters onto a single uppercase character, a word with
+uppercase characters can (logically) generate a number of alternatives
+when decapitalized.  This is especially true of words that are entirely
+capitalized to begin with.  The default limit is 100.
+
+Prevent Any Decapitalization: \nocap
+====================================
+
+The usual behavior is to normalize input words to lowercase.  The
+program remembers the case of the word as one of four possibilities:
+  1. all uppercase
+
+  2. all lowercase
+
+  3. only the first letter uppercase
+
+  4. mixed uppercase and lowercase
+	 However, not all orthographies use the concept of capitalization.
+To help deal with these, the field code `\nocap' disables all case
+normalization if it appears anywhere in the text input control file.
+
+Prevent Decapitalization of Individual Characters: \noincap
+===========================================================
+
+The handling of mixed uppercase and lowercase is limited in utility,
+and sometimes causes more problems than it solves.  For this reason,
+the `\noincap' field code turns off mixed case decapitalization.  The
+program would still decapitalize words that are entirely capitalized
+and words that begin with a capital letter.
+
+String class: \scl
+==================
+
+A string class is defined by the `\scl' field code followed by the
+class name, which is followed in turn by one or more contiguous
+character strings or (previously defined) string class names.  A string
+class name used as part of the class definition must be enclosed in
+square brackets.
+
+The class name must be a single, contiguous sequence of printing
+characters.  Characters and words which have special meanings in tests
+should not be used.  The actual character strings have no such
+restrictions.  The individual members of the class are separated by
+spaces, tabs, or newlines.
+
+Each `\scl' field defines a single string class.  Any number of `\scl'
+fields may appear in the file.  The only restriction is that a string
+class must be defined before it is used.
+
+String classes must be defined before being used.  For example, the
+first two lines of the simpler Caquinte example above could be given as
+follows:
+	 \scl  -bilabial  c t qu
+	 \ch  "m"  >  "N"  / _ p
+	 \ch  "n"  >  "N"  / _ [-bilabial]
+
+The string class definition could be in another control file: string
+classes defined elsewhere can be used in the text input control file as
+well.
+
+If no `\scl' fields appear in the text input control file, then AMPLE
+does not allow any string classes in text input orthography change
+environment constraints unless they are defined in the analysis data
+file or the dictionary orthography changes file.
+
+Caseless word formation characters: \wfc
+========================================
+
+To break a text into words, the program needs to know which characters
+are used to form words.  It always assumes that the letters `A' through
+`Z' and `a' through `z' are used as word formation characters.  If the
+orthography of the language the user is working in uses any characters
+that do not have different lowercase and uppercase forms, these must
+given in a `\wfc' field in the text input control file.
+
+For example, English uses an apostrophe character (`'') that could be
+considered a word formation character.  This information is provided by
+the following example:
+
+	 \wfc  '    | needed for words like don't
+
+Notice that the characters in the `\wfc' field may be separated by
+spaces, although it is not required to do so.  If more than one `\wfc'
+field occurs in the text input control file, the program uses the
+combination of all characters defined in all such fields as word
+formation characters.
+
+The comment character cannot be designated as a word formation
+character.  If the orthography includes the vertical bar (`|'), then a
+different comment character must be defined with the `-c' command line
+option when AMPLE is initiated; see `AMPLE Command Options' above.
+
+Multibyte caseless word formation characters: \wfcs
+===================================================
+
+The `\wfcs' field allows multibyte characters to be defined as
+"caseless" word formation characters.  It has the same relationship to
+`\wfc' that `\luwfcs' has to `\luwfc'.  The multibyte word formation
+characters are separated from each other by whitespace.
+
+A sample text input control file
+================================
+
+The following is the complete text input control file for Huallaga
+Quechua (a language of Peru):
+	 \id HGTEXT.CTL - for Huallaga Quechua, 25-May-88
+
+	 \co         WORD FORMATION CHARACTERS
+
+	 \wfc  ' ~
+
+	 \co         FIELDS TO EXCLUDE
+
+	 \excl  \id            | identification fields
+
+	 \co         ORTHOGRAPHY CHANGES
+
+	 \ch  "aa" > "a:"      | for long vowels
+	 \ch  "ee" > "i:"
+	 \ch  "ii" > "i:"
+	 \ch  "oo" > "u:"
+	 \ch  "uu" > "u:"
+	 \ch  "qeki" > "qiki"  | for cases like wawqeki
+	 \ch  "~n" > "n~"      | for typos
+	 | for Spanish loans like hwista
+	 \scl sib s c          | sibilants
+	 \ch  "hw" > "f"  / ~[sib]_
+
+Output Analysis Files
+*********************
+
+Analysis files are "record oriented standard format files".  This means
+that the files are divided into records, each representing a single
+word in the original input text file, and records are divided into
+fields.  An analysis file contains at least one record, and may contain
+a large number of records.  Each record contains one or more fields.
+Each field occupies at least one line, and is marked by a "field code"
+at the beginning of the line.  A field code begins with a backslash
+character (`\'), and contains 1 or more letters in addition.
+
+Analysis file fields
+====================
+
+This section describes the possible fields in an analysis file.  The
+only field that is guaranteed to exist is the analysis (`\a') field.
+All other fields are either data dependent or optional.
+
+Analysis field: \a
+------------------
+
+The analysis field (`\a') starts each record of an analysis file.  It
+has the following form:
+
+	 \a PFX IFX PFX < CAT root CAT root > SFX IFX SFX
+
+where `PFX' is a prefix morphname, `IFX' is an infix morphname, `SFX'
+is a suffix morphname, `CAT' is a root category, and `root' is a root
+gloss or etymology.  In the simplest case, an analysis field would look
+like this:
+
+	 \a < CAT root >
+
+where `CAT' is a root category and `root' is a root gloss or etymology.
+
+The `\rd' field in the analysis data file can replace the characters
+used to bracket the root category and gloss/etymology; see `Root
+Delimiter Characters: \rd' above.  The dictionary field code mapped to
+`M' in the dictionary codes file controls the affix and default root
+morphnames; see `Morphname (internal code M)'.  If the `-g' command
+line option is given, the output analysis file contains glosses from
+the root dictionary marked by the field code mapped to `G' in the
+dictionary codes file; see `AMPLE Command Options' and `Root Gloss
+(internal code G)' above.
+
+Decomposition field: \d
+-----------------------
+
+The morpheme decomposition field (`\d') follows the analysis field.  It
+has the following form:
+
+	 \d anti-dis-establish-ment-arian-ism-s
+
+where the hyphens separate the individual morphemes in the surface form
+of the word.
+
+The `\dsc' field in the text input control file can replace the hyphen
+with another character for separating the morphemes; see `Decomposition
+Separation Character: \dsc' above.
+
+The morpheme decomposition field is optional.  It is enabled either by
+a `-w d' command line option (see `AMPLE Command Options' above), or by
+an interactive query.
+
+Category field: \cat
+--------------------
+
+The category field (`\cat') provides rudimentary category information.
+This may be useful for sentence level parsing.  It has the following
+form:
+
+	 \cat CAT
+
+where `CAT' is the word category.  A more complex example is
+
+	 \cat C0 C1/C0=C2=C2/C1=C1/C1
+
+where `C0' is the proposed word category, `C1/C0' is a prefix category
+pair, `C2' is a root category, and `C2/C1' and `C1/C1' are suffix
+category pairs.  The equal signs (`=') serve to separate the category
+information of the individual morphemes.
+
+The `\cat' field of the analysis data file controls whether the
+category field is written to the output analysis file; see `Category
+output control: \cat' above.
+
+If there are multiple analyses, there will be multiple categories in
+the output, separated by ambiguity markers.
+
+Properties field: \p
+--------------------
+
+The properties field (`\p') contains the names of any allomorph or
+morpheme properties found in the analysis of the word.  It has the form:
+
+	 \p prop1=prop2
+
+where `prop1' is a property of the first morpheme and `prop2' is a
+property of the second. A more complex example is:
+
+	 \p ==prop1 prop2=prop3=
+
+where there are five morphemes in the analysis: the first, second, and
+last morphemes do not have any associated properties; the third has
+two; and the fourth has one. The equal signs (=) serve to separate the
+property information of the individual morphemes. Note that morphemes
+may have more than one property, with the names separated by spaces, or
+no properties at all.
+
+As a final example, if an analysis has four morphemes and none of them
+have properties, then it will look like this:
+
+	 \p ===
+
+By default, the properties field is written to the output analysis
+file.  The `-w 0' command option, or any `-w' option that does not
+include `p' in its argument disables the properties field.
+
+Feature Descriptors field: \fd
+------------------------------
+
+The feature descriptor field (`\fd') contains the feature names
+associated with each morpheme in the analysis.  It has the form:
+
+	 \fd feat1=feat2
+
+where `feat1' is a feature descriptor of the first morpheme and `feat2'
+is a feature descriptor of the second. A more complex example is:
+
+	 \fd =feat1==feat2 feat3=
+
+where there are five morphemes in the analysis: the first, third, and
+last morphemes do not have any associated feature descriptors; the
+second has one; and the fourth has two. The equal signs (=) serve to
+separate the feature descriptor information of the individual
+morphemes. Note that morphemes may have more than one feature
+descriptor, with the names separated by spaces, or no feature
+descriptors at all.
+
+As a final example, if an analysis has four morphemes and none of them
+have feature descriptors, then it will look like this:
+
+	 \fd ===
+
+The dictionary field code mapped to `F' in the dictionary code table
+file controls whether feature descriptors are written to the output
+analysis file; if this mapping is not defined, then the `\fd' field is
+not written.  See `Feature Descriptor (internal code F)' above.
+
+If there are multiple analyses, there will be multiple feature sets in
+the output, separated by ambiguity markers.
+
+Underlying form field: \u
+-------------------------
+
+The underlying form field (`\u') is similar to the decomposition field
+except that it shows underlying forms instead of surface forms.  It
+looks like this:
+
+	 \u a-para-a-i-ri-me
+
+where the hyphens separate the individual morphemes.
+
+The `\dsc' field in the text input control file can replace the hyphen
+with another character for separating the morphemes; see `Decomposition
+Separation Character: \dsc' above.
+
+The dictionary field code mapped to `U' in the dictionary code table
+file controls whether underlying forms are written to the output
+analysis file; if this mapping is not defined, then the `\u' field is
+not written.  See `Underlying Form (internal code U)' above.
+
+Word field: \w
+--------------
+
+The original word field (`\w') contains the original input word as it
+looks before decapitalization and orthography changes.  It looks like
+this:
+
+	 \w The
+
+Note that this is a gratuitous change from earlier versions of AMPLE
+and KTEXT, which wrote the decapitalized form.
+
+The original word field is optional.  It is enabled either by a `-w w'
+command line option (see `AMPLE Command Options' above), or by an
+interactive query.
+
+Formatting field: \f
+--------------------
+
+The format information field (`\f') records any formatting codes or
+punctuation that appeared in the input text file before the word.  It
+looks like this:
+
+	 \f \\id MAT 5 HGMT05.SFM, 14-feb-84 D. Weber, Huallaga Quechua\n
+			 \\c 5\n\n
+			 \\s
+
+
+where backslashes (`\') in the input text are doubled, newlines are
+represented by `\n', and additional lines in the field start with a tab
+character.
+
+The format information field is written to the output analysis file
+whenever it is needed, that is, whenever formatting codes or
+punctuation exist before words.
+
+Capitalization field: \c
+------------------------
+
+The capitalization field (`\c') records any capitalization of the input
+word.  It looks like this:
+
+	 \c 1
+
+where the number following the field code has one of these values:
+`1'
+	 the first (or only) letter of the word is capitalized
+
+`2'
+	 all letters of the word are capitalized
+
+`4-32767'
+	 some letters of the word are capitalized and some are not
+
+Note that the third form is of limited utility, but still exists
+because of words like the author's last name.
+
+The capitalization field is written to the output analysis file
+whenever any of the letters in the word are capitalized; see `Prevent
+Any Decapitalization: \nocap' and `Prevent Decapitalization of
+Individual Characters: \noincap' above.
+
+Nonalphabetic field: \n
+-----------------------
+
+The nonalphabetic field (`\n') records any trailing punctuation, bar
+code (see `Bar Code Format Code Characters: \barcodes' above), or
+whitespace characters.  It looks like this:
+
+	 \n |r.\n
+
+where newlines are represented by `\n'.  The nonalphabetic field ends
+with the last whitespace character immediately following the word.
+
+The nonalphabetic field is written to the output analysis file whenever
+the word is followed by anything other than a single space character.
+This includes the case when a word ends a file with nothing following
+it.
+
+Ambiguous analyses
+==================
+
+The previous section assumed that only one analysis is produced for
+each word.  This is not always possible since words in isolation are
+frequently ambiguous.  Multiple analyses are handled by writing each
+analysis field in parallel, with the number of analyses at the
+beginning of each output field.  For example,
+
+	 \a %2%< A0 imaika > CNJT AUG%< A0 imaika > ADVS%
+	 \d %2%imaika-Npa-ni%imaika-Npani%
+	 \cat %2%A0 A0=A0/A0=A0/A0%A0 A0=A0/A0%
+	 \p %2%==%=%
+	 \fd %2%==%=%
+	 \u %2%imaika-Npa-ni%imaika-Npani%
+	 \w Imaicampani
+	 \f \\v124
+	 \c 1
+	 \n \n
+
+
+where the percent sign (`%') separates the different analyses in each
+field.  Note that only those fields which contain analysis information
+are marked for ambiguity.  The other fields (`\w', `\f', `\c', and
+`\n') are the same regardless of the number of analyses.
+
+The `\ambig' field in the text input control file can replace the
+percent sign with another character for separating the analyses; see
+`Ambiguity Marker Character: \ambig' above.
+
+Analysis failures
+=================
+
+The previous sections assumed that words are successfully analyzed.
+This does not always happen.  Analysis failures are marked the same way
+as multiple analyses, but with zero (`0') for the ambiguity count.  For
+example,
+
+	 \a %0%ta%
+	 \d %0%ta%
+	 \cat %0%%
+	 \p %0%%
+	 \fd %0%%
+	 \u %0%%
+	 \w TA
+	 \f \\v 12 |b
+	 \c 2
+	 \n |r\n
+
+
+Note that only the `\a' and `\d' fields contain any information, and
+those both have the original word as a place holder.  The other
+analysis fields (`\cat', `\p', `\fd', and `\u') are marked for failure,
+but otherwise left empty.
+
+The `\ambig' field in the text input control file can replace the
+percent sign with another character for marking analysis failures and
+ambiguities; see `Ambiguity Marker Character: \ambig' above.
+
+Bibliography
+************
+
+  1. Weber, David J., H. Andrew Black, and Stephen R. McConnel. 1988.
+	 `AMPLE: a tool for exploring morphology'.  Occasional Publications
+	 in Academic Computing No. 12.  Dallas, TX: Summer Institute of
+	 Linguistics.
+
+  2. Weber, David J., H. Andrew Black, Stephen R. McConnel, and Alan
+	 Buseman. 1990.  `STAMP: a tool for dialect adaptation'.
+	 Occasional Publications in Academic Computing No. 15.  Dallas, TX:
+	 Summer Institute of Linguistics.
+
+
+Index
+*****
+
+* Menu:
+
+* -/:                                    Command options.
+* -a:                                    Command options.
+* -b:                                    Command options.
+* -c character:                          Command options.
+* -d number:                             Command options.
+* -e filename:                           Command options.
+* -f filename:                           Command options.
+* -g:                                    Command options.
+* -i filename:                           Command options.
+* -j:                                    Command options.
+* -m:                                    Command options.
+* -n number:                             Command options.
+* -o filename:                           Command options.
+* -p:                                    Command options.
+* -q:                                    Command options.
+* -r:                                    Command options.
+* -s filename:                           Command options.
+* -t:                                    Command options.
+* -u:                                    Command options.
+* -v:                                    Command options.
+* -w fields:                             Command options.
+* -x fields:                             Command options.
+* -Z address,count:                      Command options.
+* -z filename:                           Command options.
+* \a:                                    \a.
+* \ambig:                                \ambig.
+* \ancc:                                 \ancc.
+* \ap:                                   \ap.
+* \barchar:                              \barchar.
+* \barcodes:                             \barcodes.
+* \c:                                    \c.
+* \ca:                                   \ca.
+* \cat <1>:                              \cat (xxAD01.CTL).
+* \cat:                                  \cat.
+* \catcr:                                \catcr.
+* \ccl:                                  \ccl.
+* \ch <1>:                               \ch.
+* \ch <2>:                               \ch (xxANCD.TAB).
+* \ch:                                   \ch (xxORDC.TAB).
+* \cr:                                   \cr.
+* \d:                                    \d.
+* \dicdecap:                             \dicdecap.
+* \dsc:                                  \dsc.
+* \excl:                                 \excl.
+* \f:                                    \f.
+* \fd:                                   \fd.
+* \format:                               \format.
+* \ft:                                   \ft.
+* \iah:                                  \iah.
+* \incl:                                 \incl.
+* \infix:                                \infix.
+* \it:                                   \it.
+* \luwfc:                                \luwfc.
+* \luwfcs:                               \luwfcs.
+* \maxdecap:                             \maxdecap.
+* \maxi:                                 \maxi.
+* \maxn:                                 \maxn.
+* \maxnull:                              \maxnull.
+* \maxp:                                 \maxp.
+* \maxprops:                             \maxprops.
+* \maxr:                                 \maxr.
+* \maxs:                                 \maxs.
+* \mcc:                                  \mcc.
+* \mcl:                                  \mcl.
+* \mp:                                   \mp.
+* \n:                                    \n.
+* \nah:                                  \nah.
+* \nocap:                                \nocap.
+* \noincap:                              \noincap.
+* \nt:                                   \nt.
+* \p:                                    \p.
+* \pah:                                  \pah.
+* \patr:                                 \patr.
+* \pcl:                                  \pcl.
+* \prefix:                               \prefix.
+* \pt:                                   \pt.
+* \rah:                                  \rah.
+* \rd:                                   \rd.
+* \root:                                 \root.
+* \rt:                                   \rt.
+* \sah:                                  \sah.
+* \scl <1>:                              \scl (xxORDC.TAB).
+* \scl <2>:                              \scl (xxAD01.CTL).
+* \scl:                                  \scl.
+* \st:                                   \st.
+* \strcheck:                             \strcheck.
+* \suffix:                               \suffix.
+* \u:                                    \u.
+* \unified:                              \unified.
+* \w:                                    \w.
+* \wfc:                                  \wfc.
+* \wfcs:                                 \wfcs.
+* analysis data file:                    Analysis data file.
+* analysis output file:                  Analysis files.
+* dictionary code table:                 Dictionary code table file.
+* dictionary files:                      Dictionary files.
+* dictionary orthography change table:   Dictionary orthography change table file.
+* output analysis file:                  Analysis files.
+* standard format:                       Standard format.
+* Test syntax:                           Test syntax.
+* text input control:                    Text input control file.

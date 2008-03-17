@@ -1,0 +1,56 @@
+			  PRINTANA v. 1.0
+		A Tool for Printing Analyses
+		   Andy Black, 07-AUG-90
+
+PRINTANA is filter for displaying an analysis file in a readable
+format (unlike the raw database output, which is difficult to
+read).  PRINTANA's result will be put to the screen unless stan-
+dardout is redirected to a file or pipe.
+
+Format markers are included for ease of reference.  The original
+word is shown in the left column and all analyses are in the
+right column.  Any analytic failures are marked with an asterisk.
+If the original word is not included in the analysis file,
+the original word is not displayed.
+
+The following sample output is from some Caquinte data
+(which resided in the file cqtest.ana).  It was produced by
+typing:
+	printana cqtest.ana
+
+------------------------------------------------------------
+\\v121
+aato                     < A0 aato >
+						 aato
+
+(
+aparatirime              1I < V2N para > & NF 3MO CNTR
+						 a-para-t-i-ri-me
++)
+
+apomatsatirime           1I < V2N pomatsa > & NF 3MO CNTR
+						 a-pomatsa-t-i-ri-me
+*\n
+\\v122
+ipohitime                3M < V1N pohi > & NF CNTR
+						 i-pohi-t-i-me
+\n
+\\v123
+oasanomahakeNparime      1I FUT < V2R og > & VERI.M VERI PROG F R 3MO CNTR
+						 0-0-o-a-sano-maha-k-e-Npa-ri-me
+						 3F FUT < V2R og > & VERI.M VERI PROG F R 3MO CNTR
+						 0-0-o-a-sano-maha-k-e-Npa-ri-me
+
+------------------------------------------------------------
+
+
+PRINTANA has the following command line options and usage:
+
+	PRINTANA: Re-format AMPLE output
+			Version 1.0 (August 1990), Copyright 1990 SIL, Inc.
+	Usage: printana [-a] [-c col] [-o outfile] infile
+		-a          output analyses only: no decompositions
+		-c number   specifies at which column analyses are to be printed
+			  (default is 25)
+		-o outfile  output file name
+		infile      input file name (analysis file)
