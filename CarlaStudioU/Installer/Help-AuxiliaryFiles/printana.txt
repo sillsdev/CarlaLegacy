@@ -1,0 +1,9 @@
+PRINTANA.TXT Release notes for PRINTANA Print Analyses
+
+PRINTANA is filter for displaying an analysis file in a readable
+format (unlike the raw database output, which is difficult to
+read).  It is documented in the file PRINTANA.DOC.
+
+Change history:
+
+1.0.2 Sep 1998 Created DJGPP, Win32, and 8086 versions.

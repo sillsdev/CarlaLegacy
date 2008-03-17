@@ -1,0 +1,71 @@
+JOINCOMP.TXT Release notes for JOINCOMP
+
+JOINCOMP joins compound words in the input text so that AMPLE can
+analyze them. JOINCOMP is documented in the file JOINCOMP.DOC.
+
+Change history:
+
+0.2u Jun 2005 handle upper-lower case for multibyte characters.
+
+0.2t Mar 2005 fixed bug: Unicode punctuation before a word could cause
+cause it to not find a compound.
+
+0.2s Sep 2001 Internal change, not visible to the user.
+
+0.2r Jul 2001 Allow final line to not have a newline.
+
+0.2q Dec 2000 Some internal changes not visible to the user.
+
+0.2p Jun 2000 fixed some memory leaks.
+
+0.2o Nov 1999 added -k switch to allow the user to control the comment
+character used in the dictionary file.  The default is "|".  Also
+fixed a bug that failed to read either the \luwfc or \luwfcs fields of
+the input text control file.
+
+0.2n May 1999 fixed bug which would remove all bridge characters from
+a file that had been previously passed through JoinComp.  Added -h
+switch to allow the user to control the "hold" character which is used
+in preserving pre-existing bridge characters.  It defaults to CTRL-Q
+(which assumes that no one is using CTRL-Q in their text files).
+
+0.2m Aug 1998 added -b switch to allow the user to control the
+"bridge" character used (the default continues to be the underscore
+character).  Also added display of every 100 words during monitoring
+(-m switch).
+
+0.2l Jun 1998 compiled for Win32 machines.
+
+0.2k Sep 95 increases the maximum input line length and ports to
+the DJGPP compiler to make a 386 version.
+
+0.2j Oct 92 includes a 386 version which can handle much larger
+dictionaries than the plain version.
+
+0.2h Jul 92 adds command line option -v to give fields to be
+searched for joined variant forms.  For example, the following
+searches for \w, \aw, and \av:
+
+	joincomp -j w -a aw -v av -d x.dic -i x.txt -o x.out
+
+0.2g Jul 92 fixes a bug in 0.2f of putting an underline in front
+of joined words that come immediately after a verse number.
+
+0.2f Jul 92 fixes a bug of failing to join words that had
+preceding punctuation marks like quotes or parentheses.
+
+0.2e Jul 92 fixes a bug which caused the -a option to fail.
+
+0.2d Jum 92 adds command line options -j and -a to give the
+fields to be searched for joined words and allomorphs.  For
+example, the following searches for \w and \aw:
+
+	joincomp -j w -a aw -d x.dic -i x.txt -o x.out
+
+If no  markers are given on the command line, default markers are
+\r and \a.
+
+0.2c Jul 91 adds the capability to search for allomorphs.  It
+searches for the \a field as well as the root field.  (It assumes
+the first marker it finds after the \id is the root field.)
+(Version 0.2d changed this to default to \r and \a.)
