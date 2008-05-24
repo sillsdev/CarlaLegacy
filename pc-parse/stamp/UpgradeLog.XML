@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Stamplib-2003">
+</Property><Property Name="Solution File" Value="c:\CARLALegacy\pc-parse\stamp\Stamplib-2003.sln">
+</Property><Property Name="Date" Value="Tuesday, January 29, 2008">
+</Property><Property Name="Time" Value="14:27:15 PM">
+</Property></Properties><Event ErrorLevel="2" Project="Stamplib-2003" Source="Stamplib-2003.vcproj" Description="The project file 'c:\CARLALegacy\pc-parse\stamp\Stamplib-2003.vcproj' cannot be updated to this Visual Studio 2005 version format because it is read-only on disk. Please set the permissions on the project file and re-open it to migrate the project.">
+</Event></UpgradeLog>
