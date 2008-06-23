@@ -1,0 +1,8 @@
+C:\Documents and Settings\roy\My Documents\Visual Studio 2005\Projects\LearnDLL\LearnDLLTestApp\bin\Debug\LearnDLLTestApp.exe
+C:\Documents and Settings\roy\My Documents\Visual Studio 2005\Projects\LearnDLL\LearnDLLTestApp\bin\Debug\LearnDLLTestApp.pdb
+C:\Documents and Settings\roy\My Documents\Visual Studio 2005\Projects\LearnDLL\LearnDLLTestApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\roy\My Documents\Visual Studio 2005\Projects\LearnDLL\LearnDLLTestApp\obj\Debug\LearnDLLTestApp.LearnDLLTestApp.resources
+C:\Documents and Settings\roy\My Documents\Visual Studio 2005\Projects\LearnDLL\LearnDLLTestApp\obj\Debug\LearnDLLTestApp.Properties.Resources.resources
+C:\Documents and Settings\roy\My Documents\Visual Studio 2005\Projects\LearnDLL\LearnDLLTestApp\obj\Debug\LearnDLLTestApp.csproj.GenerateResource.Cache
+C:\Documents and Settings\roy\My Documents\Visual Studio 2005\Projects\LearnDLL\LearnDLLTestApp\obj\Debug\LearnDLLTestApp.exe
+C:\Documents and Settings\roy\My Documents\Visual Studio 2005\Projects\LearnDLL\LearnDLLTestApp\obj\Debug\LearnDLLTestApp.pdb
