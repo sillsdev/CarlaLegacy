@@ -1221,7 +1221,8 @@ sAlloPiece.pszLiteral = duplicateString(pszAllo_in);
 sAlloPiece.pClass     = NULL;
 sAlloPiece.pNext      = pAlloPiece_in;
 if (p != NULL)
-	*p++ = cSave;
+  *p = cSave; /* if is literal followed by a class */
+  //    *p++ = cSave;
 else
 	p = pszAllo_in + strlen(pszAllo_in);
 return build_allomorphs(p,

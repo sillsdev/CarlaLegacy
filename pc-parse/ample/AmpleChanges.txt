@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.12.8 (25-Aug-2008)
+--------------------
+1. Fix bug for partial reduplication for cases like
+	 m[V^1][C^1] / [C][V^1][C^1] _
+
 3.12.7 (20-Sep-2007)
 --------------------
 1. Some minor internal code changes (nothing visible to the user)

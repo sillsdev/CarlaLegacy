@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 7		/* bug fix or other minor change */
-#define DATE "September 20, 2007"	/* date of release version */
-#define YEAR "2007"		/* used for copyright notice in banner */
+#define PATCHLEVEL 8		/* bug fix or other minor change */
+#define DATE "August 25, 2008"	/* date of release version */
+#define YEAR "2008"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 25-Aug-2008  hab  - Fix bug for partial reduplication for cases like
+ * [3.12.8]             m[V^1][C^1] / [C][V^1][C^1] _
  * 20-Sep-2007  hab  - Check selective analysis information after extracting
  * [3.12.7]             matches from the dictionary.  When using the DLL, this
  *                      allows one to keep the loaded dictionary, but merely
