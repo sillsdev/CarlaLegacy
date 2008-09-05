@@ -268,6 +268,7 @@ static AmpleData	sAmpleData_m = {
 	NULL, 0,            /* dynamic array of morphnames (hab 3.2.5) */
 	NULL, 0,            /* dynamic array of allomorphs (hab 3.2.5) */
 	NULL,               /* list of full reduplication allomorphs */
+	NULL,               /* list of partial reduplication allomorphs */
 	NULL,               /* root morphname exceptions   (hab 3.2.5) */
 	0,                  /* # records processed for a dictionary (hab 3.2.5) */
 	NULL,               /* ptr to tail of list of morphemes  (hab 3.2.5) */

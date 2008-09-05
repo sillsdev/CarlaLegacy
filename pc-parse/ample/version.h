@@ -4,12 +4,15 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 8		/* bug fix or other minor change */
-#define DATE "August 25, 2008"	/* date of release version */
+#define PATCHLEVEL 9		/* bug fix or other minor change */
+#define DATE "September 5, 2008"	/* date of release version */
 #define YEAR "2008"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 05-Sep-2008  hab  - Rework partial reduplication to process the patterns
+ * [3.12.9]             dynamically instead of generating all possible
+ *                      allomorphs upon dictionary load.
  * 25-Aug-2008  hab  - Fix bug for partial reduplication for cases like
  * [3.12.8]             m[V^1][C^1] / [C][V^1][C^1] _
  * 20-Sep-2007  hab  - Check selective analysis information after extracting

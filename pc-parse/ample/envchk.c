@@ -315,7 +315,7 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	/*
 	 *  handle having something to match against
 	 */
-	if ( env->iFlags & E_CLASS )
+	if ( (env->iFlags & E_CLASS) && !(env->iFlags & E_REDUPCLASS) )
 	{				/* check against a string class */
 	size = 0;			/* assume it won't be in the class */
 					/* for each element that matches the
@@ -347,6 +347,20 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	if  ( env->iFlags & E_ELLIPSIS) continue;		/* 1.9s BJY */
 	 goto badleft;
 	}
+	else if ( (env->iFlags & E_CLASS) && (env->iFlags & E_REDUPCLASS) )
+	  {
+	char *pStringToMatch;
+	PartialRedupIndexedClass * pIndexedClass;
+	pIndexedClass = (PartialRedupIndexedClass *)env->u.pClass;
+	pStringToMatch = pIndexedClass->pszMember;
+	if (pStringToMatch != (char *)NULL)
+	{				/* check against a literal string */
+	  size = (matchEnd(left,pStringToMatch)) ?
+				strlen(pStringToMatch) : 0;
+					/* check for validity */
+	  if (chk_senv_left(size, left, env, "") ) goto goodleft;
+	}
+	  }
 	else if (env->u.pszString != (char *)NULL)
 	{				/* check against a literal string */
 	size = (matchEnd(left,env->u.pszString)) ?
@@ -506,7 +520,7 @@ for (;; ++right )
 	/*
 	 *  handle having something to match against
 	 */
-	if ( env->iFlags & E_CLASS )
+	if ( (env->iFlags & E_CLASS) && !(env->iFlags & E_REDUPCLASS) )
 	{				/* check against a string class */
 	size = 0;			/* assume it won't match */
 					/* for each element that matches the
@@ -530,6 +544,21 @@ for (;; ++right )
 	if  ( env->iFlags & E_ELLIPSIS) continue;	/* 1.9s BJY */
 	return( FALSE );
 	}
+	else if ( (env->iFlags & E_CLASS) && (env->iFlags & E_REDUPCLASS) )
+	  {
+	char *pStringToMatch;
+	PartialRedupIndexedClass * pIndexedClass;
+	pIndexedClass = (PartialRedupIndexedClass *)env->u.pClass;
+	pStringToMatch = pIndexedClass->pszMember;
+	if (pStringToMatch != (char *)NULL)
+	{				/* check against a literal string */
+	size = (matchBeginning(right,pStringToMatch)) ?
+						strlen(pStringToMatch) : 0;
+					/* check for validity */
+	if (chk_senv_right(size, right, env, pAmpleData_in) )
+		return( TRUE );
+	}
+	  }
 	else if (env->u.pszString != (char *)NULL)
 	{				/* check against a literal string */
 	size = (matchBeginning(right,env->u.pszString)) ?

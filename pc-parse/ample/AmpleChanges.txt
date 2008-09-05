@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.12.9 (5-Sep-2008)
+--------------------
+1. Rework partial reduplication to process the patterns dynamically instead of
+	generating all possible allomorphs upon dictionary load.
+
 3.12.8 (25-Aug-2008)
 --------------------
 1. Fix bug for partial reduplication for cases like

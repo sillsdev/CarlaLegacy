@@ -108,6 +108,9 @@ extern void * memset  P((void *s, int c, size_t n));
 extern char * appendDynamicString P((char *       pszString_io,
 					 size_t *     puiStringSize_io,
 					 const char * pszAdded_in));
+/* setsd.c */
+extern int    is_number	P((char * pszString_in));
+
 
 /********************* FUNCTION PROTOTYPES *********************/
 
@@ -1044,9 +1047,37 @@ new_item:
 						   pStringClasses_m);
 			if (pe->u.pClass == (StringClass *)NULL)
 			{
-			epar_error("Undefined string class %s",
-				   szEnvLexToken_m );
-			goto bad_side;
+			  StringClass * pClass = NULL;
+			  char * pr = strchr(szEnvLexToken_m, '^');
+			  if (pr != NULL)
+				{
+				  *pr = NUL;
+				  pClass = findStringClass(szEnvLexToken_m,
+							   pStringClasses_m);
+				  if (pClass != NULL)
+				{
+				  PartialRedupIndexedClass * pPRIC;
+				  if (!is_number(pr+1))
+					{
+					  *pr = '^';
+					epar_error("Invalid reduplication class indicator; \n\
+\t%s lacks the trailing index indicator (^1, ^2, ...)\n", szEnvLexToken_m );
+					goto bad_side;
+					}
+				  pPRIC = allocMemory(sizeof(PartialRedupIndexedClass));
+				  pPRIC->pStringClass = pClass;
+				  pPRIC->pNext = NULL;
+				  pPRIC->iIndex = atoi(pr+1);
+				  pe->u.pClass = pPRIC;
+				  myflags |= E_REDUPCLASS;
+				}
+				}
+			  if (pr == NULL || pClass == NULL)
+				{
+				  epar_error("Undefined string class %s",
+					 szEnvLexToken_m );
+				  goto bad_side;
+				}
 			}
 			}
 		}
@@ -1513,6 +1544,8 @@ int		bSGML_in;
 {
 char	szOpen[8];
 char	szClose[12];
+char    szRedupClass[BUFSIZE];
+char    szRedupIndex[10];
 char *	pszName;
 
 if (	(pLogFP_m == NULL) &&
@@ -1528,6 +1561,8 @@ show_left( pEnvItem_in->pNext, bSGML_in );
 
 szOpen[0]  = NUL;
 szClose[0] = NUL;
+szRedupClass[0] = NUL;
+szRedupIndex[0] = NUL;
 if ( pEnvItem_in->iFlags & E_OPTIONAL )
 	strcat(szOpen, "(");
 if ( pEnvItem_in->iFlags & E_NOT )
@@ -1537,7 +1572,22 @@ if ( pEnvItem_in->iFlags & E_GROUP )
 if ( pEnvItem_in->iFlags & E_CLASS )
 	{
 	strcat(szOpen, "[");
-	pszName = (pEnvItem_in->iFlags & E_MORPHEME) ?
+	if (pEnvItem_in->iFlags & E_REDUPCLASS)
+	  {
+	PartialRedupIndexedClass * pIndexedClass;
+	pIndexedClass = (PartialRedupIndexedClass *) pEnvItem_in->u.pClass;
+	/* try to use the member, if present */
+	pszName = pIndexedClass->pszMember;
+	if (pszName == NULL)
+	  {			/* not there; use class name with index */
+		strcat(szRedupClass, pIndexedClass->pStringClass->pszName);
+		strcat(szRedupClass, "^");
+		strcat(szRedupClass, _itoa(pIndexedClass->iIndex, szRedupIndex, 10));
+		pszName = szRedupClass;
+	  }
+	  }
+	else
+	  pszName = (pEnvItem_in->iFlags & E_MORPHEME) ?
 			((AmpleMorphClass *)(pEnvItem_in->u.pClass))->pszName :
 			((StringClass *)(pEnvItem_in->u.pClass))->pszName;
 	strcat(szClose, "]");
@@ -1652,6 +1702,8 @@ int		bSGML_in;
 AmpleEnvItem * pEI;
 char	       szOpen[12];
 char	       szClose[8];
+char    szRedupClass[BUFSIZE];
+char    szRedupIndex[10];
 char *	       pszName;
 
 if (	(pLogFP_m == NULL) &&
@@ -1673,9 +1725,27 @@ for ( pEI = pEnvItem_in ; pEI ; pEI = pEI->pNext )
 	if ( pEI->iFlags & E_CLASS )
 	{
 	strcat(szOpen, "[");
-	pszName = (pEI->iFlags & E_MORPHEME) ?
-		((AmpleMorphClass *)(pEI->u.pClass))->pszName :
-		((StringClass *)(pEI->u.pClass))->pszName;
+	if (pEI->iFlags & E_REDUPCLASS)
+	  {
+		PartialRedupIndexedClass * pIndexedClass;
+		szRedupClass[0] = NUL;
+		szRedupIndex[0] = NUL;
+		pIndexedClass = (PartialRedupIndexedClass *) pEI->u.pClass;
+		/* try to use the member, if present */
+		pszName = pIndexedClass->pszMember;
+		if (pszName == NULL)
+		  {			/* not there; use class name with index */
+		strcat(szRedupClass, pIndexedClass->pStringClass->pszName);
+		strcat(szRedupClass, "^");
+		strcat(szRedupClass,
+			   _itoa(pIndexedClass->iIndex, szRedupIndex, 10));
+		pszName = szRedupClass;
+		  }
+	  }
+	else
+	  pszName = (pEI->iFlags & E_MORPHEME) ?
+					((AmpleMorphClass *)(pEI->u.pClass))->pszName :
+					((StringClass *)(pEI->u.pClass))->pszName;
 	strcat(szClose, "]");
 	}
 	else if ( pEI->u.pszString )

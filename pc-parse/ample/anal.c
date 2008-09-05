@@ -972,6 +972,258 @@ return(np);
 
 /*****************************************************************************
  * NAME
+ *    createPartialRedupAmlist
+ * DESCRIPTION
+ *    create an AmpleAmlist struct for a partial redup allomorph
+ * RETURN VALUE
+ *    updated list
+ */
+static AmpleAmlist * createPartialRedupAmlist(AmpleAmlist *pList_in,
+						  int etype,
+					 PartialReduplication *pPartialRedup_in,
+						  int iRedupLen_in,
+						  AmpleData *pAmple_in)
+{
+  AmpleAmlist * pNew;
+  AmpleAllomorph *pAllo = pPartialRedup_in->pAllo;
+  pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
+  pNew->amp = (etype == AMPLE_ROOT) ?
+	copy_am(etype, pAllo, pAmple_in) : pAllo;
+  pNew->alen = iRedupLen_in;
+  pNew->amlink = pList_in;;
+  return pNew;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setPartialRedupEnvs
+ * DESCRIPTION
+ *    set the string content of any environments for this partial reduplication
+ *    allomorph
+ * RETURN VALUE
+ *    none
+ */
+static void setPartialRedupEnvs(PartialReduplication * pPartialRedup,
+				AmpleEnvItem * pItem)
+{
+  if (pItem->iFlags & E_REDUPCLASS)
+	{
+	  PartialRedupIndexedClass * pIndexedClass;
+	  PartialRedupIndexedClass * pEnvIndexedClass;
+	  pEnvIndexedClass = (PartialRedupIndexedClass *)pItem->u.pClass;
+	  for (pIndexedClass = pPartialRedup->pIndexedStringClasses;
+	   pIndexedClass != NULL;
+	   pIndexedClass = pIndexedClass->pNext)
+	{
+	  if ((pIndexedClass->pStringClass == pEnvIndexedClass->pStringClass) &&
+		  (pIndexedClass->iIndex == pEnvIndexedClass->iIndex))
+		{
+		  freeMemory(pEnvIndexedClass->pszMember);
+		  pEnvIndexedClass->pszMember =
+		duplicateString(pIndexedClass->pszMember);
+		  break;
+		}
+	}
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    AdjustRootMorphname
+ * DESCRIPTION
+ *    adjusts a root's morphname to include regular sound change code
+ * RETURN VALUE
+ *    pointer to adjusted morphname
+ */
+static char *AdjustRootMorphname(int bRegularSoundChange,
+				 const char *pszMorphName,
+				 const char *pszAllomorph)
+{
+static char szTempMorphname[65];
+
+if (bRegularSoundChange)	/* adjust for regular sound change */
+	{
+	szTempMorphname[0] = '*';
+	if (pszMorphName != NULL && pszMorphName !=  NUL)
+	  strncpy(szTempMorphname + 1, pszMorphName, sizeof(szTempMorphname) - 1);
+	else
+	  strncpy(szTempMorphname + 1, pszAllomorph, sizeof(szTempMorphname) - 1);
+	}
+else if (pszMorphName != NULL)
+	{
+	strncpy(szTempMorphname, pszMorphName, sizeof(szTempMorphname));
+	}
+else
+  { /* no overt morphname in entry; use allomorph */
+	strncpy(szTempMorphname, pszAllomorph, sizeof(szTempMorphname) - 1);
+	}
+szTempMorphname[sizeof(szTempMorphname) - 1] = NUL;
+return szTempMorphname;
+}
+
+/*****************************************************************************
+ * NAME
+ *    findPartialRedupMatches
+ * DESCRIPTION
+ *    find any potential partial reduplication mathces
+ * RETURN VALUE
+ *    TRUE if found; FALSE otherwise
+ */
+static int findPartialRedupMatches(PartialRedupIndexedClass *pIndexedClass,
+				   char *key,
+				   char **pszMatchBeg,
+				   PartialReduplication *pPartialRedup,
+				   int etype,
+				   AmpleAmlist **amset,
+				   AmpleData *pAmple_in)
+{
+StringList *sp;
+char szTokenBuffer[BUFSIZE];
+char * pszToMatch = *pszMatchBeg;
+int iPostLen = 0;
+char                 *pszMorphName;
+AmpleAllomorph *      pAllo;
+AmpleAlloEnv * pEnv;
+
+
+if (pIndexedClass == NULL)
+  return(TRUE);
+					/* for each element that matches the
+					   string, see if it will work */
+for ( sp = pIndexedClass->pStringClass->pMembers;
+	  sp != (StringList *)NULL ;
+	  sp = sp->pNext )
+  {
+	if (matchBeginning(pszToMatch, sp->pszString))
+	  {
+	int bFound;
+	int size = strlen(sp->pszString);
+	freeMemory(pIndexedClass->pszMember);
+	memset(szTokenBuffer, 0, BUFSIZE);
+	strncpy(szTokenBuffer, pszToMatch, size);
+	pIndexedClass->pszMember = duplicateString(szTokenBuffer);
+	*pszMatchBeg = pszToMatch + size;
+	/* this one matches; see if the other classes do, too */
+	bFound = findPartialRedupMatches(pIndexedClass->pNext, key, pszMatchBeg,
+					 pPartialRedup, etype, amset, pAmple_in);
+	if (!bFound)
+	  {
+		/* they did not; see if some other element will match */
+		continue;
+	  }
+	if (pIndexedClass != pPartialRedup->pIndexedStringClasses)
+	  return(TRUE);
+	else
+	  {
+		/* we are back at the beginning of the list; check for postfix */
+		char * pszPost = pPartialRedup->pszPostfix;
+		if (pszPost != NULL)
+		  {
+		iPostLen = strlen(pszPost);
+		if (strncmp(*pszMatchBeg, pszPost, iPostLen) != 0)
+		  continue; /* does not match postfix */
+		*pszMatchBeg += iPostLen;
+		  }
+
+		/* it matches; adjust morphname if needed */
+		pAllo = pPartialRedup->pAllo;
+		if (etype == AMPLE_ROOT)
+		  {
+		pszMorphName = AdjustRootMorphname(pAllo->iMORPHTYPE & RSC,
+						   pAllo->pMORPHNAME,
+						   pAllo->pszAllomorph);
+		  }
+		else
+		  pszMorphName = pAllo->pMORPHNAME;
+		/* create the amset if appropriate */
+		if (isAmpleAllomorphSelected(pszMorphName, pAllo->pszAllomorph, pAmple_in))
+		  *amset = createPartialRedupAmlist(*amset, etype, pPartialRedup,
+						   *pszMatchBeg - key, pAmple_in);
+
+		/* adjust the classes in the environment to be the same as what matched*/
+		for (pEnv = pAllo->pEnvironment;
+		 pEnv != NULL;
+		 pEnv = pEnv->pLink)
+		  {
+		AmpleEnvConstraint * pSEC;
+		for (pSEC = pEnv->pStringCond;
+			 pSEC != NULL;
+			 pSEC = pSEC->pNext)
+		  {
+			AmpleEnvItem * pItem;
+			for (pItem = pSEC->pLeftEnv;
+			 pItem != NULL;
+			 pItem = pItem->pNext)
+			  {
+			setPartialRedupEnvs(pPartialRedup, pItem);
+			  }
+			for (pItem = pSEC->pRightEnv;
+			 pItem != NULL;
+			 pItem = pItem->pNext)
+			  {
+			setPartialRedupEnvs(pPartialRedup, pItem);
+			  }
+		  }
+		  }
+	  }
+	  }
+  }
+return(FALSE);
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    get_partial_redup
+ * DESCRIPTION
+ *    get any partial redup allomorphs that match
+ *    set their surface values (fill in the [C^1][V^1]s)
+ * RETURN VALUE
+ *    list of partial reduplication dictionary entries which match
+ */
+static AmpleAmlist * get_partial_redup(char *key, int etype, AmpleAmlist *amset,
+					   AmpleData *pAmple_in)
+{
+int                   iRedupLen = 0;
+PartialReduplication *pPartialRedup;
+
+ /* check for partial reduplication */
+for (pPartialRedup = pAmple_in->pPartialRedupAllos;
+	 pPartialRedup != NULL;
+	 pPartialRedup = pPartialRedup->pNext)
+  {
+	int iPreLen = 0;
+	int iPostLen = 0;
+	char *pszPre;
+	char *pszMatchBeg;
+	char *pszMatchEnd = NULL;
+	PartialRedupIndexedClass * pIndexedClass;
+	int bFound;
+	if (pPartialRedup->iDicType != etype)
+	  continue;
+	pszPre = pPartialRedup->pszPrefix;
+	pszMatchBeg = key;
+	if (pszPre != NULL)
+	  {
+	iPreLen = strlen(pszPre);
+	if (strncmp(key, pszPre, iPreLen) != 0)
+	  continue; /* does not match prefix */
+	pszMatchBeg += iPreLen;
+	  }
+	pIndexedClass = pPartialRedup->pIndexedStringClasses;
+	if (pIndexedClass == NULL)
+	  continue;  /* nothing to match; quit */
+	bFound = findPartialRedupMatches(pIndexedClass, key, &pszMatchBeg,
+					 pPartialRedup, etype, &amset, pAmple_in);
+	if (!bFound)
+	  continue; /* did not match */
+
+  }
+return amset;
+}
+
+/*****************************************************************************
+ * NAME
  *    createFullRedupAmlist
  * DESCRIPTION
  *    create an AmpleAmlist struct for a full redup allomorph
@@ -979,7 +1231,7 @@ return(np);
  *    updated list
  */
 static AmpleAmlist * createFullRedupAmlist(AmpleAmlist *pList_in,
-					   AmpleFullReduplication *pFullRedup_in,
+					   FullReduplication *pFullRedup_in,
 					   int iRedupLen_in)
 {
   AmpleAmlist * pNew;
@@ -992,17 +1244,17 @@ static AmpleAmlist * createFullRedupAmlist(AmpleAmlist *pList_in,
 
 /*****************************************************************************
  * NAME
- *    get_entries
+ *    get_full_redup
  * DESCRIPTION
- *    retrieve all allomorphs that match the given key (or a leading
- *    substring of it) and etype
+ *    create all allomorphs that match the given key (or a leading
+ *    substring of it), etype, and a full reduplication pattern
  * RETURN VALUE
  *    list of dictionary entries
  */
 static AmpleAmlist * get_full_redup(char *key, int etype, AmpleAmlist *amset, AmpleData *pAmple_in)
 {
 int                     iRedupLen = 0;
-AmpleFullReduplication *pFullRedup;
+FullReduplication *pFullRedup;
 if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX))
    { /* check for full reduplication */
    for (pFullRedup = pAmple_in->pFullRedupAllos;
@@ -1084,40 +1336,6 @@ return amset;
 
 /*****************************************************************************
  * NAME
- *    AdjustRootMorphname
- * DESCRIPTION
- *    adjusts a root's morphname to include regular sound change code
- * RETURN VALUE
- *    pointer to adjusted morphname
- */
-static char *AdjustRootMorphname(int bRegularSoundChange,
-				 const char *pszMorphName,
-				 const char *pszAllomorph)
-{
-static char szTempMorphname[65];
-
-if (bRegularSoundChange)	/* adjust for regular sound change */
-	{
-	szTempMorphname[0] = '*';
-	if (pszMorphName != NULL && pszMorphName !=  NUL)
-	  strncpy(szTempMorphname + 1, pszMorphName, sizeof(szTempMorphname) - 1);
-	else
-	  strncpy(szTempMorphname + 1, pszAllomorph, sizeof(szTempMorphname) - 1);
-	}
-else if (pszMorphName != NULL)
-	{
-	strncpy(szTempMorphname, pszMorphName, sizeof(szTempMorphname));
-	}
-else
-  { /* no overt morphname in entry; use allomorph */
-	strncpy(szTempMorphname, pszAllomorph, sizeof(szTempMorphname) - 1);
-	}
-szTempMorphname[sizeof(szTempMorphname) - 1] = NUL;
-return szTempMorphname;
-}
-
-/*****************************************************************************
- * NAME
  *    get_entries
  * DESCRIPTION
  *    retrieve all allomorphs that match the given key (or a leading
@@ -1142,7 +1360,6 @@ int			cSave;
 if (key == NULL)
 	return NULL;
 len = strlen(key);
-amset = get_full_redup(key, etype, amset, pAmple_in);
 /*
  *  because allomorphs are added at the beginning of the list, this produces
  *  a list with the longest matches first
@@ -1197,6 +1414,15 @@ for ( i = 0 ; i <= len ; ++i )
 	}
 	key[i] = cSave;
 	}
+/* check for full and partial reduplication patterns */
+amset = get_full_redup(key, etype, amset, pAmple_in);
+	/* It is crucial that any partial redup allomorphs are at the head of the
+	 * amset list.  This is because we store the matched string items in the
+	 * allomorph's environment.  If some other allomorph matches and we go on to
+	 * check another morpheme in get_prefix(), etc., then the environment strings
+	 * can get changed.  If, however, we ensure that the partial redup allomorph
+	 * first in the list, then we do not encounter this problem. */
+amset = get_partial_redup(key, etype, amset, pAmple_in);
 return(amset);
 } /* end get_entries() */
 

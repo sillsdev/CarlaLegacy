@@ -35,36 +35,6 @@ extern char *	strlwr P((char * pszString_io));
 #define FULLREDUP "<...>"
 #define FULLREDUPLEN 5
 
-/*****************************************************************************
- * NAME
- *    AmpleRedupClass (struct ample_redup_class)
- * DESCRIPTION
- *    structure for reduplication string classes used in reduplication
- *    allomorph string environment constraints
- */
-typedef struct ample_redup_class {
-	char *			pszIndexedName;	/* name of the class */
-	char *			pszMember;	/* current string from class */
-	struct ample_redup_class *	pNext;		/* pointer to next node */
-	} AmpleRedupClass;
-
-/*****************************************************************************
- * NAME
- *    ExpandedAllo
- * DESCRIPTION
- *    expansion of an allomorph string, as needed by reduplication
- */
-typedef struct {
-	char *			pszAllo;
-	AmpleRedupClass *		pRedupClasses;
-} ExpandedAllo;
-
-typedef struct redup_allo_piece {
-	char *			pszLiteral;
-	StringClass *		pClass;
-	struct redup_allo_piece *	pNext;
-} RedupAlloPiece;
-
 /********************* SETSD.C FUNCTION PROTOTYPES *********************/
 
 #ifdef AZTEC
@@ -85,17 +55,8 @@ static void	freealist	P((AmpleAllomorphList * pAlloList_io,
 static char *	fix_allomorph	P((char *      pszAllomorph_in,
 				   AmpleData * pAmple_in,
 				   int *       bIsCaps_out));
-static int	is_number	P((char * pszString_in));
+	   int	is_number	P((char * pszString_in));
 
-static AmpleAllomorphList * build_redup_allos P((
-					 char *               pszRecord_in,
-					 AmpleAllomorphList * pHead_io,
-					 int                  iDicType_in,
-					 AmpleMorpheme *      pMorph_io,
-					 int *                pbBad_io,
-					 RedupAlloPiece *     pAlloPieces_in,
-					 ExpandedAllo *       pPartialExpansion_in,
-					 AmpleData *          pAmple_in));
 static AmpleAllomorphList * build_allomorphs P((
 						char *               pszAllo_in,
 						char *               pszRecord_in,
@@ -103,7 +64,6 @@ static AmpleAllomorphList * build_allomorphs P((
 						int                  iDicType_in,
 						AmpleMorpheme *      pMorph_io,
 						int *                pbBad_io,
-						RedupAlloPiece *     pAlloPiece_in,
 						AmpleData *          pAmple_in));
 
 static void	afx_create	P((char *recp, int dtype,
@@ -661,37 +621,42 @@ const unsigned char *	pszLow;
 *bIsCaps_out = FALSE;
 if (pAmple_in->bDictionaryCapitals)
 	{
-	/*
-	 *  if first real letter capitalized, then set flag, and lower it
-	 */
-	for ( p = pszAllomorph_in ; *p != NUL ; p += iLength )
+	  if (strstr(pszAllomorph_in, "[") == NULL &&
+	  strstr(pszAllomorph_in, "^") == NULL &&
+	  strstr(pszAllomorph_in, "]") == NULL)
 	{
-	iLength = matchUppercaseChar((unsigned char *)p,
-					 &(pAmple_in->sTextCtl));
-	if (iLength != 0)
+	  /*
+	   *  if first real letter capitalized, then set flag, and lower it
+	   */
+	  for ( p = pszAllomorph_in ; *p != NUL ; p += iLength )
 		{
-		*bIsCaps_out = TRUE;
-		pszLow = convUpperToLower((unsigned char *)p,
-					  &(pAmple_in->sTextCtl));
-		iLowerLength = strlen((char *)pszLow);
-		uiSize = strlen(pszAllomorph_in) + 1 + iLowerLength - iLength;
-		pszLowered = allocMemory( uiSize );
-		uiOffset = p - pszAllomorph_in;
-		if (uiOffset != 0)
-		memcpy(pszLowered, pszAllomorph_in, uiOffset);
-		memcpy(pszLowered + uiOffset, pszLow, iLowerLength);
-		strcpy(pszLowered + uiOffset + iLowerLength, p + iLength);
-		pszFixed = applyChanges(pszLowered, pAmple_in->pDictOrthoChanges);
-		freeMemory(pszLowered);
-		return pszFixed;
+		  iLength = matchUppercaseChar((unsigned char *)p,
+					   &(pAmple_in->sTextCtl));
+		  if (iLength != 0)
+		{
+		  *bIsCaps_out = TRUE;
+		  pszLow = convUpperToLower((unsigned char *)p,
+						&(pAmple_in->sTextCtl));
+		  iLowerLength = strlen((char *)pszLow);
+		  uiSize = strlen(pszAllomorph_in) + 1 + iLowerLength - iLength;
+		  pszLowered = allocMemory( uiSize );
+		  uiOffset = p - pszAllomorph_in;
+		  if (uiOffset != 0)
+			memcpy(pszLowered, pszAllomorph_in, uiOffset);
+		  memcpy(pszLowered + uiOffset, pszLow, iLowerLength);
+		  strcpy(pszLowered + uiOffset + iLowerLength, p + iLength);
+		  pszFixed = applyChanges(pszLowered, pAmple_in->pDictOrthoChanges);
+		  freeMemory(pszLowered);
+		  return pszFixed;
 		}
-	if (matchLowercaseChar((unsigned char *)p, &(pAmple_in->sTextCtl)))
+		  if (matchLowercaseChar((unsigned char *)p, &(pAmple_in->sTextCtl)))
 		break;
 
-	iLength = matchCaselessChar((unsigned char *)p,
-					&(pAmple_in->sTextCtl));
-	if (iLength == 0)
+		  iLength = matchCaselessChar((unsigned char *)p,
+					  &(pAmple_in->sTextCtl));
+		  if (iLength == 0)
 		iLength = 1;
+		}
 	}
 	}
 return applyChanges(pszAllomorph_in, pAmple_in->pDictOrthoChanges);
@@ -705,7 +670,7 @@ return applyChanges(pszAllomorph_in, pAmple_in->pDictOrthoChanges);
  * RETURN VALUE
  *    TRUE if the string consists only of digit characters ('0'-'9')
  */
-static int is_number(pszString_in)
+int is_number(pszString_in)
 char *	pszString_in;
 {
 char *	p;
@@ -722,291 +687,140 @@ return TRUE;
 
 /*****************************************************************************
  * NAME
- *    build_redup_allos
+ *    build_redup_classes
  * DESCRIPTION
  *
  * RETURN VALUE
- *    pointer to list of allomorphs
+ *    pointer to list of redup classes
  */
-static AmpleAllomorphList * build_redup_allos(pszRecord_in, pHead_io,
-						  iDicType_in, pMorph_io, pbBad_io,
-						  pAlloPieces_in,
-						  pPartialExpansion_in,
-						  pAmple_in)
-char *			pszRecord_in;
-AmpleAllomorphList *	pHead_io;
-int			iDicType_in;
-AmpleMorpheme *		pMorph_io;
-int *			pbBad_io;
-RedupAlloPiece *	pAlloPieces_in;
-ExpandedAllo *		pPartialExpansion_in;
-AmpleData *		pAmple_in;
+static PartialRedupIndexedClass *
+	 build_redup_classes(char * pszAllo_in,
+			 int * pbBad_io,
+			 PartialRedupIndexedClass * pIndexedStringClasses_io,
+			 AmpleData * pAmple_in)
 {
-StringList *         sp;
-AmpleAllomorphList * alp;
-int                  bIsCaps = FALSE;
-unsigned             uiPrevEnd;
-AmpleRedupClass      sRedupClass;
-AmpleRedupClass *    pPrevRedupClasses;
-AmpleRedupClass *    pRC;
-char *		     pszAllo;
-char *		     pszCopy;
-char *		     pszEnd;
-char *		     rp;
-int		     bAlloc;
-char *		     pszEnv;
-char *		     p;
-AmpleFullReduplication * pRedupAllo;
-char *               pszFullRedup;
-int                  iTokenLen;
-char                 szTokenBuffer[BUFSIZE];
+char *			p;
+char *			q;
+char			cSave = NUL;
+PartialRedupIndexedClass * pIndexedStringClass;
 
-if ((pPartialExpansion_in == NULL) || (pPartialExpansion_in->pszAllo == NULL))
-	return NULL;
-if (pAlloPieces_in == NULL)
-	{
-	/*
-	 *  we've hit the end of allomorph pieces, put it all together
-	 */
-	if (    (strcmp(pPartialExpansion_in->pszAllo, "0") == 0) &&
-		(pPartialExpansion_in->pRedupClasses == NULL) )
-	{
-	bAlloc  = FALSE;
-	pszAllo = "";
-	}
-	else
-	{
-	bAlloc  = TRUE;
-	pszAllo = fix_allomorph(pPartialExpansion_in->pszAllo,
-				pAmple_in,
-				&bIsCaps);
-	validateAmpleString(pszAllo,
-				"allomorph",
-				getAmpleRecordIDTag(szRecordKey_g,
-						pAmple_in->uiRecordCount),
-				pszAllo,
-				pAmple_in->pszValidChars,
-				pAmple_in->pLogFP);
-	}
-#ifdef HAVE_ALLOCA
-	pszCopy = strcpy((char *)alloca(strlen(pszRecord_in)+1), pszRecord_in);
-#else
-	pszCopy = duplicateString(pszRecord_in);
-#endif
-	pszEnd  = pszCopy;
-	/*
-	 * make alist & allomorph structures
-	 */
-	alp = pHead_io = mkalist(pHead_io, iDicType_in, pMorph_io, pAmple_in);
-	pszFullRedup = strstr(pPartialExpansion_in->pszAllo, FULLREDUP);
-	if (pszFullRedup != NULL)
-	  {
-	pRedupAllo = (AmpleFullReduplication *)allocMemory(sizeof(AmpleFullReduplication));
-	pRedupAllo->pAllo = alp->pAllomorph;
-	pRedupAllo->iDicType = iDicType_in;
-	iTokenLen = pszFullRedup - pPartialExpansion_in->pszAllo;
-	if (iTokenLen > 0)
-	  {
-		memset(szTokenBuffer, 0, BUFSIZE);
-		strncpy(szTokenBuffer, pPartialExpansion_in->pszAllo, iTokenLen);
-		pRedupAllo->pszPrefix = duplicateString(szTokenBuffer);
-	  }
-	else
-		pRedupAllo->pszPrefix = NULL;
-	iTokenLen = strlen(pszFullRedup) - FULLREDUPLEN;
-	if (iTokenLen > 0)
-	  {
-		memset(szTokenBuffer, 0, BUFSIZE);
-		strcpy(szTokenBuffer, pszFullRedup + FULLREDUPLEN);
-		pRedupAllo->pszPostfix = duplicateString(szTokenBuffer);
-	  }
-	else
-		pRedupAllo->pszPostfix = NULL;
-	pRedupAllo->pNext = pAmple_in->pFullRedupAllos;
-	pAmple_in->pFullRedupAllos = pRedupAllo;
-	  }
-	if (bAlloc && bIsCaps)
-	alp->pAllomorph->iMORPHTYPE |= ISCAPS;
-	/*
-	 *  set allo string pointer
-	 */
-	alp->bMallocString = bAlloc;
-	alp->pszAllomorph  = pszAllo;
-	/*
-	 *  set the allomorph ID
-	 */
-	alp->pAllomorph->pszAllomorphID = NULL;
-	if (*pszEnd == '{')
-	{
-	rp     = pszEnd;
-	pszEnd = isolateWord(rp);
-	if (pAmple_in->bEnableAllomorphIDs)
-		alp->pAllomorph->pszAllomorphID = get_allomorph_id(rp);
-	}
-	/*
-	 *  set any allomorph properties
-	 */
-	alp->pAllomorph->sPropertySet.pProperties = NULL;
-	rp = parseAmplePropertySet(pszEnd,
-				   &(alp->pAllomorph->sPropertySet),
-				   AMPLE_ALLO_PROP,
-				   pAmple_in->uiRecordCount,
-				   szRecordKey_g,
-				   pAmple_in->pszAmpleDictErrorHeader,
-				   &pAmple_in->sProperties,
-				   &pAmple_in->pPropertySets,
-				   pAmple_in->pLogFP);
-	/*
-	 *  create any allomorph condition structures needed for this
-	 *  allomorph
-	 */
-	pszEnv = rp;
-	if (pPartialExpansion_in->pRedupClasses != NULL)
-	{
-	/*
-	 *  munge the environment to replace any occurrences of a reduplication
-	 *  (string) class -- this is faster than parsing them inside
-	 *  parseAmpleAlloEnvConstraint() -- by a factor of 9 or 10!
-	 */
-	AmpleRedupClass * pRC;
-	size_t uiSpare = 0;
-	size_t uiEnvSize = strlen(pszEnv) + 1;
-	size_t uiNeed;
-	size_t uiNewLen;
-	size_t uiOldLen;
-	size_t uiTailLen;
-	for (   pRC = pPartialExpansion_in->pRedupClasses ;
-		pRC ;
-		pRC = pRC->pNext )
-		{
-		uiOldLen = strlen(pRC->pszIndexedName);
-		uiNewLen = strlen(pRC->pszMember);
-		while ((p = strstr(pszEnv, pRC->pszIndexedName)) != NULL)
-		{
-		/*
-		 *  TODO: think about allowing spaces around brackets?
-		 *  (that is, after [ or before ])
-		 */
-		if ((p > pszEnv) && (p[-1] == '[') && (p[uiOldLen] == ']'))
-			{
-			uiTailLen = strlen(p + uiOldLen);
-			if (uiNewLen <= uiOldLen)
-			{
-			if (uiNewLen < uiOldLen)
-				{
-				memmove(p + uiNewLen - 1, p + uiOldLen + 1,
-					uiTailLen);
-				uiSpare += uiOldLen - uiNewLen;
-				}
-			}
-			else
-			{
-			/*
-			 *  need to allocate more memory to make room...
-			 */
-			uiNeed = uiNewLen - uiOldLen;
-			if (uiNeed > uiSpare)
-				{
-				char * pszNewEnv;
-				uiEnvSize += 10 * uiNeed;
-				if (pszEnv == rp)
-				{
-				pszNewEnv = allocMemory(uiEnvSize);
-				strcpy(pszNewEnv, pszEnv);
-				}
-				else
-				pszNewEnv = reallocMemory(pszEnv, uiEnvSize);
-				pszEnv = pszNewEnv;
-				}
-			memmove(p + uiNewLen - 1, p + uiOldLen + 1, uiTailLen);
-			}
-			memcpy(p - 1, pRC->pszMember, uiNewLen);
-			}
-		}
-		}
-	}
-	alp->pAllomorph->pEnvironment = parseAmpleAlloEnvConstraint(
-						  pszEnv,
-						  pbBad_io,
-						  pAmple_in->uiRecordCount,
-						  szRecordKey_g,
-						  pAmple_in->pDictOrthoChanges,
-						  pAmple_in->pCategories,
-						  &pAmple_in->sProperties,
-						  pAmple_in->pCategoryClasses,
-						  pAmple_in->pMorphClasses,
-						  pAmple_in->pStringClasses,
-											  /* 3.3.0 hab */
-						  pAmple_in->pPunctClasses,
-						  pAmple_in->pszValidChars,
-						  pAmple_in->pLogFP,
-						  &pAmple_in->pEnvStrings,
-						  NULL);
-	/*
-	 *  free temporarily allocated memory
-	 */
-#ifndef HAVE_ALLOCA
-	freeMemory(pszCopy);
-#endif
-	if (pszEnv != rp)
-	freeMemory(pszEnv);
-	return pHead_io;
-	}
-if (pAlloPieces_in->pClass == NULL)
-	{
-	/*
-	 *  handle literal characters in the allomorph string
-	 */
-	strcat(pPartialExpansion_in->pszAllo, pAlloPieces_in->pszLiteral);
-	return build_redup_allos(pszRecord_in,
-				 pHead_io,
-				 iDicType_in,
-				 pMorph_io,
-				 pbBad_io,
-				 pAlloPieces_in->pNext,
-				 pPartialExpansion_in,
-				 pAmple_in);
-	}
 /*
- *  handle repeated indexed classes in the allomorph string
+ *  check for a string class in the allomorph string
  */
-for ( pRC = pPartialExpansion_in->pRedupClasses ; pRC ; pRC = pRC->pNext )
+if (	(*pszAllo_in == '[') &&
+	((p = strchr(pszAllo_in, ']')) != NULL) &&
+	(matchAlphaChar((unsigned char *)pszAllo_in,
+			&pAmple_in->sTextCtl) == 0) &&
+	(matchAlphaChar((unsigned char *)"]", &pAmple_in->sTextCtl) == 0))
 	{
-	if (strcmp(pRC->pszIndexedName, pAlloPieces_in->pszLiteral) == 0)
+	pIndexedStringClass = (PartialRedupIndexedClass *)allocMemory(
+				sizeof(PartialRedupIndexedClass));
+	cSave = *p;
+	*p    = NUL;		/* remove ']' to limit class marker string */
+	q = strrchr(pszAllo_in+1, '^');
+	if ((q == NULL) || !is_number(q+1))
 	{
-	strcat(pPartialExpansion_in->pszAllo, pRC->pszMember);
-	return build_redup_allos(pszRecord_in,
-				 pHead_io,
-				 iDicType_in,
-				 pMorph_io,
-				 pbBad_io,
-				 pAlloPieces_in->pNext,
-				 pPartialExpansion_in,
-				 pAmple_in);
+	if (pAmple_in->pLogFP != NULL)
+		fprintf(pAmple_in->pLogFP, szNoRedupClassIndex_m,
+			pAmple_in->pszAmpleDictErrorHeader, pszAllo_in+1,
+			getAmpleRecordIDTag(szRecordKey_g,
+					pAmple_in->uiRecordCount));
+	return pIndexedStringClasses_io;
 	}
+	*q = NUL;			/* strip off index to look up class */
+	pIndexedStringClass->pStringClass = findStringClass(pszAllo_in+1,
+						pAmple_in->pStringClasses);
+	pIndexedStringClass->iIndex = atoi(q+1);
+	/* maintain the list in the actual order they occur */
+	pIndexedStringClass->pNext = NULL;
+	if (pIndexedStringClasses_io == NULL)
+	  pIndexedStringClasses_io = pIndexedStringClass;
+	else
+	  {
+	PartialRedupIndexedClass * pIndexedClass;
+	for (pIndexedClass = pIndexedStringClasses_io;
+		 pIndexedClass != NULL;
+		 pIndexedClass = pIndexedClass->pNext)
+	  {
+		if (pIndexedClass->pNext == NULL)
+		  {
+		  pIndexedClass->pNext = pIndexedStringClass;
+		  break;
+		  }
+	  }
+	  }
+
+	*q = '^';			/* restore index */
+	*p = cSave;			/* restore ']' */
+	if (pIndexedStringClass->pStringClass == NULL)
+	{
+	/* print error message */
+	*p = NUL;
+	if (pAmple_in->pLogFP != NULL)
+		fprintf(pAmple_in->pLogFP, szBadRedupClass_m,
+			pAmple_in->pszAmpleDictErrorHeader, pszAllo_in+1,
+			getAmpleRecordIDTag(szRecordKey_g,
+					pAmple_in->uiRecordCount));
+	*p = cSave;
+	return pIndexedStringClasses_io;
 	}
-/*
- *  handle an indexed string class in the allomorph string
+	else
+	return build_redup_classes(p+1,
+				   pbBad_io,
+				   pIndexedStringClasses_io,
+				   pAmple_in);
+	}
+return pIndexedStringClasses_io;
+}
+/*****************************************************************************
+ * NAME
+ *    freeIndexedStringClasses
+ * DESCRIPTION
+ *    free the memory allocated for a PartialRedupIndexedClass
+ * RETURN VALUE
+ *    none
  */
-pPrevRedupClasses = pPartialExpansion_in->pRedupClasses;
-uiPrevEnd = strlen(pPartialExpansion_in->pszAllo);
-for ( sp = pAlloPieces_in->pClass->pMembers ; sp ; sp = sp->pNext )
-	{
-	strcpy(pPartialExpansion_in->pszAllo + uiPrevEnd, sp->pszString);
-	sRedupClass.pszIndexedName = pAlloPieces_in->pszLiteral;
-	sRedupClass.pszMember      = sp->pszString;
-	sRedupClass.pNext          = pPrevRedupClasses;
-	pPartialExpansion_in->pRedupClasses = &sRedupClass;
-	pHead_io = build_redup_allos(pszRecord_in,
-				 pHead_io,
-				 iDicType_in,
-				 pMorph_io,
-				 pbBad_io,
-				 pAlloPieces_in->pNext,
-				 pPartialExpansion_in,
-				 pAmple_in);
-	}
-return pHead_io;
+void freeIndexedStringClasses(PartialRedupIndexedClass * pPartialRedupClasses_in)
+{
+PartialRedupIndexedClass * pRedup;
+PartialRedupIndexedClass * pRedupNext;
+if (pPartialRedupClasses_in == NULL)
+	return;
+ for (pRedup = pPartialRedupClasses_in;
+	  pRedup != NULL;
+	  pRedup = pRedupNext)
+   {
+	 freeMemory( pRedup->pszMember );
+	 pRedupNext = pRedup->pNext;
+	 freeMemory(pRedup);
+   }
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    freePartialRedupAllos
+ * DESCRIPTION
+ *    free the memory allocated for a partial reduplication allomorph
+ * RETURN VALUE
+ *    none
+ */
+void freePartialRedupAllos(PartialReduplication * pPartialRedupAllos_in)
+{
+PartialReduplication * pRedup;
+PartialReduplication * pRedupNext;
+if (pPartialRedupAllos_in == NULL)
+	return;
+ for (pRedup = pPartialRedupAllos_in;
+	  pRedup != NULL;
+	  pRedup = pRedupNext)
+   {
+	freeMemory( pRedup->pszPrefix );
+	freeMemory( pRedup->pszPostfix );
+	freeIndexedStringClasses(pRedup->pIndexedStringClasses);
+	pRedupNext = pRedup->pNext;
+	freeMemory(pRedup);
+   }
 }
 
 /*****************************************************************************
@@ -1024,215 +838,196 @@ return pHead_io;
  */
 static AmpleAllomorphList * build_allomorphs(pszAllo_in, pszRecord_in,
 						 pHead_io, iDicType_in, pMorph_io,
-						 pbBad_io, pAlloPiece_in,
-						 pAmple_in)
+						 pbBad_io, pAmple_in)
 char *			pszAllo_in;
 char *			pszRecord_in;
 AmpleAllomorphList *	pHead_io;
 int			iDicType_in;
 AmpleMorpheme *		pMorph_io;
 int *			pbBad_io;
-RedupAlloPiece *	pAlloPiece_in;
 AmpleData *		pAmple_in;
 {
-AmpleAllomorphList *	pExpansions;
-RedupAlloPiece		sAlloPiece;
-RedupAlloPiece *	pPiece;
-RedupAlloPiece *	pNextPiece;
-RedupAlloPiece *	pPrevPiece;
-RedupAlloPiece *	pAlloPieces;
-char *			p;
-char *			q;
 char			cSave = NUL;
-ExpandedAllo		sExpandedAllo;
-unsigned		k;
-unsigned		uiSegSize;
-unsigned		uiAlloSize;
-StringList *		sp;
-unsigned		uiTotalAllos;
-
+AmpleAllomorphList * alp;
+char * pszFullRedup;
+char * pszPartialRedup;
+char                 szTokenBuffer[BUFSIZE];
+int iTokenLen;
+int                  bIsCaps = FALSE;
+int		     bAlloc;
+char *		     pszAllo;
+char *		     pszCopy;
+char *		     pszEnd;
+char *		     rp;
+char *		     pszEnv;
+PartialReduplication *pPartialRedupAllo;
 if (pszAllo_in == NULL)
-	return pHead_io;
-/*
- *  check for the end of the allomorph string proper
- */
-if (*pszAllo_in == NUL)
-	{
-	if (pAlloPiece_in == NULL)
-	return pHead_io;
-	/*
-	 *  reverse the links in the list of allomorph pieces to put them in proper
-	 *  order
-	 */
-	pPrevPiece = NULL;
-	for ( pPiece = pAlloPiece_in ; pPiece ; pPiece = pNextPiece )
-	{
-	pNextPiece = pPiece->pNext;
-	pPiece->pNext = pPrevPiece;
-	pPrevPiece = pPiece;
-	}
-	pAlloPieces = pPrevPiece;
-	/*
-	 *  put the pieces together all possible ways to form the list of
-	 *  allomorph strings
-	 *
-	 *  first, get the maximum length of an allomorph string and allocate
-	 *  space for the working copy
-	 */
-	uiAlloSize = 0;
-	uiTotalAllos = 1;
-	for ( pPiece = pAlloPieces ; pPiece ; pPiece = pPiece->pNext )
-	{
-	if (pPiece->pClass != NULL)
-		{
-		unsigned uiClassSize = getStringListSize(pPiece->pClass->pMembers);
-		if (uiClassSize)
-		uiTotalAllos *= uiClassSize;
-		uiSegSize = 0;
-		for ( sp = pPiece->pClass->pMembers ; sp ; sp = sp->pNext )
-		{
-		k = sp->pszString ? strlen(sp->pszString) : 0;
-		if (k > uiSegSize)
-			uiSegSize = k;
-		}
-		}
-	else
-		uiSegSize = strlen(pPiece->pszLiteral);
-	uiAlloSize += uiSegSize;
-	}
+  return pHead_io;
+if (strcmp(pszAllo_in, "0") == 0)
+  {
+	bAlloc  = FALSE;
+	pszAllo = "";
+  }
+ else
+   {
+	 bAlloc  = TRUE;
+	 pszAllo = fix_allomorph(pszAllo_in,
+				 pAmple_in,
+				 &bIsCaps);
+	 validateAmpleString(pszAllo,
+			 "allomorph",
+			 getAmpleRecordIDTag(szRecordKey_g,
+						 pAmple_in->uiRecordCount),
+			 pszAllo,
+			 pAmple_in->pszValidChars,
+			 pAmple_in->pLogFP);
+   }
 #ifdef HAVE_ALLOCA
-	sExpandedAllo.pszAllo       = (char *)alloca(uiAlloSize+1);
+pszCopy = strcpy((char *)alloca(strlen(pszRecord_in)+1), pszRecord_in);
 #else
-	sExpandedAllo.pszAllo       = (char *)allocMemory(uiAlloSize+1);
+pszCopy = duplicateString(pszRecord_in);
 #endif
-	sExpandedAllo.pRedupClasses = NULL;
-	memset(sExpandedAllo.pszAllo, 0, uiAlloSize+1);
+pszEnd  = pszCopy;
 
-	if (uiTotalAllos > 1)
-	{
-	reportMessage(!pAmple_in->bQuiet,
-		  "Generating %u redup allomorphs (max length = %u)",
-			  uiTotalAllos, uiAlloSize);
-	if (pAmple_in->pLogFP)
-		fprintf(pAmple_in->pLogFP,
-			"NOTE: \"%s\" produces %u allomorph entries\n",
-			pszRecord_in, uiTotalAllos);
-	}
-	pExpansions = build_redup_allos(pszRecord_in,
-					pHead_io,
-					iDicType_in,
-					pMorph_io,
-					pbBad_io,
-					pAlloPieces,
-					&sExpandedAllo,
-					pAmple_in);
-	if (uiTotalAllos > 1)
-	reportMessage(!pAmple_in->bQuiet, "\n");
 	/*
-	 *  free any temporarily allocated heap memory
+	 * make alist & allomorph structures
 	 */
+alp = pHead_io = mkalist(pHead_io, iDicType_in, pMorph_io, pAmple_in);
+pszFullRedup = strstr(pszAllo_in, FULLREDUP);
+if (pszFullRedup != NULL)
+{
+  FullReduplication *pFullRedupAllo = (FullReduplication *)allocMemory(sizeof(FullReduplication));
+  pFullRedupAllo->pAllo = alp->pAllomorph;
+  pFullRedupAllo->iDicType = iDicType_in;
+  iTokenLen = pszFullRedup - pszAllo_in;
+  if (iTokenLen > 0)
+	{
+	  memset(szTokenBuffer, 0, BUFSIZE);
+	  strncpy(szTokenBuffer, pszAllo_in, iTokenLen);
+	  pFullRedupAllo->pszPrefix = duplicateString(szTokenBuffer);
+	}
+  else
+	pFullRedupAllo->pszPrefix = NULL;
+  iTokenLen = strlen(pszFullRedup) - FULLREDUPLEN;
+  if (iTokenLen > 0)
+	{
+	  memset(szTokenBuffer, 0, BUFSIZE);
+	  strcpy(szTokenBuffer, pszFullRedup + FULLREDUPLEN);
+	  pFullRedupAllo->pszPostfix = duplicateString(szTokenBuffer);
+	}
+  else
+	pFullRedupAllo->pszPostfix = NULL;
+  pFullRedupAllo->pNext = pAmple_in->pFullRedupAllos;
+  pAmple_in->pFullRedupAllos = pFullRedupAllo;
+}
+pszPartialRedup = strstr(pszAllo_in, "[");
+if (pszPartialRedup != NULL)
+  {
+	char * pszPartialPostfix;
+	pPartialRedupAllo = (PartialReduplication *)allocMemory(sizeof(PartialReduplication));
+	pPartialRedupAllo->pIndexedStringClasses = build_redup_classes(pszPartialRedup,
+								   pbBad_io, NULL, pAmple_in);
+	pPartialRedupAllo->pAllo = alp->pAllomorph;
+	pPartialRedupAllo->iDicType = iDicType_in;
+	iTokenLen = pszPartialRedup - pszAllo_in;
+	if (iTokenLen > 0)
+	  {
+	memset(szTokenBuffer, 0, BUFSIZE);
+	strncpy(szTokenBuffer, pszAllo_in, iTokenLen);
+	pPartialRedupAllo->pszPrefix = duplicateString(szTokenBuffer);
+	  }
+	else
+	  pPartialRedupAllo->pszPrefix = NULL;
+	pszPartialPostfix = strrchr(pszAllo_in, ']');
+	if (pszPartialPostfix != NULL)
+	  {
+	pszPartialPostfix++;
+	iTokenLen = pszAllo_in + strlen(pszAllo_in) - pszPartialPostfix;
+	if (iTokenLen > 0)
+	  {
+		memset(szTokenBuffer, 0, BUFSIZE);
+		strcpy(szTokenBuffer, pszPartialPostfix);
+		pPartialRedupAllo->pszPostfix = duplicateString(szTokenBuffer);
+	  }
+	else
+	  pPartialRedupAllo->pszPostfix = NULL;
+	  }
+	pPartialRedupAllo->pNext = pAmple_in->pPartialRedupAllos;
+	pAmple_in->pPartialRedupAllos = pPartialRedupAllo;
+  }
+
+if (bAlloc && bIsCaps)
+  alp->pAllomorph->iMORPHTYPE |= ISCAPS;
+	 /*
+	  *  set allo string pointer
+	  */
+alp->bMallocString = bAlloc;
+alp->pszAllomorph  = pszAllo;
+	 /*
+	  *  set the allomorph ID
+	  */
+	 alp->pAllomorph->pszAllomorphID = NULL;
+if (*pszEnd == '{')
+  {
+	rp     = pszEnd;
+	pszEnd = isolateWord(rp);
+	if (pAmple_in->bEnableAllomorphIDs)
+	  alp->pAllomorph->pszAllomorphID = get_allomorph_id(rp);
+  }
+/*
+ *  set any allomorph properties
+ */
+alp->pAllomorph->sPropertySet.pProperties = NULL;
+rp = parseAmplePropertySet(pszEnd,
+			   &(alp->pAllomorph->sPropertySet),
+			   AMPLE_ALLO_PROP,
+			   pAmple_in->uiRecordCount,
+			   szRecordKey_g,
+			   pAmple_in->pszAmpleDictErrorHeader,
+			   &pAmple_in->sProperties,
+			   &pAmple_in->pPropertySets,
+			   pAmple_in->pLogFP);
+/*
+ *  create any allomorph condition structures needed for this
+ *  allomorph
+ */
+pszEnv = rp;
+alp->pAllomorph->pEnvironment = parseAmpleAlloEnvConstraint(
+						pszEnv,
+						pbBad_io,
+						pAmple_in->uiRecordCount,
+						szRecordKey_g,
+						pAmple_in->pDictOrthoChanges,
+						pAmple_in->pCategories,
+						&pAmple_in->sProperties,
+						pAmple_in->pCategoryClasses,
+						pAmple_in->pMorphClasses,
+						pAmple_in->pStringClasses,
+						/* 3.3.0 hab */
+						pAmple_in->pPunctClasses,
+						pAmple_in->pszValidChars,
+						pAmple_in->pLogFP,
+						&pAmple_in->pEnvStrings,
+						NULL);
+ if (*pbBad_io)
+   {
+	 if (pszPartialRedup != NULL)
+	   {
+	 /* delink it from list - it is not valid */
+	 pAmple_in->pPartialRedupAllos = pPartialRedupAllo->pNext;
+	 freePartialRedupAllos(pPartialRedupAllo);
+	   }
+	 // need to do same for full redup
+   }
+/*
+ *  free temporarily allocated memory
+ */
 #ifndef HAVE_ALLOCA
-	for ( pPiece = pAlloPieces ; pPiece ; pPiece = pPiece->pNext )
-	{
-	if (pPiece->pszLiteral != NULL)
-		freeMemory(pPiece->pszLiteral);
-	}
-	freeMemory(sExpandedAllo.pszAllo);
+freeMemory(pszCopy);
 #endif
-	return pExpansions;
-	}
-/*
- *  check for a string class in the allomorph string
- */
-if (	(*pszAllo_in == '[') &&
-	((p = strchr(pszAllo_in, ']')) != NULL) &&
-	(matchAlphaChar((unsigned char *)pszAllo_in,
-			&pAmple_in->sTextCtl) == 0) &&
-	(matchAlphaChar((unsigned char *)"]", &pAmple_in->sTextCtl) == 0))
-	{
-	cSave = *p;
-	*p    = NUL;		/* remove ']' to limit class marker string */
-#ifdef HAVE_ALLOCA
-	sAlloPiece.pszLiteral = strcpy((char *)alloca(strlen(pszAllo_in)),
-				   pszAllo_in+1);
-#else
-	sAlloPiece.pszLiteral = duplicateString(pszAllo_in+1);
-#endif
-	q = strrchr(pszAllo_in+1, '^');
-	if ((q == NULL) || !is_number(q+1))
-	{
-	if (pAmple_in->pLogFP != NULL)
-		fprintf(pAmple_in->pLogFP, szNoRedupClassIndex_m,
-			pAmple_in->pszAmpleDictErrorHeader, pszAllo_in+1,
-			getAmpleRecordIDTag(szRecordKey_g,
-					pAmple_in->uiRecordCount));
-	return pHead_io;
-	}
-	*q = NUL;			/* strip off index to look up class */
-	sAlloPiece.pClass     = findStringClass(pszAllo_in+1,
-						pAmple_in->pStringClasses);
-	sAlloPiece.pNext      = pAlloPiece_in;
-	*q = '^';			/* restore index */
-	*p = cSave;			/* restore ']' */
-	if (sAlloPiece.pClass == NULL)
-	{
-	/* print error message */
-	*p = NUL;
-	if (pAmple_in->pLogFP != NULL)
-		fprintf(pAmple_in->pLogFP, szBadRedupClass_m,
-			pAmple_in->pszAmpleDictErrorHeader, pszAllo_in+1,
-			getAmpleRecordIDTag(szRecordKey_g,
-					pAmple_in->uiRecordCount));
-	*p = cSave;
-	return pHead_io;
-	}
-	else
-	return build_allomorphs(p+1,
-				pszRecord_in,
-				pHead_io,
-				iDicType_in,
-				pMorph_io,
-				pbBad_io,
-				&sAlloPiece,
-				pAmple_in);
-	}
-/*
- *  handle a string of literal characters in the allomorph string
- */
-p = strchr(pszAllo_in, '[');
-if (p != NULL)
-	{
-	if (    (strchr(p, ']') != NULL) &&
-		(matchAlphaChar((unsigned char *)p, &pAmple_in->sTextCtl) == 0) &&
-		(matchAlphaChar((unsigned char *)"]", &pAmple_in->sTextCtl) == 0) )
-	{
-	cSave = *p;
-	*p    = NUL;
-	}
-	else
-	p = NULL;
-	}
-#ifdef HAVE_ALLOCA
-sAlloPiece.pszLiteral = strcpy((char *)alloca(strlen(pszAllo_in)+1),
-				   pszAllo_in);
-#else
-sAlloPiece.pszLiteral = duplicateString(pszAllo_in);
-#endif
-sAlloPiece.pClass     = NULL;
-sAlloPiece.pNext      = pAlloPiece_in;
-if (p != NULL)
-  *p = cSave; /* if is literal followed by a class */
-  //    *p++ = cSave;
-else
-	p = pszAllo_in + strlen(pszAllo_in);
-return build_allomorphs(p,
-			pszRecord_in,
-			pHead_io,
-			iDicType_in,
-			pMorph_io,
-			pbBad_io,
-			&sAlloPiece,
-			pAmple_in);
+if (pszEnv != rp)
+  freeMemory(pszEnv);
+ return pHead_io;
 }
 
 /*****************************************************************************
@@ -1388,7 +1183,6 @@ while (*rp != NUL)
 					dtype,
 					mde,
 					&bBadAllomorph,
-					NULL,
 					pAmple_in);
 		for ( alp = head ; alp && (alp != pPrevAllos) ; alp = alp->pNext )
 		{
@@ -2064,7 +1858,6 @@ while (*rp != NUL)
 					dtype,
 					mde,
 					&bBadAllomorph,
-					NULL,
 					pAmple_in);
 		for ( alp = head ; alp && (alp != pPrevAllos) ; alp = alp->pNext )
 		{
@@ -2382,7 +2175,6 @@ while (*rp != NUL)
 					AMPLE_ROOT,
 					mde,
 					&bBadAllomorph,
-					NULL,
 					pAmple_in);
 		for ( alp = head ; alp && (alp != pPrevAllos) ; alp = alp->pNext )
 		{
@@ -4350,6 +4142,31 @@ freeMemory(pMorph_in);
 
 /*****************************************************************************
  * NAME
+ *    freeFullRedupAllos
+ * DESCRIPTION
+ *    free the memory allocated for a full reduplication allomorph
+ * RETURN VALUE
+ *    none
+ */
+void freeFullRedupAllos(FullReduplication * pFullRedupAllos_in)
+{
+FullReduplication * pRedup;
+FullReduplication * pRedupNext;
+if (pFullRedupAllos_in == NULL)
+	return;
+ for (pRedup = pFullRedupAllos_in;
+	  pRedup != NULL;
+	  pRedup = pRedupNext)
+   {
+	freeMemory( pRedup->pszPrefix );
+	freeMemory( pRedup->pszPostfix );
+	pRedupNext = pRedup->pNext;
+	freeMemory(pRedup);
+   }
+}
+
+/*****************************************************************************
+ * NAME
  *    freeAmpleDictionary
  * DESCRIPTION
  *    free everything used to store the AMPLE dictionary
@@ -4403,6 +4220,16 @@ if (pAmple_io->pEnvStrings != NULL)
 	freeStringList(pAmple_io->pEnvStrings);
 	pAmple_io->pEnvStrings = NULL;
 	}
+if (pAmple_io->pFullRedupAllos != NULL)
+   {
+	 freeFullRedupAllos(pAmple_io->pFullRedupAllos);
+	 pAmple_io->pFullRedupAllos = NULL;
+   }
+if (pAmple_io->pPartialRedupAllos != NULL)
+   {
+	 freePartialRedupAllos(pAmple_io->pPartialRedupAllos);
+	 pAmple_io->pPartialRedupAllos = NULL;
+   }
 }
 
 /*****************************************************************************

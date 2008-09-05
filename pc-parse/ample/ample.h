@@ -223,9 +223,13 @@ struct ample_data {
 	 */
 	int			   iAllomorphCount;
 	/*
+	 * list of partial reduplication allomorphs
+	 */
+	PartialReduplication * pPartialRedupAllos;
+	/*
 	 * list of full reduplication allomorphs
 	 */
-	AmpleFullReduplication * pFullRedupAllos;
+	FullReduplication * pFullRedupAllos;
 	/*
 	 *  pointer to head of strlist containing root morphname exceptions;
 	 *  needed only for checking morphname references  (hab 3.2.5)
