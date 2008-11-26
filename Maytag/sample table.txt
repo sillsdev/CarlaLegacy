@@ -1,8 +1,0 @@
-		skip	This change file will convert to from sil-speak to deputation-speak
-		skip   This file is broken into columns with tabs.
-		skip   To view it, use a text editor that will let you set the tab stops far apart
-
-PNG	Papua New Guinea
-<SIL	Wycliffe/Summer Institute of Linguistics	check partial wild (match any "sil" that starts a word)
-tsd	the Technical Studies Department
-Suzie	Suzanne	partial

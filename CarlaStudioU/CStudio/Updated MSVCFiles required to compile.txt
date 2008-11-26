@@ -1,5 +1,0 @@
-Need to put the contents of VC98Include.zip in C:\Program Files\Microsoft Visual Studio\VC98\Include.
-
-CSU will then compile.
-
-2005.06.15

@@ -1,5 +1,0 @@
-c MasterToXml.cct
-
-'&amp;'	> '&'
-'&lt;'	> '<'
-'&gt;'	> '>'

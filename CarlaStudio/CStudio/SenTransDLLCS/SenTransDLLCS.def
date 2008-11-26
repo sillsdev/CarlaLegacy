@@ -1,8 +1,0 @@
-; SenTransDLLCS.def : Declares the module parameters for the DLL.
-
-LIBRARY      "SenTransDLLCS"
-DESCRIPTION  'SenTransDLLCS Windows Dynamic Link Library'
-
-EXPORTS
-	GetProcessorDisplayName   @1
-	?GetProcessTemplate@@YAPAVCProcessTemplate@@XZ  @2

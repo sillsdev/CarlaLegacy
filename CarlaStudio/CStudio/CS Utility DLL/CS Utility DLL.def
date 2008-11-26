@@ -1,7 +1,0 @@
-; CS Utility DLL.def : Declares the module parameters for the DLL.
-
-LIBRARY      "CS Utility DLL"
-DESCRIPTION  'CS Utility DLL Windows Dynamic Link Library'
-
-EXPORTS
-	; Explicit exports can go here

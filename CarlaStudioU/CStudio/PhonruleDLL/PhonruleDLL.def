@@ -1,8 +1,0 @@
-; PhonruleDLL.def : Declares the module parameters for the DLL.
-
-; let it come from the dsp /out: stmt (unicode) LIBRARY      "PhonruleCS"
-DESCRIPTION  'Phonrule DLL for use with Carla Studio'
-
-EXPORTS
-	GetProcessorDisplayName   @1
-	?GetProcessTemplate@@YAPAVCProcessTemplate@@XZ  @2

@@ -1,8 +1,0 @@
-; PCPATRDllCS.def : Declares the module parameters for the DLL.
-
-; let the /out specify the name (for unicode) LIBRARY      "PCPATRDllCS"
-DESCRIPTION  'PCPATRDllCS Windows Dynamic Link Library'
-
-EXPORTS
-	GetProcessorDisplayName   @1
-	?GetProcessTemplateU@@YAPAVCProcessTemplateU@@XZ  @2
