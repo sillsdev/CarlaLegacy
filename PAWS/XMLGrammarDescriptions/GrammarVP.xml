@@ -27073,6 +27073,7 @@ VP = V DP_1 DP_2
 		{&lt;DP_1 head type reflexive&gt; = -
 		/&lt;DP_1 head type reflexive&gt; = +
 	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
 		{&lt;DP_2 head type reflexive&gt; = -
 		/&lt;DP_2 head type reflexive&gt; = +
 	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
@@ -27205,6 +27206,7 @@ VP = V DP_1 DP_2
 		{&lt;DP_1 head type reflexive&gt; = -
 		/&lt;DP_1 head type reflexive&gt; = +
 	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
 		{&lt;DP_2 head type reflexive&gt; = -
 		/&lt;DP_2 head type reflexive&gt; = +
 	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
@@ -27341,6 +27343,7 @@ VP = V DP_1 DP_2
 		{&lt;DP_1 head type reflexive&gt; = -
 		/&lt;DP_1 head type reflexive&gt; = +
 	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
 		{&lt;DP_2 head type reflexive&gt; = -
 		/&lt;DP_2 head type reflexive&gt; = +
 	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
@@ -27473,6 +27476,7 @@ VP = V DP_1 DP_2
 		{&lt;DP_1 head type reflexive&gt; = -
 		/&lt;DP_1 head type reflexive&gt; = +
 	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
 		{&lt;DP_2 head type reflexive&gt; = -
 		/&lt;DP_2 head type reflexive&gt; = +
 	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
