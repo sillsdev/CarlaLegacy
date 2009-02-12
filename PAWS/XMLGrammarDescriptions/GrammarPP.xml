@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
+<rule>
+rule {PP option conj - conjoined PPs}
+PP = (InitConj) PP_1 Conj PP_2
+	&lt;PP head&gt; = &lt;PP_1 head&gt;
+	&lt;PP conjoined&gt; = +
+	&lt;PP_1 conjoined&gt; = -	|limit recursion
+	&lt;PP option&gt; = conj
+</rule>
 	<rule>
 rule {PP option 0 - no modifiers}
 PP = P'
@@ -2340,6 +2348,8 @@ P' = P AdvP
 	&lt;AdvP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type suffix poss&gt; &lt;= &lt;AdvP head type suffix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
 	&lt;P' option&gt; = 2a
 </rule>
 	<showWhen id="PBaroption2a">
@@ -2363,6 +2373,8 @@ P' = AdvP P
 	&lt;AdvP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type prefix poss&gt; &lt;= &lt;AdvP head type prefix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
 	&lt;P' option&gt; = 2b
 </rule>
 	<showWhen id="PBaroption2b">
@@ -2377,6 +2389,48 @@ P' = AdvP P
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
 		<whenValue element="pp" attr="locative" value="yes"/>
+	</showWhen>
+	<rule show="PBaroption2c">
+rule {PBar option 2c - prepositions, temporal AdvP complement}
+P' = P AdvP
+	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P head type PP-initial&gt; = +
+	&lt;AdvP head type temporal&gt; = +
+	&lt;P' head type stranded&gt; = -		| not missing a complement
+	&lt;P' head type suffix poss&gt; &lt;= &lt;AdvP head type suffix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
+	&lt;P' option&gt; = 2c
+</rule>
+	<showWhen id="PBaroption2c">
+		<whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+		<or/>
+		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+	</showWhen>
+	<rule show="PBaroption2d">
+rule {PBar option 2d - postpositions, temporal AdvP complement}
+P' = AdvP P
+	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P head type PP-final&gt; = +
+	&lt;AdvP head type temporal&gt; = +
+	&lt;P' head type stranded&gt; = -		| not missing a complement
+	&lt;P' head type prefix poss&gt; &lt;= &lt;AdvP head type prefix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
+	&lt;P' option&gt; = 2d
+</rule>
+	<showWhen id="PBaroption2d">
+		<whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+		<or/>
+		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
 	</showWhen>
 	<rule show="PBaroption3a">
 rule {PBar option 3a - prepositions, locative PP complement}
@@ -2478,6 +2532,54 @@ P' = IP P
 		<and/>
 		<whenValue element="pp" attr="sentComp" value="yes"/>
 	</showWhen>
+	<rule show="PBaroption4apart">
+rule {PBar option 4apart - prepositions, Participle complement}
+P' = P VP
+	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P head type PP-initial&gt; = +
+	&lt;VP head type participle&gt; = +
+	&lt;P' head type stranded&gt; = -		| not missing a complement
+	&lt;P' head type sentential&gt; = +
+	&lt;P head type temporal&gt; = +           | assuming only temporals take VPs
+	&lt;P' option&gt; = 4apart
+</rule>
+	<showWhen id="PBaroption4apart">
+		<whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+		<and/>
+		<whenValue element="pp" attr="sentComp" value="yes"/>
+		<or/>
+		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+		<and/>
+		<whenValue element="pp" attr="sentComp" value="yes"/>
+	</showWhen>
+	<rule show="PBaroption4bpart">
+rule {PBar option 4bpart - postpositions, Participle complement}
+P' = VP P
+	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P head type PP-final&gt; = +
+	&lt;VP head type participle&gt; = +
+	&lt;P' head type stranded&gt; = -		| not missing a complement
+	&lt;P' head type sentential&gt; = +
+	&lt;P head type temporal&gt; = +           | assuming only temporals take IPs
+	&lt;P' option&gt; = 4bpart
+</rule>
+	<showWhen id="PBaroption4bpart">
+		<whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+		<and/>
+		<whenValue element="pp" attr="sentComp" value="yes"/>
+		<or/>
+		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+		<and/>
+		<whenValue element="pp" attr="sentComp" value="yes"/>
+	</showWhen>
 	<rule show="PBaroption5">
 rule {PBar option 5 - prepositions or postpositions with no complement}
 P' = P
@@ -2562,6 +2664,44 @@ P' = IP
 	&lt;P' option&gt; = 6b
 </rule>
 	<showWhen id="PBaroption6b">
+		<whenValue element="pp" attr="pPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
+		<and/>
+		<whenValue element="pp" attr="attaches" value="edge"/>
+		<and/>
+		<whenValue element="pp" attr="IPComp" value="yes"/>
+	</showWhen>
+	<rule show="PBaroption7a">
+rule {PBar option 7a - P_prefix, Participle complement}
+P' = VP
+		&lt;P' head&gt; = &lt;VP head&gt;
+	&lt;VP head type prefix P&gt; = +
+	&lt;VP head type participle&gt; = +
+	&lt;P' head type stranded&gt; = -
+	&lt;P' head type sentential&gt; = +
+	&lt;P' option&gt; = 7a
+</rule>
+	<showWhen id="PBaroption7a">
+		<whenValue element="pp" attr="pPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
+		<and/>
+		<whenValue element="pp" attr="attaches" value="edge"/>
+		<and/>
+		<whenValue element="pp" attr="IPComp" value="yes"/>
+	</showWhen>
+	<rule show="PBaroption7b">
+rule {PBar option 7b - P_suffix, VP complement}
+P' = VP
+		&lt;P' head&gt; = &lt;VP head&gt;
+	&lt;VP head type prefix P&gt; = +
+	&lt;VP head type participle&gt; = +
+	&lt;P' head type stranded&gt; = -
+	&lt;P' head type sentential&gt; = +
+	&lt;P' option&gt; = 7b
+</rule>
+	<showWhen id="PBaroption7b">
 		<whenValue element="pp" attr="pPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
