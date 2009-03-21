@@ -1582,7 +1582,12 @@ if ( pEnvItem_in->iFlags & E_CLASS )
 	  {			/* not there; use class name with index */
 		strcat(szRedupClass, pIndexedClass->pStringClass->pszName);
 		strcat(szRedupClass, "^");
+#ifdef WIN32
 		strcat(szRedupClass, _itoa(pIndexedClass->iIndex, szRedupIndex, 10));
+#else
+		sprintf(szRedupIndex, "%d", pIndexedClass->iIndex);
+		strcat(szRedupClass, szRedupIndex);
+#endif
 		pszName = szRedupClass;
 	  }
 	  }
@@ -1737,8 +1742,13 @@ for ( pEI = pEnvItem_in ; pEI ; pEI = pEI->pNext )
 		  {			/* not there; use class name with index */
 		strcat(szRedupClass, pIndexedClass->pStringClass->pszName);
 		strcat(szRedupClass, "^");
+#ifdef WIN32
 		strcat(szRedupClass,
 			   _itoa(pIndexedClass->iIndex, szRedupIndex, 10));
+#else
+		sprintf(szRedupIndex, "%d", pIndexedClass->iIndex);
+		strcat(szRedupClass, szRedupIndex);
+#endif
 		pszName = szRedupClass;
 		  }
 	  }

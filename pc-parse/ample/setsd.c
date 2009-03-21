@@ -1017,7 +1017,7 @@ alp->pAllomorph->pEnvironment = parseAmpleAlloEnvConstraint(
 	 pAmple_in->pPartialRedupAllos = pPartialRedupAllo->pNext;
 	 freePartialRedupAllos(pPartialRedupAllo);
 	   }
-	 // need to do same for full redup
+	 /* need to do same for full redup */
    }
 /*
  *  free temporarily allocated memory

@@ -248,7 +248,7 @@ if (!isatty(fileno(stdout)))
 sStamp_m.pLogFP = NULL;
 #else
 	sStamp_m.pLogFP = stdout;
-#endif _DEBUG
+#endif /*_DEBUG*/
 else
   sStamp_m.pLogFP = NULL;
 /*

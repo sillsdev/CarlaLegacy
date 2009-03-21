@@ -1128,7 +1128,11 @@ static void fwConCat(char * pszString_in, int iAnalysesCount_in,
 	{
 	  strncat(pszAResult_io, szExceptionBufSizeBegin_m, *iRoom_io);
 	  *iRoom_io -= strlen(szExceptionBufSizeBegin_m);
+#ifdef WIN32
 	  _itoa(iAnalysesCount_in, szCountBuffer, 10);
+#else
+	  sprintf(szCountBuffer, "%d", iAnalysesCount_in);
+#endif
 	  strncat(pszAResult_io, szCountBuffer, *iRoom_io);
 	  *iRoom_io -= strlen(szCountBuffer);
 	  strncat(pszAResult_io, szExceptionEnd_m, *iRoom_io);
@@ -1207,7 +1211,11 @@ static char * addFWParseToBuffer(
 		  char   szCountBuffer[11];
 		  fwConCat(szExceptionAnalysesSizeBegin_m, iAnalysesCount_in,
 			   &iRoom, pszAResult);
+#if WIN32
 		  _itoa(iAnalysesCount_in, szCountBuffer, 10);
+#else
+		  sprintf(szCountBuffer, "%d", iAnalysesCount_in);
+#endif
 		  fwConCat(szCountBuffer, iAnalysesCount_in,
 			   &iRoom, pszAResult);
 		  fwConCat(szExceptionEnd_m, iAnalysesCount_in,
