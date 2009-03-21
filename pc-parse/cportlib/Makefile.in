@@ -28,7 +28,8 @@ SOURCES = abs.c      bcmp.c     bcopy.c    bsearch.c  bzero.c    ccommand.c \
 		  cportlib.h
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Cportlib.dsp Cportlib.vcproj
+			Cportlib.dsp \
+			Cportlib-2003.vcproj Cportlib-2005.vcproj Cportlib-2008.vcproj
 TESTFILES =
 #
 # C portability library

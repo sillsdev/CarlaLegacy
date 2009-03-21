@@ -189,7 +189,7 @@ if (elapse_frac < 0)
 	++start.time;
 	}
 elapse_frac = (elapse_frac + 5) / 10;
-elapse_sec  = finish.time - start.time;
+elapse_sec  = (long)(finish.time - start.time);
 fprintf(stderr, "  Elapsed time = %ld.%02d seconds",
 					elapse_sec, elapse_frac );
 #endif

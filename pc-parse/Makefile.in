@@ -33,7 +33,7 @@ DISTFILES = Makefile.in acconfig.h aclocal.m4 config.hin configure.in \
 			stamp-h.in configure install-sh \
 			LICENSE README INSTALL INSTALL.DOS \
 			Makefile.dj config.DOS configure.bat winconfig.bat \
-			Pcparse.dsw Pcparse.sln
+			Pcparse.dsw Pcparse-2003.sln Pcparse-2005.sln Pcparse-2008.sln
 TESTDISTFILES = winchk.bat
 
 .SUFFIXES:

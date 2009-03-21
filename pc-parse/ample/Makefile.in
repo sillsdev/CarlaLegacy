@@ -43,9 +43,16 @@ DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
 			ampledll.rc Wllample.dsp wllample.c wllample.h wllample.rc \
 			resource.h Testdll.dsp testdll.cpp xample.rc xampledll.rc \
 			XAmpleTestDll.cpp XAmpleTestDll.dsp XAmpledll.dsp XAmplelib.dsp \
-			Ample.vcproj Amplelib.vcproj Xample.vcproj Llample.vcproj \
-			Ampledll.vcproj Wllample.vcproj Testdll.vcproj \
-			XAmpleTestDll.vcproj XAmpledll.vcproj XAmplelib.vcproj
+			Ample-2003.vcproj Ample-2005.vcproj Ample-2008.vcproj \
+			Amplelib-2003.vcproj Amplelib-2005.vcproj Amplelib-2008.vcproj \
+			Xample-2003.vcproj Xample-2005.vcproj Xample-2008.vcproj \
+			Llample-2003.vcproj Llample-2005.vcproj Llample-2008.vcproj \
+			Ampledll-2003.vcproj Ampledll-2005.vcproj Ampledll-2008.vcproj \
+			Wllample-2003.vcproj Wllample-2005.vcproj Wllample-2008.vcproj \
+			Testdll-2003.vcproj Testdll-2005.vcproj Testdll-2008.vcproj \
+			XAmpleTestDll-2003.vcproj XAmpleTestDll-2005.vcproj XAmpleTestDll-2008.vcproj \
+			XAmpledll-2003.vcproj XAmpledll-2005.vcproj XAmpledll-2008.vcproj \
+			XAmplelib-2003.vcproj XAmplelib-2005.vcproj XAmplelib-2008.vcproj
 
 TESTFILES = check.bat xcheck.bat
 TESTS     = ae cq hg sb

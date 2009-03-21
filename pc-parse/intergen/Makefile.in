@@ -24,7 +24,8 @@ BINDIR = $(exec_prefix)/bin
 SOURCES=intergen.c version.h
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			readme.1st Intergen.dsp Intergen.vcproj
+			readme.1st Intergen.dsp \
+			Intergen-2003.vcproj Intergen-2005.vcproj Intergen-2008.vcproj
 TESTFILES = check.bat
 TESTS     = ae ck cq cz hg sb
 TESTEXTS  = test.aaa test.iia test.iin outx.ctl

@@ -21,7 +21,7 @@ BINDIR = $(exec_prefix)/bin
 
 SOURCES = ktagger.c version.h
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Ktagger.dsp Ktagger.vcproj
+ Ktagger.dsp Ktagger-2003.vcproj Ktagger-2005.vcproj Ktagger-2008.vcproj
 TESTFILES = check.bat
 ENGFILES = engtdf.ctl eng.ttt engsgml.ctl eng.sss engsgml2.ctl eng.ss2 \
 		   engsfm.ctl eng.sff eng.in test.bat \

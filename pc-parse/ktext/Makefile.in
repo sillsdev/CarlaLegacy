@@ -21,7 +21,7 @@ BINDIR = $(exec_prefix)/bin
 
 SOURCES = ktext.c version.h
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Ktext.dsp Ktext.vcproj
+ Ktext.dsp Ktext-2003.vcproj Ktext-2005.vcproj Ktext-2008.vcproj
 TESTFILES = check.bat
 ENGFILES = eng.ctl eng.txt eng.aaa enga.lll eng.sss engs.lll engintx.ctl \
 		   test.bat mac-eng.ctl

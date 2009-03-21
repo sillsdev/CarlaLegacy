@@ -38,7 +38,7 @@ SOURCES = add_sl.c   adjfname.c ambprog.c  appnd_sl.c cat_sl.c   tokenize.c \
 		  strlist.h  template.h textctl.h  trie.h     dynstr.h
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Opaclib.dsp Opaclib.vcproj
+ Opaclib.dsp Opaclib-2003.vcproj Opaclib-2005.vcproj Opaclib-2008.vcproj
 TESTFILES =
 #
 #  OPAC function library

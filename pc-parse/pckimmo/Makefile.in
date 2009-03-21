@@ -24,7 +24,9 @@ SOURCES = convlex.c  generate.c lexicon.c  pckfuncs.c pckimmo.c  pckimmo2.c \
 		  kimmo.h    kimmodef.h version.h  pckimmo.h
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			g.c r.c s.c Kimmolib.dsp Pckimmo.dsp Kimmolib.vcproj Pckimmo.vcproj
+			g.c r.c s.c Kimmolib.dsp Pckimmo.dsp \
+			Kimmolib-2003.vcproj Kimmolib-2005.vcproj Kimmolib-2008.vcproj \
+			Pckimmo-2003.vcproj Pckimmo-2005.vcproj Pckimmo-2008.vcproj
 TESTFILES = check.bat
 ENGFILES = README abbrev.lex adjectiv.lex adverb.lex affix.lex eng.ggg \
 		   eng.rrr eng.sss eng.tak englex.tak english.fg english.fr \

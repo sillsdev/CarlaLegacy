@@ -21,7 +21,8 @@ exec_prefix = @exec_prefix@
 BINDIR = $(exec_prefix)/bin
 
 SOURCES = tonepars.c version.h version.c
-DISTFILES = $(SOURCES) Makefile.in TonePars.dsp TonePars.vcproj
+DISTFILES = $(SOURCES) Makefile.in TonePars.dsp \
+ TonePars-2003.vcproj TonePars-2005.vcproj TonePars-2008.vcproj
 DISTDOCFILES = Doc/SILEWP1997-007.html Doc/ToneParsChanges.txt \
  Doc/ToneParsGrammar.txt Doc/prec.gif Doc/silewp.css Doc/tp01.gif \
  Doc/tp03a.gif Doc/tp03b.gif Doc/tp03c.gif Doc/tp04.gif Doc/tp05.gif \

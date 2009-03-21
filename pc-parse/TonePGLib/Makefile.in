@@ -31,7 +31,8 @@ SOURCES = domain.c   domain.h   loadseg.c  moras.c    pword.c    segparse.c \
 		  trule_yg_tab.c trule_yg_tab.h
 
 DISTFILES = $(SOURCES) Makefile.in \
-			ToneGLib.dsp ToneGLib.vcproj TonePLib.dsp TonePLib.vcproj
+ ToneGLib.dsp ToneGLib-2003.vcproj ToneGLib-2005.vcproj ToneGLib-2008.vcproj \
+ TonePLib.dsp TonePLib-2003.vcproj TonePLib-2005.vcproj TonePLib-2008.vcproj
 TESTFILES =
 #
 # Tone Generate library

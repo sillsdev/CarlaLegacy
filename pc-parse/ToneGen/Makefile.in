@@ -21,7 +21,8 @@ exec_prefix = @exec_prefix@
 BINDIR = $(exec_prefix)/bin
 
 SOURCES = tonegen.c version.h version.c
-DISTFILES = $(SOURCES) Makefile.in ToneGen.dsp ToneGen.vcproj
+DISTFILES = $(SOURCES) Makefile.in ToneGen.dsp \
+ ToneGen-2003.vcproj ToneGen-2005.vcproj ToneGen-2008.vcproj
 DISTDOCFILES = Doc/ToneGen.html Doc/ToneGenChanges.txt Doc/prec.gif \
  Doc/silewp.css Doc/tp01.gif Doc/tp03a.gif Doc/tp03b.gif Doc/tp03c.gif \
  Doc/tp04.gif Doc/tp05.gif Doc/tp06.gif Doc/tp18.gif Doc/tp20.gif \

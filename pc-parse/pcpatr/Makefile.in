@@ -26,10 +26,12 @@ SOURCES=patr.h patrdef.h pcpatr.h version.h grammar.c lcparse.c copyfeat.c \
 		disphead.h disphead.c
 DLLFILES = Patr100.dsp patr100.idl PatrParser.cpp PatrParser.h PatrParser.rgs \
 		   StdAfx.cpp StdAfx.h patr100.cpp patr100.rc patr100.def resource.h \
-		   patr100ps.def patr100ps.mk Patr100.vcproj
+		   patr100ps.def patr100ps.mk \
+		   Patr100-2003.vcproj Patr100-2005.vcproj Patr100-2008.vcproj
 DISTFILES = $(SOURCES) $(DLLFILES) Makefile.in Makefile.dj \
-			Patrlib.dsp Pcpatr.dsp Patrlib.vcproj Pcpatr.vcproj
-
+			Patrlib.dsp Pcpatr.dsp \
+			Patrlib-2003.vcproj Patrlib-2005.vcproj Patrlib-2008.vcproj \
+			Pcpatr-2003.vcproj Pcpatr-2005.vcproj Pcpatr-2008.vcproj
 
 TESTFILES = check.bat
 TESTS=a bears eng-ela eng-ela2 eng-gfs gazdar shieber1 shieber2 shieber3 \

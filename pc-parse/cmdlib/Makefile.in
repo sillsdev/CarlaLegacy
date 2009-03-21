@@ -20,7 +20,7 @@ SOURCES = cmd.c      cmdcd.c    cmddata.c  cmddir.c   cmdedit.c  cmdlog.c   \
 		  cmdsig.c   cmdtime.c  messages.c setcmdfi.c cmdsys.c   \
 		  wanthelp.c cmd.h
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			Cmdlib.dsp Cmdlib.vcproj
+			Cmdlib.dsp Cmdlib-2003.vcproj Cmdlib-2005.vcproj Cmdlib-2008.vcproj
 TESTFILES = sample.c
 #
 #  CMD function library

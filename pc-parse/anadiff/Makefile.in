@@ -24,7 +24,8 @@ BINDIR = $(exec_prefix)/bin
 SOURCES=anadiff.c version.h
 
 DISTFILES = $(SOURCES) Makefile.in Makefile.dj \
-			readme.1st Anadiff.dsp Anadiff.vcproj
+			readme.1st Anadiff.dsp \
+			Anadiff-2003.vcproj Anadiff-2005.vcproj Anadiff-2008.vcproj
 TESTFILES = check.bat
 TESTS = a b c
 TESTEXTS = .aaa .ana .lll
