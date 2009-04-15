@@ -42,9 +42,7 @@
 <xsl:text>.</xsl:text>
 </p>
 		<p>
-<xsl:text>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 		<example num="xProp.8">
 <xsl:variable name="sExampleValue">
@@ -74,8 +72,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -85,9 +82,7 @@
 </xsl:choose>
 </example>
 		<p>
-<xsl:text>Examples of proper names with pre/post-positional phrases in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of proper names with pre/post-positional phrases in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 		<example num="xProp.12">
 <xsl:variable name="sExampleValue">
@@ -117,8 +112,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -128,9 +122,7 @@
 </xsl:choose>
 </example>
 		<p>
-<xsl:text>Examples of proper names modified by relative clauses included in simple full sentences in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of proper names modified by relative clauses included in simple full sentences in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 		<example num="xProp.16">
 <xsl:variable name="sExampleValue">
@@ -160,8 +152,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>

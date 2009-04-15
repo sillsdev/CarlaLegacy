@@ -10,9 +10,7 @@
 		<section2 id="sPronAgreement">
 			<secTitle>Agreement Features on Pronouns</secTitle>
 			<p>
-<xsl:text>Pronouns normally have either more than or the same number of agreement features as nouns have.  The following chart shows the agreement features used for pronouns in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>.</xsl:text>
+<xsl:text>Pronouns normally have either more than or the same number of agreement features as nouns have.  The following chart shows the agreement features used for pronouns in </xsl:text>Vernacular<xsl:text>.</xsl:text>
 </p>
 			<example num="xPron.PronAgreement.6">
 <table border="1">
@@ -20,7 +18,7 @@
 						<th>Type of feature</th>
 						<th>Feature</th>
 					</tr>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatFirst/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatFirst/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -30,7 +28,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatFirstExclusive/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatFirstExclusive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -40,7 +38,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatFirstInclusive/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatFirstInclusive/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -50,7 +48,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatSecond/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatSecond/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -60,7 +58,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatThird/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatThird/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>person</xsl:text>
@@ -70,7 +68,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatSingular/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatSingular/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -80,7 +78,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatDual/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatDual/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -90,7 +88,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatPlural/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatPlural/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>number</xsl:text>
@@ -100,7 +98,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatMasculine/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatMasculine/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -110,7 +108,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatFeminine/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatFeminine/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -120,7 +118,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatNeuter/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatNeuter/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>gender</xsl:text>
@@ -130,7 +128,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatAnimate/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatAnimate/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -140,7 +138,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatMinusAnimate/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatMinusAnimate/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -150,7 +148,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatHuman/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatHuman/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -160,7 +158,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatMinusHuman/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatMinusHuman/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>animacy</xsl:text>
@@ -170,7 +168,7 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(////pron/pronAgrFeatClassNumber/@checked)='yes'">
+					<xsl:if test="normalize-space(//pron/pronAgrFeatClassNumber/@checked)='yes'">
 <tr>
 						<td>
 							<xsl:text>class</xsl:text>
@@ -188,14 +186,12 @@
 			<p>
 <xsl:text>Personal pronouns normally have either more than or the same number of case features as nouns have.</xsl:text>
 </p>
-			<xsl:if test="normalize-space(////np/@case)='none'">
+			<xsl:if test="normalize-space(//np/@case)='none'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here, beginning with first person, then second person, then the third person pronouns.</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here, beginning with first person, then second person, then the third person pronouns.</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='none'">
+			<xsl:if test="normalize-space(//np/@case)='none'">
 <example num="xPron.PnPersonal.8">
 <table border="1">
 					<caption>
@@ -223,8 +219,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -235,14 +230,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='nominative'">
+			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The personal pronouns which can appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The personal pronouns which can appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='nominative'">
+			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <example num="xPron.PnPersonal.12">
 <table border="1">
 					<caption>
@@ -270,8 +263,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -282,12 +274,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='nominative'">
+			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
 <xsl:text>The personal pronouns which can appear in object position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='nominative'">
+			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <example num="xPron.PnPersonal.16">
 <table border="1">
 					<caption>
@@ -315,8 +307,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -327,12 +318,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='nominative'">
+			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
 <xsl:text>The personal pronouns which can appear in possessor position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='nominative'">
+			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <example num="xPron.PnPersonal.20">
 <table border="1">
 					<caption>
@@ -360,8 +351,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -372,14 +362,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='ergative'">
+			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The personal pronouns which can appear in subject position of transitive verbs are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The personal pronouns which can appear in subject position of transitive verbs are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='ergative'">
+			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <example num="xPron.PnPersonal.24">
 <table border="1">
 					<caption>
@@ -407,8 +395,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -419,12 +406,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='ergative'">
+			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <p>
 <xsl:text>The personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='ergative'">
+			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <example num="xPron.PnPersonal.28">
 <table border="1">
 					<caption>
@@ -452,8 +439,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -464,12 +450,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='ergative'">
+			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <p>
 <xsl:text>The personal pronouns which can appear in possessor position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='ergative'">
+			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <example num="xPron.PnPersonal.32">
 <table border="1">
 					<caption>
@@ -497,8 +483,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -509,14 +494,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The personal pronouns which normally appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The personal pronouns which normally appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <example num="xPron.PnPersonal.36">
 <table border="1">
 					<caption>
@@ -544,8 +527,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -556,12 +538,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
 <xsl:text>The personal pronouns which normally appear in object position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <example num="xPron.PnPersonal.40">
 <table border="1">
 					<caption>
@@ -589,8 +571,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -601,12 +582,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
 <xsl:text>The personal pronouns which normally appear in possessor position are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <example num="xPron.PnPersonal.44">
 <table border="1">
 					<caption>
@@ -634,8 +615,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -646,12 +626,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
 <xsl:text>The personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <example num="xPron.PnPersonal.48">
 <table border="1">
 					<caption>
@@ -679,8 +659,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -691,12 +670,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='split'">
+			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
 <xsl:text>The personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////np/@case)='ergative'">
+			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <example num="xPron.PnPersonal.52">
 <table border="1">
 					<caption>
@@ -724,8 +703,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -783,9 +761,7 @@
 <xsl:text>, which were exemplified under personal pronouns above.</xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text></xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text></xsl:text>
 <xsl:choose>
 					<xsl:when test="//pron/@poss='no'">
 <xsl:text> does not have any</xsl:text>
@@ -795,7 +771,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text> possessive pronouns that stand alone as a nominal phrase.  </xsl:text>
-<xsl:if test="normalize-space(////pron/@poss)='yes'">
+<xsl:if test="normalize-space(//pron/@poss)='yes'">
 					<xsl:text>These possessive pronouns are </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pron/@possAffix='no'">
@@ -812,7 +788,7 @@
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="normalize-space(////pron/@poss)='yes'">
+			<xsl:if test="normalize-space(//pron/@poss)='yes'">
 <example num="xPron.PronPoss.8">
 <table border="1">
 					<caption>
@@ -840,8 +816,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -879,9 +854,7 @@
 <xsl:text>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning ‘self’) that is possessed by the pronoun that refers back to the subject, some languages have a verbal affix which indicates reflexive action, and some languages do not distinguish reflexive constructions at all.</xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text></xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text></xsl:text>
 <xsl:choose>
 					<xsl:when test="//pron/@refl='no'">
 <xsl:text> does not have any type of reflexives.</xsl:text>
@@ -894,7 +867,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////pron/@refl)='yes'">
+<xsl:if test="normalize-space(//pron/@refl)='yes'">
 					<xsl:text> which </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pron/@reflAffix='yes'">
@@ -909,13 +882,13 @@
 					</xsl:choose>
 					<xsl:text>  The forms used for reflexives are given here, beginning with first person, then second person, then third person:</xsl:text>
 				</xsl:if>
-<xsl:if test="normalize-space(////pron/@refl)='yesVerbal'">
+<xsl:if test="normalize-space(//pron/@refl)='yesVerbal'">
 					<xsl:text> Examples of reflexives in </xsl:text>
-					<xsl:value-of select="//language/langName" />
+					Vernacular
 					<xsl:text> are:</xsl:text>
 				</xsl:if>
 </p>
-			<xsl:if test="normalize-space(////pron/@refl)!='no'">
+			<xsl:if test="normalize-space(//pron/@refl)!='no'">
 <example num="xPron.PronRefl.8">
 <table border="1">
 					<caption>
@@ -943,8 +916,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -955,12 +927,12 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////pron/@refl)='yes'">
+			<xsl:if test="normalize-space(//pron/@refl)='yes'">
 <p>
 <xsl:text>Some examples with a reflexive used in object position of a simple sentence are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////pron/@refl)='yes'">
+			<xsl:if test="normalize-space(//pron/@refl)='yes'">
 <example num="xPron.PronRefl.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/reflSentExample" />
@@ -989,8 +961,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1017,9 +988,7 @@
 <xsl:text>.  Some languages use only a verbal affix to indicate reciprocal action of the plural subject, others have separate pronouns, others use a possessed noun phrase or a quantified noun phrase (as in English), and some do not mark reciprocal action at all.</xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text></xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text></xsl:text>
 <xsl:choose>
 					<xsl:when test="//pron/@recip='no'">
 <xsl:text> does not have any type of reciprocals.</xsl:text>
@@ -1032,7 +1001,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////pron/@recip)='yes'">
+<xsl:if test="normalize-space(//pron/@recip)='yes'">
 					<xsl:text> which </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pron/@recipAffix='yes'">
@@ -1049,14 +1018,14 @@
 </xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
-					<xsl:if test="normalize-space(////pron/@recip)!='no'">
+					<xsl:if test="normalize-space(//pron/@recip)!='no'">
 						<xsl:text> Some examples of reciprocals are:</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="normalize-space(////pron/@recip)!='no'">
+			<xsl:if test="normalize-space(//pron/@recip)!='no'">
 <example num="xPron.PronRecip.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/recipExample" />
@@ -1085,8 +1054,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1096,12 +1064,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////pron/@recip)!='no'">
+			<xsl:if test="normalize-space(//pron/@recip)!='no'">
 <p>
 <xsl:text>Some examples of reciprocals in sentences are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////pron/@recip)!='no'">
+			<xsl:if test="normalize-space(//pron/@recip)!='no'">
 <example num="xPron.PronRecip.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/recipSentExample" />
@@ -1130,8 +1098,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1193,9 +1160,7 @@
 <xsl:text> for English.</xsl:text>
 </p>
 			<p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, </xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pron/@indef='no'">
 <xsl:text>all of the positive indefinites are nominal phrases, rather than being single-word pronouns.</xsl:text>
@@ -1206,7 +1171,7 @@
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
-			<xsl:if test="normalize-space(////pron/@indef)='yes'">
+			<xsl:if test="normalize-space(//pron/@indef)='yes'">
 <example num="xPron.PronIndef.8">
 <table border="1">
 					<caption>
@@ -1234,8 +1199,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -1246,11 +1210,9 @@
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, </xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pron/@negIndef='no'">
 <xsl:text>all of the negative indefinites are nominal phrases, rather than being single-word pronouns.</xsl:text>
@@ -1262,11 +1224,9 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly'">
+			<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, </xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pron/@negIndef='no'">
 <xsl:text>there are no negative indefinite pronouns and no negative indefinite nominal phrases either, since the language does not have any means of negating a nominal phrase.</xsl:text>
@@ -1278,7 +1238,7 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////pron/@negIndef)='yes'">
+			<xsl:if test="normalize-space(//pron/@negIndef)='yes'">
 <example num="xPron.PronIndef.14">
 <table border="1">
 					<caption>
@@ -1306,8 +1266,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -1320,7 +1279,7 @@
 </xsl:if>
 			<p>
 <xsl:text>Examples of positive indefinite nominal phrases </xsl:text>
-<xsl:if test="normalize-space(////pron/@indef)='yes'">
+<xsl:if test="normalize-space(//pron/@indef)='yes'">
 					<xsl:text>(if any) </xsl:text>
 				</xsl:if>
 <xsl:text>include:</xsl:text>
@@ -1353,8 +1312,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1363,16 +1321,16 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text>Examples of negative indefinite nominal phrases </xsl:text>
-<xsl:if test="normalize-space(////pron/@negIndef)='yes'">
+<xsl:if test="normalize-space(//pron/@negIndef)='yes'">
 					<xsl:text>(if any) </xsl:text>
 				</xsl:if>
 <xsl:text>include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <example num="xPron.PronIndef.22">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/negIndefNPExample" />
@@ -1401,8 +1359,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1412,13 +1369,11 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly' and normalize-space(////pron/@negIndef)='yes'">
+			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='yes'">
 <p>
 <xsl:text>See section </xsl:text>
 <sectionRef sec="sNegNominal" />
-<xsl:text> for examples of the negative elements used in sentences and discussion of the negation constructions in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>.</xsl:text>
+<xsl:text> for examples of the negative elements used in sentences and discussion of the negation constructions in </xsl:text>Vernacular<xsl:text>.</xsl:text>
 </p>
 </xsl:if>
 		</section2>
@@ -1448,9 +1403,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of this type in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 			<example num="xPron.PronNP.8">
 <xsl:variable name="sExampleValue">
@@ -1480,8 +1433,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1501,9 +1453,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>only these two that I saw</langData>
-<xsl:text>.  Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, included in full sentences are:</xsl:text>
+<xsl:text>.  Examples of this type in </xsl:text>Vernacular<xsl:text>, included in full sentences are:</xsl:text>
 </p>
 			<example num="xPron.PronNP.12">
 <xsl:variable name="sExampleValue">
@@ -1533,8 +1483,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1569,9 +1518,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>all by himself</langData>
-<xsl:text>.   Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>.   Examples of this type in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 			<example num="xPron.PronNP.16">
 <xsl:variable name="sExampleValue">
@@ -1601,8 +1548,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1615,9 +1561,7 @@
 <xsl:text>This distribution discussed for English can be accounted for by classifying allow pronouns, demonstratives, quantifiers, and numbers as NPs (rather than DPs) in the expanded DP tree structure for nominal phrases.  However, some languages allow pronouns to be modified by possessors and adjectives as well, so the correct category in that case is N.  A few languages may require pronouns to stand alone without any modification at all, making them only DPs.  (Possessive, reflexive, and reciprocal pronouns are always DPs, since they must stand alone.)</xsl:text>
 </p>
 			<p>
-<xsl:text>For </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, the correct category or level in the tree structure for personal pronouns and other elements which can occur without a head noun is </xsl:text>
+<xsl:text>For </xsl:text>Vernacular<xsl:text>, the correct category or level in the tree structure for personal pronouns and other elements which can occur without a head noun is </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pron/@pronounCat='NP'">
 <xsl:text>NP, like in English, because they can be modified by </xsl:text>
@@ -1629,7 +1573,7 @@
 <xsl:text>DP, because they must stand alone in the place of a whole nominal phrase, with no modifiers allowed.</xsl:text>
 </xsl:when>
 				</xsl:choose>
-<xsl:if test="normalize-space(////pron/@pronounCat)='NP'">
+<xsl:if test="normalize-space(//pron/@pronounCat)='NP'">
 					<xsl:choose>
 						<xsl:when test="//qp/@npDegree='yes'">
 <xsl:text> degree words,</xsl:text>

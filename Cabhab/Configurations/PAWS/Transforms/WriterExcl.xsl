@@ -56,9 +56,7 @@
 				</li>
 			</ol>
 <p>
-<xsl:text>Examples of greetings in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of greetings in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 			<example num="xExcl.ExclGreet.10">
 <xsl:variable name="sExampleValue">
@@ -88,8 +86,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -123,9 +120,7 @@
 				</li>
 			</ol>
 <p>
-<xsl:text>Examples of interjections in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of interjections in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 			<example num="xExcl.ExclIntj.10">
 <xsl:variable name="sExampleValue">
@@ -155,8 +150,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -166,15 +160,13 @@
 </xsl:choose>
 </example>
 <p>
-<xsl:text>Yes and No answers to questions will be treated similarly to interjections.  </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> uses the following words to express these answers:</xsl:text>
+<xsl:text>Yes and No answers to questions will be treated similarly to interjections.  </xsl:text>Vernacular<xsl:text> uses the following words to express these answers:</xsl:text>
 </p>
 <example num="xExcl.ExclIntj.14">
 <table border="1">
 					<tr>
 						<th>
-							<xsl:value-of select="//language/langName" />
+							Vernacular
 						</th>
 						<th>meaning</th>
 					</tr>
@@ -200,8 +192,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -234,8 +225,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -271,9 +261,7 @@
 </li>
 </ol>
 <p>
-<xsl:text>Examples of exclamations in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of exclamations in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 			<example num="xExcl.ExclExcl.10">
 <xsl:variable name="sExampleValue">
@@ -303,8 +291,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -313,16 +300,12 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-<xsl:if test="normalize-space(////excl/@exclM)='no'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not have a special word which marks exclamations of this type, so they are no different than the interjections consisting of adjectives in the previous section.</xsl:text>
+<xsl:if test="normalize-space(//excl/@exclM)='no'">
+<p>Vernacular<xsl:text> does not have a special word which marks exclamations of this type, so they are no different than the interjections consisting of adjectives in the previous section.</xsl:text>
 </p>
 </xsl:if>
-<xsl:if test="normalize-space(////excl/@exclM)='yes'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has one or more special words which signal an exclamation which occur </xsl:text>
+<xsl:if test="normalize-space(//excl/@exclM)='yes'">
+<p>Vernacular<xsl:text> has one or more special words which signal an exclamation which occur </xsl:text>
 <xsl:choose>
 <xsl:when test="//excl/@exclMPos='before'">
 <xsl:text>before</xsl:text>
@@ -340,7 +323,7 @@
 <xsl:text> the adjective phrase.  These exclamation marker words are:</xsl:text>
 </p>
 </xsl:if>
-<xsl:if test="normalize-space(////excl/@exclM)='yes'">
+<xsl:if test="normalize-space(//excl/@exclM)='yes'">
 <example num="xExcl.ExclExcl.16">
 <table border="1">
 <tr>
@@ -368,8 +351,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -380,12 +362,12 @@
 </table>
 </example>
 </xsl:if>
-<xsl:if test="normalize-space(////excl/@exclM)='yes' and normalize-space(////excl/@exclMPos)='either' and normalize-space(////excl/@exclMEither)='no' or normalize-space(////excl/@exclM)='yes' and normalize-space(////excl/@exclMPos)='both' and normalize-space(////excl/@exclMEither)='no'">
+<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='either' and normalize-space(//excl/@exclMEither)='no' or normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='both' and normalize-space(//excl/@exclMEither)='no'">
 <p>
 <xsl:text>There are separate sets words which can occur on each side of the adjective phrase.</xsl:text>
 </p>
 </xsl:if>
-<xsl:if test="normalize-space(////excl/@exclM)='yes' and normalize-space(////excl/@exclMPos)='either' and normalize-space(////excl/@exclMEither)='yes' or normalize-space(////excl/@exclM)='yes' and normalize-space(////excl/@exclMPos)='both' and normalize-space(////excl/@exclMEither)='yes'">
+<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='either' and normalize-space(//excl/@exclMEither)='yes' or normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='both' and normalize-space(//excl/@exclMEither)='yes'">
 <p>
 <xsl:text>All of the words may occur on either side of the adjective phrase.</xsl:text>
 </p>

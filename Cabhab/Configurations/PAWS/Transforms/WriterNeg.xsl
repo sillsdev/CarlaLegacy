@@ -78,9 +78,7 @@
 			</li>
 		</ul>
 		<p>
-<xsl:text>All of the above have been covered as individual items in previous sections (as noted).  After discussing the type of negation system </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> uses, the data given will be reviewed here by category or phrase type, as well as adding examples used in complete sentences and discussing any co-occurrence restrictions between the various negative elements.</xsl:text>
+<xsl:text>All of the above have been covered as individual items in previous sections (as noted).  After discussing the type of negation system </xsl:text>Vernacular<xsl:text> uses, the data given will be reviewed here by category or phrase type, as well as adding examples used in complete sentences and discussing any co-occurrence restrictions between the various negative elements.</xsl:text>
 </p>
 		<section2 id="sNegType">
 			<secTitle>Type of Negation System</secTitle>
@@ -145,16 +143,12 @@
 </xsl:attribute>John didn't see nothing</langData>
 <xsl:text> is the correct way to express a negative sentence with a negative object.  In these languages, similarly to the restriction on negative polarity items in Polarity Changing languages, a negative element may normally occur in subject position or a fronted position without any other negative element present, but a negative object may only occur when some higher (technically c-commanding) element is negative.  Some Negative Concord languages have the stronger restriction that any negative argument must co-occur with verbal negation and still others require fronting of the negative argument, similarly to the fronting of question words or phrases in content questions.</xsl:text>
 </p>
-			<xsl:if test="normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly' and normalize-space(////pron/@negIndef)='no'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> is neither a Polarity Changing language nor a Negative Concord language, since the only way to express negation is via the verbal affix.  There are not multiple instances of negation to change the polarity or to concord with.</xsl:text>
+			<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
+<p>Vernacular<xsl:text> is neither a Polarity Changing language nor a Negative Concord language, since the only way to express negation is via the verbal affix.  There are not multiple instances of negation to change the polarity or to concord with.</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> is a </xsl:text>
+			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
+<p>Vernacular<xsl:text> is a </xsl:text>
 <xsl:choose>
 					<xsl:when test="//neg/@type='changing'">
 <xsl:text>Polarity Changing</xsl:text>
@@ -175,10 +169,8 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text></xsl:text>
+			<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
+<p>Vernacular<xsl:text></xsl:text>
 <xsl:choose>
 					<xsl:when test="//neg/@polarityItems='yes'">
 <xsl:text> has </xsl:text>
@@ -198,10 +190,8 @@
 				</xsl:choose>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yes' or normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesNo'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text></xsl:text>
+			<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yes' or normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesNo'">
+<p>Vernacular<xsl:text></xsl:text>
 <xsl:choose>
 					<xsl:when test="//neg/@polarityItems='yes'">
 <xsl:text> has </xsl:text>
@@ -221,7 +211,7 @@
 				</xsl:choose>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no'">
+			<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
 <example num="xNeg.NegType.18">
 <table border="1">
 					<caption>
@@ -252,8 +242,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -262,12 +251,12 @@
 </td>
 					</tr>
 					<tr>
-						<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
+						<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <td>
 							<xsl:text>Determiners</xsl:text>
 						</td>
 </xsl:if>
-						<xsl:if test="normalize-space(////qp/@determiner)='no' or normalize-space(////qp/@determiner)='yesSome'">
+						<xsl:if test="normalize-space(//qp/@determiner)='no' or normalize-space(//qp/@determiner)='yesSome'">
 <td>
 							<xsl:text>Special Degree elements</xsl:text>
 						</td>
@@ -293,8 +282,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -327,8 +315,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -361,8 +348,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -379,9 +365,7 @@
 			<p>
 <xsl:text>We saw in section </xsl:text>
 <sectionRef sec="sIPAux" />
-<xsl:text> that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text></xsl:text>
+<xsl:text> that </xsl:text>Vernacular<xsl:text></xsl:text>
 <xsl:choose>
 					<xsl:when test="//ip/@negAux='yesOnly'">
 <xsl:text> has one or more</xsl:text>
@@ -430,7 +414,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////ip/@negAux)='yesOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='yesAll'">
+<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
 					<xsl:text> The negative auxiliary </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@negAuxRequiresAux='no'">
@@ -452,7 +436,7 @@
 					<xsl:text> auxiliary is required.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+<xsl:if test="normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 					<xsl:text>  Further, </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//neg/@auxVerbRequired='yes'">
@@ -464,14 +448,12 @@
 					</xsl:choose>
 				</xsl:if>
 </p>
-			<xsl:if test="normalize-space(////ip/@negAux)='yesOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>The negative auxiliary word(s) in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> are:</xsl:text>
+<xsl:text>The negative auxiliary word(s) in </xsl:text>Vernacular<xsl:text> are:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='yesOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <example num="xNeg.NegVerbal.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/negAuxExample" />
@@ -500,8 +482,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -511,12 +492,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='yesOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
 <xsl:text>Examples of the negative auxiliary word(s) used in a complete sentence (without any negative arguments) include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='yesOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <example num="xNeg.NegVerbal.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/auxExample" />
@@ -545,8 +526,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -556,14 +536,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='noAffixOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Examples of the negative auxiliary affixes in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> attached to an auxiliary include:</xsl:text>
+<xsl:text>Examples of the negative auxiliary affixes in </xsl:text>Vernacular<xsl:text> attached to an auxiliary include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='noAffixOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <example num="xNeg.NegVerbal.16">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/negAuxAffixExample" />
@@ -592,8 +570,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -603,12 +580,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='noAffixOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
 <xsl:text>Examples of the negative auxiliary affixes attached to an auxiliary used in a complete sentence (without any negative arguments) include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='noAffixOnly' or normalize-space(////ip/@negAux)='yesAffix' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <example num="xNeg.NegVerbal.20">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/auxAffixExample" />
@@ -637,8 +614,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -648,14 +624,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='noVerb' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Examples of the negative verbal affixes in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> attached to a verb include:</xsl:text>
+<xsl:text>Examples of the negative verbal affixes in </xsl:text>Vernacular<xsl:text> attached to a verb include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='noVerb' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <example num="xNeg.NegVerbal.24">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/negVerbExample" />
@@ -684,8 +658,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -695,12 +668,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='noVerb' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
 <xsl:text>Full sentence examples with negative verbs include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////ip/@negAux)='noVerb' or normalize-space(////ip/@negAux)='yesVerb' or normalize-space(////ip/@negAux)='noAffixAndVerb' or normalize-space(////ip/@negAux)='yesAll'">
+			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <example num="xNeg.NegVerbal.28">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/verbAffixExample" />
@@ -729,8 +702,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -746,9 +718,7 @@
 			<p>
 <xsl:text>We saw in section </xsl:text>
 <sectionRef sec="sAdvPTemporal" />
-<xsl:text> that in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> the negative temporal idea of  'no when' is expressed </xsl:text>
+<xsl:text> that in </xsl:text>Vernacular<xsl:text> the negative temporal idea of  'no when' is expressed </xsl:text>
 <xsl:choose>
 <xsl:when test="//advp/@negTemporalType='word'">
 <xsl:text>by one or more separate words.  Examples</xsl:text>
@@ -762,7 +732,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-			<xsl:if test="normalize-space(////advp/@negTemporalType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
 <example num="xNeg.NegAdverb.6">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalAffixExample" />
@@ -791,8 +761,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -802,7 +771,7 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////advp/@negTemporalType)='word' or normalize-space(////advp/@negTemporalType)='verb'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='word' or normalize-space(//advp/@negTemporalType)='verb'">
 <example num="xNeg.NegAdverb.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalExample" />
@@ -831,8 +800,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -873,8 +841,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -886,9 +853,7 @@
 			<p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sAdvPLocative" />
-<xsl:text> we saw that in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> the negative locative idea of  'nowhere' is expressed </xsl:text>
+<xsl:text> we saw that in </xsl:text>Vernacular<xsl:text> the negative locative idea of  'nowhere' is expressed </xsl:text>
 <xsl:choose>
 <xsl:when test="//advp/@negLocativeType='word'">
 <xsl:text>by one or more separate words.  Examples</xsl:text>
@@ -902,7 +867,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-			<xsl:if test="normalize-space(////advp/@negLocativeType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
 <example num="xNeg.NegAdverb.16">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeAffixExample" />
@@ -931,8 +896,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -942,7 +906,7 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////advp/@negLocativeType)='word' or normalize-space(////advp/@negLocativeType)='verb'">
+			<xsl:if test="normalize-space(//advp/@negLocativeType)='word' or normalize-space(//advp/@negLocativeType)='verb'">
 <example num="xNeg.NegAdverb.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeExample" />
@@ -971,8 +935,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1013,8 +976,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1023,11 +985,9 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="normalize-space(////advp/@negTemporalType)='word' or normalize-space(////advp/@negLocativeType)='word'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='word' or normalize-space(//advp/@negLocativeType)='word'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:choose>
+<xsl:text>In </xsl:text>Vernacular<xsl:choose>
 					<xsl:when test="//neg/@advVerbRequired='yes'">
 <xsl:text> a negative adverb written as a separate word is not allowed without the verb also being negative.</xsl:text>
 </xsl:when>
@@ -1051,12 +1011,10 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>no</langData>
-<xsl:text>, or by using a negative indefinite pronoun.  Each type allowed in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> will be exemplified in complete sentences when used as subjects and direct objects, and any restrictions will be discussed.</xsl:text>
-<xsl:if test="normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no'">
+<xsl:text>, or by using a negative indefinite pronoun.  Each type allowed in </xsl:text>Vernacular<xsl:text> will be exemplified in complete sentences when used as subjects and direct objects, and any restrictions will be discussed.</xsl:text>
+<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
 					<xsl:text>  The use of negative polarity items in </xsl:text>
-					<xsl:value-of select="//language/langName" />
+					Vernacular
 					<xsl:text> will also be covered in section</xsl:text>
 					<sectionRef sec="sNegNominalObject" />
 					<xsl:text>.</xsl:text>
@@ -1064,24 +1022,18 @@
 </p>
 			<section3 id="sNegNominalSubject">
 				<secTitle>Negative Subjects</secTitle>
-				<xsl:if test="normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@npDegree)='yesPosOnly'">
+				<xsl:if test="normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@npDegree)='yesPosOnly'">
 <p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sQPAll" />
-<xsl:text> we saw that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not have any way to express the negative special degree idea of 'not' modifying the whole nominal phrase.  Neither negative special degree words nor phrasal clitics nor affixes attached to the head noun are used to negate a nominal phrase in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>.</xsl:text>
+<xsl:text> we saw that </xsl:text>Vernacular<xsl:text> does not have any way to express the negative special degree idea of 'not' modifying the whole nominal phrase.  Neither negative special degree words nor phrasal clitics nor affixes attached to the head noun are used to negate a nominal phrase in </xsl:text>Vernacular<xsl:text>.</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)='no' or normalize-space(////qp/@npDegree)='yesPos'">
+				<xsl:if test="normalize-space(//qp/@npDegree)='no' or normalize-space(//qp/@npDegree)='yesPos'">
 <p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sQPAll" />
-<xsl:text> we saw that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not have any negative special degree words that are written as a separate word and modify the whole nominal phrase.  Instead, they are </xsl:text>
+<xsl:text> we saw that </xsl:text>Vernacular<xsl:text> does not have any negative special degree words that are written as a separate word and modify the whole nominal phrase.  Instead, they are </xsl:text>
 <xsl:choose>
 						<xsl:when test="//qp/@npDegreeNegType='proclitic'">
 <xsl:text>phrasal proclitics which attach to the front of whatever word begins the nominal phrase,</xsl:text>
@@ -1105,16 +1057,14 @@
 <xsl:text> as shown in the following table.</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesNeg'">
+				<xsl:if test="normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg'">
 <p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sQPAll" />
-<xsl:text> we saw that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has the following special negative degree words that are written as a separate word and modify the whole nominal phrase:</xsl:text>
+<xsl:text> we saw that </xsl:text>Vernacular<xsl:text> has the following special negative degree words that are written as a separate word and modify the whole nominal phrase:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <example num="xNeg.NegNominal.NegNominalSubject.10">
 <table border="1">
 						<caption>
@@ -1142,8 +1092,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -1154,14 +1103,12 @@
 					</table>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> negative nominal phrase examples using the negative special degree elements include:</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> negative nominal phrase examples using the negative special degree elements include:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <example num="xNeg.NegNominal.NegNominalSubject.14">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negExample" />
@@ -1190,8 +1137,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1201,12 +1147,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeNegCooccur)='yes' or normalize-space(////qp/@npDegree)!='yes' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+				<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' or normalize-space(//qp/@npDegree)!='yes' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text>Examples which include the positive special degree elements as well are:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)='yes' and normalize-space(////qp/@npDegreeNegCooccur)='yes' or normalize-space(////qp/@npDegree)!='yes' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+				<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' or normalize-space(//qp/@npDegree)!='yes' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <example num="xNeg.NegNominal.NegNominalSubject.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negCooccurExample" />
@@ -1235,8 +1181,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1246,12 +1191,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text>These negative nominal phrases may be used as the subject of a full sentence as shown here:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <example num="xNeg.NegNominal.NegNominalSubject.22">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/degreeSubjExample" />
@@ -1280,8 +1225,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1291,36 +1235,30 @@
 </xsl:choose>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly'">
+				<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly'">
 <p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sQPDeterminers" />
-<xsl:text> we saw that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>  does not have a separate set of quantifiers which act as the only determiner in the nominal phrase.  Just as there is not any way to express the negative special degree element 'not', there is not any way to express 'no' modifying a nominal phrase in this language.</xsl:text>
+<xsl:text> we saw that </xsl:text>Vernacular<xsl:text>  does not have a separate set of quantifiers which act as the only determiner in the nominal phrase.  Just as there is not any way to express the negative special degree element 'not', there is not any way to express 'no' modifying a nominal phrase in this language.</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly'">
+				<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly'">
 <p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sQPDeterminers" />
-<xsl:text> we saw that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not have a separate set of negative quantifiers that are written as separate words and act as the only determiner in the nominal phrase.  Negation of a nominal phrase is expressed by the special degree elements only. </xsl:text>
+<xsl:text> we saw that </xsl:text>Vernacular<xsl:text> does not have a separate set of negative quantifiers that are written as separate words and act as the only determiner in the nominal phrase.  Negation of a nominal phrase is expressed by the special degree elements only. </xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sQPDeterminers" />
-<xsl:text> we saw that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has the following negative quantifiers which are written as separate words and act as the only determiner in the nominal phrase:</xsl:text>
+<xsl:text> we saw that </xsl:text>Vernacular<xsl:text> has the following negative quantifiers which are written as separate words and act as the only determiner in the nominal phrase:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <example num="xNeg.NegNominal.NegNominalSubject.30">
-<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
+<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <table border="1">
 						<caption>
 							<xsl:text>Negative Quantifier Determiners</xsl:text>
@@ -1347,8 +1285,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -1360,14 +1297,12 @@
 </xsl:if>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> negative nominal phrase examples using the negative quantifier determiners include:</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> negative nominal phrase examples using the negative quantifier determiners include:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <example num="xNeg.NegNominal.NegNominalSubject.34">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/determinerNegNPExample" />
@@ -1396,8 +1331,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1407,12 +1341,12 @@
 </xsl:choose>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <p>
 <xsl:text>These negative nominal phrases may be used as the subject of a full sentence as shown here:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <example num="xNeg.NegNominal.NegNominalSubject.38">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/determinerSubjExample" />
@@ -1441,8 +1375,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1452,22 +1385,18 @@
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sPronIndef" />
-<xsl:text>, we saw that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has the following negative indefinite pronouns and/or nominal phrases:</xsl:text>
+<xsl:text>, we saw that </xsl:text>Vernacular<xsl:text> has the following negative indefinite pronouns and/or nominal phrases:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly'">
+			<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly'">
 <p>
 <xsl:text>In section </xsl:text>
 <sectionRef sec="sPronIndef" />
-<xsl:text>, we saw that </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:choose>
+<xsl:text>, we saw that </xsl:text>Vernacular<xsl:choose>
 					<xsl:when test="//pron/@negIndef='no'">
 <xsl:text>does not have any negative indefinite pronouns and no negative indefinite nominal phrases either, since the language does not have any means of negating a nominal phrase.</xsl:text>
 </xsl:when>
@@ -1478,13 +1407,13 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <example num="xNeg.NegNominal.NegNominalSubject.44">
 <table border="1">
 						<caption>
 							<xsl:text>Negative Indefinites</xsl:text>
 						</caption>
-						<xsl:if test="normalize-space(////pron/@negIndef)='yes'">
+						<xsl:if test="normalize-space(//pron/@negIndef)='yes'">
 <tr>
 							<td>
 								<xsl:text>Pronouns</xsl:text>
@@ -1510,8 +1439,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -1520,7 +1448,7 @@
 </td>
 						</tr>
 </xsl:if>
-						<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////qp/@npDegree)!='yesPosOnly'">
+						<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <tr>
 							<td>
 								<xsl:text>Nominal Phrases</xsl:text>
@@ -1546,8 +1474,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -1559,12 +1486,12 @@
 					</table>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
 <xsl:text>These negative nominal phrases may be used as the subject of a full sentence as shown here:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <example num="xNeg.NegNominal.NegNominalSubject.48">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/pronounSubjExample" />
@@ -1593,8 +1520,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1604,7 +1530,7 @@
 </xsl:choose>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
 <xsl:text>As the above sentence examples show, </xsl:text>
 <xsl:choose>
@@ -1615,28 +1541,22 @@
 <xsl:text>the verb or auxiliary is not required to be negative when the subject is negative</xsl:text>
 </xsl:when>
 					</xsl:choose>
-<xsl:text> in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>.</xsl:text>
+<xsl:text> in </xsl:text>Vernacular<xsl:text>.</xsl:text>
 </p>
 </xsl:if>
 			</section3>
 			<section3 id="sNegNominalObject">
 				<secTitle>Negative Objects</secTitle>
-<xsl:if test="normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='yesPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='yesPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)='noPosOnly' and normalize-space(////pron/@negIndef)='no'">
+<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
 <p>
-<xsl:text>Since </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not have any means of negating a nominal phrase, nor any negative indefinite pronouns, it cannot have any negative objects.  </xsl:text>
+<xsl:text>Since </xsl:text>Vernacular<xsl:text> does not have any means of negating a nominal phrase, nor any negative indefinite pronouns, it cannot have any negative objects.  </xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no'">
+				<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
 <p>
 <xsl:text>As we saw in section </xsl:text>
 <sectionRef sec="sNegType" />
-<xsl:text>, </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has negative polarity items.  Therefore, a negative nominal phrase is not allowed to occur in object position.  Instead, one of the negative polarity items is used and </xsl:text>
+<xsl:text>, </xsl:text>Vernacular<xsl:text> has negative polarity items.  Therefore, a negative nominal phrase is not allowed to occur in object position.  Instead, one of the negative polarity items is used and </xsl:text>
 <xsl:choose>
 						<xsl:when test="//neg/@objVerbRequired='yes'">
 <xsl:text>the verb or auxiliary must be negative.</xsl:text>
@@ -1647,18 +1567,16 @@
 					</xsl:choose>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
-<xsl:text>Examples in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> with a positive subject and a negative </xsl:text>
-<xsl:if test="normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing'">
+<xsl:text>Examples in </xsl:text>Vernacular<xsl:text> with a positive subject and a negative </xsl:text>
+<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing'">
 						<xsl:text>polarity item in the </xsl:text>
 					</xsl:if>
 <xsl:text>object nominal phrase include:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <example num="xNeg.NegNominal.NegNominalObject.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/objectExample" />
@@ -1687,8 +1605,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1698,18 +1615,16 @@
 </xsl:choose>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
-<xsl:text>Examples in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> with a positive subject and a negative </xsl:text>
-<xsl:if test="normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing'">
+<xsl:text>Examples in </xsl:text>Vernacular<xsl:text> with a positive subject and a negative </xsl:text>
+<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing'">
 						<xsl:text>polarity item in the </xsl:text>
 					</xsl:if>
 <xsl:text>indirect object nominal phrase include:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <example num="xNeg.NegNominal.NegNominalObject.14">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/indirectObjectExample" />
@@ -1738,8 +1653,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1749,18 +1663,16 @@
 </xsl:choose>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
-<xsl:text>Finally, examples in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> with both a negative subject and a negative </xsl:text>
-<xsl:if test="normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing'">
+<xsl:text>Finally, examples in </xsl:text>Vernacular<xsl:text> with both a negative subject and a negative </xsl:text>
+<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing'">
 						<xsl:text>polarity item in the </xsl:text>
 					</xsl:if>
 <xsl:text>object nominal phrase include:</xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////qp/@determiner)='yes' or normalize-space(////qp/@determiner)='yesNo' or normalize-space(////qp/@npDegree)='yes' or normalize-space(////qp/@npDegree)='yesPos' or normalize-space(////qp/@npDegree)='yesNeg' or normalize-space(////qp/@npDegree)='no' or normalize-space(////pron/@negIndef)='yes'">
+				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesPos' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <example num="xNeg.NegNominal.NegNominalObject.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/subjectObjectExample" />
@@ -1789,8 +1701,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -1800,10 +1711,10 @@
 </xsl:choose>
 </example>
 </xsl:if>
-				<xsl:if test="normalize-space(////neg/@polarityItems)='no' and normalize-space(////qp/@determiner)='no' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='no' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='no' and normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////neg/@polarityItems)='no' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////neg/@type)='concord' and normalize-space(////qp/@determiner)='no' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@type)='concord' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@type)='concord' and normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////neg/@type)='concord' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no'">
+				<xsl:if test="normalize-space(//neg/@polarityItems)='no' and normalize-space(//qp/@determiner)='no' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='no' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='no' and normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//neg/@polarityItems)='no' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//neg/@type)='concord' and normalize-space(//qp/@determiner)='no' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@type)='concord' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@type)='concord' and normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//neg/@type)='concord' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
 <p>
 <xsl:text>As these examples show, a negative nominal phrase is </xsl:text>
-<xsl:if test="normalize-space(////neg/@objVerbRequired)!='no'">
+<xsl:if test="normalize-space(//neg/@objVerbRequired)!='no'">
 						<xsl:text>not</xsl:text>
 					</xsl:if>
 <xsl:text> allowed to occur in object or indirect object position </xsl:text>
@@ -1818,7 +1729,7 @@
 <xsl:text>without any restriction about other negative elements in the sentence. </xsl:text>
 </xsl:when>
 					</xsl:choose>
-<xsl:if test="normalize-space(////neg/@type)='concord'">
+<xsl:if test="normalize-space(//neg/@type)='concord'">
 <xsl:text></xsl:text>
 <xsl:choose>
 <xsl:when test="//neg/@negFront='yes'">
@@ -1839,10 +1750,10 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-				<xsl:if test="normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////pron/@negIndef)='yes' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='no' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no' or normalize-space(////neg/@polarityItems)='yes' and normalize-space(////neg/@type)='changing' and normalize-space(////qp/@determiner)='yesSome' and normalize-space(////qp/@npDegree)!='yesPosOnly' and normalize-space(////qp/@npDegree)!='noPosOnly' and normalize-space(////pron/@negIndef)='no'">
+				<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
 <p>
 <xsl:text>As these examples show, a negative polarity item is </xsl:text>
-<xsl:if test="normalize-space(////neg/@objVerbRequired)!='no'">
+<xsl:if test="normalize-space(//neg/@objVerbRequired)!='no'">
 						<xsl:text>not</xsl:text>
 					</xsl:if>
 <xsl:text> allowed to occur in object or indirect object position </xsl:text>

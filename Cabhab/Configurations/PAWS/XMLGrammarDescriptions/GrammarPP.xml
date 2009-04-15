@@ -2348,6 +2348,8 @@ P' = P AdvP
 	&lt;AdvP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type suffix poss&gt; &lt;= &lt;AdvP head type suffix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
 	&lt;P' option&gt; = 2a
 </rule>
 	<showWhen id="PBaroption2a">
@@ -2371,6 +2373,8 @@ P' = AdvP P
 	&lt;AdvP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type prefix poss&gt; &lt;= &lt;AdvP head type prefix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
 	&lt;P' option&gt; = 2b
 </rule>
 	<showWhen id="PBaroption2b">
@@ -2385,6 +2389,48 @@ P' = AdvP P
 		<whenValue element="pp" attr="pType" value="word"/>
 		<and/>
 		<whenValue element="pp" attr="locative" value="yes"/>
+	</showWhen>
+	<rule show="PBaroption2c">
+rule {PBar option 2c - prepositions, temporal AdvP complement}
+P' = P AdvP
+	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P head type PP-initial&gt; = +
+	&lt;AdvP head type temporal&gt; = +
+	&lt;P' head type stranded&gt; = -		| not missing a complement
+	&lt;P' head type suffix poss&gt; &lt;= &lt;AdvP head type suffix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
+	&lt;P' option&gt; = 2c
+</rule>
+	<showWhen id="PBaroption2c">
+		<whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+		<or/>
+		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+	</showWhen>
+	<rule show="PBaroption2d">
+rule {PBar option 2d - postpositions, temporal AdvP complement}
+P' = AdvP P
+	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P head type PP-final&gt; = +
+	&lt;AdvP head type temporal&gt; = +
+	&lt;P' head type stranded&gt; = -		| not missing a complement
+	&lt;P' head type prefix poss&gt; &lt;= &lt;AdvP head type prefix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
+	&lt;P' option&gt; = 2d
+</rule>
+	<showWhen id="PBaroption2d">
+		<whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
+		<or/>
+		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+		<and/>
+		<whenValue element="pp" attr="pType" value="word"/>
 	</showWhen>
 	<rule show="PBaroption3a">
 rule {PBar option 3a - prepositions, locative PP complement}

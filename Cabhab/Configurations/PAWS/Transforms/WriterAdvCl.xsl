@@ -54,9 +54,7 @@
 <xsl:text> in (4) has a finite clausal complement with a complementizer.</xsl:text>
 </p>
 			<p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, the complements occur </xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, the complements occur </xsl:text>
 <xsl:choose>
 					<xsl:when test="//advcl/@advOrNPPos='before'">
 <xsl:text>before</xsl:text>
@@ -71,9 +69,7 @@
 <xsl:text>_______</xsl:text>
 </xsl:when>
 				</xsl:choose>
-<xsl:text> the adverb.  Examples of temporal adverbial clauses in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, included in full sentences are:</xsl:text>
+<xsl:text> the adverb.  Examples of temporal adverbial clauses in </xsl:text>Vernacular<xsl:text>, included in full sentences are:</xsl:text>
 </p>
 			<example num="xAdvCl.AdvClTemporal.12">
 <xsl:variable name="sExampleValue">
@@ -103,8 +99,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -182,9 +177,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Examples of reason or purpose adverbial clauses in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, included in full sentences are:</xsl:text>
+<xsl:text>Examples of reason or purpose adverbial clauses in </xsl:text>Vernacular<xsl:text>, included in full sentences are:</xsl:text>
 </p>
 			<example num="xAdvCl.AdvClReason.12">
 <xsl:variable name="sExampleValue">
@@ -214,8 +207,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>

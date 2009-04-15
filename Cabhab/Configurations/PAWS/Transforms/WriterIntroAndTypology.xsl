@@ -4,9 +4,7 @@
 	<section1 id="sIntro">
 		<secTitle>Introduction</secTitle>
 		<p>
-<xsl:text>This is a description of the syntax of </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> based on the answers given to the PAWS Starter Kit. </xsl:text>
+<xsl:text>This is a description of the syntax of </xsl:text>Vernacular<xsl:text> based on the answers given to the PAWS Starter Kit. </xsl:text>
 </p>
 <p>
 <object type="tComment"> Once the starter kit is completed, this file can serve as a draft for preparing a more complete grammar.  This grammar is written at the practical grammar level as a descriptive/comparative grammar relative to English.  For your final version, you can delete the information about English in each section or change it to relate to the national language in your area.</object>
@@ -18,15 +16,11 @@
 <object type="tComment"> DO NOT MODIFY THIS FILE UNTIL THE STARTER KIT IS COMPLETED, because your work will be overwritten by the PAWS program!</object>
 </p>
 		<p>
-<xsl:text>The </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> language is spoken in </xsl:text>
+<xsl:text>The </xsl:text>Vernacular<xsl:text> language is spoken in </xsl:text>
 <object type="tComment">locations go here</object>
 <xsl:text>.   There are approximately </xsl:text>
 <object type="tComment">number goes here</object>
-<xsl:text> speakers.  </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> is a member of the </xsl:text>
+<xsl:text> speakers.  </xsl:text>Vernacular<xsl:text> is a member of the </xsl:text>
 <object type="tComment">language family name goes here</object>
 <xsl:text> language family.</xsl:text>
 </p>
@@ -37,9 +31,7 @@
 	<section1 id="sTypology">
 		<secTitle>Word Order Typology</secTitle>
 		<p>
-<xsl:text>The basic word order of </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> in transitive sentences is </xsl:text>
+<xsl:text>The basic word order of </xsl:text>Vernacular<xsl:text> in transitive sentences is </xsl:text>
 <xsl:choose>
 				<xsl:when test="//typology/@wordOrder='SVO'">
 <xsl:text>Subject-Verb-Object</xsl:text>
@@ -90,8 +82,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -100,46 +91,36 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		<xsl:if test="normalize-space(////typology/@wordOrder)='SVO' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='VOS' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='SVO' and normalize-space(////pp/@pPos)='unknown' or normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////pp/@pPos)='unknown' or normalize-space(////typology/@wordOrder)='VOS' and normalize-space(////pp/@pPos)='unknown'">
+		<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//pp/@pPos)='before' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//pp/@pPos)='before' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//pp/@pPos)='before' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//pp/@pPos)='unknown' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//pp/@pPos)='unknown' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//pp/@pPos)='unknown'">
 <p>
-<xsl:text>In keeping with the head-initial typology, </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has prepositions (section </xsl:text>
+<xsl:text>In keeping with the head-initial typology, </xsl:text>Vernacular<xsl:text> has prepositions (section </xsl:text>
 <sectionRef sec="sPPType" />
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="normalize-space(////typology/@wordOrder)='SVO' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='VSO' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='VOS' and normalize-space(////pp/@pPos)='after'">
+		<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//pp/@pPos)='after' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//pp/@pPos)='after' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//pp/@pPos)='after'">
 <p>
-<xsl:text>In contrast with the head-initial typology, </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has postpositions (section </xsl:text>
+<xsl:text>In contrast with the head-initial typology, </xsl:text>Vernacular<xsl:text> has postpositions (section </xsl:text>
 <sectionRef sec="sPPType" />
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="normalize-space(////pp/@pPos)='both'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has both prepositions and postpositions (section </xsl:text>
+		<xsl:if test="normalize-space(//pp/@pPos)='both'">
+<p>Vernacular<xsl:text> has both prepositions and postpositions (section </xsl:text>
 <sectionRef sec="sPPType" />
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="normalize-space(////typology/@wordOrder)='SOV' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='OVS' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='OSV' and normalize-space(////pp/@pPos)='after' or normalize-space(////typology/@wordOrder)='SOV' and normalize-space(////pp/@pPos)='unknown' or normalize-space(////typology/@wordOrder)='OVS' and normalize-space(////pp/@pPos)='unknown' or normalize-space(////typology/@wordOrder)='OSV' and normalize-space(////pp/@pPos)='unknown'">
+		<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//pp/@pPos)='after' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//pp/@pPos)='after' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//pp/@pPos)='after' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//pp/@pPos)='unknown' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//pp/@pPos)='unknown' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//pp/@pPos)='unknown'">
 <p>
-<xsl:text>In keeping with the head-final typology, </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has postpositions (section </xsl:text>
+<xsl:text>In keeping with the head-final typology, </xsl:text>Vernacular<xsl:text> has postpositions (section </xsl:text>
 <sectionRef sec="sPPType" />
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="normalize-space(////typology/@wordOrder)='SOV' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='OVS' and normalize-space(////pp/@pPos)='before' or normalize-space(////typology/@wordOrder)='OSV' and normalize-space(////pp/@pPos)='before'">
+		<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//pp/@pPos)='before' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//pp/@pPos)='before' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//pp/@pPos)='before'">
 <p>
-<xsl:text>In contrast with the head-final typology, </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has prepositions (section </xsl:text>
+<xsl:text>In contrast with the head-final typology, </xsl:text>Vernacular<xsl:text> has prepositions (section </xsl:text>
 <sectionRef sec="sPPType" />
 <xsl:text>).</xsl:text>
 </p>
@@ -189,10 +170,9 @@
 <xsl:text> the noun they are modifying (section </xsl:text>
 <sectionRef sec="sNPAdjP" />
 <xsl:text>).   </xsl:text>
-<xsl:if test="normalize-space(////relcl/@exist)='no'">
-<xsl:value-of select="//language/langName" /> <xsl:text> does not have any type of relative clause.</xsl:text>
+<xsl:if test="normalize-space(//relcl/@exist)='no'">Vernacular <xsl:text> does not have any type of relative clause.</xsl:text>
 </xsl:if>
-<xsl:if test="normalize-space(////relcl/@exist)='yes'">
+<xsl:if test="normalize-space(//relcl/@exist)='yes'">
 <xsl:text>Relative clauses occur </xsl:text> <xsl:choose>
 				<xsl:when test="//relcl/@clausePos='before'">
 <xsl:text>before</xsl:text>
@@ -212,9 +192,7 @@
 			<xsl:text>).   </xsl:text> </xsl:if>
 </p>
 		<p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, </xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, </xsl:text>
 <xsl:choose>
 				<xsl:when test="//ip/@proDrop='noImp'">
 <xsl:text>pro-drop is not allowed.  The subject must be overt except in imperatives</xsl:text>
@@ -232,7 +210,7 @@
 <xsl:text>  (section </xsl:text>
 <sectionRef sec="sIPProDrop" />
 <xsl:text>).</xsl:text>
-<xsl:if test="normalize-space(////ip/@proDrop)='yes'">
+<xsl:if test="normalize-space(//ip/@proDrop)='yes'">
 				<xsl:text>  Pro-drop of the object is </xsl:text>
 				<xsl:choose>
 					<xsl:when test="//ip/@proDropObject='no'">
@@ -245,18 +223,14 @@
 				<xsl:text> allowed.</xsl:text>
 			</xsl:if>
 </p>
-		<xsl:if test="normalize-space(////ip/@aux)='no'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not have any auxiliaries which are written as separate words (section </xsl:text>
+		<xsl:if test="normalize-space(//ip/@aux)='no'">
+<p>Vernacular<xsl:text> does not have any auxiliaries which are written as separate words (section </xsl:text>
 <sectionRef sec="sIPAux" />
 <xsl:text>).</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="normalize-space(////ip/@aux)='yes'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has some auxiliaries which are written as separate words.  These occur </xsl:text>
+		<xsl:if test="normalize-space(//ip/@aux)='yes'">
+<p>Vernacular<xsl:text> has some auxiliaries which are written as separate words.  These occur </xsl:text>
 <xsl:choose>
 				<xsl:when test="//typology/@wordOrder='SVO'">
 <xsl:text>before</xsl:text>
@@ -283,7 +257,7 @@
 </p>
 </xsl:if>
 		<p>
-<xsl:if test="normalize-space(////q/@mainYNWord)='yes'">
+<xsl:if test="normalize-space(//q/@mainYNWord)='yes'">
 				<xsl:text>In Yes/No questions, there is a question marker or complementizer which occurs </xsl:text>
 				<xsl:choose>
 					<xsl:when test="//q/@mainYNPos='before'">

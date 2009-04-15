@@ -120,10 +120,11 @@ col template
 					<langData>
 					  <xsl:element name="xsl:attribute">
 						<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
-						<xsl:text>l</xsl:text>
-						<xsl:element name="xsl:value-of">
-						  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
-						</xsl:element>
+						  <xsl:text>lVernacular</xsl:text>
+						  <!-- now we want to use lVernacular so any newly added langData elements in XXE will work correctly.
+							  <xsl:element name="xsl:value-of">-->
+						  <!--                          <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>-->
+						  <!--                        </xsl:element>-->
 					  </xsl:element>
 					  <xsl:text>ENTER AN EXAMPLE HERE</xsl:text>
 					</langData>
@@ -287,9 +288,11 @@ langName template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//langName">
-	<xsl:element name="xsl:value-of">
-	  <xsl:attribute name="select"><xsl:text>//language/langName</xsl:text></xsl:attribute>
-	</xsl:element>
+	  <xsl:text>Vernacular</xsl:text>
+	  <!--  now we want to use lVernacular, not lXXX so any newly added langData items will work in XXE
+		  <xsl:element name="xsl:value-of">
+		  <xsl:attribute name="select"><xsl:text>//language/langName</xsl:text></xsl:attribute>
+		  </xsl:element> -->
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -464,7 +467,7 @@ BuildCondition
 		<xsl:choose>
 		  <xsl:when test="name()='whenValue'">
 			<xsl:text>normalize-space(//</xsl:text>
-			<xsl:text>//</xsl:text>
+<!--            <xsl:text>//</xsl:text>-->
 			<xsl:value-of select="@element"/>
 			<xsl:if test="@attr">
 			  <xsl:text>/@</xsl:text>
@@ -623,10 +626,11 @@ DoInterlinear
 				<langData>
 				  <xsl:element name="xsl:attribute">
 					<xsl:attribute name="name"><xsl:text>lang</xsl:text></xsl:attribute>
-					<xsl:text>l</xsl:text>
-					<xsl:element name="xsl:value-of">
-					  <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>
-					</xsl:element>
+					  <xsl:text>lVernacular</xsl:text>
+					  <!-- now we want to use lVernacular so any newly added langData elements in XXE will work correctly.
+						  <xsl:element name="xsl:value-of">-->
+					  <!--                          <xsl:attribute name="select"><xsl:text>//language/langAbbr</xsl:text></xsl:attribute>-->
+					  <!--                        </xsl:element>-->
 				  </xsl:element>
 					  <xsl:text>ENTER AN EXAMPLE HERE</xsl:text>
 				</langData>

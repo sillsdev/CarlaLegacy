@@ -26,7 +26,7 @@ Main template
 		</xsl:processing-instruction>
 		<lingPaper>
 			<frontMatter>
-				<title>PAWS-Generated Grammar Write-Up<br/> for <xsl:value-of select="//language/langName"/>
+				<title>PAWS-Generated Grammar Write-Up for <xsl:value-of select="//language/langName"/>
 				</title>
 				<author>FIRST AUTHOR NAME GOES HERE</author>
 				<author>SECOND AUTHOR NAME GOES HERE (if there's only one, delete this)</author>
@@ -65,8 +65,9 @@ Main template
 				<language id="lGloss" name="GlossLanguage" color="#446688"/>
 				<language name="vernacular">
 					<xsl:attribute name="id">
-						<xsl:text>l</xsl:text>
-						<xsl:value-of select="//language/langAbbr"/>
+						<xsl:text>lVernacular</xsl:text>
+						<!-- Now we want to use lVernacular so XXE works well
+							<xsl:value-of select="//language/langAbbr"/>-->
 					</xsl:attribute>
 					<xsl:attribute name="font-family">
 						<xsl:value-of select="//language/font/fontName"/>
@@ -184,8 +185,9 @@ OutputColExamples
 				<td>
 					<langData>
 						<xsl:attribute name="lang">
-							<xsl:text>l</xsl:text>
-							<xsl:value-of select="//language/langAbbr"/>
+							<xsl:text>lVernacular</xsl:text>
+							<!-- Now we want to use lVernacular so XXE works well
+								<xsl:value-of select="//language/langAbbr"/>-->
 						</xsl:attribute>
 						<xsl:value-of select="$sLine"/>
 					</langData>
@@ -240,8 +242,9 @@ OutputInterlinearExamples
 					<line>
 						<langData>
 							<xsl:attribute name="lang">
-								<xsl:text>l</xsl:text>
-								<xsl:value-of select="//language/langAbbr"/>
+								<xsl:text>lVernacular</xsl:text>
+								<!-- Now we want to use lVernacular so XXE works well
+									<xsl:value-of select="//language/langAbbr"/>-->
 							</xsl:attribute>
 							<xsl:value-of select="$sLine"/>
 						</langData>

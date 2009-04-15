@@ -2388,6 +2388,8 @@ P' = P AdvP
 	&lt;AdvP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type suffix poss&gt; &lt;= &lt;AdvP head type suffix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
 	&lt;P' option&gt; = 2a
 </xsl:text>
 </xsl:if>
@@ -2413,6 +2415,8 @@ P' = AdvP P
 	&lt;AdvP head type locative&gt; = +
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type prefix poss&gt; &lt;= &lt;AdvP head type prefix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
 	&lt;P' option&gt; = 2b
 </xsl:text>
 </xsl:if>
@@ -2420,6 +2424,52 @@ P' = AdvP P
 
 
 
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//pp/@pPos)='before' and normalize-space(//pp/@pType)='word' or normalize-space(//pp/@pPos)='both' and normalize-space(//pp/@pType)='word'">
+<xsl:text>
+rule {PBar option 2c - prepositions, temporal AdvP complement}
+P' = P AdvP
+	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P head type PP-initial&gt; = +
+	&lt;AdvP head type temporal&gt; = +
+	&lt;P' head type stranded&gt; = -		| not missing a complement
+	&lt;P' head type suffix poss&gt; &lt;= &lt;AdvP head type suffix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
+	&lt;P' option&gt; = 2c
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//pp/@pPos)='after' and normalize-space(//pp/@pType)='word' or normalize-space(//pp/@pPos)='both' and normalize-space(//pp/@pType)='word'">
+<xsl:text>
+rule {PBar option 2d - postpositions, temporal AdvP complement}
+P' = AdvP P
+	&lt;P' head&gt; = &lt;P head&gt;
+	&lt;P head type PP-final&gt; = +
+	&lt;AdvP head type temporal&gt; = +
+	&lt;P' head type stranded&gt; = -		| not missing a complement
+	&lt;P' head type prefix poss&gt; &lt;= &lt;AdvP head type prefix poss&gt;
+	&lt;P' head type temporal&gt; &lt;= &lt;AdvP head type temporal&gt;
+	&lt;P' head type locative&gt; &lt;= &lt;AdvP head type locative&gt;
+	&lt;P' option&gt; = 2d
+</xsl:text>
+</xsl:if>
 
 
 

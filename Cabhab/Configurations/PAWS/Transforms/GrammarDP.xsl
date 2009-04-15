@@ -17,6 +17,7 @@ rule {DP option RelCP - headless relative CP}
 DP = CP
 	&lt;DP head&gt; = &lt;CP head&gt;
 	&lt;CP head type relative&gt; = +
+	&lt;CP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
 	&lt;DP option&gt; = RelCP
@@ -35,9 +36,10 @@ rule {DP option RelIP - headless relative IP}
 DP = IP
 	&lt;DP head&gt; = &lt;IP head&gt;
 	&lt;IP head type relative&gt; = +
+	&lt;IP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
-	&lt;DP option&gt; = RelCP
+	&lt;DP option&gt; = RelIP
 </xsl:text>
 </xsl:if>
 
@@ -2018,6 +2020,7 @@ rule {DBar option 1frel - relative clause CP final}
 D' = D'_1 CP
 	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;CP head type relative&gt; = +
+	&lt;CP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;CP head type question&gt; = -
 	&lt;D' head agr animate&gt; = &lt;CP head agr animate&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
@@ -2043,6 +2046,7 @@ rule {DBar option 1irel - relative clause CP initial}
 D' = CP D'_1
 	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;CP head type relative&gt; = +
+	&lt;CP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;CP head type question&gt; = -
 	&lt;D' head agr animate&gt; = &lt;CP head agr animate&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
@@ -2068,6 +2072,7 @@ rule {DBar option 2frel - relative clause IP final}
 D' = D'_1 IP
 	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;IP head type relative&gt; = +
+	&lt;IP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;D' head agr animate&gt; = &lt;IP head agr animate&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;D' option&gt; = 2frel
@@ -2092,6 +2097,7 @@ rule {DBar option 2irel - relative clause IP initial}
 D' = IP D'_1
 	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;IP head type relative&gt; = +
+	&lt;IP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;D' head agr animate&gt; = &lt;IP head agr animate&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;D' option&gt; = 2irel

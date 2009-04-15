@@ -26,9 +26,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:text>
 </p>
 		<p>
-<xsl:text>Languages normally have degree words which can modify at least some types of adverbs.  </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text></xsl:text>
+<xsl:text>Languages normally have degree words which can modify at least some types of adverbs.  </xsl:text>Vernacular<xsl:text></xsl:text>
 <xsl:choose>
 				<xsl:when test="//advp/@degree='no'">
 <xsl:text> does not have any such degree words, however.</xsl:text>
@@ -38,7 +36,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////advp/@degree)='yes'">
+<xsl:if test="normalize-space(//advp/@degree)='yes'">
 				<xsl:text> These degree words occur </xsl:text>
 				<xsl:choose>
 					<xsl:when test="//advp/@degreePos='before'">
@@ -138,9 +136,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 <xsl:text> in English.</xsl:text>
 </p>
 			<p>
-<xsl:text>Examples of </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> positive temporal adverbs and any degree words which can modify them include:
+<xsl:text>Examples of </xsl:text>Vernacular<xsl:text> positive temporal adverbs and any degree words which can modify them include:
 </xsl:text>
 </p>
 			<example num="xAdvP.AdvPTemporal.8">
@@ -171,8 +167,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -181,14 +176,12 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="normalize-space(////advp/@negTemporalType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, the negative temporal idea of  'no when' is expressed by one or more verbal affixes, rather than by separate words.  Examples of the affix(es) attached to verbs include:</xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, the negative temporal idea of  'no when' is expressed by one or more verbal affixes, rather than by separate words.  Examples of the affix(es) attached to verbs include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////advp/@negTemporalType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
 <example num="xAdvP.AdvPTemporal.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalAffixExample" />
@@ -217,8 +210,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -228,21 +220,17 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:choose>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(////advp/@negTemporalType)='verb'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='verb'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, there is only a verbal negative affix, but it may occur with positive temporal adverbs to give a negative temporal meaning.  Examples of temporal adverbs with a negative verb include:</xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, there is only a verbal negative affix, but it may occur with positive temporal adverbs to give a negative temporal meaning.  Examples of temporal adverbs with a negative verb include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////advp/@negTemporalType)='word'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='word'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, the negative temporal idea of  'no when' is expressed by one or more separate words.  Examples include:</xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, the negative temporal idea of  'no when' is expressed by one or more separate words.  Examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////advp/@negTemporalType)='word' or normalize-space(////advp/@negTemporalType)='verb'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='word' or normalize-space(//advp/@negTemporalType)='verb'">
 <example num="xAdvP.AdvPTemporal.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalExample" />
@@ -271,8 +259,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -401,9 +388,7 @@ adverbial clauses </xsl:text>
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Examples of </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> positive locative adverbs and any degree words which can modify them include:
+<xsl:text>Examples of </xsl:text>Vernacular<xsl:text> positive locative adverbs and any degree words which can modify them include:
 </xsl:text>
 </p>
 			<example num="xAdvP.AdvPLocative.8">
@@ -434,8 +419,7 @@ adverbial clauses </xsl:text>
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -444,14 +428,12 @@ adverbial clauses </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="normalize-space(////advp/@negLocativeType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, the negative locative idea of  'nowhere' is expressed by one or more verbal affixes, rather than by separate words.  Examples of the affix(es) attached to verbs include:</xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, the negative locative idea of  'nowhere' is expressed by one or more verbal affixes, rather than by separate words.  Examples of the affix(es) attached to verbs include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////advp/@negLocativeType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
 <example num="xAdvP.AdvPLocative.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeAffixExample" />
@@ -480,8 +462,7 @@ adverbial clauses </xsl:text>
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -491,21 +472,17 @@ adverbial clauses </xsl:text>
 </xsl:choose>
 </example>
 </xsl:if>
-			 <xsl:if test="normalize-space(////advp/@negLocativeType)='verb'">
+			 <xsl:if test="normalize-space(//advp/@negLocativeType)='verb'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, there is only a verbal negative affix, but it may occur with positive locative adverbs to give a negative locative meaning.  Examples of locative adverbs with a negative verb include:</xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, there is only a verbal negative affix, but it may occur with positive locative adverbs to give a negative locative meaning.  Examples of locative adverbs with a negative verb include:</xsl:text>
 </p>
 </xsl:if>
-		   <xsl:if test="normalize-space(////advp/@negLocativeType)='word'">
+		   <xsl:if test="normalize-space(//advp/@negLocativeType)='word'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, the negative locative idea of  'nowhere' is expressed by one or more separate words.  Examples include:</xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, the negative locative idea of  'nowhere' is expressed by one or more separate words.  Examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////advp/@negLocativeType)='word' or normalize-space(////advp/@negLocativeType)='verb'">
+			<xsl:if test="normalize-space(//advp/@negLocativeType)='word' or normalize-space(//advp/@negLocativeType)='verb'">
 <example num="xAdvP.AdvPLocative.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeExample" />
@@ -534,8 +511,7 @@ adverbial clauses </xsl:text>
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -613,9 +589,7 @@ and </xsl:text>
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Examples of </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> manner adverbs and any degree words which can modify them include:
+<xsl:text>Examples of </xsl:text>Vernacular<xsl:text> manner adverbs and any degree words which can modify them include:
 </xsl:text>
 </p>
 			<example num="xAdvP.AdvPManner.8">
@@ -646,8 +620,7 @@ and </xsl:text>
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -656,11 +629,9 @@ and </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<xsl:if test="normalize-space(////advp/@mannerType)='affix'">
+			<xsl:if test="normalize-space(//advp/@mannerType)='affix'">
 <p>
-<xsl:text>Manner adverbs in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> are all written as affixes on the verb, rather than being separate words.</xsl:text>
+<xsl:text>Manner adverbs in </xsl:text>Vernacular<xsl:text> are all written as affixes on the verb, rather than being separate words.</xsl:text>
 </p>
 </xsl:if>
 		</section2>
@@ -696,9 +667,7 @@ and </xsl:text>
 <xsl:text>.  These adverbial phrases or clauses occur either initially or finally in the sentence.</xsl:text>
 </p>
 			<p>
-<xsl:text>Examples of </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> reason or purpose adverbs or adverbial clauses, included in full sentences are:
+<xsl:text>Examples of </xsl:text>Vernacular<xsl:text> reason or purpose adverbs or adverbial clauses, included in full sentences are:
 </xsl:text>
 </p>
 			<example num="xAdvP.AdvPReason.8">
@@ -729,8 +698,7 @@ and </xsl:text>
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>

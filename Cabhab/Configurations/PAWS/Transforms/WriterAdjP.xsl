@@ -53,18 +53,14 @@
 </xsl:attribute>very easily forgotten</langData>
 <xsl:text>.  Not all combinations of words work due to semantics and other considerations, but in general it seems that certain degree words and manner adverbs or manner adverb phrases can modify adjectives.</xsl:text>
 </p>
-		<xsl:if test="normalize-space(////adjp/@modifiers)='no'">
+		<xsl:if test="normalize-space(//adjp/@modifiers)='no'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not allow any degree words or manner adverbs to modify adjectives.</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> does not allow any degree words or manner adverbs to modify adjectives.</xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="normalize-space(////adjp/@modifiers)='yes'">
+		<xsl:if test="normalize-space(//adjp/@modifiers)='yes'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> allows certain degree words to modify adjectives, but manner adverbs may not.  The degree words occur </xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> allows certain degree words to modify adjectives, but manner adverbs may not.  The degree words occur </xsl:text>
 <xsl:choose>
 				<xsl:when test="//adjp/@degreePos='before'">
 <xsl:text>before</xsl:text>
@@ -92,21 +88,19 @@
 </xsl:when>
 			</xsl:choose>
 <xsl:text> the adjective.  </xsl:text>
-<xsl:if test="normalize-space(////adjp/@modifiers)='yesDegree' and normalize-space(////adjp/@degreeEither)='unrestricted' and normalize-space(////adjp/@degreePos)!='before' and normalize-space(////adjp/@degreePos)!='after'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreeEither)='unrestricted' and normalize-space(//adjp/@degreePos)!='before' and normalize-space(//adjp/@degreePos)!='after'">
 				<xsl:text>All of the degree words can occur on either side of the adjective.</xsl:text>
 			</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////adjp/@modifiers)='yesDegree' and normalize-space(////adjp/@degreeEither)='restricted' and normalize-space(////adjp/@degreePos)!='before' and normalize-space(////adjp/@degreePos)!='after'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreeEither)='restricted' and normalize-space(//adjp/@degreePos)!='before' and normalize-space(//adjp/@degreePos)!='after'">
 				<xsl:text>There are restrictions as to which of the degree words can occur on each side of the adjective.</xsl:text>
 			</xsl:if>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-		<xsl:if test="normalize-space(////adjp/@modifiers)='yesManner'">
+		<xsl:if test="normalize-space(//adjp/@modifiers)='yesManner'">
 <p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> allows both certain degree words and manner adverbs to modify adjectives.  These modifiers occur </xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> allows both certain degree words and manner adverbs to modify adjectives.  These modifiers occur </xsl:text>
 <xsl:choose>
 				<xsl:when test="//adjp/@mannerPos='before'">
 <xsl:text>before</xsl:text>
@@ -134,20 +128,18 @@
 </xsl:when>
 			</xsl:choose>
 <xsl:text> the adjective.  </xsl:text>
-<xsl:if test="normalize-space(////adjp/@modifiers)='yesManner' and normalize-space(////adjp/@mannerEither)='unrestricted' and normalize-space(////adjp/@mannerPos)!='before' and normalize-space(////adjp/@mannerPos)!='after'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerEither)='unrestricted' and normalize-space(//adjp/@mannerPos)!='before' and normalize-space(//adjp/@mannerPos)!='after'">
 				<xsl:text>All of the degree words and manner adverbs can occur on either side of the adjective.</xsl:text>
 			</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////adjp/@modifiers)='yesManner' and normalize-space(////adjp/@mannerEither)='restricted' and normalize-space(////adjp/@mannerPos)!='before' and normalize-space(////adjp/@mannerPos)!='after'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerEither)='restricted' and normalize-space(//adjp/@mannerPos)!='before' and normalize-space(//adjp/@mannerPos)!='after'">
 				<xsl:text>There are restrictions as to which of the degree words and manner adverbs can occur on each side of the adjective.</xsl:text>
 			</xsl:if>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
 		<p>
-<xsl:text>Examples of adjectives or adjective phrases in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:
+<xsl:text>Examples of adjectives or adjective phrases in </xsl:text>Vernacular<xsl:text> include:
 </xsl:text>
 </p>
 		<example num="xAdjP.16">
@@ -178,8 +170,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>

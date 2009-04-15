@@ -41,16 +41,12 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 					<xsl:text>Speaking of Jill, where is she?</xsl:text>
 				</li>
 			</ol>
-<xsl:if test="normalize-space(////focus/@topic)='no'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not allow topic phrases. </xsl:text>
+<xsl:if test="normalize-space(//focus/@topic)='no'">
+<p>Vernacular<xsl:text> does not allow topic phrases. </xsl:text>
 </p>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@topic)='yes'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has topic phrases which occur </xsl:text>
+<xsl:if test="normalize-space(//focus/@topic)='yes'">
+<p>Vernacular<xsl:text> has topic phrases which occur </xsl:text>
 <xsl:choose>
 				<xsl:when test="//focus/@topicPos='before'">
 <xsl:text>before</xsl:text>
@@ -65,7 +61,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:text> the main sentence or question.   Some examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////focus/@topic)='yes'">
+			<xsl:if test="normalize-space(//focus/@topic)='yes'">
 <example num="xFocus.FocusTopics.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/topicExample" />
@@ -94,8 +90,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -105,11 +100,9 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:choose>
 </example>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@topic)='yes'">
+<xsl:if test="normalize-space(//focus/@topic)='yes'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, the topic phrase is </xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, the topic phrase is </xsl:text>
 <xsl:choose>
 <xsl:when test="//focus/@topicMarker='no'">
 <xsl:text>not marked by a topic marker.  Only the position in the sentence and possibly punctuation distinguish the topic phrase.</xsl:text>
@@ -124,7 +117,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:text>marked by one or more affixes which attach to the topic phrase.</xsl:text>
 </xsl:when>
 </xsl:choose>
-<xsl:if test="normalize-space(////focus/@topic)='yes' and normalize-space(////focus/@topicMarker)='yesWord'">
+<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord'">
 <xsl:text>The topic markers occur </xsl:text>
 <xsl:choose>
 <xsl:when test="//focus/@topicMarkerPos='before'">
@@ -154,15 +147,15 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:choose>
 <xsl:text> whenever there is a topic phrase.</xsl:text>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@topic)='yes' and normalize-space(////focus/@topicMarker)='yesWord' and normalize-space(////focus/@topicMarkerPos)='either' and normalize-space(////focus/@topicMarkerEither)='no' or normalize-space(////focus/@topic)='yes' and normalize-space(////focus/@topicMarker)='yesWord' and normalize-space(////focus/@topicMarkerPos)='both' and normalize-space(////focus/@topicMarkerEither)='no'">
+<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='either' and normalize-space(//focus/@topicMarkerEither)='no' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='both' and normalize-space(//focus/@topicMarkerEither)='no'">
 <xsl:text>There are separate sets of topic markers which can occur on each side of the topic phrase.</xsl:text>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@topic)='yes' and normalize-space(////focus/@topicMarker)='yesWord' and normalize-space(////focus/@topicMarkerPos)='either' and normalize-space(////focus/@topicMarkerEither)='yes' or normalize-space(////focus/@topic)='yes' and normalize-space(////focus/@topicMarker)='yesWord' and normalize-space(////focus/@topicMarkerPos)='both' and normalize-space(////focus/@topicMarkerEither)='yes'">
+<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='either' and normalize-space(//focus/@topicMarkerEither)='yes' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='both' and normalize-space(//focus/@topicMarkerEither)='yes'">
 <xsl:text>All of the topic markers may occur on either side of the topic phrase.</xsl:text>
 </xsl:if>
 </p>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@topicMarker)!='no'">
+<xsl:if test="normalize-space(//focus/@topicMarker)!='no'">
 <example num="xFocus.FocusTopics.16">
 <table border="1">
 <tr>
@@ -190,8 +183,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -225,16 +217,12 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 					<xsl:text>Only that boy, Jerry hit  __ .</xsl:text>
 				</li>
 			</ol>
-<xsl:if test="normalize-space(////focus/@focus)='no'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> does not allow a focus phrase to be moved before or after the rest of the sentence out of its normal position. </xsl:text>
+<xsl:if test="normalize-space(//focus/@focus)='no'">
+<p>Vernacular<xsl:text> does not allow a focus phrase to be moved before or after the rest of the sentence out of its normal position. </xsl:text>
 </p>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@focus)='yes'">
-<p>
-<xsl:value-of select="//language/langName" />
-<xsl:text> has focused phrases which occur </xsl:text>
+<xsl:if test="normalize-space(//focus/@focus)='yes'">
+<p>Vernacular<xsl:text> has focused phrases which occur </xsl:text>
 <xsl:choose>
 				<xsl:when test="//focus/@focusPos='before'">
 <xsl:text>before</xsl:text>
@@ -249,7 +237,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:text> the rest of the sentence.   Some examples include:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(////focus/@focus)='yes'">
+			<xsl:if test="normalize-space(//focus/@focus)='yes'">
 <example num="xFocus.FocusFocus.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/focusExample" />
@@ -278,8 +266,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -289,11 +276,9 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:choose>
 </example>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@focus)='yes'">
+<xsl:if test="normalize-space(//focus/@focus)='yes'">
 <p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, the focused phrase is </xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, the focused phrase is </xsl:text>
 <xsl:choose>
 <xsl:when test="//focus/@focusMarker='no'">
 <xsl:text>not marked by a focus marker.  Only the position in the sentence and possibly punctuation distinguish the focused phrase.</xsl:text>
@@ -308,7 +293,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:text>marked by one or more affixes which attach to the focused phrase.</xsl:text>
 </xsl:when>
 </xsl:choose>
-<xsl:if test="normalize-space(////focus/@focus)='yes' and normalize-space(////focus/@focusMarker)='yesWord'">
+<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord'">
 <xsl:text>The focus markers occur </xsl:text>
 <xsl:choose>
 <xsl:when test="//focus/@focusMarkerPos='before'">
@@ -338,15 +323,15 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:choose>
 <xsl:text> whenever there is a focused phrase.</xsl:text>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@focus)='yes' and normalize-space(////focus/@focusMarker)='yesWord' and normalize-space(////focus/@focusMarkerPos)='either' and normalize-space(////focus/@focusMarkerEither)='no' or normalize-space(////focus/@focus)='yes' and normalize-space(////focus/@focusMarker)='yesWord' and normalize-space(////focus/@focusMarkerPos)='both' and normalize-space(////focus/@focusMarkerEither)='no'">
+<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='either' and normalize-space(//focus/@focusMarkerEither)='no' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='both' and normalize-space(//focus/@focusMarkerEither)='no'">
 <xsl:text>There are separate sets of focus markers which can occur on each side of the focused phrase.</xsl:text>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@focus)='yes' and normalize-space(////focus/@focusMarker)='yesWord' and normalize-space(////focus/@focusMarkerPos)='either' and normalize-space(////focus/@focusMarkerEither)='yes' or normalize-space(////focus/@focus)='yes' and normalize-space(////focus/@focusMarker)='yesWord' and normalize-space(////focus/@focusMarkerPos)='both' and normalize-space(////focus/@focusMarkerEither)='yes'">
+<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='either' and normalize-space(//focus/@focusMarkerEither)='yes' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='both' and normalize-space(//focus/@focusMarkerEither)='yes'">
 <xsl:text>All of the focus markers may occur on either side of the focused phrase.</xsl:text>
 </xsl:if>
 </p>
 </xsl:if>
-<xsl:if test="normalize-space(////focus/@focusMarker)!='no'">
+<xsl:if test="normalize-space(//focus/@focusMarker)!='no'">
 <example num="xFocus.FocusFocus.16">
 <table border="1">
 <tr>
@@ -374,8 +359,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>

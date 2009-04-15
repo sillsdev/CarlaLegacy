@@ -38,9 +38,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of this type in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeFinite.8">
 <xsl:variable name="sExampleValue">
@@ -70,8 +68,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -97,9 +94,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of this type in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompFiniteOrNonfiniteIP.8">
 <xsl:variable name="sExampleValue">
@@ -129,8 +124,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -156,9 +150,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of this type in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeNonfiniteIP.8">
 <xsl:variable name="sExampleValue">
@@ -188,8 +180,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -215,9 +206,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of this type in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeNonfiniteIPPRO.8">
 <xsl:variable name="sExampleValue">
@@ -247,8 +236,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -279,9 +267,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of this type in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeNonfiniteCP.8">
 <xsl:variable name="sExampleValue">
@@ -311,8 +297,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -338,9 +323,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Examples of this type in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> include:</xsl:text>
+<xsl:text>Examples of this type in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeObject.8">
 <xsl:variable name="sExampleValue">
@@ -370,8 +353,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -384,9 +366,7 @@
 			<section3 id="sCompTypeOther">
 				<secTitle>Other Restrictions on Complement Clauses</secTitle>
 				<p>
-<xsl:text>Some languages also have verbs which have other restrictions on embedded clauses, such as that the embedded verb must be in the subjunctive mood or in the perfective aspect.  Any such examples in </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> are shown here:</xsl:text>
+<xsl:text>Some languages also have verbs which have other restrictions on embedded clauses, such as that the embedded verb must be in the subjunctive mood or in the perfective aspect.  Any such examples in </xsl:text>Vernacular<xsl:text> are shown here:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeOther.6">
 <xsl:variable name="sExampleValue">
@@ -416,8 +396,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -444,9 +423,7 @@
 <xsl:text> for nonfinite clauses.  In other languages the complementizers for embedded declarative clauses may or may not be overt, and in some languages they are clitics which are written attached to another word.</xsl:text>
 </p>
 			<p>
-<xsl:text>In </xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text>, there is </xsl:text>
+<xsl:text>In </xsl:text>Vernacular<xsl:text>, there is </xsl:text>
 <xsl:choose>
 					<xsl:when test="//comp/@comp='no'">
 <xsl:text>no complementizer word or clitic for declarative embedded clauses.</xsl:text>
@@ -456,7 +433,7 @@
 </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////comp/@comp)='yes'">
+<xsl:if test="normalize-space(//comp/@comp)='yes'">
 					<xsl:text>  The complementizer is </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//comp/@compWord='yes'">
@@ -467,7 +444,7 @@
 </xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
-					<xsl:if test="normalize-space(////comp/@compWord)='no' and normalize-space(////comp/@comp)='yes'">
+					<xsl:if test="normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@comp)='yes'">
 						<xsl:text></xsl:text>
 						<xsl:choose>
 							<xsl:when test="//comp/@compCliticAttaches='edge'">
@@ -495,7 +472,7 @@
 					</xsl:if>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(////comp/@compWord)='yes' and normalize-space(////comp/@comp)='yes'">
+<xsl:if test="normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@comp)='yes'">
 					<xsl:text> The complementizer occurs </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//comp/@compPos='before'">
@@ -524,11 +501,11 @@
 </xsl:when>
 					</xsl:choose>
 					<xsl:text> the embedded clause.  </xsl:text>
-					<xsl:if test="normalize-space(////comp/@compPos)!='before' and normalize-space(////comp/@compPos)!='after' and normalize-space(////comp/@compEitherRestricted)='unrestricted' and normalize-space(////comp/@comp)='yes'">
+					<xsl:if test="normalize-space(//comp/@compPos)!='before' and normalize-space(//comp/@compPos)!='after' and normalize-space(//comp/@compEitherRestricted)='unrestricted' and normalize-space(//comp/@comp)='yes'">
 						<xsl:text>All of the complementizers can occur on either side of the embedded clause.</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
-					<xsl:if test="normalize-space(////comp/@compPos)!='before' and normalize-space(////comp/@compPos)!='after' and normalize-space(////comp/@compEitherRestricted)='restricted' and normalize-space(////comp/@comp)='yes'">
+					<xsl:if test="normalize-space(//comp/@compPos)!='before' and normalize-space(//comp/@compPos)!='after' and normalize-space(//comp/@compEitherRestricted)='restricted' and normalize-space(//comp/@comp)='yes'">
 						<xsl:text>There are restrictions as to which of the complementizers can occur on each side of the embedded clause.</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>

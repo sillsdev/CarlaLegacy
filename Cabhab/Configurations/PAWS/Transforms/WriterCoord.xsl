@@ -46,15 +46,13 @@
 </xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> uses the following conjunctions between conjuncts:</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> uses the following conjunctions between conjuncts:</xsl:text>
 </p>
 			<example num="xCoord.10">
 <table border="1">
 					<tr>
 						<th>
-							<xsl:value-of select="//language/langName" />
+							Vernacular
 						</th>
 						<th>meaning</th>
 					</tr>
@@ -80,8 +78,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -114,8 +111,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -148,8 +144,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -182,8 +177,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -216,8 +210,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -250,8 +243,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -284,8 +276,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -299,9 +290,7 @@
 				</table>
 </example>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> uses the following conjunctions initially before the first conjunct in an </xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> uses the following conjunctions initially before the first conjunct in an </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -317,7 +306,7 @@
 <table border="1">
 					<tr>
 						<th>
-							<xsl:value-of select="//language/langName" />
+							Vernacular
 						</th>
 						<th>meaning</th>
 					</tr>
@@ -343,8 +332,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -377,8 +365,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 </tr>
 </xsl:otherwise>
@@ -408,9 +395,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> examples of sentence-level coordination include:</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> examples of sentence-level coordination include:</xsl:text>
 </p>
 			<example num="xCoord.CoordSentence.10">
 <xsl:variable name="sExampleValue">
@@ -440,8 +425,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -468,9 +452,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> examples with verb phrase coordination include:</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> examples with verb phrase coordination include:</xsl:text>
 </p>
 			<example num="xCoord.CoordVP.10">
 <xsl:variable name="sExampleValue">
@@ -500,8 +482,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -534,9 +515,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> examples with nominal phrase coordination include:</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> examples with nominal phrase coordination include:</xsl:text>
 </p>
 			<example num="xCoord.CoordDP.10">
 <xsl:variable name="sExampleValue">
@@ -566,8 +545,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>
@@ -594,9 +572,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text></xsl:text>
-<xsl:value-of select="//language/langName" />
-<xsl:text> examples with adjective coordination include:</xsl:text>
+<xsl:text></xsl:text>Vernacular<xsl:text> examples with adjective coordination include:</xsl:text>
 </p>
 			<example num="xCoord.CoordAdj.10">
 <xsl:variable name="sExampleValue">
@@ -626,8 +602,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">l<xsl:value-of select="//language/langAbbr" />
-</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
 <xsl:call-template name="DoGloss" />
 </lineGroup>

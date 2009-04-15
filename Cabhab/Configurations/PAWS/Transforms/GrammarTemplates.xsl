@@ -651,6 +651,7 @@ Let Adj			be	&lt;cat&gt; = !Adj
 								&lt;head type relative&gt;            = !-
 				&lt;head type clausal-comp&gt; = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 
 Let Adv			be	&lt;cat&gt; = !Adv
 				&lt;head type wh&gt;			= !-
@@ -659,6 +660,7 @@ Let Adv			be	&lt;cat&gt; = !Adv
 								&lt;head type takes_DP&gt;            = !-
 				&lt;head type sentential&gt;          = !-
 								&lt;embedded&gt;      = !none
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
@@ -670,6 +672,7 @@ Let Adv			be	&lt;cat&gt; = !Adv
 Let Art			be	&lt;cat&gt; = !Art
 				&lt;head type wh&gt;			= !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
@@ -711,6 +714,7 @@ Let Deg                 be      &lt;cat&gt; = !Deg
 								&lt;head type wh&gt;                  = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 
 Let Dem                 be      &lt;cat&gt; = !Dem
 								&lt;head type wh&gt;                  = !-
@@ -718,6 +722,7 @@ Let Dem                 be      &lt;cat&gt; = !Dem
 								&lt;head type relative&gt;            = !-
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
@@ -731,6 +736,7 @@ Let Det                 be      &lt;cat&gt; = !Det
 								&lt;head agr person&gt; = !third
 								&lt;head type relative&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
@@ -760,6 +766,7 @@ Let N                   be      &lt;cat&gt; = !N
 								&lt;head type temporal&gt;            = !-
 								&lt;head embedded&gt;      = !none
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
@@ -773,7 +780,7 @@ Let N                   be      &lt;cat&gt; = !N
 </xsl:if>
 <xsl:if test="normalize-space(//np/@agreeOther)='yesGender'">
 <xsl:text>
-								&lt;head agr gender&gt;            = !masculine
+								&lt;head agr gender&gt;	            = !masculine
 </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//np/@possAlienable)='yes'">
@@ -783,7 +790,7 @@ Let N                   be      &lt;cat&gt; = !N
 </xsl:if>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;    = !-
 </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//pp/@pType)!='word' and normalize-space(//pp/@attaches)='head'">
@@ -799,6 +806,8 @@ Let Num                 be      &lt;cat&gt; = !Num
 								&lt;head agr number&gt; = !plural
 								&lt;head type relative&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
+								&lt;head type quantifier&gt;         = +
 </xsl:text>
 <xsl:if test="normalize-space(//np/@qpeitherRestrictedNumPos)='after'">
 <xsl:text>
@@ -818,14 +827,15 @@ Let ordinal             be      &lt;cat&gt; = Adj
 								&lt;head type ordinal&gt;             = +
 								&lt;head agr number&gt; = !plural
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 
 Let P                   be      &lt;cat&gt; = !P
 								&lt;head type passive&gt;             = !-
 								&lt;head type wh&gt;                  = -
 								&lt;head type partitive&gt;           = !-
 								&lt;head type temporal&gt;            = !-
-				&lt;head type locative&gt;            = !-
 								&lt;head sentential&gt;      = !-
+								&lt;head type participle&gt;         = -
 
 Let Poss                be      &lt;cat&gt; = Poss
 								[genitive]
@@ -842,10 +852,12 @@ Let Pron                be      &lt;cat&gt; = !Pron
 								&lt;head type human&gt;               = !+
 								&lt;head type reciprocal&gt;          = !-
 								&lt;head type reflexive&gt;          = !-
-								&lt;head type posessive&gt;          = !-
+								&lt;head type possessive&gt;          = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
+								&lt;head type pronoun&gt;            = +
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
@@ -864,7 +876,7 @@ Let Pron                be      &lt;cat&gt; = !Pron
 </xsl:if>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;         = !-
 </xsl:text>
 </xsl:if>
 <xsl:text>
@@ -883,6 +895,7 @@ Let PropN		be	&lt;cat&gt; = N
 								&lt;head type mass&gt;                = !-
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
@@ -906,7 +919,7 @@ Let PropN		be	&lt;cat&gt; = N
 </xsl:if>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;         = !-
 </xsl:text>
 </xsl:if>
 <xsl:text>
@@ -914,11 +927,13 @@ Let PropN		be	&lt;cat&gt; = N
 Let Q                   be      &lt;cat&gt; = !Q
 								&lt;head type wh&gt;                  = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
+								&lt;head type quantifier&gt;         = +
 
 Let V                   be      &lt;cat&gt; = !V
 								&lt;head type passive&gt;             = !-
 								&lt;head type sentential&gt;          = !-
-								&lt;head type sentential_with_object&gt;          = !-
+								&lt;head type sentential_with_object&gt;   = !-
 								&lt;head type copular&gt;             = !-
 								&lt;head type motion&gt;              = !-
 								&lt;head type reciprocal&gt;          = !-
@@ -933,7 +948,7 @@ Let V                   be      &lt;cat&gt; = !V
 </xsl:text>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;         = !-
 </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainContCliticAttaches)='head' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embContCliticAttaches)='head'">
@@ -965,6 +980,7 @@ Let makeAdj		be	&lt;cat&gt; = Adj
 								&lt;head type relative&gt;            = !-
 				&lt;head type clausal-comp&gt; = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 
 Let makeAdv		be	&lt;cat&gt; = Adv
 				&lt;head type wh&gt;			= !-
@@ -973,10 +989,11 @@ Let makeAdv		be	&lt;cat&gt; = Adv
 								&lt;head type takes_DP&gt;            = !-
 				&lt;head type sentential&gt;          = !-
 								&lt;head embedded&gt;      = !none
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;         = !-
 </xsl:text>
 </xsl:if>
 <xsl:text>
@@ -984,6 +1001,7 @@ Let makeAdv		be	&lt;cat&gt; = Adv
 Let makeArt		be	&lt;cat&gt; = Art
 				&lt;head type wh&gt;			= !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
@@ -1005,7 +1023,7 @@ Let makeC		be	&lt;cat&gt; = C
 </xsl:text>
 <xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='some' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='some'">
 <xsl:text>
-					&lt;head type CP-specifier-initial&gt;      = !-
+				&lt;head type CP-specifier-initial&gt;      = !-
 </xsl:text>
 </xsl:if>
 <xsl:text>
@@ -1025,6 +1043,7 @@ Let makeDeg             be      &lt;cat&gt; = Deg
 								&lt;head type wh&gt;                  = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 
 Let makeDem             be      &lt;cat&gt; = Dem
 								&lt;head type wh&gt;                  = !-
@@ -1032,6 +1051,7 @@ Let makeDem             be      &lt;cat&gt; = Dem
 								&lt;head type relative&gt;            = !-
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative' and normalize-space(//np/@artCase)='yes'">
 <xsl:text>
@@ -1040,7 +1060,7 @@ Let makeDem             be      &lt;cat&gt; = Dem
 </xsl:if>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;         = !-
 </xsl:text>
 </xsl:if>
 <xsl:text>
@@ -1069,6 +1089,7 @@ Let makeN               be      &lt;cat&gt; = N
 								&lt;head type mass&gt;                = !-
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
@@ -1092,7 +1113,7 @@ Let makeN               be      &lt;cat&gt; = N
 </xsl:if>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;        = !-
 </xsl:text>
 </xsl:if>
 <xsl:text>
@@ -1103,6 +1124,8 @@ Let makeNum             be      &lt;cat&gt; = Num
 								&lt;head agr number&gt; = !plural
 								&lt;head type relative&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
+								&lt;head type quantifier&gt;         = +
 </xsl:text>
 <xsl:if test="normalize-space(//np/@qpeitherRestrictedNumPos)='after'">
 <xsl:text>
@@ -1124,6 +1147,7 @@ Let makeP               be      &lt;cat&gt; = P
 								&lt;head type partitive&gt;           = !-
 				&lt;head type temporal&gt;            = !-
 								&lt;head type sentential&gt;          = !-
+								&lt;head type participle&gt;         = -
 
 Let makePron            be      &lt;cat&gt; = Pron
 								&lt;head type wh&gt;                  = !-
@@ -1131,10 +1155,12 @@ Let makePron            be      &lt;cat&gt; = Pron
 								&lt;head type human&gt;               = !+
 								&lt;head type reciprocal&gt;          = !-
 								&lt;head type reflexive&gt;          = !-
-								&lt;head type posessive&gt;          = !-
+								&lt;head type possessive&gt;          = !-
 								&lt;head type relative&gt;            = !-
 								&lt;head type temporal&gt;            = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
+								&lt;head type pronoun&gt;            = +
 </xsl:text>
 <xsl:if test="normalize-space(//np/@caseDefault)='nominative' and normalize-space(//np/@case)!='ergative'">
 <xsl:text>
@@ -1153,7 +1179,7 @@ Let makePron            be      &lt;cat&gt; = Pron
 </xsl:if>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;        = !-
 </xsl:text>
 </xsl:if>
 <xsl:text>
@@ -1161,6 +1187,8 @@ Let makePron            be      &lt;cat&gt; = Pron
 Let makeQ                   be  &lt;cat&gt; = Q
 								&lt;head type wh&gt;                  = !-
 								&lt;head type focusmarked&gt;         = -
+								&lt;head type participle&gt;         = -
+								&lt;head type quantifier&gt;         = +
 
 Let makeTopicM  be    &lt;cat&gt; = TopicM
 
@@ -1181,7 +1209,7 @@ Let makeV               be      &lt;cat&gt; = V
 </xsl:text>
 <xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//neg/@polarityItems)='yes'">
 <xsl:text>
-								&lt;head type negative-polarity&gt;            = !-
+								&lt;head type negative-polarity&gt;        = !-
 </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainContCliticAttaches)='head' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embContCliticAttaches)='head'">
@@ -1445,7 +1473,8 @@ S = {AdvP / DP} {IP / CP}
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
 	&lt;DP head type temporal&gt; = +
-	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;DP head type quantifier&gt; = -
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;     |polarity from advP or DP
 	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
@@ -1468,8 +1497,9 @@ S = (TopicP) {AdvP / DP} {IP / CP}
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
-	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;     |polarity from advP or DP
 	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
@@ -1494,8 +1524,9 @@ S = {AdvP / DP} {IP / CP} (TopicP)
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
-	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;     |polarity from advP or DP
 	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
@@ -1520,8 +1551,9 @@ S = {IP / CP} {AdvP / DP}
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
-	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;     |polarity from advP or DP
 	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
@@ -1544,8 +1576,9 @@ S = (TopicP) {IP / CP} {AdvP / DP}
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
-	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;     |polarity from advP or DP
 	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
@@ -1570,8 +1603,9 @@ S = {IP / CP} {AdvP / DP} (TopicP)
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
-	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
+	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;     |polarity from advP or DP
 	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;DP head type negative&gt;
 	&lt;CP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
@@ -1598,6 +1632,7 @@ S = {AdvP / DP} {IP / CP}
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
 	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
 					 [type:[negative:+]]
@@ -1622,6 +1657,7 @@ S = (TopicP) {AdvP / DP} {IP / CP}
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
 	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
 					 [type:[negative:+]]
@@ -1648,6 +1684,7 @@ S = {AdvP / DP} {IP / CP} (TopicP)
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
 	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
 					 [type:[negative:+]]
@@ -1674,6 +1711,7 @@ S = {IP / CP} {AdvP / DP}
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
 	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
 					 [type:[negative:+]]
@@ -1698,6 +1736,7 @@ S = (TopicP) {IP / CP} {AdvP / DP}
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
 	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
 					 [type:[negative:+]]
@@ -1726,6 +1765,7 @@ S = {IP / CP} {AdvP / DP} (TopicP)
 	&lt;IP head fronted cat&gt; = none
 	&lt;CP head type root&gt; = +
 	&lt;AdvP head type manner&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type temporal&gt; = +
 	&lt;S head&gt; == [adverbial:[head:[type:[negative:+]]]] -&gt;  | if adverbial negative, verb must be
 					 [type:[negative:+]]
@@ -1747,6 +1787,7 @@ rule {S option greeting}
 S = Greet (DP)
 	&lt;S head&gt; = &lt;Greet head&gt;
 	&lt;DP head type temporal&gt; = -
+	&lt;DP head type quantifier&gt; = -
 	&lt;DP head type locative&gt; = -
 	&lt;DP head type wh&gt; = -
 	&lt;DP head type topic&gt; = -
