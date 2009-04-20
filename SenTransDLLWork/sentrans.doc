@@ -42,7 +42,8 @@
 	1.30 Rule Application Monitor Option -m ............... 15
 	1.31 Trace Option -t .................................. 15
 	1.32 All of the Examples Together ..................... 17
-
+
+
 		  Sentence Transfer Program Reference Manual
 						Alan Buseman
 					  21 Nov 91 (1.0a)
@@ -97,7 +98,8 @@ Rules  that  start  with  the  marker  \am  (for  ambiguity)  are
 disambiguating  rules.    The   program  removes  ambiguities  by
 matching the  pattern  given  in  the rule, and then removing all
 ambiguities that are not part of that pattern.
-
+
+
 Sentence Transfer Program                                  Page 2
 
 
@@ -155,7 +157,8 @@ of the  word,  and matches any word with that root, including any
 affixes it  may  have.   In the same way, the category "V" stands
 for an entire verb including all its affixes.  So all the affixes
 of a word automatically move with the word.
-
+
+
 Sentence Transfer Program                                  Page 3
 
 
@@ -210,7 +213,8 @@ number, classifier,  and  noun,  and  changes it to noun, number,
 classifier.
 
 	\ru Num Class N > N Num Class
-
+
+
 Sentence Transfer Program                                  Page 4
 
 
@@ -265,7 +269,8 @@ the two verbs.
 A single  set  of  parentheses  cannot  be placed around multiple
 elements, only around a single element.
 
-
+
+
 Sentence Transfer Program                                  Page 5
 
 
@@ -319,7 +324,8 @@ the distance  ellipses  can reach.  The default limit is 5 words.
 The limit can be adjusted with a line like the following:
 
 	\... 6
-
+
+
 Sentence Transfer Program                                  Page 6
 
 
@@ -373,7 +379,8 @@ The example  above also illustrates that rules do not have to fit
 on one  line.   A rule continues until the next backslash marker.
 Class definitions also can continue for as many lines as needed.
 
-
+
+
 Sentence Transfer Program                                  Page 7
 
 
@@ -426,7 +433,8 @@ environments:
 			 / _ V ~-PRES_1S/2SPO/123PL | or before non-plural
 			 / _ ... V -PRES_3S         | or anywhere before sing
 
-
+
+
 Sentence Transfer Program                                  Page 8
 
 
@@ -486,7 +494,8 @@ from a Southeast Asian transfer pair.)
 
 	\ru receive >       / receive _
 
-
+
+
 Sentence Transfer Program                                  Page 9
 
 
@@ -542,7 +551,8 @@ The above rule can also be written as follows:
 
 	\ru possessive > -POSS
 
-
+
+
 Sentence Transfer Program                                  Page 10
 
 
@@ -600,7 +610,8 @@ across root  substitutions.   For example, consider the following
 rule:
 
 	\ru black > Adj=white
-
+
+
 Sentence Transfer Program                                  Page 11
 
 
@@ -657,7 +668,8 @@ both places.
 
 Beginning  with  version 2.1.0,  one  *must* separate punctuation
 characters with spaces.
-
+
+
 Sentence Transfer Program                                  Page 12
 
 
@@ -732,7 +744,8 @@ The word "it" must be given a category because it is not the same
 as "-IT", and so is considered an insertion.  The rule also moves
 "me" from  the  front  of  the  phrase  to  the  end and adds the
 preposition "to" in front of it.
-
+
+
 Sentence Transfer Program                                  Page 13
 
 
@@ -788,7 +801,8 @@ sentence above  the  clause,  but  it actually occurs between two
 constituents of  the subject noun phrase of the clause.  If it is
 attached to the sentence, then the line attaching it will have to
 cross the line attaching "the" to the noun phrase.
-
+
+
 Sentence Transfer Program                                  Page 14
 
 
@@ -848,7 +862,8 @@ The -r gives the rules file, the -i gives the input file, and the
 -o gives  the  output  file.  I recommend that the output file be
 given a file type of .ANT (for Analysis Transferred).
 
-
+
+
 Sentence Transfer Program                                  Page 15
 
 
@@ -908,7 +923,8 @@ line shows  the  words  that were matched.  And the "After:" line
 shows  the   result   after   disambiguation  and  any  requested
 rearrangement has been performed.  In the example above the "N/V"
 ambiguity has been removed, and only the noun form is left.
-
+
+
 Sentence Transfer Program                                  Page 16
 
 
@@ -932,7 +948,8 @@ Then run Sentence Transfer using that temporary rule file and the
 trace option.  The result will be a trace of only the places that
 particular rule applies.
 
-
+
+
 Sentence Transfer Program                                  Page 17
 
 
@@ -964,7 +981,8 @@ transfer rule file.
 \am she / _ ... V -PRES_3S          | she anywhere before singular
 
 
-
+
+
 Sentence Transfer Program                                  Page 18
 
 
