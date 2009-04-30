@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 9		/* bug fix or other minor change */
-#define DATE "September 5, 2008"	/* date of release version */
-#define YEAR "2008"		/* used for copyright notice in banner */
+#define PATCHLEVEL 10		/* bug fix or other minor change */
+#define DATE "April 30, 2009"	/* date of release version */
+#define YEAR "2009"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 30-Apr-2009  hab  - Fix bug which could cause a failure when tracing
+ * [3.12.10]            while maximum prefixes was set to zero.
  * 05-Sep-2008  hab  - Rework partial reduplication to process the patterns
  * [3.12.9]             dynamically instead of generating all possible
  *                      allomorphs upon dictionary load.

@@ -7645,10 +7645,13 @@ static void sgml_trace_success(AmpleData * pAmple_in)
 static void xml_maximum_reached(AmpleData * pAmple_in, char * pszType_in)
 {
   char * pszIndent;
+  int iDepth = iTracingDepth_m;
+  if (iDepth < 0)
+	iDepth = 0;			/* avoid allocating negative amount of memory */
 #ifdef HAVE_ALLOCA
-  pszIndent = (char *)alloca((2*iTracingDepth_m+1)*sizeof(char));
+  pszIndent = (char *)alloca((2*iDepth+1)*sizeof(char));
 #else
-  pszIndent = (char *)allocMemory((2*iTracingDepth_m+1)*sizeof(char));
+  pszIndent = (char *)allocMemory((2*iDepth+1)*sizeof(char));
 #endif
   sprintf(pszIndent, "%*s", 2*iTracingDepth_m, "");
   store_AMPLE_trace(pAmple_in, "  %s<parseNode>\n", pszIndent);

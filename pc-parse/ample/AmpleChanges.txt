@@ -1,5 +1,10 @@
 AMPLE CHANGE HISTORY
 
+3.12.10 (30-Apr-2009)
+--------------------
+1. Fix bug which could cause a failure when tracing
+	while maximum prefixes was set to zero.
+
 3.12.9 (5-Sep-2008)
 --------------------
 1. Rework partial reduplication to process the patterns dynamically instead of
