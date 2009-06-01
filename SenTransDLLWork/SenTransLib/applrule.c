@@ -1323,6 +1323,9 @@ if ( firstmat->type & SFX )
 	  }
 	for ( rep = replace; mp && rep && rep->type & SFX; rep = rep->next ) /* For each suffix at beginning of replace */
 	  { /* Insert the suffix */
+		if ( (rep->type & REF) &&
+		 (((Match *)(rep->cat))->matmp == NULL) )
+		  continue; /* if the match is not there, there's nothing to replace */
 		if ( rep->type & REF )              /* 1.2u AB If reference */
 		  tmp = copymp( ((Match *)(rep->cat))->matmp ); /* Use referenced match */
 		else
