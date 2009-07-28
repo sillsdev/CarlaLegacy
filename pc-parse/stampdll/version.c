@@ -31,8 +31,13 @@ const int	iStampPatchlevel_g = -(PATCHLEVEL);
 #else
 const int	iStampPatchlevel_g = PATCHLEVEL;
 #endif
+#if PATCHLEVEL < 0
+const int	iStampDLLPatchLevel_g = -(DLLPATCHLEVEL);
+#else
+const int   iStampDLLPatchLevel_g = DLLPATCHLEVEL;
+#endif
 const char	cStampPatchSep_g  = PATCHLEVELSEPCHAR;
-const char *	pszStampDate_g     = DATE;
+const char *	pszStampDate_g     = CHANGEDATE;
 const char *	pszStampYear_g     = YEAR;
 #ifdef __DATE__
 const char *	pszStampCompileFormat_g = COMPILEDFORMAT;

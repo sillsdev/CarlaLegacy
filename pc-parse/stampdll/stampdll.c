@@ -1,4 +1,6 @@
 /* STAMPDLL.C - LinguaLinks / MS Windows (Win32) STAMP DLL functions
+ * Copyright 2009 by The Summer Institue of Linguistics all rights reserved.
+ * Roy Eberhardt
  ******************************************************************************
  *
  * BOOL WINAPI DllMain(HANDLE	hInst,
@@ -9,51 +11,35 @@
  * DllExport const char * StampDeleteSetup(StampSetup * pSetup_in)
  * DllExport const char * StampLoadControlFiles(
  *				       StampSetup * pSetup_in,
- *				       const char * pszAnalysisDataFile_in,
+ *				       const char * pszStampDeclarationsFile_in,
  *				       const char * pszDictCodeTable_in,
  *				       const char * pszDictOrthoChangeTable_in,
  *				       const char * pszTextInputControlFile_in)
  * DllExport const char * StampLoadDictionary(StampSetup * pSetup_in,
- *					      const char * pszFilePath_in,
- *					      const char * pszType_in)
- * DllExport const char * StampParseText(StampSetup * pSetup_in,
- *					 const char * pszInputText_in)
- * DllExport const char * StampParseFile(StampSetup * pSetup_in,
- *					 const char * pszInFilePath_in,
- *				   	 const char * pszOutFilePath_in)
- * DllExport const char * StampUpdateEntry(StampSetup * pSetup_in,
- *					   const char * pszNewEntry_in)
- * DllExport const char * StampWriteDictionary(StampSetup * pSetup_in,
- *					       const char * pszFilePath_in)
+ *					    const char * pszFilePath_in,
+ *					    const char * pszType_in)
+ * DllExport const char * StampProcessFile(StampSetup * pSetup_in,
+ *						const char * pszInFilePath_in,
+ *					   	const char * pszOutFilePath_in)
  * DllExport const char * StampReset(StampSetup * pSetup_in)
  * DllExport const char * StampSetParameter(StampSetup * pSetup_in,
  *					    const char * pszName_in,
  *				      	    const char * pszValue_in)
+ * DllExport const char * StampReportVersion(StampSetup * pSetup_in)
  * DllExport const char * StampGetParameter(StampSetup * pSetup_in,
- *					    const char * pszName_in)
- * DllExport const char * StampAddSelectiveAnalysisMorphs(
- *						     StampSetup * pSetup_in,
- *						     const char * pszMorphs_in)
- * DllExport const char * StampRemoveSelectiveAnalysisMorphs(
- *							StampSetup * pSetup_in)
+ *							const char * pszName_in)
  * DllExport const char * StampInitializeTraceString(StampSetup * pSetup_in)
  * DllExport const char * StampGetTraceString(StampSetup * pSetup_in)
+ * DllExport const char * StampWriteDictionary(StampSetup * pSetup_in,
+ *					       const char * pszFilePath_in)
+ * DllExport const char * StampVerifyLoading(StampSetup * pSetup_in)
+////////////////////////////////////////////////////////////////////
+// To be implemented
+ * DllExport const char * StampUpdateEntry(StampSetup * pSetup_in,
+ *					   const char * pszNewEntry_in)
  * hab 1999.03.05
- * DllExport const char * StampReportVersion(StampSetup * pSetup_in)
- * hab 1999.03.11
  * DllExport const char * StampInitializeMorphChecking(StampSetup * pSetup_in)
  * DllExport const char * StampCheckMorphReferences(StampSetup * pSetup_in)
- * DllExport const char * StampVerifyLoading(StampSetup * pSetup_in)
- * hab33126
- * DllExport const char * StampGetAllAllomorphs(StampSetup * pSetup_io,
- *                                              const char * pszRestOfWord_in,
- *                                              int          iState_in)
- * hab33148
- * DllExport const char * StampApplyInputChangesToWord(StampSetup * pSetup_io,
- *                                              const char * pszWord_in)
- * hab33169
- * DllExport const char * StampLoadGrammarFile(StampSetup * pSetup_in,
- *					   const char * pszGrammarFile_in)
  ***************************************************************************
  *
  * void reportError(int eMessageType_in, const char *pszFormat_in, ...)
@@ -83,18 +69,18 @@
  * OUTPUT is written to a text file.
  *
  ***************************************************************************
- * edit history is in version.h
+ * edit history is in versiondll.h
  ***************************************************************************
- * Copyright 1988, 2000 by SIL International.  All rights reserved.
+ * Copyright 1988, 2009 by SIL International.  All rights reserved.
  */
 
-#include "version.h"
-// #include "stdafx.h"		// These three for Stamp.dll
+#define WINVER 0x0502
+//#define _AFXDLL
+//#include <afxwin.h>
+// #include "stdafx.h"		// These three for Stampdll.c
 #include <stdio.h>
-#include "stampDLL.h"
+#include "stampdll.h"
 #include <windows.h>
-#include <stdarg.h>
-#include <setjmp.h>
 
 #ifdef THINK_C
 #include <console.h>
@@ -109,6 +95,51 @@
 extern long next_user_event_ticks;
 extern void allow_user_events();
 #endif
+
+/*
+ *  definitions and variables for setting / getting parameter values
+ */
+//#define DEBUG_ALLOMORPH_CONDS	0
+#define BEGIN_COMMENT			1
+#define MAX_TRIE_DEPTH			2
+#define ROOT_GLOSSES			3
+#define MAX_MORPHNAME_LENGTH	4
+#define SELECTIVE_ANALYSIS_FILE	5
+#define TRACE_ANALYSIS			6
+#define DEBUG_LEVEL				7
+#define LOG_FILE				8
+#define APPEND_LOG_FILE			9
+#define OUTPUT_STYLE			10
+#define STORE_ERROR_STRING		11
+#define ERROR_MESSAGES			12
+				/* next six added by hab 1999.03.11 */
+#define SHOW_PERCENTAGES        13
+#define CHECK_MORPHNAME_REFS    14
+#define VERIFY_LOADING          15
+#define OUTPUT_PROPERTIES       16
+#define OUTPUT_ORIGINAL_WORD    17
+#define OUTPUT_DECOMPOSITION    18
+/* jdh 2002.1.15 */
+#define ALLOMORPH_IDS           19
+/* hab 2002.10.17 */
+#define MAX_ANALYSES_TO_RETURN  20
+				/* next 8 by rke 2009.06.23 */
+#define DO_ALL_SYNTHESES		21
+#define MONITOR_PROGRESS		22
+#define MATCH_CATEGORIES		23
+#define QUIET					24
+#define REPORT_NO_ENTRIES		25
+#define UNIFIED_DICTIONARY		26
+#define VERIFY_TESTS			27
+#define ONLY_TRANSFER			28
+/* Keep the "EXPERIMENTAL" definitions grouped together at the end */
+#ifdef EXPERIMENTAL
+#define RECOGNIZE_ONLY			29	/* SRMc 2005.12.05 */
+#define NUMBER_OF_PARAMETERS	30
+#else /* EXPERIMENTAL */
+#define NUMBER_OF_PARAMETERS	29
+#endif /* EXPERIMENTAL */
+
 
 
 static StampSetup *	pStampSetups_g = NULL;
@@ -130,7 +161,7 @@ static void resetStampGlobals(StampSetup * pSetup_io)
 {
 	int	i;
 	/*
-	 *  information loaded from the control files and AMPLE command line
+	 *  information loaded from the control files and Stamp command line
 	 *  information loaded from the text input control file
 	 *  information loaded from the "analysis data" (control) file
 	 *  information loaded from the dictionary codes file
@@ -167,7 +198,7 @@ static void resetStampGlobals(StampSetup * pSetup_io)
 	 *  count of words analyzed
 	 */
 
-	pSetup_io->uiWordCount = 0L;
+	pSetup_io->uiWordCount_m = 0L;
 	/*
 	 *  cumulative ambiguity counts
 	 */
@@ -181,15 +212,25 @@ static void resetStampGlobals(StampSetup * pSetup_io)
 			pSetup_io->pszLogFilename = NULL;
 		}
 
-	pSetup_io->bAppendLogFile      = FALSE;
-	pSetup_io->eOutputStyle        = Ana;
-	pSetup_io->bShowPercentages    = FALSE;		/* hab 1999.03.11 */
-	pSetup_io->bCheckMorphReferences = FALSE;	/* hab 1999.03.11 */
-	pSetup_io->bVerifyLoading      = FALSE;		/* hab 1999.03.11 */
-	pSetup_io->bStoreErrorString   = FALSE;
+	pSetup_io->bAppendLogFile				= FALSE;
+	pSetup_io->eOutputStyle					= Ana;
+	pSetup_io->bShowPercentages				= FALSE;		/* hab 1999.03.11 */
+	pSetup_io->bCheckMorphReferences		= FALSE;		/* hab 1999.03.11 */
+	pSetup_io->bVerifyLoading				= FALSE;		/* hab 1999.03.11 */
+	pSetup_io->bStoreErrorString			= FALSE;
 
 
 	// Additions for Stamp.
+
+
+	/*
+	 *  do we verify test?
+	 */
+	pSetup_io->bVerify_m					= FALSE;
+	/*
+	 *  Flag that we are checking memory allocation.
+	 */
+	pSetup_io->bCheckAlloc_m				= FALSE;
 
 	/*
 	 *  check root categories in synthesis?  [1.5a BJY]
@@ -263,70 +304,28 @@ static void resetStampGlobals(StampSetup * pSetup_io)
 	 */
 	pSetup_io->sData.bOnlyTransfer			= FALSE;
 	/*
+	 *  flag that morpheme dictionaries are combined
+	 */
+	pSetup_io->bUnifiedDictionary_m			= FALSE;
+	/*
+	 *  do we monitor progress of parsing?
+	 */
+	pSetup_io->bMonitorProgress_m			= FALSE;
+	/*
 	 *  count of missing dictionary elements in synthesis
 	 */
 	pSetup_io->sData.uiMissingMorpheme		= 0L;
-#ifdef TONEPARS
 	/*
-	 * TonePars orthography changes
+	 *Trace string
 	 */
-	Change *                    pTPOrthoChanges;
+	pSetup_io->pszTrace = NULL;		//Trace String;
+	pSetup_io->uiTraceSize = 0L;
 	/*
-	 * syllable symbol string
+	 * Selective ana file
 	 */
-	char *                      pszSylStr;
-	/*
-	 * syllable separation character
-	 */
-	char *                      pszSylSepChar;
-	/*
-	 * mora symbol string
-	 */
-	char *                      pszMoraStr;
-	/*
-	 * syllable algorithm method
-	 */
-	int                         iSylAlgorithm;
-	/*
-	 * syllable flags
-	 */
-					/* (do weight-by-position;     */
-					/*  do vc.cv rather than v.ccv */
-					/*    parsing when sonority is */
-					/*    ambiguous; and           */
-					/*  do codas)                  */
-	int                         iSylFlags;
-	/*
-	 * do morpheme crossing
-	 */
-	int                         bDoMorphemeCrossing;
-	/*
-	 * phrase final characters
-	 */
-	char *                      pszPhraseFinalChars;
-	/*
-	 * tone bearing type (default: mora)
-	 */
-	int                         iTbuType;
-	/*
-	 * Segment definitions file name
-	 */
-	char *                      pszSegFileName;
-	/*
-	 * Segment definitions
-	 */
-	struct segment_list *       pSegments;
-	/*
-	 * try right edge rules flag
-	 */
-	int                         iTryRightEdgeRules;
-				/* Initial and Final morphemes in current
-				   analysis */
-	struct stamp_analysis *pInitialMorpheme;
-	struct stamp_analysis *pFinalMorpheme;
-#endif /* TONEPARS */
-
+	pSetup_io->pszSelectiveAnalFile = NULL;
 }
+
 
 /*****************************************************************************
  * NAME
@@ -335,6 +334,9 @@ static void resetStampGlobals(StampSetup * pSetup_io)
  *    Windows 32 (NT/95) DLL initialization function
  * RETURN VALUE
  *    1 if successful, 0 if an error occurs
+
+********  Figure out how this is supposed to work.
+
  */
 BOOL WINAPI DllMain(
 	HANDLE	hInst,
@@ -373,6 +375,50 @@ return 1;
 
 /*****************************************************************************
  * NAME
+ *    checkEmptyString
+ * DESCRIPTION
+ *    check whether a string is empty
+ * RETURN VALUE
+ *    pointer to first non-space character in string, or NULL
+ */
+static const char * checkEmptyString(
+	const char *	pszString_in)
+{
+if (pszString_in == NULL)
+	return NULL;
+pszString_in += strspn(pszString_in, szWhitespace_g);
+if (pszString_in[0] == NUL)
+	return NULL;
+return pszString_in;
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    isValidSetup
+ * DESCRIPTION
+ *    check whether the given pointer to an StampSetup data structure is valid
+ * RETURN VALUE
+ *    TRUE if the pointer is valid, otherwise FALSE
+ */
+static int isValidSetup(
+	StampSetup * pSetup_in)
+{
+StampSetup *	ps;
+
+if ((pSetup_in == NULL) || (pStampSetups_g == NULL))
+	return FALSE;
+for ( ps = pStampSetups_g ; ps ; ps = ps->pNext )
+	{
+	if (pSetup_in == ps)
+	return TRUE;
+	}
+return FALSE;
+}
+
+
+/*****************************************************************************
+ * NAME
  *    StampCreateSetup
  * DESCRIPTION
  *    create a new StampSetup data structure for use in future calls to the
@@ -384,7 +430,7 @@ DllExport StampSetup * StampCreateSetup(void)
 {
 StampSetup *	pSetup;
 
-pSetup = allocMemory(sizeof(StampSetup));
+pSetup = (StampSetup *)allocMemory(sizeof(StampSetup));
 memset(pSetup, 0, sizeof(StampSetup));
 
 resetStampGlobals(pSetup);
@@ -395,191 +441,2660 @@ pStampSetups_g = pSetup;
 return pSetup;
 }
 
-/***************************************************************************
+/*****************************************************************************
  * NAME
- *    parse_command
+ *    StampDeleteSetup
  * DESCRIPTION
- *    Print a terse summary of the command options, then exit the program.
+ *    delete the given Stamp setup from memory
  * RETURN VALUE
- *    none
+ *    status string indicating success or failure
  */
-static void parse_command(argc,argv, pszTime_in)
-int	argc;		/* number of command line arguments */
-char **	argv;		/* pointer to array of command line arguments */
-char *	pszTime_in;
+DllExport const char * StampDeleteSetup(StampSetup * pSetup_io)
 {
-int	k;
-int	bShowUsage = FALSE;
-VOIDP	trap_address = NULL;
-int	trap_count = 0;
-char *	p;
+StampSetup *	ps;
+StampSetup *	pPrevSetup;
 
-#ifdef USE_CCOMMAND
-print_header(stderr, pszTime_in);
-argc = ccommand(&argv);
-#endif
-/*
- *  parse command line for any options
+if ((pSetup_io == NULL) || (pStampSetups_g == NULL))
+	return szStampInvalidSetup_m;
+
+pPrevSetup = NULL;
+for ( ps = pStampSetups_g ; ps ; ps = ps->pNext )
+	{
+	if (pSetup_io == ps)
+	{
+	if (ps == pStampSetups_g)
+		pStampSetups_g = ps->pNext;
+	else
+		pPrevSetup->pNext = ps->pNext;
+	ps->pNext = NULL;
+	resetStampGlobals(ps);
+	freeMemory(ps);
+	return szStampSuccess_m;
+	}
+	pPrevSetup = ps;
+	}
+return szStampInvalidSetup_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    StampLoadControlFiles
+ * DESCRIPTION
+ *    load the indicated control files into memory
+ * RETURN VALUE
+ *    status string indicating success or failure
  */
-#ifdef AZTEC
-argv[0] = "stamp";
+DllExport const char * StampLoadControlFiles(
+	StampSetup * pSetup_io,
+	const char * pszStampDeclarationsFile_in,
+	const char * pszTransferFile_in,			//Optional
+	const char * pszSynthesisFile_in,			//Optional
+	const char * pszDictCodeTable_in,
+	const char * pszDictOrthoChangeTable_in,	//Optional
+	const char * pszOutputTextChangeTable_in)	//Optional
+{
+const char *	pszResult = szStampSuccess_m;
+int		bOkay;
 /*
--c	AMPLE, STAMP: record comment character
--d	AMPLE, STAMP: dictionary trie depth
--f	AMPLE, STAMP: file of declaration file names
--i	AMPLE, STAMP: input file name
--m	AMPLE, STAMP: monitor progress
--o	AMPLE, STAMP: output file name
--q	AMPLE, STAMP: keep quiet, no screen output
--t	AMPLE, STAMP: trace
--u	AMPLE, STAMP: unified (combined) dictionaries
--v	AMPLE, STAMP: verify tests
--a	STAMP: generate all possible syntheses
--n	STAMP: 1.5a BJY Don't check root categories
--r	STAMP: report unfound morphemes WM
--x	STAMP: transfer only
--a	STAMP: generate all possible syntheses
--/	AMPLE, STAMP: debug
--z	AMPLE, STAMP: memory allocation trace filename
--Z	AMPLE, STAMP: memory allocation trap address,count
-*/
-#endif
-while ((k = getopt(argc, argv, "ac:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
+ *  verify a valid Stamp setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
 	{
-	switch (k)
+	pLogFP_m      = NULL;
+	iDebugLevel_m = 0;
+	return szStampDLLCrash_m;
+	}
+
+if (pSetup_io->pszLogFilename != NULL)
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+pLogFP_m      = pSetup_io->sData.pLogFP;
+iDebugLevel_m = pSetup_io->sData.iDebugLevel;
+//if (pSetup_io->bStoreErrorString)
+//    {
+//    }
+//else
+//    {
+//    }
+/*
+ *  check for valid input
+ */
+pszStampDeclarationsFile_in = checkEmptyString(pszStampDeclarationsFile_in);
+if (pszStampDeclarationsFile_in == NULL)
+	{
+	reportError(ERROR_MSG,
+		"StampLoadControlFiles() missing STAMP declarations file file");
+	pszResult = szMissingArgument_m;
+	goto close_and_return;
+	}
+pszDictCodeTable_in = checkEmptyString(pszDictCodeTable_in);
+if (pszDictCodeTable_in == NULL)
+	{
+	reportError(ERROR_MSG,
+		"StampLoadControlFiles() missing dictionary codes table file");
+	pszResult = szMissingArgument_m;
+	goto close_and_return;
+	}
+
+/*
+ *  process the input
+ */
+
+// STAMP declarations file
+if (loadStampControlFile(pszStampDeclarationsFile_in, &pSetup_io->sData) != 0)
+	{
+	reportError(ERROR_MSG,
+		"Error reading STAMP declarations file %s",
+		pszStampDeclarationsFile_in);
+	pszResult = szBadStampDeclarationsFile_m;
+	goto close_and_return;
+	}
+
+//Transfer file (xxzzTR.CHG) / Optional so don't through the error messages here and above.
+/*
+ *  load the transfer (dialect-pair-specific) control file
+ */
+	// Optional
+	pszTransferFile_in = checkEmptyString(pszTransferFile_in);
+	if (pszTransferFile_in != NULL)
+	{
+		if (loadStampTransferFile(pszTransferFile_in, &pSetup_io->sData) != 0)
 		{
-		case 'a':                       /* generate all possible syntheses */
-			sStamp_m.bDoAllSyntheses = TRUE;    /* (we want them all!!) */
-			break;
-
-		case 'c':                       /* record comment character */
-			sStamp_m.cComment = *optarg; /* used by record.c */
-			break;
-
-		case 'd':                       /* maximum trie depth */
-			sStamp_m.iMaxTrieLevel = atoi(optarg);
-			if (sStamp_m.iMaxTrieLevel < 0)
-				sStamp_m.iMaxTrieLevel = 0;    /* force a minimum */
-			break;
-
-		case 'f':                       /* file of declaration file names */
-			pszCommandFile_m = optarg;      /* pick up name */
-			break;
-
-		case 'i':		/* input file name */
-			pszInputFile_m = optarg;		/* pick up name */
-			break;
-
-		case 'm':		/* monitor progress option */
-			bMonitorProgress_m = TRUE;
-			break;
-
-		case 'n':		/* 1.5a BJY Don't check root categories */
-			sStamp_m.bMatchCategories = FALSE;
-			break;
-
-		case 'o':		/* output file name */
-			pszOutputFile_m = optarg;		/* pick up name */
-			break;
-
-	case 'q':
-		sStamp_m.bQuiet = TRUE;
-		break;
-
-		case 'r':                       /* Unfound morphemes option WM */
-			sStamp_m.bReportNoEntries = TRUE;
-			break;
-
-		case 't':                       /* trace option */
-			sStamp_m.bTrace = TRUE;
-			break;
-
-	case 'u':			/* combined dictionaries option */
-		bUnifiedDictionary_m = TRUE;
-		break;
-
-		case 'v':                       /* verify tests option */
-			bVerify_m = TRUE;
-			break;
-
-		case 'x':                       /* transfer only option */
-			sStamp_m.bOnlyTransfer = TRUE;
-			break;
-
-		case '/':                       /* debugging option */
-			++sStamp_m.iDebugLevel;                 /* debug level counter */
-			break;
-
-	case 'z':		/* memory allocation trace filename */
-		setAllocMemoryTracing(optarg);
-		bCheckAlloc_m = TRUE;
-		break;
-
-	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &p, 0);
-		if (trap_address != (VOIDP)NULL)
-		{
-		if (*p == ',')
-			trap_count = (int)strtoul(p+1, NULL, 10);
-		if (trap_count == 0)
-			trap_count = 1;
-		setAllocMemoryTrap(trap_address, trap_count);
-		bCheckAlloc_m = TRUE;
+		reportError(ERROR_MSG,
+			"Error reading transfer file %s",
+			pszTransferFile_in);
+		pszResult = szBadTransferFile_m;
+		goto close_and_return;
 		}
-		break;
+	}
 
-		default:                        /* unrecognized option */
-		bShowUsage = TRUE;
-			break;
-			}
-	} /* end switch */
-
-if ((optind < argc) && (strcmp(argv[optind],"?") == 0))
-	bShowUsage = TRUE;
-
-#ifndef USE_CCOMMAND
-if (!sStamp_m.bQuiet || bShowUsage)
-	print_header(stderr, pszTime_in);
-#endif
-if (	bShowUsage ||
-	((optind < argc) && (strcmp(argv[optind],"?") == 0)) )
+//Synthesis file (zzSYNT.CHG) / Optional so don't through the error messages here and above.
+/*
+ *  load the synthesis control file
+ */
+//Optional
+pszSynthesisFile_in = checkEmptyString(pszSynthesisFile_in);
+if (pszSynthesisFile_in != NULL)
 	{
-	usage();		/* tell the user what he can do */
-	exitSafely(1);	/* exit with error status */
+		if (loadStampSynthesisFile(pszSynthesisFile_in, &pSetup_io->sData) != 0)
+		{
+			reportError(ERROR_MSG,
+				"Error reading synthesis file %s", pszSynthesisFile_in);
+			exitSafely(1);
+		}
+	}
+
+//Dictionary code table (zzSYCD.TAB)
+bOkay = (loadStampDictCodeTables(pszDictCodeTable_in, &pSetup_io->sData) == 0);
+
+/*if (pSetup_io->sData.pDictTable == NULL)  // This Requires dictionary code table
+	{										// To have all affix types and root.
+	if (pSetup_io->sData.pRootTable == NULL)
+		bOkay = FALSE;
+	else if (pSetup_io->sData.pPrefixTable == NULL)
+		bOkay = FALSE;
+	else if (pSetup_io->sData.pInfixTable == NULL)
+		bOkay = FALSE;
+	else if (pSetup_io->sData.pSuffixTable == NULL)
+		bOkay = FALSE;
+	} */
+if (!bOkay)
+	{
+	reportError(ERROR_MSG,
+		"Error reading dictionary codes table file %s",
+		pszDictCodeTable_in);
+	pszResult = szBadDictCodeTable_m;
+	goto close_and_return;
+	}
+
+if (pSetup_io->bUnifiedDictionary_m && (pSetup_io->sData.pDictTable == NULL))
+	{
+	reportError(ERROR_MSG, szBadUSwitchCodeTable_s, "\\unified");
+	pszResult = szBadUSwitchCodeTable_s;
+	goto close_and_return;
+	}
+
+if (	!pSetup_io->bUnifiedDictionary_m &&
+	(pSetup_io->sData.pDictTable   != NULL) &&
+	(pSetup_io->sData.pPrefixTable == NULL) &&
+	(pSetup_io->sData.pInfixTable  == NULL) &&
+	(pSetup_io->sData.pSuffixTable == NULL) &&
+	(pSetup_io->sData.pRootTable   == NULL) )
+	{
+	reportError(WARNING_MSG,
+		"Assuming unified dictionary despite missing -u option.\n");
+	pSetup_io->bUnifiedDictionary_m = TRUE;
+	}
+
+
+//Dictionary orthography change table
+//Optional
+pszDictOrthoChangeTable_in = checkEmptyString(pszDictOrthoChangeTable_in);
+if (pszDictOrthoChangeTable_in != NULL)
+	{
+	if (loadStampDictOrthoChanges(pszDictOrthoChangeTable_in,
+				  &pSetup_io->sData) != 0)
+	{
+	reportError(ERROR_MSG,
+		   "Error reading dictionary orthography change table file %s",
+			pszDictOrthoChangeTable_in);
+	pszResult = szBadDictOrthoChanges_m;
+	goto close_and_return;
+	}
+	}
+
+//Output Change file (zzOUTTX.CTL) / Optional so don't through the error messages here and above.
+/*
+ *  load the OUTTX control file
+ */
+pszOutputTextChangeTable_in = checkEmptyString(pszOutputTextChangeTable_in);
+if (pszOutputTextChangeTable_in != NULL)
+	{
+			if (loadOutxCtlFile(pszOutputTextChangeTable_in,
+				pSetup_io->sData.cComment,
+				&pSetup_io->sData.sTextCtl,
+				&pSetup_io->sData.pStringClasses) != 0)
+				{	//Fail.
+				//pSetup_io->sData.sTextCtl.pOutputChanges = (Change *)NULL;
+				reportError(ERROR_MSG,
+					"Error reading output text file %s", pszSynthesisFile_in);
+					pszResult = szBadSynthesisFile_m;
+				goto close_and_return;
+
+				}
+			else	// Succeed and load.
+				{
+					int iCount = 0;
+					Change *pChg;
+					for ( pChg = pSetup_io->sData.sTextCtl.pOutputChanges ; pChg ; pChg = pChg->pNext )
+					++iCount;
+					reportMessage(!pSetup_io->sData.bQuiet,
+						"%d output orthography change%s loaded from %s\n",
+						iCount, (iCount == 1) ? " was" : "s were", pszOutputTextChangeTable_in);
+
+				}
+	}
+else
+	pSetup_io->sData.sTextCtl.pOutputChanges = (Change *)NULL;
+
+
+/* ================================================================
+ *  dump verbose "verify" information
+ */
+if (pSetup_io->bVerify_m && (pSetup_io->sData.pLogFP != NULL))
+	{
+	/*
+	 *  show categories, category classes, string classes, morpheme classes,
+	 *  and any user defined tests
+	 */
+	writeAmpleCategories(pSetup_io->sData.pLogFP, pSetup_io->sData.pCategories);
+	writeAmpleCategClasses(pSetup_io->sData.pLogFP, pSetup_io->sData.pCategories,
+			   pSetup_io->sData.pCategClasses);
+	writeStringClasses(pSetup_io->sData.pLogFP, pSetup_io->sData.pStringClasses);
+	writeAmpleMorphClasses(pSetup_io->sData.pLogFP, pSetup_io->sData.pMorphClasses);
+				/* 2.1b1 hab */
+	writePunctClasses(pSetup_io->sData.pLogFP, pSetup_io->sData.pPunctClasses);
+	writeStampTests(pSetup_io->sData.pLogFP, &pSetup_io->sData);
+	}
+if (pSetup_io->sData.iDebugLevel && (pSetup_io->sData.pLogFP != NULL))
+	{
+	/*
+	 *  show the transfer lexical changes, transfer rules, synthesis lexical
+	 *  changes, and regular sound changes
+	 */
+	writeStampTransferLexChanges(pSetup_io->sData.pLogFP, &pSetup_io->sData);
+	writeStampTransferRules(pSetup_io->sData.pLogFP, &pSetup_io->sData);
+	writeStampSynthesisLexChanges(pSetup_io->sData.pLogFP, &pSetup_io->sData);
+	writeStampRegSoundChanges(pSetup_io->sData.pLogFP, &pSetup_io->sData);
+	}
+/*
+ *  for -/// or more dump dictionary
+ */
+if ((pSetup_io->sData.iDebugLevel > 2) && (pSetup_io->sData.pLogFP != NULL))
+	writeStampDictionary(pSetup_io->sData.pLogFP, &pSetup_io->sData);
+
+	cleanupAfterStdFormatRecord();  // Uncertain about this routine and what it implies
+
+close_and_return:
+if (pSetup_io->sData.pLogFP != NULL)
+	{
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+pLogFP_m      = NULL;
+iDebugLevel_m = 0;
+return pszResult;
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    StampLoadDictionary
+ * DESCRIPTION
+ *    load the indicated dictionary file into memory
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampLoadDictionary(
+	StampSetup * pSetup_io,
+	const char * pszDictionary_in,
+	const char * pszType_in)
+{
+int		iCount;
+const char *	pszResult = szStampSuccess_m;
+int		eType;
+char *		pszType;
+/*
+ *  verify a valid Stamp setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	{
+	pLogFP_m      = NULL;
+	iDebugLevel_m = 0;
+	return szStampDLLCrash_m;
+	}
+if (pSetup_io->pszLogFilename != NULL)
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+pLogFP_m      = pSetup_io->sData.pLogFP;
+iDebugLevel_m = pSetup_io->sData.iDebugLevel;
+pszDictionary_in = checkEmptyString(pszDictionary_in);
+if (pszDictionary_in == NULL)
+	{
+	reportError(ERROR_MSG,
+		"StampLoadDictionary() missing dictionary file");
+	pszResult = szMissingArgument_m;
+	goto close_and_return;
+	}
+eType = STAMP_UNIFIED;
+if (pszType_in != NULL)
+	{
+	switch (*pszType_in)
+	{
+	case 'p': case 'P': eType = PFX;     pszType = "PREFIX";	break;
+	case 'i': case 'I': eType = IFX;     pszType = "INFIX";		break;
+	case 'r': case 'R': eType = ROOT;    pszType = "ROOT";		break;
+	case 's': case 'S': eType = SFX;     pszType = "SUFFIX";	break;
+	default:	    eType = STAMP_UNIFIED; pszType = "UNIFIED";	break;
+	}
+	}
+reportMessage(TRUE,
+		  "\t%s DICTIONARY: Loading %s\n",
+		  pszType, pszDictionary_in );
+iCount = loadStampDictionary(pszDictionary_in, eType, &pSetup_io->sData);
+if (iCount == -1)
+	{
+	reportError(ERROR_MSG,
+		"Error reading dictionary file %s",
+		pszDictionary_in);
+	pszResult = szBadDictionary_m;
+	}
+else
+	{
+	reportMessage(TRUE,
+		  "\t%s DICTIONARY: Loaded %d record%s\n",
+		  pszType, iCount, (iCount == 1) ? "" : "s" );
+	}
+
+close_and_return:
+if (pSetup_io->sData.pLogFP != NULL)
+	{
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+pLogFP_m      = NULL;
+iDebugLevel_m = 0;
+return pszResult;
+}
+
+/*****************************************************************************
+ * NAME
+ *    StampReset
+ * DESCRIPTION
+ *    remove all control and dictionary information from memory
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampReset(
+	StampSetup * pSetup_io)
+{
+/*
+ *  verify a valid STAMP setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	return szStampDLLCrash_m;
+
+if (pSetup_io->sData.pLogFP != NULL)
+	{
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+resetStampGlobals(pSetup_io);
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    StampSetParameter
+ * DESCRIPTION
+ *    update an STAMP parameter with the given value
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampSetParameter(
+	StampSetup * pSetup_io,
+	const char * pszName_in,
+	const char * pszValue_in)
+{
+/*
+ *  verify a valid STAMP setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	return szStampDLLCrash_m;
+/*
+ *  check for sane input
+ */
+pszName_in = checkEmptyString(pszName_in);
+if (pszName_in == NULL)
+	return szInvalidParameterName_m;
+if (pszValue_in != NULL)
+	pszValue_in += strspn(pszValue_in, szWhitespace_g);
+/*
+ *  set the parameter value
+ */
+switch (findParameterIndex(pszName_in))
+	{
+//  case DEBUG_ALLOMORPH_CONDS:
+//	return setDebugAllomorphs(pszValue_in, pSetup_io);
+
+	case BEGIN_COMMENT:
+	return setCommentChar(pszValue_in, pSetup_io);
+
+	case MAX_TRIE_DEPTH:
+	return setMaxTrieDepth(pszValue_in, pSetup_io);
+
+//  case ROOT_GLOSSES:
+//	return setRootGlosses(pszValue_in, pSetup_io);
+
+//  case MAX_MORPHNAME_LENGTH:
+//	return setMaxMorphnameLength(pszValue_in, pSetup_io);
+
+//  case SELECTIVE_ANALYSIS_FILE:
+//	return setSelectiveAnalysisFile(pszValue_in, pSetup_io);
+
+	case TRACE_ANALYSIS:
+	return setTraceAnalysis(pszValue_in, pSetup_io);
+
+	case DEBUG_LEVEL:
+	return setDebugLevel(pszValue_in, pSetup_io);
+
+	case LOG_FILE:
+	return setLogFile(pszValue_in, pSetup_io);
+
+	case APPEND_LOG_FILE:
+	return setAppendLogFile(pszValue_in, pSetup_io);
+
+	case OUTPUT_STYLE:
+	return setOutputStyle(pszValue_in, pSetup_io);
+
+	case STORE_ERROR_STRING:
+	return setStoreErrorString(pszValue_in, pSetup_io);
+
+	case ERROR_MESSAGES:
+	return setErrorMessages(pszValue_in, pSetup_io);
+
+	case SHOW_PERCENTAGES:	/* hab 1999.03.11 */
+	return setShowPercentages(pszValue_in, pSetup_io);
+
+	case CHECK_MORPHNAME_REFS:	/* hab 1999.03.11 */
+	return setCheckMorphReferences(pszValue_in, pSetup_io);
+
+	case VERIFY_LOADING:	/* hab 1999.03.11 */
+	return setVerifyLoading(pszValue_in, pSetup_io);
+
+	case OUTPUT_PROPERTIES:	/* hab 1999.03.11 */
+	return setOutputProperties(pszValue_in, pSetup_io);
+
+	case OUTPUT_ORIGINAL_WORD:	/* hab 1999.03.11 */
+	return setOutputOriginalWord(pszValue_in, pSetup_io);
+
+	case OUTPUT_DECOMPOSITION:	/* hab 1999.03.11 */
+	return setOutputDecomposition(pszValue_in, pSetup_io);
+
+//    case ALLOMORPH_IDS:		/* jdh 2002.1.15 */
+//        return setEnableAllomorphIDs(pszValue_in, pSetup_io);
+
+	case DO_ALL_SYNTHESES:		/* rke 2009.6.23 */
+	return setDoAllSyntheses(pszValue_in, pSetup_io);
+
+	case MONITOR_PROGRESS:		/* rke 2009.6.23 */
+	return setMonitorProgress(pszValue_in, pSetup_io);
+
+	case MATCH_CATEGORIES:		/* rke 2009.6.23 */
+	return setMatchCategories(pszValue_in, pSetup_io);
+
+	case QUIET:					/* rke 2009.6.23 */
+	return setQuiet(pszValue_in, pSetup_io);
+
+	case REPORT_NO_ENTRIES:		/* rke 2009.6.23 */
+	return setReportNoEntries(pszValue_in, pSetup_io);
+
+	case UNIFIED_DICTIONARY:	/* rke 2009.6.23 */
+	return setUnifiedDictionary(pszValue_in, pSetup_io);
+
+	case VERIFY_TESTS:			/* rke 2009.6.23 */
+	return setVerifyTests(pszValue_in, pSetup_io);
+
+	case ONLY_TRANSFER:			/* rke 2009.6.23 */
+	return setOnlyTransfer(pszValue_in, pSetup_io);
+
+	default:
+
+	return szInvalidParameterName_m;
 	}
 }
 
-/***************************************************************************
+/*****************************************************************************
  * NAME
- *    usage
+ *    StampProcessFile
  * DESCRIPTION
- *    Print a terse summary of the command options.
+ *    Process the indicated ANA file
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampProcessFile(
+	StampSetup * pSetup_io,
+	const char * pszANAFile_m,
+	const char * pszOutputFile_m)
+{
+const char *pszResult = szStampSuccess_m;
+
+/*
+ *  verify a valid Stamp setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+
+/*
+ *  set variables for emergency exits
+ */
+
+if (setjmp(sAbortPoint) != 0)
+	{
+	pLogFP_m      = NULL;
+	iDebugLevel_m = 0;
+	return szStampDLLCrash_m;
+	}
+if (pSetup_io->pszLogFilename != NULL)
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+pLogFP_m      = pSetup_io->sData.pLogFP;
+iDebugLevel_m = pSetup_io->sData.iDebugLevel;
+/*
+ *  check for valid input
+ */
+pszANAFile_m = checkEmptyString(pszANAFile_m);
+if (pszANAFile_m == NULL)
+	{
+	reportError(ERROR_MSG,
+		"tsprocdll() missing input ANA file");
+	pszResult = szMissingArgument_m;
+	goto close_and_return;
+	}
+
+	pszOutputFile_m = checkEmptyString(pszOutputFile_m);
+	if (pszOutputFile_m == NULL)
+		{
+			reportError(ERROR_MSG,
+			"tsprocdll() missing Output file");
+			pszResult = szMissingArgument_m;
+			goto close_and_return;
+		}
+
+	if (pSetup_io->sData.pLogFP != NULL)
+		{
+		fprintf(pSetup_io->sData.pLogFP, "Input  file: %s\n", pszANAFile_m);
+		fprintf(pSetup_io->sData.pLogFP, "Output file: %s\n", pszOutputFile_m);
+		}
+
+	// all ANAs and output files.
+	pszResult = tsprocdll(pSetup_io, pszANAFile_m, pszOutputFile_m);
+	if (pszResult != NULL)
+	{
+		if (strcmp(pszResult, szBadANAInputFile_m) == 0)
+			reportError(ERROR_MSG, "Error opening Input file %s", pszANAFile_m);
+		goto close_and_return;
+
+		if (strcmp(pszResult, szBadOutputFile_m) == 0)
+			reportError(ERROR_MSG, "Error opening Ourput file %s", pszOutputFile_m);
+		goto close_and_return;
+
+		reportError(ERROR_MSG, "Should never be here ... Bug in StampProcess routine");
+		goto close_and_return;
+
+	}
+
+return szStampSuccess_m;
+
+close_and_return:
+	if (pSetup_io->sData.pLogFP != NULL)
+	{
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+pLogFP_m      = NULL;
+iDebugLevel_m = 0;
+return pszResult;
+}
+
+/*************************************************************************
+ * NAME
+ *    tsprocdll
+ * DESCRIPTION
+ *    Top-level processing function for transfer and synthesis.
+ *    For each file, it coordinates the transfer and synthesis of each word.
+ *	Modified from tsproc for use with stampdll by RE (1-May-2009)
  * RETURN VALUE
  *    none
  */
-static void usage()
+static const char *tsprocdll(StampSetup *pSetup_io,
+							const char *pszInputFile_m,
+							const char *pszOutputFile_m)
 {
-fputs("\
-Usage: stamp [options]\n\
-\n\
--a       return All valid allomorph combinations, not just the first\n\
--c char  select the record Comment character (default is '|')\n\
-", stderr); fputs("\
--d num   select the maximum trie Depth (default is 2)\n\
--f file  File containing names of data files\n\
--i file  name of a single Input analysis file\n\
--m       Monitor progress by displaying a dot for each word processed\n\
-", stderr); fputs("\
--n       No checking of root categories during synthesis\n\
--o file  name of the Output synthesis file\n\
--q       work Quietly without any screen output\n\
--r       Report morphemes not found in dictionaries\n\
-", stderr); fputs("\
--t       Trace transfer and synthesis (produces voluminous output)\n\
--u       dictionaries are Unified, not split into prefix, ..., root\n\
--v       Verify tests by pretty printing the parse trees\n\
--x       apply transfer without synthesis\n\
-", stderr);
+FILE *infp, *outfp;
+//StampUnit	*sWords_m;		//Stamp tsprocess structure
+int k;
+WordTemplate *	pWord;
+
+	/*
+	 *  open input file
+	 */
+
+   infp = fopen( pszInputFile_m, "r");
+
+	if (infp == NULL)
+		{
+			return szBadANAInputFile_m;
+		}
+	/*
+	 *  open output file
+	 */
+
+	outfp = fopen( pszOutputFile_m, "w");
+
+	if (outfp == NULL)
+		{
+			return szBadOutputFile_m;
+		}
+
+	/*
+	 *  initialize counters for this file
+	 */
+	pSetup_io->uiWordCount_m = 0L;
+	for ( k = 0 ; k <= MAXAMBIG ; ++k )
+		pSetup_io->auiAmbiguityLevels_m[k] = 0L;
+	pSetup_io->sData.uiCalledMEC = pSetup_io->sData.uiMECFailed = 0L;
+	pSetup_io->sData.uiCalledSEC = pSetup_io->sData.uiSECFailed = 0L;
+	pSetup_io->sData.uiCalledPEC = pSetup_io->sData.uiPECFailed = 0L; /* 2.1b1 hab */
+	/*
+	 *  initialize the input and output routines' parameters
+	 */
+	if (pSetup_io->sData.pLogFP != NULL)
+	{
+		putc( '\n', pSetup_io->sData.pLogFP );
+		if (!pSetup_io->sData.bQuiet)
+			putc( '\n', pSetup_io->sData.pLogFP );
+		if (pSetup_io->bMonitorProgress_m)
+			putc('\n',pSetup_io->sData.pLogFP);	      /* Put return before first one */
+	}
+	/*
+	 * Initialize for the word processing loop
+	 */
+	pSetup_io->sWords_m.pPreviousWord = (StampWord *)NULL;
+	pSetup_io->sWords_m.pNextWord     = (StampWord *)NULL;
+	/*
+	 *  Get a word and transfer it (in isolation)
+	 */
+	pSetup_io->sWords_m.pCurrentWord = readStampWord(infp, &pSetup_io->sData.sTextCtl);
+	if (pSetup_io->sWords_m.pCurrentWord != NULL)
+	{
+	sprintf(szOutOfMemoryMarker_g, "input word number %ld", pSetup_io->uiWordCount_m);
+	pSetup_io->sWords_m.pCurrentWord = performStampTransfer( &pSetup_io->sWords_m, &pSetup_io->sData );
+	}
+	pSetup_io->sWords_m.bStringLookahead = FALSE;
+	/*
+	 * While there is a word to synthesize...
+	 */
+	while (pSetup_io->sWords_m.pCurrentWord != NULL)
+		{
+	/*
+	 *  Read in next word and transfer it
+	 */
+	pSetup_io->sWords_m.pNextWord = readStampWord(infp, &pSetup_io->sData.sTextCtl);
+	if (pSetup_io->sWords_m.pNextWord != NULL)
+		{
+		StampUnit sTemp;
+		sprintf( szOutOfMemoryMarker_g, "input word number %ld",
+			 pSetup_io->uiWordCount_m );
+		sTemp.pCurrentWord     = pSetup_io->sWords_m.pNextWord;
+		sTemp.pPreviousWord    = pSetup_io->sWords_m.pCurrentWord;
+		sTemp.pNextWord        = NULL;
+		sTemp.bStringLookahead = pSetup_io->sWords_m.bStringLookahead;
+		sTemp.bLookaheadDone   = pSetup_io->sWords_m.bLookaheadDone;
+		sTemp.bMultiDependency = pSetup_io->sWords_m.bMultiDependency;
+		pSetup_io->sWords_m.pNextWord        = performStampTransfer( &sTemp,
+								  &pSetup_io->sData );
+		pSetup_io->sWords_m.bStringLookahead = sTemp.bStringLookahead;
+		pSetup_io->sWords_m.bLookaheadDone   = sTemp.bLookaheadDone;
+		pSetup_io->sWords_m.bMultiDependency = sTemp.bMultiDependency;
+		}
+	if ( pSetup_io->sData.bOnlyTransfer )    /* If transfer only... */
+			{
+		writeStampWord(pSetup_io->sWords_m.pCurrentWord, outfp, pszOutputFile_m,
+			   &pSetup_io->sData);
+		if (pSetup_io->bMonitorProgress_m)
+		{
+		/* fake one ambiguity for monitor */
+		showAmbiguousProgress(1, pSetup_io->uiWordCount_m);
+		}
+		++pSetup_io->uiWordCount_m;
+			}
+		else
+			{
+		/* otherwise, synthesize */
+		performStampSynthesis(&pSetup_io->sWords_m, &pSetup_io->sData);
+
+		pWord = pSetup_io->sWords_m.pCurrentWord->pTemplate;
+
+		fixSynthesizedWord(pWord, &pSetup_io->sData.sTextCtl, NULL);
+
+		writeTextFromTemplate(outfp, pWord, &pSetup_io->sData.sTextCtl);
+
+		/* (Note that readStampWord() frees info in word) */
+		/*
+		 * keep statistical counts of ambiguities in the final output
+		 */
+		if (    (pWord != NULL) &&
+			(	(pWord->pNewWords != NULL) ||
+			(   (pWord->pszOrigWord    != NULL) &&
+				(pWord->pszOrigWord[0] != NUL) ) ) )
+		{
+		pSetup_io->sData.uiAmbiguityCount = getStringListSize(
+				  pWord->pNewWords);
+		if (pSetup_io->sData.uiAmbiguityCount < MAXAMBIG)
+			++pSetup_io->auiAmbiguityLevels_m[pSetup_io->sData.uiAmbiguityCount];
+		else
+			++pSetup_io->auiAmbiguityLevels_m[MAXAMBIG];
+		if (pSetup_io->bMonitorProgress_m)
+			showAmbiguousProgress(pSetup_io->sData.uiAmbiguityCount,
+					  pSetup_io->uiWordCount_m);
+		++pSetup_io->uiWordCount_m;
+		}
+		}
+		/*
+		 *  Advance to next word
+		 */
+		freeStampWord( pSetup_io->sWords_m.pPreviousWord );
+		pSetup_io->sWords_m.pPreviousWord = pSetup_io->sWords_m.pCurrentWord;
+		pSetup_io->sWords_m.pCurrentWord = pSetup_io->sWords_m.pNextWord;
+		}
+	/* clean up after last word */
+	if (pSetup_io->sWords_m.pPreviousWord)
+	{
+	freeStampWord( pSetup_io->sWords_m.pPreviousWord );
+	pSetup_io->sWords_m.pPreviousWord = NULL;
+	}
+	if ((pSetup_io->bMonitorProgress_m) && (pSetup_io->sData.pLogFP != NULL))	/* If monitoring */
+	{
+	unsigned	uiFix;
+	for ( uiFix = pSetup_io->uiWordCount_m % 50 ; uiFix < 50 ; ++uiFix )
+		{
+		fputc(' ', pSetup_io->sData.pLogFP);
+		if ((uiFix % 10) == 0)
+		fprintf(pSetup_io->sData.pLogFP, "  ");
+		}
+	if ((pSetup_io->uiWordCount_m % 10) != 0)
+		fprintf(pSetup_io->sData.pLogFP, "  ");
+	fprintf(pSetup_io->sData.pLogFP, "%lu\n", pSetup_io->uiWordCount_m);
+	}
+	/*
+	 *  output statistics
+	 */
+	if (!pSetup_io->sData.bOnlyTransfer)
+		outstats(pSetup_io);
+
+	fclose(infp);
+	fflush(outfp);
+	checkFileError( outfp, "STAMP", pszOutputFile_m );
+	fclose(outfp);
+	return NULL;
+//   if ( !pszInputFile_m )          /* If input file not from cmd line */
+//       {                       /* Ask for another */
+//       getAmpleCmd("Next Input file (or RETURN if no more): ",
+//		    infilename, 100);
+//        }
+//    else
+//        infilename[0] = NUL;      /* Else (from cmd line) clear name */
+
+//	} while (infilename[0]);      /* until the user wants no more */
+
+
+}
+
+/*************************************************************************
+ * NAME
+ *    outstats
+ * DESCRIPTION
+ *    Print the statistical counts for the input file which just finished.
+ * RETURN VALUE
+ *    none
+ */
+static void outstats(StampSetup *pSetup_io)
+{
+int	i;
+
+if (pSetup_io->sData.pLogFP == NULL)
+	return;
+/*
+ *  print the statistics header
+ */
+fprintf(pSetup_io->sData.pLogFP,
+	"\nSYNTHESIS STATISTICS: %4ld WORDS processed.\n",
+	pSetup_io->uiWordCount_m);
+/*
+ *  print the ambiguity levels
+ */
+fprintf(pSetup_io->sData.pLogFP, "   Ambiguity Levels:\n" );
+for ( i = 0 ; i <= MAXAMBIG ; ++i )
+	{
+	if (pSetup_io->auiAmbiguityLevels_m[i] != 0L)
+		fprintf(pSetup_io->sData.pLogFP, "%25ld word%c with %2d %ssynthes%cs.\n",
+		pSetup_io->auiAmbiguityLevels_m[i],
+		(pSetup_io->auiAmbiguityLevels_m[i] == 1) ? ' ' : 's',
+		i, (i == MAXAMBIG) ? "or more " : "", (i == 1) ? 'i' : 'e' );
+	}
+#ifdef NODICTCOUNT
+if (	(!pStamp_in->bTrace) &&
+	pStamp_in->bReportNoEntries &&
+	(pSetup_io->sData.uiMissingMorphemes != 0L) &&
+	(pStamp_in->pLogFP != NULL) )
+	fprintf(pSetup_io->sData.pLogFP,
+		"%26ld dictionary entries were not found.\n",
+		pSetup_io->sData.uiMissingMorphemes);
+#endif
+/*
+ *  builtin tests use global counters
+ */
+if (pSetup_io->sData.uiCalledMEC || pSetup_io->sData.uiCalledSEC ||
+	pSetup_io->sData.uiCalledPEC)	/* 2.1b1 hab */
+	{
+	fprintf(pSetup_io->sData.pLogFP, "   Counts for built-in tests:\n");
+	if (pSetup_io->sData.uiCalledMEC)
+		fprintf(pSetup_io->sData.pLogFP,
+	   "   Morpheme environment constraints failed %lu times, succeeded %lu.\n",
+		pSetup_io->sData.uiMECFailed,
+		pSetup_io->sData.uiCalledMEC - pSetup_io->sData.uiMECFailed);
+	if (pSetup_io->sData.uiCalledSEC)
+		fprintf(pSetup_io->sData.pLogFP,
+	   "     String environment constraints failed %lu times, succeeded %lu.\n",
+		pSetup_io->sData.uiSECFailed,
+		pSetup_io->sData.uiCalledSEC - pSetup_io->sData.uiSECFailed );
+	if (pSetup_io->sData.uiCalledPEC)	/* 2.1b1 hab */
+		fprintf(pSetup_io->sData.pLogFP,
+	   "     String punctuation constraints failed %lu times, succeeded %lu.\n",
+		pSetup_io->sData.uiPECFailed,
+		pSetup_io->sData.uiCalledPEC - pSetup_io->sData.uiPECFailed );
+	}
+/*
+ *  user defined tests have their own display function
+ */
+writeStampTestStatistics(pSetup_io->sData.pLogFP, &pSetup_io->sData);
+}
+
+/*****************************************************************************
+ * NAME
+ *    findParameterIndex
+ * DESCRIPTION
+ *    find the index for the given parameter name
+ * RETURN VALUE
+ *    parameter index, or -1 if not found
+ */
+static int findParameterIndex(
+	const char *	pszName_in)
+{
+int	i;
+/*
+ *  search for the given parameter name
+ */
+for ( i = 0 ; i < NUMBER_OF_PARAMETERS ; ++i )
+	{
+	if (_stricmp(pszName_in, aszParameterNames_m[i]) == 0)
+	return i;
+	}
+return -1;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setCommentChar
+ * DESCRIPTION
+ *    set the "comment character" parameter (STAMP's -c command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setCommentChar(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.cComment = '|';	/* default value */
+else
+	pSetup_io->sData.cComment = *pszValue_in;
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setMaxTrieDepth
+ * DESCRIPTION
+ *    set the "maximum trie depth" parameter (STAMP's -d command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setMaxTrieDepth(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.iMaxTrieLevel = 2;	/* default value */
+else
+	pSetup_io->sData.iMaxTrieLevel = atoi(pszValue_in);
+if (pSetup_io->sData.iMaxTrieLevel < 1)
+	pSetup_io->sData.iMaxTrieLevel = 1;
+if (pSetup_io->sData.iMaxTrieLevel >= MAXMORPH)
+	pSetup_io->sData.iMaxTrieLevel = MAXMORPH - 1;
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setTraceAnalysis
+ * DESCRIPTION
+ *    set the "trace analysis" parameter (STAMP's -t command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setTraceAnalysis(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.bTrace = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) ||
+	 (_stricmp(pszValue_in, "ON") == 0) )
+	pSetup_io->sData.bTrace = AMPLE_TRACE_ON;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) ||
+	 (_stricmp(pszValue_in, "OFF") == 0) )
+	pSetup_io->sData.bTrace = AMPLE_TRACE_OFF;
+else if (_stricmp(pszValue_in, "SGML") == 0)
+	pSetup_io->sData.bTrace = AMPLE_TRACE_SGML;
+else if (_stricmp(pszValue_in, "XML") == 0)
+	pSetup_io->sData.bTrace = AMPLE_TRACE_XML;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setDebugLevel
+ * DESCRIPTION
+ *    set the "debug level" parameter (STAMP's -/ command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setDebugLevel(
+	const char *	pszValue_in,
+   StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.iDebugLevel = 0;	/* default value */
+else
+	pSetup_io->sData.iDebugLevel = atoi(pszValue_in);
+if (pSetup_io->sData.iDebugLevel < 0)
+	pSetup_io->sData.iDebugLevel = 0;
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setLogFile
+ * DESCRIPTION
+ *    set the "log file" parameter (redirecting STAMP's standard output)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setLogFile(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+pszValue_in = checkEmptyString(pszValue_in);
+if (pSetup_io->pszLogFilename != NULL)
+	{
+	reportMessage(TRUE, "Closing open log file %s", pSetup_io->pszLogFilename);
+	freeMemory(pSetup_io->pszLogFilename);
+	pSetup_io->pszLogFilename = NULL;	/* default value */
+	}
+if (pSetup_io->sData.pLogFP != NULL)
+	{
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+if (pszValue_in == NULL)
+	return szStampSuccess_m;
+
+pSetup_io->sData.pLogFP = fopen(pszValue_in,
+				pSetup_io->bAppendLogFile ? "a" : "w");
+if (pSetup_io->sData.pLogFP == NULL)
+	{
+//	pSetup_io->sData.pLogFP = stderr;
+	reportError(ERROR_MSG, "Cannot open log file %s", pszValue_in);
+	return szBadOutputFile_m;
+	}
+else
+	{
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	pSetup_io->pszLogFilename = duplicateString( pszValue_in );
+	reportMessage(TRUE, "Opening log file %s (%s mode)",
+		  pSetup_io->pszLogFilename, pSetup_io->bAppendLogFile ? "append" : "create");
+	return szStampSuccess_m;
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    setAppendLogFile
+ * DESCRIPTION
+ *    set the "append to log file" parameter
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setAppendLogFile(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bAppendLogFile = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bAppendLogFile = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bAppendLogFile = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setOutputStyle
+ * DESCRIPTION
+ *    set the "output style" parameter
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setOutputStyle(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->eOutputStyle = Ana;	/* default value */
+else if (_stricmp(pszValue_in, "Ana") == 0)
+	pSetup_io->eOutputStyle = Ana;
+else if (_stricmp(pszValue_in, "AResult") == 0)
+	pSetup_io->eOutputStyle = AResult;
+else if (_stricmp(pszValue_in, "Ptext") == 0)
+	pSetup_io->eOutputStyle = Ptext;
+#ifndef hab34112
+#ifdef EXPERIMENTAL
+else if (_stricmp(pszValue_in, "FWParse") == 0)
+	pSetup_io->eOutputStyle = FWParse;
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    setStoreErrorString
+ * DESCRIPTION
+ *    set the "store error messages in a string" parameter
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setStoreErrorString(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bStoreErrorString = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bStoreErrorString = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bStoreErrorString = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setErrorMessages
+ * DESCRIPTION
+ *    set the "store error messages in a string" parameter
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setErrorMessages(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+return szStampSuccess_m;
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    setShowPercentages
+ * DESCRIPTION
+ *    set the "show percentages" parameter (STAMP's -p command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setShowPercentages(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bShowPercentages = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bShowPercentages = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bShowPercentages = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    setVerifyLoading
+ * DESCRIPTION
+ *    set the "verify loading" parameter (STAMP's -v command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setVerifyLoading(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bVerifyLoading = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bVerifyLoading = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bVerifyLoading = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    setOutputProperties
+ * DESCRIPTION
+ *    set the "output properties" parameter (STAMP's -w p and -x p command line options)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setOutputProperties(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bOutputProperties = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bOutputProperties = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bOutputProperties = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    setOutputOriginalWord
+ * DESCRIPTION
+ *    set the "output original word" parameter (STAMP's -w w and -x w command line options)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setOutputOriginalWord(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bOutputOriginalWord = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bOutputOriginalWord = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bOutputOriginalWord = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    setOutputDecomposition
+ * DESCRIPTION
+ *    set the "output decomposition" parameter (STAMP's -w d and -x d command line options)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setOutputDecomposition(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bOutputDecomposition = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bOutputDecomposition = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bOutputDecomposition = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+
+/* Following added by hab 1999.03.11 Do we want this for stampdll?  RE*/
+/*****************************************************************************
+ * NAME
+ *    setCheckMorphReferences
+ * DESCRIPTION
+ *    set the "check morphname references" parameter (STAMP's -r command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setCheckMorphReferences(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bCheckMorphReferences = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bCheckMorphReferences = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bCheckMorphReferences = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setDoAllSyntheses
+ * DESCRIPTION
+ *    set the "do all systhesis" parameter (Stamps's -a command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setDoAllSyntheses(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.bDoAllSyntheses = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->sData.bDoAllSyntheses = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->sData.bDoAllSyntheses = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setMonitorProgress
+ * DESCRIPTION
+ *    set the "monitor progress" parameter (STAMP's -m command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setMonitorProgress(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bMonitorProgress_m = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bMonitorProgress_m = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bMonitorProgress_m = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setMatchCategories
+ * DESCRIPTION
+ *    set the "match categories" parameter (Stamp's -n command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setMatchCategories(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.bMatchCategories = TRUE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->sData.bMatchCategories = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->sData.bMatchCategories= FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setQuiet
+ * DESCRIPTION
+ *    set the "quiet" parameter (Stamp's -q command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setQuiet(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.bQuiet = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->sData.bQuiet = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->sData.bQuiet = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setReportNoEntries
+ * DESCRIPTION
+ *    set the "report no entries" parameter (Stamps's -r command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setReportNoEntries(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.bReportNoEntries = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->sData.bReportNoEntries = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->sData.bReportNoEntries = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setUnifiedDictionary
+ * DESCRIPTION
+ *    set the "check morphname references" parameter (Stamp's -u command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setUnifiedDictionary(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bUnifiedDictionary_m = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bUnifiedDictionary_m = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bUnifiedDictionary_m = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setVerifyTests
+ * DESCRIPTION
+ *    set the "verify tests" parameter (STAMP's -v command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setVerifyTests(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->bVerify_m = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->bVerify_m = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->bVerify_m = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    setOnlyTransfer
+ * DESCRIPTION
+ *    set the "only transfer" parameter (Stamp's -x command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * setOnlyTransfer(
+	const char *	pszValue_in,
+	StampSetup *	pSetup_io)
+{
+if (pszValue_in == NULL)
+	pSetup_io->sData.bOnlyTransfer = FALSE;	/* default value */
+else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+	 (_stricmp(pszValue_in, "T") == 0) )
+	pSetup_io->sData.bOnlyTransfer = TRUE;
+else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+	 (_stricmp(pszValue_in, "F") == 0) )
+	pSetup_io->sData.bOnlyTransfer = FALSE;
+else
+	return szInvalidParameterValue_m;
+
+return szStampSuccess_m;
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    setEnableAllomorphIDs
+ * DESCRIPTION
+ *
+ * RETURN VALUE
+ *    status string indicating success or failure
+ *	jdh 2002.1.15 added
+ */
+//static const char * setEnableAllomorphIDs(
+//    const char *	pszValue_in,
+//    StampSetup *	pSetup_io)
+//{
+//if (pszValue_in == NULL)
+//   pSetup_io->sData.bEnableAllomorphIDs = FALSE;	/* default value */
+//else if ((_stricmp(pszValue_in, "TRUE") == 0) ||
+//	 (_stricmp(pszValue_in, "T") == 0) )
+//    pSetup_io->sData.bEnableAllomorphIDs = TRUE;
+//else if ((_stricmp(pszValue_in, "FALSE") == 0) ||
+//	 (_stricmp(pszValue_in, "F") == 0) )
+//    pSetup_io->sData.bEnableAllomorphIDs = FALSE;
+//else
+//    return szInvalidParameterValue_m;
+//
+//return szStampSuccess_m;
+//}
+
+/*****************************************************************************
+ * NAME
+ *    getDebugAllomorphs
+ * DESCRIPTION
+ *    get the "debug allomorphs" parameter (STAMP's ?? command line option)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+//static const char * getDebugAllomorphs(
+//    StampSetup *	pSetup_io)
+//{
+//if (pSetup_io->sData.bDebugAllomorphConds)
+//    return "TRUE";
+//else
+//    return "FALSE";
+//}
+
+/*****************************************************************************
+ * NAME
+ *    getCommentChar
+ * DESCRIPTION
+ *    get the "comment character" parameter (STAMP's -c command line option)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getCommentChar(
+	StampSetup *	pSetup_io)
+{
+	szMessageBuffer_g[0] = pSetup_io->sData.cComment;
+	szMessageBuffer_g[1] = NUL;
+
+return szMessageBuffer_g;
+}
+
+//#ifndef hab36516
+/*****************************************************************************
+ * NAME
+ *    getEnableAllomorphIDs
+ * DESCRIPTION
+ *    get the maximum number of analyses to return
+ *     (MAX_ANALYSES_TO_RETURN_NO_LIMIT = no limit)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+//static const char * getEnableAllomorphIDs(
+//    StampSetup *	pSetup_io)
+//{
+//if (pSetup_io->sData.bRootGlosses)
+//    return "TRUE";
+//else
+//    return "FALSE";
+//}
+//#ifdef EXPERIMENTAL
+/*****************************************************************************
+ * NAME
+ *    getMaxAnalysesToReturn
+ * DESCRIPTION
+ *    get the maximum number of analyses to return
+ *     (MAX_ANALYSES_TO_RETURN_NO_LIMIT = no limit)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+//static const char * getMaxAnalysesToReturn(
+//    StampSetup *	pSetup_io)
+//{
+//sprintf(szMessageBuffer_g, "%d", pSetup_io->sData.iMaxAnalysesToReturn);
+
+//return szMessageBuffer_g;
+//}
+//#endif /* EXPERIMENTAL */
+//#endif /* hab36516 */
+
+/*****************************************************************************
+ * NAME
+ *    getMaxTrieDepth
+ * DESCRIPTION
+ *    get the "maximum trie depth" parameter (STAMP's -d command line option)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getMaxTrieDepth(
+	StampSetup *	pSetup_io)
+{
+sprintf(szMessageBuffer_g, "%d", pSetup_io->sData.iMaxTrieLevel);
+
+return szMessageBuffer_g;
+}
+
+/*****************************************************************************
+ * NAME
+ *    getRootGlosses
+ * DESCRIPTION
+ *    get the "root glosses" parameter (STAMP?? command line option)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+//static const char * getRootGlosses(
+//    StampSetup *	pSetup_io)
+//{
+//if (pSetup_io->sData.bRootGlosses)
+//    return "TRUE";
+//else
+//    return "FALSE";
+//}
+
+/*****************************************************************************
+ * NAME
+ *    getMaxMorphnameLength
+ * DESCRIPTION
+ *    get the "maximum morphname length" parameter (STAMP's -n command line
+ *    option)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+//static const char * getMaxMorphnameLength(
+//    StampSetup *	pSetup_io)
+//{
+//sprintf(szMessageBuffer_g, "%d", pSetup_io->sData.iMaxMorphnameLength);
+//
+//return szMessageBuffer_g;
+//}
+
+/*****************************************************************************
+ * NAME
+ *    getSelectiveAnalysisFile
+ * DESCRIPTION
+ *    get the "selective trace morphs" parameter (STAMP's -s command line
+ *    option)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+//static const char * getSelectiveAnalysisFile(
+//    StampSetup *	pSetup_io)
+//{
+//strcpy(szMessageBuffer_g,
+//       pSetup_io->sData.pszSelectiveAnalFile ?
+//				pSetup_io->sData.pszSelectiveAnalFile : "");
+
+//return szMessageBuffer_g;
+//}
+
+/*****************************************************************************
+ * NAME
+ *    getTraceAnalysis
+ * DESCRIPTION
+ *    get the "trace analysis" parameter (STAMP's -t command line option)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getTraceAnalysis(
+	StampSetup *	pSetup_io)
+{
+switch (pSetup_io->sData.bTrace)
+	{
+	case TRUE:
+		return "TRUE:";
+	case FALSE:
+		return "FALSE";
+	default:
+	return "BOGUS!?";
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    getDebugLevel
+ * DESCRIPTION
+ *    get the "debug level" parameter (STAMP's -/ command line option)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getDebugLevel(
+	StampSetup *	pSetup_io)
+{
+sprintf(szMessageBuffer_g, "%d", pSetup_io->sData.iDebugLevel);
+
+return szMessageBuffer_g;
+}
+
+/*****************************************************************************
+ * NAME
+ *    getLogFile
+ * DESCRIPTION
+ *    get the "log file" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getLogFile(
+	StampSetup *	pSetup_io)
+{
+strcpy(szMessageBuffer_g,
+	   pSetup_io->pszLogFilename ? pSetup_io->pszLogFilename : "");
+
+return szMessageBuffer_g;
+}
+
+/*****************************************************************************
+ * NAME
+ *    getAppendLogFile
+ * DESCRIPTION
+ *    get the "append to log file" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getAppendLogFile(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bAppendLogFile)
+	return "TRUE";
+else
+	return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getOutputStyle
+ * DESCRIPTION
+ *    get the "output style" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getOutputStyle(
+	StampSetup *	pSetup_io)
+{
+switch (pSetup_io->eOutputStyle)
+	{
+	case Ana:		return "Ana";
+	case AResult:	return "AResult";
+	case Ptext:		return "Ptext";
+#ifndef hab34112
+#ifdef EXPERIMENTAL
+	case FWParse:	return "FWParse";
+#endif /* EXPERIMENTAL */
+#endif /* hab34112 */
+	default:		return "?";
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    getStoreErrorString
+ * DESCRIPTION
+ *    get the "store error messages in a string" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getStoreErrorString(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bStoreErrorString)
+	return "TRUE";
+else
+	return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getErrorMessages
+ * DESCRIPTION
+ *    get the "store error messages in a string" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getErrorMessages(
+	StampSetup *	pSetup_io)
+{
+return "";
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    getShowPercentages
+ * DESCRIPTION
+ *    get the "show percentages" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getShowPercentages(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bShowPercentages)
+	return "TRUE";
+else
+	return "FALSE";
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    getCheckMorphReferences
+ * DESCRIPTION
+ *    get the "check morphname references" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getCheckMorphReferences(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bCheckMorphReferences)
+	return "TRUE";
+else
+	return "FALSE";
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    getOutputProperties
+ * DESCRIPTION
+ *    get the "output properties" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getOutputProperties(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bOutputProperties)
+	return "TRUE";
+else
+	return "FALSE";
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    getOutputOriginalWord
+ * DESCRIPTION
+ *    get the "output original word" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getOutputOriginalWord(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bOutputOriginalWord)
+	return "TRUE";
+else
+	return "FALSE";
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    getOutputDecomposition
+ * DESCRIPTION
+ *    get the "output Decomposition" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getOutputDecomposition(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bOutputDecomposition)
+	return "TRUE";
+else
+	return "FALSE";
+}
+
+/* Following added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    getVerifyLoading
+ * DESCRIPTION
+ *    get the "verify loading" parameter
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getVerifyLoading(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bVerifyLoading)
+	return "TRUE";
+else
+	return "FALSE";
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    getDoAllSyntheses
+ * DESCRIPTION
+ *    get the "do all systhesis" parameter (Stamps's -a command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * getDoAllSyntheses(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->sData.bDoAllSyntheses)
+	return "TRUE";
+
+return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getMonitorProgress
+ * DESCRIPTION
+ *    get the "monitor progress" parameter (STAMP's -m command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * getMonitorProgress(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bMonitorProgress_m)
+	return "TRUE";
+
+return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getMatchCategories
+ * DESCRIPTION
+ *    get the "match categories" parameter (Stamp's -n command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * getMatchCategories(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->sData.bMatchCategories)
+	return "TRUE";
+
+return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getQuiet
+ * DESCRIPTION
+ *    get the "quiet" parameter (Stamp's -q command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * getQuiet(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->sData.bQuiet)
+	return "TRUE";
+
+return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getReportNoEntries
+ * DESCRIPTION
+ *    get the "report no entries" parameter (Stamps's -r command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * getReportNoEntries(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->sData.bReportNoEntries)
+	return "TRUE";
+
+return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getUnifiedDictionary
+ * DESCRIPTION
+ *    get the "check morphname references" parameter (Stamp's -u command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * getUnifiedDictionary(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->sData.bDoAllSyntheses)
+	return "TRUE";
+
+return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getVerifyTests
+ * DESCRIPTION
+ *    get the "verify tests" parameter (STAMP's -v command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * getVerifyTests(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->bVerify_m)
+	return "TRUE";
+
+return "FALSE";
+}
+
+/*****************************************************************************
+ * NAME
+ *    getOnlyTransfer
+ * DESCRIPTION
+ *    get the "only transfer" parameter (Stamp's -x command line option)
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+static const char * getOnlyTransfer(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->sData.bOnlyTransfer)
+	return "TRUE";
+
+return "FALSE";
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    getEnableAllomorphIDs
+ * DESCRIPTION
+ *
+ * RETURN VALUE
+ *    status string indicating success or failure
+ *	jdh 2002.1.15 added
+ */
+//static const char * getEnableAllomorphIDs(
+//    StampSetup *	pSetup_io)
+//{
+//if (pSetup_io->bEnableAllomorphIDs)
+//	return "TRUE";
+//
+//return "FALSE";
+//}
+
+
+
+
+#ifdef EXPERIMENTAL
+/*****************************************************************************
+ * NAME
+ *    getRecognizeOnly
+ * DESCRIPTION
+ *    get flag whether or not to store parse results ("Recognize Only" == true
+ *    means not to store parse results)
+ * RETURN VALUE
+ *    string indicating the value
+ */
+static const char * getRecognizeOnly(
+	StampSetup *	pSetup_io)
+{
+if (pSetup_io->sData.sPATR.bRecognizeOnly)
+	return "TRUE";
+else
+	return "FALSE";
+}
+#endif /* EXPERIMENTAL */
+
+/*****************************************************************************
+ * NAME
+ *    StampGetParameter
+ * DESCRIPTION
+ *    retrieve a Stamp parameter value
+ * RETURN VALUE
+ *    parameter value string
+ */
+DllExport const char * StampGetParameter(
+	StampSetup * pSetup_io,
+	const char * pszName_in)
+{
+/*
+ *  verify a valid STAMP setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	return szStampDLLCrash_m;
+/*
+ *  check for sane input
+ */
+pszName_in = checkEmptyString(pszName_in);
+if (pszName_in == NULL)
+	return szInvalidParameterName_m;
+pszName_in += strspn(pszName_in, szWhitespace_g);
+/*
+ *  get the parameter value
+ */
+switch (findParameterIndex(pszName_in))
+	{
+//    case DEBUG_ALLOMORPH_CONDS:
+//	return getDebugAllomorphs(pSetup_io);
+
+	case BEGIN_COMMENT:
+	return getCommentChar(pSetup_io);
+
+	case MAX_TRIE_DEPTH:
+	return getMaxTrieDepth(pSetup_io);
+
+//    case ROOT_GLOSSES:
+//	return getRootGlosses(pSetup_io);
+
+//    case MAX_MORPHNAME_LENGTH:
+//	return getMaxMorphnameLength(pSetup_io);
+
+//    case SELECTIVE_ANALYSIS_FILE:
+//	return getSelectiveAnalysisFile(pSetup_io);
+
+	case TRACE_ANALYSIS:
+	return getTraceAnalysis(pSetup_io);
+
+	case DEBUG_LEVEL:
+	return getDebugLevel(pSetup_io);
+
+	case LOG_FILE:
+	return getLogFile(pSetup_io);
+
+	case APPEND_LOG_FILE:
+	return getAppendLogFile(pSetup_io);
+
+	case OUTPUT_STYLE:
+	return getOutputStyle(pSetup_io);
+
+	case STORE_ERROR_STRING:
+	return getStoreErrorString(pSetup_io);
+
+	case ERROR_MESSAGES:
+	return getErrorMessages(pSetup_io);
+
+	case SHOW_PERCENTAGES:	/* hab 1999.03.11 */
+	return getShowPercentages(pSetup_io);
+
+	case CHECK_MORPHNAME_REFS:	/* hab 1999.03.11 */
+	return getCheckMorphReferences(pSetup_io);
+
+	case VERIFY_LOADING:	/* hab 1999.03.11 */
+	return getVerifyLoading(pSetup_io);
+
+	case OUTPUT_PROPERTIES:	/* hab 1999.03.11 */
+	return getOutputProperties(pSetup_io);
+
+	case OUTPUT_ORIGINAL_WORD:	/* hab 1999.03.11 */
+	return getOutputOriginalWord(pSetup_io);
+
+	case OUTPUT_DECOMPOSITION:	/* hab 1999.03.11 */
+	return getOutputDecomposition(pSetup_io);
+
+	case DO_ALL_SYNTHESES:		/* rke 2009.07.07 */
+	return getDoAllSyntheses(pSetup_io);
+
+	case MONITOR_PROGRESS:		/* rke 2009.07.07 */
+	return getMonitorProgress(pSetup_io);
+
+	case MATCH_CATEGORIES:		/* rke 2009.07.07 */
+	return getMatchCategories(pSetup_io);
+
+	case QUIET:					/* rke 2009.07.07 */
+	return getQuiet(pSetup_io);
+
+	case REPORT_NO_ENTRIES:		/* rke 2009.07.07 */
+	return getReportNoEntries(pSetup_io);
+
+	case UNIFIED_DICTIONARY:	/* rke 2009.07.07 */
+	return getUnifiedDictionary(pSetup_io);
+
+	case VERIFY_TESTS:			/* rke 2009.07.07 */
+	return getVerifyTests(pSetup_io);
+
+	case ONLY_TRANSFER:			/* rke 2009.07.07 */
+	return getOnlyTransfer(pSetup_io);
+
+//#ifndef hab36516
+//    case ALLOMORPH_IDS:
+//        return getEnableAllomorphIDs(pSetup_io);
+
+//#ifdef EXPERIMENTAL
+//    case MAX_ANALYSES_TO_RETURN:
+//        return getMaxAnalysesToReturn(pSetup_io);
+//#endif
+//#endif
+
+//#ifdef EXPERIMENTAL
+//    case RECOGNIZE_ONLY:
+//        return getRecognizeOnly(pSetup_io);
+//#endif
+
+	default:
+	return szInvalidParameterName_m;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/*****************************************************************************
+ * NAME
+ *    StampUpdateEntry
+ * DESCRIPTION
+ *    update a dictionary entry with the given value
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampUpdateEntry(
+	StampSetup * pSetup_io,
+	const char * pszNewEntry_in)
+{
+int	iStatus;
+/*
+ *  verify a valid STAMP setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	{
+	pLogFP_m      = NULL;
+	iDebugLevel_m = 0;
+	return szStampDLLCrash_m;
+	}
+if (pSetup_io->pszLogFilename != NULL)
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+pLogFP_m      = pSetup_io->sData.pLogFP;
+iDebugLevel_m = pSetup_io->sData.iDebugLevel;
+
+//iStatus = updateStampDictEntry(pszNewEntry_in, &pSetup_io->sData);
+
+if (pSetup_io->sData.pLogFP != NULL)
+	{
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+pLogFP_m      = NULL;
+iDebugLevel_m = 0;
+return iStatus ? szStampSuccess_m : szBadDictEntry_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    StampWriteDictionary
+ * DESCRIPTION
+ *    write the STAMP dictionary to a file
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampWriteDictionary(
+	StampSetup * pSetup_in,
+	const char * pszFilePath_in)
+{
+const char *pszResult = szStampSuccess_m;
+FILE *outfp = NULL;
+/*
+ *  verify a valid STAMP setup
+ */
+if (!isValidSetup(pSetup_in))
+	return szStampInvalidSetup_m;
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	{
+	pLogFP_m      = NULL;
+	iDebugLevel_m = 0;
+	return szStampDLLCrash_m;
+	}
+if (pSetup_in->pszLogFilename != NULL)
+	pSetup_in->sData.pLogFP = fopen(pSetup_in->pszLogFilename, "a");
+pLogFP_m      = pSetup_in->sData.pLogFP;
+iDebugLevel_m = pSetup_in->sData.iDebugLevel;
+/*
+ *  write the dictionary contents to the indicated file
+ */
+	// open file pszFilePath_in
+	pszFilePath_in = checkEmptyString(pszFilePath_in);
+	if (pszFilePath_in == NULL)
+		{
+			reportError(ERROR_MSG,
+			"StampWriteDictionary() missing Output file");
+			pszResult = szBadOutputFile_m;
+			goto close_and_return;
+		}
+	/*
+	 *  open output file
+	 */
+	outfp = fopen( pszFilePath_in, "w");
+
+	if (outfp == NULL)
+		{
+			pszResult = szBadOutputFile_m;
+			goto close_and_return;
+		}
+writeStampDictionary(outfp, &pSetup_in->sData);
+	fclose(outfp);
+
+close_and_return:
+
+if (pSetup_in->sData.pLogFP != NULL)
+	{
+	fclose(pSetup_in->sData.pLogFP);
+	pSetup_in->sData.pLogFP = NULL;
+	}
+pLogFP_m      = NULL;
+iDebugLevel_m = 0;
+return pszResult;
+}
+
+/*****************************************************************************
+ * NAME
+ *    STAMPInitializeTraceString
+ * DESCRIPTION
+ *    Set tracing to go to a string instead of a file.
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * AmpleInitializeTraceString(
+	StampSetup * pSetup_io)
+{
+/*
+ *  verify a valid STAMP setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+if (pSetup_io->pszTrace == NULL)
+	{
+	pSetup_io->pszTrace    = allocMemory(20000);
+	pSetup_io->uiTraceSize = 20000;
+	memset(pSetup_io->pszTrace, 0, pSetup_io->uiTraceSize);
+	}
+return szStampSuccess_m;
+}
+
+/*****************************************************************************
+ * NAME
+ *    STAMPGetTraceString
+ * DESCRIPTION
+ *    Get the stored trace string.
+ * RETURN VALUE
+ *    trace string, or a status string indicating failure
+ */
+DllExport const char * StampGetTraceString(
+	StampSetup * pSetup_io)
+{
+/*
+ *  verify a valid STAMP setup
+ */
+if (!isValidSetup(pSetup_io))
+	return szStampInvalidSetup_m;
+if (pSetup_io->pszTrace != NULL)
+	return pSetup_io->pszTrace;
+else
+	return szNoTraceString_m;
+}
+
+
+/* following function added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    StampInitializeMorphChecking
+ * DESCRIPTION
+ *    initialize the arrays for morphname and allomorph checking
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampInitializeMorphChecking(
+	StampSetup * pSetup_io)
+{
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	return szStampDLLCrash_m;
+
+if (pSetup_io->pszLogFilename != NULL)
+	{
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+/*
+ *  allocate space for morpheme checking
+ */
+//    initStampMorphChecking(TRUE, &pSetup_io->sData);
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+
+return szStampSuccess_m;
+}
+
+/* following function added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    StampCheckMorphReferences
+ * DESCRIPTION
+ *    check that all referenced morphnames are defined in the dictionaries.
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampCheckMorphReferences(
+	StampSetup * pSetup_io)
+{
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	return szStampDLLCrash_m;
+
+if (pSetup_io->pszLogFilename != NULL)
+	{
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+/*
+ *  check the morphnames in all the allomorph environment constraints and
+ *   co-occurrence constraints
+ */
+//    checkStampMorphs(TRUE,
+//		     &pSetup_io->sData,
+//		     FALSE);	/* 3.3.3.1 hab; added FALSE to preserve data */
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+
+return szStampSuccess_m;
+}
+
+/* following function added by hab 1999.03.11 */
+/*****************************************************************************
+ * NAME
+ *    StampVerifyLoading
+ * DESCRIPTION
+ *    perform some verifying output to the log file
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampVerifyLoading(
+	StampSetup * pSetup_io)
+{
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	return szStampDLLCrash_m;
+
+pSetup_io->bVerifyLoading = TRUE;
+if (pSetup_io->pszLogFilename != NULL)
+	{
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+	fprintf( pSetup_io->sData.pLogFP, "\n");
+	/* If selective trace, print file name */
+	if ( pSetup_io->pszSelectiveAnalFile )
+		fprintf( pSetup_io->sData.pLogFP, "Selective trace from file %s\n",
+		 pSetup_io->pszSelectiveAnalFile );
+	/* Print header for file list */
+	fprintf( pSetup_io->sData.pLogFP,
+		 "Control files and dictionary files:\n");
+	/*
+	 *	write category classes, string classes, punctuation classes,
+	 *  morpheme classes, and morphemeco-occurrence constraints to the log file
+	 */
+	writeAmpleCategClasses(pSetup_io->sData.pLogFP,
+			   pSetup_io->sData.pCategories,
+			   pSetup_io->sData.pCategClasses);
+	writeStringClasses(pSetup_io->sData.pLogFP,
+			   pSetup_io->sData.pStringClasses);
+				/* 3.3.0 hab */
+	writePunctClasses(pSetup_io->sData.pLogFP,
+			  pSetup_io->sData.pPunctClasses);
+	writeAmpleMorphClasses(pSetup_io->sData.pLogFP,
+			   pSetup_io->sData.pMorphClasses);
+//    writeAmpleMorphConstraints(pSetup_io->sData.pLogFP,
+//			       &pSetup_io->sData);
+#ifdef EXPERIMENTAL
+#ifndef hab35013
+	writeStampNeverConstraints(pSetup_io->sData.pLogFP,
+				   &pSetup_io->sData);
+#endif /* hab35013 */
+#endif /* EXPERIMENTAL */
+	/* tests */
+	writeStampTests( pSetup_io->sData.pLogFP, &pSetup_io->sData );
+
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+
+return szStampSuccess_m;
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* following function added by hab 1999.03.05 */
+/*****************************************************************************
+ * NAME
+ *    StampReportVersion
+ * DESCRIPTION
+ *    report version information to the log file, if any
+ * RETURN VALUE
+ *    status string indicating success or failure
+ */
+DllExport const char * StampReportVersion(
+	StampSetup * pSetup_io)
+{
+time_t		clock;
+char *		pszTime;
+
+time( &clock );
+pszTime = ctime(&clock);
+
+/*
+ *  set variables for emergency exits
+ */
+if (setjmp(sAbortPoint) != 0)
+	return szStampDLLCrash_m;
+
+if (pSetup_io->pszLogFilename != NULL)
+	{
+	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
+	print_header(pSetup_io->sData.pLogFP, pszTime);
+	fclose(pSetup_io->sData.pLogFP);
+	pSetup_io->sData.pLogFP = NULL;
+	}
+
+return szStampSuccess_m;
+}
+
+/****************************************************************************
+ * NAME
+ *    reportError
+ * DESCRIPTION
+ *    report an error to the user, killing the program if the status is nonzero
+ * RETURN VALUE
+ *    none
+ */
+void reportError(
+	int			eMessageType_in,	/* type of message */
+	const char *	pszFormat_in,		/* printf style format string
+						   for the message */
+	...)
+{
+va_list marker;
+char *	p;
+
+va_start( marker, pszFormat_in );
+
+if (pLogFP_m != NULL)
+	{
+	fprintf(pLogFP_m, "STAMP Error Message:\n");
+	vfprintf(pLogFP_m, pszFormat_in, marker);
+	fprintf(pLogFP_m, "\n");
+	fflush(pLogFP_m);
+	}
+if (iDebugLevel_m != 0)
+	{
+	vsprintf(szMessageBuffer_g, pszFormat_in, marker);
+	while ((p = strchr(szMessageBuffer_g, '\n')) != NULL)
+	{
+	if (p[1] == NUL)
+		*p = NUL;
+	else
+		*p = ' ';
+	}
+	if (eMessageType_in == DEBUG_MSG)
+	MessageBoxA(0, szMessageBuffer_g, "STAMP.DLL",
+		   MB_OK | MB_ICONINFORMATION);
+	else
+	MessageBoxA(0, szMessageBuffer_g, "STAMP.DLL",
+		   MB_OK | MB_ICONEXCLAMATION);
+	}
+
+va_end( marker );
+}
+
+/****************************************************************************
+ * NAME
+ *    reportMessage
+ * DESCRIPTION
+ *    report a message to the user
+ * RETURN VALUE
+ *    none
+ */
+void reportMessage(
+	int			bNotSilent_in,
+	const char *	pszFormat_in,	/* printf style format string for
+					   the message */
+	...)
+{
+
+va_list marker;
+
+va_start( marker, pszFormat_in );
+
+if (pLogFP_m != NULL)
+	{
+	fprintf(pLogFP_m, "Stamp Message:\n");
+	vfprintf(pLogFP_m, pszFormat_in, marker);
+	fprintf(pLogFP_m, "\n");
+	fflush(pLogFP_m);
+	}
+if (bNotSilent_in && (iDebugLevel_m != 0))
+	{
+	vsprintf(szMessageBuffer_g, pszFormat_in, marker);
+	MessageBoxA(0, (szMessageBuffer_g), "Stamp.DLL",
+	   MB_OK | MB_ICONINFORMATION);
+	}
+va_end( marker );
 }
 
 /*****************************************************************************
@@ -590,15 +3105,16 @@ Usage: stamp [options]\n\
  * RETURN VALUE
  *    none
  */
-static void print_header(pOutFP_in, pszTime_in)
-FILE *	pOutFP_in;
-char *	pszTime_in;
+static void print_header(FILE *pOutFP_in, char *pszTime_in)
+//FILE *	pOutFP_in;
+//char *	pszTime_in;
 {
 fprintf(pOutFP_in,
-	"STAMP: Synthesis(Transfer(AMPle(text))) = adapted text\n");
-fprintf(pOutFP_in, "Version %d.%d%c%d (%s), Copyright %s SIL, Inc.\n",
+	"STAMPDLL: Synthesis(Transfer(AMPle(text))) = adapted text\n");
+fprintf(pOutFP_in, "Version %d.%d%c%d%c%d (%s), Copyright %s SIL, Inc.\n",
 	iStampVersion_g, iStampRevision_g, cStampPatchSep_g,
-	iStampPatchlevel_g, pszStampDate_g, pszStampYear_g);
+	iStampPatchlevel_g,  cStampPatchSep_g, iStampDLLPatchLevel_g,
+	pszStampDate_g,	pszStampYear_g);
 #ifdef __DATE__
 fprintf(pOutFP_in, pszStampCompileFormat_g,
 	pszStampCompileDate_g, pszStampCompileTime_g);
@@ -617,636 +3133,4 @@ fprintf(pOutFP_in,
 	__GNUC__, __GNUC_MINOR__ );
 #endif
 fprintf( pOutFP_in, "       Transfer/Synthesis Performed %s", pszTime_in );
-}
-
-/****************************************************************************
- * NAME
- *    tsinit
- * DESCRIPTION
- *    Initialization for transfer and synthesis:  load the control files and
- *    dictionaries.
- * RETURN VALUE
- *    none
- */
-static void tsinit()
-{
-char		infname[BUFSIZE];
-Change *	pChg;
-int		iCount = 0;
-char		szPrompt[64];
-static const char	szRootDictPrompt_s[] = "\
-Root dictionary file (xxRTnn.DIC)";
-static const char	szDictPrompt_s[] = "\
-Dictionary file (xxYYYYnn.DIC)";
-static const char	szDictLoadMessage_s[] = "\
-		%s DICTIONARY: Loaded %d record%s\n";
-static const char	szDictErrorMessage_s[] = "\
-Cannot open dictionary file %s\n";
-static const char	szMissingDictCodeRecord_s[] = "\
-DICTIONARY CODE TABLE: missing record in change table.\n\
-			   Expected a %s record, but did not find it\n";
-/*
- *  initialize property list, category list, and string list
- */
-sStamp_m.pPropertyList     = NULL;
-sStamp_m.pCategorySetsList = NULL;
-sStamp_m.pStringList       = NULL;
-/*
- *  open -f namefile if there is one
- *  If logging file names and not verifying tests, output to log file as well
- */
-openAmpleCmdFile(pszCommandFile_m, sStamp_m.bQuiet );
-logAmpleCmds( bVerify_m ? NULL : sStamp_m.pLogFP );
-/*
- *  load the overall STAMP control file
- */
-getAmpleCmd("STAMP declarations file (zzSTAMP.DEC): ", infname, BUFSIZE);
-if (loadStampControlFile(infname, &sStamp_m) != 0)
-	{
-	reportError(ERROR_MSG, "Error reading declarations file %s\n", infname);
-	exitSafely(1);
-	}
-/*
- *  load the transfer (dialect-pair-specific) control file
- */
-getAmpleCmd("Transfer file (xxzzTR.CHG) [none]: ", infname, BUFSIZE);
-if (infname[0] != NUL)
-	{
-	if (loadStampTransferFile(infname, &sStamp_m) != 0)
-	{
-	reportError(ERROR_MSG, "Error reading transfer file %s\n", infname);
-	exitSafely(1);
-	}
-	}
-/*
- *  load the synthesis control file
- */
-getAmpleCmd("Synthesis file (zzSYNT.CHG) [none]: ", infname, BUFSIZE);
-if (infname[0] != NUL)
-	{
-	if (loadStampSynthesisFile(infname, &sStamp_m) != 0)
-	{
-	reportError(ERROR_MSG, "Error reading synthesis file %s\n", infname);
-	exitSafely(1);
-	}
-	}
-/*
- *  load the dictionary code table file
- */
-getAmpleCmd("Dictionary code table (zzSYCD.TAB): ", infname, BUFSIZE);
-if (loadStampDictCodeTables(infname, &sStamp_m) != 0)
-	exitSafely(1);		/* Exit with error status */
-
-if (bUnifiedDictionary_m && (sStamp_m.pDictTable == NULL))
-	{
-	reportError(ERROR_MSG, szMissingDictCodeRecord_s, "\\unified");
-	exitSafely(1);		/* Exit with error status */
-	}
-if (	!bUnifiedDictionary_m &&
-	(sStamp_m.pDictTable   != NULL) &&
-	(sStamp_m.pPrefixTable == NULL) &&
-	(sStamp_m.pInfixTable  == NULL) &&
-	(sStamp_m.pSuffixTable == NULL) &&
-	(sStamp_m.pRootTable   == NULL) )
-	{
-	reportError(WARNING_MSG,
-		"Assuming unified dictionary despite missing -u option.\n");
-	bUnifiedDictionary_m = TRUE;
-	}
-/*
- *  load the dictionary orthography change table
- */
-getAmpleCmd("Dictionary orthography change table (zzORDC.TAB) [none]: ",
-		infname, BUFSIZE);
-if ( infname[0] )
-	{
-	if (loadStampDictOrthoChanges(infname, &sStamp_m) != 0)
-	{
-	reportError(ERROR_MSG,
-			"Error reading dictionary orthography change table %s\n",
-			infname);
-	exitSafely(1);
-	}
-	}
-else
-	sStamp_m.pDictOrthoChanges = (Change *)NULL;
-/*
- *  reduce amount of memory allocated for records
- */
-freeMemory( pRecordBuffer_g );
-pRecordBuffer_g = (char *)allocMemory( SMALL_RECSIZE );
-uiRecordBufferSize_g = SMALL_RECSIZE;
-getAndClearAllocMemorySum();
-
-/* ================================================================
- *  load the morpheme dictionaries
- */
-getAndClearAllocMemorySum();                 /* Clear memory used for report */
-if (bUnifiedDictionary_m)
-	{
-	/*
-	 *  load Target Dialect unified dictionary: may be multiple files
-	 */
-	if (!sStamp_m.bQuiet)
-	reportStampDictCodeTable(STAMP_UNIFIED, &sStamp_m);
-	sprintf(szPrompt, "%s: ", szDictPrompt_s);
-	getAmpleCmd(szPrompt, infname, BUFSIZE);
-	sprintf(szPrompt, "Next %s [no more]: ", szDictPrompt_s);
-	do  {
-	iCount = loadStampDictionary(infname, STAMP_UNIFIED, &sStamp_m);
-	if (iCount == -1)
-		{
-		reportError(ERROR_MSG, szDictErrorMessage_s, infname);
-		exitSafely(1);
-		}
-	else
-		{
-		reportMessage(!sStamp_m.bQuiet, szDictLoadMessage_s,
-			  "UNIFIED", iCount, (iCount == 1) ? "" : "s" );
-		}
-	getAmpleCmd(szPrompt, infname, BUFSIZE);
-	} while ( infname[0] );
-	freeCodeTable( sStamp_m.pDictTable );	/* flush unified code table */
-	sStamp_m.pDictTable = NULL;
-	/*
-	 *  If verify, display
-	 */
-	if (bVerify_m && (sStamp_m.pLogFP != NULL))
-	fprintf(sStamp_m.pLogFP,
-		"Memory used for unified dictionaries: %5ld\n",
-		getAndClearAllocMemorySum() );
-	}
-else
-	{
-	if (sStamp_m.pPrefixTable != NULL)
-	{                                   /* load TD prefix dictionary */
-	if (!sStamp_m.bQuiet)
-		reportStampDictCodeTable(PFX, &sStamp_m);
-	getAmpleCmd("Prefix dictionary file (zzPF01.DIC): ",
-			infname, BUFSIZE);
-	iCount = loadStampDictionary( infname, PFX, &sStamp_m);
-	if (iCount == -1)
-		{
-		reportError(ERROR_MSG, szDictErrorMessage_s, infname);
-		exitSafely(1);
-		}
-	else
-		{
-		reportMessage(!sStamp_m.bQuiet, szDictLoadMessage_s,
-			  "PREFIX", iCount, (iCount == 1) ? "" : "s" );
-		}
-	freeCodeTable( sStamp_m.pPrefixTable );	/* flush prefix code table */
-	sStamp_m.pPrefixTable = NULL;
-	/*
-	 *  If verify, display
-	 */
-	if (bVerify_m && (sStamp_m.pLogFP != NULL))
-		fprintf(sStamp_m.pLogFP,
-			"Memory used for prefix dictionary: %5ld\n",
-			getAndClearAllocMemorySum() );
-	}
-	if (sStamp_m.pInfixTable != NULL)
-	{                                   /* load TD infix dictionary */
-	if (!sStamp_m.bQuiet)
-		reportStampDictCodeTable(IFX, &sStamp_m);
-	getAmpleCmd("Infix dictionary file (zzIF01.DIC): ", infname, BUFSIZE);
-	iCount = loadStampDictionary(infname, IFX, &sStamp_m);
-	if (iCount == -1)
-		{
-		reportError(ERROR_MSG, szDictErrorMessage_s, infname);
-		exitSafely(1);
-		}
-	else
-		{
-		reportMessage(!sStamp_m.bQuiet, szDictLoadMessage_s,
-			  "INFIX", iCount, (iCount == 1) ? "" : "s" );
-		}
-	freeCodeTable( sStamp_m.pInfixTable );	/* flush infix code table */
-	sStamp_m.pInfixTable = NULL;
-	/*
-	 *  If verify, display
-	 */
-	if (bVerify_m && (sStamp_m.pLogFP != NULL))
-		fprintf(sStamp_m.pLogFP,
-			"Memory used for infix dictionary: %5ld\n",
-			getAndClearAllocMemorySum() );
-	}
-	if (sStamp_m.pSuffixTable != NULL)
-	{                                   /* load TD suffix dictionary */
-	if (!sStamp_m.bQuiet)
-		reportStampDictCodeTable(SFX, &sStamp_m);
-	getAmpleCmd("Suffix dictionary file (zzSF01.DIC): ", infname, BUFSIZE);
-	iCount = loadStampDictionary(infname, SFX, &sStamp_m);
-	if (iCount == -1)
-		{
-		reportError(ERROR_MSG, szDictErrorMessage_s, infname);
-		exitSafely(1);
-		}
-	else
-		{
-		reportMessage(!sStamp_m.bQuiet, szDictLoadMessage_s,
-			  "SUFFIX", iCount, (iCount == 1) ? "" : "s" );
-		}
-	freeCodeTable( sStamp_m.pSuffixTable );	/* flush suffix code table */
-	sStamp_m.pSuffixTable = NULL;
-	/*
-	 *  If verify, display
-	 */
-	if (bVerify_m && (sStamp_m.pLogFP != NULL))
-		fprintf(sStamp_m.pLogFP,
-			"Memory used for suffix dictionary: %5ld\n",
-			getAndClearAllocMemorySum() );
-	}
-	/*
-	 *  the following is not needed if synthesis is not done.
-	 *
-	 *  load Target Dialect root dictionary: may be multiple files
-	 */
-	if (sStamp_m.pRootTable != NULL)
-	{
-	if (!sStamp_m.bQuiet)
-		reportStampDictCodeTable(ROOT, &sStamp_m);
-	sprintf(szPrompt, "%s: ", szRootDictPrompt_s);
-	getAmpleCmd(szPrompt, infname, BUFSIZE);
-	sprintf(szPrompt, "Next %s [no more]: ", szRootDictPrompt_s);
-	do  {
-		iCount = loadStampDictionary(infname, ROOT, &sStamp_m);
-		if (iCount == -1)
-		{
-		reportError(ERROR_MSG, szDictErrorMessage_s, infname);
-		exitSafely(1);
-		}
-		else
-		{
-		reportMessage(!sStamp_m.bQuiet, szDictLoadMessage_s,
-				  "ROOT", iCount, (iCount == 1) ? "" : "s" );
-		}
-		getAmpleCmd(szPrompt, infname, BUFSIZE);
-		} while ( infname[0] );
-	freeCodeTable( sStamp_m.pRootTable );	/* flush root code table */
-	sStamp_m.pRootTable = NULL;
-	/*
-	 *  If verify, display
-	 */
-	if (bVerify_m && (sStamp_m.pLogFP != NULL))
-		fprintf(sStamp_m.pLogFP,
-			"Memory used for root dictionaries: %5ld\n",
-			getAndClearAllocMemorySum() );
-	}
-	}
-/*
- *  load text output control file (orthography changes)
- */
-getAmpleCmd("Output text control file (zzOUTTX.CTL) [none]: ",
-		infname, BUFSIZE);
-if ( infname[0] )
-	{
-	if (loadOutxCtlFile(infname,
-			sStamp_m.cComment,
-			&sStamp_m.sTextCtl,
-			&sStamp_m.pStringClasses) != 0)
-	{
-	}
-	iCount = 0;
-	for ( pChg = sStamp_m.sTextCtl.pOutputChanges ; pChg ; pChg = pChg->pNext )
-	++iCount;
-	reportMessage(!sStamp_m.bQuiet,
-		  "%d output orthography change%s loaded from %s\n",
-		  iCount, (iCount == 1) ? " was" : "s were", infname);
-	}
-else
-	sStamp_m.sTextCtl.pOutputChanges = (Change *)NULL;
-
-cleanupAfterStdFormatRecord();
-closeAmpleCmdFile();               /* Close -f name file if there was one */
-logAmpleCmds( NULL );          /* Turn off logging for I/O file names */
-
-/* ================================================================
- *  dump verbose "verify" information
- */
-if (bVerify_m && (sStamp_m.pLogFP != NULL))
-	{
-	/*
-	 *  show categories, category classes, string classes, morpheme classes,
-	 *  and any user defined tests
-	 */
-	writeAmpleCategories(sStamp_m.pLogFP, sStamp_m.pCategories);
-	writeAmpleCategClasses(sStamp_m.pLogFP, sStamp_m.pCategories,
-			   sStamp_m.pCategClasses);
-	writeStringClasses(sStamp_m.pLogFP, sStamp_m.pStringClasses);
-	writeAmpleMorphClasses(sStamp_m.pLogFP, sStamp_m.pMorphClasses);
-				/* 2.1b1 hab */
-	writePunctClasses(sStamp_m.pLogFP, sStamp_m.pPunctClasses);
-	writeStampTests(sStamp_m.pLogFP, &sStamp_m);
-	}
-if (sStamp_m.iDebugLevel && (sStamp_m.pLogFP != NULL))
-	{
-	/*
-	 *  show the transfer lexical changes, transfer rules, synthesis lexical
-	 *  changes, and regular sound changes
-	 */
-	writeStampTransferLexChanges(sStamp_m.pLogFP, &sStamp_m);
-	writeStampTransferRules(sStamp_m.pLogFP, &sStamp_m);
-	writeStampSynthesisLexChanges(sStamp_m.pLogFP, &sStamp_m);
-	writeStampRegSoundChanges(sStamp_m.pLogFP, &sStamp_m);
-	}
-/*
- *  for -/// or more dump dictionary
- */
-if ((sStamp_m.iDebugLevel > 2) && (sStamp_m.pLogFP != NULL))
-	writeStampDictionary(sStamp_m.pLogFP, &sStamp_m);
-}
-
-/*************************************************************************
- * NAME
- *    tsproc
- * DESCRIPTION
- *    Top-level processing function for transfer and synthesis.
- *    This prompts the user for input and output files, then for each
- *    file, it coordinates the transfer and synthesis of each word.
- * RETURN VALUE
- *    none
- */
-static void tsproc()
-{
-FILE *infp, *outfp;
-#ifndef hab2116
-char outfilename[BUFSIZE];
-char infilename[BUFSIZE];
-#else  /* hab2116 */
-char outfilename[100];
-char infilename[100];
-#endif /* hab2116 */
-int k;
-WordTemplate *	pWord;
-/*
- *  Get input file name from command line or user
- */
-if ( !pszInputFile_m )				/* If not on cmd line, ask */
-	{
-	getAmpleCmd("\nFirst Input file: ", infilename, 100);
-	}
-else
-	strcpy( infilename, pszInputFile_m);	/* Else copy from cmd line */
-/*
- *  process each input file to a separate output file
- */
-do  {
-	/*
-	 * open input file
-	 */
-	infp = fopen( infilename, "r");
-	/*
-	 *  if open failed, then let fopenAlways give message
-	 */
-	if (infp == NULL)
-		infp = fopenAlways( infilename, "r");
-	/*
-	 *  ask for the output file (if not in cmd line)
-	 */
-	if ( !pszOutputFile_m )			/* If not in command line */
-		{
-		getAmpleCmd("Output file: ", outfilename, 100);		/* Ask */
-		}
-	else					/* Else (in command line) */
-		{
-		strcpy( outfilename, pszOutputFile_m);	/* Pick up file name */
-		pszOutputFile_m = NULL;			/* Clear so only used once */
-		}
-	/*
-	 *  open output file
-	 */
-	outfp = fopen( outfilename, "w");
-	/*
-	 *  if open failed, then let fopenAlways give message
-	 */
-	if (outfp == NULL)
-		outfp = fopenAlways( outfilename, "w");
-	/*
-	 *  If log file, show file names
-	 */
-	if (sStamp_m.pLogFP != NULL)
-		{
-		fprintf(sStamp_m.pLogFP, "Input  file: %s\n", infilename);
-		fprintf(sStamp_m.pLogFP, "Output file: %s\n", outfilename);
-		}
-	/*
-	 *  initialize counters for this file
-	 */
-	uiWordCount_m = 0L;
-	for ( k = 0 ; k <= MAXAMBIG ; ++k )
-		auiAmbiguityLevels_m[k] = 0L;
-	sStamp_m.uiCalledMEC = sStamp_m.uiMECFailed = 0L;
-	sStamp_m.uiCalledSEC = sStamp_m.uiSECFailed = 0L;
-	sStamp_m.uiCalledPEC = sStamp_m.uiPECFailed = 0L; /* 2.1b1 hab */
-	/*
-	 *  initialize the input and output routines' parameters
-	 */
-	if (sStamp_m.pLogFP != NULL)
-	putc( '\n', sStamp_m.pLogFP );
-	if (!sStamp_m.bQuiet)
-		putc( '\n', stderr );
-	if (bMonitorProgress_m)
-	putc('\n',stderr);	      /* Put return before first one */
-	/*
-	 * Initialize for the word processing loop
-	 */
-	sWords_m.pPreviousWord = (StampWord *)NULL;
-	sWords_m.pNextWord     = (StampWord *)NULL;
-	/*
-	 *  Get a word and transfer it (in isolation)
-	 */
-	sWords_m.pCurrentWord = readStampWord(infp, &sStamp_m.sTextCtl);
-	if (sWords_m.pCurrentWord != NULL)
-	{
-	sprintf(szOutOfMemoryMarker_g, "input word number %ld", uiWordCount_m);
-	sWords_m.pCurrentWord = performStampTransfer( &sWords_m, &sStamp_m );
-	}
-	sWords_m.bStringLookahead = FALSE;
-	/*
-	 * While there is a word to synthesize...
-	 */
-	while (sWords_m.pCurrentWord != NULL)
-		{
-	/*
-	 *  Read in next word and transfer it
-	 */
-	sWords_m.pNextWord = readStampWord(infp, &sStamp_m.sTextCtl);
-	if (sWords_m.pNextWord != NULL)
-		{
-		StampUnit sTemp;
-		sprintf( szOutOfMemoryMarker_g, "input word number %ld",
-			 uiWordCount_m );
-		sTemp.pCurrentWord     = sWords_m.pNextWord;
-		sTemp.pPreviousWord    = sWords_m.pCurrentWord;
-		sTemp.pNextWord        = NULL;
-		sTemp.bStringLookahead = sWords_m.bStringLookahead;
-		sTemp.bLookaheadDone   = sWords_m.bLookaheadDone;
-		sTemp.bMultiDependency = sWords_m.bMultiDependency;
-		sWords_m.pNextWord        = performStampTransfer( &sTemp,
-								  &sStamp_m );
-		sWords_m.bStringLookahead = sTemp.bStringLookahead;
-		sWords_m.bLookaheadDone   = sTemp.bLookaheadDone;
-		sWords_m.bMultiDependency = sTemp.bMultiDependency;
-		}
-	if ( sStamp_m.bOnlyTransfer )    /* If transfer only... */
-			{
-		writeStampWord(sWords_m.pCurrentWord, outfp, outfilename,
-			   &sStamp_m);
-		if (bMonitorProgress_m)
-		{
-		/* fake one ambiguity for monitor */
-		showAmbiguousProgress(1, uiWordCount_m);
-		}
-		++uiWordCount_m;
-			}
-		else
-			{
-		/* otherwise, synthesize */
-		performStampSynthesis(&sWords_m, &sStamp_m);
-
-		pWord = sWords_m.pCurrentWord->pTemplate;
-
-		fixSynthesizedWord(pWord, &sStamp_m.sTextCtl, NULL);
-
-		writeTextFromTemplate(outfp, pWord, &sStamp_m.sTextCtl);
-
-		/* (Note that readStampWord() frees info in word) */
-		/*
-		 * keep statistical counts of ambiguities in the final output
-		 */
-		if (    (pWord != NULL) &&
-			(	(pWord->pNewWords != NULL) ||
-			(   (pWord->pszOrigWord    != NULL) &&
-				(pWord->pszOrigWord[0] != NUL) ) ) )
-		{
-		sStamp_m.uiAmbiguityCount = getStringListSize(
-				  pWord->pNewWords);
-		if (sStamp_m.uiAmbiguityCount < MAXAMBIG)
-			++auiAmbiguityLevels_m[sStamp_m.uiAmbiguityCount];
-		else
-			++auiAmbiguityLevels_m[MAXAMBIG];
-		if (bMonitorProgress_m)
-			showAmbiguousProgress(sStamp_m.uiAmbiguityCount,
-					  uiWordCount_m);
-		++uiWordCount_m;
-		}
-		}
-		/*
-		 *  Advance to next word
-		 */
-		freeStampWord( sWords_m.pPreviousWord );
-		sWords_m.pPreviousWord = sWords_m.pCurrentWord;
-		sWords_m.pCurrentWord = sWords_m.pNextWord;
-		}
-	/* clean up after last word */
-	if (sWords_m.pPreviousWord)
-	{
-	freeStampWord( sWords_m.pPreviousWord );
-	sWords_m.pPreviousWord = NULL;
-	}
-	if (bMonitorProgress_m)			    /* If monitoring */
-	{
-	unsigned	uiFix;
-	for ( uiFix = uiWordCount_m % 50 ; uiFix < 50 ; ++uiFix )
-		{
-		fputc(' ', stderr);
-		if ((uiFix % 10) == 0)
-		fprintf(stderr, "  ");
-		}
-	if ((uiWordCount_m % 10) != 0)
-		fprintf(stderr, "  ");
-	fprintf(stderr, "%lu\n", uiWordCount_m);
-	}
-	/*
-	 *  output statistics
-	 */
-	if (!sStamp_m.bOnlyTransfer)
-		outstats();
-	/*
-	 *  close the output file and ask for another input file
-	 */
-	fclose(infp);
-	fflush(outfp);
-	checkFileError( outfp, "STAMP", outfilename );
-	fclose(outfp);
-	if ( !pszInputFile_m )          /* If input file not from cmd line */
-		{                       /* Ask for another */
-		getAmpleCmd("Next Input file (or RETURN if no more): ",
-			infilename, 100);
-		}
-	else
-		infilename[0] = NUL;      /* Else (from cmd line) clear name */
-
-	} while (infilename[0]);      /* until the user wants no more */
-}
-
-/*************************************************************************
- * NAME
- *    outstats
- * DESCRIPTION
- *    Print the statistical counts for the input file which just finished.
- * RETURN VALUE
- *    none
- */
-static void outstats()
-{
-int	i;
-
-if (sStamp_m.pLogFP == NULL)
-	return;
-/*
- *  print the statistics header
- */
-fprintf(sStamp_m.pLogFP,
-	"\nSYNTHESIS STATISTICS: %4ld WORDS processed.\n",
-	uiWordCount_m);
-/*
- *  print the ambiguity levels
- */
-fprintf(sStamp_m.pLogFP, "   Ambiguity Levels:\n" );
-for ( i = 0 ; i <= MAXAMBIG ; ++i )
-	{
-	if (auiAmbiguityLevels_m[i] != 0L)
-		fprintf(sStamp_m.pLogFP, "%25ld word%c with %2d %ssynthes%cs.\n",
-		auiAmbiguityLevels_m[i],
-		(auiAmbiguityLevels_m[i] == 1) ? ' ' : 's',
-		i, (i == MAXAMBIG) ? "or more " : "", (i == 1) ? 'i' : 'e' );
-	}
-#ifdef NODICTCOUNT
-if (	(!pStamp_in->bTrace) &&
-	pStamp_in->bReportNoEntries &&
-	(sStamp_m.uiMissingMorphemes != 0L) &&
-	(pStamp_in->pLogFP != NULL) )
-	fprintf(sStamp_m.pLogFP,
-		"%26ld dictionary entries were not found.\n",
-		sStamp_m.uiMissingMorphemes);
-#endif
-/*
- *  builtin tests use global counters
- */
-if (sStamp_m.uiCalledMEC || sStamp_m.uiCalledSEC ||
-	sStamp_m.uiCalledPEC)	/* 2.1b1 hab */
-	{
-	fprintf(sStamp_m.pLogFP, "   Counts for built-in tests:\n");
-	if (sStamp_m.uiCalledMEC)
-		fprintf(sStamp_m.pLogFP,
-	   "   Morpheme environment constraints failed %lu times, succeeded %lu.\n",
-		sStamp_m.uiMECFailed,
-		sStamp_m.uiCalledMEC - sStamp_m.uiMECFailed);
-	if (sStamp_m.uiCalledSEC)
-		fprintf(sStamp_m.pLogFP,
-	   "     String environment constraints failed %lu times, succeeded %lu.\n",
-		sStamp_m.uiSECFailed,
-		sStamp_m.uiCalledSEC - sStamp_m.uiSECFailed );
-	if (sStamp_m.uiCalledPEC)	/* 2.1b1 hab */
-		fprintf(sStamp_m.pLogFP,
-	   "     String punctuation constraints failed %lu times, succeeded %lu.\n",
-		sStamp_m.uiPECFailed,
-		sStamp_m.uiCalledPEC - sStamp_m.uiPECFailed );
-	}
-/*
- *  user defined tests have their own display function
- */
-writeStampTestStatistics(sStamp_m.pLogFP, &sStamp_m);
 }
