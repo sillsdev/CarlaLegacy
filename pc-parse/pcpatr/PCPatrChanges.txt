@@ -1,5 +1,10 @@
 PC-PATR CHANGE HISTORY
 
+1.4.4 (29-Jan-2010)
+------------------
+1. Increase size of Let template name from 80 to 300.
+   Some FLEx users need more than 80 characters.
+
 1.4.3 (9-Nov-2006)
 ------------------
 1. Fixed bug in (logical) constraint processing: needed yet another final

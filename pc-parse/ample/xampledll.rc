@@ -43,15 +43,15 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
 		BEGIN
-			VALUE "Comments", "XAmple 3.12.10.21 DLL"
+			VALUE "Comments", "XAmple 3.12.11.21 DLL"
 			VALUE "CompanyName", "SIL International"
 			VALUE "FileDescription", "XAmple"
-			VALUE "FileVersion", "3, 12, 10, 21"
+			VALUE "FileVersion", "3, 12, 11, 21"
 			VALUE "InternalName", "XAmple"
-			VALUE "LegalCopyright", "Copyright © 2001-2009"
+			VALUE "LegalCopyright", "Copyright © 2001-2010"
 			VALUE "OriginalFilename", "XAmple.dll"
 			VALUE "ProductName", "SIL XAmple"
-			VALUE "ProductVersion", "3, 12, 10, 21"
+			VALUE "ProductVersion", "3, 12, 11, 21"
 		END
 	END
 	BLOCK "VarFileInfo"

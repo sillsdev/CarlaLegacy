@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 10		/* bug fix or other minor change */
-#define DATE "April 30, 2009"	/* date of release version */
-#define YEAR "2009"		/* used for copyright notice in banner */
+#define PATCHLEVEL 11		/* bug fix or other minor change */
+#define DATE "January 29, 2010"	/* date of release version */
+#define YEAR "2010"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 29-Jan-2010  hab  - For XAmple, increased size of PcPatr grammar Let names.
+ * [3.12.11]
  * 30-Apr-2009  hab  - Fix bug which could cause a failure when tracing
  * [3.12.10]            while maximum prefixes was set to zero.
  * 05-Sep-2008  hab  - Rework partial reduplication to process the patterns

@@ -1,5 +1,9 @@
 AMPLE CHANGE HISTORY
 
+3.12.11 (29-Jan-2010)
+--------------------
+1. For XAmple, increased size of PcPatr grammar Let names.
+
 3.12.10 (30-Apr-2009)
 --------------------
 1. Fix bug which could cause a failure when tracing

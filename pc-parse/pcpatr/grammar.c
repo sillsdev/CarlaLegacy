@@ -43,7 +43,7 @@ extern int strcasecmp P((const char *s1, const char *s2));
 /*
  *  define the maximum token length.  Anything beyond maximum is ignored.
  */
-#define MAX_TOKEN_SIZE 80
+#define MAX_TOKEN_SIZE 300
 /*
  *  define the maximum number of coreferences in a feature structure
  */

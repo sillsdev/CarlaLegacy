@@ -4,12 +4,14 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 4		/* enhancement requiring adding to book */
-#define PATCHLEVEL 3		/* bug fix or other minor change */
-#define DATE "November 9, 2006"	/* date of release version */
-#define YEAR "2006"		/* used for copyright notice in banner */
+#define PATCHLEVEL 4		/* bug fix or other minor change */
+#define DATE "January 29, 2010"	/* date of release version */
+#define YEAR "2010"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 29-Jan-2010	hab  - increase size of Let template name from 80 to 300.
+ * [1.4.4]		Some FLEx users need more than 80 characters.
  *  9-Nov-2006	SRMc - fixed bug in constraint processing: yet another final
  * [1.4.3]		pass over the parse trees to "triple check" the
  *			constraints
