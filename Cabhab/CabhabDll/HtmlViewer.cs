@@ -138,6 +138,9 @@ namespace SIL.Cabhab
 		void Browser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
 		{
 			string sEUrl = e.Url.AbsolutePath;
+			string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).Replace("\\", "/").Replace(" ", "%20");
+			//MessageBox.Show("In Browser_Navigated: sEUrl = |" + sEUrl + "|");
+			//MessageBox.Show("In Browser_Navigated: sAppData = |" + sAppData + "|");
 			if (sEUrl.EndsWith(".xml"))
 			{
 				string sHtmlFile;
@@ -149,15 +152,19 @@ namespace SIL.Cabhab
 				m_htmlControl.Browser.Navigate(sHtmlFile);
 			}
 			else if ((sEUrl.Contains("Contents")
-					  && sEUrl.Contains("Local%20Settings"))
-					  || (sEUrl == "Contents.htm")
-					  || (sEUrl == "blankContents.htm"))
+					  && sEUrl.Contains(sAppData))
+					 || (sEUrl == "Contents.htm")
+					 || (sEUrl == "blankContents.htm"))
 			{ // not a generated file; need to make sure working directory is set to configurations (and not temp)
+				//MessageBox.Show("In Browser_Navigated: Not a generated file found");
 				string sHtmlFile = sEUrl.Substring(sEUrl.LastIndexOf("/") + 1);
+				//MessageBox.Show("In Browser_Navigated: sHtmlFile originally = |" + sHtmlFile + "|");
 				if (sEUrl == "blankContents.htm") // IE 6 does this; IE 7 does not
 				{
 					sHtmlFile = "Contents.htm";
 				}
+				//MessageBox.Show("In Browser_Navigated: sHtmlFile ends = |" + sHtmlFile + "|");
+				//MessageBox.Show("In Browser_Navigated: about to navigate to = |" + m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile + "|");
 				m_htmlControl.Browser.Navigate(m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile);
 			}
 			else if (sEUrl.EndsWith("LeftOffAt"))

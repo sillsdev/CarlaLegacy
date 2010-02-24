@@ -89,6 +89,9 @@ namespace SIL.Cabhab
 			// (this is so especially for transforms using xsl:key).
 			try
 			{
+				//bool fShowOutput = false;
+				//if (sTransformName.Contains("PAWSSKHtmlMapper.xsl"))
+				//    fShowOutput = true;
 				//MessageBox.Show("in transform file");
 				MSXML2.XSLTemplate40Class xslt = new MSXML2.XSLTemplate40Class();
 				MSXML2.FreeThreadedDOMDocument40Class xslDoc = new
@@ -97,22 +100,28 @@ namespace SIL.Cabhab
 				MSXML2.IXSLProcessor xslProc;
 
 				xslDoc.async = false;
+				//if (fShowOutput)
 				//MessageBox.Show("before load transform: " + sTransformName);
 				xslDoc.load(sTransformName);
 				xslt.stylesheet = xslDoc;
 				xmlDoc.async = false;
-				//MessageBox.Show("before load input path: " + sInputPath);
+				//if (fShowOutput)
+				  //  MessageBox.Show("before load input path: " + sInputPath);
 				xmlDoc.load(sInputPath);
 				xslProc = xslt.createProcessor();
 				xslProc.input = xmlDoc;
 				//MessageBox.Show("before add parameters");
 				AddParameters(parameterList, xslProc);
-				//MessageBox.Show("before transform file");
+				//if (fShowOutput)
+					//MessageBox.Show("before transform file");
 				xslProc.transform();
-				//MessageBox.Show("before write output");
+				//if (fShowOutput)
+				   // MessageBox.Show("before write output to |" + sOutputName + "|");
 				StreamWriter sr = File.CreateText(sOutputName);
 				sr.Write(xslProc.output);
 				sr.Close();
+				//if (fShowOutput)
+					//MessageBox.Show("after write output to |" + sOutputName + "|");
 			}
 			catch (Exception exc)
 			{

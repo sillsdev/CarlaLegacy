@@ -28,7 +28,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SIL International")]
 [assembly: AssemblyProduct("Cabhab")]
-[assembly: AssemblyCopyright("© 2007, SIL International")]
+[assembly: AssemblyCopyright("© 2010, SIL International")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -41,11 +41,11 @@ using System.Runtime.CompilerServices;
 //      Revision
 //
 // Format: Version.Milestone.Year.MMDDL
-[assembly: AssemblyFileVersion("0.1.2007.0405")]
+[assembly: AssemblyFileVersion("0.1.2010.0405")]
 // Format: FwMajorVersion.FwMinorVersion
-[assembly: AssemblyInformationalVersionAttribute("0.2")]
+[assembly: AssemblyInformationalVersionAttribute("0.3")]
 // Format: Version.Milestone.0.Level
-[assembly: AssemblyVersion("0.1.2.*")]
+[assembly: AssemblyVersion("0.1.3.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the

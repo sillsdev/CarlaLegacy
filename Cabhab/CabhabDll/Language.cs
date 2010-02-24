@@ -90,7 +90,10 @@ namespace SIL.Cabhab
 			get
 			{
 				XmlNode node = m_xdAnswers.SelectSingleNode("//langName");
-				return node.InnerText;
+				if (node == null)
+					return "";
+				else
+					return node.InnerText;
 			}
 		}
 		public bool LanguageDataChanged
@@ -196,7 +199,11 @@ namespace SIL.Cabhab
 			XMLUtilities.XSLParameter[] parameterList = GetTransformParameters();
 			sHtmlFile = Path.Combine(m_sHtmsPath, Path.GetFileNameWithoutExtension(sXmlFile));
 			sHtmlFile += ".htm";
+			//MessageBox.Show("TransformXmlPageDescription: m_sWebPageMapper = " + m_sWebPageMapper);
+			//MessageBox.Show("XmlPageDescription = " + sTemp);
+			//MessageBox.Show("HtmlFile = " + sHtmlFile);
 			XMLUtilities.TransformFileToFile(m_sWebPageMapper, parameterList, sTemp, sHtmlFile);
+			//MessageBox.Show("After TransformFileToFile()");
 		}
 
 		private XMLUtilities.XSLParameter[] GetTransformParameters()
