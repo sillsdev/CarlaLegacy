@@ -1,222 +1,190 @@
-<VisualStudioProject>
-	<CSHARP
-		ProjectType = "Local"
-		ProductVersion = "7.10.3077"
-		SchemaVersion = "2.0"
-		ProjectGuid = "{4F5F3691-A0A8-4F32-A9B3-CD8D9F62D1E5}"
-	>
-		<Build>
-			<Settings
-				ApplicationIcon = "LingTree.ico"
-				AssemblyKeyContainerName = ""
-				AssemblyName = "LingTree"
-				AssemblyOriginatorKeyFile = ""
-				DefaultClientScript = "JScript"
-				DefaultHTMLPageLayout = "Grid"
-				DefaultTargetSchema = "IE50"
-				DelaySign = "false"
-				OutputType = "WinExe"
-				PreBuildEvent = ""
-				PostBuildEvent = ""
-				RootNamespace = "LingTree"
-				RunPostBuildEvent = "OnBuildSuccess"
-				StartupObject = ""
-			>
-				<Config
-					Name = "Debug"
-					AllowUnsafeBlocks = "false"
-					BaseAddress = "285212672"
-					CheckForOverflowUnderflow = "false"
-					ConfigurationOverrideFile = ""
-					DefineConstants = "DEBUG;TRACE"
-					DocumentationFile = ""
-					DebugSymbols = "true"
-					FileAlignment = "4096"
-					IncrementalBuild = "true"
-					NoStdLib = "false"
-					NoWarn = ""
-					Optimize = "false"
-					OutputPath = "bin\Debug\"
-					RegisterForComInterop = "false"
-					RemoveIntegerChecks = "false"
-					TreatWarningsAsErrors = "false"
-					WarningLevel = "4"
-				/>
-				<Config
-					Name = "Release"
-					AllowUnsafeBlocks = "false"
-					BaseAddress = "285212672"
-					CheckForOverflowUnderflow = "false"
-					ConfigurationOverrideFile = ""
-					DefineConstants = "TRACE"
-					DocumentationFile = ""
-					DebugSymbols = "false"
-					FileAlignment = "4096"
-					IncrementalBuild = "false"
-					NoStdLib = "false"
-					NoWarn = ""
-					Optimize = "true"
-					OutputPath = "bin\Release\"
-					RegisterForComInterop = "false"
-					RemoveIntegerChecks = "false"
-					TreatWarningsAsErrors = "false"
-					WarningLevel = "4"
-				/>
-			</Settings>
-			<References>
-				<Reference
-					Name = "System"
-					AssemblyName = "System"
-					HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.dll"
-				/>
-				<Reference
-					Name = "System.Data"
-					AssemblyName = "System.Data"
-					HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Data.dll"
-				/>
-				<Reference
-					Name = "System.Drawing"
-					AssemblyName = "System.Drawing"
-					HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Drawing.dll"
-				/>
-				<Reference
-					Name = "System.Windows.Forms"
-					AssemblyName = "System.Windows.Forms"
-					HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Windows.Forms.dll"
-				/>
-				<Reference
-					Name = "System.XML"
-					AssemblyName = "System.Xml"
-					HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.XML.dll"
-				/>
-				<Reference
-					Name = "SHDocVw"
-					Guid = "{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}"
-					VersionMajor = "1"
-					VersionMinor = "1"
-					Lcid = "0"
-					WrapperTool = "tlbimp"
-				/>
-				<Reference
-					Name = "AxSHDocVw"
-					Guid = "{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}"
-					VersionMajor = "1"
-					VersionMinor = "1"
-					Lcid = "0"
-					WrapperTool = "aximp"
-				/>
-				<Reference
-					Name = "IEHost"
-					AssemblyName = "IEHost"
-					HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\IEHost.dll"
-				/>
-				<Reference
-					Name = "LingTreeTree"
-					AssemblyName = "LingTreeTree"
-					HintPath = "bin\Release\LingTreeTree.dll"
-				/>
-			</References>
-		</Build>
-		<Files>
-			<Include>
-				<File
-					RelPath = "AssemblyInfo.cs"
-					SubType = "Code"
-					BuildAction = "Compile"
-				/>
-				<File
-					RelPath = "Copy.bmp"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "Cut.bmp"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "DlgAbout.cs"
-					SubType = "Form"
-					BuildAction = "Compile"
-				/>
-				<File
-					RelPath = "DlgAbout.resx"
-					DependentUpon = "DlgAbout.cs"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "DlgHelpTopics.cs"
-					SubType = "Form"
-					BuildAction = "Compile"
-				/>
-				<File
-					RelPath = "DlgHelpTopics.resx"
-					DependentUpon = "DlgHelpTopics.cs"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "DlgQuickReferenceGuideHelp.cs"
-					SubType = "Form"
-					BuildAction = "Compile"
-				/>
-				<File
-					RelPath = "DlgQuickReferenceGuideHelp.resx"
-					DependentUpon = "DlgQuickReferenceGuideHelp.cs"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "DlgSaveFormat.cs"
-					SubType = "Form"
-					BuildAction = "Compile"
-				/>
-				<File
-					RelPath = "DlgSaveFormat.resx"
-					DependentUpon = "DlgSaveFormat.cs"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "DlgTreeParameters.cs"
-					SubType = "Form"
-					BuildAction = "Compile"
-				/>
-				<File
-					RelPath = "DlgTreeParameters.resx"
-					DependentUpon = "DlgTreeParameters.cs"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "LingTree.cs"
-					SubType = "Form"
-					BuildAction = "Compile"
-				/>
-				<File
-					RelPath = "LingTree.resx"
-					DependentUpon = "LingTree.cs"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "LingTree.ico"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "New.bmp"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "Open.bmp"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "Paste.bmp"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "ProcessDescription.bmp"
-					BuildAction = "EmbeddedResource"
-				/>
-				<File
-					RelPath = "Save.bmp"
-					BuildAction = "EmbeddedResource"
-				/>
-			</Include>
-		</Files>
-	</CSHARP>
-</VisualStudioProject>
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+	<ProjectType>Local</ProjectType>
+	<ProductVersion>9.0.30729</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{4F5F3691-A0A8-4F32-A9B3-CD8D9F62D1E5}</ProjectGuid>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ApplicationIcon>LingTree.ico</ApplicationIcon>
+	<AssemblyKeyContainerName>
+	</AssemblyKeyContainerName>
+	<AssemblyName>LingTree</AssemblyName>
+	<AssemblyOriginatorKeyFile>
+	</AssemblyOriginatorKeyFile>
+	<DefaultClientScript>JScript</DefaultClientScript>
+	<DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+	<DefaultTargetSchema>IE50</DefaultTargetSchema>
+	<DelaySign>false</DelaySign>
+	<OutputType>WinExe</OutputType>
+	<RootNamespace>LingTree</RootNamespace>
+	<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+	<StartupObject>
+	</StartupObject>
+	<FileUpgradeFlags>
+	</FileUpgradeFlags>
+	<UpgradeBackupLocation>
+	</UpgradeBackupLocation>
+	<OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<OutputPath>bin\Debug\</OutputPath>
+	<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+	<BaseAddress>285212672</BaseAddress>
+	<CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+	<ConfigurationOverrideFile>
+	</ConfigurationOverrideFile>
+	<DefineConstants>DEBUG;TRACE</DefineConstants>
+	<DocumentationFile>
+	</DocumentationFile>
+	<DebugSymbols>true</DebugSymbols>
+	<FileAlignment>4096</FileAlignment>
+	<NoStdLib>false</NoStdLib>
+	<NoWarn>
+	</NoWarn>
+	<Optimize>false</Optimize>
+	<RegisterForComInterop>false</RegisterForComInterop>
+	<RemoveIntegerChecks>false</RemoveIntegerChecks>
+	<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+	<WarningLevel>4</WarningLevel>
+	<DebugType>full</DebugType>
+	<ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<OutputPath>bin\Release\</OutputPath>
+	<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+	<BaseAddress>285212672</BaseAddress>
+	<CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+	<ConfigurationOverrideFile>
+	</ConfigurationOverrideFile>
+	<DefineConstants>TRACE</DefineConstants>
+	<DocumentationFile>
+	</DocumentationFile>
+	<DebugSymbols>false</DebugSymbols>
+	<FileAlignment>4096</FileAlignment>
+	<NoStdLib>false</NoStdLib>
+	<NoWarn>
+	</NoWarn>
+	<Optimize>true</Optimize>
+	<RegisterForComInterop>false</RegisterForComInterop>
+	<RemoveIntegerChecks>false</RemoveIntegerChecks>
+	<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+	<WarningLevel>4</WarningLevel>
+	<DebugType>none</DebugType>
+	<ErrorReport>prompt</ErrorReport>
+	<PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+	<DebugSymbols>true</DebugSymbols>
+	<OutputPath>bin\x86\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE</DefineConstants>
+	<BaseAddress>285212672</BaseAddress>
+	<FileAlignment>4096</FileAlignment>
+	<DebugType>full</DebugType>
+	<PlatformTarget>x86</PlatformTarget>
+	<ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+	<OutputPath>bin\x86\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<BaseAddress>285212672</BaseAddress>
+	<Optimize>true</Optimize>
+	<FileAlignment>4096</FileAlignment>
+	<PlatformTarget>x86</PlatformTarget>
+	<ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="IEHost">
+	  <Name>IEHost</Name>
+	</Reference>
+	<Reference Include="LingTreeTree, Version=1.0.3075.28509, Culture=neutral, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>LingTreeTree\obj\Debug\LingTreeTree.dll</HintPath>
+	</Reference>
+	<Reference Include="System">
+	  <Name>System</Name>
+	</Reference>
+	<Reference Include="System.Data">
+	  <Name>System.Data</Name>
+	</Reference>
+	<Reference Include="System.Drawing">
+	  <Name>System.Drawing</Name>
+	</Reference>
+	<Reference Include="System.Windows.Forms">
+	  <Name>System.Windows.Forms</Name>
+	</Reference>
+	<Reference Include="System.Xml">
+	  <Name>System.XML</Name>
+	</Reference>
+	<COMReference Include="AxSHDocVw">
+	  <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+	  <VersionMajor>1</VersionMajor>
+	  <VersionMinor>1</VersionMinor>
+	  <Lcid>0</Lcid>
+	  <WrapperTool>aximp</WrapperTool>
+	</COMReference>
+	<COMReference Include="SHDocVw">
+	  <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+	  <VersionMajor>1</VersionMajor>
+	  <VersionMinor>1</VersionMinor>
+	  <Lcid>0</Lcid>
+	  <WrapperTool>tlbimp</WrapperTool>
+	</COMReference>
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="AssemblyInfo.cs">
+	  <SubType>Code</SubType>
+	</Compile>
+	<Compile Include="DlgAbout.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<Compile Include="DlgHelpTopics.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<Compile Include="DlgQuickReferenceGuideHelp.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<Compile Include="DlgSaveFormat.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<Compile Include="DlgTreeParameters.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<Compile Include="LingTree.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<EmbeddedResource Include="Copy.bmp" />
+	<EmbeddedResource Include="Cut.bmp" />
+	<EmbeddedResource Include="DlgAbout.resx">
+	  <DependentUpon>DlgAbout.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="DlgHelpTopics.resx">
+	  <DependentUpon>DlgHelpTopics.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="DlgQuickReferenceGuideHelp.resx">
+	  <DependentUpon>DlgQuickReferenceGuideHelp.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="DlgSaveFormat.resx">
+	  <DependentUpon>DlgSaveFormat.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="DlgTreeParameters.resx">
+	  <DependentUpon>DlgTreeParameters.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="LingTree.ico" />
+	<EmbeddedResource Include="LingTree.resx">
+	  <DependentUpon>LingTree.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="New.bmp" />
+	<EmbeddedResource Include="Open.bmp" />
+	<EmbeddedResource Include="Paste.bmp" />
+	<EmbeddedResource Include="ProcessDescription.bmp" />
+	<EmbeddedResource Include="Save.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+	<PreBuildEvent>
+	</PreBuildEvent>
+	<PostBuildEvent>
+	</PostBuildEvent>
+  </PropertyGroup>
+</Project>

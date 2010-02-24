@@ -86,7 +86,7 @@ namespace LingTree
 			label3.Name = "label3";
 			label3.Size = new Size(iClientWidth, label3.Font.Height);
 			label3.TabIndex = 7;
-			label3.Text = "Copyright \x00A9 2002-2005 SIL International";
+			label3.Text = "Copyright \x00A9 2002-2010 SIL International";
 			label3.TextAlign = ContentAlignment.MiddleLeft;
 			//
 			// label4
