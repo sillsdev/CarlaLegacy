@@ -49,6 +49,8 @@ else
 	# we don't want -pedantic on Mac OS X, where it gets ridiculous
 	AC_CHECK_HEADER(AvailabilityMacros.h, OSX=yes, OSX=)
 	CFLAGS="${CFLAGS} -Wall"
+	# turn on position independent code to allow building .so targets
+	CFLAGS="${CFLAGS} -fPIC"
 	if test "$OSX" = yes; then
 		AC_MSG_RESULT([-Wall -ansi])
 		ANSIFLAGS="-ansi"

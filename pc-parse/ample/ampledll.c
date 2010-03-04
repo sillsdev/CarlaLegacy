@@ -65,7 +65,12 @@
  ***************************************************************************
  * Copyright 1997, 2000 by SIL International.  All rights reserved.
  */
+#if WIN32
 #include <windows.h>
+#else
+#include <strings.h>
+#define _stricmp strcasecmp
+#endif
 #ifndef hab34112
 #ifdef EXPERIMENTAL
 #include <assert.h> // jdh 2001.7.16
@@ -79,7 +84,11 @@
 #include "ampledef.h"
 #include "version.h"
 #include <setjmp.h>
+#if WIN32
 #define DllExport __declspec( dllexport )
+#else
+#define DllExport
+#endif
 #include "ampledll.h"
 /*
  *  environment for long jump to jump to
@@ -398,6 +407,7 @@ pSetup_io->bVerifyLoading      = FALSE;	/* hab 1999.03.11 */
 pSetup_io->bStoreErrorString   = FALSE;
 }
 
+#if WIN32
 /*****************************************************************************
  * NAME
  *    DllMain
@@ -435,6 +445,7 @@ switch (ul_reason_for_call)
 	}
 return 1;
 }
+#endif
 
 /****************************************************************************
  * NAME
@@ -464,6 +475,7 @@ if (pLogFP_m != NULL)
 	}
 if (iDebugLevel_m != 0)
 	{
+#if WIN32
 	wvsprintf(szMessageBuffer_g, pszFormat_in, marker);
 	while ((p = strchr(szMessageBuffer_g, '\n')) != NULL)
 	{
@@ -472,13 +484,18 @@ if (iDebugLevel_m != 0)
 	else
 		*p = ' ';
 	}
+
 	if (eMessageType_in == DEBUG_MSG)
 	MessageBox(0, szMessageBuffer_g, "AMPLE320.DLL",
 		   MB_OK | MB_ICONINFORMATION);
 	else
 	MessageBox(0, szMessageBuffer_g, "AMPLE320.DLL",
 		   MB_OK | MB_ICONEXCLAMATION);
+#else
+	fprintf(stderr, "%s", pszFormat_in, marker);
+#endif
 	}
+
 
 va_end( marker );
 }
@@ -510,9 +527,13 @@ if (pLogFP_m != NULL)
 	}
 if (bNotSilent_in && (iDebugLevel_m != 0))
 	{
+#if WIN32
 	wvsprintf(szMessageBuffer_g, pszFormat_in, marker);
 	MessageBox(0, szMessageBuffer_g, "AMPLE320.DLL",
 		   MB_OK | MB_ICONINFORMATION);
+#else
+	fprintf(stderr, "%s", pszFormat_in, marker);
+#endif
 	}
 va_end( marker );
 }
@@ -529,6 +550,7 @@ va_end( marker );
  */
 static char * AmpleDLL_safe_exit()
 {
+#if WIN32
 if ((iExitBP_m != 0) && (iExitSP_m != 0))
 	{
 	_asm	{
@@ -541,6 +563,9 @@ else
 	FatalAppExit(0, szAmpleDLLCrash_m);
 	}
 return szAmpleDLLCrash_m;
+#else
+return 0;
+#endif
 }
 #endif
 
@@ -1009,7 +1034,7 @@ static char * addAResultToBuffer(
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
 	  {
-		//jdh 26may2000 added quotes around categories
+		/*jdh 26may2000 added quotes around categories*/
 		CONCAT("<analysis cat=\"")
 		  if (pAnal->pszCategory != NULL)
 		CONCAT(pAnal->pszCategory)
@@ -1041,7 +1066,7 @@ static char * addAResultToBuffer(
 					  CONCAT(pAllo->pszAllomorph)
 					  CONCAT("#")
 					  }
-			  // JDH26May2000 add morpheme type to the output
+			  /* JDH26May2000 add morpheme type to the output*/
 			  CONCAT(" type=\"");
 			  switch (pAllo->pMorpheme->iMorphType & ATYPE)
 				{
@@ -1268,8 +1293,8 @@ static char * addFWParseToBuffer(
 		  fwConCat("      <MSI DbRef='", iAnalysesCount_in,
 			   &iRoom, pszAResult);
 		  fwConCat(pAllo->pMorpheme->pszMorphName, iAnalysesCount_in,
-			   &iRoom, pszAResult); // assumes pszMorphName is
-					 // holding the database id (a long int) of this msi
+			   &iRoom, pszAResult); /* assumes pszMorphName is
+					  holding the database id (a long int) of this msi */
 		  fwConCat("'/>\r\n", iAnalysesCount_in, &iRoom, pszAResult);
 		  fwConCat("    </Morph>\r\n", iAnalysesCount_in,
 			   &iRoom, pszAResult);
@@ -1515,14 +1540,14 @@ DllExport const char * AmpleParseText(
   memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
 #ifndef hab34112
 #ifdef EXPERIMENTAL
-  switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
+  switch (pSetup_io->eOutputStyle)	/* jdh 2001.7.16 */
 	{
 	case AResult:
 	  strncpy(szOutputBuffer_g, "<AResult>\r\n", sizeof(szOutputBuffer_g)-1);
 	  break;
 
 	case FWParse:
-	  //      strncpy(szOutputBuffer_g, "<WfiAnalysis>\r\n", sizeof(szOutputBuffer_g)-1);
+	  /*      strncpy(szOutputBuffer_g, "<WfiAnalysis>\r\n", sizeof(szOutputBuffer_g)-1); */
 	  break;
 
 	default:
@@ -1656,7 +1681,7 @@ DllExport const char * AmpleParseText(
 #ifndef hab33169
 #ifndef hab34112
 #ifdef EXPERIMENTAL
-	  switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
+	  switch (pSetup_io->eOutputStyle)	/* jdh 2001.7.16 */
 		{
 		case AResult:
 		  addAResultToBuffer(pSetup_io, &sWord, &pSetup_io->sData.sTextCtl,
@@ -1739,14 +1764,14 @@ DllExport const char * AmpleParseText(
   eraseAmpleWord( &sPrevWord, &pSetup_io->sData );
 #ifndef hab34112
 #ifdef EXPERIMENTAL
-  switch (pSetup_io->eOutputStyle)	// jdh 2001.7.16
+  switch (pSetup_io->eOutputStyle)	/* jdh 2001.7.16 */
 	{
 	case AResult:
 	  strncat(szOutputBuffer_g, "</AResult>\r\n",
 		  sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
 	case FWParse:
-	  //strncat(szOutputBuffer_g, "</WfiAnalysis>\r\n",
-	  //sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);
+	  /*strncat(szOutputBuffer_g, "</WfiAnalysis>\r\n",
+	  sizeof(szOutputBuffer_g) - strlen(szOutputBuffer_g) - 1);	*/
 	  break;
 
 	default:
@@ -1895,26 +1920,26 @@ AmpleAllomorph *	pAllo;
 
 char *pszCatPiece=NULL;
 char cType;
-char *pszCategoryProgression=NULL;	//used to hold a copy of pszCat which the tokenizer will mess with
+char *pszCategoryProgression=NULL;	/*used to hold a copy of pszCat which the tokenizer will mess with*/
 
 if (pWord_in->pTemplate->pAnalyses == NULL)
 	{
-	 fprintf(pOutputFP_in, "<word id=\"");	// no parses
+	 fprintf(pOutputFP_in, "<word id=\"");	/* no parses */
 		writeCDATA(pWord_in->pTemplate->pszOrigWord, pOutputFP_in, FALSE);
-	  fprintf(pOutputFP_in, "\" form=\"");	// form and id are currently identical
+	  fprintf(pOutputFP_in, "\" form=\"");	/* form and id are currently identical */
 		writeCDATA(pWord_in->pTemplate->pszOrigWord, pOutputFP_in, FALSE);
 	fprintf(pOutputFP_in, "\"> <parses> </parses> </word>\n");
 	}
 else
 	{
-	  fprintf(pOutputFP_in, "<word id=\"");	// no parses
+	  fprintf(pOutputFP_in, "<word id=\"");	/* no parses */
 		writeCDATA(pWord_in->pTemplate->pszOrigWord, pOutputFP_in, FALSE);
-	  fprintf(pOutputFP_in, "\" form=\"");	// form and id are currently identical
+	  fprintf(pOutputFP_in, "\" form=\"");	/* form and id are currently identical */
 		writeCDATA(pWord_in->pTemplate->pszOrigWord, pOutputFP_in, FALSE);
 
 		fprintf(pOutputFP_in, "\">\n<parses>\n");
 
-	// for each analysis, output a <parse> element
+	/* for each analysis, output a <parse> element */
 
 	for (   pAnal = pWord_in->pTemplate->pAnalyses,
 				pHeadlists = pWord_in->pHeadlists ;
@@ -1924,7 +1949,7 @@ else
 		pszCategoryProgression = allocMemory(1+strlen(pAnal->pszCategory));
 		strcpy(pszCategoryProgression, pAnal->pszCategory);
 
-			// output the final category attribute
+			/* output the final category attribute */
 		fprintf(pOutputFP_in, "  <parse finalcat=\"");
 		if (pszCategoryProgression != NULL)
 		{
@@ -1934,10 +1959,10 @@ else
 			pszCatPiece="?";
 
 		fprintf(pOutputFP_in, "%s", pszCatPiece);
-			//writeCDATA(pAnal->pszCategory, pOutputFP_in, FALSE);
+			/* writeCDATA(pAnal->pszCategory, pOutputFP_in, FALSE); */
 
-		// output a unique ID for this analysis,to make it easier for a program to compare this analysis
-		// with the ones done previously.
+		/* output a unique ID for this analysis,to make it easier for a program to compare this analysis
+		 with the ones done previously. */
 		fprintf(pOutputFP_in, "\" parseID=\"");
 		for ( pHead = pHeadlists->pHeadList ; pHead ; pHead = pHead->pRight )
 		{
@@ -1956,7 +1981,7 @@ else
 		if(pAnal->pszCategory)
 		{
 			fprintf(pOutputFP_in, "%%");
-			writeCDATA(pAnal->pszCategory, pOutputFP_in, FALSE);	//and the entire category progression to complete the uniqueness
+			writeCDATA(pAnal->pszCategory, pOutputFP_in, FALSE);	/* and the entire category progression to complete the uniqueness */
 		}
 		fprintf(pOutputFP_in, "\">\n");
 
@@ -1980,7 +2005,7 @@ else
 			else
 				writeCDATA(pAllo->pszAllomorphID, pOutputFP_in, FALSE);
 
-			// output the morpheme type attribute
+			/*  output the morpheme type attribute*/
 			switch (pAllo->pMorpheme->iMorphType & ATYPE)
 			  {
 			  case AMPLE_PFX:
@@ -2007,14 +2032,14 @@ else
 
 			fprintf(pOutputFP_in, "\" type=\"%c\"", cType);
 
-			// output the category or category pair for this morpheme
+			/* output the category or category pair for this morpheme */
 
 			if (pszCategoryProgression && pszCatPiece)
-				pszCatPiece = strtok(NULL, " =" ); // strtok remembers the input string
+				pszCatPiece = strtok(NULL, " =" ); /* strtok remembers the input string */
 			else
 				pszCatPiece = "?";
 
-			fprintf(pOutputFP_in, " cat=\"%s\" />\n", pszCatPiece);	// make it <morph ..... /> not <morph.... </morph>
+			fprintf(pOutputFP_in, " cat=\"%s\" />\n", pszCatPiece);	/* make it <morph ..... /> not <morph.... </morph> */
 		}
 		freeMemory(pszCategoryProgression);
 
@@ -2240,7 +2265,7 @@ pSetup_io->sAmplePreviousWord.bUsesPrevWord   =
 					   pSetup_io->sAmpleThisWord.bUsesPrevWord;
 pSetup_io->sAmplePreviousWord.bUsesNextWord   =
 					   pSetup_io->sAmpleThisWord.bUsesNextWord;
-#endif // hab33127
+#endif /* hab33127 */
 #ifndef hab33169
 #ifdef EXPERIMENTAL
 pSetup_io->sAmplePreviousWord.pParses      = pSetup_io->sAmpleThisWord.pParses;
@@ -2259,7 +2284,7 @@ pSetup_io->sAmpleThisWord.bUsesPrevWord   =
 					   pSetup_io->sAmpleNextWord.bUsesPrevWord;
 pSetup_io->sAmpleThisWord.bUsesNextWord   =
 					   pSetup_io->sAmpleNextWord.bUsesNextWord;
-#endif // hab33127
+#endif /* hab33127 */
 #ifndef hab33169
 #ifdef EXPERIMENTAL
 pSetup_io->sAmpleThisWord.pParses      = pSetup_io->sAmpleNextWord.pParses;
@@ -2275,7 +2300,7 @@ pSetup_io->sAmpleNextWord.bFoundRoot   = FALSE;
 #ifndef hab33127
 pSetup_io->sAmpleNextWord.bUsesPrevWord = FALSE;
 pSetup_io->sAmpleNextWord.bUsesNextWord = FALSE;
-#endif // hab33127
+#endif /* hab33127 */
 #ifndef hab33169
 #ifdef EXPERIMENTAL
 pSetup_io->sAmpleNextWord.pParses      = NULL;
@@ -2536,7 +2561,7 @@ switch (pSetup_io->eOutputStyle)
 	break;
 
 	case AResult:
-	//jdh june 14 2000 commented out: fprintf(outfp, "<!DOCTYPE AResult SYSTEM \"aresult.dtd\">\n");
+	/*jdh june 14 2000 commented out: fprintf(outfp, "<!DOCTYPE AResult SYSTEM \"aresult.dtd\">\n"); */
 	fprintf(outfp, "<AResult source=\"AmpleDLL\">\n");
 	break;
 

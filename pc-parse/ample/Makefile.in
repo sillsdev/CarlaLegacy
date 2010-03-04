@@ -105,15 +105,20 @@ OBJX  = ample.ox
 LIBOX = ampcat.ox anal.ox   analda.ox  atest.ox   categ.ox  envchk.ox   envpar.ox  \
 		loadcc.ox loadtb.ox  mktest.ox  morcla.ox proper.ox   select.ox  \
 		setsd.ox  spreds.ox  version.ox putsd.ox  writests.ox cmdutil.ox \
-		mccpar.ox validch.ox puncla.ox  dynstr.ox anccpar.ox
+		mccpar.ox validch.ox puncla.ox  dynstr.ox anccpar.ox  ampledll.ox
 
-xample: $(OBJX) $(LIBSX)
+xample: $(OBJX) $(LIBSX) libxample.so
 	$(CC) -o xample $(OBJX) $(LIBSX) @LIBS@
 
 libxample.a: $(LIBOX)
 	rm -f libxample.a
 	ar rc libxample.a $(LIBOX)
 	$(RANLIB) libxample.a
+
+libxample.so: $(LIBOX) $(LIBSX)
+	rm -f $@
+	$(CC) -o $@ --shared $(LIBOX) $(LIBSX)
+
 #
 # AMPLE program and function library compiled for profiling with experimental
 # features
@@ -187,7 +192,7 @@ setsd.ox setsd.oxp version.ox version.oxp: ../include/patr.h
 
 #############################################################################
 
-libs: installdirs ../lib/libample.a ../lib/libxample.a \
+libs: installdirs ../lib/libample.a ../lib/libxample.a ../lib/libxample.so\
 	  ../include/ample.h ../include/stample.h ../include/punclass.h
 
 profile_libs: installdirs ../lib/libample_p.a ../lib/libxample_p.a \
@@ -197,6 +202,9 @@ installdirs:
 	@if [ ! -d $(BINDIR) ];  then mkdir $(BINDIR);  fi
 	@if [ ! -d ../lib ];     then mkdir ../lib;     fi
 	@if [ ! -d ../include ]; then mkdir ../include; fi
+
+../lib/libxample.so : libxample.so
+	$(INSTALL) -m 644 -c libxample.so ../lib
 
 ../lib/libample.a: libample.a
 	$(INSTALL) -m 644 -c libample.a ../lib
