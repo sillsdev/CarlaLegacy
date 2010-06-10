@@ -197,6 +197,8 @@ static const char *setReportNoEntries(const char *pszValue_in, StampSetup *pSetu
 static const char *setUnifiedDictionary(const char *pszValue_in, StampSetup *pSetup_io);
 static const char *setVerifyTests(const char *pszValue_in, StampSetup *pSetup_io);
 static const char *setOnlyTransfer(const char *pszValue_in, StampSetup *pSetup_io);
+int updateStampDictEntry(const char *pszEntry_in, StampData *pStamp_io);
+static char *convertRecord(const char *pszEntry_in, StampData *pStamp_io);
 
 static const char *getCommentChar(StampSetup *pSetup_io);
 static const char *getMaxTrieDepth(StampSetup *pSetup_io);
@@ -221,11 +223,62 @@ static const char *getReportNoEntries(StampSetup *pSetup_io);
 static const char *getUnifiedDictionary(StampSetup *pSetup_io);
 static const char *getVerifyTests(StampSetup *pSetup_io);
 static const char *getOnlyTransfer(StampSetup *pSetup_io);
+static char *convertRecord(const char *pszEntry_in, StampData *pStamp_io);
 
 void reportError(int eMessageType_in, const char *pszFormat_in, ...);
 
 static const char *tsprocdll(StampSetup *pSetup_io, const char *pszInputFile_m, const char *pszOutputFile_m);
 static void outstats(StampSetup *pSetup_io);
+
+extern void add_affixwrap(char *recp, int iType, StampData *pStamp_in);
+extern void add_rootwrap(char *recp, StampData *pStamp_in);
+extern void addStampDictEntrywrap(char *pRecord_in, StampData *pStamp_in);
+void writeStampDictionaryDLL(FILE *pOutputFP_in, StampData *pStamp_in);
+extern StampData *pStamp_m;
+/*
+ *  default code table for updateStampDictEntry()
+ *  copied from AmpleDLL
+
+ */
+#ifdef EXPERIMENTAL
+static const CodeTable	sDefaultCodeTable_m = { "\
+\\a\0A\0\
+\\c\0C\0\
+\\e\0E\0\
+\\fd\0F\0\
+\\g\0G\0\
+\\loc\0L\0\
+\\mn\0M\0\
+\\o\0O\0\
+\\mp\0P\0\
+\\entryType\0T\0\
+\\uf\0U\0\
+\\mcc\0Z\0\
+\\cat\0c\0\
+\\feat\0f\0\
+\\lx\0#\0\
+\\no\0!\0\
+", 16, "\\lx" };
+#else
+static const CodeTable	sDefaultCodeTable_m = { "\
+\\a\0A\0\
+\\c\0C\0\
+\\e\0E\0\
+\\fd\0F\0\
+\\g\0G\0\
+\\loc\0L\0\
+\\mn\0M\0\
+\\o\0O\0\
+\\mp\0P\0\
+\\entryType\0T\0\
+\\uf\0U\0\
+\\mcc\0Z\0\
+\\lx\0#\0\
+\\no\0!\0\
+", 14, "\\lx" };
+#endif /* EXPERIMENTAL */
+
+
 
 extern const int iStampDLLPatchLevel_g;
 extern int	getopt P((int argc, char * const argv[], const char *opts));

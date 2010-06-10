@@ -1,6 +1,6 @@
 // toy program for testing the STAMP DLL (stampdll.c)
 // Copyright 2009 by The Summer Institue of Linguistics all rights reserved.
-// Roy Eberhardt June 2009
+// Roy Eberhardt June 2009 Last Edit Jan 2010 (RE)
 // Built from Steve McConnel's ampledll.c
 // and stamp.c.
 // This mimics stamp.c on the command line
@@ -59,7 +59,7 @@ short			bUnifiedDictionary_m = FALSE;
 short			bVerify_m = FALSE;
 short			bOnlyTransfer = FALSE;
 
-void testTheDLL(void);
+//void testTheDLL(void);
 void loadControlFiles(
 	StampSetup * pSetup_io,
 	const char * apszControlFiles_in[],
@@ -93,13 +93,15 @@ STAMPFUNC7  pfStampLoadControlFiles_g = 0;
 STAMPFUNC3  pfStampLoadDictionary_g   = 0;
 STAMPFUNC3  pfStampProcessFile_g      = 0;
 STAMPFUNC3  pfStampSetParameter_g     = 0;
+STAMPFUNC2  pfStampWriteDictionary_g  = 0;
+STAMPFUNC3  pfStampUpdateEntry_g      = 0;
 
 HINSTANCE   hStampLib_g = 0;
 
 
 
 #ifdef _DEBUG
-#define DLL_FILE "C:/StampDLLProject/stampdll/Debug/stampdll.dll"
+#define DLL_FILE "C:/StampDLLProject/stampdll/Debug/stampdll-2008.dll"
 #else
 #define DLL_FILE "stampdll.dll"
 #endif
@@ -392,8 +394,6 @@ Usage: stamp [options]\n\
 static void tsinit()
 {
 char		infname[BUFSIZE];
-//Change *	pChg;
-//int		iCount = 0;
 char		szPrompt[64];
 static const char	szRootDictPrompt_s[] = "\
 Root dictionary file (xxRTnn.DIC)";
@@ -544,7 +544,7 @@ pfStampReset_g            = (STAMPFUNC1)GetProcAddress(hStampLib_g,
 							  "StampReset");
 pfStampLoadDictionary_g   = (STAMPFUNC3)GetProcAddress(hStampLib_g,
 							  "StampLoadDictionary");
-pfStampProcessFile_g    = (STAMPFUNC3)GetProcAddress(hStampLib_g,
+pfStampProcessFile_g      = (STAMPFUNC3)GetProcAddress(hStampLib_g,
 							  "StampProcessFile");
 pfStampSetParameter_g     = (STAMPFUNC3)GetProcAddress(hStampLib_g,
 							  "StampSetParameter");
@@ -552,6 +552,10 @@ pfStampDeleteSetup_g      = (STAMPFUNC1)GetProcAddress(hStampLib_g,
 							  "StampDeleteSetup");
 pfStampReportVersion_g	  = (STAMPFUNC1)GetProcAddress(hStampLib_g,
 							  "StampReportVersion");
+pfStampWriteDictionary_g  = (STAMPFUNC2)GetProcAddress(hStampLib_g,
+							  "StampWriteDictionary");
+pfStampUpdateEntry_g      = (STAMPFUNC3)GetProcAddress(hStampLib_g,
+							  "StampUpdateEntry");
 
 assert(pfStampCreateSetup_g);
 assert(pfStampDeleteSetup_g);
@@ -561,6 +565,8 @@ assert(pfStampLoadDictionary_g);
 assert(pfStampProcessFile_g);
 assert(pfStampSetParameter_g);
 assert(pfStampReportVersion_g);
+assert(pfStampWriteDictionary_g);
+assert(pfStampUpdateEntry_g);
 
 pHgStamp_g = (*pfStampCreateSetup_g)();
 
@@ -577,6 +583,7 @@ loadControlFiles(pHgStamp_g,
 
 loadDictionaries(pHgStamp_g,
 		 apszStampDictionaryFiles_g);
+
 }
 
 /*************************************************************************
@@ -746,6 +753,7 @@ if (!(fpDCT = openAFile((char *)pszFileName)))
 //    loadControlFiles
 // DESCRIPTION
 //    load the control files for the given STAMP setup
+//    process any command line switches
 // RETURN VALUE
 //    none
 //
@@ -806,6 +814,7 @@ if (iMaxTrieLevel != 2)
 		printf("StampSetParameter(\"DebugLevel\", %s)):\n\t%s\n",
 						_itoa(iDebugLevel,temp,10), pszResult_g);
 	}
+
 // -m Monitor Progress
 
 	if (bMonitorProgress_m == TRUE)
@@ -916,6 +925,71 @@ else
 
 ///////////////////////////////////////////////////////////////////////////////
 // NAME
+//    testDictInsertion
+// DESCRIPTION
+//    test last DLL routines imported to StampDLL from AmpleDLL
+// RETURN VALUE
+//    none
+//
+void testDictInsertion(StampSetup *pSetup_io)
+{
+
+	const char *pszNewEntry_in[10] = {"\\e :",
+							"\\ge 5",
+							"\\gs 5",
+							"\\a :",
+							"\\g1 first person verbal",
+							"\\g2 primera persona verbal",
+							"\\c V1/V0",
+							"\\mp foreshortens",
+							"\\o 120",
+							"\\t PERSON"
+							};
+	char *pNewEntry_in = (char *)malloc(256);
+
+	memset(pNewEntry_in, 0, 256);
+
+	int Length = 0;
+
+		for(int i = 0; i < 10; i++)
+		{
+			strcat(&pNewEntry_in[Length], pszNewEntry_in[i]);
+			strcat(&pNewEntry_in[Length], "\n");
+
+			Length += strlen(pszNewEntry_in[i]);
+		}
+
+		//pNewEntry_in[strlen(pNewEntry_in) + 1] = '\0';
+
+
+	//Print Dictionaries
+
+	char temp[2] = {'\0','\0'};
+	pszResult_g = (*pfStampWriteDictionary_g)(pSetup_io, NULL);
+	printf("StampWriteDictionary Before Insert (\"DebugLevel\", %s)):\n\t%s\n",
+				_itoa(iDebugLevel,temp,10), pszResult_g);
+
+	//Insert Entry
+
+	pszResult_g = (*pfStampUpdateEntry_g)(pSetup_io, pNewEntry_in, "SUFFIX");
+	printf("StampUpdateEntry():\n\t%s\n", pszResult_g);
+
+	free(pNewEntry_in);
+
+	//Print Dictionaries
+
+	pszResult_g = (*pfStampWriteDictionary_g)(pSetup_io, NULL);
+	printf("StampWriteDictionary After Insert (\"DebugLevel\", %s)):\n\t%s\n",
+				_itoa(iDebugLevel,temp,10), pszResult_g);
+
+	return;
+
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// NAME
 //    loadDictionaries
 // DESCRIPTION
 //    load the dictionary files for the given STAMP setup
@@ -978,9 +1052,21 @@ if (pfStampLoadDictionary_g != 0) {
 			   apszDictFiles_in[i], pszResult_g);
 		}
 	}
+
+	//Print Dictionaries
+	if (iDebugLevel > 2)
+	{
+		char temp[2] = {'\0','\0'};
+		pszResult_g = (*pfStampWriteDictionary_g)(pSetup_io, NULL);
+		printf("StampWriteDictionary(\"DebugLevel\", %s)):\n\t%s\n",
+					_itoa(iDebugLevel,temp,10), pszResult_g);
+	}
 }
 else
 	printf("CANNOT CALL DLL/StampLoadDictionary()\n");
+
+//testDictInsertion(pSetup_io);
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////

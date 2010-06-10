@@ -25,21 +25,44 @@
  * DllExport const char * StampSetParameter(StampSetup * pSetup_in,
  *					    const char * pszName_in,
  *				      	    const char * pszValue_in)
- * DllExport const char * StampReportVersion(StampSetup * pSetup_in)
  * DllExport const char * StampGetParameter(StampSetup * pSetup_in,
+ *	Parameters to be Set or Gotten
+ *		BEGIN_COMMENT
+ *		MAX_TRIE_DEPTH
+ *		TRACE_ANALYSIS
+ *		DEBUG_LEVEL
+ *		LOG_FILE
+ *		APPEND_LOG_FILE
+ *		OUTPUT_STYLE
+ *		STORE_ERROR_STRING
+ *		ERROR_MESSAGES
+ *		SHOW_PERCENTAGES
+ *		CHECK_MORPHNAME_REFS
+ *		VERIFY_LOADING
+ *		OUTPUT_PROPERTIES
+ *		OUTPUT_ORIGINAL_WORD
+ *		OUTPUT_DECOMPOSITION
+ *		DO_ALL_SYNTHESES
+ *		MONITOR_PROGRESS
+ *		MATCH_CATEGORIES
+ *		QUIET
+ *		REPORT_NO_ENTRIES
+ *		UNIFIED_DICTIONARY
+ *		VERIFY_TESTS
+ *		ONLY_TRANSFER
+ *
+ * DllExport const char * StampReportVersion(StampSetup * pSetup_in)
  *							const char * pszName_in)
  * DllExport const char * StampInitializeTraceString(StampSetup * pSetup_in)
  * DllExport const char * StampGetTraceString(StampSetup * pSetup_in)
  * DllExport const char * StampWriteDictionary(StampSetup * pSetup_in,
  *					       const char * pszFilePath_in)
- * DllExport const char * StampVerifyLoading(StampSetup * pSetup_in)
-////////////////////////////////////////////////////////////////////
-// To be implemented
  * DllExport const char * StampUpdateEntry(StampSetup * pSetup_in,
- *					   const char * pszNewEntry_in)
- * hab 1999.03.05
- * DllExport const char * StampInitializeMorphChecking(StampSetup * pSetup_in)
- * DllExport const char * StampCheckMorphReferences(StampSetup * pSetup_in)
+ *						const char * pszNewEntry_in, const char *pszType_in
+ *
+ * I'm unsure whether this routine, lifted and adapted from ampledll
+ *	is really necessary as the switch can be set above.
+ * DllExport const char * StampVerifyLoading(StampSetup * pSetup_in)
  ***************************************************************************
  *
  * void reportError(int eMessageType_in, const char *pszFormat_in, ...)
@@ -49,7 +72,7 @@
  * int exitSafely(int iCode_in)
  *
  ***************************************************************************
- * Copyright 1997, 2000 by SIL International.  All rights reserved.
+ * Copyright 1997, 2000, 2010 by SIL International.  All rights reserved.
  */
 
 /* STAMPDLL.C - Synthesis from Transfer of AMPle output
@@ -74,6 +97,7 @@
  * Copyright 1988, 2009 by SIL International.  All rights reserved.
  */
 
+#define _CRT_SECURE_NO_WARNINGS
 #define WINVER 0x0502
 //#define _AFXDLL
 //#include <afxwin.h>
@@ -711,13 +735,8 @@ if (pSetup_io->sData.iDebugLevel && (pSetup_io->sData.pLogFP != NULL))
 	writeStampSynthesisLexChanges(pSetup_io->sData.pLogFP, &pSetup_io->sData);
 	writeStampRegSoundChanges(pSetup_io->sData.pLogFP, &pSetup_io->sData);
 	}
-/*
- *  for -/// or more dump dictionary
- */
-if ((pSetup_io->sData.iDebugLevel > 2) && (pSetup_io->sData.pLogFP != NULL))
-	writeStampDictionary(pSetup_io->sData.pLogFP, &pSetup_io->sData);
 
-	cleanupAfterStdFormatRecord();  // Uncertain about this routine and what it implies
+cleanupAfterStdFormatRecord();  // Uncertain about this routine and what it implies
 
 close_and_return:
 if (pSetup_io->sData.pLogFP != NULL)
@@ -802,6 +821,12 @@ else
 	reportMessage(TRUE,
 		  "\t%s DICTIONARY: Loaded %d record%s\n",
 		  pszType, iCount, (iCount == 1) ? "" : "s" );
+	/*
+	*  for -/// or more dump dictionary
+	*  This prints the dict contents after every dictload invocation.
+	*/
+	//if ((pSetup_io->sData.iDebugLevel > 2) && (pSetup_io->sData.pLogFP != NULL))
+	//	writeStampDictionaryDLL(pSetup_io->sData.pLogFP, &pSetup_io->sData);
 	}
 
 close_and_return:
@@ -2683,10 +2708,6 @@ switch (findParameterIndex(pszName_in))
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 /*****************************************************************************
  * NAME
  *    StampUpdateEntry
@@ -2697,7 +2718,8 @@ switch (findParameterIndex(pszName_in))
  */
 DllExport const char * StampUpdateEntry(
 	StampSetup * pSetup_io,
-	const char * pszNewEntry_in)
+	const char * pszNewEntry_in,
+	const char * pszType_in)
 {
 int	iStatus;
 /*
@@ -2708,6 +2730,7 @@ if (!isValidSetup(pSetup_io))
 /*
  *  set variables for emergency exits
  */
+//Not sure all this log file and iDebug stuff is necessary
 if (setjmp(sAbortPoint) != 0)
 	{
 	pLogFP_m      = NULL;
@@ -2717,9 +2740,9 @@ if (setjmp(sAbortPoint) != 0)
 if (pSetup_io->pszLogFilename != NULL)
 	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
 pLogFP_m      = pSetup_io->sData.pLogFP;
-iDebugLevel_m = pSetup_io->sData.iDebugLevel;
+//iDebugLevel_m = pSetup_io->sData.iDebugLevel;
 
-//iStatus = updateStampDictEntry(pszNewEntry_in, &pSetup_io->sData);
+iStatus = updateStampDictEntry(pszNewEntry_in, &pSetup_io->sData, pszType_in);
 
 if (pSetup_io->sData.pLogFP != NULL)
 	{
@@ -2731,11 +2754,206 @@ iDebugLevel_m = 0;
 return iStatus ? szStampSuccess_m : szBadDictEntry_m;
 }
 
+
+/*****************************************************************************
+ * NAME
+ *    updateStampDictEntry
+ * DESCRIPTION
+ *    add this entry to the Stamp dictionary, if the entry does not exist.
+ *    if the dictionary codes for a unified dictionary do not exist, the entry
+ *    is assumed to use "AmpleLinks Canonical Format" standard format markers
+ * RETURN VALUE
+ *    0 if an error occurs, 1 no error, added if not already present.
+ *    This is the current behavior of stamp. We might want to change
+ *    this behavior later for the DLL useage.
+ */
+int updateStampDictEntry(pszEntry_in, pStamp_io, pszType_in )
+const char *	pszEntry_in;
+StampData *	pStamp_io;
+const char * pszType_in;
+{
+//int	iStatus;
+char *	pszMorph = NULL;
+char *	pRecord;
+int	iType = 0;
+char *	pszField;
+char *	p;
+//char	ch = NUL;
+int bDontLoad = FALSE;
+
+pRecord = convertRecord(pszEntry_in, pStamp_io, pszType_in );
+if (pRecord == NULL)
+	return 0;
+
+for ( pszField = pRecord ; *pszField ; pszField += strlen(pszField) + 1 )
+	{
+	switch (*pszField)
+	{
+	case 'M':
+		pszMorph = pszField + strspn(pszField + 1, szWhitespace_g) + 1;
+//	    break;
+//	case 'T':
+//	    p = pszField + strspn(pszField + 1, szWhitespace_g) + 1;
+		switch (*pszType_in)
+		{
+		case 'I':  case 'i':	iType = IFX;	break;
+		case 'P':  case 'p':	iType = PFX;	break;
+		case 'R':  case 'r':	iType = ROOT;	break;
+		case 'S':  case 's':	iType = SFX;	break;
+		}
+		break;
+	case '!':
+		bDontLoad = TRUE;
+		break;
+	default:
+		break;
+	}
+	}
+if (iType == 0)
+	iType = ROOT;
+if ((pszMorph == NULL) || (*pszMorph == NUL) || bDontLoad)
+	{
+	freeMemory(pRecord);
+	return 0;
+	}
+
+	if (*pRecord == NUL)
+	return 0;		/* empty record (probably NOLOAD) */
+
+	switch (iType)
+	{
+	case PFX:
+	case SFX:
+	case IFX:
+		add_affixwrap(pRecord, iType, pStamp_io);
+		break;
+	case ROOT:
+		add_rootwrap(pRecord, pStamp_io);
+		break;
+	default:
+		addStampDictEntrywrap(pRecord, pStamp_io);
+		break;
+
+	}
+freeMemory(pRecord);
+return 1;
+}
+
+
+/*****************************************************************************
+ * NAME
+ *    convertRecord
+ * DESCRIPTION
+ *    convert the standard format dictionary record into its internal form
+ * RETURN VALUE
+ *    pointer to a dynamically allocated record, or NULL if an error occurs
+ */
+static char * convertRecord(pszEntry_in, pStamp_io, pszType_in)
+const char *	pszEntry_in;
+StampData *	pStamp_io;
+const char *pszType_in;
+{
+char *		pRecord;
+const CodeTable *	pCodeTable;
+unsigned	i;
+unsigned	j;
+size_t		uiLength;
+char *		pszField;
+char *		pszCode;
+char		ch;
+
+if (pszEntry_in == NULL)
+	return NULL;
+
+while (*pszEntry_in == '\n')
+	++pszEntry_in;
+
+if (*pszEntry_in != '\\')
+	return NULL;
+
+	switch (*pszType_in)
+	{
+	case 'p': case 'P':
+		pCodeTable = pStamp_io->pPrefixTable;
+		if (pCodeTable != NULL)
+		break;
+
+	case 'i': case 'I':
+		pCodeTable = pStamp_io->pInfixTable;
+		if (pCodeTable != NULL)
+		break;
+
+	case 'r': case 'R':
+		pCodeTable = pStamp_io->pRootTable;
+		if (pCodeTable != NULL)
+		break;
+
+	case 's': case 'S':
+		pCodeTable = pStamp_io->pSuffixTable;
+		if (pCodeTable != NULL)
+		break;
+
+	default:
+		pCodeTable = pStamp_io->pDictTable;
+		if (pCodeTable != NULL)
+		break;
+			else pCodeTable = &sDefaultCodeTable_m;
+	}
+
+/*
+ *  copy the input string, but ensure 2 NULs at the end, not just one
+ */
+uiLength = strlen(pszEntry_in);
+pRecord = allocMemory(uiLength + 2);
+strcpy(pRecord, pszEntry_in);
+pRecord[uiLength+1] = NUL;
+/*
+ *  convert the record to its normalized form
+ */
+for ( pszField = pRecord ; pszField ; pszField = strchr(pszField, '\n') )
+	{
+	if (*pszField == '\n')
+	{
+	while (pszField[1] != '\\')
+		{
+		++pszField;
+		pszField = strchr(pszField, '\n');
+		if (pszField == NULL)
+		{
+		return pRecord;
+		}
+		}
+	*pszField++ = NUL;
+	}
+	for (   i = 0, pszCode = pCodeTable->pCodeTable ;
+		i < pCodeTable->uiCodeCount ;
+		++i, pszCode += uiLength + 3 )
+	{
+	uiLength = strlen(pszCode);
+	if (matchBeginning(pszField, pszCode))
+		{
+		ch = pszField[uiLength];
+		if (    (ch == NUL) ||
+			(isascii(ch) && isspace(ch)) )
+		{
+		pszCode += uiLength + 1;
+		pszField[0] = *pszCode;
+		for ( j = 1 ; j < uiLength ; ++j )
+			pszField[j] = ' ';
+		break;
+		}
+		}
+	}
+	}
+return pRecord;
+}
+
 /*****************************************************************************
  * NAME
  *    StampWriteDictionary
  * DESCRIPTION
  *    write the STAMP dictionary to a file
+ *    using NULL for file name sends the output to the log file
  * RETURN VALUE
  *    status string indicating success or failure
  */
@@ -2762,10 +2980,13 @@ if (setjmp(sAbortPoint) != 0)
 if (pSetup_in->pszLogFilename != NULL)
 	pSetup_in->sData.pLogFP = fopen(pSetup_in->pszLogFilename, "a");
 pLogFP_m      = pSetup_in->sData.pLogFP;
-iDebugLevel_m = pSetup_in->sData.iDebugLevel;
-/*
- *  write the dictionary contents to the indicated file
- */
+iDebugLevel_m = pSetup_in->sData.iDebugLevel; //prob not needed
+
+if (pszFilePath_in)
+	{
+	/*
+	*  write the dictionary contents to the indicated file
+	*/
 	// open file pszFilePath_in
 	pszFilePath_in = checkEmptyString(pszFilePath_in);
 	if (pszFilePath_in == NULL)
@@ -2785,9 +3006,11 @@ iDebugLevel_m = pSetup_in->sData.iDebugLevel;
 			pszResult = szBadOutputFile_m;
 			goto close_and_return;
 		}
-writeStampDictionary(outfp, &pSetup_in->sData);
+writeStampDictionaryDLL(outfp, &pSetup_in->sData);
 	fclose(outfp);
-
+	}
+else
+	writeStampDictionaryDLL(pLogFP_m, &pSetup_in->sData);
 close_and_return:
 
 if (pSetup_in->sData.pLogFP != NULL)
@@ -2796,7 +3019,7 @@ if (pSetup_in->sData.pLogFP != NULL)
 	pSetup_in->sData.pLogFP = NULL;
 	}
 pLogFP_m      = NULL;
-iDebugLevel_m = 0;
+iDebugLevel_m = 0;		//prob not needed
 return pszResult;
 }
 
@@ -2808,7 +3031,7 @@ return pszResult;
  * RETURN VALUE
  *    status string indicating success or failure
  */
-DllExport const char * AmpleInitializeTraceString(
+DllExport const char * StampInitializeTraceString(
 	StampSetup * pSetup_io)
 {
 /*
@@ -2845,74 +3068,6 @@ if (pSetup_io->pszTrace != NULL)
 	return pSetup_io->pszTrace;
 else
 	return szNoTraceString_m;
-}
-
-
-/* following function added by hab 1999.03.11 */
-/*****************************************************************************
- * NAME
- *    StampInitializeMorphChecking
- * DESCRIPTION
- *    initialize the arrays for morphname and allomorph checking
- * RETURN VALUE
- *    status string indicating success or failure
- */
-DllExport const char * StampInitializeMorphChecking(
-	StampSetup * pSetup_io)
-{
-/*
- *  set variables for emergency exits
- */
-if (setjmp(sAbortPoint) != 0)
-	return szStampDLLCrash_m;
-
-if (pSetup_io->pszLogFilename != NULL)
-	{
-	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
-/*
- *  allocate space for morpheme checking
- */
-//    initStampMorphChecking(TRUE, &pSetup_io->sData);
-	fclose(pSetup_io->sData.pLogFP);
-	pSetup_io->sData.pLogFP = NULL;
-	}
-
-return szStampSuccess_m;
-}
-
-/* following function added by hab 1999.03.11 */
-/*****************************************************************************
- * NAME
- *    StampCheckMorphReferences
- * DESCRIPTION
- *    check that all referenced morphnames are defined in the dictionaries.
- * RETURN VALUE
- *    status string indicating success or failure
- */
-DllExport const char * StampCheckMorphReferences(
-	StampSetup * pSetup_io)
-{
-/*
- *  set variables for emergency exits
- */
-if (setjmp(sAbortPoint) != 0)
-	return szStampDLLCrash_m;
-
-if (pSetup_io->pszLogFilename != NULL)
-	{
-	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
-/*
- *  check the morphnames in all the allomorph environment constraints and
- *   co-occurrence constraints
- */
-//    checkStampMorphs(TRUE,
-//		     &pSetup_io->sData,
-//		     FALSE);	/* 3.3.3.1 hab; added FALSE to preserve data */
-	fclose(pSetup_io->sData.pLogFP);
-	pSetup_io->sData.pLogFP = NULL;
-	}
-
-return szStampSuccess_m;
 }
 
 /* following function added by hab 1999.03.11 */
@@ -2977,8 +3132,6 @@ if (pSetup_io->pszLogFilename != NULL)
 return szStampSuccess_m;
 }
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* following function added by hab 1999.03.05 */
 /*****************************************************************************
