@@ -56,6 +56,11 @@ libpatr.a: $(LIBO)
 	rm -f libpatr.a
 	ar rc libpatr.a $(LIBO)
 	$(RANLIB) libpatr.a
+
+libpatr.so: $(LIBO) libpatr.a
+	rm -f libpatr.so
+	$(CC) -shared -o libpatr.so $(LIBO) -Wl,-whole-archive ../lib/libopac.a -Wl,-no-whole-archive $(LIBS)
+
 #
 #  PC-PATR program and function library compiled for profiling
 #
