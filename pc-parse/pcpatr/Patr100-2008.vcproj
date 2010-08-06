@@ -4,6 +4,11 @@
 	Version="9.00"
 	Name="patr100"
 	ProjectGUID="{2E9517F1-8862-4FB2-A315-83BD68A51BB6}"
+	RootNamespace="patr100"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK"
 	Keyword="AtlProj"
 	TargetFrameworkVersion="131072"
 	>
@@ -219,6 +224,10 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
+				RelativePath=".\crt.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\patr100.cpp"
 				>
 			</File>
@@ -301,6 +310,10 @@
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl"
 			>
+			<File
+				RelativePath=".\crt.h"
+				>
+			</File>
 			<File
 				RelativePath=".\PatrParser.h"
 				>
