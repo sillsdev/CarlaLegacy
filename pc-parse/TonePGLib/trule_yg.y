@@ -555,8 +555,6 @@ Tone_Rule
 			/* the main body of the rule.  The name can also be */
 			/* followed by an indication that the rule is to be */
 			/* treated as optional. */
-			/* The optionality code has not been implemented */
-			/* yet 9504.27 */
 	;
 
 name

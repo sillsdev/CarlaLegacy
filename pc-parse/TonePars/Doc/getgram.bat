@@ -12,7 +12,7 @@ rem Skip non-grammar portion of yacc file:
 if exist grammar.tmp del grammar.tmp
 cc -n -t getgram.cct -o grammar.tmp trule_yg.y
 
-rem Extract the synatx and comment portions of the yacc file:
+rem Extract the syntax and comment portions of the yacc file:
 grep -f getgram.grp grammar.tmp > grammar.tm2
 
 rem Extract the LX_ definitions from lex file:
@@ -25,7 +25,7 @@ c:\djgpp\bin\sort -r lx_subs.tm2 > lx_subs.sed
 
 rem Build the grammar file itself
 echo TonePars Yacc Grammar > grammar
-gettime > gramtime
+timetag > gramtime
 type gramtime >> grammar
 echo. >> grammar
 echo ------------------------------------------------------------ >> grammar
