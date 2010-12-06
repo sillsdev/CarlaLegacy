@@ -231,8 +231,53 @@ else
 	else
 	pClasses_io = pClass;
 	pClass->pNext = NULL;
+	/*
+	 * Re-order members by length with the longest ones first in the list.
+	 * We need this so partial reduplication (in AMPLE/STAMP)  will find
+	 *  the longest matching member first.  Other uses do not care.
+	 * While not the most efficient, we use a bubble sort (these lists
+	 *  tend to be quite small).  See Knuth (1970:107).
+	 */
+	{
+	  int bAnyExchanges = TRUE;
+	  StringList * slpPrevious;
+	  StringList * slpCurrent;
+	  StringList * slpFollowing;
+	  StringList * slpTemp;
+
+	  while (bAnyExchanges == TRUE)
+	{
+	  bAnyExchanges = FALSE;
+	  slpPrevious = slpCurrent = pClass->pMembers;
+	  while (slpCurrent != NULL && slpCurrent->pNext != NULL)
+		{
+		  slpFollowing = slpCurrent->pNext;
+		  if (strlen(slpCurrent->pszString) < strlen(slpFollowing->pszString))
+		{
+		  slpTemp = slpFollowing->pNext;
+		  slpFollowing->pNext = slpCurrent;
+		  slpCurrent->pNext = slpTemp;
+		  bAnyExchanges = TRUE;
+		  if (slpCurrent == pClass->pMembers)
+			{
+			  pClass->pMembers = slpFollowing;
+			}
+		  else
+			{
+			  slpPrevious->pNext = slpFollowing;
+			}
+		  slpPrevious = slpFollowing;
+		}
+		  else
+		{
+		  slpPrevious = slpCurrent;
+		  slpCurrent = slpFollowing;
+		}
+		}
 	}
-return pClasses_io;
+	}
+	}
+ return pClasses_io;
 }
 
 /*************************************************************************

@@ -4,12 +4,15 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 11		/* bug fix or other minor change */
-#define DATE "January 29, 2010"	/* date of release version */
+#define PATCHLEVEL 12		/* bug fix or other minor change */
+#define DATE "December 6, 2010"	/* date of release version */
 #define YEAR "2010"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 06-Dec-2010  hab  - For partial reduplication, the members of a string class
+ * [3.12.12]            need to be looked at longest first; now sort the
+ *                      list by length.
  * 29-Jan-2010  hab  - For XAmple, increased size of PcPatr grammar Let names.
  * [3.12.11]
  * 30-Apr-2009  hab  - Fix bug which could cause a failure when tracing

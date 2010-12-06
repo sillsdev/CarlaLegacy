@@ -1421,7 +1421,7 @@ amset = get_full_redup(key, etype, amset, pAmple_in);
 	 * allomorph's environment.  If some other allomorph matches and we go on to
 	 * check another morpheme in get_prefix(), etc., then the environment strings
 	 * can get changed.  If, however, we ensure that the partial redup allomorph
-	 * first in the list, then we do not encounter this problem. */
+	 * is first in the list, then we do not encounter this problem. */
 amset = get_partial_redup(key, etype, amset, pAmple_in);
 return(amset);
 } /* end get_entries() */

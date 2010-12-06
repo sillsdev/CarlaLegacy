@@ -1,5 +1,11 @@
 AMPLE CHANGE HISTORY
 
+3.12.12 (06-Dec-2010)
+---------------------
+
+1. For partial reduplication, the members of a string class need to be
+   looked at longest first; we now sort the list by length.
+
 3.12.11 (29-Jan-2010)
 --------------------
 1. For XAmple, increased size of PcPatr grammar Let names.
