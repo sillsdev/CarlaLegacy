@@ -1086,7 +1086,7 @@ AmpleAllomorph *      pAllo;
 AmpleAlloEnv * pEnv;
 
 
-if (pIndexedClass == NULL)
+if ((pIndexedClass == NULL) || (pIndexedClass->pStringClass == NULL))
   return(TRUE);
 					/* for each element that matches the
 					   string, see if it will work */

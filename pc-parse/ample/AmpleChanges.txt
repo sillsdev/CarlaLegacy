@@ -1,5 +1,11 @@
 AMPLE CHANGE HISTORY
 
+3.12.13 (02-Feb-2011)
+---------------------
+
+1. Fix bug: in a partial reduplication dictionary, if the string class of
+   the allomorph does not exist, it could cause a crash.
+
 3.12.12 (06-Dec-2010)
 ---------------------
 

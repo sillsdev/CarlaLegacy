@@ -4,12 +4,15 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 12		/* bug fix or other minor change */
-#define DATE "December 6, 2010"	/* date of release version */
-#define YEAR "2010"		/* used for copyright notice in banner */
+#define PATCHLEVEL 32		/* bug fix or other minor change */
+#define DATE "February 2, 2011"	/* date of release version */
+#define YEAR "2011"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 02-Feb-2011  hab  - Fix bug: in a partial reduplication dictionary, if the
+ * [3.12.13]            string class of the allomorph does not exist,
+ *                      it could cause a crash.
  * 06-Dec-2010  hab  - For partial reduplication, the members of a string class
  * [3.12.12]            need to be looked at longest first; now sort the
  *                      list by length.
