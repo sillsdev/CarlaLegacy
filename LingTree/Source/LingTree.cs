@@ -159,6 +159,10 @@ namespace LingTree
 		public LingTreeApp(string strInitFileName)
 		{
 			BackColor = SystemColors.Window;
+			if (BackColor.ToArgb() == 0)
+				BackColor = Color.White;
+			if (m_clrTreeBackgroundColor.ToArgb() == 0)
+				m_clrTreeBackgroundColor = Color.White;
 			ForeColor = SystemColors.WindowText;
 			ResizeRedraw = true;
 
@@ -1142,6 +1146,10 @@ namespace LingTree
 					tree.BackgroundColorArgb = -1; // use white instead of transparent since transparent crashes
 				tree.LineWidth = GetIntFromNodeContent("/LingTreeTree/LineWidth", doc);
 				tree.CustomColors = GetCustomColorsFromNodeContent(doc);
+
+				tree.NTFont = new Font(tree.NTFontFace, tree.NTFontSize, tree.NTFontStyle);
+				tree.GlossFont = new Font(tree.GlossFontFace, tree.GlossFontSize, tree.GlossFontStyle);
+				tree.LexFont = new Font(tree.LexFontFace, tree.LexFontSize, tree.LexFontStyle);
 #endif
 			}
 			catch (Exception exc)

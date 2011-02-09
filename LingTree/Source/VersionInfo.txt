@@ -1,0 +1,9 @@
+Versioning information for LingTree.
+
+0.7.3  09-Feb-2011  hab  Fix two bugs: 1) failed to set the internal font for non-terminal, lexical, and gloss.  2) Could get an exception when creating a new tree if the background color was set to 0 (on Windows 7 at least; not on XP).
+
+0.7.2  24-Feb-2010  hab  Attempt to fix edge black lines that show up in some output formats sometimes.
+
+0.7.1  23-Feb-2006  hab  Fixes a bug where the colors were incorrect when the tree was saved as an SVG file.
+
+(earlier versioning history not kept.)
