@@ -20,22 +20,22 @@ exec_prefix = @exec_prefix@
 BINDIR = $(exec_prefix)/bin
 
 SOURCES=patr.h patrdef.h pcpatr.h version.h grammar.c lcparse.c copyfeat.c \
-		patrampl.c patrkimm.c patrlexi.c patalloc.c patrdata.c patrfunc.c \
-		patrstrg.c pcpatr.c pcpatr2.c pcpatr3.c unify.c userpatr.c wrtstyle.c \
-		cvtkp2wa.c parsepwk.c subsume.c amplpatr.c priunion.c constrai.c \
-		disphead.h disphead.c
+        patrampl.c patrkimm.c patrlexi.c patalloc.c patrdata.c patrfunc.c \
+        patrstrg.c pcpatr.c pcpatr2.c pcpatr3.c unify.c userpatr.c wrtstyle.c \
+        cvtkp2wa.c parsepwk.c subsume.c amplpatr.c priunion.c constrai.c \
+        disphead.h disphead.c
 DLLFILES = Patr100.dsp patr100.idl PatrParser.cpp PatrParser.h PatrParser.rgs \
-		   StdAfx.cpp StdAfx.h patr100.cpp patr100.rc patr100.def resource.h \
-		   patr100ps.def patr100ps.mk \
-		   Patr100-2003.vcproj Patr100-2005.vcproj Patr100-2008.vcproj
+           StdAfx.cpp StdAfx.h patr100.cpp patr100.rc patr100.def resource.h \
+           patr100ps.def patr100ps.mk \
+           Patr100-2003.vcproj Patr100-2005.vcproj Patr100-2008.vcproj
 DISTFILES = $(SOURCES) $(DLLFILES) Makefile.in Makefile.dj \
-			Patrlib.dsp Pcpatr.dsp \
-			Patrlib-2003.vcproj Patrlib-2005.vcproj Patrlib-2008.vcproj \
-			Pcpatr-2003.vcproj Pcpatr-2005.vcproj Pcpatr-2008.vcproj
+            Patrlib.dsp Pcpatr.dsp \
+            Patrlib-2003.vcproj Patrlib-2005.vcproj Patrlib-2008.vcproj \
+            Pcpatr-2003.vcproj Pcpatr-2005.vcproj Pcpatr-2008.vcproj
 
 TESTFILES = check.bat
 TESTS=a bears eng-ela eng-ela2 eng-gfs gazdar shieber1 shieber2 shieber3 \
-	  shieber4 tomita woody
+      shieber4 tomita woody
 TESTEXTS = .grm .lex .ana .sen .tak .lll
 DLLTESTFILES = WinPatrTest.frm WinPatrTest.frx WinPatrTest.vbp WinPatrTest.vbw
 #
@@ -43,11 +43,11 @@ DLLTESTFILES = WinPatrTest.frm WinPatrTest.frx WinPatrTest.vbp WinPatrTest.vbw
 #
 OBJ =pcpatr.o pcpatr2.o pcpatr3.o disphead.o
 LIBO=lcparse.o  grammar.o  patrfunc.o patrdata.o patalloc.o patrstrg.o \
-	 patrampl.o patrkimm.o patrlexi.o userpatr.o unify.o    wrtstyle.o \
-	 cvtkp2wa.o parsepwk.o copyfeat.o subsume.o  amplpatr.o priunion.o \
-	 constrai.o
+     patrampl.o patrkimm.o patrlexi.o userpatr.o unify.o    wrtstyle.o \
+     cvtkp2wa.o parsepwk.o copyfeat.o subsume.o  amplpatr.o priunion.o \
+     constrai.o
 LIBS=../lib/libkimmo.a libpatr.a ../lib/libample.a ../lib/libcmd.a \
-	 ../lib/libopac.a ../lib/libcport.a
+     ../lib/libopac.a ../lib/libcport.a
 
 pcpatr: $(OBJ) $(LIBS)
 	$(CC) -o pcpatr $(OBJ) libpatr.a $(LIBS) @LIBS@
@@ -59,18 +59,18 @@ libpatr.a: $(LIBO)
 
 libpatr.so: $(LIBO) libpatr.a
 	rm -f libpatr.so
-	$(CC) -shared -o libpatr.so $(LIBO) -Wl,-whole-archive ../lib/libopac.a -Wl,-no-whole-archive $(LIBS)
+	$(CC) -shared -o libpatr.so $(LIBO) -Wl,-whole-archive ../lib/libopac.a -Wl,-no-whole-archive $(LIBS) @LIBS@
 
 #
 #  PC-PATR program and function library compiled for profiling
 #
 OBJP =pcpatr.op   pcpatr2.op  pcpatr3.op  disphead.op
 LIBOP=lcparse.op  grammar.op  patrfunc.op patrdata.op patalloc.op patrstrg.op \
-	  patrampl.op patrkimm.op patrlexi.op userpatr.op unify.op    wrtstyle.op \
-	  cvtkp2wa.op parsepwk.op copyfeat.op subsume.op amplpatr.op  priunion.op \
-	  constrai.op
+      patrampl.op patrkimm.op patrlexi.op userpatr.op unify.op    wrtstyle.op \
+      cvtkp2wa.op parsepwk.op copyfeat.op subsume.op amplpatr.op  priunion.op \
+      constrai.op
 LIBSP=../lib/libkimmo_p.a libpatr_p.a ../lib/libample_p.a ../lib/libcmd_p.a \
-	  ../lib/libopac_p.a ../lib/libcport_p.a
+      ../lib/libopac_p.a ../lib/libcport_p.a
 
 pcpatr_p: $(OBJP) $(LIBSP)
 	$(CC) -pg -o pcpatr_p $(OBJP) libpatr_p.a $(LIBSP) @LIBS@
@@ -143,21 +143,21 @@ uninstall:
 check: pcpatr
 	@(Prev=none; cd test; \
 	for t in $(TESTS); do \
-		cd $$t; rm -f $$t.dif; \
-		../../pcpatr -t $$t.tak 2>/dev/null; \
-		if cmp $$t.log $$t.lll; then \
+	    cd $$t; rm -f $$t.dif; \
+	    ../../pcpatr -t $$t.tak 2>/dev/null; \
+	    if cmp $$t.log $$t.lll; then \
 		rm -f $$t.log; \
 		if [ "$$Prev"  = "bad"  ]; then echo ; fi; \
 		if [ "$$Prev" != "good" ]; then echo -n PC-PATR passed test; fi; \
 		Prev=good; \
-		else \
+	    else \
 		diff -c $$t.log $$t.lll >>$$t.dif; \
 		if [ "$$Prev" = "good" ]; then echo ; fi; \
 		if [ "$$Prev" != "bad" ]; then echo -n ':-(' PC-PATR failed test; fi; \
 		Prev=bad; \
-		fi; \
-		echo -n ' '$$t; \
-		cd ..; \
+	    fi; \
+	    echo -n ' '$$t; \
+	    cd ..; \
 	done; \
 	if [ "$Prev" != "none" ]; then echo ; fi; \
 	)
@@ -182,7 +182,7 @@ doc dvi html info:
 
 dist: $(DISTFILES)
 	for file in $(DISTFILES); do \
-		ln $$file $(distdir) || \
+	    ln $$file $(distdir) || \
 		{ echo copying $$file instead; $(COPY) $$file $(distdir);}; \
 	done
 
@@ -190,35 +190,35 @@ testdist:
 	mkdir $(distdir)/test
 	for file in $(TESTFILES); do \
 	  ln $$file $(distdir)/$$file \
-		|| { echo copying $$file instead; \
-			 $(COPY) $$file $(distdir)/$$file; }; \
+	    || { echo copying $$file instead; \
+	         $(COPY) $$file $(distdir)/$$file; }; \
 	done
 	for dir in $(TESTS); do \
-		mkdir $(distdir)/test/$$dir; \
-		for f in $(TESTEXTS); do \
+	    mkdir $(distdir)/test/$$dir; \
+	    for f in $(TESTEXTS); do \
 		if [ -f test/$$dir/$$dir$$f ]; then \
-			ln test/$$dir/$$dir$$f $(distdir)/test/$$dir || \
-			  { echo copying test/$$dir/$$dir$$f instead; \
+		    ln test/$$dir/$$dir$$f $(distdir)/test/$$dir || \
+		      { echo copying test/$$dir/$$dir$$f instead; \
 			$(COPY) test/$$dir/$$dir$$f $(distdir)/test/$$dir;}; \
 		fi; \
-		done; \
-		for f in test.bat; do \
+	    done; \
+	    for f in test.bat; do \
 		if [ -f test/$$dir/$$f ]; then \
-			ln test/$$dir/$$f $(distdir)/test/$$dir || \
-			  { echo copying test/$$dir/$$f instead; \
+		    ln test/$$dir/$$f $(distdir)/test/$$dir || \
+		      { echo copying test/$$dir/$$f instead; \
 			$(COPY) test/$$dir/$$f $(distdir)/test/$$dir;}; \
 		fi; \
-		done; \
+	    done; \
 	done
 	mkdir $(distdir)/dlltest
 	for file in $(DLLTESTFILES); do \
 	  ln dlltest/$$file $(distdir)/dlltest \
-		|| { echo copying $$file instead; \
+	    || { echo copying $$file instead; \
 		 $(COPY) dlltest/$$file $(distdir)/dlltest; }; \
 	done
 
 ############################################################################
 
 .PHONY: all check clean dist distclean doc dvi html info install \
-		libs maintainer-clean mostlyclean profile profile_libs testdist \
-		uninstall installdirs
+        libs maintainer-clean mostlyclean profile profile_libs testdist \
+        uninstall installdirs
