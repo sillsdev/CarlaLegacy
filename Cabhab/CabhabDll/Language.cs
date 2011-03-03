@@ -25,7 +25,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Xsl;
 using System.Xml.XPath;
-
+using SIL.Utils;
 using XCore;
 namespace SIL.Cabhab
 {
@@ -38,13 +38,14 @@ namespace SIL.Cabhab
 		const string m_ksAnswerFileKey = "AnswerFile";
 		const string m_ksStringTablePath = "/group[@id='DialogStrings']/";
 		List<AnswerFileTransformSet> m_answerFileTransformSets = new List<AnswerFileTransformSet>();
+		List<DataMigrationTransform> m_dataMigrationTransforms = new List<DataMigrationTransform>();
 
 		string m_sLanguageName;
 		string m_sLanguageAbbreviation;
 		bool m_fRightToLeftScript;
 
-		string m_sConfigurationPath;
-		string m_sHtmsPath;
+        string m_sConfigurationPath;
+        string m_sHtmsPath;
 
 		private string m_sStylesheet;
 		private string m_sAnswerFileFilter;
@@ -85,16 +86,16 @@ namespace SIL.Cabhab
 				m_sConfigurationPath = value;
 			}
 		}
-		public string Name
+        public string Name
 		{
-			get
-			{
-				XmlNode node = m_xdAnswers.SelectSingleNode("//langName");
-				if (node == null)
-					return "";
-				else
-					return node.InnerText;
-			}
+            get
+            {
+                XmlNode node = m_xdAnswers.SelectSingleNode("//langName");
+                if (node == null)
+                    return "";
+                else
+                    return node.InnerText;
+            }
 		}
 		public bool LanguageDataChanged
 		{
@@ -127,6 +128,9 @@ namespace SIL.Cabhab
 		// get all transforms and init them
 		public void InitAnswerTransforms(XmlNode configurationParameters)
 		{
+			XmlNode versionNode = configurationParameters.SelectSingleNode("//version");
+			string sVersionNumber = versionNode.InnerText;
+			m_answerFileTransformSets.Clear();
 			XmlNodeList nodeList = configurationParameters.SelectNodes("//answerFileTransformSets/answerFileTransformSet");
 			foreach (XmlNode setNode in nodeList)
 			{
@@ -134,10 +138,21 @@ namespace SIL.Cabhab
 				XmlNodeList transformNodes = setNode.SelectNodes("transform");
 				foreach (XmlNode transformNode in transformNodes)
 				{
-					AnswerFileTransform aft = new AnswerFileTransform(AnswerFile, transformNode, ConfigurationPath);
+					AnswerFileTransform aft = new AnswerFileTransform(AnswerFile, transformNode, ConfigurationPath, sVersionNumber);
 					answerFileTransforms.Add(aft);
 				}
 				m_answerFileTransformSets.Add(answerFileTransforms);
+			}
+		}
+		// get all data migrations and init them
+		public void InitDataMigrationTransforms(XmlNode configurationParameters)
+		{
+			m_dataMigrationTransforms.Clear();
+			XmlNodeList nodeList = configurationParameters.SelectNodes("//dataMigrations/dataMigration");
+			foreach (XmlNode dataMigration in nodeList)
+			{
+				DataMigrationTransform dataMigrationTransform = new DataMigrationTransform(dataMigration, ConfigurationPath);
+				m_dataMigrationTransforms.Add(dataMigrationTransform);
 			}
 		}
 		private string GetPropertyValueAsPath(string sKey)
@@ -164,6 +179,7 @@ namespace SIL.Cabhab
 			dlg.Title = GetStringFromStringTable("OpenAnswerFile");
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
+				InitDataMigrationTransforms(m_configurationParameters);
 				LoadAnswerFile(dlg.FileName);
 				InitAnswerTransforms(m_configurationParameters);
 				LanguageNameChanged();
@@ -183,6 +199,9 @@ namespace SIL.Cabhab
 			{
 				m_sUserAnswerFile = sAnswerFile;
 				m_xdAnswers.Load(sAnswerFile);
+
+				MigrateData(sAnswerFile);
+
 				GetLanguageInfoFromAnswerFile();
 				SetWorkingPaths();
 			}
@@ -192,6 +211,19 @@ namespace SIL.Cabhab
 					"Error Loading file!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 		}
+		private void MigrateData(string sAnswerFile)
+		{
+			foreach (DataMigrationTransform migrationTransform in m_dataMigrationTransforms)
+			{
+				XmlNode node = m_xdAnswers.SelectSingleNode(migrationTransform.DBVersionXPath);
+
+				if (node != null)
+				{
+					migrationTransform.ApplyTransform(sAnswerFile);
+					m_xdAnswers.Load(sAnswerFile);
+				}
+			}
+		}
 
 		public void TransformXmlPageDescription(string sXmlFile, out string sHtmlFile)
 		{
@@ -199,12 +231,12 @@ namespace SIL.Cabhab
 			XMLUtilities.XSLParameter[] parameterList = GetTransformParameters();
 			sHtmlFile = Path.Combine(m_sHtmsPath, Path.GetFileNameWithoutExtension(sXmlFile));
 			sHtmlFile += ".htm";
-			//MessageBox.Show("TransformXmlPageDescription: m_sWebPageMapper = " + m_sWebPageMapper);
-			//MessageBox.Show("XmlPageDescription = " + sTemp);
-			//MessageBox.Show("HtmlFile = " + sHtmlFile);
-			XMLUtilities.TransformFileToFile(m_sWebPageMapper, parameterList, sTemp, sHtmlFile);
-			//MessageBox.Show("After TransformFileToFile()");
-		}
+            //MessageBox.Show("TransformXmlPageDescription: m_sWebPageMapper = " + m_sWebPageMapper);
+            //MessageBox.Show("XmlPageDescription = " + sTemp);
+            //MessageBox.Show("HtmlFile = " + sHtmlFile);
+            XMLUtilities.TransformFileToFile(m_sWebPageMapper, parameterList, sTemp, sHtmlFile);
+            //MessageBox.Show("After TransformFileToFile()");
+        }
 
 		private XMLUtilities.XSLParameter[] GetTransformParameters()
 		{
@@ -328,17 +360,21 @@ namespace SIL.Cabhab
 			{
 				string sLastSourceFile = null;
 				AnswerFileTransform lastAft = null;
+				bool fTransformResult = false;
 				for (int i = 0; i < set.Count; i++)
 				{
 					AnswerFileTransform aft = set.GetTransform(i);
 					string sSourceFile = aft.AnswerFile;
-					if (i > 0)
+					if (i > 0 && fTransformResult)
 						sSourceFile = sLastSourceFile;
-					aft.ApplyTransform(ConfigurationPath, sSourceFile);
-					if (lastAft != null)
-						lastAft.ApplyReplaceDOCTYPE(); // do insert DOCTYPE after transform next one (otherwise, one could just insert that DOCTYPE directly via the transform)
-					sLastSourceFile = aft.ResultFile;
-					lastAft = aft;
+					fTransformResult = aft.ApplyTransform(ConfigurationPath, sSourceFile);
+					if (fTransformResult)
+					{
+						if (lastAft != null)
+							lastAft.ApplyReplaceDOCTYPE(); // do insert DOCTYPE after transform next one (otherwise, one could just insert that DOCTYPE directly via the transform)
+						sLastSourceFile = aft.ResultFile;
+						lastAft = aft;
+					}
 				}
 			}
 			LanguageDataChanged = false;

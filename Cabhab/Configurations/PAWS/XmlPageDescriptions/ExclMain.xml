@@ -2,109 +2,109 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="ExclMain" count="1/2">
-	<title>Exclamations and Greetings</title>
-	<introduction>This section considers various types of common utterances which are not complete sentences.  We will deal with greetings, interjections and exclamations in turn.</introduction>
-	<form section="excl" transparent="no">
+    <title>Exclamations and Greetings</title>
+    <introduction>This section considers various types of common utterances which are not complete sentences.  We will deal with greetings, interjections and exclamations in turn.</introduction>
+    <form section="excl" transparent="no">
 <introduction>Greetings typically consist of a particular word or phrase, either standing alone or followed by a name or nominal phrase describing the peson or animal being greeted.  Those that are full sentences or full questions, such as <example>How do you do?</example> and <example>How are you?</example> and <example>Have a good day!</example> will parse automatically and do not need special treatment here.  We are interested in the following types of greetings:</introduction>
-	<EnglishExample>
-		<exItem label="1.">Hi!</exItem>
-		<exItem label="2.">Howdy!</exItem>
-		<exItem label="3.">Hello, Jill.</exItem>
-		<exItem label="4.">Goodby.</exItem>
-		<exItem label="5.">Good day, sir.</exItem>
-		<exItem label="6.">Good morning, Bob.</exItem>
-		<exItem label="7.">Good afternoon.</exItem>
-		<exItem label="8.">Good evening.</exItem>
-		<exItem label="9.">Good night, sweet baby.</exItem>
-	</EnglishExample>
+    <EnglishExample>
+        <exItem label="1.">Hi!</exItem>
+        <exItem label="2.">Howdy!</exItem>
+        <exItem label="3.">Hello, Jill.</exItem>
+        <exItem label="4.">Goodby.</exItem>
+        <exItem label="5.">Good day, sir.</exItem>
+        <exItem label="6.">Good morning, Bob.</exItem>
+        <exItem label="7.">Good afternoon.</exItem>
+        <exItem label="8.">Good evening.</exItem>
+        <exItem label="9.">Good night, sweet baby.</exItem>
+    </EnglishExample>
 <prompt>Key similar examples of greetings in your language here:</prompt>
-		<textBox id="ExclGreet" dataItem="greetExample" rows="5"/>
-		<br/>
-<instruction>All of these words or phrases (not including the nominal phrases or names) need to be entries in your lexicon.  Those that are phrases need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as units within <tool>CARLA Studio</tool>.  Either give each one the category <category>Greet</category> in the lexicon, or add the feature <feature>makeGreet</feature> to the entry to assure the proper category for the syntax.</instruction>
+        <textBox id="ExclGreet" dataItem="greetExample" rows="5"/>
+        <br/>
+<instruction id="ExclGreetLexiconInstruction">All of these words or phrases (not including the nominal phrases or names) need to be entries in your lexicon.  Those that are phrases need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as units within <tool>CARLA Studio</tool>.  Either give each one the category <category>Greet</category> in the lexicon, or add the feature <feature>makeGreet</feature> to the entry to assure the proper category for the syntax.</instruction>
 <br/>
 <introduction>Interjections typically consist of a particular word or phrase that is used alone, usually with an exclamation point following it.  Though many of the words in interjections are not used in any other situation, regular adjectives are also used in this way.  Some examples of interjections in English are:
 </introduction>
-	<EnglishExample>
-		<exItem label="1.">Ouch!</exItem>
-		<exItem label="2.">Gross!</exItem>
-		<exItem label="3.">Cool!</exItem>
-		<exItem label="4.">Jumping Jehosaphat!</exItem>
-		<exItem label="5.">Jimminy Cricket!</exItem>
-	</EnglishExample>
+    <EnglishExample>
+        <exItem label="1.">Ouch!</exItem>
+        <exItem label="2.">Gross!</exItem>
+        <exItem label="3.">Cool!</exItem>
+        <exItem label="4.">Jumping Jehosaphat!</exItem>
+        <exItem label="5.">Jimminy Cricket!</exItem>
+    </EnglishExample>
 <prompt>Key similar examples of interjections in your language here:</prompt>
-		<textBox id="ExclIntj" dataItem="intjExample" rows="5"/>
-		<br/>
+        <textBox id="ExclIntj" dataItem="intjExample" rows="5"/>
+        <br/>
 <prompt>Yes and No answers to questions will be treated by the same rule that allows interjections.  Key the word(s) which can stand alone and mean 'yes', such as 'yes' and 'yeah' in English, here:</prompt>
-		<textBox id="ExclYes" dataItem="yesExample" rows="3"/>
-		<br/>
+        <textBox id="ExclYes" dataItem="yesExample" rows="3"/>
+        <br/>
 <prompt>Key the word(s) which can stand alone and mean 'no', such as 'no' and 'naw' in English, here:</prompt>
-		<textBox id="ExclNo" dataItem="noExample" rows="3"/>
-		<br/>
-<instruction>All of these words or phrases meaning 'yes' and 'no' and the interjections need to be entries in your lexicon.  Those that are phrases need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as units within <tool>CARLA Studio</tool>.  Any which are not regular adjectives need to either have the category <category>Intj</category> in the lexicon or have the feature <feature>makeIntj</feature> to assure the proper category for the syntax.</instruction>
+        <textBox id="ExclNo" dataItem="noExample" rows="3"/>
+        <br/>
+<instruction id="ExclYesNoInstruction">All of these words or phrases meaning 'yes' and 'no' and the interjections need to be entries in your lexicon.  Those that are phrases need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as units within <tool>CARLA Studio</tool>.  Any which are not regular adjectives need to either have the category <category>Intj</category> in the lexicon or have the feature <feature>makeIntj</feature> to assure the proper category for the syntax.</instruction>
 <br/>
 <introduction>Exclamations typically consist of a particular word, such as <example>how</example> in English, followed by an adjective phrase and usually punctuated with an exclamation point.  English examples include:</introduction>
-	<EnglishExample>
-		<exItem label="1.">How awful for you!</exItem>
-		<exItem label="2.">How nice!</exItem>
-		<exItem label="3.">How wonderful that your family could come!</exItem>
-	</EnglishExample>
+    <EnglishExample>
+        <exItem label="1.">How awful for you!</exItem>
+        <exItem label="2.">How nice!</exItem>
+        <exItem label="3.">How wonderful that your family could come!</exItem>
+    </EnglishExample>
 <prompt>Key similar examples of exclamations in your language here:</prompt>
-		<textBox id="ExclExcl" dataItem="exclExample" rows="5"/>
-		<br/>
+        <textBox id="ExclExcl" dataItem="exclExample" rows="5"/>
+        <br/>
 <radioGroup id="ExclMTable">
-	<groupName dataItem="exclM" default="no">RExclM</groupName>
-	<prompt>Does your language have a particular word or words that signal an exclamation (thus making them different than the simple adjectives treated in the Interjections section above)?</prompt>
-	<radio id="ExclMNo" dataValue="no">No</radio>
-	<radio id="ExclMYes" dataValue="yes">Yes</radio>
+    <groupName dataItem="exclM" default="no">RExclM</groupName>
+    <prompt>Does your language have a particular word or words that signal an exclamation (thus making them different than the simple adjectives treated in the Interjections section above)?</prompt>
+    <radio id="ExclMNo" dataValue="no">No</radio>
+    <radio id="ExclMYes" dataValue="yes">Yes</radio>
 </radioGroup>
 <prompt id="ExclMPrompt" show="swExclMYes">Key the particular word(s) that signal an exclamation here:</prompt>
-		<textBox id="ExclExclM" dataItem="exclMExample" show="swExclMYes" rows="3"/>
-		<br/>
+        <textBox id="ExclExclM" dataItem="exclMExample" show="swExclMYes" rows="3"/>
+        <br/>
 <radioGroup id="ExclMPosTable" show="swExclMYes">
-	<groupName dataItem="exclMPos" default="unknown" position="yesSpec">RExclMPos</groupName>
-	<prompt>Where does the particular word or words that signal an exclamation occur with respect to the adjective phrase?</prompt>
-	<radio id="ExclMPosBefore" dataValue="before">Before it</radio>
-	<radio id="ExclMPosAfter" dataValue="after">After it</radio>
-	<radio id="ExclMPosEither" dataValue="either">On either side but not both sides at the same time</radio>
-	<radio id="ExclMPosBoth" dataValue="both">On both sides</radio>
+    <groupName dataItem="exclMPos" default="unknown" position="yesSpec">RExclMPos</groupName>
+    <prompt>Where does the particular word or words that signal an exclamation occur with respect to the adjective phrase?</prompt>
+    <radio id="ExclMPosBefore" dataValue="before">Before it</radio>
+    <radio id="ExclMPosAfter" dataValue="after">After it</radio>
+    <radio id="ExclMPosEither" dataValue="either">On either side but not both sides at the same time</radio>
+    <radio id="ExclMPosBoth" dataValue="both">On both sides</radio>
 <radioGroup id="ExclMEitherOrBothTable" show="swExclMYesEitherOrBoth">
-	<groupName dataItem="exclMEither" default="no">RExclMEither</groupName>
-	<prompt>Can all the words which signal an exclamation appear on either side of the adjective phrase?</prompt>
-	<radio id="ExclMEitherNo" dataValue="no">No, there are separate sets for each side</radio>
-	<radio id="ExclMEitherYes" dataValue="yes">Yes, there is no restriction</radio>
+    <groupName dataItem="exclMEither" default="no">RExclMEither</groupName>
+    <prompt>Can all the words which signal an exclamation appear on either side of the adjective phrase?</prompt>
+    <radio id="ExclMEitherNo" dataValue="no">No, there are separate sets for each side</radio>
+    <radio id="ExclMEitherYes" dataValue="yes">Yes, there is no restriction</radio>
 </radioGroup>
 </radioGroup>
 <instruction id="ExclMInstruction" show="swExclMYes">In the lexicon, add the feature <feature>makeExcl</feature> to each word which signals an exclamation to assure the proper category for the syntax.</instruction>
 <instruction id="ExclMEitherNoInstruction" show="swExclMYesEitherNo">In the lexicon, add the feature <feature>excl-initial</feature> to each word which signals an exclamation that only occurs before the adjective phrase and add the feature <feature>excl-final</feature> to each word which signals an exclamation that only occurs after the adjective phrase.  Do not add either feature to any words which may occur either before or after the adhjective phrase.</instruction>
-		<br/>
-		<buttons>
-			<button id="ExclMainBack" value="Back" goto="Contents.htm"/>
-			<button id="ExclMainNext" value="Next" goto="ExclTesting.xml"/>
-		</buttons>
-	</form>
+        <br/>
+        <buttons>
+            <button id="ExclMainBack" value="Back" goto="Contents.htm"/>
+            <button id="ExclMainNext" value="Next" goto="ExclTesting.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
 <showWhen id="swExclMYes">
-	<whenRadio button="ExclMYes"></whenRadio>
+    <whenRadio button="ExclMYes"></whenRadio>
 </showWhen>
 <showWhen id="swExclMYesEitherOrBoth">
-	<whenRadio button="ExclMYes"></whenRadio>
+    <whenRadio button="ExclMYes"></whenRadio>
 <and/>
-	<whenRadio button="ExclMPosEither"></whenRadio>
+    <whenRadio button="ExclMPosEither"></whenRadio>
 <or/>
-	<whenRadio button="ExclMYes"></whenRadio>
+    <whenRadio button="ExclMYes"></whenRadio>
 <and/>
-	<whenRadio button="ExclMPosBoth"></whenRadio>
+    <whenRadio button="ExclMPosBoth"></whenRadio>
 </showWhen>
 <showWhen id="swExclMYesEitherNo">
-	<whenRadio button="ExclMYes"></whenRadio>
+    <whenRadio button="ExclMYes"></whenRadio>
 <and/>
-	<whenRadio button="ExclMPosEither"></whenRadio>
+    <whenRadio button="ExclMPosEither"></whenRadio>
 <and/>
-	<whenRadio button="ExclMEitherNo"></whenRadio>
+    <whenRadio button="ExclMEitherNo"></whenRadio>
 <or/>
-	<whenRadio button="ExclMYes"></whenRadio>
+    <whenRadio button="ExclMYes"></whenRadio>
 <and/>
-	<whenRadio button="ExclMPosBoth"></whenRadio>
+    <whenRadio button="ExclMPosBoth"></whenRadio>
 <and/>
-	<whenRadio button="ExclMEitherNo"></whenRadio>
+    <whenRadio button="ExclMEitherNo"></whenRadio>
 </showWhen>
 </page>

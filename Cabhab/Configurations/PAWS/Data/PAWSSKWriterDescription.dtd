@@ -14,22 +14,24 @@
   element CDATA #REQUIRED
   attr CDATA #REQUIRED
 >
-<!ELEMENT caseText (#PCDATA)>
+<!ELEMENT caseText (#PCDATA|case)*>
 <!ATTLIST caseText
   value CDATA #REQUIRED
 >
 <!ELEMENT category (#PCDATA)>
 <!-- content is the name of the syntactic category -->
 <!ELEMENT col (content | langData | gloss)*>
-<!-- content -->
+<!-- the content of rowspan actually gets calculated ono the fly; so just use any number in the description page -->
 <!ATTLIST col
   class CDATA #IMPLIED
   show IDREF #IMPLIED
   exampleLoc CDATA #IMPLIED
->
+  colspan CDATA #IMPLIED
+  rowspan CDATA #IMPLIED
+ >
 <!-- comments are for the author.  The intent is that they will not show up in
-	 the formatted version of the paper. -->
-<!ELEMENT comment (#PCDATA)>
+     the formatted version of the paper. -->
+<!ELEMENT comment (#PCDATA | %embedded;)*>
 <!ELEMENT content (#PCDATA)>
 <!-- definition description -->
 <!ELEMENT dd (content | %embedded; | %chunk;)*>
@@ -54,12 +56,12 @@
   show IDREF #IMPLIED
 >
 <!-- references to example numbers or example number/letter.
-	 Use just num for the example number.
-	 Use just letter for an example number/letter combination.
-	 One may include parentheses around the date ("both", the default), or
-	   one may have no parentheses or just initial or just final.
-	 One may append some punctuation (punct) to the end of the number.
-	 One may only include the letter (and not the number). -->
+     Use just num for the example number.
+     Use just letter for an example number/letter combination.
+     One may include parentheses around the date ("both", the default), or
+       one may have no parentheses or just initial or just final.
+     One may append some punctuation (punct) to the end of the number.
+     One may only include the letter (and not the number). -->
 <!ELEMENT exampleRef EMPTY>
 <!ATTLIST exampleRef
   num CDATA #IMPLIED
@@ -73,9 +75,6 @@
 <!-- gloss is a way to tag some text as being a gloss in a particular language. -->
 <!ELEMENT gloss (content | %embedded;)*>
 <!-- content -->
-<!ATTLIST gloss
-  lang IDREF #REQUIRED
->
 <!ELEMENT headerCol (#PCDATA| langName)*>
 <!ATTLIST headerCol
   class CDATA #IMPLIED
@@ -99,8 +98,8 @@
 <!-- content -->
 <!ELEMENT langName EMPTY>
 <!-- object is a generic way to tag a special kind of object.  One can
-	 use the CSS stylesheet to format these objects by referring to the
-	 class attribute.  -->
+     use the CSS stylesheet to format these objects by referring to the
+     class attribute.  -->
 <!-- list element -->
 <!ELEMENT li (content | %embedded; | %chunk;)*>
 <!-- content -->
@@ -131,7 +130,7 @@
   class CDATA #IMPLIED
   show IDREF #IMPLIED
 >
-<!ELEMENT secTitle (#PCDATA)>
+<!ELEMENT secTitle (#PCDATA | %embedded;)*>
 <!ELEMENT section1 (secTitle, (%chunk; | section2)*)>
 <!ATTLIST section1
   id ID #REQUIRED

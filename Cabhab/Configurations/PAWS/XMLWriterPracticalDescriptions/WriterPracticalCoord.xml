@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+  <section1 id="sCoord">
+    <secTitle>Coordination Constructions</secTitle>
+    <p>
+      <content>This section considers basic coordination constructions where there is an overt conjunction between two conjuncts which are at the same level.  This includes coordination at the sentence level and at the verb phrase, nominal phrase, and adjective level.</content></p>
+      <p><comment>If your language has more complex kinds of coordination constructions, such as such as lists without overt conjunctions between each conjunct, missing parts of one of the conjuncts, appositives and comparatives, you can add description and examples as appropriate in this section.</comment></p>
+      <p><content>In English, the conjunctions which can be used between two conjuncts are </content><langData>and</langData><content>, </content><langData>or</langData><content>, </content><langData>but</langData><content> and </content><langData>and/or</langData><content>.  In addition, there are coordination constructions which require an initial conjunction, such as </content><langData>either...or</langData><content> and </content><langData>neither...nor</langData><content> constructions.  Some languages also use a word meaning </content><langData>with</langData><content> as a conjunction between nominal phrases.
+</content>
+    </p>
+            <p>
+                <content/>
+                <langName/>
+                <content> uses the following conjunctions between conjuncts:</content>
+            </p>
+            <example>
+                <table border="1">
+                    <headerRow>
+                        <headerCol>
+                            <langName/>
+                        </headerCol>
+                        <headerCol>Gloss</headerCol>
+                    </headerRow>
+                    <row>
+                        <col exampleLoc="coord/and"/>
+                        <col>
+                            <content>and</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/or"/>
+                        <col>
+                            <content>or</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/nor"/>
+                        <col>
+                            <content>nor</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/andOr"/>
+                        <col>
+                            <content>and/or</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/but"/>
+                        <col>
+                            <content>but</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/with"/>
+                        <col>
+                            <content>with</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/other"/>
+                        <col>
+                            <content>any others</content>
+                        </col>
+                    </row>
+                </table>
+            </example>
+            <p>
+                <content/>
+                <langName/>
+                <content> uses the following conjunctions initially before the first conjunct in an </content><langData>either...or</langData><content> or </content><langData>neither...or</langData><content> type construction:</content>
+            </p>
+            <example>
+                <table border="1">
+                    <headerRow>
+                        <headerCol>
+                            <langName/>
+                        </headerCol>
+                        <headerCol>Gloss</headerCol>
+                    </headerRow>
+                    <row>
+                        <col exampleLoc="coord/either"/>
+                        <col>
+                            <content>either</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/neither"/>
+                        <col>
+                            <content>neither</content>
+                        </col>
+                    </row>
+                </table>
+            </example>
+        <section2 id="sCoordSentence">
+            <secTitle>Sentence-level coordination</secTitle>
+            <p>
+                <content>Sentence-level coordination includes most types of sentences, including declaratives and questions.  Some English examples are: </content>
+  </p>
+            <ol>
+                <li>
+                    <content>John went to the office this morning but he did not return.</content>
+                </li>
+                <li>
+                    <content>When did the mail come and where is my package?</content>
+                </li>
+                <li>
+                    <content>Either I will come to the party or I will send my sister.</content>
+                </li>
+            </ol>
+            <p>
+                <content/>
+                <langName/>
+                <content> examples of sentence-level coordination include:</content>
+            </p>
+            <example>
+                <interlinear exampleLoc="coord/sentExample"/>
+            </example>
+            <p><content>See section </content><sectionRef sec="sAdvCl"/><content> for examples of introductory words and clauses, sometimes referred to as coordination, and examples of adverbial clauses, which are subordination.</content></p>
+</section2>
+        <section2 id="sCoordVP">
+            <secTitle>Verb phrase coordination</secTitle>
+            <p>
+                <content>Verb phrase coordination is exemplified in the following English sentences: </content>
+ </p>
+            <ol>
+                <li>
+                    <content>Bill ran the race and won the prize.</content>
+                </li>
+                <li>
+                    <content>I will come to the party or send my sister.</content>
+                </li>
+                <li>
+                    <content>I will not come to the party nor send my sister.</content>
+                </li>
+            </ol>
+            <p>
+                <content/>
+                <langName/>
+                <content> examples with verb phrase coordination include:</content>
+            </p>
+            <example>
+                <interlinear exampleLoc="coord/vpExample"/>
+            </example>
+</section2>
+        <section2 id="sCoordDP">
+            <secTitle>Nominal phrase coordination</secTitle>
+            <p>
+                <content>Coordinate nominal phrases can usually appear in all the positions where a regular nominal phrase may occur, such as subjects, objects, indirect objects, and objects of prepositions.  Nominal phrase coordination is exemplified in the following English sentences: </content>
+</p>
+            <ol>
+                <li>
+                    <content>Bill ran in the Boston Marathon and the Olympics.</content>
+                </li>
+                <li>
+                    <content>My sister or I will be there.</content>
+                </li>
+                <li>
+                    <content>Neither my sister nor I will be there.</content>
+                </li>
+                <li>
+                    <content>I will come to the rehearsal but not the dinner.</content>
+                </li>
+                <li>
+                    <content>I will come to the wedding and/or the reception.</content>
+                </li>
+            </ol>
+            <p>
+                <content/>
+                <langName/>
+                <content> examples with nominal phrase coordination include:</content>
+            </p>
+            <example>
+                <interlinear exampleLoc="coord/dpExample"/>
+            </example>
+</section2>
+        <section2 id="sCoordAdj">
+            <secTitle>Adjective coordination</secTitle>
+            <p>
+                <content>Adjective coordination is exemplified in the following English sentences: </content>
+</p>
+            <ol>
+                <li>
+                    <content>The black and white dog belongs to my son.</content>
+                </li>
+                <li>
+                    <content>The sore on your leg is ugly and painful and dangerous.</content>
+                </li>
+                <li>
+                    <content>My sister wants a red or blue candle.</content>
+                </li>
+            </ol>
+            <p>
+                <content/>
+                <langName/>
+                <content> examples with adjective coordination include:</content>
+            </p>
+            <example>
+                <interlinear exampleLoc="coord/adjExample"/>
+            </example>
+</section2>
+  </section1>
+</portion>

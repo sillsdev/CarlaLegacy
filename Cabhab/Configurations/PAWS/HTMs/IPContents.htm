@@ -1,7 +1,7 @@
 <html>
    <head>
-	  <title>Contents for Basic, Single-clause Sentences</title>
-	  <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+      <title>Contents for Basic, Single-clause Sentences</title>
+      <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
 <script language="jscript" id="clientEventHandlersJS">
   // variables used throughout functions below
 var attr;
@@ -21,41 +21,54 @@ displayStatus(IPContentsPassiveStatus,"ipContents7");
 displayStatus(IPContentsCatMapStatus,"ipContents8");
 displayStatus(IPContentsTestingStatus,"ipContents9");
 
+displayOutputGrammarItems();
+
 window.external.SetLeftOffAt("IPContents.htm");
+}
+function displayOutputGrammarItems()
+{
+window.external.GetAnswerValue("/paws/@outputGrammar");
+attr = window.external.OutValue;
+
+if (attr =="False")
+{
+  IPContentsCatMapRow.style.display="none";
+  IPContentsTestingRow.style.display="none";
+}
 }
 function displayStatus(idOfItem, strElem)
 {
-	window.external.GetAnswerValue("//ip/" + strElem + "/@checkedOff");
-	attr = window.external.OutValue;
-	sImg = "&nbsp;&nbsp;<img src='";
-	if (attr == "no")
+    window.external.GetAnswerValue("//ip/" + strElem + "/@checkedOff");
+    attr = window.external.OutValue;
+    sImg = "&nbsp;&nbsp;<img src='";
+    if (attr == "no")
 {
-		sImg = sImg + "UnCheckedOff.GIF'>";
+        sImg = sImg + "UnCheckedOff.GIF'>";
 }
-	else
+    else
 {
-		sImg = sImg + "CheckedOff.GIF'>";
+        sImg = sImg + "CheckedOff.GIF'>";
 }
-	idOfItem.innerHTML = sImg;
+    idOfItem.innerHTML = sImg;
 }
 function StatusClicked(idOfItem, strElem)
 {
-	xpath = "//ip/" + strElem + "/@checkedOff";
-	window.external.GetAnswerValue(xpath);
-	attr = window.external.OutValue;
-	sImg = "&nbsp;&nbsp;<img src='";
-	if (attr == "no")
+    xpath = "//ip/" + strElem + "/@checkedOff";
+    window.external.GetAnswerValue(xpath);
+    attr = window.external.OutValue;
+    sImg = "&nbsp;&nbsp;<img src='";
+    if (attr == "no")
 {
-		sImg = sImg + "CheckedOff.GIF'>";
-		sTemp = "yes";
+        sImg = sImg + "CheckedOff.GIF'>";
+        sTemp = "yes";
 }
-	else
+    else
 {
-		sImg = sImg + "UnCheckedOff.GIF'>";
-		sTemp = "no";
+        sImg = sImg + "UnCheckedOff.GIF'>";
+        sTemp = "no";
 }
-	window.external.SetAnswerValue(xpath, sTemp);
-	idOfItem.innerHTML = sImg;
+    window.external.SetAnswerValue(xpath, sTemp);
+    idOfItem.innerHTML = sImg;
 }
 </script>
    </head>
@@ -70,47 +83,47 @@ function StatusClicked(idOfItem, strElem)
 		</tr>
 		<tr>
 			<td id="IPContentsOverviewStatus" onclick="StatusClicked(IPContentsOverviewStatus,'ipContents1')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.1.</td>
+                        <td valign="top">9.1.</td>
 			<td valign="top"><A id=IPContentsOverview href="IPMain.xml" >Overview of Basic, Single-clause Sentences</A></td>
 		</tr>
 		<tr>
 			<td id="IPContentsFeaturesStatus" onclick="StatusClicked(IPContentsFeaturesStatus,'ipContents2')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.2.</td>
+                        <td valign="top">9.2.</td>
 			<td valign="top"><A id=IPContentsFeatures href="IPInflFeatures.xml">Inflection and Agreement Features</A></td>
 		</tr>
 		<tr>
 			<td id="IPContentsProDropStatus" onclick="StatusClicked(IPContentsProDropStatus,'ipContents3')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.3.</td>
+                        <td valign="top">9.3.</td>
 			<td valign="top"><A id=IPContentsProDrop href="IPProDrop.xml"><i>Pro</i>-Drop</A>  </td>
 		</tr>
 		<tr>
 			<td id="IPContentsAuxStatus" onclick="StatusClicked(IPContentsAuxStatus,'ipContents4')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.4.</td>
+                        <td valign="top">9.4.</td>
 			<td valign="top"><A id=IPContentsAux href="IPAux.xml">Auxiliaries</A></td>
 		</tr>
 		<tr>
 			<td id="IPContentsIntransStatus" onclick="StatusClicked(IPContentsIntransStatus,'ipContents5')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.5.</td>
+                        <td valign="top">9.5.</td>
 			<td valign="top"><A id=IPContentsIntrans href="IPCop.xml">Intransitive and Copular Sentences</A></td>
 		</tr>
 		<tr>
 			<td id="IPContentsTransStatus" onclick="StatusClicked(IPContentsTransStatus,'ipContents6')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.6.</td>
+                        <td valign="top">9.6.</td>
 			<td valign="top"><A id=IPContentsTrans href="IPTrans.xml">Transitive and Ditransitive Sentences</A></td>
 		</tr>
 		<tr>
 			<td id="IPContentsPassiveStatus" onclick="StatusClicked(IPContentsPassiveStatus,'ipContents7')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.7.</td>
+                        <td valign="top">9.7.</td>
 			<td valign="top"><A id=IPContentsPassive href="IPPassive.xml">Passive Sentences</A></td>
 		</tr>
-		<tr>
+		<tr id="IPContentsCatMapRow">
 			<td id="IPContentsCatMapStatus" onclick="StatusClicked(IPContentsCatMapStatus,'ipContents8')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.8.</td>
+                        <td valign="top">9.8.</td>
 			<td valign="top"><A id=IPContentsTesting href="IPCatMap.xml">Category Mapper</A></td>
 		</tr>
-		<tr>
+		<tr id="IPContentsTestingRow">
 			<td id="IPContentsTestingStatus" onclick="StatusClicked(IPContentsTestingStatus,'ipContents9')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.9.</td>
+                        <td valign="top">9.9.</td>
 			<td valign="top"><A id=IPContentsTesting href="IPTesting.xml">Testing</A></td>
 		</tr>
 		<tr>

@@ -87,7 +87,7 @@
 		<br/>
 		<buttons>
 			<button id="PPOtherBack" value="Back" goto="PPComps.xml"/>
-			<button id="PPOtherNext" value="Next" goto="PPCatMap.xml"/>
+		    <button id="PPOtherNext" value="Next" goto="PPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swPPCompPPYesExceptClitic">

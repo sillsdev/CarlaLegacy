@@ -1,199 +1,199 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NegMain" count="1/4">
-	<title>Negation Constructions</title>
-	<introduction>All languages have the ability to express negation.  This is usually achieved through the use of:
+    <title>Negative Constructions</title>
+    <introduction>All languages have the ability to express negation.  This is usually achieved through the use of:
 <ul>
-			<li>special negative degree words, such as <example>not</example>, or negative quantifier determiners, such as <example>no</example>, which negate a nominal phrase,</li>
-			<li>negative indefinite pronouns, such as <example>noboby</example> or <example>nothing</example>, which express a negative nominal argument by themselves,</li>
-			<li>negative adverbs, such as <example>never</example> or <example>nowhere</example>,</li>
-			<li>negative auxiliaries, such as <example>not</example> or the contraction affixal form
+            <li>special negative degree words, such as <example>not</example>, or negative quantifier determiners, such as <example>no</example>, which negate a nominal phrase,</li>
+            <li>negative indefinite pronouns, such as <example>noboby</example> or <example>nothing</example>, which express a negative nominal argument by themselves,</li>
+            <li>negative adverbs, such as <example>never</example> or <example>nowhere</example>,</li>
+            <li>negative auxiliaries, such as <example>not</example> or the contraction affixal form
 <example>-n't</example>, and/or</li>
-			<li>negative verbal affixes.</li>
-		</ul>
+            <li>negative verbal affixes.</li>
+        </ul>
 All of the above have been covered as individual items in previous sections.  This section will review the information you have given and obtain examples used in complete sentences, beginning with negation of nominal phrases where the negated phrase is the subject.  The next section does the same for negative adverbial and auxiliary elements.  The final page then deals with any co-occurence restrictions between the various items when they are used together in full sentences containing a negated object, based upon the type of negation system your language uses.
 </introduction>
-	<form section="neg">
-		<br/>
-		<br/>
-		<prompt id="NegQPNPDegreePosOnlyInstruction" show="swQPNPDegreePosOnly">In <section number="2">Quantifiers and QP</section> you stated that your language does not express the meaning of 'not' (when applied to nominal phrases) either as a separate word or as a phrasal clitic or as an affix which attaches to the head noun.  If this is correct, continue on in this section.  If not, please return to <section number="2">Quantifiers and QP</section> and change your answers before continuing further in this section.</prompt>
-		<prompt id="NegQPNPDegreeNoInstruction" show="swQPNPDegreeNoOrYesPos">In <section number="2">Quantifiers and QP</section> you stated that your language does not express the meaning of 'not' (when applied to nominal phrases) as a separate word, but instead uses <span id="NegQPNPDegreeProcliticSpan" show="swQPNPDegreeNoOrYesPosProclitic">one or more proclitics which attach to the front of the nominal phrase, as shown in the box below.</span>
-			<span id="NegQPNPDegreeEncliticSpan" show="swQPNPDegreeNoOrYesPosEnclitic">one or more enclitics which attach to the end of the nominal phrase, as shown in the box below.</span>
-			<span id="NegQPNPDegreeCliticSpan" show="swQPNPDegreeNoOrYesPosClitic">one or more phrasal clitics which attach either to the front or the end of the nominal phrase, as shown in the box below.</span>
-			<span id="NegQPNPDegreePrefixSpan" show="swQPNPDegreeNoOrYesPosPrefix">one or more prefixes which attach to the head noun in the nominal phrase, as shown in the box below.</span>
-			<span id="NegQPNPDegreeSuffixSpan" show="swQPNPDegreeNoOrYesPosSuffix">one or more suffixes which attach to the head noun in the nominal phrase, as shown in the box below.</span>
-			<span id="NegQPNPDegreeAffixSpan" show="swQPNPDegreeNoOrYesPosAffix">one or more affixes which attach to the head noun in the nominal phrase, as shown in the box below.</span>
-		</prompt>
-		<prompt id="NegQPNPDegreeYesInstruction" show="swQPNPDegreeYesOrYesNeg">In <section number="2">Quantifiers and QP</section> you keyed the following examples of special negative degree words.  You may add any additional data that you think of now.</prompt>
-		<prompt id="NegQPNPDegreeYesNotPrompt" show="swQPNPDegreeYesOrYesNeg">The words meaning 'not':</prompt>
-		<prompt id="NegQPNPDegreeNoNotPrompt" show="swQPNPDegreeNoOrYesPos">The <span id="NegQPNPDegreeAffixesSpan" show="swQPNPDegreeNoOrYesPosAffixes">affixes</span>
-			<span id="NegQPNPDegreeCliticsSpan" show="swQPNPDegreeNoOrYesPosClitics">clitics</span> meaning 'not':</prompt>
-		<textBox id="QPNotExample" section="qp" dataItem="not" rows="3" show="swQPNPDegreeNotPosOnly"/>
+    <form section="neg">
+        <br/>
+        <br/>
+        <prompt id="NegQPNPDegreePosOnlyInstruction" show="swQPNPDegreePosOnly">In <section number="2">Quantifiers and QP</section> you stated that your language does not express the meaning of 'not' (when applied to nominal phrases) either as a separate word or as a phrasal clitic or as an affix which attaches to the head noun.  If this is correct, continue on in this section.  If not, please return to <section number="2">Quantifiers and QP</section> and change your answers before continuing further in this section.</prompt>
+        <prompt id="NegQPNPDegreeNoInstruction" show="swQPNPDegreeNoOrYesPos">In <section number="2">Quantifiers and QP</section> you stated that your language does not express the meaning of 'not' (when applied to nominal phrases) as a separate word, but instead uses <span id="NegQPNPDegreeProcliticSpan" show="swQPNPDegreeNoOrYesPosProclitic">one or more proclitics which attach to the front of the nominal phrase, as shown in the box below.</span>
+            <span id="NegQPNPDegreeEncliticSpan" show="swQPNPDegreeNoOrYesPosEnclitic">one or more enclitics which attach to the end of the nominal phrase, as shown in the box below.</span>
+            <span id="NegQPNPDegreeCliticSpan" show="swQPNPDegreeNoOrYesPosClitic">one or more phrasal clitics which attach either to the front or the end of the nominal phrase, as shown in the box below.</span>
+            <span id="NegQPNPDegreePrefixSpan" show="swQPNPDegreeNoOrYesPosPrefix">one or more prefixes which attach to the head noun in the nominal phrase, as shown in the box below.</span>
+            <span id="NegQPNPDegreeSuffixSpan" show="swQPNPDegreeNoOrYesPosSuffix">one or more suffixes which attach to the head noun in the nominal phrase, as shown in the box below.</span>
+            <span id="NegQPNPDegreeAffixSpan" show="swQPNPDegreeNoOrYesPosAffix">one or more affixes which attach to the head noun in the nominal phrase, as shown in the box below.</span>
+        </prompt>
+        <prompt id="NegQPNPDegreeYesInstruction" show="swQPNPDegreeYesOrYesNeg">In <section number="2">Quantifiers and QP</section> you keyed the following examples of special negative degree words.  You may add any additional data that you think of now.</prompt>
+        <prompt id="NegQPNPDegreeYesNotPrompt" show="swQPNPDegreeYesOrYesNeg">The words meaning 'not':</prompt>
+        <prompt id="NegQPNPDegreeNoNotPrompt" show="swQPNPDegreeNoOrYesPos">The <span id="NegQPNPDegreeAffixesSpan" show="swQPNPDegreeNoOrYesPosAffixes">affixes</span>
+            <span id="NegQPNPDegreeCliticsSpan" show="swQPNPDegreeNoOrYesPosClitics">clitics</span> meaning 'not':</prompt>
+        <textBox id="QPNotExample" section="qp" dataItem="not" rows="3" show="swQPNPDegreeNotPosOnly"/>
 <instruction id="NegQPNPDegreeYesInstruction2" show="swQPNPDegreeYesOrYesNeg">Be sure to add the features <feature>makeDeg modifies_NP negative</feature> to any new words you added.</instruction>
-		<prompt id="NegQPNPDegreeNPPrompt" show="swQPNPDegreeNotPosOnly">Examples of the elements meaning 'not' in full nominal phrases:</prompt>
-		<textBox id="QPNPDegreeNegExample" section="qp" dataItem="negExample" rows="4" show="swQPNPDegreeNotPosOnly"/>
-		<prompt id="NegQPNPDegreeNegCooccurPrompt" show="swQPNPDegreeNotYesAndNegCooccurNo">Examples of the elements meaning 'not' in full nominal phrases including the positive special degree elements:</prompt>
-		<textBox id="QPNPNegCooccurExample" section="qp" dataItem="negCooccurExample" rows="4" show="swQPNPDegreeNotYesAndNegCooccurNo"/>
-		<prompt id="NegQPNPDegreeSentencePrompt" show="swQPNPDegreeNotPosOnly">Now take at least one of the nominal phrase examples in the above box(es) and use it as the subject of a full sentence here:</prompt>
-		<textBox id="NegQPNPDegreeNegSubjExample" dataItem="degreeSubjExample" rows="4" cols="50" show="swQPNPDegreeNotPosOnly"/>
-		<br/>
-		<br/>
-		<prompt id="NegQPDeterminerNoInstruction" show="swQPDeterminerNoOrYesSomeAndNotPosOnly">In <section number="2">Quantifiers and QP - No other modifiers</section> you stated that your language does not express the meaning of 'no' (when applied to nominal phrases) as a separate word and distinct from the examples for 'not' above, so your language does not have any negative quantifier determiners.  If this is correct, continue on in this section.  If not, please return to <section number="2">Quantifiers and QP - no other modifiers</section> and change your answers before continuing further in this section.</prompt>
-		<prompt id="NegQPDeterminerNoInstruction2" show="swPosOnly">In <section number="2">Quantifiers and QP - No other modifiers</section> you stated that your language does not express the meaning of 'no' (when applied to nominal phrases) as a separate word, so your language does not have any negative quantifier determiners.  Since you also stated that your language does not have any negative special degree elements, this means your language does not have any means of negating a nominal phrase.   If this is correct, continue on in this section.  If not, please return to <section number="2">Quantifiers and QP</section> and change your answers before continuing further in this section.</prompt>
-		<prompt id="NegQPDeterminerYesInstruction" show="swQPDeterminerYesOrYesNo">In <section number="2">Quantifiers and QP - No other modifiers</section> you keyed the following examples of negative quantifier determiners.  You may add any additional data that you think of now.</prompt>
-		<prompt id="NegQPDeterminerPrompt" show="swQPDeterminerYesOrYesNo">Examples of the words meaning 'no' alone:</prompt>
-		<textBox id="QPDeterminerNegExample" section="qp" dataItem="determinerNegExample" show="swQPDeterminerYesOrYesNo" rows="3"/>
+        <prompt id="NegQPNPDegreeNPPrompt" show="swQPNPDegreeNotPosOnly">Examples of the elements meaning 'not' in full nominal phrases:</prompt>
+        <textBox id="QPNPDegreeNegExample" section="qp" dataItem="negExample" rows="4" show="swQPNPDegreeNotPosOnly"/>
+        <prompt id="NegQPNPDegreeNegCooccurPrompt" show="swQPNPDegreeNotYesAndNegCooccurNo">Examples of the elements meaning 'not' in full nominal phrases including the positive special degree elements:</prompt>
+        <textBox id="QPNPNegCooccurExample" section="qp" dataItem="negCooccurExample" rows="4" show="swQPNPDegreeNotYesAndNegCooccurNo"/>
+        <prompt id="NegQPNPDegreeSentencePrompt" show="swQPNPDegreeNotPosOnly">Now take at least one of the nominal phrase examples in the above box(es) and use it as the subject of a full sentence here:</prompt>
+        <textBox id="NegQPNPDegreeNegSubjExample" dataItem="degreeSubjExample" rows="4" cols="50" show="swQPNPDegreeNotPosOnly"/>
+        <br/>
+        <br/>
+        <prompt id="NegQPDeterminerNoInstruction" show="swQPDeterminerNoOrYesSomeAndNotPosOnly">In <section number="2">Quantifiers and QP - No other modifiers</section> you stated that your language does not express the meaning of 'no' (when applied to nominal phrases) as a separate word and distinct from the examples for 'not' above, so your language does not have any negative quantifier determiners.  If this is correct, continue on in this section.  If not, please return to <section number="2">Quantifiers and QP - no other modifiers</section> and change your answers before continuing further in this section.</prompt>
+        <prompt id="NegQPDeterminerNoInstruction2" show="swPosOnly">In <section number="2">Quantifiers and QP - No other modifiers</section> you stated that your language does not express the meaning of 'no' (when applied to nominal phrases) as a separate word, so your language does not have any negative quantifier determiners.  Since you also stated that your language does not have any negative special degree elements, this means your language does not have any means of negating a nominal phrase.   If this is correct, continue on in this section.  If not, please return to <section number="2">Quantifiers and QP</section> and change your answers before continuing further in this section.</prompt>
+        <prompt id="NegQPDeterminerYesInstruction" show="swQPDeterminerYesOrYesNo">In <section number="2">Quantifiers and QP - No other modifiers</section> you keyed the following examples of negative quantifier determiners.  You may add any additional data that you think of now.</prompt>
+        <prompt id="NegQPDeterminerPrompt" show="swQPDeterminerYesOrYesNo">Examples of the words meaning 'no' alone:</prompt>
+        <textBox id="QPDeterminerNegExample" section="qp" dataItem="determinerNegExample" show="swQPDeterminerYesOrYesNo" rows="3"/>
 <instruction id="NegQPDeterminerYesInstruction2" show="swQPDeterminerYesOrYesNo">Be sure to add the features <feature>makeDet negative</feature> to any new words you added.</instruction>
-		<prompt id="NegQPDeterminerNPNegPrompt" show="swQPDeterminerYesOrYesNo">Examples of negative quantifier determiners in full nominal phrases:</prompt>
-		<textBox id="QPDeterminerNegNPExample" section="qp" dataItem="determinerNegNPExample" rows="4" show="swQPDeterminerYesOrYesNo"/>
-		<prompt id="NegQPNPDeterminerNegSentPrompt" show="swQPDeterminerYesOrYesNo">Now take at least one of the nominal phrase examples in the above box and use it as the subject of a full sentence here:</prompt>
-		<textBox id="NegQPNPDeterminerNegSubjExample" dataItem="determinerSubjExample" rows="4" cols="50" show="swQPDeterminerYesOrYesNo"/>
-		<br/>
-		<br/>
-		<prompt id="NegPronounNoPosOnlyInstruction" show="swPronounNegIndefNoAndPosOnly">In <section number="7">Pronouns - Indefinites</section> you stated that your language does not have any negative indefinite pronouns, and we saw above that the language does not have any way to negate a nominal phrase either.  Return to <section number="7">Pronouns - Indefinites</section> if you wish to change your answer regarding negative indefinite pronouns.  Otherwise, proceed to the next page dealing with verbal and adverbial negation.</prompt>
-		<prompt id="NegPronounNoInstruction" show="swPronounNegIndefNoAndNotPosOnly">In <section number="7">Pronouns - Indefinites</section> you stated that your language does not express the meaning of 'nobody' or 'nothing' as single word pronouns, so your language does not have any negative indefinite pronouns.  Instead, these concepts are all expressed as negative nominal phrases.  In <section number="7">Pronouns - Indefinites</section> you keyed the following examples of negative indefinite nominal phrases (like 'no one').  You may add any additional data that you think of now.</prompt>
-		<prompt id="NegPronounYesInstruction" show="swPronounNegIndefYesAndNotPosOnly">In <section number="7">Pronouns - Indefinites</section> you keyed the following examples of negative indefinite pronouns and (possibly) negative indefinite nominal phrases (like 'no one').  You may add any additional data that you think of now.</prompt>
-		<prompt id="NegPronounYesInstruction2" show="swPronounNegIndefYesAndPosOnly">In <section number="7">Pronouns - Indefinites</section> you keyed the following examples of negative indefinite pronouns.  You may add any additional data that you think of now.</prompt>
-		<prompt id="NegPronounYesPrompt" show="swPronounNegIndefYes">Examples of the negative indefinite pronouns alone:</prompt>
-		<textBox id="PronNegIndefExample" section="pron" dataItem="negIndefExample" rows="4" show="swPronounNegIndefYes"/>
+        <prompt id="NegQPDeterminerNPNegPrompt" show="swQPDeterminerYesOrYesNo">Examples of negative quantifier determiners in full nominal phrases:</prompt>
+        <textBox id="QPDeterminerNegNPExample" section="qp" dataItem="determinerNegNPExample" rows="4" show="swQPDeterminerYesOrYesNo"/>
+        <prompt id="NegQPNPDeterminerNegSentPrompt" show="swQPDeterminerYesOrYesNo">Now take at least one of the nominal phrase examples in the above box and use it as the subject of a full sentence here:</prompt>
+        <textBox id="NegQPNPDeterminerNegSubjExample" dataItem="determinerSubjExample" rows="4" cols="50" show="swQPDeterminerYesOrYesNo"/>
+        <br/>
+        <br/>
+        <prompt id="NegPronounNoPosOnlyInstruction" show="swPronounNegIndefNoAndPosOnly">In <section number="7">Pronouns - Indefinites</section> you stated that your language does not have any negative indefinite pronouns, and we saw above that the language does not have any way to negate a nominal phrase either.  Return to <section number="7">Pronouns - Indefinites</section> if you wish to change your answer regarding negative indefinite pronouns.  Otherwise, proceed to the next page dealing with verbal and adverbial negation.</prompt>
+        <prompt id="NegPronounNoInstruction" show="swPronounNegIndefNoAndNotPosOnly">In <section number="7">Pronouns - Indefinites</section> you stated that your language does not express the meaning of 'nobody' or 'nothing' as single word pronouns, so your language does not have any negative indefinite pronouns.  Instead, these concepts are all expressed as negative nominal phrases.  In <section number="7">Pronouns - Indefinites</section> you keyed the following examples of negative indefinite nominal phrases (like 'no one').  You may add any additional data that you think of now.</prompt>
+        <prompt id="NegPronounYesInstruction" show="swPronounNegIndefYesAndNotPosOnly">In <section number="7">Pronouns - Indefinites</section> you keyed the following examples of negative indefinite pronouns and (possibly) negative indefinite nominal phrases (like 'no one').  You may add any additional data that you think of now.</prompt>
+        <prompt id="NegPronounYesInstruction2" show="swPronounNegIndefYesAndPosOnly">In <section number="7">Pronouns - Indefinites</section> you keyed the following examples of negative indefinite pronouns.  You may add any additional data that you think of now.</prompt>
+        <prompt id="NegPronounYesPrompt" show="swPronounNegIndefYes">Examples of the negative indefinite pronouns alone:</prompt>
+        <textBox id="PronNegIndefExample" section="pron" dataItem="negIndefExample" rows="4" show="swPronounNegIndefYes"/>
 <instruction id="NegPronounYesInstruction3" show="swPronounNegIndefYes">Be sure to add the features <feature>makePron negative</feature> to any new words you added.</instruction>
-		<prompt id="NegPronounNPPrompt" show="swNotPosOnly">Examples of negative indefinite nominal phrases:</prompt>
-		<textBox id="PronNegIndefNPExample" section="pron" dataItem="negIndefNPExample" rows="4" show="swNotPosOnly"/>
-		<prompt id="NegPronounSentPrompt" show="swPronounNegIndefNotNoAndPosOnly">Now take at least one of the examples of negative indefinite <span id="NegPronounSentSpan" show="swPronounNegIndefYesAndPosOnly">pronouns</span><span id="NegPronounSentSpan2" show="swPronounNegIndefYesAndNotPosOnly">pronouns or </span><span id="NegPronounSentSpan3" show="swNotPosOnly">nominal phrases</span> above and use it as the subject of a full sentence here:</prompt>
-		<textBox id="NegPronounSubjExample" dataItem="pronounSubjExample" rows="4" cols="50" show="swPronounNegIndefNotNoAndPosOnly"/>
-		<br/>
-		<br/>
-		<radioGroup id="NegSubjVerbRequiredTable" show="swPronounNegIndefNotNoAndPosOnly">
-			<groupName dataItem="subjVerbRequired" default="no">RSubjVerbRequired</groupName>
-			<prompt>Looking back at the full sentence examples you have given on this page, is the verb or auxiliary required to be negative when the subject is negative?</prompt>
-			<radio id="NegSubjVerbRequiredYes" dataValue="yes">Yes, a negative subject is not allowed without also having a negative verb or auxiliary</radio>
-			<radio id="NegSubjVerbRequiredNo" dataValue="no">No, the verb or auxiliary is not required to be negative when the subject is negative</radio>
-		</radioGroup>
-		<br/>
-		<br/>
-		<buttons>
-			<button id="NegMainBack" value="Back" goto="Contents.htm"/>
-			<button id="NegMainNext" value="Next" goto="NegVerbal.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swQPNPDegreeYes">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNo">
-		<whenValue element="qp" attr="npDegree" value="no"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPos">
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYesOrYesNeg">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPosProclitic">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<closeParen/>
-		<and/>
-		<whenValue element="qp" attr="npDegreeNegType" value="proclitic"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPosEnclitic">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<closeParen/>
-		<and/>
-		<whenValue element="qp" attr="npDegreeNegType" value="enclitic"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPosClitic">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<closeParen/>
-		<and/>
-		<whenValue element="qp" attr="npDegreeNegType" value="clitic"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPosPrefix">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<closeParen/>
-		<and/>
-		<whenValue element="qp" attr="npDegreeNegType" value="prefix"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPosSuffix">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<closeParen/>
-		<and/>
-		<whenValue element="qp" attr="npDegreeNegType" value="suffix"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPosAffix">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<closeParen/>
-		<and/>
-		<whenValue element="qp" attr="npDegreeNegType" value="affix"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPosAffixes">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<closeParen/>
-		<and/>
-		<openParen/>
-		<whenValue element="qp" attr="npDegreeNegType" value="prefix"/>
-		<or/>
-		<whenValue element="qp" attr="npDegreeNegType" value="suffix"/>
-		<or/>
-		<whenValue element="qp" attr="npDegreeNegType" value="affix"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPosClitics">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<closeParen/>
-		<and/>
-		<openParen/>
-		<whenValue element="qp" attr="npDegreeNegType" value="proclitic"/>
-		<or/>
-		<whenValue element="qp" attr="npDegreeNegType" value="enclitic"/>
-		<or/>
-		<whenValue element="qp" attr="npDegreeNegType" value="clitic"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNotYesAndNegCooccurNo">
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegreeNegCooccur" value="yes"/>
-		<closeParen/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="No"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerYesOrYesNo">
-		<whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
-	</showWhen>
+        <prompt id="NegPronounNPPrompt" show="swNotPosOnly">Examples of negative indefinite nominal phrases:</prompt>
+        <textBox id="PronNegIndefNPExample" section="pron" dataItem="negIndefNPExample" rows="4" show="swNotPosOnly"/>
+        <prompt id="NegPronounSentPrompt" show="swPronounNegIndefNotNoAndPosOnly">Now take at least one of the examples of negative indefinite <span id="NegPronounSentSpan" show="swPronounNegIndefYesAndPosOnly">pronouns</span><span id="NegPronounSentSpan2" show="swPronounNegIndefYesAndNotPosOnly">pronouns or </span><span id="NegPronounSentSpan3" show="swNotPosOnly">nominal phrases</span> above and use it as the subject of a full sentence here:</prompt>
+        <textBox id="NegPronounSubjExample" dataItem="pronounSubjExample" rows="4" cols="50" show="swPronounNegIndefNotNoAndPosOnly"/>
+        <br/>
+        <br/>
+        <radioGroup id="NegSubjVerbRequiredTable" show="swPronounNegIndefNotNoAndPosOnly">
+            <groupName dataItem="subjVerbRequired" default="no">RSubjVerbRequired</groupName>
+            <prompt>Looking back at the full sentence examples you have given on this page, is the verb or auxiliary required to be negative when the subject is negative?</prompt>
+            <radio id="NegSubjVerbRequiredYes" dataValue="yes">Yes, a negative subject is not allowed without also having a negative verb or auxiliary</radio>
+            <radio id="NegSubjVerbRequiredNo" dataValue="no">No, the verb or auxiliary is not required to be negative when the subject is negative</radio>
+        </radioGroup>
+        <br/>
+        <br/>
+        <buttons>
+            <button id="NegMainBack" value="Back" goto="Contents.htm"/>
+            <button id="NegMainNext" value="Next" goto="NegVerbal.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swQPNPDegreeYes">
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNo">
+        <whenValue element="qp" attr="npDegree" value="no"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPos">
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeYesOrYesNeg">
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesNeg"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPosProclitic">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <closeParen/>
+        <and/>
+        <whenValue element="qp" attr="npDegreeNegType" value="proclitic"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPosEnclitic">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <closeParen/>
+        <and/>
+        <whenValue element="qp" attr="npDegreeNegType" value="enclitic"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPosClitic">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <closeParen/>
+        <and/>
+        <whenValue element="qp" attr="npDegreeNegType" value="clitic"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPosPrefix">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <closeParen/>
+        <and/>
+        <whenValue element="qp" attr="npDegreeNegType" value="prefix"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPosSuffix">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <closeParen/>
+        <and/>
+        <whenValue element="qp" attr="npDegreeNegType" value="suffix"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPosAffix">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <closeParen/>
+        <and/>
+        <whenValue element="qp" attr="npDegreeNegType" value="affix"/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPosAffixes">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegreeNegType" value="prefix"/>
+        <or/>
+        <whenValue element="qp" attr="npDegreeNegType" value="suffix"/>
+        <or/>
+        <whenValue element="qp" attr="npDegreeNegType" value="affix"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNoOrYesPosClitics">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegreeNegType" value="proclitic"/>
+        <or/>
+        <whenValue element="qp" attr="npDegreeNegType" value="enclitic"/>
+        <or/>
+        <whenValue element="qp" attr="npDegreeNegType" value="clitic"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swQPNPDegreeNotYesAndNegCooccurNo">
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <and/>
+        <whenValue element="qp" attr="npDegreeNegCooccur" value="yes"/>
+        <closeParen/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="yesNeg"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="No"/>
+    </showWhen>
+    <showWhen id="swQPDeterminerYesOrYesNo">
+        <whenValue element="qp" attr="determiner" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="determiner" value="yesNo"/>
+    </showWhen>
 <showWhen id="swQPDeterminerNoOrYesSomeAndNotPosOnly">
 <openParen/>
 <whenValue element="qp" attr="determiner" value="no"/>
@@ -202,208 +202,208 @@ All of the above have been covered as individual items in previous sections.  Th
 <closeParen/>
 <and/>
 <openParen/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
+        <whenValue element="qp" attr="npDegree" value="yesPos"/>
 <or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+        <whenValue element="qp" attr="npDegree" value="yesNeg"/>
 <or/>
-		<whenValue element="qp" attr="npDegree" value="yes"/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
 <or/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
+        <whenValue element="qp" attr="npDegree" value="no"/>
 <closeParen/>
 </showWhen>
-	<showWhen id="swNotPosOnly">
-	   <whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
+    <showWhen id="swNotPosOnly">
+       <whenValue element="qp" attr="determiner" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="determiner" value="yesNo"/>
 <or/>
-	   <whenValue element="qp" attr="determiner" value="yesSome"/>
+       <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
 <or/>
-	   <whenValue element="qp" attr="determiner" value="no"/>
+       <whenValue element="qp" attr="determiner" value="no"/>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
-	</showWhen>
-	<showWhen id="swPosOnly">
-		<whenValue element="qp" attr="determiner" value="no"/>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    </showWhen>
+    <showWhen id="swPosOnly">
+        <whenValue element="qp" attr="determiner" value="no"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+        <or/>
+        <whenValue element="qp" attr="determiner" value="no"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+        <or/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+        <or/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
-	</showWhen>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    </showWhen>
 <showWhen id="swQPNPDegreePosOnly">
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
 <or/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
 </showWhen>
 <showWhen id="swQPNPDegreeNotPosOnly">
-	<whenValue element="qp" attr="npDegree" value="yes"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yes"></whenValue>
 <or/>
-	<whenValue element="qp" attr="npDegree" value="yesPos"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesPos"></whenValue>
 <or/>
-	<whenValue element="qp" attr="npDegree" value="yesNeg"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesNeg"></whenValue>
 <or/>
-	<whenValue element="qp" attr="npDegree" value="no"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="no"></whenValue>
 </showWhen>
-	<showWhen id="swPronounNegIndefNo">
-		<whenValue element="pron" attr="negIndef" value="no"/>
-	</showWhen>
-	<showWhen id="swPronounNegIndefYes">
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-	</showWhen>
+    <showWhen id="swPronounNegIndefNo">
+        <whenValue element="pron" attr="negIndef" value="no"/>
+    </showWhen>
+    <showWhen id="swPronounNegIndefYes">
+        <whenValue element="pron" attr="negIndef" value="yes"/>
+    </showWhen>
 <showWhen id="swPronounNegIndefNoAndNotPosOnly">
-		<whenValue element="pron" attr="negIndef" value="no"/>
+        <whenValue element="pron" attr="negIndef" value="no"/>
 <and/>
-	   <whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+       <whenValue element="qp" attr="determiner" value="yes"/>
+        <or/>
+        <whenValue element="pron" attr="negIndef" value="no"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
+        <whenValue element="qp" attr="determiner" value="yesNo"/>
 <or/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+        <whenValue element="pron" attr="negIndef" value="no"/>
 <and/>
-	   <whenValue element="qp" attr="determiner" value="yesSome"/>
+       <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
 <or/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+        <whenValue element="pron" attr="negIndef" value="no"/>
 <and/>
-	   <whenValue element="qp" attr="determiner" value="no"/>
+       <whenValue element="qp" attr="determiner" value="no"/>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
 </showWhen>
 <showWhen id="swPronounNegIndefYesAndNotPosOnly">
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+        <whenValue element="pron" attr="negIndef" value="yes"/>
 <and/>
-	   <whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+       <whenValue element="qp" attr="determiner" value="yes"/>
+        <or/>
+        <whenValue element="pron" attr="negIndef" value="yes"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
+        <whenValue element="qp" attr="determiner" value="yesNo"/>
 <or/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+        <whenValue element="pron" attr="negIndef" value="yes"/>
 <and/>
-	   <whenValue element="qp" attr="determiner" value="yesSome"/>
+       <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
 <or/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+        <whenValue element="pron" attr="negIndef" value="yes"/>
 <and/>
-	   <whenValue element="qp" attr="determiner" value="no"/>
+       <whenValue element="qp" attr="determiner" value="no"/>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
 <and/><not/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
 </showWhen>
 <showWhen id="swPronounNegIndefNoAndPosOnly">
-		<whenValue element="pron" attr="negIndef" value="no"/>
+        <whenValue element="pron" attr="negIndef" value="no"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+        <whenValue element="qp" attr="determiner" value="no"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
-		<or/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+        <or/>
+        <whenValue element="pron" attr="negIndef" value="no"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+        <whenValue element="qp" attr="determiner" value="no"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
-		<or/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+        <or/>
+        <whenValue element="pron" attr="negIndef" value="no"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
-		<or/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+        <or/>
+        <whenValue element="pron" attr="negIndef" value="no"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
 </showWhen>
 <showWhen id="swPronounNegIndefNotNoAndPosOnly">
-	   <whenValue element="qp" attr="determiner" value="yes"/>
+       <whenValue element="qp" attr="determiner" value="yes"/>
 <or/>
-	   <whenValue element="qp" attr="determiner" value="yesNo"/>
+       <whenValue element="qp" attr="determiner" value="yesNo"/>
 <or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/><not/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+        <whenValue element="qp" attr="npDegree" value="noPosOnly"/>
 <and/><not/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+        <whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
 <or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+        <whenValue element="qp" attr="determiner" value="no"/>
 <and/><not/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+        <whenValue element="qp" attr="npDegree" value="noPosOnly"/>
 <and/><not/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+        <whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
 <or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+        <whenValue element="qp" attr="npDegree" value="noPosOnly"/>
 <and/>
 	<whenValue element="pron" attr="negIndef" value="yes"/>
 <or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-<and/>
-	<whenValue element="pron" attr="negIndef" value="yes"/>
-<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+        <whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
 <and/>
 	<whenValue element="pron" attr="negIndef" value="yes"/>
 <or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+        <whenValue element="qp" attr="determiner" value="no"/>
 <and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+        <whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+<and/>
+	<whenValue element="pron" attr="negIndef" value="yes"/>
+<or/>
+        <whenValue element="qp" attr="determiner" value="no"/>
+<and/>
+        <whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
 <and/>
 	<whenValue element="pron" attr="negIndef" value="yes"/>
 </showWhen>
 <showWhen id="swPronounNegIndefYesAndPosOnly">
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+        <whenValue element="pron" attr="negIndef" value="yes"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+        <whenValue element="qp" attr="determiner" value="no"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
-		<or/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+        <or/>
+        <whenValue element="pron" attr="negIndef" value="yes"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+        <whenValue element="qp" attr="determiner" value="no"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
-		<or/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+        <or/>
+        <whenValue element="pron" attr="negIndef" value="yes"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
-		<or/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+    <whenValue element="qp" attr="npDegree" value="yesPosOnly"></whenValue>
+        <or/>
+        <whenValue element="pron" attr="negIndef" value="yes"/>
 <and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+        <whenValue element="qp" attr="determiner" value="yesSome"/>
 <and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
+    <whenValue element="qp" attr="npDegree" value="noPosOnly"></whenValue>
 </showWhen>
 </page>

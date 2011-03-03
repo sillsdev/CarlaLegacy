@@ -49,14 +49,14 @@ only go with plural nouns or if it marks plural itself (such as <example>some</e
 only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier determiner which can
 go with either singular or plural nouns (such as <example>no</example> in English).  <br/>
 			<br/>
-Also mark the negative quantifier determiners with the feature <feature>negative</feature>.  These negative words will be discussed further in <section number="14">Negation Constructions</section>.</instruction>
+Also mark the negative quantifier determiners with the feature <feature>negative</feature>.  These negative words will be discussed further in <section number="14">Negative Constructions</section>.</instruction>
 		<instruction id="QPDeterminerYesSomeInstruction" show="swQPDeterminerYesSome">In the lexicon, mark this type of quantifier determiner with the feature <feature>makeDet</feature>.  This will change
 their category to <category>Det</category> for the syntax.  If a particular quantifier determiner can
 only go with plural nouns or if it marks plural itself (such as <example>some</example>), add the feature <feature>plural</feature> to that entry.  If a particular quantifier determiner can
 only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier determiner which can
 go with either singular or plural nouns.</instruction>
 		<instruction id="QPDeterminerYesNoInstruction" show="swQPDeterminerYesNo">In the lexicon, mark this type of quantifier determiner with the features <feature>makeDet negative</feature>.  This will change
-their category to <category>Det</category> for the syntax, as well as marking it as negative.  These negative words will be discussed further in <section number="14">Negation Constructions</section>.  </instruction>
+their category to <category>Det</category> for the syntax, as well as marking it as negative.  These negative words will be discussed further in <section number="14">Negative Constructions</section>.  </instruction>
 		<instruction id="QPDeterminerEitherRestrictedInstruction" show="swQPDeterminerEitherRestricted">Those which can only occur before the noun also need to have the feature <feature>DP-initial</feature>
 and those which can only occur after the noun also need the feature <feature>DP-final</feature>.  Do not enter either feature <feature>DP-initial</feature> or <feature>DP-final</feature> on any quantifier determiners which can occur on either side of the noun.</instruction>
 		<prompt id="QPDeterminerYesNoInstruction2" show="swQPDeterminerYesNo">Make sure that you include the words meaning <example>some</example> and <example>every</example> on either the previous page or the next page as appropriate.</prompt>

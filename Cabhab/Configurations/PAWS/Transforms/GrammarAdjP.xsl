@@ -8,6 +8,7 @@ AdjP = (InitConj) AdjP_1 Conj AdjP_2
 	&lt;AdjP conjoined&gt; = +
 	&lt;AdjP_1 conjoined&gt; = -	|limit recursion
 	&lt;AdjP head type clausal-comp&gt; = -
+	&lt;AdjP head type comma&gt; &lt;= &lt;AdjP_2 head type comma&gt;
 	&lt;AdjP option&gt; = conj
 </xsl:text>
 <xsl:text>
@@ -23,10 +24,17 @@ AdjP = Deg Adj'
 	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg head type modifies_Adj&gt; = +
 	&lt;Deg head type AdjP-initial&gt;   = +
+	&lt;Deg head type comma&gt; = -
 	&lt;AdjP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
 	&lt;AdjP option&gt; = 1d
 </xsl:text>
 </xsl:if>
+
+
+
+
+
+
 
 
 
@@ -47,11 +55,19 @@ AdjP = {Deg / AdvP} Adj'
 	&lt;AdvP head type manner&gt;      = +
 	&lt;Deg head type AdjP-initial&gt;   = +
 	&lt;AdvP head type AdjP-initial&gt;   = +
+	&lt;Deg head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
 	&lt;AdjP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
 	&lt;AdjP option&gt; = 1m
 </xsl:text>
 </xsl:if>
+
+
+
+
+
+
 
 
 
@@ -70,10 +86,18 @@ AdjP = Adj' Deg
 	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg head type modifies_Adj&gt; = +
 	&lt;Deg head type AdjP-final&gt;   = +
+	&lt;Adj' head type comma&gt; = -
+	&lt;AdjPhead type comma&gt; &lt;= &lt;Deg head type comma&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
 	&lt;AdjP option&gt; = 2d
 </xsl:text>
 </xsl:if>
+
+
+
+
+
+
 
 
 
@@ -94,11 +118,20 @@ AdjP = Adj' {Deg / AdvP}
 	&lt;AdvP head type manner&gt;      = +
 	&lt;Deg head type AdjP-final&gt;   = +
 	&lt;AdvP head type AdjP-final&gt;   = +
+	&lt;Adj' head type comma&gt; = -
+	&lt;AdjPhead type comma&gt; &lt;= &lt;Deg head type comma&gt;
+	&lt;AdjPhead type comma&gt; &lt;= &lt;AdvP head type comma&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 	&lt;AdjP option&gt; = 2m
 </xsl:text>
 </xsl:if>
+
+
+
+
+
+
 
 
 
@@ -119,11 +152,20 @@ AdjP = Deg_1 Adj' Deg_2
 	&lt;Deg_2 head type modifies_Adj&gt; = +
 	&lt;Deg_1 head type AdjP-initial&gt; = +
 	&lt;Deg_2 head type AdjP-final&gt;   = +
+	&lt;Deg_1 head type comma&gt; = -
+	&lt;Adj' head type comma&gt; = -
+	&lt;AdjPhead type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;AdjP option&gt; = 3d
 </xsl:text>
 </xsl:if>
+
+
+
+
+
+
 
 
 
@@ -146,6 +188,11 @@ AdjP = {Deg_1 / AdvP_1} Adj' {Deg_2 / AdvP_2}
 	&lt;Deg_2 head type modifies_Adj&gt; = +
 	&lt;Deg_1 head type AdjP-initial&gt; = +
 	&lt;Deg_2 head type AdjP-final&gt;   = +
+	&lt;Deg_1 head type comma&gt; = -
+	&lt;AdvP_1 head type comma&gt; = -
+	&lt;Adj' head type comma&gt; = -
+	&lt;AdjPhead type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	&lt;AdjPhead type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;AdvP_1 head type prefix&gt;
@@ -153,6 +200,12 @@ AdjP = {Deg_1 / AdvP_1} Adj' {Deg_2 / AdvP_2}
 	&lt;AdjP option&gt; = 3m
 </xsl:text>
 </xsl:if>
+
+
+
+
+
+
 
 
 
@@ -173,7 +226,6 @@ Adj' = Adj
 	&lt;Adj' option&gt; = 0
 </xsl:text>
 
-
 	<xsl:text>
 rule {Adj' option 1a - Adj initial, sentential complement}
 Adj' = Adj {CP / IP}
@@ -189,7 +241,10 @@ Adj' = Adj {CP / IP}
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;Adj head type sentential&gt; = +
-	&lt;Adj' head type clausal-comp&gt; = +
+	&lt;Adj' head type clausal-comp&gt; &lt;= +
+	&lt;Adj head type comma&gt; = -
+	&lt;AdjPhead type comma&gt; &lt;= &lt;CP head type comma&gt;
+	&lt;AdjPhead type comma&gt; &lt;= &lt;IP head type comma&gt;
 	&lt;Adj' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
 	&lt;Adj' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;Adj' option&gt; = 1a
@@ -210,7 +265,9 @@ Adj' = {CP / IP} Adj
 	&lt;IP head type root&gt; = -
 	&lt;IP head type question&gt; = -
 	&lt;Adj head type sentential&gt; = +
-	&lt;Adj' head type clausal-comp&gt; = +
+	&lt;Adj' head type clausal-comp&gt; &lt;= +
+	&lt;CP head type comma&gt; = -
+	&lt;IP head type comma&gt; = -
 	&lt;Adj' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
 	&lt;Adj' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;Adj' option&gt; = 1b

@@ -3,7 +3,7 @@
 <!-- DTD for PAWS Starter Kit XML to HTML and code mappers -->
 <!ENTITY nbsp "&#160;">
 <!ENTITY % embedded "#PCDATA | a | br | category | catMap | contents | example | feature |
-						 featureChart | file | help | i | ol | p | section | span |
+                         featureChart | file | help | i | ol | p | section | span |
 			 template | templateName | tool | tree | u | ul">
 <!ELEMENT a (%embedded;)*>
 <!ATTLIST a
@@ -16,7 +16,8 @@
 	id ID #REQUIRED
 	value (Back | Next | Yes | No) #REQUIRED
 	goto CDATA #IMPLIED
->
+	gotoNoGrammar CDATA #IMPLIED
+	>
 <!ELEMENT buttons (button, codeInfo?, ruleInfo?, button, codeInfo?, ruleInfo?)>
 <!ELEMENT category (#PCDATA)>
 <!-- content is the name of the syntactic category -->
@@ -35,7 +36,7 @@
 >
 <!ELEMENT EnglishExample (exItem+)>
 <!ELEMENT example (#PCDATA)>
-<!ELEMENT exItem (#PCDATA | u | sub)*>
+<!ELEMENT exItem (#PCDATA | span | u | sub)*>
 <!ATTLIST exItem
 	label CDATA #IMPLIED
 >
@@ -61,28 +62,10 @@
 	id ID #REQUIRED
 	section CDATA #REQUIRED
 >
-<!ELEMENT fileInfo (prompt)>
-<!ATTLIST fileInfo
-	id ID #REQUIRED
-	contenteditable (true | inherit | false) "false"
-	dataItem CDATA #REQUIRED
->
-<!ELEMENT directoryInfo (prompt)>
-<!ATTLIST directoryInfo
-	id ID #REQUIRED
-	contenteditable (true | inherit | false) "false"
-	dataItem CDATA #REQUIRED
->
-<!ELEMENT font (prompt)>
-<!ATTLIST font
-	id ID #REQUIRED
-	contenteditable (true | inherit | false) "false"
-	dataItem CDATA #REQUIRED
->
 <!--
 transparent = 'yes' means do not show yellow background, let the grey background come through.
 -->
-<!ELEMENT form ((textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br | div | font | fileInfo | directoryInfo)*, br?, buttons)>
+<!ELEMENT form ((textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br | div)*, br?, buttons)>
 <!ATTLIST form
 	transparent (yes | no) "no"
 	section CDATA #REQUIRED
@@ -127,7 +110,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 	id ID #REQUIRED
 	count CDATA #IMPLIED
 >
-<!ELEMENT prompt (#PCDATA | category | i | span | br | section | example | featureChart)*>
+<!ELEMENT prompt (%embedded;)*>
 <!ATTLIST prompt
 	id ID #IMPLIED
 	show IDREF #IMPLIED

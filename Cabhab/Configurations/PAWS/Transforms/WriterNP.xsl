@@ -13,7 +13,16 @@
 <xsl:text>.</xsl:text>
 </p>
 		<p>
-<xsl:text>The basic order of elements allowed in nominal phrases in </xsl:text>Vernacular<xsl:text> is:</xsl:text>
+<xsl:text>The basic order of elements allowed in nominal phrases in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> is:</xsl:text>
 </p>
 		<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artBothCooccur)!='no' and normalize-space(//np/@possCooccur)='yes' or normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@possCooccur)='yes' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@possCooccur)='yes' or normalize-space(//np/@artAndDem)='no'">
 <example num="xNP.8">
@@ -413,32 +422,245 @@
 <xsl:text>Many languages require agreement between at least some of the modifiers and the head noun.  While English only has number agreement, in other languages this agreement may also include animacy, class, or gender.</xsl:text>
 </p>
 			<p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, </xsl:text>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@agreeNumber='no'">
-<xsl:text> there is no number agreement.  Instead, number marking comes from the number or quantifier.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@agreeNumber='yes'">
-<xsl:text> the various nominal modifiers may/must agree in number with the head noun.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, </xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@agreeNumber='no'"> there is no number agreement.  Instead, number marking comes from the number or quantifier.</xsl:when>
+					<xsl:when test="//np/@agreeNumber='yes'"> the various nominal modifiers may/must agree in number with the head noun.</xsl:when>
 				</xsl:choose>
 <xsl:text>  Further, </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@agreeOther='no'">
-<xsl:text>there is no agreement in animacy, class number, nor gender between the modifiers and the head noun.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@agreeOther='yesAnimacy'">
-<xsl:text>the modifiers and the head noun may/must agree in animacy.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@agreeOther='yesClass'">
-<xsl:text>the modifiers and the head noun may/must agree in class number.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@agreeOther='yesGender'">
-<xsl:text>the modifiers and the head noun may/must agree in gender.</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@agreeOther='no'">there is no agreement in animacy, class number, nor gender between the modifiers and the head noun.</xsl:when>
+					<xsl:when test="//np/@agreeOther='yesAnimacy'">the modifiers and the head noun may/must agree in animacy.</xsl:when>
+					<xsl:when test="//np/@agreeOther='yesClass'">the modifiers and the head noun may/must agree in class number.</xsl:when>
+					<xsl:when test="//np/@agreeOther='yesGender'">the modifiers and the head noun may/must agree in gender.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
+			<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
+<p>
+<xsl:text>Examples showing number agreement in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> nominal phrases include:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
+<example num="xNP.NPAgr.10">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//np/agreeNumberExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/agreeNumberExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//np/agreeNumberExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(//np/agreeNumberExample)" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPAgr.10</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xNP.NPAgr.10.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@agreeOther)='yesAnimacy'">
+<p>
+<xsl:text>Examples showing animacy agreement in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> nominal phrases include:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@agreeOther)='yesAnimacy'">
+<example num="xNP.NPAgr.14">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//np/agreeAnimacyExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/agreeAnimacyExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//np/agreeAnimacyExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(//np/agreeAnimacyExample)" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPAgr.14</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xNP.NPAgr.14.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@agreeOther)='yesClass'">
+<p>
+<xsl:text>Examples showing class agreement in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> nominal phrases include:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@agreeOther)='yesClass'">
+<example num="xNP.NPAgr.18">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//np/agreeClassExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/agreeClassExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//np/agreeClassExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(//np/agreeClassExample)" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPAgr.18</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xNP.NPAgr.18.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@agreeOther)='yesGender'">
+<p>
+<xsl:text>Examples showing gender agreement in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> nominal phrases include:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@agreeOther)='yesGender'">
+<example num="xNP.NPAgr.22">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//np/agreeGenderExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/agreeGenderExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//np/agreeGenderExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(//np/agreeGenderExample)" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPAgr.22</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xNP.NPAgr.22.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
 		</section2>
 		<section2 id="sNPCase">
 			<secTitle>Case</secTitle>
@@ -481,20 +703,21 @@ In an ergative-absolutive case system, subjects of transitive verbs are marked w
 Some languages are even more complex in that they normally have a nominative-accusative system but under some conditions the case system switches to ergative-absolutive.  This is called "split ergativity".</xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>Vernacular<xsl:text></xsl:text>
+<xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@case='none'">
-<xsl:text> does not have any case system.   The exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@case='nominative'">
-<xsl:text> has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@case='ergative'">
-<xsl:text> has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@case='split'">
-<xsl:text> has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain conditions.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text></xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@case='none'"> does not have any case system.   The exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence.</xsl:when>
+					<xsl:when test="//np/@case='nominative'"> has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</xsl:when>
+					<xsl:when test="//np/@case='ergative'"> has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</xsl:when>
+					<xsl:when test="//np/@case='split'"> has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain conditions.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//np/@caseDefault)='nominative' or normalize-space(//np/@case)='split' and normalize-space(//np/@caseDefault)='nominative'">
@@ -539,7 +762,16 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:attribute>not</langData>
 <xsl:text>.  These were discussed in section </xsl:text>
 <sectionRef sec="sQPAll" />
-<xsl:text>.  To review the facts for </xsl:text>Vernacular<xsl:text>,  </xsl:text>
+<xsl:text>.  To review the facts for </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>,  </xsl:text>
 <xsl:if test="normalize-space(//qp/@npDegree)='no'">
 					<xsl:text>these are not expressed as separate words which modify the whole nominal phrase, so they will not have a position in the phrase structure.  Instead, they all attach to another word in the nominal phrase.</xsl:text>
 				</xsl:if>
@@ -547,30 +779,14 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//qp/@npDegree)='yes'">
 					<xsl:text>these are expressed as separate words which occur </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//qp/@npDegreePos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='either'">
-<xsl:text>on either side (but not both sides) of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='eitherOrBoth'">
-<xsl:text>on either side or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='beforeOrBoth'">
-<xsl:text>before or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='afterOrBoth'">
-<xsl:text>after or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='both'">
-<xsl:text>on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='before'">before</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='after'">after</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='either'">on either side (but not both sides) of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='eitherOrBoth'">on either side or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='beforeOrBoth'">before or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='afterOrBoth'">after or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='both'">on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> the rest of the nominal phrase.</xsl:text>
 				</xsl:if>
@@ -578,30 +794,14 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//qp/@npDegree)='yesPos'">
 					<xsl:text>the positive special degree elements are expressed as separate words which occur </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//qp/@npDegreePos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='either'">
-<xsl:text>on either side (but not both sides) of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='eitherOrBoth'">
-<xsl:text>on either side or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='beforeOrBoth'">
-<xsl:text>before or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='afterOrBoth'">
-<xsl:text>after or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='both'">
-<xsl:text>on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='before'">before</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='after'">after</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='either'">on either side (but not both sides) of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='eitherOrBoth'">on either side or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='beforeOrBoth'">before or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='afterOrBoth'">after or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='both'">on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> the rest of the nominal phrase.  The negative special degree elements, however, are not expressed as separate words which modify the whole nominal phrase, so they will not have a place in the phrase structure.  Instead, they attach to another word in the nominal phrase.</xsl:text>
 				</xsl:if>
@@ -609,30 +809,14 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//qp/@npDegree)='yesNeg'">
 					<xsl:text>the negative special degree elements are expressed as separate words which occur </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//qp/@npDegreePos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='either'">
-<xsl:text>on either side (but not both sides) of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='eitherOrBoth'">
-<xsl:text>on either side or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='beforeOrBoth'">
-<xsl:text>before or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='afterOrBoth'">
-<xsl:text>after or on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='both'">
-<xsl:text>on both sides of</xsl:text>
-</xsl:when>
-						<xsl:when test="//qp/@npDegreePos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='before'">before</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='after'">after</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='either'">on either side (but not both sides) of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='eitherOrBoth'">on either side or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='beforeOrBoth'">before or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='afterOrBoth'">after or on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='both'">on both sides of</xsl:when>
+						<xsl:when test="//qp/@npDegreePos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> the rest of the nominal phrase.  The positive special degree elements, however, are not expressed as separate words which modify the whole nominal phrase, so they will not have a place in the phrase structure.  Instead, they attach to another word in the nominal phrase.</xsl:text>
 				</xsl:if>
@@ -648,7 +832,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//qp/example)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/example))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -674,7 +858,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -692,7 +877,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//qp/negExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/negExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -718,7 +903,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -781,34 +967,29 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text>In English, articles and demonstratives do not co-occur in the same nominal phrase, and both occur before the noun.  Some languages allow both to co-occur in the same phrase, and they may occur in different positions with respect to the noun.  Therefore, they need distinct syntactic categories.  Some languages only have one set, either articles or demonstratives.  A few languages may not have either type expressed as separate words.</xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>Vernacular<xsl:text></xsl:text>
+<xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@artAndDem='no'">
-<xsl:text> does not have either articles or demonstratives that are realized as separate words.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@artAndDem='article'">
-<xsl:text> has only articles that are realized as separate words, no demonstratives.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@artAndDem='demonstrative'">
-<xsl:text> has only demonstratives that are realized as separate words, no articles.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@artAndDem='both'">
-<xsl:text> has both articles and demonstratives that are realized as separate words.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text></xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@artAndDem='no'"> does not have either articles or demonstratives that are realized as separate words.</xsl:when>
+					<xsl:when test="//np/@artAndDem='article'"> has only articles that are realized as separate words, no demonstratives.</xsl:when>
+					<xsl:when test="//np/@artAndDem='demonstrative'"> has only demonstratives that are realized as separate words, no articles.</xsl:when>
+					<xsl:when test="//np/@artAndDem='both'"> has both articles and demonstratives that are realized as separate words.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@artAndDem)!='no'">
 					<xsl:text> The </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@artAndDem='article'">
-<xsl:text>articles</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@artAndDem='demonstrative'">
-<xsl:text>demonstratives</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@artAndDem='both'">
-<xsl:text>articles and demonstratives</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@artAndDem='article'">articles</xsl:when>
+						<xsl:when test="//np/@artAndDem='demonstrative'">demonstratives</xsl:when>
+						<xsl:when test="//np/@artAndDem='both'">articles and demonstratives</xsl:when>
 					</xsl:choose>
 					<xsl:text> are </xsl:text>
 					<xsl:if test="normalize-space(//np/@artAndDem)!='no' and normalize-space(//np/@artCase)='no'">
@@ -822,18 +1003,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <p>
 <xsl:text>The article occurs </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@artPos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@artPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@artPos='either'">
-<xsl:text>on either side of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@artPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@artPos='before'">before</xsl:when>
+					<xsl:when test="//np/@artPos='after'">after</xsl:when>
+					<xsl:when test="//np/@artPos='either'">on either side of</xsl:when>
+					<xsl:when test="//np/@artPos='unknown'">_______</xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
 <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)='either' and normalize-space(//np/@artEither)='unrestricted'">
@@ -845,32 +1018,18 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</xsl:if>
 <xsl:text>  The presence of an article is </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@artRequired='no'">
-<xsl:text>always optional.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@artRequired='mass'">
-<xsl:text>optional with plural or mass nouns, but is required with singular nouns.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@artRequired='yes'">
-<xsl:text>always required.</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@artRequired='no'">always optional.</xsl:when>
+					<xsl:when test="//np/@artRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
+					<xsl:when test="//np/@artRequired='yes'">always required.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)='either' and normalize-space(//np/@artRequired)='mass'">
 					<xsl:text>In the singular forms, an article is required </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@artBothRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@artBothRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@artBothRequiredPos='both'">
-<xsl:text>to appear both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@artBothRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@artBothRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@artBothRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@artBothRequiredPos='both'">to appear both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@artBothRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -878,18 +1037,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)='either' and normalize-space(//np/@artRequired)='yes'">
 					<xsl:text>An article is required to appear </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@artBothRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@artBothRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@artBothRequiredPos='both'">
-<xsl:text>both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@artBothRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@artBothRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@artBothRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@artBothRequiredPos='both'">both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@artBothRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -900,18 +1051,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <p>
 <xsl:text>The demonstrative occurs </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@demPos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demPos='either'">
-<xsl:text>on either side of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@demPos='before'">before</xsl:when>
+					<xsl:when test="//np/@demPos='after'">after</xsl:when>
+					<xsl:when test="//np/@demPos='either'">on either side of</xsl:when>
+					<xsl:when test="//np/@demPos='unknown'">_______</xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
 <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)='either' and normalize-space(//np/@demEither)='unrestricted'">
@@ -923,32 +1066,18 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</xsl:if>
 <xsl:text>  The presence of a demonstrative is </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@demRequired='no'">
-<xsl:text>always optional.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demRequired='mass'">
-<xsl:text>optional with plural or mass nouns, but is required with singular nouns.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demRequired='yes'">
-<xsl:text>always required.</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@demRequired='no'">always optional.</xsl:when>
+					<xsl:when test="//np/@demRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
+					<xsl:when test="//np/@demRequired='yes'">always required.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)='either' and normalize-space(//np/@demRequired)='mass'">
 					<xsl:text>In the singular forms, a demonstrative is required </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@demBothRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demBothRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demBothRequiredPos='both'">
-<xsl:text>to appear both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demBothRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@demBothRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@demBothRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@demBothRequiredPos='both'">to appear both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@demBothRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -956,18 +1085,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)='either' and normalize-space(//np/@demRequired)='yes'">
 					<xsl:text>A demonstrative is required to appear </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@demBothRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demBothRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demBothRequiredPos='both'">
-<xsl:text>both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demBothRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@demBothRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@demBothRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@demBothRequiredPos='both'">both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@demBothRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -978,18 +1099,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <p>
 <xsl:text>The articles and demonstratives both appear in the same position, so they do not co-occur in the same nominal phrase.  Articles or demonstratives appear </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@demOrArtPos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demOrArtPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demOrArtPos='either'">
-<xsl:text>on either side of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demOrArtPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@demOrArtPos='before'">before</xsl:when>
+					<xsl:when test="//np/@demOrArtPos='after'">after</xsl:when>
+					<xsl:when test="//np/@demOrArtPos='either'">on either side of</xsl:when>
+					<xsl:when test="//np/@demOrArtPos='unknown'">_______</xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
 <xsl:if test="normalize-space(//np/@artBothCooccur)='no' and normalize-space(//np/@demOrArtPos)='either' and normalize-space(//np/@demOrArtEither)='unrestricted'">
@@ -1001,32 +1114,18 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</xsl:if>
 <xsl:text>  The presence of an article or demonstrative is </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@demOrArtRequired='no'">
-<xsl:text>always optional.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demOrArtRequired='mass'">
-<xsl:text>optional with plural or mass nouns, but is required with singular nouns.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demOrArtRequired='yes'">
-<xsl:text>always required.</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@demOrArtRequired='no'">always optional.</xsl:when>
+					<xsl:when test="//np/@demOrArtRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
+					<xsl:when test="//np/@demOrArtRequired='yes'">always required.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@artBothCooccur)='no' and normalize-space(//np/@demOrArtPos)='either' and normalize-space(//np/@demOrArtRequired)='mass'">
 					<xsl:text>In the singular forms, an article or a demonstrative is required </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@demOrArtBothRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demOrArtBothRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demOrArtBothRequiredPos='both'">
-<xsl:text>to appear both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demOrArtBothRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@demOrArtBothRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@demOrArtBothRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@demOrArtBothRequiredPos='both'">to appear both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@demOrArtBothRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -1034,18 +1133,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//np/@artBothCooccur)='no' and normalize-space(//np/@demOrArtPos)='either' and normalize-space(//np/@demOrArtRequired)='yes'">
 					<xsl:text>An article or a demonstrative is required to appear </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@demOrArtBothRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demOrArtBothRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demOrArtBothRequiredPos='both'">
-<xsl:text>both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demOrArtBothRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@demOrArtBothRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@demOrArtBothRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@demOrArtBothRequiredPos='both'">both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@demOrArtBothRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -1056,27 +1147,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <p>
 <xsl:text>The articles and demonstratives do not appear in the same position with respect to the noun, </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@artBothCooccur='different'">
-<xsl:text>but both may not </xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@artBothCooccur='yes'">
-<xsl:text>and both may </xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@artBothCooccur='different'">but both may not </xsl:when>
+					<xsl:when test="//np/@artBothCooccur='yes'">and both may </xsl:when>
 				</xsl:choose>
 <xsl:text>co-occur in the same nominal phrase.  The demonstrative occurs </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@demAndArtDemPos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtDemPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtDemPos='either'">
-<xsl:text>on either side of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtDemPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@demAndArtDemPos='before'">before</xsl:when>
+					<xsl:when test="//np/@demAndArtDemPos='after'">after</xsl:when>
+					<xsl:when test="//np/@demAndArtDemPos='either'">on either side of</xsl:when>
+					<xsl:when test="//np/@demAndArtDemPos='unknown'">_______</xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
 <xsl:if test="normalize-space(//np/@artBothCooccur)!='no' and normalize-space(//np/@demAndArtDemPos)='either' and normalize-space(//np/@demAndArtDemEither)='unrestricted'">
@@ -1088,32 +1167,18 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</xsl:if>
 <xsl:text>  The presence of a demonstrative is </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@demAndArtDemRequired='no'">
-<xsl:text>always optional.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtDemRequired='mass'">
-<xsl:text>optional with plural or mass nouns, but is required with singular nouns.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtDemRequired='yes'">
-<xsl:text>always required.</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@demAndArtDemRequired='no'">always optional.</xsl:when>
+					<xsl:when test="//np/@demAndArtDemRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
+					<xsl:when test="//np/@demAndArtDemRequired='yes'">always required.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@artBothCooccur)!='no' and normalize-space(//np/@demAndArtDemPos)='either' and normalize-space(//np/@demAndArtDemRequired)='mass'">
 					<xsl:text>In the singular forms, a demonstrative is required </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@demAndArtDemRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtDemRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtDemRequiredPos='both'">
-<xsl:text>to appear both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtDemRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@demAndArtDemRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtDemRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtDemRequiredPos='both'">to appear both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtDemRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -1121,35 +1186,19 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//np/@artBothCooccur)!='no' and normalize-space(//np/@demAndArtDemPos)='either' and normalize-space(//np/@demAndArtDemRequired)='yes'">
 					<xsl:text>A demonstrative is required to appear </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@demAndArtDemBothRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtDemBothRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtDemBothRequiredPos='both'">
-<xsl:text>both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtDemBothRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@demAndArtDemBothRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtDemBothRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtDemBothRequiredPos='both'">both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtDemBothRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text>  The article occurs </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@demAndArtArtPos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtArtPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtArtPos='either'">
-<xsl:text>on either side of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtArtPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@demAndArtArtPos='before'">before</xsl:when>
+					<xsl:when test="//np/@demAndArtArtPos='after'">after</xsl:when>
+					<xsl:when test="//np/@demAndArtArtPos='either'">on either side of</xsl:when>
+					<xsl:when test="//np/@demAndArtArtPos='unknown'">_______</xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
 <xsl:if test="normalize-space(//np/@artBothCooccur)!='no' and normalize-space(//np/@demAndArtArtPos)='either' and normalize-space(//np/@demAndArtArtEither)='unrestricted'">
@@ -1161,32 +1210,18 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</xsl:if>
 <xsl:text>  The presence of an article is </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@demAndArtArtRequired='no'">
-<xsl:text>always optional.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtArtRequired='mass'">
-<xsl:text>optional with plural or mass nouns, but is required with singular nouns.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@demAndArtArtRequired='yes'">
-<xsl:text>always required.</xsl:text>
-</xsl:when>
+					<xsl:when test="//np/@demAndArtArtRequired='no'">always optional.</xsl:when>
+					<xsl:when test="//np/@demAndArtArtRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
+					<xsl:when test="//np/@demAndArtArtRequired='yes'">always required.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@artBothCooccur)!='no' and normalize-space(//np/@demAndArtArtPos)='either' and normalize-space(//np/@demAndArtArtRequired)='mass'">
 					<xsl:text>In the singular forms, an article is required </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@demAndArtArtRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtArtRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtArtRequiredPos='both'">
-<xsl:text>to appear both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtArtRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@demAndArtArtRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtArtRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtArtRequiredPos='both'">to appear both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtArtRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -1194,35 +1229,180 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//np/@artBothCooccur)!='no' and normalize-space(//np/@demAndArtArtPos)='either' and normalize-space(//np/@demAndArtArtRequired)='yes'">
 					<xsl:text>An article is required to appear </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@demAndArtArtBothRequiredPos='before'">
-<xsl:text>before the noun and one may also optionally appear after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtArtBothRequiredPos='after'">
-<xsl:text>after the noun and one may also optionally appear before the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtArtBothRequiredPos='both'">
-<xsl:text>both before and after the noun.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@demAndArtArtBothRequiredPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@demAndArtArtBothRequiredPos='before'">before the noun and one may also optionally appear after the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtArtBothRequiredPos='after'">after the noun and one may also optionally appear before the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtArtBothRequiredPos='both'">both before and after the noun.</xsl:when>
+						<xsl:when test="//np/@demAndArtArtBothRequiredPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
+			<xsl:if test="normalize-space(//np/@artAndDem)='article' or normalize-space(//np/@artAndDem)='both'">
+<p>
+<xsl:text>Examples of articles in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@artAndDem)='article' or normalize-space(//np/@artAndDem)='both'">
+<example num="xNP.NPArtDem.20">
+<table border="1">
+					<tr>
+						<th>Articles</th>
+						<th>Gloss</th>
+					</tr>
+					<xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//np/articleExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+				</table>
+</example>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' or normalize-space(//np/@artAndDem)='both'">
+<p>
+<xsl:text>Examples of demonstratives in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' or normalize-space(//np/@artAndDem)='both'">
+<example num="xNP.NPArtDem.24">
+<table border="1">
+					<tr>
+						<th>Demonstratives</th>
+						<th>Gloss</th>
+					</tr>
+					<xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//np/demonstrativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+				</table>
+</example>
+</xsl:if>
 			<xsl:if test="normalize-space(//np/@artAndDem)!='no'">
 <p>
-<xsl:text>Examples of nominal phrases including articles and/or demonstratives as allowed in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
+<xsl:text>Examples of nominal phrases including articles and/or demonstratives as allowed in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@artAndDem)!='no'">
-<example num="xNP.NPArtDem.20">
+<example num="xNP.NPArtDem.28">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/example)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/example))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1232,7 +1412,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(//np/example)" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xNP.NPArtDem.20</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPArtDem.28</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1241,14 +1421,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xNP.NPArtDem.20.1</xsl:text>
+<xsl:text>xNP.NPArtDem.28.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -1260,9 +1441,18 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<section2 id="sNPPoss">
 			<secTitle>Possessors</secTitle>
 			<p>
-<xsl:text>Possession can normally be expressed by a possessive pronoun (to be addressed in section </xsl:text>
-<sectionRef sec="sPron" />
-<xsl:text>) or by a full nominal phrase.  Many languages also add some kind of marking, such as the </xsl:text>
+<xsl:text>Possession can normally be expressed by a possessive pronoun (as seen in section </xsl:text>
+<sectionRef sec="sPronPoss" />
+<xsl:text>), by a simple noun, or by a full nominal phrase.
+					However, Spanish only allows possessive pronouns in the possessor position before the noun, with all noun and full nominal phrase possessors expressed in a prepositional phrase with </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>de</langData>
+<xsl:text> after the noun.</xsl:text>
+</p>
+			<p>
+<xsl:text>Within the languages which express possessors by nouns or full nominal phrases as well as by possessive pronouns, many also add some kind of marking, such as the </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1287,21 +1477,37 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>the girl in green's wonderful speech</langData>
-<xsl:text>.   Possessors can also be embedded in one another, as in </xsl:text>
+<xsl:text>.  These examples show that possessors can include </xsl:text>
+<xsl:choose>
+					<xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
+					<xsl:when test="//pp/@pPos='after'">postpositional</xsl:when>
+					<xsl:when test="//pp/@pPos='both'">prepositional and/or postpositional</xsl:when>
+					<xsl:when test="//pp/@pPos='unknown'">prepositional and/or postpositional</xsl:when>
+				</xsl:choose>
+<xsl:text> phrases and relative clauses.  Possessors can also be embedded in one another, as in </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>the boy's sister's dog</langData>
-<xsl:text>.</xsl:text>
+<xsl:text>.  This is allowed in Spanish within the prepositional phrase after the noun.</xsl:text>
 </p>
 			<p>
-<xsl:text>Examples of possessed nominal phrases with simple and embedded possessors in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
+<xsl:text>Examples of possessed nominal phrases with simple and embedded possessors in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
 </p>
-			<example num="xNP.NPPoss.8">
+			<example num="xNP.NPPoss.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/embeddedExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/embeddedExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/embeddedExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1311,7 +1517,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(//np/embeddedExample)" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xNP.NPPoss.8</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPPoss.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1320,14 +1526,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xNP.NPPoss.8.1</xsl:text>
+<xsl:text>xNP.NPPoss.10.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -1337,11 +1544,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<p>
 <xsl:text>Examples with pre/post-positional phrases within the possessor include:</xsl:text>
 </p>
-			<example num="xNP.NPPoss.12">
+			<example num="xNP.NPPoss.14">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/ppExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/ppExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/ppExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1351,7 +1558,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(//np/ppExample)" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xNP.NPPoss.12</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPPoss.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1360,14 +1567,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xNP.NPPoss.12.1</xsl:text>
+<xsl:text>xNP.NPPoss.14.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -1377,11 +1585,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<p>
 <xsl:text>Examples with relative clauses within the possessor here, included in simple full sentences are:</xsl:text>
 </p>
-			<example num="xNP.NPPoss.16">
+			<example num="xNP.NPPoss.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/relClExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/relClExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/relClExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1391,7 +1599,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(//np/relClExample)" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xNP.NPPoss.16</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPPoss.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1400,14 +1608,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xNP.NPPoss.16.1</xsl:text>
+<xsl:text>xNP.NPPoss.18.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -1415,17 +1624,20 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>As seen in the examples above, </xsl:text>Vernacular<xsl:text></xsl:text>
+<xsl:text>As seen in the examples above, </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@possMarked='no'">
-<xsl:text> does not have any special marking to distinguish possessors from any other nominal phrase.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@possMarked='yesAffix'">
-<xsl:text> marks the head noun within the possessor with an affix to distinguish possessors from any other nominal phrase.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@possMarked='yesClitic'">
-<xsl:text> marks the whole possessive phrase with a phrasal clitic to distinguish possessors from any other nominal phrase.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text></xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@possMarked='no'"> does not have any special marking to distinguish possessors from any other nominal phrase.</xsl:when>
+					<xsl:when test="//np/@possMarked='yesAffix'"> marks the head noun within the possessor with an affix to distinguish possessors from any other nominal phrase.</xsl:when>
+					<xsl:when test="//np/@possMarked='yesClitic'"> marks the whole possessive phrase with a phrasal clitic to distinguish possessors from any other nominal phrase.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@possCliticWord)='no' and normalize-space(//np/@possMarked)='yesClitic' and normalize-space(//np/@possCliticAffix)='suffix'">
@@ -1439,47 +1651,36 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//np/@possCliticWord)='yes' and normalize-space(//np/@possMarked)='yesClitic'">
 					<xsl:text> This phrasal clitic is written as a separate word which occurs </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@possCliticPossPos='before'">
-<xsl:text>before</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@possCliticPossPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@possCliticPossPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@possCliticPossPos='before'">before</xsl:when>
+						<xsl:when test="//np/@possCliticPossPos='after'">after</xsl:when>
+						<xsl:when test="//np/@possCliticPossPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> the possessor.  The possessive clitic is </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//np/@possCliticRequired='no'">
-<xsl:text>optional in some cases.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@possCliticRequired='no'">
-<xsl:text>always required.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@possCliticRequired='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+						<xsl:when test="//np/@possCliticRequired='no'">optional in some cases.</xsl:when>
+						<xsl:when test="//np/@possCliticRequired='no'">always required.</xsl:when>
+						<xsl:when test="//np/@possCliticRequired='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
 			<p>
-<xsl:text>The possessor occurs </xsl:text>
+<xsl:text>The possessor (especially the possessive pronoun form, if  </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@possNounPos='before'">
-<xsl:text>before</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@possNounPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@possNounPos='either'">
-<xsl:text>on either side of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@possNounPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> is like Spanish) occurs </xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@possNounPos='before'">before</xsl:when>
+					<xsl:when test="//np/@possNounPos='after'">after</xsl:when>
+					<xsl:when test="//np/@possNounPos='either'">on either side of</xsl:when>
+					<xsl:when test="//np/@possNounPos='unknown'">_______</xsl:when>
 				</xsl:choose>
 <xsl:text> the noun being possessed.</xsl:text>
 </p>
@@ -1500,78 +1701,122 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text> to express the same thought.  Some other languages allow both possessors and articles or demonstratives to occur in the same phrase, so the first example above would be grammatical.</xsl:text>
 </p>
 				<p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, nominal possessors </xsl:text>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@possCooccur='yes'">
-<xsl:text>may</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-						<xsl:when test="//np/@possCooccur='no'">
-<xsl:text>may not</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, nominal possessors </xsl:text>
+<xsl:choose>
+						<xsl:when test="//np/@possCooccur='yes'">may</xsl:when>
+						<xsl:when test="//np/@possCooccur='no'">may not</xsl:when>
 					</xsl:choose>
 <xsl:text> occur in the same phrase as articles or demonstratives.</xsl:text>
 </p>
 			</section3>
 </xsl:if>
-			<xsl:if test="normalize-space(//np/@case)!='none'">
-<section3 id="sNPPossCase">
+			<section3 id="sNPPossCase">
 				<secTitle>Possessor Case</secTitle>
+				<xsl:if test="normalize-space(//np/@case)='none'">
+<p>
+<xsl:text>As discussed in section </xsl:text>
+<sectionRef sec="sNPCase" />
+<xsl:text>, </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> does not have any case system.  Therefore, there is no separate case marking on nouns nor a distinct set of pronouns used for possessors.</xsl:text>
+</p>
+</xsl:if>
+
 				<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text>With the normal nominative-accusative case system followed by </xsl:text>Vernacular<xsl:text>, possessors are marked with the genitive case.</xsl:text>
+<xsl:text>With the normal nominative-accusative case system followed by </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, possessors are marked with the genitive case.</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
-<xsl:text>Possessors in </xsl:text>Vernacular<xsl:text> are marked with the genitive case, following the normal nominative-accusative part of the split case system.  In the parts which display split ergativity, possessors are marked with the </xsl:text>
+<xsl:text>Possessors in </xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@possCaseErg='ergative'">
-<xsl:text>ergative case, the same marking as the subjects of transitive verbs.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-						<xsl:when test="//np/@possCaseErg='absolutive'">
-<xsl:text>absolutive case, the same marking as the subjects of intransitive verbs and the objects of transitive verbs.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@possCaseErg='genitive'">
-<xsl:text>genitive case also.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> are marked with the genitive case, following the normal nominative-accusative part of the split case system.  In the parts which display split ergativity, possessors are marked with the </xsl:text>
+<xsl:choose>
+						<xsl:when test="//np/@possCaseErg='ergative'">ergative case, the same marking as the subjects of transitive verbs.</xsl:when>
+						<xsl:when test="//np/@possCaseErg='absolutive'">absolutive case, the same marking as the subjects of intransitive verbs and the objects of transitive verbs.</xsl:when>
+						<xsl:when test="//np/@possCaseErg='genitive'">genitive case also.</xsl:when>
 					</xsl:choose>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//np/@case)='ergative'">
 <p>
-<xsl:text>Within the ergative-absolutive case system followed by </xsl:text>Vernacular<xsl:text>, possessors are marked with the </xsl:text>
+<xsl:text>Within the ergative-absolutive case system followed by </xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@possCaseErg='ergative'">
-<xsl:text>ergative case, the same marking as the subjects of transitive verbs.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-						<xsl:when test="//np/@possCaseErg='absolutive'">
-<xsl:text>absolutive case, the same marking as the subjects of intransitive verbs and the objects of transitive verbs.</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@possCaseErg='genitive'">
-<xsl:text>genitive case, a distinct marking for possessors.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, possessors are marked with the </xsl:text>
+<xsl:choose>
+						<xsl:when test="//np/@possCaseErg='ergative'">ergative case, the same marking as the subjects of transitive verbs.</xsl:when>
+						<xsl:when test="//np/@possCaseErg='absolutive'">absolutive case, the same marking as the subjects of intransitive verbs and the objects of transitive verbs.</xsl:when>
+						<xsl:when test="//np/@possCaseErg='genitive'">genitive case, a distinct marking for possessors.</xsl:when>
 					</xsl:choose>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-				<p>
+				<xsl:if test="normalize-space(//np/@case)!='none'">
+<p>
 <xsl:text>In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system.</xsl:text>
 </p>
-				<p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, </xsl:text>
+</xsl:if>
+				<xsl:if test="normalize-space(//np/@case)!='none'">
+<p>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@possNounCaseChange='no'">
-<xsl:text>the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-						<xsl:when test="//np/@possNounCaseChange='yes'">
-<xsl:text>the case of the head noun matches the case of the possessor, when a possessor is present.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, </xsl:text>
+<xsl:choose>
+						<xsl:when test="//np/@possNounCaseChange='no'">the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor.</xsl:when>
+						<xsl:when test="//np/@possNounCaseChange='yes'">the case of the head noun matches the case of the possessor, when a possessor is present.</xsl:when>
 					</xsl:choose>
 <xsl:text></xsl:text>
 </p>
-			</section3>
 </xsl:if>
+			</section3>
 			<section3 id="sNPPossAgreement">
 				<secTitle>Possessor Agreement</secTitle>
 				<p>
@@ -1586,14 +1831,19 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					</li>
 				</ul>
 				<p>
-<xsl:text></xsl:text>Vernacular<xsl:text></xsl:text>
+<xsl:text></xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@possAlienable='no'">
-<xsl:text> does not distinguish</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-						<xsl:when test="//np/@possAlienable='yes'">
-<xsl:text> does make a distinction</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text></xsl:text>
+<xsl:choose>
+						<xsl:when test="//np/@possAlienable='no'"> does not distinguish</xsl:when>
+						<xsl:when test="//np/@possAlienable='yes'"> does make a distinction</xsl:when>
 					</xsl:choose>
 <xsl:text> between alienably and inalienably possessed nouns.  </xsl:text>
 <xsl:if test="normalize-space(//np/@possAlienable)='yes'">
@@ -1603,23 +1853,42 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </p>
 				<xsl:if test="normalize-space(//np/@possAlienable)='yes'">
 <example num="xNP.NPPoss.NPPossAgreement.10">
-<table>
+<table border="1">
 						<tr>
-							<td>
-<table>
-<xsl:variable name="sExampleValue">
+							<th>Possessive affix</th>
+							<th>Gloss or Restrictions</th>
+						</tr>
+						<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//np/possAlienableAffixExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length($sExampleValue)" />
+<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue" />
+<xsl:value-of select="$sExampleValue0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length($sExampleValue)" />
+<xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
 </xsl:call-template>
 </xsl:when>
 <xsl:otherwise>
@@ -1628,24 +1897,32 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
+<td>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-</table>
-</td>
-						</tr>
 					</table>
 </example>
 </xsl:if>
 				<p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, nouns </xsl:text>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@possAgr='no'">
-<xsl:text>are not</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-						<xsl:when test="//np/@possAgr='yes'">
-<xsl:text>are</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, nouns </xsl:text>
+<xsl:choose>
+						<xsl:when test="//np/@possAgr='no'">are not</xsl:when>
+						<xsl:when test="//np/@possAgr='yes'">are</xsl:when>
 					</xsl:choose>
 <xsl:text> marked with an affix which either agrees with the possessor or expresses the possessor by itself.  </xsl:text>
 <xsl:if test="normalize-space(//np/@possAgr)='yes'">
@@ -1848,32 +2125,25 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text>.  All the quantifier phrases occur before the noun in English.</xsl:text>
 </p>
 			<p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, quantifier phrases occur </xsl:text>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@qpPos='before'">
-<xsl:text>before</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@qpPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@qpPos='either'">
-<xsl:text>on either side (but not both sides) of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@qpPos='eitherOrBoth'">
-<xsl:text>on either side or on both sides of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@qpPos='beforeOrBoth'">
-<xsl:text>before or on both sides of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@qpPos='afterOrBoth'">
-<xsl:text>after or on both sides of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@qpPos='both'">
-<xsl:text>on both sides of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@qpPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, quantifier phrases occur </xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@qpPos='before'">before</xsl:when>
+					<xsl:when test="//np/@qpPos='after'">after</xsl:when>
+					<xsl:when test="//np/@qpPos='either'">on either side (but not both sides) of</xsl:when>
+					<xsl:when test="//np/@qpPos='eitherOrBoth'">on either side or on both sides of</xsl:when>
+					<xsl:when test="//np/@qpPos='beforeOrBoth'">before or on both sides of</xsl:when>
+					<xsl:when test="//np/@qpPos='afterOrBoth'">after or on both sides of</xsl:when>
+					<xsl:when test="//np/@qpPos='both'">on both sides of</xsl:when>
+					<xsl:when test="//np/@qpPos='unknown'">_______</xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
 <xsl:if test="normalize-space(//np/@qpEither)='unrestricted' and normalize-space(//np/@qpPos)!='before' and normalize-space(//np/@qpPos)!='after' and normalize-space(//np/@qpPos)!='unknown'">
@@ -1891,13 +2161,22 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					</xsl:if>
 					<xsl:text></xsl:text>
 				</xsl:if>
-<xsl:text></xsl:text>Vernacular<xsl:text> examples of quantified nominal phrases include:</xsl:text>
+<xsl:text></xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> examples of quantified nominal phrases include:</xsl:text>
 </p>
 			<example num="xNP.NPQP.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/qpExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/qpExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/qpExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1923,7 +2202,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -1932,17 +2212,20 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </example>
 			<xsl:if test="normalize-space(//np/@qpAgree)='yes'">
 <p>
-<xsl:text>Like other modifiers within the nominal phrase, quantifier phrases in </xsl:text>Vernacular<xsl:text> show agreement with the head noun in </xsl:text>
+<xsl:text>Like other modifiers within the nominal phrase, quantifier phrases in </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@agreeOther='yesAnimacy'">
-<xsl:text>animacy.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@agreeOther='yesClass'">
-<xsl:text>class number.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@agreeOther='yesGender'">
-<xsl:text>gender.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> show agreement with the head noun in </xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@agreeOther='yesAnimacy'">animacy.</xsl:when>
+					<xsl:when test="//np/@agreeOther='yesClass'">class number.</xsl:when>
+					<xsl:when test="//np/@agreeOther='yesGender'">gender.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -1971,32 +2254,25 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text>.  As the English examples show, adjectives all occur before the noun, and more than one adjective phrase is allowed.  This is handled by a recursive rule.</xsl:text>
 </p>
 			<p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, adjective phrases occur </xsl:text>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@adjpPos='before'">
-<xsl:text>before</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@adjpPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@adjpPos='either'">
-<xsl:text>on either side (but not both sides) of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@adjpPos='eitherOrBoth'">
-<xsl:text>on either side or on both sides of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@adjpPos='beforeOrBoth'">
-<xsl:text>before or on both sides of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@adjpPos='afterOrBoth'">
-<xsl:text>after or on both sides of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@adjpPos='both'">
-<xsl:text>on both sides of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@adjpPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, adjective phrases occur </xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@adjpPos='before'">before</xsl:when>
+					<xsl:when test="//np/@adjpPos='after'">after</xsl:when>
+					<xsl:when test="//np/@adjpPos='either'">on either side (but not both sides) of</xsl:when>
+					<xsl:when test="//np/@adjpPos='eitherOrBoth'">on either side or on both sides of</xsl:when>
+					<xsl:when test="//np/@adjpPos='beforeOrBoth'">before or on both sides of</xsl:when>
+					<xsl:when test="//np/@adjpPos='afterOrBoth'">after or on both sides of</xsl:when>
+					<xsl:when test="//np/@adjpPos='both'">on both sides of</xsl:when>
+					<xsl:when test="//np/@adjpPos='unknown'">_______</xsl:when>
 				</xsl:choose>
 <xsl:text> the noun.  </xsl:text>
 <xsl:if test="normalize-space(//np/@adjpEither)='unrestricted' and normalize-space(//np/@adjpPos)!='before' and normalize-space(//np/@adjpPos)!='after' and normalize-space(//np/@adjpPos)!='unknown'">
@@ -2006,13 +2282,22 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:if test="normalize-space(//np/@adjpEither)='restricted' and normalize-space(//np/@adjpPos)!='before' and normalize-space(//np/@adjpPos)!='after'">
 					<xsl:text>There are restrictions as to which of the adjective phrases can occur on each side of the noun. </xsl:text>
 				</xsl:if>
-<xsl:text></xsl:text>Vernacular<xsl:text> examples of nominal phrases which are modified by qualitative adjectives include:</xsl:text>
+<xsl:text></xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> examples of nominal phrases which are modified by qualitative adjectives include:</xsl:text>
 </p>
 			<example num="xNP.NPAdjP.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/adjpExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/adjpExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/adjpExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2038,7 +2323,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -2047,17 +2333,20 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </example>
 			<xsl:if test="normalize-space(//np/@adjpAgree)='yes'">
 <p>
-<xsl:text>Like other modifiers within the nominal phrase, adjective phrases in </xsl:text>Vernacular<xsl:text> show agreement with the head noun in </xsl:text>
+<xsl:text>Like other modifiers within the nominal phrase, adjective phrases in </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@agreeOther='yesAnimacy'">
-<xsl:text>animacy.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@agreeOther='yesClass'">
-<xsl:text>class number.</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@agreeOther='yesGender'">
-<xsl:text>gender.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> show agreement with the head noun in </xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@agreeOther='yesAnimacy'">animacy.</xsl:when>
+					<xsl:when test="//np/@agreeOther='yesClass'">class number.</xsl:when>
+					<xsl:when test="//np/@agreeOther='yesGender'">gender.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -2075,13 +2364,22 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:attribute>the books [loved by millions].</langData>
 </p>
 			<p>
-<xsl:text>  Examples in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
+<xsl:text>  Examples in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
 </p>
 			<example num="xNP.NPAdjP.16">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/partExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/partExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/partExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2107,7 +2405,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -2118,17 +2417,31 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <section3 id="sNPAdjPCaseChange">
 				<secTitle>Case Change with Adjective Phrase Modifiers</secTitle>
 				<p>
-<xsl:text>Languages like </xsl:text>Vernacular<xsl:text> which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.</xsl:text>
+<xsl:text>Languages like </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.</xsl:text>
 </p>
 				<p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, the case of the head noun </xsl:text>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@adjpCaseChange='no'">
-<xsl:text>only changes when a possessor is present, though in that situation an intervening adjective may/must also carry that case.</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-						<xsl:when test="//np/@adjpCaseChange='yes'">
-<xsl:text>changes to match the normal case of a possessor even if just an adjectival modifier is present.</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, the case of the head noun </xsl:text>
+<xsl:choose>
+						<xsl:when test="//np/@adjpCaseChange='no'">only changes when a possessor is present, though in that situation an intervening adjective may/must also carry that case.</xsl:when>
+						<xsl:when test="//np/@adjpCaseChange='yes'">changes to match the normal case of a possessor even if just an adjectival modifier is present.</xsl:when>
 					</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -2139,17 +2452,20 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:if>
 				<xsl:if test="normalize-space(//np/@adjpCaseChange)='yes'">
 <p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, the case marking </xsl:text>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@adjpCaseAffix='no'">
-<xsl:text>is not</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-						<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">
-<xsl:text>is</xsl:text>
-</xsl:when>
-						<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">
-<xsl:text>is</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, the case marking </xsl:text>
+<xsl:choose>
+						<xsl:when test="//np/@adjpCaseAffix='no'">is not</xsl:when>
+						<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">is</xsl:when>
+						<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">is</xsl:when>
 					</xsl:choose>
 <xsl:text> handled in this distinctive way.  </xsl:text>
 <xsl:if test="normalize-space(//np/@adjpCaseAffix)!='no' and normalize-space(//np/@adjpCaseChange)='yes'">
@@ -2170,12 +2486,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 						</xsl:if>
 						<xsl:text></xsl:text>
 						<xsl:choose>
-							<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">
-<xsl:text>suffix</xsl:text>
-</xsl:when>
-							<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">
-<xsl:text>prefix</xsl:text>
-</xsl:when>
+							<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">suffix</xsl:when>
+							<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefix</xsl:when>
 						</xsl:choose>
 						<xsl:text> is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  If the adjective is marked with this </xsl:text>
 						<xsl:if test="normalize-space(//np/@case)!='none' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@case)='nominative'">
@@ -2194,12 +2506,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 						</xsl:if>
 						<xsl:text></xsl:text>
 						<xsl:choose>
-							<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">
-<xsl:text>suffix,</xsl:text>
-</xsl:when>
-							<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">
-<xsl:text>prefix,</xsl:text>
-</xsl:when>
+							<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">suffix,</xsl:when>
+							<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefix,</xsl:when>
 						</xsl:choose>
 						<xsl:text> then another adjective and/or a possessor must also be present.</xsl:text>
 					</xsl:if>
@@ -2249,19 +2557,33 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </p>
 			<xsl:if test="normalize-space(//np/@comp)='no'">
 <p>
-<xsl:text></xsl:text>Vernacular<xsl:text> does not  have any compound nouns or noun modifiers that are written as separate words.  They are all written as a single word with the head noun.  Examples include:</xsl:text>
+<xsl:text></xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> does not  have any compound nouns or noun modifiers that are written as separate words.  They are all written as a single word with the head noun.  Examples include:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@comp)='yes'">
 <p>
-<xsl:text></xsl:text>Vernacular<xsl:text> has compound nouns or noun modifiers that are written as separate words.  The </xsl:text>
+<xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@compHead='left'">
-<xsl:text>left-most</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@compHead='right'">
-<xsl:text>right-most</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> has compound nouns or noun modifiers that are written as separate words.  The </xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@compHead='left'">left-most</xsl:when>
+					<xsl:when test="//np/@compHead='right'">right-most</xsl:when>
 				</xsl:choose>
 <xsl:text> noun is the head in these constructions.   Examples include:</xsl:text>
 </p>
@@ -2270,7 +2592,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/compExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/compExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/compExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2296,7 +2618,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -2330,28 +2653,38 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text>.    In English, the PP always comes after the noun.</xsl:text>
 </p>
 			<p>
-<xsl:text>In </xsl:text>Vernacular<xsl:text>, the PP occurs </xsl:text>
+<xsl:text>In </xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@ppPos='before'">
-<xsl:text>before</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
-					<xsl:when test="//np/@ppPos='after'">
-<xsl:text>after</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@ppPos='either'">
-<xsl:text>on either side of</xsl:text>
-</xsl:when>
-					<xsl:when test="//np/@ppPos='unknown'">
-<xsl:text>_______</xsl:text>
-</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, the PP occurs </xsl:text>
+<xsl:choose>
+					<xsl:when test="//np/@ppPos='before'">before</xsl:when>
+					<xsl:when test="//np/@ppPos='after'">after</xsl:when>
+					<xsl:when test="//np/@ppPos='either'">on either side of</xsl:when>
+					<xsl:when test="//np/@ppPos='unknown'">_______</xsl:when>
 				</xsl:choose>
-<xsl:text> the head noun.  </xsl:text>Vernacular<xsl:text> examples with PP modifiers or complements include:</xsl:text>
+<xsl:text> the head noun.  </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> examples with PP modifiers or complements include:</xsl:text>
 </p>
 			<example num="xNP.NPPP.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/compPPExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/compPPExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/compPPExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2377,7 +2710,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -2387,7 +2721,16 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<p>
 <xsl:text>See section </xsl:text>
 <sectionRef sec="sPP" />
-<xsl:text> for more details on PPs in </xsl:text>Vernacular<xsl:text>.</xsl:text>
+<xsl:text> for more details on PPs in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>.</xsl:text>
 </p>
 			<p>
 <xsl:text>Another case which may look like a noun and a complement may actually be a participle phrase (also called a gerund).  This whole phrase occupies a normal argument position, such as subject, object, indirect object or the object of a preposition.  Some English examples in full sentences with the participle phrase bracketed include: </xsl:text>
@@ -2413,13 +2756,22 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:text> Therefore, our grammar rules will allow participle phrases to occupy the head position in the nominal phrase.</xsl:text>
 </p>
 			<p>
-<xsl:text>Examples from </xsl:text>Vernacular<xsl:text> of participles or participle phrases that can take the place of a noun in a nominal phrase include:</xsl:text>
+<xsl:text>Examples from </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> of participles or participle phrases that can take the place of a noun in a nominal phrase include:</xsl:text>
 </p>
 			<example num="xNP.NPPP.16">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/partHeadExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/partHeadExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/partHeadExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2445,7 +2797,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -2459,7 +2812,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/partHeadSentExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//np/partHeadSentExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/partHeadSentExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2485,7 +2838,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
@@ -2494,6 +2848,31 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </example>
 		</section2>
 	</section1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

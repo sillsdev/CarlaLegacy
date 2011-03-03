@@ -229,9 +229,12 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1a
 </xsl:text>
@@ -272,9 +275,12 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1aErg
 </xsl:text>
@@ -323,9 +329,12 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1aAbs
 </xsl:text>
@@ -374,9 +383,14 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1b
 </xsl:text>
@@ -417,9 +431,14 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1bErg
 </xsl:text>
@@ -468,9 +487,14 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1bAbs
 </xsl:text>
@@ -519,10 +543,14 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Poss head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2a
 </xsl:text>
@@ -591,10 +619,14 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Poss head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2aErg
 </xsl:text>
@@ -667,10 +699,14 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Poss head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2aAbs
 </xsl:text>
@@ -743,10 +779,16 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2b
 </xsl:text>
@@ -815,10 +857,16 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head type possessed&gt;&lt; = +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2bErg
 </xsl:text>
@@ -891,10 +939,16 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2bAbs
 </xsl:text>
@@ -967,10 +1021,14 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3a
 </xsl:text>
@@ -1039,10 +1097,14 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3aErg
 </xsl:text>
@@ -1115,10 +1177,14 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3aAbs
 </xsl:text>
@@ -1191,10 +1257,16 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3b
 </xsl:text>
@@ -1263,10 +1335,16 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3bErg
 </xsl:text>
@@ -1339,10 +1417,16 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3bAbs
 </xsl:text>
@@ -1415,9 +1499,13 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4a
 </xsl:text>
@@ -1486,9 +1574,13 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4aErg
 </xsl:text>
@@ -1561,9 +1653,13 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; = +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4aAbs
 </xsl:text>
@@ -1636,9 +1732,15 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4b
 </xsl:text>
@@ -1707,9 +1809,15 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4bErg
 </xsl:text>
@@ -1782,9 +1890,15 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4bAbs
 </xsl:text>
@@ -1857,9 +1971,13 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5a
 </xsl:text>
@@ -1928,9 +2046,13 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5aErg
 </xsl:text>
@@ -2003,9 +2125,13 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5aAbs
 </xsl:text>
@@ -2077,10 +2203,16 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head possessor&gt; &lt;= &lt;Pron&gt;
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head type quantifier&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;Poss head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5b
 </xsl:text>
@@ -2149,9 +2281,15 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;Poss head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5bErg
 </xsl:text>
@@ -2224,9 +2362,15 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;Poss head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5bAbs
 </xsl:text>
@@ -2299,10 +2443,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6ap
 </xsl:text>
@@ -2363,10 +2510,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6apErg
 </xsl:text>
@@ -2431,10 +2581,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6apAbs
 </xsl:text>
@@ -2499,10 +2652,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6as
 </xsl:text>
@@ -2563,10 +2719,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6asErg
 </xsl:text>
@@ -2630,11 +2789,14 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head possessor&gt; &lt;= &lt;Pron&gt;
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head type quantifier&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6asAbs
 </xsl:text>
@@ -2699,10 +2861,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bp
 </xsl:text>
@@ -2763,10 +2930,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bpErg
 </xsl:text>
@@ -2831,10 +3003,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bpAbs
 </xsl:text>
@@ -2899,10 +3076,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bs
 </xsl:text>
@@ -2963,10 +3145,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bsErg
 </xsl:text>
@@ -3031,10 +3218,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bsAbs
 </xsl:text>
@@ -3101,16 +3293,17 @@ NP = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;NP head&gt; = &lt;Q head&gt;
 	&lt;NP head&gt; = &lt;Num head&gt;
 	&lt;NP head&gt; = &lt;Deg head&gt;
+	&lt;NP head type no_N&gt; = +
 	&lt;Deg head type quantifier&gt; = +
 	&lt;Q head type quantifier&gt; = +
 	&lt;Num head type quantifier&gt; = +
 	&lt;Dem head type wh &gt; = -		| so "which" not separate
 	&lt;PP head type stranded&gt; = -	| PP must have overt complement
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-|	&lt;PP head type partitive&gt; = +
+	&lt;PP head type partitive&gt; = +
 	&lt;NP head type prefix poss&gt; = -  |can't be possessors
 	&lt;NP head type suffix poss&gt; = -  |can't be possessors
-	&lt;Pron head&gt; == ~[case:genitive]
+	&lt;NP head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;NP option&gt; = 7a
 </xsl:text>
 </xsl:if>
@@ -3131,16 +3324,17 @@ NP = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;NP head&gt; = &lt;Q head&gt;
 	&lt;NP head&gt; = &lt;Num head&gt;
 	&lt;NP head&gt; = &lt;Deg head&gt;
+	&lt;NP head type no_N&gt; = +
 	&lt;Deg head type quantifier&gt; = +
 	&lt;Q head type quantifier&gt; = +
 	&lt;Num head type quantifier&gt; = +
 	&lt;Dem head type wh &gt; = -		| so "which" not separate
 	&lt;PP head type stranded&gt; = -	| PP must have overt complement
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-|	&lt;PP head type partitive&gt; = +
+	&lt;PP head type partitive&gt; = +
 	&lt;NP head type prefix poss&gt; = -  |can't be possessors
 	&lt;NP head type suffix poss&gt; = -  |can't be possessors
-	&lt;Pron head&gt; == ~[case:genitive]
+	&lt;PP head type comma&gt; = -
 	&lt;NP option&gt; = 7b
 </xsl:text>
 </xsl:if>
@@ -3157,6 +3351,7 @@ N'' = QP N'
 	&lt;N'' head&gt; = &lt;N' head&gt;
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP head type DP-initial&gt; = +
+	&lt;QP head type comma&gt; = -
 	&lt;N'' head type prefix&gt; &lt;= &lt;QP head type prefix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;N'' option&gt; = 1
@@ -3178,6 +3373,8 @@ N'' = N' QP
 	&lt;N'' head&gt; = &lt;N' head&gt;
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP head type DP-final&gt; = +
+	&lt;N' head type comma&gt; = -
+	&lt;N'' head type comma&gt; &lt;= &lt;QP head type comma&gt;
 	&lt;N'' head type suffix&gt; &lt;= &lt;QP head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;N'' option&gt; = 2
@@ -3201,6 +3398,9 @@ N'' = QP_1 N' QP_2
 	&lt;QP_2 head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP_1 head type DP-initial&gt; = +
 	&lt;QP_2 head type DP-final&gt;   = +
+	&lt;QP_1 head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;N'' head type comma&gt; &lt;= &lt;QP_2 head type comma&gt;
 	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
 	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_1 head type wh&gt;
@@ -3233,6 +3433,9 @@ N'' = QP_1 N' QP_2
 	&lt;QP_2 head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP_1 head type DP-initial&gt; = +
 	&lt;QP_2 head type DP-final&gt;   = +
+	&lt;QP_1 head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;N'' head type comma&gt; &lt;= &lt;QP_2 head type comma&gt;
 	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
 	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_2 head type wh&gt;
@@ -3266,6 +3469,9 @@ N'' = QP_1 N' QP_2
 	&lt;QP_1 head type DP-initial&gt; = +
 	&lt;QP_2 head type DP-final&gt;   = +
 	&lt;QP_1 head type wh&gt; = &lt;QP_2 head type wh&gt;
+	&lt;QP_1 head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;N'' head type comma&gt; &lt;= &lt;QP_2 head type comma&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_1 head type wh&gt;
 	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
 	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
@@ -3300,6 +3506,7 @@ N'_1 = AdjP N'_2
 	&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;AdjP head type suffix copular&gt; = -
 	&lt;AdjP head type clausal-comp&gt; = -
+	&lt;AdjP head type comma&gt; = -
 	&lt;N'_1 head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt; | N case marking can be overridden by AdjP, if AdjP also marked then another modifier required.
 	&lt;N' option&gt; = 1a
 </xsl:text>
@@ -3320,6 +3527,8 @@ N'_1 = N'_2 AdjP
 	&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;AdjP head type suffix copular&gt; = -
 	&lt;AdjP head type clausal-comp&gt; = -
+	&lt;N'_2 head type comma&gt; = -
+	&lt;N'_1 head type comma&gt; &lt;= &lt;AdjP head type comma&gt;
 	&lt;N'_1 head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt; | N case marking can be overridden by AdjP, if AdjP also marked then another modifier required.
 	&lt;N' option&gt; = 1b
 </xsl:text>
@@ -3334,6 +3543,7 @@ rule {NBar option 1aPart - participle initial, recursive}
 N'_1 = VP N'_2
 	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
 	&lt;VP head type participle&gt; = +
+	&lt;VP head type comma&gt; = -
 	&lt;N' option&gt; = 1aPart
 </xsl:text>
 	<xsl:text>
@@ -3341,6 +3551,8 @@ rule {NBar option 1bPart - participle final, recursive}
 N'_1 = N'_2 VP
 	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
 	&lt;VP head type participle&gt; = +
+	&lt;N'_2 head type comma&gt; = -
+	&lt;N'_1 head type comma&gt; &lt;= &lt;VP head type comma&gt;
 	&lt;N' option&gt; = 1bPart
 </xsl:text>
 	<xsl:if test="normalize-space(//np/@comp)='yes' and normalize-space(//np/@compHead)='left'">
@@ -3350,7 +3562,8 @@ N' = N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
-		&lt;N' option&gt; = 2a
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' option&gt; = 2a
 </xsl:text>
 </xsl:if>
 
@@ -3368,9 +3581,11 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:genitive]
-		&lt;N' option&gt; = 2b
+	&lt;N' option&gt; = 2b
 </xsl:text>
 </xsl:if>
 
@@ -3434,8 +3649,10 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 2bgen
+	&lt;N' option&gt; = 2bgen
 </xsl:text>
 </xsl:if>
 
@@ -3497,6 +3714,8 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 		&lt;N' option&gt; = 2bnoterg
@@ -3531,6 +3750,8 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 2berg
 </xsl:text>
@@ -3562,6 +3783,8 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 		&lt;N' option&gt; = 2bnotabs
@@ -3596,8 +3819,10 @@ N' = PP N_1 (N_2 (N_3))
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 2babs
+	&lt;N' option&gt; = 2babs
 </xsl:text>
 </xsl:if>
 
@@ -3628,6 +3853,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 2c
 </xsl:text>
@@ -3774,6 +4003,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 2cs
 </xsl:text>
@@ -3864,6 +4097,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' option&gt; = 2cgen
 </xsl:text>
 </xsl:if>
@@ -4010,6 +4247,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cgens
 </xsl:text>
@@ -4074,6 +4315,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 2cnoterg
 </xsl:text>
@@ -4132,6 +4377,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 2cnotergs
 </xsl:text>
@@ -4174,7 +4423,11 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
-		&lt;N' option&gt; = 2cerg
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
+	&lt;N' option&gt; = 2cerg
 </xsl:text>
 </xsl:if>
 
@@ -4232,6 +4485,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cergs
 </xsl:text>
@@ -4272,6 +4529,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 2cnotabs
 </xsl:text>
@@ -4330,6 +4591,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 2cnotabss
 </xsl:text>
@@ -4372,6 +4637,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' option&gt; = 2cabs
 </xsl:text>
 </xsl:if>
@@ -4430,6 +4699,10 @@ N' = N_1 (N_2 (N_3)) PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cabss
 </xsl:text>
@@ -4466,7 +4739,9 @@ N' = ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;N' option&gt; = 3a
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' option&gt; = 3a
 </xsl:text>
 </xsl:if>
 
@@ -4485,6 +4760,9 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;PP head&gt; == ~[case:genitive]
 		&lt;N' option&gt; = 3b
 </xsl:text>
@@ -4630,6 +4908,9 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 		&lt;N' option&gt; = 3bp
@@ -4721,7 +5002,10 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;N' option&gt; = 3bgen
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' option&gt; = 3bgen
 </xsl:text>
 </xsl:if>
 
@@ -4823,8 +5107,11 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 3bgenp
+	&lt;N' option&gt; = 3bgenp
 </xsl:text>
 </xsl:if>
 
@@ -4887,8 +5174,11 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;PP head&gt; == ~[case:ergative]
-		&lt;N' option&gt; = 3bnoterg
+	&lt;N' option&gt; = 3bnoterg
 </xsl:text>
 </xsl:if>
 
@@ -4945,8 +5235,11 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;PP head&gt; == ~[case:ergative]
-		&lt;N' option&gt; = 3bnotergp
+	&lt;N' option&gt; = 3bnotergp
 </xsl:text>
 </xsl:if>
 
@@ -4987,7 +5280,10 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;N' option&gt; = 3berg
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' option&gt; = 3berg
 </xsl:text>
 </xsl:if>
 
@@ -5045,8 +5341,11 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 3bergp
+	&lt;N' option&gt; = 3bergp
 </xsl:text>
 </xsl:if>
 
@@ -5085,8 +5384,11 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;PP head&gt; == ~[case:absolutive]
-		&lt;N' option&gt; = 3bnotabs
+	&lt;N' option&gt; = 3bnotabs
 </xsl:text>
 </xsl:if>
 
@@ -5142,9 +5444,12 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
-		&lt;N' option&gt; = 3bnotabsp
+	&lt;N' option&gt; = 3bnotabsp
 </xsl:text>
 </xsl:if>
 
@@ -5185,7 +5490,10 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;N' option&gt; = 3babs
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' option&gt; = 3babs
 </xsl:text>
 </xsl:if>
 
@@ -5243,8 +5551,11 @@ N' = PP ((N_3) N_2) N_1
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 3babsp
+	&lt;N' option&gt; = 3babsp
 </xsl:text>
 </xsl:if>
 
@@ -5282,6 +5593,10 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 3c
@@ -5348,6 +5663,10 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 3cgen
 </xsl:text>
@@ -5395,6 +5714,10 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 3cnoterg
@@ -5429,6 +5752,10 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 3cerg
 </xsl:text>
@@ -5460,6 +5787,10 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 3cnotabs
@@ -5494,6 +5825,10 @@ N' = ((N_3) N_2) N_1 PP
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 3cabs
 </xsl:text>
@@ -5535,9 +5870,10 @@ N' = PP N
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:genitive]
-		&lt;N' option&gt; = 4b
+	&lt;N' option&gt; = 4b
 </xsl:text>
 </xsl:if>
 
@@ -5587,6 +5923,7 @@ N' = PP N
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 4bgen
 </xsl:text>
@@ -5624,6 +5961,7 @@ N' = PP N
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 		&lt;N' option&gt; = 4bnoterg
@@ -5652,8 +5990,9 @@ N' = PP N
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 4berg
+	&lt;N' option&gt; = 4berg
 </xsl:text>
 </xsl:if>
 
@@ -5677,9 +6016,10 @@ N' = PP N
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
-		&lt;N' option&gt; = 4bnotabs
+	&lt;N' option&gt; = 4bnotabs
 </xsl:text>
 </xsl:if>
 
@@ -5705,8 +6045,9 @@ N' = PP N
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 4babs
+	&lt;N' option&gt; = 4babs
 </xsl:text>
 </xsl:if>
 
@@ -5730,6 +6071,8 @@ N' = N PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix poss&gt; &lt;= &lt;PP head type suffix poss&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 4e
@@ -5782,6 +6125,8 @@ N' = N PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4egen
 </xsl:text>
@@ -5819,6 +6164,8 @@ N' = N PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 4enoterg
@@ -5847,6 +6194,8 @@ N' = N PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4eerg
 </xsl:text>
@@ -5872,6 +6221,8 @@ N' = N PP
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
 	&lt;PP head type passive&gt; = -	| by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 4enotabs
@@ -5900,6 +6251,8 @@ N' = N PP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4eabs
 </xsl:text>
@@ -5936,7 +6289,7 @@ N' = {Pron / Dem / Q / Num / Deg} (PP)
 |	&lt;PP head type partitive&gt; = +
 	&lt;N' head type prefix poss&gt; = -  |can't be possessors
 	&lt;N' head type suffix poss&gt; = -  |can't be possessors
-	&lt;Pron head&gt; == ~[case:genitive]
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' option&gt; = 5a
 </xsl:text>
 </xsl:if>
@@ -5964,7 +6317,7 @@ N' = (PP) {Pron / Dem / Q / Num / Deg}
 |	&lt;PP head type partitive&gt; = +
 	&lt;N' head type prefix poss&gt; = -  |can't be possessors
 	&lt;N' head type suffix poss&gt; = -  |can't be possessors
-	&lt;Pron head&gt; == ~[case:genitive]
+	&lt;PP head type comma&gt; = -
 	&lt;N' option&gt; = 5b
 </xsl:text>
 </xsl:if>
@@ -5978,6 +6331,7 @@ rule {NBar option Part - participle (phrase) as NBar}
 N' = VP
 	&lt;N' head&gt; = &lt;VP head&gt;
 	&lt;VP head type participle&gt; = +
+	&lt;N' option&gt; = Part
 </xsl:text>
 </xsl:template>
 </xsl:stylesheet>

@@ -11,7 +11,7 @@
 		<br/>
 		<br/>
 		<introduction>Now consider pre/post-positional phrase (PP) modifiers (or complements), such as in <example>the large, round bottle [of syrup]</example> and <example>the boy's letter [to that girl]</example>.  Also include examples of genitive pre/post-positional phrases that take the place of the possessor, such as <example>those dogs [of his]</example> and <example>the tablecloth [of my mother's]</example>.
-		</introduction>
+        </introduction>
 		<br/>
 		<br/>
 		<prompt>Key your examples of pre/post-positional phrases modifying nouns here (without the brackets):</prompt>
@@ -56,7 +56,7 @@
 			<prompt>Now put the participles or participle phrases you keyed above into sentences:</prompt>
 		<textBox id="NPPartSentExample" dataItem="partHeadSentExample"/>
 		<br/>
-		<instruction>Note that the head of these participle phrases is categorically a verb, so these are derived nominals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as nouns.   The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section></instruction>
+		<instruction id="NPCompInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived nominals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as nouns.   The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section></instruction>
 		<br/>
 		<br/>
 		<buttons>

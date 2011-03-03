@@ -3,21 +3,27 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPPossessors" count="1/2">
 	<title level="2">Nominal Phrases - Possessors</title>
-	<introduction>The next type of modifier to consider is possessors.  Possession can normally be expressed by a possessive pronoun (to be addressed in <section number="7">Pronouns</section>) or by a full nominal phrase.  Many languages also add some kind of marking, such as the <example>'s</example> in English, as an indication of possession.  These markings are either affixes (or clitics) on the head noun or phrase-level clitics which attach to one end of the whole phrase.  The English marking is this second type, because alongside phrases where the <example>'s</example> appears to attach to the head noun, as in <example>the boy's mother</example>, there are phrases which clearly show that the clitic attaches to the end of the whole nominal phrase, such as <example>the boy that I just talked to's mother</example> or <example>the girl in green's wonderful speech</example>.</introduction>
+	<introduction>
+	The next type of modifier to consider is possessors.  Possession can normally be expressed by a possessive pronoun (to be addressed in <section number="7">Pronouns</section>) or by a simple noun or a full nominal phrase.  However, Spanish only allows possessive pronouns in the possessor position before the noun, with all noun and full nominal phrase possessors expressed in a prepositional phrase with <example>de</example> after the noun.<br/>
+		<br/>Within the languages which express possessors by nouns or full nominal phrases as well as by possessive pronouns, many also add some kind of marking, such as the <example>'s</example> in English,
+		as an indication of possession.  These markings are either affixes (or clitics) on the head noun or phrase-level clitics which attach to one end of the whole phrase.  The English marking is this second type,
+		because alongside phrases where the <example>'s</example> appears to attach to the head noun, as in <example>the boy's mother</example>, there are phrases which clearly show that the clitic attaches
+		to the end of the whole nominal phrase, such as <example>the boy that I just talked to's mother</example> or <example>the girl in green's wonderful speech</example>.  These examples show that possessors
+		can include pre/post-positional  phrases and relative clauses.  </introduction>
 	<form section="np">
 		<prompt>Think about how possession is expressed in your language.  We won't be able to handle pre/post-positional phrases until <section number="8">Pre/Post-positional Phrases</section> and relative clauses within nominal phrases until <section number="12">Relative Clauses</section>, but examples such as the English ones above will clarify for you what type of possessive marking you have.<br/>
 			<br/>
-Note also that possessors can be embedded in one another, as in <example>the boy's sister's dog</example>.  Include such an example in your test data.</prompt>
+			Note also that possessors can be embedded in one another, as in <example>the boy's sister's dog</example>.  This is allowed in Spanish within the prepositional phrase after the noun.</prompt>
 		<prompt>
-			Key some examples with simple and embedded possessors here:</prompt>
+            Key some examples with simple and embedded possessors here:</prompt>
 		<textBox id="NPPossEmbeddedExample" dataItem="embeddedExample"/>
 		<br/>
 		<prompt>
-			Key some examples with pre/post-positional phrases within the possessor here:</prompt>
+            Key some examples with pre/post-positional phrases within the possessor here:</prompt>
 		<textBox id="NPPossPPExample" dataItem="ppExample"/>
 		<br/>
 		<prompt>
-			Key some examples with relative clauses within the possessor here, included in simple full sentences:</prompt>
+            Key some examples with relative clauses within the possessor here, included in simple full sentences:</prompt>
 		<textBox id="NPPossRelClExample" dataItem="relClExample"/>
 		<br/>
 		<br/>
@@ -54,7 +60,7 @@ Note also that possessors can be embedded in one another, as in <example>the boy
 		</radioGroup>
 		<radioGroup>
 			<groupName dataItem="possNounPos" default="unknown" position="yesSpec">RNPPossNounPos</groupName>
-			<prompt>Based on your examples above, where does the possessor occur with respect to the noun being possessed?</prompt>
+			<prompt>Based on your examples above, where does the possessor (especially the possessive pronoun form, if  your language is like Spanish) occur with respect to the noun being possessed?</prompt>
 			<radio id="NPPossBefore" checked="yes" dataValue="before">Before the noun</radio>
 			<radio id="NPPossAfter" checked="yes" dataValue="after">After the noun</radio>
 			<radio id="NPPossEitherSide" checked="yes" dataValue="either">On either side of the noun</radio>

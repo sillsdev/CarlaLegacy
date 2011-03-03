@@ -2,297 +2,312 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="RelClMain" count="1/2">
-	<title>Relative Clauses</title>
-	<introduction>Relative clauses normally modify a head noun and have one of four structures:
+    <title>Relative Clauses</title>
+    <introduction id="RelClIntroNotPractical" show="swNotPractical">Relative clauses normally modify a head noun and have one of four structures:
 <ul>
-			<li>like a complement clause (CP) headed by 'that', as in <example>the man that came to the meeting late</example>;</li>
-			<li>like a content question (CP) with 'who' or 'which' fronted, as in <example>the man who came to the meeting late</example>;</li>
-			<li>(or for some languages other than English) like a CP but with a special relative marker occurring in the complementizer position, or possibly with two markers which occur on both sides of the relative clause;</li>
-			<li>(or for some languages other than English) like a regular sentence (IP) with a relative marker attached to the verb.</li>
-		</ul>
+            <li>like a complement clause (CP) headed by 'that', as in <example>the man that came to the meeting late</example>;</li>
+            <li>like a content question (CP) with 'who' or 'which' fronted, as in <example>the man who came to the meeting late</example>;</li>
+            <li>(or for some languages other than English) like a CP but with a special relative marker occurring in the complementizer position, or possibly with two markers which occur on both sides of the relative clause;</li>
+            <li>(or for some languages other than English) like a regular sentence (IP) with a relative marker attached to the verb.</li>
+        </ul>
 Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called "headless" relative clauses.
-	</introduction>
-	<form section="relcl">
-		<radioGroup>
-			<groupName dataItem="exist" default="no">RRelClExist</groupName>
-			<prompt>Does your language have (any type of) relative clauses?</prompt>
-			<radio id="RelClExistYes" dataValue="yes">Yes</radio>
-			<radio id="RelClExistNo" dataValue="no">No, there are no relative clauses at all</radio>
-		</radioGroup>
-		<prompt id="RelClExamplePrompt" show="swRelClExistYes">Key examples of normal relative clauses in your language here:</prompt>
-		<textBox id="RelClExample" show="swRelClExistYes" dataItem="example" cols="50"/>
-		<br/>
-		<br/>
-		<prompt  id="RelClSentenceExamplePrompt" show="swRelClExistYes">Now put each of the above examples into (simple) full sentences and key here:</prompt>
-		<textBox id="RelClSentenceExample" show="swRelClExistYes" dataItem="sentExample" cols="50"/>
-		<br/>
-		<br/>
-		<radioGroup id="RelClClausePosRadioGroup"  show="swRelClExistYes">
-			<groupName dataItem="clausePos" default="unknown" position="yesHeadDiff">RRelClClausePos</groupName>
-			<prompt>Where does the clause part occur with respect to the head noun?</prompt>
-			<radio id="RelClClausePosBefore" dataValue="before">Before the head noun</radio>
-			<radio id="RelClClausePosAfter" checked="yes" dataValue="after">After the head noun</radio>
-			<radio id="RelClClausePosEitherSide" checked="yes" dataValue="either">On either side of the head noun, sometimes before and sometimes after</radio>
-		</radioGroup>
-		<radioGroup id="RelClTypeRadioGroup" show="swRelClExistYes">
-			<groupName dataItem="type" default="none">RRelClType</groupName>
-			<prompt>Does your language have relative clauses which are CPs (any of the first three types above)?</prompt>
-			<radio id="RelClTypeCP" dataValue="CP">Yes</radio>
-			<radioGroup id="RelClTypeCPTable" show="swRelClTypeCP">
-				<groupName dataItem="compCP" default="no">RRelClTypeCPComp</groupName>
-				<prompt>Does your language have relative markers that fill the complementizer position in the CP (either the first or third type above)?</prompt>
-				<radio id="RelClTypeCPCompYes" dataValue="yes">Yes, that is the only type of relative clause allowed</radio>
-				<radio id="RelClTypeCPCompYesBoth" dataValue="yesBoth">Yes, and "wh"-relative clauses are also allowed (like English)</radio>
-				<radio id="RelClTypeCPCompNo" dataValue="no">No, only "wh"-relative clauses are allowed</radio>
-				<radioGroup id="RelClTypeCPWhTable" show="swRelClTypeCPWh">
-					<groupName dataItem="whAndComp" default="no">RRelClTypeCPWh</groupName>
-					<prompt>In the "wh"-relative clauses, can a relative marker also occur in the complementizer position?</prompt>
-					<radio id="RelClTypeCPWhAndCompNo" dataValue="no">No, only the "wh"-word occurs in this type of relative clause, like in English</radio>
-					<radio id="RelClTypeCPWhAndCompYes" dataValue="yes">Yes, the "wh"-word and the relative marker(s) are required to both be present in this type of relative clause</radio>
-					<radio id="RelClTypeCPWhAndCompOptional" dataValue="optional">Yes, a relative marker may optionally co-occur along with the "wh"-word in this type of relative clause</radio>
-				</radioGroup>
-				<radioGroup id="RelClTypeCPCompWordTable" show="swRelClTypeCPCompYesOrBoth">
-					<groupName dataItem="relWord" default="yes">RRelClTypeCPCompWord</groupName>
-					<prompt>Is the relative marker written as a separate word?</prompt>
-					<radio id="RelClTypeCPCompWordNo" dataValue="no">No, it is a clitic which attaches to another word at the edge of the relative clause</radio>
-					<radioGroup id="RelClTypeCPCompCliticPosTable" show="swRelClTypeCPCompWordNo">
-						<groupName dataItem="relCliticPos" default="unknown" position="yesHead">RRelClTypeCPCompCliticPos</groupName>
-						<prompt>Is the clitic a pro-clitic or a post-clitic?</prompt>
-						<radio id="RelClTypeCPCompCliticPosBefore" dataValue="before">A pro-clitic or prefix</radio>
-						<radio id="RelClTypeCPCompCliticPosAfter" dataValue="after">A post-clitic or suffix</radio>
-						<radio id="RelClTypeCPCompCliticPosBoth" dataValue="both">Some of each type</radio>
-					</radioGroup>
-					<radio id="RelClTypeCPCompWordYes" dataValue="yes">Yes, it is a separate word</radio>
-				</radioGroup>
-				<radioGroup id="RelClTypeCPCompSameTable" show="swRelClTypeCPCompYesOrBothWord">
-					<groupName dataItem="relCompSame" default="no">RRelClTypeCPCompSame</groupName>
-					<prompt>Are any of the relative markers the same as the complementizer used for verbal complement clauses?</prompt>
-					<radio id="RelClTypeCPCompSameYes" dataValue="yes">Yes, like 'that' in English</radio>
-					<radio id="RelClTypeCPCompSameNo" dataValue="no">No, they are all distinct</radio>
-				</radioGroup>
-				<radioGroup id="RelClTypeCPCompPosTable" show="swRelClTypeCPCompYesOrBothWord">
-					<groupName dataItem="relCompPos" default="unknown" position="yesHead">RRelClCompPos</groupName>
-					<prompt>Where does the relative marker occur with respect to the sentence part of the relative clause?</prompt>
-					<radio id="RelClTypeCPCompBefore" checked="yes" dataValue="before">Before the sentence</radio>
-					<radio id="RelClTypeCPCompAfter" checked="yes" dataValue="after">After the sentence</radio>
-					<radio id="RelClTypeCPCompEitherSide" checked="yes" dataValue="either">On either side of the sentence, but not both sides at the same time</radio>
-					<radio id="RelClTypeCPCompEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the sentence, or both sides at the same time</radio>
-					<radio id="RelClTypeCPCompBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the sentence, or both sides at the same time</radio>
-					<radio id="RelClTypeCPCompAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the sentence, or both sides at the same time</radio>
-					<radio id="RelClTypeCPCompBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-					<radioGroup id="RelClTypeCPCompEitherSideTable" show="swRelClTypeCPCompEitherorBothWord">
-						<groupName dataItem="relCompEitherRestricted" default="unrestricted">RRelClTypeCPCompEitherSide</groupName>
-						<prompt>Can all the relative markers appear on either side of the sentence?</prompt>
-						<radio id="RelClTypeCPCompEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
-						<radio id="RelClTypeCPCompEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
-					</radioGroup>
-				</radioGroup>
-			</radioGroup>
-			<radio id="RelClTypeIP" dataValue="IP">No, they are of the IP type above, with a relative marker on the verb</radio>
-		</radioGroup>
-		<instruction id="RelClTypeCPCompCliticPrefixInstruction" show="swRelClTypeCPCompCliticPrefix">In the lexicon, add the feature <feature>relative_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="RelClTypeCPCompCliticSuffixInstruction" show="swRelClTypeCPCompCliticSuffix">In the lexicon, add the feature <feature>relative_suffix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="RelClTypeCPCompCliticBothInstruction" show="swRelClTypeCPCompCliticBoth">In the lexicon, add the feature <feature>relative_prefix</feature> to the pro-clitics and add <feature>relative_suffix</feature> to the post-clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="RelClTypeCPCompSameYesInstruction" show="swRelClTypeCPCompSameYes">In the lexicon, add the features <feature>makeC relative</feature> to each of the relative markers.  This will assure the category <category>C</category> so they will occur in the complementizer position and allow their appearance only in a relative clause.  Any markers which can occur as the complementizer in a CP which is a complement of a verb, like 'that' in English, need to have two separate entries in the lexicon.  Mark the second entry with the feature <feature>makeC</feature> and it will default to not being allowed in relative clauses.  (If the same marker can also be used in questions, a third entry is needed with the features <feature>makeC question</feature>.)</instruction>
-		<instruction id="RelClTypeCPCompSameNoInstruction" show="swRelClTypeCPCompSameNo">In the lexicon, add the features <feature>makeC relative</feature> to each of the relative markers.  This will assure the category <category>C</category> so they will occur in the complementizer position and allow their appearance only in a relative clause. </instruction>
-		<instruction id="RelClTypeCPCompEitherRestrictedInstruction" show="swRelClTypeCPCompEitherRestrictedWord">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
-		<instruction id="RelClTypeCPWhInstruction" show="swRelClTypeCPWh">In the lexicon, add the feature <feature>relative</feature> to the "wh"-words which can be used in relative clauses.  If your language has animacy agreement between the head noun and the wh-relative word (like English "who" versus "which"), also add the feature <feature>animate</feature> to the animate forms and add the feature <feature>-animate</feature> to the inanimate forms.</instruction>
-		<instruction id="RelClTypeIPInstruction" show="swRelClTypeIP">In the lexicon, add the feature <feature>relative</feature> to each of the affixes that mark relative clauses.</instruction>
-		<radioGroup id="RelClHeadlessTable" show="swRelClExistYes">
-			<groupName dataItem="headless" default="no">RRelClHeadless</groupName>
-			<prompt>Does your language allow headless relative clauses?</prompt>
-			<radio id="RelClHeadlessNo" dataValue="no">No, a head noun is required</radio>
-			<radio id="RelClHeadlessYes" dataValue="yes">Yes, a head noun may be missing (due to pro-drop, etc.)</radio>
-		</radioGroup>
-		<br/>
-		<prompt id="RelClHeadlessYesPrompt" show="swRelClHeadlessYes">Key examples of headless relative clauses included in (simple) full sentences here:</prompt>
-		<textBox id="RelClHeadlessExample" dataItem="headlessExample" cols="50" show="swRelClHeadlessYes"/>
-		<br/>
-		<br/>
-		<buttons>
-			<button id="RelClMainBack" value="Back" goto="Contents.htm"/>
-			<button id="RelClMainNext" value="Next" goto="RelClTesting.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swRelClExistYes">
-		<whenRadio button="RelClExistYes"/>
-	</showWhen>
-	<showWhen id="swRelClTypeCP">
-		<whenRadio button="RelClTypeCP"/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompWordNo">
-		<whenRadio button="RelClTypeCPCompWordNo"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<openParen/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<or/>
-		<openParen/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPWhAndCompNo"/>
-		<closeParen/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompYesOrBoth">
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<openParen/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<or/>
-		<openParen/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPWhAndCompNo"/>
-		<closeParen/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompYesOrBothWord">
-		<whenRadio button="RelClTypeCPCompWordYes"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<openParen/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<or/>
-		<openParen/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPWhAndCompNo"/>
-		<closeParen/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPWh">
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompYes"/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompEitherorBothWord">
-		<whenRadio button="RelClTypeCPCompWordYes"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<openParen/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<or/>
-		<openParen/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPWhAndCompNo"/>
-		<closeParen/>
-		<closeParen/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompAfter"/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompEitherRestrictedWord">
-		<whenRadio button="RelClTypeCPCompWordYes"/>
-		<and/>
-		<whenRadio button="RelClTypeCPCompEitherRestricted"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompAfter"/>
-	</showWhen>
-	<showWhen id="swRelClTypeIP">
-		<whenRadio button="RelClTypeIP"/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompSameYes">
-		<whenRadio button="RelClTypeCPCompSameYes"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompSameNo">
-		<whenRadio button="RelClTypeCPCompSameNo"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-	</showWhen>
-	<showWhen id="swRelClHeadlessYes">
-		<whenRadio button="RelClHeadlessYes"/>
-		<and/>
-		<whenRadio button="RelClExistYes"/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompCliticPrefix">
-		<whenRadio button="RelClTypeCPCompCliticPosBefore"/>
-		<and/>
-		<whenRadio button="RelClTypeCPCompWordNo"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<openParen/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<or/>
-		<openParen/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPWhAndCompNo"/>
-		<closeParen/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompCliticSuffix">
-		<whenRadio button="RelClTypeCPCompCliticPosAfter"/>
-		<and/>
-		<whenRadio button="RelClTypeCPCompWordNo"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<openParen/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<or/>
-		<openParen/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPWhAndCompNo"/>
-		<closeParen/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swRelClTypeCPCompCliticBoth">
-		<whenRadio button="RelClTypeCPCompCliticPosBoth"/>
-		<and/>
-		<whenRadio button="RelClTypeCPCompWordNo"/>
-		<and/>
-		<whenRadio button="RelClTypeCP"/>
-		<and/>
-		<openParen/>
-		<not/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<or/>
-		<openParen/>
-		<whenRadio button="RelClTypeCPCompNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="RelClTypeCPWhAndCompNo"/>
-		<closeParen/>
-		<closeParen/>
-	</showWhen>
+    </introduction>
+    <introduction id="RelClIntroPractical" show="swPractical">Relative clauses normally modify a head noun and have one of four structures:
+        <ul>
+            <li>like a complement clause with a complementizer meaning 'that', as in <example>the man that came to the meeting late</example>;</li>
+            <li>like a content question with 'who' or 'which' fronted, as in <example>the man who came to the meeting late</example>;</li>
+            <li>(or for some languages other than English) like a complement clause but with a special relative marker occurring in the complementizer position, or possibly with two markers which occur on both sides of the relative clause;</li>
+            <li>(or for some languages other than English) like a regular sentence with a relative marker attached to the verb.</li>
+        </ul>
+        Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called "headless" relative clauses.
+    </introduction>
+    <form section="relcl">
+        <radioGroup>
+            <groupName dataItem="exist" default="no">RRelClExist</groupName>
+            <prompt>Does your language have (any type of) relative clauses?</prompt>
+            <radio id="RelClExistYes" dataValue="yes">Yes</radio>
+            <radio id="RelClExistNo" dataValue="no">No, there are no relative clauses at all</radio>
+        </radioGroup>
+        <prompt id="RelClExamplePrompt" show="swRelClExistYes">Key examples of normal relative clauses in your language here:</prompt>
+        <textBox id="RelClExample" show="swRelClExistYes" dataItem="example" cols="50"/>
+        <br/>
+        <br/>
+        <prompt  id="RelClSentenceExamplePrompt" show="swRelClExistYes">Now put each of the above examples into (simple) full sentences and key here:</prompt>
+        <textBox id="RelClSentenceExample" show="swRelClExistYes" dataItem="sentExample" cols="50"/>
+        <br/>
+        <br/>
+        <radioGroup id="RelClClausePosRadioGroup"  show="swRelClExistYes">
+            <groupName dataItem="clausePos" default="unknown" position="yesHeadDiff">RRelClClausePos</groupName>
+            <prompt>Where does the clause part occur with respect to the head noun?</prompt>
+            <radio id="RelClClausePosBefore" dataValue="before">Before the head noun</radio>
+            <radio id="RelClClausePosAfter" checked="yes" dataValue="after">After the head noun</radio>
+            <radio id="RelClClausePosEitherSide" checked="yes" dataValue="either">On either side of the head noun, sometimes before and sometimes after</radio>
+        </radioGroup>
+        <radioGroup id="RelClTypeRadioGroup" show="swRelClExistYes">
+            <groupName dataItem="type" default="none">RRelClType</groupName>
+            <prompt>Does your language have relative clauses which are complement clauses (<span id="RelClTypeCPspanNotPractical" show="swNotPractical">CPs - </span>any of the first three types above)?</prompt>
+            <radio id="RelClTypeCP" dataValue="CP">Yes</radio>
+            <radioGroup id="RelClTypeCPTable" show="swRelClTypeCP">
+                <groupName dataItem="compCP" default="no">RRelClTypeCPComp</groupName>
+                <prompt>Does your language have relative markers that fill the complementizer position in the complement clause (<span id="RelClTypeCPCompspanNotPractical" show="swNotPractical">CP - </span>either the first or third type above)?</prompt>
+                <radio id="RelClTypeCPCompYes" dataValue="yes">Yes, that is the only type of relative clause allowed</radio>
+                <radio id="RelClTypeCPCompYesBoth" dataValue="yesBoth">Yes, and "wh"-relative clauses are also allowed (like English)</radio>
+                <radio id="RelClTypeCPCompNo" dataValue="no">No, only "wh"-relative clauses are allowed</radio>
+                <radioGroup id="RelClTypeCPWhTable" show="swRelClTypeCPWh">
+                    <groupName dataItem="whAndComp" default="no">RRelClTypeCPWh</groupName>
+                    <prompt>In the "wh"-relative clauses, can a relative marker also occur in the complementizer position?</prompt>
+                    <radio id="RelClTypeCPWhAndCompNo" dataValue="no">No, only the "wh"-word occurs in this type of relative clause, like in English</radio>
+                    <radio id="RelClTypeCPWhAndCompYes" dataValue="yes">Yes, the "wh"-word and the relative marker(s) are required to both be present in this type of relative clause</radio>
+                    <radio id="RelClTypeCPWhAndCompOptional" dataValue="optional">Yes, a relative marker may optionally co-occur along with the "wh"-word in this type of relative clause</radio>
+                </radioGroup>
+                <radioGroup id="RelClTypeCPCompWordTable" show="swRelClTypeCPCompYesOrBoth">
+                    <groupName dataItem="relWord" default="yes">RRelClTypeCPCompWord</groupName>
+                    <prompt>Is the relative marker written as a separate word?</prompt>
+                    <radio id="RelClTypeCPCompWordNo" dataValue="no">No, it is a clitic which attaches to another word at the edge of the relative clause</radio>
+                    <radioGroup id="RelClTypeCPCompCliticPosTable" show="swRelClTypeCPCompWordNo">
+                        <groupName dataItem="relCliticPos" default="unknown" position="yesHead">RRelClTypeCPCompCliticPos</groupName>
+                        <prompt>Is the clitic a pro-clitic or a post-clitic?</prompt>
+                        <radio id="RelClTypeCPCompCliticPosBefore" dataValue="before">A pro-clitic or prefix</radio>
+                        <radio id="RelClTypeCPCompCliticPosAfter" dataValue="after">A post-clitic or suffix</radio>
+                        <radio id="RelClTypeCPCompCliticPosBoth" dataValue="both">Some of each type</radio>
+                    </radioGroup>
+                    <radio id="RelClTypeCPCompWordYes" dataValue="yes">Yes, it is a separate word</radio>
+                </radioGroup>
+                <radioGroup id="RelClTypeCPCompSameTable" show="swRelClTypeCPCompYesOrBothWord">
+                    <groupName dataItem="relCompSame" default="no">RRelClTypeCPCompSame</groupName>
+                    <prompt>Are any of the relative markers the same as the complementizer used for verbal complement clauses?</prompt>
+                    <radio id="RelClTypeCPCompSameYes" dataValue="yes">Yes, like 'that' in English</radio>
+                    <radio id="RelClTypeCPCompSameNo" dataValue="no">No, they are all distinct</radio>
+                </radioGroup>
+                <radioGroup id="RelClTypeCPCompPosTable" show="swRelClTypeCPCompYesOrBothWord">
+                    <groupName dataItem="relCompPos" default="unknown" position="yesHead">RRelClCompPos</groupName>
+                    <prompt>Where does the relative marker occur with respect to the sentence part of the relative clause?</prompt>
+                    <radio id="RelClTypeCPCompBefore" checked="yes" dataValue="before">Before the sentence</radio>
+                    <radio id="RelClTypeCPCompAfter" checked="yes" dataValue="after">After the sentence</radio>
+                    <radio id="RelClTypeCPCompEitherSide" checked="yes" dataValue="either">On either side of the sentence, but not both sides at the same time</radio>
+                    <radio id="RelClTypeCPCompEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the sentence, or both sides at the same time</radio>
+                    <radio id="RelClTypeCPCompBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the sentence, or both sides at the same time</radio>
+                    <radio id="RelClTypeCPCompAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the sentence, or both sides at the same time</radio>
+                    <radio id="RelClTypeCPCompBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
+                    <radioGroup id="RelClTypeCPCompEitherSideTable" show="swRelClTypeCPCompEitherorBothWord">
+                        <groupName dataItem="relCompEitherRestricted" default="unrestricted">RRelClTypeCPCompEitherSide</groupName>
+                        <prompt>Can all the relative markers appear on either side of the sentence?</prompt>
+                        <radio id="RelClTypeCPCompEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
+                        <radio id="RelClTypeCPCompEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
+                    </radioGroup>
+                </radioGroup>
+            </radioGroup>
+            <radio id="RelClTypeIP" dataValue="IP">No, they are of the <span id="RelClTypeIPspanNotPractical" show="swNotPractical">IP</span><span id="RelClTypeIPspanPractical" show="swPractical">regular sentence complement</span> type above, with a relative marker on the verb</radio>
+        </radioGroup>
+        <instruction id="RelClTypeCPCompCliticPrefixInstruction" show="swRelClTypeCPCompCliticPrefix">In the lexicon, add the feature <feature>relative_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+        <instruction id="RelClTypeCPCompCliticSuffixInstruction" show="swRelClTypeCPCompCliticSuffix">In the lexicon, add the feature <feature>relative_suffix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+        <instruction id="RelClTypeCPCompCliticBothInstruction" show="swRelClTypeCPCompCliticBoth">In the lexicon, add the feature <feature>relative_prefix</feature> to the pro-clitics and add <feature>relative_suffix</feature> to the post-clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+        <instruction id="RelClTypeCPCompSameYesInstruction" show="swRelClTypeCPCompSameYes">In the lexicon, add the features <feature>makeC relative</feature> to each of the relative markers.  This will assure the category <category>C</category> so they will occur in the complementizer position and allow their appearance only in a relative clause.  Any markers which can occur as the complementizer in a CP which is a complement of a verb, like 'that' in English, need to have two separate entries in the lexicon.  Mark the second entry with the feature <feature>makeC</feature> and it will default to not being allowed in relative clauses.  (If the same marker can also be used in questions, a third entry is needed with the features <feature>makeC question</feature>.)</instruction>
+        <instruction id="RelClTypeCPCompSameNoInstruction" show="swRelClTypeCPCompSameNo">In the lexicon, add the features <feature>makeC relative</feature> to each of the relative markers.  This will assure the category <category>C</category> so they will occur in the complementizer position and allow their appearance only in a relative clause. </instruction>
+        <instruction id="RelClTypeCPCompEitherRestrictedInstruction" show="swRelClTypeCPCompEitherRestrictedWord">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+        <instruction id="RelClTypeCPWhInstruction" show="swRelClTypeCPWh">In the lexicon, add the feature <feature>relative</feature> to the "wh"-words which can be used in relative clauses.  If your language has animacy agreement between the head noun and the wh-relative word (like English "who" versus "which"), also add the feature <feature>animate</feature> to the animate forms and add the feature <feature>-animate</feature> to the inanimate forms.</instruction>
+        <instruction id="RelClTypeIPInstruction" show="swRelClTypeIP">In the lexicon, add the feature <feature>relative</feature> to each of the affixes that mark relative clauses.</instruction>
+        <radioGroup id="RelClHeadlessTable" show="swRelClExistYes">
+            <groupName dataItem="headless" default="no">RRelClHeadless</groupName>
+            <prompt>Does your language allow headless relative clauses?</prompt>
+            <radio id="RelClHeadlessNo" dataValue="no">No, a head noun is required</radio>
+            <radio id="RelClHeadlessYes" dataValue="yes">Yes, a head noun may be missing (due to pro-drop, etc.)</radio>
+        </radioGroup>
+        <br/>
+        <prompt id="RelClHeadlessYesPrompt" show="swRelClHeadlessYes">Key examples of headless relative clauses included in (simple) full sentences here:</prompt>
+        <textBox id="RelClHeadlessExample" dataItem="headlessExample" cols="50" show="swRelClHeadlessYes"/>
+        <br/>
+        <br/>
+        <buttons>
+            <button id="RelClMainBack" value="Back" goto="Contents.htm"/>
+            <button id="RelClMainNext" value="Next" goto="RelClTesting.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swRelClExistYes">
+        <whenRadio button="RelClExistYes"/>
+    </showWhen>
+    <showWhen id="swRelClTypeCP">
+        <whenRadio button="RelClTypeCP"/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompWordNo">
+        <whenRadio button="RelClTypeCPCompWordNo"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <openParen/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <or/>
+        <openParen/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPWhAndCompNo"/>
+        <closeParen/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompYesOrBoth">
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <openParen/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <or/>
+        <openParen/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPWhAndCompNo"/>
+        <closeParen/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompYesOrBothWord">
+        <whenRadio button="RelClTypeCPCompWordYes"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <openParen/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <or/>
+        <openParen/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPWhAndCompNo"/>
+        <closeParen/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPWh">
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompYes"/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompEitherorBothWord">
+        <whenRadio button="RelClTypeCPCompWordYes"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <openParen/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <or/>
+        <openParen/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPWhAndCompNo"/>
+        <closeParen/>
+        <closeParen/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompBefore"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompAfter"/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompEitherRestrictedWord">
+        <whenRadio button="RelClTypeCPCompWordYes"/>
+        <and/>
+        <whenRadio button="RelClTypeCPCompEitherRestricted"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompBefore"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompAfter"/>
+    </showWhen>
+    <showWhen id="swRelClTypeIP">
+        <whenRadio button="RelClTypeIP"/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompSameYes">
+        <whenRadio button="RelClTypeCPCompSameYes"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompSameNo">
+        <whenRadio button="RelClTypeCPCompSameNo"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+    </showWhen>
+    <showWhen id="swRelClHeadlessYes">
+        <whenRadio button="RelClHeadlessYes"/>
+        <and/>
+        <whenRadio button="RelClExistYes"/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompCliticPrefix">
+        <whenRadio button="RelClTypeCPCompCliticPosBefore"/>
+        <and/>
+        <whenRadio button="RelClTypeCPCompWordNo"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <openParen/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <or/>
+        <openParen/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPWhAndCompNo"/>
+        <closeParen/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompCliticSuffix">
+        <whenRadio button="RelClTypeCPCompCliticPosAfter"/>
+        <and/>
+        <whenRadio button="RelClTypeCPCompWordNo"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <openParen/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <or/>
+        <openParen/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPWhAndCompNo"/>
+        <closeParen/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swRelClTypeCPCompCliticBoth">
+        <whenRadio button="RelClTypeCPCompCliticPosBoth"/>
+        <and/>
+        <whenRadio button="RelClTypeCPCompWordNo"/>
+        <and/>
+        <whenRadio button="RelClTypeCP"/>
+        <and/>
+        <openParen/>
+        <not/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <or/>
+        <openParen/>
+        <whenRadio button="RelClTypeCPCompNo"/>
+        <and/>
+        <not/>
+        <whenRadio button="RelClTypeCPWhAndCompNo"/>
+        <closeParen/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
 </page>

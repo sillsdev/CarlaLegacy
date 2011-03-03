@@ -37,18 +37,21 @@ namespace SIL.Cabhab
 		string m_sResultFile1;
 		string m_sResultFile2;
 		string m_sReplaceDOCTYPE;
+		string m_sVersionNumber;
 		bool m_fRemoveBOM;
 		bool m_fSaveResult;
 		bool m_fInsertConfigPathInTransformDOCTYPE;
+		string m_sApplyTransformWhenXPath;
 		XMLUtilities.XSLParameter[] m_parameters;
 		List<XMLUtilities.XSLParameter[]> m_parameterSet;
 		#region Construction and initialization
 		public AnswerFileTransform()
 		{
 		}
-		public AnswerFileTransform(string sAnswerFile, XmlNode transformConfigurationNode, string sConfigurationPath)
+		public AnswerFileTransform(string sAnswerFile, XmlNode transformConfigurationNode, string sConfigurationPath, string sVersionNumber)
 		{
 			AnswerFile = sAnswerFile;
+			m_sVersionNumber = sVersionNumber;
 			m_sTransformFile = XmlUtils.GetManditoryAttributeValue(transformConfigurationNode, "file");
 			m_sTransformFile = sConfigurationPath + "/" + m_sTransformFile;
 			m_sResultFileAnswerFileXPath = XmlUtils.GetOptionalAttributeValue(transformConfigurationNode, "resultFileFromAnswerFile");
@@ -59,6 +62,7 @@ namespace SIL.Cabhab
 			m_sReplaceDOCTYPE = XmlUtils.GetOptionalAttributeValue(transformConfigurationNode, "replaceDOCTYPE", null);
 			m_fRemoveBOM = XmlUtils.GetBooleanAttributeValue(transformConfigurationNode, "removeBOM");
 			m_fSaveResult = XmlUtils.GetBooleanAttributeValue(transformConfigurationNode, "saveResult");
+			m_sApplyTransformWhenXPath = XmlUtils.GetOptionalAttributeValue(transformConfigurationNode, "applyTransformWhenXPath", null);
 			m_fInsertConfigPathInTransformDOCTYPE = XmlUtils.GetBooleanAttributeValue(transformConfigurationNode, "insertConfigPathInTransformDOCTYPE");
 			if (m_fInsertConfigPathInTransformDOCTYPE)
 			{
@@ -165,17 +169,32 @@ namespace SIL.Cabhab
 			return null;
 		}
 		#endregion
-		public void ApplyTransform(string sConfigurationPath)
+		public bool ApplyTransform(string sConfigurationPath)
 		{
-			ApplyTransform(sConfigurationPath, AnswerFile);
+			return ApplyTransform(sConfigurationPath, AnswerFile);
 		}
-		public void ApplyTransform(string sConfigurationPath, string sSourceFile)
+		public bool ApplyTransform(string sConfigurationPath, string sSourceFile)
 		{
+			if (!String.IsNullOrEmpty(ApplyTransformWhenXPath))
+			{
+				if (null == GetResultFromAnswerFile(ApplyTransformWhenXPath))
+				return false;
+			}
 			string sTransformFile = TransformFile;
 			string sResultFile = ResultFile;
 			if (sResultFile != null)
 			{
 				XMLUtilities.XSLParameter[] parameterList = Parameters;
+				if (parameterList != null)
+				{
+					foreach (XMLUtilities.XSLParameter parameter in parameterList)
+					{
+						if (parameter.Name == "prmSVersionNumber")
+						{
+							parameter.Value = m_sVersionNumber;
+						}
+					}
+				}
 				XMLUtilities.TransformFileToFile(sTransformFile, parameterList, sSourceFile, sResultFile);
 				DoAnyCleanup(sResultFile);
 			}
@@ -198,6 +217,7 @@ namespace SIL.Cabhab
 						exc.InnerException);
 				}
 			}
+			return true;
 		}
 
 		private string BuildResultFileName(string sLanguageAbbreviation, XMLUtilities.XSLParameter[] parameters)
@@ -288,6 +308,10 @@ namespace SIL.Cabhab
 				m_sAnswerFile = value;
 				m_xdAnswers.Load(m_sAnswerFile);
 			}
+		}
+		public string ApplyTransformWhenXPath
+		{
+			get { return m_sApplyTransformWhenXPath; }
 		}
 		public string FileExtension
 		{

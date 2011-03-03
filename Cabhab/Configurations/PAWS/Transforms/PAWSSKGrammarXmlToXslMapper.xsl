@@ -21,29 +21,28 @@ Main template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="/">
-	<!-- output header info -->
-	<xsl:element name="xsl:stylesheet">
-	  <xsl:attribute name="version">1.0</xsl:attribute>
-	  <!-- not here now      <xsl:element name="xsl:output">
-		<xsl:attribute name="method">xml</xsl:attribute>
-		<xsl:attribute name="version">1.0</xsl:attribute>
-		<xsl:attribute name="encoding">UTF-8</xsl:attribute>
-		<xsl:attribute name="indent">yes</xsl:attribute>
-	  </xsl:element> -->
-	  <xsl:element name="xsl:template">
-		<xsl:attribute name="match">/</xsl:attribute>
-		<xsl:attribute name="mode"><xsl:value-of select="$prmType"/></xsl:attribute>
-		<!-- do not include initial comments here; these are now in the main transform
-		<xsl:element name="xsl:text">|-PC-PATR Grammar file for PAWS Starter Kit - starter3.doc
-|- C Black    May 2001
+    <!-- output header info -->
+    <xsl:element name="xsl:stylesheet">
+      <xsl:attribute name="version">1.0</xsl:attribute>
+      <!-- not here now      <xsl:element name="xsl:output">
+        <xsl:attribute name="method">xml</xsl:attribute>
+        <xsl:attribute name="version">1.0</xsl:attribute>
+        <xsl:attribute name="encoding">UTF-8</xsl:attribute>
+        <xsl:attribute name="indent">yes</xsl:attribute>
+      </xsl:element> -->
+      <xsl:element name="xsl:template">
+        <xsl:attribute name="match">/</xsl:attribute>
+        <xsl:attribute name="mode"><xsl:value-of select="$prmType"/></xsl:attribute>
+        <!-- do not include initial comments here; these are now in the main transform
+        <xsl:element name="xsl:text">
 
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |-Phrase structure rules
 </xsl:element>
 -->
-		<xsl:apply-templates/>
-	  </xsl:element>
-	</xsl:element>
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:element>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -51,14 +50,14 @@ catMapper template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//catMapper">
-	<xsl:element name="xsl:if">
-	  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+    <xsl:element name="xsl:if">
+      <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
 Let <xsl:for-each select="id(@show)/whenValue">
-		<xsl:element name="xsl:value-of">
-		  <xsl:attribute name="select"><xsl:text>//</xsl:text><xsl:value-of select="./@element"/></xsl:attribute>
-		</xsl:element>
-	  </xsl:for-each> be [<xsl:value-of select="."/>]</xsl:element>
-	<xsl:text/>
+        <xsl:element name="xsl:value-of">
+          <xsl:attribute name="select"><xsl:text>//</xsl:text><xsl:value-of select="./@element"/></xsl:attribute>
+        </xsl:element>
+      </xsl:for-each> be [<xsl:value-of select="."/>]</xsl:element>
+    <xsl:text/>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -66,9 +65,9 @@ content template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//content">
-	<xsl:element name="xsl:text">
-	  <xsl:value-of select="."/>
-	</xsl:element>
+    <xsl:element name="xsl:text">
+      <xsl:value-of select="."/>
+    </xsl:element>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -84,21 +83,21 @@ rule template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template match="//rule">
-	<xsl:choose>
-	  <xsl:when test="@show">
-		<xsl:element name="xsl:if">
-		  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
-		  <xsl:element name="xsl:text">
-			<xsl:value-of select="."/>
-		  </xsl:element>
-		</xsl:element>
-	  </xsl:when>
-	  <xsl:otherwise>
-		<xsl:element name="xsl:text">
-		  <xsl:value-of select="."/>
-		</xsl:element>
-	  </xsl:otherwise>
-	</xsl:choose>
+    <xsl:choose>
+      <xsl:when test="@show">
+        <xsl:element name="xsl:if">
+          <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+          <xsl:element name="xsl:text">
+            <xsl:value-of select="."/>
+          </xsl:element>
+        </xsl:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:element name="xsl:text">
+          <xsl:value-of select="."/>
+        </xsl:element>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -107,18 +106,18 @@ specialized templates template
 -->
   <xsl:template match="//specializedTemplates">
   <xsl:choose>
-	<xsl:when test="@show!=''">
-	<xsl:element name="xsl:if">
-	  <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
-	  <xsl:element name="xsl:text">
-		<xsl:value-of select="."/>
-	  </xsl:element>
-	</xsl:element>
-	</xsl:when>
+    <xsl:when test="@show!=''">
+    <xsl:element name="xsl:if">
+      <xsl:attribute name="test"><xsl:call-template name="BuildCondition"><xsl:with-param name="prmCondition" select="@show"/></xsl:call-template></xsl:attribute>
+      <xsl:element name="xsl:text">
+        <xsl:value-of select="."/>
+      </xsl:element>
+    </xsl:element>
+    </xsl:when>
 <xsl:otherwise>
-	  <xsl:element name="xsl:text">
-		<xsl:value-of select="."/>
-	  </xsl:element>
+      <xsl:element name="xsl:text">
+        <xsl:value-of select="."/>
+      </xsl:element>
 </xsl:otherwise>
   </xsl:choose>
   </xsl:template>
@@ -130,35 +129,35 @@ BuildCondition
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
   <xsl:template name="BuildCondition">
-	<xsl:param name="prmCondition"/>
-	<xsl:for-each select="//showWhen[@id=$prmCondition]">
-	  <xsl:for-each select="./*">
-		<xsl:choose>
-		  <xsl:when test="name()='whenValue'">
-			<xsl:text>normalize-space(//</xsl:text>
-			<xsl:value-of select="@element"/>
-			<xsl:if test="@attr">
-			  <xsl:text>/@</xsl:text>
-			  <xsl:value-of select="@attr"/>
-			</xsl:if>
-			<xsl:text>)</xsl:text>
-			<xsl:if test="@negateValue='yes'">
-			  <xsl:text>!</xsl:text>
-			</xsl:if>
-			<xsl:text>='</xsl:text>
-			<xsl:value-of select="@value"/>
-			<xsl:text>'</xsl:text>
-		  </xsl:when>
-		  <xsl:when test="name()='and'"> and </xsl:when>
-		  <xsl:when test="name()='or'"> or </xsl:when>
-		  <xsl:when test="name()='useShowWhen'">
-			<xsl:call-template name="BuildCondition">
-			  <xsl:with-param name="prmCondition" select="@show"/>
-			</xsl:call-template>
-		  </xsl:when>
-		</xsl:choose>
-	  </xsl:for-each>
-	</xsl:for-each>
+    <xsl:param name="prmCondition"/>
+    <xsl:for-each select="//showWhen[@id=$prmCondition]">
+      <xsl:for-each select="./*">
+        <xsl:choose>
+          <xsl:when test="name()='whenValue'">
+            <xsl:text>normalize-space(//</xsl:text>
+            <xsl:value-of select="@element"/>
+            <xsl:if test="@attr">
+              <xsl:text>/@</xsl:text>
+              <xsl:value-of select="@attr"/>
+            </xsl:if>
+             <xsl:text>)</xsl:text>
+            <xsl:if test="@negateValue='yes'">
+              <xsl:text>!</xsl:text>
+            </xsl:if>
+            <xsl:text>='</xsl:text>
+            <xsl:value-of select="@value"/>
+            <xsl:text>'</xsl:text>
+          </xsl:when>
+          <xsl:when test="name()='and'"> and </xsl:when>
+          <xsl:when test="name()='or'"> or </xsl:when>
+          <xsl:when test="name()='useShowWhen'">
+            <xsl:call-template name="BuildCondition">
+              <xsl:with-param name="prmCondition" select="@show"/>
+            </xsl:call-template>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:for-each>
+    </xsl:for-each>
   </xsl:template>
 </xsl:stylesheet>
 <!--

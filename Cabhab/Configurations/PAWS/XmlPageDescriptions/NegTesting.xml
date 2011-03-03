@@ -3,7 +3,7 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NegTesting" count="4/4">
-	<title level="2">Negation Constructions - Testing</title>
+	<title level="2">Negative Constructions - Testing</title>
 	<form section="neg">
 		<instruction>
 To test what you have done so far, save your work now.  This will generate the test file and grammar rules file created to this point.

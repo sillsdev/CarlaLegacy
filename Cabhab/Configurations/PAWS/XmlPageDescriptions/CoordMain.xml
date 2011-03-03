@@ -34,7 +34,7 @@
 		<prompt>Key the negative conjunction words meaning 'nor' that your language uses for 'neither...nor' constructions here (even if an initial conjunction is not required for your language):</prompt>
 		<textBox id="CoordNor" dataItem="nor" rows="3"/>
 		<br/>
-		<instruction>In the lexicon, add the feature <feature>plural</feature> to the conjunctions meaning 'and', 'and/or' and 'with', and also on any other conjunctions in your language which require plural agreement when they are used to conjoin nominal phrases.  Also, add the feature <feature>-conjoins_IP</feature> to any conjunction, such as 'with', used for conjoining nominal phrases only.  Add the feature <feature>negative</feature> to the negative conjunctions meaning 'nor'.<br/>
+		<instruction id="CoordInstruction">In the lexicon, add the feature <feature>plural</feature> to the conjunctions meaning 'and', 'and/or' and 'with', and also on any other conjunctions in your language which require plural agreement when they are used to conjoin nominal phrases.  Also, add the feature <feature>-conjoins_IP</feature> to any conjunction, such as 'with', used for conjoining nominal phrases only.  Add the feature <feature>negative</feature> to the negative conjunctions meaning 'nor'.<br/>
 			<br/>
 Note that a word like 'and/or/' which is written with a slash (/) in the word, must be entered in your lexicon with a backslash in front of the slash (eg. 'and\/or') for <tool>CARLA Studio</tool> to process it correctly.</instruction>
 		<introduction>English examples of full sentence coordination include:</introduction>
@@ -87,7 +87,7 @@ Note that a word like 'and/or/' which is written with a slash (/) in the word, m
 		<br/>
 		<buttons>
 			<button id="CoordMainBack" value="Back" goto="Contents.htm"/>
-			<button id="CoordMainNext" value="Next" goto="CoordCatMap.xml"/>
+		    <button id="CoordMainNext" value="Next" goto="CoordCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
 </page>

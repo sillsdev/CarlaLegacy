@@ -9,7 +9,7 @@
 		<exItem label="2.">all the boy's many black dogs.</exItem>
 		<exItem label="3.">only the first one hundred very eager young boys.</exItem>
 	</EnglishExample>
-	<introduction>As the English examples show, more than one adjective phrase is allowed before the noun.  This will be handled in the syntactic parser by a recursive rule.</introduction>
+	<introduction>As the English examples show, more than one adjective phrase is allowed before the noun.<span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span></introduction>
 	<form section="np">
 		<prompt>Key your examples here:</prompt>
 		<textBox id="NPAdjpExample" dataItem="adjpExample"/>
@@ -39,7 +39,7 @@
 		<prompt>Key similar examples from your language here:</prompt>
 		<textBox id="NPAdjPPartExample" dataItem="partExample"/>
 		<br/>
-		<instruction>Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section>
+		<instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section>
 		</instruction>
 		<br/>
 		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Languages which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.
@@ -112,7 +112,7 @@ To handle the number agreement, in the lexicon:
 				<li>Mark the adjectives (or appropriate affixes) that only go with singular nouns with the feature <feature>singular</feature>.</li>
 				<li>Mark the adjectives (or appropriate affixes) that only go with plural nouns with the feature <feature>plural</feature>.</li>
 				<li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate adjectives, if any.
-				</li>
+                </li>
 			</ul>
 		</instruction>
 		<instruction id="NPAdjPAgreementAnimacyInstruction" show="swNPAgreementAnimacyYes">
@@ -243,4 +243,6 @@ To handle class marking and agreement, in the lexicon:
 		<and/>
 		<whenValue element="np" attr="agreeOther" value="yesClass"/>
 	</showWhen>
-</page>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen></page>

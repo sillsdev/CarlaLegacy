@@ -41,7 +41,7 @@ same as the ones which can modify an entire nominal phrase dealt with in the fir
 				<radio id="QPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
 		</radioGroup>
-		<instruction>In the lexicon, mark this type of quantifier
+		<instruction id="QPDegreeInstruction">In the lexicon, mark this type of quantifier
 with the feature <feature>makeQ</feature>.  This will change
 their category to <category>Q</category> for the syntax.  If a particular quantifier can
 only go with plural nouns or if it marks plural itself (such as <example>many</example>), add the feature <feature>plural</feature> to that entry.  <br/>

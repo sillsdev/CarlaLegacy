@@ -13,7 +13,7 @@
 		<prompt>Key similar examples from your language, whether or not fronting is required, here:</prompt>
 		<textBox id="QEmbContentExample" dataItem="embContentExample" cols="50"/>
 		<br/>
-		<instruction>If any main verbs used in these examples were not marked with the feature <feature>sentential</feature> above, go to the lexicon and add the feature <feature>sentential</feature> to the appropriate entries now.</instruction>
+		<instruction id="QEmbContInstruction">If any main verbs used in these examples were not marked with the feature <feature>sentential</feature> above, go to the lexicon and add the feature <feature>sentential</feature> to the appropriate entries now.</instruction>
 		<radioGroup>
 			<groupName dataItem="embCont" default="no">RQEmbCont</groupName>
 			<prompt>In embedded clause content questions, are there one or more special question marker particles or complementizers that may occur in addition to the interrogative phrases (include affixes or clitics in answering this question)?</prompt>
@@ -88,7 +88,7 @@
 				<radio id="QEmbContAuxRequiredYes" dataValue="yes">Yes</radio>
 				<radio id="QEmbContAuxRequiredNo" dataValue="no">No, some embedded content questions do not require a fronted auxiliary</radio>
 			</radioGroup>
-			<radio id="QEmbContNo" dataValue="no">No, there is no marker or auxiliary fronting in main clause content questions, just <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span>
+			<radio id="QEmbContNo" dataValue="no">No, there is no marker or auxiliary fronting in embedded clause content questions, just <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">fronting of an interrogative phrase and possibly </span>
 				<span id="QEmbContNoFrontOptionalSpan" show="swQContFrontOptional">optional movement of an interrogative phrase and possibly </span>a difference in intonation or tone or other non-syntactic marking</radio>
 		</radioGroup>
 		<instruction id="QEmbContHeadCliticInstruction" show="swQEmbContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
@@ -103,7 +103,7 @@
 		<br/>
 		<buttons>
 			<button id="QEmbContBack" value="Back" goto="QMainCont.xml"/>
-			<button id="QEmbContNext" value="Next" goto="QCatMap.xml"/>
+		    <button id="QEmbContNext" value="Next" goto="QCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swQEmbContYes">

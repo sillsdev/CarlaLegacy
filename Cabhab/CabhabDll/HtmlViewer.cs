@@ -107,6 +107,7 @@ namespace SIL.Cabhab
 			}
 			else
 			{
+				m_lang.InitDataMigrationTransforms(configurationParameters);
 				m_lang.LoadAnswerFile(m_lang.AnswerFile);
 				m_lang.InitAnswerTransforms(configurationParameters);
 				m_lang.LanguageNameChanged();
@@ -138,10 +139,10 @@ namespace SIL.Cabhab
 		void Browser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
 		{
 			string sEUrl = e.Url.AbsolutePath;
-			string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).Replace("\\", "/").Replace(" ", "%20");
-			//MessageBox.Show("In Browser_Navigated: sEUrl = |" + sEUrl + "|");
-			//MessageBox.Show("In Browser_Navigated: sAppData = |" + sAppData + "|");
-			if (sEUrl.EndsWith(".xml"))
+		    string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).Replace("\\", "/").Replace(" ", "%20");
+            //MessageBox.Show("In Browser_Navigated: sEUrl = |" + sEUrl + "|");
+            //MessageBox.Show("In Browser_Navigated: sAppData = |" + sAppData + "|");
+            if (sEUrl.EndsWith(".xml"))
 			{
 				string sHtmlFile;
 				string sXmlFile = sEUrl.Substring(sEUrl.LastIndexOf("/") + 1);
@@ -152,20 +153,20 @@ namespace SIL.Cabhab
 				m_htmlControl.Browser.Navigate(sHtmlFile);
 			}
 			else if ((sEUrl.Contains("Contents")
-					  && sEUrl.Contains(sAppData))
+				  && sEUrl.Contains(sAppData))
 					 || (sEUrl == "Contents.htm")
 					 || (sEUrl == "blankContents.htm"))
 			{ // not a generated file; need to make sure working directory is set to configurations (and not temp)
-				//MessageBox.Show("In Browser_Navigated: Not a generated file found");
-				string sHtmlFile = sEUrl.Substring(sEUrl.LastIndexOf("/") + 1);
-				//MessageBox.Show("In Browser_Navigated: sHtmlFile originally = |" + sHtmlFile + "|");
+                //MessageBox.Show("In Browser_Navigated: Not a generated file found");
+                string sHtmlFile = sEUrl.Substring(sEUrl.LastIndexOf("/") + 1);
+                //MessageBox.Show("In Browser_Navigated: sHtmlFile originally = |" + sHtmlFile + "|");
 				if (sEUrl == "blankContents.htm") // IE 6 does this; IE 7 does not
 				{
 					sHtmlFile = "Contents.htm";
 				}
-				//MessageBox.Show("In Browser_Navigated: sHtmlFile ends = |" + sHtmlFile + "|");
-				//MessageBox.Show("In Browser_Navigated: about to navigate to = |" + m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile + "|");
-				m_htmlControl.Browser.Navigate(m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile);
+                //MessageBox.Show("In Browser_Navigated: sHtmlFile ends = |" + sHtmlFile + "|");
+                //MessageBox.Show("In Browser_Navigated: about to navigate to = |" + m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile + "|");
+                m_htmlControl.Browser.Navigate(m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile);
 			}
 			else if (sEUrl.EndsWith("LeftOffAt"))
 			{
@@ -510,8 +511,8 @@ namespace SIL.Cabhab
 			StreamReader sr = new StreamReader(m_sLanguageFilesFile);
 			string sPage = sr.ReadToEnd();
 			sPage = sPage.Replace("<link rel=\"stylesheet\" href=\"..", "<link rel=\"stylesheet\" href=\"" + m_lang.ConfigurationPath);
-			sPage = sPage.Replace(".style.display = \"none\";", ".style.display = \"temp\";");
-			sPage = sPage.Replace(".style.display = \"\";", ".style.display = \"none\";");
+			sPage = sPage.Replace("ShowBackNextButtons.style.display = \"none\";", "ShowBackNextButtons.style.display = \"temp\";");
+			sPage = sPage.Replace("ShowBackNextButtons.style.display = \"\";", "ShowBackNextButtons.style.display = \"none\";");
 			sPage = sPage.Replace(".style.display = \"temp\";", ".style.display = \"\";");
 			m_htmlControl.Browser.DocumentText = sPage;
 		}

@@ -1,330 +1,359 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- both the label and settingsId are specific to PAWS -->
 <window label="PAWS Starter Kit" settingsId="paws">
-<!--
+    <version>0.6.4.0 Beta</version>
+  <!--
 Following are common to all Cabhab Applications
 -->
-	<!-- ********************************************************** -->
-	<!-- ************************ commands *********************** -->
-	<!-- ********************************************************** -->
-	<commands>
-		<command id="CmdNewLanguage" label="Create _New Language" shortcut="Ctrl+N" message="NewLanguage" icon="New"/>
-		<command id="CmdOpenLanguage" label="_Open Language" message="OpenLanguage" shortcut="Ctrl+O" icon="Open"/>
-		<command id="CmdCloseLanguage" label="_Close Language" message="CloseLanguage"/>
-		<command id="CmdGenerateFiles" label="_Generate Files" message="GenerateFiles" shortcut="Ctrl+S" icon="Save"/>
-		<command id="CmdSaveLanguageAs" label="_Save Language As" message="SaveLanguageAs"/>
-		<command id="CmdExit" label="E_xit" message="ExitApplication"/>
-		<command id="CmdCopy" label="_Copy" message="EditCopy" icon="Copy" shortcut="Ctrl+C"/>
-		<command id="CmdCut" label="Cu_t" message="EditCut" icon="Cut" shortcut="Ctrl+X"/>
-		<command id="CmdPaste" label="_Paste" message="EditPaste" icon="Paste" shortcut="Ctrl+V"/>
-		<command id="CmdLanguageProperties" label="_Properties" message="LanguageProperties"/>
-		<command id="CmdLanguageFileLocations" label="File _Locations" message="LanguageFileLocations"/>
-		<command id="CmdBack" label="_Back" message="BrowserBack" icon="Back" shortcut="Alt+Left"/>
-		<command id="CmdForward" label="_Forward" message="BrowserForward" icon="Forward" shortcut="Alt+Right"/>
-		<command id="CmdRefresh" label="_Refresh" message="BrowserRefresh" icon="Refresh" shortcut="F5"/>
-		<command id="CmdAbout" label="_About PAWS" message="AboutPage"/>
-		<command id="CmdResources" label="_Resources" message="ResourcesPage"/>
-		<command id="CmdShowToolbar" label="Show Toolbar" message="ShowToolbar"/>
-		<command id="CmdShowStatusBar" label="Show Status Bar" message="ShowStatusBar"/>
-	</commands>
-	<!-- ********************************************************** -->
-	<!-- ************************ menus *********************** -->
-	<!-- ********************************************************** -->
-	<menubar>
-		<!--        <menu id="File" label="_File" b4InsertMenu="true"> -->
-		<menu id="File" label="_File">
-			<item command="CmdNewLanguage" defaultVisible="true"/>
-			<item command="CmdOpenLanguage"/>
-			<item command="CmdCloseLanguage"/>
-			<item command="CmdSaveLanguageAs"/>
-			<item label="-"/>
-			<item command="CmdGenerateFiles"/>
-			<item label="-"/>
-			<item command="CmdLanguageFileLocations"/>
-			<item label="-"/>
-			<item command="CmdExit"/>
-		</menu>
-		<!--       <menu id="Edit" label="_Edit" b4InsertMenu="true"> -->
-		<menu id="Edit" label="_Edit">
-			<item command="CmdCut"/>
-			<item command="CmdCopy"/>
-			<item command="CmdPaste"/>
-			<include path="Extensions/*/MainConfigurationExtension.xml" query="root/menuAddOn/menu[@id='Edit']/*"/>
-		</menu>
-		<!--        <menu id="Language" label="_Language" b4InsertMenu="true"> -->
-		<menu id="Language" label="_Language">
-			<item command="CmdLanguageProperties"/>
-			<item command="CmdLanguageFileLocations"/>
-			<include path="Extensions/*/MainConfigurationExtension.xml" query="root/menuAddOn/menu[@id='Edit']/*"/>
-		</menu>
-		<menu id="View" label="_View">
-			<item label="Show Toolbar" boolProperty="ShowToolbar" command="CmdShowToolbar"/>
-			<item label="Show Status Bar" boolProperty="ShowStatusBar" command="CmdShowStatusBar"/>
-			<item label="-"/>
-			<item command="CmdBack"/>
-			<item command="CmdForward"/>
-			<item command="CmdRefresh"/>
-		</menu>
-		<menu id="Help" label="_Help">
-			<item id="Resources" command="CmdResources"/>
-			<item label="-"/>
-			<item id="About" command="CmdAbout"/>
-		</menu>
-	</menubar>
-	<!-- ********************************************************** -->
-	<!-- ************************ contextMenus *********************** -->
-	<!-- ********************************************************** -->
-	<contextMenus>
-		<menu id="TestContextMenu" label="_Needs">
-			<item label="Wheelchair Required" boolProperty="wheelchair"/>
-			<item label="Basinet Required" boolProperty="basinet"/>
-			<!-- notice that this one override the default value, which is "false" -->
-			<item label="Food Required" boolProperty="food" defaultBoolPropertyValue="true"/>
-		</menu>
-	</contextMenus>
-	<!-- ********************************************************** -->
-	<!-- ************************ sidebar *********************** -->
-	<!-- ********************************************************** -->
-	<sidebar>
-	<!--
-		<tab label="Test">
-			<item command="CmdNewLanguage"/>
-			<item command="CmdExit"/>
-		</tab>
-		-->
-	</sidebar>
-	<!-- ********************************************************** -->
-	<!-- ************************ toolbars *********************** -->
-	<!-- ********************************************************** -->
-	<toolbars>
-		<toolbar id="Standard">
-			<item command="CmdNewLanguage"/>
-			<item command="CmdOpenLanguage"/>
-			<item command="CmdGenerateFiles"/>
-			<item label="-"/>
-			<item command="CmdCut"/>
-			<item command="CmdCopy"/>
-			<item command="CmdPaste"/>
-			<item label="-"/>
-			<item command="CmdBack"/>
-			<item command="CmdForward"/>
-			<item command="CmdRefresh"/>
-		</toolbar>
-	</toolbars>
-	<!-- ********************************************************** -->
-	<!-- ************************ statusbar *********************** -->
-	<!-- ********************************************************** -->
-	<statusbar>
-		<!-- At runtime, put text in these by setting the property 'StatusPanelMessage', 'StatusPanelProgress', etc. to something -->
-		<panel id="Message" width="Contents" minwidth="400"/>
-		<panel id="PageNumber" width="Contents" minwidth="40"/>
-	</statusbar>
-	<!-- ********************************************************** -->
-	<!-- ************************ resources *********************** -->
-	<!-- ********************************************************** -->
-	<resources>
-		<imageList assemblyPath="CabhabDll.dll" class="SIL.Cabhab.ImageHolder" field="toolbarImages" size="large" labels="Save,Back,Copy,Cut,Forward,New,Open,Paste,Refresh"/>
-		<imageList assemblyPath="CabhabDll.dll" class="SIL.Cabhab.ImageHolder" field="toolbarImages" size="small" labels="Save,Back,Copy,Cut,Forward,New,Open,Paste,Refresh"/>
-		<include path="Extensions/*/MainConfigurationExtension.xml" query="root/resources/*"/>
-	</resources>
-	<!-- ********************************************************** -->
-	<!-- ************************ listeners *********************** -->
-	<!-- ********************************************************** -->
-	<listeners>
-		<listener assemblyPath="xCore.dll" class="XCore.MockupDialogLauncher"/>
-		<!--
-		<include path="Lexicon/areaConfiguration.xml" query="root/listeners/*"/>
-		<include path="Words/areaConfiguration.xml" query="root/listeners/*"/>
-		<include path="Grammar/areaConfiguration.xml" query="root/listeners/*"/>
-		<include path="Texts/areaConfiguration.xml" query="root/listeners/*"/>
-		<include path="Lists/areaConfiguration.xml" query="root/listeners/*"/>
-		-->
-		<include path="Extensions/*/MainConfigurationExtension.xml" query="root/listeners/*"/>
-		<!-- this guy watches what the 'areas' list puts in the 'areaChoice' property and
+  <!-- ********************************************************** -->
+  <!-- ************************ commands *********************** -->
+  <!-- ********************************************************** -->
+  <commands>
+    <command id="CmdNewLanguage" label="Create _New Language" shortcut="Ctrl+N" message="NewLanguage" icon="New" />
+    <command id="CmdOpenLanguage" label="_Open Language" message="OpenLanguage" shortcut="Ctrl+O" icon="Open" />
+    <command id="CmdCloseLanguage" label="_Close Language" message="CloseLanguage" />
+    <command id="CmdGenerateFiles" label="_Generate Files" message="GenerateFiles" shortcut="Ctrl+S" icon="Save" />
+    <command id="CmdSaveLanguageAs" label="_Save Language As" message="SaveLanguageAs" />
+    <command id="CmdExit" label="E_xit" message="ExitApplication" />
+    <command id="CmdCopy" label="_Copy" message="EditCopy" icon="Copy" shortcut="Ctrl+C" />
+    <command id="CmdCut" label="Cu_t" message="EditCut" icon="Cut" shortcut="Ctrl+X" />
+    <command id="CmdPaste" label="_Paste" message="EditPaste" icon="Paste" shortcut="Ctrl+V" />
+    <command id="CmdLanguageProperties" label="_Properties" message="LanguageProperties" />
+    <command id="CmdLanguageFileLocations" label="File _Locations" message="LanguageFileLocations" />
+    <command id="CmdBack" label="_Back" message="BrowserBack" icon="Back" shortcut="Alt+Left" />
+    <command id="CmdForward" label="_Forward" message="BrowserForward" icon="Forward" shortcut="Alt+Right" />
+    <command id="CmdRefresh" label="_Refresh" message="BrowserRefresh" icon="Refresh" shortcut="F5" />
+    <command id="CmdAbout" label="_About PAWS" message="AboutPage" />
+    <command id="CmdResources" label="_Resources" message="ResourcesPage" />
+    <command id="CmdShowToolbar" label="Show Toolbar" message="ShowToolbar" />
+    <command id="CmdShowStatusBar" label="Show Status Bar" message="ShowStatusBar" />
+  </commands>
+  <!-- ********************************************************** -->
+  <!-- ************************ menus *********************** -->
+  <!-- ********************************************************** -->
+  <menubar>
+    <!--        <menu id="File" label="_File" b4InsertMenu="true"> -->
+    <menu id="File" label="_File">
+      <item command="CmdNewLanguage" defaultVisible="true" />
+      <item command="CmdOpenLanguage" />
+      <item command="CmdCloseLanguage" />
+      <item command="CmdSaveLanguageAs" />
+      <item label="-" />
+      <item command="CmdGenerateFiles" />
+      <item label="-" />
+      <item command="CmdLanguageFileLocations" />
+      <item label="-" />
+      <item command="CmdExit" />
+    </menu>
+    <!--       <menu id="Edit" label="_Edit" b4InsertMenu="true"> -->
+    <menu id="Edit" label="_Edit">
+      <item command="CmdCut" />
+      <item command="CmdCopy" />
+      <item command="CmdPaste" />
+      <include path="Extensions/*/MainConfigurationExtension.xml" query="root/menuAddOn/menu[@id='Edit']/*" />
+    </menu>
+    <!--        <menu id="Language" label="_Language" b4InsertMenu="true"> -->
+    <menu id="Language" label="_Language">
+      <item command="CmdLanguageProperties" />
+      <item command="CmdLanguageFileLocations" />
+      <include path="Extensions/*/MainConfigurationExtension.xml" query="root/menuAddOn/menu[@id='Edit']/*" />
+    </menu>
+    <menu id="View" label="_View">
+      <item label="Show Toolbar" boolProperty="ShowToolbar" command="CmdShowToolbar" />
+      <item label="Show Status Bar" boolProperty="ShowStatusBar" command="CmdShowStatusBar" />
+      <item label="-" />
+      <item command="CmdBack" />
+      <item command="CmdForward" />
+      <item command="CmdRefresh" />
+    </menu>
+    <menu id="Help" label="_Help">
+      <item id="Resources" command="CmdResources" />
+      <item label="-" />
+      <item id="About" command="CmdAbout" />
+    </menu>
+  </menubar>
+  <!-- ********************************************************** -->
+  <!-- ************************ contextMenus *********************** -->
+  <!-- ********************************************************** -->
+  <contextMenus>
+    <menu id="TestContextMenu" label="_Needs">
+      <item label="Wheelchair Required" boolProperty="wheelchair" />
+      <item label="Basinet Required" boolProperty="basinet" />
+      <!-- notice that this one override the default value, which is "false" -->
+      <item label="Food Required" boolProperty="food" defaultBoolPropertyValue="true" />
+    </menu>
+  </contextMenus>
+  <!-- ********************************************************** -->
+  <!-- ************************ sidebar *********************** -->
+  <!-- ********************************************************** -->
+  <sidebar>
+    <!--
+        <tab label="Test">
+            <item command="CmdNewLanguage"/>
+            <item command="CmdExit"/>
+        </tab>
+        -->
+  </sidebar>
+  <!-- ********************************************************** -->
+  <!-- ************************ toolbars *********************** -->
+  <!-- ********************************************************** -->
+  <toolbars>
+    <toolbar id="Standard">
+      <item command="CmdNewLanguage" />
+      <item command="CmdOpenLanguage" />
+      <item command="CmdGenerateFiles" />
+      <item label="-" />
+      <item command="CmdCut" />
+      <item command="CmdCopy" />
+      <item command="CmdPaste" />
+      <item label="-" />
+      <item command="CmdBack" />
+      <item command="CmdForward" />
+      <item command="CmdRefresh" />
+    </toolbar>
+  </toolbars>
+  <!-- ********************************************************** -->
+  <!-- ************************ statusbar *********************** -->
+  <!-- ********************************************************** -->
+  <statusbar>
+    <!-- At runtime, put text in these by setting the property 'StatusPanelMessage', 'StatusPanelProgress', etc. to something -->
+    <panel id="Message" width="Contents" minwidth="400" />
+    <panel id="PageNumber" width="Contents" minwidth="40" />
+  </statusbar>
+  <!-- ********************************************************** -->
+  <!-- ************************ resources *********************** -->
+  <!-- ********************************************************** -->
+  <resources>
+    <imageList assemblyPath="CabhabDll.dll" class="SIL.Cabhab.ImageHolder" field="toolbarImages" size="large" labels="Save,Back,Copy,Cut,Forward,New,Open,Paste,Refresh" />
+    <imageList assemblyPath="CabhabDll.dll" class="SIL.Cabhab.ImageHolder" field="toolbarImages" size="small" labels="Save,Back,Copy,Cut,Forward,New,Open,Paste,Refresh" />
+    <include path="Extensions/*/MainConfigurationExtension.xml" query="root/resources/*" />
+  </resources>
+  <!-- ********************************************************** -->
+  <!-- ************************ listeners *********************** -->
+  <!-- ********************************************************** -->
+  <listeners>
+    <listener assemblyPath="xCore.dll" class="XCore.MockupDialogLauncher" />
+    <!--
+        <include path="Lexicon/areaConfiguration.xml" query="root/listeners/*"/>
+        <include path="Words/areaConfiguration.xml" query="root/listeners/*"/>
+        <include path="Grammar/areaConfiguration.xml" query="root/listeners/*"/>
+        <include path="Texts/areaConfiguration.xml" query="root/listeners/*"/>
+        <include path="Lists/areaConfiguration.xml" query="root/listeners/*"/>
+        -->
+    <include path="Extensions/*/MainConfigurationExtension.xml" query="root/listeners/*" />
+    <!-- this guy watches what the 'areas' list puts in the 'areaChoice' property and
 			populates the "tools" list appropriately. -->
-		<!--	<listener assemblyPath="XCore.dll" class="XCore.AreaManager" />-->
-		<!-- ===
-		<listener assemblyPath="LexTextDll.dll" class="SIL.FieldWorks.XWorks.LexText.AreaListener"/>
-		=== -->
-		<!-- take care of the writing system combo box -->
-		<!--
-		<listener assemblyPath="xWorks.dll" class="SIL.FieldWorks.XWorks.WritingSystemListHandler"/>
-		<listener assemblyPath="xWorks.dll" class="SIL.FieldWorks.XWorks.LinkListener"/>
-		<listener assemblyPath="DnbXCoreAdapterLibrary.dll" class="XCore.ContextHelper">
-			<parameters contextHelpPath="contextHelp.xml"/>
-		</listener>
-		-->
-		<!--<listener assemblyPath="xCore.dll" class="XCore.ProgressListener" />-->
-	</listeners>
-	<!-- ********************************************************** -->
-	<!-- ************************ contentClass *********************** -->
-	<!-- ********************************************************** -->
-	<!-- The class which will  fill up the window (minus the sidebar, toolbars, and menubar).
+    <!--	<listener assemblyPath="XCore.dll" class="XCore.AreaManager" />-->
+    <!-- ===
+        <listener assemblyPath="LexTextDll.dll" class="SIL.FieldWorks.XWorks.LexText.AreaListener"/>
+        === -->
+    <!-- take care of the writing system combo box -->
+    <!--
+        <listener assemblyPath="xWorks.dll" class="SIL.FieldWorks.XWorks.WritingSystemListHandler"/>
+        <listener assemblyPath="xWorks.dll" class="SIL.FieldWorks.XWorks.LinkListener"/>
+        <listener assemblyPath="DnbXCoreAdapterLibrary.dll" class="XCore.ContextHelper">
+            <parameters contextHelpPath="contextHelp.xml"/>
+        </listener>
+        -->
+    <!--<listener assemblyPath="xCore.dll" class="XCore.ProgressListener" />-->
+  </listeners>
+  <!-- ********************************************************** -->
+  <!-- ************************ contentClass *********************** -->
+  <!-- ********************************************************** -->
+  <!-- The class which will  fill up the window (minus the sidebar, toolbars, and menubar).
 	this path is relative to the executing application.-->
-	<contentClass assemblyPath="CabhabDll.dll" class="SIL.Cabhab.HtmlViewer">
-		<parameters URL="about:blank"/>
-		<!--		<parameters URL="file:///c:/carla/dev/Cabhab/Configurations/PAWS/HTMs/Content.htm"/> -->
-	</contentClass>
-	<!-- ********************************************************** -->
-	<!-- ************************ defaultProperties *********************** -->
-	<!-- ********************************************************** -->
-	<!--set the value of some simple properties to the defaults we want in the case that this is the first time the user has run the program, or the settings file is missing, or the program was launched with the shift key down-->
-	<defaultProperties>
-		<!-- simple string properties can be set like this: <property name ="UserName" value="Leroy"/> -->
-	<property name="PreferredUILibrary" value="DnbXCoreAdapterLibrary.dll" persist="false"/>
-		<!--
+  <contentClass assemblyPath="CabhabDll.dll" class="SIL.Cabhab.HtmlViewer">
+    <parameters URL="about:blank" />
+    <!--		<parameters URL="file:///c:/carla/dev/Cabhab/Configurations/PAWS/HTMs/Content.htm"/> -->
+  </contentClass>
+  <!-- ********************************************************** -->
+  <!-- ************************ defaultProperties *********************** -->
+  <!-- ********************************************************** -->
+  <!--set the value of some simple properties to the defaults we want in the case that this is the first time the user has run the program, or the settings file is missing, or the program was launched with the shift key down-->
+  <defaultProperties>
+    <!-- simple string properties can be set like this: <property name ="UserName" value="Leroy"/> -->
+    <property name="PreferredUILibrary" value="DnbXCoreAdapterLibrary.dll" persist="false" />
+    <!--
 		These two properties determine if the main content control takes up the entire window width.
 		If 'ShowFullWindow' is true, then neither the sidebar nor the record list will be visible.
 		If 'ShowFullWindow' is false, then the sidebar, the recorld list, or both will be visible.
 		 -->
-		<property name="ShowSidebarControls" bool="false" persist="true"/>
-		<!-- This is the splitter distance for the sidebar and/or record list/main content pair of controls. -->
-		<property name="SidebarControlsWidth" intValue="10" persist="true"/>
-		<!--
+    <property name="ShowSidebarControls" bool="false" persist="true" />
+    <!-- This is the splitter distance for the sidebar and/or record list/main content pair of controls. -->
+    <property name="SidebarControlsWidth" intValue="10" persist="true" />
+    <!--
 		We do not want to show the sidebar by default.
 		-->
-		<property name="ShowSidebar" bool="false" persist="true"/>
-				<property name="ShowRecordList" bool="false" persist="true"/>
-
-		<!-- This is the splitter distance for the sidebar/record list pair of controls. -->
-		<property name="SidebarWidth" intValue="10" persist="true"/>
-		<property name="ShowTreeBar" bool="false" persist="true"/>
-		<property name="DoLog" bool="true" persist="false"/>
-		<!-- increment this to make toolbar layouts revert to default -->
-		<property name="CurrentToolbarVersion" value="1"/>
-<!--
+    <property name="ShowSidebar" bool="false" persist="true" />
+    <property name="ShowRecordList" bool="false" persist="true" />
+    <!-- This is the splitter distance for the sidebar/record list pair of controls. -->
+    <property name="SidebarWidth" intValue="10" persist="true" />
+    <property name="ShowTreeBar" bool="false" persist="true" />
+    <property name="DoLog" bool="true" persist="false" />
+    <!-- increment this to make toolbar layouts revert to default -->
+    <property name="CurrentToolbarVersion" value="1" />
+    <!--
 Following are specific to PAWS
 -->
-		<property name="AppIcon" value="..\..\Configurations\PAWS\PAWS.ico"/>
-		<property name="MasterCSSLocation" value="Styles/PAWSStarterKitMaster.css"/>
-		<property name="WebPageMapperLocation" value="Transforms/PAWSSKHtmlMapper.xsl"/>
-		<property name="AboutPageLocation" value="HTMs/About.htm"/>
-		<property name="ResourcesPageLocation" value="HTMs/Resources.htm"/>
-		<property name="LanguagePropertiesLocation" value="HTMs/LanguageProperties.htm"/>
-		<property name="LanguageFilesLocation" value="HTMs/PAWSFiles.htm"/>
-		<property name="WelcomePageLocation" value="HTMs/Welcome.htm"/>
-		<property name="MasterAnswerFileLocation" value="Data/PAWSStarterKitMaster.paw"/>
-
-		<property name="AnswerFileFilter" value="PAWS Starter Kit (*.paw)|*.paw|All Files (*.*)|*.*"/>
-	</defaultProperties>
-	<!-- ********************************************************** -->
-	<!-- ******************* answerFileTransformSets ******************* -->
-	<!-- ********************************************************** -->
-	<answerFileTransformSets>
-		<answerFileTransformSet>
-			<transform file="Transforms/PAWSSKMasterGrammarMapper.xsl" resultFileFromAnswerFile="//language/grammarFile" removeBOM="true"/>
-		</answerFileTransformSet>
-		<answerFileTransformSet>
-			<transform file="Transforms/PAWSSKMasterWriterMapper.xsl" resultFileFromAnswerFile="//language/writerFile" ext="xml" saveResult="true" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE='&lt;!DOCTYPE lingPaper PUBLIC "-//XMLmind//DTD XLingPap//EN"
-"file://%SystemDrive%/Documents and Settings/%USERNAME%/Application Data/XMLmind/XMLEditor/addon/XLingPap/XLingPap.dtd"&gt;'>
-				<xsltParameters>
-					<!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
-					<param name="prmSDateTime" value="fake"/>
-				</xsltParameters>
-			</transform>
-			<transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerFile" ext="htm"/>
-		</answerFileTransformSet>
-		<answerFileTransformSet>
-			<transform file="Transforms/PAWSSKParameterizedExample.xsl" resultPathFromAnswerFile="//language/exampleFilesPath" resultFile1="prmIdTitle" resultFile2="Test" ext="txt" removeBOM="true">
-				<xsltParameterSets>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="QP"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="AdvP"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="AdjP"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="NP"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="PP"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="Prop"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="Pron"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="IP"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="Comp"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="Q"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="RelCl"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="AdvCl"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="Neg"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="Coord"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="Focus"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-					<xsltParameterSet>
-						<xsltParameters>
-							<param name="prmIdTitle" value="Excl"/>
-							<param name="prmTextSFM" valueFromAnswerFile="//language/textSFM"/>
-						</xsltParameters>
-					</xsltParameterSet>
-				</xsltParameterSets>
-			</transform>
-		</answerFileTransformSet>
-	</answerFileTransformSets>
+    <property name="AppIcon" value="..\..\Configurations\PAWS\PAWS.ico" />
+    <property name="MasterCSSLocation" value="Styles/PAWSStarterKitMaster.css" />
+    <property name="WebPageMapperLocation" value="Transforms/PAWSSKHtmlMapper.xsl" />
+    <property name="AboutPageLocation" value="HTMs/About.htm" />
+    <property name="ResourcesPageLocation" value="HTMs/Resources.htm" />
+    <property name="LanguagePropertiesLocation" value="HTMs/LanguageProperties.htm" />
+    <property name="LanguageFilesLocation" value="HTMs/PAWSFiles.htm" />
+    <property name="WelcomePageLocation" value="HTMs/Welcome.htm" />
+    <property name="MasterAnswerFileLocation" value="Data/PAWSStarterKitMaster.paw" />
+    <property name="AnswerFileFilter" value="PAWS Starter Kit (*.paw)|*.paw|All Files (*.*)|*.*" />
+  </defaultProperties>
+  <!-- ********************************************************** -->
+  <!-- ******************* answerFileTransformSets ******************* -->
+  <!-- ********************************************************** -->
+  <answerFileTransformSets>
+    <answerFileTransformSet>
+      <transform file="Transforms/PAWSSKMasterGrammarMapper.xsl" resultFileFromAnswerFile="//language/grammarFile" removeBOM="true" applyTransformWhenXPath="/paws/@outputGrammar[.='True']" />
+    </answerFileTransformSet>
+    <answerFileTransformSet>
+      <transform file="Transforms/PAWSSKMasterWriterMapper.xsl" resultFileFromAnswerFile="//language/writerFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriter[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;">
+        <xsltParameters>
+          <!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
+          <param name="prmSDateTime" value="fake" />
+            <!-- The name of "prmSVersionNumber" is a special key the FxtViewer.dll knows about; it gets the version number from the <version/> element and then passes it to the transform as a parameter -->
+            <param name="prmSVersionNumber" value="fake" />
+        </xsltParameters>
+      </transform>
+        <transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerFile" ext="htm" applyTransformWhenXPath="/paws/@outputWriter[.='True']" />
+    </answerFileTransformSet>
+    <answerFileTransformSet>
+      <transform file="Transforms/PAWSSKMasterWriterPracticalMapper.xsl" resultFileFromAnswerFile="//language/writerPracticalFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriterPractical[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;">
+        <xsltParameters>
+          <!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
+          <param name="prmSDateTime" value="fake" />
+            <!-- The name of "prmSVersionNumber" is a special key the FxtViewer.dll knows about; it gets the version number from the <version/> element and then passes it to the transform as a parameter -->
+            <param name="prmSVersionNumber" value="fake" />
+        </xsltParameters>
+      </transform>
+        <transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerPracticalFile" ext="htm" applyTransformWhenXPath="/paws/@outputWriterPractical[.='True']"/>
+    </answerFileTransformSet>
+    <answerFileTransformSet>
+      <transform file="Transforms/PAWSSKMasterWriterPracticalSpanishMapper.xsl" resultFileFromAnswerFile="//language/writerPracticalSpanishFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriterPracticalSpanish[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;">
+        <xsltParameters>
+          <!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
+          <param name="prmSDateTime" value="fake" />
+            <!-- The name of "prmSVersionNumber" is a special key the FxtViewer.dll knows about; it gets the version number from the <version/> element and then passes it to the transform as a parameter -->
+            <param name="prmSVersionNumber" value="fake" />
+        </xsltParameters>
+      </transform>
+        <transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerPracticalSpanishFile" ext="htm" applyTransformWhenXPath="/paws/@outputWriterPracticalSpanish[.='True']"/>
+    </answerFileTransformSet>
+    <answerFileTransformSet>
+      <transform file="Transforms/PAWSSKParameterizedExample.xsl" resultPathFromAnswerFile="//language/exampleFilesPath" resultFile1="prmIdTitle" resultFile2="Test" ext="txt" removeBOM="true" applyTransformWhenXPath="/paws/@outputGrammar[.='True']">
+        <xsltParameterSets>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="QP" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="AdvP" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="AdjP" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="NP" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="PP" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="Prop" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="Pron" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="IP" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="Comp" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="Q" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="RelCl" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="AdvCl" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="Neg" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="Coord" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="Focus" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+          <xsltParameterSet>
+            <xsltParameters>
+              <param name="prmIdTitle" value="Excl" />
+              <param name="prmTextSFM" valueFromAnswerFile="//language/textSFM" />
+            </xsltParameters>
+          </xsltParameterSet>
+        </xsltParameterSets>
+      </transform>
+    </answerFileTransformSet>
+  </answerFileTransformSets>
+    <!-- ********************************************************** -->
+    <!-- ******************* dataMigrations ******************* -->
+    <!-- ********************************************************** -->
+    <dataMigrations>
+        <dataMigration dbVersionXPath="/paws[@dbversion='4']" transform="Transforms/DataMigrations/DBVersion4To5.xsl"/>
+        <dataMigration dbVersionXPath="/paws[@dbversion='5']" transform="Transforms/DataMigrations/DBVersion5To6.xsl"/>
+    </dataMigrations>
 </window>

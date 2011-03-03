@@ -52,7 +52,7 @@
 </radio>
 			</radioGroup>
 		</radioGroup>
-		<instruction>
+		<instruction id="AdvPDegreeInstruction">
 			<span id="AdvPSetUnrestrictedInstruction" show="swAdvPSetUnrestricted">Key the features <feature>makeDeg modifies_Adv</feature> on this type of degree word in the lexicon.    (If any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional feature <feature>modifies_Adv</feature> to the same lexical entry.)</span>
 			<span id="AdvPSetAlmostInstruction" show="swAdvPSetAlmost">Key the features <feature>makeDeg modifies_Adv-reason</feature> on this type of degree word in the lexicon.    (If any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional feature <feature>modifies_Adv-reason</feature> to the same lexical entry.)
 </span>
@@ -81,7 +81,7 @@ either side.</span>
 		<br/>
 		<buttons>
 			<button id="AdvPDegreeBack" value="Back" goto="AdvPReason.xml"/>
-			<button id="AdvPDegreeNext" value="Next" goto="AdvPCatMap.xml"/>
+		    <button id="AdvPDegreeNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swAdvPDegreeYes">

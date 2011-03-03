@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+    <section1 id="sProp">
+        <secTitle>Proper Names</secTitle>
+        <p>
+            <content>Proper names are a special kind of noun or phrase that acts syntactically just like other nouns or nominal phrases.  In English, some proper names can stand alone, like </content>
+            <langData>Sue</langData>
+            <content> and </content>
+            <langData>Russia</langData>
+            <content>.  Others are like compound nouns, such as </content>
+            <langData>George Washington</langData>
+            <content>.  Proper names may also contain articles and/or </content>
+            <case element="pp" attr="pPos">
+                <caseText value="before">prepositional</caseText>
+                <caseText value="after">postpositional</caseText>
+                <caseText value="both">prepositional and/or postpositional</caseText>
+                <caseText value="unknown">prepositional and/or postpositional</caseText>
+            </case>
+            <content> phrases, as in </content>
+            <langData>the United States of America</langData>
+            <content>.  Many languages require an article before a name.  Appositives also occur, possibly including a possessor, as in </content>
+            <langData>my son, David</langData>
+            <content>.  In addition, proper names can be modified by adjectives and relative clauses, as in </content>
+            <langData>the good, old USA</langData>
+            <content> or </content>
+            <langData>the Susan Welch that I know</langData>
+            <content>.</content>
+        </p>
+        <p>
+            <content>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </content>
+            <langName/>
+            <content> include:</content>
+        </p>
+        <example>
+            <interlinear exampleLoc="prop/example"/>
+        </example>
+        <p>
+            <content>Examples of proper names with </content>
+            <case element="pp" attr="pPos">
+                <caseText value="before">prepositional</caseText>
+                <caseText value="after">postpositional</caseText>
+                <caseText value="both">prepositional and/or postpositional</caseText>
+                <caseText value="unknown">prepositional and/or postpositional</caseText>
+            </case>
+            <content> phrases in </content>
+            <langName/>
+            <content> include:</content>
+        </p>
+        <example>
+            <interlinear exampleLoc="prop/ppExample"/>
+        </example>
+        <p>
+            <content>Examples of proper names modified by relative clauses included in simple full sentences in </content>
+            <langName/>
+            <content> include:</content>
+        </p>
+        <example>
+            <interlinear exampleLoc="prop/relClExample"/>
+        </example>
+    </section1>
+</portion>

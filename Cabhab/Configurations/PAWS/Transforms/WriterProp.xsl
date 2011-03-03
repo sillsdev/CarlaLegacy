@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="prop">
-	<section1 id="sProp">
-		<secTitle>Proper Names</secTitle>
-		<p>
+    <section1 id="sProp">
+        <secTitle>Proper Names</secTitle>
+        <p>
 <xsl:text>Proper names are a special kind of noun that acts syntactically just like other nouns.  In English, some proper names can stand alone, like </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -41,14 +41,23 @@
 </xsl:attribute>the Susan Welch that I know</langData>
 <xsl:text>.</xsl:text>
 </p>
-		<p>
-<xsl:text>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
+        <p>
+<xsl:text>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
 </p>
-		<example num="xProp.8">
+        <example num="xProp.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//prop/example)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/example))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -74,21 +83,31 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		<p>
-<xsl:text>Examples of proper names with pre/post-positional phrases in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
+        <p>
+<xsl:text>Examples of proper names with pre/post-positional phrases in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
 </p>
-		<example num="xProp.12">
+        <example num="xProp.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/ppExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//prop/ppExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/ppExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -114,21 +133,31 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		<p>
-<xsl:text>Examples of proper names modified by relative clauses included in simple full sentences in </xsl:text>Vernacular<xsl:text> include:</xsl:text>
+        <p>
+<xsl:text>Examples of proper names modified by relative clauses included in simple full sentences in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
 </p>
-		<example num="xProp.16">
+        <example num="xProp.16">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/relClExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(//prop/relClExample)" />
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/relClExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -154,13 +183,14 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </line>
-<xsl:call-template name="DoGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
 </lineGroup>
 <xsl:call-template name="DoFree" />
 </listInterlinear>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-	</section1>
+    </section1>
 </xsl:template>
 </xsl:stylesheet>

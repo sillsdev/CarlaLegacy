@@ -56,7 +56,7 @@ syntactic category of adjectives plus a feature to distinguish them.
 				<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
 			</radioGroup>
 		</radioGroup>
-		<instruction>
+		<instruction id="QPOrdinalInstruction">
 			<span id="QPOrdinalAffixInstruction" show="swQPOrdinalAffix">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
 			<span id="QPOrdinalIndependentInstruction" show="swQPOrdinalIndependent">In the lexicon, mark each ordinal word with the feature <feature>ordinal</feature>. Also, mark the words meaning <example>next</example> and <example>last</example> with this feature.</span>
 			<span id="QPOrdinalBothInstruction" show="swQPOrdinalBoth">In the lexicon, mark the appropriate affix and each independent ordinal word with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
@@ -80,7 +80,7 @@ written as separate words, such as <example>one hundred thirty three</example>. 
 		<br/>
 		<buttons>
 			<button id="QPCardinalExamplesBack" value="Back" goto="QPDegree.xml"/>
-			<button id="QPCardinalExamplesNext" value="Next" goto="QPCatMap.xml"/>
+		    <button id="QPCardinalExamplesNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swQPOrdinalAffix">
