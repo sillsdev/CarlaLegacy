@@ -2,6 +2,13 @@ dnl Process this file with autoconf to produce a configure script.
 AC_INIT(ample/ample.c)
 AC_CONFIG_HEADER(config.h:config.hin)
 
+dnl Configuration options given as command-line arguments
+AC_ARG_WITH([readline],
+  [AS_HELP_STRING([--without-readline],
+    [disable support for readline])],
+  [],
+  [with_readline=yes])
+
 dnl Checks for programs.
 AC_PROG_CC
 AC_PROG_LEX
@@ -28,8 +35,9 @@ AC_HEADER_STDC
 AC_CHECK_HEADERS(fcntl.h limits.h sgtty.h stdarg.h)
 AC_CHECK_HEADERS(sys/fcntl.h sys/file.h sys/ioctl.h sys/resource.h sys/time.h)
 AC_CHECK_HEADERS(sys/times.h sys/types.h termio.h unistd.h)
-AC_CHECK_HEADERS(readline/readline.h)
-AC_CHECK_HEADERS(readline/history.h)
+AS_IF([test "x$with_readline" != xno],
+  [AC_CHECK_HEADERS(readline/readline.h)
+   AC_CHECK_HEADERS(readline/history.h)])
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
@@ -65,9 +73,10 @@ AC_REPLACE_FUNCS(memset rand rindex strcasecmp strchr strcspn)
 AC_REPLACE_FUNCS(stricmp strlwr strpbrk strpos strrchr strrpbrk strrpos strspn)
 AC_REPLACE_FUNCS(strstr strtok strtol strtoul strupr tolower toupper)
 
-AC_CHECK_LIB(readline, readline)
-AC_CHECK_FUNCS(readline)
-AC_CHECK_FUNCS(add_history)
+AS_IF([test "x$with_readline" != xno],
+  [AC_CHECK_LIB(readline, readline)
+   AC_CHECK_FUNCS(readline)
+   AC_CHECK_FUNCS(add_history)])
 
 AC_OUTPUT(Makefile cportlib/Makefile opaclib/Makefile cmdlib/Makefile ample/Makefile stamp/Makefile pckimmo/Makefile pcpatr/Makefile ktext/Makefile ktagger/Makefile anadiff/Makefile intergen/Makefile doc/Makefile TonePGLib/Makefile ToneGen/Makefile TonePars/Makefile,
 [echo > stamp-h])dnl
