@@ -6,9 +6,16 @@
 		<p>
 			<content>This is a description of the syntax of </content>
 			<langName/>
-			<content> based on the answers given to the PAWS Starter Kit. </content></p>
-<p>
-			<comment> Once the starter kit is completed, this file can serve as a draft for preparing a more complete grammar.  This grammar is written at the practical grammar level as a descriptive/comparative grammar relative to English.  For your final version, you can delete the information about English in each section or change it to relate to the national language in your area.</comment></p><p><comment>Until you have completed every page of the starter kit, some of the information given may be inaccurate because it is based only on the default answers.  Default answers relating to the position of elements are shown here as ______ until you have completed the appropriate page in the starter kit.</comment> </p><p><comment> DO NOT MODIFY THIS FILE UNTIL THE STARTER KIT IS COMPLETED, because your work will be overwritten by the PAWS program!</comment>
+			<content> based on the answers given to the PAWS Starter Kit.   This grammar is written as a descriptive or comparative grammar relative to English. </content>
+		</p>
+		<p>
+			<comment> Once the starter kit is completed, this file can serve as a draft for preparing a more complete grammar.  For your final version, you can delete the information about English in each section or change it to relate to the national language in your area.</comment>
+		</p>
+		<p>
+			<comment>Until you have completed every page of the starter kit, some of the information given may be inaccurate because it is based only on the default answers.  Default answers relating to the position of elements are shown here as ______ until you have completed the appropraite page in the starter kit.</comment>
+		</p>
+		<p>
+			<comment> DO NOT MODIFY THIS FILE UNTIL THE STARTER KIT IS COMPLETED, because your work will be overwritten by the PAWS program!</comment>
 		</p>
 		<p>
 			<content>The </content>
@@ -23,9 +30,382 @@
 			<comment>language family name goes here</comment>
 			<content> language family.</content>
 		</p>
-		<p>
-			<content>After giving information on the syntactic typology of the language, the grammar begins by describing the smaller phrases which can modify other phrases before moving through several types of nominal phrases and on to adpositional phrases.  Basic, main clause sentences are then covered, followed finally by various types of embedded clauses and constructions involving changes in word order.   </content>
-		</p>
+		<section2 id="sOrtho">
+			<secTitle>Orthography</secTitle>
+			<p>
+				<content>The orthographic symbols used in writing </content>
+				<langName/>
+				<content> are for both the native words and also for loan words from other languages. In </content>
+				<exampleRef num="xAlphabet"/>
+				<content> these symbols are presented in alphabetical order:</content>
+			</p>
+			<example num="xAlphabet">
+				<table>
+					<headerRow>
+						<headerCol>Symbol</headerCol>
+						<headerCol>Example</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+				</table>
+			</example>
+			<p>
+				<content>See the appendix </content>
+				<appendixRef app="aAppdx"/>
+				<content> for consonant and vowel charts which compare the practical orthography with the phonetic alphabet (IPA).</content>
+			</p>
+		</section2>
+		<section2 id="sExamples">
+			<secTitle>Conventions used in the examples</secTitle>
+			<p>
+				<content>This grammar contains many illustrative phrases and sentences.  Most of these are presented in an interlinear format consisting of three or four lines, as shown in </content>
+				<exampleRef num="xEx"/>
+				<content>:</content>
+			</p>
+			<example num="xEx">
+				<table>
+					<row>
+						<col>
+							<content>[vernacular words]</content>
+						</col>
+						<col>
+							<langData>word</langData>
+						</col>
+						<col>
+							<langData>word</langData>
+						</col>
+						<col>
+							<langData>word</langData>
+						</col>
+					</row>
+					<row>
+						<col>
+							<content>[morpheme glosses]</content>
+						</col>
+						<col>
+							<content>PRE-root-SUF</content>
+						</col>
+						<col>
+							<content>PRE-root-SUF</content>
+						</col>
+						<col>
+							<content>PRE-root-SUF</content>
+						</col>
+					</row>
+					<row>
+						<col>
+							<content>[literal word glosses]</content>
+						</col>
+						<col>
+							<content>gloss</content>
+						</col>
+						<col>
+							<content>gloss</content>
+						</col>
+						<col>
+							<content>gloss</content>
+						</col>
+					</row>
+					<row>
+						<col>
+							<content>[free translation]</content>
+						</col>
+						<col colspan="3">
+							<content>free translation phrase or sentence</content>
+						</col>
+					</row>
+				</table>
+			</example>
+			<p>
+				<content>The words in </content>
+				<langName/>
+				<content> are given on the first line.   The second line shows the morpheme glosses for the parts of the word, with the prefixes, root, and suffixes separated by hyphens.  The third line presents a literal translation in English, word for word, giving the English word gloss that is the closest in meaning to the word in </content>
+				<langName/>
+				<content>.  If more than one English word is needed to express the meaning of the </content>
+				<langName/>
+				<content> word, these English words will be separated by periods.  The final line gives the free translation for the whole example.</content>
+			</p>
+			<p>
+				<comment>Say more here about  any differences between your language and English.  For example, if your language does not distinguish between number and/or gender on nouns, but the gloss language does, you choose to use only singular and/or masculine forms for the glosses.</comment>
+			</p>
+			<p>
+				<content>After giving information on the syntactic typology of the language, the grammar begins by describing the smaller phrases which can modify other phrases before moving through several types of nominal phrases and on to adpositional phrases.  Basic, main clause sentences are then covered, followed finally by various types of embedded clauses and constructions involving changes in word order.     Some texts are included at the end to demonstrate how larger constructions such as paragraphs, conversations, and narrative stories are formed.</content>
+			</p>
+		</section2>
 	</section1>
 	<section1 id="sTypology">
 		<secTitle>Word Order Typology</secTitle>
@@ -102,15 +482,23 @@
 			</case>
 			<content> the noun they are modifying (section </content>
 			<sectionRef sec="sNPAdjP"/>
-			<content>).   </content><text show="swRelClExistNo"><langName/> <content> does not have any type of relative clause.</content></text><text show="swRelClExistYes"><content>Relative clauses occur </content> <case element="relcl" attr="clausePos">
-				<caseText value="before">before</caseText>
-				<caseText value="after">after</caseText>
-				<caseText value="either">on either side of</caseText>
-				<caseText value="unknown"> _______ </caseText>
-</case>
-<content> the head noun (section </content>
-			<sectionRef sec="sRelCl"/>
-			<content>).   </content> </text>
+			<content>).   </content>
+			<text show="swRelClExistNo">
+				<langName/>
+				<content> does not have any type of relative clause.</content>
+			</text>
+			<text show="swRelClExistYes">
+				<content>Relative clauses occur </content>
+				<case element="relcl" attr="clausePos">
+					<caseText value="before">before</caseText>
+					<caseText value="after">after</caseText>
+					<caseText value="either">on either side of</caseText>
+					<caseText value="unknown"> _______ </caseText>
+				</case>
+				<content> the head noun (section </content>
+				<sectionRef sec="sRelCl"/>
+				<content>).   </content>
+			</text>
 		</p>
 		<p>
 			<content>In </content>
@@ -261,13 +649,13 @@
 		<and/>
 		<whenValue element="pp" attr="pPos" value="before"/>
 	</showWhen>
-<showWhen id="swRelClExistNo">
-	<whenValue element="relcl" attr="exist" value="no"></whenValue>
-</showWhen>
-<showWhen id="swRelClExistYes">
-	<whenValue element="relcl" attr="exist" value="yes"></whenValue>
-</showWhen>
-   <showWhen id="swAuxNone">
+	<showWhen id="swRelClExistNo">
+		<whenValue element="relcl" attr="exist" value="no"/>
+	</showWhen>
+	<showWhen id="swRelClExistYes">
+		<whenValue element="relcl" attr="exist" value="yes"/>
+	</showWhen>
+	<showWhen id="swAuxNone">
 		<whenValue element="ip" attr="aux" value="no"/>
 	</showWhen>
 	<showWhen id="swAuxNotNone">

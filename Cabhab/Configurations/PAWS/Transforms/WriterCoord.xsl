@@ -2,14 +2,14 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="coord">
   <section1 id="sCoord">
-    <secTitle>Coordination Constructions</secTitle>
-    <p>
+	<secTitle>Coordination Constructions</secTitle>
+	<p>
 <xsl:text>This section considers basic coordination constructions where there is an overt conjunction between the conjuncts, including coordination at the sentence level and at the verb phrase, nominal phrase, and adjective level.  More complex types of coordination constructions, such as lists without overt conjunctions between each conjunct, gapping, appositives and comparatives, will need to be dealt with later.</xsl:text>
 </p>
-      <p>
+	  <p>
 <object type="tComment">If your language has more complex kinds of coordination constructions, such as such as lists without overt conjunctions between each conjunct, missing parts of one of the conjuncts, appositives and comparatives, you can add description and examples as appropriate in this section.</object>
 </p>
-      <p>
+	  <p>
 <xsl:text>In English, the conjunctions which can be used between two conjuncts are</xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -48,7 +48,7 @@
 <xsl:text> as a conjunction between nominal phrases.
 </xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text></xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -60,11 +60,11 @@
 </xsl:choose>
 <xsl:text> uses the following conjunctions between conjuncts:</xsl:text>
 </p>
-            <example num="xCoord.12">
+			<example num="xCoord.12">
 <table border="1">
-                    <tr>
-                        <th>
-                            <xsl:choose>
+					<tr>
+						<th>
+							<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
@@ -72,10 +72,10 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-                        </th>
-                        <th>Gloss</th>
-                    </tr>
-                    <xsl:variable name="sExampleValue0">
+						</th>
+						<th>Gloss</th>
+					</tr>
+					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//coord/and),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
@@ -97,9 +97,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>and</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>and</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -111,13 +111,13 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>and</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>and</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue1">
+					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//coord/or),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
@@ -139,9 +139,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>or</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>or</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -153,13 +153,13 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>or</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>or</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue2">
+					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//coord/nor),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
@@ -181,9 +181,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>nor</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>nor</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -195,13 +195,13 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>nor</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>nor</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue3">
+					<xsl:variable name="sExampleValue3">
 <xsl:value-of select="translate(string(//coord/andOr),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3" select="string-length($sExampleValue3)" />
@@ -223,9 +223,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>and/or</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>and/or</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -237,13 +237,13 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>and/or</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>and/or</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue4">
+					<xsl:variable name="sExampleValue4">
 <xsl:value-of select="translate(string(//coord/but),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4" select="string-length($sExampleValue4)" />
@@ -265,9 +265,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>but</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>but</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -279,13 +279,13 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>but</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>but</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue5">
+					<xsl:variable name="sExampleValue5">
 <xsl:value-of select="translate(string(//coord/with),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5" select="string-length($sExampleValue5)" />
@@ -307,9 +307,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>with</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>with</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -321,13 +321,13 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>with</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>with</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue6">
+					<xsl:variable name="sExampleValue6">
 <xsl:value-of select="translate(string(//coord/other),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength6" select="string-length($sExampleValue6)" />
@@ -349,9 +349,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>any others</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>any others</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -363,15 +363,15 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>any others</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>any others</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                </table>
+				</table>
 </example>
-            <p>
+			<p>
 <xsl:text></xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -393,11 +393,11 @@
 </xsl:attribute>neither...or</langData>
 <xsl:text> type construction:</xsl:text>
 </p>
-            <example num="xCoord.16">
+			<example num="xCoord.16">
 <table border="1">
-                    <tr>
-                        <th>
-                            <xsl:choose>
+					<tr>
+						<th>
+							<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
@@ -405,10 +405,10 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-                        </th>
-                        <th>Gloss</th>
-                    </tr>
-                    <xsl:variable name="sExampleValue0">
+						</th>
+						<th>Gloss</th>
+					</tr>
+					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//coord/either),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
@@ -430,9 +430,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>either</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>either</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -444,13 +444,13 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>either</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>either</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue1">
+					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//coord/neither),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
@@ -472,9 +472,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>neither</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>neither</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -486,31 +486,31 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>neither</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>neither</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                </table>
+				</table>
 </example>
-        <section2 id="sCoordSentence">
-            <secTitle>Sentence-level coordination</secTitle>
-            <p>
+		<section2 id="sCoordSentence">
+			<secTitle>Sentence-level coordination</secTitle>
+			<p>
 <xsl:text>Sentence-level coordination includes most types of sentences, including declaratives and questions.  Some English examples are: </xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>John went to the office this morning but he did not return.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>When did the mail come and where is my package?</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Either I will come to the party or I will send my sister.</xsl:text>
-                </li>
-            </ol>
-            <p>
+			<ol>
+				<li>
+					<xsl:text>John went to the office this morning but he did not return.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>When did the mail come and where is my package?</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Either I will come to the party or I will send my sister.</xsl:text>
+				</li>
+			</ol>
+			<p>
 <xsl:text></xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -522,7 +522,7 @@
 </xsl:choose>
 <xsl:text> examples of sentence-level coordination include:</xsl:text>
 </p>
-            <example num="xCoord.CoordSentence.10">
+			<example num="xCoord.CoordSentence.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/sentExample" />
 </xsl:variable>
@@ -561,23 +561,23 @@
 </xsl:choose>
 </example>
 </section2>
-        <section2 id="sCoordVP">
-            <secTitle>Verb phrase coordination</secTitle>
-            <p>
+		<section2 id="sCoordVP">
+			<secTitle>Verb phrase coordination</secTitle>
+			<p>
 <xsl:text>Verb phrase coordination is exemplified in the following English sentences: </xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>Bill ran the race and won the prize.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>I will come to the party or send my sister.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>I will not come to the party nor send my sister.</xsl:text>
-                </li>
-            </ol>
-            <p>
+			<ol>
+				<li>
+					<xsl:text>Bill ran the race and won the prize.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>I will come to the party or send my sister.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>I will not come to the party nor send my sister.</xsl:text>
+				</li>
+			</ol>
+			<p>
 <xsl:text></xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -589,7 +589,7 @@
 </xsl:choose>
 <xsl:text> examples with verb phrase coordination include:</xsl:text>
 </p>
-            <example num="xCoord.CoordVP.10">
+			<example num="xCoord.CoordVP.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/vpExample" />
 </xsl:variable>
@@ -628,29 +628,29 @@
 </xsl:choose>
 </example>
 </section2>
-        <section2 id="sCoordDP">
-            <secTitle>Nominal phrase coordination</secTitle>
-            <p>
+		<section2 id="sCoordDP">
+			<secTitle>Nominal phrase coordination</secTitle>
+			<p>
 <xsl:text>Nominal phrase coordination is exemplified in the following English sentences: </xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>Bill ran in the Boston Marathon and the Olympics.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>My sister or I will be there.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Neither my sister nor I will be there.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>I will come to the rehearsal but not the dinner.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>I will come to the wedding and/or the reception.</xsl:text>
-                </li>
-            </ol>
-            <p>
+			<ol>
+				<li>
+					<xsl:text>Bill ran in the Boston Marathon and the Olympics.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>My sister or I will be there.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Neither my sister nor I will be there.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>I will come to the rehearsal but not the dinner.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>I will come to the wedding and/or the reception.</xsl:text>
+				</li>
+			</ol>
+			<p>
 <xsl:text></xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -662,7 +662,7 @@
 </xsl:choose>
 <xsl:text> examples with nominal phrase coordination include:</xsl:text>
 </p>
-            <example num="xCoord.CoordDP.10">
+			<example num="xCoord.CoordDP.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/dpExample" />
 </xsl:variable>
@@ -701,23 +701,23 @@
 </xsl:choose>
 </example>
 </section2>
-        <section2 id="sCoordAdj">
-            <secTitle>Adjective coordination</secTitle>
-            <p>
+		<section2 id="sCoordAdj">
+			<secTitle>Adjective coordination</secTitle>
+			<p>
 <xsl:text>Adjective coordination is exemplified in the following English sentences: </xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>The black and white dog belongs to my son.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>The sore on your leg is ugly and painful and dangerous.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>My sister wants a red or blue candle.</xsl:text>
-                </li>
-            </ol>
-            <p>
+			<ol>
+				<li>
+					<xsl:text>The black and white dog belongs to my son.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>The sore on your leg is ugly and painful and dangerous.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>My sister wants a red or blue candle.</xsl:text>
+				</li>
+			</ol>
+			<p>
 <xsl:text></xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -729,7 +729,7 @@
 </xsl:choose>
 <xsl:text> examples with adjective coordination include:</xsl:text>
 </p>
-            <example num="xCoord.CoordAdj.10">
+			<example num="xCoord.CoordAdj.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/adjExample" />
 </xsl:variable>

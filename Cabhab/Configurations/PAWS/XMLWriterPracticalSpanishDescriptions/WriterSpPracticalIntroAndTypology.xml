@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<section1 id="sIntro">
+		<secTitle>Introducción</secTitle>
+		<p>
+			<content>Ésta es una descripción del sintaxis de </content>
+			<langName/>
+			<content> basado en las respuestas dadas al kit del arrancador de PAWS. Esta gramática descriptiva se escribe como gramática práctica que deba ser útil para la comunidad del idioma así como para la documentación de mucha del idioma.</content>
+		</p>
+		<p>
+			<comment>Una vez que se termina el kit del arrancador, este archivo puede servir como bosquejo para preparar una gramática más completa.</comment>
+		</p>
+		<p>
+			<comment>Hasta que usted haya terminado cada página del kit del arrancador, algo de la información dada puede ser inexacta porque se basa solamente en las respuestas del "default". Las respuestas del "default" referentes a la posición de elementos se demuestran aquí como ____ hasta que usted haya terminado la página apropiada en el programa.</comment>
+		</p>
+		<p>
+			<comment>¡NO MODIFIQUE ESTE ARCHIVO HASTA QUE SE TERMINE PAWS, porque su trabajo será sobreescrito por el programa de PAWS!</comment>
+		</p>
+		<p>
+			<content>El idioma del </content>
+			<langName/>
+			<content> se habla en </content>
+			<comment>(pone las localidades aquí)</comment>
+			<content>. Hay aproximadamente </content>
+			<comment>(pone el número aquí)</comment>
+			<content> hablantes. El </content>
+			<langName/>
+			<content> es un miembro del </content>
+			<comment>(pone el nombre de familia del idioma aquí)</comment>
+			<content> familia del idiomas.</content>
+		</p>
+		<section2 id="sOrtho">
+			<secTitle>La ortografía</secTitle>
+			<p>
+				<content>Las grafías que se usan para escribir el </content>
+				<langName/>
+				<content> abarcan no solamente las letras que se usan en las palabras nativas, sino también otras que se usan en las palabras tomadas del español. En </content>
+				<exampleRef num="xAlphabet"/>
+				<content> se presentan estas grafías en orden alfabético:</content>
+			</p>
+			<example num="xAlphabet">
+				<table>
+					<headerRow>
+						<headerCol>Grafía</headerCol>
+						<headerCol>Ejemplo</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<langData lang="lVernacular"/>
+						</col>
+						<col>
+							<gloss/>
+						</col>
+					</row>
+				</table>
+			</example>
+			<p>
+				<content>Véase el apéndice </content>
+				<appendixRef app="aAppdx"/>
+				<content> para cuadros de las consonantes y las vocales que comparan la ortografía práctica con el alfabeto fonético.</content>
+			</p>
+		</section2>
+		<section2 id="sExamples">
+			<secTitle>Convenciones usadas en los ejemplos</secTitle>
+			<p>
+				<content>Esta gramática contiene muchas frases y oraciones ilustrativas. La mayor parte de éstos se presentan en líneas interlineales del formato que consisten en tres o cuatro líneas, como se muestra en </content>
+				<exampleRef num="xEx"/>
+				<content>:</content>
+			</p>
+			<example num="xEx">
+				<table>
+					<row>
+						<col>
+							<content>[palabras vernáculas]</content>
+						</col>
+						<col>
+							<langData>palabra</langData>
+						</col>
+						<col>
+							<langData>palabra</langData>
+						</col>
+						<col>
+							<langData>palabra</langData>
+						</col>
+					</row>
+					<row>
+						<col>
+							<content>[significado literal de palabras]</content>
+						</col>
+						<col>
+							<content>significado</content>
+						</col>
+						<col>
+							<content>significado</content>
+						</col>
+						<col>
+							<content>significado</content>
+						</col>
+					</row>
+					<row>
+						<col>
+							<content>[significado por morfemas]</content>
+						</col>
+						<col>
+							<content>PRE-raíz-SUF</content>
+						</col>
+						<col>
+							<content>PRE-raíz-SUF</content>
+						</col>
+						<col>
+							<content>PRE-raíz-SUF</content>
+						</col>
+					</row>
+					<row>
+						<col>
+							<content>[traducción libre]</content>
+						</col>
+						<col colspan="3">
+							<content>traducción libre de frase u oración</content>
+						</col>
+					</row>
+				</table>
+			</example>
+			<p>
+				<content>Las palabras del </content>
+				<langName/>
+				<content> se dan en la primera línea. La segunda línea presenta una traducción literal en español, palabra por palabra, dando la palabra de español que está el más cercano de significar a la palabra del </content>
+				<langName/>
+				<content>. Si más de una palabra española es necesaria expresar el significado de la palabra del </content>
+				<langName/>
+				<content>, estas palabras españolas serán separadas por puntos. Siempre que uno o más de las palabras del </content>
+				<langName/>
+				<content> tengan más de una porción (morfema), la tercera línea demuestra los significados para las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por guiones. Esta tercera línea puede ser la más útil a los lingüistas. La línea final da la traducción libre por el ejemplo entero.</content>
+			</p>
+			<p>
+				<comment>Diga más aquí sobre cualquier diferencia entre su lengua y español. Por ejemplo, si su lengua no distingue entre el número y/o el género en sustantivos, como español hace, usted elige utilizar solamente las formas singulares y/o masculinas para los significados.</comment>
+			</p>
+			<p>
+				<content>Después de dar la información sobre la tipología sintáctica del idioma, la gramática comienza describiendo las partes del discurso y las frases que dirigen en las secciones </content>
+				<sectionRef sec="sN"/>
+				<content>-</content>
+				<sectionRef sec="sExcl"/>
+				<content>. Las oraciones de la cláusula básicas, principales entonces se cubren en la sección </content>
+				<sectionRef sec="sIP"/>
+				<content>, seguido por las construcciones que implican cambios en el orden de las palabras (las secciones </content>
+				<sectionRef sec="sFocus"/>
+				<content>-</content>
+				<sectionRef sec="sNeg"/>
+				<content>). Las construcciones de la coordinación entonces se cubren en la sección </content>
+				<sectionRef sec="sCoord"/>
+				<content>, seguido finalmente por los varios tipos de cláusulas encajadas (las secciones </content>
+				<sectionRef sec="sComp"/>
+				<content>-</content>
+				<sectionRef sec="sRelCl"/>
+				<content>). Algunos textos son incluidos en el extremo demostrar cómo construcciones más grandes tales como párrafos, conversaciones, e historias narrativas se forman.</content>
+			</p>
+		</section2>
+	</section1>
+	<section1 id="sTypology">
+		<secTitle>La tipología del orden de las palabras</secTitle>
+		<p>
+			<content>El orden de las palabras básico de </content>
+			<langName/>
+			<content> en oraciones transitivas es </content>
+			<case attr="wordOrder" element="typology">
+				<caseText value="SVO">Sujeto-Verbo-Objeto</caseText>
+				<caseText value="SOV">Sujeto-Objeto-Verbo</caseText>
+				<caseText value="VSO">Verbo-Sujeto-Objeto</caseText>
+				<caseText value="VOS">Verbo-Objeto-Sujeto</caseText>
+				<caseText value="OVS">Objeto-Verbo-Sujeto</caseText>
+				<caseText value="OSV">Objeto-Sujeto-Verbo</caseText>
+			</case>
+			<content>, como se muestra en los ejemplos siguientes:</content>
+		</p>
+		<example>
+			<interlinear exampleLoc="typology/example"/>
+		</example>
+		<p show="swHeadInitialAndPrep">
+			<content>En armonía con la tipología cabeza-inicial, el </content>
+			<langName/>
+			<content> tiene preposiciones (la sección </content>
+			<sectionRef sec="sPP"/>
+			<content>).</content>
+		</p>
+		<p show="swHeadInitialAndPost">
+			<content>Al contrario de la tipología cabeza-inicial, el </content>
+			<langName/>
+			<content> tiene posposiciones (la sección </content>
+			<sectionRef sec="sPP"/>
+			<content>).</content>
+		</p>
+		<p show="swPrePost">
+			<content>El </content>
+			<langName/>
+			<content> tiene ambos preposiciones y posposiciones (la sección </content>
+			<sectionRef sec="sPP"/>
+			<content>).</content>
+		</p>
+		<p show="swHeadFinalAndPost">
+			<content>En armonía con la tipología cabeza-final, el </content>
+			<langName/>
+			<content> tiene posposiciones (la sección </content>
+			<sectionRef sec="sPP"/>
+			<content>).</content>
+		</p>
+		<p show="swHeadFinalAndPre">
+			<content>Al contrario de la tipología cabeza-final, el </content>
+			<langName/>
+			<content> tiene preposiciones (la sección </content>
+			<sectionRef sec="sPP"/>
+			<content>).</content>
+		</p>
+		<p>
+			<content>Los poseedores ocurren </content>
+			<case attr="possNounPos" element="np">
+				<caseText value="before">delante</caseText>
+				<caseText value="after">después</caseText>
+				<caseText value="either">de cualquier lado</caseText>
+				<caseText value="unknown">_______</caseText>
+			</case>
+			<content> del sustantivo que es poseído (la sección </content>
+			<sectionRef sec="sNPPoss"/>
+			<content>). Las frases del adjetivo ocurren </content>
+			<case attr="adjpPos" element="np">
+				<caseText value="before">delante</caseText>
+				<caseText value="after">después</caseText>
+				<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+				<caseText value="beforeOrBoth">delante de o en ambos lados</caseText>
+				<caseText value="afterOrBoth">después de o en ambos lados</caseText>
+				<caseText value="both">en ambos lados</caseText>
+				<caseText value="unknown">_______</caseText>
+			</case>
+			<content> del sustantivo que se están modificando (la sección </content>
+			<sectionRef sec="sNPAdjP"/>
+			<content>).</content>
+			<text show="swRelClExistNo">
+				<content>El </content>
+				<langName/>
+				<content> no tiene ningún tipo de cláusula relativa.</content>
+			</text>
+			<text show="swRelClExistYes">
+				<content>Las cláusulas relativas ocurren </content>
+				<case attr="clausePos" element="relcl">
+					<caseText value="before">delante</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="either">de cualquier lado</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> del sustantivo principal (la sección </content>
+				<sectionRef sec="sRelCl"/>
+				<content>).</content>
+			</text>
+		</p>
+		<p>
+			<content>En el </content>
+			<langName/>
+			<content>, </content>
+			<case attr="proDrop" element="ip">
+				<caseText value="noImp">un tema que falta no se permite. El tema debe ser expresado a menos que en los imperativos</caseText>
+				<caseText value="no">un tema que falta no se permite. El tema debe ser expresado aun cuando en los imperativos</caseText>
+				<caseText value="yes">un tema que falta se permite en cualquier tipo de oración</caseText>
+				<caseText value="yesClitic">el tema puede mirar como él es falta debido a los pronombres dependientes (clitics pronominal) que juntan al verbo, pero no es una lengua verdadera que permite un tema que falta</caseText>
+			</case>
+			<content> (la sección </content>
+			<sectionRef sec="sIPProDrop"/>
+			<content>). </content>
+			<text show="swIPProDropYes">
+				<content> Un objeto que falta </content>
+				<case attr="proDropObject" element="ip">
+					<caseText value="no">no</caseText>
+					<caseText value="yes">también</caseText>
+				</case>
+				<content> se permite.</content>
+			</text>
+		</p>
+		<p show="swAuxNone">
+			<content>El </content>
+			<langName/>
+			<content> no tiene ninguna auxiliares que se escriban como palabras separadas (la sección </content>
+			<sectionRef sec="sIPAux"/>
+			<content>).</content>
+		</p>
+		<p show="swAuxNotNone">
+			<content>El </content>
+			<langName/>
+			<content> tiene algunos auxiliares que se escriban como palabras separadas. Éstos ocurren </content>
+			<case attr="wordOrder" element="typology">
+				<caseText value="SVO">delante</caseText>
+				<caseText value="SOV">después</caseText>
+				<caseText value="VSO">delante</caseText>
+				<caseText value="VOS">delante</caseText>
+				<caseText value="OVS">después</caseText>
+				<caseText value="OSV">después</caseText>
+			</case>
+			<content> del verbo principal (la sección </content>
+			<sectionRef sec="sIPAux"/>
+			<content>).</content>
+		</p>
+		<p>
+			<text show="swQMainYNWordYes">
+				<content>En preguntas sí/no, hay un marcador o un complementizer de la pregunta que ocurren </content>
+				<case attr="mainYNPos" element="q">
+					<caseText value="before">delante</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+					<caseText value="beforeOrBoth">delante de o en ambos lados</caseText>
+					<caseText value="afterOrBoth">después de o en ambos lados</caseText>
+					<caseText value="both">en ambos lados</caseText>
+				</case>
+				<content> del resto de la pregunta (la sección </content>
+				<sectionRef sec="sQuesYN"/>
+				<content>).</content>
+			</text>
+			<content>  En preguntas contentas, una frase del interrogativo </content>
+			<case attr="contFront" element="q">
+				<caseText value="no">no se mueve al frente de la cláusula; permanece simplemente en el lugar</caseText>
+				<caseText value="after">puede permanecer en el lugar o puede moverse a la posición inmediatamente antes que el verbo</caseText>
+				<caseText value="before">se mueve al frente de la cláusula</caseText>
+				<caseText value="unknown">_______</caseText>
+			</case>
+			<content> (la sección </content>
+			<sectionRef sec="sQuesContent"/>
+			<content>).</content>
+		</p>
+	</section1>
+	<showWhen id="swHeadInitialAndPrep">
+		<whenValue attr="wordOrder" element="typology" value="SVO"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="before"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="VSO"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="before"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="VOS"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="before"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="SVO"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="VSO"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="VOS"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="unknown"/>
+	</showWhen>
+	<showWhen id="swHeadInitialAndPost">
+		<whenValue attr="wordOrder" element="typology" value="SVO"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="after"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="VSO"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="after"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="VOS"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="after"/>
+	</showWhen>
+	<showWhen id="swPrePost">
+		<whenValue attr="pPos" element="pp" value="both"/>
+	</showWhen>
+	<showWhen id="swHeadFinalAndPost">
+		<whenValue attr="wordOrder" element="typology" value="SOV"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="after"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="OVS"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="after"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="OSV"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="after"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="SOV"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="OVS"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="OSV"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="unknown"/>
+	</showWhen>
+	<showWhen id="swHeadFinalAndPre">
+		<whenValue attr="wordOrder" element="typology" value="SOV"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="before"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="OVS"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="before"/>
+		<or/>
+		<whenValue attr="wordOrder" element="typology" value="OSV"/>
+		<and/>
+		<whenValue attr="pPos" element="pp" value="before"/>
+	</showWhen>
+	<showWhen id="swRelClExistNo">
+		<whenValue attr="exist" element="relcl" value="no"/>
+	</showWhen>
+	<showWhen id="swRelClExistYes">
+		<whenValue attr="exist" element="relcl" value="yes"/>
+	</showWhen>
+	<showWhen id="swAuxNone">
+		<whenValue attr="aux" element="ip" value="no"/>
+	</showWhen>
+	<showWhen id="swAuxNotNone">
+		<whenValue attr="aux" element="ip" value="yes"/>
+	</showWhen>
+	<showWhen id="swQMainYNWordYes">
+		<whenValue attr="mainYNWord" element="q" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPProDropYes">
+		<whenValue attr="proDrop" element="ip" value="yes"/>
+	</showWhen>
+</portion>

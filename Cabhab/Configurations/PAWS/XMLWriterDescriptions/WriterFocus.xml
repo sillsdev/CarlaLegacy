@@ -59,13 +59,15 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </p>
 <example show="swTopicMarkerYes">
 	<table border="1">
-<headerRow>
-	<headerCol>Topic Markers</headerCol>
-</headerRow>
-	<row>
-		<col exampleLoc="focus/topicMarkerExample"></col>
-	</row>
-</table>
+		<headerRow>
+			<headerCol>Topic Markers</headerCol>
+			<headerCol>Gloss or Restrictions</headerCol>
+		</headerRow>
+		<row>
+			<col exampleLoc="focus/topicMarkerExample"></col>
+			<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		</row>
+	</table>
 </example>
 </section2>
 
@@ -120,13 +122,15 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </p>
 <example show="swFocusMarkerYes">
 	<table border="1">
-<headerRow>
-	<headerCol>Focus Markers</headerCol>
-</headerRow>
-	<row>
-		<col exampleLoc="focus/focusMarkerExample"></col>
-	</row>
-</table>
+		<headerRow>
+			<headerCol>Focus Markers</headerCol>
+			<headerCol>Gloss or Restrictions</headerCol>
+		</headerRow>
+		<row>
+			<col exampleLoc="focus/focusMarkerExample"/>
+			<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		</row>
+	</table>
 </example>
 
 

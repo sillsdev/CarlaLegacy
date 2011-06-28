@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Xsl;
@@ -174,7 +176,13 @@ namespace SIL.Cabhab
 		{
 			DateTime now;
 			now = DateTime.Now;
-			return (now.ToLongDateString() + " " + now.ToLongTimeString());
+			//CultureInfo ci = Thread.CurrentThread.CurrentCulture;
+			//Thread.CurrentThread.CurrentCulture = new CultureInfo("es", false);
+
+			string sResult = (now.ToLongDateString() + " " + now.ToLongTimeString());
+
+			//Thread.CurrentThread.CurrentCulture = ci;
+			return sResult;
 		}
 		public static string getXmlElementAttribute(XmlDocument doc, string strXPath)
 		{

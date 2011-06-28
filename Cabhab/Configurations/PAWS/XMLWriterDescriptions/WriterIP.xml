@@ -818,10 +818,58 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				</case>
 				<content> auxiliaries which are written as separate words.  </content>
 				<text show="swIPAuxYes">
-					<content>Examples including auxiliaries that are like the English auxiliaries are:</content>
+					<content>An auxiliary is </content>
+					<case element="ip" attr="auxRequired">
+						<caseText value="no">optional</caseText>
+						<caseText value="no">required</caseText>
+					</case>
+					<content> in </content>
+					<langName/>
+					<content> and  </content>
+					<case element="ip" attr="auxMany">
+						<caseText value="no">only one is possible</caseText>
+						<caseText value="yes">more than one may occur</caseText>
+					</case>
+					<content> in a single clause. </content>
+					<text show="swIPAuxOrderVSO">
+						<content> After an auxiliary, the normal VSO order </content>
+						<case element="ip" attr="auxOrder">
+							<caseText value="yes">is maintained.  The order is Aux V S O.</caseText>
+							<caseText value="no">may change so the subject appears directly after the auxiliary and before the verb.  The order in these clauses is Aux S V O.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+					<text show="swIPAuxOrderOSV">
+						<content> Before an auxiliary, the normal OSV order </content>
+						<case element="ip" attr="auxOrder">
+							<caseText value="yes">is maintained.  The order is O S V Aux.</caseText>
+							<caseText value="no">may change so the subject appears directly after the verb and before the auxiliary.  The order in these clauses is O V S Aux.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
 				</text>
-				<content/>
 			</p>
+			<p show="swIPAuxYes">
+				<content>Examples of auxiliaries in </content><langName/><content> are:</content>
+			</p>
+			<example show="swIPAuxYes">
+				<table border="1">
+					<headerRow>
+						<headerCol>Auxiliary Words</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/auxiliaryExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swIPAuxYes">
+				<content>Examples of sentences including these auxiliaries are:</content>
+			</p>
+
 			<example show="swIPAuxYes">
 				<interlinear exampleLoc="ip/auxExample"/>
 			</example>
@@ -880,22 +928,35 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<langName/>
 				<content> include:</content>
 			</p>
-			<example show="swIPNegAuxNotNoVerb">
+			<example show="swIPNegAuxWord">
 				<table border="1">
-					<caption>
-						<content>Negative Auxiliaries</content>
-					</caption>
-					<row show="swIPNegAuxWord">
-						<col>
-							<content>words</content>
-						</col>
+					<headerRow>
+						<headerCol>Negative Auxiliary Words</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+
+					<row >
+
 						<col exampleLoc="ip/negAuxExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
-					<row show="swIPNegAuxAffix">
-						<col>
-							<content>affix on an auxiliary</content>
-						</col>
+				</table>
+			</example>
+			<p show="swIPNegAuxAffix">
+				<content>Examples of the negative affix(es) attached to an auxiliary word in </content>
+				<langName/>
+				<content> include:</content>
+			</p>
+			<example show="swIPNegAuxAffix">
+				<table border="1">
+					<headerRow>
+						<headerCol>Negative-Marked Auxiliaries</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row >
+
 						<col exampleLoc="ip/negAuxAffixExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
@@ -905,7 +966,19 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<content> include:</content>
 			</p>
 			<example show="swIPNegVerb">
-				<interlinear exampleLoc="ip/negVerbExample"/>
+				<table border="1">
+					<headerRow>
+
+						<headerCol>Negative-Marked Verbs</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+
+					<row>
+
+						<col exampleLoc="ip/negVerbExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
 			</example>
 			<p>
 				<content>See section </content>
@@ -922,14 +995,66 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<content>. </content>
 			</p>
 			<p>
-				<content>Nonfinite examples from </content>
 				<langName/>
-				<content> are given here, though they may not include a nonfinite auxiliary element:</content>
+				<content/>
+				<case element="ip" attr="auxNonfinite">
+					<caseText value="no"> does not have any </caseText>
+					<caseText value="yes"> has some</caseText>
+				</case>
+				<content> nonfinite auxiliary-type markers which are written as separate words.  </content>
+				<text show="swIPAuxNonfiniteYes">
+					<content>A nonfinite auxiliary word is </content>
+					<case element="ip" attr="auxRequired">
+						<caseText value="no">optional</caseText>
+						<caseText value="no">required</caseText>
+					</case>
+					<content> in nonfinte clauses in </content>
+					<langName/>
+					<content>. </content>
+					<text show="swIPAuxNonfiniteOrderVSO">
+						<content> After a nonfinite auxiliary, the normal VSO order </content>
+						<case element="ip" attr="auxNonfiniteOrder">
+							<caseText value="yes">is maintained.  The order is Aux V S O.</caseText>
+							<caseText value="no">may change so the subject appears directly after the auxiliary and before the verb.  The order in these clauses is Aux S V O.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+					<text show="swIPAuxNonfiniteOrderOSV">
+						<content> Before a nonfinite auxiliary, the normal OSV order </content>
+						<case element="ip" attr="auxOrder">
+							<caseText value="yes">is maintained.  The order is O S V Aux.</caseText>
+							<caseText value="no">may change so the subject appears directly after the verb and before the auxiliary.  The order in these clauses is O V S Aux.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+				</text>
 			</p>
-			<example>
-				<interlinear exampleLoc="ip/auxNonfiniteExample"/>
+			<p show="swIPAuxNonfiniteYes">
+				<content>Examples of auxiliaries of this type in </content><langName/><content> are:</content>
+			</p>
+			<example show="swIPAuxNonfiniteYes">
+				<table border="1">
+					<headerRow>
+						<headerCol>Nonfinite Auxiliary Words</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/auxiliaryNonfiniteExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
 			</example>
-			<p show="swIPAuxYes">
+			<p show="swIPAuxNonfiniteYes">
+				<content>Examples of nonfinite clauses including these nonfinite auxiliaries are:</content>
+			</p>
+
+			<example show="swIPAuxNonfiniteYes">
+				<interlinear exampleLoc="ip/auxNoonfiniteExample"/>
+			</example>
+
+			<p>
 				<content>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which are written </content>
 				<text show="swVInitial">
 					<content>before</content>
@@ -938,46 +1063,61 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<text show="swVFinal">
 					<content>after</content>
 				</text>
-				<content> the verb and share the same subject and complements.  Examples of these other kinds of auxiliaries, if used in </content>
-				<langName/>
-				<content>, are given below:</content>
+				<content> the verb and share the same subject and complements.</content>
 			</p>
-			<example show="swIPAuxYes">
+			<p>
+				<langName/>
+				<content/>
+				<case element="ip" attr="auxOther">
+					<caseText value="no"> does not have any </caseText>
+					<caseText value="yes"> has some</caseText>
+				</case>
+				<content> auxiliaries of this type which are written as separate words.  </content>
+				<text show="swIPAuxOtherYes">
+					<text show="swIPAuxOtherOrderVSO">
+						<content> After one of these auxiliaries, the normal VSO order </content>
+						<case element="ip" attr="auxOtherOrder">
+							<caseText value="yes">is maintained.  The order is Aux V S O.</caseText>
+							<caseText value="no">may change so the subject appears directly after the auxiliary and before the verb.  The order in these clauses is Aux S V O.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+					<text show="swIPAuxOtherOrderOSV">
+						<content> Before one of these auxiliaries, the normal OSV order </content>
+						<case element="ip" attr="auxOrder">
+							<caseText value="yes">is maintained.  The order is O S V Aux.</caseText>
+							<caseText value="no">may change so the subject appears directly after the verb and before the auxiliary.  The order in these clauses is O V S Aux.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+				</text>
+			</p>
+			<p show="swIPAuxOtherYes">
+				<content>Examples of these other auxiliaries in </content><langName/><content> are:</content>
+			</p>
+			<example show="swIPAuxOtherYes">
+				<table border="1">
+					<headerRow>
+						<headerCol>Other Auxiliary Words</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/auxiliaryOtherExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swIPAuxOtherYes">
+				<content>Examples of sentences including these other auxiliaries are:</content>
+			</p>
+
+			<example show="swIPAuxOtherYes">
 				<interlinear exampleLoc="ip/auxOtherExample"/>
 			</example>
-			<p show="swIPAuxYes">
-				<content>An auxiliary is </content>
-				<case element="ip" attr="auxRequired">
-					<caseText value="no">optional</caseText>
-					<caseText value="no">required</caseText>
-				</case>
-				<content> in </content>
-				<langName/>
-				<content> and  </content>
-				<case element="ip" attr="auxMany">
-					<caseText value="no">only one is possible</caseText>
-					<caseText value="yes">more than one may occur</caseText>
-				</case>
-				<content> in a single clause. </content>
-				<text show="swIPAuxOrderVSO">
-					<content> After an auxiliary, the normal VSO order </content>
-					<case element="ip" attr="auxOrder">
-						<caseText value="yes">is maintained.  The order is Aux V S O.</caseText>
-						<caseText value="no">may change so the subject appears directly after the auxiliary and before the verb.  The order in these clauses is Aux S V O.</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-				<text show="swIPAuxOrderOSV">
-					<content> Before an auxiliary, the normal OSV order </content>
-					<case element="ip" attr="auxOrder">
-						<caseText value="yes">is maintained.  The order is O S V Aux.</caseText>
-						<caseText value="no">may change so the subject appears directly after the verb and before the auxiliary.  The order in these clauses is O V S Aux.</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-			</p>
+
+
 		</section2>
 		<section2 id="sIPMotion">
 			<secTitle>Intransitives and Motion Verbs</secTitle>
@@ -1446,6 +1586,24 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	</showWhen>
 	<showWhen id="swIPAuxYes">
 		<whenValue element="ip" attr="aux" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAuxNonfiniteYes">
+		<whenValue element="ip" attr="auxNonfinite" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAuxOtherYes">
+		<whenValue element="ip" attr="auxOther" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAuxNonfiniteOrderVSO">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<showWhen id="swIPAuxNonfiniteOrderOSV">
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+	</showWhen>
+	<showWhen id="swIPAuxOtherOrderVSO">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<showWhen id="swIPAuxOtherOrderOSV">
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 	</showWhen>
 	<showWhen id="swIPNegAuxWord">
 		<whenValue element="ip" attr="negAux" value="yesOnly"/>

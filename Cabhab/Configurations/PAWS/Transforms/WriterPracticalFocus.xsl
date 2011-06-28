@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="focus">
   <section1 id="sFocus">
-    <secTitle>Focus and Topic Constructions</secTitle>
+	<secTitle>Focus and Topic Constructions</secTitle>
 <p>
 <xsl:text>
 This section considers two types of constructions which draw attention to a particular element.  Since topics occur outside of focus constructions, they will be considered first.  The following example shows that a single sentence may have both a topic and a focused phrase.  In this case, the topic </xsl:text>
@@ -28,19 +28,19 @@ This section considers two types of constructions which draw attention to a part
 </li>
 </ul>
 <section2 id="sFocusTopics">
-    <secTitle>Topics and Topic Markers</secTitle>
+	<secTitle>Topics and Topic Markers</secTitle>
 <p>
 <xsl:text>
 As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by punctuation.  Certain markers may be used to set off topics, as shown in the following English examples:</xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>As for John, I think he will make a good doctor.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Speaking of Jill, where is she?</xsl:text>
-                </li>
-            </ol>
+			<ol>
+				<li>
+					<xsl:text>As for John, I think he will make a good doctor.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Speaking of Jill, where is she?</xsl:text>
+				</li>
+			</ol>
 <xsl:if test="normalize-space(//focus/@topic)='no'">
 <p>
 <xsl:choose>
@@ -66,14 +66,14 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:choose>
 <xsl:text> has topic phrases which occur </xsl:text>
 <xsl:choose>
-                <xsl:when test="//focus/@topicPos='before'">before</xsl:when>
-                <xsl:when test="//focus/@topicPos='after'">after</xsl:when>
-                <xsl:when test="//focus/@topicPos='unknown'">_______</xsl:when>
-            </xsl:choose>
+				<xsl:when test="//focus/@topicPos='before'">before</xsl:when>
+				<xsl:when test="//focus/@topicPos='after'">after</xsl:when>
+				<xsl:when test="//focus/@topicPos='unknown'">_______</xsl:when>
+			</xsl:choose>
 <xsl:text> the main sentence or question.   Some examples include:</xsl:text>
 </p>
 </xsl:if>
-            <xsl:if test="normalize-space(//focus/@topic)='yes'">
+			<xsl:if test="normalize-space(//focus/@topic)='yes'">
 <example num="xFocus.FocusTopics.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/topicExample" />
@@ -159,10 +159,10 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <example num="xFocus.FocusTopics.16">
 <table border="1">
 <tr>
-    <th>Topic Markers</th>
-    <th>Gloss or Restrictions</th>
+	<th>Topic Markers</th>
+	<th>Gloss or Restrictions</th>
 </tr>
-    <xsl:variable name="sExampleValue0">
+	<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//focus/topicMarkerExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
@@ -184,7 +184,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -201,7 +201,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -216,7 +216,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </section2>
 
 <section2 id="sFocusFocus">
-    <secTitle>Focused Phrases and Focus Markers</secTitle>
+	<secTitle>Focused Phrases and Focus Markers</secTitle>
 <p>
 <xsl:text>In contrast to topics, while focus constructions also have an element fronted which may be set off by punctuation, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers, such as </xsl:text>
 <langData>
@@ -225,17 +225,17 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:attribute>only</langData>
 <xsl:text> in English, may be used to mark the focused phrase.  Focus constructions are not used frequently in SVO languages, since the subject is usually in focus and is already first in the normal order.  Languages with other word orders, such as VSO languages, may make extensive use of focus constructions.  English examples of focus constructions include:</xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>Girls, I like __.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Soccer, Bill plays __ best.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Only that boy, Jerry hit  __ .</xsl:text>
-                </li>
-            </ol>
+			<ol>
+				<li>
+					<xsl:text>Girls, I like __.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Soccer, Bill plays __ best.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Only that boy, Jerry hit  __ .</xsl:text>
+				</li>
+			</ol>
 <xsl:if test="normalize-space(//focus/@focus)='no'">
 <p>
 <xsl:choose>
@@ -261,14 +261,14 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:choose>
 <xsl:text> has focused phrases which occur </xsl:text>
 <xsl:choose>
-                <xsl:when test="//focus/@focusPos='before'">before</xsl:when>
-                <xsl:when test="//focus/@focusPos='after'">after</xsl:when>
-                <xsl:when test="//focus/@focusPos='unknown'">_______</xsl:when>
-            </xsl:choose>
+				<xsl:when test="//focus/@focusPos='before'">before</xsl:when>
+				<xsl:when test="//focus/@focusPos='after'">after</xsl:when>
+				<xsl:when test="//focus/@focusPos='unknown'">_______</xsl:when>
+			</xsl:choose>
 <xsl:text> the rest of the sentence.   Some examples include:</xsl:text>
 </p>
 </xsl:if>
-            <xsl:if test="normalize-space(//focus/@focus)='yes'">
+			<xsl:if test="normalize-space(//focus/@focus)='yes'">
 <example num="xFocus.FocusFocus.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/focusExample" />
@@ -350,14 +350,14 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:if>
 </p>
 </xsl:if>
-    <xsl:if test="normalize-space(//focus/@focusMarker)!='no'">
+	<xsl:if test="normalize-space(//focus/@focusMarker)!='no'">
 <example num="xFocus.FocusFocus.16">
 <table border="1">
 <tr>
-    <th>Focus Markers</th>
-    <th>Gloss or Restrictions</th>
+	<th>Focus Markers</th>
+	<th>Gloss or Restrictions</th>
 </tr>
-    <xsl:variable name="sExampleValue0">
+	<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//focus/focusMarkerExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
@@ -379,7 +379,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -396,7 +396,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>

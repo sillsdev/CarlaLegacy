@@ -727,7 +727,7 @@
 		<section2 id="sIPProDrop">
 			<secTitle>Missing Subjects</secTitle>
 			<p>
-				<content>Some languages are called pro-drop languages because allow a subject and/or object to be missing or unexpressed in their normal syntactic position.  For example, in Spanish the normal way to say "I buy a book" is </content>
+				<content>Some languages are called pro-drop languages because they allow a subject and/or object to be missing or unexpressed in their normal syntactic position.  For example, in Spanish the normal way to say "I buy a book" is </content>
 				<langData>Compro un libro</langData>
 				<content> rather than with the overt subject pronoun included: </content>
 				<langData>Yo compro un libro</langData>

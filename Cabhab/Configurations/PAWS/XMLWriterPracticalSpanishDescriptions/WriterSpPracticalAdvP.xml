@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<section1 id="sAdvP">
+		<secTitle>Los adverbios y frases del adverbio</secTitle>
+		<p>
+			<content>Los adverbios expresan cuatro tipos básicos de información:</content>
+		</p>
+		<ul>
+			<li>
+				<content> tiempo,</content>
+			</li>
+			<li>
+				<content> lugar,</content>
+			</li>
+			<li>
+				<content>manera, y</content>
+			</li>
+			<li>
+				<content>razón o propósito.</content>
+			</li>
+		</ul>
+		<p>
+			<content>Estos tipos tienen diversas características en cuanto a qué posiciones pueden ocupar y cómo pueden ser modificados. Cada tipo será cubierto en turno.
+</content>
+		</p>
+		<p>
+			<content>Los idiomas tienen normalmente palabras del grado que puedan modificar por lo menos algunos tipos de adverbios.  </content>
+			<langName/>
+			<content/>
+			<case element="advp" attr="degree">
+				<caseText value="no"> no tiene cualquiera palabra del grado, sin embargo.</caseText>
+				<caseText value="yes"> tiene tales palabras del grado.</caseText>
+			</case>
+			<content/>
+			<text show="swAdvPDegreeYes">
+				<content> Estas palabras del grado ocurren </content>
+				<case element="advp" attr="degreePos">
+					<caseText value="before">antes</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+					<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
+					<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+					<caseText value="afterOrBoth">después o en ambos lados</caseText>
+					<caseText value="both">en ambos lados</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> del adverbio.  </content>
+				<case element="advp" attr="degreeSet">
+					<caseText value="unrestricted">Las palabras del grado pueden modificar cualquier tipo de adverbio.</caseText>
+					<caseText value="exceptReason">Las palabras del grado pueden modificar temporals, locatives, y adverbios de la manera, pero los adverbios de la razón o del propósito no se modifican.</caseText>
+					<caseText value="restricted">Hay grupos distintos de las palabras del grado que pueden modificar cada tipo de adverbio.</caseText>
+				</case>
+				<content/>
+			</text>
+			<content/>
+		</p>
+		<section2 id="sAdvPTemporal">
+			<secTitle>Los adverbios temporales</secTitle>
+			<p>
+				<content>Los adverbios temporales incluyen las palabras españolas: </content>
+				<langData>ya</langData>
+				<content>, </content>
+				<langData>entonces</langData>
+				<content>, </content>
+				<langData>pronto</langData>
+				<content>, </content>
+				<langData>ahora</langData>
+				<content>, </content>
+				<langData>luego</langData>
+				<content>, y </content>
+				<langData>siempre</langData>
+				<content>.  Los ejemplos incluyendo modificantes de la palabra del grado son: </content>
+				<langData>muy pronto</langData>
+				<content>, </content>
+				<langData>más luego</langData>
+				<content> y </content>
+				<langData>solamente ahora</langData>
+				<content>.  Muchos idiomas también tienen un adverbio temporal negativo, como </content>
+				<langData>nunca</langData>
+				<content> en español.</content>
+			</p>
+			<p>
+				<content>Los ejemplos de de los adverbios temporales positivos y de cualquier palabra del grado que puedan modificarlos en </content>
+				<langName/>
+				<content> incluyen:
+</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="advp/temporalExample"/>
+			</example>
+			<p show="swAdvPNegTemporalTypeAffix">
+				<content>En </content>
+				<langName/>
+				<content>, la idea temporal negativa de </content><gloss><content>'nunca'</content></gloss><content> es expresado por uno o más afijos verbales, algo que por palabras separadas.   Los ejemplos de los afijos juntados a los verbos incluyen:</content>
+			</p>
+			<example show="swAdvPNegTemporalTypeAffix">
+				<interlinear exampleLoc="advp/negTemporalAffixExample"/>
+			</example>
+			<p show="swAdvPNegTemporalTypeVerb">
+				<content>En </content>
+				<langName/>
+				<content>, hay solamente un afijo negativo verbal, pero puede ocurrir con adverbios temporales positivos para dar un significado temporal negativo. Los ejemplos de adverbios temporales con un verbo negativo incluyen:</content>
+			</p>
+			<p show="swAdvPNegTemporalTypeWord">
+				<content>En </content>
+				<langName/>
+				<content>, la idea temporal negativa de </content><gloss><content>'nunca'</content></gloss><content> es expresado por una o más palabras separadas.  Los ejemplos incluyen:</content>
+			</p>
+			<example show="swAdvPNegTemporalTypeWordOrVerb">
+				<interlinear exampleLoc="advp/negTemporalExample"/>
+			</example>
+			<p>
+				<content>Véase la sección </content>
+				<sectionRef sec="sNegAdverb"/>
+				<content> para los ejemplos de las expresiones temporales negativas en oraciones completos.</content>
+			</p>
+			<p>
+				<content>El elemento del tiempo de una oración se puede también expresar por otros tipos de palabras o de frases, por ejemplo: frases nominales </content>
+				<langData>ayer</langData>
+				<content>,
+</content>
+				<langData>anoche</langData>
+				<content>, </content>
+				<langData>el próximo año</langData>
+				<content>, </content>
+				<langData>mañana</langData>
+				<content>, </content>
+				<langData>hace mucho tiempo</langData>
+				<content>; frases preposicionales </content>
+				<langData>durante mucho tiempo</langData>
+				<content>, </content>
+				<langData>en poco tiempo</langData>
+				<content>, </content>
+				<langData>a las diez por la noche</langData>
+				<content>; y
+					cláusulas adverbiales </content>
+				<langData>mientras que usted está trabajando</langData>
+				<content>, y</content>
+				<langData>cuando llegó Susana</langData>
+				<content>.  Estas frases ocurren en las mismas posiciones que los adverbios temporales, normalmente inicialmente o finalmente en la cláusula. Véase la sección </content>
+				<sectionRef sec="sNP"/>
+				<content> para la estructura de frases nominales y la sección </content>
+				<sectionRef sec="sPP"/>
+				<content> para la información sobre frases </content><case element="pp" attr="pPos">
+					<caseText value="before">preposicionales</caseText>
+					<caseText value="after">posposicionales</caseText>
+					<caseText value="before">preposicionales y posposicionales</caseText>
+					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+				</case><content>.  Véase también la sección </content>
+				<sectionRef sec="sAdvClTemporal"/>
+				<content> para ejemplos de cláusulas adverbiales temporales. </content>
+			</p>
+		</section2>
+		<section2 id="sAdvPLocative">
+			<secTitle>Los adverbios del lugar</secTitle>
+			<p>
+				<content>Los adverbios del lugar incluyen las palabras españolas: </content>
+				<langData>aquí</langData>
+				<content>, </content>
+				<langData>allí</langData>
+				<content>, y</content>
+				<langData>allá</langData>
+				<content>.  Los adverbios del lugar se pueden modificar por </content>
+				<langData>solamente</langData>
+				<content> y </content>
+				<langData>mero o mismo</langData>
+				<content>, como en: </content>
+				<langData>solamente aquí</langData>
+				<content>, </content>
+				<langData>aquí mismo</langData>
+				<content> y </content>
+				<langData>allí mero</langData>
+				<content>.  Muchos idiomas también tienen un adverbio del lugar negativo que significado </content>
+				<gloss><content>'en ninguna parte'</content></gloss>
+				<content>.</content>
+			</p>
+			<p>
+				<content>Los ejemplos de los adverbios positivos del lugar y de cualquiera palabras del grado que puedan modificarlos en</content>
+				<langName/>
+				<content> incluyen:
+</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="advp/locativeExample"/>
+			</example>
+			<p show="swAdvPNegLocativeTypeAffix">
+				<content>En </content>
+				<langName/>
+				<content>, la idea negativa del lugar de </content><gloss><content>'de ninguna parte'</content></gloss><content> es expresado por uno o más afijos verbales, algo que por palabras separadas. Los ejemplos de los afijos atados a los verbos incluyen:</content>
+			</p>
+			<example show="swAdvPNegLocativeTypeAffix">
+				<interlinear exampleLoc="advp/negLocativeAffixExample"/>
+			</example>
+			 <p show="swAdvPNegLocativeTypeVerb">
+				<content>En </content>
+				<langName/>
+				 <content>, hay solamente un afijo negativo verbal, pero puede ocurrir con adverbios positivos del lugar para dar un significado negativo del lugar. Los ejemplos de los adverbios del lugar con un verbo negativo incluyen:</content>
+			</p>
+		   <p show="swAdvPNegLocativeTypeWord">
+				<content>En </content>
+				<langName/>
+			   <content>, la idea negativa del lugar de </content><gloss><content>'de ninguna parte'</content></gloss><content> es expresado por una o más palabras separadas. Los ejemplos incluyen:</content>
+			</p>
+			<example show="swAdvPNegLocativeTypeWordOrVerb">
+				<interlinear exampleLoc="advp/negLocativeExample"/>
+			</example>
+			<p>
+				<content>Véase la sección </content>
+				<sectionRef sec="sNegAdverb"/>
+				<content> para los ejemplos de las expresiones negativas del lugar en las oraciones completas.</content>
+			</p>
+			<p>
+				<content>El lugar a menudo también es expresada por una frase preposicional, por ejemplo: </content>
+				<langData>en las montañas</langData>
+				<content>, </content>
+				<langData>hasta San José</langData>
+				<content> y </content>
+				<langData>a través del río</langData>
+				<content>.  Muchos idiomas permiten apenas una frase nominal, consistiendo en un nombre propio o una descripción del lugar. Las expresiones del lugar pueden ocurrir normalmente inicialmente o finalmente en la cláusula, o como complementos para verbos de movimiento. Véase la sección </content>
+				<sectionRef sec="sIPMotion"/>
+				<content> para los ejemplos con verbos del movimiento.
+</content>
+			</p>
+		</section2>
+		<section2 id="sAdvPManner">
+			<secTitle>Los adverbios de la manera</secTitle>
+			<p>
+				<content>Los adverbios de la manera modifican directamente el verbo y terminan generalmente con </content>
+				<langData>-mente</langData>
+				<content> en español. Estos adverbios de la manera se pueden modificar por </content>
+				<langData>muy</langData>
+				<content>
+y </content>
+				<langData>tan</langData>
+				<content>, como en: </content>
+				<langData>muy rápidamente</langData>
+				<content>, </content>
+				<langData>tan lentamente</langData>
+				<content> y </content>
+				<langData>muy bien</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<content>Los ejemplos de los adverbios de la manera en </content>
+				<langName/>
+				<content> y de cualquier palabra del grado que puedan modificarlos incluyen:
+</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="advp/mannerExample"/>
+			</example>
+			<p show="swAdvPMannerTypeAffix">
+				<content>Los adverbios de la manera  </content>
+				<langName/>
+				<content> son todos escritos como afijos en el verbo, algo que siendo palabras separadas.</content>
+			</p>
+		</section2>
+		<section2 id="sAdvPReason">
+			<secTitle>Los adverbios de la razón o del propósito</secTitle>
+			<p>
+				<content>Los adverbios de la razón o del propósito incluyen </content>
+				<langData>por lo tanto</langData>
+				<content> y </content>
+				<langData>pues</langData>
+				<content>.  Los adverbios de la razón o del propósito no permiten modificadores en español.  La razón o el propósito se puede también expresar por una cláusula adverbial empezando con </content>
+				<langData>porque</langData>
+				<content> o </content>
+				<langData>desde que</langData>
+				<content> o </content>
+				<langData>en orden que</langData>
+				<content>.  Estas frases o cláusulas adverbiales ocurren o inicialmente o finalmente en la oración.</content>
+			</p>
+			<p>
+				<content>Los ejemplos de los adverbios de la razón o del propósito o de las cláusulas adverbiales en </content>
+				<langName/>
+				<content>, incluidos en oraciones completas son:
+</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="advp/reasonExample"/>
+			</example>
+			<p>
+				<content>La estructura de las cláusulas adverbiales será tratada en la sección </content>
+				<sectionRef sec="sAdvClReason"/>
+				<content>.  La razón o el propósito se puede también expresar por una frase preposicional, por ejemplo </content>
+				<langData>por esta razón</langData>
+				<content> o </content>
+				<langData>en propósito</langData>
+				<content>.  Tales frases se describen en la sección </content>
+				<sectionRef sec="sPP"/>
+				<content>.
+</content>
+			</p>
+		</section2>
+	</section1>
+	<showWhen id="swAdvPDegreeYes">
+		<whenValue element="advp" attr="degree" value="yes"/>
+	</showWhen>
+	<showWhen id="swAdvPNegTemporalTypeAffix">
+		<whenValue element="advp" attr="negTemporalType" value="affix"/>
+	</showWhen>
+	<showWhen id="swAdvPNegTemporalTypeWord">
+		<whenValue element="advp" attr="negTemporalType" value="word"/>
+	</showWhen>
+	<showWhen id="swAdvPNegTemporalTypeVerb">
+		<whenValue element="advp" attr="negTemporalType" value="verb"/>
+	</showWhen>
+	<showWhen id="swAdvPNegTemporalTypeWordOrVerb">
+		<whenValue element="advp" attr="negTemporalType" value="word"/>
+ <or/>
+		<whenValue element="advp" attr="negTemporalType" value="verb"/>
+   </showWhen>
+	<showWhen id="swAdvPNegLocativeTypeAffix">
+		<whenValue element="advp" attr="negLocativeType" value="affix"/>
+	</showWhen>
+	<showWhen id="swAdvPNegLocativeTypeWord">
+		<whenValue element="advp" attr="negLocativeType" value="word"/>
+	</showWhen>
+	<showWhen id="swAdvPNegLocativeTypeVerb">
+		<whenValue element="advp" attr="negLocativeType" value="verb"/>
+	</showWhen>
+	<showWhen id="swAdvPNegLocativeTypeWordOrVerb">
+		<whenValue element="advp" attr="negLocativeType" value="word"/>
+<or/>
+		<whenValue element="advp" attr="negLocativeType" value="verb"/>
+	</showWhen>
+	<showWhen id="swAdvPMannerTypeAffix">
+		<whenValue element="advp" attr="mannerType" value="affix"/>
+	</showWhen>
+</portion>

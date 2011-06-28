@@ -3,9 +3,18 @@
 <!-- DTD for PAWS Starter Kit Writer Page Description  -->
 <!-- Entity definitions -->
 <!ENTITY % chunk "p | example | table | ol | ul | dl">
-<!ENTITY % embedded "case | text | langData | langName | gloss | exampleRef | sectionRef | comment | object | br | category | feature | img">
+<!ENTITY % embedded "case | text | langData | langName | gloss | exampleRef | sectionRef | appendixRef | comment | object | br | category | feature | img | translatorInstruction">
 <!ENTITY nbsp "&#160;">
 <!ELEMENT and EMPTY>
+<!ELEMENT appendix (secTitle, (%chunk; | section1 | section2)*)>
+<!ATTLIST appendix
+	id ID #REQUIRED
+	label CDATA #IMPLIED
+>
+<!ELEMENT appendixRef EMPTY>
+<!ATTLIST appendixRef
+	app IDREF #REQUIRED
+>
 <!ELEMENT br EMPTY>
 <!ELEMENT caption (content | %embedded;)*>
 <!-- content -->
@@ -23,6 +32,7 @@
 <!ELEMENT col (content | langData | gloss)*>
 <!-- the content of rowspan actually gets calculated ono the fly; so just use any number in the description page -->
 <!ATTLIST col
+	align (left | center | right | justify) "left"
   class CDATA #IMPLIED
   show IDREF #IMPLIED
   exampleLoc CDATA #IMPLIED
@@ -30,7 +40,7 @@
   rowspan CDATA #IMPLIED
  >
 <!-- comments are for the author.  The intent is that they will not show up in
-     the formatted version of the paper. -->
+	 the formatted version of the paper. -->
 <!ELEMENT comment (#PCDATA | %embedded;)*>
 <!ELEMENT content (#PCDATA)>
 <!-- definition description -->
@@ -56,12 +66,12 @@
   show IDREF #IMPLIED
 >
 <!-- references to example numbers or example number/letter.
-     Use just num for the example number.
-     Use just letter for an example number/letter combination.
-     One may include parentheses around the date ("both", the default), or
-       one may have no parentheses or just initial or just final.
-     One may append some punctuation (punct) to the end of the number.
-     One may only include the letter (and not the number). -->
+	 Use just num for the example number.
+	 Use just letter for an example number/letter combination.
+	 One may include parentheses around the date ("both", the default), or
+	   one may have no parentheses or just initial or just final.
+	 One may append some punctuation (punct) to the end of the number.
+	 One may only include the letter (and not the number). -->
 <!ELEMENT exampleRef EMPTY>
 <!ATTLIST exampleRef
   num CDATA #IMPLIED
@@ -77,6 +87,7 @@
 <!-- content -->
 <!ELEMENT headerCol (#PCDATA| langName)*>
 <!ATTLIST headerCol
+	align (left | center | right | justify) "left"
   class CDATA #IMPLIED
   show IDREF #IMPLIED
 >
@@ -95,11 +106,14 @@
 >
 <!-- langData is a way to tag some text as belonging to a particular language. -->
 <!ELEMENT langData (#PCDATA)>
+<!ATTLIST langData
+	lang CDATA #IMPLIED
+>
 <!-- content -->
 <!ELEMENT langName EMPTY>
 <!-- object is a generic way to tag a special kind of object.  One can
-     use the CSS stylesheet to format these objects by referring to the
-     class attribute.  -->
+	 use the CSS stylesheet to format these objects by referring to the
+	 class attribute.  -->
 <!-- list element -->
 <!ELEMENT li (content | %embedded; | %chunk;)*>
 <!-- content -->
@@ -124,8 +138,8 @@
   style CDATA #IMPLIED
   show IDREF #IMPLIED
 >
-<!ELEMENT portion (section1+, showWhen*)>
-<!ELEMENT row (col+)>
+<!ELEMENT portion ((appendix+ |section1+), showWhen*)>
+<!ELEMENT row (headerCol?, col+)>
 <!ATTLIST row
   class CDATA #IMPLIED
   show IDREF #IMPLIED
@@ -170,7 +184,7 @@
 <!ATTLIST showWhen
   id ID #REQUIRED
 >
-<!ELEMENT table (caption?, headerRow?, row+)>
+<!ELEMENT table (caption?, headerRow*, row+)>
 <!ATTLIST table
   border CDATA #IMPLIED
   class CDATA #IMPLIED
@@ -180,6 +194,8 @@
 <!ATTLIST text
   show IDREF #REQUIRED
 >
+<!ELEMENT translatorInstruction (#PCDATA)>
+
 <!ELEMENT whenValue EMPTY>
 <!ATTLIST whenValue
   element CDATA #REQUIRED

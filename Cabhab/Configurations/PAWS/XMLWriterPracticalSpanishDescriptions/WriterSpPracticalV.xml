@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<section1 id="sV">
+		<secTitle>Los verbos</secTitle>
+		<p>
+			<content>Los verbos expresan acciones, estados, o emociones. Los tipos de características verbales de la inflexión y del acuerdo llevaron por verbos se detallan primero.
+			La aplicación cuando un tema puede faltar se discute en la sección </content><sectionRef sec="sIPProDrop"/><content>, y los auxiliares se cubre en la sección
+			</content><sectionRef sec="sIPAux"/><content>.  Los ejemplos de los verbos usados en oraciones básicas se encuentran en la sección
+			</content><sectionRef sec="sIP"/><content>.  Construcciones más complejas incluyendo verbos se cubren en las secciones </content><sectionRef sec="sFocus"/><content> - </content><sectionRef sec="sRelCl"/><content>.</content>
+		</p>
+		<section2 id="sIPInfl">
+			<secTitle>Las características de la inflexión</secTitle>
+			<p>
+				<content>Los verbos y los auxiliares llevan generalmente características de la inflexión, tales como tiempo, aspecto, y/o modo.  En la mayoría de los casos, estas características son agregadas por los afijos, pero pueden también ser parte de los verbos irregulares.</content>
+			</p>
+			<p>
+				<content>Las características siguientes de la inflexión se marcan en verbos y/o auxiliares en </content>
+				<langName/>
+				<content>:</content>
+			</p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>Tipo de característica</headerCol>
+						<headerCol>Característica</headerCol>
+					</headerRow>
+					<row show="swIPInflFeatPresent">
+						<col>
+							<content>tiempo</content>
+						</col>
+						<col>
+							<content>presente</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatPast">
+						<col>
+							<content>tiempo</content>
+						</col>
+						<col>
+							<content>pasado</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatFuture">
+						<col>
+							<content>tiempo</content>
+						</col>
+						<col>
+							<content>futuro</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatCompletive">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>completivo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatContinuative">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>continuativo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatHabitual">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>habitual</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatImperfective">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>imperfectivo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatIncompletive">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>incompletivo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatPerfective">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>perfectivo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatPotential">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>potencial</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatProgressive">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>progresivo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatStative">
+						<col>
+							<content>aspecto</content>
+						</col>
+						<col>
+							<content>estativo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatDeclarative">
+						<col>
+							<content>modo</content>
+						</col>
+						<col>
+							<content>declarativo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatImperative">
+						<col>
+							<content>modo</content>
+						</col>
+						<col>
+							<content>imperativo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatInterrogative">
+						<col>
+							<content>modo</content>
+						</col>
+						<col>
+							<content>interrogativo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatIrrealis">
+						<col>
+							<content>modo</content>
+						</col>
+						<col>
+							<content>irrealis</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatRealis">
+						<col>
+							<content>modo</content>
+						</col>
+						<col>
+							<content>realis</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatPassive">
+						<col>
+							<content>otro</content>
+						</col>
+						<col>
+							<content>pasivo</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatParticiple">
+						<col>
+							<content>otro</content>
+						</col>
+						<col>
+							<content>participio</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatFinite">
+						<col>
+							<content>otro</content>
+						</col>
+						<col>
+							<content>finito</content>
+						</col>
+					</row>
+					<row show="swIPInflFeatMinusFinite">
+						<col>
+							<content>otro</content>
+						</col>
+						<col>
+							<content>infinitivo</content>
+						</col>
+					</row>
+				</table>
+			</example>
+		</section2>
+		<section2 id="sIPAgr">
+			<secTitle>Las características del acuerdo</secTitle>
+			<p>
+				<content>Los verbos y los auxiliares pueden también llevar las características del acuerdo que fuerzan el acuerdo con el tema, y a veces también con el objeto directo. La mayor parte de estas características son agregadas por los afijos o el clitics pronominal que pueden juntar al verbo. Animacy de un tema o de un objeto es más probable una característica de la semántica del verbo individual sí mismo, pero es marcado por un afijo en algunos idiomas.</content>
+			</p>
+			<p>
+				<content>Las características siguientes del acuerdo se marcan en verbos y/o auxiliares en </content>
+				<langName/>
+				<content>:</content>
+			</p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>Tipo de característica</headerCol>
+						<headerCol>Característica</headerCol>
+					</headerRow>
+					<row show="swIPAgrFeatFirstSubject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona sujeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstObject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona objeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstErgative">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona ergativo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstAbsolutive">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona absolutivo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstExclusiveSubject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona exclusivo sujeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstExclusiveObject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona exclusivo objeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstExclusiveErgative">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona exclusivo ergativo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstExclusiveAbsolutive">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona exclusivo absolutivo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstInclusiveSubject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona inclusivo sujeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstInclusiveObject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona inclusivo objeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstInclusiveErgative">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona inclusivo ergativo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFirstInclusiveAbsolutive">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>primera persona inclusivo absolutivo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatSecondSubject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>segunda persona sujeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatSecondObject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>segunda persona objeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatSecondErgative">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>segunda persona ergativo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatSecondAbsolutive">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>segunda persona absolutivo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatThirdSubject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>tercera persona sujeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatThirdObject">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>tercera persona objeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatThirdErgative">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>tercera persona ergativo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatThirdAbsolutive">
+						<col>
+							<content>persona</content>
+						</col>
+						<col>
+							<content>tercera persona absolutivo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatSingularSubject">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>sujeto singular</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatSingularObject">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>objeto singular</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatSingularErgative">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>ergativo singular</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatSingularAbsolutive">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>absolutivo singular</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatDualSubject">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>sujeto dual</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatDualObject">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>objeto dual</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatDualErgative">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>ergativo dual</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatDualAbsolutive">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>absolutivo dual</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatPluralSubject">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>sujeto plural</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatPluralObject">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>objeto plural</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatPluralErgative">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>ergativo plural</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatPluralAbsolutive">
+						<col>
+							<content>número</content>
+						</col>
+						<col>
+							<content>absolutivo plural</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMasculineSubject">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>sujeto masculino</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMasculineObject">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>objeto masculino</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMasculineErgative">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>ergativo masculino</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMasculineAbsolutive">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>absolutivo masculino</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFeminineSubject">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>sujeto feminino</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFeminineObject">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>objeto feminino</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFeminineErgative">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>ergativo feminino</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatFeminineAbsolutive">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>absolutivo feminino</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatNeuterSubject">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>sujeto neutral</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatNeuterObject">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>objeto neutral</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatNeuterErgative">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>ergativo neutral</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatNeuterAbsolutive">
+						<col>
+							<content>género</content>
+						</col>
+						<col>
+							<content>absolutivo neutral</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatAnimateSubject">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>sujeto animado</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatAnimateObject">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>objeto animado</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatAnimateErgative">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>ergativo animado</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatAnimateAbsolutive">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>absolutivo animado</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusAnimateSubject">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>sujeto inanimado</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusAnimateObject">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>objeto inanimado</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusAnimateErgative">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>ergativo inanimado</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusAnimateAbsolutive">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>absolutivo inanimado</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatHumanSubject">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>sujeto humano</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatHumanObject">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>objeto humano</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatHumanErgative">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>ergativo humano</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatHumanAbsolutive">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>absolutivo humano</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusHumanSubject">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>sujeto no humano</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusHumanObject">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>objeto no humano</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusHumanErgative">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>ergativo no humano</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatMinusHumanAbsolutive">
+						<col>
+							<content>animado</content>
+						</col>
+						<col>
+							<content>absolutivo no humano</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatClassClassNumberSubject">
+						<col>
+							<content>clase</content>
+						</col>
+						<col>
+							<content>clase_## sujeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatClassClassNumberObject">
+						<col>
+							<content>clase</content>
+						</col>
+						<col>
+							<content>clase_## objeto</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatClassClassNumberErgative">
+						<col>
+							<content>clase</content>
+						</col>
+						<col>
+							<content>clase_## ergativo</content>
+						</col>
+					</row>
+					<row show="swIPAgrFeatClassClassNumberAbsolutive">
+						<col>
+							<content>clase</content>
+						</col>
+						<col>
+							<content>clase_## absolutivo</content>
+						</col>
+					</row>
+				</table>
+			</example>
+		</section2>
+		<section2 id="sIPProDrop">
+			<secTitle>Los temas que falta</secTitle>
+			<p>
+				<content>En algunos idiomas un tema, o a veces un objeto, puede ser faltado o inexpresado en su posición normal sintáctica.  Por ejemplo, en español la manera normal de decir el ingles </content><langData>I buy a book</langData><content> es </content>
+				<langData>Compro un libro</langData>
+				<content> en vez de algo con el pronombre sujeto abierto incluido: </content>
+				<langData>Yo compro un libro</langData>
+				<content>.  Esto no se permite en inglés, con excepción de imperativos. (El tema que falta de infinitivos en complementos subordinados será cubierto en la sección </content>
+				<sectionRef sec="sComp"/>
+				<content>.) </content>
+			</p>
+			<p>
+				<content>Algunos idiomas no son realmente idiomas que permiten los temas que falta, pero por lo menos algunos de los pronombres son clíticos que pueden juntar al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición sujeta, así que la oración aparece igual que en un idioma verdadera que permite los temas que falta.</content>
+			</p>
+			<p>
+				<content>En </content>
+				<langName/>
+				<content>, </content>
+				<case element="ip" attr="proDrop">
+					<caseText value="noImp"
+						>un tema que falta no se permite.  El tema debe ser expresado a menos que en los imperativos</caseText>
+					<caseText value="no"
+						>un tema que falta no se permite.  El tema debe ser expresado aun cuando en los imperativos</caseText>
+					<caseText value="yes">un tema que falta se permite en cualquier tipo de oración</caseText>
+					<caseText value="yesClitic"
+						>el tema puede mirar como él es falta debido a los pronombres dependientes (clíticos pronominales) que juntan al verbo, pero no es una lengua verdadera que permite un tema que falta</caseText>
+				</case>
+				<content/>
+				<text show="swIPProDropYes">
+					<content>  Un objeto que falta </content>
+					<case element="ip" attr="proDropObject">
+						<caseText value="no">no</caseText>
+						<caseText value="yes">también</caseText>
+					</case>
+					<content> se permite.</content>
+				</text>
+				<content/>
+				<text show="swIPProDropNoImp">
+					<content>  Los ejemplos que demuestran un tema que falta en imperativos incluyen:</content>
+				</text>
+				<content/>
+				<text show="swIPProDropYes">
+					<content>  Los ejemplos con un tema que falta incluyen:</content>
+				</text>
+				<content/>
+				<text show="swIPProDropYesClitic">
+					<content>  Los ejemplos que parecen un tema que falta incluyen:</content>
+				</text>
+				<content/>
+			</p>
+			<example show="swIPProDropNotNo">
+				<interlinear exampleLoc="ip/proDropExample"/>
+			</example>
+		</section2>
+		<section2 id="sIPAux">
+			<secTitle>Los auxiliares</secTitle>
+			<p>
+				<content>Algunos idiomas tienen elementos auxiliares que sean palabras separadas, y algunos pueden tener más de un elemento auxiliar antes del verbo principal. Los ejemplos para las oraciones transitivas inglesas incluyen: </content>
+				<langData>The boy will hit the ball</langData><gloss><content>'El muchacho golpeará el beísbol'</content></gloss>
+				<content>, </content>
+				<langData>The boy might have hit the ball</langData><gloss><content>'El muchacho pudo haber golpeado el beísbol'</content></gloss>
+				<content> y </content>
+				<langData>The boy might have been hitting the ball</langData><gloss><content>'El muchacho pudo habiendo golpeado el beísbol'</content></gloss>
+				<content>.  En español, éstos son expresados principalmente por los cambios del tiempo y del aspecto, a excepción de ejemplos tales como </content><langData>He oido algo importante</langData><content>.</content>
+			</p>
+			<p>
+				<langName/>
+				<content/>
+				<case element="ip" attr="aux">
+					<caseText value="no"> no tiene cualesquiera </caseText>
+					<caseText value="yes"> tiene algunos </caseText>
+				</case>
+				<content>auxiliares que se escriben como palabras separadas.  </content>
+				<text show="swIPAuxYes">
+					<content>Un auxiliar es </content>
+					<case element="ip" attr="auxRequired">
+						<caseText value="no">opcional</caseText>
+						<caseText value="no">requerido</caseText>
+					</case>
+					<content> en </content>
+					<langName/>
+					<content> y  </content>
+					<case element="ip" attr="auxMany">
+						<caseText value="no">solamente uno es posible</caseText>
+						<caseText value="yes">más de uno puede ocurrir</caseText>
+					</case>
+					<content> en una sola cláusula. </content>
+					<text show="swIPAuxOrderVSO">
+						<content> Después de un auxiliar, la orden normal del VSO </content>
+						<case element="ip" attr="auxOrder">
+							<caseText value="yes">se mantiene. La orden es Aux V S O.</caseText>
+							<caseText value="no">puede cambiar así que el tema aparece directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+					<text show="swIPAuxOrderOSV">
+						<content> Antes de un auxiliar, la orden normal del OSV </content>
+						<case element="ip" attr="auxOrder">
+							<caseText value="yes">se mantiene. La orden es O S V Aux.</caseText>
+							<caseText value="no">puede cambiar así que el tema aparece directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+				</text>
+			</p>
+			<p show="swIPAuxYes">
+				<content>Los ejemplos de auxiliares en </content><langName/><content> son:</content>
+			</p>
+			<example show="swIPAuxYes">
+				<table border="1">
+					<headerRow>
+						<headerCol>Palabras auxiliares</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/auxiliaryExample"/>
+						<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swIPAuxYes">
+				<content>Los ejemplos de oraciones incluyendo estos auxiliares son:</content>
+			</p>
+
+				<example show="swIPAuxYes">
+				<interlinear exampleLoc="ip/auxExample"/>
+			</example>
+			<p>
+				<content>En algunos idiomas la negación verbal es un elemento auxiliar, mientras que en otros es simplemente un afijo verbal. El español utiliza el auxiliar verbal negativo </content><langData>no</langData><content> antes del verbo.
+					El inglés tiene el auxiliar negativo </content>
+				<langData>not</langData><gloss><content>'no'</content></gloss>
+				<content>, que es una palabra separada que debe seguir siempre a otro auxiliar, y la forma de la contracción </content>
+				<langData>-n't</langData>
+				<content>, que se escribe como sufijo en el auxiliar. Los ejemplos de las oraciones transitivas negativas inglesas incluyen:</content>
+				<langData>The boy did not hit the ball</langData><gloss><content>'El muchacho no golpeó el beísbol'</content></gloss>
+				<content>, </content>
+				<langData>The boy won't hit the ball</langData><gloss><content>'El muchacho no golpeará el beísbol'</content></gloss>
+				<content> y </content>
+				<langData>The boy might not have hit the ball</langData><gloss><content>'El muchacho no pudo haber golpeado el beísbol'</content></gloss>
+				<content>.</content>
+			</p>
+			<p>
+				<langName/>
+				<content/>
+				<case element="ip" attr="negAux">
+					<caseText value="yesOnly"> tiene uno o más</caseText>
+					<caseText value="yesAffix"> tiene uno o más</caseText>
+					<caseText value="yesVerb"> tiene uno o más</caseText>
+					<caseText value="yesAll"> tiene uno o más</caseText>
+					<caseText value="noAffixOnly"> no tiene cualesquiera</caseText>
+					<caseText value="noAffixAndVerb"> no tiene cualesquiera</caseText>
+					<caseText value="noVerb"> no tiene cualesquiera</caseText>
+				</case>
+				<content> auxiliares negativos que se escriben como palabras separadas, </content>
+				<case element="ip" attr="negAux">
+					<caseText value="yesOnly">y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo ni afijo auxiliar negativo. </caseText>
+					<caseText value="yesAffix">y hay también un afijo auxiliar negativo, pero ningún afijo verbal negativo. </caseText>
+					<caseText value="yesVerb">y hay también un afijo verbal negativo, pero ningún afijo auxiliar negativo. </caseText>
+					<caseText value="yesAll">y hay también un afijo auxiliar negativo y un afijo verbal negativo. </caseText>
+					<caseText value="noAffixOnly">pero hay un afijo negativo que junta al auxiliar y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo.</caseText>
+					<caseText value="noAffixAndVerb">pero hay un afijo negativo que junta al auxiliar y un afijo verbal negativo también.</caseText>
+					<caseText value="noVerb">ni cualquier afijo negativo que junta al auxiliar. La única manera de expresar la negación verbal está con uno o más afijos verbales negativos.</caseText>
+				</case>
+				<content/>
+				<text show="swIPNegAuxWord">
+					<content> El auxiliar negativo </content>
+					<case element="ip" attr="negAuxRequiresAux">
+						<caseText value="no">pueda</caseText>
+						<caseText value="yes">no pueda</caseText>
+					</case>
+					<content> ser el único auxiliar en la frase; </content>
+					<case element="ip" attr="negAuxRequiresAux">
+						<caseText value="no">ningún otro</caseText>
+						<caseText value="yes">la presencia de otro</caseText>
+					</case>
+					<content> auxiliar es requerido.</content>
+				</text>
+			</p>
+			<p show="swIPNegAuxWord">
+				<content>Los ejemplos de los auxiliares negativos en </content>
+				<langName/>
+				<content> incluyen:</content>
+			</p>
+			<example show="swIPNegAuxWord">
+				<table border="1">
+				<headerRow>
+					<headerCol>Palabras auxiliares negativas</headerCol>
+					<headerCol>Significado</headerCol>
+				</headerRow>
+					<row >
+						<col exampleLoc="ip/negAuxExample"/>
+						<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swIPNegAuxAffix">
+				<content>Los ejemplos de los afijos negativos juntados a una palabra auxiliar en </content>
+				<langName/>
+				<content> incluyen:</content>
+			</p>
+			<example show="swIPNegAuxAffix">
+				<table border="1">
+					<headerRow>
+						<headerCol>Auxiliares negativos marcados</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row >
+						<col exampleLoc="ip/negAuxAffixExample"/>
+						<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swIPNegVerb">
+				<content>Los ejemplos de los afijos verbales negativos juntados a un verbo en </content>
+				<langName/>
+				<content> incluyen:</content>
+			</p>
+			<example show="swIPNegVerb">
+				<table border="1">
+				<headerRow>
+					<headerCol>Verbos negativos marcados</headerCol>
+					<headerCol>Significado</headerCol>
+				</headerRow>
+				<row>
+					<col exampleLoc="ip/negVerbExample"/>
+					<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+				</row>
+			</table>
+			</example>
+			<p>
+				<content>Véase a sección </content>
+				<sectionRef sec="sNegVerbal"/>
+				<content> para ejemplos de estos elementos negativos usados en oraciones y más discusión de las construcciones de la negación en </content>
+				<langName/>
+				<content>.</content>
+			</p>
+			<p>
+				<content>La palabra no acabada </content>
+				<langData>to</langData>
+				<content> utilizó en cláusulas subordinadas inglesas también actúa como un auxiliar en que llena la misma posición y puede ocurrir antes de otros auxiliares. Por ejemplo, </content>
+				<langData>The boy would like to have hit the ball</langData><gloss><content>'El muchacho quisiera haber golpeado el beísbol'</content></gloss>
+				<content>.  En cambio, el español no tiene un marcador separado para las cláusulas subordinadas no acabadas, sino utiliza simplemente la forma infinitiva del verbo. </content>
+			</p>
+			<p>
+				<langName/>
+				<content/>
+				<case element="ip" attr="auxNonfinite">
+					<caseText value="no"> no tiene cualesquiera</caseText>
+					<caseText value="yes"> tiene algunos</caseText>
+				</case>
+				<content> marcadores no acabados similares a auxiliares que se escriben como palabras separadas.  </content>
+				<text show="swIPAuxNonfiniteYes">
+					<content>Una palabra auxiliar no acabada es </content>
+					<case element="ip" attr="auxRequired">
+						<caseText value="no">opcional</caseText>
+						<caseText value="no">requerido</caseText>
+					</case>
+					<content> en cláusulas no acabadas en </content>
+					<langName/>
+					<content>. </content>
+					<text show="swIPAuxNonfiniteOrderVSO">
+						<content> Después de un auxiliar no acabado, la orden normal del VSO </content>
+						<case element="ip" attr="auxNonfiniteOrder">
+							<caseText value="yes">se mantiene. La orden es Aux V S O.</caseText>
+							<caseText value="no">puede cambiar así que el tema aparece directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+					<text show="swIPAuxNonfiniteOrderOSV">
+						<content> Antes de un auxiliar no acabado, la orden normal del OSV </content>
+						<case element="ip" attr="auxOrder">
+							<caseText value="yes">se mantiene. La orden es O S V Aux.</caseText>
+							<caseText value="no">puede cambiar así que el tema aparece directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+				</text>
+			</p>
+			<p show="swIPAuxNonfiniteYes">
+				<content>Los ejemplos de auxiliares no acabados en </content><langName/><content> son:</content>
+			</p>
+			<example show="swIPAuxNonfiniteYes">
+				<table border="1">
+					<headerRow>
+						<headerCol>Palabras auxiliares no acabadas</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/auxiliaryNonfiniteExample"/>
+						<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swIPAuxNonfiniteYes">
+				<content>Los ejemplos de cláusulas no acabadas incluyendo estos auxiliares no acabados son:</content>
+			</p>
+
+			<example show="swIPAuxNonfiniteYes">
+				<interlinear exampleLoc="ip/auxNoonfiniteExample"/>
+			</example>
+
+			<p>
+				<content>Algunas idiomas tienen otras palabras que actúen como auxiliares, tales como auxiliares del movimiento o marcadores del préstamo, que se escriben </content>
+				<text show="swVInitial">
+					<content>antes</content>
+				</text>
+				<content/>
+				<text show="swVFinal">
+					<content>después</content>
+				</text>
+				<content> del verbo y comparten el mismo tema y los complementos. </content>
+			</p>
+			<p>
+				<langName/>
+				<content/>
+				<case element="ip" attr="auxOther">
+					<caseText value="no"> no tiene cualesquiera </caseText>
+					<caseText value="yes"> tiene algunos</caseText>
+				</case>
+				<content> auxiliares de este tipo que se escriben como palabras separadas.  </content>
+				<text show="swIPAuxOtherYes">
+					<text show="swIPAuxOtherOrderVSO">
+						<content> Después de uno de estos auxiliares, la orden normal del VSO </content>
+						<case element="ip" attr="auxOtherOrder">
+							<caseText value="yes">se mantiene. La orden es Aux V S O.</caseText>
+							<caseText value="no">puede cambiar así que el tema aparece directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+					<text show="swIPAuxOtherOrderOSV">
+						<content> Antes de uno de estos auxiliares, la orden normal del OSV </content>
+						<case element="ip" attr="auxOrder">
+							<caseText value="yes">se mantiene. La orden es  O S V Aux.</caseText>
+							<caseText value="no">puede cambiar así que el tema aparece directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content/>
+				</text>
+			</p>
+			<p show="swIPAuxOtherYes">
+				<content>Los ejemplos de estos otros auxiliares en </content><langName/><content> son:</content>
+			</p>
+			<example show="swIPAuxOtherYes">
+				<table border="1">
+					<headerRow>
+						<headerCol>Otras palabras del auxiliar</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/auxiliaryOtherExample"/>
+						<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swIPAuxOtherYes">
+				<content>Los ejemplos de oraciones incluyendo estos otros auxiliares son:</content>
+			</p>
+
+			<example show="swIPAuxOtherYes">
+				<interlinear exampleLoc="ip/auxOtherExample"/>
+			</example>
+
+
+		</section2>
+	</section1>
+	<showWhen id="swVSOorOSV">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPresent">
+		<whenValue element="ip/ipInflFeatPresent" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPast">
+		<whenValue element="ip/ipInflFeatPast" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatFuture">
+		<whenValue element="ip/ipInflFeatFuture" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatCompletive">
+		<whenValue element="ip/ipInflFeatCompletive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatContinuative">
+		<whenValue element="ip/ipInflFeatContinuative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatHabitual">
+		<whenValue element="ip/ipInflFeattHabitual" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatImperfective">
+		<whenValue element="ip/ipInflFeatImperfective" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatIncompletive">
+		<whenValue element="ip/ipInflFeatIncompletive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPerfective">
+		<whenValue element="ip/ipInflFeatPerfective" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPotential">
+		<whenValue element="ip/ipInflFeatPotential" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatProgressive">
+		<whenValue element="ip/ipInflFeatProgressive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatStative">
+		<whenValue element="ip/ipInflFeatStative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatDeclarative">
+		<whenValue element="ip/ipInflFeatDeclarative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatImperative">
+		<whenValue element="ip/ipInflFeatImperative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatInterrogative">
+		<whenValue element="ip/ipInflFeatInterrogative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatIrrealis">
+		<whenValue element="ip/ipInflFeatIrrealis" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatRealis">
+		<whenValue element="ip/ipInflFeatRealis" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPassive">
+		<whenValue element="ip/ipInflFeatPassive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatParticiple">
+		<whenValue element="ip/ipInflFeatParticiple" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatFinite">
+		<whenValue element="ip/ipInflFeatFinite" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatMinusFinite">
+		<whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstSubject">
+		<whenValue element="ip/ipAgrFeatFirstSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstObject">
+		<whenValue element="ip/ipAgrFeatFirstObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstErgative">
+		<whenValue element="ip/ipAgrFeatFirstErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstAbsolutive">
+		<whenValue element="ip/ipAgrFeatFirstAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstExclusiveSubject">
+		<whenValue element="ip/ipAgrFeatFirstExclusiveSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstExclusiveObject">
+		<whenValue element="ip/ipAgrFeatFirstExclusiveObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstExclusiveErgative">
+		<whenValue element="ip/ipAgrFeatFirstExclusiveErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstExclusiveAbsolutive">
+		<whenValue element="ip/ipAgrFeatFirstExclusiveAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstInclusiveSubject">
+		<whenValue element="ip/ipAgrFeatFirstInclusiveSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstInclusiveObject">
+		<whenValue element="ip/ipAgrFeatFirstInclusiveObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstInclusiveErgative">
+		<whenValue element="ip/ipAgrFeatFirstInclusiveErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstInclusiveAbsolutive">
+		<whenValue element="ip/ipAgrFeatFirstInclusiveAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSecondSubject">
+		<whenValue element="ip/ipAgrFeatSecondSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSecondObject">
+		<whenValue element="ip/ipAgrFeatSecondObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSecondErgative">
+		<whenValue element="ip/ipAgrFeatSecondErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSecondAbsolutive">
+		<whenValue element="ip/ipAgrFeatSecondAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatThirdSubject">
+		<whenValue element="ip/ipAgrFeatThirdSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatThirdObject">
+		<whenValue element="ip/ipAgrFeatThirdObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatThirdErgative">
+		<whenValue element="ip/ipAgrFeatThirdErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatThirdAbsolutive">
+		<whenValue element="ip/ipAgrFeatThirdAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSingularSubject">
+		<whenValue element="ip/ipAgrFeatSingularSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSingularObject">
+		<whenValue element="ip/ipAgrFeatSingularObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSingularErgative">
+		<whenValue element="ip/ipAgrFeatSingularErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSingularAbsolutive">
+		<whenValue element="ip/ipAgrFeatSingularAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatDualSubject">
+		<whenValue element="ip/ipAgrFeatDualSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatDualObject">
+		<whenValue element="ip/ipAgrFeatDualObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatDualErgative">
+		<whenValue element="ip/ipAgrFeatDualErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatDualAbsolutive">
+		<whenValue element="ip/ipAgrFeatDualAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatPluralSubject">
+		<whenValue element="ip/ipAgrFeatPluralSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatPluralObject">
+		<whenValue element="ip/ipAgrFeatPluralObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatPluralErgative">
+		<whenValue element="ip/ipAgrFeatPluralErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatPluralAbsolutive">
+		<whenValue element="ip/ipAgrFeatPluralAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMasculineSubject">
+		<whenValue element="ip/ipAgrFeatMasculineSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMasculineObject">
+		<whenValue element="ip/ipAgrFeatMasculineObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMasculineErgative">
+		<whenValue element="ip/ipAgrFeatMasculineErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMasculineAbsolutive">
+		<whenValue element="ip/ipAgrFeatMasculineAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFeminineSubject">
+		<whenValue element="ip/ipAgrFeatFeminineSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFeminineObject">
+		<whenValue element="ip/ipAgrFeatFeminineObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFeminineErgative">
+		<whenValue element="ip/ipAgrFeatFeminineErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFeminineAbsolutive">
+		<whenValue element="ip/ipAgrFeatFeminineAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatNeuterSubject">
+		<whenValue element="ip/ipAgrFeatNeuterSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatNeuterObject">
+		<whenValue element="ip/ipAgrFeatNeuterObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatNeuterErgative">
+		<whenValue element="ip/ipAgrFeatNeuterErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatNeuterAbsolutive">
+		<whenValue element="ip/ipAgrFeatNeuterAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatAnimateSubject">
+		<whenValue element="ip/ipAgrFeatAnimateSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatAnimateObject">
+		<whenValue element="ip/ipAgrFeatAnimateObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatAnimateErgative">
+		<whenValue element="ip/ipAgrFeatAnimateErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatAnimateAbsolutive">
+		<whenValue element="ip/ipAgrFeatAnimateAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusAnimateSubject">
+		<whenValue element="ip/ipAgrFeatMinusAnimateSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusAnimateObject">
+		<whenValue element="ip/ipAgrFeatMinusAnimateObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusAnimateErgative">
+		<whenValue element="ip/ipAgrFeatMinusAnimateErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusAnimateAbsolutive">
+		<whenValue element="ip/ipAgrFeatMinusAnimateAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanSubject">
+		<whenValue element="ip/ipAgrFeatHumanSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanObject">
+		<whenValue element="ip/ipAgrFeatHumanObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanErgative">
+		<whenValue element="ip/ipAgrFeatHumanErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanAbsolutive">
+		<whenValue element="ip/ipAgrFeatHumanAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanSubject">
+		<whenValue element="ip/ipAgrFeatMinusHumanSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanObject">
+		<whenValue element="ip/ipAgrFeatMinusHumanObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanErgative">
+		<whenValue element="ip/ipAgrFeatMinusHumanErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanAbsolutive">
+		<whenValue element="ip/ipAgrFeatMinusHumanAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatClassClassNumberSubject">
+		<whenValue element="ip/ipAgrFeatClassClassNumberSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatClassClassNumberObject">
+		<whenValue element="ip/ipAgrFeatClassClassNumberObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatClassClassNumberErgative">
+		<whenValue element="ip/ipAgrFeatClassClassNumberErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatClassClassNumberAbsolutive">
+		<whenValue element="ip/ipAgrFeatClassClassNumberAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPProDropYes">
+		<whenValue element="ip" attr="proDrop" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPProDropNoImp">
+		<whenValue element="ip" attr="proDrop" value="noImp"/>
+	</showWhen>
+	<showWhen id="swIPProDropNotNo">
+		<whenValue element="ip" attr="proDrop" value="no" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swIPProDropYesClitic">
+		<whenValue element="ip" attr="proDrop" value="yesClitic"/>
+	</showWhen>
+	<showWhen id="swIPAuxYes">
+		<whenValue element="ip" attr="aux" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAuxNonfiniteYes">
+		<whenValue element="ip" attr="auxNonfinite" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAuxOtherYes">
+		<whenValue element="ip" attr="auxOther" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPNegAuxWord">
+		<whenValue element="ip" attr="negAux" value="yesOnly"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAffix"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
+	<showWhen id="swIPNegAuxAffix">
+		<whenValue element="ip" attr="negAux" value="noAffixOnly"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAffix"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
+	<showWhen id="swIPNegAuxNotNoVerb">
+		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swIPNegVerb">
+		<whenValue element="ip" attr="negAux" value="noVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
+	<showWhen id="swIPAuxOrderVSO">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<showWhen id="swIPAuxOrderOSV">
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+	</showWhen>
+	<showWhen id="swIPAuxNonfiniteOrderVSO">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<showWhen id="swIPAuxNonfiniteOrderOSV">
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+	</showWhen>
+	<showWhen id="swIPAuxOtherOrderVSO">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<showWhen id="swIPAuxOtherOrderOSV">
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+	</showWhen>
+	<showWhen id="swVInitial">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="VOS"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="SVO"/>
+	</showWhen>
+	<showWhen id="swVFinal">
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="OVS"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="SOV"/>
+	</showWhen>
+	<showWhen id="swIPCopVerbNoNeitherOrOptional">
+		<whenValue element="ip" attr="copular" value="noNeither"/>
+		<or/>
+		<whenValue element="ip" attr="copular" value="yesOptional"/>
+	</showWhen>
+	<showWhen id="swIPCopVerbNoNeither">
+		<whenValue element="ip" attr="copular" value="noNeither"/>
+	</showWhen>
+	<showWhen id="swIPCopVerbYesOptional">
+		<whenValue element="ip" attr="copular" value="yesOptional"/>
+	</showWhen>
+	<showWhen id="swIPDiCatNotPP">
+		<whenValue element="ip" attr="diCat" value="pp" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swIPPassiveYes">
+		<whenValue element="ip" attr="passive" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPPassiveAgentYes">
+		<whenValue element="ip" attr="passiveAgent" value="yes"/>
+	</showWhen>
+</portion>

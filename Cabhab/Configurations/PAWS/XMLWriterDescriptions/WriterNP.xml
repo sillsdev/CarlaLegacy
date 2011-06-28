@@ -134,6 +134,15 @@
 					<col show="swPossDemAndOrArtCooccurNoBefore">
 						<content>(Dem/Art/Poss)</content>
 					</col>
+					<col show="swPossDemAndOrArtCooccurNoBeforeArtAfter">
+						<content>(Dem/Pos)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoBeforeDemAfter">
+						<content>(Art/Pos)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoBeforePosAfter">
+						<content>(Dem/Art)</content>
+					</col>
 					<col show="swNPQPBefore">
 						<content>(QP)</content>
 					</col>
@@ -164,6 +173,15 @@
 					<col show="swPossDemAndOrArtCooccurNoAfter">
 						<content>(Poss/Art/Dem)</content>
 					</col>
+					<col show="swPossDemAndOrArtCooccurNoAfterArtBefore">
+						<content>(Pos/Dem)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoAfterDemBefore">
+						<content>(Pos/Art)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoAfterPosBefore">
+						<content>(Art/Dem)</content>
+					</col>
 					<col show="swQPNPDegreeYesAfter">
 						<content>(Deg)</content>
 					</col>
@@ -178,6 +196,9 @@
 					</col>
 					<col show="swPossDemOnlyCooccurNoBefore">
 						<content>(Dem/Poss)</content>
+					</col>
+					<col show="swPossDemOnlyCooccurNoBeforePosAfter">
+						<content>(Dem)</content>
 					</col>
 					<col show="swNPQPBefore">
 						<content>(QP)</content>
@@ -209,6 +230,9 @@
 					<col show="swPossDemOnlyCooccurNoAfter">
 						<content>(Poss/Dem)</content>
 					</col>
+					<col show="swPossDemOnlyCooccurNoAfterPosBefore">
+						<content>(Dem)</content>
+					</col>
 					<col show="swQPNPDegreeYesAfter">
 						<content>(Deg)</content>
 					</col>
@@ -223,6 +247,9 @@
 					</col>
 					<col show="swPossArtOnlyCooccurNoBefore">
 						<content>(Art/Poss)</content>
+					</col>
+					<col show="swPossArtOnlyCooccurNoBeforePosAfter">
+						<content>(Art)</content>
 					</col>
 					<col show="swNPQPBefore">
 						<content>(QP)</content>
@@ -253,6 +280,9 @@
 					</col>
 					<col show="swPossArtOnlyCooccurNoAfter">
 						<content>(Poss/Art)</content>
+					</col>
+					<col show="swPossArtOnlyCooccurNoAfterPosBefore">
+						<content>(Art)</content>
 					</col>
 					<col show="swQPNPDegreeYesAfter">
 						<content>(Deg)</content>
@@ -289,6 +319,22 @@
 				</case>
 				<content/>
 			</p>
+			<p show="swNPAgreeYesNumber">
+				<content>Examples showing number agreement in </content><langName/><content> nominal phrases include:</content>
+			</p>
+			<example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
+			<p show="swNPAgreeYesAnimacy">
+				<content>Examples showing animacy agreement in </content><langName/><content> nominal phrases include:</content>
+			</p>
+			<example show="swNPAgreeYesAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
+			<p show="swNPAgreeYesClass">
+				<content>Examples showing class agreement in </content><langName/><content> nominal phrases include:</content>
+			</p>
+			<example show="swNPAgreeYesClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
+			<p show="swNPAgreeYesGender">
+				<content>Examples showing gender agreement in </content><langName/><content> nominal phrases include:</content>
+			</p>
+			<example show="swNPAgreeYesGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
 		</section2>
 		<section2 id="sNPCase">
 			<secTitle>Case</secTitle>
@@ -703,6 +749,40 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</text>
 				<content/>
 			</p>
+			<p show="swNPArt">
+				<content>Examples of articles in </content>
+				<langName/>
+				<content> include:</content>
+			</p>
+			<example show="swNPArt">
+				<table border="1">
+					<headerRow>
+						<headerCol>Articles</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="np/articleExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swNPDem">
+				<content>Examples of demonstratives in </content>
+				<langName/>
+				<content> include:</content>
+			</p>
+			<example show="swNPDem">
+				<table border="1">
+					<headerRow>
+						<headerCol>Demonstratives</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="np/demonstrativeExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
 			<p show="swNPArtAndOrDem">
 				<content>Examples of nominal phrases including articles and/or demonstratives as allowed in </content>
 				<langName/>
@@ -715,9 +795,11 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<section2 id="sNPPoss">
 			<secTitle>Possessors</secTitle>
 			<p>
-				<content>Possession can normally be expressed by a possessive pronoun (to be addressed in section </content>
-				<sectionRef sec="sPron"/>
-				<content>) or by a full nominal phrase.  Many languages also add some kind of marking, such as the </content>
+				<content>Possession can normally be expressed by a possessive pronoun (as seen in section </content>
+				<sectionRef sec="sPronPoss"/>
+				<content>), by a simple noun, or by a full nominal phrase.
+					However, Spanish only allows possessive pronouns in the possessor position before the noun, with all noun and full nominal phrase possessors expressed in a prepositional phrase with </content><langData>de</langData><content> after the noun.</content></p>
+			<p><content>Within the languages which express possessors by nouns or full nominal phrases as well as by possessive pronouns, many also add some kind of marking, such as the </content>
 				<langData>'s</langData>
 				<content> in English, as an indication of possession.  These markings are either affixes (or clitics) on the head noun or phrase-level clitics which attach to one end of the whole phrase.  The English marking is this second type, because alongside phrases where the </content>
 				<langData>'s</langData>
@@ -727,9 +809,16 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<langData>the boy that I just talked to's mother</langData>
 				<content> or </content>
 				<langData>the girl in green's wonderful speech</langData>
-				<content>.   Possessors can also be embedded in one another, as in </content>
+				<content>.  These examples show that possessors can include </content>
+				<case element="pp" attr="pPos">
+					<caseText value="before">prepositional</caseText>
+					<caseText value="after">postpositional</caseText>
+					<caseText value="both">prepositional and/or postpositional</caseText>
+					<caseText value="unknown">prepositional and/or postpositional</caseText>
+				</case>
+				<content> phrases and relative clauses.  Possessors can also be embedded in one another, as in </content>
 				<langData>the boy's sister's dog</langData>
-				<content>.</content>
+				<content>.  This is allowed in Spanish within the prepositional phrase after the noun.</content>
 			</p>
 			<p>
 				<content>Examples of possessed nominal phrases with simple and embedded possessors in </content>
@@ -746,7 +835,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<interlinear exampleLoc="np/ppExample"/>
 			</example>
 			<p>
-				<content>Examples with relative clauses within the possessor here, included in simple full sentences are:</content>
+				<content>Examples with relative clauses within the possessor, included in simple full sentences are:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/relClExample"/>
@@ -787,7 +876,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<content/>
 			</p>
 			<p>
-				<content>The possessor occurs </content>
+				<content>The possessor (especially the possessive pronoun form, if  </content><langName/><content> is like Spanish) occurs </content>
 				<case element="np" attr="possNounPos">
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
@@ -816,8 +905,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<content> occur in the same phrase as articles or demonstratives.</content>
 				</p>
 			</section3>
-			<section3 id="sNPPossCase" show="swNPCaseYes">
+			<section3 id="sNPPossCase">
 				<secTitle>Possessor Case</secTitle>
+				<p show="swNPCaseNone"><content>As discussed in section </content><sectionRef sec="sNPCase"/><content>, </content><langName/><content> does not have any case system.  Therefore, there is no separate case marking on nouns nor a distinct set of pronouns used for possessors.</content></p>
+
 				<p show="swNPCaseNom">
 					<content>With the normal nominative-accusative case system followed by </content>
 					<langName/>
@@ -845,10 +936,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					</case>
 					<content/>
 				</p>
-				<p>
+				<p show="swNPCaseYes">
 					<content>In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system.</content>
 				</p>
-				<p>
+				<p show="swNPCaseYes">
 					<content>In </content>
 					<langName/>
 					<content>, </content>
@@ -887,9 +978,14 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<content/>
 				</p>
 				<example show="swNPPossAlienableYes">
-					<table>
+					<table border="1">
+						<headerRow>
+							<headerCol>Possessive affix</headerCol>
+							<headerCol>Gloss or Restrictions</headerCol>
+						</headerRow>
 						<row>
 							<col exampleLoc="np/possAlienableAffixExample"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 					</table>
 				</example>
@@ -1354,6 +1450,28 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			</example>
 		</section2>
 	</section1>
+	<showWhen id="swNPAgreeYesNumber">
+		<whenValue element="np"  attr="agreeNumber" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPAgreeYesAnimacy">
+		<whenValue element="np"  attr="agreeOther" value="yesAnimacy"/>
+	</showWhen>
+	<showWhen id="swNPAgreeYesClass">
+		<whenValue element="np"  attr="agreeOther" value="yesClass"/>
+	</showWhen>
+	<showWhen id="swNPAgreeYesGender">
+		<whenValue element="np"  attr="agreeOther" value="yesGender"/>
+	</showWhen>
+	<showWhen id="swNPArt">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+	</showWhen>
+	<showWhen id="swNPDem">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+	</showWhen>
 	<showWhen id="swPossDemAndArtCooccurYes">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
@@ -1397,6 +1515,39 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
 	</showWhen>
+	<showWhen id="swPossDemAndOrArtCooccurNoBeforeArtAfter">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either" negateValue="no"/>
+	</showWhen>
+		<showWhen id="swPossDemAndOrArtCooccurNoBeforeDemAfter">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either" negateValue="no"/>
+	</showWhen>
+		<showWhen id="swPossDemAndOrArtCooccurNoBeforePosAfter">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after" negateValue="no"/>
+	</showWhen>
 	<showWhen id="swPossDemAndOrArtCooccurNoAfter">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
@@ -1415,6 +1566,39 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="demOrArtPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swPossDemAndOrArtCooccurNoAfterArtBefore">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either" negateValue="no"/>
+	</showWhen>
+	<showWhen id="swPossDemAndOrArtCooccurNoAfterDemBefore">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either" negateValue="no"/>
+	</showWhen>
+	<showWhen id="swPossDemAndOrArtCooccurNoAfterPosBefore">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
 	</showWhen>
 	<showWhen id="swPossDemAndOrArtCooccurNo">
 		<whenValue element="np" attr="artAndDem" value="both"/>
@@ -1435,6 +1619,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
 	</showWhen>
+	<showWhen id="swPossDemOnlyCooccurNoBeforePosAfter">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after" negateValue="no"/>
+	</showWhen>
 	<showWhen id="swPossDemOnlyCooccurNoAfter">
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
@@ -1444,7 +1637,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"/>
 	</showWhen>
-	<showWhen id="swPossArtOnlyCooccurNo">
+	<showWhen id="swPossDemOnlyCooccurNoAfterPosBefore">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
+	</showWhen>	<showWhen id="swPossArtOnlyCooccurNo">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -1458,7 +1659,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
 	</showWhen>
-	<showWhen id="swPossArtOnlyCooccurNoAfter">
+	<showWhen id="swPossArtOnlyCooccurNoBeforePosAfter">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after" negateValue="no"/>
+	</showWhen>	<showWhen id="swPossArtOnlyCooccurNoAfter">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -1466,6 +1675,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="artPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swPossArtOnlyCooccurNoAfterPosBefore">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
 	</showWhen>
 	<showWhen id="swQPNPDegreeYesBefore">
 		<whenValue element="qp" attr="npDegree" value="yes"/>
@@ -1609,6 +1827,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="compHead" value="left"/>
 		<and/>
 		<whenValue element="np" attr="comp" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPCaseNone">
+		<whenValue element="np" attr="case" value="none"/>
 	</showWhen>
 	<showWhen id="swNPCaseDefaultNom">
 		<whenValue element="np" attr="case" value="nominative"/>

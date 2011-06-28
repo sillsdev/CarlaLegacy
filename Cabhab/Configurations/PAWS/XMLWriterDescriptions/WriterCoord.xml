@@ -5,7 +5,8 @@
 	<secTitle>Coordination Constructions</secTitle>
 	<p>
 	  <content>This section considers basic coordination constructions where there is an overt conjunction between the conjuncts, including coordination at the sentence level and at the verb phrase, nominal phrase, and adjective level.  More complex types of coordination constructions, such as lists without overt conjunctions between each conjunct, gapping, appositives and comparatives, will need to be dealt with later.</content></p>
-<p><content>In English, the conjunctions which can be used between two conjuncts are</content> <langData>and</langData><content>, </content><langData>or</langData><content>, </content><langData>but</langData><content> and </content><langData>and/or</langData><content>.  In addition, there are coordination constructions which require an initial conjunction, such as </content><langData>either...or</langData><content> and </content><langData>neither...nor</langData><content> constructions.  Some languages also use a word meaning </content><langData>with</langData><content> as a conjunction between nominal phrases.
+	  <p><comment>If your language has more complex kinds of coordination constructions, such as such as lists without overt conjunctions between each conjunct, missing parts of one of the conjuncts, appositives and comparatives, you can add description and examples as appropriate in this section.</comment></p>
+	  <p><content>In English, the conjunctions which can be used between two conjuncts are</content> <langData>and</langData><content>, </content><langData>or</langData><content>, </content><langData>but</langData><content> and </content><langData>and/or</langData><content>.  In addition, there are coordination constructions which require an initial conjunction, such as </content><langData>either...or</langData><content> and </content><langData>neither...nor</langData><content> constructions.  Some languages also use a word meaning </content><langData>with</langData><content> as a conjunction between nominal phrases.
 </content>
 	</p>
 			<p>
@@ -19,7 +20,7 @@
 						<headerCol>
 							<langName/>
 						</headerCol>
-						<headerCol>meaning</headerCol>
+						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
 						<col exampleLoc="coord/and"/>
@@ -76,7 +77,7 @@
 						<headerCol>
 							<langName/>
 						</headerCol>
-						<headerCol>meaning</headerCol>
+						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
 						<col exampleLoc="coord/either"/>

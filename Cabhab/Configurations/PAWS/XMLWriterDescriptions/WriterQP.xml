@@ -88,7 +88,7 @@ like </content>
 						<headerCol>
 							<langName/>
 						</headerCol>
-						<headerCol>meaning</headerCol>
+						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
 						<col exampleLoc="qp/all"/>
@@ -416,20 +416,24 @@ like </content>
 			</p>
 			<example show="swQPDeterminerNotNo">
 				<table border="1">
-					<caption>
-						<content>Quantifier Determiners</content>
-					</caption>
+					<headerRow>
+						<headerCol>Type</headerCol>
+						<headerCol>Quantifier Determiners</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row show="swQPDeterminerYesOrYesSome">
-						<col>
+						<col rowspan="1">
 							<content>positive</content>
 						</col>
 						<col exampleLoc="qp/determinerExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 					<row show="swQPDeterminerYesOrYesNo">
-						<col>
+						<col rowspan="1">
 							<content>negative</content>
 						</col>
 						<col exampleLoc="qp/determinerNegExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
@@ -513,11 +517,13 @@ waste</langData>
 			</p>
 			<example>
 				<table border="1">
-					<caption>
-						<content>Quantifiers</content>
-					</caption>
+					<headerRow>
+						<headerCol>Quantifiers</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
 						<col exampleLoc="qp/quantifierExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
@@ -591,26 +597,25 @@ syntactically like adjectives.
 				</p>
 				<example>
 					<table border="1">
-						<caption>
-							<content>Cardinal Numbers</content>
-						</caption>
+						<headerRow>
+							<headerCol>Count</headerCol>
+							<headerCol>Cardinal Numbers</headerCol>
+							<headerCol>Gloss</headerCol>
+						</headerRow>
 						<row>
-							<col>
-								<content>1 through 10</content>
-							</col>
+							<col rowspan="1"><content>1 through 10</content></col>
 							<col exampleLoc="qp/cardinalNumbers1to10"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 						<row>
-							<col>
-								<content>11 through 20</content>
-							</col>
+							<col rowspan="1"><content>11 through 20</content></col>
 							<col exampleLoc="qp/cardinalNumbers11to20"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 						<row>
-							<col>
-								<content>30 through 100 (by tens)</content>
-							</col>
+							<col rowspan="1"><content>30 through 100 (by tens)</content></col>
 							<col exampleLoc="qp/cardinalNumbers30to100"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 					</table>
 				</example>
@@ -657,14 +662,15 @@ Examples of compound numbers in </content>
 				</p>
 				<example>
 					<table border="1">
-						<caption>
-							<content>Ordinal Numbers</content>
-						</caption>
+						<headerRow>
+							<headerCol>Count</headerCol>
+							<headerCol>Ordinal Numbers</headerCol>
+							<headerCol>Gloss</headerCol>
+						</headerRow>
 						<row>
-							<col>
-								<content>first through tenth</content>
-							</col>
+							<col rowspan="1"><content>first through tenth</content></col>
 							<col exampleLoc="qp/ordinalNumbers"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 					</table>
 				</example>

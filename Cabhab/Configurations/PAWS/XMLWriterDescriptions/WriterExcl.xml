@@ -59,10 +59,10 @@
 					<content>Cool!</content>
 				</li>
 				<li>
-					<content>Jumping Jehoshaphat!</content>
+					<content>Jumping Jehosaphat!</content>
 				</li>
 				<li>
-					<content>Jiminy Cricket!</content>
+					<content>Jimminy Cricket!</content>
 				</li>
 			</ol>
 <p><content>Examples of interjections in </content><langName/> <content> include:</content></p>
@@ -76,7 +76,7 @@
 						<headerCol>
 							<langName/>
 						</headerCol>
-						<headerCol>meaning</headerCol>
+						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
 						<col exampleLoc="excl/yesExample"/>
@@ -125,6 +125,11 @@
 <p show="swExclMYesEitherYes"><content>All of the words may occur on either side of the adjective phrase.</content></p>
 </section2>
   </section1>
+	<section1 id="sTexts">
+		<secTitle>Texts</secTitle>
+		<p><comment>Include several texts here to demonstrate how larger constructions such as paragraphs, conversations, and narrative stories are formed.  Include examples of various literary types.</comment></p>
+		<p><comment>  A suggested format for presenting the texts is to present it in the vernacular language as a whole first, so the native speakers can appreciate it.  Then present the interlinear form, as in the examples throughout the grammar.  Finally, give a free translation as a whole, so the non-native speaker can appreciate more about the culture.</comment></p>
+	</section1>
 <showWhen id="swExclMYes">
 	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
 </showWhen>

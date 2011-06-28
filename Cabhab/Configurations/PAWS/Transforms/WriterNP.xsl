@@ -29,85 +29,85 @@
 <table>
 				<tr>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)!='after' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtDemPos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Dem)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)!='after' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtArtPos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Art)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@possNounPos)!='after' and normalize-space(//np/@possNounPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(Poss)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='after' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='after' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='after' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@compHead)='right' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>((N) N)</xsl:text>
 					</td>
 </xsl:if>
-					<td>
+					<td align="left">
 						<xsl:text>N</xsl:text>
 					</td>
 					<xsl:if test="normalize-space(//np/@compHead)='left' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='before' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='before' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='before' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@possNounPos)!='before' and normalize-space(//np/@possNounPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(Poss)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)!='before' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtArtPos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Art)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)!='before' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtDemPos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Dem)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
@@ -120,75 +120,75 @@
 <table>
 				<tr>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artBothCooccur)='no' and normalize-space(//np/@possCooccur)='yes' and normalize-space(//np/@demOrArtPos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Dem/Art)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@possNounPos)!='after' and normalize-space(//np/@possNounPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(Poss)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='after' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='after' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='after' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@compHead)='right' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>((N) N)</xsl:text>
 					</td>
 </xsl:if>
-					<td>
+					<td align="left">
 						<xsl:text>N</xsl:text>
 					</td>
 					<xsl:if test="normalize-space(//np/@compHead)='left' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='before' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='before' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='before' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@possNounPos)!='before' and normalize-space(//np/@possNounPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(Poss)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artBothCooccur)='no' and normalize-space(//np/@possCooccur)='yes' and normalize-space(//np/@demOrArtPos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Art/Dem)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
@@ -201,65 +201,95 @@
 <table>
 				<tr>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demAndArtArtPos)!='after' and normalize-space(//np/@demAndArtDemPos)!='after' and normalize-space(//np/@possNounPos)!='after' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demOrArtPos)!='after' and normalize-space(//np/@possNounPos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Dem/Art/Poss)</xsl:text>
 					</td>
 </xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demAndArtArtPos)='after' and normalize-space(//np/@demAndArtDemPos)='either' and normalize-space(//np/@possNounPos)='either'">
+<td align="left">
+						<xsl:text>(Dem/Pos)</xsl:text>
+					</td>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demAndArtArtPos)='either' and normalize-space(//np/@demAndArtDemPos)='after' and normalize-space(//np/@possNounPos)='either'">
+<td align="left">
+						<xsl:text>(Art/Pos)</xsl:text>
+					</td>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demAndArtArtPos)='either' and normalize-space(//np/@demAndArtDemPos)='either' and normalize-space(//np/@possNounPos)='after'">
+<td align="left">
+						<xsl:text>(Dem/Art)</xsl:text>
+					</td>
+</xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='after' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='after' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='after' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@compHead)='right' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>((N) N)</xsl:text>
 					</td>
 </xsl:if>
-					<td>
+					<td align="left">
 						<xsl:text>N</xsl:text>
 					</td>
 					<xsl:if test="normalize-space(//np/@compHead)='left' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='before' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='before' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='before' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demAndArtArtPos)!='before' and normalize-space(//np/@demAndArtDemPos)!='before' and normalize-space(//np/@possNounPos)!='before' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demOrArtPos)!='before' and normalize-space(//np/@possNounPos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Poss/Art/Dem)</xsl:text>
 					</td>
 </xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demAndArtArtPos)='before' and normalize-space(//np/@demAndArtDemPos)='either' and normalize-space(//np/@possNounPos)='either'">
+<td align="left">
+						<xsl:text>(Pos/Dem)</xsl:text>
+					</td>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demAndArtArtPos)='either' and normalize-space(//np/@demAndArtDemPos)='before' and normalize-space(//np/@possNounPos)='either'">
+<td align="left">
+						<xsl:text>(Pos/Art)</xsl:text>
+					</td>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demAndArtArtPos)='either' and normalize-space(//np/@demAndArtDemPos)='either' and normalize-space(//np/@possNounPos)='before'">
+<td align="left">
+						<xsl:text>(Art/Dem)</xsl:text>
+					</td>
+</xsl:if>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
@@ -272,65 +302,75 @@
 <table>
 				<tr>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demPos)!='after' and normalize-space(//np/@possNounPos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Dem/Poss)</xsl:text>
 					</td>
 </xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demPos)='either' and normalize-space(//np/@possNounPos)='after'">
+<td align="left">
+						<xsl:text>(Dem)</xsl:text>
+					</td>
+</xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='after' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='after' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='after' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@compHead)='right' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>((N) N)</xsl:text>
 					</td>
 </xsl:if>
-					<td>
+					<td align="left">
 						<xsl:text>N</xsl:text>
 					</td>
 					<xsl:if test="normalize-space(//np/@compHead)='left' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='before' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='before' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='before' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demPos)!='before' and normalize-space(//np/@possNounPos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Poss/Dem)</xsl:text>
 					</td>
 </xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@demPos)='either' and normalize-space(//np/@possNounPos)='before'">
+<td align="left">
+						<xsl:text>(Dem)</xsl:text>
+					</td>
+</xsl:if>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
@@ -343,65 +383,75 @@
 <table>
 				<tr>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='after' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@artPos)!='after' and normalize-space(//np/@possNounPos)!='after'">
-<td>
+<td align="left">
 						<xsl:text>(Art/Poss)</xsl:text>
 					</td>
 </xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@artPos)='either' and normalize-space(//np/@possNounPos)='after'">
+<td align="left">
+						<xsl:text>(Art)</xsl:text>
+					</td>
+</xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='after' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='after' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='after' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@compHead)='right' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>((N) N)</xsl:text>
 					</td>
 </xsl:if>
-					<td>
+					<td align="left">
 						<xsl:text>N</xsl:text>
 					</td>
 					<xsl:if test="normalize-space(//np/@compHead)='left' and normalize-space(//np/@comp)='yes'">
-<td>
+<td align="left">
 						<xsl:text>(N (N))</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@ppPos)!='before' and normalize-space(//np/@ppPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(PP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@adjpPos)!='before' and normalize-space(//np/@adjpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(AdjP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@qpPos)!='before' and normalize-space(//np/@qpPos)!='unknown'">
-<td>
+<td align="left">
 						<xsl:text>(QP)</xsl:text>
 					</td>
 </xsl:if>
 					<xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@artPos)!='before' and normalize-space(//np/@possNounPos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Poss/Art)</xsl:text>
 					</td>
 </xsl:if>
+					<xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@possCooccur)='no' and normalize-space(//np/@artPos)='either' and normalize-space(//np/@possNounPos)='before'">
+<td align="left">
+						<xsl:text>(Art)</xsl:text>
+					</td>
+</xsl:if>
 					<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)!='before' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)!='before'">
-<td>
+<td align="left">
 						<xsl:text>(Deg)</xsl:text>
 					</td>
 </xsl:if>
@@ -1282,7 +1332,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1299,7 +1349,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1354,7 +1404,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1371,7 +1421,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1583,7 +1633,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>Examples with relative clauses within the possessor here, included in simple full sentences are:</xsl:text>
+<xsl:text>Examples with relative clauses within the possessor, included in simple full sentences are:</xsl:text>
 </p>
 			<example num="xNP.NPPoss.18">
 <xsl:variable name="sExampleValue">
@@ -1880,7 +1930,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1897,7 +1947,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1939,160 +1989,160 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 						</tr>
 						<xsl:if test="normalize-space(//np/npPossAgrPossFirst/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>first</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossExclusive/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>first exclusive</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossInclusive/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>first inclusive</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossSecond/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>second</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossThird/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>third</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossSingular/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>number</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>singular</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossDual/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>number</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>dual</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossPlural/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>number</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>plural</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossMasculine/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>gender</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>masculine</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossFeminine/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>gender</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>feminine</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossNeuter/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>gender</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>neuter</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossAnimate/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>animacy</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>animate</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossInanimate/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>animacy</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>inanimate</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossHuman/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>animacy</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>human</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossNonHuman/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>animacy</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>nonhuman</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossClassClassNumber/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>class</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>class_##</xsl:text>
 							</td>
 						</tr>
@@ -2848,6 +2898,106 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </example>
 		</section2>
 	</section1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -208,7 +208,7 @@
 						<headerCol>
 							<langName/>
 						</headerCol>
-						<headerCol>meaning</headerCol>
+						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
 						<col exampleLoc="q/who"/>

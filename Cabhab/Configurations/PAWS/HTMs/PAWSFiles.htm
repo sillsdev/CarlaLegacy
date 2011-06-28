@@ -17,65 +17,65 @@ window.external.GetAnswerValue("//language/grammarFile");
 sTemp = FileLocGrammar.value = window.external.OutValue;
 if (sTemp =="")
 {
-    index = sAnswer.lastIndexOf(".paw");
-    if (index > -1)
-    {
-        sTemp = sAnswer.substr(0, index) + ".grm";
-        window.external.SetAnswerValue("//language/grammarFile", sTemp);
-        FileLocGrammar.value = sTemp;
-    }
+	index = sAnswer.lastIndexOf(".paw");
+	if (index > -1)
+	{
+		sTemp = sAnswer.substr(0, index) + ".grm";
+		window.external.SetAnswerValue("//language/grammarFile", sTemp);
+		FileLocGrammar.value = sTemp;
+	}
 }
 
 window.external.GetAnswerValue("//language/writerFile");
 sTemp = FileLocWriter.value = window.external.OutValue;
 if (sTemp =="")
 {
-    index = sAnswer.lastIndexOf(".paw");
-    if (index > -1)
-    {
-        sTemp = sAnswer.substr(0, index) + ".xml";
-        window.external.SetAnswerValue("//language/writerFile", sTemp);
-        FileLocWriter.value = sTemp;
-    }
+	index = sAnswer.lastIndexOf(".paw");
+	if (index > -1)
+	{
+		sTemp = sAnswer.substr(0, index) + ".xml";
+		window.external.SetAnswerValue("//language/writerFile", sTemp);
+		FileLocWriter.value = sTemp;
+	}
 }
 
 window.external.GetAnswerValue("//language/writerPracticalFile");
 sTemp = FileLocWriterPractical.value = window.external.OutValue;
 if (sTemp =="")
 {
-    index = sAnswer.lastIndexOf(".paw");
-    if (index > -1)
-    {
-        sTemp = sAnswer.substr(0, index) + "WriterPractical.xml";
-        window.external.SetAnswerValue("//language/writerPracticalFile", sTemp);
-        FileLocWriterPractical.value = sTemp;
-    }
+	index = sAnswer.lastIndexOf(".paw");
+	if (index > -1)
+	{
+		sTemp = sAnswer.substr(0, index) + "WriterPractical.xml";
+		window.external.SetAnswerValue("//language/writerPracticalFile", sTemp);
+		FileLocWriterPractical.value = sTemp;
+	}
 }
 
 window.external.GetAnswerValue("//language/writerPracticalSpanishFile");
 sTemp = FileLocWriterPracticalSpanish.value = window.external.OutValue;
 if (sTemp =="")
 {
-    index = sAnswer.lastIndexOf(".paw");
-    if (index > -1)
-    {
-        sTemp = sAnswer.substr(0, index) + "WriterPracticalSpanish.xml";
-        window.external.SetAnswerValue("//language/writerPracticalSpanishFile", sTemp);
-        FileLocWriterPracticalSpanish.value = sTemp;
-    }
+	index = sAnswer.lastIndexOf(".paw");
+	if (index > -1)
+	{
+		sTemp = sAnswer.substr(0, index) + "WriterPracticalSpanish.xml";
+		window.external.SetAnswerValue("//language/writerPracticalSpanishFile", sTemp);
+		FileLocWriterPracticalSpanish.value = sTemp;
+	}
 }
 
 window.external.GetAnswerValue("//language/exampleFilesPath");
 sTemp = FileLocExampleFiles.value = window.external.OutValue;
 if (sTemp =="")
 {
-    index = sAnswer.lastIndexOf("\\");
-    if (index > -1)
-    {
-        sTemp = sAnswer.substr(0, index);
-        window.external.SetAnswerValue("//language/exampleFilesPath", sTemp);
-        FileLocExampleFiles.value = sTemp;
-    }
+	index = sAnswer.lastIndexOf("\\");
+	if (index > -1)
+	{
+		sTemp = sAnswer.substr(0, index);
+		window.external.SetAnswerValue("//language/exampleFilesPath", sTemp);
+		FileLocExampleFiles.value = sTemp;
+	}
 }
 
 
@@ -97,7 +97,7 @@ function displayCheckBoxValue(checkboxID, xpath)
 window.external.GetAnswerValue(xpath);
 sTemp = checkboxID.value = window.external.OutValue;
 if (sTemp =="True")
-    checkboxID.checked = true;
+	checkboxID.checked = true;
 else
    checkboxID.checked = false;
 }
@@ -135,44 +135,44 @@ var valArray = new Array();
 
 if ( !OutputWriter.checked && !OutputWriterPractical.checked && !OutputWriterPracticalSpanish.checked )
 {
-    OutputWriter.checked= true;
+	OutputWriter.checked= true;
 }
 if ( OutputGrammar.checked)
   {
-    BrowseForGrammar.style.display = "";
-    BrowseForGrammarDir.style.display = "";
+	BrowseForGrammar.style.display = "";
+	BrowseForGrammarDir.style.display = "";
   }
 else
   {
-    BrowseForGrammar.style.display = "none";
-    BrowseForGrammarDir.style.display = "none";
+	BrowseForGrammar.style.display = "none";
+	BrowseForGrammarDir.style.display = "none";
   }
 
 if ( OutputWriter.checked)
   {
-    BrowseForWriter.style.display = "";
+	BrowseForWriter.style.display = "";
   }
 else
   {
-    BrowseForWriter.style.display = "none";
+	BrowseForWriter.style.display = "none";
   }
 
 if ( OutputWriterPractical.checked)
   {
-    BrowseForWriterPractical.style.display = "";
+	BrowseForWriterPractical.style.display = "";
   }
 else
   {
-    BrowseForWriterPractical.style.display = "none";
+	BrowseForWriterPractical.style.display = "none";
   }
 
 if ( OutputWriterPracticalSpanish.checked)
   {
-    BrowseForWriterPracticalSpanish.style.display = "";
+	BrowseForWriterPracticalSpanish.style.display = "";
   }
 else
   {
-    BrowseForWriterPracticalSpanish.style.display = "none";
+	BrowseForWriterPracticalSpanish.style.display = "none";
   }
 
 }
@@ -183,8 +183,8 @@ window.external.FileBrowse(FileLocAnswer.value, "PAWS Starter Kit (*.paw)|*.paw|
 result = window.external.OutValue;
 if (result != "Cancel")
   {
-    FileLocAnswer.value = result;
-    saveData();
+	FileLocAnswer.value = result;
+	saveData();
   }
 }
 function ButtonFileLocGrammar()
@@ -194,8 +194,8 @@ window.external.FileBrowse(FileLocGrammar.value, "PC-PATR Grammar  (*.grm)|*.grm
 result = window.external.OutValue;
 if (result != "Cancel")
   {
-    FileLocGrammar.value = result;
-    saveData();
+	FileLocGrammar.value = result;
+	saveData();
   }
 }
 function ButtonFileLocWriter()
@@ -205,8 +205,8 @@ window.external.FileBrowse(FileLocWriter.value, "Writer File  (*.xml)|*.xml|" + 
 result = window.external.OutValue;
 if (result != "Cancel")
   {
-    FileLocWriter.value = result;
-    saveData();
+	FileLocWriter.value = result;
+	saveData();
   }
 }
 function ButtonFileLocWriterPractical()
@@ -216,8 +216,8 @@ window.external.FileBrowse(FileLocWriterPractical.value, "Writer File  (*.xml)|*
 result = window.external.OutValue;
 if (result != "Cancel")
   {
-    FileLocWriterPractical.value = result;
-    saveData();
+	FileLocWriterPractical.value = result;
+	saveData();
   }
 }
 function ButtonFileLocWriterPracticalSpanish()
@@ -227,8 +227,8 @@ window.external.FileBrowse(FileLocWriterPracticalSpanish.value, "Writer File  (*
 result = window.external.OutValue;
 if (result != "Cancel")
   {
-    FileLocWriterPracticalSpanish.value = result;
-    saveData();
+	FileLocWriterPracticalSpanish.value = result;
+	saveData();
   }
 }
 function ButtonFileLocExampleFiles()
@@ -238,54 +238,54 @@ window.external.DirectoryBrowse(FileLocExampleFiles.value, "Example files direct
 result = window.external.OutValue;
 if (result != "Cancel")
   {
-    FileLocExampleFiles.value = result;
-    saveData();
+	FileLocExampleFiles.value = result;
+	saveData();
   }
 }
 function SetOutputViaDescription(item)
 {
   switch (item)
   {
-    case "grammar":
-      if ( OutputGrammar.checked)
-      {
-         OutputGrammar.checked = false;
-      }
-      else
-      {
-         OutputGrammar.checked = true;
-      }
-      break;
-    case "writer":
-      if ( OutputWriter.checked)
-      {
-        OutputWriter.checked = false;
-      }
-      else
-      {
-        OutputWriter.checked = true;
-      }
-      break;
-    case "writerPractical":
-      if ( OutputWriterPractical.checked)
-      {
-        OutputWriterPractical.checked = false;
-      }
-      else
-      {
-        OutputWriterPractical.checked = true;
-      }
-      break;
-    case "writerPracticalSpanish":
-      if ( OutputWriterPracticalSpanish.checked)
-      {
-        OutputWriterPracticalSpanish.checked = false;
-      }
-      else
-      {
-        OutputWriterPracticalSpanish.checked = true;
-      }
-      break;
+	case "grammar":
+	  if ( OutputGrammar.checked)
+	  {
+		 OutputGrammar.checked = false;
+	  }
+	  else
+	  {
+		 OutputGrammar.checked = true;
+	  }
+	  break;
+	case "writer":
+	  if ( OutputWriter.checked)
+	  {
+		OutputWriter.checked = false;
+	  }
+	  else
+	  {
+		OutputWriter.checked = true;
+	  }
+	  break;
+	case "writerPractical":
+	  if ( OutputWriterPractical.checked)
+	  {
+		OutputWriterPractical.checked = false;
+	  }
+	  else
+	  {
+		OutputWriterPractical.checked = true;
+	  }
+	  break;
+	case "writerPracticalSpanish":
+	  if ( OutputWriterPracticalSpanish.checked)
+	  {
+		OutputWriterPracticalSpanish.checked = false;
+	  }
+	  else
+	  {
+		OutputWriterPracticalSpanish.checked = true;
+	  }
+	  break;
   }
   SetOutput(item);
 }
@@ -293,59 +293,59 @@ function SetOutput(item)
 {
   switch (item)
   {
-    case "grammar":
-      if ( OutputGrammar.checked)
-      {
-         OutputGrammar.value = "True";
-      }
-      else
-      {
-         OutputGrammar.value = "False";
-      }
-      break;
-    case "writer":
-      if ( OutputWriter.checked)
-      {
-        OutputWriter.value = "True";
-      }
-      else
-      {
-        OutputWriter.value = "False";
-      }
-      break;
-    case "writerPractical":
-      if ( OutputWriterPractical.checked)
-      {
-        OutputWriterPractical.value = "True";
-      }
-      else
-      {
-        OutputWriterPractical.value = "False";
-      }
-      break;
-    case "writerPracticalSpanish":
-      if ( OutputWriterPracticalSpanish.checked)
-      {
-        OutputWriterPracticalSpanish.value = "True";
-      }
-      else
-      {
-        OutputWriterPracticalSpanish.value = "False";
-      }
-      break;
+	case "grammar":
+	  if ( OutputGrammar.checked)
+	  {
+		 OutputGrammar.value = "True";
+	  }
+	  else
+	  {
+		 OutputGrammar.value = "False";
+	  }
+	  break;
+	case "writer":
+	  if ( OutputWriter.checked)
+	  {
+		OutputWriter.value = "True";
+	  }
+	  else
+	  {
+		OutputWriter.value = "False";
+	  }
+	  break;
+	case "writerPractical":
+	  if ( OutputWriterPractical.checked)
+	  {
+		OutputWriterPractical.value = "True";
+	  }
+	  else
+	  {
+		OutputWriterPractical.value = "False";
+	  }
+	  break;
+	case "writerPracticalSpanish":
+	  if ( OutputWriterPracticalSpanish.checked)
+	  {
+		OutputWriterPracticalSpanish.value = "True";
+	  }
+	  else
+	  {
+		OutputWriterPracticalSpanish.value = "False";
+	  }
+	  break;
   }
   saveData();
   Refresh();
 }
 function ButtonBack()
 {
-    window.navigate ("LanguagePropertiesNewMode");
+	window.navigate ("LanguagePropertiesNewMode");
 }
 
 function ButtonNext()
 {
-    saveData();
-    window.navigate ("Contents.htm");
+	saveData();
+	window.navigate ("Contents.htm");
 }
 
   </script></head>
@@ -377,7 +377,7 @@ function ButtonNext()
 <td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
 <td onclick="SetOutputViaDescription('writerPractical')">Output the practical grammar write-up file.</td>
 </tr>
-<tr style="display:none">
+<tr>
 <td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
 <td onclick="SetOutputViaDescription('writerPracticalSpanish')">Output the Spanish practical grammar write-up file.</td>
 </tr>

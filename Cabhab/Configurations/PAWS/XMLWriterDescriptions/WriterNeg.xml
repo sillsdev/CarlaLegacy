@@ -136,40 +136,53 @@
 					<caseText value="no">The negative pronouns, determiners, and adverbs may occur in object position or the normal adverb position even when there is another negative element in the sentence.</caseText>
 				</case>
 			</p>
-			<example show="swPolarityItemsYesAndNegNotVerbOnly">
+			<example show="swPolarityItemsYes">
 				<table border="1">
-					<caption>
-						<content>Negative Polarity Items</content>
-					</caption>
+					<headerRow>
+						<headerCol>Type</headerCol>
+						<headerCol>Negative Polarity Items</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col>
+						<col rowspan="1">
 							<content>Pronouns (and/or Phrases)</content>
 						</col>
 						<col exampleLoc="neg/npiPronounExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 					<row>
-						<col show="swQPDeterminerYesOrYesNo">
+						<col rowspan="1" show="swQPDeterminerYesOrYesNo">
 							<content>Determiners</content>
 						</col>
-						<col show="swQPDeterminerNoOrYesSome">
+						<col  rowspan="1" show="swQPDeterminerNoOrYesSome">
 							<content>Special Degree elements</content>
 						</col>
 						<col exampleLoc="neg/npiDeterminerExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 					<row>
-						<col>
+						<col rowspan="1">
 							<content>Temporal Adverbs</content>
 						</col>
 						<col exampleLoc="neg/npiTemporalExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 					<row>
-						<col>
+						<col rowspan="1">
 							<content>Locative Adverbs</content>
 						</col>
 						<col exampleLoc="neg/npiLocativeExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
+			<p show="swPolarityItemsYesAndNegNotVerbOnly">
+				<content>In </content><langName/><content>, a negative-marked verb </content>
+				<case element="neg" attr="objVerbRequired">
+					<caseText value="no">is not required when there is a negative-polarity item in the object position.  </caseText>
+					<caseText value="yes">is required when there is a negative-polarity item in the object position.  </caseText>
+					<caseText value="other"> is not required when there is a negative-polarity item in the object position, but if the verb is not negative then another negative word or phrase must occur earlier in the sentence.  </caseText></case>
+			</p>
 		</section2>
 		<section2 id="sNegVerbal">
 			<secTitle>Auxiliary and Verbal Negation</secTitle>
@@ -227,13 +240,17 @@
 				<content> are:</content>
 			</p>
 			<example show="swIPNegAuxWord">
-				<interlinear exampleLoc="ip/negAuxExample"/>
-			</example>
-			<p show="swIPNegAuxWord">
-				<content>Examples of the negative auxiliary word(s) used in a complete sentence (without any negative arguments) include:</content>
-			</p>
-			<example show="swIPNegAuxWord">
-				<interlinear exampleLoc="neg/auxExample"/>
+				<table border="1">
+					<headerRow>
+						<headerCol>Negative Auxiliary Words</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/negAuxExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+
 			</example>
 			<p show="swIPNegAuxAffix">
 				<content>Examples of the negative auxiliary affixes in </content>
@@ -241,7 +258,17 @@
 				<content> attached to an auxiliary include:</content>
 			</p>
 			<example show="swIPNegAuxAffix">
-				<interlinear exampleLoc="ip/negAuxAffixExample"/>
+				<table border="1">
+					<headerRow>
+						<headerCol>Negative Auxiliaries</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/negAuxAffixExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+
 			</example>
 			<p show="swIPNegAuxAffix">
 				<content>Examples of the negative auxiliary affixes attached to an auxiliary used in a complete sentence (without any negative arguments) include:</content>
@@ -255,7 +282,17 @@
 				<content> attached to a verb include:</content>
 			</p>
 			<example show="swIPNegVerb">
-				<interlinear exampleLoc="ip/negVerbExample"/>
+				<table border="1">
+					<headerRow>
+						<headerCol>Negative-Marked Verbs</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/negVerbExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+
 			</example>
 			<p show="swIPNegVerb">
 				<content>Full sentence examples with negative verbs include:</content>
@@ -280,7 +317,16 @@
 				<content> include:</content>
 			</p>
 			<example show="swAdvPNegTemporalTypeAffix">
-				<interlinear exampleLoc="advp/negTemporalAffixExample"/>
+				<table border="1">
+					<headerRow>
+						<headerCol>Negative Temporal-Marked Verbs</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="advp/negTemporalAffixExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
 			</example>
 			<example show="swAdvPNegTemporalTypeWordOrVerb">
 				<interlinear exampleLoc="advp/negTemporalExample"/>
@@ -305,7 +351,16 @@
 				<content> include:</content>
 			</p>
 			<example show="swAdvPNegLocativeTypeAffix">
-				<interlinear exampleLoc="advp/negLocativeAffixExample"/>
+				<table border="1">
+					<headerRow>
+						<headerCol>Negative Locative-Marked Verbs</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="advp/negLocativeAffixExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
 			</example>
 			<example show="swAdvPNegLocativeTypeWordOrVerb">
 				<interlinear exampleLoc="advp/negLocativeExample"/>
@@ -375,11 +430,13 @@
 				</p>
 				<example show="swQPNPDegreeNotPosOnly">
 					<table border="1">
-						<caption>
-							<content>Negative Special Degree elements</content>
-						</caption>
+						<headerRow>
+							<headerCol>Negative Special Degree elements</headerCol>
+							<headerCol>Gloss</headerCol>
+						</headerRow>
 						<row>
 							<col exampleLoc="qp/not"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 					</table>
 				</example>
@@ -426,11 +483,13 @@
 				</p>
 				<example show="swQPDeterminerYesOrYesNo">
 					<table border="1" show="swQPDeterminerYesOrYesNo">
-						<caption>
-							<content>Negative Quantifier Determiners</content>
-						</caption>
+						<headerRow>
+							<headerCol>Negative Quantifier Determiners</headerCol>
+							<headerCol>Gloss</headerCol>
+						</headerRow>
 						<row>
 							<col exampleLoc="qp/determinerNegExample"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 					</table>
 				</example>
@@ -468,20 +527,24 @@
 			</p>
 				<example show="swNegNotVerbOnly">
 					<table border="1">
-						<caption>
-							<content>Negative Indefinites</content>
-						</caption>
+						<headerRow>
+							<headerCol>Type</headerCol>
+							<headerCol>Negative Indefinites</headerCol>
+							<headerCol>Gloss</headerCol>
+						</headerRow>
 						<row show="swPronounNegIndefYes">
-							<col>
+							<col rowspan="1">
 								<content>Pronouns</content>
 							</col>
 							<col exampleLoc="pron/negIndefExample"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 						<row show="swNotPosOnly">
-							<col>
+							<col rowspan="">
 								<content>Nominal Phrases</content>
 							</col>
 							<col exampleLoc="pron/negIndefNPExample"/>
+							<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 						</row>
 					</table>
 				</example>
@@ -618,8 +681,6 @@
 <or/>
 		<whenValue element="qp" attr="npDegree" value="yes"/>
 		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<or/>
 		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
 		<or/>
 		<whenValue element="qp" attr="npDegree" value="no"/>
@@ -664,21 +725,13 @@
 		<and/>
 		<whenValue element="qp" attr="determiner" value="no"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+		<whenValue element="qp" attr="npDegree" value="yes" negateValue="no"/>
 <or/>
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
 		<whenValue element="qp" attr="determiner" value="yesSome"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg" negateValue="no"/>
 </showWhen>
 <showWhen id="swPolarityItemsYes">
 		<whenValue element="neg" attr="polarityItems" value="yes"/>
@@ -689,8 +742,6 @@
 		<whenValue element="neg" attr="polarityItems" value="yes"/>
 		<and/>
 		<whenValue element="neg" attr="type" value="changing"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
 	<and/>
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 <or/>
@@ -698,103 +749,81 @@
 		<and/>
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<whenValue element="qp" attr="determiner" value="yes"/>
+	<or/>
+	<whenValue element="neg" attr="polarityItems" value="yes"/>
 	<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
+	<whenValue element="neg" attr="type" value="changing"/>
+	<and/>
+	<whenValue element="qp" attr="determiner" value="yesNo"/>
 <or/>
 		<whenValue element="neg" attr="polarityItems" value="yes"/>
 		<and/>
 		<whenValue element="neg" attr="type" value="changing"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+		<whenValue element="qp" attr="npDegree" value="yes" negateValue="no"/>
 <or/>
 		<whenValue element="neg" attr="polarityItems" value="yes"/>
 		<and/>
 		<whenValue element="neg" attr="type" value="changing"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+		<whenValue element="qp" attr="npDegree" value="yesNeg" negateValue="no"/>
 </showWhen>
 <showWhen id="swPronounNegIndefYes">
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 </showWhen>
 <showWhen id="swPolarityItemsNoAndNegNotVerbOnly">
-		<whenValue element="neg" attr="polarityItems" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+	<whenValue element="neg" attr="polarityItems" value="no"/>
 	<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-<or/>
-		<whenValue element="neg" attr="polarityItems" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-<or/>
-		<whenValue element="neg" attr="polarityItems" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+	<whenValue element="pron" attr="negIndef" value="yes"/>
+	<or/>
+	<whenValue element="neg" attr="polarityItems" value="no"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+	<whenValue element="qp" attr="determiner" value="yes"/>
+	<or/>
+	<whenValue element="neg" attr="polarityItems" value="no"/>
 	<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
-<or/>
-		<whenValue element="neg" attr="polarityItems" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+	<whenValue element="qp" attr="determiner" value="yesNo"/>
+	<or/>
+	<whenValue element="neg" attr="polarityItems" value="no"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
-<or/>
-		<whenValue element="neg" attr="type" value="concord"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+	<whenValue element="qp" attr="npDegree" value="yes" negateValue="no"/>
+	<or/>
+	<whenValue element="neg" attr="polarityItems" value="no"/>
 	<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-<or/>
-		<whenValue element="neg" attr="type" value="concord"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-<or/>
-		<whenValue element="neg" attr="type" value="concord"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+	<whenValue element="qp" attr="npDegree" value="yesNeg" negateValue="no"/>
+	<or/>
+	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+	<whenValue element="pron" attr="negIndef" value="yes"/>
+	<or/>
+	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+	<whenValue element="qp" attr="determiner" value="yes"/>
+	<or/>
+	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
-<or/>
-		<whenValue element="neg" attr="type" value="concord"/>
-		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+	<whenValue element="qp" attr="determiner" value="yesNo"/>
+	<or/>
+	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+	<whenValue element="qp" attr="npDegree" value="yes" negateValue="no"/>
+	<or/>
+	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-	<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
+	<whenValue element="qp" attr="npDegree" value="yesNeg" negateValue="no"/>
 </showWhen>
-<showWhen id="swNegTypeConcord">
+	<showWhen id="swNegTypeConcord">
 		<whenValue element="neg" attr="type" value="concord"/>
 </showWhen>
 	<showWhen id="swIPNegAuxWord">

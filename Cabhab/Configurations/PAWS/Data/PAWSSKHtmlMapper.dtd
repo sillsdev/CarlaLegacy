@@ -3,11 +3,12 @@
 <!-- DTD for PAWS Starter Kit XML to HTML and code mappers -->
 <!ENTITY nbsp "&#160;">
 <!ENTITY % embedded "#PCDATA | a | br | category | catMap | contents | example | feature |
-                         featureChart | file | help | i | ol | p | section | span |
+						 featureChart | file | help | i | ol | p | section | span |
 			 template | templateName | tool | tree | u | ul">
 <!ELEMENT a (%embedded;)*>
 <!ATTLIST a
 	href CDATA #REQUIRED
+	target CDATA #IMPLIED
 >
 <!ELEMENT and EMPTY>
 <!ELEMENT br EMPTY>

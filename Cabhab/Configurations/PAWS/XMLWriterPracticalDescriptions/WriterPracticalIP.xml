@@ -33,7 +33,13 @@
 			<p>
 				<content>Simple intransitives do not have any complements after the verb, such as in </content>
 				<langData>The girl swims</langData>
-				<content>.  Motion verbs include a location in the form of either a PP or adverb.  English examples of motion verbs include </content>
+				<content>.  Motion verbs include a location in the form of either a </content>
+				<case element="pp" attr="pPos">
+					<caseText value="before">prepositional</caseText>
+					<caseText value="after">postpositional</caseText>
+					<caseText value="both">prepositional or postpositional</caseText>
+					<caseText value="unknown">prepositional or postpositional</caseText></case>
+				<content> phrase or adverb.  English examples of motion verbs include </content>
 				<langData>The girl ran around the track</langData>
 				<content>, </content>
 				<langData>My mother went to the store</langData>
@@ -72,7 +78,7 @@
 				<content>, </content>
 				<langData>She seems nice</langData>
 				<content>, </content>
-				<langData>The girl is in charge</langData>
+				<langData>My sister is in the hospital</langData>
 				<content> and </content>
 				<langData>He is the leader</langData>
 				<content>.</content>

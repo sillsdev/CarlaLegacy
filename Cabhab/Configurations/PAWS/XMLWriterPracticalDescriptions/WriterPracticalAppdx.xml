@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<appendix id="aAppdx">
+		<secTitle>Appendix for linguists</secTitle>
+		<p>
+			<content>This appendix presents a more technical explanation of the consonants and vowels in </content>
+			<langName/>
+			<content>.</content>
+		</p>
+		<section1 id="sConsonants">
+			<secTitle>Consonants</secTitle>
+			<p>
+				<langName/><content> has the consonants shown in </content><exampleRef num="xConsonants"/><content>.   The chart identifies the sounds in the phonetic alphabet (IPA), followed by the symbol used in the practical orthography in parentheses, if they are different.</content>
+
+			</p>
+			<example num="xConsonants">
+				<table>
+					<headerRow>
+						<headerCol> </headerCol>
+						<headerCol> </headerCol>
+						<headerCol>Inter-</headerCol>
+						<headerCol> </headerCol>
+						<headerCol>Alveo-</headerCol>
+						<headerCol>Retro-</headerCol>
+						<headerCol> </headerCol>
+						<headerCol> </headerCol>
+						<headerCol> </headerCol>
+					</headerRow>
+					<headerRow>
+						<headerCol> </headerCol>
+						<headerCol>Bilabial</headerCol>
+						<headerCol>dental</headerCol>
+						<headerCol>Alveolar</headerCol>
+						<headerCol>palatal</headerCol>
+						<headerCol>flex</headerCol>
+						<headerCol>Palatal</headerCol>
+						<headerCol>Velar</headerCol>
+						<headerCol>Glotal</headerCol>
+					</headerRow>
+					<row>
+						<headerCol>Stops</headerCol>
+						<col align="center">
+							<langData lang="lIPA">p</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">t</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʈ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">c</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">k</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʔ</langData>
+						</col>
+					</row>
+					<row>
+						<headerCol> </headerCol>
+						<col align="center">
+							<langData lang="lIPA">b</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">d</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɖ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɟ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɡ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>Fricatives</headerCol>
+						<col align="center">
+							<langData lang="lIPA">ɸ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">θ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">s</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʃ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʂ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ç</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">x</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">h</langData>
+						</col>
+					</row>
+					<row>
+						<headerCol> </headerCol>
+						<col align="center">
+							<langData lang="lIPA">β</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ð</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">z</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʒ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʐ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʝ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɣ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɦ</langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>Africates</headerCol>
+						<col align="center">
+							<langData lang="lIPA">p͡ɸ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">t͡ʃ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+					</row>
+					<row>
+						<headerCol> </headerCol>
+						<col align="center">
+							<langData lang="lIPA">b͡β</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">d͡ʒ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>Nasals</headerCol>
+						<col align="center">
+							<langData lang="lIPA">m</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">n</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɳ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɲ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ŋ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>Laterals</headerCol>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> l</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɭ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʎ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ʟ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>Flaps</headerCol>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɾ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɽ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>Aproxi-</headerCol>
+						<col align="center">
+							<langData lang="lIPA">w</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">j</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">w</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>mants</headerCol>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA"> </langData>
+						</col>
+					</row>
+				</table>
+			</example>
+		</section1>
+		<section1 id="sVowels">
+			<secTitle>Vowels</secTitle>
+			<p>
+				<langName/>
+				<content> has the vowels shown in </content>
+				<exampleRef num="xVowels"/>
+				<content>.  The chart identifies the sounds according to the phonetic alphabet (IPA),  followed by the symbol used in the practical orthography in parentheses, if they are different.</content>
+			</p>
+			<example num="xVowels">
+				<table>
+					<headerRow>
+						<headerCol/>
+						<headerCol>Front</headerCol>
+						<headerCol>Central</headerCol>
+						<headerCol>Back</headerCol>
+						<headerCol>Back</headerCol>
+					</headerRow>
+					<headerRow>
+						<headerCol/>
+						<headerCol>Unrounded</headerCol>
+						<headerCol>Unrounded</headerCol>
+						<headerCol>Unrounded</headerCol>
+						<headerCol>Rounded</headerCol>
+					</headerRow>
+					<row>
+						<headerCol>High</headerCol>
+						<col align="center">
+							<langData lang="lIPA">i</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɨ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɯ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">u</langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>Mid</headerCol>
+						<col align="center">
+							<langData lang="lIPA">e</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ə</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɤ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">o</langData>
+						</col>
+					</row>
+					<row>
+						<headerCol>Low</headerCol>
+						<col align="center">
+							<langData lang="lIPA">æ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">a</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɑ</langData>
+						</col>
+						<col align="center">
+							<langData lang="lIPA">ɒ</langData>
+						</col>
+					</row>
+				</table>
+			</example>
+		</section1>
+	</appendix>
+</portion>

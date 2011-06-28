@@ -153,173 +153,695 @@
 		</section2>
 		<section2 id="sPnPersonal">
 			<secTitle>Personal Pronouns</secTitle>
+			<p><content>All languages have independent personal pronouns which are separate words that may appear in all the positions that nouns or nominal phrases may.  Some languages also have dependent forms of the personal pronouns which attach to another word in the sentence.</content></p>
+			<p><content></content><langName/><content/><case element="pron" attr="dependentPron">
+				<caseText value="no"> does not have a separate set of dependent personal pronouns.</caseText>
+				<caseText value="yes"> has dependent personal pronouns as well as the independent personal pronouns.  Both sets of personal pronouns will be presented here, with the independent forms covered first.</caseText>
+			</case><content/></p>
 			<p>
 				<content>Personal pronouns normally have either more than or the same number of case features as nouns have.</content>
 			</p>
 			<p show="swNPCaseNone">
 				<content/>
 				<langName/>
-				<content> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here, beginning with first person, then second person, then the third person pronouns.</content>
+				<content> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here.</content>
 			</p>
+
 			<example show="swNPCaseNone">
 				<table border="1">
-					<caption>
-						<content>Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalNoCaseExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstNoCaseExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
-				</table>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondNoCaseExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdNoCaseExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
 				<content/>
 				<langName/>
-				<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The personal pronouns which can appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </content>
+				<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The independent personal pronouns which can appear in subject position are: </content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
-					<caption>
-						<content>Nominative Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Nominative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Subject Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalNomSubjectExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstNomSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
-				</table>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondNomSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdNomSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
-				<content>The personal pronouns which can appear in object position are:</content>
+				<content>The independent personal pronouns which can appear in object position are:</content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
-					<caption>
-						<content>Accusative Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Accusative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Object Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalNomObjectExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstNomObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
-				</table>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondNomObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdNomObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
-				<content>The personal pronouns which can appear in possessor position are:</content>
+				<content>The independent personal pronouns which can appear in possessor position are:</content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
-					<caption>
-						<content>Genitive Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Genitive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Possessor Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalNomPossessorExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstNomPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
-				</table>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondNomPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdNomPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>				</table>
 			</example>
 			<p show="swNPCaseErg">
 				<content/>
 				<langName/>
-				<content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The personal pronouns which can appear in subject position of transitive verbs are shown here, beginning with first person, then second person, then the third person pronouns. </content>
+				<content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The independent personal pronouns which can appear in subject position of transitive verbs are: </content>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
-					<caption>
-						<content>Ergative Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Ergative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Ergative Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalErgSubjectTransExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstErgSubjectTransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondErgSubjectTransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdErgSubjectTransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
 			<p show="swNPCaseErg">
-				<content>The personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</content>
+				<content>The independent personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</content>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
-					<caption>
-						<content>Absolutive Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Absolutive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Absolutive Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalErgSubjectIntransExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstErgSubjectIntransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondErgSubjectIntransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdErgSubjectIntransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
 			<p show="swNPCaseErg">
-				<content>The personal pronouns which can appear in possessor position are:</content>
+				<content>The independent personal pronouns which can appear in possessor position are:</content>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
-					<caption>
-						<content>Personal Pronouns for Possessors</content>
-					</caption>
+					<caption><content>Independent Genitive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Possessor Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalErgPossessorExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstErgPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondErgPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdErgPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
 			<p show="swNPCaseSplit">
 				<content/>
 				<langName/>
-				<content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The personal pronouns which normally appear in subject position are shown here, beginning with first person, then second person, then the third person pronouns. </content>
+				<content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The independent personal pronouns which normally appear in subject position are: </content>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
-					<caption>
-						<content>Nominative Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Nominative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Subject Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalSplitSubjectExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstSplitSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondSplitSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdSplitSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>The personal pronouns which normally appear in object position are:</content>
+				<content>The independent personal pronouns which normally appear in object position are:</content>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
-					<caption>
-						<content>Accusative Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Accusative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Object Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalSplitObjectExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstSplitObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondSplitObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdSplitObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>The personal pronouns which normally appear in possessor position are:</content>
+				<content>The independent personal pronouns which normally appear in possessor position are:</content>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
-					<caption>
-						<content>Genitive Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Genitive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Possessor Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalSplitPossessorExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstSplitPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondSplitPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdSplitPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>The personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</content>
+				<content>The independent personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</content>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
-					<caption>
-						<content>Ergative Personal Pronouns</content>
-					</caption>
-					<row>
-						<col exampleLoc="pron/personalSplitErgExample"/>
-					</row>
-				</table>
+				<caption><content>Independent Ergative Personal Pronouns</content></caption>
+				<headerRow>
+					<headerCol>Person</headerCol>
+					<headerCol>Ergative Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+					<col rowspan="1"><content>First</content></col>
+					<col exampleLoc="pron/personalFirstSplitErgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+					<col rowspan="1"><content>Second</content></col>
+					<col exampleLoc="pron/personalSecondSplitErgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+					<col rowspan="1"><content>Third</content></col>
+					<col exampleLoc="pron/personalThirdSplitErgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>The personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</content>
+				<content>The independent personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</content>
 			</p>
-			<example show="swNPCaseErg">
+			<example show="swNPCaseSplit">
 				<table border="1">
-					<caption>
-						<content>Absolutive Personal Pronouns</content>
-					</caption>
+					<caption><content>Independent Absolutive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Absolutive Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
-						<col exampleLoc="pron/personalSplitAbsExample"/>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalFirstSplitAbsExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalSecondSplitAbsExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalThirdSplitAbsExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
+
+			<p show="swNPCaseNoneandDependentYes">
+				<content>Turning now to the dependent pronouns, as seen above </content>
+				<langName/>
+				<content> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here.</content>
+			</p>
+			<example show="swNPCaseNoneandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstNoCaseExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondNoCaseExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdNoCaseExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseNomandDependentYes">
+				<content>Turning now to the dependent pronouns, as seen above </content>
+				<langName/>
+				<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The dependent personal pronouns which can appear in subject position are: </content>
+			</p>
+			<example show="swNPCaseNomandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Nominative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Subject Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstNomSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondNomSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdNomSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>				</table>
+			</example>
+			<p show="swNPCaseNomandDependentYes">
+				<content>The dependent personal pronouns which can appear in object position are:</content>
+			</p>
+			<example show="swNPCaseNomandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Accusative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Object Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstNomObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondNomObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdNomObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>				</table>
+			</example>
+			<p show="swNPCaseNomandDependentYes">
+				<content>The dependent personal pronouns which can appear in possessor position are:</content>
+			</p>
+			<example show="swNPCaseNomandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Genitive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Possessor Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstNomPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondNomPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdNomPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>				</table>
+			</example>
+			<p show="swNPCaseErgandDependentYes">
+				<content>Turning now to the dependent pronouns, as seen above </content>
+				<langName/>
+				<content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The dependent personal pronouns which can appear in subject position of transitive verbs are: </content>
+			</p>
+			<example show="swNPCaseErgandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Ergative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Ergative Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstErgSubjectTransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondErgSubjectTransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdErgSubjectTransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseErgandDependentYes">
+				<content>The dependent personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</content>
+			</p>
+			<example show="swNPCaseErgandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Absolutive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Absolutive Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstErgSubjectIntransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondErgSubjectIntransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdErgSubjectIntransExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseErgandDependentYes">
+				<content>The dependent personal pronouns which can appear in possessor position are:</content>
+			</p>
+			<example show="swNPCaseErgandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Genitive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Possessor Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstErgPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondErgPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdErgPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplitandDependentYes">
+				<content>Turning now to the dependent pronouns, as seen above </content>
+				<langName/>
+				<content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The dependent personal pronouns which normally appear in subject position are: </content>
+			</p>
+			<example show="swNPCaseSplitandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Nominative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Subject Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstSplitSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondSplitSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdSplitSubjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplitandDependentYes">
+				<content>The dependent personal pronouns which normally appear in object position are:</content>
+			</p>
+			<example show="swNPCaseSplitandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Accusative Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Object Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstSplitObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondSplitObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdSplitObjectExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplitandDependentYes">
+				<content>The dependent personal pronouns which normally appear in possessor position are:</content>
+			</p>
+			<example show="swNPCaseSplitandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Genitive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Possessor Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstSplitPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondSplitPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdSplitPossessorExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swNPCaseSplitandDependentYes">
+				<content>The dependent personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</content>
+			</p>
+			<example show="swNPCaseSplitandDependentYes">
+				<table border="1">
+				<caption><content>Dependent Ergative Personal Pronouns</content></caption>
+				<headerRow>
+					<headerCol>Person</headerCol>
+					<headerCol>Ergative Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+					<col rowspan="1"><content>First</content></col>
+					<col exampleLoc="pron/personalDependentFirstSplitErgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+					<col rowspan="1"><content>Second</content></col>
+					<col exampleLoc="pron/personalDependentSecondSplitErgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+					<col rowspan="1"><content>Third</content></col>
+					<col exampleLoc="pron/personalDependentThirdSplitErgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			</table>
+			</example>
+			<p show="swNPCaseSplitandDependentYes">
+				<content>The dependent personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</content>
+			</p>
+			<example show="swNPCaseSplitandDependentYes">
+				<table border="1">
+					<caption><content>Dependent Absolutive Personal Pronouns</content></caption>
+					<headerRow>
+						<headerCol>Person</headerCol>
+						<headerCol>Absolutive Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col rowspan="1"><content>First</content></col>
+						<col exampleLoc="pron/personalDependentFirstSplitAbsExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Second</content></col>
+						<col exampleLoc="pron/personalDependentSecondSplitAbsExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+					<row>
+						<col rowspan="1"><content>Third</content></col>
+						<col exampleLoc="pron/personalDependentThirdSplitAbsExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p show="swDependentPronYes"><content>For further details about how the dependent pronouns may be used, see sections </content><sectionRef sec="sIPAgr"/><content> and </content><sectionRef sec="sIPProDrop"/><content> where verbal agreement and missing subjects (pro-drop) are discussed.</content></p>
+
 		</section2>
 		<section2 id="sPronPoss">
 			<secTitle>Possessive Pronouns</secTitle>
@@ -364,11 +886,13 @@
 			</p>
 			<example show="swPronPossYes">
 				<table border="1">
-					<caption>
-						<content>Possessive Pronouns</content>
-					</caption>
+					<headerRow>
+						<headerCol>Possessive Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
 						<col exampleLoc="pron/possExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
@@ -413,11 +937,13 @@
 			</p>
 			<example show="swPronReflNotNo">
 				<table border="1">
-					<caption>
-						<content>Reflexives</content>
-					</caption>
+					<headerRow>
+						<headerCol>Reflexives</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
 						<col exampleLoc="pron/reflExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
@@ -456,16 +982,32 @@
 						<caseText value="noQP">are special quantified noun phrases.</caseText>
 					</case>
 					<content/>
-					<text show="swPronRecipYesOrVerbal">
-						<content> Some examples of reciprocals are:</content>
-					</text>
-					<content/>
-				</text>
-				<content/>
-			</p>
-			<example show="swPronRecipYesOrVerbal">
-				<interlinear exampleLoc="pron/recipExample"/>
-			</example>
+				</text></p>
+
+				<example show="swPronRecipYes">
+						<table border="1">
+							<headerRow>
+								<headerCol>Reciprocal Pronouns</headerCol>
+								<headerCol>Gloss</headerCol>
+							</headerRow>
+							<row>
+								<col exampleLoc="pron/recipExample"/>
+								<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+							</row>
+						</table>
+					</example>
+					<example show="swPronRecipVerbal">
+						<table border="1">
+							<headerRow>
+								<headerCol>Reciprocal Affix(es)</headerCol>
+								<headerCol>Gloss</headerCol>
+							</headerRow>
+							<row>
+								<col exampleLoc="pron/recipExample"/>
+								<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+							</row>
+						</table>
+					</example>
 			<p show="swPronRecipYesOrVerbal">
 				<content>Some examples of reciprocals in sentences are:</content>
 			</p>
@@ -508,11 +1050,13 @@
 			</p>
 			<example show="swPronIndefYes">
 				<table border="1">
-					<caption>
-						<content>Positive Indefinite Pronouns</content>
-					</caption>
+					<headerRow>
+						<headerCol>Positive Indefinite Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
 						<col exampleLoc="pron/indefExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
@@ -538,11 +1082,13 @@
 			</p>
 			<example show="swPronNegIndefYes">
 				<table border="1">
-					<caption>
-						<content>Negative Indefinite Pronouns</content>
-					</caption>
+					<headerRow>
+						<headerCol>Negative Indefinite Pronouns</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
 					<row>
 						<col exampleLoc="pron/negIndefExample"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
 			</example>
@@ -725,6 +1271,29 @@
 	<showWhen id="swNPCaseSplit">
 		<whenValue element="np" attr="case" value="split"/>
 	</showWhen>
+	<showWhen id="swNPCaseNoneandDependentYes">
+		<whenValue element="np" attr="case" value="none"/>
+		<and/>
+		<whenValue element="pron"  attr="dependentPron" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPCaseNomandDependentYes">
+		<whenValue element="np" attr="case" value="nominative"/>
+		<and/>
+		<whenValue element="pron"  attr="dependentPron" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPCaseErgandDependentYes">
+		<whenValue element="np" attr="case" value="ergative"/>
+		<and/>
+		<whenValue element="pron"  attr="dependentPron" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPCaseSplitandDependentYes">
+		<whenValue element="np" attr="case" value="split"/>
+		<and/>
+		<whenValue element="pron"  attr="dependentPron" value="yes"/>
+	</showWhen>
+	<showWhen id="swDependentPronYes">
+		<whenValue element="pron"  attr="dependentPron" value="yes"/>
+	</showWhen>
 	<showWhen id="swPronPossYes">
 		<whenValue element="pron" attr="poss" value="yes"/>
 	</showWhen>
@@ -742,6 +1311,9 @@
 	</showWhen>
 	<showWhen id="swPronRecipYes">
 		<whenValue element="pron" attr="recip" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronRecipVerbal">
+		<whenValue element="pron" attr="recip" value="verbal"/>
 	</showWhen>
 	<showWhen id="swPronIndefYes">
 		<whenValue element="pron" attr="indef" value="yes"/>

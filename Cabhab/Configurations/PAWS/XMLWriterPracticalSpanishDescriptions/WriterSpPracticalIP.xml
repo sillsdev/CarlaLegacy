@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<section1 id="sIP">
+		<secTitle>Las oraciones básicas</secTitle>
+		<p>
+			<content>Esta sección cubre oraciones intransitivas, copulativas, transitivas, ditransitivas y pasivas en su orden de las palabras básico (es decir no cambiado por el foco, el asunto, el interrogativo, o las construcciones de la negación).
+				Según lo observado en la sección </content>
+			<sectionRef sec="sIntro"/>
+			<content>,  a tipología de </content>
+			<langName/>
+			<content> es </content>
+			<case element="typology" attr="wordOrder">
+				<caseText value="SVO">SVO, así que el orden de las palabras básico es el tema, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualesquiera complementos que la siguen.</caseText>
+				<caseText value="SOV">SOV, así que el orden de las palabras básico es el tema, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares.</caseText>
+				<caseText value="VSO">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, entonces el tema, entonces cualquier complemento.</caseText>
+				<caseText value="VOS">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, entonces cualesquiera elementos auxiliares, entonces el tema.</caseText>
+				<caseText value="OVS">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares, entonces el tema.</caseText>
+				<caseText value="OSV">OSV, así que el orden de las palabras básico es cualquier complemento verbal primero, entonces el tema, entonces el verbo en la posición final.</caseText>
+			</case>
+			<content/>
+			<text show="swVSOorOSV">
+				<content>  Los cambios del orden de las palabras con cualquier auxiliar presente fueron discutidos en la sección </content>
+				<sectionRef sec="sIPAux"/>
+				<content>.</content>
+			</text>
+			<content/>
+		</p>
+		<p>
+			<content>Cada uno de los tipos de la oración se cubre en turno aquí. </content>
+		</p>
+		<section2 id="sIPMotion">
+			<secTitle>Los intransitivos y las construcciones del movimiento</secTitle>
+			<p>
+				<content>Los intransitivos simples no tienen ningunos complementos después del verbo, como en </content>
+				<langData>La muchacha flota</langData>
+				<content>.  Los verbos del movimiento incluyen una localidad en la forma de una frase </content>
+				<case element="pp" attr="pPos">
+					<caseText value="before">preposicional</caseText>
+					<caseText value="after">posposicional</caseText>
+					<caseText value="both">preposicional o posposicional</caseText>
+					<caseText value="unknown">preposicional o posposicional</caseText></case>
+				<content> o adverbio. Los ejemplos españoles de los verbos del movimiento incluyen </content>
+				<langData>La muchacha corrió alrededor de la pista</langData>
+				<content>, </content>
+				<langData>Mi madre fue a la tienda</langData>
+				<content> y </content>
+				<langData>Mi profesor vino aquí</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<content>Los ejemplos de oraciones intransitivas simples en </content>
+				<langName/>
+				<content> incluyen:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="ip/intransExample"/>
+			</example>
+			<p>
+				<content>Los ejemplos con verbos del movimiento en </content>
+				<langName/>
+				<content> incluyen: </content>
+			</p>
+			<example>
+				<interlinear exampleLoc="ip/motionExample"/>
+			</example>
+		</section2>
+		<section2 id="sIPCop">
+			<secTitle>Las construcciones copulativas</secTitle>
+			<p>
+				<content>Las oraciones copulativas pueden tener un adjetivo, frase </content>
+				<case element="pp" attr="pPos">
+					<caseText value="before">preposicional</caseText>
+					<caseText value="after">posposicional</caseText>
+					<caseText value="both">preposicional o posposicional</caseText>
+					<caseText value="unknown">preposicional o posposicional</caseText></case>
+				<content>, o frase nominal después del verbo copulativo.  Algunas idiomas no requieren un verbo o un auxiliar copulativo estar presente. Los ejemplos españoles incluyen </content>
+				<langData>La muchacha es bonita</langData>
+				<content>, </content>
+				<langData>Ella parece agradable</langData>
+				<content>, </content>
+				<langData>Mi hermana está en el hospital</langData>
+				<content> y </content>
+				<langData>Él es el líder</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<content>En </content>
+				<langName/>
+				<content> oraciones copulativas, </content>
+				<case element="ip" attr="copular">
+					<caseText value="yes">se requiere un verbo copulativo.</caseText>
+					<caseText value="yesOptional">un verbo copulativo es opcional, y no se requiere a ningún auxiliar tampoco.</caseText>
+					<caseText value="yesAux">un verbo copulativo es opcional, pero requiere un auxiliar si el verbo copulativo no está presente.</caseText>
+					<caseText value="noAux">no hay verbo copulativo, pero requiere un auxiliar.</caseText>
+					<caseText value="noNeither">ni utilizan un verbo copulativo ni un auxiliar.</caseText>
+				</case>
+				<content/>
+				<text show="swIPCopVerbNoNeitherOrOptional">
+					<content></content>
+					<case element="ip" attr="copularAffix">
+						<caseText value="no">No hay ningún afijo copulativo en el nominal del predicado o adjetivo predicativo</caseText>
+						<caseText value="yesPrefix">Hay un prefijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</caseText>
+						<caseText value="yesSuffix">Hay un sufijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</caseText>
+						<caseText value="yesEither">Hay un prefijo o sufijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</caseText>
+					</case>
+					<content/>
+				</text>
+				<content/>
+				<text show="swIPCopVerbNoNeither">
+					<content>.</content>
+				</text>
+				<content/>
+				<text show="swIPCopVerbYesOptional">
+					<content> que ocurre cuando no hay presente un verbo copulativo.</content>
+				</text>
+			</p>
+			<p>
+				<content>Los ejemplos de oraciones copulativas en </content>
+				<langName/>
+				<content> incluyen:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="ip/copularExample"/>
+			</example>
+		</section2>
+		<section2 id="sIPTrans">
+			<secTitle>Los transitivos and ditransitivos</secTitle>
+			<p>
+				<content>Los ejemplos de las oraciones transitivas españolas incluyen </content>
+				<langData>El bateador golpearán el béisbol</langData>
+				<content>, </content>
+				<langData>Mi bebé quiere ese juguete</langData>
+				<content> y </content>
+				<langData>El perro pudo haber enterrado su hueso</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<content>Los ejemplos de oraciones transitivas en </content>
+				<langName/>
+				<content> incluyen:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="ip/example"/>
+			</example>
+			<p>
+				<content>Los ditransitivos pueden tener el segundo objeto expresado como frase </content>
+				<case element="pp" attr="pPos">
+					<caseText value="before">preposicional</caseText>
+					<caseText value="after">posposicional</caseText>
+					<caseText value="both">preposicional o posposicional</caseText>
+					<caseText value="unknown">preposicional o posposicional</caseText></case>
+				<content> o como frase nominal. Algunas idiomas, como español, permiten ambos tipos via el movimiento del dativo, como en </content>
+				<langData>La muchacha dio el regalo a su madre</langData>
+				<content> y </content>
+				<langData>La muchacha dio a su madre el regalo</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<content>En </content>
+				<langName/>
+				<content>, el segundo objeto en un ditransitivo </content>
+				<case element="ip" attr="diCat">
+					<caseText value="pp">es siempre una frase
+						<case element="pp" attr="pPos">
+							<caseText value="before">preposicional.</caseText>
+							<caseText value="after">posposicional.</caseText>
+							<caseText value="both">preposicional o posposicional.</caseText>
+							<caseText value="unknown">preposicional o posposicional.</caseText></case>
+						</caseText>
+					<caseText value="dp">es simepre una frase nominal.  El </caseText>
+					<caseText value="both">puede ser una frase
+						<case element="pp" attr="pPos">
+							<caseText value="before">preposicional</caseText>
+							<caseText value="after">posposicional</caseText>
+							<caseText value="both">preposicional o posposicional</caseText>
+							<caseText value="unknown">preposicional o posposicional</caseText></case>
+						o una frase nominal.  Cuando ambos objetos son frases nominales, el </caseText>
+				</case>
+				<text show="swIPDiCatNotPP">
+					<case element="ip" attr="diOrder">
+						<caseText value="direct">objeto directo</caseText>
+						<caseText value="indirect">objeto indirecto</caseText>
+					</case>
+					<content> aparece lo más cerca al verbo.</content>
+				</text>
+			</p>
+			<p>	<content>  Los ejemplos de oraciones ditransitivas en </content>
+				<langName/>
+				<content> incluyen:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="ip/diExample"/>
+			</example>
+		</section2>
+		<section2 id="sIPPassive">
+			<secTitle>Los pasivos</secTitle>
+			<p>
+				<content>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición sujeta. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </content>
+				<case element="pp" attr="pPos">
+					<caseText value="before">preposicional</caseText>
+					<caseText value="after">posposicional</caseText>
+					<caseText value="both">preposicional o posposicional</caseText>
+					<caseText value="unknown">preposicional o posposicional</caseText></case>
+				<content> (como en español con la preposición particular </content>
+				<langData>por</langData>
+				<content>) o de una frase nominal, dependiendo del idioma. Además, un auxiliar particular puede ser requerido en pasivos (una forma de </content>
+				<langData>estar</langData>
+				<content> en español).  Los ejemplos españoles con y sin una frase del agente incluyen: </content>
+				<langData>El vidrio estaba quebrado</langData>
+				<content>, </content>
+				<langData>El vidrio estaba quebrado por el niño</langData>
+				<content>, </content>
+				<langData>El béisbol se pudo haber golpeado</langData>
+				<content> y </content>
+				<langData>El béisbol se pudo haber golpeado por el muchacho</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<content/>
+				<langName/>
+				<content/>
+				<case element="ip" attr="passive">
+					<caseText value="no"> no tiene ningunos pasivos.</caseText>
+					<caseText value="yes"> tiene pasivos</caseText>
+				</case>
+				<content/>
+				<text show="swIPPassiveYes">
+					<content> en cuál el agente </content>
+					<case element="ip" attr="passiveAgent">
+						<caseText value="no">no puede ser expresado.</caseText>
+						<caseText value="yes">puede ser expresado</caseText>
+					</case>
+					<content/>
+					<text show="swIPPassiveAgentYes">
+						<content> como una frase </content>
+						<case element="ip" attr="passiveAgentCat">
+							<caseText value="pp">
+								<case element="pp" attr="pPos">
+									<caseText value="before">preposicional</caseText>
+									<caseText value="after">posposicional</caseText>
+									<caseText value="both">preposicional o posposicional</caseText>
+									<caseText value="unknown">preposicional o posposicional</caseText></case></caseText>
+							<caseText value="dp">nominal.</caseText>
+						</case>
+						<content/>
+					</text>
+					<content>  Un auxiliar particular </content>
+					<case element="ip" attr="passiveAux">
+						<caseText value="no">no es</caseText>
+						<caseText value="yes">es</caseText>
+					</case>
+					<content> requerido en oraciones pasivas.</content>
+				</text>
+				<content/>
+			</p>
+			<p show="swIPPassiveYes">
+				<content>Los ejemplos de oraciones pasivas en </content>
+				<langName/>
+				<content> incluyen:</content>
+			</p>
+			<example show="swIPPassiveYes">
+				<interlinear exampleLoc="ip/passiveExample"/>
+			</example>
+		</section2>
+	</section1>
+	<showWhen id="swVSOorOSV">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPresent">
+		<whenValue element="ip/ipInflFeatPresent" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPast">
+		<whenValue element="ip/ipInflFeatPast" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatFuture">
+		<whenValue element="ip/ipInflFeatFuture" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatCompletive">
+		<whenValue element="ip/ipInflFeatCompletive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatContinuative">
+		<whenValue element="ip/ipInflFeatContinuative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatHabitual">
+		<whenValue element="ip/ipInflFeattHabitual" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatImperfective">
+		<whenValue element="ip/ipInflFeatImperfective" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatIncompletive">
+		<whenValue element="ip/ipInflFeatIncompletive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPerfective">
+		<whenValue element="ip/ipInflFeatPerfective" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPotential">
+		<whenValue element="ip/ipInflFeatPotential" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatProgressive">
+		<whenValue element="ip/ipInflFeatProgressive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatStative">
+		<whenValue element="ip/ipInflFeatStative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatDeclarative">
+		<whenValue element="ip/ipInflFeatDeclarative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatImperative">
+		<whenValue element="ip/ipInflFeatImperative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatInterrogative">
+		<whenValue element="ip/ipInflFeatInterrogative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatIrrealis">
+		<whenValue element="ip/ipInflFeatIrrealis" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatRealis">
+		<whenValue element="ip/ipInflFeatRealis" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatPassive">
+		<whenValue element="ip/ipInflFeatPassive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatParticiple">
+		<whenValue element="ip/ipInflFeatParticiple" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatFinite">
+		<whenValue element="ip/ipInflFeatFinite" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPInflFeatMinusFinite">
+		<whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstSubject">
+		<whenValue element="ip/ipAgrFeatFirstSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstObject">
+		<whenValue element="ip/ipAgrFeatFirstObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstErgative">
+		<whenValue element="ip/ipAgrFeatFirstErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstAbsolutive">
+		<whenValue element="ip/ipAgrFeatFirstAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstExclusiveSubject">
+		<whenValue element="ip/ipAgrFeatFirstExclusiveSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstExclusiveObject">
+		<whenValue element="ip/ipAgrFeatFirstExclusiveObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstExclusiveErgative">
+		<whenValue element="ip/ipAgrFeatFirstExclusiveErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstExclusiveAbsolutive">
+		<whenValue element="ip/ipAgrFeatFirstExclusiveAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstInclusiveSubject">
+		<whenValue element="ip/ipAgrFeatFirstInclusiveSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstInclusiveObject">
+		<whenValue element="ip/ipAgrFeatFirstInclusiveObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstInclusiveErgative">
+		<whenValue element="ip/ipAgrFeatFirstInclusiveErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFirstInclusiveAbsolutive">
+		<whenValue element="ip/ipAgrFeatFirstInclusiveAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSecondSubject">
+		<whenValue element="ip/ipAgrFeatSecondSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSecondObject">
+		<whenValue element="ip/ipAgrFeatSecondObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSecondErgative">
+		<whenValue element="ip/ipAgrFeatSecondErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSecondAbsolutive">
+		<whenValue element="ip/ipAgrFeatSecondAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatThirdSubject">
+		<whenValue element="ip/ipAgrFeatThirdSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatThirdObject">
+		<whenValue element="ip/ipAgrFeatThirdObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatThirdErgative">
+		<whenValue element="ip/ipAgrFeatThirdErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatThirdAbsolutive">
+		<whenValue element="ip/ipAgrFeatThirdAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSingularSubject">
+		<whenValue element="ip/ipAgrFeatSingularSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSingularObject">
+		<whenValue element="ip/ipAgrFeatSingularObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSingularErgative">
+		<whenValue element="ip/ipAgrFeatSingularErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatSingularAbsolutive">
+		<whenValue element="ip/ipAgrFeatSingularAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatDualSubject">
+		<whenValue element="ip/ipAgrFeatDualSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatDualObject">
+		<whenValue element="ip/ipAgrFeatDualObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatDualErgative">
+		<whenValue element="ip/ipAgrFeatDualErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatDualAbsolutive">
+		<whenValue element="ip/ipAgrFeatDualAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatPluralSubject">
+		<whenValue element="ip/ipAgrFeatPluralSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatPluralObject">
+		<whenValue element="ip/ipAgrFeatPluralObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatPluralErgative">
+		<whenValue element="ip/ipAgrFeatPluralErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatPluralAbsolutive">
+		<whenValue element="ip/ipAgrFeatPluralAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMasculineSubject">
+		<whenValue element="ip/ipAgrFeatMasculineSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMasculineObject">
+		<whenValue element="ip/ipAgrFeatMasculineObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMasculineErgative">
+		<whenValue element="ip/ipAgrFeatMasculineErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMasculineAbsolutive">
+		<whenValue element="ip/ipAgrFeatMasculineAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFeminineSubject">
+		<whenValue element="ip/ipAgrFeatFeminineSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFeminineObject">
+		<whenValue element="ip/ipAgrFeatFeminineObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFeminineErgative">
+		<whenValue element="ip/ipAgrFeatFeminineErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatFeminineAbsolutive">
+		<whenValue element="ip/ipAgrFeatFeminineAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatNeuterSubject">
+		<whenValue element="ip/ipAgrFeatNeuterSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatNeuterObject">
+		<whenValue element="ip/ipAgrFeatNeuterObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatNeuterErgative">
+		<whenValue element="ip/ipAgrFeatNeuterErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatNeuterAbsolutive">
+		<whenValue element="ip/ipAgrFeatNeuterAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatAnimateSubject">
+		<whenValue element="ip/ipAgrFeatAnimateSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatAnimateObject">
+		<whenValue element="ip/ipAgrFeatAnimateObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatAnimateErgative">
+		<whenValue element="ip/ipAgrFeatAnimateErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatAnimateAbsolutive">
+		<whenValue element="ip/ipAgrFeatAnimateAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusAnimateSubject">
+		<whenValue element="ip/ipAgrFeatMinusAnimateSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusAnimateObject">
+		<whenValue element="ip/ipAgrFeatMinusAnimateObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusAnimateErgative">
+		<whenValue element="ip/ipAgrFeatMinusAnimateErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusAnimateAbsolutive">
+		<whenValue element="ip/ipAgrFeatMinusAnimateAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanSubject">
+		<whenValue element="ip/ipAgrFeatHumanSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanObject">
+		<whenValue element="ip/ipAgrFeatHumanObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanErgative">
+		<whenValue element="ip/ipAgrFeatHumanErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatHumanAbsolutive">
+		<whenValue element="ip/ipAgrFeatHumanAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanSubject">
+		<whenValue element="ip/ipAgrFeatMinusHumanSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanObject">
+		<whenValue element="ip/ipAgrFeatMinusHumanObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanErgative">
+		<whenValue element="ip/ipAgrFeatMinusHumanErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatMinusHumanAbsolutive">
+		<whenValue element="ip/ipAgrFeatMinusHumanAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatClassClassNumberSubject">
+		<whenValue element="ip/ipAgrFeatClassClassNumberSubject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatClassClassNumberObject">
+		<whenValue element="ip/ipAgrFeatClassClassNumberObject" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatClassClassNumberErgative">
+		<whenValue element="ip/ipAgrFeatClassClassNumberErgative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPAgrFeatClassClassNumberAbsolutive">
+		<whenValue element="ip/ipAgrFeatClassClassNumberAbsolutive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPProDropYes">
+		<whenValue element="ip" attr="proDrop" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPProDropNoImp">
+		<whenValue element="ip" attr="proDrop" value="noImp"/>
+	</showWhen>
+	<showWhen id="swIPProDropNotNo">
+		<whenValue element="ip" attr="proDrop" value="no" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swIPProDropYesClitic">
+		<whenValue element="ip" attr="proDrop" value="yesClitic"/>
+	</showWhen>
+	<showWhen id="swIPAuxYes">
+		<whenValue element="ip" attr="aux" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPNegAuxWord">
+		<whenValue element="ip" attr="negAux" value="yesOnly"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAffix"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
+	<showWhen id="swIPNegAuxAffix">
+		<whenValue element="ip" attr="negAux" value="noAffixOnly"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAffix"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
+	<showWhen id="swIPNegAuxNotNoVerb">
+		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swIPNegVerb">
+		<whenValue element="ip" attr="negAux" value="noVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
+		<or/>
+		<whenValue element="ip" attr="negAux" value="yesAll"/>
+	</showWhen>
+	<showWhen id="swIPAuxOrderVSO">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<showWhen id="swIPAuxOrderOSV">
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+	</showWhen>
+	<showWhen id="swVInitial">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="VOS"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="SVO"/>
+	</showWhen>
+	<showWhen id="swVFinal">
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="OVS"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="SOV"/>
+	</showWhen>
+	<showWhen id="swIPCopVerbNoNeitherOrOptional">
+		<whenValue element="ip" attr="copular" value="noNeither"/>
+		<or/>
+		<whenValue element="ip" attr="copular" value="yesOptional"/>
+	</showWhen>
+	<showWhen id="swIPCopVerbNoNeither">
+		<whenValue element="ip" attr="copular" value="noNeither"/>
+	</showWhen>
+	<showWhen id="swIPCopVerbYesOptional">
+		<whenValue element="ip" attr="copular" value="yesOptional"/>
+	</showWhen>
+	<showWhen id="swIPDiCatNotPP">
+		<whenValue element="ip" attr="diCat" value="pp" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swIPPassiveYes">
+		<whenValue element="ip" attr="passive" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPPassiveAgentYes">
+		<whenValue element="ip" attr="passiveAgent" value="yes"/>
+	</showWhen>
+</portion>

@@ -617,7 +617,7 @@ Some languages are even more complex in that they normally have a nominative-acc
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -634,7 +634,7 @@ Some languages are even more complex in that they normally have a nominative-acc
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -676,160 +676,160 @@ Some languages are even more complex in that they normally have a nominative-acc
 						</tr>
 						<xsl:if test="normalize-space(//np/npPossAgrPossFirst/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>first</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossExclusive/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>first exclusive</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossInclusive/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>first inclusive</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossSecond/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>second</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossThird/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>person</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>third</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossSingular/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>number</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>singular</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossDual/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>number</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>dual</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossPlural/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>number</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>plural</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossMasculine/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>gender</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>masculine</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossFeminine/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>gender</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>feminine</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossNeuter/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>gender</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>neuter</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossAnimate/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>animacy</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>animate</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossInanimate/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>animacy</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>inanimate</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossHuman/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>animacy</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>human</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossNonHuman/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>animacy</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>nonhuman</xsl:text>
 							</td>
 						</tr>
 </xsl:if>
 						<xsl:if test="normalize-space(//np/npPossAgrPossClassClassNumber/@checked)='yes'">
 <tr>
-							<td>
+							<td align="left">
 								<xsl:text>class</xsl:text>
 							</td>
-							<td>
+							<td align="left">
 								<xsl:text>class_##</xsl:text>
 							</td>
 						</tr>

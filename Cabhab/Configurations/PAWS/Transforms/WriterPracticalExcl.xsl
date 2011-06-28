@@ -2,12 +2,12 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="excl">
   <section1 id="sExcl">
-    <secTitle>Exclamations and Greetings</secTitle>
-    <p>
+	<secTitle>Exclamations and Greetings</secTitle>
+	<p>
 <xsl:text>This section considers various types of common utterances which are not complete sentences.  Greetings, interjections and exclamations are covered in turn.</xsl:text>
 </p>
 <section2 id="sExclGreet">
-    <secTitle>Greetings</secTitle>
+	<secTitle>Greetings</secTitle>
 <p>
 <xsl:text>Greetings typically consist of a particular word or phrase, either standing alone or followed by a name or nominal phrase describing the person or animal being greeted.  Some are full sentences or full questions, such as </xsl:text>
 <langData>
@@ -26,35 +26,35 @@
 <xsl:text> which do not need to be treated separately.  Some examples of English greetings are:
 </xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>Hi!</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Howdy!</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Hello, Jill.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Goodby.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Good day, sir.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Good morning, Bob.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Good afternoon.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Good evening.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Good night, sweet baby.</xsl:text>
-                </li>
-            </ol>
+			<ol>
+				<li>
+					<xsl:text>Hi!</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Howdy!</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Hello, Jill.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Goodby.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Good day, sir.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Good morning, Bob.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Good afternoon.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Good evening.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Good night, sweet baby.</xsl:text>
+				</li>
+			</ol>
 <p>
 <xsl:text>Examples of greetings in </xsl:text>
 <xsl:choose>
@@ -67,7 +67,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-            <example num="xExcl.ExclGreet.10">
+			<example num="xExcl.ExclGreet.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//excl/greetExample" />
 </xsl:variable>
@@ -107,28 +107,28 @@
 </example>
 </section2>
 <section2 id="sExclIntj">
-    <secTitle>Interjections</secTitle>
+	<secTitle>Interjections</secTitle>
 <p>
 <xsl:text>Interjections typically consist of a particular word or phrase that is used alone, usually with an exclamation point following it.  Though many of the words in interjections are not used in any other situation, regular adjectives are also used in this way.  Some examples of interjections in English are:
 </xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>Ouch!</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Gross!</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Cool!</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Jumping Jehosaphat!</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Jimminy Cricket!</xsl:text>
-                </li>
-            </ol>
+			<ol>
+				<li>
+					<xsl:text>Ouch!</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Gross!</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Cool!</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Jumping Jehosaphat!</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Jimminy Cricket!</xsl:text>
+				</li>
+			</ol>
 <p>
 <xsl:text>Examples of interjections in </xsl:text>
 <xsl:choose>
@@ -141,7 +141,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-            <example num="xExcl.ExclIntj.10">
+			<example num="xExcl.ExclIntj.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//excl/intjExample" />
 </xsl:variable>
@@ -193,9 +193,9 @@
 </p>
 <example num="xExcl.ExclIntj.14">
 <table border="1">
-                    <tr>
-                        <th>
-                            <xsl:choose>
+					<tr>
+						<th>
+							<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
 </xsl:when>
@@ -203,10 +203,10 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-                        </th>
-                        <th>Gloss</th>
-                    </tr>
-                    <xsl:variable name="sExampleValue0">
+						</th>
+						<th>Gloss</th>
+					</tr>
+					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//excl/yesExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
@@ -228,9 +228,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>yes</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>yes</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -242,13 +242,13 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>yes</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>yes</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue1">
+					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//excl/noExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
@@ -270,9 +270,9 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
-                            <xsl:text>no</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>no</xsl:text>
+						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -284,9 +284,9 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
-                            <xsl:text>no</xsl:text>
-                        </td>
+<td align="left">
+							<xsl:text>no</xsl:text>
+						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
@@ -294,7 +294,7 @@
 </example>
 </section2>
 <section2 id="sExclExcl">
-    <secTitle>Exclamations</secTitle>
+	<secTitle>Exclamations</secTitle>
 <p>
 <xsl:text>Exclamations typically consist of a particular word, such as </xsl:text>
 <langData>
@@ -304,13 +304,13 @@
 <xsl:text> in English, followed by an adjective phrase and usually punctuated with an exclamation point.  English examples include:</xsl:text>
 </p>
 <ol>
-      <li>
+	  <li>
 <xsl:text>How awful for you!</xsl:text>
 </li>
-      <li>
+	  <li>
 <xsl:text>How nice!</xsl:text>
 </li>
-      <li>
+	  <li>
 <xsl:text>How wonderful that your family could come!</xsl:text>
 </li>
 </ol>
@@ -326,7 +326,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-            <example num="xExcl.ExclExcl.10">
+			<example num="xExcl.ExclExcl.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//excl/exclExample" />
 </xsl:variable>
@@ -401,10 +401,10 @@
 <example num="xExcl.ExclExcl.16">
 <table border="0">
 <tr>
-    <th>Exclamation Markers</th>
-    <th>Gloss</th>
+	<th>Exclamation Markers</th>
+	<th>Gloss</th>
 </tr>
-    <xsl:variable name="sExampleValue0">
+	<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//excl/exclMExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
@@ -425,7 +425,14 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
-<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
 </xsl:call-template>
@@ -435,6 +442,12 @@
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
 </td>
 </tr>
 </xsl:otherwise>

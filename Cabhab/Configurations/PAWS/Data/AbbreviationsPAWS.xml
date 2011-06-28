@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<abbreviations font-family="Charis SIL CompactSmallCaps" usesmallcaps="no" version="2.3.0">
+	<comment>The following was based on the Leipzig Glossing Rules, List of Standard Abbreviations at <link href="http://www.eva.mpg.de/lingua/resources/glossing-rules.php">http://www.eva.mpg.de/lingua/resources/glossing-rules.php</link> on 01-October, 2008. Some Otomanguean specific abbreviations were added.</comment>
+	<abbreviation id="v1">
+		<abbrInLang lang="en">
+			<abbrTerm>1</abbrTerm>
+			<abbrDefinition>first person</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PL">
+		<abbrInLang lang="en">
+			<abbrTerm>1pl</abbrTerm>
+			<abbrDefinition>first person plural</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLABS">
+		<abbrInLang lang="en">
+			<abbrTerm>1plabs</abbrTerm>
+			<abbrDefinition>first person plural absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLERG">
+		<abbrInLang lang="en">
+			<abbrTerm>1plerg</abbrTerm>
+			<abbrDefinition>first person plural ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLEX">
+		<abbrInLang lang="en">
+			<abbrTerm>1plex</abbrTerm>
+			<abbrDefinition>first person plural exclusive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLEXABS">
+		<abbrInLang lang="en">
+			<abbrTerm>1plexabs</abbrTerm>
+			<abbrDefinition>first person plural exclusive absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLEXERG">
+		<abbrInLang lang="en">
+			<abbrTerm>1plexerg</abbrTerm>
+			<abbrDefinition>first person plural exclusive ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLEXOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>1plexobj</abbrTerm>
+			<abbrDefinition>first person plural exclusive object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLEXPOS">
+		<abbrInLang lang="en">
+			<abbrTerm>1plexpos</abbrTerm>
+			<abbrDefinition>first person plural exclusive possessor</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLEXSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>1plexabs</abbrTerm>
+			<abbrDefinition>first person plural exclusive subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLIN">
+		<abbrInLang lang="en">
+			<abbrTerm>1plin</abbrTerm>
+			<abbrDefinition>first person plural inclusive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLINABS">
+		<abbrInLang lang="en">
+			<abbrTerm>1plinabs</abbrTerm>
+			<abbrDefinition>first person plural inclusive absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLINERG">
+		<abbrInLang lang="en">
+			<abbrTerm>1plinerg</abbrTerm>
+			<abbrDefinition>first person plural inclusive ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLINSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>1plinabs</abbrTerm>
+			<abbrDefinition>first person plural inclusive inclusive subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLINOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>1plinobj</abbrTerm>
+			<abbrDefinition>first person plural inclusive object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLINPOS">
+		<abbrInLang lang="en">
+			<abbrTerm>1plinpos</abbrTerm>
+			<abbrDefinition>first person plural inclusive possessor</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>1plobj</abbrTerm>
+			<abbrDefinition>first person plural object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLPOS">
+		<abbrInLang lang="en">
+			<abbrTerm>1plpos</abbrTerm>
+			<abbrDefinition>first person plural possessor</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1PLSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>1plsbj</abbrTerm>
+			<abbrDefinition>first person plural subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1R">
+		<abbrInLang lang="en">
+			<abbrTerm>1r</abbrTerm>
+			<abbrDefinition>first person respect</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1SG">
+		<abbrInLang lang="en">
+			<abbrTerm>1sg</abbrTerm>
+			<abbrDefinition>first person singular</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1SGABS">
+		<abbrInLang lang="en">
+			<abbrTerm>1sgabs</abbrTerm>
+			<abbrDefinition>first person singular absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1SGERG">
+		<abbrInLang lang="en">
+			<abbrTerm>1sgerg</abbrTerm>
+			<abbrDefinition>first person singular ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1SGOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>1sgobj</abbrTerm>
+			<abbrDefinition>first person singular object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1SGPOS">
+		<abbrInLang lang="en">
+			<abbrTerm>1sgpos</abbrTerm>
+			<abbrDefinition>first person singular possessor</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v1SGSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>1sgsbj</abbrTerm>
+			<abbrDefinition>first person singular subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2">
+		<abbrInLang lang="en">
+			<abbrTerm>2</abbrTerm>
+			<abbrDefinition>second person</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2PL">
+		<abbrInLang lang="en">
+			<abbrTerm>2pl</abbrTerm>
+			<abbrDefinition>second person plural</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2PLABS">
+		<abbrInLang lang="en">
+			<abbrTerm>2plabs</abbrTerm>
+			<abbrDefinition>second person plural absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2PLERG">
+		<abbrInLang lang="en">
+			<abbrTerm>2plerg</abbrTerm>
+			<abbrDefinition>second person plural ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2PLOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>2plobj</abbrTerm>
+			<abbrDefinition>second person plural object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2PLPOS">
+		<abbrInLang lang="en">
+			<abbrTerm>2plpos</abbrTerm>
+			<abbrDefinition>second person plural possessor</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2PLSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>2plsbj</abbrTerm>
+			<abbrDefinition>second person plural subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2R">
+		<abbrInLang lang="en">
+			<abbrTerm>2r</abbrTerm>
+			<abbrDefinition>second person respect</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2SG">
+		<abbrInLang lang="en">
+			<abbrTerm>2sg</abbrTerm>
+			<abbrDefinition>second person singular</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2SGABS">
+		<abbrInLang lang="en">
+			<abbrTerm>2sgabs</abbrTerm>
+			<abbrDefinition>second person singular absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2SGERG">
+		<abbrInLang lang="en">
+			<abbrTerm>2sgerg</abbrTerm>
+			<abbrDefinition>second person singular ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2SGOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>2sgobj</abbrTerm>
+			<abbrDefinition>second person singular object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2SGPOS">
+		<abbrInLang lang="en">
+			<abbrTerm>2sgpos</abbrTerm>
+			<abbrDefinition>second person singular possessor</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v2SGSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>2sgsbj</abbrTerm>
+			<abbrDefinition>second person singular subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3">
+		<abbrInLang lang="en">
+			<abbrTerm>3</abbrTerm>
+			<abbrDefinition>third person</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3AD">
+		<abbrInLang lang="en">
+			<abbrTerm>3ad</abbrTerm>
+			<abbrDefinition>third person adult</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3AN">
+		<abbrInLang lang="en">
+			<abbrTerm>3an</abbrTerm>
+			<abbrDefinition>third person animal</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3BA">
+		<abbrInLang lang="en">
+			<abbrTerm>3ba</abbrTerm>
+			<abbrDefinition>third person baby</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3CH">
+		<abbrInLang lang="en">
+			<abbrTerm>3ch</abbrTerm>
+			<abbrDefinition>third person child</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3DE">
+		<abbrInLang lang="en">
+			<abbrTerm>3de</abbrTerm>
+			<abbrDefinition>third person deity</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3DEPR">
+		<abbrInLang lang="en">
+			<abbrTerm>3depr</abbrTerm>
+			<abbrDefinition>third person deprecatory</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3F">
+		<abbrInLang lang="en">
+			<abbrTerm>3f</abbrTerm>
+			<abbrDefinition>third person feminine</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3FO">
+		<abbrInLang lang="en">
+			<abbrTerm>3fo</abbrTerm>
+			<abbrDefinition>third person formal</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3GEN">
+		<abbrInLang lang="en">
+			<abbrTerm>3gen</abbrTerm>
+			<abbrDefinition>third person general</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3H">
+		<abbrInLang lang="en">
+			<abbrTerm>3h</abbrTerm>
+			<abbrDefinition>third person human</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3IN">
+		<abbrInLang lang="en">
+			<abbrTerm>3in</abbrTerm>
+			<abbrDefinition>third person inanimate</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3INFO">
+		<abbrInLang lang="en">
+			<abbrTerm>3info</abbrTerm>
+			<abbrDefinition>third person informal</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3M">
+		<abbrInLang lang="en">
+			<abbrTerm>3m</abbrTerm>
+			<abbrDefinition>third person masculine</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3PL">
+		<abbrInLang lang="en">
+			<abbrTerm>3pl</abbrTerm>
+			<abbrDefinition>third person plural</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3PLABS">
+		<abbrInLang lang="en">
+			<abbrTerm>3plabs</abbrTerm>
+			<abbrDefinition>third person plural absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3PLERG">
+		<abbrInLang lang="en">
+			<abbrTerm>3plerg</abbrTerm>
+			<abbrDefinition>third person plural ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3PLOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>3plobj</abbrTerm>
+			<abbrDefinition>third person plural object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3PLPOS">
+		<abbrInLang lang="en">
+			<abbrTerm>3plpos</abbrTerm>
+			<abbrDefinition>third person plural possessor</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3PLSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>3plsbj</abbrTerm>
+			<abbrDefinition>third person plural subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3R">
+		<abbrInLang lang="en">
+			<abbrTerm>3r</abbrTerm>
+			<abbrDefinition>third person respect</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3SG">
+		<abbrInLang lang="en">
+			<abbrTerm>3sg</abbrTerm>
+			<abbrDefinition>third person singular</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3SGLABS">
+		<abbrInLang lang="en">
+			<abbrTerm>3sgabs</abbrTerm>
+			<abbrDefinition>third person singular absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3SGERG">
+		<abbrInLang lang="en">
+			<abbrTerm>3sgerg</abbrTerm>
+			<abbrDefinition>third person singular ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3SGOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>3sgobj</abbrTerm>
+			<abbrDefinition>third person singular object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3SGPOS">
+		<abbrInLang lang="en">
+			<abbrTerm>3sgpos</abbrTerm>
+			<abbrDefinition>third person singular possessor</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3SGSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>3sgsbj</abbrTerm>
+			<abbrDefinition>third person singular subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="v3UM">
+		<abbrInLang lang="en">
+			<abbrTerm>3um</abbrTerm>
+			<abbrDefinition>third person unmarried masculine</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vABL">
+		<abbrInLang lang="en">
+			<abbrTerm>abl</abbrTerm>
+			<abbrDefinition>ablative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vABS">
+		<abbrInLang lang="en">
+			<abbrTerm>abs</abbrTerm>
+			<abbrDefinition>absolutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vACC">
+		<abbrInLang lang="en">
+			<abbrTerm>acc</abbrTerm>
+			<abbrDefinition>accusative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vADJ">
+		<abbrInLang lang="en">
+			<abbrTerm>adj</abbrTerm>
+			<abbrDefinition>adjective</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vADV">
+		<abbrInLang lang="en">
+			<abbrTerm>adv</abbrTerm>
+			<abbrDefinition>adverb(ial)</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vAFF">
+		<abbrInLang lang="en">
+			<abbrTerm>aff</abbrTerm>
+			<abbrDefinition>affirmative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vAFM">
+		<abbrInLang lang="en">
+			<abbrTerm>afm</abbrTerm>
+			<abbrDefinition>aforementioned</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vAGR">
+		<abbrInLang lang="en">
+			<abbrTerm>agr</abbrTerm>
+			<abbrDefinition>agreement</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vALL">
+		<abbrInLang lang="en">
+			<abbrTerm>all</abbrTerm>
+			<abbrDefinition>allative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vANIM">
+		<abbrInLang lang="en">
+			<abbrTerm>anim</abbrTerm>
+			<abbrDefinition>animate</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vANTIP">
+		<abbrInLang lang="en">
+			<abbrTerm>antip</abbrTerm>
+			<abbrDefinition>antipassive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vAPPL">
+		<abbrInLang lang="en">
+			<abbrTerm>appl</abbrTerm>
+			<abbrDefinition>applicative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vAPR">
+		<abbrInLang lang="en">
+			<abbrTerm>appr</abbrTerm>
+			<abbrDefinition>approximately</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vART">
+		<abbrInLang lang="en">
+			<abbrTerm>art</abbrTerm>
+			<abbrDefinition>article</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vAUG">
+		<abbrInLang lang="en">
+			<abbrTerm>aug</abbrTerm>
+			<abbrDefinition>augmentative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vAUX">
+		<abbrInLang lang="en">
+			<abbrTerm>aux</abbrTerm>
+			<abbrDefinition>auxiliary</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vBASE">
+		<abbrInLang lang="en">
+			<abbrTerm>base</abbrTerm>
+			<abbrDefinition>base for dependent pronouns</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vBEN">
+		<abbrInLang lang="en">
+			<abbrTerm>ben</abbrTerm>
+			<abbrDefinition>benefactive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCAUS">
+		<abbrInLang lang="en">
+			<abbrTerm>caus</abbrTerm>
+			<abbrDefinition>causative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCL">
+		<abbrInLang lang="en">
+			<abbrTerm>cl</abbrTerm>
+			<abbrDefinition>class</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCLF">
+		<abbrInLang lang="en">
+			<abbrTerm>clf</abbrTerm>
+			<abbrDefinition>classifier</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCOM">
+		<abbrInLang lang="en">
+			<abbrTerm>com</abbrTerm>
+			<abbrDefinition>comitative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCOMP">
+		<abbrInLang lang="en">
+			<abbrTerm>comp</abbrTerm>
+			<abbrDefinition>complementizer</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vC">
+		<abbrInLang lang="en">
+			<abbrTerm>c</abbrTerm>
+			<abbrDefinition>completive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCOMPL">
+		<abbrInLang lang="en">
+			<abbrTerm>compl</abbrTerm>
+			<abbrDefinition>completive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCOND">
+		<abbrInLang lang="en">
+			<abbrTerm>cond</abbrTerm>
+			<abbrDefinition>conditional</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCF">
+		<abbrInLang lang="en">
+			<abbrTerm>cf</abbrTerm>
+			<abbrDefinition>contrary to fact</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCVB">
+		<abbrInLang lang="en">
+			<abbrTerm>cvb</abbrTerm>
+			<abbrDefinition>converb</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vCOP">
+		<abbrInLang lang="en">
+			<abbrTerm>cop</abbrTerm>
+			<abbrDefinition>copula</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDAT">
+		<abbrInLang lang="en">
+			<abbrTerm>dat</abbrTerm>
+			<abbrDefinition>dative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDECL">
+		<abbrInLang lang="en">
+			<abbrTerm>decl</abbrTerm>
+			<abbrDefinition>declarative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDEF">
+		<abbrInLang lang="en">
+			<abbrTerm>def</abbrTerm>
+			<abbrDefinition>definite</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDEM">
+		<abbrInLang lang="en">
+			<abbrTerm>dem</abbrTerm>
+			<abbrDefinition>demonstrative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDP">
+		<abbrInLang lang="en">
+			<abbrTerm>dp</abbrTerm>
+			<abbrDefinition>dependent</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDET">
+		<abbrInLang lang="en">
+			<abbrTerm>det</abbrTerm>
+			<abbrDefinition>determiner</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDTR">
+		<abbrInLang lang="en">
+			<abbrTerm>dtr</abbrTerm>
+			<abbrDefinition>detransitivizer</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDIM">
+		<abbrInLang lang="en">
+			<abbrTerm>dim</abbrTerm>
+			<abbrDefinition>diminutive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDIST">
+		<abbrInLang lang="en">
+			<abbrTerm>dist</abbrTerm>
+			<abbrDefinition>distal</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDISTR">
+		<abbrInLang lang="en">
+			<abbrTerm>distr</abbrTerm>
+			<abbrDefinition>distributive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDU">
+		<abbrInLang lang="en">
+			<abbrTerm>du</abbrTerm>
+			<abbrDefinition>dual</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vDUR">
+		<abbrInLang lang="en">
+			<abbrTerm>dur</abbrTerm>
+			<abbrDefinition>durative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vEMPH">
+		<abbrInLang lang="en">
+			<abbrTerm>emph</abbrTerm>
+			<abbrDefinition>emphatic</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vERG">
+		<abbrInLang lang="en">
+			<abbrTerm>erg</abbrTerm>
+			<abbrDefinition>ergative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vEXCL">
+		<abbrInLang lang="en">
+			<abbrTerm>excl</abbrTerm>
+			<abbrDefinition>exclusive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vFE">
+		<abbrInLang lang="en">
+			<abbrTerm>fe</abbrTerm>
+			<abbrDefinition>female ego (relating to kinship term)</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vF">
+		<abbrInLang lang="en">
+			<abbrTerm>f</abbrTerm>
+			<abbrDefinition>feminine</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vFOC">
+		<abbrInLang lang="en">
+			<abbrTerm>foc</abbrTerm>
+			<abbrDefinition>focus</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vFREQ">
+		<abbrInLang lang="en">
+			<abbrTerm>freq</abbrTerm>
+			<abbrDefinition>frequentative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vFUT">
+		<abbrInLang lang="en">
+			<abbrTerm>fut</abbrTerm>
+			<abbrDefinition>future</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vGEN">
+		<abbrInLang lang="en">
+			<abbrTerm>gen</abbrTerm>
+			<abbrDefinition>genitive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vH">
+		<abbrInLang lang="en">
+			<abbrTerm>h</abbrTerm>
+			<abbrDefinition>habitual</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vIMP">
+		<abbrInLang lang="en">
+			<abbrTerm>imp</abbrTerm>
+			<abbrDefinition>imperative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vIMPF">
+		<abbrInLang lang="en">
+			<abbrTerm>impf</abbrTerm>
+			<abbrDefinition>imperfective</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vIPFV">
+		<abbrInLang lang="en">
+			<abbrTerm>ipfv</abbrTerm>
+			<abbrDefinition>imperfective</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vINAN">
+		<abbrInLang lang="en">
+			<abbrTerm>inan</abbrTerm>
+			<abbrDefinition>inanimate</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vINCL">
+		<abbrInLang lang="en">
+			<abbrTerm>incl</abbrTerm>
+			<abbrDefinition>inclusive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vINDF">
+		<abbrInLang lang="en">
+			<abbrTerm>indf</abbrTerm>
+			<abbrDefinition>indefinite</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vIF">
+		<abbrInLang lang="en">
+			<abbrTerm>if</abbrTerm>
+			<abbrDefinition>indefinite future</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vINDEP">
+		<abbrInLang lang="en">
+			<abbrTerm>indep</abbrTerm>
+			<abbrDefinition>independent</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vIND">
+		<abbrInLang lang="en">
+			<abbrTerm>ind</abbrTerm>
+			<abbrDefinition>indicative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vIO">
+		<abbrInLang lang="en">
+			<abbrTerm>io</abbrTerm>
+			<abbrDefinition>indirect object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vINF">
+		<abbrInLang lang="en">
+			<abbrTerm>inf</abbrTerm>
+			<abbrDefinition>infinitive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vINS">
+		<abbrInLang lang="en">
+			<abbrTerm>ins</abbrTerm>
+			<abbrDefinition>instrumental</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vINTS">
+		<abbrInLang lang="en">
+			<abbrTerm>ints</abbrTerm>
+			<abbrDefinition>intensifier</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vINTR">
+		<abbrInLang lang="en">
+			<abbrTerm>intr</abbrTerm>
+			<abbrDefinition>intransitive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vIRR">
+		<abbrInLang lang="en">
+			<abbrTerm>irr</abbrTerm>
+			<abbrDefinition>irrealis</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vLOC">
+		<abbrInLang lang="en">
+			<abbrTerm>loc</abbrTerm>
+			<abbrDefinition>locative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vME">
+		<abbrInLang lang="en">
+			<abbrTerm>me</abbrTerm>
+			<abbrDefinition>male ego (relating to kinship term)</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vM">
+		<abbrInLang lang="en">
+			<abbrTerm>m</abbrTerm>
+			<abbrDefinition>masculine</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vMD">
+		<abbrInLang lang="en">
+			<abbrTerm>md</abbrTerm>
+			<abbrDefinition>medial</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vNEG">
+		<abbrInLang lang="en">
+			<abbrTerm>neg</abbrTerm>
+			<abbrDefinition>negation, negative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vN">
+		<abbrInLang lang="en">
+			<abbrTerm>n</abbrTerm>
+			<abbrDefinition>neuter</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vNMLZ">
+		<abbrInLang lang="en">
+			<abbrTerm>nmlz</abbrTerm>
+			<abbrDefinition>nominalizer/nominalization</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vNOM">
+		<abbrInLang lang="en">
+			<abbrTerm>nom</abbrTerm>
+			<abbrDefinition>nominative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vNFUT">
+		<abbrInLang lang="en">
+			<abbrTerm>nfut</abbrTerm>
+			<abbrDefinition>nonfuture</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vNPST">
+		<abbrInLang lang="en">
+			<abbrTerm>npst</abbrTerm>
+			<abbrDefinition>nonpast</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vNPRS">
+		<abbrInLang lang="en">
+			<abbrTerm>nprs</abbrTerm>
+			<abbrDefinition>nonpresent</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vNSG">
+		<abbrInLang lang="en">
+			<abbrTerm>nsg</abbrTerm>
+			<abbrDefinition>nonsingular</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vOBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>obj</abbrTerm>
+			<abbrDefinition>object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vOBL">
+		<abbrInLang lang="en">
+			<abbrTerm>obl</abbrTerm>
+			<abbrDefinition>oblique</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vFV">
+		<abbrInLang lang="en">
+			<abbrTerm>os</abbrTerm>
+			<abbrDefinition>out of sight</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPTCP">
+		<abbrInLang lang="en">
+			<abbrTerm>ptcp</abbrTerm>
+			<abbrDefinition>participle</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPASS">
+		<abbrInLang lang="en">
+			<abbrTerm>pass</abbrTerm>
+			<abbrDefinition>passive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPST">
+		<abbrInLang lang="en">
+			<abbrTerm>pst</abbrTerm>
+			<abbrDefinition>past</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPRF">
+		<abbrInLang lang="en">
+			<abbrTerm>prf</abbrTerm>
+			<abbrDefinition>perfect</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPFV">
+		<abbrInLang lang="en">
+			<abbrTerm>pfv</abbrTerm>
+			<abbrDefinition>perfective</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPL">
+		<abbrInLang lang="en">
+			<abbrTerm>pl</abbrTerm>
+			<abbrDefinition>plural</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPOSD">
+		<abbrInLang lang="en">
+			<abbrTerm>posd</abbrTerm>
+			<abbrDefinition>possessed</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPOSS">
+		<abbrInLang lang="en">
+			<abbrTerm>poss</abbrTerm>
+			<abbrDefinition>possessive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vP">
+		<abbrInLang lang="en">
+			<abbrTerm>p</abbrTerm>
+			<abbrDefinition>potential</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPOT">
+		<abbrInLang lang="en">
+			<abbrTerm>pot</abbrTerm>
+			<abbrDefinition>potential</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPRED">
+		<abbrInLang lang="en">
+			<abbrTerm>pred</abbrTerm>
+			<abbrDefinition>predicative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPRS">
+		<abbrInLang lang="en">
+			<abbrTerm>prs</abbrTerm>
+			<abbrDefinition>present</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPRO">
+		<abbrInLang lang="en">
+			<abbrTerm>pro</abbrTerm>
+			<abbrDefinition>pro</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPROG">
+		<abbrInLang lang="en">
+			<abbrTerm>prog</abbrTerm>
+			<abbrDefinition>progressive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPROH">
+		<abbrInLang lang="en">
+			<abbrTerm>proh</abbrTerm>
+			<abbrDefinition>prohibitive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPRON">
+		<abbrInLang lang="en">
+			<abbrTerm>pron</abbrTerm>
+			<abbrDefinition>pronoun</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPROX">
+		<abbrInLang lang="en">
+			<abbrTerm>prox</abbrTerm>
+			<abbrDefinition>proximal/proximate</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vPURP">
+		<abbrInLang lang="en">
+			<abbrTerm>purp</abbrTerm>
+			<abbrDefinition>purposive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vQ">
+		<abbrInLang lang="en">
+			<abbrTerm>q</abbrTerm>
+			<abbrDefinition>question particle/marker</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vQUOT">
+		<abbrInLang lang="en">
+			<abbrTerm>quot</abbrTerm>
+			<abbrDefinition>quotative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vRL">
+		<abbrInLang lang="en">
+			<abbrTerm>rl</abbrTerm>
+			<abbrDefinition>realis</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vRECP">
+		<abbrInLang lang="en">
+			<abbrTerm>recp</abbrTerm>
+			<abbrDefinition>reciprocal</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vREFL">
+		<abbrInLang lang="en">
+			<abbrTerm>refl</abbrTerm>
+			<abbrDefinition>reflexive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vREL">
+		<abbrInLang lang="en">
+			<abbrTerm>rel</abbrTerm>
+			<abbrDefinition>relativizer</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vREP">
+		<abbrInLang lang="en">
+			<abbrTerm>rep</abbrTerm>
+			<abbrDefinition>repetitive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vRES">
+		<abbrInLang lang="en">
+			<abbrTerm>res</abbrTerm>
+			<abbrDefinition>resultative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vSG">
+		<abbrInLang lang="en">
+			<abbrTerm>sg</abbrTerm>
+			<abbrDefinition>singular</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vS">
+		<abbrInLang lang="en">
+			<abbrTerm>s</abbrTerm>
+			<abbrDefinition>stative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vST">
+		<abbrInLang lang="en">
+			<abbrTerm>st</abbrTerm>
+			<abbrDefinition>stative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vSBJ">
+		<abbrInLang lang="en">
+			<abbrTerm>sbj</abbrTerm>
+			<abbrDefinition>subject</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vSBJV">
+		<abbrInLang lang="en">
+			<abbrTerm>sbjv</abbrTerm>
+			<abbrDefinition>subjunctive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vSBD">
+		<abbrInLang lang="en">
+			<abbrTerm>sbd</abbrTerm>
+			<abbrDefinition>subordinator</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vTHV">
+		<abbrInLang lang="en">
+			<abbrTerm>thv</abbrTerm>
+			<abbrDefinition>theme vowel</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vTOP">
+		<abbrInLang lang="en">
+			<abbrTerm>top</abbrTerm>
+			<abbrDefinition>topic</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vTR">
+		<abbrInLang lang="en">
+			<abbrTerm>tr</abbrTerm>
+			<abbrDefinition>transitive</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vU">
+		<abbrInLang lang="en">
+			<abbrTerm>u</abbrTerm>
+			<abbrDefinition>unreal</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vUO">
+		<abbrInLang lang="en">
+			<abbrTerm>uo</abbrTerm>
+			<abbrDefinition>unspecified object</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vVRB">
+		<abbrInLang lang="en">
+			<abbrTerm>vrb</abbrTerm>
+			<abbrDefinition>verbalizer</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+	<abbreviation id="vVOC">
+		<abbrInLang lang="en">
+			<abbrTerm>voc</abbrTerm>
+			<abbrDefinition>vocative</abbrDefinition>
+		</abbrInLang>
+	</abbreviation>
+</abbreviations>

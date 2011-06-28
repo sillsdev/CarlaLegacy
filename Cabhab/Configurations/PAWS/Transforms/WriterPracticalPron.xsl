@@ -4,8 +4,8 @@
 	<section1 id="sPron">
 		<secTitle>Pronouns</secTitle>
 		<p>
-<xsl:text>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals, and indefinites.  These pronouns normally stand alone in the place of an entire nominal phrase, but they can also be modified by a partitive phrase and in some languages pronouns may be modified by determiners and quantifiers, filling the place of nouns in that case.  Each type of pronoun will be looked at in turn, after covering the agreement features on all types of pronouns.
-</xsl:text>
+<xsl:text>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals, and indefinites.
+		Each type of pronoun will be looked at in turn, after covering the agreement features on all types of pronouns.</xsl:text>
 </p>
 		<section2 id="sPronAgreement">
 			<secTitle>Agreement Features on Pronouns</secTitle>
@@ -29,160 +29,160 @@
 					</tr>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatFirst/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>person</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>first</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatFirstExclusive/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>person</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>first exclusive</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatFirstInclusive/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>person</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>first inclusive</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatSecond/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>person</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>second</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatThird/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>person</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>third</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatSingular/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>number</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>singular</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatDual/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>number</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>dual</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatPlural/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>number</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>plural</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatMasculine/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>gender</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>masculine</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatFeminine/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>gender</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>feminine</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatNeuter/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>gender</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>neuter</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatAnimate/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>animacy</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>animate</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatMinusAnimate/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>animacy</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>inanimate</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatHuman/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>animacy</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>human</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatMinusHuman/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>animacy</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>nonhuman</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//pron/pronAgrFeatClassNumber/@checked)='yes'">
 <tr>
-						<td>
+						<td align="left">
 							<xsl:text>class</xsl:text>
 						</td>
-						<td>
+						<td align="left">
 							<xsl:text>class_number</xsl:text>
 						</td>
 					</tr>
@@ -261,12 +261,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -279,14 +279,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -316,12 +316,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -334,14 +334,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -370,12 +370,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -388,14 +388,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -452,12 +452,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -470,14 +470,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -507,12 +507,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -525,14 +525,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -561,12 +561,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -579,14 +579,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -634,12 +634,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -652,14 +652,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -689,12 +689,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -707,14 +707,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -743,12 +743,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -761,14 +761,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -816,12 +816,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -834,14 +834,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -871,12 +871,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -889,14 +889,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -925,12 +925,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -943,14 +943,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1007,12 +1007,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1025,14 +1025,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1062,12 +1062,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1080,14 +1080,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1117,12 +1117,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1135,14 +1135,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1191,12 +1191,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1209,14 +1209,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1246,12 +1246,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1264,14 +1264,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1301,12 +1301,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1319,14 +1319,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1375,12 +1375,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1393,14 +1393,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1430,12 +1430,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1448,14 +1448,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1485,12 +1485,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1503,14 +1503,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1568,12 +1568,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1586,14 +1586,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1623,12 +1623,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1641,14 +1641,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1678,12 +1678,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1696,14 +1696,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1752,12 +1752,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1770,14 +1770,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1807,12 +1807,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1825,14 +1825,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1862,12 +1862,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1880,14 +1880,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1936,12 +1936,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1954,14 +1954,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -1991,12 +1991,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2009,14 +2009,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2046,12 +2046,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2064,14 +2064,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2120,12 +2120,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2138,14 +2138,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2175,12 +2175,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2193,14 +2193,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2230,12 +2230,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2248,14 +2248,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2304,12 +2304,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2322,14 +2322,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2359,12 +2359,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2377,14 +2377,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2414,12 +2414,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2432,14 +2432,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2498,12 +2498,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2516,14 +2516,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2553,12 +2553,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2571,14 +2571,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2608,12 +2608,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2626,14 +2626,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2691,12 +2691,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2709,14 +2709,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2746,12 +2746,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2764,14 +2764,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2800,12 +2800,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2818,14 +2818,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2873,12 +2873,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2891,14 +2891,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2928,12 +2928,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2946,14 +2946,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -2982,12 +2982,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3000,14 +3000,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3055,12 +3055,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3073,14 +3073,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3110,12 +3110,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3128,14 +3128,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3164,12 +3164,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3182,14 +3182,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3246,12 +3246,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3264,14 +3264,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3301,12 +3301,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3319,14 +3319,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3356,12 +3356,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3374,14 +3374,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3430,12 +3430,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3448,14 +3448,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3485,12 +3485,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3503,14 +3503,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3540,12 +3540,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3558,14 +3558,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3614,12 +3614,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3632,14 +3632,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3669,12 +3669,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3687,14 +3687,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3724,12 +3724,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3742,14 +3742,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3807,12 +3807,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3825,14 +3825,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3862,12 +3862,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3880,14 +3880,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3917,12 +3917,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3935,14 +3935,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -3991,12 +3991,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4009,14 +4009,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4046,12 +4046,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4064,14 +4064,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4101,12 +4101,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4119,14 +4119,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4175,12 +4175,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4193,14 +4193,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4230,12 +4230,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4248,14 +4248,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4285,12 +4285,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4303,14 +4303,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4359,12 +4359,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4377,14 +4377,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4414,12 +4414,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4432,14 +4432,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4469,12 +4469,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4487,14 +4487,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4543,12 +4543,12 @@
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4561,14 +4561,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>First</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4598,12 +4598,12 @@
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4616,14 +4616,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Second</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4653,12 +4653,12 @@
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4671,14 +4671,14 @@
 </xsl:when>
 <xsl:otherwise>
 <tr>
-<td rowspan="1">
+<td align="left" rowspan="1">
 <xsl:text>Third</xsl:text>
 </td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4802,7 +4802,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4819,7 +4819,7 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4925,7 +4925,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -4942,7 +4942,7 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5074,7 +5074,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5091,7 +5091,7 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5132,7 +5132,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5149,7 +5149,7 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5303,7 +5303,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5320,7 +5320,7 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5399,7 +5399,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5416,7 +5416,7 @@
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
-<td>
+<td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>ENTER GLOSS</xsl:text>
@@ -5539,7 +5539,235 @@
 </p>
 </xsl:if>
 		</section2>
+	<section2 id="sPronNP">
+		<secTitle>Pronouns as Nominal Phrases</secTitle>
+		<p>
+<xsl:text>Pronouns normally stand alone in the place of an entire nominal phrase, but they can also be modified by a partitive phrase and in some languages pronouns may be modified by determiners and quantifiers, filling the place of nouns in that case.
+		English examples of modified pronouns, demonstratives or quantifiers include the following: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>all twelve</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>only he</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>just two</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>just those few</langData>
+<xsl:text>.</xsl:text>
+</p>
+		<p>
+<xsl:text>Examples of this type in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
+</p>
+		<example num="xPron.PronNP.8">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//pron/standAloneNPExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/standAloneNPExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//pron/standAloneNPExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(//pron/standAloneNPExample)" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xPron.PronNP.8</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xPron.PronNP.8.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+		<p>
+<xsl:text>In addition, it is possible to have a pronoun, demonstrative, or quantifier modified by a relative clause, as in </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>all those who are going with us</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>only these two that I saw</langData>
+<xsl:text>.  Examples of this type in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, included in full sentences are:</xsl:text>
+</p>
+		<example num="xPron.PronNP.12">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//pron/pronRelClExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/pronRelClExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//pron/pronRelClExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(//pron/pronRelClExample)" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xPron.PronNP.12</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xPron.PronNP.12.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+		<p>
+<xsl:text>Finally, these categories can also be modified by a partitive phrase (or other PP), as in </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>only a few of you</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>just that many of those</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>only those in there</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>all of us</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>all by himself</langData>
+<xsl:text>.   Examples of this type in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langName)" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
+</p>
+		<example num="xPron.PronNP.16">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//pron/partitiveExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/partitiveExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//pron/partitiveExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(//pron/partitiveExample)" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xPron.PronNP.16</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xPron.PronNP.16.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
 
+		<p>
+<xsl:text> The optional </xsl:text>
+<xsl:choose>
+				<xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
+				<xsl:when test="//pp/@pPos='after'">postpositional</xsl:when>
+				<xsl:when test="//pp/@pPos='both'">prepositional and/or postpositional</xsl:when>
+				<xsl:when test="//pp/@pPos='unknown'">prepositional and/or postpositional</xsl:when>
+			</xsl:choose>
+<xsl:text> phrase occurs </xsl:text>
+<xsl:choose>
+				<xsl:when test="//pron/@partitivePos='before'">before</xsl:when>
+				<xsl:when test="//pron/@partitivePos='after'">after</xsl:when>
+				<xsl:when test="//pron/@partitivePos='unknown'">_______</xsl:when>
+			</xsl:choose>
+<xsl:text> the element acting as the head of the nominal phrase.</xsl:text>
+</p>
+		</section2>
 	</section1>
 
 

@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<section1 id="sAdjP">
+		<secTitle>Los Adjetivos</secTitle>
+		<p>
+			<content>Esta sección considera adjetivos cualitativos, los números y otros cuantificadores, artículos, y demonstratives. Las posiciones permitieron cada uno de estos elementos dentro de la frase nominal serán cubridas en la sección </content>
+			<sectionRef sec="sNP"/>
+			<content>.
+</content>
+		</p>
+  <section2 id="sAdjQual">
+	  <secTitle>Los adjetivos cualitativos</secTitle>
+	  <p>
+		  <content>Los adjetivos cualitativos ellos mismos pueden ser modificados. Algunos ejemplos españoles son:
+		  </content>
+		  <langData>muy grande</langData>
+		  <content>, </content>
+		  <langData>verdaderamente azul</langData>
+		  <content>, </content>
+		  <langData>extremadamente grande</langData>
+		  <content>, </content>
+		  <langData>muy bien construida</langData>
+		  <content> y </content>
+		  <langData>muy fácilmente olvidado</langData>
+		  <content>.  No todas las combinaciones de palabras suceden debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras del grado y adverbios de la manera o frases del adverbio de la manera pueden modificar adjetivos. </content>
+	  </p>
+	  <p show="swAdjPModifiersNo">
+		  <content/>
+		  <langName/>
+		  <content> no permite que ningunas palabras del grado o adverbios de la manera modifiquen adjetivos. </content>
+	  </p>
+	  <p show="swAdjPModifiersYesDegree">
+		  <content/>
+		  <langName/>
+		  <content> permite que ciertas palabras del grado modifiquen adjetivos, pero los adverbios de la manera no pueden. Las palabras del grado ocurren </content>
+		  <case element="adjp" attr="degreePos">
+			  <caseText value="before">antes</caseText>
+			  <caseText value="after">después</caseText>
+			  <caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+			  <caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
+			  <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+			  <caseText value="afterOrBoth">después o en ambos lados</caseText>
+			  <caseText value="both">en ambos lados</caseText>
+			  <caseText value="unknown">_______</caseText>
+		  </case>
+		  <content> del adjetivo.  </content>
+		  <text show="swAdjPDegreeEitherUnrestricted">
+			  <content>Todas las palabras del grado pueden ocurrir de cualquier lado del adjetivo.</content>
+		  </text>
+		  <content/>
+		  <text show="swAdjPDegreeEitherRestricted">
+			  <content>Hay restricciones en cuanto a las cuales palabras de grado puede ocurrir en cada lado del adjetivo.</content>
+		  </text>
+		  <content/>
+	  </p>
+	  <p show="swAdjPModifiersYesManner">
+		  <content/>
+		  <langName/>
+		  <content> permite que ciertas palabras del grado y los adverbios de la manera modifiquen adjetivos. Estos modificantes ocurren </content>
+		  <case element="adjp" attr="mannerPos">
+			  <caseText value="before">antes</caseText>
+			  <caseText value="after">después</caseText>
+			  <caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+			  <caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
+			  <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+			  <caseText value="afterOrBoth">después o en ambos lados</caseText>
+			  <caseText value="both">en ambos lados</caseText>
+			  <caseText value="unknown">_______</caseText>
+		  </case>
+		  <content> del adjetivo.  </content>
+		  <text show="swAdjPMannerEitherUnrestricted">
+			  <content>Todas las palabras del grado y adverbios de la manera pueden ocurrir de cualquier lado del adjetivo. </content>
+		  </text>
+		  <content/>
+		  <text show="swAdjPMannerEitherRestricted">
+			  <content>Hay restricciones en cuanto a las cuales palabras de grado y los cuales adverbios de la manera puede ocurrir en cada lado del adjetivo.</content>
+		  </text>
+		  <content/>
+	  </p>
+	  <p>
+		  <content>Los ejemplos de adjetivos o de frases del adjetivo en </content>
+		  <langName/>
+		  <content> incluyen:
+		  </content>
+	  </p>
+	  <example>
+		  <interlinear exampleLoc="adjp/example"/>
+	  </example>
+  </section2>
+
+			<section2 id="sAdjNumbers">
+				<secTitle>Los números</secTitle>
+				<p>
+					<content>Los números no se pueden modificar por las palabras del grado como la poder de los cuantificadores, aunque ocurren en la misma posición. Los números cardinales se pueden, sin embargo, modificar por números ordinales y por </content>
+					<langData>próximo</langData>
+					<content> y </content>
+					<langData>último</langData>
+					<content>, como en </content>
+					<langData>los primeros veinte muchachos</langData>
+					<content> o
+					</content>
+					<langData>los cientos años próximos</langData>
+					<content>.  Los números ordinales y </content>
+					<langData>próximo</langData>
+					<content> y </content>
+					<langData>último</langData>
+					<content> pueden también modificar sustantivos directamente, como en </content>
+					<langData>la tercera muchacha</langData>
+					<content> y </content>
+					<langData>el último muchacho</langData>
+					<content>.  </content>
+				</p>
+				<section3 id="sQPNumbersCardinal">
+					<secTitle>Los números cardinales</secTitle>
+					<p>
+						<content>Las formas básicas para los números cardinales se dan en el cuadro siguiente:</content>
+					</p>
+					<example>
+						<table border="1">
+							 <headerRow>
+								<headerCol>Cuenta</headerCol>
+								 <headerCol>Números cardinales</headerCol>
+								<headerCol>Significado</headerCol>
+							 </headerRow>
+							<row>
+								<col rowspan="1"><content>1 a 10</content></col>
+								<col exampleLoc="qp/cardinalNumbers1to10"/>
+								<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+							</row>
+							<row>
+								<col rowspan="1"><content>11 a 20</content></col>
+								<col exampleLoc="qp/cardinalNumbers11to20"/>
+								<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+							</row>
+							<row>
+								<col rowspan="1"><content>30 a 100 (por diez)</content></col>
+								<col exampleLoc="qp/cardinalNumbers30to100"/>
+								<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+							</row>
+						</table>
+					</example>
+					<p>
+						<content>Números cardinales más grandes pueden ser los compuestos que se pueden escribir como palabras separadas, tales como </content>
+						<langData>cientos treinta y tres</langData>
+						<content>, </content>
+						<langData>cuatro mil y tres</langData>
+						<content> o </content>
+						<langData>seis mil cientos treinta y tres</langData>
+						<content>.
+							Los ejemplos de números compuestos en </content>
+						<langName/>
+						<content> incluyen:</content>
+					</p>
+					<example>
+						<interlinear exampleLoc="qp/cardinalCompoundExample"/>
+					</example>
+					<p>
+						<content>De acuerdo con la posición del número de unidad y de cualquier conjunción, los números cardinales se dirijen </content>
+						<langName/>
+						<case element="qp" attr="cardinalHead">
+							<caseText value="before">a la izquierda-</caseText>
+							<caseText value="after">al derecho</caseText>
+						</case>
+						<content>.
+						</content>
+					</p>
+				</section3>
+				<section3 id="sQPNumbersOrdinal">
+					<secTitle>Los números ordinales</secTitle>
+					<p>
+						<content>En </content>
+						<langName/>
+						<content>, los números ordinales </content>
+						<case element="qp" attr="ordinalFormation">
+							<caseText value="affix">son formados agregando un afijo al número cardinal.</caseText>
+							<caseText value="independent">son todas palabras sintácticas independientes, distintas de los números cardinales.</caseText>
+							<caseText value="both">pueden ser formados agregando un afijo al número cardinal, pero algunas formas son palabras sintácticas independientes.</caseText>
+						</case>
+						<content>  Los primeros diez números ordinales son:</content>
+					</p>
+					<example>
+						<table border="1">
+							<headerRow>
+								<headerCol>Cuenta</headerCol>
+								<headerCol>Números ordinales</headerCol>
+								<headerCol>Significado</headerCol>
+							</headerRow>
+							<row>
+								<col rowspan="1"><content>primero a décimo</content></col>
+								<col exampleLoc="qp/ordinalNumbers"/>
+								<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+							</row>
+						</table>
+					</example>
+					<p>
+						<content>Cuando los números ordinales en </content>
+						<langName/>
+						<content> modifican un número cardinal, como en </content>
+						<langData>los primeros veinte muchachos</langData>
+						<content>, ocurren </content>
+						<case element="qp" attr="ordinalPos">
+							<caseText value="before">antes</caseText>
+							<caseText value="after">después</caseText>
+							<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
+							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+							<caseText value="afterOrBoth">después o en ambos lados</caseText>
+							<caseText value="both">en ambos lados</caseText>
+							<caseText value="unknown">_______</caseText>
+						</case>
+						<content> del número cardinal.  </content>
+						<text show="swQPOrdinalEitherUnrestricted">
+							<content>Todos los números ordinales pueden ocurrir de cualquier lado del número cardinal.</content>
+						</text>
+						<content/>
+						<text show="swQPOrdinalEitherRestricted">
+							<content>Hay restricciones en cuanto a las cuales de los números ordinales puede ocurrir en cada lado del número cardinal.</content>
+						</text>
+						<content/>
+					</p>
+					<p>
+						<langName/>
+						<content> ejemplos del uso de números ordinales y de los modificantes que significan </content><gloss><content>'el último'</content></gloss><content> o </content><gloss><content>'el próximo'</content></gloss><content> dentro de una frase nominal incluyen: </content>
+					</p>
+					<example>
+						<interlinear exampleLoc="qp/ordinalExample"/>
+					</example>
+			</section3>
+
+		</section2>
+
+		<section2 id="sAdjQP">
+			<secTitle>Los cuantificadores</secTitle>
+		 <p>
+			 <content>Los cuantificadores pueden aparecer en varios lugares en una frase nominal. La mayoría de las idiomas tienen tres sistemas de cuantificadores además de números:</content>
+		 </p>
+		 <ul>
+			 <li>
+				 <content>ésos que significan </content>
+				 <langData>todos</langData>
+				 <content> o </content>
+				 <langData>no</langData>
+				 <content>, que modifican la frase nominal del conjunto,</content>
+			 </li>
+			 <li>
+				 <content>cuantificadores tales como  </content>
+				 <langData>alguno</langData>
+				 <content> o </content>
+				 <langData>ninguno</langData>
+				 <content>, que no ocurren con ningunos otros modificadores excepto adjetivos,</content>
+			 </li>
+			 <li>
+				 <content>y otros cuantificadores tales como </content>
+				 <langData>muchos</langData>
+				 <content>
+					 o </content>
+				 <langData>pocos.</langData>
+			 </li>
+		 </ul>
+		 <p>
+			 <content>Cada tipo será considerado en turno.
+			 </content>
+		 </p>
+		 <section3 id="sQPAll">
+			 <secTitle>Los cuantificadores que modifican la frase del nominal del conjunto</secTitle>
+			<p>
+				<content>Los cuantificadores que significan </content>
+				<langData>todos</langData>
+				<content> o </content>
+				<langData>no</langData>
+				<content> parecen ser una categoría propia.
+					Ocurren generalmente primero (o último) en una frase nominal, en una posición distinta de los otros cuantificadores pero en el mismo lugar que las palabras del grado como </content>
+				<langData>solamente</langData>
+				<content> y </content>
+				<langData>apenas</langData>
+				<content> (que pueden también actuar como marcadores del foco, para ser discutido en la sección </content>
+				<sectionRef sec="sFocus"/>
+				<content>) y las palabras que significan iguales que </content>
+				<langData>casi</langData>
+				<content> (que pueden también ocurrir con </content>
+				<langData>todos</langData>
+				<content>), así que les referiremos como palabras especiales del grado. Estas palabras modifican la frase nominal del conjunto, como en </content>
+				<langData>todos los cinco niños</langData>
+				<content>, </content>
+				<langData>solamente los tres niños de Susana</langData>
+				<content>, </content>
+				<langData>casi todos los niños jovenes de Juan</langData>
+				<content> y </content>
+				<langData>apenas este grupo de niños</langData>
+				<content>.  Observe que</content>
+				<langData>no</langData>
+				<content> puede ocurrir en lugar de o antes de las otras palabras especiales de grado, como en </content>
+				<langData>no los niños</langData>
+				<content>, </content>
+				<langData>no todos los cinco niños</langData>
+				<content>, </content>
+				<langData>no apenas estos muchos niños</langData>
+				<content> o </content>
+				<langData>no solamente los tres niños de Susana</langData>
+				<content>.</content>
+			</p>
+			<p>
+				<content/>
+				<langName/>
+				<content> utiliza el siguiente para expresar estas nociones:</content>
+			</p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>
+							<langName/>
+						</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="qp/all"/>
+						<col>
+							<content>todos</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="qp/almost"/>
+						<col>
+							<content>casi</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="qp/only"/>
+						<col>
+							<content>solamente o apenas</content>
+						</col>
+					</row>
+					<row show="swQPNPDegreeNotPosOnly">
+						<col exampleLoc="qp/not"/>
+						<col>
+							<content>no</content>
+						</col>
+					</row>
+				</table>
+			</example>
+			<p show="swQPNPDegreeNo">
+				<content>En </content>
+				<langName/>
+				<content>, éstos no se expresan como palabras separadas. En lugar, todos juntan a otra palabra en la frase nominal. Los elementos especiales positivos del grado son </content>
+				<case element="qp" attr="npDegreePosType">
+					<caseText value="proclitic">procliticos que juntan al frente de cualquiera palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">encliticos que juntan al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">clíticos que juntan al frente de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="prefix">prefijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="suffix">sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="affix">prefijos o sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+				</case>
+				<content>  Los elementos especiales negativos del grado son  </content>
+				<case element="qp" attr="npDegreeNegType">
+					<caseText value="proclitic">procliticos que juntan al frente de cualquiera palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">encliticos que juntan al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">cliticos que juntan al frente de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="prefix">prefijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="suffix">sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="affix">prefijos o sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+				</case>
+				<content/>
+				<langName/>
+				<content> ejemplos de la frases nominales positivas incluyen:</content>
+			</p>
+			<p show="swQPNPDegreeNoPosOnly">
+				<content>En </content>
+				<langName/>
+				<content>, los elementos especiales positivos del grado no se expresan como palabras separadas. En lugar, todos juntan a otra palabra en la frase nominal como </content>
+				<case element="qp" attr="npDegreePosType">
+					<caseText value="proclitic">procliticos que juntan al frente de cualquiera palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">encliticos que juntan al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">cliticos que juntan al frente de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="prefix">prefijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="suffix">sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="affix">prefijos o sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+				</case>
+				<content>No hay ninguna manera en la lengua de expresar el significado de </content><gloss><content>'no'</content></gloss><content>cuando está modificando una frase nominal del conjunto, sin embargo.   </content>
+				<langName/>
+				<content> ejemplos de la frases nominales positivas incluyen:</content>
+			</p>
+			<p show="swQPNPDegreeYesPos">
+				<content>En </content>
+				<langName/>
+				<content>, los elementos especiales positivos del grado se expresan como palabras separadas que modifiquen la frase del nominal del conjunto. Ocurren </content>
+				<case element="qp" attr="npDegreePos">
+					<caseText value="before">antes</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+					<caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+					<caseText value="beforeOrBoth">antes on en ambos lados</caseText>
+					<caseText value="afterOrBoth">después o en ambos lados</caseText>
+					<caseText value="both">en ambos lados</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> del resto de la frase nominal.  </content>
+				<text show="swQPNPDegreeEitherUnrestricted">
+					<content>Todas estas palabras pueden ocurrir de cualquier lado de la frase nominal.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeEitherRestricted">
+					<content>Hay restricciones en cuanto a las cuales de estas palabras puede ocurrir en cada lado de la frase nominal.  </content>
+				</text>
+				<content>Los elementos especiales negativos del grado, sin embargo, no se expresan como palabras separadas. En lugar, ellos juntan a otra palabra en la frase nominal. Estos elementos especiales negativos del grado son </content>
+				<case element="qp" attr="npDegreeNegType">
+					<caseText value="proclitic">procliticos que juntan al frente de cualquiera palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">encliticos que juntan al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">cliticos que juntan al frente de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="prefix">prefijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="suffix">sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="affix">prefijos o sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+				</case>
+				<content/>
+				<langName/>
+				<content> ejemplos de la frases nominales positivas incluyen:</content>
+			</p>
+			<p show="swQPNPDegreeYesPosOnly">
+				<content>En </content>
+				<langName/>
+				<content>, los elementos especiales positivos del grado se expresan como palabras separadas que modifiquen la frase del nominal del conjunto. Ocurren </content>
+				<case element="qp" attr="npDegreePos">
+					<caseText value="before">antes</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+					<caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+					<caseText value="beforeOrBoth">antes on en ambos lados</caseText>
+					<caseText value="afterOrBoth">después o en ambos lados</caseText>
+					<caseText value="both">en ambos lados</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> del resto de la frase nominal.  </content>
+				<text show="swQPNPDegreeEitherUnrestricted">
+					<content>Todas estas palabras pueden ocurrir de cualquier lado de la frase nominal.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeEitherRestricted">
+					<content>Hay restricciones en cuanto a las cuales de estas palabras puede ocurrir en cada lado de la frase nominal.  </content>
+				</text>
+				<content>No hay ninguna manera en la lengua de expresar el significado de </content><gloss><content>'no'</content></gloss><content>cuando está modificando una frase nominal del conjunto, sin embargo.  </content>
+				<langName/>
+				<content> ejemplos de la frases nominales positivas incluyen:</content>
+			</p>
+			<p show="swQPNPDegreeYesNeg">
+				<content>En </content>
+				<langName/>
+				<content>, los elementos especiales positivos del grado no se expresan como palabras separadas. En lugar, todos juntan a otra palabra en la frase nominal como  </content>
+				<case element="qp" attr="npDegreePosType">
+					<caseText value="proclitic">procliticos que juntan al frente de cualquiera palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">encliticos que juntan al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">cliticos que juntan al frente de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal.</caseText>
+					<caseText value="prefix">prefijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="suffix">sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+					<caseText value="affix">prefijos o sufijos que juntan al sustantivo principal de la frase nominal.</caseText>
+				</case>
+				<content>  Los elementos especiales negativos del grado en </content>
+				<langName/>
+				<content>, sin embargo, se expresan como palabras separadas que modifiquen la frase del nominal del conjunto. Ocurren </content>
+				<case element="qp" attr="npDegreePos">
+					<caseText value="before">antes</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+					<caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+					<caseText value="beforeOrBoth">antes on en ambos lados</caseText>
+					<caseText value="afterOrBoth">después o en ambos lados</caseText>
+					<caseText value="both">en ambos lados</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> del resto de la frase nominal.  </content>
+				<text show="swQPNPDegreeEitherUnrestricted">
+					<content>Todas estas palabras pueden ocurrir de cualquier lado de la frase nominal.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeEitherRestricted">
+					<content>Hay restricciones en cuanto a las cuales de estas palabras puede ocurrir en cada lado de la frase nominal.</content>
+				</text>
+				<content/>
+				<langName/>
+				<content> ejemplos de la frases nominales positivas incluyen:</content>
+			</p>
+			<p show="swQPNPDegreeYes">
+				<content>En </content>
+				<langName/>
+				<content>, éstos se expresan como palabras separadas que modifiquen la frase del nominal del conjunto. Ocurren </content>
+				<case element="qp" attr="npDegreePos">
+					<caseText value="before">antes</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+					<caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+					<caseText value="beforeOrBoth">antes on en ambos lados</caseText>
+					<caseText value="afterOrBoth">después o en ambos lados</caseText>
+					<caseText value="both">en ambos lados</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> delresto de la frase nominal.  </content>
+				<text show="swQPNPDegreeEitherUnrestricted">
+					<content>Todas estas palabras pueden ocurrir de cualquier lado de la frase nominal.</content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeEitherRestricted">
+					<content>Hay estricciones en cuanto a las cuales de estas palabras puede ocurrir en cada lado de la frase nominal.</content>
+				</text>
+				<content/>
+				<langName/>
+				<content> ejemplos de la frases nominales positivas incluyen:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="qp/example"/>
+			</example>
+			<p show="swQPNPDegreeNotPosOnly">
+				<content/>
+				<langName/>
+				<content> los ejemplos nominales negativos de la frase que no incluyen los elementos especiales positivos del grado son: </content>
+			</p>
+			<example show="swQPNPDegreeNotPosOnly">
+				<interlinear exampleLoc="qp/negExample"/>
+			</example>
+			<p show="swQPNPDegreeNegCooccurNo">
+				<content/>
+				<langName/>
+				<content> no permite que las palabras que significa </content>
+				<langData>no</langData>
+				<content> ocurrir con las palabras especiales positivas del grado en una sola frase nominal.</content>
+			</p>
+			<p show="swQPNPDegreeNegCooccurYes">
+				<content/>
+				<langName/>
+				<content> permite que las palabras que significa </content>
+				<langData>no</langData>
+				<content> ocurrir con las palabras especiales positivas del grado en una sola frase nominal.  Las palabras especiales negativas del grado ocurren </content>
+				<case element="qp" attr="npDegreeNegPos">
+					<caseText value="before">antes</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+					<caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+					<caseText value="beforeOrBoth">antes on en ambos lados</caseText>
+					<caseText value="afterOrBoth">después o en ambos lados</caseText>
+					<caseText value="both">en ambos lados</caseText>
+					<caseText value="unknown">_______</caseText>
+				</case>
+				<content> el resto de la frase nominal (incluyendo las palabras especiales positivas del grado).  </content>
+				<text show="swQPNPDegreeNegEitherUnrestricted">
+					<content>Todas estas palabras negativas pueden ocurrir de cualquier lado de la frase nominal.  </content>
+				</text>
+				<content/>
+				<text show="swQPNPDegreeNegEitherRestricted">
+					<content>Hay restricciones en cuanto a las cuales de estas palabras negativas puede ocurrir en cada lado de la frase nominal.  </content>
+				</text>
+				<content/>
+				<langName/>
+				<content> ejemplos de las frases nominales negativos que incluyen las palabras especiales positivas del grado son:</content>
+			</p>
+			<p show="swQPNPDegreeNotYesAndNegCooccurNo">
+				<content/>
+				<langName/>
+				<content> ejemplos de las frases nominales negativos que incluyen las palabras especiales positivas del grado son:</content>
+			</p>
+			<example show="swQPNPDegreeNotYesAndNegCooccurNo">
+				<interlinear exampleLoc="qp/negCooccurExample"/>
+			</example>
+			<p show="swQPNPDegreeNotPosOnly">
+				<content>Véase la sección </content>
+				<sectionRef sec="sNegNominal"/>
+				<content> para ejemplos de los elementos negativos usados en oraciones y la discusión de las construcciones de la negación en </content>
+				<langName/>
+				<content>.</content>
+			</p>
+		 </section3>
+			<section3 id="sQPDeterminers">
+				<secTitle>Los cuantificadores que no ocurren con los determinadores</secTitle>
+				<p>
+					<content>El segundo grupo incluye cuantificadores como </content>
+					<langData>alguno</langData>
+					<content>, </content>
+					<langData>cada</langData>
+					<content>, y  </content>
+					<langData>ninguno</langData>
+					<content>, que no permiten ningunos otros artículos, demonstratives o poseedores en la frase nominal. Los ejemplos españoles en frases incluyen </content>
+					<langData>algunos niños tristes</langData>
+					<content>, </content>
+					<langData>casi cada niña que vea</langData>
+					<content> y </content>
+					<langData>ningunos perros negros</langData>
+					<content>.</content>
+				</p>
+				<p show="swQPDeterminerNoNotPosOnly">
+					<content/>
+					<langName/>
+					<content> no tiene un grupo separado de los cuantificadores que actúan como el único determinador en la frase nominal. La negación de una frase nominal es expresada solamente por los elementos especiales del grado. Las nociones positivas de </content>
+					<langData>alguno</langData>
+					<content> y </content>
+					<langData>cada</langData>
+					<content> son como </content>
+					<langData>todos</langData>
+					<content> discutido arriba o como los cuantificadores que pueden ocurrir con los artículos, los demonstratives y/o los poseedores que se tratarán en la sección siguiente.</content>
+				</p>
+				<p show="swQPDeterminerNoPosOnly">
+					<content/>
+					<langName/>
+					<content> no tiene un grupo separado de los cuantificadores que actúan como el único determinador en la frase nominal.  Apenas pues no hay ninguna manera de expresar el elemento especial negativo del grado, no hay ninguna manera de expresar </content><gloss><content>'ninguno'</content></gloss><content> cuando modificando de una frase nominal en esta lengua. Las nociones positivas de </content>
+					<langData>alguno</langData>
+					<content> y </content>
+					<langData>cada</langData>
+					<content> son como </content>
+					<langData>todos</langData>
+					<content> discutido arriba o como los cuantificadores que pueden ocurrir con los artículos, los demonstratives y/o los poseedores que se tratarán en la sección siguiente.</content>
+				</p>
+				<p show="swQPDeterminerYesSomeNotPosOnly">
+					<content/>
+					<langName/>
+					<content> no tiene un grupo separado de los cuantificadores negativos que actúan como el único determinador en la frase nominal. La negación de una frase nominal es expresada por los elementos especiales del grado solamente. </content>
+					<langName/>
+					<content> tiene los cuantificadores positivos siguientes que actúan como el único determinador en la frase nominal: </content>
+				</p>
+				<p show="swQPDeterminerYesSomePosOnly">
+					<content/>
+					<langName/>
+					<content> no tiene un grupo separado de los cuantificadores negativos que actúan como el único determinador en la frase nominal, apenas pues no había ninguna manera de expresar el elemento especial negativo 'del grado. </content>
+					<langName/>
+					<content> tiene los cuantificadores positivos siguientes que actúan como el único determinador en la frase nominal:</content>
+				</p>
+				<p show="swQPDeterminerYesNo">
+					<content/>
+					<langName/>
+					<content> no tiene un grupo separado de los cuantificadores positivos que actúan como el único determinador en la frase nominal. Las nociones positivas de </content>
+					<langData>alguno</langData>
+					<content> y </content>
+					<langData>cada</langData>
+					<content> son como </content>
+					<langData>todos</langData>
+					<content> discutido arriba o como los cuantificadores que pueden ocurrir con los artículos, los demonstratives y/o los poseedores que se tratarán en la sección siguiente.   </content>
+					<langName/>
+					<content> tiene los cuantificadores negativos siguientes que actúan como el único determiner en la frase nominal: </content>
+				</p>
+				<p show="swQPDeterminerYes">
+					<content/>
+					<langName/>
+					<content> tiene los cuantificadores positivos y negativos siguientes que actúan como el único determiner en la frase nominal: </content>
+				</p>
+				<example show="swQPDeterminerNotNo">
+					<table border="1">
+						<headerRow>
+							<headerCol>Tipo</headerCol>
+							<headerCol>Determinadores del cuantificador</headerCol>
+							<headerCol>Significado</headerCol>
+						</headerRow>
+						<row show="swQPDeterminerYesOrYesSome">
+							<col rowspan="1">
+								<content>positivo</content>
+							</col>
+							<col exampleLoc="qp/determinerExample"/>
+							<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+						</row>
+						<row show="swQPDeterminerYesOrYesNo">
+							<col rowspan="1">
+								<content>negativo</content>
+							</col>
+							<col exampleLoc="qp/determinerNegExample"/>
+							<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+						</row>
+					</table>
+				</example>
+				<p show="swQPDeterminerNotNo">
+					<content>Estos determinadores del cuantificador ocurren  </content>
+					<case element="qp" attr="determinerPos">
+						<caseText value="before">antes</caseText>
+						<caseText value="after">después</caseText>
+						<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+						<caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+						<caseText value="beforeOrBoth">antes on en ambos lados</caseText>
+						<caseText value="afterOrBoth">después o en ambos lados</caseText>
+						<caseText value="both">en ambos lados</caseText>
+						<caseText value="unknown">_______</caseText>
+					</case>
+					<content> del sustantivo principal.  </content>
+					<text show="swQPDeterminerEitherUnrestricted">
+						<content>Todos los determinadores del cuantificador pueden ocurrir de cualquier lado del sustantivo.</content>
+					</text>
+					<content/>
+					<text show="swQPDeterminerEitherRestricted">
+						<content>Hay restricciones en cuanto a las cuales de los determinadores del cuantificador  puede ocurrir en cada lado del sustantivo.</content>
+					</text>
+					<content/>
+				</p>
+				<p show="swQPDeterminerYesOrYesSome">
+					<content/>
+					<langName/>
+					<content> ejemplos de los determinadores positivos del cuantificador en frases nominales completas incluyen: </content>
+				</p>
+				<example show="swQPDeterminerYesOrYesSome">
+					<interlinear exampleLoc="qp/determinerNPExample"/>
+				</example>
+				<p show="swQPDeterminerYesOrYesNo">
+					<content/>
+					<langName/>
+					<content> ejemplos de los determinadores negativas del cuantificador en frases nominales completas incluyen:</content>
+				</p>
+				<example show="swQPDeterminerYesOrYesNo">
+					<interlinear exampleLoc="qp/determinerNegNPExample"/>
+				</example>
+				<p show="swQPDeterminerYesOrYesNo">
+					<content>Véase la sección </content>
+					<sectionRef sec="sNegNominal"/>
+					<content> para ejemplos de los elementos negativos usados en oraciones y la discusión de las construcciones de la negación en </content>
+					<langName/>
+					<content>.</content>
+				</p>
+			</section3>
+			  <section3 id="sQPOtherQuantifiers">
+				 <secTitle>Otros cuantificadores y la palabras del grado</secTitle>
+				 <p>
+					 <content>Otros cuantificadores, como </content>
+					 <langData>muchos</langData>
+					 <content>, </content>
+					 <langData>mucho</langData>
+					 <content>, y </content>
+					 <langData>poco</langData>
+					 <content>, vienen en una diversa posición en la frase nominal. En español, esto está después de un artículo, demostrativo o de poseedor pronominal y antes del sustantivo, como en </content>
+					 <langData>los muchos perros negros de Juan</langData>
+					 <content> o </content><langData>su pocos libros</langData><content>.
+						 Además, estos cuantificadores se pueden modificar por palabras del grado tales como  </content>
+					 <langData>muy</langData>
+					 <content> y </content>
+					 <langData>tan</langData>
+					 <content>, como en </content>
+					 <langData>muchisimos perros</langData>
+					 <content> o </content>
+					 <langData>muy poco comida</langData>
+					 <content>.</content>
+				 </p>
+				 <p>
+					 <content/>
+					 <langName/>
+					 <content> tiene los cuantificadores siguientes de este tipo:</content>
+				 </p>
+				 <example>
+					 <table border="1">
+						 <headerRow>
+							 <headerCol>Cuantificadores</headerCol>
+							 <headerCol>Significado</headerCol>
+						 </headerRow>
+						 <row>
+							 <col exampleLoc="qp/quantifierExample"/>
+							 <col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+						 </row>
+					 </table>
+				 </example>
+				 <p show="swQPDegreeNo">
+					 <content/>
+					 <langName/>
+					 <content> no tiene ninguna palabras del grado que modifiquen los cuantificadores.</content>
+				 </p>
+				 <p show="swQPDegreeYes">
+					 <content/>
+					 <langName/>
+					 <content> tiene palabras del grado que puedan modificar los cuantificadores. Estas palabras del grado ocurren </content>
+					 <case element="qp" attr="degreePos">
+						 <caseText value="before">antes</caseText>
+						 <caseText value="after">después</caseText>
+						 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+						 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+						 <caseText value="beforeOrBoth">antes on en ambos lados</caseText>
+						 <caseText value="afterOrBoth">después o en ambos lados</caseText>
+						 <caseText value="both">en ambos lados</caseText>
+						 <caseText value="unknown">_______</caseText>
+					 </case>
+					 <content> del cuantificador.  </content>
+					 <text show="swQPDegreeEitherUnrestricted">
+						 <content>Todas las palabras del grado pueden ocurrir de cualquier lado del cuantificador.</content>
+					 </text>
+					 <content/>
+					 <text show="swQPDegreeEitherRestricted">
+						 <content>Hay las restricciones en cuanto a las cuales de las palabras del grado puede ocurrir en cada lado del cuantificador.</content>
+					 </text>
+					 <content/>
+					 <langName/>
+					 <content> ejemplos incluyen:</content>
+				 </p>
+				 <example show="swQPDegreeYes">
+					 <interlinear exampleLoc="qp/degreeExample"/>
+				 </example>
+		 </section3>
+
+	 </section2>
+	 <section2 id="sAdjArtDem">
+		 <secTitle>Los artículos y demonstrativos</secTitle>
+		 <p>
+			 <content>En español, los artículos incluyen </content>
+			 <langData>un</langData>
+			 <content>, </content>
+			 <langData>una</langData>
+			 <content>, </content>
+			 <langData>el</langData>
+			 <content> y </content>
+			 <langData>la</langData>
+			 <content>.  Los demonstrativos adjetivos españoles incluyen </content>
+			 <langData>esto</langData>
+			 <content>, </content>
+			 <langData>ese</langData>
+			 <content>, </content>
+			 <langData>estos</langData>
+			 <content>, y </content>
+			 <langData>esos</langData>
+			 <content>.  Algunos ejemplos simples son: </content>
+			 <langData>un libro, una manzana, el libro, los libros, esta manzana</langData>
+			 <content> y </content>
+			 <langData>esos libros.</langData>
+			 <content/>
+		 </p>
+		 <p>
+			 <content>Algunos idiomas tienen solamente un grupo, los artículos o los demonstrativos. Un numero pequeño de idiomas pueden no tener ningún tipo expresado como palabras separadas. </content>
+		 </p>
+		 <p>
+			 <content/>
+			 <langName/>
+			 <content/>
+			 <case element="np" attr="artAndDem">
+				 <caseText value="no"> no tiene los artículos ni los demonstrativos que se observan como palabras separadas.</caseText>
+				 <caseText value="article"> tiene solamente artículos que se observen como palabras separadas, ningunos demonstrativos.</caseText>
+				 <caseText value="demonstrative"> tiene solamente demonstrativos que se observen como palabras separadas, ningunos artículos.</caseText>
+				 <caseText value="both"> tiene los artículos y demonstrativos que se observan como palabras separadas.</caseText>
+			 </case>
+			 <content/>
+			 <text show="swNPArtAndOrDem">
+				 <content> Los </content>
+				 <case element="np" attr="artAndDem">
+					 <caseText value="article">artículos</caseText>
+					 <caseText value="demonstrative">demonstrativos</caseText>
+					 <caseText value="both">artículos y demonstrativos</caseText>
+				 </case>
+
+				 <text show="swNPArtCaseNo">
+					 <content>no </content>
+				 </text>
+				 <content>se marcan para el caso.</content>
+			 </text>
+			 <content/>
+		 </p>
+		 <p show="swNPArt">
+			 <content>Los ejemplos de artículos en </content>
+			 <langName/>
+			 <content> incluyen:</content>
+		 </p>
+		 <example show="swNPArt">
+			<table border="1">
+  <headerRow>
+	  <headerCol>Artículos</headerCol>
+	  <headerCol>Significado</headerCol>
+  </headerRow>
+				<row>
+					<col exampleLoc="np/articleExample"/>
+					<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+				</row>
+			</table>
+		 </example>
+		 <p show="swNPDem">
+			 <content>Los ejemploe de demonstrativos en </content>
+			 <langName/>
+			 <content> incluyen:</content>
+		 </p>
+		 <example show="swNPDem">
+			 <table border="1">
+				 <headerRow>
+					 <headerCol>Demonstrativos</headerCol>
+					 <headerCol>Significado</headerCol>
+				 </headerRow>
+				 <row>
+					 <col exampleLoc="np/demonstrativeExample"/>
+					 <col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+				 </row>
+			 </table>
+		 </example>
+		 <p show="swNPArtAndOrDem"><content>Véase la sección </content><sectionRef sec="sNPArtDem"/><content> para los ejemplos en frases nominales.</content></p>
+	 </section2>
+
+	</section1>
+	<showWhen id="swAdjPModifiersNo">
+		<whenValue element="adjp" attr="modifiers" value="no"/>
+	</showWhen>
+	<showWhen id="swAdjPModifiersYesDegree">
+		<whenValue element="adjp" attr="modifiers" value="yes"/>
+	</showWhen>
+	<showWhen id="swAdjPModifiersYesManner">
+		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
+	</showWhen>
+	<showWhen id="swAdjPDegreeEitherUnrestricted">
+		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+		<and/>
+		<whenValue element="adjp" attr="degreeEither" value="unrestricted"/>
+		<and/>
+		<whenValue element="adjp" attr="degreePos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="adjp" attr="degreePos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swAdjPDegreeEitherRestricted">
+		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+		<and/>
+		<whenValue element="adjp" attr="degreeEither" value="restricted"/>
+		<and/>
+		<whenValue element="adjp" attr="degreePos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="adjp" attr="degreePos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swAdjPMannerEitherUnrestricted">
+		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
+		<and/>
+		<whenValue element="adjp" attr="mannerEither" value="unrestricted"/>
+		<and/>
+		<whenValue element="adjp" attr="mannerPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="adjp" attr="mannerPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swAdjPMannerEitherRestricted">
+		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
+		<and/>
+		<whenValue element="adjp" attr="mannerEither" value="restricted"/>
+		<and/>
+		<whenValue element="adjp" attr="mannerPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="adjp" attr="mannerPos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPOrdinalEitherUnrestricted">
+			<whenValue element="qp" attr="ordinalEitherRestricted" value="unrestricted"/>
+			<and/>
+			<whenValue element="qp" attr="ordinalPos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="ordinalPos" value="after" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="ordinalPos" value="unknown" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPOrdinalEitherRestricted">
+			<whenValue element="qp" attr="ordinalEitherRestricted" value="restricted"/>
+			<and/>
+			<whenValue element="qp" attr="ordinalPos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="ordinalPos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerNo">
+			<whenValue element="qp" attr="determiner" value="no"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerNoNotPosOnly">
+			<whenValue element="qp" attr="determiner" value="no"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerNoPosOnly">
+			<whenValue element="qp" attr="determiner" value="no"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="no"/>
+			<or/>
+			<whenValue element="qp" attr="determiner" value="no"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="no"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerYes">
+			<whenValue element="qp" attr="determiner" value="yes"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerYesSome">
+			<whenValue element="qp" attr="determiner" value="yesSome"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerYesSomeNotPosOnly">
+			<whenValue element="qp" attr="determiner" value="yesSome"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerYesSomePosOnly">
+			<whenValue element="qp" attr="determiner" value="yesSome"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="no"/>
+			<or/>
+			<whenValue element="qp" attr="determiner" value="yesSome"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="no"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerYesNo">
+			<whenValue element="qp" attr="determiner" value="yesNo"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerNotNo">
+			<whenValue element="qp" attr="determiner" value="no" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerYesOrYesSome">
+			<whenValue element="qp" attr="determiner" value="yes"/>
+			<or/>
+			<whenValue element="qp" attr="determiner" value="yesSome"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerYesOrYesNo">
+			<whenValue element="qp" attr="determiner" value="yes"/>
+			<or/>
+			<whenValue element="qp" attr="determiner" value="yesNo"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerEitherUnrestricted">
+			<whenValue element="qp" attr="determiner" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="determinerEitherRestricted" value="unrestricted"/>
+			<and/>
+			<whenValue element="qp" attr="determinerPos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="determinerPos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPDeterminerEitherRestricted">
+			<whenValue element="qp" attr="determiner" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="determinerEitherRestricted" value="restricted"/>
+			<and/>
+			<whenValue element="qp" attr="determinerPos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="determinerPos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPDegreeNo">
+			<whenValue element="qp" attr="degree" value="no"/>
+		</showWhen>
+		<showWhen id="swQPDegreeYes">
+			<whenValue element="qp" attr="degree" value="yes"/>
+		</showWhen>
+		<showWhen id="swQPDegreeEitherUnrestricted">
+			<whenValue element="qp" attr="degree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="degreeEitherRestricted" value="unrestricted"/>
+			<and/>
+			<whenValue element="qp" attr="degreePos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="degreePos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPDegreeEitherRestricted">
+			<whenValue element="qp" attr="degree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="degreeEitherRestricted" value="restricted"/>
+			<and/>
+			<whenValue element="qp" attr="degreePos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="degreePos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeNo">
+			<whenValue element="qp" attr="npDegree" value="no"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeNoPosOnly">
+			<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeYesPosOnly">
+			<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeNotPosOnly">
+			<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeYes">
+			<whenValue element="qp" attr="npDegree" value="yes"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeYesPos">
+			<whenValue element="qp" attr="npDegree" value="yesPos"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeYesNeg">
+			<whenValue element="qp" attr="npDegree" value="yesNeg"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeEitherUnrestricted">
+			<whenValue element="qp" attr="npDegree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeEitherRestricted" value="unrestricted"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeEitherRestricted">
+			<whenValue element="qp" attr="npDegree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeEitherRestricted" value="restricted"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeNegEitherUnrestricted">
+			<whenValue element="qp" attr="npDegree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegEitherRestricted" value="unrestricted"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegPos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegPos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeNegEitherRestricted">
+			<whenValue element="qp" attr="npDegree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegEitherRestricted" value="restricted"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegPos" value="before" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegPos" value="after" negateValue="yes"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeNegCooccurNo">
+			<whenValue element="qp" attr="npDegree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegCooccur" value="no"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeNegCooccurYes">
+			<whenValue element="qp" attr="npDegree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegCooccur" value="yes"/>
+		</showWhen>
+		<showWhen id="swQPNPDegreeNotYesAndNegCooccurNo">
+			<whenValue element="qp" attr="npDegree" value="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegreeNegCooccur" value="yes"/>
+			<or/>
+			<whenValue element="qp" attr="npDegree" value="yes" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
+			<and/>
+			<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+		</showWhen>
+	<showWhen id="swNPDemOrArtBefore">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="artBothCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPDemOrArtAfter">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="artBothCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="before" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPDemAndOrArtCooccurNoBefore">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="after" negateValue="yes"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPDemBefore">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="after" negateValue="yes"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPDemAfter">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="before" negateValue="yes"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="before" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtBefore">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="after" negateValue="yes"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAfter">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="before" negateValue="yes"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="before" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAndOrDem">
+		<whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPArt">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+	</showWhen>
+	<showWhen id="swNPDem">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+	</showWhen>
+	<showWhen id="swNPArtCaseNo">
+		<whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="artCase" value="no"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArt">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArtPosEitherUnrestricted">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="artEither" value="unrestricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArtPosEitherRestricted">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="artEither" value="restricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArtPosBothSidesRequiredMass">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="artRequired" value="mass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemArtPosBothSidesRequiredYes">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="artRequired" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDem">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDemPosEitherUnrestricted">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demEither" value="unrestricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDemPosEitherRestricted">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demEither" value="restricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDemPosBothSidesRequiredMass">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demRequired" value="mass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemDemPosBothSidesRequiredYes">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demRequired" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNo">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="artBothCooccur" value="no"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNoPosEitherUnrestricted">
+		<whenValue element="np" attr="artBothCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtEither" value="unrestricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNoPosEitherRestricted">
+		<whenValue element="np" attr="artBothCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtEither" value="restricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNoRequiredMass">
+		<whenValue element="np" attr="artBothCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurNoRequiredYes">
+		<whenValue element="np" attr="artBothCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtRequired" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYes">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesDemPosEitherUnrestricted">
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemEither" value="unrestricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesDemPosEitherRestricted">
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemEither" value="restricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMass">
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemRequired" value="mass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredYes">
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemRequired" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesArtPosEitherUnrestricted">
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtEither" value="unrestricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesArtPosEitherRestricted">
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtEither" value="restricted"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMass">
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtRequired" value="mass"/>
+	</showWhen>
+	<showWhen id="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredYes">
+		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtRequired" value="yes"/>
+	</showWhen>
+
+</portion>

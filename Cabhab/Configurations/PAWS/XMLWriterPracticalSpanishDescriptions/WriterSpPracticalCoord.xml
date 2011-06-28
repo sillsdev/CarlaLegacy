@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+  <section1 id="sCoord">
+	  <secTitle>Las construcciones de la coordinación</secTitle>
+	<p>
+		<content>Esta sección considera construcciones básicas de la coordinación donde hay una conjunción abierta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación en el nivel de la oración y en la frase de verbo, la frase nominal, la frase preposicional y/o posposicional, y la frase del adjetivo.</content></p>
+	  <p><comment>Si su idioma tiene clases más complejas de construcciones de la coordinación, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, o appositivos y comparativos, usted puede agregar la descripción y ejemplos como apropiados en esta sección.</comment></p>
+	  <p><content>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son </content><langData>y</langData><content>, </content><langData>o</langData><content>, </content><langData>pero</langData><content> y </content><langData>y/o</langData>
+		  <content>.  Además, hay las construcciones de la coordinación que requieren una conjunción inicial, como </content><langData>o...o</langData><content> y </content><langData>ni...ni</langData><content> construcciones. Algunas idiomas también utilizan un significado de la palabra  </content><langData>con</langData><content> como conjunción entre las frases nominales. </content>
+	</p>
+			<p>
+				<content/>
+				<langName/>
+				<content> utiliza las conjunciones siguientes entre las oraciones conjuntivas:</content>
+			</p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>
+							<langName/>
+						</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="coord/and"/>
+						<col>
+							<content>y</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/or"/>
+						<col>
+							<content>o</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/nor"/>
+						<col>
+							<content>ni</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/andOr"/>
+						<col>
+							<content>y/o</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/but"/>
+						<col>
+							<content>pero</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/with"/>
+						<col>
+							<content>con</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/other"/>
+						<col>
+							<content>cualesquiera otros</content>
+						</col>
+					</row>
+				</table>
+			</example>
+			<p>
+				<content/>
+				<langName/>
+				<content> utiliza las conjunciones siguientes inicialmente antes de la primera oración conjuntiva en </content><langData>o...o</langData><content> u </content><langData>ni...ni</langData><content> construcciones:</content>
+			</p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>
+							<langName/>
+						</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="coord/either"/>
+						<col>
+							<content>o (cualquiera)</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/neither"/>
+						<col>
+							<content>ni (unos)</content>
+						</col>
+					</row>
+				</table>
+			</example>
+		<section2 id="sCoordSentence">
+			<secTitle>La coordinación del nivel de la oración</secTitle>
+			<p>
+				<content>La coordinación del nivel de la oración incluye la mayoría de los tipos de oraciones, incluyendo declarativos y preguntas. Algunos ejemplos españoles son: </content>
+  </p>
+			<ol>
+				<li>
+					<content>Juan fue a la oficina esta mañana pero él no volvió.</content>
+				</li>
+				<li>
+					<content>¿Cuándo hizo el correo viene y dónde está mi paquete? </content>
+				</li>
+				<li>
+					<content>O vendré a la fiesta o enviaré a mi hermana.</content>
+				</li>
+			</ol>
+			<p>
+				<content> Los ejemplos de la coordinación del nivel de la oración en </content>
+					<langName/><content> incluyen: </content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/sentExample"/>
+			</example>
+			<p><content>Véase la sección </content><sectionRef sec="sAdvCl"/><content> para ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</content></p>
+</section2>
+		<section2 id="sCoordVP">
+			<secTitle>La coordinación de la frase de verbo</secTitle>
+			<p>
+				<content>La coordinación de la frase de verbo se ejemplifica en las oraciones españolas siguientes:  </content>
+ </p>
+			<ol>
+				<li>
+					<content>Guillermo corrió la carrera y ganó el premio.</content>
+				</li>
+				<li>
+					<content>Susana irá a la fiesta o enviará a su hermana.</content>
+				</li>
+				<li>
+					<content>Susana ni irá a la fiesta ni enviaré a su hermana.</content>
+				</li>
+			</ol>
+			<p>
+				<content> Los ejemplos de la coordinación de la frase de verbo en </content><langName/><content> incluyen: </content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/vpExample"/>
+			</example>
+</section2>
+		<section2 id="sCoordDP">
+			<secTitle>La coordinación de la frase nominal</secTitle>
+			<p>
+				<content>Las frases nominales coordinadas pueden aparecer generalmente en todas las posiciones donde una frase nominal regular puede ocurrir, por ejemplo temas, objetos, objetos indirectos, y objetos de preposiciones. La coordinación de la frase nominal se ejemplifica en las oraciones españolas siguientes: </content>
+</p>
+			<ol>
+				<li>
+					<content>Guillermo corrió en el maratón de Boston y las Olimpiadas. </content>
+				</li>
+				<li>
+					<content>Mi hermana o yo estará allí.</content>
+				</li>
+				<li>
+					<content>Ni mi hermana ni yo estará allí.</content>
+				</li>
+				<li>
+					<content>Vendré al ensayo pero no a la cena.</content>
+				</li>
+				<li>
+					<content>Vendré a la boda y/o la recepción.</content>
+				</li>
+			</ol>
+			<p>
+				<content>Los ejemplos de la coordinación de la frase nominal en </content><langName/><content> incluyen: </content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/dpExample"/>
+			</example>
+		</section2>
+	  <section2 id="sCoordPP">
+		  <secTitle>
+		  <case  element="pp" attr="pPos">
+				<caseText value="before">La coordinación de la frase preposicional</caseText>
+				<caseText value="after">La coordinación de la frase posposcional</caseText>
+				<caseText value="both">La coordinación de la frase preposicional y/o posposcional</caseText>
+				<caseText value="unknown">La coordinación de la frase preposicional y/o posposcional</caseText>
+			</case>
+			</secTitle>
+		  <p>
+			  <content>Los ejemplos españoles de la coordinación de la frase preposicional incluyen: </content>
+		  </p>
+		  <ol>
+			  <li>
+				  <content>Bill corrió a través del bosque y sobre el puente.</content>
+			  </li>
+			  <li>
+				  <content>Vendré con usted al ensayo pero no a su hogar.</content>
+			  </li>
+			  <li>
+				  <content>Vendré o a la boda o a la recepción.</content>
+			  </li>
+		  </ol>
+		  <p>
+				<content>Los ejemplos de </content><langName/><content> con la coordinación de las frases </content>
+			  <case element="pp" attr="pPos">
+				  <caseText value="before">preposicionales</caseText>
+				  <caseText value="after">posposctionales</caseText>
+				  <caseText value="both">preposicionales o posposicionales</caseText>
+				  <caseText value="unknown">preposicionales o posposicionales</caseText></case>
+			  <content> incluyen:</content>
+		  </p>
+		  <example>
+			  <interlinear exampleLoc="coord/coordppExample"/>
+		  </example>
+	  </section2>
+		<section2 id="sCoordAdj">
+			<secTitle>La coordinación de la frase del adjetivo</secTitle>
+			<p>
+				<content>La coordinación de la frase del adjetivo se ejemplifica en las oraciones españolas siguientes: </content>
+</p>
+			<ol>
+				<li>
+					<content>El perro blanco y negro pertenece a mi hijo.</content>
+				</li>
+				<li>
+					<content>El lesión en su pierna es muy feo y doloroso y peligroso.</content>
+				</li>
+				<li>
+					<content>Mi hermana quiere una vela roja o azul.</content>
+				</li>
+			</ol>
+			<p>
+				<content>Los ejemplos de la coordinación de la frase del adjetivo en </content><langName/><content> incluyen: </content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/adjExample"/>
+			</example>
+</section2>
+  </section1>
+</portion>

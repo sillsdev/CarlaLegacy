@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+  <section1 id="sFocus">
+	  <secTitle>Las construcciones del foco y del asunto</secTitle>
+<p><content>
+	Esta sección considera dos tipos de construcciones que dibujen la atención a un elemento particular. Puesto que los asuntos ocurren fuera de construcciones del foco, serán considerados primero. El ejemplo siguiente demuestra que una sola oración puede tener un asunto y una frase enfocada.
+	En este caso, el asunto </content><langData>Guillermo</langData><content> es introducido por el marcador del asunto </content><langData>en cuanto a</langData><content>,
+		después la frase enfocada </content><langData>el fútbol</langData><content>, que se ha movido fuera de su lugar regular en la oración sigue.</content></p>
+<ul>
+<li>
+	<content>En cuanto a Guillermo, el fútbol él juega ___ fantástico. </content>
+</li></ul>
+<section2 id="sFocusTopics">
+	<secTitle>Los asuntos y los marcadores del asunto</secTitle>
+<p><content>
+	Según lo definido aquí, las construcciones del asunto consisten en una frase del asunto seguida por una oración o una pregunta completa y fijan generalmente aparte por la puntuación. Ciertos marcadores se pueden utilizar para fijar de asuntos, según las indicaciones de los ejemplos españoles siguientes:</content>
+	</p>
+			<ol>
+				<li>
+					<content>En cuanto a Juan, pienso que él hará a un buen doctor.</content>
+				</li>
+				<li>
+					<content>El discurso de Juliana, ¿dónde es ella?</content>
+				</li>
+			</ol>
+	<p show="swTopicNo"><langName/><content> no permite frases del asunto. </content></p>
+	<p show="swTopicYes"><langName/><content> tiene frases del asunto que ocurren </content>
+			<case element="focus" attr="topicPos">
+				<caseText value="before">antes</caseText>
+				<caseText value="after">después</caseText>
+				<caseText value="unknown">_______</caseText>
+			</case>
+		<content> de la oración o la pregunta principal. Algunos ejemplos incluyen:</content>
+</p>
+			<example show="swTopicYes">
+				<interlinear exampleLoc="focus/topicExample"/>
+			</example>
+	<p show="swTopicYes"><content>En </content><langName/><content>, la frase del asunto </content>
+<case element="focus" attr="topicMarker">
+	<caseText value="no">no es marcado por un marcador del asunto. Solamente la posición en la oración y puntuación distingue posiblemente la frase del asunto.</caseText>
+	<caseText value="yesWord">es marcado por ciertas palabras o frases.</caseText>
+	<caseText value="yesClitic">es marcado por uno o más clíticos que juntan a la frase del asunto.</caseText>
+	<caseText value="yesAffix">es marcado por uno o más afijos que juntan a la frase del asunto.</caseText>
+</case>
+		<text show="swTopicYesWord"><content>Los marcadores del asunto ocurren </content>
+<case element="focus" attr="topicMarkerPos">
+	<caseText value="before">antes de la frase sí mismo del asunto.</caseText>
+	<caseText value="after">después de la frase sí mismo del asunto.</caseText>
+	<caseText value="either">de cualquier lado de la frase sí mismo del asunto, pero no en ambos lados en la misma oración.</caseText>
+	<caseText value="both">en ambos lados de la frase del asunto sí mismo.</caseText>
+<caseText value="unknown">_______.</caseText>
+</case>
+			<content> El marcador del asunto es </content><case element="focus" attr="topicMarkerRequired">
+				<caseText value="no">opcional</caseText>
+				<caseText value="yes">requerido</caseText></case>
+			<content> siempre que haya una frase del asunto.</content>
+</text>
+		<text show="swTopicYesWordEitherNo"><content>Hay restricciones en cuanto a los cuales marcadores del asunto que pueden ocurrir en cada lado de la frase del asunto.</content></text>
+		<text show="swTopicYesWordEitherYes"><content>Todos los marcadores del asunto pueden ocurrir de cualquier lado de la frase del asunto.</content></text>
+</p>
+<example show="swTopicMarkerYes">
+	<table border="1">
+<headerRow>
+	<headerCol>Marcadores del asunto</headerCol>
+	<headerCol>Significado o restricciones</headerCol>
+</headerRow>
+	<row>
+		<col exampleLoc="focus/topicMarkerExample"></col>
+		<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+	</row>
+</table>
+</example>
+</section2>
+
+<section2 id="sFocusFocus">
+	<secTitle>Las frases enfocadas y los marcadores del foco</secTitle>
+	<p><content>En contraste con asuntos, mientras que las construcciones del foco también tienen un elemento afrontado que se pueda ser marcado por la puntuación, la frase en foco se mueve desde su posición normal en la oración, dejando un boquete.
+	Ciertos marcadores,  como </content><langData>solamente</langData><content> en español, se pueden utilizar para marcar la frase enfocada. Las construcciones del foco no se utilizan con frecuencia en idiomas del orden SVO, puesto que el tema es generalmente en foco y es ya primer en la orden normal.
+		Las idiomas con otras órdenes de la palabra, tales como idiomas del orden VSO, pueden hacer el uso extenso de construcciones del foco. Los ejemplos españoles de las construcciones del foco incluyen:</content></p>
+			<ol>
+				<li>
+					<content>De las muchachas, tengo gusto  __.</content>
+				</li>
+				<li>
+					<content>El fútbol, Guillermo juega __ fantástico.</content>
+				</li>
+				<li>
+					<content>A solamente ese muchacho, Juan golpeó  __ .</content>
+				</li>
+			</ol>
+	<p show="swFocusNo"><langName/><content> no permite que una frase del foco sea movida antes o después del resto de la oración de su posición normal. </content></p>
+<p show="swFocusYes"><langName/><content> tiene las frases de enfocado que ocurren </content>
+			<case element="focus" attr="focusPos">
+				<caseText value="before">antes</caseText>
+				<caseText value="after">después</caseText>
+				<caseText value="unknown">_______</caseText>
+			</case>
+	<content> del resto de la oración. Algunos ejemplos incluyen:</content>
+</p>
+			<example show="swFocusYes">
+				<interlinear exampleLoc="focus/focusExample"/>
+			</example>
+<p show="swFocusYes"><content>En </content><langName/><content>, la frase enfocada </content>
+<case element="focus" attr="focusMarker">
+	<caseText value="no">no es marcado por un marcador del foco. Solamente la posición en la oración y posiblemente puntuación distingue la frase enfocada.</caseText>
+	<caseText value="yesWord">es marcado por ciertas palabras o frases. </caseText>
+	<caseText value="yesClitic">es marcado por uno o más clíticos que juntan a la frase enfocada.</caseText>
+	<caseText value="yesAffix">es marcado por uno o más afijos que juntan a la frase enfocada.</caseText>
+</case>
+	<text show="swFocusYesWord"><content>Los marcadores del foco ocurren </content>
+<case element="focus" attr="focusMarkerPos">
+	<caseText value="before">antes de la frase enfocada sí mismo.</caseText>
+	<caseText value="after">después de la frase enfocada sí mismo.</caseText>
+	<caseText value="either">de cualquier lado de la frase enfocada sí mismo, pero no en ambos lados en la misma oración.</caseText>
+	<caseText value="both">en ambos lados de la frase enfocada sí mismo.</caseText>
+<caseText value="unknown">_______.</caseText>
+</case>
+		<content> El marcador del foco de es </content><case element="focus" attr="focusMarkerRequired">
+<caseText value="no">opcional</caseText>
+<caseText value="yes">requerido</caseText></case>
+		<content> siempre que haya una frase enfocada.</content>
+</text>
+	<text show="swFocusYesWordEitherNo"><content> Hay restricciones en cuanto a los cuales marcadores del foco que pueden ocurrir en cada lado de la frase enfocado.</content></text>
+	<text show="swFocusYesWordEitherYes"><content> Todos los marcadores del foco pueden ocurrir de cualquier lado de la frase enfocada.</content></text>
+</p>
+	<example show="swFocusMarkerYes">
+		<table border="1">
+<headerRow>
+	<headerCol>Marcadores del foco</headerCol>
+	<headerCol>Significado o restricciones</headerCol>
+</headerRow>
+	<row>
+		<col exampleLoc="focus/focusMarkerExample"/>
+		<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+	</row>
+</table>
+</example>
+
+
+</section2>
+
+  </section1>
+<showWhen id="swTopicYes">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+</showWhen>
+<showWhen id="swTopicNo">
+	<whenValue element="focus" attr="topic" value="no"></whenValue>
+</showWhen>
+<showWhen id="swTopicYesWord">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+</showWhen>
+<showWhen id="swTopicYesWordEitherNo">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarkerPos" value="either"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarkerEither" value="no"></whenValue>
+<or/>
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarkerPos" value="both"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarkerEither" value="no"></whenValue>
+</showWhen>
+<showWhen id="swTopicYesWordEitherYes">
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarkerPos" value="either"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarkerEither" value="yes"></whenValue>
+<or/>
+	<whenValue element="focus" attr="topic" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarkerPos" value="both"></whenValue>
+<and/>
+	<whenValue element="focus" attr="topicMarkerEither" value="yes"></whenValue>
+</showWhen>
+<showWhen id="swTopicMarkerYes">
+	<whenValue element="focus" attr="topicMarker" value="no" negateValue="yes"></whenValue>
+</showWhen>
+
+<showWhen id="swFocusYes">
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+</showWhen>
+<showWhen id="swFocusNo">
+	<whenValue element="focus" attr="focus" value="no"></whenValue>
+</showWhen>
+<showWhen id="swFocusYesWord">
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+</showWhen>
+<showWhen id="swFocusYesWordEitherNo">
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarkerPos" value="either"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarkerEither" value="no"></whenValue>
+<or/>
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarkerPos" value="both"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarkerEither" value="no"></whenValue>
+</showWhen>
+<showWhen id="swFocusYesWordEitherYes">
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarkerPos" value="either"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarkerEither" value="yes"></whenValue>
+<or/>
+	<whenValue element="focus" attr="focus" value="yes"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarkerPos" value="both"></whenValue>
+<and/>
+	<whenValue element="focus" attr="focusMarkerEither" value="yes"></whenValue>
+</showWhen>
+<showWhen id="swFocusMarkerYes">
+	<whenValue element="focus" attr="focusMarker" value="no" negateValue="yes"></whenValue>
+</showWhen>
+
+</portion>

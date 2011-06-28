@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<section1 id="sQues">
+		<secTitle>Las preguntas</secTitle>
+		<p>
+			<content>Hay dos tipos de preguntas: las que requieren una respuesta de "sí" o "no" y las que se contestan con información. Esta sección considera las preguntas de la cláusula principal y las variedades subordinadas de preguntas sí/no y de preguntas que se contestan con información, comenzando con las preguntas sí/no.</content>
+		</p>
+		<section2 id="sQuesYN">
+			<secTitle>Las preguntas sí/no</secTitle>
+			<p>
+				<content>El español no tiene ningún marcador especial de la pregunta ni ningún cambio del orden de las palabras para las preguntas sí/no de la cláusula principal.
+					Hay simplemente un cambio en la entonación. Otros idiomas utilizan marcadores y/o cambios especiales del orden de las palabras.
+					En las preguntas sí/no de la cláusula principal inglesa, un verbo auxiliar mueve delante del tema. Otros idiomas utilizan un marcador en las preguntas sí/no o un complementizador especial en vez del auxiliar afrontado. Éste es el caso en preguntas sí/no en las cláusulas subordinadas en inglés; no se permite el ningún afrontar del auxiliar pero </content>
+				<langData>whether</langData><gloss><content>'sea que'</content></gloss>
+				<content> o </content>
+				<langData>if</langData><gloss><content>'si'</content></gloss>
+				<content> llena la posición del complementizador. Puesto que los idiomas pueden actuar diferentemente en preguntas sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será cubierta por separado. </content>
+			</p>
+			<section3 id="sQuesYNMain">
+				<secTitle>Las preguntas sí/no de la cláusula principal</secTitle>
+				<p>
+					<content>Mientras que el español tiene simplemente un cambio en la entonación para señalar una pregunta sí/no de la cláusula principal, otros idiomas utilizan marcadores y/o cambios especiales del orden de las palabras. Los ejemplos ingleses de las preguntas sí/no de la cláusula principal, demostrando afrontar requerido de un auxiliar, incluyen: </content>
+					<langData>Are you going to the store?</langData><gloss><content>'¿Usted va al almacén?'</content></gloss>
+					<content>, </content>
+					<langData>Will Sue buy the present for her mother?</langData><gloss><content>'¿Compra Susana el regalo para su madre?'</content></gloss>
+					<content> y </content>
+					<langData>Could the boy have hit the ball?</langData><gloss><content>'¿Habría podido el muchacho golpear el beísbol?'</content></gloss>
+					<content/>
+				</p>
+				<p>
+					<content>En </content>
+					<langName/>
+					<content> preguntas sí/no de la cláusula principal, </content>
+					<case element="q" attr="mainYN">
+						<caseText value="no"> no hay el marcador o el cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o la otra marca que no es sintáctica.</caseText>
+						<caseText value="noAux">el movimiento de un auxiliar</caseText>
+						<caseText value="yes">hay por lo menos un marcador o complementizador de la pregunta.</caseText>
+					</case>
+					<content>&#x20;</content>
+					<text show="swQMainYNNoAux">
+						<content> al </content>
+						<case element="q" attr="mainYNAuxPos">
+							<caseText value="before">frente</caseText>
+							<caseText value="after">extremo</caseText>
+							<caseText value="unknown">_______</caseText>
+						</case>
+						<content> de la pregunta se requiere.</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQMainYNYes">
+						<content>El marcador o el complementizador de la pregunta es  </content>
+						<case element="q" attr="mainYNWord">
+							<caseText value="yes">escrito como una palabra separada.</caseText>
+							<caseText value="no">un clítico que junta</caseText>
+						</case>
+						<content>&#x20;</content>
+						<text show="swQMainYNWordNo">
+							<content>&#x20;</content>
+							<case element="q" attr="mainYNCliticAttaches">
+								<caseText value="edge"> en el borde de la pregunta.</caseText>
+								<caseText value="head"> al verbo en la pregunta.</caseText>
+							</case>
+							<case element="q" attr="mainYNCliticPos">
+								<caseText value="before">Estos clíticos son procliticos.</caseText>
+								<caseText value="after">Estos clíticos son encliticos.</caseText>
+								<caseText value="both">Hay algunos clíticos del marcador o del complementizador de la pregunta que son procliticos y algunos que son encliticos.</caseText>
+							   <caseText value="unknown">_______</caseText>
+						   </case>
+							<content>&#x20;</content>
+						</text>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQMainYNWordYes">
+						<content>El marcador o el complementizer de la pregunta ocurre  </content>
+						<case element="q" attr="mainYNPos">
+							<caseText value="before">antes</caseText>
+							<caseText value="after">después</caseText>
+							<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
+							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+							<caseText value="afterOrBoth">después o en ambos lados</caseText>
+							<caseText value="both">en ambos lados</caseText>
+							<caseText value="unknown">_______</caseText>
+						</case>
+						<content> del resto de la pregunta.  </content>
+						<text show="swQMainYNEitherUnrestricted">
+							<content>Todos los marcadores o complementizadores de la pregunta pueden ocurrir de cualquier lado de la pregunta.</content>
+						</text>
+						<content>&#x20;</content>
+						<text show="swQMainYNEitherRestricted">
+							<content>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada lado de la pregunta.</content>
+						</text>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+				</p>
+				<p>
+					<content> Los ejemplos de las preguntas sí/no de la cláusula principal  en </content><langName/><content> incluyen: </content>
+				</p>
+				<example>
+					<interlinear exampleLoc="q/example"/>
+				</example>
+			</section3>
+			<section3 id="sQuesYNEmb">
+				<secTitle>Las preguntas sí/no de la cláusula subordinada</secTitle>
+				<p>
+					<content>Las preguntas sí/no de los ejemplos españoles en las cláusulas subordiadas, demostrando la presencia de los marcadores o de los complementizadores de la pregunta, incluyen: </content>
+					<langData>Me pregunto si ella vendrá</langData>
+					<content>, </content>
+					<langData>Yo sabré si ella va</langData>
+					<content> y </content>
+					<langData>Susana se pregunta si el muchacho habría podido golpear el beísbol.</langData>
+					<content>.</content>
+				</p>
+				<p>
+					<content>En </content>
+					<langName/>
+					<content> preguntas sí/no de la cláusula subordinada, </content>
+					<case element="q" attr="embYN">
+						<caseText value="no"> no hay el marcador o el cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o la otra marca que no es sintáctica.</caseText>
+						<caseText value="noAux">el movimiento de un auxiliar</caseText>
+						<caseText value="yes">hay por lo menos un marcador o complementizador de la pregunta.</caseText>
+					</case>
+					<content>&#x20;</content>
+					<text show="swQEmbYNNoAux">
+						<content> al </content>
+						<case element="q" attr="embYNAuxPos">
+							<caseText value="before">frente</caseText>
+							<caseText value="after">extremo</caseText>
+							<caseText value="unknown">_______</caseText>
+					   </case>
+						<content> de la pregunta subordinada se requiere.</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQEmbYNYes">
+						<content>El marcador o el complementizador de la pregunta es </content>
+						<case element="q" attr="embYNWord">
+							<caseText value="yes">escrito como una palabra separada.</caseText>
+							<caseText value="no">un clítico que junta</caseText>
+						</case>
+						<content>&#x20;</content>
+						<text show="swQEmbYNWordNo">
+							<content>&#x20;</content>
+							<case element="q" attr="embYNCliticAttaches">
+								<caseText value="edge"> en el borde de la pregunta subordinada.</caseText>
+								<caseText value="head"> al verbo en la pregunta subordinada.</caseText>
+							</case>
+							<case element="q" attr="embYNCliticPos">
+								<caseText value="before">Estos clíticos son procliticos.</caseText>
+								<caseText value="after">Estos clíticos son encliticos.</caseText>
+								<caseText value="both">Hay algunos clíticos del marcador o del complementizador de la pregunta que son procliticos y algunos que son encliticos.</caseText>
+								<caseText value="unknown">_______</caseText>
+						   </case>
+							<content>&#x20;</content>
+						</text>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQEmbYNWordYes">
+						<content>El marcador o el complementizador de la pregunta ocurre </content>
+						<case element="q" attr="embYNPos">
+							<caseText value="before">antes</caseText>
+							<caseText value="after">después</caseText>
+							<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
+							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+							<caseText value="afterOrBoth">después o en ambos lados</caseText>
+							<caseText value="both">en ambos lados</caseText>
+							<caseText value="unknown">_______</caseText>
+					   </case>
+						<content> del resto de la pregunta subordinada.  </content>
+						<text show="swQEmbYNEitherUnrestricted">
+							<content>Todos los marcadores o complementizadores de la pregunta pueden ocurrir de cualquier lado de la pregunta subordinjada.</content>
+						</text>
+						<content>&#x20;</content>
+						<text show="swQEmbYNEitherRestricted">
+							<content>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada lado de la pregunta subordinada.</content>
+						</text>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+				</p>
+				<p>
+					<content> Los ejemplos de las preguntas sí/no de la cláusula subordinada  en </content><langName/><content> incluyen: </content>
+				</p>
+				<example>
+					<interlinear exampleLoc="q/embYNExample"/>
+				</example>
+			</section3>
+		</section2>
+		<section2 id="sQuesContent">
+			<secTitle>Las preguntas que se contestan con información</secTitle>
+			<p>
+				<content>Las preguntas que se contestan con información diferencian de preguntas sí/no en que contienen una palabra o una frase interrogativa.  Las palabras o las frases o los afijos interrogativos correspondientes en </content>
+				<langName/>
+				<content> se demuestran en la tabla siguiente.</content>
+			</p>
+			<example>
+				<table border="1">
+					<caption>
+						<content>Interrogativos usados en preguntas de información </content>
+					</caption>
+					<headerRow>
+						<headerCol>
+							<langName/>
+						</headerCol>
+						<headerCol>Significado</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="q/who"/>
+						<col>
+							<content>quién</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="q/what"/>
+						<col>
+							<content>qué</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="q/why"/>
+						<col>
+							<content>por qué</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="q/where"/>
+						<col>
+							<content>dónde</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="q/when"/>
+						<col>
+							<content>cuándo</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="q/how"/>
+						<col>
+							<content>cómo</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="q/which"/>
+						<col>
+							<content>cuál</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="q/whose"/>
+						<col>
+							<content>cuyo</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="q/other"/>
+						<col>
+							<content>otros interrogativos</content>
+						</col>
+					</row>
+				</table>
+			</example>
+			<p>
+				<content>De los ejemplos de palabras interrogativas arriba, coloqúese lo más simplemente como pronombres o adverbios, pero </content>
+				<langData>cómo</langData>
+				<content> uede estar un adverbio de la manera por sí mismo o una palabra del grado que modifica un adjetivo, como en </content>
+				<langData>cómo grande</langData>
+				<content> o una palabra del grado que modifica un cuantificador, como en </content>
+				<langData>how many children</langData><gloss><content>'cuántos niños'</content></gloss>
+				<content>; </content>
+				<langData>qué</langData>
+				<content> puede ser un pronombre por sí mismo o un demostrativo modificando un sustantivo, como en </content>
+				<langData>what books</langData><gloss><content>'qué libros'</content></gloss>
+				<content>; </content>
+				<langData>cuál</langData>
+				<content> nunca se coloca solamente pero modifica siempre un sustantivo como demostrativo, como en </content>
+				<langData>cuál muchacho</langData>
+				<content>; y </content>
+				<langData>cuyo</langData>
+				<content> puede ser un pronombre posesivo solo del soporte, o puede llenar la posición del poseedor en una frase nominal, como en </content>
+				<langData>cuyo jugetes</langData><gloss><content>'jugetes de quién'</content></gloss>
+				<content>.</content>
+			</p>
+			<p>
+				<content>Estas mismas posibilidades se asumen para ser verdades en </content>
+				<langName/>
+				<content> también..  </content>
+				<text show="swDemPosEither">
+					<content>Los demonstrativos se permiten de cualquier lado del sustantivo en </content>
+					<langName/>
+					<content>.  Las palabras que significan </content><gloss><content>'cuál'</content></gloss><content> y </content><gloss><content>'qué'</content></gloss><content> ocurren </content>
+					<case element="q" attr="whDemPos">
+						<caseText value="before">solamente antes del sustantivo, incluso si otro demostrativo ocurre después del sustantivo.</caseText>
+						<caseText value="after">solamente después del sustantivo, incluso si otro demostrativo ocurre antes del sustantivo.</caseText>
+						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado al mismo tiempo, de ellos debe convenir en características (por ejemplo, ambos sean palabras interrogativas o ambos no ser).</caseText>
+					<caseText value="unknown">_______</caseText>
+					</case>
+					<content>&#x20;</content>
+				</text>
+				<content>&#x20;</content>
+				<text show="swArtOnlyPosEither">
+					<content>Los artículos se permiten de cualquier lado del sustantivo en </content>
+					<langName/>
+					<content>.  Las palabras que significan </content><gloss><content>'cuál'</content></gloss><content> y </content><gloss><content>'qué'</content></gloss><content> ocurren </content>
+					<case element="q" attr="whArtPos">
+						<caseText value="before">solamente antes del sustantivo, incluso si otro artículo ocurre después del sustantivo.</caseText>
+						<caseText value="after">solamente después del sustantivo, incluso si otro artículo ocurre antes del sustantivo.</caseText>
+						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado al mismo tiempo, de ellos debe convenir en características (por ejemplo, ambos sean palabras interrogativas o ambos no ser).</caseText>
+						<caseText value="unknown">_______</caseText>
+					</case>
+					<content>&#x20;</content>
+				</text>
+				<content>&#x20;</content>
+				<text show="swDegAdjPosEither">
+					<content>Las palabras del grado se permiten de cualquier lado del adjetivo en </content>
+					<langName/>
+					<content>.  La palabra que significa </content><gloss><content>'cómo'</content></gloss><content> occure </content>
+					<case element="q" attr="whDegAdjPos">
+						<caseText value="before">solamente antes del adjetivo, incluso si otra palabra del grado ocurre después del adjetivo.</caseText>
+						<caseText value="after">solamente después del adjetivo, incluso si otra palabra del grado ocurre antes del adjetivo.</caseText>
+						<caseText value="agree">de cualquier lado el adjetivo, pero cuando hay una palabra del grado en cada lado al mismo tiempo, de ellos debe convenir en características (por ejemplo, ambos sean palabras interrogativas o ambas no ser).</caseText>
+					<caseText value="unknown">_______</caseText>
+					</case>
+					<content>&#x20;</content>
+				</text>
+				<content>&#x20;</content>
+				<text show="swDegQPosEither">
+					<content>Las palabras del grado se permiten de cualquier lado del cuantificador en </content>
+					<langName/>
+					<content>.  La palabra que significa </content><gloss><content>'cómo'</content></gloss><content> occure </content>
+					<case element="q" attr="whDegQPos">
+						<caseText value="before">solamente antes del cuantificador, incluso si otra palabra del grado ocurre después del cuantificador.</caseText>
+						<caseText value="after">solamente después del cuantificador, incluso si otra palabra del grado ocurre antes del cuantificador.</caseText>
+						<caseText value="agree">de cualquier lado el cuantificador, pero cuando hay una palabra del grado en cada lado al mismo tiempo, de ellos debe convenir en características (por ejemplo, ambos sean palabras interrogativas o ambas no ser).</caseText>
+					 <caseText value="unknown">_______</caseText>
+				   </case>
+					<content>&#x20;</content>
+				</text>
+				<content>&#x20;</content>
+			</p>
+			<p>
+				<content>Dependiendo del orden de las palabras básico del idioma, las preguntas que se contestan con información pueden ser formadas con o sin afrontar una frase interrogativa.
+					Los idiomas cabeza-finales (SOV, OVS, y OSV) no tienen generalmente movimiento de una frase interrogativa en preguntas, mientras que los idiomas cabeza-iniciales (SVO, VOS, y VSO) requieren generalmente afrontar de una frase interrogativa.
+					En idiomas sin afrontar para los interrogativos, la estructura de frase de una pregunta contenta será igual que una pregunta sí/no con un marcador de la pregunta o auxiliar en la posición del complementizer o apenas igual que una oración normal.
+					En cualquier caso, la frase interrogativa aparece en su posición normal.  Muchos idiomas del orden SOV permiten opcionalmente el movimiento de una frase interrogativa a la posición inmediatamente antes del verbo.
+</content>
+			</p>
+			<p>
+				<content>En las preguntas que se contestan con información de ambos las cláusula principal y la subordinada en </content>
+				<langName/>
+				<content>, una frase interrogativa </content>
+				<case element="q" attr="contFront">
+					<caseText value="no">no afronta; permanece simplemente en su posición normal.</caseText>
+					<caseText value="after">puede permanecer en su posición normal o puede moverse a la posición inmediatamente antes del verbo.</caseText>
+					<caseText value="before">mueve al frente de la cláusula.</caseText>
+					<caseText value="unknown">_______.</caseText>
+				</case>
+				<content>&#x20;</content>
+			</p>
+			<section3 id="sQuesContentMain">
+				<secTitle>Las preguntas que se contestan con información de la cláusula principal</secTitle>
+				<p>
+					<content>Los ejemplos españoles de las preguntas de la cláusula principal, demostrando afrontar requerido de una frase interrogativa, incluyen: </content>
+					<langData>¿Qué muchacho golpeó el beísbol?</langData>
+					<content>, </content>
+					<langData>¿Quién pudo haber golpeado el beísbol?</langData>
+					<content>, </content>
+					<langData>¿Qué el muchacho golpeó?</langData>
+					<content>, </content>
+					<langData>¿Cuándo viene ella?</langData>
+					<content> y </content>
+					<langData>¿Dónde está el líder?</langData>
+					<content>&#x20;</content>
+				</p>
+				<p>
+					<content>En </content>
+					<langName/>
+					<content> las preguntas que se contestan con información de la cláusula principal, </content>
+					<case element="q" attr="mainCont">
+						<caseText value="no">no hay marcador o auxiliar que afronta,</caseText>
+						<caseText value="noAux">movimiento de un auxiliar</caseText>
+						<caseText value="yes">hay por lo menos un marcador o complementizador de la pregunta.</caseText>
+					</case>
+					<content>&#x20;</content>
+					<text show="swQMainContNo">
+						<content> apenas </content>
+						<case element="q" attr="contFront">
+							<caseText value="no">una diferencia de</caseText>
+							<caseText value="after">movimiento opcional de una frase interrogativa y posiblemente una diferencia de</caseText>
+							<caseText value="before">el afrontar de la diferencia de una frase interrogativa y posiblemente una diferencia de</caseText>
+							<caseText value="unknown">_______ de una frase interrogativa y posiblemente una diferencia de</caseText>
+						</case>
+						<content> la entonación o el tono o la otra marca que no es sintáctica.</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQMainContNoAux">
+						<content> al </content>
+						<case element="q" attr="mainContAuxPos">
+							<caseText value="before">frente</caseText>
+							<caseText value="after">extremo</caseText>
+							<caseText value="unknown">_______</caseText>
+						</case>
+						<content> de la pregunta es </content>
+						<case element="q" attr="mainContAuxRequired">
+							<caseText value="no">permitido pero no requerido</caseText>
+							<caseText value="yes">requerido</caseText>
+						</case>
+						<case element="q" attr="contFront">
+							<caseText value="no">.</caseText>
+							<caseText value="after">.</caseText>
+							<caseText value="before"> además de afrontar de una frase interrogativa.</caseText>
+						</case>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQMainContYes">
+						<content>El marcador o el complementizador de la pregunta es  </content>
+						<case element="q" attr="mainContWord">
+							<caseText value="yes">escrito como una palabra separada.</caseText>
+							<caseText value="no">un clítico que junta</caseText>
+						</case>
+						<content>&#x20;</content>
+						<text show="swQMainContWordNo">
+							<content>&#x20;</content>
+							<case element="q" attr="mainContCliticAttaches">
+								<caseText value="edge"> en el borde de la pregunta.</caseText>
+								<caseText value="head"> al verbo en la pregunta.</caseText>
+								<caseText value="between"> entre la frase interrogativa afrontada y el resto de la pregunta.</caseText>
+							</case>
+							<case element="q" attr="mainContCliticPos">
+								<caseText value="before">Estos clíticos son procliticos.</caseText>
+								<caseText value="after">Estos clíticos son encliticos.</caseText>
+								<caseText value="both">Hay algunos clíticos del marcador o del complementizador de la pregunta que son procliticos y algunos que son encliticos.</caseText>
+							   <caseText value="unknown">_______</caseText>
+							</case>
+							<content>&#x20;</content>
+						</text>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQMainContWordYesNotVSO">
+						<content>El marcador o el complementizador de la pregunta ocurre </content>
+						<case element="q" attr="mainContPos">
+							<caseText value="before">antes</caseText>
+							<caseText value="after">después</caseText>
+							<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
+							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+							<caseText value="afterOrBoth">después o en ambos lados</caseText>
+							<caseText value="both">en ambos lados</caseText>
+							<caseText value="unknown">_______</caseText>
+					   </case>
+						<content> del resto de la pregunta.  </content>
+						<text show="swQMainContEitherUnrestrictedNotVSO">
+							<content>Todos los marcadores o complementizadores de la pregunta pueden ocurrir de cualquier lado de la pregunta.</content>
+						</text>
+						<content>&#x20;</content>
+						<text show="swQMainContEitherRestrictedNotVSO">
+							<content>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada lado de la pregunta.</content>
+						</text>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQMainContWordYesVSO">
+						<content>El marcador o el complementizador de la pregunta ocurre </content>
+						<case element="q" attr="mainContVSOBeforeWh">
+							<caseText value="no">inmediatamente después de una frase interrogativa afrontada.</caseText>
+							<caseText value="noEnd">inmediatamente después de una frase interrogativa afrontada o al final de la pregunta.</caseText>
+							<caseText value="yes">antes de una frase interrogativa afrontada.</caseText>
+							<caseText value="some">cualquiera antes o después de una frase interrogativa afrontada.</caseText>
+						</case>
+						<content>&#x20;</content>
+						<text show="swQMainContVSONoEndUnrestricted">
+							<content>Todos los marcadores o complementizadores de la pregunta pueden ocurrir en cada posición.</content>
+						</text>
+						<content>&#x20;</content>
+						<text show="swQMainContVSONoEndRestrictedAndSome">
+							<content>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada posición.</content>
+						</text>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQMainContWordYes">
+						<content>Un marcador o un complementizador de la pregunta </content>
+						<case element="q" attr="mainContRequired">
+							<caseText value="yes">es requerido</caseText>
+							<caseText value="yes">no es requerido</caseText>
+						</case>
+						<content> en cada pregunta de información.</content>
+					</text>
+					<content>&#x20;</content>
+				</p>
+				<p>
+					<content> Los ejemplos del </content><langName/><content> de las preguntas que se contestan con información de la cláusula principal incluyen: </content>
+				</p>
+				<example>
+					<interlinear exampleLoc="q/contentExample"/>
+				</example>
+			</section3>
+			<section3 id="sQuesContentEmb">
+				<secTitle>Las preguntas que se contestan con información de la cláusula subordinada</secTitle>
+				<p>
+					<content>Los ejemplos españoles de las preguntas subordinadas, demostrando afrontar requerido de una frase interrogativa, incluyen: </content>
+					<langData>Sé quién golpeó el beísbol</langData>
+					<content>, </content>
+					<langData>Me pregunto cuándo ella vendrá</langData>
+					<content> y </content>
+					<langData>Preguntaré qué quiere el muchacho</langData>
+					<content>.</content>
+				</p>
+				<p>
+					<content>En </content>
+					<langName/>
+					<content> las preguntas que se contestan con información de la cláusula subordinada, </content>
+					<case element="q" attr="embCont">
+						<caseText value="no">no hay marcador o auxiliar que afronta,</caseText>
+						<caseText value="noAux">movimiento de un auxiliar</caseText>
+						<caseText value="yes">hay por lo menos un marcador o complementizador de la pregunta.</caseText>
+					</case>
+					<content>&#x20;</content>
+					<text show="swQEmbContNo">
+						<content> apenas </content>
+						<case element="q" attr="contFront">
+							<caseText value="no">una diferencia en</caseText>
+							<caseText value="after">movimiento opcional de una frase interrogativa y posiblemente una diferencia en</caseText>
+							<caseText value="before">el afrontar de la diferencia de una frase interrogativa y posiblemente una diferencia en</caseText>
+							<caseText value="unknown">_______ de una frase interrogativa y posiblemente una diferencia en</caseText>
+						</case>
+						<content> la entonación o el tono o la otra marca que no es sintáctica.</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQEmbContNoAux">
+						<content> al </content>
+						<case element="q" attr="embContAuxPos">
+							<caseText value="before">frente</caseText>
+							<caseText value="after">extremo</caseText>
+							<caseText value="unknown">_______</caseText>
+					   </case>
+						<content> de la pregunta es </content>
+						<case element="q" attr="embContAuxRequired">
+							<caseText value="no">permitido pero no requerido</caseText>
+							<caseText value="yes">requerido</caseText>
+						</case>
+						<case element="q" attr="contFront">
+							<caseText value="no">.</caseText>
+							<caseText value="after">.</caseText>
+							<caseText value="before"> además de afrontar de una frase interrogativa.</caseText>
+						</case>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQEmbContYes">
+						<content>El marcador o el complementizer de la pregunta es </content>
+						<case element="q" attr="embContWord">
+							<caseText value="yes">escrito como una palabra separada.</caseText>
+							<caseText value="no">un clítico que junta</caseText>
+						</case>
+						<content>&#x20;</content>
+						<text show="swQEmbContWordNo">
+							<content>&#x20;</content>
+							<case element="q" attr="embContCliticAttaches">
+								<caseText value="edge"> en el borde de la pregunta subordinada.</caseText>
+								<caseText value="head"> al verbo en la pregunta subordinada.</caseText>
+								<caseText value="between"> entre la frase interrogativa afrontada y el resto de la pregunta subordinada.</caseText>
+							</case>
+							<content>&#x20;</content>
+						</text>
+						<content>&#x20;</content>
+						<case element="q" attr="embContCliticPos">
+							<caseText value="before">Estos clíticos son procliticos.</caseText>
+							<caseText value="after">Estos clíticos son encliticos.</caseText>
+							<caseText value="both">Hay algunos clíticos del marcador o del complementizador de la pregunta que son procliticos y algunos que son encliticos. </caseText>
+						   <caseText value="unknown">_______</caseText>
+						</case>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQEmbContWordYesNotVSO">
+						<content>El marcador o el complementizador de la pregunta ocurre </content>
+						<case element="q" attr="embContPos">
+							<caseText value="before">antes</caseText>
+							<caseText value="after">después</caseText>
+							<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
+							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+							<caseText value="afterOrBoth">después o en ambos lados</caseText>
+							<caseText value="both">en ambos lados</caseText>
+							<caseText value="unknown">_______</caseText>
+						</case>
+						<content> del resto de la pregunta subordinada.  </content>
+						<text show="swQEmbContEitherUnrestrictedNotVSO">
+							<content>Todos los marcadores o complementizadores de la pregunta pueden ocurrir de cualquier lado de la pregunta subordinada.</content>
+						</text>
+						<content>&#x20;</content>
+						<text show="swQEmbContEitherRestrictedNotVSO">
+							<content>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada lado de la pregunta subordinada.</content>
+						</text>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQEmbContWordYesVSO">
+						<content>El marcador o el complementizador de la pregunta ocurre </content>
+						<case element="q" attr="embContVSOBeforeWh">
+							<caseText value="no">inmediatamente después de una frase interrogativa afrontada.</caseText>
+							<caseText value="noEnd">inmediatamente después de una frase interrogativa afrontada o en el final de la pregunta subordinada.</caseText>
+							<caseText value="yes">antes de una frase interrogativa afrontada.</caseText>
+							<caseText value="some">cualquiera antes o después de una frase interrogativa afrontada.</caseText>
+						</case>
+						<content>&#x20;</content>
+						<text show="swQEmbContVSONoEndUnrestricted">
+							<content>Todos los marcadores o complementizadores de la pregunta pueden ocurrir en cada posición.</content>
+						</text>
+						<content>&#x20;</content>
+						<text show="swQEmbContVSONoEndRestrictedAndSome">
+							<content>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada posición.</content>
+						</text>
+						<content>&#x20;</content>
+					</text>
+					<content>&#x20;</content>
+					<text show="swQEmbContWordYes">
+						<content>Un marcador o un complementizador de la pregunta </content>
+						<case element="q" attr="mainContRequired">
+							<caseText value="yes">es requerido</caseText>
+							<caseText value="yes">no es requerido</caseText>
+						</case>
+						<content> en cada pregunta de información subordinada.</content>
+					</text>
+					<content>&#x20;</content>
+				</p>
+				<p>
+					<content> Los ejemplos del </content><langName/><content> de las preguntas que se contestan con información de la cláusula subordinada incluyen: </content>
+				</p>
+				<example>
+					<interlinear exampleLoc="q/embContentExample"/>
+				</example>
+			</section3>
+		</section2>
+	</section1>
+	<showWhen id="swQMainYNYes">
+		<whenValue element="q" attr="mainYN" value="yes"/>
+	</showWhen>
+	<showWhen id="swQMainYNWordNo">
+		<whenValue element="q" attr="mainYNWord" value="no"/>
+	</showWhen>
+	<showWhen id="swQMainYNWordYes">
+		<whenValue element="q" attr="mainYNWord" value="yes"/>
+	</showWhen>
+	<showWhen id="swQMainYNEitherRestricted">
+		<whenValue element="q" attr="mainYNEitherRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQMainYNEitherUnrestricted">
+		<whenValue element="q" attr="mainYNEitherRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainYNPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQMainYNNoAux">
+		<whenValue element="q" attr="mainYN" value="noAux"/>
+	</showWhen>
+	<showWhen id="swQEmbYNYes">
+		<whenValue element="q" attr="embYN" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbYNWordNo">
+		<whenValue element="q" attr="embYNWord" value="no"/>
+	</showWhen>
+	<showWhen id="swQEmbYNWordYes">
+		<whenValue element="q" attr="embYNWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embYN" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbYNEitherRestricted">
+		<whenValue element="q" attr="embYNEitherRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="embYN" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbYNEitherUnrestricted">
+		<whenValue element="q" attr="embYNEitherRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="embYNPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="embYN" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbYNNoAux">
+		<whenValue element="q" attr="embYN" value="noAux"/>
+	</showWhen>
+	<showWhen id="swDemPosEither">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="both"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="both"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtPos" value="both"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="both"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demOrArtPos" value="both"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtPos" value="both"/>
+	</showWhen>
+	<showWhen id="swArtOnlyPosEither">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either"/>
+		<or/>
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="both"/>
+	</showWhen>
+	<showWhen id="swDegAdjPosEither">
+		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+		<and/>
+		<whenValue element="adjp" attr="degreePos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="adjp" attr="degreePos" value="after" negateValue="yes"/>
+		<or/>
+		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
+		<and/>
+		<whenValue element="adjp" attr="mannerPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="adjp" attr="mannerPos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swDegQPosEither">
+		<whenValue element="qp" attr="degree" value="yes"/>
+		<and/>
+		<whenValue element="qp" attr="degreePos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="qp" attr="degreePos" value="after" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQMainContYes">
+		<whenValue element="q" attr="mainCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQMainContNo">
+		<whenValue element="q" attr="mainCont" value="no"/>
+	</showWhen>
+	<showWhen id="swQMainContWordNo">
+		<whenValue element="q" attr="mainContWord" value="no"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQMainContWordYes">
+		<whenValue element="q" attr="mainContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQMainContWordYesNotVSO">
+		<whenValue element="q" attr="mainContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQMainContWordYesVSO">
+		<whenValue element="q" attr="mainContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<showWhen id="swQMainContNoAux">
+		<whenValue element="q" attr="mainCont" value="noAux"/>
+	</showWhen>
+	<showWhen id="swQMainContVSONoEndUnrestricted">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="noEnd"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSONoEndRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQMainContVSONoEndRestrictedAndSome">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="noEnd"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSONoEndRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="mainContVSOBeforeWh" value="some"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQMainContEitherRestrictedNotVSO">
+		<whenValue element="q" attr="mainContPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainContEitherRestrcited" value="restricted"/>
+	</showWhen>
+	<showWhen id="swQMainContEitherUnrestrictedNotVSO">
+		<whenValue element="q" attr="mainContPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainContPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainCont" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="mainContEitherRestrcited" value="unrestricted"/>
+	</showWhen>
+	<showWhen id="swQEmbContYes">
+		<whenValue element="q" attr="embCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbContNo">
+		<whenValue element="q" attr="embCont" value="no"/>
+	</showWhen>
+	<showWhen id="swQEmbContWordNo">
+		<whenValue element="q" attr="embContWord" value="no"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbContWordYes">
+		<whenValue element="q" attr="embContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbContWordYesNotVSO">
+		<whenValue element="q" attr="embContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbContWordYesVSO">
+		<whenValue element="q" attr="embContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	</showWhen>
+	<showWhen id="swQEmbContNoAux">
+		<whenValue element="q" attr="embCont" value="noAux"/>
+	</showWhen>
+	<showWhen id="swQEmbContVSONoEndUnrestricted">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="noEnd"/>
+		<and/>
+		<whenValue element="q" attr="embContVSONoEndRestricted" value="unrestricted"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbContVSONoEndRestrictedAndSome">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="noEnd"/>
+		<and/>
+		<whenValue element="q" attr="embContVSONoEndRestricted" value="restricted"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="some"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+	</showWhen>
+	<showWhen id="swQEmbContEitherRestrictedNotVSO">
+		<whenValue element="q" attr="embContPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embContEitherRestrcited" value="restricted"/>
+	</showWhen>
+	<showWhen id="swQEmbContEitherUnrestrictedNotVSO">
+		<whenValue element="q" attr="embContPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="embContPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="q" attr="embContWord" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embCont" value="yes"/>
+		<and/>
+		<whenValue element="q" attr="embContEitherRestrcited" value="unrestricted"/>
+	</showWhen>
+</portion>

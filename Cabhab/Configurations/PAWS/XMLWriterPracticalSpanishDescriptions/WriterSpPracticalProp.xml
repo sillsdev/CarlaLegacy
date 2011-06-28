@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<section1 id="sProp">
+		<secTitle>Los nombres propios</secTitle>
+		<p>
+			<content>Los nombres propios son una clase especial de sustantivo o la frase que actúan sintácticamente apenas como otros sustantivos o frases del nominal. En español, algunos nombres propios pueden colocarse solos, como </content>
+			<langData>Susana</langData>
+			<content> y </content>
+			<langData>Oaxaca</langData>
+			<content>.  Otros son como sustantivos compuestos, tales como </content>
+			<langData>Jorge Estrella</langData>
+			<content>.  Los nombres propios pueden también contener los artículos y/o frases </content>
+			<case element="pp" attr="pPos">
+				<caseText value="before">preposicionales</caseText>
+				<caseText value="after">posposicionales</caseText>
+				<caseText value="both">preposicionales y/o posposicionales</caseText>
+				<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+			</case>
+			<content>, como en </content>
+			<langData>los Estados Unidos de América</langData>
+			<content>.  Muchos idiomas requieren un artículo antes de un nombre. Appositives también ocurre, posiblemente incluyendo un poseedor, como en </content>
+			<langData>mi hijo, David</langData>
+			<content>.  Además, los nombres propios se pueden modificar por adjetivos y cláusulas relativas, como en </content>
+			<langData>México fuerte y orgulloso</langData>
+			<content> o </content>
+			<langData>la Susana que conozco</langData>
+			<content>.</content>
+		</p>
+		<p>
+			<content>Los ejemplos con nombres propios simples y compuestos, o ésos incluyendo los artículos, los demonstratives, los adjetivos, y/o los poseedores en </content>
+			<langName/>
+			<content> incluyen:</content>
+		</p>
+		<example>
+			<interlinear exampleLoc="prop/example"/>
+		</example>
+		<p>
+			<content>Los ejemplos de nombres propios con frases </content>
+			<case element="pp" attr="pPos">
+				<caseText value="before">preposicionales</caseText>
+				<caseText value="after">posposicionales</caseText>
+				<caseText value="both">preposicionales y/o posposicionales</caseText>
+				<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+			</case>
+			<content> en </content>
+			<langName/>
+			<content> incluyen:</content>
+		</p>
+		<example>
+			<interlinear exampleLoc="prop/ppExample"/>
+		</example>
+		<p>
+			<content>Los ejemplos de los nombres propios modificados por las cláusulas relativas incluidas en oraciones completas en </content>
+			<langName/>
+			<content> incluyen:</content>
+		</p>
+		<example>
+			<interlinear exampleLoc="prop/relClExample"/>
+		</example>
+	</section1>
+</portion>

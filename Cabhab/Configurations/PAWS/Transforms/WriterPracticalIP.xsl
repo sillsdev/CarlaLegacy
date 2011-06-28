@@ -43,7 +43,14 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>The girl swims</langData>
-<xsl:text>.  Motion verbs include a location in the form of either a PP or adverb.  English examples of motion verbs include </xsl:text>
+<xsl:text>.  Motion verbs include a location in the form of either a </xsl:text>
+<xsl:choose>
+					<xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
+					<xsl:when test="//pp/@pPos='after'">postpositional</xsl:when>
+					<xsl:when test="//pp/@pPos='both'">prepositional or postpositional</xsl:when>
+					<xsl:when test="//pp/@pPos='unknown'">prepositional or postpositional</xsl:when>
+</xsl:choose>
+<xsl:text> phrase or adverb.  English examples of motion verbs include </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -185,7 +192,7 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>The girl is in charge</langData>
+</xsl:attribute>My sister is in the hospital</langData>
 <xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
