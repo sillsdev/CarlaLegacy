@@ -78,7 +78,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/topicExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//focus/topicExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//focus/topicExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -86,7 +86,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:value-of select="//focus/topicExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//focus/topicExample)" />
+<xsl:value-of select="string-length(normalize-space(//focus/topicExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xFocus.FocusTopics.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -165,7 +165,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 		<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//focus/topicMarkerExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -273,7 +273,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/focusExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//focus/focusExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//focus/focusExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -281,7 +281,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:value-of select="//focus/focusExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//focus/focusExample)" />
+<xsl:value-of select="string-length(normalize-space(//focus/focusExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xFocus.FocusFocus.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -360,7 +360,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 		<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//focus/focusMarkerExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">

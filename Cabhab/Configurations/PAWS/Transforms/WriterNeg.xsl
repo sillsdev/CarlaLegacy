@@ -243,7 +243,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//neg/npiPronounExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -298,7 +298,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//neg/npiDeterminerExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -367,7 +367,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//neg/npiTemporalExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -422,7 +422,7 @@
 					<xsl:variable name="sExampleValue3">
 <xsl:value-of select="translate(string(//neg/npiLocativeExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength3" select="string-length($sExampleValue3)" />
+<xsl:variable name="iExampleLength3" select="string-length(normalize-space($sExampleValue3))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength3 != 0 and $sExampleValue3 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -578,7 +578,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -650,7 +650,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxAffixExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -708,7 +708,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/auxAffixExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/auxAffixExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/auxAffixExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -716,7 +716,7 @@
 <xsl:value-of select="//neg/auxAffixExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/auxAffixExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/auxAffixExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegVerbal.16</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -767,7 +767,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negVerbExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -825,7 +825,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/verbAffixExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/verbAffixExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/verbAffixExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -833,7 +833,7 @@
 <xsl:value-of select="//neg/verbAffixExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/verbAffixExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/verbAffixExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegVerbal.24</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -893,7 +893,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//advp/negTemporalAffixExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -946,7 +946,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/negTemporalExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negTemporalExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -954,7 +954,7 @@
 <xsl:value-of select="//advp/negTemporalExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/negTemporalExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/negTemporalExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegAdverb.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -988,7 +988,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/advTemporalExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/advTemporalExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/advTemporalExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -996,7 +996,7 @@
 <xsl:value-of select="//neg/advTemporalExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/advTemporalExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/advTemporalExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegAdverb.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1052,7 +1052,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//advp/negLocativeAffixExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1105,7 +1105,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/negLocativeExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negLocativeExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1113,7 +1113,7 @@
 <xsl:value-of select="//advp/negLocativeExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/negLocativeExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/negLocativeExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegAdverb.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1147,7 +1147,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/advLocativeExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/advLocativeExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/advLocativeExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1155,7 +1155,7 @@
 <xsl:value-of select="//neg/advLocativeExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/advLocativeExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/advLocativeExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegAdverb.22</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1315,7 +1315,7 @@
 						<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/not),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1382,7 +1382,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/negExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/negExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1390,7 +1390,7 @@
 <xsl:value-of select="//qp/negExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/negExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/negExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalSubject.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1427,7 +1427,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negCooccurExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/negCooccurExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/negCooccurExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1435,7 +1435,7 @@
 <xsl:value-of select="//qp/negCooccurExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/negCooccurExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/negCooccurExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalSubject.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1472,7 +1472,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/degreeSubjExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/degreeSubjExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/degreeSubjExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1480,7 +1480,7 @@
 <xsl:value-of select="//neg/degreeSubjExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/degreeSubjExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/degreeSubjExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalSubject.22</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1566,7 +1566,7 @@
 						<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/determinerNegExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1634,7 +1634,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/determinerNegNPExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/determinerNegNPExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/determinerNegNPExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1642,7 +1642,7 @@
 <xsl:value-of select="//qp/determinerNegNPExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/determinerNegNPExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/determinerNegNPExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalSubject.34</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1679,7 +1679,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/determinerSubjExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/determinerSubjExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/determinerSubjExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1687,7 +1687,7 @@
 <xsl:value-of select="//neg/determinerSubjExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/determinerSubjExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/determinerSubjExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalSubject.38</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1762,7 +1762,7 @@
 <xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/negIndefExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1819,7 +1819,7 @@
 <xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/negIndefNPExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1885,7 +1885,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/pronounSubjExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/pronounSubjExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/pronounSubjExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1893,7 +1893,7 @@
 <xsl:value-of select="//neg/pronounSubjExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/pronounSubjExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/pronounSubjExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalSubject.48</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1999,7 +1999,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/objectExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/objectExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/objectExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2007,7 +2007,7 @@
 <xsl:value-of select="//neg/objectExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/objectExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/objectExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalObject.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -2057,7 +2057,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/indirectObjectExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/indirectObjectExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/indirectObjectExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2065,7 +2065,7 @@
 <xsl:value-of select="//neg/indirectObjectExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/indirectObjectExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/indirectObjectExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalObject.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -2115,7 +2115,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//neg/subjectObjectExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//neg/subjectObjectExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//neg/subjectObjectExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2123,7 +2123,7 @@
 <xsl:value-of select="//neg/subjectObjectExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//neg/subjectObjectExample)" />
+<xsl:value-of select="string-length(normalize-space(//neg/subjectObjectExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNeg.NegNominal.NegNominalObject.18</xsl:with-param>
 <xsl:with-param name="sLetterList">

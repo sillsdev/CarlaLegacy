@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="advcl">
-    <section1 id="sAdvCl">
-        <secTitle>Adverbial Clauses</secTitle>
-        <p>
+	<section1 id="sAdvCl">
+		<secTitle>Adverbial Clauses</secTitle>
+		<p>
 <xsl:text>This section considers the complements that can follow temporal and reason adverbs, which were introduced in sections </xsl:text>
 <sectionRef sec="sAdvPTemporal" />
 <xsl:text> and </xsl:text>
 <sectionRef sec="sAdvPReason" />
 <xsl:text>.  All of these adverbial clauses (or phrases) act the same as simple adverbs, so they will be considered AdvPs with the appropriate type of complement.  Adverbial clauses of these types normally may occur either sentence-initially or sentence-finally.</xsl:text>
 </p>
-        <section2 id="sAdvClTemporal">
-            <secTitle>Complements of Temporal Adverbs</secTitle>
-            <p>
+		<section2 id="sAdvClTemporal">
+			<secTitle>Complements of Temporal Adverbs</secTitle>
+			<p>
 <xsl:text>English examples of temporal adverbs with complements used in full sentences include:</xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>[Since then], John has been moody.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>John has been home [since last week].</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>[Since John has been home from the hospital] he is doing better.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>John is feeling fine [now that he is home from the hospital].</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>The dog followed Sue everywhere [when she returned from college].</xsl:text>
-                </li>
-                <li>
-                    <xsl:text> [When she returned from college], the dog followed Sue everywhere.</xsl:text>
-                </li>
-            </ol>
-            <p>
+			<ol>
+				<li>
+					<xsl:text>[Since then], John has been moody.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>John has been home [since last week].</xsl:text>
+				</li>
+				<li>
+					<xsl:text>[Since John has been home from the hospital] he is doing better.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>John is feeling fine [now that he is home from the hospital].</xsl:text>
+				</li>
+				<li>
+					<xsl:text>The dog followed Sue everywhere [when she returned from college].</xsl:text>
+				</li>
+				<li>
+					<xsl:text> [When she returned from college], the dog followed Sue everywhere.</xsl:text>
+				</li>
+			</ol>
+			<p>
 <xsl:text>These examples show that particular temporal adverbs subcategorize for certain types of complements.  In (1) </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -53,7 +53,7 @@
 </xsl:attribute>now</langData>
 <xsl:text> in (4) has a finite clausal complement with a complementizer.</xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -65,11 +65,11 @@
 </xsl:choose>
 <xsl:text>, the complements occur </xsl:text>
 <xsl:choose>
-                    <xsl:when test="//advcl/@advOrNPPos='before'">before</xsl:when>
-                    <xsl:when test="//advcl/@advOrNPPos='after'">after</xsl:when>
-                    <xsl:when test="//advcl/@advOrNPPos='either'">on either side of</xsl:when>
-                    <xsl:when test="//advcl/@advOrNPPos='unknown'">_______</xsl:when>
-                </xsl:choose>
+					<xsl:when test="//advcl/@advOrNPPos='before'">before</xsl:when>
+					<xsl:when test="//advcl/@advOrNPPos='after'">after</xsl:when>
+					<xsl:when test="//advcl/@advOrNPPos='either'">on either side of</xsl:when>
+					<xsl:when test="//advcl/@advOrNPPos='unknown'">_______</xsl:when>
+				</xsl:choose>
 <xsl:text> the adverb.  Examples of temporal adverbial clauses in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -81,11 +81,11 @@
 </xsl:choose>
 <xsl:text>, included in full sentences are:</xsl:text>
 </p>
-            <example num="xAdvCl.AdvClTemporal.12">
+			<example num="xAdvCl.AdvClTemporal.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advcl/tempSentExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advcl/tempSentExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advcl/tempSentExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -93,7 +93,7 @@
 <xsl:value-of select="//advcl/tempSentExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advcl/tempSentExample)" />
+<xsl:value-of select="string-length(normalize-space(//advcl/tempSentExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvCl.AdvClTemporal.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -119,10 +119,10 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-        </section2>
-        <section2 id="sAdvClReason">
-            <secTitle>Complements of Reason Adverbs</secTitle>
-            <p>
+		</section2>
+		<section2 id="sAdvClReason">
+			<secTitle>Complements of Reason Adverbs</secTitle>
+			<p>
 <xsl:text>Turning now to adverbial phrases or clauses which express reason or purpose, we find adverbs which stand alone, such as </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -135,24 +135,24 @@
 </xsl:attribute>so</langData>
 <xsl:text>, along with those that take various types of complement clauses.  English examples of reason or purpose adverbs which take clausal complements include:</xsl:text>
 </p>
-            <ol>
-                <li>
-                    <xsl:text>John rushed to the hospital [because Sue was in an accident].</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>[Since Jill said that she likes him], Joe smiles all the time.</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>Bill rushed to the airport [so that he could see Kay before she left].</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>The troops threw grenades at the enemy [in order to escape].</xsl:text>
-                </li>
-                <li>
-                    <xsl:text>The troops threw grenades at the enemy [in order for the prisoners to escape].</xsl:text>
-                </li>
-            </ol>
-            <p>
+			<ol>
+				<li>
+					<xsl:text>John rushed to the hospital [because Sue was in an accident].</xsl:text>
+				</li>
+				<li>
+					<xsl:text>[Since Jill said that she likes him], Joe smiles all the time.</xsl:text>
+				</li>
+				<li>
+					<xsl:text>Bill rushed to the airport [so that he could see Kay before she left].</xsl:text>
+				</li>
+				<li>
+					<xsl:text>The troops threw grenades at the enemy [in order to escape].</xsl:text>
+				</li>
+				<li>
+					<xsl:text>The troops threw grenades at the enemy [in order for the prisoners to escape].</xsl:text>
+				</li>
+			</ol>
+			<p>
 <xsl:text>In the examples above, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -187,7 +187,7 @@
 <sectionRef sec="sCompTypeNonfiniteCP" />
 <xsl:text>.</xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text>Examples of reason or purpose adverbial clauses in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -199,11 +199,11 @@
 </xsl:choose>
 <xsl:text>, included in full sentences are:</xsl:text>
 </p>
-            <example num="xAdvCl.AdvClReason.12">
+			<example num="xAdvCl.AdvClReason.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/reasonExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/reasonExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/reasonExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -211,7 +211,7 @@
 <xsl:value-of select="//advp/reasonExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/reasonExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/reasonExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvCl.AdvClReason.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -237,7 +237,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-        </section2>
-    </section1>
+		</section2>
+	</section1>
 </xsl:template>
 </xsl:stylesheet>

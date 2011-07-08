@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml;
-
+using System.Xml.Xsl;
 using SIL.Utils;
 
 namespace SIL.Cabhab
@@ -29,6 +29,7 @@ namespace SIL.Cabhab
 	public class AnswerFileTransform
 	{
 		string m_sTransformFile;
+		private Transform m_transform;
 		string m_sAnswerFile;
 		XmlDocument m_xdAnswers = new XmlDocument();
 		string m_sResultFileAnswerFileXPath;
@@ -69,6 +70,13 @@ namespace SIL.Cabhab
 				AdjustDoctypePath(sConfigurationPath);
 			}
 			SetUpXSLTParameters(transformConfigurationNode);
+#if UsingDotNetTransforms
+			m_transform = new DotNetCompiledTransform(m_sTransformFile);
+#endif
+#if UsingSaxonDotNetTransforms
+			m_transform = new SaxonDotNetTransform(m_sTransformFile);
+#endif
+
 		}
 
 		private void SetUpXSLTParameters(XmlNode transformConfigurationNode)
@@ -180,7 +188,6 @@ namespace SIL.Cabhab
 				if (null == GetResultFromAnswerFile(ApplyTransformWhenXPath))
 				return false;
 			}
-			string sTransformFile = TransformFile;
 			string sResultFile = ResultFile;
 			if (sResultFile != null)
 			{
@@ -195,7 +202,7 @@ namespace SIL.Cabhab
 						}
 					}
 				}
-				XMLUtilities.TransformFileToFile(sTransformFile, parameterList, sSourceFile, sResultFile);
+				m_transform.TransformFileToFile(parameterList, sSourceFile, sResultFile);
 				DoAnyCleanup(sResultFile);
 			}
 			else
@@ -207,7 +214,7 @@ namespace SIL.Cabhab
 					foreach (XMLUtilities.XSLParameter[] parameters in ParameterSet)
 					{
 						sResultFile = BuildResultFileName(sLanguageAbbreviation, parameters);
-						XMLUtilities.TransformFileToFile(sTransformFile, parameters, sSourceFile, sResultFile);
+						m_transform.TransformFileToFile(parameters, sSourceFile, sResultFile);
 						DoAnyCleanup(sResultFile);
 					}
 				}

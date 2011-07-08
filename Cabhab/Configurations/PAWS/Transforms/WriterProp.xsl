@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="prop">
-    <section1 id="sProp">
-        <secTitle>Proper Names</secTitle>
-        <p>
+	<section1 id="sProp">
+		<secTitle>Proper Names</secTitle>
+		<p>
 <xsl:text>Proper names are a special kind of noun that acts syntactically just like other nouns.  In English, some proper names can stand alone, like </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -41,7 +41,7 @@
 </xsl:attribute>the Susan Welch that I know</langData>
 <xsl:text>.</xsl:text>
 </p>
-        <p>
+		<p>
 <xsl:text>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -53,11 +53,11 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-        <example num="xProp.8">
+		<example num="xProp.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/example))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//prop/example))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -65,7 +65,7 @@
 <xsl:value-of select="//prop/example" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//prop/example)" />
+<xsl:value-of select="string-length(normalize-space(//prop/example))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xProp.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -91,7 +91,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-        <p>
+		<p>
 <xsl:text>Examples of proper names with pre/post-positional phrases in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -103,11 +103,11 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-        <example num="xProp.12">
+		<example num="xProp.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/ppExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/ppExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//prop/ppExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -115,7 +115,7 @@
 <xsl:value-of select="//prop/ppExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//prop/ppExample)" />
+<xsl:value-of select="string-length(normalize-space(//prop/ppExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xProp.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -141,7 +141,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-        <p>
+		<p>
 <xsl:text>Examples of proper names modified by relative clauses included in simple full sentences in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -153,11 +153,11 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-        <example num="xProp.16">
+		<example num="xProp.16">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/relClExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/relClExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//prop/relClExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -165,7 +165,7 @@
 <xsl:value-of select="//prop/relClExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//prop/relClExample)" />
+<xsl:value-of select="string-length(normalize-space(//prop/relClExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xProp.16</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -191,6 +191,6 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-    </section1>
+	</section1>
 </xsl:template>
 </xsl:stylesheet>

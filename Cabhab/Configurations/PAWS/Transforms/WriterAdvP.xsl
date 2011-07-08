@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="advp">
-    <section1 id="sAdvP">
-        <secTitle>Adverbs and Adverb Phrases</secTitle>
-        <p>
+	<section1 id="sAdvP">
+		<secTitle>Adverbs and Adverb Phrases</secTitle>
+		<p>
 <xsl:text>Adverbs express four basic types of information:</xsl:text>
 </p>
-        <ul>
-            <li>
-                <xsl:text> time,</xsl:text>
-            </li>
-            <li>
-                <xsl:text> location,</xsl:text>
-            </li>
-            <li>
-                <xsl:text>manner, and</xsl:text>
-            </li>
-            <li>
-                <xsl:text>reason or purpose.</xsl:text>
-            </li>
-        </ul>
-        <p>
+		<ul>
+			<li>
+				<xsl:text> time,</xsl:text>
+			</li>
+			<li>
+				<xsl:text> location,</xsl:text>
+			</li>
+			<li>
+				<xsl:text>manner, and</xsl:text>
+			</li>
+			<li>
+				<xsl:text>reason or purpose.</xsl:text>
+			</li>
+		</ul>
+		<p>
 <xsl:text>These types have different characteristics as to
 which positions they may occupy and how they may be modified.  Each type will be covered in turn.
 </xsl:text>
 </p>
-        <p>
+		<p>
 <xsl:text>Languages normally have degree words which can modify at least some types of adverbs.  </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -37,35 +37,35 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-                <xsl:when test="//advp/@degree='no'"> does not have any such degree words, however.</xsl:when>
-                <xsl:when test="//advp/@degree='yes'"> has such degree words.</xsl:when>
-            </xsl:choose>
+				<xsl:when test="//advp/@degree='no'"> does not have any such degree words, however.</xsl:when>
+				<xsl:when test="//advp/@degree='yes'"> has such degree words.</xsl:when>
+			</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//advp/@degree)='yes'">
-                <xsl:text> These degree words occur </xsl:text>
-                <xsl:choose>
-                    <xsl:when test="//advp/@degreePos='before'">before</xsl:when>
-                    <xsl:when test="//advp/@degreePos='after'">after</xsl:when>
-                    <xsl:when test="//advp/@degreePos='either'">on either side (but not both sides) of</xsl:when>
-                    <xsl:when test="//advp/@degreePos='eitherOrBoth'">on either side or on both sides of</xsl:when>
-                    <xsl:when test="//advp/@degreePos='beforeOrBoth'">before or on both sides of</xsl:when>
-                    <xsl:when test="//advp/@degreePos='afterOrBoth'">after or on both sides of</xsl:when>
-                    <xsl:when test="//advp/@degreePos='both'">on both sides of</xsl:when>
-                    <xsl:when test="//advp/@degreePos='unknown'">_______</xsl:when>
-                </xsl:choose>
-                <xsl:text> the adverb.  </xsl:text>
-                <xsl:choose>
-                    <xsl:when test="//advp/@degreeSet='unrestricted'">The degree words can modify any type of adverb.</xsl:when>
-                    <xsl:when test="//advp/@degreeSet='exceptReason'">The degree words can modify temporals, locatives, and manner adverbs, but reason or purpose adverbs are not modified.</xsl:when>
-                    <xsl:when test="//advp/@degreeSet='restricted'">There are distinct sets of the degree words which can modify each type of adverb.</xsl:when>
-                </xsl:choose>
-                <xsl:text></xsl:text>
-            </xsl:if>
+				<xsl:text> These degree words occur </xsl:text>
+				<xsl:choose>
+					<xsl:when test="//advp/@degreePos='before'">before</xsl:when>
+					<xsl:when test="//advp/@degreePos='after'">after</xsl:when>
+					<xsl:when test="//advp/@degreePos='either'">on either side (but not both sides) of</xsl:when>
+					<xsl:when test="//advp/@degreePos='eitherOrBoth'">on either side or on both sides of</xsl:when>
+					<xsl:when test="//advp/@degreePos='beforeOrBoth'">before or on both sides of</xsl:when>
+					<xsl:when test="//advp/@degreePos='afterOrBoth'">after or on both sides of</xsl:when>
+					<xsl:when test="//advp/@degreePos='both'">on both sides of</xsl:when>
+					<xsl:when test="//advp/@degreePos='unknown'">_______</xsl:when>
+				</xsl:choose>
+				<xsl:text> the adverb.  </xsl:text>
+				<xsl:choose>
+					<xsl:when test="//advp/@degreeSet='unrestricted'">The degree words can modify any type of adverb.</xsl:when>
+					<xsl:when test="//advp/@degreeSet='exceptReason'">The degree words can modify temporals, locatives, and manner adverbs, but reason or purpose adverbs are not modified.</xsl:when>
+					<xsl:when test="//advp/@degreeSet='restricted'">There are distinct sets of the degree words which can modify each type of adverb.</xsl:when>
+				</xsl:choose>
+				<xsl:text></xsl:text>
+			</xsl:if>
 <xsl:text></xsl:text>
 </p>
-        <section2 id="sAdvPTemporal">
-            <secTitle>Temporal Adverbs</secTitle>
-            <p>
+		<section2 id="sAdvPTemporal">
+			<secTitle>Temporal Adverbs</secTitle>
+			<p>
 <xsl:text>Temporal adverbs include the English words: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -118,7 +118,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:attribute>never</langData>
 <xsl:text> in English.</xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text>Examples of </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -131,11 +131,11 @@ which positions they may occupy and how they may be modified.  Each type will be
 <xsl:text> positive temporal adverbs and any degree words which can modify them include:
 </xsl:text>
 </p>
-            <example num="xAdvP.AdvPTemporal.8">
+			<example num="xAdvP.AdvPTemporal.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/temporalExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/temporalExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/temporalExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -143,7 +143,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 <xsl:value-of select="//advp/temporalExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/temporalExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/temporalExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvP.AdvPTemporal.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -169,7 +169,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:otherwise>
 </xsl:choose>
 </example>
-            <xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
@@ -183,12 +183,12 @@ which positions they may occupy and how they may be modified.  Each type will be
 <xsl:text>, the negative temporal idea of  'no when' is expressed by one or more verbal affixes, rather than by separate words.  Examples of the affix(es) attached to verbs include:</xsl:text>
 </p>
 </xsl:if>
-            <xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
 <example num="xAdvP.AdvPTemporal.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalAffixExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/negTemporalAffixExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negTemporalAffixExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -196,7 +196,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 <xsl:value-of select="//advp/negTemporalAffixExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/negTemporalAffixExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/negTemporalAffixExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvP.AdvPTemporal.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -223,7 +223,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:choose>
 </example>
 </xsl:if>
-            <xsl:if test="normalize-space(//advp/@negTemporalType)='verb'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='verb'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
@@ -237,7 +237,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 <xsl:text>, there is only a verbal negative affix, but it may occur with positive temporal adverbs to give a negative temporal meaning.  Examples of temporal adverbs with a negative verb include:</xsl:text>
 </p>
 </xsl:if>
-            <xsl:if test="normalize-space(//advp/@negTemporalType)='word'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='word'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
@@ -251,12 +251,12 @@ which positions they may occupy and how they may be modified.  Each type will be
 <xsl:text>, the negative temporal idea of  'no when' is expressed by one or more separate words.  Examples include:</xsl:text>
 </p>
 </xsl:if>
-            <xsl:if test="normalize-space(//advp/@negTemporalType)='word' or normalize-space(//advp/@negTemporalType)='verb'">
+			<xsl:if test="normalize-space(//advp/@negTemporalType)='word' or normalize-space(//advp/@negTemporalType)='verb'">
 <example num="xAdvP.AdvPTemporal.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negTemporalExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/negTemporalExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negTemporalExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -264,7 +264,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 <xsl:value-of select="//advp/negTemporalExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/negTemporalExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/negTemporalExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvP.AdvPTemporal.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -291,12 +291,12 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:choose>
 </example>
 </xsl:if>
-            <p>
+			<p>
 <xsl:text>See section </xsl:text>
 <sectionRef sec="sNegAdverb" />
 <xsl:text> for full sentence examples of the negative temporal expressions.</xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text>The time element of a sentence can also be expressed by other types of words or phrases, such as: nominal phrases </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -358,10 +358,10 @@ adverbial clauses </xsl:text>
 <sectionRef sec="sAdvClTemporal" />
 <xsl:text> for examples of temporal adverbial clauses.</xsl:text>
 </p>
-        </section2>
-        <section2 id="sAdvPLocative">
-            <secTitle>Locative Adverbs</secTitle>
-            <p>
+		</section2>
+		<section2 id="sAdvPLocative">
+			<secTitle>Locative Adverbs</secTitle>
+			<p>
 <xsl:text>Locative adverbs include the English words: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -409,7 +409,7 @@ adverbial clauses </xsl:text>
 </xsl:attribute>nowhere</langData>
 <xsl:text>.</xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text>Examples of </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -422,11 +422,11 @@ adverbial clauses </xsl:text>
 <xsl:text> positive locative adverbs and any degree words which can modify them include:
 </xsl:text>
 </p>
-            <example num="xAdvP.AdvPLocative.8">
+			<example num="xAdvP.AdvPLocative.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/locativeExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/locativeExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/locativeExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -434,7 +434,7 @@ adverbial clauses </xsl:text>
 <xsl:value-of select="//advp/locativeExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/locativeExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/locativeExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvP.AdvPLocative.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -460,7 +460,7 @@ adverbial clauses </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-            <xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
@@ -474,12 +474,12 @@ adverbial clauses </xsl:text>
 <xsl:text>, the negative locative idea of  'nowhere' is expressed by one or more verbal affixes, rather than by separate words.  Examples of the affix(es) attached to verbs include:</xsl:text>
 </p>
 </xsl:if>
-            <xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
+			<xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
 <example num="xAdvP.AdvPLocative.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeAffixExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/negLocativeAffixExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negLocativeAffixExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -487,7 +487,7 @@ adverbial clauses </xsl:text>
 <xsl:value-of select="//advp/negLocativeAffixExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/negLocativeAffixExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/negLocativeAffixExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvP.AdvPLocative.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -514,7 +514,7 @@ adverbial clauses </xsl:text>
 </xsl:choose>
 </example>
 </xsl:if>
-             <xsl:if test="normalize-space(//advp/@negLocativeType)='verb'">
+			 <xsl:if test="normalize-space(//advp/@negLocativeType)='verb'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
@@ -528,7 +528,7 @@ adverbial clauses </xsl:text>
 <xsl:text>, there is only a verbal negative affix, but it may occur with positive locative adverbs to give a negative locative meaning.  Examples of locative adverbs with a negative verb include:</xsl:text>
 </p>
 </xsl:if>
-           <xsl:if test="normalize-space(//advp/@negLocativeType)='word'">
+		   <xsl:if test="normalize-space(//advp/@negLocativeType)='word'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
@@ -542,12 +542,12 @@ adverbial clauses </xsl:text>
 <xsl:text>, the negative locative idea of  'nowhere' is expressed by one or more separate words.  Examples include:</xsl:text>
 </p>
 </xsl:if>
-            <xsl:if test="normalize-space(//advp/@negLocativeType)='word' or normalize-space(//advp/@negLocativeType)='verb'">
+			<xsl:if test="normalize-space(//advp/@negLocativeType)='word' or normalize-space(//advp/@negLocativeType)='verb'">
 <example num="xAdvP.AdvPLocative.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/negLocativeExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/negLocativeExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negLocativeExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -555,7 +555,7 @@ adverbial clauses </xsl:text>
 <xsl:value-of select="//advp/negLocativeExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/negLocativeExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/negLocativeExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvP.AdvPLocative.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -582,12 +582,12 @@ adverbial clauses </xsl:text>
 </xsl:choose>
 </example>
 </xsl:if>
-            <p>
+			<p>
 <xsl:text>See section </xsl:text>
 <sectionRef sec="sNegAdverb" />
 <xsl:text> for full sentence examples of the negative locative expressions.</xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text>Location is often also expressed by a prepositional
 phrase, such as: </xsl:text>
 <langData>
@@ -611,10 +611,10 @@ description of the place.  Locative expressions may normally occur either initia
 <xsl:text> for examples with motion verbs.
 </xsl:text>
 </p>
-        </section2>
-        <section2 id="sAdvPManner">
-            <secTitle>Manner Adverbs</secTitle>
-            <p>
+		</section2>
+		<section2 id="sAdvPManner">
+			<secTitle>Manner Adverbs</secTitle>
+			<p>
 <xsl:text>Manner adverbs directly modify the verb and usually end in </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -649,7 +649,7 @@ and </xsl:text>
 </xsl:attribute>very well</langData>
 <xsl:text>.</xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text>Examples of </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -662,11 +662,11 @@ and </xsl:text>
 <xsl:text> manner adverbs and any degree words which can modify them include:
 </xsl:text>
 </p>
-            <example num="xAdvP.AdvPManner.8">
+			<example num="xAdvP.AdvPManner.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/mannerExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/mannerExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/mannerExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -674,7 +674,7 @@ and </xsl:text>
 <xsl:value-of select="//advp/mannerExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/mannerExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/mannerExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvP.AdvPManner.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -700,7 +700,7 @@ and </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-            <xsl:if test="normalize-space(//advp/@mannerType)='affix'">
+			<xsl:if test="normalize-space(//advp/@mannerType)='affix'">
 <p>
 <xsl:text>Manner adverbs in </xsl:text>
 <xsl:choose>
@@ -714,10 +714,10 @@ and </xsl:text>
 <xsl:text> are all written as affixes on the verb, rather than being separate words.</xsl:text>
 </p>
 </xsl:if>
-        </section2>
-        <section2 id="sAdvPReason">
-            <secTitle>Reason or Purpose Adverbs</secTitle>
-            <p>
+		</section2>
+		<section2 id="sAdvPReason">
+			<secTitle>Reason or Purpose Adverbs</secTitle>
+			<p>
 <xsl:text>Reason or purpose adverbs include </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -746,7 +746,7 @@ and </xsl:text>
 </xsl:attribute>in order</langData>
 <xsl:text>.  These adverbial phrases or clauses occur either initially or finally in the sentence.</xsl:text>
 </p>
-            <p>
+			<p>
 <xsl:text>Examples of </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -759,11 +759,11 @@ and </xsl:text>
 <xsl:text> reason or purpose adverbs or adverbial clauses, included in full sentences are:
 </xsl:text>
 </p>
-            <example num="xAdvP.AdvPReason.8">
+			<example num="xAdvP.AdvPReason.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/reasonExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//advp/reasonExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/reasonExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -771,7 +771,7 @@ and </xsl:text>
 <xsl:value-of select="//advp/reasonExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//advp/reasonExample)" />
+<xsl:value-of select="string-length(normalize-space(//advp/reasonExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdvP.AdvPReason.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -797,7 +797,7 @@ and </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 </example>
-            <p>
+			<p>
 <xsl:text>The structure of the adverbial clauses will be addressed in section </xsl:text>
 <sectionRef sec="sAdvClReason" />
 <xsl:text>.  Reason or purpose can also be expressed by a prepositional phrase, such as </xsl:text>
@@ -815,8 +815,8 @@ and </xsl:text>
 <xsl:text>.
 </xsl:text>
 </p>
-        </section2>
-    </section1>
+		</section2>
+	</section1>
 
 
 

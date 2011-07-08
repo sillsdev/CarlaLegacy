@@ -29,6 +29,7 @@ namespace SIL.Cabhab
 	public class DataMigrationTransform
 	{
 		string m_sTransformFile;
+		private Transform m_transform;
 		string m_sDBVersionXPath;
 		#region Construction and initialization
 		public DataMigrationTransform()
@@ -45,8 +46,15 @@ namespace SIL.Cabhab
 		public void ApplyTransform(string sSourceFile)
 		{
 			string sTransformFile = TransformFile;
+#if UsingDotNetTransforms
+			m_transform = new DotNetCompiledTransform(m_sTransformFile);
+#endif
+#if UsingSaxonDotNetTransforms
+			m_transform = new SaxonDotNetTransform(m_sTransformFile);
+#endif
+
 			string sResultFile = Path.GetTempFileName();
-				XMLUtilities.TransformFileToFile(sTransformFile, sSourceFile, sResultFile);
+			m_transform.TransformFileToFile(sSourceFile, sResultFile);
 			File.Copy(sResultFile, sSourceFile, true);
 			File.Delete(sResultFile);
 		}

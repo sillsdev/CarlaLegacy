@@ -44,12 +44,13 @@ namespace SIL.Cabhab
 		string m_sLanguageAbbreviation;
 		bool m_fRightToLeftScript;
 
-        string m_sConfigurationPath;
-        string m_sHtmsPath;
+		string m_sConfigurationPath;
+		string m_sHtmsPath;
 
 		private string m_sStylesheet;
 		private string m_sAnswerFileFilter;
 		private string m_sWebPageMapper;
+		private Transform m_transform;
 		private string m_sMasterAnswerFile;
 
 		public event EventHandler ChangeLanguageName;
@@ -86,16 +87,16 @@ namespace SIL.Cabhab
 				m_sConfigurationPath = value;
 			}
 		}
-        public string Name
+		public string Name
 		{
-            get
-            {
-                XmlNode node = m_xdAnswers.SelectSingleNode("//langName");
-                if (node == null)
-                    return "";
-                else
-                    return node.InnerText;
-            }
+			get
+			{
+				XmlNode node = m_xdAnswers.SelectSingleNode("//langName");
+				if (node == null)
+					return "";
+				else
+					return node.InnerText;
+			}
 		}
 		public bool LanguageDataChanged
 		{
@@ -118,12 +119,22 @@ namespace SIL.Cabhab
 			m_sMasterAnswerFile = GetPropertyValueAsPath("MasterAnswerFileLocation");
 			m_sStylesheet = GetPropertyValueAsPath("MasterCSSLocation");
 			m_sWebPageMapper = GetPropertyValueAsPath("WebPageMapperLocation");
+#if UsingDotNetTransforms
+			m_transform = new DotNetCompiledTransform(m_sWebPageMapper);
+#endif
+#if UsingSaxonDotNetTransforms
+			m_transform = new SaxonDotNetTransform(m_sWebPageMapper);
+#endif
+
 			m_sAnswerFileFilter = mediator.PropertyTable.GetStringProperty("AnswerFileFilter", null);
 		}
 
 		public void InitAnswerTransforms()
 		{
+			Cursor current = Cursor.Current;
+			Cursor.Current = Cursors.WaitCursor;
 			InitAnswerTransforms(m_configurationParameters);
+			Cursor.Current = current;
 		}
 		// get all transforms and init them
 		public void InitAnswerTransforms(XmlNode configurationParameters)
@@ -231,12 +242,12 @@ namespace SIL.Cabhab
 			XMLUtilities.XSLParameter[] parameterList = GetTransformParameters();
 			sHtmlFile = Path.Combine(m_sHtmsPath, Path.GetFileNameWithoutExtension(sXmlFile));
 			sHtmlFile += ".htm";
-            //MessageBox.Show("TransformXmlPageDescription: m_sWebPageMapper = " + m_sWebPageMapper);
-            //MessageBox.Show("XmlPageDescription = " + sTemp);
-            //MessageBox.Show("HtmlFile = " + sHtmlFile);
-            XMLUtilities.TransformFileToFile(m_sWebPageMapper, parameterList, sTemp, sHtmlFile);
-            //MessageBox.Show("After TransformFileToFile()");
-        }
+			//MessageBox.Show("TransformXmlPageDescription: m_sWebPageMapper = " + m_sWebPageMapper);
+			//MessageBox.Show("XmlPageDescription = " + sTemp);
+			//MessageBox.Show("HtmlFile = " + sHtmlFile);
+			m_transform.TransformFileToFile(parameterList, sTemp, sHtmlFile);
+			//MessageBox.Show("After TransformFileToFile()");
+		}
 
 		private XMLUtilities.XSLParameter[] GetTransformParameters()
 		{

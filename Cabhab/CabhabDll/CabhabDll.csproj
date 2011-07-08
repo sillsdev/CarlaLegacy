@@ -1,7 +1,7 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
 	<ProjectType>Local</ProjectType>
-	<ProductVersion>8.0.50727</ProductVersion>
+	<ProductVersion>9.0.30729</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<ProjectGuid>{3E4CB95B-C04F-4ACE-BF09-5FA742637400}</ProjectGuid>
 	<!--    <SccProjectName>Perforce Project</SccProjectName>
@@ -30,6 +30,7 @@
 	</FileUpgradeFlags>
 	<UpgradeBackupLocation>
 	</UpgradeBackupLocation>
+	<OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	<OutputPath>..\bin\Debug\</OutputPath>
@@ -38,7 +39,7 @@
 	<CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
 	<ConfigurationOverrideFile>
 	</ConfigurationOverrideFile>
-	<DefineConstants>DEBUG;TRACE</DefineConstants>
+	<DefineConstants>TRACE;DEBUG;UsingSaxonDotNetTransforms</DefineConstants>
 	<DocumentationFile>
 	</DocumentationFile>
 	<DebugSymbols>true</DebugSymbols>
@@ -61,7 +62,7 @@
 	<CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
 	<ConfigurationOverrideFile>
 	</ConfigurationOverrideFile>
-	<DefineConstants>TRACE</DefineConstants>
+	<DefineConstants>TRACE;UsingSaxonDotNetTransforms</DefineConstants>
 	<DocumentationFile>
 	</DocumentationFile>
 	<DebugSymbols>true</DebugSymbols>
@@ -76,15 +77,29 @@
 	<WarningLevel>4</WarningLevel>
 	<DebugType>full</DebugType>
 	<ErrorReport>prompt</ErrorReport>
+	<PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
 	<Reference Include="COMInterfaces, Version=4.1.0.9, Culture=neutral, processorArchitecture=MSIL">
 	  <SpecificVersion>False</SpecificVersion>
 	  <HintPath>..\..\..\..\fw\Output\Debug\COMInterfaces.dll</HintPath>
 	</Reference>
+	<Reference Include="IKVM.Runtime, Version=0.42.0.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\bin\IKVM.Runtime.dll</HintPath>
+	</Reference>
+	<Reference Include="Interop.MSXML2, Version=4.0.0.0, Culture=neutral" />
 	<Reference Include="MsHtmHstInterop, Version=0.0.0.0, Culture=neutral">
 	  <SpecificVersion>False</SpecificVersion>
 	  <HintPath>..\..\..\..\fw\Bin\MsHtmHstInterop.dll</HintPath>
+	</Reference>
+	<Reference Include="saxon9he, Version=9.3.0.5, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\bin\saxon9he.dll</HintPath>
+	</Reference>
+	<Reference Include="saxon9he-api, Version=9.3.0.5, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\bin\saxon9he-api.dll</HintPath>
 	</Reference>
 	<Reference Include="System">
 	  <Name>System</Name>
@@ -101,7 +116,6 @@
 	<Reference Include="System.Xml">
 	  <Name>System.XML</Name>
 	</Reference>
-	<Reference Include="Interop.MSXML2, Version=4.0.0.0, Culture=neutral" />
 	<Reference Include="xCore">
 	  <Name>xCore</Name>
 	  <HintPath>c:\fw\Output\Debug\xCore.dll</HintPath>
@@ -121,6 +135,8 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="AnswerFileTransform.cs" />
+	<Compile Include="DataMigrationTransform.cs" />
+	<Compile Include="DotNetCompiledTransform.cs" />
 	<Compile Include="HtmlViewer.cs">
 	  <SubType>UserControl</SubType>
 	</Compile>
@@ -134,6 +150,8 @@
 	  <SubType>Form</SubType>
 	</Compile>
 	<Compile Include="Language.cs" />
+	<Compile Include="SaxonDotNetTransform.cs" />
+	<Compile Include="Transform.cs" />
 	<Compile Include="XMLUtilities.cs" />
 	<EmbeddedResource Include="ImageHolder.resx">
 	  <DependentUpon>ImageHolder.cs</DependentUpon>

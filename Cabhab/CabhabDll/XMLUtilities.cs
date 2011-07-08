@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Text;
@@ -41,6 +42,39 @@ namespace SIL.Cabhab
 			Debug.WriteLine("\tStarting at: " + start.TimeOfDay.ToString());
 #endif
 			TextWriter writer = null;
+			XmlTextReader reader = null;
+			try
+			{
+				// set up transform
+				var transformer = new XslCompiledTransform();
+				var settings = XsltSettings.TrustedXslt;
+				var resolver = new XmlUrlResolver();
+				resolver.Credentials = System.Net.CredentialCache.DefaultCredentials;
+				transformer.Load(sTransformName, XsltSettings.TrustedXslt, resolver);
+
+
+				// add any parameters
+				XsltArgumentList args;
+				AddParameters(out args, parameterList);
+
+				// setup output file
+				writer = File.CreateText(sOutputName);
+
+				// load input file
+				reader = new XmlTextReader(sInputPath) {ProhibitDtd = false, EntityHandling = EntityHandling.ExpandEntities};
+
+				// Apply transform
+				transformer.Transform(reader, args, writer);
+			}
+			finally
+			{
+				if (writer != null)
+					writer.Close();
+				if (reader != null)
+					reader.Close();
+			}
+
+/*			TextWriter writer = null;
 			try
 			{
 				// set up transform
@@ -79,7 +113,7 @@ namespace SIL.Cabhab
 			{
 				if (writer != null)
 					writer.Close();
-			}
+			} */
 #if DEBUG
 			DateTime end = DateTime.Now;
 			Debug.WriteLine("\tEnding at: " + end.TimeOfDay.ToString());
@@ -91,10 +125,10 @@ namespace SIL.Cabhab
 			// (this is so especially for transforms using xsl:key).
 			try
 			{
-				//bool fShowOutput = false;
+				bool fShowOutput = true;
 				//if (sTransformName.Contains("PAWSSKHtmlMapper.xsl"))
 				//    fShowOutput = true;
-				//MessageBox.Show("in transform file");
+				MessageBox.Show("in transform file");
 				MSXML2.XSLTemplate40Class xslt = new MSXML2.XSLTemplate40Class();
 				MSXML2.FreeThreadedDOMDocument40Class xslDoc = new
 					MSXML2.FreeThreadedDOMDocument40Class();
@@ -112,18 +146,20 @@ namespace SIL.Cabhab
 				xmlDoc.load(sInputPath);
 				xslProc = xslt.createProcessor();
 				xslProc.input = xmlDoc;
+				//if (fShowOutput)
 				//MessageBox.Show("before add parameters");
 				AddParameters(parameterList, xslProc);
-				//if (fShowOutput)
-					//MessageBox.Show("before transform file");
+
+				if (fShowOutput)
+					MessageBox.Show("before transform file");
 				xslProc.transform();
-				//if (fShowOutput)
-				   // MessageBox.Show("before write output to |" + sOutputName + "|");
+				if (fShowOutput)
+					MessageBox.Show("before write output to |" + sOutputName + "|");
 				StreamWriter sr = File.CreateText(sOutputName);
 				sr.Write(xslProc.output);
 				sr.Close();
-				//if (fShowOutput)
-					//MessageBox.Show("after write output to |" + sOutputName + "|");
+				if (fShowOutput)
+					MessageBox.Show("after write output to |" + sOutputName + "|");
 			}
 			catch (Exception exc)
 			{
@@ -172,7 +208,7 @@ namespace SIL.Cabhab
 			}
 		}
 #endif
-		private static string GetCurrentDateTime()
+		public static string GetCurrentDateTime()
 		{
 			DateTime now;
 			now = DateTime.Now;

@@ -152,7 +152,10 @@
 										<xsl:with-param name="iRowsToSpan" select="$iRowsToSpan"/>
 									</xsl:apply-templates>
 								</xsl:when>
-								<xsl:otherwise/>
+								<xsl:otherwise>                                    <xsl:apply-templates select="$columnsBefore" mode="processRowSpans">
+									<xsl:with-param name="iRowsToSpan" select="$iRowsToSpan"/>
+								</xsl:apply-templates>
+								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
 						<xsl:otherwise>
@@ -163,6 +166,10 @@
 								<xsl:when test="function-available('saxon:node-set')">
 									<xsl:apply-templates select="saxon:node-set($columnsBefore)" mode="skipRowSpans"/>
 								</xsl:when>
+								<xsl:otherwise>
+									<xsl:apply-templates select="$columnsBefore" mode="skipRowSpans"/>
+
+								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -202,6 +209,12 @@
 										<xsl:with-param name="iRowsToSpan" select="$iRowsToSpan"/>
 									</xsl:apply-templates>
 								</xsl:when>
+								<xsl:otherwise>
+									<xsl:apply-templates select="$columnsAfter" mode="processRowSpans">
+										<xsl:with-param name="iRowsToSpan" select="$iRowsToSpan"/>
+									</xsl:apply-templates>
+
+								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
 						<xsl:otherwise>
@@ -212,6 +225,10 @@
 								<xsl:when test="function-available('saxon:node-set')">
 									<xsl:apply-templates select="saxon:node-set($columnsAfter)" mode="skipRowSpans"/>
 								</xsl:when>
+								<xsl:otherwise>
+									<xsl:apply-templates select="$columnsAfter" mode="skipRowSpans"/>
+
+								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:otherwise>
 					</xsl:choose>

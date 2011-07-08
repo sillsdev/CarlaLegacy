@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- XSLT stylesheet to convert PAWS Starter Kit XML file to a Typology Example file -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="text" version="1.0" encoding="iso-8859-1"  indent="yes"/>
+	<xsl:output method="text" version="1.0" encoding="UTF-8"  indent="yes"/>
 <xsl:param name="prmIdTitle">Typology</xsl:param>
 <xsl:param name="prmTextSFM">\t</xsl:param>
 

@@ -166,9 +166,9 @@ col template
 						<xsl:value-of select="$iExampleLengthThisTable"/>
 					</xsl:attribute>
 					<xsl:attribute name="select">
-						<xsl:text>string-length($</xsl:text>
+						<xsl:text>string-length(normalize-space($</xsl:text>
 						<xsl:value-of select="$sExampleValueThisTable"/>
-						<xsl:text>)</xsl:text>
+						<xsl:text>))</xsl:text>
 					</xsl:attribute>
 				</xsl:element>
 				<xsl:element name="xsl:choose">
@@ -862,7 +862,7 @@ DoInterlinear
 					<xsl:text>iExampleLength</xsl:text>
 				</xsl:attribute>
 				<xsl:attribute name="select">
-					<xsl:text>normalize-space(string-length(//</xsl:text>
+					<xsl:text>string-length(normalize-space(//</xsl:text>
 					<xsl:value-of select="@exampleLoc"/>
 					<xsl:text>))</xsl:text>
 				</xsl:attribute>
@@ -893,9 +893,9 @@ DoInterlinear
 							</xsl:attribute>
 							<xsl:element name="xsl:value-of">
 								<xsl:attribute name="select">
-									<xsl:text>string-length(//</xsl:text>
+									<xsl:text>string-length(normalize-space(//</xsl:text>
 									<xsl:value-of select="@exampleLoc"/>
-									<xsl:text>)</xsl:text>
+									<xsl:text>))</xsl:text>
 								</xsl:attribute>
 							</xsl:element>
 						</xsl:element>

@@ -78,7 +78,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//coord/and),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -120,7 +120,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//coord/or),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -162,7 +162,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//coord/nor),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -204,7 +204,7 @@
 					<xsl:variable name="sExampleValue3">
 <xsl:value-of select="translate(string(//coord/andOr),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength3" select="string-length($sExampleValue3)" />
+<xsl:variable name="iExampleLength3" select="string-length(normalize-space($sExampleValue3))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength3 != 0 and $sExampleValue3 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -246,7 +246,7 @@
 					<xsl:variable name="sExampleValue4">
 <xsl:value-of select="translate(string(//coord/but),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength4" select="string-length($sExampleValue4)" />
+<xsl:variable name="iExampleLength4" select="string-length(normalize-space($sExampleValue4))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength4 != 0 and $sExampleValue4 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -288,7 +288,7 @@
 					<xsl:variable name="sExampleValue5">
 <xsl:value-of select="translate(string(//coord/with),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength5" select="string-length($sExampleValue5)" />
+<xsl:variable name="iExampleLength5" select="string-length(normalize-space($sExampleValue5))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength5 != 0 and $sExampleValue5 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -330,7 +330,7 @@
 					<xsl:variable name="sExampleValue6">
 <xsl:value-of select="translate(string(//coord/other),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength6" select="string-length($sExampleValue6)" />
+<xsl:variable name="iExampleLength6" select="string-length(normalize-space($sExampleValue6))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength6 != 0 and $sExampleValue6 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -411,7 +411,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//coord/either),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -453,7 +453,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//coord/neither),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -526,7 +526,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/sentExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//coord/sentExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//coord/sentExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -534,7 +534,7 @@
 <xsl:value-of select="//coord/sentExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//coord/sentExample)" />
+<xsl:value-of select="string-length(normalize-space(//coord/sentExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xCoord.CoordSentence.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -593,7 +593,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/vpExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//coord/vpExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//coord/vpExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -601,7 +601,7 @@
 <xsl:value-of select="//coord/vpExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//coord/vpExample)" />
+<xsl:value-of select="string-length(normalize-space(//coord/vpExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xCoord.CoordVP.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -666,7 +666,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/dpExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//coord/dpExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//coord/dpExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -674,7 +674,7 @@
 <xsl:value-of select="//coord/dpExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//coord/dpExample)" />
+<xsl:value-of select="string-length(normalize-space(//coord/dpExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xCoord.CoordDP.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -733,7 +733,7 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/adjExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//coord/adjExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//coord/adjExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -741,7 +741,7 @@
 <xsl:value-of select="//coord/adjExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//coord/adjExample)" />
+<xsl:value-of select="string-length(normalize-space(//coord/adjExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xCoord.CoordAdj.10</xsl:with-param>
 <xsl:with-param name="sLetterList">

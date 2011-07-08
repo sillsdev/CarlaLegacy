@@ -1003,7 +1003,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/proDropExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/proDropExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/proDropExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1011,7 +1011,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/proDropExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/proDropExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/proDropExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPProDrop.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1139,7 +1139,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1198,7 +1198,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/auxExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1206,7 +1206,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/auxExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/auxExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/auxExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPAux.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1330,7 +1330,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1402,7 +1402,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxAffixExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1476,7 +1476,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negVerbExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1626,7 +1626,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryNonfiniteExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1685,7 +1685,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxNoonfiniteExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/auxNoonfiniteExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxNoonfiniteExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1693,7 +1693,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/auxNoonfiniteExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/auxNoonfiniteExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/auxNoonfiniteExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPAux.44</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1792,7 +1792,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryOtherExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1851,7 +1851,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxOtherExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/auxOtherExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxOtherExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1859,7 +1859,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/auxOtherExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/auxOtherExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/auxOtherExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPAux.56</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1930,7 +1930,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/intransExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/intransExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/intransExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1938,7 +1938,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/intransExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/intransExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/intransExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPMotion.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1980,7 +1980,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/motionExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/motionExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/motionExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -1988,7 +1988,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/motionExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/motionExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/motionExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPMotion.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -2094,7 +2094,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/copularExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/copularExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/copularExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2102,7 +2102,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/copularExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/copularExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/copularExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPCop.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -2165,7 +2165,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/example))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/example))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2173,7 +2173,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/example" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/example)" />
+<xsl:value-of select="string-length(normalize-space(//ip/example))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPTrans.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -2250,7 +2250,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/diExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/diExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/diExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2258,7 +2258,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/diExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/diExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/diExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPTrans.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -2379,7 +2379,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/passiveExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/passiveExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/passiveExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
 <xsl:call-template name="OutputInterlinearExamples">
@@ -2387,7 +2387,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:value-of select="//ip/passiveExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/passiveExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/passiveExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPPassive.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
