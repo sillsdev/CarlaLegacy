@@ -18,12 +18,14 @@
 // --------------------------------------------------------------------------------------------
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Security.Permissions;
 using System.Windows.Forms;
 using System.Xml;
 using MsHtmHstInterop;
 using System.Runtime.InteropServices;
+using SIL.Utils;
 using XCore;
 
 namespace SIL.Cabhab
@@ -41,9 +43,12 @@ namespace SIL.Cabhab
 		public Language m_lang; // public for testing
 		private string m_sAboutFile;
 		private string m_sResourcesFile;
+		private string m_sInterfaceLanguageFile;
 		private string m_sLanguagePropertiesFile;
 		private string m_sLanguageFilesFile;
 		private string m_sWelcomePageFile;
+		private string m_sInterfaceLanguage;
+
 
 		public event EventHandler ChangeShowStatusBar;
 		protected virtual void OnChangeShowStatusBar(EventArgs e)
@@ -82,8 +87,16 @@ namespace SIL.Cabhab
 
 			m_sAboutFile = m_lang.ConfigurationPath + "/" +
 				mediator.PropertyTable.GetStringProperty("AboutPageLocation", null);
+
 			m_sResourcesFile = m_lang.ConfigurationPath + "/" +
 				mediator.PropertyTable.GetStringProperty("ResourcesPageLocation", null);
+
+			m_sInterfaceLanguageFile = m_lang.ConfigurationPath + "/" +
+				mediator.PropertyTable.GetStringProperty("InterfaceLanguagePageLocation", null);
+
+			m_sInterfaceLanguage = mediator.PropertyTable.GetStringProperty("CurrentInterfaceLanguage", "en");
+			//mediator.PropertyTable.RestoreFromFile("CabhabCurrentInterfaceLanguage");
+			//m_sInterfaceLanguage = mediator.PropertyTable.GetStringProperty("CurrentInterfaceLanguage", "en");
 
 			m_sLanguagePropertiesFile = m_lang.ConfigurationPath + "/" +
 				mediator.PropertyTable.GetStringProperty("LanguagePropertiesLocation", null);
@@ -139,10 +152,10 @@ namespace SIL.Cabhab
 		void Browser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
 		{
 			string sEUrl = e.Url.AbsolutePath;
-		    string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).Replace("\\", "/").Replace(" ", "%20");
-            //MessageBox.Show("In Browser_Navigated: sEUrl = |" + sEUrl + "|");
-            //MessageBox.Show("In Browser_Navigated: sAppData = |" + sAppData + "|");
-            if (sEUrl.EndsWith(".xml"))
+			string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).Replace("\\", "/").Replace(" ", "%20");
+			//MessageBox.Show("In Browser_Navigated: sEUrl = |" + sEUrl + "|");
+			//MessageBox.Show("In Browser_Navigated: sAppData = |" + sAppData + "|");
+			if (sEUrl.EndsWith(".xml"))
 			{
 				string sHtmlFile;
 				string sXmlFile = sEUrl.Substring(sEUrl.LastIndexOf("/") + 1);
@@ -153,20 +166,20 @@ namespace SIL.Cabhab
 				m_htmlControl.Browser.Navigate(sHtmlFile);
 			}
 			else if ((sEUrl.Contains("Contents")
-				  && sEUrl.Contains(sAppData))
+					  && sEUrl.Contains(sAppData))
 					 || (sEUrl == "Contents.htm")
 					 || (sEUrl == "blankContents.htm"))
 			{ // not a generated file; need to make sure working directory is set to configurations (and not temp)
-                //MessageBox.Show("In Browser_Navigated: Not a generated file found");
-                string sHtmlFile = sEUrl.Substring(sEUrl.LastIndexOf("/") + 1);
-                //MessageBox.Show("In Browser_Navigated: sHtmlFile originally = |" + sHtmlFile + "|");
+				//MessageBox.Show("In Browser_Navigated: Not a generated file found");
+				string sHtmlFile = sEUrl.Substring(sEUrl.LastIndexOf("/") + 1);
+				//MessageBox.Show("In Browser_Navigated: sHtmlFile originally = |" + sHtmlFile + "|");
 				if (sEUrl == "blankContents.htm") // IE 6 does this; IE 7 does not
 				{
 					sHtmlFile = "Contents.htm";
 				}
-                //MessageBox.Show("In Browser_Navigated: sHtmlFile ends = |" + sHtmlFile + "|");
-                //MessageBox.Show("In Browser_Navigated: about to navigate to = |" + m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile + "|");
-                m_htmlControl.Browser.Navigate(m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile);
+				//MessageBox.Show("In Browser_Navigated: sHtmlFile ends = |" + sHtmlFile + "|");
+				//MessageBox.Show("In Browser_Navigated: about to navigate to = |" + m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile + "|");
+				m_htmlControl.Browser.Navigate(m_lang.ConfigurationPath + "/HTMs/" + sHtmlFile);
 			}
 			else if (sEUrl.EndsWith("LeftOffAt"))
 			{
@@ -212,6 +225,13 @@ namespace SIL.Cabhab
 			return true; //we've handled this
 		}
 		public bool OnDisplayCmdGenerateFiles(object commandObject, ref UIItemDisplayProperties display)
+		{
+			CheckDisposed();
+
+			display.Enabled = true;
+			return true; //we've handled this
+		}
+		public bool OnDisplayCmdInterfaceLanguage(object commandObject, ref UIItemDisplayProperties display)
 		{
 			CheckDisposed();
 
@@ -346,6 +366,13 @@ namespace SIL.Cabhab
 			CheckDisposed();
 
 			m_htmlControl.Browser.Navigate(m_sResourcesFile);
+			return true;
+		}
+		public bool OnInterfaceLanguage(object param)
+		{
+			CheckDisposed();
+
+			m_htmlControl.Browser.Navigate(m_sInterfaceLanguageFile);
 			return true;
 		}
 		public bool OnShowStatusBar(object param)
@@ -549,6 +576,56 @@ namespace SIL.Cabhab
 				i++;
 			}
 		}
+		public string InterfaceLanguage
+		{
+			get { return m_sInterfaceLanguage; }
+			set { m_sInterfaceLanguage = String.IsNullOrEmpty(value) ? "en" : value; }
+		}
+		public void SaveInterfaceLanguage()
+		{
+			string sOldInterfaceLanguage = m_mediator.PropertyTable.GetStringProperty("CurrentInterfaceLanguage", "en");
+
+			if (sOldInterfaceLanguage != m_sInterfaceLanguage)
+			{
+				m_mediator.PropertyTable.SetProperty("CurrentInterfaceLanguage", m_sInterfaceLanguage);
+				string[] asTemp = new string[2];
+				asTemp[0] = "CurrentInterfaceLanguage";
+				asTemp[1] = m_sInterfaceLanguage;
+				m_mediator.PropertyTable.Save("CabhabCurrentInterfaceLanguage", asTemp);
+#if AfterHandleConfigMenuItemsGenerically
+				CultureInfo ci = MiscUtils.GetCultureForWs(m_sInterfaceLanguage);
+				if (ci != null)
+				{
+#if !__MonoCS__
+					FormLanguageSwitchSingleton.Instance.ChangeCurrentThreadUICulture(ci);
+					object mainWindowForm = m_mediator.PropertyTable.GetValue("window");
+					if (mainWindowForm != null)
+						FormLanguageSwitchSingleton.Instance.ChangeLanguage((Form)mainWindowForm);
+
+#else
+					// TODO-Linux: Investigate FormLanguageSwitchSingleton
+#endif
+				}
+				// Reload the mediator's string table with the appropriate language data.
+				m_mediator.StringTbl.Reload(m_sInterfaceLanguage);
+#endif
+				object mainWindowForm = m_mediator.PropertyTable.GetValue("window");
+				if (mainWindowForm != null)
+				{
+					CabhabApp ca = mainWindowForm as CabhabApp;
+					ca.ReLoadMenuBarContents();
+
+					}
+
+				m_mediator.StringTbl.Reload("en");
+			}
+		}
+
+		public void RefreshMenuUI()
+		{
+			m_mediator.PostMessage("Refresh", null);
+
+		}
 	}
 		/// <summary>
 	/// Every method here is exposed to the script in the browser
@@ -593,6 +670,66 @@ namespace SIL.Cabhab
 					return "";
 				return m_sOutValue;
 			}
+		}
+
+		public void GetInterfaceLanguage()
+		{
+			m_sOutValue = m_viewer.InterfaceLanguage;
+
+		}
+		public void SetInterfaceLanguage(string sLangCode)
+		{
+			m_viewer.InterfaceLanguage = sLangCode;
+
+		}
+		public void SaveInterfaceLanguage()
+		{
+			m_viewer.SaveInterfaceLanguage();
+		}
+		public void CopyFiles(string sFromDirectory, string sToDirectory)
+		{
+			try
+			{
+				string sConfigPath = m_lang.ConfigurationPath;
+				string[] asFromFiles = Directory.GetFiles(Path.Combine(sConfigPath, sFromDirectory));
+				string sTargetDirectory = Path.Combine(sConfigPath, sToDirectory);
+				foreach (string sFile in asFromFiles)
+				{
+					// following two lines are for testing/debugging
+					string sTargetFileName = Path.GetFileName(sFile);
+					string sTargetFile = Path.Combine(sTargetDirectory, sTargetFileName);
+					File.Copy(sFile, Path.Combine(sTargetDirectory, Path.GetFileName(sFile)), true);
+				}
+			}
+			catch (Exception e)
+			{
+
+				MessageBox.Show("Error trying to copy files from directory '" + sFromDirectory + "' to '" + sToDirectory + "': " +
+								e.Message + "... " + e.InnerException.Message);
+			}
+
+		}
+		public void CopyFile(string sFromFile, string sToFile)
+		{
+			try
+			{
+				string sConfigPath = m_lang.ConfigurationPath;
+					// following two lines are for testing/debugging
+				string sSourceFileName = Path.Combine(sConfigPath, sFromFile);
+				string sTargetFileName = Path.Combine(sConfigPath, sToFile);
+				File.Copy(sSourceFileName, sTargetFileName, true);
+			}
+			catch (Exception e)
+			{
+
+				MessageBox.Show("Error trying to copy file '" + sFromFile + "' to '" + sToFile + "': " +
+								e.Message + "... " + e.InnerException.Message);
+			}
+
+		}
+		public void RefreshMenuUI()
+		{
+			m_viewer.RefreshMenuUI();
 		}
 		public void SaveData()
 		{

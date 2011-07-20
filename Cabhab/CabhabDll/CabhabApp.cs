@@ -22,6 +22,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Security.Permissions;
 using System.Reflection;
+using System.Xml;
+using Reflector.UserInterface;
+using SIL.Utils;
 using XCore;
 //using Microsoft.Win32;
 
@@ -34,6 +37,19 @@ namespace SIL.Cabhab
 	public class CabhabApp : XWindow
 	{
 		string m_sConfigurationFile;
+		string m_sConfigurationFileFullPath;
+
+		public string ConfigurationFileFullPath
+		{
+			get { return m_sConfigurationFileFullPath; }
+			set { m_sConfigurationFileFullPath = value; }
+		}
+
+		public string ConfigurationFile
+		{
+			get { return m_sConfigurationFile; }
+		}
+
 		string m_sAnswerFile;
 		StatusBar m_statusBar = null;
 		Control m_toolbar = null;
@@ -70,35 +86,147 @@ namespace SIL.Cabhab
 		[STAThread]
 		public Form NewMainWindow(bool fTesting)
 		{
-			ImageHolder holder = new ImageHolder ();
-			// TODO: may want to add following to xml at some point or put it in configuration Path using Cabhab.ico as name
-			LoadUI(m_sConfigurationFile);//Argument("x"));
-			string sIconFile = Mediator.PropertyTable.GetStringProperty("AppIcon", null);
-			Icon = new System.Drawing.Icon(sIconFile);
-
-			if (!fTesting)
+			try
 			{
-				//m_mainSplitterContainer.Panel1Collapsed = true;
-				SetWindowLabel();
-				GetToolAndStatusBars();
-				m_viewer = (HtmlViewer)Mediator.PropertyTable.GetValue("currentContentControlObject");
-				m_viewer.ChangeShowToolbar += new EventHandler(OnChangeShowToolbar);
-				m_viewer.ChangeShowStatusBar += new EventHandler(OnChangeShowStatusBar);
-				Language m_lang = m_viewer.m_lang;
-				m_lang.ChangeLanguageName += new EventHandler(OnChangeLanguageName);
-				if (m_sAnswerFile != null && File.Exists(m_sAnswerFile))
+				Cursor.Current = Cursors.AppStarting;
+				ImageHolder holder = new ImageHolder();
+				// TODO: may want to add following to xml at some point or put it in configuration Path using Cabhab.ico as name
+				// We are putting the configuration files in the common app directory
+				string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+				string sCabhabDirectory = Path.Combine(sAppData, Path.Combine("SIL", "Cabhab"));
+				string sConfigPath = Path.Combine(sCabhabDirectory, "Configurations");
+				string sConfig = Path.Combine(sConfigPath, ConfigurationFile);
+				ConfigurationFileFullPath = sConfig;
+				string sConfigSettings = Path.Combine(sCabhabDirectory, "ConfigurationSettings");
+				if (!Directory.Exists(sConfigSettings))
 				{
-					m_lang.LoadAnswerFile(m_sAnswerFile);
-					m_lang.LanguageNameChanged();
+					Directory.CreateDirectory(sConfigSettings);
 				}
-				Show();
+				Mediator.PropertyTable.UserSettingDirectory = sConfigSettings;
+				//MessageBox.Show("Before LoadUi().  sConfig = " + sConfig);
+				LoadUI(sConfig); //Argument("x"));
+				//MessageBox.Show("Before getting icon file");
+				string sIconFile = Mediator.PropertyTable.GetStringProperty("CabhabAppIcon", null);
+				//MessageBox.Show("Before changing icon: sIconFile = " + sIconFile);
+				sIconFile = Path.Combine(sConfigPath, sIconFile);
+				//MessageBox.Show("Before setting icon: sIconFile = " + sIconFile);
+				Icon = new System.Drawing.Icon(sIconFile);
+				if (!fTesting)
+				{
+					//m_mainSplitterContainer.Panel1Collapsed = true;
+					// xWindow no longer has this: SetWindowLabel();
+					GetToolAndStatusBars();
+					m_viewer = (HtmlViewer) Mediator.PropertyTable.GetValue("currentContentControlObject");
+					m_viewer.ChangeShowToolbar += new EventHandler(OnChangeShowToolbar);
+					m_viewer.ChangeShowStatusBar += new EventHandler(OnChangeShowStatusBar);
+					Language m_lang = m_viewer.m_lang;
+					m_lang.ChangeLanguageName += new EventHandler(OnChangeLanguageName);
+					if (m_sAnswerFile != null && File.Exists(m_sAnswerFile))
+					{
+						m_lang.LoadAnswerFile(m_sAnswerFile);
+						m_lang.LanguageNameChanged();
+					}
+					Show();
+				}
+				Cursor.Current = Cursors.Arrow;
+				return this;
 			}
-			return this;
+			catch(Exception e)
+			{
+				MessageBox.Show("Exception caught: message =" + e.Message);
+				MessageBox.Show("Inner exception = " + e.InnerException);
+				return this;
+			}
+		}
+		public void ReLoadMenuBarContents()
+		{
+#if Failed
+			Assembly adaptorAssembly = GetAdapterAssembly();
+						//add the menubar
+			Control menubar;
+#endif
+			// reload information from the configuration file; its contents have probably changed
+			XmlDocument configuration = XWindow.LoadConfigurationWithIncludes(ConfigurationFileFullPath);
+			m_windowConfigurationNode = configuration.SelectSingleNode("window");
+
+
+
+			CommandBar commandBar = (MenuAdapter as IUIMenuAdapter).GetMenuBar();
+			CommandBarItemCollection currentMenuItems = commandBar.Items;
+			int iCurrentMenuItem = 0;
+
+			XmlNode menubar = configuration.SelectSingleNode("//menubar");
+			foreach (XmlNode node in menubar)
+			{
+				if (node.LocalName == "menu")
+				{
+					RenameMenuItems(configuration, node, currentMenuItems[iCurrentMenuItem]);
+					iCurrentMenuItem++;
+				}
+			}
+
+#if Failed
+			m_menusChoiceGroupCollection = MakeMajorUIPortion(
+				adaptorAssembly,
+				m_windowConfigurationNode,
+				"menubar",
+				"XCore.MenuAdapter",
+				out menubar,
+				out m_menuBarAdapter);
+
+			if (menubar != null && menubar.Parent != null)
+			{
+				System.Windows.Forms.Control parent = menubar.Parent;
+				if (parent.AccessibleName == null)
+					parent.AccessibleName = "ParentOf" + menubar.AccessibleName;
+			}
+			this.Menu = (m_menuBarAdapter as IUIMenuAdapter).GetMainMenu();
+#endif
+
+
+		}
+		private void RenameMenuItems(XmlDocument configuration, XmlNode menuNode, CommandBarItem menuItem)
+		{
+			string sLabel = XmlUtils.GetManditoryAttributeValue(menuNode, "label");
+			SetMenuItem(sLabel, menuItem);
+#if CanRecursivelySearhMenus
+			XmlNodeList subNodes = menuNode.ChildNodes;
+			int iMenuItem = 0;
+			foreach (XmlNode node in subNodes)
+			{
+				string sName = node.LocalName;
+				if (sName == "menu")
+				{
+					//RenameMenuItems(configuration, node, menuItem..MenuItems[iMenuItem]);
+				}
+				else if (sName == "item")
+				{
+					string sCommand = XmlUtils.GetOptionalAttributeValue(node, "command");
+					if (!string.IsNullOrEmpty(sCommand))
+					{
+						XmlNode command = configuration.SelectSingleNode("//command[@id='" + sCommand + "']");
+						if (command != null)
+						{
+							string sCommandLabel = XmlUtils.GetManditoryAttributeValue(command, "label");
+					//		MenuItem mi = menuItem.MenuItems[iMenuItem];
+					//		SetMenuItem(sCommandLabel, mi);
+						}
+					}
+				}
+				iMenuItem++;
+			}
+#endif
+		}
+
+		private void SetMenuItem(string sLabel, CommandBarItem menuItem)
+		{
+			if (!string.IsNullOrEmpty(sLabel))
+				menuItem.Text = sLabel.Replace("_", "&"); ;
 		}
 
 		void OnChangeLanguageName(object sender, EventArgs e)
 		{
-			SetWindowLabel();
+			// xWindow no longer has this: SetWindowLabel();
 		}
 
 		void OnChangeShowStatusBar(object sender, EventArgs e)
