@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QEmbCont" count="7/9">
+	<title level="2">La preguntas - Las preguntas de información de la cláusula subordinada</title>
+	<form section="q">
+		<EnglishExample>
+			<exItem>Los ejemplos de las preguntas subordinadas, demostrando afrontar requerido de una frase interrogativa, incluyen: </exItem>
+			<exItem label="1.">I know who hit the ball. 'Sé quién golpeó el beísbol.'</exItem>
+			<exItem label="2.">I wonder when she will come. 'Me pregunto cuándo ella vendrá.'</exItem>
+			<exItem label="3.">I will ask what the boy wants. 'Preguntaré qué quiere el muchacho.'</exItem>
+		</EnglishExample>
+		<prompt>Incorpore ejemplos similares de su idioma, independientemente de si el afrontar está requerido, aquí:</prompt>
+		<textBox id="QEmbContentExample" dataItem="embContentExample" cols="50"/>
+		<br/>
+		<instruction id="QEmbContInstruction">If any main verbs used in these examples were not marked with the feature <feature>sentential</feature> above, go to the lexicon and add the feature <feature>sentential</feature> to the appropriate entries now.</instruction>
+		<radioGroup>
+			<groupName dataItem="embCont" default="no">RQEmbCont</groupName>
+			<prompt>En preguntas de información de la cláusula subordinada, ¿hay una o más partículas o complementizadores especiales o marcadores de la pregunta que puedan ocurrir además de las frases interrogativas (incluya los afijos o los clíticos en la contestación de esta pregunta)?</prompt>
+			<radio id="QEmbContYes" dataValue="yes">Sí</radio>
+			<radioGroup id="QEmbContWordTable" show="swQEmbContYes">
+				<groupName dataItem="embContWord" default="yes">RQEmbContWord</groupName>
+				<prompt>¿Se escribe como una palabra separada?</prompt>
+				<radio id="QEmbContWordNo" dataValue="no">No, es un clítico que junta a otra palabra</radio>
+				<radioGroup id="QEmbContCliticPosTable" show="swQEmbContWordNo">
+					<groupName dataItem="embContCliticPos" default="unknown" position="yesHead">RQEmbContCliticPos</groupName>
+					<prompt>¿Es el clítico un proclítico o un enclítico?</prompt>
+					<radio id="QEmbContCliticPosBefore" dataValue="before">Un proclítico o un prefijo</radio>
+					<radio id="QEmbContCliticPosAfter" dataValue="after">Un enclítico o un sufijo</radio>
+					<radio id="QEmbContCliticPosBoth" dataValue="both">Algunos de cada tipo</radio>
+				</radioGroup>
+				<radioGroup id="QEmbContCliticTypeTable" show="swQEmbContWordNo">
+					<groupName dataItem="embContCliticAttaches" default="edge">RQEmbYNCliticAttaches</groupName>
+					<prompt>¿Dónde hace la fijación del clítico a la pregunta subordinada?</prompt>
+					<radio id="QEmbContCliticAttachesEdge" dataValue="edge">En el borde</radio>
+					<radio id="QEmbContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">Entre la frase interrogativa afrontada y el resto de la pregunta subordinada</radio>
+					<radio id="QEmbContCliticAttachesHead" dataValue="head">Al verbo</radio>
+				</radioGroup>
+				<radio id="QEmbContWordYes" dataValue="yes">Sí</radio>
+			</radioGroup>
+			<radioGroup id="QEmbContVSOBeforeWhTable" show="swVSOWordFrontYes">
+				<groupName dataItem="embContVSOBeforeWh" default="no">RQEmbContVSOBeforeWh</groupName>
+				<prompt>¿Algunos de estos marcadores de la pregunta ocurren antes de una frase interrogativa afrontada?</prompt>
+				<radio id="QEmbContVSOBeforeWhNo" dataValue="no">No, todos los marcadores de la pregunta ocurren inmediatamente después de cualquier frase interrogativa afrontada</radio>
+				<radio id="QEmbContVSOBeforeWhNoEnd" dataValue="noEnd">No, todos los marcadores de la pregunta ocurren inmediatamente después de cualquier frase interrogativa afrontada o en el final de la pregunta subordinada</radio>
+				<radioGroup id="QEmbContVSONoEndTable" show="swQEmbContVSOBeforeWhNoEnd">
+					<groupName dataItem="embContVSOBeforeWhNoEndRestricted" default="unrestricted">RQEmbContVSONoEnd</groupName>
+					<prompt>¿Pueden todos los complementizadores o marcadores de pregunta aparecer en cualquiera posición?</prompt>
+					<radio id="QEmbContVSONoEndUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
+					<radio id="QEmbContVSONoEndRestricted" dataValue="restricted">No, hay grupos separados para cada posición</radio>
+				</radioGroup>
+				<radio id="QEmbContVSOBeforeWhYes" dataValue="yes">Sí, todos ocurren antes de una frase interrogativa afrontada</radio>
+				<radio id="QEmbContVSOBeforeWhSome" dataValue="some">Sí, algunos ocurren antes de una frase interrogativa afrontada pero algunos ocurren después de ella</radio>
+			</radioGroup>
+			<radioGroup id="QEmbContPosTable" show="swQEmbContWordNotVSOFrontYes">
+				<groupName dataItem="embContPos" default="unknown" position="yesHead">RQEmbContPos</groupName>
+				<prompt>¿De dónde el complementizador o marcador de pregunta ocurre con respecto al resto de la pregunta subordinada<span id="QEmbContFrontingSpan" show="swQContFrontYes"> (con excepción de una frase interrogativa afrontada)</span>?</prompt>
+				<radio id="QEmbContPosBefore" dataValue="before">Antes</radio>
+				<radio id="QEmbContPosAfter" dataValue="after">Después</radio>
+				<radio id="QEmbContPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados al mismo tiempo</radio>
+				<radio id="QEmbContPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados al mismo tiempo</radio>
+				<radio id="QEmbContPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados al mismo tiempo</radio>
+				<radio id="QEmbContPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados al mismo tiempo</radio>
+				<radio id="QEmbContPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radioGroup id="QEmbContEitherTable" show="swQEmbContEitherOrBoth">
+					<groupName dataItem="embContEitherRestricted" default="unrestricted">RQEmbContEither</groupName>
+					<prompt>¿Pueden todos los complementizadores o marcadores de pregunta aparecer de cualquier lado de la pregunta subordinada?</prompt>
+					<radio id="QEmbContEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
+					<radio id="QEmbContEitherRestricted" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				</radioGroup>
+			</radioGroup>
+			<radioGroup id="QEmbContRequiredTable" show="swQEmbContWordYes">
+				<groupName dataItem="embContRequired" default="no">RQEmbContRequired</groupName>
+				<prompt>¿Un marcador de la pregunta se requiere en cada pregunta subordinada de información?</prompt>
+				<radio id="QEmbContRequiredYes" dataValue="yes">Sí</radio>
+				<radio id="QEmbContRequiredNo" dataValue="no">No, algunas preguntas subordinadas de información no hacen utilizar/necesidad el marcador de la pregunta</radio>
+			</radioGroup>
+			<radio id="QEmbContNoAux" dataValue="noAux">No, pero un auxiliar se afronta</radio>
+			<radioGroup id="QEmbContAuxPosTable" show="swQEmbContNoAux">
+				<groupName dataItem="embContAuxPos" default="unknown" position="yesHead">RQEmbContAuxPos</groupName>
+				<prompt>¿De dónde el auxiliar ocurre con respecto al resto de la pregunta subordinada?</prompt>
+				<radio id="QEmbContAuxPosBefore" dataValue="before">Antes</radio>
+				<radio id="QEmbContAuxPosAfter" dataValue="after">Después</radio>
+			</radioGroup>
+			<radioGroup id="QEmbContAuxTable" show="swQEmbContNoAux">
+				<groupName dataItem="embContAuxRequired" default="no">RQEmbContAux</groupName>
+				<prompt>¿Requiere un auxiliar ser afrontado en cada pregunta de información?</prompt>
+				<radio id="QEmbContAuxRequiredYes" dataValue="yes">Sí</radio>
+				<radio id="QEmbContAuxRequiredNo" dataValue="no">No, algunas preguntas subordinadas de información no requieren a un auxiliar afrontado</radio>
+			</radioGroup>
+			<radio id="QEmbContNo" dataValue="no">No, no hay el marcador o el cambio del orden de las palabras en preguntas de información de la cláusula subordinadal, apenas <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">el afrontar de una frase interrogativa y posiblemente </span>
+				<span id="QEmbContNoFrontOptionalSpan" show="swQContFrontOptional">movimiento opcional de una frase interrogativa y posiblemente </span>una diferencia en la entonación o el tono o la otra marca no-sintáctica</radio>
+		</radioGroup>
+		<instruction id="QEmbContHeadCliticInstruction" show="swQEmbContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbContEdgeCliticPrefixInstruction" show="swQEmbContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbContEdgeCliticSuffixInstruction" show="swQEmbContEdgeCliticSuffix">In the lexicon, add the feature <feature>whQ_suffix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbContEdgeCliticBothInstruction" show="swQEmbContEdgeCliticBoth">In the lexicon, add the feature <feature>whQ_prefix</feature> to the proclitics and add <feature>whQ_suffix</feature> to the enclitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbContWordYesInstruction" show="swQEmbContWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)  In either case, add the features <feature>question wh</feature>.  Mark any Yes/No question markers with the feature <feature>-wh</feature> if they cannot occur in content questions .  If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QEmbContEitherRestrictedInstruction" show="swQEmbContEitherRestricted">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+		<instruction id="QEmbContVSONoEndRestrictedInstruction" show="swQEmbContVSONoEndRestricted">In the lexicon, mark those markers which can only occur after the fronted interrogative phrase with the feature <feature>CP-initial</feature> and those which can only occur at the end of the question with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur in either position.</instruction>
+		<instruction id="QEmbContVSOBeforeWhYesInstruction" show="swQEmbContVSOBeforeWhYes">In the lexicon, mark each of the question markers which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.</instruction>
+		<instruction id="QEmbContVSOBeforeWhSomeInstruction" show="swQEmbContVSOBeforeWhSome">In the lexicon, mark those which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.  The others will default to <feature>-</feature> for that feature. </instruction>
+		<br/>
+		<buttons>
+			<button id="QEmbContBack" value="Back" goto="QMainCont.xml"/>
+			<button id="QEmbContNext" value="Next" goto="QCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swQEmbContYes">
+		<whenRadio button="QEmbContYes"/>
+	</showWhen>
+	<showWhen id="swQEmbContWordNo">
+		<whenRadio button="QEmbContWordNo"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+	</showWhen>
+	<showWhen id="swQEmbContWordYes">
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+	</showWhen>
+	<showWhen id="swQContFrontYes">
+		<whenValue element="q" attr="contFront" value="before"/>
+	</showWhen>
+	<showWhen id="swQContFrontOptional">
+		<whenValue element="q" attr="contFront" value="after"/>
+	</showWhen>
+	<showWhen id="swVSOWordFrontYes">
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+	</showWhen>
+	<showWhen id="swQEmbContWordNotVSOFrontYes">
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<openParen/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="after"/>
+		<closeParen/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQEmbContEitherOrBoth">
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+		<and/>
+		<not/>
+		<whenRadio button="QEmbContPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QEmbContPosAfter"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<openParen/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="after"/>
+		<closeParen/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQEmbContNoAux">
+		<whenRadio button="QEmbContNoAux"/>
+	</showWhen>
+	<showWhen id="swQEmbContVSOBeforeWhNoEnd">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenRadio button="QEmbContVSOBeforeWhNoEnd"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+	</showWhen>
+	<showWhen id="swQEmbContVSONoEndRestricted">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenRadio button="QEmbContVSOBeforeWhNoEnd"/>
+		<and/>
+		<whenRadio button="QEmbContVSONoEndRestricted"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+	</showWhen>
+	<showWhen id="swQEmbContVSOBeforeWhYes">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenRadio button="QEmbContVSOBeforeWhYes"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+	</showWhen>
+	<showWhen id="swQEmbContVSOBeforeWhSome">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="before"/>
+		<and/>
+		<whenRadio button="QEmbContVSOBeforeWhSome"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+	</showWhen>
+	<showWhen id="swQEmbContHeadClitic">
+		<whenRadio button="QEmbContWordNo"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+		<and/>
+		<whenRadio button="QEmbContCliticAttachesHead"/>
+	</showWhen>
+	<showWhen id="swQEmbContEdgeCliticPrefix">
+		<whenRadio button="QEmbContWordNo"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+		<and/>
+		<whenRadio button="QEmbContCliticPosBefore"/>
+		<and/>
+		<whenRadio button="QEmbContCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swQEmbContEdgeCliticSuffix">
+		<whenRadio button="QEmbContWordNo"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+		<and/>
+		<whenRadio button="QEmbContCliticPosAfter"/>
+		<and/>
+		<whenRadio button="QEmbContCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swQEmbContEdgeCliticBoth">
+		<whenRadio button="QEmbContWordNo"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+		<and/>
+		<whenRadio button="QEmbContCliticAttachesEdge"/>
+		<and/>
+		<whenRadio button="QEmbContCliticPosBoth"/>
+	</showWhen>
+	<showWhen id="swQEmbContEitherRestricted">
+		<not/>
+		<whenRadio button="QEmbContPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QEmbContPosAfter"/>
+		<and/>
+		<whenRadio button="QEmbContWordYes"/>
+		<and/>
+		<whenRadio button="QEmbContYes"/>
+		<and/>
+		<whenRadio button="QEmbContEitherRestricted"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<openParen/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenValue element="q" attr="contFront" value="after"/>
+		<closeParen/>
+		<closeParen/>
+	</showWhen>
+</page>

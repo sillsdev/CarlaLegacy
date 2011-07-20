@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPLocative" count="2/7">
+	<title level="2">Los adverbios y sus frases - Los adverbios del lugar</title>
+	<introduction>Los adverbios del lugar incluyen las palabras españolas: <example>aquí</example>, <example>allí</example> y <example>allá</example>.  Muchos idiomas también tienen un adverbio del lugar negativo que significado <example>en ninguna parte</example>.
+<br/>
+		<br/>
+		El lugar a menudo también es expresada por una frase preposicional, por ejemplo: <example>en las montañas</example>, <example>hasta San José</example> y <example>a través del río</example>.  Muchos idiomas permiten apenas una frase nominal, consistiendo en un nombre propio o una descripción del lugar.
+<br/>
+		<br/>Piense en cómo los lugares se expresan adentro su idioma. Para los que sean adverbios, ¿hay palabras del grado que puedan modificarlos?  En español, los adverbios del lugar se pueden modificar por
+		<example>solamente</example> y <example>mero o mismo</example>, como en:
+</introduction>
+	<EnglishExample>
+		<exItem label="1.">solamente aquí.</exItem>
+		<exItem label="2.">aquí mismo.</exItem>
+		<exItem label="3.">allí mero.</exItem>
+	</EnglishExample>
+	<form section="advp">
+		<prompt>Incorpore sus ejemplos de los adverbials positivos del lugar y de cualquier palabra del grado que puedan modificarlos aquí:</prompt>
+		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
+		<radioGroup>
+			<groupName dataItem="negLocativeType" default="word">RNegLocativeType</groupName>
+			<prompt>¿Su lengua tiene adverbios negativos del lugar que sean palabras separadas?</prompt>
+			<radio id="AdvPNegLocativeTypeWord" dataValue="word">Sí</radio>
+			<radio id="AdvPNegLocativeTypeAffix" dataValue="affix">No, todas se escriben como parte del verbo</radio>
+			<radio id="AdvPNegLocativeTypeVerb" dataValue="verb">No, hay solamente un afijo negativo verbal, pero puede ocurrir con adverbios positivos del lugar para dar un significado negativo del lugar</radio>
+		</radioGroup>
+		<prompt id="AdvPNegLocativeExamplePrompt" show="swAdvPNegLocativeTypeWord">Incorpore sus ejemplos de los adverbios negativos del lugar aquí:</prompt>
+		<textBox id="AdvPNegLocativeExample" dataItem="negLocativeExample" show="swAdvPNegLocativeTypeWordOrVerb" rows="3"/>
+		<prompt id="AdvPNegLocativeAffixExamplePrompt" show="swAdvPNegLocativeTypeAffix">Incorpore sus ejemplos de los afijos adverbiales del lugar negativo juntados a los verbos aquí:</prompt>
+		<prompt id="AdvPNegLocativeExamplePrompt2" show="swAdvPNegLocativeTypeVerb">Incorpore sus ejemplos de los adverbios del lugar con un verbo negativo aquí:</prompt>
+		<textBox id="AdvPNegLocativeAffixExample" dataItem="negLocativeAffixExample" show="swAdvPNegLocativeTypeAffix" rows="3"/>
+		<instruction id="AdvPLocativeInstruction">In the lexicon, key the feature <feature>locative</feature>
+on all adverbs that express location.  You can also add this feature
+to nouns and proper names which express location.
+</instruction>
+		<instruction id="AdvPNegLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">In the lexicon, key the features <feature>negative locative</feature>
+on all the negative locative adverbs.  These negative words will be discussed further in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.
+</instruction>
+		<instruction id="AdvPNegLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">In the lexicon, key the feature <feature>negative locative</feature>
+on the affix(es) that express the meaning of 'nowhere'.  These negative elements will be discussed further in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.
+</instruction>
+		<instruction id="AdvPNegLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">In the lexicon, key the feature <feature>negative</feature>
+on the affix(es) that express the negation on the verb.  Verbal negation will be discussed further in <section number="9">Basic, Single-clause Sentences - Auxiliaries</section> and in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.</instruction>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="AdvPLocExamplesBack" value="Back" goto="AdvPMain.xml"/>
+			<button id="AdvPLocExamplesNext" value="Next" goto="AdvPManner.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swAdvPNegLocativeTypeWord">
+		<whenRadio button="AdvPNegLocativeTypeWord"/>
+	</showWhen>
+	<showWhen id="swAdvPNegLocativeTypeAffix">
+		<whenRadio button="AdvPNegLocativeTypeAffix"/>
+	</showWhen>
+<showWhen id="swAdvPNegLocativeTypeVerb">
+		<whenRadio button="AdvPNegLocativeTypeVerb"/>
+</showWhen>
+	<showWhen id="swAdvPNegLocativeTypeWordOrVerb">
+		<whenRadio button="AdvPNegLocativeTypeWord"/>
+<or/>
+		<whenRadio button="AdvPNegLocativeTypeVerb"/>
+	</showWhen>
+</page>

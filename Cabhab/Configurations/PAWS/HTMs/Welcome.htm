@@ -3,42 +3,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	  <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
 <title>Welcome to the PAWS Starter Kit</title>
-<script language="jscript" id="clientEventHandlersJS">
-  // variables used throughout functions below
-var attr;
-
-  function Initialize()
-{
-}
-
-function ButtonNew()
-{
-	window.external.CreateNewLanguage();
-}
-
-function ButtonFindAnswer()
-{
-	var sFound;
-	window.external.FindAnswerFile();
-	sFound = window.external.OutValue;
-	if (sFound == "true")
-	{
-		window.external.GetAnswerValue("//leftOffAt");
-		var sTemp = window.external.OutValue;
-		window.navigate (sTemp);
-	}
-}
-
-function ButtonQuit()
-{
-	window.external.QuitFromNewLanguagePage();
-}
-
-function Refresh()
-{
-var valArray = new Array();
-
-}
+		  <script language="jscript" id="clientEventHandlersJS" src="Welcome.js">
   </script></head>
 <body onload="Initialize()">
 <h2>Welcome to the PAWS Starter Kit</h2>

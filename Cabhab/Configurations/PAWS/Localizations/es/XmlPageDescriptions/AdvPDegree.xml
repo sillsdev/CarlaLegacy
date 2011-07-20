@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPDegree" count="5/7">
+	<title level="2">Los adverbios y sus frases - Las palabras del grado</title>
+	<instruction>Considere otra vez los ejemplos que usted ha incorporado para los varios tipos de frases del adverbio, repetidos aquí, antes de contestar las preguntas siguientes.</instruction>
+	<form section="advp">
+		<prompt>Los ejemplos de adverbios temporales:</prompt>
+		<textBox id="AdvPExample" dataItem="temporalExample"/>
+		<br/>
+		<br/>
+		<prompt>Los ejemplos de adverbios del lugar:</prompt>
+		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
+		<br/>
+		<br/>
+		<prompt>Los ejemplos de adverbios de la manera:</prompt>
+		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
+		<br/>
+		<br/>
+		<prompt>Los ejemplos de adverbios de la razón o del propósito:</prompt>
+		<textBox id="AdvPReasonExample" dataItem="reasonExample"/>
+		<br/>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="degree" default="no">RDegreeYN</groupName>
+			<prompt>¿Su idioma tiene palabras del grado (escritas como palabras sintácticas separadas) que puedan modificar algunos de los adverbios?</prompt>
+			<radio id="AdvPDegreeNo" dataValue="no">No</radio>
+			<radio id="AdvPDegreeYes" checked="yes" dataValue="yes">Sí</radio>
+			<radioGroup id="AdvPDegreeYesTable" show="swAdvPDegreeYes">
+				<groupName dataItem="degreePos" default="unknown" position="yesSpec">RDegree</groupName>
+				<prompt>¿De dónde las palabras del grado ocurren con respecto al adverbio?</prompt>
+				<radio id="AdvPDegreeBefore" checked="yes" dataValue="before">Antes del adverbio</radio>
+				<radio id="AdvPDegreeAfter" checked="yes" dataValue="after">Después del adverbio</radio>
+				<radio id="AdvPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado del adverbio, pero de no ambos lados al mismo tiempo</radio>
+				<radio id="AdvPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adverbio, o de ambos lados al mismo tiempo</radio>
+				<radio id="AdvPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adverbio, o de ambos lados al mismo tiempo</radio>
+				<radio id="AdvPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adverbio, o de ambos lados al mismo tiempo</radio>
+				<radio id="AdvPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radioGroup id="AdvPDegreeEitherSideTable" show="swAdvPDegreeEitherorBoth">
+					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
+					<prompt>¿Pueden todas las palabras del grado aparecer de cualquier lado del adverbio?</prompt>
+					<radio id="AdvPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
+					<radio id="AdvPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				</radioGroup>
+			</radioGroup>
+			<radioGroup id="AdvPDegreeSetTable" show="swAdvPDegreeYes">
+				<groupName dataItem="degreeSet" default="unrestricted">RSet</groupName>
+				<prompt>¿Son las palabras del grado que pueden modificar adverbios todos los mismos?</prompt>
+				<radio id="AdvPSetUnrestricted" checked="yes" dataValue="unrestricted">Sí, el mismo grupo puede modificar cualquier tipo de adverbio</radio>
+				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Casi; el mismo grupo puede modificar temporales, lugares, y adverbios de la manera, pero los adverbios de la razón o del propósito no se modifican</radio>
+				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos de las palabras del grado para cada tipo de adverbio (nota que un cierto traslapo es aceptable y ningunas palabras del grado para los adverbios de la razón o del propósito es también aceptable)
+</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="AdvPDegreeInstruction">
+			<span id="AdvPSetUnrestrictedInstruction" show="swAdvPSetUnrestricted">Key the features <feature>makeDeg modifies_Adv</feature> on this type of degree word in the lexicon.    (If any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional feature <feature>modifies_Adv</feature> to the same lexical entry.)</span>
+			<span id="AdvPSetAlmostInstruction" show="swAdvPSetAlmost">Key the features <feature>makeDeg modifies_Adv-reason</feature> on this type of degree word in the lexicon.    (If any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional feature <feature>modifies_Adv-reason</feature> to the same lexical entry.)
+</span>
+			<span id="AdvPSetRestrictedInstruction" show="swAdvPSetRestricted">In the lexicon, key the features:
+<ul>
+					<li>
+						<feature>makeDeg modifies_temporal</feature> for temporal modifiers,</li>
+					<li>
+						<feature>makeDeg modifies_locative</feature> for locative modifiers,</li>
+					<li>
+						<feature>makeDeg modifies_manner</feature> for manner modifiers, and</li>
+					<li>
+						<feature>makeDeg modifies_reason</feature> for reason or purpose modifiers</li>
+				</ul>
+ If you have overlapping in the sets, just add more than one <feature>modifies...</feature> feature after a space.    (Similarly, if any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional <feature>modifies...</feature> feature(s) to the same lexical entry.)  If there are no degree words which modify reason or purpose adverbs, just don't mark any words with this feature.</span>
+			<br/>
+			<br/>
+			<span id="AdvPDegreeEitherRestrictedInstruction" show="swAdvPDegreeEitherRestricted">
+Those which can only occur before the adverb
+also need to have the feature <feature>AdvP-initial</feature>
+and those which can only occur after the adverb also need the
+feature <feature>AdvP-final</feature>.  Do not enter either
+feature <feature>AdvP-initial</feature> or <feature>AdvP-final</feature> on any degree words which can occur on
+either side.</span>
+		</instruction>
+		<br/>
+		<buttons>
+			<button id="AdvPDegreeBack" value="Back" goto="AdvPReason.xml"/>
+			<button id="AdvPDegreeNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swAdvPDegreeYes">
+		<whenRadio button="AdvPDegreeYes"/>
+	</showWhen>
+	<showWhen id="swAdvPDegreeEitherorBoth">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeAfter"/>
+	</showWhen>
+	<showWhen id="swAdvPDegreeEitherRestricted">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<whenRadio button="AdvPDegreeEitherRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="AdvPDegreeAfter"/>
+	</showWhen>
+	<showWhen id="swAdvPSetUnrestricted">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<whenRadio button="AdvPSetUnrestricted"/>
+	</showWhen>
+	<showWhen id="swAdvPSetAlmost">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<whenRadio button="AdvPSetAlmost"/>
+	</showWhen>
+	<showWhen id="swAdvPSetRestricted">
+		<whenRadio button="AdvPDegreeYes"/>
+		<and/>
+		<whenRadio button="AdvPSetRestricted"/>
+	</showWhen>
+</page>

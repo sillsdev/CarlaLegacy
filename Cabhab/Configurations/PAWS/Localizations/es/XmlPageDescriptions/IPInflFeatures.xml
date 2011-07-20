@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="IPInflFeatures" count="1/2">
+	<title level="2">Las oraciones básicas - Las características de la inflexión</title>
+	<introduction>Las oraciones incluyen normalmente una cierta clase de inflexión en los verbos y posiblemente de acuerdo entre el tema, el objeto y el verbo.</introduction>
+	<instruction>Los verbos y los auxiliares llevan generalmente características de la inflexión, tales como tiempo, aspecto, voz y/o modo.  En la mayoría de los casos, estas características son agregadas por los afijos. Mire a través de las características en la carta abajo y compruebe cualquiera que su idioma utiliza. <span id="IPInflFeaturesNotPracticalSpan" show="swNotPractical"> In the lexicon, add the appropriate features to the relevant affixes and also to any auxiliaries or irregular verb forms.</span> <br/>
+		<featureChart explanations="no">
+			<featureRow>
+				<featureType rowspan="3">tiempo</featureType>
+				<featureItem dataValue="ipInflFeatPresent" name="IPInflFeatPresent">present</featureItem>
+				<featureExplanation>presente</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatPast" name="IPInflFeatPast">past</featureItem>
+				<featureExplanation>pasado</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatFuture" name="IPInflFeatFuture">future</featureItem>
+				<featureExplanation>futuro</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType rowspan="9">aspecto</featureType>
+				<featureItem dataValue="ipInflFeatCompletive" name="IPInflFeatCompletive">completive</featureItem>
+				<featureExplanation>completivo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatContinuative" name="IPInflFeatContinuative">continuative</featureItem>
+				<featureExplanation>continuativo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatHabitual" name="IPInflFeatHabitual">habitual</featureItem>
+				<featureExplanation>habitual</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatImperfective" name="IPInflFeatImperfective">imperfective</featureItem>
+				<featureExplanation>imperfectivo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatIncompletive" name="IPInflFeatIncompletive">incompletive</featureItem>
+				<featureExplanation>incompletivo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatPerfective" name="IPInflFeatPerfective">perfective</featureItem>
+				<featureExplanation>perfectivo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatPotential" name="IPInflFeatPotential">potential</featureItem>
+				<featureExplanation>potencial</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatProgressive" name="IPInflFeatProgressive">progressive</featureItem>
+				<featureExplanation>progresivo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatStative" name="IPInflFeatStative">stative</featureItem>
+				<featureExplanation>estativo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType rowspan="5">modo</featureType>
+				<featureItem dataValue="ipInflFeatDeclarative" name="IPInflFeatDeclarative">declarative</featureItem>
+				<featureExplanation>declarativo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatImperative" name="IPInflFeatImperative">imperative</featureItem>
+				<featureExplanation>imperativo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatInterrogative" name="IPInflFeatInterrogative">interrogative</featureItem>
+				<featureExplanation>interrogativo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatIrrealis" name="IPInflFeatIrrealis">irrealis</featureItem>
+				<featureExplanation>irrealis</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatRealis" name="IPInflFeatRealis">realis</featureItem>
+				<featureExplanation>realis</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureType rowspan="4">otro</featureType>
+				<featureItem dataValue="ipInflFeatPassive" name="IPInflFeatPassive">passive</featureItem>
+				<featureExplanation>pasivo</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatParticiple" name="IPInflFeatParticiple">participial</featureItem>
+				<featureExplanation>participio</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatFinite" name="IPInflFeatFinite">finite</featureItem>
+				<featureExplanation>finito</featureExplanation>
+			</featureRow>
+			<featureRow>
+				<featureItem dataValue="ipInflFeatMinusFinite" name="IPInflFeatMinusFinite">-finite</featureItem>
+				<featureExplanation>infinitivo</featureExplanation>
+			</featureRow>
+		</featureChart>
+	</instruction>
+	<form section="ip" transparent="yes">
+		<br/>
+		<buttons>
+			<button id="IPInflFeaturesBack" value="Back" goto="IPContents.htm"/>
+			<button id="IPInflFeaturesNext" value="Next" goto="IPAgrFeatures.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+</page>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QPCardinal" count="4/6">
+	<title level="2">Los cuantificadores y sus frases - Los números</title>
+	<introduction>Ahora considere los números.  Los números no se pueden modificar por las palabras del grado como la poder de los cuantificadores, aunque ocurren en la misma posición. Los números cardinales se pueden, sin embargo, modificar por números ordinales y por
+		<example>próximo</example> y <example>último</example>, como en <example>los primeros veinte muchachos</example> o
+		<example>los cientos años próximos</example>.  Los números ordinales y <example>próximo</example> y <example>último</example> pueden también modificar sustantivos directamente, como en
+		<example>la tercera muchacha</example> y <example>el último muchacho</example>.
+</introduction>
+	<form section="qp">
+		<prompt>Incorpore los primeros diez números cardinales, cada uno en una línea separada y seguido por un punto, en orden a partir de la una a diez aquí:</prompt>
+		<textBox id="QPCardinalNumbers1to10" dataItem="cardinalNumbers1to10"/>
+		<br/>
+		<br/>
+		<prompt>Incorpore los números cardinales para 11 a 20 aquí:</prompt>
+		<textBox id="QPCardinalNumbers11to20" dataItem="cardinalNumbers11to20"/>
+		<br/>
+		<br/>
+		<prompt>Incorpore los números cardinales por los diez para 30 a 100 aquí:</prompt>
+		<textBox id="QPCardinalNumbers30to100" dataItem="cardinalNumbers30to100"/>
+		<br/>
+		<br/>
+		<prompt>Incorpore los primeros diez números ordinales, cada uno en una línea separada y seguido por un punto, en orden de primero a décimos aquí:</prompt>
+		<textBox id="QPOrdinalNumbers" dataItem="ordinalNumbers"/>
+		<br/>
+		<br/>
+		<prompt>Incorpore sus ejemplos de las frases nominales que contienen números ordinales aquí, incluyendo números ordinales con un sustantivo, números ordinales que modifican un número cardinal con un sustantivo, y los ejemplos que significan el el pasado o siguiente algo:</prompt>
+		<textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
+		<br/>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="ordinalFormation" default="independent">ROrdinalFormation</groupName>
+			<prompt>¿Cómo se forman los números ordinales en su idioma?</prompt>
+			<radio id="QPOrdinalAffix" checked="yes" dataValue="affix">Un afijo se agrega al número cardinal</radio>
+			<radio id="QPOrdinalIndependent" checked="yes" dataValue="independent">Son todas las palabras sintácticas independientes</radio>
+			<radio id="QPOrdinalBoth" checked="yes" dataValue="both">Algunos son formados agregando un afijo al número cardinal pero algunas son palabras sintácticas independientes</radio>
+		</radioGroup>
+		<radioGroup>
+			<groupName dataItem="ordinalPos" default="unknown" position="yesSpec">ROrdinalPosition</groupName>
+			<prompt>¿Dónde haga los números ordinales y las palabras para 'último' y 'próximo' ocurra con respecto al número cardinal en una frase como 'los primeros veinte muchachos'?</prompt>
+			<radio id="QPOrdinalBefore" checked="yes" dataValue="before">Antes del número cardinal</radio>
+			<radio id="QPOrdinalAfter" checked="yes" dataValue="after">Después del número cardinal</radio>
+			<radio id="QPOrdinalEitherSide" checked="yes" dataValue="either">De cualquier lado del número cardinal, pero no de ambos al mismo tiempo</radio>
+			<radio id="QPOrdinalEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del número cardinal, o de ambos lados al mismo tiempo</radio>
+			<radio id="QPOrdinalBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del número cardinal, o de ambos lados al mismo tiempo</radio>
+			<radio id="QPOrdnialAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del nimber cardinal, o de ambos lados al mismo tiempo</radio>
+			<radio id="QPOrdinalBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+			<radioGroup id="QPOrdinalEitherSideTable" show="swQPOrdinalEitherorBoth">
+				<groupName dataItem="ordinalEither" default="yes">ROrdinalEitherSide</groupName>
+				<prompt>¿Pueden todos los números ordinales y/o las palabras para 'último' y 'próximo' aparecer de cualquier lado del número cardinal?</prompt>
+				<radio id="QPOrdinalEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
+				<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="QPOrdinalInstruction">
+			<span id="QPOrdinalAffixInstruction" show="swQPOrdinalAffix">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
+			<span id="QPOrdinalIndependentInstruction" show="swQPOrdinalIndependent">In the lexicon, mark each ordinal word with the feature <feature>ordinal</feature>. Also, mark the words meaning <example>next</example> and <example>last</example> with this feature.</span>
+			<span id="QPOrdinalBothInstruction" show="swQPOrdinalBoth">In the lexicon, mark the appropriate affix and each independent ordinal word with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
+			<span id="QPOrdinalEitherRestrictedInstruction" show="swQPOrdinalEitherRestricted">Those which can only occur before the cardinal number also need to have the feature <feature>QP-initial</feature>
+and those which can only occur after the cardinal number also need the
+feature <feature>QP-final</feature>.  Do not enter either
+feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any ordinal numbers which can occur on
+either side.</span>
+		</instruction>
+		<introduction>Ademáa, números cardinales más grandes pueden ser los compuestos que se pueden escribir como palabras separadas, tales como <example>cientos treinta y tres</example>.  En muchos idiomas, las conjunciones se requieren o se permiten en los compuestos. La posición de la conjunción es generalmente en el mismo lado del número que los números más pequeños son. Estos dos hechos nos dicen si el compuesto es cabeza-inicial o cabeza-final.
+			Por ejemplo, el español tiene compuestos cabeza-finales del número porque la conjunción aparece hacia el extremo del compuesto, antes del número pasado (los dígito) o de los dos números pasados en el compuesto (los diez y unos los dígitos), como en <example>cuatro mil y tres</example> o <example>seis mil cientos treinta y tres</example>.
+</introduction>
+		<prompt>Incorpore cualquieres ejemplos de números compuestos aquí:</prompt>
+		<textBox id="QPCardinalCompoundExample" dataItem="cardinalCompoundExample" cols="50"/>
+		<radioGroup>
+			<groupName dataItem="cardinalHead" default="after">RCardinalHead</groupName>
+			<prompt>De acuerdo con estos ejemplos, ¿dónde es la cabeza en los números compuestos cardinales?</prompt>
+			<radio id="CardinalHeadInitial" checked="yes" dataValue="before">La inicial, los números cero a nueve ocurre inicialmente y cualquier conjunción ocurre en la parte inicial del compuesto</radio>
+			<radio id="CardinalHeadFinal" checked="yes" dataValue="after">El final, los números cero a nueve ocurre finalmente y cualquier conjunción ocurre en la parte final del compuesto</radio>
+		</radioGroup>
+		<br/>
+		<buttons>
+			<button id="QPCardinalExamplesBack" value="Back" goto="QPDegree.xml"/>
+			<button id="QPCardinalExamplesNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swQPOrdinalAffix">
+		<whenRadio button="QPOrdinalAffix"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalIndependent">
+		<whenRadio button="QPOrdinalIndependent"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalBoth">
+		<whenRadio button="QPOrdinalBoth"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalEitherorBoth">
+		<not/>
+		<whenRadio button="QPOrdinalBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPOrdinalAfter"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalEitherRestricted">
+		<whenRadio button="QPOrdinalEitherRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPOrdinalBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPOrdinalAfter"/>
+	</showWhen>
+</page>

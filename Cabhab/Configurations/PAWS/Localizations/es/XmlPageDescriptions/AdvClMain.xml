@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvClMain" count="1/3">
+	<title>Las cláusulas adverbiales</title>
+	<introduction>Esta sección considera los complementos que pueden seguir los adverbios temporales y de razón.  Los adverbios temporales con los complementos se utilizan aquí para ilustrar las construcciones, después ambos tipos serán ocupados para de su lengua en la página siguiente. </introduction>
+	<EnglishExample>
+		<exItem>Los ejemplos españoles de adverbios temporales con los complementos usados en oraciones completas incluyen:</exItem>
+		<exItem label="1.">[Desde entonces], Juan ha sido cambiante.</exItem>
+		<exItem label="2.">Juan ha sido en casa [desde la semana pasada].</exItem>
+		<exItem label="3.">[Puesto que Juan vuelto a casa del hospital] él está haciendo mejor.</exItem>
+		<exItem label="4.">Juan está sintiendo fino [ahora que él ha vuelto a casa del hospital].</exItem>
+		<exItem label="5.">El perro siguió a Susana por todas partes [cuando ella volvió de universidad].</exItem>
+		<exItem label="6.">[Cuando ella volvió de universidad], el perro siguió a Susana por todas partes.</exItem>
+	</EnglishExample>
+	<introduction id="AdvClIntroNotPractical" show="swNotPractical">These examples show that particular temporal adverbs subcategorize for certain types of complements.  In example 1 <example>since</example> is followed by another temporal adverb, in example 2 by a temporal nominal phrase, and in example 3 it has a sentential complement.  Examples 5 and 6 show that <example>when</example> also takes a sentential complement, whereas <example>now</example> in example 4 has a CP complement.
+<br/>
+		<br/>
+All of these adverbial clauses (or phrases) act the same as simple temporal adverbs, so they will be temporal AdvPs with the appropriate type of complement.  Note also that adverbs of this type normally may occur either sentence-initial or sentence-final.  The tree structures for the first four examples are given here, beginning with the adverb complement (example 1):
+<tree img="TreeDescriptions/PawsAdvClAdv.png"/>
+		<br/>
+The structure with a nominal phrase complement (example 2) is:
+		<tree img="TreeDescriptions/PawsAdvClDP.png"/>
+		<br/>
+The structure with an IP complement (example 3) is:
+		<tree img="TreeDescriptions/PawsAdvClIP.png"/>
+		<br/>
+The structure with an CP complement (example 4) is:
+		<tree img="TreeDescriptions/PawsAdvClCP.png"/>
+	</introduction>
+	<introduction id="AdvClIntroPractical" show="swPractical">Estos ejemplos demuestran que los adverbios temporales particulares permiten ciertos tipos de complementos. En ejemplo 1 <example>desde</example> es seguido por otro adverbio temporal, y en ejemplo 2 por una frase nominal temporal.  Los ejemplos 3 y 4 muestran que <example>puesto</example> y <example>puesto</example> pueden tener un complemento clausal finito con un complementizador, mientras que los ejemplos 5 y 6 muestran que <example>cuando</example> toma una oración finito por su complemento.
+		<br/>
+		<br/>
+		Todas de estas cláusulas (o las frases) adverbiales actuan igual que adverbios temporales simples, así que ellos serán frases temporales del adverbio con el tipo apropiado de complemento. Observe también que los adverbios de este tipo pueden ocurrir normalmente oración-inicial u oración-final.
+	</introduction>
+	<form section="advcl">
+		<br/>
+		<buttons>
+			<button id="AdvClMainBack" value="Back" goto="Contents.htm"/>
+			<button id="AdvClMainNext" value="Next" goto="AdvClFeatures.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+	<showWhen id="swPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="False"/>
+	</showWhen>
+</page>

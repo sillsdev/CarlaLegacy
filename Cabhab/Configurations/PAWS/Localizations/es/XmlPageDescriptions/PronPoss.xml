@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PronPoss" count="2/8">
+	<title level="2">Los pronombres - Los posesivos</title>
+	<introduction>Muchos idiomas también tienen los pronombres posesivos que pueden colocar solamente, por ejemplo <example>suys</example>, <example>mío</example>, <example>suyos</example> o <example>tuyo</example>  en español.
+		Éstos son distintos de esos pronombres que puedan ocurrir en la posición del poseedor, tal como <example>su</example>, <example>mi</example>, <example>sus</example> o <example>tu</example>, que fueron ejemplificados con los pronombres personales en la página anterior.</introduction>
+	<form section="pron">
+		<radioGroup>
+			<groupName dataItem="poss" default="no">RPronPoss</groupName>
+			<prompt>¿Su idioma tiene pronombres posesivos que se colocan solamente como frase nominal?</prompt>
+			<radio id="PronPossNo" dataValue="no">No</radio>
+			<radio id="PronPossYes" dataValue="yes">Sí</radio>
+		</radioGroup>
+		<prompt id="PronPossYesExamples" show="swPronPossYes">
+			<br/>Incorpore sus pronombres posesivos aquí, con cada uno en una nueva línea y seguida por un punto, comenzando con la primera persona, entonces segunda persona, entonces tercera persona:
+		</prompt>
+		<textBox id="PronPossExample" dataItem="possExample" show="swPronPossYes"/>
+		<radioGroup id="PronPossAffix" show="swPronPossYes">
+			<groupName dataItem="possAffix" default="no">RPronPossAffix</groupName>
+			<prompt>
+				<br/>¿Los pronombres posesivos que se colocan solamente son construidos agregando uno o más afijos a otros pronombres (o a otra palabra)?</prompt>
+			<radio id="PronPossAffixNo" dataValue="no">No, son palabras distintas</radio>
+			<radio id="PronPossAffixYes" dataValue="yes">Sí, uno o más afijos se utilizan para hacer otro pronombre (u otra palabra) en un posesivo</radio>
+			<radio id="PronPossAffixBoth" dataValue="both">Sí, uno o más afijos se utilizan para hacer otro pronombre (u otra palabra) en un posesivo en algunos casos, pero algunas formas son palabras distintas</radio>
+		</radioGroup>
+		<instruction id="PronPossAffixNoInstruction" show="swPronPossAffixNo">In the lexicon, mark each possessive pronoun with the feature <feature>possessive</feature> and also all the relevant
+<ul>
+				<li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
+				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), </li>
+				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) and </li>
+				<li>animacy (<feature>animate</feature>, <feature>-animate</feature>, <feature>human</feature>, <feature>-human</feature>), features.</li>
+			</ul>
+		</instruction>
+		<instruction id="PronPossAffixYesInstruction" show="swPronPossAffixYes">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.</instruction>
+		<instruction id="PronPossAffixBothInstruction" show="swPronPossAffixBoth">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.  In addition, mark each stand alone possessive pronoun with the feature <feature>possessive</feature> and also all the relevant
+<ul>
+				<li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
+				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), </li>
+				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) and </li>
+				<li>animacy (<feature>animate</feature>, <feature>-animate</feature>, <feature>human</feature>, <feature>-human</feature>), features.</li>
+			</ul>
+		</instruction>
+		<br/>
+		<buttons>
+			<button id="PronPossBack" value="Back" goto="PronMain.xml"/>
+			<button id="PronPossNext" value="Next" goto="PronRefl.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swPronPossYes">
+		<whenRadio button="PronPossYes"/>
+	</showWhen>
+	<showWhen id="swPronPossAffixNo">
+		<whenRadio button="PronPossYes"/>
+		<and/>
+		<whenRadio button="PronPossAffixNo"/>
+	</showWhen>
+	<showWhen id="swPronPossAffixYes">
+		<whenRadio button="PronPossYes"/>
+		<and/>
+		<whenRadio button="PronPossAffixYes"/>
+	</showWhen>
+	<showWhen id="swPronPossAffixBoth">
+		<whenRadio button="PronPossYes"/>
+		<and/>
+		<whenRadio button="PronPossAffixBoth"/>
+	</showWhen>
+</page>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPMain" count="1/7">
+	<title>Los adverbios y sus frases</title>
+	<introduction>Los adverbios expresan cuatro tipos básicos de información:
+<ul>
+			<li> tiempo,</li>
+			<li> lugar,</li>
+			<li>manera, y</li>
+	<li>razón o propósito.</li>
+		</ul>
+		Estos tipos tienen diversas características en cuanto a qué posiciones pueden ocupar y cómo pueden ser modificados. Cada tipo será cubierto en turno.
+</introduction>
+	<introduction>Los adverbios temporales incluyen las palabras españolas: <example>ya</example>, <example>entonces</example>, <example>pronto</example>, <example>ahora</example>,
+		<example>luego</example>, y <example>siempre</example>.  Muchos idiomas también tienen un adverbio temporal negativo, como <example>nunca</example> en español.  Piense en palabras similares en su idioma.
+<br/>
+		<br/>
+		Éstos necesitan para ser distinguido de otros tipos de palabras o de frases que pueden también expresar el tiempo en una oración, por ejemplo: frases nominales <example>anoche</example>,
+		<example>el próximo año</example>,  <example>mañana</example>, <example>hace mucho tiempo</example>; frases preposicionales
+		<example>durante mucho tiempo</example>, <example>en poco tiempo</example>, <example>a las diez por la noche</example>; y
+		cláusulas adverbiales <example>mientras que usted está trabajando</example> y <example>cuando llegó Susana</example>.
+</introduction>
+	<EnglishExample>
+		<exItem>Los ejemplos incluyendo modificantes de la palabra del grado son:</exItem>
+		<exItem label="1.">muy pronto.</exItem>
+		<exItem label="2.">más luego.</exItem>
+		<exItem label="3.">solamente ahora.</exItem>
+	</EnglishExample>
+	<form section="advp">
+		<prompt>Incorpore sus ejemplos de los adverbios temporales positivos y de cualquier palabra del grado que puedan modificarlos aquí:</prompt>
+		<textBox id="AdvPExample" dataItem="temporalExample"/>
+		<radioGroup>
+			<groupName dataItem="negTemporalType" default="word">RNegTemporalType</groupName>
+			<prompt>¿Su lengua tiene adverbios temporales negativos que sean palabras separadas?</prompt>
+			<radio id="AdvPNegTemporalTypeWord" dataValue="word">Sí</radio>
+			<radio id="AdvPNegTemporalTypeAffix" dataValue="affix">No, todos se escriben como parte del verbo</radio>
+			<radio id="AdvPNegTemporalTypeVerb" dataValue="verb">No, hay solamente un afijo negativo verbal, pero puede ocurrir con adverbios temporales positivos para dar un significado temporal negativo</radio>
+		</radioGroup>
+		<prompt id="AdvPNegTemporalExamplePrompt" show="swAdvPNegTemporalTypeWord">Incorpore sus ejemplos de adverbios temporales negativos aquí:</prompt>
+		<prompt id="AdvPNegTemporalExamplePrompt2" show="swAdvPNegTemporalTypeVerb">Incorpore sus ejemplos de adverbios temporales con un verbo negativo aquí:</prompt>
+		<textBox id="AdvPNegTemporalExample" dataItem="negTemporalExample" show="swAdvPNegTemporalTypeWordOrVerb" rows="3"/>
+		<prompt id="AdvPNegTemporalAffixExamplePrompt" show="swAdvPNegTemporalTypeAffix">Incorpore sus ejemplos de los afijos adverbiales temporales negativos juntados a los verbos aquí:</prompt>
+		<textBox id="AdvPNegTemporalAffixExample" dataItem="negTemporalAffixExample" show="swAdvPNegTemporalTypeAffix" rows="3"/>
+		<instruction id="AdvPInstruction">In the lexicon, key the feature <feature>temporal</feature> on all adverbs that express
+time.  You can also add this feature to nouns such as <example>night</example>, <example>year</example>,
+<example>day</example>, <example>yesterday</example>, <example>tomorrow</example>, <example>time</example>,  and <example>o'clock</example>.
+</instruction>
+		<instruction id="AdvPNegTemporalTypeWordInstruction" show="swAdvPNegTemporalTypeWord">In the lexicon, key the features <feature>negative temporal</feature>
+on all the negative temporal adverbs.  These negative words will be discussed further in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.
+</instruction>
+		<instruction id="AdvPNegTemporalTypeAffixInstruction" show="swAdvPNegTemporalTypeAffix">In the lexicon, key the feature <feature>negative temporal</feature>
+on the affix(es) that express the meaning of 'no when' or 'never'.  These negative elements will be discussed further in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.
+</instruction>
+		<instruction id="AdvPNegTemporalTypeVerbInstruction" show="swAdvPNegTemporalTypeVerb">In the lexicon, key the feature <feature>negative</feature>
+on the affix(es) that express the negation on the verb.  Verbal negation will be discussed further in <section number="9">Basic, Single-clause Sentences - Auxiliaries</section> and in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.
+</instruction>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="AdvPExamplesBack" value="Back" goto="Contents.htm"/>
+			<button id="AdvPExamplesNext" value="Next" goto="AdvPLocative.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swAdvPNegTemporalTypeWord">
+		<whenRadio button="AdvPNegTemporalTypeWord"/>
+	</showWhen>
+	<showWhen id="swAdvPNegTemporalTypeAffix">
+		<whenRadio button="AdvPNegTemporalTypeAffix"/>
+	</showWhen>
+<showWhen id="swAdvPNegTemporalTypeVerb">
+		<whenRadio button="AdvPNegTemporalTypeVerb"/>
+</showWhen>
+	<showWhen id="swAdvPNegTemporalTypeWordOrVerb">
+		<whenRadio button="AdvPNegTemporalTypeWord"/>
+<or/>
+		<whenRadio button="AdvPNegTemporalTypeVerb"/>
+	</showWhen>
+</page>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NPQP" count="1/1">
+	<title level="2">Las frases nominales - Las frases del cuantificador como modificantes</title>
+	<introduction id="NPQPIntroNotPractical" show="swNotPractical">Next to be added to the nominal phrase as we work our way down the tree are quantifier phrases (QP), discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>
+	<introduction id="NPQPIntroPractical" show="swPractical">Al lado de agregúese a la frase nominal son frases del cuantificador, discutidas anteriormente en <section number="2">Los cuantificadores y sus frases</section>. Esto significa que podremos analizar frases nominales tales como éstos en español:</introduction>    <EnglishExample>
+		<exItem label="1.">ésos muy pocos libros.</exItem>
+		<exItem label="2.">los muchos perros del muchacho.</exItem>
+		<exItem label="3.">solamente los primeros cientos muchachos.</exItem>
+	</EnglishExample>
+	<form section="np">
+		<prompt>Incorpore sus ejemplos aquí:</prompt>
+		<textBox id="NPQPExample" dataItem="qpExample"/>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="qpPos" default="unknown" position="yesSpec">RNPQPPos</groupName>
+			<prompt>De acuerdo con los datos usted afinaron, ¿dónde las frases del cuantificador (números cardinales incluyendo) ocurren con respecto al sustantivo?</prompt>
+			<radio id="NPQPPosBefore" dataValue="before">Antes</radio>
+			<radio id="NPQPPosAfter" dataValue="after">Después</radio>
+			<radio id="NPQPPosEitherSide" dataValue="either">Cualquier lado, pero no ambos lados al mismo tiempo</radio>
+			<radio id="NPQPPosEitherOrBoth" dataValue="eitherOrBoth">Cualquier lado, o en ambos lados al mismo tiempo</radio>
+			<radio id="NPQPPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del sustantivo, o en ambos lados al mismo tiempo</radio>
+			<radio id="NPQPPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del sustantivo, o en ambos lados al mismo tiempo</radio>
+			<radio id="NPQPPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+			<radioGroup id="NPQPPosEitherorBothTable" show="swNPQPPosEitherorBoth">
+				<groupName dataItem="qpEither" default="unrestricted">RNPQPPosEitherorBoth</groupName>
+				<prompt>¿Pueden todas las frases del cuantificador aparecer de cualquier lado de la frase nominal?</prompt>
+				<radio id="NPQPPosEitherorBothUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
+				<radio id="NPQPPosEitherorBothRestricted" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				<radioGroup id="NPQPPosEitherorBothRestrictedTable" show="swNPQPPosEitherorBothRestricted">
+					<groupName dataItem="qpEitherRestrictedNumPos" default="unknown" position="yesSpec">RNPQPPosEitherRestrictedNum</groupName>
+					<prompt>¿Todos los números ocurren en solamente un lado del sustantivo?</prompt>
+					<radio id="NPQPPosEitherRestrictedNumBefore" dataValue="before">Sí, todos los números ocurren antes del sustantivo</radio>
+					<radio id="NPQPPosEitherRestrictedNumAfter" dataValue="after">Sí, todos los números ocurren después del sustantivo</radio>
+					<radio id="NPQPPosEitherRestrictedNumNo" dataValue="no">No, algunos pueden ocurrir en cada lado</radio>
+				</radioGroup>
+			</radioGroup>
+		</radioGroup>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="qpAgree" default="no">RNPQPAgree</groupName>
+			<prompt>¿Haga los números o los cuantificadores llevan cualquier marca para convenir con el sustantivo que se modifican, con excepción <span id="NPQPNumberMarkingSpan1" show="swNPQPNumberMarking">de la marca del</span>
+				<span id="NPQPNumberAgreementSpan1" show="swNPQPNumberAgreement">del acuerdo en</span> número?</prompt>
+			<radio id="NPQPAgreeNo" dataValue="no">No, ellos solamente <span id="NPQPNumberMarkingSpan" show="swNPQPNumberMarking"> marquen el número</span>
+				<span id="NPQPNumberAgreementSpan" show="swNPQPNumberAgreement"> conevngan en número</span>
+			</radio>
+			<radio id="NPQPAgreeYes" dataValue="yes">Sí, convienen en otras características (también)</radio>
+		</radioGroup>
+		<instruction id="NPQPPosEitherRestrictedNumBeforeInstruction" show="swNPQPPosEitherRestrictedNumBefore">The program will mark numbers with the default feature <feature>DP-initial</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
+		<instruction id="NPQPPosEitherRestrictedNumAfterInstruction" show="swNPQPPosEitherRestrictedNumAfter">The program will mark numbers with the default feature <feature>DP-final</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
+		<instruction id="NPQPPosEitherRestrictedNumNoInstruction" show="swNPQPPosEitherRestrictedNumNo">In the lexicon, mark those quantifiers or numbers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier or number which can occur on either side.</instruction>
+		<br/>
+		<instruction id="NPQPNumberMarkingInstruction" show="swNPQPNumberMarking">
+To handle the number marking, we will assume that all numbers are plural by default.  Therefore, only the number "one" needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number "two".
+<br/>
+For other quantifiers, in the lexicon:
+<ul>
+				<li>Mark the quantifiers that signify the whole nominal phrase is singular with the feature <feature>singular</feature>.</li>
+				<li>Mark the quantifiers that signify the whole nominal phrase is plural with the feature <feature>plural</feature>.  This should be most of the quantifiers.</li>
+				<li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate quantifiers, if any.
+				</li>
+			</ul>
+		</instruction>
+		<instruction id="NPQPNumberAgreementInstruction" show="swNPQPNumberAgreement">
+To handle the number agreement, we will assume that all numbers are plural by default.  Therefore, only the number "one" needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number "two".
+<br/>
+For other quantifiers, in the lexicon:
+<ul>
+				<li>Mark the quantifiers that only go with singular nouns with the feature <feature>singular</feature>.</li>
+				<li>Mark the quantifiers that only go with plural nouns with the feature <feature>plural</feature>.  This should be most of the quantifiers.</li>
+				<li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate quantifiers, if any.
+				</li>
+			</ul>
+		</instruction>
+		<instruction id="NPQPAgreementAnimacyInstruction" show="swNPAgreementAnimacyYes">
+To handle animacy agreement:
+<ul>
+				<li>Mark the numbers or quantifiers (or the appropriate affixes) that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+				<li>Mark the numbers or quantifiers (or the appropriate affixes) that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+				<li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
+			</ul>
+		</instruction>
+		<instruction id="NPQPAgreementGenderInstruction" show="swNPAgreementGenderYes">
+Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any numbers or quantifiers (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.      </instruction>
+		<instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
+To handle class marking and agreement, in the lexicon:
+<ul>
+				<li>Mark the quantifiers or numbers that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 99.</li>
+				<li>It may be the case that the same affixes that mark the class number on nouns are also used on numbers and/or quantifiers.  If this is the case in your language, you should have already added the class feature to the affixes, so all the words will automatically come from the morphological parser with the class number marked.</li>
+			</ul>
+		</instruction>
+		<br/>
+		<buttons>
+			<button id="NPQPBack" value="Back" goto="NPContents.htm"/>
+			<button id="NPQPNext" value="Next" goto="NPContents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swNPQPPosEitherorBoth">
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosAfter"/>
+	</showWhen>
+	<showWhen id="swNPQPPosEitherorBothRestricted">
+		<whenRadio button="NPQPPosEitherorBothRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosAfter"/>
+	</showWhen>
+	<showWhen id="swNPQPPosEitherRestrictedNumBefore">
+		<whenRadio button="NPQPPosEitherRestrictedNumBefore"/>
+		<and/>
+		<whenRadio button="NPQPPosEitherorBothRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosAfter"/>
+	</showWhen>
+	<showWhen id="swNPQPPosEitherRestrictedNumAfter">
+		<whenRadio button="NPQPPosEitherRestrictedNumAfter"/>
+		<and/>
+		<whenRadio button="NPQPPosEitherorBothRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosAfter"/>
+	</showWhen>
+	<showWhen id="swNPQPPosEitherRestrictedNumNo">
+		<whenRadio button="NPQPPosEitherRestrictedNumNo"/>
+		<and/>
+		<whenRadio button="NPQPPosEitherorBothRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="NPQPPosAfter"/>
+	</showWhen>
+	<showWhen id="swNPQPNumberMarking">
+		<whenValue element="np" attr="agreeNumber" value="no"/>
+	</showWhen>
+	<showWhen id="swNPQPNumberAgreement">
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPAgreementAnimacyYes">
+		<whenRadio button="NPQPAgreeYes"/>
+		<and/>
+		<whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
+	</showWhen>
+	<showWhen id="swNPAgreementGenderYes">
+		<whenRadio button="NPQPAgreeYes"/>
+		<and/>
+		<whenValue element="np" attr="agreeOther" value="yesGender"/>
+	</showWhen>
+	<showWhen id="swNPAgreementClassYes">
+		<whenRadio button="NPQPAgreeYes"/>
+		<and/>
+		<whenValue element="np" attr="agreeOther" value="yesClass"/>
+	</showWhen>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+	<showWhen id="swPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="False"/>
+	</showWhen>
+</page>

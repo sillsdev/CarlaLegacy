@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QMain" count="1/9">
+	<title>Las preguntas</title>
+	<introduction id="QMainIntroNotPractical" show="swNotPractical">This section considers the main clause and embedded clause varieties of Yes/No questions and content questions.  We will begin with Yes/No questions.
+<br/>
+		<br/>
+ In English, main clause Yes/No questions are formed by moving an auxiliary verb in front of the subject.  Other languages use a Yes/No question marker or special complementizer instead of the fronted auxiliary.  This is the case in embedded Yes/No questions in English; no auxiliary fronting is allowed but <example>whether</example> or <example>if</example> fills the complementizer position.<br/>
+		<br/>
+As discussed in <section number="10">Complement Clauses</section>, X-bar theory takes the complementizer to be the head of the phrase, so a CP sits on top of the IP for questions even in main clauses.  Sample trees for main clause and embedded Yes/No questions in English are shown here:
+<tree img="TreeDescriptions/PawsMainYNQues.png"/>
+		<br/>
+		<tree img="TreeDescriptions/PawsEmbYNQues.png"/>
+		<br/>
+		<help href="Help/Cbgbtext.doc#CPYesNoQuestions">Click here for more information about the CP phrase structure of Yes/No questions.</help>
+	</introduction>
+	<introduction id="QMainIntroPractical" show="swPractical">Hay dos tipos de preguntas: las que requieren una respuesta de "sí" o "no" y las que se contestan con información.  Esta sección considera la cláusula principal y las variedades de la cláusula subordinada de preguntas sí/no y de preguntas contentas. Comenzaremos con preguntas sí/no.
+		<br/>
+		<br/>
+		El español no tiene ningún marcador especial de la pregunta ni ningún cambio del orden de las palabras para las preguntas sí/no de la cláusula principal.
+		Hay simplemente un cambio en la entonación. Otros idiomas utilizan marcadores y/o cambios especiales del orden de las palabras.
+		En las preguntas sí/no de la cláusula principal inglesa, un verbo auxiliar mueve delante del tema. Otros idiomas utilizan un marcador en las preguntas sí/no o un complementizador especial en vez del auxiliar afrontado. Éste es el caso en preguntas sí/no en las cláusulas subordinadas en inglés; no se permite el ningún afrontar del auxiliar pero <example>whether 'sea que'</example> o <example>if 'si'</example> llena la posición del complementizador.<br/>Puesto que los idiomas pueden actuar diferentemente en preguntas sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será cubierta por separado.<br/>
+
+	</introduction>
+	<form section="q" transparent="yes">
+		<br/>
+		<buttons>
+			<button id="QMainBack" value="Back" goto="Contents.htm"/>
+			<button id="QMainNext" value="Next" goto="QMainYN.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+	<showWhen id="swPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="False"/>
+	</showWhen>
+</page>

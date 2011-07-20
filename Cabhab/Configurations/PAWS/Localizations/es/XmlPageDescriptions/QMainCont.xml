@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QMainCont" count="6/9">
+	<title level="2">Las preguntas - Las preguntas de la cláusula principal que se contestan con información</title>
+	<form section="q">
+		<EnglishExample>
+			<exItem>Los ejemplos de las preguntas de la cláusula principal, demostrando afrontar requerido de una frase interrogativa, incluyen:</exItem>
+			<exItem label="1.">Which boy hit the ball? '¿Cuál muchacho golpeó el beísbol?'</exItem>
+			<exItem label="2.">Who hit the ball? '¿Quién golpeó el beísbol?'</exItem>
+			<exItem label="3.">Who might have hit the ball? '¿Quién pudo haber golpeado el beísbol?'</exItem>
+			<exItem label="4.">What did the boy hit? '¿Qué el muchacho golpeó?'</exItem>
+			<exItem label="5.">When is she coming? '¿Cuándo viene ella?'</exItem>
+			<exItem label="6.">Where is the leader? '¿Dónde está el líder?'</exItem>
+		</EnglishExample>
+		<prompt>Incorpore ejemplos similares de su idioma, independientemente de si el afrontar está requerido, aquí:</prompt>
+		<textBox id="QContExample" dataItem="contentExample" cols="50"/>
+		<br/>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="contFront" default="unknown" position="yesHead">RQContFront</groupName>
+			<prompt>¿Una frase interrogativa se requiere para ser afrontada en preguntas de información en su idioma?</prompt>
+			<radio id="QContFrontYes" dataValue="before">Sí, como en inglés y español</radio>
+			<radio id="QContFrontOptional" dataValue="after">No, puede permanecer en el lugar o puede moverse a la posición directamente antes del verbo</radio>
+			<radio id="QContFrontNo" dataValue="no">No, permanece simplemente en el lugar</radio>
+		</radioGroup>
+		<radioGroup>
+			<groupName dataItem="mainCont" default="no">RQMainCont</groupName>
+			<prompt>En preguntas de información de la cláusula principal, ¿hay una o más partículas o complementizadores especiales o marcadores de la pregunta que puedan ocurrir además de las frases interrogativas (incluya los afijos o los clíticos en la contestación de esta pregunta)?</prompt>
+			<radio id="QMainContYes" dataValue="yes">Sí</radio>
+			<radioGroup id="QMainContWordTable" show="swQMainContYes">
+				<groupName dataItem="mainContWord" default="yes">RQMainContWord</groupName>
+				<prompt>¿Se escribe como una palabra separada?</prompt>
+				<radio id="QMainContWordNo" dataValue="no">No, es un clítico que junta a otra palabra</radio>
+				<radioGroup id="QMainContCliticPosTable" show="swQMainContWordNo">
+					<groupName dataItem="mainContCliticPos" default="unknown" position="yesHead">RQMainContCliticPos</groupName>
+					<prompt>¿Es el clítico un proclítico o un enclítico?</prompt>
+					<radio id="QMainContCliticPosBefore" dataValue="before">Un proclítico o un prefijo</radio>
+					<radio id="QMainContCliticPosAfter" dataValue="after">Un enclítico o un sufijo</radio>
+					<radio id="QMainContCliticPosBoth" dataValue="both">Algunos de cada tipo</radio>
+				</radioGroup>
+				<radioGroup id="QMainContCliticTypeTable" show="swQMainContWordNo">
+					<groupName dataItem="mainContCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
+					<prompt>¿Dónde hace la fijación del clítico a la pregunta?</prompt>
+					<radio id="QMainContCliticAttachesEdge" dataValue="edge">En el borde</radio>
+					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">Entre la frase interrogativa afrontada y el resto de la pregunta</radio>
+					<radio id="QMainContCliticAttachesHead" dataValue="head">Al verbo</radio>
+				</radioGroup>
+				<radio id="QMainContWordYes" dataValue="yes">Sí</radio>
+			</radioGroup>
+			<radioGroup id="QMainContVSOBeforeWhTable" show="swVSOWordFrontYes">
+				<groupName dataItem="mainContVSOBeforeWh" default="no">RQMainContVSOBeforeWh</groupName>
+				<prompt>¿Algunos de estos marcadores de la pregunta ocurren antes de una frase interrogativa afrontada?</prompt>
+				<radio id="QMainContVSOBeforeWhNo" dataValue="no">No, todos los marcadores de la pregunta ocurren inmediatamente después de cualquier frase interrogativa afrontada</radio>
+				<radio id="QMainContVSOBeforeWhNoEnd" dataValue="noEnd">No, todos los marcadores de la pregunta ocurren inmediatamente después de cualquier frase interrogativa afrontada o en el final de la pregunta</radio>
+				<radioGroup id="QMainContVSONoEndTable" show="swQMainContVSOBeforeWhNoEnd">
+					<groupName dataItem="mainContVSOBeforeWhNoEndRestricted" default="unrestricted">RQMainContVSONoEnd</groupName>
+					<prompt>¿Pueden todos los complementizadores o marcadores de pregunta aparecer en cualquiera posición?</prompt>
+					<radio id="QMainContVSONoEndUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
+					<radio id="QMainContVSONoEndRestricted" dataValue="restricted">No, hay grupos separados para cada posición</radio>
+				</radioGroup>
+				<radio id="QMainContVSOBeforeWhYes" dataValue="yes">Sí, todos ocurren antes de una frase interrogativa afrontada</radio>
+				<radio id="QMainContVSOBeforeWhSome" dataValue="some">Sí, algunos ocurren antes de una frase interrogativa afrontada pero algunos ocurren después de ella</radio>
+			</radioGroup>
+			<radioGroup id="QMainContPosTable" show="swQMainContWordNotVSOFrontYes">
+				<groupName dataItem="mainContPos" default="unknown" position="yesHead">RQMainContPos</groupName>
+				<prompt>¿De dónde el complementizador o marcador de pregunta ocurre con respecto al resto de la pregunta<span id="QMainContFrontingSpan" show="swQContFrontYes"> (con excepción de una frase interrogativa afrontada)</span>?</prompt>
+				<radio id="QMainContPosBefore" dataValue="before">Antes</radio>
+				<radio id="QMainContPosAfter" dataValue="after">Después</radio>
+				<radio id="QMainContPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados al mismo tiempo</radio>
+				<radio id="QMainContPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados al mismo tiempo</radio>
+				<radio id="QMainContPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados al mismo tiempo</radio>
+				<radio id="QMainContPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados al mismo tiempo</radio>
+				<radio id="QMainContPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radioGroup id="QMainContEitherTable" show="swQMainContEitherOrBoth">
+					<groupName dataItem="mainContEitherRestricted" default="unrestricted">RQMainContEither</groupName>
+					<prompt>¿Pueden todos los complementizadores o marcadores de pregunta aparecer de cualquier lado de la pregunta?</prompt>
+					<radio id="QMainContEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
+					<radio id="QMainContEitherRestricted" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				</radioGroup>
+			</radioGroup>
+			<radioGroup id="QMainContRequiredTable" show="swQMainContWordYes">
+				<groupName dataItem="mainContRequired" default="no">RQMainContRequired</groupName>
+				<prompt>¿Un marcador de la pregunta se requiere en cada pregunta de información?</prompt>
+				<radio id="QMainContRequiredYes" dataValue="yes">Sí</radio>
+				<radio id="QMainContRequiredNo" dataValue="no">No, algunas preguntas de información no hacen utilizar/necesidad el marcador de la pregunta</radio>
+			</radioGroup>
+			<radio id="QMainContNoAux" dataValue="noAux">No, pero un auxiliar se afronta</radio>
+			<radioGroup id="QMainContAuxPosTable" show="swQMainContNoAux">
+				<groupName dataItem="mainContAuxPos" default="unknown" position="yesHead">RQMainContAuxPos</groupName>
+				<prompt>¿De dónde el auxiliar ocurre con respecto al resto de la pregunta?</prompt>
+				<radio id="QMainContAuxPosBefore" dataValue="before">Antes</radio>
+				<radio id="QMainContAuxPosAfter" dataValue="after">Después</radio>
+			</radioGroup>
+			<radioGroup id="QMainContAuxTable" show="swQMainContNoAux">
+				<groupName dataItem="mainContAuxRequired" default="no">RQMainContAux</groupName>
+				<prompt>¿Requiere un auxiliar ser afrontado en cada pregunta de información?</prompt>
+				<radio id="QMainContAuxRequiredYes" dataValue="yes">Sí</radio>
+				<radio id="QMainContAuxRequiredNo" dataValue="no">No, algunas preguntas de información no requieren a un auxiliar afrontado, tal como preguntas que pregunten al tema en inglés</radio>
+			</radioGroup>
+			<radio id="QMainContNo" dataValue="no">No, no hay el marcador o el cambio del orden de las palabras en preguntas de información de la cláusula principal, apenas <span id="QMainContNoFrontYesSpan" show="swQContFrontYes">el afrontar de una frase interrogativa y posiblemente </span><span id="QMainContNoFrontOptionalSpan" show="swQContFrontOptional">movimiento opcional de una frase interrogativa y posiblemente </span>una diferencia en la entonación o el tono o la otra marca no-sintáctica</radio>
+		</radioGroup>
+		<instruction id="QMainContHeadCliticInstruction" show="swQMainContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QMainContEdgeCliticPrefixInstruction" show="swQMainContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QMainContEdgeCliticSuffixInstruction" show="swQMainContEdgeCliticSuffix">In the lexicon, add the feature <feature>whQ_suffix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QMainContEdgeCliticBothInstruction" show="swQMainContEdgeCliticBoth">In the lexicon, add the feature <feature>whQ_prefix</feature> to the proclitics and add <feature>whQ_suffix</feature> to the enclitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QMainContWordYesInstruction" show="swQMainContWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)  In either case, add the features <feature>question wh</feature>.  Mark any Yes/No question markers with the feature <feature>-wh</feature> if they cannot occur in content questions .  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+		<instruction id="QMainContEitherRestrictedInstruction" show="swQMainContEitherRestricted">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+		<instruction id="QMainContVSONoEndRestrictedInstruction" show="swQMainContVSONoEndRestricted">In the lexicon, mark those markers which can only occur after the fronted interrogative phrase with the feature <feature>CP-initial</feature> and those which can only occur at the end of the question with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur in either position.</instruction>
+		<instruction id="QMainContVSOBeforeWhYesInstruction" show="swQMainContVSOBeforeWhYes">In the lexicon, mark each of the question markers which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.</instruction>
+		<instruction id="QMainContVSOBeforeWhSomeInstruction" show="swQMainContVSOBeforeWhSome">In the lexicon, mark those which may occur before a fronted interrogative phrase with the feature <feature>CP-specifier-initial</feature>.  The others will default to <feature>-</feature> for that feature. </instruction>
+		<br/>
+		<buttons>
+			<button id="QCont2Back" value="Back" goto="QCont.xml"/>
+			<button id="QCont2Next" value="Next" goto="QEmbCont.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swQMainContYes">
+		<whenRadio button="QMainContYes"/>
+	</showWhen>
+	<showWhen id="swQMainContWordNo">
+		<whenRadio button="QMainContWordNo"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+	</showWhen>
+	<showWhen id="swQMainContWordYes">
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+	</showWhen>
+	<showWhen id="swQContFrontYes">
+		<whenRadio button="QContFrontYes"/>
+	</showWhen>
+	<showWhen id="swQContFrontOptional">
+		<whenRadio button="QContFrontOptional"/>
+	</showWhen>
+	<showWhen id="swVSOWordFrontYes">
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+	</showWhen>
+	<showWhen id="swQMainContWordNotVSOFrontYes">
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<openParen/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontNo"/>
+		<closeParen/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQMainContEitherOrBoth">
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+		<and/>
+		<not/>
+		<whenRadio button="QMainContPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QMainContPosAfter"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<openParen/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontNo"/>
+		<closeParen/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swQMainContNoAux">
+		<whenRadio button="QMainContNoAux"/>
+	</showWhen>
+	<showWhen id="swQMainContVSOBeforeWhNoEnd">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+		<and/>
+		<whenRadio button="QMainContVSOBeforeWhNoEnd"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+	</showWhen>
+	<showWhen id="swQMainContVSONoEndRestricted">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+		<and/>
+		<whenRadio button="QMainContVSOBeforeWhNoEnd"/>
+		<and/>
+		<whenRadio button="QMainContVSONoEndRestricted"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+	</showWhen>
+	<showWhen id="swQMainContVSOBeforeWhYes">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+		<and/>
+		<whenRadio button="QMainContVSOBeforeWhYes"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+	</showWhen>
+	<showWhen id="swQMainContVSOBeforeWhSome">
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontYes"/>
+		<and/>
+		<whenRadio button="QMainContVSOBeforeWhSome"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+	</showWhen>
+	<showWhen id="swQMainContHeadClitic">
+		<whenRadio button="QMainContWordNo"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+		<and/>
+		<whenRadio button="QMainContCliticAttachesHead"/>
+	</showWhen>
+	<showWhen id="swQMainContEdgeCliticPrefix">
+		<whenRadio button="QMainContWordNo"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+		<and/>
+		<whenRadio button="QMainContCliticPosBefore"/>
+		<and/>
+		<whenRadio button="QMainContCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swQMainContEdgeCliticSuffix">
+		<whenRadio button="QMainContWordNo"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+		<and/>
+		<whenRadio button="QMainContCliticPosAfter"/>
+		<and/>
+		<whenRadio button="QMainContCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swQMainContEdgeCliticBoth">
+		<whenRadio button="QMainContWordNo"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+		<and/>
+		<whenRadio button="QMainContCliticAttachesEdge"/>
+		<and/>
+		<whenRadio button="QMainContCliticPosBoth"/>
+	</showWhen>
+	<showWhen id="swQMainContEitherRestricted">
+		<not/>
+		<whenRadio button="QMainContPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QMainContPosAfter"/>
+		<and/>
+		<whenRadio button="QMainContWordYes"/>
+		<and/>
+		<whenRadio button="QMainContYes"/>
+		<and/>
+		<whenRadio button="QMainContEitherRestricted"/>
+		<and/>
+		<openParen/>
+		<not/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<or/>
+		<openParen/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+		<and/>
+		<whenRadio button="QContFrontNo"/>
+		<closeParen/>
+		<closeParen/>
+	</showWhen>
+</page>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="CompPosition" count="3/4">
+	<title level="2">Las cláusulas de complemento - La posición de complementizador</title>
+	<form section="comp">
+		<radioGroup>
+			<groupName dataItem="comp" default="no">RComp</groupName>
+			<prompt>En vista de los ejemplos usted dio de cláusulas de complemento, ¿su idioma tiene uno o más complementizadores que marcan cláusulas subordinadas?   (Las preguntas y las cláusulas relativas serán consideradas en las secciones siguientes, así que no contestan para esos tipos aquí.)</prompt>
+			<radio id="CompYes" dataValue="yes">Sí, como <example>that 'que'</example> y <example>for 'para'</example> en inglés</radio>
+			<radioGroup id="CompWordTable" show="swCompYes">
+				<groupName dataItem="compWord" default="yes">RCompWord</groupName>
+				<prompt>¿Se escribe como una palabra separada?</prompt>
+				<radio id="CompWordNo" dataValue="no">No, es un clítico que junta a otra palabra</radio>
+				<radioGroup id="CompCliticPosTable" show="swCompWordNo">
+					<groupName dataItem="compCliticPos" default="unknown" position="yesHead">RCompCliticPos</groupName>
+					<prompt>¿Está el clítico un proclítico o un enclítico?</prompt>
+					<radio id="CompCliticPosBefore" dataValue="before">Un proclítico o un prefijo</radio>
+					<radio id="CompCliticPosAfter" dataValue="after">Un enclítico o un sufijo</radio>
+					<radio id="CompCliticPosBoth" dataValue="both">Algunos de cada tipo</radio>
+				</radioGroup>
+				<radioGroup id="CompCliticTypeTable" show="swCompWordNo">
+					<groupName dataItem="compCliticAttaches" default="edge">RCompCliticAttaches</groupName>
+					<prompt>¿Dónde hace la fijación del clítico a la cláusula subordinada?</prompt>
+					<radio id="CompCliticAttachesEdge" dataValue="edge">En el borde</radio>
+					<radio id="CompCliticAttachesHead" dataValue="head">Al verbo</radio>
+				</radioGroup>
+				<radio id="CompWordYes" dataValue="yes">Sí</radio>
+			</radioGroup>
+			<radioGroup id="CompPosTable" show="swCompWordYes">
+				<groupName dataItem="compPos" default="unknown" position="yesHead">RCompPos</groupName>
+				<prompt>¿De dónde el complementizador ocurre con respecto al resto de la cláusula subordinada?</prompt>
+				<radio id="CompPosBefore" dataValue="before">Antes</radio>
+				<radio id="CompPosAfter" dataValue="after">Después</radio>
+				<radio id="CompPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados al mismo tiempo</radio>
+				<radio id="CompPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados al mismo tiempo</radio>
+				<radio id="CompPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados al mismo tiempo</radio>
+				<radio id="CompPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados al mismo tiempo</radio>
+				<radio id="CompPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radioGroup id="CompEitherOrBothTable" show="swCompPosEitherOrBoth">
+					<groupName dataItem="compEitherRestricted" default="unrestricted">RCompEitherRestricted</groupName>
+					<prompt>¿Pueden todos los complementizadores aparecer de cualquier lado de la cláusula subordinada?</prompt>
+					<radio id="CompEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
+					<radio id="CompEitherRestricted" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				</radioGroup>
+			</radioGroup>
+			<radio id="CompNo" dataValue="no">No, no hay palabra del complementizador o clítico para las cláusulas de complemento<span id="CompNoSpanNotPractical" show="swNotPractical">, so all embedded clauses are simply IPs in this language</span></radio>
+		</radioGroup>
+		<instruction id="CompHeadCliticInstruction" show="swCompHeadClitic">In the lexicon, add the feature <feature>comp</feature> to these clitics.</instruction>
+		<instruction id="CompEdgeCliticPrefixInstruction" show="swCompEdgeCliticPrefix">In the lexicon, add the feature <feature>comp_prefix</feature> to these clitics.</instruction>
+		<instruction id="CompEdgeCliticSuffixInstruction" show="swCompEdgeCliticSuffix">In the lexicon, add the feature <feature>comp_suffix</feature> to these clitics.</instruction>
+		<instruction id="CompEdgeCliticBothInstruction" show="swCompEdgeCliticBoth">In the lexicon, add the feature <feature>comp_prefix</feature> to the proclitics and add <feature>comp_suffix</feature> to the enclitics.</instruction>
+		<instruction id="CompWordYesInstruction" show="swCompWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)</instruction>
+		<instruction id="CompEitherRestrictedInstruction" show="swCompEitherRestricted">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+		<br/>
+		<buttons>
+			<button id="CompPositionBack" value="Back" goto="CompFeatures.xml"/>
+			<button id="CompPositionNext" value="Next" goto="CompTesting.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swCompYes">
+		<whenRadio button="CompYes"/>
+	</showWhen>
+	<showWhen id="swCompWordYes">
+		<whenRadio button="CompWordYes"/>
+		<and/>
+		<whenRadio button="CompYes"/>
+	</showWhen>
+	<showWhen id="swCompWordNo">
+		<whenRadio button="CompWordNo"/>
+		<and/>
+		<whenRadio button="CompYes"/>
+	</showWhen>
+	<showWhen id="swCompHeadClitic">
+		<whenRadio button="CompWordNo"/>
+		<and/>
+		<whenRadio button="CompYes"/>
+		<and/>
+		<whenRadio button="CompCliticAttachesHead"/>
+	</showWhen>
+	<showWhen id="swCompEdgeCliticPrefix">
+		<whenRadio button="CompWordNo"/>
+		<and/>
+		<whenRadio button="CompYes"/>
+		<and/>
+		<whenRadio button="CompCliticPosBefore"/>
+		<and/>
+		<whenRadio button="CompCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swCompEdgeCliticSuffix">
+		<whenRadio button="CompWordNo"/>
+		<and/>
+		<whenRadio button="CompYes"/>
+		<and/>
+		<whenRadio button="CompCliticPosAfter"/>
+		<and/>
+		<whenRadio button="CompCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swCompEdgeCliticBoth">
+		<whenRadio button="CompWordNo"/>
+		<and/>
+		<whenRadio button="CompYes"/>
+		<and/>
+		<whenRadio button="CompCliticAttachesEdge"/>
+		<and/>
+		<whenRadio button="CompCliticPosBoth"/>
+	</showWhen>
+	<showWhen id="swCompPosEitherOrBoth">
+		<not/>
+		<whenRadio button="CompPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="CompPosAfter"/>
+		<and/>
+		<whenRadio button="CompWordYes"/>
+		<and/>
+		<whenRadio button="CompYes"/>
+	</showWhen>
+	<showWhen id="swCompEitherRestricted">
+		<not/>
+		<whenRadio button="CompPosBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="CompPosAfter"/>
+		<and/>
+		<whenRadio button="CompWordYes"/>
+		<and/>
+		<whenRadio button="CompYes"/>
+		<and/>
+		<whenRadio button="CompEitherRestricted"/>
+	</showWhen>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+</page>

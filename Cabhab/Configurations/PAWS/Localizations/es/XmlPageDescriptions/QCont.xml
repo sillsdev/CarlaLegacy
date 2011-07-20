@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QCont" count="5/9">
+	<title level="2">Las preguntas - La estructura de preguntas de información</title>
+	<introduction id="QContIntroNotPractical" show="swNotPractical">Depending on the basic word order of your language, content questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.<br/>
+		<br/>In languages like English, the interrogative word or phrase must be fronted.  In the trees, this fronting will be to the specifier of CP.  Sample trees for main clause and embedded content questions in English are shown here:
+<tree img="TreeDescriptions/PawsMainContentQues.png"/>
+		<br/>
+		<tree img="TreeDescriptions/PawsEmbContentQues.png"/>
+		<br/>
+		<help href="Help/Cbgbtext.doc#ContentQuestions">Click here for more information about the CP phrase structure of content questions.</help>
+		<br/>
+		<br/>
+In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the head of CP position or just the same as a normal sentence (IP).  In either case, the interrogative phrase appears in its normal argument positon.
+<br/>
+<br/>
+Many SOV languages optionally allow movement of an interrogative phrase to the position immediately before the verb, which will be within the VP in the tree structures used here.
+		</introduction>
+	<introduction id="QContIntroPractical" show="swPractical">Dependiendo del orden de las palabras básico del idioma, las preguntas que se contestan con información pueden ser formadas con o sin afrontar una frase interrogativa.
+		Los idiomas cabeza-finales (SOV, OVS, y OSV) no tienen generalmente movimiento de una frase interrogativa en preguntas, mientras que los idiomas cabeza-iniciales (SVO, VOS, y VSO) requieren generalmente afrontar de una frase interrogativa.<br/>
+		<br/>En idiomas similares con inglés y español, la palabra o la frase interrogativa debe ser afrontado.
+		<br/>
+		<br/>
+		En idiomas sin afrontar para los interrogativos, la estructura de frase de una pregunta contenta será igual que una pregunta sí/no con un marcador de la pregunta o auxiliar en la posición del complementizer o apenas igual que una oración normal.
+		En cualquier caso, la frase interrogativa aparece en su posición normal.
+		<br/>
+		<br/>
+		Muchos idiomas del orden SOV permiten opcionalmente el movimiento de una frase interrogativa a la posición inmediatamente antes del verbo.
+	</introduction>
+	<form section="q" transparent="yes">
+		<br/>
+		<buttons>
+			<button id="QContBack" value="Back" goto="QWh.xml"/>
+			<button id="QContNext" value="Next" goto="QMainCont.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+	<showWhen id="swPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="False"/>
+	</showWhen></page>

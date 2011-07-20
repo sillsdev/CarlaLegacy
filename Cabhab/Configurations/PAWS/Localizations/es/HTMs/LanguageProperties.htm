@@ -1,0 +1,42 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css">
+<title>Language Properties</title>
+<script language="jscript" id="clientEventHandlersJS" src="LanguageProperties.js">
+  </script></head>
+<body onload="Initialize()">
+<h2>Propiedades de la Lengua</h2>
+<div class="introduction">
+<p>The PAWS Starter Kit is for a particular language.  Certain
+information is needed.  Please enter the appropriate information
+below.</p>
+</div><br><div class="form">
+<p style="margin-left: 0.125in">Enter the name of your language:<br></p>
+<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangName" name="LangPropLangName" contenteditable="inherit"></textarea><br><br><p style="margin-left: 0.125in">Enter an abbreviation for your language (we suggest using the Ethnologue or ISO639-3 code):<br></p>
+<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="4" id="LangPropLangAbbr" name="LangPropLangAbbr" contenteditable="inherit"></textarea>
+<p style="margin-left: 0.125in">The name of the font that will be used to display your language data is shown below.  Click on the 'Change font' button to change it or any of its font properties.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="40" id="LangPropFont" name="LangPropFont" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Change Font " name="BLangPropFont" id="BLangPropFont" onclick="ButtonLangPropFont()" style="width: 85px; height: 24px"><table border="0" style="margin-left: 0.5in">
+<tr>
+<td colspan="2"><span class="radioPrompt">In what direction is your language written?</span></td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RLangPropRTL" id="LangPropRTLLTR" onclick="RLangPropRTL(LangPropRTLLTR)" value="False"></td>
+<td width="99%" id="LangPropRTLLTRRPrompt" onclick="RLangPropRTL(LangPropRTLLTR)" value="False" onmouseover="this.style.cursor='default'">Left to right</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RLangPropRTL" id="LangPropRTLRTL" onclick="RLangPropRTL(LangPropRTLRTL)" value="True"></td>
+<td width="99%" id="LangPropRTLRTLRPrompt" onclick="RLangPropRTL(LangPropRTLRTL)" value="True" onmouseover="this.style.cursor='default'">Right to left</td>
+</tr>
+</table>
+<div id="ShowBackNextButtons">
+<br/><input type="button" value="Next >" name="BNext" id="LangPropNext" onclick="ButtonNext()" style="width: 78px; height: 24px">
+</div>
+</div>
+<div align="center" id="Return"  >
+<a href="LeftOffAt" onclick="saveData()">Return</a><br/>
+</div>
+</body>
+</html>

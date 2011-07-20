@@ -1,0 +1,31 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css">
+<title>Interface Language</title>
+<script language="jscript" id="clientEventHandlersJS" src="InterfaceLanguage.js">
+  </script></head>
+<body onload="Initialize()">
+<h2>Interface Language</h2>
+<div class="introduction">
+<p>The user interface for the PAWS Starter Kit is available in the following languages.  Please select the one you want to use below.</p>
+</div><br><div class="form">
+<table border="0" style="margin-left: 0.5in">
+<tr>
+<td colspan="2"><span class="radioPrompt">What language is the user interface in?</span></td>
+</tr>
+<tr>
+	<td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEn" onclick="RInterfaceLang(InterfaceLangEn)" value="False"></td>
+	<td width="99%" id="InterfaceLangEnPrompt" onclick="RInterfaceLang(InterfaceLangEn)" value="False" onmouseover="this.style.cursor='default'">English</td>
+</tr>
+<tr>
+	<td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEs" onclick="RInterfaceLang(InterfaceLangEs)" value="True"></td>
+	<td width="99%" id="InterfaceLangEsPrompt" onclick="RInterfaceLang(InterfaceLangEs)" value="True" onmouseover="this.style.cursor='default'">Spanish</td>
+</tr>
+</table>
+</div>
+<div align="center" id="Return"  >
+<a href="LeftOffAt" onclick="copyFiles()">Return</a><br/>
+</div>
+</body>
+</html>

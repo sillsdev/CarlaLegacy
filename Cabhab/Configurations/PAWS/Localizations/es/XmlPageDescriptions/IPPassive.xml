@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPPassive" count="1/1">
+	<title level="2">Las oraciones básicas - Las oraciones pasivas</title>
+	<introduction>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición sujeta.  El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase preposicional o posposicional (como en español con la preposición particular <example>por</example>) o de una frase nominal, dependiendo del idioma. Además, un auxiliar particular puede ser requerido en pasivos (una forma de <example>estar</example> en español).  Los ejemplos españoles con y sin una frase del agente incluyen:</introduction>
+	<EnglishExample>
+		<exItem label="1.">El vidrio estaba quebrado.</exItem>
+		<exItem label="2.">El vidrio estaba quebrado por el niño.</exItem>
+		<exItem label="3.">El béisbol se pudo haber golpeado.</exItem>
+		<exItem label="4.">El béisbol se pudo haber golpeado por el muchacho.</exItem>
+	</EnglishExample>
+	<form section="ip">
+		<prompt>Incorpore algunos ejemplos de oraciones pasivas (si hay) en su idioma aquí:</prompt>
+		<textBox id="IPPassiveExample" dataItem="passiveExample" cols="50"/>
+		<radioGroup>
+			<groupName dataItem="passive" default="yes">RIPPassive</groupName>
+			<prompt>¿Su lengua tiene oraciones pasivas?</prompt>
+			<radio id="IPPassiveNo" dataValue="no">No</radio>
+			<radio id="IPPassiveYes" dataValue="yes">Sí</radio>
+			<radioGroup id="IPPassiveAgentTable" show="swPassiveYes">
+				<groupName dataItem="passiveAgent" default="no">RIPPassiveAgent</groupName>
+				<prompt>¿Se permite una frase del agente?</prompt>
+				<radio id="IPPassiveAgentNo" dataValue="no">No, el agente no puede ser expresado</radio>
+				<radio id="IPPassiveAgentYes" dataValue="yes">Sí, el agente puede ser expresad</radio>
+				<radioGroup id="IPPassiveAgentCatTable" show="swPassiveAgentYes">
+					<groupName dataItem="passiveAgentCat" default="dp">RIPPassiveAgentCat</groupName>
+					<prompt>¿Qué categoría sintáctica es la frase del agente?</prompt>
+					<radio id="IPPassiveAgentCatPP" dataValue="pp">frase preposicional o posposicional</radio>
+					<radio id="IPPassiveAgentCatDP" dataValue="dp">frase nominal</radio>
+				</radioGroup>
+			</radioGroup>
+			<radioGroup id="IPPassiveAuxTable" show="swPassiveYes">
+				<groupName dataItem="passiveAux" default="no">RIPPassiveAux</groupName>
+				<prompt>¿Se requiere una forma auxiliar particular en las oraciones pasivas?</prompt>
+				<radio id="IPPassiveAuxNo" dataValue="no">No</radio>
+				<radio id="IPPassiveAuxYes" dataValue="yes">Sí</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="IPPassiveInstruction" show="swPassiveYes">Mark inherently passive verbs and any passive affixes with the feature <feature>passive</feature> in the lexicon, if you have not already done so.  The same forms may have the <feature>participle</feature> feature as well, if your language is like English, or you may have distinct forms for passive.  <span id="IPPassiveAgentPPSpan" show="swPassiveAgentPP">Also, mark the <span id="IPPrepSpan" show="swPPPosPrep">preposition</span>
+				<span id="PPPostSpan" show="swPPPosPost">postposition</span>
+				<span id="PPBothSpan" show="swPPPosBoth">preposition or postposition</span> that is included in the Agent phrase with the feature <feature>passive</feature>.</span>
+			<span id="IPPassiveAuxSpan" show="swIPPassiveAuxYes"> Mark the particular auxiliary that goes with passive sentences with the feature <feature>passive</feature> as well.</span>
+		</instruction>
+		<br/>
+		<buttons>
+			<button id="IPPassiveBack" value="Back" goto="IPContents.htm"/>
+			<button id="IPPassiveNext" value="Next" goto="IPContents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swPassiveYes">
+		<whenRadio button="IPPassiveYes"/>
+	</showWhen>
+	<showWhen id="swPassiveAgentYes">
+		<whenRadio button="IPPassiveAgentYes"/>
+		<and/>
+		<whenRadio button="IPPassiveYes"/>
+	</showWhen>
+	<showWhen id="swPassiveAgentPP">
+		<whenRadio button="IPPassiveAgentCatPP"/>
+		<and/>
+		<whenRadio button="IPPassiveAgentYes"/>
+		<and/>
+		<whenRadio button="IPPassiveYes"/>
+	</showWhen>
+	<showWhen id="swIPPassiveAuxYes">
+		<whenRadio button="IPPassiveAuxYes"/>
+		<and/>
+		<whenRadio button="IPPassiveYes"/>
+	</showWhen>
+	<showWhen id="swPPPosPrep">
+		<whenValue element="pp" attr="pPos" value="before"/>
+	</showWhen>
+	<showWhen id="swPPPosPost">
+		<whenValue element="pp" attr="pPos" value="after"/>
+	</showWhen>
+	<showWhen id="swPPPosBoth">
+		<whenValue element="pp" attr="pPos" value="both"/>
+	</showWhen>
+</page>

@@ -1,51 +1,21 @@
 <html>
    <head>
-      <title>About PAWS Starter Kit</title>
-      <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
-<script language="jscript">
-
-  function Initialize()
-{
-var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-xmlDoc.async="false";
-//xmlDoc.onreadystatechange=verify;
-xmlDoc.load("../paws.xml");
-//xmlObj=xmlDoc.documentElement;
-
-var versions = xmlDoc.getElementsByTagName("version");
-var versionNumberNode = versions[0].childNodes[0];
-var versionNumber = versionNumberNode.nodeValue;
-var version = document.getElementById("PAWSVersionNumber");
-version.innerText = version.textContent = versionNumber;
-
-/* window.external.GetLeftOffAt(); */
-}
-
-/*
-function verify()
-{
-// 0 Object is not initialized
-// 1 Loading object is loading data
-// 2 Loaded object has loaded data
-// 3 Data from object can be worked with
-// 4 Object completely initialized
-if (xmlDoc.readyState != 4)
-{
-return false;
-}
-}*/
+	  <title>About PAWS Starter Kit</title>
+	   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		   <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+<script language="jscript" src="About.js">
 </script>
    </head>
-    <body onload="Initialize()">
+	<body onload="Initialize()">
 <h1>About PAWS Starter Kit</h1>
 <div class="introduction">
 
 <p align="center"><img src="../PAWS.ico"/>&nbsp;&nbsp;<b>Parser and Writer for Syntax (PAWS) Starter Kit</b></p>
 
-    <p align="center">Version <span id="PAWSVersionNumber">0.6.4.0. Beta</span></p>
+	<p align="center">Version <span id="PAWSVersionNumber">0.7.0.0. Beta</span></p>
 <p align="center">Copyright @ 2002-2011 SIL International </p>
 <div style="font-size:smaller">
-<p align="center">Cabhab Version 0.1.4</p>
+<p align="center">Cabhab Version 0.2.0</p>
 <p align="center">Uses SIL International's xCore technology</p>
 </div>
 </div>

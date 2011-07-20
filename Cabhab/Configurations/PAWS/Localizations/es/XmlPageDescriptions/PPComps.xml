@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PPComps" count="2/5">
+	<title level="2">Las frases preposicionales y/o posposicionales - Los complementos nominales</title>
+	<introduction>Ahora consideramos al nivel de complementos.  Las preposiciones o posposiciones lleven normalmente una frase nominal para su complemento, como en <example>a [la casa de Guillermo]</example> y <example>debajo [el árbol gigante del sicómoro]</example>.  </introduction>
+	<form section="pp">
+		<prompt>Incorpore algunos ejemplos de las frases preposicionales y/o posposcionales de su idioma aquí (sin los soportes y seguido por un período):</prompt>
+		<textBox id="PPCompsNominalExample" dataItem="ppExample"/>
+		<radioGroup>
+			<groupName dataItem="pPos" default="unknown" position="yesHead">RPPPosition</groupName>
+			<prompt>¿Su idioma tiene preposiciones o posposiciones?</prompt>
+			<radio id="PPPosPrep" dataValue="before">Solamente preposiciones</radio>
+			<radio id="PPPosPost" dataValue="after">Solamente posposiciones</radio>
+			<radio id="PPPosBoth" dataValue="both">Algunos de cada tipo</radio>
+		</radioGroup>
+		<radioGroup>
+			<groupName dataItem="pType" default="word">RPPType</groupName>
+			<prompt>¿Sea <span id="PPPrepSpan" show="swPPPosPrep">las preposiciones</span><span id="PPPostSpan" show="swPPPosPost">las posposiciones</span><span id="PPBothSpan" show="swPPPosBoth">las preposiciones y posposiciones</span> escritas como palabras separadas?</prompt>
+			<radio id="PPTypeWord" dataValue="word">Sí, son todas palabras sintácticas separadas</radio>
+			<radio id="PPTypeClitic" dataValue="clitic">No, son todos clíticos escrito juntado a otra palabra</radio>
+			<radio id="PPTypeBoth" dataValue="both">Escriben algunos como palabras sintácticas separadas, pero algunos son clíticos escrito juntado a otra palabra</radio>
+			<radioGroup id="PPTypeCliticAttachesTable" show="swPPTypeCliticOrBoth">
+				<groupName dataItem="attaches" default="edge">RPPTypeCliticAttaches</groupName>
+				<prompt>¿Dónde hace juntar los clíticos a la frase nominal?</prompt>
+				<radio id="PPTypeCliticAttachesEdge" dataValue="edge">En el borde de la frase</radio>
+				<radio id="PPTypeCliticAttachesHead" dataValue="head">Al sustantivo principal</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="PPPosBothBothEdgeInstruction" show="swPPPosBothBothEdge">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix</feature> and the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
+		<instruction id="PPPosBothBothHeadInstruction" show="swPPPosBothBothHead">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix_N</feature> and the clitic postpositions with the feature <feature>P_suffix_N</feature>.</instruction>
+		<instruction id="PPPosBothWordInstruction" show="swPPPosBothWord">In the lexicon, mark the prepositions with the feature <feature>PP-initial</feature> and the postpositions with the feature <feature>PP-final</feature>.</instruction>
+		<instruction id="PPPosBothCliticEdgeInstruction" show="swPPPosBothCliticEdge">In the lexicon, mark the prepositions with the feature <feature>P_prefix</feature> and the postpositions with the feature <feature>P_suffix</feature>.</instruction>
+		<instruction id="PPTypeCliticPrepEdgeInstruction" show="swPPTypeCliticOrBothPrepEdge">In the lexicon, mark the clitic prepositions with the feature <feature>P_prefix</feature>.</instruction>
+		<instruction id="PPTypeCliticPostEdgeInstruction" show="swPPTypeCliticOrBothPostEdge">In the lexicon, mark the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
+		<instruction id="PPTypeCliticHeadInstruction" show="swPPTypeCliticOrBothHead">In the lexicon, mark the clitics with the feature <feature>PP</feature>.</instruction>
+		<br/>
+		<buttons>
+			<button id="PPCompBack" value="Back" goto="PPMain.xml"/>
+			<button id="PPCompNext" value="Next" goto="PPOther.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swPPPosPrep">
+		<whenRadio button="PPPosPrep"/>
+	</showWhen>
+	<showWhen id="swPPPosPost">
+		<whenRadio button="PPPosPost"/>
+	</showWhen>
+	<showWhen id="swPPPosBoth">
+		<whenRadio button="PPPosBoth"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticOrBoth">
+		<whenRadio button="PPTypeClitic"/>
+		<or/>
+		<whenRadio button="PPTypeBoth"/>
+	</showWhen>
+	<showWhen id="swPPPosBothBothEdge">
+		<whenRadio button="PPPosBoth"/>
+		<and/>
+		<whenRadio button="PPTypeBoth"/>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swPPPosBothBothHead">
+		<whenRadio button="PPPosBoth"/>
+		<and/>
+		<whenRadio button="PPTypeBoth"/>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesHead"/>
+	</showWhen>
+	<showWhen id="swPPPosBothWord">
+		<whenRadio button="PPPosBoth"/>
+		<and/>
+		<whenRadio button="PPTypeWord"/>
+	</showWhen>
+	<showWhen id="swPPPosBothCliticEdge">
+		<whenRadio button="PPPosBoth"/>
+		<and/>
+		<whenRadio button="PPTypeClitic"/>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticOrBothPrepEdge">
+		<whenRadio button="PPPosPrep"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="PPTypeClitic"/>
+		<or/>
+		<whenRadio button="PPTypeBoth"/>
+		<closeParen/>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticOrBothPostEdge">
+		<whenRadio button="PPPosPost"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="PPTypeClitic"/>
+		<or/>
+		<whenRadio button="PPTypeBoth"/>
+		<closeParen/>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesEdge"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticOrBothHead">
+		<openParen/>
+		<whenRadio button="PPTypeClitic"/>
+		<or/>
+		<whenRadio button="PPTypeBoth"/>
+		<closeParen/>
+		<and/>
+		<whenRadio button="PPTypeCliticAttachesHead"/>
+	</showWhen>
+</page>

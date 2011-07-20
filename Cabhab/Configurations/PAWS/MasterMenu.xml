@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<menubar>
+		<menu id="File" label="_File">
+			<item command="CmdNewLanguage" defaultVisible="true"/>
+			<item command="CmdOpenLanguage"/>
+			<item command="CmdCloseLanguage"/>
+			<item command="CmdSaveLanguageAs"/>
+			<item label="-"/>
+			<item command="CmdGenerateFiles"/>
+			<item label="-"/>
+			<item command="CmdLanguageFileLocations"/>
+			<item label="-"/>
+			<item command="CmdExit"/>
+		</menu>
+		<menu id="Edit" label="_Edit">
+			<item command="CmdCut"/>
+			<item command="CmdCopy"/>
+			<item command="CmdPaste"/>
+			<include path="Extensions/*/MainConfigurationExtension.xml" query="root/menuAddOn/menu[@id='Edit']/*"/>
+		</menu>
+		<menu id="Language" label="_Language">
+			<item command="CmdLanguageProperties"/>
+			<item command="CmdLanguageFileLocations"/>
+			<include path="Extensions/*/MainConfigurationExtension.xml" query="root/menuAddOn/menu[@id='Edit']/*"/>
+		</menu>
+		<menu id="View" label="_View">
+			<item label="Show Toolbar" boolProperty="ShowToolbar" command="CmdShowToolbar"/>
+			<item label="Show Status Bar" boolProperty="ShowStatusBar" command="CmdShowStatusBar"/>
+			<item label="-"/>
+			<item command="CmdBack"/>
+			<item command="CmdForward"/>
+			<item command="CmdRefresh"/>
+			<item label="-"/>
+			<item command="CmdInterfaceLanguage"/>
+		</menu>
+		<menu id="Help" label="_Help">
+			<item id="Resources" command="CmdResources"/>
+			<item label="-"/>
+			<item id="About" command="CmdAbout"/>
+		</menu>
+	</menubar>
+</root>

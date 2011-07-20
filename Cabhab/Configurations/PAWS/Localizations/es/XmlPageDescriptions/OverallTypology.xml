@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="OverallTypology" count="1/1">
+	<title>La tipología</title>
+	<introduction>Las respuestas dadas a estas preguntas serán utilizadas para fijar los valores prefijados para las preguntas restantes sobre la estructura de frase. Si en cualquier momento, usted no sabe la respuesta a una pregunta particular, usted puede aceptar el valor prefijado esperado para el orden de las palabras básico de su idioma. Después pruebe las estructuras de frase con sus datos y vaya detrás y enmiende sus respuestas según lo necesitado.<br/><br/>
+		Observe que la gramática prepara también contendrá algunas declaraciones basadas en las respuestas prefijadas hasta que usted las cambie, pero las declaraciones sobre la posición de elementos específicos en la estructura de frase tendrán un _____ para indicar que la información no se ha incorporado todavía. Por lo tanto, los comentarios introductorios en el relato de la gramática pueden no ser completamente correctos o completos para su idioma hasta que usted haya terminado las secciones posteriores.
+</introduction>
+	<instruction>Piense en una o más oraciones transitivas básicas en su lengua. Éstos deben estar en el orden de las palabras normal sin características especiales, tales como foco, asunto, voz pasiva, imperativo, interrogativo, o negación. Además, elija las oraciones con nombres propios u oraciones nominales simples en las posiciones del objeto sujeto y directo, algo que pronombres. (No afine en los soportes y los subíndices como el ejemplo tiene - éstos son For Your Information solamente.)</instruction>
+	<EnglishExample>
+		<exItem label="1.">[Juan]<sub>S</sub> [golpea]<sub>V</sub> [el beísbol]<sub>O</sub>.</exItem>
+		<exItem label="2.">[El perro]<sub>S</sub> [enterró]<sub>V</sub> [un hueso]<sub>O</sub>.</exItem>
+	</EnglishExample>
+	<form section="typology">
+		<prompt>Escribe sus ejemplos aquí:</prompt>
+		<textBox id="OTExample" dataItem="example" cols="50"/>
+		<radioGroup>
+			<groupName dataItem="wordOrder" default="SVO">RTypology</groupName>
+			<prompt>De acuerdo con estas oraciones, ¿cuál es el orden de las palabras normal de su idioma?</prompt>
+			<radio id="OTSVO" dataValue="SVO">Sujeto-Verbo-Objeto</radio>
+			<radio id="OTSOV" dataValue="SOV">Sujeto-Objeto-Verbo</radio>
+			<radio id="OTVSO" dataValue="VSO">Verbo-Sujeto-Objeto</radio>
+			<radio id="OTVOS" dataValue="VOS">Verbo-Objeto-Sujeto</radio>
+			<radio id="OTOVS" dataValue="OVS">Objeto-Verbo-Sujeto</radio>
+			<radio id="OTOSV" dataValue="OSV">Objeto-Sujeto-Verbo</radio>
+		</radioGroup>
+		<br/>
+		<buttons>
+			<button id="OTBack" value="Back" goto="Contents.htm"/>
+			<button id="OTNext" value="Next" goto="Contents.htm"/>
+		</buttons>
+	</form>
+</page>

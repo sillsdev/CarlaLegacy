@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QPDegree" count="3/6">
+	<title level="2">Los cuantificadores y sus frases - Palabras del grado</title>
+	<introduction>Otros cuantificadores, como - <example>muchos</example>, <example>mucho</example>, y <example>poco</example>, vienen en una diversa posición en la frase nominal. En español, esto está después de un artículo, demostrativo o de poseedor pronominal y antes del sustantivo, como en
+		<example>los muchos perros negros de Juan</example> o <example>su pocos libros</example>.  Además, estos cuantificadores se pueden modificar por palabras del grado tales como <example>muy</example> y <example>tan</example>, como en <example>muchisimos perros</example> o <example>muy poco comida</example>.</introduction>
+	<form section="qp">
+		<prompt>Incorpore sus ejemplos de este tipo de cuantificador en su idioma aquí:</prompt>
+		<textBox id="QPQuantifierExample" dataItem="quantifierExample"/>
+		<br/>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="degree" default="yes">RDegreeYesNo</groupName>
+			<prompt>¿Su lengua tiene palabras del grado que puedan modificar este tipo de cuantificador?</prompt>
+			<radio id="QPDegreeNo" checked="yes" dataValue="no">No</radio>
+			<radio id="QPDegreeYes" checked="yes" dataValue="yes">Sí</radio>
+		</radioGroup>
+		<prompt id="QPDegreeYesExamples" show="swQPDegreeYes">Incorpore sus ejemplos que contienen palabras del grado aquí. Observe que estas palabras del grado no serán muy probablemente iguales de que las que pueden modificarse una frase nominal entera de la primera sección arriba.</prompt>
+		<textBox id="QPDegreeExample" dataItem="degreeExample" show="swQPDegreeYes"/>
+		<radioGroup id="QPDegreeWordsTable" show="swQPDegreeYes">
+			<groupName dataItem="degreePos" default="unknown" position="yesSpec">RDegree</groupName>
+			<prompt>De acuerdo con estos ejemplos, ¿de dónde las palabras del grado (opcionalmente) ocurren con respecto al cuantificador?</prompt>
+			<radio id="QPDegreeBefore" checked="yes" dataValue="before">Antes del cuantificador</radio>
+			<radio id="QPDegreeAfter" dataValue="after">Después del cuantificador</radio>
+			<radio id="QPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado del cuantificador, pero no en ambos lados al mismo tiempo</radio>
+			<radio id="QPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del cuantificador, o de ambos lados al mismo tiempo</radio>
+			<radio id="QPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del cuantificador, o en ambos lados al mismo tiempo</radio>
+			<radio id="QPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del cuantificador, o en ambos lados al mismo tiempo</radio>
+			<radio id="QPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+			<radioGroup id="QPDegreeEitherSideTable" show="swQPDegreeEitherorBoth">
+				<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
+				<prompt>¿Pueden todas las palabras del grado aparecer de cualquier lado del cuantificador?</prompt>
+				<radio id="QPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
+				<radio id="QPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+			</radioGroup>
+		</radioGroup>
+		<instruction id="QPDegreeInstruction">In the lexicon, mark this type of quantifier
+with the feature <feature>makeQ</feature>.  This will change
+their category to <category>Q</category> for the syntax.  If a particular quantifier can
+only go with plural nouns or if it marks plural itself (such as <example>many</example>), add the feature <feature>plural</feature> to that entry.  <br/>
+			<span id="QPDegreeYesInstruction" show="swQPDegreeYes">
+				<br/>Also, mark any words
+which can modify them with the features <feature>makeDeg modifies_Q</feature>.   (If any of these degree words are the same as those which can modify an entire nominal phrase, you can simply add the additional feature <feature>modifies_Q</feature> to the same lexical entry.)</span>
+			<span id="QPDegreeEitherNoInstruction" show="swQPDegreeEitherRestricted">Those which can only occur before the quantifier
+also need to have the feature <feature>QP-initial</feature>
+and those which can only occur after the quantifier also need the
+feature <feature>QP-final</feature>.  Do not enter either
+feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any degree words which can occur on
+either side.</span></instruction>
+		<buttons>
+			<button id="QPDegreeBack" value="Back" goto="QPDeterminers.xml"/>
+			<button id="QPDegreeNext" value="Next" goto="QPCardinal.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swQPDegreeYes">
+		<whenRadio button="QPDegreeYes"/>
+	</showWhen>
+	<showWhen id="swQPDegreeEitherorBoth">
+		<whenRadio button="QPDegreeYes"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPDegreeAfter"/>
+	</showWhen>
+	<showWhen id="swQPDegreeEitherRestricted">
+		<whenRadio button="QPDegreeYes"/>
+		<and/>
+		<whenRadio button="QPDegreeEitherRestricted"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPDegreeBefore"/>
+		<and/>
+		<not/>
+		<whenRadio button="QPDegreeAfter"/>
+	</showWhen>
+</page>
