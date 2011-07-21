@@ -115,9 +115,22 @@ libxample.a: $(LIBOX)
 	ar rc libxample.a $(LIBOX)
 	$(RANLIB) libxample.a
 
-libxample.so: $(LIBOX) $(LIBSX)
+#
+# Have libxample.so expose all the functions exposed by libpatr.so.  That way,
+# we need only the one DLL (shared library). Having only one DLL fixes a
+# crashing bug in FieldWorks Language Explorer on linux when it tried to use
+# libxample.so after using libpatr.so (and vice versa).
+#
+PATRLIBO=../pcpatr/lcparse.o ../pcpatr/grammar.o ../pcpatr/patrfunc.o \
+	../pcpatr/patrdata.o ../pcpatr/patalloc.o ../pcpatr/patrstrg.o \
+	../pcpatr/patrampl.o ../pcpatr/patrkimm.o ../pcpatr/patrlexi.o \
+	../pcpatr/userpatr.o ../pcpatr/unify.o ../pcpatr/wrtstyle.o \
+	../pcpatr/cvtkp2wa.o ../pcpatr/parsepwk.o ../pcpatr/copyfeat.o \
+	../pcpatr/subsume.o ../pcpatr/amplpatr.o ../pcpatr/priunion.o \
+	../pcpatr/constrai.o
+libxample.so: ampledll.ox $(PATRLIBO) $(LIBSX)
 	rm -f $@
-	$(CC) -o $@ --shared $(LIBOX) $(LIBSX)
+	$(CC) -o $@ --shared ampledll.ox $(PATRLIBO) $(LIBSX)
 
 #
 # AMPLE program and function library compiled for profiling with experimental
