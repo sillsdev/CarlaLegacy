@@ -73,7 +73,7 @@
 #endif
 #ifndef hab34112
 #ifdef EXPERIMENTAL
-#include <assert.h> // jdh 2001.7.16
+#include <assert.h> /* jdh 2001.7.16 */
 #endif /* EXPERIMENTAL */
 #endif /* hab34112 */
 #ifdef HAVE_CONFIG_H
@@ -374,7 +374,7 @@ pSetup_io->sData.sPATR.bPromoteDefAtoms         = TRUE;
 pSetup_io->sData.sPATR.bPropIsFeature           = TRUE;
 #ifndef hab35013
 pSetup_io->sData.sPATR.eRootGlossFeature        = PATR_ROOT_GLOSS_NO_FEATURE;
-#endif // hab35013
+#endif /* hab35013 */
 	}
 #endif /* EXPERIMENTAL */
 #endif /* hab33169 */
@@ -492,7 +492,7 @@ if (iDebugLevel_m != 0)
 	MessageBox(0, szMessageBuffer_g, "AMPLE320.DLL",
 		   MB_OK | MB_ICONEXCLAMATION);
 #else
-	fprintf(stderr, "%s", pszFormat_in, marker);
+	fprintf(stderr, pszFormat_in, marker);
 #endif
 	}
 
@@ -532,7 +532,7 @@ if (bNotSilent_in && (iDebugLevel_m != 0))
 	MessageBox(0, szMessageBuffer_g, "AMPLE320.DLL",
 		   MB_OK | MB_ICONINFORMATION);
 #else
-	fprintf(stderr, "%s", pszFormat_in, marker);
+	fprintf(stderr, pszFormat_in, marker);
 #endif
 	}
 va_end( marker );
@@ -877,7 +877,7 @@ DllExport const char * AmpleLoadDictionary(
 int		iCount;
 const char *	pszResult = szAmpleSuccess_m;
 int		eType;
-char *		pszType;
+char *		pszType = NULL;
 /*
  *  verify a valid AMPLE setup
  */
@@ -915,6 +915,10 @@ if (pszType_in != NULL)
 	case 's': case 'S': eType = AMPLE_SFX;     pszType = "SUFFIX";	break;
 	default:	    eType = AMPLE_UNIFIED; pszType = "UNIFIED";	break;
 	}
+	}
+else
+	{
+	pszType = "UNKNOWN!?";
 	}
 reportMessage(TRUE,
 		  "\t%s DICTIONARY: Loading %s\n",
@@ -1041,9 +1045,9 @@ static char * addAResultToBuffer(
 		  else
 #ifndef hab232
 			CONCAT("?")
-#else // hab232
+#else /* hab232 */
 			  CONCAT("?\"")
-#endif // hab232
+#endif /* hab232 */
 			  CONCAT("\">\r\n")
 
 			  for ( pHead = pHeadlists->pHeadList ; pHead ; pHead = pHead->pRight )
@@ -1497,9 +1501,8 @@ DllExport const char * AmpleParseText(
   AmpleWord	sNextWord;
   int		iFailureCount = 0;
   int		iSuccessCount = 0;
-  void *	pAResult = NULL;
   const char *	pszResult = szOutputBuffer_g;
-  int		iResult;
+  int		iResult = 0;
   int		bParsedAlready = FALSE;
   /*
    *  verify a valid AMPLE setup
@@ -1576,10 +1579,10 @@ DllExport const char * AmpleParseText(
   if (cUseTextIn == 'y')
 	{				/* use TextIn as normal */
 	  pszWord = pszInputText;
-	  sWord.pTemplate = readTemplateFromTextString(&pszWord,
-						   &pSetup_io->sData.sTextCtl);
-	  sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
-							   &pSetup_io->sData.sTextCtl);
+	  sWord.pTemplate = readTemplateFromTextString(
+	  (unsigned char **)&pszWord, &pSetup_io->sData.sTextCtl);
+	  sNextWord.pTemplate = readTemplateFromTextString(
+	  (unsigned char **)&pszWord, &pSetup_io->sData.sTextCtl);
 	}
   else
 	{				/* use whitespace to delimit words;
@@ -1725,8 +1728,8 @@ DllExport const char * AmpleParseText(
 				/* XAmple: caller has choice to use TextIn
 				   or not */
 	  if (cUseTextIn == 'y')
-	sNextWord.pTemplate = readTemplateFromTextString(&pszWord,
-						 &pSetup_io->sData.sTextCtl);
+	sNextWord.pTemplate = readTemplateFromTextString(
+		(unsigned char **)&pszWord, &pSetup_io->sData.sTextCtl);
 	  else
 	{				/* use whitespace to delimit words;
 					   do no decapitalization
@@ -2431,7 +2434,6 @@ unsigned	uiAmbigCount   = 0;
 long		ambwds;
 long		ambtot;
 long		iFailureCount = 0L;
-void *		pAResult = NULL;
 const char *	pszResult = szAmpleSuccess_m;
 static char	szReportMessage_s[] = "\nINPUT: %ld word%s processed.\n";
 time_t		clock;		/* hab 1999.03.05 */
@@ -2649,6 +2651,7 @@ while (readAmpleWord(infp, pSetup_io) &&
 		break;
 
 	case Ptext:
+	case FWParse:
 		/* not yet implemented */
 		break;
 	}
@@ -2664,6 +2667,7 @@ switch (pSetup_io->eOutputStyle)
 	break;
 
 	case Ptext:
+	case FWParse:
 	/* not yet implemented */
 	break;
 	}
@@ -4624,7 +4628,7 @@ pLogFP_m      = pSetup_io->sData.pLogFP;
 memset(szOutputBuffer_g, 0, sizeof(szOutputBuffer_g));
 				/* run input word through input changes */
 pszWord = (char *)pszWord_in;
-pTemplate = readTemplateFromTextString(&pszWord,
+pTemplate = readTemplateFromTextString((unsigned char **)&pszWord,
 					   &pSetup_io->sData.sTextCtl);
 pszChangedWord = pszWord_in;	/* in case text changes fail... */
 if (pTemplate && pTemplate->paWord)

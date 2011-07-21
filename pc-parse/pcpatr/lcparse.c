@@ -1627,7 +1627,7 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 		sFeat.u.pComplex = &sComplex;
 		if (pPATR_in->iDebugLevel >= 2)
 			{
-			fprintf(stdout, "DEBUG: triplecheck_constraints(...): edge index = %d\n",
+			fprintf(stdout, "DEBUG: triplecheck_constraints(...): edge index = %ld\n",
 			pEdge_in->iIndex);
 			fprintf(stdout, "pEdge->pszLabel = \"%s\" (rule = \"%s\")\n",
 				pEdge_in->pszLabel ? pEdge_in->pszLabel : "{NULL}",

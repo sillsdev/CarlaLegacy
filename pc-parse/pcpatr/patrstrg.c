@@ -251,7 +251,7 @@ appendToDynString(pdstr_in, pEdge_in->pszLabel, strlen(pEdge_in->pszLabel));
 if (pEdge_in->iIndex != 0)
 	{
 	appendCharToDynString(pdstr_in, '_');
-	sprintf(szBuffer, "%d", pEdge_in->iIndex);
+	sprintf(szBuffer, "%ld", pEdge_in->iIndex);
 	appendToDynString(pdstr_in, szBuffer, strlen(szBuffer));
 	}
 if (	(pPATR_in->iParseCount > 1) &&
@@ -417,7 +417,7 @@ if (pPATR_in->pMem->iPrintDepth == depth)
 	}
 	else
 	{
-	sprintf(szExtra, "_%d", pEdge_in->iIndex);
+	sprintf(szExtra, "_%ld", pEdge_in->iIndex);
 	}
 	if (    (pPATR_in->iParseCount > 1) &&
 		(pEdge_in->iCount == pPATR_in->iParseCount) )
@@ -558,7 +558,7 @@ appendToDynString(pdstr_in, pEdge_in->pszLabel, strlen(pEdge_in->pszLabel));
 if (pEdge_in->iIndex != 0)
 	{
 	appendCharToDynString(pdstr_in, '_');
-	sprintf(szBuffer, "%d", pEdge_in->iIndex);
+	sprintf(szBuffer, "%ld", pEdge_in->iIndex);
 	appendToDynString(pdstr_in, szBuffer, strlen(szBuffer));
 	}
 if (	(pPATR_in->iParseCount > 1) &&
@@ -729,7 +729,7 @@ if (!(pPATR_in->iFeatureDisplay & PATR_FEATURE_ALL))
 /*
  *  all features requested.
  */
-sprintf(szIndex, "%d", pEdge_in->iIndex);
+sprintf(szIndex, "%ld", pEdge_in->iIndex);
 bFailed = failedPATRParse(pEdge_in);
 if (!bFailed)
 	{
@@ -1589,7 +1589,7 @@ int bFail;
 if (pEdge_in == NULL)
 	return 0;
 
-sprintf(szNodeId, "_%d", pEdge_in->iIndex);
+sprintf(szNodeId, "_%ld", pEdge_in->iIndex);
 #ifndef hab125
 sprintf(szIndex, "_%d.%s\"", iParse_in, szNodeId);
 #else /* hab125 */

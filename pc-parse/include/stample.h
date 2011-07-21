@@ -49,7 +49,43 @@ typedef struct ample_cat_class {
 
 /*****************************************************************************
  * NAME
- *    AmpleFullReduplication (struct ample_full_redup)
+ *    PartialRedupIndexedClass (struct partial_redup_indexed_class)
+ * DESCRIPTION
+ *    structure for partial reduplication string classes
+ *
+ *    All of the string classes in a partial reduplication allomorph description  are stored in a single linked list.
+ *    Each node of this list has a pointer to the string class and its index.
+ */
+typedef struct partial_redup_indexed_class {
+	StringClass *	pStringClass;	/* string class  */
+	char *		pszMember;	/* current string from class */
+	int                 iIndex ;  /* index of string class */
+	struct partial_redup_indexed_class * pNext;	    /* pointer to next item in list */
+	} PartialRedupIndexedClass;
+
+/*****************************************************************************
+ * NAME
+ *    PartialReduplication (struct partial_redup)
+ * DESCRIPTION
+ *    structure for partial reduplication allomorphs
+ *
+ *    All partial reduplication allomorphs are stored in this linked list.
+ *    We store the description of the partial reduplication pattern.
+ *    Each node of this list has a pointer to any "hyphen" character and a
+ *    pointer to the allomorph struct.
+ */
+typedef struct partial_redup {
+	char *			 pszPrefix;  /* any preceding string (e.g. -) */
+	char *			 pszPostfix; /* any trailing string (e.g. -) */
+	int                          iDicType ;  /* dictionary type (prefix or suffix) */
+	struct partial_redup_indexed_class     * pIndexedStringClasses;	    /* allomorph pattern of string classes */
+	struct ample_allomorph *	pAllo;	    /* allomorph */
+	struct partial_redup * pNext;	    /* pointer to next item in list */
+	} PartialReduplication;
+
+/*****************************************************************************
+ * NAME
+ *    FullReduplication (struct full_redup)
  * DESCRIPTION
  *    structure for full reduplication allomorphs
  *
@@ -57,13 +93,13 @@ typedef struct ample_cat_class {
  *    Each node of this list has a pointer to any "hyphen" character and a
  *    pointer to the allomorph struct.
  */
-typedef struct ample_full_redup {
+typedef struct full_redup {
 	char *			pszPrefix;  /* any preceding string (e.g. -) */
 	char *			pszPostfix; /* any trailing string (e.g. -) */
 	int                         iDicType ;  /* dictionary type (prefix or suffix) */
 	struct ample_allomorph *	pAllo;	    /* allomorph */
-	struct ample_full_redup *	pNext;	    /* pointer to next item in list */
-	} AmpleFullReduplication;
+	struct full_redup *	pNext;	    /* pointer to next item in list */
+	} FullReduplication;
 
 /*****************************************************************************
  * NAME
@@ -334,7 +370,7 @@ typedef struct ample_test_node {
  *    consists of a linked list of these items.
  */
 typedef struct ample_env_item {
-	char			iFlags;
+	int			iFlags;
 	union { char *	pszString;	/* pointer to literal string */
 		void *	pClass;		/* pointer to class structure */
 		int		iPlain;		/* integer value */
@@ -351,6 +387,7 @@ typedef struct ample_env_item {
 #define E_GROUP		 020	/* member of open-ended group, not string */
 #define E_MORPHEME	0200	/* morpheme environment, not string envir. */
 #define E_PUNCT		0100	/* punctuation environment 3.3.0 hab */
+#define E_REDUPCLASS    0400    /* reduplication environment, not string */
 #ifdef EXPERIMENTAL
 #ifndef hab350
 #define E_ALLOID	0040	/* allomorphs never co-occur constraint */

@@ -2086,14 +2086,14 @@ int second_idx;
 char * pszCatFeatName;
 char rgchFirst[20];
 char rgchSecond[20];
-if ((unsigned)first < 10000)
+if ((unsigned long)first < 10000)
 	{
-	sprintf(rgchFirst, "#%d", (unsigned)first);
+	sprintf(rgchFirst, "#%ld", (unsigned long)first);
 	first = rgchFirst;
 	}
-if ((unsigned)second < 10000)
+if ((unsigned long)second < 10000)
 	{
-	sprintf(rgchSecond, "#%d", (unsigned)second);
+	sprintf(rgchSecond, "#%ld", (unsigned long)second);
 	second = rgchSecond;
 	}
 

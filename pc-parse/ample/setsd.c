@@ -847,7 +847,6 @@ AmpleMorpheme *		pMorph_io;
 int *			pbBad_io;
 AmpleData *		pAmple_in;
 {
-char			cSave = NUL;
 AmpleAllomorphList * alp;
 char * pszFullRedup;
 char * pszPartialRedup;
@@ -860,7 +859,7 @@ char *		     pszCopy;
 char *		     pszEnd;
 char *		     rp;
 char *		     pszEnv;
-PartialReduplication *pPartialRedupAllo;
+PartialReduplication *pPartialRedupAllo = NULL;
 if (pszAllo_in == NULL)
   return pHead_io;
 if (strcmp(pszAllo_in, "0") == 0)
@@ -1011,7 +1010,7 @@ alp->pAllomorph->pEnvironment = parseAmpleAlloEnvConstraint(
 						NULL);
  if (*pbBad_io)
    {
-	 if (pszPartialRedup != NULL)
+	 if (pszPartialRedup != NULL && pPartialRedupAllo != NULL)
 	   {
 	 /* delink it from list - it is not valid */
 	 pAmple_in->pPartialRedupAllos = pPartialRedupAllo->pNext;

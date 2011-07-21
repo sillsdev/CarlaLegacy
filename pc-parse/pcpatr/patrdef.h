@@ -94,7 +94,7 @@ struct patr_edge
 	/*  The following fields are only used during printing */
 	short	iCenterColumn;	/* column number of center of edge */
 	short	iCurrentRow;	/* row in text area for current edge */
-	int		iIndex;		/* unique index (1..n) of this edge */
+	long	iIndex;		/* unique index (1..n) of this edge */
 	int		iCount;		/* number of times this edge used in parse */
 	char	bFailed;	/* true if unification of this edge failed */
 	char	bPrinted;	/* true if printed already */

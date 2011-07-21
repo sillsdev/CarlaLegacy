@@ -311,7 +311,7 @@ static void		checkForRepeated P((SimplePSR *pPSR_in,
 static int		balcheck P((ComplexPSR *, GrammarData * pData));
 static ComplexPSR *	expand_psrs P((ComplexPSR *, char *,
 					   GrammarData * pData));
-static int		nomatch P((ComplexPSR *, char *, GrammarData * pData));
+static long		nomatch P((ComplexPSR *, char *, GrammarData * pData));
 static SimplePSR *	append_psrs P((SimplePSR *, SimplePSR *,
 					   GrammarData * pData));
 static SimplePSR *	union_psrs P((SimplePSR *, SimplePSR *));
@@ -2415,7 +2415,7 @@ return( (ComplexPSR *)nomatch(net, delim, pData) );
  * RETURN VALUE
  *    Returns zero for convenience for caller
  */
-static int nomatch( form, s, pData)
+static long nomatch( form, s, pData)
 ComplexPSR *form;
 char *s;
 GrammarData *	pData;

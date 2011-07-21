@@ -1184,7 +1184,6 @@ return(FALSE);
 static AmpleAmlist * get_partial_redup(char *key, int etype, AmpleAmlist *amset,
 					   AmpleData *pAmple_in)
 {
-int                   iRedupLen = 0;
 PartialReduplication *pPartialRedup;
 
  /* check for partial reduplication */
@@ -1193,10 +1192,8 @@ for (pPartialRedup = pAmple_in->pPartialRedupAllos;
 	 pPartialRedup = pPartialRedup->pNext)
   {
 	int iPreLen = 0;
-	int iPostLen = 0;
 	char *pszPre;
 	char *pszMatchBeg;
-	char *pszMatchEnd = NULL;
 	PartialRedupIndexedClass * pIndexedClass;
 	int bFound;
 	if (pPartialRedup->iDicType != etype)

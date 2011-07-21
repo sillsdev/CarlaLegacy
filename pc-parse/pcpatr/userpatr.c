@@ -282,10 +282,10 @@ else
 		if (	(pPATR_in->iFeatureDisplay & PATR_FEATURE_TRIM) &&
 			only_null(flist->pValue) )
 			continue;
-		if ((unsigned)flist->pszLabel < 10000)
+		if ((unsigned long)flist->pszLabel < 10000)
 		{
 			char rgchTemp[20];
-			sprintf(rgchTemp, "#%d", (unsigned)flist->pszLabel);
+			sprintf(rgchTemp, "#%ld", (unsigned long)flist->pszLabel);
 			n = strlen(rgchTemp);
 			if (length + n >= 80)
 			{
@@ -698,7 +698,7 @@ if (pPATR_in->pMem->iPrintDepth == depth)
 	if (edgep->iIndex != 0)
 	{
 	char szIndex[20];
-	sprintf(szIndex, "_%d", edgep->iIndex);
+	sprintf(szIndex, "_%ld", edgep->iIndex);
 		strncat(szName, szIndex, sizeof(szName) - strlen(szName) - 1);
 	}
 	if (    (pPATR_in->iParseCount > 1) &&
@@ -881,7 +881,7 @@ if (pPATR_in->iCurrentIndex >= edgep->iIndex)
 pPATR_in->iCurrentIndex = edgep->iIndex;   /* Bump largest printed edge */
 
 /*  Print edge name (with index) and features. */
-sprintf(buffer, "%s_%d:", edgep->pszLabel, edgep->iIndex);
+sprintf(buffer, "%s_%ld:", edgep->pszLabel, edgep->iIndex);
 if (pPATR_in->iFeatureDisplay & PATR_FEATURE_FLAT)
 	{
 	fprintf(fp,"%s ", buffer);
@@ -935,7 +935,7 @@ appendToDynString(&pPATR_in->pMem->dstrOutput, edgep->pszLabel,
 		  strlen(edgep->pszLabel));
 if (edgep->iIndex != 0)
 	{
-	sprintf(szBuf, "_%d", edgep->iIndex);
+	sprintf(szBuf, "_%ld", edgep->iIndex);
 	appendToDynString(&pPATR_in->pMem->dstrOutput, szBuf, strlen(szBuf));
 	}
 if ((pPATR_in->iParseCount > 1) && (edgep->iCount == pPATR_in->iParseCount))
@@ -1359,7 +1359,7 @@ PATRDisplayedFeature * pSaveMultTop = NULL;
 
 if (pEdge_in == NULL)
 	return;
-sprintf(szNodeId, "_%d", pEdge_in->iIndex);
+sprintf(szNodeId, "_%ld", pEdge_in->iIndex);
 if (pEdge_in->bPrinted)
 	{
 	fprintf(pOutputFP_in, "%*s<Shared id=\"s%u_%d.%s\"/>\n", /* hab125 */
@@ -1406,7 +1406,7 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 	fprintf(pOutputFP_in, "\" rule=\"");
 	write_CDATA(pEdge_in->u.r.pRule->pszID, pOutputFP_in);
 	}
-	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%d\"%s%s>\n", /* hab125 */
+	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%ld\"%s%s>\n", /* hab125 */
 		uiSentCount_in, iParse_in, pEdge_in->iIndex, pszAll, pszFail);
 
 	if (pPATR_in->iFeatureDisplay & PATR_FEATURE_ON)
@@ -1472,7 +1472,7 @@ else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
 	}
 	fprintf(pOutputFP_in, "%*s<Leaf cat=\"", iIndent_in, "");
 	write_CDATA(pEdge_in->pszLabel, pOutputFP_in);
-	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%d\"%s%s%s", /* hab125 */
+	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%ld\"%s%s%s", /* hab125 */
 		uiSentCount_in, iParse_in, pEdge_in->iIndex, pszAll, pszFail, pszPreGloss);
 	write_CDATA(pszGloss, pOutputFP_in);
 	fprintf(pOutputFP_in, "%s>\n", pszPostGloss);
@@ -1697,11 +1697,11 @@ if (pEdge_in->pFeature)
 			if (pPATR_in->iDebugLevel)
 			{
 			fprintf(stdout,
-				"DEBUG: change label from \"%s\" to #%d\n",
+				"DEBUG: change label from \"%s\" to #%ld\n",
 				pComp->pszLabel, pEdge_in->iIndex);
 			if (pPATR_in->pLogFP)
 				fprintf(pPATR_in->pLogFP,
-					"DEBUG: change label from \"%s\" to #%d\n",
+					"DEBUG: change label from \"%s\" to #%ld\n",
 					pComp->pszLabel, pEdge_in->iIndex);
 			}
 			pComp->pszLabel = (char *)pEdge_in->iIndex;
@@ -1738,10 +1738,10 @@ if (pEdge_in->pFeature)
 			{
 			if (pPATR_in->iDebugLevel)
 				{
-				fprintf(stdout, "#%d\n",
+				fprintf(stdout, "#%ld\n",
 					pel->pEdge->iIndex);
 			if (pPATR_in->pLogFP)
-				fprintf(pPATR_in->pLogFP, "#%d\n",
+				fprintf(pPATR_in->pLogFP, "#%ld\n",
 					pel->pEdge->iIndex);
 				}
 			pComp->pszLabel = (char *)pel->pEdge->iIndex;
@@ -1781,11 +1781,11 @@ if (pEdge_in->pFeature)
 		if (pPATR_in->iDebugLevel)
 		{
 		fprintf(stdout,
-			"DEBUG: add lexical feature labeled #%d\n",
+			"DEBUG: add lexical feature labeled #%ld\n",
 			pEdge_in->iIndex);
 		if (pPATR_in->pLogFP)
 			fprintf(pPATR_in->pLogFP,
-				"DEBUG: add lexical feature labeled #%d\n",
+				"DEBUG: add lexical feature labeled #%ld\n",
 				pEdge_in->iIndex);
 		}
 		pFeat = createPATRNullFeature(pPATR_in);
@@ -1899,7 +1899,7 @@ if (!(pPATR_in->iFeatureDisplay & PATR_FEATURE_ALL))
 	return;
 	}
 
-sprintf(szIndex, "%d", pEdge_in->iIndex);
+sprintf(szIndex, "%ld", pEdge_in->iIndex);
 bFailed = failedPATRParse(pEdge_in);
 if (!bFailed)
 	{

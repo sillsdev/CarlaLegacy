@@ -1195,7 +1195,7 @@ new_item:   pe = (ChgEnvItem *)allocMemory(sizeof(ChgEnvItem));
 	default:
 		{
 		char msg[100];
-		sprintf("Invalid input '%s' in", elex_string);
+		sprintf(msg, "Invalid input '%s' in", elex_string);
 		epar_error(msg);
 		}
 		goto bad_side;
