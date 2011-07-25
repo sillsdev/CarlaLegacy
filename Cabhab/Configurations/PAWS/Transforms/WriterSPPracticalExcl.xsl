@@ -68,15 +68,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//excl/greetExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//excl/greetExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//excl/greetExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//excl/greetExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//excl/greetExample)" />
+<xsl:value-of select="string-length(normalize-space(//excl/greetExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xExcl.ExclGreet.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -142,15 +142,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//excl/intjExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//excl/intjExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//excl/intjExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//excl/intjExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//excl/intjExample)" />
+<xsl:value-of select="string-length(normalize-space(//excl/intjExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xExcl.ExclIntj.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -206,7 +206,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//excl/yesExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -223,7 +223,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left" rowspan="1">
 							<xsl:text>sí</xsl:text>
@@ -248,7 +249,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//excl/noExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -265,7 +266,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left" rowspan="1">
 							<xsl:text>no</xsl:text>
@@ -327,15 +329,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//excl/exclExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//excl/exclExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//excl/exclExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//excl/exclExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//excl/exclExample)" />
+<xsl:value-of select="string-length(normalize-space(//excl/exclExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xExcl.ExclExcl.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -404,7 +406,7 @@
 	<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//excl/exclMExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -421,7 +423,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>

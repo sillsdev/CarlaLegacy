@@ -21,8 +21,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml;
-
 using SIL.Utils;
+
 
 namespace SIL.Cabhab
 {
@@ -47,10 +47,13 @@ namespace SIL.Cabhab
 		{
 			string sTransformFile = TransformFile;
 #if UsingDotNetTransforms
-			m_transform = new DotNetCompiledTransform(m_sTransformFile);
+			m_transform = new DotNetCompiledTransform(m_sTransformFile, "en");
 #endif
 #if UsingSaxonDotNetTransforms
-			m_transform = new SaxonDotNetTransform(m_sTransformFile);
+			m_transform = new SaxonDotNetTransform(m_sTransformFile, "en");
+#endif
+#if UsingMSXML2Transforms
+			m_transform = new MSXML2Transform(m_sTransformFile, "en");
 #endif
 
 			string sResultFile = Path.GetTempFileName();

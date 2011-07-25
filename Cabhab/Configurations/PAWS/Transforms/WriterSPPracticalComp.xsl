@@ -54,15 +54,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//comp/finiteExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//comp/finiteExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/finiteExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//comp/finiteExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//comp/finiteExample)" />
+<xsl:value-of select="string-length(normalize-space(//comp/finiteExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xComp.CompType.CompTypeFinite.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -128,15 +128,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//comp/finiteOrNonfiniteExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//comp/finiteOrNonfiniteExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/finiteOrNonfiniteExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//comp/finiteOrNonfiniteExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//comp/finiteOrNonfiniteExample)" />
+<xsl:value-of select="string-length(normalize-space(//comp/finiteOrNonfiniteExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xComp.CompType.CompFiniteOrNonfiniteIP.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -202,15 +202,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//comp/nonfiniteExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//comp/nonfiniteExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/nonfiniteExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//comp/nonfiniteExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//comp/nonfiniteExample)" />
+<xsl:value-of select="string-length(normalize-space(//comp/nonfiniteExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xComp.CompType.CompTypeNonfiniteIP.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -276,15 +276,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//comp/nonfiniteProDropExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//comp/nonfiniteProDropExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/nonfiniteProDropExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//comp/nonfiniteProDropExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//comp/nonfiniteProDropExample)" />
+<xsl:value-of select="string-length(normalize-space(//comp/nonfiniteProDropExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xComp.CompType.CompTypeNonfiniteIPPRO.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -368,15 +368,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//comp/nonfiniteCPOrProDropExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//comp/nonfiniteCPOrProDropExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/nonfiniteCPOrProDropExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//comp/nonfiniteCPOrProDropExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//comp/nonfiniteCPOrProDropExample)" />
+<xsl:value-of select="string-length(normalize-space(//comp/nonfiniteCPOrProDropExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xComp.CompType.CompTypeNonfiniteCP.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -442,15 +442,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//comp/DPCPExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//comp/DPCPExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/DPCPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//comp/DPCPExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//comp/DPCPExample)" />
+<xsl:value-of select="string-length(normalize-space(//comp/DPCPExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xComp.CompType.CompTypeObject.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -495,15 +495,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//comp/otherExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//comp/otherExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/otherExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//comp/otherExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//comp/otherExample)" />
+<xsl:value-of select="string-length(normalize-space(//comp/otherExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xComp.CompType.CompTypeOther.6</xsl:with-param>
 <xsl:with-param name="sLetterList">

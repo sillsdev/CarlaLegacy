@@ -1,7 +1,7 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
 	<ProjectType>Local</ProjectType>
-	<ProductVersion>8.0.50727</ProductVersion>
+	<ProductVersion>9.0.30729</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<ProjectGuid>{EB9B92B3-FF87-4766-90F8-626D88194528}</ProjectGuid>
 	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -26,6 +26,8 @@
 	</FileUpgradeFlags>
 	<UpgradeBackupLocation>
 	</UpgradeBackupLocation>
+	<OldToolsVersion>3.5</OldToolsVersion>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	<OutputPath>..\bin\Debug\</OutputPath>
@@ -72,18 +74,20 @@
 	<WarningLevel>4</WarningLevel>
 	<DebugType>full</DebugType>
 	<ErrorReport>prompt</ErrorReport>
+	<PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="CabhabDll, Version=0.1.0.9, Culture=neutral, processorArchitecture=MSIL">
+	<Reference Include="BasicUtils, Version=7.1.0.28665, Culture=neutral, processorArchitecture=MSIL">
 	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\Release\CabhabDll.dll</HintPath>
 	</Reference>
-	<Reference Include="COMInterfaces, Version=4.1.0.9, Culture=neutral, processorArchitecture=MSIL">
+	<Reference Include="CabhabDll, Version=0.2.0.27250, Culture=neutral, processorArchitecture=MSIL">
 	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\Release\COMInterfaces.dll</HintPath>
 	</Reference>
 	<Reference Include="System">
 	  <Name>System</Name>
+	</Reference>
+	<Reference Include="System.Core">
+	  <RequiredTargetFramework>3.5</RequiredTargetFramework>
 	</Reference>
 	<Reference Include="System.Data">
 	  <Name>System.Data</Name>
@@ -94,17 +98,11 @@
 	<Reference Include="System.Windows.Forms">
 	  <Name>System.Windows.Forms</Name>
 	</Reference>
-	<Reference Include="Utils, Version=4.1.0.9, Culture=neutral, processorArchitecture=MSIL">
+	<Reference Include="xCore, Version=7.1.0.27059, Culture=neutral, processorArchitecture=MSIL">
 	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\..\..\..\fw\Output\Debug\Utils.dll</HintPath>
 	</Reference>
-	<Reference Include="xCore, Version=4.1.0.9, Culture=neutral, processorArchitecture=MSIL">
+	<Reference Include="xCoreInterfaces, Version=7.1.0.40707, Culture=neutral, processorArchitecture=MSIL">
 	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\Release\xCore.dll</HintPath>
-	</Reference>
-	<Reference Include="xCoreInterfaces, Version=4.1.0.9, Culture=neutral, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\Release\xCoreInterfaces.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>

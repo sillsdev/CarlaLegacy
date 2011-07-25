@@ -1,0 +1,617 @@
+<!-- XLingPapPublisherStylesheet.dtd
+	 XML/XSLT-based Linguistic paper document type definition
+	 Stylesheet  information for a particular publisher
+	   One may reference/link/insert an XLingPap document into this template as a particular instance.
+	 Version 1.0.0
+	 (Revision history is at the end.)
+  -->
+<!ELEMENT publisherStyleSheet (publisherStyleSheetName?, publisherStyleSheetVersion?, pageLayout, frontMatterLayout, bodyLayout, backMatterLayout, contentLayout) >
+<!ATTLIST publisherStyleSheet
+ version CDATA #IMPLIED
+ >
+<!ENTITY % XLingPapPublisherStylesheetReferences SYSTEM  "XLingPapPublisherStylesheetReferences.dtd">
+%XLingPapPublisherStylesheetReferences;
+
+<!-- linkLayoutCommon contains attributes common to all link layout elements. -->
+<!ENTITY % linkLayoutCommon "
+	color CDATA 'default'
+	decoration (none | underline | overline |  line-through | blink | default)  'default'"
+>
+<!-- linkLayoutCommonShow is for a link layout element that defaults to not showing the marking. -->
+<!ENTITY % linkLayoutCommonNoShow "
+	%linkLayoutCommon;
+	showmarking (yes | no)  'no'"
+>
+<!-- linkLayoutCommonShow is for a link layout element that defaults to showing the marking. -->
+<!ENTITY % linkLayoutCommonShow "
+	%linkLayoutCommon;
+	showmarking (yes | no)  'yes'"
+>
+
+
+<!ELEMENT  publisherStyleSheetName (#PCDATA)>
+<!ELEMENT  publisherStyleSheetVersion (#PCDATA)>
+
+<!--
+  ===================================================
+Page Layout
+  ===================================================
+
+  The headerFooterPageStyles here is for a paper; for books, we use the ones in the front matter, body and back matter sections
+-->
+<!ELEMENT  pageLayout (
+						pageWidth?,
+						pageHeight?,
+						pageTopMargin?,
+						pageBottomMargin?,
+						pageInsideMargin?,
+						pageOutsideMargin?,
+						useThesisSubmissionStyle?,
+						headerMargin?,
+						footerMargin?,
+						paragraphIndent?,
+						blockQuoteIndent?,
+						lineSpacing?,
+						defaultFontFamily?,
+						basicPointSize?,
+						footnotePointSize?,
+						footnoteLine?,
+						linkLayout?,
+						headerFooterPageStyles?
+)>
+<!ATTLIST pageLayout
+	ignorePageWidthForWebPageOutput (yes | no) 'no'
+>
+	<!ELEMENT basicPointSize (#PCDATA) >
+	<!ELEMENT blockQuoteIndent (#PCDATA) >
+	<!ELEMENT defaultFontFamily (#PCDATA) >
+	<!ELEMENT footnotePointSize (#PCDATA) >
+	<!-- line between text and footnote(s)
+			 leaderlength and leaderwidth are used only when leaderpattern is also specified
+	-->
+	<!ELEMENT footnoteLine EMPTY >
+	<!ATTLIST footnoteLine
+	  textalign (left | right | start | end | justify | center | inside | outside) "left"
+	  leaderpattern (space | rule | dots | none) "none"
+	  leaderlength CDATA #IMPLIED
+	  leaderwidth CDATA #IMPLIED
+	>
+	<!ELEMENT headerMargin (#PCDATA) >
+	<!ELEMENT footerMargin (#PCDATA) >
+	<!ELEMENT pageWidth (#PCDATA) >
+	<!ELEMENT pageHeight (#PCDATA) >
+	<!ELEMENT pageTopMargin (#PCDATA) >
+	<!ELEMENT pageBottomMargin (#PCDATA) >
+	<!ELEMENT pageInsideMargin (#PCDATA) >
+	<!ELEMENT pageOutsideMargin (#PCDATA) >
+	<!ELEMENT useThesisSubmissionStyle EMPTY >
+	<!ATTLIST useThesisSubmissionStyle
+		singlesided (yes | no) "no"
+	>
+	<!ELEMENT paragraphIndent (#PCDATA) >
+	<!ELEMENT lineSpacing EMPTY >
+	<!ATTLIST lineSpacing
+		linespacing (single | spaceAndAHalf | double) "single"
+		singlespaceblockquotes (yes | no) "yes"
+		singlespacecontents (yes | no) "yes"
+		singlespaceendnotes (yes | no) "yes"
+		singlespaceexamples (yes | no) "yes"
+		singlespacetables (yes | no) "yes"
+		singlespacereferences (yes | no) "yes"
+		singlespacereferencesbetween (yes | no) "yes"
+		singlespaceindexes (yes | no) "yes"
+	>
+	<!-- hyperlinks layouts
+	  The color and decoration attributes on the linkLayout element are the defaults.
+	  The color and decoration attributes on the other embedded linkLayout elements override the defaults.
+	  A link will only be colored and/or decorated if the showmarking attrbute of the sub-element is 'yes'.
+	  -->
+	<!ELEMENT linkLayout (abbrRefLinkLayout?, appendixRefLinkLayout, citationLinkLayout, contentsLinkLayout,  endnoteRefLinkLayout, exampleRefLinkLayout, figureRefLinkLayout?,
+											   genericRefLinkLayout, indexLinkLayout, interlinearRefLinkLayout, linkLinkLayout, sectionRefLinkLayout, tablenumberedRefLinkLayout?, urlLinkLayout) >
+	<!ATTLIST  linkLayout
+	color CDATA #IMPLIED
+	decoration (none | underline | overline |  line-through | blink) "none"
+	>
+	<!ELEMENT abbrRefLinkLayout EMPTY>
+	<!ATTLIST  abbrRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT appendixRefLinkLayout EMPTY>
+	<!ATTLIST  appendixRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT citationLinkLayout EMPTY>
+	<!ATTLIST  citationLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT contentsLinkLayout EMPTY>
+	<!ATTLIST  contentsLinkLayout
+	%linkLayoutCommonNoShow;
+	linkpagenumber (yes | no) "yes"
+	linktitle (yes | no) "no"
+	>
+	<!ELEMENT endnoteRefLinkLayout EMPTY>
+	<!ATTLIST  endnoteRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT exampleRefLinkLayout EMPTY>
+	<!ATTLIST  exampleRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT figureRefLinkLayout EMPTY>
+	<!ATTLIST  figureRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT genericRefLinkLayout EMPTY>
+	<!ATTLIST  genericRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT indexLinkLayout EMPTY>
+	<!ATTLIST  indexLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT interlinearRefLinkLayout EMPTY>
+	<!ATTLIST  interlinearRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT linkLinkLayout EMPTY>
+	<!ATTLIST  linkLinkLayout
+	%linkLayoutCommonShow;
+	>
+	<!ELEMENT sectionRefLinkLayout EMPTY>
+	<!ATTLIST  sectionRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+	<!ELEMENT tablenumberedRefLinkLayout EMPTY>
+	<!ATTLIST  tablenumberedRefLinkLayout
+	%linkLayoutCommonNoShow;
+	>
+<!ELEMENT urlLinkLayout EMPTY>
+	<!ATTLIST  urlLinkLayout
+	%linkLayoutCommonShow;
+	>
+<!-- header / footer layout
+  titleHeaderFooterPageStyles is for the title pages in a book
+  headerFooterFirstPage is for the first page (in case it is different)
+  headerFooterPage is for all non-first pages (unless there's no headerFooterFirstPage) when there is no odd-even distinction
+  headerFooterEvenPage and headerFooterOddPage are for the even and odd non-first pages (unless there's no headerFooterFirstPage)
+
+  The font info may be added at any level,with lower levels inheriting font info fromhigher levels.
+  Specify font info at a lower level to override font info at a higher level.
+-->
+	<!ELEMENT titleHeaderFooterPageStyles (headerFooterFirstPage?, (headerFooterPage | headerFooterOddEvenPages)) >
+	<!ATTLIST titleHeaderFooterPageStyles
+	%fontinfo;
+	>
+	<!ELEMENT headerFooterPageStyles (comment?, headerFooterFirstPage?, (headerFooterPage | headerFooterOddEvenPages)) >
+	<!ATTLIST headerFooterPageStyles
+	%fontinfo;
+	>
+	<!ELEMENT headerFooterOddEvenPages (headerFooterEvenPage, headerFooterOddPage)  >
+	<!ATTLIST headerFooterOddEvenPages
+	%fontinfo;
+	>
+	<!--
+	   all the elements here are required in order to force a reasonable UI in editors like the XMLmind XML Editor
+	   -->
+	<!ELEMENT headerFooterFirstPage (header, footer) >
+	<!ATTLIST headerFooterFirstPage
+	%fontinfo;
+	>
+	<!ELEMENT headerFooterEvenPage (header, footer) >
+	<!ATTLIST headerFooterEvenPage
+	%fontinfo;
+	>
+	<!ELEMENT headerFooterOddPage (header, footer) >
+	<!ATTLIST headerFooterOddPage
+	%fontinfo;
+	>
+	<!ELEMENT headerFooterPage (header, footer) >
+	<!ATTLIST headerFooterPage
+	%fontinfo;
+	>
+	<!ELEMENT header (leftHeaderFooterItem, centerHeaderFooterItem, rightHeaderFooterItem) >
+	<!ATTLIST header
+	  rulebelowpattern (space | rule | dots | none) "none"
+	  rulebelowlength CDATA #IMPLIED
+	  rulebelowwidth CDATA #IMPLIED
+	>
+	<!ELEMENT footer (leftHeaderFooterItem, centerHeaderFooterItem, rightHeaderFooterItem) >
+	<!ATTLIST footer
+	  ruleabovepattern (space | rule | dots | none) "none"
+	  ruleabovelength CDATA #IMPLIED
+	  ruleabovewidth CDATA #IMPLIED
+	>
+	<!-- what can go in a header or a footer -->
+<!ENTITY % headerFooterItem "chapterTitle | nothing | pageNumber | paperAuthor | paperTitle | sectionTitle | volumeAuthorRef | volumeTitleRef | img | fixedText" >
+<!ELEMENT leftHeaderFooterItem ( %headerFooterItem;)>
+<!ELEMENT centerHeaderFooterItem ( %headerFooterItem;)>
+<!ELEMENT rightHeaderFooterItem ( %headerFooterItem;)>
+   <!-- the title of the chapter
+		 (If shortTitle is present, use it; otherwise use the secTitle elment)
+		  -->
+<!ELEMENT chapterTitle EMPTY >
+<!ATTLIST chapterTitle
+	%formatinfo;
+>
+   <!-- the title of the section
+		 (If shortTitle is present, use it; otherwise use the secTitle elment)
+		  -->
+<!ELEMENT sectionTitle EMPTY >
+<!ATTLIST sectionTitle
+	%formatinfo;
+>
+   <!--
+   The page number
+	 format =
+					"1" for 1,2,3,...10,11, etc
+					"001" for 001,002,003, etc
+					"A" for A, B, C,... AA, AB, etc.
+					"a" for a,b,c...aa,ab, etc.
+					"I" for I, II,III, IV, V, etc.
+					"i" for i, ii,iii, iv, v, etc.
+	  restartCount (at one)
+   -->
+<!ELEMENT pageNumber EMPTY>
+<!ATTLIST pageNumber
+   format CDATA #IMPLIED
+   restartCount (yes | no) "no"
+	   %formatinfo;
+>
+   <!--
+   nothing is a place-holder so display will be more  intuitive in the XMLmind XML Editor
+   -->
+<!ELEMENT nothing EMPTY>
+<!--
+	(If shortauthor is present, use it; otherwise use what's in the author element(s)
+   -->
+<!ELEMENT paperAuthor EMPTY >
+<!ATTLIST paperAuthor
+	   %formatinfo;
+>
+<!--
+	(If shortTitle is present, use it; otherwise use the title element)
+-->
+<!ELEMENT paperTitle EMPTY >
+<!ATTLIST paperTitle
+	%formatinfo;
+>
+<!--
+   volumeAuthorRef uses the publishedDocument/volumeAuthor element
+-->
+<!ELEMENT volumeAuthorRef EMPTY>
+<!ATTLIST volumeAuthorRef
+	%formatinfo;
+>
+<!--
+   volumeTitleRef uses the publishedDocument/volumeTitle element
+-->
+<!ELEMENT volumeTitleRef EMPTY>
+<!ATTLIST volumeTitleRef
+	%formatinfo;
+>
+   <!--
+   fixedText is arbitrary text one can use (e.g. entity name, copyright, etc.)
+   -->
+<!ELEMENT fixedText (#PCDATA)>
+<!ATTLIST fixedText
+	%fontinfo;
+	>
+
+<!--
+  ===================================================
+Front MatterLayout
+  ===================================================
+
+  titleHeaderFooterPageStyles is for the title page of a book only
+  headerFooterPageStyles is for the other fornt matter items for a book
+-->
+<!ELEMENT frontMatterLayout (comment?, titleHeaderFooterPageStyles?, subtitleLayout?, titleLayout, subtitleLayout?, copyrightPageLayout?, headerFooterPageStyles?, (authorLayout | affiliationLayout | emailAddressLayout  | authorContactInfoLayout |
+													   presentedAtLayout | dateLayout | versionLayout | contentsLayout | acknowledgementsLayout | prefaceLayout | (abstractLayout, abstractTextFontInfo?))*) >
+<!ELEMENT titleLayout EMPTY >
+<!ATTLIST titleLayout
+	 %titleformatinfo;
+	>
+<!ELEMENT subtitleLayout EMPTY >
+<!ATTLIST subtitleLayout
+	 %titleformatinfo;
+	>
+<!ELEMENT copyrightPageLayout EMPTY >
+<!ATTLIST copyrightPageLayout
+	 %titleformatinfo;
+	>
+<!ELEMENT authorLayout EMPTY >
+<!ATTLIST authorLayout
+	 %frontmatterformatinfo;
+	>
+<!ELEMENT affiliationLayout EMPTY >
+<!ATTLIST affiliationLayout
+	 %frontmatterformatinfo;
+	>
+<!ELEMENT emailAddressLayout EMPTY >
+<!ATTLIST emailAddressLayout
+	 %frontmatterformatinfo;
+	>
+<!-- need to modify authorContactInfoLayout -->
+<!ELEMENT authorContactInfoLayout EMPTY >
+<!ATTLIST authorContactInfoLayout
+	 %titleformatinfo;
+	>
+<!ELEMENT presentedAtLayout EMPTY >
+<!ATTLIST presentedAtLayout
+	 %frontmatterformatinfo;
+	>
+<!ELEMENT dateLayout EMPTY >
+<!ATTLIST dateLayout
+	 %frontmatterformatinfo;
+	>
+<!ELEMENT versionLayout EMPTY >
+<!ATTLIST versionLayout
+	 %frontmatterformatinfo;
+	>
+<!ELEMENT contentsLayout EMPTY >
+<!ATTLIST contentsLayout
+	 %titleformatinfo;
+	 spacebeforemainsection CDATA #IMPLIED
+	 betweentitleandnumber (rule | space | dots) "dots"
+	 showbookmarks (yes | no) 'yes'
+	 showpagenumber (yes | no) 'yes'
+	>
+<!ELEMENT acknowledgementsLayout EMPTY >
+<!ATTLIST acknowledgementsLayout
+	 %titleformatinfo;
+	>
+<!ELEMENT prefaceLayout EMPTY >
+<!ATTLIST prefaceLayout
+	 %titleformatinfo;
+	>
+<!ELEMENT abstractLayout EMPTY >
+<!ATTLIST abstractLayout
+	 %titleformatinfo;
+	 useLabel (yes | no) 'yes'
+	>
+<!ELEMENT abstractTextFontInfo EMPTY>
+<!ATTLIST abstractTextFontInfo
+	 %fontinfo;
+	 start-indent CDATA #IMPLIED
+	 end-indent CDATA #IMPLIED
+	 textalign (start | left | center | end | right | justify) 'start'
+>
+<!--
+  ===================================================
+Body Layout
+  ===================================================
+
+  In a book, if headerFooterPageStyles is missing, it uses the frontMatterLayout headerFooterPageStyles info.
+-->
+<!ELEMENT bodyLayout (comment?, headerFooterPageStyles?, partLayout?, chapterLayout?, section1Layout, section2Layout, section3Layout, section4Layout, section5Layout, section6Layout) >
+	<!ELEMENT partLayout (partTitleLayout | numberLayout)+ >
+<!ELEMENT partTitleLayout EMPTY >
+<!ATTLIST partTitleLayout
+	 %titleformatinfo;
+	>
+	<!ELEMENT chapterLayout (chapterTitleLayout | numberLayout)+ >
+	<!ATTLIST chapterLayout
+		 firstParagraphHasIndent (yes | no) 'yes'
+	 >
+	<!ELEMENT  chapterTitleLayout EMPTY >
+	<!ATTLIST chapterTitleLayout
+	%titleformatinfo;
+	>
+	<!ELEMENT section1Layout (sectionTitleLayout | numberLayout)+ >
+	<!ATTLIST section1Layout
+	 %sectionformatinfo;
+	 startSection1NumberingAtZero (no | yes) "no"
+	>
+	<!ELEMENT sectionTitleLayout EMPTY >
+	<!ATTLIST sectionTitleLayout
+		  %titleformatinfo;
+	>
+	<!ELEMENT numberLayout EMPTY >
+	<!ATTLIST numberLayout
+	   %titleformatinfo;
+	   >
+	<!ELEMENT section2Layout (sectionTitleLayout | numberLayout)+ >
+	<!ATTLIST section2Layout
+	 %sectionformatinfo;
+	>
+	<!ELEMENT section3Layout (sectionTitleLayout | numberLayout)+ >
+	<!ATTLIST section3Layout
+	 %sectionformatinfo;
+	>
+	<!ELEMENT section4Layout (sectionTitleLayout | numberLayout)+ >
+	<!ATTLIST section4Layout
+	 %sectionformatinfo;
+	>
+	<!ELEMENT section5Layout (sectionTitleLayout | numberLayout)+ >
+	<!ATTLIST section5Layout
+	 %sectionformatinfo;
+	>
+	<!ELEMENT section6Layout (sectionTitleLayout | numberLayout)+ >
+	<!ATTLIST section6Layout
+	 %sectionformatinfo;
+	>
+<!--
+  ===================================================
+Back Matter Layout
+  ===================================================
+
+  In a book, if headerFooterPageStyles is missing, it uses the bodyLayout headerFooterPageStyles info (and,if tthat is empty, it uses the front matter one)
+-->
+<!ELEMENT backMatterLayout (comment?, headerFooterPageStyles?, (acknowledgementsLayout | appendixLayout | glossaryLayout | useEndNotesLayout |
+														(referencesTitleLayout, referencesLayout) | indexLayout | authorContactInfoLayout)*) >
+	<!ELEMENT appendixLayout (appendixTitleLayout | numberLayout)+ >
+	<!ELEMENT  appendixTitleLayout EMPTY >
+	<!ATTLIST appendixTitleLayout
+	%titleformatinfo;
+	showletter  (yes | no) 'yes'
+	textafterletter CDATA #IMPLIED
+	>
+<!ELEMENT glossaryLayout EMPTY >
+<!ATTLIST glossaryLayout
+	 %titleformatinfo;
+	>
+	<!-- if useEndNotesLayout is present, then all endnotes appear in the back matter; otherwise, they are footnotes. -->
+<!ELEMENT useEndNotesLayout EMPTY >
+<!ATTLIST useEndNotesLayout
+	 %titleformatinfo;
+	>
+<!ELEMENT indexLayout EMPTY >
+<!ATTLIST indexLayout
+	 %titleformatinfo;
+	>
+<!ELEMENT referencesTitleLayout EMPTY >
+<!ATTLIST referencesTitleLayout
+	 %titleformatinfo;
+	>
+<!--
+  ===================================================
+Content Layout
+  ===================================================
+  -->
+   <!ELEMENT contentLayout (comment?, exampleLayout, sectionRefLayout?, sectionRefTitleLayout?, interlinearSourceStyle?, interlinearRefCitationTitleLayout?, endnoteRefLayout?,
+													  figureLayout?, figureRefLayout?, figureRefCaptionLayout?, tablenumberedLayout?, tablenumberedRefLayout?, tablenumberedRefCaptionLayout?,
+													  magnificationFactor?, langDataLayout?, glossLayout?, freeLayout? ) >
+   <!ELEMENT exampleLayout EMPTY >
+   <!ATTLIST exampleLayout
+	   indent-before CDATA #REQUIRED
+	   indent-after CDATA #REQUIRED
+	   AddPeriodAfterFinalDigit (no | yes) 'no'
+	   referencesUseParens (no | yes) 'yes'
+   >
+	<!ELEMENT sectionRefLayout EMPTY >
+	<!ATTLIST sectionRefLayout
+	   AddPeriodAfterFinalDigit (no | yes) 'no'
+		textBeforeSingularOverride CDATA #IMPLIED
+		textBeforePluralOverride CDATA #IMPLIED
+		textBeforeCapitalizedSingularOverride CDATA #IMPLIED
+		textBeforeCapitalizedPluralOverride CDATA #IMPLIED
+		%fontinfo;
+	>
+	<!ELEMENT sectionRefTitleLayout EMPTY >
+	<!ATTLIST sectionRefTitleLayout
+		%formatinfo;
+	>
+   <!ELEMENT interlinearSourceStyle EMPTY  >
+   <!ATTLIST interlinearSourceStyle
+	   interlinearsourcestyle (AfterFirstLine | AfterFree | UnderFree) "AfterFirstLine"
+	   %formatinfo;
+ >
+   <!ELEMENT interlinearRefCitationTitleLayout EMPTY  >
+   <!ATTLIST interlinearRefCitationTitleLayout
+	   %formatinfo;
+ >
+	<!ELEMENT endnoteRefLayout EMPTY >
+	<!ATTLIST endnoteRefLayout
+		%formatinfo;
+	>
+	<!ELEMENT figureLayout (figureLabelLayout, figureNumberLayout, figureCaptionLayout) >
+	<!ATTLIST figureLayout
+		captionLocation (before|after) "after"
+		spaceBetweenFigureAndCaption CDATA #IMPLIED
+>
+	<!ELEMENT figureLabelLayout EMPTY >
+	<!ATTLIST figureLabelLayout
+		label CDATA #IMPLIED
+		%formatinfo;
+	>
+	<!ELEMENT figureNumberLayout EMPTY >
+	<!ATTLIST figureNumberLayout
+		format (1 | a | A | i | I  ) "1"
+		showchapternumber (no | yes) "no"
+		textbetweenchapterandnumber CDATA #IMPLIED
+		%formatinfo;
+	>
+	<!ELEMENT figureCaptionLayout EMPTY >
+	<!ATTLIST figureCaptionLayout
+		%formatinfo;
+	>
+	<!ELEMENT figureRefLayout EMPTY >
+	<!ATTLIST figureRefLayout
+		textBeforeSingularOverride CDATA #IMPLIED
+		textBeforePluralOverride CDATA #IMPLIED
+		textBeforeCapitalizedSingularOverride CDATA #IMPLIED
+		textBeforeCapitalizedPluralOverride CDATA #IMPLIED
+		%fontinfo;
+	>
+	<!ELEMENT figureRefCaptionLayout EMPTY >
+	<!ATTLIST figureRefCaptionLayout
+		%formatinfo;
+	>
+
+	<!ELEMENT tablenumberedLayout (tablenumberedLabelLayout, tablenumberedNumberLayout, tablenumberedCaptionLayout) >
+	<!ATTLIST tablenumberedLayout
+		captionLocation (before|after) "after"
+		spaceBetweenTableAndCaption CDATA #IMPLIED
+	>
+	<!ELEMENT tablenumberedLabelLayout EMPTY >
+	<!ATTLIST tablenumberedLabelLayout
+		label CDATA #IMPLIED
+		%formatinfo;
+	>
+	<!ELEMENT tablenumberedNumberLayout EMPTY >
+	<!ATTLIST tablenumberedNumberLayout
+		format (1 | a | A | i | I  ) "1"
+		showchapternumber (no | yes) "no"
+		textbetweenchapterandnumber CDATA #IMPLIED
+		%formatinfo;
+	>
+	<!ELEMENT tablenumberedCaptionLayout EMPTY >
+	<!ATTLIST tablenumberedCaptionLayout
+		%formatinfo;
+	>
+	<!ELEMENT tablenumberedRefLayout EMPTY >
+	<!ATTLIST tablenumberedRefLayout
+		textBeforeSingularOverride CDATA #IMPLIED
+		textBeforePluralOverride CDATA #IMPLIED
+		textBeforeCapitalizedSingularOverride CDATA #IMPLIED
+		textBeforeCapitalizedPluralOverride CDATA #IMPLIED
+		%fontinfo;
+	>
+	<!ELEMENT tablenumberedRefCaptionLayout EMPTY >
+	<!ATTLIST tablenumberedRefCaptionLayout
+		%formatinfo;
+	>
+<!ELEMENT magnificationFactor (#PCDATA) >
+
+	<!ELEMENT langDataLayout (langDataInExampleLayout, langDataInTableLayout, langDataInProseLayout) >
+   <!ELEMENT langDataInExampleLayout EMPTY >
+	<!ATTLIST langDataInExampleLayout
+	   textbeforeafterusesfontinfo (no | yes) 'no'
+	   %formatinfo;
+	>
+   <!ELEMENT langDataInTableLayout EMPTY >
+	<!ATTLIST langDataInTableLayout
+	   textbeforeafterusesfontinfo (no | yes) 'no'
+	   %formatinfo;
+	>
+   <!ELEMENT langDataInProseLayout EMPTY >
+	<!ATTLIST langDataInProseLayout
+	   textbeforeafterusesfontinfo (no | yes) 'no'
+	   %formatinfo;
+	>
+	<!ELEMENT glossLayout (glossInExampleLayout, glossInTableLayout, glossInProseLayout) >
+   <!ELEMENT glossInExampleLayout EMPTY >
+	<!ATTLIST glossInExampleLayout
+	   textbeforeafterusesfontinfo (no | yes) 'no'
+	   %formatinfo;
+	>
+   <!ELEMENT glossInTableLayout EMPTY >
+	<!ATTLIST glossInTableLayout
+	   textbeforeafterusesfontinfo (no | yes) 'no'
+	   %formatinfo;
+	>
+   <!ELEMENT glossInProseLayout EMPTY >
+	<!ATTLIST glossInProseLayout
+	   textbeforeafterusesfontinfo (no | yes) 'no'
+	   %formatinfo;
+	>
+   <!ELEMENT freeLayout EMPTY >
+	<!ATTLIST freeLayout
+	   textbeforeafterusesfontinfo (no | yes) 'no'
+	   %formatinfo;
+	>
+<!-- REVISION HISTORY
+1.0.0 31-Aug-2007 Andy Black  Initial draft.
+
+-->

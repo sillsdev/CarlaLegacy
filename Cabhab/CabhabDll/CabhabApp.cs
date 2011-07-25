@@ -88,7 +88,6 @@ namespace SIL.Cabhab
 		{
 			try
 			{
-				Cursor.Current = Cursors.AppStarting;
 				ImageHolder holder = new ImageHolder();
 				// TODO: may want to add following to xml at some point or put it in configuration Path using Cabhab.ico as name
 				// We are putting the configuration files in the common app directory
@@ -114,13 +113,15 @@ namespace SIL.Cabhab
 				if (!fTesting)
 				{
 					//m_mainSplitterContainer.Panel1Collapsed = true;
-					// xWindow no longer has this: SetWindowLabel();
 					GetToolAndStatusBars();
 					m_viewer = (HtmlViewer) Mediator.PropertyTable.GetValue("currentContentControlObject");
 					m_viewer.ChangeShowToolbar += new EventHandler(OnChangeShowToolbar);
 					m_viewer.ChangeShowStatusBar += new EventHandler(OnChangeShowStatusBar);
 					Language m_lang = m_viewer.m_lang;
 					m_lang.ChangeLanguageName += new EventHandler(OnChangeLanguageName);
+					string sLangName = (m_lang != null) ? sLangName = m_lang.Name : "";
+					Mediator.PropertyTable.SetProperty("DocumentName", sLangName);
+					UpdateCaptionBar();
 					if (m_sAnswerFile != null && File.Exists(m_sAnswerFile))
 					{
 						m_lang.LoadAnswerFile(m_sAnswerFile);
@@ -128,7 +129,6 @@ namespace SIL.Cabhab
 					}
 					Show();
 				}
-				Cursor.Current = Cursors.Arrow;
 				return this;
 			}
 			catch(Exception e)
@@ -226,7 +226,12 @@ namespace SIL.Cabhab
 
 		void OnChangeLanguageName(object sender, EventArgs e)
 		{
-			// xWindow no longer has this: SetWindowLabel();
+			if (sender != null && Mediator != null)
+			{
+				string sLangName = ((Language) sender).Name;
+				Mediator.PropertyTable.SetProperty("DocumentName", sLangName);
+				UpdateCaptionBar();
+			}
 		}
 
 		void OnChangeShowStatusBar(object sender, EventArgs e)
@@ -324,6 +329,7 @@ namespace SIL.Cabhab
 		[STAThread]
 		public static int Main(string[] rgArgs)
 		{
+			Cursor.Current = Cursors.AppStarting;
 			CabhabApp app;
 			if (rgArgs.Length == 0)
 				app = new CabhabApp();

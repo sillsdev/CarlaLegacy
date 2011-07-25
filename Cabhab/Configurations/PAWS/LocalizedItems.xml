@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
 	<commands>
-		<command id="CmdNewLanguage" label="Crear Lengua _Nueva" shortcut="Ctrl+N" message="NewLanguage" icon="New"/>
-		<command id="CmdOpenLanguage" label="_Abrir Lengua" message="OpenLanguage" shortcut="Ctrl+O" icon="Open"/>
-		<command id="CmdCloseLanguage" label="_Cerrar Lengua" message="CloseLanguage"/>
-		<command id="CmdGenerateFiles" label="_Generar Archivos" message="GenerateFiles" shortcut="Ctrl+S" icon="Save"/>
-		<command id="CmdSaveLanguageAs" label="_Recordar Lengua Como" message="SaveLanguageAs"/>
-		<command id="CmdExit" label="Quitar" message="ExitApplication"/>
-		<command id="CmdCopy" label="_Copiar" message="EditCopy" icon="Copy" shortcut="Ctrl+C"/>
-		<command id="CmdCut" label="Cortar" message="EditCut" icon="Cut" shortcut="Ctrl+X"/>
-		<command id="CmdPaste" label="_Pegar" message="EditPaste" icon="Paste" shortcut="Ctrl+V"/>
-		<command id="CmdLanguageProperties" label="_Propiedades" message="LanguageProperties"/>
-		<command id="CmdLanguageFileLocations" label="Locaciones de Archivos" message="LanguageFileLocations"/>
-		<command id="CmdBack" label="Atras" message="BrowserBack" icon="Back" shortcut="Alt+Left"/>
-		<command id="CmdForward" label="Adelante" message="BrowserForward" icon="Forward" shortcut="Alt+Right"/>
+		<command id="CmdNewLanguage" label="Create _New Language" shortcut="Ctrl+N" message="NewLanguage" icon="New"/>
+		<command id="CmdOpenLanguage" label="_Open Language" message="OpenLanguage" shortcut="Ctrl+O" icon="Open"/>
+		<command id="CmdCloseLanguage" label="_Close Language" message="CloseLanguage"/>
+		<command id="CmdGenerateFiles" label="_Generate Files" message="GenerateFiles" shortcut="Ctrl+S" icon="Save"/>
+		<command id="CmdSaveLanguageAs" label="_Save Language As" message="SaveLanguageAs"/>
+		<command id="CmdExit" label="E_xit" message="ExitApplication"/>
+		<command id="CmdCopy" label="_Copy" message="EditCopy" icon="Copy" shortcut="Ctrl+C"/>
+		<command id="CmdCut" label="Cu_t" message="EditCut" icon="Cut" shortcut="Ctrl+X"/>
+		<command id="CmdPaste" label="_Paste" message="EditPaste" icon="Paste" shortcut="Ctrl+V"/>
+		<command id="CmdLanguageProperties" label="_Properties" message="LanguageProperties"/>
+		<command id="CmdLanguageFileLocations" label="File _Locations" message="LanguageFileLocations"/>
+		<command id="CmdBack" label="_Back" message="BrowserBack" icon="Back" shortcut="Alt+Left"/>
+		<command id="CmdForward" label="_Forward" message="BrowserForward" icon="Forward" shortcut="Alt+Right"/>
 		<command id="CmdRefresh" label="_Refresh" message="BrowserRefresh" icon="Refresh" shortcut="F5"/>
-		<command id="CmdAbout" label="_Acerca de PAWS" message="AboutPage"/>
-		<command id="CmdResources" label="_Referencias" message="ResourcesPage"/>
-		<command id="CmdShowToolbar" label="Mostrar Toolbar" message="ShowToolbar"/>
-		<command id="CmdShowStatusBar" label="Mostrar Status Bar" message="ShowStatusBar"/>
-		<command id="CmdInterfaceLanguage" label="Cambiar Lengua del Interfaz" message="InterfaceLanguage"/>
+		<command id="CmdAbout" label="_About PAWS" message="AboutPage"/>
+		<command id="CmdResources" label="_Resources" message="ResourcesPage"/>
+		<command id="CmdShowToolbar" label="Show Toolbar" message="ShowToolbar"/>
+		<command id="CmdShowStatusBar" label="Show Status Bar" message="ShowStatusBar"/>
+		<command id="CmdInterfaceLanguage" label="Set Interface Language" message="InterfaceLanguage"/>
 	</commands>
 	<!-- ********************************************************** -->
 	<!-- ************************ menus *********************** -->
 	<!-- ********************************************************** -->
 	<menubar>
-		<menu id="File" label="_Archivo">
+		<menu id="File" label="_File">
 			<include path="MasterMenu.xml" query="root/menubar/menu[@id='File']/*"/>
 		</menu>
-		<menu id="Edit" label="_Editar">
+		<menu id="Edit" label="_Edit">
 			<include path="MasterMenu.xml" query="root/menubar/menu[@id='Edit']/*"/>
 		</menu>
-		<menu id="Language" label="_Lengua">
+		<menu id="Language" label="_Language">
 			<include path="MasterMenu.xml" query="root/menubar/menu[@id='Language']/*"/>
 		</menu>
-		<menu id="View" label="_Vista">
+		<menu id="View" label="_View">
 			<include path="MasterMenu.xml" query="root/menubar/menu[@id='View']/*"/>
 		</menu>
-		<menu id="Help" label="A_yuda">
+		<menu id="Help" label="_Help">
 			<include path="MasterMenu.xml" query="root/menubar/menu[@id='Help']/*"/>
 		</menu>
 	</menubar>

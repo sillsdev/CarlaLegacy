@@ -70,11 +70,15 @@ namespace SIL.Cabhab
 				AdjustDoctypePath(sConfigurationPath);
 			}
 			SetUpXSLTParameters(transformConfigurationNode);
+			string sLanguageCode = XmlUtils.GetOptionalAttributeValue(transformConfigurationNode, "lang", "en");
 #if UsingDotNetTransforms
-			m_transform = new DotNetCompiledTransform(m_sTransformFile);
+			m_transform = new DotNetCompiledTransform(m_sTransformFile, sLanguageCode);
 #endif
 #if UsingSaxonDotNetTransforms
-			m_transform = new SaxonDotNetTransform(m_sTransformFile);
+			m_transform = new SaxonDotNetTransform(m_sTransformFile, sLanguageCode);
+#endif
+#if UsingMSXML2Transforms
+			m_transform = new MSXML2Transform(m_sTransformFile, sLanguageCode);
 #endif
 
 		}

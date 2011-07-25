@@ -991,15 +991,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/proDropExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/proDropExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/proDropExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/proDropExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/proDropExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/proDropExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xV.IPProDrop.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1144,7 +1144,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1161,7 +1161,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1203,15 +1204,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/auxExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/auxExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/auxExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/auxExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xV.IPAux.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1356,7 +1357,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1373,7 +1374,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1428,7 +1430,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxAffixExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1445,7 +1447,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1500,7 +1503,7 @@
 				<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negVerbExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1517,7 +1520,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1654,7 +1658,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryNonfiniteExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1671,7 +1675,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1713,15 +1718,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxNoonfiniteExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/auxNoonfiniteExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxNoonfiniteExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/auxNoonfiniteExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/auxNoonfiniteExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/auxNoonfiniteExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xV.IPAux.44</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1820,7 +1825,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryOtherExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1837,7 +1842,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1879,15 +1885,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxOtherExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/auxOtherExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxOtherExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/auxOtherExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/auxOtherExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/auxOtherExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xV.IPAux.56</xsl:with-param>
 <xsl:with-param name="sLetterList">

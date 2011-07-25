@@ -26,7 +26,7 @@
 				<div>
 					<p>Seleccione las salidas que usted quiere comprobando la caja antes de cada uno. Observe por favor que por lo menos un escritor debe estar presente. Si no escoje uno, va a recibir el comparativo. Solamente la opción práctica española del escritor de la gramática y las instrucciones relevantes a ella está disponible en español.</p>
 					<table>
-						<tr>
+						<tr style="display:none">
 							<td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
 							<td onclick="SetOutputViaDescription('grammar')">Haga salir el archivo de la gramática de PC-PATR y los archivos de ejemplos para probar.</td>
 						</tr>
@@ -38,7 +38,7 @@
 							<td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
 							<td onclick="SetOutputViaDescription('writerPractical')">Haga salir el archivo para el escritor práctico de la gramática.</td>
 						</tr>
-						<tr style="display:none">
+						<tr>
 							<td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
 							<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Haga salir el archivo para el escritor práctico de la gramática en español.</td>
 						</tr>

@@ -12,7 +12,8 @@ namespace SIL.Cabhab
 	{
 		XslCompiledTransform m_transformer = new XslCompiledTransform();
 
-		public DotNetCompiledTransform(string sTransformName)
+		public DotNetCompiledTransform(string sTransformName, string sTargetLanguageCode)
+			: base(sTargetLanguageCode)
 		{
 			var resolver = new XmlUrlResolver();
 			resolver.Credentials = System.Net.CredentialCache.DefaultCredentials;
@@ -73,7 +74,7 @@ namespace SIL.Cabhab
 					// Following is a specially recognized parameter name
 					if (rParam.Name == "prmSDateTime")
 					{
-						args.AddParam(rParam.Name, "", XMLUtilities.GetCurrentDateTime());
+						args.AddParam(rParam.Name, "", XMLUtilities.GetCurrentDateTime(CultureToUse));
 					}
 					else
 						args.AddParam(rParam.Name, "", rParam.Value);

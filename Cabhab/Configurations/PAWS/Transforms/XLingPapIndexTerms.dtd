@@ -1,12 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!-- a list of index terms
 	   The version attribute is a way to document the set of index terms contained within this element.
 	   This is to facilitate reuse of lists of index terms.
+	   This is a subcomponent of XLingPap
 	   -->
-<!ELEMENT indexTerms (indexTerm*)>
+<!ELEMENT indexTerms (seeDefinitions?, indexTerm*)>
 <!ATTLIST indexTerms
 	version CDATA #IMPLIED
 >
+<!-- a set of definitions for what word(s) to use when there is a @see attrbiute in an indexTerm element
+	   there is one definition per language
+	   There are two parts to each definition: word(s) for "See" and word(s) for "See also".
+-->
+<!ELEMENT seeDefinitions (seeDefinition+) >
+<!ELEMENT seeDefinition (seeTerm, seeAlsoTerm) >
+<!ATTLIST seeDefinition
+	lang IDREF #IMPLIED
+>
+<!ELEMENT seeTerm (beforeTerm, afterTerm) >
+<!ELEMENT beforeTerm (#PCDATA) >
+<!ELEMENT afterTerm (#PCDATA) >
+<!ELEMENT seeAlsoTerm (beforeTerm, afterTerm) >
 <!-- a key term that might be used in an indexing scheme for a document.
 A given indexTerm may be expressed in more than one language (e.g. English, Spanish, French, etc.).  Thus it has multiple term elements.
 A given indexTerm may have other index terms nested under it.
@@ -22,7 +35,7 @@ It only shows if there is an instance of a referring index element in the docume
 	kind (name | language | subject) "subject"
 >
 <!-- content of an index term;
- note that can be in different  languages so a given indexTerm element can be expressed in multiple languages.
+ note that this can be in different  languages so a given indexTerm element can be expressed in multiple languages.
  this term is what will show in the index in the output.
   -->
 <!ELEMENT term (#PCDATA | %embedded;)*>

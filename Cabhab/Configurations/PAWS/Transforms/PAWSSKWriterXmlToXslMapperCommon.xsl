@@ -870,7 +870,7 @@ DoInterlinear
 			<xsl:element name="xsl:choose">
 				<xsl:element name="xsl:when">
 					<xsl:attribute name="test">
-						<xsl:text>$iExampleLength != 0 and $sExampleValue != ' '</xsl:text>
+						<xsl:text>$iExampleLength != 0 and normalize-space($sExampleValue) != ''</xsl:text>
 					</xsl:attribute>
 					<xsl:element name="xsl:call-template">
 						<xsl:attribute name="name">

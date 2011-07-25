@@ -1,0 +1,192 @@
+<!-- XLingPapPublisherStylesheetReferences.dtd
+	 XML/XSLT-based Linguistic paper document type definition
+	 Stylesheet  information for a particular publisher, references subsection
+	   One may reference/link/insert an XLingPap document into this template as a particular instance.
+	 Version 1.0.0
+	 (Revision history is at the end.)
+  -->
+
+
+<!ENTITY % XLingPapAttributeEntities SYSTEM  "XLingPapAttributeEntities.dtd">
+%XLingPapAttributeEntities;
+
+<!--
+  ===================================================
+References Layouts
+  ===================================================
+-->
+<!--
+	usecitationformatwhennumbereofsharedpaperis = number of shared papers required before using the citation format in
+		 collections and proceedings; a value of 0 means do not use the citation format
+-->
+<!ELEMENT referencesLayout ( publisherStyleSheetReferencesName?, publisherStyleSheetReferencesVersion?, refAuthorLayouts,
+														 articleLayouts, bookLayouts, collectionLayouts, dissertationLayouts,
+														 fieldNotesLayouts, msLayouts, paperLayouts, proceedingsLayouts, thesisLayouts,
+														 webPageLayouts, publishedLayout, locationPublisherLayouts, urlDateAccessedLayouts?, iso639-3codeItem?)>
+<!ATTLIST  referencesLayout
+   hangingindentsize CDATA #REQUIRED
+   defaultfontsize CDATA #IMPLIED
+   authorform (full | initials) "full"
+   titleform (uppercase | lowercase) "uppercase"
+   uselineforrepeatedauthor (no | yes) "no"
+   removecommonhundredsdigitsinpages (yes | no) "no"
+   usecitationformatwhennumberofsharedpaperis (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) "0"
+   >
+
+<!-- Name and version of this references stylesheet -->
+<!ELEMENT  publisherStyleSheetReferencesName (#PCDATA)>
+<!ELEMENT  publisherStyleSheetReferencesVersion (#PCDATA)>
+
+<!ELEMENT refAuthorLayouts (comment?, refAuthorLayout)+ >
+<!ELEMENT refAuthorLayout (authorRoleItem | refAuthorItem | refDateItem)+ >
+<!ELEMENT  authorRoleItem EMPTY >
+<!ATTLIST authorRoleItem
+   %formatinfo;
+>
+<!ELEMENT  refAuthorItem EMPTY >
+<!ATTLIST refAuthorItem
+   %formatinfo;>
+<!ELEMENT  refDateItem EMPTY >
+<!ATTLIST refDateItem
+   %formatinfo;
+>
+<!ELEMENT  refTitleItem EMPTY >
+<!ATTLIST refTitleItem
+   form ( capitals | lowercase) "capitals"
+   %formatinfo;>
+
+<!ELEMENT articleLayouts (comment?, articleLayout)+>
+<!ELEMENT bookLayouts (comment?, bookLayout)+>
+<!ELEMENT collectionLayouts (comment?, collectionLayout)+>
+<!ELEMENT dissertationLayouts (comment?, dissertationLayout)+>
+<!ELEMENT fieldNotesLayouts (comment?, fieldNotesLayout)+>
+<!ELEMENT msLayouts (comment?, msLayout)+>
+<!ELEMENT paperLayouts (comment?, paperLayout)+>
+<!ELEMENT proceedingsLayouts (comment?, proceedingsLayout)+>
+<!ELEMENT thesisLayouts (comment?, thesisLayout)+>
+<!ELEMENT webPageLayouts (comment?, webPageLayout)+>
+
+<!ELEMENT articleLayout (refTitleItem | jTitleItem |  jVolItem | jIssueNumberItem |  jPagesItem | jArticleNumberItem |
+												locationPublisherLayoutsRef | urlDateAccessedLayoutsRef |  urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT bookLayout (refTitleItem | translatedByItem  |  bVolItem |  editionItem | seriesEdItem | seriesItem |
+											   bookTotalPagesItem | locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT collectionLayout (refTitleItem | collEdItem |  collTitleItem |  editionItem | collVolItem |  collPagesItem | bVolItem | seriesEdItem | seriesItem |  collCitationItem | authorRoleItem |
+											   locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT dissertationLayout (refTitleItem | dissertationLabelItem | locationItem |  institutionItem |  publishedLayoutRef |
+											   urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT fieldNotesLayout (refTitleItem | locationItem |  institutionItem |
+											   urlDateAccessedLayoutsRef | urlItem  |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT msLayout (refTitleItem | locationItem |  institutionItem | emptyItem |
+											   urlDateAccessedLayoutsRef | urlItem  |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT paperLayout (refTitleItem | conferenceItem |  locationItem |
+											   urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT proceedingsLayout (refTitleItem | procEdItem |  procTitleItem |  procVolItem |  procPagesItem |  procCitationItem | authorRoleItem |
+												locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT thesisLayout (refTitleItem | thesisLabelItem | locationItem |  institutionItem |  publishedLayoutRef |
+											   urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT webPageLayout (refTitleItem | editionItem |  locationItem |  institutionItem |  publisherItem |
+											   urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+
+<!ELEMENT emptyItem EMPTY >
+<!ATTLIST emptyItem %formatinfo;>
+<!ELEMENT jTitleItem EMPTY >
+<!ATTLIST jTitleItem %formatinfo;>
+<!ELEMENT jVolItem EMPTY >
+<!ATTLIST jVolItem %formatinfo;>
+<!ELEMENT jIssueNumberItem EMPTY >
+<!ATTLIST jIssueNumberItem %formatinfo;>
+<!ELEMENT jPagesItem EMPTY >
+<!ATTLIST jPagesItem %formatinfo;>
+<!ELEMENT jArticleNumberItem EMPTY >
+<!ATTLIST jArticleNumberItem %formatinfo;>
+<!ELEMENT bVolItem EMPTY >
+<!ATTLIST bVolItem %formatinfo;>
+<!ELEMENT dissertationLabelItem EMPTY >
+<!ATTLIST dissertationLabelItem %formatinfo;>
+<!ELEMENT thesisLabelItem EMPTY >
+<!ATTLIST thesisLabelItem %formatinfo;>
+<!ELEMENT locationItem EMPTY >
+<!ATTLIST locationItem %formatinfo;>
+<!ELEMENT publisherItem EMPTY >
+<!ATTLIST publisherItem %formatinfo;>
+<!ELEMENT editionItem EMPTY >
+<!ATTLIST editionItem %formatinfo;>
+<!ELEMENT institutionItem EMPTY >
+<!ATTLIST institutionItem %formatinfo;>
+<!ELEMENT dateAccessedItem EMPTY >
+<!ATTLIST dateAccessedItem %formatinfo;>
+
+<!ELEMENT publishedLayout (locationPublisherLayoutsRef  | pubDateItem)+ >
+<!ELEMENT pubDateItem EMPTY >
+<!ATTLIST pubDateItem %formatinfo;>
+<!ELEMENT publishedLayoutRef EMPTY >
+
+<!ELEMENT procEdItem EMPTY >
+<!ATTLIST procEdItem
+   appendEdAbbreviation (yes | no) "yes"
+   %formatinfo;
+>
+<!ELEMENT procTitleItem EMPTY >
+<!ATTLIST procTitleItem %formatinfo;>
+<!ELEMENT procVolItem EMPTY >
+<!ATTLIST procVolItem %formatinfo;>
+<!ELEMENT procPagesItem EMPTY >
+<!ATTLIST procPagesItem %formatinfo;>
+<!ELEMENT procCitationItem EMPTY >
+<!ATTLIST procCitationItem %formatinfo;>
+<!ELEMENT conferenceItem EMPTY >
+<!ATTLIST conferenceItem %formatinfo;>
+<!ELEMENT collEdItem EMPTY >
+<!ATTLIST collEdItem
+   appendEdAbbreviation (yes | no) "yes"
+   %formatinfo;
+>
+<!ELEMENT collTitleItem EMPTY >
+<!ATTLIST collTitleItem %formatinfo;>
+<!ELEMENT collVolItem EMPTY >
+<!ATTLIST collVolItem %formatinfo;>
+<!ELEMENT collPagesItem EMPTY >
+<!ATTLIST collPagesItem %formatinfo;>
+<!ELEMENT collCitationItem EMPTY >
+<!ATTLIST collCitationItem %formatinfo;>
+<!ELEMENT translatedByItem EMPTY >
+<!ATTLIST translatedByItem %formatinfo;>
+<!ELEMENT seriesEdItem EMPTY >
+<!ATTLIST seriesEdItem
+   appendEdAbbreviation (yes | no) "yes"
+   %formatinfo;
+>
+<!ELEMENT seriesItem EMPTY >
+<!ATTLIST seriesItem %formatinfo;>
+<!ELEMENT bookTotalPagesItem EMPTY >
+<!ATTLIST bookTotalPagesItem %formatinfo;>
+
+
+<!ELEMENT urlItem EMPTY >
+<!ATTLIST urlItem %formatinfo;>
+
+<!ELEMENT iso639-3codeItem EMPTY >
+<!ATTLIST iso639-3codeItem
+ %formatinfo;
+ case (lowercase | uppercase) "lowercase"
+ sort (yes | no) "yes"
+ textbeforefirst CDATA #IMPLIED
+ textbetween CDATA #IMPLIED
+ textafterlast CDATA #IMPLIED
+>
+<!-- the following is a way to create a common set of location and publisher layouts; it reduces the number of patterns needed -->
+<!ELEMENT locationPublisherLayouts (comment?, locationPublisherLayout)+ >
+<!ELEMENT  locationPublisherLayout (locationItem | publisherItem | missingItem)+>
+<!ELEMENT  locationPublisherLayoutsRef EMPTY >
+<!-- the following is a way to create a common set of url and dateAccessed layouts; it reduces the number of patterns needed -->
+<!ELEMENT urlDateAccessedLayouts (comment?, urlDateAccessedLayout)+ >
+<!ELEMENT  urlDateAccessedLayout (urlItem | dateAccessedItem | missingItem)+>
+<!ELEMENT  urlDateAccessedLayoutsRef EMPTY >
+<!-- following indicates that the location/publisher or url/dateAccessed items are not present -->
+<!ELEMENT missingItem EMPTY >
+
+<!ELEMENT  iso639-3codeItemRef EMPTY >
+<!-- REVISION HISTORY
+1.0.0 31-Aug-2007 Andy Black  Initial draft.
+
+-->

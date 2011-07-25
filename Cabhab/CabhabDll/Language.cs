@@ -18,13 +18,10 @@
 // --------------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-using System.Xml.Xsl;
-using System.Xml.XPath;
 using SIL.Utils;
 using XCore;
 namespace SIL.Cabhab
@@ -119,11 +116,15 @@ namespace SIL.Cabhab
 			m_sMasterAnswerFile = GetPropertyValueAsPath("MasterAnswerFileLocation");
 			m_sStylesheet = GetPropertyValueAsPath("MasterCSSLocation");
 			m_sWebPageMapper = GetPropertyValueAsPath("WebPageMapperLocation");
+			string sLanguageCode = XmlUtils.GetOptionalAttributeValue(configurationParameters, "lang", "en");
 #if UsingDotNetTransforms
-			m_transform = new DotNetCompiledTransform(m_sWebPageMapper);
+			m_transform = new DotNetCompiledTransform(m_sWebPageMapper, sLanguageCode);
 #endif
 #if UsingSaxonDotNetTransforms
-			m_transform = new SaxonDotNetTransform(m_sWebPageMapper);
+			m_transform = new SaxonDotNetTransform(m_sWebPageMapper, sLanguageCode);
+#endif
+#if UsingMSXML2Transforms
+			m_transform = new MSXML2Transform(m_sWebPageMapper, sLanguageCode);
 #endif
 
 			m_sAnswerFileFilter = mediator.PropertyTable.GetStringProperty("AnswerFileFilter", null);

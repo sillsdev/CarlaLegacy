@@ -208,16 +208,23 @@ namespace SIL.Cabhab
 			}
 		}
 #endif
+
 		public static string GetCurrentDateTime()
+		{
+			return GetCurrentDateTime("en-US");
+		}
+
+		public static string GetCurrentDateTime(string sCultureToUse)
 		{
 			DateTime now;
 			now = DateTime.Now;
-			//CultureInfo ci = Thread.CurrentThread.CurrentCulture;
-			//Thread.CurrentThread.CurrentCulture = new CultureInfo("es", false);
+			// following does not work: we really need some way to know the target language of the output, not the culture of the UI
+			 CultureInfo ci = Thread.CurrentThread.CurrentCulture;
+			Thread.CurrentThread.CurrentCulture = new CultureInfo(sCultureToUse, false);
 
 			string sResult = (now.ToLongDateString() + " " + now.ToLongTimeString());
 
-			//Thread.CurrentThread.CurrentCulture = ci;
+			Thread.CurrentThread.CurrentCulture = ci;
 			return sResult;
 		}
 		public static string getXmlElementAttribute(XmlDocument doc, string strXPath)

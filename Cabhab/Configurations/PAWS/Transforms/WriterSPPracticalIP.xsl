@@ -84,15 +84,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/intransExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/intransExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/intransExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/intransExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/intransExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/intransExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPMotion.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -134,15 +134,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/motionExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/motionExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/motionExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/motionExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/motionExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/motionExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPMotion.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -255,15 +255,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/copularExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/copularExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/copularExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/copularExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/copularExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/copularExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPCop.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -326,15 +326,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/example))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/example))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/example" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/example)" />
+<xsl:value-of select="string-length(normalize-space(//ip/example))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPTrans.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -434,15 +434,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/diExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/diExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/diExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/diExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/diExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/diExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPTrans.16</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -577,15 +577,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/passiveExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//ip/passiveExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/passiveExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/passiveExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//ip/passiveExample)" />
+<xsl:value-of select="string-length(normalize-space(//ip/passiveExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xIP.IPPassive.10</xsl:with-param>
 <xsl:with-param name="sLetterList">

@@ -79,15 +79,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/agreeNumberExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/agreeNumberExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeNumberExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeNumberExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//np/agreeNumberExample)" />
+<xsl:value-of select="string-length(normalize-space(//np/agreeNumberExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xN.NPAgr.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -133,15 +133,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/agreeAnimacyExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/agreeAnimacyExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeAnimacyExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeAnimacyExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//np/agreeAnimacyExample)" />
+<xsl:value-of select="string-length(normalize-space(//np/agreeAnimacyExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xN.NPAgr.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -187,15 +187,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/agreeClassExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/agreeClassExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeClassExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeClassExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//np/agreeClassExample)" />
+<xsl:value-of select="string-length(normalize-space(//np/agreeClassExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xN.NPAgr.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -241,15 +241,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/agreeGenderExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/agreeGenderExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeGenderExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeGenderExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//np/agreeGenderExample)" />
+<xsl:value-of select="string-length(normalize-space(//np/agreeGenderExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xN.NPAgr.22</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -603,7 +603,7 @@
 						<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//np/possAlienableAffixExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -620,7 +620,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -949,15 +950,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/compExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//np/compExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/compExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/compExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//np/compExample)" />
+<xsl:value-of select="string-length(normalize-space(//np/compExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xN.NPCompounds.12</xsl:with-param>
 <xsl:with-param name="sLetterList">

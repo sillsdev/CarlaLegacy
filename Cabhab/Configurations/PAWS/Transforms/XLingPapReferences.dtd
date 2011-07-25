@@ -3,22 +3,31 @@
 	 element are to appear in the list of references.
 	   The label attribute allows one to change how the title will appear.
 	   The version attribute can be used to keep track of which XLingPap version a master references file is (or was when it was created).
+	   This is a subcomponent of XLingPap
 -->
 <!ELEMENT references (refAuthor*)>
 <!ATTLIST references
 	label CDATA #IMPLIED
+	labelDissertation CDATA #IMPLIED
+	labelThesis CDATA #IMPLIED
 	version CDATA #IMPLIED
+	authorformtoshowineditor (full | initials | both) "full"
+	titleformtoshowineditor (uppercase | lowercase | both) "uppercase"
 >
 <!-- the citename is the string to use in a citation within the text body -->
-<!ELEMENT refAuthor (refWork+)>
+<!ELEMENT refAuthor (refAuthorInitials?, refWork+)>
 <!ATTLIST refAuthor
 	name CDATA #REQUIRED
 	citename CDATA #REQUIRED
 >
+<!-- There are two versions of an author's/authors'  name(s),
+		one is full and the other contains only initials for first and middle (etc.) names.
+		-->
 <!-- Every work has a date and a title.
 	 There are a number of kinds of references, each of which has different
 	 content. -->
-<!ELEMENT refWork (authorRole?, refDate, refTitle, (article | book | collection | dissertation | ms | paper | proceedings | thesis | webPage), url?, comment?)>
+<!ELEMENT  refAuthorInitials (#PCDATA) >
+<!ELEMENT refWork (authorRole?, refDate, refTitle, refTitleLowerCase?, (article | book | collection | dissertation | fieldNotes | ms | paper | proceedings | thesis | webPage), url?, dateAccessed?, iso639-3code*, comment?)>
 <!ATTLIST refWork
 	id ID #REQUIRED
 >
@@ -31,12 +40,17 @@
 <!ATTLIST refDate
 	xml:lang CDATA #IMPLIED
 >
+<!-- There are two versions of a title: one with capitals and one the is lower case (except for the first word and any proper nouns -->
 <!ELEMENT refTitle (#PCDATA | %embedded;)*>
 <!ATTLIST refTitle
 	xml:lang CDATA #IMPLIED
 >
+<!ELEMENT refTitleLowerCase (#PCDATA | %embedded;)*>
+<!ATTLIST refTitleLowerCase
+	xml:lang CDATA #IMPLIED
+>
 <!-- journal article -->
-<!ELEMENT article (jTitle, jVol, jPages, location?, publisher?)>
+<!ELEMENT article (jTitle, jVol, jIssueNumber?, (jPages | jArticleNumber)?, location?, publisher?, url?, dateAccessed?, iso639-3code*, comment?)>
 <!ELEMENT jTitle (#PCDATA)>
 <!ATTLIST jTitle
 	xml:lang CDATA #IMPLIED
@@ -45,12 +59,23 @@
 <!ATTLIST jVol
 	xml:lang CDATA #IMPLIED
 >
+<!ELEMENT jIssueNumber (#PCDATA)>
+<!ATTLIST jIssueNumber
+	xml:lang CDATA #IMPLIED
+>
 <!ELEMENT jPages (#PCDATA)>
 <!ATTLIST jPages
 	xml:lang CDATA #IMPLIED
 >
+<!-- jArticleNumber is for an online journal where the articles are published one by one;
+		paper journals publish articles in sets so we use jPages for those.
+		-->
+<!ELEMENT jArticleNumber (#PCDATA)>
+<!ATTLIST jArticleNumber
+	xml:lang CDATA #IMPLIED
+>
 <!-- book -->
-<!ELEMENT book (translatedBy?, edition?, series?, location, publisher, bookTotalPages?)>
+<!ELEMENT book (translatedBy?, edition?, (seriesEd?, seriesEdInitials?, series)?, bVol?, location?, publisher?, bookTotalPages?, url?, dateAccessed?, iso639-3code*, comment?)>
 <!ELEMENT translatedBy (#PCDATA)>
 <!ATTLIST translatedBy
 	xml:lang CDATA #IMPLIED
@@ -61,6 +86,17 @@
 >
 <!ELEMENT series (#PCDATA)>
 <!ATTLIST series
+	xml:lang CDATA #IMPLIED
+>
+<!ELEMENT seriesEd (#PCDATA)>
+<!ATTLIST seriesEd
+	plural (no | yes) "yes"
+	xml:lang CDATA #IMPLIED
+>
+<!ELEMENT seriesEdInitials (#PCDATA)>
+
+<!ELEMENT bVol (#PCDATA)>
+<!ATTLIST bVol
 	xml:lang CDATA #IMPLIED
 >
 <!ELEMENT publisher (#PCDATA)>
@@ -75,17 +111,24 @@
 <!ATTLIST bookTotalPages
 	xml:lang CDATA #IMPLIED
 >
-<!-- paper from a collection volume -->
-<!ELEMENT collection (collEd, collTitle, collVol?, collPages?, location?, publisher)>
+<!-- paper from a collection volume
+	   there are two ways to record the information:
+	   a one-off method that includes all the information about the collection volume itself
+	   a reference to a book element (for the collection volume) and a possible set of pages for this paper
+-->
+<!ELEMENT collection ((((collEd, collEdInitials?)?, collTitle, collTitleLowerCase?, edition?, collVol?, collPages?, (seriesEd?, seriesEdInitials?, series)?, bVol?, location?, publisher?) | collCitation), url?, dateAccessed?, iso639-3code*, comment?)>
+
 <!ELEMENT collEd (#PCDATA)>
 <!ATTLIST collEd
 	plural (no | yes) "yes"
 	xml:lang CDATA #IMPLIED
 >
+<!ELEMENT collEdInitials (#PCDATA)>
 <!ELEMENT collTitle (#PCDATA)>
 <!ATTLIST collTitle
 	xml:lang CDATA #IMPLIED
 >
+<!ELEMENT collTitleLowerCase (#PCDATA)>
 <!ELEMENT collVol (#PCDATA)>
 <!ATTLIST collVol
 	xml:lang CDATA #IMPLIED
@@ -94,36 +137,52 @@
 <!ATTLIST collPages
 	xml:lang CDATA #IMPLIED
 >
+<!-- a reference to the collection volume itself (which will be a book element) -->
+<!ELEMENT collCitation EMPTY>
+<!ATTLIST collCitation
+	refToBook IDREF #IMPLIED
+	page CDATA #IMPLIED
+>
+
 <!-- PhD dissertation -->
-<!ELEMENT dissertation (location?, institution, published?)>
+<!ELEMENT dissertation (location?, institution, published?, url?, dateAccessed?, iso639-3code*, comment?)>
 <!ELEMENT institution (#PCDATA)>
 <!ATTLIST institution
 	xml:lang CDATA #IMPLIED
 >
-<!ELEMENT published (location, publisher, pubDate)>
+<!ELEMENT published (location?, publisher?, pubDate)>
 <!ELEMENT pubDate (#PCDATA)>
 <!ATTLIST pubDate
 	xml:lang CDATA #IMPLIED
 >
+<!-- field notes -->
+<!ELEMENT fieldNotes (location?, institution, url?, dateAccessed?, iso639-3code*, comment?)>
 <!-- ms (manuscript) -->
-<!ELEMENT ms (location?, institution)>
+<!ELEMENT ms (((location?, institution) | empty), url?, dateAccessed?, iso639-3code*, comment?)>
+<!ELEMENT empty EMPTY>
 <!-- paper presented at a conference -->
-<!ELEMENT paper (conference, location?)>
+<!ELEMENT paper (conference, location?, url?, dateAccessed?, iso639-3code*, comment?)>
 <!ELEMENT conference (#PCDATA)>
 <!ATTLIST conference
 	xml:lang CDATA #IMPLIED
 >
-<!-- proceedings paper from a conference -->
-<!ELEMENT proceedings (procEd?, procTitle, procVol?, procPages?, location?, publisher?)>
+<!-- proceedings paper from a conference
+	   there are two ways to record the information:
+	   a one-off method that includes all the information about the proceedings volume itself
+	   a reference to a book element (for the proceedings volume) and a possible set of pages for this paper
+-->
+<!ELEMENT proceedings ((((procEd, procEdInitials?)?, procTitle, procTitleLowerCase?, procVol?, procPages?, location?, publisher?) | procCitation), url?, dateAccessed?, iso639-3code*, comment?)>
 <!ELEMENT procEd (#PCDATA)>
 <!ATTLIST procEd
 	plural (no | yes) "yes"
 	xml:lang CDATA #IMPLIED
 >
+<!ELEMENT procEdInitials (#PCDATA)>
 <!ELEMENT procTitle (#PCDATA)>
 <!ATTLIST procTitle
 	xml:lang CDATA #IMPLIED
 >
+<!ELEMENT procTitleLowerCase (#PCDATA)>
 <!ELEMENT procVol (#PCDATA)>
 <!ATTLIST procVol
 	xml:lang CDATA #IMPLIED
@@ -132,10 +191,16 @@
 <!ATTLIST procPages
 	xml:lang CDATA #IMPLIED
 >
+<!-- a reference to the proceedings volume itself (which will be a book element) -->
+<!ELEMENT procCitation EMPTY>
+<!ATTLIST procCitation
+	refToBook IDREF #IMPLIED
+	page CDATA #IMPLIED
+>
 <!-- MA thesis -->
-<!ELEMENT thesis (location?, institution, published?)>
+<!ELEMENT thesis (location?, institution, published?, url?, dateAccessed?, iso639-3code*, comment?)>
 <!-- web page -->
-<!ELEMENT webPage (edition?, location?, (institution | publisher)?, url, dateAccessed?)>
+<!ELEMENT webPage (edition?, location?, (institution | publisher)?, url, dateAccessed?, iso639-3code*, comment?)>
 <!ELEMENT url (#PCDATA)>
 <!ATTLIST url
 	xml:lang CDATA #IMPLIED
@@ -144,6 +209,10 @@
 <!ATTLIST dateAccessed
 	xml:lang CDATA #IMPLIED
 >
+<!-- One may optionally add the ISO 639-3 code for all languages mentioned
+	 in the work.
+-->
+<!ELEMENT iso639-3code (#PCDATA)>
 <!-- In a citation,
 	 one may optionally not include the author's name
 		   (e.g. when one is citing multiple works by the same author);

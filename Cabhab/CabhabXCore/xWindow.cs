@@ -2164,7 +2164,7 @@ namespace XCore
 		/// Show the document name and application name in the caption bar.
 		/// </summary>
 		/// ------------------------------------------------------------------------------------
-		protected void UpdateCaptionBar()
+		public void UpdateCaptionBar()
 		{
 			Text = String.Format("{0} - {1}",
 				m_mediator.PropertyTable.GetStringProperty("DocumentName", ""),

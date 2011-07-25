@@ -767,15 +767,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//typology/example))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//typology/example))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//typology/example" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//typology/example)" />
+<xsl:value-of select="string-length(normalize-space(//typology/example))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xTypology.6</xsl:with-param>
 <xsl:with-param name="sLetterList">

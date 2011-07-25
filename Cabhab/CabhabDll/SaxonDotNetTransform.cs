@@ -12,7 +12,8 @@ namespace SIL.Cabhab
 		Processor m_processor;
 		XsltCompiler m_compiler;
 		XsltTransformer m_transformer;
-		public SaxonDotNetTransform(string sTransformName)
+		public SaxonDotNetTransform(string sTransformName, string sTargetLanguageCode)
+			: base(sTargetLanguageCode)
 		{
 			// Create a Processor instance.
 			m_processor = new Processor();
@@ -39,7 +40,7 @@ namespace SIL.Cabhab
 			{
 
 				// Add any parameters
-				AddParameters(parameterList, m_transformer);
+				AddParameters(parameterList);
 
 				// apply transform
 				var inputUri = new Uri(sInputPath);
@@ -65,7 +66,7 @@ namespace SIL.Cabhab
 		/// </summary>
 		/// <param name="parameterList"></param>
 		/// <param name="xslProc"></param>
-		private static void AddParameters(XMLUtilities.XSLParameter[] parameterList, XsltTransformer transformer)
+		private void AddParameters(XMLUtilities.XSLParameter[] parameterList)
 		{
 			if (parameterList != null)
 			{
@@ -76,13 +77,13 @@ namespace SIL.Cabhab
 					// Following is a specially recognized parameter name
 					if (rParam.Name == "prmSDateTime")
 					{
-						var parameterValue = new XdmAtomicValue((new QName(XMLUtilities.GetCurrentDateTime())));
-						transformer.SetParameter(parameterName, parameterValue);
+						var parameterValue = new XdmAtomicValue((new QName(XMLUtilities.GetCurrentDateTime(CultureToUse))));
+						m_transformer.SetParameter(parameterName, parameterValue);
 					}
 					else
 					{
 						var parameterValue = new XdmAtomicValue((new QName(rParam.Value)));
-						transformer.SetParameter(parameterName, parameterValue);
+						m_transformer.SetParameter(parameterName, parameterValue);
 					}
 				}
 			}

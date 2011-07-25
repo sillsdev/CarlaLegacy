@@ -64,15 +64,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/example))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//prop/example))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//prop/example" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//prop/example)" />
+<xsl:value-of select="string-length(normalize-space(//prop/example))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xProp.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -121,15 +121,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/ppExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/ppExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//prop/ppExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//prop/ppExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//prop/ppExample)" />
+<xsl:value-of select="string-length(normalize-space(//prop/ppExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xProp.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -171,15 +171,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/relClExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//prop/relClExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//prop/relClExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//prop/relClExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//prop/relClExample)" />
+<xsl:value-of select="string-length(normalize-space(//prop/relClExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xProp.16</xsl:with-param>
 <xsl:with-param name="sLetterList">

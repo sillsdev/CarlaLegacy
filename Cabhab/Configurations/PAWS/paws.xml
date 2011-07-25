@@ -222,7 +222,7 @@ Following are specific to PAWS
 			<transform file="Transforms/PAWSSKMasterGrammarMapper.xsl" resultFileFromAnswerFile="//language/grammarFile" removeBOM="true" applyTransformWhenXPath="/paws/@outputGrammar[.='True']"/>
 		</answerFileTransformSet>
 		<answerFileTransformSet>
-			<transform file="Transforms/PAWSSKMasterWriterMapper.xsl" resultFileFromAnswerFile="//language/writerFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriter[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;">
+			<transform file="Transforms/PAWSSKMasterWriterMapper.xsl" resultFileFromAnswerFile="//language/writerFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriter[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;" lang="en">
 				<xsltParameters>
 					<!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
 					<param name="prmSDateTime" value="fake"/>
@@ -233,7 +233,7 @@ Following are specific to PAWS
 			<transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerFile" ext="htm" applyTransformWhenXPath="/paws/@outputWriter[.='True']"/>
 		</answerFileTransformSet>
 		<answerFileTransformSet>
-			<transform file="Transforms/PAWSSKMasterWriterPracticalMapper.xsl" resultFileFromAnswerFile="//language/writerPracticalFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriterPractical[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;">
+			<transform file="Transforms/PAWSSKMasterWriterPracticalMapper.xsl" resultFileFromAnswerFile="//language/writerPracticalFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriterPractical[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;" lang="en">
 				<xsltParameters>
 					<!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
 					<param name="prmSDateTime" value="fake"/>
@@ -244,7 +244,7 @@ Following are specific to PAWS
 			<transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerPracticalFile" ext="htm" applyTransformWhenXPath="/paws/@outputWriterPractical[.='True']"/>
 		</answerFileTransformSet>
 		<answerFileTransformSet>
-			<transform file="Transforms/PAWSSKMasterWriterPracticalSpanishMapper.xsl" resultFileFromAnswerFile="//language/writerPracticalSpanishFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriterPracticalSpanish[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;">
+			<transform file="Transforms/PAWSSKMasterWriterPracticalSpanishMapper.xsl" resultFileFromAnswerFile="//language/writerPracticalSpanishFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriterPracticalSpanish[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;" lang="es">
 				<xsltParameters>
 					<!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
 					<param name="prmSDateTime" value="fake"/>

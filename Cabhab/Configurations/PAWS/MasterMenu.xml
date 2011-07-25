@@ -31,8 +31,8 @@
 			<item command="CmdBack"/>
 			<item command="CmdForward"/>
 			<item command="CmdRefresh"/>
-			<item label="-"/>
-			<item command="CmdInterfaceLanguage"/>
+<!--  For later          <item label="-"/>
+			<item command="CmdInterfaceLanguage"/>-->
 		</menu>
 		<menu id="Help" label="_Help">
 			<item id="Resources" command="CmdResources"/>

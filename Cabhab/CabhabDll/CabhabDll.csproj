@@ -31,6 +31,7 @@
 	<UpgradeBackupLocation>
 	</UpgradeBackupLocation>
 	<OldToolsVersion>2.0</OldToolsVersion>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	<OutputPath>..\bin\Debug\</OutputPath>
@@ -39,7 +40,7 @@
 	<CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
 	<ConfigurationOverrideFile>
 	</ConfigurationOverrideFile>
-	<DefineConstants>TRACE;DEBUG;UsingSaxonDotNetTransforms</DefineConstants>
+	<DefineConstants>TRACE;DEBUG;UsingMSXML2Transforms</DefineConstants>
 	<DocumentationFile>
 	</DocumentationFile>
 	<DebugSymbols>true</DebugSymbols>
@@ -62,7 +63,7 @@
 	<CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
 	<ConfigurationOverrideFile>
 	</ConfigurationOverrideFile>
-	<DefineConstants>TRACE;UsingSaxonDotNetTransforms</DefineConstants>
+	<DefineConstants>TRACE;UsingMSXML2Transforms</DefineConstants>
 	<DocumentationFile>
 	</DocumentationFile>
 	<DebugSymbols>true</DebugSymbols>
@@ -80,15 +81,21 @@
 	<PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="COMInterfaces, Version=4.1.0.9, Culture=neutral, processorArchitecture=MSIL">
+	<Reference Include="BasicUtils, Version=7.1.0.28665, Culture=neutral, processorArchitecture=MSIL">
 	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\..\..\..\fw\Output\Debug\COMInterfaces.dll</HintPath>
+	</Reference>
+	<Reference Include="CommandBar, Version=7.1.0.19923, Culture=neutral, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\bin\Release\CommandBar.dll</HintPath>
 	</Reference>
 	<Reference Include="IKVM.Runtime, Version=0.42.0.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
 	  <SpecificVersion>False</SpecificVersion>
 	  <HintPath>..\bin\IKVM.Runtime.dll</HintPath>
 	</Reference>
-	<Reference Include="Interop.MSXML2, Version=4.0.0.0, Culture=neutral" />
+	<Reference Include="Interop.MSXML2, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\bin\Interop.MSXML2.dll</HintPath>
+	</Reference>
 	<Reference Include="MsHtmHstInterop, Version=0.0.0.0, Culture=neutral">
 	  <SpecificVersion>False</SpecificVersion>
 	  <HintPath>..\..\..\..\fw\Bin\MsHtmHstInterop.dll</HintPath>
@@ -104,6 +111,9 @@
 	<Reference Include="System">
 	  <Name>System</Name>
 	</Reference>
+	<Reference Include="System.Core">
+	  <RequiredTargetFramework>3.5</RequiredTargetFramework>
+	</Reference>
 	<Reference Include="System.Data">
 	  <Name>System.Data</Name>
 	</Reference>
@@ -116,21 +126,14 @@
 	<Reference Include="System.Xml">
 	  <Name>System.XML</Name>
 	</Reference>
-	<Reference Include="xCore">
-	  <Name>xCore</Name>
-	  <HintPath>c:\fw\Output\Debug\xCore.dll</HintPath>
-	</Reference>
-	<Reference Include="Utils">
-	  <Name>Utils</Name>
-	  <HintPath>c:\fw\\Output\Debug\Utils.dll</HintPath>
-	</Reference>
-	<Reference Include="xCoreInterfaces">
-	  <Name>xCoreInterfaces</Name>
-	  <HintPath>c:\fw\\Output\Debug\xCoreInterfaces.dll</HintPath>
-	</Reference>
-	<Reference Include="XMLUtils, Version=4.1.0.9, Culture=neutral, processorArchitecture=MSIL">
+	<Reference Include="xCore, Version=7.1.0.14560, Culture=neutral, processorArchitecture=MSIL">
 	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\..\..\..\fw\Output\Debug\XMLUtils.dll</HintPath>
+	</Reference>
+	<Reference Include="xCoreInterfaces, Version=7.1.0.40707, Culture=neutral, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	</Reference>
+	<Reference Include="XMLUtils, Version=7.1.0.26620, Culture=neutral, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +153,7 @@
 	  <SubType>Form</SubType>
 	</Compile>
 	<Compile Include="Language.cs" />
+	<Compile Include="MSXML2Transform.cs" />
 	<Compile Include="SaxonDotNetTransform.cs" />
 	<Compile Include="Transform.cs" />
 	<Compile Include="XMLUtilities.cs" />
