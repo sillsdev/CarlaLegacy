@@ -1102,6 +1102,8 @@ if (pIndexedClass->pStringClass == NULL)
 					 pPartialRedup, etype, amset, pAmple_in);
 	return(bFound);
 	  }
+	else
+	  return(FALSE);
   }
 					/* for each element that matches the
 					   string, see if it will work */
