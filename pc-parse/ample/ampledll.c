@@ -238,13 +238,8 @@ static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 
 #define MAXAMBIG 16		/* high level of ambiguity for stats */
 
-#ifndef hab34112
-#ifdef EXPERIMENTAL
 enum output_style { Ana, AResult, Ptext, FWParse };
-#else /* EXPERIMENTAL */
-enum output_style { Ana, AResult, Ptext };
-#endif /* EXPERIMENTAL */
-#endif /* hab34112 */
+
 struct ample_setup
 {
 	AmpleData		sData;

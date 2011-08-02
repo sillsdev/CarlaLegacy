@@ -1,5 +1,11 @@
 AMPLE CHANGE HISTORY
 
+3.12.14 (02-Aug-2011)
+---------------------
+
+1. Fix bug: in a partial reduplication allomorph, if there was a character
+   between string classes, the allomorph was never matched.
+
 3.12.13 (02-Feb-2011)
 ---------------------
 

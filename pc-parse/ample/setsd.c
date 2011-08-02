@@ -685,6 +685,40 @@ for ( p = pszString_in ; *p ; ++p )
 return TRUE;
 }
 
+
+/*****************************************************************************
+ * NAME
+ *    add_partial_redup_class_to_list
+ * DESCRIPTION
+ *
+ * RETURN VALUE
+ *    pointer to list of redup classes
+ */
+static PartialRedupIndexedClass * add_partial_redup_class_to_list(
+		   PartialRedupIndexedClass * pIndexedStringClass,
+	   PartialRedupIndexedClass * pIndexedStringClasses_io)
+{
+  /* maintain the list in the actual order they occur */
+  pIndexedStringClass->pNext = NULL;
+  if (pIndexedStringClasses_io == NULL)
+	pIndexedStringClasses_io = pIndexedStringClass;
+  else
+	{
+	  PartialRedupIndexedClass * pIndexedClass;
+	  for (pIndexedClass = pIndexedStringClasses_io;
+	   pIndexedClass != NULL;
+	   pIndexedClass = pIndexedClass->pNext)
+	{
+	  if (pIndexedClass->pNext == NULL)
+		{
+		  pIndexedClass->pNext = pIndexedStringClass;
+		  break;
+		}
+	}
+	}
+  return pIndexedStringClasses_io;
+  }
+
 /*****************************************************************************
  * NAME
  *    build_redup_classes
@@ -731,25 +765,8 @@ if (	(*pszAllo_in == '[') &&
 	pIndexedStringClass->pStringClass = findStringClass(pszAllo_in+1,
 						pAmple_in->pStringClasses);
 	pIndexedStringClass->iIndex = atoi(q+1);
-	/* maintain the list in the actual order they occur */
-	pIndexedStringClass->pNext = NULL;
-	if (pIndexedStringClasses_io == NULL)
-	  pIndexedStringClasses_io = pIndexedStringClass;
-	else
-	  {
-	PartialRedupIndexedClass * pIndexedClass;
-	for (pIndexedClass = pIndexedStringClasses_io;
-		 pIndexedClass != NULL;
-		 pIndexedClass = pIndexedClass->pNext)
-	  {
-		if (pIndexedClass->pNext == NULL)
-		  {
-		  pIndexedClass->pNext = pIndexedStringClass;
-		  break;
-		  }
-	  }
-	  }
-
+	pIndexedStringClasses_io = add_partial_redup_class_to_list(
+			  pIndexedStringClass, pIndexedStringClasses_io);
 	*q = '^';			/* restore index */
 	*p = cSave;			/* restore ']' */
 	if (pIndexedStringClass->pStringClass == NULL)
@@ -770,6 +787,24 @@ if (	(*pszAllo_in == '[') &&
 				   pIndexedStringClasses_io,
 				   pAmple_in);
 	}
+else
+  {
+	p = strchr(pszAllo_in, '[');
+	if (p != NULL)
+	  {
+	pIndexedStringClass = (PartialRedupIndexedClass *)allocMemory(
+					sizeof(PartialRedupIndexedClass));
+	*p = NUL;  /* temporarily put null here so can copy */
+	pIndexedStringClass->pszCharacters = duplicateString(pszAllo_in);
+	*p = '[';  /* restore the bracket */
+	pIndexedStringClasses_io = add_partial_redup_class_to_list(
+							   pIndexedStringClass, pIndexedStringClasses_io);
+	return build_redup_classes(p,
+				   pbBad_io,
+				   pIndexedStringClasses_io,
+				   pAmple_in);
+	  }
+  }
 return pIndexedStringClasses_io;
 }
 /*****************************************************************************

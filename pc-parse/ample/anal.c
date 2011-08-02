@@ -1084,10 +1084,25 @@ int iPostLen = 0;
 char                 *pszMorphName;
 AmpleAllomorph *      pAllo;
 AmpleAlloEnv * pEnv;
+int bFound;
+int size;
 
-
-if ((pIndexedClass == NULL) || (pIndexedClass->pStringClass == NULL))
+if (pIndexedClass == NULL)
   return(TRUE);
+if (pIndexedClass->pStringClass == NULL)
+  {
+	if (pIndexedClass->pszCharacters == NULL)
+	  return(TRUE);  /* something is wrong, but let's go on... */
+	if (matchBeginning(pszToMatch, pIndexedClass->pszCharacters))
+	  {
+	size = strlen(pIndexedClass->pszCharacters);
+	*pszMatchBeg = pszToMatch + size;
+	/* this one matches; see if the other classes do, too */
+	bFound = findPartialRedupMatches(pIndexedClass->pNext, key, pszMatchBeg,
+					 pPartialRedup, etype, amset, pAmple_in);
+	return(bFound);
+	  }
+  }
 					/* for each element that matches the
 					   string, see if it will work */
 for ( sp = pIndexedClass->pStringClass->pMembers;
@@ -1096,8 +1111,7 @@ for ( sp = pIndexedClass->pStringClass->pMembers;
   {
 	if (matchBeginning(pszToMatch, sp->pszString))
 	  {
-	int bFound;
-	int size = strlen(sp->pszString);
+	size = strlen(sp->pszString);
 	freeMemory(pIndexedClass->pszMember);
 	memset(szTokenBuffer, 0, BUFSIZE);
 	strncpy(szTokenBuffer, pszToMatch, size);
