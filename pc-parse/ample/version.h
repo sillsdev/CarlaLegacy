@@ -5,14 +5,15 @@
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
 #define PATCHLEVEL 14		/* bug fix or other minor change */
-#define DATE "August 2, 2011"	/* date of release version */
+#define DATE "August 10, 2011"	/* date of release version */
 #define YEAR "2011"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
- * 02-Aug-2011  hab  - Fix bug: in a partial reduplication allomorph, if there
+ * 10-Aug-2011  hab  - Fix bug: in a partial reduplication allomorph, if there
  * [3.12.14]             was a character between string classes, the allomorph
- *                       was never matched.
+ *                       was never matched.  Also fix both full and partial
+ *                       reduplication to work with interfixes.
  * 02-Feb-2011  hab  - Fix bug: in a partial reduplication dictionary, if the
  * [3.12.13]            string class of the allomorph does not exist,
  *                      it could cause a crash.

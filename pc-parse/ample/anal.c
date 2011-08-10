@@ -1212,7 +1212,8 @@ for (pPartialRedup = pAmple_in->pPartialRedupAllos;
 	char *pszMatchBeg;
 	PartialRedupIndexedClass * pIndexedClass;
 	int bFound;
-	if (pPartialRedup->iDicType != etype)
+	if ((etype != (pPartialRedup->iDicType & ATYPE)) &&
+	(etype != (pPartialRedup->iDicType & AMPLE_NFX)))	/* interfix is subtyped */
 	  continue;
 	pszPre = pPartialRedup->pszPrefix;
 	pszMatchBeg = key;
@@ -1268,7 +1269,8 @@ static AmpleAmlist * get_full_redup(char *key, int etype, AmpleAmlist *amset, Am
 {
 int                     iRedupLen = 0;
 FullReduplication *pFullRedup;
-if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX))
+if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX) ||
+	(etype == AMPLE_NFXPFX) || (etype == AMPLE_NFXSFX))
    { /* check for full reduplication */
    for (pFullRedup = pAmple_in->pFullRedupAllos;
 	pFullRedup != NULL;
@@ -1280,6 +1282,8 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX))
 	   char *pszPost;
 	   char *pszMatchBeg;
 	   char *pszMatchEnd = NULL;
+	   if ((etype != (pFullRedup->iDicType & ATYPE)) &&
+	   (etype != (pFullRedup->iDicType & AMPLE_NFX)))	/* interfix is subtyped */
 	   if (pFullRedup->iDicType != etype)
 	   continue;
 	   pszPre = pFullRedup->pszPrefix;
@@ -1292,7 +1296,7 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX))
 		   continue; /* does not match prefix */
 	   pszMatchBeg += iPreLen;
 	   }
-	   if (etype == AMPLE_PFX)
+	   if ((etype == AMPLE_PFX) || (etype == AMPLE_NFXPFX))
 	   {
 	   if (pszPost != NULL)
 		   {

@@ -4,7 +4,8 @@ AMPLE CHANGE HISTORY
 ---------------------
 
 1. Fix bug: in a partial reduplication allomorph, if there was a character
-   between string classes, the allomorph was never matched.
+   between string classes, the allomorph was never matched.  Also fix both
+   full and partial reduplication to work with interfixes.
 
 3.12.13 (02-Feb-2011)
 ---------------------
