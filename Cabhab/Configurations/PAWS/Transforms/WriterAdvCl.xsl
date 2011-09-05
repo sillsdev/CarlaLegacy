@@ -87,7 +87,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advcl/tempSentExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advcl/tempSentExample" />
@@ -205,7 +205,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/reasonExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/reasonExample" />

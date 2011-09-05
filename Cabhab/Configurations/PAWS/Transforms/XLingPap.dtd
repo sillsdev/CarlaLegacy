@@ -1,4 +1,4 @@
-<!-- XLingPap.dtd
+ <!-- XLingPap.dtd
 	 XML/XSLT-based Linguistic paper document type definition
 	 Version 2.12.0
 	 (Revision history is at the end.)
@@ -112,6 +112,7 @@
 	tablenumberedRefCapitalizedSingularLabel CDATA #IMPLIED
 	tablenumberedRefCapitalizedPluralLabel CDATA #IMPLIED
 	tablenumberedRefDefault (none | singular | plural | capitalizedSingular | capitalizedPlural ) "none"
+	automaticallywrapinterlinears (no | yes) "no"
 	>
 <!-- Languages groups a set of language definitions.  This is at the end because it looks better in a tool like XMLMind -->
 <!ELEMENT languages (language+)>
@@ -199,47 +200,38 @@ For when we get author contacts turned on...
 <!ELEMENT part (secTitle, shortTitle?, (%chunk; | landscape)*, chapter*)>
 <!ATTLIST part
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT chapter (secTitle, shortTitle?, (%chunk; | landscape)*, section1*)>
 <!ATTLIST chapter
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT chapterBeforePart (secTitle, shortTitle?, (%chunk; | landscape)*, section1*)>
 <!ATTLIST chapterBeforePart
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT section1 (secTitle, shortTitle?, (%chunk; | landscape)*, section2*)>
 <!ATTLIST section1
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT section2 (secTitle, shortTitle?, (%chunk; | landscape)*, section3*)>
 <!ATTLIST section2
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT section3 (secTitle, shortTitle?, (%chunk; | landscape)*, section4*)>
 <!ATTLIST section3
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT section4 (secTitle, shortTitle?, (%chunk; | landscape)*, section5*)>
 <!ATTLIST section4
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT section5 (secTitle, shortTitle?, (%chunk; | landscape)*, section6*)>
 <!ATTLIST section5
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT section6 (secTitle, shortTitle?, (%chunk; | landscape)*)>
 <!ATTLIST section6
 	id ID #REQUIRED
-	type IDREF #IMPLIED
 >
 <!ELEMENT secTitle (#PCDATA | %embedded;)*>
 <!ATTLIST secTitle

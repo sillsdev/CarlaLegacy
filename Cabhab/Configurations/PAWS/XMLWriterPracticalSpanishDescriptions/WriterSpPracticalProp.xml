@@ -4,12 +4,12 @@
 	<section1 id="sProp">
 		<secTitle>Los nombres propios</secTitle>
 		<p>
-			<content>Los nombres propios son una clase especial de sustantivo o la frase que actúan sintácticamente apenas como otros sustantivos o frases del nominal. En español, algunos nombres propios pueden colocarse solos, como </content>
+			<content>Los nombres propios son una clase especial de sustantivos o frases que sintácticamente actúan igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como </content>
 			<langData>Susana</langData>
 			<content> y </content>
 			<langData>Oaxaca</langData>
-			<content>.  Otros son como sustantivos compuestos, tales como </content>
-			<langData>Jorge Estrella</langData>
+			<content>.  Otros actúan como sustantivos compuestos, tales como </content>
+			<langData>George Washington</langData>
 			<content>.  Los nombres propios pueden también contener los artículos y/o frases </content>
 			<case element="pp" attr="pPos">
 				<caseText value="before">preposicionales</caseText>
@@ -19,24 +19,24 @@
 			</case>
 			<content>, como en </content>
 			<langData>los Estados Unidos de América</langData>
-			<content>.  Muchos idiomas requieren un artículo antes de un nombre. Appositives también ocurre, posiblemente incluyendo un poseedor, como en </content>
+			<content>.  Muchos idiomas requieren un artículo antes de un nombre. También se presentan los apositivos.  En algunos casos aparecen con un poseedor, como en </content>
 			<langData>mi hijo, David</langData>
-			<content>.  Además, los nombres propios se pueden modificar por adjetivos y cláusulas relativas, como en </content>
+			<content>.  Además, los nombres propios se pueden modificar con los adjetivos y cláusulas relativas, como en </content>
 			<langData>México fuerte y orgulloso</langData>
 			<content> o </content>
 			<langData>la Susana que conozco</langData>
 			<content>.</content>
 		</p>
 		<p>
-			<content>Los ejemplos con nombres propios simples y compuestos, o ésos incluyendo los artículos, los demonstratives, los adjetivos, y/o los poseedores en </content>
+			<content>Algunos ejemplos de nombres propios simples y compuestos, o los que se presentan con artículos, demonstratives, adjetivos y/o los poseedores en </content>
 			<langName/>
-			<content> incluyen:</content>
+			<content> son los siguientes:</content>
 		</p>
 		<example>
 			<interlinear exampleLoc="prop/example"/>
 		</example>
 		<p>
-			<content>Los ejemplos de nombres propios con frases </content>
+			<content>Algunos ejemplos de nombres propios con frases </content>
 			<case element="pp" attr="pPos">
 				<caseText value="before">preposicionales</caseText>
 				<caseText value="after">posposicionales</caseText>
@@ -45,15 +45,15 @@
 			</case>
 			<content> en </content>
 			<langName/>
-			<content> incluyen:</content>
+			<content> son los siguientes:</content>
 		</p>
 		<example>
 			<interlinear exampleLoc="prop/ppExample"/>
 		</example>
 		<p>
-			<content>Los ejemplos de los nombres propios modificados por las cláusulas relativas incluidas en oraciones completas en </content>
+			<content>Algunos ejemplos de los nombres propios modificados con las cláusulas relativas en oraciones completas en </content>
 			<langName/>
-			<content> incluyen:</content>
+			<content> son los siguientes:</content>
 		</p>
 		<example>
 			<interlinear exampleLoc="prop/relClExample"/>

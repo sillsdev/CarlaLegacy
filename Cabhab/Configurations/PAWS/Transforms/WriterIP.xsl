@@ -1005,7 +1005,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/proDropExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/proDropExample" />
@@ -1156,7 +1156,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1200,7 +1201,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/auxExample" />
@@ -1347,7 +1348,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1419,7 +1421,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1493,7 +1496,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1643,7 +1647,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1687,7 +1692,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxNoonfiniteExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/auxNoonfiniteExample" />
@@ -1809,7 +1814,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1853,7 +1859,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxOtherExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/auxOtherExample" />
@@ -1932,7 +1938,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/intransExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/intransExample" />
@@ -1982,7 +1988,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/motionExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/motionExample" />
@@ -2096,7 +2102,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/copularExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/copularExample" />
@@ -2167,7 +2173,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/example))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/example" />
@@ -2252,7 +2258,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/diExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/diExample" />
@@ -2381,7 +2387,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/passiveExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//ip/passiveExample" />

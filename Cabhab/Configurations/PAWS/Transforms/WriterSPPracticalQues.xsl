@@ -4,14 +4,14 @@
 	<section1 id="sQues">
 		<secTitle>Las preguntas</secTitle>
 		<p>
-<xsl:text>Hay dos tipos de preguntas: las que requieren una respuesta de "sí" o "no" y las que se contestan con información. Esta sección considera las preguntas de la cláusula principal y las variedades subordinadas de preguntas sí/no y de preguntas que se contestan con información, comenzando con las preguntas sí/no.</xsl:text>
+<xsl:text>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa y las que se contestan con información (preguntas abiertas). En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta "sí/no".</xsl:text>
 </p>
 		<section2 id="sQuesYN">
-			<secTitle>Las preguntas sí/no</secTitle>
+			<secTitle>Las preguntas con respuesta afirmativa/negativa</secTitle>
 			<p>
-<xsl:text>El español no tiene ningún marcador especial de la pregunta ni ningún cambio del orden de las palabras para las preguntas sí/no de la cláusula principal.
-					Hay simplemente un cambio en la entonación. Otros idiomas utilizan marcadores y/o cambios especiales del orden de las palabras.
-					En las preguntas sí/no de la cláusula principal inglesa, un verbo auxiliar mueve delante del tema. Otros idiomas utilizan un marcador en las preguntas sí/no o un complementizador especial en vez del auxiliar afrontado. Éste es el caso en preguntas sí/no en las cláusulas subordinadas en inglés; no se permite el ningún afrontar del auxiliar pero </xsl:text>
+<xsl:text>El español no tiene ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas con respuesta sí/no de la cláusula principal.
+					Hay simplemente un cambio en la entonación. Otros idiomas pueden utilizar indicadores y/o cambios especiales del orden de las palabras.
+					En las preguntas sí/no de la cláusula principal en inglés, un verbo auxiliar desplaza delante del sujeto. Otros idiomas utilizan un indicador o un complementizador especial en vez del auxiliar desplazado a la izquierda. Éste es el caso en preguntas sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -29,12 +29,12 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'si'</xsl:text>
 </gloss>
-<xsl:text> llena la posición del complementizador. Puesto que los idiomas pueden actuar diferentemente en preguntas sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será cubierta por separado. </xsl:text>
+<xsl:text> llena la posición del complementizador. Puesto que los idiomas pueden actuar diferentemente en preguntas sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será discutido por separado. </xsl:text>
 </p>
 			<section3 id="sQuesYNMain">
-				<secTitle>Las preguntas sí/no de la cláusula principal</secTitle>
+				<secTitle>Las preguntas con respuesta afirmativa/negativa de la cláusula principal</secTitle>
 				<p>
-<xsl:text>Mientras que el español tiene simplemente un cambio en la entonación para señalar una pregunta sí/no de la cláusula principal, otros idiomas utilizan marcadores y/o cambios especiales del orden de las palabras. Los ejemplos ingleses de las preguntas sí/no de la cláusula principal, demostrando afrontar requerido de un auxiliar, incluyen: </xsl:text>
+<xsl:text>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta con respuesta afirmativa/negativa de la cláusula principal, otros idiomas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas sí/no de la cláusula principal que muestran el desplazamiento requerido de un auxiliar son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -73,11 +73,11 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> preguntas sí/no de la cláusula principal, </xsl:text>
+<xsl:text> preguntas con respuesta afirmativa/negativa de la cláusula principal, </xsl:text>
 <xsl:choose>
-						<xsl:when test="//q/@mainYN='no'"> no hay el marcador o el cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o la otra marca que no es sintáctica.</xsl:when>
+						<xsl:when test="//q/@mainYN='no'"> no hay ni indicador ni cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o otra indicación que no es sintáctica.</xsl:when>
 						<xsl:when test="//q/@mainYN='noAux'">el movimiento de un auxiliar</xsl:when>
-						<xsl:when test="//q/@mainYN='yes'">hay por lo menos un marcador o complementizador de la pregunta.</xsl:when>
+						<xsl:when test="//q/@mainYN='yes'">hay por lo menos un indicador o complementizador de la pregunta.</xsl:when>
 					</xsl:choose>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainYN)='noAux'">
@@ -91,10 +91,10 @@
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainYN)='yes'">
-						<xsl:text>El marcador o el complementizador de la pregunta es  </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta es  </xsl:text>
 						<xsl:choose>
-							<xsl:when test="//q/@mainYNWord='yes'">escrito como una palabra separada.</xsl:when>
-							<xsl:when test="//q/@mainYNWord='no'">un clítico que junta</xsl:when>
+							<xsl:when test="//q/@mainYNWord='yes'">escrito como una palabra independiente.</xsl:when>
+							<xsl:when test="//q/@mainYNWord='no'">un clítico que se une</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//q/@mainYNWord)='no'">
@@ -104,9 +104,9 @@
 								<xsl:when test="//q/@mainYNCliticAttaches='head'"> al verbo en la pregunta.</xsl:when>
 							</xsl:choose>
 							<xsl:choose>
-								<xsl:when test="//q/@mainYNCliticPos='before'">Estos clíticos son procliticos.</xsl:when>
-								<xsl:when test="//q/@mainYNCliticPos='after'">Estos clíticos son encliticos.</xsl:when>
-								<xsl:when test="//q/@mainYNCliticPos='both'">Hay algunos clíticos del marcador o del complementizador de la pregunta que son procliticos y algunos que son encliticos.</xsl:when>
+								<xsl:when test="//q/@mainYNCliticPos='before'">Estos clíticos son proclíticos.</xsl:when>
+								<xsl:when test="//q/@mainYNCliticPos='after'">Estos clíticos son enclíticos.</xsl:when>
+								<xsl:when test="//q/@mainYNCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</xsl:when>
 							   <xsl:when test="//q/@mainYNCliticPos='unknown'">_______</xsl:when>
 						   </xsl:choose>
 							<xsl:text> </xsl:text>
@@ -114,11 +114,11 @@
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainYNWord)='yes'">
-						<xsl:text>El marcador o el complementizer de la pregunta ocurre  </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta se presenta  </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainYNPos='before'">antes</xsl:when>
 							<xsl:when test="//q/@mainYNPos='after'">después</xsl:when>
-							<xsl:when test="//q/@mainYNPos='either'">de cualquier lado (pero no ambos lados)</xsl:when>
+							<xsl:when test="//q/@mainYNPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
 							<xsl:when test="//q/@mainYNPos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
 							<xsl:when test="//q/@mainYNPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
 							<xsl:when test="//q/@mainYNPos='afterOrBoth'">después o en ambos lados</xsl:when>
@@ -127,18 +127,18 @@
 						</xsl:choose>
 						<xsl:text> del resto de la pregunta.  </xsl:text>
 						<xsl:if test="normalize-space(//q/@mainYNEitherRestricted)='unrestricted' and normalize-space(//q/@mainYNPos)!='before' and normalize-space(//q/@mainYNPos)!='after'">
-							<xsl:text>Todos los marcadores o complementizadores de la pregunta pueden ocurrir de cualquier lado de la pregunta.</xsl:text>
+							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//q/@mainYNEitherRestricted)='restricted' and normalize-space(//q/@mainYNPos)!='before' and normalize-space(//q/@mainYNPos)!='after'">
-							<xsl:text>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada lado de la pregunta.</xsl:text>
+							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada lado de la pregunta.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 </p>
 				<p>
-<xsl:text> Los ejemplos de las preguntas sí/no de la cláusula principal  en </xsl:text>
+<xsl:text> Algunos ejemplos de las preguntas con respuesta afirmativa/negativa de la cláusula principal en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -147,7 +147,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 				<example num="xQues.QuesYN.QuesYNMain.10">
 <xsl:variable name="sExampleValue">
@@ -189,9 +189,9 @@
 </example>
 			</section3>
 			<section3 id="sQuesYNEmb">
-				<secTitle>Las preguntas sí/no de la cláusula subordinada</secTitle>
+				<secTitle>Las preguntas con respuesta afirmativa/negativa de la cláusula subordinada</secTitle>
 				<p>
-<xsl:text>Las preguntas sí/no de los ejemplos españoles en las cláusulas subordiadas, demostrando la presencia de los marcadores o de los complementizadores de la pregunta, incluyen: </xsl:text>
+<xsl:text>Algunos ejemplos en español de las preguntas con respuesta afirmativa/negativa en las cláusulas subordinadas que muestran la presencia de los indicadores o complementizadores de la pregunta son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -209,7 +209,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>En </xsl:text>
+<xsl:text>En las preguntas con respuesta afirmativa/negativa de la cláusula subordinada en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -218,11 +218,11 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> preguntas sí/no de la cláusula subordinada, </xsl:text>
+<xsl:text>, </xsl:text>
 <xsl:choose>
-						<xsl:when test="//q/@embYN='no'"> no hay el marcador o el cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o la otra marca que no es sintáctica.</xsl:when>
-						<xsl:when test="//q/@embYN='noAux'">el movimiento de un auxiliar</xsl:when>
-						<xsl:when test="//q/@embYN='yes'">hay por lo menos un marcador o complementizador de la pregunta.</xsl:when>
+						<xsl:when test="//q/@embYN='no'"> no hay indicador ni cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o otra indicación que no es sintáctica.</xsl:when>
+						<xsl:when test="//q/@embYN='noAux'">el desplazamiento de un auxiliar</xsl:when>
+						<xsl:when test="//q/@embYN='yes'">hay por lo menos un indicador o complementizador de la pregunta.</xsl:when>
 					</xsl:choose>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embYN)='noAux'">
@@ -236,10 +236,10 @@
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embYN)='yes'">
-						<xsl:text>El marcador o el complementizador de la pregunta es </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta es </xsl:text>
 						<xsl:choose>
-							<xsl:when test="//q/@embYNWord='yes'">escrito como una palabra separada.</xsl:when>
-							<xsl:when test="//q/@embYNWord='no'">un clítico que junta</xsl:when>
+							<xsl:when test="//q/@embYNWord='yes'">escrito como una palabra independiente.</xsl:when>
+							<xsl:when test="//q/@embYNWord='no'">un clítico que se une</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//q/@embYNWord)='no'">
@@ -249,9 +249,9 @@
 								<xsl:when test="//q/@embYNCliticAttaches='head'"> al verbo en la pregunta subordinada.</xsl:when>
 							</xsl:choose>
 							<xsl:choose>
-								<xsl:when test="//q/@embYNCliticPos='before'">Estos clíticos son procliticos.</xsl:when>
-								<xsl:when test="//q/@embYNCliticPos='after'">Estos clíticos son encliticos.</xsl:when>
-								<xsl:when test="//q/@embYNCliticPos='both'">Hay algunos clíticos del marcador o del complementizador de la pregunta que son procliticos y algunos que son encliticos.</xsl:when>
+								<xsl:when test="//q/@embYNCliticPos='before'">Estos clíticos son proclíticos.</xsl:when>
+								<xsl:when test="//q/@embYNCliticPos='after'">Estos clíticos son enclíticos.</xsl:when>
+								<xsl:when test="//q/@embYNCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</xsl:when>
 								<xsl:when test="//q/@embYNCliticPos='unknown'">_______</xsl:when>
 						   </xsl:choose>
 							<xsl:text> </xsl:text>
@@ -259,11 +259,11 @@
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYN)='yes'">
-						<xsl:text>El marcador o el complementizador de la pregunta ocurre </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta se presenta </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embYNPos='before'">antes</xsl:when>
 							<xsl:when test="//q/@embYNPos='after'">después</xsl:when>
-							<xsl:when test="//q/@embYNPos='either'">de cualquier lado (pero no ambos lados)</xsl:when>
+							<xsl:when test="//q/@embYNPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
 							<xsl:when test="//q/@embYNPos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
 							<xsl:when test="//q/@embYNPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
 							<xsl:when test="//q/@embYNPos='afterOrBoth'">después o en ambos lados</xsl:when>
@@ -272,18 +272,18 @@
 					   </xsl:choose>
 						<xsl:text> del resto de la pregunta subordinada.  </xsl:text>
 						<xsl:if test="normalize-space(//q/@embYNEitherRestricted)='unrestricted' and normalize-space(//q/@embYNPos)!='before' and normalize-space(//q/@embYNPos)!='after' and normalize-space(//q/@embYN)='yes'">
-							<xsl:text>Todos los marcadores o complementizadores de la pregunta pueden ocurrir de cualquier lado de la pregunta subordinjada.</xsl:text>
+							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta subordinjada.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//q/@embYNEitherRestricted)='restricted' and normalize-space(//q/@embYNPos)!='before' and normalize-space(//q/@embYNPos)!='after' and normalize-space(//q/@embYN)='yes'">
-							<xsl:text>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada lado de la pregunta subordinada.</xsl:text>
+							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada lado de la pregunta subordinada.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 </p>
 				<p>
-<xsl:text> Los ejemplos de las preguntas sí/no de la cláusula subordinada  en </xsl:text>
+<xsl:text> Algunos ejemplos de las preguntas con respuesta afirmativa/negativa de la cláusula subordinada  en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -292,7 +292,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 				<example num="xQues.QuesYN.QuesYNEmb.10">
 <xsl:variable name="sExampleValue">
@@ -335,7 +335,7 @@
 			</section3>
 		</section2>
 		<section2 id="sQuesContent">
-			<secTitle>Las preguntas que se contestan con información</secTitle>
+			<secTitle>Las preguntas abiertas</secTitle>
 			<p>
 <xsl:text>Las preguntas que se contestan con información diferencian de preguntas sí/no en que contienen una palabra o una frase interrogativa.  Las palabras o las frases o los afijos interrogativos correspondientes en </xsl:text>
 <xsl:choose>
@@ -346,12 +346,12 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se demuestran en la tabla siguiente.</xsl:text>
+<xsl:text> se muestran en la tabla siguiente.</xsl:text>
 </p>
-			<example num="xQues.QuesContent.6">
+			<example num="xWh">
 <table border="1">
 					<caption>
-						<xsl:text>Interrogativos usados en preguntas de información </xsl:text>
+						<xsl:text>Interrogativos usados en preguntas abiertas </xsl:text>
 					</caption>
 					<tr>
 						<th>
@@ -364,7 +364,7 @@
 </xsl:otherwise>
 </xsl:choose>
 						</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//q/who),'.','')" />
@@ -756,24 +756,26 @@
 				</table>
 </example>
 			<p>
-<xsl:text>De los ejemplos de palabras interrogativas arriba, coloqúese lo más simplemente como pronombres o adverbios, pero </xsl:text>
+<xsl:text>De los ejemplos de palabras interrogativas en el cuadro </xsl:text>
+<exampleRef num="xWh" equal="no" letterOnly="no" />
+<xsl:text>, la mayoría simplemente funcionan como pronombres o adverbios, pero hay excepciones.  La palabra </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>cómo</langData>
-<xsl:text> uede estar un adverbio de la manera por sí mismo o una palabra del grado que modifica un adjetivo, como en </xsl:text>
+<xsl:text> puede estar un adverbio de modo por sí mismo o una palabra de grado que modifica un adjetivo, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cómo grande</langData>
-<xsl:text> o una palabra del grado que modifica un cuantificador, como en </xsl:text>
+</xsl:attribute>¿cómo grande?</langData>
+<xsl:text> o una palabra de grado que modifica un cuantificador, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>how many children</langData>
+</xsl:attribute>how many children?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'cuántos niños'</xsl:text>
+<xsl:text>'¿cuántos niños?'</xsl:text>
 </gloss>
 <xsl:text>; </xsl:text>
 <langData>
@@ -784,39 +786,52 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>what books</langData>
+</xsl:attribute>what books?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'qué libros'</xsl:text>
+<xsl:text>'¿qué libros?'</xsl:text>
 </gloss>
 <xsl:text>; </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>cuál</langData>
-<xsl:text> nunca se coloca solamente pero modifica siempre un sustantivo como demostrativo, como en </xsl:text>
+<xsl:text> nunca se coloca solamente pero modifica siempre un sustantivo como un demostrativo, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cuál muchacho</langData>
+</xsl:attribute>¿cuál muchacho?</langData>
 <xsl:text>; y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cuyo</langData>
-<xsl:text> puede ser un pronombre posesivo solo del soporte, o puede llenar la posición del poseedor en una frase nominal, como en </xsl:text>
+</xsl:attribute>whose</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'cuyo'</xsl:text>
+</gloss>
+<xsl:text> puede ser un pronombre posesivo por sí mismo, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cuyo jugetes</langData>
+</xsl:attribute>whose is that?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'jugetes de quién'</xsl:text>
+<xsl:text>'¿cuyo es eso?'</xsl:text>
+</gloss>
+<xsl:text>, o puede llenar la posición del poseedor en una frase nominal, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>whose toys?</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'¿jugetes de quién?'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Estas mismas posibilidades se asumen para ser verdades en </xsl:text>
+<xsl:text>Se asumen que estas mismas posibilidades ser verdades en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -825,9 +840,9 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> también..  </xsl:text>
+<xsl:text> también. </xsl:text>
 <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)='either' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)='both' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demOrArtPos)='either' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demOrArtPos)='both' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demAndArtPos)='either' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demAndArtPos)='both' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demPos)='both' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demOrArtPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demOrArtPos)='both' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtPos)='both'">
-					<xsl:text>Los demonstrativos se permiten de cualquier lado del sustantivo en </xsl:text>
+					<xsl:text>Los demonstrativos se permiten presentarse de cualquier lado del sustantivo en </xsl:text>
 					<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -846,18 +861,18 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'qué'</xsl:text>
 </gloss>
-<xsl:text> ocurren </xsl:text>
+<xsl:text> se presentan </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//q/@whDemPos='before'">solamente antes del sustantivo, incluso si otro demostrativo ocurre después del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whDemPos='after'">solamente después del sustantivo, incluso si otro demostrativo ocurre antes del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whDemPos='agree'">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado al mismo tiempo, de ellos debe convenir en características (por ejemplo, ambos sean palabras interrogativas o ambos no ser).</xsl:when>
+						<xsl:when test="//q/@whDemPos='before'">solamente antes del sustantivo, incluso si otro demostrativo se presenta después del sustantivo.</xsl:when>
+						<xsl:when test="//q/@whDemPos='after'">solamente después del sustantivo, incluso si otro demostrativo se presenta antes del sustantivo.</xsl:when>
+						<xsl:when test="//q/@whDemPos='agree'">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
 					<xsl:when test="//q/@whDemPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> </xsl:text>
 				</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)='either' or normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)='both'">
-					<xsl:text>Los artículos se permiten de cualquier lado del sustantivo en </xsl:text>
+					<xsl:text>Los artículos se permiten presentarse de cualquier lado del sustantivo en </xsl:text>
 					<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -876,18 +891,18 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'qué'</xsl:text>
 </gloss>
-<xsl:text> ocurren </xsl:text>
+<xsl:text> se presentan </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//q/@whArtPos='before'">solamente antes del sustantivo, incluso si otro artículo ocurre después del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whArtPos='after'">solamente después del sustantivo, incluso si otro artículo ocurre antes del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whArtPos='agree'">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado al mismo tiempo, de ellos debe convenir en características (por ejemplo, ambos sean palabras interrogativas o ambos no ser).</xsl:when>
+						<xsl:when test="//q/@whArtPos='before'">solamente antes del sustantivo, incluso si otro artículo se presenta después del sustantivo.</xsl:when>
+						<xsl:when test="//q/@whArtPos='after'">solamente después del sustantivo, incluso si otro artículo se presenta antes del sustantivo.</xsl:when>
+						<xsl:when test="//q/@whArtPos='agree'">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
 						<xsl:when test="//q/@whArtPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> </xsl:text>
 				</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)!='before' and normalize-space(//adjp/@degreePos)!='after' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)!='before' and normalize-space(//adjp/@mannerPos)!='after'">
-					<xsl:text>Las palabras del grado se permiten de cualquier lado del adjetivo en </xsl:text>
+					<xsl:text>Las palabras de grado se permiten presentarse de cualquier lado del adjetivo en </xsl:text>
 					<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -901,18 +916,18 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'cómo'</xsl:text>
 </gloss>
-<xsl:text> occure </xsl:text>
+<xsl:text> se presenta </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//q/@whDegAdjPos='before'">solamente antes del adjetivo, incluso si otra palabra del grado ocurre después del adjetivo.</xsl:when>
-						<xsl:when test="//q/@whDegAdjPos='after'">solamente después del adjetivo, incluso si otra palabra del grado ocurre antes del adjetivo.</xsl:when>
-						<xsl:when test="//q/@whDegAdjPos='agree'">de cualquier lado el adjetivo, pero cuando hay una palabra del grado en cada lado al mismo tiempo, de ellos debe convenir en características (por ejemplo, ambos sean palabras interrogativas o ambas no ser).</xsl:when>
+						<xsl:when test="//q/@whDegAdjPos='before'">solamente antes del adjetivo, incluso si otra palabra de grado se presenta después del adjetivo.</xsl:when>
+						<xsl:when test="//q/@whDegAdjPos='after'">solamente después del adjetivo, incluso si otra palabra de grado se presenta antes del adjetivo.</xsl:when>
+						<xsl:when test="//q/@whDegAdjPos='agree'">de cualquier lado el adjetivo, pero cuando hay una palabra de grado en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
 					<xsl:when test="//q/@whDegAdjPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> </xsl:text>
 				</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)!='before' and normalize-space(//qp/@degreePos)!='after'">
-					<xsl:text>Las palabras del grado se permiten de cualquier lado del cuantificador en </xsl:text>
+					<xsl:text>Las palabras de grado se permiten presentarse de cualquier lado del cuantificador en </xsl:text>
 					<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -926,11 +941,11 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'cómo'</xsl:text>
 </gloss>
-<xsl:text> occure </xsl:text>
+<xsl:text> se presenta </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//q/@whDegQPos='before'">solamente antes del cuantificador, incluso si otra palabra del grado ocurre después del cuantificador.</xsl:when>
-						<xsl:when test="//q/@whDegQPos='after'">solamente después del cuantificador, incluso si otra palabra del grado ocurre antes del cuantificador.</xsl:when>
-						<xsl:when test="//q/@whDegQPos='agree'">de cualquier lado el cuantificador, pero cuando hay una palabra del grado en cada lado al mismo tiempo, de ellos debe convenir en características (por ejemplo, ambos sean palabras interrogativas o ambas no ser).</xsl:when>
+						<xsl:when test="//q/@whDegQPos='before'">solamente antes del cuantificador, incluso si otra palabra de grado se presenta después del cuantificador.</xsl:when>
+						<xsl:when test="//q/@whDegQPos='after'">solamente después del cuantificador, incluso si otra palabra de grado se presenta antes del cuantificador.</xsl:when>
+						<xsl:when test="//q/@whDegQPos='agree'">de cualquier lado el cuantificador, pero cuando hay una palabra de grado en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
 					 <xsl:when test="//q/@whDegQPos='unknown'">_______</xsl:when>
 				   </xsl:choose>
 					<xsl:text> </xsl:text>
@@ -938,14 +953,14 @@
 <xsl:text> </xsl:text>
 </p>
 			<p>
-<xsl:text>Dependiendo del orden de las palabras básico del idioma, las preguntas que se contestan con información pueden ser formadas con o sin afrontar una frase interrogativa.
-					Los idiomas cabeza-finales (SOV, OVS, y OSV) no tienen generalmente movimiento de una frase interrogativa en preguntas, mientras que los idiomas cabeza-iniciales (SVO, VOS, y VSO) requieren generalmente afrontar de una frase interrogativa.
-					En idiomas sin afrontar para los interrogativos, la estructura de frase de una pregunta contenta será igual que una pregunta sí/no con un marcador de la pregunta o auxiliar en la posición del complementizer o apenas igual que una oración normal.
-					En cualquier caso, la frase interrogativa aparece en su posición normal.  Muchos idiomas del orden SOV permiten opcionalmente el movimiento de una frase interrogativa a la posición inmediatamente antes del verbo.
+<xsl:text>Dependiendo del orden de las palabras básico del idioma, las preguntas abiertas pueden ser formadas con o sin el desplazamiento a la izquierda de una frase interrogativa.
+					Los idiomas con núcleo final (SOV, OVS, y OSV) no tienen generalmente desplazamiento de una frase interrogativa en preguntas, mientras que los idiomas con núcleo inicial (SVO, VOS, y VSO) generalmente requieren el desplazamiento a la izquierda de una frase interrogativa.
+					En idiomas sin el desplazamiento a la izquierda para los interrogativos, la estructura de una pregunta abierta será igual que una pregunta sí/no con un indicador de la pregunta o un auxiliar en la posición del complementizador o apenas igual que una oración normal.
+					En cualquier caso, la frase interrogativa se presenta en su posición normal.  Muchos idiomas del orden SOV permiten opcionalmente el desplazamiento de una frase interrogativa a la posición inmediatamente antes del verbo.
 </xsl:text>
 </p>
 			<p>
-<xsl:text>En las preguntas que se contestan con información de ambos las cláusula principal y la subordinada en </xsl:text>
+<xsl:text>En las preguntas abiertas de ambos las cláusula principal y la subordinada en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -956,17 +971,17 @@
 </xsl:choose>
 <xsl:text>, una frase interrogativa </xsl:text>
 <xsl:choose>
-					<xsl:when test="//q/@contFront='no'">no afronta; permanece simplemente en su posición normal.</xsl:when>
-					<xsl:when test="//q/@contFront='after'">puede permanecer en su posición normal o puede moverse a la posición inmediatamente antes del verbo.</xsl:when>
-					<xsl:when test="//q/@contFront='before'">mueve al frente de la cláusula.</xsl:when>
+					<xsl:when test="//q/@contFront='no'">no desplaza a la izquierda; permanece simplemente en su posición normal.</xsl:when>
+					<xsl:when test="//q/@contFront='after'">puede permanecer en su posición normal o puede desplazarse a la posición inmediatamente antes del verbo.</xsl:when>
+					<xsl:when test="//q/@contFront='before'">desplaza a la izquierda de la cláusula.</xsl:when>
 					<xsl:when test="//q/@contFront='unknown'">_______.</xsl:when>
 				</xsl:choose>
 <xsl:text> </xsl:text>
 </p>
 			<section3 id="sQuesContentMain">
-				<secTitle>Las preguntas que se contestan con información de la cláusula principal</secTitle>
+				<secTitle>Las preguntas abiertas de la cláusula principal</secTitle>
 				<p>
-<xsl:text>Los ejemplos españoles de las preguntas de la cláusula principal, demostrando afrontar requerido de una frase interrogativa, incluyen: </xsl:text>
+<xsl:text>Algunos ejemplos en español de las preguntas abiertas de la cláusula principal, mostrando el desplazamiento a la izquierda a una frase interrogativa que es requerido, son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -994,7 +1009,7 @@
 <xsl:text> </xsl:text>
 </p>
 				<p>
-<xsl:text>En </xsl:text>
+<xsl:text>En las preguntas abiertas de la cláusula principal en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1003,22 +1018,22 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> las preguntas que se contestan con información de la cláusula principal, </xsl:text>
+<xsl:text> , </xsl:text>
 <xsl:choose>
-						<xsl:when test="//q/@mainCont='no'">no hay marcador o auxiliar que afronta,</xsl:when>
-						<xsl:when test="//q/@mainCont='noAux'">movimiento de un auxiliar</xsl:when>
-						<xsl:when test="//q/@mainCont='yes'">hay por lo menos un marcador o complementizador de la pregunta.</xsl:when>
+						<xsl:when test="//q/@mainCont='no'">no hay indicador ni auxiliar que desplaza a la izquierda,</xsl:when>
+						<xsl:when test="//q/@mainCont='noAux'">desplazamiento de un auxiliar</xsl:when>
+						<xsl:when test="//q/@mainCont='yes'">hay por lo menos un indicador o complementizador de la pregunta.</xsl:when>
 					</xsl:choose>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainCont)='no'">
 						<xsl:text> apenas </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@contFront='no'">una diferencia de</xsl:when>
-							<xsl:when test="//q/@contFront='after'">movimiento opcional de una frase interrogativa y posiblemente una diferencia de</xsl:when>
-							<xsl:when test="//q/@contFront='before'">el afrontar de la diferencia de una frase interrogativa y posiblemente una diferencia de</xsl:when>
+							<xsl:when test="//q/@contFront='after'">el desplazamiento opcional de una frase interrogativa y posiblemente una diferencia de</xsl:when>
+							<xsl:when test="//q/@contFront='before'">el dsesplazamiento a la izquierda de una frase interrogativa y posiblemente una diferencia de</xsl:when>
 							<xsl:when test="//q/@contFront='unknown'">_______ de una frase interrogativa y posiblemente una diferencia de</xsl:when>
 						</xsl:choose>
-						<xsl:text> la entonación o el tono o la otra marca que no es sintáctica.</xsl:text>
+						<xsl:text> la entonación o el tono o otra indicación que no es sintáctica.</xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainCont)='noAux'">
@@ -1036,16 +1051,16 @@
 						<xsl:choose>
 							<xsl:when test="//q/@contFront='no'">.</xsl:when>
 							<xsl:when test="//q/@contFront='after'">.</xsl:when>
-							<xsl:when test="//q/@contFront='before'"> además de afrontar de una frase interrogativa.</xsl:when>
+							<xsl:when test="//q/@contFront='before'"> además del desplazamiento a la izquierda de una frase interrogativa.</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainCont)='yes'">
-						<xsl:text>El marcador o el complementizador de la pregunta es  </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta es  </xsl:text>
 						<xsl:choose>
-							<xsl:when test="//q/@mainContWord='yes'">escrito como una palabra separada.</xsl:when>
-							<xsl:when test="//q/@mainContWord='no'">un clítico que junta</xsl:when>
+							<xsl:when test="//q/@mainContWord='yes'">escrito como una palabra independiente.</xsl:when>
+							<xsl:when test="//q/@mainContWord='no'">un clítico que se une</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainCont)='yes'">
@@ -1056,9 +1071,9 @@
 								<xsl:when test="//q/@mainContCliticAttaches='between'"> entre la frase interrogativa afrontada y el resto de la pregunta.</xsl:when>
 							</xsl:choose>
 							<xsl:choose>
-								<xsl:when test="//q/@mainContCliticPos='before'">Estos clíticos son procliticos.</xsl:when>
-								<xsl:when test="//q/@mainContCliticPos='after'">Estos clíticos son encliticos.</xsl:when>
-								<xsl:when test="//q/@mainContCliticPos='both'">Hay algunos clíticos del marcador o del complementizador de la pregunta que son procliticos y algunos que son encliticos.</xsl:when>
+								<xsl:when test="//q/@mainContCliticPos='before'">Estos clíticos son proclíticos.</xsl:when>
+								<xsl:when test="//q/@mainContCliticPos='after'">Estos clíticos son enclíticos.</xsl:when>
+								<xsl:when test="//q/@mainContCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</xsl:when>
 							   <xsl:when test="//q/@mainContCliticPos='unknown'">_______</xsl:when>
 							</xsl:choose>
 							<xsl:text> </xsl:text>
@@ -1066,11 +1081,11 @@
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//typology/@wordOrder)!='VSO'">
-						<xsl:text>El marcador o el complementizador de la pregunta ocurre </xsl:text>
+						<xsl:text>El insicador o complementizador de la pregunta se presenta </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContPos='before'">antes</xsl:when>
 							<xsl:when test="//q/@mainContPos='after'">después</xsl:when>
-							<xsl:when test="//q/@mainContPos='either'">de cualquier lado (pero no ambos lados)</xsl:when>
+							<xsl:when test="//q/@mainContPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
 							<xsl:when test="//q/@mainContPos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
 							<xsl:when test="//q/@mainContPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
 							<xsl:when test="//q/@mainContPos='afterOrBoth'">después o en ambos lados</xsl:when>
@@ -1079,46 +1094,46 @@
 					   </xsl:choose>
 						<xsl:text> del resto de la pregunta.  </xsl:text>
 						<xsl:if test="normalize-space(//q/@mainContPos)!='before' and normalize-space(//q/@mainContPos)!='after' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContEitherRestrcited)='unrestricted'">
-							<xsl:text>Todos los marcadores o complementizadores de la pregunta pueden ocurrir de cualquier lado de la pregunta.</xsl:text>
+							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//q/@mainContPos)!='before' and normalize-space(//q/@mainContPos)!='after' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContEitherRestrcited)='restricted'">
-							<xsl:text>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada lado de la pregunta.</xsl:text>
+							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada lado de la pregunta.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//typology/@wordOrder)='VSO'">
-						<xsl:text>El marcador o el complementizador de la pregunta ocurre </xsl:text>
+						<xsl:text>El indiador o complementizador de la pregunta se presenta </xsl:text>
 						<xsl:choose>
-							<xsl:when test="//q/@mainContVSOBeforeWh='no'">inmediatamente después de una frase interrogativa afrontada.</xsl:when>
-							<xsl:when test="//q/@mainContVSOBeforeWh='noEnd'">inmediatamente después de una frase interrogativa afrontada o al final de la pregunta.</xsl:when>
-							<xsl:when test="//q/@mainContVSOBeforeWh='yes'">antes de una frase interrogativa afrontada.</xsl:when>
-							<xsl:when test="//q/@mainContVSOBeforeWh='some'">cualquiera antes o después de una frase interrogativa afrontada.</xsl:when>
+							<xsl:when test="//q/@mainContVSOBeforeWh='no'">inmediatamente después de la frase interrogativa desplazada.</xsl:when>
+							<xsl:when test="//q/@mainContVSOBeforeWh='noEnd'">inmediatamente después de la frase interrogativa desplazada o al final de la pregunta.</xsl:when>
+							<xsl:when test="//q/@mainContVSOBeforeWh='yes'">antes de la frase interrogativa desplazada.</xsl:when>
+							<xsl:when test="//q/@mainContVSOBeforeWh='some'">o antes o después de la frase interrogativa desplazada.</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='noEnd' and normalize-space(//q/@mainContVSONoEndRestricted)='unrestricted' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes'">
-							<xsl:text>Todos los marcadores o complementizadores de la pregunta pueden ocurrir en cada posición.</xsl:text>
+							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse en cada posición.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='noEnd' and normalize-space(//q/@mainContVSONoEndRestricted)='restricted' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='some' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes'">
-							<xsl:text>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada posición.</xsl:text>
+							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada posición.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes'">
-						<xsl:text>Un marcador o un complementizador de la pregunta </xsl:text>
+						<xsl:text>Un indicador o complementizador de la pregunta </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContRequired='yes'">es requerido</xsl:when>
 							<xsl:when test="//q/@mainContRequired='yes'">no es requerido</xsl:when>
 						</xsl:choose>
-						<xsl:text> en cada pregunta de información.</xsl:text>
+						<xsl:text> en cada pregunta abierta.</xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 </p>
 				<p>
-<xsl:text> Los ejemplos del </xsl:text>
+<xsl:text> Algunos ejemplos de las preguntas abiertas de la cláusula principal en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1127,7 +1142,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> de las preguntas que se contestan con información de la cláusula principal incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 				<example num="xQues.QuesContent.QuesContentMain.10">
 <xsl:variable name="sExampleValue">
@@ -1169,9 +1184,9 @@
 </example>
 			</section3>
 			<section3 id="sQuesContentEmb">
-				<secTitle>Las preguntas que se contestan con información de la cláusula subordinada</secTitle>
+				<secTitle>Las preguntas abiertas de la cláusula subordinada</secTitle>
 				<p>
-<xsl:text>Los ejemplos españoles de las preguntas subordinadas, demostrando afrontar requerido de una frase interrogativa, incluyen: </xsl:text>
+<xsl:text>Algunos ejemplos en español de las preguntas subordinadas, mostrando el desplazamiento a la izquierda requerido de una frase interrogativa, son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1189,7 +1204,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>En </xsl:text>
+<xsl:text>En las preguntas abiertas de la cláusula subordinada en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1198,22 +1213,22 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> las preguntas que se contestan con información de la cláusula subordinada, </xsl:text>
+<xsl:text>, </xsl:text>
 <xsl:choose>
-						<xsl:when test="//q/@embCont='no'">no hay marcador o auxiliar que afronta,</xsl:when>
-						<xsl:when test="//q/@embCont='noAux'">movimiento de un auxiliar</xsl:when>
-						<xsl:when test="//q/@embCont='yes'">hay por lo menos un marcador o complementizador de la pregunta.</xsl:when>
+						<xsl:when test="//q/@embCont='no'">no hay indicador ni auxiliar que desplaza a la izquierda,</xsl:when>
+						<xsl:when test="//q/@embCont='noAux'">desplazamiento de un auxiliar</xsl:when>
+						<xsl:when test="//q/@embCont='yes'">hay por lo menos un indicador o complementizador de la pregunta.</xsl:when>
 					</xsl:choose>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embCont)='no'">
 						<xsl:text> apenas </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@contFront='no'">una diferencia en</xsl:when>
-							<xsl:when test="//q/@contFront='after'">movimiento opcional de una frase interrogativa y posiblemente una diferencia en</xsl:when>
-							<xsl:when test="//q/@contFront='before'">el afrontar de la diferencia de una frase interrogativa y posiblemente una diferencia en</xsl:when>
+							<xsl:when test="//q/@contFront='after'">el desplazamiento opcional de una frase interrogativa y posiblemente una diferencia en</xsl:when>
+							<xsl:when test="//q/@contFront='before'">el desplazamiento a la izquierda de una frase interrogativa y posiblemente una diferencia en</xsl:when>
 							<xsl:when test="//q/@contFront='unknown'">_______ de una frase interrogativa y posiblemente una diferencia en</xsl:when>
 						</xsl:choose>
-						<xsl:text> la entonación o el tono o la otra marca que no es sintáctica.</xsl:text>
+						<xsl:text> la entonación o el tono o otra indicación que no es sintáctica.</xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embCont)='noAux'">
@@ -1231,16 +1246,16 @@
 						<xsl:choose>
 							<xsl:when test="//q/@contFront='no'">.</xsl:when>
 							<xsl:when test="//q/@contFront='after'">.</xsl:when>
-							<xsl:when test="//q/@contFront='before'"> además de afrontar de una frase interrogativa.</xsl:when>
+							<xsl:when test="//q/@contFront='before'"> además del desplazamineto a la izquierda de una frase interrogativa.</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embCont)='yes'">
-						<xsl:text>El marcador o el complementizer de la pregunta es </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta es </xsl:text>
 						<xsl:choose>
-							<xsl:when test="//q/@embContWord='yes'">escrito como una palabra separada.</xsl:when>
-							<xsl:when test="//q/@embContWord='no'">un clítico que junta</xsl:when>
+							<xsl:when test="//q/@embContWord='yes'">escrito como una palabra independiente.</xsl:when>
+							<xsl:when test="//q/@embContWord='no'">un clítico que se une</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embCont)='yes'">
@@ -1248,26 +1263,26 @@
 							<xsl:choose>
 								<xsl:when test="//q/@embContCliticAttaches='edge'"> en el borde de la pregunta subordinada.</xsl:when>
 								<xsl:when test="//q/@embContCliticAttaches='head'"> al verbo en la pregunta subordinada.</xsl:when>
-								<xsl:when test="//q/@embContCliticAttaches='between'"> entre la frase interrogativa afrontada y el resto de la pregunta subordinada.</xsl:when>
+								<xsl:when test="//q/@embContCliticAttaches='between'"> entre la frase interrogativa desplazada y el resto de la pregunta subordinada.</xsl:when>
 							</xsl:choose>
 							<xsl:text> </xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 						<xsl:choose>
-							<xsl:when test="//q/@embContCliticPos='before'">Estos clíticos son procliticos.</xsl:when>
-							<xsl:when test="//q/@embContCliticPos='after'">Estos clíticos son encliticos.</xsl:when>
-							<xsl:when test="//q/@embContCliticPos='both'">Hay algunos clíticos del marcador o del complementizador de la pregunta que son procliticos y algunos que son encliticos. </xsl:when>
+							<xsl:when test="//q/@embContCliticPos='before'">Estos clíticos son proclíticos.</xsl:when>
+							<xsl:when test="//q/@embContCliticPos='after'">Estos clíticos son enclíticos.</xsl:when>
+							<xsl:when test="//q/@embContCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos. </xsl:when>
 						   <xsl:when test="//q/@embContCliticPos='unknown'">_______</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' and normalize-space(//typology/@wordOrder)!='VSO'">
-						<xsl:text>El marcador o el complementizador de la pregunta ocurre </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta se presenta </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@embContPos='before'">antes</xsl:when>
 							<xsl:when test="//q/@embContPos='after'">después</xsl:when>
-							<xsl:when test="//q/@embContPos='either'">de cualquier lado (pero no ambos lados)</xsl:when>
+							<xsl:when test="//q/@embContPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
 							<xsl:when test="//q/@embContPos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
 							<xsl:when test="//q/@embContPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
 							<xsl:when test="//q/@embContPos='afterOrBoth'">después o en ambos lados</xsl:when>
@@ -1276,46 +1291,46 @@
 						</xsl:choose>
 						<xsl:text> del resto de la pregunta subordinada.  </xsl:text>
 						<xsl:if test="normalize-space(//q/@embContPos)!='before' and normalize-space(//q/@embContPos)!='after' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContEitherRestrcited)='unrestricted'">
-							<xsl:text>Todos los marcadores o complementizadores de la pregunta pueden ocurrir de cualquier lado de la pregunta subordinada.</xsl:text>
+							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta subordinada.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//q/@embContPos)!='before' and normalize-space(//q/@embContPos)!='after' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContEitherRestrcited)='restricted'">
-							<xsl:text>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada lado de la pregunta subordinada.</xsl:text>
+							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada lado de la pregunta subordinada.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' and normalize-space(//typology/@wordOrder)='VSO'">
-						<xsl:text>El marcador o el complementizador de la pregunta ocurre </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta se presenta </xsl:text>
 						<xsl:choose>
-							<xsl:when test="//q/@embContVSOBeforeWh='no'">inmediatamente después de una frase interrogativa afrontada.</xsl:when>
-							<xsl:when test="//q/@embContVSOBeforeWh='noEnd'">inmediatamente después de una frase interrogativa afrontada o en el final de la pregunta subordinada.</xsl:when>
-							<xsl:when test="//q/@embContVSOBeforeWh='yes'">antes de una frase interrogativa afrontada.</xsl:when>
-							<xsl:when test="//q/@embContVSOBeforeWh='some'">cualquiera antes o después de una frase interrogativa afrontada.</xsl:when>
+							<xsl:when test="//q/@embContVSOBeforeWh='no'">inmediatamente después de la frase interrogativa desplazada.</xsl:when>
+							<xsl:when test="//q/@embContVSOBeforeWh='noEnd'">inmediatamente después de la frase interrogativa desplazada oal final de la pregunta subordinada.</xsl:when>
+							<xsl:when test="//q/@embContVSOBeforeWh='yes'">antes de la frase interrogativa desplazada.</xsl:when>
+							<xsl:when test="//q/@embContVSOBeforeWh='some'">o antes o después de la frase interrogativa desplazada.</xsl:when>
 						</xsl:choose>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='noEnd' and normalize-space(//q/@embContVSONoEndRestricted)='unrestricted' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes'">
-							<xsl:text>Todos los marcadores o complementizadores de la pregunta pueden ocurrir en cada posición.</xsl:text>
+							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse en cada posición.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 						<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='noEnd' and normalize-space(//q/@embContVSONoEndRestricted)='restricted' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='some' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes'">
-							<xsl:text>Hay las restricciones en cuanto a las cuales de los marcadores o de los complementizadores de la pregunta puede ocurrir en cada posición.</xsl:text>
+							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada posición.</xsl:text>
 						</xsl:if>
 						<xsl:text> </xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes'">
-						<xsl:text>Un marcador o un complementizador de la pregunta </xsl:text>
+						<xsl:text>Un indicador o complementizador de la pregunta </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContRequired='yes'">es requerido</xsl:when>
 							<xsl:when test="//q/@mainContRequired='yes'">no es requerido</xsl:when>
 						</xsl:choose>
-						<xsl:text> en cada pregunta de información subordinada.</xsl:text>
+						<xsl:text> en cada pregunta abierta subordinada.</xsl:text>
 					</xsl:if>
 <xsl:text> </xsl:text>
 </p>
 				<p>
-<xsl:text> Los ejemplos del </xsl:text>
+<xsl:text> Algunos ejemplos de las preguntas abiertas de la cláusula subordinada en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1324,7 +1339,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> de las preguntas que se contestan con información de la cláusula subordinada incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 				<example num="xQues.QuesContent.QuesContentEmb.10">
 <xsl:variable name="sExampleValue">

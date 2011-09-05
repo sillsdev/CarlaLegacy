@@ -4,8 +4,8 @@
 	<section1 id="sV">
 		<secTitle>Los verbos</secTitle>
 		<p>
-<xsl:text>Los verbos expresan acciones, estados, o emociones. Los tipos de características verbales de la inflexión y del acuerdo llevaron por verbos se detallan primero.
-			La aplicación cuando un tema puede faltar se discute en la sección </xsl:text>
+<xsl:text>Los verbos expresan acciones, estados, o emociones. Los tipos de características de la inflexión y de la concordancia en los verbos se detallan primero.
+			La aplicación cuando un sujeto no debe estar presente se discute en la sección </xsl:text>
 <sectionRef sec="sIPProDrop" />
 <xsl:text>, y los auxiliares se cubre en la sección
 			</xsl:text>
@@ -13,19 +13,19 @@
 <xsl:text>.  Los ejemplos de los verbos usados en oraciones básicas se encuentran en la sección
 			</xsl:text>
 <sectionRef sec="sIP" />
-<xsl:text>.  Construcciones más complejas incluyendo verbos se cubren en las secciones </xsl:text>
+<xsl:text>.  Las construcciones más complejas incluyendo verbos se cubren en las secciones </xsl:text>
 <sectionRef sec="sFocus" />
 <xsl:text> - </xsl:text>
 <sectionRef sec="sRelCl" />
 <xsl:text>.</xsl:text>
 </p>
 		<section2 id="sIPInfl">
-			<secTitle>Las características de la inflexión</secTitle>
+			<secTitle>Características de la inflexión</secTitle>
 			<p>
-<xsl:text>Los verbos y los auxiliares llevan generalmente características de la inflexión, tales como tiempo, aspecto, y/o modo.  En la mayoría de los casos, estas características son agregadas por los afijos, pero pueden también ser parte de los verbos irregulares.</xsl:text>
+<xsl:text>Los verbos y los auxiliares generalmente llevan características de la inflexión, tales como tiempo, aspecto, y/o modo.  En la mayoría de los casos, estas características son agregadas por los afijos, pero también pueden ser parte de los verbos irregulares.</xsl:text>
 </p>
 			<p>
-<xsl:text>Las características siguientes de la inflexión se marcan en verbos y/o auxiliares en </xsl:text>
+<xsl:text>Las características siguientes de la inflexión se indican en los verbos y/o auxiliares en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -256,12 +256,12 @@
 </example>
 		</section2>
 		<section2 id="sIPAgr">
-			<secTitle>Las características del acuerdo</secTitle>
+			<secTitle>Características de la concordancia</secTitle>
 			<p>
-<xsl:text>Los verbos y los auxiliares pueden también llevar las características del acuerdo que fuerzan el acuerdo con el tema, y a veces también con el objeto directo. La mayor parte de estas características son agregadas por los afijos o el clitics pronominal que pueden juntar al verbo. Animacy de un tema o de un objeto es más probable una característica de la semántica del verbo individual sí mismo, pero es marcado por un afijo en algunos idiomas.</xsl:text>
+<xsl:text>Los verbos y los auxiliares también pueden llevar las características de la concordancia que concuerdan con el sujeto, y a veces también con el objeto directo. La mayor parte de estas características son agregadas por los afijos o clíticos pronominales que pueden unirse con el verbo. El animado de un sujeto o objeto es más probable una característica de la semántica del verbo individual, pero se indica por un afijo en algunos idiomas.</xsl:text>
 </p>
 			<p>
-<xsl:text>Las características siguientes del acuerdo se marcan en verbos y/o auxiliares en </xsl:text>
+<xsl:text>Las características siguientes de la concordancia se indican en verbos y/o auxiliares en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -922,9 +922,9 @@
 </example>
 		</section2>
 		<section2 id="sIPProDrop">
-			<secTitle>Los temas que falta</secTitle>
+			<secTitle>Los sujetos que no deben estar presentes</secTitle>
 			<p>
-<xsl:text>En algunos idiomas un tema, o a veces un objeto, puede ser faltado o inexpresado en su posición normal sintáctica.  Por ejemplo, en español la manera normal de decir el ingles </xsl:text>
+<xsl:text>En algunos idiomas un sujeto, o a veces un objeto, no debe estar presente en su posición normal sintáctica.  Por ejemplo, en español la manera normal de decir el ejemplo en inglés </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -939,12 +939,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Yo compro un libro</langData>
-<xsl:text>.  Esto no se permite en inglés, con excepción de imperativos. (El tema que falta de infinitivos en complementos subordinados será cubierto en la sección </xsl:text>
+<xsl:text>.  Esto no se permite en inglés, con excepción de imperativos. (El sujeto de infinitivos que no estar presente en complementos subordinados será analizada en la sección </xsl:text>
 <sectionRef sec="sComp" />
 <xsl:text>.) </xsl:text>
 </p>
 			<p>
-<xsl:text>Algunos idiomas no son realmente idiomas que permiten los temas que falta, pero por lo menos algunos de los pronombres son clíticos que pueden juntar al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición sujeta, así que la oración aparece igual que en un idioma verdadera que permite los temas que falta.</xsl:text>
+<xsl:text>Algunos idiomas no en realidad son idiomas que permiten los sujetos que no deben estar presentes, pero por lo menos algunos de los pronombres son clíticos que se unen al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición del sujeto, así que la oración aparece igual que en un idioma verdadera que permite los sujetos que no deben estar presentes.</xsl:text>
 </p>
 			<p>
 <xsl:text>En </xsl:text>
@@ -958,10 +958,10 @@
 </xsl:choose>
 <xsl:text>, </xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@proDrop='noImp'">un tema que falta no se permite.  El tema debe ser expresado a menos que en los imperativos</xsl:when>
-					<xsl:when test="//ip/@proDrop='no'">un tema que falta no se permite.  El tema debe ser expresado aun cuando en los imperativos</xsl:when>
-					<xsl:when test="//ip/@proDrop='yes'">un tema que falta se permite en cualquier tipo de oración</xsl:when>
-					<xsl:when test="//ip/@proDrop='yesClitic'">el tema puede mirar como él es falta debido a los pronombres dependientes (clíticos pronominales) que juntan al verbo, pero no es una lengua verdadera que permite un tema que falta</xsl:when>
+					<xsl:when test="//ip/@proDrop='noImp'">no se permite un sujeto que no está presente.  El sujeto debe ser expresado a menos que en los imperativos.</xsl:when>
+					<xsl:when test="//ip/@proDrop='no'">no se permite un sujeto que no está presente.  El sujeto debe ser expresado aun cuando en los imperativos.</xsl:when>
+					<xsl:when test="//ip/@proDrop='yes'">un sujeto no debe estar presente en cualquier tipo de oración.</xsl:when>
+					<xsl:when test="//ip/@proDrop='yesClitic'">el tema puede mirar como él es falta debido a los pronombres dependientes (clíticos pronominales) que juntan al verbo, pero no es una lengua verdadera que permite un tema que falta.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@proDrop)='yes'">
@@ -974,15 +974,15 @@
 				</xsl:if>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@proDrop)='noImp'">
-					<xsl:text>  Los ejemplos que demuestran un tema que falta en imperativos incluyen:</xsl:text>
+					<xsl:text>  Algunos ejemplos que demuestran que el sujeto no debe estar presente en imperativos son:</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@proDrop)='yes'">
-					<xsl:text>  Los ejemplos con un tema que falta incluyen:</xsl:text>
+					<xsl:text>  Algunos ejemplos que demuestran que el sujeto no debe estar presente son:</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@proDrop)='yesClitic'">
-					<xsl:text>  Los ejemplos que parecen un tema que falta incluyen:</xsl:text>
+					<xsl:text>  Algunos ejemplos que parecen que el sujeto no debe estar presente son:</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
@@ -1030,7 +1030,7 @@
 		<section2 id="sIPAux">
 			<secTitle>Los auxiliares</secTitle>
 			<p>
-<xsl:text>Algunos idiomas tienen elementos auxiliares que sean palabras separadas, y algunos pueden tener más de un elemento auxiliar antes del verbo principal. Los ejemplos para las oraciones transitivas inglesas incluyen: </xsl:text>
+<xsl:text>En algunos idiomas hay elementos auxiliares que sean palabras independientes, y algunos de los idiomas pueden tener más de un elemento auxiliar con el verbo principal. Algunos ejemplos para las oraciones transitivas en inglés son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1057,14 +1057,10 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'El muchacho pudo habiendo golpeado el beísbol'</xsl:text>
 </gloss>
-<xsl:text>.  En español, éstos son expresados principalmente por los cambios del tiempo y del aspecto, a excepción de ejemplos tales como </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>He oido algo importante</langData>
-<xsl:text>.</xsl:text>
+<xsl:text>.  En español, éstos son expresados principalmente por los cambios del tiempo y del aspecto.</xsl:text>
 </p>
 			<p>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1075,10 +1071,10 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@aux='no'"> no tiene cualesquiera </xsl:when>
-					<xsl:when test="//ip/@aux='yes'"> tiene algunos </xsl:when>
+					<xsl:when test="//ip/@aux='no'"> no hay </xsl:when>
+					<xsl:when test="//ip/@aux='yes'"> hay algunos </xsl:when>
 				</xsl:choose>
-<xsl:text>auxiliares que se escriben como palabras separadas.  </xsl:text>
+<xsl:text>auxiliares que se escriben como palabras independientes.  </xsl:text>
 <xsl:if test="normalize-space(//ip/@aux)='yes'">
 					<xsl:text>Un auxiliar es </xsl:text>
 					<xsl:choose>
@@ -1097,14 +1093,14 @@
 					<xsl:text> y  </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@auxMany='no'">solamente uno es posible</xsl:when>
-						<xsl:when test="//ip/@auxMany='yes'">más de uno puede ocurrir</xsl:when>
+						<xsl:when test="//ip/@auxMany='yes'">más de uno puede presentarse</xsl:when>
 					</xsl:choose>
 					<xsl:text> en una sola cláusula. </xsl:text>
 					<xsl:if test="normalize-space(//typology/@wordOrder)='VSO'">
 						<xsl:text> Después de un auxiliar, la orden normal del VSO </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//ip/@auxOrder='yes'">se mantiene. La orden es Aux V S O.</xsl:when>
-							<xsl:when test="//ip/@auxOrder='no'">puede cambiar así que el tema aparece directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</xsl:when>
+							<xsl:when test="//ip/@auxOrder='no'">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</xsl:when>
 						</xsl:choose>
 						<xsl:text></xsl:text>
 					</xsl:if>
@@ -1113,7 +1109,7 @@
 						<xsl:text> Antes de un auxiliar, la orden normal del OSV </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//ip/@auxOrder='yes'">se mantiene. La orden es O S V Aux.</xsl:when>
-							<xsl:when test="//ip/@auxOrder='no'">puede cambiar así que el tema aparece directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</xsl:when>
+							<xsl:when test="//ip/@auxOrder='no'">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</xsl:when>
 						</xsl:choose>
 						<xsl:text></xsl:text>
 					</xsl:if>
@@ -1122,7 +1118,7 @@
 </p>
 			<xsl:if test="normalize-space(//ip/@aux)='yes'">
 <p>
-<xsl:text>Los ejemplos de auxiliares en </xsl:text>
+<xsl:text>Los auxiliares en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1139,7 +1135,7 @@
 <table border="1">
 					<tr>
 						<th>Palabras auxiliares</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryExample),'.','')" />
@@ -1167,7 +1163,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1184,7 +1180,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1195,7 +1191,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@aux)='yes'">
 <p>
-<xsl:text>Los ejemplos de oraciones incluyendo estos auxiliares son:</xsl:text>
+<xsl:text>Algunos ejemplos de oraciones incluyendo estos auxiliares son:</xsl:text>
 </p>
 </xsl:if>
 
@@ -1240,7 +1236,7 @@
 </example>
 </xsl:if>
 			<p>
-<xsl:text>En algunos idiomas la negación verbal es un elemento auxiliar, mientras que en otros es simplemente un afijo verbal. El español utiliza el auxiliar verbal negativo </xsl:text>
+<xsl:text>En algunos idiomas la negación verbal es un elemento auxiliar, mientras que en otros idiomas es simplemente un afijo verbal. El español utiliza el auxiliar verbal negativo </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1255,12 +1251,12 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'no'</xsl:text>
 </gloss>
-<xsl:text>, que es una palabra separada que debe seguir siempre a otro auxiliar, y la forma de la contracción </xsl:text>
+<xsl:text>, que es una palabra independiente que siempre debe seguir a otro auxiliar, y la forma de la contracción </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>-n't</langData>
-<xsl:text>, que se escribe como sufijo en el auxiliar. Los ejemplos de las oraciones transitivas negativas inglesas incluyen:</xsl:text>
+<xsl:text>, que se escribe como sufijo en el auxiliar. Algunos ejemplos de las oraciones transitivas negativas en inglés son:</xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1290,6 +1286,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1300,30 +1297,30 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@negAux='yesOnly'"> tiene uno o más</xsl:when>
-					<xsl:when test="//ip/@negAux='yesAffix'"> tiene uno o más</xsl:when>
-					<xsl:when test="//ip/@negAux='yesVerb'"> tiene uno o más</xsl:when>
-					<xsl:when test="//ip/@negAux='yesAll'"> tiene uno o más</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixOnly'"> no tiene cualesquiera</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixAndVerb'"> no tiene cualesquiera</xsl:when>
-					<xsl:when test="//ip/@negAux='noVerb'"> no tiene cualesquiera</xsl:when>
+					<xsl:when test="//ip/@negAux='yesOnly'"> hay uno o más</xsl:when>
+					<xsl:when test="//ip/@negAux='yesAffix'"> hay uno o más</xsl:when>
+					<xsl:when test="//ip/@negAux='yesVerb'"> hay uno o más</xsl:when>
+					<xsl:when test="//ip/@negAux='yesAll'"> hay uno o más</xsl:when>
+					<xsl:when test="//ip/@negAux='noAffixOnly'"> no hay </xsl:when>
+					<xsl:when test="//ip/@negAux='noAffixAndVerb'"> no hay</xsl:when>
+					<xsl:when test="//ip/@negAux='noVerb'"> no hay</xsl:when>
 				</xsl:choose>
-<xsl:text> auxiliares negativos que se escriben como palabras separadas, </xsl:text>
+<xsl:text> auxiliares negativos que se escriben como palabras independientes, </xsl:text>
 <xsl:choose>
 					<xsl:when test="//ip/@negAux='yesOnly'">y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo ni afijo auxiliar negativo. </xsl:when>
 					<xsl:when test="//ip/@negAux='yesAffix'">y hay también un afijo auxiliar negativo, pero ningún afijo verbal negativo. </xsl:when>
 					<xsl:when test="//ip/@negAux='yesVerb'">y hay también un afijo verbal negativo, pero ningún afijo auxiliar negativo. </xsl:when>
 					<xsl:when test="//ip/@negAux='yesAll'">y hay también un afijo auxiliar negativo y un afijo verbal negativo. </xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixOnly'">pero hay un afijo negativo que junta al auxiliar y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo.</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixAndVerb'">pero hay un afijo negativo que junta al auxiliar y un afijo verbal negativo también.</xsl:when>
-					<xsl:when test="//ip/@negAux='noVerb'">ni cualquier afijo negativo que junta al auxiliar. La única manera de expresar la negación verbal está con uno o más afijos verbales negativos.</xsl:when>
+					<xsl:when test="//ip/@negAux='noAffixOnly'">pero hay un afijo negativo que se une al auxiliar y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo.</xsl:when>
+					<xsl:when test="//ip/@negAux='noAffixAndVerb'">pero hay un afijo negativo que se une al auxiliar y también un afijo verbal negativo.</xsl:when>
+					<xsl:when test="//ip/@negAux='noVerb'">ni afijo negativo que se une al auxiliar. La única manera de expresar la negación verbal es con uno o más afijos verbales negativos.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
 					<xsl:text> El auxiliar negativo </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//ip/@negAuxRequiresAux='no'">pueda</xsl:when>
-						<xsl:when test="//ip/@negAuxRequiresAux='yes'">no pueda</xsl:when>
+						<xsl:when test="//ip/@negAuxRequiresAux='no'">puede</xsl:when>
+						<xsl:when test="//ip/@negAuxRequiresAux='yes'">no puede</xsl:when>
 					</xsl:choose>
 					<xsl:text> ser el único auxiliar en la frase; </xsl:text>
 					<xsl:choose>
@@ -1335,7 +1332,7 @@
 </p>
 			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Los ejemplos de los auxiliares negativos en </xsl:text>
+<xsl:text>Algunos ejemplos de los auxiliares negativos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1344,7 +1341,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -1352,7 +1349,7 @@
 <table border="1">
 				<tr>
 					<th>Palabras auxiliares negativas</th>
-					<th>Significado</th>
+					<th>Glosa</th>
 				</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxExample),'.','')" />
@@ -1380,7 +1377,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1397,7 +1394,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1408,7 +1405,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Los ejemplos de los afijos negativos juntados a una palabra auxiliar en </xsl:text>
+<xsl:text>Algunos ejemplos de los afijos negativos unidos a una palabra auxiliar en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1417,7 +1414,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -1425,7 +1422,7 @@
 <table border="1">
 					<tr>
 						<th>Auxiliares negativos marcados</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxAffixExample),'.','')" />
@@ -1453,7 +1450,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1470,7 +1467,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1481,7 +1478,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Los ejemplos de los afijos verbales negativos juntados a un verbo en </xsl:text>
+<xsl:text>Algunos ejemplos de los afijos verbales negativos unidos a un verbo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1490,7 +1487,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -1498,7 +1495,7 @@
 <table border="1">
 				<tr>
 					<th>Verbos negativos marcados</th>
-					<th>Significado</th>
+					<th>Glosa</th>
 				</tr>
 				<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negVerbExample),'.','')" />
@@ -1526,7 +1523,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1543,7 +1540,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1555,7 +1552,7 @@
 			<p>
 <xsl:text>Véase a sección </xsl:text>
 <sectionRef sec="sNegVerbal" />
-<xsl:text> para ejemplos de estos elementos negativos usados en oraciones y más discusión de las construcciones de la negación en </xsl:text>
+<xsl:text> para considerar otros ejemplos de los elementos negativos usados en las oraciones y el análisis de las construcciones de la negación en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1567,12 +1564,12 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>La palabra no acabada </xsl:text>
+<xsl:text>La palabra que indica el infinitivo en inglés, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>to</langData>
-<xsl:text> utilizó en cláusulas subordinadas inglesas también actúa como un auxiliar en que llena la misma posición y puede ocurrir antes de otros auxiliares. Por ejemplo, </xsl:text>
+<xsl:text>, utilizada en cláusulas subordinadas, también actúa como un auxiliar en que llena la misma posición y puede presentarse antes de los otros auxiliares. Por ejemplo, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1581,9 +1578,10 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'El muchacho quisiera haber golpeado el beísbol'</xsl:text>
 </gloss>
-<xsl:text>.  En cambio, el español no tiene un marcador separado para las cláusulas subordinadas no acabadas, sino utiliza simplemente la forma infinitiva del verbo. </xsl:text>
+<xsl:text>.  Por el contrario, el español no tiene un indicador separado para las cláusulas subordinadas infinitivas, sino utiliza simplemente la forma infinitiva del verbo. </xsl:text>
 </p>
 			<p>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1594,17 +1592,17 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@auxNonfinite='no'"> no tiene cualesquiera</xsl:when>
-					<xsl:when test="//ip/@auxNonfinite='yes'"> tiene algunos</xsl:when>
+					<xsl:when test="//ip/@auxNonfinite='no'"> no hay ningún</xsl:when>
+					<xsl:when test="//ip/@auxNonfinite='yes'"> hay un (o más) </xsl:when>
 				</xsl:choose>
-<xsl:text> marcadores no acabados similares a auxiliares que se escriben como palabras separadas.  </xsl:text>
+<xsl:text> indicador de infinitivo similare a un auxiliar que se escribe como una palabra independiente.  </xsl:text>
 <xsl:if test="normalize-space(//ip/@auxNonfinite)='yes'">
-					<xsl:text>Una palabra auxiliar no acabada es </xsl:text>
+					<xsl:text>Un indicador auxiliar infinitovo es </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//ip/@auxRequired='no'">opcional</xsl:when>
 						<xsl:when test="//ip/@auxRequired='no'">requerido</xsl:when>
 					</xsl:choose>
-					<xsl:text> en cláusulas no acabadas en </xsl:text>
+					<xsl:text> en cláusulas infinitivas subordinadas en </xsl:text>
 					<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1615,19 +1613,19 @@
 </xsl:choose>
 					<xsl:text>. </xsl:text>
 					<xsl:if test="normalize-space(//typology/@wordOrder)='VSO'">
-						<xsl:text> Después de un auxiliar no acabado, la orden normal del VSO </xsl:text>
+						<xsl:text> Después de un indicador infinitivo, la orden normal del VSO </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//ip/@auxNonfiniteOrder='yes'">se mantiene. La orden es Aux V S O.</xsl:when>
-							<xsl:when test="//ip/@auxNonfiniteOrder='no'">puede cambiar así que el tema aparece directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</xsl:when>
+							<xsl:when test="//ip/@auxNonfiniteOrder='no'">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</xsl:when>
 						</xsl:choose>
 						<xsl:text></xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
 					<xsl:if test="normalize-space(//typology/@wordOrder)='OSV'">
-						<xsl:text> Antes de un auxiliar no acabado, la orden normal del OSV </xsl:text>
+						<xsl:text> Antes de un indicador infinitivo, la orden normal del OSV </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//ip/@auxOrder='yes'">se mantiene. La orden es O S V Aux.</xsl:when>
-							<xsl:when test="//ip/@auxOrder='no'">puede cambiar así que el tema aparece directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</xsl:when>
+							<xsl:when test="//ip/@auxOrder='no'">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</xsl:when>
 						</xsl:choose>
 						<xsl:text></xsl:text>
 					</xsl:if>
@@ -1636,7 +1634,7 @@
 </p>
 			<xsl:if test="normalize-space(//ip/@auxNonfinite)='yes'">
 <p>
-<xsl:text>Los ejemplos de auxiliares no acabados en </xsl:text>
+<xsl:text>El/Los indicador(es) del infinitivo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1645,15 +1643,15 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> son:</xsl:text>
+<xsl:text> es/son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@auxNonfinite)='yes'">
 <example num="xV.IPAux.40">
 <table border="1">
 					<tr>
-						<th>Palabras auxiliares no acabadas</th>
-						<th>Significado</th>
+						<th>Indicador(es) del infinitivo</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryNonfiniteExample),'.','')" />
@@ -1681,7 +1679,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>infinitivo en cláusulas subordinadas</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1698,7 +1696,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>infinitivo en cláusulas subordinadas</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1709,7 +1707,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@auxNonfinite)='yes'">
 <p>
-<xsl:text>Los ejemplos de cláusulas no acabadas incluyendo estos auxiliares no acabados son:</xsl:text>
+<xsl:text>Algunos ejemplos con cláusulas subordinadas infinitivas incluyendo esto(s) indicador(es) del infinitivo son:</xsl:text>
 </p>
 </xsl:if>
 
@@ -1755,17 +1753,10 @@
 </xsl:if>
 
 			<p>
-<xsl:text>Algunas idiomas tienen otras palabras que actúen como auxiliares, tales como auxiliares del movimiento o marcadores del préstamo, que se escriben </xsl:text>
-<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//typology/@wordOrder)='SVO'">
-					<xsl:text>antes</xsl:text>
-				</xsl:if>
-<xsl:text></xsl:text>
-<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//typology/@wordOrder)='SOV'">
-					<xsl:text>después</xsl:text>
-				</xsl:if>
-<xsl:text> del verbo y comparten el mismo tema y los complementos. </xsl:text>
+<xsl:text>En algunos idiomas hay otras palabras que actúen como auxiliares, tales como auxiliares del movimiento o indicadores del préstamo, que comparten el mimso sujeto y los complementos que el verbo principal.</xsl:text>
 </p>
 			<p>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1776,16 +1767,16 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@auxOther='no'"> no tiene cualesquiera </xsl:when>
-					<xsl:when test="//ip/@auxOther='yes'"> tiene algunos</xsl:when>
+					<xsl:when test="//ip/@auxOther='no'"> no hay </xsl:when>
+					<xsl:when test="//ip/@auxOther='yes'"> hay algunos</xsl:when>
 				</xsl:choose>
-<xsl:text> auxiliares de este tipo que se escriben como palabras separadas.  </xsl:text>
+<xsl:text> auxiliares de este tipo que se escriben como palabras independientes.  </xsl:text>
 <xsl:if test="normalize-space(//ip/@auxOther)='yes'">
 					<xsl:if test="normalize-space(//typology/@wordOrder)='VSO'">
 						<xsl:text> Después de uno de estos auxiliares, la orden normal del VSO </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//ip/@auxOtherOrder='yes'">se mantiene. La orden es Aux V S O.</xsl:when>
-							<xsl:when test="//ip/@auxOtherOrder='no'">puede cambiar así que el tema aparece directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</xsl:when>
+							<xsl:when test="//ip/@auxOtherOrder='no'">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</xsl:when>
 						</xsl:choose>
 						<xsl:text></xsl:text>
 					</xsl:if>
@@ -1794,7 +1785,7 @@
 						<xsl:text> Antes de uno de estos auxiliares, la orden normal del OSV </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//ip/@auxOrder='yes'">se mantiene. La orden es  O S V Aux.</xsl:when>
-							<xsl:when test="//ip/@auxOrder='no'">puede cambiar así que el tema aparece directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</xsl:when>
+							<xsl:when test="//ip/@auxOrder='no'">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</xsl:when>
 						</xsl:choose>
 						<xsl:text></xsl:text>
 					</xsl:if>
@@ -1803,7 +1794,7 @@
 </p>
 			<xsl:if test="normalize-space(//ip/@auxOther)='yes'">
 <p>
-<xsl:text>Los ejemplos de estos otros auxiliares en </xsl:text>
+<xsl:text>Estos otros auxiliares en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1820,7 +1811,7 @@
 <table border="1">
 					<tr>
 						<th>Otras palabras del auxiliar</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/auxiliaryOtherExample),'.','')" />
@@ -1848,7 +1839,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1865,7 +1856,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1876,7 +1867,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@auxOther)='yes'">
 <p>
-<xsl:text>Los ejemplos de oraciones incluyendo estos otros auxiliares son:</xsl:text>
+<xsl:text>Algunos ejemplos de oraciones incluyendo estos otros auxiliares son:</xsl:text>
 </p>
 </xsl:if>
 

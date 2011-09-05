@@ -199,7 +199,7 @@
 				<langName/>
 				<content> are shown in the following chart.</content>
 			</p>
-			<example>
+			<example num="xWh">
 				<table border="1">
 					<caption>
 						<content>Interrogatives used in content questions</content>
@@ -267,7 +267,7 @@
 				</table>
 			</example>
 			<p>
-				<content>Of the examples of interrogative words above, most simply stand alone as pronouns or adverbs, but </content>
+				<content>Of the examples of interrogative words in table </content><exampleRef num="xWh"/><content>, most simply stand alone as pronouns or adverbs, but </content>
 				<langData>how</langData>
 				<content> can either be a manner adverb by itself or a degree word modifying an adjective, as in </content>
 				<langData>how big</langData>

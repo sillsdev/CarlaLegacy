@@ -4,19 +4,20 @@
 	<appendix id="aAppdx">
 		<secTitle>Apéndice para lingüistas</secTitle>
 		<p>
-			<content>Este apéndice presenta una explicacón técnica lingüística de las consonantes y las vocales de </content>
+			<content>Este apéndice presenta una explicacón técnica lingüística de las consonantes y las vocales del </content>
 			<langName/>
 			<content>.</content>
 		</p>
 		<section1 id="sConsonants">
 			<secTitle>Las consonantes</secTitle>
 			<p>
-				<content>El </content>
+				<content>Las consonantes que se presentan en </content>
 				<langName/>
-				<content> tiene las consonantes como se ve en el cuadro </content>
+				<content> se muestran en el cuadro </content>
 				<exampleRef num="xConsonants"/>
-				<content>.  El cuadro presenta la identificación de estos sonidos en el alfabeto fonético, con los símbolos del alfabeto práctico entre paréntesis, si hay diferencias.</content>
+				<content>.  También se presenta la identificación de estos sonidos en el alfabeto fonético, con los símbolos del alfabeto práctico entre paréntesis, si hay diferencias.</content>
 			</p>
+			<p><comment>Observe que el cuadro contiene muchos símbolos más del alfabeto fonético que los que su idioma tiene. Usted necesita suprimir cualquiera de los símbolos y posiblemente también columnas o filas que no usan en su idioma. Además, es necesario incorporear el símbolo de la ortografía práctica entre paréntesis después del símbolo fonético dondequiera que sean diferentes. </comment></p>
 			<example num="xConsonants">
 				<table>
 					<headerRow>
@@ -36,7 +37,7 @@
 						<headerCol>dental</headerCol>
 						<headerCol>Alveolar</headerCol>
 						<headerCol>palatal</headerCol>
-						<headerCol>flex</headerCol>
+						<headerCol>flejo</headerCol>
 						<headerCol>Palatal</headerCol>
 						<headerCol>Velar</headerCol>
 						<headerCol>Glotal</headerCol>
@@ -344,27 +345,28 @@
 		<section1 id="sVowels">
 			<secTitle>Las vocales</secTitle>
 			<p>
-				<content>El </content>
+				<content>Las vocales que se presentan en </content>
 				<langName/>
-				<content> tiene las vocales como se ve en el cuadro </content>
+				<content> se muestran en el cuadro </content>
 				<exampleRef num="xVowels"/>
-				<content>.  El cuadro presenta la identificación de estos sonidos en el alfabeto fonético, con los símbolos del alfabeto práctico entre paréntesis, si hay diferencias.</content>
+				<content>.  También se presenta la identificación de estos sonidos en el alfabeto fonético, con los símbolos del alfabeto práctico entre paréntesis, si hay diferencias.</content>
 			</p>
+			<p><comment>Observe que el cuadro contiene muchos símbolos más del alfabeto fonético que los que su idioma tiene. Usted necesita suprimir cualquiera de los símbolos y posiblemente también columnas o filas que no usan en su idioma. Además, es necesario incorporear el símbolo de la ortografía práctica entre paréntesis después del símbolo fonético dondequiera que sean diferentes. </comment></p>
 			<example num="xVowels">
 				<table>
 					<headerRow>
 						<headerCol> </headerCol>
-						<headerCol>Delantera</headerCol>
+						<headerCol>Anterior</headerCol>
 						<headerCol>Central</headerCol>
-						<headerCol>Detrás</headerCol>
-						<headerCol>Detrás</headerCol>
+						<headerCol>Posterior</headerCol>
+						<headerCol>Posterior</headerCol>
 					</headerRow>
 					<headerRow>
 						<headerCol> </headerCol>
-						<headerCol>no rondeada</headerCol>
-						<headerCol>no rondeada</headerCol>
-						<headerCol>no rondeada</headerCol>
-						<headerCol>rondeada</headerCol>
+						<headerCol>no redondeada</headerCol>
+						<headerCol>no redondeada</headerCol>
+						<headerCol>no redondeada</headerCol>
+						<headerCol>redondeada</headerCol>
 					</headerRow>
 					<row>
 						<headerCol>Alta</headerCol>

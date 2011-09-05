@@ -6,36 +6,36 @@
 		<p>
 			<content>Ésta es una descripción del sintaxis de </content>
 			<langName/>
-			<content> basado en las respuestas dadas al kit del arrancador de PAWS. Esta gramática descriptiva se escribe como gramática práctica que deba ser útil para la comunidad del idioma así como para la documentación de mucha del idioma.</content>
+			<content> basada en las respuestas dadas al programa de PAWS. Esta gramática descriptiva está escrita como una gramática práctica que puede ser útil para la comunidad del idioma así como para la documentar la mayor parte del idioma.</content>
 		</p>
 		<p>
-			<comment>Una vez que se termina el kit del arrancador, este archivo puede servir como bosquejo para preparar una gramática más completa.</comment>
+			<comment>Una vez que se termina de ingresar los datos al programa de PAWS, este archivo puede servir como borrador para preparar una gramática más completa.</comment>
 		</p>
 		<p>
-			<comment>Hasta que usted haya terminado cada página del kit del arrancador, algo de la información dada puede ser inexacta porque se basa solamente en las respuestas del "default". Las respuestas del "default" referentes a la posición de elementos se demuestran aquí como ____ hasta que usted haya terminado la página apropiada en el programa.</comment>
+			<comment>Parte de la información dada puede ser inexacta hasta que usted haya terminado de ingresar los datos de cada página del programa de PAWS, porque se basa en los datos predeterminados que se refieren a la posición de elementos, los cuales se muestran como ____ hasta que usted haya terminado la página correspondiente en el programa de PAWS.</comment>
 		</p>
 		<p>
-			<comment>¡NO MODIFIQUE ESTE ARCHIVO HASTA QUE SE TERMINE PAWS, porque su trabajo será sobreescrito por el programa de PAWS!</comment>
+			<comment>¡NO MODIFIQUE ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS  DATOS EN EL PROGRAMA DE PAWS, porque si no su trabajo será sobrescrito por el programa! Después de terminar de  contestar  todas las preguntas de PAWS, le sugerimos que guarde este archivo con otro nombre antes de corregir su gramática.</comment>
 		</p>
 		<p>
-			<content>El idioma del </content>
+			<content>El idioma </content>
 			<langName/>
 			<content> se habla en </content>
-			<comment>(pone las localidades aquí)</comment>
+			<comment>(ponga las localidades aquí)</comment>
 			<content>. Hay aproximadamente </content>
-			<comment>(pone el número aquí)</comment>
+			<comment>(ponga el número aquí)</comment>
 			<content> hablantes. El </content>
 			<langName/>
-			<content> es un miembro del </content>
+			<content> es miembro de la familia de idiomas </content>
 			<comment>(pone el nombre de familia del idioma aquí)</comment>
-			<content> familia del idiomas.</content>
+			<content>.</content>
 		</p>
 		<section2 id="sOrtho">
 			<secTitle>La ortografía</secTitle>
 			<p>
 				<content>Las grafías que se usan para escribir el </content>
 				<langName/>
-				<content> abarcan no solamente las letras que se usan en las palabras nativas, sino también otras que se usan en las palabras tomadas del español. En </content>
+				<content> abarcan no solamente las letras que se usan en las palabras nativas, sino también otras que se usan en las palabras tomadas del español. En el cuadro </content>
 				<exampleRef num="xAlphabet"/>
 				<content> se presentan estas grafías en orden alfabético:</content>
 			</p>
@@ -44,295 +44,283 @@
 					<headerRow>
 						<headerCol>Grafía</headerCol>
 						<headerCol>Ejemplo</headerCol>
-						<headerCol>Significado</headerCol>
+						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular"/>
-						</col>
-						<col>
-							<langData lang="lVernacular"/>
-						</col>
-						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
-					</row>
-					<row>
+					</row>                    <row>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular"/>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss/>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+						</col>
+					</row>                    <row>
+						<col>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+						</col>
+						<col>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+						</col>
+					</row>                    <row>
+						<col>
+							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+						</col>
+						<col>
+							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
 						</col>
 					</row>
 				</table>
 			</example>
 			<p>
-				<content>Véase el apéndice </content>
+				<content>Véanse  los cuadros de las consonantes y las vocales que comparan la ortografía práctica con el alfabeto fonético en el apéndice </content>
 				<appendixRef app="aAppdx"/>
-				<content> para cuadros de las consonantes y las vocales que comparan la ortografía práctica con el alfabeto fonético.</content>
+				<content> .</content>
 			</p>
+			<p><comment>Agregue las especificaciones para cualquier signo diacrítico u otros símbolos usados.</comment></p>
 		</section2>
 		<section2 id="sExamples">
-			<secTitle>Convenciones usadas en los ejemplos</secTitle>
+			<secTitle>Estructura usada en los ejemplos</secTitle>
 			<p>
-				<content>Esta gramática contiene muchas frases y oraciones ilustrativas. La mayor parte de éstos se presentan en líneas interlineales del formato que consisten en tres o cuatro líneas, como se muestra en </content>
+				<content>Esta gramática contiene muchas frases y oraciones ilustrativas. La mayor parte de ellas se presentan con un formato interlinealizado que consiste en tres o cuatro líneas, como se muestra en </content>
 				<exampleRef num="xEx"/>
 				<content>:</content>
 			</p>
@@ -354,21 +342,21 @@
 					</row>
 					<row>
 						<col>
-							<content>[significado literal de palabras]</content>
+							<content>[glosa literal de palabras]</content>
 						</col>
 						<col>
-							<content>significado</content>
+							<content>glosa</content>
 						</col>
 						<col>
-							<content>significado</content>
+							<content>glosa</content>
 						</col>
 						<col>
-							<content>significado</content>
+							<content>glosa</content>
 						</col>
 					</row>
 					<row>
 						<col>
-							<content>[significado por morfemas]</content>
+							<content>[glosa por morfemas]</content>
 						</col>
 						<col>
 							<content>PRE-raíz-SUF</content>
@@ -391,46 +379,46 @@
 				</table>
 			</example>
 			<p>
-				<content>Las palabras del </content>
+				<content>Las palabras en </content>
 				<langName/>
-				<content> se dan en la primera línea. La segunda línea presenta una traducción literal en español, palabra por palabra, dando la palabra de español que está el más cercano de significar a la palabra del </content>
+				<content> aprecen en la primera línea. En la segunda línea se presenta una traducción literal en español, palabra por palabra, dando la palabra de español que está el más cercano al significado de la palabra en </content>
 				<langName/>
-				<content>. Si más de una palabra española es necesaria expresar el significado de la palabra del </content>
+				<content>. Si es necesario usar más de una palabra en español para expresar el significado de la palabra en </content>
 				<langName/>
-				<content>, estas palabras españolas serán separadas por puntos. Siempre que uno o más de las palabras del </content>
+				<content>, estas palabras del español serán separadas por un punto. Siempre que una o más de las palabras en </content>
 				<langName/>
-				<content> tengan más de una porción (morfema), la tercera línea demuestra los significados para las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por guiones. Esta tercera línea puede ser la más útil a los lingüistas. La línea final da la traducción libre por el ejemplo entero.</content>
+				<content> tengan más de una parte con significado (morfema), entonces la tercera línea indicará la glosa para cada una de las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por un guión. Esta tercera línea puede ser la más útil para los lingüistas. En la línea final se proporciona la traducción libre del ejemplo completo</content>
 			</p>
 			<p>
-				<comment>Diga más aquí sobre cualquier diferencia entre su lengua y español. Por ejemplo, si su lengua no distingue entre el número y/o el género en sustantivos, como español hace, usted elige utilizar solamente las formas singulares y/o masculinas para los significados.</comment>
+				<comment>Mencione aquí cualquier diferencia que haya entre su idioma y español. Por ejemplo, si su idioma no distingue entre el número y/o el género en los sustantivos, como lo hace el español, usted debe eligir el uso de solamente las formas singulares y/o masculinas para las glosas.</comment>
 			</p>
 			<p>
-				<content>Después de dar la información sobre la tipología sintáctica del idioma, la gramática comienza describiendo las partes del discurso y las frases que dirigen en las secciones </content>
+				<content>Después proveer la información sobre la tipología sintáctica del idioma, la gramática comienza describiendo las partes del discurso y las frases en las secciones </content>
 				<sectionRef sec="sN"/>
 				<content>-</content>
 				<sectionRef sec="sExcl"/>
-				<content>. Las oraciones de la cláusula básicas, principales entonces se cubren en la sección </content>
+				<content>. Las oraciones básicas se analizan en la sección </content>
 				<sectionRef sec="sIP"/>
-				<content>, seguido por las construcciones que implican cambios en el orden de las palabras (las secciones </content>
+				<content>, seguido por las construcciones que implican cambios en el orden de las palabras (véanse las secciones </content>
 				<sectionRef sec="sFocus"/>
 				<content>-</content>
 				<sectionRef sec="sNeg"/>
-				<content>). Las construcciones de la coordinación entonces se cubren en la sección </content>
+				<content>). Las construcciones coordinativas se analizan en la sección </content>
 				<sectionRef sec="sCoord"/>
-				<content>, seguido finalmente por los varios tipos de cláusulas encajadas (las secciones </content>
+				<content>, seguido finalmente por los varios tipos de cláusulas subordinadas (véanse las secciones </content>
 				<sectionRef sec="sComp"/>
 				<content>-</content>
 				<sectionRef sec="sRelCl"/>
-				<content>). Algunos textos son incluidos en el extremo demostrar cómo construcciones más grandes tales como párrafos, conversaciones, e historias narrativas se forman.</content>
+				<content>). Al final se incluyen algunos textos para mostrar cómo se forman las construcciones más grandes tales como párrafos, conversaciones e historias narrativas.</content>
 			</p>
 		</section2>
 	</section1>
 	<section1 id="sTypology">
 		<secTitle>La tipología del orden de las palabras</secTitle>
 		<p>
-			<content>El orden de las palabras básico de </content>
+			<content>El orden básico de palabras en </content>
 			<langName/>
-			<content> en oraciones transitivas es </content>
+			<content> para las oraciones transitivas es </content>
 			<case attr="wordOrder" element="typology">
 				<caseText value="SVO">Sujeto-Verbo-Objeto</caseText>
 				<caseText value="SOV">Sujeto-Objeto-Verbo</caseText>
@@ -445,61 +433,61 @@
 			<interlinear exampleLoc="typology/example"/>
 		</example>
 		<p show="swHeadInitialAndPrep">
-			<content>En armonía con la tipología cabeza-inicial, el </content>
+			<content>De acuerdo con la tipología núcleo inicial, </content>
 			<langName/>
-			<content> tiene preposiciones (la sección </content>
+			<content> tiene preposiciones (véase la sección </content>
 			<sectionRef sec="sPP"/>
 			<content>).</content>
 		</p>
 		<p show="swHeadInitialAndPost">
-			<content>Al contrario de la tipología cabeza-inicial, el </content>
+			<content>Al contrario de la tipología núcleo inicial, </content>
 			<langName/>
-			<content> tiene posposiciones (la sección </content>
+			<content> tiene posposiciones (véase la sección </content>
 			<sectionRef sec="sPP"/>
 			<content>).</content>
 		</p>
 		<p show="swPrePost">
 			<content>El </content>
 			<langName/>
-			<content> tiene ambos preposiciones y posposiciones (la sección </content>
+			<content> tiene ambas preposiciones y posposiciones (véase la sección </content>
 			<sectionRef sec="sPP"/>
 			<content>).</content>
 		</p>
 		<p show="swHeadFinalAndPost">
-			<content>En armonía con la tipología cabeza-final, el </content>
+			<content>De acuerdo con la tipología núcleo final, </content>
 			<langName/>
-			<content> tiene posposiciones (la sección </content>
+			<content> tiene posposiciones (véase la sección </content>
 			<sectionRef sec="sPP"/>
 			<content>).</content>
 		</p>
 		<p show="swHeadFinalAndPre">
-			<content>Al contrario de la tipología cabeza-final, el </content>
+			<content>Al contrario de la tipología núcleo final, </content>
 			<langName/>
-			<content> tiene preposiciones (la sección </content>
+			<content> tiene preposiciones (véase la sección </content>
 			<sectionRef sec="sPP"/>
 			<content>).</content>
 		</p>
 		<p>
-			<content>Los poseedores ocurren </content>
+			<content>Los poseedores se presentan </content>
 			<case attr="possNounPos" element="np">
 				<caseText value="before">delante</caseText>
 				<caseText value="after">después</caseText>
 				<caseText value="either">de cualquier lado</caseText>
 				<caseText value="unknown">_______</caseText>
 			</case>
-			<content> del sustantivo que es poseído (la sección </content>
+			<content> del sustantivo que es poseído (véase la sección </content>
 			<sectionRef sec="sNPPoss"/>
-			<content>). Las frases del adjetivo ocurren </content>
+			<content>). Las frases adjetivales se encuentran </content>
 			<case attr="adjpPos" element="np">
 				<caseText value="before">delante</caseText>
 				<caseText value="after">después</caseText>
-				<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+				<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 				<caseText value="beforeOrBoth">delante de o en ambos lados</caseText>
 				<caseText value="afterOrBoth">después de o en ambos lados</caseText>
 				<caseText value="both">en ambos lados</caseText>
 				<caseText value="unknown">_______</caseText>
 			</case>
-			<content> del sustantivo que se están modificando (la sección </content>
+			<content> del sustantivo al que se están modificando (véase la sección </content>
 			<sectionRef sec="sNPAdjP"/>
 			<content>).</content>
 			<text show="swRelClExistNo">
@@ -508,86 +496,86 @@
 				<content> no tiene ningún tipo de cláusula relativa.</content>
 			</text>
 			<text show="swRelClExistYes">
-				<content>Las cláusulas relativas ocurren </content>
+				<content>Las cláusulas relativas aparecen </content>
 				<case attr="clausePos" element="relcl">
 					<caseText value="before">delante</caseText>
 					<caseText value="after">después</caseText>
 					<caseText value="either">de cualquier lado</caseText>
 					<caseText value="unknown">_______</caseText>
 				</case>
-				<content> del sustantivo principal (la sección </content>
+				<content> del sustantivo principal (véase la sección </content>
 				<sectionRef sec="sRelCl"/>
 				<content>).</content>
 			</text>
 		</p>
 		<p>
-			<content>En el </content>
+			<content>En </content>
 			<langName/>
 			<content>, </content>
 			<case attr="proDrop" element="ip">
-				<caseText value="noImp">un tema que falta no se permite. El tema debe ser expresado a menos que en los imperativos</caseText>
-				<caseText value="no">un tema que falta no se permite. El tema debe ser expresado aun cuando en los imperativos</caseText>
-				<caseText value="yes">un tema que falta se permite en cualquier tipo de oración</caseText>
-				<caseText value="yesClitic">el tema puede mirar como él es falta debido a los pronombres dependientes (clitics pronominal) que juntan al verbo, pero no es una lengua verdadera que permite un tema que falta</caseText>
+				<caseText value="noImp">no se permite la ausencia del sujeto. Éste siempre debe ser expresado, excepto cuando haya imperativos</caseText>
+				<caseText value="no">no se permite la ausencia del sujeto. Éste siempre debe ser expresado aun cuando haya imperativos</caseText>
+				<caseText value="yes">se permite la ausencia del sujeto en cualquier tipo de oración</caseText>
+				<caseText value="yesClitic">se puede ver la ausencia del sujeto  debido a los pronombres dependientes (clíticos pronominales) que se ligan al verbo, pero no es un idioma que en realidad permita la ausencia del sujeto</caseText>
 			</case>
-			<content> (la sección </content>
+			<content> (véase la sección </content>
 			<sectionRef sec="sIPProDrop"/>
 			<content>). </content>
 			<text show="swIPProDropYes">
-				<content> Un objeto que falta </content>
+				<content></content>
 				<case attr="proDropObject" element="ip">
-					<caseText value="no">no</caseText>
-					<caseText value="yes">también</caseText>
+					<caseText value="no">No</caseText>
+					<caseText value="yes">También</caseText>
 				</case>
-				<content> se permite.</content>
+				<content> se permite la ausencia del objeto.</content>
 			</text>
 		</p>
 		<p show="swAuxNone">
 			<content>El </content>
 			<langName/>
-			<content> no tiene ninguna auxiliares que se escriban como palabras separadas (la sección </content>
+			<content> no tiene ningún auxiliar que se escriba como palabra separada (véase la sección </content>
 			<sectionRef sec="sIPAux"/>
 			<content>).</content>
 		</p>
 		<p show="swAuxNotNone">
 			<content>El </content>
 			<langName/>
-			<content> tiene algunos auxiliares que se escriban como palabras separadas. Éstos ocurren </content>
+			<content> tiene algunos auxiliares que se escriben como palabras separadas. Éstos se presentan </content>
 			<case attr="wordOrder" element="typology">
-				<caseText value="SVO">delante</caseText>
+				<caseText value="SVO">antes</caseText>
 				<caseText value="SOV">después</caseText>
-				<caseText value="VSO">delante</caseText>
-				<caseText value="VOS">delante</caseText>
+				<caseText value="VSO">antes</caseText>
+				<caseText value="VOS">antes</caseText>
 				<caseText value="OVS">después</caseText>
 				<caseText value="OSV">después</caseText>
 			</case>
-			<content> del verbo principal (la sección </content>
+			<content> del verbo principal (véase la sección </content>
 			<sectionRef sec="sIPAux"/>
 			<content>).</content>
 		</p>
 		<p>
 			<text show="swQMainYNWordYes">
-				<content>En preguntas sí/no, hay un marcador o un complementizer de la pregunta que ocurren </content>
+				<content>En preguntas con respuestas sí/no, hay un indicador o un complementador de la pregunta que aparece </content>
 				<case attr="mainYNPos" element="q">
-					<caseText value="before">delante</caseText>
+					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
-					<caseText value="beforeOrBoth">delante de o en ambos lados</caseText>
+					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+					<caseText value="beforeOrBoth">antes de o en ambos lados</caseText>
 					<caseText value="afterOrBoth">después de o en ambos lados</caseText>
 					<caseText value="both">en ambos lados</caseText>
 				</case>
-				<content> del resto de la pregunta (la sección </content>
+				<content> del resto de la pregunta (véase la sección </content>
 				<sectionRef sec="sQuesYN"/>
 				<content>).</content>
 			</text>
-			<content>  En preguntas contentas, una frase del interrogativo </content>
+			<content>  En preguntas abiertas, una frase interrogativa </content>
 			<case attr="contFront" element="q">
-				<caseText value="no">no se mueve al frente de la cláusula; permanece simplemente en el lugar</caseText>
-				<caseText value="after">puede permanecer en el lugar o puede moverse a la posición inmediatamente antes que el verbo</caseText>
-				<caseText value="before">se mueve al frente de la cláusula</caseText>
+				<caseText value="no">no se introduce al inicio de la cláusula; simplemente permanece en su lugar</caseText>
+				<caseText value="after">puede permanecer en su lugar o puede desplazarse a la posición inmediatamente antes que el verbo</caseText>
+				<caseText value="before">se desplaza al inicio de la cláusula</caseText>
 				<caseText value="unknown">_______</caseText>
 			</case>
-			<content> (la sección </content>
+			<content> (véase la sección </content>
 			<sectionRef sec="sQuesContent"/>
 			<content>).</content>
 		</p>

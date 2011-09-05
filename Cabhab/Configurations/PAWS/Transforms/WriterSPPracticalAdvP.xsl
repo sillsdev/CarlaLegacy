@@ -21,11 +21,11 @@
 			</li>
 		</ul>
 		<p>
-<xsl:text>Estos tipos tienen diversas características en cuanto a qué posiciones pueden ocupar y cómo pueden ser modificados. Cada tipo será cubierto en turno.
+<xsl:text>Estos tipos tienen diversas características en cuanto a qué posiciones pueden presentarse y cómo pueden ser modificados. Cada tipo será mirado en su orden correspondiente.
 </xsl:text>
 </p>
 		<p>
-<xsl:text>Los idiomas tienen normalmente palabras del grado que puedan modificar por lo menos algunos tipos de adverbios.  </xsl:text>
+<xsl:text>Los idiomas tienen normalmente palabras de grado que puedan modificar por lo menos algunos tipos de adverbios.  En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -36,16 +36,16 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-				<xsl:when test="//advp/@degree='no'"> no tiene cualquiera palabra del grado, sin embargo.</xsl:when>
-				<xsl:when test="//advp/@degree='yes'"> tiene tales palabras del grado.</xsl:when>
+				<xsl:when test="//advp/@degree='no'">, sin embargo, no hay ningún palabra de grado que modifica adverbios.</xsl:when>
+				<xsl:when test="//advp/@degree='yes'"> hay tales palabras de grado.</xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//advp/@degree)='yes'">
-				<xsl:text> Estas palabras del grado ocurren </xsl:text>
+				<xsl:text> Estas palabras de grado se presentan </xsl:text>
 				<xsl:choose>
 					<xsl:when test="//advp/@degreePos='before'">antes</xsl:when>
 					<xsl:when test="//advp/@degreePos='after'">después</xsl:when>
-					<xsl:when test="//advp/@degreePos='either'">de cualquier lado (pero no ambos lados)</xsl:when>
+					<xsl:when test="//advp/@degreePos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
 					<xsl:when test="//advp/@degreePos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
 					<xsl:when test="//advp/@degreePos='beforeOrBoth'">antes o en ambos lados</xsl:when>
 					<xsl:when test="//advp/@degreePos='afterOrBoth'">después o en ambos lados</xsl:when>
@@ -54,9 +54,9 @@
 				</xsl:choose>
 				<xsl:text> del adverbio.  </xsl:text>
 				<xsl:choose>
-					<xsl:when test="//advp/@degreeSet='unrestricted'">Las palabras del grado pueden modificar cualquier tipo de adverbio.</xsl:when>
-					<xsl:when test="//advp/@degreeSet='exceptReason'">Las palabras del grado pueden modificar temporals, locatives, y adverbios de la manera, pero los adverbios de la razón o del propósito no se modifican.</xsl:when>
-					<xsl:when test="//advp/@degreeSet='restricted'">Hay grupos distintos de las palabras del grado que pueden modificar cada tipo de adverbio.</xsl:when>
+					<xsl:when test="//advp/@degreeSet='unrestricted'">Las palabras de grado pueden modificar cualquier tipo de adverbio.</xsl:when>
+					<xsl:when test="//advp/@degreeSet='exceptReason'">Las palabras de grado pueden modificar adverbios temporales, locativos, y adverbios de modo, pero los adverbios de la razón o del propósito no se modifican.</xsl:when>
+					<xsl:when test="//advp/@degreeSet='restricted'">Hay grupos distintos de las palabras de grado que pueden modificar cada tipo de adverbio.</xsl:when>
 				</xsl:choose>
 				<xsl:text></xsl:text>
 			</xsl:if>
@@ -65,7 +65,7 @@
 		<section2 id="sAdvPTemporal">
 			<secTitle>Los adverbios temporales</secTitle>
 			<p>
-<xsl:text>Los adverbios temporales incluyen las palabras españolas: </xsl:text>
+<xsl:text>Los adverbios temporales incluyen las palabras en español: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -95,7 +95,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>siempre</langData>
-<xsl:text>.  Los ejemplos incluyendo modificantes de la palabra del grado son: </xsl:text>
+<xsl:text>.  Algunos ejemplos incluyendo modificadores con las palabras de grado son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -118,7 +118,7 @@
 <xsl:text> en español.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los ejemplos de de los adverbios temporales positivos y de cualquier palabra del grado que puedan modificarlos en </xsl:text>
+<xsl:text>Algunos ejemplos de los adverbios temporales positivos y de cualquier palabra de grado que puedan modificarlos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -127,7 +127,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:
+<xsl:text> son:
 </xsl:text>
 </p>
 			<example num="xAdvP.AdvPTemporal.8">
@@ -184,7 +184,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'nunca'</xsl:text>
 </gloss>
-<xsl:text> es expresado por uno o más afijos verbales, algo que por palabras separadas.   Los ejemplos de los afijos juntados a los verbos incluyen:</xsl:text>
+<xsl:text> es expresado por uno o más afijos verbales, en vez de palabras independientes.   Algunos ejemplos de los afijos unidos a los verbos son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
@@ -238,7 +238,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, hay solamente un afijo negativo verbal, pero puede ocurrir con adverbios temporales positivos para dar un significado temporal negativo. Los ejemplos de adverbios temporales con un verbo negativo incluyen:</xsl:text>
+<xsl:text>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios temporales positivos para dar un significado temporal negativo. Algunos ejemplos de adverbios temporales con un verbo negativo son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//advp/@negTemporalType)='word'">
@@ -257,7 +257,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'nunca'</xsl:text>
 </gloss>
-<xsl:text> es expresado por una o más palabras separadas.  Los ejemplos incluyen:</xsl:text>
+<xsl:text> es expresado por una o más palabras independientes.  Algunos ejemplos son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//advp/@negTemporalType)='word' or normalize-space(//advp/@negTemporalType)='verb'">
@@ -306,7 +306,7 @@
 <xsl:text> para los ejemplos de las expresiones temporales negativas en oraciones completos.</xsl:text>
 </p>
 			<p>
-<xsl:text>El elemento del tiempo de una oración se puede también expresar por otros tipos de palabras o de frases, por ejemplo: frases nominales </xsl:text>
+<xsl:text>El elemento del tiempo de una oración también se puede expresar por otros tipos de palabras o de frases, por ejemplo: frases nominales </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -358,11 +358,11 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>cuando llegó Susana</langData>
-<xsl:text>.  Estas frases ocurren en las mismas posiciones que los adverbios temporales, normalmente inicialmente o finalmente en la cláusula. Véase la sección </xsl:text>
+<xsl:text>.  Estas frases se presentan en las mismas posiciones que los adverbios temporales, normalmente inicialmente o finalmente en la cláusula. Véase la sección </xsl:text>
 <sectionRef sec="sNP" />
-<xsl:text> para la estructura de frases nominales y la sección </xsl:text>
+<xsl:text> para la estructura de las frases nominales y la sección </xsl:text>
 <sectionRef sec="sPP" />
-<xsl:text> para la información sobre frases </xsl:text>
+<xsl:text> para el análisis de las frases </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
@@ -375,9 +375,9 @@
 </p>
 		</section2>
 		<section2 id="sAdvPLocative">
-			<secTitle>Los adverbios del lugar</secTitle>
+			<secTitle>Los adverbios locativos</secTitle>
 			<p>
-<xsl:text>Los adverbios del lugar incluyen las palabras españolas: </xsl:text>
+<xsl:text>Los adverbios locativos incluyen las palabras en español: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -392,7 +392,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>allá</langData>
-<xsl:text>.  Los adverbios del lugar se pueden modificar por </xsl:text>
+<xsl:text>.  Los adverbios locativos se pueden modificar por </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -417,7 +417,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>allí mero</langData>
-<xsl:text>.  Muchos idiomas también tienen un adverbio del lugar negativo que significado </xsl:text>
+<xsl:text>.  Muchos idiomas también tienen un adverbio locativo negativo que significa </xsl:text>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'en ninguna parte'</xsl:text>
@@ -425,7 +425,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los ejemplos de los adverbios positivos del lugar y de cualquiera palabras del grado que puedan modificarlos en</xsl:text>
+<xsl:text>Algunos ejemplos de los adverbios positivos locativos y de cualquiera palabras de grado que puedan modificarlos en</xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -434,7 +434,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:
+<xsl:text> son:
 </xsl:text>
 </p>
 			<example num="xAdvP.AdvPLocative.8">
@@ -486,12 +486,12 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, la idea negativa del lugar de </xsl:text>
+<xsl:text>, la idea negativa locativa de </xsl:text>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'de ninguna parte'</xsl:text>
 </gloss>
-<xsl:text> es expresado por uno o más afijos verbales, algo que por palabras separadas. Los ejemplos de los afijos atados a los verbos incluyen:</xsl:text>
+<xsl:text> es expresado por uno o más afijos verbales, en vez de palabras independientes. Algunos ejemplos de los afijos unidos a los verbos son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
@@ -545,7 +545,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, hay solamente un afijo negativo verbal, pero puede ocurrir con adverbios positivos del lugar para dar un significado negativo del lugar. Los ejemplos de los adverbios del lugar con un verbo negativo incluyen:</xsl:text>
+<xsl:text>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos locativos para dar un significado negativo locativo. Algunos ejemplos de los adverbios locativos con un verbo negativo son:</xsl:text>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//advp/@negLocativeType)='word'">
@@ -559,12 +559,12 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, la idea negativa del lugar de </xsl:text>
+<xsl:text>, la idea negativa locativa de </xsl:text>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'de ninguna parte'</xsl:text>
 </gloss>
-<xsl:text> es expresado por una o más palabras separadas. Los ejemplos incluyen:</xsl:text>
+<xsl:text> es expresado por una o más palabras independientes. Los ejemplos son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//advp/@negLocativeType)='word' or normalize-space(//advp/@negLocativeType)='verb'">
@@ -610,7 +610,7 @@
 			<p>
 <xsl:text>Véase la sección </xsl:text>
 <sectionRef sec="sNegAdverb" />
-<xsl:text> para los ejemplos de las expresiones negativas del lugar en las oraciones completas.</xsl:text>
+<xsl:text> para los ejemplos de las expresiones negativas locativas en las oraciones completas.</xsl:text>
 </p>
 			<p>
 <xsl:text>El lugar a menudo también es expresada por una frase preposicional, por ejemplo: </xsl:text>
@@ -635,14 +635,14 @@
 </p>
 		</section2>
 		<section2 id="sAdvPManner">
-			<secTitle>Los adverbios de la manera</secTitle>
+			<secTitle>Los adverbios de modo</secTitle>
 			<p>
-<xsl:text>Los adverbios de la manera modifican directamente el verbo y terminan generalmente con </xsl:text>
+<xsl:text>Los adverbios de modo directamente modifican el verbo y generalmente terminan con </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>-mente</langData>
-<xsl:text> en español. Estos adverbios de la manera se pueden modificar por </xsl:text>
+<xsl:text> en español. Estos adverbios de modo se pueden modificar por </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -671,7 +671,7 @@ y </xsl:text>
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los ejemplos de los adverbios de la manera en </xsl:text>
+<xsl:text>Algunos ejemplos de los adverbios de modo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -680,7 +680,7 @@ y </xsl:text>
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> y de cualquier palabra del grado que puedan modificarlos incluyen:
+<xsl:text> y de cualquier palabra de grado que puedan modificarlos son:
 </xsl:text>
 </p>
 			<example num="xAdvP.AdvPManner.8">
@@ -723,7 +723,7 @@ y </xsl:text>
 </example>
 			<xsl:if test="normalize-space(//advp/@mannerType)='affix'">
 <p>
-<xsl:text>Los adverbios de la manera  </xsl:text>
+<xsl:text>Los adverbios de modo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -732,7 +732,7 @@ y </xsl:text>
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> son todos escritos como afijos en el verbo, algo que siendo palabras separadas.</xsl:text>
+<xsl:text> son todos escritos como afijos en el verbo, en vez de como palabras independientes.</xsl:text>
 </p>
 </xsl:if>
 		</section2>
@@ -749,7 +749,7 @@ y </xsl:text>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>pues</langData>
-<xsl:text>.  Los adverbios de la razón o del propósito no permiten modificadores en español.  La razón o el propósito se puede también expresar por una cláusula adverbial empezando con </xsl:text>
+<xsl:text>.  Los adverbios de la razón o del propósito no permiten modificadores en español.  La razón o el propósito también se puede expresar por una cláusula adverbial empezando con </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -764,10 +764,10 @@ y </xsl:text>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>en orden que</langData>
-<xsl:text>.  Estas frases o cláusulas adverbiales ocurren o inicialmente o finalmente en la oración.</xsl:text>
+<xsl:text>.  Estas frases o cláusulas adverbiales se presentan o inicialmente o finalmente en la oración.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los ejemplos de los adverbios de la razón o del propósito o de las cláusulas adverbiales en </xsl:text>
+<xsl:text>Algunos ejemplos de los adverbios ( o de las cláusulas adverbiales) de la razón o del propósito en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -818,9 +818,9 @@ y </xsl:text>
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>La estructura de las cláusulas adverbiales será tratada en la sección </xsl:text>
+<xsl:text>La estructura de las cláusulas adverbiales será analizada en la sección </xsl:text>
 <sectionRef sec="sAdvClReason" />
-<xsl:text>.  La razón o el propósito se puede también expresar por una frase preposicional, por ejemplo </xsl:text>
+<xsl:text>.  La razón o el propósito también se puede expresar por una frase preposicional, por ejemplo </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

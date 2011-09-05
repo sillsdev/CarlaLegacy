@@ -4,7 +4,7 @@
 	<section1 id="sProp">
 		<secTitle>Los nombres propios</secTitle>
 		<p>
-<xsl:text>Los nombres propios son una clase especial de sustantivo o la frase que actúan sintácticamente apenas como otros sustantivos o frases del nominal. En español, algunos nombres propios pueden colocarse solos, como </xsl:text>
+<xsl:text>Los nombres propios son una clase especial de sustantivos o frases que sintácticamente actúan igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -14,11 +14,11 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Oaxaca</langData>
-<xsl:text>.  Otros son como sustantivos compuestos, tales como </xsl:text>
+<xsl:text>.  Otros actúan como sustantivos compuestos, tales como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>Jorge Estrella</langData>
+</xsl:attribute>George Washington</langData>
 <xsl:text>.  Los nombres propios pueden también contener los artículos y/o frases </xsl:text>
 <xsl:choose>
 				<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
@@ -31,12 +31,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>los Estados Unidos de América</langData>
-<xsl:text>.  Muchos idiomas requieren un artículo antes de un nombre. Appositives también ocurre, posiblemente incluyendo un poseedor, como en </xsl:text>
+<xsl:text>.  Muchos idiomas requieren un artículo antes de un nombre. También se presentan los apositivos.  En algunos casos aparecen con un poseedor, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>mi hijo, David</langData>
-<xsl:text>.  Además, los nombres propios se pueden modificar por adjetivos y cláusulas relativas, como en </xsl:text>
+<xsl:text>.  Además, los nombres propios se pueden modificar con los adjetivos y cláusulas relativas, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -49,7 +49,7 @@
 <xsl:text>.</xsl:text>
 </p>
 		<p>
-<xsl:text>Los ejemplos con nombres propios simples y compuestos, o ésos incluyendo los artículos, los demonstratives, los adjetivos, y/o los poseedores en </xsl:text>
+<xsl:text>Algunos ejemplos de nombres propios simples y compuestos, o los que se presentan con artículos, demonstratives, adjetivos y/o los poseedores en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -58,7 +58,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son los siguientes:</xsl:text>
 </p>
 		<example num="xProp.8">
 <xsl:variable name="sExampleValue">
@@ -99,7 +99,7 @@
 </xsl:choose>
 </example>
 		<p>
-<xsl:text>Los ejemplos de nombres propios con frases </xsl:text>
+<xsl:text>Algunos ejemplos de nombres propios con frases </xsl:text>
 <xsl:choose>
 				<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
 				<xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
@@ -115,7 +115,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son los siguientes:</xsl:text>
 </p>
 		<example num="xProp.12">
 <xsl:variable name="sExampleValue">
@@ -156,7 +156,7 @@
 </xsl:choose>
 </example>
 		<p>
-<xsl:text>Los ejemplos de los nombres propios modificados por las cláusulas relativas incluidas en oraciones completas en </xsl:text>
+<xsl:text>Algunos ejemplos de los nombres propios modificados con las cláusulas relativas en oraciones completas en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -165,7 +165,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son los siguientes:</xsl:text>
 </p>
 		<example num="xProp.16">
 <xsl:variable name="sExampleValue">

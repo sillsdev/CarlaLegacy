@@ -4,10 +4,10 @@
 	<section1 id="sIP">
 		<secTitle>Las oraciones básicas</secTitle>
 		<p>
-<xsl:text>Esta sección cubre oraciones intransitivas, copulativas, transitivas, ditransitivas y pasivas en su orden de las palabras básico (es decir no cambiado por el foco, el asunto, el interrogativo, o las construcciones de la negación).
+<xsl:text>Esta sección se considera las oraciones intransitivas, copulativas, transitivas, ditransitivas y pasivas en su orden de las palabras básico (es decir no cambiado por el enfoque, el asunto, el interrogativo, o las construcciones de la negación).
 				Según lo observado en la sección </xsl:text>
 <sectionRef sec="sIntro" />
-<xsl:text>,  a tipología de </xsl:text>
+<xsl:text>,  la tipología de </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -18,40 +18,40 @@
 </xsl:choose>
 <xsl:text> es </xsl:text>
 <xsl:choose>
-				<xsl:when test="//typology/@wordOrder='SVO'">SVO, así que el orden de las palabras básico es el tema, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualesquiera complementos que la siguen.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='SOV'">SOV, así que el orden de las palabras básico es el tema, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='VSO'">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, entonces el tema, entonces cualquier complemento.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='VOS'">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, entonces cualesquiera elementos auxiliares, entonces el tema.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='OVS'">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares, entonces el tema.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='OSV'">OSV, así que el orden de las palabras básico es cualquier complemento verbal primero, entonces el tema, entonces el verbo en la posición final.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='SVO'">SVO, así que el orden de las palabras básico es el sujeto, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualesquiera complementos que la siguen.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='SOV'">SOV, así que el orden de las palabras básico es el sujeto, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='VSO'">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, entonces el sujeto, entonces cualquier complemento de verbo.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='VOS'">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, entonces cualesquiera elementos auxiliares, entonces el sujeto.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='OVS'">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares, entonces el sujeto.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='OSV'">OSV, así que el orden de las palabras básico es cualquier complemento de verbo primero, entonces el sujeto, entonces el verbo en la posición final.</xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//typology/@wordOrder)='OSV'">
-				<xsl:text>  Los cambios del orden de las palabras con cualquier auxiliar presente fueron discutidos en la sección </xsl:text>
+				<xsl:text>  Los cambios en el orden de las palabras cuando un auxiliar está presente fueron discutidos en la sección </xsl:text>
 				<sectionRef sec="sIPAux" />
 				<xsl:text>.</xsl:text>
 			</xsl:if>
 <xsl:text></xsl:text>
 </p>
 		<p>
-<xsl:text>Cada uno de los tipos de la oración se cubre en turno aquí. </xsl:text>
+<xsl:text>Cada uno de los tipos de la oración será mirado en su orden correspondiente aquí. </xsl:text>
 </p>
 		<section2 id="sIPMotion">
 			<secTitle>Los intransitivos y las construcciones del movimiento</secTitle>
 			<p>
-<xsl:text>Los intransitivos simples no tienen ningunos complementos después del verbo, como en </xsl:text>
+<xsl:text>Los intransitivos simples no tienen ningún complemento después del verbo, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>La muchacha flota</langData>
-<xsl:text>.  Los verbos del movimiento incluyen una localidad en la forma de una frase </xsl:text>
+<xsl:text>.  Los verbos del movimiento incluyen un lugar en la forma de una frase </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='both'">preposicional o posposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='unknown'">preposicional o posposicional</xsl:when>
 </xsl:choose>
-<xsl:text> o adverbio. Los ejemplos españoles de los verbos del movimiento incluyen </xsl:text>
+<xsl:text> o adverbio. Algunos ejemplos en español con los verbos del movimiento son </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -69,7 +69,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los ejemplos de oraciones intransitivas simples en </xsl:text>
+<xsl:text>Algunos ejemplos de oraciones intransitivas simples en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -78,7 +78,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 			<example num="xIP.IPMotion.8">
 <xsl:variable name="sExampleValue">
@@ -119,7 +119,7 @@
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>Los ejemplos con verbos del movimiento en </xsl:text>
+<xsl:text>Algunos ejemplos con verbos del movimiento en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -128,7 +128,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 			<example num="xIP.IPMotion.12">
 <xsl:variable name="sExampleValue">
@@ -179,7 +179,7 @@
 					<xsl:when test="//pp/@pPos='both'">preposicional o posposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='unknown'">preposicional o posposicional</xsl:when>
 </xsl:choose>
-<xsl:text>, o frase nominal después del verbo copulativo.  Algunas idiomas no requieren un verbo o un auxiliar copulativo estar presente. Los ejemplos españoles incluyen </xsl:text>
+<xsl:text>, o frase nominal como complemento del verbo copulativo.  Algunos idiomas no requieren un verbo o un auxiliar copulativo estar presente. Algunos ejemplos en español son </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -211,22 +211,22 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> oraciones copulativas, </xsl:text>
+<xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@copular='yes'">se requiere un verbo copulativo.</xsl:when>
-					<xsl:when test="//ip/@copular='yesOptional'">un verbo copulativo es opcional, y no se requiere a ningún auxiliar tampoco.</xsl:when>
-					<xsl:when test="//ip/@copular='yesAux'">un verbo copulativo es opcional, pero requiere un auxiliar si el verbo copulativo no está presente.</xsl:when>
-					<xsl:when test="//ip/@copular='noAux'">no hay verbo copulativo, pero requiere un auxiliar.</xsl:when>
-					<xsl:when test="//ip/@copular='noNeither'">ni utilizan un verbo copulativo ni un auxiliar.</xsl:when>
+					<xsl:when test="//ip/@copular='yes'"> se requiere un verbo copulativo en las oraciones copulativas. </xsl:when>
+					<xsl:when test="//ip/@copular='yesOptional'"> un verbo copulativo es opcional, y no se requiere a ningún auxiliar tampoco en las oraciones copulativas. </xsl:when>
+					<xsl:when test="//ip/@copular='yesAux'">un verbo copulativo es opcional, pero requiere un auxiliar si el verbo copulativo no está presente en las oraciones copulativas. </xsl:when>
+					<xsl:when test="//ip/@copular='noAux'">no hay verbo copulativo, pero requiere un auxiliar en las oraciones copulativas. </xsl:when>
+					<xsl:when test="//ip/@copular='noNeither'">ni utilizan un verbo copulativo ni un auxiliar en las oraciones copulativas.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@copular)='noNeither' or normalize-space(//ip/@copular)='yesOptional'">
 					<xsl:text></xsl:text>
 					<xsl:choose>
-						<xsl:when test="//ip/@copularAffix='no'">No hay ningún afijo copulativo en el nominal del predicado o adjetivo predicativo</xsl:when>
-						<xsl:when test="//ip/@copularAffix='yesPrefix'">Hay un prefijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</xsl:when>
-						<xsl:when test="//ip/@copularAffix='yesSuffix'">Hay un sufijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</xsl:when>
-						<xsl:when test="//ip/@copularAffix='yesEither'">Hay un prefijo o sufijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</xsl:when>
+						<xsl:when test="//ip/@copularAffix='no'">No hay ningún afijo copulativo en el predicativo nominal o predicativo adjetivo</xsl:when>
+						<xsl:when test="//ip/@copularAffix='yesPrefix'">Sin embargo, hay un prefijo copulativo en el predicativo nominal o predicativo adjetivo</xsl:when>
+						<xsl:when test="//ip/@copularAffix='yesSuffix'">Sin embargo, hay un sufijo copulativo en el predicativo nominal o predicativo adjetivo</xsl:when>
+						<xsl:when test="//ip/@copularAffix='yesEither'">Sin embargo, hay un prefijo o sufijo copulativo en el predicativo nominal o predicativo adjetivo</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 				</xsl:if>
@@ -236,11 +236,11 @@
 				</xsl:if>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@copular)='yesOptional'">
-					<xsl:text> que ocurre cuando no hay presente un verbo copulativo.</xsl:text>
+					<xsl:text> que se presenta cuando no hay presente un verbo copulativo.</xsl:text>
 				</xsl:if>
 </p>
 			<p>
-<xsl:text>Los ejemplos de oraciones copulativas en </xsl:text>
+<xsl:text>Algunos ejemplos de oraciones copulativas en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -249,7 +249,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 			<example num="xIP.IPCop.10">
 <xsl:variable name="sExampleValue">
@@ -291,9 +291,9 @@
 </example>
 		</section2>
 		<section2 id="sIPTrans">
-			<secTitle>Los transitivos and ditransitivos</secTitle>
+			<secTitle>Los transitivos y ditransitivos</secTitle>
 			<p>
-<xsl:text>Los ejemplos de las oraciones transitivas españolas incluyen </xsl:text>
+<xsl:text>Algunos ejemplos de las oraciones transitivas en español son </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -311,7 +311,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los ejemplos de oraciones transitivas en </xsl:text>
+<xsl:text>Algunos ejemplos de oraciones transitivas en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -320,7 +320,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 			<example num="xIP.IPTrans.8">
 <xsl:variable name="sExampleValue">
@@ -368,7 +368,7 @@
 					<xsl:when test="//pp/@pPos='both'">preposicional o posposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='unknown'">preposicional o posposicional</xsl:when>
 </xsl:choose>
-<xsl:text> o como frase nominal. Algunas idiomas, como español, permiten ambos tipos via el movimiento del dativo, como en </xsl:text>
+<xsl:text> o como frase nominal. Algunos idiomas, como español, permiten ambos tipos via el movimiento del dativo, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -400,7 +400,7 @@
 							<xsl:when test="//pp/@pPos='unknown'">preposicional o posposicional.</xsl:when>
 </xsl:choose>
 						</xsl:when>
-					<xsl:when test="//ip/@diCat='dp'">es simepre una frase nominal.  El </xsl:when>
+					<xsl:when test="//ip/@diCat='dp'">es siempre una frase nominal.  El </xsl:when>
 					<xsl:when test="//ip/@diCat='both'">puede ser una frase
 						<xsl:choose>
 							<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
@@ -415,11 +415,11 @@
 						<xsl:when test="//ip/@diOrder='direct'">objeto directo</xsl:when>
 						<xsl:when test="//ip/@diOrder='indirect'">objeto indirecto</xsl:when>
 					</xsl:choose>
-					<xsl:text> aparece lo más cerca al verbo.</xsl:text>
+					<xsl:text> se presenta lo más cerca al verbo.</xsl:text>
 				</xsl:if>
 </p>
 			<p>
-<xsl:text>  Los ejemplos de oraciones ditransitivas en </xsl:text>
+<xsl:text>  Algunos ejemplos de oraciones ditransitivas en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -428,7 +428,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 			<example num="xIP.IPTrans.16">
 <xsl:variable name="sExampleValue">
@@ -472,7 +472,7 @@
 		<section2 id="sIPPassive">
 			<secTitle>Los pasivos</secTitle>
 			<p>
-<xsl:text>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición sujeta. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </xsl:text>
+<xsl:text>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
@@ -489,7 +489,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>estar</langData>
-<xsl:text> en español).  Los ejemplos españoles con y sin una frase del agente incluyen: </xsl:text>
+<xsl:text> en español).  Algunos ejemplos en español con y sin una frase del agente son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -512,7 +512,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -523,8 +523,8 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@passive='no'"> no tiene ningunos pasivos.</xsl:when>
-					<xsl:when test="//ip/@passive='yes'"> tiene pasivos</xsl:when>
+					<xsl:when test="//ip/@passive='no'"> no hay pasivos.</xsl:when>
+					<xsl:when test="//ip/@passive='yes'"> hay pasivos</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@passive)='yes'">
@@ -539,10 +539,10 @@
 						<xsl:choose>
 							<xsl:when test="//ip/@passiveAgentCat='pp'">
 								<xsl:choose>
-									<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
-									<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
-									<xsl:when test="//pp/@pPos='both'">preposicional o posposicional</xsl:when>
-									<xsl:when test="//pp/@pPos='unknown'">preposicional o posposicional</xsl:when>
+									<xsl:when test="//pp/@pPos='before'">preposicional.</xsl:when>
+									<xsl:when test="//pp/@pPos='after'">posposicional.</xsl:when>
+									<xsl:when test="//pp/@pPos='both'">preposicional o posposicional.</xsl:when>
+									<xsl:when test="//pp/@pPos='unknown'">preposicional o posposicional.</xsl:when>
 </xsl:choose>
 </xsl:when>
 							<xsl:when test="//ip/@passiveAgentCat='dp'">nominal.</xsl:when>
@@ -560,7 +560,7 @@
 </p>
 			<xsl:if test="normalize-space(//ip/@passive)='yes'">
 <p>
-<xsl:text>Los ejemplos de oraciones pasivas en </xsl:text>
+<xsl:text>Algunos ejemplos de oraciones pasivas en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -569,7 +569,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@passive)='yes'">

@@ -4,43 +4,43 @@
 	<section1 id="sIP">
 		<secTitle>Las oraciones básicas</secTitle>
 		<p>
-			<content>Esta sección cubre oraciones intransitivas, copulativas, transitivas, ditransitivas y pasivas en su orden de las palabras básico (es decir no cambiado por el foco, el asunto, el interrogativo, o las construcciones de la negación).
+			<content>Esta sección se considera las oraciones intransitivas, copulativas, transitivas, ditransitivas y pasivas en su orden de las palabras básico (es decir no cambiado por el enfoque, el asunto, el interrogativo, o las construcciones de la negación).
 				Según lo observado en la sección </content>
 			<sectionRef sec="sIntro"/>
-			<content>,  a tipología de </content>
+			<content>,  la tipología de </content>
 			<langName/>
 			<content> es </content>
 			<case element="typology" attr="wordOrder">
-				<caseText value="SVO">SVO, así que el orden de las palabras básico es el tema, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualesquiera complementos que la siguen.</caseText>
-				<caseText value="SOV">SOV, así que el orden de las palabras básico es el tema, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares.</caseText>
-				<caseText value="VSO">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, entonces el tema, entonces cualquier complemento.</caseText>
-				<caseText value="VOS">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, entonces cualesquiera elementos auxiliares, entonces el tema.</caseText>
-				<caseText value="OVS">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares, entonces el tema.</caseText>
-				<caseText value="OSV">OSV, así que el orden de las palabras básico es cualquier complemento verbal primero, entonces el tema, entonces el verbo en la posición final.</caseText>
+				<caseText value="SVO">SVO, así que el orden de las palabras básico es el sujeto, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualesquiera complementos que la siguen.</caseText>
+				<caseText value="SOV">SOV, así que el orden de las palabras básico es el sujeto, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares.</caseText>
+				<caseText value="VSO">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, entonces el sujeto, entonces cualquier complemento de verbo.</caseText>
+				<caseText value="VOS">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, entonces cualesquiera elementos auxiliares, entonces el sujeto.</caseText>
+				<caseText value="OVS">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares, entonces el sujeto.</caseText>
+				<caseText value="OSV">OSV, así que el orden de las palabras básico es cualquier complemento de verbo primero, entonces el sujeto, entonces el verbo en la posición final.</caseText>
 			</case>
 			<content/>
 			<text show="swVSOorOSV">
-				<content>  Los cambios del orden de las palabras con cualquier auxiliar presente fueron discutidos en la sección </content>
+				<content>  Los cambios en el orden de las palabras cuando un auxiliar está presente fueron discutidos en la sección </content>
 				<sectionRef sec="sIPAux"/>
 				<content>.</content>
 			</text>
 			<content/>
 		</p>
 		<p>
-			<content>Cada uno de los tipos de la oración se cubre en turno aquí. </content>
+			<content>Cada uno de los tipos de la oración será mirado en su orden correspondiente aquí. </content>
 		</p>
 		<section2 id="sIPMotion">
 			<secTitle>Los intransitivos y las construcciones del movimiento</secTitle>
 			<p>
-				<content>Los intransitivos simples no tienen ningunos complementos después del verbo, como en </content>
+				<content>Los intransitivos simples no tienen ningún complemento después del verbo, como en </content>
 				<langData>La muchacha flota</langData>
-				<content>.  Los verbos del movimiento incluyen una localidad en la forma de una frase </content>
+				<content>.  Los verbos del movimiento incluyen un lugar en la forma de una frase </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicional</caseText>
 					<caseText value="after">posposicional</caseText>
 					<caseText value="both">preposicional o posposicional</caseText>
 					<caseText value="unknown">preposicional o posposicional</caseText></case>
-				<content> o adverbio. Los ejemplos españoles de los verbos del movimiento incluyen </content>
+				<content> o adverbio. Algunos ejemplos en español con los verbos del movimiento son </content>
 				<langData>La muchacha corrió alrededor de la pista</langData>
 				<content>, </content>
 				<langData>Mi madre fue a la tienda</langData>
@@ -49,17 +49,17 @@
 				<content>.</content>
 			</p>
 			<p>
-				<content>Los ejemplos de oraciones intransitivas simples en </content>
+				<content>Algunos ejemplos de oraciones intransitivas simples en </content>
 				<langName/>
-				<content> incluyen:</content>
+				<content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="ip/intransExample"/>
 			</example>
 			<p>
-				<content>Los ejemplos con verbos del movimiento en </content>
+				<content>Algunos ejemplos con verbos del movimiento en </content>
 				<langName/>
-				<content> incluyen: </content>
+				<content> son: </content>
 			</p>
 			<example>
 				<interlinear exampleLoc="ip/motionExample"/>
@@ -74,7 +74,7 @@
 					<caseText value="after">posposicional</caseText>
 					<caseText value="both">preposicional o posposicional</caseText>
 					<caseText value="unknown">preposicional o posposicional</caseText></case>
-				<content>, o frase nominal después del verbo copulativo.  Algunas idiomas no requieren un verbo o un auxiliar copulativo estar presente. Los ejemplos españoles incluyen </content>
+				<content>, o frase nominal como complemento del verbo copulativo.  Algunos idiomas no requieren un verbo o un auxiliar copulativo estar presente. Algunos ejemplos en español son </content>
 				<langData>La muchacha es bonita</langData>
 				<content>, </content>
 				<langData>Ella parece agradable</langData>
@@ -87,22 +87,22 @@
 			<p>
 				<content>En </content>
 				<langName/>
-				<content> oraciones copulativas, </content>
+				<content></content>
 				<case element="ip" attr="copular">
-					<caseText value="yes">se requiere un verbo copulativo.</caseText>
-					<caseText value="yesOptional">un verbo copulativo es opcional, y no se requiere a ningún auxiliar tampoco.</caseText>
-					<caseText value="yesAux">un verbo copulativo es opcional, pero requiere un auxiliar si el verbo copulativo no está presente.</caseText>
-					<caseText value="noAux">no hay verbo copulativo, pero requiere un auxiliar.</caseText>
-					<caseText value="noNeither">ni utilizan un verbo copulativo ni un auxiliar.</caseText>
+					<caseText value="yes"> se requiere un verbo copulativo en las oraciones copulativas. </caseText>
+					<caseText value="yesOptional"> un verbo copulativo es opcional, y no se requiere a ningún auxiliar tampoco en las oraciones copulativas. </caseText>
+					<caseText value="yesAux">un verbo copulativo es opcional, pero requiere un auxiliar si el verbo copulativo no está presente en las oraciones copulativas. </caseText>
+					<caseText value="noAux">no hay verbo copulativo, pero requiere un auxiliar en las oraciones copulativas. </caseText>
+					<caseText value="noNeither">ni utilizan un verbo copulativo ni un auxiliar en las oraciones copulativas.</caseText>
 				</case>
 				<content/>
 				<text show="swIPCopVerbNoNeitherOrOptional">
 					<content></content>
 					<case element="ip" attr="copularAffix">
-						<caseText value="no">No hay ningún afijo copulativo en el nominal del predicado o adjetivo predicativo</caseText>
-						<caseText value="yesPrefix">Hay un prefijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</caseText>
-						<caseText value="yesSuffix">Hay un sufijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</caseText>
-						<caseText value="yesEither">Hay un prefijo o sufijo copulativo en el nominal del predicado o el adjetivo predicativo, sin embargo,</caseText>
+						<caseText value="no">No hay ningún afijo copulativo en el predicativo nominal o predicativo adjetivo</caseText>
+						<caseText value="yesPrefix">Sin embargo, hay un prefijo copulativo en el predicativo nominal o predicativo adjetivo</caseText>
+						<caseText value="yesSuffix">Sin embargo, hay un sufijo copulativo en el predicativo nominal o predicativo adjetivo</caseText>
+						<caseText value="yesEither">Sin embargo, hay un prefijo o sufijo copulativo en el predicativo nominal o predicativo adjetivo</caseText>
 					</case>
 					<content/>
 				</text>
@@ -112,22 +112,22 @@
 				</text>
 				<content/>
 				<text show="swIPCopVerbYesOptional">
-					<content> que ocurre cuando no hay presente un verbo copulativo.</content>
+					<content> que se presenta cuando no hay presente un verbo copulativo.</content>
 				</text>
 			</p>
 			<p>
-				<content>Los ejemplos de oraciones copulativas en </content>
+				<content>Algunos ejemplos de oraciones copulativas en </content>
 				<langName/>
-				<content> incluyen:</content>
+				<content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="ip/copularExample"/>
 			</example>
 		</section2>
 		<section2 id="sIPTrans">
-			<secTitle>Los transitivos and ditransitivos</secTitle>
+			<secTitle>Los transitivos y ditransitivos</secTitle>
 			<p>
-				<content>Los ejemplos de las oraciones transitivas españolas incluyen </content>
+				<content>Algunos ejemplos de las oraciones transitivas en español son </content>
 				<langData>El bateador golpearán el béisbol</langData>
 				<content>, </content>
 				<langData>Mi bebé quiere ese juguete</langData>
@@ -136,9 +136,9 @@
 				<content>.</content>
 			</p>
 			<p>
-				<content>Los ejemplos de oraciones transitivas en </content>
+				<content>Algunos ejemplos de oraciones transitivas en </content>
 				<langName/>
-				<content> incluyen:</content>
+				<content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="ip/example"/>
@@ -150,7 +150,7 @@
 					<caseText value="after">posposicional</caseText>
 					<caseText value="both">preposicional o posposicional</caseText>
 					<caseText value="unknown">preposicional o posposicional</caseText></case>
-				<content> o como frase nominal. Algunas idiomas, como español, permiten ambos tipos via el movimiento del dativo, como en </content>
+				<content> o como frase nominal. Algunos idiomas, como español, permiten ambos tipos via el movimiento del dativo, como en </content>
 				<langData>La muchacha dio el regalo a su madre</langData>
 				<content> y </content>
 				<langData>La muchacha dio a su madre el regalo</langData>
@@ -168,7 +168,7 @@
 							<caseText value="both">preposicional o posposicional.</caseText>
 							<caseText value="unknown">preposicional o posposicional.</caseText></case>
 						</caseText>
-					<caseText value="dp">es simepre una frase nominal.  El </caseText>
+					<caseText value="dp">es siempre una frase nominal.  El </caseText>
 					<caseText value="both">puede ser una frase
 						<case element="pp" attr="pPos">
 							<caseText value="before">preposicional</caseText>
@@ -182,12 +182,12 @@
 						<caseText value="direct">objeto directo</caseText>
 						<caseText value="indirect">objeto indirecto</caseText>
 					</case>
-					<content> aparece lo más cerca al verbo.</content>
+					<content> se presenta lo más cerca al verbo.</content>
 				</text>
 			</p>
-			<p>	<content>  Los ejemplos de oraciones ditransitivas en </content>
+			<p>	<content>  Algunos ejemplos de oraciones ditransitivas en </content>
 				<langName/>
-				<content> incluyen:</content>
+				<content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="ip/diExample"/>
@@ -196,7 +196,7 @@
 		<section2 id="sIPPassive">
 			<secTitle>Los pasivos</secTitle>
 			<p>
-				<content>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición sujeta. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </content>
+				<content>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicional</caseText>
 					<caseText value="after">posposicional</caseText>
@@ -206,7 +206,7 @@
 				<langData>por</langData>
 				<content>) o de una frase nominal, dependiendo del idioma. Además, un auxiliar particular puede ser requerido en pasivos (una forma de </content>
 				<langData>estar</langData>
-				<content> en español).  Los ejemplos españoles con y sin una frase del agente incluyen: </content>
+				<content> en español).  Algunos ejemplos en español con y sin una frase del agente son: </content>
 				<langData>El vidrio estaba quebrado</langData>
 				<content>, </content>
 				<langData>El vidrio estaba quebrado por el niño</langData>
@@ -217,12 +217,12 @@
 				<content>.</content>
 			</p>
 			<p>
-				<content/>
+				<content>En </content>
 				<langName/>
 				<content/>
 				<case element="ip" attr="passive">
-					<caseText value="no"> no tiene ningunos pasivos.</caseText>
-					<caseText value="yes"> tiene pasivos</caseText>
+					<caseText value="no"> no hay pasivos.</caseText>
+					<caseText value="yes"> hay pasivos</caseText>
 				</case>
 				<content/>
 				<text show="swIPPassiveYes">
@@ -237,10 +237,10 @@
 						<case element="ip" attr="passiveAgentCat">
 							<caseText value="pp">
 								<case element="pp" attr="pPos">
-									<caseText value="before">preposicional</caseText>
-									<caseText value="after">posposicional</caseText>
-									<caseText value="both">preposicional o posposicional</caseText>
-									<caseText value="unknown">preposicional o posposicional</caseText></case></caseText>
+									<caseText value="before">preposicional.</caseText>
+									<caseText value="after">posposicional.</caseText>
+									<caseText value="both">preposicional o posposicional.</caseText>
+									<caseText value="unknown">preposicional o posposicional.</caseText></case></caseText>
 							<caseText value="dp">nominal.</caseText>
 						</case>
 						<content/>
@@ -255,9 +255,9 @@
 				<content/>
 			</p>
 			<p show="swIPPassiveYes">
-				<content>Los ejemplos de oraciones pasivas en </content>
+				<content>Algunos ejemplos de oraciones pasivas en </content>
 				<langName/>
-				<content> incluyen:</content>
+				<content> son:</content>
 			</p>
 			<example show="swIPPassiveYes">
 				<interlinear exampleLoc="ip/passiveExample"/>

@@ -4801,7 +4801,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -4924,7 +4925,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -4967,7 +4969,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/reflSentExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/reflSentExample" />
@@ -5072,7 +5074,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5130,7 +5133,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5173,7 +5177,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/recipSentExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/recipSentExample" />
@@ -5301,7 +5305,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5397,7 +5402,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5441,7 +5447,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/indefNPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/indefNPExample" />
@@ -5489,7 +5495,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/negIndefNPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/negIndefNPExample" />
@@ -5582,7 +5588,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/standAloneNPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/standAloneNPExample" />
@@ -5642,7 +5648,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/pronRelClExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/pronRelClExample" />
@@ -5717,7 +5723,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/partitiveExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/partitiveExample" />
@@ -5771,13 +5777,15 @@
 <xsl:if test="normalize-space(//pron/@pronounCat)='NP'">
 					<xsl:choose>
 						<xsl:when test="//qp/@npDegree='yes'"> degree words,</xsl:when>
-						<xsl:when test="//qp/@npDegree='no'"></xsl:when>
+						<xsl:when test="//qp/@npDegree='no'">
+</xsl:when>
 					</xsl:choose>
 					<xsl:choose>
 						<xsl:when test="//np/@artAndDem='demonstrative'"> demonstratives,</xsl:when>
 						<xsl:when test="//np/@artAndDem='article'"> articles,</xsl:when>
 						<xsl:when test="//np/@artAndDem='both'"> demonstratives, articles,</xsl:when>
-						<xsl:when test="//np/@artAndDem='no'"></xsl:when>
+						<xsl:when test="//np/@artAndDem='no'">
+</xsl:when>
 					</xsl:choose>
 					<xsl:text> relative clauses and PPs, but not by possessors or adjectives.</xsl:text>
 				</xsl:if>

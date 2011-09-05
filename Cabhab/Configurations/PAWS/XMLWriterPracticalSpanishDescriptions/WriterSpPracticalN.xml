@@ -4,53 +4,53 @@
 	<section1 id="sN">
 		<secTitle>Los sustantivos</secTitle>
 		<p><content>Los sustantivos son las palabras que describen principalmente personas, animales, lugares o cosas. Pueden también ser utilizados para expresar ideas, pensamientos o emociones.</content></p>
-		<p><content>Las secciones siguientes cubren el acuerdo, el caso y la posesión del sustantivo de </content><langName/><content>.  Los tipos de compuestos del sustantivo permitidos en </content><langName/><content> se dan en la sección </content><sectionRef sec="sNPCompounds"/><content>.  Todos los elementos que puede modificar sustantivos en frases nominales completas se cubren en la sección  </content><sectionRef sec="sNP"/><content>.</content></p>
+		<p><content>En las siguientes secciones se considera la concordancia, el caso y la posesión del sustantivo en </content><langName/><content>.  Los tipos de sustantivos compuestos permitidos en </content><langName/><content> aparecen en la sección </content><sectionRef sec="sNPCompounds"/><content>.  Todos los elementos que pueden modificar sustantivos en frases nominales completas se contemplan en la sección  </content><sectionRef sec="sNP"/><content>.</content></p>
 		<section2 id="sNPAgr">
-			<secTitle>El acuerdo</secTitle>
+			<secTitle>Concordancia</secTitle>
 			<p>
-				<content>Muchos idiomas requieren el acuerdo entre por lo menos algunos de los modificantes y el sustantivo principal. El español tiene el acuerdo de número y también acuerdo de género. Otros idiomas pueden tener acuerdo en animado o clase. </content>
+				<content>Muchos idiomas requieren la concordancia entre por lo menos algunos de los modificadores y el sustantivo principal. El español tiene la concordancia de número y también concordancia de género. Otros idiomas pueden tener concordancia en animado o clase. </content>
 			</p>
 			<p>
 				<content>En </content>
 				<langName/>
 				<content>, </content>
 				<case element="np" attr="agreeNumber">
-					<caseText value="no"> no hay acuerdo de número. En lugar, la marca del número viene del número o del cuantificador.</caseText>
-					<caseText value="yes">los varios modificantes nominales acuerden en número con el sustantivo principal.</caseText>
+					<caseText value="no"> no hay concordancia de número. En lugar del indicador del número aparece el número o el cuantificador.</caseText>
+					<caseText value="yes">los diversos modificadores nominales coinciden en número con el sustantivo principal.</caseText>
 				</case>
 				<content>  Además, </content>
 				<case element="np" attr="agreeOther">
-					<caseText value="no">no hay acuerdo en animado, número de clase, ni género entre los modificantes y el sustantivo principal.</caseText>
-					<caseText value="yesAnimacy">los modificantes y el sustantivo principal acuerden en animado.</caseText>
-					<caseText value="yesClass">los modificantes y el sustantivo principal acuerden en número de clase.</caseText>
-					<caseText value="yesGender">los modificantes y el sustantivo principal acuerden en género.</caseText>
+					<caseText value="no">no hay concordancia en animado, número de clase, ni género entre los modificadores y el sustantivo principal.</caseText>
+					<caseText value="yesAnimacy">los modificadores y el sustantivo principal coccuerden en animado.</caseText>
+					<caseText value="yesClass">los modificadores y el sustantivo principal concuerden en número de clase.</caseText>
+					<caseText value="yesGender">los modificadores y el sustantivo principal concuerden en género.</caseText>
 				</case>
 				<content/>
 			</p>
 			<p show="swNPAgreeYesNumber">
-				<content>Los ejemplos que demuestran el acuerdo de número en </content><langName/><content> frases nominales incluyen:</content>
+				<content>Algunos ejemplos que muestran la concordancia de número en las frases nominales en</content><langName/><content> son:</content>
 			</p>
 <example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
 			<p show="swNPAgreeYesAnimacy">
-				<content>Los ejemplos que demuestran el acuerdo del animado en </content><langName/><content> frases nominales incluyen:</content>
+				<content>Algunos ejemplos que muestran la concordancia del animado en las frases nominales en </content><langName/><content> son:</content>
 			</p>
 			<example show="swNPAgreeYesAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
 			<p show="swNPAgreeYesClass">
-				<content>Los ejemplos que demuestran el acuerdo de la clase en </content><langName/><content> frases nominales incluyen:</content>
+				<content>Algunos ejemplos que muestran la concordancia de clase en las frases nominales en </content><langName/><content> son:</content>
 			</p>
 			<example show="swNPAgreeYesClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
 			<p show="swNPAgreeYesGender">
-				<content>Los ejemplos que demuestran el acuerdo de género en </content><langName/><content> frases nominales incluyen:</content>
+				<content>Algunos ejemplos que muestran la concordancia de género en las frases nominales en </content><langName/><content> son:</content>
 			</p>
 			<example show="swNPAgreeYesGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
 		</section2>
 		<section2 id="sNPCase">
-			<secTitle>El caso</secTitle>
+			<secTitle>Caso</secTitle>
 			<p>
-				<content>Los sustantivos y sus modificantes se pueden también marcar para el caso. El sistema de caso más común es nominativo-acusativo.
-					Éste es el español del sistema tiene, aunque solamente marcan los pronombres y a los poseedores para el caso en español.
-					En un sistema del nominativo-acusativo, los temas de verbos intransitivos y transitivos están en caso nominativo, mientras que los objetos directos son caso de acusativo.
-					Los poseedores son caso de genitivo. Los pronombres nominativos en español son: </content>
+				<content>En los sustantivos y sus modificadores también se pueden marcar para el caso. El sistema de caso más común es el nominativo-acusativo.
+					Éste es el sistema que español tiene, aunque solamente se marca el caso en los pronombres y los poseedores.
+					En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo.
+					Los poseedores son casos del genitivo. Los pronombres del nominativo en español son: </content>
 				<langData>yo, nosotros, usted, ustedes, él, ella, ellos, ellas</langData>
 				<content>.  Los pronombres del acusativo son: </content>
 				<langData>me, nos, te, le, les</langData>
@@ -64,77 +64,77 @@
 			</p>
 			<p>
 				<content>
-					En un sistema de caso ergativo-absolutivo, los temas de verbos transitivos se marcan con el caso ergativo, mientras que los objetos de verbos transitivos y los temas de verbos intransitivos se marcan con el caso absolutivo.
+					En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se marcan con el caso del ergativo, mientras que los objetos de verbos transitivos y los temas de verbos intransitivos se marcan con el caso del absolutivo.
 					El caso de poseedores no se fija en todos los idiomas de este tipo.  Algunos idiomas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de marcadores verbales del acuerdo, pero ninguna marca en sustantivos.
-					Este tipo de marca del acuerdo será cubrido en la sección </content>
+					Este tipo de marca en la concordancia será considerado en la sección </content>
 				<sectionRef sec="sIPAgr"/>
 				<content>.</content>
 			</p>
 			<p>
 				<content>
-					Algunos idiomas son aún más complejas en que tienen normalmente un sistema del nominativo-acusativo pero bajo algunas condiciones el sistema de caso cambia a ergativo-absolutivo. Esto se llama "ergativito-partido".</content>
+					Algunos idiomas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo algunas condiciones el sistema de caso cambia a ergativo-absolutivo. Esto se llama "ergatividad escindida".</content>
 			</p>
 			<p>
-				<content/>
+				<content>En </content>
 				<langName/>
 				<content/>
 				<case element="np" attr="case">
-					<caseText value="none"> no tiene ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición en la oración y no hay marca en sustantivos o en ningunos modificantes del sustantivo basados en su posición en la oración.</caseText>
-					<caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los temas de verbos intransitivos y transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de verbos transitivos se marcan diferentemente.</caseText>
-					<caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los temas de verbos intransitivos y los objetos de verbos transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los temas de verbos transitivos se marcan diferentemente.</caseText>
-					<caseText value="split"> tiene un sistema de caso de ergativo-partido. El idioma sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones.</caseText>
+					<caseText value="none"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición en la oración y no hay un indicador en los sustantivos o en alguno de los modificadores del sustantivo basados en su posición en la oración.</caseText>
+					<caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se marcan de una manera diferente.</caseText>
+					<caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se marcan de una manera diferente.</caseText>
+					<caseText value="split"> tiene un sistema de caso de ergatividad escindida. El idioma sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones.</caseText>
 				</case>
 				<content/>
 				<text show="swNPCaseDefaultNom">
-					<content>  El caso nominativo es el caso del "default" (no marcado).</content>
+					<content>  El caso nominativo es un caso predeternimado (no marcado).</content>
 				</text>
 				<content/>
 			</p>
 			<p>
-				<content>Los sistemas del pronombre serán dados en la sección </content>
+				<content>Los sistemas del pronombre se proporcionan en la sección </content>
 				<sectionRef sec="sPronPersonal"/>
 				<content>.</content>
 			</p>
 		</section2>
 		<section2 id="sNPoss">
-			<secTitle>Los poseedores</secTitle>
+			<secTitle>Poseedores</secTitle>
 			<p>
-				<content>La posesión se puede expresar normalmente por un pronombre posesivo (ser tratado en la sección </content>
+				<content>La posesión se puede expresar normalmente por un pronombre posesivo (será tratado en la sección </content>
 				<sectionRef sec="sPronPoss"/>
-				<content>), por un sustantivo simple, o por una frase nominal completa (véase la sección </content><sectionRef sec="sNPPoss"/><content>).  El caso y las características del acuerdo en los sustantivos poseídos o los sustantivos que actúan como poseedores se cubre aquí. </content>
+				<content>), por un sustantivo simple, o por una frase nominal completa (véase la sección </content><sectionRef sec="sNPPoss"/><content>).  El caso y las características de la concordancia en los sustantivos poseídos o los sustantivos que actúan como poseedores se especifican aquí. </content>
 			</p>
 			<section3 id="sNPPossCase">
 				<secTitle>Caso del poseedor</secTitle>
-				<p show="swNPCaseNo"><content>Según lo discutido en la sección </content><sectionRef sec="sNPCase"/><content>, </content><langName/><content> no tiene ningún sistema de caso. Por lo tanto, no hay marca separada del caso en sustantivos ni un sistema distinto de pronombres usados para los poseedores.</content></p>
+				<p show="swNPCaseNo"><content>Conforma a lo0 argumentado en la sección </content><sectionRef sec="sNPCase"/><content>, en </content><langName/><content> no existe ningún sistema de caso. Por lo tanto, no hay un indicador independiente que marque el caso en sustantivos ni un sistema distinto de pronombres usados para los poseedores.</content></p>
 				<p show="swNPCaseNom">
-					<content>Con el sistema de caso nominativo-acusativo del normal siguió por </content>
+					<content>Con el sistema nromal de caso nominativo-acusativo que tiene el </content>
 					<langName/>
-					<content>, los poseedores se marca con el caso de genitivo.</content>
+					<content>, los poseedores se indican con el caso genitivo.</content>
 				</p>
 				<p show="swNPCaseSplit">
-					<content>Marcan a los poseedores en </content>
+					<content>Los poseedores en </content>
 					<langName/>
-					<content> con el caso de genitivo, siguiendo la pieza normal del nominativo-acusativo del sistema de caso de ergativo-partido.  En las piezas que exhiben ergativo-partido, marcan a los poseedores con el </content>
+					<content> se indican con el caso genitivo, siguiendo estructura común de la parte nominativo-acusativo en el sistema de caso ergatividad escindida.  En las partes que adoptan el ergativo-absolutivo, indican a los poseedores con el </content>
 					<case element="np" attr="possCaseErg">
-						<caseText value="ergative">caso ergativo, la misma marca que los temas de verbos transitivos.</caseText>
-						<caseText value="absolutive">caso absolutivo, la misma marca que los temas de verbos intransitivos y los objetos de verbos transitivos.</caseText>
-						<caseText value="genitive">caso de genitivo también.</caseText>
+						<caseText value="ergative">caso ergativo, el mismo indicador que los sujetos de los verbos transitivos.</caseText>
+						<caseText value="absolutive">caso absolutivo, el mismo indicador que los sujetos de los verbos intransitivos y los objetos de los verbos transitivos.</caseText>
+						<caseText value="genitive">caso genitivo también.</caseText>
 					</case>
 					<content/>
 				</p>
 				<p show="swNPCaseErg">
-					<content>Dentro del sistema de caso ergativo-absolutivo seguido por </content>
+					<content>Dentro del sistema de caso ergativo-absolutivo aceptado en </content>
 					<langName/>
-					<content>, marcan a los poseedores con el </content>
+					<content>, se indica a los poseedores con el </content>
 					<case element="np" attr="possCaseErg">
-						<caseText value="ergative">caso ergativo, la misma marca que los temas de verbos transitivos.</caseText>
-						<caseText value="absolutive">caso absolutivo, la misma marca que los temas de verbos intransitivos y los objetos de verbos transitivos.</caseText>
-						<caseText value="genitive">caso de genitivo, una marca distinta para los poseedores.</caseText>
+						<caseText value="ergative">caso ergativo, el mismo indicador que los sujetos de los verbos transitivos.</caseText>
+						<caseText value="absolutive">caso absolutivo, el mismo indicador que los sujetos de los verbos intransitivos y los objetos de los verbos transitivos.</caseText>
+						<caseText value="genitive">caso de genitivo, un indicador distinto para los poseedores.</caseText>
 					</case>
 					<content/>
 				</p>
 				<p show="swNPCaseYes">
-					<content>En algunos idiomas, en una oración nominal poseída el sustantivo principal y cualquier modificante empareja el caso del poseedor. En otros idiomas, marcan al poseedor con su propio caso, dice genitivo, mientras que el sustantivo principal se marca con el caso dependiendo de su posición concerniente al verbo: nominativo o acusativo, ergativo o absolutivo dependiendo del sistema de caso.</content>
+					<content>En algunos idiomas, en una oración nominal poseída, el sustantivo principal y cualquier modificador concuerda con el caso del poseedor. En otros idiomas, indican al poseedor con su propio caso, es decir el genitivo, mientras que el sustantivo principal se indica con el caso dependiendo de su posición relativa al verbo: nominativo o acusativo, ergativo o absolutivo dependiendo del sistema de caso.</content>
 				</p>
 				<p show="swNPCaseYes">
 					<content>En </content>
@@ -142,36 +142,36 @@
 					<content>, </content>
 					<case element="np" attr="possNounCaseChange">
 						<caseText value="no">la función gramatical del sustantivo principal relativo al verbo determina su caso, no la presencia de un poseedor.</caseText>
-						<caseText value="yes">el caso del sustantivo principal empareja el caso del poseedor, cuando un poseedor está presente.</caseText>
+						<caseText value="yes">el caso del sustantivo principal concuerda con el caso del poseedor, cuando un poseedor está presente.</caseText>
 					</case>
 					<content/>
 				</p>
 				<p show="swNPPossNounCaseChangeYes">
 					<content>Los idiomas como </content>
 					<langName/>
-					<content> que cambian el caso del sustantivo principal cuando un poseedor es actual normalmente también cambio el caso de los adjetivos de intervención a emparejar. Algunos idiomas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificante adjetival está presente, incluso cuando no hay poseedor.</content>
+					<content> que cambian el caso del sustantivo principal cuando hay un poseedor, también camban los casos de los adjetivos correspondientes para concordar. Algunos idiomas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificador adjetival está presente, incluso cuando no hay poseedor.</content>
 				</p>
 				<p  show="swNPPossNounCaseChangeYes">
 					<content>En </content>
 					<langName/>
 					<content>, el caso del sustantivo principal </content>
 					<case element="np" attr="adjpCaseChange">
-						<caseText value="no">solamente cambio cuando un poseedor está presente, aunque en esa situación que un adjetivo de intervención puede o debe también llevar este caso.</caseText>
-						<caseText value="yes">cambio para emparejar el caso normal de un poseedor incluso si apenas un modificante adjetival está presente.</caseText>
+						<caseText value="no">solamente cambia cuando un poseedor está presente, aunque en esa situación un adjetivo puede o debe corresponder a este caso.</caseText>
+						<caseText value="yes">cambia para concordar con el caso normal de un poseedor incluso si solamente un modificador adjetival estuviera presente.</caseText>
 					</case>
 					<content/>
 				</p>
 				<p show="swNPAdjPCaseChangeYes">
-					<content>Además, algunos idiomas de este último tipo tienen un afijo abierto que marque el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso de genitivo (o el caso normal de poseedores), aunque la marca del caso no será abierta en el primero modificante de la frase nominal.</content>
+					<content>Además, algunos idiomas de este último tipo tienen un afijo que indica el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso genitivo (o el caso normal de poseedores), aunque el indicador de caso no será evidente en el modificador principal de la frase nominal.</content>
 				</p>
 				<p show="swNPAdjPCaseChangeYes">
 					<content>En </content>
 					<langName/>
-					<content>, la marca del caso </content>
+					<content>, el indicador de caso </content>
 					<case element="np" attr="adjpCaseAffix">
-						<caseText value="no">no se dirige vía un afijo.</caseText>
-						<caseText value="yesPrefix">se dirige de esta manera distintiva.  </caseText>
-						<caseText value="yesSuffix">se dirige de esta manera distintiva.  </caseText>
+						<caseText value="no">no se marca con un afijo.</caseText>
+						<caseText value="yesPrefix">se marca de la siguiente manera.  </caseText>
+						<caseText value="yesSuffix">se marca de la siguiente manera.  </caseText>
 					</case>
 					<text show="swNPAdjPCaseAffixNotNo">
 						<content>Cuando el </content>
@@ -179,7 +179,7 @@
 							<content>genitivo </content>
 						</text>
 						<text show="swNPCaseSplitNotGen">
-							<content>o </content>
+							<content>o el </content>
 						</text>
 						<content/>
 						<text show="swNPPossCaseErg">
@@ -194,7 +194,7 @@
 							<caseText value="yesSuffix">sufijo</caseText>
 							<caseText value="yesPrefix">prefijo</caseText>
 						</case>
-						<content> está presente en el sustantivo principal, indica que un modificante adjetival y/o un poseedor deben estar presentes en la frase. Si el adjetivo se marca con este </content>
+						<content> está presente en el sustantivo principal, indica que un modificador adjetival y/o un poseedor deben estar presentes en la frase. Si el adjetivo está indicado con este </content>
 						<text show="swNPPossCaseGen">
 							<content>genitivo </content>
 						</text>
@@ -214,36 +214,36 @@
 							<caseText value="yesSuffix">sufijo,</caseText>
 							<caseText value="yesPrefix">prefijo,</caseText>
 						</case>
-						<content> entonces otro adjetivo y/o un poseedor debe también estar presente.</content>
+						<content> entonces otro adjetivo y/o un poseedor también deben estar presentes.</content>
 					</text>
 					<content/>
 				</p>
 			</section3>
 
 			<section3 id="sNPPossAgreement">
-				<secTitle>El acuerdo del poseedor</secTitle>
+				<secTitle>Concordancia del poseedor</secTitle>
 				<p>
-					<content>El acuerdo del poseedor viene normalmente en dos formas básicas:</content>
+					<content>La Concordancia del poseedor se manifiesta comúnmente de dos formas básicas:</content>
 				</p>
 				<ul>
 					<li>
-						<content>Un afijo que ocurre en sustantivos "alienably" poseídos para indicar que están poseídas y por lo tanto debe tener un poseedor en la frase nominal. Los sustantivos "inalienably" poseídos no toman ninguna marca, sino deben siempre tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</content>
+						<content>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no llevan ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</content>
 					</li>
 					<li>
-						<content>Un afijo que conviene con el poseedor (o expresa posiblemente al poseedor por sí mismo). </content>
+						<content>Un afijo que corresponde al poseedor (o expresa posiblemente al poseedor en sí mismo). </content>
 					</li>
 				</ul>
 				<p>
-					<content/>
+					<content>En </content>
 					<langName/>
 					<content/>
 					<case element="np" attr="possAlienable">
-						<caseText value="no"> no hace distinguir</caseText>
-						<caseText value="yes"> hace una distinción</caseText>
+						<caseText value="no"> no se hace distinción</caseText>
+						<caseText value="yes"> se hace distinción</caseText>
 					</case>
-					<content> entre los sustantivos "alienably" e "inalienably" poseídos. </content>
+					<content> entre los sustantivos poseídos alienables e inalienables. </content>
 					<text show="swNPPossAlienableYes">
-						<content>El afijo que las marcas sustantivos "alienably" poseídos cuando tienen un poseedor es:</content>
+						<content>El afijo que indica los sustantivos poseídos alienables cuando tienen un poseedor es:</content>
 					</text>
 					<content/>
 				</p>
@@ -251,11 +251,11 @@
 					<table border="1">
 					<headerRow>
 						<headerCol>Afijo posesivo</headerCol>
-						<headerCol>Significado o restricciones</headerCol>
+						<headerCol>Glosa o restricciones</headerCol>
 					</headerRow>
 						<row>
 							<col exampleLoc="np/possAlienableAffixExample"/>
-							<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+							<col ><gloss><content>ESCRIBA LA GLOSA (O RESTRICCIONES)</content></gloss></col>
 						</row>
 					</table>
 				</example>
@@ -264,16 +264,16 @@
 					<langName/>
 					<content>, los sustantivos </content>
 					<case element="np" attr="possAgr">
-						<caseText value="no">no son</caseText>
-						<caseText value="yes">son</caseText>
+						<caseText value="no">no se</caseText>
+						<caseText value="yes">se</caseText>
 					</case>
-					<content> marcados con un afijo pronominal o clitic que conviene con el poseedor o expresa el poseedor por sí mismo.  </content>
+					<content> indican con un afijo pronominal o clítico que concuerda con el poseedor o expresa el poseedor en sí mismo.  </content>
 					<text show="swNPPossAgrYes">
-						<content>Estos afijos marcan las características siguientes del poseedor:</content>
+						<content>Estos afijos indican las características siguientes del poseedor:</content>
 					</text>
 					<content/>
 				</p>
-				<example show="swNPPossAgrYes">
+				<example  num="xNPosFeatures" show="swNPPossAgrYes">
 					<table border="1">
 						<headerRow>
 							<headerCol>Tipo de característica</headerCol>
@@ -412,40 +412,38 @@
 			</section3>
 		</section2>
 		<section2 id="sNPCompounds">
-			<secTitle>Los compuestos del sustantivo</secTitle>
+			<secTitle>Sustantivos compuestos</secTitle>
 			<p>
-				<content>Mientras que el español requiere una frase con </content><langData>de</langData><content> en esta situación, muchos otros idiomas son como inglés, en que tienen modificantes del sustantivo.
-					Puede parecer como todos los sustantivos se pueden también utilizar como adjetivos, pero una mirada más atenta revela que los adjetivos verdaderos vienen antes del modificante del sustantivo, como en </content>
+				<content>Mientras que el español requiere una frase con </content><langData>de</langData><content> en esta situación, muchos otros idiomas son como inglés y tienen modificadores del sustantivo.
+					Pareciera que todos los sustantivos también se pueden utilizar como adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en </content>
 				<langData>large, round [syrup bottle]</langData><gloss><content>'grande, redondo [botella del jarabe]'</content></gloss>
 				<content> pero no </content>
 				<langData>*round, syrup large bottle</langData><gloss><content>'redondo, botella grande del jarabe'</content></gloss>
-				<content>.  Por lo tanto, los modificantes del sustantivo serán tratados como sustantivos compuestos que se escriban como palabras separadas.</content>
+				<content>.  Por lo tanto, los modificadores del sustantivo serán tratados como sustantivos compuestos que se escriben con palabras independientes.</content>
 			</p>
 			<p>
-				<content>En los ejemplos ingleses arriba, </content>
+				<content>En los ejemplos anteriores en inglés, </content>
 				<langData>bottle</langData><gloss><content>'botella'</content></gloss>
-				<content> está luego claramente el sustantivo principal algo que el </content>
+				<content> es claramente el sustantivo principal porque </content>
 				<langData>syrup</langData><gloss><content>'jarabe'</content></gloss>
-				<content>, porque el </content>
-				<langData>syrup</langData><gloss><content>'jarabe'</content></gloss>
-				<content> está restringiendo el tipo de </content>
+				<content> limita el tipo de </content>
 				<langData>bottle</langData><gloss><content>'botella'</content></gloss>
-				<content>, no la otra manera alrededor. En todos los sustantivos compuestos y construcciones del modificante del sustantivo en inglés, la cabeza es el sustantivo de derecha en la serie. </content>
+				<content>, no al revésr. En inglés todos los sustantivos compuestos y construcciones con modificadores del sustantivo, el sustantivo principal en la serie es el de la derecha. </content>
 			</p>
 			<p show="swNPCompNo">
-				<content/>
+				<content>En </content>
 				<langName/>
-				<content> no tiene ningunos sustantivos compuestos o modificantes del sustantivo que se escriban como palabras separadas. Todas se escriben como sola palabra con el sustantivo principal. Los ejemplos incluyen: </content>
+				<content> no hay ningún sustantivo compuesto o modificador del sustantivo que se escriben con palabras independientes. Todas se escriben como una sola palabra unida al sustantivo principal. Algunos ejemplos son los siguientes: </content>
 			</p>
 			<p show="swNPCompYes">
-				<content/>
+				<content>En </content>
 				<langName/>
-				<content> tiene los sustantivos compuestos o modificantes del sustantivo que se escriben como palabras separadas.  Extremo</content>
+				<content> hay sustantivos compuestos o modificadores del sustantivo que se escriben con palabras independientes.  El sustantivo principal en la serie es el de la </content>
 				<case element="np" attr="compHead">
-					<caseText value="left">izquierdo</caseText>
-					<caseText value="right">de derecha</caseText>
+					<caseText value="left">izquierda</caseText>
+					<caseText value="right">derecha</caseText>
 				</case>
-				<content> el sustantivo es la cabeza en estas construcciones. Los ejemplos incluyen:</content>
+				<content>. Algunos ejemplos son los siguientes:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/compExample"/>

@@ -137,15 +137,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//adjp/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//adjp/example))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//adjp/example))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//adjp/example" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//adjp/example)" />
+<xsl:value-of select="string-length(normalize-space(//adjp/example))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdjP.AdjQual.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -238,7 +238,7 @@
 							<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/cardinalNumbers1to10),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -293,7 +293,7 @@
 							<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//qp/cardinalNumbers11to20),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -348,7 +348,7 @@
 							<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//qp/cardinalNumbers30to100),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -435,15 +435,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/cardinalCompoundExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/cardinalCompoundExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/cardinalCompoundExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/cardinalCompoundExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/cardinalCompoundExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/cardinalCompoundExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdjP.AdjNumbers.QPNumbersCardinal.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -518,7 +518,7 @@
 							<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/ordinalNumbers),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -623,15 +623,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/ordinalExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/ordinalExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/ordinalExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/ordinalExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/ordinalExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/ordinalExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdjP.AdjNumbers.QPNumbersOrdinal.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -826,7 +826,7 @@ like </xsl:text>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/all),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -843,7 +843,8 @@ like </xsl:text>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>all</xsl:text>
@@ -868,7 +869,7 @@ like </xsl:text>
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//qp/almost),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -885,7 +886,8 @@ like </xsl:text>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>almost</xsl:text>
@@ -910,7 +912,7 @@ like </xsl:text>
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//qp/only),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -927,7 +929,8 @@ like </xsl:text>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>only or just</xsl:text>
@@ -953,7 +956,7 @@ like </xsl:text>
 <xsl:variable name="sExampleValue3">
 <xsl:value-of select="translate(string(//qp/not),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength3" select="string-length($sExampleValue3)" />
+<xsl:variable name="iExampleLength3" select="string-length(normalize-space($sExampleValue3))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength3 != 0 and $sExampleValue3 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -970,7 +973,8 @@ like </xsl:text>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength3" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>not</xsl:text>
@@ -1015,6 +1019,10 @@ like </xsl:text>
 					<xsl:when test="//qp/@npDegreePosType='suffix'">suffixes which attach to the head noun of the nominal phrase.</xsl:when>
 					<xsl:when test="//qp/@npDegreePosType='affix'">either prefixes or suffixes which attach to the head noun of the nominal phrase.</xsl:when>
 				</xsl:choose>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='no'">
+<p>
 <xsl:text>  The negative special degree elements are </xsl:text>
 <xsl:choose>
 					<xsl:when test="//qp/@npDegreeNegType='proclitic'">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</xsl:when>
@@ -1025,6 +1033,10 @@ like </xsl:text>
 					<xsl:when test="//qp/@npDegreeNegType='affix'">either prefixes or suffixes which attach to the head noun of the nominal phrase.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='no'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1056,7 +1068,15 @@ like </xsl:text>
 					<xsl:when test="//qp/@npDegreePosType='suffix'">suffixes which attach to the head noun of the nominal phrase.</xsl:when>
 					<xsl:when test="//qp/@npDegreePosType='affix'">either prefixes or suffixes which attach to the head noun of the nominal phrase.</xsl:when>
 				</xsl:choose>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='noPosOnly'">
+<p>
 <xsl:text>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </xsl:text>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='noPosOnly'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1098,6 +1118,10 @@ like </xsl:text>
 <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeEitherRestricted)='restricted' and normalize-space(//qp/@npDegreePos)!='before' and normalize-space(//qp/@npDegreePos)!='after'">
 					<xsl:text>There are restrictions as to which of these words can occur on each side of the nominal phrase.  </xsl:text>
 				</xsl:if>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='yesPos'">
+<p>
 <xsl:text>The negative special degree elements, however, are not expressed as separate words.  Instead, they all attach to another word in the nominal phrase.  These negative special degree elements are </xsl:text>
 <xsl:choose>
 					<xsl:when test="//qp/@npDegreeNegType='proclitic'">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</xsl:when>
@@ -1108,6 +1132,10 @@ like </xsl:text>
 					<xsl:when test="//qp/@npDegreeNegType='affix'">either prefixes or suffixes which attach to the head noun of the nominal phrase.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='yesPos'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1149,7 +1177,15 @@ like </xsl:text>
 <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeEitherRestricted)='restricted' and normalize-space(//qp/@npDegreePos)!='before' and normalize-space(//qp/@npDegreePos)!='after'">
 					<xsl:text>There are restrictions as to which of these words can occur on each side of the nominal phrase.  </xsl:text>
 				</xsl:if>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='yesPosOnly'">
+<p>
 <xsl:text>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </xsl:text>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='yesPosOnly'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1181,6 +1217,10 @@ like </xsl:text>
 					<xsl:when test="//qp/@npDegreePosType='suffix'">suffixes which attach to the head noun of the nominal phrase.</xsl:when>
 					<xsl:when test="//qp/@npDegreePosType='affix'">either prefixes or suffixes which attach to the head noun of the nominal phrase.</xsl:when>
 				</xsl:choose>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='yesNeg'">
+<p>
 <xsl:text>  The negative special degree elements in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
@@ -1210,6 +1250,10 @@ like </xsl:text>
 					<xsl:text>There are restrictions as to which of these words can occur on each side of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='yesNeg'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1252,6 +1296,10 @@ like </xsl:text>
 					<xsl:text>There are restrictions as to which of these words can occur on each side of the nominal phrase.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='yes'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1263,21 +1311,21 @@ like </xsl:text>
 <xsl:text> positive nominal phrase examples include:</xsl:text>
 </p>
 </xsl:if>
-			<example num="xAdjP.AdjQP.QPAll.22">
+			<example num="xAdjP.AdjQP.QPAll.44">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/example" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/example))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/example))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/example" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/example)" />
+<xsl:value-of select="string-length(normalize-space(//qp/example))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPAll.22</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPAll.44</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1286,7 +1334,7 @@ like </xsl:text>
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdjP.AdjQP.QPAll.22.1</xsl:text>
+<xsl:text>xAdjP.AdjQP.QPAll.44.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1316,21 +1364,21 @@ like </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
-<example num="xAdjP.AdjQP.QPAll.26">
+<example num="xAdjP.AdjQP.QPAll.48">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/negExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/negExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/negExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/negExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/negExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPAll.26</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPAll.48</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1339,7 +1387,7 @@ like </xsl:text>
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdjP.AdjQP.QPAll.26.1</xsl:text>
+<xsl:text>xAdjP.AdjQP.QPAll.48.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1410,6 +1458,10 @@ like </xsl:text>
 					<xsl:text>There are restrictions as to which of these negative words can occur on each side of the nominal phrase.  </xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
+</p>
+</xsl:if>
+			 <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1436,21 +1488,21 @@ like </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' or normalize-space(//qp/@npDegree)!='yes' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
-<example num="xAdjP.AdjQP.QPAll.34">
+<example num="xAdjP.AdjQP.QPAll.58">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/negCooccurExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/negCooccurExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/negCooccurExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/negCooccurExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/negCooccurExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/negCooccurExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPAll.34</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPAll.58</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1459,7 +1511,7 @@ like </xsl:text>
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdjP.AdjQP.QPAll.34.1</xsl:text>
+<xsl:text>xAdjP.AdjQP.QPAll.58.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1597,6 +1649,10 @@ like </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text> does not have a separate set of negative quantifiers which act as the only determiner in the nominal phrase.  Negation of a nominal phrase is expressed by the special degree elements only.                </xsl:text>
+</p>
+</xsl:if>
+				<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1620,6 +1676,10 @@ like </xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text> does not have a separate set of negative quantifiers which act as the only determiner in the nominal phrase, just as there was not any way to express the negative special degree element 'not'.                </xsl:text>
+</p>
+</xsl:if>
+				<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1658,6 +1718,10 @@ like </xsl:text>
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>all</langData>
 <xsl:text> above or like the quantifiers which may co-occur with articles, demonstratives and/or possessors to be treated in the next section.  </xsl:text>
+</p>
+</xsl:if>
+				<xsl:if test="normalize-space(//qp/@determiner)='yesNo'">
+<p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1684,7 +1748,7 @@ like </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)!='no'">
-<example num="xAdjP.AdjQP.QPDeterminers.18">
+<example num="xAdjP.AdjQP.QPDeterminers.24">
 <table border="1">
 						<tr>
 							<th>Type</th>
@@ -1695,7 +1759,7 @@ like </xsl:text>
 <xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/determinerExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1752,7 +1816,7 @@ like </xsl:text>
 <xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//qp/determinerNegExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1847,21 +1911,21 @@ like </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesSome'">
-<example num="xAdjP.AdjQP.QPDeterminers.24">
+<example num="xAdjP.AdjQP.QPDeterminers.30">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/determinerNPExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/determinerNPExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/determinerNPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/determinerNPExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/determinerNPExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/determinerNPExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPDeterminers.24</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPDeterminers.30</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1870,7 +1934,7 @@ like </xsl:text>
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdjP.AdjQP.QPDeterminers.24.1</xsl:text>
+<xsl:text>xAdjP.AdjQP.QPDeterminers.30.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1901,21 +1965,21 @@ like </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
-<example num="xAdjP.AdjQP.QPDeterminers.28">
+<example num="xAdjP.AdjQP.QPDeterminers.34">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/determinerNegNPExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/determinerNegNPExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/determinerNegNPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/determinerNegNPExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/determinerNegNPExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/determinerNegNPExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPDeterminers.28</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.AdjQP.QPDeterminers.34</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1924,7 +1988,7 @@ like </xsl:text>
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdjP.AdjQP.QPDeterminers.28.1</xsl:text>
+<xsl:text>xAdjP.AdjQP.QPDeterminers.34.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -2029,7 +2093,7 @@ like </xsl:text>
 						 <xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/quantifierExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2046,7 +2110,8 @@ like </xsl:text>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -2137,15 +2202,15 @@ like </xsl:text>
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/degreeExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//qp/degreeExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/degreeExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/degreeExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//qp/degreeExample)" />
+<xsl:value-of select="string-length(normalize-space(//qp/degreeExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xAdjP.AdjQP.QPOtherQuantifiers.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -2285,7 +2350,7 @@ like </xsl:text>
 				<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//np/articleExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2302,7 +2367,8 @@ like </xsl:text>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -2357,7 +2423,7 @@ like </xsl:text>
 				 <xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//np/demonstrativeExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2374,7 +2440,8 @@ like </xsl:text>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>

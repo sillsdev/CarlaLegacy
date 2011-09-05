@@ -11,16 +11,16 @@
 			</case>
 			</secTitle>
 		<p>
-			<content>Esta sección cubre la estructura interna de las frases preposicionales o posposicionales. Las preposiciones vienen antes de sus complementos, mientras que vienen las posposiciones luego. El español tiene preposiciones, según los ejemplos </content>
+			<content>En esta sección se analiza la estructura interna de las frases preposicionales o posposicionales. Las preposiciones vienen antes de sus complementos, mientras que vienen las posposiciones luego. El español tiene preposiciones, según los ejemplos </content>
 			<langData>para José</langData>
 			<content> y </content>
 			<langData>al lado del río</langData>
-			<content>.  Las preposiciones o las posposiciones pueden ser palabras separadas, o pueden ser clíticos que se juntan al borde del complemento o a su cabeza.</content>
+			<content>.  Las preposiciones o las posposiciones pueden ser palabras independientes, o pueden ser clíticos que se unen en el borde de la frase del complemento o al núcleo.</content>
 		</p>
 		<p>
-			<content/>
+			<content>En </content>
 			<langName/>
-			<content> tiene </content>
+			<content> hay </content>
 			<case element="pp" attr="pPos">
 				<caseText value="before">solamente preposiciones.  </caseText>
 				<caseText value="after">solamente posposiciones.  </caseText>
@@ -29,16 +29,16 @@
 			</case>
 			<content/>
 			<case element="pp" attr="pType">
-				<caseText value="word">Son todos palabras sintácticas separadas.</caseText>
-				<caseText value="clitic">Son todos cliticos escrito juntados a otra palabra.</caseText>
-				<caseText value="both">Escriben algunos como palabras sintácticas separadas, pero algunos son cliticos escrito juntados a otra palabra.  </caseText>
+				<caseText value="word">Son todos palabras sintácticas independientes.</caseText>
+				<caseText value="clitic">Son todos clíticos que se escriben unidos a otra palabra.</caseText>
+				<caseText value="both">Escriben algunos como palabras sintácticas independientes, pero algunos son clíticos que se escriben unidos a otra palabra.  </caseText>
 			</case>
 			<content/>
 			<text show="swPPTypeCliticOrBoth">
-				<content>Los cliticos juntan </content>
+				<content>Los clíticos se unen </content>
 				<case element="pp" attr="attaches">
 					<caseText value="egde">en el borde</caseText>
-					<caseText value="head">a la cabeza</caseText>
+					<caseText value="head">al núcleo</caseText>
 				</case>
 				<content> de la frase del complemento.</content>
 			</text>
@@ -46,19 +46,19 @@
 		</p>
 
 				<p>
-					<content>Los modificantes posibles de la frase se consideran primero, después los complementos permitidos. </content>
+					<content>Los modificadores posibles de la frase se consideran primero, y después los complementos permitidos. </content>
 		</p>
 		<section2 id="sPPModifiers">
-			<secTitle>Los modificantes</secTitle>
+			<secTitle>Los modificadores</secTitle>
 			<p>
-				<content>Hay normalmente algunas palabras del grado que pueden modificar una frase </content>
+				<content>Hay normalmente algunas palabras de grado que pueden modificar a una frase </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicional</caseText>
 					<caseText value="after">posposicional</caseText>
 					<caseText value="both">preposicional o posposicional</caseText>
 					<caseText value="unknown">preposicional o posposicional</caseText>
 				</case>
-				<content> entera, tal como </content>
+				<content> completa, tal como </content>
 				<langData>apenas</langData>
 				<content> y </content>
 				<langData>right</langData><gloss><content>'hasta'</content></gloss>
@@ -66,7 +66,7 @@
 				<langData>apenas alrededor de la esquina</langData>
 				<content> y </content>
 				<langData>right to the last second</langData><gloss><content>'hasta el último momento'</content></gloss>
-				<content>. Los números ordinales y los adjetivos pueden también modificar las frases </content>
+				<content>. Los números ordinales y los adjetivos también pueden modificar a las frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
@@ -77,7 +77,7 @@
 				<langData>próximo en línea</langData>
 				<content> y </content>
 				<langData>first out the door</langData><gloss><content>'primero hacia fuera la puerta'</content></gloss>
-				<content>.  Además, ciertos adverbios de la manera pueden modificar las frases </content>
+				<content>.  Además, ciertos adverbios de modo pueden modificar a las frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
@@ -95,7 +95,7 @@
 				<content>.</content>
 			</p>
 			<p show="swPPModifiersYes">
-				<content>Los ejemplos similares según lo expresado en </content>
+				<content>Algunos ejemplos similares según lo expresado en </content>
 				<langName/>
 				<content> son:</content>
 			</p>
@@ -103,11 +103,11 @@
 				<interlinear exampleLoc="pp/example"/>
 			</example>
 			<p>
-				<content/>
+				<content>En </content>
 				<langName/>
 				<content/>
 				<case element="pp" attr="modifiers">
-					<caseText value="no"> no tiene ningunos modificantes que ocurren cualquiera antes o después de la frase sintácticamente.</caseText>
+					<caseText value="no"> no hay ningún modificador que se presenta o antes o después de la frase sintácticamente.</caseText>
 					<caseText value="yes"> permite </caseText>
 				</case>
 				<text show="swPPModifiersNo"><content>  Ni palabras del grado ni los números ordinales ni los adverbials pueden modificar las frases </content>
@@ -117,20 +117,20 @@
 						<caseText value="both">preposicionales o posposicionales</caseText>
 						<caseText value="unknown">preposicionales o posposicionales</caseText>
 					</case>
-					<content> como palabras separadas.</content> </text>
+					<content> como palabras independientes.</content> </text>
 				<content/>
 				<text show="swPPModifiersYes">
 					<content/>
 					<case element="pp" attr="modifierType">
-						<caseText value="degree">solamente las palabras del grado</caseText>
+						<caseText value="degree">solamente las palabras de grado</caseText>
 						<caseText value="ordinal">solamente los números ordinales</caseText>
-						<caseText value="manner">solamente los adverbios de la  manera</caseText>
-						<caseText value="degreeAndOrdinal">las palabras del grado y los números ordinales, pero no los adverbios de la manera</caseText>
-						<caseText value="degreeAnd Manner">las palabras del grado y los adverbios de la manera, pero no los números ordinales</caseText>
-						<caseText value="mannerAndOrdinal">los adverbios de la manera y los números ordinales, pero no las palabras del grado</caseText>
-						<caseText value="all">los tres tipos, las palabras del grado, los adverbios de la manera y los números ordinales,</caseText>
+						<caseText value="manner">solamente los adverbios de modo</caseText>
+						<caseText value="degreeAndOrdinal">las palabras de grado y los números ordinales, pero no los adverbios de modo</caseText>
+						<caseText value="degreeAnd Manner">las palabras de grado y los adverbios de modo, pero no los números ordinales</caseText>
+						<caseText value="mannerAndOrdinal">los adverbios de modo y los números ordinales, pero no las palabras de grado</caseText>
+						<caseText value="all">los tres tipos, las palabras de grado, los adverbios de modo y los números ordinales,</caseText>
 					</case>
-					<content> como modificantes de las frases </content>
+					<content> como modificadores de las frases </content>
 					<case element="pp" attr="pPos">
 						<caseText value="before">preposicionales</caseText>
 						<caseText value="after">posposicionales</caseText>
@@ -139,11 +139,11 @@
 					</case>
 					<content>.  </content>
 					<text show="swPPModifiersYesDegree">
-						<content>Las palabras del grado ocurren </content>
+						<content>Las palabras de grado se presentan </content>
 						<case element="pp" attr="degreePos">
 							<caseText value="before">antes</caseText>
 							<caseText value="after">después</caseText>
-							<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+							<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
 							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
 							<caseText value="afterOrBoth">después o en ambos lados</caseText>
@@ -161,7 +161,7 @@
 					</text>
 					<content/>
 					<text show="swPPDegreeEitherUnrestricted">
-						<content>Todas las palabras del grado pueden ocurrir de cualquier lado de la frase </content>
+						<content>Todas las palabras de grado pueden presentarse de cualquier lado de la frase </content>
 						<case element="pp" attr="pPos">
 							<caseText value="before">preposicional</caseText>
 							<caseText value="after">posposicional</caseText>
@@ -172,7 +172,7 @@
 					</text>
 					<content/>
 					<text show="swPPDegreeEitherRestricted">
-						<content>Hay las restricciones en cuanto a las cuales de grado las palabras pueden ocurrir en cada lado de la frase </content>
+						<content>Hay restricciones en cuanto a cuáles palabras de grado pueden presentarse en cada lado de la frase </content>
 						<case element="pp" attr="pPos">
 							<caseText value="before">preposicional</caseText>
 							<caseText value="after">posposicional</caseText>
@@ -183,11 +183,11 @@
 					</text>
 					<content/>
 					<text show="swPPModifiersYesOrdinal">
-						<content>Los números ordinales ocurren </content>
+						<content>Los números ordinales se presentan </content>
 						<case element="pp" attr="ordinalPos">
 							<caseText value="before">antes</caseText>
 							<caseText value="after">después</caseText>
-							<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+							<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
 							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
 							<caseText value="afterOrBoth">después o en ambos lados</caseText>
@@ -205,7 +205,7 @@
 					</text>
 					<content/>
 					<text show="swPPOrdinalEitherUnrestricted">
-						<content>Todos los números ordinales pueden ocurrir de cualquier lado de la frase </content>
+						<content>Todos los números ordinales pueden presentarse de cualquier lado de la frase </content>
 						<case element="pp" attr="pPos">
 							<caseText value="before">preposicional</caseText>
 							<caseText value="after">posposicional</caseText>
@@ -216,7 +216,7 @@
 					</text>
 					<content/>
 					<text show="swPPOrdinalEitherRestricted">
-						<content>Hay las restricciones en cuanto a las cuales de los números ordinales puede ocurrir en cada lado de la frase </content>
+						<content>Hay restricciones en cuanto a cuáles  números ordinales pueden presentarse en cada lado de la frase </content>
 						<case element="pp" attr="pPos">
 							<caseText value="before">preposicional</caseText>
 							<caseText value="after">posposicional</caseText>
@@ -227,11 +227,11 @@
 					</text>
 					<content/>
 					<text show="swPPModifiersYesManner">
-						<content>Los adverbios de la manera ocurren </content>
+						<content>Los adverbios de modo se presentan </content>
 						<case element="pp" attr="mannerPos">
 							<caseText value="before">antes</caseText>
 							<caseText value="after">después</caseText>
-							<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+							<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
 							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
 							<caseText value="afterOrBoth">después o en ambos lados</caseText>
@@ -249,7 +249,7 @@
 					</text>
 					<content/>
 					<text show="swPPMannerEitherUnrestricted">
-						<content>Todos los adverbios de la manera pueden ocurrir de cualquier lado de la frase </content>
+						<content>Todos los adverbios de modo pueden presentarse de cualquier lado de la frase </content>
 						<case element="pp" attr="pPos">
 							<caseText value="before">preposicional</caseText>
 							<caseText value="after">posposicional</caseText>
@@ -260,7 +260,7 @@
 					</text>
 					<content/>
 					<text show="swPPMannerEitherRestricted">
-						<content>Hay las restricciones en cuanto a las cuales de manera los adverbios pueden ocurrir en cada lado de la frase </content>
+						<content>Hay restricciones en cuanto a cuáles adverbios de modo pueden presentarse en cada lado de la frase </content>
 						<case element="pp" attr="pPos">
 							<caseText value="before">preposicional</caseText>
 							<caseText value="after">posposicional</caseText>
@@ -288,14 +288,16 @@
 					<caseText value="after">posposiciones</caseText>
 					<caseText value="both">preposiciones o posposiciones</caseText>
 					<caseText value="unknown">preposiciones o posposiciones</caseText>
-				</case><content> lleven normalmente una frase nominal para su complemento, como en </content>
+				</case><content> normalmente tienen a una frase nominal para su complemento, como en </content>
 				<langData>a [la casa de Guillermo]</langData>
 				<content> y </content>
 				<langData>debajo [el árbol gigante del sicómoro]</langData>
 				<content>. </content>
 			</p>
 			<p>
-				<content> Los ejemplos de </content><langName/><content> con los complementos nominales incluyen: </content>
+				<content> Algunos ejemplos de </content>
+				<langName/>
+				<content> con los complementos nominales son: </content>
 			</p>
 			<example>
 				<interlinear exampleLoc="pp/ppExample"/>
@@ -324,14 +326,14 @@
 					<content/>
 				</p>
 				<p>
-					<content/>
+					<content>En </content>
 					<langName/>
 					<content/>
 					<case element="pp" attr="alone">
-						<caseText value="no"> no permite cualesquiera</caseText>
-						<caseText value="yes"> permite algunss</caseText>
+						<caseText value="no"> no permite </caseText>
+						<caseText value="yes"> permite algunas </caseText>
 					</case>
-					<content> de sus </content>
+					<content></content>
 					<text show="swPPPosPrep">
 						<content>preposiciones</content>
 					</text>
@@ -347,7 +349,7 @@
 					<text show="swPPPosBoth">
 						<content>preposiciones y posposiciones</content>
 					</text>
-					<content> al soporte solamente.  </content>
+					<content> colocarse solamente sin un complemento.  </content>
 					<text show="swPPAloneYes">
 						<content>Algunos ejemplos dentro de oraciones completas son:</content>
 					</text>
@@ -358,9 +360,9 @@
 				</example>
 			</section3>
 			<section3 id="sPPLoc">
-				<secTitle>Los adverbios de lugar como complementos</secTitle>
+				<secTitle>Los adverbios locativos como complementos</secTitle>
 				<p>
-					<content>La mayoría de los idiomas permiten adverbios de lugar como complementos de las </content>
+					<content>La mayoría de los idiomas permiten adverbios locativos como complementos de las </content>
 					<case element="pp" attr="pPos">
 						<caseText value="before">preposiciones</caseText>
 						<caseText value="after">posposiciones</caseText>
@@ -373,14 +375,14 @@
 					<content>.</content>
 				</p>
 				<p>
-					<content/>
+					<content>En </content>
 					<langName/>
 					<content/>
 					<case element="pp" attr="locative">
 						<caseText value="no"> no hace permitir</caseText>
 						<caseText value="yes"> permite</caseText>
 					</case>
-					<content> los adverbios de lugar como complementos de sus </content>
+					<content> los adverbios locativos como complementos de sus </content>
 					<text show="swPPPosPrep">
 						<content>preposiciones.</content>
 					</text>
@@ -398,7 +400,7 @@
 					</text>
 					<content/>
 					<text show="swPPLocativeYes">
-						<content>  Algunos ejemplos con los complementos del adverbio de lugar son:</content>
+						<content>  Algunos ejemplos con los adverbios locativos como complementos son:</content>
 					</text>
 					<content/>
 				</p>
@@ -420,13 +422,13 @@
 						<caseText value="after">posposiciones</caseText>
 						<caseText value="both">preposiciones y posposiciones</caseText>
 						<caseText value="unknown">preposiciones y/o posposiciones</caseText>
-					</case><content> locativas son un grupo especial en eso en algunos idiomas que pueden tomar otra frase  </content>
+					</case><content> locativas forman una categoría especial porque en algunos idiomas pueden tener otra frase  </content>
 					<case element="pp" attr="pPos">
 						<caseText value="before">preposicional</caseText>
 						<caseText value="after">posposicional</caseText>
 						<caseText value="both">preposicional o posposicional</caseText>
 						<caseText value="unknown">preposicional o posposicional</caseText>
-					</case><content> locativa como su complemento. Los ejemplos ingleses de este tipo incluyen: </content>
+					</case><content> locativa como su complemento. Algunos ejemplos en inglés son: </content>
 					<langData>up [to the top]</langData><gloss><content>'encima [al borde]'</content></gloss>
 					<content>, </content>
 					<langData>around [behind the shed]</langData><gloss><content>'alrededor [detrás del cobertizo]'</content></gloss>
@@ -435,12 +437,12 @@
 					<content>.</content>
 				</p>
 				<p>
-					<content/>
+					<content>En </content>
 					<langName/>
 					<content/>
 					<case element="pp" attr="ppComp">
-						<caseText value="no"> no tiene cualesquiera</caseText>
-						<caseText value="yes"> tiene</caseText>
+						<caseText value="no"> no hay</caseText>
+						<caseText value="yes"> hay</caseText>
 					</case>
 					<content> las </content>
 					<text show="swPPPosPrep">
@@ -458,13 +460,13 @@
 					<text show="swPPPosBoth">
 						<content>preposiciones y posposiciones</content>
 					</text>
-					<content> locativas que toman una frase </content>
+					<content> locativas que pueden tener una frase </content>
 					<case element="pp" attr="pPos">
 						<caseText value="before">preposicional</caseText>
 						<caseText value="after">posposicional</caseText>
 						<caseText value="both">preposicional o posposicional</caseText>
 						<caseText value="unknown">preposicional o posposicional</caseText>
-					</case><content> locativa como complemento.  </content>
+					</case><content> locativa como su complemento.  </content>
 					<text show="swPPCompPPYes">
 						<content>Algunos ejemplos con las frases </content>
 						<case element="pp" attr="pPos">
@@ -472,7 +474,9 @@
 							<caseText value="after">posposicionales</caseText>
 							<caseText value="both">preposicionales o posposicionales</caseText>
 							<caseText value="unknown">preposicionales o posposicionales</caseText>
-						</case><content> locativas como complementos son:</content>
+						</case><content> locativas como complementos en </content>
+						<langName/>
+						<content> son:</content>
 					</text>
 					<content/>
 				</p>
@@ -489,19 +493,19 @@
 						<caseText value="after">posposiciones</caseText>
 						<caseText value="both">preposiciones o posposiciones</caseText>
 						<caseText value="unknown">preposiciones o posposiciones</caseText>
-					</case><content> temporales pueden también tener oraciones como sus complementos, como en </content>
+					</case><content> temporales pueden tener oraciones como sus complementos, como en </content>
 					<langData>antes de [la lluvia cesa]</langData>
 					<content> y </content>
 					<langData>después de [Juan volvió a casa]</langData>
 					<content>.</content>
 				</p>
 				<p>
-					<content/>
+					<content>En </content>
 					<langName/>
 					<content/>
 					<case element="pp" attr="sentComp">
-						<caseText value="no"> no tiene cualesquiera</caseText>
-						<caseText value="yes"> tiene</caseText>
+						<caseText value="no"> no hay</caseText>
+						<caseText value="yes"> hay</caseText>
 					</case>
 					<content> las </content>
 					<text show="swPPPosPrep">
@@ -519,7 +523,7 @@
 					<text show="swPPPosBoth">
 						<content>preposiciones and posposiciones</content>
 					</text>
-					<content> temporales que toman una oración para su complemento.  </content>
+					<content> temporales que pueden tener una oración para su complemento.  </content>
 					<text show="swPPSentCompYes">
 						<content>Algunos ejemplos con las oraciones como complementos, incluidos en oraciones completas son:</content>
 					</text>

@@ -4,16 +4,16 @@
 	<section1 id="sAdvCl">
 		<secTitle>Las cláusulas adverbiales</secTitle>
 		<p>
-<xsl:text>Esta sección considera los complementos que pueden seguir los adverbios temporales y de razón, que fueron introducidos en las secciones </xsl:text>
+<xsl:text>En esta sección se analizan los complementos que pueden seguir los adverbios temporales y de razón, que fueron introducidos en las secciones </xsl:text>
 <sectionRef sec="sAdvPTemporal" />
 <xsl:text> y </xsl:text>
 <sectionRef sec="sAdvPReason" />
-<xsl:text>.  Todas de estas cláusulas (o frases) adverbiales actuan igual que los adverbios simples, así que ellos serán considerados frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales de estos tipos pueden ocurrir normalmente u oración-inicial u oración-final. </xsl:text>
+<xsl:text>.  Todas de estas cláusulas (o frases) adverbiales actúan igual que los adverbios simples, así que ellos serán considerados frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales de estos tipos normalmente pueden presentarse o inicial o final de la oración. </xsl:text>
 </p>
 		<section2 id="sAdvClTemporal">
 			<secTitle>Los complementos de adverbios temporales</secTitle>
 			<p>
-<xsl:text>Los ejemplos españoles de adverbios temporales con los complementos usados en oraciones completas incluyen:</xsl:text>
+<xsl:text>Algunos ejemplos en español de adverbios temporales con los complementos usados en oraciones completas son:</xsl:text>
 </p>
 			<ol>
 				<li>
@@ -36,7 +36,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text>Estos ejemplos demuestran que los adverbios temporales particulares permiten ciertos tipos de complementos. En (1) </xsl:text>
+<xsl:text>Estos ejemplos muestran que los adverbios temporales particulares permiten ciertos tipos de complementos. En (1) </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -56,7 +56,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>cuando</langData>
-<xsl:text> toma una oración finito por su complemento.</xsl:text>
+<xsl:text> tiene una oración finito por su complemento.</xsl:text>
 </p>
 			<p>
 <xsl:text>En </xsl:text>
@@ -75,7 +75,7 @@
 					<xsl:when test="//advcl/@advOrNPPos='either'">de cualquier lado</xsl:when>
 					<xsl:when test="//advcl/@advOrNPPos='unknown'">_______</xsl:when>
 				</xsl:choose>
-<xsl:text> del adverbio.  Los ejemplos de cláusulas adverbiales temporales en </xsl:text>
+<xsl:text> del adverbio.  Algunos ejemplos de cláusulas adverbiales temporales en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -128,7 +128,7 @@
 		<section2 id="sAdvClReason">
 			<secTitle>Los complementos de adverbios de razón</secTitle>
 			<p>
-<xsl:text>Dando vuelta ahora a las frases adverbiales o a las cláusulas que expresan razón o propósito, encontramos los adverbios que se colocan solamente, por ejemplo </xsl:text>
+<xsl:text>En las frases adverbiales o a las cláusulas que expresan razón o propósito, encontramos los adverbios que se colocan solamente, por ejemplo </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -138,8 +138,8 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>pues</langData>
-<xsl:text>(que a veces se consideran las conjunciones de oraciones), junto con los que toman varios tipos de cláusulas de complemento.
-					Los ejemplos españoles de los adverbios de la razón o del propósito que toman complementos clausal incluyen:</xsl:text>
+<xsl:text>(que a veces se consideran las conjunciones de oraciones), junto con los adverbios que tiene varios tipos de cláusulas de complemento.
+					Algunos ejemplos en español de los adverbios de la razón o del propósito que tienen complementos clausal son:</xsl:text>
 </p>
 			<ol>
 				<li>
@@ -174,7 +174,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>de modo que</langData>
-<xsl:text> toma ocaciones finitos por complementos.  En cambio, </xsl:text>
+<xsl:text> tiene ocaciones finitos por complementos.  En cambio, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -184,7 +184,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>en orden</langData>
-<xsl:text> toma una oración infinitivo.  Éste es el grupo de complementos como se muestra para </xsl:text>
+<xsl:text> tiene una oración infinitivo.  Éste es el grupo de complementos como se muestra para </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -199,7 +199,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los ejemplos de las cláusulas adverbiales de la razón o del propósito en </xsl:text>
+<xsl:text>Algunos ejemplos de las cláusulas adverbiales de la razón o del propósito en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />

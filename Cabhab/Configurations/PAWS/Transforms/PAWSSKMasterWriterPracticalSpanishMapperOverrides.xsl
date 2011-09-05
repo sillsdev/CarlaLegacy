@@ -10,7 +10,7 @@
 	-->
 	<xsl:template name="DoFree">
 		<free>
-			<gloss lang="lGloss">INCORPORE LA TRADUCCIÓN LIBRE AQUÍ .</gloss>
+			<gloss lang="lGloss">ESCRIBA LA TRADUCCIÓN LIBRE AQUÍ .</gloss>
 		</free>
 	</xsl:template>
 	<!--
@@ -22,7 +22,7 @@
 	-->
 	<xsl:template name="DoGloss">
 		<line>
-			<gloss lang="lGloss">INCORPORE LA GLOSA AQUÍ </gloss>
+			<gloss lang="lGloss">ESCRIBA LA GLOSA AQUÍ </gloss>
 		</line>
 	</xsl:template>
 	<!--
@@ -34,7 +34,7 @@
 	-->
 	<xsl:template name="DoMorphemeGloss">
 		<line>
-			<gloss lang="lGloss">IMP.incorpora la glosa de los morfema-PL aquí</gloss>
+			<gloss lang="lGloss">IMP.escriba la glosa de los morfema-PL aquí</gloss>
 		</line>
 	</xsl:template>
 	<!--
@@ -46,7 +46,7 @@
 	-->
 	<xsl:template name="DoWordGloss">
 		<line>
-			<gloss lang="lGloss">INCORPORE LA GLOSA DE LA PALABRA AQUÍ</gloss>
+			<gloss lang="lGloss">ESCRIBA LA GLOSA DE LA PALABRA AQUÍ</gloss>
 		</line>
 	</xsl:template>
 	<!--

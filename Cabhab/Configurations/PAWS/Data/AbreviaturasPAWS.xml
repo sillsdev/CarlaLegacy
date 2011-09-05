@@ -1,1132 +1,1883 @@
-<?xml version="1.0" encoding="utf-8"?>
-<abbreviations font-family="Charis SIL CompactSmallCaps" label="Abreviaturas" usesmallcaps="no" version="2.3.0">
-	<comment>Lo que sigue fue basado en las reglas de glosa de Leipzig, lista de abreviaturas estándar en <link href="http://www.eva.mpg.de/lingua/resources/glossing-rules.php">http://www.eva.mpg.de/lingua/resources/glossing-rules.php</link> el 01 de octubre de 2008. Algunas de las abreviaturas específicas de Otomanguean fueron agregadas.</comment>
-	<abbreviation id="v1">
-		<abbrInLang lang="es">
-			<abbrTerm>1</abbrTerm>
-			<abbrDefinition>primera persona</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PL">
-		<abbrInLang lang="es">
-			<abbrTerm>1pl</abbrTerm>
-			<abbrDefinition>primera persona plural</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLABS">
-		<abbrInLang lang="es">
-			<abbrTerm>1plabs</abbrTerm>
-			<abbrDefinition>primera persona plural absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLERG">
-		<abbrInLang lang="es">
-			<abbrTerm>1plerg</abbrTerm>
-			<abbrDefinition>primera persona plural ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLEX">
-		<abbrInLang lang="es">
-			<abbrTerm>1plex</abbrTerm>
-			<abbrDefinition>primera persona plural exclusivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PEXABS">
-		<abbrInLang lang="es">
-			<abbrTerm>1plexabs</abbrTerm>
-			<abbrDefinition>primera persona plural exclusivo absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLEXERG">
-		<abbrInLang lang="es">
-			<abbrTerm>1plexerg</abbrTerm>
-			<abbrDefinition>primera persona plural exclusivo ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLEXOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>1plexobj</abbrTerm>
-			<abbrDefinition>primera persona plural exclusivo objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLEXPOS">
-		<abbrInLang lang="es">
-			<abbrTerm>1plexpos</abbrTerm>
-			<abbrDefinition>primera persona plural exclusivo poseedor</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLEXSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>1plexsbj</abbrTerm>
-			<abbrDefinition>primera persona plural exclusivo sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLIN">
-		<abbrInLang lang="es">
-			<abbrTerm>1plin</abbrTerm>
-			<abbrDefinition>primera persona plural inclusivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLINABS">
-		<abbrInLang lang="es">
-			<abbrTerm>1plinabs</abbrTerm>
-			<abbrDefinition>primera persona plural inclusivo absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLINERG">
-		<abbrInLang lang="es">
-			<abbrTerm>1plinerg</abbrTerm>
-			<abbrDefinition>primera persona plural inclusivo ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLINOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>1plinobj</abbrTerm>
-			<abbrDefinition>primera persona plural inclusivo objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLINPOS">
-		<abbrInLang lang="es">
-			<abbrTerm>1plinpos</abbrTerm>
-			<abbrDefinition>primera persona plural inclusivo poseedor</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLINSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>1plinsbj</abbrTerm>
-			<abbrDefinition>primera persona plural inclusivo sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>1plobj</abbrTerm>
-			<abbrDefinition>primera persona plural objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLPOS">
-		<abbrInLang lang="es">
-			<abbrTerm>1plpos</abbrTerm>
-			<abbrDefinition>primera persona plural poseedor</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1PLSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>1plsbj</abbrTerm>
-			<abbrDefinition>primera persona plural sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1R">
-		<abbrInLang lang="es">
-			<abbrTerm>1r</abbrTerm>
-			<abbrDefinition>primera persona respecto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1SG">
-		<abbrInLang lang="es">
-			<abbrTerm>1sg</abbrTerm>
-			<abbrDefinition>primera persona singular</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1SGABS">
-		<abbrInLang lang="es">
-			<abbrTerm>1sgabs</abbrTerm>
-			<abbrDefinition>primera persona singular absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1SGERG">
-		<abbrInLang lang="es">
-			<abbrTerm>1sgerg</abbrTerm>
-			<abbrDefinition>primera persona singular ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1SGOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>1sgobj</abbrTerm>
-			<abbrDefinition>primera persona singular objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1SGPOS">
-		<abbrInLang lang="es">
-			<abbrTerm>1sgpos</abbrTerm>
-			<abbrDefinition>primera persona singular poseedor</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v1SGSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>1sgsbj</abbrTerm>
-			<abbrDefinition>primera persona singular sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2">
-		<abbrInLang lang="es">
-			<abbrTerm>2</abbrTerm>
-			<abbrDefinition>segunda persona</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2PL">
-		<abbrInLang lang="es">
-			<abbrTerm>2pl</abbrTerm>
-			<abbrDefinition>segunda persona plural</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2PLABS">
-		<abbrInLang lang="es">
-			<abbrTerm>2plabs</abbrTerm>
-			<abbrDefinition>segunda persona plural absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2PLERG">
-		<abbrInLang lang="es">
-			<abbrTerm>2plerg</abbrTerm>
-			<abbrDefinition>segunda persona plural ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2PLOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>2plobj</abbrTerm>
-			<abbrDefinition>segunda persona plural objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2PLPOS">
-		<abbrInLang lang="es">
-			<abbrTerm>2plpos</abbrTerm>
-			<abbrDefinition>segunda persona plural poseedor</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2PLSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>2plsbj</abbrTerm>
-			<abbrDefinition>segunda persona plural sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2R">
-		<abbrInLang lang="es">
-			<abbrTerm>2r</abbrTerm>
-			<abbrDefinition>segunda persona respecto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2SG">
-		<abbrInLang lang="es">
-			<abbrTerm>2sg</abbrTerm>
-			<abbrDefinition>segunda persona singular</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2SGABS">
-		<abbrInLang lang="es">
-			<abbrTerm>2sgabs</abbrTerm>
-			<abbrDefinition>segunda persona singular absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2SGERG">
-		<abbrInLang lang="es">
-			<abbrTerm>2sgerg</abbrTerm>
-			<abbrDefinition>segunda persona singular ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2SGOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>2sgobj</abbrTerm>
-			<abbrDefinition>segunda persona singular objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2SGPOS">
-		<abbrInLang lang="es">
-			<abbrTerm>2sgpos</abbrTerm>
-			<abbrDefinition>segunda persona singular poseedor</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v2SGSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>2sgsbj</abbrTerm>
-			<abbrDefinition>segunda persona singular sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3">
-		<abbrInLang lang="es">
-			<abbrTerm>3</abbrTerm>
-			<abbrDefinition>tercera persona</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3AD">
-		<abbrInLang lang="es">
-			<abbrTerm>3ad</abbrTerm>
-			<abbrDefinition>tercera persona adulto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3AN">
-		<abbrInLang lang="es">
-			<abbrTerm>3an</abbrTerm>
-			<abbrDefinition>tercera persona animal</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3BA">
-		<abbrInLang lang="es">
-			<abbrTerm>3ba</abbrTerm>
-			<abbrDefinition>tercera persona bebé</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3DE">
-		<abbrInLang lang="es">
-			<abbrTerm>3de</abbrTerm>
-			<abbrDefinition>tercera persona deidad</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3DEPR">
-		<abbrInLang lang="es">
-			<abbrTerm>3depr</abbrTerm>
-			<abbrDefinition>tercera persona deprecatoria</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3F">
-		<abbrInLang lang="es">
-			<abbrTerm>3f</abbrTerm>
-			<abbrDefinition>tercera persona feminina</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3FO">
-		<abbrInLang lang="es">
-			<abbrTerm>3fo</abbrTerm>
-			<abbrDefinition>tercera persona formal</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3GEN">
-		<abbrInLang lang="es">
-			<abbrTerm>3gen</abbrTerm>
-			<abbrDefinition>tercera persona general</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3H">
-		<abbrInLang lang="es">
-			<abbrTerm>3h</abbrTerm>
-			<abbrDefinition>tercera persona humano</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3IN">
-		<abbrInLang lang="es">
-			<abbrTerm>3in</abbrTerm>
-			<abbrDefinition>tercera persona inanimado</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3INFO">
-		<abbrInLang lang="es">
-			<abbrTerm>3info</abbrTerm>
-			<abbrDefinition>tercera persona informal</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3M">
-		<abbrInLang lang="es">
-			<abbrTerm>3m</abbrTerm>
-			<abbrDefinition>tercera persona masculino</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3CH">
-		<abbrInLang lang="es">
-			<abbrTerm>3ch</abbrTerm>
-			<abbrDefinition>tercera persona niño</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3PL">
-		<abbrInLang lang="es">
-			<abbrTerm>3pl</abbrTerm>
-			<abbrDefinition>tercera persona plural</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3PLABS">
-		<abbrInLang lang="es">
-			<abbrTerm>3plabs</abbrTerm>
-			<abbrDefinition>tercera persona plural absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3PLERG">
-		<abbrInLang lang="es">
-			<abbrTerm>3plerg</abbrTerm>
-			<abbrDefinition>tercera persona plural ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3PLOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>3plobj</abbrTerm>
-			<abbrDefinition>tercera persona plural objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3PLPOS">
-		<abbrInLang lang="es">
-			<abbrTerm>3plpos</abbrTerm>
-			<abbrDefinition>tercera persona plural poseedor</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3PLSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>3plsbj</abbrTerm>
-			<abbrDefinition>tercera persona plural sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3R">
-		<abbrInLang lang="es">
-			<abbrTerm>3r</abbrTerm>
-			<abbrDefinition>tercera persona respecto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3SG">
-		<abbrInLang lang="es">
-			<abbrTerm>3sg</abbrTerm>
-			<abbrDefinition>tercera persona singular</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3SGABS">
-		<abbrInLang lang="es">
-			<abbrTerm>3sgabs</abbrTerm>
-			<abbrDefinition>tercera persona singular absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3SGERG">
-		<abbrInLang lang="es">
-			<abbrTerm>3sgerg</abbrTerm>
-			<abbrDefinition>tercera persona singular ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3SGOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>3sgobj</abbrTerm>
-			<abbrDefinition>tercera persona singular objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3SGPOS">
-		<abbrInLang lang="es">
-			<abbrTerm>3sgpos</abbrTerm>
-			<abbrDefinition>tercera persona singular poseedor</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3SGSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>3sgsbj</abbrTerm>
-			<abbrDefinition>tercera persona singular sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="v3UM">
-		<abbrInLang lang="es">
-			<abbrTerm>3um</abbrTerm>
-			<abbrDefinition>tercera persona varón soltero</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vABL">
-		<abbrInLang lang="es">
-			<abbrTerm>abl</abbrTerm>
-			<abbrDefinition>ablativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vABS">
-		<abbrInLang lang="es">
-			<abbrTerm>abs</abbrTerm>
-			<abbrDefinition>absolutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vAGR">
-		<abbrInLang lang="es">
-			<abbrTerm>acd</abbrTerm>
-			<abbrDefinition>acuerdo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vACC">
-		<abbrInLang lang="es">
-			<abbrTerm>ac</abbrTerm>
-			<abbrDefinition>acusativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vADJ">
-		<abbrInLang lang="es">
-			<abbrTerm>adj</abbrTerm>
-			<abbrDefinition>adjetivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vADV">
-		<abbrInLang lang="es">
-			<abbrTerm>adv</abbrTerm>
-			<abbrDefinition>adverbio</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vAFF">
-		<abbrInLang lang="es">
-			<abbrTerm>af</abbrTerm>
-			<abbrDefinition>afirmativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vALL">
-		<abbrInLang lang="es">
-			<abbrTerm>all</abbrTerm>
-			<abbrDefinition>allativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vANIM">
-		<abbrInLang lang="es">
-			<abbrTerm>anim</abbrTerm>
-			<abbrDefinition>animado</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vANTIP">
-		<abbrInLang lang="es">
-			<abbrTerm>antep</abbrTerm>
-			<abbrDefinition>antepasivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vAPPL">
-		<abbrInLang lang="es">
-			<abbrTerm>apl</abbrTerm>
-			<abbrDefinition>aplicable</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vAPR">
-		<abbrInLang lang="es">
-			<abbrTerm>apr</abbrTerm>
-			<abbrDefinition>aproximadamente</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vART">
-		<abbrInLang lang="es">
-			<abbrTerm>art</abbrTerm>
-			<abbrDefinition>artículo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vTOP">
-		<abbrInLang lang="es">
-			<abbrTerm>as</abbrTerm>
-			<abbrDefinition>asunto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vAUG">
-		<abbrInLang lang="es">
-			<abbrTerm>aug</abbrTerm>
-			<abbrDefinition>aumentativa</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vAUX">
-		<abbrInLang lang="es">
-			<abbrTerm>aux</abbrTerm>
-			<abbrDefinition>auxiliar</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vBASE">
-		<abbrInLang lang="es">
-			<abbrTerm>base</abbrTerm>
-			<abbrDefinition>base (para formar los llamados pronombres independientes)</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vBEN">
-		<abbrInLang lang="es">
-			<abbrTerm>ben</abbrTerm>
-			<abbrDefinition>benefactivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCAUS">
-		<abbrInLang lang="es">
-			<abbrTerm>caus</abbrTerm>
-			<abbrDefinition>causativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCL">
-		<abbrInLang lang="es">
-			<abbrTerm>cl</abbrTerm>
-			<abbrDefinition>clase</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCLF">
-		<abbrInLang lang="es">
-			<abbrTerm>clf</abbrTerm>
-			<abbrDefinition>clasificador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCOM">
-		<abbrInLang lang="es">
-			<abbrTerm>com</abbrTerm>
-			<abbrDefinition>comitativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCOMP">
-		<abbrInLang lang="es">
-			<abbrTerm>comp</abbrTerm>
-			<abbrDefinition>complementizador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vC">
-		<abbrInLang lang="es">
-			<abbrTerm>c</abbrTerm>
-			<abbrDefinition>completivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCOND">
-		<abbrInLang lang="es">
-			<abbrTerm>cond</abbrTerm>
-			<abbrDefinition>condicional</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCF">
-		<abbrInLang lang="es">
-			<abbrTerm>cf</abbrTerm>
-			<abbrDefinition>contrariamente al hecho</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCVB">
-		<abbrInLang lang="es">
-			<abbrTerm>cvb</abbrTerm>
-			<abbrDefinition>converbo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vCOP">
-		<abbrInLang lang="es">
-			<abbrTerm>cop</abbrTerm>
-			<abbrDefinition>copular</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDAT">
-		<abbrInLang lang="es">
-			<abbrTerm>dat</abbrTerm>
-			<abbrDefinition>dativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDECL">
-		<abbrInLang lang="es">
-			<abbrTerm>decl</abbrTerm>
-			<abbrDefinition>declarativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDEF">
-		<abbrInLang lang="es">
-			<abbrTerm>def</abbrTerm>
-			<abbrDefinition>definido</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDEM">
-		<abbrInLang lang="es">
-			<abbrTerm>dem</abbrTerm>
-			<abbrDefinition>demonstrativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDP">
-		<abbrInLang lang="es">
-			<abbrTerm>dp</abbrTerm>
-			<abbrDefinition>dependiente</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDET">
-		<abbrInLang lang="es">
-			<abbrTerm>det</abbrTerm>
-			<abbrDefinition>determinador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDTR">
-		<abbrInLang lang="es">
-			<abbrTerm>dtr</abbrTerm>
-			<abbrDefinition>detransitivizador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDIM">
-		<abbrInLang lang="es">
-			<abbrTerm>dim</abbrTerm>
-			<abbrDefinition>diminutivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDIST">
-		<abbrInLang lang="es">
-			<abbrTerm>dist</abbrTerm>
-			<abbrDefinition>distal</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDISTR">
-		<abbrInLang lang="es">
-			<abbrTerm>distr</abbrTerm>
-			<abbrDefinition>distributivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDU">
-		<abbrInLang lang="es">
-			<abbrTerm>du</abbrTerm>
-			<abbrDefinition>dual</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vDUR">
-		<abbrInLang lang="es">
-			<abbrTerm>dur</abbrTerm>
-			<abbrDefinition>durativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vFE">
-		<abbrInLang lang="es">
-			<abbrTerm>ef</abbrTerm>
-			<abbrDefinition>ego femenino (en lo que concierne término del parentesco)</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vME">
-		<abbrInLang lang="es">
-			<abbrTerm>em</abbrTerm>
-			<abbrDefinition>ego masculino (en lo que concierne término del parentesco)</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vEMPH">
-		<abbrInLang lang="es">
-			<abbrTerm>enf</abbrTerm>
-			<abbrDefinition>enfático</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vERG">
-		<abbrInLang lang="es">
-			<abbrTerm>erg</abbrTerm>
-			<abbrDefinition>ergativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vS">
-		<abbrInLang lang="es">
-			<abbrTerm>es</abbrTerm>
-			<abbrDefinition>estativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vST">
-		<abbrInLang lang="es">
-			<abbrTerm>est</abbrTerm>
-			<abbrDefinition>estativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vEXCL">
-		<abbrInLang lang="es">
-			<abbrTerm>excl</abbrTerm>
-			<abbrDefinition>exclusivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vF">
-		<abbrInLang lang="es">
-			<abbrTerm>f</abbrTerm>
-			<abbrDefinition>feminino</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vFOC">
-		<abbrInLang lang="es">
-			<abbrTerm>foc</abbrTerm>
-			<abbrDefinition>foco</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vFREQ">
-		<abbrInLang lang="es">
-			<abbrTerm>frec</abbrTerm>
-			<abbrDefinition>frecuentativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vFV">
-		<abbrInLang lang="es">
-			<abbrTerm>fv</abbrTerm>
-			<abbrDefinition>fuera de vista</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vFUT">
-		<abbrInLang lang="es">
-			<abbrTerm>fut</abbrTerm>
-			<abbrDefinition>futuro</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vIF">
-		<abbrInLang lang="es">
-			<abbrTerm>fi</abbrTerm>
-			<abbrDefinition>futuro indefinido</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vGEN">
-		<abbrInLang lang="es">
-			<abbrTerm>gen</abbrTerm>
-			<abbrDefinition>genitivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vH">
-		<abbrInLang lang="es">
-			<abbrTerm>h</abbrTerm>
-			<abbrDefinition>habitual</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vIMP">
-		<abbrInLang lang="es">
-			<abbrTerm>imp</abbrTerm>
-			<abbrDefinition>imperativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vIMPF">
-		<abbrInLang lang="es">
-			<abbrTerm>impf</abbrTerm>
-			<abbrDefinition>imperfectivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vIPFV">
-		<abbrInLang lang="es">
-			<abbrTerm>ipfv</abbrTerm>
-			<abbrDefinition>imperfectivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vINAN">
-		<abbrInLang lang="es">
-			<abbrTerm>inan</abbrTerm>
-			<abbrDefinition>inanimado</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vUNC">
-		<abbrInLang lang="es">
-			<abbrTerm>inc</abbrTerm>
-			<abbrDefinition>incierto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vINCL">
-		<abbrInLang lang="es">
-			<abbrTerm>incl</abbrTerm>
-			<abbrDefinition>inclusivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vINDF">
-		<abbrInLang lang="es">
-			<abbrTerm>indf</abbrTerm>
-			<abbrDefinition>indefinido</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vINDEP">
-		<abbrInLang lang="es">
-			<abbrTerm>indep</abbrTerm>
-			<abbrDefinition>independiente</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vIND">
-		<abbrInLang lang="es">
-			<abbrTerm>ind</abbrTerm>
-			<abbrDefinition>indicativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vINF">
-		<abbrInLang lang="es">
-			<abbrTerm>inf</abbrTerm>
-			<abbrDefinition>infinitivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vINS">
-		<abbrInLang lang="es">
-			<abbrTerm>ins</abbrTerm>
-			<abbrDefinition>instrumental</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vINTS">
-		<abbrInLang lang="es">
-			<abbrTerm>ints</abbrTerm>
-			<abbrDefinition>intensificador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vINTR">
-		<abbrInLang lang="es">
-			<abbrTerm>intr</abbrTerm>
-			<abbrDefinition>intransitivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vIRR">
-		<abbrInLang lang="es">
-			<abbrTerm>irr</abbrTerm>
-			<abbrDefinition>irrealis</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vLOC">
-		<abbrInLang lang="es">
-			<abbrTerm>loc</abbrTerm>
-			<abbrDefinition>locativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vQ">
-		<abbrInLang lang="es">
-			<abbrTerm>preg</abbrTerm>
-			<abbrDefinition>marcador de la pregunta</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vM">
-		<abbrInLang lang="es">
-			<abbrTerm>m</abbrTerm>
-			<abbrDefinition>masculino</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vMD">
-		<abbrInLang lang="es">
-			<abbrTerm>md</abbrTerm>
-			<abbrDefinition>medial</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vNEG">
-		<abbrInLang lang="es">
-			<abbrTerm>neg</abbrTerm>
-			<abbrDefinition>negativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vN">
-		<abbrInLang lang="es">
-			<abbrTerm>n</abbrTerm>
-			<abbrDefinition>neutro</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vNFUT">
-		<abbrInLang lang="es">
-			<abbrTerm>nfut</abbrTerm>
-			<abbrDefinition>no futuro</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vNPST">
-		<abbrInLang lang="es">
-			<abbrTerm>npsd</abbrTerm>
-			<abbrDefinition>no pasado</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vNPRS">
-		<abbrInLang lang="es">
-			<abbrTerm>nprs</abbrTerm>
-			<abbrDefinition>no presente</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vU">
-		<abbrInLang lang="es">
-			<abbrTerm>nr</abbrTerm>
-			<abbrDefinition>no realizado</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vNSG">
-		<abbrInLang lang="es">
-			<abbrTerm>nsg</abbrTerm>
-			<abbrDefinition>no singular</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vNMLZ">
-		<abbrInLang lang="es">
-			<abbrTerm>nmlz</abbrTerm>
-			<abbrDefinition>nominalizador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vNOM">
-		<abbrInLang lang="es">
-			<abbrTerm>nom</abbrTerm>
-			<abbrDefinition>nominativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vOBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>obj</abbrTerm>
-			<abbrDefinition>objeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vIO">
-		<abbrInLang lang="es">
-			<abbrTerm>oi</abbrTerm>
-			<abbrDefinition>objeto indirecto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vUO">
-		<abbrInLang lang="es">
-			<abbrTerm>on</abbrTerm>
-			<abbrDefinition>objeto no especificado</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vOBL">
-		<abbrInLang lang="es">
-			<abbrTerm>obl</abbrTerm>
-			<abbrDefinition>oblicuo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPTCP">
-		<abbrInLang lang="es">
-			<abbrTerm>ptcp</abbrTerm>
-			<abbrDefinition>participio</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPST">
-		<abbrInLang lang="es">
-			<abbrTerm>psd</abbrTerm>
-			<abbrDefinition>pasado</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPASS">
-		<abbrInLang lang="es">
-			<abbrTerm>pas</abbrTerm>
-			<abbrDefinition>pasivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPFV">
-		<abbrInLang lang="es">
-			<abbrTerm>pfv</abbrTerm>
-			<abbrDefinition>perfectivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPRF">
-		<abbrInLang lang="es">
-			<abbrTerm>prf</abbrTerm>
-			<abbrDefinition>perfecto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPL">
-		<abbrInLang lang="es">
-			<abbrTerm>pl</abbrTerm>
-			<abbrDefinition>plural</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPOSD">
-		<abbrInLang lang="es">
-			<abbrTerm>posd</abbrTerm>
-			<abbrDefinition>poseído</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPOSS">
-		<abbrInLang lang="es">
-			<abbrTerm>pos</abbrTerm>
-			<abbrDefinition>posesivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vP">
-		<abbrInLang lang="es">
-			<abbrTerm>p</abbrTerm>
-			<abbrDefinition>potencial</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPOT">
-		<abbrInLang lang="es">
-			<abbrTerm>pot</abbrTerm>
-			<abbrDefinition>potencial</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPRED">
-		<abbrInLang lang="es">
-			<abbrTerm>pred</abbrTerm>
-			<abbrDefinition>predicativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPRS">
-		<abbrInLang lang="es">
-			<abbrTerm>prs</abbrTerm>
-			<abbrDefinition>presente</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPRO">
-		<abbrInLang lang="es">
-			<abbrTerm>pro</abbrTerm>
-			<abbrDefinition>pro</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPROG">
-		<abbrInLang lang="es">
-			<abbrTerm>prog</abbrTerm>
-			<abbrDefinition>progresivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPROH">
-		<abbrInLang lang="es">
-			<abbrTerm>proh</abbrTerm>
-			<abbrDefinition>prohibitivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPRON">
-		<abbrInLang lang="es">
-			<abbrTerm>pron</abbrTerm>
-			<abbrDefinition>pronombre</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPURP">
-		<abbrInLang lang="es">
-			<abbrTerm>prop</abbrTerm>
-			<abbrDefinition>propósito</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vPROX">
-		<abbrInLang lang="es">
-			<abbrTerm>prox</abbrTerm>
-			<abbrDefinition>proximal</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vQUOT">
-		<abbrInLang lang="es">
-			<abbrTerm>quot</abbrTerm>
-			<abbrDefinition>quotativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vRL">
-		<abbrInLang lang="es">
-			<abbrTerm>rl</abbrTerm>
-			<abbrDefinition>realis</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vRECP">
-		<abbrInLang lang="es">
-			<abbrTerm>recp</abbrTerm>
-			<abbrDefinition>reciprocal</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vREFL">
-		<abbrInLang lang="es">
-			<abbrTerm>refl</abbrTerm>
-			<abbrDefinition>reflexivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vREL">
-		<abbrInLang lang="es">
-			<abbrTerm>rel</abbrTerm>
-			<abbrDefinition>relativizador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vREP">
-		<abbrInLang lang="es">
-			<abbrTerm>rep</abbrTerm>
-			<abbrDefinition>repetitivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vRES">
-		<abbrInLang lang="es">
-			<abbrTerm>res</abbrTerm>
-			<abbrDefinition>resultativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vSG">
-		<abbrInLang lang="es">
-			<abbrTerm>sg</abbrTerm>
-			<abbrDefinition>singular</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vSBJV">
-		<abbrInLang lang="es">
-			<abbrTerm>sbjv</abbrTerm>
-			<abbrDefinition>subjuntivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vSBD">
-		<abbrInLang lang="es">
-			<abbrTerm>sbd</abbrTerm>
-			<abbrDefinition>subordinador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vSBJ">
-		<abbrInLang lang="es">
-			<abbrTerm>sbj</abbrTerm>
-			<abbrDefinition>sujeto</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vTR">
-		<abbrInLang lang="es">
-			<abbrTerm>tr</abbrTerm>
-			<abbrDefinition>transitivo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vVRB">
-		<abbrInLang lang="es">
-			<abbrTerm>vrb</abbrTerm>
-			<abbrDefinition>verbalizador</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vTHV">
-		<abbrInLang lang="es">
-			<abbrTerm>vt</abbrTerm>
-			<abbrDefinition>vocal temática</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vVOC">
-		<abbrInLang lang="es">
-			<abbrTerm>voc</abbrTerm>
-			<abbrDefinition>vocativo</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-	<abbreviation id="vAFM">
-		<abbrInLang lang="es">
-			<abbrTerm>afm</abbrTerm>
-			<abbrDefinition>ya mencionado</abbrDefinition>
-		</abbrInLang>
-	</abbreviation>
-</abbreviations>
+<?xml version="1.0" encoding="UTF-8"?>
+<abbreviations
+font-family="Charis SIL CompactSmallCaps"
+label="Abreviaturas"
+usesmallcaps="no"
+version="2.3.0"
+><comment
+>Las siguientes abreviaturas están basadas en las reglas de glosa de Leipzig, lista de abreviaturas estándar en <link
+href="http://www.eva.mpg.de/lingua/resources/glossing-rules.php"
+>http://www.eva.mpg.de/lingua/resources/glossing-rules.php</link
+> el 1° de octubre de 2008. Algunas de las abreviaturas específicas del Otomangue fueron agregadas.</comment
+><abbreviation
+id="v1"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1</abbrTerm
+><abbrDefinition
+>primera persona</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1pl</abbrTerm
+><abbrDefinition
+>primera persona plural</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plabs</abbrTerm
+><abbrDefinition
+>primera persona plural absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plerg</abbrTerm
+><abbrDefinition
+>primera persona plural ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plobj</abbrTerm
+><abbrDefinition
+>primera persona plural objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plpos</abbrTerm
+><abbrDefinition
+>primera persona plural poseedor</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plsuj</abbrTerm
+><abbrDefinition
+>primera persona plural sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLEX"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plex</abbrTerm
+><abbrDefinition
+>primera persona plural exclusivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PEXABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plexabs</abbrTerm
+><abbrDefinition
+>primera persona plural exclusivo absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLEXERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plexerg</abbrTerm
+><abbrDefinition
+>primera persona plural exclusivo ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLEXOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plexobj</abbrTerm
+><abbrDefinition
+>primera persona plural exclusivo objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLEXPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plexpos</abbrTerm
+><abbrDefinition
+>primera persona plural exclusivo poseedor</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLEXSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plexsuj</abbrTerm
+><abbrDefinition
+>primera persona plural exclusivo sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLIN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plin</abbrTerm
+><abbrDefinition
+>primera persona plural inclusivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLINABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plinabs</abbrTerm
+><abbrDefinition
+>primera persona plural inclusivo absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLINERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plinerg</abbrTerm
+><abbrDefinition
+>primera persona plural inclusivo ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLINOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plinobj</abbrTerm
+><abbrDefinition
+>primera persona plural inclusivo objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLINPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plinpos</abbrTerm
+><abbrDefinition
+>primera persona plural inclusivo poseedor</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLINSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plinsuj</abbrTerm
+><abbrDefinition
+>primera persona plural inclusivo sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1R"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1r</abbrTerm
+><abbrDefinition
+>primera persona respeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1SG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1sg</abbrTerm
+><abbrDefinition
+>primera persona singular</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1SGABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1sgabs</abbrTerm
+><abbrDefinition
+>primera persona singular absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1SGERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1sgerg</abbrTerm
+><abbrDefinition
+>primera persona singular ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1SGOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1sgobj</abbrTerm
+><abbrDefinition
+>primera persona singular objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1SGPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1sgpos</abbrTerm
+><abbrDefinition
+>primera persona singular poseedor</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1SGSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1sgsuj</abbrTerm
+><abbrDefinition
+>primera persona singular sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2</abbrTerm
+><abbrDefinition
+>segunda persona</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2PL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2pl</abbrTerm
+><abbrDefinition
+>segunda persona plural</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2PLABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2plabs</abbrTerm
+><abbrDefinition
+>segunda persona plural absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2PLERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2plerg</abbrTerm
+><abbrDefinition
+>segunda persona plural ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2PLOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2plobj</abbrTerm
+><abbrDefinition
+>segunda persona plural objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2PLPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2plpos</abbrTerm
+><abbrDefinition
+>segunda persona plural poseedor</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2PLSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2plsuj</abbrTerm
+><abbrDefinition
+>segunda persona plural sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2R"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2r</abbrTerm
+><abbrDefinition
+>segunda persona respeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2SG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2sg</abbrTerm
+><abbrDefinition
+>segunda persona singular</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2SGABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2sgabs</abbrTerm
+><abbrDefinition
+>segunda persona singular absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2SGERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2sgerg</abbrTerm
+><abbrDefinition
+>segunda persona singular ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2SGOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2sgobj</abbrTerm
+><abbrDefinition
+>segunda persona singular objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2SGPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2sgpos</abbrTerm
+><abbrDefinition
+>segunda persona singular poseedor</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v2SGSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>2sgsuj</abbrTerm
+><abbrDefinition
+>segunda persona singular sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3</abbrTerm
+><abbrDefinition
+>tercera persona</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3AD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3ad</abbrTerm
+><abbrDefinition
+>tercera persona adulto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3AN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3an</abbrTerm
+><abbrDefinition
+>tercera persona animal</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3BA"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3ba</abbrTerm
+><abbrDefinition
+>tercera persona bebé</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3CH"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3ni</abbrTerm
+><abbrDefinition
+>tercera persona niño</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3DE"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3de</abbrTerm
+><abbrDefinition
+>tercera persona deidad</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3DEPR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3depr</abbrTerm
+><abbrDefinition
+>tercera persona deprecatoria</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3F"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3f</abbrTerm
+><abbrDefinition
+>tercera persona femenina</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3FO"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3fo</abbrTerm
+><abbrDefinition
+>tercera persona formal</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3GEN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3gen</abbrTerm
+><abbrDefinition
+>tercera persona general</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3H"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3h</abbrTerm
+><abbrDefinition
+>tercera persona humano</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3IN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3in</abbrTerm
+><abbrDefinition
+>tercera persona inanimado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3INFO"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3info</abbrTerm
+><abbrDefinition
+>tercera person informal</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3M"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3m</abbrTerm
+><abbrDefinition
+>tercera persona masculino</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3UM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3um</abbrTerm
+><abbrDefinition
+>tercera persona varón soltero</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3PL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3pl</abbrTerm
+><abbrDefinition
+>tercera persona plural</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3PLABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3plabs</abbrTerm
+><abbrDefinition
+>tercera persona plural absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3PLERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3plerg</abbrTerm
+><abbrDefinition
+>tercera persona plural ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3PLOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3plobj</abbrTerm
+><abbrDefinition
+>tercera persona plural objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3PLPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3plpos</abbrTerm
+><abbrDefinition
+>tercera persona plural poseedor</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3PLSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3plsuj</abbrTerm
+><abbrDefinition
+>tercera persona plural sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3R"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3r</abbrTerm
+><abbrDefinition
+>tercera persona respeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3SG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3sg</abbrTerm
+><abbrDefinition
+>tercera persona singular</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3SGABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3sgabs</abbrTerm
+><abbrDefinition
+>tercera persona singular absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3SGERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3sgerg</abbrTerm
+><abbrDefinition
+>tercera persona singular ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3SGOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3sgobj</abbrTerm
+><abbrDefinition
+>tercera persona singular objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3SGPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3sgpos</abbrTerm
+><abbrDefinition
+>tercera persona singular poseedor</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v3SGSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3sgsuj</abbrTerm
+><abbrDefinition
+>tercera persona singular sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vABL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>abl</abbrTerm
+><abbrDefinition
+>ablativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vABS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>abs</abbrTerm
+><abbrDefinition
+>absolutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vACC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ac</abbrTerm
+><abbrDefinition
+>acusativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vADJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>adj</abbrTerm
+><abbrDefinition
+>adjetivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vADV"
+><abbrInLang
+lang="es"
+><abbrTerm
+>adv</abbrTerm
+><abbrDefinition
+>adverbio</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAFF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>af</abbrTerm
+><abbrDefinition
+>afirmativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAFM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>afm</abbrTerm
+><abbrDefinition
+>antes mencionado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAGR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>acd</abbrTerm
+><abbrDefinition
+>acuerdo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vALL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>al</abbrTerm
+><abbrDefinition
+>alativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vANIM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>anim</abbrTerm
+><abbrDefinition
+>animado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vANTIP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>antep</abbrTerm
+><abbrDefinition
+>antepasivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAPPL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>apl</abbrTerm
+><abbrDefinition
+>aplicable</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAPR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>apr</abbrTerm
+><abbrDefinition
+>aproximadamente</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vART"
+><abbrInLang
+lang="es"
+><abbrTerm
+>art</abbrTerm
+><abbrDefinition
+>artículo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vTOP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>as</abbrTerm
+><abbrDefinition
+>asunto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAUG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>aum</abbrTerm
+><abbrDefinition
+>aumentativa</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAUX"
+><abbrInLang
+lang="es"
+><abbrTerm
+>aux</abbrTerm
+><abbrDefinition
+>auxiliar</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vBASE"
+><abbrInLang
+lang="es"
+><abbrTerm
+>base</abbrTerm
+><abbrDefinition
+>base (para formar los llamados pronombres independientes)</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vBEN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ben</abbrTerm
+><abbrDefinition
+>benefactivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>c</abbrTerm
+><abbrDefinition
+>completivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCAUS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>caus</abbrTerm
+><abbrDefinition
+>causativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cf</abbrTerm
+><abbrDefinition
+>contrariamente al hecho</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl</abbrTerm
+><abbrDefinition
+>clase</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clf</abbrTerm
+><abbrDefinition
+>clasificador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCOM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>com</abbrTerm
+><abbrDefinition
+>comitativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCOMP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>comp</abbrTerm
+><abbrDefinition
+>complementizador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCOND"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cond</abbrTerm
+><abbrDefinition
+>condicional</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCOP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cop</abbrTerm
+><abbrDefinition
+>cópula</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDAT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>dat</abbrTerm
+><abbrDefinition
+>dativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDECL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>decl</abbrTerm
+><abbrDefinition
+>declarativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDEF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>def</abbrTerm
+><abbrDefinition
+>definido</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDEM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>dem</abbrTerm
+><abbrDefinition
+>demonstrativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDET"
+><abbrInLang
+lang="es"
+><abbrTerm
+>det</abbrTerm
+><abbrDefinition
+>determinante</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDIM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>dim</abbrTerm
+><abbrDefinition
+>diminutivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDIST"
+><abbrInLang
+lang="es"
+><abbrTerm
+>dist</abbrTerm
+><abbrDefinition
+>distante</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDISTR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>distr</abbrTerm
+><abbrDefinition
+>distributivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>dp</abbrTerm
+><abbrDefinition
+>dependiente</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDTR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>dtr</abbrTerm
+><abbrDefinition
+>particula que ditransitiviza</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDU"
+><abbrInLang
+lang="es"
+><abbrTerm
+>du</abbrTerm
+><abbrDefinition
+>dual</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vDUR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>dur</abbrTerm
+><abbrDefinition
+>durativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vEMPH"
+><abbrInLang
+lang="es"
+><abbrTerm
+>enf</abbrTerm
+><abbrDefinition
+>enfático</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vERG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>erg</abbrTerm
+><abbrDefinition
+>ergativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>es</abbrTerm
+><abbrDefinition
+>estativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vEXCL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>excl</abbrTerm
+><abbrDefinition
+>exclusivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>f</abbrTerm
+><abbrDefinition
+>femenino</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vFE"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ef</abbrTerm
+><abbrDefinition
+>ego femenino (en lo que concierne término del parentesco)</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vFOC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>foq</abbrTerm
+><abbrDefinition
+>enfoque</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vFREQ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>frec</abbrTerm
+><abbrDefinition
+>frecuentativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vFUT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>fut</abbrTerm
+><abbrDefinition
+>futuro</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vFV"
+><abbrInLang
+lang="es"
+><abbrTerm
+>fv</abbrTerm
+><abbrDefinition
+>fuera de la vista</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vGEN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>gen</abbrTerm
+><abbrDefinition
+>genitivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vH"
+><abbrInLang
+lang="es"
+><abbrTerm
+>h</abbrTerm
+><abbrDefinition
+>habitual</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vIF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>fi</abbrTerm
+><abbrDefinition
+>futuro indefinido</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vIMP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>imp</abbrTerm
+><abbrDefinition
+>imperativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vIMPF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>impf</abbrTerm
+><abbrDefinition
+>imperfecto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vIPFV"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ipfv</abbrTerm
+><abbrDefinition
+>imperfectivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vINAN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>inan</abbrTerm
+><abbrDefinition
+>inanimado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vUNC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>inc</abbrTerm
+><abbrDefinition
+>incierto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vINCL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>incl</abbrTerm
+><abbrDefinition
+>inclusivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vIND"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ind</abbrTerm
+><abbrDefinition
+>indicativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vINDEP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>indep</abbrTerm
+><abbrDefinition
+>independiente</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vINDF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>indf</abbrTerm
+><abbrDefinition
+>indefinido</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vINF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>inf</abbrTerm
+><abbrDefinition
+>infinitivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vINS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ins</abbrTerm
+><abbrDefinition
+>instrumental</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vINTR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>intr</abbrTerm
+><abbrDefinition
+>intransitivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vINTS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ints</abbrTerm
+><abbrDefinition
+>intensificador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vIRR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>irr</abbrTerm
+><abbrDefinition
+>irrealis</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vLOC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>loc</abbrTerm
+><abbrDefinition
+>locativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>m</abbrTerm
+><abbrDefinition
+>masculino</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vME"
+><abbrInLang
+lang="es"
+><abbrTerm
+>em</abbrTerm
+><abbrDefinition
+>ego masculino (en lo que concierne término del parentesco)</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vMD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>md</abbrTerm
+><abbrDefinition
+>medial</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>n</abbrTerm
+><abbrDefinition
+>neutro</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vNEG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>neg</abbrTerm
+><abbrDefinition
+>negativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vNMLZ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>nmlz</abbrTerm
+><abbrDefinition
+>nominalizador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vNOM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>nom</abbrTerm
+><abbrDefinition
+>nominativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vNFUT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>nfut</abbrTerm
+><abbrDefinition
+>no futuro</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vNPRS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>nprs</abbrTerm
+><abbrDefinition
+>no presente</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vNPST"
+><abbrInLang
+lang="es"
+><abbrTerm
+>npsd</abbrTerm
+><abbrDefinition
+>no pasado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vU"
+><abbrInLang
+lang="es"
+><abbrTerm
+>nr</abbrTerm
+><abbrDefinition
+>no realizado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vNSG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>nsg</abbrTerm
+><abbrDefinition
+>no singular</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>obj</abbrTerm
+><abbrDefinition
+>objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vOBL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>obl</abbrTerm
+><abbrDefinition
+>oblicuo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vIO"
+><abbrInLang
+lang="es"
+><abbrTerm
+>oin</abbrTerm
+><abbrDefinition
+>objeto indirecto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vUO"
+><abbrInLang
+lang="es"
+><abbrTerm
+>on</abbrTerm
+><abbrDefinition
+>objeto no especificado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>p</abbrTerm
+><abbrDefinition
+>potencial</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPTCP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>part</abbrTerm
+><abbrDefinition
+>participio</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPASS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>pas</abbrTerm
+><abbrDefinition
+>pasivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPRF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>prf</abbrTerm
+><abbrDefinition
+>perfecto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPFV"
+><abbrInLang
+lang="es"
+><abbrTerm
+>pfv</abbrTerm
+><abbrDefinition
+>perfectivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>pl</abbrTerm
+><abbrDefinition
+>plural</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPOSD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>posd</abbrTerm
+><abbrDefinition
+>poseído</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPOSS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>pos</abbrTerm
+><abbrDefinition
+>posesivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPOT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>pot</abbrTerm
+><abbrDefinition
+>potencial</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPRED"
+><abbrInLang
+lang="es"
+><abbrTerm
+>pred</abbrTerm
+><abbrDefinition
+>predicativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPRO"
+><abbrInLang
+lang="es"
+><abbrTerm
+>pro</abbrTerm
+><abbrDefinition
+>pro (no audible)</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPRS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>prs</abbrTerm
+><abbrDefinition
+>presente</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPROG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>prog</abbrTerm
+><abbrDefinition
+>progresivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPROH"
+><abbrInLang
+lang="es"
+><abbrTerm
+>proh</abbrTerm
+><abbrDefinition
+>prohibitivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPRON"
+><abbrInLang
+lang="es"
+><abbrTerm
+>pron</abbrTerm
+><abbrDefinition
+>pronombre</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPROX"
+><abbrInLang
+lang="es"
+><abbrTerm
+>prox</abbrTerm
+><abbrDefinition
+>próximo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPST"
+><abbrInLang
+lang="es"
+><abbrTerm
+>psd</abbrTerm
+><abbrDefinition
+>pasado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPURP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>prop</abbrTerm
+><abbrDefinition
+>propósito</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vQ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>preg</abbrTerm
+><abbrDefinition
+>marcador de la pregunta</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vQUOT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cuot</abbrTerm
+><abbrDefinition
+>cuotativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vRECP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>recp</abbrTerm
+><abbrDefinition
+>recíproco</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vREFL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>refl</abbrTerm
+><abbrDefinition
+>reflexivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vREL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>rel</abbrTerm
+><abbrDefinition
+>relativizador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vREP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>rep</abbrTerm
+><abbrDefinition
+>repetitivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vRES"
+><abbrInLang
+lang="es"
+><abbrTerm
+>res</abbrTerm
+><abbrDefinition
+>resultativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vRL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>rl</abbrTerm
+><abbrDefinition
+>realis</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vSBD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>sbd</abbrTerm
+><abbrDefinition
+>subordinador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>suj</abbrTerm
+><abbrDefinition
+>sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vSBJV"
+><abbrInLang
+lang="es"
+><abbrTerm
+>subj</abbrTerm
+><abbrDefinition
+>subjuntivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vSG"
+><abbrInLang
+lang="es"
+><abbrTerm
+>sg</abbrTerm
+><abbrDefinition
+>singular</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vST"
+><abbrInLang
+lang="es"
+><abbrTerm
+>est</abbrTerm
+><abbrDefinition
+>estativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vTR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>tr</abbrTerm
+><abbrDefinition
+>transitivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVRB"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vrb</abbrTerm
+><abbrDefinition
+>verbalizador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVOC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>voc</abbrTerm
+><abbrDefinition
+>vocativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vTHV"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vt</abbrTerm
+><abbrDefinition
+>vocal temática</abbrDefinition
+></abbrInLang
+></abbreviation
+></abbreviations
+>

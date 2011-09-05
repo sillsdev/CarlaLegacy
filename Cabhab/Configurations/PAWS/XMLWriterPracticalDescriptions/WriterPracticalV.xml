@@ -1010,17 +1010,17 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				</text>
 			</p>
 			<p show="swIPAuxNonfiniteYes">
-				<content>Examples of auxiliaries of this type in </content><langName/><content> are:</content>
+				<content>The nonfinite auxiliary marker(s) in </content><langName/><content> is/are:</content>
 			</p>
 			<example show="swIPAuxNonfiniteYes">
 				<table border="1">
 					<headerRow>
-						<headerCol>Nonfinite Auxiliary Words</headerCol>
+						<headerCol>Nonfinite Auxiliary Marker(s)</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
 						<col exampleLoc="ip/auxiliaryNonfiniteExample"/>
-						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+						<col ><gloss><content>nonfinite marker in subordinate clauses</content></gloss></col>
 					</row>
 				</table>
 			</example>
@@ -1033,15 +1033,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 			</example>
 
 			<p>
-				<content>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which are written </content>
-				<text show="swVInitial">
-					<content>before</content>
-				</text>
-				<content/>
-				<text show="swVFinal">
-					<content>after</content>
-				</text>
-				<content> the verb and share the same subject and complements.</content>
+				<content>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which share the same subject and complements as the main verb.</content>
 			</p>
 			<p>
 				<langName/>
@@ -1073,7 +1065,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				</text>
 			</p>
 			<p show="swIPAuxOtherYes">
-				<content>Examples of these other auxiliaries in </content><langName/><content> are:</content>
+				<content>These other auxiliaries in </content><langName/><content> are:</content>
 			</p>
 			<example show="swIPAuxOtherYes">
 				<table border="1">

@@ -537,6 +537,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_2B3EDBD3308F47F69784A15E3EC065A4"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_2B58BE2A7AF1461DAE32424CE83733BC"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:_UNDEFINED"
@@ -928,6 +934,12 @@
 		"Entry"
 		{
 		"MsmKey" = "8:_46384AA4E0FE45249E403A1E168F23A9"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_466C02BEC1BE406AAF75CEBF3F636F7E"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:_UNDEFINED"
 		}
@@ -1354,6 +1366,12 @@
 		"Entry"
 		{
 		"MsmKey" = "8:_5D9C4EAABDF149468F77CEF0C5399DD4"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_60469B4A970143C98F9878FDBA62C839"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:_UNDEFINED"
 		}
@@ -1839,6 +1857,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_84632DE183B64A989F0BCED4538C7BF9"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_84DB54F5FDF64CD8ADD99269A47DEDE3"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:_UNDEFINED"
@@ -2044,6 +2068,12 @@
 		"Entry"
 		{
 		"MsmKey" = "8:_925E578F5B55432C8037927AEA0415C3"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_945A271F198741BF9DF69966CBD739B0"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:_UNDEFINED"
 		}
@@ -3016,6 +3046,12 @@
 		"Entry"
 		{
 		"MsmKey" = "8:_D8F07EDAB54340A8A8EFB8997132A1C1"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
+		"MsmKey" = "8:_D96C4B3E91BF4AFA859961FCBC720E17"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:_UNDEFINED"
 		}
@@ -5525,6 +5561,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2B3EDBD3308F47F69784A15E3EC065A4"
+			{
+			"SourcePath" = "8:..\\Configurations\\PAWS\\Data\\XLingPapIndexTerms.dtd"
+			"TargetName" = "8:XLingPapIndexTerms.dtd"
+			"Tag" = "8:"
+			"Folder" = "8:_FC8EEE0246EF4DB19ABB9A30E60862D3"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2B58BE2A7AF1461DAE32424CE83733BC"
 			{
 			"SourcePath" = "8:..\\Configurations\\PAWS\\HTMs\\CarlaStudioSetup.js"
@@ -6695,6 +6751,26 @@
 			"TargetName" = "8:PNCatMap.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_85CC603E7B444FC1B6CC1583B3261667"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_466C02BEC1BE406AAF75CEBF3F636F7E"
+			{
+			"SourcePath" = "8:..\\Configurations\\PAWS\\Data\\XLingPapAbbreviations.dtd"
+			"TargetName" = "8:XLingPapAbbreviations.dtd"
+			"Tag" = "8:"
+			"Folder" = "8:_FC8EEE0246EF4DB19ABB9A30E60862D3"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -8063,6 +8139,26 @@
 			"TargetName" = "8:QPDegree.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_F7C359265F734EA6BF601E0FDD8C325A"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_60469B4A970143C98F9878FDBA62C839"
+			{
+			"SourcePath" = "8:..\\Configurations\\PAWS\\Data\\XLingPapReferences.dtd"
+			"TargetName" = "8:XLingPapReferences.dtd"
+			"Tag" = "8:"
+			"Folder" = "8:_FC8EEE0246EF4DB19ABB9A30E60862D3"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -9681,6 +9777,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_84632DE183B64A989F0BCED4538C7BF9"
+			{
+			"SourcePath" = "8:..\\Configurations\\PAWS\\Data\\XLingPapAuthorContactInformation.dtd"
+			"TargetName" = "8:XLingPapAuthorContactInformation.dtd"
+			"Tag" = "8:"
+			"Folder" = "8:_FC8EEE0246EF4DB19ABB9A30E60862D3"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_84DB54F5FDF64CD8ADD99269A47DEDE3"
 			{
 			"SourcePath" = "8:..\\Configurations\\PAWS\\HTMs\\Purpose.htm"
@@ -10367,6 +10483,26 @@
 			"TargetName" = "8:NPMain.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_85CC603E7B444FC1B6CC1583B3261667"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_945A271F198741BF9DF69966CBD739B0"
+			{
+			"SourcePath" = "8:..\\Configurations\\PAWS\\Data\\XLingPapAttributeEntities.dtd"
+			"TargetName" = "8:XLingPapAttributeEntities.dtd"
+			"Tag" = "8:"
+			"Folder" = "8:_FC8EEE0246EF4DB19ABB9A30E60862D3"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -13533,6 +13669,26 @@
 			"IsDependency" = "11:FALSE"
 			"IsolateTo" = "8:"
 			}
+			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D96C4B3E91BF4AFA859961FCBC720E17"
+			{
+			"SourcePath" = "8:..\\Configurations\\PAWS\\Data\\XLingPapCharacterEntities.dtd"
+			"TargetName" = "8:XLingPapCharacterEntities.dtd"
+			"Tag" = "8:"
+			"Folder" = "8:_FC8EEE0246EF4DB19ABB9A30E60862D3"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
 			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DA0BBE0082C44362A471ADB9B6054FF8"
 			{
 			"SourcePath" = "8:..\\Configurations\\PAWS\\XMLWriterPracticalSpanishDescriptions\\WriterSpPracticalNeg.xml"
@@ -15595,7 +15751,7 @@
 		"Name" = "8:Microsoft Visual Studio"
 		"ProductName" = "8:PAWS Starter Kit (Cabhab version)"
 		"ProductCode" = "8:{5E7A315D-6D57-42C1-8E07-11DFEB9A4CB6}"
-		"PackageCode" = "8:{49931947-1D38-475E-9BD5-EFE645C2F361}"
+		"PackageCode" = "8:{27CB4551-9103-4B00-A47C-B6AE64391B4D}"
 		"UpgradeCode" = "8:{FEBBCD5B-3BAF-45D9-A9B5-6B4D3CE2AB46}"
 		"RestartWWWService" = "11:FALSE"
 		"RemovePreviousVersions" = "11:FALSE"

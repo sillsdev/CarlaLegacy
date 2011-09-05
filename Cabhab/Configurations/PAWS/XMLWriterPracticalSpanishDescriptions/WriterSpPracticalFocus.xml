@@ -2,48 +2,57 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
   <section1 id="sFocus">
-	  <secTitle>Las construcciones del foco y del asunto</secTitle>
+	  <secTitle>Las construcciones de enfoque y asunto</secTitle>
 <p><content>
-	Esta sección considera dos tipos de construcciones que dibujen la atención a un elemento particular. Puesto que los asuntos ocurren fuera de construcciones del foco, serán considerados primero. El ejemplo siguiente demuestra que una sola oración puede tener un asunto y una frase enfocada.
-	En este caso, el asunto </content><langData>Guillermo</langData><content> es introducido por el marcador del asunto </content><langData>en cuanto a</langData><content>,
-		después la frase enfocada </content><langData>el fútbol</langData><content>, que se ha movido fuera de su lugar regular en la oración sigue.</content></p>
+	Esta sección considera dos tipos de construcciones que dibujen la atención a un elemento particular. Puesto que los asuntos se presentan fuera de construcciones de enfoque, serán considerados primero. El ejemplo siguiente demuestra que una sola oración puede tener un asunto y una frase enfocada.
+	En este caso, el asunto </content><langData>Guillermo</langData><content> es introducido por el indicador del asunto </content><langData>en cuanto a</langData><content>,
+		y después sigue la frase enfocada </content><langData>el fútbol</langData><content>, que se ha desplazado de su posición normal en la oración.</content></p>
 <ul>
 <li>
 	<content>En cuanto a Guillermo, el fútbol él juega ___ fantástico. </content>
 </li></ul>
 <section2 id="sFocusTopics">
-	<secTitle>Los asuntos y los marcadores del asunto</secTitle>
+	<secTitle>Los asuntos y los indicadores del asunto</secTitle>
 <p><content>
-	Según lo definido aquí, las construcciones del asunto consisten en una frase del asunto seguida por una oración o una pregunta completa y fijan generalmente aparte por la puntuación. Ciertos marcadores se pueden utilizar para fijar de asuntos, según las indicaciones de los ejemplos españoles siguientes:</content>
+	Según lo definido aquí, las construcciones del asunto consisten en una frase del asunto seguida por una oración o una pregunta completa y generalmente son fijados aparte por la puntuación. Ciertos indicadores se pueden utilizar para los asuntos, como en los ejemplos en español siguientes:</content>
 	</p>
 			<ol>
 				<li>
 					<content>En cuanto a Juan, pienso que él hará a un buen doctor.</content>
 				</li>
 				<li>
-					<content>El discurso de Juliana, ¿dónde es ella?</content>
+					<content>El discurso de Juliana, ¿dónde está ella?</content>
 				</li>
 			</ol>
-	<p show="swTopicNo"><langName/><content> no permite frases del asunto. </content></p>
-	<p show="swTopicYes"><langName/><content> tiene frases del asunto que ocurren </content>
+	<p show="swTopicNo">
+		<content>En </content>
+		<langName/>
+		<content> no hay frases del asunto. </content></p>
+	<p show="swTopicYes">
+		<content>En </content>
+		<langName/>
+		<content> hay frases del asunto que se presentan </content>
 			<case element="focus" attr="topicPos">
 				<caseText value="before">antes</caseText>
 				<caseText value="after">después</caseText>
 				<caseText value="unknown">_______</caseText>
 			</case>
-		<content> de la oración o la pregunta principal. Algunos ejemplos incluyen:</content>
+		<content> de la oración o la pregunta principal. Algunos ejemplos son:</content>
 </p>
 			<example show="swTopicYes">
 				<interlinear exampleLoc="focus/topicExample"/>
 			</example>
-	<p show="swTopicYes"><content>En </content><langName/><content>, la frase del asunto </content>
+	<p show="swTopicYes">
+		<content>En </content>
+		<langName/>
+		<content> la frase del asunto </content>
 <case element="focus" attr="topicMarker">
-	<caseText value="no">no es marcado por un marcador del asunto. Solamente la posición en la oración y puntuación distingue posiblemente la frase del asunto.</caseText>
+	<caseText value="no">no es marcado por un indicador del asunto. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase del asunto.</caseText>
 	<caseText value="yesWord">es marcado por ciertas palabras o frases.</caseText>
-	<caseText value="yesClitic">es marcado por uno o más clíticos que juntan a la frase del asunto.</caseText>
-	<caseText value="yesAffix">es marcado por uno o más afijos que juntan a la frase del asunto.</caseText>
+	<caseText value="yesClitic">es marcado por uno o más clíticos que se unen a la frase del asunto.</caseText>
+	<caseText value="yesAffix">es marcado por uno o más afijos que se unen a la frase del asunto.</caseText>
 </case>
-		<text show="swTopicYesWord"><content>Los marcadores del asunto ocurren </content>
+		<text show="swTopicYesWord"><content>Los indicadores del asunto se presentan </content>
 <case element="focus" attr="topicMarkerPos">
 	<caseText value="before">antes de la frase sí mismo del asunto.</caseText>
 	<caseText value="after">después de la frase sí mismo del asunto.</caseText>
@@ -51,33 +60,33 @@
 	<caseText value="both">en ambos lados de la frase del asunto sí mismo.</caseText>
 <caseText value="unknown">_______.</caseText>
 </case>
-			<content> El marcador del asunto es </content><case element="focus" attr="topicMarkerRequired">
+			<content> El indicador del asunto es </content><case element="focus" attr="topicMarkerRequired">
 				<caseText value="no">opcional</caseText>
 				<caseText value="yes">requerido</caseText></case>
 			<content> siempre que haya una frase del asunto.</content>
 </text>
-		<text show="swTopicYesWordEitherNo"><content>Hay restricciones en cuanto a los cuales marcadores del asunto que pueden ocurrir en cada lado de la frase del asunto.</content></text>
-		<text show="swTopicYesWordEitherYes"><content>Todos los marcadores del asunto pueden ocurrir de cualquier lado de la frase del asunto.</content></text>
+		<text show="swTopicYesWordEitherNo"><content>Hay restricciones en cuanto a cuáles indicadores del asunto pueden presentarse en cada lado de la frase del asunto.</content></text>
+		<text show="swTopicYesWordEitherYes"><content>Todos los marcadores del asunto pueden presentarse de cualquier lado de la frase del asunto.</content></text>
 </p>
 <example show="swTopicMarkerYes">
 	<table border="1">
 <headerRow>
-	<headerCol>Marcadores del asunto</headerCol>
-	<headerCol>Significado o restricciones</headerCol>
+	<headerCol>Indicadores del asunto</headerCol>
+	<headerCol>Glosa o restricciones</headerCol>
 </headerRow>
 	<row>
 		<col exampleLoc="focus/topicMarkerExample"></col>
-		<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+		<col ><gloss><content>ESCRIBA LA GLOSA O RESTRICCIONES</content></gloss></col>
 	</row>
 </table>
 </example>
 </section2>
 
 <section2 id="sFocusFocus">
-	<secTitle>Las frases enfocadas y los marcadores del foco</secTitle>
-	<p><content>En contraste con asuntos, mientras que las construcciones del foco también tienen un elemento afrontado que se pueda ser marcado por la puntuación, la frase en foco se mueve desde su posición normal en la oración, dejando un boquete.
-	Ciertos marcadores,  como </content><langData>solamente</langData><content> en español, se pueden utilizar para marcar la frase enfocada. Las construcciones del foco no se utilizan con frecuencia en idiomas del orden SVO, puesto que el tema es generalmente en foco y es ya primer en la orden normal.
-		Las idiomas con otras órdenes de la palabra, tales como idiomas del orden VSO, pueden hacer el uso extenso de construcciones del foco. Los ejemplos españoles de las construcciones del foco incluyen:</content></p>
+	<secTitle>Las frases enfocadas y los marcadores de enfoque</secTitle>
+	<p><content>En contraste con asuntos, mientras que las construcciones de enfoque también tienen un elemento desplazado que se pueda ser marcado por la puntuación, la frase en foco se mueve desde su posición normal en la oración, dejando un agujero.
+	Ciertos indicadores,  como </content><langData>solamente</langData><content> en español, se pueden utilizar para marcar la frase enfocada. Las construcciones de enfoque no se utilizan con frecuencia en idiomas del orden SVO, puesto que el sujeto es generalmente en foco y es ya primer en el orden normal.
+		Los idiomas con otros órdenes de la palabra, tales como idiomas del orden VSO, pueden hacer el uso extenso de construcciones de enfoque. Algunos ejemplos en español de las construcciones de enfoque son:</content></p>
 			<ol>
 				<li>
 					<content>De las muchachas, tengo gusto  __.</content>
@@ -89,26 +98,29 @@
 					<content>A solamente ese muchacho, Juan golpeó  __ .</content>
 				</li>
 			</ol>
-	<p show="swFocusNo"><langName/><content> no permite que una frase del foco sea movida antes o después del resto de la oración de su posición normal. </content></p>
-<p show="swFocusYes"><langName/><content> tiene las frases de enfocado que ocurren </content>
+	<p show="swFocusNo">
+		<content>En </content>
+		<langName/>
+		<content> no permite que una frase de enfoque sea desplazada ni antes ni después del resto de la oración de su posición normal. </content></p>
+<p show="swFocusYes"><langName/><content> hay las frases de enfoque que se presentan </content>
 			<case element="focus" attr="focusPos">
 				<caseText value="before">antes</caseText>
 				<caseText value="after">después</caseText>
 				<caseText value="unknown">_______</caseText>
 			</case>
-	<content> del resto de la oración. Algunos ejemplos incluyen:</content>
+	<content> del resto de la oración. Algunos ejemplos son:</content>
 </p>
 			<example show="swFocusYes">
 				<interlinear exampleLoc="focus/focusExample"/>
 			</example>
 <p show="swFocusYes"><content>En </content><langName/><content>, la frase enfocada </content>
 <case element="focus" attr="focusMarker">
-	<caseText value="no">no es marcado por un marcador del foco. Solamente la posición en la oración y posiblemente puntuación distingue la frase enfocada.</caseText>
+	<caseText value="no">no es marcado por un indicador de enfoque. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase enfocada.</caseText>
 	<caseText value="yesWord">es marcado por ciertas palabras o frases. </caseText>
-	<caseText value="yesClitic">es marcado por uno o más clíticos que juntan a la frase enfocada.</caseText>
-	<caseText value="yesAffix">es marcado por uno o más afijos que juntan a la frase enfocada.</caseText>
+	<caseText value="yesClitic">es marcado por uno o más clíticos que se unen a la frase enfocada.</caseText>
+	<caseText value="yesAffix">es marcado por uno o más afijos que se unen a la frase enfocada.</caseText>
 </case>
-	<text show="swFocusYesWord"><content>Los marcadores del foco ocurren </content>
+	<text show="swFocusYesWord"><content>Los indicadores de enfoque se presentan </content>
 <case element="focus" attr="focusMarkerPos">
 	<caseText value="before">antes de la frase enfocada sí mismo.</caseText>
 	<caseText value="after">después de la frase enfocada sí mismo.</caseText>
@@ -116,23 +128,23 @@
 	<caseText value="both">en ambos lados de la frase enfocada sí mismo.</caseText>
 <caseText value="unknown">_______.</caseText>
 </case>
-		<content> El marcador del foco de es </content><case element="focus" attr="focusMarkerRequired">
+		<content> El indicador de enfoque es </content><case element="focus" attr="focusMarkerRequired">
 <caseText value="no">opcional</caseText>
 <caseText value="yes">requerido</caseText></case>
 		<content> siempre que haya una frase enfocada.</content>
 </text>
-	<text show="swFocusYesWordEitherNo"><content> Hay restricciones en cuanto a los cuales marcadores del foco que pueden ocurrir en cada lado de la frase enfocado.</content></text>
-	<text show="swFocusYesWordEitherYes"><content> Todos los marcadores del foco pueden ocurrir de cualquier lado de la frase enfocada.</content></text>
+	<text show="swFocusYesWordEitherNo"><content> Hay restricciones en cuanto a cuáles indicadores de enfoque pueden presentarse en cada lado de la frase enfocado.</content></text>
+	<text show="swFocusYesWordEitherYes"><content> Todos los indicadores de enfoque pueden presentarse de cualquier lado de la frase enfocada.</content></text>
 </p>
 	<example show="swFocusMarkerYes">
 		<table border="1">
 <headerRow>
-	<headerCol>Marcadores del foco</headerCol>
-	<headerCol>Significado o restricciones</headerCol>
+	<headerCol>Indicadores de enfoque</headerCol>
+	<headerCol>Glosa o restricciones</headerCol>
 </headerRow>
 	<row>
 		<col exampleLoc="focus/focusMarkerExample"/>
-		<col ><gloss><content>PONE EL SIGNIFICADO</content></gloss></col>
+		<col ><gloss><content>ESCRIBA LA GLOSA O RESTRICCIONES</content></gloss></col>
 	</row>
 </table>
 </example>

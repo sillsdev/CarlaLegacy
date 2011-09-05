@@ -4,19 +4,19 @@
 	<section1 id="sNP">
 		<secTitle>Las frases nominales</secTitle>
 		<p>
-			<content>Las frases nominales pueden ser muy complejas.  Esta sección concentra en ésas con sustantivos comunes como la cabeza léxica. La modificación por los artículos, los demonstratives, los poseedores, los cuantificadores y las palabras del grado, las frases del adjetivo, y las frases  </content>
+			<content>Las frases nominales pueden ser muy complejas.  Esta sección se enfoca en las frases que tienen sustantivos comunes como el núcleo. Se consideran la modificación producida por los artículos, los demostrativos, los poseedores, los cuantificadores y las palabras de grado, las frases del adjetivo y las frases  </content>
 			<case element="pp" attr="pPos">
-				<caseText value="before">preposicional</caseText>
-				<caseText value="after">posposicional</caseText>
-				<caseText value="both">preposicional y/o posposicional</caseText>
-				<caseText value="unknown">preposicional y/o posposicional</caseText>
+				<caseText value="before">preposicionales</caseText>
+				<caseText value="after">posposicionales</caseText>
+				<caseText value="both">preposicional y/o posposicionales</caseText>
+				<caseText value="unknown">preposicional y/o posposicionales</caseText>
 			</case>
-			<content> se considera. Los participios se cubren en el extremo de esta sección, pero véase la sección </content>
-			<sectionRef sec="sNPCompounds"/><content> para los compuestos del sustantivo si están escritos como una sola palabra o no. Las frases nominales dirigidas por nombres propios se discuten en la sección </content>
+			<content>. El tema de los participios se trata al final de esta sección, pero véase la sección </content>
+			<sectionRef sec="sNPCompounds"/><content> para considerar los sustantivos compuestos si se escriben como una sola palabra o no. Las frases nominales que tienen nombres propios como núcleo se analizan en la sección </content>
 			<sectionRef sec="sProp"/>
-			<content> y ésos dirigidos por pronombres, demonstratives, y cuantificadores se discuten en la sección </content>
+			<content> y las frases que tienen pronombres, demostrativos o cuantificadores como núcleo se analizan en la sección </content>
 			<sectionRef sec="sPronNP"/>
-			<content>.  Las cláusulas relativas, que vienen normalmente al final de una frase nominal, se cubren en la sección </content>
+			<content>.  Las cláusulas relativas, que normalmente aparecen al final de una frase nominal, se tratan en la sección </content>
 			<sectionRef sec="sRelCl"/>
 			<content>.</content>
 		</p>
@@ -41,10 +41,10 @@
 						<content>(Pos)</content>
 					</col>
 					<col show="swNPQPBefore">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swNPAdjPBefore">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPPPBefore">
 						<content>(FP)</content>
@@ -62,10 +62,10 @@
 						<content>(FP)</content>
 					</col>
 					<col show="swNPAdjPAfter">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPQPAfter">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swNPPossessorAfter">
 						<content>(Pos)</content>
@@ -95,10 +95,10 @@
 						<content>(Pos)</content>
 					</col>
 					<col show="swNPQPBefore">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swNPAdjPBefore">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPPPBefore">
 						<content>(FP)</content>
@@ -116,10 +116,10 @@
 						<content>(FP)</content>
 					</col>
 					<col show="swNPAdjPAfter">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPQPAfter">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swNPPossessorAfter">
 						<content>(Pos)</content>
@@ -142,11 +142,20 @@
 					<col show="swPossDemAndOrArtCooccurNoBefore">
 						<content>(Dem/Art/Pos)</content>
 					</col>
+					<col show="swPossDemAndOrArtCooccurNoBeforeArtAfter">
+						<content>(Dem/Pos)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoBeforeDemAfter">
+						<content>(Art/Pos)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoBeforePosAfter">
+						<content>(Dem/Art)</content>
+					</col>
 					<col show="swNPQPBefore">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swNPAdjPBefore">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPPPBefore">
 						<content>(FP)</content>
@@ -164,13 +173,22 @@
 						<content>(FP)</content>
 					</col>
 					<col show="swNPAdjPAfter">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPQPAfter">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swPossDemAndOrArtCooccurNoAfter">
 						<content>(Pos/Art/Dem)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoAfterArtBefore">
+						<content>(Pos/Dem)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoAfterDemBefore">
+						<content>(Pos/Art)</content>
+					</col>
+					<col show="swPossDemAndOrArtCooccurNoAfterPosBefore">
+						<content>(Art/Dem)</content>
 					</col>
 					<col show="swQPNPDegreeYesAfter">
 						<content>(Grado)</content>
@@ -187,11 +205,14 @@
 					<col show="swPossDemOnlyCooccurNoBefore">
 						<content>(Dem/Pos)</content>
 					</col>
+					<col show="swPossDemOnlyCooccurNoBeforePosAfter">
+						<content>(Dem)</content>
+					</col>
 					<col show="swNPQPBefore">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swNPAdjPBefore">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPPPBefore">
 						<content>(FP)</content>
@@ -209,13 +230,16 @@
 						<content>(FP)</content>
 					</col>
 					<col show="swNPAdjPAfter">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPQPAfter">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swPossDemOnlyCooccurNoAfter">
 						<content>(Pos/Dem)</content>
+					</col>
+					<col show="swPossDemOnlyCooccurNoAfterPosBefore">
+						<content>(Dem)</content>
 					</col>
 					<col show="swQPNPDegreeYesAfter">
 						<content>(Grado)</content>
@@ -232,11 +256,14 @@
 					<col show="swPossArtOnlyCooccurNoBefore">
 						<content>(Art/Pos)</content>
 					</col>
+					<col show="swPossArtOnlyCooccurNoBeforePosAfter">
+						<content>(Art)</content>
+					</col>
 					<col show="swNPQPBefore">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swNPAdjPBefore">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPPPBefore">
 						<content>(FP)</content>
@@ -254,13 +281,16 @@
 						<content>(FP)</content>
 					</col>
 					<col show="swNPAdjPAfter">
-						<content>(FAdj)</content>
+						<content>(Adj)</content>
 					</col>
 					<col show="swNPQPAfter">
-						<content>(FQ)</content>
+						<content>(Cuant)</content>
 					</col>
 					<col show="swPossArtOnlyCooccurNoAfter">
 						<content>(Pos/Art)</content>
+					</col>
+					<col show="swPossArtOnlyCooccurNoAfterPosBefore">
+						<content>(Art)</content>
 					</col>
 					<col show="swQPNPDegreeYesAfter">
 						<content>(Grado)</content>
@@ -269,13 +299,13 @@
 			</table>
 		</example>
 		<p>
-			<content>Cada uno de estas frases será discutida y ejemplificada en las secciones siguientes.</content>
+			<content>Cada una de estas frases será analizada y ejemplificada en las secciones siguientes.</content>
 		</p>
 		<section2 id="sNPDegree">
-			<secTitle>Las palabras especiales del grado como modificantes</secTitle>
+			<secTitle>Las palabras especiales de grado como modificadores</secTitle>
 			<p>
 				<content>
-					Trabajando del exterior adentro hacia el sustantivo, el nivel externo de la frase nominal es ocupado por esas palabras del grado que modifiquen la frase entera, tal como </content>
+					Empezando con el exterior de la frase nominal, esta posición se ocupa por las palabras de grado que modifican a la frase completa, tal como </content>
 				<langData>todos</langData>
 				<content>, </content>
 				<langData>casi</langData>
@@ -285,21 +315,21 @@
 				<langData>solamente</langData>
 				<content>, y </content>
 				<langData>no</langData>
-				<content>.  Éstos fueron discutidos en la sección </content>
+				<content>.  Las palabras especiales de grado fueron analizadas en la sección </content>
 				<sectionRef sec="sQPAll"/>
-				<content>.  Para repasar los hechos en </content>
+				<content>.  Para repasar los detalles en </content>
 				<langName/>
 				<content>,  </content>
 				<text show="swQPNPDegreeNo">
-					<content>éstos no se expresan como palabras separadas. En lugar, todos juntan a otra palabra en la frase nominal.</content>
+					<content>las palabras especiales de grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal.</content>
 				</text>
 				<content/>
 				<text show="swQPNPDegreeYes">
-					<content>éstos se expresan como palabras separadas que ocurren </content>
+					<content>las palabras especiales de grado se expresan como palabras independientes que se presentan </content>
 					<case element="qp" attr="npDegreePos">
 						<caseText value="before">antes</caseText>
 						<caseText value="after">después</caseText>
-						<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+						<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 						<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
 						<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
 						<caseText value="afterOrBoth">después o en ambos lados</caseText>
@@ -310,75 +340,75 @@
 				</text>
 				<content/>
 				<text show="swQPNPDegreeYesPos">
-					<content>los elementos especiales positivos del grado se expresan como palabras separadas que ocurren </content>
+					<content>los elementos especiales positivos de grado se expresan como palabras independientes que se presentan </content>
 					<case element="qp" attr="npDegreePos">
 						<caseText value="before">antes</caseText>
 						<caseText value="after">después</caseText>
-						<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+						<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 						<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
 						<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
 						<caseText value="afterOrBoth">después o en ambos lados</caseText>
 						<caseText value="both">en ambos lados</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
-					<content> del resto de la frase nominal.  Los elementos especiales negativos del grado, sin embargo, no se expresan como palabras separadas. En lugar, juntan a otra palabra en la frase nominal.</content>
+					<content> del resto de la frase nominal.  Sin embargo, los elementos especiales negativos de grado no se expresan como palabras independientes. Por el contrario, se unen a otra palabra de la frase nominal.</content>
 				</text>
 				<content/>
 				<text show="swQPNPDegreeYesNeg">
-					<content>los elementos especiales negativos del grado se expresan como palabras separadas que ocurren </content>
+					<content>los elementos especiales negativos de grado se expresan como palabras independientes que se presentan </content>
 					<case element="qp" attr="npDegreePos">
 						<caseText value="before">antes</caseText>
 						<caseText value="after">después</caseText>
-						<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+						<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 						<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
 						<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
 						<caseText value="afterOrBoth">después o en ambos lados</caseText>
 						<caseText value="both">en ambos lados</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
-					<content> del resto de la frase nominal.  Los elementos especiales positivos del grado, sin embargo, no se expresan como palabras separadas. En lugar, juntan a otra palabra en la frase nominal.</content>
+					<content> del resto de la frase nominal.  Sin embargo, los elementos especiales positivos de grado no se expresan como palabras independientes. Por el contrario, se unen a otra palabra de la frase nominal.</content>
 				</text>
 				<content/>
 			</p>
 			<p show="swQPNPDegreeYesOrYesPos">
-				<content>Los ejemplos de las palabras especiales positivas del grado en frases nominales incluyen:</content>
+				<content>Algunos ejemplos de las palabras especiales positivas de grado en frases nominales son:</content>
 			</p>
 			<example show="swQPNPDegreeYesOrYesPos">
 				<interlinear exampleLoc="qp/example"/>
 			</example>
 			<p show="swQPNPDegreeYesOrYesNeg">
-				<content>Los ejemplos de los elementos especiales negativos del grado en frases nominales incluyen: </content>
+				<content>Algunoos ejemplos de los elementos especiales negativos de grado en frases nominales son: </content>
 			</p>
 			<example show="swQPNPDegreeYesOrYesNeg">
 				<interlinear exampleLoc="qp/negExample"/>
 			</example>
 		</section2>
 		<section2 id="sNPArtDem">
-			<secTitle>Los artículos y demonstrativos en la frase nominal</secTitle>
+			<secTitle>Los artículos y demostrativos en la frase nominal</secTitle>
 			<p>
-				<content>Los artículos y/o los demonstratives llenan normalmente el nivel siguiente cuando se mueve hacia adentro hacia el sustantivo.
-					En español, los artículos y los demonstrativos no ocurren en la misma frase nominal, sino que ambos ocurren antes del sustantivo.
-					Algunos idiomas permiten que ambos ocurren en la misma frase, y pueden ocurrir en diversas posiciones con respecto al sustantivo.
-					Por lo tanto, necesitan categorías sintácticas distintas. Algunos idiomas tienen solamente una categoría, los artículos o los demonstrativos.
-					Algunos idiomas no tienen cualquier tipo expresado como palabras separadas. </content>
+				<content>Los artículos y/o los demostratives llenan normalmente el nivel siguiente cuando se mueve adentro hacia el sustantivo.
+					En español, los artículos y los demostrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo.
+					Algunos idiomas permiten que ambos se presentan en la misma frase, y pueden presentarse en diversas posiciones con respecto al sustantivo.
+					Por lo tanto, necesitan categorías sintácticas distintas. Algunos idiomas tienen solamente una categoría, los artículos o los demostrativos.
+					Algunos idiomas no tienen cualquier tipo expresado como palabras independientes. </content>
 			</p>
 			<p>
-				<content>Según lo visto en la sección </content><sectionRef sec="sAdjArtDem"/><content>, </content>
+				<content>Según lo visto en la sección </content><sectionRef sec="sAdjArtDem"/><content>, en </content>
 				<langName/>
 				<content/>
 				<case element="np" attr="artAndDem">
-					<caseText value="no"> no tiene ni artículos ni demonstratives que son palabras separadas.</caseText>
-					<caseText value="article"> tiene solamente artículos que son palabras separadas, ningunos demonstrativos.</caseText>
-					<caseText value="demonstrative"> tiene solamente demonstrativos que son palabras separadas, ningunos artículos.</caseText>
-					<caseText value="both"> tiene los artículos y demonstrativos que son palabras separadas.</caseText>
+					<caseText value="no"> no hay ni artículos ni demonstratives que son palabras independientes.</caseText>
+					<caseText value="article"> solamente hay artículos que son palabras independientes, ningún demostrativo.</caseText>
+					<caseText value="demonstrative"> solamente hay demostrativos que son palabras independientes, ningún artículo.</caseText>
+					<caseText value="both"> hay los artículos y demostrativos que son palabras independientes.</caseText>
 				</case>
 				<content/>
 				<text show="swNPArtAndOrDem">
 					<content> Los </content>
 					<case element="np" attr="artAndDem">
 						<caseText value="article">artículos</caseText>
-						<caseText value="demonstrative">demonstrativos</caseText>
-						<caseText value="both">artículos y demonstrativos</caseText>
+						<caseText value="demonstrative">demostrativos</caseText>
+						<caseText value="both">artículos y demostrativos</caseText>
 					</case>
 					<content> </content>
 					<text show="swNPArtCaseNo">
@@ -398,11 +428,11 @@
 				</case>
 				<content> del sustantivo.  </content>
 				<text show="swNPArtAndDemArtPosEitherUnrestricted">
-					<content>Todos los artículos pueden aparecer de cualquier lado del sustantivo.</content>
+					<content>Todos los artículos pueden presentarse de cualquier lado del sustantivo.</content>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemArtPosEitherRestricted">
-					<content>Hay las restricciones en cuanto a las cuales de los artículos puede aparecer de cualquier lado del sustantivo.</content>
+					<content>Hay estricciones en cuanto a cuáles de los artículos pueden presentarse en cualquier lado del sustantivo.</content>
 				</text>
 				<content>  La presencia de un artículo es </content>
 				<case element="np" attr="artRequired">
@@ -412,22 +442,22 @@
 				</case>
 				<content/>
 				<text show="swNPArtAndDemArtPosBothSidesRequiredMass">
-					<content>En las formas singulares, se requiere un artículo </content>
+					<content>En las formas singulares, un artículo se requiere presentarse </content>
 					<case element="np" attr="artBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
+						<caseText value="both">ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemArtPosBothSidesRequiredYes">
-					<content>Un artículo se requiere para aparecer </content>
+					<content>Un artículo se requiere presentarse </content>
 					<case element="np" attr="artBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
+						<caseText value="both">ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
@@ -444,11 +474,11 @@
 				</case>
 				<content> del sustantivo.  </content>
 				<text show="swNPArtAndDemDemPosEitherUnrestricted">
-					<content>Todos los demonstrativos pueden aparecer de cualquier lado del sustantivo.</content>
+					<content>Todos los demostrativos pueden presentarse de cualquier lado del sustantivo.</content>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemDemPosEitherRestricted">
-					<content>Hay las restricciones en cuanto a las cuales de los demonstrativos puede aparecer de cualquier lado del sustantivo.</content>
+					<content>Hay restricciones en cuanto a cuáles de los demostrativos pueden prsentarse en cualquier lado del sustantivo.</content>
 				</text>
 				<content>  La presencia de un demostrativo es </content>
 				<case element="np" attr="demRequired">
@@ -458,22 +488,22 @@
 				</case>
 				<content/>
 				<text show="swNPArtAndDemDemPosBothSidesRequiredMass">
-					<content>En las formas singulares, se requiere un demostrativo </content>
+					<content>En las formas singulares, un demostrativo se requiere presentarse </content>
 					<case element="np" attr="demBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
+						<caseText value="both">ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemDemPosBothSidesRequiredYes">
-					<content>Un demostrativo se requiere para aparecer </content>
+					<content>Un demostrativo se requiere presentarse </content>
 					<case element="np" attr="demBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
+						<caseText value="both">ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
@@ -481,7 +511,7 @@
 				<content/>
 			</p>
 			<p show="swNPArtAndDemBothCooccurNo">
-				<content>Los artículos y los demonstrativos ambos aparecen en la misma posición, así que no ocurren en la misma frase nominal. Los artículos o los demonstrativos aparecen </content>
+				<content>Los artículos y los demonstrativos ambos presentarse en la misma posición, así que no se presenten en la misma frase nominal. Los artículos o los demostrativos se presentan </content>
 				<case element="np" attr="demOrArtPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -490,11 +520,11 @@
 				</case>
 				<content> del sustantivo.  </content>
 				<text show="swNPArtAndDemBothCooccurNoPosEitherUnrestricted">
-					<content>Todos los artículos y demonstrativos pueden aparecer de cualquier lado del sustantivo.</content>
+					<content>Todos los artículos y demostrativos pueden presentarse de cualquier lado del sustantivo.</content>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurNoPosEitherRestricted">
-					<content>Hay las restricciones en cuanto a las cuales de los artículos y de los demonstrativos puede aparecer de cualquier lado del sustantivo.</content>
+					<content>Hay restricciones en cuanto a cuáles de los artículos y de los demostrativos pueden presentarse en cualquier lado del sustantivo.</content>
 				</text>
 				<content>  La presencia de un artículo o un demostrativo es </content>
 				<case element="np" attr="demOrArtRequired">
@@ -504,10 +534,10 @@
 				</case>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurNoRequiredMass">
-					<content>En las formas singulares, un artículo o un demostrativo se requiere </content>
+					<content>En las formas singulares, un artículo o un demostrativo se requiere presentarse </content>
 					<case element="np" attr="demOrArtBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
 						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
@@ -517,8 +547,8 @@
 				<text show="swNPArtAndDemBothCooccurNoRequiredYes">
 					<content>Un artículo o un demostrativo se requiere para aparecer </content>
 					<case element="np" attr="demOrArtBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
 						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
@@ -527,12 +557,12 @@
 				<content/>
 			</p>
 			<p show="swNPArtAndDemBothCooccurYes">
-				<content>Los artículos y los demonstrativos no aparecen en la misma posición con respecto al sustantivo,, </content>
+				<content>Los artículos y los demostrativos no se presentan en la misma posición con respecto al sustantivo, </content>
 				<case element="np" attr="artBothCooccur">
 					<caseText value="different">sino ambos no pueden </caseText>
 					<caseText value="yes">y que pueden ambos </caseText>
 				</case>
-				<content>ocurrir en la misma frase nominal.  El demostrativo ocurre </content>
+				<content>presentarse en la misma frase nominal.  El demostrativo ocurre </content>
 				<case element="np" attr="demAndArtDemPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -541,11 +571,11 @@
 				</case>
 				<content> del sustantivo.  </content>
 				<text show="swNPArtAndDemBothCooccurYesDemPosEitherUnrestricted">
-					<content>Todos los demonstrativos pueden aparecer de cualquier lado del sustantivo.</content>
+					<content>Todos los demostrativos pueden presentarse de cualquier lado del sustantivo.</content>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesDemPosEitherRestricted">
-					<content>Hay las restricciones en cuanto a las cuales de los demonstrativos puede aparecer de cualquier lado del sustantivo.</content>
+					<content>Hay restricciones en cuanto a cuáles de los demostrativos pueden presentarse en cualquier lado del sustantivo.</content>
 				</text>
 				<content>  La presencia de un demostrativo es </content>
 				<case element="np" attr="demAndArtDemRequired">
@@ -555,27 +585,27 @@
 				</case>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMass">
-					<content>En las formas singulares, se requiere un demostrativo </content>
+					<content>En las formas singulares, un demostrativo se requiere presentarse </content>
 					<case element="np" attr="demAndArtDemRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
+						<caseText value="both">ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredYes">
-					<content>Un demostrativo se requiere para aparecer </content>
+					<content>Un demostrativo se requiere presentarse </content>
 					<case element="np" attr="demAndArtDemBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
+						<caseText value="both">ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
-				<content>  El artículo ocurre </content>
+				<content>  El artículo se presenta </content>
 				<case element="np" attr="demAndArtArtPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -584,11 +614,11 @@
 				</case>
 				<content> del sustantivo.  </content>
 				<text show="swNPArtAndDemBothCooccurYesArtPosEitherUnrestricted">
-					<content>Todos los artículos pueden aparecer de cualquier lado del sustantivo.</content>
+					<content>Todos los artículos pueden presentarse de cualquier lado del sustantivo.</content>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesArtPosEitherRestricted">
-					<content>Hay las restricciones en cuanto a las cuales de los artículos puede aparecer de cualquier lado del sustantivo.</content>
+					<content>Hay restricciones en cuanto a cuáles de los artículos pueden presentarse en cualquier lado del sustantivo.</content>
 				</text>
 				<content>  La presencia de un artículo es </content>
 				<case element="np" attr="demAndArtArtRequired">
@@ -598,22 +628,22 @@
 				</case>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMass">
-					<content>En las formas singulares, se requiere un artículo </content>
+					<content>En las formas singulares, un artículo se requiere presentarse </content>
 					<case element="np" attr="demAndArtArtRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
+						<caseText value="both">ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
 				</text>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredYes">
-					<content>Un artículo se requiere para aparecer </content>
+					<content>Un artículo se requiere presentarse </content>
 					<case element="np" attr="demAndArtArtBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno puede también aparecer opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno puede también aparecer opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
+						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
+						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
+						<caseText value="both">ambos antes y después del sustantivo.</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
@@ -621,15 +651,15 @@
 				<content/>
 			</p>
 			<p show="swNPArtAndOrDem">
-				<content>Los ejemplos de frases nominales incluyendo </content>
+				<content>Algunos ejemplos de las frases nominales incluyendo </content>
 				<case element="np" attr="artAndDem">
 					<caseText value="article">los artículos</caseText>
-					<caseText value="demonstrative">los demonstrativos</caseText>
-					<caseText value="both">los artículos y/o los demonstrativos</caseText>
+					<caseText value="demonstrative">los demostrativos</caseText>
+					<caseText value="both">los artículos y/o los demostrativos</caseText>
 				</case>
 				<content> según lo permitido en </content>
 				<langName/>
-				<content> incluyen:</content>
+				<content> son:</content>
 			</p>
 			<example show="swNPArtAndOrDem">
 				<interlinear exampleLoc="np/example"/>
@@ -642,14 +672,14 @@
 				<sectionRef sec="sPronPoss"/>
 				<content>), por un sustantivo simple, o por una frase nominal completa. El español permite solamente pronombres posesivos en la posición del poseedor antes del sustantivo,
 					con todos los poseedores de sustantivos o frases nominales expresados en una frase preposicional con la preposición </content><langData>de</langData><content>, después del sustantivo.</content></p>
-			<p><content>Dentro de los idiomas que expresan a poseedores por sustantivos o frases nominales completas así como por pronombres posesivos, muchos también agregan una cierta clase de marca, tal como el </content>
+			<p><content>Dentro de los idiomas que expresan a poseedores por sustantivos o frases nominales completas así como por pronombres posesivos, muchos también agregan un indicador, tal como el </content>
 				<langData>'s</langData>
-				<content> en inglés, como indicación de la posesión.  Estas marcas son afijos (o clíticos) del sustantivo principal o cliticos de la frase que juntan a un lado de la frase entera.
-					Está este segundo tipo la marca inglesa, porque junto a frases donde el </content>
+				<content> en inglés, para indicar de la posesión.  Estos indicadores son afijos (o clíticos) del sustantivo principal o clíticos de la frase que se unen a un lado de la frase completa.
+					El indicador de inglés es el segundo tipo, porque junto a frases donde el </content>
 				<langData>'s</langData>
-				<content> aparece juntar al sustantivo principal, como en </content>
+				<content> se presenta unido al sustantivo principal, como en </content>
 				<langData>the boy's mother</langData><gloss><content>'la madre del muchacho'</content></gloss>
-				<content>, hay las frases que demuestran claramente que el clítico junta al final de la frase nominal del conjunto, tal como </content>
+				<content>, hay las frases que demuestran claramente que el clítico se une al final de la frase nominal completo, tal como </content>
 				<langData>the boy that I just talked to's mother</langData><gloss><content>'la madre del muchacho que acabo de hablar con'</content></gloss>
 				<content> o </content>
 				<langData>the girl in green's wonderful speech</langData><gloss><content>'el discurso maravilloso de la muchacha en verde'</content></gloss>
@@ -660,57 +690,57 @@
 					<caseText value="both">preposicionales y/o posposicionales</caseText>
 					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
 				</case>
-				<content> y cláusulas relativas. Los poseedores pueden también ser encajados en uno otro, como en </content>
+				<content> y cláusulas relativas. Los poseedores pueden también ser subordinados en uno otro, como en </content>
 				<langData>the boy's sister's dog</langData><gloss><content>'el perro de la hermana del muchacho'</content></gloss>
 				<content>.  Esto se permite en español dentro de la frase preposicional después del sustantivo. </content>
 			</p>
 			<p>
-				<content>Los ejemplos de frases nominales poseídas con los poseedores simples y encajados en </content>
+				<content>Algunos ejemplos de frases nominales poseídas con los poseedores simples y subordinados en </content>
 				<langName/>
-				<content> incluyen:</content>
+				<content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/embeddedExample"/>
 			</example>
 			<p>
-				<content>Los ejemplos con frases </content>
+				<content>Algunos ejemplos con frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
 					<caseText value="both">preposicionales y/o posposicionales</caseText>
 					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
 				</case>
-				<content> dentro del poseedor incluyen:</content>
+				<content> dentro del poseedor son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/ppExample"/>
 			</example>
 			<p>
-				<content>Los ejemplos con cláusulas relativas dentro del poseedor, incluido en oraciones completas simples son:</content>
+				<content>Algunos ejemplos con cláusulas relativas dentro del poseedor, incluido en oraciones completas son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/relClExample"/>
 			</example>
 			<p>
-				<content>Según lo visto en los ejemplos arriba,  </content>
+				<content>Según lo visto anteriormente en los ejemplos,  en </content>
 				<langName/>
 				<content/>
 				<case element="np" attr="possMarked">
-					<caseText value="no"> no tiene ninguna marca especial para distinguir a poseedores de ninguna otra frase nominal.</caseText>
-					<caseText value="yesAffix"> marca el sustantivo principal dentro del poseedor con un afijo para distinguir a poseedores de cualquiera otra frase nominal.</caseText>
-					<caseText value="yesClitic"> marca la frase posesiva del conjunto con un clítico para distinguir a poseedores de cualquiera otra frase nominal.</caseText>
+					<caseText value="no"> no hay un indicador especial para distinguir a poseedores de cualquier otra frase nominal.</caseText>
+					<caseText value="yesAffix"> se indica el sustantivo principal dentro del poseedor con un afijo para distinguir a poseedores de cualquier otra frase nominal.</caseText>
+					<caseText value="yesClitic"> se indica la frase posesiva completa con un clítico para distinguir a poseedores de cualquier otra frase nominal.</caseText>
 				</case>
 				<content/>
 				<text show="swNPPossMarkedYesCliticWordNoSuffix">
-					<content> Este clítico es un enclítico que junta a la palabra final en el poseedor.</content>
+					<content> Este clítico es un enclítico que se une al final de cualquier palabra que termina el poseedor.</content>
 				</text>
 				<content/>
 				<text show="swNPPossMarkedYesCliticWordNoPrefix">
-					<content> Este clítico es un proclítico que junta a la primera palabra en el poseedor.</content>
+					<content> Este clítico es un proclítico que se une al inicio de cualquier palabra que comienza el poseedor.</content>
 				</text>
 				<content/>
 				<text show="swNPPossMarkedYesCliticWordYes">
-					<content> Se escribe este clítico como una palabra separada que ocurre </content>
+					<content> Se escribe este clítico como una palabra independiente que se presenta </content>
 					<case element="np" attr="possCliticPossPos">
 						<caseText value="before">antes</caseText>
 						<caseText value="after">después</caseText>
@@ -727,7 +757,7 @@
 				<content/>
 			</p>
 			<p>
-				<content>El poseedor (especialmente la forma del pronombre posesivo, si  </content><langName/><content> es como español) ocurre </content>
+				<content>El poseedor (especialmente la forma del pronombre posesivo, si  </content><langName/><content> es como español) se presenta </content>
 				<case element="np" attr="possNounPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -737,11 +767,11 @@
 				<content> del sustantivo que es poseído.</content>
 			</p>
 				<p>
-					<content>En español y muchos otros idiomas, los poseedores y los artículos o los demonstrativos no ocurren en la misma frase nominal, a menos que expresen el poseedor en una frase preposicional. Por ejemplo, </content>
+					<content>En español y muchos otros idiomas, los poseedores y los artículos o los demonstrativos no se presentan en la misma frase nominal, a menos que expresen el poseedor en una frase preposicional. Por ejemplo, </content>
 					<langData>esos [sus] libros</langData>
-					<content> no es gramatical; en lugar deciría </content>
+					<content> no es gramatical; por el contrario deciría </content>
 					<langData>esos libros [de él]</langData>
-					<content> para expresar el mismo pensamiento. Algunos idiomas permiten que los poseedores y los artículos o los demonstrativos ocurran en la misma frase, así que el primer ejemplo antedicho sería gramatical.</content>
+					<content> para expresar el mismo significado. Algunos idiomas permiten que los poseedores y los artículos o los demonstrativos se presentan en la misma frase, así que el primer ejemplo antedicho sería gramatical.</content>
 				</p>
 				<p>
 					<content>En </content>
@@ -751,14 +781,14 @@
 						<caseText value="yes">puedan</caseText>
 						<caseText value="no">no puedan</caseText>
 					</case>
-					<content> ocurrir en la misma frase que </content>
+					<content> presentarse en la misma frase que </content>
 					<case element="np" attr="artAndDem">
 						<caseText value="article">los artículos</caseText>
 						<caseText value="demonstrative">los demonstrativos</caseText>
 						<caseText value="both">los artículos y/o los demonstrativos</caseText>
 					</case>
 					<content> en la posición normal del poseedor.  </content>
-					<text show="swNPPossCooccurNo"><content>En lugar, deben ser expresados en una frase </content>
+					<text show="swNPPossCooccurNo"><content>Por el contrario, deben ser expresados en una frase </content>
 					<case element="pp" attr="pPos">
 						<caseText value="before">preposicional.</caseText>
 						<caseText value="after">posposicional.</caseText>
@@ -770,26 +800,26 @@
 				</p>
 		</section2>
 		<section2 id="sNPQP">
-			<secTitle>Las frases del cuantificador como modificantes</secTitle>
+			<secTitle>Las frases del cuantificador como modificadores</secTitle>
 			<p>
-				<content>Las frases del cuantificador llenan el nivel siguiente hacia el sustantivo. Esta posición incluye ambos números (la sección </content>
+				<content>Las frases del cuantificador llenan el nivel siguiente hacia el sustantivo. Esta posición incluye ambos números (véase la sección </content>
 				<sectionRef sec="sAdjNumbers"/>
-				<content>) y otros cuantificadores y palabras del grado (la sección </content><sectionRef sec="sQPOtherQuantifiers"/><content>).  Tales modificantes marcan el número de la frase del nominal completo. Los ejemplos españoles de frases nominales cuantificadas incluyen: </content>
+				<content>) y otros cuantificadores y palabras de grado (véase la sección </content><sectionRef sec="sQPOtherQuantifiers"/><content>).  Tales modificadores indican el número de la frase del nominal completo. Algunos ejemplos de frases nominales cuantificadas en español son: </content>
 				<langData>ésos muy pocos libros</langData>
 				<content>, </content>
 				<langData>los muchos perros del muchacho</langData>
 				<content> y </content>
-				<langData> solamente los primeros cientos muchachos</langData>
-				<content>.  Todas las frases del cuantificador ocurren antes del sustantivo en español.</content>
+				<langData> solamente los primeros cien muchachos</langData>
+				<content>.  Todas las frases del cuantificador se presentan antes del sustantivo en español.</content>
 			</p>
 			<p>
 				<content>En </content>
 				<langName/>
-				<content>, las frases del cuantificador ocurren </content>
+				<content>, las frases del cuantificador se prsentan </content>
 				<case element="np" attr="qpPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 					<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
 					<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
 					<caseText value="afterOrBoth">después o en ambos lados</caseText>
@@ -798,29 +828,29 @@
 				</case>
 				<content> del sustantivo.  </content>
 				<text show="swNPQPPosEitherOrBothUnrestricted">
-					<content>Todas las frases del cuantificador pueden ocurrir de cualquier lado del sustantivo. </content>
+					<content>Todas las frases del cuantificador pueden presentarse de cualquier lado del sustantivo. </content>
 				</text>
 				<content/>
 				<text show="swNPQPPosEitherOrBothRestricted">
-					<content>Hay las restricciones en cuanto a las cuales de las frases del cuantificador pueden ocurrir en cada lado del sustantivo.  </content>
+					<content>Hay restricciones en cuanto a cuáles de las frases del cuantificador pueden presentarse en cada lado del sustantivo.  </content>
 					<text show="swNPQPPosEitherRestrictedNumBefore">
-						<content>Todos los números ocurren antes del sustantivo. </content>
+						<content>Todos los números se presentan antes del sustantivo. </content>
 					</text>
 					<content/>
 					<text show="swNPQPPosEitherRestrictedNumAfter">
-						<content>Todos los números ocurren después del sustantivo. </content>
+						<content>Todos los números se presentan después del sustantivo. </content>
 					</text>
 					<content/>
 				</text>
-				<content> Los ejemplos de frases nominales cuantificadas en </content><langName/><content> incluyen:</content>
+				<content> Algunos ejemplos de frases nominales cuantificadas en </content><langName/><content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/qpExample"/>
 			</example>
 			<p show="swNPQPAgreeYes">
-				<content>Como otros modificantes dentro de la frase nominal, frases del cuantificador en  </content>
+				<content>Como otros modificadores dentro de la frase nominal, las frases del cuantificador en  </content>
 				<langName/>
-				<content> demuestra el acuerdo con el sustantivo principal en </content>
+				<content> concuerdan con el sustantivo principal en </content>
 				<case element="np" attr="agreeOther">
 					<caseText value="yesAnimacy">animado.</caseText>
 					<caseText value="yesClass">número de clase.</caseText>
@@ -830,26 +860,26 @@
 			</p>
 		</section2>
 		<section2 id="sNPAdjP">
-			<secTitle>Las frases del adjetivo como modificantes</secTitle>
+			<secTitle>Las frases del adjetivo como modificadores</secTitle>
 			<p>
-				<content>Las frases del adjetivo fueron discutidas anterior en la sección </content>
+				<content>Las frases del adjetivo fueron discutidas anteriormente en la sección </content>
 				<sectionRef sec="sAdjP"/>
-				<content>.  Las frases del adjetivo ocurren cerca del sustantivo, rindiendo frases nominales en inglés como:</content>
+				<content>.  Las frases del adjetivo se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</content>
 				<langData>just those very few old, dirty books</langData><gloss><content>'apenas ésos muy pocos libros viejos, sucios'</content></gloss>
 				<content>, </content>
 				<langData>all the boy’s many black dogs</langData><gloss><content>'todo los muchos perros negros delo muchacho'</content></gloss>
 				<content> y </content>
 				<langData>only the first one hundred very eager young boys</langData><gloss><content>'solamente los primeros cientos muchachos jovenes muy impacientes'</content></gloss>
-				<content>.  Mientras que los ejemplos ingleses demuestran, los adjetivos todos ocurren antes de que el sustantivo, y, desemejante de los otros modificantes discutidos hasta ahora, más de una frase del adjetivo se permita.
-					En español, los adjetivos ocurren después del sustantivo y se permite solamente una frase del adjetivo, a menos que los adjetivos son coordinados (véase la sección </content><sectionRef sec="sCoordAdj"/><content>).</content></p>
+				<content>.  Mientras que los ejemplos en inglés demuestran, todos los adjetivos se presentan antes del sustantivo, y, desemejante de los otros modificadores, se permita más de una frase del adjetivo.
+					En español, los adjetivos se presentan después del sustantivo y se permite solamente una frase del adjetivo, a menos que los adjetivos son coordinados (véase la sección </content><sectionRef sec="sCoordAdj"/><content>).</content></p>
 			<p>
 				<content>En </content>
 				<langName/>
-				<content>, las frases del adjetivo ocurren </content>
+				<content>, las frases del adjetivo se presentan </content>
 				<case element="np" attr="adjpPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado (pero no ambos lados)</caseText>
+					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
 					<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
 					<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
 					<caseText value="afterOrBoth">después o en ambos lados</caseText>
@@ -858,21 +888,21 @@
 				</case>
 				<content> del sustantivo.  </content>
 				<text show="swNPAdjPPosEitherOrBothUnrestricted">
-					<content>Todas las frases del adjetivo pueden ocurrir de cualquier lado del sustantivo. </content>
+					<content>Todas las frases del adjetivo pueden presentarse de cualquier lado del sustantivo. </content>
 				</text>
 				<content/>
 				<text show="swNPAdjPPosEitherOrBothRestricted">
-					<content>Hay las restricciones en cuanto a las cuales de las frases del adjetivo pueden ocurrir en cada lado del sustantivo. </content>
+					<content>Hay restricciones en cuanto a cuáles de las frases del adjetivo pueden presentarse en cada lado del sustantivo. </content>
 				</text>
-				<content> Los ejemplos de las frases nominales que son modificadas por adjetivos cualitativos en </content><langName/><content> incluyen:</content>
+				<content> Algunos ejemplos de las frases nominales con adjetivos cualitativos como modificadores en </content><langName/><content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/adjpExample"/>
 			</example>
 			<p show="swNPAdjPAgreeYes">
-				<content>Como otros modificantes dentro de la frase nominal, las frases del adjetivo en </content>
+				<content>Como otros modificadores dentro de la frase nominal, las frases del adjetivo en </content>
 				<langName/>
-				<content> demuestra el acuerdo con el sustantivo principal en </content>
+				<content> concuerdan con el sustantivo principal en </content>
 				<case element="np" attr="agreeOther">
 					<caseText value="yesAnimacy">animado.</caseText>
 					<caseText value="yesClass">número de clase.</caseText>
@@ -884,10 +914,10 @@
 		</section2>
 		<section2 id="sNPPP">
 			<secTitle>            <case  element="pp" attr="pPos">
-				<caseText value="before">Las frases preposicionales como modificantes o complementos</caseText>
-				<caseText value="after">Las frases posposicionales como modificantes o complementos</caseText>
-				<caseText value="both">Las frases preposicionales o posposicionales como modificantes o complementos</caseText>
-				<caseText value="unknown">Las frases preposicionales y/o posposicionales como modificantes o complementos</caseText>
+				<caseText value="before">Las frases preposicionales como modificadores o complementos</caseText>
+				<caseText value="after">Las frases posposicionales como modificadores o complementos</caseText>
+				<caseText value="both">Las frases preposicionales o posposicionales como modificadores o complementos</caseText>
+				<caseText value="unknown">Las frases preposicionales y/o posposicionales como modificadores o complementos</caseText>
 			</case></secTitle>
 			<p>
 				<content>Los sustantivos simples y compuestos pueden tener frases </content>
@@ -897,7 +927,7 @@
 					<caseText value="both">preposicionales y/o posposicionales</caseText>
 					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
 				</case>
-				<content> como modificantes o complementos, tal como en </content>
+				<content> como modificadores o complementos, tal como en </content>
 				<langData>la botella grande, redonda [de jarabe]</langData>
 				<content> y </content>
 				<langData>la carta del muchacho [a esa muchacha]</langData>
@@ -908,11 +938,11 @@
 					<caseText value="both">preposicionales y/o posposicionales</caseText>
 					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
 				</case>
-				<content> del genitivo pueden tomar el lugar del poseedor, tal como </content>
+				<content> del genitivo pueden actuar como el poseedor, tal como </content>
 				<langData>esos perros [de él]</langData>
 				<content> y </content>
 				<langData>el mantel [de mi madre]</langData>
-				<content>.    En español, la frase preposicional ocurre siempre después del sustantivo.</content>
+				<content>.    En español, la frase preposicional siempre se presenta después del sustantivo.</content>
 			</p>
 			<p>
 				<content>En </content>
@@ -924,7 +954,7 @@
 					<caseText value="both">preposicional y/o posposicional</caseText>
 					<caseText value="unknown">preposicional y/o posposicional</caseText>
 				</case>
-				<content> ocurre </content>
+				<content> se presenta </content>
 				<case element="np" attr="ppPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -933,14 +963,14 @@
 				</case>
 				<content> del sustantivo principal.  </content>
 
-				<content> Los ejemplos con las frases </content>
+				<content> Algunos ejemplos con las frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
 					<caseText value="both">preposicionales y/o posposicionales</caseText>
 					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
 				</case>
-				<content> como modificantes o complementos en </content><langName/><content> incluyen:</content>
+				<content> como modificadores o complementos en </content><langName/><content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/compPPExample"/>
@@ -948,7 +978,7 @@
 			<p>
 				<content>Véase el la sección </content>
 				<sectionRef sec="sPP"/>
-				<content> para más detalles acerca de las frases </content>
+				<content> para el análisis de las frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
@@ -963,38 +993,38 @@
 <section2 id="sNPParticiple">
 	<secTitle>Los participios</secTitle>
 		<p>
-			<content>Otro caso que puede parecer un sustantivo y un complemento puede realmente ser una frase del participio (también llamada un gerundio). Esta frase entera ocupa una posición normal de una frase nominal, tal como tema, objeto, objeto indirecto o el objeto de una preposición. Algunos ejemplos españoles en oraciones completas con la frase del participio acorchetada incluyen: </content>
+			<content>Otro caso que se puede parecer como un sustantivo y un complemento puede ser realmente una frase del participio (también llamada un gerundio). Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición. Algunos ejemplos de español en oraciones completas con la frase del participio acorchetada son: </content>
 			<langData>[Estudiando participios] es dificil</langData><content>, </content><langData>Él tiene gusto [leyendo la poesía latina]</langData>
 				<content> y </content>
 			<langData>El receptor demostró su valor cerca [haciendo el retén]</langData>
-			<content>  Tales frases se pueden poseer o modificar también, y a veces solamente soportes el participio como el elemento principal de una frase nominal, como en </content>
+			<content>  Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el participio como el elemento principal de una frase nominal, como en </content>
 			<langData>el gravemente herido</langData><content>, </content><langData>el agonizante</langData>
 				<content> y </content>
 			<langData>su siguiente.</langData>
 			</p>
 			<p>
-				<content> Los ejemplos de los participios o de las frases del participio que pueden tomar el lugar de un sustantivo en una frase nominal en </content><langName/><content> incluyen:</content>
+				<content> Algunos ejemplos de los participios o las frases del participio que pueden substituir por un sustantivo en una frase nominal en </content><langName/><content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/partHeadExample"/>
 			</example>
 			<p>
-				<content>Estas frases del participio se pueden utilizar en oraciones completas como se muestra aquí: </content>
+				<content>Estas frases del participio pueden presentarse en oraciones completas como se muestra aquí: </content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/partHeadSentExample"/>
 			</example>
 	<p>
-		<content>Los participios o las frases del participio pueden también actuar como adjetivos en la modificación de un sustantivo en muchas idiomas, aunque no en español. Algunos ejemplos ingleses con el participio o la frase del participio acorchetada incluyen: </content>
+		<content>Los participios o las frases del participio pueden también actuar como adjetivos en la modificación de un sustantivo en muchas idiomas, aunque no en español. Algunos ejemplos de inglés con el participio o la frase del participio acorchetada son: </content>
 		<langData>the bright, [shining] sun</langData><gloss><content>'el brillante, [brillando] sol'</content></gloss>
 		<content>, </content><langData>my [crying] child</langData><gloss><content>'mi niño, [gritando]'</content></gloss>
 		<content> y </content>
 		<langData>the books [loved by millions]</langData><gloss><content>'los libros [amados por millones]'</content></gloss><content>.</content>
 	</p>
 	<p>
-		<content>  Los ejemplos en </content>
+		<content>  Algunos ejemplos en </content>
 		<langName/>
-		<content> incluyen:</content>
+		<content> son:</content>
 	</p>
 	<example>
 		<interlinear exampleLoc="np/partExample"/>
@@ -1047,6 +1077,39 @@
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
 	</showWhen>
+	<showWhen id="swPossDemAndOrArtCooccurNoBeforeArtAfter">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either" negateValue="no"/>
+	</showWhen>
+		<showWhen id="swPossDemAndOrArtCooccurNoBeforeDemAfter">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="after" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either" negateValue="no"/>
+	</showWhen>
+		<showWhen id="swPossDemAndOrArtCooccurNoBeforePosAfter">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after" negateValue="no"/>
+	</showWhen>
 	<showWhen id="swPossDemAndOrArtCooccurNoAfter">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
@@ -1065,6 +1128,39 @@
 		<whenValue element="np" attr="demOrArtPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swPossDemAndOrArtCooccurNoAfterArtBefore">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either" negateValue="no"/>
+	</showWhen>
+	<showWhen id="swPossDemAndOrArtCooccurNoAfterDemBefore">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="before" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="either" negateValue="no"/>
+	</showWhen>
+	<showWhen id="swPossDemAndOrArtCooccurNoAfterPosBefore">
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtArtPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
 	</showWhen>
 	<showWhen id="swPossDemAndOrArtCooccurNo">
 		<whenValue element="np" attr="artAndDem" value="both"/>
@@ -1085,6 +1181,15 @@
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
 	</showWhen>
+	<showWhen id="swPossDemOnlyCooccurNoBeforePosAfter">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after" negateValue="no"/>
+	</showWhen>
 	<showWhen id="swPossDemOnlyCooccurNoAfter">
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
@@ -1094,7 +1199,15 @@
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"/>
 	</showWhen>
-	<showWhen id="swPossArtOnlyCooccurNo">
+	<showWhen id="swPossDemOnlyCooccurNoAfterPosBefore">
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
+	</showWhen>	<showWhen id="swPossArtOnlyCooccurNo">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -1108,7 +1221,15 @@
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
 	</showWhen>
-	<showWhen id="swPossArtOnlyCooccurNoAfter">
+	<showWhen id="swPossArtOnlyCooccurNoBeforePosAfter">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="after" negateValue="no"/>
+	</showWhen>	<showWhen id="swPossArtOnlyCooccurNoAfter">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -1116,6 +1237,15 @@
 		<whenValue element="np" attr="artPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swPossArtOnlyCooccurNoAfterPosBefore">
+		<whenValue element="np" attr="artAndDem" value="article"/>
+		<and/>
+		<whenValue element="np" attr="possCooccur" value="no"/>
+		<and/>
+		<whenValue element="np" attr="artPos" value="either" negateValue="no"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
 	</showWhen>
 	<showWhen id="swQPNPDegreeYesBefore">
 		<whenValue element="qp" attr="npDegree" value="yes"/>
@@ -1245,7 +1375,7 @@
 		<and/>
 		<whenValue element="np" attr="ppPos" value="unknown" negateValue="yes"/>
 	</showWhen>
-	<showWhen id="swNPPPAfter">
+		<showWhen id="swNPPPAfter">
 		<whenValue element="np" attr="ppPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="ppPos" value="unknown" negateValue="yes"/>

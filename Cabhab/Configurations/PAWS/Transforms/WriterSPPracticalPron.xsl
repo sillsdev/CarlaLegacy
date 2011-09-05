@@ -4,13 +4,16 @@
 	<section1 id="sPron">
 		<secTitle>Los pronombres</secTitle>
 		<p>
-<xsl:text>Los pronombres vienen en varios tipos, incluyendo pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
-	Cada tipo de pronombre será mirado en turno, después de cubrir las características del acuerdo en todos los tipos de pronombres. </xsl:text>
+<xsl:text>Hay pronombres de varios tipos, incluyendo: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
+				Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunos idiomas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.
+				Cada tipo de pronombre será mirado en su orden correspondiente, después de analizar las características de la concordancia en todos los tipos de pronombres. </xsl:text>
 </p>
 		<section2 id="sPronAgreement">
-			<secTitle>Las características del acuerdo en pronombres</secTitle>
+			<secTitle>Características de concordancia en los pronombres</secTitle>
 			<p>
-<xsl:text>Los pronombres tienen normalmente más que o el mismo número de características del acuerdo que los sustantivos tienen. La carta siguiente demuestra las características del acuerdo usadas para los pronombres en </xsl:text>
+<xsl:text>Los pronombres tienen normalmente más que o el mismo número de características de concordancia que los sustantivos tienen. En el cuadro </xsl:text>
+<exampleRef num="xPronAgrFeatures" equal="no" letterOnly="no" />
+<xsl:text> se muestran las características de concordancia usadas para los pronombres en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -21,7 +24,7 @@
 </xsl:choose>
 <xsl:text>.</xsl:text>
 </p>
-			<example num="xPron.PronAgreement.6">
+			<example num="xPronAgrFeatures">
 <table border="1">
 					<tr>
 						<th>Tipo de característica</th>
@@ -193,11 +196,11 @@
 		<section2 id="sPronPersonal">
 			<secTitle>Los pronombres personales</secTitle>
 			<p>
-<xsl:text>Todos los idiomas tienen pronombres personales independientes que sean las palabras separadas que pueden aparecer en todas las posiciones que pueden los sustantivos o las frases nominales.
-				Algunos idiomas también tienen formas dependientes de los pronombres personales que juntan a otra palabra en la oración. </xsl:text>
+<xsl:text>Todos los idiomas tienen pronombres personales independientes, los cuales son palabras separadas que pueden aparecer en todas las posiciones en las que aparecer los sustantivos o las frases nominales.
+				Algunos idiomas también tienen formas dependientes de los pronombres personales que se adhieren a otra palabra en la oración. </xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -208,17 +211,17 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-				<xsl:when test="//pron/@dependentPron='no'"> no tiene un sistema separado de pronombres personales dependientes.</xsl:when>
-				<xsl:when test="//pron/@dependentPron='yes'"> tiene pronombres personales dependientes así como los pronombres personales independientes. Ambos sistemas de pronombres personales serán presentados aquí, con las formas independientes cubiertas primero.</xsl:when>
+				<xsl:when test="//pron/@dependentPron='no'"> no hay un sistema separado de pronombres personales dependientes.</xsl:when>
+				<xsl:when test="//pron/@dependentPron='yes'"> hay pronombres personales dependientes así como pronombres personales independientes. Ambos sistemas de pronombres personales serán presentados aquí, con el análisis de las formas independientes primero.</xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
 </p>
 			<p>
-<xsl:text>Los pronombres personales tienen normalmente más que o el mismo número de características del caso que los sustantivos tienen. </xsl:text>
+<xsl:text>Los pronombres personales tienen normalmente más que o el mismo número de características de Caso que los sustantivos tienen. </xsl:text>
 </p>
 			<xsl:if test="normalize-space(//np/@case)='none'">
 <p>
-<xsl:text></xsl:text>
+<xsl:text>El </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -227,7 +230,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no tiene ningunas distinciones del caso, entonces hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición en la oración, según lo ejemplificado aquí.</xsl:text>
+<xsl:text> no tiene distinciones de Caso, entonces hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición en la oración, según lo ejemplificado aquí.</xsl:text>
 </p>
 </xsl:if>
 
@@ -235,12 +238,12 @@
 <example num="xPron.PronPersonal.12">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes</xsl:text>
+<xsl:text>Pronombres personales independientes</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombre</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstNoCaseExample),'.','')" />
@@ -271,7 +274,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -291,7 +294,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -326,7 +329,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -346,7 +349,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -380,7 +383,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -400,7 +403,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -410,7 +413,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -419,20 +422,20 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene un sistema de caso del nominativo-acusativo, entonces hay sistemas distintos de los pronombres para los temas, los objetos, y los poseedores.
-					Los pronombres personales independientes que pueden aparecer en la posición sujeta son: </xsl:text>
+<xsl:text> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de los pronombres para los sujetos, los objetos y los poseedores.
+					Los pronombres personales independientes que pueden aparecer en la posición del sujeto son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <example num="xPron.PronPersonal.16">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes nominativos</xsl:text>
+<xsl:text>Pronombres personales independientes nominativos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para sujetos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstNomSubjectExample),'.','')" />
@@ -463,7 +466,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -483,7 +486,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -518,7 +521,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -538,7 +541,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -572,7 +575,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -592,7 +595,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -609,12 +612,12 @@
 <example num="xPron.PronPersonal.20">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes acusativos</xsl:text>
+<xsl:text>Pronombres personales independientes acusativos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para objetos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstNomObjectExample),'.','')" />
@@ -645,7 +648,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -665,7 +668,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -700,7 +703,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -720,7 +723,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -754,7 +757,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -774,7 +777,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -791,12 +794,12 @@
 <example num="xPron.PronPersonal.24">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes genitivos</xsl:text>
+<xsl:text>Pronombres personales independientes genitivos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para poseedor</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstNomPossessorExample),'.','')" />
@@ -827,7 +830,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -847,7 +850,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -882,7 +885,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -902,7 +905,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -936,7 +939,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -956,7 +959,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -966,7 +969,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -975,19 +978,19 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene un sistema de caso del ergativo-absolutivo, entonces hay sistemas distintos de los pronombres que se pueden utilizar como temas de verbos transitivos contra los temas de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales independientes que pueden aparecer en la posición sujeta de verbos transitivos son: </xsl:text>
+<xsl:text> hay un sistema de caso ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos transitivos son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <example num="xPron.PronPersonal.28">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes ergativos</xsl:text>
+<xsl:text>Pronombres personales independientes ergativos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres ergativos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstErgSubjectTransExample),'.','')" />
@@ -1018,7 +1021,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1038,7 +1041,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1073,7 +1076,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1093,7 +1096,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1128,7 +1131,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1148,7 +1151,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1159,19 +1162,19 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición sujeta de verbos intransitivos o en la posición del objeto de verbos transitivos son:</xsl:text>
+<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <example num="xPron.PronPersonal.32">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes absolutivos</xsl:text>
+<xsl:text>Pronombres personales independientes absolutivos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres Absolutivos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstErgSubjectIntransExample),'.','')" />
@@ -1202,7 +1205,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1222,7 +1225,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1257,7 +1260,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1277,7 +1280,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1312,7 +1315,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1332,7 +1335,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1350,12 +1353,12 @@
 <example num="xPron.PronPersonal.36">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes genitivos</xsl:text>
+<xsl:text>Pronombres personales independientes genitivos</xsl:text>
 </caption>
 					<tr>
 						<th>Persone</th>
 						<th>Pronombres para poseedores</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstErgPossessorExample),'.','')" />
@@ -1386,7 +1389,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1406,7 +1409,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1441,7 +1444,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1461,7 +1464,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1496,7 +1499,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1516,7 +1519,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1527,7 +1530,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1536,20 +1539,20 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene un sistema de caso del ergativo-partido, entonces hay sistemas distintos de los pronombres que se utilizan normalmente como temas, objetos, y poseedores siguiendo el sistema de nominativo-acusativo, más algunos sistemas especiales que se utilicen en los casos del ergativo-partido.
-					Los pronombres personales independientes que aparecen normalmente en la posición sujeta son:  </xsl:text>
+<xsl:text> hay un sistema de caso de ergatividad escindida, así que hay sistemas distintos de pronombres que se utilizan comúnmente como sujetos, objetos, y poseedores siguiendo el sistema nominativo-acusativo, más algunos sistemas especiales que se utilizan en los casos del ergatividad escindida.
+					Los pronombres personales independientes que comúnmente aparecen en la posición del sujeto son:  </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split'">
 <example num="xPron.PronPersonal.40">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes nominativos</xsl:text>
+<xsl:text>Pronombres personales independientes nominativos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para sujetos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitSubjectExample),'.','')" />
@@ -1580,7 +1583,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1600,7 +1603,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1635,7 +1638,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1655,7 +1658,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1689,7 +1692,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1709,7 +1712,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1719,19 +1722,19 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del objeto son:</xsl:text>
+<xsl:text>Los pronombres personales independientes que comúnmente aparecer en la posición del objeto son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <example num="xPron.PronPersonal.44">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes acusativos</xsl:text>
+<xsl:text>Pronombres personales independientes acusativos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para objetos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitObjectExample),'.','')" />
@@ -1762,7 +1765,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1782,7 +1785,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1817,7 +1820,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1837,7 +1840,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1871,7 +1874,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1891,7 +1894,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1901,19 +1904,19 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del poseedor son: </xsl:text>
+<xsl:text>Los pronombres personales independientes que comúnmente aparecer en la posición del poseedor son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <example num="xPron.PronPersonal.48">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes genitivos</xsl:text>
+<xsl:text>Pronombres personales independientes genitivos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para poseedor</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitPossessorExample),'.','')" />
@@ -1944,7 +1947,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1964,7 +1967,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1999,7 +2002,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2019,7 +2022,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2053,7 +2056,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2073,7 +2076,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2084,19 +2087,19 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición sujeta de verbos transitivos en los casos especiales del ergativo-partido son:</xsl:text>
+<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split'">
 <example num="xPron.PronPersonal.52">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personalss independientes ergativos</xsl:text>
+<xsl:text>Pronombres personalss independientes ergativos</xsl:text>
 </caption>
 				<tr>
 					<th>Persona</th>
 					<th>Pronombres Ergativos</th>
-					<th>Significado</th>
+					<th>Glosa</th>
 				</tr>
 				<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitErgExample),'.','')" />
@@ -2127,7 +2130,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2147,7 +2150,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2182,7 +2185,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2202,7 +2205,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2237,7 +2240,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2257,7 +2260,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2268,19 +2271,19 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
-<xsl:text>Los pronombres personales independientes que aparecen mientras que son los temas de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergativo-partido son:</xsl:text>
+<xsl:text>Los pronombres personales independientes que funcionan tanto como sujetos de verbos intransitivos y objetos de verbos transitivos en los casos especiales del ergatividad escindida son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split'">
 <example num="xPron.PronPersonal.56">
 <table border="1">
 					<caption>
-<xsl:text>Los pronombres personales independientes absolutivos</xsl:text>
+<xsl:text>Pronombres personales independientes absolutivos</xsl:text>
 </caption>
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres absolutivos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitAbsExample),'.','')" />
@@ -2311,7 +2314,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2331,7 +2334,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2366,7 +2369,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2386,7 +2389,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2421,7 +2424,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2441,7 +2444,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2453,7 +2456,7 @@
 
 			<xsl:if test="normalize-space(//np/@case)='none' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Moviendo ahora a los pronombres dependientes, según lo visto arriba </xsl:text>
+<xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -2462,7 +2465,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no tiene ningunos distinciones del caso, entonces hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición en la oración, según lo ejemplificado aquí.</xsl:text>
+<xsl:text> no hay distinciones de Caso, así que hay solamente un solo sistema de pronombres que se pueden utilizar en cualquier posición de la oración, según lo ejemplificado a continuación:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='none' and normalize-space(//pron/@dependentPron)='yes'">
@@ -2474,7 +2477,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombre</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstNoCaseExample),'.','')" />
@@ -2505,7 +2508,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2525,7 +2528,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2560,7 +2563,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2580,7 +2583,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2615,7 +2618,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2635,7 +2638,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2646,7 +2649,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Moviendo ahora a los pronombres dependientes, según lo visto arriba </xsl:text>
+<xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -2655,7 +2658,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene un sistema de caso del nominativo-acusativo, entonces hay sistemas distintos de los pronombres para los temas, los objetos, y los poseedores. Los pronombre personals dependientes que pueden aparecer en la posición sujeta son: </xsl:text>
+<xsl:text> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de pronombres para los sujetos, los objetos y los poseedores. Los pronombre personals dependientes que pueden aparecer en la posición del sujeto son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -2667,7 +2670,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para sujetos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstNomSubjectExample),'.','')" />
@@ -2698,7 +2701,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2718,7 +2721,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2753,7 +2756,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2773,7 +2776,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2807,7 +2810,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2827,7 +2830,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2849,7 +2852,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para objetos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstNomObjectExample),'.','')" />
@@ -2880,7 +2883,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2900,7 +2903,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2935,7 +2938,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -2955,7 +2958,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -2989,7 +2992,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3009,7 +3012,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3031,7 +3034,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para poseedor</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstNomPossessorExample),'.','')" />
@@ -3062,7 +3065,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3082,7 +3085,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3117,7 +3120,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3137,7 +3140,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3171,7 +3174,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3191,7 +3194,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3201,7 +3204,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Moviendo ahora a los pronombres dependientes, según lo visto arriba </xsl:text>
+<xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -3210,7 +3213,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene un sistema de caso del ergativo-absolutivo, entonces hay sistemas distintos de los pronombres que se pueden utilizar como temas de verbos transitivos contra los temas de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales dependientes que pueden aparecer en la posición sujeta de verbos transitivos son: </xsl:text>
+<xsl:text> hay un sistema de caso del ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra de los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales dependientes que pueden aparecer en la posición de sujeto de verbos transitivos son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -3222,7 +3225,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres ergativos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstErgSubjectTransExample),'.','')" />
@@ -3253,7 +3256,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3273,7 +3276,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3308,7 +3311,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3328,7 +3331,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3363,7 +3366,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3383,7 +3386,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3394,7 +3397,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición sujeta de verbos intransitivos o en la posición del objeto de verbos transitivos son:</xsl:text>
+<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -3406,7 +3409,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres absolutivos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstErgSubjectIntransExample),'.','')" />
@@ -3437,7 +3440,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3457,7 +3460,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3492,7 +3495,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3512,7 +3515,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3547,7 +3550,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3567,7 +3570,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3621,7 +3624,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3641,7 +3644,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3676,7 +3679,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3696,7 +3699,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3731,7 +3734,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3751,7 +3754,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3762,7 +3765,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Moviendo ahora a los pronombres dependientes, según lo visto arriba </xsl:text>
+<xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -3771,7 +3774,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene un sistema de caso delergativo-partido, entonces hay sistemas distintos de los pronombres que se utilizan normalmente como temas, objetos, y poseedores, más algunos sistemas especiales que se utilicen en los casos del ergativo-partido. Los pronombres personales dependientes que aparecen normalmente en la posición sujeta son: </xsl:text>
+<xsl:text> hay un sistema de caso de ergatividad escindida, así que hay sistemas distintos de los pronombres que se utilizan comúnmente como sujetos, objetos y poseedores, además de algunos sistemas especiales que se utilizan en los casos del ergatividad escindida. Los pronombres personales dependientes que aparecen comúnmente en la posición del sujeto son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
@@ -3783,7 +3786,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para sujetos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitSubjectExample),'.','')" />
@@ -3814,7 +3817,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3834,7 +3837,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3869,7 +3872,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3889,7 +3892,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3924,7 +3927,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -3944,7 +3947,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -3955,7 +3958,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que aparecen normalmente en la posición del objeto son:</xsl:text>
+<xsl:text>Los pronombres personales dependientes que aparecen comúnmente en la posición del objeto son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
@@ -3998,7 +4001,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4018,7 +4021,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4053,7 +4056,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4073,7 +4076,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4108,7 +4111,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4128,7 +4131,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4139,7 +4142,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que aparecen normalmente en la posición del poseedor son:</xsl:text>
+<xsl:text>Los pronombres personales dependientes que aparecen comúnmente en la posición del poseedor son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
@@ -4151,7 +4154,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres para poseedor</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitPossessorExample),'.','')" />
@@ -4182,7 +4185,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4202,7 +4205,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4237,7 +4240,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4257,7 +4260,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4292,7 +4295,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4312,7 +4315,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4323,7 +4326,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición sujeta de verbos transitivos en los casos especiales del ergativo-partido son: </xsl:text>
+<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
@@ -4335,7 +4338,7 @@
 				<tr>
 					<th>Persona</th>
 					<th>Pronombres ergativos</th>
-					<th>Significado</th>
+					<th>Glosa</th>
 				</tr>
 				<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitErgExample),'.','')" />
@@ -4366,7 +4369,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4386,7 +4389,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4421,7 +4424,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4441,7 +4444,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4476,7 +4479,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4496,7 +4499,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4507,7 +4510,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que aparecen mientras que son los temas de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergativo-partido son:</xsl:text>
+<xsl:text>Los pronombres personales dependientes que funcionan tanto como sujetos de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergatividad escindida son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
@@ -4519,7 +4522,7 @@
 					<tr>
 						<th>Persona</th>
 						<th>Pronombres absolutivos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitAbsExample),'.','')" />
@@ -4550,7 +4553,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4570,7 +4573,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4605,7 +4608,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4625,7 +4628,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4660,7 +4663,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4680,7 +4683,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4691,18 +4694,18 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Para otros detalles sobre cómo los pronombres dependientes pueden ser utilizados, véanse las secciones </xsl:text>
+<xsl:text>Para considerar otros detalles sobre cómo pueden ser utilizados los pronombres dependientes, véanse las secciones </xsl:text>
 <sectionRef sec="sIPAgr" />
 <xsl:text> y </xsl:text>
 <sectionRef sec="sIPProDrop" />
-<xsl:text> donde se discuten el acuerdo verbal y los temas que no debe estar presente.</xsl:text>
+<xsl:text> donde se analizan la concordancia verbal y los sujetos que no deben estar presentes.</xsl:text>
 </p>
 </xsl:if>
 		</section2>
 		<section2 id="sPronPoss">
 			<secTitle>Los pronombres posesivos</secTitle>
 			<p>
-<xsl:text>Muchos idiomas también tienen los pronombres posesivos que pueden colocar solamente, por ejemplo </xsl:text>
+<xsl:text>Muchos idiomas también tienen pronombres posesivos que se pueden usar sólos, por ejemplo </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -4722,7 +4725,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>tuyo</langData>
-<xsl:text> en español. Éstos son distintos de esos pronombres que puedan ocurrir en la posición del poseedor, tal como </xsl:text>
+<xsl:text> en español. Éstos son distintos de los que puedan presentarse en la posición del poseedor, tal como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -4742,10 +4745,10 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>tu</langData>
-<xsl:text>, que fueron ejemplificados bajo los pronombres personales arriba.</xsl:text>
+<xsl:text>, que fueron ejemplificados en los pronombres personales antes mencionados.</xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -4756,18 +4759,18 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//pron/@poss='no'"> no tiene cualesquiera</xsl:when>
-					<xsl:when test="//pron/@poss='yes'"> tiene</xsl:when>
+					<xsl:when test="//pron/@poss='no'"> no hay</xsl:when>
+					<xsl:when test="//pron/@poss='yes'"> hay</xsl:when>
 				</xsl:choose>
-<xsl:text> pronombres posesivos que se colocan solamente como frase nominal.  </xsl:text>
+<xsl:text> pronombres posesivos que se presentan solamente como frase nominal.  </xsl:text>
 <xsl:if test="normalize-space(//pron/@poss)='yes'">
 					<xsl:text>Estos pronombres posesivos </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//pron/@possAffix='no'">no son construidos agregando un afijo a los pronombres personales. Son un sistema distinto.</xsl:when>
-						<xsl:when test="//pron/@possAffix='yes'">son construidos agregando un afijo a los pronombres personales.</xsl:when>
-						<xsl:when test="//pron/@possAffix='both'">son construidos agregando un afijo a los pronombres personales, aunque algunas formas son distintas, pronombres solos del soporte.</xsl:when>
+						<xsl:when test="//pron/@possAffix='no'">no se construyen agregando un afijo a los pronombres personales. Son un sistema distinto.</xsl:when>
+						<xsl:when test="//pron/@possAffix='yes'">se construyen agregando un afijo a los pronombres personales.</xsl:when>
+						<xsl:when test="//pron/@possAffix='both'">se construyen agregando un afijo a los pronombres personales, aunque algunas formas son palabras distintas.</xsl:when>
 					</xsl:choose>
-					<xsl:text>  Los pronombres posesivos se dan aquí, comenzando con la primera persona, entonces segunda persona, entonces tercera persona:</xsl:text>
+					<xsl:text>  Los pronombres posesivos se dan a continuación, comenzando con la primera persona, continuando con la segunda persona y terminando con la tercera persona:</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
@@ -4776,7 +4779,7 @@
 <table border="1">
 					<tr>
 						<th>Pronombres posesivos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/possExample),'.','')" />
@@ -4804,7 +4807,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4821,7 +4824,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -4834,7 +4837,7 @@
 		<section2 id="sPronRefl">
 			<secTitle>Los reflexivos</secTitle>
 			<p>
-<xsl:text>Los reflexivos son otro tipo de pronombres que la mayoría de los idiomas tengan. Ocurren solamente en el mismo caso que los objetos directos y deben convenir normalmente con el tema personalmente, el género, y las características del número. Los ejemplos en inglés son:</xsl:text>
+<xsl:text>Los reflexivos son otro tipo de pronombres que la mayoría de los idiomas tienen. Se presentan solamente en el caso de los objetos directos y deben oncordar comúnmente con el sujeto en las aracterísticas de persona, género y número. Los ejemplos en inglés son:</xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -4881,11 +4884,11 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>‘self'</xsl:text>
 </gloss>
-<xsl:text>) que es poseído por el pronombre que se refiere de nuevo al tema.
-					Algunos idiomas tienen un afijo verbal que indique la acción reflexiva, y algunos idiomas no distinguen construcciones reflexivas en absoluto.</xsl:text>
+<xsl:text>) que es poseído por el pronombre que se refiere de nuevo al sujeto.
+					Algunos idiomas tienen un afijo verbal que indica la acción reflexiva, y algunos idiomas no distinguen las construcciones reflexivas en absoluto.</xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -4896,22 +4899,22 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//pron/@refl='no'"> no tiene ningún tipo de reflexivos.</xsl:when>
-					<xsl:when test="//pron/@refl='yesVerbal'"> tiene un afijo verbal para indicar la acción reflexiva. </xsl:when>
-					<xsl:when test="//pron/@refl='yes'"> tiene reflexivos</xsl:when>
+					<xsl:when test="//pron/@refl='no'"> no hay ningún tipo de reflexivos.</xsl:when>
+					<xsl:when test="//pron/@refl='yesVerbal'"> hay un afijo verbal para indicar la acción reflexiva. </xsl:when>
+					<xsl:when test="//pron/@refl='yes'"> hay reflexivos</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//pron/@refl)='yes'">
-					<xsl:text> cuales </xsl:text>
+					<xsl:text> los cuales </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//pron/@reflAffix='yes'">son construidos agregando un afijo a otro pronombre.</xsl:when>
-						<xsl:when test="//pron/@reflAffix='noWord'">son un sistema distinto de pronombres.</xsl:when>
-						<xsl:when test="//pron/@reflAffix='noNoun'">son expresados por un cierto sustantivo con un pronombre como el poseedor, como en español.</xsl:when>
+						<xsl:when test="//pron/@reflAffix='yes'">se construyen agregando un afijo a otro pronombre.</xsl:when>
+						<xsl:when test="//pron/@reflAffix='noWord'">tienen un sistema distinto de pronombres.</xsl:when>
+						<xsl:when test="//pron/@reflAffix='noNoun'">se expresan por un cierto sustantivo con un pronombre como el poseedor, como en español.</xsl:when>
 					</xsl:choose>
-					<xsl:text>  Las formas usadas para los reflexivos se dan aquí, comenzando con la primera persona, entonces segunda persona, entonces tercera persona:</xsl:text>
+					<xsl:text>  Las formas usadas para los reflexivos se dan a continuación, comenzando con la primera persona, continuando con la segunda persona y terminando con la tercera persona:</xsl:text>
 				</xsl:if>
 <xsl:if test="normalize-space(//pron/@refl)='yesVerbal'">
-					<xsl:text> Los ejemplos de reflexivos en </xsl:text>
+					<xsl:text> Algunos ejemplos de reflexivos en </xsl:text>
 					<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -4928,7 +4931,7 @@
 <table border="1">
 					<tr>
 						<th>Reflexivos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/reflExample),'.','')" />
@@ -4956,7 +4959,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -4973,7 +4976,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -5031,7 +5034,7 @@
 		<section2 id="sPronRecip">
 			<secTitle>Los recíprocos</secTitle>
 			<p>
-<xsl:text>Los recíprocos son similares a los reflexivos salvo que ocurren solamente con los temas plurales. Pueden ser de la misma manera formados reflexivos son, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: </xsl:text>
+<xsl:text>Los recíprocos son similares a los reflexivos, salvo que se presentan solamente con sujetos plurales. Pueden formarse de la misma manera que los reflexivos, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5041,10 +5044,10 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>uno a otro</langData>
-<xsl:text>.  Algunos idiomas usan solamente un afijo verbal de indicar la acción recíproca del tema plural, otros tiene pronombres separados, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no marcan la acción recíproca en absoluto. </xsl:text>
+<xsl:text>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no marcan la acción recíproca en absoluto. </xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -5055,17 +5058,17 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//pron/@recip='no'"> no tiene ningún tipo de recíprocos.</xsl:when>
-					<xsl:when test="//pron/@recip='verbal'"> tiene un afijo verbal de indicar la acción recíproca..</xsl:when>
-					<xsl:when test="//pron/@recip='yes'"> tiene recíprocos</xsl:when>
+					<xsl:when test="//pron/@recip='no'"> no hay ningún tipo de recíprocos.</xsl:when>
+					<xsl:when test="//pron/@recip='verbal'"> hay un afijo verbal para indicar la acción recíproca..</xsl:when>
+					<xsl:when test="//pron/@recip='yes'"> hay recíprocos</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//pron/@recip)='yes'">
-					<xsl:text> cuales </xsl:text>
+					<xsl:text> los cuales </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//pron/@recipAffix='yes'">son construidos agregando un afijo a otro pronombre. </xsl:when>
-						<xsl:when test="//pron/@recipAffix='noWord'">son un sistema distinto de pronombres.</xsl:when>
-						<xsl:when test="//pron/@recipAffix='noNoun'">son expresados consistir en cierto sustantivo con un pronombre como el poseedor.</xsl:when>
+						<xsl:when test="//pron/@recipAffix='yes'">se construyen agregando un afijo a otro pronombre. </xsl:when>
+						<xsl:when test="//pron/@recipAffix='noWord'">tienen un sistema distinto de pronombres.</xsl:when>
+						<xsl:when test="//pron/@recipAffix='noNoun'">se expresan a ravés de cierto sustantivo con un pronombre como poseedor.</xsl:when>
 						<xsl:when test="//pron/@recipAffix='noQP'">son oraciones nominales cuantificadas especiales</xsl:when>
 					</xsl:choose>
 
@@ -5078,7 +5081,7 @@
 <table border="1">
 					<tr>
 						<th>Pronombres recíprocos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/recipExample),'.','')" />
@@ -5106,7 +5109,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -5123,7 +5126,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -5137,7 +5140,7 @@
 <table border="1">
 					<tr>
 						<th>Afijos recíprocos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/recipExample),'.','')" />
@@ -5165,7 +5168,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -5182,7 +5185,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -5193,7 +5196,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//pron/@recip)!='no'">
 <p>
-<xsl:text>Algunos ejemplos de reciprocales en oraciones son: </xsl:text>
+<xsl:text>Algunos ejemplos de recíprocos en oraciones son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//pron/@recip)!='no'">
@@ -5283,7 +5286,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ninguno</langData>
-<xsl:text>.  Algunos idiomas pueden no combinarlas en una sola palabra, como en </xsl:text>
+<xsl:text>.  Algunos idiomas pueden o no combinarse en una sola palabra, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5306,8 +5309,8 @@
 </xsl:choose>
 <xsl:text>, </xsl:text>
 <xsl:choose>
-					<xsl:when test="//pron/@indef='no'">todos los indefinites negativos son frases nominales, algo que siendo pronombres de una palabra.</xsl:when>
-					<xsl:when test="//pron/@indef='yes'">algunos o todos los indefinites negativos se combinan en pronombres de una palabra.  Los ejemplos de los pronombres indefinidos negativos incluyen:</xsl:when>
+					<xsl:when test="//pron/@indef='no'">todos los positivos indefinidos son frases nominales, en lugar de pronombres de una sóla palabra.</xsl:when>
+					<xsl:when test="//pron/@indef='yes'">algunos o todos los positivos indefinitdos se combinan con pronombres para formar una palabra.  A continuación se dan algunos ejemplos de pronombres positivos indefinidos:</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -5315,8 +5318,8 @@
 <example num="xPron.PronIndef.10">
 <table border="1">
 					<tr>
-						<th>Pronombres indefinidos positivos</th>
-						<th>Significado</th>
+						<th>Pronombres positivos indefinidos</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/indefExample),'.','')" />
@@ -5344,7 +5347,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -5361,7 +5364,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -5383,8 +5386,8 @@
 </xsl:choose>
 <xsl:text>, </xsl:text>
 <xsl:choose>
-					<xsl:when test="//pron/@negIndef='no'">todos los indefinidos negativos son frases nominales, algo que siendo pronombres de una palabra.</xsl:when>
-					<xsl:when test="//pron/@negIndef='yes'">algunos o todos los indefinites negativos se combinan en pronombres de una palabra. Los ejemplos de los pronombres indefinidos negativos incluyen: </xsl:when>
+					<xsl:when test="//pron/@negIndef='no'">todos los negativos indefinidos son frases nominales, en lugar de pronombres de una sóla palabra.</xsl:when>
+					<xsl:when test="//pron/@negIndef='yes'">algunos o todos los negativos indefinidos se combinan con pronombres para formar una palabra. A continuación se dan algunos ejemplos de pronombres negativos indefinidos: </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -5402,8 +5405,8 @@
 </xsl:choose>
 <xsl:text>, </xsl:text>
 <xsl:choose>
-					<xsl:when test="//pron/@negIndef='no'">no hay pronombres indefinidos negativos y ningún nominal indefinido negativo expresa tampoco, puesto que el idioma no tiene ninguna medios de negar una frase nominal.</xsl:when>
-					<xsl:when test="//pron/@negIndef='yes'">todos los indefinidos negativos se combinan en pronombres de una palabra. No hay frases nominales indefinidas negativas, puesto que lel idioma no tiene ninguna medios de negar una frase nominal. Los ejemplos de los pronombres indefinidos negativos incluyen:</xsl:when>
+					<xsl:when test="//pron/@negIndef='no'">no hay pronombres negativos indefinidos y tampoco expresa ningún nominal indefinido negativo, puesto que el idioma no tiene ningún medio para negar una frase nominal.</xsl:when>
+					<xsl:when test="//pron/@negIndef='yes'">todos los negativos indefinidos se combinan con pronombres para formar una palabra. No hay frases nominales negativas indefinidas, puesto que lel idioma no tiene ningún medio para negar una frase nominal. A continuación se dan algunos ejemplos de pronombres negativos indefinidos:</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -5412,8 +5415,8 @@
 <example num="xPron.PronIndef.16">
 <table border="1">
 					<tr>
-						<th>Pronombres indefinidos negativos</th>
-						<th>Significado</th>
+						<th>Pronombres negativos indefinidos</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/negIndefExample),'.','')" />
@@ -5441,7 +5444,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -5458,7 +5461,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -5468,11 +5471,11 @@
 </example>
 </xsl:if>
 			<p>
-<xsl:text>Los ejemplos de frases nominales indefinidas positivas </xsl:text>
+<xsl:text>Algunos ejemplos  </xsl:text>
 <xsl:if test="normalize-space(//pron/@indef)='yes'">
 					<xsl:text>(si hay) </xsl:text>
 				</xsl:if>
-<xsl:text>incluyen:</xsl:text>
+<xsl:text>de frases nominales positivas indefinidas son:</xsl:text>
 </p>
 			<example num="xPron.PronIndef.20">
 <xsl:variable name="sExampleValue">
@@ -5514,11 +5517,11 @@
 </example>
 			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
-<xsl:text>Los ejemplos de frases nominales indefinidas negativas </xsl:text>
+<xsl:text>Algunos ejemplos </xsl:text>
 <xsl:if test="normalize-space(//pron/@negIndef)='yes'">
 					<xsl:text>(si hay) </xsl:text>
 				</xsl:if>
-<xsl:text>incluyen:</xsl:text>
+<xsl:text>de frases nominales negativas indefinidas son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
@@ -5565,7 +5568,7 @@
 <p>
 <xsl:text>Véase la sección </xsl:text>
 <sectionRef sec="sNegNominal" />
-<xsl:text> para ejemplos de los elementos negativos usados en oraciones y la discusión de las construcciones de la negación en </xsl:text>
+<xsl:text> para tener en cuenta otros ejemplos de los elementos negativos usados en oraciones y el análisis de las construcciones de la negación en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -5582,8 +5585,8 @@
 		<section2 id="sPronNP">
 			<secTitle>Los pronombres como frases nominales</secTitle>
 			<p>
-<xsl:text>Los pronombres se colocan normalmente solamente en el lugar de una frase nominal entera, pero pueden también ser modificados por una frase del partitivo y en algunos idiomas los pronombres se pueden modificar por los determinadores y los cuantificadores, llenando el lugar de sustantivos en ese caso.
-				Los ejemplos españoles de pronombres, de demonstratives o de cuantificadores modificados incluyen los siguientes: </xsl:text>
+<xsl:text>Los pronombres comúnmente presentarse solamente en el lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo y en algunos idiomas los pronombres se pueden modificar por los determinantes y los cuantificadores, llenando el lugar de sustantivos en esta situación.
+				Los ejemplos en español de pronombres, de demonstratives o de cuantificadores modificados incluyen los siguientes: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5606,7 +5609,7 @@
 <xsl:text>.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los ejemplos similares en </xsl:text>
+<xsl:text>Algunos ejemplos similares en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -5615,7 +5618,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 			<example num="xPron.PronNP.8">
 <xsl:variable name="sExampleValue">
@@ -5656,7 +5659,7 @@
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>Además, es posible hacer un pronombre, demostrativo, o cuantificador modificar por una cláusula relativa, como en </xsl:text>
+<xsl:text>Además, un pronombre, demostrativo, o cuantificador puede ser modificado por una cláusula relativa, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5666,7 +5669,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>solamente estos dos que vi</langData>
-<xsl:text>.  Los ejemplos similares en </xsl:text>
+<xsl:text>.  Algunos ejemplos similares en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -5675,7 +5678,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, incluido ien oraciones completas son:</xsl:text>
+<xsl:text>, incluido en oraciones completas son:</xsl:text>
 </p>
 			<example num="xPron.PronNP.12">
 <xsl:variable name="sExampleValue">
@@ -5716,7 +5719,7 @@
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>Finalmente, estas categorías se pueden también modificar por una frase del partitivo (u otra frase preposicional y/o posposicional), como en </xsl:text>
+<xsl:text>Finalmente, estas categorías también pueden ser modificadas por una frase del partitivo (u otra frase preposicional y/o posposicional), como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5731,7 +5734,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>solamente ésos adentro allí</langData>
-<xsl:text>.   Los ejemplos similares en </xsl:text>
+<xsl:text>.   Algunos ejemplos similares en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -5740,7 +5743,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 			<example num="xPron.PronNP.16">
 <xsl:variable name="sExampleValue">
@@ -5788,13 +5791,13 @@
 					<xsl:when test="//pp/@pPos='both'">preposicional y/o posposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='unknown'">preposicional y/o posposicional</xsl:when>
 				</xsl:choose>
-<xsl:text> opcional ocurre </xsl:text>
+<xsl:text> opcional se presenta </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pron/@partitivePos='before'">antes</xsl:when>
 					<xsl:when test="//pron/@partitivePos='after'">después</xsl:when>
 					<xsl:when test="//pron/@partitivePos='unknown'">_______</xsl:when>
 				</xsl:choose>
-<xsl:text> del elemento que actúa como la cabeza de la frase nominal.</xsl:text>
+<xsl:text> del elemento principal de la frase nominal.</xsl:text>
 </p>
 		</section2>
 	</section1>

@@ -80,7 +80,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//focus/topicExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//focus/topicExample" />
@@ -182,7 +182,8 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -275,7 +276,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//focus/focusExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//focus/focusExample" />
@@ -377,7 +378,8 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>

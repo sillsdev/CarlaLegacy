@@ -359,6 +359,8 @@ like </content>
 					<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
 					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
 				</case>
+			</p>
+			 <p show="swQPNPDegreeNo">
 				<content>  The negative special degree elements are </content>
 				<case element="qp" attr="npDegreeNegType">
 					<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
@@ -369,6 +371,8 @@ like </content>
 					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
 				</case>
 				<content/>
+			 </p>
+			 <p show="swQPNPDegreeNo">
 				<langName/>
 				<content> positive nominal phrase examples include:</content>
 			</p>
@@ -384,8 +388,12 @@ like </content>
 					<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
 					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
 				</case>
-				<content>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </content>
-				<langName/>
+			</p>
+			 <p show="swQPNPDegreeNoPosOnly">
+				 <content>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </content>
+			</p>
+			 <p show="swQPNPDegreeNoPosOnly">
+				 <langName/>
 				<content> positive nominal phrase examples include:</content>
 			</p>
 			<p show="swQPNPDegreeYesPos">
@@ -410,7 +418,9 @@ like </content>
 				<text show="swQPNPDegreeEitherRestricted">
 					<content>There are restrictions as to which of these words can occur on each side of the nominal phrase.  </content>
 				</text>
-				<content>The negative special degree elements, however, are not expressed as separate words.  Instead, they all attach to another word in the nominal phrase.  These negative special degree elements are </content>
+			</p>
+			 <p show="swQPNPDegreeYesPos">
+				 <content>The negative special degree elements, however, are not expressed as separate words.  Instead, they all attach to another word in the nominal phrase.  These negative special degree elements are </content>
 				<case element="qp" attr="npDegreeNegType">
 					<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
 					<caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
@@ -420,7 +430,9 @@ like </content>
 					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
 				</case>
 				<content/>
-				<langName/>
+			 </p>
+			 <p show="swQPNPDegreeYesPos">
+				 <langName/>
 				<content> positive nominal phrase examples include:</content>
 			</p>
 			<p show="swQPNPDegreeYesPosOnly">
@@ -445,8 +457,12 @@ like </content>
 				<text show="swQPNPDegreeEitherRestricted">
 					<content>There are restrictions as to which of these words can occur on each side of the nominal phrase.  </content>
 				</text>
-				<content>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </content>
-				<langName/>
+			</p>
+			 <p show="swQPNPDegreeYesPosOnly">
+				 <content>There is not any way to express 'not' modifying a nominal phrase in the language, however.  </content>
+			</p>
+			 <p show="swQPNPDegreeYesPosOnly">
+				 <langName/>
 				<content> positive nominal phrase examples include:</content>
 			</p>
 			<p show="swQPNPDegreeYesNeg">
@@ -461,7 +477,9 @@ like </content>
 					<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
 					<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
 				</case>
-				<content>  The negative special degree elements in </content>
+			</p>
+			 <p show="swQPNPDegreeYesNeg">
+				 <content>  The negative special degree elements in </content>
 				<langName/>
 				<content>, however, are expressed as separate words which modify the whole nominal phrase.  They  occur </content>
 				<case element="qp" attr="npDegreePos">
@@ -483,7 +501,9 @@ like </content>
 					<content>There are restrictions as to which of these words can occur on each side of the nominal phrase.</content>
 				</text>
 				<content/>
-				<langName/>
+			 </p>
+			 <p show="swQPNPDegreeYesNeg">
+				 <langName/>
 				<content> positive nominal phrase examples include:</content>
 			</p>
 			<p show="swQPNPDegreeYes">
@@ -509,6 +529,8 @@ like </content>
 					<content>There are restrictions as to which of these words can occur on each side of the nominal phrase.</content>
 				</text>
 				<content/>
+			</p>
+			 <p show="swQPNPDegreeYes">
 				<langName/>
 				<content> positive nominal phrase examples include:</content>
 			</p>
@@ -555,6 +577,8 @@ like </content>
 					<content>There are restrictions as to which of these negative words can occur on each side of the nominal phrase.  </content>
 				</text>
 				<content/>
+			</p>
+			 <p show="swQPNPDegreeNegCooccurYes">
 				<langName/>
 				<content> negative nominal phrase examples which include the positive special degree words are:</content>
 			</p>
@@ -617,6 +641,8 @@ like </content>
 					<content/>
 					<langName/>
 					<content> does not have a separate set of negative quantifiers which act as the only determiner in the nominal phrase.  Negation of a nominal phrase is expressed by the special degree elements only.                </content>
+				</p>
+				<p show="swQPDeterminerYesSomeNotPosOnly">
 					<langName/>
 					<content> has the following positive quantifiers which act as the only determiner in the nominal phrase:</content>
 				</p>
@@ -624,6 +650,8 @@ like </content>
 					<content/>
 					<langName/>
 					<content> does not have a separate set of negative quantifiers which act as the only determiner in the nominal phrase, just as there was not any way to express the negative special degree element 'not'.                </content>
+				</p>
+				<p show="swQPDeterminerYesSomePosOnly">
 					<langName/>
 					<content> has the following positive quantifiers which act as the only determiner in the nominal phrase:</content>
 				</p>
@@ -637,6 +665,8 @@ like </content>
 					<content> are either like </content>
 					<langData>all</langData>
 					<content> above or like the quantifiers which may co-occur with articles, demonstratives and/or possessors to be treated in the next section.  </content>
+				</p>
+				<p show="swQPDeterminerYesNo">
 					<langName/>
 					<content> has the following negative quantifiers which act as the only determiner in the nominal phrase:</content>
 				</p>

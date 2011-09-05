@@ -4,23 +4,23 @@
 	<section1 id="sNeg">
 		<secTitle>Las construcciones negativas</secTitle>
 		<p>
-<xsl:text>Todos los idiomas tienen la capacidad de expresar la negación. Esto se realiza generalmente con el uso de:</xsl:text>
+<xsl:text>Todos los idiomas tienen la capacidad de expresar la negación. Esto generalmente se realiza con el uso de:</xsl:text>
 </p>
 		<ul>
 			<li>
-				<xsl:text>palabras negativas especiales del grado, como </xsl:text>
+				<xsl:text>palabras negativas especiales de grado, como </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>no</langData>
-				<xsl:text> (la sección </xsl:text>
+				<xsl:text> (véase la sección </xsl:text>
 				<sectionRef sec="sQPAll" />
-				<xsl:text>), o determiners negativos del cuantificador, tales como </xsl:text>
+				<xsl:text>), o determinantes negativos del cuantificador, tales como </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ninguno</langData>
-				<xsl:text> (la sección </xsl:text>
+				<xsl:text> (véase la sección </xsl:text>
 				<sectionRef sec="sQPDeterminers" />
 				<xsl:text>), que niegan una frase nominal,</xsl:text>
 			</li>
@@ -35,7 +35,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>nada</langData>
-				<xsl:text> (la sección </xsl:text>
+				<xsl:text> (véase la sección </xsl:text>
 				<sectionRef sec="sPronIndef" />
 				<xsl:text>), que expresan una frase nominal negativa a sí mismo,</xsl:text>
 			</li>
@@ -45,7 +45,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>nunca</langData>
-				<xsl:text> (la sección </xsl:text>
+				<xsl:text> (véase la sección </xsl:text>
 				<sectionRef sec="sAdvPTemporal" />
 				<xsl:text>) o</xsl:text>
 				<langData>
@@ -56,7 +56,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'en ninguna parte'</xsl:text>
 </gloss>
-				<xsl:text> (la sección </xsl:text>
+				<xsl:text> (véase la sección </xsl:text>
 				<sectionRef sec="sAdvPLocative" />
 				<xsl:text>),</xsl:text>
 			</li>
@@ -75,12 +75,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>-n't</langData>
-				<xsl:text> (la sección </xsl:text>
+				<xsl:text> (véase la sección </xsl:text>
 				<sectionRef sec="sIPAux" />
 				<xsl:text>), y/o</xsl:text>
 			</li>
 			<li>
-				<xsl:text>afijos verbales negativos (la sección </xsl:text>
+				<xsl:text>afijos verbales negativos (véase la sección </xsl:text>
 				<sectionRef sec="sIPAux" />
 				<xsl:text>).</xsl:text>
 			</li>
@@ -100,10 +100,10 @@
 		<section2 id="sNegType">
 			<secTitle>El tipo del sistema de la negación</secTitle>
 			<p>
-<xsl:text>Las idiomas bajan en dos clasificaciones importantes con respecto a la negación: Idiomas cambiantes de la polaridad contra las idiomas de la concordia negativa, ejemplificadas por inglés estándar contra español, respectivamente.</xsl:text>
+<xsl:text>Hay dos clasificaciones importantes para los idiomas con respecto a la negación: Idiomas cambiantes de la polaridad contra idiomas de la concordia negativa, ejemplificados por inglés estándar contra español, respectivamente.</xsl:text>
 </p>
 			<p>
-<xsl:text>Los idiomas cambiantes de la polaridad permiten normalmente un solo elemento negativo en la oración para que la negación sea expresada (cualquier número impar de negativas expresa sin embargo técnico polaridad negativa) porque la presencia de dos (o cualesquiera números pares de) elementos negativos cambia la polaridad de nuevo a positivo. Por ejemplo, </xsl:text>
+<xsl:text>Los idiomas cambiantes de la polaridad normalmente permiten presentarse un solo elemento negativo en la oración para que la negación sea expresada (sin embargo, cualquier número impar de negativas expresa técnico polaridad negativa) porque la presencia de dos (o cualesquiera números pares de) elementos negativos cambia la polaridad de nuevo a positivo. Por ejemplo, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -137,7 +137,7 @@
 </gloss>
 <xsl:text>, usando qué se conoce como  </xsl:text>
 					<xsl:text>artículo negativo de la polaridad</xsl:text>
-				<xsl:text> en la posición del objeto.  Tales artículos negativos de la polaridad pueden ocurrir como los temas en algunos contextos sin ninguna otra palabra de la negación presente, tal como </xsl:text>
+				<xsl:text> en la posición del objeto.  Tales artículos negativos de la polaridad pueden presentarse como los sujetos en algunos contextos sin ninguna otra palabra negativa presente, tal como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -146,7 +146,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'Cualquiera persona pueden venir'</xsl:text>
 </gloss>
-<xsl:text>, pero pueden ocurrir en la posición del objeto solamente cuando un elemento anterior en la oración es negativo. Por ejemplo, uno puede decir </xsl:text>
+<xsl:text>, pero pueden presentarse en la posición del objeto solamente cuando un elemento anterior en la oración es negativo. Por ejemplo, uno puede decir </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -164,7 +164,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'En ninguna parte ellos encuentra a cualquiera persona'</xsl:text>
 </gloss>
-<xsl:text> pero sin el tema negativo o el adverbio negativo afrontado el auxiliar negativo debe ser utilizado, como en </xsl:text>
+<xsl:text> pero sin el sujeto negativo o el adverbio negativo desplazado, el auxiliar negativo debe ser utilizado, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -191,10 +191,10 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Juan no vio nada</langData>
 <xsl:text> es la manera correcta de expresar una oración negativa con un objeto negativo.
-					En estos idiomas, un elemento negativo puede ocurrir normalmente en la posición sujeta o una posición afrontada sin ningún otro elemento negativo presente,
-					pero un objeto negativo puede ocurrir solamente cuando un elemento anterior en la oración es negativo.
-					Algunos idiomas de la concordia negativa tienen la restricción más fuerte que cualquiera palabra o frase negativa debe ocurrir con la negación verbal, y
-					todavía otros requieren afrontar de la palabra o de la frase negativa, semejantemente a afrontar de las palabras o de las frases de la interogación en preguntas que se contestan con información.</xsl:text>
+					En estos idiomas, un elemento negativo normalmente puede presentarse en la posición sujeta o una posición desplazada a la izquierda sin ningún otro elemento negativo presente,
+					pero un objeto negativo solamente puede presentarse cuando un elemento anterior en la oración es negativo.
+					Algunos idiomas de la concordia negativa tienen la restricción más fuerte que cualquiera palabra o frase negativa debe presentarse con la negación verbal, y
+					todavía otros requieren el desplazamiento a la izquierda de la palabra o frase negativa, semejantemente al desplazamiento a la izquierda de las palabras o frases interrogativas en preguntas abiertas.</xsl:text>
 </p>
 			<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
 <p>
@@ -206,7 +206,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> es ni un idioma cambiante de la polaridad ni un idioma de la concordia negativa, puesto que la única manera de expresar la negación es vía el afijo verbal. No hay casos múltiples de la negación para cambiar la polaridad ni a concordar con.</xsl:text>
+<xsl:text> ni es un idioma cambiante de la polaridad ni un idioma de la concordia negativa, puesto que la única manera de expresar la negación es vía el afijo verbal. No hay casos múltiples de la negación para cambiar la polaridad ni a concordar con.</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
@@ -227,7 +227,7 @@
 <xsl:text>, puesto que </xsl:text>
 <xsl:choose>
 					<xsl:when test="//neg/@type='changing'">la polaridad cambia entre positivo y la negativa con cada caso de la negación. </xsl:when>
-					<xsl:when test="//neg/@type='concord'">cualquier número de elementos negativos conviene simplemente en la polaridad negativa. </xsl:when>
+					<xsl:when test="//neg/@type='concord'">cualquier número de elementos negativos concuerda simplemente en la polaridad negativa. </xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -247,19 +247,20 @@
 <xsl:choose>
 				<xsl:when test="//neg/@objVerbRequired='no'">no se requiere cuando el objeto es negativo.  </xsl:when>
 				<xsl:when test="//neg/@objVerbRequired='yes'">se requiere cuando el objeto es negativo.  </xsl:when>
-				<xsl:when test="//neg/@objVerbRequired='other'"> no se requiere cuando el objeto es negativo, pero si el verbo no es negativo entonces otra palabra o frase negativa debe ocurrir anterior en la oración.  </xsl:when>
+				<xsl:when test="//neg/@objVerbRequired='other'"> no se requiere cuando el objeto es negativo, pero si el verbo no es negativo entonces otra palabra o frase negativa debe presentarse anteriormente en la oración.  </xsl:when>
 </xsl:choose>
 <xsl:text>Además, </xsl:text>
 <xsl:choose>
-			 <xsl:when test="//neg/@negFront='no'">un objeto negativo aparece simplemente en su posición normal en la oración.</xsl:when>
-			 <xsl:when test="//neg/@negFront='yes'">el afrontar de la palabra o de la frase negativa se requiere, similar al afrontar en preguntas.</xsl:when>
-			 <xsl:when test="//neg/@negFront='optional'">un objeto negativo puede aparecer inicialmente en la oración, o puede permanecer en su posición normal.</xsl:when>
-			 <xsl:when test="//neg/@negFront='beforeVerb'">un objeto negativo puede aparecer en la posición directamente antes del verbo, o puede permanecer en su posición normal.</xsl:when>
+			 <xsl:when test="//neg/@negFront='no'">un objeto negativo se presenta simplemente en su posición normal en la oración.</xsl:when>
+			 <xsl:when test="//neg/@negFront='yes'">el despazamiento a la izquierda de la palabra o de la frase negativa se requiere, semejantemente al desplazamiento a la izquierda en preguntas.</xsl:when>
+			 <xsl:when test="//neg/@negFront='optional'">un objeto negativo puede presentarse inicialmente en la oración, o puede permanecer en su posición normal.</xsl:when>
+			 <xsl:when test="//neg/@negFront='beforeVerb'">un objeto negativo puede presentarse en la posición directamente antes del verbo, o puede permanecer en su posición normal.</xsl:when>
 </xsl:choose>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yes' or normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesNeg'">
 <p>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -270,18 +271,19 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//neg/@polarityItems='yes'"> tiene los </xsl:when>
-					<xsl:when test="//neg/@polarityItems='no'"> no tiene cualesquiera </xsl:when>
+					<xsl:when test="//neg/@polarityItems='yes'"> hay los </xsl:when>
+					<xsl:when test="//neg/@polarityItems='no'"> no hay los </xsl:when>
 				</xsl:choose>
 <xsl:text>artículos negativos de la polaridad.  </xsl:text>
 <xsl:choose>
-					<xsl:when test="//neg/@polarityItems='yes'">Los pronombres siguientes, los elementos especiales del grado, y los adverbios ocurren en la posición del objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración.</xsl:when>
-					<xsl:when test="//neg/@polarityItems='no'">Los pronombres negativos, los elementos especiales del grado, y los adverbios pueden ocurrir en la posición del objeto o la posición normal del adverbio incluso cuando hay otro elemento negativo en la oración.</xsl:when>
+					<xsl:when test="//neg/@polarityItems='yes'">Los pronombres siguientes, los elementos especiales de grado y los adverbios se presentan en la posición del objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración.</xsl:when>
+					<xsl:when test="//neg/@polarityItems='no'">Los pronombres negativos, los elementos especiales de grado y los adverbios pueden presentarse en la posición del objeto o la posición normal del adverbio incluso cuando hay otro elemento negativo en la oración.</xsl:when>
 				</xsl:choose>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yes' or normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesNo'">
 <p>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -292,13 +294,13 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//neg/@polarityItems='yes'"> tiene los </xsl:when>
-					<xsl:when test="//neg/@polarityItems='no'"> no tiene cualesquiera </xsl:when>
+					<xsl:when test="//neg/@polarityItems='yes'"> hay los </xsl:when>
+					<xsl:when test="//neg/@polarityItems='no'"> no hay los </xsl:when>
 				</xsl:choose>
 <xsl:text>artículos negativos de la polaridad.  </xsl:text>
 <xsl:choose>
-					<xsl:when test="//neg/@polarityItems='yes'">Los pronombres, los determinadores, y los adverbios siguientes ocurren en la posición del objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración.</xsl:when>
-					<xsl:when test="//neg/@polarityItems='no'">Los pronombres, los determinadores, y los adverbios negativos pueden ocurrir en la posición del objeto o la posición normal del adverbio incluso cuando hay otro elemento negativo en la oración.</xsl:when>
+					<xsl:when test="//neg/@polarityItems='yes'">Los pronombres, los determinantes y los adverbios siguientes se presentan en la posición del objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración.</xsl:when>
+					<xsl:when test="//neg/@polarityItems='no'">Los pronombres, los determinantes y los adverbios negativos pueden presentarse en la posición del objeto o la posición normal del adverbio incluso cuando hay otro elemento negativo en la oración.</xsl:when>
 				</xsl:choose>
 </p>
 </xsl:if>
@@ -308,7 +310,7 @@
   <tr>
 	  <th>Tipo</th>
 	  <th>Artículos negativos de la polaridad</th>
-	  <th>Significado</th>
+	  <th>Glosa</th>
   </tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//neg/npiPronounExample),'.','')" />
@@ -339,7 +341,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -359,7 +361,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -388,12 +390,12 @@
 <xsl:with-param name="columnsBefore">
 <xsl:if test="normalize-space(//qp/@determiner)='no' or normalize-space(//qp/@determiner)='yesSome'">
 <td align="left" rowspan="1">
-							<xsl:text>Elementos especiales del grado</xsl:text>
+							<xsl:text>Elementos especiales de grado</xsl:text>
 						</td>
 </xsl:if>
 <xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <td align="left" rowspan="1">
-							<xsl:text>Determinadores</xsl:text>
+							<xsl:text>Determinantes</xsl:text>
 						</td>
 </xsl:if>
 </xsl:with-param>
@@ -401,7 +403,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -413,12 +415,12 @@
 <tr>
 <xsl:if test="normalize-space(//qp/@determiner)='no' or normalize-space(//qp/@determiner)='yesSome'">
 <td align="left" rowspan="1">
-							<xsl:text>Elementos especiales del grado</xsl:text>
+							<xsl:text>Elementos especiales de grado</xsl:text>
 						</td>
 </xsl:if>
 <xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <td align="left" rowspan="1">
-							<xsl:text>Determinadores</xsl:text>
+							<xsl:text>Determinantes</xsl:text>
 						</td>
 </xsl:if>
 <td>
@@ -428,7 +430,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -463,7 +465,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -483,7 +485,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -518,7 +520,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -538,7 +540,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -562,7 +564,7 @@
 <xsl:choose>
 			   <xsl:when test="//neg/@objVerbRequired='no'">no se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto.  </xsl:when>
 			   <xsl:when test="//neg/@objVerbRequired='yes'">se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto.  </xsl:when>
-			   <xsl:when test="//neg/@objVerbRequired='other'"> no se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto, pero si el verbo no es negativo entonces otra palabra o frase negativa debe ocurrir anterior en la oración.  </xsl:when>
+			   <xsl:when test="//neg/@objVerbRequired='other'"> no se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto, pero si el verbo no es negativo entonces otra palabra o frase negativa debe presentarse anteriormente en la oración.  </xsl:when>
 </xsl:choose>
 </p>
 </xsl:if>
@@ -572,7 +574,7 @@
 			<p>
 <xsl:text>Vimos en la sección </xsl:text>
 <sectionRef sec="sIPAux" />
-<xsl:text> que </xsl:text>
+<xsl:text> que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -583,23 +585,23 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@negAux='yesOnly'"> tiene uno o más</xsl:when>
-					<xsl:when test="//ip/@negAux='yesAffix'"> tiene uno o más</xsl:when>
-					<xsl:when test="//ip/@negAux='yesVerb'"> tiene uno o máse</xsl:when>
-					<xsl:when test="//ip/@negAux='yesAll'"> tiene uno o más</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixOnly'"> no tiene cualesquiera</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixAndVerb'"> no tiene cualesquiera</xsl:when>
-					<xsl:when test="//ip/@negAux='noVerb'"> no tiene cualesquiera</xsl:when>
+					<xsl:when test="//ip/@negAux='yesOnly'"> hay uno o más</xsl:when>
+					<xsl:when test="//ip/@negAux='yesAffix'"> hay uno o más</xsl:when>
+					<xsl:when test="//ip/@negAux='yesVerb'"> hay uno o máse</xsl:when>
+					<xsl:when test="//ip/@negAux='yesAll'"> hay uno o más</xsl:when>
+					<xsl:when test="//ip/@negAux='noAffixOnly'"> no hay</xsl:when>
+					<xsl:when test="//ip/@negAux='noAffixAndVerb'"> no hay</xsl:when>
+					<xsl:when test="//ip/@negAux='noVerb'"> no hay</xsl:when>
 				</xsl:choose>
-<xsl:text> auxiliares negativos que se escriben como palabras separadas, </xsl:text>
+<xsl:text> auxiliares negativos que se escriben como palabras independientes, </xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@negAux='yesOnly'">y que son el único tipo de negación verbal en la lengua. No hay afijo verbal negativo ni afijo auxiliar negativo. </xsl:when>
+					<xsl:when test="//ip/@negAux='yesOnly'">y que son el único tipo de negación verbal en el idioma. No hay afijo verbal negativo ni afijo auxiliar negativo. </xsl:when>
 					<xsl:when test="//ip/@negAux='yesAffix'">y hay también un afijo auxiliar negativo, pero ningún afijo verbal negativo. </xsl:when>
 					<xsl:when test="//ip/@negAux='yesVerb'">y hay también un afijo verbal negativo, pero ningún afijo auxiliar negativo.  </xsl:when>
 					<xsl:when test="//ip/@negAux='yesAll'">y hay también un afijo auxiliar negativo y un afijo verbal negativo. </xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixOnly'">pero hay un afijo negativo que va en el auxiliar y ése es el único tipo de negación verbal en la lengua. No hay afijo verbal negativo.</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixAndVerb'">pero hay un afijo negativo que va en el auxiliar y un afijo verbal negativo también.</xsl:when>
-					<xsl:when test="//ip/@negAux='noVerb'">ni cualquier afijo negativo que vaya en un auxiliar. La única manera de expresar la negación verbal está por uno o más afijos verbales negativos.</xsl:when>
+					<xsl:when test="//ip/@negAux='noAffixOnly'">pero hay un afijo negativo que se une en el auxiliar y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo.</xsl:when>
+					<xsl:when test="//ip/@negAux='noAffixAndVerb'">pero hay un afijo negativo quese une en el auxiliar y un afijo verbal negativo también.</xsl:when>
+					<xsl:when test="//ip/@negAux='noVerb'">ni afijo negativo que se une en un auxiliar. La única manera de expresar la negación verbal es por uno o más afijos verbales negativos.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -643,7 +645,7 @@
 <table border="1">
 <tr>
 	<th>Palabras auxiliares negativas</th>
-	<th>Significado</th>
+	<th>Glosa</th>
 </tr>
 	 <xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxExample),'.','')" />
@@ -671,7 +673,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -688,7 +690,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -699,7 +701,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Los ejemplos de las palabras auxiliares negativas usadas en una oración completa (sin cualesquiera frases negativas) incluyen:</xsl:text>
+<xsl:text>Algunos ejemplos de las palabras auxiliares negativas usadas en una oración completa (sin frases negativas) son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -744,7 +746,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Los ejemplos de los afijos negativos del auxiliar en </xsl:text>
+<xsl:text>Algunos ejemplos de los afijos negativos del auxiliar en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -753,7 +755,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> juntados a un auxiliar incluyen:</xsl:text>
+<xsl:text> unidos a un auxiliar son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -761,7 +763,7 @@
 <table border="1">
 					<tr>
 						<th>Auxiliares negativos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxAffixExample),'.','')" />
@@ -789,7 +791,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -806,7 +808,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -817,7 +819,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Los ejemplos de los afijos auxiliares negativos juntados a un auxiliar usado en una oración completa (sin cualesquiera frases negativas) incluyen:</xsl:text>
+<xsl:text>Algunos ejemplos de los afijos auxiliares negativos unidos a un auxiliar usado en una oración completa (sin frases negativas) son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -862,7 +864,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Los ejemplos de los afijos verbales negativos en </xsl:text>
+<xsl:text>Algunos ejemplos de los afijos verbales negativos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -871,7 +873,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> juntados a un verbo incluyen:</xsl:text>
+<xsl:text> unidos a un verbo son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -879,7 +881,7 @@
 <table border="1">
 					<tr>
 						<th>Verbos negativo-marcados</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negVerbExample),'.','')" />
@@ -907,7 +909,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -924,7 +926,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -935,7 +937,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
 <p>
-<xsl:text>Los ejemplos en oraciones completas con verbos negativos incluyen: </xsl:text>
+<xsl:text>Algunos ejemplos en oraciones completas con verbos negativos son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
@@ -993,20 +995,25 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> la idea temporal negativa de ' nunca' se expresa </xsl:text>
+<xsl:text> la idea temporal negativa de </xsl:text>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>' nunca'</xsl:text>
+</gloss>
+<xsl:text> se expresa </xsl:text>
 <xsl:choose>
-	<xsl:when test="//advp/@negTemporalType='word'">por una o más palabras separadas. Los ejemplos</xsl:when>
-	<xsl:when test="//advp/@negTemporalType='affix'">por uno o más afijos verbales, en vez de por palabras separadas. Los ejemplos de los afijos juntaron a los verbos</xsl:when>
-	<xsl:when test="//advp/@negTemporalType='verb'">usando el afijo negativo verbal, que puede ocurrir con adverbios temporales positivos para dar un significado temporal negativo. Los ejemplos de adverbios temporales con un verbo negativo</xsl:when>
+	<xsl:when test="//advp/@negTemporalType='word'">por una o más palabras independientes. Algunos ejemplos</xsl:when>
+	<xsl:when test="//advp/@negTemporalType='affix'">por uno o más afijos verbales, en vez de por palabras independientes. Algunos ejemplos de los afijos se unen a los verbos</xsl:when>
+	<xsl:when test="//advp/@negTemporalType='verb'">usando el afijo negativo verbal, que puede presentarse con adverbios temporales positivos para dar un significado temporal negativo. Algunos ejemplos de adverbios temporales con un verbo negativo</xsl:when>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 			<xsl:if test="normalize-space(//advp/@negTemporalType)='affix'">
 <example num="xNeg.NegAdverb.6">
 <table border="1">
 					<tr>
 						<th>Verbos temporales negativos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//advp/negTemporalAffixExample),'.','')" />
@@ -1034,7 +1041,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1051,7 +1058,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1101,7 +1108,7 @@
 </example>
 </xsl:if>
 			<p>
-<xsl:text>Los ejemplos en oraciones completas que contienen un temporal negativo incluyen: </xsl:text>
+<xsl:text>Algunos ejemplos en oraciones completas con un temporal negativo son: </xsl:text>
 </p>
 			<example num="xNeg.NegAdverb.12">
 <xsl:variable name="sExampleValue">
@@ -1153,20 +1160,25 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> la idea negativa locativa de 'en ninguna parte' se expresa </xsl:text>
+<xsl:text> la idea negativa locativa de </xsl:text>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'en ninguna parte'</xsl:text>
+</gloss>
+<xsl:text> se expresa </xsl:text>
 <xsl:choose>
-	<xsl:when test="//advp/@negLocativeType='word'">por una o más palabras separadas. Los ejemplos</xsl:when>
-	<xsl:when test="//advp/@negLocativeType='affix'">por uno o más afijos verbales, en vez de por palabras separadas. Los ejemplos de los afijos juntaron a los verbos</xsl:when>
-	<xsl:when test="//advp/@negLocativeType='verb'">usando el afijo negativo verbal, que puede ocurrir con adverbios positivos locativos para dar un significado negativo locativo. Los ejemplos de los adverbios locativos con un verbo negativo</xsl:when>
+	<xsl:when test="//advp/@negLocativeType='word'">por una o más palabras independientes. Algunos ejemplos</xsl:when>
+	<xsl:when test="//advp/@negLocativeType='affix'">por uno o más afijos verbales, en vez de por palabras independientes. Algunos ejemplos de los afijos se unen a los verbos</xsl:when>
+	<xsl:when test="//advp/@negLocativeType='verb'">usando el afijo negativo verbal, que puede presentarse con adverbios positivos locativos para dar un significado negativo locativo. Algunos ejemplos de los adverbios locativos con un verbo negativo</xsl:when>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 			<xsl:if test="normalize-space(//advp/@negLocativeType)='affix'">
 <example num="xNeg.NegAdverb.16">
 <table border="1">
 					<tr>
 						<th>Verbos locativos negativos</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//advp/negLocativeAffixExample),'.','')" />
@@ -1194,7 +1206,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1211,7 +1223,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1261,7 +1273,7 @@
 </example>
 </xsl:if>
 			<p>
-<xsl:text>Los ejemplos en oraciones completas que contienen un locativo negativo incluyen:</xsl:text>
+<xsl:text>Algunos ejemplos en oraciones completas con un locativo negativo son:</xsl:text>
 </p>
 			<example num="xNeg.NegAdverb.22">
 <xsl:variable name="sExampleValue">
@@ -1313,8 +1325,8 @@
 </xsl:otherwise>
 </xsl:choose>
 <xsl:choose>
-					<xsl:when test="//neg/@advVerbRequired='yes'"> un adverbio negativo escrito como palabra separada no se permite sinoque el verbo también es negativo.</xsl:when>
-					<xsl:when test="//neg/@advVerbRequired='no'"> el verbo no se requiere ser negativo cuando hay un adverbio negativo escrito como palabra separada.</xsl:when>
+					<xsl:when test="//neg/@advVerbRequired='yes'"> un adverbio negativo escrito como palabra independiente no se permite sinoque el verbo también es negativo.</xsl:when>
+					<xsl:when test="//neg/@advVerbRequired='no'"> el verbo no se requiere ser negativo cuando hay un adverbio negativo escrito como palabra independiente.</xsl:when>
 				</xsl:choose>
 </p>
 </xsl:if>
@@ -1322,12 +1334,12 @@
 		<section2 id="sNegNominal">
 			<secTitle>La negación de frases nominales</secTitle>
 			<p>
-<xsl:text>Una frase nominal se puede negar normalmente por una palabra especial del grado, tal como </xsl:text>
+<xsl:text>Una frase nominal normalmente se puede negar por una palabra especial de grado, tal como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>no</langData>
-<xsl:text>, o por un determinador del cuantificador, tal como </xsl:text>
+<xsl:text>, o por un determinante del cuantificador, tal como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1341,7 +1353,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> será ejemplificado en oraciones completas cuando está utilizado como temas y objetos directos, y cualquier restricción será discutido.</xsl:text>
+<xsl:text> será ejemplificado en oraciones completas cuando está utilizado como sujetos y objetos directos, y cualquier restricción será discutido.</xsl:text>
 <xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesNo' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@npDegree)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@npDegree)='yesNeg'">
 					<xsl:text>  El uso de los artículos negativos de la polaridad en </xsl:text>
 					<xsl:choose>
@@ -1358,12 +1370,12 @@
 				</xsl:if>
 </p>
 			<section3 id="sNegNominalSubject">
-				<secTitle>Los temas negativos</secTitle>
+				<secTitle>Los sujetos negativos</secTitle>
 				<xsl:if test="normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@npDegree)='yesPosOnly'">
 <p>
 <xsl:text>En la sección </xsl:text>
 <sectionRef sec="sQPAll" />
-<xsl:text>vimos que </xsl:text>
+<xsl:text>vimos que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1372,7 +1384,12 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no tiene ninguna manera de expresar la idea especial negativa del grado de ' not' modificando la frase nominal completa.  Ni las palabras especiales negativas del grado ni el cliticos ni los afijos con partículas juntados al sustantivo principal se utilizan para negar una frase nominal en </xsl:text>
+<xsl:text> no hay ninguna manera de expresar la idea especial negativa de grado de </xsl:text>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>' not'</xsl:text>
+</gloss>
+<xsl:text> cuando está modificando a la frase nominal completa.  Ni las palabras especiales negativas de grado ni los clíticos ni los afijos unidos al sustantivo principal se utilizan para negar una frase nominal en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1388,7 +1405,7 @@
 <p>
 <xsl:text>En la sección </xsl:text>
 <sectionRef sec="sQPAll" />
-<xsl:text> vimos que </xsl:text>
+<xsl:text> vimos que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1397,23 +1414,25 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no tiene ningunas palabras especiales negativas del grado que se escriban como palabras separadas y modifican la frase nominal completa. En lugar, son </xsl:text>
+<xsl:text> no hay ninguna palabra especial negativa de grado que se escriba como palabra independiente y modifica a la frase nominal completa. Por el contrario, son </xsl:text>
 <xsl:choose>
-						<xsl:when test="//qp/@npDegreeNegType='proclitic'">procliticos que junte al frente de cualquiera palabra que comienza la frase nominal,</xsl:when>
-						<xsl:when test="//qp/@npDegreeNegType='enclitic'">encliticos que junte al final de cualquiera palabra que termina la frase nominal,</xsl:when>
-						<xsl:when test="//qp/@npDegreeNegType='clitic'">clíticos que junte o al frente de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal,</xsl:when>
-						<xsl:when test="//qp/@npDegreeNegType='prefix'">prefijos que juntan al sustantivo principal de la frase nominal,</xsl:when>
-						<xsl:when test="//qp/@npDegreeNegType='suffix'">sufijos que juntan al sustantivo principal de la frase nominal,</xsl:when>
-						<xsl:when test="//qp/@npDegreeNegType='affix'">o prefijos o sufijos que juntan al sustantivo principal de la frase nominal,</xsl:when>
+						<xsl:when test="//qp/@npDegreeNegType='proclitic'">proclíticos que se unen al frente de cualquiera palabra que comienza la frase nominal,</xsl:when>
+						<xsl:when test="//qp/@npDegreeNegType='enclitic'">enclíticos que se unen al final de cualquiera palabra que termina la frase nominal,</xsl:when>
+						<xsl:when test="//qp/@npDegreeNegType='clitic'">clíticos que se unen o al frente de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal,</xsl:when>
+						<xsl:when test="//qp/@npDegreeNegType='prefix'">prefijos que se uenn al sustantivo principal de la frase nominal,</xsl:when>
+						<xsl:when test="//qp/@npDegreeNegType='suffix'">sufijos que se unen al sustantivo principal de la frase nominal,</xsl:when>
+						<xsl:when test="//qp/@npDegreeNegType='affix'">o prefijos o sufijos que se unen al sustantivo principal de la frase nominal,</xsl:when>
 					</xsl:choose>
-<xsl:text> según se mostra en la tabla siguiente. </xsl:text>
+<xsl:text> según se mostra en el cuadro </xsl:text>
+<exampleRef num="xNegDegree" equal="no" letterOnly="no" />
+<xsl:text> que sigue. </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg'">
 <p>
 <xsl:text>En la sección </xsl:text>
 <sectionRef sec="sQPAll" />
-<xsl:text> vimos que </xsl:text>
+<xsl:text> vimos que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1422,15 +1441,15 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene las siguientes palabras negativas especiales del grado que se escriben como palabras separadas y modifican la frase nominal completo:</xsl:text>
+<xsl:text> hay las siguientes palabras negativas especiales de grado que se escriben como palabras independientes y modifican a la frase nominal completo:</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
-<example num="xNeg.NegNominal.NegNominalSubject.10">
+<example num="xNegDegree">
 <table border="1">
 <tr>
 	<th>Elementos especiales negativos del grado</th>
-	<th>Significado</th>
+	<th>Glosa</th>
 </tr>
 						<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/not),'.','')" />
@@ -1458,7 +1477,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1475,7 +1494,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1486,7 +1505,7 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
-<xsl:text>Los ejemplos de frases nominales negativos usando los elementos especiales negativos del grado  en </xsl:text>
+<xsl:text>Algunos ejemplos de frases nominales negativos usando los elementos especiales negativos de grado en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1495,7 +1514,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
@@ -1540,7 +1559,7 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' or normalize-space(//qp/@npDegree)!='yes' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
-<xsl:text>Los ejemplos que incluyen los elementos especiales positivos del grado también son:</xsl:text>
+<xsl:text>Algunos ejemplos que incluyen los elementos especiales positivos de grado también son:</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' or normalize-space(//qp/@npDegree)!='yes' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
@@ -1585,7 +1604,7 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
 <p>
-<xsl:text>Estas frases nominales negativas se pueden utilizar como el tema de una oración completa como se muestra aquí:</xsl:text>
+<xsl:text>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra aquí:</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
@@ -1632,7 +1651,7 @@
 <p>
 <xsl:text>En la sección </xsl:text>
 <sectionRef sec="sQPDeterminers" />
-<xsl:text> vimos que </xsl:text>
+<xsl:text> vimos que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1641,14 +1660,14 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>  no tiene un grupo separado de los cuantificadores que actúan como el único determinador en la frase nominal. Apenas pues no hay ninguna manera de expresar el elemento especial negativo 'not' , no hay ninguna manera de expresar ' ninguno' modificación de una frase nominal en este idioma.</xsl:text>
+<xsl:text>  no hay una categoría separada de los cuantificadores que actúan como el único determinante en la frase nominal. Apenas pues no hay ninguna manera de expresar el elemento especial negativo 'not' , no hay ninguna manera de expresar ' ninguno' cuando está  modificando a una frase nominal en este idioma.</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='yesPosOnly' and normalize-space(//qp/@npDegree)!='noPosOnly'">
 <p>
 <xsl:text>En la sección </xsl:text>
 <sectionRef sec="sQPDeterminers" />
-<xsl:text>  vimos que </xsl:text>
+<xsl:text>  vimos que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1657,14 +1676,14 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no tiene un grupo separado de los cuantificadores que actúan como el único determinador en la frase nominal.  La negación de una frase nominal es expresada por los elementos especiales del grado solamente. </xsl:text>
+<xsl:text> no hay una categoría separada de los cuantificadores que actúan como el único determinante en la frase nominal.  La negación de una frase nominal  solamente se expresa por los elementos especiales de grado. </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <p>
 <xsl:text>En la sección </xsl:text>
 <sectionRef sec="sQPDeterminers" />
-<xsl:text> vimos que </xsl:text>
+<xsl:text> vimos que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1673,7 +1692,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene los siguientes cuantificadores negativos que se escriben como palabras separadas y actúan como el único determinador en la frase nominal: </xsl:text>
+<xsl:text> hay los siguientes cuantificadores negativos que se escriben como palabras independientes y actúan como el único determinante en la frase nominal: </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
@@ -1681,8 +1700,8 @@
 <xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <table border="1">
 <tr>
-	<th>Determinadores negativos del cuantificador</th>
-	<th>Significado</th>
+	<th>Determinantes negativos del cuantificador</th>
+	<th>Glosa</th>
 </tr>
 						<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//qp/determinerNegExample),'.','')" />
@@ -1710,7 +1729,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1727,7 +1746,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1739,7 +1758,7 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <p>
-<xsl:text>Los ejemplos de las frases nominales negativas usando los determinadores negativos del cuantificador  en </xsl:text>
+<xsl:text>Algunos ejemplos de las frases nominales negativas usando los determinantes negativos del cuantificador  en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1748,7 +1767,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
@@ -1793,7 +1812,7 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
 <p>
-<xsl:text>Estas frases nominales negativas se pueden utilizar como el tema de una oración completa como se muestra aquí:</xsl:text>
+<xsl:text>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra aquí:</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo'">
@@ -1840,7 +1859,7 @@
 <p>
 <xsl:text>En section la sección </xsl:text>
 <sectionRef sec="sPronIndef" />
-<xsl:text>, vimos que </xsl:text>
+<xsl:text>, vimos que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1849,14 +1868,14 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene los siguientes pronombres indefinidos negativos y/o las frases nominales indefinidas negativas:</xsl:text>
+<xsl:text> hay los siguientes pronombres indefinidos negativos y/o las frases nominales indefinidas negativas:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly'">
 <p>
 <xsl:text>En la sección </xsl:text>
 <sectionRef sec="sPronIndef" />
-<xsl:text>, vimos que </xsl:text>
+<xsl:text>, vimos que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -1866,8 +1885,8 @@
 </xsl:otherwise>
 </xsl:choose>
 <xsl:choose>
-					<xsl:when test="//pron/@negIndef='no'">no tiene ningunos pronombres indefinidos negativos ni ninguna frase nominal indefinida negativa tampoco, puesto que el idioma no tiene ningunos medios de negar una frase nominal.</xsl:when>
-					<xsl:when test="//pron/@negIndef='yes'"> tiene los siguientes pronombres indefinidos negativos:</xsl:when>
+					<xsl:when test="//pron/@negIndef='no'"> no hay ningún pronombre indefinido negativo ni ninguna frase nominal indefinida negativa tampoco, puesto que el idioma no tiene ningún medio de negar una frase nominal.</xsl:when>
+					<xsl:when test="//pron/@negIndef='yes'"> hay los siguientes pronombres indefinidos negativos:</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -1878,7 +1897,7 @@
  <tr>
 	 <th>Tipo</th>
 	 <th>Indefinido negativo</th>
-	 <th>Significado</th>
+	 <th>Glosa</th>
  </tr>
 						<xsl:if test="normalize-space(//pron/@negIndef)='yes'">
 <xsl:variable name="sExampleValue0">
@@ -1910,7 +1929,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1930,7 +1949,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1967,7 +1986,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </xsl:with-param>
@@ -1987,7 +2006,7 @@
 <td align="left">
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>PONE EL SIGNIFICADO</xsl:text>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
 </gloss>
 </td>
 </tr>
@@ -1999,7 +2018,7 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
-<xsl:text>Estas frases nominales negativas se pueden utilizar como el tema de una oración completa como se muestra aquí:</xsl:text>
+<xsl:text>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra aquí:</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
@@ -2044,10 +2063,10 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
-<xsl:text>Como los ejemplos antedichos de la oración demuestran, </xsl:text>
+<xsl:text>Como los ejemplos de las oraciones muestran, </xsl:text>
 <xsl:choose>
-						<xsl:when test="//neg/@subjVerbRequired='yes'">un tema negativo no se permite sin también tener un verbo negativo o un auxiliar negativo</xsl:when>
-						<xsl:when test="//neg/@subjVerbRequired='no'">el verbo o auxiliar debe ser negativo cuando el tema es negativo</xsl:when>
+						<xsl:when test="//neg/@subjVerbRequired='yes'">un sujeto negativo no se permite sin también tener un verbo negativo o un auxiliar negativo</xsl:when>
+						<xsl:when test="//neg/@subjVerbRequired='no'">el verbo o auxiliar debe ser negativo cuando el sujeto es negativo</xsl:when>
 					</xsl:choose>
 <xsl:text> en </xsl:text>
 <xsl:choose>
@@ -2066,7 +2085,7 @@
 				<secTitle>Los objetos negativos</secTitle>
 				<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//pron/@negIndef)='no' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' and normalize-space(//pron/@negIndef)='no'">
 <p>
-<xsl:text>Puesto que </xsl:text>
+<xsl:text>Puesto que en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -2075,14 +2094,14 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no tiene ningunos medios de negar una frase nominal, ni ningunos pronombres indefinidos negativos, no puede tener ningunos objetos negativos.  </xsl:text>
+<xsl:text> no hay ningún medio de negar una frase nominal, ni ningún pronombre indefinido negativo, no puede tener ningún objeto negativo.  </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesNo' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@npDegree)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@npDegree)='yesNeg'">
 <p>
 <xsl:text>Como vimos en la sección </xsl:text>
 <sectionRef sec="sNegType" />
-<xsl:text>, </xsl:text>
+<xsl:text>, en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -2091,16 +2110,16 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene artículos negativos de la polaridad. Por lo tanto, una frase nominal negativa no se permite ocurrir en la posición del objeto. En lugar, uno de los artículos negativos de la polaridad se utiliza y </xsl:text>
+<xsl:text> hay artículos negativos de la polaridad. Por lo tanto, una frase nominal negativa no se permite presentarse en la posición del objeto. Porel contrario, uno de los artículos negativos de la polaridad se utiliza y </xsl:text>
 <xsl:choose>
 						<xsl:when test="//neg/@objVerbRequired='yes'">el verbo o el auxiliar debe ser negativo.</xsl:when>
-						<xsl:when test="//neg/@objVerbRequired='other'">el verbo o el auxiliar debe ser negativo o otra palabra o frase negativa debe ocurrir anterior en la oración.</xsl:when>
+						<xsl:when test="//neg/@objVerbRequired='other'">el verbo o el auxiliar debe ser negativo o otra palabra o frase negativa debe presentarse anteriormente en la oración.</xsl:when>
 					</xsl:choose>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
-<xsl:text>Los ejemplos en </xsl:text>
+<xsl:text>Algunos ejemplos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -2109,12 +2128,12 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> con un tema positivo y </xsl:text>
+<xsl:text> con un sujeto positivo y </xsl:text>
 <xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing'">
-						<xsl:text>un artículo negativo de la polaridad en la frase nominal del objeto incluyen: </xsl:text>
+						<xsl:text>un artículo negativo de la polaridad en la posición del objeto son: </xsl:text>
 					</xsl:if>
 <xsl:if test="normalize-space(//neg/@polarityItems)='no'">
-<xsl:text>una frase nominal negativa del objeto incluyen: </xsl:text>
+<xsl:text>un objeto negativo son: </xsl:text>
 					</xsl:if>
 </p>
 </xsl:if>
@@ -2160,7 +2179,7 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
-<xsl:text>Los ejemplos en </xsl:text>
+<xsl:text>Algunos ejemplos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -2169,12 +2188,12 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> con un tema positivo y </xsl:text>
+<xsl:text> con un sujeto positivo y </xsl:text>
 <xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing'">
-						<xsl:text>un artículo negativo de la polaridad en la frase nominal del objeto indirecto incluyen: </xsl:text>
+						<xsl:text>un artículo negativo de la polaridad en la posición del objeto indirecto son: </xsl:text>
 					</xsl:if>
 <xsl:if test="normalize-space(//neg/@polarityItems)='no'">
-<xsl:text>una frase nominal negativa del objeto indirecto incluyen: </xsl:text>
+<xsl:text>un objeto indirecto negativo son: </xsl:text>
 					</xsl:if>
 </p>
 </xsl:if>
@@ -2220,7 +2239,7 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes' or normalize-space(//qp/@determiner)='yesNo' or normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//qp/@npDegree)='no' or normalize-space(//pron/@negIndef)='yes'">
 <p>
-<xsl:text>Finalmente, los ejemplos en </xsl:text>
+<xsl:text>Finalmente, algunos ejemplos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -2229,12 +2248,12 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> con un tema negativo y  </xsl:text>
+<xsl:text> con un sujeto negativo y  </xsl:text>
 <xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing'">
-						<xsl:text>un artículo negativo de la polaridad en la frase nominal del objeto incluyen: </xsl:text>
+						<xsl:text>un artículo negativo de la polaridad en la posición del objeto son: </xsl:text>
 					</xsl:if>
 <xsl:if test="normalize-space(//neg/@polarityItems)='no'">
-<xsl:text>una frase nominal negativa del objeto incluyen: </xsl:text>
+<xsl:text>un objeto negativo son: </xsl:text>
 					</xsl:if>
 </p>
 </xsl:if>
@@ -2280,23 +2299,23 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//neg/@polarityItems)='no' and normalize-space(//neg/@type)='changing' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='no' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yes' or normalize-space(//neg/@polarityItems)='no' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesNo' or normalize-space(//neg/@polarityItems)='no' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@npDegree)='yes' or normalize-space(//neg/@polarityItems)='no' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@npDegree)='yesNeg' or normalize-space(//neg/@type)='concord' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@type)='concord' and normalize-space(//qp/@determiner)='yes' or normalize-space(//neg/@type)='concord' and normalize-space(//qp/@determiner)='yesNo' or normalize-space(//neg/@type)='concord' and normalize-space(//qp/@npDegree)='yes' or normalize-space(//neg/@type)='concord' and normalize-space(//qp/@npDegree)='yesNeg'">
 <p>
-<xsl:text>Como estos ejemplos demuestran, una frase nominal negativa </xsl:text>
+<xsl:text>Como estos ejemplos muestran, una frase nominal negativa </xsl:text>
 <xsl:if test="normalize-space(//neg/@objVerbRequired)!='no'">
 						<xsl:text>no</xsl:text>
 					</xsl:if>
-<xsl:text> se permite ocurrir en la posición del objeto o del objeto indirecto </xsl:text>
+<xsl:text> se permite presentarse en la posición del objeto o del objeto indirecto </xsl:text>
 <xsl:choose>
 						<xsl:when test="//neg/@objVerbRequired='yes'">a menos que el verbo o el auxiliar es negativo. </xsl:when>
-						<xsl:when test="//neg/@objVerbRequired='other'">a menos que el verbo o el auxiliar es negativo o otra palabra o frase negativa ocurre anterior en la oración. </xsl:when>
+						<xsl:when test="//neg/@objVerbRequired='other'">a menos que el verbo o el auxiliar es negativo o otra palabra o frase negativa se presenta anteriormente en la oración. </xsl:when>
 						<xsl:when test="//neg/@objVerbRequired='no'">sin cualquiera restricción sobre otros elementos negativos en la oración. </xsl:when>
 					</xsl:choose>
 <xsl:if test="normalize-space(//neg/@type)='concord'">
 <xsl:text></xsl:text>
 <xsl:choose>
-	<xsl:when test="//neg/@negFront='yes'"> Un objeto negativo debe aparecer inicialmente en la oración, semejantemente a afrontar de las frases de interrogación en las preguntas en español. </xsl:when>
-	<xsl:when test="//neg/@negFront='optional'"> Un objeto negativo puede aparecer inicialmente en la oración, o puede permanecer en su posición normal. </xsl:when>
-	<xsl:when test="//neg/@negFront='beforeVerb'"> Un objeto negativo puede aparecer en la posición directamente antes del verbo, o puede permanecer en su posición normal.</xsl:when>
-	<xsl:when test="//neg/@negFront='no'"> Un objeto negativo aparece simplemente en su posición normal en la oración, sin ningún movimiento.</xsl:when>
+	<xsl:when test="//neg/@negFront='yes'"> Un objeto negativo debepresentarse inicialmente en la oración, semejantemente al desplazamiento a la izquierda de las frases interrogativas en las preguntas en español. </xsl:when>
+	<xsl:when test="//neg/@negFront='optional'"> Un objeto negativo puede presentarse inicialmente en la oración o puede permanecer en su posición normal. </xsl:when>
+	<xsl:when test="//neg/@negFront='beforeVerb'"> Un objeto negativo puede presentarse en la posición directamente antes del verbo o puede permanecer en su posición normal.</xsl:when>
+	<xsl:when test="//neg/@negFront='no'"> Un objeto negativo simplemente presentarse en su posición normal en la oración, sin ningún desplazamiento.</xsl:when>
 </xsl:choose>
 <xsl:text></xsl:text>
 </xsl:if>
@@ -2305,14 +2324,14 @@
 </xsl:if>
 				<xsl:if test="normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//pron/@negIndef)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@determiner)='yesNo' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@npDegree)='yes' or normalize-space(//neg/@polarityItems)='yes' and normalize-space(//neg/@type)='changing' and normalize-space(//qp/@npDegree)='yesNeg'">
 <p>
-<xsl:text>Como estos ejemplos demuestran, un artículo negativo de la polaridad </xsl:text>
+<xsl:text>Como estos ejemplos muestran, un artículo negativo de la polaridad </xsl:text>
 <xsl:if test="normalize-space(//neg/@objVerbRequired)!='no'">
 						<xsl:text>no</xsl:text>
 					</xsl:if>
-<xsl:text> se permite ocurrir en la posición del objeto o del objeto indirecto </xsl:text>
+<xsl:text> se permite presentarse en la posición del objeto o del objeto indirecto </xsl:text>
 <xsl:choose>
 						<xsl:when test="//neg/@objVerbRequired='yes'">a menos que el verbo o el auxiliar es negativo. </xsl:when>
-						<xsl:when test="//neg/@objVerbRequired='other'">a menos que el verbo o el auxiliar es negativo o otra palabra o frase negativa ocurre anterior en la oración. </xsl:when>
+						<xsl:when test="//neg/@objVerbRequired='other'">a menos que el verbo o el auxiliar es negativo o otra palabra o frase negativa se presenta anteriormente en la oración. </xsl:when>
 						<xsl:when test="//neg/@objVerbRequired='no'">sin cualquiera restricción sobre otros elementos negativos en la oración. </xsl:when>
 					</xsl:choose>
 </p>

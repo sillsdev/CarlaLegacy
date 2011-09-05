@@ -137,7 +137,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/temporalExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/temporalExample" />
@@ -190,7 +190,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negTemporalAffixExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/negTemporalAffixExample" />
@@ -258,7 +258,7 @@ which positions they may occupy and how they may be modified.  Each type will be
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negTemporalExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/negTemporalExample" />
@@ -428,7 +428,7 @@ adverbial clauses </xsl:text>
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/locativeExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/locativeExample" />
@@ -481,7 +481,7 @@ adverbial clauses </xsl:text>
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negLocativeAffixExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/negLocativeAffixExample" />
@@ -549,7 +549,7 @@ adverbial clauses </xsl:text>
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/negLocativeExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/negLocativeExample" />
@@ -668,7 +668,7 @@ and </xsl:text>
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/mannerExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/mannerExample" />
@@ -765,7 +765,7 @@ and </xsl:text>
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/reasonExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/reasonExample" />

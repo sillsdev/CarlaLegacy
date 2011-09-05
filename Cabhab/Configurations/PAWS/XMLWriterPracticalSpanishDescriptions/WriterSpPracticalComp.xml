@@ -5,23 +5,23 @@
 		<secTitle>Las cláusulas de complemento</secTitle>
 		<p>
 			<content>Hay varios tipos de cláusulas subordinadas que sean complementos de verbos principales o de adjetivos que actúan como el predicado de la oración.
-				Los ejemplos de cada tipo de complemento clausal serán dados en la sección siguiente, seguida por una discusión de los complementizadoras y su posición en cláusulas subordinadas declarativas. Véase la sección </content>
+				Algunos ejemplos de cada tipo de complemento clausal serán dados en la sección siguiente, seguida por una discusión de los complementizadoras y su posición en cláusulas subordinadas declarativas. Véase la sección </content>
 			<sectionRef sec="sQues"/>
-			<content> para la discusión similar para las preguntas y la sección </content>
+			<content> para una discusión semejante para las preguntas y la sección </content>
 			<sectionRef sec="sRelCl"/>
 			<content> para las cláusulas relativas.</content>
 		</p>
 		<section2 id="sCompType">
 			<secTitle>Tipos de cláusulas de complemento</secTitle>
 			<p>
-				<content>Cada uno de las subsecciones siguientes ejemplifica un tipo particular de complemento para el verbo o el otro predicado.  Véase la sección </content>
+				<content>Cada uno de las subsecciones siguientes ejemplifica un tipo particular de complemento para un verbo o otro predicado.  Véase la sección </content>
 				<sectionRef sec="sAdvCl"/>
-				<content> para ejemplos de cláusulas adverbiales. Algunos adverbios pueden también tomar complementos clausal de la mayor parte de estos tipos, aunque las cláusulas adverbiales no son complementos del verbo principal. </content>
+				<content> para ejemplos de cláusulas adverbiales. Algunos adverbios también pueden tener complementos clausal de la mayor parte de estos tipos, aunque las cláusulas adverbiales no son complementos del verbo principal. </content>
 			</p>
 			<section3 id="sCompTypeFinite">
 				<secTitle>Un complemento finito</secTitle>
 				<p>
-					<content>Los verbos que toman solamente un complemento finito clausal incluyen los ejemplos siguientes en español: </content>
+					<content>Algunos ejemplos de los verbos que solamente pueden tener un complemento finito clausal en español son: </content>
 					<langData>Creo que Juliana es mi amiga</langData>
 					<content>, </content>
 					<langData>Juliana insisto que ella sea mi amiga</langData>
@@ -30,9 +30,9 @@
 					<content>.  Observe que en estos mismos ejemplos en inglés, el complementizador es opcional.</content>
 				</p>
 				<p>
-					<content>Los ejemplos con este tipo de complemento en </content>
+					<content>Algunos ejemplos con este tipo de complemento en </content>
 					<langName/>
-					<content> incluyen:</content>
+					<content> aon:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="comp/finiteExample"/>
@@ -41,16 +41,16 @@
 			<section3 id="sCompFiniteOrNonfiniteIP">
 				<secTitle>Un complemento finito o infinitivo</secTitle>
 				<p>
-					<content>Los verbos que toman un complemento finito, con o sin un complementizador, o un complemento infinitivo sin un complementizador, incluyen los ejemplos siguientes en inglés: </content>
+					<content>Algunos ejemplos de los verbos que pueden tener un complemento finito, con o sin un complementizador, o un complemento infinitivo sin un complementizador en inglés son: </content>
 					<langData>I expect that Joe will come to the party</langData><gloss><content>'Cuento con que José venga a la fiesta'</content></gloss>
 					<content> y </content>
 					<langData>I expect Joe to come to the party</langData><gloss><content>'Espero que José venga a la fiesta'</content></gloss>
 					<content>.</content>
 				</p>
 				<p>
-					<content>Los ejemplos con este tipo de complemento en </content>
+					<content>Algunos ejemplos con este tipo de complemento en </content>
 					<langName/>
-					<content> incluyen:</content>
+					<content> son:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
@@ -59,16 +59,16 @@
 			<section3 id="sCompTypeNonfiniteIP">
 				<secTitle>Un complemento infinitivo</secTitle>
 				<p>
-					<content>Algunos verbos que toman solamente un complemento infinitivo sin un complementizador permiten un diverso tema que la cláusula principal o un tema no expresado cuando es coreferente con el tema de la cláusula principal. Los ejemplos ingleses incluyen: </content>
+					<content>Algunos verbos que solamente pueden tener un complemento infinitivo sin un complementizador permiten un diverso sujeto que la cláusula principal o un sujeto no expresado cuando es coreferente con el sujeto de la cláusula principal. Algunos ejemplos en inglés son: </content>
 					<langData>I want Joe to come to the party</langData><gloss><content>'Quisiera que José viniera a la fiesta'</content></gloss>
 					<content> y </content>
 					<langData>I want to come to the party</langData><gloss><content>'Quiero que venir a la fiesta'</content></gloss>
 					<content>.</content>
 				</p>
 				<p>
-					<content>Los ejemplos con este tipo de complemento en </content>
+					<content>Algunos ejemplos con este tipo de complemento en </content>
 					<langName/>
-					<content> incluyen:</content>
+					<content> son:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="comp/nonfiniteExample"/>
@@ -77,16 +77,16 @@
 			<section3 id="sCompTypeNonfiniteIPPRO">
 				<secTitle>Un complemento infinitivo con un tema coreferente</secTitle>
 				<p>
-					<content>Los verbos que toman solamente un complemento infinitivo sin un complementizador, pero requieren un tema no expresado porque es coreferente con el tema de la cláusula principal, incluya los ejemplos siguientes en inglés: </content>
+					<content>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento infinitivo sin un complementizador, pero requieren un sujeto no expresado porque es coreferente con el sujeto de la cláusula principal son: </content>
 					<langData>Joe tried to come to the party</langData><gloss><content>'José intentó venir a la fiesta'</content></gloss>
 					<content> y </content>
 					<langData>I tried to think of more examples</langData><gloss><content>'Intenté pensar en más ejemplos'</content></gloss>
 					<content>.</content>
 				</p>
 				<p>
-					<content>Los ejemplos con este tipo de complemento en </content>
+					<content>Algunos ejemplos con este tipo de complemento en </content>
 					<langName/>
-					<content> incluyen:</content>
+					<content> son:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="comp/nonfiniteProDropExample"/>
@@ -95,7 +95,7 @@
 			<section3 id="sCompTypeNonfiniteCP">
 				<secTitle>Un complemento infinitivo con un complementizador</secTitle>
 				<p>
-					<content>Los verbos que toman solamente un complemento infinitivo, pero el complementizador </content><langData>for</langData><gloss><content>'para'</content></gloss><content> es presente cuando el tema no es coreferente con el tema de la cláusula principal, incluye los ejemplos siguientes en inglés: </content>
+					<content>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento infinitivo, pero el complementizador </content><langData>for</langData><gloss><content>'para'</content></gloss><content> es presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal son: </content>
 					<langData>Joe would hate for Sue to be at the party</langData><gloss><content>'José odiaría para que Susana esté en la fiesta'</content></gloss>
 					<content>, </content>
 					<langData>Joe hates to dance</langData><gloss><content>'José odia a bailar'</content></gloss>
@@ -104,9 +104,9 @@
 					<content>.</content>
 				</p>
 				<p>
-					<content>Los ejemplos con este tipo de complemento en </content>
+					<content>Algunos ejemplos con este tipo de complemento en </content>
 					<langName/>
-					<content> incluyen:</content>
+					<content> son:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
@@ -115,16 +115,16 @@
 			<section3 id="sCompTypeObject">
 				<secTitle>Un objeto más una cláusula de complemento</secTitle>
 				<p>
-					<content>Los verbos que toman un objeto directo así como un complemento finito o infinitivo clausal incluyen los ejemplos siguientes en inglés: </content>
+					<content>Algunos ejemplos en inglés de los verbos que pueden tener un objeto directo así como un complemento finito o infinitivo clausal son: </content>
 					<langData>I will persuade Joe that he should come to the party</langData><gloss><content>'Persuadiré a José que él debe venir a la fiesta'</content></gloss>
 					<content> y </content>
 					<langData>I will persuade Joe to come to the party</langData><gloss><content>'Persuadiré a José de  venir a la fiesta'</content></gloss>
 					<content>.</content>
 				</p>
 				<p>
-					<content>Los ejemplos con este tipo de complemento en </content>
+					<content>Algunos ejemplos con este tipo de complemento en </content>
 					<langName/>
-					<content> incluyen:</content>
+					<content> son:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="comp/DPCPExample"/>
@@ -133,9 +133,9 @@
 			<section3 id="sCompTypeOther">
 				<secTitle>Otras restricciones en cláusulas de complemento</secTitle>
 				<p>
-					<content>Algunos idiomas también tienen verbos que tengan otras restricciones en cláusulas subordinadas, tales como eso que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto de perfectivo. Cualesquiera ejemplos en </content>
+					<content>Algunos idiomas también tienen verbos que tengan otras restricciones en cláusulas subordinadas, tales como eso que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto de perfectivo. Cualquiera ejemplos en </content>
 					<langName/>
-					<content> se demuestran aquí:</content>
+					<content> se muestran aquí:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="comp/otherExample"/>
@@ -145,12 +145,12 @@
 		<section2 id="sCompPos">
 			<secTitle>La posición de complementizador</secTitle>
 			<p>
-				<content>El inglés tiene dos complementizadores que marquen cláusulas subordinadas declarativas, </content>
+				<content>En inglés hay dos complementizadores que indican cláusulas subordinadas declarativas, </content>
 				<langData>that</langData><gloss><content>'que'</content></gloss>
 				<content>  para las cláusulas finitas y </content>
 				<langData>for</langData><gloss><content>'para'</content></gloss>
-				<content> para las cláusulas infinitivas. El español utiliza el </content><langData>que</langData><content>como el complementizador en ambos tipos de cláusulas subordinadas declarativas.
-					En otros idiomas los complementizadores para las cláusulas declarativas subordinadas pueden o no pueden ser presentes, y en algunos idiomas son clíticos que se escriben juntos con otra palabra.</content>
+				<content> para las cláusulas infinitivas. El español utiliza </content><langData>que</langData><content> como el complementizador en ambos tipos de cláusulas subordinadas declarativas.
+					En otros idiomas los complementizadores para las cláusulas declarativas subordinadas pueden o no pueden ser presentes, y en algunos idiomas son clíticos que se escriben unidos con otra palabra.</content>
 			</p>
 			<p>
 				<content>En </content>
@@ -164,8 +164,8 @@
 				<text show="swCompYes">
 					<content>  El complementizador es </content>
 					<case element="comp" attr="compWord">
-						<caseText value="yes">escrito como una palabra separada.</caseText>
-						<caseText value="no">un clitico que junta</caseText>
+						<caseText value="yes">escrito como una palabra independiente.</caseText>
+						<caseText value="no">un clítico que se une</caseText>
 					</case>
 					<content/>
 					<text show="swCompWordNo">
@@ -175,9 +175,9 @@
 							<caseText value="head">al verbo en la cláusula subordinada. </caseText>
 						</case>
 						<case element="comp" attr="compCliticPos">
-							<caseText value="before">Éstos clíticos son procliticos.</caseText>
-							<caseText value="after">Éstos clíticos son encliticos.</caseText>
-							<caseText value="both">Hay algunos clíticos del complementizador que son procliticos y algunos que son encliticos.</caseText>
+							<caseText value="before">Éstos clíticos son proclíticos.</caseText>
+							<caseText value="after">Éstos clíticos son enclíticos.</caseText>
+							<caseText value="both">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</caseText>
 							<caseText value="unknown">_______</caseText>
 						</case>
 						<content/>
@@ -185,7 +185,7 @@
 				</text>
 				<content/>
 				<text show="swCompWordYes">
-					<content> El complementizador occure </content>
+					<content> El complementizador se presenta </content>
 					<case element="comp" attr="compPos">
 						<caseText value="before">antes</caseText>
 						<caseText value="after">después</caseText>
@@ -198,11 +198,11 @@
 					</case>
 					<content> de la  cláusula subordinada.  </content>
 					<text show="swCompEitherUnrestricted">
-						<content>Todos los complementizadores pueden ocurrir de cualquier lado de la cláusula subordinada.</content>
+						<content>Todos los complementizadores pueden presentarse de cualquier lado de la cláusula subordinada.</content>
 					</text>
 					<content/>
 					<text show="swCompEitherRestricted">
-						<content>Hay las restricciones en cuanto a las cuales de los complementizers puede ocurrir en cada lado de la cláusula subordinada.</content>
+						<content>Hay restricciones en cuanto a cuáles de los complementizadores pueden presentarse en cada lado de la cláusula subordinada.</content>
 					</text>
 					<content/>
 				</text>

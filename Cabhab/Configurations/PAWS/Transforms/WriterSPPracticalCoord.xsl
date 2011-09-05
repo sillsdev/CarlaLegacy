@@ -2,12 +2,12 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="coord">
   <section1 id="sCoord">
-	  <secTitle>Las construcciones de la coordinación</secTitle>
+	  <secTitle>Las construcciones coordinativas</secTitle>
 	<p>
-<xsl:text>Esta sección considera construcciones básicas de la coordinación donde hay una conjunción abierta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación en el nivel de la oración y en la frase de verbo, la frase nominal, la frase preposicional y/o posposicional, y la frase del adjetivo.</xsl:text>
+<xsl:text>Esta sección considera construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación en el nivel de la oración y en la frase de verbo, la frase nominal, la frase preposicional y/o posposicional y la frase del adjetivo.</xsl:text>
 </p>
 	  <p>
-<object type="tComment">Si su idioma tiene clases más complejas de construcciones de la coordinación, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, o appositivos y comparativos, usted puede agregar la descripción y ejemplos como apropiados en esta sección.</object>
+<object type="tComment">Si su idioma tiene clases más complejas de construcciones coordinativas, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, appositivos o comparativos, usted puede agregar la descripción y ejemplos como apropiados en esta sección.</object>
 </p>
 	  <p>
 <xsl:text>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son </xsl:text>
@@ -30,7 +30,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>y/o</langData>
-<xsl:text>.  Además, hay las construcciones de la coordinación que requieren una conjunción inicial, como </xsl:text>
+<xsl:text>.  Además, hay las construcciones coordinativas que requieren una conjunción inicial, como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -40,7 +40,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ni...ni</langData>
-<xsl:text> construcciones. Algunas idiomas también utilizan un significado de la palabra  </xsl:text>
+<xsl:text> construcciones. Algunos idiomas también utilizan una palabra que significa </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -48,7 +48,7 @@
 <xsl:text> como conjunción entre las frases nominales. </xsl:text>
 </p>
 			<p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -57,7 +57,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> utiliza las conjunciones siguientes entre las oraciones conjuntivas:</xsl:text>
+<xsl:text> hay las conjunciones siguientes que se utilizan entre las oraciones conjuntivas:</xsl:text>
 </p>
 			<example num="xCoord.12">
 <table border="1">
@@ -72,7 +72,7 @@
 </xsl:otherwise>
 </xsl:choose>
 						</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//coord/and),'.','')" />
@@ -356,7 +356,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>cualesquiera otros</xsl:text>
+							<xsl:text>otros (si hay)</xsl:text>
 						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -370,7 +370,7 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>cualesquiera otros</xsl:text>
+							<xsl:text>otros (si hay)</xsl:text>
 						</td>
 </tr>
 </xsl:otherwise>
@@ -378,7 +378,7 @@
 				</table>
 </example>
 			<p>
-<xsl:text></xsl:text>
+<xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -387,7 +387,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> utiliza las conjunciones siguientes inicialmente antes de la primera oración conjuntiva en </xsl:text>
+<xsl:text> hay las conjunciones siguientes que se utilizan inicialmente antes de la primera oración conjuntiva en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -412,7 +412,7 @@
 </xsl:otherwise>
 </xsl:choose>
 						</th>
-						<th>Significado</th>
+						<th>Glosa</th>
 					</tr>
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//coord/either),'.','')" />
@@ -481,7 +481,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>ni (unos)</xsl:text>
+							<xsl:text>ni (ningunos)</xsl:text>
 						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -495,7 +495,7 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>ni (unos)</xsl:text>
+							<xsl:text>ni (ningunos)</xsl:text>
 						</td>
 </tr>
 </xsl:otherwise>
@@ -505,7 +505,7 @@
 		<section2 id="sCoordSentence">
 			<secTitle>La coordinación del nivel de la oración</secTitle>
 			<p>
-<xsl:text>La coordinación del nivel de la oración incluye la mayoría de los tipos de oraciones, incluyendo declarativos y preguntas. Algunos ejemplos españoles son: </xsl:text>
+<xsl:text>La coordinación del nivel de la oración incluye declarativos y preguntas y otros  tipos de oraciones. Algunos ejemplos en español son: </xsl:text>
 </p>
 			<ol>
 				<li>
@@ -519,7 +519,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text> Los ejemplos de la coordinación del nivel de la oración en </xsl:text>
+<xsl:text> Algunos ejemplos de la coordinación del nivel de la oración en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -528,7 +528,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 			<example num="xCoord.CoordSentence.10">
 <xsl:variable name="sExampleValue">
@@ -571,13 +571,13 @@
 			<p>
 <xsl:text>Véase la sección </xsl:text>
 <sectionRef sec="sAdvCl" />
-<xsl:text> para ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</xsl:text>
+<xsl:text> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</xsl:text>
 </p>
 </section2>
 		<section2 id="sCoordVP">
 			<secTitle>La coordinación de la frase de verbo</secTitle>
 			<p>
-<xsl:text>La coordinación de la frase de verbo se ejemplifica en las oraciones españolas siguientes:  </xsl:text>
+<xsl:text>La coordinación de la frase de verbo se ejemplifica en las oraciones en español siguientes:  </xsl:text>
 </p>
 			<ol>
 				<li>
@@ -591,7 +591,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text> Los ejemplos de la coordinación de la frase de verbo en </xsl:text>
+<xsl:text> Algunos ejemplos de la coordinación de la frase de verbo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -600,7 +600,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 			<example num="xCoord.CoordVP.10">
 <xsl:variable name="sExampleValue">
@@ -644,7 +644,7 @@
 		<section2 id="sCoordDP">
 			<secTitle>La coordinación de la frase nominal</secTitle>
 			<p>
-<xsl:text>Las frases nominales coordinadas pueden aparecer generalmente en todas las posiciones donde una frase nominal regular puede ocurrir, por ejemplo temas, objetos, objetos indirectos, y objetos de preposiciones. La coordinación de la frase nominal se ejemplifica en las oraciones españolas siguientes: </xsl:text>
+<xsl:text>Las frases nominales coordinadas generalmente pueden presentarse en todas las posiciones donde una frase nominal normal puede presentarse, por ejemplo sujetos, objetos, objetos indirectos, y objetos de preposiciones. La coordinación de la frase nominal se ejemplifica en las oraciones en español siguientes: </xsl:text>
 </p>
 			<ol>
 				<li>
@@ -664,7 +664,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text>Los ejemplos de la coordinación de la frase nominal en </xsl:text>
+<xsl:text>Algunos ejemplos de la coordinación de la frase nominal en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -673,7 +673,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 			<example num="xCoord.CoordDP.10">
 <xsl:variable name="sExampleValue">
@@ -724,7 +724,7 @@
 			</xsl:choose>
 			</secTitle>
 		  <p>
-<xsl:text>Los ejemplos españoles de la coordinación de la frase preposicional incluyen: </xsl:text>
+<xsl:text>Algunos ejemplos en español de la coordinación de la frase preposicional son: </xsl:text>
 </p>
 		  <ol>
 			  <li>
@@ -738,7 +738,14 @@
 			  </li>
 		  </ol>
 		  <p>
-<xsl:text>Los ejemplos de </xsl:text>
+<xsl:text>Algunos ejemplos de la coordinación de las frases </xsl:text>
+<xsl:choose>
+				  <xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
+				  <xsl:when test="//pp/@pPos='after'">posposctionales</xsl:when>
+				  <xsl:when test="//pp/@pPos='both'">preposicionales o posposicionales</xsl:when>
+				  <xsl:when test="//pp/@pPos='unknown'">preposicionales o posposicionales</xsl:when>
+</xsl:choose>
+<xsl:text> en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -747,14 +754,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> con la coordinación de las frases </xsl:text>
-<xsl:choose>
-				  <xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
-				  <xsl:when test="//pp/@pPos='after'">posposctionales</xsl:when>
-				  <xsl:when test="//pp/@pPos='both'">preposicionales o posposicionales</xsl:when>
-				  <xsl:when test="//pp/@pPos='unknown'">preposicionales o posposicionales</xsl:when>
-</xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 		  <example num="xCoord.CoordPP.10">
 <xsl:variable name="sExampleValue">
@@ -798,7 +798,7 @@
 		<section2 id="sCoordAdj">
 			<secTitle>La coordinación de la frase del adjetivo</secTitle>
 			<p>
-<xsl:text>La coordinación de la frase del adjetivo se ejemplifica en las oraciones españolas siguientes: </xsl:text>
+<xsl:text>La coordinación del adjetivo se ejemplifica en las oraciones en español siguientes: </xsl:text>
 </p>
 			<ol>
 				<li>
@@ -812,7 +812,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text>Los ejemplos de la coordinación de la frase del adjetivo en </xsl:text>
+<xsl:text>Algunos ejemplos de la coordinación del adjetivo o la frase del adjetivo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -821,7 +821,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen: </xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
 			<example num="xCoord.CoordAdj.10">
 <xsl:variable name="sExampleValue">

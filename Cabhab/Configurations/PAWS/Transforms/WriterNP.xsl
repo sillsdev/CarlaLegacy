@@ -516,7 +516,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeNumberExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeNumberExample" />
@@ -570,7 +570,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeAnimacyExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeAnimacyExample" />
@@ -624,7 +624,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeClassExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeClassExample" />
@@ -678,7 +678,7 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeGenderExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeGenderExample" />
@@ -884,7 +884,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/example))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/example" />
@@ -929,7 +929,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/negExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//qp/negExample" />
@@ -1330,7 +1330,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1402,7 +1403,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1454,7 +1456,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/example))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/example" />
@@ -1559,7 +1561,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/embeddedExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/embeddedExample" />
@@ -1600,7 +1602,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/ppExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/ppExample" />
@@ -1641,7 +1643,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/relClExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/relClExample" />
@@ -1928,7 +1930,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -2228,7 +2231,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/qpExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/qpExample" />
@@ -2349,7 +2352,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/adjpExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/adjpExample" />
@@ -2431,7 +2434,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/partExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/partExample" />
@@ -2644,7 +2647,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/compExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/compExample" />
@@ -2736,7 +2739,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/compPPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/compPPExample" />
@@ -2823,7 +2826,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/partHeadExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/partHeadExample" />
@@ -2864,7 +2867,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/partHeadSentExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/partHeadSentExample" />

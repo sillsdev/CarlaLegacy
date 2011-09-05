@@ -5,23 +5,23 @@
 		<secTitle>Las cláusulas de complemento</secTitle>
 		<p>
 <xsl:text>Hay varios tipos de cláusulas subordinadas que sean complementos de verbos principales o de adjetivos que actúan como el predicado de la oración.
-				Los ejemplos de cada tipo de complemento clausal serán dados en la sección siguiente, seguida por una discusión de los complementizadoras y su posición en cláusulas subordinadas declarativas. Véase la sección </xsl:text>
+				Algunos ejemplos de cada tipo de complemento clausal serán dados en la sección siguiente, seguida por una discusión de los complementizadoras y su posición en cláusulas subordinadas declarativas. Véase la sección </xsl:text>
 <sectionRef sec="sQues" />
-<xsl:text> para la discusión similar para las preguntas y la sección </xsl:text>
+<xsl:text> para una discusión semejante para las preguntas y la sección </xsl:text>
 <sectionRef sec="sRelCl" />
 <xsl:text> para las cláusulas relativas.</xsl:text>
 </p>
 		<section2 id="sCompType">
 			<secTitle>Tipos de cláusulas de complemento</secTitle>
 			<p>
-<xsl:text>Cada uno de las subsecciones siguientes ejemplifica un tipo particular de complemento para el verbo o el otro predicado.  Véase la sección </xsl:text>
+<xsl:text>Cada uno de las subsecciones siguientes ejemplifica un tipo particular de complemento para un verbo o otro predicado.  Véase la sección </xsl:text>
 <sectionRef sec="sAdvCl" />
-<xsl:text> para ejemplos de cláusulas adverbiales. Algunos adverbios pueden también tomar complementos clausal de la mayor parte de estos tipos, aunque las cláusulas adverbiales no son complementos del verbo principal. </xsl:text>
+<xsl:text> para ejemplos de cláusulas adverbiales. Algunos adverbios también pueden tener complementos clausal de la mayor parte de estos tipos, aunque las cláusulas adverbiales no son complementos del verbo principal. </xsl:text>
 </p>
 			<section3 id="sCompTypeFinite">
 				<secTitle>Un complemento finito</secTitle>
 				<p>
-<xsl:text>Los verbos que toman solamente un complemento finito clausal incluyen los ejemplos siguientes en español: </xsl:text>
+<xsl:text>Algunos ejemplos de los verbos que solamente pueden tener un complemento finito clausal en español son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -39,7 +39,7 @@
 <xsl:text>.  Observe que en estos mismos ejemplos en inglés, el complementizador es opcional.</xsl:text>
 </p>
 				<p>
-<xsl:text>Los ejemplos con este tipo de complemento en </xsl:text>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -48,7 +48,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> aon:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeFinite.8">
 <xsl:variable name="sExampleValue">
@@ -92,7 +92,7 @@
 			<section3 id="sCompFiniteOrNonfiniteIP">
 				<secTitle>Un complemento finito o infinitivo</secTitle>
 				<p>
-<xsl:text>Los verbos que toman un complemento finito, con o sin un complementizador, o un complemento infinitivo sin un complementizador, incluyen los ejemplos siguientes en inglés: </xsl:text>
+<xsl:text>Algunos ejemplos de los verbos que pueden tener un complemento finito, con o sin un complementizador, o un complemento infinitivo sin un complementizador en inglés son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -113,7 +113,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Los ejemplos con este tipo de complemento en </xsl:text>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -122,7 +122,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompFiniteOrNonfiniteIP.8">
 <xsl:variable name="sExampleValue">
@@ -166,7 +166,7 @@
 			<section3 id="sCompTypeNonfiniteIP">
 				<secTitle>Un complemento infinitivo</secTitle>
 				<p>
-<xsl:text>Algunos verbos que toman solamente un complemento infinitivo sin un complementizador permiten un diverso tema que la cláusula principal o un tema no expresado cuando es coreferente con el tema de la cláusula principal. Los ejemplos ingleses incluyen: </xsl:text>
+<xsl:text>Algunos verbos que solamente pueden tener un complemento infinitivo sin un complementizador permiten un diverso sujeto que la cláusula principal o un sujeto no expresado cuando es coreferente con el sujeto de la cláusula principal. Algunos ejemplos en inglés son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -187,7 +187,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Los ejemplos con este tipo de complemento en </xsl:text>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -196,7 +196,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeNonfiniteIP.8">
 <xsl:variable name="sExampleValue">
@@ -240,7 +240,7 @@
 			<section3 id="sCompTypeNonfiniteIPPRO">
 				<secTitle>Un complemento infinitivo con un tema coreferente</secTitle>
 				<p>
-<xsl:text>Los verbos que toman solamente un complemento infinitivo sin un complementizador, pero requieren un tema no expresado porque es coreferente con el tema de la cláusula principal, incluya los ejemplos siguientes en inglés: </xsl:text>
+<xsl:text>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento infinitivo sin un complementizador, pero requieren un sujeto no expresado porque es coreferente con el sujeto de la cláusula principal son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -261,7 +261,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Los ejemplos con este tipo de complemento en </xsl:text>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -270,7 +270,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeNonfiniteIPPRO.8">
 <xsl:variable name="sExampleValue">
@@ -314,7 +314,7 @@
 			<section3 id="sCompTypeNonfiniteCP">
 				<secTitle>Un complemento infinitivo con un complementizador</secTitle>
 				<p>
-<xsl:text>Los verbos que toman solamente un complemento infinitivo, pero el complementizador </xsl:text>
+<xsl:text>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento infinitivo, pero el complementizador </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -323,7 +323,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'para'</xsl:text>
 </gloss>
-<xsl:text> es presente cuando el tema no es coreferente con el tema de la cláusula principal, incluye los ejemplos siguientes en inglés: </xsl:text>
+<xsl:text> es presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -353,7 +353,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Los ejemplos con este tipo de complemento en </xsl:text>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -362,7 +362,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeNonfiniteCP.8">
 <xsl:variable name="sExampleValue">
@@ -406,7 +406,7 @@
 			<section3 id="sCompTypeObject">
 				<secTitle>Un objeto más una cláusula de complemento</secTitle>
 				<p>
-<xsl:text>Los verbos que toman un objeto directo así como un complemento finito o infinitivo clausal incluyen los ejemplos siguientes en inglés: </xsl:text>
+<xsl:text>Algunos ejemplos en inglés de los verbos que pueden tener un objeto directo así como un complemento finito o infinitivo clausal son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -427,7 +427,7 @@
 <xsl:text>.</xsl:text>
 </p>
 				<p>
-<xsl:text>Los ejemplos con este tipo de complemento en </xsl:text>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -436,7 +436,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> incluyen:</xsl:text>
+<xsl:text> son:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeObject.8">
 <xsl:variable name="sExampleValue">
@@ -480,7 +480,7 @@
 			<section3 id="sCompTypeOther">
 				<secTitle>Otras restricciones en cláusulas de complemento</secTitle>
 				<p>
-<xsl:text>Algunos idiomas también tienen verbos que tengan otras restricciones en cláusulas subordinadas, tales como eso que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto de perfectivo. Cualesquiera ejemplos en </xsl:text>
+<xsl:text>Algunos idiomas también tienen verbos que tengan otras restricciones en cláusulas subordinadas, tales como eso que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto de perfectivo. Cualquiera ejemplos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langName)" />
@@ -489,7 +489,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se demuestran aquí:</xsl:text>
+<xsl:text> se muestran aquí:</xsl:text>
 </p>
 				<example num="xComp.CompType.CompTypeOther.6">
 <xsl:variable name="sExampleValue">
@@ -534,7 +534,7 @@
 		<section2 id="sCompPos">
 			<secTitle>La posición de complementizador</secTitle>
 			<p>
-<xsl:text>El inglés tiene dos complementizadores que marquen cláusulas subordinadas declarativas, </xsl:text>
+<xsl:text>En inglés hay dos complementizadores que indican cláusulas subordinadas declarativas, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -552,13 +552,13 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'para'</xsl:text>
 </gloss>
-<xsl:text> para las cláusulas infinitivas. El español utiliza el </xsl:text>
+<xsl:text> para las cláusulas infinitivas. El español utiliza </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>que</langData>
-<xsl:text>como el complementizador en ambos tipos de cláusulas subordinadas declarativas.
-					En otros idiomas los complementizadores para las cláusulas declarativas subordinadas pueden o no pueden ser presentes, y en algunos idiomas son clíticos que se escriben juntos con otra palabra.</xsl:text>
+<xsl:text> como el complementizador en ambos tipos de cláusulas subordinadas declarativas.
+					En otros idiomas los complementizadores para las cláusulas declarativas subordinadas pueden o no pueden ser presentes, y en algunos idiomas son clíticos que se escriben unidos con otra palabra.</xsl:text>
 </p>
 			<p>
 <xsl:text>En </xsl:text>
@@ -579,8 +579,8 @@
 <xsl:if test="normalize-space(//comp/@comp)='yes'">
 					<xsl:text>  El complementizador es </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//comp/@compWord='yes'">escrito como una palabra separada.</xsl:when>
-						<xsl:when test="//comp/@compWord='no'">un clitico que junta</xsl:when>
+						<xsl:when test="//comp/@compWord='yes'">escrito como una palabra independiente.</xsl:when>
+						<xsl:when test="//comp/@compWord='no'">un clítico que se une</xsl:when>
 					</xsl:choose>
 					<xsl:text></xsl:text>
 					<xsl:if test="normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@comp)='yes'">
@@ -590,9 +590,9 @@
 							<xsl:when test="//comp/@compCliticAttaches='head'">al verbo en la cláusula subordinada. </xsl:when>
 						</xsl:choose>
 						<xsl:choose>
-							<xsl:when test="//comp/@compCliticPos='before'">Éstos clíticos son procliticos.</xsl:when>
-							<xsl:when test="//comp/@compCliticPos='after'">Éstos clíticos son encliticos.</xsl:when>
-							<xsl:when test="//comp/@compCliticPos='both'">Hay algunos clíticos del complementizador que son procliticos y algunos que son encliticos.</xsl:when>
+							<xsl:when test="//comp/@compCliticPos='before'">Éstos clíticos son proclíticos.</xsl:when>
+							<xsl:when test="//comp/@compCliticPos='after'">Éstos clíticos son enclíticos.</xsl:when>
+							<xsl:when test="//comp/@compCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</xsl:when>
 							<xsl:when test="//comp/@compCliticPos='unknown'">_______</xsl:when>
 						</xsl:choose>
 						<xsl:text></xsl:text>
@@ -600,7 +600,7 @@
 				</xsl:if>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//comp/@compWord)='yes' and normalize-space(//comp/@comp)='yes'">
-					<xsl:text> El complementizador occure </xsl:text>
+					<xsl:text> El complementizador se presenta </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//comp/@compPos='before'">antes</xsl:when>
 						<xsl:when test="//comp/@compPos='after'">después</xsl:when>
@@ -613,11 +613,11 @@
 					</xsl:choose>
 					<xsl:text> de la  cláusula subordinada.  </xsl:text>
 					<xsl:if test="normalize-space(//comp/@compPos)!='before' and normalize-space(//comp/@compPos)!='after' and normalize-space(//comp/@compEitherRestricted)='unrestricted' and normalize-space(//comp/@comp)='yes'">
-						<xsl:text>Todos los complementizadores pueden ocurrir de cualquier lado de la cláusula subordinada.</xsl:text>
+						<xsl:text>Todos los complementizadores pueden presentarse de cualquier lado de la cláusula subordinada.</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
 					<xsl:if test="normalize-space(//comp/@compPos)!='before' and normalize-space(//comp/@compPos)!='after' and normalize-space(//comp/@compEitherRestricted)='restricted' and normalize-space(//comp/@comp)='yes'">
-						<xsl:text>Hay las restricciones en cuanto a las cuales de los complementizers puede ocurrir en cada lado de la cláusula subordinada.</xsl:text>
+						<xsl:text>Hay restricciones en cuanto a cuáles de los complementizadores pueden presentarse en cada lado de la cláusula subordinada.</xsl:text>
 					</xsl:if>
 					<xsl:text></xsl:text>
 				</xsl:if>

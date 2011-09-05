@@ -243,7 +243,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstNoCaseExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -298,7 +298,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondNoCaseExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -352,7 +352,7 @@
 </xsl:choose>					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdNoCaseExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -434,7 +434,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstNomSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -489,7 +489,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondNomSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -543,7 +543,7 @@
 </xsl:choose>					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdNomSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -616,7 +616,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstNomObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -671,7 +671,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondNomObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -725,7 +725,7 @@
 </xsl:choose>					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdNomObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -798,7 +798,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstNomPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -853,7 +853,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondNomPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -907,7 +907,7 @@
 </xsl:choose>					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdNomPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -989,7 +989,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstErgSubjectTransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1044,7 +1044,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondErgSubjectTransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1099,7 +1099,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdErgSubjectTransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1173,7 +1173,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstErgSubjectIntransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1228,7 +1228,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondErgSubjectIntransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1283,7 +1283,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdErgSubjectIntransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1357,7 +1357,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstErgPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1412,7 +1412,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondErgPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1467,7 +1467,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdErgPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1550,7 +1550,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1605,7 +1605,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondSplitSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1660,7 +1660,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdSplitSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1734,7 +1734,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1789,7 +1789,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondSplitObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1844,7 +1844,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdSplitObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1918,7 +1918,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -1973,7 +1973,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondSplitPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2028,7 +2028,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdSplitPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2102,7 +2102,7 @@
 				<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitErgExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2157,7 +2157,7 @@
 				<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondSplitErgExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2212,7 +2212,7 @@
 				<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdSplitErgExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2286,7 +2286,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalFirstSplitAbsExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2341,7 +2341,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalSecondSplitAbsExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2396,7 +2396,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalThirdSplitAbsExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2480,7 +2480,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstNoCaseExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2535,7 +2535,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondNoCaseExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2590,7 +2590,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdNoCaseExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2673,7 +2673,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstNomSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2728,7 +2728,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondNomSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2782,7 +2782,7 @@
 </xsl:choose>					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdNomSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2855,7 +2855,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstNomObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2910,7 +2910,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondNomObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -2964,7 +2964,7 @@
 </xsl:choose>					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdNomObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3037,7 +3037,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstNomPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3092,7 +3092,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondNomPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3146,7 +3146,7 @@
 </xsl:choose>					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdNomPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3228,7 +3228,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstErgSubjectTransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3283,7 +3283,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondErgSubjectTransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3338,7 +3338,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdErgSubjectTransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3412,7 +3412,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstErgSubjectIntransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3467,7 +3467,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondErgSubjectIntransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3522,7 +3522,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdErgSubjectIntransExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3596,7 +3596,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstErgPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3651,7 +3651,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondErgPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3706,7 +3706,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdErgPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3789,7 +3789,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3844,7 +3844,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondSplitSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3899,7 +3899,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdSplitSubjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -3973,7 +3973,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4028,7 +4028,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondSplitObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4083,7 +4083,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdSplitObjectExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4157,7 +4157,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4212,7 +4212,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondSplitPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4267,7 +4267,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdSplitPossessorExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4341,7 +4341,7 @@
 				<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitErgExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4396,7 +4396,7 @@
 				<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondSplitErgExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4451,7 +4451,7 @@
 				<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdSplitErgExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4525,7 +4525,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/personalDependentFirstSplitAbsExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4580,7 +4580,7 @@
 					<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//pron/personalDependentSecondSplitAbsExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length($sExampleValue1)" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4635,7 +4635,7 @@
 					<xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//pron/personalDependentThirdSplitAbsExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length($sExampleValue2)" />
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4783,7 +4783,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/possExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4800,7 +4800,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -4906,7 +4907,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/reflExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -4923,7 +4924,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -4964,15 +4966,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/reflSentExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/reflSentExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/reflSentExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/reflSentExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//pron/reflSentExample)" />
+<xsl:value-of select="string-length(normalize-space(//pron/reflSentExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xPron.PronRefl.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -5055,7 +5057,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/recipExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -5072,7 +5074,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5113,7 +5116,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/recipExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -5130,7 +5133,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5171,15 +5175,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/recipSentExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/recipSentExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/recipSentExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/recipSentExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//pron/recipSentExample)" />
+<xsl:value-of select="string-length(normalize-space(//pron/recipSentExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xPron.PronRecip.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -5284,7 +5288,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/indefExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -5301,7 +5305,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5380,7 +5385,7 @@
 					<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//pron/negIndefExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length($sExampleValue0)" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
 <xsl:variable name="sCalculatedRows">
@@ -5397,7 +5402,8 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5439,15 +5445,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/indefNPExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/indefNPExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/indefNPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/indefNPExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//pron/indefNPExample)" />
+<xsl:value-of select="string-length(normalize-space(//pron/indefNPExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xPron.PronIndef.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -5487,15 +5493,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/negIndefNPExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/negIndefNPExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/negIndefNPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/negIndefNPExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//pron/negIndefNPExample)" />
+<xsl:value-of select="string-length(normalize-space(//pron/negIndefNPExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xPron.PronIndef.22</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -5581,15 +5587,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/standAloneNPExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/standAloneNPExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/standAloneNPExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/standAloneNPExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//pron/standAloneNPExample)" />
+<xsl:value-of select="string-length(normalize-space(//pron/standAloneNPExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xPron.PronNP.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -5641,15 +5647,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/pronRelClExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/pronRelClExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/pronRelClExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/pronRelClExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//pron/pronRelClExample)" />
+<xsl:value-of select="string-length(normalize-space(//pron/pronRelClExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xPron.PronNP.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -5716,15 +5722,15 @@
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/partitiveExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="normalize-space(string-length(//pron/partitiveExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/partitiveExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and $sExampleValue != ' '">
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//pron/partitiveExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(//pron/partitiveExample)" />
+<xsl:value-of select="string-length(normalize-space(//pron/partitiveExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xPron.PronNP.16</xsl:with-param>
 <xsl:with-param name="sLetterList">
