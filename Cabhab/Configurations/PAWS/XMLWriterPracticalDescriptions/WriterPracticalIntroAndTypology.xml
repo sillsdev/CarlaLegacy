@@ -559,7 +559,7 @@
 			<case element="q" attr="contFront">
 				<caseText value="no">does not front; it simply remains in place</caseText>
 				<caseText value="after">may remain in place or it may move to the position immediately before the verb</caseText>
-				<caseText value="before">moves to the front of the clause.</caseText>
+				<caseText value="before">moves to the front of the clause </caseText>
 				<caseText value="unknown"> _______ </caseText>
 			</case>
 			<content> (section </content>

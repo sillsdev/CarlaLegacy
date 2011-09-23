@@ -45,7 +45,7 @@ using System.Runtime.CompilerServices;
 // Format: FwMajorVersion.FwMinorVersion
 [assembly: AssemblyInformationalVersionAttribute("0.2")]
 // Format: Version.Milestone.0.Level
-[assembly: AssemblyVersion("0.2.0.*")]
+[assembly: AssemblyVersion("0.2.1.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the

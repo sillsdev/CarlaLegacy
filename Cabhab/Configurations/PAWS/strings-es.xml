@@ -8,8 +8,10 @@
 <group id="DialogStrings">
 <string id="OpenAnswerFile" txt="Abrir Archivo de PAWS Lengua"/>
 <string id="SaveAnswerFile" txt="Guardar Archivo de PAWS Lengua"/>
-<string id="CreateNewLanguage" txt="Nuevo Archivo de PAWS Lengua/>
+<string id="CreateNewLanguage" txt="Nuevo Archivo de PAWS Lengua"/>
 <string id="SaveLanguageAs" txt="Guardar Archivo de PAWS Lengua Como"/>
+	<string id="OutputFileBadMessageTitle" txt="No Se Encunetra un Archivo"/>
+	<string id="OutputFileBadMessage" txt="No se encunetra un archivo.  Favor de usar 'Lengua / Locaciones de archivos' y corregir el problema.  El mensaje era: "/>
 </group>
 	<group id="LocalizedAttributes">
 		<string id="_File" txt="_Archivo" />

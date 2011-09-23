@@ -255,13 +255,7 @@ namespace SIL.Cabhab
 		{
 			if (m_viewer != null)
 			{
-				Language lang = m_viewer.m_lang;
-				if (lang != null)
-				{
-					if (lang.LanguageDataChanged)
-						lang.SaveFiles();
-					lang.SaveSettings();
-				}
+				m_viewer.OnExitApplication(null);
 			}
 			base.XWindow_Closing(sender, e);
 		}

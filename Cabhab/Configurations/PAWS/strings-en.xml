@@ -5,10 +5,12 @@
 <!-- Strings which are shared by more than 1 application go in this file. -->
 <!-- For LexText we're going to put all strings here, rather then work up code to do includes.  2004.08.18 -->
 <strings>
-<group id="DialogStrings">
-<string id="OpenAnswerFile" txt="Open PAWS Language File"/>
-<string id="SaveAnswerFile" txt="Save PAWS Language File"/>
-<string id="CreateNewLanguage" txt="New PAWS Language File"/>
-<string id="SaveLanguageAs" txt="Save PAWS Language File As"/>
-</group>
+	<group id="DialogStrings">
+		<string id="OpenAnswerFile" txt="Open PAWS Language File"/>
+		<string id="SaveAnswerFile" txt="Save PAWS Language File"/>
+		<string id="CreateNewLanguage" txt="New PAWS Language File"/>
+		<string id="SaveLanguageAs" txt="Save PAWS Language File As"/>
+		<string id="OutputFileBadMessageTitle" txt="Output File Not Found"/>
+		<string id="OutputFileBadMessage" txt="An output file was not found.  Please go to 'Language menu item / File locations' and make sure all file names are in existing locations.  The message was: "/>
+	</group>
 </strings>

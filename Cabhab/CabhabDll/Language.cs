@@ -364,34 +364,35 @@ namespace SIL.Cabhab
 		/// Save all files
 		/// </summary>
 		public void SaveFiles()
-		{			// save the files
-			Cursor.Current = Cursors.WaitCursor;
-			SaveAnswerFile();
-			// Apply all transforms
-			foreach (AnswerFileTransformSet set in m_answerFileTransformSets)
-			{
-				string sLastSourceFile = null;
-				AnswerFileTransform lastAft = null;
-				bool fTransformResult = false;
-				for (int i = 0; i < set.Count; i++)
+		{
+				Cursor.Current = Cursors.WaitCursor;
+				SaveAnswerFile();
+				// Apply all transforms
+				foreach (AnswerFileTransformSet set in m_answerFileTransformSets)
 				{
-					AnswerFileTransform aft = set.GetTransform(i);
-					string sSourceFile = aft.AnswerFile;
-					if (i > 0 && fTransformResult)
-						sSourceFile = sLastSourceFile;
-					fTransformResult = aft.ApplyTransform(ConfigurationPath, sSourceFile);
-					if (fTransformResult)
+					string sLastSourceFile = null;
+					AnswerFileTransform lastAft = null;
+					bool fTransformResult = false;
+					for (int i = 0; i < set.Count; i++)
 					{
-						if (lastAft != null)
-							lastAft.ApplyReplaceDOCTYPE(); // do insert DOCTYPE after transform next one (otherwise, one could just insert that DOCTYPE directly via the transform)
-						sLastSourceFile = aft.ResultFile;
-						lastAft = aft;
+						AnswerFileTransform aft = set.GetTransform(i);
+						string sSourceFile = aft.AnswerFile;
+						if (i > 0 && fTransformResult)
+							sSourceFile = sLastSourceFile;
+						fTransformResult = aft.ApplyTransform(ConfigurationPath, sSourceFile);
+						if (fTransformResult)
+						{
+							if (lastAft != null)
+								lastAft.ApplyReplaceDOCTYPE(); // do insert DOCTYPE after transform next one (otherwise, one could just insert that DOCTYPE directly via the transform)
+							sLastSourceFile = aft.ResultFile;
+							lastAft = aft;
+						}
 					}
 				}
-			}
-			LanguageDataChanged = false;
-			SaveSettings();
-			Cursor.Current = Cursors.Arrow;
+				LanguageDataChanged = false;
+				SaveSettings();
+				Cursor.Current = Cursors.Arrow;
+
 		}
 
 		public void SaveSettings()
@@ -467,7 +468,7 @@ namespace SIL.Cabhab
 			if (node != null)
 				node.InnerText = sValue;
 		}
-		private string GetStringFromStringTable(string sId)
+		public string GetStringFromStringTable(string sId)
 		{
 			return m_mediator.StringTbl.GetStringWithXPath(sId, m_ksStringTablePath);
 		}

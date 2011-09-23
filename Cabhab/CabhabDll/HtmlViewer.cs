@@ -49,7 +49,6 @@ namespace SIL.Cabhab
 		private string m_sWelcomePageFile;
 		private string m_sInterfaceLanguage;
 
-
 		public event EventHandler ChangeShowStatusBar;
 		protected virtual void OnChangeShowStatusBar(EventArgs e)
 		{
@@ -110,6 +109,7 @@ namespace SIL.Cabhab
 			m_htmlControl.Browser.ObjectForScripting = new WebPageInteractor(m_lang, this, m_htmlControl.Browser);
 			m_htmlControl.Browser.Navigated += new WebBrowserNavigatedEventHandler(Browser_Navigated);
 			m_htmlControl.Browser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(Browser_DocumentCompleted);
+			m_htmlControl.Browser.Navigating += new WebBrowserNavigatingEventHandler(Browser_Navigating);
 			// for debugging:
 			//m_htmlControl.Browser.IsWebBrowserContextMenuEnabled = true;
 
@@ -125,6 +125,23 @@ namespace SIL.Cabhab
 				m_lang.InitAnswerTransforms(configurationParameters);
 				m_lang.LanguageNameChanged();
 				m_htmlControl.URL = GetWebPageUrl(m_lang.GetLeftOffAtPage());
+			}
+		}
+
+		void Browser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+		{
+			SaveWebPageData();
+		}
+
+		public void SaveWebPageData()
+		{
+			try
+			{
+				m_htmlControl.Browser.Document.InvokeScript("saveData");
+			}
+			catch (Exception)
+			{
+				// do nothing except assume it's OK.
 			}
 		}
 
@@ -434,17 +451,29 @@ namespace SIL.Cabhab
 		}
 		public bool OnExitApplication(object param)
 		{
-			CheckDisposed();
-
-			if (m_lang.LanguageDataChanged)
+			try
 			{
-				m_lang.SaveFiles();
+				CheckDisposed();
+				SaveWebPageData();
+				if (m_lang != null)
+				{
+					if (m_lang.LanguageDataChanged)
+					{
+						m_lang.SaveFiles();
+					}
+					m_lang.SaveSettings();
+				}
+				if (param != null)
+					this.ParentForm.Close();
+				return true;
 			}
-			m_lang.SaveSettings();
-
-			this.ParentForm.Close();
-			return true;
+			catch (Exception exc)
+			{
+				ReportBadOutputFile(exc);
+				return false;
+			}
 		}
+
 		public bool OnBrowserBack(object param)
 		{
 			CheckDisposed();
@@ -556,10 +585,24 @@ namespace SIL.Cabhab
 		public bool OnGenerateFiles(object param)
 		{
 			CheckDisposed();
+			try
+			{
+				m_lang.SaveFiles();
+				m_lang.LanguageDataChanged = false;
+				return true;
+			}
+			catch (Exception exc)
+			{
+				ReportBadOutputFile(exc);
+				return false;
+			}
+		}
 
-			m_lang.SaveFiles();
-			m_lang.LanguageDataChanged = false;
-			return true;
+		private void ReportBadOutputFile(Exception exc)
+		{
+			string sMsgTitle = m_lang.GetStringFromStringTable("OutputFileBadMessageTitle");
+			string sMsg = m_lang.GetStringFromStringTable("OutputFileBadMessage");
+			MessageBox.Show(sMsg + exc.Message, sMsgTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
 		#endregion
@@ -772,7 +815,7 @@ namespace SIL.Cabhab
 		}
 		public void QuitFromNewLanguagePage()
 		{
-			m_viewer.OnExitApplication(null);
+			m_viewer.OnExitApplication(this);
 		}
 		public void FileBrowse(string sFile, string sFilter)
 		{

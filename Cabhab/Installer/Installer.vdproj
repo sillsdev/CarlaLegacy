@@ -6900,7 +6900,7 @@
 			{
 			"AssemblyRegister" = "3:1"
 			"AssemblyIsInGAC" = "11:FALSE"
-			"AssemblyAsmDisplayName" = "8:Cabhab, Version=0.2.0.18545, Culture=neutral, processorArchitecture=x86"
+			"AssemblyAsmDisplayName" = "8:Cabhab, Version=0.2.0.16977, Culture=neutral, processorArchitecture=x86"
 				"ScatterAssemblies"
 				{
 					"_4886823C93364227B6ECB7831CCD6066"
@@ -10821,7 +10821,7 @@
 			{
 			"AssemblyRegister" = "3:1"
 			"AssemblyIsInGAC" = "11:FALSE"
-			"AssemblyAsmDisplayName" = "8:CabhabDll, Version=0.2.0.22194, Culture=neutral, processorArchitecture=MSIL"
+			"AssemblyAsmDisplayName" = "8:CabhabDll, Version=0.2.1.16974, Culture=neutral, processorArchitecture=MSIL"
 				"ScatterAssemblies"
 				{
 					"_9A9E6EF2FCA60FFC437FE0341AD0FE05"
@@ -15372,7 +15372,7 @@
 					{
 					"Command" = "8:&Open"
 					"Verb" = "8:open"
-					"Arguments" = "8:\"%1\""
+					"Arguments" = "8:\"-x [CommonAppDataFolder]\\PAWS\\paws.xml %1\""
 					"Order" = "3:0"
 					}
 				}
@@ -15751,7 +15751,7 @@
 		"Name" = "8:Microsoft Visual Studio"
 		"ProductName" = "8:PAWS Starter Kit (Cabhab version)"
 		"ProductCode" = "8:{5E7A315D-6D57-42C1-8E07-11DFEB9A4CB6}"
-		"PackageCode" = "8:{27CB4551-9103-4B00-A47C-B6AE64391B4D}"
+		"PackageCode" = "8:{F95E5C67-8186-4884-88F8-78CE6E66B071}"
 		"UpgradeCode" = "8:{FEBBCD5B-3BAF-45D9-A9B5-6B4D3CE2AB46}"
 		"RestartWWWService" = "11:FALSE"
 		"RemovePreviousVersions" = "11:FALSE"

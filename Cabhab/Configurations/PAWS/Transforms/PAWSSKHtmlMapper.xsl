@@ -5,7 +5,7 @@
 ]>
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="html" version="4.0" encoding="UTF-8" indent="yes"/>
+	<xsl:output method="html" version="4.0" encoding="UTF-8" indent="yes" />
 	<!--
 ================================================================
 Convert XML Page description to HTML and JScript code
@@ -32,11 +32,11 @@ Main template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
 	<xsl:template match="/">
-		<xsl:comment>Cabhab generated html page</xsl:comment>
+		<xsl:comment>PAWS generated html page</xsl:comment>
 		<xsl:comment>PageCount="<xsl:value-of select="page/@count"/>"</xsl:comment>
 		<html>
 			<head>
-				<!-- generated automatically? <meta http-equiv="Content-Type" content="text/html; "/> -->
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 				<title>
 					<xsl:value-of select="/page/title"/>
 				</title>
