@@ -264,7 +264,7 @@ uninstall:
 check:
 
 mostlyclean:
-	rm -f *.og *.ogp *~
+	rm -f *.og *.ogp *.op *.opp *~
 
 clean: mostlyclean
 	rm -f lib*.a

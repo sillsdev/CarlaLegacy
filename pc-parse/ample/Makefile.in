@@ -302,7 +302,7 @@ mostlyclean:
 	rm -f *.o *.op *.ox *.oxp *~
 
 clean: mostlyclean
-	rm -f lib*.a
+	rm -f lib*.a lib*.so
 
 distclean: clean
 	rm -f ample ample_p xample xample_p Makefile TAGS

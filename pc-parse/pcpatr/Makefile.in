@@ -166,7 +166,7 @@ mostlyclean:
 	rm -f *.o *.op *~
 
 clean: mostlyclean
-	rm -f lib*.a
+	rm -f lib*.a lib*.so
 
 distclean: clean
 	rm -f pcpatr pcpatr_p Makefile TAGS
